@@ -12,19 +12,18 @@ import {;
 } from '@/components/ui/card'
 '
 interface GeneratedContent {'
-  description: "string,;";
-  tags: "string[]",;"";
-  suggestedPrice: {",;"
+  description: "string,"
+  tags: string[],""
+  suggestedPrice: {","
     min: number,""
-    max: "number;"
-  };";";
+    max: "number"
+  }";";
   keyPoints: "string[]";
-};"";
-;"";
-interface GeneratedContentDisplayProps {;"";
-  content: "GeneratedContent",;"";
+};"";"";
+interface GeneratedContentDisplayProps {""
+  content: GeneratedContent,""
   onApply: () => void""
-};
+}
 
 export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {{
   content,;"
@@ -56,8 +55,7 @@ export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): u
                 {tag};
               </Badge>))}"
           </div>;
-        </div>;"";
-;"";
+        </div>;"";"";
         <div>;"";
           <h3 className="text-sm font-medium text-zion-slate-light mb-2">;"
             Suggested Price Range;";"
@@ -66,8 +64,7 @@ export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): u
             ${content.suggestedPrice.min.toFixed(2)} - $;
             {content.suggestedPrice.max.toFixed(2)}"
           </p>;
-        </div>;"";
-;"";
+        </div>;"";"";
         <div>;"";
           <h3 className="text-sm font-medium text-zion-slate-light mb-2">;"
             Key Selling Points;";"

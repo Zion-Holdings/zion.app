@@ -1,9 +1,8 @@
 import { createNotification } from './createNotification'
-import type { OnboardingNotificationParams } from './types;
-;
+import  type { OnboardingNotificationParams }  from './types;
 /**;
- * Creates an onboarding notification for a user;
- */;
+ * Creates an onboarding notification for a user;';
+ */;';
 export async function createOnboardingNotification(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   userId,;
   missingMilestone,;
@@ -64,7 +63,7 @@ export async function createOnboardingNotification(): unknown {): unknown {): un
     title,'
     message,;
     type: 'onboarding',;
-    sendEmail: "false",;
+    sendEmail: false,;
     actionUrl,;"
     actionText,;";"
   });"

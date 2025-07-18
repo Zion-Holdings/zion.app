@@ -1,13 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react;
+import { useEffect } from 'react;';
 '
 export function useOnClickOutside(): unknown {): unknown {): unknown {): unknown {): unknown {;
   ref: "React.RefObject<HTMLElement | null>"
-  handler: "(e: MouseEvent | TouchEvent) => void",;
+  handler: (e: MouseEvent | TouchEvent) => void,;
 ) {;
   useEffect(() => {;
     function listener(): unknown {): unknown {): unknown {): unknown {): unknown {event: MouseEvent | TouchEvent) {;
-      const const el = ref.current;
+      const el = ref.current;
       if (!el || el.contains(event.target as Node)) {;
         return;"
       };";"
@@ -22,7 +22,6 @@ export function useOnClickOutside(): unknown {): unknown {): unknown {): unknown
     };
   }, [ref, handler]);
 };
-;
 };
 }'
 };

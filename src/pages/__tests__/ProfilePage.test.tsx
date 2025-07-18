@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import ProfilePage from '../ProfilePage // Adjust path as necessary;
+import ProfilePage from '../ProfilePage // Adjust path as necessary;';
 '
 // If ProfilePage uses any hooks like useTranslation or fetches data, they would need mocking here.;
 // For now, it's a simple presentational component.'

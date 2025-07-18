@@ -13,9 +13,9 @@ jest.mock('react-i18next', () => ({'
   useTranslation: "jest.fn(),
 }));
 
-const const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
-const const mockedUseRouter = useRouter as jest.Mock;
-const const mockedUseTranslation = useTranslation as jest.MockedFunction<"
+const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
+const mockedUseRouter = useRouter as jest.Mock;
+const mockedUseTranslation = useTranslation as jest.MockedFunction<"
   typeof useTranslation;"
 >;
 "
@@ -30,7 +30,7 @@ beforeEach(() => {;"
 ;"
 test('opens marketplace submenu when trigger is clicked', () => {'
   render(<ResponsiveNavigation />)'
-  const const trigger = screen.getByText('Marketplace')'
+  const trigger = screen.getByText('Marketplace')'
   fireEvent.click(trigger)'
   expect(screen.getByText('Overview')).toBeInTheDocument()'
   expect(screen.getByText('Categories')).toBeInTheDocument()'

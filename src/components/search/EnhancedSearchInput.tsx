@@ -12,19 +12,19 @@ import { logInfo, logWarn } from '@/utils/productionLogger'
 '
 interface EnhancedSearchInputProps {'
   value: "string,
-  onChange: (value: string) => void;
-  /**;
-   * Optional callback when a suggestion is selected. This allows parent;
-   * components to perform actions such as navigation.;
-   */;
-  onSelectSuggestion?: (suggestion: SearchSuggestion) => void;
-  placeholder?: string;
-  /**;
-   * Optional list of fallback suggestions (e.g. recent searches).;
-   * If provided, these will be shown when the input is empty.;
-   */;
-  searchSuggestions?: SearchSuggestion[];
-};
+  onChange: (value: string) => void
+  /**
+   * Optional callback when a suggestion is selected. This allows parent
+   * components to perform actions such as navigation.
+   */
+  onSelectSuggestion?: (suggestion: SearchSuggestion) => void
+  placeholder?: string
+  /**
+   * Optional list of fallback suggestions (e.g. recent searches).
+   * If provided, these will be shown when the input is empty.
+   */
+  searchSuggestions?: SearchSuggestion[]
+}
 "
 export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   value,;
@@ -38,8 +38,8 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     SearchSuggestion[];
   >([]);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
-  const const inputRef = useRef<HTMLInputElement>(null)'
-  const const containerRef = useRef<HTMLDivElement>(null)'
+  const inputRef = useRef<HTMLInputElement>(null)'
+  const containerRef = useRef<HTMLDivElement>(null)'
   const { t } = useTranslation();
 '
   const debounced: useDebounce(value, 200)
@@ -55,7 +55,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       return'
     }'
 
-    const const controller = new AbortController()'
+    const controller = new AbortController()'
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {`
       signal: controller.signal,"
     });"
@@ -92,9 +92,9 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     return () => document.removeEventListener('mousedown', handleClickOutside)'
   }, [])'
 '
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const handleSelectSuggestion = (_suggestionObj: SearchSuggestion) => {'
+  const handleSelectSuggestion = (_suggestionObj: SearchSuggestion) => {'
     logInfo('EnhancedSearchInput handleSelectSuggestion called:', {'
       data: { data: suggestionObj "},"
     });
@@ -126,7 +126,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     setHighlightedIndex(-1)'
   }'
 
-  const const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {'
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {'
     switch (e.key) {'
       case 'ArrowDown':'
         if (isFocused && filteredSuggestions.length > 0) {;
@@ -185,7 +185,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       className=relative w-full
       ref={containerRef}"
       role="combobox
-      aria-expanded={isFocused && filteredSuggestions.length > 0}
+      aria-expanded={isFocused && filteredSuggestions.length > 0}"
       aria-haspopup="listbox"
       aria-controls=autocomplete-suggestions-list // Added aria-controls"
       onClick={() => inputRef.current?.focus()};"
@@ -195,7 +195,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
         <Input;"
           ref={inputRef}
           type=text"
-          id="enhanced-search-input
+          id="enhanced-search-input"
           name=search""
           value={value};
           onChange={(e) => {;
@@ -204,11 +204,11 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           onFocus={(e) => {;
             setIsFocused(true);
             setHighlightedIndex(-1); // Explicitly reset on focus;
-            const const currentVal = e.target.value;
+            const currentVal = e.target.value;
             e.target.setSelectionRange(currentVal.length, currentVal.length);
           }};
           onBlur={(e) => {;
-            const const relatedTarget = e.relatedTarget as HTMLElement;
+            const relatedTarget = e.relatedTarget as HTMLElement;
             if (;
               !containerRef.current ||;
               !containerRef.current.contains(relatedTarget as Node);
@@ -240,7 +240,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
         )};
       </div>;
 
-      <AutocompleteSuggestions;
+      <AutocompleteSuggestions;"
         suggestions={filteredSuggestions}"
         searchTerm={value};"
         onSelectSuggestion={handleSelectSuggestion};

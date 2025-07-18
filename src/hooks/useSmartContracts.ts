@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { toast } from 'sonner;
-import type {;
+import  { toast }  from 'sonner;';
+import type {;';
   BlockchainNetwork as _BlockchainNetwork,'
   DeploymentOptions,;
 } from '@/types/smart-contracts'
 import type { SmartContractInfo } from '@/types/smart-contracts'
 import type { TalentProfile } from '@/types/talent'
 import type { ContractFormValues } from '@/components/contracts/components/ContractForm'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export function useSmartContracts(): ;
   const { _user } = useAuth();
@@ -21,7 +21,7 @@ export function useSmartContracts(): ;
   const generateSolidityContract: async (;",;"
     values: "ContractFormValues"
     talent: "TalentProfile"
-    clientName: "string",;"
+    clientName: string,;"
   ): Promise<string> => {;"
     if (!supabase) throw new Error('Supabase client not initialized')'
     try {;
@@ -39,7 +39,7 @@ export function useSmartContracts(): ;
             endDate: "values.endDate?.toISOString()"
             paymentTerms: "values.paymentTerms"
             paymentAmount: "values.paymentAmount"
-            additionalClauses: "values.additionalClauses || []",;
+            additionalClauses: values.additionalClauses || [],;
           },;
         },;"
       );";"
@@ -53,7 +53,7 @@ export function useSmartContracts(): ;
       }'
     } catch (err: unknown) {;
       logErrorToProduction('Error generating Solidity contract:', {;
-        data: "err",;"
+        data: err,;"
       });"
       toast.error('Failed to generate smart contract');
       throw err;
@@ -64,7 +64,7 @@ export function useSmartContracts(): ;
 '
   const deploySmartContract: async (;",;"
     contractCode: "string"
-    options: "DeploymentOptions",;"
+    options: DeploymentOptions,;"
   ): Promise<SmartContractInfo | null> => {;"
     if (!user?.id) {;"
       toast.error('You must be logged in to deploy a contract')'
@@ -76,7 +76,7 @@ export function useSmartContracts(): ;
 '
       // This would normally connect to MetaMask or other Web3 provider;
       // For now, we'll just simulate success;
-      const const mockTransactionHash = `0x${Array.from({ length: "64 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () =>;"
+      const mockTransactionHash = `0x${Array.from({ length: "64 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () =>;"
         Math.floor(Math.random() * 16).toString(16),;"
       ).join('')}`'
 ;
@@ -99,7 +99,6 @@ export function useSmartContracts(): ;
 ;
       setDeploymentStatus('success');
       toast.success('Smart contract deployed successfully!');
-;
       return mockSmartContractInfo'
     } catch (err: unknown) {;
       logErrorToProduction('Error deploying smart contract:', { data: "err "});"
@@ -108,7 +107,6 @@ export function useSmartContracts(): ;
       return null;
     };
   };
-;
   return {;
     generateSolidityContract,;
     deploySmartContract,;
@@ -116,7 +114,6 @@ export function useSmartContracts(): ;
     deploymentStatus,;
   };
 };
-;
 }'
 }
 }'

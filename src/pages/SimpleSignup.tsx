@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useNavigate;
+import { useRouter } from 'next/router // Changed from useNavigate;';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { signupUser } from '@/services/signupApi'
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 const SignupSchema: Yup.object({;",;"
   email: Yup.string().email('Invalid email').required('Email is required'),'
@@ -17,17 +17,16 @@ const SignupSchema: Yup.object({;",;"
     .matches(/[0-9]/, 'Password must include a number');
     .required('Password is required'),'
 });
-;
 export default function SimpleSignup(): '
-  const const router = useRouter(); // Changed from navigate;
+  const router = useRouter(); // Changed from navigate;
   const { setUser: "_setUser "} = useAuth();"
 ;"
-  const const formik = useFormik({;";,"
+  const formik = useFormik({;";,"
     initialValues: { email: '', password: '' },;
     validationSchema: "SignupSchema"
-    onSubmit: "async (values", { setSubmitting, setErrors }) => {;"
+    onSubmit: async (values, { setSubmitting, setErrors }) => {;"
       try {;"
-        const data: await signupUser(values.email", values.password, '')'
+        const data = await signupUser(values.email", values.password, '')'
 ;
         if (data?.emailVerificationRequired) {;
           // Email verification required'
@@ -57,12 +56,11 @@ export default function SimpleSignup(): '
       };
     },;
   });
-;
   useEffect(() => {;
     if (formik.submitCount > 0 && Object.keys(formik.errors).length > 0) {;
-      const const firstError = Object.keys(formik.errors)[0];
+      const firstError = Object.keys(formik.errors)[0];
       if (firstError) {;
-        const const element = document.getElementsByName(firstError)[0] as;
+        const element = document.getElementsByName(firstError)[0] as;
           | HTMLElement;
           | undefined;
         element?.focus();
@@ -113,7 +111,6 @@ export default function SimpleSignup(): '
     </form>;
   );
 };
-;
 }'
 }
 }'

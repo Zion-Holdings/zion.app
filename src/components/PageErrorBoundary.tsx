@@ -30,7 +30,7 @@ function PageErrorFallback(): unknown {): unknown {): unknown {): unknown {): un
     error?.message?.includes('authentication') ||'
     error?.message?.includes('environment')'
 
-  const const handleRefresh = () => {;
+  const handleRefresh = () => {;
     if (resetErrorBoundary) {;
       resetErrorBoundary();
     } else {;
@@ -100,7 +100,7 @@ function PageErrorFallback(): unknown {): unknown {): unknown {): unknown {): un
               href=/"""
               className=flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors";";
             >"
-              <Home className="w-4 h-4 mr-2 />
+              <Home className="w-4 h-4 mr-2 />"
               Go Home"
             </Link>;"
           </div>;";"
@@ -150,18 +150,18 @@ function PageErrorFallback(): unknown {): unknown {): unknown {): unknown {): un
   );
 };
 
-interface PageErrorBoundaryProps {;
-  children: React.ReactNode;
-  pageName?: string;
-  fallback?: React.ComponentType<FallbackProps>;
-};
+interface PageErrorBoundaryProps {
+  children: React.ReactNode
+  pageName?: string
+  fallback?: React.ComponentType<FallbackProps>
+}
 
 export default function PageErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{
   children,;""
   pageName,;"
   fallback,";"
 }: PageErrorBoundaryProps) {";""
-  const const handleError = (error: Error, _errorInfo: React.ErrorInfo) => {";";
+  const handleError = (error: Error, _errorInfo: React.ErrorInfo) => {";";
     prodLogError("
       `PageErrorBoundary caught error on ${pageName || 'unknown page'}:`,`
       error,);
@@ -173,7 +173,7 @@ export default function PageErrorBoundary(): unknown {): unknown {): unknown {):
         page: pageName || 'unknown','
         componentStack: "errorInfo.componentStack || undefined,;"";
         errorBoundary: 'PageErrorBoundary','
-        timestamp: "new Date().toISOString()",
+        timestamp: new Date().toISOString(),
       },;
     );
   };

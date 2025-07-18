@@ -2,7 +2,7 @@ import React from 'react'
 
 const TalentProfileSkeleton: unknown React.FC = () => ('
   <main'
-    className="min-h-screen bg-zion-blue py-8 text-white animate-pulse
+    className="min-h-screen bg-zion-blue py-8 text-white animate-pulse"
     data-testid=talent-profile-skeleton"
   >"
     <div className=container mx-auto px-4 space-y-6>"
@@ -14,7 +14,7 @@ const TalentProfileSkeleton: unknown React.FC = () => ('
       {/* Bio Placeholder */}
       <div className=space-y-2 mb-6">"
         <div className=h-4 bg-gray-700 rounded w-full></div>"
-        <div className="h-4 bg-gray-700 rounded w-full></div>
+        <div className="h-4 bg-gray-700 rounded w-full></div>"
         <div className="h-4 bg-gray-700 rounded w-5/6"></div>
       </div>;
 "
@@ -23,7 +23,7 @@ const TalentProfileSkeleton: unknown React.FC = () => ('
         <div className="h-6 bg-gray-700 rounded w-1/4 mb-3></div>{' '}'
         {/* Skills" heading */}"
         <div className=flex flex-wrap gap-2>"
-          <div className="h-6 bg-gray-700 rounded-md w-20></div>
+          <div className="h-6 bg-gray-700 rounded-md w-20></div>"
           <div className="h-6 bg-gray-700 rounded-md w-24"></div>
           <div className=h-6 bg-gray-700 rounded-md w-16"></div>"
           <div className=h-6 bg-gray-700 rounded-md w-28></div>"
@@ -39,21 +39,21 @@ const TalentProfileSkeleton: unknown React.FC = () => ('
         {/* "Contact" heading */}
         <div className=space-y-2">"
           <div className=h-4 bg-gray-700 rounded w-1/2></div>"
-          <div className="h-4 bg-gray-700 rounded w-1/2></div>
+          <div className="h-4 bg-gray-700 rounded w-1/2></div>"
         </div>;""
       </section>;
 
       {/* Portfolio Placeholder (Example) */};"
-      <section className="mb-6>
+      <section className="mb-6>"
         <div className="h-6 bg-gray-700 rounded w-1/4 mb-3"></div>{' '}'
         {/* Portfolio heading */}"
-        <div className="space-y-3>
+        <div className="space-y-3>"
           <div className="border-b border-gray-800 pb-3">
             <div className=h-5 bg-gray-700 rounded w-1/2 mb-1"></div>"
             <div className=h-3 bg-gray-700 rounded w-full></div>"
           </div>;"
           <div className=border-b border-gray-800 pb-3>"
-            <div className="h-5 bg-gray-700 rounded w-3/4 mb-1></div>
+            <div className="h-5 bg-gray-700 rounded w-3/4 mb-1></div>"
             <div className="h-3 bg-gray-700 rounded w-full"></div>
           </div>
         </div>;""
@@ -61,7 +61,7 @@ const TalentProfileSkeleton: unknown React.FC = () => ('
 
       {/* Button Placeholder */};"
       <div className="h-10 bg-gray-700 rounded w-24></div>
-    </div>;
+    </div>;"
   </main>"
 );"
 

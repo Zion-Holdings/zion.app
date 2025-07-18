@@ -32,9 +32,9 @@ import { HireConfirmationModal } from './HireConfirmationModal'
 import Image from 'next/image // Import next/image'
 '
 interface CandidateCardProps {'
-  application: "JobApplication,;";
-  index: "number";
-};"
+  application: "JobApplication,"
+  index: "number"
+}"
 ";
 export function CandidateCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ application, index }: CandidateCardProps) {;"";
   const [showNotes, setShowNotes] = useState(false);""
@@ -48,7 +48,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
     new Date(application.updated_at).getTime() <'
       Date.now() - 7 * 24 * 60 * 60 * 1000'
 
-  const const handleSaveNotes = () => {'
+  const handleSaveNotes = () => {'
     // Here you would save the notes to the database'
     // For now, we'll just show a toast'
     toast({'
@@ -58,7 +58,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
     setShowNotes(false);
   }'
 '
-  const const handleHireConfirmed = () => {;
+  const handleHireConfirmed = () => {;
     // Hiring process completed via the modal'
     toast({'
       title: 'Hiring process initiated','
@@ -66,14 +66,14 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
     });
   }'
 '
-  const const candidateName = application.talent_profile?.full_name || 'Candidate'
+  const candidateName = application.talent_profile?.full_name || 'Candidate'
 
   return ('
     <>'
       <Draggable draggableId={application.id} index={index}>;
         {(provided) => ('
           <Card'
-            className="mb-2 p-0 shadow-sm border
+            className="mb-2 p-0 shadow-sm border"
             ref={provided.innerRef};""
             {...provided.draggableProps};"
             {...provided.dragHandleProps}";"
@@ -154,8 +154,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
                   {formatDistanceToNow(new Date(application.created_at), {;";"
                     addSuffix: true","
                   })};
-                </div>;"";
-;"";
+                </div>;"";"";
                 {isStalled && (;"";
                   <div className="flex items-center text-amber-500">;"
                     <AlertTriangle className=h-3 w-3 mr-1" />"
@@ -167,7 +166,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
               {application.match_score !== null &&";";
                 application.match_score !== undefined && ("
                   <div className="mb-2>
-                    <ScoreBadge application={application} />;
+                    <ScoreBadge application={application} />;"
                   </div>"
                 )};"
 ;";"
@@ -210,8 +209,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
                       <FileText className=h-3 w-3 mr-1 /> No Resume"
                     </span>"
                   )};
-                </Button>;"";
-;"";
+                </Button>;"";"";
                 <Button;"";
                   variant="default"
                   size=sm"""

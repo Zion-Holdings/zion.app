@@ -1,23 +1,20 @@
 /// <reference types="node" />;"
 import { createBrowserClient } from '@supabase/ssr'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger // Assuming logger is available and logError is added;
-;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger // Assuming logger is available and logError is added;';
 // Singleton client instance to prevent multiple GoTrueClient instances'
 let supabaseClient: SupabaseClient | null = null;
-;
 // Logic to determine Supabase URL and Key, incorporating fallbacks'
 const getSupabaseCredentials: (): {;",;"
   supabaseUrl: "string;"
   supabaseAnonKey: "string;"
 } => {;";"
-  const const envUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;"
-  const const envKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;"
+  const envUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;"
+  const envKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;"
 ;"
-  const const fallbackUrl = 'https://gnwtggeptzkqnduuthto.supabase.co;
+  const fallbackUrl = 'https://gnwtggeptzkqnduuthto.supabase.co;
   const fallbackKey: unknown =;
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY;
-;
   let useUrl = envUrl;
   let useKey = envKey;
   let usedFallback = false'
@@ -49,20 +46,16 @@ const getSupabaseCredentials: (): {;",;"
   } else if (process.env.NODE_ENV === 'development') {;
     logDebug('Supabase client creation: Using credentials from process.env.')'
   };
-;
   // Ensure useUrl and useKey are strings, as createBrowserClient expects string | undefined'
   // The fallback logic ensures they are always strings, so the non-null assertion is safe here.;
-  return { supabaseUrl: "useUrl!", supabaseAnonKey: "useKey! "};
+  return { supabaseUrl: useUrl!, supabaseAnonKey: "useKey! "};
 };
-;
 export function createClient(): unknown {): unknown {): unknown {): unknown {): unknown {): SupabaseClient | null {;
   // Return existing instance if already created and valid;
   if (supabaseClient) {;
     return supabaseClient;
   };
-;
   const { supabaseUrl, supabaseAnonKey } = getSupabaseCredentials();
-;
   // This check is vital. If, despite fallbacks, credentials are truly missing or invalid,;"
   // we should not attempt to create a client.;";"
   if (;"
@@ -75,7 +68,7 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
       'Supabase client creation: supabaseUrl or supabaseAnonKey is missing or empty even after fallback.','
       {;
         urlProvided: "!!supabaseUrl"
-        keyProvided: "!!supabaseAnonKey",;"
+        keyProvided: !!supabaseAnonKey,;"
       },;"
     );"
     // For server-side build time, returning a mock might be acceptable if absolutely necessary,;"
@@ -89,7 +82,7 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
       )'
       return {;
         auth: {
-          getSession: "async () => ({;","
+          getSession: async () => ({;,"
             data: "{ session: null "},;"
             error: {
               name: 'MockAuthError',;
@@ -119,14 +112,14 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
         detectSessionInUrl: "true"
         flowType: 'pkce', // More secure flow type'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-      global: "{;",;"
+      global: {;,;"
         headers: {;"
           'X-Client-Info': 'zion-app/1.0.0', // Standardized client info;
         },'
       },;
       realtime: {
-        params: "{;","
-          eventsPerSecond: "10", // Limit realtime events for performance;"
+        params: {;,"
+          eventsPerSecond: 10, // Limit realtime events for performance;"
         },;"
       },;"
     });"
@@ -136,7 +129,7 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
       'Supabase client initialization failed catastrophically:',;
       {'
         error,;
-        urlUsed: "supabaseUrl.substring(0", 20) + '...', // Avoid logging full key;
+        urlUsed: supabaseUrl.substring(0, 20) + '...', // Avoid logging full key;
       },;
     );
     supabaseClient = null; // Ensure client is null on failure;
@@ -144,15 +137,12 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
     // For now, returning null is consistent with the credential check failure.;
     return null;
   };
-;
   return supabaseClient;
 };
-;
 // Export singleton instance for direct use - lazy initialization.'
 // This will call createClient() the first time `supabase` is imported.;
 export const supabase: unknown SupabaseClient | null = createClient();
 export default supabase;
-;
 }'
 }
 }'

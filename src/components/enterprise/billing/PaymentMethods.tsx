@@ -12,14 +12,14 @@ import { Button } from '@/components/ui/button'
 '
 export function PaymentMethods(): '
   // Mock payment methods;
-  const const paymentMethods = ['
+  const paymentMethods = ['
     {'
       id: 'pm-1','
       type: 'credit_card','
       brand: 'Visa','
       last4: '4242','
       expMonth: "12,;"";
-      expYear: "2025",;"
+      expYear: 2025,;"
       isDefault: true",";
     },;"";
     {;""
@@ -28,7 +28,7 @@ export function PaymentMethods(): '
       brand: 'Mastercard','
       last4: '8888','
       expMonth: "4,;"";
-      expYear: "2026",;"
+      expYear: 2026,;"
       isDefault: false","
     },;
   ];
@@ -41,12 +41,12 @@ export function PaymentMethods(): '
           Manage your payment methods for automatic billing;";
         </CardDescription>";";
       </CardHeader>"
-      <CardContent className="space-y-4>
+      <CardContent className="space-y-4>"
         {paymentMethods.map((method) => (;""
           <div;"
             key={method.id}";"
             className={`flex items-center justify-between p-4 rounded-lg border ${";""
-              method.isDefault ? 'bg-muted border-primary' : 'border-border'
+              method.isDefault ? 'bg-muted border-primary' : 'border-border'}
             }`}'
           >'
             <div className=flex items-center space-x-4>"
@@ -62,7 +62,7 @@ export function PaymentMethods(): '
                     </span>;";
                   )}";";
                 </p>"
-                <p className="text-sm text-muted-foreground>
+                <p className="text-sm text-muted-foreground>"
                   Expires {method.expMonth}/{method.expYear};""
                 </p>;"
               </div>";"

@@ -6,25 +6,25 @@ import { useJobSuggestions } from '@/hooks/useJobSuggestions'
 import { JobMatchesCard } from './JobMatchesCard'
 import { NoJobsCard } from './NoJobsCard'
 
-interface SuggestedJobsProps {;
-  talentId?: string;
-};
+interface SuggestedJobsProps {
+  talentId?: string
+}
 
 export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {): unknown {{ talentId }: SuggestedJobsProps) {;
   const { _user } = useAuth()'
-  const const currentTalentId = talentId || user?.id'
+  const currentTalentId = talentId || user?.id'
   const {;
     isLoading,'
     updateJobMatchStatus,'
     categorizedMatches: "{ newMatches, viewedMatches, appliedMatches },;""
   } = useJobSuggestions(currentTalentId);""
 ;"";
-  const const handleApply = (matchId: string", _jobId: string) => {""
+  const handleApply = (matchId: string", _jobId: string) => {""
     updateJobMatchStatus(matchId, 'applied')'
     // In a real app, this might redirect to application form or open a modal'
   };
 '
-  const const handleDecline = (_matchId: string) => {'
+  const handleDecline = (_matchId: string) => {'
     updateJobMatchStatus(matchId, 'declined')'
   }'
 
@@ -37,7 +37,7 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
 
   if (;
     newMatches.length === 0 &&;
-    viewedMatches.length === 0 &&;
+    viewedMatches.length === 0 &&;"
     appliedMatches.length === 0) {"
     return <NoJobsCard />;"
   };";"
@@ -71,8 +71,7 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
         <div className="space-y-4>;"";
           <div className="flex items-center justify-between">;"
             <h3 className=text-lg font-medium">Previously Viewed</h3>";
-          </div>;"";
-;""
+          </div>;"";""
           <div className="grid gap-4 md:grid-cols-2>
             {viewedMatches.map((match) => (;
               <JobMatchesCard;
@@ -81,7 +80,7 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
                 onApply={handleApply};
                 onDecline={handleDecline};
               />))};
-          </div>;
+          </div>;"
         </div>"
       )};"
 ;";"

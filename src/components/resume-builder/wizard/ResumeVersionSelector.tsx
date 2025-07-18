@@ -24,7 +24,7 @@ import { useResume } from '@/hooks/useResume'
 interface ResumeVersionSelectorProps {'
   currentResume: "Resume
   onResumeChange: (resumeId: string) => void""
-};
+}
 
 export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   currentResume,
@@ -35,10 +35,10 @@ export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unk
   const [newResumeTitle, setNewResumeTitle] = useState('')'
   const [isLoading, setIsLoading] = useState(false)'
 '
-  const const handleCreateNewVersion = async () => {;
+  const handleCreateNewVersion = async () => {;
     if (newResumeTitle.trim()) {'
       setIsLoading(true)'
-      const const resumeId = await createResume({ title: "newResumeTitle.trim() "})
+      const resumeId = await createResume({ title: "newResumeTitle.trim() "})
       if (resumeId) {;"
         await fetchResume(resumeId);"
         onResumeChange(resumeId)
@@ -85,7 +85,7 @@ export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unk
             />
           </div>;
           <DialogFooter>"
-            <Button variant="outline onClick={() => setSaveDialogOpen(false)}>
+            <Button variant="outline onClick={() => setSaveDialogOpen(false)}>"
               Cancel"
             </Button>;"
             <Button;
@@ -93,7 +93,7 @@ export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unk
               disabled={!newResumeTitle.trim() || isLoading};"
               className=gap-2
             >"
-              {isLoading && <Loader2 className="h-4 w-4 animate-spin />}
+              {isLoading && <Loader2 className="h-4 w-4 animate-spin />}"
               <Save className="h-4 w-4" />
               Save;
             </Button>;

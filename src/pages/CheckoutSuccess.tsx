@@ -2,22 +2,19 @@
 import React, { useEffect, useState } from 'react';
 import * as NextNavigation from 'next/navigation'
 import Link from 'next/link'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 interface Session {;
   id: string;
   amount_total?: number | null;
   currency?: string | null;
   customer_details?: { email?: string | null; name?: string | null } | null;
-};
-;
-export default function CheckoutSuccess(): ;
-  const const searchParams = NextNavigation.useSearchParams()'
+};';
+export default function CheckoutSuccess(): ;';
+  const searchParams = NextNavigation.useSearchParams()'
   const [session, setSession] = useState<Session | null>(null);
-;
   useEffect(() => {'
     if (!searchParams) return;
-    const const sessionId = searchParams.get('session_id');
+    const sessionId = searchParams.get('session_id');
     if (!sessionId) return'
 ;
     fetch('/api/webhook', {;

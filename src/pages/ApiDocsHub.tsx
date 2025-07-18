@@ -1,11 +1,10 @@
 import React from 'react';
 import { ArrowRight, Code, AlertCircle, Zap } from '@/components/ui/icons'
-import Link from 'next/link;
-;
+import Link from 'next/link;';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 ;
 export function ApiDocsHub(): ;
-  const const sections = ['
+  const sections = ['
     {;
       title: 'Getting Started',;
       description: 'Learn how to authenticate and make your first API request',;
@@ -42,7 +41,6 @@ export function ApiDocsHub(): ;
       color: 'from-red-500 to-rose-500',;
     },'
   ];
-;
   return ('
     <ApiDocsLayout>;
       <div className="max-w-4xl">;"

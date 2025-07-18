@@ -14,8 +14,7 @@ export function WaitlistSection(): '
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _toast } = useToast();
-
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault()'
 
     if (!email || !name || !role || !agreeTerms) {'
@@ -37,8 +36,7 @@ export function WaitlistSection(): '
         title: 'Success!','
         description:'
           "Thank you for registering with Zion. We'll be in touch soon.,;"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})";
-;"";
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})";"";
       // Reset form;""
       setEmail('')'
       setName('')'
@@ -102,8 +100,7 @@ export function WaitlistSection(): '
                 onChange={(e) => setEmail(e.target.value.trim())};""
                 className="bg-zion-blue-dark border-zion-blue-light text-white;"
               />";
-            </div>;"";
-;""
+            </div>;"";""
             <div className="space-y-2>;"";
               <Label htmlFor="role">Your Role</Label>;"
               <Input;";"

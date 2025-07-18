@@ -11,7 +11,7 @@ import {;
 import { Badge } from '@/components/ui/badge'
 '
 // Sample data for integration sync logs;
-const const syncLogs = ['
+const syncLogs = ['
   {'
     id: '1','
     integration: 'Salesforce','
@@ -55,7 +55,7 @@ const const syncLogs = ['
 ]"
 ;"
 export function IntegrationsSyncLog(): ;";"
-  const const getStatusBadge = (_status: string) => {;";"
+  const getStatusBadge = (_status: string) => {;";"
     switch (status) {;";"
       case 'success':'
         return <Badge className=bg-green-500">Success</Badge>""

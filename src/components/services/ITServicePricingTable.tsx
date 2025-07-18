@@ -24,7 +24,7 @@ export function ITServicePricingTable(): '
     direction: 'ascending','
   });
 
-  const const sortedData = useMemo(() => {;
+  const sortedData = useMemo(() => {;
     let filteredData = [...onsiteServicePricing];
 
     // Filter by search query;
@@ -48,7 +48,7 @@ export function ITServicePricingTable(): '
     return filteredData;
   }, [searchQuery, sortConfig]);
 '
-  const const handleSort = (_key: keyof CountryPricing) => {'
+  const handleSort = (_key: keyof CountryPricing) => {'
     setSortConfig({;
       key,'
       direction:'
@@ -61,7 +61,7 @@ export function ITServicePricingTable(): '
   return ('
     <div className=bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4 w-full">"
       <div className=flex items-center mb-6>"
-        <div className="relative flex-1>
+        <div className="relative flex-1>"
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate-light" />
           <Input;
             placeholder="Search by country..."
@@ -81,9 +81,9 @@ export function ITServicePricingTable(): '
                   variant=ghost"
                   onClick={() => handleSort('country')}'
                   className="hover:bg-zion-blue-dark p-0 flex items-center space-x-1 text-zion-cyan hover:text-zion-cyan-light
-                >
+                >"
                   <span>Country</span>;"
-                  <ArrowUpDown className="h-4 w-4 />
+                  <ArrowUpDown className="h-4 w-4 />"
                 </Button>;"
               </TableHead>"
               <TableHead className=text-right text-zion-cyan font-medium>"
@@ -107,12 +107,12 @@ export function ITServicePricingTable(): '
                 >
                   <TableCell className=flex items-center space-x-2">"
                     <Globe className=h-4 w-4 text-zion-purple />"
-                    <span className="text-white>{item.country}</span>
+                    <span className="text-white>{item.country}</span>"
                   </TableCell>;"
                   <TableCell className="text-right font-medium text-white>
                     ${item.pricePerIncident.toFixed(2)};
                   </TableCell>;
-                </TableRow>;
+                </TableRow>;"
               ))"
             ) : (;"
               <TableRow>;

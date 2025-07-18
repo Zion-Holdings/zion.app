@@ -3,9 +3,9 @@ import { RefreshCcw, Sparkles } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 '
 export interface EmptyMatchesCardProps {'
-  onRefresh: "() => void,;";
+  onRefresh: "() => void,"
   isProcessing: "boolean"
-};
+}
 
 export function EmptyMatchesCard(): unknown {): unknown {): unknown {): unknown {): unknown {{
   onRefresh,;""

@@ -17,8 +17,8 @@ import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 '
 interface ResourceItem {'
-  id: "string
-  title: string","
+  id: string
+  title: string,"
   description: string
   type: 'image' | 'video' | 'document' | 'link,'
   icon: "React.JSX.Element"
@@ -48,7 +48,7 @@ export function PartnerResources(): ;"
       title: 'Social Media Banners','
       description: 'Pre-designed graphics for your social channels','
       type: 'image','
-      icon: <FileImage className="h-10 w-10 text-zion-purple />,
+      icon: <FileImage className="h-10 w-10 text-zion-purple />,"
       url: '#','
     },'
     {'
@@ -77,7 +77,7 @@ export function PartnerResources(): ;"
     },;
   ]'
 '
-  const const handleDownload = (resource: ResourceItem) => {;
+  const handleDownload = (resource: ResourceItem) => {;
     // In a real app, this would download the actual resource'
     toast({'
       title: 'Download started','
@@ -102,7 +102,7 @@ export function PartnerResources(): ;"
                 key={resource.id};"
                 className=bg-zion-blue border-zion-blue-light overflow-hidden
               >"
-                <CardContent className="p-6 flex flex-col items-center text-center>
+                <CardContent className="p-6 flex flex-col items-center text-center>"
                   <div className="mb-4">{resource.icon}</div>
                   <h3 className=font-semibold text-white mb-1">"
                     {resource.title};
@@ -160,7 +160,7 @@ export function PartnerResources(): ;"
               <li>Use manipulative or misleading marketing tactics</li>;
               <li>Spam your referral link across unrelated content</li>;
               <li>Modify or alter our brand assets in unauthorized ways</li>;
-              <li>Create fake accounts or use bots to generate referrals</li>;
+              <li>Create fake accounts or use bots to generate referrals</li>;"
             </ul>"
           </div>;"
         </CardContent>;

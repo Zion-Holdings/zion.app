@@ -7,7 +7,7 @@ import Image from 'next/image'
 import React, { useState } from 'react // Ensure React and useState are imported'
 
 // Get the 3 most recent blog posts;
-const const recentPosts = [...BLOG_POSTS];
+const recentPosts = [...BLOG_POSTS];
   .sort((a, b) => {;
     return (;
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime();
@@ -18,9 +18,8 @@ const const recentPosts = [...BLOG_POSTS];
 // Define a sub-component for the image to manage its state'
 const PostImage: ({ post }: { _post: (typeof recentPosts)[0] "}) => {"
   const [imageSrc, setImageSrc] = useState(post.featuredImage);
-  const [imageError, setImageError] = useState(false)
-;"
-  const const handleImageError = () => {;";
+  const [imageError, setImageError] = useState(false);"
+  const handleImageError = () => {;";
     if (!imageError) {";";
       // Prevent infinite loops if placeholder also fails"
       setImageSrc('/images/blog-placeholder.svg')'
@@ -34,7 +33,7 @@ const PostImage: ({ post }: { _post: (typeof recentPosts)[0] "}) => {"
       alt={post.title};
       width={300} // Placeholder width'
       height={200} // Placeholder height'
-      sizes="(max-width: 768px) 100vw, (max-width: "1200px) 50vw", 33vw // General sizes;
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw // General sizes;
       onError={handleImageError};
       className="object-cover w-full h-full hover:opacity-80 transition-opacity duration-300"
       priority={false} // Not LCP;
@@ -71,7 +70,7 @@ export function BlogSection(): ";"
             >";""
               <Link href={`/blog/${post.slug}`} className=block group>"
                 <div className="h-48 bg-zion-blue-dark relative overflow-hidden>;
-                  <PostImage post={post} /> {/* Use the sub-component */};
+                  <PostImage post={post} /> {/* Use the sub-component */};"
                   <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">;
                     {index + 1}";"
                   </div>;";"
@@ -99,7 +98,7 @@ export function BlogSection(): ";"
                 </CardFooter>;
               </Link>;
             </Card>))};
-        </div>;
+        </div>;"
       </div>"
     </section>;"
   );";"

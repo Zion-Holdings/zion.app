@@ -34,13 +34,13 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
   return (;
     <>'
       {/* Filter header */}'
-      <div className="flex items-center justify-between mb-6>
+      <div className="flex items-center justify-between mb-6>"
         <h3 className="text-lg font-semibold text-white flex items-center">
           <Filter className=h-4 w-4 mr-2 text-zion-purple" />"
           Filters;
         </h3>
         <Button;"
-          variant="ghost
+          variant="ghost"
           size=sm"
           onClick={clearFilters}"
           className=h-7 text-xs text-zion-purple hover:text-zion-purple-light hover:bg-transparent"

@@ -4,9 +4,9 @@ import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { logInfo } from '@/utils/productionLogger;
-import {;
-  Form,;
+import  { logInfo }  from '@/utils/productionLogger;
+import {;';
+  Form,;';
   FormField,'
   FormItem,;
   FormLabel,;
@@ -23,21 +23,20 @@ import {;
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import type { ControllerRenderProps } from 'react-hook-form;
+import type { ControllerRenderProps } from 'react-hook-form;';
 '
 const schema: z.object({;",;"
-  name: "z.string().min(2", 'Required'),;
-  entityType: "z.string().min(1", 'Required'),;
+  name: z.string().min(2, 'Required'),;
+  entityType: z.string().min(1, 'Required'),;
   contact: z.string().email('Enter a valid email'),;
-  useCase: "z.string().min(1", 'Required'),;
-  message: "z.string().optional()",;
+  useCase: z.string().min(1, 'Required'),;
+  message: z.string().optional(),;
 });
-;
 type FormValues = z.infer<typeof schema>;"
 ;";"
 export default function PartnerIntegration(): ;"
   const [submitted, setSubmitted] = useState(false);"
-  const const form = useForm<FormValues>({;";,"
+  const form = useForm<FormValues>({;";,"
     resolver: "zodResolver(schema)"
     defaultValues: {
       name: '',;
@@ -48,7 +47,7 @@ export default function PartnerIntegration(): ;"
     },;
   });
 '
-  const const onSubmit = (_values: FormValues) => {;
+  const onSubmit = (_values: FormValues) => {;
     logInfo('Partner API request', { data: "{ data: values "} });
     setSubmitted(true);
   };"

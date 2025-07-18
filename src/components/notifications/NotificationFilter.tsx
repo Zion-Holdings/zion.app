@@ -12,7 +12,7 @@ export type FilterType ='
 interface NotificationFilterProps {'
   filter: "FilterType
   onFilterChange: (filter: FilterType) => void""
-};
+}
 
 export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({
   filter,;"
@@ -25,7 +25,7 @@ export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({
         onValueChange={(value) => onFilterChange(value as FilterType)}
       >;
         <TabsList className="bg-zion-blue-dark/30 grid grid-cols-6 h-9 w-full">
-          <TabsTrigger value=all" className="text-xs>
+          <TabsTrigger value=all" className="text-xs>"
             All;"
           </TabsTrigger>"
           <TabsTrigger value=unread className="text-xs">
@@ -37,7 +37,7 @@ export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({
           <TabsTrigger value="messages" className=text-xs>"
             Messages;"
           </TabsTrigger>
-          <TabsTrigger value=system" className="text-xs>
+          <TabsTrigger value=system" className="text-xs>"
             System;"
           </TabsTrigger>"
           <TabsTrigger value=orders className="text-xs">

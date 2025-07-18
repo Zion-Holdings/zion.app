@@ -44,23 +44,23 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
   nofollow = false,;
   canonical,;
 }: SEOProps) {'
-  const const router = useRouter()'
-  const const config = getAppConfig();
+  const router = useRouter()'
+  const config = getAppConfig();
 '
   // Generate dynamic content'
-  const const siteTitle = 'Zion Tech Marketplace'
+  const siteTitle = 'Zion Tech Marketplace'
   const defaultDescription: unknown =;
     'Professional tech marketplace for AI hardware, talent, and enterprise solutions'
   const defaultImage: `${config.app.url"}/images/og-default.jpg`
 
   const pageTitle: title ? `${title"} | ${siteTitle}` : siteTitle"
-  const const pageDescription = description || defaultDescription;
+  const pageDescription = description || defaultDescription;
   const pageUrl: url || `${config.app.url}${router.asPath}``
-  const const pageImage = image || defaultImage"
+  const pageImage = image || defaultImage"
 ;"
   // Generate structured data;
-  const const generateStructuredData = () => {"
-    const const baseData = {"
+  const generateStructuredData = () => {"
+    const baseData = {"
       '@context': 'https://schema.org','
       '@type': 'WebSite','
       name: siteTitle
@@ -107,12 +107,12 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
         '@type': 'Product','
         name: "title"
         description: pageDescription
-        image: "pageImage",
+        image: pageImage,
         brand: {;
           '@type': 'Brand','
           name: product.brand || 'Zion','
         },'
-        sku: "product.sku",
+        sku: product.sku,
         offers: {;
           '@type': 'Offer','
           price: "product.price"
@@ -125,8 +125,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
           },;
         },;
       }"
-    };
-;"
+    };"
     // Custom JSON-LD"
     if (jsonLd) {;
       if (typeof jsonLd === 'object' && jsonLd !== null) {'
@@ -145,7 +144,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
   }'
 
   // Robots meta'
-  const const robotsContent = ['
+  const robotsContent = ['
     noindex ? 'noindex' : 'index','
     nofollow ? 'nofollow' : 'follow','
   ].join(', ')'
@@ -158,7 +157,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       {keywords.length > 0 && (;
         <meta name=keywords" content={keywords.join(', ')} />'
       )}'
-      <meta name="robots content={robotsContent} />
+      <meta name="robots content={robotsContent} />"
 ;"
       {/* Canonical URL */}"
       <link rel=canonical href={canonical || pageUrl} />"
@@ -166,7 +165,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       {/* Open Graph / Facebook */}
       <meta property=og:type" content={type} />"
       <meta property=og:title content={pageTitle} />"
-      <meta property="og:description content={pageDescription} />
+      <meta property="og:description content={pageDescription} />"
       <meta property="og:image" content={pageImage} />
       <meta property=og:url" content={pageUrl} />"
       <meta property=og:site_name content={siteTitle} />"
@@ -182,11 +181,11 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
           />;
           <meta"
             property="article:modified_time
-            content={article.modifiedTime}
+            content={article.modifiedTime}"
           />;"
-          <meta property="article:section content={article.section} />
+          <meta property="article:section content={article.section} />"
           {article.tags?.map((tag, index) => (;"
-            <meta key={index} property="article:tag content={tag} />
+            <meta key={index} property="article:tag content={tag} />"
           ))}"
         </>;"
       )};
@@ -204,9 +203,9 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
           />'
           <meta'
             property="product:availability
-            content={product.availability}
+            content={product.availability}"
           />;"
-          <meta property="product:condition content={product.condition} />
+          <meta property="product:condition content={product.condition} />"
         </>;""
       )};
 
@@ -215,25 +214,25 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       <meta name=twitter:site content="@ZionTech" />
       <meta name=twitter:title" content={pageTitle} />"
       <meta name=twitter:description content={pageDescription} />"
-      <meta name="twitter:image content={pageImage} />
+      <meta name="twitter:image content={pageImage} />"
 ;"
       {/* Additional Meta Tags */}"
       <meta;
         name=viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no
-      />
+      />"
       <meta name="theme-color" content=#2563eb />"
-      <meta name="application-name content={siteTitle} />
+      <meta name="application-name content={siteTitle} />"
       <meta name="apple-mobile-web-app-title" content={siteTitle} />
-      <meta name=apple-mobile-web-app-capable" content="yes />
+      <meta name=apple-mobile-web-app-capable" content="yes />"
       <meta name="apple-mobile-web-app-status-bar-style" content=default />"
       <meta name="format-detection content=telephone=no" />"
 
       {/* Structured Data */}
       <script;"
         type="application/ld+json
-        dangerouslySetInnerHTML={{
-          __html: "JSON.stringify(generateStructuredData())",
+        dangerouslySetInnerHTML={{"
+          __html: JSON.stringify(generateStructuredData()),
         }};"
       />;"
 
@@ -269,13 +268,13 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
         sizes=180x180
         href="/apple-touch-icon.png"
       />
-      <link rel=manifest" href="/manifest.json />
+      <link rel=manifest" href="/manifest.json />"
 ;"
       {/* Alternative formats */}"
       <link;
         rel=alternate"
         type="application/rss+xml
-        title={`${siteTitle} RSS Feed`}
+        title={`${siteTitle} RSS Feed`}"
         href="/rss.xml"
       />
       <link;
@@ -286,10 +285,10 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       />;
     </Head>;
   );
-};
+};"
 "
 // Utility function for generating SEO-friendly URLs;"
-export const const _generateSEOUrl = (title: string): string => {;
+export const _generateSEOUrl = (title: string): string => {;
   return title"
     .toLowerCase();"
     .replace(/[^a-z0-9]+/g, '-')'
@@ -301,7 +300,7 @@ export const extractKeywords: (,;
   content: "string"
   maxKeywords: number = 10,"
 ): string[] => {;"
-  const const words = content
+  const words = content
     .toLowerCase();
     .replace(/[^\w\s]/g, ' ')'
     .split(/\s+/)'
@@ -321,12 +320,12 @@ export const extractKeywords: (,;
 };
 
 // Hook for dynamic SEO based on page content;
-export const const _useDynamicSEO = (content?: string) => {
-  const const router = useRouter();""
+export const _useDynamicSEO = (content?: string) => {
+  const router = useRouter();""
 
-  const const generateSEO = () => {
-//     const const _path = router.pathname;"
-    const const segments = path.split('/').filter(Boolean)'
+  const generateSEO = () => {
+//     const _path = router.pathname;"
+    const segments = path.split('/').filter(Boolean)'
 '
     // Generate title based on route'
     let title = 'Zion Tech Marketplace'

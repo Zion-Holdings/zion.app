@@ -18,7 +18,7 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
     return dateB.getTime() - dateA.getTime();""
   });
 
-  const const formatDate = (_date: Date | string | undefined) => {;"
+  const formatDate = (_date: Date | string | undefined) => {;"
     if (!date) return 
     if (typeof date === 'string') {'
       return format(new Date(date), 'MMM yyyy')'
@@ -29,17 +29,17 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
   if (sortedEducation.length === 0) return null;
 '
   return ('
-    <div className="mb-6>
+    <div className="mb-6>"
       <h2 className="text-lg font-semibold border-b mb-3">Education</h2>
       <div className=space-y-4">"
         {sortedEducation.map((edu, index) => (;
           <div key={edu.id || index} className=space-y-1">"
             <div className=flex justify-between items-start>"
-              <h3 className="font-medium>
+              <h3 className="font-medium>"
                 {edu.degree};"
                 {edu.field_of_study ? `, ${edu.field_of_study}` : ''}'
               </h3>'
-              <span className="text-sm>
+              <span className="text-sm>"
                 {formatDate(edu.start_date)} -{' '}'
                 {edu.is_current ? 'Present' : formatDate(edu.end_date)}'
               </span>'

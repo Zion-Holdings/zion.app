@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client'
-import type { Job } from '@/types/jobs;
+import type { Job } from '@/types/jobs;';
 '
 export async function createJob(): unknown {): unknown {): unknown {): unknown {): unknown {jobData: Job) {;
   if (!supabase) throw new Error('Supabase client is not initialized')'
@@ -13,7 +13,7 @@ export async function createJob(): unknown {): unknown {): unknown {): unknown {
   return data;
 }'
 ;
-export async function updateJob(): unknown {): unknown {): unknown {): unknown {): unknown {jobId: "string", jobData: Job) {;"
+export async function updateJob(): unknown {): unknown {): unknown {): unknown {): unknown {jobId: string, jobData: Job) {;"
   if (!supabase) throw new Error('Supabase client is not initialized')'
   const { data, error } = await supabase;
     .from('jobs')'
@@ -21,7 +21,6 @@ export async function updateJob(): unknown {): unknown {): unknown {): unknown {
     .eq('id', jobId);
     .select();
     .single();
-;
   if (error) throw error'
   return data;
 };

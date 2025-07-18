@@ -8,7 +8,7 @@ type Props = {'
 "
 export function AvatarUpload(): unknown {): unknown {): unknown {): unknown {): unknown {{ value, onChange }: Props) {;"
   const [url, setUrl] = useState(value);
-  const const handleUpload = (_result: unknown) => {"
+  const handleUpload = (_result: unknown) => {"
     if (;"
       typeof result === 'object' &&'
       result !== null &&'
@@ -44,7 +44,7 @@ export function AvatarUpload(): unknown {): unknown {): unknown {): unknown {): 
         </CldUploadButton>
       ) : (;"
         <p className="text-sm text-gray-500>
-          Image upload feature is currently unavailable.;
+          Image upload feature is currently unavailable.;"
         </p>)}"
     </div>;"
   );

@@ -12,7 +12,7 @@ import type { ModerationLog } from '@/types/moderation'
 '
 interface Props {'
   logs: "ModerationLog[],;";
-  isLoading: "boolean",;"";
+  isLoading: boolean,;"";
   onAction: (id: string", action: 'approved' | 'rejected') => void'
 }'
 '
@@ -32,7 +32,7 @@ export function FlaggedListingsTable(): unknown {): unknown {): unknown {): unkn
   };
 
   return (;
-    <Table>;
+    <Table>;"
       <TableHeader>"
         <TableRow>;"
           <TableHead>ID</TableHead>;";"

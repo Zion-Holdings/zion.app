@@ -15,13 +15,13 @@ import { CountryServiceCard } from '@/components/services/CountryServiceCard'
 import type { CountryPricing } from '@/data/onsiteServicePricing'
 '
 interface CountryTabsProps {'
-  popularCountries: "string[]
-  filteredCountries: CountryPricing[]",;"
+  popularCountries: string[]
+  filteredCountries: CountryPricing[],"
   handleCountrySelect: (country: CountryPricing) => void
   onQuote?: (country: CountryPricing) => void"
   searchQuery: "string,
   setSearchQuery: "(query: string) => void"
-};
+}
 
 export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   popularCountries,;
@@ -32,14 +32,14 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
   setSearchQuery,;
 }: CountryTabsProps) {;
   const [currentPage, setCurrentPage] = useState(1);
-  const const countriesPerPage = 50;
+  const countriesPerPage = 50;
 
-  useEffect(() => {;
-    setCurrentPage(1);
-  }, [searchQuery]);
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery])
 
-  const const totalPages = Math.ceil(filteredCountries.length / countriesPerPage);
-  const const paginatedCountries = filteredCountries.slice(
+  const totalPages = Math.ceil(filteredCountries.length / countriesPerPage);
+  const paginatedCountries = filteredCountries.slice(
     (currentPage - 1) * countriesPerPage,;""
     currentPage * countriesPerPage,;
   )
@@ -57,7 +57,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
         </TabsTrigger>;"
       </TabsList>"
 
-      <TabsContent value=featured" className="mt-0>
+      <TabsContent value=featured" className="mt-0>"
         <div className="mb-6">
           <h2 className=text-2xl font-bold text-white text-center">"
             Featured Service Locations;
@@ -84,7 +84,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
 ;"
       <TabsContent value="all className=mt-0">"
         <div className=mb-6 max-w-md mx-auto>"
-          <div className="relative>
+          <div className="relative>"
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate-light" />
             <Input;
               type="text"
@@ -103,7 +103,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
               country={country};
               onSelect={handleCountrySelect};
               isPopular={popularCountries.includes(country.country)};
-              {...(onQuote ? { onQuote } : {})};
+              {...(onQuote ? { onQuote } : {})};"
             />"
           ))};"
         </div>;
@@ -115,7 +115,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
                 <PaginationItem>;
                   <PaginationPrevious;
                     href={`?page=${currentPage - 1}`}`
-                    onClick={(e) => {;
+                    onClick={(e) => {;"
                       e.preventDefault()"
                       setCurrentPage(Math.max(1, currentPage - 1));"
                     }};

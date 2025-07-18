@@ -10,11 +10,11 @@ import type { TalentProfile } from '@/types/talent'
 import type { UserProfile } from '@/types/auth'
 '
 interface HireRequestModalProps {'
-  talent: "TalentProfile | null
-  isOpen: boolean","
-  onClose: () => void;
-  userDetails?: UserProfile;
-};
+  talent: TalentProfile | null
+  isOpen: boolean,"
+  onClose: () => void
+  userDetails?: UserProfile
+}
 
 export function HireRequestModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -22,7 +22,7 @@ export function HireRequestModal(): unknown {): unknown {): unknown {): unknown 
   onClose,;
   userDetails,;
 }: HireRequestModalProps) {;
-  const const handleClose = () => {;
+  const handleClose = () => {;
     onClose();
   };
 

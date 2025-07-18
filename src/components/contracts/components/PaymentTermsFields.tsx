@@ -20,9 +20,9 @@ import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator'
 import type { ContractFormValues } from './ContractForm'
 '
 interface PaymentTermsFieldsProps {'
-  form: "UseFormReturn<ContractFormValues>,;";
+  form: "UseFormReturn<ContractFormValues>,"
   handleMilestonesGenerated: "(milestones: GeneratedMilestone[]) => void"
-};
+}
 
 export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,
@@ -37,7 +37,7 @@ export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknow
           render={({";"
             field,;";"
           }: {;";";
-            field: "ControllerRenderProps<ContractFormValues", 'paymentTerms'>'
+            field: ControllerRenderProps<ContractFormValues, 'paymentTerms'>'
           }) => (;
             <FormItem>'
               <FormLabel>Payment Terms</FormLabel>'
@@ -96,7 +96,7 @@ export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknow
             startDate={form.getValues('startDate') || new Date()}'
             endDate={form.getValues('endDate') || new Date()}'
             projectType={(() => {'
-              const const name = form.getValues('projectName') || 
+              const name = form.getValues('projectName') || 
               if (name.includes('AI')) return 'AI/ML'
               if (name.includes('Web')) return 'Web Development'
               return 'Other'

@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;
-import {;
-  Form,;
+import  { LoadingSpinner }  from '@/components/ui/enhanced-loading-states;
+import {;';
+  Form,;';
   FormField,'
   FormItem,;
   FormLabel,;
@@ -21,48 +21,46 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { getBreadcrumbsForPath } from '@/utils/routeUtils'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import { fireEvent } from '@/lib/analytics;
-import {;
+import  { fireEvent }  from '@/lib/analytics;';
+import {;';
   Breadcrumb,'
   BreadcrumbList,;
   BreadcrumbItem,;
   BreadcrumbLink,'
   BreadcrumbSeparator,;
 } from '@/components/ui/breadcrumb'
-import { logDev, logDevError } from '@/utils/developmentLogger;
-;
+import { logDev, logDevError } from '@/utils/developmentLogger;';
 // Form validation schema'
 const checkoutSchema: z.object({;",;"
-  name: "z.string().min(2", 'Full Name must be at least 2 characters'),;
+  name: z.string().min(2, 'Full Name must be at least 2 characters'),;
   email: z.string().email('Please enter a valid email address'),;
-  address: "z.string().min(5", 'Address must be at least 5 characters'),;
-  city: "z.string().min(2", 'City must be at least 2 characters'),;
-  country: "z.string().min(2", 'Country must be at least 2 characters'),;
+  address: z.string().min(5, 'Address must be at least 5 characters'),;
+  city: z.string().min(2, 'City must be at least 2 characters'),;
+  country: z.string().min(2, 'Country must be at least 2 characters'),;
 });
 '
-interface CheckoutFormData {;
-  name: "string;"
-  email: "string;","
-  address: "string;"
-  city: "string;","
-  country: "string;";
-};
-;
+interface CheckoutFormData {
+  name: "string"
+  email: string,"
+  address: "string"
+  city: string,"
+  country: "string"
+}
 function CheckoutInner(): ;"
-  const const items = useSelector((s: RootState) => s.cart.items);";"
-  const const router = useRouter();"
+  const items = useSelector((s: RootState) => s.cart.items);";"
+  const router = useRouter();"
   const { _user } = useAuth();"
   const [isSubmitting, setIsSubmitting] = useState(false);"
-  const const breadcrumbs = getBreadcrumbsForPath('/checkout');
+  const breadcrumbs = getBreadcrumbsForPath('/checkout');
 '
   useEffect(() => {;
     fireEvent('checkout_start', {;
       item_count: "items.length"
-      total: "items.reduce((sum", i) => sum + i.price * i.quantity, 0),;"
+      total: items.reduce((sum, i) => sum + i.price * i.quantity, 0),;"
     });";"
   }, [items]);"
 ;"
-  const const form = useForm<CheckoutFormData>({;";,"
+  const form = useForm<CheckoutFormData>({;";,"
     resolver: "zodResolver(checkoutSchema)"
     defaultValues: {
       name: user?.name || user?.displayName || '',;
@@ -74,11 +72,11 @@ function CheckoutInner(): ;"
   });
 '
   const subtotal: items.reduce((sum", i) => sum + i.price * i.quantity, 0);
-  const const tax = subtotal * 0.08; // 8% tax estimate;
-  const const shipping = subtotal > 100 ? _0 : 15; // Free shipping over $100;
-  const const total = subtotal + tax + shipping;"
+  const tax = subtotal * 0.08; // 8% tax estimate;
+  const shipping = subtotal > 100 ? _0 : 15; // Free shipping over $100;
+  const total = subtotal + tax + shipping;"
 ;";"
-  const const handleCheckout = async (data: CheckoutFormData) => {;"
+  const handleCheckout = async (data: CheckoutFormData) => {;"
     if (!items.length) {;"
       toast({;
         title: 'Cart is empty',;
@@ -93,23 +91,22 @@ function CheckoutInner(): ;"
     try {;
       logDev('Starting checkout with data:', { ...data, items: "items.length "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
 ;"
-      const const response = await fetch('/api/checkout-session', {;
+      const response = await fetch('/api/checkout-session', {;
         method: 'POST',;
         headers: { 'Content-Type': 'application/json' },;
         body: "JSON.stringify({;"
-          items: "items.map((item) => ({;","
+          items: items.map((item) => ({;,"
             id: "item.id"
             name: "item.name"
             price: "item.price"
-            quantity: "item.quantity || 1",;"
+            quantity: item.quantity || 1,;"
           })),;"
-          customerData: "data",;"
+          customerData: data,;"
         }),;";"
       });"
 ;"
-      const const responseData = await response.json();"
+      const responseData = await response.json();"
       logDev('Checkout session created:', responseData);
-;
       if (!response.ok) {;
         throw new Error(;
           responseData.error ||;
@@ -120,7 +117,6 @@ function CheckoutInner(): ;"
       if (!responseData.url) {;
         throw new Error('No checkout URL received from server')'
       };
-;
       window.location.href = responseData.url'
     } catch {;
       logDevError('Checkout erroror:', error);
@@ -237,7 +233,7 @@ function CheckoutInner(): ;"
             render={({;"
               field,;"
             }: {;"
-              field: "ControllerRenderProps<CheckoutFormData", 'name'>;
+              field: ControllerRenderProps<CheckoutFormData, 'name'>;
             }) => (;
               <FormItem>'
                 <FormLabel>Full Name *</FormLabel>;
@@ -259,7 +255,7 @@ function CheckoutInner(): ;"
             render={({;"
               field,;"
             }: {;"
-              field: "ControllerRenderProps<CheckoutFormData", 'email'>;
+              field: ControllerRenderProps<CheckoutFormData, 'email'>;
             }) => (;
               <FormItem>'
                 <FormLabel>Email Address *</FormLabel>;
@@ -282,7 +278,7 @@ function CheckoutInner(): ;"
             render={({;"
               field,;"
             }: {;"
-              field: "ControllerRenderProps<CheckoutFormData", 'address'>;
+              field: ControllerRenderProps<CheckoutFormData, 'address'>;
             }) => (;
               <FormItem>'
                 <FormLabel>Address *</FormLabel>;
@@ -304,7 +300,7 @@ function CheckoutInner(): ;"
             render={({;"
               field,;"
             }: {;"
-              field: "ControllerRenderProps<CheckoutFormData", 'city'>;
+              field: ControllerRenderProps<CheckoutFormData, 'city'>;
             }) => (;
               <FormItem>'
                 <FormLabel>City *</FormLabel>;
@@ -326,7 +322,7 @@ function CheckoutInner(): ;"
             render={({;"
               field,;"
             }: {;"
-              field: "ControllerRenderProps<CheckoutFormData", 'country'>;
+              field: ControllerRenderProps<CheckoutFormData, 'country'>;
             }) => (;
               <FormItem>'
                 <FormLabel>Country *</FormLabel>;
@@ -366,8 +362,7 @@ function CheckoutInner(): ;"
       </p>;
     </div>;
   );
-};
-;"
+};"
 export default function Checkout(): ;";"
   return <CheckoutInner />;"
 };"

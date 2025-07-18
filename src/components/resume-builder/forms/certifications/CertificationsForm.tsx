@@ -16,11 +16,11 @@ import { certificationSchema } from './types'
 import type { CertificationFormValues } from './types'
 '
 interface CertificationsFormProps {'
-  resumeId: "string
-  certifications: Certification[]","
+  resumeId: string
+  certifications: Certification[],"
   onComplete: () => void
   onBack: "() => void"
-};
+}
 
 export function CertificationsForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resumeId,;
@@ -28,17 +28,16 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
   onComplete,;
   onBack,;
 }: CertificationsFormProps) {;
-  const {;
+  const { ;
     addCertification,;
     updateCertification,;
     deleteCertification,;
-    isLoading,;
-  } = useResume();
+    isLoading,; } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null);""
 
   // Helper function to format dates as strings for form inputs
-  const const formatDateValue = (dateValue: string | Date | undefined): string => {;"
+  const formatDateValue = (dateValue: string | Date | undefined): string => {;"
     if (!dateValue) return 
     if (typeof dateValue === 'string') return dateValue'
     return format(dateValue, 'yyyy-MM-dd')'
@@ -56,7 +55,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
     },;
   });
 
-  const const handleAddOrUpdate = async (_data: CertificationFormValues) => {'
+  const handleAddOrUpdate = async (_data: CertificationFormValues) => {'
     try {'
       setError(null);
       let success'
@@ -74,8 +73,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
         success = await updateCertification(editingId, certData);
       } else {;
         success = await addCertification(resumeId, certData)"
-      };
-;"
+      };"
       if (success) {"
         form.reset({;
           name: '','
@@ -92,7 +90,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
     };
   };
 '
-  const const handleEdit = (_cert: Certification) => {'
+  const handleEdit = (_cert: Certification) => {'
     setEditingId(cert.id!);
     form.reset({'
       ...cert,'
@@ -101,16 +99,16 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
     });""
   };
 
-  const const handleDelete = async (_id: string) => {;"
+  const handleDelete = async (_id: string) => {;"
     if (confirm('Are you sure you want to delete this certification?')) {'
       await deleteCertification(id)'
     }'
   };
 '
   return ('
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <div>;"
-        <h2 className="text-xl font-semibold mb-2>
+        <h2 className="text-xl font-semibold mb-2>"
           Certifications & Licenses;"
         </h2>"
         <p className=text-muted-foreground>"
@@ -135,7 +133,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
         <Form {...form}>;
           <form'
             onSubmit={form.handleSubmit(handleAddOrUpdate)}'
-            className="space-y-4
+            className="space-y-4"
           >;"
             <CertificationFormFields form={form} />"
 
@@ -168,7 +166,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
                 {editingId ? 'Cancel' : 'Back'}'
               </Button>'
 '
-              <div className="flex gap-2>
+              <div className="flex gap-2>"
                 <Button type="submit" disabled={isLoading}>
                   {isLoading && (;
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

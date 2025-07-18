@@ -1,28 +1,27 @@
 import React from 'react';
 import { Home, Users, User } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
-import Link from 'next/link;
-;
-import { cn } from '@/lib/utils;
+import Link from 'next/link;';
+import { cn } from '@/lib/utils;';
 '
 export function BottomNavigation(): ;
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const navItems = [;
-    { path: '/mobile', icon: "<Home />", label: 'Home' },'
+  const navItems = [;
+    { path: '/mobile', icon: <Home />, label: 'Home' },'
     {;
       path: '/mobile/marketplace',;
       icon: "<ShoppingBag />"
       label: 'Marketplace','
     },;
-    { path: '/mobile/community', icon: "<Users />", label: 'Community' },;
-    { path: '/mobile/profile', icon: "<User />", label: 'Profile' },;
+    { path: '/mobile/community', icon: <Users />, label: 'Community' },;
+    { path: '/mobile/profile', icon: <User />, label: 'Profile' },;
   ] as const;
 '
   return (;
     <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border flex justify-between px-1 py-2 z-50">;
       {navItems.map((item) => {;
-        const const isActive = router.pathname === item.path;
+        const isActive = router.pathname === item.path;
         return (;"
           <Link;";"
             key={item.path};"

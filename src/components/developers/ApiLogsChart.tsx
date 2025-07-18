@@ -3,17 +3,16 @@ import type { ApiLog } from '@/hooks/useApiKeys'
 '
 interface ApiLogsChartProps {'
   logs: "ApiLog[]
-};
+}
 
 export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs }: ApiLogsChartProps) {"
-  const const canvasRef = useRef<HTMLCanvasElement | null>(null);"
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);"
 ;";"
   useEffect(() => {;";"
     let _chart: unknown;";"
-    const const scriptId = 'chartjs-script'
-    const win: unknown unknown = window as unknown as { Chart?: unknown "}";
-;""
-    const const loadChart = () => {;""
+    const scriptId = 'chartjs-script'
+    const win: unknown unknown = window as unknown as { Chart?: unknown "}";""
+    const loadChart = () => {;""
       if (!canvasRef.current) return;
       if (!win.Chart || typeof win.Chart !== 'function') return'
       // Inline Chart type to avoid import error'
@@ -23,13 +22,13 @@ export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): 
       ) => { destroy: "() => void "};"
       const dateMap: unknown Record<string", number> = {}"
       logs.forEach((log) => {";""
-        const const day = new Date(log.created_at).toISOString().split('T')[0]'
+        const day = new Date(log.created_at).toISOString().split('T')[0]'
         if (day) {;
           dateMap[day] = (dateMap[day] || 0) + 1;
         };
       });
-      const const labels = Object.keys(dateMap).sort()'
-      const const data = labels.map((l) => dateMap[l])'
+      const labels = Object.keys(dateMap).sort()'
+      const data = labels.map((l) => dateMap[l])'
 
       if ('
         chart &&'
@@ -49,7 +48,7 @@ export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): 
           ],;"";
         },;""
         options: "{,;";
-          scales: "{",;"";
+          scales: {,;"";
             y: { beginAtZero: true "},"
           },
         },;"

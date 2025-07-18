@@ -1,126 +1,121 @@
-import { useState } from 'react';
+import { useState } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import type { Resume } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger'
 export function useFetchResume(): ;
-  const { _user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const { _user } = useAuth();''
+  const [isLoading, setIsLoading] = useState(false);''
   const [error, setError] = useState<string | null>(null)'
-  const [resume, setResume] = useState<Resume | null>(null);
-;
-  const const fetchResume = async (resumeId?: string) => {'
-    if (!user) {;
-      setError('You must be logged in to access resumes');
+  const [resume, setResume] = useState<Resume | null>(null)'
+  const fetchResume = async (resumeId?: string) => {'
+    if (!user) {'
+      setError('You must be logged in to access resumes')'
       return null;
     };
 '
-    setIsLoading(true);
+    setIsLoading(true)'
     setError(null);
 '
-    try {;
+    try {'
       if (!supabase) throw new Error('Supabase client not initialized')'
-      // If resumeId is provided, fetch that specific resume;
-      // Otherwise, fetch the user's active resume or most recent resume;
-      let resumeQuery = supabase.from('talent_resumes').select('*');
+      // If resumeId is provided, fetch that specific resume'
+      // Otherwise, fetch the user's active resume or most recent resume'
+      let resumeQuery = supabase.from('talent_resumes').select('*')'
 '
-      if (resumeId) {;
-        resumeQuery = resumeQuery.eq('id', resumeId);
+      if (resumeId) {'
+        resumeQuery = resumeQuery.eq('id', resumeId)'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {'
-        resumeQuery = resumeQuery;
-          .eq('user_id', user.id);
-          .order('is_active', { ascending: "false "});"
-          .order('created_at', { ascending: "false "});"
-          .limit(1);"
-      };"
+        resumeQuery = resumeQuery'
+          .eq('user_id', user.id)'
+          .order('is_active', { ascending: "false })
+          .order('created_at', { ascending: "false "})
+          .limit(1);
+      }"
 ;"
-      const { data: "resumeData", error: "resumeError "} =;"
+      const { data: resumeData, error: resumeError } ="
         await resumeQuery.single();"
-;"
-      if (resumeError) {;"
-        if (resumeError.code === 'PGRST116') {;
+
+      if (resumeError) {;
+        if (resumeError.code === 'PGRST116') {'
           // No resume found, this is not a critical error for a new user;
           setResume(null);
           setIsLoading(false);
           return null;
         }'
-        throw resumeError;
+        throw resumeError'
       };
 '
-      // Fetch work experience;
-      const { data: "workData", error: "workError "} = await supabase;"
-        .from('work_history');
-        .select('*');
-        .eq('resume_id', resumeData.id);
-        .order('is_current', { ascending: "false "});"
-        .order('start_date', { ascending: "false "});"
-;";"
-      if (workError) throw workError;"
-;"
-      // Fetch education;"
-      const { data: "educationData", error: "educationError "} = await supabase;"
-        .from('education');
-        .select('*');
-        .eq('resume_id', resumeData.id);
-        .order('is_current', { ascending: "false "});"
-        .order('start_date', { ascending: "false "});"
-;";"
-      if (educationError) throw educationError;"
-;"
-      // Fetch skills;"
-      const { data: "skillsData", error: "skillsError "} = await supabase;"
-        .from('resume_skills');
-        .select('*');
+      // Fetch work experience'
+      const { data: workData, error: "workError "} = await supabase
+        .from('work_history')'
+        .select('*')'
         .eq('resume_id', resumeData.id)'
-;
+        .order('is_current', { ascending: false "})"
+        .order('start_date', { ascending: false })"
+;"
+      if (workError) throw workError;
+"
+      // Fetch education;"
+      const { data: educationData, error: educationError } = await supabase"
+        .from('education')'
+        .select('*')'
+        .eq('resume_id', resumeData.id)'
+        .order('is_current', { ascending: "false })
+        .order('start_date', { ascending: "false "})
+;"
+      if (educationError) throw educationError;"
+
+      // Fetch skills;
+      const { data: skillsData, error: "skillsError "} = await supabase
+        .from('resume_skills')'
+        .select('*')'
+        .eq('resume_id', resumeData.id)'
+'
       if (skillsError) throw skillsError;
 '
-      // Fetch certifications;
-      const { data: "certData", error: "certError "} = await supabase;"
-        .from('certifications');
-        .select('*');
-        .eq('resume_id', resumeData.id);
-;
+      // Fetch certifications'
+      const { data: certData, error: certError "} = await supabase"
+        .from('certifications')'
+        .select('*')'
+        .eq('resume_id', resumeData.id)'
       if (certError) throw certError'
-;
-      const fullResume: unknown "Resume = {;"
+'
+      const fullResume: unknown Resume = {
         id: "resumeData.id"
-        user_id: "resumeData.user_id"
+        user_id: resumeData.user_id
         basic_info: {
           id: "resumeData.id"
-          title: "resumeData.title"
+          title: resumeData.title
           headline: "resumeData.headline"
-          summary: "resumeData.summary",;"
-        },;"
+          summary: resumeData.summary,
+        },;
         work_experience: "workData || []"
-        education: "educationData || []"
+        education: educationData || []
         skills: "skillsData || []"
-        certifications: "certData || []"
-        is_active: "resumeData.is_active",;
-      };"
-;";"
+        certifications: certData || []
+        is_active: resumeData.is_active,"
+      }"
+
       setResume(fullResume);"
-      return fullResume;"
-    } catch (e: unknown) {;"
-      logErrorToProduction('Error fetching resume:', { data: "e "});"
+      return fullResume"
+    } catch (e: unknown) {;
+      logErrorToProduction('Error fetching resume:', { data: e "})"
       const errorMessage: unknown =;"
-        e instanceof Error && e.message ? e.message : 'Unknown error;
+        e instanceof Error && e.message ? e.message : 'Unknown error'
       setError(errorMessage);
       return null;
     } finally {;
       setIsLoading(false);
     };
   };
-;
   return {;
     isLoading,;
     error,;
     resume,'
-    fetchResume,;
+    fetchResume,'
   };
 };
-;
 }'
 }
 }'

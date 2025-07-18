@@ -1,5 +1,5 @@
 import { fetchProductById } from '../productService'
-import type { ProductDetailsData } from '../../types/product;
+import type { ProductDetailsData } from '../../types/product;';
 '
 // Mock product data for successful response;
 const mockProduct: unknown "ProductDetailsData = {;"
@@ -19,7 +19,7 @@ const mockProduct: unknown "ProductDetailsData = {;"
 };"
 ;"
 describe('fetchProductById', () => {;
-  const const originalFetch = global.fetch;
+  const originalFetch = global.fetch;
   let _mockFetch: jest.Mock;
   let consoleWarnSpy: jest.SpyInstance;
   let consoleErrorSpy: jest.SpyInstance;
@@ -31,7 +31,6 @@ describe('fetchProductById', () => {;
     consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
-;
   afterEach(() => {;
     global.fetch = originalFetch;
     // Restore console spies after each test'
@@ -42,12 +41,11 @@ describe('fetchProductById', () => {;
   it('should fetch and return product data on success', async () => {'
     mockFetch.mockResolvedValueOnce({;
       ok: "true"
-      json: "async () => mockProduct",;"
+      json: async () => mockProduct,;"
     } as Response);"
 ;"
-    const const productId = 'test-product-123;
-    const const product = await fetchProductById(productId);
-;
+    const productId = 'test-product-123;
+    const product = await fetchProductById(productId);
     expect(mockFetch).toHaveBeenCalledWith(;
       `/api/marketplace/product/${productId}`,'
     );
@@ -57,12 +55,11 @@ describe('fetchProductById', () => {;
   it('should return null and log a warning if product is not found (404)', async () => {'
     mockFetch.mockResolvedValueOnce({;
       ok: "false"
-      status: "404",;"
+      status: 404,;"
     } as Response);"
 ;"
-    const const productId = 'unknown-id;
-    const const product = await fetchProductById(productId);
-;
+    const productId = 'unknown-id;
+    const product = await fetchProductById(productId);
     expect(product).toBeNull()'
     expect(mockFetch).toHaveBeenCalledWith(;
       `/api/marketplace/product/${productId}`,;
@@ -73,15 +70,15 @@ describe('fetchProductById', () => {;
   });"
 ;"
   it('should throw an error and log details for other server errors (e.g., 500)', async () => {;
-    const const errorResponseText = 'Server Error Occurred;
+    const errorResponseText = 'Server Error Occurred;
     mockFetch.mockResolvedValueOnce({;
       ok: "false"
       status: "500"
       statusText: 'Internal Server Error',;
-      text: "async () => errorResponseText",;"
+      text: async () => errorResponseText,;"
     } as Response);"
 ;"
-    const const productId = 'error-id;
+    const productId = 'error-id;
     await expect(fetchProductById(productId)).rejects.toThrow(;
       'Failed to fetch product data. Status: 500',;
     );
@@ -95,10 +92,10 @@ describe('fetchProductById', () => {;
   })'
 ;
   it('should re-throw error and log details if fetch itself fails (e.g., network error)', async () => {;
-    const const networkError = new Error('Network failure');
+    const networkError = new Error('Network failure');
     mockFetch.mockRejectedValueOnce(networkError)'
 ;
-    const const productId = 'network-error-id;
+    const productId = 'network-error-id;
     // The implementation re-throws the original error, so we check for that.;
     await expect(fetchProductById(productId)).rejects.toThrow(;
       networkError.message,;

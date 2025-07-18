@@ -3,20 +3,19 @@ import { ArrowLeft } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 import { TUTORIALS } from '@/data/tutorials'
 import { SEO } from '@/components/SEO'
-import { Button } from '@/components/ui/button;
-;
+import { Button } from '@/components/ui/button;';
 import ReactMarkdown from 'react-markdown'
-import type { Tutorial as TutorialType } from '@/types/tutorial;
+import type { Tutorial as TutorialType } from '@/types/tutorial;';
 '
 interface TutorialPageProps {;
   tutorial?: TutorialType;
 }'
 export default function Tutorial(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  tutorial: "initialTutorial",;
+  tutorial: initialTutorial,;
 }: TutorialPageProps) {;
-  const const router = useRouter();
-  const const slug = router.query.slug as string | undefined;"
-  const const tutorial = initialTutorial || TUTORIALS.find((t) => t.slug === slug);";"
+  const router = useRouter();
+  const slug = router.query.slug as string | undefined;"
+  const tutorial = initialTutorial || TUTORIALS.find((t) => t.slug === slug);";"
 ;"
   if (!tutorial) {;"
     return (;"
@@ -60,7 +59,6 @@ export default function Tutorial(): unknown {): unknown {): unknown {): unknown 
     </>;
   );
 };
-;
 }'
 }
 }'

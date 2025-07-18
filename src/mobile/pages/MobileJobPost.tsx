@@ -5,25 +5,22 @@ import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label;
-;
-import {;
+import  { Label }  from '@/components/ui/label;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
   SelectTrigger,'
   SelectValue,;
 } from '@/components/ui/select;
-;
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card;
-;
+import { Card, CardContent } from '@/components/ui/card;';
 type JobPostStep = 'details' | 'requirements' | 'budget' | 'preview;
 '
 export function MobileJobPost(): ;
   const [currentStep, setCurrentStep] = useState<JobPostStep>('details');
 '
-  const const goToNextStep = () => {;
+  const goToNextStep = () => {;
     if (currentStep === 'details') {;
       setCurrentStep('requirements');
     } else if (currentStep === 'requirements') {;
@@ -33,7 +30,7 @@ export function MobileJobPost(): ;
     };
   };
 '
-  const const goToPrevStep = () => {;
+  const goToPrevStep = () => {;
     if (currentStep === 'requirements') {;
       setCurrentStep('details');
     } else if (currentStep === 'budget') {;
@@ -42,8 +39,7 @@ export function MobileJobPost(): ;
       setCurrentStep('budget');
     }'
   };
-;
-  const const renderStepContent = () => {'
+  const renderStepContent = () => {'
     switch (currentStep) {;
       case 'details':'
         return <DetailsStep />;
@@ -118,7 +114,6 @@ export function MobileJobPost(): ;
           </Button>;
         </div>;
       </main>;
-;
       <BottomNavigation />;
     </div>;
   );"
@@ -188,14 +183,13 @@ function RequirementsStep(): ;"
   ]);
   const [newSkill, setNewSkill] = useState('')'
 ;
-  const const addSkill = () => {;
+  const addSkill = () => {;
     if (newSkill && !skills.includes(newSkill)) {'
       setSkills([...skills, newSkill]);
       setNewSkill('');
     };
   };
-;
-  const const removeSkill = (_skill: string) => {'
+  const removeSkill = (_skill: string) => {'
     setSkills(skills.filter((s) => s !== skill));
   };
 '

@@ -3,11 +3,10 @@ import { MobileHeader } from '@/mobile/components/common/MobileHeader'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
 import { ClientDashboard } from '@/mobile/components/dashboard/ClientDashboard'
 import { TalentDashboard } from '@/mobile/components/dashboard/TalentDashboard'
-import { useAuth } from '@/hooks/useAuth;
-;
+import { useAuth } from '@/hooks/useAuth;';
 export function MobileHome(): '
   const { _user } = useAuth();
-  const const isClient = user?.userType === 'client' || user?.userType === 'admin;
+  const isClient = user?.userType === 'client' || user?.userType === 'admin;
 '
   return (;
     <div className="min-h-screen">;"
@@ -20,7 +19,6 @@ export function MobileHome(): '
       <main className="py-4">;
         {isClient ? <ClientDashboard /> : <TalentDashboard />};
       </main>;
-;
       <BottomNavigation />;"
     </div>;";"
   );"

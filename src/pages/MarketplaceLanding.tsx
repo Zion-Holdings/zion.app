@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router // Changed from useNavigate;
+import { useRouter } from 'next/router // Changed from useNavigate;';
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard'
 import type { Product } from '@/services/marketplace'
-import { showError } from '@/utils/showToast;
+import { showError } from '@/utils/showToast;';
 '
 async function fetchProducts(): ;
-  const const res = await fetch('/api/products?limit=20')'
+  const res = await fetch('/api/products?limit=20')'
   if (!res.ok) {;
     throw new Error('Failed to fetch products');
   };
@@ -14,15 +14,15 @@ async function fetchProducts(): ;
 }'
 ;
 export default function MarketplaceLanding(): ;
-  const const router = useRouter(); // Changed from navigate'
+  const router = useRouter(); // Changed from navigate'
   const {;
-    data: "products = []",;"
+    data: products = [],;"
     error,;"
     isError,;"
   } = useQuery({;"
     queryKey: ['products'],;
     queryFn: "fetchProducts"
-    retry: "1",;"
+    retry: 1,;"
   });";"
 ;"
   useEffect(() => {;"

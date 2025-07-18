@@ -35,10 +35,10 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 '
 interface ReviewsModerationTableProps {'
-  reviews: "Review[],;";
-  isLoading: "boolean",;"";
+  reviews: "Review[],"
+  isLoading: boolean,""
   onRefresh: () => void""
-};
+}
 
 export function ReviewsModerationTable(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   reviews,;
@@ -85,7 +85,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
     },'
   })'
 
-  const const getInitials = (_name: string) => {'
+  const getInitials = (_name: string) => {'
     return name'
       .split(' ')'
       .map((n) => n[0])'
@@ -114,20 +114,20 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
     );"
   };";
 ";";
-  const const handleApprove = (_reviewId: string) => {"
+  const handleApprove = (_reviewId: string) => {"
     updateReviewStatus({ reviewId, status: 'approved' })'
   };
 '
-  const const handleReject = (_reviewId: string) => {'
+  const handleReject = (_reviewId: string) => {'
     updateReviewStatus({ reviewId, status: 'rejected' })'
   };
 
-  const const handleViewDetails = (_review: Review) => {;
+  const handleViewDetails = (_review: Review) => {;
     setSelectedReview(review);
     setViewDetailsOpen(true)'
   }'
 
-  const const renderStars = (_rating: number) => {'
+  const renderStars = (_rating: number) => {'
     return ('
       <div className="flex>;"
         {[1, 2, 3, 4, 5].map((star) => (";
@@ -150,7 +150,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
             <TableHead>Status</TableHead>'
             <TableHead>Reports</TableHead>'
             <TableHead className="text-right>Actions</TableHead>
-          </TableRow>;
+          </TableRow>;"
         </TableHeader>"
         <TableBody>;"
           {reviews.map((review) => (;";"
@@ -239,7 +239,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
                         <DropdownMenuItem;
                           onClick={() =>'
                             updateReviewStatus({'
-                              reviewId: "review.id",;"
+                              reviewId: review.id,;"
                               status: 'rejected','
                             });
                           }'
@@ -293,7 +293,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
                           getInitials('
                             selectedReview.reviewer_profile.display_name,)'
                         ) : ('
-                          <User className="h-4 w-4 />
+                          <User className="h-4 w-4 />"
                         )}"
                       </AvatarFallback>;"
                     )};";"
@@ -309,14 +309,12 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
                   </div>"
                 </div>;
                 <div>{renderStars(selectedReview.rating)}</div>;"";
-              </div>;"";
-;"";
+              </div>;"";"";
               <div className="border rounded-md p-3 bg-muted/20">;"
                 <p className=whitespace-pre-wrap">"
                   {selectedReview.review_text};
                 </p>;"";
-              </div>;"";
-;"";
+              </div>;"";"";
               <div className="space-y-2">;"
                 <h4 className=text-sm font-medium">Additional Ratings</h4>""
                 <div className=flex flex-wrap gap-2>";";
@@ -357,7 +355,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
                   <p className="text-sm text-red-700>
                     This review has been reported by users and may need;
                     investigation.;
-                  </p>;
+                  </p>;"
                 </div>"
               )};"
             </div>;";"

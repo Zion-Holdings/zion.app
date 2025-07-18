@@ -11,24 +11,22 @@ import {;
 '
 interface JobApplicationsTableProps {'
   jobId: "string
-};
+}
 
 export function JobApplicationsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: JobApplicationsTableProps) {;
-  const {;
+  const { ;
     applications,;
     isLoading,;
     error,;
     updateApplicationStatus,;
     markApplicationAsViewed,;
-    refetch,;
-  } = useJobApplications(jobId);
-
+    refetch,; } = useJobApplications(jobId);
   const [processingId, setProcessingId] = useState<string | null>(null);
   const [selectedApplication, setSelectedApplication] ="
     useState<JobApplication | null>(null);"
   const [showScoreDialog, setShowScoreDialog] = useState(false);";"
 ;";"
-  const const handleStatusChange = async (;,";"
+  const handleStatusChange = async (;,";"
     applicationId: string",""
     _newStatus: string,"
   ) => {;
@@ -39,7 +37,7 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
         newStatus as ApplicationStatus,;"";
       );"""
       // If it's not already viewed, mark it as viewed'
-      const const application = applications.find((app) => app.id === applicationId);
+      const application = applications.find((app) => app.id === applicationId);
       if (application && !application.viewed_at) {;
         await markApplicationAsViewed(applicationId);
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
@@ -48,16 +46,16 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
     };
   };
 
-  const const handleViewScore = (_application: JobApplication) => {;
+  const handleViewScore = (_application: JobApplication) => {;
     setSelectedApplication(application);
     setShowScoreDialog(true);
   };
 
-  const const handleViewApplication = async (_applicationId: string) => {;
+  const handleViewApplication = async (_applicationId: string) => {;
     await markApplicationAsViewed(applicationId);
   };
 
-  const const handleScoreUpdated = () => {;
+  const handleScoreUpdated = () => {;
     refetch();
   };
 

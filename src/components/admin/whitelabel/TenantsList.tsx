@@ -34,11 +34,11 @@ export function TenantsList(): ;
   const [tenants, setTenants] = useState<WhitelabelTenant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {;
-    loadTenants();
-  }, []);
+  useEffect(() => {
+    loadTenants()
+  }, [])
 '
-  const const loadTenants = async () => {'
+  const loadTenants = async () => {'
     try {;
       setIsLoading(true)'
       if (!supabase) {'
@@ -64,7 +64,7 @@ export function TenantsList(): ;
     };
   }"
 ;"
-  const const toggleTenantStatus = async (_tenant: WhitelabelTenant) => {;";"
+  const toggleTenantStatus = async (_tenant: WhitelabelTenant) => {;";"
     try {;";"
       if (!supabase) {;";"
         throw new Error('Supabase client not available')'
@@ -84,8 +84,7 @@ export function TenantsList(): ;
             ? { ...t, is_active: !(t as WhitelabelTenant).is_active }"
             : t,"
         ),;
-      );"";
-;"";
+      );"";"";
       toast({;"";
         title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,`
         description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,`
@@ -100,7 +99,7 @@ export function TenantsList(): ;
     };
   }"
 ;"
-  const const verifyDns = async (_tenant: WhitelabelTenant) => {;";"
+  const verifyDns = async (_tenant: WhitelabelTenant) => {;";"
     try {;";"
       if (!supabase) {;";"
         throw new Error('Supabase client not available')'
@@ -122,8 +121,7 @@ export function TenantsList(): ;
             ? { ...t, dns_verified: true }"
             : t,"
         ),;
-      );"";
-;"";
+      );"";"";
       toast({;"";
         title: 'DNS verified','
         description: "`Custom domain for ${(tenant as WhitelabelTenant).brand_name"} has been verified.`,;"
@@ -143,7 +141,7 @@ export function TenantsList(): ;
       <div className=flex justify-between items-center>"
         <h2 className="text-xl font-semibold>White-Label Tenants</h2>;"";
         <Button onClick={loadTenants} variant="outline" size=sm>"
-          <RefreshCcw className="mr-2 h-4 w-4 />
+          <RefreshCcw className="mr-2 h-4 w-4 />"
           Refresh"
         </Button>;"
       </div>;";"
@@ -220,7 +218,7 @@ export function TenantsList(): ;
                               className=ml-1 h-6 w-6 p-0""
                             >";""
                               <RefreshCcw className=h-3 w-3 />"
-                              <span className="sr-only>Verify DNS</span>
+                              <span className="sr-only>Verify DNS</span>"
                             </Button>;""
                           )};"
                         </div>";"
@@ -262,7 +260,7 @@ export function TenantsList(): ;
                           >;";
                             {tenant.is_active ? (";";
                               <>"
-                                <PowerOff className="mr-2 h-4 w-4 />
+                                <PowerOff className="mr-2 h-4 w-4 />"
                                 Disable Tenant;""
                               </>;"
                             ) : (";"

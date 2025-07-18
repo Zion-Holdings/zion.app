@@ -1,29 +1,26 @@
-import { useState, useEffect } from 'react;
-;
+import { useState, useEffect } from 'react;''
 export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): unknown {breakpoint = 768) {'
-  // Avoid referencing `window` during SSR;
+  // Avoid referencing `window` during SSR`
   const [isMobile, setIsMobile] = useState(false);
 '
-  useEffect(() => {;
+  useEffect(() => {'
     if (typeof window === 'undefined') return'
-;
-    const const query = `(max-width: "${breakpoint"}px)`;
-    const const mediaQuery = window.matchMedia(query);
-;
-    const const handleChange = (_event: MediaQueryListEvent) => {;
-      setIsMobile(event.matches);"
-    };";"
-;"
-    // Set initial state;"
+'
+    const query = `(max-width: "${breakpoint}px)``
+    const mediaQuery = window.matchMedia(query);
+    const handleChange = (_event: MediaQueryListEvent) => {;
+      setIsMobile(event.matches)
+    };""
+
+    // Set initial state
     setIsMobile(mediaQuery.matches);"
     mediaQuery.addEventListener('change', handleChange)'
-;
-    return () => mediaQuery.removeEventListener('change', handleChange);
+'
+    return () => mediaQuery.removeEventListener('change', handleChange)'
   }, [breakpoint])'
-;
+'
   return isMobile;
 };
-;
 }'
 }
 }'

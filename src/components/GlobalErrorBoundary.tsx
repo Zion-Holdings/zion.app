@@ -21,9 +21,9 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
   const [componentStack, setComponentStack] = useState<string | undefined>(;
     undefined,);
 
-  const const handleReportIssue = async (_error: Error) => {;"
+  const handleReportIssue = async (_error: Error) => {;"
     const logs: unknown string[] = []; // Replaced getCapturedLogs() with empty array;";
-    const const id = traceId || generateTraceId()";";
+    const id = traceId || generateTraceId()";";
     await sendErrorToBackend({"
       message: "error.message,;"";
       ...(error.stack ? { stack: "error.stack "} : {}),;"
@@ -36,7 +36,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
       source: 'GlobalErrorBoundary','
     });
     try {'
-      const const enqueueSnackbar = getEnqueueSnackbar()'
+      const enqueueSnackbar = getEnqueueSnackbar()'
       enqueueSnackbar(`Issue reported. Reference ID: "${id} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, {;"";
         variant: 'success','
       })'
@@ -50,16 +50,16 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
   }'
 '
   function GlobalErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;
-    // Removed: const const router = useRouter()'
+    // Removed: const router = useRouter()'
     // Updated user-friendly messages'
-    const const apologyMessage = 'We apologize for the inconvenience.'
+    const apologyMessage = 'We apologize for the inconvenience.'
     const explanationMessage: unknown =;
       'Our team has been notified and is working to fix the issue.'
 
     let customUserMessage = 
     if (error?.message?.includes('Supabase URL or Anon Key is missing')) {'
       customUserMessage ='
-        'Application Configuration Error: "Essential settings for connecting to backend services are missing. Please contact support or", if you are a developer, check the deployment configuration for Supabase environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY).
+        'Application Configuration Error: Essential settings for connecting to backend services are missing. Please contact support or, if you are a developer, check the deployment configuration for Supabase environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY).
     }
 
     return ('
@@ -121,9 +121,9 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
     );";
   }";";
 "
-  const const handleError = (error: "Error, _info: React.ErrorInfo) => {;"";
+  const handleError = (error: "Error, _info: React.ErrorInfo) => {;"";
     logInfo('Detailed error info:', {'
-      name: "error.name",;"
+      name: error.name,;"
       message: error.message",""
       stack: error.stack,"
       componentStack: "info.componentStack,;""
@@ -149,7 +149,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
       // this will be part of the 'context' in logError.'
       errorSourceContext: 'GlobalErrorBoundaryHandler','
     })'
-    const const id = 'generated-trace-id // Replace with actual trace ID generation if needed'
+    const id = 'generated-trace-id // Replace with actual trace ID generation if needed'
     setTraceId(id);
     setComponentStack(info.componentStack || undefined);
 
@@ -157,7 +157,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
     // logError now handles sending the report to the custom backend.'
 '
     try {;
-      const const enqueueSnackbar = getEnqueueSnackbar()'
+      const enqueueSnackbar = getEnqueueSnackbar()'
       let displayMessage ='
         'An unexpected error occurred. Our team has been notified. // Default generic message'
 '

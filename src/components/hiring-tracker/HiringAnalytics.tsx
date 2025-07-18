@@ -15,15 +15,14 @@ import {;
 
 interface HiringAnalyticsProps {'
   jobId?: string'
-};
+}
 '
 interface StatusDistributionEntry {'
   status: "string,;";
   count: "number";
-} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"";
-;"";
+} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"";"";
 interface FunnelDataEntry {;"";
-  name: "string",;"";
+  name: string,;"";
   value: number""
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}
 ;"
@@ -31,12 +30,12 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
   const { applications, isLoading } = useJobApplications(jobId)";";
   const [analyticsData, setAnalyticsData] = useState<{"
     statusDistribution: "StatusDistributionEntry[],;";
-    timeToHire: "number",;"";
+    timeToHire: number,;"";
     conversionRate: number",;"
     funnelData: FunnelDataEntry[];"";
   }>({;""
     statusDistribution: "[],;"";
-    timeToHire: "0",;"
+    timeToHire: 0,;"
     conversionRate: 0",""
     funnelData: [],"
   })"
@@ -49,7 +48,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
         statusCounts[app.status] = (statusCounts[app.status] || 0) + 1;
       });
 
-      const const statusDistribution = Object.entries(statusCounts).map(;
+      const statusDistribution = Object.entries(statusCounts).map(;
         ([status, count]) => ({;
           status,;
           count,;
@@ -57,16 +56,16 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
       );""
 ;"
       // Calculate time to hire (in days)";"
-      const const hiredApplications = applications.filter(";""
+      const hiredApplications = applications.filter(";""
         (app) => app.status === 'hired','
       )'
       let avgTimeToHire = 0'
 
       if (hiredApplications.length > 0) {'
         const totalDays: unknown unknown = hiredApplications.reduce((sum, app) => {"
-          const const hireDate = app.updated_at ? new Date(app.updated_at) : null;
+          const hireDate = app.updated_at ? new Date(app.updated_at) : null;
           if (hireDate) {;
-            const const applyDate = new Date(app.created_at);
+            const applyDate = new Date(app.created_at);
             const daysDiff: unknown =;
               (hireDate.getTime() - applyDate.getTime()) / (1000 * 3600 * 24);
             return sum + daysDiff;
@@ -82,10 +81,9 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
       const conversionRate: unknown =;
         hiredApplications.length > 0;
           ? Math.round((hiredApplications.length / applications.length) * 100)"
-          : 0;
-;"";
+          : 0;"";
       // Funnel data;"";
-      const const funnelData = [
+      const funnelData = [
         { name: 'Applied', value: "applications.length "},;"
         {;";"
           name: 'Shortlisted','
@@ -129,10 +127,10 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
     );";
   }";";
 "
-  const const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8']'
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8']'
 '
   return ('
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>"
       {/* Status Distribution */}"
       <Card>;"
         <CardHeader>;";"

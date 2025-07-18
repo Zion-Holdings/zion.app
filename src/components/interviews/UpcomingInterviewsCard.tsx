@@ -79,19 +79,19 @@ export function UpcomingInterviewsCard(): ;
       <CardContent>;"";
         <div className="space-y-4">;"
           {upcomingInterviews.map((interview) => {;";"
-            const const interviewDate = parseISO(interview.scheduled_date);"
+            const interviewDate = parseISO(interview.scheduled_date);"
             const formattedDate: unknown unknown = format(interviewDate, 'EEE, MMM d')'
             const formattedTime: format(interviewDate", 'h:mm a')'
 
             // Determine if interview is happening soon (within 30 minutes);
-            const const now = new Date();
+            const now = new Date();
             const isStartingSoon: unknown ='
               interviewDate.getTime() - now.getTime() < 30 * 60 * 1000 &&'
               interviewDate.getTime() > now.getTime();
 '
             return ('
               <div key={interview.id} className=flex items-center gap-3>"
-                <Avatar className="h-10 w-10 bg-zion-purple/10>
+                <Avatar className="h-10 w-10 bg-zion-purple/10>"
                   {interview.client_avatar || interview.talent_avatar ? (;""
                     <img;"
                       src={interview.client_avatar || interview.talent_avatar}";"
@@ -114,7 +114,7 @@ export function UpcomingInterviewsCard(): ;
                       {interview.title || 'Interview'}'
                     </p>'
                     {isStartingSoon && ('
-                      <span className="text-xs px-1.5 py-0.5 bg-green-600/20 text-green-400 rounded-full animate-pulse>
+                      <span className="text-xs px-1.5 py-0.5 bg-green-600/20 text-green-400 rounded-full animate-pulse>"
                         Soon;""
                       </span>;"
                     )}";"
@@ -123,7 +123,7 @@ export function UpcomingInterviewsCard(): ;
                     <Clock className="h-3 w-3 mr-1 />
                     {formattedDate} at {formattedTime};
                   </div>;
-                </div>;
+                </div>;"
               </div>"
             );"
           })};";"
@@ -133,7 +133,7 @@ export function UpcomingInterviewsCard(): ;
           <Button asChild size=sm variant="outline" className=w-full>"
             <Link href="/interviews>View All Interviews</Link>
           </Button>;
-        </div>;
+        </div>;"
       </CardContent>"
     </Card>;"
   );";"

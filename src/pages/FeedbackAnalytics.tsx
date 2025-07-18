@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getFeedback, getFeedbackStats } from '@/services/feedbackService'
-import type { FeedbackEntry } from '@/services/feedbackService;
-;
+import type { FeedbackEntry } from '@/services/feedbackService;';
 export default function FeedbackAnalytics(): '
   const [feedback, setFeedback] = useState<FeedbackEntry[]>([]);
   const [stats, setStats] = useState<{ count: "number; averageRating: number "}>({;"
     count: "0"
-    averageRating: "0",;
+    averageRating: 0,;
   });
-;
-  useEffect(() => {;
-    setFeedback(getFeedback());"
-    setStats(getFeedbackStats());";"
-  }, []);"
+  useEffect(() => {
+    setFeedback(getFeedback())"
+    setStats(getFeedbackStats())""
+  }, [])"
 ;"
   return (;"
     <div className="p-4 space-y-4">;

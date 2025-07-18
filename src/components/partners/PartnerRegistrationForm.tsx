@@ -80,12 +80,12 @@ export function PartnerRegistrationForm(): '
     },'
   })'
 
-  const const checkExistingPartner = async () => {'
+  const checkExistingPartner = async () => {'
     if (!supabase) {'
       throw new Error('Supabase client not available')'
     }'
 '
-    const { data: existingPartner "} = await supabase"
+    const { data: existingPartner " } = await supabase"
       .from('partner_profiles')'
       .select('id')'
       .eq('user_id', user?.id)'
@@ -126,7 +126,7 @@ export function PartnerRegistrationForm(): '
     setIsSubmitting(true);
     try {;
       // Check if they already have a partner profile'
-      const const hasExistingPartner = await checkExistingPartner()'
+      const hasExistingPartner = await checkExistingPartner()'
       if (hasExistingPartner) return;
 '
       // Insert new partner profile'
@@ -206,12 +206,12 @@ export function PartnerRegistrationForm(): '
       </CardHeader>;
       <CardContent>
         <Form {...form}>;"
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6>"
             <div className="space-y-4">
               <FormField;
                 control={form.control}"
                 name="name
-                render={({
+                render={({"
                   field,;"
                 }: {"
                   field: ControllerRenderProps<PartnerFormValues, 'name'>'
@@ -228,7 +228,7 @@ export function PartnerRegistrationForm(): '
               <FormField
                 control={form.control};"
                 name="website
-                render={({
+                render={({"
                   field,;"
                 }: {"
                   field: ControllerRenderProps<PartnerFormValues, 'website'>'
@@ -243,7 +243,7 @@ export function PartnerRegistrationForm(): '
                 )};
               />
 ;"
-              <div className="grid sm:grid-cols-2 gap-4>
+              <div className="grid sm:grid-cols-2 gap-4>"
                 <FormField;"
                   control={form.control}"
                   name=twitter
@@ -258,7 +258,7 @@ export function PartnerRegistrationForm(): '
                         <Input placeholder="@username {...field} />
                       </FormControl>;
                       <FormMessage />;
-                    </FormItem>;
+                    </FormItem>;"
                   )}"
                 />;"
 
@@ -288,7 +288,7 @@ export function PartnerRegistrationForm(): '
                 <FormField;
                   control={form.control}"
                   name="youtube
-                  render={({
+                  render={({"
                     field,;"
                   }: {"
                     field: ControllerRenderProps<PartnerFormValues, 'youtube'>'
@@ -306,7 +306,7 @@ export function PartnerRegistrationForm(): '
                 <FormField
                   control={form.control};"
                   name="linkedin
-                  render={({
+                  render={({"
                     field,;"
                   }: {"
                     field: ControllerRenderProps<PartnerFormValues, 'linkedin'>'
@@ -328,7 +328,7 @@ export function PartnerRegistrationForm(): '
               <FormField
                 control={form.control};"
                 name="niche
-                render={({
+                render={({"
                   field,;"
                 }: {"
                   field: ControllerRenderProps<PartnerFormValues, 'niche'>'
@@ -349,7 +349,7 @@ export function PartnerRegistrationForm(): '
                 )};
               />
 ;"
-              <div className="grid sm:grid-cols-2 gap-4>
+              <div className="grid sm:grid-cols-2 gap-4>"
                 <FormField;"
                   control={form.control}"
                   name=audience_size"
@@ -373,7 +373,7 @@ export function PartnerRegistrationForm(): '
                           </SelectTrigger>;
                         </FormControl>
                         <SelectContent>;"
-                          <SelectItem value="under1k>Under 1,000</SelectItem>
+                          <SelectItem value="under1k>Under 1,000</SelectItem>"
                           <SelectItem value="1k-10k">1,000 - 10,000</SelectItem>
                           <SelectItem value=10k-50k">"
                             10,000 - 50,000;
@@ -384,7 +384,7 @@ export function PartnerRegistrationForm(): '
                           <SelectItem value="over100k>Over 100,000</SelectItem>
                         </SelectContent>;
                       </Select>;
-                      <FormMessage />;
+                      <FormMessage />;"
                     </FormItem>)}"
                 />;"
 
@@ -411,7 +411,7 @@ export function PartnerRegistrationForm(): '
                           </SelectTrigger>;
                         </FormControl>
                         <SelectContent>;"
-                          <SelectItem value="paypal>PayPal</SelectItem>
+                          <SelectItem value="paypal>PayPal</SelectItem>"
                           <SelectItem value="bank">Bank Transfer</SelectItem>
                           <SelectItem value=crypto">Cryptocurrency</SelectItem>"
                           <SelectItem value=platform_credit>"
@@ -422,15 +422,14 @@ export function PartnerRegistrationForm(): '
                       <FormMessage />;
                     </FormItem>)};
                 />"
-              </div>;
-;"
+              </div>;"
               <FormField"
                 control={form.control};
                 name=bio"
                 render={({"
                   field,;
                 }: {
-                  field: "ControllerRenderProps<PartnerFormValues", 'bio'>'
+                  field: ControllerRenderProps<PartnerFormValues, 'bio'>'
                 }) => ('
                   <FormItem>'
                     <FormLabel>Bio</FormLabel>;
@@ -450,7 +449,7 @@ export function PartnerRegistrationForm(): '
             <Button;
               type=submit"
               className="w-full bg-zion-purple hover:bg-zion-purple-dark
-              disabled={isSubmitting}
+              disabled={isSubmitting}"
             >;"
               {isSubmitting ? 'Submitting...' : 'Submit Application'}'
             </Button>;

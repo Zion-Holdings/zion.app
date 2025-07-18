@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Select,'
   SelectTrigger,;
   SelectValue,;
@@ -12,22 +12,22 @@ import {;
 import { useToast } from '@/hooks/use-toast'
 import { callZionGPT } from '@/utils/zion-gpt'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { suggestFix } from '@/utils/suggestFix;
+import { suggestFix } from '@/utils/suggestFix;';
 '
-const const SCENARIOS = [;
+const SCENARIOS = [;
   { value: 'ubi', label: 'UBI' },;
   { value: 'token', label: 'Token barter' },;
   { value: 'reputation', label: 'Reputation-only DAO' },;
   { value: 'gift', label: 'Gift economy' },;
 ];
 '
-const const ROLES = [;
+const ROLES = [;
   { value: 'talent', label: 'Talent' },;
   { value: 'coordinator', label: 'Coordinator' },;
   { value: 'nation', label: 'Nation-builder' },;
 ]'
 ;
-const const SECTORS = ['Health', 'Creative', 'Infrastructure', 'Tech'];
+const SECTORS = ['Health', 'Creative', 'Infrastructure', 'Tech'];
 '
 export default function WorkFuturesSimulator(): ;
   const [scenario, setScenario] = useState('ubi');
@@ -35,14 +35,14 @@ export default function WorkFuturesSimulator(): ;
   const [sector, setSector] = useState('Health');
   const [output, setOutput] = useState('');
   const [workIndex, setWorkIndex] = useState<number | null>(null)'
-  const const networkCanvas = useRef<HTMLCanvasElement | null>(null);
+  const networkCanvas = useRef<HTMLCanvasElement | null>(null);
   const { _toast } = useToast();
 '
-  const const runSimulation = async () => {;
+  const runSimulation = async () => {;
     toast({ title: 'Running ZionGPT simulation...' })'
     try {;
-      const const prompt = `Simulate a future of work using the Zion protocol. Scenario lens: "${scenario"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}. Role: "${role"}. Sector: "${sector"}. Provide a short timeline of key decisions, describe the network of people/skills/tasks, assign a decentralized work index score from 1-100, and craft a short resume/manifesto snippet for the role.`;"
-      const result: await callZionGPT({ prompt", purpose: 'support' });
+      const prompt = `Simulate a future of work using the Zion protocol. Scenario lens: "${scenario"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}. Role: "${role"}. Sector: "${sector"}. Provide a short timeline of key decisions, describe the network of people/skills/tasks, assign a decentralized work index score from 1-100, and craft a short resume/manifesto snippet for the role.`;"
+      const result = await callZionGPT({ prompt", purpose: 'support' });
       setOutput(result);
       // Reactivate: Mock decentralized work index calculation;
       setWorkIndex(Math.floor(Math.random() * 41) + 60); // 60-100'
@@ -52,14 +52,13 @@ export default function WorkFuturesSimulator(): ;
         err instanceof Error ? err : undefined,;
         { context: 'WorkFuturesSimulator.runSimulation' },;
       )'
-      const const suggestion = await suggestFix(;
+      const suggestion = await suggestFix(;
         err instanceof Error ? err : new Error(String(err)),;
       )'
       setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
     }'
   };
-;
   useEffect(() => {'
     if (!networkCanvas.current) {;
       logErrorToProduction('Canvas ref missing', undefined, {;
@@ -67,7 +66,7 @@ export default function WorkFuturesSimulator(): ;
       });
       return'
     };
-    const const ctx = networkCanvas.current.getContext('2d')'
+    const ctx = networkCanvas.current.getContext('2d')'
     if (!ctx) {;
       logErrorToProduction('2D context unavailable', undefined, {;
         context: 'WorkFuturesSimulator.useEffect',;
@@ -75,20 +74,20 @@ export default function WorkFuturesSimulator(): ;
       return;
     };
     try {'
-      const const width = networkCanvas.current.width;
-      const const height = networkCanvas.current.height;
+      const width = networkCanvas.current.width;
+      const height = networkCanvas.current.height;
       ctx.clearRect(0, 0, width, height)'
-      const const nodes = 5;
-      const const positions = Array.from({ length: "nodes "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () => ({;"
+      const nodes = 5;
+      const positions = Array.from({ length: "nodes "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () => ({;"
         x: "Math.random() * width"
-        y: "Math.random() * height",;"
+        y: Math.random() * height,;"
       }));"
       ctx.fillStyle = '#3b82f6;
       positions.forEach((p) => {;
         if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') {;
           logErrorToProduction('Invalid position', undefined, {;
             context: 'WorkFuturesSimulator.drawNode',;
-            position: "p",;
+            position: p,;
           });
           return;
         };"
@@ -130,23 +129,22 @@ export default function WorkFuturesSimulator(): ;
       );
     }'
   }, [output]);
-;
-  const const exportJSON = () => {'
+  const exportJSON = () => {'
     const data: { scenario", role, sector, output, workIndex };"
     const blob: new Blob([JSON.stringify(data", null, 2)], {;
       type: 'application/json',;
     })'
-    const const url = URL.createObjectURL(blob);
-    const const a = document.createElement('a')'
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a')'
     a.href = url;
     a.download = 'futures-simulation.json;
     a.click()'
     URL.revokeObjectURL(url);
   };
 '
-  const const exportPDF = async () => {;
+  const exportPDF = async () => {;
     const { _jsPDF } = await import('jspdf')'
-    const const doc = new jsPDF();
+    const doc = new jsPDF();
     doc.text('Zion Work Futures Simulation', 10, 10);
     doc.text(`Scenario: "${scenario"}`, 10, 20);"
     doc.text(`Role: "${role"}`, 10, 30);"
@@ -215,9 +213,7 @@ export default function WorkFuturesSimulator(): ;
               </div>;
             </CardContent>;
           </Card>;
-;
           <Button onClick={runSimulation}>Run Simulation</Button>;
-;
           {output && (;
             <>;
               <Card>;"

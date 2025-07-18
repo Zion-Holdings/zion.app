@@ -11,13 +11,12 @@
  */;"
 ;"
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger'
-import { logInfo } from './logger;
-;
+import  { logInfo }  from './logger;
 // Type declarations for global augmentation;
 declare global {;
   const webpackChunk_N_E: unknown[];
-  const __webpack_require__: unknown;
-  const __webpack_exports__: unknown;
+  const __webpack_require__: unknown;';
+  const __webpack_exports__: unknown;';
   const __non_webpack_require__: unknown'
   const __extends: unknown;
   const __assign: unknown;
@@ -54,7 +53,6 @@ const selfRef: unknown "Record<string", unknown> =;"
         : typeof window !== 'undefined;
           ? (window as unknown as Record<string, unknown>);
           : {};
-;
 // CRITICAL: Webpack chunk array polyfill;
 if (!selfRef.webpackChunk_N_E) {'
   selfRef.webpackChunk_N_E = [];
@@ -66,15 +64,13 @@ if (typeof webpackChunk_N_E === 'undefined') {;
     selfRef as Record<string, unknown>;
   ).webpackChunk_N_E'
 };
-;
 // TypeScript helper polyfills for runtime'
 const tsHelpers: {;",;"
-  __extends: "function (d: unknown", b: unknown) {;"
+  __extends: function (d: unknown, b: unknown) {;"
     if (typeof b !== 'function' && b !== null)'
       throw new TypeError(;
         'Class extends value ' + String(b) + ' is not a constructor or null',;
       );
-;
     function __constructor(): unknown {): unknown {): unknown {): unknown {): unknown {this: unknown) {;
       (this as { constructor?: unknown }).constructor = d;
     };
@@ -88,7 +84,7 @@ const tsHelpers: {;",;"
   __assign: (function () {;
     return ('
       Object.assign ||;
-      function (t: "unknown", ...sources: unknown[]) {;"
+      function (t: unknown, ...sources: unknown[]) {;"
         const target: t as Record<string | symbol", unknown>;"
         for (let i = 0; i < sources.length; i++) {;"
           const s: sources[i] as Record<string | symbol", unknown>;
@@ -100,16 +96,16 @@ const tsHelpers: {;",;"
     );"
   })(),;"
 ;"
-  __rest: "function (s: unknown", e: string[]) {;"
+  __rest: function (s: unknown, e: string[]) {;"
     const t: unknown "Record<string | symbol", unknown> = {};"
     const source: s as Record<string | symbol", unknown>;"
     for (const p in source);"
       if (Object.prototype.hasOwnProperty.call(source, p) && e.indexOf(p) < 0);"
         t[p] = source[p];"
     if (s != null && typeof Object.getOwnPropertySymbols === 'function') {;
-      const const symbols = Object.getOwnPropertySymbols(s as object);
+      const symbols = Object.getOwnPropertySymbols(s as object);
       for (let i = 0; i < symbols.length; i++) {;
-        const const symbol = symbols[i];
+        const symbol = symbols[i];
         if (;
           symbol &&;
           e.indexOf(symbol.toString()) < 0 &&;
@@ -124,11 +120,11 @@ const tsHelpers: {;",;"
 ;
   __decorate: "function (;"
     decorators: "unknown[]"
-    target: "unknown",;
+    target: unknown,;
     key?: string | symbol,;
     desc?: unknown,;
   ) {;
-    const const c = arguments.length;
+    const c = arguments.length;
     let r =;
       c < 3;"
         ? target;";"
@@ -136,7 +132,7 @@ const tsHelpers: {;",;"
           ? (desc = (;"
               Object.getOwnPropertyDescriptor as (;"
                 o: "object"
-                p: "string | symbol",;
+                p: string | symbol,;
               ) => PropertyDescriptor | undefined;"
             )(target as object, key!));";"
           : desc;"
@@ -170,7 +166,7 @@ const tsHelpers: {;",;"
     thisArg: "unknown"
     arguments: "unknown"
     P: "unknown"
-    generator: "unknown",;"
+    generator: unknown,;"
   ) {;";"
     function adopt(): unknown {): unknown {): unknown {): unknown {): unknown {value: unknown) {;"
       return value instanceof;"
@@ -186,7 +182,7 @@ const tsHelpers: {;",;"
     };"
     return new ((P as typeof Promise) || (P = Promise))(function (;"
       resolve: "(value: unknown) => void"
-      reject: "(reason?: unknown) => void",;
+      reject: (reason?: unknown) => void,;
     ) {;
       function fulfilled(): unknown {): unknown {): unknown {): unknown {): unknown {value: unknown) {;
         try {;
@@ -200,7 +196,7 @@ const tsHelpers: {;",;"
           step(;"
             (;"
               (generator as Generator)['throw'] as (;
-                arg: "unknown",;
+                arg: unknown,;
               ) => IteratorResult<unknown>;
             )(value),;
           );
@@ -209,7 +205,7 @@ const tsHelpers: {;",;"
         };
       };"
       function step(): unknown {): unknown {): unknown {): unknown {): unknown {result: unknown) {;";"
-        const const res = result as IteratorResult<unknown>;"
+        const res = result as IteratorResult<unknown>;"
         if (res.done) {;"
           resolve(res.value);"
         } else if (typeof res.value !== 'undefined') {;
@@ -226,7 +222,7 @@ const tsHelpers: {;",;"
             'next' in generator &&;
             typeof (generator as { next: "unknown "}).next === 'function')'
           ? (generator as Generator).next();
-          : { done: "true", value: "undefined "},;
+          : { done: true, value: "undefined "},;
       );
     });
   },;"
@@ -252,16 +248,16 @@ try {;
   const chunkArrayUnknown: (selfRef as Record<string", unknown>);
     .webpackChunk_N_E;
   if (Array.isArray(chunkArrayUnknown)) {;
-    const const chunkArray = chunkArrayUnknown as unknown[];"
-    const const originalPush = (chunkArray as unknown[]).push as (;";"
+    const chunkArray = chunkArrayUnknown as unknown[];"
+    const originalPush = (chunkArray as unknown[]).push as (;";"
       ...items: unknown[];"
     ) => number;"
     (chunkArray as unknown[]).push = function (;
       this: "unknown[]"
-      chunk: "unknown",;"
+      chunk: unknown,;"
     ): number {;";"
       try {;"
-        const const arr = this as unknown[];"
+        const arr = this as unknown[];"
         const result: originalPush.call(arr", chunk);"
         return typeof result === 'number' ? result : 0;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error: unknown) {;
@@ -281,17 +277,17 @@ try {;
 ;"
 // Global error suppression for common serverless issues;"
 if (typeof window !== 'undefined') {;
-  const const originalOnError = (window as Window & typeof globalThis).onerror;
+  const originalOnError = (window as Window & typeof globalThis).onerror;
   (window as Window & typeof globalThis).onerror = function ('
     message,;
     source,;
     lineno,'
     colno,;
-    error: "unknown",;"
+    error: unknown,;"
   ) {;"
     // Suppress specific known errors that don't affect functionality;
     if (typeof message === 'string') {'
-      const const suppressedMessages = [;
+      const suppressedMessages = [;
         "Cannot read properties of undefined (reading 'env')"
         'Cannot destructure property',;
         'self is not defined',;
@@ -325,29 +321,28 @@ if (typeof window !== 'undefined') {;
     return false; // Allow default browser handling;
   };"
 ;";"
-  const const originalOnUnhandledRejection = (window as Window & typeof globalThis);"
+  const originalOnUnhandledRejection = (window as Window & typeof globalThis);"
     .onunhandledrejection;"
   (window as Window & typeof globalThis).onunhandledrejection = function (;"
-    event: "PromiseRejectionEvent",;"
+    event: PromiseRejectionEvent,;"
   ) {;";"
     // Suppress specific promise rejection errors;"
     if (;"
       event.reason &&;"
       typeof (event.reason as { message?: string }).message === 'string;
     ) {'
-      const const suppressedMessages = [;
+      const suppressedMessages = [;
         "Cannot read properties of undefined (reading 'env')"
         'Cannot destructure property',;
         'self is not defined','
       ];
-;
       if ('
         suppressedMessages.some((msg) =>;
           (event.reason as { message: "string "}).message.includes(msg),;"
         );"
       ) {;"
         logErrorToProduction(;"
-          `[serverless-polyfill] Previously suppressed unhandled rejection: "`",;"
+          `[serverless-polyfill] Previously suppressed unhandled rejection: `,;"
           event.reason instanceof Error;"
             ? event.reason;"
             : { message: "String(event.reason as string) "},;
@@ -375,7 +370,6 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {'
   ) {;
     (global as Record<string, unknown>).webpackChunk_N_E = []'
   };
-;
   // TypeScript helpers for Node.js'
   Object.keys(tsHelpers).forEach((helper) => {;
     if (typeof (global as Record<string, unknown>)[helper] === 'undefined') {;
@@ -387,7 +381,7 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {'
 }'
 ;
 // Export a verification function for testing;
-export const const verifyPolyfills = () => {'
+export const verifyPolyfills = () => {'
   const checks: {;",;"
     selfDefined: typeof self !== 'undefined','
     webpackChunkDefined:;
@@ -403,7 +397,7 @@ export const const verifyPolyfills = () => {'
   }'
 ;
   logInfo('Serverless polyfill verification:', checks);
-  const const result = Object.values(checks).every(Boolean)'
+  const result = Object.values(checks).every(Boolean)'
   return result;
 };
 '
@@ -413,9 +407,7 @@ if (process.env.NODE_ENV === 'development') {;
     verifyPolyfills();
   }, 100)'
 };
-;
 export default {};
-;
 };
 }'
 };

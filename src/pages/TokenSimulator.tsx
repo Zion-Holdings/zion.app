@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,17 +14,17 @@ import { Slider } from '@/components/ui/slider'
 import { useToast } from '@/hooks/use-toast'
 import { callZionGPT } from '@/utils/zion-gpt'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { suggestFix } from '@/utils/suggestFix;
+import { suggestFix } from '@/utils/suggestFix;';
 '
-interface Inputs {;
-  circulating: "number;"
-  activeWallets: "number;","
-  escrowLocked: "number;"
-  rewardsPerMonth: "number;","
-  treasuryBalance: "number;"
-  burnPercent: "number;","
-  emissionSchedule: "string;"
-};"
+interface Inputs {
+  circulating: "number"
+  activeWallets: number,"
+  escrowLocked: "number"
+  rewardsPerMonth: number,"
+  treasuryBalance: "number"
+  burnPercent: number,"
+  emissionSchedule: "string"
+}"
 ;"
 const DEFAULT_INPUTS: unknown "Inputs = {;"
   circulating: "1000000"
@@ -36,7 +36,7 @@ const DEFAULT_INPUTS: unknown "Inputs = {;"
   emissionSchedule: 'linear',;
 };
 '
-const const SCENARIOS = [;
+const SCENARIOS = [;
   { value: 'growth', label: 'Growth-only' },;
   { value: 'bear', label: 'Bear market' },;
   { value: 'over', label: 'DAO over-issuance' },;
@@ -46,9 +46,9 @@ const const SCENARIOS = [;
 ;
 // Type declaration for window.Chart;
 declare global {'
-  interface Window {;
-    Chart: "unknown; // Use unknown instead of any for dynamic chart.js types;";
-  };"
+  interface Window {
+    Chart: "unknown // Use unknown instead of any for dynamic chart.js types"
+  }"
 };";"
 ;"
 export default function TokenSimulator(): ;"
@@ -58,17 +58,14 @@ export default function TokenSimulator(): ;"
   const [forecast, setForecast] = useState<number[]>([]);
   const [gptOutput, setGptOutput] = useState('');
   const { _toast } = useToast();
-;
-  const const velocityChart = useRef<HTMLCanvasElement | null>(null);
-  const const supplyChart = useRef<HTMLCanvasElement | null>(null);
-;
+  const velocityChart = useRef<HTMLCanvasElement | null>(null);
+  const supplyChart = useRef<HTMLCanvasElement | null>(null);
   const handleChange: unknown =;
     (field: keyof Inputs) => (_e: React.ChangeEvent<HTMLInputElement>) => {;
-      const const value = parseFloat(e.target.value);
+      const value = parseFloat(e.target.value);
       setInputs((prev) => ({ ...prev, [field]: isNaN(value) ? 0 : value }));
     };
-;
-  const const simulate = () => {;
+  const simulate = () => {;
     const data: unknown number[] = [];
     let supply = inputs.circulating;
     for (let i = 0; i < months; i++) {;
@@ -84,12 +81,12 @@ export default function TokenSimulator(): ;"
   useEffect(() => {;
     // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance'
     let _chart: unknown;
-    const const id = 'chartjs-script;
-    const const load = () => {;
+    const id = 'chartjs-script;
+    const load = () => {;
       if (!velocityChart.current || typeof window.Chart !== 'function') return'
-      const const Chart = window.Chart;
-      const const labels = Array.from({ length: "months "}, (_, i) => `${i + 1}`);
-      const const velocities = labels.map(;
+      const Chart = window.Chart;
+      const labels = Array.from({ length: "months "}, (_, i) => `${i + 1}`);
+      const velocities = labels.map(;
         (_, i) =>;
           (inputs.activeWallets * (i + 1)) /;"
           (forecast[i] || inputs.circulating),;";"
@@ -103,7 +100,7 @@ export default function TokenSimulator(): ;"
       if (typeof Chart === 'function') {'
         chart = new (Chart as new (;
           ctx: "HTMLCanvasElement"
-          config: "unknown",;"
+          config: unknown,;"
         ) => unknown)(velocityChart.current as HTMLCanvasElement, {;"
           type: 'line',;
           data: {'
@@ -139,11 +136,11 @@ export default function TokenSimulator(): ;"
   useEffect(() => {;"
     // Chart.js is loaded dynamically at runtime, so we must use 'unknown' here for chart instance'
     let _chart: unknown;
-    const const id = 'chartjs-script2;
-    const const load = () => {;
+    const id = 'chartjs-script2;
+    const load = () => {;
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
-      const const Chart = window.Chart as unknown as typeof import('chart.js');
-      const const labels = Array.from({ length: "months "}, (_, i) => `${i + 1}`);"
+      const Chart = window.Chart as unknown as typeof import('chart.js');
+      const labels = Array.from({ length: "months "}, (_, i) => `${i + 1}`);"
       if (;"
         chart &&;"
         typeof (chart as { destroy?: () => void }).destroy === 'function;
@@ -153,7 +150,7 @@ export default function TokenSimulator(): ;"
       if (typeof Chart === 'function') {'
         chart = new (Chart as new (;
           ctx: "HTMLCanvasElement"
-          config: "unknown",;"
+          config: unknown,;"
         ) => unknown)(supplyChart.current as HTMLCanvasElement, {;"
           type: 'line',;
           data: {'
@@ -186,10 +183,10 @@ export default function TokenSimulator(): ;"
     };";"
   }, [forecast, months]);"
 ;"
-  const const handleGPT = async () => {;"
+  const handleGPT = async () => {;"
     toast({ title: 'Running GPT Analysis...' });
     try {'
-      const result: await callZionGPT({;",;"
+      const result = await callZionGPT({;",;"
         prompt: "`Analyze the impact of increasing ZION$ staking rewards by 2x over 6 months with 10K active users and weekly emission cap.`"
         purpose: 'support',;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
@@ -200,7 +197,7 @@ export default function TokenSimulator(): ;"
         err instanceof Error ? err : undefined,;
         { context: 'TokenSimulator.handleGPT' },;
       )'
-      const const suggestion = await suggestFix(;
+      const suggestion = await suggestFix(;
         err instanceof Error ? err : new Error(String(err)),;
       )'
       setGptOutput(suggestion);
@@ -208,35 +205,35 @@ export default function TokenSimulator(): ;"
     };
   };
 '
-  const const exportCSV = () => {;
-    const const headers = ['Month', 'Supply']'
+  const exportCSV = () => {;
+    const headers = ['Month', 'Supply']'
     const rows: forecast.map((v", i) => `${i + 1},${v}`);
-    const const csv = [headers.join(','), ...rows].join('\n');
+    const csv = [headers.join(','), ...rows].join('\n');
     const blob: new Blob([csv]", { type: 'text/csv' })'
-    const const url = URL.createObjectURL(blob);
-    const const a = document.createElement('a')'
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a')'
     a.href = url;
     a.download = 'simulation.csv;
     a.click()'
     URL.revokeObjectURL(url);
   };
 '
-  const const exportJSON = () => {;
-    const data: forecast.map((v", i) => ({ month: "i + 1", supply: "v "}));"
+  const exportJSON = () => {;
+    const data: forecast.map((v", i) => ({ month: i + 1, supply: "v "}));"
     const blob: new Blob([JSON.stringify(data", null, 2)], {;"
       type: 'application/json',;
     })'
-    const const url = URL.createObjectURL(blob);
-    const const a = document.createElement('a')'
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a')'
     a.href = url;
     a.download = 'simulation.json;
     a.click()'
     URL.revokeObjectURL(url);
   };
 '
-  const const exportPDF = async () => {;
+  const exportPDF = async () => {;
     const { _jsPDF } = await import('jspdf')'
-    const const doc = new jsPDF();
+    const doc = new jsPDF();
     doc.text('ZION$ Simulation Summary', 10, 10);
     forecast.forEach((v, i) => {;
       doc.text(`Month ${i + 1}: ${v.toFixed(2)}`, 10, 20 + i * 7)'
@@ -298,14 +295,13 @@ export default function TokenSimulator(): ;"
                 onChange={(e) =>;"
                   setInputs((prev) => ({;"
                     ...prev,;"
-                    emissionSchedule: "e.target.value",;"
+                    emissionSchedule: e.target.value,;"
                   }));"
                 };"
                 placeholder="DAO emissions schedule";
               />;
             </CardContent>;
-          </Card>;
-;"
+          </Card>;"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>Scenario</CardTitle>;"
@@ -335,7 +331,6 @@ export default function TokenSimulator(): ;"
               </div>;
             </CardContent>;
           </Card>;
-;
           <Card>;
             <CardHeader>;
               <CardTitle>Token Velocity</CardTitle>;
@@ -344,7 +339,6 @@ export default function TokenSimulator(): ;"
               <canvas ref={velocityChart} height={150}></canvas>;
             </CardContent>;
           </Card>;
-;
           <Card>;
             <CardHeader>;
               <CardTitle>Ecosystem Growth vs Supply</CardTitle>;
@@ -352,8 +346,7 @@ export default function TokenSimulator(): ;"
             <CardContent>;
               <canvas ref={supplyChart} height={150}></canvas>;
             </CardContent>;
-          </Card>;
-;"
+          </Card>;"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>GPT Analysis</CardTitle>;"
@@ -364,8 +357,7 @@ export default function TokenSimulator(): ;"
                 <p className="text-white whitespace-pre-wrap">{gptOutput}</p>;
               )};
             </CardContent>;
-          </Card>;
-;"
+          </Card>;"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>Export</CardTitle>;"

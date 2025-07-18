@@ -1,6 +1,6 @@
-import React from 'react;
+import React from 'react;';
 '
-const const AICorePage = () => {;
+const AICorePage = () => {;
   const [status, _setStatus] = React.useState('Online')'
   return (;
     <div className="max-w-xl mx-auto py-12 px-4">;"

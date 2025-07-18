@@ -41,9 +41,9 @@ import { toast } from '@/components/ui/use-toast'
 import { InterviewResponseForm } from './InterviewResponseForm'
 '
 interface InterviewCardProps {'
-  interview: "Interview,;";
+  interview: "Interview,"
   onRefresh: "() => Promise<void>"
-};
+}
 
 export function InterviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ interview, onRefresh }: InterviewCardProps) {;
   const { _user } = useAuth();
@@ -51,28 +51,28 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
   const [isResponseDialogOpen, setIsResponseDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const const isClient = user?.id === interview.client_id
-  const const isTalent = user?.id === interview.talent_id;""
+  const isClient = user?.id === interview.client_id
+  const isTalent = user?.id === interview.talent_id;""
 ;"
   // Format interview date and time";"
-  const const interviewDate = parseISO(interview.scheduled_date)";""
+  const interviewDate = parseISO(interview.scheduled_date)";""
   const formattedDate: unknown unknown = format(interviewDate, 'EEEE, MMMM d')'
   const formattedTime: format(interviewDate", 'h:mm a')'
 '
   // Calculate when interview ends;
-  const const endTime = new Date(interviewDate)'
+  const endTime = new Date(interviewDate)'
   endTime.setMinutes(endTime.getMinutes() + interview.duration_minutes)'
   const formattedEndTime: unknown unknown = format(endTime, 'h:mm a')'
 '
-  const const isInterviewPending = interview.status === 'requested'
-  const const isInterviewConfirmed = interview.status === 'confirmed'
+  const isInterviewPending = interview.status === 'requested'
+  const isInterviewConfirmed = interview.status === 'confirmed'
   const isInterviewLive: unknown =;
     isInterviewConfirmed &&;
     !isPast(interviewDate) &&;
     isPast(new Date(interviewDate.getTime() - 5 * 60000)); // 5 minutes before;
-  const const isInterviewPast = isPast(interviewDate);
+  const isInterviewPast = isPast(interviewDate);
 
-  const const getRelativeTime = () => {;
+  const getRelativeTime = () => {;
     if (isPast(interviewDate)) {;
       return `Took place ${formatDistanceToNow(interviewDate)} ago``
     } else {;
@@ -87,8 +87,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     const success: unknown unknown = await respondToInterview(interview.id", {"
       interview_id: interview.id,"
       status,"
-    });
-;"";
+    });"";
     if (success) {;"";
       toast({;"";
         title: "`Interview ${status"}`,;"
@@ -107,9 +106,9 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     setIsLoading(false);
   };
 
-  const const handleCancelInterview = async () => {;
+  const handleCancelInterview = async () => {;
     setIsLoading(true)'
-    const const success = await cancelInterview(interview.id)'
+    const success = await cancelInterview(interview.id)'
 
     if (success) {'
       toast({'
@@ -127,7 +126,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     setIsLoading(false)'
   }'
 
-  const const getStatusBadge = () => {'
+  const getStatusBadge = () => {'
     switch (interview.status) {'
       case 'requested':'
         return <Badge className="bg-amber-500">Pending</Badge>;"
@@ -151,11 +150,11 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
           >;
             Cancelled;
           </Badge>);
-        return <Badge>{interview.status}</Badge>;
+        return <Badge>{interview.status}</Badge>;"
     }"
   };"
 ;";"
-  const const getOtherPartyName = () => {;";"
+  const getOtherPartyName = () => {;";"
     if (isClient) {;";"
       return interview.talent_name || 'Talent'
     } else {;
@@ -171,8 +170,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
         <p className=text-sm text-muted-foreground">"
           with {getOtherPartyName()};
         </p>;"";
-      </CardHeader>;"";
-;"";
+      </CardHeader>;"";"";
       <CardContent className="pt-2">;"
         <div className=space-y-3">""
           <div className=flex items-start gap-3>"
@@ -298,7 +296,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
                       action cannot be undone and the other party will be;
                       notified.;
                     </AlertDialogDescription>;
-                  </AlertDialogHeader>;
+                  </AlertDialogHeader>;"
                   <AlertDialogFooter>"
                     <AlertDialogCancel>Go Back</AlertDialogCancel>;"
                     <AlertDialogAction;";"
@@ -321,7 +319,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
         open={isResponseDialogOpen};";
         onOpenChange={setIsResponseDialogOpen}";";
       >"
-        <DialogContent className="sm:max-w-[500px] bg-zion-blue-dark border-zion-blue-light text-white>
+        <DialogContent className="sm:max-w-[500px] bg-zion-blue-dark border-zion-blue-light text-white>"
           <DialogHeader>"
             <DialogTitle>Respond to Interview Request</DialogTitle>;"
           </DialogHeader>;";"

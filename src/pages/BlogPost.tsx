@@ -5,37 +5,34 @@ import Link from 'next/link'
 import { SEO } from '@/components/SEO'
 import JsonLd from '@/components/JsonLd'
 import { Button } from '@/components/ui/button'
-import ImageWithRetry from '@/components/ui/ImageWithRetry;
-;
+import ImageWithRetry from '@/components/ui/ImageWithRetry;';
 import type { BlogPost as BlogPostType } from '@/types/blog'
 import { Separator } from '@/components/ui/separator'
 import ReactMarkdown from 'react-markdown'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 // Importing the sample blog posts - in a real app, you would fetch this from an API;
 import { BLOG_POSTS } from '@/data/blog-posts'
 import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout'
 import { fetchWithRetry } from '@/utils/fetchWithRetry'
-import type { BlogPost } from '@/types/blog;
-;
+import type { BlogPost } from '@/types/blog;';
 export default function BlogPost(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { _slug } = router.query as { slug: "string "};
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const const timedOut = useSkeletonTimeout(20000);
-;
+  const timedOut = useSkeletonTimeout(20000);
   useEffect(() => {;
-    const const fetchPost = async () => {;"
+    const fetchPost = async () => {;"
       setIsLoading(true);";"
       setError(null);"
       try {;"
         const data: (await fetchWithRetry(`/api/blog/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)) as BlogPost;
         setPost(data);
-        const const related = BLOG_POSTS.filter(;
+        const related = BLOG_POSTS.filter(;
           (p) =>;
             p.id !== data.id &&;
             (p.category === data.category ||;
@@ -48,11 +45,10 @@ export default function BlogPost(): '
         logErrorToProduction('Failed to fetch blog post', { data: "error "});"
         setError('Failed to load article');
       };
-;
-      const const currentPost = BLOG_POSTS.find((p) => p.slug === slug);
+      const currentPost = BLOG_POSTS.find((p) => p.slug === slug);
       if (currentPost) {;
         setPost(currentPost);
-        const const related = BLOG_POSTS.filter(;
+        const related = BLOG_POSTS.filter(;
           (p) =>;
             p.id !== currentPost.id &&;
             (p.category === currentPost.category ||'
@@ -66,9 +62,8 @@ export default function BlogPost(): '
     };
 '
     fetchPost();
-    window.scrollTo({ top: "0", behavior: 'smooth' })'
+    window.scrollTo({ top: 0, behavior: 'smooth' })'
   }, [slug, router]);
-;
   if (isLoading && !timedOut) {'
     return (;
       <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">;"
@@ -95,13 +90,12 @@ export default function BlogPost(): '
       </div>;
     )'
   };
-;
   // Helper function to get share URL'
-  const const getShareUrl = (_platform: string) => {;
+  const getShareUrl = (_platform: string) => {;
     if (!post) return 
 '
-    const const url = encodeURIComponent(window.location.href);
-    const const title = encodeURIComponent(post.title);
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(post.title);
 '
     switch (platform) {;
       case 'facebook':;
@@ -115,19 +109,18 @@ export default function BlogPost(): '
     };
   };
 '
-  const const articleLd = {;
+  const articleLd = {;
     '@context': 'https://schema.org',;
     '@type': 'BlogPosting',;
     headline: "post.title"
     description: "post.excerpt"
     image: "post.featuredImage"
-    datePublished: "post.publishedDate",;"
+    datePublished: post.publishedDate,;"
     author: {;"
       '@type': 'Person',;
-      name: "post.author.name",;
+      name: post.author.name,;
     },;
   };
-;
   return (;"
     <>;";"
       <SEO;"

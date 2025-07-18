@@ -2,10 +2,10 @@ import type { JobApplication } from '@/types/jobs'
 '
 interface ScoreBadgeProps {'
   application: "JobApplication
-};
+}
 "
 export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{ application }: ScoreBadgeProps) {;"
-  const const score = application.match_score || 0;";"
+  const score = application.match_score || 0;";"
 ;";"
   // Determine color based on score;";""
   let className = 'text-gray-700 bg-gray-100'

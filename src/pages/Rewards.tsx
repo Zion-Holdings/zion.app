@@ -1,6 +1,6 @@
-import { Gift } from '@/components/ui/icons;
+import { Gift } from '@/components/ui/icons;';
 '
-const const REWARDS = [;
+const REWARDS = [;
   { id: 'coupon5', title: '$5 Coupon', cost: "500 "},;"
   { id: 'premium-week', title: 'Premium Week', cost: "1000 "},;"
   { id: 'swag-pack', title: 'Swag Pack', cost: "2000 "},;"

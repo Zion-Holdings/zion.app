@@ -1,9 +1,7 @@
-import { jsPDF } from 'jspdf;
-;
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export interface FontBuffers {;
-  regular: ArrayBuffer;
+import { jsPDF } from 'jspdf;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export interface FontBuffers {;';
+  regular: ArrayBuffer;';
   bold?: ArrayBuffer'
   italic?: ArrayBuffer;
   boldItalic?: ArrayBuffer;
@@ -19,7 +17,6 @@ export async function loadCustomFonts(): unknown {): unknown {): unknown {): unk
   fontFamily: FontFamily = 'default','
 ): Promise<void> {;
   if (fontFamily === 'default') return;
-;
   try {'
     // Font loading logic would go here;
     // For demonstration purposes, we'll just set up the font using standard fonts;
@@ -43,7 +40,6 @@ export async function loadCustomFonts(): unknown {): unknown {): unknown {): unk
     doc.setFont('helvetica');
   };
 };
-;
 }'
 }
 }'

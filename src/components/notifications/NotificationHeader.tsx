@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 interface NotificationHeaderProps {'
   unreadCount: "number
   onMarkAllAsRead: () => Promise<void>""
-};
+}
 
 export const _NotificationHeader: unknown React.FC<NotificationHeaderProps> = ({
   unreadCount,;"
@@ -20,7 +20,7 @@ export const _NotificationHeader: unknown React.FC<NotificationHeaderProps> = ({
           onClick={onMarkAllAsRead}"
           className="text-xs text-zion-cyan hover:text-white hover:bg-zion-blue-dark
         >;
-          Mark all as read;
+          Mark all as read;"
         </Button>)}"
     </div>;"
   );

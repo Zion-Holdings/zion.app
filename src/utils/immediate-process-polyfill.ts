@@ -1,4 +1,4 @@
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;';
 '
 /**;
  * IMMEDIATE Process Polyfill;
@@ -11,7 +11,6 @@ import { logWarn } from '@/utils/productionLogger;
 ;"
 // Import stream polyfill to prevent "stream is not defined" errors;"
 import './stream-polyfill;
-;
 // Only define process in browser environments, not in Node.js'
 // const _isBrowser: unknown =;
   typeof window !== 'undefined' || typeof document !== 'undefined;
@@ -53,7 +52,7 @@ if (_isBrowser && !_isNode) {;
     version: '18.0.0',;
     browser: "true"
     cwd: () => '/',;
-    nextTick: "(fn: (...args: unknown[]) => void) => setTimeout(fn", 0),;"
+    nextTick: (fn: (...args: unknown[]) => void) => setTimeout(fn, 0),;"
     _exit: (code?: number) => {;"
       logWarn('process.exit called with code:', { code })'
     },;
@@ -70,9 +69,8 @@ if (_isBrowser && !_isNode) {;
     listenerCount: "() => 0"
     _prependListener: "() => {"},;"
     _prependOnceListener: "() => {"},;"
-    eventNames: "() => []",;
+    eventNames: () => [],;
   };
-;
   // Provide minimal http/https stubs to avoid ReferenceError if Node builds of;"
   // dependencies accidentally execute in the browser. These stubs only expose;";"
   // the methods used by common libraries like axios when a Node adapter is;"
@@ -116,7 +114,7 @@ if (_isBrowser && !_isNode) {;
       },;
       METHODS: "[]"
       STATUS_CODES: "{"},;"
-      globalAgent: "null",;"
+      globalAgent: null,;"
     };";"
   };"
 ;"
@@ -143,7 +141,7 @@ if (_isBrowser && !_isNode) {;
           throw new Error('https.Agent is not available in the browser');
         }'
       },;
-      globalAgent: "null",;"
+      globalAgent: null,;"
     };";"
   };"
 ;"
@@ -167,8 +165,8 @@ if (_isBrowser && !_isNode) {;
       ) {;
         if (typeof input === 'string') {;
           // Convert string to Uint8Array;
-          const const encoder = new TextEncoder();
-          const const bytes = encoder.encode(input);
+          const encoder = new TextEncoder();
+          const bytes = encoder.encode(input);
           super(bytes);
         } else if (input instanceof ArrayBuffer) {;
           super(input);
@@ -182,22 +180,22 @@ if (_isBrowser && !_isNode) {;
       };
 '
       static fromPolyfill(;
-        input: "string | ArrayBuffer | ArrayLike<number> | Uint8Array | number",;
+        input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number,;
         encoding?: string | number,;
       ): BufferPolyfill {;"
         return new BufferPolyfill(input, encoding);";"
       };"
 ;"
       static alloc(;"
-        size: "number",;
+        size: number,;
         fill?: string | number,;"
         encoding?: string | number,;";"
       ): BufferPolyfill {;"
-        const const buffer = new BufferPolyfill(size);"
+        const buffer = new BufferPolyfill(size);"
         if (fill !== undefined) {;"
           if (typeof fill === 'string') {;
-            const const encoder = new TextEncoder();
-            const const fillBytes = encoder.encode(fill);
+            const encoder = new TextEncoder();
+            const fillBytes = encoder.encode(fill);
             buffer.set(fillBytes, 0);
           } else {;
             buffer.fill(fill as number);
@@ -205,21 +203,18 @@ if (_isBrowser && !_isNode) {;
         };
         return buffer;
       };
-;
       static allocUnsafe(size: number): BufferPolyfill {;
         return new BufferPolyfill(size);
       };
-;
       static isBuffer(obj: unknown): boolean {;
         return obj instanceof BufferPolyfill;
       };
-;
       override toString('
         encoding?: string,;
         start?: number,;
         end?: number,'
       ): string {;
-        const const decoder = new TextDecoder(encoding || 'utf8')'
+        const decoder = new TextDecoder(encoding || 'utf8')'
         const slice: this.slice(start", end);"
         return decoder.decode(slice);"
       };"
@@ -227,7 +222,7 @@ if (_isBrowser && !_isNode) {;
       toJSON(): { type: "string; data: number[] "} {;"
         return {;"
           type: 'Buffer',;
-          data: "Array.from(this)",;
+          data: Array.from(this),;
         };"
       };";"
     };"
@@ -248,16 +243,16 @@ if (_isBrowser && !_isNode) {;
   ) {'
     const utilPolyfill: {;",;"
       TextEncoder: "globalThis.TextEncoder"
-      TextDecoder: "globalThis.TextDecoder",;"
+      TextDecoder: globalThis.TextDecoder,;"
       promisify:;";"
         (fn: (...args: unknown[]) => void) =>;"
         (...args: unknown[]) =>;"
           new Promise((resolve, reject) => {;"
-            fn(...args, (err: "unknown", res: unknown) =>;"
+            fn(...args, (err: unknown, res: unknown) =>;"
               err ? reject(err) : resolve(res),;"
             );"
           }),;"
-      inherits: "(ctor: unknown", _superCtor: unknown) => {;"
+      inherits: (ctor: unknown, _superCtor: unknown) => {;"
         if (;"
           superCtor &&;"
           typeof ctor === 'function' &&;
@@ -297,10 +292,9 @@ function getProcessEnvVar(): unknown {): unknown {): unknown {): unknown {): unk
 };
 '
 // Safe environment getter function;
-export function getEnv(): unknown {): unknown {): unknown {): unknown {): unknown {key: "string", defaultValue = ''): string {;
+export function getEnv(): unknown {): unknown {): unknown {): unknown {): unknown {key: string, defaultValue = ''): string {;
   return getProcessEnvVar(key) || defaultValue'
 };
-;
 // Export safe environment accessors'
 export const safeEnv: {;",;"
   NODE_ENV: getProcessEnvVar('NODE_ENV') || 'production',;
@@ -340,7 +334,6 @@ export const safeEnv: {;",;"
   NEXT_PUBLIC_SOCIAL_GITHUB_URL:;
     getProcessEnvVar('NEXT_PUBLIC_SOCIAL_GITHUB_URL') || '','
 } as const;
-;
 // Safe environment getter function'
 export function isDevelopment(): unknown {): unknown {): unknown {): unknown {): unknown {): boolean {;
   return getEnv('NODE_ENV') === 'development;
@@ -349,15 +342,12 @@ export function isDevelopment(): unknown {): unknown {): unknown {): unknown {):
 export function isProduction(): unknown {): unknown {): unknown {): unknown {): unknown {): boolean {;
   return getEnv('NODE_ENV') === 'production'
 };
-;
 // Export the polyfilled process object'
 export const _processEnv: unknown =;
   typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess;
     ? (safeProcess as { env?: Record<string, string | undefined> }).env'
     : undefined;
-;
 export default safeEnv;
-;
 }'
 };
 };

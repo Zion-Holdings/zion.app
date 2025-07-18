@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export function BackToDirectoryButton(): '
   return ('
-    <div className="container mx-auto px-4 md:px-6 mb-12>
+    <div className="container mx-auto px-4 md:px-6 mb-12>"
       <Button variant="outline" asChild className=my-8>"
         <Link;"
           href=/talents

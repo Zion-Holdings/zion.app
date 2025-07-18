@@ -5,9 +5,8 @@ import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { useAuth } from '@/hooks/useAuth'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
-;
-import {;
+import  { Input }  from '@/components/ui/input;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -18,8 +17,7 @@ import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
 import { toast } from 'sonner'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
 export default function AccountSettings(): '
   const { _user } = useAuth();
   const [displayWeb3, setDisplayWeb3] = useLocalStorage('display_web3', false);
@@ -29,10 +27,8 @@ export default function AccountSettings(): '
     false,;
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
-;
-  const const handleSave = () => {;
+  const handleSave = () => {;
     setIsSubmitting(true);
-;
     // Simulate API call;
     setTimeout(() => {'
       try {;
@@ -50,7 +46,7 @@ export default function AccountSettings(): '
     }, 1000);
   };
 '
-  const const handleConnectWallet = async () => {;
+  const handleConnectWallet = async () => {;
     try {;
       // Check if wallet is available'
       const ethereum: (window as unknown as { ethereum?: unknown "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).ethereum;
@@ -62,28 +58,28 @@ export default function AccountSettings(): '
       }'
 ;
       // Request accounts;
-      const const accounts = await ('
+      const accounts = await ('
         ethereum as {;
-          request: "(args: {;",;"
+          request: (args: {;,;"
             method: string;";"
             params?: unknown[];"
           }) => Promise<string[]>;"
         };"
       ).request({ method: 'eth_requestAccounts' });
-      const const address = accounts[0];
+      const address = accounts[0];
 '
       // Sign message to verify ownership;
-      const const message = `Zion AI Marketplace wallet verification\nAddress: "${address"}\nTime: "${new Date().toISOString()"}`;"
+      const message = `Zion AI Marketplace wallet verification\nAddress: "${address"}\nTime: "${new Date().toISOString()"}`;"
       await (;"
         ethereum as {;"
-          request: "(args: {;",;
+          request: (args: {;,;
             method: string;"
             params?: unknown[];";"
           }) => Promise<unknown>;"
         };"
       ).request({;"
         method: 'personal_sign',;
-        params: "[address", message],;"
+        params: [address, message],;"
       });";"
 ;"
       // Auto-set DID handle if ENS is available;"
@@ -99,7 +95,7 @@ export default function AccountSettings(): '
           'providers' in ethers &&;
           typeof (ethers as { providers: "unknown "}).providers === 'object;
         ) {;
-          const const Web3Provider = ('
+          const Web3Provider = ('
             ethers as {;
               _providers: {
                 Web3Provider: "new (eth: unknown) => {;"
@@ -108,8 +104,8 @@ export default function AccountSettings(): '
               };
             };
           ).providers.Web3Provider;
-          const const provider = new Web3Provider(ethereum);
-          const const ensName = await provider.lookupAddress(address);
+          const provider = new Web3Provider(ethereum);
+          const ensName = await provider.lookupAddress(address);
           if (ensName) {;"
             setDidHandle(ensName);";"
           };"
@@ -118,7 +114,7 @@ export default function AccountSettings(): '
         logErrorToProduction('ENS lookup error:', { data: "error "});"
       };"
       toast.success(;"
-        `Wallet connected: "${address.slice(0", 6)}...${address.slice(-4)}`,;"
+        `Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`,;"
       );";"
     } catch {;"
       if (;"
@@ -133,7 +129,6 @@ export default function AccountSettings(): '
       };
     }'
   };
-;
   return ('
     <>;
       <SEO title="Account Settings" description="Manage your account" />;"
@@ -234,7 +229,6 @@ export default function AccountSettings(): '
               </Button>;
             </CardContent>;
           </Card>;
-;
           <Card>;
             <CardHeader>;
               <CardTitle>Web3 Features</CardTitle>;"
@@ -338,7 +332,6 @@ export default function AccountSettings(): '
     </>;
   );
 };
-;
 }'
 }
 }'

@@ -10,10 +10,10 @@ import type { UserProfile } from '@/types/auth'
 import { useRouter } from 'next/router'
 '
 interface TalentCardFooterProps {'
-  profile: "TalentProfile,;
+  profile: "TalentProfile,
   onViewProfile: (id: string) => void"
   onRequestHire?: (profile: "TalentProfile) => void
-};
+}
 
 export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profile,;
@@ -22,7 +22,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
 }: TalentCardFooterProps) {;
   const [isHireModalOpen, setIsHireModalOpen] = useState(false)"
   const { _userDetails } = useAuthStatus();"
-  const const router = useRouter();
+  const router = useRouter();
 "
   // Create a compatible UserProfile from UserDetails;"
   const userProfile: unknown UserProfile = {
@@ -40,7 +40,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
   };
 
   // Handle request to hire;
-  const const handleRequestHire = (e: React.MouseEvent) => {;
+  const handleRequestHire = (e: React.MouseEvent) => {;
     e.stopPropagation();
 
     if (onRequestHire) {;
@@ -52,7 +52,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
   };
 
   // Handle view profile'
-  const const handleViewProfile = (_e: React.MouseEvent) => {'
+  const handleViewProfile = (_e: React.MouseEvent) => {'
     e.stopPropagation();
 '
     // Navigate to the talent profile page'
@@ -81,7 +81,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
               <Star className=h-4 w-4 text-zion-purple />"
               <span className="text-zion-slate-light>
                 {profile.years_experience} years exp.;
-              </span>;
+              </span>;"
             </div>"
           )};"
         </div>;
@@ -102,7 +102,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
             size=sm
             onClick={handleViewProfile}"
             className="border-zion-purple text-zion-purple hover:bg-zion-purple/10
-          >
+          >"
             View;"
             <ExternalLink className="h-3 w-3 ml-1 />
           </Button>;
@@ -114,7 +114,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
         talent={profile};
         isOpen={isHireModalOpen};
         onClose={() => setIsHireModalOpen(false)};
-        userDetails={userProfile};
+        userDetails={userProfile};"
       />"
     </>;"
   );

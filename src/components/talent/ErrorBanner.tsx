@@ -2,7 +2,7 @@ import React from 'react'
 '
 interface ErrorBannerProps {'
   msg: "string
-};"
+}"
 ;"
 export function ErrorBanner(): unknown {): unknown {): unknown {): unknown {): unknown {{ msg }: ErrorBannerProps) {
   return (;

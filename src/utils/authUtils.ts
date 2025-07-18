@@ -1,14 +1,13 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { UserDetails } from '@/types/auth'
 import { safeStorage, safeSessionStorage } from './safeStorage'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
 /**'
  * Utility function to clean up authentication state;
  * This helps prevent auth state inconsistencies and "limbo" states;"
  */;"
-export const const _cleanupAuthState = () => {;"
-  const const authTokenKey = 'zion_token;
+export const _cleanupAuthState = () => {;"
+  const authTokenKey = 'zion_token;
   // Remove our custom auth token'
   safeStorage.removeItem(authTokenKey);
   safeSessionStorage.removeItem(authTokenKey);
@@ -39,12 +38,11 @@ export const const _cleanupAuthState = () => {;"
   } catch {;
     logWarn('Storage access error:', { data: "{ data: e "} });
   };
-};
-;"
+};"
 /**;";"
  * Utility function to check new user registration and schedule welcome emails;"
  */;"
-export const const checkNewRegistration = async (_user: UserDetails) => {;"
+export const checkNewRegistration = async (_user: UserDetails) => {;"
   if (!supabase) throw new Error('Supabase client not initialized');
   try {'
     // Check if user has received welcome email already;
@@ -85,7 +83,7 @@ export const const checkNewRegistration = async (_user: UserDetails) => {;"
     }'
   } catch {;
     logErrorToProduction('Error checking or scheduling welcome email:', {;
-      data: "error",;"
+      data: error,;"
     });";"
   };"
 };"

@@ -6,18 +6,18 @@ interface ReputationDisplayProps {'
   size?: 'sm' | 'md' | 'lg'
 }'
 
-export const const ReputationDisplay = ({'
+export const ReputationDisplay = ({'
   reputation,'
   size = 'md','
 }: ReputationDisplayProps) => {;
   // Calculate next milestone;
-  const const currentLevel = Math.floor(reputation / 100);
-  const const nextMilestone = (currentLevel + 1) * 100'
-  const const progress = ((reputation % 100) / 100) * 100'
+  const currentLevel = Math.floor(reputation / 100);
+  const nextMilestone = (currentLevel + 1) * 100'
+  const progress = ((reputation % 100) / 100) * 100'
 
   // Styling based on size'
   const sizeClasses: {,;
-    sm: "{",;"";
+    sm: {,;"";
       container: 'text-xs','
       icon: 'w-3 h-3','
       progress: 'h-1','

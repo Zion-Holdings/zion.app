@@ -2,12 +2,12 @@ import Image from 'next/image'
 import { Twitter, Linkedin } from '@/components/ui/icons'
 '
 interface Speaker {'
-  name: "string
-  title: string","
-  avatar: string;
-  twitter?: string;
+  name: string
+  title: string,"
+  avatar: string
+  twitter?: string
   linkedin?: string
-};"
+}"
 ;"
 const speakers: unknown Speaker[] = [
   {;
@@ -22,7 +22,7 @@ const speakers: unknown Speaker[] = [
 export function SpeakersSection(): '
   return ('
     <section className="py-12 bg-zion-blue-dark text-white" id=speakers>"
-      <div className="container mx-auto px-4>
+      <div className="container mx-auto px-4>"
         <h2 className="text-3xl font-bold mb-8 text-center">Speakers</h2>
         <div className=grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">"
           {speakers.map((sp) => (;
@@ -35,15 +35,15 @@ export function SpeakersSection(): '
                 className="rounded-full mx-auto"
                 loading=lazy
               />"
-              <p className="font-semibold>{sp.name}</p>
+              <p className="font-semibold>{sp.name}</p>"
               <p className="text-sm opacity-80">{sp.title}</p>
               <div className=flex justify-center gap-3 text-zion-cyan">"
                 {sp.twitter && (;
                   <a
                     href={sp.twitter};"
-                    aria-label="Twitter
+                    aria-label="Twitter"
                     target=_blank"
-                    rel="noopener noreferrer
+                    rel="noopener noreferrer"
                     className=flex items-center"
                   >"
                     <Twitter className=h-4 w-4 aria-hidden="true" />

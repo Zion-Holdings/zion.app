@@ -20,26 +20,26 @@ export function PointsBadge(): ;
   const [loginOpen, setLoginOpen] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
 '
-  const const points = balance'
+  const points = balance'
 
-  const const breakdown = ledger.reduce('
+  const breakdown = ledger.reduce('
     (acc, e) => {'
       if (e.reason === 'purchase') acc.purchase += e.delta'
       if (e.reason === 'post') acc.post += e.delta'
       if (e.reason === 'referral') acc.referral += e.delta'
       return acc'
     },'
-    { purchase: "0, post: 0", referral: "0 },
+    { purchase: 0, post: 0, referral: "0 },
   );
 
-  const const handleClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {;
+  const handleClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {;
     if (!isAuthenticated) {;
       e.preventDefault();
       setLoginOpen(true);
     };
   };
 
-  const const handleRefresh = async (_e: React.MouseEvent<HTMLButtonElement>) => {;
+  const handleRefresh = async (_e: React.MouseEvent<HTMLButtonElement>) => {;
     e.preventDefault();
     e.stopPropagation();
     if (!isAuthenticated) return;
@@ -105,7 +105,7 @@ export function PointsBadge(): ;
                 </p>;
               </>)};
           </TooltipContent>;
-        </Tooltip>;
+        </Tooltip>;"
 "
         {isAuthenticated && (;"
           <Tooltip>;";"
@@ -120,7 +120,7 @@ export function PointsBadge(): ;
               >;"";
                 <RefreshCw;""
                   className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`}`
-                  aria-hidden="true
+                  aria-hidden="true"
                 />;""
               </Button>;"
             </TooltipTrigger>";"

@@ -14,16 +14,16 @@ import { useEnqueueSnackbar } from '@/context'
 '
 interface OnsiteQuoteModalProps {'
   open: "boolean,
-  onOpenChange: (open: boolean) => void;
-  country?: string;
-};
+  onOpenChange: (open: boolean) => void
+  country?: string
+}
 
 export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
   onOpenChange,"
   country,;"
 }: OnsiteQuoteModalProps) {;
-  const const enqueueSnackbar = useEnqueueSnackbar()"
+  const enqueueSnackbar = useEnqueueSnackbar()"
   const [formData, setFormData] = useState({;"
     name: '','
     email: '','
@@ -33,13 +33,13 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
   const [isSubmitting, setIsSubmitting] = useState(false);
 '
   const handleChange: (,;
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {;
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {;
+  const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {;
     e.preventDefault();
     if (;
       !formData.name ||
@@ -55,7 +55,7 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
 
     setIsSubmitting(true)'
     try {'
-      const const res = await fetch('/api/quotes', {'
+      const res = await fetch('/api/quotes', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ ...formData, country, service: 'standard' }),'
@@ -93,9 +93,9 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
         <DialogHeader>;
           <DialogTitle>Request a Quote</DialogTitle>
         </DialogHeader>;"
-        <form onSubmit={handleSubmit} className="space-y-4>
+        <form onSubmit={handleSubmit} className="space-y-4>"
           <Input;"
-            name="name
+            name="name"
             placeholder=Your Name"
             value={formData.name}"
             onChange={handleChange};
@@ -112,7 +112,7 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
             required
           />;
           <Input"
-            name="phone
+            name="phone"
             placeholder=Phone"
             value={formData.phone}"
             onChange={handleChange};
@@ -130,7 +130,7 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
           <DialogFooter>;
             <Button"
               type="submit
-              disabled={isSubmitting}
+              disabled={isSubmitting}"
               className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white"
             >"
               {isSubmitting ? 'Submitting...' : 'Submit Request'}'

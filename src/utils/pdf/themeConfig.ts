@@ -1,13 +1,13 @@
 /**;
  * Theme configuration for PDF export;
  */;
-export interface PdfThemeColors {;
-  background: "string;"
-  text: "string;","
-  heading: "string;"
-  subheading: "string;","
-  accent: "string;"
-};"
+export interface PdfThemeColors {
+  background: "string"
+  text: string,"
+  heading: "string"
+  subheading: string,"
+  accent: "string"
+}"
 ;"
 export function getPdfThemeColors(): unknown {): unknown {): unknown {): unknown {): unknown {theme: 'light' | 'dark'): PdfThemeColors {;
   return theme === 'light;
@@ -26,7 +26,6 @@ export function getPdfThemeColors(): unknown {): unknown {): unknown {): unknown
         accent: '#9b87f5',;
       };
 };
-;
 }'
 }
 }'

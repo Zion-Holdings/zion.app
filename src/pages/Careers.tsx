@@ -5,17 +5,17 @@ import { Card, CardContent } from '@/components/ui/card'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
-import { CAREER_JOBS } from '@/data/careersJobs;
+import { CAREER_JOBS } from '@/data/careersJobs;';
 '
 export default function Careers(): ;
-  const const applyEmail = 'careers@ziontechgroup.com;
-  const const jobs = CAREER_JOBS;
+  const applyEmail = 'careers@ziontechgroup.com;
+  const jobs = CAREER_JOBS;
 '
   const whyWork: unknown =;
     'At Zion, we’re building more than a marketplace—we’re cultivating a community where forward-thinking engineers, product visionaries, and creatives collaborate to pioneer accessible AI technology. You’ll join a remote-first team dedicated to removing barriers and shaping solutions that empower everyday innovators. Our culture emphasizes trust, continuous learning, and meaningful impact, giving you the freedom to take ownership and experiment. We believe diverse perspectives fuel groundbreaking ideas, so we welcome talent from every background. You’ll work alongside passionate peers who care about real-world results, not just buzzwords. Zion’s growth means endless opportunities to expand your skills, explore new roles, and contribute to open-source initiatives. If you’re driven by curiosity and want to leave a lasting mark on the future of technology, Zion offers a supportive environment where your contributions truly matter. Come help us redefine what’s possible and make advanced AI accessible to all. Join us to transform ideas into reality today.'
 ;
   // Benefits list;
-  const const benefits = ['
+  const benefits = ['
     {;
       title: 'Flexible Work','
       description:;
@@ -212,8 +212,7 @@ export default function Careers(): ;
                 >;
                   Operations;
                 </TabsTrigger>;
-              </TabsList>;
-;"
+              </TabsList>;"
               {Object.entries(jobs).map(([department, jobList]) => (;";"
                 <TabsContent;"
                   key={department};"

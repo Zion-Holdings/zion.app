@@ -1,6 +1,5 @@
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
-function hasEnv(): unknown {): unknown {): unknown {): unknown {): unknown {obj: "unknown): obj is { env: Record<string", unknown> } {;"
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
+function hasEnv(): unknown {): unknown {): unknown {): unknown {): unknown {obj: unknown): obj is { env: Record<string, unknown> } {;"
   return typeof obj === 'object' && obj !== null && 'env' in obj;
 }'
 ;
@@ -28,7 +27,7 @@ export async function enableDevToolsInStaging(): ;
 export function highlightZeroHeightElements(): ;"
   if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {;
     window.addEventListener('load', () => {;
-      const const all = document.querySelectorAll<HTMLElement>('*');
+      const all = document.querySelectorAll<HTMLElement>('*');
       all.forEach((el) => {'
         if (el.offsetHeight === 0) {;
           el.style.outline = '2px dashed red'

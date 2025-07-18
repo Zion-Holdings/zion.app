@@ -1,6 +1,6 @@
 import { rest } from 'msw';
-import { setupServer } from 'msw/node;
-import {;
+import  { setupServer }  from 'msw/node;';
+import {;';
   fetchProducts,'
   fetchCategories,;
   fetchTalent,;
@@ -11,28 +11,27 @@ import {;
 // Mock Supabase;
 jest.mock('@/integrations/supabase/client', () => ({;
   supabase: {
-    auth: "{;","
+    auth: {;,"
       getSession: "jest.fn().mockResolvedValue({;"
         data: { session: { access_token: 'mock-token' } },;
-        error: "null",;"
+        error: null,;"
       }),;"
       refreshSession: "jest.fn().mockResolvedValue({;"
         data: { session: { access_token: 'mock-refreshed-token' } },;
-        error: "null",;
+        error: null,;
       }),;
     },;
   },;
 }));"
 ;";"
 // Setup MSW server;"
-const const server = setupServer(;"
+const server = setupServer(;"
   // Products endpoint;"
   rest.get('*/products', (req, res, ctx) => {;
-    const const page = Number(req.url.searchParams.get('page')) || 1;
-    const const limit = Number(req.url.searchParams.get('limit')) || 10;
-    const const category = req.url.searchParams.get('category');
-    const const search = req.url.searchParams.get('search');
-;
+    const page = Number(req.url.searchParams.get('page')) || 1;
+    const limit = Number(req.url.searchParams.get('limit')) || 10;
+    const category = req.url.searchParams.get('category');
+    const search = req.url.searchParams.get('search');
     let filteredProducts = ['
       {;
         id: 'prod-1',;
@@ -81,13 +80,11 @@ const const server = setupServer(;"
         brand: 'MLSolutions',;
       },;
     ];
-;
     if (category) {;
       filteredProducts = filteredProducts.filter((p) =>;
         p.category.toLowerCase().includes(category.toLowerCase()),;
       );
     };
-;
     if (search) {;
       filteredProducts = filteredProducts.filter(;
         (p) =>;
@@ -96,10 +93,9 @@ const const server = setupServer(;"
       );
     }'
 ;
-    const const start = (page - 1) * limit;
-    const const end = start + limit'
-    const paginatedProducts: filteredProducts.slice(start", end);
-;"
+    const start = (page - 1) * limit;
+    const end = start + limit'
+    const paginatedProducts: filteredProducts.slice(start", end);"
     return res(ctx.status(200), ctx.json(paginatedProducts));";"
   }),;"
 ;"
@@ -117,11 +113,10 @@ const const server = setupServer(;"
 '
   // Talent endpoint;
   rest.get('*/talent', (req, res, ctx) => {;
-    const const page = Number(req.url.searchParams.get('page')) || 1;
-    const const limit = Number(req.url.searchParams.get('limit')) || 10;
-    const const skills = req.url.searchParams.get('skills')?.split(',') || [];
-    const const search = req.url.searchParams.get('search');
-;
+    const page = Number(req.url.searchParams.get('page')) || 1;
+    const limit = Number(req.url.searchParams.get('limit')) || 10;
+    const skills = req.url.searchParams.get('skills')?.split(',') || [];
+    const search = req.url.searchParams.get('search');
     let filteredTalent = ['
       {;
         id: 'talent-1',;
@@ -146,7 +141,6 @@ const const server = setupServer(;"
         availability: 'Busy',;
       },;
     ];
-;
     if (skills.length > 0) {;
       filteredTalent = filteredTalent.filter((t) =>;
         skills.some((skill) =>;
@@ -154,7 +148,6 @@ const const server = setupServer(;"
         ),;
       );
     };
-;
     if (search) {;
       filteredTalent = filteredTalent.filter(;
         (t) =>;
@@ -163,20 +156,18 @@ const const server = setupServer(;"
       );
     }'
 ;
-    const const start = (page - 1) * limit;
-    const const end = start + limit'
-    const paginatedTalent: filteredTalent.slice(start", end);
-;"
+    const start = (page - 1) * limit;
+    const end = start + limit'
+    const paginatedTalent: filteredTalent.slice(start", end);"
     return res(ctx.status(200), ctx.json(paginatedTalent));";"
   }),;"
 ;"
   // Equipment endpoint;
   rest.get('*/equipment', (req, res, ctx) => {;
-    const const page = Number(req.url.searchParams.get('page')) || 1;
-    const const limit = Number(req.url.searchParams.get('limit')) || 10;
-    const const category = req.url.searchParams.get('category');
-    const const search = req.url.searchParams.get('search');
-;
+    const page = Number(req.url.searchParams.get('page')) || 1;
+    const limit = Number(req.url.searchParams.get('limit')) || 10;
+    const category = req.url.searchParams.get('category');
+    const search = req.url.searchParams.get('search');
     let filteredEquipment = ['
       {;
         id: 'eq-1',;
@@ -201,13 +192,11 @@ const const server = setupServer(;"
         availability: 'Limited Stock',;
       },;
     ];
-;
     if (category) {;
       filteredEquipment = filteredEquipment.filter((e) =>;
         e.category.toLowerCase().includes(category.toLowerCase()),;
       );
     };
-;
     if (search) {;
       filteredEquipment = filteredEquipment.filter(;
         (e) =>;
@@ -216,10 +205,9 @@ const const server = setupServer(;"
       );
     }'
 ;
-    const const start = (page - 1) * limit;
-    const const end = start + limit'
-    const paginatedEquipment: filteredEquipment.slice(start", end);
-;"
+    const start = (page - 1) * limit;
+    const end = start + limit'
+    const paginatedEquipment: filteredEquipment.slice(start", end);"
     return res(ctx.status(200), ctx.json(paginatedEquipment));";"
   }),;"
 ;"
@@ -237,12 +225,10 @@ const const server = setupServer(;"
     return res(ctx.delay(15000), ctx.status(200), ctx.json([]));
   }),'
 );
-;
 // Test setup'
 beforeAll(() => {;
   server.listen({ onUnhandledRequest: 'error' });
 });
-;
 afterEach(() => {;
   server.resetHandlers();
 });
@@ -254,8 +240,7 @@ afterAll(() => {;
 describe('Marketplace Service', () => {;
   describe('fetchProducts', () => {;
     test('should fetch products successfully and return 200 response', async () => {'
-      const const products = await fetchProducts();
-;
+      const products = await fetchProducts();
       expect(products).toHaveLength(2)'
       expect(products[0]).toMatchObject({;
         id: 'prod-1',;
@@ -267,26 +252,26 @@ describe('Marketplace Service', () => {;
       expect(products[1]).toMatchObject({;
         id: 'prod-2',;
         title: 'Machine Learning Framework',;
-        price: "599",;"
+        price: 599,;"
       });"
     });"
 ;"
     test('should handle pagination parameters', async () => {;
-      const const products = await fetchProducts({ page: "1", limit: "1 "});"
+      const products = await fetchProducts({ page: 1, limit: "1 "});"
 ;"
       expect(products).toHaveLength(1);"
       expect(products[0].id).toBe('prod-1');
     })'
 ;
     test('should filter by category', async () => {;
-      const const products = await fetchProducts({ category: 'Software' });
+      const products = await fetchProducts({ category: 'Software' });
 '
       expect(products).toHaveLength(2);
       expect(products.every((p) => p.category === 'Software')).toBe(true);
     })'
 ;
     test('should filter by search term', async () => {;
-      const const products = await fetchProducts({ search: 'AI' });
+      const products = await fetchProducts({ search: 'AI' });
 '
       expect(products).toHaveLength(1);
       expect(products[0].title).toBe('AI Development Kit');
@@ -300,7 +285,7 @@ describe('Marketplace Service', () => {;
         }),;
       );
 '
-      const const products = await fetchProducts();
+      const products = await fetchProducts();
       expect(products).toEqual([]);
     })'
 ;
@@ -311,16 +296,14 @@ describe('Marketplace Service', () => {;
           return res(ctx.delay(15000), ctx.status(200), ctx.json([]));
         }),;
       );
-;
-      const const products = await fetchProducts()'
+      const products = await fetchProducts()'
       expect(products).toEqual([]);
     });
   })'
 ;
   describe('fetchCategories', () => {;
     test('should fetch categories successfully and return 200 response', async () => {'
-      const const categories = await fetchCategories();
-;
+      const categories = await fetchCategories();
       expect(categories).toHaveLength(3)'
       expect(categories[0]).toMatchObject({;
         id: 'cat-1',;
@@ -336,34 +319,32 @@ describe('Marketplace Service', () => {;
           return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
         }),;
       );
-;
-      const const categories = await fetchCategories()'
+      const categories = await fetchCategories()'
       expect(categories).toEqual([]);
     });
   })'
 ;
   describe('fetchTalent', () => {;
     test('should fetch talent successfully and return 200 response', async () => {'
-      const const talent = await fetchTalent();
-;
+      const talent = await fetchTalent();
       expect(talent).toHaveLength(2)'
       expect(talent[0]).toMatchObject({;
         id: 'talent-1',;
         name: 'John Doe',;
         title: 'Senior AI Engineer',;
-        hourlyRate: "150",;"
+        hourlyRate: 150,;"
       });"
     });"
 ;"
     test('should filter by skills', async () => {;
-      const const talent = await fetchTalent({ skills: ['Python'] });
+      const talent = await fetchTalent({ skills: ['Python'] });
 '
       expect(talent).toHaveLength(1);
       expect(talent[0].name).toBe('John Doe');
     })'
 ;
     test('should handle search functionality', async () => {;
-      const const talent = await fetchTalent({ search: 'Machine Learning' });
+      const talent = await fetchTalent({ search: 'Machine Learning' });
 '
       expect(talent).toHaveLength(1);
       expect(talent[0].name).toBe('Jane Smith');
@@ -375,16 +356,14 @@ describe('Marketplace Service', () => {;
           return res(ctx.status(404), ctx.json({ error: 'Not Found' }));
         }),;
       );
-;
-      const const talent = await fetchTalent()'
+      const talent = await fetchTalent()'
       expect(talent).toEqual([]);
     });
   })'
 ;
   describe('fetchEquipment', () => {;
     test('should fetch equipment successfully and return 200 response', async () => {'
-      const const equipment = await fetchEquipment();
-;
+      const equipment = await fetchEquipment();
       expect(equipment).toHaveLength(2)'
       expect(equipment[0]).toMatchObject({;
         id: 'eq-1',;
@@ -396,14 +375,14 @@ describe('Marketplace Service', () => {;
     })'
 ;
     test('should filter by category', async () => {;
-      const const equipment = await fetchEquipment({ category: 'Hardware' });
+      const equipment = await fetchEquipment({ category: 'Hardware' });
 '
       expect(equipment).toHaveLength(2);
       expect(equipment.every((e) => e.category === 'Hardware')).toBe(true);
     })'
 ;
     test('should handle search functionality', async () => {;
-      const const equipment = await fetchEquipment({ search: 'GPU' });
+      const equipment = await fetchEquipment({ search: 'GPU' });
 '
       expect(equipment).toHaveLength(1);
       expect(equipment[0].title).toBe('NVIDIA RTX 4090');
@@ -415,44 +394,43 @@ describe('Marketplace Service', () => {;
           return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
         }),;
       );
-;
-      const const equipment = await fetchEquipment()'
+      const equipment = await fetchEquipment()'
       expect(equipment).toEqual([]);
     });
   })'
 ;
   describe('getMarketplaceErrorMessage', () => {;
     test('should return appropriate message for 404 error', () => {;
-      const const error = { response: "{ status: 404 "} };"
-      const const message = getMarketplaceErrorMessage(error);"
+      const error = { response: "{ status: 404 "} };"
+      const message = getMarketplaceErrorMessage(error);"
       expect(message).toBe('The requested marketplace data was not found.');
     })'
 ;
     test('should return appropriate message for 500 error', () => {;
-      const const error = { response: "{ status: 500 "} };"
-      const const message = getMarketplaceErrorMessage(error);"
+      const error = { response: "{ status: 500 "} };"
+      const message = getMarketplaceErrorMessage(error);"
       expect(message).toBe(;"
         'Our servers are experiencing issues. Please try again later.',;
       );
     })'
 ;
     test('should return appropriate message for 401 error', () => {;
-      const const error = { response: "{ status: 401 "} };"
-      const const message = getMarketplaceErrorMessage(error);"
+      const error = { response: "{ status: 401 "} };"
+      const message = getMarketplaceErrorMessage(error);"
       expect(message).toBe('Please log in to access marketplace data.');
     })'
 ;
     test('should return appropriate message for timeout error', () => {;
-      const const error = { code: 'ECONNABORTED' };
-      const const message = getMarketplaceErrorMessage(error)'
+      const error = { code: 'ECONNABORTED' };
+      const message = getMarketplaceErrorMessage(error)'
       expect(message).toBe(;
         'Request timeout. Please check your connection and try again.',;
       );
     })'
 ;
     test('should return generic message for unknown errors', () => {;
-      const const error = { message: 'Unknown error' };
-      const const message = getMarketplaceErrorMessage(error)'
+      const error = { message: 'Unknown error' };
+      const message = getMarketplaceErrorMessage(error)'
       expect(message).toBe(;
         'Unable to load marketplace data. Please try again.','
       );
@@ -521,8 +499,7 @@ describe('Marketplace Service', () => {;
           );
         }),;
       );
-;
-      const const products = await fetchProducts();
+      const products = await fetchProducts();
       expect(products).toHaveLength(2)'
       expect(requestCount).toBe(2); // First request fails, second succeeds after token refresh;
     });
@@ -533,11 +510,11 @@ describe('Marketplace Service', () => {;
       // Mock navigator.onLine;
       Object.defineProperty(navigator, 'onLine', {;
         writable: "true"
-        value: "false",;"
+        value: false,;"
       });"
 ;"
       const error: {"};"
-      const const message = getMarketplaceErrorMessage(error);"
+      const message = getMarketplaceErrorMessage(error);"
       expect(message).toBe(;"
         'No internet connection. Please check your network.',;
       );
@@ -545,7 +522,7 @@ describe('Marketplace Service', () => {;
       // Restore online status;
       Object.defineProperty(navigator, 'onLine', {;
         writable: "true"
-        value: "true",;
+        value: true,;
       });"
     });";"
   });"

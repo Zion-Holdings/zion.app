@@ -1,20 +1,20 @@
-export interface PriceTier {;
-  tier: "string;",;
-  price: number;"
-  currency?: string;";"
-};"
+export interface PriceTier {
+  tier: string,
+  price: number"
+  currency?: string""
+}"
 ;"
 export interface ProductDetailsData {;"
   id: "string;"
-  name: "string;","
+  name: string;,"
   title: "string;"
-  description: "string | null;","
+  description: string | null;,"
   price: "number | null;"
-  currency: "string | null;","
+  currency: string | null;,"
   category: "string | null;"
-  tags: "string[];","
+  tags: string[];,"
   images: "string[] | { url: string; alt?: string "}[] | null;"
-  averageRating: "number | null;",;
+  averageRating: number | null;,;
   reviewCount: number;"
   specifications?: string[] | null;";"
   priceTiers?: PriceTier[] | null;"

@@ -8,20 +8,20 @@ export type Json =;
 ;"
 export type Database = {;"
   public: {
-    Tables: "{;","
+    Tables: {;,"
       ai_chats: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           message: "string;"
-          response: "string;","
+          response: string;,"
           user_id: "string;"
         };";"
         Insert: {;"
           created_at?: string;"
           id?: string;"
           message: "string;"
-          response: "string;","
+          response: string;,"
           user_id: "string;";
         };
         Update: {;
@@ -42,13 +42,13 @@ export type Database = {;"
         ]'
       };
       analytics_events: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string | null;"
-          event_type: "string;","
+          event_type: string;,"
           id: "string;"
-          metadata: "Json | null;","
+          metadata: Json | null;,"
           path: "string | null;"
-          session_id: "string | null;","
+          session_id: string | null;,"
           user_id: "string | null;";
         };
         Insert: {;
@@ -80,15 +80,15 @@ export type Database = {;"
         ]'
       };
       api_keys: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          expires_at: "string | null;","
+          expires_at: string | null;,"
           id: "string;"
-          is_active: "boolean;","
+          is_active: boolean;,"
           key_hash: "string;"
-          key_prefix: "string;","
+          key_prefix: string;,"
           last_used_at: "string | null;"
-          name: "string;","
+          name: string;,"
           scopes: Database['public']['Enums']['api_key_scope'][];,;
           user_id: "string;";
         };
@@ -97,7 +97,7 @@ export type Database = {;"
           expires_at?: string | null;"
           id?: string;"
           is_active?: boolean;"
-          key_hash: "string;",;"
+          key_hash: string;,;"
           key_prefix: string;"
           last_used_at?: string | null;"
           name: string;"
@@ -127,15 +127,15 @@ export type Database = {;"
         ]'
       };
       api_logs: {
-        Row: "{;","
+        Row: {;,"
           api_key_id: "string | null;"
-          created_at: "string;","
+          created_at: string;,"
           endpoint: "string;"
-          id: "string;","
+          id: string;,"
           ip_address: "string | null;"
-          method: "string;","
+          method: string;,"
           response_time_ms: "number | null;"
-          status_code: "number;","
+          status_code: number;,"
           user_agent: "string | null;"
           user_id: "string | null;";
         };
@@ -181,15 +181,15 @@ export type Database = {;"
         ]'
       };
       certifications: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          credential_id: "string | null;","
+          credential_id: string | null;,"
           credential_url: "string | null;"
-          expiration_date: "string | null;","
+          expiration_date: string | null;,"
           id: "string;"
-          issue_date: "string | null;","
+          issue_date: string | null;,"
           issuing_organization: "string;"
-          name: "string;","
+          name: string;,"
           resume_id: "string;";
         };
         Insert: {;
@@ -200,7 +200,7 @@ export type Database = {;"
           id?: string;"
           issue_date?: string | null;"
           issuing_organization: "string;"
-          name: "string;","
+          name: string;,"
           resume_id: "string;";
         };
         Update: {;
@@ -225,20 +225,20 @@ export type Database = {;"
         ]'
       };
       content: {
-        Row: "{;","
+        Row: {;,"
           content_type: "string;"
-          content_url: "string | null;","
+          content_url: string | null;,"
           created_at: "string;"
-          creator_id: "string;","
+          creator_id: string;,"
           description: "string | null;"
-          id: "string;","
+          id: string;,"
           published: "boolean | null;"
-          thumbnail_url: "string | null;","
+          thumbnail_url: string | null;,"
           title: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           views: "number | null;"
         };"
-        Insert: "{;",;
+        Insert: {;,;
           content_type: string;
           content_url?: string | null;
           created_at?: string;
@@ -275,20 +275,20 @@ export type Database = {;"
         ]'
       };
       contract_templates: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           is_default: "boolean | null;"
-          template_data: "Json;","
+          template_data: Json;,"
           title: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_id: "string;";
         };"
         Insert: {;";"
           created_at?: string;"
           id?: string;"
           is_default?: boolean | null;"
-          template_data: "Json;",;"
+          template_data: Json;,;"
           title: string;"
           updated_at?: string;"
           user_id: "string;";
@@ -313,19 +313,19 @@ export type Database = {;"
         ]'
       };
       education: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          degree: "string;","
+          degree: string;,"
           description: "string | null;"
-          end_date: "string | null;","
+          end_date: string | null;,"
           field_of_study: "string | null;"
-          id: "string;","
+          id: string;,"
           institution: "string;"
-          institution_logo_url: "string | null;","
+          institution_logo_url: string | null;,"
           is_current: "boolean;"
-          location: "string | null;","
+          location: string | null;,"
           resume_id: "string;"
-          start_date: "string;","
+          start_date: string;,"
           updated_at: "string;";
         };
         Insert: {;
@@ -339,7 +339,7 @@ export type Database = {;"
           institution_logo_url?: string | null;"
           is_current?: boolean;"
           location?: string | null;"
-          resume_id: "string;",;
+          resume_id: string;,;
           start_date: string;
           updated_at?: string;
         };
@@ -369,15 +369,15 @@ export type Database = {;"
         ]'
       };
       fraud_detection_reports: {
-        Row: "{;","
+        Row: {;,"
           action_taken_count: "number;"
-          dangerous_count: "number;","
+          dangerous_count: number;,"
           false_positive_count: "number;"
-          generated_at: "string;","
+          generated_at: string;,"
           id: "string;"
-          report_data: "Json | null;","
+          report_data: Json | null;,"
           report_month: "string;"
-          suspicious_count: "number;","
+          suspicious_count: number;,"
           total_flags: "number;";
         };
         Insert: {;
@@ -405,30 +405,30 @@ export type Database = {;"
         Relationships: "[];"
       };"
       fraud_flags: {
-        Row: "{;","
+        Row: {;,"
           action_taken: "string | null;"
-          content_excerpt: "string;","
+          content_excerpt: string;,"
           content_id: "string;"
-          content_type: "string;","
+          content_type: string;,"
           gpt_classification: "string | null;"
-          gpt_explanation: "string | null;","
+          gpt_explanation: string | null;,"
           id: "string;"
-          ip_address: "string | null;","
+          ip_address: string | null;,"
           is_false_positive: "boolean | null;"
-          reason: "string;","
+          reason: string;,"
           reviewed_at: "string | null;"
-          reviewed_by: "string | null;","
+          reviewed_by: string | null;,"
           severity: Database['public']['Enums']['fraud_severity'];,;
-          status: "string;","
+          status: string;,"
           timestamp: "string;"
-          updated_at: "string | null;","
+          updated_at: string | null;,"
           user_email: "string | null;"
           user_id: "string | null;"
         };"
         Insert: {;"
           action_taken?: string | null;"
           content_excerpt: "string;"
-          content_id: "string;",;
+          content_id: string;,;
           content_type: string;
           gpt_classification?: string | null;
           gpt_explanation?: string | null;
@@ -483,23 +483,23 @@ export type Database = {;"
         ]'
       };
       hire_requests: {
-        Row: "{;","
+        Row: {;,"
           attachments: "Json | null;"
-          budget_display: "string | null;","
+          budget_display: string | null;,"
           budget_max: "number | null;"
-          budget_min: "number | null;","
+          budget_min: number | null;,"
           created_at: "string;"
-          expiry_date: "string | null;","
+          expiry_date: string | null;,"
           id: "string;"
-          project_overview: "string;","
+          project_overview: string;,"
           project_summary: "string | null;"
-          project_type: "string | null;","
+          project_type: string | null;,"
           requester_email: "string;"
-          requester_id: "string | null;","
+          requester_id: string | null;,"
           requester_name: "string;"
-          status: "string;","
+          status: string;,"
           talent_id: "string;"
-          timeline: "string;","
+          timeline: string;,"
           updated_at: "string;";
         };
         Insert: {;
@@ -517,7 +517,7 @@ export type Database = {;"
           requester_id?: string | null;"
           requester_name: string;"
           status?: string;"
-          talent_id: "string;",;
+          talent_id: string;,;
           timeline: string;
           updated_at?: string;
         };
@@ -543,24 +543,24 @@ export type Database = {;"
         Relationships: "[];"
       };"
       interviews: {
-        Row: "{;","
+        Row: {;,"
           client_id: "string;"
-          created_at: "string;","
+          created_at: string;,"
           duration_minutes: "number;"
-          end_time: "string | null;","
+          end_time: string | null;,"
           id: "string;"
-          interview_type: "string;","
+          interview_type: string;,"
           meeting_link: "string | null;"
-          meeting_platform: "string | null;","
+          meeting_platform: string | null;,"
           notes: "string | null;"
-          reminder_sent: "string | null;","
+          reminder_sent: string | null;,"
           scheduled_date: "string;"
-          status: "string;","
+          status: string;,"
           talent_id: "string;"
-          title: "string | null;","
+          title: string | null;,"
           updated_at: "string;"
         };"
-        Insert: "{;",;
+        Insert: {;,;
           client_id: string;
           created_at?: string;
           duration_minutes?: number;
@@ -597,19 +597,19 @@ export type Database = {;"
         Relationships: "[];"
       };"
       job_applications: {
-        Row: "{;","
+        Row: {;,"
           cover_letter: "string | null;"
-          created_at: "string | null;","
+          created_at: string | null;,"
           id: "string;"
-          is_shortlisted: "boolean | null;","
+          is_shortlisted: boolean | null;,"
           job_id: "string;"
-          match_breakdown: "Json | null;","
+          match_breakdown: Json | null;,"
           match_score: "number | null;"
-          match_suggestion: "string | null;","
+          match_suggestion: string | null;,"
           match_summary: "string | null;"
-          resume_id: "string | null;","
+          resume_id: string | null;,"
           scored_at: "string | null;"
-          status: "string;","
+          status: string;,"
           talent_id: "string;"
           viewed_at: "string | null;";
         };
@@ -670,22 +670,22 @@ export type Database = {;"
         ]'
       };
       jobs: {
-        Row: "{;","
+        Row: {;,"
           budget: "Json;"
-          category: "string;","
+          category: string;,"
           client_id: "string;"
-          created_at: "string;","
+          created_at: string;,"
           deadline: "string | null;"
-          description: "string;","
+          description: string;,"
           id: "string;"
-          skills: "string[];","
+          skills: string[];,"
           status: "string;"
-          title: "string;","
+          title: string;,"
           updated_at: "string;"
         };"
         Insert: {;"
           budget?: Json;"
-          category: "string;",;
+          category: string;,;
           client_id: string;
           created_at?: string;
           deadline?: string | null;
@@ -720,22 +720,22 @@ export type Database = {;"
         ]'
       };
       milestone_activities: {
-        Row: "{;","
+        Row: {;,"
           action: "string;"
-          comment: "string | null;","
+          comment: string | null;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           milestone_id: "string;"
-          new_status: "string;","
+          new_status: string;,"
           previous_status: "string | null;"
           user_id: "string;"
         };"
-        Insert: "{;",;"
+        Insert: {;,;"
           action: string;";"
           comment?: string | null;"
           created_at?: string;"
           id?: string;"
-          milestone_id: "string;",;"
+          milestone_id: string;,;"
           new_status: string;"
           previous_status?: string | null;"
           user_id: "string;";
@@ -768,11 +768,11 @@ export type Database = {;"
         ]'
       };
       notification_preferences: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           marketing_emails: "boolean | null;"
-          system_notifications: "boolean | null;","
+          system_notifications: boolean | null;,"
           updated_at: "string;"
           user_id: "string;";
         };
@@ -803,15 +803,15 @@ export type Database = {;"
         ]'
       };
       notifications: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string | null;"
-          id: "string;","
+          id: string;,"
           message: "string;"
-          read: "boolean | null;","
+          read: boolean | null;,"
           related_id: "string | null;"
-          title: "string;","
+          title: string;,"
           type: "string;"
-          updated_at: "string | null;","
+          updated_at: string | null;,"
           user_id: "string;";
         };
         Insert: {;
@@ -820,7 +820,7 @@ export type Database = {;"
           message: string;"
           read?: boolean | null;"
           related_id?: string | null;"
-          title: "string;",;"
+          title: string;,;"
           type: string;"
           updated_at?: string | null;"
           user_id: "string;";
@@ -847,23 +847,23 @@ export type Database = {;"
         ]'
       };
       partner_payouts: {
-        Row: "{;","
+        Row: {;,"
           amount: "number;"
-          completed_at: "string | null;","
+          completed_at: string | null;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           method: "string;"
-          partner_id: "string;","
+          partner_id: string;,"
           payout_details: "Json | null;"
-          status: "string;","
+          status: string;,"
           updated_at: "string;"
         };"
-        Insert: "{;",;"
+        Insert: {;,;"
           amount: number;";"
           completed_at?: string | null;"
           created_at?: string;"
           id?: string;"
-          method: "string;",;
+          method: string;,;
           partner_id: string;
           payout_details?: Json | null;
           status?: string;
@@ -891,31 +891,31 @@ export type Database = {;"
         ]'
       };
       partner_profiles: {
-        Row: "{;","
+        Row: {;,"
           audience_size: "string;"
-          bio: "string;","
+          bio: string;,"
           commission_rate: "number | null;"
-          created_at: "string;","
+          created_at: string;,"
           fraud_flags: "number | null;"
-          id: "string;","
+          id: string;,"
           name: "string;"
-          niche: "string;","
+          niche: string;,"
           payout_method: "string;"
-          social_media: "Json | null;","
+          social_media: Json | null;,"
           status: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_id: "string;"
           website: "string | null;"
         };"
         Insert: {
-          audience_size: "string;",;
+          audience_size: string;,;
           bio: string;"
           commission_rate?: number | null;";"
           created_at?: string;"
           fraud_flags?: number | null;"
           id?: string;"
           name: "string;"
-          niche: "string;",;
+          niche: string;,;
           payout_method: string;
           social_media?: Json | null;
           status?: string;
@@ -950,15 +950,15 @@ export type Database = {;"
         ]'
       };
       partner_referral_links: {
-        Row: "{;","
+        Row: {;,"
           campaign: "string | null;"
-          clicks: "number | null;","
+          clicks: number | null;,"
           conversions: "number | null;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          name: "string;","
+          name: string;,"
           partner_id: "string;"
-          source: "string | null;","
+          source: string | null;,"
           updated_at: "string;";
         };
         Insert: {;
@@ -967,7 +967,7 @@ export type Database = {;"
           conversions?: number | null;"
           created_at?: string;"
           id?: string;"
-          name: "string;",;
+          name: string;,;
           partner_id: string;
           source?: string | null;
           updated_at?: string;
@@ -994,17 +994,17 @@ export type Database = {;"
         ]'
       };
       portfolio_projects: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          demo_url: "string | null;","
+          demo_url: string | null;,"
           description: "string | null;"
-          github_url: "string | null;","
+          github_url: string | null;,"
           id: "string;"
-          image_url: "string | null;","
+          image_url: string | null;,"
           pdf_url: "string | null;"
-          technologies: "string[] | null;","
+          technologies: string[] | null;,"
           title: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_id: "string;";
         };
         Insert: {;
@@ -1044,23 +1044,23 @@ export type Database = {;"
         ]'
       };
       profiles: {
-        Row: "{;","
+        Row: {;,"
           avatar_url: "string | null;"
-          average_rating: "number | null;","
+          average_rating: number | null;,"
           bio: "string | null;"
-          created_at: "string;","
+          created_at: string;,"
           display_name: "string | null;"
-          headline: "string | null;","
+          headline: string | null;,"
           id: "string;"
-          ip_address: "string | null;","
+          ip_address: string | null;,"
           last_login_ip: "string | null;"
-          profile_complete: "boolean;","
+          profile_complete: boolean;,"
           rating_count: "number | null;"
-          rating_sum: "number | null;","
+          rating_sum: number | null;,"
           role: "string | null;"
-          signup_timestamp: "string | null;","
+          signup_timestamp: string | null;,"
           tenant_id: "string | null;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_type: "string | null;";
         };
         Insert: {;
@@ -1119,20 +1119,20 @@ export type Database = {;"
         ]'
       };
       project_milestones: {
-        Row: "{;","
+        Row: {;,"
           amount: "number;"
-          created_at: "string;","
+          created_at: string;,"
           created_by: "string;"
-          deliverables: "Json | null;","
+          deliverables: Json | null;,"
           description: "string | null;"
-          due_date: "string | null;","
+          due_date: string | null;,"
           id: "string;"
-          project_id: "string;","
+          project_id: string;,"
           status: "string;"
-          title: "string;","
+          title: string;,"
           updated_at: "string;"
         };"
-        Insert: "{;",;
+        Insert: {;,;
           amount: number;
           created_at?: string;
           created_by: string;
@@ -1176,14 +1176,14 @@ export type Database = {;"
         ]'
       };
       project_notes: {
-        Row: "{;","
+        Row: {;,"
           content: "string;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          project_id: "string;","
+          project_id: string;,"
           user_id: "string;"
         };"
-        Insert: "{;",;"
+        Insert: {;,;"
           content: string;"
           created_at?: string;"
           id?: string;"
@@ -1215,17 +1215,17 @@ export type Database = {;"
         ]'
       };
       projects: {
-        Row: "{;","
+        Row: {;,"
           agreement_url: "string | null;"
-          client_id: "string;","
+          client_id: string;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           job_id: "string;"
-          payment_terms: "string;","
+          payment_terms: string;,"
           scope_summary: "string;"
-          start_date: "string;","
+          start_date: string;,"
           status: "string;"
-          talent_id: "string;","
+          talent_id: string;,"
           updated_at: "string;";
         };
         Insert: {;"
@@ -1234,8 +1234,8 @@ export type Database = {;"
           created_at?: string;"
           id?: string;"
           job_id: "string;"
-          payment_terms: "string;","
-          scope_summary: "string;",;
+          payment_terms: string;,"
+          scope_summary: string;,;
           start_date: string;
           status?: string;
           talent_id: string;
@@ -1279,25 +1279,25 @@ export type Database = {;"
         ]'
       };
       quote_requests: {
-        Row: "{;","
+        Row: {;,"
           budget_display: "string | null;"
-          budget_max: "number | null;","
+          budget_max: number | null;,"
           budget_min: "number | null;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          is_archived: "boolean;","
+          is_archived: boolean;,"
           project_description: "string | null;"
-          project_name: "string;","
+          project_name: string;,"
           project_summary: "string;"
-          replied_at: "string | null;","
+          replied_at: string | null;,"
           requester_email: "string;"
-          requester_id: "string | null;","
+          requester_id: string | null;,"
           requester_name: "string;"
-          start_date: "string | null;","
+          start_date: string | null;,"
           status: Database['public']['Enums']['quote_request_status'];,;
-          talent_id: "string | null;","
+          talent_id: string | null;,"
           timeline: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           viewed_at: "string | null;";
         };
         Insert: {;
@@ -1308,7 +1308,7 @@ export type Database = {;"
           id?: string;"
           is_archived?: boolean;"
           project_description?: string | null;"
-          project_name: "string;",;
+          project_name: string;,;
           project_summary: string;
           replied_at?: string | null;"
           requester_email: string;";"
@@ -1360,14 +1360,14 @@ export type Database = {;"
         ]'
       };
       referral_codes: {
-        Row: "{;","
+        Row: {;,"
           code: "string;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_id: "string;"
         };"
-        Insert: "{;",;"
+        Insert: {;,;"
           code: string;";"
           created_at?: string;"
           id?: string;"
@@ -1392,13 +1392,13 @@ export type Database = {;"
         ]'
       };
       referral_rewards: {
-        Row: "{;","
+        Row: {;,"
           amount: "number | null;"
-          created_at: "string;","
+          created_at: string;,"
           expires_at: "string | null;"
-          id: "string;","
+          id: string;,"
           partner_id: "string | null;"
-          referral_id: "string;","
+          referral_id: string;,"
           reward_type: "string;"
           user_id: "string;";
         };
@@ -1409,7 +1409,7 @@ export type Database = {;"
           id?: string;"
           partner_id?: string | null;"
           referral_id: "string;"
-          reward_type: "string;","
+          reward_type: string;,"
           user_id: "string;";
         };
         Update: {;
@@ -1447,19 +1447,19 @@ export type Database = {;"
         ]'
       };
       referrals: {
-        Row: "{;","
+        Row: {;,"
           completed_at: "string | null;"
-          created_at: "string;","
+          created_at: string;,"
           email: "string | null;"
-          id: "string;","
+          id: string;,"
           ip_address: "string | null;"
-          partner_id: "string | null;","
+          partner_id: string | null;,"
           referral_code: "string;"
-          referred_id: "string | null;","
+          referred_id: string | null;,"
           referred_user_type: "string | null;"
-          referrer_id: "string;","
+          referrer_id: string;,"
           referrer_user_type: "string | null;"
-          reward_issued: "boolean;","
+          reward_issued: boolean;,"
           reward_issued_at: "string | null;"
           status: Database['public']['Enums']['referral_status'];
         };
@@ -1527,19 +1527,19 @@ export type Database = {;"
         ]'
       };
       reminder_logs: {
-        Row: "{;","
+        Row: {;,"
           clicked_at: "string | null;"
-          email_body: "string;","
+          email_body: string;,"
           email_subject: "string;"
-          id: "string;","
+          id: string;,"
           opened_at: "string | null;"
-          reminder_type: "string;","
+          reminder_type: string;,"
           sent_at: "string | null;"
           user_id: "string;"
         };"
         Insert: {;"
           clicked_at?: string | null;"
-          email_body: "string;",;
+          email_body: string;,;
           email_subject: string;"
           id?: string;";"
           opened_at?: string | null;"
@@ -1568,13 +1568,13 @@ export type Database = {;"
         ]'
       };
       resume_skills: {
-        Row: "{;","
+        Row: {;,"
           category: "string | null;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          name: "string;","
+          name: string;,"
           proficiency: "number | null;"
-          resume_id: "string;","
+          resume_id: string;,"
           years_experience: "number | null;";
         };
         Insert: {;
@@ -1606,19 +1606,19 @@ export type Database = {;"
         ]'
       };
       review_reports: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           reason: "string;"
-          reporter_id: "string;","
+          reporter_id: string;,"
           resolved_at: "string | null;"
-          review_id: "string;","
+          review_id: string;,"
           status: "string;"
         };";"
         Insert: {;"
           created_at?: string;"
           id?: string;"
-          reason: "string;",;
+          reason: string;,;
           reporter_id: string;
           resolved_at?: string | null;
           review_id: string;
@@ -1651,21 +1651,21 @@ export type Database = {;"
         ]'
       };
       reviews: {
-        Row: "{;","
+        Row: {;,"
           communication_rating: "number | null;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          is_anonymous: "boolean;","
+          is_anonymous: boolean;,"
           is_visible: "boolean;"
-          project_id: "string;","
+          project_id: string;,"
           quality_rating: "number | null;"
-          rating: "number;","
+          rating: number;,"
           report_count: "number;"
-          review_text: "string;","
+          review_text: string;,"
           reviewee_id: "string;"
-          reviewer_id: "string;","
+          reviewer_id: string;,"
           status: "string;"
-          timeliness_rating: "number | null;","
+          timeliness_rating: number | null;,"
           updated_at: "string;"
           would_work_again: "boolean | null;";
         };
@@ -1680,7 +1680,7 @@ export type Database = {;"
           rating: number;"
           report_count?: number;"
           review_text: "string;"
-          reviewee_id: "string;",;
+          reviewee_id: string;,;
           reviewer_id: string;
           status?: string;
           timeliness_rating?: number | null;
@@ -1730,13 +1730,13 @@ export type Database = {;"
         ]'
       };
       scheduled_jobs: {
-        Row: "{;","
+        Row: {;,"
           completed_at: "string | null;"
-          created_at: "string;","
+          created_at: string;,"
           id: "string;"
-          job_type: "string;","
+          job_type: string;,"
           payload: "Json | null;"
-          scheduled_for: "string;","
+          scheduled_for: string;,"
           status: "string;"
           updated_at: "string;";
         };
@@ -1746,7 +1746,7 @@ export type Database = {;"
           id?: string;"
           job_type: string;"
           payload?: Json | null;"
-          scheduled_for: "string;",;
+          scheduled_for: string;,;
           status: string;
           updated_at?: string;
         };
@@ -1763,15 +1763,15 @@ export type Database = {;"
         Relationships: "[];"
       };"
       subscriptions: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          current_period_end: "string | null;","
+          current_period_end: string | null;,"
           current_period_start: "string | null;"
-          id: "string;","
+          id: string;,"
           plan_type: "string;"
-          status: "string;","
+          status: string;,"
           stripe_customer_id: "string | null;"
-          stripe_subscription_id: "string | null;","
+          stripe_subscription_id: string | null;,"
           updated_at: "string;"
           user_id: "string;";
         };
@@ -1780,7 +1780,7 @@ export type Database = {;"
           current_period_end?: string | null;"
           current_period_start?: string | null;"
           id?: string;"
-          plan_type: "string;",;"
+          plan_type: string;,;"
           status: string;";"
           stripe_customer_id?: string | null;"
           stripe_subscription_id?: string | null;"
@@ -1810,13 +1810,13 @@ export type Database = {;"
         ]'
       };
       talent_resumes: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          headline: "string | null;","
+          headline: string | null;,"
           id: "string;"
-          is_active: "boolean;","
+          is_active: boolean;,"
           summary: "string | null;"
-          title: "string;","
+          title: string;,"
           updated_at: "string;"
           user_id: "string;";
         };
@@ -1851,9 +1851,9 @@ export type Database = {;"
         ]'
       };
       tenant_administrators: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string | null;"
-          id: "string;","
+          id: string;,"
           tenant_id: "string;"
           user_id: "string;"
         };";"
@@ -1887,31 +1887,31 @@ export type Database = {;"
         ]'
       };
       user_onboarding: {
-        Row: "{;","
+        Row: {;,"
           application_sent: "boolean | null;"
-          application_sent_at: "string | null;","
+          application_sent_at: string | null;,"
           availability_set: "boolean | null;"
-          availability_set_at: "string | null;","
+          availability_set_at: string | null;,"
           created_at: "string;"
-          id: "string;","
+          id: string;,"
           job_posted: "boolean | null;"
-          job_posted_at: "string | null;","
+          job_posted_at: string | null;,"
           last_reminder_sent: "string | null;"
-          match_received: "boolean | null;","
+          match_received: boolean | null;,"
           match_received_at: "string | null;"
-          match_viewed: "boolean | null;","
+          match_viewed: boolean | null;,"
           match_viewed_at: "string | null;"
-          profile_completed: "boolean | null;","
+          profile_completed: boolean | null;,"
           profile_completed_at: "string | null;"
-          quote_received: "boolean | null;","
+          quote_received: boolean | null;,"
           quote_received_at: "string | null;"
-          reminder_count: "number | null;","
+          reminder_count: number | null;,"
           role: "string;"
-          skills_added: "boolean | null;","
+          skills_added: boolean | null;,"
           skills_added_at: "string | null;"
-          talent_invited: "boolean | null;","
+          talent_invited: boolean | null;,"
           talent_invited_at: "string | null;"
-          updated_at: "string;","
+          updated_at: string;,"
           user_id: "string | null;";
         };
         Insert: {;
@@ -1979,11 +1979,11 @@ export type Database = {;"
         ]'
       };
       user_privacy_settings: {
-        Row: "{;","
+        Row: {;,"
           activity_monitoring_enabled: "boolean | null;"
-          ai_analysis_enabled: "boolean | null;","
+          ai_analysis_enabled: boolean | null;,"
           id: "string;"
-          message_scanning_enabled: "boolean | null;","
+          message_scanning_enabled: boolean | null;,"
           updated_at: "string | null;";
         };
         Insert: {;
@@ -2011,15 +2011,15 @@ export type Database = {;"
         ]'
       };
       webhook_configs: {
-        Row: "{;","
+        Row: {;,"
           created_at: "string;"
-          event_types: "string[];","
+          event_types: string[];,"
           id: "string;"
-          is_active: "boolean;","
+          is_active: boolean;,"
           last_triggered_at: "string | null;"
-          name: "string;","
+          name: string;,"
           secret: "string | null;"
-          updated_at: "string;","
+          updated_at: string;,"
           url: "string;"
           user_id: "string;";
         };
@@ -2058,19 +2058,19 @@ export type Database = {;"
         ]'
       };
       whitelabel_tenants: {
-        Row: "{;","
+        Row: {;,"
           account_manager_id: "string | null;"
-          brand_name: "string;","
+          brand_name: string;,"
           created_at: "string | null;"
-          custom_domain: "string | null;","
+          custom_domain: string | null;,"
           dns_verified: "boolean;"
-          email_template_override: "Json | null;","
+          email_template_override: Json | null;,"
           id: "string;"
-          is_active: "boolean;","
+          is_active: boolean;,"
           landing_page_copy: "Json | null;"
-          logo_url: "string | null;","
+          logo_url: string | null;,"
           primary_color: "string;"
-          subdomain: "string;","
+          subdomain: string;,"
           theme_preset: "string;"
           updated_at: "string | null;";
         };
@@ -2117,17 +2117,17 @@ export type Database = {;"
         ]'
       };
       work_history: {
-        Row: "{;","
+        Row: {;,"
           company_logo_url: "string | null;"
-          company_name: "string;","
+          company_name: string;,"
           created_at: "string;"
-          description: "string | null;","
+          description: string | null;,"
           end_date: "string | null;"
-          id: "string;","
+          id: string;,"
           is_current: "boolean;"
-          location: "string | null;","
+          location: string | null;,"
           resume_id: "string;"
-          role_title: "string;","
+          role_title: string;,"
           start_date: "string;"
           updated_at: "string;";
         };
@@ -2141,7 +2141,7 @@ export type Database = {;"
           is_current?: boolean;"
           location?: string | null;"
           resume_id: "string;"
-          role_title: "string;",;
+          role_title: string;,;
           start_date: string;
           updated_at?: string;
         };
@@ -2171,30 +2171,30 @@ export type Database = {;"
       }'
     };
     Views: {
-      conversion_rates: "{;","
+      conversion_rates: {;,"
         Row: {
-          conversion_count: "number | null;","
+          conversion_count: number | null;,"
           conversion_rate: "number | null;"
-          conversion_type: "string | null;","
+          conversion_type: string | null;,"
           date: "string | null;"
           view_count: "number | null;"
         };"
         Relationships: "[];"
       };"
       daily_page_views: {
-        Row: "{;","
+        Row: {;,"
           date: "string | null;"
-          path: "string | null;","
+          path: string | null;,"
           view_count: "number | null;"
         };"
         Relationships: "[];"
       };"
       user_metrics: {
-        Row: "{;","
+        Row: {;,"
           job_applications: "number | null;"
-          profile_views: "number | null;","
+          profile_views: number | null;,"
           quote_invites: "number | null;"
-          success_rate: "number | null;","
+          success_rate: number | null;,"
           user_id: "string | null;";
         };
         Insert: {;
@@ -2215,16 +2215,16 @@ export type Database = {;"
       };"
     };"
     Functions: {
-      check_users_needing_reminders: "{;","
-        Args: "Record<PropertyKey", never>;"
+      check_users_needing_reminders: {;,"
+        Args: Record<PropertyKey, never>;"
         Returns: {
-          user_id: "string;","
+          user_id: string;,"
           email: "string;"
-          display_name: "string;","
+          display_name: string;,"
           user_type: "string;"
-          last_login: "string;","
+          last_login: string;,"
           reminder_type: "string;"
-          days_since_login: "number;","
+          days_since_login: number;,"
           onboarding_status: "Json;"
         }[];"
       };"
@@ -2233,27 +2233,27 @@ export type Database = {;"
         Returns: "undefined;"
       };"
       create_notification: {
-        Args: "{;","
+        Args: {;,"
           _user_id: "string;"
-          _title: "string;","
-          _message: "string;",;"
+          _title: string;,"
+          _message: string;,;"
           _type: string;"
           _related_id?: string;"
         };"
         Returns: "string;"
       };"
       create_scheduled_reminders: {
-        Args: "Record<PropertyKey", never>;"
+        Args: Record<PropertyKey, never>;"
         Returns: "undefined;"
       };"
       flag_suspicious_content: {
-        Args: "{;","
+        Args: {;,"
           p_user_id: "string;"
-          p_user_email: "string;","
+          p_user_email: string;,"
           p_content_type: "string;"
-          p_content_id: "string;","
+          p_content_id: string;,"
           p_content_excerpt: "string;"
-          p_severity: "string;","
+          p_severity: string;,"
           p_reason: "string;"
           p_ip_address: "string;"
         };"
@@ -2276,13 +2276,13 @@ export type Database = {;"
         Returns: "string;"
       };"
       get_current_tenant_id: {
-        Args: "Record<PropertyKey", never>;"
+        Args: Record<PropertyKey, never>;"
         Returns: "string;"
       };"
       get_event_distribution: {
         Args: "{ days_back?: number "};"
         Returns: {
-          date: "string;","
+          date: string;,"
           event_type: "string;"
           count: "number;"
         }[];"
@@ -2292,7 +2292,7 @@ export type Database = {;"
         Returns: "string;"
       };"
       schedule_email_reminders: {
-        Args: "Record<PropertyKey", never>;"
+        Args: Record<PropertyKey, never>;"
         Returns: "number;"
       };"
       trigger_resume_scoring: {
@@ -2308,13 +2308,13 @@ export type Database = {;"
         Returns: "boolean;"
       };"
     };"
-    Enums: "{;",;"
+    Enums: {;,;"
       api_key_scope:;"
         | 'jobs:read'
         | 'jobs:write'
         | 'talent:read'
         | 'quotes:write'
-        | 'webhooks: "manage",;
+        | 'webhooks: manage,;
       fraud_severity: 'safe' | 'suspicious' | 'dangerous,'
       quote_request_status:;
         | 'new'
@@ -2332,7 +2332,6 @@ export type Database = {;"
 }'
 ;
 type DefaultSchema = Database[Extract<keyof Database, 'public'>];
-;
 export type Tables<'
   DefaultSchemaTableNameOrOptions extends;
     | keyof (DefaultSchema['Tables'] & DefaultSchema['Views']);
@@ -2420,7 +2419,6 @@ export type Enums<;"
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema['Enums'];
     ? DefaultSchema['Enums'][DefaultSchemaEnumNameOrOptions]'
     : never;
-;
 export type CompositeTypes<'
   PublicCompositeTypeNameOrOptions extends;
     | keyof DefaultSchema['CompositeTypes'];
@@ -2438,7 +2436,7 @@ export type CompositeTypes<'
 '
 export const _Constants: {;",;"
   public: {
-    Enums: "{;",;"
+    Enums: {;,;"
       api_key_scope: [;"
         'jobs:read',;
         'jobs:write',;

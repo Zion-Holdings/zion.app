@@ -14,7 +14,7 @@ import { onsiteServicePricing } from '@/data/onsiteServicePricing'
 interface CountrySelectorProps {'
   onCountryChange: "(country: CountryPricing | null) => void
   selectedCountry: CountryPricing | null""
-};
+}
 
 export function CountrySelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onCountryChange,;
@@ -24,7 +24,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
 ;"
   // Set top/popular countries;"
   useEffect(() => {
-    const const popular = [;
+    const popular = [
       'United States','
       'United Kingdom','
       'Canada','
@@ -32,15 +32,15 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
       'Australia','
       'Japan','
       'Singapore','
-    ];
-    const const top = onsiteServicePricing;
-      .filter((item) => popular.includes(item.country));
-      .sort((a, b) => a.country.localeCompare(b.country));
-    setTopCountries(top);
-  }, []);
+    ]
+    const top = onsiteServicePricing
+      .filter((item) => popular.includes(item.country))
+      .sort((a, b) => a.country.localeCompare(b.country))
+    setTopCountries(top)
+  }, [])
 
   // Handle country selection;
-  const const handleCountryChange = (_countryName: string) => {;
+  const handleCountryChange = (_countryName: string) => {;
     const country: unknown =;
       onsiteServicePricing.find((item) => item.country === countryName) || null'
     onCountryChange(country)'
@@ -63,7 +63,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
           <SelectValue placeholder=Select a country />"
         </SelectTrigger>;"
         <SelectContent className=bg-zion-blue-dark border-zion-blue-light max-h-80>"
-          <div className="p-2 border-b border-zion-blue-light>
+          <div className="p-2 border-b border-zion-blue-light>"
             <p className="text-sm text-zion-slate-light pb-1">
               Popular Countries;
             </p>
@@ -71,7 +71,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
               <SelectItem;
                 key={item.country}
                 value={item.country};"
-                className="text-white
+                className="text-white"
               >"
                 {item.country} - ${item.pricePerIncident.toFixed(2)};"
               </SelectItem>;
@@ -79,7 +79,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
           </div>;"
           <div className=p-2>"
             <p className="text-sm text-zion-slate-light pb-1>All Countries</p>
-            {onsiteServicePricing;
+            {onsiteServicePricing;"
               .sort((a, b) => a.country.localeCompare(b.country))"
               .map((item) => (;"
                 <SelectItem;

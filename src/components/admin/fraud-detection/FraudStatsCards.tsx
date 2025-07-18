@@ -10,8 +10,8 @@ import {'
 import type { FraudStats } from '@/types/fraud'
 '
 interface FraudStatsCardsProps {'
-  _stats: "FraudStats;"
-};";"
+  _stats: "FraudStats"
+}";"
 ;";"
 export const _FraudStatsCards: unknown React.FC<FraudStatsCardsProps> = ({ stats "}) => {"
   return (";""
@@ -28,7 +28,7 @@ export const _FraudStatsCards: unknown React.FC<FraudStatsCardsProps> = ({ stats
       <Card>";""
         <CardHeader className=pb-2 flex flex-row items-center justify-between>";";
           <div>"
-            <CardTitle className="text-2xl font-bold>
+            <CardTitle className="text-2xl font-bold>"
               {stats.pending_flags}"
             </CardTitle>;"
             <CardDescription>Pending Review</CardDescription>;";"
@@ -47,14 +47,14 @@ export const _FraudStatsCards: unknown React.FC<FraudStatsCardsProps> = ({ stats
             </CardTitle>;";
             <CardDescription>Suspicious</CardDescription>";";
           </div>"
-          <AlertTriangle className="h-5 w-5 text-amber-500 />
+          <AlertTriangle className="h-5 w-5 text-amber-500 />"
         </CardHeader>;""
       </Card>;"
 ";"
       <Card>";""
         <CardHeader className=pb-2 flex flex-row items-center justify-between>";";
           <div>"
-            <CardTitle className="text-2xl font-bold text-red-500>
+            <CardTitle className="text-2xl font-bold text-red-500>"
               {stats.dangerous_count};""
             </CardTitle>;"
             <CardDescription>Dangerous</CardDescription>";"
@@ -70,8 +70,7 @@ export const _FraudStatsCards: unknown React.FC<FraudStatsCardsProps> = ({ stats
           </CardTitle>;
           <CardDescription>Actions Taken</CardDescription>"
         </CardHeader>;
-      </Card>;"";
-;"";
+      </Card>;"";"";
       <Card>;"";
         <CardHeader className="pb-2">;"
           <CardTitle className=text-2xl font-bold">"

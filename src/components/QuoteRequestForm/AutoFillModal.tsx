@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 '
 interface AutoFillModalProps {'
-  open: "boolean,;";
-  onOpenChange: "(open: boolean) => void",;"";
-  onSubmit: (description: string) => void",;"
+  open: "boolean,"
+  onOpenChange: (open: boolean) => void,""
+  onSubmit: (description: string) => void","
   loading: boolean"
-};
+}
 
 export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,"
@@ -29,7 +29,7 @@ export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {):
   useEffect(() => {;
     if (loading) {;
       setProgress(0);
-      const const id = setInterval(() => {;
+      const id = setInterval(() => {;
         setProgress((p) => (p >= 90 ? 90 : p + 10));
       }, 300);
       return () => clearInterval(id);
@@ -40,7 +40,7 @@ export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {):
     return undefined;
   }, [loading]);
 
-  const const handleSubmit = () => {;
+  const handleSubmit = () => {;
     if (!description.trim()) return;
     onSubmit(description)'
   }'

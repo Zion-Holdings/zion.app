@@ -13,7 +13,6 @@ import {;
   logWarn,'
   logErrorToProduction,;
 } from '@/utils/productionLogger;
-;
 import {'
   Tooltip,;
   TooltipContent,;
@@ -21,11 +20,9 @@ import {'
   TooltipTrigger,;
 } from '@/components/ui/tooltip'
 import z from 'zod'
-import { ChatAssistant } from '@/components/ChatAssistant;
-;
+import { ChatAssistant } from '@/components/ChatAssistant;';
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion;
-;
+import { motion, AnimatePresence } from 'framer-motion;';
 export default function Contact(): '
   const [formData, setFormData] = useState({;
     name: '',;
@@ -42,25 +39,25 @@ export default function Contact(): '
   const [submitted, setSubmitted] = useState(false);
 '
   const handleChange: (;",;"
-    e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;
   ) => {;
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));"
   };";"
 ;"
-  const const handleSubmit = (_e: React.FormEvent) => {;"
+  const handleSubmit = (_e: React.FormEvent) => {;"
     e.preventDefault();"
     logInfo('[ContactForm] handleSubmit triggered.');
     logInfo('[ContactForm] formData:', { data: "{ data: formData "} });"
 ;"
-    const const schema = z.object({;";,"
-      name: "z.string().min(2", 'Name must be at least 2 characters'),;
+    const schema = z.object({;";,"
+      name: z.string().min(2, 'Name must be at least 2 characters'),;
       email: z.string().email('Invalid email address'),;
-      message: "z.string().min(10", 'Message must be at least 10 characters'),;
+      message: z.string().min(10, 'Message must be at least 10 characters'),;
     });
 '
-    const const result = schema.safeParse(formData);
+    const result = schema.safeParse(formData);
     logInfo('[ContactForm] Zod validation result:', { data: "{ data: result "} });"
 ;"
     if (!result.success) {;"
@@ -77,7 +74,7 @@ export default function Contact(): '
       logWarn('[ContactForm] Validation failed:', {;
         data: {'
           validationErrorMsg,;
-          fieldErrors: "result.error.flatten().fieldErrors",;"
+          fieldErrors: result.error.flatten().fieldErrors,;"
         },;"
       });"
       toast({;"
@@ -87,7 +84,6 @@ export default function Contact(): '
       });
       return'
     };
-;
     setErrors({})'
     setIsSubmitting(true);
     logInfo('[ContactForm] Starting form submission (fetch to /api/contact).');
@@ -96,17 +92,16 @@ export default function Contact(): '
       fetch('/api/contact', {;
         method: 'POST',;
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-        body: "JSON.stringify(formData)",;"
+        body: JSON.stringify(formData),;"
       });"
         .then(async (res) => {;"
           logInfo('[ContactForm] API response status:', {;
             data: "{ data: res.status "},;"
           });"
-          const const responseBody = await res.text(); // Read as text first to avoid JSON parse error if not JSON;"
+          const responseBody = await res.text(); // Read as text first to avoid JSON parse error if not JSON;"
           logInfo('[ContactForm] API response body:', {;
             data: "{ data: responseBody "},;
           });
-;
           // Note: setIsSubmitting(false) is called within then/catch of the promise.;
           // If fetch itself or .then/.catch structure has a synchronous error,;"
           // the outer try/catch will handle it.;";"
@@ -123,7 +118,7 @@ export default function Contact(): '
               });"
             };"
             logErrorToProduction('[ContactForm] API error response:', {;
-              data: "errorData",;"
+              data: errorData,;"
             });"
             // This throw will be caught by the .catch block below;"
             throw new Error(errorData.error || 'Failed to send message');
@@ -143,7 +138,7 @@ export default function Contact(): '
         .catch((err) => {'
           // This catches errors from the fetch promise (network, res.ok is false, or manual throw);
           logErrorToProduction('[ContactForm] Fetch promise chain error:', {;
-            data: "err",;"
+            data: err,;"
           });"
           setIsSubmitting(false);"
           toast({;"
@@ -173,9 +168,9 @@ export default function Contact(): '
   };
 '
   // Handle sending messages to the AI chat assistant;
-  const const handleSendMessage = async (message: string): Promise<void> => {;
+  const handleSendMessage = async (message: string): Promise<void> => {;
     try {'
-      const const response = await fetch(;
+      const response = await fetch(;
         'https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat','
         {;
           method: 'POST','
@@ -191,7 +186,6 @@ export default function Contact(): '
       if (!response.ok) {;"
         throw new Error('Failed to get response from AI assistant')'
       };
-;
       return Promise.resolve()'
     } catch {;
       logErrorToProduction('Error in AI chat', error)'
@@ -204,8 +198,7 @@ export default function Contact(): '
       return Promise.resolve();
     }'
   };
-;
-  const const offices = ['
+  const offices = ['
     {;
       name: 'Headquarters',;
       address: '123 Tech Avenue, San Francisco, CA 94105',;
@@ -335,8 +328,7 @@ export default function Contact(): '
                   )};
                 </AnimatePresence>;
               </form>;
-            </div>;
-;"
+            </div>;"
             <div>;";"
               <TooltipProvider>;"
                 <Tooltip>;"
@@ -470,7 +462,6 @@ export default function Contact(): '
           </div>;
         </div>;
       </main>;
-;
       {/* Chat Assistant Modal */};
       {isChatOpen && ('
         <ChatAssistant;
@@ -495,7 +486,6 @@ export default function Contact(): '
     </>;
   );
 };
-;
 }'
 }
 }'

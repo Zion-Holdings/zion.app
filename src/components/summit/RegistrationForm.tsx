@@ -12,8 +12,7 @@ export function RegistrationForm(): '
   const [country, setCountry] = useState('')'
   const [loading, setLoading] = useState(false);
   const { _toast } = useToast();
-
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault()'
     setLoading(true);
     await new Promise((r) => setTimeout(r, 500))'
@@ -28,7 +27,7 @@ export function RegistrationForm(): '
   return ('
     <section className="py-12 bg-zion-blue-dark text-white id=register">"
       <div className=container mx-auto px-4 max-w-lg>"
-        <h2 className="text-3xl font-bold mb-6 text-center>Register</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center>Register</h2>"
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className=space-y-2">"
             <Label htmlFor=name>Name</Label>"
@@ -40,9 +39,9 @@ export function RegistrationForm(): '
             />"
           </div>;"
           <div className=space-y-2>"
-            <Label htmlFor="email>Email</Label>
+            <Label htmlFor="email>Email</Label>"
             <Input;"
-              id="email
+              id="email"
               type=email"
               value={email}"
               onChange={(e) => setEmail(e.target.value)};
@@ -59,13 +58,13 @@ export function RegistrationForm(): '
             />"
           </div>;"
           <div className=space-y-2>"
-            <Label htmlFor="country>Country</Label>
+            <Label htmlFor="country>Country</Label>"
             <Input;"
               id="country
-              value={country}
+              value={country}"
               onChange={(e) => setCountry(e.target.value)};"
               className="bg-zion-blue-light
-            />
+            />"
           </div>;"
           <Button"
             type=submit

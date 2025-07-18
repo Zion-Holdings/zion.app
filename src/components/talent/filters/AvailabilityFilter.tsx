@@ -2,7 +2,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { ChevronDown, ChevronUp } from '@/components/ui/icons'
 import type { AvailabilityFilterProps } from '@/types/filters'
 '
-const const AVAILABILITY_OPTIONS = ['
+const AVAILABILITY_OPTIONS = ['
   { id: 'full_time', label: 'Full-time' },'
   { id: 'part_time', label: 'Part-time' },'
   { id: 'project', label: 'Project-based' },'
@@ -16,7 +16,7 @@ export function AvailabilityFilter(): unknown {): unknown {): unknown {): unknow
   _isMobileFilterOpen,;
 }: AvailabilityFilterProps) {'
   return ('
-    <div className="mb-6 border-b border-zion-blue-light pb-6>
+    <div className="mb-6 border-b border-zion-blue-light pb-6>"
       <button;"
         onClick={toggleSection}"
         className=flex w-full items-center justify-between text-white font-medium

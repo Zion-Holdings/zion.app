@@ -22,16 +22,16 @@ import type { DateRange } from 'react-day-picker'
 import type { QuoteStatus } from '@/types/quotes'
 '
 interface QuotesFilterProps {'
-  searchQuery: "string,;";
-  setSearchQuery: "(value: string) => void",;"";
+  searchQuery: "string,"
+  setSearchQuery: (value: string) => void,""
   statusFilter: QuoteStatus | 'all,'
-  setStatusFilter: (value: QuoteStatus | 'all') => void;,'
+  setStatusFilter: (value: QuoteStatus | 'all') => void,'
   archiveFilter: 'active' | 'archived' | 'all,'
-  setArchiveFilter: (value: 'active' | 'archived' | 'all') => void;,'
+  setArchiveFilter: (value: 'active' | 'archived' | 'all') => void,'
   dateRange: DateRange | undefined","
-  setDateRange: (range: DateRange | undefined) => void,;""
+  setDateRange: (range: DateRange | undefined) => void,""
   onReset: "() => void
-};
+}
 
 export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
   searchQuery,;
@@ -55,8 +55,7 @@ export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
               value={searchQuery};
               onChange={(e) => setSearchQuery(e.target.value)}"
             />;
-          </div>;"";
-;"";
+          </div>;"";"";
           <div>;"";
             <p className="text-zion-slate-light text-sm mb-2">Status</p>;"
             <Select;";"
@@ -77,8 +76,7 @@ export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
                 <SelectItem value=closed>Closed</SelectItem>"
               </SelectContent>"
             </Select>;
-          </div>;"";
-;"";
+          </div>;"";"";
           <div>;"";
             <p className="text-zion-slate-light text-sm mb-2">Archive</p>;"
             <Select;";"
@@ -93,7 +91,7 @@ export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
               <SelectContent className="bg-zion-blue-dark border-zion-blue-light text-white">;"
                 <SelectItem value=active">Active Only</SelectItem>""
                 <SelectItem value=archived>Archived Only</SelectItem>"
-                <SelectItem value="all>All Quotes</SelectItem>
+                <SelectItem value="all>All Quotes</SelectItem>"
               </SelectContent>"
             </Select>;"
           </div>;";"

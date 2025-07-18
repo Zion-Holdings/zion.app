@@ -12,25 +12,25 @@ import {;
 } from '@/components/ui/form'
 import { Card, CardContent } from '@/components/ui/card'
 
-interface ReplyFormProps {;
+interface ReplyFormProps {
   onSubmit: (content: string) => Promise<void>'
   parentId?: string'
-};
+}
 '
 interface ReplyFormValues {'
-  content: "string;"
-};";
+  content: "string"
+}";
 ";";
 export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
   const [isSubmitting, setIsSubmitting] = useState(false)";"
 ;";"
-  const const form = useForm<ReplyFormValues>({;,"";
-    defaultValues: "{",;"";
+  const form = useForm<ReplyFormValues>({;,"";
+    defaultValues: {,;"";
       content: '','
     },;
   });
 
-  const const handleSubmit = async (_values: ReplyFormValues) => {;
+  const handleSubmit = async (_values: ReplyFormValues) => {;
     setIsSubmitting(true);
     try {;
       await onSubmit(values.content);
@@ -51,7 +51,7 @@ export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
               render={({";"
                 field,;";"
               }: {;";";
-                field: "ControllerRenderProps<ReplyFormValues", 'content'>'
+                field: ControllerRenderProps<ReplyFormValues, 'content'>'
               }) => (;
                 <FormItem>'
                   <FormControl>'

@@ -20,12 +20,12 @@ export function CommentsSection(): unknown {): unknown {): unknown {): unknown {
     };
   }, [slug]);
 '
-  const const handleSubmit = (_e: React.FormEvent) => {'
+  const handleSubmit = (_e: React.FormEvent) => {'
     e.preventDefault();
     if (!name.trim() || !text.trim()) return'
     const newComment: unknown unknown = addComment(slug, {"
       name: "name.trim(),;"";
-      text: "text.trim()",;"
+      text: text.trim(),;"
     });";"
     setComments([...comments, newComment]);"
     setName('')'
@@ -48,7 +48,7 @@ export function CommentsSection(): unknown {): unknown {): unknown {): unknown {
                 <span className="ml-2 text-xs text-muted-foreground>
                   {new Date(c.createdAt).toLocaleDateString()};
                 </span>;
-              </p>;
+              </p>;"
               <p>{c.text}</p>"
             </li>;"
           ))};";"

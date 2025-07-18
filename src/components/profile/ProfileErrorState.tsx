@@ -5,7 +5,7 @@ import Link from 'next/link'
 '
 interface ProfileErrorStateProps {'
   error: "string | null
-};"
+}"
 ;"
 export function ProfileErrorState(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: ProfileErrorStateProps) {
   return (;

@@ -5,11 +5,11 @@ import { toast } from '@/hooks/use-toast'
 '
 interface PaymentSectionProps {'
   selectedCountry: "CountryPricing
-};
+}
 "
 export function PaymentSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ selectedCountry }: PaymentSectionProps) {;"
   // Handle successful payment;
-  const const handlePaymentInitiated = () => {"
+  const handlePaymentInitiated = () => {"
     toast({;"
       title: 'Processing your request','
       description:'
@@ -19,7 +19,7 @@ export function PaymentSection(): unknown {): unknown {): unknown {): unknown {)
 "
   return (;"
     <div className=text-center>"
-      <p className="text-zion-slate-light mb-2>Selected Country</p>
+      <p className="text-zion-slate-light mb-2>Selected Country</p>"
       <h4 className="text-xl font-bold text-white mb-2 flex items-center justify-center">
         <MapPin className=mr-2 h-5 w-5 text-zion-purple" />"
         {selectedCountry.country};
@@ -32,7 +32,7 @@ export function PaymentSection(): unknown {): unknown {): unknown {): unknown {)
         serviceId="it-onsite-service"
         providerId=zion-tech-group
         buttonText={`Pay for Service in ${selectedCountry.country}`}"
-        className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white w-full py-6
+        className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white w-full py-6"
         redirectUrl=/it-onsite-services?success=true"
         onPaymentInitiated={handlePaymentInitiated}"
       />;

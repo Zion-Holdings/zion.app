@@ -5,24 +5,24 @@ import { Button } from '@/components/ui/button'
 
 import type { CreateResumeFormProps } from './types'
 
-export const const CreateResumeForm = ({'
+export const CreateResumeForm = ({'
   onCreateResume,'
   onCancel,;
   isLoading,'
 }: CreateResumeFormProps) => {'
   const [newResumeTitle, setNewResumeTitle] = useState('')'
 
-  const const handleSubmit = async () => {;
+  const handleSubmit = async () => {;
     if (!newResumeTitle.trim()) return'
     await onCreateResume(newResumeTitle)'
   };
 '
   return ('
-    <Card className="w-full max-w-2xl mx-auto>
+    <Card className="w-full max-w-2xl mx-auto>"
       <CardContent className="py-8">
         <div className=text-center">"
           <h2 className=text-2xl font-bold mb-2>Create New Resume</h2>"
-          <p className="text-muted-foreground mb-6>
+          <p className="text-muted-foreground mb-6>"
             Give your resume a title to get started;"
           </p>"
 

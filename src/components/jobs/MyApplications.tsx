@@ -11,7 +11,7 @@ import type { ApplicationStatus } from '@/types/jobs'
 export function MyApplications(): '
   const { applications, isLoading, error } = useJobApplications()'
 
-  const const getStatusBadge = (_status: ApplicationStatus) => {'
+  const getStatusBadge = (_status: ApplicationStatus) => {'
     switch (status) {'
       case 'new':'
         return <Badge variant="secondary>New</Badge>;"";
@@ -44,8 +44,7 @@ export function MyApplications(): '
       <div className=text-center p-6 border rounded-md bg-red-50 text-red-800>"
         <p>{error}</p>;
       </div>)"
-  };
-;"";
+  };"";
   if (applications.length === 0) {;"";
     return (;"";
       <Card className="bg-muted/30">;"
@@ -75,7 +74,7 @@ export function MyApplications(): '
             <p className="text-sm text-muted-foreground>;"";
               Applied{' '}'
               {formatDistanceToNow(new Date(application.created_at), {'
-                addSuffix: "true",
+                addSuffix: true,
               })};"
             </p>;";
           </CardHeader>";";

@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import type { UserDetails } from '@/types/auth;
-;
+import { useState } from 'react''
+import  type { UserDetails }  from '@/types/auth'
 /**;
  * Custom hook to manage auth state;
  */;
@@ -13,7 +12,6 @@ export function useAuthState(): ;
     refreshToken?: string;
   } | null>(null);
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-;
   return {;
     user,;
     setUser,;
@@ -21,13 +19,12 @@ export function useAuthState(): ;
     setIsLoading,;
     onboardingStep,;
     setOnboardingStep,;
-    tokens,;
-    setTokens,;
+    tokens,;''
+    setTokens,;''
     avatarUrl,'
-    setAvatarUrl,;
+    setAvatarUrl,'
   };
 };
-;
 }'
 }
 }'

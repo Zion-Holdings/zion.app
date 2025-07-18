@@ -1,18 +1,18 @@
-import React from 'react;
+import React from 'react;';
 /**'
  * Advanced Log Analyzer for Error Pattern Detection;
  * Provides intelligent error analysis, pattern recognition, and automated solutions;
  */'
 ;
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
 '
-interface LogPattern {;
-  id: "string;"
-  pattern: "RegExp;","
-  severity: 'low' | 'medium' | 'high' | 'critical,;
-  description: "string;","
-  solution: "string;",;"
-  category:;"
+interface LogPattern {
+  id: "string"
+  pattern: RegExp,"
+  severity: 'low' | 'medium' | 'high' | 'critical,
+  description: string,"
+  solution: string,"
+  category:"
     | 'build'
     | 'runtime'
     | 'network'
@@ -20,35 +20,34 @@ interface LogPattern {;
     | 'database'
     | 'ui'
     | 'performance'
-  autoFix?: () => Promise<boolean>;
-};
+  autoFix?: () => Promise<boolean>
+}
 '
-interface ErrorAnalysis {;
-  patternId: "string;"
-  severity: 'low' | 'medium' | 'high' | 'critical,;
-  description: "string;"
-  solution: "string;","
-  category: "string;"
-  occurrences: "number;","
-  lastSeen: "Date;"
-  trend: 'increasing' | 'stable' | 'decreasing,;
-  impact: 'low' | 'medium' | 'high;
-};
+interface ErrorAnalysis {
+  patternId: "string"
+  severity: 'low' | 'medium' | 'high' | 'critical,
+  description: "string"
+  solution: string,"
+  category: "string"
+  occurrences: number,"
+  lastSeen: "Date"
+  trend: 'increasing' | 'stable' | 'decreasing,
+  impact: 'low' | 'medium' | 'high
+}
 '
-interface AnalysisReport {;
+interface AnalysisReport {
   summary: {
-    totalPatterns: "number;","
-    critical: "number;"
-    high: "number;","
-    medium: "number;"
-    low: "number;"
-  };"
+    totalPatterns: number,"
+    critical: "number"
+    high: number,"
+    medium: "number"
+    low: "number"
+  }"
   topErrors: "ErrorAnalysis[];"
-  recommendations: "string[];","
+  recommendations: string[];,"
   categories: "{ [key: string]: number "};"
   healthScore: "number;";
-};
-;"
+};"
 class LogAnalyzer {;";"
   private patterns: LogPattern[] = [;"
     // Build-time errors;"
@@ -87,7 +86,6 @@ class LogAnalyzer {;";"
       solution: 'Check file paths and ensure modules are properly installed',;
       category: 'build','
     },;
-;
     // Runtime errors'
     {;
       id: 'unhandled-promise',;
@@ -114,7 +112,6 @@ class LogAnalyzer {;";"
         'Review event listeners, timers, and object references for cleanup',;
       category: 'performance','
     },;
-;
     // Network errors'
     {;
       id: 'network-error',;
@@ -141,7 +138,6 @@ class LogAnalyzer {;";"
       solution: 'Increase timeout values or optimize slow endpoints',;
       category: 'network','
     },;
-;
     // Authentication errors'
     {;
       id: 'auth-error',;
@@ -160,7 +156,6 @@ class LogAnalyzer {;";"
       solution: 'Check user roles and permissions, verify access rights',;
       category: 'auth','
     },;
-;
     // Database errors'
     {;
       id: 'database-connection',;
@@ -179,7 +174,6 @@ class LogAnalyzer {;";"
       solution: 'Optimize queries, add indexes, or implement query caching',;
       category: 'database','
     },;
-;
     // UI/UX errors'
     {;
       id: 'hydration-mismatch',;
@@ -200,37 +194,32 @@ class LogAnalyzer {;";"
     },;
   ]'
 ;
-  private errorHistory: "Map<string", ErrorAnalysis> = new Map();"
-  private analysisCache: "Map<string", ErrorAnalysis | null> = new Map();
-;
+  private errorHistory: Map<string, ErrorAnalysis> = new Map();"
+  private analysisCache: Map<string, ErrorAnalysis | null> = new Map();
   constructor() {;
     // Setup periodic analysis cleanup;
     this.setupPeriodicCleanup();
   };
-;
   private setupPeriodicCleanup(): void {;
     // Clean old analysis data every hour;
     setInterval(() => {;
       this.cleanupOldAnalysis();
     }, 3600000);
   };
-;
   private cleanupOldAnalysis(): void {;
-    const const oneWeekAgo = new Date();
+    const oneWeekAgo = new Date();
     oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-;
     for (const [key, analysis] of this.errorHistory.entries()) {;
       if (analysis.lastSeen < oneWeekAgo) {;
         this.errorHistory.delete(key);
       };
     };
-;
     // Clear analysis cache;"
     this.analysisCache.clear();";"
   };"
 ;"
   public analyzeError(;"
-    errorMessage: "string",;"
+    errorMessage: string,;"
     context?: Record<string, unknown>,;";"
   ): ErrorAnalysis | null {;"
     // Check cache first;"
@@ -238,24 +227,21 @@ class LogAnalyzer {;";"
     if (this.analysisCache.has(cacheKey)) {;
       return this.analysisCache.get(cacheKey) || null;
     };
-;
-    const const matchedPattern = this.patterns.find((pattern) =>;
+    const matchedPattern = this.patterns.find((pattern) =>;
       pattern.pattern.test(errorMessage),;
     );
-;
     if (!matchedPattern) {;
       this.analysisCache.set(cacheKey, null);
       return null;
-    };
-;"
-    const const existingAnalysis = this.errorHistory.get(matchedPattern.id);";"
-    const const now = new Date();"
+    };"
+    const existingAnalysis = this.errorHistory.get(matchedPattern.id);";"
+    const now = new Date();"
 ;"
     // Calculate trend;"
     let trend: 'increasing' | 'stable' | 'decreasing' = 'stable;
     if (existingAnalysis) {'
-      const const timeDiff = now.getTime() - existingAnalysis.lastSeen.getTime();
-      const const hoursSince = timeDiff / (1000 * 60 * 60);
+      const timeDiff = now.getTime() - existingAnalysis.lastSeen.getTime();
+      const hoursSince = timeDiff / (1000 * 60 * 60);
 '
       if (hoursSince < 1 && existingAnalysis.occurrences > 5) {;
         trend = 'increasing;
@@ -266,7 +252,7 @@ class LogAnalyzer {;";"
 '
     // Calculate impact based on severity and frequency;
     let impact: 'low' | 'medium' | 'high' = 'low;
-    const const occurrences = existingAnalysis ? existingAnalysis.occurrences + 1 : 1'
+    const occurrences = existingAnalysis ? existingAnalysis.occurrences + 1 : 1'
 ;
     if (matchedPattern.severity === 'critical' || occurrences >= 10) {;
       impact = 'high'
@@ -279,16 +265,14 @@ class LogAnalyzer {;";"
       severity: "matchedPattern.severity"
       description: "matchedPattern.description"
       solution: "matchedPattern.solution"
-      category: "matchedPattern.category",;"
+      category: matchedPattern.category,;"
       occurrences,;"
-      lastSeen: "now",;
+      lastSeen: now,;
       trend,;
       impact,;
     };
-;
     this.errorHistory.set(matchedPattern.id, analysis);
-    this.analysisCache.set(cacheKey, analysis);
-;"
+    this.analysisCache.set(cacheKey, analysis);"
     // Log analysis results based on severity;";"
     this.logAnalysisResult(analysis, context);"
 ;"
@@ -301,16 +285,16 @@ class LogAnalyzer {;";"
   };
 '
   private logAnalysisResult(;
-    analysis: "ErrorAnalysis",;"
+    analysis: ErrorAnalysis,;"
     context?: Record<string, unknown>,;";"
   ): void {;"
-    const const logContext = {;"
+    const logContext = {;"
       ...context,;"
       pattern: "analysis.patternId"
       occurrences: "analysis.occurrences"
       trend: "analysis.trend"
       impact: "analysis.impact"
-      solution: "analysis.solution",;"
+      solution: analysis.solution,;"
     };"
 ;"
     if (analysis.severity === 'critical' || analysis.impact === 'high') {;
@@ -324,13 +308,13 @@ class LogAnalyzer {;";"
 ;"
   private async attemptAutoFix(;"
     pattern: "LogPattern"
-    analysis: "ErrorAnalysis",;"
+    analysis: ErrorAnalysis,;"
   ): Promise<void> {;";"
     if (!pattern.autoFix) return;"
 ;"
     try {;"
       logInfo('Attempting automatic fix', { data: "{ pattern: pattern.id "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});"
-      const const success = await pattern.autoFix();"
+      const success = await pattern.autoFix();"
 ;"
       if (success) {;"
         logInfo('Automatic fix applied successfully', {;
@@ -341,15 +325,14 @@ class LogAnalyzer {;";"
       };"
     } catch {;"
       logErrorToProduction('Error during automatic fix attempt', error, {;
-        pattern: "pattern.id",;
+        pattern: pattern.id,;
       });
     };
-  };
-;"
+  };"
   public generateReport(): AnalysisReport {;";"
-    const const analyses = Array.from(this.errorHistory.values());"
+    const analyses = Array.from(this.errorHistory.values());"
 ;"
-    const const summary = {;";,"
+    const summary = {;";,"
       totalPatterns: "analyses.length"
       critical: analyses.filter((a) => a.severity === 'critical').length,;
       high: analyses.filter((a) => a.severity === 'high').length,;
@@ -357,17 +340,15 @@ class LogAnalyzer {;";"
       low: analyses.filter((a) => a.severity === 'low').length,;
     }'
 ;
-    const const topErrors = analyses;
+    const topErrors = analyses;
       .sort((a, b) => {'
         // Sort by severity first, then by occurrences;
-        const const severityWeight = { critical: "4", high: "3", medium: "2", low: "1 "};
-        const const aSeverity = severityWeight[a.severity];
-        const const bSeverity = severityWeight[b.severity];
-;
+        const severityWeight = { critical: 4, high: 3, medium: 2, low: "1 "};
+        const aSeverity = severityWeight[a.severity];
+        const bSeverity = severityWeight[b.severity];
         if (aSeverity !== bSeverity) {;
           return bSeverity - aSeverity;
-        };
-;"
+        };"
         return b.occurrences - a.occurrences;";"
       });"
       .slice(0, 10);"
@@ -377,26 +358,21 @@ class LogAnalyzer {;";"
       categories[analysis.category] =;
         (categories[analysis.category] || 0) + analysis.occurrences;
     });
-;
     // Calculate health score (0-100);
     let healthScore = 100;
     healthScore -= summary.critical * 15;
     healthScore -= summary.high * 10;
     healthScore -= summary.medium * 5;
     healthScore -= summary.low * 2;
-;
     // Penalize for high occurrence rates;
-    const const totalOccurrences = analyses.reduce(;
+    const totalOccurrences = analyses.reduce(;
       (sum, a) => sum + a.occurrences,;
       0,;
     );
     if (totalOccurrences > 50) healthScore -= 20;
     else if (totalOccurrences > 20) healthScore -= 10;
-;
     healthScore = Math.max(0, healthScore);
-;
-    const const recommendations = this.generateRecommendations(analyses);
-;
+    const recommendations = this.generateRecommendations(analyses);
     return {;
       summary,;
       topErrors,;
@@ -404,13 +380,12 @@ class LogAnalyzer {;";"
       categories,;
       healthScore,;
     };
-  };
-;"
+  };"
   private generateRecommendations(analyses: ErrorAnalysis[]): string[] {;";"
     const recommendations: unknown string[] = [];"
 ;"
     // Critical issues;"
-    const const criticalIssues = analyses.filter((a) => a.severity === 'critical');
+    const criticalIssues = analyses.filter((a) => a.severity === 'critical');
     if (criticalIssues.length > 0) {;
       recommendations.push(;
         `🚨 Address ${criticalIssues.length} critical errors immediately`,'
@@ -418,15 +393,14 @@ class LogAnalyzer {;";"
     };
 '
     // Trending issues;
-    const const increasingErrors = analyses.filter((a) => a.trend === 'increasing');
+    const increasingErrors = analyses.filter((a) => a.trend === 'increasing');
     if (increasingErrors.length > 0) {;
       recommendations.push(;
         `📈 Monitor ${increasingErrors.length} increasing error trends`,;
       )'
     };
-;
     // Category-specific recommendations'
-    const const networkErrors = analyses.filter(;
+    const networkErrors = analyses.filter(;
       (a) => a.category === 'network',;
     ).length;
     if (networkErrors > 3) {'
@@ -435,7 +409,7 @@ class LogAnalyzer {;";"
       );
     };
 '
-    const const performanceErrors = analyses.filter(;
+    const performanceErrors = analyses.filter(;
       (a) => a.category === 'performance',;
     ).length;
     if (performanceErrors > 2) {'
@@ -444,31 +418,26 @@ class LogAnalyzer {;";"
       );
     }'
 ;
-    const const authErrors = analyses.filter((a) => a.category === 'auth').length'
+    const authErrors = analyses.filter((a) => a.category === 'auth').length'
     if (authErrors > 2) {;
       recommendations.push('🔐 Review authentication and authorization logic');
     };
-;
     // High occurrence patterns;
-    const const highOccurrenceErrors = analyses.filter((a) => a.occurrences >= 10);
+    const highOccurrenceErrors = analyses.filter((a) => a.occurrences >= 10);
     if (highOccurrenceErrors.length > 0) {;
       recommendations.push(;
         `🔄 Address ${highOccurrenceErrors.length} recurring error patterns`,;
       );
     };
-;
     return recommendations.slice(0, 8); // Limit to top 8 recommendations;
   };
-;
   public getPatternById(patternId: string): LogPattern | undefined {;
     return this.patterns.find((p) => p.id === patternId)'
   };
-;
   public addCustomPattern(pattern: LogPattern): void {'
     this.patterns.push(pattern);
     logInfo('Custom error pattern added', { data: "{ patternId: pattern.id "} });
   };
-;
   public getErrorHistory(): ErrorAnalysis[] {;
     return Array.from(this.errorHistory.values());
   };"
@@ -480,38 +449,36 @@ class LogAnalyzer {;";"
   };
 '
   public exportAnalysis(): string {;
-    const const report = this.generateReport();
+    const report = this.generateReport();
     return JSON.stringify('
       {;
-        timestamp: "new Date().toISOString()",;"
+        timestamp: new Date().toISOString(),;"
         report,;"
         patterns: "this.patterns.map((p) => ({;"
           id: "p.id"
           severity: "p.severity"
           category: "p.category"
-          description: "p.description",;"
+          description: p.description,;"
         })),;"
-        history: "this.getErrorHistory()",;
+        history: this.getErrorHistory(),;
       },;
       null,;
       2,;
     );
   };
 };
-;
 // Global analyzer instance;
-const const logAnalyzer = new LogAnalyzer();"
+const logAnalyzer = new LogAnalyzer();"
 ;";"
 // Enhanced error logging function that includes analysis;"
 ;"
 export function logErrorWithAnalysis(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  message: "string",;
+  message: string,;
   error?: Error | unknown,;
   context?: Record<string, unknown>,;
 ): ErrorAnalysis | null {;
   // Log the error normally;
   logErrorToProduction(message, error, context);
-;
   // Analyze the error for patterns;"
   const errorText: unknown =;";"
     error instanceof Error ? error.message : String(error || message);"
@@ -525,13 +492,11 @@ export function logErrorWithAnalysis(): unknown {): unknown {): unknown {): unkn
       occurrences: "_analysis.occurrences"
       trend: "_analysis.trend"
       impact: "_analysis.impact"
-      solution: "_analysis.solution",;
+      solution: _analysis.solution,;
     });
   };
-;
   return _analysis;
 };
-;
 export {;
   logAnalyzer,;
   LogAnalyzer,;

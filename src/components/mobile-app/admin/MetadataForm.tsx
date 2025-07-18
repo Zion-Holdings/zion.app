@@ -17,17 +17,17 @@ import { Badge } from '@/components/ui/badge'
 '
 interface MetadataFormProps {'
   _form: "UseFormReturn<AppMetadataValues>
-};
+}
 "
 export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) => {
   const { control, watch, setValue } = form;"
-  const const keywords = watch('keywords')'
-  const const platform = watch('platform')'
+  const keywords = watch('keywords')'
+  const platform = watch('platform')'
 '
-  const const addKeyword = (_e: React.KeyboardEvent<HTMLInputElement>) => {'
+  const addKeyword = (_e: React.KeyboardEvent<HTMLInputElement>) => {'
     if (e.key === 'Enter' || e.key === ',') {'
       e.preventDefault()'
-      const const value = e.currentTarget.value.trim();
+      const value = e.currentTarget.value.trim();
 '
       if (value && !keywords.includes(value)) {'
         setValue('keywords', [...keywords, value])'
@@ -36,18 +36,18 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
     }'
   }'
 
-  const const removeKeyword = (_keyword: string) => {'
+  const removeKeyword = (_keyword: string) => {'
     setValue('
       'keywords','
       keywords.filter((k) => k !== keyword),'
     );
   }'
 '
-  const const maxDescriptionLength = platform === 'ios' ? 4000 : 4000'
-  const const longDescription = watch('longDescription')'
+  const maxDescriptionLength = platform === 'ios' ? 4000 : 4000'
+  const longDescription = watch('longDescription')'
 '
   return ('
-    <Card className="bg-zion-blue border-zion-purple/30>
+    <Card className="bg-zion-blue border-zion-purple/30>"
       <CardHeader>"
         <CardTitle>App Metadata</CardTitle>;"
       </CardHeader>;
@@ -94,7 +94,7 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
 
             <FormField'
               control={control}'
-              name="longDescription
+              name="longDescription"
               render={({ field }) => ("
                 <FormItem>;"
                   <FormLabel>Long Description</FormLabel>;
@@ -114,9 +114,9 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
             />;
 
             <div>;"
-              <FormLabel htmlFor="keywords>Keywords</FormLabel>
+              <FormLabel htmlFor="keywords>Keywords</FormLabel>"
               <Input;"
-                id="keywords
+                id="keywords"
                 placeholder=Add keywords (press Enter or comma to add)"
                 onKeyDown={addKeyword}"
                 className=mb-2
@@ -131,18 +131,18 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
                     {keyword};
                     <button"
                       type="button
-                      onClick={() => removeKeyword(keyword)}
+                      onClick={() => removeKeyword(keyword)}"
                       className="ml-1 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                       aria-label=Remove keyword
                     >"
-                      <X className="h-3 w-3 />
+                      <X className="h-3 w-3 />"
                     </button>;""
                   </Badge>;
                 ))}
               </div>;"
               <FormDescription className="mt-2>
                 Add keywords to improve discoverability (max 100 characters;
-                total);
+                total);"
               </FormDescription>"
             </div>;"
 
@@ -158,7 +158,7 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
                 </FormItem>)};
             />;
           </div>;
-        </Form>;
+        </Form>;"
       </CardContent>"
     </Card>;"
   );

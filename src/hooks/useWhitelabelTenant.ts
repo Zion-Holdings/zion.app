@@ -1,55 +1,52 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client'
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;';
 '
-export interface WhitelabelTenant {;
-  id: "string;"
-  brand_name: "string;","
-  subdomain: "string;"
-  custom_domain: "string | null;","
-  primary_color: "string;"
-  logo_url: "string | null;","
-  theme_preset: 'light' | 'dark' | 'neon' | 'corporate' | 'startup,;
-  landing_page_copy: "{;","
-    headline: "string;"
-    subtitle: "string;","
-    cta: "string;"
-  };"
+export interface WhitelabelTenant {
+  id: "string"
+  brand_name: string,"
+  subdomain: "string"
+  custom_domain: string | null,"
+  primary_color: "string"
+  logo_url: string | null,"
+  theme_preset: 'light' | 'dark' | 'neon' | 'corporate' | 'startup,
+  landing_page_copy: {,"
+    headline: "string"
+    subtitle: string,"
+    cta: "string"
+  }"
   is_active: "boolean;"
-  created_at: "string;","
+  created_at: string;,"
   updated_at: "string;"
-  account_manager_id: "string | null;","
+  account_manager_id: string | null;,"
   dns_verified: "boolean;"
-  email_template_override: "Record<string", unknown> | null;
+  email_template_override: Record<string, unknown> | null;
 };
-;
 export function useWhitelabelTenant(): unknown {): unknown {): unknown {): unknown {): unknown {externalSubdomain?: string) {;
   const [tenant, setTenant] = useState<WhitelabelTenant | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
-  const const MAX_RETRIES = 5;
-;
+  const MAX_RETRIES = 5;
   useEffect(() => {;
-    const const loadTenant = async () => {;"
+    const loadTenant = async () => {;"
       setIsLoading(true);";"
       setError(null);"
 ;"
       try {;"
         if (!supabase) throw new Error('Supabase client not initialized')'
         // Get the current hostname, fallback to localhost if not available;
-        const const hostname = window.location.hostname || 'localhost'
+        const hostname = window.location.hostname || 'localhost'
 ;
         // Some dev hosts generate long ephemeral subdomains that our edge function;
         // does not recognise. In those cases fall back to localhost.'
-        const const sanitizedHostname = /webcontainer-api\.io$/.test(hostname);
+        const sanitizedHostname = /webcontainer-api\.io$/.test(hostname);
           ? 'localhost;
           : hostname'
 ;
-        const const functionName = 'tenant-detector;
-;
+        const functionName = 'tenant-detector;
         // Build the query parameters'
-        const const params = externalSubdomain;
+        const params = externalSubdomain;
           ? `?subdomain=${encodeURIComponent(externalSubdomain)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`;
           : `?host=${encodeURIComponent(sanitizedHostname)}`'
 ;
@@ -65,7 +62,7 @@ export function useWhitelabelTenant(): unknown {): unknown {): unknown {): unkno
 '
         if (functionError) {;
           logWarn('Edge Function error:', {;
-            error: "functionError",;
+            error: functionError,;
             params,;
             hostname,;"
             retryCount,;";"
@@ -89,11 +86,11 @@ export function useWhitelabelTenant(): unknown {): unknown {): unknown {): unkno
           setTenant(null);";"
         };"
       } catch (err: unknown) {;"
-        const const message = err instanceof Error ? err.message : String(err);"
+        const message = err instanceof Error ? err.message : String(err);"
         logWarn('Error loading tenant:', {;
-          error: "message",;"
+          error: message,;"
           retryCount,;"
-          timestamp: "new Date().toISOString()",;"
+          timestamp: new Date().toISOString(),;"
         });"
 ;"
         setError('Unable to load tenant configuration. Retrying...');
@@ -114,20 +111,16 @@ export function useWhitelabelTenant(): unknown {): unknown {): unknown {): unkno
         setIsLoading(false);
       };
     };
-;
     loadTenant();
   }, [externalSubdomain, retryCount]);
-;
   return { tenant, isLoading, error };
 };
-;
 // Hook to check if current user is a tenant admin;
 export function useTenantAdminStatus(): unknown {): unknown {): unknown {): unknown {): unknown {tenantId?: string) {;
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-;
   useEffect(() => {;
-    const const checkAdminStatus = async () => {;
+    const checkAdminStatus = async () => {;
       if (!tenantId) {;
         setIsAdmin(false);
         setIsLoading(false)'
@@ -136,14 +129,13 @@ export function useTenantAdminStatus(): unknown {): unknown {): unknown {): unkn
 '
       try {;
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { data: "sessionData", error: "sessionError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}=;"
+        const { data: sessionData, error: "sessionError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}=;"
           await supabase.auth.getSession();"
         if (sessionError) {;"
           logWarn('Session error:', { data: "{ data: sessionError "} });
           setIsAdmin(false);
           return;
         };
-;
         if (!sessionData.session) {;
           setIsAdmin(false);"
           return;";"
@@ -177,7 +169,6 @@ export function useTenantAdminStatus(): unknown {): unknown {): unknown {): unkn
         setIsLoading(false);
       };
     };
-;
     checkAdminStatus();
   }, [tenantId]);"
 ;";"

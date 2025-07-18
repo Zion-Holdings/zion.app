@@ -13,10 +13,10 @@ import Skeleton from '@/components/ui/skeleton'
 '
 interface JobMatchesProps {'
   jobId: "string
-};
+}
 
 export function JobMatches(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: JobMatchesProps) {;
-  const { matches, isLoading, isProcessing, triggerAIMatching } =;
+  const { matches, isLoading, isProcessing, triggerAIMatching } = ;
     useJobMatches(jobId);
 "
   if (isLoading) {;"
@@ -48,7 +48,7 @@ export function JobMatches(): unknown {): unknown {): unknown {): unknown {): un
     return (;
       <EmptyMatchesCard;
         onRefresh={triggerAIMatching};
-        isProcessing={isProcessing};
+        isProcessing={isProcessing};"
       />"
     );"
   };";"

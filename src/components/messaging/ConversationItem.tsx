@@ -5,10 +5,10 @@ import type { Conversation } from '@/types/messaging'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 '
 interface ConversationItemProps {'
-  conversation: "Conversation,;";
-  isActive: "boolean",;"";
+  conversation: "Conversation,"
+  isActive: boolean,""
   onClick: () => void""
-};
+}
 
 export function ConversationItem(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversation,;
@@ -26,7 +26,7 @@ export function ConversationItem(): unknown {): unknown {): unknown {): unknown 
       )};
       onClick={onClick}'
     >'
-      <Avatar className="h-12 w-12 border border-zion-purple/20>
+      <Avatar className="h-12 w-12 border border-zion-purple/20>"
         <AvatarImage;""
           src={conversation.other_user.avatar_url};"
           alt={conversation.other_user.name}";"

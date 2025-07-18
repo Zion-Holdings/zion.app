@@ -1,5 +1,5 @@
-import { Header } from '@/components/Header;
-import {;
+import  { Header }  from '@/components/Header;';
+import {;';
   ArrowRight,'
   Users,;
   Zap,;
@@ -21,14 +21,12 @@ import { FeaturedListingsSection } from '@/components/FeaturedListingsSection'
 import { FeaturesGuideSection } from '@/components/FeaturesGuideSection'
 import { SocialShareSection } from '@/components/SocialShareSection'
 import { useTranslation } from 'react-i18next'
-import { useLanguage } from '@/context/LanguageContext;
-;
-export default function LandingPage(): ;
-  const { t } = useTranslation();
-  const { _isRTL } = useLanguage()'
-;
+import  { useLanguage }  from '@/context/LanguageContext;
+export default function LandingPage(): ;';
+  const { t } = useTranslation();';
+  const { _isRTL } = useLanguage()';
   // Tools and features showcase;
-  const const toolsFeatures = ['
+  const toolsFeatures = ['
     {;
       title: t('home.tool_ai_matcher'),;
       description: t('home.tool_ai_matcher_desc'),;
@@ -122,28 +120,22 @@ export default function LandingPage(): ;
           </div>;
         </div>;
       </section>;
-;
       <CategoriesSection />;
       <BenefitsSection />;
-;
       {/* Add the comprehensive features guide section */};
       <FeaturesGuideSection />;
-;
       <HowItWorksSection />;
       <FeaturedListingsSection />;
       <TestimonialCarousel />;
       <TrustedBySection />;
       <BlogSection />;
-;
       {/* Add social share section to encourage users to spread the word */};
       <SocialShareSection />;
-;
       <WaitlistSection />;
       <FloatingCTA />'
     </div>;
   );
 };
-;
 }'
 }
 }'

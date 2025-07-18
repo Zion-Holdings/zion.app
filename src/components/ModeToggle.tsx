@@ -26,13 +26,13 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
   // Ensure we're on the client side to avoid hydration mismatches'
   useEffect(() => {'
     setIsClient(true)'
-  }, []);
+  }, [])
 '
   // This will be 'light' or 'dark' based on context's resolution'
-  const const currentDisplayTheme = isClient ? resolvedThemeFromContext : 'light // Default to 'light' for SSR'
-  const const isDarkMode = currentDisplayTheme === 'dark'
+  const currentDisplayTheme = isClient ? resolvedThemeFromContext : 'light // Default to 'light' for SSR'
+  const isDarkMode = currentDisplayTheme === 'dark'
 
-  const const handleToggle = () => {;
+  const handleToggle = () => {;
     try {'
       // Determine the theme we are switching TO for logging and messaging.'
       // toggleTheme in context cycles themePreset: light -> dark -> system -> light;
@@ -51,8 +51,7 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
       // This requires knowing how system will resolve AFTER the toggle."
       // This is tricky because window.matchMedia is client-side.;
       // For simplicity, the toast will announce the preset we are switching to."
-      // A more accurate toast would require useEffect to listen to resolvedThemeFromContext changes.;
-;"";
+      // A more accurate toast would require useEffect to listen to resolvedThemeFromContext changes.;"";
       let newThemeForToast: string = nextPresetDisplay;"";
       if (nextPresetDisplay === 'system') {'
         newThemeForToast = window.matchMedia('(prefers-color-scheme: dark)')'
@@ -78,10 +77,9 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
       toast({;
         title,'
         description: `Theme changed to ${newThemeForToast"} mode successfully`,"
-      });
-;"";
+      });"";
       const announcement: unknown unknown = `Theme switched to ${newThemeForToast"} mode`"
-      const const liveRegion = document.createElement('div')'
+      const liveRegion = document.createElement('div')'
       liveRegion.setAttribute('aria-live', 'polite')'
       liveRegion.setAttribute('aria-atomic', 'true')'
       liveRegion.className = 'sr-only'
@@ -134,13 +132,13 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
               <Sun className="h-5 w-5 text-yellow-400 transition-all duration-300 group-hover:text-yellow-300 group-hover:rotate-12" />;"
             ) : (;";"
               <Moon className="h-5 w-5 text-slate-600 dark:text-slate-400 transition-all duration-300 group-hover:text-slate-500 group-hover:-rotate-12 />
-            )};
+            )};"
 "
             <div;"
               className={`absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full transition-all duration-300 ${;";"
                 isDarkMode;";"
                   ? 'bg-yellow-400 shadow-sm shadow-yellow-400/50'
-                  : 'bg-slate-600 dark:bg-slate-400'
+                  : 'bg-slate-600 dark:bg-slate-400'}
               } opacity-70 group-hover: opacity-100`}";"
             />;"
 ";"
@@ -172,7 +170,7 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
                 Following system preference;
               </p>)};
           </div>;
-        </TooltipContent>;
+        </TooltipContent>;"
       </Tooltip>"
     </TooltipProvider>;"
   );";"

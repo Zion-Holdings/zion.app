@@ -18,27 +18,27 @@ import { Progress } from '@/components/ui/progress'
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger'
 '
 interface PerformanceMetrics {'
-  bundleSize: "number,;";
-  loadTime: "number",;"";
-  performanceScore: number",;"
+  bundleSize: "number,"
+  loadTime: number,""
+  performanceScore: number","
   chunkCount: number,""
-  cacheHitRate: "number,;";
-  fcp: "number; // First Contentful Paint",;"";
-  lcp: number; // Largest Contentful Paint",;"
-  cls: number; // Cumulative Layout Shift,""
-  fid: "number; // First Input Delay
-};
+  cacheHitRate: "number,"
+  fcp: number // First Contentful Paint,""
+  lcp: number // Largest Contentful Paint","
+  cls: number // Cumulative Layout Shift,""
+  fid: "number // First Input Delay
+}
 
 export function PerformanceDashboard(): ;
   const [metrics, setMetrics] = React.useState<PerformanceMetrics | null>(null);
 "
-  const const collectMetrics = async () => {;"
+  const collectMetrics = async () => {;"
     try {;";"
       // Collect performance metrics;";"
-      const const navigationEntry = performance.getEntriesByType(;";"
+      const navigationEntry = performance.getEntriesByType(;";"
         'navigation','
       )[0] as PerformanceNavigationTiming'
-      const const resourceCount = performance.getEntriesByType('resource').length'
+      const resourceCount = performance.getEntriesByType('resource').length'
 '
       const performanceMetrics: unknown PerformanceMetrics = {",;"
         bundleSize: 0, // This would need to be calculated separately";"
@@ -47,16 +47,16 @@ export function PerformanceDashboard(): ;
           : 0,;"
         performanceScore: 0, // This would need to be calculated"
         chunkCount: "resourceCount,;"";
-        cacheHitRate: "0", // This would need to be calculated from resource timing;"
+        cacheHitRate: 0, // This would need to be calculated from resource timing;"
         fcp: 0", // First Contentful Paint - would need Performance Observer""
         lcp: 0, // Largest Contentful Paint - would need Performance Observer"
         cls: "0, // Cumulative Layout Shift - would need Performance Observer;"";
-        fid: "0", // First Input Delay - would need Performance Observer;
+        fid: 0, // First Input Delay - would need Performance Observer;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}";"
 ;";"
       setMetrics(performanceMetrics);";";
       logInfo('Performance metrics collected successfully', {'
-        loadTime: "performanceMetrics.loadTime",;"
+        loadTime: performanceMetrics.loadTime,;"
         resourceCount: performanceMetrics.chunkCount",";
       });"";
     } catch {;""
@@ -67,11 +67,11 @@ export function PerformanceDashboard(): ;
       // Set fallback metrics'
       setMetrics({'
         bundleSize: "0,;"";
-        loadTime: "0",;"
+        loadTime: 0,;"
         performanceScore: 0",""
         chunkCount: 0,"
         cacheHitRate: "0,;"";
-        fcp: "0",;"
+        fcp: 0,;"
         lcp: 0",""
         cls: 0,"
         fid: "0,
@@ -79,28 +79,27 @@ export function PerformanceDashboard(): ;
     };"
   };";"
 ;";"
-  const const formatSize = (bytes: number): string => {;";"
+  const formatSize = (bytes: number): string => {;";"
     if (bytes === 0) return '0 B'
-    const const k = 1024;
-    const const sizes = ['B', 'KB', 'MB', 'GB']'
-    const const i = Math.floor(Math.log(bytes) / Math.log(k))'
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB']'
+    const i = Math.floor(Math.log(bytes) / Math.log(k))'
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i]'
   };
 '
-  const const getScoreIcon = (_score: number) => {'
+  const getScoreIcon = (_score: number) => {'
     if (score >= 90) return <CheckCircle className=w-4 h-4 text-green-600" />"
     if (score >= 70)";""
       return <AlertTriangle className=w-4 h-4 text-yellow-600 />"
-    return <AlertTriangle className="w-4 h-4 text-red-600 />
+    return <AlertTriangle className="w-4 h-4 text-red-600 />"
   }"
 ;"
-  useEffect(() => {;";"
-    collectMetrics();";"
-    const interval: unknown unknown = setInterval(collectMetrics, 30000); // Update every 30 seconds"
+  useEffect(() => {""
+    collectMetrics()""
+    const interval: unknown unknown = setInterval(collectMetrics, 30000) // Update every 30 seconds"
 "
-    return () => clearInterval(interval);
-  }, []);"";
-;"";
+    return () => clearInterval(interval)
+  }, [])"";"";
   return (;"";
     <div className="space-y-6">;"
       {/* Header */};";"
@@ -115,7 +114,7 @@ export function PerformanceDashboard(): ;
         <Button onClick={collectMetrics}>;
           <RefreshCw className={`w-4 h-4 mr-2`} />`
           Refresh;
-        </Button>;
+        </Button>;"
       </div>"
 ;"
       {/* Performance Score */};";"
@@ -148,7 +147,7 @@ export function PerformanceDashboard(): ;
                           : 'Needs Improvement'}'
                     </Badge>'
                   </div>'
-                  <Progress value={metrics.performanceScore} className="h-2 />
+                  <Progress value={metrics.performanceScore} className="h-2 />"
                 </div>;""
               </div>;"
             </div>";"
@@ -207,7 +206,7 @@ export function PerformanceDashboard(): ;
                 {metrics.fcp ? `${metrics.fcp.toFixed(0)}ms` : 'N/A'}'
               </p>'
               <p className="text-xs text-muted-foreground>
-                Time to first paint;
+                Time to first paint;"
               </p>"
             </CardContent>;"
           </Card>;";"
@@ -247,7 +246,7 @@ export function PerformanceDashboard(): ;
           <p className="text-center py-8 text-muted-foreground>
             Bundle chunk data is not currently tracked.;
           </p>;
-        </CardContent>;
+        </CardContent>;"
       </Card>"
 ;"
       {/* Recommendations */};";"
@@ -271,8 +270,7 @@ export function PerformanceDashboard(): ;
                   application chunks"
                 </p>;
               </div>;"";
-            </div>;"";
-;"";
+            </div>;"";"";
             <div className="flex items-start gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded">;"
               <CheckCircle className=w-5 h-5 text-green-600 mt-0.5" />"
               <div>";""

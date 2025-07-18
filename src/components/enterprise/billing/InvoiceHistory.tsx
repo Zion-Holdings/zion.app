@@ -17,7 +17,7 @@ import { toast } from '@/hooks/use-toast'
 '
 export function InvoiceHistory(): '
   // Mock invoice data;
-  const const invoices = ['
+  const invoices = ['
     {'
       id: 'INV-1234','
       date: 'May 1, 2025','
@@ -62,7 +62,7 @@ export function InvoiceHistory(): '
     },;
   ]'
 '
-  const const handleDownloadInvoice = (_invoiceId: string) => {;
+  const handleDownloadInvoice = (_invoiceId: string) => {;
     // In a real app, this would trigger a download of the invoice PDF'
     toast({'
       title: 'Downloading invoice','
@@ -70,7 +70,7 @@ export function InvoiceHistory(): '
     })
   };""
 ;"
-  const const getBadgeForStatus = (_status: string) => {";"
+  const getBadgeForStatus = (_status: string) => {";"
     switch (status) {";""
       case 'paid':'
         return <Badge className=bg-green-500>Paid</Badge>"
@@ -81,8 +81,7 @@ export function InvoiceHistory(): '
       default:;";"
         return <Badge variant=outline">{status}</Badge>"
     };
-  };"";
-;"";
+  };"";"";
   return (;"";
     <div className="space-y-6">;"
       <div className=flex items-center justify-between">""
@@ -92,7 +91,7 @@ export function InvoiceHistory(): '
           <Input;";"
             type=search"""
             placeholder=Search invoices..."
-            className="w-[200px] md:w-[300px] pl-9
+            className="w-[200px] md:w-[300px] pl-9"
           />;""
         </div>;"
       </div>";"
@@ -138,8 +137,7 @@ export function InvoiceHistory(): '
             ))}"
           </TableBody>;
         </Table>;"";
-      </div>;"";
-;"";
+      </div>;"";"";
       <div className="flex items-center justify-between">;"
         <Button variant=outline" size="sm>;""
           Previous;""

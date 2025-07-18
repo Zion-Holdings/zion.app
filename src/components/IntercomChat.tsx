@@ -2,17 +2,17 @@ import { useEffect } from 'react';
 import { logWarn, logInfo } from '@/utils/productionLogger'
 '
 declare global {'
-  interface Window {;
+  interface Window {
     Intercom?: ((...args: unknown[]) => void) & {'
       q?: unknown[]'
       c?: (args: "unknown) => void
-    };
+    }
     intercomSettings?: Record<string, unknown>;
   }"
 };"
 ;";"
 // Known placeholder/invalid Intercom App IDs;";"
-const const INVALID_INTERCOM_APP_IDS = [;";"
+const INVALID_INTERCOM_APP_IDS = [;";"
   'your_intercom_app_id_here','
   'your_app_id_here','
   'placeholder','
@@ -29,7 +29,7 @@ function isValidIntercomAppId(): unknown {): unknown {): unknown {): unknown {):
 
 export default function IntercomChat(): ;
   useEffect(() => {'
-    const const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID'
+    const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID'
 
     // Validate App ID before attempting to initialize'
     if (!isValidIntercomAppId(appId)) {'
@@ -51,13 +51,13 @@ export default function IntercomChat(): ;
     window.intercomSettings = { app_id: appId "}"
 
     (function () {;"";
-      const const w = window as unknown as Window;"";
-      const const ic = w.Intercom;"";
+      const w = window as unknown as Window;"";
+      const ic = w.Intercom;"";
       if (typeof ic === 'function') {'
         (ic as (...args: unknown[]) => void)('reattach_activator')'
         (ic as (...args: unknown[]) => void)('update', w.intercomSettings)'
       } else {'
-        const const d = document;
+        const d = document;
         type IntercomFunc = ((...args: unknown[]) => void) & {'
           q?: unknown[]'
           c?: (args: "unknown) => void"
@@ -70,12 +70,12 @@ export default function IntercomChat(): ;
           (i.q as unknown[]).push(args);""
         };"
         w.Intercom = i";"
-        const const l = function () {";""
-          const const script = d.createElement('script')'
+        const l = function () {";""
+          const script = d.createElement('script')'
           script.type = 'text/javascript'
           script.async = true;
           script.src = 'https://widget.intercom.io/widget/' + appId'
-          const const x = d.getElementsByTagName('script')[0]'
+          const x = d.getElementsByTagName('script')[0]'
           if (x) {;
             x.parentNode?.insertBefore(script, x)'
           } else {'

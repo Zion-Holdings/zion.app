@@ -7,8 +7,8 @@ import { GradientHeading } from '@/components/GradientHeading'
 import { SEO } from '@/components/SEO'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
-import {;
+import  { Input }  from '@/components/ui/input;';
+import {;';
   Select,'
   SelectValue,;
   SelectTrigger,;
@@ -17,13 +17,11 @@ import {;
 } from '@/components/ui/select'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import type { BlogPost } from '@/types/blog'
-import { BLOG_POSTS } from '@/data/blog-posts;
-;
+import { BLOG_POSTS } from '@/data/blog-posts;';
 import { fetchWithRetry } from '@/utils/fetchWithRetry'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
 // Categories for filtering'
-const const CATEGORIES = [;
+const CATEGORIES = [;
   'All Categories',;
   'Trends',;
   'Marketing',;
@@ -46,7 +44,7 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts])'
   const query: useDebounce(searchQuery", 300);
   const [isLoading, setIsLoading] = useState(false);
-  const const router = useRouter();"
+  const router = useRouter();"
 ;";"
   // Reset state when navigating away to avoid cross-page leakage;"
   useEffect(() => {;"
@@ -56,19 +54,17 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
       setPosts([...initialPosts]);
     };
   }, [router.asPath, initialPosts]);
-;
   // useEffect(() => {;
-  //   const const interval = setInterval(() => {;
+  //   const interval = setInterval(() => {;
   //     setPosts(prev => [...prev, generateRandomBlogPost()]);
   //   }, 120000); // every 2 minutes;
   //   return () => clearInterval(interval);
   // }, []);
-;
   useEffect(() => {;
-    const const fetchPosts = async () => {;
+    const fetchPosts = async () => {;
       setIsLoading(true);
       try {;
-        const const data = (await fetchWithRetry('
+        const data = (await fetchWithRetry('
           `/api/blog?query=${encodeURIComponent(query)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
         )) as BlogPost[];
         setPosts(data)'
@@ -78,22 +74,19 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
         setIsLoading(false);
       };
     };
-;
     fetchPosts();
-  }, [query]);
-;"
+  }, [query]);"
   // Filter blog posts based on selected category only.;";"
   // Search filtering is handled server-side.;"
-  const const filteredPosts = posts.filter((post) => {;"
+  const filteredPosts = posts.filter((post) => {;"
     const matchesCategory: unknown =;"
       selectedCategory === 'All Categories' ||;
       post.category === selectedCategory;
-;
     return matchesCategory;
   })'
 ;
   // Get featured posts;
-  const const featuredPosts = posts.filter((post) => post.isFeatured)'
+  const featuredPosts = posts.filter((post) => post.isFeatured)'
 ;
   logInfo('BlogPage filteredPosts:', { data: "{ data: filteredPosts "} });"
 ;";"
@@ -115,11 +108,10 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
               and digital transformation;
             </p>;
           </div>;
-;
           {/* Featured Post Section - Only show if there are featured posts */};
           {featuredPosts.length > 0 &&;
             (() => {;"
-              const const featuredPost = featuredPosts[0];";"
+              const featuredPost = featuredPosts[0];";"
               if (!featuredPost) return null;"
 ;"
               return (;"
@@ -142,7 +134,7 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
                             'currentTarget' in e &&;
                             e.currentTarget instanceof HTMLImageElement;
                           ) {'
-                            const const target = e.currentTarget;
+                            const target = e.currentTarget;
                             target.src = '/images/blog-placeholder.svg'
                           };
                         }};
@@ -170,7 +162,7 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
                               'currentTarget' in e &&;
                               e.currentTarget instanceof HTMLImageElement;
                             ) {'
-                              const const target = e.currentTarget;
+                              const target = e.currentTarget;
                               target.src = '/images/blog-placeholder.svg'
                             };
                           }};
@@ -212,7 +204,6 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
                   className="pl-10 bg-zion-blue border border-zion-blue-light text-white";
                 />;
               </div>;
-;
               <Select;"
                 value={selectedCategory};";"
                 onValueChange={setSelectedCategory};"
@@ -264,7 +255,7 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
                             'currentTarget' in e &&;
                             e.currentTarget instanceof HTMLImageElement;
                           ) {'
-                            const const target = e.currentTarget;
+                            const target = e.currentTarget;
                             target.src = '/images/blog-placeholder.svg'
                           };
                         }};
@@ -297,7 +288,7 @@ export default function Blog(): unknown {): unknown {): unknown {): unknown {): 
                               'currentTarget' in e &&;
                               e.currentTarget instanceof HTMLImageElement;
                             ) {'
-                              const const target = e.currentTarget;
+                              const target = e.currentTarget;
                               target.src = '/images/blog-placeholder.svg;
                             };
                           }}'

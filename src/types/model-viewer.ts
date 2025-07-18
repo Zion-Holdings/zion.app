@@ -1,4 +1,4 @@
-import React from 'react;
+import React from 'react;';
 '
 interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {;
   src?: string;
@@ -32,11 +32,10 @@ interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {;
   reveal?: 'auto' | 'interaction' | 'manual'
   'with-credentials'?: boolean;
 };
-;
 declare global {;
   interface Window {'
-    modelViewerLoaded?: boolean;
-  };
+    modelViewerLoaded?: boolean
+  }
 }'
 ;
 declare module 'react' {'
@@ -44,6 +43,5 @@ declare module 'react' {'
     'model-viewer': ModelViewerProps;
   }'
 };
-;
 export type { ModelViewerProps }'
 '''''

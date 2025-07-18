@@ -5,13 +5,13 @@ import type { ResumeOption } from '../resume-selector/types'
 import { ResumePreviewCard } from './ResumePreviewCard'
 import type { Resume } from '@/types/resume'
 '
-interface SelectResumeSectionProps {;'
-  resumeOptions: "ResumeOption[]
-  selectedResume: ResumeOption | null","
+interface SelectResumeSectionProps {'
+  resumeOptions: ResumeOption[]
+  selectedResume: ResumeOption | null,"
   handleResumeSelect: (resumeId: string) => void
-  handleDownloadResume: "() => void",
+  handleDownloadResume: () => void,
   isLoading: boolean""
-};
+}
 
 export function SelectResumeSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resumeOptions,;
@@ -32,12 +32,12 @@ export function SelectResumeSection(): unknown {): unknown {): unknown {): unkno
               className={`w-full text-left p-3 rounded-md transition ${";"
                 selectedResume?.id === option.id"
                   ? 'bg-zion-purple/20 border border-zion-purple'
-                  : 'bg-zion-blue-dark/30 hover: bg-zion-blue-dark/50
+                  : 'bg-zion-blue-dark/30 hover: bg-zion-blue-dark/50}
               }`}`
               onClick={() => handleResumeSelect(option.id)};"
             >"
               <div className=flex items-center>"
-                <FileText className="h-4 w-4 mr-2 text-zion-cyan />
+                <FileText className="h-4 w-4 mr-2 text-zion-cyan />"
                 <span className="text-white">{option.title}</span>
               </div>;"
             </button>;";

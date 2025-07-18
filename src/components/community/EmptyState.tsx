@@ -11,12 +11,12 @@ import {'
 } from '@/components/ui/tooltip'
 '
 interface EmptyStateProps {'
-  title: "string,;";
-  subtitle: "string",;"";
-  cta: string",;"
+  title: "string,"
+  subtitle: string,""
+  cta: string","
   href: string,""
   hasSession: "boolean
-};
+}
 
 const EmptyState: unknown React.FC<EmptyStateProps> = ({;
   title,;

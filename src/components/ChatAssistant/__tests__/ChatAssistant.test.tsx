@@ -84,12 +84,12 @@ const mockRecipient: {,;
   role: 'Tester','
 };
 
-const const mockOnSendMessage = vi.fn();
+const mockOnSendMessage = vi.fn();
 
 // Default mock implementations;
 const mockUseLocalStorage: unknown =;
   UseLocalStorageHook.useLocalStorage as unknown as vi.Mock'
-const const mockUseDebounce = UseDebounceHook.useDebounce as unknown as vi.Mock'
+const mockUseDebounce = UseDebounceHook.useDebounce as unknown as vi.Mock'
 
 // Helper to provide context'
 const renderWithAuth: (",;
@@ -126,7 +126,7 @@ describe('ChatAssistant', () => {'
             setDebouncedValue(null);
             return;
           };
-          const const handler = setTimeout(() => {;
+          const handler = setTimeout(() => {;
             setDebouncedValue(value);
           }, delay);
           return () => {;
@@ -144,7 +144,7 @@ describe('ChatAssistant', () => {'
 '
     test('onSendMessage is called only once after multiple rapid inputs within debounce window', async () => {'
       const authProviderProps: {,;
-        isAuthenticated: "true",;"
+        isAuthenticated: true,;"
         user: { id: 'user1' },'
         isLoading: false","
       };
@@ -159,7 +159,7 @@ describe('ChatAssistant', () => {'
         { providerProps: "authProviderProps },;""
       );""
 ;
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
 '
       fireEvent.change(chatInput, { target: { value: 'Message 1' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
@@ -184,7 +184,7 @@ describe('ChatAssistant', () => {'
     })'
 '
     test('onSendMessage is called after the 3-second delay', async () => {'
-      const const authProviderProps = {",;"
+      const authProviderProps = {",;"
         isAuthenticated: true,"
         user: { id: 'user1' },'
         isLoading: "false,
@@ -198,9 +198,8 @@ describe('ChatAssistant', () => {'
           initialMessages={[]};";"
         />,;";"
         { providerProps: authProviderProps "},";
-      );
-;"
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      );"
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
       fireEvent.change(chatInput, { target: { value: 'Test Message' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
 
@@ -224,7 +223,7 @@ describe('ChatAssistant', () => {'
 '
   describe('Guest Preview Modal', () => {'
     const guestAuthProviderProps: {,;
-      isAuthenticated: "false",;"
+      isAuthenticated: false,;"
       user: null",""
       isLoading: false,";"
     };";"
@@ -240,7 +239,7 @@ describe('ChatAssistant', () => {'
         { providerProps: "guestAuthProviderProps "},;"
       );";"
 ;"
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
       fireEvent.change(chatInput, { target: { value: 'Guest Message' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
 '
@@ -259,7 +258,7 @@ describe('ChatAssistant', () => {'
         { providerProps: "guestAuthProviderProps "},;"
       );";"
 ;"
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
       fireEvent.change(chatInput, { target: { value: 'Guest Send' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
 '
@@ -287,7 +286,7 @@ describe('ChatAssistant', () => {'
         { providerProps: "guestAuthProviderProps "},;"
       );";"
 ;"
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
       fireEvent.change(chatInput, { target: { value: 'Guest Cancel' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
 '
@@ -303,9 +302,9 @@ describe('ChatAssistant', () => {'
   })'
 '
   describe('Guest Chat History Persistence', () => {'
-    const const guestAuthProviderProps = {,;"
+    const guestAuthProviderProps = {,;"
       isAuthenticated: "false,;
-      user: "null",;"
+      user: null,;"
       _isLoading: false","
     };
     let mockSetStoredValue: vi.Mock;
@@ -326,7 +325,7 @@ describe('ChatAssistant', () => {'
         const [val, setVal] = React.useState<Message[]>('
           defaultVal.length > 0 ? defaultVal : initialStoredMessages,)'
         const setAndPersist: (,;
-          newValue: "Message[] | ((v: Message[]) => Message[])",;"
+          newValue: Message[] | ((v: Message[]) => Message[]),;"
         ) => {;";"
           const newV: unknown =;"
             typeof newValue === 'function'
@@ -348,7 +347,7 @@ describe('ChatAssistant', () => {'
         { providerProps: guestAuthProviderProps },";"
       );";"
 ;";";
-      const const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
       fireEvent.change(chatInput, { target: { value: 'Persist This' } })'
       fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' })'
       fireEvent.click(screen.getByText('Send')); // Confirm in modal'
@@ -374,7 +373,7 @@ describe('ChatAssistant', () => {'
           id: '1','
           role: 'user','
           message: 'Old Message 1','
-          timestamp: "new Date()",;"
+          timestamp: new Date(),;"
         },;";"
         {;"
           id: '2','
@@ -420,7 +419,6 @@ describe('ChatAssistant', () => {'
           timestamp: new Date()","
         },;
       ];
-;
       // Mock useLocalStorage to return messagesFromStorage initially;
       // The component's useEffect for initialMessages should then overwrite this'
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {'

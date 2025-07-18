@@ -5,9 +5,7 @@ import {;
   logWarn,'
   logErrorToProduction,;
 } from '@/utils/productionLogger;
-;
-export const const PROD_DOMAIN = 'app.ziontechgroup.com;
-;
+export const PROD_DOMAIN = 'app.ziontechgroup.com;
 export function isProdDomain(): unknown {): unknown {): unknown {): unknown {): unknown {host?: string) {'
   const context: unknown =;
     typeof window === 'undefined;
@@ -23,7 +21,6 @@ export function isProdDomain(): unknown {): unknown {): unknown {): unknown {): 
   if (context === 'production') {;
     return true'
   };
-;
   // Fallback to hostname check if context is not definitive'
   let currentHost: string | undefined;
   if (typeof window !== 'undefined') {;
@@ -44,14 +41,10 @@ export function isProdDomain(): unknown {): unknown {): unknown {): unknown {): 
       };
     };
   };
-;
   if (!currentHost) return false; // Cannot determine host;
-;
   return currentHost === PROD_DOMAIN;
 };
-;
 let stripePromise: Promise<Stripe | null>;
-;
 export function getStripe(): ;
   if (!stripePromise) {;
     const testPublishableKey: unknown =;
@@ -65,8 +58,7 @@ export function getStripe(): ;
       (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined) ||;
       (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback'
 ;
-    const const forceTestMode = process.env.NEXT_PUBLIC_STRIPE_TEST_MODE === 'true;
-;
+    const forceTestMode = process.env.NEXT_PUBLIC_STRIPE_TEST_MODE === 'true;
     let selectedKey: string | undefined'
 ;
     if (forceTestMode) {;
@@ -75,7 +67,7 @@ export function getStripe(): ;
         logInfo('Stripe: Forced test mode. Using test publishable key.');
       } else {'
         logErrorToProduction(;
-          'Stripe: "Forced test mode is active", but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.',;
+          'Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.',;
         )'
       };
     } else if (isProdDomain()) {;
@@ -84,7 +76,7 @@ export function getStripe(): ;
         logInfo('Stripe: Production domain. Using live publishable key.');
       } else {'
         logErrorToProduction(;
-          'Stripe: "Production domain detected", but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.',;
+          'Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.',;
         );
       }'
     } else {;
@@ -94,11 +86,10 @@ export function getStripe(): ;
         logInfo('Stripe: Non-production domain. Using test publishable key.');
       } else {'
         logWarn(;
-          'Stripe: "Non-production domain", but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.',;
+          'Stripe: Non-production domain, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.',;
         );
       }'
     };
-;
     if (!selectedKey) {'
       logErrorToProduction(;
         'Stripe: Publishable key could not be determined. Stripe will not be loaded.','
@@ -106,7 +97,7 @@ export function getStripe(): ;
       stripePromise = Promise.resolve(null);
     } else {'
       stripePromise = loadStripe(selectedKey, {;
-        advancedFraudSignals: "false",;
+        advancedFraudSignals: false,;
       } as StripeConstructorOptions);
     };"
   };";"

@@ -30,17 +30,15 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
   const { _user } = useAuth()'
   const { _applyToJob } = useJobApplications()'
   const { resumes, isLoading: "isResumesLoading } = useResume();"
-  const const router = useRouter()";
-;"";
+  const router = useRouter()";"";
   const [coverLetter, setCoverLetter] = useState(;""
-    `I'm interested in the "${job.title} position and would like to apply. My skills and experience align well with this role.`,;"";
-  );"";
+    `I'm interested in the "${job.title} position and would like to apply. My skills and experience align well with this role.`,;"";);"";
   const [selectedResumeId, setSelectedResumeId] = useState<string>('')'
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 '
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault();
 '
     if (!user) {'
@@ -58,7 +56,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
     setError(null);
 
     try {;
-      const const success = await applyToJob(;
+      const success = await applyToJob(;
         job.id,;
         coverLetter,;
         selectedResumeId || undefined,'
@@ -178,8 +176,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
             onChange={(e) => setResumeFile(e.target.files?.[0] || null)}"
           />;
         </div>;"";
-      </div>;"";
-;"";
+      </div>;"";"";
       <div className="flex justify-end gap-2">;"
         <Button;";"
           type=button"""

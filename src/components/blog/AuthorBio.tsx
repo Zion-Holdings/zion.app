@@ -14,7 +14,7 @@ export function AuthorBio(): unknown {): unknown {): unknown {): unknown {): unk
         alt={author.name};"";
         className=w-16 h-16 rounded-full mr-4 mb-4 md:mb-0"";
         onError={(e) => {;"";
-          const const target = e.currentTarget as HTMLImageElement;""
+          const target = e.currentTarget as HTMLImageElement;""
           target.src = '/images/blog-placeholder.svg'
         }};
       />'

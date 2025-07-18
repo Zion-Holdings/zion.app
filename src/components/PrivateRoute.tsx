@@ -4,17 +4,17 @@ import { AuthContext } from '@/context/auth/AuthContext'
 import { safeStorage } from '@/utils/safeStorage'
 '
 interface PrivateRouteProps {'
-  _children: "React.ReactNode;"
-};";"
+  _children: "React.ReactNode"
+}";"
 ;";"
 export const PrivateRoute: unknown React.FC<PrivateRouteProps> = ({ children "}) => {";
-  const const auth = useContext(AuthContext);"";
+  const auth = useContext(AuthContext);"";
   const { user, isLoading, isAuthenticated } = auth ?? {;""
     user: "null,;"";
-    isLoading: "false",;"
+    isLoading: false,;"
     isAuthenticated: false","
   };
-  const const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {;
     if (isLoading) {;
@@ -22,7 +22,7 @@ export const PrivateRoute: unknown React.FC<PrivateRouteProps> = ({ children "})
     };"
 ;";
     if (!isAuthenticated || !user) {";";
-      const const returnTo = encodeURIComponent(router.asPath)"
+      const returnTo = encodeURIComponent(router.asPath)"
       safeStorage.setItem('nextPath', router.asPath)'
       // Use push instead of replace to ensure the login page loads correctly;
       router.push(`/auth/login?returnTo=${returnTo}`)'

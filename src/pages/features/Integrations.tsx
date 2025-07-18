@@ -5,10 +5,9 @@ import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
-import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;
-;
+import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;';
 export default function IntegrationsFeature(): '
-  const const schema = {;
+  const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
     name: 'API & Integrations','
@@ -16,9 +15,7 @@ export default function IntegrationsFeature(): '
       'Connect Zion with Slack, your website and other tools via our API and widgets.',;
     url: 'https://app.ziontechgroup.com/features/integrations',;
   };
-;
   const { _markSlackConnected } = useAdvancedOnboardingStatus();
-;
   useEffect(() => {;
     markSlackConnected();
   }, [markSlackConnected])'

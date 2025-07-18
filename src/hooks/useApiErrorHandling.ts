@@ -1,116 +1,109 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { useCallback } from 'react';
+import { useCallback } from 'react''
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
-// Remove static import;
-// import * as Sentry from '@sentry/nextjs;
-;
-interface ApiErrorHandlingOptions {;
-  showToast?: boolean;
-  logToSentry?: boolean;
-  customMessage?: string;
-};
+import  { logErrorToProduction }  from '@/utils/productionLogger;''
+// Remove static import;''
+// import  * as Sentry  from '@sentry/nextjs'
+interface ApiErrorHandlingOptions {
+  showToast?: boolean
+  logToSentry?: boolean
+  customMessage?: string''
+}''
 '
-export const const _useApiErrorHandling = () => {;
-  const const queryClient = useQueryClient();
+export const _useApiErrorHandling = () => {'
+  const queryClient = useQueryClient();
 '
-  const const handleApiError = useCallback(;
-    (error: "Error", _options: "ApiErrorHandlingOptions = {"}) => {;"
+  const handleApiError = useCallback('
+    (error: Error, _options: "ApiErrorHandlingOptions = {}) => {
       const { showToast = true, logToSentry = true, customMessage } = options;"
-;"
-      // Determine error message;"
-      let errorMessage = customMessage || 'An unexpected error occurred;
-;
-      if (error.message?.includes('fetch')) {;
+"
+      // Determine error message;
+      let errorMessage = customMessage || 'An unexpected error occurred'
+      if (error.message?.includes('fetch')) {'
         errorMessage = 'Network error – please retry'
-      } else if (error.message?.includes('timeout')) {;
+      } else if (error.message?.includes('timeout')) {'
         errorMessage = 'Request timed out - please try again'
-      } else if (error.message?.includes('401')) {;
+      } else if (error.message?.includes('401')) {'
         errorMessage = 'Authentication required - please log in'
-      } else if (error.message?.includes('403')) {;
+      } else if (error.message?.includes('403')) {'
         errorMessage = 'Access denied - insufficient permissions'
-      } else if (error.message?.includes('404')) {;
+      } else if (error.message?.includes('404')) {'
         errorMessage = 'Requested resource not found'
-      } else if (error.message?.includes('500')) {;
-        errorMessage = 'Server error - please try again later;
+      } else if (error.message?.includes('500')) {'
+        errorMessage = 'Server error - please try again later'
       };
-;
       // Log to Sentry;
       if (logToSentry) {;
         // Remove all imports and dynamic imports of @sentry/nextjs from this file.;
       }'
-;
+'
       // Show toast notification;
       if (showToast) {'
-        toast({;
-          title: 'Error',;
-          description: "errorMessage"
-          variant: 'destructive',;
+        toast({'
+          title: 'Error','
+          description: errorMessage"
+          variant: 'destructive','
         });
       }'
-;
-      logErrorToProduction('API Error:', { data: "error "});
+'
+      logErrorToProduction('API Error:', { data: "error })
     },;
     [],;
   );
-;
-  const const retryAllQueries = useCallback(async () => {;"
-    try {;";"
-      await queryClient.invalidateQueries();"
-      await queryClient.refetchQueries();"
+  const retryAllQueries = useCallback(async () => {"
+    try {;"
+      await queryClient.invalidateQueries();
+      await queryClient.refetchQueries()"
       toast({;"
-        title: 'Refreshed',;
-        description: 'Data has been refreshed successfully',;
+        title: 'Refreshed','
+        description: 'Data has been refreshed successfully','
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})'
-    } catch {;
-      logErrorToProduction('Failed to retry queries:', { data: "error "});"
+    } catch {'
+      logErrorToProduction('Failed to retry queries:', { data: error })"
       toast({;"
-        title: 'Retry Failed',;
-        description: 'Failed to refresh data - please try again',;
-        variant: 'destructive',;
+        title: 'Retry Failed','
+        description: 'Failed to refresh data - please try again','
+        variant: 'destructive','
       });
     };
   }, [queryClient]);
-;
-  const const retryQuery = useCallback(;
+  const retryQuery = useCallback(;
     async (_queryKey: string[]) => {'
-      try {;
+      try {'
         await queryClient.invalidateQueries({ queryKey } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
         await queryClient.refetchQueries({ queryKey })'
-        toast({;
-          title: 'Refreshed',;
-          description: 'Data has been refreshed successfully',;
+        toast({'
+          title: 'Refreshed','
+          description: 'Data has been refreshed successfully','
         })'
-      } catch {;
-        logErrorToProduction('Failed to retry query:', { data: "error "});"
+      } catch {'
+        logErrorToProduction('Failed to retry query:', { data: error })"
         toast({;"
-          title: 'Retry Failed',;
-          description: 'Failed to refresh data - please try again',;
-          variant: 'destructive',;
+          title: 'Retry Failed','
+          description: 'Failed to refresh data - please try again','
+          variant: 'destructive','
         });
       };
     },;
     [queryClient],'
-  );
-;
-  const const isNetworkError = useCallback((_error: Error) => {'
-    return (;
-      error.message?.includes('fetch') ||;
-      error.message?.includes('network') ||;
-      error.message?.includes('timeout') ||;
+  )'
+  const isNetworkError = useCallback((_error: Error) => {'
+    return ('
+      error.message?.includes('fetch') ||'
+      error.message?.includes('network') ||'
+      error.message?.includes('timeout') ||'
       !navigator.onLine'
-    );
+    )'
   }, []);
 '
-  const isOffline: unknown =;
-    typeof navigator !== 'undefined' ? !navigator.onLine : false;
-;
+  const isOffline: unknown ='
+    typeof navigator !== 'undefined' ? !navigator.onLine : false'
   return {;
     handleApiError,;
     retryAllQueries,;
     retryQuery,;
     isNetworkError,'
-    isOffline,;
+    isOffline,'
   };
 }'
 '''''

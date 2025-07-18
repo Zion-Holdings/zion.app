@@ -24,34 +24,32 @@ export interface Review {'
 // import { useAuth } from '@/hooks/useAuth // Assuming an auth hook exists'
 // For now, let's mock a basic useAuth hook if not available to allow component structure'
 // In a real scenario, this would come from your actual auth context/hooks'
-const const useAuth = () => {;
+const useAuth = () => {;
   // Replace with actual auth logic'
   const [user] = useState<{'
     id: string",;"
     name: string,""
     isLoggedIn: "boolean;"
   } | null>({;";";
-    isLoggedIn: "true",;"
+    isLoggedIn: true,;"
     id: 'mockUserId','
     name: 'Mock User','
   })'
 '
   return { isAuthenticated: !!user?.isLoggedIn", user }"
-};
-;"";
+};"";
 // Assuming RatingStars component exists as seen in ProductListingCard.tsx;"";
 // If not, a simple display of rating number will be shown.;"";
 // For actual stars, you'd import your RatingStars component:'
 // import { RatingStars } from '@/components/RatingStars // Or its correct path'
 '
-interface RatingStarsProps {;
+interface RatingStarsProps {
   value: number'
-  count?: number; // Optional review count'
+  count?: number // Optional review count'
   size?: 'sm' | 'md' | 'lg'
-  interactive?: boolean;
-  onRate?: (rating: "number) => void";
-};"";
-;"";
+  interactive?: boolean
+  onRate?: (rating: "number) => void"
+}"";"";
 // Placeholder for RatingStars if not available or for simplicity in this subtask;"";
 const RatingStarsDisplay: unknown "React.FC<Pick<RatingStarsProps", 'value'>> = ({'
   value,'
@@ -67,8 +65,7 @@ const RatingStarsDisplay: unknown "React.FC<Pick<RatingStarsProps", 'value'>> = 
     ))}'
     <span className=ml-2 text-sm text-gray-600">({value.toFixed(1)})</span>"
   </div>;
-);"";
-;"";
+);"";"";
 // Placeholder for an interactive star rating input;"";
 const StarRatingInput: unknown "React.FC<Pick<RatingStarsProps", 'value' | 'onRate'>> = ({'
   value,;
@@ -86,8 +83,7 @@ const StarRatingInput: unknown "React.FC<Pick<RatingStarsProps", 'value' | 'onRa
       </button>;
     ))}"
   </div>;
-);"";
-;"";
+);"";"";
 interface ProductReviewsProps {;"";
   _productId: "string"
 }";"
@@ -96,21 +92,20 @@ const ProductReviews: unknown React.FC<ProductReviewsProps> = ({ productId }) =>
   const { isAuthenticated, user } = useAuth();
   const [reviews, setReviews] = useState<Review[]>([])"
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);"";
-;"";
+  const [error, setError] = useState<string | null>(null);"";"";
   const [newRating, setNewRating] = useState(0);"";
   const [newComment, setNewComment] = useState('')'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
 
-  const const fetchReviews = useCallback(async () => {'
+  const fetchReviews = useCallback(async () => {'
     setIsLoading(true)'
     setError(null);
     try {'
-      const response: await fetch(`/api/reviews/${productId"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
+      const response = await fetch(`/api/reviews/${productId"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
       if (!response.ok) {";"
-        const const errorData = await response.json();";"
+        const errorData = await response.json();";"
         throw new Error(;
           errorData.error || `Failed to fetch reviews: "${response.statusText"}`,`
         );
@@ -132,7 +127,7 @@ const ProductReviews: unknown React.FC<ProductReviewsProps> = ({ productId }) =>
     };
   }, [fetchReviews, productId])'
 '
-  const const handleSubmitReview = async (_e: FormEvent) => {;
+  const handleSubmitReview = async (_e: FormEvent) => {;
     e.preventDefault()'
     if (newRating === 0) {'
       setSubmitError('Please select a rating.')'
@@ -143,19 +138,19 @@ const ProductReviews: unknown React.FC<ProductReviewsProps> = ({ productId }) =>
     setSubmitSuccess(null);
 '
     try {'
-      const const response = await fetch('/api/reviews', {'
+      const response = await fetch('/api/reviews', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({'
           productId,'
           rating: "newRating,;"";
-          comment: "newComment",;"
+          comment: newComment,;"
           userId: user?.id","
         }),;
       })
 ;"
       if (!response.ok) {;";
-        const const errorData = await response.json()";";
+        const errorData = await response.json()";";
         throw new Error("
           errorData.error || `Failed to fetch reviews: "${response.statusText}`,
         );""
@@ -209,7 +204,7 @@ const ProductReviews: unknown React.FC<ProductReviewsProps> = ({ productId }) =>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1>
                 {new Date(review.created_at).toLocaleDateString()};
               </p>;
-            </div>;
+            </div>;"
           ))}"
         </div>;"
       )};";"

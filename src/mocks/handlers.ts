@@ -1,11 +1,10 @@
-import { http, HttpResponse } from 'msw;
+import { http, HttpResponse } from 'msw;';
+const API_URL = '/auth/login // Assuming login endpoint is /auth/login'
 ;
-const const API_URL = '/auth/login // Assuming login endpoint is /auth/login'
-;
-export const const _handlers = [;
+export const _handlers = [;
   // Successful login'
   http.post(API_URL, async ({ request }) => {;
-    const const body = (await request.json()) as { email: "string; password: string "};"
+    const body = (await request.json()) as { email: "string; password: string "};"
     if (body.email === 'test@example.com' && body.password === 'password123') {'
       return HttpResponse.json({;
         token: 'mock-jwt-token',;
@@ -16,7 +15,7 @@ export const const _handlers = [;
           userType: 'test',;
           profileComplete: "true"
           createdAt: "new Date().toISOString()"
-          updatedAt: "new Date().toISOString()",;"
+          updatedAt: new Date().toISOString(),;"
         },;"
       });"
     } else if (body.email === 'fail@example.com') {;
@@ -41,8 +40,8 @@ export const const _handlers = [;
 ;"
   // Handler for marketplace products API;"
   http.get('/api/products', ({ request }) => {'
-    const const url = new URL(request.url);
-    const const scenario = url.searchParams.get('scenario')'
+    const url = new URL(request.url);
+    const scenario = url.searchParams.get('scenario')'
 ;
     if (scenario === 'success') {;
       return HttpResponse.json(['
@@ -59,7 +58,7 @@ export const const _handlers = [;
           createdAt: "new Date(Date.now() - 86400000 * 2).toISOString()"
           rating: "4.5"
           reviewCount: "10"
-          aiScore: "92",;"
+          aiScore: 92,;"
         },;"
         {;"
           id: 'prod-2',;
@@ -74,7 +73,7 @@ export const const _handlers = [;
           createdAt: "new Date(Date.now() - 86400000 * 1).toISOString()"
           rating: "4.7"
           reviewCount: "20"
-          aiScore: "95",;"
+          aiScore: 95,;"
         },;"
         {;"
           id: 'prod-3',;
@@ -89,7 +88,7 @@ export const const _handlers = [;
           createdAt: "new Date(Date.now() - 86400000 * 3).toISOString()"
           rating: "4.2"
           reviewCount: "5"
-          aiScore: "88",;"
+          aiScore: 88,;"
         },;";"
       ]);"
     };"
@@ -112,7 +111,7 @@ export const const _handlers = [;
           images: "[]"
           createdAt: "new Date().toISOString()"
           rating: "4.5"
-          reviewCount: "10",;"
+          reviewCount: 10,;"
         },;"
         {;"
           id: 'prod-2',;
@@ -126,7 +125,7 @@ export const const _handlers = [;
           images: "[]"
           createdAt: 'invalid-date-string',;
           rating: "4.7"
-          reviewCount: "20",;"
+          reviewCount: 20,;"
         },;"
         {;"
           id: 'prod-3',;
@@ -139,7 +138,7 @@ export const const _handlers = [;
           author: { name: 'Auth3', id: 'a3' },;
           images: "[]"
           rating: "4.2"
-          reviewCount: "5",;"
+          reviewCount: 5,;"
         },;";"
       ]);"
     };"
@@ -147,7 +146,6 @@ export const const _handlers = [;
     if (scenario === 'networkError') {;
       return HttpResponse.error()'
     };
-;
     // Default to server error if no specific scenario matches, or keep the original behavior'
     return HttpResponse.json(;
       { error: 'Internal Server Error from MSW for /api/products' },;

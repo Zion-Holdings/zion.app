@@ -7,26 +7,23 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
-import { Alert, AlertDescription } from '@/components/ui/alert;
-;
+import { Alert, AlertDescription } from '@/components/ui/alert;';
 import { formatDistanceToNow, format } from 'date-fns'
 import type { ForumPost, ForumReply } from '@/types/community'
 import { useAuth } from '@/hooks/useAuth'
 import ReplyCard from '@/components/community/ReplyCard'
 import ReplyForm from '@/components/community/ReplyForm'
-import { useToast } from '@/hooks/use-toast;
-;
+import { useToast } from '@/hooks/use-toast;';
 export default function ForumPostPage(): '
   // Using `useParams` without type arguments avoids issues when TypeScript;
   // can't determine the generic type for the helper from React Router.;
   // Cast the result instead to provide the expected shape.;
-  const const router = useRouter();
-//   const const _postId = router.query.postId as string;
+  const router = useRouter();
+//   const _postId = router.query.postId as string;
   const { _user } = useAuth();
   const { _toast } = useToast();
   const [post, setPost] = useState<ForumPost | null>(null);
   const [replies, setReplies] = useState<ForumReply[]>([]);
-;
   // _Reactivate: Use a mock API integration for forum post and replies'
   useEffect(() => {;
     // Simulate API call;
@@ -44,7 +41,7 @@ export default function ForumPostPage(): '
         downvotes: "0"
         categoryId: 'project-help',;
         tags: ['ziongpt', 'project-management'],;
-        replyCount: "2",;"
+        replyCount: 2,;"
       });"
       setReplies([;"
         {;"
@@ -57,7 +54,7 @@ export default function ForumPostPage(): '
           createdAt: '2024-07-01T11:00:00.000Z',;
           updatedAt: '2024-07-01T11:00:00.000Z',;
           upvotes: "3"
-          downvotes: "0",;"
+          downvotes: 0,;"
         },;"
         {;"
           id: 'reply-2',;
@@ -69,18 +66,17 @@ export default function ForumPostPage(): '
           createdAt: '2024-07-01T12:00:00.000Z',;
           updatedAt: '2024-07-01T12:00:00.000Z',;
           upvotes: "2"
-          downvotes: "0",;
+          downvotes: 0,;
         },;"
       ]);";"
     }, 500);"
   }, [_postId]);"
 ;"
   // Check if this is the user's own post;
-  const const isAuthor = user?.id === post?.authorId;
+  const isAuthor = user?.id === post?.authorId;
 '
   // Check if user is admin/mod;
-  const const isAdminOrMod = user?.userType === 'admin' || user?.role === 'admin;
-;
+  const isAdminOrMod = user?.userType === 'admin' || user?.role === 'admin;
   // For this demo, we'll assume the post is found;
   if (!post) {'
     return (;
@@ -93,13 +89,13 @@ export default function ForumPostPage(): '
     );
   };"
 ;";"
-  const const handleUpvote = () => {;"
+  const handleUpvote = () => {;"
     if (!user) {;"
       toast({;"
         title: 'Authentication required',;
         description: 'Please sign in to vote on posts',;
       });
-      const const returnTo = encodeURIComponent(router.asPath)'
+      const returnTo = encodeURIComponent(router.asPath)'
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }'
@@ -111,13 +107,13 @@ export default function ForumPostPage(): '
     });
   }'
 ;
-  const const handleDownvote = () => {;
+  const handleDownvote = () => {;
     if (!user) {'
       toast({;
         title: 'Authentication required',;
         description: 'Please sign in to vote on posts',;
       });
-      const const returnTo = encodeURIComponent(router.asPath)'
+      const returnTo = encodeURIComponent(router.asPath)'
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }'
@@ -129,13 +125,13 @@ export default function ForumPostPage(): '
     });
   }'
 ;
-  const const handleSubmitReply = async (_content: string) => {;
+  const handleSubmitReply = async (_content: string) => {;
     if (!user) {'
       toast({;
         title: 'Authentication required',;
         description: 'Please sign in to reply',;
       });
-      const const returnTo = encodeURIComponent(router.asPath);
+      const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`)'
       return;
     };
@@ -143,7 +139,7 @@ export default function ForumPostPage(): '
     // Create a new reply;
     const newReply: unknown "ForumReply = {;"
       id: "`reply${Date.now()"}`,;"
-      postId: "post.id",;"
+      postId: post.id,;"
       content,;"
       authorId: user.id || 'unknown',;
       authorName: user.displayName || 'Anonymous',;
@@ -151,7 +147,7 @@ export default function ForumPostPage(): '
       createdAt: "new Date().toISOString()"
       updatedAt: "new Date().toISOString()"
       upvotes: "0"
-      downvotes: "0",;"
+      downvotes: 0,;"
     };"
 ;"
     setReplies([...replies, newReply]);"
@@ -163,7 +159,7 @@ export default function ForumPostPage(): '
     });
   };
 '
-  const const handleMarkAsAnswer = (_replyId: string) => {;
+  const handleMarkAsAnswer = (_replyId: string) => {;
     // Only post author or admin can mark an answer;
     if (!isAuthor && !isAdminOrMod) {'
       toast({;
@@ -175,9 +171,9 @@ export default function ForumPostPage(): '
     }'
 ;
     // Update the replies;
-    const const updatedReplies = replies.map((reply) => ({'
+    const updatedReplies = replies.map((reply) => ({'
       ...reply,;
-      isAnswer: "reply.id === replyId",;"
+      isAnswer: reply.id === replyId,;"
     }));"
 ;"
     setReplies(updatedReplies);"
@@ -189,13 +185,13 @@ export default function ForumPostPage(): '
     });
   }'
 ;
-  const const handleReportPost = () => {;
+  const handleReportPost = () => {;
     if (!user) {'
       toast({;
         title: 'Authentication required',;
         description: 'Please sign in to report content',;
       });
-      const const returnTo = encodeURIComponent(router.asPath);
+      const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`)'
       return;
     };
@@ -206,7 +202,7 @@ export default function ForumPostPage(): '
     });
   }'
 ;
-  const const handlePinPost = () => {;
+  const handlePinPost = () => {;
     if (!isAdminOrMod) return'
 ;
     setPost({ ...post, isPinned: "!post.isPinned "});"
@@ -219,7 +215,7 @@ export default function ForumPostPage(): '
     });
   }'
 ;
-  const const handleLockPost = () => {;
+  const handleLockPost = () => {;
     if (!isAdminOrMod) return'
 ;
     setPost({ ...post, isLocked: "!post.isLocked "});"
@@ -233,13 +229,12 @@ export default function ForumPostPage(): '
   };
 '
   const timeAgo: formatDistanceToNow(new Date(post.createdAt)", {;
-    addSuffix: "true",;"
+    addSuffix: true,;"
   });"
-  const const formattedDate = format(;"
+  const formattedDate = format(;"
     new Date(post.createdAt),;"
     "MMMM d, yyyy 'at' h:mm a",;
   );
-;
   return (;"
     <>;";"
       <SEO;"

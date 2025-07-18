@@ -25,24 +25,24 @@ export function ContactSection(): '
   }>({});
 '
   const handleChange: (,;
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {;
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  const const handleSubmit = (_e: React.FormEvent) => {;""
+  const handleSubmit = (_e: React.FormEvent) => {;""
     e.preventDefault();"
 ";"
-    const const schema = z.object({";,;""
+    const schema = z.object({";,;""
       name: z.string().min(2, 'Name is required'),'
       email: z.string().email('Enter a valid email'),'
-      subject: "z.string().min(2", 'Subject is required'),'
+      subject: z.string().min(2, 'Subject is required'),'
       message: z.string().min(10, 'Message must be at least 10 characters'),'
     })'
 
-    const const result = schema.safeParse(formData)'
+    const result = schema.safeParse(formData)'
     if (!result.success) {'
       const fieldErrors: unknown "Record<string", string> = {}
       for (const err of result.error.issues) {;
@@ -112,7 +112,7 @@ export function ContactSection(): '
                 <p className=text-white font-semibold">Email Us</p>"
                 <a";""
                   href=mailto:commercial@ziontechgroup.com"
-                  className="text-zion-cyan hover:text-zion-purple transition-colors
+                  className="text-zion-cyan hover:text-zion-purple transition-colors"
                 >"
                   commercial@ziontechgroup.com;"
                 </a>;";"
@@ -124,7 +124,7 @@ export function ContactSection(): '
           </div>;
           <div className=relative">""
             <div className=absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 rounded-lg filter blur-3xl opacity-30></div>"
-            <div className="relative bg-zion-blue-light border border-zion-purple/20 rounded-lg p-8>;
+            <div className="relative bg-zion-blue-light border border-zion-purple/20 rounded-lg p-8>;"
               <h3 className="text-xl font-bold mb-6 text-white">;"
                 Send Us a Message;";"
               </h3>;"
@@ -151,13 +151,13 @@ export function ContactSection(): '
                   </div>;";
                   <div>";";
                     <label"
-                      htmlFor="email;
+                      htmlFor="email;"
                       className="block text-sm font-medium text-zion-slate-light mb-1"
                     >;"
                       Email;";
                     </label>";";
                     <Input"
-                      id="email;
+                      id="email;"
                       name="email"
                       type=email
                       value={formData.email};
@@ -167,7 +167,7 @@ export function ContactSection(): '
                     />'
                     {errors.email && ('
                       <p className="mt-1 text-sm text-red-500>
-                        {errors.email};
+                        {errors.email};"
                       </p>)}"
                   </div>;"
                 </div>;";"
@@ -195,7 +195,7 @@ export function ContactSection(): '
                 <div>";"
                   <label";""
                     htmlFor=message"
-                    className="block text-sm font-medium text-zion-slate-light mb-1
+                    className="block text-sm font-medium text-zion-slate-light mb-1"
                   >;""
                     Message;"
                   </label>";"
@@ -210,7 +210,7 @@ export function ContactSection(): '
                   />'
                   {errors.message && ('
                     <p className="mt-1 text-sm text-red-500>
-                      {errors.message};
+                      {errors.message};"
                     </p>"
                   )};"
                 </div>;";"

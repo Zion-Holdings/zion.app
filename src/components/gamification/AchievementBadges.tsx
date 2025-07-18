@@ -2,15 +2,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BadgeCheck } from '@/components/ui/icons'
 '
 export interface Achievement {'
-  id: "string,;";
-  title: "string",;"";
-  description: string",;"
-  achieved: boolean;""
-};"
+  id: "string,"
+  title: string,""
+  description: string","
+  achieved: boolean""
+}"
 ";"
-interface AchievementBadgesProps {";""
+interface AchievementBadgesProps {"""
   achievements: Achievement[]"
-};
+}
 
 export function AchievementBadges(): unknown {): unknown {): unknown {): unknown {): unknown {{ achievements }: AchievementBadgesProps) {;
   return ("
@@ -28,7 +28,7 @@ export function AchievementBadges(): unknown {): unknown {): unknown {): unknown
               <p className=font-medium>{a.title}</p>"
               <p className="text-sm text-muted-foreground>{a.description}</p>
             </div>;
-          </div>))};
+          </div>))};"
       </CardContent>"
     </Card>;"
   );";"

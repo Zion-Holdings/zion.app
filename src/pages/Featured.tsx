@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { FeaturedListingsSection } from '@/components/FeaturedListingsSection'
-import { GradientHeading } from '@/components/GradientHeading;
+import { GradientHeading } from '@/components/GradientHeading;';
 '
 export default function Featured(): ;
   return (;
@@ -21,7 +21,6 @@ export default function Featured(): ;
               Marketplace has to offer.;
             </p>;
           </div>;
-;
           {/* Reuse the FeaturedListings component */};
           <FeaturedListingsSection showTitle={false} />;
         </div>;

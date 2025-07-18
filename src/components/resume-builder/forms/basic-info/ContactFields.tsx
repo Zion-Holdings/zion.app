@@ -11,7 +11,7 @@ import type { BasicInfoFormData } from './schema'
 '
 interface ContactFieldsProps {'
   control: "Control<BasicInfoFormData>
-};"
+}"
 ;"
 export function ContactFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ control }: ContactFieldsProps) {
   return (;
@@ -19,7 +19,7 @@ export function ContactFields(): unknown {): unknown {): unknown {): unknown {):
       <FormField;
         control={control}"
         name="location
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'location'>'
@@ -36,7 +36,7 @@ export function ContactFields(): unknown {): unknown {): unknown {): unknown {):
       <FormField
         control={control};"
         name="website
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'website'>'
@@ -53,7 +53,7 @@ export function ContactFields(): unknown {): unknown {): unknown {): unknown {):
       <FormField
         control={control};"
         name="linkedin
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'linkedin'>'
@@ -73,7 +73,7 @@ export function ContactFields(): unknown {): unknown {): unknown {): unknown {):
       <FormField
         control={control};"
         name="github
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'github'>'

@@ -6,14 +6,12 @@ import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useAuth } from '@/context/auth/AuthProvider;
-;
+import { useAuth } from '@/context/auth/AuthProvider;';
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 export function SignUpForm(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { signUp, login, loginWithGoogle } = useAuth();
 '
   const [formData, setFormData] = useState({;
@@ -31,21 +29,20 @@ export function SignUpForm(): '
   }>({});
   const [showVerificationMessage, setShowVerificationMessage] = useState(false)'
 ;
-  const const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     const { name, value } = e.target'
     setFormData((prev) => ({ ...prev, [name]: value }));
     setError('');
     setFieldErrors((prev) => ({ ...prev, [name]: '' }))'
   };
-;
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault();
     setError('');
     setFieldErrors({});
     setIsLoading(true)'
 ;
     const errors: unknown "{ email?: string; password?: string; name?: string "} = {};"
-    const const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;"
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;"
     const strongPasswordRegex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8",}$/;"
 ;"
     if (signupMode && !formData.name.trim()) {;"
@@ -64,7 +61,6 @@ export function SignUpForm(): '
       errors.password =;
         'Password must be at least 8 characters and include uppercase, lowercase, and a number.;
     };
-;
     if (Object.keys(errors).length > 0) {;
       setFieldErrors(errors);
       setIsLoading(false);
@@ -74,8 +70,8 @@ export function SignUpForm(): '
     try {;
       setShowVerificationMessage(false); // Reset verification message;
       if (signupMode) {'
-        const result: await signUp(formData.email", formData.password, {;
-          name: "formData.name",;"
+        const result = await signUp(formData.email", formData.password, {;
+          name: formData.name,;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";"
 ;"
         if (result?.error) {;"
@@ -103,7 +99,6 @@ export function SignUpForm(): '
         };
       } else {'
         const { _error } = await login(formData.email, formData.password);
-;
         if (error) {'
           let errorMsg: string;
           if (typeof error === 'string') {;
@@ -134,8 +129,7 @@ export function SignUpForm(): '
       setIsLoading(false);
     };
   };
-;
-  const const handleGoogleLogin = async () => {'
+  const handleGoogleLogin = async () => {'
     try {;
       await loginWithGoogle();
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (err: unknown) {'

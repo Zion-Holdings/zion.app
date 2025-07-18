@@ -6,8 +6,8 @@ import { supabase } from '@/utils/supabase/client // Assuming supabase client is
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger // Assuming logger utility'
 '
 interface SignUpFormProps {'
-  onSignInClick: "() => void; // Function to switch back to Sign In view;"
-};";
+  onSignInClick: "() => void // Function to switch back to Sign In view"
+}";
 ";";
 export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSignInClick }: SignUpFormProps) {"
   const [email, setEmail] = useState('')'
@@ -17,7 +17,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const const handleSignUp = async (_e: FormEvent) => {;
+  const handleSignUp = async (_e: FormEvent) => {;
     e.preventDefault()'
     setError(null)'
     setIsSuccess(false);
@@ -56,7 +56,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
           data: { data: data.user },"
         });
         // Check if user needs confirmation;
-        const const firstIdentity = data.user.identities?.[0];
+        const firstIdentity = data.user.identities?.[0];
         if (;
           data.user.identities &&;
           data.user.identities.length > 0 &&;
@@ -187,7 +187,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
           style={{;"";
             background: 'none','
             border: 'none','
-            padding: "0",;""
+            padding: 0,;""
             cursor: 'pointer','
             color: '#0af','
           }} // Re-apply inline style for consistency;

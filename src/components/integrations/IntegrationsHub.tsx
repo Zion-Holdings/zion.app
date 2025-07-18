@@ -39,7 +39,7 @@ export function IntegrationsHub(): '
           <CardHeader className=pb-2>"
             <div className="flex justify-between items-center>;"";
               <CardTitle className="text-lg">Status</CardTitle>;"
-              <Badge variant=outline" className="bg-green-100 text-green-800>
+              <Badge variant=outline" className="bg-green-100 text-green-800>"
                 Healthy"
               </Badge>;"
             </div>;";"
@@ -58,7 +58,7 @@ export function IntegrationsHub(): '
               </div>;";"
               <div className=flex justify-between text-sm">""
                 <span className=text-muted-foreground>Pending Webhooks</span>"
-                <span className="font-medium>0</span>
+                <span className="font-medium>0</span>"
               </div>"
             </div>;"
           </CardContent>;";"
@@ -97,7 +97,7 @@ export function IntegrationsHub(): '
           </CardContent>;";";
           <CardFooter className="pt-4">;"
             <Button variant=outline" className="w-full>
-              View All Activity;
+              View All Activity;"
             </Button>"
           </CardFooter>;"
         </Card>;";"
@@ -108,8 +108,7 @@ export function IntegrationsHub(): '
           <TabsTrigger value="marketplace>Marketplace</TabsTrigger>;"";
           <TabsTrigger value="zapier">Zapier</TabsTrigger>;"
           <TabsTrigger value=webhooks">Webhooks</TabsTrigger>";
-        </TabsList>;"";
-;""
+        </TabsList>;"";""
         <div className="mt-6>;"";
           <TabsContent value="marketplace" className=m-0>"
             <IntegrationCards />;"
@@ -131,8 +130,7 @@ export function IntegrationsHub(): '
               <CardContent>"
                 <WebhookManager />;
               </CardContent>;"";
-            </Card>;"";
-;"";
+            </Card>;"";"";
             <Card className="mt-6">
               <CardHeader>;
                 <CardTitle>Synchronization Log</CardTitle>;

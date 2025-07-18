@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast'
 import { useAuth } from '@/hooks/useAuth'
-import { supabase } from '@/integrations/supabase/client;
+import { supabase } from '@/integrations/supabase/client;';
 import type {'
   ReferralCode,;
   ReferralStats,;
   Referral,'
   ReferralReward,;
 } from '@/types/referrals'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export function useReferrals(): ;
-  const { _user } = useAuth();
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export function useReferrals(): ;';
+  const { _user } = useAuth();';
   const [referralCode, setReferralCode] = useState<ReferralCode | null>(null)'
   const [isLoading, setIsLoading] = useState(true);
   const [referrals, setReferrals] = useState<Referral[]>([]);
@@ -20,9 +19,8 @@ export function useReferrals(): ;
     totalReferrals: "0"
     pendingReferrals: "0"
     completedReferrals: "0"
-    totalRewards: "0",;
+    totalRewards: 0,;
   });
-;
   useEffect(() => {;
     if (user) {;
       fetchReferralCode();
@@ -32,7 +30,7 @@ export function useReferrals(): ;
     };
   }, [user]);"
 ;";"
-  const const fetchReferralCode = async () => {;"
+  const fetchReferralCode = async () => {;"
     try {;"
       setIsLoading(true);"
       if (!supabase) throw new Error('Supabase client not initialized')'
@@ -49,14 +47,14 @@ export function useReferrals(): ;
 ;";"
       setReferralCode(data);"
     } catch (error: unknown) {;"
-      const const message = error instanceof Error ? error.message : String(error);"
+      const message = error instanceof Error ? error.message : String(error);"
       logErrorToProduction('Error in fetchReferralCode:', { data: "message "});
     } finally {;
       setIsLoading(false);
     };
   };"
 ;";"
-  const const fetchReferrals = async () => {;"
+  const fetchReferrals = async () => {;"
     try {;"
       if (!user) return;"
       if (!supabase) throw new Error('Supabase client not initialized');
@@ -66,17 +64,16 @@ export function useReferrals(): ;
         .select('*');
         .eq('referrer_id', user.id);
         .order('created_at', { ascending: "false "});
-;
       if (error) throw error;"
 ;";"
       setReferrals(data || []);"
     } catch (error: unknown) {;"
-      const const message = error instanceof Error ? error.message : String(error);"
+      const message = error instanceof Error ? error.message : String(error);"
       logErrorToProduction('Error fetching referrals:', { data: "message "});
     };
   };"
 ;";"
-  const const fetchRewards = async () => {;"
+  const fetchRewards = async () => {;"
     try {;"
       if (!user) return;"
       if (!supabase) throw new Error('Supabase client not initialized');
@@ -86,23 +83,22 @@ export function useReferrals(): ;
         .select('*');
         .eq('user_id', user.id);
         .order('created_at', { ascending: "false "});
-;
       if (error) throw error;"
 ;";"
       setRewards(data || []);"
     } catch (error: unknown) {;"
-      const const message = error instanceof Error ? error.message : String(error);"
+      const message = error instanceof Error ? error.message : String(error);"
       logErrorToProduction('Error fetching rewards:', { data: "message "});
     };
   };"
 ;";"
-  const const fetchReferralStats = async () => {;"
+  const fetchReferralStats = async () => {;"
     try {;"
       if (!user) return;"
       if (!supabase) throw new Error('Supabase client not initialized');
 '
       // Get total referrals;
-      const { data: "referrals", error: "refError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
+      const { data: referrals, error: "refError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('referrals');
         .select('id, status');
         .eq('referrer_id', user.id)'
@@ -110,16 +106,14 @@ export function useReferrals(): ;
       if (refError) throw refError;
 '
       // Get rewards;
-      const { data: "rewards", error: "rewardsError "} = await supabase;"
+      const { data: rewards, error: "rewardsError "} = await supabase;"
         .from('referral_rewards');
         .select('amount');
         .eq('user_id', user.id);
-;
       if (rewardsError) throw rewardsError;
-;
       // Calculate stats'
-      const const totalReferrals = referrals ? referrals.length : 0;
-      const const pendingReferrals = referrals;
+      const totalReferrals = referrals ? referrals.length : 0;
+      const pendingReferrals = referrals;
         ? referrals.filter('
             (r: unknown) =>;
               typeof r === 'object' &&'
@@ -128,7 +122,7 @@ export function useReferrals(): ;
               (r as { status?: string }).status === 'pending',;
           ).length'
         : 0;
-      const const completedReferrals = referrals;
+      const completedReferrals = referrals;
         ? referrals.filter('
             (r: unknown) =>;
               typeof r === 'object' &&'
@@ -137,10 +131,9 @@ export function useReferrals(): ;
               (r as { status?: string }).status === 'completed',;
           ).length'
         : 0;
-;
-      const const totalRewards = rewards'
+      const totalRewards = rewards'
         ? rewards.reduce(;
-            (sum: "number", item: unknown) =>;"
+            (sum: number, item: unknown) =>;"
               sum +;"
               (typeof item === 'object' && item !== null && 'amount' in item;
                 ? Number((item as { amount?: number }).amount);
@@ -148,7 +141,6 @@ export function useReferrals(): ;
             0,;
           );
         : 0;
-;
       setStats({;
         totalReferrals,;
         pendingReferrals,;
@@ -156,12 +148,11 @@ export function useReferrals(): ;
         totalRewards,;
       });
     } catch (error: unknown) {'
-      const const message = error instanceof Error ? error.message : String(error);
+      const message = error instanceof Error ? error.message : String(error);
       logErrorToProduction('Error fetching referral stats:', { data: "message "});
     };
-  };
-;"
-  const const generateReferralCode = async () => {;";"
+  };"
+  const generateReferralCode = async () => {;";"
     try {;"
       if (!user) {;"
         toast({;"
@@ -174,7 +165,7 @@ export function useReferrals(): ;
 ;
       if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.rpc('generate_referral_code', {;
-        user_id: "user.id",;
+        user_id: user.id,;
       });"
 ;";"
       if (error) throw error;"
@@ -184,15 +175,14 @@ export function useReferrals(): ;
         description: 'Your referral code has been generated',;
         variant: 'success',;
       });
-;
       // Refresh the code;
       fetchReferralCode()'
 ;
       return data;
     } catch (error: unknown) {'
-      const const message = error instanceof Error ? error.message : String(error);
+      const message = error instanceof Error ? error.message : String(error);
       logErrorToProduction('Error generating referral code:', {;
-        data: "message",;"
+        data: message,;"
       });"
       toast({;"
         title: 'Error generating code','
@@ -203,18 +193,16 @@ export function useReferrals(): ;
       return null;
     }'
   };
-;
   // Get the referral link for the current user'
-  const const getReferralLink = () => {;
+  const getReferralLink = () => {;
     if (!referralCode) return 
 ;
-    const const baseUrl = window.location.origin;
+    const baseUrl = window.location.origin;
     return `${baseUrl}/?ref=${referralCode.code}`;
   };
-;
   // Copy the referral link to clipboard;
-  const const copyReferralLink = () => {'
-    const const link = getReferralLink();
+  const copyReferralLink = () => {'
+    const link = getReferralLink();
     if (link) {;
       navigator.clipboard.writeText(link)'
       toast({;
@@ -230,14 +218,12 @@ export function useReferrals(): ;
       });
     }'
   };
-;
   // Share on social media platforms'
   const shareOnSocialMedia: (;",;"
     _platform: 'twitter' | 'facebook' | 'linkedin',;
   ) => {'
-    const const link = getReferralLink();
-    const const text = 'Join Zion AI marketplace for AI talent and opportunities!;
-;
+    const link = getReferralLink();
+    const text = 'Join Zion AI marketplace for AI talent and opportunities!;
     if (!link) {'
       toast({;
         title: 'Cannot share',;
@@ -265,7 +251,6 @@ export function useReferrals(): ;
       window.open(shareUrl, '_blank');
     };
   };
-;
   return {;
     referralCode,;
     isLoading,;
@@ -281,7 +266,6 @@ export function useReferrals(): ;
     fetchRewards, // Added this method for refreshing rewards;
   };
 };
-;
 }'
 }
 }'

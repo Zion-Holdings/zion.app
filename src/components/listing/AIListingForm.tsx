@@ -7,7 +7,7 @@ import { Sparkles } from 'lucide-react'
 '
 interface AIListingFormProps {'
   onSubmit: "(formData: {,;";
-    title: "string",;"";
+    title: string,;"";
     category: string",;"
     keyFeatures: string,""
     targetAudience: "string
@@ -36,7 +36,7 @@ export function AIListingForm(): unknown {): unknown {): unknown {): unknown {):
     initialValues.targetAudience || '','
   )'
 '
-  const const handleSubmit = () => {;
+  const handleSubmit = () => {;
     if (!title || !category) {'
       toast({'
         title: 'Missing required fields','

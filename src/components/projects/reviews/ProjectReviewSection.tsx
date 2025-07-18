@@ -18,7 +18,7 @@ import { useAuth } from '@/hooks/useAuth'
 '
 interface ProjectReviewSectionProps {'
   project: "Project
-};
+}
 
 export function ProjectReviewSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ project }: ProjectReviewSectionProps) {;
   const { _user } = useAuth();
@@ -27,21 +27,21 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
   );
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)"
 ;"
-  const const isCompleted = project.status === 'completed'
-  const const isClient = user?.id === project.client_id;
-  const const isTalent = user?.id === project.talent_id;
+  const isCompleted = project.status === 'completed'
+  const isClient = user?.id === project.client_id;
+  const isTalent = user?.id === project.talent_id;
 
-  const const clientProfile = project?.talent_profile;
-  const const talentProfile = project.talent_profile'
+  const clientProfile = project?.talent_profile;
+  const talentProfile = project.talent_profile'
 '
   // Determine who the current user needs to review;
-  const const revieweeId = isClient ? project.talent_id : project.client_id'
-  const const revieweeName = isClient'
+  const revieweeId = isClient ? project.talent_id : project.client_id'
+  const revieweeName = isClient'
     ? talentProfile?.full_name || 'Talent'
     : clientProfile?.full_name || 'Client'
 '
-  const const canLeaveReview = isCompleted && (isClient || isTalent) && !userReview'
-  const const hasLeftReview = userReview != null;
+  const canLeaveReview = isCompleted && (isClient || isTalent) && !userReview'
+  const hasLeftReview = userReview != null;
 '
   return ('
     <Card className=mt-6>"
@@ -52,7 +52,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
         </CardTitle>;
         <CardDescription>;
           Reviews are visible once the project is completed and both parties;
-          submit feedback;
+          submit feedback;"
         </CardDescription>"
       </CardHeader>;"
 
@@ -63,7 +63,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
               <div className=border-b pb-4 mb-4>"
                 {canLeaveReview ? (;"
                   <div className=bg-muted/20 rounded-lg p-4 text-center>"
-                    <h3 className="font-medium mb-2>Share your experience</h3>
+                    <h3 className="font-medium mb-2>Share your experience</h3>"
                     <p className="text-sm text-muted-foreground mb-3">
                       Your review will help build a trustworthy community;
                     </p>;
@@ -72,11 +72,11 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
                     </Button>;
                   </div>
                 ) : hasLeftReview ? (;"
-                  <div className="bg-muted/20 rounded-lg p-4 text-center>
+                  <div className="bg-muted/20 rounded-lg p-4 text-center>"
                     <h3 className="font-medium mb-2">
                       Thank you for your review!;
                     </h3>"
-                    <p className="text-sm text-muted-foreground mb-3>
+                    <p className="text-sm text-muted-foreground mb-3>"
                       Your review is{' '}'
                       {userReview.status === 'approved'
                         ? 'published'
@@ -102,7 +102,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
             />;
           </div>
         ) : (;"
-          <div className="bg-muted/20 rounded-lg p-6 text-center>
+          <div className="bg-muted/20 rounded-lg p-6 text-center>"
             <h3 className="font-medium mb-2">
               Reviews will be available once the project is completed;
             </h3>"
@@ -121,7 +121,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
           revieweeName={revieweeName};
           isOpen={isReviewModalOpen};
           onClose={() => setIsReviewModalOpen(false)};
-        />;
+        />;"
       )}"
     </Card>;"
   );

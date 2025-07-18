@@ -3,12 +3,11 @@ import { MessageSquare, Star } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
-import { SEO } from '@/components/SEO;
-;
+import { SEO } from '@/components/SEO;';
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { SuggestedJobs } from '@/components/jobs/SuggestedJobs'
-import { useAuth } from '@/hooks/useAuth;
-import {;
+import  { useAuth }  from '@/hooks/useAuth;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -22,12 +21,11 @@ import { AdvancedOnboardingSteps } from '@/components/onboarding/AdvancedOnboard
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus'
 import { MyApplications } from '@/components/jobs/MyApplications'
 import { ProjectOfferBanner } from '@/components/projects/ProjectOfferBanner'
-import { UpcomingInterviewsCard } from '@/components/interviews/UpcomingInterviewsCard;
-;
+import { UpcomingInterviewsCard } from '@/components/interviews/UpcomingInterviewsCard;';
 function TalentDashboardContent(): '
   const { _user } = useAuth();
   const [, setActiveTab] = useState('job-matches');
-  const const onboardingStatus = useOnboardingStatus();
+  const onboardingStatus = useOnboardingStatus();
   const showAdvanced: unknown =;
     onboardingStatus.profileCompleted &&;
     onboardingStatus.skillsAdded &&;
@@ -213,7 +211,6 @@ function TalentDashboardContent(): '
     </>;
   );
 };
-;
 export default function TalentDashboard(): ;
   return (;
     <ProtectedRoute>;

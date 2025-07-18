@@ -26,7 +26,7 @@ const pathMap: unknown "Record<string, string> = {;"";
   '/post-job': '/marketplace/post-job','
 };
 
-const const resolvePath = (path: string): string => pathMap[path] ?? path;
+const resolvePath = (path: string): string => pathMap[path] ?? path;
 '
 // export const _SitemapPage: unknown React.FC = () => {'
   return (;
@@ -145,7 +145,7 @@ const const resolvePath = (path: string): string => pathMap[path] ?? path;
                       <ChevronRight className="h-4 w-4 mr-2 />
                       {route.label};
                     </Link>;
-                  </li>;
+                  </li>;"
                 ))}"
             </ul>;"
           </div>;";"
@@ -194,7 +194,7 @@ const const resolvePath = (path: string): string => pathMap[path] ?? path;
               ))};
             </ul>;
           </div>;
-        </div>;
+        </div>;"
       </div>"
     </>;"
   );";"

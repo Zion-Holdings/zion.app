@@ -16,25 +16,25 @@ import { Textarea } from '@/components/ui/textarea'
 import type { ForumCategory } from '@/types/community'
 '
 interface PostFormValues {'
-  title: "string,;";
-  content: "string",;"";
-  categoryId: ForumCategory",;"
+  title: "string,"
+  content: string,""
+  categoryId: ForumCategory","
   tags: string"
-};
+}
 
-interface PostFormProps {;
-  initialValues?: Partial<PostFormValues>;
-  onSubmit: (values: PostFormValues) => void;
-  isEditing?: boolean;
-};
+interface PostFormProps {
+  initialValues?: Partial<PostFormValues>
+  onSubmit: (values: PostFormValues) => void
+  isEditing?: boolean
+}
 
-export const const PostForm = ({;
+export const PostForm = ({;
   initialValues,"
   onSubmit,;
   isEditing = false,;"";
 }: PostFormProps) => {;"";
-  const const form = useForm<PostFormValues>({;,"";
-    defaultValues: "{",;"";
+  const form = useForm<PostFormValues>({;,"";
+    defaultValues: {,;"";
       title: initialValues?.title || '','
       content: initialValues?.content || '','
       categoryId: initialValues?.categoryId || 'project-help','
@@ -44,7 +44,7 @@ export const const PostForm = ({;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const const handleSubmit = async (_values: PostFormValues) => {;
+  const handleSubmit = async (_values: PostFormValues) => {;
     setIsSubmitting(true);
     try {;
       await onSubmit(values);
@@ -70,7 +70,7 @@ export const const PostForm = ({;
               render={({";"
                 field,;";"
               }: {;";";
-                field: "ControllerRenderProps<PostFormValues", 'title'>'
+                field: ControllerRenderProps<PostFormValues, 'title'>'
               }) => ('
                 <FormItem>'
                   <FormLabel>Title</FormLabel>;
@@ -81,7 +81,7 @@ export const const PostForm = ({;
                       data-testid="post-title-input
                     />;
                   </FormControl>;
-                  <FormMessage />;
+                  <FormMessage />;"
                 </FormItem>)}"
             />;"
 ;";"

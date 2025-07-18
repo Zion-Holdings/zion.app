@@ -1,22 +1,19 @@
-import { logWarn } from '@/utils/productionLogger;
-;
-/**;
+import  { logWarn }  from '@/utils/productionLogger;';
+/**;';
  * Bundle optimization utilities for improved performance'
  */;
-;
 // Critical resource preloader'
-export const const preloadCriticalResources = () => {;
+export const preloadCriticalResources = () => {;
   if (typeof window === 'undefined') return;
-;
   // Preload critical font files'
-  const const criticalFonts = [;
+  const criticalFonts = [;
     '/fonts/inter-var.woff2',;
     '/fonts/inter-regular.woff2',;
     '/fonts/inter-medium.woff2',;
   ];
 '
   criticalFonts.forEach((font) => {;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'preload;
     link.href = font;
     link.as = 'font'
@@ -26,22 +23,21 @@ export const const preloadCriticalResources = () => {;
   });
 '
   // Preload critical API endpoints;
-  const const criticalEndpoints = ['/api/marketplace/overview', '/api/categories'];
+  const criticalEndpoints = ['/api/marketplace/overview', '/api/categories'];
 '
   criticalEndpoints.forEach((endpoint) => {;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'prefetch;
     link.href = endpoint;
     document.head.appendChild(link);
   })'
 };
-;
 // Optimize image loading'
-export const const optimizeImageLoading = () => {;
+export const optimizeImageLoading = () => {;
   if (typeof window === 'undefined') return;
 '
   // Enable lazy loading for all images;
-  const const images = document.querySelectorAll('img');
+  const images = document.querySelectorAll('img');
   images.forEach((img) => {'
     if (!img.loading) {;
       img.loading = 'lazy'
@@ -50,10 +46,10 @@ export const const optimizeImageLoading = () => {;
 '
   // Add intersection observer for progressive image enhancement;
   if ('IntersectionObserver' in window) {;
-    const const imageObserver = new IntersectionObserver((entries) => {;
+    const imageObserver = new IntersectionObserver((entries) => {;
       entries.forEach((entry) => {'
         if (entry.isIntersecting) {;
-          const const img = entry.target as HTMLImageElement;
+          const img = entry.target as HTMLImageElement;
           if (img.dataset.src) {'
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
@@ -63,22 +59,20 @@ export const const optimizeImageLoading = () => {;
       });
     })'
 ;
-    const const lazyImages = document.querySelectorAll('img[data-src]');
+    const lazyImages = document.querySelectorAll('img[data-src]');
     lazyImages.forEach((img) => imageObserver.observe(img));
   }'
 };
-;
 // Performance monitoring'
-export const const monitorBundlePerformance = () => {;
+export const monitorBundlePerformance = () => {;
   if (typeof window === 'undefined') return;
 '
   // Monitor loading performance;
   window.addEventListener('load', () => {'
-    const const perfData = performance.getEntriesByType(;
+    const perfData = performance.getEntriesByType(;
       'navigation',;
     )[0] as PerformanceNavigationTiming'
-    const const loadTime = perfData.loadEventEnd - perfData.fetchStart;
-;
+    const loadTime = perfData.loadEventEnd - perfData.fetchStart;
     // Report to analytics if available'
     function hasGtag(): unknown {): unknown {): unknown {): unknown {): unknown {;
       obj: "unknown"
@@ -93,15 +87,14 @@ export const const monitorBundlePerformance = () => {;
     if (hasGtag(window)) {;
       window.gtag('event', 'page_load_time', {;
         event_category: 'Performance',;
-        value: "Math.round(loadTime)",;
+        value: Math.round(loadTime),;
       });
     };
   });
-;
   // Monitor resource loading;
-  const const resourceObserver = new PerformanceObserver((list) => {;
-    const const entries = list.getEntries() as PerformanceResourceTiming[];
-    const const largeResources = entries.filter(;"
+  const resourceObserver = new PerformanceObserver((list) => {;
+    const entries = list.getEntries() as PerformanceResourceTiming[];
+    const largeResources = entries.filter(;"
       (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB;";"
     );"
 ;"
@@ -120,25 +113,22 @@ export const const monitorBundlePerformance = () => {;
     resourceObserver.observe({ entryTypes: ['resource'] });
   }'
 };
-;
 // Implement virtual scrolling optimization'
 export const optimizeListRendering: (;",;"
   container: "HTMLElement"
-  _itemHeight: "number",;
+  _itemHeight: number,;
 ) => {;
   if (!container) return;
-;
-  const const items = Array.from(container.children);
-  const const visibleHeight = container.clientHeight;
-  const const visibleItems = Math.ceil(visibleHeight / itemHeight) + 2; // Buffer;
-;"
+  const items = Array.from(container.children);
+  const visibleHeight = container.clientHeight;
+  const visibleItems = Math.ceil(visibleHeight / itemHeight) + 2; // Buffer;"
   let scrollTop = 0;";"
-  const const updateVisibleItems = () => {;"
-    const const startIndex = Math.floor(scrollTop / itemHeight);"
+  const updateVisibleItems = () => {;"
+    const startIndex = Math.floor(scrollTop / itemHeight);"
     const endIndex: Math.min(startIndex + visibleItems", items.length);"
 ;";"
     items.forEach((item, index) => {;"
-      const const element = item as HTMLElement;"
+      const element = item as HTMLElement;"
       if (index >= startIndex && index < endIndex) {;"
         element.style.display = 
         element.style.transform = `translateY(${index * itemHeight}px)`'
@@ -152,32 +142,29 @@ export const optimizeListRendering: (;",;"
     scrollTop = container.scrollTop;
     requestAnimationFrame(updateVisibleItems);
   });
-;
   updateVisibleItems()'
 };
-;
 // Memory optimization'
-export const const optimizeMemoryUsage = () => {;
+export const optimizeMemoryUsage = () => {;
   if (typeof window === 'undefined') return;
 '
   // Clear unused event listeners;
   let eventListeners: "Array<{;"
-    element: "Element;","
+    element: Element;,"
     event: "string;"
     handler: "EventListener;"
   }> = [];"
 ;"
-  const const addOptimizedEventListener = (;";,"
+  const addOptimizedEventListener = (;";,"
     element: "Element"
     event: "string"
-    handler: "EventListener",;
+    handler: EventListener,;
     options?: AddEventListenerOptions,;
   ) => {;
     element.addEventListener(event, handler, options);
     eventListeners.push({ element, event, handler });
   };
-;
-  const const cleanupEventListeners = () => {;
+  const cleanupEventListeners = () => {;
     eventListeners.forEach(({ element, event, handler }) => {;
       element.removeEventListener(event, handler);
     });"
@@ -195,10 +182,10 @@ export const const optimizeMemoryUsage = () => {;
     };
   };
   setInterval(() => {;
-    const const perf = performance as PerformanceWithMemory;
+    const perf = performance as PerformanceWithMemory;
     if (perf.memory) {;"
-      const const memInfo = perf.memory;";"
-      const const usageRatio = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;"
+      const memInfo = perf.memory;";"
+      const usageRatio = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;"
 ;"
       if (usageRatio > 0.8) {;"
         logWarn('High memory usage detected, triggering cleanup')'
@@ -217,12 +204,10 @@ export const const optimizeMemoryUsage = () => {;
       };
     };
   }, 30000); // Check every 30 seconds;
-;
   return { addOptimizedEventListener, cleanupEventListeners }'
 };
-;
 // Initialize all optimizations'
-export const const initializeBundleOptimizations = () => {;
+export const initializeBundleOptimizations = () => {;
   if (typeof window === 'undefined') return;
 '
   // Run optimizations when DOM is ready;
@@ -240,7 +225,6 @@ export const const initializeBundleOptimizations = () => {;
     optimizeMemoryUsage();
   };
 };
-;
 // Export for use in _app.tsx;
 export default {;
   preloadCriticalResources,;
@@ -250,7 +234,6 @@ export default {;
   optimizeMemoryUsage,;
   initializeBundleOptimizations,;
 };
-;
 };
 }'
 };

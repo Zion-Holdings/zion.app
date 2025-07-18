@@ -18,23 +18,23 @@ import { Badge } from '@/components/ui/badge'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface GeneratedContent {'
-  description: "string,;";
-  tags: "string[]",;
-  suggestedPrice: {",;"
-    min: number,;"
-    max: "number;"
-  };";";
+  description: "string,"
+  tags: string[],
+  suggestedPrice: {","
+    min: number,"
+    max: "number"
+  }";";
   keyPoints: "string[]"
 };
 
-interface AIListingGeneratorProps {;
-  onApplyGenerated?: (content: GeneratedContent) => void;
-  initialValues?: {;
-    title?: string;
-    category?: string;
-    keyFeatures?: string;
-    targetAudience?: string;
-  };
+interface AIListingGeneratorProps {
+  onApplyGenerated?: (content: GeneratedContent) => void
+  initialValues?: {
+    title?: string
+    category?: string
+    keyFeatures?: string
+    targetAudience?: string
+  }
 };
 
 export function AIListingGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{
@@ -48,16 +48,14 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
     initialValues.keyFeatures || '','
   )'
   const [targetAudience, setTargetAudience] = useState('
-    initialValues.targetAudience || '','
-  );
+    initialValues.targetAudience || '',');
   const [isLoading, setIsLoading] = useState(false);
   const [generatedContent, setGeneratedContent] = useState('
-    null as GeneratedContent | null,'
-  );
+    null as GeneratedContent | null,');
 '
-  const const handleInputChange = (,;"
+  const handleInputChange = (,;"
     e: "{ target: { value: string } },;
-    _field: "string",;"
+    _field: string,;"
   ) => {;";"
     switch (field) {;"
       case 'title':'
@@ -75,7 +73,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
     };
   }'
 '
-  const const handleGenerate = async () => {;
+  const handleGenerate = async () => {;
     if (!title || !category) {'
       toast({'
         title: 'Missing required fields','
@@ -97,7 +95,6 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
         {'
           body: { title, category, keyFeatures, targetAudience },"
         },);
-
       if (error) {;
         throw new Error(error.message);
       };
@@ -129,7 +126,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
     };
   };
 '
-  const const handleApply = () => {'
+  const handleApply = () => {'
     if (generatedContent && onApplyGenerated) {;
       onApplyGenerated(generatedContent)'
       toast({'
@@ -143,7 +140,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
     <div className=space-y-6">""
       <Card className=border border-zion-blue-light bg-zion-blue-dark>";";
         <CardHeader>"
-          <CardTitle className="flex items-center text-white>;
+          <CardTitle className="flex items-center text-white>;"
             <Sparkles className="h-5 w-5 mr-2 text-zion-cyan" />;"
             AI Listing Optimizer;";"
           </CardTitle>;"
@@ -155,14 +152,14 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
         <CardContent className=space-y-4">""
           <div className=space-y-2>";";
             <label"
-              htmlFor="title;
+              htmlFor="title;"
               className="text-sm font-medium text-zion-slate-light"
             >;"
               Title;";
             </label>";";
             <Input"
               id="title;
-              value={title};
+              value={title};"
               onChange={(e) => handleInputChange(e, 'title')}'
               placeholder="Enter your product or service title"
               className=bg-zion-blue border border-zion-blue-light text-white
@@ -172,7 +169,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
           <div className=space-y-2">"
             <label";""
               htmlFor=category"
-              className="text-sm font-medium text-zion-slate-light
+              className="text-sm font-medium text-zion-slate-light"
             >;""
               Category;"
             </label>";"
@@ -180,7 +177,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
               id=category";";
               value={category}"
               onChange={(e) => handleInputChange(e, 'category')}'
-              placeholder="e.g. AI Tool, Digital Product, Service;
+              placeholder="e.g. AI Tool, Digital Product, Service;"
               className="bg-zion-blue border border-zion-blue-light text-white";
               disabled={isLoading}";"
             />;";"
@@ -202,7 +199,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
             />;
           </div>;"
           <div className="space-y-2>;
-            <label;
+            <label;"
               htmlFor="targetAudience"
               className=text-sm font-medium text-zion-slate-light""
             >;
@@ -232,20 +229,19 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
           </Button>"
         </CardContent>;
       </Card>;
-;
       {isLoading && (;
         <Card className="border border-zion-blue-light bg-zion-blue-dark overflow-hidden">;"
           <CardHeader>;";"
             <Skeleton className=h-8 w-3/4 bg-zion-blue-light/20" />"
           </CardHeader>";""
           <CardContent className=space-y-4>"
-            <Skeleton className="h-32 w-full bg-zion-blue-light/20 />;
+            <Skeleton className="h-32 w-full bg-zion-blue-light/20 />;"
             <div className="flex flex-wrap gap-2">;"
               {[...Array(5)].map((_, i) => (;";"
                 <Skeleton key={i} className=h-6 w-16 bg-zion-blue-light/20" />";
               ))};
             </div>;"
-            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20 />;
+            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20 />;"
             <div className="space-y-2">;
               {[...Array(3)].map((_, i) => (";"
                 <Skeleton;";"
@@ -261,7 +257,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
         <Card className=border border-zion-blue-light bg-zion-blue-dark>";";
           <CardHeader>"
             <CardTitle className="text-white>Generated Content</CardTitle>;
-          </CardHeader>;
+          </CardHeader>;"
           <CardContent className="space-y-4">;"
             <div>;";"
               <h3 className=text-sm font-medium text-zion-slate-light mb-2">";
@@ -269,7 +265,6 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
               </h3>;"
               <p className="text-white>{generatedContent.description}</p>;"
             </div>";
-;
             <div>;"
               <h3 className="text-sm font-medium text-zion-slate-light mb-2>;""
                 Tags;""

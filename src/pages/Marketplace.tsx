@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRouter } from 'next/router;
-import {;
+import  { useRouter }  from 'next/router;';
+import {;';
   ArrowUp,'
   Filter,;
   SortAsc,;
@@ -12,8 +12,7 @@ import ProductCard from '@/components/ProductCard'
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { AuthModal } from '@/components/auth/AuthModal;
-;
+import { AuthModal } from '@/components/auth/AuthModal;';
 import { SkeletonCard } from '@/components/ui/skeleton'
 import { ErrorState } from '@/components/jobs/applications/ErrorState'
 import { ProductsEmptyState } from '@/components/marketplace/EmptyState'
@@ -28,20 +27,18 @@ import { useAuth } from '@/context/auth/AuthProvider'
 import { fetchProducts as _fetchProducts } from '@/services/marketplace'
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
-import apiClient from '@/services/apiClient;
-;
-/**;
- * Marketplace component props;
+import  apiClient  from '@/services/apiClient;
+/**;';
+ * Marketplace component props;';
  */'
 export type MarketplaceProps = Record<string, never>;
-;
 // Market insights component'
-interface MarketStats {;
-  averagePrice: "number;"
-  averageRating: "number;","
-  totalProducts: "number;"
-  categoriesCount: "number;"
-};"
+interface MarketStats {
+  averagePrice: "number"
+  averageRating: number,"
+  totalProducts: "number"
+  categoriesCount: "number"
+}"
 const MarketInsights: unknown "React.FC<{ stats: MarketStats "}> = ({ stats }) => (;"
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">;"
     <CardContent className="p-6">;"
@@ -81,23 +78,23 @@ const MarketInsights: unknown "React.FC<{ stats: MarketStats "}> = ({ stats }) =
 ;"
 // Filter and sort controls;"
 const FilterControls: unknown "React.FC<{;"
-  sortBy: "string;","
+  sortBy: string;,"
   setSortBy: "(sort: string) => void;"
-  filterCategory: "string;","
+  filterCategory: string;,"
   setFilterCategory: "(category: string) => void;"
-  categories: "string[];","
-  priceRange: "[number", number];"
-  setPriceRange: "(range: [number", number]) => void;"
+  categories: string[];,"
+  priceRange: [number, number];"
+  setPriceRange: (range: [number, number]) => void;"
   minAiScore: "number;"
   setMinAiScore: "(score: number) => void;"
-  minRating: "number;","
+  minRating: number;,"
   setMinRating: "(rating: number) => void;"
-  filterAvailability: "string;","
+  filterAvailability: string;,"
   setFilterAvailability: "(value: string) => void;"
-  availabilityOptions: "string[];","
+  availabilityOptions: string[];,"
   filterLocation: "string;"
   setFilterLocation: "(value: string) => void;"
-  locations: "string[];","
+  locations: string[];,"
   showRecommended: "boolean;"
   setShowRecommended: "(show: boolean) => void;"
   loading: "boolean;";
@@ -249,19 +246,18 @@ const FilterControls: unknown "React.FC<{;"
     </Button>;
   </div>;
 );
-;
 /**;
  * Enhanced Marketplace component with infinite scroll and AI product generation;
  * Uses the auto-feed algorithm to continuously generate IT and AI products;
  * Includes intelligent filtering, sorting, and recommendation features;
  */;
 export default function Marketplace(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { t } = useTranslation();
   const { _toast } = useToast();
   const { isAuthenticated, user } = useAuth()'
-  const const firstRenderRef = useRef(true);
-  const const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state;
+  const firstRenderRef = useRef(true);
+  const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state;
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)'
 ;
   const [sortBy, setSortBy] = useState('newest');
@@ -275,11 +271,10 @@ export default function Marketplace(): ;
   const [minRating, setMinRating] = useState(0);
   const [filterAvailability, setFilterAvailability] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
-  const { handleApiError: "_handleApiError", retryQuery: "_retryQuery "} =;
+  const { handleApiError: _handleApiError, retryQuery: "_retryQuery " } = ;
     useApiErrorHandling();
-;
   // Handle Add Product button with authentication check;
-//   // const const _handleAddProduct = useCallback(() => {;
+//   // const _handleAddProduct = useCallback(() => {;
   //   if (!isAuthenticated) {;
   //     setIsAuthModalOpen(true); // Use the new auth modal;"
   //     return;";"
@@ -290,7 +285,7 @@ export default function Marketplace(): ;
   //     toast({;
   //       title: "Admin Access Required"
   //       description: "Only administrators can add products to the marketplace. Please contact an administrator."
-  //       variant: "destructive",;
+  //       variant: destructive,;
   //     });"
   //     return;";"
   //   };"
@@ -298,36 +293,35 @@ export default function Marketplace(): ;
   //   // Navigate to admin products page;"
   //   router.push('/admin/products')'
   // }, [isAuthenticated, user, router, toast]);
-;
   // Fetch function for infinite scroll with AI product generation'
-//   const const _fetchProducts = useCallback(;
-    async (page: "number", _limit: number) => {;"
+//   const _fetchProducts = useCallback(;
+    async (page: number, _limit: number) => {;"
       try {;";"
-        const const params = {;"
+        const params = {;"
           page,;"
           limit,;"
           ...(filterCategory && { category: "filterCategory "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}),;"
-          sort: "sortBy",;"
+          sort: sortBy,;"
         };"
         logInfo('Marketplace.tsx: Fetching products from API with params:', {;
           data: "{ data: params "},;"
         });"
-        const const response = await (apiClient as typeof apiClient).get(;"
+        const response = await (apiClient as typeof apiClient).get(;"
           '/products',;
           { params },;
         );
         let items: ProductListing[] = response.data?.items || [];
-        const const total = response.data?.total ?? items.length;
-        const const hasMore = page * limit < total;
+        const total = response.data?.total ?? items.length;
+        const hasMore = page * limit < total;
         if (showRecommended) {;
           items = items.filter((p) => p.rating != null && p.rating >= 4.3);
         }'
         items = items.filter((p) => {;
-          const const price = p.price || 0;
-          const const ai = p.aiScore || 0'
-          const const rating = p.rating || 0;
-          const const location = (p.location || '').toLowerCase();
-          const const availability = (p.availability || '').toLowerCase();
+          const price = p.price || 0;
+          const ai = p.aiScore || 0'
+          const rating = p.rating || 0;
+          const location = (p.location || '').toLowerCase();
+          const availability = (p.availability || '').toLowerCase();
           return (;
             price >= priceRange[0] &&;
             price <= priceRange[1] &&;
@@ -345,7 +339,7 @@ export default function Marketplace(): ;
           'Marketplace.tsx: Error fetching products from API',;
           { data: "error "},;"
         );"
-        return { items: "[]", hasMore: "false", total: "0 "};
+        return { items: [], hasMore: false, total: "0 "};
       };
     },;
     [;
@@ -362,7 +356,7 @@ export default function Marketplace(): ;
 ;"
   // useInfiniteScrollPagination hook;"
   const {;"
-    items: "products", // These are the products to render;
+    items: products, // These are the products to render;
     loading, // True when initially loading or when fetchProducts is running;
     error, // Contains the error object if fetchProducts throws;
     hasMore, // True if the API indicates more items are available;
@@ -371,7 +365,6 @@ export default function Marketplace(): ;
     refresh, // Function to reload data from page 1;
     scrollToTop, // Function to scroll to the top of the page;
   } = useInfiniteScrollPagination(_fetchProducts, 16); // 16 items per page;
-;
   // Effect to refresh data when filters change;"
   useEffect(() => {;";"
     if (firstRenderRef.current) {;"
@@ -409,15 +402,15 @@ export default function Marketplace(): ;
 ;
   // Effect to explicitly refresh data when the component mounts or re-mounts;
   useEffect(() => {'
-    logInfo(;
-      'Marketplace.tsx: "Component mounted/re-mounted", calling refresh to ensure fresh data.',;
+    logInfo(
+      'Marketplace.tsx: Component mounted/re-mounted, calling refresh to ensure fresh data.',
     )'
-    // We call refresh directly to ensure data is re-fetched.;
-    // The useInfiniteScrollPagination hook's internal logic will manage its state.;
-    refresh();
+    // We call refresh directly to ensure data is re-fetched.
+    // The useInfiniteScrollPagination hook's internal logic will manage its state.
+    refresh()
     // Reset firstRenderRef for the new instance of the component, so filter changes behave as expected.'
-    firstRenderRef.current = true;
-  }, [refresh]); // `refresh` is a dependency. Ensure it's stable.;
+    firstRenderRef.current = true
+  }, [refresh]) // `refresh` is a dependency. Ensure it's stable.;
 '
   // New effect to scroll to top AFTER products have been updated and refresh flag is set;
   useEffect(() => {;
@@ -430,38 +423,35 @@ export default function Marketplace(): ;
       // toast({ title: 'Filters updated', description: 'Displaying products based on new criteria.' });
     };
   }, [products, loading, scrollToTop, toast]); // Depends on products and loading state;
-;
   // Calculate market stats;
-  const const marketStats = useMemo(() => {;
+  const marketStats = useMemo(() => {;
     if (products.length === 0) return null;
     return {'
       averagePrice:;
         products.reduce((sum, p) => sum + (p.price || 0), 0) / products.length,;
       averageRating:'
         products.reduce((sum, p) => sum + (p.rating || 0), 0) / products.length,;
-      totalProducts: "products.length",;
+      totalProducts: products.length,;
       categoriesCount: Array.from(new Set(products.map((p) => p.category)));
         .length,;
     };
   }, [products]);
-;
   // Get unique categories and other filter values;
-  const const categories = useMemo(() => {;
+  const categories = useMemo(() => {;
     return Array.from(new Set(products.map((p) => p.category)));
   }, [products]);
-  const const locations = useMemo(() => {;
+  const locations = useMemo(() => {;
     return Array.from(new Set(products.map((p) => p.location).filter(Boolean)));
   }, [products]).filter(Boolean) as string[];
-  const const availabilityOptions = useMemo(() => {;
+  const availabilityOptions = useMemo(() => {;
     return Array.from(;
       new Set(products.map((p) => p.availability).filter(Boolean)),;
     );
   }, [products]).filter(Boolean) as string[];
-;
   // Show scroll to top button;
   const [showScrollTop, setShowScrollTop] = useState(false);"
   useEffect(() => {;";"
-    const const handleScroll = () => {;"
+    const handleScroll = () => {;"
       setShowScrollTop(window.scrollY > 800);"
     };"
     window.addEventListener('scroll', handleScroll);
@@ -473,8 +463,8 @@ export default function Marketplace(): ;
     return (;
       <main className="container py-8" data-testid="marketplace-loading">;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           className="text-center mb-8"
         >;"
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
@@ -510,8 +500,8 @@ export default function Marketplace(): ;
     return (;"
       <main className="container py-8">;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           className="text-center mb-8"
         >;"
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
@@ -521,12 +511,10 @@ export default function Marketplace(): ;
             {t('marketplace.hero_subtitle')};
           </p>;
         </motion.div>;
-;
         <ProductsEmptyState />;
       </main>;
     )'
   };
-;
   // Main marketplace render'
   return (;
     <main className="container py-8">;
@@ -538,8 +526,8 @@ export default function Marketplace(): ;
       {/* Header */};"
       <motion.div;"
         className="text-center mb-8"
-        initial={{ opacity: "0", y: "-20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "-20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
       >;"
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
           {t('marketplace.hero_title')}'
@@ -552,8 +540,8 @@ export default function Marketplace(): ;
       {/* Market Insights */};
       {marketStats && ('
         <motion.div;
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           transition={{ delay: "0.2 "}};
         >;
           <MarketInsights stats={marketStats} />;
@@ -562,8 +550,8 @@ export default function Marketplace(): ;
 ;"
       {/* Filter Controls */};"
       <motion.div;"
-        initial={{ opacity: "0", y: "20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
         transition={{ delay: "0.3 "}};
       >;
         <FilterControls;
@@ -602,10 +590,10 @@ export default function Marketplace(): ;
             <motion.div;"
               key={product.id};"
               ref={index === products.length - 1 ? lastElementRef : null};"
-              initial={{ opacity: "0", scale: "0.9 "}};"
-              animate={{ opacity: "1", scale: "1 "}};"
-              exit={{ opacity: "0", scale: "0.9 "}};"
-              transition={{ delay: "Math.min(index * 0.03", 0.5) }};"
+              initial={{ opacity: 0, scale: "0.9 "}};"
+              animate={{ opacity: 1, scale: "1 "}};"
+              exit={{ opacity: 0, scale: "0.9 "}};"
+              transition={{ delay: Math.min(index * 0.03, 0.5) }};"
               whileHover={{ scale: "1.02 "}};"
               className="relative group"
             >;"
@@ -623,9 +611,9 @@ export default function Marketplace(): ;
                   rating: "product.rating || 0"
                   reviewCount: "product.reviewCount || 0"
                   created_at: "product.createdAt"
-                  updated_at: "product.createdAt", // Use createdAt for both;"
+                  updated_at: product.createdAt, // Use createdAt for both;"
                   stock: "product.stock"
-                  in_stock: "(product.stock || 0) > 0",;
+                  in_stock: (product.stock || 0) > 0,;
                 }};
                 onBuy={async () => {;
                   if (!isAuthenticated) {;
@@ -636,7 +624,7 @@ export default function Marketplace(): ;
                     await router.push(`/checkout/${product.id} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
                   } catch {;"
                     logErrorToProduction('Failed to navigate to checkout:', {;
-                      data: "error",;"
+                      data: error,;"
                     });"
                     toast({;"
                       title: 'Navigation Error','
@@ -651,7 +639,6 @@ export default function Marketplace(): ;
                 }};
                 buyDisabled={false} // Still false, ProductCard handles its own disabled state based on auth'
               />;
-;
               {/* AI Score Badge */}'
               {product.aiScore && product.aiScore > 90 && (;
                 <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-500 to-orange-500 z-10 text-black">;"
@@ -702,16 +689,15 @@ export default function Marketplace(): ;
           </div>;
         </motion.div>;
       )};
-;
       {/* Scroll to Top Button */};"
       <AnimatePresence>;";"
         {showScrollTop && (;"
           <motion.button;"
             onClick={scrollToTop};"
             className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
-            initial={{ opacity: "0", scale: "0 "}};"
-            animate={{ opacity: "1", scale: "1 "}};"
-            exit={{ opacity: "0", scale: "0 "}};"
+            initial={{ opacity: 0, scale: "0 "}};"
+            animate={{ opacity: 1, scale: "1 "}};"
+            exit={{ opacity: 0, scale: "0 "}};"
             whileHover={{ scale: "1.1 "}};"
             whileTap={{ scale: "0.9 "}};"
           >;"

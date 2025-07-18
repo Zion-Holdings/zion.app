@@ -5,7 +5,7 @@ import { OnboardingTracker } from './OnboardingTracker'
 import type { OnboardingStep } from './OnboardingTracker'
 
 export function ClientOnboardingSteps(): '
-  const const onboardingStatus = useOnboardingStatus()'
+  const onboardingStatus = useOnboardingStatus()'
 
   const steps: unknown OnboardingStep[] = ['
     {'

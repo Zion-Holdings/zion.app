@@ -10,8 +10,8 @@ import { Badge } from '@/components/ui/badge'
 import { Crown, Medal, Trophy } from '@/components/ui/icons'
 '
 interface LeaderboardEntry {'
-  id: "string
-  rank: number",;"
+  id: string
+  rank: number,;"
   name: string
   avatar?: string;
   referrals: "number"
@@ -70,21 +70,21 @@ export function PartnerLeaderboard(): ;"
   ];
 '
   // Function to render rank badge'
-  const const renderRankBadge = (rank: number) => {;
+  const renderRankBadge = (rank: number) => {;
     switch (rank) {'
       case 1:'
-        return <Trophy className="h-5 w-5 text-yellow-500 />
+        return <Trophy className="h-5 w-5 text-yellow-500 />"
       case 2:;"
-        return <Medal className="h-5 w-5 text-gray-400 />
+        return <Medal className="h-5 w-5 text-gray-400 />"
       case 3:;"
-        return <Medal className="h-5 w-5 text-amber-700 />
+        return <Medal className="h-5 w-5 text-amber-700 />"
       default:;"
-        return <span className="text-sm font-semibold>{rank}</span>
+        return <span className="text-sm font-semibold>{rank}</span>"
     };""
   };
 
   return (;"
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <Card className="bg-zion-blue-dark border-zion-blue-light">
         <CardHeader>;
           <CardTitle className="flex items-center gap-2">
@@ -97,7 +97,7 @@ export function PartnerLeaderboard(): ;"
         </CardHeader>'
         <CardContent>'
           <div className="space-y-4>
-            {leaderboard.length > 0 ? (;
+            {leaderboard.length > 0 ? (;"
               leaderboard.map((entry) => ("
                 <div;"
                   key={entry.id};
@@ -106,11 +106,11 @@ export function PartnerLeaderboard(): ;"
                       ? 'bg-yellow-500/10 border border-yellow-500/30'
                       : entry.rank <= 3;
                         ? 'bg-zion-blue-light/20'
-                        : 'bg-zion-blue/10'
+                        : 'bg-zion-blue/10'}
                   }`}'
                 >'
                   <div className=flex items-center gap-3>"
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-zion-blue-light>
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-zion-blue-light>"
                       {renderRankBadge(entry.rank)};"
                     </div>"
                     <Avatar className=h-10 w-10 border border-zion-blue-light>"
@@ -121,12 +121,12 @@ export function PartnerLeaderboard(): ;"
                     </Avatar>"
                     <div>;"
                       <div className=font-medium text-white>{entry.name}</div>"
-                      <div className="text-xs text-zion-slate-light>
+                      <div className="text-xs text-zion-slate-light>"
                         {entry.referrals} referrals;""
                       </div>;
                     </div>
                   </div>;"
-                  <div className="flex items-center gap-3>
+                  <div className="flex items-center gap-3>"
                     <div className="text-right">
                       <div className=font-semibold text-white">"
                         ${entry.earnings};
@@ -138,7 +138,7 @@ export function PartnerLeaderboard(): ;"
                     <div className=flex gap-1>"
                       {entry.badges.includes('gold') && ('
                         <Badge'
-                          variant="outline
+                          variant="outline"
                           className=bg-yellow-500/20 border-yellow-500 text-yellow-400"
                         >";
                           Elite
@@ -156,7 +156,7 @@ export function PartnerLeaderboard(): ;"
                 </div>;
               ))
             ) : (;"
-              <div className="text-center p-12 border border-dashed border-zion-blue-light rounded-lg>
+              <div className="text-center p-12 border border-dashed border-zion-blue-light rounded-lg>"
                 <Trophy className="h-16 w-16 mx-auto text-zion-slate-light mb-4" />
                 <p className=text-zion-slate-light mb-2">"
                   Leaderboard will appear here;
@@ -169,21 +169,21 @@ export function PartnerLeaderboard(): ;"
         </CardContent>;
       </Card>
 ;"
-      <Card className="bg-zion-blue-dark border-zion-blue-light>
+      <Card className="bg-zion-blue-dark border-zion-blue-light>"
         <CardHeader>"
           <CardTitle>Your Ranking</CardTitle>;"
           <CardDescription>How you compare to other partners</CardDescription>;
         </CardHeader>"
         <CardContent>;"
           <div className=text-center p-12 border border-dashed border-zion-blue-light rounded-lg>"
-            <p className="text-zion-slate-light mb-4>
+            <p className="text-zion-slate-light mb-4>"
               Start referring to appear on the leaderboard;"
             </p>"
             <Badge;
               variant=outline"
               className="bg-zion-purple/20 border-zion-purple text-zion-purple
             >;
-              New Partner;
+              New Partner;"
             </Badge>"
           </div>;"
         </CardContent>;
@@ -195,7 +195,7 @@ export function PartnerLeaderboard(): ;"
           <CardDescription>Exclusive perks for top partners</CardDescription>"
         </CardHeader>;"
         <CardContent className=space-y-4>"
-          <div className="p-4 bg-zion-blue rounded-md>
+          <div className="p-4 bg-zion-blue rounded-md>"
             <div className="flex items-center gap-2 mb-2">
               <Badge;
                 variant="outline"
@@ -218,7 +218,7 @@ export function PartnerLeaderboard(): ;"
               <Badge;
                 variant=outline"
                 className="bg-gray-400/20 border-gray-400 text-gray-300
-              >
+              >"
                 Premier Partner;"
               </Badge>"
               <span className=text-xs text-zion-slate-light>(Top 10)</span>"

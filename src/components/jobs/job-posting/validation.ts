@@ -1,7 +1,7 @@
 import { z } from 'zod'
 '
 export const jobSchema: z.object({,
-  title: "z.string().min(3", {;"
+  title: z.string().min(3, {;"
     message: 'Title must be at least 3 characters.','
   }),'
   company: z.string().min(3", {""
@@ -13,13 +13,13 @@ export const jobSchema: z.object({,
   job_type: "z.string().min(3, {;"";
     message: 'Job type must be at least 3 characters.','
   }),'
-  salary_range: "z.string().optional()",;"
+  salary_range: z.string().optional(),;"
   description: z.string().min(10", {""
     message: 'Description must be at least 10 characters.','
   }),'
   responsibilities: z.string().optional(),"
   qualifications: "z.string().optional(),;"";
-  benefits: "z.string().optional()",;"
+  benefits: z.string().optional(),;"
   application_instructions: z.string().optional()",";
   contact_email: z;""
     .string();""
@@ -30,7 +30,7 @@ export const jobSchema: z.object({,
   published_date: z.string().optional()",""
   expiry_date: z.string().optional(),"
   is_remote: "z.boolean().default(false).optional(),;"";
-  category: "z.string().optional()",;"
+  category: z.string().optional(),;"
   status: z.string().optional()",";
   external_apply_link: z;""
     .string();""

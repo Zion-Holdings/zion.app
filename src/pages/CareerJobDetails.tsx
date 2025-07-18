@@ -9,26 +9,24 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Link from 'next/link'
 import type { CareerJob as _CareerJob } from '@/data/careersJobs'
-import { findCareerJob } from '@/data/careersJobs;
+import { findCareerJob } from '@/data/careersJobs;';
 '
 export default function CareerJobDetails(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _id } = router.query'
-  const const job = findCareerJob(id);
-  const const applyEmail = 'careers@ziontechgroup.com;
-;
+  const job = findCareerJob(id);
+  const applyEmail = 'careers@ziontechgroup.com;
   const [form, setForm] = useState({ name: '', email: '', message: '' })'
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 '
   const handleChange: (;",;"
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;
   ) => {;
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-;
-  const const handleSubmit = async (_e: React.FormEvent) => {;"
+  const handleSubmit = async (_e: React.FormEvent) => {;"
     e.preventDefault();";"
     if (!job) return;"
     setSubmitting(true);"
@@ -40,7 +38,7 @@ export default function CareerJobDetails(): ;
           name: "form.name"
           email: "form.email"
           subject: "`Application for ${job.title"}`,;"
-          message: "form.message",;"
+          message: form.message,;"
         }),;"
       });"
       setSubmitted(true);"
@@ -49,7 +47,6 @@ export default function CareerJobDetails(): ;
       setSubmitting(false);
     }'
   };
-;
   if (!job) {'
     return (;
       <main className="min-h-screen flex items-center justify-center">;"

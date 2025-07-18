@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { NextSeo } from '@/components/NextSeo'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod;
-import {;
-  Form,;
+import  { zodResolver }  from '@hookform/resolvers/zod;
+import {;';
+  Form,;';
   FormField,'
   FormItem,;
   FormLabel,;
@@ -12,8 +12,8 @@ import {;
   FormMessage,;
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea;
-import {;
+import  { Textarea }  from '@/components/ui/textarea;';
+import {;';
   Select,'
   SelectTrigger,;
   SelectValue,;
@@ -23,9 +23,9 @@ import {;
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import type { ControllerRenderProps } from 'react-hook-form;
+import type { ControllerRenderProps } from 'react-hook-form;';
 '
-const const categories = [;
+const categories = [;
   'Ecosystem Tools',;
   'Talent Development',;
   'Regional Expansion',;
@@ -33,13 +33,13 @@ const const categories = [;
 ];
 '
 const schema: z.object({;",;"
-  projectName: "z.string().min(1", 'Required'),;
-  teamInfo: "z.string().min(1", 'Required'),;
-  summary: "z.string().min(1", 'Required'),;
-  timeline: "z.string().min(1", 'Required'),;
-  budget: "z.string().min(1", 'Required'),;
+  projectName: z.string().min(1, 'Required'),;
+  teamInfo: z.string().min(1, 'Required'),;
+  summary: z.string().min(1, 'Required'),;
+  timeline: z.string().min(1, 'Required'),;
+  budget: z.string().min(1, 'Required'),;
   links: "z.string().optional()"
-  category: "z.string().min(1", 'Required'),;
+  category: z.string().min(1, 'Required'),;
 })'
 ;
 type FormValues = z.infer<typeof schema>;
@@ -56,8 +56,8 @@ export default function GrantsPage(): ;
     defaultValues: { category: categories[0] || 'Ecosystem Tools' },;
   })'
 ;
-  const const saveGrant = (values: "FormValues", _status: Grant['status']) => {;
-    const grant: unknown "Grant = { ...values", id: "Date.now()", status };"
+  const saveGrant = (values: FormValues, _status: Grant['status']) => {;
+    const grant: unknown "Grant = { ...values", id: Date.now(), status };"
     setGrants((prev) => [...prev, grant]);"
     form.reset({ category: categories[0] || 'Ecosystem Tools' });
   }'
@@ -187,7 +187,7 @@ export default function GrantsPage(): ;
                 }: {;"
                   field: ControllerRenderProps<FormValues, 'category'>'
                 }) => {;
-                  const const categoryValue = form.watch('category')'
+                  const categoryValue = form.watch('category')'
                   return (;
                     <FormItem>;
                       <FormLabel>Category</FormLabel>'

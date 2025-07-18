@@ -7,5 +7,4 @@
 // The GenesisDeployPage component should be moved to that file,;
 // and ProtectedRoute logic should be applied within that page component;
 // or a relevant Next.js layout.;
-;
 export {}; // Ensure this is treated as a module;

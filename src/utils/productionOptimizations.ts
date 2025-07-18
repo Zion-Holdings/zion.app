@@ -3,16 +3,13 @@ import {;
   logWarn,;
   logErrorToProduction,;
 } from '@/utils/productionLogger;
-;
 /**;
  * Production Optimizations;
  * Automatically enables performance features and optimizations in production;
  */;
-;
 export class ProductionOptimizer {;
   private static instance: ProductionOptimizer;
   private optimizationsApplied = false;
-;
   static getInstance(): ProductionOptimizer {;
     if (!ProductionOptimizer.instance) {;
       ProductionOptimizer.instance = new ProductionOptimizer();
@@ -35,16 +32,12 @@ export class ProductionOptimizer {;
 '
   private applyProductionOptimizations(): void {;
     logInfo('🚀 Applying production optimizations...');
-;
     // Enable service worker if available;
     this.enableServiceWorker();
-;
     // Preload critical resources;
     this.preloadCriticalResources();
-;
     // Enable performance monitoring for production issues;
     this.enableProductionMonitoring();
-;
     // Setup error reporting;
     this.setupErrorReporting()'
 ;
@@ -81,14 +74,14 @@ export class ProductionOptimizer {;
   };";"
 ;"
   private preloadCriticalResources(): void {;"
-    const const criticalResources = [;"
+    const criticalResources = [;"
       { href: '/fonts/inter-var.woff2', as: 'font', type: 'font/woff2' },;
       { href: '/logos/zion-logo.png', as: 'image' },;
       { href: '/_next/static/css/app.css', as: 'style' },;
     ];
 '
     criticalResources.forEach(({ href, as, type }) => {;
-      const const link = document.createElement('link');
+      const link = document.createElement('link');
       link.rel = 'preload;
       link.href = href;
       link.as = as'
@@ -97,12 +90,11 @@ export class ProductionOptimizer {;
       document.head.appendChild(link);
     })'
   };
-;
   private enableProductionMonitoring(): void {'
     // Enable minimal performance monitoring in production;
     if ('PerformanceObserver' in window) {;
-      const const observer = new PerformanceObserver((list) => {;
-        const const entries = list.getEntries()'
+      const observer = new PerformanceObserver((list) => {;
+        const entries = list.getEntries()'
         entries.forEach((entry) => {;
           if (entry.entryType === 'largest-contentful-paint') {;
             // Track LCP for production monitoring;
@@ -119,7 +111,6 @@ export class ProductionOptimizer {;
       });
     }'
   };
-;
   private setupErrorReporting(): void {'
     // Enhanced error reporting for production;
     window.addEventListener('error', (event) => {'
@@ -130,7 +121,7 @@ export class ProductionOptimizer {;
         colno: "event.colno"
         timestamp: "new Date().toISOString()"
         userAgent: "navigator.userAgent"
-        url: "window.location.href",;"
+        url: window.location.href,;"
       };"
 ;"
       // This would integrate with your error reporting service;"
@@ -139,7 +130,7 @@ export class ProductionOptimizer {;
 ;"
     window.addEventListener('unhandledrejection', (event) => {;
       logErrorToProduction('Unhandled Promise Rejection:', {;
-        data: "event.reason",;
+        data: event.reason,;
       });
     });"
   };";"
@@ -147,10 +138,10 @@ export class ProductionOptimizer {;
   private optimizeImages(): void {;"
     // Add intersection observer for lazy loading images;"
     if ('IntersectionObserver' in window) {;
-      const const imageObserver = new IntersectionObserver((entries) => {;
+      const imageObserver = new IntersectionObserver((entries) => {;
         entries.forEach((entry) => {'
           if (entry.isIntersecting) {;
-            const const img = entry.target as HTMLImageElement;
+            const img = entry.target as HTMLImageElement;
             if (img.dataset.src) {'
               img.src = img.dataset.src;
               img.removeAttribute('data-src');
@@ -169,7 +160,7 @@ export class ProductionOptimizer {;
 ;
   private enableDevelopmentTools(): void {;
     // Check for development tool flags'
-    const const tools = {;
+    const tools = {;
       'performance-monitoring': () => {;
         logInfo('📊 Performance monitoring enabled');
         // Performance monitoring is handled by the component'
@@ -201,7 +192,6 @@ export class ProductionOptimizer {;
       };
     })'
   };
-;
   // Public methods for manual optimization control'
   enablePerformanceMonitoring(): void {;
     localStorage.setItem('performance-monitoring', 'true')'
@@ -223,30 +213,29 @@ export class ProductionOptimizer {;
     sessionStorage.clear();
     logInfo('🗑️ All caches cleared')'
   };
-;
   getPerformanceReport(): PerformanceReport {'
-    const const navigation = performance.getEntriesByType(;
+    const navigation = performance.getEntriesByType(;
       'navigation','
     )[0] as PerformanceNavigationTiming;
-    const const resources = performance.getEntriesByType('resource');
+    const resources = performance.getEntriesByType('resource');
 '
-    interface PerformanceMemory {;
-      usedJSHeapSize: "number;"
-      totalJSHeapSize: "number;","
-      jsHeapSizeLimit: "number;"
-    };"
+    interface PerformanceMemory {
+      usedJSHeapSize: "number"
+      totalJSHeapSize: number,"
+      jsHeapSizeLimit: "number"
+    }"
     function getPerformanceMemory(): unknown {): unknown {): unknown {): unknown {): unknown {): PerformanceMemory | null {;"
       const perf: performance as Performance & { memory?: PerformanceMemory "};"
       return perf.memory || null;"
     };"
     return {;"
       timestamp: "new Date().toISOString()"
-      navigation: "{;",;"
+      navigation: {;,;"
         domContentLoaded:;"
           navigation.domContentLoadedEventEnd -;"
           navigation.domContentLoadedEventStart,;"
         loadComplete: "navigation.loadEventEnd - navigation.loadEventStart"
-        firstByte: "navigation.responseStart - navigation.requestStart",;"
+        firstByte: navigation.responseStart - navigation.requestStart,;"
       },;"
       resources: {
         total: "resources.length"
@@ -257,36 +246,35 @@ export class ProductionOptimizer {;
         ).length,'
       },;
       memory: "getPerformanceMemory()"
-      userAgent: "navigator.userAgent",;
+      userAgent: navigator.userAgent,;
     };"
   };";"
 };"
 ;"
-interface PerformanceMemory {;"
-  usedJSHeapSize: "number;"
-  totalJSHeapSize: "number;","
-  jsHeapSizeLimit: "number;"
-};"
+interface PerformanceMemory {"
+  usedJSHeapSize: "number"
+  totalJSHeapSize: number,"
+  jsHeapSizeLimit: "number"
+}"
 ;"
-interface PerformanceReport {;"
-  timestamp: "string;"
-  navigation: "{;","
-    domContentLoaded: "number;"
-    loadComplete: "number;","
-    firstByte: "number;"
-  };"
+interface PerformanceReport {"
+  timestamp: "string"
+  navigation: {,"
+    domContentLoaded: "number"
+    loadComplete: number,"
+    firstByte: "number"
+  }"
   resources: {
-    total: "number;","
+    total: number;,"
     scripts: "number;"
-    styles: "number;","
+    styles: number;,"
     images: "number;"
   };"
   memory: "PerformanceMemory | null;"
   userAgent: "string;";
-};
-;"
+};"
 // Export singleton instance;";"
-export const const productionOptimizer = ProductionOptimizer.getInstance();"
+export const productionOptimizer = ProductionOptimizer.getInstance();"
 ;"
 // Auto-initialize on import;"
 if (typeof window !== 'undefined') {'
@@ -299,7 +287,6 @@ if (typeof window !== 'undefined') {'
     productionOptimizer.init();
   };
 };
-;
 };
 }'
 };

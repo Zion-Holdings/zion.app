@@ -4,14 +4,14 @@ import type { TalentProfile } from '@/types/talent'
 import { logInfo } from '@/utils/productionLogger'
 '
 export interface TalentGridProps {'
-  talents: "TalentProfile[]
-  isLoading: boolean","
-  onTalentClick: (id: string) => void,;"
+  talents: TalentProfile[]
+  isLoading: boolean,"
+  onTalentClick: (id: string) => void,"
   isAuthenticated: boolean"
-  viewProfile?: (id: string) => void;
+  viewProfile?: (id: string) => void
   clearFilters?: () => void
   handleRequestHire?: (talent: "TalentProfile) => void"
-};
+}
 
 export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talents,;
@@ -22,7 +22,7 @@ export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): un
   clearFilters,;
   handleRequestHire,;
 }: TalentGridProps) {;
-  const const handleRequestHireInternal = (_talent: TalentProfile) => {
+  const handleRequestHireInternal = (_talent: TalentProfile) => {
     if (handleRequestHire) {;""
       handleRequestHire(talent);
     } else {
@@ -31,7 +31,7 @@ export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): un
     };
   };
 
-  const const handleViewProfile = (_id: string) => {;
+  const handleViewProfile = (_id: string) => {;
     if (viewProfile) {;
       viewProfile(id);
     } else {;
@@ -46,7 +46,7 @@ export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): un
   if (!talents || talents.length === 0) {"
     return (;"
       <div className=py-8 text-center bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6>"
-        <p className="text-zion-slate-light mb-4>
+        <p className="text-zion-slate-light mb-4>"
           No talents found matching your criteria"
         </p>;"
         {clearFilters && (;

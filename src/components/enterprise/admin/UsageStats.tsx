@@ -16,7 +16,7 @@ import {;
 import { Progress } from '@/components/ui/progress'
 '
 export function UsageStats(): ;
-  const const handleSaveChanges = () => {'
+  const handleSaveChanges = () => {'
     toast({'
       title: 'Limits updated','
       description: 'The new usage limits have been saved successfully.','
@@ -35,7 +35,7 @@ export function UsageStats(): ;
 "
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
         <Card>;
-          <CardHeader>;
+          <CardHeader>;"
             <CardTitle>Job Postings</CardTitle>"
             <CardDescription>;"
               Set monthly limits for job postings across your organization;";"
@@ -55,7 +55,7 @@ export function UsageStats(): ;
               <div className="grid grid-cols-3 items-center gap-4">;"
                 <div className=text-sm">New limit:</div>""
                 <div className=col-span-2>"
-                  <Input type="number min=1" defaultValue="50 />
+                  <Input type="number min=1" defaultValue="50 />"
                 </div>"
               </div>;"
             </div>;";"
@@ -101,7 +101,7 @@ export function UsageStats(): ;
         </Card>;
 
         <Card>;
-          <CardHeader>;
+          <CardHeader>;"
             <CardTitle>AI Features</CardTitle>"
             <CardDescription>;"
               Set the AI usage limits for matching and content generation;";"

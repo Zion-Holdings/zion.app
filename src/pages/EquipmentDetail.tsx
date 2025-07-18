@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react;
-import {;
-  Star,;
+import  { useState, useEffect }  from 'react;
+import {;';
+  Star,;';
   Shield,'
   RotateCcw,;
   Clock,;
@@ -11,8 +11,7 @@ import { useRouter } from 'next/router'
 import { NextSeo } from '@/components/NextSeo'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { AspectRatio } from '@/components/ui/aspect-ratio;
-;
+import { AspectRatio } from '@/components/ui/aspect-ratio;';
 import { toast } from '@/hooks/use-toast'
 import { useAuth } from '@/hooks/useAuth'
 import { useCart } from '@/context/CartContext'
@@ -21,36 +20,36 @@ import { equipmentListings } from '@/data/equipmentData'
 import type { ProductListing } from '@/types/listings'
 import { motion } from 'framer-motion'
 import { useCurrency } from '@/hooks/useCurrency'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface EquipmentSpecification {;
-  name: "string;"
-  value: "string;"
-};"
+interface EquipmentSpecification {
+  name: "string"
+  value: "string"
+}"
 ;"
-interface EquipmentDetails {;"
-  id: "string;"
-  name: "string;","
-  description: "string;"
-  brand: "string;",;"
-  category: string;"
-  subcategory?: string;"
-  images: "string[];"
-  price: "number;",;
-  currency: string;"
-  rating?: number;";"
-  reviewCount?: number;"
-  inStock: boolean;"
-  expectedShipping?: string;"
-  specifications: "EquipmentSpecification[];",;
-  features: string[];
-  warranty?: string;
-  returnPolicy?: string;"
-};";"
+interface EquipmentDetails {"
+  id: "string"
+  name: string,"
+  description: "string"
+  brand: string,"
+  category: string"
+  subcategory?: string"
+  images: "string[]"
+  price: number,
+  currency: string"
+  rating?: number""
+  reviewCount?: number"
+  inStock: boolean"
+  expectedShipping?: string"
+  specifications: EquipmentSpecification[],
+  features: string[]
+  warranty?: string
+  returnPolicy?: string"
+}";"
 ;"
 // Convert ProductListing to EquipmentDetails format;"
 function convertProductListingToEquipmentDetails(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  item: "ProductListing",;"
+  item: ProductListing,;"
 ): EquipmentDetails {;"
   return {;"
     id: "item.id"
@@ -89,9 +88,9 @@ export const SAMPLE_EQUIPMENT: unknown "{ [key: string]: EquipmentDetails "} =;
   );"
 ;";"
 export default function EquipmentDetail(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const { _id } = router.query as { id?: string };"
-  const { isAuthenticated, user: "_user "} = useAuth();
+  const { isAuthenticated, user: "_user " } = useAuth();
   const { items, dispatch } = useCart();
   const { _formatPrice } = useCurrency();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -99,9 +98,7 @@ export default function EquipmentDetail(): ;"
   const [isAdding, setIsAdding] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-;
-  const [equipment, setEquipment] = useState<EquipmentDetails | undefined>();
-;"
+  const [equipment, setEquipment] = useState<EquipmentDetails | undefined>();"
   useEffect(() => {;";"
     async function loadEquipment(): ;"
       if (!id) {;"
@@ -109,13 +106,11 @@ export default function EquipmentDetail(): ;"
         setError('No equipment ID provided');
         return;
       };
-;
       try {;
         setLoading(true);
         setError(null);
-;
         // Try to find in static data first;
-        const const equipmentFromSample = SAMPLE_EQUIPMENT[id];
+        const equipmentFromSample = SAMPLE_EQUIPMENT[id];
         if (equipmentFromSample) {;
           setEquipment(equipmentFromSample);
           setLoading(false)'
@@ -125,9 +120,9 @@ export default function EquipmentDetail(): ;"
         // Try to get from sessionStorage (for dynamically generated equipment);
         if (typeof window !== 'undefined') {'
           try {;
-            const const stored = sessionStorage.getItem(`equipment: "${id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
+            const stored = sessionStorage.getItem(`equipment: "${id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
             if (stored) {;"
-              const const storedData = JSON.parse(stored);"
+              const storedData = JSON.parse(stored);"
 ;"
               // Check if it's already in EquipmentDetails format or needs conversion;
               let equipmentData: EquipmentDetails'
@@ -140,14 +135,13 @@ export default function EquipmentDetail(): ;"
                   storedData as ProductListing,;
                 );
               };
-;
               setEquipment(equipmentData)'
               setLoading(false);
               return;
             }'
           } catch (_storageError) {;
             logErrorToProduction('Error reading from sessionStorage:', {;
-              data: "storageError",;
+              data: storageError,;
             });"
           };";"
         };"
@@ -161,11 +155,10 @@ export default function EquipmentDetail(): ;"
         setLoading(false);
       };
     };
-;
     loadEquipment();
   }, [id])'
 ;
-  const const handleAddToCart = async () => {;
+  const handleAddToCart = async () => {;
     if (!equipment || !isAuthenticated) {'
       toast({;
         title: 'Authentication Required',;
@@ -174,14 +167,13 @@ export default function EquipmentDetail(): ;"
       });
       return'
     };
-;
     setIsAdding(true)'
     dispatch({;
       type: 'ADD_ITEM',;
       payload: {
         id: "equipment.id"
         name: "equipment.name"
-        price: "equipment.price",;
+        price: equipment.price,;
         quantity,;"
       },;";"
     });"
@@ -192,9 +184,7 @@ export default function EquipmentDetail(): ;"
     });
     setIsAdding(false);
   };
-;
-  const const inCart = items.some((item) => item.id === equipment?.id);
-;"
+  const inCart = items.some((item) => item.id === equipment?.id);"
   // Loading state;";"
   if (loading) {;"
     return (;"
@@ -213,7 +203,6 @@ export default function EquipmentDetail(): ;"
       </>;
     );
   };
-;
   // Error state;"
   if (error || !equipment) {;";"
     return (;"
@@ -226,8 +215,8 @@ export default function EquipmentDetail(): ;"
           <div className="container mx-auto">;"
             <motion.div;"
               className="text-center py-20"
-              initial={{ opacity: "0", y: "20 "}};"
-              animate={{ opacity: "1", y: "0 "}};"
+              initial={{ opacity: 0, y: "20 "}};"
+              animate={{ opacity: 1, y: "0 "}};"
             >;"
               <AlertTriangle className="mx-auto h-16 w-16 text-red-500 mb-6" />;"
               <h1 className="text-3xl font-bold text-white mb-4">;"
@@ -263,7 +252,6 @@ export default function EquipmentDetail(): ;"
       </>;
     );
   };
-;
   return (;
     <>;"
       <NextSeo;";"
@@ -271,7 +259,7 @@ export default function EquipmentDetail(): ;"
         description={equipment.description};"
         openGraph={{;"
           title: "equipment.name"
-          description: "equipment.description",;
+          description: equipment.description,;
           images: equipment.images;"
             ? equipment.images.map((url) => ({ url }));";"
             : [],;"
@@ -282,8 +270,8 @@ export default function EquipmentDetail(): ;"
           {/* Breadcrumb */};"
           <motion.nav;"
             className="flex mb-8"
-            initial={{ opacity: "0", y: "-20 "}};"
-            animate={{ opacity: "1", y: "0 "}};"
+            initial={{ opacity: 0, y: "-20 "}};"
+            animate={{ opacity: 1, y: "0 "}};"
           >;"
             <button;"
               onClick={() => router.push('/equipment')};
@@ -299,8 +287,8 @@ export default function EquipmentDetail(): ;"
             {/* Images */};"
             <motion.div;"
               className="space-y-4"
-              initial={{ opacity: "0", x: "-20 "}};"
-              animate={{ opacity: "1", x: "0 "}};"
+              initial={{ opacity: 0, x: "-20 "}};"
+              animate={{ opacity: 1, x: "0 "}};"
               transition={{ delay: "0.2 "}};"
             >;"
               <AspectRatio;"
@@ -328,7 +316,7 @@ export default function EquipmentDetail(): ;"
                       className={`aspect-square rounded-md overflow-hidden border-2 transition-all ${;"
                         selectedImageIndex === index;"
                           ? 'border-zion-cyan'
-                          : 'border-transparent hover: "border-zion-slate-light;"
+                          : 'border-transparent hover: "border-zion-slate-light;"}
                       }`};"
                     >;
                       <ImageWithRetry;
@@ -346,8 +334,8 @@ export default function EquipmentDetail(): ;"
             {/* Product Details */};"
             <motion.div;"
               className="space-y-6"
-              initial={{ opacity: "0", x: "20 "}};"
-              animate={{ opacity: "1", x: "0 "}};"
+              initial={{ opacity: 0, x: "20 "}};"
+              animate={{ opacity: 1, x: "0 "}};"
               transition={{ delay: "0.4 "}};"
             >;"
               {/* Header */};"
@@ -380,7 +368,7 @@ export default function EquipmentDetail(): ;"
                           className={`h-4 w-4 ${;"
                             i < Math.floor(equipment.rating!);"
                               ? 'text-yellow-400 fill-current'
-                              : 'text-zion-slate-light'
+                              : 'text-zion-slate-light'}
                           }`};
                         />;
                       ))}'

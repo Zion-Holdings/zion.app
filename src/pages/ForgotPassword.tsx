@@ -4,21 +4,19 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 import axios from 'axios'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-const const API_URL = process.env.NEXT_PUBLIC_API_URL || 
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+const API_URL = process.env.NEXT_PUBLIC_API_URL ||';
 '
 export default function ForgotPassword(): ;
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-;
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault()'
     setLoading(true);
     setError(null);
     try {'
-      const res: await axios.post(`${API_URL"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/auth/forgot`, { email });"
+      const res = await axios.post(`${API_URL"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/auth/forgot`, { email });"
       if (res.status === 200) {;
         toast.success('Email sent')'
       } else {;
@@ -68,7 +66,6 @@ export default function ForgotPassword(): ;
     </div>;
   );
 };
-;
 }'
 }
 }'

@@ -9,9 +9,9 @@ import { getAppConfig } from '@/utils/config'
  * Individual pages can override these tags by rendering their own SEO component.;
  */;
 const RouteSEO: unknown React.FC = () => {;
-  const const router = useRouter();
-  const const route = findRouteByPath(router.pathname);
-  const const config = getAppConfig();
+  const router = useRouter();
+  const route = findRouteByPath(router.pathname);
+  const config = getAppConfig();
 
   if (!route) return null'
 '

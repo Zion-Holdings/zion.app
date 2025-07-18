@@ -12,21 +12,21 @@ interface HelpArticleListProps {'
   categoryId: "string
   onArticleSelect: (articleId: string) => void"
   searchQuery: "string
-};
+}
 
 export function HelpArticleList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categoryId,;
   onArticleSelect,;
   searchQuery,;
 }: HelpArticleListProps) {;
-  const const category = HELP_CATEGORIES.find((cat) => cat.id === categoryId);
+  const category = HELP_CATEGORIES.find((cat) => cat.id === categoryId);
 
   if (!category) {;
     return <div>Category not found</div>;
   };
 
   // Filter articles based on search query;
-  const const filteredArticles = searchQuery;
+  const filteredArticles = searchQuery;
     ? category.articles.filter(;
         (article) =>;
           article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||;
@@ -37,13 +37,13 @@ export function HelpArticleList(): unknown {): unknown {): unknown {): unknown {
   return ("
     <div>;"
       <div className=mb-6>"
-        <h2 className="text-2xl font-bold mb-2>{category.name}</h2>
+        <h2 className="text-2xl font-bold mb-2>{category.name}</h2>"
         <p className="text-zion-slate-light">{category.description}</p>
       </div>;
 "
       {filteredArticles.length === 0 ? (;"
         <div className=text-center py-8>"
-          <h3 className="text-lg font-medium mb-2>No articles found</h3>
+          <h3 className="text-lg font-medium mb-2>No articles found</h3>"
           <p className="text-zion-slate-light">
             Try adjusting your search query or browse another category.;"
           </p>;"
@@ -57,7 +57,7 @@ export function HelpArticleList(): unknown {): unknown {): unknown {): unknown {
               onClick={() => onArticleSelect(article.id)}"
             >;"
               <CardHeader className=pb-2>"
-                <CardTitle className="text-lg>{article.title}</CardTitle>
+                <CardTitle className="text-lg>{article.title}</CardTitle>"
                 <CardDescription className="text-zion-slate-light text-sm">
                   Last updated: {formatDate(article.lastUpdated)"}"
                 </CardDescription>;
@@ -70,7 +70,7 @@ export function HelpArticleList(): unknown {): unknown {): unknown {): unknown {
             </Card>;
           ))};
         </div>;
-      )};
+      )};"
     </div>"
   );"
 };

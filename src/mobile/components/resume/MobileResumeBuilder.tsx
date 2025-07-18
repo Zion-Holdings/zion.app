@@ -3,23 +3,20 @@ import { Plus, Zap, Trash2 } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea;
-;
-import {;
+import  { Textarea }  from '@/components/ui/textarea;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
   SelectTrigger,'
   SelectValue,;
 } from '@/components/ui/select'
-import { Label } from '@/components/ui/label;
-;
+import { Label } from '@/components/ui/label;';
 type ResumeStep = 'basics' | 'experience' | 'education' | 'skills;
 '
 export function MobileResumeBuilder(): ;
   const [currentStep, setCurrentStep] = useState<ResumeStep>('basics');
-;
-  const const renderStepContent = () => {'
+  const renderStepContent = () => {'
     switch (currentStep) {;
       case 'basics':'
         return <BasicsStep />;
@@ -66,7 +63,6 @@ export function MobileResumeBuilder(): ;
           Skills;
         </Button>'
       </div>;
-;
       {renderStepContent()}'
 ;
       <Button className="w-full flex gap-2" size="lg">;"
@@ -144,13 +140,11 @@ function BasicsStep(): ;"
 ;"
 function ExperienceStep(): ;"
   const [experiences, setExperiences] = useState([{ id: '1' }]);
-;
-  const const addExperience = () => {'
-    const const newId = (experiences.length + 1).toString();
+  const addExperience = () => {'
+    const newId = (experiences.length + 1).toString();
     setExperiences([...experiences, { id: "newId "}]);
   };
-;
-  const const removeExperience = (_id: string) => {;"
+  const removeExperience = (_id: string) => {;"
     setExperiences(experiences.filter((exp) => exp.id !== id));";"
   };"
 ;"
@@ -223,13 +217,11 @@ function ExperienceStep(): ;"
 ;"
 function EducationStep(): ;"
   const [educations, setEducations] = useState([{ id: '1' }]);
-;
-  const const addEducation = () => {'
-    const const newId = (educations.length + 1).toString();
+  const addEducation = () => {'
+    const newId = (educations.length + 1).toString();
     setEducations([...educations, { id: "newId "}]);
   };
-;
-  const const removeEducation = (_id: string) => {;"
+  const removeEducation = (_id: string) => {;"
     setEducations(educations.filter((edu) => edu.id !== id));";"
   };"
 ;"
@@ -302,17 +294,16 @@ function SkillsStep(): ;"
   const [skills, setSkills] = useState([;"
     { id: '1', name: '', proficiency: 'beginner' },'
   ]);
-;
-  const const addSkill = () => {'
-    const const newId = (skills.length + 1).toString();
-    setSkills([...skills, { id: "newId", name: '', proficiency: 'beginner' }]);
+  const addSkill = () => {'
+    const newId = (skills.length + 1).toString();
+    setSkills([...skills, { id: newId, name: '', proficiency: 'beginner' }]);
   };
 '
-  const const removeSkill = (_id: string) => {;
+  const removeSkill = (_id: string) => {;
     setSkills(skills.filter((skill) => skill.id !== id));
   }'
 ;
-  const const updateSkill = (id: "string", field: "string", _value: string) => {;
+  const updateSkill = (id: string, field: string, _value: string) => {;
     setSkills(;
       skills.map((skill) =>;
         skill.id === id ? { ...skill, [field]: value } : skill,;

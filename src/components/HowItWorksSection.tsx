@@ -10,7 +10,7 @@ interface HowItWorksSectionProps {;
   style?: React.CSSProperties'
 }'
 
-const const getSteps = (t: (key: string) => string) => ['
+const getSteps = (t: (key: string) => string) => ['
   {'
     title: t('how_it_works.post'),'
     description: t('how_it_works.post_desc'),'
@@ -38,7 +38,7 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
   style,;
 }: HowItWorksSectionProps) {
   const { t } = useTranslation();"
-  const const steps = getSteps(t);";
+  const steps = getSteps(t);";
 ";";
   return ("
     <section className={cn('py-20 bg-zion-blue', className)} style={style}>'
@@ -52,14 +52,13 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
 '
         <div className=relative>";";
           {/* Timeline line */}"
-          <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-zion-purple via-zion-cyan to-zion-purple-light transform -translate-x-1/2 md:block hidden></div>;"";
-;"";
+          <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-zion-purple via-zion-cyan to-zion-purple-light transform -translate-x-1/2 md:block hidden></div>;"";"";
           <div className="space-y-12 md:space-y-0">
             {steps.map((step, index) => (;"
               <div;";
                 key={step.title}";";
                 className={`flex flex-col md:flex-row items-center ${"
-                  index % 2 === 0 ? 'md:flex-row-reverse' : 
+                  index % 2 === 0 ? 'md:flex-row-reverse' :}
                 } relative`}'
               >'
                 <div className="md:w-1/2 mb-6 md:mb-0 md:px-12 text-center md:text-right>;""
@@ -69,7 +68,7 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
                         {step.title};"";
                       </h3>;""
                       <p className="text-zion-slate-light>
-                        {step.description};
+                        {step.description};"
                       </p>"
                     </div>;"
                   ) : null};";"

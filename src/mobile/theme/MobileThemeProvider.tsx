@@ -1,9 +1,9 @@
 import React from 'react';
-import { useTheme } from '@/hooks/useTheme;
+import { useTheme } from '@/hooks/useTheme;';
 '
-interface MobileThemeProviderProps {;
-  children: "React.ReactNode;";
-};"
+interface MobileThemeProviderProps {
+  children: "React.ReactNode"
+}"
 ;";"
 export function MobileThemeProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: MobileThemeProviderProps) {;"
   const { _theme } = useTheme(); // This hook should provide the current theme state;"
@@ -14,8 +14,7 @@ export function MobileThemeProvider(): unknown {): unknown {): unknown {): unkno
   // We will default to 'light' if 'system' is returned and not handled by CSS.;
   // A more robust solution would involve resolving 'system' to 'light' or 'dark'
   // based on actual system preference, but that's out of scope for this immediate fix.;
-  const const currentTheme = theme === 'system' ? 'light' : theme;
-;
+  const currentTheme = theme === 'system' ? 'light' : theme;
   return ('
     <div;
       className="mobile-app" // Remove light/dark classes, rely on data-theme;

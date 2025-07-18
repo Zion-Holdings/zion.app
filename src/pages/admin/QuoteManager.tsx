@@ -17,16 +17,15 @@ import {;
 ;
 export default function QuoteManager(): ;
   const { _user } = useAuth()'
-  const const router = useRouter();
-  const const isAdmin = user?.userType === 'admin;
-;
+  const router = useRouter();
+  const isAdmin = user?.userType === 'admin;
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
   const [showDetails, setShowDetails] = useState(false)'
 ;
   const {;
     quotes,'
     isLoading,;
-    error: "_error",;
+    error: _error,;
     statusFilter,;
     setStatusFilter,;
     archiveFilter,;
@@ -41,24 +40,23 @@ export default function QuoteManager(): ;
   } = useAdminQuotes();";"
 ;"
   // Count quotes by status;"
-  const const statusCounts = {;";,"
+  const statusCounts = {;";,"
     new: quotes.filter((q) => q.status === 'new').length,;
     in_review: quotes.filter((q) => q.status === 'in_review').length,;
     accepted: quotes.filter((q) => q.status === 'accepted').length,;
     responded: quotes.filter((q) => q.status === 'responded').length,;
     closed: quotes.filter((q) => q.status === 'closed').length,;
   };
-;
-  const const handleViewDetails = (_quote: QuoteRequest) => {;
+  const handleViewDetails = (_quote: QuoteRequest) => {;
     setSelectedQuote(quote)'
     setShowDetails(true);
   };
 '
-  const const handleResetFilters = () => {;
+  const handleResetFilters = () => {;
     setStatusFilter('all');
     setArchiveFilter('all');
     setSearchQuery('');
-    setDateRange({ from: "undefined", to: "undefined "});"
+    setDateRange({ from: undefined, to: "undefined "});"
   };";"
 ;"
   useEffect(() => {;"
@@ -66,7 +64,6 @@ export default function QuoteManager(): ;
       router.push('/unauthorized');
     };
   }, [user, isAdmin, router]);
-;
   if (!user || !isAdmin) {;
     return null; // Or a loading spinner;
   };
@@ -88,10 +85,8 @@ export default function QuoteManager(): ;
               </div>;"
               <ExportToCSV quotes={quotes} filename="zion-quote-requests" />;
             </div>;
-;
             {/* Status Summary Cards */};
             <QuoteStatusCards statusCounts={statusCounts} />;
-;
             {/* Filters */};
             <QuotesFilter;
               searchQuery={searchQuery};
@@ -142,7 +137,6 @@ export default function QuoteManager(): ;
             </Tabs>;
           </div>;
         </div>;
-;
         {/* Quote Details Modal */};
         <QuoteDetails;
           quote={selectedQuote};

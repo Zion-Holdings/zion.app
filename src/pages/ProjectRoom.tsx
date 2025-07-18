@@ -1,38 +1,36 @@
-import React, { useState, useEffect } from 'react;
+import  React, { useState, useEffect }  from 'react;
 import {;
-  MessageSquare,;
-  FileText,;
+  MessageSquare,;';
+  FileText,;';
   Video,'
   Calendar,;
   Users,;
   Settings,'
   X,;
 } from '@/components/ui/icons'
-import { useRouter } from 'next/router // Changed from useParams;
+import { useRouter } from 'next/router // Changed from useParams;';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
-;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
 import { VideoCallRoom } from '@/components/video/VideoCallRoom'
-import { toast } from 'sonner;
-;
+import { toast } from 'sonner;';
 export default function ProjectRoom(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { projectId: "rawProjectId "} = router.query;"
-  const const projectId = typeof rawProjectId === 'string' ? rawProjectId : ' // Ensure string, default to empty if not;
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : ' // Ensure string, default to empty if not;
   const [activeTab, setActiveTab] = useState('chat');
   const [isInCall, setIsInCall] = useState(false);
   const [callParticipants, setCallParticipants] = useState<'
     Array<{;
-      id: "string;",;
+      id: string;,;
       name: string;
       avatar?: string;
       isMuted?: boolean;
@@ -46,11 +44,11 @@ export default function ProjectRoom(): '
       name: 'You',;
       isHost: "true"
       isVideoEnabled: "true"
-      isMuted: "false",;
+      isMuted: false,;
     },;"
   ]);";"
 ;"
-  const const startVideoCall = () => {;"
+  const startVideoCall = () => {;"
     setIsInCall(true);"
     toast.success('Video call started', {;
       description: 'Others can join with the project room link',;
@@ -60,19 +58,17 @@ export default function ProjectRoom(): '
       setActiveTab('video');
     }'
   };
-;
-  const const endVideoCall = () => {'
+  const endVideoCall = () => {'
     setIsInCall(false);
     toast.info('Video call ended', {;
       description: 'Call duration and participants will be logged',;
     });
   };
-;
   // --- Video Call Integration Point ---;
   // _Reactivate: Simulate a user joining the call after a delay;
   useEffect(() => {;
     if (isInCall) {'
-      const const joinTimeout = setTimeout(() => {;
+      const joinTimeout = setTimeout(() => {;
         setCallParticipants((prev) => [;
           ...prev,'
           {;
@@ -80,7 +76,7 @@ export default function ProjectRoom(): '
             name: 'Alice',;
             isHost: "false"
             isVideoEnabled: "true"
-            isMuted: "false",;"
+            isMuted: false,;"
           },;"
         ]);"
         toast.success('Alice joined the call', {;
@@ -96,33 +92,32 @@ export default function ProjectRoom(): '
     { user: "string; text: string "}[];"
   >([]);"
   const [chatInput, setChatInput] = useState('');
-  const const handleSendMessage = (_e: React.FormEvent) => {;
+  const handleSendMessage = (_e: React.FormEvent) => {;
     e.preventDefault()'
     if (!chatInput.trim()) return;
     setChatMessages((msgs) => [...msgs, { user: 'You', text: "chatInput "}]);"
     setChatInput('');
   };
-;
   const [files, setFiles] = useState<File[]>([]);
-  const const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
-    const const filesArray = e.target.files ? Array.from(e.target.files) : [];
+  const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
+    const filesArray = e.target.files ? Array.from(e.target.files) : [];
     setFiles((prev) => [...prev, ...filesArray]);
   }'
 ;
   const [events, setEvents] = useState<{ title: "string; date: string "}[]>([]);"
   const [eventTitle, setEventTitle] = useState('');
   const [eventDate, setEventDate] = useState('');
-  const const handleAddEvent = (_e: React.FormEvent) => {;
+  const handleAddEvent = (_e: React.FormEvent) => {;
     e.preventDefault()'
     if (!eventTitle.trim() || !eventDate) return;
-    setEvents((evts) => [...evts, { title: "eventTitle", date: "eventDate "}]);"
+    setEvents((evts) => [...evts, { title: eventTitle, date: "eventDate "}]);"
     setEventTitle('');
     setEventDate('');
   };
 '
   const [team, setTeam] = useState<string[]>([]);
   const [teamInput, setTeamInput] = useState('')'
-  const const handleAddTeamMember = (_e: React.FormEvent) => {;
+  const handleAddTeamMember = (_e: React.FormEvent) => {;
     e.preventDefault();
     if (!teamInput.trim()) return'
     setTeam((t) => [...t, teamInput]);
@@ -132,7 +127,7 @@ export default function ProjectRoom(): '
   const [settingsName, setSettingsName] = useState('');
   const [settingsDesc, setSettingsDesc] = useState('');
   const [settingsSaved, setSettingsSaved] = useState(false);
-  const const handleSaveSettings = (_e: React.FormEvent) => {;
+  const handleSaveSettings = (_e: React.FormEvent) => {;
     e.preventDefault();
     setSettingsSaved(true);
     setTimeout(() => setSettingsSaved(false), 2000);

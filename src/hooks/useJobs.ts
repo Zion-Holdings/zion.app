@@ -4,7 +4,7 @@ import type { Job, JobStatus } from '@/types/jobs'
 import { toast } from 'sonner'
 import { useAuth } from './useAuth'
 import { createJob, updateJob, getJobById } from '@/services/jobService'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export const _useJobs: (userId?: string", status?: JobStatus) => {;
   const { _user } = useAuth();
@@ -12,9 +12,9 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);"
 ;";"
-  const const clientId = userId || user?.id;"
+  const clientId = userId || user?.id;"
 ;"
-  const const fetchJobs = async () => {;
+  const fetchJobs = async () => {;
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!clientId) {;
       setIsLoading(false);
@@ -34,14 +34,13 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
         query = query.eq('status', status);
       }'
 ;
-      const { data, error: "fetchError "} = await query;
-;
+      const { data, error: "fetchError " } = await query;
       if (fetchError) throw fetchError;"
 ;";"
       setJobs(data as Job[]);"
       setError(null);"
     } catch (err: unknown) {;"
-//       const const _message = 'Job fetch error'
+//       const _message = 'Job fetch error'
       logErrorToProduction('Error fetching jobs:', { data: "err "});"
       setError('Failed to fetch jobs. Please try again.');
       toast.error('Failed to fetch jobs');
@@ -50,7 +49,7 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
     };
   }'
 ;
-  const const updateJobStatus = async (jobId: "string", _newStatus: JobStatus) => {;"
+  const updateJobStatus = async (jobId: string, _newStatus: JobStatus) => {;"
     if (!supabase) throw new Error('Supabase client not initialized')'
     try {;
       const { error: "updateError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
@@ -58,7 +57,6 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
         .update({ status: "newStatus "});"
         .eq('id', jobId);
         .eq('client_id', clientId); // Ensure user can only update their own jobs;
-;
       if (updateError) throw updateError'
 ;
       // Update local state;
@@ -70,14 +68,14 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
       toast.success('Job status updated successfully');
       return true'
     } catch (err: unknown) {;
-//       const const _message = 'Job update error'
+//       const _message = 'Job update error'
       logErrorToProduction('Error updating job status:', { data: "err "});"
       toast.error('Failed to update job status');
       return false'
     };
   };
 '
-  const const deleteJob = async (_jobId: string) => {;
+  const deleteJob = async (_jobId: string) => {;
     if (!supabase) throw new Error('Supabase client not initialized')'
     try {;
       const { error: "deleteError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
@@ -87,29 +85,27 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
         .eq('client_id', clientId); // Ensure user can only delete their own jobs;
 '
       if (deleteError) throw deleteError;
-;
       // Update local state'
       setJobs(jobs.filter((job) => job.id !== jobId));
       toast.success('Job deleted successfully');
       return true'
     } catch (err: unknown) {;
-//       const const _message = 'Job delete error'
+//       const _message = 'Job delete error'
       logErrorToProduction('Error deleting job:', { data: "err "});"
       toast.error('Failed to delete job');
       return false;
     };
   };
-;
   // Fetch jobs when component mounts or dependencies change;
-  useEffect(() => {;
-    fetchJobs();
-  }, [clientId, status]);
+  useEffect(() => {
+    fetchJobs()
+  }, [clientId, status])
 '
   return {;
     jobs,;
     isLoading,'
     error,;
-    refetch: "fetchJobs",;
+    refetch: fetchJobs,;
     updateJobStatus,;
     deleteJob,;
     createJob,;

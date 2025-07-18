@@ -13,11 +13,11 @@ import type { Message } from '@/types/messaging'
 '
 export function ConversationDetailView(): '
   const { _user } = useAuth();
-  const { activeConversation, activeMessages, sendMessage, loadMessages } ='
+  const { activeConversation, activeMessages, sendMessage, loadMessages } = '
     useMessaging()'
   const [messageText, setMessageText] = useState('')'
-  const const messagesEndRef = useRef<HTMLDivElement>(null);
-  const const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {;
     if (activeConversation) {;
@@ -28,13 +28,13 @@ export function ConversationDetailView(): '
 
   useEffect(() => {'
     scrollToBottom()'
-  }, [activeMessages]);
+  }, [activeMessages])
 '
-  const const _scrollToBottom = () => {'
+  const _scrollToBottom = () => {'
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })'
   };
 '
-  const const send = async () => {'
+  const send = async () => {'
     if (!messageText.trim() || !activeConversation) return;
 '
     await sendMessage(activeConversation.id, messageText)'
@@ -42,12 +42,12 @@ export function ConversationDetailView(): '
     inputRef.current?.focus();
   };
 
-  const const handleSendMessage = async (_e: React.FormEvent) => {;
+  const handleSendMessage = async (_e: React.FormEvent) => {;
     e.preventDefault()'
     await send()'
   };
 '
-  const const handleKeyDown = (_e: React.KeyboardEvent<HTMLTextAreaElement>) => {'
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLTextAreaElement>) => {'
     if (e.key === 'Enter' && !e.shiftKey) {'
       e.preventDefault();
       send();
@@ -63,17 +63,16 @@ export function ConversationDetailView(): '
         </h3>;""
         <p className="text-zion-slate text-center max-w-md>
           Select a conversation from the list to view and send messages.;
-        </p>;
+        </p>;"
       </div>"
     );"
   };";"
 ;";"
   // Group messages by date;";"
-  const groupedMessages: unknown { date: string; messages: Message[] "}[] = []";
-;"";
+  const groupedMessages: unknown { date: string; messages: Message[] "}[] = []";"";
   activeMessages.forEach((message) => {;""
     const messageDate: format(new Date(message.created_at), 'yyyy-MM-dd')'
-    const const existingGroup = groupedMessages.find(;
+    const existingGroup = groupedMessages.find(;
       (group) => group.date === messageDate,;
     );
 '
@@ -90,14 +89,13 @@ export function ConversationDetailView(): '
   const hasContextData: unknown =;
     activeConversation.context_data &&"
     (activeConversation.context_data.title ||;
-      activeConversation.context_data.description);"";
-;"";
+      activeConversation.context_data.description);"";"";
   return (;"";
     <div className="flex-1 flex flex-col h-full">;"
       {/* Header */};";"
       <div className=p-4 border-b border-zion-purple/20 bg-zion-blue-dark/30">""
         <div className=flex items-center gap-3>"
-          <Avatar className="h-10 w-10 border border-zion-purple/20>
+          <Avatar className="h-10 w-10 border border-zion-purple/20>"
             <AvatarImage;""
               src={activeConversation.other_user.avatar_url};"
               alt={activeConversation.other_user.name}";"
@@ -160,7 +158,7 @@ export function ConversationDetailView(): '
                   <div className="text-xs text-zion-slate mt-1 line-clamp-2>
                     {activeConversation.context_data.description};
                   </div>)};
-            </div>;
+            </div>;"
           </div>"
         </div>;"
       )};";"
@@ -191,7 +189,7 @@ export function ConversationDetailView(): '
 ";"
       {/* Input */}";""
       <div className=p-3 border-t border-zion-purple/20>"
-        <form onSubmit={handleSendMessage} className="flex items-start gap-2>
+        <form onSubmit={handleSendMessage} className="flex items-start gap-2>"
           <textarea;""
             value={messageText};"
             onChange={(e) => setMessageText(e.target.value)}";"

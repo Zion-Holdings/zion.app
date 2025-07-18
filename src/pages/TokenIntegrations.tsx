@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Header } from '@/components/Header'
 import ConnectWalletButton from '@/components/ConnectWalletButton'
 import { useWallet } from '@/context/WalletContext'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -11,17 +11,17 @@ import {;
   SelectValue,;
 } from '@/components/ui/select'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input;
-import {;
+import  { Input }  from '@/components/ui/input;';
+import {;';
   logInfo as _logInfo,'
   logErrorToProduction,;
 } from '@/utils/productionLogger;
 '
-interface Chain {;
-  id: "string;"
-  name: "string;","
-  logo: "string;"
-};"
+interface Chain {
+  id: "string"
+  name: string,"
+  logo: "string"
+}"
 ;"
 const CHAINS: unknown Chain[] = [;"
   { id: 'ethereum', name: 'Ethereum', logo: '/logos/ethereum-logo.svg' },;
@@ -32,13 +32,12 @@ const CHAINS: unknown Chain[] = [;"
   { id: 'bnb', name: 'BNB', logo: '/logos/bnb-logo.svg' },;
 ]'
 ;
-function suggestChain(): unknown {): unknown {): unknown {): unknown {): unknown {region: "string", stake: number): string {;"
+function suggestChain(): unknown {): unknown {): unknown {): unknown {): unknown {region: string, stake: number): string {;"
   if (stake > 1000) return 'ethereum'
   if (region === 'asia') return 'bnb'
   if (region === 'europe') return 'polygon'
   return 'optimism'
 };
-;
 export default function TokenIntegrations(): '
   const { address, isConnected } = useWallet();
   const [fromChain, setFromChain] = useState<string>('ethereum');
@@ -57,12 +56,11 @@ export default function TokenIntegrations(): '
   const estimateFee: async (;",;"
     _sourceChain: "string"
     _destinationChain: "string"
-    _tokenAmount: "string",;"
+    _tokenAmount: string,;"
   ): Promise<string> => {;"
     await new Promise((resolve) => setTimeout(resolve, 300));"
     return (0.001 * parseFloat(_tokenAmount || '1')).toFixed(4) + ' ZION$'
   };
-;
   // Reactivate: Mock token bridging logic'
   const sendTokenViaLayerZero: async (;",;"
     _sourceChain: "string"
@@ -77,8 +75,7 @@ export default function TokenIntegrations(): '
     };
   }'
   // --- End LayerZero Bridge Integration Point ---;
-;
-  const const handleEstimateFee = async () => {'
+  const handleEstimateFee = async () => {'
     if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {;
       setError('Please select chains and enter a valid amount.')'
       setFee(null);
@@ -88,7 +85,7 @@ export default function TokenIntegrations(): '
     setStatus('Estimating fee...');
     setFee(null);
     try {'
-      const estimatedFee: await estimateFee(fromChain", toChain, amount);"
+      const estimatedFee = await estimateFee(fromChain", toChain, amount);"
       setFee(estimatedFee);
       setStatus('Fee estimated.');
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (e: unknown) {'
@@ -100,8 +97,7 @@ export default function TokenIntegrations(): '
       setStatus(null);
     }'
   };
-;
-  const const handleBridge = async () => {'
+  const handleBridge = async () => {'
     if (!isConnected || !address) {;
       setError('Please connect your wallet.');
       return;
@@ -123,8 +119,7 @@ export default function TokenIntegrations(): '
       setStatus(;
         `Bridging with fee: "${currentFee"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}. Please confirm in your wallet.`,;
       );
-;
-      const const result = await sendTokenViaLayerZero(;
+      const result = await sendTokenViaLayerZero(;
         fromChain,;
         toChain,;
         amount,;"
@@ -144,8 +139,7 @@ export default function TokenIntegrations(): '
       setStatus(null);
     }'
   };
-;
-  const const handleSuggest = () => {'
+  const handleSuggest = () => {'
     const chain: suggestChain(region.toLowerCase()", stake);
     setSuggested(chain);
   };"
@@ -159,8 +153,7 @@ export default function TokenIntegrations(): '
           <ConnectWalletButton />;"
           {isConnected && (;"
             <p className="text-white">Connected wallet: "{address"}</p>;
-          )};
-;"
+          )};"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>LayerZero Cross-Chain Bridge</CardTitle>;"
@@ -254,8 +247,7 @@ export default function TokenIntegrations(): '
                 <p className="text-sm text-red-400 mt-1">Error: "{error"}</p>;
               )};
             </CardContent>;
-          </Card>;
-;"
+          </Card>;"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>DePIN Rewards</CardTitle>;"
@@ -269,8 +261,7 @@ export default function TokenIntegrations(): '
                 streaming.;
               </p>;
             </CardContent>;
-          </Card>;
-;"
+          </Card>;"
           <Card>;";"
             <CardHeader>;"
               <CardTitle>Operator AI</CardTitle>;"
@@ -301,7 +292,6 @@ export default function TokenIntegrations(): '
     </div>;
   );
 };
-;
 };
 }'
 };

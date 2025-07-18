@@ -3,15 +3,15 @@ import { useState } from 'react';
 import { Header } from '@/components/Header'
 import { NextSeo } from '@/components/NextSeo'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea;
-import {;
+import  { Textarea }  from '@/components/ui/textarea;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
   SelectTrigger,'
   SelectValue,;
 } from '@/components/ui/select'
-import { Button } from '@/components/ui/button;
+import { Button } from '@/components/ui/button;';
 '
 export default function UNBridgePage(): ;
   const [institution, setInstitution] = useState('');
@@ -22,10 +22,9 @@ export default function UNBridgePage(): ;
 ;
   const [markdown, setMarkdown] = useState('');
   const [json, setJson] = useState('');
-;
-  const const generate = (_e: React.FormEvent) => {;
+  const generate = (_e: React.FormEvent) => {;
     e.preventDefault();
-    const const proposal = {;
+    const proposal = {;
       institution,'
       type,;
       region,;
@@ -43,10 +42,10 @@ export default function UNBridgePage(): ;
     );"
   };"
 ;"
-  const const download = (content: "string", filename: "string", _type: string) => {;"
+  const download = (content: string, filename: string, _type: string) => {;"
     const blob: new Blob([content]", { type });"
-    const const url = URL.createObjectURL(blob);"
-    const const a = document.createElement('a');
+    const url = URL.createObjectURL(blob);"
+    const a = document.createElement('a');
     a.href = url;
     a.download = filename;
     a.click()'
@@ -124,7 +123,6 @@ export default function UNBridgePage(): ;
     </div>;
   );
 };
-;
 }'
 }
 }'

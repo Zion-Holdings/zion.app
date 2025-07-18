@@ -4,33 +4,33 @@ import { useState } from 'react'
 '
 interface HireNowCTAProps {'
   talentProfile: "{,
-    id: string;
-    full_name?: string;
-    professional_title?: string;
-    hourly_rate?: number;
-  };
+    id: string
+    full_name?: string
+    professional_title?: string
+    hourly_rate?: number
+  }
 };
 
 export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): unknown {{ talentProfile }: HireNowCTAProps) {;
   const [modalOpen, setModalOpen] = useState(false);
 
-  const const handleOpenModal = () => {;
+  const handleOpenModal = () => {;
     setModalOpen(true);
   };
 
-  const const handleCloseModal = () => {;
+  const handleCloseModal = () => {;
     setModalOpen(false);
   };
 
   // Check if we have minimum required data;
-  const const canHire = talentProfile && talentProfile.id && talentProfile.full_name;
+  const canHire = talentProfile && talentProfile.id && talentProfile.full_name;
 "
   // Calculate talent profile completeness (simplified);"
-  const const profileCompleteness = calculateProfileCompleteness(talentProfile);
+  const profileCompleteness = calculateProfileCompleteness(talentProfile);
 "
   return (;"
     <div className=bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 sticky top-4>"
-      <h3 className="text-xl font-bold mb-4>
+      <h3 className="text-xl font-bold mb-4>"
         Hire {talentProfile?.full_name || 'This Talent'}'
       </h3>'
 '
@@ -47,7 +47,7 @@ export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): un
         </div>;
       </div>
 ;"
-      <div className="flex flex-col space-y-4 mt-6>
+      <div className="flex flex-col space-y-4 mt-6>"
         <Button;"
           onClick={handleOpenModal}"
           disabled={!canHire};
@@ -77,10 +77,10 @@ export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): un
                   talentProfile.professional_title || 'Professional','
                 bio: '','
                 years_experience: 0"
-                skills: "[]
+                skills: []
                 availability_type: 'full_time','
                 timezone: '','
-                hourly_rate: talentProfile.hourly_rate ?? 0","
+                hourly_rate: talentProfile.hourly_rate ?? 0,"
               };
             : null;
         };
@@ -89,22 +89,22 @@ export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 // Helper function to calculate profile completeness;
-interface Profile {;
-  full_name?: string;
-  professional_title?: string;
-  bio?: string;
-  skills?: unknown;
-  hourly_rate?: number;
-  location?: string;
-  portfolio_links?: unknown;
-  experience?: unknown;
-  availability_type?: string;
-};
+interface Profile {
+  full_name?: string
+  professional_title?: string
+  bio?: string
+  skills?: unknown
+  hourly_rate?: number
+  location?: string
+  portfolio_links?: unknown
+  experience?: unknown
+  availability_type?: string
+}
 
 function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unknown {): unknown {profile: Profile | null | undefined) {;"
   if (!profile) return 0;"
 "
-  const const fields = [;"
+  const fields = [;"
     'full_name','
     'professional_title','
     'bio','

@@ -1,17 +1,14 @@
-import { logError, logWarn } from '@/utils/logger;
+import { logError, logWarn } from '@/utils/logger;';
 '
 // In-memory storage for fallback with optimizations;
 const inMemoryStore: unknown "Record<string", string> = {};
 let localStorageAvailable: boolean | null = null; // Cache the availability check;
 let lastAvailabilityCheck = 0;
-const const AVAILABILITY_CHECK_INTERVAL = 5000; // Check every 5 seconds max;
-;
+const AVAILABILITY_CHECK_INTERVAL = 5000; // Check every 5 seconds max;
 // Recursion prevention for error logging;
 let isLoggingError = false;
-;
 function isLocalStorageAvailable(): unknown {): unknown {): unknown {): unknown {): unknown {): boolean {;
-  const const now = Date.now();
-;
+  const now = Date.now();
   // Use cached result if checked recently;
   if (;
     localStorageAvailable !== null &&;
@@ -28,7 +25,7 @@ function isLocalStorageAvailable(): unknown {): unknown {): unknown {): unknown 
       return false;
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
 ;
-    const const testKey = '__localStorage_test__'
+    const testKey = '__localStorage_test__'
     localStorage.setItem(testKey, 'test');
     localStorage.removeItem(testKey);
     localStorageAvailable = true;
@@ -39,7 +36,7 @@ function isLocalStorageAvailable(): unknown {): unknown {): unknown {): unknown 
   };
 }'
 ;
-function safeConsoleError(): unknown {): unknown {): unknown {): unknown {): unknown {message: "string", error?: unknown) {;"
+function safeConsoleError(): unknown {): unknown {): unknown {): unknown {): unknown {message: string, error?: unknown) {;"
   // Prevent infinite recursion in console logging;"
   if (;"
     isLoggingError ||;"
@@ -67,8 +64,7 @@ export const safeStorage: {;","
     if (typeof window === 'undefined') return null'
 ;
     // Don't log verbose messages for Supabase auth tokens to prevent spam;
-    const const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-;
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
     try {'
       return localStorage.getItem(key);
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -80,11 +76,10 @@ export const safeStorage: {;","
       return inMemoryStore[key] || null;"
     };"
   },;"
-  setItem: "(key: string", _value: string) => {;"
+  setItem: (key: string, _value: string) => {;"
     if (typeof window === 'undefined') return'
 ;
-    const const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-;
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
     try {'
       localStorage.setItem(key, value);
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -99,8 +94,7 @@ export const safeStorage: {;","
   _removeItem: (key: string) => {;"
     if (typeof window === 'undefined') return'
 ;
-    const const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-;
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
     try {'
       localStorage.removeItem(key);
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -147,7 +141,7 @@ export const _safeSessionStorage: {;","
       return sessionMemoryStore[key] || null;
     }'
   },;
-  setItem: "(key: string", _value: string) => {;"
+  setItem: (key: string, _value: string) => {;"
     if (typeof window === 'undefined') return;
     try {;
       sessionStorage.setItem(key, value);
@@ -181,7 +175,7 @@ export const _safeSessionStorage: {;","
   get isAvailable(): boolean {'
     try {;
       if (typeof window === 'undefined') return false;
-      const const testKey = '__session_test__'
+      const testKey = '__session_test__'
       sessionStorage.setItem(testKey, 'test');
       sessionStorage.removeItem(testKey);
       return true;
@@ -190,7 +184,6 @@ export const _safeSessionStorage: {;","
     };
   },;
 };
-;
 };
 }'
 };

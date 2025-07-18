@@ -1,8 +1,8 @@
-export interface SearchSuggestion {;
-  id?: string;
-  text: string;
-  slug?: string; // URL-friendly version for navigation;
-  type:;
+export interface SearchSuggestion {
+  id?: string
+  text: string
+  slug?: string // URL-friendly version for navigation
+  type:
     | 'product'
     | 'category'
     | 'tag'
@@ -12,30 +12,30 @@ export interface SearchSuggestion {;
     | 'doc'
     | 'blog'
     | 'saved'
-  iconUrl?: string;
-};
+  iconUrl?: string
+}
 '
-export interface SearchHighlight {;
-  before: "string;"
-  match: "string;","
-  after: "string;"
-};"
+export interface SearchHighlight {
+  before: "string"
+  match: string,"
+  after: "string"
+}"
 ;"
 export interface FilterOptions {;"
   productTypes: {
-    label: "string;","
+    label: string;,"
     value: "string;"
   }[];"
   locations: {
-    label: "string;","
+    label: string;,"
     value: "string;"
   }[];"
   availabilityOptions: {
-    label: "string;","
+    label: string;,"
     value: "string;"
   }[];"
   ratingOptions: "number[];"
-  minPrice: "number;","
+  minPrice: number;,"
   maxPrice: "number;"
 };"
 """""

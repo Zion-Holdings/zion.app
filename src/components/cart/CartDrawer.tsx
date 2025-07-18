@@ -8,12 +8,12 @@ import { useAuth } from '@/hooks/useAuth'
 import { LoginModal } from '@/components/auth/LoginModal'
 '
 export function CartDrawer(): ;
-  const const items = useSelector((s: RootState) => s.cart.items)'
+  const items = useSelector((s: RootState) => s.cart.items)'
   const count: items.reduce((sum, i) => sum + i.quantity, 0)
   const { _isAuthenticated } = useAuth();
   const [loginOpen, setLoginOpen] = React.useState(false);
 
-  const const handleClick = (_e: React.MouseEvent) => {;
+  const handleClick = (_e: React.MouseEvent) => {;
     if (!isAuthenticated) {;
       e.preventDefault();
       setLoginOpen(true);

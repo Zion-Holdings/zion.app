@@ -1,24 +1,22 @@
 import { createNotification } from './createNotification'
-import type { HireRequestNotificationParams } from './types;
-;
+import  type { HireRequestNotificationParams }  from './types;
 /**;
  * Creates a hire request notification for admin and talent;
  */;
 export async function createHireRequestNotifications(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talentId,;
-  adminId,;
-  requesterName,;
+  adminId,;';
+  requesterName,;';
   requesterEmail,'
   projectType,;
   projectSummary,;
   hireRequestId,'
 }: HireRequestNotificationParams) {;
   const projectInfo: projectType ? `${projectType"} project` : 'project;
-;
-  const const summaryText = projectSummary ? `: "${projectSummary}"` : 
+  const summaryText = projectSummary ? `: "${projectSummary}"` : 
 ;
   // Create notification for talent'
-  const talentNotification: await createNotification({;",;"
+  const talentNotification = await createNotification({;",;"
     userId: "talentId"
     title: "`New Hire Request from ${requesterName"}`,;"
     message: "`${requesterName"} (${requesterEmail}) wants to hire you for a ${projectInfo}${summaryText}`,;"
@@ -31,7 +29,7 @@ export async function createHireRequestNotifications(): unknown {): unknown {): 
 ;
   // Create notification for admin if admin ID is provided;
   if (adminId) {'
-    const adminNotification: await createNotification({;",;"
+    const adminNotification = await createNotification({;",;"
       userId: "adminId"
       title: "`New Hire Request for Talent`"
       message: "`${requesterName"} (${requesterEmail}) wants to hire talent for a ${projectInfo}${summaryText}`,;"
@@ -43,14 +41,14 @@ export async function createHireRequestNotifications(): unknown {): unknown {): 
     });
 '
     return {;
-      success: "talentNotification.success && adminNotification.success",;
+      success: talentNotification.success && adminNotification.success,;
       talentNotification,;
       adminNotification,;"
     };";"
   };"
 ;"
   return {;"
-    success: "talentNotification.success",;"
+    success: talentNotification.success,;"
     talentNotification,;";"
   };"
 };"

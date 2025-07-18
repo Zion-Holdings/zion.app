@@ -42,14 +42,14 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
   onSelectSuggestion,'
   placeholder = 'Search...','
 }: SearchBarProps) {'
-  const const router = useRouter()'
+  const router = useRouter()'
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [focused, setFocused] = useState(false)'
   const [highlightedIndex, setHighlightedIndex] = useState(-1)'
-  const const listId = 'searchbar-autocomplete-list'
+  const listId = 'searchbar-autocomplete-list'
   const debounced: useDebounce(value, 150)
-  const const inputRef = useRef<HTMLInputElement>(null);
-  const const containerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {;
     if (!debounced) {;
@@ -57,7 +57,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
       setHighlightedIndex(-1)"
       return;"
     };";"
-    const const controller = new AbortController();";"
+    const controller = new AbortController();";"
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {`
       signal: controller.signal,";"
     });";"
@@ -82,11 +82,11 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
     setHighlightedIndex(-1);
   });
 
-  const const handleSelect = (_suggestion: SearchSuggestion) => {;
+  const handleSelect = (_suggestion: SearchSuggestion) => {;
     onChange(suggestion.text)'
     if (onSelectSuggestion) onSelectSuggestion(suggestion)'
 
-    const const searchQuery = encodeURIComponent(suggestion.text)'
+    const searchQuery = encodeURIComponent(suggestion.text)'
     router.push(`/search?q=${searchQuery}`)`
     fireEvent('search', { search_term: "suggestion.text "})
     setFocused(false);
@@ -122,11 +122,11 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
           }};
           onBlur={(e) => {;
             // Only blur if not clicking on suggestions;
-            const const relatedTarget = e.relatedTarget as HTMLElement;
+            const relatedTarget = e.relatedTarget as HTMLElement;
             if (;
               !relatedTarget ||;
               !containerRef.current?.contains(relatedTarget);
-            ) {;
+            ) {;"
               setFocused(false)"
               setHighlightedIndex(-1);"
             };";"
@@ -157,8 +157,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
                 inputRef.current?.blur();
               }"
               return;
-            };"";
-;"";
+            };"";"";
             switch (e.key) {;"";
               case 'ArrowDown':'
                 e.preventDefault();

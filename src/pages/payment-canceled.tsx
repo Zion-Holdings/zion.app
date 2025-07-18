@@ -1,10 +1,10 @@
 import React from 'react';
 import { XCircle } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router // Changed from useNavigate;
+import { useRouter } from 'next/router // Changed from useNavigate;';
 '
 export default function PaymentCanceled(): ;
-  const const router = useRouter(); // Changed from navigate;
+  const router = useRouter(); // Changed from navigate;
 '
   return (;
     <div className="flex flex-1 bg-zion-blue items-center justify-center p-4">;"

@@ -10,7 +10,7 @@ import { CategorySelection } from '@/components/onboarding/CategorySelection'
 import { Steps, Step } from '@/components/ui/steps'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export default function Onboarding(): ;
   const { user, updateProfile, isLoading } = useAuth();
@@ -20,7 +20,7 @@ export default function Onboarding(): ;
   >(null);
   const [interests, setInterests] = useState<string[]>([]);
   const [_categories, setCategories] = useState<string[]>([]);
-  const const router = useRouter()'
+  const router = useRouter()'
 ;
   useEffect(() => {;
     // Redirect to login if user is not authenticated and auth state is not loading'
@@ -61,8 +61,8 @@ export default function Onboarding(): ;
     setCurrentStep(1);
   }'
 ;
-  const const handleProfileComplete = async (data: {
-    displayName: "string;","
+  const handleProfileComplete = async (data: {
+    displayName: string;,"
     bio: "string;"
     _headline: "string;"
   }) => {;"
@@ -76,16 +76,15 @@ export default function Onboarding(): ;
       return;
     };
 '
-    const const dbUserType = mapUserTypeToDatabase(userType);
-;
+    const dbUserType = mapUserTypeToDatabase(userType);
     try {'
       await updateProfile({;
         id: "user.id"
         displayName: "data.displayName"
-        bio: "data.bio", // This is now valid since we added bio to UserDetails;"
+        bio: data.bio, // This is now valid since we added bio to UserDetails;"
         userType: "dbUserType"
         headline: "data.headline"
-        profileComplete: "true",;"
+        profileComplete: true,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
 ;"
       if (!supabase) throw new Error('Supabase client not initialized')'
@@ -93,7 +92,7 @@ export default function Onboarding(): ;
       await supabase.rpc('update_onboarding_milestone', {;
         _user_id: "user.id"
         _milestone: 'profile_completed',;
-        _status: "true",;"
+        _status: true,;"
       });"
 ;"
       toast({;"
@@ -113,20 +112,18 @@ export default function Onboarding(): ;
       });
     };
   };
-;
-  const const handleInterestsComplete = (_list: string[]) => {;
+  const handleInterestsComplete = (_list: string[]) => {;
     setInterests(list);
     setCurrentStep(3);
   };
-;
-  const const handleCategoriesComplete = async (_list: string[]) => {'
+  const handleCategoriesComplete = async (_list: string[]) => {'
     setCategories(list);
     if (user) {;
       try {'
         await updateProfile({;
-          id: "user.id",;"
+          id: user.id,;"
           interests,;"
-          preferredCategories: "list",;"
+          preferredCategories: list,;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
       } catch {;"
         logErrorToProduction('Error saving onboarding data:', { data: "error "});"
@@ -137,13 +134,12 @@ export default function Onboarding(): ;
     router.push(dashboardRoute);
   };
 '
-  const const steps = [;
+  const steps = [;
     { label: 'Select Role', description: "Choose how you'll use the platform" },;"
     { label: 'Create Profile', description: 'Tell us about yourself' },;
     { label: 'Interests', description: 'What topics are you into?' },;
     { label: 'Categories', description: 'Tailor your experience' },;
   ];
-;
   // Show loading state or null while checking auth, useEffect will handle redirect;
   if (isLoading || !user) {'
     // You can return a loader here, or null, or a basic skeleton;

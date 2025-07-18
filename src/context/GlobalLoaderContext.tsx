@@ -4,118 +4,113 @@ import React, {;
   useEffect,;
   useState,;
   useRef,;
-} from 'react';
-import type { ReactNode } from 'react';
+} from 'react''
+import type { ReactNode } from 'react''
 import axios from 'axios'
-import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;''
 '
-export interface GlobalLoaderContextType {;
-  loading: "boolean;"
-  setLoading: "(value: boolean) => void;"
-  error: "unknown;","
-  setError: "(error: unknown) => void;"
-  showLoader: "() => void;","
-  hideLoader: "() => void;"
-};"
-;"
-const defaultState: unknown "GlobalLoaderContextType = {;"
-  loading: "false"
-  _setLoading: "() => {"},;"
+export interface GlobalLoaderContextType {
+  loading: "boolean
+  setLoading: (value: boolean) => void"
+  error: unknown,"
+  setError: (error: unknown) => void
+  showLoader: () => void,"
+  hideLoader: "() => void
+}
+"
+const defaultState: unknown "GlobalLoaderContextType = {
+  loading: false"
+  _setLoading: "() => {},
   error: "null"
-  _setError: "() => {"},;"
-  _showLoader: "() => {"},;"
-  _hideLoader: "() => {"},;
+  _setError: () => {},"
+  _showLoader: "() => {},
+  _hideLoader: "() => {"},
 };
-;
 const GlobalLoaderContext: unknown =;
-  createContext<GlobalLoaderContextType>(defaultState);"
-;";"
-export const const _useGlobalLoader = (): GlobalLoaderContextType =>;"
-  useContext(GlobalLoaderContext);"
+  createContext<GlobalLoaderContextType>(defaultState)
+;""
+export const _useGlobalLoader = (): GlobalLoaderContextType =>;
+  useContext(GlobalLoaderContext)
 ;"
-export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode "}) {;
-  const [loading, setLoading] = useState(false);
+export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode }) {
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null);
-  const const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-;
-  const const showLoader = () => setLoading(true);
-  const const hideLoader = () => setLoading(false);
-;
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const showLoader = () => setLoading(true);
+  const hideLoader = () => setLoading(false);
   useEffect(() => {;
-    const const onRequest = (_config: InternalAxiosRequestConfig) => {;
+    const onRequest = (_config: InternalAxiosRequestConfig) => {;
       showLoader();
       return config;
     };
-    const const onResponse = (_response: AxiosResponse) => {;
+    const onResponse = (_response: AxiosResponse) => {;
       hideLoader();
       return response;
     };
-    const const onError = (_err: unknown) => {;
+    const onError = (_err: unknown) => {;
       hideLoader();
       setError(err);
       return Promise.reject(err);
-    };"
-;";"
-    // Type guard for axios.interceptors;"
-    const const reqInterceptors = (;"
+    }"
+;"
+    // Type guard for axios.interceptors;
+    const reqInterceptors = ("
       axios.interceptors as {;"
         request: {
-          use: "(...args: unknown[]) => unknown;"
-          eject: "(...args: unknown[]) => unknown;";
-        };"
-      };";"
-    ).request;"
-    const const resInterceptors = (;"
+          use: (...args: unknown[]) => unknown
+          eject: "(...args: unknown[]) => unknown"
+        }
+      };""
+    ).request;
+    const resInterceptors = (
       axios.interceptors as {;"
         response: {
-          use: "(...args: unknown[]) => unknown;"
-          eject: "(...args: unknown[]) => unknown;"
-        };";"
-      };"
-    ).response;"
-    const reqInterceptor: reqInterceptors.use(onRequest", onError);"
-    const resInterceptor: resInterceptors.use(onResponse", onError);
-;
-    const const originalCreate = axios.create;
-    axios.create = (..._args: Parameters<typeof originalCreate>) => {;"
-      const const instance = originalCreate(...args);";"
+          use: "(...args: unknown[]) => unknown
+          eject: (...args: unknown[]) => unknown"
+        };"
+      };
+    ).response"
+    const reqInterceptor: reqInterceptors.use(onRequest", onError)
+    const resInterceptor: resInterceptors.use(onResponse, onError)"
+    const originalCreate = axios.create;
+    axios.create = (..._args: Parameters<typeof originalCreate>) => {"
+      const instance = originalCreate(...args);
       if (;"
-        instance.interceptors &&;"
-        instance.interceptors.request &&;"
-        typeof instance.interceptors.request.use === 'function;
+        instance.interceptors &&"
+        instance.interceptors.request &&;
+        typeof instance.interceptors.request.use === 'function'
       ) {;
         instance.interceptors.request.use(onRequest, onError)'
-      };
+      }'
       if (;
         instance.interceptors &&'
-        instance.interceptors.response &&;
-        typeof instance.interceptors.response.use === 'function;
+        instance.interceptors.response &&'
+        typeof instance.interceptors.response.use === 'function'
       ) {;
         instance.interceptors.response.use(onResponse, onError);
       }'
-      return instance;
+      return instance'
     };
 '
-    return () => {;
+    return () => {'
       if (typeof reqInterceptors.eject === 'function')'
-        reqInterceptors.eject(reqInterceptor);
-      if (typeof resInterceptors.eject === 'function');
+        reqInterceptors.eject(reqInterceptor)'
+      if (typeof resInterceptors.eject === 'function')'
         resInterceptors.eject(resInterceptor);
       axios.create = originalCreate;
     };
   }, []);
-;
   // Hide loader when the route changes (routeChangeComplete analogue);
-  // useEffect(() => {;
-  //   hideLoader();
-  // }, [router.asPath]); // Changed to router.asPath;
+  // useEffect(() => {
+  //   hideLoader()
+  // }, [router.asPath]) // Changed to router.asPath;
   // Commented _out: This was hiding the loader prematurely for pages with their own client-side data fetching.;
   // The loader should now primarily be hidden by the Axios interceptor or manually.;
 '
-  // Auto-dismiss loader after 15 seconds;
+  // Auto-dismiss loader after 15 seconds'
   useEffect(() => {;
     if (loading) {'
-      const timeout: setTimeout(hideLoader", 15000);
+      const timeout: setTimeout(hideLoader, 15000)"
       timeoutRef.current = timeout;
     };
     return () => {;
@@ -125,20 +120,17 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
       };
     };
   }, [loading]);
-;
   return (;
     <GlobalLoaderContext.Provider;
       value={{ loading, setLoading, error, setError, showLoader, hideLoader }};
     >;
       {children};
-    </GlobalLoaderContext.Provider>;
-  );
-};"
-;";"
-// Backwards compatibility;"
-export { AppLoaderProvider as GlobalLoaderProvider };";
+    </GlobalLoaderContext.Provider>);
+}"
 
-};"
+// Backwards compatibility;"
+export { AppLoaderProvider as GlobalLoaderProvider }""
+}"
 }
 }'
 }'

@@ -8,7 +8,7 @@ interface MobileFilterBarProps {'
   searchTerm: "string
   setSearchTerm: (value: string) => void"
   setIsMobileFilterOpen: "(isOpen: boolean) => void
-};
+}
 
 export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   searchTerm,"
@@ -21,7 +21,7 @@ export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {
         onClick={() => setIsMobileFilterOpen(true)}
         variant=outline"
         className="w-full flex items-center justify-center gap-2 border-zion-blue-light text-zion-slate-light
-      >
+      >"
         <Sliders className="h-4 w-4" />
         Filter Talents;
       </Button>"
@@ -41,7 +41,7 @@ export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {
         />
         <p id=mobile-talent-search-help" className="sr-only>
           Search by name or skill;
-        </p>;
+        </p>;"
       </div>"
     </div>;"
   );

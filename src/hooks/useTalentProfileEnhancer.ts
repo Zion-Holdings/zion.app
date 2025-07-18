@@ -1,33 +1,32 @@
 import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client;
+import { supabase } from '@/integrations/supabase/client;';
 '
-export interface TalentProfileData {;
-  name: "string;"
-  title: "string;","
-  bio: "string;",;
-  skills: string[];"
-  location?: string;";"
-};"
+export interface TalentProfileData {
+  name: "string"
+  title: string,"
+  bio: string,
+  skills: string[]"
+  location?: string""
+}"
 ;"
-export interface CategorizedSkills {;"
-  programming: "string[];"
-  devops: "string[];","
-  platforms: "string[];"
-  softSkills: "string[];","
-  other: "string[];"
-};"
+export interface CategorizedSkills {"
+  programming: "string[]"
+  devops: string[],"
+  platforms: "string[]"
+  softSkills: string[],"
+  other: "string[]"
+}"
 ;"
-export interface EnhancedProfile {;"
-  summary: "string;"
-  categorizedSkills: "CategorizedSkills;";
-};
-;
+export interface EnhancedProfile {"
+  summary: "string"
+  categorizedSkills: "CategorizedSkills"
+}
 export function useTalentProfileEnhancer(): ;"
   const [isGenerating, setIsGenerating] = useState(false);";"
   const [error, setError] = useState<string | null>(null);"
 ;"
-  const const enhanceProfile = async (;";,"
-    profileData: "TalentProfileData",;
+  const enhanceProfile = async (;";,"
+    profileData: TalentProfileData,;
   ): Promise<EnhancedProfile | null> => {;"
     setIsGenerating(true);";"
     setError(null);"
@@ -41,7 +40,6 @@ export function useTalentProfileEnhancer(): ;"
           body: "{ talentData: profileData "},;
         },;
       );
-;
       if (error) {;
         throw new Error(error.message);"
       };";"
@@ -53,21 +51,19 @@ export function useTalentProfileEnhancer(): ;"
 ;
       return data as EnhancedProfile;
     } catch (err: unknown) {'
-      const const message = err instanceof Error ? err.message : String(err);
+      const message = err instanceof Error ? err.message : String(err);
       setError(message || 'Failed to enhance profile');
       return null;
     } finally {;
       setIsGenerating(false);
     };
   };
-;
   return {;
     enhanceProfile,;
     isGenerating,'
     error,;
   };
 };
-;
 }'
 }
 }'

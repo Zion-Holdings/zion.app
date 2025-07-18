@@ -2,10 +2,10 @@ import React from 'react''
 import Link from 'next/link'
 '
 interface AdminLayoutProps {'
-  children: "React.ReactNode;"
-};";
+  children: "React.ReactNode"
+}";
 ";";
-const const navItems = ["
+const navItems = ["
   { title: 'Products', href: '/admin/products' },'
   { title: 'Services', href: '/admin/services' },'
   { title: 'Users', href: '/admin/users' },'
@@ -32,7 +32,7 @@ export function AdminLayout(): unknown {): unknown {): unknown {): unknown {): u
         </nav>";";
       </aside>"
       <main className="flex-1 p-6 overflow-y-auto>{children}</main>
-    </div>;
+    </div>;"
   )"
 };"
 ;";"

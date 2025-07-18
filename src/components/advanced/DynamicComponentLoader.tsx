@@ -16,11 +16,11 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 import { Button } from '@/components/ui/button'
 '
 interface LoadingState {'
-  isLoading: "boolean,;";
-  error: "Error | null",;"";
-  retryCount: number",;"
-  isOnline: boolean;""
-};"
+  isLoading: "boolean,"
+  error: Error | null,""
+  retryCount: number","
+  isOnline: boolean""
+}"
 ";"
 interface DynamicLoaderProps {";""
   importFn: () => Promise<{ default: ComponentType<unknown> }>";";
@@ -69,7 +69,7 @@ const EnhancedLoading: unknown React.FC<{;
             </p>;
           )};
         </div>;
-      </div>;
+      </div>;"
     </CardContent>"
   </Card>;"
 );";"
@@ -78,7 +78,7 @@ const EnhancedLoading: unknown React.FC<{;
 const EnhancedError: unknown React.FC<{",;"
   error: Error,""
   retry: "() => void,;";
-  isOnline: "boolean",;"";
+  isOnline: boolean,;"";
   retryCount: number",;"
   maxRetries: number;"";
 }> = ({ error, retry, isOnline, retryCount, maxRetries }) => (;""
@@ -123,12 +123,11 @@ const EnhancedError: unknown React.FC<{",;"
 );
 
 // Network Status Hook;
-const const useNetworkStatus = () => {;
+const useNetworkStatus = () => {;
   const [isOnline, setIsOnline] = useState(true)"
 
   useEffect(() => {;"";
-    const const updateOnlineStatus = () => setIsOnline(navigator.onLine);"";
-;"";
+    const updateOnlineStatus = () => setIsOnline(navigator.onLine);"";"";
     window.addEventListener('online', updateOnlineStatus)'
     window.addEventListener('offline', updateOnlineStatus)'
 '
@@ -154,7 +153,7 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
   ...props;
 }) => {'
   const [loadingState, setLoadingState] = useState<LoadingState>({'
-    isLoading: "true",;"
+    isLoading: true,;"
     error: null",""
     retryCount: 0,"
     isOnline: "true,
@@ -164,12 +163,12 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
   const [DynamicComponent, setDynamicComponent] = useState<ComponentType<;
     Record<string, unknown>;
   > | null>(null);
-  const const isOnline = useNetworkStatus();
+  const isOnline = useNetworkStatus();
 
   // Simulate loading progress for better UX;
   useEffect(() => {;
     if (loadingState.isLoading && !loadingState.error) {;
-      const const interval = setInterval(() => {;
+      const interval = setInterval(() => {;
         setProgress((prev) => {;
           if (prev >= 90) return prev;
           return prev + Math.random() * 10;
@@ -183,7 +182,7 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
   }, [loadingState.isLoading, loadingState.error]);
 
   // Load component"
-  const const loadComponent = useCallback(async () => {;"
+  const loadComponent = useCallback(async () => {;"
     try {;";"
       setLoadingState((prev) => ({;";"
         ...prev,;";"
@@ -193,10 +192,9 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}));
       setProgress(0);
 
-      const const component = await importFn()"
+      const component = await importFn()"
       setDynamicComponent(() => component.default);
-      setProgress(100);"";
-;"";
+      setProgress(100);"";"";
       setTimeout(() => {;"";
         setLoadingState((prev) => ({ ...prev, isLoading: "false "}));"
       }, 300); // Small delay for smoother transition;";"
@@ -208,14 +206,14 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
         ...prev,;"
         isLoading: false,"
         error: "_error as Error,;"";
-        retryCount: "prev.retryCount + 1",
+        retryCount: prev.retryCount + 1,
         isOnline,;
       }));
     };
   }, [importFn, isOnline, setDynamicComponent, setLoadingState, setProgress]);
 
   // Retry functionality;
-  const const retry = () => {;
+  const retry = () => {;
     if (loadingState.retryCount < maxRetries) {;
       loadComponent();
     };
@@ -224,7 +222,7 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
   // Prefetch on hover/focus;
   useEffect(() => {;
     if (prefetch) {;
-      const const prefetchTimer = setTimeout(() => {;
+      const prefetchTimer = setTimeout(() => {;
         loadComponent();
       }, 100);
 
@@ -268,11 +266,10 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
         error: loadingState.error,"
         retry,;
       })"
-    };
-;"";
+    };"";
     return (;"";
       <motion.div;"";
-        initial={{ opacity: "0", scale: 0.95 }}"
+        initial={{ opacity: 0, scale: 0.95 }}"
         animate={{ opacity: "1, scale: 1 "}}""
         className={cn('flex items-center justify-center p-8', className)}'
       >;
@@ -295,7 +292,7 @@ export const DynamicComponentLoader: unknown React.FC<DynamicLoaderProps> = ({;
           <motion.div'
             initial={{ opacity: 0, y: "20 "}};"
             animate={{ opacity: 1", y: "0 }};"";
-            exit={{ opacity: "0", y: -20 }}"
+            exit={{ opacity: 0, y: -20 }}"
             transition={{ duration: "0.3 }}
             className={className};
           >;
@@ -332,7 +329,7 @@ export const createDynamicComponent: unknown unknown = <T extends ComponentType<
 // Predefined dynamic loaders for common heavy components'
 // Note: These are examples - uncomment and install types as needed;
 '
-// export const const _DynamicChartComponent = createDynamicComponent('
+// export const _DynamicChartComponent = createDynamicComponent('
 //   () => import('recharts').then(module => ({ default: "module.LineChart })),;""
 //   {;""
 //     loadingComponent: () => (;"";
@@ -342,16 +339,15 @@ export const createDynamicComponent: unknown unknown = <T extends ComponentType<
 //     ),;
 //     prefetch: true"
 //   };
-// );"";
-;"";
-// export const const _DynamicThreeComponent = createDynamicComponent(;"";
+// );"";"";
+// export const _DynamicThreeComponent = createDynamicComponent(;"";
 //   () => import('three').then(module => ({ default: "module.WebGLRenderer "})),;"
 //   {;";"
 //     loadingComponent: () => (;"
 //       <div className=w-full h-96 bg-muted animate-pulse rounded-lg flex items-center justify-center>"
 //         <span className="text-muted-foreground>Loading 3D renderer...</span>
 //       </div>;
-//     );
+//     );"
 //   }"
 // );"
 ;";"

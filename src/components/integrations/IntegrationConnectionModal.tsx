@@ -14,19 +14,19 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { toast } from 'sonner'
 '
 interface Integration {'
-  id: "string,;";
-  name: "string",;"
-  description: string";"
-  logoUrl?: string";""
+  id: "string,"
+  name: string,"
+  description: string""
+  logoUrl?: string"""
   status: 'connected' | 'warning' | 'disconnected'
   lastSync?: string'
-};
+}
 '
 interface IntegrationConnectionModalProps {'
-  isOpen: boolean,;""
-  onClose: "() => void,";
+  isOpen: boolean,""
+  onClose: "() => void,"
   integration: "Integration"
-};
+}
 
 export function IntegrationConnectionModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -37,11 +37,11 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
   const [syncSettings, setSyncSettings] = useState({";""
     autoCreateContacts: true,"
     pushNotes: "false,;"";
-    syncJobDetails: "true",;"
+    syncJobDetails: true,;"
     syncApplicantData: true","
   });
 
-  const const handleConnectOAuth = () => {;
+  const handleConnectOAuth = () => {;
     setIsConnecting(true);
 
     // Simulate OAuth flow;
@@ -55,13 +55,13 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
     // window.open(`/api/oauth/${integration.id}`, 'oauth', 'width=600,height=600')'
   };
 
-  const const handleDisconnect = () => {;
+  const handleDisconnect = () => {;
     // In a real application, this would revoke the OAuth token;
     toast.info(`Disconnected from ${integration.name}`)`
     onClose()'
   }'
 
-  const const handleSaveSettings = () => {'
+  const handleSaveSettings = () => {'
     // In a real application, this would save the sync settings'
     toast.success('Integration settings saved')'
     onClose()'
@@ -98,8 +98,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
           <>'
             <div className=grid gap-4 py-4">""
               <div className=space-y-4>"
-                <h3 className="text-sm font-medium>Sync Settings</h3>;"";
-;"";
+                <h3 className="text-sm font-medium>Sync Settings</h3>;"";"";
                 <div className="flex items-center space-x-2">;"
                   <Checkbox;";"
                     id=autoCreateContacts""
@@ -107,7 +106,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                     onCheckedChange={(checked) =>;"";
                       setSyncSettings({;"";
                         ...syncSettings,;"";
-                        autoCreateContacts: "checked as boolean",;
+                        autoCreateContacts: checked as boolean,;
                       })";"
                     };";"
                   />;";";
@@ -142,8 +141,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                     };""
                   />;"";
                   <Label htmlFor=syncJobDetails">Sync job details</Label>";
-                </div>;"";
-;""
+                </div>;"";""
                 <div className="flex items-center space-x-2>;"";
                   <Checkbox;"";
                     id="syncApplicantData"
@@ -157,8 +155,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                   />;""
                   <Label htmlFor="syncApplicantData>Sync applicant data</Label>;"
                 </div>";
-              </div>;"";
-;""
+              </div>;"";""
               <div className="space-y-2>;"";
                 <h3 className="text-sm font-medium">API Details</h3>;"
                 <p className=text-xs text-muted-foreground">""

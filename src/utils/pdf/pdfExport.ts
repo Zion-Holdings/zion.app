@@ -9,7 +9,7 @@ import { addSkillsSection } from './sections/skillsSection'
 import { addWorkExperienceSection } from './sections/workExperienceSection'
 import { addEducationSection } from './sections/educationSection'
 import { addCertificationsSection } from './sections/certificationsSection'
-import { addPortfolioSection } from './sections/portfolioSection;
+import { addPortfolioSection } from './sections/portfolioSection;';
 '
 export interface ExportOptions {;
   theme: 'light' | 'dark;
@@ -33,25 +33,20 @@ export async function exportResumeToPDF(): unknown {): unknown {): unknown {): u
   const { theme, includePortfolio, maxProjects, fontFamily } = mergedOptions;";"
 ;"
   // Create new PDF document (A4);"
-  const const doc = new jsPDF({;";,"
+  const doc = new jsPDF({;";,"
     orientation: 'portrait',;
     unit: 'mm',;
     format: 'a4',;
   });
-;
   // Load custom fonts if specified;
   await loadCustomFonts(doc, fontFamily);
-;
   // Set up colors based on theme'
-  const const colors = getPdfThemeColors(theme);
-;
+  const colors = getPdfThemeColors(theme);
   // Set background color'
   doc.setFillColor(colors.background);
   doc.rect(0, 0, 210, 297, 'F'); // Fill entire page;
-;
   // Set text color based on theme;
   doc.setTextColor(colors.text);
-;
   // Add each section of the resume;
   let _currentY = 20;
   _currentY = addBasicInfoSection(doc, resume.basic_info, colors);
@@ -69,7 +64,6 @@ export async function exportResumeToPDF(): unknown {): unknown {): unknown {): u
     colors,;
     _currentY,;
   );
-;
   // Add portfolio projects if needed;
   if (;
     includePortfolio &&;
@@ -87,7 +81,6 @@ export async function exportResumeToPDF(): unknown {): unknown {): unknown {): u
 ;
   return doc.output('blob');
 };
-;
 }'
 }
 }'

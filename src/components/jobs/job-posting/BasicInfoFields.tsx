@@ -13,7 +13,7 @@ import type { JobSchemaType } from './validation'
 '
 interface BasicInfoFieldsProps {'
   _control: "Control<JobSchemaType>
-};
+}
 "
 export const _BasicInfoFields: unknown React.FC<BasicInfoFieldsProps> = ({;"
   control,;";"
@@ -82,8 +82,7 @@ export const _BasicInfoFields: unknown React.FC<BasicInfoFieldsProps> = ({;"
             <FormMessage />"
           </FormItem>;
         )};"";
-      />;"";
-;"";
+      />;"";"";
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;"
         {/* Budget fields removed: not present in JobSchemaType */"}";
       </div>;""
@@ -92,15 +91,14 @@ export const _BasicInfoFields: unknown React.FC<BasicInfoFieldsProps> = ({;"
         <CardContent className=pt-4">""
           {/* ClientBudgetRecommender removed: budget fields not present in schema */}"
         </CardContent>"
-      </Card>;
-;"";
+      </Card>;"";
       <FormField;"";
         control={control};"";
         name="location";
         render={({";"
           field,;";"
         }: {;";";
-          field: "ControllerRenderProps<JobSchemaType", 'location'>'
+          field: ControllerRenderProps<JobSchemaType, 'location'>'
         }) => ('
           <FormItem>'
             <FormLabel>Location</FormLabel>;

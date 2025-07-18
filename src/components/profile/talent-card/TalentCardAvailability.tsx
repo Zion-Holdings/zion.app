@@ -3,13 +3,13 @@ import { Clock } from '@/components/ui/icons'
 '
 interface TalentCardAvailabilityProps {'
   availabilityType: "string
-};
+}
 
 export function TalentCardAvailability(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   availabilityType,"
 }: TalentCardAvailabilityProps) {;"
   // Format availability status;
-  const const getAvailabilityColor = (_status: string) => {"
+  const getAvailabilityColor = (_status: string) => {"
     switch (status) {;"
       case 'full-time':'
         return 'bg-green-500/20 text-green-400'
@@ -22,7 +22,7 @@ export function TalentCardAvailability(): unknown {): unknown {): unknown {): un
   }'
 '
   // Format availability label;
-  const const getAvailabilityLabel = (status: string) => {'
+  const getAvailabilityLabel = (status: string) => {'
     switch (status) {'
       case 'full-time':'
         return 'Full-time'

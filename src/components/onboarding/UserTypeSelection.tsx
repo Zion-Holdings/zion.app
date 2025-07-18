@@ -7,12 +7,12 @@ interface UserTypeOption {'
   name: "string,
   description: "string"
   icon: React.ElementType
-};"
+}"
 "
-interface UserTypeSelectionProps {;
-  onSelect: (userType: 'serviceProvider' | 'talent' | 'client') => void;,'
+interface UserTypeSelectionProps {
+  onSelect: (userType: 'serviceProvider' | 'talent' | 'client') => void,'
   selectedType: string | null""
-};
+}
 
 export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onSelect,
@@ -23,7 +23,7 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
       id: 'serviceProvider','
       name: 'Service Provider','
       description: 'I want to offer services on the platform','
-      icon: "Briefcase",
+      icon: Briefcase,
     },;
     {"
       id: 'talent','
@@ -41,7 +41,7 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
 "
   return (;"
     <div className=space-y-6>"
-      <div className="text-center mb-6>
+      <div className="text-center mb-6>"
         <h3 className="text-2xl font-bold text-white">Choose your role</h3>
         <p className=text-zion-slate-light mt-2">"
           This helps us personalize your experience;
@@ -50,18 +50,17 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
 
       <div className=grid gap-4 md:grid-cols-3">"
         {userTypes.map((type) => {;
-          const const Icon = type.icon;
-          const const isSelected = selectedType === type.id;
+          const Icon = type.icon;
+          const isSelected = selectedType === type.id;
 
           return (;"
             <Button;"
               key={type.id}
               onClick={() => onSelect(type.id)};
               variant="outline"
-              className={`h-auto flex flex-col items-center justify-center p-6 space-y-3 border ${
-                isSelected;
+              className={`h-auto flex flex-col items-center justify-center p-6 space-y-3 border ${isSelected;
                   ? 'border-zion-purple bg-zion-purple/10 text-zion-purple'
-                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white"
+                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white"}
               }`}`
             >;
               <div

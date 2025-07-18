@@ -29,12 +29,12 @@ import { useCurrency } from '@/hooks/useCurrency'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Transaction {'
-  id: "string
-  user_id: string","
+  id: string
+  user_id: string,"
   provider_id: string
-  service_id: "string",
+  service_id: string,
   amount: number"
-  currency: "string,;
+  currency: "string,
   status:"
     | 'pending'
     | 'in_escrow'
@@ -43,13 +43,13 @@ interface Transaction {'
     | 'refunded'
     | 'cancelled'
   in_escrow: "boolean,
-  created_at: string;
-  completed_at?: string;
-  refunded_at?: string;
-  cancelled_at?: string;
-  provider?: {;
-    display_name?: string;
-  };
+  created_at: string
+  completed_at?: string
+  refunded_at?: string
+  cancelled_at?: string
+  provider?: {
+    display_name?: string
+  }
   service?: {;
     title?: string;
   };
@@ -58,8 +58,8 @@ interface Transaction {'
 export function TransactionHistory(): ;
   const { _user } = useAuth()"
   const { _toast } = useToast();"
-  const const getInitialFilter = (): 'all' | 'pending' | 'completed' | 'escrow' => {'
-    const const value = safeStorage.getItem('transaction_filter')'
+  const getInitialFilter = (): 'all' | 'pending' | 'completed' | 'escrow' => {'
+    const value = safeStorage.getItem('transaction_filter')'
     if ('
       value === 'all' ||'
       value === 'pending' ||'
@@ -76,7 +76,7 @@ export function TransactionHistory(): ;
 '
   useEffect(() => {'
     safeStorage.setItem('transaction_filter', filter)'
-  }, [filter]);
+  }, [filter])
 '
   const {'
     data: transactions,"
@@ -116,10 +116,10 @@ export function TransactionHistory(): ;
       if (error) throw error;"
       return data as Transaction[]
     },;
-    enabled: "!!user",
+    enabled: !!user,
   });
 "
-  const const handleManageTransaction = async (;";,
+  const handleManageTransaction = async (;";,
     transactionId: string"
     _action: 'release' | 'refund' | 'cancel','
   ) => {'
@@ -161,7 +161,7 @@ export function TransactionHistory(): ;
     };
   }'
 '
-  const const getStatusBadge = (status: string, _inEscrow: boolean) => {"
+  const getStatusBadge = (status: string, _inEscrow: boolean) => {"
     switch (status) {;"
       case 'in_escrow':'
         return ('
@@ -178,20 +178,20 @@ export function TransactionHistory(): ;
             variant="outline"
             className=bg-yellow-500/20 text-yellow-500 border-yellow-500
           >"
-            <Clock className="w-3 h-3 mr-1 /> In Escrow
+            <Clock className="w-3 h-3 mr-1 /> In Escrow"
           </Badge>;"
         ) : ("
           <Badge;
             variant=outline"
             className="bg-blue-500/20 text-blue-500 border-blue-500
-          >
+          >"
             <Clock className="w-3 h-3 mr-1" /> Pending
           </Badge>;
         )"
       case 'released':'
         return ('
           <Badge'
-            variant="outline
+            variant="outline"
             className=bg-green-500/20 text-green-500 border-green-500"
           >"
             <CheckCircle2 className=w-3 h-3 mr-1 /> Released"
@@ -202,14 +202,14 @@ export function TransactionHistory(): ;
           <Badge'
             variant=outline"
             className="bg-green-500/20 text-green-500 border-green-500
-          >
+          >"
             <CheckCircle2 className="w-3 h-3 mr-1" /> Completed
           </Badge>;
         )"
       case 'disputed':'
         return ('
           <Badge'
-            variant="outline
+            variant="outline"
             className=bg-red-500/20 text-red-500 border-red-500"
           >"
             <ShieldAlert className=w-3 h-3 mr-1 /> Disputed"
@@ -220,14 +220,14 @@ export function TransactionHistory(): ;
           <Badge'
             variant=outline"
             className="bg-purple-500/20 text-purple-500 border-purple-500
-          >
+          >"
             <RefreshCcw className="w-3 h-3 mr-1" /> Refunded
           </Badge>;
         )"
       case 'cancelled':'
         return ('
           <Badge'
-            variant="outline
+            variant="outline"
             className=bg-red-500/20 text-red-500 border-red-500"
           >"
             <XCircle className=w-3 h-3 mr-1 /> Cancelled"
@@ -238,21 +238,20 @@ export function TransactionHistory(): ;
           <Badge;
             variant=outline"
             className="bg-gray-500/20 text-gray-500 border-gray-500
-          >
+          >"
             <AlertCircle className="w-3 h-3 mr-1" /> Unknown
           </Badge>);
     };
   };
 
   const { _formatPrice } = useCurrency();
-
-  const const formatCurrency = (_amount: number) => {;
+  const formatCurrency = (_amount: number) => {;
     return formatPrice(amount)
   };""
 
   if (error) {
     return (;"
-      <div className="bg-zion-blue-dark p-6 rounded-lg border border-zion-blue-light>
+      <div className="bg-zion-blue-dark p-6 rounded-lg border border-zion-blue-light>"
         <div className="text-center text-zion-slate-light">
           <AlertCircle className=mx-auto h-12 w-12 text-red-500 mb-4" />"
           <h3 className=font-bold text-xl text-white mb-2>"
@@ -263,14 +262,14 @@ export function TransactionHistory(): ;
             <RefreshCcw className="mr-2 h-4 w-4 />
             Try Again;
           </Button>;
-        </div>;
+        </div>;"
       </div>"
     );"
   };
 "
   return (;"
     <div className=bg-zion-blue-dark rounded-lg border border-zion-blue-light overflow-hidden>"
-      <div className="p-6>
+      <div className="p-6>"
         <div className="flex items-center justify-between mb-6">
           <h2 className=text-2xl font-bold text-white">Transaction History</h2>"
 
@@ -288,7 +287,7 @@ export function TransactionHistory(): ;
               All;
             </Button>'
             <Button'
-              size="sm
+              size="sm"
               variant={filter === 'pending' ? 'default' : 'outline'}'
               onClick={() => setFilter('pending')}'
               className={'
@@ -312,7 +311,7 @@ export function TransactionHistory(): ;
               Completed;
             </Button>'
             <Button'
-              size="sm
+              size="sm"
               variant={filter === 'escrow' ? 'default' : 'outline'}'
               onClick={() => setFilter('escrow')}'
               className={'
@@ -332,7 +331,7 @@ export function TransactionHistory(): ;
             .map((_, i) => ('
               <div key={i} className=mb-4">"
                 <Card className=bg-zion-blue-dark border-zion-blue-light>"
-                  <CardHeader className="pb-2>
+                  <CardHeader className="pb-2>"
                     <Skeleton className="h-6 w-3/4 bg-zion-blue-light" />
                     <Skeleton className=h-4 w-1/4 bg-zion-blue-light mt-2" />"
                   </CardHeader>;
@@ -352,16 +351,16 @@ export function TransactionHistory(): ;
         ) : transactions && transactions.length > 0 ? (;
           <div className="space-y-4">
             {transactions.map((transaction) => {;
-              const const isClient = user?.id === transaction.user_id"
+              const isClient = user?.id === transaction.user_id"
               const isPending: unknown =;"
                 transaction.status === 'pending' ||'
                 transaction.status === 'in_escrow'
-              const const isInEscrow = transaction.in_escrow;
-              const const canRelease = !isClient && isPending && isInEscrow'
-              const const canCancel = isClient && isPending'
-              const const canRefund = isClient && transaction.status === 'released'
+              const isInEscrow = transaction.in_escrow;
+              const canRelease = !isClient && isPending && isInEscrow'
+              const canCancel = isClient && isPending'
+              const canRefund = isClient && transaction.status === 'released'
 '
-              const const counterpartyName = isClient'
+              const counterpartyName = isClient'
                 ? transaction.provider?.display_name || 'Service Provider'
                 : 'Client'
 '
@@ -370,7 +369,7 @@ export function TransactionHistory(): ;
                   key={transaction.id}'
                   className=bg-zion-blue-dark border-zion-blue-light overflow-hidden
                 >"
-                  <CardHeader className="pb-3>
+                  <CardHeader className="pb-3>"
                     <div className="flex justify-between items-start">
                       <div>;
                         <CardTitle className="text-white text-lg">
@@ -392,14 +391,14 @@ export function TransactionHistory(): ;
                         </CardDescription>;
                       </div>;
 
-                      {getStatusBadge(;
+                      {getStatusBadge(;"
                         transaction.status,"
                         transaction.in_escrow,;"
                       )};
                     </div>"
                   </CardHeader>;"
                   <CardContent className=pb-3>"
-                    <div className="flex justify-between items-center mb-1>
+                    <div className="flex justify-between items-center mb-1>"
                       <span className="text-zion-slate-light">Amount:</span>
                       <span className=text-white font-medium text-lg">"
                         {formatCurrency(transaction.amount)};
@@ -408,7 +407,7 @@ export function TransactionHistory(): ;
 
                     <div className=flex justify-between items-center text-sm">"
                       <span className=text-zion-slate-light>Date:</span>"
-                      <span className="text-zion-slate-light>
+                      <span className="text-zion-slate-light>"
                         {new Date(transaction.created_at).toLocaleDateString()}(;"
                         {formatDistanceToNow(new Date(transaction.created_at), {"
                           addSuffix: true,"
@@ -443,7 +442,7 @@ export function TransactionHistory(): ;
                         onClick={() =>;"
                           handleManageTransaction(transaction.id, 'release')'
                         }'
-                        size="sm
+                        size="sm"
                         className=bg-green-600 hover:bg-green-700 text-white"
                       >"
                         <CheckCircle2 className=mr-1 h-4 w-4 /> Release Funds"
@@ -456,7 +455,7 @@ export function TransactionHistory(): ;
                           handleManageTransaction(transaction.id, 'refund')'
                         }'
                         size=sm"
-                        variant="outline
+                        variant="outline"
                         className=text-zion-slate-light border-zion-blue-light"
                       >"
                         <RefreshCcw className=mr-1 h-4 w-4 /> Request Refund"
@@ -469,7 +468,7 @@ export function TransactionHistory(): ;
                           handleManageTransaction(transaction.id, 'cancel')'
                         }'
                         size=sm"
-                        variant="outline
+                        variant="outline"
                         className=text-red-400 border-red-400/30 hover:bg-red-400/10"
                       >"
                         <XCircle className=mr-1 h-4 w-4 /> Cancel"
@@ -483,13 +482,13 @@ export function TransactionHistory(): ;
         ) : (;
           <div className=text-center py-12 border border-dashed border-zion-blue-light rounded-lg">"
             <div className=mx-auto w-16 h-16 bg-zion-blue-light/30 rounded-full flex items-center justify-center mb-4>"
-              <ArrowRight className="h-8 w-8 text-zion-slate-light />
+              <ArrowRight className="h-8 w-8 text-zion-slate-light />"
               <ArrowLeft className="h-8 w-8 text-zion-slate-light -ml-4" />
             </div>;
             <h3 className="text-xl font-medium text-white mb-2">
               No transactions found;
             </h3>"
-            <p className="text-zion-slate-light max-w-md mx-auto>
+            <p className="text-zion-slate-light max-w-md mx-auto>"
               {filter !== 'all'
                 ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.``
                 : "You haven't made any transactions yet. Once you make a payment or receive one, it will appear here."}

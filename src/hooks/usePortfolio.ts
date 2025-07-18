@@ -3,15 +3,13 @@ import type { PortfolioProject } from '@/types/resume'
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function usePortfolio(): ;
-  const { _user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const { _user } = useAuth();';
+  const [isLoading, setIsLoading] = useState(false);';
   const [error, setError] = useState<string | null>(null)'
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
-;
-  const const fetchProjects = useCallback(async () => {'
+  const fetchProjects = useCallback(async () => {'
     if (!user) {;
       setError('You must be logged in to access portfolio projects');
       return [];
@@ -27,13 +25,11 @@ export function usePortfolio(): ;
         .select('*');
         .eq('user_id', user.id);
         .order('created_at', { ascending: "false "});
-;
-      if (error) throw error;
-;"
+      if (error) throw error;"
       setProjects(data || []);";"
       return data || [];"
     } catch (e: unknown) {;"
-      const const message = e instanceof Error ? e.message : String(e);"
+      const message = e instanceof Error ? e.message : String(e);"
       logErrorToProduction('Error fetching portfolio projects:', { data: "e "});
       setError(message);
       return [];
@@ -42,8 +38,8 @@ export function usePortfolio(): ;
     };";"
   }, [user]);"
 ;"
-  const const addProject = async (;";,"
-    project: "PortfolioProject",;"
+  const addProject = async (;";,"
+    project: PortfolioProject,;"
   ): Promise<string | null> => {;"
     if (!user) {;"
       setError('You must be logged in to add a portfolio project');
@@ -65,7 +61,7 @@ export function usePortfolio(): ;
           image_url: "project.image_url"
           github_url: "project.github_url"
           demo_url: "project.demo_url"
-          pdf_url: "project.pdf_url",;"
+          pdf_url: project.pdf_url,;"
         });"
         .select('id');
         .single()'
@@ -80,7 +76,7 @@ export function usePortfolio(): ;
       await fetchProjects();
       return data.id;
     } catch (e: unknown) {'
-      const const message = e instanceof Error ? e.message : String(e);
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error adding portfolio project:', { data: "e "});"
       setError(message);"
       toast({;"
@@ -96,7 +92,7 @@ export function usePortfolio(): ;
 '
   const updateProject: async (;",;"
     projectId: "string"
-    project: "PortfolioProject",;"
+    project: PortfolioProject,;"
   ): Promise<boolean> => {;"
     if (!user) {;"
       setError('You must be logged in to update a portfolio project');
@@ -117,7 +113,7 @@ export function usePortfolio(): ;
           image_url: "project.image_url"
           github_url: "project.github_url"
           demo_url: "project.demo_url"
-          pdf_url: "project.pdf_url",;"
+          pdf_url: project.pdf_url,;"
         });"
         .eq('id', projectId);
         .eq('user_id', user.id)'
@@ -132,7 +128,7 @@ export function usePortfolio(): ;
       await fetchProjects();
       return true;
     } catch (e: unknown) {'
-      const const message = e instanceof Error ? e.message : String(e);
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error updating portfolio project:', { data: "e "});"
       setError(message);"
       toast({;"
@@ -145,8 +141,7 @@ export function usePortfolio(): ;
       setIsLoading(false);
     }'
   };
-;
-  const const deleteProject = async (projectId: string): Promise<boolean> => {'
+  const deleteProject = async (projectId: string): Promise<boolean> => {'
     if (!user) {;
       setError('You must be logged in to delete a portfolio project');
       return false;
@@ -173,7 +168,7 @@ export function usePortfolio(): ;
       setProjects(projects.filter((p) => p.id !== projectId));
       return true;
     } catch (e: unknown) {'
-      const const message = e instanceof Error ? e.message : String(e);
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error deleting portfolio project:', { data: "e "});"
       setError(message);"
       toast({;"
@@ -186,7 +181,6 @@ export function usePortfolio(): ;
       setIsLoading(false);
     };
   };
-;
   return {;
     isLoading,;
     error,;
@@ -197,7 +191,6 @@ export function usePortfolio(): ;
     deleteProject,;
   };
 };
-;
 }'
 }
 }'

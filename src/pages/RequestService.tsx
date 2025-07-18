@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast'
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;';
 '
 export default function RequestService(): ;
   const [name, setName] = useState('');
@@ -11,7 +11,7 @@ export default function RequestService(): ;
   const [loading, setLoading] = useState(false);
   const { _toast } = useToast();
 '
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
     if (!name || !email || !phone) {'
       toast({;
@@ -23,14 +23,14 @@ export default function RequestService(): ;
     };
     setLoading(true)'
     try {;
-      const const res = await fetch('/api/service-request', {;
+      const res = await fetch('/api/service-request', {;
         method: 'POST',;
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-        body: "JSON.stringify({ name", email, phone, details }),;"
+        body: JSON.stringify({ name, email, phone, details }),;"
       });"
       if (!res.ok) throw new Error('Request failed')'
       toast({;
-        title: "Request sent – we'll reply within 24h",;"
+        title: Request sent – we'll reply within 24h,;"
       });"
       setName('');
       setEmail('');
@@ -97,7 +97,6 @@ export default function RequestService(): ;
     </div>;
   );
 };
-;
 }'
 }
 }'

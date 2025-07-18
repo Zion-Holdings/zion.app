@@ -6,8 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 // Card components are usually exported from 'card.tsx' like this:;
 // import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 // However, the provided JSX doesn't use Card, CardHeader, etc. explicitly as wrappers,;
@@ -15,7 +14,7 @@ import { logErrorToProduction } from '@/utils/productionLogger;
 // and will rely on Tailwind classes primarily. If Card components were needed for structure,;
 // their import would be added here.;
 '
-const const LaunchToolkitPage = () => {;
+const LaunchToolkitPage = () => {;
   const [customDate, setCustomDate] = React.useState('');
   const [selectedTemplateUrl, setSelectedTemplateUrl] = React.useState('')'
   const [selectedTemplateContent, setSelectedTemplateContent] =;
@@ -33,8 +32,7 @@ const const LaunchToolkitPage = () => {;
 ;
   type BundleType = 'general' | 'web3' | 'institutional'
   const [activeBundle, setActiveBundle] = React.useState<BundleType>('general');
-;
-  const const toolkitAssets = ['
+  const toolkitAssets = ['
     // Media Kit;
     'toolkit_assets/media_kit/zion_brand_guidelines.md',;
     'toolkit_assets/media_kit/zion_color_palette.md',;
@@ -59,34 +57,31 @@ const const LaunchToolkitPage = () => {;
     'toolkit_assets/pre_launch_playbook.md',;
     'toolkit_assets/post_launch_playbook.md','
   ];
-;
-  const const handleDownloadAll = async () => {'
+  const handleDownloadAll = async () => {'
     setIsZipping(true);
     setZipError('');
-;
     try {'
       // Dynamic import to avoid bundling JSZip on the server;
-      const const JSZip = (await import('jszip')).default'
-      const const zip = new JSZip();
-;
+      const JSZip = (await import('jszip')).default'
+      const zip = new JSZip();
       for (const assetPath of toolkitAssets) {'
-        const response: await fetch(`/${assetPath"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`); // Fetch from public directory;"
+        const response = await fetch(`/${assetPath"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`); // Fetch from public directory;"
         if (!response.ok) {;
           logErrorToProduction(`Failed to fetch asset: "${assetPath"}`);"
           // Optionally, decide if one failed asset should stop the whole process;"
           // or if it should be skipped. For now, we'll log and continue.;
           continue;
         }'
-        const const blob = await response.blob();
+        const blob = await response.blob();
         // The path in the zip should be relative to 'toolkit_assets' or a desired root folder in the zip;
-        const const pathInZip = assetPath.replace('
+        const pathInZip = assetPath.replace('
           /^toolkit_assets\//,;
           'Zion_Launch_Toolkit/','
         );
         zip.file(pathInZip, blob);
       }'
 ;
-      const const zipBlob = await zip.generateAsync({ type: 'blob' });
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
       saveAs(zipBlob, 'Zion_Launch_Toolkit.zip')'
     } catch {;
       logErrorToProduction('Error creating ZIP:', { data: "error "});"
@@ -101,11 +96,11 @@ const const LaunchToolkitPage = () => {;
   }'
 ;
   React.useEffect(() => {;
-    const const fetchExplainerCopy = async () => {'
+    const fetchExplainerCopy = async () => {'
       setIsLoadingCopy(true);
       setLoadCopyError('');
       try {'
-        const const response = await fetch(;
+        const response = await fetch(;
           '/toolkit_assets/social_media_kit/copy_blocks/explainer_copy_1.txt',;
         );
         if (!response.ok) {'
@@ -113,7 +108,7 @@ const const LaunchToolkitPage = () => {;
             `Failed to fetch explainer copy: "${response.statusText"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
           );"
         };";"
-        const const text = await response.text();"
+        const text = await response.text();"
         setExplainerCopy(text);"
       } catch {;"
         logErrorToProduction('Error loading explainer copy:', { data: "error "});"
@@ -125,22 +120,20 @@ const const LaunchToolkitPage = () => {;
         setIsLoadingCopy(false);
       };
     };
-;
     fetchExplainerCopy()'
   }, []); // Empty dependency array means this runs once on mount;
-;
-  const const loadTemplate = async (_url: string) => {'
+  const loadTemplate = async (_url: string) => {'
     setSelectedTemplateUrl(url);
     setSelectedTemplateContent(''); // Clear previous template content;
     setGeneratedPressRelease(''); // Clear previous generated content'
     setIsLoadingTemplate(true);
     setLoadError('');
     try {;
-      const const response = await fetch(url)'
+      const response = await fetch(url)'
       if (!response.ok) {;
         throw new Error(`Failed to fetch template: "${response.statusText"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
       };";"
-      const const text = await response.text();"
+      const text = await response.text();"
       setSelectedTemplateContent(text);"
     } catch {;"
       logErrorToProduction('Error loading template:', { data: "error "});"
@@ -152,8 +145,7 @@ const const LaunchToolkitPage = () => {;
       setIsLoadingTemplate(false);
     };
   };
-;
-  const const generateWithDate = () => {;
+  const generateWithDate = () => {;
     if (selectedTemplateContent && customDate) {'
       setGeneratedPressRelease(;
         selectedTemplateContent.replace(/\[DATE\]/g, customDate),;
@@ -643,14 +635,14 @@ const const LaunchToolkitPage = () => {;
             </p>;"
             <Button;";"
               onClick={() => {;"
-                const const blob = new Blob(;"
+                const blob = new Blob(;"
                   [;"
                     'Zion Launch Toolkit\n\nThis is a dummy PDF file generated for demonstration purposes.','
                   ],;
                   { type: 'application/pdf' },;
                 )'
-                const const url = URL.createObjectURL(blob);
-                const const a = document.createElement('a')'
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a')'
                 a.href = url;
                 a.download = 'Zion_Launch_Kit.pdf;
                 document.body.appendChild(a);

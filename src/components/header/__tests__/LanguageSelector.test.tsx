@@ -11,18 +11,18 @@ vi.mock('react-i18next', () => ({'
   useTranslation: "vi.fn(),
 }));
 
-const const mockedUseLanguage = useLanguage as vi.MockedFunction<typeof useLanguage>;
-const const mockedUseTranslation = useTranslation as vi.MockedFunction<"
+const mockedUseLanguage = useLanguage as vi.MockedFunction<typeof useLanguage>;
+const mockedUseTranslation = useTranslation as vi.MockedFunction<"
   typeof useTranslation;"
 >;";"
 ;";"
-const const supportedLanguages = [;";"
+const supportedLanguages = [;";"
   { code: 'en', name: 'English', flag: '🇺🇸' },'
   { code: 'es', name: 'Español', flag: '🇪🇸' },'
   { code: 'fr', name: 'Français', flag: '🇫🇷' },'
 ];
 '
-const const mockChangeLanguage = vi.fn().mockResolvedValue(undefined)'
+const mockChangeLanguage = vi.fn().mockResolvedValue(undefined)'
 
 beforeEach(() => {'
   mockedUseLanguage.mockReturnValue({'
@@ -39,7 +39,7 @@ describe('LanguageSelector', () => {'
   it('lists available languages and calls changeLanguage on selection', async () => {'
     render(<LanguageSelector />)'
 '
-    const const trigger = screen.getByTestId('language-selector')'
+    const trigger = screen.getByTestId('language-selector')'
     fireEvent.click(trigger);
 
     supportedLanguages.forEach((lang) => {;

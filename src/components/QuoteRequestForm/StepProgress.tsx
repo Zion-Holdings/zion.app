@@ -4,8 +4,8 @@ import { CheckIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 '
 interface StepProgressProps {'
-  currentStep: "QuoteRequestSteps;"
-};";
+  currentStep: "QuoteRequestSteps"
+}";
 ";";
 export function StepProgress(): unknown {): unknown {): unknown {): unknown {): unknown {{ currentStep }: StepProgressProps) {"
   const steps: unknown "{ id: QuoteRequestSteps; label: string }[] = [;"";
@@ -16,9 +16,9 @@ export function StepProgress(): unknown {): unknown {): unknown {): unknown {): 
     { id: 'summary', _label: 'Summary' },'
   ];
 '
-  const const getStepStatus = (stepId: QuoteRequestSteps) => {'
-    const const stepOrder = steps.findIndex((s) => s.id === stepId);
-    const const currentStepOrder = steps.findIndex((s) => s.id === currentStep)'
+  const getStepStatus = (stepId: QuoteRequestSteps) => {'
+    const stepOrder = steps.findIndex((s) => s.id === stepId);
+    const currentStepOrder = steps.findIndex((s) => s.id === currentStep)'
 '
     if (stepOrder < currentStepOrder) return 'complete'
     if (stepOrder === currentStepOrder) return 'current'
@@ -38,7 +38,7 @@ export function StepProgress(): unknown {): unknown {): unknown {): unknown {): 
 ";""
       <div className=flex justify-between relative>";"
         {steps.map((step) => {;"
-          const const status = getStepStatus(step.id);";"
+          const status = getStepStatus(step.id);";"
           return (;"
             <div key={step.id} className=flex flex-col items-center relative>";"
               <div;";"

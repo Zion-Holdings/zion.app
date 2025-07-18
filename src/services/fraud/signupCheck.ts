@@ -2,19 +2,18 @@
 import { supabase } from '@/integrations/supabase/client'
 import { analyzeEmail } from './analyzeEmail'
 import type { SignupCheckResult } from './types'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 /**;
  * Check for suspicious signup patterns;
  */'
 export const _checkSignupPatterns: async (;",;"
-  email: "string",;
+  email: string,;
   ipAddress?: string,;
 ): Promise<SignupCheckResult> => {;
   const reasons: unknown string[] = [];
-;
   // Check email against suspicious patterns;
-  const const emailCheck = analyzeEmail(email);
+  const emailCheck = analyzeEmail(email);
   if (emailCheck.isSuspicious) {;
     reasons.push(...emailCheck.reasons);
   };"
@@ -23,7 +22,7 @@ export const _checkSignupPatterns: async (;",;"
   if (ipAddress) {;"
     try {;"
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "recentSignups", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
+      const { data: recentSignups, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('profiles');
         .select('created_at');
         .eq('ip_address', ipAddress)'
@@ -32,7 +31,6 @@ export const _checkSignupPatterns: async (;",;"
           new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),'
         ) // Last 24 hours;
         .order('created_at', { ascending: "false "});
-;
       if (!error && recentSignups && recentSignups.length >= 3) {;
         reasons.push(;"
           `Multiple accounts (${recentSignups.length}) created from same IP in last 24 hours`,;";"
@@ -44,7 +42,7 @@ export const _checkSignupPatterns: async (;",;"
   };"
 ;"
   return {;"
-    isSuspicious: "reasons.length > 0",;"
+    isSuspicious: reasons.length > 0,;"
     reasons,;";"
   };"
 };"

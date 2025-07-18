@@ -4,8 +4,8 @@ import { Header } from '@/components/Header'
 import { NextSeo } from '@/components/NextSeo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea;
-import {;
+import  { Textarea }  from '@/components/ui/textarea;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,24 +14,24 @@ import {;
 } from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { ChatBotPanel } from '@/components/support/ChatBotPanel;
+import { ChatBotPanel } from '@/components/support/ChatBotPanel;';
 '
-interface Instance {;
-  id: "number;"
-  name: "string;","
-  stake: "number;"
-};"
+interface Instance {
+  id: "number"
+  name: string,"
+  stake: "number"
+}"
 ;"
 const INSTANCES: unknown Instance[] = [;"
-  { id: "1", name: 'Zion LATAM', stake: "1000 "},;"
-  { id: "2", name: 'Zion Health', stake: "800 "},;"
-  { id: "3", name: 'Zion Law', stake: "600 "},;"
-  { id: "4", name: 'Zion DevOps', stake: "500 "},;"
-  { id: "5", name: 'Zion Research', stake: "700 "},;"
-  { id: "6", name: 'Zion Gaming', stake: "300 "},;"
+  { id: 1, name: 'Zion LATAM', stake: "1000 "},;"
+  { id: 2, name: 'Zion Health', stake: "800 "},;"
+  { id: 3, name: 'Zion Law', stake: "600 "},;"
+  { id: 4, name: 'Zion DevOps', stake: "500 "},;"
+  { id: 5, name: 'Zion Research', stake: "700 "},;"
+  { id: 6, name: 'Zion Gaming', stake: "300 "},;"
 ];"
 ;"
-const const TEMPLATES = [;"
+const TEMPLATES = [;"
   'Protocol Amendment',;
   'Global Token Adjustment',;
   'Multiverse Sync Activation',;
@@ -53,16 +53,16 @@ export default function CongressPage(): ;
     return v;";"
   });"
 ;"
-  const const total = INSTANCES.length;"
-  const const yesCount = INSTANCES.filter((i) => votes[i.id] === 'yes').length;
-  const const majority = total <= 5 ? total : Math.ceil((2 / 3) * total);
-  const const pass = yesCount >= majority'
+  const total = INSTANCES.length;"
+  const yesCount = INSTANCES.filter((i) => votes[i.id] === 'yes').length;
+  const majority = total <= 5 ? total : Math.ceil((2 / 3) * total);
+  const pass = yesCount >= majority'
 ;
-  const const castVote = (id: "number", _value: Vote) => {;
+  const castVote = (id: number, _value: Vote) => {;
     setVotes((prev) => ({ ...prev, [id]: prev[id] === value ? null : value }));"
   };";"
 ;"
-  const const submitProposal = (_e: React.FormEvent) => {;"
+  const submitProposal = (_e: React.FormEvent) => {;"
     e.preventDefault();"
     setTitle('');
     setBody('');

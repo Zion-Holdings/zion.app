@@ -3,7 +3,7 @@ import { Users, TrendingUp } from '@/components/ui/icons'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate'
 ;
 export default function AITalentMatchingPage(): ;
-  const const benefits = ['
+  const benefits = ['
     {;
       title: 'Precise Candidate Matching','
       description:;
@@ -24,7 +24,7 @@ export default function AITalentMatchingPage(): ;
     },;"
   ];";"
 ;"
-  const const testimonials = [;"
+  const testimonials = [;"
     {;"
       name: 'Emily Stone',;
       role: 'HR Director',;
@@ -38,7 +38,6 @@ export default function AITalentMatchingPage(): ;
       avatar: '/placeholder.svg',;
     },'
   ];
-;
   return ('
     <ServiceLandingTemplate;
       title="AI Talent Matching"

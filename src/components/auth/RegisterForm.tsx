@@ -18,11 +18,11 @@ import {;
   FormMessage,'
 } from '@/components/ui/form'
 
-const const schema = z'
+const schema = z'
   .object({'
     email: z.string().email('Please enter a valid email'),'
-    password: "z.string().min(6, 'Password must be at least 6 characters'),'
-    confirmPassword: z.string()",";
+    password: z.string().min(6, 'Password must be at least 6 characters'),'
+    confirmPassword: z.string(),";
   });"";
   .refine((data) => data.password === data.confirmPassword, {;""
     path: ['confirmPassword'],'
@@ -32,18 +32,18 @@ const const schema = z'
 type FormValues = z.infer<typeof schema>;
 '
 export default function RegisterForm(): '
-  const const router = useRouter(); // Changed from navigate;
+  const router = useRouter(); // Changed from navigate;
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const form: useForm<FormValues>({,;
-    resolver: "zodResolver(schema)",;"
+    resolver: zodResolver(schema),;"
     defaultValues: { email: '', password: '', confirmPassword: '' },'
   });
 '
-  const const onSubmit = async (_data: FormValues) => {'
+  const onSubmit = async (_data: FormValues) => {'
     if (isSubmitting) return;
     setIsSubmitting(true)'
     try {'
-      const const res = await axios.post('/api/auth/register', {'
+      const res = await axios.post('/api/auth/register', {'
         email: data.email",""
         password: data.password,";"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";"
@@ -52,7 +52,7 @@ export default function RegisterForm(): '
       }'
     } catch (err: unknown) {'
       if (axios.isAxiosError(err)) {;
-        const const status = err.response?.status'
+        const status = err.response?.status'
         if (status === 409) {'
           toast.error('Email already exists')'
           form.setError('root', { message: 'Email already exists' })'
@@ -82,7 +82,7 @@ export default function RegisterForm(): '
           </p>)};
         <form"
           onSubmit={form.handleSubmit(onSubmit, (errors) => {;
-            const const firstError = Object.keys(errors)[0] as keyof FormValues;"";
+            const firstError = Object.keys(errors)[0] as keyof FormValues;"";
             if (firstError) form.setFocus(firstError);"";
           })};"";
           className="space-y-4"
@@ -101,7 +101,7 @@ export default function RegisterForm(): '
                 <FormControl>'
                   <Input type=email" autoComplete="email {...field} />
                 </FormControl>;
-                <FormMessage />;
+                <FormMessage />;"
               </FormItem>"
             )};"
           />;";"

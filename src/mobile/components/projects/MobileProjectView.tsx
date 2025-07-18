@@ -1,5 +1,5 @@
-import React from 'react;
-import {;
+import  React  from 'react;';
+import {;';
   CheckCircle,'
   ChevronRight,;
   FileText,;
@@ -9,44 +9,42 @@ import {;
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;
-;
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;';
 import { Progress } from '@/components/ui/progress'
 // import { SeverityIndicator } from "../common/SeverityIndicator"
 import { useRouter } from 'next/router'
-import { toast } from 'sonner;
+import { toast } from 'sonner;';
 '
-interface Milestone {;
-  id: "string;"
-  title: "string;","
-  dueDate: "string;"
-  status: 'completed' | 'in_progress' | 'pending,;
-  paymentStatus: 'paid' | 'pending' | 'overdue,;
-  amount: "string;"
-};"
+interface Milestone {
+  id: "string"
+  title: string,"
+  dueDate: "string"
+  status: 'completed' | 'in_progress' | 'pending,
+  paymentStatus: 'paid' | 'pending' | 'overdue,
+  amount: "string"
+}"
 ;"
-interface ProjectViewProps {;"
+interface ProjectViewProps {"
   project: {
-    id: "string;","
-    title: "string;"
-    client: "{;",;
-      name: string;"
-      avatar?: string;";"
-    };"
+    id: string,"
+    title: "string"
+    client: {,
+      name: string"
+      avatar?: string""
+    }"
     startDate: string;"
     endDate?: string;"
     status: "string;"
-    totalAmount: "string;","
+    totalAmount: string;,"
     progress: "number;"
     description: "string;"
   };"
   milestones: "Milestone[];";
 };
-;
 export function MobileProjectView(): unknown {): unknown {): unknown {): unknown {): unknown {{ project, milestones }: ProjectViewProps) {;"
-  const const router = useRouter();";"
+  const router = useRouter();";"
 ;"
-  const const startProjectCall = () => {;"
+  const startProjectCall = () => {;"
     const roomId: `project-${project.id"}`;"
     toast.success('Starting project call', {;
       description: 'Initializing video connection...',;
@@ -55,7 +53,7 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
     router.push(`/call/${roomId}`);
   };
 '
-  const const messageClient = () => {;
+  const messageClient = () => {;
     toast.info('Opening message thread with client', {;
       description: "`Messaging ${project.client.name"}...`,;
     });"

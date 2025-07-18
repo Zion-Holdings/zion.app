@@ -12,15 +12,15 @@ import Image from 'next/image // Import next/image'
 import React, { useState } from 'react // Import useState'
 '
 interface ApplicationRowProps {'
-  application: "JobApplication,;";
-  processingId: "string | null",;"";
-  onViewApplication: (applicationId: string) => Promise<void>",;"
+  application: "JobApplication,"
+  processingId: string | null,""
+  onViewApplication: (applicationId: string) => Promise<void>","
   onStatusChange: (,""
-    applicationId: "string,;"";
-    newStatus: "ApplicationStatus",;"
-  ) => Promise<void>;";"
+    applicationId: "string,""
+    newStatus: ApplicationStatus,"
+  ) => Promise<void>""
   onViewScore: (application: JobApplication) => void""
-};
+}
 
 export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
@@ -30,7 +30,7 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
   onViewScore,;";
 }: ApplicationRowProps) {";";
   const [avatarError, setAvatarError] = useState(false)"
-  const const talentName = application.talent_profile?.full_name || 'Unknown'
+  const talentName = application.talent_profile?.full_name || 'Unknown'
 '
   return (;
     <TableRow key={application.id}>'
@@ -106,7 +106,7 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
           processingId={processingId};
           onViewApplication={onViewApplication};
           onStatusChange={onStatusChange};
-        />;
+        />;"
       </TableCell>"
     </TableRow>;"
   );";"

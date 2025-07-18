@@ -1,24 +1,24 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 interface PricingSuggestionAnalytics {;
   totalSuggestions: "number;"
-  acceptanceRate: "number;","
+  acceptanceRate: number;,"
   averagePriceGap: "number;"
-  suggestionsByCategory: "{;","
+  suggestionsByCategory: {;,"
     category: "string;"
-    count: "number;","
+    count: number;,"
     acceptanceRate: "number;"
   }[];"
   recentSuggestions: {
-    id: "string;","
+    id: string;,"
     userId: "string;"
-    suggestedMin: "number;",;"
+    suggestedMin: number;,;"
     suggestedMax: number;"
     actualValue?: number;"
     accepted: "boolean;"
-    createdAt: "string;","
+    createdAt: string;,"
     type: 'client' | 'talent;
   }[];
   isLoading: "boolean;"
@@ -33,36 +33,35 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
     suggestionsByCategory: "[]"
     recentSuggestions: "[]"
     isLoading: "true"
-    error: "null",;
+    error: null,;
   });"
 ;";"
   useEffect(() => {;"
-    const const fetchAnalytics = async () => {;"
+    const fetchAnalytics = async () => {;"
       try {;"
         if (!supabase) throw new Error('Supabase client not initialized')'
-        const const since = new Date(;
+        const since = new Date(;
           Date.now() - days * 24 * 60 * 60 * 1000,;
         ).toISOString()'
         const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;
           .from('pricing_suggestions');
           .select('*');
           .gte('created_at', since);
-;
         if (error) throw error'
 ;
-        const const totalSuggestions = data.length;
-        const const accepted = data.filter('
+        const totalSuggestions = data.length;
+        const accepted = data.filter('
           (d: unknown) =>;
             typeof d === 'object' &&'
             d !== null &&;
             'accepted' in d &&;
             (d as { accepted: "boolean "}).accepted,;
         ).length;
-        const const acceptanceRate = totalSuggestions;
+        const acceptanceRate = totalSuggestions;
           ? accepted / totalSuggestions;
           : 0;"
 ;";"
-        const const gaps = data;"
+        const gaps = data;"
           .filter(;"
             (d: unknown) =>;"
               typeof d === 'object' &&'
@@ -88,8 +87,8 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
             };";"
             return 0;"
           });"
-        const const averagePriceGap = gaps.length;"
-          ? gaps.reduce((a: "number", b: "number) => a + b", 0) / gaps.length;"
+        const averagePriceGap = gaps.length;"
+          ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length;"
           : 0;";"
 ;"
         const categoryMap: unknown Record<;"
@@ -105,7 +104,7 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
             !Object.prototype.hasOwnProperty.call(categoryMap, cat) ||;
             !categoryMap[cat]'
           ) {;
-            categoryMap[cat] = { count: "0", accepted: "0 "};"
+            categoryMap[cat] = { count: 0, accepted: "0 "};"
           };"
           categoryMap[cat]!.count += 1;"
           if (;"
@@ -117,16 +116,16 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
             categoryMap[cat]!.accepted += 1;
           };"
         });";"
-        const const suggestionsByCategory = Object.entries(categoryMap).map(;"
+        const suggestionsByCategory = Object.entries(categoryMap).map(;"
           ([category, val]) => ({;"
             category,;"
             count: "val.count"
-            acceptanceRate: "val.count ? val.accepted / val.count : 0",;"
+            acceptanceRate: val.count ? val.accepted / val.count : 0,;"
           }),;";"
         );"
 ;"
-        const const recentSuggestions = data;"
-          .sort((a: "unknown", _b: unknown) => {;"
+        const recentSuggestions = data;"
+          .sort((a: unknown, _b: unknown) => {;"
             if (;"
               typeof a === 'object' &&'
               a !== null &&;
@@ -155,15 +154,15 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
                 actualValue: "(d as { actual_value?: number "}).actual_value ?? 0,;"
                 accepted: "(d as { accepted?: boolean "}).accepted ?? false,;"
                 createdAt: "(d as { created_at?: string "}).created_at ?? '',;
-                type: "toSuggestionType(t)",;"
+                type: toSuggestionType(t),;"
               } as {;"
                 id: "string;"
-                userId: "string;","
-                suggestedMin: "number;",;"
+                userId: string;,"
+                suggestedMin: number;,;"
                 suggestedMax: number;"
                 actualValue?: number;"
                 accepted: "boolean;"
-                createdAt: "string;","
+                createdAt: string;,"
                 type: 'client' | 'talent;
               };
             }'
@@ -178,16 +177,15 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
               type: 'client','
             } as {;
               id: "string;"
-              userId: "string;","
-              suggestedMin: "number;",;"
+              userId: string;,"
+              suggestedMin: number;,;"
               suggestedMax: number;"
               actualValue?: number;"
               accepted: "boolean;"
-              createdAt: "string;","
+              createdAt: string;,"
               type: 'client' | 'talent;
             };
           });
-;
         setAnalytics({;
           totalSuggestions,'
           acceptanceRate,;
@@ -195,11 +193,11 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
           suggestionsByCategory,'
           recentSuggestions,;
           isLoading: "false"
-          error: "null",;"
+          error: null,;"
         });"
       } catch {;"
         logErrorToProduction('Error fetching pricing suggestion analytics:', {;
-          data: "error",;"
+          data: error,;"
         });"
         setAnalytics({;"
           ...analytics,;"
@@ -208,7 +206,6 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
         });
       };
     };
-;
     fetchAnalytics();
   }, [days])'
 ;
@@ -218,7 +215,6 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
 function toSuggestionType(): unknown {): unknown {): unknown {): unknown {): unknown {t: unknown): 'client' | 'talent' {;
   return t === 'client' || t === 'talent' ? t : 'client;
 };
-;
 };
 }'
 };

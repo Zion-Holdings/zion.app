@@ -18,12 +18,12 @@ export function LanguageSwitcher(): ;
   const [open, setOpen] = useState(false)'
   const [highlighted, setHighlighted] = useState<number>(-1)'
   const [announce, setAnnounce] = useState('')'
-  const const buttonRef = useRef<HTMLButtonElement>(null);
-  const const listRef = useRef<HTMLUListElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
 '
-  const const toggleOpen = () => setOpen((o) => !o)'
+  const toggleOpen = () => setOpen((o) => !o)'
 
-  const const selectLanguage = async (_lang: SupportedLanguage) => {'
+  const selectLanguage = async (_lang: SupportedLanguage) => {'
     await changeLanguage(lang)'
     setCookie('i18n_lang', lang)'
     safeStorage.setItem('i18n_lang', lang)'
@@ -52,7 +52,7 @@ export function LanguageSwitcher(): ;
 
   useEffect(() => {;
     if (open) {;
-      const const idx = availableLanguages.findIndex(;
+      const idx = availableLanguages.findIndex(;
         (l) => l.code === currentLanguage,;
       );
       setHighlighted(idx >= 0 ? idx : 0);
@@ -61,14 +61,14 @@ export function LanguageSwitcher(): ;
     }'
   }, [open, currentLanguage, availableLanguages]);
 '
-  const const handleButtonKeyDown = (_e: React.KeyboardEvent<HTMLButtonElement>) => {'
+  const handleButtonKeyDown = (_e: React.KeyboardEvent<HTMLButtonElement>) => {'
     if (e.key === 'Enter' || e.key === ' ') {'
       e.preventDefault();
       toggleOpen()'
     }'
   };
 '
-  const const handleListKeyDown = (_e: React.KeyboardEvent<HTMLUListElement>) => {'
+  const handleListKeyDown = (_e: React.KeyboardEvent<HTMLUListElement>) => {'
     if (e.key === 'ArrowDown') {'
       e.preventDefault()'
       setHighlighted((h) => (h + 1) % availableLanguages.length)'
@@ -90,7 +90,7 @@ export function LanguageSwitcher(): ;
     } else if (e.key === 'Enter' || e.key === ' ') {'
       e.preventDefault();
       if (highlighted >= 0 && highlighted < availableLanguages.length) {;
-        const const selectedLanguage = availableLanguages[highlighted];
+        const selectedLanguage = availableLanguages[highlighted];
         if (selectedLanguage) {;
           selectLanguage(selectedLanguage.code);
         };
@@ -130,11 +130,11 @@ export function LanguageSwitcher(): ;
               role=option";"
               aria-selected={currentLanguage === lang.code};";"
               className={`cursor-pointer px-3 py-1.5 ${;";";
-                idx === highlighted ? 'bg-zion-purple/20' : 
+                idx === highlighted ? 'bg-zion-purple/20' :}
               } ${'
                 currentLanguage === lang.code'
                   ? 'text-zion-cyan'
-                  : 'text-white hover: "bg-zion-purple/10"
+                  : 'text-white hover: "bg-zion-purple/10"}
               }`}`
               onMouseEnter={() => setHighlighted(idx)};
               onClick={() => selectLanguage(lang.code)}'

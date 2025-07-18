@@ -2,34 +2,31 @@ import { SEO } from '@/components/SEO'
 import { Star, AlertTriangle } from '@/components/ui/icons'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
-import {;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card;
-;
-import { Button } from '@/components/ui/button;
-;
-import { toast } from '@/components/ui/use-toast;
+import { Button } from '@/components/ui/button;';
+import { toast } from '@/components/ui/use-toast;';
 '
 function ReviewsModerationContent(): ;
   const [activeTab, setActiveTab] = useState('pending')'
   const [reviews, setReviews] = useState([;
-    { id: "1", user: 'Alice', content: 'Great product!', status: 'pending' },;
-    { id: "2", user: 'Bob', content: 'Not what I expected.', status: 'pending' },;
-    { id: "3", user: 'Carla', content: 'Excellent support.', status: 'pending' },'
+    { id: 1, user: 'Alice', content: 'Great product!', status: 'pending' },;
+    { id: 2, user: 'Bob', content: 'Not what I expected.', status: 'pending' },;
+    { id: 3, user: 'Carla', content: 'Excellent support.', status: 'pending' },'
   ]);
-;
-  const const handleApprove = (_id: number) => {'
+  const handleApprove = (_id: number) => {'
     setReviews((reviews) =>;
       reviews.map((r) => (r.id === id ? { ...r, status: 'approved' } : r)),'
     );
     toast({ title: 'Review approved' });
   };
-  const const handleReject = (_id: number) => {'
+  const handleReject = (_id: number) => {'
     setReviews((reviews) =>;
       reviews.map((r) => (r.id === id ? { ...r, status: 'rejected' } : r)),'
     );
@@ -130,7 +127,6 @@ function ReviewsModerationContent(): ;
     </>;
   );
 };
-;
 export default function ReviewsModeration(): ;
   return (;
     <ProtectedRoute>;

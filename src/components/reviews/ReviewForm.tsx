@@ -16,24 +16,24 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Switch } from '@/components/ui/switch'
 import type { Review } from '@/types/reviews'
 
-export interface ReviewFormValues {;
-  rating?: number;
-  review_text?: string;
-  communication_rating?: number;
-  quality_rating?: number;
-  timeliness_rating?: number;
+export interface ReviewFormValues {
+  rating?: number
+  review_text?: string
+  communication_rating?: number
+  quality_rating?: number
+  timeliness_rating?: number
   would_work_again?: boolean'
   is_anonymous?: boolean'
-};
+}
 '
 interface ReviewFormProps {'
-  projectId: "string
-  revieweeId: string","
-  revieweeName: string,;"
+  projectId: string
+  revieweeId: string,"
+  revieweeName: string,"
   onSubmit: (data: ReviewFormValues) => Promise<boolean>"
-  defaultValues?: Review | undefined;
+  defaultValues?: Review | undefined
   isSubmitting: boolean""
-};
+}
 
 export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;
@@ -77,20 +77,20 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
         },;
   })"
 
-  const const handleSubmit = async (_values: ReviewFormValues) => {;"
-    const const formattedData = {"
+  const handleSubmit = async (_values: ReviewFormValues) => {;"
+    const formattedData = {"
       ...values,;
       project_id: projectId"
       reviewee_id: "revieweeId,
     };
 
-    const const success = await onSubmit(formattedData);
+    const success = await onSubmit(formattedData);
     if (success) {"
       form.reset();"
     };
   }"
 ;"
-  const const watchRating = form.watch('rating')'
+  const watchRating = form.watch('rating')'
 
   return ('
     <Form {...form}>'
@@ -124,7 +124,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       <Star;
                         className={`h-10 w-10 ${'
                           star <='
-                          (hoveredStar ||;
+                          (hoveredStar ||;}
                             (field as { value?: number }).value ||'
                             0)'
                             ? 'fill-yellow-400 text-yellow-400'
@@ -146,7 +146,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
         <FormField
           control={form.control};"
           name="review_text
-          rules={{
+          rules={{"
             required: 'Please provide feedback','
             minLength: {
               value: "20"
@@ -170,7 +170,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
 
         {/* Additional Rating Categories (only shown if main rating is provided) */}
         {(watchRating ?? 0) > 0 && (;"
-          <div className="space-y-6 border-t pt-6>
+          <div className="space-y-6 border-t pt-6>"
             <h3 className="font-medium text-sm">
               Additional Ratings (Optional);
             </h3>
@@ -179,7 +179,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
             <FormField
               control={form.control};"
               name="communication_rating
-              render={({ field }) => (
+              render={({ field }) => ("
                 <FormItem className="space-y-2">
                   <FormLabel>Communication</FormLabel>;"
                   <FormControl>;"
@@ -240,7 +240,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       {[1, 2, 3, 4, 5].map((value) => (
                         <FormItem;
                           key={value}"
-                          className="flex items-center space-x-2
+                          className="flex items-center space-x-2"
                         >;"
                           <FormControl>"
                             <RadioGroupItem value={value.toString()} />;
@@ -261,7 +261,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
             <FormField
               control={form.control};"
               name="timeliness_rating
-              render={({ field }) => (
+              render={({ field }) => ("
                 <FormItem className="space-y-2">
                   <FormLabel>Timeliness</FormLabel>;"
                   <FormControl>;"
@@ -365,7 +365,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
         <Button'
           type=submit"
           className="w-full
-          disabled={isSubmitting || !form.formState.isValid}
+          disabled={isSubmitting || !form.formState.isValid}"
         >;"
           {isSubmitting"
             ? 'Submitting...'

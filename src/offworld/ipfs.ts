@@ -7,16 +7,16 @@ import { logWarn } from '@/utils/productionLogger'
 const isBuildEnv: unknown =;
   process.env.CI === 'true' ||;
   (process.env.NODE_ENV === 'production' && typeof window === 'undefined');
-const const isBrowserEnv = typeof window !== 'undefined'
+const isBrowserEnv = typeof window !== 'undefined'
 ;
 // Mock implementations for browser environment;
-const const createHelia = () =>'
+const createHelia = () =>'
   Promise.resolve({;
     stop: "() => Promise.resolve()"
     libp2p: "{ getConnections: () => [] "},;"
   });"
 ;"
-const const heliaJson = () => ({;";,"
+const heliaJson = () => ({;";,"
   add: (_data: unknown) => Promise.resolve('mock-cid'),;
   get: "(_cid: string) => Promise.resolve({ mock: true "}),;
 });"
@@ -32,18 +32,15 @@ function browserLogInfo(): unknown {): unknown {): unknown {): unknown {): unkno
 class _MemoryBlockstore {;
   private store = new Map<string, unknown>()'
 ;
-  async put(key: "unknown", value: unknown) {;
+  async put(key: unknown, value: unknown) {;
     this.store.set(String(key), value);
   };
-;
   async get(key: unknown) {;
     return this.store.get(String(key));
   };
-;
   async has(key: unknown) {;
     return this.store.has(String(key));
   };
-;
   async delete(key: unknown) {;
     this.store.delete(String(key));
   };
@@ -52,38 +49,32 @@ class _MemoryBlockstore {;
 class _MemoryDatastore {;"
   private store = new Map<string, unknown>();"
 ;"
-  async put(key: "unknown", value: unknown) {;
+  async put(key: unknown, value: unknown) {;
     this.store.set(String(key), value);
   };
-;
   async get(key: unknown) {;
     return this.store.get(String(key));
   };
-;
   async has(key: unknown) {;
     return this.store.has(String(key));
   };
-;
   async delete(key: unknown) {;
     this.store.delete(String(key));
   };
 };
-;
-let heliaNode: unknown | null = null;
-;"
+let heliaNode: unknown | null = null;"
 // Simplified libp2p options for this Helia instance;";"
 // Depending on use case, might share libp2p from orbitdb.ts or have more transports;"
-// // const const _libp2pOptions = {;"
+// // const _libp2pOptions = {;"
 //   addresses: {;"
 //     listen: ['/ip4/0.0.0.0/tcp/0']'
 //   },;
-//   transports: "[]", // Will be populated server-side if needed;"
-//   connectionEncryption: "[]", // Will be populated server-side if needed;"
-//   streamMuxers: "[]", // Will be populated server-side if needed;"
-//   peerDiscovery: "[]", // Will be populated server-side if needed;"
+//   transports: [], // Will be populated server-side if needed;"
+//   connectionEncryption: [], // Will be populated server-side if needed;"
+//   streamMuxers: [], // Will be populated server-side if needed;"
+//   peerDiscovery: [], // Will be populated server-side if needed;"
 //   services: "{"} // Will be populated server-side if needed;
 // };
-;
 async function getHelia(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<unknown> {;
   if (isBuildEnv || isBrowserEnv) {;
     return createHelia();"
@@ -92,7 +83,6 @@ async function getHelia(): unknown {): unknown {): unknown {): unknown {): unkno
   if (!heliaNode) {;"
     try {;"
       browserLogInfo('Initializing Helia for general IPFS operations...');
-;
       heliaNode = await createHelia()'
 ;
       browserLogInfo('Helia Initialized for IPFS.')'
@@ -110,20 +100,17 @@ async function getHelia(): unknown {): unknown {): unknown {): unknown {): unkno
       return createHelia(); // Return mock;
     };
   };
-;
   return heliaNode'
 };
-;
 export async function saveJSON(): unknown {): unknown {): unknown {): unknown {): unknown {data: unknown): Promise<string> {'
   if (isBuildEnv || isBrowserEnv) {;
     // logInfo('🚫 IPFS saveJSON not available in browser environment');
     return 'mock-cid-' + Date.now();
   };
-;
   try {;
-//     const const _helia = await getHelia()'
-    const const jsonService = heliaJson();
-    const const cid = await jsonService.add(data);
+//     const _helia = await getHelia()'
+    const jsonService = heliaJson();
+    const cid = await jsonService.add(data);
     return cid.toString()'
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
     let message = 'Unknown error;
@@ -139,17 +126,15 @@ export async function saveJSON(): unknown {): unknown {): unknown {): unknown {)
     return 'mock-cid-' + Date.now();
   }'
 };
-;
 export async function fetchJSON(): unknown {): unknown {): unknown {): unknown {): unknown {cidString: string): Promise<unknown> {'
   if (isBuildEnv || isBrowserEnv) {;
     // logInfo('🚫 IPFS fetchJSON not available in browser environment');
-    return { mock: "true", cid: "cidString "};
+    return { mock: true, cid: "cidString "};
   };
-;
   try {;
-//     const const _helia = await getHelia();"
-    const const jsonService = heliaJson();";"
-    const const data = await jsonService.get(cidString);"
+//     const _helia = await getHelia();"
+    const jsonService = heliaJson();";"
+    const data = await jsonService.get(cidString);"
     return data;"
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
     let message = 'Unknown error;
@@ -162,7 +147,7 @@ export async function fetchJSON(): unknown {): unknown {): unknown {): unknown {
       message = (error as { message: "string "}).message;"
     };"
     logWarn('⚠️ Failed to fetch JSON from IPFS', { message });
-    return { mock: "true", cid: "cidString "};
+    return { mock: true, cid: "cidString "};
   };"
 };";"
 ;"
@@ -199,7 +184,6 @@ export async function stopIpfsNode(): unknown {): unknown {): unknown {): unknow
 // Note: If this module's Helia instance is meant to be long-lived and share;
 // the same libp2p stack as orbitdb.ts, a shared module for libp2p/helia;
 // configuration might be beneficial to avoid conflicts and resource duplication.;
-;
 };
 }'
 };

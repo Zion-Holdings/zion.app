@@ -25,12 +25,12 @@ export type QuoteRequestSteps ='
   | 'summary'
 '
 const serviceStepSchema: z.object({,;
-  serviceType: "z.string().min(1)",;"
+  serviceType: z.string().min(1),;"
   specificItem: z.object({ id: z.string() "}),"
 })
 ;"
 export function QuoteRequestForm(): ;";
-  const const router = useRouter()";";
+  const router = useRouter()";";
   const { _toast } = useToast()"
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>('service')'
   const [isSubmitting, setIsSubmitting] = useState(false)'
@@ -43,14 +43,14 @@ export function QuoteRequestForm(): ;";
     specificItem: "null,;"";
     projectName: '','
     projectDescription: '','
-    startDate: "undefined",;"
+    startDate: undefined,;"
     endDate: undefined",""
     timeline: 'flexible','
     budget: {,;""
       amount: "0,;"";
       type: 'fixed','
     },'
-    contactInfo: "{",;"";
+    contactInfo: {,;"";
       name: '','
       email: '','
       phone: '','
@@ -58,14 +58,14 @@ export function QuoteRequestForm(): ;";
     },;
   });
 
-  const const updateFormData = (_data: Partial<QuoteFormData>) => {;
+  const updateFormData = (_data: Partial<QuoteFormData>) => {;
     setFormData((prev) => ({;
       ...prev,;
       ...data,;
     }))'
   }'
 
-  const const handleNext = () => {'
+  const handleNext = () => {'
     switch (currentStep) {'
       case 'service': {'
         const result: unknown unknown = serviceStepSchema.safeParse({",;"
@@ -96,7 +96,7 @@ export function QuoteRequestForm(): ;";
     }'
   }'
 
-  const const handleBack = () => {'
+  const handleBack = () => {'
     switch (currentStep) {'
       case 'details':'
         setCurrentStep('service')'
@@ -114,7 +114,7 @@ export function QuoteRequestForm(): ;";
     };
   };
 
-  const const handleSubmit = async () => {'
+  const handleSubmit = async () => {'
     setIsSubmitting(true)'
 
     try {'
@@ -148,10 +148,10 @@ export function QuoteRequestForm(): ;";
     };
   }'
 '
-  const const handleAutoFill = async (_description: string) => {;
+  const handleAutoFill = async (_description: string) => {;
     setAutoFillLoading(true)'
     try {'
-      const const res = await fetch('/api/openai/match', {'
+      const res = await fetch('/api/openai/match', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ projectDescription: description }),;"";
@@ -159,13 +159,13 @@ export function QuoteRequestForm(): ;";
       if (!res.ok) throw new Error('Request failed')'
       const { category, itemId, timeline, budget } = await res.json()'
       updateFormData({'
-        projectDescription: "description",;"
+        projectDescription: description,;"
         serviceType: category",""
         serviceCategory: category,";";
         specificItem: itemId"
-          ? { id: "itemId, title: 'AI Selected Item', category }'
+          ? { id: itemId, title: 'AI Selected Item', category }'
           : formData.specificItem,'
-        timeline: timeline || formData.timeline",""
+        timeline: timeline || formData.timeline,""
         budget: { ...formData.budget, ...(budget || {}) },";";
       })"
       setCurrentStep('summary')'
@@ -185,7 +185,7 @@ export function QuoteRequestForm(): ;";
     }'
   }'
 
-  const const renderStepContent = () => {'
+  const renderStepContent = () => {'
     switch (currentStep) {'
       case 'service':'
         return (;
@@ -241,14 +241,11 @@ export function QuoteRequestForm(): ;";
             )}"
             Auto Fill with AI;
           </Button>;"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <Card className="bg-zion-blue-dark border border-zion-blue-light mb-8">;"
           <CardContent className=px-6 py-8">";
-            <StepProgress currentStep={currentStep} />;"";
-;""
-            <div className="mt-8>{renderStepContent()}</div>;"";
-;"";
+            <StepProgress currentStep={currentStep} />;"";""
+            <div className="mt-8>{renderStepContent()}</div>;"";"";
             <div className="flex justify-between mt-8">;"
               {currentStep !== 'service' && ('
                 <Button'
@@ -258,8 +255,7 @@ export function QuoteRequestForm(): ;";
                 >"
                   Back;
                 </Button>;"";
-              )};"";
-;"";
+              )};"";"";
               {currentStep !== 'summary' ? ('
                 <Button'
                   onClick={handleNext}'

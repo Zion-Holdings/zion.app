@@ -1,20 +1,17 @@
 import React from 'react';
 import { ChevronLeft, Bell, Settings } from '@/components/ui/icons'
-import { useRouter } from 'next/router;
-;
+import { useRouter } from 'next/router;';
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button;
-;
-interface MobileHeaderProps {;
-  title: string;
-  showBack?: boolean;
-  showNotifications?: boolean;
-  showSettings?: boolean;
-  className?: string;
-  onNotificationsClick?: () => void;
-  onSettingsClick?: () => void;
-};
-;
+import  { Button }  from '@/components/ui/button;
+interface MobileHeaderProps {
+  title: string
+  showBack?: boolean
+  showNotifications?: boolean
+  showSettings?: boolean
+  className?: string
+  onNotificationsClick?: () => void
+  onSettingsClick?: () => void
+}
 export function MobileHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   showBack = false,;
@@ -22,9 +19,9 @@ export function MobileHeader(): unknown {): unknown {): unknown {): unknown {): 
   showSettings = false,;
   className,;
   onNotificationsClick,;
-  onSettingsClick,;
-}: MobileHeaderProps) {;
-  const const router = useRouter()'
+  onSettingsClick,;';
+}: MobileHeaderProps) {;';
+  const router = useRouter()'
 ;
   return (;
     <header'

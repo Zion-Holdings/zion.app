@@ -1,8 +1,8 @@
 export type Milestone = {;
   id: "string;"
-  project_id: "string;","
+  project_id: string;,"
   title: "string;"
-  description: "string;","
+  description: string;,"
   amount: "number;"
   status: 'pending' | 'in_progress' | 'completed' | 'rejected;
   due_date?: string;

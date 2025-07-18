@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button'
 import { ShieldAlert } from '@/components/ui/icons'
 '
 interface EmptyFraudStateProps {'
-  hasFilters: "boolean,;";
+  hasFilters: "boolean,"
   onResetFilters: "() => void"
-};
+}
 
 export const _EmptyFraudState: unknown React.FC<EmptyFraudStateProps> = ({
   hasFilters,;""

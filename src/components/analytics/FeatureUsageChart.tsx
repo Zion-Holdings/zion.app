@@ -8,10 +8,10 @@ import {;
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents'
 '
 interface FeatureUsageChartProps {'
-  data: "Array<Record<string, unknown>>;"";
-  timeRange: "string",;"";
+  data: "Array<Record<string, unknown>>""
+  timeRange: string,""
   onTimeRangeChange: (range: string) => void""
-};
+}
 
 export function FeatureUsageChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   data,;
@@ -33,7 +33,7 @@ export function FeatureUsageChart(): unknown {): unknown {): unknown {): unknown
       </CardHeader>;";
       <CardContent>";";
         <AnalyticsChart"
-          title="
+          title=""
           data={(data || []).map((item) => ({;";";
             name: String(item.name || item.label || 'Unknown'),'
             value:'

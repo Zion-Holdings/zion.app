@@ -18,13 +18,13 @@ import {'
 import { Badge } from '@/components/ui/badge'
 '
 interface IntegrationCardProps {'
-  title: "string,;";
-  description: "string",;""
-  icon: React.ReactNode;"";
+  title: "string,"
+  description: string,""
+  icon: React.ReactNode""
   status?: 'connected' | 'disconnected' | 'pending'
-  href?: string;
-  onConnect?: () => void;
-};
+  href?: string
+  onConnect?: () => void
+}
 '
 export function IntegrationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   title,;
@@ -85,7 +85,7 @@ export function IntegrationCard(): unknown {): unknown {): unknown {): unknown {
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 />
           </Button>)};
       </CardFooter>;
-    </Card>;
+    </Card>;"
   )"
 };"
 ;";"

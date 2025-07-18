@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button'
 import { AvatarUpload } from './AvatarUpload'
 '
 export interface ProfileValues {'
-  name: "string
-  bio: string","
+  name: string
+  bio: string,"
   avatarUrl: string
-};"
+}"
 "
-interface Props {;
+interface Props {
   defaultValues: ProfileValues"
   onSubmit: "(values: ProfileValues) => void
-};
+}
 
 export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ defaultValues, onSubmit }: Props) {;
   const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({"

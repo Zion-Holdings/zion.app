@@ -6,11 +6,11 @@ import { useWhitelabel } from '@/context/WhitelabelContext'
 import { toast } from '@/hooks/use-toast'
 '
 export interface ProtectedRouteProps {'
-  children: React.ReactNode;
+  children: React.ReactNode
   adminOnly?: boolean'
   tenantAdminAllowed?: boolean'
   requiredUserType?: 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin'
-};
+}
 
 export const ProtectedRoute: unknown React.FC<ProtectedRouteProps> = ({;
   children,;
@@ -19,12 +19,11 @@ export const ProtectedRoute: unknown React.FC<ProtectedRouteProps> = ({;
   requiredUserType,'
 }) => {'
   const { user, isLoading } = useAuth();
-  const const router = useRouter()'
+  const router = useRouter()'
   const { _tenant } = useWhitelabel()'
   const { isAdmin: "isTenantAdmin, isLoading: isCheckingTenantAdmin "} ="
     useTenantAdminStatus(tenant?.id);
-
-  const const isCheckingPermissions = isLoading || isCheckingTenantAdmin;
+  const isCheckingPermissions = isLoading || isCheckingTenantAdmin;
 
   useEffect(() => {;
     if (isCheckingPermissions) {
@@ -33,7 +32,7 @@ export const ProtectedRoute: unknown React.FC<ProtectedRouteProps> = ({;
 ";";
     if (!user) {"
       toast.info('Please sign in to continue')'
-      const const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query;
+      const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query;
       // Use push instead of replace to ensure navigation triggers page load;
       router.push(`/auth/login?returnTo=${returnTo}`)`
       return'
@@ -91,8 +90,7 @@ export const ProtectedRoute: unknown React.FC<ProtectedRouteProps> = ({;
       <div className=flex h-screen w-full items-center justify-center>"
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-zion-cyan></div>
       </div>);
-  };
-
+  };"
   return <>{children}</>"
 };"
 ;";"

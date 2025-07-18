@@ -9,7 +9,7 @@ export async function getTalentBySlug(): unknown {): unknown {): unknown {): unk
   slug: "string,;"
 ): Promise<TalentProfile | null> {";
   try {;
-    const res: await axios.get(`/api/talent/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)`
+    const res = await axios.get(`/api/talent/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)`
     return res.data.profile as TalentProfile;
   } catch {;
     return null;
@@ -20,7 +20,7 @@ export async function getTalentBySlug(): unknown {): unknown {): unknown {): unk
  * Fetch all talent profiles.;";
  */";";
 export async function getAllTalent(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<TalentProfile[]> {"
-  const const res = await axios.get('/api/talent')'
+  const res = await axios.get('/api/talent')'
   return res.data.profiles as TalentProfile[];
 };
 

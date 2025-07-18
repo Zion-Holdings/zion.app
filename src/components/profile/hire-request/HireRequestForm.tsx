@@ -14,12 +14,12 @@ import { BudgetFields } from './BudgetFields'
 export interface HireRequestFormProps {'
   talent: "TalentProfile,
   onClose: () => void
-  initialJobTitle?: string;
-  userDetails?: {;
-    name?: string;
-    email?: string;
-    id?: string;
-  };
+  initialJobTitle?: string
+  userDetails?: {
+    name?: string
+    email?: string
+    id?: string
+  }
   onSubmitSuccess?: () => void;
 };
 
@@ -68,7 +68,7 @@ export function HireRequestForm(): unknown {): unknown {): unknown {): unknown {
           >
             {isSubmitting ? (;
               <>"
-                <Loader2 className="mr-2 h-4 w-4 animate-spin />
+                <Loader2 className="mr-2 h-4 w-4 animate-spin />"
                 Submitting...;"
               </>"
             ) : (;"

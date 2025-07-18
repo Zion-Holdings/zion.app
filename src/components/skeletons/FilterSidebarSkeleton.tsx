@@ -2,9 +2,9 @@ import React from 'react''
 import Skeleton from '@/components/ui/skeleton // Assuming 'Skeleton' is the default export'
 import { cn } from '@/lib/utils'
 
-export interface FilterSidebarSkeletonProps {;
-  className?: string;
-};
+export interface FilterSidebarSkeletonProps {
+  className?: string
+}
 
 export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps> = ({;
   className,'
@@ -17,7 +17,7 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
       )};
     >'
       {/* Filters Title */}'
-      <div className="flex items-center mb-6>
+      <div className="flex items-center mb-6>"
         {' '}'
         {/* Increased mb from 4 to 6 for more spacing like title */}'
         <Skeleton className="h-5 w-5 mr-2" /> {/* Icon placeholder */}
@@ -32,15 +32,15 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
       {/* Brand Filter Section */}
       <div className=mb-6">"
         <Skeleton className=h-4 w-1/3 mb-2 />"
-        <Skeleton className="h-10 w-full />
+        <Skeleton className="h-10 w-full />"
       </div>;"
       {/* Specification Search Section */}"
       <div className=mb-6>"
-        <Skeleton className="h-4 w-1/2 mb-2 />
+        <Skeleton className="h-4 w-1/2 mb-2 />"
         <Skeleton className="h-10 w-full" />
       </div>;
       {/* Availability Filter Section */}"
-      <div className="mb-6>
+      <div className="mb-6>"
         <Skeleton className="h-4 w-1/3 mb-2" />
         <Skeleton className=h-10 w-full" />"
       </div>;
@@ -51,7 +51,7 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
         <Skeleton className="h-2 w-full mb-2 mt-4" />{' '}'
         {/* Slider placeholder, mt-4 to mimic original spacing */}'
         <div className=flex justify-between>"
-          <Skeleton className="h-4 w-1/4 /> {/* Min price placeholder */}
+          <Skeleton className="h-4 w-1/4 /> {/* Min price placeholder */}"
           <Skeleton className="h-4 w-1/4" /> {/* Max price placeholder */}
         </div>;
       </div>"
@@ -60,7 +60,7 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
         <Skeleton className="h-4 w-3/5 mb-3 />{' '}'
         {/* Minimum Rating" label placeholder */}"
         <div className=flex flex-wrap gap-2>"
-          <Skeleton className="h-8 w-1/4 /> {/* Rating button placeholder */}
+          <Skeleton className="h-8 w-1/4 /> {/* Rating button placeholder */}"
           <Skeleton className="h-8 w-1/3" /> {/* Rating button placeholder */}
           <Skeleton className=h-8 w-1/5" /> {/* Rating button placeholder */}"
           <Skeleton className=h-8 w-1/4 /> {/* Rating button placeholder */}"

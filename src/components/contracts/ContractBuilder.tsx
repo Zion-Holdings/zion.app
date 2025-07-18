@@ -17,12 +17,12 @@ import { TemplateManager } from './templates/TemplateManager'
 import { SmartContractBuilder } from './SmartContractBuilder'
 '
 interface ContractBuilderProps {'
-  isOpen: "boolean,;";
-  onClose: "() => void",;"";
-  talent: TalentProfile",;"
-  clientName: string;"
+  isOpen: "boolean,"
+  onClose: () => void,""
+  talent: TalentProfile","
+  clientName: string"
   onContractGenerated?: (contractContent: string) => void"
-};
+}
 
 export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -40,11 +40,11 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
   const [showSmartContractBuilder, setShowSmartContractBuilder] =;
     useState(false);
 
-  const const handleLoadTemplate = (_templateData: ContractFormValues) => {;
+  const handleLoadTemplate = (_templateData: ContractFormValues) => {;
     setFormValues(templateData)'
   }'
 
-  const const handleContractGenerated = (_contract: string) => {'
+  const handleContractGenerated = (_contract: string) => {'
     setGeneratedContract(contract)'
     setActiveTab('preview')'
     if (onContractGenerated) {;
@@ -89,7 +89,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
                 onClick={() => setTemplateManagerOpen(true)}";""
                 className=flex gap-1";";
               >"
-                <Save className="h-4 w-4 />
+                <Save className="h-4 w-4 />"
                 Templates;""
               </Button>;"
 ";"
@@ -97,13 +97,13 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
                 variant=secondary"
                 size="sm
                 onClick={() => setShowSmartContractBuilder(true)};
-              >;
+              >;"
                 Smart Contract Builder"
               </Button>;"
             </div>;";"
           </div>;";"
 ;";"
-          <TabsContent value=form" className="pt-4>
+          <TabsContent value=form" className="pt-4>"
             <ContractForm"
               talent={talent};"
               clientName={clientName};";"
@@ -143,7 +143,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
             formValues || {;"";
               projectName: '','
               scopeSummary: '','
-              startDate: "new Date()",;""
+              startDate: new Date(),;""
               paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
               paymentAmount: talent.hourly_rate'
                 ? `$${talent.hourly_rate}/hour``

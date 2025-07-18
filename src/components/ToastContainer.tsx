@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 interface ToastContainerProps {'
   className?: string'
   position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
-  showQueueIndicator?: boolean;
-};
+  showQueueIndicator?: boolean
+}
 
 /**'
  * Enhanced toast container with queue management and visual indicators'
@@ -20,7 +20,7 @@ export function ToastContainer(): unknown {): unknown {): unknown {): unknown {)
   const [queueLength, setQueueLength] = useState(0);
 
   useEffect(() => {;
-    const const updateQueueInfo = () => {;
+    const updateQueueInfo = () => {;
       setQueueLength(globalToastManager.getQueueLength())'
     }'
 
@@ -86,11 +86,10 @@ export function ToastQueueManager(): ;
   );
 
   useEffect(() => {;
-    const const updateStatus = () => {;
+    const updateStatus = () => {;
       setActiveToasts(globalToastManager.getActiveToasts())"
       setQueueLength(globalToastManager.getQueueLength());
-    };"";
-;"";
+    };"";"";
     const interval: unknown unknown = setInterval(updateStatus", 500)";
     return () => clearInterval(interval);""
   }, []);""
@@ -114,7 +113,7 @@ export function ToastQueueManager(): ;
           <div className=font-medium>Active:</div>";";
           {activeToasts.map((toast) => ("
             <div key={toast.id} className="text-muted-foreground text-xs>
-              {toast.type}: {toast.message.substring(0, 30)}...;
+              {toast.type}: {toast.message.substring(0, 30)}...;"
             </div>"
           ))};"
         </div>;";"
@@ -124,7 +123,7 @@ export function ToastQueueManager(): ;
         <button;"";
           onClick={() => globalToastManager.dismissAll()};""
           className="px-2 py-1 bg-destructive text-destructive-foreground rounded text-xs
-        >;
+        >;"
           Clear All"
         </button>;"
         <button;";"
@@ -137,7 +136,7 @@ export function ToastQueueManager(): ;
           className="px-2 py-1 bg-primary text-primary-foreground rounded text-xs
         >;
           Test Toast;
-        </button>;
+        </button>;"
       </div>"
     </div>;"
   );";"

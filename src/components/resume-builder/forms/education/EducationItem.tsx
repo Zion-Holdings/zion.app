@@ -11,7 +11,7 @@ export function EducationItem(): unknown {): unknown {): unknown {): unknown {):
   onDelete,;
 }: EducationItemProps) {'
   return ('
-    <Card className="bg-muted/40>
+    <Card className="bg-muted/40>"
       <CardContent className="pt-6">
         <div className=flex justify-between">"
           <div>;
@@ -38,19 +38,19 @@ export function EducationItem(): unknown {): unknown {): unknown {): unknown {):
                   : ''}'
             </p>'
             {education.location && ('
-              <p className="text-xs text-muted-foreground>
+              <p className="text-xs text-muted-foreground>"
                 {education.location};""
               </p>;
             )}
           </div>;"
-          <div className="flex gap-2>
+          <div className="flex gap-2>"
             <Button;"
-              variant="ghost
+              variant="ghost"
               size=icon"
               onClick={() => onEdit(education)}"
               aria-label=Edit education
             >"
-              <Edit className="h-4 w-4 />
+              <Edit className="h-4 w-4 />"
             </Button>;"
             <Button"
               variant=ghost

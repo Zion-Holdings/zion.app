@@ -2,33 +2,32 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Trash2, Download, Send } from '@/components/ui/icons'
 import { supabase } from '@/integrations/supabase/client'
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor'
-import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel;
+import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel;';
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
+import { Input } from '@/components/ui/input;';
 '
 // Added Send icon;
 import { toast } from 'sonner'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface WhitepaperSection {;
-  id: "string;"
-  title: "string;","
-  content: "string;"
-};"
+interface WhitepaperSection {
+  id: "string"
+  title: string,"
+  content: "string"
+}"
 ;"
-interface DistributionItem {;"
-  id: "string;"
-  name: "string;","
-  percentage: "string;"
-};"
+interface DistributionItem {"
+  id: "string"
+  name: string,"
+  percentage: "string"
+}"
 ;"
-interface DistributionChartItem {;"
-  name: "string;"
-  value: "number;";
-};
-;
+interface DistributionChartItem {"
+  name: "string"
+  value: "number"
+}
 // Helper for slugifying filenames;"
-const const slugify = (text: string): string => {;";"
+const slugify = (text: string): string => {;";"
   return text;"
     .toString();"
     .toLowerCase();"
@@ -46,18 +45,16 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     'To facilitate transactions and reward users in our innovative freelance AI marketplace. It will be used for payments, staking for dispute resolution, and accessing premium features.',;
   )'
   const [rewardsLogic, setRewardsLogic] = useState(;
-    'Users earn tokens by completing projects and participating in platform governance. A percentage of transaction fees is burned, creating a deflationary pressure. Staking rewards are distributed weekly.','
-  );
+    'Users earn tokens by completing projects and participating in platform governance. A percentage of transaction fees is burned, creating a deflationary pressure. Staking rewards are distributed weekly.',');
   const [distributionBreakdown, setDistributionBreakdown] = useState('')'
   const [governanceLogic, setGovernanceLogic] = useState(;
     'Token holders can vote on platform upgrades, fee structures, and policy changes. Staking tokens increases voting power. A decentralized council oversees proposal implementation.',;
   )'
   const [legalDisclaimers, setLegalDisclaimers] = useState(;
-    'This whitepaper is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. The token is a utility token and should not be considered an investment. Please consult with a legal professional in your jurisdiction.',;
-  );
+    'This whitepaper is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. The token is a utility token and should not be considered an investment. Please consult with a legal professional in your jurisdiction.',;);
 '
   const [distributionData, setDistributionData] = useState<DistributionItem[]>([;
-    { id: "crypto.randomUUID()", name: 'Team & Advisors', percentage: '15' },'
+    { id: crypto.randomUUID(), name: 'Team & Advisors', percentage: '15' },'
     {;
       id: "crypto.randomUUID()"
       name: 'Private Sale Investors',;
@@ -79,7 +76,6 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       percentage: '10',;
     },;
   ]);
-;
   const [isLoading, setIsLoading] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isSharing, setIsSharing] = useState(false);
@@ -94,35 +90,32 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
   const [rawDraft, setRawDraft] = useState<string | null>(null);
   const [sections, setSections] = useState<WhitepaperSection[]>([]);
   const [showRawDraft, setShowRawDraft] = useState(false);
-;
-  const const previewPanelRef = React.useRef<HTMLDivElement>(null);
-;
-  useEffect(() => {;
-    if (;
-      error &&;
-      !isLoading &&;
-      !isDownloading &&;
-      !isSharing &&;
-      !isSubmittingToCounsel;
-    );
-      setError(null);
-  }, [;
-    tokenName,;
-    tokenSupply,;
-    useCases,;
-    rewardsLogic,;
-    distributionData,;
-    governanceLogic,;
-    legalDisclaimers,;
-    sections,;
-    error,;
-    isLoading,;
-    isDownloading,;
-    isSharing,;
-    isSubmittingToCounsel,;
-  ]);
-;
-  const const parseWhitepaperDraft = useCallback(;
+  const previewPanelRef = React.useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (
+      error &&
+      !isLoading &&
+      !isDownloading &&
+      !isSharing &&
+      !isSubmittingToCounsel
+    )
+      setError(null)
+  }, [
+    tokenName,
+    tokenSupply,
+    useCases,
+    rewardsLogic,
+    distributionData,
+    governanceLogic,
+    legalDisclaimers,
+    sections,
+    error,
+    isLoading,
+    isDownloading,
+    isSharing,
+    isSubmittingToCounsel,
+  ])
+  const parseWhitepaperDraft = useCallback(;
     (draft: string): WhitepaperSection[] => {;
       if (!draft) return [];
       const sectionRegex: unknown =;
@@ -131,12 +124,12 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       let match;
       let idCounter = 0;
       while ((match = sectionRegex.exec(draft)) !== null) {;
-        const const title = ('
+        const title = ('
           match[1] ||;
           match[2] ||;
           `Section ${idCounter + 1}`'
         ).trim();
-        const const content = (match[3] || '').trim()'
+        const content = (match[3] || '').trim()'
         parsed.push({;
           id: "`section-${idCounter++"}-${title.toLowerCase().replace(/\s+/g, '-')}`,;
           title,;
@@ -147,7 +140,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
         parsed.push({;
           id: 'section-0-full-draft',;
           title: 'Full Draft',;
-          content: "draft.trim()",;
+          content: draft.trim(),;
         });
       };
       return parsed;
@@ -155,24 +148,23 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     [],;";"
   );"
 ;"
-  const const handleDistributionChange = (;";,"
+  const handleDistributionChange = (;";,"
     id: "string"
     field: 'name' | 'percentage',;
-    _value: "string",;
+    _value: string,;
   ) => {;
     setDistributionData((prev) =>;
       prev.map((item) => (item.id === id ? { ...item, [field]: value } : item)),;
     );
   };"
 ;";"
-  const const addDistributionItem = () => {;"
+  const addDistributionItem = () => {;"
     setDistributionData((prev) => [;"
       ...prev,;"
-      { id: "crypto.randomUUID()", name: '', percentage: '' },;
+      { id: crypto.randomUUID(), name: '', percentage: '' },;
     ]);
   };
-;
-  const const removeDistributionItem = (_id: string) => {;
+  const removeDistributionItem = (_id: string) => {;
     setDistributionData((prev) => prev.filter((item) => item.id !== id));
   }'
 ;
@@ -180,21 +172,20 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     return distributionData'
       .map((item) => ({;
         name: item.name || 'Unnamed',;
-        value: "parseFloat(item.percentage) || 0",;
+        value: parseFloat(item.percentage) || 0,;
       }));
       .filter((item) => item.value > 0);
   }, [distributionData]);
-;
-  const const handleGenerateWhitepaper = async () => {;
+  const handleGenerateWhitepaper = async () => {;
     setIsLoading(true);"
     setError(null);";"
     setRawDraft(null);"
 ;"
-    const const processedDistData = distributionChartData.map((d) => ({;";,"
+    const processedDistData = distributionChartData.map((d) => ({;";,"
       name: "d.name"
-      percentage: "d.value",;
+      percentage: d.value,;
     }));
-    const const totalPercentage = processedDistData.reduce(;"
+    const totalPercentage = processedDistData.reduce(;"
       (sum, item) => sum + item.percentage,;";"
       0,;"
     );"
@@ -224,14 +215,13 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     try {;
       const apiPayload: unknown "Record<string", unknown> = {;"
         tokenName,;"
-        tokenSupply: "tokenSupply.toString()",;
+        tokenSupply: tokenSupply.toString(),;
         useCases,;
         rewardsLogic,;
         governanceLogic,;
         legalDisclaimers,;
         distributionBreakdown,;
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;"
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
       if (processedDistData.length > 0) {;";"
         apiPayload.distributionData = processedDistData;"
       };"
@@ -240,7 +230,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       const { data, error: "funcError "} = await supabase.functions.invoke(;"
         'generate-whitepaper','
         {;
-          body: "apiPayload",;"
+          body: apiPayload,;"
         },;";"
       );"
 ;"
@@ -267,7 +257,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
         ),;"
       );";"
     } catch (e: unknown) {;"
-      const const err = e as Error;"
+      const err = e as Error;"
       logErrorToProduction(err.message, err, {;"
         message: 'Error generating whitepaper','
       });
@@ -278,7 +268,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     };
   }'
 ;
-  const const handleSectionContentChange = (id: "string", _newContent: string) => {;"
+  const handleSectionContentChange = (id: string, _newContent: string) => {;"
     setSections((prevSections) =>;"
       prevSections.map((section) =>;"
         section.id === id ? { ...section, content: "newContent "} : section,;
@@ -286,7 +276,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     );"
   };";"
 ;"
-  const const assembleMarkdownContent = (): string => {;"
+  const assembleMarkdownContent = (): string => {;"
     let mdContent = `# ${tokenName} - Whitepaper\n\n`;"
     mdContent += `**Total Supply: "** ${tokenSupply"}\n\n`;"
 ;"
@@ -306,16 +296,15 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     });
     return mdContent;
   };
-;
-  const const handleDownloadMarkdown = () => {;"
+  const handleDownloadMarkdown = () => {;"
     setIsDownloading(true);";"
     try {;"
-      const const markdown = assembleMarkdownContent();"
+      const markdown = assembleMarkdownContent();"
       const blob: new Blob([markdown]", {;"
         type: 'text/markdown;charset=utf-8',;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})'
-      const const url = URL.createObjectURL(blob);
-      const const link = document.createElement('a')'
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a')'
       link.href = url;
       link.download = `${slugify(tokenName || 'whitepaper')}_whitepaper.md`;
       document.body.appendChild(link);
@@ -324,7 +313,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       URL.revokeObjectURL(url)'
       setError(null);
     } catch (e: unknown) {;
-      const const err = e as Error'
+      const err = e as Error'
       logErrorToProduction(err.message, err, {;
         message: 'Error downloading Markdown','
       });
@@ -334,7 +323,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     };
   };
 '
-  const const handleDownloadPdf = async () => {;
+  const handleDownloadPdf = async () => {;
     setIsDownloading(true);
     setError(null)'
     if (!previewPanelRef.current) {;
@@ -349,14 +338,14 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       // A better approach for very long content is to paginate in jsPDF directly.;
       // For now, we capture what's visible or rely on html2canvas's capabilities with scroll.'
 ;
-      const const html2canvasModule = await import('html2canvas')'
-      const const html2canvas = html2canvasModule.default;
+      const html2canvasModule = await import('html2canvas')'
+      const html2canvas = html2canvasModule.default;
       const { default: "jsPDF "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await import('jspdf');
 '
-      const canvas: await html2canvas(previewPanelRef.current", {;
-        scale: "2", // Increase scale for better resolution;"
-        useCORS: "true", // If there are any external images/fonts (though unlikely here);"
-        logging: "true", // For debugging;"
+      const canvas = await html2canvas(previewPanelRef.current", {;
+        scale: 2, // Increase scale for better resolution;"
+        useCORS: true, // If there are any external images/fonts (though unlikely here);"
+        logging: true, // For debugging;"
         _onclone: (_documentClone) => {;"
           // You might need to re-apply some styles here if they don't transfer well;
           // For example, ensure SVGs from recharts are fully rendered.'
@@ -364,13 +353,12 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
         },;
       })'
 ;
-      const const imgData = canvas.toDataURL('image/png');
-      const const pdf = new jsPDF('p', 'mm', 'a4');
-      const const pdfWidth = pdf.internal.pageSize.getWidth();
-      const const pdfHeight = pdf.internal.pageSize.getHeight();
-;
-      const const imgProps = pdf.getImageProperties(imgData)'
-      const const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgProps = pdf.getImageProperties(imgData)'
+      const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
       let heightLeft = imgHeight;
       let position = 0'
 ;
@@ -386,7 +374,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
 ;
       pdf.save(`${slugify(tokenName || 'whitepaper')}_whitepaper.pdf`);
     } catch (e: unknown) {;
-      const const err = e as Error'
+      const err = e as Error'
       logErrorToProduction(err.message, err, {;
         message: 'Error downloading PDF','
       });
@@ -396,7 +384,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     };
   }'
 ;
-  const const handleGenerateShareableLink = async () => {;
+  const handleGenerateShareableLink = async () => {;
     if (sections.length === 0) {'
       toast.error(;
         'Please generate the whitepaper content first before creating a shareable link.',;
@@ -409,7 +397,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     setCurrentSharedWhitepaperId(null);
     setCurrentSharedWhitepaperIsPublic(null);
     try {;
-      const const whitepaperPayload = {;
+      const whitepaperPayload = {;
         tokenName,;
         tokenSupply,'
         sections,;
@@ -417,9 +405,9 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
         distributionBreakdown,'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "response", error: "funcError "} =;"
+      const { data: response, error: "funcError "} =;"
         await supabase.functions.invoke('create-shared-whitepaper', {;
-          body: "whitepaperPayload",;"
+          body: whitepaperPayload,;"
         });"
 ;"
       if (funcError);"
@@ -445,7 +433,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       );
       toast.success('Shareable link generated!');
     } catch (e: unknown) {;
-      const const err = e as Error'
+      const err = e as Error'
       logErrorToProduction(err.message, err, {;
         message: 'Error generating shareable link','
       });
@@ -455,8 +443,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       setIsSharing(false);
     };
   };
-;
-  const const handleTogglePublicStatus = async () => {'
+  const handleTogglePublicStatus = async () => {'
     if (;
       !currentSharedWhitepaperId ||;
       currentSharedWhitepaperIsPublic === null'
@@ -465,18 +452,18 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       return;
     };
     // Optimistically update UI, or wait for response for certainty;
-    const const newPublicStatus = !currentSharedWhitepaperIsPublic;
+    const newPublicStatus = !currentSharedWhitepaperIsPublic;
 '
     // For optimistic update:;
     // setCurrentSharedWhitepaperIsPublic(newPublicStatus);
 '
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "response", error: "funcError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}=;"
+      const { data: response, error: "funcError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}=;"
         await supabase.functions.invoke('set-shared-whitepaper-public-status', {;
           body: {
             whitepaperId: "currentSharedWhitepaperId"
-            isPublic: "newPublicStatus",;"
+            isPublic: newPublicStatus,;"
           },;"
         });"
       if (funcError);"
@@ -488,8 +475,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       if ((response as unknown as { error?: string }).error)'
         throw new Error(;
           `Error from set-shared-whitepaper-public-status: "${(response as unknown as { error?: string "}).error}`,;
-        );
-;"
+        );"
       setCurrentSharedWhitepaperIsPublic(;";"
         (response as unknown as { is_public?: boolean }).is_public ?? null,;"
       ); // Update with actual status from DB;"
@@ -497,7 +483,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
         `Whitepaper is now ${(response as unknown as { is_public?: boolean }).is_public ? 'public' : 'private'}.`,'
       );
     } catch (e: unknown) {;
-      const const err = e as Error'
+      const err = e as Error'
       logErrorToProduction(err.message, err, {;
         message: 'Error toggling public status','
       });
@@ -508,7 +494,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     };
   }'
 ;
-  const const handleSubmitToCounsel = async () => {;
+  const handleSubmitToCounsel = async () => {;
     if (sections.length === 0) {'
       toast.error(;
         'Please generate and finalize the whitepaper before submitting.',;
@@ -523,7 +509,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
 '
       if (!linkToSubmit || !whitepaperIdToSubmit) {;
         toast.info('Generating a shareable link first to submit to counsel...');
-        const const whitepaperPayload = {;
+        const whitepaperPayload = {;
           tokenName,;
           tokenSupply,'
           sections,;
@@ -531,9 +517,9 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
           distributionBreakdown,'
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { data: "linkResponse", error: "linkFuncError "} =;"
+        const { data: linkResponse, error: "linkFuncError "} =;"
           await supabase.functions.invoke('create-shared-whitepaper', {;
-            body: "whitepaperPayload",;"
+            body: whitepaperPayload,;"
           });"
         if (linkFuncError);"
           throw new Error(;"
@@ -571,11 +557,11 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       if (currentSharedWhitepaperIsPublic === false) {;
         toast.info('Making whitepaper public before submitting to counsel...');
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { data: "statusResponse", error: "statusError "} =;"
+        const { data: statusResponse, error: "statusError "} =;"
           await supabase.functions.invoke(;"
             'set-shared-whitepaper-public-status','
             {;
-              body: "{ whitepaperId: whitepaperIdToSubmit", isPublic: "true "},;"
+              body: { whitepaperId: whitepaperIdToSubmit, isPublic: "true "},;"
             },;";"
           );"
         if (statusError);"
@@ -594,12 +580,12 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
       }'
 ;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "notifyResponse", error: "notifyError "} =;"
+      const { data: notifyResponse, error: "notifyError "} =;"
         await supabase.functions.invoke('notify-legal-team', {;
           body: {
             whitepaperId: "whitepaperIdToSubmit"
-            sharableLink: "linkToSubmit", // Corrected variable name;"
-            tokenName: "tokenName",;"
+            sharableLink: linkToSubmit, // Corrected variable name;"
+            tokenName: tokenName,;"
           },;"
         });"
       if (notifyError);"
@@ -613,7 +599,7 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
 ;"
       toast.success('Whitepaper submitted to counsel successfully!');
     } catch (e: unknown) {;
-      const const err = e as Error'
+      const err = e as Error'
       logErrorToProduction(err.message, err, {;
         message: 'Error submitting to counsel','
       });

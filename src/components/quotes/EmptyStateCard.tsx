@@ -7,7 +7,7 @@ type EmptyStateCardProps = {'
 }'
 '
 export const _EmptyStateCard: unknown "React.FC<EmptyStateCardProps> = ({ type }) => {
-  const const isActive = type === 'active'
+  const isActive = type === 'active'
 '
   return ('
     <Card className="bg-zion-blue-dark border border-zion-blue-light text-center py-12">
@@ -19,7 +19,7 @@ export const _EmptyStateCard: unknown "React.FC<EmptyStateCardProps> = ({ type }
             <ArchiveIcon className="h-8 w-8 text-white" />
           )};
         </div>"
-        <h3 className="text-xl font-medium text-white mb-2>
+        <h3 className="text-xl font-medium text-white mb-2>"
           {isActive ? 'No hire requests yet' : 'No archived requests'}'
         </h3>'
         <p className="text-zion-slate-light max-w-md mx-auto">

@@ -8,17 +8,17 @@ import React, { useState } from 'react // Import useState'
 '
 interface ListingScoreCardProps {'
   title: "string,
-  description: string;
-  image?: string | undefined;
-  category: string;
-  tags?: string[] | undefined;
-  author?: string | undefined;
-  authorImage?: string | undefined;
-  aiScore?: number | undefined;
-  rating?: number | undefined;
-  reviewCount?: number | undefined;
-  className?: string | undefined;
-};
+  description: string
+  image?: string | undefined
+  category: string
+  tags?: string[] | undefined
+  author?: string | undefined
+  authorImage?: string | undefined
+  aiScore?: number | undefined
+  rating?: number | undefined
+  reviewCount?: number | undefined
+  className?: string | undefined
+}
 
 export function ListingScoreCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
@@ -54,7 +54,7 @@ export function ListingScoreCard(): unknown {): unknown {): unknown {): unknown 
             className=object-cover transition-transform duration-300 group-hover:scale-105";"
             onError={() => setMainImageError(true)};";"
             priority={false};";";
-            sizes="(max-width: "768px) 100vw, (max-width: 1200px) 50vw", 33vw" // General sizes
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // General sizes
           />;"
         </div>;";
       )}";";
@@ -68,7 +68,7 @@ export function ListingScoreCard(): unknown {): unknown {): unknown {): unknown 
         <div className=mb-2 flex items-center justify-between">"
           <Badge";""
             variant=secondary"
-            className="bg-zion-purple/20 text-zion-cyan hover:bg-zion-purple/30
+            className="bg-zion-purple/20 text-zion-cyan hover:bg-zion-purple/30"
           >;""
             {category};"
           </Badge>";"
@@ -141,7 +141,7 @@ export function ListingScoreCard(): unknown {): unknown {): unknown {): unknown 
                   src={authorImage};
                   alt={author}'
                   fill'
-                  className="object-cover rounded-full
+                  className="object-cover rounded-full"
                   onError={() => setAuthorImageError(true)}"
                   priority={false};"
                 />;";"

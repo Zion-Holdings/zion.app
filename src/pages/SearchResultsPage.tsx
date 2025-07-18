@@ -4,28 +4,26 @@ import { SearchResultCard } from '@/components/search/SearchResultCard'
 import { SearchBar } from '@/components/SearchBar'
 import { SearchEmptyState } from '@/components/marketplace/EmptyState'
 import { generateSearchSuggestions } from '@/data/marketplaceData'
-import { logErrorToProduction } from '@/utils/logErrorToProduction;
+import { logErrorToProduction } from '@/utils/logErrorToProduction;';
 '
-interface SearchResult {;
-  id: "string;"
-  type: 'product' | 'service' | 'talent,;
-  title: "string;"
-  description: "string;";
-};
-;"
-const const LIMIT = 20;";"
+interface SearchResult {
+  id: "string"
+  type: 'product' | 'service' | 'talent,
+  title: "string"
+  description: "string"
+}"
+const LIMIT = 20;";"
 ;"
 export default function SearchResultsPage(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const [query, setQuery] = useState('')'
 ;
   // Sync query state with the URL once the router is ready;
   useEffect(() => {'
-    if (!router.isReady) return;
-    const const urlQuery = (router.query.q as string) || 
-    setQuery(urlQuery);
-  }, [router.isReady, router.query.q]);
-;
+    if (!router.isReady) return
+    const urlQuery = (router.query.q as string) || 
+    setQuery(urlQuery)
+  }, [router.isReady, router.query.q])
   const [results, setResults] = useState<SearchResult[]>([])'
   const [_totalCount, _setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
@@ -36,16 +34,15 @@ export default function SearchResultsPage(): ;"
   const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>(;
     'relevance',;
   );
-;
-  const const fetchResults = useCallback(async (_term: string) => {;
+  const fetchResults = useCallback(async (_term: string) => {;
     if (!term.trim()) {;
       setResults([]);
       return'
     };
     setLoading(true);
     try {'
-      const res: await fetch(`/api/search?query=${encodeURIComponent(term)"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
-      const const data = await res.json();
+      const res = await fetch(`/api/search?query=${encodeURIComponent(term)"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
+      const data = await res.json();
       if (data && data.results && Array.isArray(data.results)) {;"
         setResults(data.results);";"
       } else {;"
@@ -62,7 +59,6 @@ export default function SearchResultsPage(): ;"
       setLoading(false);
     };
   }, []);
-;
   useEffect(() => {;
     if (query) {;
       fetchResults(query);"

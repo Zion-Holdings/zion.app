@@ -2,9 +2,9 @@ import React from 'react''
 import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icons'
 '
 
-  const const features = ['
+  const features = ['
     {'
-      icon: <Users className="h-8 w-8 text-zion-cyan />,
+      icon: <Users className="h-8 w-8 text-zion-cyan />,"
       title: 'Hire from Anywhere','
       description:'
         'Browse and hire top AI talent on the go with a streamlined mobile interface.','
@@ -28,7 +28,7 @@ import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icon
         'Chat with candidates or clients and receive notifications in real-time.','
     },'
     {'
-      icon: <Smartphone className="h-8 w-8 text-zion-cyan />,
+      icon: <Smartphone className="h-8 w-8 text-zion-cyan />,"
       title: 'Biometric Security','
       description:'
         'Login quickly and securely with Face ID or Touch ID on supported devices.','
@@ -37,7 +37,7 @@ import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icon
 '
   return ('
     <section id="features" className=py-16 bg-zion-blue>"
-      <div className="container mx-auto px-4>
+      <div className="container mx-auto px-4>"
         <div className="text-center mb-12">
           <h2 className=text-3xl md:text-4xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">"
             Everything You Need On The Go;
@@ -48,14 +48,14 @@ import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icon
           </p>;
         </div>
 ;"
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto>"
           {features.map((feature, index) => (;"
             <div"
               key={index};
               className=bg-zion-blue-dark border border-zion-blue-light p-6 rounded-lg hover:border-zion-purple/50 transition-all duration-300"
             >"
               <div className=mb-4>{feature.icon}</div>"
-              <h3 className="text-xl font-bold text-white mb-2>
+              <h3 className="text-xl font-bold text-white mb-2>"
                 {feature.title};"
               </h3>"
               <p className=text-zion-slate-light>{feature.description}</p>"

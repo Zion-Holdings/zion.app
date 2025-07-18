@@ -6,7 +6,7 @@ interface QuickReplyButtonProps {'
   text: "string
   onClick: () => void""
 }
-;"
+"
 export function QuickReplyButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ text, onClick }: QuickReplyButtonProps) {;"
   return (
     <Button;

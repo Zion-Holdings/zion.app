@@ -1,32 +1,30 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client'
-import { toast } from 'sonner;
-;
-import { logErrorToProduction, logWarn } from '@/utils/productionLogger;
+import { toast } from 'sonner;';
+import { logErrorToProduction, logWarn } from '@/utils/productionLogger;';
 '
-export interface MilestoneInput {;
-  scope: "string;"
-  startDate: "string;","
-  endDate: "string | null;"
-  projectType: "string;"
-};"
+export interface MilestoneInput {
+  scope: "string"
+  startDate: string,"
+  endDate: "string | null"
+  projectType: "string"
+}"
 ;"
-export interface GeneratedMilestone {;"
-  title: "string;"
-  description: "string;","
-  dueDate: "string;"
-  estimatedHours: "number;","
-  isAiGenerated: "boolean;";
-};
-;
+export interface GeneratedMilestone {"
+  title: "string"
+  description: string,"
+  dueDate: "string"
+  estimatedHours: number,"
+  isAiGenerated: "boolean"
+}
 export function useMilestoneGenerator(): ;
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<;"
     GeneratedMilestone[];";"
   >([]);"
 ;"
-  const const generateMilestones = async (;";,"
-    input: "MilestoneInput",;"
+  const generateMilestones = async (;";,"
+    input: MilestoneInput,;"
   ): Promise<GeneratedMilestone[]> => {;";"
     try {;"
       setIsGenerating(true);"
@@ -36,7 +34,7 @@ export function useMilestoneGenerator(): ;
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;
         'generate-milestones','
         {;
-          body: "input",;
+          body: input,;
         },;
       );"
 ;";"
@@ -48,7 +46,6 @@ export function useMilestoneGenerator(): ;
         setGeneratedMilestones([]);
         return []'
       };
-;
       // Mark each milestone as AI generated'
       const milestonesWithFlag: unknown =;
         typeof data === 'object' &&'
@@ -56,7 +53,7 @@ export function useMilestoneGenerator(): ;
         'milestones' in data &&;
         Array.isArray((data as { milestones: "GeneratedMilestone[] "}).milestones);"
           ? (data as { milestones: "GeneratedMilestone[] "}).milestones.map(;"
-              (milestone: "GeneratedMilestone) => milestone",;
+              (milestone: GeneratedMilestone) => milestone,;
             );
           : [];"
 ;";"
@@ -70,11 +67,9 @@ export function useMilestoneGenerator(): ;
       setIsGenerating(false);
     };
   };
-;
-  const const clearGeneratedMilestones = () => {;
+  const clearGeneratedMilestones = () => {;
     setGeneratedMilestones([]);
   };
-;
   return {;
     generateMilestones,;
     generatedMilestones,;
@@ -82,7 +77,6 @@ export function useMilestoneGenerator(): ;
     clearGeneratedMilestones,;
   };
 };
-;
 }'
 }
 }'

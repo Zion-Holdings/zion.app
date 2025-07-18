@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from '@/components/ui/icons'
 import type { SkillsFilterProps } from '@/types/filters'
 
 // Common skills in AI and tech'
-const const POPULAR_SKILLS = ['
+const POPULAR_SKILLS = ['
   'Machine Learning','
   'Deep Learning','
   'Python','
@@ -30,7 +30,7 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
   _isMobileFilterOpen,;
 }: SkillsFilterProps) {'
   return ('
-    <div className="mb-6 border-b border-zion-blue-light pb-6>
+    <div className="mb-6 border-b border-zion-blue-light pb-6>"
       <button;"
         onClick={toggleSection}"
         className=flex w-full items-center justify-between text-white font-medium

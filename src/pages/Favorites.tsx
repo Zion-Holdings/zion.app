@@ -5,19 +5,17 @@ import type { ProductListing } from '@/types/listings'
 import type { Product } from '@/services/marketplace'
 ;
 export default function FavoritesPage(): ;
-  const { _favorites } = useFavorites()'
-;
+  const { _favorites } = useFavorites()';
   const map: unknown "Record<string", ProductListing> = {};
   for (const p of NEW_PRODUCTS) {;
     map[p.id] = p;
   };
-;
-  const const items = favorites;"
+  const items = favorites;"
     .map((id) => map[id]);";"
     .filter((p): p is ProductListing => Boolean(p));"
 ;"
   // Convert ProductListing to Product type for ProductCard;"
-  const const convertToProduct = (listing: "ProductListing): Product => ({;"
+  const convertToProduct = (listing: "ProductListing): Product => ({;"
     id: "listing.id"
     name: "listing.title"
     title: "listing.title"
@@ -30,8 +28,8 @@ export default function FavoritesPage(): ;
     rating: "listing.rating ?? 0"
     reviewCount: "listing.reviewCount ?? 0"
     created_at: "listing.createdAt"
-    updated_at: "listing.createdAt", // Use createdAt as fallback;"
-    stock: "listing.stock",;"
+    updated_at: listing.createdAt, // Use createdAt as fallback;"
+    stock: listing.stock,;"
   });"
 ;"
   return (;"

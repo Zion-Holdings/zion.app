@@ -4,7 +4,6 @@ import {;
   logWarn,'
   logErrorToProduction,;
 } from '@/utils/productionLogger;
-;
 export async function ensureAnalyticsTablesExist(): '
   try {;
     if (!supabase) throw new Error('Supabase client not initialized');
@@ -41,7 +40,6 @@ async function createAnalyticsTables(): ;"
           created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),;
           session_id TEXT;
         );
-;
         CREATE INDEX IF NOT EXISTS analytics_events_event_type_idx ON public.analytics_events(event_type);
         CREATE INDEX IF NOT EXISTS analytics_events_user_id_idx ON public.analytics_events(user_id);
         CREATE INDEX IF NOT EXISTS analytics_events_created_at_idx ON public.analytics_events(created_at);
@@ -57,7 +55,6 @@ async function createAnalyticsTables(): ;"
         WHERE event_type = 'page_view'
         GROUP BY DATE_TRUNC('day', created_at), path;
         ORDER BY date DESC, view_count DESC;
-        ;
         -- View for conversion rates'
         CREATE OR REPLACE VIEW public.conversion_rates;
         WITH (security_invoker = true) AS;
@@ -83,7 +80,7 @@ async function createAnalyticsTables(): ;"
           c.conversion_type,;
           c.conversion_count,'
           p.view_count,;
-          ROUND((c.conversion_count: ":numeric / NULLIF(p.view_count", 0)) * 100, 2) AS conversion_rate;
+          ROUND((c.conversion_count: :numeric / NULLIF(p.view_count, 0)) * 100, 2) AS conversion_rate;
         FROM conversions c;
         LEFT JOIN page_views p ON c.date = p.date;"
         ORDER BY c.date DESC;";"

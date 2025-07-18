@@ -10,23 +10,23 @@ import { LoadingContentSkeleton } from './LoadingContentSkeleton'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface GeneratedContent {'
-  description: "string,;";
-  tags: "string[]",;"";
-  suggestedPrice: {",;"
+  description: "string,"
+  tags: string[],""
+  suggestedPrice: {","
     min: number,""
-    max: "number;"
-  };";";
+    max: "number"
+  }";";
   keyPoints: "string[]"
 };
 
-interface AIListingGeneratorProps {;
-  onApplyGenerated?: (content: GeneratedContent) => void;
-  initialValues?: {;
-    title?: string;
-    category?: string;
-    keyFeatures?: string;
-    targetAudience?: string;
-  };
+interface AIListingGeneratorProps {
+  onApplyGenerated?: (content: GeneratedContent) => void
+  initialValues?: {
+    title?: string
+    category?: string
+    keyFeatures?: string
+    targetAudience?: string
+  }
 };
 
 export function AIListingGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{;
@@ -37,7 +37,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
   const [isLoading, setIsLoading] = useState(false);"
   const [aiResponse, setAiResponse] = useState<GeneratedContent | null>(null)";"
 ";""
-  const const handleGenerate = async (values: Record<string, unknown>) => {"
+  const handleGenerate = async (values: Record<string, unknown>) => {"
     setIsLoading(true);"
 ;";"
     try {;";"
@@ -97,7 +97,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
     };
   };
 '
-  const const handleApply = () => {'
+  const handleApply = () => {'
     if (aiResponse && onApplyGenerated) {;
       onApplyGenerated(aiResponse)'
       toast({'

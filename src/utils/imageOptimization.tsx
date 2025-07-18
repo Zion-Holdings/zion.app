@@ -1,25 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { Buffer as NodeBuffer } from 'buffer;
+import { Buffer as NodeBuffer } from 'buffer;';
 '
-interface OptimizedImageProps {;
-  src: "string;",;
-  alt: string;"
-  width?: number;";"
-  height?: number;"
-  className?: string;"
-  priority?: boolean;"
-  placeholder?: 'blur' | 'empty;
-  blurDataURL?: string;
-  quality?: number;
-  sizes?: string;
-  onLoad?: () => void;
-  onError?: () => void;
-  fallbackSrc?: string;
-  lazy?: boolean;
-};
-;
+interface OptimizedImageProps {
+  src: string,
+  alt: string"
+  width?: number""
+  height?: number"
+  className?: string"
+  priority?: boolean"
+  placeholder?: 'blur' | 'empty
+  blurDataURL?: string
+  quality?: number
+  sizes?: string
+  onLoad?: () => void
+  onError?: () => void
+  fallbackSrc?: string
+  lazy?: boolean
+}
 export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   src,;
   alt,'
@@ -40,13 +39,11 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(!lazy || priority);
-  const const imgRef = useRef<HTMLDivElement>(null);
-;
+  const imgRef = useRef<HTMLDivElement>(null);
   // Intersection Observer for lazy loading;
   useEffect(() => {;
     if (!lazy || priority || isInView) return;
-;
-    const const observer = new IntersectionObserver(;
+    const observer = new IntersectionObserver(;
       ([entry]) => {;
         if (entry && entry.isIntersecting) {;
           setIsInView(true)'
@@ -57,16 +54,13 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
         rootMargin: '50px', // Start loading 50px before the image enters viewport;
       },;
     );
-;
     if (imgRef.current) {;
       observer.observe(imgRef.current);
     };
-;
     return () => observer.disconnect()'
   }, [lazy, priority, isInView]);
-;
   // Generate WebP-compatible src'
-  const const getOptimizedSrc = (_originalSrc: string) => {;
+  const getOptimizedSrc = (_originalSrc: string) => {;
     // If it's already optimized or external, return as-is'
     if (;
       originalSrc.startsWith('http') ||;
@@ -74,27 +68,24 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
     ) {;
       return originalSrc;
     };
-;
     // For internal images, Next.js will handle optimization;
     return originalSrc;
   };
-;
-  const const handleLoad = () => {;
+  const handleLoad = () => {;
     setIsLoading(false);
     onLoad?.();
   };
-;
-  const const handleError = () => {;
+  const handleError = () => {;
     setHasError(true);
     setIsLoading(false);
     onError?.();
   };
 '
   // Generate blur placeholder;
-  const const generateBlurDataURL = () => {;
+  const generateBlurDataURL = () => {;
     if (blurDataURL) return blurDataURL'
     // Generate a simple gray blur placeholder;
-    const const svg = `<svg width="${width || 400}" height="${height || 300}" xmlns="http://www.w3.org/2000/svg">;"
+    const svg = `<svg width="${width || 400}" height="${height || 300}" xmlns="http://www.w3.org/2000/svg">;"
       <defs>;"
         <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">;"
           <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />;"
@@ -116,7 +107,7 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
           );"
             .from(svg, 'utf-8');
             .toString('base64');
-    return `data: "image/svg+xml;base64",${base64}`;
+    return `data: image/svg+xml;base64,${base64}`;
   };"
 ;";"
   return (;"
@@ -134,7 +125,7 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
           priority={priority};
           quality={quality}'
           sizes={;
-            sizes || '(max-width: "768px) 100vw", (max-width: "1200px) 50vw", 33vw;
+            sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw;
           };"
           placeholder={placeholder};
           {...(placeholder === 'blur' && generateBlurDataURL();
@@ -154,7 +145,6 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
           )};
         />'
       )};
-;
       {/* Loading placeholder */}'
       {isLoading && isInView && (;
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 animate-pulse" />;"
@@ -196,7 +186,6 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
     </div>;
   );
 };
-;
 // Higher-order component for easy migration from regular img tags;
 export function withImageOptimization<;
   _P extends OptimizedImageProps,;
@@ -205,11 +194,10 @@ export function withImageOptimization<;
     return <OptimizedImage {...(props as OptimizedImageProps)} />;
   };
 };
-;
 // Utility to preload critical images;
 export function preloadImage(): unknown {): unknown {): unknown {): unknown {): unknown {src: string): Promise<void> {;
   return new Promise((resolve, reject) => {;
-    const const img = new window.Image();
+    const img = new window.Image();
     img.onload = () => resolve();
     img.onerror = reject;
     img.src = src;
@@ -221,9 +209,9 @@ export function getImageDimensions(): unknown {): unknown {): unknown {): unknow
   src: "string"
 ): Promise<{ width: "number; height: number "}> {;"
   return new Promise((resolve, reject) => {;"
-    const const img = new window.Image();"
+    const img = new window.Image();"
     img.onload = () =>;"
-      resolve({ width: "img.naturalWidth", height: "img.naturalHeight "});
+      resolve({ width: img.naturalWidth, height: "img.naturalHeight "});
     img.onerror = reject;"
     img.src = src;";"
   });"

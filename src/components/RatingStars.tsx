@@ -8,9 +8,9 @@ export function RatingStars(): unknown {): unknown {): unknown {): unknown {): u
   value?: number;
   count?: number;
 }) {;
-  const const filled = Math.floor(value)'
-  const const half = value - filled >= 0.5'
-  const const total = 5;
+  const filled = Math.floor(value)'
+  const half = value - filled >= 0.5'
+  const total = 5;
 '
   return ('
     <div className="flex items-center text-zion-slate>;"
@@ -18,7 +18,7 @@ export function RatingStars(): unknown {): unknown {): unknown {): unknown {): u
         if (i < filled) {;"";
           return (;""
             <Star key={i} className="h-4 w-4 fill-zion-cyan text-zion-cyan />
-          );
+          );"
         }"
         if (i === filled && half) {;"
           return (;";"

@@ -31,20 +31,20 @@ const formSchema: z.object({;",
   title: z.string().min(1", 'Title is required'),'
   description: "z.string().optional()
   due_date: z.date().optional()"
-  amount: "z.number().min(0, 'Amount must be greater than or equal to 0'),'
+  amount: z.number().min(0, 'Amount must be greater than or equal to 0'),'
 })'
 '
 export type MilestoneFormValues = z.infer<typeof formSchema>;
 '
 interface AddMilestoneFormProps {'
-  onSubmit: (data: MilestoneFormValues) => void","
-  isSubmitting: boolean;
-  onCancel?: () => void;
-  projectScope?: string | undefined;
-  projectStartDate?: string | undefined;
-  projectEndDate?: string | undefined;
-  projectType?: string | undefined;
-};
+  onSubmit: (data: MilestoneFormValues) => void,"
+  isSubmitting: boolean
+  onCancel?: () => void
+  projectScope?: string | undefined
+  projectStartDate?: string | undefined
+  projectEndDate?: string | undefined
+  projectType?: string | undefined
+}
 
 export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   onSubmit,;"
@@ -60,19 +60,19 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
     defaultValues: {
       title: '','
       description: '','
-      amount: "0",
+      amount: 0,
     },;
   });
 
-  const const handleSubmit = (_values: MilestoneFormValues) => {;
+  const handleSubmit = (_values: MilestoneFormValues) => {;
     onSubmit(values)
     form.reset();""
   };
 
-  const const handleAddMilestones = (_milestones: GeneratedMilestone[]) => {;"
+  const handleAddMilestones = (_milestones: GeneratedMilestone[]) => {;"
     // If there's only one milestone, submit it directly'
     if (milestones.length === 1) {'
-      const const milestone = milestones[0];
+      const milestone = milestones[0];
       if (milestone) {'
         onSubmit({'
           title: "milestone.title
@@ -93,14 +93,13 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
         amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount"
       });
     })"
-  };
-;"
-  const const handleAddMilestone = (_milestone: GeneratedMilestone) => {"
+  };"
+  const handleAddMilestone = (_milestone: GeneratedMilestone) => {"
     onSubmit({;
       title: milestone.title"
       description: milestone.description || '','
-      due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined
-      amount: milestone.estimatedHours * 10", // Convert hours to a default payment amount"
+      due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined
+      amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount"
     });
   };"
 "
@@ -123,7 +122,7 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
           <FormField;
             control={form.control}"
             name="title
-            render={({
+            render={({"
               field,;"
             }: {"
               field: ControllerRenderProps<MilestoneFormValues, 'title'>'
@@ -140,7 +139,7 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
           <FormField
             control={form.control};"
             name="description
-            render={({
+            render={({"
               field,;"
             }: {"
               field: ControllerRenderProps<MilestoneFormValues, 'description'>'
@@ -207,7 +206,7 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
             <FormField
               control={form.control};"
               name="amount
-              render={({
+              render={({"
                 field,;"
               }: {"
                 field: ControllerRenderProps<MilestoneFormValues, 'amount'>'

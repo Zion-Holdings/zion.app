@@ -2,7 +2,7 @@
 import type { FraudFlag, FraudSeverity } from '@/types/fraud'
 import { analyzeContent } from './analyzeContent'
 import { flagContent } from './flagContent'
-import { logDebug } from '@/utils/productionLogger;
+import { logDebug } from '@/utils/productionLogger;';
 '
 /**;
  * Create a monitoring system helper to easily monitor any content;
@@ -12,9 +12,9 @@ export const _monitorContent: async (;",;"
   userEmail: "string | undefined"
   contentType: FraudFlag['content_type'],;
   contentId: "string"
-  content: "string",;
+  content: string,;
 ): Promise<void> => {;"
-  const const analysis = analyzeContent(content);";"
+  const analysis = analyzeContent(content);";"
 ;"
   if (analysis.isSuspicious) {;"
     let severity: FraudSeverity =;"
@@ -31,7 +31,6 @@ export const _monitorContent: async (;",;"
     ) {;
       severity = 'dangerous;
     };
-;
     await flagContent(;
       userId,;
       userEmail,'

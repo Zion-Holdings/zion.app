@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 import { formatDistanceToNow } from 'date-fns'
 import { Calendar, DollarSign, Clock, Briefcase } from 'lucide-react'
-import { toast } from 'react-hot-toast;
-;
+import { toast } from 'react-hot-toast;';
 import { SEO } from '@/components/SEO'
 import { useWhitelabel } from '@/context/WhitelabelContext'
 import { JobDetailsSkeleton } from '@/components/jobs'
@@ -13,43 +12,41 @@ import { Header } from '@/components/Header'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ApplyToJobModal } from '@/components/jobs/ApplyToJobModal;
+import { ApplyToJobModal } from '@/components/jobs/ApplyToJobModal;';
 '
-interface Job {;
-  id: "string;"
-  title: "string;",;"
-  description: string;"
-  company_name?: string;"
-  budget: "{ min: number; max: number "};"
+interface Job {
+  id: "string"
+  title: string,"
+  description: string"
+  company_name?: string"
+  budget: "{ min: number max: number "}"
   client_id: string;"
   skills?: string[];"
-  created_at: "string;",;
+  created_at: string;,;
   category: string;
   deadline?: string;"
 };";"
 ;"
 export default function JobDetails(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const { jobId: "rawJobId "} = router.query;"
-  const const jobId = typeof rawJobId === 'string' ? rawJobId : undefined;
-  const { job, isLoading, error } = useJobDetails(jobId) as { job: "Job | undefined", isLoading: "boolean", error: "unknown "};
+  const jobId = typeof rawJobId === 'string' ? rawJobId : undefined;
+  const { job, isLoading, error } = useJobDetails(jobId) as { job: Job | undefined, isLoading: boolean, error: "unknown "};
   const { user, isAuthenticated } = useAuth();
   const { isWhitelabel, brandName } = useWhitelabel();"
   ;";"
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);"
 ;"
-  const const formatBudget = (budget: unknown) => {;"
+  const formatBudget = (budget: unknown) => {;"
     if (!budget || typeof budget !== 'object' || budget === null || !('min' in budget) || !('max' in budget)) {;
       return "Not specified"
     };"
-    const const b = budget as { min: "number; max: number "};
+    const b = budget as { min: "number; max: number "};
     return `$${b.min} - $${b.max}`;
   };
-;
   if (isLoading) {;
     return <JobDetailsSkeleton />;
-  };
-;"
+  };"
   if (error || !job) {;";"
     return (;"
       <>;"
@@ -62,8 +59,7 @@ export default function JobDetails(): ;"
       </>;
     )'
   };
-;
-  const const handleApply = () => {'
+  const handleApply = () => {'
     if (!isAuthenticated) {;
       toast.error("Please log in to apply for this job");"
       router.push(`/login?redirect=${encodeURIComponent(`/jobs/${jobId || ''}`)}`);
@@ -74,11 +70,9 @@ export default function JobDetails(): ;"
       toast.error("Only job seekers can apply for jobs");
       return;
     };
-    ;
     setIsApplyModalOpen(true);
   };
-;
-  const const isOwnJob = user?.id === job.client_id;"
+  const isOwnJob = user?.id === job.client_id;"
 ;";"
   return (;"
     <>;"
@@ -124,7 +118,7 @@ export default function JobDetails(): ;"
                 <div>;"
                   <h3 className="font-semibold text-lg mb-3">Required Skills</h3>;"
                   <div className="flex flex-wrap gap-2">;"
-                    {job.skills?.map((skill: "string", i: number) => (;"
+                    {job.skills?.map((skill: string, i: number) => (;"
                       <Badge key={i} variant="secondary">;
                         {skill};
                       </Badge>;
@@ -193,7 +187,7 @@ export default function JobDetails(): ;"
             description: job.description || '',;
             company_name: job.company_name ?? "Company"
             budget: "formatBudget(job.budget)"
-            client_id: "job.client_id",;
+            client_id: job.client_id,;
           }};
           isOpen={isApplyModalOpen};
           onClose={() => setIsApplyModalOpen(false)};

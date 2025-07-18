@@ -1,18 +1,18 @@
-export interface Investor {;
-  id: "string;"
-  name: "string;","
-  website: "string;"
-  location: "string;","
-  industries: "string[];"
-  stages: "string[];","
-  notableInvestments: "string[];"
-};"
+export interface Investor {
+  id: "string"
+  name: string,"
+  website: "string"
+  location: string,"
+  industries: "string[]"
+  stages: string[],"
+  notableInvestments: "string[]"
+}"
 ;"
-export interface InvestorMatch {;"
-  investor: "Investor;"
-  score: "number;","
-  reason: "string;"
-};";"
+export interface InvestorMatch {"
+  investor: "Investor"
+  score: number,"
+  reason: "string"
+}";"
 ;"
 const investors: unknown Investor[] = [;"
   {;"
@@ -65,12 +65,11 @@ const investors: unknown Investor[] = [;"
 export async function getInvestorMatches(): unknown {): unknown {): unknown {): unknown {): unknown {;
   industry: "string"
   location: "string"
-  stage: "string",;
+  stage: string,;
   limit = 5,;
 ): Promise<InvestorMatch[]> {;
   await new Promise((resolve) => setTimeout(resolve, 500));
-;
-  const const filtered = investors.filter((inv) => {;
+  const filtered = investors.filter((inv) => {;
     const industryMatch: unknown =;
       !industry ||;
       inv.industries.some((i) =>;
@@ -96,7 +95,7 @@ export async function getInvestorMatches(): unknown {): unknown {): unknown {): 
 export function generatePitchEmail(): unknown {): unknown {): unknown {): unknown {): unknown {;
   startup: "string"
   investorName: "string"
-  summary: "string",;"
+  summary: string,;"
 ): string {;";"
   return `Hi ${investorName},\n\n${startup} here. ${summary}\n\nI believe our vision aligns with your investment focus. Looking forward to the opportunity to connect.\n\nBest regards,\n${startup} Team`;"
 };"

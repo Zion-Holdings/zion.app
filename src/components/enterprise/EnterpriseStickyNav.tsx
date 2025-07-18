@@ -32,7 +32,7 @@ export function EnterpriseStickyNav(): ;
               <Link";""
                 href=#pricing"
                 className="text-sm font-medium hover:text-primary
-              >;
+              >;"
                 Pricing"
               </Link>;"
             </li>;";"

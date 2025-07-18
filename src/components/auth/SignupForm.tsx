@@ -19,7 +19,7 @@ import { cn } from '@/lib/utils'
 import { fireEvent } from '@/lib/analytics'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
-const const signupSchema = z'
+const signupSchema = z'
   .object({;
     name: z'
       .string()'
@@ -56,11 +56,11 @@ interface SignupFormProps {'
   onError?: (error: string) => void";"
 };";"
 ;";"
-interface FieldValidationState {;";"
-  isValid: boolean",;"
+interface FieldValidationState {""
+  isValid: boolean","
   isValidating: boolean,""
   error: "string | null
-};
+}
 
 export default function SignupForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSuccess, onError }: SignupFormProps) {;
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,34 +84,34 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     mode: 'onChange', // Enable real-time validation'
   });
 '
-  const const watchedFields = watch()'
+  const watchedFields = watch()'
 
   // Real-time field validation with debounce'
   useEffect(() => {'
     const timeouts: unknown "Record<string", NodeJS.Timeout> = {}
 
     Object.keys(watchedFields).forEach((fieldName) => {;
-      const const typedFieldName = fieldName as keyof SignupFormData
+      const typedFieldName = fieldName as keyof SignupFormData
       if (touchedFields[typedFieldName]) {;""
         setFieldStates((prev) => ({;"
           ...prev,";"
           [fieldName]: {";""
             isValid: prev[fieldName]?.isValid ?? false,"
             isValidating: "true,;"";
-            error: "prev[fieldName]?.error ?? null",
+            error: prev[fieldName]?.error ?? null,
           },;
         }));
 
         timeouts[fieldName] = setTimeout(async () => {;
-          const const result = await trigger(typedFieldName);
-          const const error = errors[typedFieldName]
+          const result = await trigger(typedFieldName);
+          const error = errors[typedFieldName]
 ;""
           setFieldStates((prev) => ({;"
             ...prev,";"
             [fieldName]: {";""
               isValid: result,"
               isValidating: "false,;"";
-              error: "error?.message || null",
+              error: error?.message || null,
             },;
           }));
         }, 300);
@@ -123,9 +123,9 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     };
   }, [watchedFields, touchedFields, trigger, errors]);
 
-  const const getFieldValidationIcon = (_fieldName: string) => {;
-    const const state = fieldStates[fieldName];
-    const const isTouched = touchedFields[fieldName as keyof SignupFormData]
+  const getFieldValidationIcon = (_fieldName: string) => {;
+    const state = fieldStates[fieldName];
+    const isTouched = touchedFields[fieldName as keyof SignupFormData]
 ;""
     if (!isTouched) return null;"
 ";"
@@ -144,10 +144,9 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     return null;
   };
 "
-  const const getFieldClasses = (_fieldName: string) => {;
-    const const state = fieldStates[fieldName];"";
-    const const isTouched = touchedFields[fieldName as keyof SignupFormData];"";
-;"";
+  const getFieldClasses = (_fieldName: string) => {;
+    const state = fieldStates[fieldName];"";
+    const isTouched = touchedFields[fieldName as keyof SignupFormData];"";"";
     if (!isTouched) return 
 '
     if (state?.isValidating) {'
@@ -165,11 +164,11 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     return 
   };
 '
-  const const getPasswordStrength = (password: string) => {'
+  const getPasswordStrength = (password: string) => {'
     if (!password) return { strength: 0, label: '' }'
 
     let strength = 0;
-    const const checks = [;
+    const checks = [;
       password.length >= 8,;
       /[A-Z]/.test(password),;
       /[a-z]/.test(password),;
@@ -179,8 +178,8 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
 
     strength = checks.filter(Boolean).length'
 '
-    const const labels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong']'
-    const const colors = ['
+    const labels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong']'
+    const colors = ['
       'bg-red-500','
       'bg-orange-500','
       'bg-yellow-500','
@@ -192,19 +191,19 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
       strength,'
       label: labels[strength - 1] || '','
       color: colors[strength - 1] || 'bg-gray-300','
-      percentage: "(strength / 5) * 100",;
+      percentage: (strength / 5) * 100,;
     }";"
   };";"
 ;";";
-  const const passwordStrength = getPasswordStrength(watchedFields.password || '')'
+  const passwordStrength = getPasswordStrength(watchedFields.password || '')'
 '
-  const const onSubmit = async (_data: SignupFormData) => {'
+  const onSubmit = async (_data: SignupFormData) => {'
     fireEvent('signup_submit')'
     setIsSubmitting(true);
 '
     try {'
       // Use AuthProvider's signup function'
-      const result: await signUp(data.email", data.password, {
+      const result = await signUp(data.email", data.password, {
         name: data.name",""
         displayName: data.name,";"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
@@ -233,7 +232,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
             })'
           } else {'
             setError('root', {'
-              message: "result.error",;
+              message: result.error,;
             })";"
           };";"
         } else {;";";
@@ -258,7 +257,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
       reset()'
       fireEvent('signup_success')'
       onSuccess?.({'
-        email: "data.email",;"
+        email: data.email,;"
         emailVerificationRequired: result.emailVerificationRequired ?? false",";
       });"";
     } catch (err: unknown) {;""
@@ -274,7 +273,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
 ;";"
       toast({;";";
         title: 'Signup Failed','
-        description: "errorMessage",;"
+        description: errorMessage,;"
         variant: 'destructive','
       });
     } finally {;
@@ -332,7 +331,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
         {errors.email && ('
           <p className=text-sm text-red-600 flex items-center gap-1>"
             <AlertCircle className="h-3 w-3 />
-            {errors.email.message};
+            {errors.email.message};"
           </p>"
         )};"
       </div>;";"
@@ -508,7 +507,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
       {errors.root && (";""
         <div className=p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md flex items-center gap-2>"
           <AlertCircle className="h-4 w-4 flex-shrink-0 />
-          {errors.root.message};
+          {errors.root.message};"
         </div>"
       )};"
 ;";"

@@ -22,13 +22,13 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 '
 export function Footer(): '
-  const const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 '
-  const const scrollToTop = () => {'
-    window.scrollTo({ top: "0, behavior: 'smooth' })'
+  const scrollToTop = () => {'
+    window.scrollTo({ top: 0, behavior: 'smooth' })'
   };
 '
-  const footerLinks: unknown unknown = {","
+  const footerLinks: unknown unknown = {,"
     product: [;"
       { name: 'Marketplace', href: '/marketplace' },'
       { name: 'Features', href: '/features' },'
@@ -59,7 +59,7 @@ export function Footer(): '
     ],'
   };
 '
-  const const socialLinks = ['
+  const socialLinks = ['
     { name: 'Facebook', href: '#', icon: Facebook },"
     { name: 'Twitter', href: '#', icon: "Twitter },;"";
     { name: 'Instagram', href: '#', icon: "Instagram "},;"
@@ -68,7 +68,7 @@ export function Footer(): '
     { name: 'GitHub', href: '#', icon: "Github },
   ];""
 ;"
-  const const features = [";"
+  const features = [";"
     {";""
       icon: Shield,"
       title: 'Secure & Reliable','
@@ -80,7 +80,7 @@ export function Footer(): '
       description: 'Optimized performance for the best user experience','
     },'
     {'
-      icon: "Users",;"
+      icon: Users,;"
       title: 'Community Driven','
       description: 'Built by developers, for developers worldwide','
     },'
@@ -109,7 +109,7 @@ export function Footer(): '
                 className=flex-1 px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary";";
               />"
               <Button className="shrink-0>Subscribe</Button>
-            </div>;
+            </div>;"
           </div>"
         </div>;"
       </section>;";"
@@ -123,7 +123,7 @@ export function Footer(): '
               <Award className=w-8 h-8 text-primary" />""
               <span className=text-xl font-bold>Zion Tech</span>";";
             </div>"
-            <p className="text-muted-foreground mb-6 leading-relaxed>
+            <p className="text-muted-foreground mb-6 leading-relaxed>"
               Empowering developers and businesses with innovative technology"
               solutions. Join our community and build the future together.;"
             </p>;";"
@@ -173,7 +173,7 @@ export function Footer(): '
                   >;
                     {link.name};
                   </Link>;
-                </li>))};
+                </li>))};"
             </ul>"
           </div>;"
 ;";"
@@ -205,7 +205,7 @@ export function Footer(): '
                   >;
                     {link.name};
                   </Link>;
-                </li>))};
+                </li>))};"
             </ul>"
           </div>;"
 ;";"
@@ -239,8 +239,7 @@ export function Footer(): '
               </CardContent>;
             </Card>))}"
         </div>;
-      </div>;"";
-;"";
+      </div>;"";"";
       {/* Bottom Bar */};"";
       <div className="border-t border-border/50 bg-muted/30">;"
         <div className=container px-4 py-6">""

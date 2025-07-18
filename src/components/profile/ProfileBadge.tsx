@@ -28,13 +28,13 @@ export function ProfileBadge(): unknown {): unknown {): unknown {): unknown {): 
       colors: 'bg-green-500/20 text-green-400','
     },'
     'top-rated': {'
-      icon: "Award
+      icon: Award
       text: 'Top Rated','
       colors: 'bg-purple-500/20 text-purple-400','
     },;
   }'
 '
-  const { icon: Icon", text, colors } = badgeConfig[type]"
+  const { icon: Icon, text, colors } = badgeConfig[type]"
 
   return (;"
     <div"

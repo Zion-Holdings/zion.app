@@ -18,7 +18,6 @@ export default function OAuthCallback() {
   const router = useRouter(); // Initialized router
   // location is now router
   const { setUser } = useAuth();
-
   useEffect(() => {
     // Check if router.isReady is true before accessing router.query or router.asPath
     if (!router.isReady) return;

@@ -41,8 +41,7 @@ export function WorkspaceHeader(): unknown {): unknown {): unknown {): unknown {
             <Settings className=h-4 w-4" />"
           </Button>;
         </div>;"";
-      </div>;"";
-;"";
+      </div>;"";"";
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">;"
         <div className=bg-card rounded-lg p-4 border border-border">""
           <div className=text-sm text-muted-foreground>";"

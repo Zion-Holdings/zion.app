@@ -1,21 +1,20 @@
 import React from 'react';
-import { useRouter } from 'next/router;
-;
+import { useRouter } from 'next/router;';
 export const BrowserRouter: ({ children "}: { children: "React.ReactNode "}) =>;"
   children;"
 export const Routes: ({ children "}: { children: "React.ReactNode "}) => children;"
 export const Route: ({ element "}: { element: "React.ReactNode "}) => element;"
-export const const Link = (props: "Record<string", unknown>) => {;"
+export const Link = (props: Record<string, unknown>) => {;"
   return React.createElement('a', props);
 }'
-export const const NavLink = Link;
+export const NavLink = Link;
 export const Navigate: ({ to "}: { to: "string "}) => null;
-export const const MemoryRouter = BrowserRouter;
-export const const Outlet = () => null;
+export const MemoryRouter = BrowserRouter;
+export const Outlet = () => null;
 // Provide a simple shim that delegates to Next.js routing when available.;
-export const const useNavigate = () => {;
+export const useNavigate = () => {;
   try {;
-    const const router = useRouter();
+    const router = useRouter();
     return (_url: string) => {;
       if (url) router.push(url);
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
@@ -24,9 +23,9 @@ export const const useNavigate = () => {;
     return () => {};"
   };"
 };"
-export const const useLocation = () => ({ pathname: '/' })'
+export const useLocation = () => ({ pathname: '/' })'
 export const useParams: () => ({"});
-export const const useSearchParams = () =>;
+export const useSearchParams = () =>;
   [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
 export default {;
   BrowserRouter,;

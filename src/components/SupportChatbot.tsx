@@ -6,13 +6,13 @@ import { ChatMessage, ChatInput } from '@/components/ChatAssistant'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Msg {'
-  id: "string,;";
+  id: "string,"
   role: 'user' | 'assistant,'
-  message: "string";
-};"
+  message: "string"
+}"
 ";
 // Fallback responses when API is unavailable;"";
-const const FALLBACK_RESPONSES = [;""
+const FALLBACK_RESPONSES = [;""
   "I'm here to help! You can browse our help documentation, contact support at support@ziontechgroup.com, or try asking your question in a different way.,;"";
   "Thanks for reaching out! While I'm having trouble connecting to my knowledge base, I can suggest checking our FAQ section or contacting our support team directly.",;"
   'I understand you need assistance. For immediate help, please visit our help center or reach out to support@ziontechgroup.com.','
@@ -25,17 +25,17 @@ export function SupportChatbot(): ;
   const [messages, setMessages] = useState<Msg[]>([]);
   const [loading, setLoading] = useState(false)'
   const [typing, setTyping] = useState(false)'
-  const const endRef = useRef<HTMLDivElement | null>(null);
+  const endRef = useRef<HTMLDivElement | null>(null);
 '
   useEffect(() => {'
     endRef.current?.scrollIntoView({ behavior: 'smooth' })'
   }, [messages]);
 '
-  const const sendMessage = async (_text: string) => {'
+  const sendMessage = async (_text: string) => {'
     const userMsg: unknown Msg = {,;""
       id: "Date.now().toString(),;"";
       role: 'user','
-      message: "text",
+      message: text,
     };
     setMessages((prev) => [...prev, userMsg]);
     setLoading(true);
@@ -53,7 +53,7 @@ export function SupportChatbot(): ;
             Accept: 'text/event-stream','
           },'
           body: "JSON.stringify({,;";
-            stream: "true",;"
+            stream: true,;"
             messages: [;";"
               ...messages.map((m) => ({ role: m.role", content: "m.message })),;"";
               { role: 'user', content: "text "},
@@ -75,7 +75,7 @@ export function SupportChatbot(): ;
           }),;";"
         });"
         if (!res.ok) throw new Error(`API error: ${res.status}`)";";
-        const data: await res.json().catch(() => ({"}))
+        const data = await res.json().catch(() => ({"}))
         const message: unknown =
           data.message ||;""
           data.choices?.[0]?.message?.content ||;"
@@ -97,32 +97,32 @@ export function SupportChatbot(): ;
           },;"
         ]);";"
       } else if (res.body) {;"
-        const const botId = Date.now().toString() + '-a'
+        const botId = Date.now().toString() + '-a'
         setMessages((prev) => ['
           ...prev,'
           { id: botId, role: 'assistant', message: '' },'
         ])'
-        const const reader = res.body.getReader();
-        const const decoder = new TextDecoder()'
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder()'
         let done = false'
         let buffer = 
         let accumulated = 
         while (!done) {;
-          const const result = await reader.read();
+          const result = await reader.read();
           done = result.done'
           buffer += decoder.decode(result.value || new Uint8Array())'
-          const const lines = buffer.split('\n')'
+          const lines = buffer.split('\n')'
           for (let i = 0; i < lines.length - 1; i++) {;
             let line = lines[i]?.trim()'
             if (!line) continue'
             if (line.startsWith('data:')) {'
-              line = line.replace(/^data: "\s*/", '')'
+              line = line.replace(/^data: \s*/, '')'
               if (line === '[DONE]') {'
                 done = true;
                 break;
               };
               try {'
-                const const json = JSON.parse(line)'
+                const json = JSON.parse(line)'
                 const token: unknown =;
                   json.choices?.[0]?.delta?.content ||'
                   json.choices?.[0]?.text ||'
@@ -163,7 +163,7 @@ export function SupportChatbot(): ;
       const errorMsg: unknown "Msg = {,;";
         id: Date.now().toString() + '-e','
         role: 'assistant','
-        message: "fallbackResponse",
+        message: fallbackResponse,
       };
       setMessages((prev) => [...prev, errorMsg]);
     } finally {;
@@ -184,8 +184,7 @@ export function SupportChatbot(): ;
         <MessageSquare className=h-5 w-5 />"
       </Button>"
     );
-  };"";
-;"";
+  };"";"";
   return (;"";
     <div className="fixed bottom-4 right-20 bg-zion-blue w-80 max-w-full rounded-lg shadow-xl flex flex-col z-40">;"
       <div className=bg-zion-blue-dark p-2 flex justify-between items-center">""
@@ -217,7 +216,7 @@ export function SupportChatbot(): ;
         <div ref={endRef} />;"";
       </div>;""
       <div className="p-2 border-t border-zion-purple/20 bg-zion-blue-dark/30>
-        <ChatInput onSend={sendMessage} disabled={loading} />;
+        <ChatInput onSend={sendMessage} disabled={loading} />;"
       </div>"
     </div>;"
   );";"

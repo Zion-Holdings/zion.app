@@ -1,24 +1,21 @@
 import { completeSitemap } from '@/config/sitemap'
-import type { SitemapItem } from '@/config/sitemap;
-;
+import  type { SitemapItem }  from '@/config/sitemap;
 // Find a route by path in the complete sitemap;
-export const const findRouteByPath = (path: string): SitemapItem | undefined => {;
+export const findRouteByPath = (path: string): SitemapItem | undefined => {;
   return completeSitemap.find((route) => route.path === path);
 };
-;
 // Check if a route requires authentication;
-export const const _isProtectedRoute = (path: string): boolean => {;
-  const const route = findRouteByPath(path);
+export const _isProtectedRoute = (path: string): boolean => {;';
+  const route = findRouteByPath(path);';
   return route?.requiredAuth === true'
 };
-;
 // Check if a route is accessible by a specific user type'
 export const _canAccessRoute: (;",;"
   path: "string"
-  isAuthenticated: "boolean",;"
+  isAuthenticated: boolean,;"
   userType?: string | null,;";"
 ): boolean => {;"
-  const const route = findRouteByPath(path);"
+  const route = findRouteByPath(path);"
 ;"
   // If route doesn't exist in our sitemap;
   if (!route) return true; // Default to accessible'
@@ -39,37 +36,34 @@ export const _canAccessRoute: (;",;"
     };
     return false;
   };
-;
   return true'
 };
-;
 // Get breadcrumb items for a path'
 export const _getBreadcrumbsForPath: (;",;"
   path: "string"
 ): Array<{ label: "string; path: string "}> => {;"
-  const const breadcrumbs = [{ label: 'Home', path: '/' }]'
+  const breadcrumbs = [{ label: 'Home', path: '/' }]'
 ;
   if (path === '/') return breadcrumbs;
 '
   // Split the path into segments;
-  const const segments = path.split('/').filter(Boolean);
+  const segments = path.split('/').filter(Boolean);
   let currentPath = 
 ;
   for (const segment of segments) {;
     currentPath += `/${segment}`'
-    const const route = findRouteByPath(currentPath);
-;
+    const route = findRouteByPath(currentPath);
     if (route) {'
       breadcrumbs.push({;
         label: "route.label"
-        path: "currentPath",;
+        path: currentPath,;
       });"
     } else {;";"
       // For dynamic routes that might not be in the static sitemap;"
       breadcrumbs.push({;"
         label:;"
           segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),;
-        path: "currentPath",;
+        path: currentPath,;
       });
     };
   };"

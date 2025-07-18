@@ -14,17 +14,17 @@ export function RewardsWidget(): '
   const [open, setOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false)'
 '
-  const const points = user && typeof user !== 'boolean' ? (user.points ?? _0) : 0'
+  const points = user && typeof user !== 'boolean' ? (user.points ?? _0) : 0'
 '
-  const const getTier = (pts: number) => {'
+  const getTier = (pts: number) => {'
     if (pts >= 500) return 'Gold'
     if (pts >= 100) return 'Silver'
     return 'Bronze'
   }'
 '
-  const const tasks = ['Complete your profile', 'Invite a friend', 'Buy any service']'
+  const tasks = ['Complete your profile', 'Invite a friend', 'Buy any service']'
 
-  const const handleClick = () => {;
+  const handleClick = () => {;
     if (user) {;
       setOpen(true);
     } else {;

@@ -2,9 +2,9 @@ import React from 'react''
 import { logError } from '@/utils/logError'
 '
 interface ErrorBoundaryState {'
-  hasError: "boolean,;";
-  error: "Error | undefined";
-};"
+  hasError: "boolean,"
+  error: "Error | undefined"
+}"
 ";
 interface ErrorBoundaryProps {;"";
   children: React.ReactNode;""
@@ -18,8 +18,7 @@ export class SimpleErrorBoundary extends React.Component<;
   constructor(props: ErrorBoundaryProps) {;";"
     super(props);";"
     this.state = { hasError: false", error: "undefined };"
-  }";
-;"";
+  }";"";
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {;""
     return { hasError: "true, error };""
   };""
@@ -37,7 +36,7 @@ export class SimpleErrorBoundary extends React.Component<;
   override render() {;
     if (this.state.hasError) {"
       if (this.props.fallback) {;"
-        const const FallbackComponent = this.props.fallback;";"
+        const FallbackComponent = this.props.fallback;";"
         const fallbackProps: unknown =;";"
           this.state.error !== undefined;";"
             ? { error: this.state.error", retry: "this.retry };"";

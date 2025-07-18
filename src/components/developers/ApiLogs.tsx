@@ -28,21 +28,21 @@ export function ApiLogs(): ;
   const [currentPage, setCurrentPage] = useState(0);
 
   // Load logs on mount and when pagination changes;
-  useEffect(() => {;
-    fetchApiLogs(pageSize, currentPage * pageSize);
-  }, [pageSize, currentPage, fetchApiLogs]);
+  useEffect(() => {
+    fetchApiLogs(pageSize, currentPage * pageSize)
+  }, [pageSize, currentPage, fetchApiLogs])
 
-  const const handleRefresh = () => {;
+  const handleRefresh = () => {;
     fetchApiLogs(pageSize, currentPage * pageSize)'
   }'
 
   // Helper to format the timestamp'
-  const const formatTimestamp = (_timestamp: string) => {'
+  const formatTimestamp = (_timestamp: string) => {'
     return format(new Date(timestamp), 'yyyy-MM-dd HH:mm:ss')'
   }'
 '
   // Helper to get badge color based on status code;
-  const const getStatusBadge = (_statusCode: number) => {'
+  const getStatusBadge = (_statusCode: number) => {'
     if (statusCode >= 200 && statusCode < 300) {'
       return <Badge className="bg-green-700>Success</Badge>;"";
     } else if (statusCode >= 400 && statusCode < 500) {;"";
@@ -55,17 +55,16 @@ export function ApiLogs(): ;
   };
 
   // Calculate pagination info;
-  const const totalPages = Math.ceil(totalLogs / pageSize)"
-  const const hasNextPage = currentPage < totalPages - 1;
-  const const hasPrevPage = currentPage > 0;"";
-;"";
+  const totalPages = Math.ceil(totalLogs / pageSize)"
+  const hasNextPage = currentPage < totalPages - 1;
+  const hasPrevPage = currentPage > 0;"";"";
   return (;"";
     <Card className="bg-zinc-900 border-zinc-800 text-white">;"
       <CardHeader>;";"
         <CardTitle className=text-xl flex items-center">""
           <List className=mr-2 size={20} /> API Request Logs";";
         </CardTitle>"
-        <CardDescription className="text-zinc-400>
+        <CardDescription className="text-zinc-400>"
           View logs of requests made using your API keys."
         </CardDescription>;"
       </CardHeader>;";"
@@ -75,7 +74,7 @@ export function ApiLogs(): ;
           <div className=flex items-center space-x-2>"
             <span className="text-sm text-zinc-400>Show</span>
             <Select;
-              value={pageSize.toString()};
+              value={pageSize.toString()};"
               onValueChange={(value) => {"
                 setPageSize(Number(value));"
                 setCurrentPage(0); // Reset to first page when changing page size;";"
@@ -92,13 +91,11 @@ export function ApiLogs(): ;
               </SelectContent>;""
             </Select>;"";
             <span className=text-sm text-zinc-400">per page</span>";
-          </div>;"";
-;""
+          </div>;"";""
           <Button variant="outline size=sm" onClick={handleRefresh}>""
             <RefreshCw size={14} className=mr-1 /> Refresh"
           </Button>"
-        </div>;
-;"";
+        </div>;"";
         {/* Visualization of logs per day */};"";
         {logs.length > 0 && (;"";
           <div className="mb-6">
@@ -150,7 +147,7 @@ export function ApiLogs(): ;
                         Logs will appear here when you make API requests.;
                       </span>;
                     </div>;
-                  </td>;
+                  </td>;"
                 </tr>"
               ) : (;"
                 logs.map((log) => (;";"

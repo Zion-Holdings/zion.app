@@ -3,9 +3,9 @@ import { X } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { safeSessionStorage } from '@/utils/safeStorage'
 
-const const SHOWN_KEY = 'pwaInstallShown'
-const const DISMISS_KEY = 'pwaInstallDismissUntil'
-const const DISMISS_MS = 24 * 60 * 60 * 1000; // 24 hours'
+const SHOWN_KEY = 'pwaInstallShown'
+const DISMISS_KEY = 'pwaInstallDismissUntil'
+const DISMISS_MS = 24 * 60 * 60 * 1000; // 24 hours'
 '
 // Define BeforeInstallPromptEvent interface;
 interface BeforeInstallPromptEvent extends Event {'
@@ -18,25 +18,25 @@ interface BeforeInstallPromptEvent extends Event {'
 }
 ;""
 // Define gtag function type;"
-interface GtagFunction {";"
-  (";""
+interface GtagFunction {""
+  ("""
     command: 'event','
     eventName: string,"
-    parameters?: Record<string, unknown>,;"
-  ): void;";"
-};";"
+    parameters?: Record<string, unknown>,"
+  ): void""
+}";"
 ;";"
 // Augment the WindowEventMap to include 'beforeinstallprompt'
 declare global {'
-  interface WindowEventMap {;
+  interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent'
     // appinstalled event is standard, but if issues arise, it can be augmented too'
     // _appinstalled: Event""
-  };
+  }
 
-  interface Window {;
-    gtag?: GtagFunction;
-  };
+  interface Window {
+    gtag?: GtagFunction
+  }
 };
 
 export const InstallPrompt: unknown React.FC = () => {;
@@ -47,9 +47,9 @@ export const InstallPrompt: unknown React.FC = () => {;
   useEffect(() => {"
     if (typeof window === 'undefined') return'
 
-    const const dismissUntil = safeSessionStorage.getItem(DISMISS_KEY);
-    const const isDismissed = dismissUntil && Date.now() < Number(dismissUntil);
-    const const hasShown = safeSessionStorage.getItem(SHOWN_KEY);
+    const dismissUntil = safeSessionStorage.getItem(DISMISS_KEY);
+    const isDismissed = dismissUntil && Date.now() < Number(dismissUntil);
+    const hasShown = safeSessionStorage.getItem(SHOWN_KEY);
 '
     // Do not show prompt if already installed (standalone mode)'
     if (;
@@ -60,14 +60,14 @@ export const InstallPrompt: unknown React.FC = () => {;
       return'
     }'
 
-    const const handler = (_e: BeforeInstallPromptEvent) => {'
+    const handler = (_e: BeforeInstallPromptEvent) => {'
       e.preventDefault()'
       safeSessionStorage.setItem(SHOWN_KEY, 'true')'
       setPromptEvent(e)'
       setVisible(true)'
     };
 '
-    const const handleAppInstalled = () => {'
+    const handleAppInstalled = () => {'
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {'
         window.gtag('event', 'pwa_install_success'); // More specific event for install success'
       };
@@ -92,7 +92,7 @@ export const InstallPrompt: unknown React.FC = () => {;
     };
   }, []);
 '
-  const const install = async () => {'
+  const install = async () => {'
     if (!promptEvent) return;
     promptEvent.prompt()'
     const { _outcome } = await promptEvent.userChoice'
@@ -109,7 +109,7 @@ export const InstallPrompt: unknown React.FC = () => {;
     setPromptEvent(null)'
   }'
 
-  const const close = () => {'
+  const close = () => {'
     setVisible(false)'
     setPromptEvent(null); // Clear the event so it doesn't re-appear on next visit in same session'
     safeSessionStorage.setItem(DISMISS_KEY, String(Date.now() + DISMISS_MS))'
@@ -154,7 +154,6 @@ export const InstallPrompt: unknown React.FC = () => {;
       </div>;
     </>;
   )"
-};
-;"";
+};"";
 export default InstallPrompt;"";
 """"

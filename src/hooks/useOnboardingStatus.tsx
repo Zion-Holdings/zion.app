@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from './useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface OnboardingStatus {;
-  profileCompleted: "boolean;"
-  skillsAdded: "boolean;","
-  availabilitySet: "boolean;"
-  matchReceived: "boolean;","
-  jobPosted: "boolean;"
-  inviteSent: "boolean;","
-  responseReceived: "boolean;";
-};"
+interface OnboardingStatus {
+  profileCompleted: "boolean"
+  skillsAdded: boolean,"
+  availabilitySet: "boolean"
+  matchReceived: boolean,"
+  jobPosted: "boolean"
+  inviteSent: boolean,"
+  responseReceived: "boolean"
+}"
 ;";"
 export function useOnboardingStatus(): ;"
   const { _user } = useAuth();"
@@ -22,11 +22,10 @@ export function useOnboardingStatus(): ;"
     matchReceived: "false"
     jobPosted: "false"
     inviteSent: "false"
-    responseReceived: "false",;
+    responseReceived: false,;
   });
-;
   useEffect(() => {;"
-    const const fetchOnboardingStatus = async () => {;";"
+    const fetchOnboardingStatus = async () => {;";"
       if (!user) return;"
 ;"
       try {;"
@@ -40,7 +39,7 @@ export function useOnboardingStatus(): ;"
 '
         if (error) {;
           logErrorToProduction('Error fetching onboarding status:', {;
-            data: "error",;
+            data: error,;
           });
           return;"
         };";"
@@ -53,16 +52,15 @@ export function useOnboardingStatus(): ;"
             matchReceived: "data.match_received || false"
             jobPosted: "data.job_posted || false"
             inviteSent: "data.talent_invited || false"
-            responseReceived: "data.quote_received || false",;"
+            responseReceived: data.quote_received || false,;"
           });"
         };"
       } catch {;"
         logErrorToProduction('Error in onboarding status hook:', {;
-          data: "error",;
+          data: error,;
         });
       };
     };
-;
     fetchOnboardingStatus();
   }, [user]);"
 ;";"

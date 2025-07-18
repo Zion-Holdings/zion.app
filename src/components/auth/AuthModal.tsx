@@ -21,14 +21,14 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
   onClose,;";"
   returnUrl = '/marketplace','
 }) => {;
-  const const router = useRouter();
+  const router = useRouter();
 
-  const const handleLogin = () => {;
+  const handleLogin = () => {;
     onClose();
     router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`)`
   };
 
-  const const handleSignUp = () => {;
+  const handleSignUp = () => {;
     onClose();
     router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`)`
   };

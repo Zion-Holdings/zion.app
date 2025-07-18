@@ -21,7 +21,7 @@ import {'
 import type { FilterType } from '@/components/notifications/NotificationFilter'
 
 export const _NotificationCenter: unknown React.FC = () => {;
-  const {;
+  const { ;
     filteredNotifications,;
     unreadCount,;
     markAsRead,;
@@ -30,18 +30,16 @@ export const _NotificationCenter: unknown React.FC = () => {;
     loading,;
     filter,;
     setFilter,;
-    fetchNotifications,;
-  } = useNotifications();
-
+    fetchNotifications,; } = useNotifications();
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loadedOnce, setLoadedOnce] = useState(false);
-  const const enqueueSnackbar = useEnqueueSnackbar();
+  const enqueueSnackbar = useEnqueueSnackbar();
 
   // Refresh notifications when popover opens, but avoid duplicate;
   useEffect(() => {;
     if (open && !loadedOnce) {;
-      const const loadNotifications = async () => {'
+      const loadNotifications = async () => {'
         try {'
           await fetchNotifications();
           setError(null)'
@@ -72,7 +70,7 @@ export const _NotificationCenter: unknown React.FC = () => {;
     };
   }, [open, loadedOnce, fetchNotifications, enqueueSnackbar, error])'
 '
-  const const handleMarkAllAsRead = async () => {;
+  const handleMarkAllAsRead = async () => {;
     try {'
       await markAllAsRead()'
       enqueueSnackbar('All notifications marked as read', {'
@@ -98,7 +96,7 @@ export const _NotificationCenter: unknown React.FC = () => {;
     };
   };
 
-  const const handleFilterChange = (newFilter: FilterType) => {;
+  const handleFilterChange = (newFilter: FilterType) => {;
     setFilter(newFilter as FilterType);
   };
 '

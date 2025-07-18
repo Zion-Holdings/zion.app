@@ -2,8 +2,7 @@ import React from 'react';
 import { GradientHeading } from '@/components/GradientHeading'
 import { Eye, Mic, Code } from '@/components/ui/icons'
 import { ProductListingCard } from '@/components/ProductListingCard'
-import { useState, useEffect, useRef, Suspense } from 'react;
-;
+import { useState, useEffect, useRef, Suspense } from 'react;';
 import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/listingData'
 import type { ProductListing } from '@/types/listings'
 import { useRouter } from 'next/router'
@@ -14,9 +13,9 @@ import { NextSeo } from '@/components/NextSeo'
 import { Header } from '@/components/Header'
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import apiClient from '@/services/apiClient;
+import apiClient from '@/services/apiClient;';
 '
-// const const _AUTO_SERVICE_TITLES = [;
+// const _AUTO_SERVICE_TITLES = [;
   'AI-Powered Customer Support',;
   'Cloud Infrastructure Management',;
   'Predictive Analytics Consulting',;
@@ -28,7 +27,6 @@ import apiClient from '@/services/apiClient;
 ];
 '
 // Remove the generateInnovationListing function entirely. Only real API data should be used.;
-;
 // Map of category slugs to their display data'
 const categoryData: {;",;"
   services: {
@@ -92,40 +90,38 @@ const categoryData: {;",;"
     icon: <Briefcase className="w-6 h-6" />,;
   },;
 };
-;
-interface CategoryDetailProps {;"
-  slug?: string;";"
-};"
+interface CategoryDetailProps {"
+  slug?: string""
+}"
 ;"
 export default function CategoryDetail(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  slug: "slugProp",;
+  slug: slugProp,;
 }: CategoryDetailProps = {}) {;
-  const const router = useRouter();"
+  const router = useRouter();"
   const { _toast } = useToast();";"
 ;"
   // Get slug from Next.js router query params;"
   const params: router.query as { slug?: string "};
-  const const slug = slugProp ?? params.slug;"
+  const slug = slugProp ?? params.slug;"
 ;";"
   const [isLoading, setIsLoading] = useState<boolean>(true);"
   const [listings, setListings] = useState<ProductListing[]>([]);"
   const [category, setCategory] = useState<{;"
     title: "string;"
-    description: "string;","
+    description: string;,"
     icon: "React.JSX.Element;"
   }>({;"
     title: '',;
     description: '',;
     icon: <Bot className="w-6 h-6" />,;
   });
-  const const innovationCounterRef = useRef(0);
-;
+  const innovationCounterRef = useRef(0);
   useEffect(() => {;
     async function load(): ;
       setIsLoading(true);
       try {;
         // Find the category data based on slug;
-        const const currentCategory = categoryData[;"
+        const currentCategory = categoryData[;"
           slug as keyof typeof categoryData;";"
         ] || {;"
           title:;"
@@ -135,16 +131,15 @@ export default function CategoryDetail(): unknown {): unknown {): unknown {): un
               .join(' ') || 'Category',;
           description: 'Explore our collection in this category',;
           icon: <Bot className="w-6 h-6" />,;
-        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;"
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
         setCategory(currentCategory);";"
         innovationCounterRef.current = 0;"
 ;"
         // Fetch real listings for this category from API;"
-        const const response = await apiClient.get('/products', {;
+        const response = await apiClient.get('/products', {;
           params: "{ category: currentCategory.title "},;
         });"
-        const const filteredListings = response.data?.items || [];";"
+        const filteredListings = response.data?.items || [];";"
 ;"
         setListings(filteredListings);"
       } catch {;"
@@ -158,21 +153,19 @@ export default function CategoryDetail(): unknown {): unknown {): unknown {): un
     load();
   }, [slug, toast]);
 '
-  useEffect(() => {;
-    if (slug !== 'innovation') return;
+  useEffect(() => {
+    if (slug !== 'innovation') return
     // No-op'
-    return undefined;
-  }, [slug]);
+    return undefined
+  }, [slug])
 '
   if (!slug) {;
     router.push('/categories');
     return null;
   };
-;
   // Handle requesting a quote;
-  const const handleRequestQuote = (_listingId: string) => {'
-    const const listing = listings.find((item) => item.id === listingId);
-;
+  const handleRequestQuote = (_listingId: string) => {'
+    const listing = listings.find((item) => item.id === listingId);
     if (listing) {'
       toast({;
         title: 'Quote Requested',;
@@ -180,24 +173,22 @@ export default function CategoryDetail(): unknown {): unknown {): unknown {): un
       });";"
 ;"
       // Navigate to the quote request page with the listing information;"
-      const const queryParams = new URLSearchParams({;";,"
+      const queryParams = new URLSearchParams({;";,"
         serviceType: "listing.category"
         itemId: "listing.id"
         itemTitle: "listing.title"
         itemCategory: "listing.category"
         ...(listing.images?.[0] && { itemImage: "listing.images[0] "}),;
       });
-;
       router.push(`/request-quote?${queryParams.toString()}`);
     };"
   };";"
 ;"
-  const const seoTitle = category.title;"
+  const seoTitle = category.title;"
     ? `${category.title} | Zion Marketplace`;"
     : 'Category | Zion Marketplace;
   const seoDescription: unknown =;
     category.description || 'Explore listings in this category.;
-;
   return ('
     <>;
       <NextSeo title={seoTitle} description={seoDescription} />;

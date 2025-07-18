@@ -5,7 +5,7 @@ export async function fetchRecommendations(): unknown {): unknown {): unknown {)
 ): Promise<ProductListing[]> {'
   const params: new URLSearchParams({ userId "})
   if (type) params.append('type', type)'
-  const const res = await fetch(`/api/recommendations?${params.toString()"}`)"
+  const res = await fetch(`/api/recommendations?${params.toString()"}`)"
   if (!res.ok) {"
     throw new Error('Failed to fetch recommendations')'
   }'

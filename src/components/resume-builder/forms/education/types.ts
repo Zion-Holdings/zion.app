@@ -14,22 +14,22 @@ export const educationSchema: z.object({;",
 ;"
 export type EducationFormValues = z.infer<typeof educationSchema>;
 "
-export interface EducationFormProps {;"
+export interface EducationFormProps {"
   resumeId: string
-  educationEntries: "Education[]",
+  educationEntries: Education[],
   onComplete: () => void"
   onBack: "() => void
-};
+}
 "
-export interface EducationItemProps {;"
+export interface EducationItemProps {"
   education: Education
   onEdit: "(education: Education) => void"
   onDelete: (id: string) => void
-};"
+}"
 "
-export interface EducationFormFieldsProps {;
+export interface EducationFormFieldsProps {
   isEditing: boolean"
   onSubmit: "(data: Education) => Promise<void>
   onCancel: () => void"
-};"
+}"
 """

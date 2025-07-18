@@ -6,9 +6,8 @@ import Link from 'next/link'
 ;
 export function ApiSampleCode(): ;
   // JavaScript example with Axios'
-  const const jsAxiosExample = `// Using Axios with JavaScript;
-import axios from 'axios;
-;
+  const jsAxiosExample = `// Using Axios with JavaScript;
+import axios from 'axios;';
 // Configure Axios with the base URL and headers'
 const api: axios.create({;",;"
   baseURL: 'https://api.ziontechgroup.com/v1','
@@ -21,7 +20,7 @@ const api: axios.create({;",;"
 // Get all jobs;
 async function getJobs(): unknown {): unknown {): unknown {): unknown {): unknown {filters = {}) {'
   try {;
-    const const response = await api.get('/api/jobs', { params: "filters "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
+    const response = await api.get('/api/jobs', { params: "filters "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     return response.data;"
   } catch {;"
     // logErrorToProduction('Error fetching jobs:', { data: "error.response?.data || error "});
@@ -32,7 +31,7 @@ async function getJobs(): unknown {): unknown {): unknown {): unknown {): unknow
 // Post a new job;"
 async function createJob(): unknown {): unknown {): unknown {): unknown {): unknown {jobData) {;"
   try {;"
-    const const response = await api.post('/api/jobs', jobData);
+    const response = await api.post('/api/jobs', jobData);
     return response.data'
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
     // logErrorToProduction('Error creating job:', { data: "error.response?.data || error "});
@@ -43,23 +42,22 @@ async function createJob(): unknown {): unknown {): unknown {): unknown {): unkn
 // Search for talent;"
 async function searchTalent(): unknown {): unknown {): unknown {): unknown {): unknown {filters = {}) {;"
   try {;"
-    const const response = await api.get('/api/talent', { params: "filters "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
+    const response = await api.get('/api/talent', { params: "filters "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     return response.data;"
   } catch {;"
     // logErrorToProduction('Error searching talent:', { data: "error.response?.data || error "});
     throw error;
   };
-};
-;"
+};"
 // Example usage;";"
 async function main(): ;"
   try {;"
     // Get all open jobs;"
-    const const jobs = await getJobs({ status: 'open', limit: "5 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
+    const jobs = await getJobs({ status: 'open', limit: "5 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     // logInfo('Jobs:', { data: "jobs "});"
     ;"
     // Create a new job;"
-    const const newJob = await createJob({;";,"
+    const newJob = await createJob({;";,"
       title: 'Frontend Developer',;
       description: 'We need a skilled frontend developer...',;
       category: 'development',;
@@ -73,17 +71,15 @@ async function main(): ;"
     // logInfo('New job created:', { data: "newJob "});"
     ;"
     // Search for talent with React skills;"
-    const const talent = await searchTalent({ skills: 'React', limit: "10 "});"
+    const talent = await searchTalent({ skills: 'React', limit: "10 "});"
     // logInfo('Talent:', { data: "talent "});"
   } catch {;"
     // logErrorToProduction('Something went wrong:', { data: "error "});
   };
 };
-;
 main();`;
-;
   // Python example with requests;"
-  const const pythonExample = `# Using requests with Python;";"
+  const pythonExample = `# Using requests with Python;";"
 import requests;"
 import json;"
 ;"
@@ -148,41 +144,37 @@ if __name__ == "__main__":;"
         print(f"Error: "{e"}")`;"
 ;"
   // Node.js example with fetch;"
-  const const nodeFetchExample = `// Using node-fetch with Node.js;"
-import fetch from 'node-fetch;
-;
-const const API_KEY = 'YOUR_API_KEY'
-const const BASE_URL = 'https://api.ziontechgroup.com/v1'
+  const nodeFetchExample = `// Using node-fetch with Node.js;"
+import fetch from 'node-fetch;';
+const API_KEY = 'YOUR_API_KEY'
+const BASE_URL = 'https://api.ziontechgroup.com/v1'
 ;
 // Helper to handle API requests;
 async function apiRequest(): unknown {): unknown {): unknown {): unknown {): unknown {endpoint, options = {}) {'
   const url: \`\${BASE_URL"}\${endpoint}\`;"
   ;"
-  const const headers = {;
+  const headers = {;
     'Authorization': \`Bearer \${API_KEY}\`,;
     'Content-Type': 'application/json',;
     ...options.headers;
   };
-  ;
-  const const config = {;
+  const config = {;
     ...options,'
     headers;
   };
   '
-  const response: await fetch(url", config);"
+  const response = await fetch(url", config);"
   ;"
   if (!response.ok) {;"
-    const const error = await response.json();
+    const error = await response.json();
     throw new Error(error.message || \`API error: "\${response.status"}\`);
   };
-  ;
   return response.json();
 };
-;
 // Get all jobs;
 async function getJobs(): unknown {): unknown {): unknown {): unknown {): unknown {filters = {}) {;
   // Convert filters to query string;
-  const const params = new URLSearchParams();"
+  const params = new URLSearchParams();"
   Object.entries(filters).forEach(([key, value]) => {;";"
     params.append(key, value);"
   });"
@@ -190,7 +182,6 @@ async function getJobs(): unknown {): unknown {): unknown {): unknown {): unknow
   const queryString: params.toString() ? \`?\${params.toString()"}\` : 
   return apiRequest(\`/api/jobs\${queryString}\`, { method: 'GET' })'
 };
-;
 // Post a new job'
 async function createJob(): unknown {): unknown {): unknown {): unknown {): unknown {jobData) {;
   return apiRequest('/api/jobs', {;
@@ -198,10 +189,9 @@ async function createJob(): unknown {): unknown {): unknown {): unknown {): unkn
     body: "JSON.stringify(jobData);";
   });
 };
-;
 // Search for talent;
 async function searchTalent(): unknown {): unknown {): unknown {): unknown {): unknown {filters = {}) {;
-  const const params = new URLSearchParams();"
+  const params = new URLSearchParams();"
   Object.entries(filters).forEach(([key, value]) => {;";"
     params.append(key, value);"
   });"
@@ -214,11 +204,11 @@ async function searchTalent(): unknown {): unknown {): unknown {): unknown {): u
 async function main(): ;
   try {'
     // Get all open jobs;
-    const const jobs = await getJobs({ status: 'open', limit: "5 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
+    const jobs = await getJobs({ status: 'open', limit: "5 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     // logInfo('Jobs:', { data: "jobs "});"
     ;"
     // Create a new job;"
-    const const newJob = await createJob({;";,"
+    const newJob = await createJob({;";,"
       title: 'Backend Developer',;
       description: 'We need a skilled backend developer...',;
       category: 'development',;
@@ -232,26 +222,23 @@ async function main(): ;
     // logInfo('New job created:', { data: "newJob "});"
     ;"
     // Search for talent with Node.js skills;"
-    const const talent = await searchTalent({ skills: 'Node.js', limit: "10 "});"
+    const talent = await searchTalent({ skills: 'Node.js', limit: "10 "});"
     // logInfo('Talent:', { data: "talent "});"
   } catch {;"
     // logErrorToProduction('Something went wrong:', { data: "error "});
   };
-};
-;"
+};"
 main();`;";"
 ;"
   return (;"
     <ApiDocsLayout>;"
       <div className="max-w-3xl prose prose-invert">;
         <h1>Sample Code</h1>;
-;
         <p>;
           The following code examples demonstrate how to integrate with the Zion;
           AI Marketplace API using different programming languages and;
           libraries.;
         </p>;
-;
         <h2>Authentication</h2>;
         <p>;
           All API requests require authentication using API keys. Make sure to;"
@@ -343,9 +330,7 @@ main();`;";"
     </ApiDocsLayout>;
   )'
 };
-;
 export default ApiSampleCode;
-;
 };
 };
 };

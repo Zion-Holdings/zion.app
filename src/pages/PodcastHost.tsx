@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export default function PodcastHost(): ;
   const [invitee, setInvitee] = useState('');
@@ -11,18 +11,17 @@ export default function PodcastHost(): ;
   const [topic, setTopic] = useState('');
   const [script, setScript] = useState('')'
   const [loading, setLoading] = useState(false);
-;
-  const const generateScript = async () => {'
+  const generateScript = async () => {'
     setLoading(true);
     setScript('')'
     try {;
-      const const res = await fetch('/api/podcast/generate', {;
+      const res = await fetch('/api/podcast/generate', {;
         method: 'POST',;
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-        body: "JSON.stringify({ invitee", bio, topic }),;"
+        body: JSON.stringify({ invitee, bio, topic }),;"
       });"
       if (!res.ok) throw new Error('Failed to generate')'
-      const const data = await res.json();
+      const data = await res.json();
       setScript(data.script || '')'
     } catch {;
       logErrorToProduction('Failed to generate podcast script', error);

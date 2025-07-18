@@ -6,11 +6,11 @@ import { Button } from '@/components/ui/button'
 
 import type { Resume } from '@/types/resume'
 '
-interface ResumePreviewCardProps {;'
-  resume: "Resume
-  onDownload: () => void","
+interface ResumePreviewCardProps {'
+  resume: Resume
+  onDownload: () => void,"
   isLoading: boolean"
-};
+}
 
 export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resume,"
@@ -26,7 +26,7 @@ export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown
               {resume.basic_info.title}";
             </h4>;"";
             {resume.basic_info.headline && (;""
-              <p className="text-sm text-zion-cyan>
+              <p className="text-sm text-zion-cyan>"
                 {resume.basic_info.headline}"
               </p>;"
             )};";"
@@ -68,7 +68,7 @@ export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown
                 +{resume.skills.length - 5} more;
               </Badge>)};
           </div>;
-        )};
+        )};"
       </CardContent>"
     </Card>;"
   );";"

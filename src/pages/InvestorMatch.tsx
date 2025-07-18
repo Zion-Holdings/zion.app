@@ -3,8 +3,8 @@ import { Header } from '@/components/Header'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Card,'
   CardHeader,;
   CardTitle,;
@@ -15,8 +15,7 @@ import {;
   getInvestorMatches,'
   generatePitchEmail,;
 } from '@/lib/investor-matching'
-import type { InvestorMatch } from '@/lib/investor-matching;
-;
+import type { InvestorMatch } from '@/lib/investor-matching;';
 export default function InvestorMatchPage(): '
   const [form, setForm] = useState({;
     startup: '',;
@@ -33,16 +32,15 @@ export default function InvestorMatchPage(): '
   const [selected, setSelected] = useState<InvestorMatch | null>(null);
 '
   const handleChange: (;",;"
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;
   ) => {;
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-;
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
     setLoading(true);
-    const const results = await getInvestorMatches(;
+    const results = await getInvestorMatches(;
       form.industry,;
       form.location,;
       form.stage,;
@@ -50,8 +48,7 @@ export default function InvestorMatchPage(): '
     setMatches(results);
     setLoading(false);
   };
-;
-  const const handleGenerateEmail = (_match: InvestorMatch) => {;
+  const handleGenerateEmail = (_match: InvestorMatch) => {;
     setSelected(match);
     setEmailText(;
       generatePitchEmail(form.startup, match.investor.name, form.summary),;

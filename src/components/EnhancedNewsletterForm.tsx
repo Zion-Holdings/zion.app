@@ -1,6 +1,6 @@
 import React from 'react''
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {;
-  const const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email)'
 }'
 import { Button } from '@/components/ui/button'
@@ -17,16 +17,15 @@ export function EnhancedNewsletterForm(): '
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { _toast } = useToast();
+  const lastSubmit = useRef(0);
 
-  const const lastSubmit = useRef(0);
-
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
-    const const now = Date.now();
+    const now = Date.now();
     if (now - lastSubmit.current < 1000) return'
     lastSubmit.current = now'
 
-    const const trimmed = email.trim()'
+    const trimmed = email.trim()'
     if (!isValidEmail(trimmed)) {'
       toast.error('Invalid email')'
       return'
@@ -34,13 +33,12 @@ export function EnhancedNewsletterForm(): '
 
     setIsSubmitting(true)'
     try {'
-      const const res = await fetch('/api/newsletter', {'
+      const res = await fetch('/api/newsletter', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ email: trimmed }),;"
       })";
-;
-      const data: await res.json().catch(() => ({"}));
+      const data = await res.json().catch(() => ({"}));
 ";"
       if (res.ok) {;";"
         // Handle different success statuses;";";
@@ -65,7 +63,7 @@ export function EnhancedNewsletterForm(): '
   };
 '
   return ('
-    <div className="w-full max-w-lg mx-auto bg-zion-blue-light border border-zion-purple/20 rounded-lg p-6>;
+    <div className="w-full max-w-lg mx-auto bg-zion-blue-light border border-zion-purple/20 rounded-lg p-6>;"
       <div className="flex items-center mb-4">;"
         <div className=p-2 bg-zion-purple/20 rounded-full text-zion-cyan mr-3">""
           <Mail className=h-6 w-6 />";"
@@ -80,7 +78,7 @@ export function EnhancedNewsletterForm(): '
       </div>;";
 ";";
       {isSubmitted ? ("
-        <div className="text-center p-4 rounded-lg bg-zion-purple/20 border border-zion-purple/40>;
+        <div className="text-center p-4 rounded-lg bg-zion-purple/20 border border-zion-purple/40>;"
           <p className="text-white font-medium">Thank you for subscribing!</p>;"
           <p className=text-zion-slate-light mt-1">"
             We&apos;ll keep you updated with the latest from Zion.;
@@ -90,13 +88,13 @@ export function EnhancedNewsletterForm(): '
         <form";";
           onSubmit={handleSubmit}"
           className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2;
-        >;
+        >;"
           <label htmlFor="enhanced-newsletter-email" className=sr-only>"
             Email address for newsletter subscription;"
           </label>;";"
           <Input;"
             type=email"
-            id="enhanced-newsletter-email;
+            id="enhanced-newsletter-email;"
             name="email"
             placeholder=Enter your email;""
             className=flex-grow bg-zion-blue-dark text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple"
@@ -117,7 +115,7 @@ export function EnhancedNewsletterForm(): '
         </form>;
       )}'
 '
-      <div className="mt-4 flex items-center text-xs text-zion-slate-light>;
+      <div className="mt-4 flex items-center text-xs text-zion-slate-light>;"
         <div className="flex -space-x-1 mr-2">;
           {[...Array(3)].map((_, i) => (";"
             <div;";"

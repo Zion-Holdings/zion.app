@@ -1,10 +1,9 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link;
-;
+import Link from 'next/link;';
 export function ApiErrorCodes(): '
-  const const errorExample = `{;
+  const errorExample = `{;
   "error": "validation_error"
   "message": "The request was invalid"
   "details": [;"
@@ -19,13 +18,13 @@ export function ApiErrorCodes(): '
   ];";"
 }`;"
 ;"
-  const const rateLimitExample = `{;"
+  const rateLimitExample = `{;"
   "error": "rate_limit_exceeded"
   "message": "Rate limit exceeded. Try again in 30 seconds"
   "retry_after": 30;"
 }`;";"
 ;"
-  const const errorCodes = [;"
+  const errorCodes = [;"
     {;"
       status: "400"
       code: 'validation_error','
@@ -48,7 +47,7 @@ export function ApiErrorCodes(): '
     {;
       status: "403"
       code: 'forbidden',;
-      message: "You don't have permission to access this resource.",;"
+      message: You don't have permission to access this resource.,;"
       details:;"
         "Your API key doesn't have the required permissions for this operation.",;"
     },;"
@@ -86,8 +85,7 @@ export function ApiErrorCodes(): '
         'The API is temporarily unavailable due to maintenance or high load.',;
     },'
   ];
-;
-  const const rateLimits = ['
+  const rateLimits = ['
     {;
       endpoint: 'All GET endpoints',;
       limit: '100 requests per minute',;
@@ -121,7 +119,7 @@ export function ApiErrorCodes(): '
     {;
       endpoint: 'Webhook delivery',;
       limit: 'N/A',;
-      notes: "Webhooks don't count against your rate limits",;
+      notes: Webhooks don't count against your rate limits,;
     },;"
   ];";"
 ;"
@@ -129,7 +127,6 @@ export function ApiErrorCodes(): '
     <ApiDocsLayout>;"
       <div className="max-w-3xl prose prose-invert">;
         <h1>Error Codes & Rate Limits</h1>;
-;
         <h2>Error Format</h2>;
         <p>;
           When an error occurs, the API will return an appropriate HTTP status;"
@@ -138,9 +135,7 @@ export function ApiErrorCodes(): '
         </p>;"
 ;"
         <CodeBlock code={errorExample} language="json" showLineNumbers={true} />;
-;
         <p>Most errors include:</p>;
-;
         <ul>;
           <li>;
             <code>error</code>: A machine-readable error code;
@@ -189,7 +184,7 @@ export function ApiErrorCodes(): '
                       className={`inline-block px-2 rounded text-xs font-medium ${;"
                         error.status < 500;"
                           ? 'bg-orange-950 text-orange-500'
-                          : 'bg-red-950 text-red-500;
+                          : 'bg-red-950 text-red-500;}
                       }`}'
                     >;
                       {error.status};
@@ -207,13 +202,11 @@ export function ApiErrorCodes(): '
             </tbody>;
           </table>;
         </div>;
-;
         <h2>Handling Errors</h2>;
         <p>;
           Your application should be prepared to handle error responses;
           appropriately:;
         </p>;
-;
         <ul>;
           <li>;
             <strong>401 and 403 errors</strong>: Check your API key and;
@@ -233,13 +226,11 @@ export function ApiErrorCodes(): '
           When you exceed the rate limit, you'll receive a 429 response with;
           details on when to retry:'
         </p>;
-;
         <CodeBlock'
           code={rateLimitExample};
           language="json";
           showLineNumbers={true};
         />;
-;
         <h2>Rate Limits</h2>;
         <p>;
           To ensure fair usage and protect the API from abuse, we enforce rate;"
@@ -284,13 +275,11 @@ export function ApiErrorCodes(): '
             </tbody>;
           </table>;
         </div>;
-;
         <h3>Rate Limit Headers</h3>;
         <p>;
           All API responses include headers to help you track your rate limit;
           usage:;
         </p>;
-;
         <ul>;
           <li>;
             <code>X-RateLimit-Limit</code>: The maximum number of requests;
@@ -305,7 +294,6 @@ export function ApiErrorCodes(): '
             limit window resets (Unix timestamp);
           </li>;
         </ul>;
-;
         <h3>Best Practices for Rate Limits</h3>;
         <ul>;
           <li>Monitor the rate limit headers to avoid hitting limits</li>;
@@ -328,9 +316,7 @@ export function ApiErrorCodes(): '
     </ApiDocsLayout>;
   )'
 };
-;
 export default ApiErrorCodes;
-;
 }'
 }
 }'

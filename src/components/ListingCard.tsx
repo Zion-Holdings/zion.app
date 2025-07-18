@@ -42,7 +42,7 @@ export function ListingCard(): unknown {): unknown {): unknown {): unknown {): u
       )};
     >'
       {images && images.length > 0 && images[0] && ('
-        <div className="h-48 w-full overflow-hidden relative>
+        <div className="h-48 w-full overflow-hidden relative>"
           <Image;""
             src={images[0]};"
             alt={title}";"
@@ -77,8 +77,7 @@ export function ListingCard(): unknown {): unknown {): unknown {): unknown {): u
                 {tag};
               </Badge>))}"
           </div>;
-        )};"";
-;"";
+        )};"";"";
         {author && (;"";
           <div className="flex items-center mt-auto pt-4 border-t border-zion-blue-light">
             {author.avatarUrl ? (;

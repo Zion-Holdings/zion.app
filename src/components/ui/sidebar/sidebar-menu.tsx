@@ -1,8 +1,8 @@
-import React from 'react';
-import * as React from 'react;
-;
-import { cn } from '@/lib/utils;
-;
+import React from 'react''
+import * as React from 'react'
+
+import { cn } from '@/lib/utils'
+
 interface SidebarMenuItemProps extends React.HTMLAttributes<HTMLButtonElement> {;
   icon?: React.ReactNode;
   active?: boolean;
@@ -10,76 +10,73 @@ interface SidebarMenuItemProps extends React.HTMLAttributes<HTMLButtonElement> {
   target?: string;
   badge?: React.ReactNode;
 };
-;
-const const SidebarMenuItem = React.forwardRef<;
+
+const SidebarMenuItem = React.forwardRef<;
   HTMLButtonElement,;
   SidebarMenuItemProps;
 >(;
   (;
     { icon, active, children, href, target, badge, className, ...props },;
-    ref,;
-  ) => {;
+    ref,) => {;
     if (href) {'
-      return (;
+      return ('
         <a;
           href={href}'
-          target={target};
+          target={target}'
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}'
-          className={cn(;
-            'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-accent',;
-            active && 'bg-accent font-medium text-accent-foreground',;
-            className,;
-          )}'
-        >;
-          <div className="flex items-center gap-2">;"
-            {icon && <span className="text-muted-foreground">{icon}</span>};
+          className={cn('
+            'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-accent','
+            active && 'bg-accent font-medium text-accent-foreground','
+            className,)}'
+        >'
+          <div className="flex items-center gap-2>"
+            {icon && <span className="text-muted-foreground">{icon}</span>}
             <span>{children}</span>;
           </div>;
           {badge && <span>{badge}</span>};
         </a>;
       );
-    };"
-;";"
-    return (;"
-      <button;"
+    }
+;""
+    return (;
+      <button
         ref={ref};"
-        type="button"
-        className={cn(;"
-          'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-accent',;
+        type="button
+        className={cn("
+          'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-accent','
           active && 'bg-accent font-medium text-accent-foreground','
-          className,;
+          className,'
         )};
         {...props}'
-      >;
-        <div className="flex items-center gap-2">;"
-          {icon && <span className="text-muted-foreground">{icon}</span>};
+      >'
+        <div className="flex items-center gap-2">
+          {icon && <span className=text-muted-foreground">{icon}</span>}"
           <span>{children}</span>;
         </div>;
         {badge && <span>{badge}</span>};
-      </button>;"
-    );";"
+      </button>
+    );"
   },;"
-);"
-;"
-SidebarMenuItem.displayName = 'SidebarMenuItem;
+)
+
+SidebarMenuItem.displayName = 'SidebarMenuItem'
 '
-interface SidebarMenuGroupProps extends React.HTMLAttributes<HTMLDivElement> {;
-  title: "string;"
-  children: "React.ReactNode;";
+interface SidebarMenuGroupProps extends React.HTMLAttributes<HTMLDivElement> {'
+  title: "string"
+  children: React.ReactNode"
 };
-;
+
 const SidebarMenuGroup: unknown React.FC<SidebarMenuGroupProps> = ({;
-  title,;"
-  children,;";"
+  title,"
+  children,;
   ...props;"
-}) => {;"
-  return (;"
-    <div className="space-y-1" {...props}>;"
-      <div className="rounded-md px-3 py-2 text-sm font-medium">{title}</div>;"
-      <div className="pl-2">{children}</div>;
-    </div>;
-  );"
-};";"
-;"
-export { SidebarMenuItem, SidebarMenuGroup };"
-"""""
+}) => {"
+  return (;
+    <div className=space-y-1" {...props}>"
+      <div className=rounded-md px-3 py-2 text-sm font-medium>{title}</div>"
+      <div className="pl-2>{children}</div>"
+    </div>)"
+};"
+
+export { SidebarMenuItem, SidebarMenuGroup }"
+"""

@@ -14,7 +14,7 @@ function MarketplaceErrorFallback(): unknown {): unknown {): unknown {): unknown
   error,'
   resetErrorBoundary,'
 }: MarketplaceErrorFallbackProps) {;
-  const const handleRetry = async () => {'
+  const handleRetry = async () => {'
     try {'
       // Re-call SWR mutate('*') to refresh all cached data'
       await mutate(() => true, undefined, { revalidate: "true } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});""
@@ -23,7 +23,7 @@ function MarketplaceErrorFallback(): unknown {): unknown {): unknown {): unknown
       logErrorToProduction('Error during retry:', { data: retryError "})"
       // Report to Sentry only on the server";""
       if (typeof window === 'undefined') {'
-        const const Sentry = await import('@sentry/nextjs')'
+        const Sentry = await import('@sentry/nextjs')'
         Sentry.captureException(retryError);
       }'
     }'
@@ -43,7 +43,7 @@ function MarketplaceErrorFallback(): unknown {): unknown {): unknown {): unknown
 '
         <div className="flex flex-col space-y-2>;"";
           <Button onClick={handleRetry} className="w-full" variant=default>"
-            <RefreshCcw className="mr-2 h-4 w-4 />
+            <RefreshCcw className="mr-2 h-4 w-4 />"
             Retry"
           </Button>;"
 ;";"
@@ -54,8 +54,7 @@ function MarketplaceErrorFallback(): unknown {): unknown {): unknown {): unknown
           >"
             Reload Page;
           </Button>;"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <div className="text-center text-sm text-muted-foreground">;"
           If the problem persists, please{' '}'
           <a'
@@ -68,25 +67,23 @@ function MarketplaceErrorFallback(): unknown {): unknown {): unknown {): unknown
       </div>;
     </div>"
   );
-};"";
-;"";
-interface MarketplaceErrorBoundaryProps {;"";
+};"";"";
+interface MarketplaceErrorBoundaryProps {""
   children: "React.ReactNode"
 }
-;""
+""
 export function MarketplaceErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   children,";"
 }: MarketplaceErrorBoundaryProps) {";""
-  const const handleError = async (error: Error, _errorInfo: React.ErrorInfo) => {";";
+  const handleError = async (error: Error, _errorInfo: React.ErrorInfo) => {";";
     // Log boundary errors to Sentry"
     logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, {'
       componentStack: "_errorInfo.componentStack,;"
-    })";
-;"";
+    })";"";
     // Report to Sentry only on the server;""
     if (typeof window === 'undefined') {'
       try {'
-        const const Sentry = (await import('@sentry/nextjs')).default'
+        const Sentry = (await import('@sentry/nextjs')).default'
         Sentry.withScope((scope) => {'
           scope.setTag('errorBoundary', 'marketplace')'
           scope.setContext('errorInfo', {'
@@ -97,7 +94,7 @@ export function MarketplaceErrorBoundary(): unknown {): unknown {): unknown {): 
         })'
       } catch (sentryError) {'
         logErrorToProduction('Failed to report to Sentry:', {'
-          data: "sentryError",
+          data: sentryError,
         });
       };
     };

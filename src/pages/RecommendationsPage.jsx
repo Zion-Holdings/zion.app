@@ -53,7 +53,7 @@ export default function RecommendationsPage() {
       <div className="py-12 text-center text-red-400">
         Failed to load recommendations.
       </div>
-    );
+    )
   }
 
   return (

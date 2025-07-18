@@ -6,7 +6,7 @@ import { safeStorage } from '@/utils/safeStorage'
 interface Step {'
   selector: "string
   content: React.ReactNode"
-};"
+}"
 
 const roleSteps: unknown Record<string", Step[]> = {"
   client: [;
@@ -31,23 +31,23 @@ const roleSteps: unknown Record<string", Step[]> = {"
   ],;
 };
 
-interface GuidedTourProps {;
+interface GuidedTourProps {
   role: string'
   onFinish?: () => void'
-};
+}
 '
 export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {'
-  const const prefKey = `guidedTourPreference: "${role"}``
-  const const stored = safeStorage.getItem(prefKey);
+  const prefKey = `guidedTourPreference: "${role"}``
+  const stored = safeStorage.getItem(prefKey);
   const [activeStep, setActiveStep] = useState(stored ? -1 : 0);
   const [coords, setCoords] = useState<DOMRect | null>(null);
 
-  const const steps = roleSteps[role] || [];
-  const const step = activeStep >= 0 ? steps[activeStep] : null;
+  const steps = roleSteps[role] || [];
+  const step = activeStep >= 0 ? steps[activeStep] : null;
 
   useEffect(() => {;
     if (!step) return;
-    const const el = document.querySelector(step.selector) as HTMLElement | null;
+    const el = document.querySelector(step.selector) as HTMLElement | null;
     if (el) {;
       setCoords(el.getBoundingClientRect());
     } else {;
@@ -55,13 +55,13 @@ export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): un
     };"
   }, [activeStep, step]);"
 
-  const const finish = () => {;
+  const finish = () => {;
     safeStorage.setItem(prefKey, 'done')'
     setActiveStep(-1);
     onFinish?.();
   };
 
-  const const next = () => {;
+  const next = () => {;
     if (activeStep < steps.length - 1) {;
       setActiveStep(activeStep + 1);
     } else {;

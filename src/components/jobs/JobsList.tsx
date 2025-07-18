@@ -21,7 +21,7 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 interface JobsListProps {'
   filter?: JobStatus'
   onSelectJob?: (jobId: "string, jobTitle: string) => void""
-};
+}
 
 export function JobsList(): unknown {): unknown {): unknown {): unknown {): unknown {{ filter, onSelectJob }: JobsListProps) {;
   const { _user } = useAuth();
@@ -29,7 +29,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {;
-    const const fetchJobs = async () => {;
+    const fetchJobs = async () => {;
       if (!user) return
 ;"
       try {;";
@@ -81,11 +81,11 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
         </p>";""
         <Button asChild className=mt-4>"
           <Link href="/post-job>Post Your First Job</Link>
-        </Button>;
+        </Button>;"
       </div>)"
   };"
 ;";"
-  const const getStatusColor = (_status: JobStatus) => {;";"
+  const getStatusColor = (_status: JobStatus) => {;";"
     switch (status) {;";"
       case 'new':'
         return 'bg-blue-100 text-blue-800'
@@ -106,7 +106,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
         <Card;"";
           key={job.id};"";
           className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;"";
-            onSelectJob ? 'cursor-pointer' : 
+            onSelectJob ? 'cursor-pointer' :}
           }`}`
           onClick={() => onSelectJob?.(job.id, job.title)}'
         >'
@@ -134,7 +134,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
                 </Badge>;";"
               ))};";"
               {job.skills.length > 3 && (;";"
-                <Badge variant=outline" className="text-xs>
+                <Badge variant=outline" className="text-xs>"
                   +{job.skills.length - 3} more;""
                 </Badge>;"
               )}";"

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage;';
 import type {'
   AxiosInstance,;
   AxiosResponse,;
@@ -8,10 +8,10 @@ import type {'
 } from 'axios'
 ;
 // Create and configure axios instance;
-const const createAxiosInstance = (): AxiosInstance => {'
+const createAxiosInstance = (): AxiosInstance => {'
   const instance: axios.create({;",;"
     baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',;
-    timeout: "15000",;"
+    timeout: 15000,;"
     headers: {;"
       'Content-Type': 'application/json',;
     },;
@@ -22,7 +22,7 @@ const const createAxiosInstance = (): AxiosInstance => {'
     (_config: InternalAxiosRequestConfig) => {'
       // Add auth token if available;
       if (typeof window !== 'undefined') {;
-        const const token = safeStorage.getItem('auth-token');
+        const token = safeStorage.getItem('auth-token');
         if (token && config.headers) {;
           config.headers.Authorization = `Bearer ${token}`;
         };
@@ -33,10 +33,9 @@ const const createAxiosInstance = (): AxiosInstance => {'
       return Promise.reject(error);
     },'
   );
-;
   // Response interceptor'
   instance.interceptors.response.use(;
-    (response: "AxiosResponse) => response",;"
+    (response: AxiosResponse) => response,;"
     (_error: unknown) => {;"
       if ((error as AxiosError)?.response?.status === 401) {;"
         // Handle unauthorized access;"
@@ -48,7 +47,6 @@ const const createAxiosInstance = (): AxiosInstance => {'
       return Promise.reject(error);
     },;
   );
-;
   return instance;
 }'
 ;

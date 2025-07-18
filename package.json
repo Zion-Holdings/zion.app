@@ -261,8 +261,6 @@
     "ai-delegate:setup": "node scripts/setup-ai-delegation.cjs",
     "ai-delegate:test": "node scripts/test-ai-delegation.cjs",
     "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs",
-<<<<<<< HEAD
-=======
     "auto-improve:start": "node scripts/automated-improvement-pipeline.cjs",
     "auto-improve:stop": "pkill -f 'automated-improvement-pipeline.cjs'",
     "auto-improve:status": "curl -s http://localhost:3006/api/status | jq",
@@ -293,7 +291,6 @@
     "auto-fix:nextjs": "node scripts/auto-fix-nextjs-issues.cjs",
     "auto-fix:run": "npm run auto-fix:nextjs",
     "auto-fix:test": "npm run auto-fix:nextjs && npm run dev -- --port 3004",
->>>>>>> e5da1ed70b2bd0464b38adaabe854aa1dbfe6542
     "distributed-ai:start": "node scripts/distributed-ai-controller.cjs",
     "distributed-ai:install": "node scripts/cursor-ai-installer.cjs install-local",
     "distributed-ai:discover": "node scripts/cursor-ai-installer.cjs discover",
@@ -309,7 +306,11 @@
     "multi-computer:verify": "npm run distributed-ai:verify",
     "multi-computer:report": "npm run distributed-ai:report",
     "multi-computer:status": "npm run ai-coordinator:status",
-<<<<<<< HEAD
+    "improve:automated": "node scripts/automated-app-improver.cjs",
+    "improve:ai-syntax": "node scripts/ai-syntax-fixer.cjs",
+    "improve:orchestrator": "node scripts/app-improvement-orchestrator.cjs",
+    "improve:continuous": "node scripts/app-improvement-orchestrator.cjs --continuous",
+    "improve:all": "npm run improve:ai-syntax && npm run improve:automated && npm run improve:orchestrator",
     "automation:comprehensive:start": "node scripts/comprehensive-app-automation.cjs start",
     "automation:comprehensive:stop": "node scripts/comprehensive-app-automation.cjs stop",
     "automation:comprehensive:status": "node scripts/comprehensive-app-automation.cjs status",
@@ -335,11 +336,8 @@
     "automation:submit:task": "curl -X POST http://localhost:3005/api/tasks/submit -H 'Content-Type: application/json' -d",
     "automation:trigger:improvement": "curl -X POST http://localhost:3001/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:trigger:ai": "curl -X POST http://localhost:3002/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
-    "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'"
-=======
-    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
-    "improve:all": "node scripts/automated-app-improvement.cjs"
->>>>>>> e5da1ed70b2bd0464b38adaabe854aa1dbfe6542
+    "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'",
+    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

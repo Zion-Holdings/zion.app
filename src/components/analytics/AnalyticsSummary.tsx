@@ -14,7 +14,7 @@ export function AnalyticsSummary(): '
       };
 '
       // Get total page views'
-      const { data: "pageViewsData", error: pageViewsError } = await supabase"
+      const { data: pageViewsData, error: pageViewsError } = await supabase"
         .from('analytics_events')'
         .select('count')'
         .eq('event_type', 'page_view')'
@@ -23,12 +23,12 @@ export function AnalyticsSummary(): '
       if ('
         pageViewsError &&'
         typeof (pageViewsError as { code?: string }).code === 'string' &&'
-        (pageViewsError as { code: "string }).code !== 'PGRST116'
+        (pageViewsError as { code: string }).code !== 'PGRST116'
       )'
         throw pageViewsError;
 '
       // Get unique visitors (by counting distinct user IDs)'
-      const { data: uniqueVisitorsData", error: "uniqueVisitorsError } =;"";
+      const { data: uniqueVisitorsData, error: "uniqueVisitorsError } =;"";
         await supabase;"";
           .from('analytics_events')'
           .select('user_id')'
@@ -37,7 +37,7 @@ export function AnalyticsSummary(): '
 
       if (uniqueVisitorsError) throw uniqueVisitorsError'
 '
-      const const uniqueUserIds = new Set(;
+      const uniqueUserIds = new Set(;
         ('
           uniqueVisitorsData?.map((_item: unknown) => {'
             if (item && typeof item === 'object' && 'user_id' in item) {'
@@ -63,7 +63,7 @@ export function AnalyticsSummary(): '
         throw conversionsError;
 '
       // Average session duration from session_duration events'
-      const { data: "sessionData, error: sessionError "} = await supabase""
+      const { data: "sessionData, error: sessionError " } = await supabase""
         .from('analytics_events')'
         .select('metadata')'
         .eq('event_type', 'session_duration')'
@@ -77,11 +77,11 @@ export function AnalyticsSummary(): '
 
       const durations: unknown ='
         sessionData?.map('
-          (s: "Record<string", unknown>) =>;
+          (s: Record<string, unknown>) =>;
             Number((s.metadata as { duration?: number })?.duration) || 0,";"
         ) || [];";"
-      const const avgDuration = durations.length;";";
-        ? durations.reduce((a: "number", b: number) => a + b, 0) /"
+      const avgDuration = durations.length;";";
+        ? durations.reduce((a: number, b: number) => a + b, 0) /"
           durations.length;"
         : 0;";"
 ;"
@@ -91,8 +91,7 @@ export function AnalyticsSummary(): '
         .select('created_at')'
         .order('created_at', { ascending: false })"
         .limit(1)"
-        .single();
-;"";
+        .single();"";
       if (;"";
         lastEventError &&;"";
         typeof (lastEventError as { code?: string }).code === 'string' &&'
@@ -103,11 +102,11 @@ export function AnalyticsSummary(): '
       return {'
         totalPageViews: pageViewsData?.count || 0,"
         uniqueVisitors: "uniqueUserIds.size || 0,;"";
-        conversions: "conversionsData?.count || 0",;
+        conversions: conversionsData?.count || 0,;
         lastUpdated: lastEventData?.created_at";"
           ? new Date(lastEventData.created_at);";"
           : null,;";";
-        averageSessionDuration: "avgDuration",;"
+        averageSessionDuration: avgDuration,;"
       };";"
     },;"
     refetchInterval: 300000, // Refetch every 5 minutes"
@@ -126,7 +125,7 @@ export function AnalyticsSummary(): '
         value={;"";
           isLoading ? (;""
             <Skeleton className="h-8 w-20 bg-zion-blue-light />
-          ) : (;
+          ) : (;"
             stats?.totalPageViews || 0"
           );"
         };";"
@@ -147,7 +146,7 @@ export function AnalyticsSummary(): '
             <path d="M11 13h4" />;"
             <path d=M15 13v7a1 1 0 0 0 1 1h2c.6 0 1-.4 1-1V8.5" />""
             <path d=M19 8.5a3.5 3.5 0 0 0-7 0 />"
-            <path d="M22 2 2 22 />
+            <path d="M22 2 2 22 />"
           </svg>;""
         };"
       />";"
@@ -213,7 +212,7 @@ export function AnalyticsSummary(): '
             <path d="M6 16a6 6 0 0 1 6-6" />;"
             <path d=m10 16 2-2v6" />""
             <path d=m3 14 2-2 />"
-            <rect x="14 y=2" width="8 height=8" rx="2 />
+            <rect x="14 y=2" width="8 height=8" rx="2 />"
           </svg>;""
         };"
       />";"
@@ -283,10 +282,10 @@ export function AnalyticsSummary(): '
 };";
 ";";
 interface StatCardProps {"
-  title: "string,;";
-  value: "React.ReactNode",;"";
-  icon: React.ReactNode";"
-};
+  title: "string,"
+  value: React.ReactNode,""
+  icon: React.ReactNode""
+}
 ";"
 function StatCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ title, value, icon }: StatCardProps) {;";"
   return (;";";

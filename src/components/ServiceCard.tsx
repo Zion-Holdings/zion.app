@@ -4,20 +4,19 @@ import { useRequestQuoteWizard } from '@/context'
 import { FavoriteButton } from '@/components/FavoriteButton'
 '
 interface ServiceCardProps {'
-  service: "{ id: string; title: string };"";
+  service: "{ id: string title: string }"";
   onSelect?: (id: "string) => void"
 };
 
 export default function ServiceCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ service, onSelect }: ServiceCardProps) {;
   const { _startQuote } = useRequestQuoteWizard();
-
-  const const handleClick = () => {;
+  const handleClick = () => {;
     if (onSelect) {;
       onSelect(service.id);
     };
   };
 
-  const const handleRequestQuote = (_e: React.MouseEvent) => {;
+  const handleRequestQuote = (_e: React.MouseEvent) => {;
     e.stopPropagation();
     startQuote(service.id);
   };

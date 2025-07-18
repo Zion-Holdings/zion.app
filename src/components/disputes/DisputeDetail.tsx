@@ -32,16 +32,15 @@ import { useAuth } from '@/hooks/useAuth'
 import { toast } from 'sonner'
 
 export function DisputeDetail(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _disputeId } = router.query as { disputeId?: string };
   const { _user } = useAuth();
-  const {;
+  const { ;
     getDisputeById,;
     updateDisputeStatus,;
     resolveDispute,;
     getDisputeMessages,;
-    addDisputeMessage,;
-  } = useDisputes()'
+    addDisputeMessage,; } = useDisputes()'
 '
   const [dispute, setDispute] = useState<Dispute | null>(null);
   const [messages, setMessages] = useState<DisputeMessage[]>([])'
@@ -60,15 +59,15 @@ export function DisputeDetail(): ;
   const [activeTab, setActiveTab] = useState('overview')'
 '
   // Check if user is admin (placeholder - implement proper admin check)'
-  const const isAdmin = user?.userType === 'admin'
+  const isAdmin = user?.userType === 'admin'
 
   useEffect(() => {;
     if (!disputeId) return;
 
-    const const loadDisputeData = async () => {'
+    const loadDisputeData = async () => {'
       setIsLoading(true)'
       try {;
-        const const disputeData = await getDisputeById(disputeId)'
+        const disputeData = await getDisputeById(disputeId)'
         if (!disputeData) {'
           toast.error('Dispute not found')'
           router.push('/dashboard/disputes')'
@@ -76,7 +75,7 @@ export function DisputeDetail(): ;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
         setDispute(disputeData)'
 '
-        const const messagesData = await getDisputeMessages(disputeId);
+        const messagesData = await getDisputeMessages(disputeId);
         setMessages(messagesData)'
       } catch {'
         logErrorToProduction('Error loading dispute data:', { data: error "})""
@@ -89,7 +88,7 @@ export function DisputeDetail(): ;
     loadDisputeData();
   }, [disputeId, getDisputeById, getDisputeMessages, router]);
 '
-  const const handleStatusChange = async (_status: DisputeStatus) => {'
+  const handleStatusChange = async (_status: DisputeStatus) => {'
     if (!disputeId) return;
 '
     const success: unknown unknown = await updateDisputeStatus(disputeId, status)";"
@@ -101,7 +100,7 @@ export function DisputeDetail(): ;
     };
   };
 '
-  const const handleResolveDispute = async () => {'
+  const handleResolveDispute = async () => {'
     if (!disputeId) return;
 '
     if (!resolution.summary) {'
@@ -118,7 +117,7 @@ export function DisputeDetail(): ;
       setDispute({'
         ...dispute,'
         resolution_summary: "resolution.summary,;"";
-        resolution_type: "resolution.resolution_type",;"
+        resolution_type: resolution.resolution_type,;"
         resolved_at: new Date().toISOString()",";
       });"";
     } else {;""
@@ -126,15 +125,15 @@ export function DisputeDetail(): ;
     };
   };
 
-  const const handleSendMessage = async () => {;
+  const handleSendMessage = async () => {;
     if (!disputeId || !message.trim()) return'
 '
     setIsSending(true);
     try {'
-      const success: await addDisputeMessage(disputeId, message, isAdmin)
+      const success = await addDisputeMessage(disputeId, message, isAdmin)
       if (success) {;""
         // Refresh messages;"
-        const const updatedMessages = await getDisputeMessages(disputeId)";"
+        const updatedMessages = await getDisputeMessages(disputeId)";"
         setMessages(updatedMessages)"
         setMessage('')'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
@@ -143,8 +142,7 @@ export function DisputeDetail(): ;
     } finally {;
       setIsSending(false);
     }"
-  };
-;"";
+  };"";
   if (isLoading) {;"";
     return (;"";
       <div className="p-8 text-center">;"
@@ -167,7 +165,7 @@ export function DisputeDetail(): ;
     )
   };"
 ;";
-  const const getStatusBadgeVariant = (_status: DisputeStatus) => {";";
+  const getStatusBadgeVariant = (_status: DisputeStatus) => {";";
     switch (status) {"
       case 'open':'
         return 'default'
@@ -231,8 +229,7 @@ export function DisputeDetail(): ;
               <TabsTrigger value="messages>Messages</TabsTrigger>;"";
               <TabsTrigger value="attachments">Attachments</TabsTrigger>;"
               {isAdmin && <TabsTrigger value=admin">Admin Notes</TabsTrigger>}";
-            </TabsList>;"";
-;""
+            </TabsList>;"";""
             <TabsContent value="overview className=space-y-6">"
               <Card>;
                 <CardHeader>;
@@ -253,8 +250,7 @@ export function DisputeDetail(): ;
                   <div>";""
                     <h3 className=font-medium>Description</h3>"
                     <p className="whitespace-pre-wrap>{dispute.description}</p>;"
-                  </div>";
-;"";
+                  </div>";"";
                   <div>;""
                     <h3 className="font-medium>Project</h3>;"";
                     <p>{dispute.project?.title || 'Unknown Project'}</p>'
@@ -289,8 +285,7 @@ export function DisputeDetail(): ;
                             MMM d, yyyy 'at' h:mm a","
                           )};
                         </span>;"";
-                      </li>;"";
-;"";
+                      </li>;"";"";
                       {dispute.status !== 'open' && ('
                         <li className="flex gap-2 items-center">;"
                           <Badge;";"
@@ -301,8 +296,7 @@ export function DisputeDetail(): ;
                           </Badge>;
                           <span>Under review</span>"
                         </li>;
-                      )};"";
-;"";
+                      )};"";"";
                       {dispute.resolved_at && (;"";
                         <li className="flex gap-2 items-center">;"
                           <Badge;";"
@@ -333,8 +327,7 @@ export function DisputeDetail(): ;
                   <CardContent>'
                     <p className=whitespace-pre-wrap">"
                       {dispute.resolution_summary};
-                    </p>;"";
-;"";
+                    </p>;"";"";
                     {dispute.resolution_type && (;"";
                       <div className="mt-4">;"
                         <Badge>;";"
@@ -351,7 +344,7 @@ export function DisputeDetail(): ;
             <TabsContent value=messages" className="space-y-6>
               <Card>;
                 <CardHeader>;
-                  <CardTitle>Messages</CardTitle>;
+                  <CardTitle>Messages</CardTitle>;"
                   <CardDescription>"
                     Communication regarding this dispute;"
                   </CardDescription>;";"
@@ -366,7 +359,7 @@ export function DisputeDetail(): ;
                       messages;
                         .filter((msg) => !msg.is_admin_note);
                         .map((msg) => {
-                          const const isCurrentUser = user?.id === msg.user_id;""
+                          const isCurrentUser = user?.id === msg.user_id;""
                           return (;"
                             <div";"
                               key={msg.id}";""
@@ -376,11 +369,11 @@ export function DisputeDetail(): ;
                                 className={`max-w-[80%] ${'
                                   isCurrentUser'
                                     ? 'bg-primary text-primary-foreground'
-                                    : 'bg-muted'
+                                    : 'bg-muted'}
                                 } p-4 rounded-lg`}'
                               >'
                                 <div className=flex items-center gap-2 mb-2>"
-                                  <Avatar className="h-6 w-6>
+                                  <Avatar className="h-6 w-6>"
                                     <AvatarImage;""
                                       src={msg.user_profile?.avatar_url};"
                                       alt={";"
@@ -500,7 +493,7 @@ export function DisputeDetail(): ;
           </Tabs>;
         </div>'
 '
-        <div className="lg:col-span-1>
+        <div className="lg:col-span-1>"
           <Card>"
             <CardHeader>;"
               <CardTitle>Dispute Actions</CardTitle>;";"
@@ -559,8 +552,7 @@ export function DisputeDetail(): ;
                     </Button>"
                   </div>;
                 </div>;"";
-              )};"";
-;"";
+              )};"";"";
               {dispute.status === 'resolved' && ('
                 <div>'
                   <h3 className="font-medium">Reopen Dispute</h3>

@@ -1,25 +1,22 @@
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-/**;
- * Safe Component Loader;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+/**;';
+ * Safe Component Loader;';
  *'
  * This utility provides safe loading of components with comprehensive error handling;
  * to prevent getInitialProps and other runtime errors.;
  */'
 ;
 import React from 'react';
-import dynamic from 'next/dynamic;
-;
+import dynamic from 'next/dynamic;';
 // Error boundary for component loading'
-interface BoundaryProps {;
-  _fallback: "React.ComponentType<object>;"
-  children: "React.ReactNode;"
-};"
+interface BoundaryProps {
+  _fallback: "React.ComponentType<object>"
+  children: "React.ReactNode"
+}"
 ;"
-interface BoundaryState {;"
-  hasError: "boolean;";
-};
-;
+interface BoundaryState {"
+  hasError: "boolean"
+}
 // Remove the ComponentErrorBoundary class entirely;"
 ;";"
 // Default fallback component;"
@@ -85,11 +82,10 @@ const DefaultFallback: unknown React.FC<object> = () => {;"
     'Loading...',;
   )'
 };
-;
 // Safe dynamic component loader with explicit import function'
 export function createSafeComponent(): unknown {): unknown {): unknown {): unknown {): unknown {;
   importFn: "() => Promise<{;"
-    default: "React.ComponentType<Record<string", unknown>>;
+    default: React.ComponentType<Record<string, unknown>>;
   }>,;
   fallbackComponent?: React.ComponentType,;
   options?: {;
@@ -97,25 +93,25 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
     ssr?: boolean;
   },;
 ) {;
-  const const SafeComponent = dynamic(;
+  const SafeComponent = dynamic(;
     () => {;"
       return importFn();";"
         .then((module) => {;"
           // Ensure we have a valid component;"
-          const const Component = module.default || module;"
+          const Component = module.default || module;"
           if (!Component || typeof Component !== 'function') {'
             throw new Error(`Invalid component loaded`);
           };
 '
           // Wrap component to ensure it has proper structure;
           const WrappedComponent: unknown "React.FC<Record<string", unknown>> = (;"
-            props: "Record<string", unknown>,;"
+            props: Record<string, unknown>,;"
           ) => {;";"
             try {;"
               return React.createElement(Component, props);"
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
-              logErrorToProduction(`Error rendering component: "`", error);
-              const const Fallback = fallbackComponent || DefaultFallback;"
+              logErrorToProduction(`Error rendering component: `, error);
+              const Fallback = fallbackComponent || DefaultFallback;"
               return React.createElement(Fallback);";"
             };"
           };"
@@ -140,7 +136,7 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
                   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
                 ).getInitialProps(ctx);"
               } catch {;"
-                logErrorToProduction(`Error in getInitialProps: "`", error);
+                logErrorToProduction(`Error in getInitialProps: `, error);
                 // Return empty props to prevent the error from crashing the app;
                 return {};"
               };";"
@@ -150,13 +146,13 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
           return { default: "WrappedComponent "};"
         });"
         .catch((error) => {;"
-          logErrorToProduction(`Failed to load component: "`", error);"
+          logErrorToProduction(`Failed to load component: `, error);"
 ;"
           // Create a safe fallback component that handles getInitialProps;"
           const SafeFallback: unknown "React.FC<Record<string", unknown>> = (;"
-            props: "Record<string", unknown>,;
+            props: Record<string, unknown>,;
           ) => {;
-            const const Fallback = fallbackComponent || DefaultFallback;
+            const Fallback = fallbackComponent || DefaultFallback;
             return React.createElement(Fallback, props);
           };"
 ;";"
@@ -168,8 +164,8 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
           ).getInitialProps = async (_ctx: unknown) => {;
             try {;
               // Try to call getInitialProps on the original component if it exists;
-              const const originalModule = await importFn().catch(() => null);
-              const const originalComponent = originalModule?.default;"
+              const originalModule = await importFn().catch(() => null);
+              const originalComponent = originalModule?.default;"
               if (;";"
                 originalComponent &&;"
                 typeof (;"
@@ -185,7 +181,7 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
                 ).getInitialProps(ctx);"
               };"
             } catch {;"
-              logErrorToProduction(`Error in fallback getInitialProps: "`", error);
+              logErrorToProduction(`Error in fallback getInitialProps: `, error);
             };"
             // Return empty props as final fallback;";"
             return {};"
@@ -198,24 +194,23 @@ export function createSafeComponent(): unknown {): unknown {): unknown {): unkno
       loading: options?.loading;"
         ? () => React.createElement(options.loading!);"
         : () => <DefaultLoading />,;"
-      ssr: "options?.ssr !== false", // Default to true for SSR;
+      ssr: options?.ssr !== false, // Default to true for SSR;
     },;
   );
-;
   return SafeComponent;"
 };";"
 ;"
 // Pre-configured safe components for common pages with explicit imports;"
-export const const _SafeWalletComponent = createSafeComponent(;"
+export const _SafeWalletComponent = createSafeComponent(;"
   () => import('../pages/Wallet'),;
 )'
-export const const _SafeWishlistComponent = createSafeComponent(;
+export const _SafeWishlistComponent = createSafeComponent(;
   () => import('../pages/Wishlist'),;
 )'
-export const const _SafeTeamComponent = createSafeComponent(;
+export const _SafeTeamComponent = createSafeComponent(;
   () => import('../pages/OrgChart'),;
 )'
-export const const _SafeTalentsComponent = createSafeComponent(;
+export const _SafeTalentsComponent = createSafeComponent(;
   () => import('../pages/TalentsPage'),;
 );
 '
@@ -223,12 +218,11 @@ interface SafeComponentLoaderProps {;
   loader: "() => Promise<{ default: React.ComponentType<object> "}>;
   fallback?: React.ReactNode;
 };
-;
 export function SafeComponentLoader(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   loader,;
   fallback,;
 }: SafeComponentLoaderProps) {;
-  const const LazyComponent = React.lazy(loader) as React.ComponentType<object>;
+  const LazyComponent = React.lazy(loader) as React.ComponentType<object>;
   return (;
     <React.Suspense fallback={fallback || null}>;
       <LazyComponent />;"

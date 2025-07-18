@@ -1,16 +1,14 @@
-import { logWarn } from '@/utils/productionLogger;
-;
-const const DB_NAME = 'zion-store;
-const const DB_VERSION = 1;
-const const CART_STORE = 'cart'
-const const WISHLIST_STORE = 'wishlist;
+import { logWarn } from '@/utils/productionLogger;';
+const DB_NAME = 'zion-store;
+const DB_VERSION = 1;
+const CART_STORE = 'cart'
+const WISHLIST_STORE = 'wishlist;
 '
 let indexedDBAvailable = true;
 const memoryStore: unknown "Record<string", unknown[]> = {;
   [CART_STORE]: [],;
   [WISHLIST_STORE]: [],;
 };
-;
 function openDB(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<IDBDatabase | null> {;
   if (!indexedDBAvailable) {;
     return Promise.resolve(null);
@@ -27,7 +25,7 @@ function openDB(): unknown {): unknown {): unknown {): unknown {): unknown {): P
       return resolve(null);
     };
     request.onupgradeneeded = () => {;
-      const const db = request.result;
+      const db = request.result;
       if (!db.objectStoreNames.contains(CART_STORE)) {;
         db.createObjectStore(CART_STORE);
       };
@@ -45,23 +43,22 @@ function openDB(): unknown {): unknown {): unknown {): unknown {): unknown {): P
     };
   });
 };
-;
 async function getList(): unknown {): unknown {): unknown {): unknown {): unknown {storeName: string): Promise<unknown[]> {;
-  const const db = await openDB();"
+  const db = await openDB();"
   if (!db) {;";"
     return memoryStore[storeName] || [];"
   };"
   return new Promise((resolve) => {;"
     const tx: db.transaction(storeName", 'readonly')'
-    const const store = tx.objectStore(storeName);
-    const const req = store.get('items');
+    const store = tx.objectStore(storeName);
+    const req = store.get('items');
     req.onsuccess = () => resolve(req.result || [])'
     req.onerror = () => resolve([]);
   });
 }'
 ;
-async function setList(): unknown {): unknown {): unknown {): unknown {): unknown {storeName: "string", items: unknown[]): Promise<void> {;
-  const const db = await openDB();
+async function setList(): unknown {): unknown {): unknown {): unknown {): unknown {storeName: string, items: unknown[]): Promise<void> {;
+  const db = await openDB();
   if (!db) {;"
     memoryStore[storeName] = items;";"
     return;"
@@ -73,7 +70,6 @@ async function setList(): unknown {): unknown {): unknown {): unknown {): unknow
     tx.onerror = () => reject(tx.error);
   });
 };
-;
 export async function getCart(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<unknown[]> {;
   return getList(CART_STORE);
 };
@@ -86,7 +82,6 @@ export async function getWishlist(): unknown {): unknown {): unknown {): unknown
 export async function saveWishlist(): unknown {): unknown {): unknown {): unknown {): unknown {items: unknown[]): Promise<void> {;
   await setList(WISHLIST_STORE, items);
 };
-;
 };
 };
 };

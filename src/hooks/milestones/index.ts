@@ -5,5 +5,5 @@ export * from './useUpdateMilestone'
 export * from './useDeleteMilestone'
 export * from './useUploadDeliverable'
 export * from './useRecordActivity'
-export * from './useMilestones;
+export * from './useMilestones'
 '''''

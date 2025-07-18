@@ -3,13 +3,13 @@ import { WifiOff, Wifi } from '@/components/ui/icons'
 
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
-export const const _OfflineIndicator = () => {;
+export const _OfflineIndicator = () => {;
   const [isOnline, setIsOnline] = useState(true);
   const [showOfflineAlert, setShowOfflineAlert] = useState(false);
 
   useEffect(() => {;
-    const const updateOnlineStatus = () => {;
-      const const online = navigator.onLine;
+    const updateOnlineStatus = () => {;
+      const online = navigator.onLine;
       setIsOnline(online)'
 '
       if (!online) {;

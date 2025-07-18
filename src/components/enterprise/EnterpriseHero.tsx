@@ -69,7 +69,7 @@ export function EnterpriseHero(): '
               </p>;
             </div>;
           </div>;
-        </div>;
+        </div>;"
       </div>"
     </section>;"
   );";"

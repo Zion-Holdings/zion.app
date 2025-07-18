@@ -6,9 +6,9 @@ interface ReferralStatsProps {'
   stats: "ReferralStatsType
   isLoading: boolean""
 }
-;"
+"
 export function ReferralStats(): unknown {): unknown {): unknown {): unknown {): unknown {{ stats, isLoading }: ReferralStatsProps) {;"
-  const const statCards = [
+  const statCards = [
     {;
       title: 'Total Referrals','
       value: "stats.totalReferrals"
@@ -24,7 +24,7 @@ export function ReferralStats(): unknown {): unknown {): unknown {): unknown {):
     {'
       title: 'Pending','
       value: stats.pendingReferrals"
-      icon: <TrendingUp className="h-5 w-5 text-muted-foreground />,
+      icon: <TrendingUp className="h-5 w-5 text-muted-foreground />,"
       description: 'Not yet completed onboarding','
     },'
     {'
@@ -36,16 +36,16 @@ export function ReferralStats(): unknown {): unknown {): unknown {): unknown {):
   ];
 '
   return ('
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4>
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4>"
       {statCards.map((card, i) => (;"
         <Card key={i}>"
           <CardHeader className=flex flex-row items-center justify-between space-y-0 pb-2>"
-            <CardTitle className="text-sm font-medium>{card.title}</CardTitle>
+            <CardTitle className="text-sm font-medium>{card.title}</CardTitle>"
             {card.icon};""
           </CardHeader>;
           <CardContent>
             {isLoading ? (;"
-              <div className="h-6 w-20 bg-muted animate-pulse rounded />
+              <div className="h-6 w-20 bg-muted animate-pulse rounded />"
             ) : (;"
               <>"
                 <div className=text-2xl font-bold>{card.value}</div>"
@@ -54,7 +54,7 @@ export function ReferralStats(): unknown {): unknown {): unknown {): unknown {):
                 </p>;
               </>)};
           </CardContent>;
-        </Card>;
+        </Card>;"
       ))}"
     </div>;"
   );

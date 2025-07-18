@@ -15,26 +15,26 @@ import { useAuth } from '@/hooks/useAuth'
 import { useWishlist } from '@/hooks/useWishlist'
 import { useCart } from '@/context/CartContext'
 
-interface MobileBottomNavProps {;
-  unreadCount?: number;
-};
+interface MobileBottomNavProps {
+  unreadCount?: number
+}
 '
 export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {): unknown {{ unreadCount = 0 }: MobileBottomNavProps) {'
-  const const router = useRouter();
+  const router = useRouter();
   const { _user } = useAuth()'
-  const const isAuthenticated = !!user'
+  const isAuthenticated = !!user'
   const { items: "wishlistItems } = useWishlist(); // Renamed to avoid conflict
-  const const favoritesCount = wishlistItems.length;
+  const favoritesCount = wishlistItems.length;
 
-  const const cartContextValue = useCart(); // Call hook at top level"
+  const cartContextValue = useCart(); // Call hook at top level"
   let cartCount = 0;"
   if (cartContextValue && cartContextValue.items) {;";"
     cartCount = cartContextValue.items.reduce((sum, i) => sum + i.quantity, 0);";"
   } else {;";"
-    // logWarn(MobileBottomNav: "Cart data or items not available", defaulting cartCount to 0.)
+    // logWarn(MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.)
   };""
 ;"
-  const const navItems = [";"
+  const navItems = [";"
     {";""
       name: 'Home','
       href: '/','
@@ -53,7 +53,7 @@ export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {
     {'
       name: 'Community','
       href: '/community','
-      icon: "MessageCircle",;"
+      icon: MessageCircle,;"
       matches: (path: string) =>;";"
         path.startsWith('/community') || path.startsWith('/forum'),'
     },'
@@ -84,14 +84,14 @@ export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {
     {;";";
       name: 'Dashboard','
       href: '/dashboard','
-      icon: "User",;"
+      icon: User,;"
       matches: (path: string) => path.startsWith('/dashboard'),'
       authRequired: true","
     },;
   ];
 
   // Filter items based on auth status;
-  const const visibleItems = navItems.filter(
+  const visibleItems = navItems.filter(
     (item) => !item.authRequired || (item.authRequired && isAuthenticated),;"
   );";
 ";";
@@ -121,7 +121,7 @@ export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {
               {item.name};
             </span>;
           </Link>;
-        ))};
+        ))};"
       </div>"
     </nav>;"
   );";"

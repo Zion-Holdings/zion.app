@@ -6,26 +6,25 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 '
 export interface OnboardingStep {'
-  id: "string
-  label: string","
+  id: string
+  label: string,"
   completed: boolean,"
-  link: string;
-  action?: string;
-};
+  link: string
+  action?: string
+}
 
-interface OnboardingTrackerProps {;
-  steps: OnboardingStep[];
-  title?: string;
+interface OnboardingTrackerProps {
+  steps: OnboardingStep[]
+  title?: string
   className?: string"
-};
-;"
+}"
 export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   steps,
   title = 'Complete Your Profile','
   className,;
 }: OnboardingTrackerProps) {;
-  const const completedSteps = steps.filter((step) => step.completed).length;
-  const const progress = Math.round((completedSteps / steps.length) * 100)'
+  const completedSteps = steps.filter((step) => step.completed).length;
+  const progress = Math.round((completedSteps / steps.length) * 100)'
 '
   return (;
     <div'
@@ -35,7 +34,7 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
     >'
       <div className=flex items-center justify-between mb-4">"
         <h3 className=text-lg font-medium text-white>{title}</h3>"
-        <div className="text-sm font-medium text-zion-cyan>
+        <div className="text-sm font-medium text-zion-cyan>"
           {progress}% Complete"
         </div>;"
       </div>;
@@ -66,7 +65,7 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
               <Button"
                 asChild;
                 variant=ghost"
-                size="sm
+                size="sm"
                 className=text-zion-purple hover:text-zion-cyan hover:bg-zion-blue"
               >"
                 <Link href={step.link}>;

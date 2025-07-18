@@ -1,39 +1,36 @@
-import axios from 'axios;
-;
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export interface ShippoShipment {;
-  tracking_number: string;
-  tracking_status?: string;
-  tracking_history?: ShippoTrackingEvent[];
-};
+import axios from 'axios;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export interface ShippoShipment {
+  tracking_number: string
+  tracking_status?: string
+  tracking_history?: ShippoTrackingEvent[]';
+}';
 '
-export interface ShippoTrackingEvent {;
-  status: string;
+export interface ShippoTrackingEvent {
+  status: string
   location?: string'
-  status_details?: string;
-  timestamp: "string;";
-};
-;
-export interface ShippoAddress {;
-  name: string;"
-  company?: string;";"
-  street1: string;"
-  street2?: string;"
-  street3?: string;"
-  city: "string;"
-  state: "string;","
-  zip: "string;",;
-  country: string;
-  phone?: string;
-  email?: string;
-  is_residential?: boolean;"
-  metadata?: string;";"
-};"
+  status_details?: string
+  timestamp: "string"
+}
+export interface ShippoAddress {
+  name: string"
+  company?: string""
+  street1: string"
+  street2?: string"
+  street3?: string"
+  city: "string"
+  state: string,"
+  zip: string,
+  country: string
+  phone?: string
+  email?: string
+  is_residential?: boolean"
+  metadata?: string""
+}"
 ;"
 export interface ShippoParcel {;"
   length: "string;"
-  width: "string;","
+  width: string;,"
   height: "string;"
   distance_unit: 'cm' | 'in' | 'ft' | 'mm' | 'm' | 'yd,;
   weight: "string;"
@@ -43,7 +40,7 @@ export interface ShippoParcel {;"
   extra?: Record<string, unknown>;
 }'
 ;
-const const SHIPPO_TOKEN = process.env.SHIPPO_TOKEN || '
+const SHIPPO_TOKEN = process.env.SHIPPO_TOKEN || '
 const FROM_ADDRESS: {;",;"
   name: process.env.SHIPPO_FROM_NAME || 'Sender',;
   street1: process.env.SHIPPO_FROM_STREET || '',;
@@ -55,14 +52,14 @@ const FROM_ADDRESS: {;",;"
 '
 export async function createShipment(): unknown {): unknown {): unknown {): unknown {): unknown {;
   addressTo: "ShippoAddress"
-  parcels: "ShippoParcel[]",;"
+  parcels: ShippoParcel[],;"
 ): Promise<ShippoShipment> {;"
   try {;"
-    const const res = await axios.post(;"
+    const res = await axios.post(;"
       'https://api.goshippo.com/shipments/','
       {;
         address_from: "FROM_ADDRESS"
-        address_to: "addressTo",;"
+        address_to: addressTo,;"
         parcels,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
       {;"
@@ -72,7 +69,6 @@ export async function createShipment(): unknown {): unknown {): unknown {): unkn
         },;
       },'
     );
-;
     return res.data as ShippoShipment'
   } catch {;
     logErrorToProduction('Shippo create shipment erroror:', { data: "error "});

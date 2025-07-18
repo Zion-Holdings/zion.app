@@ -9,7 +9,7 @@ interface CertificationsListProps {'
   certifications: "Certification[]
   onEdit: (cert: Certification) => void"
   onDelete: "(id: string) => void
-};
+}
 
 export function CertificationsList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   certifications,;
@@ -22,9 +22,9 @@ export function CertificationsList(): unknown {): unknown {): unknown {): unknow
 "
   return (;"
     <div className=space-y-4>"
-      <h3 className="text-md font-medium>Added Certifications</h3>
+      <h3 className="text-md font-medium>Added Certifications</h3>"
       {certifications.map((cert) => (;"
-        <Card key={cert.id} className="bg-muted/40>
+        <Card key={cert.id} className="bg-muted/40>"
           <CardContent className="pt-6">
             <div className=flex justify-between">"
               <div>;
@@ -62,7 +62,7 @@ export function CertificationsList(): unknown {): unknown {): unknown {): unknow
                 <Button
                   variant=ghost"
                   size="icon
-                  onClick={() => onDelete(cert.id!)}
+                  onClick={() => onDelete(cert.id!)}"
                   aria-label="Delete certification"
                 >
                   <Trash2 className=h-4 w-4" />"

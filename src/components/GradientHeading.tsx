@@ -12,7 +12,7 @@ export function GradientHeading(): unknown {): unknown {): unknown {): unknown {
   className,'
   level = 'h2','
 }: GradientHeadingProps) {;
-  const const Tag = level'
+  const Tag = level'
 '
   return (;
     <Tag'

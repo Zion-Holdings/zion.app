@@ -3,13 +3,13 @@ import { ResumeSelector } from '../resume-selector/index'
 import type { ResumeOption } from '../resume-selector/index'
 import { Button } from '@/components/ui/button'
 
-export interface ResumeTabProps {;
-  selectedResumeId?: string | null;
-  onSelectResume?: (resumeId: string) => void;
-  onResumeSelected?: (resume: ResumeOption) => void;
-  onApply?: () => Promise<void>;
-  isSubmitting?: boolean;
-};
+export interface ResumeTabProps {
+  selectedResumeId?: string | null
+  onSelectResume?: (resumeId: string) => void
+  onResumeSelected?: (resume: ResumeOption) => void
+  onApply?: () => Promise<void>
+  isSubmitting?: boolean
+}
 
 export function ResumeTab(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   selectedResumeId,;
@@ -18,7 +18,7 @@ export function ResumeTab(): unknown {): unknown {): unknown {): unknown {): unk
   onApply,;
   isSubmitting = false,;
 }: ResumeTabProps) {;
-  const const handleResumeSelected = (_resume: ResumeOption) => {;
+  const handleResumeSelected = (_resume: ResumeOption) => {;
     if (onResumeSelected) {;
       onResumeSelected(resume);
     };
@@ -30,8 +30,7 @@ export function ResumeTab(): unknown {): unknown {): unknown {): unknown {): unk
 '
   return (;'
     <div className="space-y-4>;"
-      <ResumeSelector onResumeSelected={handleResumeSelected} />";
-;"";
+      <ResumeSelector onResumeSelected={handleResumeSelected} />";"";
       {onApply && (;""
         <div className="mt-6>;"
           <Button";

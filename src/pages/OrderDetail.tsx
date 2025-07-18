@@ -1,29 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Button } from '@/components/ui/button'
-import { Clipboard } from '@/components/ui/icons;
-;
+import { Clipboard } from '@/components/ui/icons;';
 import Skeleton from '@/components/ui/skeleton'
 import { useGetOrderQuery } from '@/hooks/useOrder'
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf'
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import { OrderTimeline } from '@/components/orders/OrderTimeline;
+import { OrderTimeline } from '@/components/orders/OrderTimeline;';
 '
 export default function OrderDetailPage(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _orderId } = router.query as { orderId?: string }'
   const { _user } = useAuth();
-  const { data: "order", isLoading } = useGetOrderQuery(orderId);"
+  const { data: order, isLoading } = useGetOrderQuery(orderId);"
 ;"
   if (!supabase) throw new Error('Supabase client not initialized');
 '
-  const const handleDownload = async () => {;
+  const handleDownload = async () => {;
     if (!order) return;
-    const const blob = await generateInvoicePdf(order)'
-    const const url = URL.createObjectURL(blob);
-    const const link = document.createElement('a');
+    const blob = await generateInvoicePdf(order)'
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
     link.href = url;
     link.download = `invoice-${order.orderId}.pdf`;
     document.body.appendChild(link);
@@ -32,7 +31,7 @@ export default function OrderDetailPage(): ;
     URL.revokeObjectURL(url);
   }'
 ;
-  const const handleResend = async () => {;
+  const handleResend = async () => {;
     if (!order || !user?.email) return'
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
@@ -49,13 +48,13 @@ export default function OrderDetailPage(): ;
       if (typeof err === 'object' && err !== null && 'message' in err) {;
         message = (err as { message?: string }).message || message'
       };
-      toast({ title: "message", variant: 'destructive' });
+      toast({ title: message, variant: 'destructive' });
     };
   };
 '
-  const const handleCopySummary = async () => {;
+  const handleCopySummary = async () => {;
     if (!order) return;
-    const const summary = ['
+    const summary = ['
       `Order #${order.orderId}`,;
       `Date: "${new Date(order.date).toLocaleDateString()"}`,;"
       '',;
@@ -75,7 +74,6 @@ export default function OrderDetailPage(): ;
     await navigator.clipboard.writeText(summary);
     toast.success('Order summary copied to clipboard')'
   };
-;
   if (isLoading || !order) {'
     return (;
       <div className="container max-w-3xl py-10">;"

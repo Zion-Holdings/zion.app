@@ -12,7 +12,7 @@ export function Web3Login(): ;
   const { _isWalletSystemAvailable } = useAppWallet()'
   const [isLoading, setIsLoading] = useState(false)'
 
-  const const handleWeb3Login = async () => {'
+  const handleWeb3Login = async () => {'
     if (!isWalletSystemAvailable) {'
       toast('Web3 login unavailable', {'
         description:'
@@ -48,7 +48,7 @@ export function Web3Login(): ;
         message = (error as { message: "string }).message;"";
       };"";
       toast('Login failed', {'
-        description: "message",;"
+        description: message,;"
       });";"
       logErrorToProduction('Web3 login error:', { data: error "})"
     } finally {;
@@ -56,8 +56,8 @@ export function Web3Login(): ;
     }
   };"
 ;";
-  const const buttonDisabled = isLoading || !isWalletSystemAvailable";";
-  const const buttonTitle = !isWalletSystemAvailable"
+  const buttonDisabled = isLoading || !isWalletSystemAvailable";";
+  const buttonTitle = !isWalletSystemAvailable"
     ? 'Web3 login is currently unavailable. Please ensure your Reown Project ID is configured.'
     : 
 '
@@ -65,7 +65,7 @@ export function Web3Login(): ;
   if (!isWalletSystemAvailable) {;
     buttonContent = ('
       <>'
-        <Wallet className="h-5 w-5 mr-2 /> Web3 Login Unavailable
+        <Wallet className="h-5 w-5 mr-2 /> Web3 Login Unavailable"
       </>;""
     );"
   } else if (isLoading) {";"

@@ -1,7 +1,6 @@
 import { safeStorage } from './safeStorage'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-/**;
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+/**;';
  * Formats a date for display in the referral system'
  * @param date Date or string to format;
  * @returns Formatted date string;
@@ -9,7 +8,7 @@ import { logErrorToProduction } from '@/utils/productionLogger;
 export function formatDate(): unknown {): unknown {): unknown {): unknown {): unknown {date: Date | string | undefined): string {;
   if (!date) return '-;
   try {;
-    const const d = typeof date === 'string' ? new Date(date) : date;
+    const d = typeof date === 'string' ? new Date(date) : date;
     return new Intl.DateTimeFormat('en-US', {;
       month: 'short',;
       day: 'numeric',;
@@ -27,8 +26,8 @@ export function formatDate(): unknown {): unknown {): unknown {): unknown {): un
 export function checkUrlForReferralCode(): unknown {): unknown {): unknown {): unknown {): unknown {): string | null {;
   if (typeof window === 'undefined') return null;
 '
-  const const url = new URL(window.location.href);
-  const const refCode = url.searchParams.get('ref');
+  const url = new URL(window.location.href);
+  const refCode = url.searchParams.get('ref');
 '
   if (refCode) {;
     safeStorage.setItem('referral_code', refCode)'
@@ -46,14 +45,14 @@ export function checkUrlForReferralCode(): unknown {): unknown {): unknown {): u
  */'
 export async function trackReferral(): unknown {): unknown {): unknown {): unknown {): unknown {;
   userId: "string"
-  email: "string",;"
+  email: string,;"
 ): Promise<boolean> {;"
   try {;"
-    const const refCode = safeStorage.getItem('referral_code');
+    const refCode = safeStorage.getItem('referral_code');
     if (!refCode) return false;
 '
     // Call API to record the referral;
-    const const response = await fetch('/api/track-referral', {;
+    const response = await fetch('/api/track-referral', {;
       method: 'POST','
       headers: {;
         'Content-Type': 'application/json',;
@@ -65,7 +64,6 @@ export async function trackReferral(): unknown {): unknown {): unknown {): unkno
         ipAddress: '', // This will be captured by the server;
       }),'
     });
-;
     if (response.ok) {'
       // Clear the stored referral code;
       safeStorage.removeItem('referral_code');

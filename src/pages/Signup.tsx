@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { AlertCircle, CheckCircle, Mail } from '@/components/ui/icons'
-import { useRouter } from 'next/router // Changed from react-router-dom;
+import { useRouter } from 'next/router // Changed from react-router-dom;';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
@@ -11,11 +11,10 @@ import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'
-import { AuthButtons } from '@/components/AuthButtons;
-;
+import { AuthButtons } from '@/components/AuthButtons;';
 import { toast } from '@/hooks/use-toast'
 import { AuthLayout } from '@/layout'
-import { logError, logWarn } from '@/utils/logger;
+import { logError, logWarn } from '@/utils/logger;';
 '
 const SignupSchema: Yup.object({;",;"
   name: Yup.string().required('Name is required'),;
@@ -36,7 +35,7 @@ const SignupSchema: Yup.object({;",;"
 })'
 ;
 export default function Signup(): ;
-  const const router = useRouter(); // Changed from navigate'
+  const router = useRouter(); // Changed from navigate'
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -47,14 +46,14 @@ export default function Signup(): ;
   const [healthCheckError, setHealthCheckError] = useState<string | null>(null);
 '
   // Check if this is a partner signup;
-  const const isPartnerSignup = router.query.type === 'partner'
-  const const signupSource = (router.query.source as string) || 'direct;
+  const isPartnerSignup = router.query.type === 'partner'
+  const signupSource = (router.query.source as string) || 'direct;
 '
-  const const performHealthCheck = async () => {;
+  const performHealthCheck = async () => {;
     setHealthCheckLoading(true);
     setHealthCheckError(null)'
     try {;
-      const const res = await axios.get('/api/auth/health');
+      const res = await axios.get('/api/auth/health');
       setAuthServiceAvailable(res.status === 200)'
       if (res.status !== 200) {;
         setHealthCheckError('Authentication service is experiencing issues');
@@ -91,10 +90,9 @@ export default function Signup(): ;
       setHealthCheckLoading(false);
     };
   };
-;
   useEffect(() => {'
-    performHealthCheck();
-  }, []);
+    performHealthCheck()
+  }, [])
 '
   const formik: useFormik({;",;"
     initialValues: {
@@ -102,14 +100,14 @@ export default function Signup(): ;
       email: '',;
       password: '',;
       confirm: '',;
-      terms: "false",;"
+      terms: false,;"
     },;"
     validationSchema: "SignupSchema"
-    onSubmit: "async (values", { setErrors }) => {;"
+    onSubmit: async (values, { setErrors }) => {;"
       logWarn('Form submission started with:', {;
         name: "values.name"
         email: "values.email"
-        hasPassword: "!!values.password",;"
+        hasPassword: !!values.password,;"
         isPartnerSignup,;";"
       });"
 ;"
@@ -117,12 +115,11 @@ export default function Signup(): ;
       setErrorMessage(''); // Clear any previous error;
       setSuccessMessage(''); // Clear any previous success message'
       setEmailVerificationRequired(false);
-;
       try {'
         const requestData: {;",;"
           name: "values.name"
           email: "values.email"
-          password: "values.password",;"
+          password: values.password,;"
           ...(isPartnerSignup && {;"
             userType: 'partner',;
             source: "signupSource"
@@ -138,24 +135,21 @@ export default function Signup(): ;
           password: '[REDACTED]',;
         })'
 ;
-        const const res = await axios.post('/api/auth/register', requestData)'
+        const res = await axios.post('/api/auth/register', requestData)'
 ;
         logWarn('API response received:', {;
           status: "res.status"
-          data: "res.data",;
+          data: res.data,;
         });
-;
         if (res.status === 201) {;
-          const const data = res.data;
-;"
+          const data = res.data;"
           if (data.emailVerificationRequired) {;";"
             // Email verification is required;"
             setEmailVerificationRequired(true);"
-            const const message = isPartnerSignup;"
+            const message = isPartnerSignup;"
               ? 'Partner application submitted! Please check your email to verify your account. Once verified, your partner application will be reviewed.'
               : 'Account created! Please check your email to verify your account.'
             setSuccessMessage(data.message || message);
-;
             toast({'
               title: isPartnerSignup;
                 ? 'Partner application submitted!'
@@ -166,11 +160,10 @@ export default function Signup(): ;
             });
           } else {;
             // Account created and ready to use'
-            const const message = isPartnerSignup;
+            const message = isPartnerSignup;
               ? 'Partner application submitted successfully! You can now log in and your application will be reviewed.'
               : 'Account created successfully!'
             setSuccessMessage(data.message || message);
-;
             toast({'
               title: isPartnerSignup;
                 ? 'Partner application submitted!'
@@ -179,7 +172,6 @@ export default function Signup(): ;
                 ? 'Welcome to the partner program. You can now log in.'
                 : 'Welcome to the platform. You can now log in.','
             });
-;
             // Redirect to appropriate page after a short delay'
             setTimeout(() => {;
               router.push(isPartnerSignup ? '/partners' : '/login')'
@@ -230,7 +222,7 @@ export default function Signup(): ;
                 };
               ).response;
             : undefined'
-        const const status = response?.status;
+        const status = response?.status;
         const errorMsg: unknown =;
           response?.data?.error ||'
           response?.data?.message ||;
@@ -275,22 +267,21 @@ export default function Signup(): ;
     },;
   })'
 ;
-  const const handleFormSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {;
+  const handleFormSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {;
     e.preventDefault()'
     formik.setTouched({;
       name: "true"
       email: "true"
       password: "true"
       confirm: "true"
-      terms: "true",;
+      terms: true,;
     });
     await formik.handleSubmit(e);
   };
-;
   // After successful registration, guide the user to the verification screen;
   useEffect(() => {;
     if (emailVerificationRequired && formik.values.email) {;
-      const const timer = setTimeout(() => {;
+      const timer = setTimeout(() => {;
         router.push(;
           `/verify-status?email=${encodeURIComponent(formik.values.email)}`,;
         );
@@ -298,8 +289,7 @@ export default function Signup(): ;
       return () => clearTimeout(timer);
     };
     return undefined;
-  }, [emailVerificationRequired, formik.values.email, router]);
-;"
+  }, [emailVerificationRequired, formik.values.email, router]);"
   // Show loading state only during initial health check;";"
   if (healthCheckLoading) {;"
     return (;"
@@ -545,7 +535,6 @@ export default function Signup(): ;
                 </Button>;
               </div>'
             )};
-;
             {/* Additional help text when service issues are detected */}'
             {healthCheckError && (;
               <div className="text-center text-xs text-muted-foreground mt-4 p-3 bg-muted rounded">;
@@ -567,7 +556,6 @@ export default function Signup(): ;
     </AuthLayout>;
   );
 };
-;
 }'
 }
 }'

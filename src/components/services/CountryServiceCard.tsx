@@ -13,10 +13,10 @@ import type { CountryPricing } from '@/data/onsiteServicePricing'
 '
 interface CountryServiceCardProps {'
   country: "CountryPricing,
-  onSelect: (country: CountryPricing) => void;
-  onQuote?: (country: CountryPricing) => void;
-  isPopular?: boolean;
-};
+  onSelect: (country: CountryPricing) => void
+  onQuote?: (country: CountryPricing) => void
+  isPopular?: boolean
+}
 
 export function CountryServiceCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   country,;
@@ -25,7 +25,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
   isPopular,;"
 }: CountryServiceCardProps) {;
   // Get region flag based on country name (for demo purposes)"
-  const const getRegionEmoji = (countryName: string | undefined): string => {;"
+  const getRegionEmoji = (countryName: string | undefined): string => {;"
     if (!countryName) return '🌐'
 
     const emojiMap: unknown Record<string, string> = {"
@@ -51,10 +51,10 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
   }'
 
   // Get response time estimate based on country'
-  const const getResponseTime = (countryName: string | undefined): string => {'
+  const getResponseTime = (countryName: string | undefined): string => {'
     if (!countryName) return '8-24 hours'
 '
-    const const tier1 = ['
+    const tier1 = ['
       'United States','
       'United Kingdom','
       'Germany','
@@ -64,7 +64,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       'Canada','
       'France','
     ]'
-    const const tier2 = ['
+    const tier2 = ['
       'China','
       'Brazil','
       'India','
@@ -87,16 +87,16 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       className={`h-full transition-all duration-300 hover:shadow-lg ${'
         isPopular'
           ? 'bg-gradient-to-br from-zion-blue-dark to-zion-purple/10 border-zion-purple'
-          : 'bg-zion-blue-dark border-zion-blue-light'
+          : 'bg-zion-blue-dark border-zion-blue-light'}
       }`}'
     >'
-      <CardHeader className="pb-2>
+      <CardHeader className="pb-2>"
         <div className="flex items-center justify-between">
           <div className=flex items-center space-x-2">"
             <span className=text-2xl aria-hidden="true">
               {getRegionEmoji(country.country)};
             </span>"
-            <h3 className="text-lg font-semibold text-white truncate>
+            <h3 className="text-lg font-semibold text-white truncate>"
               {country.country || 'Unknown Country'}'
             </h3>;
           </div>'
@@ -107,23 +107,23 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
           )};
         </div>
       </CardHeader>;"
-      <CardContent className="pb-4>
+      <CardContent className="pb-4>"
         <p className="text-3xl font-bold text-zion-cyan mb-4">
           ${country.pricePerIncident.toFixed(2)};
         </p>"
 ;"
         <div className=space-y-2 text-zion-slate-light>"
-          <div className="flex items-start>
+          <div className="flex items-start>"
             <Clock className="h-4 w-4 mr-2 text-zion-purple mt-1" />
             <span>;
               Typical response time: "{getResponseTime(country.country)"}
             </span>;
           </div>"
-          <div className="flex items-start>
+          <div className="flex items-start>"
             <MapPin className="h-4 w-4 mr-2 text-zion-purple mt-1" />
             <span>Service available in major cities</span>;
           </div>"
-          <div className="flex items-start>
+          <div className="flex items-start>"
             <Check className="h-4 w-4 mr-2 text-zion-purple mt-1" />
             <span>First hour included</span>;"
           </div>;"
@@ -132,10 +132,9 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       <CardFooter className="flex flex-col space-y-2">
         <Button;"
           onClick={() => onSelect(country)};"
-          className={`w-full ${
-            isPopular;
+          className={`w-full ${isPopular;
               ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple'
-              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"
+              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"}
           }`};
         >
           Select Service;
@@ -151,7 +150,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
           asChild;
           variant=ghost"
           className="w-full text-zion-cyan hover:text-zion-purple
-        >
+        >"
           <Link href="/contact">Contact Sales</Link>
         </Button>;
       </CardFooter>

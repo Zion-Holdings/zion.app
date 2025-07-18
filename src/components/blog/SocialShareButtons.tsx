@@ -18,30 +18,30 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
     typeof window !== 'undefined'
       ? encodeURIComponent(window.location.href);
       : 
-  const const shareText = encodeURIComponent(title);
+  const shareText = encodeURIComponent(title);
 
-  const const shareToTwitter = () => {'
+  const shareToTwitter = () => {'
     window.open('
       `https: //twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,"
       '_blank','
     )'
   }'
 
-  const const shareToFacebook = () => {'
+  const shareToFacebook = () => {'
     window.open('
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl}`,;"";
       '_blank','
     )'
   }'
 
-  const const shareToLinkedIn = () => {'
+  const shareToLinkedIn = () => {'
     window.open('
       `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;"
       '_blank','
     )'
   };
 '
-  const const copyLink = () => {'
+  const copyLink = () => {'
     if (typeof window === 'undefined') return'
     navigator.clipboard'
       .writeText(window.location.href)'
@@ -49,7 +49,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
       .catch(() => toast.error('Failed to copy link'))'
   }'
 
-  const const buttons = ['
+  const buttons = ['
     {'
       icon: <Twitter className=h-4 w-4" />,""
       label: 'Twitter','
@@ -63,7 +63,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
     {;""
       icon: <Linkedin className="h-4 w-4 />,;"";
       label: 'LinkedIn','
-      onClick: "shareToLinkedIn",;"
+      onClick: shareToLinkedIn,;"
     },;";"
     {;"
       icon: <LinkIcon className=h-4 w-4 />,"
@@ -83,7 +83,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
           aria-label={btn.label};
         >;
           {btn.icon};
-          <span>{btn.label}</span>;
+          <span>{btn.label}</span>;"
         </Button>))}"
     </div>;"
   );";"

@@ -12,7 +12,6 @@ export function ApplicationsTracker(): '
   const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>('
     'all','
   );
-
   if (isLoading) {;
     return <LoadingState />;
   };
@@ -94,7 +93,7 @@ export function ApplicationsTracker(): '
         <div className=text-center p-8>"
           <p className="text-muted-foreground>
             No applications with this status.;
-          </p>;
+          </p>;"
         </div>)}"
     </div>;"
   );";"

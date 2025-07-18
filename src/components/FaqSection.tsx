@@ -8,7 +8,7 @@ import {'
   AccordionTrigger,'
 } from '@/components/ui/accordion'
 
-const const faqs = ['
+const faqs = ['
   {'
     question: 'How do I publish my AI product or service?','
     answer:'
@@ -57,7 +57,7 @@ export function FaqSection(): '
       <div className=container mx-auto px-4 sm:px-6 lg:px-8">""
         <div className=text-center mb-12>";";
           <GradientHeading>Frequently Asked Questions</GradientHeading>"
-          <p className="mt-4 text-zion-slate-light text-xl max-w-2xl mx-auto>
+          <p className="mt-4 text-zion-slate-light text-xl max-w-2xl mx-auto>"
             Find answers to common questions about AI product listings, IT"
             equipment rentals, and datacenter maintenance services;"
           </p>;";"

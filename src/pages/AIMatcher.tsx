@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router'
 import { Header } from '@/components/Header'
 import { GradientHeading } from '@/components/GradientHeading'
-import { AIMatchmaker } from '@/components/AIMatchmaker;
-import {;
+import  { AIMatchmaker }  from '@/components/AIMatchmaker;';
+import {;';
   Select,'
   SelectValue,;
   SelectTrigger,;
@@ -12,17 +12,15 @@ import {;
 } from '@/components/ui/select'
 import { toast } from '@/hooks/use-toast'
 import { useFeatureUsage } from '@/hooks/useFeatureUsage'
-import type { MatchResult } from '@/lib/ai-matchmaking;
-;
+import type { MatchResult } from '@/lib/ai-matchmaking;';
 export default function AIMatcherPage(): '
-  const const router = useRouter();
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   useFeatureUsage('AI Matchmaker');
-;
-  const const handleMatchSelect = (_match: MatchResult) => {'
+  const handleMatchSelect = (_match: MatchResult) => {'
     // Get the item type from the category;
     let itemType = 'service;
-    const const category = match.item.category.toLowerCase();
+    const category = match.item.category.toLowerCase();
 '
     if (;
       category.includes('talent') ||;
@@ -39,11 +37,10 @@ export default function AIMatcherPage(): '
       title: 'Match Selected',;
       description: `You've selected ${match.item.title}`,'
     });
-;
     // Store data in sessionStorage for the request-quote page'
     const quoteData: {;",;"
       serviceType: "itemType"
-      specificItem: "match.item",;"
+      specificItem: match.item,;"
     };"
 ;"
     if (typeof window !== 'undefined') {;
@@ -106,7 +103,6 @@ export default function AIMatcherPage(): '
     </>;
   );
 };
-;
 }'
 }
 }'

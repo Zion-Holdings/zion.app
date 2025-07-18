@@ -2,16 +2,15 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { http, HttpResponse } from 'msw';
 import { server } from '../mocks/server'
 import { toast } from '../../hooks/use-toast'
-import fetchEquipment from './EquipmentPage // Use default import if fetchEquipment is the default export;
+import fetchEquipment from './EquipmentPage // Use default import if fetchEquipment is the default export;';
 '
 // Mock the toast hook;
 vi.mock('@/hooks/use-toast', () => ({;
-  toast: "vi.fn()",;"
+  toast: vi.fn(),;"
 }));"
 ;"
 // MSW endpoint for equipment API;"
-const const EQUIPMENT_API_URL = '/api/v1/services/equipment;
-;
+const EQUIPMENT_API_URL = '/api/v1/services/equipment;
 describe('fetchEquipment', () => {;
   beforeEach(() => {'
     vi.clearAllMocks(); // Clear mocks before each test;
@@ -19,13 +18,13 @@ describe('fetchEquipment', () => {;
   })'
 ;
   it('should handle API errors gracefully, log details, and show a toast notification', async () => {;
-//     const const _errorMessage = undefined; // Unused 'Network Error'
-    const const errorResponseData = { detail: 'Something went wrong on the server' }'
+//     const _errorMessage = undefined; // Unused 'Network Error'
+    const errorResponseData = { detail: 'Something went wrong on the server' }'
 ;
     server.use(;
       http.get(EQUIPMENT_API_URL, () => {'
         return HttpResponse.json(errorResponseData, {;
-          status: "500",;
+          status: 500,;
           // msw v2 requires you to construct a proper Response for errors to have `message`;"
           // but Axios error objects construct their message from response status text or a generic message.;";"
           // The important part is that `error.response.data` is correct.;"
@@ -37,7 +36,7 @@ describe('fetchEquipment', () => {;
     );";"
 ;"
     // Spy on console.error;"
-    const const consoleErrorSpy = vi;"
+    const consoleErrorSpy = vi;"
       .spyOn(console, 'error');
       .mockImplementation(() => {})'
 ;
@@ -52,7 +51,7 @@ describe('fetchEquipment', () => {;
       await fetchEquipment()'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
       if (error && typeof error === 'object') {;
-        const const err = error as {;
+        const err = error as {;
           message?: string;
           response?: { data?: unknown; status?: number };
         };
@@ -79,7 +78,7 @@ describe('fetchEquipment', () => {;
       expect.objectContaining({;
         response: "expect.objectContaining({;"
           data: "errorResponseData"
-          status: "500",;"
+          status: 500,;"
         }),;";"
       }),;"
     );"
@@ -92,18 +91,16 @@ describe('fetchEquipment', () => {;
       expect.objectContaining({;
         response: "expect.objectContaining({;"
           data: "errorResponseData"
-          status: "500",;
+          status: 500,;
         }),;
       }),;
-    );
-;"
+    );"
     // Restore console.error spy;";"
     consoleErrorSpy.mockRestore();"
   });"
 ;"
   it('should handle errors where error.response is undefined (e.g., network failure)', async () => {;
-    const const networkErrorMessage = 'Failed to fetch // Standard message for network errors;
-;
+    const networkErrorMessage = 'Failed to fetch // Standard message for network errors;
     server.use(;
       http.get(EQUIPMENT_API_URL, () => {;
         // Simulate network error;
@@ -111,7 +108,7 @@ describe('fetchEquipment', () => {;
       }),;
     );
 '
-    const const consoleErrorSpy = vi;
+    const consoleErrorSpy = vi;
       .spyOn(console, 'error');
       .mockImplementation(() => {})'
 ;
@@ -151,8 +148,7 @@ describe('fetchEquipment', () => {;
     // Simulate an API error that results in an error object without a 'message' property;
     // This is less common with Axios, as it usually creates a message.'
     // However, if a non-Error object is thrown somehow:;
-//     const const _customErrorObject = undefined; // Unused { message: 'Custom error' };
-;
+//     const _customErrorObject = undefined; // Unused { message: 'Custom error' };
     server.use(;
       http.get(EQUIPMENT_API_URL, () => {;
         // This setup with HttpResponse.json will still likely produce an error.message via Axios.'
@@ -170,7 +166,7 @@ describe('fetchEquipment', () => {;
         // The actual `apiClient.get` call would need to be mocked to throw such an object.'
         // For now, we assume an error object *with* a response but *without* a message.;
         return new HttpResponse(JSON.stringify({ detail: 'server error' }), {;
-          status: "500",;"
+          status: 500,;"
         });";"
       }),;"
     );"
@@ -183,7 +179,7 @@ describe('fetchEquipment', () => {;
     // This scenario is hard to simulate perfectly with MSW alone without also mocking parts of Axios.;"
     // The existing MSW setup will likely result in "Request failed with status code 500".;"
 ;"
-    const const consoleErrorSpy = vi;"
+    const consoleErrorSpy = vi;"
       .spyOn(console, 'error');
       .mockImplementation(() => {})'
 ;
@@ -200,7 +196,6 @@ describe('fetchEquipment', () => {;
         throw e;
       }'
     };
-;
     // If we wanted to test the fallback message, the assertion would be:'
     // expect(toast).toHaveBeenCalledWith({;
     //   title: 'Failed to fetch equipment',;

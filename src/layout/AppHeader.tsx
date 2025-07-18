@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation'
 import { Logo } from '@/components/header/Logo'
 import { Container } from '@/components/Container'
-import { useTranslation } from 'react-i18next;
-;
+import { useTranslation } from 'react-i18next;';
 import { MobileMenu } from '@/components/header/MobileMenu'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { MobileBottomNav } from '@/components/header/MobileBottomNav'
@@ -15,22 +14,19 @@ import { LoginModal } from '@/components/auth/LoginModal'
 import { UserMenu } from '@/components/header/UserMenu'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
-import { cn } from '@/lib/utils // Import cn utility;
-import { useRouter } from 'next/router;
-;
-export function AppHeader(): ;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+import { cn } from '@/lib/utils // Import cn utility;';
+import  { useRouter }  from 'next/router;
+export function AppHeader(): ;';
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);';
   const [loginOpen, setLoginOpen] = useState(false)'
-  const const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
   const { t } = useTranslation();
-  const const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)'
-  const const router = useRouter();
-  const const showTagline = router.pathname === '/;
-;
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)'
+  const router = useRouter();
+  const showTagline = router.pathname === '/;
   // Messaging context (unread message count);
-  const { _unreadCount } = useMessaging()'
-;
-  const const openLoginModal = (_returnToPath?: string) => {;
+  const { _unreadCount } = useMessaging()';
+  const openLoginModal = (_returnToPath?: string) => {;
     // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)'
     // using router.push with shallow:true before this function is called.;
     // This function's main job is just to open the modal.;
@@ -139,7 +135,6 @@ export function AppHeader(): ;
           </div>;
         </div>;
       )};
-;
       {/* Mobile Bottom Navigation */};
       {isMobile && <MobileBottomNav unreadCount={unreadCount} />};
       <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />;"

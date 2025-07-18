@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
-import { JobPostingForm } from '@/components/jobs;
-import {;
+import  { JobPostingForm }  from '@/components/jobs;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -9,11 +9,11 @@ import {;
 } from '@/components/ui/card'
 import { SEO } from '@/components/SEO'
 import { useAuth } from '@/hooks/useAuth'
-import { useIsMobile } from '@/hooks/use-mobile;
+import { useIsMobile } from '@/hooks/use-mobile;';
 '
 export default function PostJob(): ;
-  const { isAuthenticated: "_isAuthenticated", isLoading } = useAuth();"
-  const const isMobile = useIsMobile();";"
+  const { isAuthenticated: _isAuthenticated, isLoading } = useAuth();"
+  const isMobile = useIsMobile();";"
 ;"
   if (isLoading) {;"
     return (;"

@@ -1,10 +1,10 @@
 import React, { useState } from 'react''
 
-interface FilterSidebarProps {;
+interface FilterSidebarProps {
   className?: string'
   filters?: Record<string, unknown>'
   onFilterChange?: (filters: "Record<string, unknown>) => void
-};"
+}"
 "
 export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
   className = '','
@@ -21,19 +21,18 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
     typeof filters.maxPrice === 'string' ? filters.maxPrice : '','
   )'
 
-  const const handleCategoryChange = (_e: React.ChangeEvent<HTMLSelectElement>) => {'
+  const handleCategoryChange = (_e: React.ChangeEvent<HTMLSelectElement>) => {'
     setCategory(e.target.value)'
     onFilterChange?.({ ...filters, category: e.target.value "})"
   };
-  const const handleMinPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMinPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(e.target.value);"
     onFilterChange?.({ ...filters, minPrice: "e.target.value })
   };"
-  const const handleMaxPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {"
+  const handleMaxPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {"
     setMaxPrice(e.target.value);
     onFilterChange?.({ ...filters, maxPrice: e.target.value "})"
-  };
-;"
+  };"
   return ("
     <div className={`filter-sidebar ${className}`}>;
       <h3 className=font-semibold text-lg mb-4">Filters</h3>"
@@ -47,13 +46,13 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
           >
             <option value=">All</option>"
             <option value=electronics>Electronics</option>"
-            <option value="books>Books</option>
+            <option value="books>Books</option>"
             <option value="fashion">Fashion</option>
             <option value=services">Services</option>"
           </select>;
         </div>
         <div>;"
-          <label className="block text-sm font-medium mb-1>Price Range</label>
+          <label className="block text-sm font-medium mb-1>Price Range</label>"
           <div className="flex gap-2">
             <input;
               type="number"
@@ -64,7 +63,7 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
             />;"
             <input
               type=number"
-              className="w-1/2 border rounded px-2 py-1
+              className="w-1/2 border rounded px-2 py-1"
               placeholder=Max""
               value={maxPrice};
               onChange={handleMaxPriceChange};

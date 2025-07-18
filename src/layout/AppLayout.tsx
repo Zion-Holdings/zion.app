@@ -1,12 +1,12 @@
-import React, { useState } from 'react;
-import type {;
+import  React, { useState }  from 'react;';
+import type {;';
   ReactNode as _ReactNode,'
   ReactElement as _ReactElement,;
 } from 'react';
-import { useRouter } from 'next/router;
-// Assume useAuth hook exists and provides user object with emailVerified status and email;
+import  { useRouter }  from 'next/router;';
+// Assume useAuth hook exists and provides user object with emailVerified status and email;';
 import { useAuth } from '@/hooks/useAuth'
-import EmailVerificationBanner from '@/components/EmailVerificationBanner // Assuming path;
+import EmailVerificationBanner from '@/components/EmailVerificationBanner // Assuming path;';
 import { PrimaryNav } from './PrimaryNav'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { BackToTopButton } from '@/components/BackToTopButton'
@@ -22,21 +22,19 @@ import LoaderOverlay from '@/components/LoaderOverlay'
 import ErrorOverlay from '@/components/ErrorOverlay'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { useSessionDuration } from '@/hooks/useSessionDuration'
-import { useNavigationGestures } from '@/hooks/useNavigationGestures;
+import { useNavigationGestures } from '@/hooks/useNavigationGestures;';
 '
 function useSafePathname(): ;
-  const const router = useRouter();
+  const router = useRouter();
   return ('
     router.pathname ||;
     (typeof window !== 'undefined' ? window.location.pathname : '');
   );
 };
-;
-interface AppLayoutProps {;
-  children?: React.ReactNode; // Kept ReactNode for consistency;
+interface AppLayoutProps {
+  children?: React.ReactNode // Kept ReactNode for consistency
   hideFooter?: boolean'
-};
-;
+}
 export function AppLayout(): unknown {): unknown {): unknown {): unknown {): unknown {{ children, hideFooter = false }: AppLayoutProps) {'
   // Example: using an auth context;
   // IMPORTANT: The actual useAuth() hook and its returned 'user' object (with 'email' and 'emailVerified' fields);
@@ -49,15 +47,15 @@ export function AppLayout(): unknown {): unknown {): unknown {): unknown {): unk
   useNavigationGestures()'
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
-  const { loading: "rawLoading", error, setError } = useGlobalLoader();
+  const { loading: rawLoading, error, setError } = useGlobalLoader();
   const loading: unknown boolean = Boolean(rawLoading);
-  const const pathname = useSafePathname();
+  const pathname = useSafePathname();
   const isAuthPage: unknown =;
     /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(;
       pathname,;
     );"
 ;";"
-  const const handleResendVerificationEmail = async () => {;"
+  const handleResendVerificationEmail = async () => {;"
     if (!user || !user.email) {;"
       setResendStatusMessage(;"
         'User email not found. Cannot resend verification.','
@@ -68,14 +66,14 @@ export function AppLayout(): unknown {): unknown {): unknown {): unknown {): unk
     setResendStatusMessage(''); // Clear previous message;
 '
     try {;
-      const const response = await fetch('/api/auth/resend-verification-email', {;
+      const response = await fetch('/api/auth/resend-verification-email', {;
         method: 'POST','
         headers: {;
           'Content-Type': 'application/json',;
           // Auth token should be handled by cookies automatically by the browser;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       });
-      const const data = await response.json()'
+      const data = await response.json()'
 ;
       if (response.ok) {;
         setResendStatusMessage('

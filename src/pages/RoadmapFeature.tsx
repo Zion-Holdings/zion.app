@@ -10,14 +10,13 @@ import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage;
-;
+import { safeStorage } from '@/utils/safeStorage;';
 export default function RoadmapFeaturePage(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { _id } = router.query as { id?: string };
   const { _user } = useAuth()'
   const [items, setItems] = useState<RoadmapItem[]>(() => {;
-    const const raw = safeStorage.getItem('roadmap_items');
+    const raw = safeStorage.getItem('roadmap_items');
     if (!raw) return ROADMAP_ITEMS;
     try {;
       return JSON.parse(raw) as RoadmapItem[];
@@ -28,9 +27,9 @@ export default function RoadmapFeaturePage(): '
   const [followed, setFollowed] = useState(;
     () => safeStorage.getItem(`feature_follow_${id}`) === 'true',;
   )'
-  useEffect(() => {;
-    safeStorage.setItem('roadmap_items', JSON.stringify(items));
-  }, [items]);
+  useEffect(() => {
+    safeStorage.setItem('roadmap_items', JSON.stringify(items))
+  }, [items])
   useEffect(() => {;
     if (id) {;
       safeStorage.setItem(`feature_follow_${id}`, String(followed));
@@ -38,12 +37,12 @@ export default function RoadmapFeaturePage(): '
   }, [id, followed])'
 ;
   if (!id) return null;
-  const const feature = items.find((f) => f.id === id)'
+  const feature = items.find((f) => f.id === id)'
   if (!feature) {;
     return <div className="p-8 text-center">Feature not found</div>;
   };"
 ;";"
-  const const handleFollow = () => {;"
+  const handleFollow = () => {;"
     if (!user) {;"
       toast({;"
         title: 'Login required',;

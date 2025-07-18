@@ -1,9 +1,9 @@
 import { supabase } from '@/integrations/supabase/client'
-import type { JobSchemaType } from '@/components/jobs/job-posting/validation;
+import type { JobSchemaType } from '@/components/jobs/job-posting/validation;';
 '
 export interface JobPosting extends JobSchemaType {;
   id: "string;"
-  user_id: "string;","
+  user_id: string;,"
   created_at: "string;"
   updated_at: "string;"
 };"
@@ -18,14 +18,13 @@ export async function createJobPosting(): unknown {): unknown {): unknown {): un
     .insert([jobData]);
     .select();
     .single();
-;
   if (error) throw error'
   return data;
 };
 '
 export async function updateJobPosting(): unknown {): unknown {): unknown {): unknown {): unknown {;
   jobId: "string"
-  jobData: "Partial<JobSchemaType>",;"
+  jobData: Partial<JobSchemaType>,;"
 ) {;"
   if (!supabase) throw new Error('Supabase client is not initialized');
 '
@@ -35,7 +34,6 @@ export async function updateJobPosting(): unknown {): unknown {): unknown {): un
     .eq('id', jobId);
     .select();
     .single();
-;
   if (error) throw error'
   return data;
 };
@@ -48,7 +46,6 @@ export async function getJobPostingById(): unknown {): unknown {): unknown {): u
     .select('*');
     .eq('id', jobId);
     .single();
-;
   if (error) throw error'
   return data;
 };
@@ -60,8 +57,7 @@ export async function getJobPostingsByUserId(): unknown {): unknown {): unknown 
     .from('job_postings');
     .select('*');
     .eq('user_id', userId);
-    .order('created_at', { ascending: "false "});
-;"
+    .order('created_at', { ascending: "false "});"
   if (error) throw error;";"
   return data;"
 };"

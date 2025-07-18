@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { cn } from '@/lib/utils'
 
-interface MainNavigationProps {;
-  className?: string;
-};
+interface MainNavigationProps {
+  className?: string
+}
 '
 export function MainNavigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: MainNavigationProps) {'
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const navLinks = ['
+  const navLinks = ['
     { href: '/', label: 'Home', exact: "true },;"";
     { href: '/talent', label: 'Find Talent' },'
     { href: '/services', label: 'Services' },'
@@ -22,12 +22,11 @@ export function MainNavigation(): unknown {): unknown {): unknown {): unknown {)
     { href: '/about', label: 'About Us' },'
     { href: '/partners', label: 'Partner Program', exact: "true "},;"
     { href: '/signup', label: 'Register', exact: true", isButton: "true },;"
-  ]";
-;"";
+  ]";"";
   return (;""
     <nav className={cn('hidden md:flex items-center space-x-6', className)}>'
       {navLinks.map(({ href, label, exact, isButton }) => {;
-        const const isActive = exact;
+        const isActive = exact;
           ? router.pathname === href;
           : router.pathname.startsWith(href);
         return (;

@@ -1,5 +1,5 @@
 export function InteractiveMap(): ;
-  const const locations = [;
+  const locations = [;
     { name: 'New York', subdomain: 'ny.zionapp.com', top: '40%', left: '35%' },'
     {'
       name: 'London','

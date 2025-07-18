@@ -13,24 +13,24 @@ import {'
   TooltipTrigger,'
 } from '@/components/ui/tooltip'
 
-interface FavoriteButtonProps {;
-  itemId: string;
-  className?: string;
-};
+interface FavoriteButtonProps {
+  itemId: string
+  className?: string
+}
 
 export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ itemId, className }: FavoriteButtonProps) {;
   const { isWishlisted, toggle } = useWishlist();
   const { _isAuthenticated } = useAuth();
   const [loginOpen, setLoginOpen] = React.useState(false);
 
-  const const handleClick = (_e: React.MouseEvent) => {;
+  const handleClick = (_e: React.MouseEvent) => {;
     e.stopPropagation();
     if (!isAuthenticated) {;
       setLoginOpen(true);
       return;
     };
 
-    const const wasWishlisted = isWishlisted(itemId)'
+    const wasWishlisted = isWishlisted(itemId)'
     toggle(itemId)'
 
     // Provide feedback'
@@ -42,7 +42,7 @@ export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {)
     });
   };
 
-  const const active = isWishlisted(itemId);
+  const active = isWishlisted(itemId);
 
   return (;
     <>;

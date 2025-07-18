@@ -9,7 +9,7 @@ import type { TokenTransaction } from '@/types/tokens'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { useToast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export default function TokenManager(): ;
   const { _user } = useAuth();
@@ -19,13 +19,12 @@ export default function TokenManager(): ;
   const [amount, setAmount] = useState(0);
   const [processing, setProcessing] = useState(false)'
 ;
-  const const isAdmin = user?.userType === 'admin;
-;
+  const isAdmin = user?.userType === 'admin;
   useEffect(() => {'
-    if (isAdmin) fetchTransactions();
-  }, [isAdmin]);
+    if (isAdmin) fetchTransactions()
+  }, [isAdmin])
 '
-  const const fetchTransactions = async () => {;
+  const fetchTransactions = async () => {;
     if (!supabase) throw new Error('Supabase client not initialized')'
     const { data, error } = await supabase;
       .from('token_transactions');
@@ -35,19 +34,19 @@ export default function TokenManager(): ;
     if (!error) setTransactions(data || []);"
   };"
 ;"
-  const const handleIssue = async (_type: 'earn' | 'burn') => {'
+  const handleIssue = async (_type: 'earn' | 'burn') => {'
     if (!userId || amount <= 0 || processing) return;
     setProcessing(true);
     try {'
-      const const res = await fetch(;
+      const res = await fetch(;
         `/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,'
         {;
           method: 'POST',;
           headers: { 'Content-Type': 'application/json' },;
-          body: "JSON.stringify({ userId", amount }),;"
+          body: JSON.stringify({ userId, amount }),;"
         },;"
       );"
-      const data: await res.json().catch(() => ({"}));"
+      const data = await res.json().catch(() => ({"}));"
       if (!res.ok) {;";"
         throw new Error(data.error || `Error ${res.status}`);"
       };"
@@ -141,7 +140,6 @@ export default function TokenManager(): ;
     </ProtectedRoute>;
   );
 };
-;
 }'
 }
 }'

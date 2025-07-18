@@ -2,8 +2,8 @@ import { useState } from 'react';
 import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast'
 import Link from 'next/link'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
-import {;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
+import {;';
   ProfileForm,'
   type ProfileValues,;
 } from '@/components/profile/ProfileForm'
@@ -15,32 +15,30 @@ import { SEO } from '@/components/SEO'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import type { Order } from '@/hooks/useOrders'
 import type { NextApiRequest } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface User {;
-  id: "string;",;"
-  name: string;";,"
-  bio: "string;",;"
-  avatarUrl: string;";,"
-  points: "number;";
-};
-;"
-interface AccountProps {;";"
-  user: "User;","
-  orders: "Order[];";
-};"
+interface User {
+  id: string,"
+  name: string","
+  bio: string,"
+  avatarUrl: string","
+  points: "number"
+}"
+interface AccountProps {""
+  user: User,"
+  orders: "Order[]"
+}"
 ";"
-function Account(): unknown {): unknown {{ user: "initialUser", orders }: AccountProps) {;
+function Account(): unknown {): unknown {{ user: initialUser, orders }: AccountProps) {;
   const [user, setUser] = useState(initialUser);
-;
-  const const handleSubmit = async (values: ProfileValues) => {;
+  const handleSubmit = async (values: ProfileValues) => {;
     try {;"
-      const res: await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;"
+      const res = await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;"
         method: 'PATCH',;
         headers: { 'Content-Type': 'application/json' },;
-        body: "JSON.stringify(values)",;
+        body: JSON.stringify(values),;
       });
-      const const data = await res.json();
+      const data = await res.json();
       setUser(data);"
     } catch (error) {;";"
       logErrorToProduction('Error updating profile:', { data: "error "});"
@@ -60,7 +58,6 @@ function Account(): unknown {): unknown {{ user: "initialUser", orders }: Accoun
       });
     };
   };
-;
   return ('
     <>;
       <SEO title="My Account" description="Manage your profile and settings" />;"
@@ -112,7 +109,6 @@ function Account(): unknown {): unknown {{ user: "initialUser", orders }: Accoun
     </>;
   );
 };
-;
 export default function ProtectedAccount(): unknown {): unknown {props: AccountProps) {;
   return (;
     <ProtectedRoute>;
@@ -120,40 +116,35 @@ export default function ProtectedAccount(): unknown {): unknown {props: AccountP
     </ProtectedRoute>;
   );
 };
-;
 export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = async ({;
   req,;"
 }: {;";"
   req: "NextApiRequest;"
 }) => {;";"
-  const const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
-;
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
   // Handle cookie header which can be string or string[];
-  const const cookieHeader = req?.headers.cookie'
-  const const cookieString = Array.isArray(cookieHeader);
+  const cookieHeader = req?.headers.cookie'
+  const cookieString = Array.isArray(cookieHeader);
     ? cookieHeader[0] || 
     : cookieHeader || 
 '
-  const const fetchOptions = cookieString;
+  const fetchOptions = cookieString;
     ? { headers: "{ cookie: cookieString "} };
     : {};
-;
   const [userRes, ordersRes] = await Promise.all([;
     fetch(`${base}/api/users/me`, fetchOptions),;
     fetch(`${base}/api/orders?user_id=me`, fetchOptions),;
-  ]);
-;"
+  ]);"
   if (userRes.status === 401) {;";"
     return { redirect: { destination: '/login', permanent: "false "} };
   };
-;
-  const const user = await userRes.json();
+  const user = await userRes.json();
   let orders: Order[] = [];
   if (ordersRes.ok) {;
     orders = await ordersRes.json();
   };"
 ";"
-  return { props: "{ user", orders } };"
+  return { props: { user, orders } };"
 };"
 }
 }"

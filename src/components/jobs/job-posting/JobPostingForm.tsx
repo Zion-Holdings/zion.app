@@ -14,17 +14,17 @@ import type { JobSchemaType } from './validation'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface JobPostingFormProps {'
-  jobId: "string | undefined,;";
+  jobId: "string | undefined,"
   onSuccess: "(() => void) | undefined"
-};
+}
 
 export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId, onSuccess }: JobPostingFormProps) {;""
-  // const const _router = useRouter(); // Available for navigation if needed // Changed from useNavigate;"
+  // const _router = useRouter(); // Available for navigation if needed // Changed from useNavigate;"
   const { createJob, updateJob, getJobById } = useJobPostings()";"
   const [isFormLoading, setIsFormLoading] = useState(false)";""
   const [editorContent, setEditorContent] = useState('')'
 
-  const {;
+  const { ;
     form,;
     isLoading,;
     startDate,;
@@ -33,19 +33,16 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     setEndDate,;
     isRemote,;
     setIsRemote,;
-    submitJob,;
-  } = useJobForm({ jobId, onSuccess });
-
+    submitJob,; } = useJobForm({ jobId, onSuccess });
   const { handleSubmit, setValue, formState } = form;
   const { _isSubmitting } = formState;
-
   useEffect(() => {;
     if (jobId) {;
       setIsFormLoading(true);
       getJobById(jobId)'
         .then((job) => {'
           if (job) {;
-            const const currentValues = form.getValues()'
+            const currentValues = form.getValues()'
             Object.entries(job).forEach(([key, value]) => {'
               if (key === 'published_date' && value) {'
                 setStartDate(new Date(value as string))'
@@ -85,7 +82,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     form,;
   ])'
 '
-  const const handleEditorChange = useCallback(;
+  const handleEditorChange = useCallback(;
     (_value: string) => {'
       setEditorContent(value)'
       setValue('description', value)'
@@ -93,11 +90,11 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     [setValue],;
   );
 
-  const const onSubmit = async (_values: JobSchemaType) => {;
+  const onSubmit = async (_values: JobSchemaType) => {;
     setIsFormLoading(true)'
 '
     try {;
-      const const jobData = await submitJob(values)'
+      const jobData = await submitJob(values)'
       if (!jobData) {'
         toast.error('Failed to process job data')'
         setIsFormLoading(false);
@@ -139,7 +136,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
 
   if (isLoading || isFormLoading) {'
     return ('
-      <div className="flex items-center justify-center p-8>Loading...</div>
+      <div className="flex items-center justify-center p-8>Loading...</div>"
     )"
   };"
 ;";"
@@ -157,7 +154,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
 
         <DateFields;
           startDate={startDate};
-          setStartDate={setStartDate};
+          setStartDate={setStartDate};"
           endDate={endDate}"
           setEndDate={setEndDate};"
         />;";"

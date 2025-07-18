@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react''
 import type { Resume } from '@/types/resume'
 
-export const const useResumeProgress = (_resume: Resume | null) => {;
+export const useResumeProgress = (_resume: Resume | null) => {;
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {;
@@ -36,7 +36,7 @@ export const const useResumeProgress = (_resume: Resume | null) => {;
       completed += 1;
     };
 
-    const const progressPercentage = (completed / 5) * 100;
+    const progressPercentage = (completed / 5) * 100;
     setProgress(progressPercentage);
   }, [resume])'
 '

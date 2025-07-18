@@ -4,18 +4,17 @@ import { Slider } from '@/components/ui/slider'
 import { useCurrency } from '@/hooks/useCurrency'
 '
 interface BudgetStepProps {'
-  formData: "QuoteFormData,;";
-  updateFormData: "(data: Partial<QuoteFormData>) => void";
-};"";
-;"";
+  formData: "QuoteFormData,"
+  updateFormData: "(data: Partial<QuoteFormData>) => void"
+}"";"";
 export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): unknown {{ formData, updateFormData }: BudgetStepProps) {;"";
-  const const handleBudgetTypeSelect = (_type: 'fixed' | 'hourly' | 'range') => {'
+  const handleBudgetTypeSelect = (_type: 'fixed' | 'hourly' | 'range') => {'
     if (type === 'range' && !formData.budget.maxAmount) {'
       updateFormData({'
         budget: {;
           ...formData.budget,'
           type,'
-          maxAmount: "formData.budget.amount + 5000",
+          maxAmount: formData.budget.amount + 5000,
         },;
       });
     } else {;
@@ -29,8 +28,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
   };
 
   const { _formatPrice } = useCurrency();
-
-  const const formatCurrency = (_value: number) => {
+  const formatCurrency = (_value: number) => {
     return formatPrice(value);""
   };"
 ";"
@@ -47,7 +45,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;""
                 formData.budget.type === 'fixed'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
               }`}`
               onClick={() => handleBudgetTypeSelect('fixed')}'
             >'
@@ -61,13 +59,13 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${";""
                 formData.budget.type === 'hourly'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
               }`}`
               onClick={() => handleBudgetTypeSelect('hourly')}'
             >'
               <h4 className=font-medium text-white>Hourly Rate</h4>"
               <p className="text-sm text-zion-slate-light>
-                Pay per hour of work;
+                Pay per hour of work;"
               </p>"
             </div>;"
 ;";"
@@ -75,7 +73,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;";"
                 formData.budget.type === 'range'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
               }`}`
               onClick={() => handleBudgetTypeSelect('range')}'
             >'
@@ -84,8 +82,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 I have a min and max"
               </p>;
             </div>;"";
-          </div>;"";
-;"";
+          </div>;"";"";
           {formData.budget.type === 'fixed' && ('
             <div className="mt-6">;"
               <Label className=text-zion-slate-light mb-4 block">""
@@ -104,7 +101,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 className=py-4";";
               />"
               <div className="flex justify-between text-sm text-zion-slate-light mt-2>
-                <span>$0</span>;
+                <span>$0</span>;"
                 <span>$50,000+</span>"
               </div>;"
             </div>;";"
@@ -146,13 +143,13 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                   max={50000};
                   step={500};
                   onValueChange={(value) => {;
-                    const const newAmount = value[0] || 0;
-                    const const maxAmount = formData.budget.maxAmount || 50000"
+                    const newAmount = value[0] || 0;
+                    const maxAmount = formData.budget.maxAmount || 50000"
 
                     updateFormData({;"";
                       budget: {;"";
                         ...formData.budget,;"";
-                        amount: "newAmount",
+                        amount: newAmount,
                         maxAmount:
                           newAmount >= maxAmount ? newAmount + 5000 : maxAmount,;""
                       },;"
@@ -161,7 +158,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                   className=py-4";";
                 />"
                 <div className="flex justify-between text-sm text-zion-slate-light mt-2>
-                  <span>$0</span>;
+                  <span>$0</span>;"
                   <span>$50,000</span>"
                 </div>;"
               </div>;";"
@@ -181,7 +178,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                   step={500};"";
                   onValueChange={(value) =>;"";
                     updateFormData({;"";
-                      budget: "{ ...formData.budget", maxAmount: value[0] || 0 },"
+                      budget: { ...formData.budget, maxAmount: value[0] || 0 },"
                     });";"
                   };";";
                   className="py-4"

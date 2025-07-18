@@ -1,14 +1,13 @@
 import type { UserDetails } from '@/types/auth'
 import { useConversationState } from './useConversationState'
 import { useConversations } from './useConversations'
-import { useMessages } from './useMessages;
-;
+import  { useMessages }  from './useMessages'
 /**;
  * Hook that combines all messaging operations;
  */;
 export function useMessagingOperations(): unknown {): unknown {): unknown {): unknown {): unknown {user: UserDetails | null) {;
   // State management;
-  const {;
+  const { ;
     messages,;
     activeMessages,;
     setActiveMessages,;
@@ -19,17 +18,13 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
     activeConversation,;
     setActiveConversation,;
     isLoading,;
-    setIsLoading,;
-  } = useConversationState();
-;
+    setIsLoading,; } = useConversationState();
   // Conversations management;
   const { fetchConversations, createConversation } = useConversations(;
     user,;
     setConversations,;
     setUnreadCount,;
-    setIsLoading,;
-  );
-;
+    setIsLoading,);
   // Messages management;
   const { loadMessages, sendMessage, markAsRead } = useMessages(;
     user,;
@@ -40,9 +35,7 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
     setConversations,;
     setUnreadCount,;
     setIsLoading,;
-    fetchConversations,;
-  );
-;
+    fetchConversations,);
   return {;
     // State;
     messages,;
@@ -55,16 +48,14 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
     activeConversation,;
     setActiveConversation,;
     isLoading,;
-;
     // Operations;
     sendMessage,;
-    createConversation,;
-    markAsRead,;
+    createConversation,;''
+    markAsRead,;''
     fetchConversations,'
-    loadMessages,;
+    loadMessages,'
   };
 };
-;
 }'
 }
 }'

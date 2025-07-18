@@ -1,9 +1,9 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { ForumPost } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export async function fetchPostsByCategory(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  categoryId: "string",;"
+  categoryId: string,;"
   cursor?: string, // Cursor is now a string (e.g., ISO timestamp);"
   limit = 20, // Default limit;"
 ): Promise<{ posts: "ForumPost[]; nextCursor: string | null "}> {;"
@@ -26,8 +26,7 @@ export async function fetchPostsByCategory(): unknown {): unknown {): unknown {)
     logErrorToProduction('Error fetching posts by category:', { data: "error "});
     throw new Error(error.message);
   };
-;
-  const const posts = (data as ForumPost[]) || [];
+  const posts = (data as ForumPost[]) || [];
   // The next cursor will be the `createdAt` of the last post in the current batch.;
   // If posts array is empty or shorter than limit, it means no more posts.;
   const nextCursor: unknown =;

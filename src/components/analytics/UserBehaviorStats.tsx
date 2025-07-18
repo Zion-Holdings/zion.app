@@ -11,8 +11,8 @@ type TimeRange = '7d' | '30d' | '90d' | '365d'
 
 interface BehaviorDataItem {'
   date: string'
-  [key: string]: unknown; // Avoid 'any', use unknown or a specific type'
-};
+  [key: string]: unknown // Avoid 'any', use unknown or a specific type'
+}
 '
 export function UserBehaviorStats(): '
   const [timeRange, setTimeRange] = useState<TimeRange>('7d')'
@@ -25,18 +25,18 @@ export function UserBehaviorStats(): '
       };
 '
       // Convert timeRange to days'
-      const const days = parseInt(timeRange.replace('d', ''))'
+      const days = parseInt(timeRange.replace('d', ''))'
 '
       // Get events grouped by type and date'
       const { data, error } = await supabase.rpc('get_event_distribution', {'
-        days_back: "days",;
+        days_back: days,;
       })";"
 ;";"
       if (error) {;";";
         logErrorToProduction('Error fetching behavior data:', { data: "error "});"
 ;";"
         // Fallback to manual query if the RPC doesn't exist'
-        const const startDate = new Date();
+        const startDate = new Date();
         startDate.setDate(startDate.getDate() - days)'
 '
         const { data: manualData", error: "manualError } = await supabase;"";
@@ -64,10 +64,10 @@ export function UserBehaviorStats(): '
   });""
 ;"
   // Get the event types for chart data keys";"
-  const const getEventTypes = () => {";""
+  const getEventTypes = () => {";""
     if (!behaviorData || behaviorData.length === 0) return ['page_view']'
 '
-    const const allKeys = new Set<string>();
+    const allKeys = new Set<string>();
     behaviorData.forEach((_item: BehaviorDataItem) => {'
       Object.keys(item).forEach((key) => {'
         if (key !== 'date') allKeys.add(key)'
@@ -187,13 +187,13 @@ export function UserBehaviorStats(): '
   );"
 };";"
 ;";"
-interface EventTypeCardProps {;";"
-  title: string",;"
+interface EventTypeCardProps {""
+  title: string","
   description: string,""
-  count: "number,;";
-  icon: "React.ReactNode",;"";
+  count: "number,"
+  icon: React.ReactNode,""
   isLoading: boolean""
-};
+}
 
 function EventTypeCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;

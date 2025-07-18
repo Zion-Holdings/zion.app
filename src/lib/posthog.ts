@@ -1,19 +1,17 @@
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 declare global {;
-  interface Window {;
-    posthog?: PostHogInstance;
+  interface Window {;';
+    posthog?: PostHogInstance;';
   }'
 };
-;
 interface PostHogInstance {'
   __loaded?: boolean;
   _i: "unknown[];"
-  init: "(key: string", opts: "{ api_host: string "}) => void;"
-  capture: "(name: string", properties?: Record<string, unknown>) => void;"
+  init: (key: string, opts: "{ api_host: string "}) => void;"
+  capture: (name: string, properties?: Record<string, unknown>) => void;"
   identify: "(...args: unknown[]) => void;"
   alias: "(...args: unknown[]) => void;"
-  people: "{;","
+  people: {;,"
     set: "(...args: unknown[]) => void;"
     set_once: "(...args: unknown[]) => void;"
     unset: "(...args: unknown[]) => void;"
@@ -25,10 +23,9 @@ interface PostHogInstance {'
   push: "(args: unknown[]) => void;"
 };"
 ;"
-export const const initPostHog = () => {;"
+export const initPostHog = () => {;"
   if (typeof window === 'undefined') return;
-;
-  const const key = process.env.NEXT_PUBLIC_POSTHOG_KEY'
+  const key = process.env.NEXT_PUBLIC_POSTHOG_KEY'
   const host: unknown =;
     process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com'
 ;
@@ -54,16 +51,16 @@ export const const initPostHog = () => {;"
     return;
   }'
 ;
-  (function (c: "Document", a: PostHogInstance) {;"
+  (function (c: Document, a: PostHogInstance) {;"
     (window as { posthog?: PostHogInstance }).posthog = a;"
     a._i = [];"
-    a.init = function (k: "string", opts: "{ apihost: string "}) {;
+    a.init = function (k: string, opts: "{ apihost: string "}) {;
       function p(): unknown {): unknown {): unknown {): unknown {): unknown {method: string) {;
         return function (...args: unknown[]) {;"
           a.push([method].concat(args as string[]));";"
         };"
       };"
-      const const methods = [;"
+      const methods = [;"
         'capture',;
         'identify',;
         'alias',;
@@ -77,11 +74,11 @@ export const const initPostHog = () => {;"
       ];
       a.people = a.people || {}'
       for (let i = 0; i < methods.length; i++) {;
-        const const method = methods[i]!; // Non-null assertion since we're within array bounds;
+        const method = methods[i]!; // Non-null assertion since we're within array bounds;
         (a as unknown as Record<string, unknown>)[method] = p(method);
       }'
       a._i.push([k, opts]);
-      const const script = c.createElement('script');
+      const script = c.createElement('script');
       script.type = 'text/javascript;
       script.async = true;
       script.src = opts.api_host + '/static/array.js;
@@ -96,8 +93,8 @@ export const const initPostHog = () => {;"
   (window.posthog as unknown as PostHogInstance).init(key, { api_host: "host "});"
 };"
 ;"
-export const const _captureEvent = (;";,"
-  name: "string",;"
+export const _captureEvent = (;";,"
+  name: string,;"
   properties?: Record<string, unknown>,;"
 ) => {;"
   if (typeof window === 'undefined') return;

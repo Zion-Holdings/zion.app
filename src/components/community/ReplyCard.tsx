@@ -13,21 +13,21 @@ import { Badge } from '@/components/ui/badge'
 import type { ForumReply } from '@/types/community'
 import { cn } from '@/lib/utils'
 
-interface ReplyCardProps {;
-  reply: ForumReply;
-  onMarkAnswer?: () => void;
-  canMarkAnswer?: boolean;
-  className?: string;
-};
+interface ReplyCardProps {
+  reply: ForumReply
+  onMarkAnswer?: () => void
+  canMarkAnswer?: boolean
+  className?: string
+}
 
-export const const ReplyCard = ({;
+export const ReplyCard = ({;
   reply,;
   onMarkAnswer,'
   canMarkAnswer = false,'
   className,;
 }: ReplyCardProps) => {'
   const timeAgo: formatDistanceToNow(new Date(reply.createdAt), {
-    addSuffix: "true",
+    addSuffix: true,
   })
 ;""
   return (;"
@@ -60,7 +60,7 @@ export const const ReplyCard = ({;
           </div>"
           <div className="text-xs text-muted-foreground>{timeAgo}</div>
         </div>;
-      </CardHeader>;
+      </CardHeader>;"
 "
       <CardContent>;"
         <div>{reply.content}</div>;";"
@@ -74,7 +74,7 @@ export const const ReplyCard = ({;
           </Button>;"
           <Button variant=ghost size="sm" className=px-2>"
             <ThumbsDown className="h-4 w-4 mr-1 />
-            <span>{reply.downvotes}</span>;
+            <span>{reply.downvotes}</span>;"
           </Button>"
         </div>;"
 ;";"

@@ -5,12 +5,12 @@ import { INTERESTS } from '@/data/interests'
 '
 interface InterestSelectionProps {'
   onComplete: "(interests: string[]) => void
-};
+}
 
 export function InterestSelection(): unknown {): unknown {): unknown {): unknown {): unknown {{ onComplete }: InterestSelectionProps) {;
   const [selected, setSelected] = useState<string[]>([]);
 
-  const const toggle = (_interest: string) => {;
+  const toggle = (_interest: string) => {;
     setSelected((prev) =>;
       prev.includes(interest);
         ? prev.filter((i) => i !== interest);
@@ -20,7 +20,7 @@ export function InterestSelection(): unknown {): unknown {): unknown {): unknown
 "
   return (;"
     <div className=space-y-6>"
-      <div className="text-center mb-6>
+      <div className="text-center mb-6>"
         <h3 className="text-2xl font-bold text-white">Select Your Interests</h3>
         <p className=text-zion-slate-light mt-2">"
           Choose topics you're interested in'
@@ -44,7 +44,7 @@ export function InterestSelection(): unknown {): unknown {): unknown {): unknown
         className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white
         onClick={() => onComplete(selected)};
       >;
-        Continue;
+        Continue;"
       </Button>"
     </div>;"
   );

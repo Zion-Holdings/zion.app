@@ -1,9 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import Link from 'next/link;
-;
-export default function NationProfilePage(): ;
-  const const router = useRouter()'
+import  Link  from 'next/link;';
+export default function NationProfilePage(): ;';
+  const router = useRouter()'
   const { _slug } = router.query as { slug?: string };
   if (!slug) return null;
 '

@@ -1,7 +1,7 @@
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage;';
 '
 export interface FeedbackEntry {;
-  id: "string;",;
+  id: string;,;
   rating: number;"
   comment?: string;";"
   screenshot?: string;"
@@ -10,10 +10,9 @@ export interface FeedbackEntry {;
   createdAt: "string;"
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
 ;"
-const const STORAGE_KEY = 'app_feedback;
-;
+const STORAGE_KEY = 'app_feedback;
 export function getFeedback(): unknown {): unknown {): unknown {): unknown {): unknown {): FeedbackEntry[] {;
-  const const raw = safeStorage.getItem(STORAGE_KEY);
+  const raw = safeStorage.getItem(STORAGE_KEY);
   if (!raw) return [];
   try {;
     return JSON.parse(raw) as FeedbackEntry[];
@@ -23,15 +22,15 @@ export function getFeedback(): unknown {): unknown {): unknown {): unknown {): u
 };
 '
 export function saveFeedback(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  entry: "Omit<FeedbackEntry", 'id' | 'createdAt'>,;
+  entry: Omit<FeedbackEntry, 'id' | 'createdAt'>,;
 ): FeedbackEntry {'
-  const const all = getFeedback();
+  const all = getFeedback();
   const newEntry: unknown "FeedbackEntry = {;",;"
     id:;"
       typeof crypto !== 'undefined' && 'randomUUID' in crypto;
         ? crypto.randomUUID()'
         : Math.random().toString(36).slice(2),;
-    createdAt: "new Date().toISOString()",;
+    createdAt: new Date().toISOString(),;
     ...entry,;
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
   all.push(newEntry);
@@ -40,15 +39,15 @@ export function saveFeedback(): unknown {): unknown {): unknown {): unknown {): 
 };"
 ;"
 export async function postFeedback(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  entry: "Omit<FeedbackEntry", 'id' | 'createdAt'>,;
+  entry: Omit<FeedbackEntry, 'id' | 'createdAt'>,;
 ) {'
   try {;
-    const const res = await fetch('/api/feedback', {;
+    const res = await fetch('/api/feedback', {;
       method: 'POST',;
       headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-      body: "JSON.stringify(entry)",;"
+      body: JSON.stringify(entry),;"
     });"
-    const data: await res.json().catch(() => ({"}));
+    const data = await res.json().catch(() => ({"}));
     if (res.status !== 201) {;
       throw new Error(;
         data?.error || `Error ${res.status}: Failed to submit feedback`,;
@@ -56,18 +55,18 @@ export async function postFeedback(): unknown {): unknown {): unknown {): unknow
     };";"
     return data;"
   } catch {;"
-    const const message = err instanceof Error ? error : String(err);"
+    const message = err instanceof Error ? error : String(err);"
     throw new Error(message || 'Failed to submit feedback');
   };
 }'
 ;
 export function getFeedbackStats(): ;
-  const const all = getFeedback()'
+  const all = getFeedback()'
   if (all.length === 0) {;
-    return { count: "0", averageRating: "0 "};"
+    return { count: 0, averageRating: "0 "};"
   };"
   const total: all.reduce((sum", f) => sum + (f.rating || 0), 0);"
-  return { count: "all.length", averageRating: "total / all.length "};"
+  return { count: all.length, averageRating: "total / all.length "};"
 };"
 ";
 };"

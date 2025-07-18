@@ -3,8 +3,8 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast'
 import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { logErrorToProduction } from '@/utils/productionLogger;
-import {;
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+import {;';
   ProfileForm,'
   type ProfileValues,;
 } from '@/components/profile/ProfileForm'
@@ -14,32 +14,32 @@ import WishlistPage from './Wishlist'
 import { SEO } from '@/components/SEO'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import type { Order } from '@/hooks/useOrders'
-import type { NextApiRequest } from 'next;
+import type { NextApiRequest } from 'next;';
 '
-interface User {;
-  id: "string;"
-  name: "string;","
-  bio: "string;"
-  avatarUrl: "string;","
-  points: "number;"
-};"
+interface User {
+  id: "string"
+  name: string,"
+  bio: "string"
+  avatarUrl: string,"
+  points: "number"
+}"
 ;"
-interface AccountProps {;"
-  user: "User;"
-  orders: "Order[];"
-};"
+interface AccountProps {"
+  user: "User"
+  orders: "Order[]"
+}"
 ;"
-function Account(): unknown {): unknown {): unknown {): unknown {): unknown {{ user: "initialUser", orders }: AccountProps) {;
+function Account(): unknown {): unknown {): unknown {): unknown {): unknown {{ user: initialUser, orders }: AccountProps) {;
   const [user, setUser] = useState(initialUser);"
 ;";"
-  const const handleSubmit = async (_values: ProfileValues) => {;"
+  const handleSubmit = async (_values: ProfileValues) => {;"
     try {;"
-      const res: await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, {;"
+      const res = await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, {;"
         method: 'PATCH',;
         headers: { 'Content-Type': 'application/json' },;
-        body: "JSON.stringify(values)",;"
+        body: JSON.stringify(values),;"
       });";"
-      const const data = await res.json();"
+      const data = await res.json();"
       setUser(data);"
     } catch (error: unknown) {;"
       logErrorToProduction('Error updating profile:', { data: "error "});"
@@ -54,7 +54,6 @@ function Account(): unknown {): unknown {): unknown {): unknown {): unknown {{ u
       });
     }'
   };
-;
   return ('
     <>;
       <SEO title="My Account" description="Manage your profile and settings" />;"
@@ -102,7 +101,6 @@ function Account(): unknown {): unknown {): unknown {): unknown {): unknown {{ u
     </>;
   );
 };
-;
 export default function ProtectedAccount(): unknown {): unknown {): unknown {): unknown {): unknown {props: AccountProps) {;
   return (;
     <ProtectedRoute>;
@@ -116,10 +114,9 @@ export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = asy
 }: {;"
   _req: "NextApiRequest;"
 }) => {;"
-  const const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
-;
-  const const cookieValue = req?.headers.cookie'
-  const const cookieString = Array.isArray(cookieValue);
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
+  const cookieValue = req?.headers.cookie'
+  const cookieString = Array.isArray(cookieValue);
     ? cookieValue.join( ');
     : cookieValue || 
 ;
@@ -135,14 +132,13 @@ export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = asy
   if (userRes.status === 401) {;"
     return { redirect: { destination: '/login', permanent: "false "} };
   };
-;
-  const const user = await userRes.json();
+  const user = await userRes.json();
   let orders: Order[] = [];"
   if (ordersRes.ok) {;";"
     orders = await ordersRes.json();"
   };"
 ;"
-  return { props: "{ user", orders } };"
+  return { props: { user, orders } };"
 };"
 "
 };"

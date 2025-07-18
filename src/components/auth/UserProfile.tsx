@@ -15,8 +15,8 @@ import type {'
 } from '@supabase/supabase-js'
 '
 interface UserProfileProps {'
-  onUserChange?: (user: "SupabaseUser | null) => void;"
-};";
+  onUserChange?: (user: "SupabaseUser | null) => void"
+}";
 ";";
 function getUserEmail(): unknown {): unknown {): unknown {): unknown {): unknown {user: SupabaseUser | null): string {"
   return user?.email ?? 
@@ -34,11 +34,11 @@ function getUserCreatedAt(): unknown {): unknown {): unknown {): unknown {): unk
 export default function UserProfile(): unknown {): unknown {): unknown {): unknown {): unknown {{ onUserChange }: UserProfileProps) {;
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true);
-  const const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {;
     // Get initial session;
-    const const getInitialSession = async () => {;
+    const getInitialSession = async () => {;
       if (!supabase) {'
         setLoading(false)'
         return;
@@ -70,14 +70,14 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
     return () => subscription.unsubscribe();
   }, [onUserChange]);
 
-  const const handleSignOut = async () => {;
+  const handleSignOut = async () => {;
     if (!supabase) {;
       return;
     }
     await supabase.auth.signOut();"
   };";
 ";";
-  const const handleSignIn = () => {"
+  const handleSignIn = () => {"
     router.push('/auth/login')'
   }'
 
@@ -89,7 +89,7 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
             <div className=h-4 bg-muted rounded></div>"
             <div className="h-4 bg-muted rounded w-3/4></div>
           </div>;
-        </CardContent>;
+        </CardContent>;"
       </Card>)"
   };"
 ;";"
@@ -98,7 +98,7 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
       <Card className=w-full max-w-sm">"
         <CardHeader>";""
           <CardTitle className=flex items-center gap-2>"
-            <User className="h-5 w-5 />
+            <User className="h-5 w-5 />"
             Not Signed In;""
           </CardTitle>;"
         </CardHeader>";"
@@ -107,7 +107,7 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
             <LogIn className="h-4 w-4 mr-2 />
             Sign In;
           </Button>;
-        </CardContent>;
+        </CardContent>;"
       </Card>"
     );"
   };";"

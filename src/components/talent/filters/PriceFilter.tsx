@@ -9,12 +9,12 @@ export function PriceFilter(): unknown {): unknown {): unknown {): unknown {): u
   toggleSection,;
   _isMobileFilterOpen,;
 }: PriceFilterProps) {;
-  const const handleChange = (_values: number[]) => {'
+  const handleChange = (_values: number[]) => {'
     setPriceRange([values[0] || 0, values[1] || 500])'
   };
 '
   return ('
-    <div className="mb-6 border-b border-zion-blue-light pb-6>
+    <div className="mb-6 border-b border-zion-blue-light pb-6>"
       <button;"
         onClick={toggleSection}"
         className=flex w-full items-center justify-between text-white font-medium

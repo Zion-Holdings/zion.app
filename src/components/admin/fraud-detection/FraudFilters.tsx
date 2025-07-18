@@ -11,16 +11,16 @@ import {;
 } from '@/components/ui/select'
 '
 interface FraudFiltersProps {'
-  searchQuery: "string,;";
-  setSearchQuery: "(value: string) => void",;"";
+  searchQuery: "string,"
+  setSearchQuery: (value: string) => void,""
   statusFilter: string | null","
-  setStatusFilter: (value: string | null) => void,;""
-  severityFilter: "string | null,";
-  setSeverityFilter: "(value: string | null) => void",;"";
+  setStatusFilter: (value: string | null) => void,""
+  severityFilter: "string | null,"
+  setSeverityFilter: (value: string | null) => void,""
   contentTypeFilter: string | null","
-  setContentTypeFilter: (value: string | null) => void,;""
+  setContentTypeFilter: (value: string | null) => void,""
   resetFilters: "() => void
-};
+}
 
 export const _FraudFilters: unknown React.FC<FraudFiltersProps> = ({;
   searchQuery,;
@@ -74,8 +74,7 @@ export const _FraudFilters: unknown React.FC<FraudFiltersProps> = ({;
           <SelectItem value="suspicious">Suspicious</SelectItem>;"
           <SelectItem value=dangerous">Dangerous</SelectItem>"
         </SelectContent>;
-      </Select>;"";
-;"";
+      </Select>;"";"";
       <Select;"";
         value={contentTypeFilter || ''}'
         onValueChange={(value) => setContentTypeFilter(value || null)}'
@@ -94,7 +93,7 @@ export const _FraudFilters: unknown React.FC<FraudFiltersProps> = ({;
       </Select>;";"
 ;";";
       <Button variant="outline" onClick={resetFilters} className=md:w-auto>"
-        <Filter className="h-4 w-4 mr-2 /> Reset Filters
+        <Filter className="h-4 w-4 mr-2 /> Reset Filters"
       </Button>"
     </div>;"
   );";"

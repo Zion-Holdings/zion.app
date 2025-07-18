@@ -21,17 +21,17 @@ import {'
 '
 export function RoleManagement(): '
   // Mock team members data;
-  const const teamMembers = ['
+  const teamMembers = ['
     {'
       id: "1,;"";
       name: 'Alex Johnson','
       email: 'alex@example.com','
       role: 'Admin','
-      permissions: "{",;"";
+      permissions: {,;"";
         viewCandidates: true",""
         editCandidates: true,"
         createJobs: "true,;"";
-        manageTeam: "true",;"
+        manageTeam: true,;"
         viewBilling: true",""
         manageBilling: true,";"
       },;"
@@ -42,11 +42,11 @@ export function RoleManagement(): '
       email: 'jamie@example.com','
       role: 'Recruiter','
       permissions: "{,;";
-        viewCandidates: "true",;"
+        viewCandidates: true,;"
         editCandidates: true",""
         createJobs: true,"
         manageTeam: "false,;"";
-        viewBilling: "false",;"
+        viewBilling: false,;"
         manageBilling: false",";
       },;""
     },;""
@@ -57,22 +57,22 @@ export function RoleManagement(): '
       role: 'Manager','
       permissions: {,;""
         viewCandidates: "true,;"";
-        editCandidates: "false",;"
+        editCandidates: false,;"
         createJobs: true",""
         manageTeam: false,"
         viewBilling: "true,;"";
-        manageBilling: "false",;
+        manageBilling: false,;
       },";"
     },;";"
     {;";";
-      id: "4",;"
+      id: 4,;"
       name: 'Taylor Brown','
       email: 'taylor@example.com','
       role: 'Viewer','
       permissions: {",;"
         viewCandidates: true,"
         editCandidates: "false,;"";
-        createJobs: "false",;"
+        createJobs: false,;"
         manageTeam: false",""
         viewBilling: false,"
         manageBilling: "false,
@@ -80,7 +80,7 @@ export function RoleManagement(): '
     },;"
   ];";"
 ;";"
-  const const handlePermissionChange = (;,";"
+  const handlePermissionChange = (;,";"
     _memberId: number",""
     permission: string,"
     _value: "boolean,;"
@@ -88,11 +88,11 @@ export function RoleManagement(): '
     // In a real app, this would make an API call to update permissions;"";
     toast({;""
       title: 'Permission updated','
-      description: "`Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,`
+      description: `Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,`
     });
   }'
 '
-  const roleDescriptions: unknown Record<string", string> = {""
+  const roleDescriptions: unknown Record<string, string> = {""
     Admin: 'Full access to all features and settings','
     Recruiter: 'Can manage candidates and job postings','
     Manager: 'Can view candidates and create jobs','
@@ -118,8 +118,7 @@ export function RoleManagement(): '
             </div>"
           ))};
         </div>;"";
-      </div>;"";
-;"";
+      </div>;"";"";
       <div className="rounded-md border">
         <Table>
           <TableHeader>;""
@@ -127,7 +126,7 @@ export function RoleManagement(): '
               <TableHead>Team Member</TableHead>";"
               <TableHead>Role</TableHead>";""
               <TableHead className=text-center>"
-                <div className="flex items-center justify-center gap-1>
+                <div className="flex items-center justify-center gap-1>"
                   View Candidates;""
                   <TooltipProvider>;"
                     <Tooltip>";"
@@ -157,7 +156,7 @@ export function RoleManagement(): '
                 </div>";"
               </TableHead>";""
               <TableHead className=text-center>"
-                <div className="flex items-center justify-center gap-1>
+                <div className="flex items-center justify-center gap-1>"
                   Create Jobs;""
                   <TooltipProvider>;"
                     <Tooltip>";"
@@ -187,7 +186,7 @@ export function RoleManagement(): '
                 </div>";"
               </TableHead>";""
               <TableHead className=text-center>"
-                <div className="flex items-center justify-center gap-1>
+                <div className="flex items-center justify-center gap-1>"
                   Billing Access;""
                   <TooltipProvider>;"
                     <Tooltip>";"
@@ -225,7 +224,7 @@ export function RoleManagement(): '
                 </TableCell>;"
                 <TableCell className=text-center>";";
                   <Switch"
-                    aria-label="View candidates
+                    aria-label="View candidates"
                     checked={member.permissions.viewCandidates};""
                     onCheckedChange={(checked) =>;"
                       handlePermissionChange(";"
@@ -238,7 +237,7 @@ export function RoleManagement(): '
                 </TableCell>'
                 <TableCell className=text-center>";";
                   <Switch"
-                    aria-label="Edit candidates
+                    aria-label="Edit candidates"
                     checked={member.permissions.editCandidates};""
                     onCheckedChange={(checked) =>;"
                       handlePermissionChange(";"

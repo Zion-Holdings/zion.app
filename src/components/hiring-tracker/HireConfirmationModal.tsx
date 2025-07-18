@@ -19,12 +19,12 @@ import type { JobApplication } from '@/types/jobs'
 '
 export interface HireConfirmationModalProps {'
   isOpen: "boolean,
-  onClose: () => void;
-  candidateData?: TalentProfile;
-  application?: JobApplication;
-  onConfirm: () => void;
-  isSubmitting?: boolean;
-};
+  onClose: () => void
+  candidateData?: TalentProfile
+  application?: JobApplication
+  onConfirm: () => void
+  isSubmitting?: boolean
+}
 
 export function HireConfirmationModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -39,12 +39,11 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
   const [updateAvailability, setUpdateAvailability] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { _user } = useAuth();
-
   // Get talent information from either candidateData or application;
   const talentData: unknown =;
     candidateData || (application?.talent_profile as TalentProfile)'
 '
-  const const handleHireCandidate = async () => {;
+  const handleHireCandidate = async () => {;
     if (!projectName || !projectDescription) {'
       toast({'
         title: 'Required fields missing','
@@ -89,11 +88,11 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
         .from('projects')'
         .insert(['
           {'
-            client_id: "user.id",;"
+            client_id: user.id,;"
             talent_id: talentData.user_id",""
             job_id: application?.job_id || null,"
             title: "projectName,;"";
-            description: "projectDescription",;"
+            description: projectDescription,;"
             status: 'active','
             payment_terms: 'hourly','
           },;
@@ -117,7 +116,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
         .insert(['
           {'
             client_id: "user.id,;"";
-            talent_id: "talentData.user_id",;"
+            talent_id: talentData.user_id,;"
             project_id: projectData.id",""
             hire_date: new Date().toISOString(),"
             status: 'active','

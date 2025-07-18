@@ -2,9 +2,9 @@ import React from 'react'
 '
 interface EmailVerificationBannerProps {'
   onResendEmail: "() => void,
-  userEmail: string | null | undefined;
-  isResending?: boolean; // Optional prop for loading state;
-};
+  userEmail: string | null | undefined
+  isResending?: boolean // Optional prop for loading state
+}
 
 const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = ({;
   onResendEmail,;
@@ -45,7 +45,7 @@ const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = 
             textDecoration: 'underline','
             cursor: 'pointer','
           }}'
-          aria-label="Resend verification email;
+          aria-label="Resend verification email;"
         >;""
           {isResending ? 'Resending...' : 'resend verification email'}'
         </button>;

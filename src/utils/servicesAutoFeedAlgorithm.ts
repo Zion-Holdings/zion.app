@@ -9,7 +9,6 @@ export default function servicesAutoFeedAlgorithm(): unknown {): unknown {): unk
 ): unknown[] {;
   return [];
 };
-;
 };
 };
 }

@@ -26,8 +26,8 @@ interface CategoryType {'
 }'
 
 // Default static categories with translation keys'
-const const getDefaultCategories = (_t: unknown) => {'
-  const const translate = typeof t === 'function' ? t : (x: string) => x'
+const getDefaultCategories = (_t: unknown) => {'
+  const translate = typeof t === 'function' ? t : (x: string) => x'
   return ['
     {'
       id: 'services','
@@ -65,12 +65,12 @@ const const getDefaultCategories = (_t: unknown) => {'
 }'
 '
 // Helper to get icon component from name;
-const const getIcon = (iconName?: string) => {'
+const getIcon = (iconName?: string) => {'
   switch (iconName) {'
     case 'Briefcase':'
       return <Briefcase className=w-10 h-10 />"
     case 'Users':'
-      return <Users className="w-10 h-10 />;
+      return <Users className="w-10 h-10 />;"
     case 'HardDrive':'
       return <HardDrive className="w-10 h-10" />;"
     case 'Lightbulb':'
@@ -79,8 +79,8 @@ const const getIcon = (iconName?: string) => {'
   };"
 };";"
 ;";"
-const const getSpecialServices = (t: unknown) => {;";"
-  const const translate = typeof t === 'function' ? t : (x: string) => x'
+const getSpecialServices = (t: unknown) => {;";"
+  const translate = typeof t === 'function' ? t : (x: string) => x'
   return ['
     {'
       title: translate('categories.it_onsite_services'),'
@@ -89,12 +89,12 @@ const const getSpecialServices = (t: unknown) => {;";"
   ];
 };
 
-interface CategoriesSectionProps {;
-  showTitle?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-  categories?: CategoryType[]; // Accept categories as a prop;
-};
+interface CategoriesSectionProps {
+  showTitle?: boolean
+  className?: string
+  style?: React.CSSProperties
+  categories?: CategoryType[] // Accept categories as a prop
+}
 '
 export function CategoriesSection(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   showTitle = true,;
@@ -103,14 +103,14 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
   categories: fetchedCategories", // Rename prop for clarity"
 }: CategoriesSectionProps) {;
   const { t } = useTranslation();
-  const const defaultCategories = getDefaultCategories(t);
+  const defaultCategories = getDefaultCategories(t);
 
   // Use fetchedCategories if provided, otherwise fallback to defaultCategories;"
   const displayCategories: unknown =;";
     fetchedCategories && fetchedCategories.length > 0";";
       ? fetchedCategories.map((cat) => ({"
           id: "cat.id,;
-          title: "cat.name", // Map name to title;"
+          title: cat.name, // Map name to title;"
           description: cat.description || 'No description available.','
           icon: getIcon(cat.iconName)", // Get icon component""
           link: cat.link || `/category/${cat.id}`, // Construct link if not provided";"
@@ -136,7 +136,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
           <h2 className=text-3xl font-semibold text-white mb-4>"
             {t('home.no_categories_title')}'
           </h2>'
-          <p className="text-zion-slate-light text-lg mb-2>;
+          <p className="text-zion-slate-light text-lg mb-2>;"
             {t('home.no_categories_desc')}'
           </p>'
           <p className="text-zion-slate-light text-md">;"
@@ -153,7 +153,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
         {showTitle && (";""
           <div className=text-center mb-16>"
             <GradientHeading>{t('home.categories_title')}</GradientHeading>'
-            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto>;
+            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto>;"
               {t('home.categories_subtitle')}'
             </p>'
           </div>;
@@ -171,7 +171,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
                   className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover: scale-110 transition-transform duration-300`}";";
                 >"
                   <div className="text-white>{category.icon}</div>;
-                </div>;
+                </div>;"
                 <h3 className="text-white text-xl font-bold mb-2">;"
                   {category.title};";"
                 </h3>;"
@@ -180,7 +180,6 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
             </Link>"
           ))};
         </div>;
-;
         {/* Special services section with translations */};
         <div className="mt-8">;"
           <h3 className=text-center text-xl font-bold text-white mb-6">""
@@ -200,7 +199,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
         </div>";";
 "
         <div className="mt-12 flex justify-center>;
-          <Link;
+          <Link;"
             href="/categories/all"
             className=text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors;"
           >";""

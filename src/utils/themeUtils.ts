@@ -6,60 +6,57 @@ export type ThemePreset =;
   | 'corporate'
   | 'startup'
   | 'zionDefault // Added system & zionDefault;
-;
 export interface ThemeColors {'
-  // Core Tailwind variables;
-  background: "string;"
-  foreground: "string;","
-  border: "string;"
-  input: "string;",;"
-  ring: string;"
-;"
-  // Primary;"
-  primary: "string;",;"
-  primaryForeground: string;"
-;"
-  // Secondary;"
-  secondary: "string;",;"
-  secondaryForeground: string;"
-;"
-  // Destructive;"
-  destructive: "string;",;"
-  destructiveForeground: string;"
-;"
-  // Muted;"
-  muted: "string;",;"
-  mutedForeground: string;"
-;"
-  // Accent;"
-  accent: "string;",;"
-  accentForeground: string;"
-;"
-  // Popover;"
-  popover: "string;",;"
-  popoverForeground: string;"
-;"
-  // Card;"
-  card: "string;",;
-  cardForeground: string;
-;
-  // Sidebar specific (optional, can be added if presets need to control these);
-  sidebarBackground?: string;
-  sidebarForeground?: string;
-  sidebarPrimary?: string;
-  sidebarPrimaryForeground?: string;
-  sidebarAccent?: string;
-  sidebarAccentForeground?: string;
-  sidebarBorder?: string;
-  sidebarRing?: string;
-;
-  buttonColor?: string;"
-};";"
+  // Core Tailwind variables
+  background: "string"
+  foreground: string,"
+  border: "string"
+  input: string,"
+  ring: string"
+"
+  // Primary"
+  primary: string,"
+  primaryForeground: string"
+"
+  // Secondary"
+  secondary: string,"
+  secondaryForeground: string"
+"
+  // Destructive"
+  destructive: string,"
+  destructiveForeground: string"
+"
+  // Muted"
+  muted: string,"
+  mutedForeground: string"
+"
+  // Accent"
+  accent: string,"
+  accentForeground: string"
+"
+  // Popover"
+  popover: string,"
+  popoverForeground: string"
+"
+  // Card"
+  card: string,
+  cardForeground: string
+  // Sidebar specific (optional, can be added if presets need to control these)
+  sidebarBackground?: string
+  sidebarForeground?: string
+  sidebarPrimary?: string
+  sidebarPrimaryForeground?: string
+  sidebarAccent?: string
+  sidebarAccentForeground?: string
+  sidebarBorder?: string
+  sidebarRing?: string
+  buttonColor?: string"
+}";"
 ;"
 // Define theme presets;"
 export function getThemeColors(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   preset: "ThemePreset"
-  primaryColorInput: "string",;"
+  primaryColorInput: string,;"
 ): ThemeColors {;";"
   // Base for light themes;"
   const baseLightColors: unknown Omit<;"
@@ -134,7 +131,6 @@ export function getThemeColors(): unknown {): unknown {): unknown {): unknown {)
   // Base primary color (can be overridden by primaryColorInput);
   let primary = primaryColorInput || '#3b82f6 // blue-500 (default for light);
   let primaryForeground = '#f8fafc // slate-50 (high contrast for blue-500);
-;
   // Default accent to primary, ring to primary;
   let accent = primary'
   let accentForeground = primaryForeground;
@@ -249,7 +245,6 @@ export function getThemeColors(): unknown {): unknown {): unknown {): unknown {)
       ring = primary;
       break;
   };
-;
   return {;
     ...currentBaseColors,;
     primary,'
@@ -257,17 +252,16 @@ export function getThemeColors(): unknown {): unknown {): unknown {): unknown {)
     accent,;
     accentForeground,'
     ring,;
-    buttonColor: "primary", // map legacy buttonColor to primary;
+    buttonColor: primary, // map legacy buttonColor to primary;
   };
 };
-;
 // Apply theme colors to document CSS variables;"
 function hexToHsl(): unknown {): unknown {): unknown {): unknown {): unknown {hex: string): string {;";"
   let r = 0,;"
     g = 0,;"
     b = 0;"
   if (hex.startsWith('#')) {;
-    const const parsed = hex.slice(1)'
+    const parsed = hex.slice(1)'
     if (parsed.length === 3) {;
       r = parseInt((parsed[0] || '0') + (parsed[0] || '0'), 16);
       g = parseInt((parsed[1] || '0') + (parsed[1] || '0'), 16);
@@ -285,9 +279,9 @@ function hexToHsl(): unknown {): unknown {): unknown {): unknown {): unknown {he
     min = Math.min(r, g, b);
   let h = 0,;
     s = 0;
-  const const l = (max + min) / 2;
+  const l = (max + min) / 2;
   if (max !== min) {;
-    const const d = max - min;
+    const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {;
       case r:;
@@ -311,7 +305,7 @@ function toHsl(): unknown {): unknown {): unknown {): unknown {): unknown {value
 };
 '
 export function applyThemeColors(): unknown {): unknown {): unknown {): unknown {): unknown {colors: ThemeColors) {;
-  const const root = document.documentElement;
+  const root = document.documentElement;
 '
   // Core Tailwind variables;
   root.style.setProperty('--background', toHsl(colors.background));
@@ -414,7 +408,7 @@ export function applyThemeColors(): unknown {): unknown {): unknown {): unknown 
   // root.style.setProperty('--card-background', toHsl(colors.card));
 };
 '
-export const const _getPreferredTheme = () =>;
+export const _getPreferredTheme = () =>;
   window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light;
 
 }'

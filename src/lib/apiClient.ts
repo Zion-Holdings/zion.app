@@ -4,6 +4,5 @@ const apiClient: {;",;"
     throw new Error('apiClient.request is not implemented.');
   },'
 };
-;
 export default apiClient'
 '''''

@@ -14,7 +14,7 @@ if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {;
 // Additional client-side globals that might be accessed server-side;"
 if (typeof window === 'undefined') {'
   // Mock window object for server-side execution;
-  (global as unknown as { window: "Record<string", unknown> }).window = {;"
+  (global as unknown as { window: Record<string, unknown> }).window = {;"
     location: {
       href: '',;
       origin: '',;
@@ -26,7 +26,7 @@ if (typeof window === 'undefined') {'
     },;
     navigator: {
       userAgent: 'Node.js Server',;
-      onLine: "true",;"
+      onLine: true,;"
     },;"
     document: {
       createElement: "(): object => ({ nodeType: 1 "}),;"
@@ -40,7 +40,7 @@ if (typeof window === 'undefined') {'
     _addEventListener: "() => {"},;"
     _removeEventListener: "() => {"},;"
     _dispatchEvent: "() => {"},;"
-    requestAnimationFrame: "(callback: () => void) => setTimeout(callback", 16),;"
+    requestAnimationFrame: (callback: () => void) => setTimeout(callback, 16),;"
     cancelAnimationFrame: "(id: number) => clearTimeout(id)"
     localStorage: {
       getItem: "() => null"
@@ -48,7 +48,7 @@ if (typeof window === 'undefined') {'
       _removeItem: "() => {"},;"
       _clear: "() => {"},;"
       length: "0"
-      key: "() => null",;"
+      key: () => null,;"
     },;"
     sessionStorage: {
       getItem: "() => null"
@@ -56,9 +56,9 @@ if (typeof window === 'undefined') {'
       _removeItem: "() => {"},;"
       _clear: "() => {"},;"
       length: "0"
-      key: "() => null",;"
+      key: () => null,;"
     },;"
-    console: "console",;"
+    console: console,;"
     fetch:;"
       (global as unknown as Record<string, unknown>).fetch ||;"
       (() => Promise.reject(new Error('Fetch not available on server'))),'
@@ -156,7 +156,7 @@ if (typeof window === 'undefined') {
     crypto: (;"
       global as unknown as {;"
         crypto: {
-          randomUUID: "() => string;","
+          randomUUID: () => string;,"
           subtle: "object;"
           getRandomValues: "(arr: Uint8Array) => Uint8Array;";
         };
@@ -188,22 +188,22 @@ if (typeof window === 'undefined') {
 ;"
   // Also assign to globalThis for broader compatibility;"
   if (typeof globalThis !== 'undefined') {;
-    (globalThis as unknown as { window: "Record<string", unknown> }).window = (;"
-      global as unknown as { window: "Record<string", unknown> };
+    (globalThis as unknown as { window: Record<string, unknown> }).window = (;"
+      global as unknown as { window: Record<string, unknown> };
     ).window;"
   };";"
 };"
 ;"
 // Mock document if not available;"
 if (typeof document === 'undefined') {;
-  (global as unknown as { document: "Record<string", unknown> }).document = ((;"
-    global as unknown as { window: "Record<string", unknown> };"
+  (global as unknown as { document: Record<string, unknown> }).document = ((;"
+    global as unknown as { window: Record<string, unknown> };"
   ).window?.document as Record<string, unknown>) || { fallback: "true "};"
 };"
 ;"
 // Mock navigator if not available;"
 if (typeof navigator === 'undefined') {;
-  (global as unknown as { navigator: "Record<string", unknown> }).navigator = {;"
+  (global as unknown as { navigator: Record<string, unknown> }).navigator = {;"
     userAgent: 'Node.js Server',;
     onLine: "true"
     language: 'en-US',;
@@ -271,7 +271,7 @@ export const initServerPolyfills = () => {
 '
 // Prevent common client-side errors during server-side rendering;
 if (typeof performance === 'undefined') {;
-  (global as unknown as { performance: "Record<string", unknown> }).performance =;"
+  (global as unknown as { performance: Record<string, unknown> }).performance =;"
     {;"
       now: "() => Date.now()"
       _mark: "() => {"},;"
@@ -282,9 +282,8 @@ if (typeof performance === 'undefined') {;
       _clearMeasures: "() => {"},;
     };
 };
-;
 // Export for explicit imports;
-export const const initServerPolyfills = () => {;
+export const initServerPolyfills = () => {;
   // The polyfills are already applied when this module is imported;
   // Server polyfills initialized;"
 };";"

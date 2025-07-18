@@ -3,31 +3,29 @@ import {;
   logWarn,;
   logErrorToProduction,;
 } from '@/utils/productionLogger;
-;
 /**'
  * Performance monitoring utilities for Core Web Vitals;
  * Helps track CLS improvements and other performance metrics;
  */'
 ;
-import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals;
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals;';
 '
-export interface PerformanceMetrics {;
-  cls: "number;"
-  fcp: "number;","
-  lcp: "number;"
-  fid: "number;","
-  ttfb: "number;"
-};"
+export interface PerformanceMetrics {
+  cls: "number"
+  fcp: number,"
+  lcp: "number"
+  fid: number,"
+  ttfb: "number"
+}"
 ;"
 export interface CLSEntry {;"
   name: "string;"
-  entryType: "string;","
+  entryType: string;,"
   startTime: "number;"
-  duration: "number;","
+  duration: number;,"
   value: "number;"
   hadRecentInput: "boolean;";
-} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;"
+} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
 /**;";"
  * Observes and reports Cumulative Layout Shift (CLS);"
  */;"
@@ -35,16 +33,13 @@ export function observeCLS(): unknown {): unknown {): unknown {): unknown {): un
   if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {;
     return;
   };
-;
   let clsValue = 0;
 //   const _clsEntries: unknown PerformanceEntry[] = [];
-;
-  const const observer = new PerformanceObserver((entryList) => {;
+  const observer = new PerformanceObserver((entryList) => {;
     for (const entry of entryList.getEntries()) {;
-      const const layoutShiftEntry = entry as unknown;
+      const layoutShiftEntry = entry as unknown;
       // Only count layout shifts without recent user input;
       if ((layoutShiftEntry as CLSEntry).hadRecentInput) continue;
-;
       clsValue += (layoutShiftEntry as CLSEntry).value;
       clsEntries.push(entry);
     }'
@@ -62,8 +57,7 @@ export function observeFCP(): unknown {): unknown {): unknown {): unknown {): un
   if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {;
     return'
   };
-;
-  const const observer = new PerformanceObserver((entryList) => {'
+  const observer = new PerformanceObserver((entryList) => {'
     for (const entry of entryList.getEntries()) {;
       if (entry.name === 'first-contentful-paint') {;
         callback(entry.startTime);
@@ -82,10 +76,9 @@ export function observeLCP(): unknown {): unknown {): unknown {): unknown {): un
   if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {;
     return;
   };
-;
-  const const observer = new PerformanceObserver((entryList) => {;
-    const const entries = entryList.getEntries();
-    const const lastEntry = entries[entries.length - 1];
+  const observer = new PerformanceObserver((entryList) => {;
+    const entries = entryList.getEntries();
+    const lastEntry = entries[entries.length - 1];
     if (lastEntry) {'
       callback(lastEntry.startTime);
     };
@@ -102,7 +95,7 @@ export function observeFID(): unknown {): unknown {): unknown {): unknown {): un
     return;
   };
 '
-  const const observer = new PerformanceObserver((entryList) => {;
+  const observer = new PerformanceObserver((entryList) => {;
     for (const entry of entryList.getEntries()) {;
       // Only report FID for the first input'
       // Use type guard for PerformanceEventTiming;
@@ -125,7 +118,6 @@ export function initPerformanceMonitoring(): unknown {): unknown {): unknown {):
   if (typeof window === 'undefined') return'
 ;
 //   const _metrics: unknown "Partial<PerformanceMetrics> = {"};
-;
   observeCLS((cls) => {;"
     metrics.cls = cls;";"
 ;"
@@ -187,8 +179,8 @@ export function initPerformanceMonitoring(): unknown {): unknown {): unknown {):
 ;"
   // Report TTFB;"
   if ('performance' in window && 'timing' in performance) {'
-    const const timing = performance.timing;
-    const const ttfb = timing.responseStart - timing.requestStart;
+    const timing = performance.timing;
+    const ttfb = timing.responseStart - timing.requestStart;
     metrics.ttfb = ttfb'
     if (;
       process.env.NODE_ENV === 'development' ||;
@@ -209,13 +201,12 @@ export function initPerformanceMonitoring(): unknown {): unknown {): unknown {):
       };
     }, 5000); // Wait 5 seconds for metrics to stabilize;
   });
-};
-;"
+};"
 /**;";"
  * Report performance metrics to analytics;"
  */;"
 export function reportPerformanceMetrics(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  metrics: "Partial<PerformanceMetrics>",;"
+  metrics: Partial<PerformanceMetrics>,;"
 ): void {;"
   // Only report in production;"
   if (process.env.NODE_ENV !== 'production') return;
@@ -230,12 +221,11 @@ export function reportPerformanceMetrics(): unknown {): unknown {): unknown {): 
         custom_parameter_fcp: "metrics.fcp"
         custom_parameter_lcp: "metrics.lcp"
         custom_parameter_fid: "metrics.fid"
-        custom_parameter_ttfb: "metrics.ttfb",;
+        custom_parameter_ttfb: metrics.ttfb,;
       },;
     );
   };
-};
-;"
+};"
 /**;";"
  * Font loading performance observer;"
  */;"
@@ -243,7 +233,6 @@ export function observeFontLoading(): unknown {): unknown {): unknown {): unknow
   if (typeof window === 'undefined' || !('fonts' in document)) {;
     return'
   };
-;
   // Only monitor font loading in development or when explicitly enabled'
   if (;
     process.env.NODE_ENV !== 'development' &&;
@@ -272,7 +261,6 @@ export function observeFontLoading(): unknown {): unknown {): unknown {): unknow
       `❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`,;
     )'
   });
-;
   // Check if fonts are ready'
   document.fonts.ready.then(() => {;
     logInfo('✅ All fonts loaded');
@@ -284,14 +272,13 @@ export function observeFontLoading(): unknown {): unknown {): unknown {): unknow
  */'
 export function preloadCriticalResources(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;
   if (typeof window === 'undefined') return;
-;
 //   const _criticalResources: unknown string[] = [;
     // Critical assets only - fonts are handled by Next.js font optimization'
     // Add other critical resources like critical CSS or images here if needed;
   ];
 '
   criticalResources.forEach((url) => {;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'preload;
     link.href = url;
 '
@@ -307,7 +294,6 @@ export function preloadCriticalResources(): unknown {): unknown {): unknown {): 
     } else {;
       link.as = 'fetch;
     };
-;
     document.head.appendChild(link);
   });
 };
@@ -317,7 +303,6 @@ export function preloadCriticalResources(): unknown {): unknown {): unknown {): 
  */'
 export function initializePerformanceOptimizations(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;
   if (typeof window === 'undefined') return;
-;
   // Only run in development or when explicitly enabled'
   if (;
     process.env.NODE_ENV === 'development' ||;
@@ -325,13 +310,11 @@ export function initializePerformanceOptimizations(): unknown {): unknown {): un
   ) {;
     initPerformanceMonitoring();
   };
-;
   observeFontLoading();
   preloadCriticalResources();
 };
-;
 export function calculateCLS(): unknown {): unknown {): unknown {): unknown {): unknown {): number {;
-  const const clsValue = 0;
+  const clsValue = 0;
 //   const _clsEntries: unknown PerformanceEntry[] = [];
   // ... rest of the function ...;
   return clsValue;
@@ -340,9 +323,8 @@ export function calculateCLS(): unknown {): unknown {): unknown {): unknown {): 
 // Performance monitoring and optimization utilities;
 export class PerformanceMonitor {'
   private static instance: PerformanceMonitor;
-  private metrics: "Record<string", number> = {};
+  private metrics: Record<string, number> = {};
   private observers: PerformanceObserver[] = [];
-;
   static getInstance(): PerformanceMonitor {;
     if (!PerformanceMonitor.instance) {;
       PerformanceMonitor.instance = new PerformanceMonitor();
@@ -363,7 +345,7 @@ export class PerformanceMonitor {'
   };
 '
   // Report performance metrics;
-  private reportMetric(name: "string", value: number): void {;"
+  private reportMetric(name: string, value: number): void {;"
     this.metrics[name] = value;"
 ;"
     // Send to analytics in production;"
@@ -375,7 +357,7 @@ export class PerformanceMonitor {'
     logInfo(`[Performance] ${name}: ${value}`);
   }'
 ;
-  private sendToAnalytics(name: "string", value: number): void {;"
+  private sendToAnalytics(name: string, value: number): void {;"
     // Send to your analytics service;"
     if (;"
       typeof window !== 'undefined' &&;
@@ -387,22 +369,20 @@ export class PerformanceMonitor {'
         {;
           event_category: 'Web Vitals',;
           value: "Math.round(value)"
-          non_interaction: "true",;
+          non_interaction: true,;
         },;
       );
     };
   };
-;
   // Get current metrics;
   getMetrics(): Record<string, number> {;
     return { ...this.metrics };
   };
-;
   // Measure custom performance timing;
   startTiming(label: string): () => number {;
-    const const start = performance.now();
+    const start = performance.now();
     return () => {;
-      const const duration = performance.now() - start;
+      const duration = performance.now() - start;
       this.reportMetric(label, duration);
       return duration;
     };"
@@ -414,7 +394,7 @@ export class PerformanceMonitor {'
       return;
 '
     try {;
-      const const observer = new PerformanceObserver((list) => {;
+      const observer = new PerformanceObserver((list) => {;
         list.getEntries().forEach((entry) => {'
           if (entry.duration > 50) {;
             logWarn(`Long task detected: "${entry.duration"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}ms`);"
@@ -429,7 +409,6 @@ export class PerformanceMonitor {'
       logWarn('Long task observer not supported');
     };
   };
-;
   // Clean up observers;
   disconnect(): void {;
     this.observers.forEach((observer) => observer.disconnect());
@@ -438,27 +417,26 @@ export class PerformanceMonitor {'
 };
 '
 // Image optimization utilities;
-export const const _imageOptimization = {;
+export const _imageOptimization = {;
   // Generate srcSet for responsive images'
   generateSrcSet(;
     baseUrl: "string"
-    sizes: "number[] = [400", 800, 1200, 1600],;"
+    sizes: number[] = [400, 800, 1200, 1600],;"
   ): string {;"
     return sizes.map((size) => `${baseUrl}?w=${size}&q=75 ${size}w`).join(', ');
   },;
 '
   // Generate optimized image URL;
-  optimizeUrl(url: "string", width?: number, quality = 75): string {;"
+  optimizeUrl(url: string, width?: number, quality = 75): string {;"
     if (!url) return 
 '
     // For Unsplash images;
     if (url.includes('unsplash.com')) {'
-      const const params = new URLSearchParams();
+      const params = new URLSearchParams();
       if (width) params.set('w', width.toString());
       params.set('q', quality.toString());
       params.set('auto', 'format');
       params.set('fit', 'crop');
-;
       return `${url}&${params.toString()}`;
     };
 '
@@ -466,19 +444,18 @@ export const const _imageOptimization = {;
   },;
 '
   // Preload critical images;
-  preloadImage(src: "string", as: 'image' | 'fetch' = 'image'): void {;
+  preloadImage(src: string, as: 'image' | 'fetch' = 'image'): void {;
     if (typeof document === 'undefined') return'
 ;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'preload;
     link.as = as;
     link.href = src;
     document.head.appendChild(link);
   },;
 };
-;
 // Bundle optimization utilities;
-export const const _bundleOptimization = {;
+export const _bundleOptimization = {;
   // Dynamic import with error handling'
   async dynamicImport<T>(importFn: () => Promise<T>): Promise<T> {;
     try {;
@@ -488,12 +465,11 @@ export const const _bundleOptimization = {;
       throw new Error('Failed to load component');
     }'
   },;
-;
   // Preload route'
   preloadRoute(route: string): void {;
     if (typeof window === 'undefined') return'
 ;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'prefetch;
     link.href = route;
     document.head.appendChild(link);
@@ -501,11 +477,11 @@ export const const _bundleOptimization = {;
 }'
 ;
 // Memory optimization utilities;
-export const const _memoryOptimization = {'
+export const _memoryOptimization = {'
   // Debounce function calls;
   debounce<T extends (...args: "unknown[]) => unknown>(;"
     func: "T"
-    wait: "number",;
+    wait: number,;
   ): (...args: Parameters<T>) => void {;
     let _timeout: NodeJS.Timeout;
     return (...args: Parameters<T>) => {;
@@ -517,7 +493,7 @@ export const const _memoryOptimization = {'
   // Throttle function calls;"
   throttle<T extends (...args: "unknown[]) => unknown>(;"
     func: "T"
-    limit: "number",;
+    limit: number,;
   ): (...args: Parameters<T>) => void {;
     let _inThrottle: boolean;
     return (...args: Parameters<T>) => {;
@@ -537,22 +513,21 @@ export const const _memoryOptimization = {'
 };
 '
 // Resource hint utilities;
-export const const resourceHints = {;
+export const resourceHints = {;
   // Add DNS prefetch'
   addDnsPrefetch(domain: string): void {;
     if (typeof document === 'undefined') return'
 ;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'dns-prefetch;
     link.href = domain;
     document.head.appendChild(link)'
   },;
-;
   // Add preconnect'
   addPreconnect(origin: string): void {;
     if (typeof document === 'undefined') return'
 ;
-    const const link = document.createElement('link');
+    const link = document.createElement('link');
     link.rel = 'preconnect;
     link.href = origin;
     document.head.appendChild(link);
@@ -560,8 +535,8 @@ export const const resourceHints = {;
 };
 '
 // Initialize performance monitoring;
-export const const _initializePerformance = (): PerformanceMonitor => {;
-  const const monitor = PerformanceMonitor.getInstance()'
+export const _initializePerformance = (): PerformanceMonitor => {;
+  const monitor = PerformanceMonitor.getInstance()'
 ;
   if (typeof window !== 'undefined') {'
     monitor.initializeWebVitals();
@@ -576,13 +551,11 @@ export const const _initializePerformance = (): PerformanceMonitor => {;
       monitor.disconnect();
     });
   };
-;
   return monitor;
 }'
 ;
 // Export default instance;
 export default PerformanceMonitor.getInstance();
-;
 };
 };
 };

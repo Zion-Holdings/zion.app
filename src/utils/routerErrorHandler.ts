@@ -1,12 +1,11 @@
 import type { NextRouter } from 'next/router'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
-;
-export function handleRouterError(): unknown {): unknown {): unknown {): unknown {): unknown {error: "Error", router: NextRouter) {;"
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
+export function handleRouterError(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error, router: NextRouter) {;"
   // Capture the error using our centralized logger which sends data to Sentry;"
   logErrorToProduction('Router error occurred', error, {;
     route: "router.asPath"
     query: "router.query"
-    pathname: "router.pathname",;"
+    pathname: router.pathname,;"
   });";"
 ;"
   // Prevent router abort by handling specific dashboard errors;"
@@ -22,14 +21,11 @@ export function handleRouterError(): unknown {): unknown {): unknown {): unknown
     };
     return true; // Indicates error was handled;
   };
-;
   return false; // Let other error handlers deal with this;
 };
-;
 export function setupRouterErrorHandlers(): unknown {): unknown {): unknown {): unknown {): unknown {router: NextRouter) {;
-  const const originalPush = router.push'
-  const const originalReplace = router.replace;
-;
+  const originalPush = router.push'
+  const originalReplace = router.replace;
   // Wrap router.push with error handling'
   router.push = async (;
     url: Parameters<NextRouter['push']>[0],;
@@ -44,7 +40,6 @@ export function setupRouterErrorHandlers(): unknown {): unknown {): unknown {): 
       throw error;
     }'
   };
-;
   // Wrap router.replace with error handling'
   router.replace = async (;
     url: Parameters<NextRouter['replace']>[0],;
@@ -59,20 +54,17 @@ export function setupRouterErrorHandlers(): unknown {): unknown {): unknown {): 
       throw error;
     }'
   };
-;
   // Handle router errors'
   // Use a more specific type for route change errors;
   // Type: "Error | { cancelled?: boolean; message?: string "};"
-  const const routeChangeErrorHandler = (err: "unknown", _url: string) => {;"
+  const routeChangeErrorHandler = (err: unknown, _url: string) => {;"
     logErrorToProduction('Route change error', err as Error, { url });
     handleRouterError(err as Error, router)'
   };
-;
   // Only add event listeners if router.events exists'
   if (router.events) {;
     router.events.on('routeChangeError', routeChangeErrorHandler);
   };
-;
   return () => {'
     // Cleanup;
     router.push = originalPush;
@@ -82,7 +74,6 @@ export function setupRouterErrorHandlers(): unknown {): unknown {): unknown {): 
     };
   };
 };
-;
 };
 }'
 };

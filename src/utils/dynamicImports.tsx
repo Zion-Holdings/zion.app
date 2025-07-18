@@ -2,10 +2,9 @@ import React from 'react';
 import dynamic from 'next/dynamic'
 import type { ComponentType, PropsWithChildren } from 'react';
 import { logErrorToProduction } from './productionLogger'
-import { logInfo } from '@/utils/productionLogger;
-;
+import { logInfo } from '@/utils/productionLogger;';
 // Loading component for dynamic imports'
-const const LoadingSpinner = () => (;
+const LoadingSpinner = () => (;
   <div className="flex items-center justify-center p-8">;"
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>;"
   </div>;";"
@@ -19,8 +18,7 @@ const ErrorFallback: ({ error "}: { error: "Error "}) => (;"
 );"
 ;"
 // Enhanced dynamic import with error handling;"
-type ErrorFallbackComponent = ComponentType<{ error: "Error "}>;
-;"
+type ErrorFallbackComponent = ComponentType<{ error: "Error "}>;"
 export function createDynamicImport<;";"
   P = unknown,;"
   T extends ComponentType<P> = ComponentType<P>,;"
@@ -34,9 +32,8 @@ export function createDynamicImport<;";"
 ) {;"
   const DynamicComponent: dynamic(importFn", {;"
     loading: "options.loading || LoadingSpinner"
-    ssr: "options.ssr ?? true",;
+    ssr: options.ssr ?? true,;
   });
-;
   // Wrap with error handling;"
 //   const _WrappedComponent: unknown React.FC<PropsWithChildren<P>> = (props) => {;";"
     try {;"
@@ -49,19 +46,16 @@ export function createDynamicImport<;";"
       return <ErrorFallback error={error as Error} />;
     };
   };
-;
   return WrappedComponent;
 };
-;
 // Pre-optimized dynamic imports for heavy components;
 // Note: Commented out until components export proper default exports;
-// export const const _DynamicComponents = {;
+// export const _DynamicComponents = {;
 //   // Components will be added when they have proper default exports;
 // };
-;
 // Route-based code splitting helpers;
 // Note: Commented out until pages export proper default exports;
-// export const const _DynamicPages = {;
+// export const _DynamicPages = {;
 //   // Pages will be added when they have proper default exports;
 // };"
 ;";"

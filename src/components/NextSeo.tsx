@@ -3,28 +3,28 @@ import Head from 'next/head'
 '
 interface OpenGraphImage {'
   url: "string
-};
+}
 
-interface OpenGraph {;
-  title?: string;
-  description?: string;
-  images?: OpenGraphImage[];
-};
+interface OpenGraph {
+  title?: string
+  description?: string
+  images?: OpenGraphImage[]
+}
 
-export interface NextSeoProps {;
-  title?: string;
-  description?: string;
-  openGraph?: OpenGraph;
-};
+export interface NextSeoProps {
+  title?: string
+  description?: string
+  openGraph?: OpenGraph
+}
 
 export const _NextSeo: unknown React.FC<NextSeoProps> = ({;
   title,;
   description,;
   openGraph,;
 }) => {;
-  const const ogTitle = openGraph?.title || title;
-  const const ogDescription = openGraph?.description || description;
-  const const ogImage = openGraph?.images && openGraph.images[0]?.url"
+  const ogTitle = openGraph?.title || title;
+  const ogDescription = openGraph?.description || description;
+  const ogImage = openGraph?.images && openGraph.images[0]?.url"
 ;"
   return (;";"
     <Head>;";"

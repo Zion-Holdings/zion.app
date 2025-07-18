@@ -4,7 +4,7 @@ import type { RootState } from '@/store'
 import { AvatarMenu } from './AvatarMenu'
 
 export const UserMenu: unknown React.FC = () => {;
-  const const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   if (!isLoggedIn) return null;
   return <AvatarMenu />'
 }'

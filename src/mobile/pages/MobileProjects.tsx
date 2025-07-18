@@ -1,8 +1,7 @@
 import React from 'react';
 import { MobileHeader } from '@/mobile/components/common/MobileHeader'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
-import { MobileProjectView } from '@/mobile/components/projects/MobileProjectView;
-;
+import { MobileProjectView } from '@/mobile/components/projects/MobileProjectView;';
 // Mock data'
 const projectData: {;",;"
   id: 'project-123',;
@@ -15,12 +14,11 @@ const projectData: {;",;"
   endDate: 'Jan 15, 2024',;
   status: 'in_progress',;
   totalAmount: '$12,000',;
-  progress: "60",;"
+  progress: 60,;"
   description:;"
     'Redesign of the company website with a focus on improving user experience and conversion rates. Includes new homepage, about page, and product listing pages.','
 };
-;
-const const milestonesData = ['
+const milestonesData = ['
   {;
     id: 'milestone-1',;
     title: 'Initial Design Concepts',;
@@ -46,7 +44,6 @@ const const milestonesData = ['
     amount: '$5,000',;
   },'
 ];
-;
 export function MobileProjects(): '
   return (;
     <div className="min-h-screen">;"
@@ -55,7 +52,6 @@ export function MobileProjects(): '
       <main className="py-4">;
         <MobileProjectView project={projectData} milestones={milestonesData} />;
       </main>;
-;
       <BottomNavigation />;"
     </div>;";"
   );"

@@ -2,7 +2,7 @@ import type { ProfileSkill } from '@/types/profile'
 '
 interface ProfileSkillsProps {'
   skills: "ProfileSkill[]
-};"
+}"
 ;"
 export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {): unknown {{ skills }: ProfileSkillsProps) {
   return (;
@@ -13,9 +13,9 @@ export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {):
         {skills.map((skill, index) => (;
           <div key={index} className=flex flex-col">"
             <div className=flex justify-between items-center mb-1>"
-              <span className="text-zion-slate-light>{skill.name}</span>
+              <span className="text-zion-slate-light>{skill.name}</span>"
               {skill.endorsements && (;"
-                <span className="text-sm text-zion-slate>
+                <span className="text-sm text-zion-slate>"
                   {skill.endorsements} endorsements"
                 </span>;"
               )};

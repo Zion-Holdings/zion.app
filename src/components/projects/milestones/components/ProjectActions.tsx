@@ -6,12 +6,12 @@ import { ShieldAlert } from '@/components/ui/icons'
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton'
 '
 interface ProjectActionsProps {'
-  projectId: "string,;
+  projectId: "string,
   isUnderDispute: boolean"
-  disputeId?: string;"
+  disputeId?: string"
   isTalent: boolean
   onAddMilestone: "() => void"
-};
+}
 
 export function ProjectActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;
@@ -21,18 +21,18 @@ export function ProjectActions(): unknown {): unknown {): unknown {): unknown {)
   onAddMilestone,;
 }: ProjectActionsProps) {
   return (;"
-    <div className="flex gap-2>
+    <div className="flex gap-2>"
       {isUnderDispute && disputeId ? (;"
-        <Button variant="outline asChild>
+        <Button variant="outline asChild>"
           <Link href={`/dashboard/disputes/${disputeId}`}>;"
-            <ShieldAlert className="h-4 w-4 mr-2 />
+            <ShieldAlert className="h-4 w-4 mr-2 />"
             View Active Dispute;""
           </Link>;
         </Button>
       ) : (;"
         <RaiseDisputeButton projectId={projectId} variant="outline />
       )};
-      {isTalent && !isUnderDispute && (;
+      {isTalent && !isUnderDispute && (;"
         <Button onClick={onAddMilestone}>Add Milestone</Button>)}"
     </div>;"
   );

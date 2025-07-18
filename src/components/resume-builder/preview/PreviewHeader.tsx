@@ -9,17 +9,17 @@ import { useIsMobile } from '@/hooks/use-mobile'
 interface PreviewHeaderProps {'
   resume: "Resume
   onBack: () => void""
-};
+}
 
 export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{ resume, onBack }: PreviewHeaderProps) {;
   const [isPrinting, setIsPrinting] = useState(false);
-  const const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
 
-  const const handleBrowserPrint = () => {;"
+  const handleBrowserPrint = () => {;"
     setIsPrinting(true);"
 
     // Inject print-specific CSS only for the duration of printing;
-    const const style = document.createElement('style')'
+    const style = document.createElement('style')'
     style.innerHTML = ``
       @media print {'
         body * {'
@@ -55,7 +55,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
       className={`flex ${isMobile ? 'flex-col' : 'justify-between'} items-${isMobile ? 'stretch' : 'center'} gap-3`}'
     >'
       <Button variant="outline" onClick={onBack} className=gap-2 no-print>"
-        <ArrowLeft className="h-4 w-4 />
+        <ArrowLeft className="h-4 w-4 />"
         Back;""
       </Button>;
 
@@ -66,10 +66,10 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
 '
         <Button'
           variant="outline
-          onClick={handleBrowserPrint}
+          onClick={handleBrowserPrint}"
           disabled={isPrinting};"
           className="gap-2
-        >
+        >"
           <FileText className="h-4 w-4" />
           Print;
         </Button>"

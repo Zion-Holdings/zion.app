@@ -14,15 +14,15 @@ import { ActionButtons } from './ActionButtons'
 import { EmptyFraudState } from './EmptyFraudState'
 '
 interface FraudFlagsTableProps {'
-  flags: "FraudFlag[],;";
-  isLoading: "boolean",;"";
-  hasFilters: boolean",;"
+  flags: "FraudFlag[],"
+  isLoading: boolean,""
+  hasFilters: boolean","
   resetFilters: () => void,""
-  onAction: "(,;";
-    flagId: "string",;"
+  onAction: "(,"
+    flagId: string,"
     action: 'warning' | 'suspension' | 'ban' | 'ignore','
-  ) => void;
-};
+  ) => void
+}
 
 export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
   flags,;

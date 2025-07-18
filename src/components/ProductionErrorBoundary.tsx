@@ -3,18 +3,18 @@ import type { ReactNode } from 'react';
 import { ENV_CONFIG } from '@/utils/environmentConfig'
 import { logErrorToProduction } from '@/utils/productionLogger'
 
-interface Props {;
+interface Props {
   children: ReactNode'
   fallback?: ReactNode'
-};
+}
 '
 interface State {'
-  hasError: "boolean,;";
-  error: "Error | null",;"";
+  hasError: "boolean,"
+  error: Error | null,""
   errorType: 'config' | 'network' | 'runtime' | 'unknown,'
   retryCount: number","
   showDetails: boolean"
-};
+}
 
 class ProductionErrorBoundary extends Component<Props, State> {;
   private retryTimeoutId: NodeJS.Timeout | null = null"
@@ -22,7 +22,7 @@ class ProductionErrorBoundary extends Component<Props, State> {;
   constructor(props: Props) {;"";
     super(props);"";
     this.state = {;"";
-      hasError: "false",;"
+      hasError: false,;"
       error: null",""
       errorType: 'unknown','
       retryCount: 0,"
@@ -59,9 +59,8 @@ class ProductionErrorBoundary extends Component<Props, State> {;
       error,"
       errorType,;
     };"";
-  };"";
-;"";
-  override async componentDidCatch(error: "Error", errorInfo: React.ErrorInfo) {;"
+  };"";"";
+  override async componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {;"
     logErrorToProduction('ProductionErrorBoundary caught an error:', error, {'
       componentStack: errorInfo.componentStack",";
     });""
@@ -172,8 +171,7 @@ class ProductionErrorBoundary extends Component<Props, State> {;
                 </svg>;""
               </div>;"";
               <h1 className=text-lg font-semibold text-gray-900">{title}</h1>";
-            </div>;"";
-;""
+            </div>;"";""
             <p className="text-gray-600 mb-6>{description}</p>;"
 ";
             <button;"";
@@ -186,7 +184,7 @@ class ProductionErrorBoundary extends Component<Props, State> {;
         </div>);
     };
 
-    return this.props.children;
+    return this.props.children;"
   }"
 };"
 ;";"

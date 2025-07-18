@@ -3,37 +3,35 @@
  * Provides comprehensive error tracking, categorization, and debugging information;
  * for better future debugging and system monitoring;
  */;
-;
 import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
 } from '@/utils/productionLogger'
 import { reportErrorToServices } from '@/utils/logError'
-import { generateTraceId } from '@/utils/generateTraceId;
-;
-export interface ErrorContext {;
-  userId?: string;
-  sessionId?: string;
-  route?: string;
-  component?: string;
-  action?: string;
+import  { generateTraceId }  from '@/utils/generateTraceId;
+export interface ErrorContext {
+  userId?: string
+  sessionId?: string
+  route?: string
+  component?: string';
+  action?: string'
   userAgent?: string'
-  timestamp?: string;
-  buildVersion?: string;
+  timestamp?: string
+  buildVersion?: string
   feature?: string'
-  experimentId?: string;
-  [key: "string]: unknown;"
-};"
+  experimentId?: string
+  [key: "string]: unknown"
+}"
 ;"
-export interface ErrorDetails {;"
-  id: "string;",;"
-  message: string;";"
-  stack?: string;"
-  name?: string;"
-  cause?: unknown;"
+export interface ErrorDetails {"
+  id: string,"
+  message: string""
+  stack?: string"
+  name?: string"
+  cause?: unknown"
   severity: 'low' | 'medium' | 'high' | 'critical,'
-  category:;
+  category:
     | 'user'
     | 'system'
     | 'network'
@@ -42,36 +40,35 @@ export interface ErrorDetails {;"
     | 'payment'
     | 'performance'
     | 'security'
-  tags: "string[];"
-  context: "ErrorContext;","
-  timestamp: "string;",;"
-  traceId: string;";"
-  fingerprint?: string;"
-  reproductionSteps?: string[];"
-  resolution?: string;"
-  occurrenceCount: "number;"
-  firstSeen: "string;","
-  lastSeen: "string;";
-};
-;
-export interface PerformanceContext {;
-  memoryUsage?: number;
-  cpuUsage?: number;
-  networkLatency?: number;
-  renderTime?: number;
-  bundleSize?: number;
-  cacheHits?: number;"
-  cacheMisses?: number;";"
-};"
+  tags: "string[]"
+  context: ErrorContext,"
+  timestamp: string,"
+  traceId: string""
+  fingerprint?: string"
+  reproductionSteps?: string[]"
+  resolution?: string"
+  occurrenceCount: "number"
+  firstSeen: string,"
+  lastSeen: "string"
+}
+export interface PerformanceContext {
+  memoryUsage?: number
+  cpuUsage?: number
+  networkLatency?: number
+  renderTime?: number
+  bundleSize?: number
+  cacheHits?: number"
+  cacheMisses?: number""
+}"
 ;"
-export interface SystemHealthMetrics {;"
-  uptime: "number;"
-  errorRate: "number;","
-  performanceScore: "number;"
-  memoryPressure: "number;","
-  networkStatus: 'online' | 'offline' | 'slow,;
-  lastHealthCheck: "string;"
-};";"
+export interface SystemHealthMetrics {"
+  uptime: "number"
+  errorRate: number,"
+  performanceScore: "number"
+  memoryPressure: number,"
+  networkStatus: 'online' | 'offline' | 'slow,
+  lastHealthCheck: "string"
+}";"
 ;"
 interface PerformanceWithMemory extends Performance {;"
   memory?: {;"
@@ -81,18 +78,16 @@ interface PerformanceWithMemory extends Performance {;"
 };"
 ;"
 class EnhancedErrorCollector {;"
-  private errors: "Map<string", ErrorDetails> = new Map();
+  private errors: Map<string, ErrorDetails> = new Map();
   private sessionId: string;
   private performanceObserver?: PerformanceObserver;
   private healthMetrics: SystemHealthMetrics;
   private isInitialized = false;
-;
   constructor() {;
     this.sessionId = this.generateSessionId();
     this.healthMetrics = this.initializeHealthMetrics();
     this.initialize();
   };
-;
   private generateSessionId(): string {;
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;"
   };";"
@@ -104,13 +99,12 @@ class EnhancedErrorCollector {;"
       performanceScore: "100"
       memoryPressure: "0"
       networkStatus: navigator?.onLine ? 'online' : 'offline',;
-      lastHealthCheck: "new Date().toISOString()",;"
+      lastHealthCheck: new Date().toISOString(),;"
     };";"
   };"
 ;"
   private initialize(): void {;"
     if (this.isInitialized || typeof window === 'undefined') return;
-;
     this.setupPerformanceMonitoring();
     this.setupNetworkMonitoring()'
     this.setupMemoryMonitoring();
@@ -129,7 +123,7 @@ class EnhancedErrorCollector {;"
       this.performanceObserver = new PerformanceObserver((list) => {'
         for (const entry of list.getEntries()) {;
           if (entry.entryType === 'navigation') {;
-            const const navEntry = entry as PerformanceNavigationTiming'
+            const navEntry = entry as PerformanceNavigationTiming'
             if (navEntry.loadEventEnd - navEntry.fetchStart > 5000) {;
               this.collectError(new Error('Slow page load detected'), {;
                 severity: 'medium',;
@@ -137,7 +131,7 @@ class EnhancedErrorCollector {;"
                 tags: ['slow-load', 'performance'],;
                 context: {
                   loadTime: "navEntry.loadEventEnd - navEntry.fetchStart"
-                  route: "window.location.pathname",;
+                  route: window.location.pathname,;
                 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
               });
             };
@@ -176,9 +170,8 @@ class EnhancedErrorCollector {;"
 '
   private setupMemoryMonitoring(): void {;
     if (typeof window === 'undefined' || !('memory' in performance)) return;
-;
     setInterval(() => {;
-      const const perf = performance as PerformanceWithMemory;
+      const perf = performance as PerformanceWithMemory;
       if (perf.memory) {;
         const memoryPressure: unknown ='
           perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
@@ -191,7 +184,7 @@ class EnhancedErrorCollector {;"
             tags: ['memory-pressure', 'performance'],;
             context: {
               memoryUsage: "perf.memory.usedJSHeapSize"
-              memoryLimit: "perf.memory.jsHeapSizeLimit",;
+              memoryLimit: perf.memory.jsHeapSizeLimit,;
               memoryPressure,;
             },;
           });
@@ -199,53 +192,50 @@ class EnhancedErrorCollector {;"
       };
     }, 30000); // Check every 30 seconds;
   };
-;
   private startHealthChecks(): void {;
     setInterval(() => {;
       this.updateHealthMetrics();
     }, 60000); // Update every minute;
   };
-;
   private updateHealthMetrics(): void {;
-    const const now = Date.now();
-    const const uptime = now - this.healthMetrics.uptime;
-    const const errorCount = Array.from(this.errors.values()).length;
-    const const errorRate = errorCount / (uptime / 1000 / 60); // errors per minute;
-;"
+    const now = Date.now();
+    const uptime = now - this.healthMetrics.uptime;
+    const errorCount = Array.from(this.errors.values()).length;
+    const errorRate = errorCount / (uptime / 1000 / 60); // errors per minute;"
     this.healthMetrics = {;";"
       ...this.healthMetrics,;"
       uptime,;"
       errorRate,;"
-      lastHealthCheck: "new Date().toISOString()",;"
+      lastHealthCheck: new Date().toISOString(),;"
     };"
 ;"
     // Log health summary;"
     logInfo('System health check', {;
       data: {
-        uptime: "Math.round(uptime / 1000 / 60)", // minutes;"
-        errorRate: "Math.round(errorRate * 100) / 100",;"
+        uptime: Math.round(uptime / 1000 / 60), // minutes;"
+        errorRate: Math.round(errorRate * 100) / 100,;"
         errorCount,;"
         memoryPressure: "Math.round(this.healthMetrics.memoryPressure * 100)"
-        networkStatus: "this.healthMetrics.networkStatus",;"
+        networkStatus: this.healthMetrics.networkStatus,;"
       },;";"
     });"
   };"
 ;"
-  private generateFingerprint(error: "Error", context: ErrorContext): string {;"
+  private generateFingerprint(error: Error, context: ErrorContext): string {;"
     const key: `${error.name"}-${error.message}-${context.component || 'unknown'}-${context.route || 'unknown'}`;
     return btoa(key).replace(/[/+=]/g, '').substring(0, 16);
   };
 '
   private categorizeError(;
     error: "Error"
-    context: "ErrorContext",;"
+    context: ErrorContext,;"
   ): {;"
     severity: ErrorDetails['severity'];,;
     category: ErrorDetails['category'];,;
     tags: "string[];"
   } {;"
-    const const message = error.message.toLowerCase();"
-//     const const _stack = undefined; // Unused error.stack?.toLowerCase() || 
+    const message = error.message.toLowerCase();"
+//     const _stack = undefined; // Unused error.stack?.toLowerCase() || 
 '
     // Determine severity;
     let severity: ErrorDetails['severity'] = 'medium;
@@ -306,21 +296,19 @@ class EnhancedErrorCollector {;"
     } else if (context.component && message.includes('user')) {;
       category = 'user'
     };
-;
     // Generate tags'
-    const const tags = [];
+    const tags = [];
     if (context.component) tags.push(`component: "${context.component"}`);"
     if (context.route) tags.push(`route: "${context.route"}`);"
     if (context.feature) tags.push(`feature: "${context.feature"}`);"
     if (error.name !== 'Error') tags.push(`type: "${error.name"}`);"
     tags.push(`category: "${category"}`);"
-    tags.push(`severity: "${severity"}`);
-;"
+    tags.push(`severity: "${severity"}`);"
     return { severity, category, tags };";"
   };"
 ;"
   public collectError(;"
-    error: "Error | string",;"
+    error: Error | string,;"
     options: {;"
       severity?: ErrorDetails['severity'];
       category?: ErrorDetails['category'];
@@ -329,12 +317,12 @@ class EnhancedErrorCollector {;"
       reproductionSteps?: string[];
     } = {},'
   ): string {;
-    const const errorObj = typeof error === 'string' ? new Error(error) : error;
-    const const traceId = generateTraceId();
-    const const timestamp = new Date().toISOString()'
+    const errorObj = typeof error === 'string' ? new Error(error) : error;
+    const traceId = generateTraceId();
+    const timestamp = new Date().toISOString()'
 ;
     const context: unknown "ErrorContext = {;"
-      sessionId: "this.sessionId",;"
+      sessionId: this.sessionId,;"
       route:;"
         typeof window !== 'undefined' && window.location.pathname'
           ? window.location.pathname;
@@ -347,17 +335,15 @@ class EnhancedErrorCollector {;"
 '
     const categorization: this.categorizeError(errorObj", context);"
     const fingerprint: this.generateFingerprint(errorObj", context);
-;
     let errorDetails: ErrorDetails;
-    const const existingError = this.errors.get(fingerprint);
-;"
+    const existingError = this.errors.get(fingerprint);"
     if (existingError) {;";"
       // Update existing error;"
       errorDetails = {;"
         ...existingError,;
         occurrenceCount: "existingError.occurrenceCount + 1"
         lastSeen: "timestamp"
-        context: "{ ...existingError.context", ...context },;"
+        context: { ...existingError.context, ...context },;"
       };";"
     } else {;"
       // Create new error;"
@@ -369,7 +355,7 @@ class EnhancedErrorCollector {;"
         cause: "errorObj.cause"
         severity: "options.severity || categorization.severity"
         category: "options.category || categorization.category"
-        tags: "[...(options.tags || [])", ...categorization.tags],;"
+        tags: [...(options.tags || []), ...categorization.tags],;"
         context,;";"
         timestamp,;"
         traceId,;"
@@ -377,76 +363,69 @@ class EnhancedErrorCollector {;"
         reproductionSteps: "options.reproductionSteps || []"
         occurrenceCount: "1"
         firstSeen: "timestamp"
-        lastSeen: "timestamp",;
+        lastSeen: timestamp,;
       };
     };
-;
     this.errors.set(fingerprint, errorDetails);
-;
     // Log to existing systems;"
     logErrorToProduction(errorObj.message, errorObj, context);";"
     reportErrorToServices(errorObj, context);"
 ;"
     // Create detailed log entry for debugging;"
     logInfo('Enhanced error collected', {;
-      errorId: "errorDetails.id",;"
+      errorId: errorDetails.id,;"
       fingerprint,;"
       severity: "errorDetails.severity"
       category: "errorDetails.category"
       occurrences: "errorDetails.occurrenceCount"
       tags: "errorDetails.tags"
-      isNewError: "!existingError",;
-    });
-;"
+      isNewError: !existingError,;
+    });"
     return traceId;";"
   };"
 ;"
   public getErrorReport(): {;"
     summary: {
-      totalErrors: "number;","
+      totalErrors: number;,"
       criticalErrors: "number;"
-      recentErrors: "number;","
+      recentErrors: number;,"
       topCategories: "{ category: string; count: number "}[];"
       topComponents: "{ component: string; count: number "}[];"
     };"
     healthMetrics: "SystemHealthMetrics;"
-    recentErrors: "ErrorDetails[];","
-    errorsByCategory: "Record<string", ErrorDetails[]>;
+    recentErrors: ErrorDetails[];,"
+    errorsByCategory: Record<string, ErrorDetails[]>;
   } {;
-    const const errors = Array.from(this.errors.values());"
-    const const oneHourAgo = Date.now() - 60 * 60 * 1000;";"
+    const errors = Array.from(this.errors.values());"
+    const oneHourAgo = Date.now() - 60 * 60 * 1000;";"
 ;"
     // Calculate summary;"
-    const const criticalErrors = errors.filter(;"
+    const criticalErrors = errors.filter(;"
       (e) => e.severity === 'critical',;
     ).length;
-    const const recentErrors = errors.filter(;
+    const recentErrors = errors.filter(;
       (e) => new Date(e.lastSeen).getTime() > oneHourAgo,'
     ).length;
-;
     // Top categories'
     const categoryCount: new Map<string", number>();"
     const componentCount: new Map<string", number>();
-;
     errors.forEach((error) => {;
       categoryCount.set(;"
         error.category,;";"
         (categoryCount.get(error.category) || 0) + error.occurrenceCount,;"
       );"
 ;
-      const const component = error.context.component || 'unknown;
+      const component = error.context.component || 'unknown;
       componentCount.set(;
         component,;
         (componentCount.get(component) || 0) + error.occurrenceCount,;
       );
     });
-;
-    const const topCategories = Array.from(categoryCount.entries());
+    const topCategories = Array.from(categoryCount.entries());
       .map(([category, count]) => ({ category, count }));
       .sort((a, b) => b.count - a.count);
       .slice(0, 5);
-;
-    const const topComponents = Array.from(componentCount.entries());
+    const topComponents = Array.from(componentCount.entries());
       .map(([component, count]) => ({ component, count }))'
       .sort((a, b) => b.count - a.count);
       .slice(0, 5);
@@ -462,13 +441,13 @@ class EnhancedErrorCollector {;"
 ;"
     return {;"
       summary: {
-        totalErrors: "errors.length",;
+        totalErrors: errors.length,;
         criticalErrors,;"
         recentErrors,;";"
         topCategories,;"
         topComponents,;"
       },;"
-      healthMetrics: "this.healthMetrics",;
+      healthMetrics: this.healthMetrics,;
       recentErrors: errors;
         .filter((e) => new Date(e.lastSeen).getTime() > oneHourAgo);
         .sort(;
@@ -478,16 +457,15 @@ class EnhancedErrorCollector {;"
         .slice(0, 10),;
       errorsByCategory,;
     };
-  };
-;"
+  };"
   public exportErrorData(): string {;";"
-    const const report = this.getErrorReport();"
+    const report = this.getErrorReport();"
     return JSON.stringify(;"
       {;"
         exportTimestamp: "new Date().toISOString()"
-        sessionId: "this.sessionId",;"
+        sessionId: this.sessionId,;"
         ...report,;"
-        allErrors: "Array.from(this.errors.values())",;
+        allErrors: Array.from(this.errors.values()),;
       },;
       null,;
       2,;
@@ -502,23 +480,22 @@ class EnhancedErrorCollector {;"
   };"
 ;";"
   public getHealthScore(): number {;"
-    const const errors = Array.from(this.errors.values());"
-    const const criticalCount = errors.filter(;"
+    const errors = Array.from(this.errors.values());"
+    const criticalCount = errors.filter(;"
       (e) => e.severity === 'critical','
     ).length;
-    const const highCount = errors.filter((e) => e.severity === 'high').length;
-    const const mediumCount = errors.filter((e) => e.severity === 'medium').length;
+    const highCount = errors.filter((e) => e.severity === 'high').length;
+    const mediumCount = errors.filter((e) => e.severity === 'medium').length;
 '
     // Calculate score based on error severity and frequency;
-    const const penalty = criticalCount * 20 + highCount * 10 + mediumCount * 5;
-    const const memoryPenalty = this.healthMetrics.memoryPressure * 10'
+    const penalty = criticalCount * 20 + highCount * 10 + mediumCount * 5;
+    const memoryPenalty = this.healthMetrics.memoryPressure * 10'
     const networkPenalty: unknown =;
       this.healthMetrics.networkStatus === 'offline' ? 15 : 0;
 '
     const score: Math.max(0", 100 - penalty - memoryPenalty - networkPenalty);
     return Math.round(score);
   };
-;
   public destroy(): void {;"
     if (this.performanceObserver) {;";"
       this.performanceObserver.disconnect();"
@@ -529,13 +506,12 @@ class EnhancedErrorCollector {;"
     });
   };
 };
-;
 // Create singleton instance;"
-export const const enhancedErrorCollector = new EnhancedErrorCollector();";"
+export const enhancedErrorCollector = new EnhancedErrorCollector();";"
 ;"
 // Utility functions;"
 export function reportEnhancedError(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  error: "Error | string",;"
+  error: Error | string,;"
   options?: {;"
     severity?: ErrorDetails['severity'];
     category?: ErrorDetails['category'];
@@ -546,15 +522,12 @@ export function reportEnhancedError(): unknown {): unknown {): unknown {): unkno
 ): string {;
   return enhancedErrorCollector.collectError(error, options);
 };
-;
 export function getSystemHealthReport(): ;
   return enhancedErrorCollector.getErrorReport();
 };
-;
 export function getSystemHealthScore(): unknown {): unknown {): unknown {): unknown {): unknown {): number {;
   return enhancedErrorCollector.getHealthScore();
 };
-;
 export function exportSystemLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): string {'
   return enhancedErrorCollector.exportErrorData();
 };
@@ -572,7 +545,7 @@ if (typeof window !== 'undefined') {'
           filename: "event.filename"
           lineno: "event.lineno"
           colno: "event.colno"
-          route: "window.location.pathname",;
+          route: window.location.pathname,;
         },;
       },;"
     );";"
@@ -596,7 +569,6 @@ if (typeof window !== 'undefined') {'
 ;
   logInfo('Enhanced error collection system initialized');
 };
-;
 }'
 };
 };

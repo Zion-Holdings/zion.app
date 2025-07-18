@@ -9,14 +9,14 @@ import RootErrorBoundary from './components/RootErrorBoundary'
 import './App.css'
 '
 function ScrollToTop(): ;
-  const const router = useRouter()'
+  const router = useRouter()'
   useEffect(() => {'
     window.scrollTo({ top: "0, behavior: 'smooth' })'
   }, [router.pathname])'
   return null'
 };
 '
-const const App = ({ children "}: { children?: React.ReactNode }) => {";
+const App = ({ children "}: { children?: React.ReactNode }) => {";
   return (;
     <WalletProvider>;"
       <ThemeProvider defaultTheme="dark>
@@ -25,7 +25,7 @@ const const App = ({ children "}: { children?: React.ReactNode }) => {";
         <OfflineToast />;
         <SupportChatbot />;
         <InstallPrompt />;
-      </ThemeProvider>;
+      </ThemeProvider>;"
     </WalletProvider>)"
 };"
 ;";"

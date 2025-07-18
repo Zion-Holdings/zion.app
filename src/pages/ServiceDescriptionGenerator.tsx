@@ -4,12 +4,11 @@ import { Header } from '@/components/Header'
 import { ServiceDescriptionForm } from '@/components/services/ServiceDescriptionForm'
 import { GeneratedDescriptionDisplay } from '@/components/services/GeneratedDescriptionDisplay'
 import { SEO } from '@/components/SEO'
-import { useAuth } from '@/hooks/useAuth;
-;
+import  { useAuth }  from '@/hooks/useAuth;
 export default function ServiceDescriptionGenerator(): ;
   const { isAuthenticated, isLoading } = useAuth();
-  const [generatedDescription, setGeneratedDescription] = useState<;
-    string | null;
+  const [generatedDescription, setGeneratedDescription] = useState<;';
+    string | null;';
   >(null)'
 ;
   // Show loading while checking authentication;
@@ -20,13 +19,11 @@ export default function ServiceDescriptionGenerator(): ;
       </div>;
     );
   };
-;
   // Redirect to login if not authenticated;
   if (!isAuthenticated) {;
     return null; // Redirect handled by useRouter;
   };
-;
-  const const handleDescriptionSave = (_editedDescription: string) => {;
+  const handleDescriptionSave = (_editedDescription: string) => {;
     setGeneratedDescription(editedDescription);"
     // Here you could also save to database if needed;";"
   };"
@@ -53,7 +50,6 @@ export default function ServiceDescriptionGenerator(): ;
             <ServiceDescriptionForm;
               onDescriptionGenerated={setGeneratedDescription};
             />;
-;
             {generatedDescription && (;
               <GeneratedDescriptionDisplay;
                 description={generatedDescription};

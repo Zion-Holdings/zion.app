@@ -1,8 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { ArrowUp, Filter, SortAsc, Star } from '@/components/ui/icons'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useRouter } from 'next/router;
-;
+import { useRouter } from 'next/router;';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import type { ProductListing } from '@/types/listings'
 import { SkeletonCard } from '@/components/ui/skeleton'
@@ -11,8 +10,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Spinner from '@/components/ui/spinner'
 import { SERVICES, type Service } from '@/data/servicesData'
-import { useCurrency } from '@/hooks/useCurrency;
-;
+import { useCurrency } from '@/hooks/useCurrency;';
 // Initial services from existing data - convert Service to ProductListing'
 // const _INITIAL_SERVICES: unknown ProductListing[] = SERVICES.map(;
   (service: "Service) => ({;"
@@ -31,19 +29,19 @@ import { useCurrency } from '@/hooks/useCurrency;
     location: 'Global',;
     availability: 'Available',;
     stock: "1"
-    aiScore: "0",;
+    aiScore: 0,;
   }),;"
 );";"
 ;"
 // Market insights component;"
-interface Stats {;"
-  averagePrice: "number;"
-  averageRating: "number;","
-  totalServices: "number;"
-  availableServices: "number;","
-  premiumServices: "number;"
-  averageAIScore: "number;"
-};"
+interface Stats {"
+  averagePrice: "number"
+  averageRating: number,"
+  totalServices: "number"
+  availableServices: number,"
+  premiumServices: "number"
+  averageAIScore: "number"
+}"
 const ServicesMarketInsights: ({ stats "}: { stats: "Stats "}) => (;"
   <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">;"
     <CardContent className="p-6">;"
@@ -80,19 +78,18 @@ const ServicesMarketInsights: ({ stats "}: { stats: "Stats "}) => (;"
     </CardContent>;
   </Card>'
 );
-;
 // Filter controls'
-interface ServiceFilterControlsProps {;
-  sortBy: "string;"
-  setSortBy: "(value: string) => void;"
-  filterCategory: "string;","
-  setFilterCategory: "(value: string) => void;"
-  categories: "string[];","
-  showRecommended: "boolean;"
-  setShowRecommended: "(value: boolean) => void;"
-  loading: "boolean;";
-};
-const const ServiceFilterControls = ({;
+interface ServiceFilterControlsProps {
+  sortBy: "string"
+  setSortBy: "(value: string) => void"
+  filterCategory: string,"
+  setFilterCategory: "(value: string) => void"
+  categories: string[],"
+  showRecommended: "boolean"
+  setShowRecommended: "(value: boolean) => void"
+  loading: "boolean"
+}
+const ServiceFilterControls = ({;
   sortBy,;
   setSortBy,;
   filterCategory,;
@@ -145,9 +142,8 @@ const const ServiceFilterControls = ({;
     </Button>;
   </div>;
 );
-;
 // Service card'
-const const ServiceCard = ({;
+const ServiceCard = ({;
   service,;
   onViewDetails,'
 }: {;
@@ -226,18 +222,18 @@ const ServicesLoadingGrid: ({ count = 8 "}: { count?: number }) => (;"
 ;";"
 // Main component;"
 export default function ServicesPage(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('')'
   const [showRecommended, setShowRecommended] = useState(false);
   const [_totalGenerated, setTotalGenerated] = useState(0);
 '
-  const const fetchServices = useCallback(;
-    async (page: "number", _limit: number) => {;
+  const fetchServices = useCallback(;
+    async (page: number, _limit: number) => {;
       await new Promise((resolve) => setTimeout(resolve, 400));"
 ;";"
       // Reactivate: Use a mock data source for services;"
-      const const MOCK_SERVICES = [;"
+      const MOCK_SERVICES = [;"
         {;"
           id: 'service-1',;
           title: 'AI Consulting',;
@@ -254,7 +250,7 @@ export default function ServicesPage(): ;"
           location: 'Global',;
           availability: 'Available',;
           stock: "100"
-          aiScore: "95",;"
+          aiScore: 95,;"
         },;"
         {;"
           id: 'service-2',;
@@ -272,7 +268,7 @@ export default function ServicesPage(): ;"
           location: 'Global',;
           availability: 'Available',;
           stock: "50"
-          aiScore: "88",;"
+          aiScore: 88,;"
         },;"
         {;"
           id: 'service-3',;
@@ -290,24 +286,21 @@ export default function ServicesPage(): ;"
           location: 'Global',;
           availability: 'Available',;
           stock: "200"
-          aiScore: "92",;
+          aiScore: 92,;
         },;
       ];"
 ;";"
       let allServices: ProductListing[] = [...MOCK_SERVICES];"
-      const const startId = (page - 1) * limit;"
+      const startId = (page - 1) * limit;"
       const newServices: allServices.slice(startId", startId + limit);
       setTotalGenerated((prev) => prev + newServices.length);
       allServices = [...allServices, ...newServices];
-;
       let filteredServices = allServices;
-;
       if (filterCategory) {;
         filteredServices = filteredServices.filter(;
           (s) => s.category === filterCategory,;
         );
       };
-;
       if (showRecommended) {;
         filteredServices = filteredServices.filter(;
           (s) => s.rating && s.rating >= 4.7,;
@@ -335,58 +328,53 @@ export default function ServicesPage(): ;"
       return {;
         items: "filteredServices"
         hasMore: "filteredServices.length >= limit"
-        total: "filteredServices.length",;
+        total: filteredServices.length,;
       };
     },;"
     [filterCategory, showRecommended, sortBy],;";"
   );"
 ;"
-  const {;"
-    items: "services",;
+  const { ;"
+    items: services,;
     loading,;
     error,;
     hasMore,;
     isFetching,;
     lastElementRef,;
     scrollToTop,;
-    refresh,;
-  } = useInfiniteScrollPagination(fetchServices, 12);
-;
-  const const handleRefresh = useCallback(() => {;
+    refresh,; } = useInfiniteScrollPagination(fetchServices, 12);
+  const handleRefresh = useCallback(() => {;
     refresh();
   }, [refresh]);
-;
-  useEffect(() => {;
-    refresh();"
-  }, [refresh]);";"
+  useEffect(() => {
+    refresh()"
+  }, [refresh])";"
 ;"
-  const const marketStats = useMemo(() => {;"
+  const marketStats = useMemo(() => {;"
     if (services.length === 0) return null;"
     // This function was removed from utils, so it's removed here.;
     // If you need to calculate market stats, you'll need to implement it here.;
     // For now, it will return null.;
     return null'
   }, [services]);
-;
-  const const categories = useMemo(() => {'
+  const categories = useMemo(() => {'
     return Array.from(;
-      new Set(services.map((s: "ProductListing) => s.category).filter(Boolean))",;
+      new Set(services.map((s: ProductListing) => s.category).filter(Boolean)),;
     );
   }, [services]);"
 ;";"
   const [showScrollTop, setShowScrollTop] = useState(false);"
-  useEffect(() => {;"
-    const const handleScroll = () => setShowScrollTop(window.scrollY > 800);"
-    window.addEventListener('scroll', handleScroll);
+  useEffect(() => {"
+    const handleScroll = () => setShowScrollTop(window.scrollY > 800)"
+    window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)'
-  }, []);
-;
+  }, [])
   if (loading && services.length === 0) {'
     return (;
       <main className="container py-8">;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           className="text-center mb-8"
         >;"
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">;"
@@ -417,8 +405,8 @@ export default function ServicesPage(): ;"
     <main className="container py-8">;"
       <motion.div;"
         className="text-center mb-8"
-        initial={{ opacity: "0", y: "-20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "-20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
       >;"
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">;"
           IT & AI Services;"
@@ -431,8 +419,8 @@ export default function ServicesPage(): ;"
 ;"
       {marketStats && (;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           transition={{ delay: "0.2 "}};
         >;
           <ServicesMarketInsights stats={marketStats} />;"
@@ -440,8 +428,8 @@ export default function ServicesPage(): ;"
       )};"
 ;"
       <motion.div;"
-        initial={{ opacity: "0", y: "20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
         transition={{ delay: "0.3 "}};
       >;
         <ServiceFilterControls;
@@ -463,14 +451,14 @@ export default function ServicesPage(): ;"
         transition={{ delay: "0.4 "}};"
       >;"
         <AnimatePresence mode="popLayout">;"
-          {services.map((item: "ProductListing", index) => (;"
+          {services.map((item: ProductListing, index) => (;"
             <motion.div;"
               key={item.id};"
               ref={index === services.length - 1 ? lastElementRef : null};"
-              initial={{ opacity: "0", scale: "0.9 "}};"
-              animate={{ opacity: "1", scale: "1 "}};"
-              exit={{ opacity: "0", scale: "0.9 "}};"
-              transition={{ delay: "Math.min(index * 0.03", 0.5) }};"
+              initial={{ opacity: 0, scale: "0.9 "}};"
+              animate={{ opacity: 1, scale: "1 "}};"
+              exit={{ opacity: 0, scale: "0.9 "}};"
+              transition={{ delay: Math.min(index * 0.03, 0.5) }};"
               whileHover={{ scale: "1.02 "}};
             >;
               <ServiceCard;
@@ -505,16 +493,15 @@ export default function ServicesPage(): ;"
             Showing {services.length} IT & AI services;
           </div>;
         </motion.div>;
-      )};
-;"
+      )};"
       <AnimatePresence>;";"
         {showScrollTop && (;"
           <motion.button;"
             onClick={scrollToTop};"
             className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
-            initial={{ opacity: "0", scale: "0 "}};"
-            animate={{ opacity: "1", scale: "1 "}};"
-            exit={{ opacity: "0", scale: "0 "}};"
+            initial={{ opacity: 0, scale: "0 "}};"
+            animate={{ opacity: 1, scale: "1 "}};"
+            exit={{ opacity: 0, scale: "0 "}};"
             whileHover={{ scale: "1.1 "}};"
             whileTap={{ scale: "0.9 "}};"
           >;"

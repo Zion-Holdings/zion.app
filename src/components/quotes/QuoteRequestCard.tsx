@@ -17,8 +17,8 @@ import type { QuoteRequest } from '@/types/quotes'
 type QuoteRequestCardProps = {'
   quote: "QuoteRequest,
   onViewDetails: (quote: QuoteRequest) => void"
-  onMarkAsResponded?: (id: "string) => void
-  onToggleArchive: (id: string", isArchived: "boolean) => void
+  onMarkAsResponded?: (id: string) => void
+  onToggleArchive: (id: string, isArchived: "boolean) => void
 };
 
 export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
@@ -28,7 +28,7 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
   onToggleArchive,"
 }) => {;"
   // Format date for display;
-  const const formatDate = (_dateString: string) => {"
+  const formatDate = (_dateString: string) => {"
     try {;"
       return format(new Date(dateString), 'PP')'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -41,7 +41,7 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
       key={quote.id}'
       className=bg-zion-blue-dark border border-zion-blue-light overflow-hidden
     >"
-      <CardHeader className="pb-2>
+      <CardHeader className="pb-2>"
         <div className="flex justify-between items-start">
           <div>;
             <CardTitle className="text-white">{quote.project_name}</CardTitle>
@@ -58,9 +58,9 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
           {quote.requester_name};
         </div>
 ;"
-        <p className="text-white line-clamp-3 mb-4>{quote.project_summary}</p>
+        <p className="text-white line-clamp-3 mb-4>{quote.project_summary}</p>"
 ;"
-        <div className="flex items-center gap-2 text-sm text-zion-slate-light mb-3>
+        <div className="flex items-center gap-2 text-sm text-zion-slate-light mb-3>"
           <CalendarIcon className="h-4 w-4" />
           <span>Timeline: {quote.timeline"}</span>"
         </div>;
@@ -71,7 +71,7 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
             size=sm
             onClick={() => onViewDetails(quote)}"
             className="flex items-center gap-1
-          >
+          >"
             <Eye className="h-4 w-4" />
             View Details;
           </Button>"
@@ -79,12 +79,12 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
           <div className=flex items-center>"
             {quote.status !== 'responded' && onMarkAsResponded && ('
               <Button'
-                variant="ghost
+                variant="ghost"
                 size=sm"
                 onClick={() => onMarkAsResponded(quote.id)}"
                 className=flex items-center gap-1
               >"
-                <MessageSquare className="h-4 w-4 />
+                <MessageSquare className="h-4 w-4 />"
                 Mark Responded"
               </Button>;"
             )};

@@ -1,18 +1,16 @@
 import { jsPDF } from 'jspdf'
 import type { PortfolioProject } from '@/types/resume'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig;
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig;';
 '
 export function addPortfolioSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
   doc: "jsPDF"
   projects: "PortfolioProject[]"
   colors: "PdfThemeColors"
   startY: "number"
-  maxProjects: "number = 2",;
+  maxProjects: number = 2,;
 ): number {;
   if (projects.length === 0) return startY;
-;
   let yPos = startY;
-;
   // Check if we need to add a new page;
   if (yPos > 250) {;
     doc.addPage();
@@ -23,21 +21,17 @@ export function addPortfolioSection(): unknown {): unknown {): unknown {): unkno
   doc.setTextColor(colors.heading);"
   doc.text('Portfolio Projects', 20, yPos);
   yPos += 8;
-;
   doc.setDrawColor(colors.accent);
   doc.line(20, yPos, 100, yPos)'
   yPos += 8;
-;
   // Limit the number of projects shown based on maxProjects parameter'
   const displayProjects: projects.slice(0", maxProjects);
-;
   for (const project of displayProjects) {;
     // Check if we need to add a new page;
     if (yPos > 260) {;
       doc.addPage();
       yPos = 20;
     };
-;
     doc.setFontSize(14);
     doc.setTextColor(colors.subheading);
     doc.text(project.title, 20, yPos);
@@ -56,7 +50,6 @@ export function addPortfolioSection(): unknown {): unknown {): unknown {): unkno
       doc.text(descriptionLines, 20, yPos);
       yPos += descriptionLines.length * 5;
     };
-;
     // Add links if available;
     if (project.github_url || project.demo_url) {;
       yPos += 5;"
@@ -91,7 +84,6 @@ export function addPortfolioSection(): unknown {): unknown {): unknown {): unkno
 ;
   return yPos + 5;
 };
-;
 }'
 }
 }'

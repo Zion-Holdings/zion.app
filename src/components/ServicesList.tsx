@@ -8,7 +8,7 @@ import { captureException } from '@/utils/sentry'
 
 async function fetchServices(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<ProductListing[]> {'
   try {'
-    const const res = await fetch('/api/services')'
+    const res = await fetch('/api/services')'
     if (!res.ok) {'
       // Gracefully handle 404 by returning an empty list'
       if (res.status === 404) {;
@@ -17,7 +17,7 @@ async function fetchServices(): unknown {): unknown {): unknown {): unknown {): 
       throw new Error(`Failed to fetch services: "${res.status}`);""
     };""
 ;"";
-    const const contentType = res.headers.get('content-type') || 
+    const contentType = res.headers.get('content-type') || 
     if (!contentType.includes('application/json')) {'
       throw new Error(`Invalid content type: ${contentType"}`)`
     };
@@ -27,8 +27,7 @@ async function fetchServices(): unknown {): unknown {): unknown {): unknown {): 
     captureException(error);
     throw error;
   }"
-};
-;"";
+};"";
 export default function ServicesList(): ;"";
   const { data, error, mutate } = useSWR<ProductListing[]>(;"";
     '/api/services','

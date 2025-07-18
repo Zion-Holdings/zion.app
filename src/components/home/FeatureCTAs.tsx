@@ -28,14 +28,14 @@ import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/lib/utils'
 
-interface FeatureCTAsProps {;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface FeatureCTAsProps {
+  className?: string
+  style?: React.CSSProperties
+}
 '
 export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: FeatureCTAsProps) {'
   const { t } = useTranslation();
-  const const features = ['
+  const features = ['
     {'
       key: 'ai_talent_matching','
       descriptionKey: 'ai_talent_matching_desc','
@@ -182,7 +182,7 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
                 </CardTitle>;"";
                 {feature.descriptionKey && (;""
                   <CardDescription className="line-clamp-2>
-                    {t(`features.${feature.descriptionKey}`)}`
+                    {t(`features.${feature.descriptionKey}`)}`"
                   </CardDescription>"
                 )};"
               </CardHeader>;";"

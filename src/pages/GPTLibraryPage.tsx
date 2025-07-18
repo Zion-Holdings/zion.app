@@ -5,23 +5,23 @@ import { PromptCard } from '@/components/prompts/PromptCard'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO'
-import { useState } from 'react;
+import { useState } from 'react;';
 '
 export default function GPTLibraryPage(): ;
   const [customPrompt, setCustomPrompt] = useState('')'
 ;
-  const const grouped = PROMPT_LIBRARY.reduce<Record<Prompt['category'], Prompt[]>>(;
+  const grouped = PROMPT_LIBRARY.reduce<Record<Prompt['category'], Prompt[]>>(;
     (acc, p) => {'
       acc[p.category] = acc[p.category] || [];
       acc[p.category].push(p);
       return acc'
     },;
-    { talent: "[]", client: "[]", admin: "[]", partner: "[] "},;
+    { talent: [], client: [], admin: [], partner: "[] "},;
   );"
 ;";"
-  const const handleSendCustom = () => {;"
+  const handleSendCustom = () => {;"
     if (!customPrompt) return;"
-    const const encoded = encodeURIComponent(customPrompt);"
+    const encoded = encodeURIComponent(customPrompt);"
     window.open(`/zion-gpt?prompt=${encoded}`, '_blank');
   }'
 ;

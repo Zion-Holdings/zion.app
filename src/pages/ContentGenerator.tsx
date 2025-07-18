@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Loader2 } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -12,33 +12,31 @@ import {;
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
-import { Label } from '@/components/ui/label;
-import {;
-  Card,;
+import  { Label }  from '@/components/ui/label;
+import {;';
+  Card,;';
   CardContent,'
   CardDescription,;
   CardFooter,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { toast } from 'sonner;
-;
+import { toast } from 'sonner;';
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useRouter } from 'next/router'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-interface PreviewContent {;
-  subject?: string;
-  previewText?: string;
-  body?: string;
-  generatedContent?: string;
-};
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+interface PreviewContent {
+  subject?: string
+  previewText?: string
+  body?: string
+  generatedContent?: string';
+}';
 '
 export default function ContentGenerator(): ;
   const { user, isLoading } = useAuth();
-  const const router = useRouter()'
+  const router = useRouter()'
   const [contentType, setContentType] = useState<;
     'blog' | 'newsletter' | 'serviceDescription' | 'faq'
   >('blog');
@@ -52,29 +50,27 @@ export default function ContentGenerator(): ;
     null,'
   );
   const [testEmail, setTestEmail] = useState('');
-;
   useEffect(() => {'
     if (!isLoading && !user) {;
       router.push('/login?redirect=/content-generator');
     };
   }, [user, isLoading, router]);
-;
-  const const generateContent = async () => {'
+  const generateContent = async () => {'
     setIsGenerating(true);
     setPreviewContent(null);
 '
     try {;
       if (!supabase) throw new Error('Supabase client not initialized')'
-      const const keywordsArray = keywords;
+      const keywordsArray = keywords;
         .split(',');
         .map((k) => k.trim())'
         .filter((k) => k.length > 0);
-      const { data: "_data", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;"
+      const { data: _data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;"
         'generate-seo-content',;
         {;
           body: {'
             contentType,;
-            userPrompt: "customPrompt || topic", // Use customPrompt if available, else topic;"
+            userPrompt: customPrompt || topic, // Use customPrompt if available, else topic;"
             keywords: "keywordsArray"
             // autoPublish and includeImage are not explicitly used by 'generate-seo-content;
             // but we can leave them here; the backend will ignore them if not needed.'
@@ -83,7 +79,6 @@ export default function ContentGenerator(): ;
           },;
         },'
       );
-;
       if (error) throw error'
 ;
       setPreviewContent(_data); // Expecting { generatedContent: "..." };"
@@ -95,8 +90,7 @@ export default function ContentGenerator(): ;
       setIsGenerating(false);
     }'
   };
-;
-  const const sendTestNewsletter = async () => {'
+  const sendTestNewsletter = async () => {'
     if (!testEmail) {;
       toast.error('Please enter a test email address')'
       return;
@@ -109,19 +103,18 @@ export default function ContentGenerator(): ;
 '
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "_data", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;"
+      const { data: _data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;"
         'send-newsletter','
         {;
           body: {
             subject: "previewContent.subject"
             previewText: "previewContent.previewText"
             body: "previewContent.body"
-            testMode: "true",;
+            testMode: true,;
             testEmail,;
           },;
         },;
-      );
-;"
+      );"
       if (error) throw error;";"
 ;"
       toast.success(`Test newsletter sent to ${testEmail}!`);"
@@ -130,7 +123,6 @@ export default function ContentGenerator(): ;
       toast.error('Failed to send test newsletter. Please try again.');
     };
   };
-;
   // Check if user is still loading'
   if (isLoading) {;
     return (;

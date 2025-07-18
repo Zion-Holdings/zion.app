@@ -10,13 +10,13 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 interface ExportPanelProps {'
   platform: "AppPlatform
   metadata: AppMetadataValues""
-};
+}
 
 export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
   platform,;"
   metadata,
 }) => {;
-  const const handleExport = (_format: 'json' | 'csv') => {'
+  const handleExport = (_format: 'json' | 'csv') => {'
     try {'
       let content: string;
       let fileName: string'
@@ -26,14 +26,14 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
         fileName = `zion-app-metadata-${platform} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}-${metadata.version}.json``
       } else {;
         // Convert object to CSV format'
-        const const headers = ['
+        const headers = ['
           'appTitle','
           'shortDescription','
           'longDescription','
           'version','
           'platform','
         ];
-        const const values = [;
+        const values = [;
           metadata.appTitle,;
           metadata.shortDescription,;
           metadata.longDescription,;
@@ -58,8 +58,8 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
       const blob: new Blob([content], {
         type: format === 'json' ? 'application/json' : 'text/csv','
       })'
-      const const url = URL.createObjectURL(blob)'
-      const const link = document.createElement('a')'
+      const url = URL.createObjectURL(blob)'
+      const link = document.createElement('a')'
       link.href = url;
       link.download = fileName;
       document.body.appendChild(link);
@@ -74,21 +74,21 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
     };""
   };
 
-  const const trackAnalytics = () => {;"
+  const trackAnalytics = () => {;"
     logInfo('Tracking app installation analytics...')'
     toast.success('Analytics tracking enabled')'
   };
 '
   return ('
-    <Card className="bg-zion-blue border-zion-purple/30>
+    <Card className="bg-zion-blue border-zion-purple/30>"
       <CardHeader>;"
-        <CardTitle className="text-lg>Export & Analytics</CardTitle>
+        <CardTitle className="text-lg>Export & Analytics</CardTitle>"
       </CardHeader>;"
       <CardContent>"
         <div className=space-y-4>"
           <div>;"
             <h4 className=font-medium mb-2>Export Metadata</h4>"
-            <p className="text-sm text-gray-400 mb-3>
+            <p className="text-sm text-gray-400 mb-3>"
               Export your app metadata for submission to app stores;"
             </p>"
             <div className=flex flex-col sm:flex-row gap-2>"
@@ -101,7 +101,7 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
                 JSON;
               </Button>
               <Button;"
-                variant="outline
+                variant="outline"
                 onClick={() => handleExport('csv')}'
                 className=flex-1"
               >"
@@ -113,7 +113,7 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
 
           <div className=border-t border-zion-purple/20 pt-4">"
             <h4 className=font-medium mb-2>Installation Analytics</h4>"
-            <p className="text-sm text-gray-400 mb-3>
+            <p className="text-sm text-gray-400 mb-3>"
               Track how many users click "Install" from web
             </p>;
             <Button onClick={trackAnalytics} className="w-full">

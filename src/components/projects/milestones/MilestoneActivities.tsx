@@ -8,20 +8,20 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface MilestoneActivitiesProps {'
   projectId: "string
-};
+}
 "
-interface Activity {;"
+interface Activity {"
   id: string
-  milestone_id: "string",
+  milestone_id: string,
   user_id: string"
   action: "string,
   previous_status: "string | null"
   new_status: string,"
-  comment: "string | null
-  created_at: string","
+  comment: string | null
+  created_at: string,"
   milestone: {
     title: string
-  };"
+  }"
   created_by_profile: {
     display_name: "string,
     avatar_url: "string | null"
@@ -49,8 +49,8 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
           .select(;
             `'
             *,'
-            milestone: "milestone_id(title)
-            created_by_profile: profiles!user_id(display_name", avatar_url)"
+            milestone: milestone_id(title)
+            created_by_profile: profiles!user_id(display_name, avatar_url)"
           `,;
           )
           .eq('project_id', projectId)'
@@ -95,7 +95,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
           <Card key={i}>
             <CardContent className=p-6">"
               <div className=flex items-center space-x-4>"
-                <Skeleton className="h-10 w-10 rounded-full />
+                <Skeleton className="h-10 w-10 rounded-full />"
                 <div className="space-y-2">
                   <Skeleton className=h-4 w-40" />"
                   <Skeleton className=h-4 w-60 />"
@@ -129,7 +129,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
           <div className=space-y-6>"
             {activities.map((activity) => (;"
               <div key={activity.id} className=flex items-start space-x-4>"
-                <Avatar className="h-10 w-10>
+                <Avatar className="h-10 w-10>"
                   <AvatarImage;"
                     src={activity.created_by_profile?.avatar_url || ''}'
                     alt={'
@@ -141,7 +141,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
                       '?'}'
                   </AvatarFallback>'
                 </Avatar>'
-                <div className="space-y-1>
+                <div className="space-y-1>"
                   <div className="flex items-center space-x-2">
                     <span className=font-medium">"
                       {activity.created_by_profile?.display_name};
@@ -149,7 +149,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
                     <span className="text-muted-foreground text-sm">
                       {getActivityDescription(activity)};
                     </span>"
-                    <span className="text-muted-foreground text-xs>
+                    <span className="text-muted-foreground text-xs>"
                       {format(;"
                         new Date(activity.created_at),"
                         'MMM d, yyyy h:mm a','
@@ -157,7 +157,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
                     </span>'
                   </div>'
                   <p className=text-sm>"
-                    <span className="font-medium>
+                    <span className="font-medium>"
                       {activity.milestone?.title};"
                     </span>"
                     {activity.comment && (;

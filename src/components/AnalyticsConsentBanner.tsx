@@ -19,7 +19,7 @@ const AnalyticsConsentBanner: unknown React.FC = () => {'
     }'
   }, []);
 '
-  const const accept = () => {'
+  const accept = () => {'
     safeStorage.setItem('analyticsConsent', 'granted')'
     setCookie('analyticsConsent', 'granted', 365)'
     setShowBanner(false);
@@ -27,7 +27,7 @@ const AnalyticsConsentBanner: unknown React.FC = () => {'
     initPostHog()'
   };
 '
-  const const decline = () => {'
+  const decline = () => {'
     safeStorage.setItem('analyticsConsent', 'denied')'
     setCookie('analyticsConsent', 'denied', 365)'
     setShowBanner(false);
@@ -36,10 +36,10 @@ const AnalyticsConsentBanner: unknown React.FC = () => {'
   if (!showBanner) return null;
 '
   return ('
-    <div className="fixed bottom-0 left-0 right-0 z-[80] bg-zion-blue-dark/90 text-gray-200 p-4 pb-6 md:p-6 text-sm flex flex-col md:flex-row items-start md:items-center gap-3>;
+    <div className="fixed bottom-0 left-0 right-0 z-[80] bg-zion-blue-dark/90 text-gray-200 p-4 pb-6 md:p-6 text-sm flex flex-col md:flex-row items-start md:items-center gap-3>;"
       <p className="flex-1">;"
         We use analytics cookies to improve the site.{' '}'
-        <Link href=/privacy-settings" className="underline>
+        <Link href=/privacy-settings" className="underline>"
           Privacy Settings;""
         </Link>;"
         .";"
@@ -60,6 +60,5 @@ const AnalyticsConsentBanner: unknown React.FC = () => {'
       </div>;
     </div>)"
 };
-;
 export default AnalyticsConsentBanner;
 """"

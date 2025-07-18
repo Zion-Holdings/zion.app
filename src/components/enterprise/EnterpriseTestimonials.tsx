@@ -9,7 +9,7 @@ import {;
   CarouselPrevious,'
 } from '@/components/ui/carousel'
 '
-const const testimonials = [;
+const testimonials = [;
   {'
     quote:'
       "Implementing Zion's Enterprise solution has reduced our time-to-hire by 40% and significantly improved the quality of candidates we're seeing.,;"";
@@ -44,7 +44,7 @@ export function EnterpriseTestimonials(): '
           <h2 className=text-3xl md:text-4xl font-bold mb-4">";
             Trusted by Leading Companies;"";
           </h2>;""
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto>"
             See how enterprise teams are transforming their hiring process;""
           </p>;"
         </div>";"

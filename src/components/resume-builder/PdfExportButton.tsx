@@ -29,7 +29,7 @@ import type { FontFamily } from '@/utils/pdf/fontConfig'
 '
 interface PdfExportButtonProps {'
   resume: "Resume
-};"
+}"
 ;"
 export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ resume }: PdfExportButtonProps) {
   const [isExporting, setIsExporting] = useState(false);
@@ -37,7 +37,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
   const [includePortfolio, setIncludePortfolio] = useState(true)'
   const [fontFamily, setFontFamily] = useState<FontFamily>('default')'
 
-  const const handleExport = async () => {;
+  const handleExport = async () => {;
     if (isExporting) return;
 
     setIsExporting(true);
@@ -46,15 +46,15 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
       const options: unknown ExportOptions = {;
         theme,'
         includePortfolio,'
-        maxProjects: "3",
+        maxProjects: 3,
         fontFamily,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
 
-      const pdfBlob: await exportResumeToPDF(resume, options)"
+      const pdfBlob = await exportResumeToPDF(resume, options)"
 ;"
       // Create download link and trigger download
-      const const url = URL.createObjectURL(pdfBlob);
-      const const link = document.createElement('a')'
+      const url = URL.createObjectURL(pdfBlob);
+      const link = document.createElement('a')'
       link.href = url'
       link.download = `${resume.basic_info.title || 'Resume'}.pdf``
       document.body.appendChild(link);
@@ -110,14 +110,14 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
 
         <DropdownMenuSeparator />;"
         <DropdownMenuLabel className="text-xs font-normal text-muted-foreground>
-          Font;
+          Font;"
         </DropdownMenuLabel>"
         <DropdownMenuRadioGroup;"
           value={fontFamily};
           onValueChange={(value) => setFontFamily(value as FontFamily)}"
         >;"
           <DropdownMenuRadioItem value=default>Default</DropdownMenuRadioItem>"
-          <DropdownMenuRadioItem value="montserrat>
+          <DropdownMenuRadioItem value="montserrat>"
             Montserrat;"
           </DropdownMenuRadioItem>"
           <DropdownMenuRadioItem value=open-sans>"

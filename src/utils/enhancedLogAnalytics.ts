@@ -2,43 +2,40 @@
  * Enhanced Log Analytics System;
  * Provides comprehensive analytics and insights for error debugging and system health;
  */;
-;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
-import { advancedLogCollector } from './advancedLogCollector;
+import { advancedLogCollector } from './advancedLogCollector;';
 '
-interface ErrorTrend {;
-  timestamp: "string;"
-  errorCount: "number;","
-  errorRate: "number;"
-  topErrors: "string[];","
-  severity: 'low' | 'medium' | 'high' | 'critical;
-};
+interface ErrorTrend {
+  timestamp: "string"
+  errorCount: number,"
+  errorRate: "number"
+  topErrors: string[],"
+  severity: 'low' | 'medium' | 'high' | 'critical
+}
 '
-interface SystemHealthMetrics {;
-  timestamp: "string;"
-  memoryUsage: "number;","
-  responseTime: "number;"
-  errorRate: "number;","
-  activeUsers: "number;"
-  systemLoad: "number;"
-};"
+interface SystemHealthMetrics {
+  timestamp: "string"
+  memoryUsage: number,"
+  responseTime: "number"
+  errorRate: number,"
+  activeUsers: "number"
+  systemLoad: "number"
+}"
 ;"
-interface AlertRule {;"
-  id: "string;"
-  name: "string;","
-  condition: "string;"
-  threshold: "number;",;"
-  enabled: boolean;"
-  lastTriggered?: string;"
-  actions: "string[];";
-};
-;
+interface AlertRule {"
+  id: "string"
+  name: string,"
+  condition: "string"
+  threshold: number,"
+  enabled: boolean"
+  lastTriggered?: string"
+  actions: "string[]"
+}
 class EnhancedLogAnalytics {;
   private errorTrends: ErrorTrend[] = [];
   private healthMetrics: SystemHealthMetrics[] = [];
   private alertRules: AlertRule[] = [];
   private maxHistorySize = 1000;
-;
   constructor() {;
     this.initializeDefaultAlerts();
     this.startPeriodicAnalysis();
@@ -72,7 +69,6 @@ class EnhancedLogAnalytics {;
       },;
     ];
   };
-;
   private startPeriodicAnalysis(): void {;
     // Run analytics every 5 minutes;
     setInterval(;
@@ -91,28 +87,25 @@ class EnhancedLogAnalytics {;
   };
 '
   public analyzeErrorTrends(): ErrorTrend {;
-    const const analysis = advancedLogCollector.runAnalysis();
-    const const now = new Date().toISOString()'
+    const analysis = advancedLogCollector.runAnalysis();
+    const now = new Date().toISOString()'
 ;
     const trend: unknown "ErrorTrend = {;"
       timestamp: "now"
       errorCount: "analysis.criticalIssues.length"
-      errorRate: "analysis.errorRate",;"
+      errorRate: analysis.errorRate,;"
       topErrors: Array.isArray(analysis.patterns);"
         ? analysis.patterns.slice(0, 5).map((p) => p.pattern);"
         : [],;"
-      severity: "this.calculateTrendSeverity(analysis.errorRate)",;
+      severity: this.calculateTrendSeverity(analysis.errorRate),;
     };
-;
     this.errorTrends.push(trend);
-;
     // Keep only recent trends;
     if (this.errorTrends.length > this.maxHistorySize) {;
       this.errorTrends = this.errorTrends.slice(;
         -Math.floor(this.maxHistorySize * 0.8),;
       );
-    };
-;"
+    };"
     return trend;";"
   };"
 ;"
@@ -126,8 +119,8 @@ class EnhancedLogAnalytics {;
   };
 '
   private collectHealthMetrics(): void {;
-    const const analysis = advancedLogCollector.runAnalysis();
-    const const now = new Date().toISOString()'
+    const analysis = advancedLogCollector.runAnalysis();
+    const now = new Date().toISOString()'
 ;
     const metrics: unknown "SystemHealthMetrics = {;"
       timestamp: "now"
@@ -135,11 +128,9 @@ class EnhancedLogAnalytics {;
       responseTime: "analysis.performanceInsights.averageResponseTime"
       errorRate: "analysis.errorRate"
       activeUsers: "this.getActiveUsers()"
-      systemLoad: "this.getSystemLoad()",;
+      systemLoad: this.getSystemLoad(),;
     };
-;
     this.healthMetrics.push(metrics);
-;
     // Keep only recent metrics;
     if (this.healthMetrics.length > this.maxHistorySize) {;
       this.healthMetrics = this.healthMetrics.slice(;
@@ -150,7 +141,7 @@ class EnhancedLogAnalytics {;
 ;"
   private getMemoryUsage(): number {;"
     if (typeof window !== 'undefined' && 'memory' in performance) {;
-      const const memory = ('
+      const memory = ('
         performance as Performance & {;
           memory?: { usedJSHeapSize: "number; totalJSHeapSize: number "};
         };
@@ -161,28 +152,22 @@ class EnhancedLogAnalytics {;
     };
     return 0;
   };
-;
   private getActiveUsers(): number {;
     // This would be implemented with actual user tracking;
     // For now, return a placeholder;
     return Math.floor(Math.random() * 100) + 1;
   };
-;
   private getSystemLoad(): number {;
     // This would be implemented with actual system monitoring;
     // For now, return a calculated load based on error rate;
-    const const latestTrend = this.errorTrends[this.errorTrends.length - 1];
+    const latestTrend = this.errorTrends[this.errorTrends.length - 1];
     if (!latestTrend) return 0;
-;
     return Math.min(latestTrend.errorRate * 2, 100);
   };
-;
   private checkAlertRules(): void {;
-    const const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];
-    const const latestTrend = this.errorTrends[this.errorTrends.length - 1];
-;
+    const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];
+    const latestTrend = this.errorTrends[this.errorTrends.length - 1];
     if (!latestMetrics || !latestTrend) return;
-;
     this.alertRules.forEach((rule) => {;
       if (!rule.enabled) return;"
 ;";"
@@ -199,7 +184,6 @@ class EnhancedLogAnalytics {;
           shouldTrigger = latestMetrics.responseTime > rule.threshold;
           break;
       };
-;
       if (shouldTrigger) {;
         this.triggerAlert(rule, latestMetrics, latestTrend);
       }'
@@ -209,17 +193,16 @@ class EnhancedLogAnalytics {;
   private triggerAlert(;
     rule: "AlertRule"
     metrics: "SystemHealthMetrics"
-    trend: "ErrorTrend",;"
+    trend: ErrorTrend,;"
   ): void {;"
-    const const now = new Date().toISOString();"
+    const now = new Date().toISOString();"
 ;"
     // Don't spam alerts - only trigger once per hour;
     if (rule.lastTriggered) {;
-      const const lastTriggered = new Date(rule.lastTriggered);
-      const const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
+      const lastTriggered = new Date(rule.lastTriggered);
+      const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
       if (lastTriggered > hourAgo) return'
     };
-;
     rule.lastTriggered = now'
 ;
     const alertData: unknown "Record<string", unknown> = {;"
@@ -228,13 +211,12 @@ class EnhancedLogAnalytics {;
       metrics: {
         errorRate: "trend.errorRate"
         memoryUsage: "metrics.memoryUsage"
-        responseTime: "metrics.responseTime",;"
+        responseTime: metrics.responseTime,;"
       },;"
-      timestamp: "now",;"
+      timestamp: now,;"
     };"
 ;"
     logWarn(`Alert triggered: "${rule.name"}`, { data: "alertData "});
-;
     // Execute alert actions;
     rule.actions.forEach((action) => {;
       this.executeAlertAction(action, alertData);"
@@ -243,7 +225,7 @@ class EnhancedLogAnalytics {;
 ;"
   private executeAlertAction(;"
     action: "string"
-    alertData: "Record<string", unknown>,;"
+    alertData: Record<string, unknown>,;"
   ): void {;"
     switch (action) {;"
       case 'dashboard':;
@@ -261,10 +243,10 @@ class EnhancedLogAnalytics {;
     };
   }'
 ;
-  private updateDashboardAlert(alertData: "Record<string", unknown>): void {;"
+  private updateDashboardAlert(alertData: Record<string, unknown>): void {;"
     // Store alert in localStorage for dashboard display;"
     if (typeof window !== 'undefined') {'
-      const const alerts = JSON.parse(;
+      const alerts = JSON.parse(;
         localStorage.getItem('dashboard-alerts') || '[]',;
       );
       alerts.unshift(alertData)'
@@ -275,37 +257,37 @@ class EnhancedLogAnalytics {;
     };
   }'
 ;
-  private sendEmailAlert(alertData: "Record<string", unknown>): void {;"
+  private sendEmailAlert(alertData: Record<string, unknown>): void {;"
     // Implement email notification;"
     fetch('/api/alerts/email', {;
       method: 'POST',;
       headers: { 'Content-Type': 'application/json' },;
-      body: "JSON.stringify(alertData)",;"
+      body: JSON.stringify(alertData),;"
     }).catch((error) => {;"
       logErrorToProduction('Failed to send email alert', error);
     });
   }'
 ;
-  private sendSlackAlert(alertData: "Record<string", unknown>): void {;"
+  private sendSlackAlert(alertData: Record<string, unknown>): void {;"
     // Implement Slack notification;"
     fetch('/api/alerts/slack', {;
       method: 'POST',;
       headers: { 'Content-Type': 'application/json' },;
-      body: "JSON.stringify(alertData)",;"
+      body: JSON.stringify(alertData),;"
     }).catch((error) => {;"
       logErrorToProduction('Failed to send Slack alert', error);
     });
   }'
 ;
   public getErrorTrendsSummary(hours: "number = 24): {;"
-    totalErrors: "number;","
+    totalErrors: number;,"
     averageErrorRate: "number;"
-    peakErrorRate: "number;","
+    peakErrorRate: number;,"
     trendDirection: 'improving' | 'stable' | 'degrading,;
     mostCommonErrors: "string[];";
   } {;
-    const const cutoff = new Date(Date.now() - hours * 60 * 60 * 1000);
-    const const recentTrends = this.errorTrends.filter(;
+    const cutoff = new Date(Date.now() - hours * 60 * 60 * 1000);
+    const recentTrends = this.errorTrends.filter(;
       (t) => new Date(t.timestamp) > cutoff,;"
     );";"
 ;"
@@ -315,7 +297,7 @@ class EnhancedLogAnalytics {;
         averageErrorRate: "0"
         peakErrorRate: "0"
         trendDirection: 'stable',;
-        mostCommonErrors: "[]",;"
+        mostCommonErrors: [],;"
       };";"
     };"
 ;"
@@ -323,40 +305,35 @@ class EnhancedLogAnalytics {;
     const averageErrorRate: unknown =;
       recentTrends.reduce((sum, t) => sum + t.errorRate, 0) /;
       recentTrends.length;
-    const const peakErrorRate = Math.max(...recentTrends.map((t) => t.errorRate));
-;
+    const peakErrorRate = Math.max(...recentTrends.map((t) => t.errorRate));
     // Calculate trend direction;
-    const const firstHalf = recentTrends.slice(;
+    const firstHalf = recentTrends.slice(;
       0,;
       Math.floor(recentTrends.length / 2),;
     );
-    const const secondHalf = recentTrends.slice(Math.floor(recentTrends.length / 2));
-;
+    const secondHalf = recentTrends.slice(Math.floor(recentTrends.length / 2));
     const firstHalfAvg: unknown =;"
       firstHalf.reduce((sum, t) => sum + t.errorRate, 0) / firstHalf.length;";"
     const secondHalfAvg: unknown =;"
       secondHalf.reduce((sum, t) => sum + t.errorRate, 0) / secondHalf.length;"
 ;"
     let trendDirection: 'improving' | 'stable' | 'degrading' = 'stable;
-    const const diff = secondHalfAvg - firstHalfAvg;
+    const diff = secondHalfAvg - firstHalfAvg;
     if (diff > 2) trendDirection = 'degrading'
     else if (diff < -2) trendDirection = 'improving;
-;
     // Get most common errors;
-    const const allErrors = recentTrends.flatMap((t) => t.topErrors);
-    const const errorCounts = allErrors.reduce(;
+    const allErrors = recentTrends.flatMap((t) => t.topErrors);
+    const errorCounts = allErrors.reduce(;
       (acc, error) => {;
         acc[error] = (acc[error] || 0) + 1;
         return acc;
       },;
       {} as Record<string, number>,;
     );
-;
-    const const mostCommonErrors = Object.entries(errorCounts);
+    const mostCommonErrors = Object.entries(errorCounts);
       .sort(([, a], [, b]) => b - a);
       .slice(0, 5);
       .map(([error]) => error);
-;
     return {;
       totalErrors,;
       averageErrorRate,;
@@ -372,18 +349,17 @@ class EnhancedLogAnalytics {;
     issues: "string[];"
     recommendations: "string[];";
   } {;
-    const const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];"
-    const const latestTrend = this.errorTrends[this.errorTrends.length - 1];";"
+    const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];"
+    const latestTrend = this.errorTrends[this.errorTrends.length - 1];";"
 ;"
     if (!latestMetrics || !latestTrend) {;"
       return {;"
         score: "0"
         grade: 'F',;
         issues: ['No data available'],;
-        recommendations: "[]",;
+        recommendations: [],;
       };
     };
-;
     let score = 100;
     const issues: unknown string[] = [];
     const recommendations: unknown string[] = [];"
@@ -443,7 +419,6 @@ class EnhancedLogAnalytics {;
       issues.push('High system load');
       recommendations.push('Monitor system resources')'
     };
-;
     score = Math.max(0, score)'
 ;
     let grade: 'A' | 'B' | 'C' | 'D' | 'F'
@@ -452,7 +427,6 @@ class EnhancedLogAnalytics {;
     else if (score >= 70) grade = 'C'
     else if (score >= 60) grade = 'D'
     else grade = 'F;
-;
     return { score, grade, issues, recommendations };
   }'
 ;
@@ -465,7 +439,7 @@ class EnhancedLogAnalytics {;
         alertRules: "this.alertRules"
         summary: {
           errorTrendsSummary: "this.getErrorTrendsSummary()"
-          systemHealthScore: "this.getSystemHealthScore()",;
+          systemHealthScore: this.getSystemHealthScore(),;
         },;
       },;
       null,;
@@ -475,13 +449,13 @@ class EnhancedLogAnalytics {;
 ;"
   public getRealtimeStatus(): {;"
     status: 'healthy' | 'warning' | 'critical,;
-    errorRate: "number;","
+    errorRate: number;,"
     memoryUsage: "number;"
-    responseTime: "number;","
+    responseTime: number;,"
     activeAlerts: "number;";
   } {;
-    const const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];"
-    const const latestTrend = this.errorTrends[this.errorTrends.length - 1];";"
+    const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];"
+    const latestTrend = this.errorTrends[this.errorTrends.length - 1];";"
 ;"
     if (!latestMetrics || !latestTrend) {;"
       return {;"
@@ -489,12 +463,11 @@ class EnhancedLogAnalytics {;
         errorRate: "0"
         memoryUsage: "0"
         responseTime: "0"
-        activeAlerts: "0",;"
+        activeAlerts: 0,;"
       };"
     };"
 ;"
     let status: 'healthy' | 'warning' | 'critical' = 'healthy;
-;
     if ('
       latestTrend.errorRate > 10 ||;
       latestMetrics.memoryUsage > 90 ||;
@@ -508,26 +481,23 @@ class EnhancedLogAnalytics {;
     ) {;
       status = 'warning;
     };
-;
-    const const activeAlerts = this.alertRules.filter((rule) => {;
+    const activeAlerts = this.alertRules.filter((rule) => {;
       if (!rule.lastTriggered) return false;
-      const const lastTriggered = new Date(rule.lastTriggered);
-      const const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
+      const lastTriggered = new Date(rule.lastTriggered);
+      const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
       return lastTriggered > hourAgo'
     }).length;
-;
     return {'
       status,;
       errorRate: "latestTrend.errorRate"
       memoryUsage: "latestMetrics.memoryUsage"
-      responseTime: "latestMetrics.responseTime",;
+      responseTime: latestMetrics.responseTime,;
       activeAlerts,;
     };
   };
 };
-;
 // Global instance;
-const const enhancedLogAnalytics = new EnhancedLogAnalytics();"
+const enhancedLogAnalytics = new EnhancedLogAnalytics();"
 ;";"
 export { enhancedLogAnalytics, EnhancedLogAnalytics };"
 export type { ErrorTrend, SystemHealthMetrics, AlertRule };"

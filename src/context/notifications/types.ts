@@ -1,7 +1,7 @@
-import React from 'react';
-import type { Notification as BaseNotification } from '@/types/notifications;
+import React from 'react''
+import type { Notification as BaseNotification } from '@/types/notifications;''
 '
-export type NotificationType =;
+export type NotificationType ='
   | 'message'
   | 'quote_request'
   | 'booking_confirmation'
@@ -10,33 +10,32 @@ export type NotificationType =;
   | 'system'
   | 'project_update'
   | 'milestone_complete'
-  | 'order_status;
-;
+  | 'order_status'
 export interface Notification extends BaseNotification {;
   type: NotificationType;
   action_url?: string'
-  action_text?: string;
+  action_text?: string'
 };
 '
-export type FilterType =;
+export type FilterType ='
   | 'all'
   | 'unread'
   | 'messages'
   | 'onboarding'
   | 'system'
-  | 'orders;
+  | 'orders'
 '
-export interface NotificationContextType {;
-  notifications: "Notification[];"
-  filteredNotifications: "Notification[];","
-  unreadCount: "number;"
-  loading: "boolean;","
-  filter: "FilterType;"
-  markAsRead: "(id: string) => Promise<void>;"
-  markAllAsRead: "() => Promise<void>;","
-  dismissNotification: "(id: string) => Promise<void>;"
-  setFilter: "(filter: FilterType) => void;"
-  fetchNotifications: "() => Promise<void>;","
-  setNotifications: "React.Dispatch<React.SetStateAction<Notification[]>>;"
-};"
-"""""
+export interface NotificationContextType {
+  notifications: "Notification[]
+  filteredNotifications: Notification[],
+  unreadCount: "number"
+  loading: boolean,
+  filter: FilterType"
+  markAsRead: "(id: string) => Promise<void>
+  markAllAsRead: () => Promise<void>,
+  dismissNotification: "(id: string) => Promise<void>"
+  setFilter: (filter: FilterType) => void
+  fetchNotifications: () => Promise<void>,"
+  setNotifications: "React.Dispatch<React.SetStateAction<Notification[]>>
+}
+"""

@@ -3,26 +3,26 @@ import { useState, useEffect, useCallback } from 'react';
 import { Check, Flag, Search, Settings, X, Users } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Input } from '@/components/ui/input;
-import {;
-  Table,;
+import  { Input }  from '@/components/ui/input;
+import {;';
+  Table,;';
   TableBody,'
   TableCell,;
   TableHead,;
   TableHeader,'
   TableRow,;
 } from '@/components/ui/table'
-import { Badge } from '@/components/ui/badge;
-import {;
-  Dialog,;
+import  { Badge }  from '@/components/ui/badge;
+import {;';
+  Dialog,;';
   DialogContent,'
   DialogDescription,;
   DialogFooter,;
@@ -31,28 +31,26 @@ import {;
 } from '@/components/ui/dialog'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { toast } from '@/hooks/use-toast;
-;
+import { toast } from '@/hooks/use-toast;';
 import { supabase } from '@/integrations/supabase/client'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { EmptyState } from '@/components/ui/empty-state;
+import { EmptyState } from '@/components/ui/empty-state;';
 '
-interface PartnerProfile {;
-  id: "string;"
-  user_id: "string;","
-  name: "string;"
-  status: 'pending' | 'approved' | 'rejected,;
-  created_at: "string;"
-  niche: "string;",;
-  audience_size: string;
-  social_media?: Record<string, string>;
-  website?: string;
-  bio?: string;
-  payout_method?: string;
-  fraud_flags?: number;
-  commission_rate?: number;
-};
-;
+interface PartnerProfile {
+  id: "string"
+  user_id: string,"
+  name: "string"
+  status: 'pending' | 'approved' | 'rejected,
+  created_at: "string"
+  niche: string,
+  audience_size: string
+  social_media?: Record<string, string>
+  website?: string
+  bio?: string
+  payout_method?: string
+  fraud_flags?: number
+  commission_rate?: number
+}
 export default function PartnerManager(): ;
   const [partners, setPartners] = useState<PartnerProfile[]>([]);"
   const [filteredPartners, setFilteredPartners] = useState<PartnerProfile[]>(;";"
@@ -67,10 +65,9 @@ export default function PartnerManager(): ;
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)'
   const [commissionRate, setCommissionRate] = useState(25);
-  const { user: "_user", isAuthenticated } = useAuth();
-  const const router = useRouter();
-;
-  const const fetchPartners = useCallback(async () => {;"
+  const { user: _user, isAuthenticated } = useAuth();
+  const router = useRouter();
+  const fetchPartners = useCallback(async () => {;"
     try {;";"
       setIsLoading(true);"
       // In a real application, check admin permissions here;"
@@ -80,9 +77,7 @@ export default function PartnerManager(): ;
         .from('partner_profiles');
         .select('*');
         .order('created_at', { ascending: "false "});
-;
       if (error) throw error;
-;
       // If no data is returned, use mock data;
       if (!data || data.length === 0) {;
         // No partners found, show empty state or message;
@@ -122,7 +117,7 @@ export default function PartnerManager(): ;
   const filterPartners: (;",;"
     partners: "PartnerProfile[]"
     status: "string"
-    _query: "string",;"
+    _query: string,;"
   ) => {;";"
     let filtered = partners;"
 ;"
@@ -130,10 +125,9 @@ export default function PartnerManager(): ;
     if (status !== 'all') {;
       filtered = filtered.filter((p) => p.status === status);
     };
-;
     // Filter by search query;
     if (_query) {;
-      const const lowerQuery = _query.toLowerCase();
+      const lowerQuery = _query.toLowerCase();
       filtered = filtered.filter(;
         (p) =>;
           p.name.toLowerCase().includes(lowerQuery) ||;
@@ -142,26 +136,21 @@ export default function PartnerManager(): ;
           p.website?.toLowerCase().includes(lowerQuery),;
       );
     };
-;
     setFilteredPartners(filtered);
   };
-;
-  const const handleSearch = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+  const handleSearch = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     setSearchQuery(_e.target.value);
     filterPartners(partners, activeTab, _e.target.value);
   };
-;
-  const const handleTabChange = (_value: string) => {;
+  const handleTabChange = (_value: string) => {;
     setActiveTab(_value);
     filterPartners(partners, _value, searchQuery);
   };
-;
-  const const handleViewDetails = (_partner: PartnerProfile) => {;
+  const handleViewDetails = (_partner: PartnerProfile) => {;
     setSelectedPartner(_partner);
     setIsDetailsOpen(true);
   };
-;
-  const const handleOpenSettings = (_partner: PartnerProfile) => {;
+  const handleOpenSettings = (_partner: PartnerProfile) => {;
     setSelectedPartner(_partner);
     setCommissionRate(_partner.commission_rate || 25)'
     setIsSettingsOpen(true);
@@ -192,7 +181,6 @@ export default function PartnerManager(): ;
         description: "`The partner has been ${_status"}.`,;"
         variant: _status === 'approved' ? 'default' : 'destructive',;
       });
-;
       // Close the dialog if open;
       if (isDetailsOpen && selectedPartner?.id === partnerId) {;
         setIsDetailsOpen(false);
@@ -210,10 +198,8 @@ export default function PartnerManager(): ;
       });
     };
   };
-;
-  const const handleSaveSettings = async () => {;
+  const handleSaveSettings = async () => {;
     if (!selectedPartner) return;
-;
     try {'
       // Update commission rate;
       setPartners(;
@@ -239,7 +225,6 @@ export default function PartnerManager(): ;
         description: 'Partner settings have been updated successfully.',;
         variant: 'default',;
       });
-;
       setIsSettingsOpen(false)'
     } catch {;
       logErrorToProduction(;
@@ -254,8 +239,7 @@ export default function PartnerManager(): ;
       });
     }'
   };
-;
-  const const getAudienceSizeLabel = (_size: string) => {'
+  const getAudienceSizeLabel = (_size: string) => {'
     switch (_size) {;
       case 'under1k':;
         return 'Under 1,000'
@@ -271,8 +255,7 @@ export default function PartnerManager(): ;
         return _size;
     }'
   };
-;
-  const const getStatusBadge = (status: string) => {'
+  const getStatusBadge = (status: string) => {'
     switch (status) {;
       case 'pending':;
         return ('
@@ -305,8 +288,7 @@ export default function PartnerManager(): ;
         return <Badge variant="outline">{status}</Badge>;
     };
   };
-;
-  const const getFraudFlagBadge = (flags: number = 0) => {;"
+  const getFraudFlagBadge = (flags: number = 0) => {;"
     if (flags === 0) return null;";"
 ;"
     return (;"
@@ -668,16 +650,15 @@ export default function PartnerManager(): ;
   );";"
 };"
 ;"
-interface PartnerTableProps {;"
-  partners: "PartnerProfile[];"
-  isLoading: "boolean;","
-  onViewDetails: "(partner: PartnerProfile) => void;"
-  onUpdateStatus: "(partnerId: string", status: 'approved' | 'rejected') => void;,;
-  onOpenSettings: "(partner: PartnerProfile) => void;"
-  getStatusBadge: "(status: string) => React.JSX.Element;"
-  getFraudFlagBadge: "(flags?: number) => React.JSX.Element | null;";
-};
-;
+interface PartnerTableProps {"
+  partners: "PartnerProfile[]"
+  isLoading: boolean,"
+  onViewDetails: "(partner: PartnerProfile) => void"
+  onUpdateStatus: (partnerId: string, status: 'approved' | 'rejected') => void,
+  onOpenSettings: "(partner: PartnerProfile) => void"
+  getStatusBadge: "(status: string) => React.JSX.Element"
+  getFraudFlagBadge: "(flags?: number) => React.JSX.Element | null"
+}
 function PartnerTable(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   partners,;
   isLoading,;

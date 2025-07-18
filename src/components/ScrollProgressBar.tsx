@@ -4,11 +4,11 @@ export function ScrollProgressBar(): ;
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {;
-    const const updateProgress = () => {;
-      const const scrollTop = window.scrollY;
+    const updateProgress = () => {;
+      const scrollTop = window.scrollY;
       const docHeight: unknown =;
         document.documentElement.scrollHeight - window.innerHeight;
-      const const value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0'
+      const value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0'
       setProgress(value)'
     };
 '

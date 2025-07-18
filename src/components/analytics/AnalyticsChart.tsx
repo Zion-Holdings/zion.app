@@ -29,22 +29,22 @@ import { useState } from 'react'
 
 // Define proper chart data interface'
 interface ChartDataPoint {'
-  name: "string,;"
-  value: number;";"
-  fill?: string;";"
+  name: "string,"
+  value: number""
+  fill?: string""
   [key: string]: string | number | undefined""
-};
+}
 
-interface AnalyticsChartProps {;"
-  title: string;";
-  description?: string";";
+interface AnalyticsChartProps {"
+  title: string"
+  description?: string""
   data: ChartDataPoint[]"
   type?: 'line' | 'bar'
-  dataKeys: string[];
-  timeRange?: string;
-  onTimeRangeChange?: (range: string) => void;
-  height?: number;
-};
+  dataKeys: string[]
+  timeRange?: string
+  onTimeRangeChange?: (range: string) => void
+  height?: number
+}
 '
 export default function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   title,;
@@ -58,7 +58,7 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
 }: AnalyticsChartProps) {'
   const [chartType, setChartType] = useState<'line' | 'bar'>(type)'
 '
-  const const colors = ['
+  const colors = ['
     '#8884d8','
     '#82ca9d','
     '#ffc658','
@@ -78,7 +78,7 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
           <div>";""
             <CardTitle className=text-white text-lg>{title}</CardTitle>";";
             {description && ("
-              <CardDescription className="text-zion-slate-light>
+              <CardDescription className="text-zion-slate-light>"
                 {description};""
               </CardDescription>;"
             )}";"
@@ -94,7 +94,7 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
                   <SelectItem value="7d">7 Days</SelectItem>;"
                   <SelectItem value=30d">30 Days</SelectItem>""
                   <SelectItem value=90d>3 Months</SelectItem>"
-                  <SelectItem value="365d>1 Year</SelectItem>
+                  <SelectItem value="365d>1 Year</SelectItem>"
                 </SelectContent>"
               </Select>;"
             )};";"
@@ -119,7 +119,7 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
             {chartType === 'line' ? ('
               <LineChart'
                 data={data}'
-                margin={{ top: 5, right: "30", left: 20, bottom: "25 "}};"
+                margin={{ top: 5, right: 30, left: 20, bottom: "25 "}};"
               >;";"
                 <CartesianGrid strokeDasharray=3 3" stroke="#354151 />;"";
                 <XAxis;"";
@@ -151,7 +151,7 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
             ) : (;"
               <BarChart";"
                 data={data}";""
-                margin={{ top: 5, right: "30", left: 20, bottom: "25 "}};"
+                margin={{ top: 5, right: 30, left: 20, bottom: "25 "}};"
               >;";"
                 <CartesianGrid strokeDasharray=3 3" stroke="#354151 />;"";
                 <XAxis;"";

@@ -4,12 +4,12 @@ import { useRouter } from 'next/router'
 '
 interface NotificationFooterProps {'
   onClose: "() => void
-};
+}
 
 "
-  const const router = useRouter(); // Changed from useNavigate to useRouter;"
+  const router = useRouter(); // Changed from useNavigate to useRouter;"
 
-  const const handleViewAll = () => {"
+  const handleViewAll = () => {"
     props.onClose();"
     router.push('/notifications'); // Changed to router.push'
   };

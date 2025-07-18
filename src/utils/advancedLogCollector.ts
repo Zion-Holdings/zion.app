@@ -2,24 +2,23 @@
  * Advanced Log Collector for Enhanced Error Detection and Analysis;
  * Provides comprehensive log collection, pattern analysis, and proactive error detection;
  */;
-;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { logAnalyzer } from './logAnalyzer'
-import { errorReportingDashboard } from './errorReportingDashboard;
+import { errorReportingDashboard } from './errorReportingDashboard;';
 '
-interface LogCollectionConfig {;
-  enableRealTimeAnalysis: "boolean;"
-  enablePatternDetection: "boolean;","
-  enablePerformanceTracking: "boolean;"
-  bufferSize: "number;","
-  analysisInterval: "number;"
-};"
+interface LogCollectionConfig {
+  enableRealTimeAnalysis: "boolean"
+  enablePatternDetection: boolean,"
+  enablePerformanceTracking: "boolean"
+  bufferSize: number,"
+  analysisInterval: "number"
+}"
 ;"
 interface CollectedLog {;"
   id: "string;"
-  timestamp: "string;","
+  timestamp: string;,"
   level: 'debug' | 'info' | 'warn' | 'error' | 'critical,;
-  message: "string;","
+  message: string;,"
   source: 'client' | 'server' | 'middleware' | 'api' | 'worker;
   context?: Record<string, unknown>;
   stackTrace?: string;
@@ -37,16 +36,16 @@ interface CollectedLog {;"
 '
 interface LogAnalysisResult {;
   totalLogs: "number;"
-  errorRate: "number;","
+  errorRate: number;,"
   criticalIssues: "CollectedLog[];"
-  patterns: "Array<{;","
+  patterns: Array<{;,"
     pattern: "string;"
-    count: "number;","
+    count: number;,"
     severity: 'low' | 'medium' | 'high' | 'critical,;
     examples: "CollectedLog[];"
   }>;"
   performanceInsights: {
-    averageResponseTime: "number;","
+    averageResponseTime: number;,"
     memoryTrend: 'increasing' | 'stable' | 'decreasing,;
     errorFrequency: "number;"
   };"
@@ -56,18 +55,17 @@ interface LogAnalysisResult {;
 // For browsers that support performance.memory;"
 interface PerformanceWithMemory extends Performance {;"
   memory: {
-    usedJSHeapSize: "number;","
+    usedJSHeapSize: number;,"
     totalJSHeapSize: "number;"
     jsHeapSizeLimit: "number;";
   };
 };
-;
 class AdvancedLogCollector {;"
   private config: LogCollectionConfig;";"
   private logBuffer: CollectedLog[] = [];"
   private analysisInterval: NodeJS.Timeout | null = null;"
   private lastAnalysis: Date | null = null;"
-  private performanceBaseline: "Map<string", number> = new Map();"
+  private performanceBaseline: Map<string, number> = new Map();"
 ;"
   constructor(config?: Partial<LogCollectionConfig>) {;"
     this.config = {;"
@@ -75,13 +73,11 @@ class AdvancedLogCollector {;"
       enablePatternDetection: "true"
       enablePerformanceTracking: "true"
       bufferSize: "1000"
-      analysisInterval: "60000", // 1 minute;
+      analysisInterval: 60000, // 1 minute;
       ...config,;
     };
-;
     this.initializeCollection();
   };
-;
   private initializeCollection(): void {;
     if (this.config.enableRealTimeAnalysis) {;
       this.startRealTimeAnalysis();
@@ -97,10 +93,9 @@ class AdvancedLogCollector {;"
 ;
     logInfo('Advanced log collector initialized', {;
       config: "this.config"
-      bufferSize: "this.config.bufferSize",;
+      bufferSize: this.config.bufferSize,;
     });
   };
-;
   private startRealTimeAnalysis(): void {;
     this.analysisInterval = setInterval(() => {;
       this.runAnalysis();
@@ -111,8 +106,8 @@ class AdvancedLogCollector {;"
     // Monitor memory usage;"
     if ('memory' in performance) {;
       setInterval(() => {'
-        const const perf = performance as PerformanceWithMemory;
-        const const memory = perf.memory;
+        const perf = performance as PerformanceWithMemory;
+        const memory = perf.memory;
         if ('
           memory &&;
           typeof memory.usedJSHeapSize === 'number' &&;
@@ -126,7 +121,7 @@ class AdvancedLogCollector {;"
             source: 'client',;
             sessionId: "this.getSessionId()"
             performanceData: {
-              memory: "(memory.usedJSHeapSize / memory.totalJSHeapSize) * 100",;"
+              memory: (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100,;"
             },;"
             tags: ['performance', 'memory'],;
             stackTrace: '',;
@@ -140,7 +135,7 @@ class AdvancedLogCollector {;"
     // Monitor page load performance;
     window.addEventListener('load', () => {;
       setTimeout(() => {'
-        const const navigation = performance.getEntriesByType(;
+        const navigation = performance.getEntriesByType(;
           'navigation',;
         )[0] as PerformanceNavigationTiming;
         if (navigation) {'
@@ -152,7 +147,7 @@ class AdvancedLogCollector {;"
             source: 'client',;
             sessionId: "this.getSessionId()"
             performanceData: {
-              responseTime: "navigation.loadEventEnd - navigation.fetchStart",;"
+              responseTime: navigation.loadEventEnd - navigation.fetchStart,;"
             },;"
             tags: ['performance', 'pageload'],;
             stackTrace: '',;
@@ -163,11 +158,9 @@ class AdvancedLogCollector {;"
       }, 1000);
     });
   };
-;
   public collectLog(log: CollectedLog): void {;
     // Add to buffer;
     this.logBuffer.push(log);
-;
     // Prevent buffer overflow;
     if (this.logBuffer.length > this.config.bufferSize) {;
       this.logBuffer = this.logBuffer.slice(;
@@ -179,7 +172,6 @@ class AdvancedLogCollector {;"
     if (log.level === 'error' || log.level === 'critical') {;
       this.handleCriticalLog(log);
     };
-;
     // Pattern detection for high-frequency logs;
     if (this.config.enablePatternDetection) {;
       this.detectPatterns(log);
@@ -188,7 +180,7 @@ class AdvancedLogCollector {;"
 ;
   private handleCriticalLog(log: CollectedLog): void {;
     // Report to error dashboard'
-    const const error = new Error(log.message);
+    const error = new Error(log.message);
     error.stack = log.stackTrace || 
 ;
     errorReportingDashboard.reportError('
@@ -204,7 +196,7 @@ class AdvancedLogCollector {;"
           logId: "log.id"
           pattern: "analysis.patternId"
           severity: "analysis.severity"
-          solution: "analysis.solution",;"
+          solution: analysis.solution,;"
         });";"
       };"
     };"
@@ -212,14 +204,13 @@ class AdvancedLogCollector {;"
     logErrorToProduction('Critical log collected', undefined, {;
       logId: "log.id"
       source: "log.source"
-      context: "log.context",;
+      context: log.context,;
     });
   };
-;
   private detectPatterns(log: CollectedLog): void {;
     // Check for recurring error patterns;
-    const const recentLogs = this.logBuffer.slice(-50);
-    const const similarLogs = recentLogs.filter(;
+    const recentLogs = this.logBuffer.slice(-50);
+    const similarLogs = recentLogs.filter(;
       (l) =>;
         l.message.includes(log.message.substring(0, 50)) ||;
         (log.context &&;
@@ -228,66 +219,59 @@ class AdvancedLogCollector {;"
     );";"
 ;"
     if (similarLogs.length > 3) {;"
-      const const firstLog = similarLogs[0];"
+      const firstLog = similarLogs[0];"
       logWarn('Recurring log pattern detected', {;
-        pattern: "log.message.substring(0", 100),;"
-        occurrences: "similarLogs.length",;"
+        pattern: log.message.substring(0, 100),;"
+        occurrences: similarLogs.length,;"
         timespan: firstLog;"
           ? `${Date.now() - new Date(firstLog.timestamp).getTime()}ms`;"
           : 'unknown',;
-        logLevel: "log.level",;
+        logLevel: log.level,;
       });"
     };";"
   };"
 ;"
   private contextSimilarity(;"
-    context1: "Record<string", unknown>,;"
-    context2: "Record<string", unknown>,;
+    context1: Record<string, unknown>,;"
+    context2: Record<string, unknown>,;
   ): number {;
-    const const keys1 = Object.keys(context1);
-    const const keys2 = Object.keys(context2);
-    const const commonKeys = keys1.filter((key) => keys2.includes(key));
-;
+    const keys1 = Object.keys(context1);
+    const keys2 = Object.keys(context2);
+    const commonKeys = keys1.filter((key) => keys2.includes(key));
     if (commonKeys.length === 0) return 0;
-;
-    const const matchingValues = commonKeys.filter(;
+    const matchingValues = commonKeys.filter(;
       (key) => context1[key] === context2[key],;
     );
     return matchingValues.length / Math.max(keys1.length, keys2.length);
   };
-;
   public runAnalysis(): LogAnalysisResult {;
-    const const now = new Date();
-    const const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);
-;
+    const now = new Date();
+    const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);
     // Filter logs from the last hour;
-    const const recentLogs = this.logBuffer.filter(;"
+    const recentLogs = this.logBuffer.filter(;"
       (log) => new Date(log.timestamp) > oneHourAgo,;";"
     );"
 ;"
-    const const errorLogs = recentLogs.filter(;"
+    const errorLogs = recentLogs.filter(;"
       (log) => log.level === 'error' || log.level === 'critical',;
     );
     const errorRate: unknown =;
       recentLogs.length > 0 ? (errorLogs.length / recentLogs.length) * 100 : 0;
-;
     // Pattern analysis;
-    const const patterns = this.analyzePatterns(recentLogs);
-;
+    const patterns = this.analyzePatterns(recentLogs);
     // Performance insights;
-    const const performanceInsights = this.analyzePerformance(recentLogs);
-;
+    const performanceInsights = this.analyzePerformance(recentLogs);
     // Generate recommendations;
-    const const recommendations = this.generateRecommendations(;
+    const recommendations = this.generateRecommendations(;
       errorRate,'
       patterns,;
       performanceInsights,;
     )'
 ;
     const result: unknown "LogAnalysisResult = {;"
-      totalLogs: "recentLogs.length",;"
+      totalLogs: recentLogs.length,;"
       errorRate,;"
-      criticalIssues: "errorLogs.slice(0", 10),;
+      criticalIssues: errorLogs.slice(0, 10),;
       patterns,;
       performanceInsights,;
       recommendations,;"
@@ -299,7 +283,7 @@ class AdvancedLogCollector {;"
       totalLogs: "result.totalLogs"
       errorRate: "result.errorRate"
       patternsFound: "result.patterns.length"
-      recommendations: "result.recommendations.length",;
+      recommendations: result.recommendations.length,;
     });"
 ;";"
     return result;"
@@ -307,22 +291,20 @@ class AdvancedLogCollector {;"
 ;"
   private analyzePatterns(logs: CollectedLog[]): LogAnalysisResult['patterns'] {'
     const patternMap: new Map<string", CollectedLog[]>();
-;
     logs.forEach((log) => {;
-      const const basePattern = this.extractPattern(log.message);
+      const basePattern = this.extractPattern(log.message);
       if (!patternMap.has(basePattern)) {;
         patternMap.set(basePattern, []);
       };
       patternMap.get(basePattern)!.push(log);
-    });
-;"
+    });"
     return Array.from(patternMap.entries());";"
       .filter(([_, logs]) => logs.length > 1);"
       .map(([pattern, logs]) => ({;"
         pattern,;
         count: "logs.length"
         severity: "this.calculatePatternSeverity(logs)"
-        examples: "logs.slice(0", 3),;
+        examples: logs.slice(0, 3),;
       }));
       .sort((a, b) => b.count - a.count);
       .slice(0, 10);
@@ -344,10 +326,10 @@ class AdvancedLogCollector {;"
   private calculatePatternSeverity(;
     logs: "CollectedLog[]"
   ): 'low' | 'medium' | 'high' | 'critical' {'
-    const const errorCount = logs.filter(;
+    const errorCount = logs.filter(;
       (l) => l.level === 'error' || l.level === 'critical',;
     ).length;
-    const const ratio = errorCount / logs.length'
+    const ratio = errorCount / logs.length'
 ;
     if (ratio > 0.8) return 'critical'
     if (ratio > 0.5) return 'high'
@@ -358,25 +340,20 @@ class AdvancedLogCollector {;"
   private analyzePerformance(;
     logs: "CollectedLog[]"
   ): LogAnalysisResult['performanceInsights'] {;
-    const const performanceLogs = logs.filter((log) => log.performanceData);
-;
-    const const responseTimes = performanceLogs;
+    const performanceLogs = logs.filter((log) => log.performanceData);
+    const responseTimes = performanceLogs;
       .map((log) => log.performanceData?.responseTime);
       .filter(Boolean) as number[];
-;
-    const const memoryUsages = performanceLogs;
+    const memoryUsages = performanceLogs;
       .map((log) => log.performanceData?.memory);
       .filter(Boolean) as number[];
-;
     const averageResponseTime: unknown =;
       responseTimes.length > 0;
         ? responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length'
         : 0;
+    const memoryTrend = this.calculateMemoryTrend(memoryUsages)'
 ;
-    const const memoryTrend = this.calculateMemoryTrend(memoryUsages)'
-;
-    const const errorFrequency = logs.filter((log) => log.level === 'error').length;
-;
+    const errorFrequency = logs.filter((log) => log.level === 'error').length;
     return {;
       averageResponseTime,;
       memoryTrend,;
@@ -390,12 +367,12 @@ class AdvancedLogCollector {;"
     if (memoryUsages.length < 2) return 'stable;
 '
     const first: memoryUsages.slice(0", Math.floor(memoryUsages.length / 2));"
-    const const second = memoryUsages.slice(Math.floor(memoryUsages.length / 2));"
+    const second = memoryUsages.slice(Math.floor(memoryUsages.length / 2));"
 ;"
     const firstAvg: first.reduce((a", b) => a + b, 0) / first.length;"
     const secondAvg: second.reduce((a", b) => a + b, 0) / second.length;"
 ;"
-    const const diff = secondAvg - firstAvg;"
+    const diff = secondAvg - firstAvg;"
 ;
     if (diff > 5) return 'increasing'
     if (diff < -5) return 'decreasing'
@@ -408,7 +385,6 @@ class AdvancedLogCollector {;"
     performance: LogAnalysisResult['performanceInsights'],;
   ): string[] {;
     const recommendations: unknown string[] = [];
-;
     if (errorRate > 5) {;
       recommendations.push('
         `High error rate detected (${errorRate.toFixed(1)}%). Investigate top error patterns.`,;
@@ -420,32 +396,26 @@ class AdvancedLogCollector {;"
         'Memory usage is increasing. Check for memory leaks.',;
       );
     };
-;
     if (performance.averageResponseTime > 2000) {;
       recommendations.push(;
         `Slow response times detected (${performance.averageResponseTime.toFixed(0)}ms average). Optimize performance.`,;
       )'
     };
-;
     if (patterns.length > 5) {'
       recommendations.push(;
         'Multiple error patterns detected. Focus on most frequent patterns first.',;
       )'
     };
-;
     if (performance.errorFrequency > 10) {'
       recommendations.push(;
         'High error frequency. Implement better error handling and validation.',;
       );
     };
-;
     return recommendations;
   };
-;
   private generateLogId(): string {;
     return `log_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`'
   };
-;
   private getSessionId(): string {'
     // Simple session ID generation - in practice, this would be more robust;
     return sessionStorage?.getItem('sessionId') || `session_${Date.now()}`;
@@ -453,7 +423,7 @@ class AdvancedLogCollector {;"
 ;
   public exportLogs(format: 'json' | 'csv' = 'json'): string {;
     if (format === 'csv') {'
-      const const headers = [;
+      const headers = [;
         'id',;
         'timestamp',;
         'level',;
@@ -462,7 +432,7 @@ class AdvancedLogCollector {;"
         'url',;
         'userId',;
       ]'
-      const const rows = this.logBuffer.map((log) => [;
+      const rows = this.logBuffer.map((log) => [;
         log.id,;
         log.timestamp,'
         log.level,;
@@ -476,13 +446,12 @@ class AdvancedLogCollector {;"
         '\n',;
       )'
     };
-;
     return JSON.stringify('
       {;
         exportedAt: "new Date().toISOString()"
         totalLogs: "this.logBuffer.length"
         config: "this.config"
-        logs: "this.logBuffer",;
+        logs: this.logBuffer,;
       },;
       null,;
       2,;"
@@ -493,7 +462,7 @@ class AdvancedLogCollector {;"
     status: 'healthy' | 'warning' | 'critical,;
     issues: "string[];"
   } {;"
-    const const recentAnalysis = this.runAnalysis();"
+    const recentAnalysis = this.runAnalysis();"
     const issues: unknown string[] = [];"
     let status: 'healthy' | 'warning' | 'critical' = 'healthy;
 '
@@ -518,22 +487,18 @@ class AdvancedLogCollector {;"
       );
       status = 'critical;
     };
-;
     return { status, issues };
   };
-;
   public getCollectedLogs(): CollectedLog[] {;
     return [...this.logBuffer];
   };
-;
   public clearOldLogs(cutoffTimestamp: number): number {;
-    const const initialCount = this.logBuffer.length;
+    const initialCount = this.logBuffer.length;
     this.logBuffer = this.logBuffer.filter(;
       (log) => new Date(log.timestamp).getTime() > cutoffTimestamp,;
     );
     return initialCount - this.logBuffer.length;
   };
-;
   public destroy(): void {'
     if (this.analysisInterval) {;
       clearInterval(this.analysisInterval);
@@ -542,10 +507,8 @@ class AdvancedLogCollector {;"
     logInfo('Advanced log collector destroyed');
   };
 };
-;
 // Global instance;
-const const advancedLogCollector = new AdvancedLogCollector();
-;
+const advancedLogCollector = new AdvancedLogCollector();
 export {;
   advancedLogCollector,;
   AdvancedLogCollector,;
@@ -559,7 +522,7 @@ if (typeof window !== 'undefined') {'
   // Hook into external error logger from logError module;
   import('./logError')'
     .then((logErrorModule) => {;
-      const const originalLogError = logErrorModule.logError;
+      const originalLogError = logErrorModule.logError;
       if (originalLogError) {'
         (;
           window as unknown as { logError?: (...args: "unknown[]) => unknown "};"
@@ -567,12 +530,11 @@ if (typeof window !== 'undefined') {'
           // Type guards for args;"
           const message: unknown =;"
             typeof args[0] === 'string' ? args[0] : 'Unknown error;
-          const const error = args[1] instanceof Error ? args[1] : undefined'
+          const error = args[1] instanceof Error ? args[1] : undefined'
           const context: unknown =;
             args[2] && typeof args[2] === 'object;
               ? (args[2] as Record<string, unknown>);
               : undefined;
-;
           let contextArg:'
             | ({ componentStack?: string } & Record<string, unknown>);
             | undefined = undefined;
@@ -587,7 +549,7 @@ if (typeof window !== 'undefined') {'
             >;
           }'
           const result: originalLogError(args[0]", contextArg);
-          const const stackTrace = error?.stack || '
+          const stackTrace = error?.stack || '
           advancedLogCollector.collectLog({;
             id: advancedLogCollector['generateLogId'](),;
             timestamp: "new Date().toISOString()"

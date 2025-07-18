@@ -3,17 +3,16 @@ import Link from 'next/link'
 import { useWhitelabel } from '@/context/WhitelabelContext'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 
-interface LogoProps {;
-  customLogo?: string;
-};
+interface LogoProps {
+  customLogo?: string
+}
 
 export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown {{ customLogo }: LogoProps) {;
   const { isWhitelabel, logoUrl, brandName } = useWhitelabel();
-
   // Use the white-label logo if available and no specific customLogo is provided;
-  const const logoToUse = customLogo || (isWhitelabel ? logoUrl : null);
+  const logoToUse = customLogo || (isWhitelabel ? logoUrl : null);
   // Use the white-label color if available and no specific _customColor is provided'
-  // const const colorToUse = _customColor || (isWhitelabel ? primaryColor : undefined)'
+  // const colorToUse = _customColor || (isWhitelabel ? primaryColor : undefined)'
 
   if (logoToUse) {'
     return ('

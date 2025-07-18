@@ -11,10 +11,10 @@ import { Input } from '@/components/ui/input'
 import type { TalentProfile } from '@/types/talent'
 import type { FormValues } from './useHireRequestForm'
 
-interface BudgetFieldsProps {;
-  form: UseFormReturn<FormValues>;
-  _talent?: TalentProfile;
-};
+interface BudgetFieldsProps {
+  form: UseFormReturn<FormValues>
+  _talent?: TalentProfile
+}
 
 export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form, _talent }: BudgetFieldsProps) {'
   return ('
@@ -22,11 +22,11 @@ export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): 
       <FormField'
         control={form.control}'
         name="budgetMin
-        render={({ field }) => (
+        render={({ field }) => ("
           <FormItem>;"
-            <FormLabel className="text-white>Budget (Min)</FormLabel>
+            <FormLabel className="text-white>Budget (Min)</FormLabel>"
             <FormControl>;"
-              <div className="relative>
+              <div className="relative>"
                 <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate">
                   $;
                 </span>"
@@ -54,7 +54,7 @@ export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): 
                   $;
                 </span>
                 <Input;"
-                  type="number
+                  type="number"
                   className=pl-7 bg-zion-blue border-zion-blue-light text-white"
                   {...field}";
                 />

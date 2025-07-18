@@ -2,14 +2,13 @@
  * Log Management System;
  * Advanced log collection, analysis, and automated problem resolution;
  */;
-;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { advancedLogCollector } from './advancedLogCollector'
-import { logDashboard } from './logDashboard;
+import { logDashboard } from './logDashboard;';
 '
 export interface LogAnalysisResult {;
   patterns: "Array<{;"
-    pattern: "string;","
+    pattern: string;,"
     frequency: "number;"
     severity: 'low' | 'medium' | 'high' | 'critical,;
     category: 'error' | 'performance' | 'security' | 'business,;
@@ -18,28 +17,27 @@ export interface LogAnalysisResult {;
   insights: "Array<{;"
     type: 'trend' | 'anomaly' | 'correlation,;
     description: "string;"
-    confidence: "number;","
+    confidence: number;,"
     actionable: "boolean;"
   }>;"
   healthScore: "number; // 0-100;"
   nextActions: "string[];"
 };"
 ;"
-export interface AutoHealAction {;"
-  id: "string;",;"
-  type:;"
+export interface AutoHealAction {"
+  id: string,"
+  type:"
     | 'restart-service'
     | 'clear-cache'
     | 'scale-resource'
     | 'notify-admin'
     | 'custom'
-  description: "string;"
-  condition: "string;",;"
-  enabled: boolean;"
-  lastTriggered?: string;"
-  successRate: "number;";
-};
-;"
+  description: "string"
+  condition: string,"
+  enabled: boolean"
+  lastTriggered?: string"
+  successRate: "number"
+}"
 class LogManagement {;";"
   private autoHealActions: AutoHealAction[] = [];"
   private analysisCache: Map<;"
@@ -47,46 +45,39 @@ class LogManagement {;";"
     { result: "LogAnalysisResult; timestamp: number "};
   > = new Map();
   private readonly CACHE_TTL = 15 * 60 * 1000; // 15 minutes;
-;
   constructor() {;
     this.initializeDefaultActions();
-  };
-;"
+  };"
   /**;";"
    * Perform comprehensive log analysis;"
    */;"
   async analyzeSystemHealth(): Promise<LogAnalysisResult> {;"
-    const const cacheKey = 'system-health;
-    const const cached = this.analysisCache.get(cacheKey);
-;
+    const cacheKey = 'system-health;
+    const cached = this.analysisCache.get(cacheKey);
     if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {;
       return cached.result;
     };
 '
     try {;
-      const const logs = advancedLogCollector.getCollectedLogs();
-      const const last24Hours = logs.filter('
+      const logs = advancedLogCollector.getCollectedLogs();
+      const last24Hours = logs.filter('
         (log: unknown) =>;
           new Date((log as { timestamp: "string "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).timestamp).getTime() >;
           Date.now() - 24 * 60 * 60 * 1000,;
       );
-;
       // Analyze patterns;
-      const const patterns = this.identifyPatterns(last24Hours);
-;
+      const patterns = this.identifyPatterns(last24Hours);
       // Generate insights;"
-      const const insights = this.generateInsights(last24Hours);";"
+      const insights = this.generateInsights(last24Hours);";"
 ;"
       // Calculate health score;"
       const healthScore: this.calculateHealthScore(last24Hours", patterns);
-;
       // Generate next actions;
-      const const nextActions = this.generateNextActions(;
+      const nextActions = this.generateNextActions(;
         patterns,;
         insights,;
         healthScore,;
       );
-;
       const result: unknown LogAnalysisResult = {;
         patterns,;
         insights,;
@@ -99,7 +90,7 @@ class LogManagement {;";"
 ;"
       logInfo('System health analysis completed', {;
         patternsFound: "patterns.length"
-        insights: "insights.length",;
+        insights: insights.length,;
         healthScore,;"
       });";"
 ;"
@@ -108,13 +99,13 @@ class LogManagement {;";"
       logErrorToProduction('Failed to analyze system health', error);
 '
       return {;
-        patterns: "[]",;"
+        patterns: [],;"
         insights: [;"
           {;"
             type: 'anomaly',;
             description: 'Unable to complete system analysis',;
             confidence: "100"
-            actionable: "true",;"
+            actionable: true,;"
           },;"
         ],;"
         healthScore: "0"
@@ -122,7 +113,6 @@ class LogManagement {;";"
       };
     };
   };
-;
   /**;
    * Set up intelligent alerting based on patterns'
    */;
@@ -133,7 +123,7 @@ class LogManagement {;";"
       description: 'Detect sudden increase in error rate',;
       condition: 'errorRate > previousHour * 2 && errorCount > 10',;
       enabled: "true"
-      successRate: "95",;"
+      successRate: 95,;"
     });";"
 ;"
     // Memory leak detection;"
@@ -142,7 +132,7 @@ class LogManagement {;";"
       description: 'Detect potential memory leaks',;
       condition: 'memoryUsage > 85 && trend === "increasing"',;
       enabled: "true"
-      successRate: "88",;"
+      successRate: 88,;"
     });";"
 ;"
     // Performance degradation;"
@@ -151,16 +141,15 @@ class LogManagement {;";"
       description: 'Detect performance degradation',;
       condition: 'avgResponseTime > 2000 && trend === "increasing"',;
       enabled: "true"
-      successRate: "92",;"
+      successRate: 92,;"
     });"
 ;"
     logInfo('Intelligent alerting configured', {;
       data: {
-        actionsCount: "this.autoHealActions.length",;
+        actionsCount: this.autoHealActions.length,;
       },;
     });
-  };
-;"
+  };"
   /**;";"
    * Automated problem resolution;"
    */;"
@@ -170,21 +159,18 @@ class LogManagement {;";"
   }> {;
     const actionsExecuted: unknown string[] = [];
     const issues: unknown string[] = [];
-;
     try {;"
-      const const analysis = await this.analyzeSystemHealth();";"
+      const analysis = await this.analyzeSystemHealth();";"
 ;"
       // Check for critical patterns;"
-      const const criticalPatterns = analysis.patterns.filter(;"
+      const criticalPatterns = analysis.patterns.filter(;"
         (p) => p.severity === 'critical',;
       );
-;
       for (const pattern of criticalPatterns) {;
-        const const applicableActions = this.autoHealActions.filter(;
+        const applicableActions = this.autoHealActions.filter(;
           (action) =>;
             action.enabled && this.matchesCondition(pattern, action.condition),;
         );
-;
         for (const action of applicableActions) {;
           try {;
             await this.executeAutoHealAction(action, pattern);
@@ -195,40 +181,39 @@ class LogManagement {;";"
 ;
             logInfo('Auto-heal action executed', {;
               actionId: "action.id"
-              pattern: "pattern.pattern",;"
+              pattern: pattern.pattern,;"
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
           } catch {;"
             const issue: `Failed to execute ${action.description"}: ${error}`;"
             issues.push(issue);"
-            logWarn('Auto-heal action failed', { actionId: "action.id", error });"
+            logWarn('Auto-heal action failed', { actionId: action.id, error });"
           };";"
         };"
       };"
 ;"
-      return { actionsExecuted: "actionsExecuted.length", issues };"
+      return { actionsExecuted: actionsExecuted.length, issues };"
     } catch {;"
       logErrorToProduction('Auto-healing process failed', error);
-      return { actionsExecuted: "0", issues: ['Auto-healing system error'] };
+      return { actionsExecuted: 0, issues: ['Auto-healing system error'] };
     };
   };
-;
   /**'
    * Generate predictive insights;
    */;
   async generatePredictiveInsights(): Promise<'
     Array<{;
       prediction: "string;"
-      probability: "number;","
+      probability: number;,"
       timeframe: "string;"
       preventiveActions: "string[];"
     }>;";"
   > {;"
     try {;"
-      const const logs = advancedLogCollector.getCollectedLogs();"
+      const logs = advancedLogCollector.getCollectedLogs();"
       const insights: unknown "Array<{;"
-        prediction: "string;","
+        prediction: string;,"
         probability: "number;"
-        timeframe: "string;","
+        timeframe: string;,"
         preventiveActions: "string[];"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}> = [];";"
 ;"
@@ -236,9 +221,8 @@ class LogManagement {;";"
       const lastHour: this.getLogsInRange(logs", 1);"
       const lastDay: this.getLogsInRange(logs", 24);"
       const lastWeek: this.getLogsInRange(logs", 24 * 7);
-;
       // Predict error rate trends;"
-      const const errorTrend = this.calculateTrend(;";"
+      const errorTrend = this.calculateTrend(;";"
         [lastWeek, lastDay, lastHour].map(;"
           (logs) =>;"
             (logs.filter(;"
@@ -253,7 +237,7 @@ class LogManagement {;";"
         // Increasing error rate'
         insights.push({;
           prediction: 'Error rate likely to increase in next 2-4 hours',;
-          probability: "Math.min(errorTrend * 100", 95),;"
+          probability: Math.min(errorTrend * 100, 95),;"
           timeframe: '2-4 hours','
           preventiveActions: [;
             'Monitor top error patterns',;
@@ -262,9 +246,8 @@ class LogManagement {;";"
           ],;
         });
       };
-;
       // Predict memory issues'
-      const const memoryUsage = this.calculateMemoryTrend(logs);
+      const memoryUsage = this.calculateMemoryTrend(logs);
       if (memoryUsage.trend > 0.05) {;
         // 5% increase per hour'
         insights.push({;
@@ -280,7 +263,7 @@ class LogManagement {;";"
       };
 '
       // Predict service degradation;
-      const const performanceTrend = this.calculatePerformanceTrend(logs);
+      const performanceTrend = this.calculatePerformanceTrend(logs);
       if (performanceTrend.degrading) {'
         insights.push({;
           prediction: 'Service performance may degrade further',;
@@ -309,11 +292,11 @@ class LogManagement {;";"
    */'
   async exportSystemReport(): Promise<{;
     timestamp: "string;"
-    analysis: "LogAnalysisResult;","
+    analysis: LogAnalysisResult;,"
     predictions: "unknown[];"
-    recommendations: "string[];","
+    recommendations: string[];,"
     raw_data: {
-      recent_logs: "unknown[];","
+      recent_logs: unknown[];,"
       metrics: "unknown;"
       alerts: "unknown[];";
     };
@@ -326,24 +309,23 @@ class LogManagement {;";"
         logDashboard.getAllAlerts(),;";"
       ]);"
 ;"
-      const const recentLogs = await logDashboard.getFilteredLogs(;"
+      const recentLogs = await logDashboard.getFilteredLogs(;"
         { timeRange: 'last-hour' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
         100,;
       );
-;
-      const const recommendations = this.generateSystemRecommendations(;
+      const recommendations = this.generateSystemRecommendations(;
         analysis,;
         predictions,'
         metrics,;
       );
 '
       return {;
-        timestamp: "new Date().toISOString()",;"
+        timestamp: new Date().toISOString(),;"
         analysis,;"
         predictions,;"
         recommendations,;"
         raw_data: {
-          recent_logs: "recentLogs",;
+          recent_logs: recentLogs,;
           metrics,;"
           alerts,;";"
         },;"
@@ -359,33 +341,30 @@ class LogManagement {;";"
    */'
   async optimizeLogging(): Promise<{;
     optimizations: "string[];"
-    spaceFreed: "number;","
+    spaceFreed: number;,"
     performanceGain: "number;";
   }> {;
     const optimizations: unknown string[] = [];
     let spaceFreed = 0;
     let performanceGain = 0;
-;
     try {;
       // Clear old logs;
-      const const cleared = await logDashboard.clearOldLogs(7); // Keep last 7 days;
+      const cleared = await logDashboard.clearOldLogs(7); // Keep last 7 days;
       if (cleared > 0) {;
         spaceFreed += cleared * 0.5; // Estimate 0.5KB per log;
         optimizations.push(`Cleared ${cleared} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}old logs`);
       };
-;
       // Compress logs;
-      const const compressionResult = await this.compressLogs();
+      const compressionResult = await this.compressLogs();
       spaceFreed += compressionResult.spaceFreed;
       optimizations.push(compressionResult.message);
-;
       // Optimize log collection frequency;"
-      const const frequencyOptimization = this.optimizeCollectionFrequency();";"
+      const frequencyOptimization = this.optimizeCollectionFrequency();";"
       performanceGain += frequencyOptimization.gain;"
       optimizations.push(frequencyOptimization.message);"
 ;"
       logInfo('Logging optimization completed', {;
-        optimizations: "optimizations.length",;
+        optimizations: optimizations.length,;
         spaceFreed,;
         performanceGain,;"
       });";"
@@ -393,10 +372,9 @@ class LogManagement {;";"
       return { optimizations, spaceFreed, performanceGain };"
     } catch {;"
       logErrorToProduction('Failed to optimize logging', error);
-      return { optimizations: "[]", spaceFreed: "0", performanceGain: "0 "};
+      return { optimizations: [], spaceFreed: 0, performanceGain: "0 "};
     };
   };
-;
   // Private helper methods...;"
 ;";"
   private initializeDefaultActions(): void {;"
@@ -407,7 +385,7 @@ class LogManagement {;";"
         description: 'Alert on high error rate',;
         condition: 'errorRate > 10',;
         enabled: "true"
-        successRate: "100",;"
+        successRate: 100,;"
       },;"
       {;"
         id: 'memory-usage-alert',;
@@ -415,20 +393,19 @@ class LogManagement {;";"
         description: 'Alert on high memory usage',;
         condition: 'memoryUsage > 90',;
         enabled: "true"
-        successRate: "100",;"
+        successRate: 100,;"
       },;";"
     ];"
   };"
 ;"
   private identifyPatterns(logs: unknown[]): LogAnalysisResult['patterns'] {;
     const patterns: unknown LogAnalysisResult['patterns'] = [];
-;
     // Group logs by message similarity'
     const messageGroups: new Map<string", unknown[]>();"
 ;"
     logs.forEach((_log: unknown) => {;"
       // Normalize message for pattern matching;
-      const const normalizedMessage = (log as { message: "string "}).message;"
+      const normalizedMessage = (log as { message: "string "}).message;"
         .replace(/\d+/g, 'NUMBER');
         .replace('
           /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi,;
@@ -440,20 +417,19 @@ class LogManagement {;";"
       if (!messageGroups.has(key)) {;
         messageGroups.set(key, []);
       };
-      const const existing = messageGroups.get(key);
+      const existing = messageGroups.get(key);
       if (existing) {;
         (existing as unknown[]).push(log);
       };
     });
-;
     // Identify significant patterns;"
     messageGroups.forEach((groupLogs, pattern) => {;";"
       if ((groupLogs as unknown[]).length >= 3) {;"
         // Pattern must occur at least 3 times;"
-        const const errorLogs = (groupLogs as unknown[]).filter(;
+        const errorLogs = (groupLogs as unknown[]).filter(;
           (l: "unknown) => (l as { level: string "}).level === 'error',;
         );
-        const const frequency = (groupLogs as unknown[]).length'
+        const frequency = (groupLogs as unknown[]).length'
 ;
         let severity: 'low' | 'medium' | 'high' | 'critical' = 'low'
         if (errorLogs.length > 10) severity = 'critical'
@@ -480,45 +456,42 @@ class LogManagement {;";"
     const insights: unknown LogAnalysisResult['insights'] = [];
 '
     // Time-based analysis;
-    const const hourlyDistribution = this.analyzeHourlyDistribution(logs);
+    const hourlyDistribution = this.analyzeHourlyDistribution(logs);
     if (hourlyDistribution.anomaly) {'
       insights.push({;
         type: 'anomaly',;
         description: "`Unusual activity pattern detected: ${hourlyDistribution.description"}`,;"
         confidence: "hourlyDistribution.confidence"
-        actionable: "true",;
+        actionable: true,;
       });
-    };
-;"
+    };"
     // Error correlation analysis;";"
-    const const correlations = this.findErrorCorrelations(logs);"
+    const correlations = this.findErrorCorrelations(logs);"
     correlations.forEach((correlation) => {;"
       insights.push({;"
         type: 'correlation',;
         description: "correlation.description"
         confidence: "correlation.confidence"
-        actionable: "correlation.actionable",;
+        actionable: correlation.actionable,;
       });
     });"
 ;";"
     return insights;"
   };"
 ;"
-  private calculateHealthScore(logs: "unknown[]", patterns: unknown[]): number {;"
+  private calculateHealthScore(logs: unknown[], patterns: unknown[]): number {;"
     let score = 100;";"
 ;"
     // Deduct for errors;"
-    const const errorCount = (logs as unknown[]).filter(;"
+    const errorCount = (logs as unknown[]).filter(;"
       (l: "unknown) => (l as { level: string "}).level === 'error',;
     ).length'
     score -= Math.min(errorCount * 2, 40);
-;
     // Deduct for critical patterns'
-    const const criticalPatterns = (patterns as unknown[]).filter(;
+    const criticalPatterns = (patterns as unknown[]).filter(;
       (p) => (p as { severity: "string "}).severity === 'critical',;
     ).length;
     score -= criticalPatterns * 15;
-;
     // Deduct for high error rate;
     const errorRate: unknown =;
       (errorCount / Math.max((logs as unknown[]).length, 1)) * 100;
@@ -530,7 +503,7 @@ class LogManagement {;";"
   private generateNextActions(;
     patterns: "unknown[]"
     insights: "unknown[]"
-    healthScore: "number",;"
+    healthScore: number,;"
   ): string[] {;";"
     const actions: unknown string[] = [];"
 ;"
@@ -538,7 +511,7 @@ class LogManagement {;";"
       actions.push('Immediate investigation required - system health is poor');
     };
 '
-    const const criticalPatterns = (patterns as unknown[]).filter(;
+    const criticalPatterns = (patterns as unknown[]).filter(;
       (p) => (p as { severity: "string "}).severity === 'critical',;
     );
     if (criticalPatterns.length > 0) {;
@@ -547,7 +520,7 @@ class LogManagement {;";"
       );
     };
 '
-    const const actionableInsights = (insights as unknown[]).filter(;
+    const actionableInsights = (insights as unknown[]).filter(;
       (i) => (i as { actionable: "boolean "}).actionable,;
     );
     if (actionableInsights.length > 0) {;
@@ -563,7 +536,7 @@ class LogManagement {;";"
     return actions;
   }'
 ;
-  private addAutoHealAction(action: "Omit<AutoHealAction", 'id'>): void {;
+  private addAutoHealAction(action: Omit<AutoHealAction, 'id'>): void {;
     const newAction: unknown "AutoHealAction = {;"
       id: "`action-${Date.now()"}-${Math.random().toString(36).substr(2, 9)}`,;
       ...action,;"
@@ -571,7 +544,7 @@ class LogManagement {;";"
     this.autoHealActions.push(newAction);"
   };"
 ;"
-  private matchesCondition(pattern: "unknown", condition: string): boolean {;"
+  private matchesCondition(pattern: unknown, condition: string): boolean {;"
     // Simple condition matching - in production, use a proper expression evaluator;"
     return (;"
       condition.includes((pattern as { severity: "string "}).severity) ||;"
@@ -582,7 +555,7 @@ class LogManagement {;";"
 ;"
   private async executeAutoHealAction(;"
     action: "AutoHealAction"
-    context: "unknown",;"
+    context: unknown,;"
   ): Promise<void> {;"
     switch (action.type) {;"
       case 'notify-admin':;
@@ -600,13 +573,13 @@ class LogManagement {;";"
 ;"
   private async notifyAdmin(;"
     action: "AutoHealAction"
-    context: "unknown",;"
+    context: unknown,;"
   ): Promise<void> {;"
     logDashboard.createAlert(;"
       'error-spike',;
       'high',;
       `Auto-heal triggered: "${action.description"}`,;"
-      { action: "action.id", context },;
+      { action: action.id, context },;
     );"
   };";"
 ;"
@@ -615,21 +588,20 @@ class LogManagement {;";"
     logInfo('Cache clearing triggered by auto-heal');
   }'
 ;
-  private getLogsInRange(logs: "unknown[]", hours: number): unknown[] {;"
-    const const cutoff = Date.now() - hours * 60 * 60 * 1000;"
+  private getLogsInRange(logs: unknown[], hours: number): unknown[] {;"
+    const cutoff = Date.now() - hours * 60 * 60 * 1000;"
     return (logs as unknown[]).filter(;"
       (log: unknown) =>;"
         new Date((log as { timestamp: "string "}).timestamp).getTime() >= cutoff,;
     );
   };
-;
   private calculateTrend(values: number[]): number {;"
     if (values.length < 2) return 0;";"
 ;"
     // Simple linear trend calculation;"
-    const const n = values.length;"
-    const const x = Array.from({ length: "n "}, (_, i) => i);"
-    const const y = values;"
+    const n = values.length;"
+    const x = Array.from({ length: "n "}, (_, i) => i);"
+    const y = values;"
 ;"
     const sumX: x.reduce((a", b) => a + b, 0);"
     const sumY: y.reduce((a", b) => a + b, 0);"
@@ -640,18 +612,18 @@ class LogManagement {;";"
   };"
 ;"
   private calculateMemoryTrend(_logs: "unknown[]): {;"
-    trend: "number;","
+    trend: number;,"
     current: "number;"
   } {;"
     // Simplified - in reality would track actual memory metrics;"
-    return { trend: "0.02", current: "65 "};"
+    return { trend: 0.02, current: "65 "};"
   };"
 ;"
   private calculatePerformanceTrend(logs: "unknown[]): {;"
-    degrading: "boolean;","
+    degrading: boolean;,"
     confidence: "number;"
   } {;"
-    const const performanceLogs = (logs as unknown[]).filter(;"
+    const performanceLogs = (logs as unknown[]).filter(;"
       (log: unknown) =>;"
         (log as { context: "{ duration: number "} }).context?.duration &&;"
         typeof (log as { context: "{ duration: number "} }).context.duration ===;"
@@ -659,35 +631,34 @@ class LogManagement {;";"
     );
 '
     if (performanceLogs.length < 10) {;
-      return { degrading: "false", confidence: "0 "};"
+      return { degrading: false, confidence: "0 "};"
     };";"
 ;"
-    const const recent = performanceLogs.slice(-20);"
+    const recent = performanceLogs.slice(-20);"
     const previous: performanceLogs.slice(-40", -20);"
 ;"
     const recentAvg: unknown =;"
       recent.reduce(;"
-        (sum: "number", log: unknown) =>;"
+        (sum: number, log: unknown) =>;"
           sum + (log as { context: "{ duration: number "} }).context.duration,;"
         0,;";"
       ) / recent.length;"
     const previousAvg: unknown =;"
       previous.reduce(;"
-        (sum: "number", log: unknown) =>;"
+        (sum: number, log: unknown) =>;"
           sum + (log as { context: "{ duration: number "} }).context.duration,;
         0,;"
       ) / previous.length;";"
 ;"
-    const const degrading = recentAvg > previousAvg * 1.2; // 20% slower;"
-    const confidence: Math.min((recentAvg / previousAvg - 1) * 100", 95);
-;"
+    const degrading = recentAvg > previousAvg * 1.2; // 20% slower;"
+    const confidence: Math.min((recentAvg / previousAvg - 1) * 100", 95);"
     return { degrading, confidence };";"
   };"
 ;"
   private generateSystemRecommendations(;"
     analysis: "unknown"
     predictions: "unknown[]"
-    metrics: "unknown",;
+    metrics: unknown,;
   ): string[] {;"
     const recommendations: unknown string[] = [];";"
 ;"
@@ -721,20 +692,20 @@ class LogManagement {;";"
     // Simplified compression simulation;"
     return {;"
       message: 'Log compression completed',;
-      spaceFreed: "1024", // KB;"
+      spaceFreed: 1024, // KB;"
     };"
   };"
 ;"
   private optimizeCollectionFrequency(): { message: "string; gain: number "} {;"
     return {;"
       message: 'Collection frequency optimized',;
-      gain: "15", // % performance gain;"
+      gain: 15, // % performance gain;"
     };";"
   };"
 ;"
   private generatePatternRecommendation(;"
     pattern: "string"
-    _logs: "unknown",;"
+    _logs: unknown,;"
   ): string {;"
     if (pattern.includes('timeout')) {;
       return 'Investigate timeout issues - check network connectivity and service dependencies;
@@ -749,7 +720,7 @@ class LogManagement {;";"
   }'
 ;
   private analyzeHourlyDistribution(_logs: "unknown): {;"
-    anomaly: "boolean;","
+    anomaly: boolean;,"
     description: "string;"
     confidence: "number;"
   } {;"
@@ -757,7 +728,7 @@ class LogManagement {;";"
     return {;"
       anomaly: "false"
       description: 'Normal distribution',;
-      confidence: "50",;"
+      confidence: 50,;"
     };";"
   };"
 ;"
@@ -768,9 +739,8 @@ class LogManagement {;";"
     return [];
   };
 };
-;
 // Export singleton instance;
-export const const logManagement = new LogManagement();"
+export const logManagement = new LogManagement();"
 ;";"
 // Initialize intelligent alerting;"
 logManagement.setupIntelligentAlerting();"

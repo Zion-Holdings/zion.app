@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-interface FeaturedListingsSectionProps {;
-  showTitle?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface FeaturedListingsSectionProps {
+  showTitle?: boolean
+  className?: string
+  style?: React.CSSProperties
+}
 
 export function FeaturedListingsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   showTitle = true,;
@@ -18,7 +18,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
 }: FeaturedListingsSectionProps) {'
   // Reactivate: Use a mock or real data source for featured listings'
   // For now, use a simple mock array to restore functionality;
-  const const featuredListings = ['
+  const featuredListings = ['
     {'
       id: '1','
       title: 'AI Copywriter','
@@ -28,7 +28,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       price: "49,;"";
       currency: 'USD','
       tags: ['copywriting', 'ai', 'marketing'],'
-      author: "{",;"";
+      author: {,;"";
         name: 'AI Tools Inc.','
         id: 'ai-tools','
         avatarUrl: '/images/ai-copywriter.svg','
@@ -39,7 +39,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       rating: 4.8",""
       reviewCount: 120,"
       featured: "true,;"";
-      aiScore: "92",;"
+      aiScore: 92,;"
       location: 'Global','
       availability: 'In Stock','
       stock: 10",""
@@ -64,13 +64,13 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       },'
       images: ['/images/vision-api.svg'],'
       createdAt: '2024-01-02T00:00:00.000Z','
-      rating: "4.7",;"
+      rating: 4.7,;"
       reviewCount: 98",""
       featured: true,"
       aiScore: "89,;"";
       location: 'Global','
       availability: 'In Stock','
-      stock: "7",;"
+      stock: 7,;"
       brand: 'Visionary','
       specifications: ['Image Recognition', 'Fast API'],'
       uspHeadline: 'See the unseen','
@@ -93,7 +93,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       images: ['/images/chatbot-pro.svg'],'
       createdAt: '2024-01-03T00:00:00.000Z','
       rating: "4.6,;"";
-      reviewCount: "75",;"
+      reviewCount: 75,;"
       featured: true",""
       aiScore: 87,"
       location: 'Global','
@@ -109,7 +109,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       description: 'Turn raw data into actionable insights.','
       category: 'Analytics','
       subcategory: 'Data','
-      price: "199",;"
+      price: 199,;"
       currency: 'USD','
       tags: ['data', 'analytics', 'insights'],'
       author: {",;"
@@ -122,7 +122,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
       createdAt: '2024-01-04T00:00:00.000Z','
       rating: 4.9,"
       reviewCount: "150,;"";
-      featured: "true",;"
+      featured: true,;"
       aiScore: 95",""
       location: 'Global','
       availability: 'In Stock','

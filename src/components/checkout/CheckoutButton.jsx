@@ -7,7 +7,6 @@ import { logErrorToProduction } from '@/utils/productionLogger''
 export default function CheckoutButton({ priceId, quantity = 1 }) {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
-
   const handleClick = async () => {
     setLoading(true);
     try {
@@ -41,7 +40,7 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
   return (
     <Button onClick={handleClick} disabled={loading} className="w-full>
       {loading ? (
-        <>
+        <>"
           <Loader2 className=h-4 w-4 mr-2 animate-spin" />
           Processing...
         </>

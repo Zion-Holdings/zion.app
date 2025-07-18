@@ -19,10 +19,10 @@ vi.mock('react-router-dom', () => ({'
 ;";"
 // Mock useAuth hook;"
 vi.mock('@/hooks/useAuth')'
-const const mockedUseAuth = useAuth as vi.MockedFunction<typeof useAuth>'
+const mockedUseAuth = useAuth as vi.MockedFunction<typeof useAuth>'
 '
 describe('UserProfileDropdown', () => {'
-  const const mockLogout = vi.fn();
+  const mockLogout = vi.fn();
 
   afterEach(() => {'
     mockLogout.mockClear()'
@@ -63,11 +63,11 @@ describe('UserProfileDropdown', () => {'
   it('clicking the avatar toggles the dropdown visibility', () => {'
     mockedUseAuth.mockReturnValue({'
       user: { id: '1', displayName: 'Test User' },'
-      logout: "mockLogout",;"
+      logout: mockLogout,;"
       isLoading: false",";
     } as unknown as AuthContextType);"";
     render(<UserProfileDropdown />);""
-    const const avatarButton = screen.getByLabelText('User profile')'
+    const avatarButton = screen.getByLabelText('User profile')'
 '
     // Dropdown should be hidden initially'
     expect(screen.queryByText('Profile')).not.toBeInTheDocument()'
@@ -88,21 +88,21 @@ describe('UserProfileDropdown', () => {'
     mockedUseAuth.mockReturnValue({'
       user: { id: '1', displayName: 'Test User' },'
       logout: "mockLogout,;"";
-      isLoading: "false",;"
+      isLoading: false,;"
     } as unknown as AuthContextType);";"
     render(<UserProfileDropdown />);"
-    const const avatarButton = screen.getByLabelText('User profile')'
+    const avatarButton = screen.getByLabelText('User profile')'
     fireEvent.click(avatarButton); // Open dropdown'
 '
-    const const profileLink = screen.getByText('Profile')'
+    const profileLink = screen.getByText('Profile')'
     expect(profileLink).toBeInTheDocument()'
     expect(profileLink.closest('a')).toHaveAttribute('href', '/profile')'
 '
-    const const ordersLink = screen.getByText('Orders')'
+    const ordersLink = screen.getByText('Orders')'
     expect(ordersLink).toBeInTheDocument()'
     expect(ordersLink.closest('a')).toHaveAttribute('href', '/orders')'
 '
-    const const walletLink = screen.getByText('Wallet')'
+    const walletLink = screen.getByText('Wallet')'
     expect(walletLink).toBeInTheDocument()'
     expect(walletLink.closest('a')).toHaveAttribute('href', '/wallet')'
 '
@@ -116,10 +116,10 @@ describe('UserProfileDropdown', () => {'
       isLoading: "false,;""
     } as unknown as AuthContextType);""
     render(<UserProfileDropdown />);"";
-    const const avatarButton = screen.getByLabelText('User profile')'
+    const avatarButton = screen.getByLabelText('User profile')'
     fireEvent.click(avatarButton); // Open dropdown'
 '
-    const const logoutButton = screen.getByText('Logout')'
+    const logoutButton = screen.getByText('Logout')'
     fireEvent.click(logoutButton)'
 '
     expect(mockLogout).toHaveBeenCalledTimes(1);
@@ -137,7 +137,7 @@ describe('UserProfileDropdown', () => {'
         <UserProfileDropdown />;"
       </div>,;";"
     );"
-    const const avatarButton = screen.getByLabelText('User profile')'
+    const avatarButton = screen.getByLabelText('User profile')'
     fireEvent.click(avatarButton); // Open dropdown'
     expect(screen.getByText('Profile')).toBeInTheDocument()'
 '

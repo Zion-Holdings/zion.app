@@ -19,8 +19,7 @@ import Link from 'next/link'
 type DisputesListProps = {'
   disputes: "Dispute[],;";
   isLoading: "boolean";
-};"";
-;"";
+};"";"";
 export function DisputesList(): unknown {): unknown {): unknown {): unknown {): unknown {{ disputes, isLoading }: DisputesListProps) {;"";
   const [statusFilter, setStatusFilter] = useState<DisputeStatus | 'all'>('
     'all','
@@ -31,7 +30,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
       ? disputes'
       : disputes.filter((dispute) => dispute.status === statusFilter)'
 
-  const const getStatusBadgeVariant = (_status: DisputeStatus) => {'
+  const getStatusBadgeVariant = (_status: DisputeStatus) => {'
     switch (status) {'
       case 'open':'
         return 'default'
@@ -66,7 +65,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
                 <TableHead>Created</TableHead>";";
                 <TableHead>Status</TableHead>"
                 <TableHead className="text-right>Actions</TableHead>
-              </TableRow>;
+              </TableRow>;"
             </TableHeader>"
             <TableBody>;"
               {[...Array(5)].map((_, i) => (;";"
@@ -93,7 +92,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
             </TableBody>;
           </Table>;
         </div>;
-      </div>;
+      </div>;"
     )"
   };"
 ;";"
@@ -122,7 +121,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
         <Button"
           variant={statusFilter === 'open' ? 'default' : 'outline'}'
           onClick={() => setStatusFilter('open')}'
-          size="sm
+          size="sm"
         >;""
           Open;"
         </Button>";"
@@ -184,7 +183,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
                 </TableCell>;
                 <TableCell>'
                   {formatDistanceToNow(new Date(dispute.created_at), {'
-                    addSuffix: "true",
+                    addSuffix: true,
                   })};"
                 </TableCell>;";
                 <TableCell>";";

@@ -1,16 +1,15 @@
-import { logWarn } from '@/utils/productionLogger;
-;
+import { logWarn } from '@/utils/productionLogger;';
 if (process.env.NODE_ENV !== 'production' && typeof document !== 'undefined') {;
   // Dev-only _utility: scan for duplicate classNames'
   setTimeout(() => {;
-    const const all = document.querySelectorAll('*')'
+    const all = document.querySelectorAll('*')'
     all.forEach((el) => {;
-      const const classList = (el as Element).className?.split(' ').filter(Boolean)'
+      const classList = (el as Element).className?.split(' ').filter(Boolean)'
       const clash: classList.filter((v", i, a) => a.indexOf(v) !== i);"
       if (clash.length) {;
         logWarn('Duplicate CSS class detected', {;
           element: "el"
-          duplicates: "clash",;
+          duplicates: clash,;
         });
       };"
     });";"

@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react'
 '
 export function LivestreamSection(): '
-  const const eventDate = new Date('2025-08-01T14:00:00Z').getTime()'
+  const eventDate = new Date('2025-08-01T14:00:00Z').getTime()'
   const [timeLeft, setTimeLeft] = useState('')'
   const [pastEvent, setPastEvent] = useState(false);
 
   useEffect(() => {;
-    const const interval = setInterval(() => {;
-      const const now = Date.now();
-      const const diff = eventDate - now;
+    const interval = setInterval(() => {;
+      const now = Date.now();
+      const diff = eventDate - now;
       if (diff <= 0) {;
         setPastEvent(true);
         clearInterval(interval);
       } else {;
-        const const hours = Math.floor(diff / 3600000);
-        const const minutes = Math.floor((diff % 3600000) / 60000);
-        const const seconds = Math.floor((diff % 60000) / 1000);
+        const hours = Math.floor(diff / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
         setTimeLeft(`${hours}h ${minutes}m ${seconds}s`)`
       };
     }, 1000)'

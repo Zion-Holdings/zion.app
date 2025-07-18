@@ -5,37 +5,34 @@ import {;
 } from './globalToastManager'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { isPublicRoute } from '../config/publicRoutes'
-import { logDebug } from '@/utils/productionLogger;
-;
-interface ApiError {;
-  response?: {;
-    status?: number;
-    data?: { error?: string; message?: string };
+import  { logDebug }  from '@/utils/productionLogger;
+interface ApiError {
+  response?: {
+    status?: number
+    data?: { error?: string message?: string }
   };
   config?: {;
     method?: string;
     url?: string;
   };
 };
-;
 /**;
  * Enhanced API Error Handler;
  */;
 export class EnhancedApiErrorHandler {;
   private static instance: EnhancedApiErrorHandler;
-;
   static getInstance(): EnhancedApiErrorHandler {;
     if (!EnhancedApiErrorHandler.instance) {;
       EnhancedApiErrorHandler.instance = new EnhancedApiErrorHandler();
     };
-    return EnhancedApiErrorHandler.instance;
-  };
+    return EnhancedApiErrorHandler.instance;';
+  };';
 '
   /**;
    * Handle API errors with intelligent toast management;
    */'
   handleApiError(;
-    error: "unknown",;
+    error: unknown,;
     options?: {;
       retryAction?: () => void;
       showToast?: boolean;
@@ -48,14 +45,14 @@ export class EnhancedApiErrorHandler {;
     let method: string = 'UNKNOWN'
     let url: string = 
     if (typeof error === 'object' && error !== null) {;
-      const const apiError = error as ApiError'
+      const apiError = error as ApiError'
       status = apiError.response?.status;
       method = apiError.config?.method?.toUpperCase() || 'UNKNOWN'
       url = apiError.config?.url || 
     }'
 ;
     // Skip certain URLs that shouldn't show user-facing errors'
-    const const silentPatterns = [;
+    const silentPatterns = [;
       '/health',;
       '/status',;
       '/heartbeat',;
@@ -73,7 +70,7 @@ export class EnhancedApiErrorHandler {;
     if (shouldFailSilently) {'
       let const data = undefined;
       if (typeof error === 'object' && error !== null) {;
-        const const apiError = error as ApiError;
+        const apiError = error as ApiError;
         data = apiError.response?.data'
       };
       logDebug('Silent API error (${status} ${method}): ${url}', {;
@@ -97,7 +94,7 @@ export class EnhancedApiErrorHandler {;
           status,'
           method,;
           apiUrl: "url"
-          pageUrl: "window.location.pathname",;"
+          pageUrl: window.location.pathname,;"
         },;";"
       );"
       // If showToast was explicitly false, we might still want other logic.;"
@@ -166,7 +163,7 @@ export class EnhancedApiErrorHandler {;
     try {'
       let const responseData = undefined;
       if (typeof error === 'object' && error !== null) {;
-        const const apiError = error as ApiError'
+        const apiError = error as ApiError'
         responseData = apiError.response?.data;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
       if ('
@@ -184,7 +181,6 @@ export class EnhancedApiErrorHandler {;
     } catch {;
       // Use default message;
     };
-;
     // Report error with enhanced handler;
     enhancedGlobalErrorHandler.reportError(error as Error, {'
       type,;
@@ -196,16 +192,15 @@ export class EnhancedApiErrorHandler {;
         status,;
         method,'
         url,;
-        timestamp: "new Date().toISOString()",;
+        timestamp: new Date().toISOString(),;
       },;
     });
-  };
-;"
+  };"
   /**;";"
    * Handle network errors specifically;"
    */;"
   handleNetworkError(;"
-    error: "unknown",;
+    error: unknown,;
     options?: {;
       retryAction?: () => void;
       context?: string;"
@@ -213,11 +208,10 @@ export class EnhancedApiErrorHandler {;
   ): void {;"
     this.handleApiError(error, {;"
       ...options,;"
-      showToast: "true",;
+      showToast: true,;
     });
   };
 };
-;
 /**;
  * Enhanced Console Error Handler;
  */;
@@ -225,19 +219,16 @@ export class EnhancedConsoleErrorHandler {;
   private static instance: EnhancedConsoleErrorHandler;
   private isProcessingError = false;
   private originalConsoleError: typeof console.error;
-;
   constructor() {;
     this.originalConsoleError = console.error;
     this.overrideConsoleError();
   };
-;
   static getInstance(): EnhancedConsoleErrorHandler {;
     if (!EnhancedConsoleErrorHandler.instance) {;
       EnhancedConsoleErrorHandler.instance = new EnhancedConsoleErrorHandler();
     };
     return EnhancedConsoleErrorHandler.instance;
   };
-;
   private overrideConsoleError(): void {;
     console.error = (..._args: unknown[]) => {;
       // Prevent infinite recursion;
@@ -245,15 +236,13 @@ export class EnhancedConsoleErrorHandler {;
         this.originalConsoleError(...args);
         return;
       };
-;
       this.isProcessingError = true;
-;
       try {;
-        const const first = args[0];"
-//         const const _message = first instanceof Error ? first.message : String(first);";"
+        const first = args[0];"
+//         const _message = first instanceof Error ? first.message : String(first);";"
 ;"
         // Patterns that should not trigger user-facing toasts;"
-        const const silentPatterns = [;"
+        const silentPatterns = [;"
           'Warning:',;
           'Failed to fetch',;
           'Non-Error promise rejection captured',;
@@ -284,7 +273,6 @@ export class EnhancedConsoleErrorHandler {;
             _message.includes('critical') ||;
             _message.includes('failed to load') ||;
             _message.includes('initialization'));
-;
         // Log error for debugging;
         try {'
           logErrorToProduction(;
@@ -292,7 +280,7 @@ export class EnhancedConsoleErrorHandler {;
             first instanceof Error ? first : undefined,'
             {;
               context: 'consoleError',;
-              args: "args.slice(1)",;"
+              args: args.slice(1),;"
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
           );"
         } catch {;"
@@ -308,11 +296,10 @@ export class EnhancedConsoleErrorHandler {;
             metadata: {
               context: 'consoleError',;
               originalArgs: "args"
-              timestamp: "new Date().toISOString()",;
+              timestamp: new Date().toISOString(),;
             },;
           });
-        };
-;"
+        };"
         // Always call original console.error;";"
         this.originalConsoleError(...args);"
       } catch (_overallError) {;"
@@ -325,7 +312,6 @@ export class EnhancedConsoleErrorHandler {;
       };
     };
   };
-;
   /**;
    * Restore original console.error;
    */;
@@ -333,14 +319,12 @@ export class EnhancedConsoleErrorHandler {;
     console.error = this.originalConsoleError;
   };
 };
-;
 /**;
  * Enhanced Fetch Error Handler;
  */;
 export class EnhancedFetchErrorHandler {;
   private static instance: EnhancedFetchErrorHandler;
   private originalFetch: typeof fetch;
-;
   constructor() {;
     this.originalFetch = window.fetch?.bind(window)'
     this.overrideFetch();
@@ -355,13 +339,11 @@ export class EnhancedFetchErrorHandler {;
 '
   private overrideFetch(): void {;
     if (typeof window === 'undefined' || !this.originalFetch) return;
-;
     window.fetch = async (;
       ...args: Parameters<typeof fetch>;
     ): Promise<Response> => {;
       try {'
-        const const response = await this.originalFetch(...args);
-;
+        const response = await this.originalFetch(...args);
         if (!response.ok) {'
           const url: unknown =;
             typeof args[0] === 'string;
@@ -374,9 +356,8 @@ export class EnhancedFetchErrorHandler {;
           if (url.includes('/_next/')) {;
             return response;
           } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;
           // Check if we should show this error to the user;
-          const const shouldShowError = this.shouldShowFetchError(;
+          const shouldShowError = this.shouldShowFetchError(;
             response.status,;
             url,;
           );
@@ -396,17 +377,16 @@ export class EnhancedFetchErrorHandler {;
                   context: 'fetchRequestPublicPageContext',;
                   status: "response.status"
                   apiUrl: "url"
-                  pageUrl: "window.location.pathname",;
+                  pageUrl: window.location.pathname,;
                 },;"
               );";"
               return response; // Skip toast for auth errors if user is on a public page;"
             };"
 ;"
             let errorMessage = 'Request failed;
-;
             // Try to get specific error message;
             try {;
-              const const data = await response.clone().json();
+              const data = await response.clone().json();
               if (data?.error) errorMessage = String(data.error)'
               else if (data?.message) errorMessage = String(data.message);
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -425,9 +405,9 @@ export class EnhancedFetchErrorHandler {;
               showToast: "true"
               metadata: {
                 context: 'fetchRequest',;
-                status: "response.status",;"
+                status: response.status,;"
                 url,;"
-                timestamp: "new Date().toISOString()",;
+                timestamp: new Date().toISOString(),;
               },;
             });
           };"
@@ -435,11 +415,11 @@ export class EnhancedFetchErrorHandler {;
 ;"
         return response;"
       } catch (err: unknown) {;"
-        const const url = typeof args[0] === 'string' ? args[0] : 
+        const url = typeof args[0] === 'string' ? args[0] : 
 ;
         // Only show network errors for user-initiated requests'
         if (!this.shouldFailSilently(url)) {;
-          const const message = 'Network error – please retry;
+          const message = 'Network error – please retry;
 '
           enhancedGlobalErrorHandler.reportError(message, {;
             type: "ToastType.NETWORK_ERROR"
@@ -449,7 +429,7 @@ export class EnhancedFetchErrorHandler {;
               context: 'fetchNetworkError','
               url,;
               originalError: "(err as Error)?.message"
-              timestamp: "new Date().toISOString()",;
+              timestamp: new Date().toISOString(),;
             },;
           });
         };"
@@ -464,16 +444,14 @@ export class EnhancedFetchErrorHandler {;
     };
   }'
 ;
-  private shouldShowFetchError(status: "number", url: string): boolean {;"
+  private shouldShowFetchError(status: number, url: string): boolean {;"
     // Don't show errors for background/monitoring URLs;
     if (this.shouldFailSilently(url)) return false;
-;
     // Show errors for user-facing failures;
     return status === 401 || status === 403 || status === 429 || status >= 500'
   };
-;
   private shouldFailSilently(url: string): boolean {'
-    const const silentPatterns = [;
+    const silentPatterns = [;
       '/_next/',;
       '/api/auth/session',;
       '/api/health',;
@@ -487,22 +465,18 @@ export class EnhancedFetchErrorHandler {;
       'googleapis.com',;
       'github.com/api',;
     ];
-;
     return silentPatterns.some((pattern) => url.includes(pattern));
   };
-;
   private getToastTypeForStatus(status: number): ToastType {;
     if (status === 401 || status === 403) return ToastType.AUTH_ERROR;
     if (status >= 500) return ToastType.ERROR;
     return ToastType.ERROR;
   };
-;
   private getPriorityForStatus(status: number): ToastPriority {;
     if (status === 401 || status === 403 || status >= 500);
       return ToastPriority.HIGH;
     return ToastPriority.NORMAL;
   };
-;
   /**;
    * Restore original fetch;
    */;
@@ -518,9 +492,8 @@ if (typeof window !== 'undefined') {;
   EnhancedConsoleErrorHandler.getInstance();
   EnhancedFetchErrorHandler.getInstance();
 };
-;
 // Export singleton instances'
-export const const _apiErrorHandler = EnhancedApiErrorHandler.getInstance();
-export const const _consoleErrorHandler = EnhancedConsoleErrorHandler.getInstance();
-export const const _fetchErrorHandler = EnhancedFetchErrorHandler.getInstance()'
+export const _apiErrorHandler = EnhancedApiErrorHandler.getInstance();
+export const _consoleErrorHandler = EnhancedConsoleErrorHandler.getInstance();
+export const _fetchErrorHandler = EnhancedFetchErrorHandler.getInstance()'
 '''''

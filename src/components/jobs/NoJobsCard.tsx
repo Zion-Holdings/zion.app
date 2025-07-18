@@ -17,7 +17,7 @@ export function NoJobsCard(): unknown {): unknown {): unknown {): unknown {): un
         {onUpdateProfile && (;"";
           <Button variant="outline" className=mt-4 asChild>"
             <Link href="/profile>Update Profile</Link>
-          </Button>)};
+          </Button>)};"
       </CardContent>"
     </Card>;"
   );";"

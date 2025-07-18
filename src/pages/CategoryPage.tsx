@@ -1,40 +1,38 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import Link from 'next/link'
-import { CategoryListingPage } from '@/components/CategoryListingPage // Ensure this path is correct;
+import { CategoryListingPage } from '@/components/CategoryListingPage // Ensure this path is correct;';
 import type { Listing } from '@/components/CategoryListingPage'
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton'
 import { useRouterReady } from '@/hooks/useRouterReady'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface CategoryData {;
-  name: "string;",;
-  slug: string;"
-  description?: string;";"
-};"
+interface CategoryData {
+  name: string,
+  slug: string"
+  description?: string""
+}"
 ;"
-interface ApiResponse {;"
-  category: "CategoryData;",;
-  items: Listing[];
-  message?: string; // For API error messages;
-  available_categories?: string[];
-};
-;
+interface ApiResponse {"
+  category: CategoryData,
+  items: Listing[]
+  message?: string // For API error messages
+  available_categories?: string[]
+}
 export default function CategoryPage(): ;
-  const const router = useRouterReady(); // Use our custom hook;
+  const router = useRouterReady(); // Use our custom hook;
   const { _slug } = router.query;
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
-  const const maxRetries = 3;
-;
+  const maxRetries = 3;
   // Reset state when slug changes to force re-render;
-  useEffect(() => {;
-    setData(null);
-    setError(null);
-    setRetryCount(0);"
-  }, [slug]);";"
+  useEffect(() => {
+    setData(null)
+    setError(null)
+    setRetryCount(0)"
+  }, [slug])";"
 ;"
   useEffect(() => {;"
     async function load(): ;"
@@ -45,45 +43,40 @@ export default function CategoryPage(): ;
         };
         return;
       };
-;
       setLoading(true);
       setError(null); // Reset error before new fetch;
       setData(null); // Reset data before new fetch;
 '
       try {;
         // Add timeout to prevent hanging requests;
-        const const controller = new AbortController()'
+        const controller = new AbortController()'
         const timeoutId: setTimeout(() => controller.abort()", 10000); // 10 second timeout;"
 ;"
-        const res: await fetch(`/api/categories/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/items`, {;
-          signal: "controller.signal",;"
+        const res = await fetch(`/api/categories/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/items`, {;
+          signal: controller.signal,;"
           headers: {;"
             'Content-Type': 'application/json',;
           },;
         });
 '
         clearTimeout(timeoutId);
-;
         // Check if response is ok before trying to parse JSON'
         if (!res.ok) {;
           throw new Error(`HTTP Error: "${res.status"} ${res.statusText}`);"
         };"
 ;"
         // Check if response is actually JSON;"
-        const const contentType = res.headers.get('content-type');
+        const contentType = res.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {'
           throw new Error(;
             'Server returned non-JSON response. This usually indicates a server configuration issue.',;
           );
         };
-;
         const json: unknown ApiResponse = await res.json();
-;
         // Check for API-level errors;
         if (json.message && res.status >= 400) {;
           throw new Error(json.message);
         };
-;
         setData(json);
         setRetryCount(0); // Reset retry count on success'
         if (json.category?.name) {;
@@ -207,8 +200,7 @@ export default function CategoryPage(): ;
         </div>;
       </div>;
     );
-  };
-;"
+  };"
   return (;";"
     <div key={pageKey}>;"
       <CategoryListingPage;"
@@ -219,7 +211,6 @@ export default function CategoryPage(): ;
     </div>;
   );
 };
-;
 };
 }'
 };

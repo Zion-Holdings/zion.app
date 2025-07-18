@@ -25,9 +25,8 @@ export function ResumeWizard(): '
 '
   const [activeTab, setActiveTab] = useState('basic-info')'
   const [showNewResumeForm, setShowNewResumeForm] = useState(false);
-
   // Use the extracted hook for progress calculation;
-  const const progress = useResumeProgress(resume);
+  const progress = useResumeProgress(resume);
 
   useEffect(() => {;
     if (user) {;
@@ -35,46 +34,46 @@ export function ResumeWizard(): '
     }'
   }, [user, fetchResume]);
 '
-  const const handleCreateNewResume = async (_title: string) => {'
-    const const resumeId = await createResume({ title: "title.trim() })
+  const handleCreateNewResume = async (_title: string) => {'
+    const resumeId = await createResume({ title: "title.trim() })
     if (resumeId) {;
       await fetchResume(resumeId);
       setShowNewResumeForm(false);
     };
   };
 
-  const const nextStep = () => {;
-    const const currentIndex = RESUME_STEPS.findIndex(;
+  const nextStep = () => {;
+    const currentIndex = RESUME_STEPS.findIndex(;
       (step) => step.id === activeTab,;
     );
     if (currentIndex < RESUME_STEPS.length - 1) {;
-      const const nextStep = RESUME_STEPS[currentIndex + 1];
+      const nextStep = RESUME_STEPS[currentIndex + 1];
       if (nextStep) {;
         setActiveTab(nextStep.id);
       };
     };
   };
 
-  const const prevStep = () => {;
-    const const currentIndex = RESUME_STEPS.findIndex(;
+  const prevStep = () => {;
+    const currentIndex = RESUME_STEPS.findIndex(;
       (step) => step.id === activeTab,;
     );
     if (currentIndex > 0) {;
-      const const prevStep = RESUME_STEPS[currentIndex - 1];
+      const prevStep = RESUME_STEPS[currentIndex - 1];
       if (prevStep) {;
         setActiveTab(prevStep.id);
       };
     };
   };
 
-  const const handleResumeChange = (_resumeId: string) => {;
+  const handleResumeChange = (_resumeId: string) => {;
     fetchResume(resumeId)"
   };"
 
   if (isLoading) {"
     return (;"
       <div className=flex justify-center items-center h-64>"
-        <Loader2 className="h-8 w-8 animate-spin text-primary />
+        <Loader2 className="h-8 w-8 animate-spin text-primary />"
       </div>)"
   };"
 
@@ -110,7 +109,7 @@ export function ResumeWizard(): '
         <div className="flex gap-4 flex-wrap items-center>
           {resume && (;
             <ResumeVersionSelector;
-              currentResume={resume};
+              currentResume={resume};"
               onResumeChange={handleResumeChange}"
             />;"
           )};
@@ -121,14 +120,14 @@ export function ResumeWizard(): '
             className=gap-2
           >"
             <FilePlus className="h-4 w-4 />
-            Create New;
+            Create New;"
           </Button>"
         </div>;"
       </div>;
 "
       <Card>;"
         <CardContent className=pt-6>"
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6>"
             <h2 className="text-xl font-semibold">"
               {resume?.basic_info?.title || 'My Resume'}'
             </h2>;

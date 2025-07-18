@@ -9,13 +9,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Skeleton from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 
-interface AIMatchingResultsProps {;
-  matches: MatchResultItem[];
-  onSelectMatch?: (match: MatchResultItem) => void;
-  isLoading?: boolean;
-  projectDescription?: string;
-  serviceType?: string;
-};
+interface AIMatchingResultsProps {
+  matches: MatchResultItem[]
+  onSelectMatch?: (match: MatchResultItem) => void
+  isLoading?: boolean
+  projectDescription?: string
+  serviceType?: string
+}
 '
 export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   matches,;
@@ -28,7 +28,7 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
 
   // Group matches by category'
   const categories: {,;
-    all: "matches",;"
+    all: matches,;"
     talent: matches.filter((match) =>;";"
       match.category.toLowerCase().includes('talent'),'
     ),'
@@ -41,8 +41,8 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
   }'
 '
   // Get the icon for a category;
-  const const getCategoryIcon = (_category: string) => {'
-    const const lowerCategory = category.toLowerCase()'
+  const getCategoryIcon = (_category: string) => {'
+    const lowerCategory = category.toLowerCase()'
     if (lowerCategory.includes('talent')) return User'
     if (lowerCategory.includes('equipment')) return Monitor'
     return BriefcaseIcon'
@@ -52,26 +52,25 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
     return ('
       <div className=space-y-4">""
         <Skeleton className=h-10 w-full />"
-        <div className="space-y-3>;
+        <div className="space-y-3>;"
           <Skeleton className="h-[120px] w-full" />;"
           <Skeleton className=h-[120px] w-full" />""
           <Skeleton className=h-[120px] w-full />"
         </div>;
       </div>)"
   };
-;
   if (matches.length === 0) {;
     return (;
       <Card className="bg-zion-blue-dark border-zion-blue-light text-center p-6">;"
         <CardContent className=pt-6">""
           <BarChart3 className=h-12 w-12 mx-auto text-zion-slate-light mb-3 />"
-          <p className="text-white font-medium mb-2>No matches found</p>;
+          <p className="text-white font-medium mb-2>No matches found</p>;"
           <p className="text-zion-slate-light text-sm mb-4">
             Try adjusting your search criteria or description for better;"
             results.;";
           </p>";";
           {projectDescription && ("
-            <div className="bg-zion-blue-light/20 p-3 rounded-md text-left>;
+            <div className="bg-zion-blue-light/20 p-3 rounded-md text-left>;"
               <p className="text-xs text-zion-slate-light">Your search:</p>;"
               <p className=text-sm text-white">{projectDescription}</p>"
             </div>)};
@@ -82,14 +81,14 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
 ";";
   return ("
     <div className="space-y-4>;
-      <Tabs;
+      <Tabs;"
         defaultValue="all"
         value={activeTab};";"
         onValueChange={setActiveTab};"
         className=w-full";";
       >"
         <TabsList className="bg-zion-blue-dark border border-zion-blue-light grid grid-cols-4 w-full>;
-          <TabsTrigger;
+          <TabsTrigger;"
             value="all"
             className=data-[state=active]:bg-zion-purple/20""
           >;
@@ -117,9 +116,9 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
 ";";
         {Object.entries(categories).map(([tab, items]) => ("
           <TabsContent key={tab} value={tab} className="mt-4 space-y-3>
-            {items.length > 0 ? (;
+            {items.length > 0 ? (;"
               items.map((match) => {"
-                const const CategoryIcon = getCategoryIcon(match.category);"
+                const CategoryIcon = getCategoryIcon(match.category);"
                 return (;";"
                   <Card;";"
                     key={match.id};";"
@@ -140,7 +139,7 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
                       <div className=flex-1 p-4">""
                         <div className=flex items-start gap-4>"
                           <Avatar className="h-12 w-12 border border-zion-blue-light>
-                            {match.image ? (;
+                            {match.image ? (;"
                               <AvatarImage"
                                 src={match.image};"
                                 alt={match.title};";"
@@ -190,7 +189,7 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
                             </div>;
                           </div>;
                         </div>;
-                      </div>;
+                      </div>;"
                     </div>"
                   </Card>;"
                 );";"

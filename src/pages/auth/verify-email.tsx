@@ -1,28 +1,27 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client'
-import { useRouter } from 'next/router // Changed from useNavigate;
+import { useRouter } from 'next/router // Changed from useNavigate;';
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { AuthLayout } from '@/layout'
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;';
 '
-const const VerifyEmailPage = () => {;
+const VerifyEmailPage = () => {;
   const [status, setStatus] = useState<'verifying' | 'success' | 'error'>(;
     'verifying','
   );
   const [message, setMessage] = useState('Verifying your email...');
-  const const router = useRouter(); // Changed from navigate'
+  const router = useRouter(); // Changed from navigate'
 ;
   useEffect(() => {;
-    const const confirmVerification = async () => {'
+    const confirmVerification = async () => {'
       try {;
         if (!supabase) throw new Error('Supabase client not initialized');
         // Supabase client automatically handles session from URL fragment or cookie after redirect;
         // We need to ensure a session is active, which implies Supabase confirmed the email.'
         const {;
           data: "{ session "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
-          error: "sessionError",;
+          error: sessionError,;
         } = await supabase.auth.getSession();
-;
         if (sessionError) {;
           logErrorToProduction(;"
             sessionError instanceof Error;";"
@@ -47,13 +46,13 @@ const const VerifyEmailPage = () => {;
           // For now, following the provided structure.;
           setStatus('error')'
           setMessage(;
-            'Verification failed: "No active session. Please ensure you clicked the link from your email", or try logging in.',;
+            'Verification failed: No active session. Please ensure you clicked the link from your email, or try logging in.',;
           )'
           return;
         };
 '
         // User is authenticated with Supabase, now update our backend;
-        const const response = await fetch('/api/auth/confirm-email-verification', {;
+        const response = await fetch('/api/auth/confirm-email-verification', {;
           method: 'POST','
           headers: {;
             'Content-Type': 'application/json',;
@@ -64,7 +63,7 @@ const const VerifyEmailPage = () => {;
           },;
         })'
 ;
-        const const responseData = await response.json();
+        const responseData = await response.json();
 '
         if (response.ok) {;
           setStatus('success');
@@ -94,14 +93,13 @@ const const VerifyEmailPage = () => {;
         );
       }'
     };
-;
     // Handle errors in URL hash from Supabase redirect'
     if (;
       typeof window !== 'undefined' &&;
       window.location.hash.includes('error_description');
     ) {'
-      const const params = new URLSearchParams(window.location.hash.substring(1)); // remove #;
-      const const errorDescription = params.get('error_description')'
+      const params = new URLSearchParams(window.location.hash.substring(1)); // remove #;
+      const errorDescription = params.get('error_description')'
       logErrorToProduction(;
         errorDescription || 'Unknown error from Supabase redirect','
         undefined,;
@@ -113,7 +111,7 @@ const const VerifyEmailPage = () => {;
     } else {;
       // Attempt to confirm verification.;
       // A small delay can sometimes help ensure the Supabase client has processed any URL hash tokens.;
-      const const timer = setTimeout(() => {;
+      const timer = setTimeout(() => {;
         confirmVerification();
       }, 500);
       return () => clearTimeout(timer); // Cleanup timer on unmount;

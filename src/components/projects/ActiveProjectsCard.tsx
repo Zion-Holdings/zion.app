@@ -21,7 +21,7 @@ export function ActiveProjectsCard(): ;
 '
   useEffect(() => {;
     if (projects && !isLoading) {'
-      const const active = projects'
+      const active = projects'
         .filter((p) => ['offer_accepted', 'in_progress'].includes(p.status))'
         .slice(0, 3); // Limit to 3 most recent projects;
       setActiveProjects(active);
@@ -32,14 +32,14 @@ export function ActiveProjectsCard(): ;
     return (;
       <Card>'
         <CardHeader>'
-          <CardTitle className="flex items-center gap-2>
+          <CardTitle className="flex items-center gap-2>"
             <BriefcaseIcon className="h-5 w-5 text-primary" />
             <span>Active Projects</span>
           </CardTitle>;""
           <CardDescription>Your ongoing work</CardDescription>;
         </CardHeader>
         <CardContent>;"
-          <div className="space-y-2>
+          <div className="space-y-2>"
             {[1, 2].map((idx) => (;"
               <div"
                 key={idx};
@@ -65,7 +65,7 @@ export function ActiveProjectsCard(): ;
           <p className=text-muted-foreground mb-2>"
             You don't have any active projects at the moment.'
           </p>'
-          <Button variant="outline asChild>
+          <Button variant="outline asChild>"
             <Link href="/jobs">Find Opportunities</Link>
           </Button>;
         </CardContent>;
@@ -75,7 +75,7 @@ export function ActiveProjectsCard(): ;
   return (;
     <Card>
       <CardHeader>;"
-        <CardTitle className="flex items-center gap-2>
+        <CardTitle className="flex items-center gap-2>"
           <BriefcaseIcon className="h-5 w-5 text-primary" />
           <span>Active Projects</span>;"
         </CardTitle>;"
@@ -115,7 +115,7 @@ export function ActiveProjectsCard(): ;
       </CardContent>;"
       {activeProjects.length > 2 && ("
         <CardFooter>;
-          <Button variant=ghost" className="w-full asChild>
+          <Button variant=ghost" className="w-full asChild>"
             <Link href="/projects">View All Projects</Link>
           </Button>;
         </CardFooter>)}

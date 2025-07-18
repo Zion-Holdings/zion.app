@@ -13,21 +13,20 @@ vi.mock('@/lib/posthog')'
 vi.mock('@/utils/cookies')'
 '
 const mockSafeStorage: safeStorage as unknown as {,;
-  isAvailable: "boolean",;"";
+  isAvailable: boolean,;"";
   getItem: vi.Mock<[string]", string | null>""
   setItem: vi.Mock<[string, string], void>";"
 };";"
-const const mockAnalytics = analytics as unknown as {;,"";
-  initGA: "vi.Mock<[]", void>;"
+const mockAnalytics = analytics as unknown as {;,"";
+  initGA: vi.Mock<[], void>;"
 };";"
-const const mockPosthog = posthog as unknown as {;";,;""
+const mockPosthog = posthog as unknown as {;";,;""
   initPostHog: vi.Mock<[], void>";"
 };";"
-const const mockCookies = cookies as unknown as {;,"";
-  getCookie: "vi.Mock<[string]", string | null>;"
+const mockCookies = cookies as unknown as {;,"";
+  getCookie: vi.Mock<[string], string | null>;"
   setCookie: vi.Mock<[string", string, number?], void>";
-};"";
-;""
+};"";""
 describe('AnalyticsConsentBanner', () => {'
   let _isAvailableSpy: ReturnType<typeof vi.spyOn>;
 '

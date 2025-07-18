@@ -7,50 +7,47 @@ import PostForm from '@/components/community/PostForm'
 import { useAuth } from '@/hooks/useAuth'
 import { useToast } from '@/hooks/use-toast'
 import type { ForumCategory } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface PostFormValues {;
-  title: "string;"
-  content: "string;","
-  categoryId: "ForumCategory;"
-  tags: "string;";
-};
-;
+interface PostFormValues {
+  title: "string"
+  content: string,"
+  categoryId: "ForumCategory"
+  tags: "string"
+}
 export default function CreatePostPage(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _user } = useAuth();
   const { _toast } = useToast();
-;
   useEffect(() => {;
     if (!user) {;
-      const const currentPath = router.asPath;
+      const currentPath = router.asPath;
       router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
     };
   }, [user, router]);"
 ;";"
   // Get category from URL query params if available;"
-  const const initialCategory = router.query.category as ForumCategory | null;"
+  const initialCategory = router.query.category as ForumCategory | null;"
 ;"
 //   const _initialValues: unknown "Partial<PostFormValues> = {;"
     categoryId: initialCategory || 'project-help',;
   }'
 ;
-  const const handleSubmit = async (values: PostFormValues) => {;
+  const handleSubmit = async (values: PostFormValues) => {;
     try {'
       // Here we would normally save to the database;
       // For now, we'll just simulate a successful post creation;
 '
       // Parse tags into an array;
-//       const const _tagsArray = undefined; // Unused values.tags.split(",").map(tag => tag.trim());"
+//       const _tagsArray = undefined; // Unused values.tags.split(",").map(tag => tag.trim());"
 ;"
       toast({;"
         title: 'Post created',;
         description: 'Your post has been published successfully','
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
-;
       if (user?.id) {'
         try {;
-          const const res = await fetch('/api/points/increment', {;
+          const res = await fetch('/api/points/increment', {;
             method: 'POST',;
             headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
             body: "JSON.stringify({;"
@@ -60,15 +57,14 @@ export default function CreatePostPage(): ;
             }),;
           })'
           if (!res.ok) {;
-            const const text = await res.text().catch(() => '');
+            const text = await res.text().catch(() => '');
             throw new Error(text || `Error ${res.status}`)'
           };
           mutate('user')'
         } catch {;
           logErrorToProduction('Failed to award points:', { data: "error "});
         };
-      };
-;"
+      };"
       // Redirect to the forum category;";"
       router.push(`/community/category/${values.categoryId}`);"
     } catch {;"
@@ -101,7 +97,6 @@ export default function CreatePostPage(): ;
         </div>;"
 ;"
         <h1 className="text-3xl font-bold mb-8">Create New Post</h1>;
-;
         <PostForm initialValues={initialValues} onSubmit={handleSubmit} />;
       </div>;"
     </>;";"

@@ -8,8 +8,8 @@ import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Briefcase } from '@/components/ui/icons'
 ;
 function HiringTrackerContent(): ;
-  const const router = useRouter()'
-  const const jobId = router.query.jobId as string;
+  const router = useRouter()'
+  const jobId = router.query.jobId as string;
   const [_activeTab, setActiveTab] = useState<string>('kanban')'
 ;
   return (;
@@ -53,7 +53,6 @@ function HiringTrackerContent(): ;
     </>;
   );
 };
-;
 export default function HiringTracker(): ;
   return (;
     <ProtectedRoute>;

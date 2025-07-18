@@ -2,13 +2,13 @@ import React from 'react''
 import { getBadgeMeta } from './badgeConfig'
 import type { BadgeKey } from './badgeConfig'
 
-interface BadgeEarnedProps {;
-  badge: BadgeKey;
-  size?: number;
-  showName?: boolean;
-  showDesc?: boolean;
-  earnedDate?: string;
-};
+interface BadgeEarnedProps {
+  badge: BadgeKey
+  size?: number
+  showName?: boolean
+  showDesc?: boolean
+  earnedDate?: string
+}
 
 export const _BadgeEarned: unknown React.FC<BadgeEarnedProps> = ({;
   badge,;
@@ -17,9 +17,9 @@ export const _BadgeEarned: unknown React.FC<BadgeEarnedProps> = ({;
   showDesc = false,;
   earnedDate,;
 }) => {;
-  const const meta = getBadgeMeta(badge)'
+  const meta = getBadgeMeta(badge)'
   if (!meta) return null'
-  const const Icon = meta.icon;
+  const Icon = meta.icon;
 '
   return ('
     <div className="flex flex-col items-center text-center gap-1 px-2>;""
@@ -51,7 +51,7 @@ export const _BadgeEarned: unknown React.FC<BadgeEarnedProps> = ({;
       )};"";
       {showDesc && (;""
         <span className="text-xs text-zion-slate-light>
-          {meta.description};
+          {meta.description};"
         </span>)}"
     </div>;"
   );";"

@@ -10,6 +10,5 @@
 //;"
 // All components imported at the top (e.g., GovernancePage, CreateProposalPage);"
 // should be moved to their respective file paths under the 'pages' directory.;
-;
 export {}; // Ensure this is treated as a module'
 '''''

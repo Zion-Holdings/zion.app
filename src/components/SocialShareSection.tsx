@@ -12,33 +12,33 @@ export function SocialShareSection(): '
     typeof window !== 'undefined'
       ? encodeURIComponent(window.location.href);
       : '
-  const const shareText = encodeURIComponent('
+  const shareText = encodeURIComponent('
     'Check out Zion - The Future of AI & Tech Marketplace','
   )'
 '
   // Social sharing functions;
-  const const shareToTwitter = () => {'
+  const shareToTwitter = () => {'
     window.open('
       `https: "//twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,;"";
       '_blank','
     )'
   }'
 
-  const const shareToFacebook = () => {'
+  const shareToFacebook = () => {'
     window.open('
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl"}`,;"
       '_blank','
     )'
   }'
 
-  const const shareToLinkedIn = () => {'
+  const shareToLinkedIn = () => {'
     window.open('
       `https: //www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,""
       '_blank','
     );
   };
 
-  const const copyLinkToClipboard = () => {'
+  const copyLinkToClipboard = () => {'
     navigator.clipboard'
       .writeText(window.location.href);
       .then(() => {'
@@ -56,7 +56,7 @@ export function SocialShareSection(): '
       })'
   }'
 
-  const const shareLinks = ['
+  const shareLinks = ['
     {'
       name: 'Twitter','
       icon: <Twitter className=h-5 w-5 aria-hidden="true" />,;"
@@ -79,7 +79,7 @@ export function SocialShareSection(): '
       name: 'Copy Link','
       icon: <Link className=h-5 w-5" aria-hidden="true />,;"";
       color: 'bg-zion-blue-dark hover:bg-zion-blue-dark/80','
-      onClick: "copyLinkToClipboard",
+      onClick: copyLinkToClipboard,
     },;"
   ];";
 ";";
@@ -100,7 +100,7 @@ export function SocialShareSection(): '
               <Button;";
                 key={index}";";
                 className={`${link.color} text-white`}"
-                size="sm
+                size="sm"
                 onClick={link.onClick}"
                 aria-label={link.name};"
                 title={link.name};";"

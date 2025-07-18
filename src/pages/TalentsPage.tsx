@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRouter } from 'next/router;
-import {;
-  ArrowUp,;
+import  { useRouter }  from 'next/router;
+import {;';
+  ArrowUp,;';
   Filter,'
   SortAsc,;
   Users,;
@@ -9,8 +9,7 @@ import {;
   MapPin,;
 } from '@/components/ui/icons'
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion;
-;
+import { motion, AnimatePresence } from 'framer-motion;';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import { TALENT_PROFILES } from '@/data/talentData'
 import type { TalentProfile } from '@/types/talent'
@@ -18,14 +17,13 @@ import { SkeletonCard } from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import Spinner from '@/components/ui/spinner;
-;
+import Spinner from '@/components/ui/spinner;';
 // Add or import TalentStats type'
 type TalentStats = {;
   _averageHourlyRate: "number;"
-  averageMonthlySalary: "number;","
+  averageMonthlySalary: number;,"
   averageRating: "number;"
-  averageExperience: "number;","
+  averageExperience: number;,"
   totalTalents: "number;"
 };"
 ;"
@@ -73,13 +71,13 @@ const TalentMarketInsights: unknown "React.FC<{ stats: TalentStats "}> = ({ stat
 ;"
 // Filter and sort controls for talents;"
 const TalentFilterControls: unknown "React.FC<{;"
-  sortBy: "string;","
+  sortBy: string;,"
   setSortBy: "(sort: string) => void;"
-  filterSpecialization: "string;","
+  filterSpecialization: string;,"
   setFilterSpecialization: "(spec: string) => void;"
-  filterAvailability: "string;","
+  filterAvailability: string;,"
   setFilterAvailability: "(avail: string) => void;"
-  specializations: "string[];","
+  specializations: string[];,"
   showRecommended: "boolean;"
   setShowRecommended: "(show: boolean) => void;"
   loading: "boolean;";
@@ -272,37 +270,30 @@ const TalentLoadingGrid: unknown "React.FC<{ count?: number "}> = ({ count = 8 }
 ;";"
 // Main enhanced talents page with infinite scroll;"
 export default function TalentsPage(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const [sortBy, setSortBy] = useState('newest');
   const [filterSpecialization, setFilterSpecialization] = useState('');
   const [filterAvailability, setFilterAvailability] = useState('');
   const [showRecommended, setShowRecommended] = useState(false)'
   const [totalGenerated, setTotalGenerated] = useState(0);
-;
   // Fetch function for infinite scroll with AI talent generation'
-  const const fetchTalents = useCallback(;
-    async (page: "number", _limit: number) => {;
+  const fetchTalents = useCallback(;
+    async (page: number, _limit: number) => {;
       // Add realistic loading delay;
       await new Promise((resolve) => setTimeout(resolve, 300));
-;
       let allTalents: TalentProfile[] = [];
-;
       // Start with existing talent profiles;
       if (page === 1) {;
         allTalents = [...TALENT_PROFILES];
-      };
-;"
+      };"
       // Generate new AI/IT talents using the auto-feed algorithm;";"
       const startId: unknown =;"
         TALENT_PROFILES.length + (page - 1) * limit + totalGenerated;"
       const newTalents: TALENT_PROFILES.slice(startId", startId + limit);
       setTotalGenerated((prev) => prev + newTalents.length);
-;
       allTalents = [...allTalents, ...newTalents];
-;
       // Apply filters;
       let filteredTalents = allTalents;
-;
       if (filterSpecialization) {;
         filteredTalents = filteredTalents.filter((t) =>;
           t.professional_title;
@@ -310,13 +301,11 @@ export default function TalentsPage(): ;"
             .includes(filterSpecialization.toLowerCase()),;
         );
       };
-;
       if (filterAvailability) {;
         filteredTalents = filteredTalents.filter(;
           (t) => t.availability_type === filterAvailability,;
         );
       };
-;
       if (showRecommended) {;
         // This part of the logic is removed as per the edit hint.;
         // The original code had getRecommendedTalents(filteredTalents) here.;
@@ -345,14 +334,14 @@ export default function TalentsPage(): ;"
       });
 '
       // Paginate results;
-      const const startIndex = (page - 1) * limit;
-      const const endIndex = startIndex + limit'
+      const startIndex = (page - 1) * limit;
+      const endIndex = startIndex + limit'
       const items: filteredTalents.slice(startIndex", endIndex);"
 ;"
       return {;"
         items,;
-        hasMore: "endIndex < filteredTalents.length || page < 12", // Allow up to 12 pages;"
-        total: "filteredTalents.length",;
+        hasMore: endIndex < filteredTalents.length || page < 12, // Allow up to 12 pages;"
+        total: filteredTalents.length,;
       };
     },;
     [;
@@ -365,8 +354,8 @@ export default function TalentsPage(): ;"
   );";"
 ;"
   // Use infinite scroll hook;"
-  const {;"
-    items: "talents",;
+  const { ;"
+    items: talents,;
     loading,;
     error,;
     hasMore,;
@@ -375,16 +364,13 @@ export default function TalentsPage(): ;"
     lastElementRef,;
     refresh,;
     scrollToTop,;
-    loadMore,;
-  } = useInfiniteScrollPagination(fetchTalents, 16);
-;
+    loadMore,; } = useInfiniteScrollPagination(fetchTalents, 16);
   // Refresh when filters change;
-  useEffect(() => {;
-    refresh();
-  }, [refresh]);
-;
+  useEffect(() => {
+    refresh()
+  }, [refresh])
   // Calculate market stats;
-  const const marketStats = useMemo(() => {;
+  const marketStats = useMemo(() => {;
     if (talents.length === 0) return null;
     return {;
       averageHourlyRate:;
@@ -399,12 +385,11 @@ export default function TalentsPage(): ;"
       averageExperience:;"
         talents.reduce((sum, t) => sum + (t.years_experience || 0), 0) /;"
         talents.length,;"
-      totalTalents: "talents.length",;
+      totalTalents: talents.length,;
     };
   }, [talents]);
-;
   // Get unique specializations;"
-  const const specializations = useMemo(() => {;";"
+  const specializations = useMemo(() => {;";"
     return Array.from(;"
       new Set(;"
         talents;"
@@ -413,11 +398,10 @@ export default function TalentsPage(): ;"
       ),;
     );
   }, [talents]);
-;
   // Show scroll to top button;
   const [showScrollTop, setShowScrollTop] = useState(false)'
   useEffect(() => {;
-    const const handleScroll = () => {;
+    const handleScroll = () => {;
       setShowScrollTop(window.scrollY > 800)'
     };
     window.addEventListener('scroll', handleScroll);
@@ -429,8 +413,8 @@ export default function TalentsPage(): ;"
     return (;
       <main className="container py-8" data-testid="talents-loading">;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           className="text-center mb-8"
         >;"
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">;"
@@ -464,8 +448,8 @@ export default function TalentsPage(): ;"
       {/* Header */};"
       <motion.div;"
         className="text-center mb-8"
-        initial={{ opacity: "0", y: "-20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "-20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
       >;"
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">;"
           AI & IT Talent Directory;"
@@ -479,8 +463,8 @@ export default function TalentsPage(): ;"
       {/* Market Insights */};"
       {marketStats && (;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           transition={{ delay: "0.2 "}};
         >;
           <TalentMarketInsights stats={marketStats} />;
@@ -489,8 +473,8 @@ export default function TalentsPage(): ;"
 ;"
       {/* Filter Controls */};"
       <motion.div;"
-        initial={{ opacity: "0", y: "20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
         transition={{ delay: "0.3 "}};
       >;
         <TalentFilterControls;
@@ -519,10 +503,10 @@ export default function TalentsPage(): ;"
             <motion.div;"
               key={talent.id};"
               ref={index === talents.length - 1 ? lastElementRef : null};"
-              initial={{ opacity: "0", scale: "0.9 "}};"
-              animate={{ opacity: "1", scale: "1 "}};"
-              exit={{ opacity: "0", scale: "0.9 "}};"
-              transition={{ delay: "Math.min(index * 0.03", 0.5) }};"
+              initial={{ opacity: 0, scale: "0.9 "}};"
+              animate={{ opacity: 1, scale: "1 "}};"
+              exit={{ opacity: 0, scale: "0.9 "}};"
+              transition={{ delay: Math.min(index * 0.03, 0.5) }};"
               whileHover={{ scale: "1.02 "}};
             >;
               <TalentCard;
@@ -576,16 +560,15 @@ export default function TalentsPage(): ;"
           </div>;
         </motion.div>;
       )};
-;
       {/* Scroll to Top Button */};"
       <AnimatePresence>;";"
         {showScrollTop && (;"
           <motion.button;"
             onClick={scrollToTop};"
             className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
-            initial={{ opacity: "0", scale: "0 "}};"
-            animate={{ opacity: "1", scale: "1 "}};"
-            exit={{ opacity: "0", scale: "0 "}};"
+            initial={{ opacity: 0, scale: "0 "}};"
+            animate={{ opacity: 1, scale: "1 "}};"
+            exit={{ opacity: 0, scale: "0 "}};"
             whileHover={{ scale: "1.1 "}};"
             whileTap={{ scale: "0.9 "}};"
           >;"

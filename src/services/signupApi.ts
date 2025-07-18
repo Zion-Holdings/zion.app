@@ -1,28 +1,27 @@
-import axios from 'axios;
-;
-import { logErrorToProduction } from '@/utils/productionLogger;
+import axios from 'axios;';
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-export interface SignupPayload {;
-  email: "string;",;
-  password: string;
-  name?: string;"
-};";"
+export interface SignupPayload {
+  email: string,
+  password: string
+  name?: string"
+}";"
 ;"
 // Session structure for signup API;"
-export interface Session {;"
-  id: "string;"
-  email: "string;",;"
-  token: string;"
-  [key: "string]: unknown;";
-};"
+export interface Session {"
+  id: "string"
+  email: string,"
+  token: string"
+  [key: "string]: unknown"
+}"
 ;";"
-export interface SignupApiResponse {;"
-  message: string;"
-  user?: {;"
-    id: "string;",;
-    email: string;
-    display_name?: string;
-  };
+export interface SignupApiResponse {"
+  message: string"
+  user?: {"
+    id: string,
+    email: string
+    display_name?: string
+  }
   session?: Session;"
   emailVerificationRequired?: boolean;";"
 };"
@@ -30,14 +29,14 @@ export interface SignupApiResponse {;"
 export async function signupUser(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   email: "string"
   password: "string"
-  name: "string",;"
+  name: string,;"
 ) {;"
   if (!email || !password) {;"
     throw new Error('Email and password are required');
   };
 '
   try {;
-    const const res = await axios.post('/api/auth/register', {;
+    const res = await axios.post('/api/auth/register', {;
       email,;
       password,;
       name,;
@@ -48,13 +47,13 @@ export async function signupUser(): unknown {): unknown {): unknown {): unknown 
     // Handle unexpected success status codes;
     throw new Error(`Unexpected status ${res.status}`);
   } catch (err: unknown) {'
-    const const message = err instanceof Error ? err.message : String(err);
+    const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Signup error:', { data: "err "});"
     if (axios.isAxiosError(err)) {;"
       if (err.response) {;"
-        const const status = err.response.status;"
+        const status = err.response.status;"
         let errorMessage = 'Signup failed;
-        const const data = err.response.data as unknown;
+        const data = err.response.data as unknown;
         if (data && typeof data === 'object') {'
           if (;
             'error' in data &&;
@@ -82,7 +81,6 @@ export async function signupUser(): unknown {): unknown {): unknown {): unknown 
     throw new Error(message || 'Signup failed');
   };
 };
-;
 }'
 }
 }'

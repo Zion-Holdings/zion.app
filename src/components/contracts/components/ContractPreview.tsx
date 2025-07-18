@@ -25,7 +25,7 @@ export function ContractPreview(): unknown {): unknown {): unknown {): unknown {
   deploymentInfo,;
 }: ContractPreviewProps) {'
   // Use either contractContent or generatedContract, whichever is provided'
-  const const displayContent = contractContent || generatedContract || 
+  const displayContent = contractContent || generatedContract || 
 '
   return ('
     <div className="space-y-4>;"";
@@ -46,7 +46,7 @@ export function ContractPreview(): unknown {): unknown {): unknown {): unknown {
             Pending Review;";
           </Badge>";";
         ) : ("
-          <Badge variant="outline>Draft</Badge>
+          <Badge variant="outline>Draft</Badge>"
         )};""
       </div>;"
 ";"
@@ -54,7 +54,7 @@ export function ContractPreview(): unknown {): unknown {): unknown {): unknown {
       <div className=border rounded-lg p-6 bg-muted/50>";";
         {/* Render the contract content as markdown or formatted text */}"
         <div className="prose prose-sm max-w-none prose-headings:font-semibold prose-headings:text-foreground prose-p:text-muted-foreground>
-          {displayContent};
+          {displayContent};"
         </div>"
       </div>;"
 ;";"
@@ -75,7 +75,7 @@ export function ContractPreview(): unknown {): unknown {): unknown {): unknown {
       {/* Actions */}";""
       <div className=flex justify-end space-x-3 mt-4>";";
         {onClose && ("
-          <Button variant="outline onClick={onClose}>
+          <Button variant="outline onClick={onClose}>"
             Close;""
           </Button>;"
         )}";"

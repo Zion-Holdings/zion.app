@@ -11,16 +11,16 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
-interface AuthConfigurationErrorProps {;
-  onRetry?: () => void;
-  showSetupButton?: boolean;
-};
+interface AuthConfigurationErrorProps {
+  onRetry?: () => void
+  showSetupButton?: boolean
+}
 
 export function AuthConfigurationError(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onRetry,;
   showSetupButton = true,;
 }: AuthConfigurationErrorProps) {;
-  const const handleRefresh = () => {;
+  const handleRefresh = () => {;
     if (onRetry) {;
       onRetry();
     } else {;
@@ -40,7 +40,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
             <h1 className=text-3xl font-bold text-gray-900 mb-2">";
               Authentication Service Unavailable;"";
             </h1>;""
-            <p className="text-gray-600>
+            <p className="text-gray-600>"
               The sign-up system needs to be configured before users can create"
               accounts;"
             </p>;";"
@@ -101,7 +101,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
             <ol className=space-y-3 text-sm">""
               <li className=flex items-start gap-3>"
                 <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold>
-                  1;
+                  1;"
                 </span>"
                 <div>;"
                   <strong>Create Auth0 Account:</strong>;";"
@@ -115,8 +115,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
                     Visit Auth0 Dashboard <ExternalLink className=w-3 h-3" />"
                   </a>;
                 </div>;"";
-              </li>;"";
-;"";
+              </li>;"";"";
               <li className="flex items-start gap-3">;"
                 <span className=flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold">"
                   2
@@ -181,8 +180,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
             >;"";
               <span>View Talent Pool</span>;""
               <ExternalLink className="w-4 h-4 />;"
-            </Link>";
-;"";
+            </Link>";"";
             <Link;""
               href="/help;"";
               className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors text-blue-700 hover:text-blue-800"
@@ -217,8 +215,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
               </code>;
             </div>"
           </div>;
-        )};"";
-;"";
+        )};"";"";
         {/* Footer */};"";
         <div className="mt-6 text-center text-sm text-gray-500">;"
           <p>;";"

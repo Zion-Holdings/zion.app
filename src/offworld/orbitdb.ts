@@ -7,45 +7,41 @@
 const isBuildEnv: unknown =;
   process.env.CI === 'true' ||;
   (process.env.NODE_ENV === 'production' && typeof window === 'undefined');
-const const isBrowserEnv = typeof window !== 'undefined;
-;
+const isBrowserEnv = typeof window !== 'undefined;
 // Mock implementations for browser environment'
-const const createOrbitDB = () =>;
+const createOrbitDB = () =>;
   Promise.resolve({;
     open: () =>'
       Promise.resolve({;
         add: "() => Promise.resolve()"
         iterator: "() => []"
-        close: "() => Promise.resolve()",;"
+        close: () => Promise.resolve(),;"
       }),;"
-    stop: "() => Promise.resolve()",;"
+    stop: () => Promise.resolve(),;"
   });";"
 ;"
-const const createHelia = () =>;"
+const createHelia = () =>;"
   Promise.resolve({;"
     stop: "() => Promise.resolve()"
     libp2p: "{ getConnections: () => [] "},;"
   });"
 ;"
 // Browser-safe logging;"
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
 '
 // Browser-safe memory stores;
 class _MemoryBlockstore {;
   private store = new Map<string, unknown>()'
 ;
-  async put(key: "unknown", value: unknown) {;
+  async put(key: unknown, value: unknown) {;
     this.store.set(String(key), value);
   };
-;
   async get(key: unknown) {;
     return this.store.get(String(key));
   };
-;
   async has(key: unknown) {;
     return this.store.has(String(key));
   };
-;
   async delete(key: unknown) {;
     this.store.delete(String(key));
   };
@@ -54,43 +50,38 @@ class _MemoryBlockstore {;
 class _MemoryDatastore {;"
   private store = new Map<string, unknown>();"
 ;"
-  async put(key: "unknown", value: unknown) {;
+  async put(key: unknown, value: unknown) {;
     this.store.set(String(key), value);
   };
-;
   async get(key: unknown) {;
     return this.store.get(String(key));
   };
-;
   async has(key: unknown) {;
     return this.store.has(String(key));
   };
-;
   async delete(key: unknown) {;
     this.store.delete(String(key));"
   };";"
 };"
 ;"
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly;"
-// import { LogStore } from '@orbitdb/core;
-;
+// import  { LogStore }  from '@orbitdb/core;
 // Placeholder types for OrbitDB and Helia;
 type OrbitDB = object;
 type Helia = object;
-;
-let orbit: OrbitDB | null = null;
-let heliaNode: Helia | null = null;
+let orbit: OrbitDB | null = null;';
+let heliaNode: Helia | null = null;';
 '
 // Simplified libp2p options for this Helia instance;
 // Depending on use case, might share libp2p from ipfs.ts or have more transports;
-// // const const _libp2pOptions = {'
+// // const _libp2pOptions = {'
 //   addresses: {;
 //     listen: ['/ip4/0.0.0.0/tcp/0']'
 //   },;
-//   transports: "[]", // Will be populated server-side if needed;"
-//   connectionEncryption: "[]", // Will be populated server-side if needed;"
-//   streamMuxers: "[]", // Will be populated server-side if needed;"
-//   peerDiscovery: "[]", // Will be populated server-side if needed;"
+//   transports: [], // Will be populated server-side if needed;"
+//   connectionEncryption: [], // Will be populated server-side if needed;"
+//   streamMuxers: [], // Will be populated server-side if needed;"
+//   peerDiscovery: [], // Will be populated server-side if needed;"
 //   services: "{"} // Will be populated server-side if needed;"
 // };"
 ;"
@@ -104,7 +95,6 @@ export async function initOrbit(): unknown {): unknown {): unknown {): unknown {
     logInfo('OrbitDB initialization skipped for CI/build/browser environment');
     return'
   };
-;
   try {'
     // Only initialize in server environment;
     if (typeof window === 'undefined') {;
@@ -137,7 +127,7 @@ export async function getLog(): unknown {): unknown {): unknown {): unknown {): 
     return {;
       add: "() => Promise.resolve()"
       iterator: "() => []"
-      close: "() => Promise.resolve()",;"
+      close: () => Promise.resolve(),;"
     };";"
   };"
 ;"
@@ -147,9 +137,9 @@ export async function getLog(): unknown {): unknown {): unknown {): unknown {): 
 '
   try {;
     // Open a log store with the given name;
-    const const log = await ('
+    const log = await ('
       orbit as {;
-        open: "(name: string", opts: "{ type: string "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}) => Promise<unknown>;"
+        open: (name: string, opts: "{ type: string "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}) => Promise<unknown>;"
       };"
     ).open(name, { type: 'log' });
     return log'
@@ -168,7 +158,7 @@ export async function getLog(): unknown {): unknown {): unknown {): unknown {): 
     return {;"
       add: "() => Promise.resolve()"
       iterator: "() => []"
-      close: "() => Promise.resolve()",;
+      close: () => Promise.resolve(),;
     };
   };"
 };";"

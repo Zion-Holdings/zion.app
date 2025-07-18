@@ -3,13 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 '
 interface ChatMessageProps {'
   role: 'user' | 'assistant,'
-  message: string;
+  message: string
   timestamp?: Date'
   key?: string | number'
-};
+}
 '
 export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, message, timestamp }: ChatMessageProps) {'
-  const const isUser = role === 'user'
+  const isUser = role === 'user'
 '
   return (;
     <div'
@@ -25,7 +25,7 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
         )};
       >'
         {isUser ? ('
-          <AvatarFallback className="bg-zion-purple/20 text-white>
+          <AvatarFallback className="bg-zion-purple/20 text-white>"
             U;""
           </AvatarFallback>;"
         ) : (";"
@@ -36,7 +36,7 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
         )};
         {!isUser && (;"
           <AvatarFallback className="bg-zion-cyan/20 text-white>
-            AI;
+            AI;"
           </AvatarFallback>)}"
       </Avatar>;"
 ;";"

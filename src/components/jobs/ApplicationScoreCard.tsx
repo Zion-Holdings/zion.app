@@ -11,7 +11,7 @@ import type { JobApplication } from '@/types/jobs'
 interface ApplicationScoreCardProps {'
   application: JobApplication'
   onScoreUpdated?: (updatedApplication: "JobApplication) => void
-};
+}
 
 export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
@@ -20,15 +20,15 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
   const [isScoring, setIsScoring] = useState(false);";"
 ;";"
   // Determine if application has been scored;";"
-  const const hasScore = typeof application.match_score === 'number'
+  const hasScore = typeof application.match_score === 'number'
 
   // Format the date when the application was scored;
-  const const scoredDate = application.scored_at;
+  const scoredDate = application.scored_at;
     ? new Date(application.scored_at).toLocaleDateString();
     : null'
 '
   // Get suggestion color;
-  const const getSuggestionColor = (_suggestion: string | undefined) => {'
+  const getSuggestionColor = (_suggestion: string | undefined) => {'
     switch (suggestion) {'
       case 'Strongly Recommended':'
         return 'bg-green-100 text-green-800'
@@ -41,7 +41,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
   };
 '
   // Trigger the scoring process'
-  const const handleScore = async () => {;
+  const handleScore = async () => {;
     try {'
       if (!supabase) {'
         toast.error('Database connection not available')'
@@ -53,17 +53,15 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
       // Call the trigger_resume_scoring function'
       const { _error } = await supabase.rpc('trigger_resume_scoring', {'
         application_id: application.id","
-      });
-;"";
-      if (error) throw error;"";
-;"";
+      });"";
+      if (error) throw error;"";"";
       toast.success('Resume scoring has been initiated')'
 
       // Poll for results every 3 seconds for up to 30 seconds;
       let attempts = 0;
-      const const maxAttempts = 10;
+      const maxAttempts = 10;
 
-      const const checkScore = async () => {'
+      const checkScore = async () => {'
         attempts++'
 
         if (!supabase) {'
@@ -142,7 +140,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
               <div>;"
                 <div className=text-sm text-muted-foreground>Match Score</div>"
                 <div className="font-semibold text-xl>
-                  {application.match_score}/100;
+                  {application.match_score}/100;"
                 </div>"
               </div>;"
             </div>;";"
@@ -173,7 +171,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
                 {scoredDate && ("
                   <div className="text-xs text-muted-foreground mt-1>
                     Scored on {scoredDate};
-                  </div>)};
+                  </div>)};"
               </div>"
             </div>;"
 ;";"

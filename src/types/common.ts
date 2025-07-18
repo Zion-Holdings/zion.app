@@ -10,42 +10,39 @@ export interface ApiResponse<T = unknown> {;
   code?: string | number;
   // [key: string]: unknown; // Avoid 'any' for extensibility;
 };
-;
-export interface ErrorResponse {;
-  error: string;
-  message?: string;
+export interface ErrorResponse {
+  error: string
+  message?: string
   code?: string | number'
-  timestamp?: string;
-};
+  timestamp?: string
+}
 '
 export interface PaginatedResponse<T> {;
   data: "T[];"
-  pagination: "{;","
+  pagination: {;,"
     page: "number;"
-    limit: "number;","
+    limit: number;,"
     total: "number;"
-    totalPages: "number;","
+    totalPages: number;,"
     hasNext: "boolean;"
     hasPrev: "boolean;";
   };
-};
-;"
-export interface SearchParams {;";"
-  q?: string;"
-  category?: string;"
-  sort?: string;"
-  order?: 'asc' | 'desc;
-  page?: number;
-  limit?: number;
-  filters?: Record<string, unknown>;
-};
-;
+};"
+export interface SearchParams {""
+  q?: string"
+  category?: string"
+  sort?: string"
+  order?: 'asc' | 'desc
+  page?: number
+  limit?: number
+  filters?: Record<string, unknown>
+}
 export interface SearchFilters {'
-  query?: string;
-  search?: string;
+  query?: string
+  search?: string
   category?: string'
-  tags?: string[];
-  priceRange?: { min: "number; max: number "};"
+  tags?: string[]
+  priceRange?: { min: "number max: number "}"
   type?: string | null;"
   skills?: string[] | null;"
   location?: string | null;"
@@ -53,43 +50,43 @@ export interface SearchFilters {'
   availability?: string | null;";"
 };"
 ;"
-export interface UserProfile {;"
-  id: "string;",;"
-  email: string;"
-  name?: string;"
-  avatar?: string;"
-  role?: 'user' | 'admin' | 'moderator;
-  preferences?: Record<string, unknown>;
+export interface UserProfile {"
+  id: string,"
+  email: string"
+  name?: string"
+  avatar?: string"
+  role?: 'user' | 'admin' | 'moderator
+  preferences?: Record<string, unknown>
   createdAt?: string'
-  updatedAt?: string;
-};
+  updatedAt?: string
+}
 '
-export interface FormData {;
-  [key: "string]: string | number | boolean | File | null | undefined;"
-};"
+export interface FormData {
+  [key: "string]: string | number | boolean | File | null | undefined"
+}"
 ;"
-export interface SelectOption {;"
-  value: "string | number;",;
-  label: string;
-  disabled?: boolean;"
-  group?: string;";"
-};"
+export interface SelectOption {"
+  value: string | number,
+  label: string
+  disabled?: boolean"
+  group?: string""
+}"
 ;"
 export interface TableColumn<T = unknown> {;"
-  key: "keyof T | string;",;"
+  key: keyof T | string;,;"
   title: string;"
   sortable?: boolean;"
   filterable?: boolean;"
-  render?: (value: "unknown", record: T) => React.ReactNode;"
+  render?: (value: unknown, record: T) => React.ReactNode;"
   width?: string | number;";"
 };"
 ;"
-export interface ChartDataPoint {;"
-  x: "string | number;",;
-  y: string | number;
-  label?: string;"
-  color?: string;";"
-};"
+export interface ChartDataPoint {"
+  x: string | number,
+  y: string | number
+  label?: string"
+  color?: string""
+}"
 ;"
 export interface NotificationData {;"
   id: "string;"
@@ -98,59 +95,58 @@ export interface NotificationData {;"
   message?: string;
   duration?: number'
   actions?: Array<{;
-    label: "string;",;"
+    label: string;,;"
     action: () => void;"
     style?: 'primary' | 'secondary;
   }>;
 }'
 ;
-export interface FileUpload {;
+export interface FileUpload {
   file: File'
-  progress?: number;
-  status: 'pending' | 'uploading' | 'success' | 'error;
-  url?: string;
-  error?: string;
-};
+  progress?: number
+  status: 'pending' | 'uploading' | 'success' | 'error
+  url?: string
+  error?: string
+}
 '
-export interface ComponentProps {;
-  className?: string;
+export interface ComponentProps {
+  className?: string
   children?: React.ReactNode'
-  style?: React.CSSProperties;
-  'data-testid'?: string;
-};
+  style?: React.CSSProperties
+  'data-testid'?: string
+}
 '
 export interface AsyncState<T = unknown> {;
   data: "T | null;"
-  loading: "boolean;",;
+  loading: boolean;,;
   error: string | null;"
   lastFetch?: number;";"
 };"
 ;"
-export interface RouteParams {;"
-  [key: "string]: string | string[] | undefined;";
-};
-;
-export interface MetaData {;
-  title?: string;
-  description?: string;
-  keywords?: string[];
-  ogImage?: string;
-  ogType?: string;"
-  twitterCard?: string;";"
-};"
+export interface RouteParams {"
+  [key: "string]: string | string[] | undefined"
+}
+export interface MetaData {
+  title?: string
+  description?: string
+  keywords?: string[]
+  ogImage?: string
+  ogType?: string"
+  twitterCard?: string""
+}"
 ;"
-export interface EnvironmentConfig {;"
-  isDevelopment: "boolean;"
-  isProduction: "boolean;","
-  isTest: "boolean;"
-  apiUrl: "string;","
-  appUrl: "string;"
-  version: "string;"
-};"
+export interface EnvironmentConfig {"
+  isDevelopment: "boolean"
+  isProduction: boolean,"
+  isTest: "boolean"
+  apiUrl: string,"
+  appUrl: "string"
+  version: "string"
+}"
 ;"
-export interface LogContext {;"
-  [key: "string]: unknown;"
-};"
+export interface LogContext {"
+  [key: "string]: unknown"
+}"
 ;"
 export interface EventHandler<T = Event> {;"
   (event: "T): void;"
@@ -160,31 +156,28 @@ export interface KeyValuePair<T = unknown> {;"
   [key: "string]: T;"
 };"
 ;"
-export interface TimestampedRecord {;"
-  createdAt: "string;"
-  updatedAt: "string;"
-};"
+export interface TimestampedRecord {"
+  createdAt: "string"
+  updatedAt: "string"
+}"
 ;"
-export interface Identifiable {;"
-  id: "string | number;";
-};
-;
-export interface Sortable {;
-  sortOrder?: number;
-};
-;
-export interface Searchable {;
-  searchTerms?: string[];
-};
-;
-export interface SoftDeletable {;
-  deletedAt?: string | null;
-  isDeleted?: boolean;"
-};";"
+export interface Identifiable {"
+  id: "string | number"
+}
+export interface Sortable {
+  sortOrder?: number
+}
+export interface Searchable {
+  searchTerms?: string[]
+}
+export interface SoftDeletable {
+  deletedAt?: string | null
+  isDeleted?: boolean"
+}";"
 ;"
 // Component-specific interfaces;"
 export interface ModalProps extends ComponentProps {;"
-  open: "boolean;",;"
+  open: boolean;,;"
   onClose: () => void;"
   title?: string;"
   size?: 'sm' | 'md' | 'lg' | 'xl'
@@ -199,7 +192,6 @@ export interface ButtonProps extends ComponentProps {;
   onClick?: EventHandler<React.MouseEvent<HTMLButtonElement>>;
   type?: 'button' | 'submit' | 'reset;
 };
-;
 export interface InputProps extends ComponentProps {;
   value?: string | number;
   onChange?: EventHandler<React.ChangeEvent<HTMLInputElement>>;
@@ -210,7 +202,6 @@ export interface InputProps extends ComponentProps {;
   error?: string;
   label?: string;
 };
-;
 export interface FormFieldProps extends ComponentProps {;
   name: string;
   label?: string;
@@ -218,48 +209,42 @@ export interface FormFieldProps extends ComponentProps {;
   required?: boolean;
   description?: string'
 };
-;
 // API-specific interfaces'
-export interface RequestConfig {;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH;
-  headers?: Record<string, string>;
-  body?: unknown;
-  params?: Record<string, string | number>;
+export interface RequestConfig {
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH
+  headers?: Record<string, string>
+  body?: unknown
+  params?: Record<string, string | number>
   timeout?: number'
-  retries?: number;
-};
+  retries?: number
+}
 '
-export interface WebhookPayload {;
-  event: "string;"
-  timestamp: "string;","
-  data: "Record<string", unknown>;"
-  signature?: string;";"
-};"
+export interface WebhookPayload {
+  event: "string"
+  timestamp: string,"
+  data: Record<string, unknown>"
+  signature?: string""
+}"
 ;"
-export interface DatabaseConnection {;"
-  host: "string;"
-  port: "number;","
-  database: "string;"
-  username: "string;",;"
-  password: string;"
-  ssl?: boolean;"
-  pool?: {;"
-    min: "number;"
-    max: "number;";
-  };
+export interface DatabaseConnection {"
+  host: "string"
+  port: number,"
+  database: "string"
+  username: string,"
+  password: string"
+  ssl?: boolean"
+  pool?: {"
+    min: "number"
+    max: "number"
+  }
 };
-;
 // Utility types;
 export type DeepPartial<T> = {;
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };
-;
 export type NonNullable<T> = T extends null | undefined ? never : T;
-;
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-;
 export type ValueOf<T> = T[keyof T];
-;
 export type KeysOfType<T, U> = {;
   [K in keyof T]: T[K] extends U ? K : never;"
 }[keyof T];";"
@@ -267,7 +252,7 @@ export type KeysOfType<T, U> = {;
 // Event types;"
 export interface CustomEvent<T = unknown> {;"
   type: "string;"
-  payload: "T;",;
+  payload: T;,;
   timestamp: number;"
   source?: string;";"
 };"
@@ -283,24 +268,24 @@ export interface SuccessEvent<T = unknown> extends CustomEvent<T> {;"
 };";"
 ;"
 // Performance monitoring types;"
-export interface PerformanceMetrics {;"
-  pageLoadTime: "number;"
-  firstContentfulPaint: "number;","
-  largestContentfulPaint: "number;"
-  cumulativeLayoutShift: "number;","
-  firstInputDelay: "number;"
-  timeToInteractive: "number;"
-};"
+export interface PerformanceMetrics {"
+  pageLoadTime: "number"
+  firstContentfulPaint: number,"
+  largestContentfulPaint: "number"
+  cumulativeLayoutShift: number,"
+  firstInputDelay: "number"
+  timeToInteractive: "number"
+}"
 ;"
 export interface BundleAnalysis {;"
   totalSize: "number;"
-  chunks: "Array<{;","
+  chunks: Array<{;,"
     name: "string;"
-    size: "number;","
+    size: number;,"
     assets: "string[];"
   }>;"
   dependencies: "Array<{;"
-    name: "string;","
+    name: string;,"
     size: "number;"
     version: "string;";
   }>;

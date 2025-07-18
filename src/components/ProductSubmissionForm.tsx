@@ -29,14 +29,14 @@ import { AIListingGenerator } from '@/components/listing/AIListingGenerator'
 
 // Define the form schema with zod'
 const productSchema: z.object({,;
-  title: "z.string().min(3", 'Title must be at least 3 characters'),'
+  title: z.string().min(3, 'Title must be at least 3 characters'),'
   description: z.string().min(10, 'Description must be at least 10 characters'),'
   price: z;
     .string()'
     .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) >= 0, {'
       message: 'Price must be a valid number','
     }),'
-  category: "z.string().min(1", 'Please select a category'),'
+  category: z.string().min(1, 'Please select a category'),'
   image:'
     typeof window === 'undefined'
       ? z.unknown().optional();
@@ -53,11 +53,10 @@ const productSchema: z.object({,;
 });
 
 // Type for our form values"
-type ProductFormValues = z.infer<typeof productSchema>;
-;"";
+type ProductFormValues = z.infer<typeof productSchema>;"";
 // Define a type for AI-generated content;"";
 interface GeneratedContent {;"";
-  description: "string",;"";
+  description: string,;"";
   tags: string[]","
   suggestedPrice: { min: number; max: number }"
 };
@@ -65,7 +64,7 @@ interface GeneratedContent {;"";
 export function ProductSubmissionForm(): ;
   const { _user } = useAuth()"
   const { _toast } = useToast();
-  const const router = useRouter();"";
+  const router = useRouter();"";
   const [isSubmitting, setIsSubmitting] = React.useState(false);"";
   const [imagePreview, setImagePreview] = React.useState(null as string | null);"";
   const [activeTab, setActiveTab] = React.useState('manual')'
@@ -79,17 +78,17 @@ export function ProductSubmissionForm(): ;
       price: '','
       category: '','
       video: "undefined,;"";
-      model: "undefined",;"
+      model: undefined,;"
       tags: '','
     },;
   });
 '
   // Handle image upload preview'
-  const const handleImageChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
-    const const file = e.target.files?.[0]'
+  const handleImageChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+    const file = e.target.files?.[0]'
     if (file) {'
       form.setValue('image', file)'
-      const const reader = new FileReader();
+      const reader = new FileReader();
       reader.onloadend = () => {;
         setImagePreview(reader.result as string);
       };
@@ -97,28 +96,28 @@ export function ProductSubmissionForm(): ;
     };
   }'
 '
-  const const handleVideoChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
-    const const file = e.target.files?.[0]'
+  const handleVideoChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+    const file = e.target.files?.[0]'
     if (file) {'
       form.setValue('video', file)'
     };
   }'
 '
-  const const handleModelChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
-    const const file = e.target.files?.[0]'
+  const handleModelChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+    const file = e.target.files?.[0]'
     if (file) {'
       form.setValue('model', file)'
     };
   }'
 '
   // Apply AI-generated content to the form;
-  const const handleApplyGenerated = (_content: unknown) => {'
-    const const generated = content as GeneratedContent'
+  const handleApplyGenerated = (_content: unknown) => {'
+    const generated = content as GeneratedContent'
     form.setValue('description', generated.description)'
     form.setValue('tags', generated.tags.join(', '))'
 
     // Set a default price as the middle of the suggested range'
-    const const averagePrice = ('
+    const averagePrice = ('
       (generated.suggestedPrice.min + generated.suggestedPrice.max) /;
       2'
     ).toFixed(2)'
@@ -129,7 +128,7 @@ export function ProductSubmissionForm(): ;
   };
 '
   // Handle form submission'
-  const const onSubmit = async (_values: ProductFormValues) => {;
+  const onSubmit = async (_values: ProductFormValues) => {;
     if (!user) {'
       toast({'
         title: 'Authentication required','
@@ -154,21 +153,19 @@ export function ProductSubmissionForm(): ;
       const productData: unknown unknown = {",;"
         title: values.title,"
         description: "values.description,;"";
-        price: "values.price",;"
+        price: values.price,;"
         category: values.category",""
         tags: values.tags,"
         seller: "{,;";
-          id: "user.id",;"
+          id: user.id,;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;";"
         createdAt: new Date().toISOString()",";
-      };"";
-;""
-      const { data: "productRecord, error: productError "} = await supabase""
+      };"";""
+      const { data: "productRecord, error: productError " } = await supabase""
         .from('product_listings')'
         .insert([productData])'
         .select('id')'
         .single();
-
       if (productError) {;
         throw new Error(productError.message);
       };
@@ -187,7 +184,7 @@ export function ProductSubmissionForm(): ;
         };
 '
         // Get the public URL for the image'
-        const { data: publicUrlData "} = supabase.storage""
+        const { data: publicUrlData " } = supabase.storage""
           .from('products')'
           .getPublicUrl(imagePath)'
         imagePublicUrl = publicUrlData.publicUrl;
@@ -258,12 +255,12 @@ export function ProductSubmissionForm(): ;
       // Send listing to moderation service'
       try {'
         await supabase.functions.invoke('moderate-listing', {'
-          body: "{",;"";
+          body: {,;"";
             listingId: productRecord.id",""
             listingType: 'product','
             description: values.description,"
             images: "imagePublicUrl ? [imagePublicUrl] : [],;"";
-            sellerId: "user.id",;
+            sellerId: user.id,;
           } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},";"
         });";"
       } catch {;";";
@@ -303,7 +300,7 @@ export function ProductSubmissionForm(): ;
           value=ai"""
           className=data-[state=active]:bg-zion-purple/20 data-[state=active]:text-zion-purple";";
         >"
-          <Sparkles className="h-4 w-4 mr-2 />
+          <Sparkles className="h-4 w-4 mr-2 />"
           AI-Powered Creation;""
         </TabsTrigger>;"
       </TabsList>";"
@@ -336,7 +333,7 @@ export function ProductSubmissionForm(): ;
                       Create a compelling title that describes your product;
                     </FormDescription>;
                     <FormMessage />;
-                  </FormItem>);
+                  </FormItem>);"
               }}"
             />;"
 ;";"
@@ -389,15 +386,14 @@ export function ProductSubmissionForm(): ;
                     <FormMessage />;
                   </FormItem>;
                 )}"
-              />;
-;"";
+              />;"";
               <FormField;"";
                 control={form.control};"";
                 name="category";
                 render={({";"
                   field,;";"
                 }: {;";";
-                  field: "ControllerRenderProps<ProductFormValues", 'category'>'
+                  field: ControllerRenderProps<ProductFormValues, 'category'>'
                 }) => ('
                   <FormItem>'
                     <FormLabel>Category</FormLabel>;
@@ -418,15 +414,14 @@ export function ProductSubmissionForm(): ;
                     <FormMessage />;
                   </FormItem>)};
               />"
-            </div>;
-;"";
+            </div>;"";
             <FormField;"";
               control={form.control};"";
               name="tags";
               render={({";"
                 field,;";"
               }: {;";";
-                field: "ControllerRenderProps<ProductFormValues", 'tags'>'
+                field: ControllerRenderProps<ProductFormValues, 'tags'>'
               }) => ('
                 <FormItem>'
                   <FormLabel>Tags</FormLabel>;
@@ -443,8 +438,7 @@ export function ProductSubmissionForm(): ;
                   <FormMessage />;
                 </FormItem>;
               )}"
-            />;
-;"";
+            />;"";
             <FormField;"";
               control={form.control};"";
               name="image"
@@ -527,8 +521,7 @@ export function ProductSubmissionForm(): ;
                   <FormMessage />"
                 </FormItem>;
               )};"";
-            />;"";
-;"";
+            />;"";"";
             <div className="flex justify-end">;"
               <Button;";"
                 type=submit""

@@ -13,18 +13,18 @@ import { z } from 'zod'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 const listingSchema: z.object({,;
-  id: "z.string()",;"
+  id: z.string(),;"
   title: z.string()",""
   category: z.string(),"
   image: "z.string().optional(),
 })"
 ;"
-const const listingsSchema = z.array(listingSchema);";"
+const listingsSchema = z.array(listingSchema);";"
 ;";"
-interface ServiceTypeStepProps {;";"
-  formData: QuoteFormData",;"
+interface ServiceTypeStepProps {""
+  formData: QuoteFormData","
   updateFormData: (data: Partial<QuoteFormData>) => void"
-};
+}
 "
 export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   formData,;"";
@@ -35,7 +35,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
   const [listings, setListings] = useState<ListingItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const const isMounted = useIsMounted();
+  const isMounted = useIsMounted();
 
   // Fetch services when the service type or query changes;
   useEffect(() => {;
@@ -44,19 +44,19 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
       return;
     };
 
-    const const fetchServices = async () => {;
+    const fetchServices = async () => {;
       setLoading(true);
       setError(null);
-      const const url = `/api/public/services?category=${encodeURIComponent(`
+      const url = `/api/public/services?category=${encodeURIComponent(`}
         formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}``
-      const const maxRetries = 3
+      const maxRetries = 3
 ;""
       for (let attempt = 0; attempt < maxRetries; attempt++) {;"
         try {";"
-          const const response = await fetch(url)"
+          const response = await fetch(url)"
           if (!response.ok) throw new Error('Failed to fetch')'
-          const const data = await response.json()'
-          const const parsed = listingsSchema.safeParse(data)'
+          const data = await response.json()'
+          const parsed = listingsSchema.safeParse(data)'
           if (!parsed.success) throw new Error('Invalid response')'
           if (isMounted.current) {;
             setListings(parsed.data as ListingItem[]);
@@ -88,21 +88,21 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
     fetchServices()'
   }, [formData.serviceType, debouncedQuery, isMounted]);
 '
-  const const handleTypeSelect = (_type: ServiceType) => {'
+  const handleTypeSelect = (_type: ServiceType) => {'
     updateFormData({ serviceType: "type "})
   };"
 ;";
-  const const handleItemSelect = (_item: ListingItem) => {";";
+  const handleItemSelect = (_item: ListingItem) => {";";
     updateFormData({"
       specificItem: "item,;"";
-      serviceCategory: "item.category",;"
+      serviceCategory: item.category,;"
       serviceType: item.category.toLowerCase() as ServiceType","
     });
   };
 
-  const const sourceListings = listings;"
+  const sourceListings = listings;"
 ;";
-  const const filteredListings = sourceListings.filter((item) => {";";
+  const filteredListings = sourceListings.filter((item) => {";";
     // Filter by category only when a service type has been selected"
     if (formData.serviceType !== '') {'
       const categoryMatch: unknown ='
@@ -128,7 +128,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             className={`p-4 cursor-pointer border-2 transition-colors ${;";";
               formData.serviceType === 'service'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
             }`}`
             onClick={() => handleTypeSelect('service')}'
           >'
@@ -142,7 +142,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             className={`p-4 cursor-pointer border-2 transition-colors ${"
               formData.serviceType === 'talent'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
             }`}`
             onClick={() => handleTypeSelect('talent')}'
           >'
@@ -156,14 +156,14 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             className={`p-4 cursor-pointer border-2 transition-colors ${";""
               formData.serviceType === 'equipment'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
             }`}`
             onClick={() => handleTypeSelect('equipment')}'
           >'
             <h4 className=font-medium text-white>Equipment</h4>"
             <p className="text-sm text-zion-slate-light>
               Servers, workstations, specialized hardware;
-            </p>;
+            </p>;"
           </Card>"
         </div>;"
       </div>;";"
@@ -175,7 +175,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
           </h3>;";"
 ;"
           <div className=relative>"
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />"
             <Input;""
               placeholder={`Search ${formData.serviceType}...`};"
               value={searchQuery}";"
@@ -186,8 +186,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
 ;";"
           {error && (;";"
             <div className=text-center text-red-400 text-sm">{error}</div>";
-          )};"";
-;""
+          )};"";""
           <div className="grid grid-cols-1 gap-4 mt-4 aria-busy={loading}>;""
             {loading ? (;""
               <>;"";
@@ -195,14 +194,14 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
                 <Skeleton className=h-[120px] w-full />"
                 <Skeleton className="h-[120px] w-full />
               </>) : filteredListings.length > 0 ? (;
-              filteredListings.map((item) => (;
+              filteredListings.map((item) => (;"
                 <div"
                   key={item.id};"
                   onClick={() => handleItemSelect(item)};";"
                   className={`cursor-pointer transition-all ${;";"
                     formData.specificItem?.id === item.id;";"
                       ? 'ring-2 ring-zion-purple rounded-lg'
-                      : 
+                      :}
                   }`}`
                 >;
                   <ListingScoreCard;

@@ -4,7 +4,7 @@ import { CountryServiceSelector } from '../CountryServiceSelector'
 interface ServiceDetailsSectionProps {'
   selectedCountry: "CountryPricing | null
   setSelectedCountry: (country: CountryPricing | null) => void""
-};
+}
 
 export function ServiceDetailsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{
   selectedCountry,;"

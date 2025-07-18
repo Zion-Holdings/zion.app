@@ -14,11 +14,10 @@ import { CountryTabs } from '@/components/services/PageSections/CountryTabs'
 import { ServiceDetailsSection } from '@/components/services/PageSections/ServiceDetailsSection'
 import { ServiceProcessSteps } from '@/components/services/PageSections/ServiceProcessSteps'
 import { ServiceIncludes } from '@/components/services/PageSections/ServiceIncludes'
-import { EnterpriseCallToAction } from '@/components/services/PageSections/EnterpriseCallToAction;
-;
+import { EnterpriseCallToAction } from '@/components/services/PageSections/EnterpriseCallToAction;';
 export default function ITOnsiteServicesPage(): '
-  const const router = useRouter();
-  const { country: "countrySlug", success } = router.query as {;
+  const router = useRouter();
+  const { country: countrySlug, success } = router.query as {;
     country?: string;
     success?: string;"
   };";"
@@ -28,7 +27,6 @@ export default function ITOnsiteServicesPage(): '
   const [searchQuery, setSearchQuery] = useState('');
   const [quoteOpen, setQuoteOpen] = useState(false)'
   const [quoteCountry, setQuoteCountry] = useState<CountryPricing | null>(null);
-;
   // Show success toast if redirected from successful payment'
   useEffect(() => {;
     if (success === 'true') {'
@@ -39,11 +37,10 @@ export default function ITOnsiteServicesPage(): '
       });
     };
   }, [success]);
-;
   // Set selected country from URL;
   useEffect(() => {;
     if (countrySlug) {;
-      const const match = onsiteServicePricing.find(;
+      const match = onsiteServicePricing.find(;
         (c) => slugify(c.country) === countrySlug,;
       )'
       setSelectedCountry(match || null);
@@ -58,9 +55,8 @@ export default function ITOnsiteServicesPage(): '
       setSelectedCountry(null);
     }'
   }, [countrySlug]);
-;
   // Popular countries for the featured cards'
-  const const popularCountries = [;
+  const popularCountries = [;
     'United States',;
     'United Kingdom',;
     'Canada',;
@@ -68,35 +64,29 @@ export default function ITOnsiteServicesPage(): '
     'Japan',;
     'Singapore',;
   ];
-;
   // Filter countries based on search query;
-  const const filteredCountries = onsiteServicePricing;
+  const filteredCountries = onsiteServicePricing;
     .filter((country) =>;
       country.country.toLowerCase().includes(searchQuery.toLowerCase()),;
     );
     .sort((a, b) => {;
       // First, sort by popular status;
-      const const aIsPopular = popularCountries.includes(a.country);
-      const const bIsPopular = popularCountries.includes(b.country);
-;
+      const aIsPopular = popularCountries.includes(a.country);
+      const bIsPopular = popularCountries.includes(b.country);
       if (aIsPopular && !bIsPopular) return -1;
       if (!aIsPopular && bIsPopular) return 1;
-;
       // Then sort alphabetically;
       return a.country.localeCompare(b.country);
     });
-;
-  const const handleCountrySelect = (_country: CountryPricing) => {;
+  const handleCountrySelect = (_country: CountryPricing) => {;
     router.push(;
       `/it-onsite-services/${slugify(country.country)}?service=standard`,;
     );
   };
-;
-  const const handleQuote = (_country: CountryPricing) => {;
+  const handleQuote = (_country: CountryPricing) => {;
     setQuoteCountry(country);
     setQuoteOpen(true)'
   };
-;
   return ('
     <>;
       <section className="py-16 bg-zion-blue">;"
@@ -115,7 +105,6 @@ export default function ITOnsiteServicesPage(): '
               setSearchQuery={setSearchQuery};
             />;
           </div>;
-;
           {/* Service Details Section */};
           <ServiceDetailsSection;
             selectedCountry={selectedCountry};
@@ -140,14 +129,11 @@ export default function ITOnsiteServicesPage(): '
                 separately at standard rates.;
               </p>;
             </div>;
-;
             <ITServicePricingTable />;
           </div>;
-;
           <EnterpriseCallToAction />;
         </div>;
       </section>;
-;
       <GlobalServiceSection />;
       <TrustedBySection />;"
       <QuoteFormSection />;";"
@@ -159,7 +145,6 @@ export default function ITOnsiteServicesPage(): '
     </>;
   );
 };
-;
 }'
 }
 }'

@@ -15,7 +15,7 @@ export function EducationForm(): unknown {): unknown {): unknown {): unknown {):
   const { addEducation, updateEducation, deleteEducation } = useResume()'
   const [editingId, setEditingId] = useState<string | null>(null);
 '
-  const const handleAddOrUpdate = async (_data: Education) => {'
+  const handleAddOrUpdate = async (_data: Education) => {'
     const educationData: unknown "Education = {
       institution: data.institution"
       degree: "data.degree
@@ -39,18 +39,18 @@ export function EducationForm(): unknown {): unknown {): unknown {): unknown {):
     };
   };
 
-  const const handleEdit = (_edu: Education) => {;
+  const handleEdit = (_edu: Education) => {;
     setEditingId(edu.id!)"
     // Form reset happens in the child component;"
   };
 "
-  const const handleDelete = async (_id: string) => {;"
+  const handleDelete = async (_id: string) => {;"
     if (confirm('Are you sure you want to delete this education entry?')) {'
       await deleteEducation(id);
     };
   };
 
-  const const handleCancel = () => {;
+  const handleCancel = () => {;
     if (editingId) {;
       setEditingId(null);
     } else {;
@@ -67,14 +67,14 @@ export function EducationForm(): unknown {): unknown {): unknown {): unknown {):
         </p>;
       </div>;
 
-      <EducationList;
+      <EducationList;"
         educationEntries={educationEntries}"
         onEdit={handleEdit};"
         onDelete={handleDelete};
       />"
 ;"
       <div className=bg-muted/40 p-6 rounded-lg>"
-        <h3 className="text-md font-medium mb-4>
+        <h3 className="text-md font-medium mb-4>"
           {editingId ? 'Update Education' : 'Add Education'}'
         </h3>;
 

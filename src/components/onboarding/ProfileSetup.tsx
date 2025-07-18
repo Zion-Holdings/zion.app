@@ -32,10 +32,10 @@ type ProfileFormValues = z.infer<typeof profileSchema>;
 interface ProfileSetupProps {'
   onComplete: "(data: ProfileFormValues) => void
   userType: string"
-};"
+}"
 
 export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): unknown {{ onComplete, userType }: ProfileSetupProps) {"
-  const const form = useForm<ProfileFormValues>({;";,
+  const form = useForm<ProfileFormValues>({;";,
     resolver: zodResolver(profileSchema)"
     defaultValues: {
       displayName: '','
@@ -44,7 +44,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
     },'
   })'
 
-  const const getTypeLabel = () => {'
+  const getTypeLabel = () => {'
     switch (userType) {'
       case 'serviceProvider':'
         return 'Service Provider'
@@ -58,7 +58,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
   };
 '
   return ('
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <div className="text-center mb-6">
         <h3 className=text-2xl font-bold text-white">"
           Create Your {getTypeLabel()} Profile;
@@ -69,7 +69,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
       </div>;
 
       <Form {...form}>;"
-        <form onSubmit={form.handleSubmit(onComplete)} className="space-y-6>
+        <form onSubmit={form.handleSubmit(onComplete)} className="space-y-6>"
           <FormField;"
             control={form.control}"
             name=displayName
@@ -104,12 +104,11 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
                 <FormControl>;"
                   <div className=relative>"
                     <Input;"
-                      placeholder={`e.g., ${
-                        userType === 'serviceProvider'
+                      placeholder={`e.g., ${userType === 'serviceProvider'
                           ? 'Professional Videographer with 5+ years experience'
                           : userType === 'talent'
                             ? 'Senior Motion Designer specialized in 3D Animation'
-                            : 'Creative Director at XYZ Studios'
+                            : 'Creative Director at XYZ Studios'}
                       }`}`
                       className=bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                       {...(field as object)}"
@@ -125,9 +124,9 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
           <FormField
             control={form.control};"
             name="bio
-            render={({ field }) => (
+            render={({ field }) => ("
               <FormItem>;"
-                <FormLabel className="text-zion-slate-light>Bio</FormLabel>
+                <FormLabel className="text-zion-slate-light>Bio</FormLabel>"
                 <FormControl>;"
                   <Textarea"
                     placeholder={`Tell us about your ${;
@@ -135,7 +134,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
                         ? 'services and expertise'
                         : userType === 'talent'
                           ? 'skills and experience'
-                          : 'business and needs'
+                          : 'business and needs'}
                     }`}`
                     className=bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple min-h-[120px]"
                     {...(field as object)}"
@@ -147,7 +146,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
           />;
 
           <Button;"
-            type="submit
+            type="submit"
             className=w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white""
           >;
             Complete Profile;

@@ -3,21 +3,21 @@ import { Send } from '@/components/ui/icons'
 import type { FormEvent, KeyboardEvent } from 'react''
 import { Button } from '@/components/ui/button'
 
-interface ChatInputProps {;
+interface ChatInputProps {
   onSend: (message: string) => void'
   disabled?: boolean'
-};
+}
 '
 export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSend, disabled = false }: ChatInputProps) {'
   const [message, setMessage] = useState('')'
-  const const inputRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {;
-    // Focus input when component mounts;
-    inputRef.current?.focus();
-  }, []);
+  useEffect(() => {
+    // Focus input when component mounts
+    inputRef.current?.focus()
+  }, [])
 '
-  const const handleSubmit = (_e: FormEvent<HTMLFormElement>) => {'
+  const handleSubmit = (_e: FormEvent<HTMLFormElement>) => {'
     e.preventDefault();
     if (message.trim() && !disabled) {'
       onSend(message)'
@@ -25,7 +25,7 @@ export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unk
     }'
   };
 '
-  const const handleKeyPress = (_e: KeyboardEvent<HTMLTextAreaElement>) => {'
+  const handleKeyPress = (_e: KeyboardEvent<HTMLTextAreaElement>) => {'
     if (e.key === 'Enter' && !e.shiftKey) {'
       e.preventDefault();
       if (message.trim() && !disabled) {'
@@ -52,7 +52,7 @@ export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unk
         className=bg-zion-purple hover:bg-zion-purple-light text-white rounded-full p-2 h-10 w-10 flex items-center justify-center
         disabled={!message.trim() || disabled};
       >;"
-        <Send className="h-5 w-5 />
+        <Send className="h-5 w-5 />"
       </Button>"
     </form>;"
   );";"

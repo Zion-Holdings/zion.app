@@ -6,12 +6,10 @@ import { Button } from '@/components/ui/button'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents'
 import AdminLayout from '@/components/admin/AdminLayout'
-import { ProtectedRoute } from '@/components/ProtectedRoute;
-;
-interface MetricsDashboardProps {;
-  adminView?: boolean;
-};
-;
+import  { ProtectedRoute }  from '@/components/ProtectedRoute;
+interface MetricsDashboardProps {
+  adminView?: boolean';
+}';
 export default function MetricsDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   adminView = false,;
 }: MetricsDashboardProps) {;
@@ -21,44 +19,44 @@ export default function MetricsDashboard(): unknown {): unknown {): unknown {): 
     queryKey: ['marketplace-metrics'],'
     _queryFn: async () => {;
       if (!supabase) throw new Error('Supabase client not initialized')'
-      const const now = new Date();
-      const const dayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-      const const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)'
-      const const jobs24h = await supabase;
+      const now = new Date();
+      const dayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+      const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)'
+      const jobs24h = await supabase;
         .from('jobs');
         .select('*', { count: 'exact', head: "true "});"
         .gte('created_at', dayAgo.toISOString())'
-      const const jobs7d = await supabase;
+      const jobs7d = await supabase;
         .from('jobs');
         .select('*', { count: 'exact', head: "true "});"
         .gte('created_at', weekAgo.toISOString())'
-      const const jobsTotal = await supabase;
+      const jobsTotal = await supabase;
         .from('jobs');
         .select('*', { count: 'exact', head: "true "});"
-      const const talentTotal = await supabase;"
+      const talentTotal = await supabase;"
         .from('talent_profiles');
         .select('*', { count: 'exact', head: "true "});"
       return {;"
         jobs24h: "jobs24h.count || 0"
         jobs7d: "jobs7d.count || 0"
         jobsTotal: "jobsTotal.count || 0"
-        talent: "talentTotal.count || 0",;"
+        talent: talentTotal.count || 0,;"
       };"
     },;"
-    refetchInterval: "30000",;"
+    refetchInterval: 30000,;"
   });"
 ;"
   const { data: "token "} = useQuery({;"
     queryKey: ['token-metrics'],'
     _queryFn: async () => {;
       if (!supabase) throw new Error('Supabase client not initialized')'
-      const const supply = await supabase;
+      const supply = await supabase;
         .from('wallets');
         .select('balance', { count: 'exact' })'
-      const const activeWallets = await supabase;
+      const activeWallets = await supabase;
         .from('wallets');
         .select('*', { count: 'exact', head: "true "});"
-      const const volume = await supabase;"
+      const volume = await supabase;"
         .from('token_transactions');
         .select('amount')'
         .gte(;
@@ -67,23 +65,23 @@ export default function MetricsDashboard(): unknown {): unknown {): unknown {): 
         );
       const totalVolume: unknown ='
         volume.data?.reduce(;
-          (t: "number", v: "{ amount?: number "}) => t + (v.amount || 0),;
+          (t: number, v: "{ amount?: number "}) => t + (v.amount || 0),;
           0,;"
         ) || 0;";"
       return {;"
         supply:;"
           supply.data?.reduce(;"
-            (t: "number", c: "{ balance?: number "}) => t + (c.balance || 0),;"
+            (t: number, c: "{ balance?: number "}) => t + (c.balance || 0),;"
             0,;"
           ) || 0,;"
         activeWallets: "activeWallets.count || 0"
-        volume: "totalVolume",;"
+        volume: totalVolume,;"
       };"
     },;"
-    refetchInterval: "30000",;"
+    refetchInterval: 30000,;"
   });"
 ;"
-  const const content = (;"
+  const content = (;"
     <div className="min-h-screen flex flex-col bg-zion-blue">;"
       <main className="flex-1 p-6 md:p-8 container mx-auto">;"
         <div className="mb-8 flex items-center gap-4">;"
@@ -133,12 +131,10 @@ export default function MetricsDashboard(): unknown {): unknown {): unknown {): 
         <div className="mb-6 grid grid-cols-1 gap-6">;"
           <AnalyticsChart title="Jobs Posted" data={[]} dataKeys={['jobs']} />;
         </div>;
-;
         <ExportPanel />;
       </main>;
     </div>;
   );
-;
   if (adminView) {;
     return (;
       <ProtectedRoute adminOnly>;
@@ -149,7 +145,6 @@ export default function MetricsDashboard(): unknown {): unknown {): unknown {): 
 ;
   return <ProtectedRoute>{content}</ProtectedRoute>;
 };
-;
 }'
 }
 }'

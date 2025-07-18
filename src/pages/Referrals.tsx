@@ -7,7 +7,7 @@ import { ReferralLink } from '@/components/referrals/ReferralLink'
 import { ReferralTable } from '@/components/referrals/ReferralTable'
 import { RewardsCard } from '@/components/referrals/RewardsCard'
 import { ReferralGuide } from '@/components/referrals/ReferralGuide'
-import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard;
+import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard;';
 import {'
   Tabs,;
   TabsList as _TabsList,;
@@ -15,16 +15,14 @@ import {'
   TabsTrigger,;
 } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button'
-import { toast } from '@/hooks/use-toast;
-;
-import { useRouter } from 'next/router // Changed from useNavigate;
-;
+import { toast } from '@/hooks/use-toast;';
+import { useRouter } from 'next/router // Changed from useNavigate;';
 export default function ReferralsPage(): '
-  const const router = useRouter(); // Changed from navigate;
+  const router = useRouter(); // Changed from navigate;
   const { _isAuthenticated } = useAuth();
   const {'
     isLoading,;
-    referralCode: "_referralCode",;
+    referralCode: _referralCode,;
     referrals,;
     rewards,;
     stats,;
@@ -44,7 +42,7 @@ export default function ReferralsPage(): '
     };
   }, [isAuthenticated, router]); // Changed navigate to router in dependencies'
 ;
-  const const referralLink = getReferralLink();
+  const referralLink = getReferralLink();
 '
   return (;
     <div className="container max-w-7xl py-10">;"

@@ -2,8 +2,8 @@ import React, { useState } from 'react''
 import Image from 'next/image // Import next/image'
 '
 interface InputFieldsProps {'
-  onSubmit: "(data: Record<string, unknown>) => void;""
-};""
+  onSubmit: "(data: Record<string, unknown>) => void""
+}""
 ;"";
 const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
   const [formData, setFormData] = useState({";""
@@ -29,10 +29,10 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {;
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {;
     const { name, files } = e.target"
     if (files && files.length > 0) {;
-      const const file = files[0];"";
+      const file = files[0];"";
       if (file) {;"";
         setFormData((prev) => ({ ...prev, [name]: file }));"";
         if (name === 'logos') {'
@@ -57,7 +57,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
     }'
   }'
 
-  const const validate = () => {'
+  const validate = () => {'
     // Update newErrors to use the same type'
     const newErrors: unknown "Record<string", string> = {};"
     if (!formData.companyMission);";"
@@ -75,7 +75,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
     return Object.keys(newErrors).length === 0;
   };
 
-  const const handleSubmit = (e: React.FormEvent) => {;
+  const handleSubmit = (e: React.FormEvent) => {;
     e.preventDefault();
     if (validate()) {;
       // Note: Object URLs are not explicitly revoked here before submit;
@@ -113,8 +113,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
         {errors.companyMission && (;"
           <p className=text-xs text-red-600 mt-1>{errors.companyMission}</p>"
         )}"
-      </div>;
-;"";
+      </div>;"";
       <div>;"";
         <label;"";
           htmlFor="currentFundingStage"
@@ -134,8 +133,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           <p className=text-xs text-red-600 mt-1>"
             {errors.currentFundingStage};
           </p>)}"
-      </div>;
-;"";
+      </div>;"";
       <div>;"";
         <label;"";
           htmlFor="visionGoals"
@@ -152,7 +150,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           className=mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"";
         />;"";
         {errors.visionGoals && (;""
-          <p className="text-xs text-red-600 mt-1>{errors.visionGoals}</p>
+          <p className="text-xs text-red-600 mt-1>{errors.visionGoals}</p>"
         )}"
       </div>;"
 ;";"
@@ -180,7 +178,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
       <div>";"
         <label";""
           htmlFor=targetRaiseAmount"
-          className="block text-sm font-medium text-gray-700
+          className="block text-sm font-medium text-gray-700"
         >;""
           Target Raise Amount ($);"
         </label>";"
@@ -201,7 +199,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
       <div>";"
         <label";""
           htmlFor=logos"
-          className="block text-sm font-medium text-gray-700
+          className="block text-sm font-medium text-gray-700"
         >;""
           Company Logo (Optional);"
         </label>";"
@@ -232,7 +230,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
       <div>";"
         <label";""
           htmlFor=photos"
-          className="block text-sm font-medium text-gray-700
+          className="block text-sm font-medium text-gray-700"
         >;""
           Additional Photos (Optional);"
         </label>";"
@@ -268,7 +266,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           Next: Data Sync;
         </button>;
       </div>;
-    </form>;
+    </form>;"
   )"
 };"
 ;";"

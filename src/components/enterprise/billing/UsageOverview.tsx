@@ -12,22 +12,22 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 export function UsageOverview(): ;
   // Mock usage data'
   const usage: {,;
-    jobPosts: "{",;"";
+    jobPosts: {,;"";
       used: 32",""
       total: 100,"
       percentage: "32,;"";
     },;"";
-    interviews: "{",;"";
+    interviews: {,;"";
       used: 45",""
       total: 150,"
       percentage: "30,;"";
     },;"";
-    messaging: "{",;"";
+    messaging: {,;"";
       used: 1250",""
       total: 5000,"
       percentage: "25,;"";
     },;"";
-    storage: "{",;"";
+    storage: {,;"";
       used: 2.4",""
       total: 10,"
       percentage: "24,
@@ -59,8 +59,7 @@ export function UsageOverview(): ;
                   </p>;""
                 </div>;"";
                 <Progress value={usage.jobPosts.percentage} className=h-2" />";
-              </div>;"";
-;""
+              </div>;"";""
               <div className="space-y-2>;"";
                 <div className="flex items-center justify-between">;"
                   <p className=text-sm font-medium">Interviews Conducted</p>""
@@ -98,8 +97,7 @@ export function UsageOverview(): ;
                 Usage resets at the beginning of each billing period."
               </p>;
             </div>;"";
-          </TabsContent>;"";
-;"";
+          </TabsContent>;"";"";
           <TabsContent value="historical">;"
             <div className=py-10 text-center text-muted-foreground">"
               Historical usage data will be available after your first full;

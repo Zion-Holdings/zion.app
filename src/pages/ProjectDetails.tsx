@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react;
+import  React, { useState, useEffect }  from 'react;
 import {;
   AlertCircle,;
-  Calendar,;
-  Clock,;
+  Calendar,;';
+  Clock,;';
   FileText,'
   MessageSquare,;
   Video,;
@@ -18,22 +18,21 @@ import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import type { Project, ProjectStatus } from '@/types/projects'
 import { Button } from '@/components/ui/button'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-import {;
-  Card,;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+import {;';
+  Card,;';
   CardContent,'
   CardDescription,;
   CardFooter,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
 import {;
   AlertDialog,;
   AlertDialogAction,;
-  AlertDialogCancel,;
-  AlertDialogContent,;
+  AlertDialogCancel,;';
+  AlertDialogContent,;';
   AlertDialogDescription,'
   AlertDialogFooter,;
   AlertDialogHeader,;
@@ -46,14 +45,13 @@ import { Textarea } from '@/components/ui/textarea'
 import { toast } from '@/hooks/use-toast'
 import { supabase } from '@/integrations/supabase/client'
 import { ProjectReviewSection } from '@/components/projects/reviews/ProjectReviewSection'
-import type { ProjectNote } from '@/types/projects;
-;
+import  type { ProjectNote }  from '@/types/projects;
 function ProjectDetailsContent(): ;
-  const const router = useRouter();
+  const router = useRouter();
   // Get projectId from Next.js router query params;
   const { _projectId } = router.query as { projectId?: string };
-  const { _user } = useAuth();
-  const { getProjectById, updateProjectStatus } = useProjects();
+  const { _user } = useAuth();';
+  const { getProjectById, updateProjectStatus } = useProjects();';
 '
   const [project, setProject] = useState<Project | null>(null);
   const [_isLoading, _setIsLoading] = useState(false);
@@ -62,28 +60,25 @@ function ProjectDetailsContent(): ;
   const [newNote, setNewNote] = useState('')'
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
   const [activeTab, setActiveTab] = useState('details');
-;
   // Load project data;
   useEffect(() => {;
     if (projectId) {;
       getProjectById(projectId);
     }'
   }, [projectId, getProjectById, router]);
-;
-  const const fetchProjectNotes = async (_projectId: string) => {'
+  const fetchProjectNotes = async (_projectId: string) => {'
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "_data", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
+      const { data: _data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('project_notes');
         .select(;
           `'
           *,;
-          created_by_profile: "profiles!user_id(display_name", avatar_url);"
+          created_by_profile: profiles!user_id(display_name, avatar_url);"
         `,;"
         );"
         .eq('project_id', projectId);
         .order('created_at', { ascending: "false "});
-;
       if (error) throw error;"
 ;";"
       setNotes(_data || []);"
@@ -101,23 +96,21 @@ function ProjectDetailsContent(): ;
       });
     };
   };
-;
-  const const handleSubmitNote = async () => {;
+  const handleSubmitNote = async () => {;
     if (!newNote.trim() || !project || !user) return'
 ;
     setIsSubmittingNote(true);
 '
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "_data", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
+      const { data: _data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('project_notes')'
         .insert({;
           project_id: "project.id"
           user_id: "user.id"
-          content: "newNote",;
+          content: newNote,;
         });
-        .select();
-;"
+        .select();"
       if (error) throw error;";"
 ;"
       // Refresh notes;"
@@ -144,15 +137,15 @@ function ProjectDetailsContent(): ;
     };
   };
 '
-  const const handleStatusChange = async (_newStatus: ProjectStatus) => {;
+  const handleStatusChange = async (_newStatus: ProjectStatus) => {;
     if (!project) return;
 '
-    const success: await updateProjectStatus(project.id", newStatus);"
+    const success = await updateProjectStatus(project.id", newStatus);"
 ;";"
     if (success) {;"
       setProject({;"
         ...project,;
-        status: "newStatus",;"
+        status: newStatus,;"
       });"
 ;"
       // If offer was accepted, show a special toast;"
@@ -164,8 +157,7 @@ function ProjectDetailsContent(): ;
       };
     }'
   };
-;
-  const const getStatusBadge = (_status: ProjectStatus) => {'
+  const getStatusBadge = (_status: ProjectStatus) => {'
     switch (status) {;
       case 'offer_sent':;
         return <Badge variant="outline">Offer Sent</Badge>;"
@@ -218,23 +210,22 @@ function ProjectDetailsContent(): ;
       </div>;
     );
   };
-;
   // Check if user is either the client or the talent'
-  const const isClient = user?.id === project.client_id;
-  const const isTalent = user?.id === project.talent_id;
+  const isClient = user?.id === project.client_id;
+  const isTalent = user?.id === project.talent_id;
 '
   if (!isClient && !isTalent) {;
     router.push('/unauthorized');
     return null;
   }'
 ;
-  const const isOfferPending = project.status === 'offer_sent;
-  const const isOfferAccepted = [;
+  const isOfferPending = project.status === 'offer_sent;
+  const isOfferAccepted = [;
     'offer_accepted',;
     'in_progress',;
     'completed','
   ].includes(project.status);
-  const const isActiveProject = ['offer_accepted', 'in_progress'].includes(;
+  const isActiveProject = ['offer_accepted', 'in_progress'].includes(;
     project.status,;
   )'
 ;
@@ -736,7 +727,6 @@ function ProjectDetailsContent(): ;
     </>;
   );
 };
-;
 export default function ProjectDetails(): ;
   return (;
     <ProtectedRoute>;

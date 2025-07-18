@@ -11,7 +11,7 @@ import type { BasicInfoFormData } from './schema'
 '
 interface PersonalInfoFieldsProps {'
   control: "Control<BasicInfoFormData>
-};"
+}"
 ;"
 export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ control }: PersonalInfoFieldsProps) {
   return (;
@@ -19,7 +19,7 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
       <FormField;
         control={control}"
         name="fullName
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'fullName'>'
@@ -36,7 +36,7 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
       <FormField
         control={control};"
         name="title
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'title'>'
@@ -53,7 +53,7 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
       <FormField
         control={control};"
         name="email
-        render={({
+        render={({"
           field,;"
         }: {"
           field: ControllerRenderProps<BasicInfoFormData, 'email'>'
@@ -65,15 +65,14 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
             </FormControl>;
             <FormMessage />;
           </FormItem>)}"
-      />;
-;"
+      />;"
       <FormField"
         control={control};
         name=phone"
         render={({"
           field,;
         }: {
-          field: "ControllerRenderProps<BasicInfoFormData", 'phone'>'
+          field: ControllerRenderProps<BasicInfoFormData, 'phone'>'
         }) => ('
           <FormItem>;
             <FormLabel>Phone</FormLabel>'

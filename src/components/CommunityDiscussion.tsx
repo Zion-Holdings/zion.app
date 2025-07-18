@@ -40,7 +40,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
   const [newTitle, setNewTitle] = useState('')'
   const [newBody, setNewBody] = useState('')'
 '
-  const const handleAddPost = () => {'
+  const handleAddPost = () => {'
     if (!newTitle.trim() || !newBody.trim()) return;
     setPosts(['
       {'
@@ -48,7 +48,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
         author: 'You','
         time: 'Now','
         title: "newTitle,;
-        body: "newBody",;
+        body: newBody,;
       },";"
       ...posts,;";"
     ]);";";
@@ -71,7 +71,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
       <Separator className=mb-6" />""
       <div className=mb-4 flex justify-end>";";
         <Button"
-          className="bg-zion-purple text-white hover:bg-zion-purple-light transition hover-scale;
+          className="bg-zion-purple text-white hover:bg-zion-purple-light transition hover-scale;"
           size="sm"
           onClick={() => setShowNew((v) => !v)};";"
         >;"
@@ -81,7 +81,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
       {showNew && ('
         <Card className=mb-6 animate-scale-in>"
           <CardContent className="py-5>;
-            <Input;
+            <Input;"
               placeholder="Title (e.g., Share an AI tool, Ask for help...)"
               className=mb-3 bg-zion-blue-light text-black placeholder:text-zion-slate""
               value={newTitle};
@@ -102,7 +102,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
             />";""
             <div className=flex gap-3 justify-end>";";
               <Button"
-                variant="secondary;
+                variant="secondary;"
                 size="sm"
                 className=bg-zion-blue text-white hover:bg-zion-blue-dark""
                 onClick={() => setShowNew(false)}
@@ -110,7 +110,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
                 Cancel;";
               </Button>";";
               <Button"
-                size="sm;
+                size="sm;"
                 className="bg-zion-cyan text-zion-blue hover:bg-zion-cyan-light hover-scale"
                 onClick={handleAddPost};
                 disabled={!newTitle.trim() || !newBody.trim()};
@@ -139,7 +139,7 @@ export const _CommunityDiscussion: unknown React.FC = () => {;
                 </AvatarFallback>;
               </Avatar>'
               <div>'
-                <div className="flex gap-2 items-center>;
+                <div className="flex gap-2 items-center>;"
                   <span className="font-semibold text-white">;"
                     {post.author};";"
                   </span>;"

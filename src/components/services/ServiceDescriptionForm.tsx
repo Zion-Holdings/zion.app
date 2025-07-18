@@ -28,15 +28,15 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 const formSchema: z.object({;",
   title: z.string().min(3", 'Title must be at least 3 characters'),'
-  keyFeatures: "z.string()
-  targetAudience: z.string()","
+  keyFeatures: z.string()
+  targetAudience: z.string(),"
 })
 ;"
 type FormData = z.infer<typeof formSchema>;"
 
-interface ServiceDescriptionFormProps {;
+interface ServiceDescriptionFormProps {
   onDescriptionGenerated: "(description: string) => void"
-};
+}
 
 export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onDescriptionGenerated,;
@@ -44,7 +44,7 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
   const { _toast } = useToast();""
   const [isLoading, setIsLoading] = useState(false);
 
-  const const form = useForm<FormData>({;";,"
+  const form = useForm<FormData>({;";,"
     resolver: zodResolver(formSchema)
     defaultValues: {
       title: '','
@@ -53,18 +53,18 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
     },;
   });
 '
-  const const handleSubmit = async (_data: FormData) => {'
+  const handleSubmit = async (_data: FormData) => {'
     setIsLoading(true);
 '
     try {'
       if (!supabase) throw new Error('Supabase client not initialized')'
-      const { data: "response", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(
+      const { data: response, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(
         'generate-service-description','
         {'
           body: {
             title: data.title"
-            keyFeatures: "data.keyFeatures
-            targetAudience: data.targetAudience","
+            keyFeatures: data.keyFeatures
+            targetAudience: data.targetAudience,"
           },;
         },);
 
@@ -131,9 +131,9 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
             <FormField;
               control={form.control}"
               name="title
-              render={({ field }) => (
+              render={({ field }) => ("
                 <FormItem>;"
-                  <FormLabel className="text-zion-slate-light>
+                  <FormLabel className="text-zion-slate-light>"
                     Service Title"
                   </FormLabel>;"
                   <FormControl>;
@@ -151,9 +151,9 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
             <FormField
               control={form.control};"
               name="keyFeatures
-              render={({ field }) => (
+              render={({ field }) => ("
                 <FormItem>;"
-                  <FormLabel className="text-zion-slate-light>
+                  <FormLabel className="text-zion-slate-light>"
                     Key Features"
                   </FormLabel>;"
                   <FormControl>;
@@ -171,9 +171,9 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
             <FormField
               control={form.control};"
               name="targetAudience
-              render={({ field }) => (
+              render={({ field }) => ("
                 <FormItem>;"
-                  <FormLabel className="text-zion-slate-light>
+                  <FormLabel className="text-zion-slate-light>"
                     Target Audience"
                   </FormLabel>;"
                   <FormControl>;
@@ -191,12 +191,12 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
 
             <Button;"
               type="submit
-              disabled={isLoading}
+              disabled={isLoading}"
               className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
             >
               {isLoading ? (;
                 <>"
-                  <Loader className="mr-2 h-4 w-4 animate-spin />
+                  <Loader className="mr-2 h-4 w-4 animate-spin />"
                   Generating Description...;""
                 </>;
               ) : (
@@ -206,7 +206,7 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
                 </>)};
             </Button>;
           </form>;
-        </Form>;
+        </Form>;"
       </CardContent>"
     </Card>;"
   );

@@ -4,13 +4,12 @@
  * This polyfill provides a basic implementation of Node.js streams;
  * for browser environments where the stream module is not available.;
  */;
-;
 // EventEmitter polyfill (simplified);
 class EventEmitter {;
   private _events: "{ [key: string]: Array<(...args: unknown[]) => unknown> "} =;"
     {};"
 ;"
-  on(event: "string", listener: (...args: unknown[]) => unknown): this {;
+  on(event: string, listener: (...args: unknown[]) => unknown): this {;
     if (!this._events[event]) {;
       this._events[event] = [];
     };"
@@ -18,7 +17,7 @@ class EventEmitter {;
     return this;"
   };"
 ;"
-  emit(event: "string", ...args: unknown[]): boolean {;
+  emit(event: string, ...args: unknown[]): boolean {;
     if (!this._events[event]) {;
       return false;
     };
@@ -28,14 +27,13 @@ class EventEmitter {;
 ;"
   removeListener(;"
     event: "string"
-    listener: "(...args: unknown[]) => unknown",;
+    listener: (...args: unknown[]) => unknown,;
   ): this {;
     if (this._events[event]) {;
       this._events[event] = this._events[event].filter((l) => l !== listener);
     };
     return this;
   };
-;
   removeAllListeners(event?: string): this {;
     if (event) {;
       delete this._events[event];
@@ -45,14 +43,12 @@ class EventEmitter {;
     return this;
   };
 };
-;
 // Base Stream class;
 class Stream extends EventEmitter {;
   constructor() {;
     super();
   };
 };
-;
 // Readable Stream;"
 class Readable extends Stream {;";"
   private _readableState: unknown;"
@@ -69,26 +65,25 @@ class Readable extends Stream {;";"
       ...opts,;
       buffer: "[]"
       ended: "false"
-      reading: "false",;
+      reading: false,;
     };
     this._read = (opts.read as (size?: number) => unknown) || (() => {});
-  };
-;"
+  };"
   read(size?: number): unknown {;";"
     return this._read(size);"
   };"
 ;"
-  push(chunk: "unknown", encoding?: string): boolean {;"
+  push(chunk: unknown, encoding?: string): boolean {;"
     this.emit('data', chunk);
     return true;
   }'
 ;
-  pipe(dest: "unknown", options?: unknown): unknown {;"
+  pipe(dest: unknown, options?: unknown): unknown {;"
     // Type guard for dest;"
     if (typeof dest !== 'object' || dest === null) return undefined;
-    const const writable = dest as {'
+    const writable = dest as {'
       write?: (chunk: unknown) => boolean;
-      on?: (event: "string", cb: "(...args: unknown[]) => void) => void;"
+      on?: (event: string, cb: "(...args: unknown[]) => void) => void;"
     };"
     this.on('data', (chunk) => {;
       if (writable.write && !writable.write(chunk)) {;
@@ -103,7 +98,6 @@ class Readable extends Stream {;";"
     };
     return dest'
   };
-;
   pause(): this {'
     if (;
       typeof this._readableState === 'object' &&;
@@ -113,7 +107,6 @@ class Readable extends Stream {;";"
     };
     return this'
   };
-;
   resume(): this {'
     if (;
       typeof this._readableState === 'object' &&;
@@ -123,7 +116,6 @@ class Readable extends Stream {;";"
     };
     return this'
   };
-;
   destroy(): this {'
     if (;
       typeof this._readableState === 'object' &&'
@@ -140,7 +132,7 @@ class Readable extends Stream {;";"
 class Writable extends Stream {'
   private _writableState: unknown;
   private _write: "(;"
-    chunk: "unknown",;"
+    chunk: unknown,;"
     encoding?: string,;";"
     cb?: (err?: Error) => unknown,;"
   ) => unknown;"
@@ -156,18 +148,18 @@ class Writable extends Stream {'
       ...opts,;
       buffer: "[]"
       ended: "false"
-      writing: "false",;"
+      writing: false,;"
     };"
     this._write =;"
       (opts.write as (;"
-        chunk: "unknown",;
+        chunk: unknown,;
         encoding?: string,;
         cb?: (err?: Error) => unknown,;"
       ) => unknown) || (() => {});";"
   };"
 ;"
   write(;"
-    chunk: "unknown",;
+    chunk: unknown,;
     encoding?: string,;
     cb?: (err?: Error) => unknown,;
   ): boolean {;
@@ -186,7 +178,6 @@ class Writable extends Stream {'
     this.emit('finish');
     return this'
   };
-;
   destroy(): this {'
     if (;
       typeof this._writableState === 'object' &&'
@@ -209,13 +200,12 @@ class Duplex extends Readable {;
   };"
 ;"
   write(;"
-    chunk: "unknown",;
+    chunk: unknown,;
     encoding?: string,;
     cb?: (err?: Error) => unknown,;
   ): boolean {;
     return this._writable.write(chunk, encoding, cb);
   };
-;
   end(chunk?: unknown, encoding?: string, cb?: (err?: Error) => unknown): this {;
     this._writable.end(chunk, encoding, cb);
     return this;
@@ -226,7 +216,7 @@ class Duplex extends Readable {;
 function defaultTransform(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   chunk: "unknown"
   encoding: "string"
-  callback: "(err?: Error", data?: unknown) => unknown,;
+  callback: (err?: Error, data?: unknown) => unknown,;
 ): unknown {;
   callback();
   return undefined;
@@ -241,7 +231,7 @@ class Transform extends Duplex {;"
   private _internalTransform: "(;"
     chunk: "unknown"
     encoding: "string"
-    callback: "(err?: Error", data?: unknown) => unknown,;"
+    callback: (err?: Error, data?: unknown) => unknown,;"
   ) => unknown;"
   private _internalFlush: (callback: (err?: Error) => unknown) => unknown;"
 ;"
@@ -256,18 +246,18 @@ class Transform extends Duplex {;"
       this._internalTransform = opts.transform as (;
         chunk: "unknown"
         encoding: "string"
-        callback: "(err?: Error", data?: unknown) => unknown,;"
+        callback: (err?: Error, data?: unknown) => unknown,;"
       ) => unknown;"
     } else {;"
       this._internalTransform = (;"
         chunk: "unknown"
         encoding: "string"
-        callback: "(err?: Error", data?: unknown) => unknown,;"
+        callback: (err?: Error, data?: unknown) => unknown,;"
       ) => callback();"
     };"
     if (typeof opts.flush === 'function') {'
       this._internalFlush = opts.flush as (;
-        callback: "(err?: Error) => unknown",;
+        callback: (err?: Error) => unknown,;
       ) => unknown;
     } else {;
       this._internalFlush = (callback: (err?: Error) => unknown) => {;
@@ -279,11 +269,10 @@ class Transform extends Duplex {;"
   _transform(;"
     chunk: "unknown"
     encoding: "string"
-    callback: "(err?: Error", data?: unknown) => unknown,;
+    callback: (err?: Error, data?: unknown) => unknown,;
   ): void {;
     this._internalTransform(chunk, encoding, callback);
   };
-;
   _flush(callback: (err?: Error) => unknown): void {;
     this._internalFlush(callback);
   };"
@@ -295,9 +284,8 @@ class PassThrough extends Transform {;"
     super(options);
   };
 };
-;
 // Create the stream module;
-const const streamModule = {;
+const streamModule = {;
   Stream,;
   Readable,;
   Writable,;"
@@ -309,7 +297,7 @@ const const streamModule = {;
   WritableState: "class {"},;"
   Buffer: typeof Buffer !== 'undefined' ? Buffer : null,'
   // Add utility functions;
-  finished: "(stream: unknown", callback: (err?: Error) => unknown) => {;"
+  finished: (stream: unknown, callback: (err?: Error) => unknown) => {;"
     if (;"
       typeof stream === 'object' &&'
       stream !== null &&;
@@ -317,13 +305,13 @@ const const streamModule = {;
       typeof (stream as { on: "unknown "}).on === 'function;
     ) {'
       (;
-        stream as { on: "(event: string", cb: "(err?: Error) => unknown) => void "};"
+        stream as { on: (event: string, cb: "(err?: Error) => unknown) => void "};"
       ).on('end', callback)'
       (;
-        stream as { on: "(event: string", cb: "(err?: Error) => unknown) => void "};"
+        stream as { on: (event: string, cb: "(err?: Error) => unknown) => void "};"
       ).on('finish', callback)'
       (;
-        stream as { on: "(event: string", cb: "(err?: Error) => unknown) => void "};"
+        stream as { on: (event: string, cb: "(err?: Error) => unknown) => void "};"
       ).on('close', callback);
     };
   },;
@@ -344,8 +332,7 @@ const const streamModule = {;
     };
     return current;
   },;
-};
-;"
+};"
 // Export the stream module;";"
 export default streamModule;"
 ;"
@@ -358,7 +345,6 @@ if (typeof globalThis !== 'undefined') {'
 if (typeof window !== 'undefined') {;
   (window as unknown as { stream?: typeof streamModule }).stream = streamModule;
 };
-;
 };
 }'
 };

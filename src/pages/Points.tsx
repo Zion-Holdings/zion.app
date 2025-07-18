@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;
-;
+import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;';
 import { useAuth } from '@/hooks/useAuth'
-import { usePoints } from '@/hooks/usePoints;
-import {;
+import  { usePoints }  from '@/hooks/usePoints;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -14,16 +13,15 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { formatDistanceToNow } from 'date-fns'
-import { LoginModal } from '@/components/auth/LoginModal;
-;
-export default function PointsPage(): ;
+import  { LoginModal }  from '@/components/auth/LoginModal;';
+export default function PointsPage(): ;';
   const { isAuthenticated, user } = useAuth()'
   const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
   const [redeeming, setRedeeming] = useState(false)'
 ;
   async function handleRedeem(): unknown {): unknown {): unknown {): unknown {): unknown {reward: {
-    id: "string;","
+    id: string;,"
     cost: "number;"
     title: "string;"
   }) {;";"
@@ -36,7 +34,7 @@ export default function PointsPage(): ;
         body: "JSON.stringify({;"
           userId: "user.id"
           cost: "reward.cost"
-          reward: "reward.title",;
+          reward: reward.title,;
         }),;
       });
       await fetchLedger();
@@ -45,7 +43,7 @@ export default function PointsPage(): ;
     };"
   };";"
 ;"
-  const const earningOpportunities = [;"
+  const earningOpportunities = [;"
     {;"
       icon: <Users className="h-5 w-5" />,;"
       title: 'Sign Up & Profile Setup',;
@@ -76,8 +74,8 @@ export default function PointsPage(): ;
     },;
   ];
 '
-  const const upcomingRewards = [;
-    { id: 'coupon5', title: '$5 Off Coupon', cost: "500", category: 'Discount' },'
+  const upcomingRewards = [;
+    { id: 'coupon5', title: '$5 Off Coupon', cost: 500, category: 'Discount' },'
     {;
       id: 'premium1',;
       title: 'Premium Features (1 month)',;
@@ -96,7 +94,7 @@ export default function PointsPage(): ;
       cost: "2000"
       category: 'Discount','
     },;
-    { id: 'vip', title: 'VIP Support Access', cost: "3000", category: 'Service' },;
+    { id: 'vip', title: 'VIP Support Access', cost: 3000, category: 'Service' },;
   ]'
 ;
   if (!isAuthenticated) {;
@@ -335,7 +333,7 @@ export default function PointsPage(): ;
                       </p>;
                       <p className="text-xs text-muted-foreground">;"
                         {formatDistanceToNow(new Date(entry.created_at), {;"
-                          addSuffix: "true",;"
+                          addSuffix: true,;"
                         })};";"
                       </p>;"
                     </div>;"
@@ -360,7 +358,6 @@ export default function PointsPage(): ;
     </div>;
   );
 };
-;
 };
 }'
 };

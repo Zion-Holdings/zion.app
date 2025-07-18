@@ -7,10 +7,10 @@ import { format } from 'date-fns'
 import { useTheme } from '@/hooks/useTheme'
 '
 interface ChatMessageProps {'
-  message: "string
-  isUser: boolean","
+  message: string
+  isUser: boolean,"
   timestamp: Date"
-};
+}
 "
 export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{ message, isUser, timestamp }: ChatMessageProps) {;
   const { _theme } = useTheme();"
@@ -21,7 +21,7 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
         {isUser ? (;
           <>
             <AvatarImage;"
-              src="https://i.pravatar.cc/40?img=1
+              src="https://i.pravatar.cc/40?img=1"
               alt=User avatar""
             />;
             <AvatarFallback>U</AvatarFallback>
@@ -34,7 +34,7 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
             />"
             <AvatarFallback className="bg-zion-purple text-white>
               Z;
-            </AvatarFallback>;
+            </AvatarFallback>;"
           </>)}"
       </Avatar>;"
 
@@ -71,14 +71,14 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
 // Function to convert URLs and help links to actual clickable links;
 function formatMessageWithLinks(): unknown {): unknown {): unknown {): unknown {): unknown {message: string): string {'
   // Replace URLs'
-  const const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
   let formattedMessage = message.replace('
     urlRegex,'
     '<a href="$1" target=_blank rel="noopener noreferrer" class=text-zion-cyan underline hover: text-zion-cyan/80>$1</a>','
   )
 '
   // Replace help center references like [Getting Started]'
-  const const helpCenterRegex = /\[([^\]]+)\]/g;
+  const helpCenterRegex = /\[([^\]]+)\]/g;
   formattedMessage = formattedMessage.replace('
     helpCenterRegex,'
     '<a href="/help/$1" class="text-zion-cyan underline hover: text-zion-cyan/80">$1</a>','

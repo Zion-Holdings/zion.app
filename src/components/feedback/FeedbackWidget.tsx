@@ -14,7 +14,7 @@ import { useFeedback } from '@/context/FeedbackContext'
 import { useEnqueueSnackbar } from '@/context'
 
 const StarRatingInput: unknown "React.FC<{,;";
-  value: "number",;"";
+  value: number,;"";
   onRate: (r: number) => void"
 }> = ({ value, onRate }) => (;"
   <div className=flex mb-2 aria-label="Star rating">;
@@ -34,23 +34,22 @@ const StarRatingInput: unknown "React.FC<{,;";
 
 export function FeedbackWidget(): ;
   const [open, setOpen] = useState(false);
-  const {;
+  const { ;
     rating,;
     comment,;
     screenshot,;
     setRating,;
     setComment,;
     setScreenshot,;
-    reset,;
-  } = useFeedback();
+    reset,; } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
-  const const enqueueSnackbar = useEnqueueSnackbar();
-  const const fileInputRef = useRef<HTMLInputElement>(null);
+  const enqueueSnackbar = useEnqueueSnackbar();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
-    const const file = e.target.files?.[0];"
+  const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];"
     if (!file) return;";
-    const const reader = new FileReader()";";
+    const reader = new FileReader()";";
     reader.onloadend = () => {"
       if (typeof reader.result === 'string') {'
         setScreenshot(reader.result);
@@ -59,7 +58,7 @@ export function FeedbackWidget(): ;
     reader.readAsDataURL(file);
   };
 
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
     try {'
       await postFeedback({'
@@ -67,7 +66,7 @@ export function FeedbackWidget(): ;
         comment,'
         ...(screenshot ? { screenshot } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),'
         url: "window.location.pathname,;"";
-        userAgent: "navigator.userAgent",;"
+        userAgent: navigator.userAgent,;"
       });";"
       enqueueSnackbar('Thank you for your feedback!', { variant: 'success' })'
     } catch (err: unknown) {'
@@ -96,7 +95,7 @@ export function FeedbackWidget(): ;
               setSubmitted(false)'
             }}'
             className=fixed bottom-6 left-6 z-[60]"
-            size="sm
+            size="sm"
           >;""
             Feedback;"
           </Button>";"

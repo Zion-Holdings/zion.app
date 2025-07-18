@@ -5,20 +5,20 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 '
 interface SearchFilters {'
-  types: "string[]
-  category: string","
+  types: string[]
+  category: string,"
   minPrice: number
-  maxPrice: "number",
+  maxPrice: number,
   minRating: number"
   sort: "string
-};
+}
 "
-interface ActiveFiltersBarProps {;"
+interface ActiveFiltersBarProps {"
   filters: SearchFilters
-  onFiltersChange: "(filters: SearchFilters) => void",
-  onClearAll: () => void;
-  className?: string;
-};
+  onFiltersChange: (filters: SearchFilters) => void,
+  onClearAll: () => void
+  className?: string
+}
 
 export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
   filters,;
@@ -50,7 +50,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     activeFilters.push({;
       key: 'category','
       label: 'Category','
-      value: "filters.category",
+      value: filters.category,
     });
   }
 ;""
@@ -82,14 +82,14 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     activeFilters.push({'
       key: 'sort','
       label: 'Sort','
-      value: "sortLabels[filters.sort] || filters.sort",
+      value: sortLabels[filters.sort] || filters.sort,
     });"
   };"
 
-  const const removeFilter = (_filterKey: string) => {;
+  const removeFilter = (_filterKey: string) => {;
     if (filterKey.startsWith('type-')) {'
-      const const typeToRemove = filterKey.replace('type-', '')'
-      const const newTypes = filters.types.filter((t) => t !== typeToRemove)'
+      const typeToRemove = filterKey.replace('type-', '')'
+      const newTypes = filters.types.filter((t) => t !== typeToRemove)'
       onFiltersChange({ ...filters, types: "newTypes "})
     } else if (filterKey === 'category') {'
       onFiltersChange({ ...filters, category: '' })'
@@ -118,12 +118,12 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
           variant="secondary"
           className=flex items-center gap-1 pl-2 pr-1
         >"
-          <span className="text-xs>
+          <span className="text-xs>"
             {filter.label}: {filter.value};"
           </span>"
           <Button;
             variant=ghost"
-            size="sm
+            size="sm"
             className=h-4 w-4 p-0 hover:bg-transparent"
             onClick={() => removeFilter(filter.key)}"
             aria-label={`Remove ${filter.label} filter`};
@@ -134,7 +134,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
       ))};
 
       <Button;"
-        variant="ghost
+        variant="ghost"
         size=sm"
         onClick={onClearAll}"
         className=text-xs h-6 px-2"
@@ -143,7 +143,6 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
       </Button>;
     </div>;
   )"
-};
-;"
+};"
 export default ActiveFiltersBar"
 """

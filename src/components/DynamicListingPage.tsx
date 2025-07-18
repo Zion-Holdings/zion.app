@@ -24,12 +24,11 @@ import { toast } from '@/hooks/use-toast'
 import { captureException } from '@/utils/sentry'
 '
 interface PriceRange {'
-  min: "number,;";
-  max: "number";
-};
-;
+  min: "number,"
+  max: "number"
+}
 interface DynamicListingPageProps {;
-  title: "string",;
+  title: string,;
   description: string","
   categorySlug: string,;"
   listings: "ProductListing[],";
@@ -50,21 +49,21 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
   initialPrice = { min: "0, max: 10000 "},""
   detailBasePath = '/marketplace/listing','
 }: DynamicListingPageProps) {'
-  const const router = useRouter()'
+  const router = useRouter()'
   const [searchQuery, setSearchQuery] = useState('')'
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const const toggleCategory = (_category: string) => {;
+  const toggleCategory = (_category: string) => {;
     setSelectedCategories((prev) =>;
       prev.includes(category);
         ? prev.filter((c) => c !== category)'
         : [...prev, category],'
     );
   }'
-  const const clearCategories = () => setSelectedCategories([])'
+  const clearCategories = () => setSelectedCategories([])'
   const [view, setView] = useState<ListingView>('grid')'
-  const const isGrid = view === 'grid'
+  const isGrid = view === 'grid'
   // Swap icons to match action'
-  const const ToggleViewIcon = isGrid ? ('
+  const ToggleViewIcon = isGrid ? ('
     <List className=h-4 w-4 />";";
   ) : ("
     <LayoutGrid className="h-4 w-4 />;"
@@ -72,7 +71,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
   const [isLoading, setIsLoading] = useState(false);
   const [priceRange, setPriceRange] = useState<PriceRange>({;"
     min: "0,;
-    max: "10000",;
+    max: 10000,;
   })";"
 ;";"
   const [selectedRating, setSelectedRating] = useState<number | null>(null);";";
@@ -81,18 +80,18 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
   const [selectedAvailability, setSelectedAvailability] = useState('all')'
   const [sortOption, setSortOption] = useState('newest')'
 
-  const const brandOptions = Array.from(;
+  const brandOptions = Array.from(;
     new Set(allListings.map((l) => l.brand).filter(Boolean)),;
   );
-  const const availabilityOptions = Array.from(;
+  const availabilityOptions = Array.from(;
     new Set(allListings.map((l) => l.availability).filter(Boolean)),;
   );
 '
   useEffect(() => {'
-    const const listingsWithPrice = allListings.filter((l) => l.price !== null);
+    const listingsWithPrice = allListings.filter((l) => l.price !== null);
     if (listingsWithPrice.length > 0) {'
-      const const max = Math.max(...listingsWithPrice.map((l) => l.price || 0))'
-      setPriceRange({ min: "0", max })
+      const max = Math.max(...listingsWithPrice.map((l) => l.price || 0))'
+      setPriceRange({ min: 0, max })
       setCurrentPriceFilter([0, max]);
     };
   }, [allListings]);
@@ -101,7 +100,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
     [number, number];
   >([0, initialPrice.max]);
 
-  const const handleSliderChange = (_values: number[]) => {;
+  const handleSliderChange = (_values: number[]) => {;
     const [min, max] = values.map(Number);
     if (min == null || max == null || isNaN(min) || isNaN(max)) return;
     setCurrentPriceFilter([min, max]);
@@ -181,10 +180,10 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
     logErrorToProduction('Listing filter error:', { data: error })"
   };
 
-  const const handleRequestQuote = (_listingId: string) => {;
+  const handleRequestQuote = (_listingId: string) => {;
     setIsLoading(true);
 
-    const const listing = allListings.find((item) => item.id === listingId);
+    const listing = allListings.find((item) => item.id === listingId);
 "
     setTimeout(() => {;
       setIsLoading(false);
@@ -195,13 +194,13 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
         });"
 ;";
         // Store quote data in sessionStorage for the request-quote page";";
-        const const quoteData = {";,"
-          serviceType: "categorySlug,;
-          specificItem: "{",;
-            id: listing.id",""
+        const quoteData = {";,"
+          serviceType: categorySlug,;
+          specificItem: {,;
+            id: listing.id,""
             title: listing.title,"
             category: "listing.category,;
-            image: "listing.images?.[0]",;
+            image: listing.images?.[0],;
           },";"
         };";"
 ;";";
@@ -219,13 +218,13 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
       <div className=container mx-auto">""
         <div className=text-center mb-12>";";
           <GradientHeading>{title}</GradientHeading>"
-          <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto>
+          <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto>"
             {description};""
           </p>;"
         </div>";"
 ";""
         <div className=grid grid-cols-1 lg:grid-cols-4 gap-6>"
-          <div className="lg:col-span-1>;
+          <div className="lg:col-span-1>;"
             <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-4 sticky top-6">;"
               <h3 className=text-lg font-medium text-white mb-4 flex items-center">""
                 <Filter className=mr-2 h-5 w-5 /> Filters";"
@@ -236,7 +235,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                   Categories;
                 </label>;"
                 <div className="space-y-2>;
-                  {categoryFilters.map((filter) => (;
+                  {categoryFilters.map((filter) => (;"
                     <div key={filter.value} className="flex items-center">
                       <Checkbox;"
                         id={`cat-${filter.value}`};";
@@ -250,7 +249,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                       >;
                         {filter.label};
                       </label>;
-                    </div>;
+                    </div>;"
                   ))}"
                 </div>;"
               </div>;";"
@@ -266,9 +265,9 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                   >";""
                     <SelectTrigger className=bg-zion-blue border border-zion-blue-light text-white>"
                       <SelectValue placeholder="Select Brand />;
-                    </SelectTrigger>;
+                    </SelectTrigger>;"
                     <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">;"
-                      <SelectItem value=all" className="text-white>
+                      <SelectItem value=all" className="text-white>"
                         All Brands;""
                       </SelectItem>;"
                       {brandOptions.map((b) => (";"
@@ -284,7 +283,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 </div>;
               )}'
 '
-              <div className="mb-6>;
+              <div className="mb-6>;"
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">;
                   Specifications";"
                 </label>;";"
@@ -300,7 +299,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
               </div>;";
 ";";
               {availabilityOptions.length > 0 && ("
-                <div className="mb-6>;
+                <div className="mb-6>;"
                   <label className="text-sm font-medium text-zion-slate-light block mb-2">
                     Availability;
                   </label>;
@@ -312,9 +311,9 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                   >";""
                     <SelectTrigger className=bg-zion-blue border border-zion-blue-light text-white>"
                       <SelectValue placeholder="Select Availability />;
-                    </SelectTrigger>;
+                    </SelectTrigger>;"
                     <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">;"
-                      <SelectItem value=all" className="text-white>
+                      <SelectItem value=all" className="text-white>"
                         All;""
                       </SelectItem>;"
                       {availabilityOptions.map((a) => (";"
@@ -330,14 +329,14 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 </div>;
               )}'
 '
-              <div className="mb-6>;
+              <div className="mb-6>;"
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">;"
                   Price Range;";"
                 </label>;"
                 <div className=mt-6 px-2>";";
                   <Slider"
                     aria-label="Price range
-                    defaultValue={[0, priceRange.max]};
+                    defaultValue={[0, priceRange.max]};"
                     min={0}"
                     max={priceRange.max};"
                     step={priceRange.max / 100};";"
@@ -351,7 +350,6 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                   </div>;
                 </div>;
               </div>;
-;
               <div className="mb-6">;"
                 <label className=text-sm font-medium text-zion-slate-light block mb-2">";
                   Minimum Rating;
@@ -386,7 +384,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                           <span className="ml-1>& Up</span>
                         </div>;
                       )};
-                    </Button>;
+                    </Button>;"
                   ))}"
                 </div>;"
               </div>;";"
@@ -410,12 +408,12 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
             </div>;
           </div>'
 '
-          <div className="_lg:col-span-3>;
+          <div className="_lg:col-span-3>;"
             <div className="bg-zion-blue-dark rounded-lg p-4 mb-6 border border-zion-blue-light">;"
               <div className=flex flex-col md:flex-row gap-4">""
                 <div className=relative flex-grow>"
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4 />;
-                  <Input;
+                  <Input;"
                     type="text"
                     placeholder=Search listings...
                     value={searchQuery};
@@ -427,10 +425,9 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                     }};"
                     className="pl-10 bg-zion-blue border border-zion-blue-light text-white;"
                   />";
-                </div>;
-;"
+                </div>;"
                 <div className="flex items-center gap-2 ml-auto>;
-                  <Select value={sortOption} onValueChange={setSortOption}>;
+                  <Select value={sortOption} onValueChange={setSortOption}>;"
                     <SelectTrigger className="w-[150px] bg-zion-blue border border-zion-blue-light text-white">;"
                       <SelectValue placeholder=Sort" />"
                     </SelectTrigger>";""
@@ -450,7 +447,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                     </SelectContent>;";
                   </Select>";";
                   <Button"
-                    variant="outline;
+                    variant="outline;"
                     size="icon"
                     onClick={() => setView(isGrid ? 'list' : 'grid')}'
                     aria-label={isGrid ? 'List view' : 'Grid view'}'
@@ -458,7 +455,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                     className=border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple
                   >;
                     {ToggleViewIcon};"
-                    <span className="sr-only>;
+                    <span className="sr-only>;"
                       {isGrid ? 'List view' : 'Grid view'}'
                     </span>;
                   </Button>'
@@ -488,9 +485,9 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                     key={i}'
                     className=rounded-lg overflow-hidden border border-zion-blue-light";";
                   >"
-                    <Skeleton height={192} width="100% />;
+                    <Skeleton height={192} width="100% />;"
                     <div className="p-4">;"
-                      <Skeleton height={24} width=33%" className="mb-2 />;
+                      <Skeleton height={24} width=33%" className="mb-2 />;"
                       <Skeleton height={32} width="83%" className=mb-4 />"
                       <Skeleton height={16} width="100% className=mb-2" />""
                       <Skeleton height={16} width=80% className="mb-4" />;"
@@ -498,7 +495,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                         <Skeleton height={24} width=25% />"
                         <Skeleton height={32} width="25% />
                       </div>;
-                    </div>;
+                    </div>;"
                   </div>))}"
               </div>;"
             ) : filteredListings.length > 0 ? (;";"

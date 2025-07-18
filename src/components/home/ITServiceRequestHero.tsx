@@ -21,8 +21,7 @@ export function ITServiceRequestHero(): '
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _toast } = useToast();
   const { t } = useTranslation();
-
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault()'
 
     if (!name || !email || !location) {'
@@ -36,7 +35,7 @@ export function ITServiceRequestHero(): '
 
     setIsSubmitting(true)'
     try {'
-      const const res = await axios.post('/api/onsite-request', {'
+      const res = await axios.post('/api/onsite-request', {'
         name,;
         email,;
         phone,;
@@ -60,7 +59,7 @@ export function ITServiceRequestHero(): '
       }'
     } catch (err: unknown) {'
       logErrorToProduction('ITServiceRequestHero submission error:', {'
-        data: "err",;"
+        data: err,;"
       });";"
       toast({;"
         title: 'Submission Failed','

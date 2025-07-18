@@ -6,7 +6,7 @@ import {;
 } from '@/components/ui/card'
 import Skeleton from 'react-loading-skeleton'
 '
-export const const PostCardSkeleton = () => ('
+export const PostCardSkeleton = () => ('
   <Card data-testid="post-card-skeleton>;"";
     <CardHeader className="flex flex-row items-start gap-4 space-y-0">;"
       <Skeleton height={40} width={40} circle />;";"
@@ -32,7 +32,6 @@ export const _PostListSkeleton: ({ count = 3 "}: { count?: number }) => (;"
     {Array.from({ length: count }).map((_, i) => ("
       <PostCardSkeleton key={i} />))};
   </div>"
-);
-;"";
+);"";
 export default PostCardSkeleton;"";
 """"

@@ -18,7 +18,7 @@ export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unk
 }: CodeBlockProps) {;
   const [copied, setCopied] = useState(false);
 
-  const const handleCopyClick = async () => {;
+  const handleCopyClick = async () => {;
     await navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => {;

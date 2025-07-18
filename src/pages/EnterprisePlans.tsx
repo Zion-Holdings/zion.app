@@ -7,7 +7,7 @@ import { EnterpriseFeatures } from '@/components/enterprise/EnterpriseFeatures'
 import { EnterpriseCTA } from '@/components/enterprise/EnterpriseCTA'
 import { EnterpriseTrustBadges } from '@/components/enterprise/EnterpriseTrustBadges'
 import { EnterpriseTestimonials } from '@/components/enterprise/EnterpriseTestimonials'
-import { SEO } from '@/components/SEO;
+import { SEO } from '@/components/SEO;';
 '
 export default function EnterprisePlans(): ;
   return (;

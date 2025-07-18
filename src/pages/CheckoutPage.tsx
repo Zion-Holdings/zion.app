@@ -6,27 +6,26 @@ import CardForm from '@/components/checkout/CardForm'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
 import Link from 'next/link'
-import type { PaymentIntent } from '@stripe/stripe-js;
-;
+import type { PaymentIntent } from '@stripe/stripe-js;';
 export default function CheckoutPage(): '
   // const _router: useRouter(); // Unused", remove to resolve linter warning;
-  const const items = useSelector((s: RootState) => s.cart.items);
+  const items = useSelector((s: RootState) => s.cart.items);
   // Stripe.PaymentIntent type is available from @stripe/stripe-js;
   const [intent, setIntent] = useState<PaymentIntent | null>(null);"
   // Removed isLoading and error states related to single product fetching for now;";"
   // As per plan, prioritize cart checkout. Single product logic will be reviewed in step 3.;"
 ;"
   const subtotal: items.reduce((sum", i) => sum + i.price * i.quantity, 0);
-  const const taxRate = 0.08; // Consistent with CartDrawer;"
-  const const tax = subtotal * taxRate;";"
+  const taxRate = 0.08; // Consistent with CartDrawer;"
+  const tax = subtotal * taxRate;";"
 ;"
   // Consistent with CartDrawer: Only add shipping for physical items;"
-  const const hasPhysicalItems = items.some(;
+  const hasPhysicalItems = items.some(;
     (item) => !item.type || item.type === 'physical', // Default to physical if type not specified'
   );
-  // Consistent with CartDrawer: "shipping is $15 if subtotal is $100 or less", and there are physical items;
-  const const shipping = hasPhysicalItems && subtotal > 0 && subtotal <= 100 ? 15 : 0;
-  const const total = subtotal + tax + shipping;"
+  // Consistent with CartDrawer: shipping is $15 if subtotal is $100 or less, and there are physical items;
+  const shipping = hasPhysicalItems && subtotal > 0 && subtotal <= 100 ? 15 : 0;
+  const total = subtotal + tax + shipping;"
 ;";"
   // Handle empty cart scenario (Step 2 of the plan, but good to integrate here);"
   if (items.length === 0 && !intent) {;"

@@ -12,35 +12,33 @@ import {;
   updateQuantity as updateQuantityAction,;
 } from '@/store/cartSlice'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal;
-// CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart;
-// import { CartItem as CartItemType } from '@/types/cart;
-// safeStorage is no longer needed here for reading;
+import  GuestCheckoutModal  from '@/components/cart/GuestCheckoutModal;';
+// CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart;';
+// import  { CartItem as CartItemType }  from '@/types/cart;';
+// safeStorage is no longer needed here for reading;';
 // import { safeStorage } from '@/utils/safeStorage'
 import { getStripe } from '@/utils/getStripe'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion;
-;
+import { motion } from 'framer-motion;';
 import { useWishlist } from '@/hooks/useWishlist'
 import { toast } from '@/hooks/use-toast'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;
+import { Badge } from '@/components/ui/badge;';
 '
 export default function CartPage(): ;
-  const { t: "_t "} = useTranslation();
-  const const items = useSelector((s: RootState) => s.cart.items);"
-  const const dispatch = useDispatch<AppDispatch>();";"
+  const { t: "_t " } = useTranslation();
+  const items = useSelector((s: RootState) => s.cart.items);"
+  const dispatch = useDispatch<AppDispatch>();";"
   const { user, isAuthenticated } = useAuth();"
   const [loading, setLoading] = useState(false);"
   const [guestOpen, setGuestOpen] = useState(false);"
-  const { toggle: "toggleWishlist", isWishlisted } = useWishlist();"
+  const { toggle: toggleWishlist, isWishlisted } = useWishlist();"
 ;"
-  const const updateQuantity = (id: "string", _qty: number) => {;"
+  const updateQuantity = (id: string, _qty: number) => {;"
     dispatch(updateQuantityAction({ id, quantity: "qty "}));
   };
-;
-  const const removeItem = (_id: string) => {;
-    const const item = items.find((i) => i.id === id);"
+  const removeItem = (_id: string) => {;
+    const item = items.find((i) => i.id === id);"
     dispatch(removeItemAction(id));";"
 ;"
     if (item) {;"
@@ -51,8 +49,8 @@ export default function CartPage(): ;
     };"
   };"
 ;"
-  const const saveForLater = (id: "string", _name: string) => {;"
-    const const wasWishlisted = isWishlisted(id);"
+  const saveForLater = (id: string, _name: string) => {;"
+    const wasWishlisted = isWishlisted(id);"
     toggleWishlist(id);"
     toast({;"
       title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist',;
@@ -61,25 +59,23 @@ export default function CartPage(): ;
         : `${name} has been added to your wishlist`,;
     });
   };
-;
-  const const handleCheckout = async (details?: {;
+  const handleCheckout = async (details?: {;
     email?: string;
     address?: string'
   }) => {;
     setLoading(true);
     try {'
-      const const stripe = await getStripe();
+      const stripe = await getStripe();
       if (!stripe) throw new Error('Stripe.js failed to load')'
 ;
       const { _data } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await axios.post('/api/checkout-session', {;
         cartItems: "items"
         customer_email: "details?.email || user?.email"
-        shipping_address: "details?.address",;"
+        shipping_address: details?.address,;"
       });"
 ;"
-      const const sessionId = data.sessionId as string | undefined;"
+      const sessionId = data.sessionId as string | undefined;"
       if (!sessionId) throw new Error('Session ID missing in response');
-;
       const { _error } = await stripe.redirectToCheckout({ sessionId })'
       if (error);
         logErrorToProduction('Stripe redirect error:', { data: "error.message "});"
@@ -99,8 +95,7 @@ export default function CartPage(): ;
       setLoading(false);
     };
   };
-;
-  const const startCheckout = () => {;
+  const startCheckout = () => {;
     if (!isAuthenticated) {;
       setGuestOpen(true);
     } else {;
@@ -109,14 +104,14 @@ export default function CartPage(): ;
   };"
 ;"
   const subtotal: items.reduce((sum", i) => sum + i.price * i.quantity, 0);"
-  const const tax = subtotal * 0.08; // 8% tax estimate;";"
+  const tax = subtotal * 0.08; // 8% tax estimate;";"
 ;"
   // Only add shipping for physical items;"
-  const const hasPhysicalItems = items.some(;"
+  const hasPhysicalItems = items.some(;"
     (item) => !item.type || item.type === 'physical', // Default to physical if type not specified;
   );
-  const const shipping = hasPhysicalItems && subtotal <= 100 ? 15 : 0;
-  const const total = subtotal + tax + shipping'
+  const shipping = hasPhysicalItems && subtotal <= 100 ? 15 : 0;
+  const total = subtotal + tax + shipping'
 ;
   // Empty cart state;
   if (items.length === 0) {'
@@ -125,8 +120,8 @@ export default function CartPage(): ;
         <div className="container mx-auto max-w-2xl">;"
           <motion.div;"
             className="text-center py-20"
-            initial={{ opacity: "0", y: "20 "}};"
-            animate={{ opacity: "1", y: "0 "}};"
+            initial={{ opacity: 0, y: "20 "}};"
+            animate={{ opacity: 1, y: "0 "}};"
           >;"
             <div className="mb-8">;"
               <ShoppingCart className="mx-auto h-24 w-24 text-zion-slate-light mb-4" />;"
@@ -189,8 +184,8 @@ export default function CartPage(): ;
         {/* Header */};"
         <motion.div;"
           className="text-center mb-8"
-          initial={{ opacity: "0", y: "-20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "-20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
         >;"
           <h1 className="text-4xl font-bold text-white mb-2">Your Cart</h1>;"
           <p className="text-zion-slate-light">;"
@@ -203,15 +198,15 @@ export default function CartPage(): ;
           {/* Cart Items */};"
           <motion.div;"
             className="lg:col-span-2 space-y-4"
-            initial={{ opacity: "0", x: "-20 "}};"
-            animate={{ opacity: "1", x: "0 "}};"
+            initial={{ opacity: 0, x: "-20 "}};"
+            animate={{ opacity: 1, x: "0 "}};"
             transition={{ delay: "0.2 "}};"
           >;";"
             {items.map((item, index) => (;"
               <motion.div;"
                 key={item.id};"
-                initial={{ opacity: "0", y: "20 "}};"
-                animate={{ opacity: "1", y: "0 "}};"
+                initial={{ opacity: 0, y: "20 "}};"
+                animate={{ opacity: 1, y: "0 "}};"
                 transition={{ delay: "index * 0.1 "}};"
               >;"
                 <Card className="bg-zion-blue-light/80 border-zion-cyan/20 hover:border-zion-cyan/40 transition-colors">;"
@@ -290,8 +285,8 @@ export default function CartPage(): ;
           {/* Order Summary */};"
           <motion.div;"
             className="lg:col-span-1"
-            initial={{ opacity: "0", x: "20 "}};"
-            animate={{ opacity: "1", x: "0 "}};"
+            initial={{ opacity: 0, x: "20 "}};"
+            animate={{ opacity: 1, x: "0 "}};"
             transition={{ delay: "0.4 "}};"
           >;"
             <Card className="bg-zion-blue-light/80 border-zion-cyan/20 sticky top-8">;"
@@ -366,8 +361,7 @@ export default function CartPage(): ;
                         <ArrowRight className="h-4 w-4 ml-2" />;
                       </>;
                     )};
-                  </Button>;
-;"
+                  </Button>;"
                   {/* Login link removed to streamline guest checkout experience */};";"
                 </div>;"
 ;"
@@ -386,7 +380,6 @@ export default function CartPage(): ;
             </Card>;
           </motion.div>;
         </div>;
-;
         {/* Guest Checkout Modal */};
         <GuestCheckoutModal;
           open={guestOpen};

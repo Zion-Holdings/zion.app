@@ -1,41 +1,41 @@
 // Define types for the pricing recommendation;
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-export interface PricingSuggestion {;
-  minRate: "number;"
-  maxRate: "number;","
-  confidence: 'High' | 'Medium' | 'Low,;
-  explanation: "string;"
-};"
+export interface PricingSuggestion {
+  minRate: "number"
+  maxRate: number,"
+  confidence: 'High' | 'Medium' | 'Low,
+  explanation: "string"
+}"
 ;"
-export interface ClientBudgetParams {;"
-  jobTitle: "string;",;
-  category: string;
-  timeline?: string;
-  scope?: string;"
-  experienceLevel?: string;";"
-};"
+export interface ClientBudgetParams {"
+  jobTitle: string,
+  category: string
+  timeline?: string
+  scope?: string"
+  experienceLevel?: string""
+}"
 ;"
-export interface TalentRateParams {;"
-  skills: "string[];",;
-  yearsExperience: number;
-  location?: string;
-};"
+export interface TalentRateParams {"
+  skills: string[],
+  yearsExperience: number
+  location?: string
+}"
 ;";"
 // Mock function to generate suggestions;"
 // In production, this would call an AI service or API;"
 export async function getClientBudgetSuggestion(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  params: "ClientBudgetParams",;"
+  params: ClientBudgetParams,;"
 ): Promise<PricingSuggestion> {;"
   try {;"
     // Replace mock logic with real API call;"
-    const const response = await fetch('/api/pricing-suggestion', {;
+    const response = await fetch('/api/pricing-suggestion', {;
       method: 'POST',;
       headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-      body: "JSON.stringify(params)",;"
+      body: JSON.stringify(params),;"
     });"
     if (!response.ok) throw new Error('Failed to fetch pricing suggestion')'
-    const const data = await response.json();
+    const data = await response.json();
     return data;
   } catch {'
     return {;
@@ -48,19 +48,17 @@ export async function getClientBudgetSuggestion(): unknown {): unknown {): unkno
 };
 '
 export async function getTalentRateSuggestion(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  params: "TalentRateParams",;
+  params: TalentRateParams,;
 ): Promise<PricingSuggestion> {;
   try {;
     const { skills, yearsExperience, location } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= params;
-;
     // Simulate API call delay;
     await new Promise((resolve) => setTimeout(resolve, 1000));
-;
     // Base rate calculation based on years of experience;"
     let baseRate = 25 + yearsExperience * 5;";"
 ;"
     // Adjust for in-demand skills;"
-    const const inDemandSkills = [;"
+    const inDemandSkills = [;"
       'react',;
       'aws',;
       'machine learning',;
@@ -69,12 +67,11 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
       'devops',;
       'kubernetes',;
     ];
-    const const hasInDemandSkills = skills.some((skill) =>;
+    const hasInDemandSkills = skills.some((skill) =>;
       inDemandSkills.some((demandSkill) =>;
         skill.toLowerCase().includes(demandSkill),;
       ),;
     );
-;
     if (hasInDemandSkills) {;
       baseRate += 15;
     };
@@ -82,7 +79,7 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
     // Location adjustment;
     let locationFactor = 1.0;
     if (location) {'
-      const const highCostLocations = [;
+      const highCostLocations = [;
         'united states',;
         'usa',;
         'uk',;
@@ -91,7 +88,7 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
         'germany',;
         'switzerland',;
       ]'
-      const const lowCostLocations = [;
+      const lowCostLocations = [;
         'india',;
         'philippines',;
         'pakistan',;
@@ -99,9 +96,7 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
         'ukraine',;
         'brazil',;
       ];
-;
-      const const lowercaseLocation = location.toLowerCase();
-;
+      const lowercaseLocation = location.toLowerCase();
       if (highCostLocations.some((loc) => lowercaseLocation.includes(loc))) {;
         locationFactor = 1.2;
       } else if (;
@@ -111,8 +106,8 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
       };
     };
 '
-    const const minRate = Math.round(baseRate * locationFactor * 0.9);
-    const const maxRate = Math.round(baseRate * locationFactor * 1.2);
+    const minRate = Math.round(baseRate * locationFactor * 0.9);
+    const maxRate = Math.round(baseRate * locationFactor * 1.2);
 '
     // Determine confidence;
     let confidence: 'High' | 'Medium' | 'Low' = 'Medium;
@@ -127,13 +122,10 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
     if (hasInDemandSkills) {;
       explanation += ` and your in-demand skills (${skills.join(', ')})`;
     };
-;
     if (location) {;
       explanation += `, considering market rates in ${location}`;
     };
-;
     explanation += `, we recommend a rate of $${minRate}-$${maxRate}/hour to remain competitive while maximizing your earning potential.`;
-;
     return {;
       minRate,;
       maxRate,'
@@ -153,12 +145,11 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
 };
 '
 // Function to save pricing analytics data;
-import { supabase } from '@/integrations/supabase/client;
-;
-export async function trackPricingSuggestion(): unknown {): unknown {): unknown {): unknown {): unknown {data: {
-  userId: "string;","
+import  { supabase }  from '@/integrations/supabase/client;';
+export async function trackPricingSuggestion(): unknown {): unknown {): unknown {): unknown {): unknown {data: {';
+  userId: string;,"
   suggestionType: 'client' | 'talent,;
-  suggestedMin: "number;",;"
+  suggestedMin: number;,;"
   suggestedMax: number;"
   actualValue?: number;"
   accepted: "boolean;"
@@ -172,9 +163,8 @@ export async function trackPricingSuggestion(): unknown {): unknown {): unknown 
       suggested_max: "data.suggestedMax"
       actual_value: "data.actualValue"
       accepted: "data.accepted"
-      created_at: "new Date().toISOString()",;
-    });
-;"
+      created_at: new Date().toISOString(),;
+    });"
     if (error) throw error;";"
 ;"
     return true;"

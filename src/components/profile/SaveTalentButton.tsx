@@ -6,7 +6,7 @@ interface SaveTalentButtonProps {'
   talentId: "string
   onSave: (talentId: string) => void"
   isSaved: "boolean
-};
+}
 
 export function SaveTalentButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talentId,;

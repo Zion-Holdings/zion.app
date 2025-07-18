@@ -6,9 +6,8 @@ import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 import { supabase } from '@/integrations/supabase/client'
 import type { FraudFlag, FraudStats } from '@/types/fraud'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-// Import refactored components;
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+// Import refactored components;';
 import {'
   FraudStatsCards,;
   FraudFilters,;
@@ -32,11 +31,10 @@ export default function FraudDetection(): ;
     suspicious_count: "0"
     dangerous_count: "0"
     false_positives: "0"
-    actioned_count: "0",;
-  });
-;"
+    actioned_count: 0,;
+  });"
   // Fetch fraud flags;";"
-  const const fetchFraudFlags = async () => {;"
+  const fetchFraudFlags = async () => {;"
     setIsLoading(true);"
     try {;"
       if (!supabase) throw new Error('Supabase client not initialized')'
@@ -44,15 +42,13 @@ export default function FraudDetection(): ;
         .from('fraud_flags');
         .select('*');
         .order('timestamp', { ascending: "false "});
-;
-      if (error) throw error;
-;"
+      if (error) throw error;"
       setFlags(data || []);";"
       setFilteredFlags(data || []);"
 ;"
       // Calculate stats;"
       const newStats: unknown "FraudStats = {;"
-        total_flags: "data?.length || 0",;"
+        total_flags: data?.length || 0,;"
         pending_flags:;"
           data?.filter((flag: FraudFlag) => flag.status === 'pending').length ||;
           0,'
@@ -63,7 +59,7 @@ export default function FraudDetection(): ;
           data?.filter((flag: FraudFlag) => flag.severity === 'dangerous');
             .length || 0,'
         false_positives:;
-          data?.filter((flag: "FraudFlag) => flag.is_false_positive).length || 0",;"
+          data?.filter((flag: FraudFlag) => flag.is_false_positive).length || 0,;"
         actioned_count:;"
           data?.filter(;"
             (flag: FraudFlag) =>;"
@@ -86,18 +82,15 @@ export default function FraudDetection(): ;
       setIsLoading(false);
     };
   };
-;
-  useEffect(() => {;
-    fetchFraudFlags();
-  }, []);
-;
+  useEffect(() => {
+    fetchFraudFlags()
+  }, [])
   // Apply filters;
   useEffect(() => {;
     let result = [...flags];
-;
     // Apply search filter;
     if (searchQuery) {;
-      const const query = searchQuery.toLowerCase();
+      const query = searchQuery.toLowerCase();
       result = result.filter(;
         (flag) =>;
           flag.user_email?.toLowerCase().includes(query) ||;
@@ -105,17 +98,14 @@ export default function FraudDetection(): ;
           flag.reason.toLowerCase().includes(query),;
       );
     };
-;
     // Apply status filter;
     if (statusFilter) {;
       result = result.filter((flag) => flag.status === statusFilter);
     };
-;
     // Apply severity filter;
     if (severityFilter) {;
       result = result.filter((flag) => flag.severity === severityFilter);
     };
-;
     // Apply content type filter;
     if (contentTypeFilter) {;
       result = result.filter((flag) => flag.content_type === contentTypeFilter);
@@ -130,8 +120,8 @@ export default function FraudDetection(): ;
   ) => {'
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const const status = action === 'ignore' ? 'ignored' : 'actioned'
-      const const actionTaken = action === 'ignore' ? 'none' : action;
+      const status = action === 'ignore' ? 'ignored' : 'actioned'
+      const actionTaken = action === 'ignore' ? 'none' : action;
 '
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;
         .from('fraud_flags');
@@ -150,7 +140,6 @@ export default function FraudDetection(): ;
         title: 'Flag updated',;
         description: `Action '${action}' was applied successfully.`,;
       });
-;
       // Refresh the data;
       fetchFraudFlags()'
     } catch {;
@@ -167,14 +156,13 @@ export default function FraudDetection(): ;
     };
   };
 '
-  const const resetFilters = () => {;
+  const resetFilters = () => {;
     setSearchQuery('');
     setStatusFilter(null);
     setSeverityFilter(null);
     setContentTypeFilter(null);
   };
-;
-  const const hasFilters = !!(;
+  const hasFilters = !!(;
     searchQuery ||;
     statusFilter ||;
     severityFilter ||;

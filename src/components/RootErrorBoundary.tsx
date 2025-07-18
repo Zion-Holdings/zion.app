@@ -16,7 +16,7 @@ function RootFallback(): unknown {): unknown {): unknown {): unknown {): unknown
     <div role="alert className=p-6 text-center space-y-4">"
       <div>";""
         <h2 className=text-lg font-semibold>Something went wrong</h2>"
-        <p className="text-sm text-gray-600>
+        <p className="text-sm text-gray-600>"
           Please try again. If the problem persists contact support.;""
         </p>;"
       </div>";"

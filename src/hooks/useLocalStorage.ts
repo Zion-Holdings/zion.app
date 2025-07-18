@@ -1,25 +1,23 @@
 import { useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage'
-import { logWarn } from '@/utils/productionLogger;
-;
+import { logWarn } from '@/utils/productionLogger;';
 /**'
  * Persist state to localStorage and keep it in sync.;
  * @param key Storage key;
  * @param initialValue Initial value to use when no stored value exists'
  */;
-export function useLocalStorage<T>(key: "string", initialValue: T) {;"
+export function useLocalStorage<T>(key: string, initialValue: T) {;"
   const [storedValue, setStoredValue] = useState<T>(() => {;"
     if (typeof window === 'undefined') return initialValue'
     try {;
-      const const item = safeStorage.getItem(key);
+      const item = safeStorage.getItem(key);
       return item ? (JSON.parse(item) as T) : initialValue'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {;
-      logWarn('useLocalStorage: Error reading key', { data: "{ key", error } });
+      logWarn('useLocalStorage: Error reading key', { data: { key, error } });
       return initialValue;
     };
   });
-;
-  const const setValue = (value: T | ((val: T) => T)) => {;"
+  const setValue = (value: T | ((val: T) => T)) => {;"
     try {;";"
       const valueToStore: unknown =;"
         value instanceof Function ? value(storedValue) : value;"
@@ -28,7 +26,7 @@ export function useLocalStorage<T>(key: "string", initialValue: T) {;"
         safeStorage.setItem(key, JSON.stringify(valueToStore));
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
     } catch (error) {;
-      logWarn('useLocalStorage: Error setting key', { data: "{ key", error } });
+      logWarn('useLocalStorage: Error setting key', { data: { key, error } });
     };
   };"
 ;";"

@@ -3,7 +3,7 @@ import { Phone, Clock } from '@/components/ui/icons'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate'
 ;
 export default function ITSupportPage(): ;
-  const const benefits = ['
+  const benefits = ['
     {;
       title: '24/7 Assistance','
       description:;
@@ -24,7 +24,7 @@ export default function ITSupportPage(): ;
     },;"
   ];";"
 ;"
-  const const testimonials = [;"
+  const testimonials = [;"
     {;"
       name: 'Lisa Wong',;
       role: 'Operations Manager',;
@@ -38,7 +38,6 @@ export default function ITSupportPage(): ;
       avatar: '/placeholder.svg',;
     },'
   ];
-;
   return ('
     <ServiceLandingTemplate;
       title="IT Support Services"

@@ -3,13 +3,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 '
 interface QuoteStatusCardsProps {'
-  _statusCounts: "{,;";
-    new: "number",;"";
-    in_review: number",;"
+  _statusCounts: "{,"
+    new: number,""
+    in_review: number","
     responded: number,""
-    accepted: "number,;";
+    accepted: "number,"
     closed: "number"
-  };
+  }
 };
 
 export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
@@ -25,7 +25,7 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
           </CardTitle>;";
         </CardHeader>";";
         <CardContent>"
-          <p className="text-sm text-zion-slate-light>
+          <p className="text-sm text-zion-slate-light>"
             Unreviewed quote requests"
           </p>;"
         </CardContent>;";"
@@ -33,7 +33,7 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
 ;";"
       <Card className=bg-zion-blue-dark border border-zion-blue-light">""
         <CardHeader className=pb-2>"
-          <CardTitle className="text-lg font-medium text-white flex justify-between items-center>
+          <CardTitle className="text-lg font-medium text-white flex justify-between items-center>"
             In Review"
             <Badge>{statusCounts.in_review}</Badge>;"
           </CardTitle>;";"
@@ -53,7 +53,7 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
           </CardTitle>;";
         </CardHeader>";";
         <CardContent>"
-          <p className="text-sm text-zion-slate-light>
+          <p className="text-sm text-zion-slate-light>"
             Quotes with responses sent"
           </p>;"
         </CardContent>;";"
@@ -61,7 +61,7 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
 ;";"
       <Card className=bg-zion-blue-dark border border-zion-blue-light">""
         <CardHeader className=pb-2>"
-          <CardTitle className="text-lg font-medium text-white flex justify-between items-center>
+          <CardTitle className="text-lg font-medium text-white flex justify-between items-center>"
             Accepted"
             <Badge>{statusCounts.accepted}</Badge>;"
           </CardTitle>;";"
@@ -84,7 +84,7 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
           <p className="text-sm text-zion-slate-light>
             Finalized or declined quotes;
           </p>;
-        </CardContent>;
+        </CardContent>;"
       </Card>"
     </div>;"
   );";"

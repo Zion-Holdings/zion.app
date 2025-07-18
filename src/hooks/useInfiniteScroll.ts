@@ -1,38 +1,35 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;
+import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;';
 '
-interface UseInfiniteScrollOptions {;
-  hasMore: "boolean;",;
-  loading: boolean;
-  threshold?: number; // Distance from bottom to trigger load (in pixels);
-  rootMargin?: string; // Root margin for intersection observer;"
-  delayMs?: number; // Delay before loading more items;";"
-};"
+interface UseInfiniteScrollOptions {
+  hasMore: boolean,
+  loading: boolean
+  threshold?: number // Distance from bottom to trigger load (in pixels)
+  rootMargin?: string // Root margin for intersection observer"
+  delayMs?: number // Delay before loading more items""
+}"
 ;"
-interface UseInfiniteScrollReturn {;"
-  isFetching: "boolean;"
-  lastElementRef: "(node: HTMLElement | null) => void;"
-  resetScroll: "() => void;","
-  scrollToTop: "() => void;"
-};"
+interface UseInfiniteScrollReturn {"
+  isFetching: "boolean"
+  lastElementRef: "(node: HTMLElement | null) => void"
+  resetScroll: () => void,"
+  scrollToTop: "() => void"
+}"
 ;"
 export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   loadMore: "() => Promise<void> | void"
-  options: "UseInfiniteScrollOptions",;"
+  options: UseInfiniteScrollOptions,;"
 ): UseInfiniteScrollReturn {;";"
-  const {;"
+  const { ;"
     hasMore,;"
     loading,;"
     threshold: "_threshold = 100"
     rootMargin = '0px',;
-    delayMs = 200,;
-  } = options;
-;
+    delayMs = 200,; } = options;
   const [isFetching, setIsFetching] = useState(false);
-  const const observer = useRef<IntersectionObserver | null>(null);
-  const const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-;
+  const observer = useRef<IntersectionObserver | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   // Cleanup timeout on unmount;
   useEffect(() => {;
     return () => {;
@@ -42,13 +39,10 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
       };
     };
   }, []);
-;
-  const const lastElementRef = useCallback(;
+  const lastElementRef = useCallback(;
     (_node: HTMLElement | null) => {;
       if (loading || !hasMore) return;
-;
       if (observer.current) observer.current.disconnect();
-;
       observer.current = new IntersectionObserver(;
         (entries) => {;
           const [entry] = entries;
@@ -60,19 +54,17 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
             !isFetching;
           ) {;
             setIsFetching(true);
-;
             // Clear any existing timeout;
             if (timeoutRef.current) {;
               clearTimeout(timeoutRef.current);
             };
-;
             // Add delay to prevent rapid successive calls'
             timeoutRef.current = setTimeout(async () => {;
               try {;
                 await loadMore()'
               } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
                 logErrorToProduction('Error loading more items:', {;
-                  data: "error",;
+                  data: error,;
                 });
               } finally {;
                 setIsFetching(false);
@@ -82,18 +74,16 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
           };"
         },;"
         {;"
-          root: "null",;"
+          root: null,;"
           rootMargin,;"
-          threshold: "0.1",;
+          threshold: 0.1,;
         },;
       );
-;
       if (node) observer.current.observe(node);
     },;
     [loading, hasMore, loadMore, isFetching, delayMs, rootMargin],;
   );
-;
-  const const resetScroll = useCallback(() => {;
+  const resetScroll = useCallback(() => {;
     setIsFetching(false);
     if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
@@ -101,13 +91,12 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     };"
   }, []);";"
 ;"
-  const const scrollToTop = useCallback(() => {;"
+  const scrollToTop = useCallback(() => {;"
     window.scrollTo({;"
       top: "0"
       behavior: 'smooth',;
     });
   }, []);
-;
   // Cleanup observer on unmount;
   useEffect(() => {;
     return () => {;
@@ -116,7 +105,6 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
       };
     };
   }, []);
-;
   return {;
     isFetching,;
     lastElementRef,;
@@ -124,14 +112,13 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     scrollToTop,;
   }'
 };
-;
 // Alternative hook for pagination-based infinite scroll'
 export function useInfiniteScrollPagination<T>(;
   fetchFunction: "(;"
     page: "number"
     limit: "number"
   ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;"
-  initialLimit: "number = 20",;
+  initialLimit: number = 20,;
 ) {;
   const [items, setItems] = useState<T[]>([]);
   const [page, setPage] = useState(1);
@@ -140,10 +127,9 @@ export function useInfiniteScrollPagination<T>(;
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState<number | undefined>();
   const [isInitialized, setIsInitialized] = useState(false);
-  const const isResetting = useRef(false);
-  const const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isResetting = useRef(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { showLoader, hideLoader } = useGlobalLoader(); // Get loader controls;
-;
   // Cleanup timeout on unmount;
   useEffect(() => {;
     return () => {;
@@ -153,27 +139,22 @@ export function useInfiniteScrollPagination<T>(;
       };
     };
   }, []);
-;
-  const const loadMore = useCallback(async () => {;
+  const loadMore = useCallback(async () => {;
     if (loading || !hasMore || isResetting.current) return;
-;
     setLoading(true);"
     setError(null);";"
 ;"
     try {;"
-      const result: await fetchFunction(page", initialLimit);
-;
+      const result = await fetchFunction(page", initialLimit);
       if (page === 1) {;"
         // First page - replace items;";"
         setItems(result.items);"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;"
         // Subsequent pages - append items;"
-        setItems((prevItems: "T[]) => [...prevItems", ...result.items]);
+        setItems((prevItems: T[]) => [...prevItems, ...result.items]);
       };
-;
       setHasMore(result.hasMore);
-      setPage((prevPage: number) => prevPage + 1);
-;"
+      setPage((prevPage: number) => prevPage + 1);"
       if (result.total !== undefined) {;";"
         setTotal(result.total);"
       };"
@@ -184,8 +165,7 @@ export function useInfiniteScrollPagination<T>(;
       setLoading(false);
     };
   }, [fetchFunction, page, initialLimit, loading, hasMore]);
-;
-  const const reset = useCallback(() => {;
+  const reset = useCallback(() => {;
     isResetting.current = true;
     setItems([]);
     setPage(1);
@@ -194,28 +174,25 @@ export function useInfiniteScrollPagination<T>(;
     setError(null);
     setTotal(undefined);
     setIsInitialized(false);
-;
     // Clear any pending timeouts;
     if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     };
-;
     // Small delay to prevent race conditions;
     timeoutRef.current = setTimeout(() => {;
       isResetting.current = false;
       timeoutRef.current = null;
     }, 100);
   }, []);
-;
-  const const refresh = useCallback(async () => {;
+  const refresh = useCallback(async () => {;
     reset();
     // Wait for reset to complete;
     await new Promise((resolve) => setTimeout(resolve, 150));"
     try {;";"
       showLoader(); // Show global loader for initial fetch;"
       setLoading(true);"
-      const result: await fetchFunction(1", initialLimit);
+      const result = await fetchFunction(1", initialLimit);
       setItems(result.items);
       setHasMore(result.hasMore);
       setPage(2); // Next page will be 2;
@@ -231,7 +208,6 @@ export function useInfiniteScrollPagination<T>(;
       hideLoader(); // Hide global loader after initial fetch attempt;
     };
   }, [fetchFunction, initialLimit, reset, showLoader, hideLoader]); // Added showLoader and hideLoader to dependencies;
-;
   // Load initial page only once;
   useEffect(() => {;
     if (!isInitialized && !loading && !isResetting.current) {;
@@ -243,9 +219,8 @@ export function useInfiniteScrollPagination<T>(;
     hasMore,;"
     loading,;"
     threshold: "200"
-    delayMs: "300",;
+    delayMs: 300,;
   });
-;
   return {;
     items,;
     loading,;
@@ -257,8 +232,7 @@ export function useInfiniteScrollPagination<T>(;
     refresh,;
     ...infiniteScrollProps,;
   };
-};
-;"
+};"
 function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {err: unknown): string {;";"
   return err instanceof Error ? err.message : String(err);"
 };"

@@ -17,7 +17,7 @@ interface MilestonesListProps {'
     import('@/hooks/milestones/types').MilestoneActivity[]'
   >'
   isLoading: boolean
-  isClient: "boolean",
+  isClient: boolean,
   onCreateMilestone: (data: {"
     title: "string,;
     amount: number";"
@@ -30,7 +30,7 @@ interface MilestonesListProps {'
     comment?: string,;"
   ) => Promise<boolean>"
   onDeleteMilestone: (id: string) => Promise<boolean>
-  onUploadDeliverable: "(id: string", file: File) => Promise<unknown>,;"
+  onUploadDeliverable: (id: string, file: File) => Promise<unknown>,;"
   isSubmitting: boolean"
   onApprove?: (id: string) => Promise<void>;
   onReject?: (id: string) => Promise<void>""
@@ -47,8 +47,8 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
 }) => {;"
   const [showAddForm, setShowAddForm] = useState(false)
 
-  const const handleSubmit = async (_data: {
-    title: "string",
+  const handleSubmit = async (_data: {
+    title: string,
     amount: number;
     description?: string | undefined;
     due_date?: Date | undefined;
@@ -59,11 +59,11 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
 
   if (isLoading) {
     return (;"
-      <div className="space-y-4>
+      <div className="space-y-4>"
         {[1, 2, 3].map((i) => (;"
           <Card key={i}>"
             <CardContent className=p-6>"
-              <div className="h-6 w-48 bg-muted rounded animate-pulse mb-4></div>
+              <div className="h-6 w-48 bg-muted rounded animate-pulse mb-4></div>"
               <div className="h-4 bg-muted rounded animate-pulse w-full mb-2"></div>
               <div className=h-4 bg-muted rounded animate-pulse w-3/4"></div>"
             </CardContent>;
@@ -100,7 +100,7 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
 
       {showAddForm && (
         <Card>;"
-          <CardContent className="pt-6>
+          <CardContent className="pt-6>"
             <h3 className="text-lg font-medium mb-4">Create New Milestone</h3>
             <AddMilestoneForm;
               onSubmit={handleSubmit};
@@ -112,7 +112,7 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
       )}
 ;"
       <div className="space-y-4>
-        {milestones.map((milestone) => (;
+        {milestones.map((milestone) => (;"
           <MilestoneCard"
             key={milestone.id};"
             id={milestone.id};

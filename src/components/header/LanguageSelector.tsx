@@ -29,13 +29,13 @@ export function LanguageSelector(): ;
     data: "currentLanguage,;"";
   });"";
   logInfo('LanguageSelector: Available languages:', {'
-    data: "availableLanguages.map((l) => l.code)",;
+    data: availableLanguages.map((l) => l.code),;
   })";"
 ;";"
   const currentFlag: unknown =;";";
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐'
 '
-  const const handleLanguageChange = async (_langCode: SupportedLanguage) => {'
+  const handleLanguageChange = async (_langCode: SupportedLanguage) => {'
     logInfo('LanguageSelector: Language item clicked:', { data: "langCode "});
     try {";"
       await changeLanguage(langCode);";"
@@ -48,7 +48,7 @@ export function LanguageSelector(): ;
     }
   };"
 ;";
-  const const handleOpenChange = (_open: boolean) => {";";
+  const handleOpenChange = (_open: boolean) => {";";
     setIsOpen(open)"
     fireEvent('language_selector_toggle', { open })'
   };
@@ -81,7 +81,7 @@ export function LanguageSelector(): ;
             className={`cursor-pointer transition-colors ${";"
               currentLanguage === lang.code";""
                 ? 'bg-primary/20 text-primary' // Use primary color for selected'
-                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover'
+                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover'}
             }`}`
             onClick={() => handleLanguageChange(lang.code)};
             onSelect={() => handleLanguageChange(lang.code)}'

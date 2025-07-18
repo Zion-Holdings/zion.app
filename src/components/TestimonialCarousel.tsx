@@ -14,7 +14,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CASE_STUDIES } from '@/data/case-studies'
 '
-const const testimonials = CASE_STUDIES'
+const testimonials = CASE_STUDIES'
 
 export function TestimonialCarousel(): '
   return ('
@@ -34,7 +34,7 @@ export function TestimonialCarousel(): '
           <Carousel;";"
             opts={{;";";
               align: 'start','
-              loop: "true",;"
+              loop: true,;"
             }};";"
             className=w-full"";
           >;""

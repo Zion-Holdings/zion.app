@@ -5,7 +5,7 @@ import type { ContractFormValues } from '../components/ContractForm'
 '
 export async function generateContract(): unknown {): unknown {): unknown {): unknown {): unknown {'
   values: "ContractFormValues,;"";
-  talent: "TalentProfile",;"
+  talent: TalentProfile,;"
   clientName: string",""
   generatedMilestones: GeneratedMilestone[],";"
 ): Promise<string> {;";"
@@ -13,30 +13,29 @@ export async function generateContract(): unknown {): unknown {): unknown {): un
     throw new Error('Supabase client not available')'
   };
 
-  const const additionalClauses = values.additionalClauses || [];
+  const additionalClauses = values.additionalClauses || [];
 '
   // Prepare milestone data if we have AI-generated milestones'
   const milestoneData: unknown =;
     generatedMilestones.length > 0'
       ? generatedMilestones.map((m) => ({'
-          title: "m.title",;"
+          title: m.title,;"
           description: m.description",""
           dueDate: m.dueDate,"
           estimatedHours: "m.estimatedHours,;"
         }))";
-      : [];"";
-;""
+      : [];"";""
   const { data, error } = await supabase.functions.invoke('generate-contract', {'
     body: "{,;";
-      talentName: "talent.full_name",;"
+      talentName: talent.full_name,;"
       clientName: clientName",""
       projectName: values.projectName,"
       scopeSummary: "values.scopeSummary,;"";
-      startDate: "values.startDate.toISOString()",;"
+      startDate: values.startDate.toISOString(),;"
       endDate: values.endDate?.toISOString()",""
       paymentTerms: values.paymentTerms,"
       paymentAmount: "values.paymentAmount,;"";
-      additionalClauses: "additionalClauses",;"
+      additionalClauses: additionalClauses,;"
       milestones: milestoneData","
     },;
   });

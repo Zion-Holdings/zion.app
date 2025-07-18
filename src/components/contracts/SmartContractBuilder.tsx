@@ -23,12 +23,12 @@ import { toast } from 'sonner'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface SmartContractBuilderProps {'
-  isOpen: "boolean,;";
-  onClose: "() => void",;"";
-  talent: TalentProfile",;"
-  clientName: string;"
+  isOpen: "boolean,"
+  onClose: () => void,""
+  talent: TalentProfile","
+  clientName: string"
   onContractGenerated?: (contractContent: string) => void"
-};
+}
 
 export function SmartContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -46,7 +46,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false)'
   const [deployOptions, _setDeployOptions] = useState<DeploymentOptions>({'
     network: 'ethereum','
-    useEscrow: "true",;"
+    useEscrow: true,;"
     deployToChain: false","
   })";""
   const [deployStatus, setDeployStatus] = useState<string>('')'
@@ -54,19 +54,18 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
     useState<SmartContractInfo | null>(null);
 
   const { _deploySmartContract } = useSmartContracts();
-
-  const const handleLoadTemplate = (_templateData: ContractFormValues) => {;
+  const handleLoadTemplate = (_templateData: ContractFormValues) => {;
     setFormValues(templateData);
   };
 
   // Convert ContractFormValues to contract content string;
 '
-  const const handleDeployContract = async () => {'
+  const handleDeployContract = async () => {'
     if (!generatedContract) return;
 '
     try {'
       setDeployStatus('deploying')'
-      const const contractInfo = await deploySmartContract(;
+      const contractInfo = await deploySmartContract(;
         generatedContract,;
         deployOptions,'
       )'
@@ -87,7 +86,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
   }'
 '
   // Modified to match the expected interface;
-  const const handleFormSubmit = (_contract: string) => {'
+  const handleFormSubmit = (_contract: string) => {'
     // This should be a function that takes a string (contract content)'
     // Since we need to adapt the interface, we'll implement the simplest solution that works'
     if (onContractGenerated) {'
@@ -107,7 +106,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
           <div className="flex justify-between items-center">;"
             <TabsList className=grid grid-cols-2">""
               <TabsTrigger value=form>Contract Details</TabsTrigger>"
-              <TabsTrigger value="preview disabled={!generatedContract}>
+              <TabsTrigger value="preview disabled={!generatedContract}>"
                 Preview;""
               </TabsTrigger>;"
             </TabsList>";"
@@ -123,8 +122,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
                 Templates"
               </Button>;
             </div>;"";
-          </div>;"";
-;"";
+          </div>;"";"";
           <TabsContent value="form" className=pt-4>"
             <ContractForm"
               talent={talent};
@@ -132,7 +130,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
               initialValues={;"";
                 formValues || {;"";
                   projectName: '','
-                  startDate: "new Date()",;"
+                  startDate: new Date(),;"
                   scopeSummary: '','
                   paymentTerms: 'fixed','
                   paymentAmount: '','
@@ -143,8 +141,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
               onFormValuesChange={setFormValues}"
               onContractGenerated={handleFormSubmit};
             />;"";
-          </TabsContent>;"";
-;"";
+          </TabsContent>;"";"";
           <TabsContent value="preview" className=pt-4>"
             {generatedContract && (;
               <div>;
@@ -153,8 +150,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
                   talent={talent};
                   onClose={onClose}"
                   deploymentInfo={deploymentInfo};
-                />;"";
-;"";
+                />;"";"";
                 {!deploymentInfo && deployOptions.deployToChain && (;"";
                   <div className="mt-6 flex justify-center">;"
                     <Button;";"
@@ -183,7 +179,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
               scopeSummary: '','
               paymentTerms: 'fixed','
               paymentAmount: '','
-              endDate: "undefined",;"
+              endDate: undefined,;"
               additionalClauses: []","
             };
           };

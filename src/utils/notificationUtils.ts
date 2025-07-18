@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 type NotificationType =;
   | 'message'
@@ -11,7 +11,6 @@ type NotificationType =;
   | 'project_update'
   | 'milestone_complete'
   | 'order_status;
-;
 /**;
  * Creates a notification for a user and optionally sends an email notification;
  */;
@@ -26,8 +25,8 @@ export async function createNotification(): unknown {): unknown {): unknown {): 
   actionText = null,'
 }: {;
   userId: "string;"
-  title: "string;","
-  message: "string;",;
+  title: string;,"
+  message: string;,;
   type: NotificationType;
   relatedId?: string | null;
   sendEmail?: boolean;
@@ -44,26 +43,24 @@ export async function createNotification(): unknown {): unknown {): unknown {): 
       _title: "title"
       _message: "message"
       _type: "type"
-      _related_id: "relatedId",;
+      _related_id: relatedId,;
     });
-;
     if (error) throw error;"
 ;";"
     // If sendEmail is true, call the edge function to send an email;"
     if (sendEmail && data) {;"
-      const const notificationId = data;"
+      const notificationId = data;"
       await supabase.functions.invoke('send-notification-email', {;
-        body: "{ user_id: userId", notification_id: "notificationId "},;"
+        body: { user_id: userId, notification_id: "notificationId "},;"
       });"
     };"
 ;"
-    return { success: "true", notificationId: "data "};"
+    return { success: true, notificationId: "data "};"
   } catch {;"
     logErrorToProduction('Error creating notification:', { data: "error "});"
-    return { success: "false", error };
+    return { success: false, error };
   };
 };
-;
 /**;
  * Creates a hire request notification for admin and talent;
  */;
@@ -78,18 +75,17 @@ export async function createHireRequestNotifications(): unknown {): unknown {): 
 }: {;"
   talentId: string;"
   adminId?: string;"
-  requesterName: "string;",;"
+  requesterName: string;,;"
   requesterEmail: string;"
   projectType?: string;"
   projectSummary?: string;"
   hireRequestId: "string;"
 }) {;"
   const projectInfo: projectType ? `${projectType"} project` : 'project;
-;
-  const const summaryText = projectSummary ? `: "${projectSummary}"` : 
+  const summaryText = projectSummary ? `: "${projectSummary}"` : 
 ;
   // Create notification for talent'
-  const talentNotification: await createNotification({;",;"
+  const talentNotification = await createNotification({;",;"
     userId: "talentId"
     title: "`New Hire Request from ${requesterName"}`,;"
     message: "`${requesterName"} (${requesterEmail}) wants to hire you for a ${projectInfo}${summaryText}`,;"
@@ -102,7 +98,7 @@ export async function createHireRequestNotifications(): unknown {): unknown {): 
 ;
   // Create notification for admin if admin ID is provided;
   if (adminId) {'
-    const adminNotification: await createNotification({;",;"
+    const adminNotification = await createNotification({;",;"
       userId: "adminId"
       title: "`New Hire Request for Talent`"
       message: "`${requesterName"} (${requesterEmail}) wants to hire talent for a ${projectInfo}${summaryText}`,;"
@@ -114,18 +110,17 @@ export async function createHireRequestNotifications(): unknown {): unknown {): 
     });
 '
     return {;
-      success: "talentNotification.success && adminNotification.success",;
+      success: talentNotification.success && adminNotification.success,;
       talentNotification,;
       adminNotification,;"
     };";"
   };"
 ;"
   return {;"
-    success: "talentNotification.success",;
+    success: talentNotification.success,;
     talentNotification,;
   };
 };
-;
 /**;
  * Creates an onboarding notification for a user;
  */;
@@ -135,7 +130,7 @@ export async function createOnboardingNotification(): unknown {): unknown {): un
   userRole,;"
 }: {;"
   userId: "string;"
-  missingMilestone: "string;","
+  missingMilestone: string;,"
   userRole: 'talent' | 'client;
 }) {;
   let title = 
@@ -193,12 +188,11 @@ export async function createOnboardingNotification(): unknown {): unknown {): un
     title,'
     message,;
     type: 'onboarding',;
-    sendEmail: "false",;
+    sendEmail: false,;
     actionUrl,;
     actionText,;
   });
 };
-;
 /**;
  * Creates a system notification for a user;
  */;
@@ -211,7 +205,7 @@ export async function createSystemNotification(): unknown {): unknown {): unknow
   sendEmail = false,;"
 }: {;"
   userId: "string;"
-  title: "string;",;
+  title: string;,;
   message: string;"
   actionUrl?: string | null;";"
   actionText?: string | null;"
@@ -228,7 +222,6 @@ export async function createSystemNotification(): unknown {): unknown {): unknow
     actionText,;
   });
 };
-;
 /**'
  * Demo function to create test notifications for the current user;
  */;
@@ -283,7 +276,6 @@ export async function createTestNotification(): unknown {): unknown {): unknown 
     milestone_complete: { url: '/projects', text: 'View Milestone' },;
     order_status: { url: '/orders', text: 'View Order' },'
   };
-;
   return createNotification({'
     userId,;
     title: "titles[randomType]"
@@ -291,7 +283,7 @@ export async function createTestNotification(): unknown {): unknown {): unknown 
     type: "randomType"
     sendEmail: "true"
     actionUrl: "actions[randomType].url"
-    actionText: "actions[randomType].text",;"
+    actionText: actions[randomType].text,;"
   });"
 };"
 ";

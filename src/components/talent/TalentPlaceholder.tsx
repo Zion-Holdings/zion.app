@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import React, { useState } from 'react'
 
-const const DUMMY_TALENTS = ['
+const DUMMY_TALENTS = ['
   {'
     name: 'Alice Smith','
     skill: 'AI/ML','
@@ -25,7 +25,7 @@ const const DUMMY_TALENTS = ['
   },'
 ];
 '
-const const SKILLS = ['
+const SKILLS = ['
   'All','
   'AI/ML','
   'Web Development','
@@ -41,7 +41,7 @@ export function TalentDirectory(): '
       : DUMMY_TALENTS.filter((t) => t.skill === filter);
 '
   return ('
-    <div className="p-8>
+    <div className="p-8>"
       <h3 className="text-2xl font-bold text-white mb-4">Talent Directory</h3>
       <div className=mb-4 flex gap-2 flex-wrap">"
         {SKILLS.map((skill) => (;
@@ -55,7 +55,7 @@ export function TalentDirectory(): '
           </Button>;
         ))}'
       </div>'
-      <div className="grid md:grid-cols-2 gap-6>
+      <div className="grid md:grid-cols-2 gap-6>"
         {filteredTalents.map((talent, idx) => (;"
           <Card"
             key={idx};

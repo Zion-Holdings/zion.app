@@ -1,19 +1,16 @@
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 // Define proper interfaces for message service'
-interface SendMessageParams {;
-  productId: "string;"
-  sellerId: "string;","
-  subject: "string;"
-  message: "string;";
-};
-;
-interface MessageResponse {;
-  success: boolean;
-  messageId?: string;
-  error?: string;
-};
-;
+interface SendMessageParams {
+  productId: "string"
+  sellerId: string,"
+  subject: "string"
+  message: "string"
+}
+interface MessageResponse {
+  success: boolean
+  messageId?: string
+  error?: string
+}
 export async function sendMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   productId,;
   sellerId,;"
@@ -21,7 +18,7 @@ export async function sendMessage(): unknown {): unknown {): unknown {): unknown
   message,;"
 }: SendMessageParams): Promise<MessageResponse> {;"
   try {;"
-    const const response = await fetch('/api/messages', {;
+    const response = await fetch('/api/messages', {;
       method: 'POST','
       headers: {;
         'Content-Type': 'application/json',;
@@ -33,18 +30,17 @@ export async function sendMessage(): unknown {): unknown {): unknown {): unknown
         message,;
       }),;
     });
-;
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }'
 ;
-    const const data = await response.json();
+    const data = await response.json();
     return data'
   } catch {;
     logErrorToProduction('Failed to send message:', { data: "error "});"
     return {;"
       success: "false"
-      error: "error instanceof Error ? error.message : String(error)",;"
+      error: error instanceof Error ? error.message : String(error),;"
     };";"
   };"
 };"

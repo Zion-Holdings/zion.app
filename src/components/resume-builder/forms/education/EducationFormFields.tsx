@@ -44,7 +44,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);"
 "
-  const const form = useForm<EducationFormValues>({;;,
+  const form = useForm<EducationFormValues>({;,
     resolver: "zodResolver(educationSchema)"
     defaultValues: {
       institution: '','
@@ -57,7 +57,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
     },;
   });
 
-  const const handleSubmit = async (_data: EducationFormValues) => {;
+  const handleSubmit = async (_data: EducationFormValues) => {;
     setIsLoading(true)'
     setError(null)'
     try {;
@@ -78,7 +78,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
   return ('
     <Form {...form}>'
       <form onSubmit={form.handleSubmit(handleSubmit)} className=space-y-4>"
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4>"
           <FormField;"
             control={form.control}"
             name=institution
@@ -95,7 +95,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
                     {...field};
                   />;
                 </FormControl>;
-                <FormMessage />;
+                <FormMessage />;"
               </FormItem>)}"
           />;"
 
@@ -135,7 +135,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
                   placeholder="Computer Science, Engineering, etc.
                   {...field};
                 />;
-              </FormControl>;
+              </FormControl>;"
               <FormMessage />"
             </FormItem>;"
           )};
@@ -148,7 +148,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
             render={({"
               field,;
             }: {
-              field: "ControllerRenderProps<EducationFormValues", 'start_date'>'
+              field: ControllerRenderProps<EducationFormValues, 'start_date'>'
             }) => ('
               <FormItem>;
                 <FormLabel>Start Date</FormLabel>'
@@ -164,7 +164,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
             <FormField;
               control={form.control}"
               name="is_current
-              render={({
+              render={({"
                 field,;"
               }: {"
                 field: ControllerRenderProps<EducationFormValues, 'is_current'>'
@@ -177,7 +177,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
                     />
                   </FormControl>;"
                   <div className="space-y-1 leading-none>
-                    <FormLabel>I am currently studying here</FormLabel>;
+                    <FormLabel>I am currently studying here</FormLabel>;"
                   </div>"
                 </FormItem>;"
               )};
@@ -210,7 +210,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
           render={({"
             field,;
           }: {
-            field: "ControllerRenderProps<EducationFormValues", 'location'>'
+            field: ControllerRenderProps<EducationFormValues, 'location'>'
           }) => ('
             <FormItem>;
               <FormLabel>Location (Optional)</FormLabel>'
@@ -220,15 +220,14 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
               <FormMessage />;
             </FormItem>;
           )}"
-        />;
-;"
+        />;"
         <FormField"
           control={form.control};
           name=description"
           render={({"
             field,;
           }: {
-            field: "ControllerRenderProps<EducationFormValues", 'description'>'
+            field: ControllerRenderProps<EducationFormValues, 'description'>'
           }) => ('
             <FormItem>'
               <FormLabel>Description (Optional)</FormLabel>;
@@ -245,17 +244,17 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
         />;
 
         {error && (;"
-          <Alert variant="destructive>
+          <Alert variant="destructive>"
             <AlertDescription>{error}</AlertDescription>;""
           </Alert>;
         )}
 ;"
-        <div className="flex justify-between pt-2>
+        <div className="flex justify-between pt-2>"
           <Button type="button" variant=outline onClick={onCancel}>"
             {isEditing ? 'Cancel' : 'Back'}'
           </Button>'
 '
-          <Button type="submit disabled={isLoading}>
+          <Button type="submit disabled={isLoading}>"
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}"
             {isEditing ? 'Update' : 'Add'} Education'
           </Button>;

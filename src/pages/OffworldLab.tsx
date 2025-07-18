@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { DelayTolerantDAO } from '@/offworld/delayDao;
-;
+import  { DelayTolerantDAO }  from '@/offworld/delayDao;
 export default function OffworldLab(): ;
-  const [latency, setLatency] = useState(0);
-  const [queuedVotes, setQueuedVotes] = useState(0);
+  const [latency, setLatency] = useState(0);';
+  const [queuedVotes, setQueuedVotes] = useState(0);';
   const [dao] = useState(() => new DelayTolerantDAO())'
 ;
-  const const tickLatency = () => setLatency((l) => (l + 1) % 60);
+  const tickLatency = () => setLatency((l) => (l + 1) % 60);
 '
   return (;
     <div className="p-4 space-y-4">;"
@@ -20,7 +19,7 @@ export default function OffworldLab(): ;
             dao.submitVote({;"
               proposalId: 'demo',;
               voter: 'tester',;
-              support: "true",;
+              support: true,;
             });
             setQueuedVotes((v) => v + 1);
             tickLatency();

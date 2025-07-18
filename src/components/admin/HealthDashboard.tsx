@@ -14,17 +14,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 '
 interface HealthData {'
   _status: 'healthy' | 'warning' | 'critical,'
-  timestamp: "string,";
-  uptime: "number",;"";
+  timestamp: "string,"
+  uptime: number,""
   version: string","
-  environment: string,;""
-  metrics: "{,";
-    errorRate: "number",;"";
+  environment: string,""
+  metrics: "{,"
+    errorRate: number,""
     criticalErrors: number","
-    responseTime: number,;""
-    memoryUsage: "number;"
-  };";";
-  health: "{",;"";
+    responseTime: number,""
+    memoryUsage: "number"
+  }";";
+  health: {,;"";
     status: string","
     score: number,;""
     issues: "string[],";
@@ -33,12 +33,12 @@ interface HealthData {'
   errors: {",;"
     summary: {,""
       total: "number,;";
-      critical: "number",;"";
+      critical: number,;"";
       high: number",;"
       medium: number,""
       low: "number;"
     };";";
-    topErrors: "Array<{",;"";
+    topErrors: Array<{,;"";
       patternId: string","
       description: string,;""
       occurrences: "number,;"
@@ -55,13 +55,13 @@ const HealthDashboard: unknown React.FC = () => {;
   const [error, setError] = useState<string | null>(null)"
   const [autoRefresh, setAutoRefresh] = useState(true);"
 ;";"
-  const const fetchHealthData = async () => {;";"
+  const fetchHealthData = async () => {;";"
     try {;";"
-      const const response = await fetch('/api/admin/health')'
+      const response = await fetch('/api/admin/health')'
       if (!response.ok) {;
         throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)`
       }'
-      const const data = await response.json()'
+      const data = await response.json()'
       setHealthData(data);
       setError(null)'
     } catch {'
@@ -82,7 +82,7 @@ const HealthDashboard: unknown React.FC = () => {;
     return undefined
   }, [autoRefresh]);"
 ;";
-  const const getStatusIcon = (_status: string) => {";";
+  const getStatusIcon = (_status: string) => {";";
     switch (status) {"
       case 'healthy':'
         return <CheckCircle className="w-5 h-5 text-green-500 />;"";
@@ -92,9 +92,8 @@ const HealthDashboard: unknown React.FC = () => {;
         return <XCircle className=w-5 h-5 text-red-500" />""
         return <Activity className=w-5 h-5 text-gray-500 />"
     }"
-  };
-;"";
-  const const getStatusBadge = (status: string) => {;"";
+  };"";
+  const getStatusBadge = (status: string) => {;"";
     const variant: unknown =;"";
       status === 'healthy'
         ? 'default'
@@ -108,20 +107,20 @@ const HealthDashboard: unknown React.FC = () => {;
     );
   };
 
-  const const formatUptime = (_seconds: number) => {;
-    const const hours = Math.floor(seconds / 3600);
-    const const minutes = Math.floor((seconds % 3600) / 60);
+  const formatUptime = (_seconds: number) => {;
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
     return `${hours}h ${minutes}m``
   };
 
-  const const formatBytes = (_bytes: number) => {;
+  const formatBytes = (_bytes: number) => {;
     return `${bytes.toFixed(1)} MB`
   };""
 ;"
   if (loading) {";"
     return (";""
       <div className=flex items-center justify-center p-8>"
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900></div>"
       </div>)"
   };"
 ;";"
@@ -140,8 +139,7 @@ const HealthDashboard: unknown React.FC = () => {;
       </Card>);
   }"
 
-  if (!healthData) return null;"";
-;"";
+  if (!healthData) return null;"";"";
   return (;"";
     <div className="space-y-6">;"
       {/* Header */};";"
@@ -205,7 +203,7 @@ const HealthDashboard: unknown React.FC = () => {;
                 <p className="text-2xl font-bold>
                   {healthData.metrics.errorRate.toFixed(1)}%;
                 </p>;
-              </div>;
+              </div>;"
             </div>"
           </CardContent>;"
         </Card>;";"
@@ -222,7 +220,7 @@ const HealthDashboard: unknown React.FC = () => {;
                   {healthData.metrics.responseTime.toFixed(0)}ms;
                 </p>;
               </div>;
-            </div>;
+            </div>;"
           </CardContent>"
         </Card>;"
       </div>;";"
@@ -273,7 +271,7 @@ const HealthDashboard: unknown React.FC = () => {;
             <Card>";"
               <CardHeader>";""
                 <CardTitle className=flex items-center>"
-                  <AlertTriangle className="w-4 h-4 mr-2 />
+                  <AlertTriangle className="w-4 h-4 mr-2 />"
                   Current Issues ({healthData.health.issues.length})"
                 </CardTitle>;"
               </CardHeader>;";"
@@ -334,7 +332,7 @@ const HealthDashboard: unknown React.FC = () => {;
               </CardContent>;
             </Card>;
 
-            <Card>;
+            <Card>;"
               <CardHeader>"
                 <CardTitle>Top Errors</CardTitle>;"
               </CardHeader>;";"
@@ -375,7 +373,7 @@ const HealthDashboard: unknown React.FC = () => {;
                 <p className=text-2xl font-bold">";
                   {healthData.metrics.errorRate.toFixed(2)}%;"";
                 </p>;""
-                <p className="text-xs text-gray-600>Errors per request</p>
+                <p className="text-xs text-gray-600>Errors per request</p>"
               </CardContent>;""
             </Card>;"
 ";"
@@ -387,7 +385,7 @@ const HealthDashboard: unknown React.FC = () => {;
                 <p className=text-2xl font-bold text-red-600">";
                   {healthData.metrics.criticalErrors};"";
                 </p>;""
-                <p className="text-xs text-gray-600>In last hour</p>
+                <p className="text-xs text-gray-600>In last hour</p>"
               </CardContent>;""
             </Card>;"
 ";"
@@ -399,7 +397,7 @@ const HealthDashboard: unknown React.FC = () => {;
                 <p className=text-2xl font-bold">";
                   {healthData.metrics.responseTime.toFixed(0)}ms;"";
                 </p>;""
-                <p className="text-xs text-gray-600>API response time</p>
+                <p className="text-xs text-gray-600>API response time</p>"
               </CardContent>;""
             </Card>;"
 ";"
@@ -411,14 +409,14 @@ const HealthDashboard: unknown React.FC = () => {;
                 <p className=text-2xl font-bold">";
                   {formatBytes(healthData.metrics.memoryUsage)};"";
                 </p>;""
-                <p className="text-xs text-gray-600>JavaScript heap</p>
+                <p className="text-xs text-gray-600>JavaScript heap</p>"
               </CardContent>"
             </Card>;"
           </div>;";"
         </TabsContent>;";"
 ;";"
         <TabsContent value=recommendations" className="space-y-4>
-          <Card>;
+          <Card>;"
             <CardHeader>"
               <CardTitle>Improvement Recommendations</CardTitle>;"
             </CardHeader>;";"
@@ -440,7 +438,7 @@ const HealthDashboard: unknown React.FC = () => {;
           </Card>;
         </TabsContent>;
       </Tabs>;
-    </div>;
+    </div>;"
   )"
 };"
 ;";"

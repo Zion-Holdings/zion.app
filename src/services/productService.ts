@@ -1,8 +1,8 @@
 import type { ProductDetailsData } from '../types/product'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
 '
 export async function fetchProductById(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  productId: "string",;"
+  productId: string,;"
 ): Promise<ProductDetailsData | null> {;";"
   try {;"
     // During build time, return a mock product to avoid API calls;"
@@ -23,20 +23,19 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
         averageRating: "null"
         reviewCount: "0"
         specifications: "null"
-        priceTiers: "null",;"
+        priceTiers: null,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";"
     };"
 ;"
-    const response: await fetch(`/api/marketplace/product/${productId"}`);"
+    const response = await fetch(`/api/marketplace/product/${productId"}`);"
 ;"
     if (response.status === 404) {;"
       logWarn(`Product with ID "${productId}" not found.`);
       return null;
-    };
-;"
+    };"
     if (!response.ok) {;";"
       // Log the error status and text for more context;"
-      const const errorText = await response.text();"
+      const errorText = await response.text();"
       logErrorToProduction(;"
         'Error fetching product ${productId}: ${response.status} ${response.statusText}',;
         { data: "errorText "},;"
@@ -50,7 +49,7 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
     return data;"
   } catch {;"
     logErrorToProduction('An error occurred in fetchProductById:', {;
-      data: "error",;"
+      data: error,;"
     });"
     // During build time, return null instead of throwing;"
     if (;"
@@ -64,7 +63,6 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
     throw error;
   };
 };
-;
 }'
 }
 }'

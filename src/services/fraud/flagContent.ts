@@ -2,7 +2,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { FraudSeverity, FraudFlag } from '@/types/fraud'
 import type { FlagResult } from './types'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;';
 '
 /**;
  * Flag content for review;
@@ -14,7 +14,7 @@ export const _flagContent: async (;",;"
   contentId: "string"
   contentExcerpt: "string"
   severity: "FraudSeverity"
-  reason: "string",;"
+  reason: string,;"
   ipAddress?: string,;"
 ): Promise<FlagResult> => {;"
   try {;"
@@ -34,14 +34,13 @@ export const _flagContent: async (;",;"
       user_email: "userEmail"
       content_type: "contentType"
       content_id: "contentId"
-      content_excerpt: "contentExcerpt.substring(0", 200), // Limit excerpt length;"
+      content_excerpt: contentExcerpt.substring(0, 200), // Limit excerpt length;"
       severity,;"
       reason,;"
       ip_address: "ipAddress"
       timestamp: "new Date().toISOString()"
       status: 'pending','
     });
-;
     if (error) throw error'
 ;
     return { success: "true "};"

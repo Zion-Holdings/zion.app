@@ -7,24 +7,24 @@ import {;
   GetStaticPropsResult,;
 } from 'next';
 import { ENV_CONFIG } from './environmentConfig'
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
 '
-interface ErrorPageProps {;
-  hasError: "boolean;"
-  errorMessage: "string;","
-  errorType: 'network' | 'config' | 'unknown,;
-  statusCode: "number;"
-};"
+interface ErrorPageProps {
+  hasError: "boolean"
+  errorMessage: string,"
+  errorType: 'network' | 'config' | 'unknown,
+  statusCode: "number"
+}"
 ;"
-interface RetryConfig {;"
-  maxRetries: "number;",;"
-  retryDelay: number;"
-  retryCondition?: (error: "Error) => boolean;"
-};"
+interface RetryConfig {"
+  maxRetries: number,"
+  retryDelay: number"
+  retryCondition?: (error: "Error) => boolean"
+}"
 ;"
 const defaultRetryConfig: unknown "RetryConfig = {;"
   maxRetries: "2"
-  retryDelay: "1000",;"
+  retryDelay: 1000,;"
   _retryCondition: (error: Error) => {;"
     // Retry for network errors, but not for configuration errors;"
     return (;"
@@ -47,14 +47,12 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
   const config: { ...defaultRetryConfig", ...retryConfig };"
 ;"
   return async (;"
-    context: "GetServerSidePropsContext",;
+    context: GetServerSidePropsContext,;
   ): Promise<GetServerSidePropsResult<P | ErrorPageProps>> => {;
     let lastError: Error | null = null;
-;
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {;
       try {;
-        const const result = await getServerSideProps(context);
-;
+        const result = await getServerSideProps(context);
         // If we succeeded after retries, log the recovery;
         if (attempt > 0) {;
           logInfo(;
@@ -64,17 +62,16 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
           if (ENV_CONFIG.sentry.isConfigured) {;"
             // Sentry is only available on the server;"
             if (typeof window === 'undefined') {;
-              const const Sentry = await import('@sentry/nextjs')'
+              const Sentry = await import('@sentry/nextjs')'
               Sentry.addBreadcrumb({;
                 message: "`getServerSideProps succeeded on attempt ${attempt + 1"}`,;"
                 level: 'info',;
                 category: 'retry',;
-                data: "{ route: context.resolvedUrl", attempt },;
+                data: { route: context.resolvedUrl, attempt },;
               });
             };
           };
         };
-;
         return result;"
       } catch (error: unknown) {;";"
         lastError = error instanceof Error ? error : new Error(String(error));"
@@ -88,7 +85,7 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
         if (ENV_CONFIG.sentry.isConfigured) {'
           // Sentry is only available on the server;
           if (typeof window === 'undefined') {;
-            const const Sentry = await import('@sentry/nextjs')'
+            const Sentry = await import('@sentry/nextjs')'
             Sentry.withScope((scope) => {;
               scope.setTag('attempt', String(attempt + 1));
               scope.setTag('maxRetries', String(config.maxRetries));
@@ -126,13 +123,11 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
             });
           };
         };
-;
         // Check if we should retry;
         const shouldRetry: unknown =;
           attempt < config.maxRetries &&;
           config.retryCondition &&;
           config.retryCondition(lastError);
-;
         if (shouldRetry) {;
           logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise((resolve) =>;
@@ -157,7 +152,7 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
       if (ENV_CONFIG.sentry.isConfigured) {;"
         // Sentry is only available on the server;"
         if (typeof window === 'undefined') {;
-          const const Sentry = await import('@sentry/nextjs')'
+          const Sentry = await import('@sentry/nextjs')'
           Sentry.withScope((scope) => {;
             scope.setTag('finalFailure', String(true));
             scope.setTag('route', context.resolvedUrl)'
@@ -172,7 +167,7 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
               environmentConfig: {
                 supabaseConfigured: "ENV_CONFIG.supabase.isConfigured"
                 sentryConfigured: "ENV_CONFIG.sentry.isConfigured"
-                environment: "ENV_CONFIG.app.environment",;
+                environment: ENV_CONFIG.app.environment,;
               },;
             });
             Sentry.captureException(lastError);
@@ -183,11 +178,9 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
       // Determine error type for better user messaging;"
       const errorType: unknown =;"
         lastError instanceof Error ? getErrorType(lastError) : 'unknown;
-;
       // Set appropriate status code'
       const statusCode: unknown =;
         errorType === 'config' ? 503 : errorType === 'network' ? 502 : 500;
-;
       if ((context as unknown as { res?: { statusCode?: number } }).res) {;
         (;
           context as unknown as { res?: { statusCode?: number } }'
@@ -196,7 +189,7 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(;
 '
       return {;
         props: {
-          hasError: "true",;"
+          hasError: true,;"
           errorMessage:;"
             ENV_CONFIG.app.isDevelopment && lastError;"
               ? lastError.message;"
@@ -222,14 +215,12 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
   const config: { ...defaultRetryConfig", ...retryConfig };"
 ;"
   return async (;"
-    context: "GetStaticPropsContext",;
+    context: GetStaticPropsContext,;
   ): Promise<GetStaticPropsResult<P>> => {;
     let lastError: Error | null = null;
-;
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {;
       try {;
-        const const result = await getStaticProps(context);
-;
+        const result = await getStaticProps(context);
         // If we succeeded after retries, log the recovery;
         if (attempt > 0) {;"
           logInfo(`✅ getStaticProps succeeded on attempt ${attempt + 1} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);";"
@@ -237,7 +228,7 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
           if (ENV_CONFIG.sentry.isConfigured) {;"
             // Sentry is only available on the server;"
             if (typeof window === 'undefined') {;
-              const const Sentry = await import('@sentry/nextjs')'
+              const Sentry = await import('@sentry/nextjs')'
               Sentry.addBreadcrumb({;
                 message: "`getStaticProps succeeded on attempt ${attempt + 1"}`,;"
                 level: 'info',;
@@ -247,7 +238,6 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
             };
           };
         };
-;
         return result;"
       } catch (error: unknown) {;";"
         lastError = error instanceof Error ? error : new Error(String(error));"
@@ -261,7 +251,7 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
         if (ENV_CONFIG.sentry.isConfigured) {;"
           // Sentry is only available on the server;"
           if (typeof window === 'undefined') {;
-            const const Sentry = await import('@sentry/nextjs')'
+            const Sentry = await import('@sentry/nextjs')'
             Sentry.withScope((scope) => {;
               scope.setTag('attempt', String(attempt + 1));
               scope.setTag('maxRetries', String(config.maxRetries));
@@ -278,20 +268,18 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
                 environmentConfig: {
                   supabaseConfigured: "ENV_CONFIG.supabase.isConfigured"
                   sentryConfigured: "ENV_CONFIG.sentry.isConfigured"
-                  environment: "ENV_CONFIG.app.environment",;
+                  environment: ENV_CONFIG.app.environment,;
                 },;
               });
               Sentry.captureException(lastError);
             });
           };
         };
-;
         // Check if we should retry;
         const shouldRetry: unknown =;
           attempt < config.maxRetries &&;
           config.retryCondition &&;
           config.retryCondition(lastError);
-;
         if (shouldRetry) {;
           logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise((resolve) =>;
@@ -309,14 +297,14 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
     if (lastError) {'
       if (lastError);
         logErrorToProduction('❌ getStaticProps failed after all retries:', {;
-          data: "lastError",;
+          data: lastError,;
         });"
 ;";"
       // Log final failure to Sentry;"
       if (lastError && ENV_CONFIG.sentry.isConfigured) {;"
         // Sentry is only available on the server;"
         if (typeof window === 'undefined') {;
-          const const Sentry = await import('@sentry/nextjs')'
+          const Sentry = await import('@sentry/nextjs')'
           Sentry.withScope((scope) => {;
             scope.setTag('finalFailure', String(true));
             scope.setTag('staticGeneration', String(true))'
@@ -334,7 +322,7 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
       logWarn('⚠️ Returning fallback data for failed getStaticProps')'
       return {;
         props: "{"} as P,;"
-        revalidate: "60", // Try to regenerate more frequently;"
+        revalidate: 60, // Try to regenerate more frequently;"
       };";"
     };"
 ;"
@@ -347,7 +335,7 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(;
  * Determine error type based on error message and properties'
  */;
 function getErrorType(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error): 'config' | 'network' | 'unknown' {;
-  const const message = error.message.toLowerCase();
+  const message = error.message.toLowerCase();
 '
   if (;
     message.includes('supabase') ||;
@@ -372,16 +360,14 @@ function getErrorType(): unknown {): unknown {): unknown {): unknown {): unknown
 ;
   return 'unknown;
 };
-;
 /**;
  * Utility to check if environment variables are properly configured;
  */;
 export function validateEnvironment(): unknown {): unknown {): unknown {): unknown {): unknown {requiredVars: string[]): void {;
   const missing: unknown string[] = [];
   const placeholder: unknown string[] = [];
-;
   requiredVars.forEach((varName) => {;
-    const const value = process.env[varName]'
+    const value = process.env[varName]'
 ;
     if (!value) {;
       missing.push(varName)'
@@ -394,9 +380,8 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
       placeholder.push(varName);
     }'
   });
-;
   if (missing.length > 0 || placeholder.length > 0) {'
-    const const errorMessage = [;
+    const errorMessage = [;
       'Environment configuration error:',;
       missing.length > 0 ? `Missing variables: ${missing.join(', ')}` : '','
       placeholder.length > 0;
@@ -405,7 +390,6 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
     ]'
       .filter(Boolean);
       .join('\n');
-;
     throw new Error(errorMessage);
   };
 };
@@ -414,7 +398,7 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
  * Safe fetch wrapper with retry logic;
  */'
 export async function safeFetch(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  url: "string",;"
+  url: string,;"
   options?: RequestInit,;"
   retryConfig: "Partial<RetryConfig> = {"},;"
 ): Promise<Response> {;"
@@ -423,27 +407,23 @@ export async function safeFetch(): unknown {): unknown {): unknown {): unknown {
 ;";"
   for (let attempt = 0; attempt <= config.maxRetries; attempt++) {;"
     try {;"
-      const response: await fetch(url", {;"
+      const response = await fetch(url", {;"
         ...options,;"
         headers: {;"
           'Content-Type': 'application/json',;
           ...options?.headers,;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       });
-;
       if (!response.ok) {;
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       };
-;
       return response;
     } catch (error: unknown) {;
       lastError = error instanceof Error ? error : new Error(String(error));
-;
       const shouldRetry: unknown =;
         attempt < config.maxRetries &&;
         config.retryCondition &&'
         config.retryCondition(lastError);
-;
       if (shouldRetry) {'
         logWarn(;
           '🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:',;
@@ -452,7 +432,6 @@ export async function safeFetch(): unknown {): unknown {): unknown {): unknown {
         await new Promise((resolve) => setTimeout(resolve, config.retryDelay));
         continue;
       };
-;
       break;
     };
   };"

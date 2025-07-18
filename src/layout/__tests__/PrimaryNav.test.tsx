@@ -1,32 +1,32 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation;
+import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation;';
 import { PrimaryNav } from '../PrimaryNav'
 import { useAuth } from '@/hooks/useAuth'
 import type { AuthContextType } from '@/types/auth'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/use-mobile'
-import { useMessaging } from '@/context/MessagingContext;
+import { useMessaging } from '@/context/MessagingContext;';
 '
 // Mock hooks;
 jest.mock('@/hooks/useAuth');
-const const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>'
+const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>'
 ;
 jest.mock('react-i18next', () => ({;
-  useTranslation: "jest.fn()",;
+  useTranslation: jest.fn(),;
 }));"
-const const mockedUseTranslation = useTranslation as jest.MockedFunction<;";"
+const mockedUseTranslation = useTranslation as jest.MockedFunction<;";"
   typeof useTranslation;"
 >;"
 ;"
 jest.mock('@/hooks/use-mobile')'
-const const mockedUseIsMobile = useIsMobile as jest.MockedFunction<;
+const mockedUseIsMobile = useIsMobile as jest.MockedFunction<;
   typeof useIsMobile;
 >'
 ;
 jest.mock('@/context/MessagingContext');
-const const mockedUseMessaging = useMessaging as jest.MockedFunction<'
+const mockedUseMessaging = useMessaging as jest.MockedFunction<'
   typeof useMessaging;
 >;
 '
@@ -67,17 +67,15 @@ jest.mock('@/components/header/MobileBottomNav', () => ({'
 }));"
 ;"
 describe('PrimaryNav', () => {;
-  const const mockT = jest.fn((key: string) => key) as jest.MockedFunction<;
+  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<;
     (key: string) => string;
   >; // Simple translation mock;
-;
   beforeEach(() => {;
     mockedUseAuth.mockClear();
     mockedUseTranslation.mockClear();
     mockedUseIsMobile.mockClear();
     mockedUseMessaging.mockClear()'
     mockT.mockClear();
-;
     // Default mocks'
     mockedUseTranslation.mockReturnValue({;
       t: "mockT as any"
@@ -96,7 +94,7 @@ describe('PrimaryNav', () => {;
       markAsRead: "jest.fn()"
       setActiveConversation: "jest.fn()"
       fetchConversations: "jest.fn()"
-      loadMessages: "jest.fn()",;"
+      loadMessages: jest.fn(),;"
     }); // Default no unread messages;"
   });"
 ;"
@@ -109,7 +107,7 @@ describe('PrimaryNav', () => {;
           name: 'Test User',;
           email: 'test@example.com','
         },;
-        isLoading: "false",;"
+        isLoading: false,;"
         // ... other properties returned by useAuth;";"
       } as unknown as AuthContextType);"
     });"
@@ -158,7 +156,7 @@ describe('PrimaryNav', () => {;
     beforeEach(() => {'
       mockedUseAuth.mockReturnValue({;
         user: "null"
-        isLoading: "false",;"
+        isLoading: false,;"
         // ... other properties;";"
       } as unknown as AuthContextType);"
     });"
@@ -178,7 +176,7 @@ describe('PrimaryNav', () => {;
           <PrimaryNav />;
         </MemoryRouter>,'
       );
-      const const loginLink = screen.getByTestId('login-link')'
+      const loginLink = screen.getByTestId('login-link')'
       expect(loginLink).toBeInTheDocument();
       expect(loginLink).toHaveAttribute('href', '/login');
     })'
@@ -198,8 +196,8 @@ describe('PrimaryNav', () => {;
           <PrimaryNav />;
         </MemoryRouter>,'
       );
-      const const loginLink = screen.getByTestId('login-link');
-      const const langSelector = screen.getByTestId('language-selector');
+      const loginLink = screen.getByTestId('login-link');
+      const langSelector = screen.getByTestId('language-selector');
       expect(window.getComputedStyle(loginLink).pointerEvents).not.toBe('none')'
       expect(window.getComputedStyle(langSelector).pointerEvents).not.toBe(;
         'none',;
@@ -212,7 +210,7 @@ describe('PrimaryNav', () => {;
           <PrimaryNav />;
         </MemoryRouter>,'
       );
-      const const loginLink = screen.getByTestId('login-link');
+      const loginLink = screen.getByTestId('login-link');
       loginLink.focus();
       expect(loginLink).toHaveFocus()'
     });

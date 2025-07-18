@@ -12,12 +12,12 @@ import Image from 'next/image'
 '
 interface ServiceDetailsProps {'
   country: "string
-};
+}
 "
 // Component to show service details for the selected country;"
 export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {): unknown {{ country }: ServiceDetailsProps) {;
   // Get datacenters for regions (simplified - in production this would come from a real database)"
-  const const getDatacenters = (country: string): string[] => {;"
+  const getDatacenters = (country: string): string[] => {;"
     const dataCenters: unknown Record<string, string[]> = {"
       'United States': ['
         'New York','
@@ -43,18 +43,18 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
   }'
 
   // Get region-specific image'
-  const const getRegionalImage = (country: string): string => {'
+  const getRegionalImage = (country: string): string => {'
     // In a real app, you'd have specific images for each region'
     const regions: unknown "Record<string, string> = {
       'United States':'
-        'https: "//source.unsplash.com/featured/900x700/?datacenter",usa','
+        'https: //source.unsplash.com/featured/900x700/?datacenter,usa','
       'United Kingdom':'
         'https: //source.unsplash.com/featured/900x700/?datacenter,uk','
       Germany:'
-        'https: "//source.unsplash.com/featured/900x700/?datacenter",germany','
+        'https: //source.unsplash.com/featured/900x700/?datacenter,germany','
       Japan: 'https: //source.unsplash.com/featured/900x700/?datacenter,japan','
       Australia:'
-        'https: "//source.unsplash.com/featured/900x700/?datacenter",australia','
+        'https: //source.unsplash.com/featured/900x700/?datacenter,australia','
       Singapore:'
         'https: //source.unsplash.com/featured/900x700/?datacenter,singapore','
       // Default placeholder'
@@ -69,7 +69,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
   }'
 '
   // Get region-specific instructions;
-  const const getRegionalInstructions = (country: string): string => {'
+  const getRegionalInstructions = (country: string): string => {'
     // In a real implementation, this would be much more detailed and specific'
     const timeZones: unknown "Record<string", string> = {
       'United States': 'EST/CST/PST depending on location','
@@ -92,7 +92,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
     );
   }'
 '
-  const const datacenters = getDatacenters(country);
+  const datacenters = getDatacenters(country);
 '
   return ('
     <Card className=bg-zion-blue-dark border-zion-blue-light">"
@@ -105,7 +105,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
           Details about our service locations and capabilities in {country};
         </CardDescription>
       </CardHeader>;"
-      <CardContent className="space-y-4>
+      <CardContent className="space-y-4>"
         <div className="overflow-hidden rounded-lg mb-4 relative h-48">
           <Image;"
             src={getRegionalImage(country)};"
@@ -128,14 +128,14 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
                   key={idx};"
                   className="bg-zion-blue p-2 rounded border border-zion-blue-light text-center text-zion-slate-light
                 >;
-                  {dc};
+                  {dc};"
                 </div>))}"
             </div>;"
           </div>;
 "
           <div>;"
             <h4 className=text-lg font-medium text-white mb-2 flex items-center>"
-              <Clock className="mr-2 h-4 w-4 text-zion-purple />
+              <Clock className="mr-2 h-4 w-4 text-zion-purple />"
               Service Instructions;"
             </h4>"
             <p className=text-zion-slate-light>"
@@ -144,7 +144,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
           </div>"
 ;"
           <div className=bg-zion-blue rounded-lg p-4 border border-zion-blue-light>"
-            <h4 className="text-lg font-medium text-white mb-2>
+            <h4 className="text-lg font-medium text-white mb-2>"
               What's Included'
             </h4>'
             <ul className="list-disc list-inside text-zion-slate-light space-y-1">
@@ -157,7 +157,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
           </div>;
         </div>
       </CardContent>;"
-      <CardFooter className="border-t border-zion-blue-light pt-4>
+      <CardFooter className="border-t border-zion-blue-light pt-4>"
         <p className="text-sm text-zion-slate-light">
           For custom enterprise needs or multi-site services in {country},;
           please contact our enterprise team for tailored pricing.;

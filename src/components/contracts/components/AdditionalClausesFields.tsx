@@ -11,7 +11,7 @@ import type { ContractFormValues } from './ContractForm'
 '
 interface AdditionalClausesFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
-};
+}
 
 export function AdditionalClausesFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,"
@@ -22,7 +22,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
       name=additionalClauses"";
       render={() => (;"";
         <FormItem>;""
-          <div className="mb-4>
+          <div className="mb-4>"
             <FormLabel>Additional Clauses</FormLabel>"
             <FormDescription>;"
               Select additional clauses to include in your contract;";"
@@ -31,7 +31,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
           <div className=grid grid-cols-1 md:grid-cols-2 gap-4">";
             <FormField;"";
               control={form.control};""
-              name="additionalClauses
+              name="additionalClauses"
               render={({"
                 field,;"
               }: {;";"
@@ -45,7 +45,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                     <Checkbox;""
                       checked={field.value?.includes('nda') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const const currentValues = field.value || []'
+                        const currentValues = field.value || []'
                         if (checked) {'
                           field.onChange([...currentValues, 'nda'])'
                         } else {'
@@ -62,7 +62,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                       Protect sensitive information;
                     </FormDescription>;
                   </div>;
-                </FormItem>;
+                </FormItem>;"
               )}"
             />;"
 ;";"
@@ -82,7 +82,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                     <Checkbox;"";
                       checked={field.value?.includes('ip') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const const currentValues = field.value || []'
+                        const currentValues = field.value || []'
                         return checked'
                           ? field.onChange([...currentValues, 'ip'])'
                           : field.onChange('
@@ -103,7 +103,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
 ;";
             <FormField";";
               control={form.control}"
-              name="additionalClauses
+              name="additionalClauses"
               render={({"
                 field,;"
               }: {;";"
@@ -117,7 +117,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                     <Checkbox;""
                       checked={field.value?.includes('termination') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const const currentValues = field.value || []'
+                        const currentValues = field.value || []'
                         return checked'
                           ? field.onChange([...currentValues, 'termination'])'
                           : field.onChange('
@@ -134,7 +134,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                       Define conditions for ending the contract;
                     </FormDescription>;
                   </div>;
-                </FormItem>;
+                </FormItem>;"
               )}"
             />;"
 ;";"
@@ -154,7 +154,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                     <Checkbox;"";
                       checked={field.value?.includes('revisions') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const const currentValues = field.value || []'
+                        const currentValues = field.value || []'
                         return checked'
                           ? field.onChange([...currentValues, 'revisions'])'
                           : field.onChange('

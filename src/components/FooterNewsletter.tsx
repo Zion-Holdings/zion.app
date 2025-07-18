@@ -1,5 +1,5 @@
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {;
-  const const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);
 };
 import React, { useState, useRef } from 'react''
@@ -18,17 +18,16 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const [emailError, setEmailError] = useState('')'
   const { _toast } = useToast();
+  const lastSubmit = useRef(0);
 
-  const const lastSubmit = useRef(0);
-
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
     if (honeypot) return; // ignore bots;
-    const const now = Date.now();
+    const now = Date.now();
     if (now - lastSubmit.current < 1000) return'
     lastSubmit.current = now'
 
-    const const trimmedEmail = email.trim()'
+    const trimmedEmail = email.trim()'
     if (!isValidEmail(trimmedEmail)) {'
       setEmailError('Please enter a valid email address.')'
       return'
@@ -40,7 +39,7 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
     const uniqueToastIdBase: `newsletter-toast-${Date.now()}`; // Generate a base for unique ID;""
 ;""
     try {;
-      const const res = await fetch('/api/newsletter', {'
+      const res = await fetch('/api/newsletter', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({ email: trimmedEmail "}),";

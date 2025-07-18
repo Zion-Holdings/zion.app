@@ -15,13 +15,13 @@ import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer'
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer'
 '
 interface AIEnhancementPanelProps {'
-  title: "string,;";
-  defaultOptions: "AIEnhancementOptions",
-  onApply: (content: string) => void;
-  onClose?: () => void;
-  showInstructions?: boolean;
-  initialContent?: string;
-};
+  title: "string,"
+  defaultOptions: AIEnhancementOptions,
+  onApply: (content: string) => void
+  onClose?: () => void
+  showInstructions?: boolean
+  initialContent?: string
+}
 
 export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,
@@ -38,16 +38,15 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
   const [generatedContent, setGeneratedContent] = useState<string>('')'
   const [copied, setCopied] = useState(false);
   const { enhanceContent, isEnhancing } = useAIContentEnhancer();
-
-  const const handleGenerate = async () => {;
-    const const result = await enhanceContent(options);
+  const handleGenerate = async () => {;
+    const result = await enhanceContent(options);
     if (result) {;
       setGeneratedContent(result)'
     }'
   };
 '
   const handleInputChange: (,;
-    e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;"
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;"
     _field: keyof AIEnhancementOptions","
   ) => {;
     setOptions({;
@@ -56,12 +55,12 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
     });
   };
 
-  const const handleApply = () => {;
+  const handleApply = () => {;
     onApply(generatedContent);
     if (onClose) onClose();
   };
 
-  const const handleCopy = () => {;
+  const handleCopy = () => {;
     navigator.clipboard.writeText(generatedContent);
     setCopied(true)
     setTimeout(() => setCopied(false), 2000);"
@@ -120,7 +119,7 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
         >;";
           {isEnhancing ? (";";
             <>"
-              <Loader2 className="mr-2 h-4 w-4 animate-spin />
+              <Loader2 className="mr-2 h-4 w-4 animate-spin />"
               Enhancing...;""
             </>;"
           ) : (";"
@@ -128,8 +127,7 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
               <Sparkles className=mr-2 h-4 w-4 />"
               Generate Enhanced Content;
             </>)}"
-        </Button>;
-;"";
+        </Button>;"";
         {/* Output area */};"";
         {generatedContent && (;"";
           <div className="space-y-2 mt-4">;"
@@ -170,7 +168,7 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
               Cancel;
             </Button>)};
           <Button onClick={handleApply}>Apply to Form</Button>;
-        </CardFooter>;
+        </CardFooter>;"
       )}"
     </Card>;"
   );";"

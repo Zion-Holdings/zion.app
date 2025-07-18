@@ -12,13 +12,13 @@ import { Badge } from '@/components/ui/badge'
 import { format, parseISO } from 'date-fns'
 '
 interface MilestoneSuggestionsProps {'
-  projectName: "string
-  scopeSummary: string",;"
+  projectName: string
+  scopeSummary: string,"
   startDate: Date
-  endDate?: Date;
+  endDate?: Date
   projectType: string"
   onMilestonesGenerated?: (milestones: "GeneratedMilestone[]) => void
-};
+}
 
 export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectName,;
@@ -32,7 +32,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
     useMilestoneGenerator();"
   const [showSuggestions, setShowSuggestions] = useState(false);
 "
-  const const handleGenerateMilestones = async () => {;"
+  const handleGenerateMilestones = async () => {;"
     const input: unknown MilestoneInput = {
       scope: "`${projectName"}: ${scopeSummary}`,
       startDate: startDate.toISOString()"
@@ -40,7 +40,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
       projectType: projectType || 'Other','
     };
 
-    const const milestones = await generateMilestones(input);
+    const milestones = await generateMilestones(input);
 
     if (milestones.length > 0) {;
       setShowSuggestions(true);
@@ -50,7 +50,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
     }'
   }'
 
-  const const formatDate = (_dateString: string) => {'
+  const formatDate = (_dateString: string) => {'
     try {'
       return format(parseISO(dateString), 'MMM dd, yyyy')'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -69,21 +69,21 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
         >
           {isGenerating ? (;
             <>"
-              <Loader2 className="mr-2 h-4 w-4 animate-spin />
+              <Loader2 className="mr-2 h-4 w-4 animate-spin />"
               Generating milestones...;""
             </>;
           ) : (
             <>;"
               <Sparkles className="mr-2 h-4 w-4 />
               Suggest Project Milestones with AI;
-            </>)};
+            </>)};"
         </Button>"
       )};"
 
       {showSuggestions && generatedMilestones.length > 0 && ("
         <Card>;"
           <CardHeader className=pb-3>"
-            <CardTitle className="text-lg flex items-center>
+            <CardTitle className="text-lg flex items-center>"
               <Sparkles className="h-5 w-5 mr-2 text-primary" />
               AI-Suggested Milestones;"
             </CardTitle>;"
@@ -118,7 +118,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
               </div>;
             </div>;
           </CardContent>;
-        </Card>;
+        </Card>;"
       )}"
     </div>;"
   );

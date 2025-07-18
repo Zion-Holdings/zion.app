@@ -3,7 +3,7 @@ import React, { useState } from 'react // Ensure React and useState are imported
 import Image from 'next/image // Import next/image'
 '
 // Real company logos for trusted partners - with more reliable image URLs;
-const const trustedCompanies = ['
+const trustedCompanies = ['
   {'
     name: 'NVIDIA','
     logo: '/logos/nvidia-logo.svg','
@@ -107,14 +107,14 @@ const const trustedCompanies = ['
 ];
 '
 // Sub-component for individual company logo'
-const const CompanyLogo = ({;
+const CompanyLogo = ({;
   company,'
 }: {'
   company: "(typeof trustedCompanies)[0]
 }) => {;
   const [hasError, setHasError] = useState(false);
 
-  const const handleImageError = () => {;
+  const handleImageError = () => {;
     if (!hasError) {;
       setHasError(true);
     }"
@@ -139,8 +139,7 @@ const const CompanyLogo = ({;
       priority={false} // These are not LCP images;
     />;
   )"
-};
-;"";
+};"";
 export function TrustedBySection(): ;"";
   return (;"";
     <section className="py-16 bg-zion-blue-dark">;"
@@ -163,8 +162,7 @@ export function TrustedBySection(): ;"";
               <CompanyLogo company={company} /> {/* Use the sub-component */}"
             </div>;
           ))};"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <div className="text-center mt-10">;"
           <p className=text-zion-slate-light text-sm">"
             And many more enterprises worldwide...;

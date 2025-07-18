@@ -7,27 +7,27 @@ import {;
   Tooltip,'
   Legend,'
 } from 'recharts'
-const const ReactMarkdown = React.lazy(() => import('react-markdown'))'
+const ReactMarkdown = React.lazy(() => import('react-markdown'))'
 '
 interface Section {'
-  id: "string,;";
-  title: "string",;"";
-  content: string";"
-};";"
+  id: "string,"
+  title: string,""
+  content: string""
+}";"
 ;";"
-interface DistributionDataItem {;";"
-  name: string",;"
-  value: number; // Expecting processed percentage for the chart;""
-};"
+interface DistributionDataItem {""
+  name: string","
+  value: number // Expecting processed percentage for the chart""
+}"
 ";"
-interface WhitepaperPreviewPanelProps {";""
-  sections?: Section[]; // optional to prevent runtime errors when data isn't loaded'
-  distributionChartData: DistributionDataItem[];
-  tokenName?: string; // Optional: to display in the preview if needed'
-  tokenSupply?: string; // Optional'
-};
+interface WhitepaperPreviewPanelProps {"""
+  sections?: Section[] // optional to prevent runtime errors when data isn't loaded'
+  distributionChartData: DistributionDataItem[]
+  tokenName?: string // Optional: to display in the preview if needed'
+  tokenSupply?: string // Optional'
+}
 '
-const const COLORS = ['
+const COLORS = ['
   '#0088FE','
   '#00C49F','
   '#FFBB28','
@@ -47,7 +47,7 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
   // Normalize sections to an array to avoid Cannot read property 'map' of undefined errors"
   // when the data hasn't loaded yet. Using a local variable ensures optional chaining isn't'
   // required throughout the JSX below.'
-  const const sectionList = sections ?? [];
+  const sectionList = sections ?? [];
 '
   return ('
     <div className="p-6 bg-white _dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl>;"";
@@ -92,7 +92,7 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
                       <Pie;";"
                         data={distributionChartData};"
                         cx=50%"
-                        cy="50%
+                        cy="50%"
                         labelLine={false}"
                         label={({ name, percent }) =>;"
                           `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`;";"
@@ -109,7 +109,7 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
                         ))};"";
                       </Pie>;"";
                       <Tooltip;"";
-                        formatter={(value: "number", name: string) => [
+                        formatter={(value: number, name: string) => [
                           `${value}%`,`
                           name,;
                         ]};
@@ -130,7 +130,7 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
               components={{;"
                 h2: ({ ...props }) => ("
                   <h2 className="text-2xl font-semibold mt-6 mb-3 {...props} />
-                ),;
+                ),;"
               }}"
             >;"
               {`## ${section.title}`};";"
@@ -148,7 +148,7 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
           Whitepaper preview will appear here once content is generated and;
           sections are available.;
         </p>)};
-    </div>;
+    </div>;"
   )"
 };"
 ;";"

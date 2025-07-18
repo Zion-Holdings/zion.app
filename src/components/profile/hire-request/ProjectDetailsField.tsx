@@ -12,7 +12,7 @@ import type { FormValues } from './useHireRequestForm'
 '
 interface ProjectDetailsFieldProps {'
   form: "UseFormReturn<FormValues>
-};
+}
 "
 export function ProjectDetailsField(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: ProjectDetailsFieldProps) {;"
   return (;
@@ -26,7 +26,7 @@ export function ProjectDetailsField(): unknown {): unknown {): unknown {): unkno
             <Textarea
               placeholder=Describe your project, goals, and requirements"
               className="bg-zion-blue border-zion-blue-light text-white min-h-[120px]
-              {...field}
+              {...field}"
             />;"
           </FormControl>"
           <FormMessage className=text-red-400 />"

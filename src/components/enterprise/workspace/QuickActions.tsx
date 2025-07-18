@@ -10,7 +10,7 @@ import {;
 import { Button } from '@/components/ui/button'
 '
 export function QuickActions(): ;
-  const const actions = ['
+  const actions = ['
     {'
       id: 'post-job','
       label: 'Post New Job','

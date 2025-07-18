@@ -18,10 +18,10 @@ export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): un
   const [error, setError] = useState<string | null>(null);
   const [localSkills, setLocalSkills] = useState<Skill[]>(skills);
 '
-  const const handleAddSkill = async (_data: Skill) => {'
+  const handleAddSkill = async (_data: Skill) => {'
     try {;
       setError(null)'
-      const success: await addSkill(resumeId", data)
+      const success = await addSkill(resumeId", data)
       if (success) {;
         // Refresh the skills list;
         await refreshSkills();
@@ -33,9 +33,9 @@ export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): un
     };""
   };
 
-  const const handleDeleteSkill = async (_id: string) => {"
+  const handleDeleteSkill = async (_id: string) => {"
     if (confirm('Are you sure you want to delete this skill?')) {'
-      const const success = await deleteSkill(id)
+      const success = await deleteSkill(id)
       if (success) {;
         // Update local state;
         setLocalSkills(localSkills.filter((skill) => skill.id !== id));
@@ -43,9 +43,9 @@ export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): un
     };
   };
 
-  const const refreshSkills = async () => {;
+  const refreshSkills = async () => {;
     try {;
-      const const resumeData = await fetchResume(resumeId);
+      const resumeData = await fetchResume(resumeId);
       if (resumeData && resumeData.skills) {;
         setLocalSkills(resumeData.skills);
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
@@ -55,9 +55,9 @@ export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): un
   };
 '
   return ('
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <div>;"
-        <h2 className="text-xl font-semibold mb-2>Skills</h2>
+        <h2 className="text-xl font-semibold mb-2>Skills</h2>"
         <p className="text-muted-foreground">
           Add your technical and professional skills.;
         </p>;
@@ -66,7 +66,7 @@ export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): un
       {/* Display skills by category */};
       <SkillsList skills={localSkills} onDeleteSkill={handleDeleteSkill} />
 ;"
-      <div className="space-y-6>
+      <div className="space-y-6>"
         <div className="bg-muted/40 p-6 rounded-lg">
           <h3 className=text-md font-medium mb-4">Add Skills One by One</h3>"
           <AddSkillForm _resumeId={resumeId} onAddSkill={handleAddSkill} />;

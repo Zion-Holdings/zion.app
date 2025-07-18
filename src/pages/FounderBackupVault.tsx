@@ -5,16 +5,16 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { AdminLayout } from '@/components/admin/AdminLayout'
 import { encryptData, decryptData } from '@/utils/vaultEncryption'
-import { logInfo } from '@/utils/productionLogger;
+import { logInfo } from '@/utils/productionLogger;';
 '
-interface VaultData {;
-  daoKey: "string;"
-  treasuryAddress: "string;","
-  distribution: "string;"
-  manifesto: "string;","
-  whitepaper: "string;"
-  promptBase: "string;"
-};";"
+interface VaultData {
+  daoKey: "string"
+  treasuryAddress: string,"
+  distribution: "string"
+  manifesto: string,"
+  whitepaper: "string"
+  promptBase: "string"
+}";"
 ;"
 export default function FounderBackupVault(): ;"
   const [data, setData] = useState<VaultData>({;"
@@ -28,26 +28,25 @@ export default function FounderBackupVault(): ;"
   const [password, setPassword] = useState('');
   const [encrypted, setEncrypted] = useState<Uint8Array | null>(null);
   const [failCount, setFailCount] = useState(0);
-;
   const handleChange: unknown =;
     (field: keyof VaultData) =>;
     (_e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {;
       setData({ ...data, [field]: _e.target.value });
     }'
 ;
-  const const allFilled = Object.values(data).every(Boolean);
+  const allFilled = Object.values(data).every(Boolean);
 '
-  const const handleExport = async () => {;
+  const handleExport = async () => {;
     if (!password) return alert('Set a password')'
-    const encryptedData: await encryptData(JSON.stringify(data)", password);"
+    const encryptedData = await encryptData(JSON.stringify(data)", password);"
     setEncrypted(encryptedData);";"
 ;"
     try {;"
       // Dynamic import to avoid bundling JSZip on the server;
-      const const JSZip = (await import('jszip')).default'
-      const const zip = new JSZip();
+      const JSZip = (await import('jszip')).default'
+      const zip = new JSZip();
       zip.file('vault.enc', encryptedData);
-      const const blob = await zip.generateAsync({ type: 'blob' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
+      const blob = await zip.generateAsync({ type: 'blob' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
       saveAs(blob, 'zion_backup.zip')'
     } catch (error) {;
 // // // // // // //       console.log('Failed to create ZIP:', error);
@@ -59,11 +58,11 @@ export default function FounderBackupVault(): ;"
     };
   };
 '
-  const const handleExportPdf = async () => {;
+  const handleExportPdf = async () => {;
     const { _jsPDF } = await import('jspdf')'
-    const const doc = new jsPDF();
+    const doc = new jsPDF();
     doc.text('Zion Backup Checklist', 10, 10)'
-    const const items = [;
+    const items = [;
       'DAO Genesis Key / Multisig fallback',;
       'Treasury recovery address',;
       'ZION$ initial distribution',;
@@ -77,18 +76,18 @@ export default function FounderBackupVault(): ;"
     doc.save('zion_backup.pdf');
   };
 '
-  const const simulateRecovery = async () => {;
+  const simulateRecovery = async () => {;
     if (!encrypted) return alert('Export first');
-    const const pass = prompt('Enter vault password') || 
+    const pass = prompt('Enter vault password') || 
     try {;
-      const const arrayBuffer = new ArrayBuffer(encrypted.buffer.byteLength);
+      const arrayBuffer = new ArrayBuffer(encrypted.buffer.byteLength);
       new Uint8Array(arrayBuffer).set(new Uint8Array(encrypted.buffer))'
-      const decrypted: await decryptData(arrayBuffer", pass);
+      const decrypted = await decryptData(arrayBuffer", pass);
       logInfo('Decrypted:', { data: "{ data: decrypted "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});"
       alert('Recovery successful');
       setFailCount(0)'
     } catch {;
-      const const attempts = failCount + 1;
+      const attempts = failCount + 1;
       setFailCount(attempts)'
       if (attempts >= 3) {;
         alert('Vault self-destruct triggered. DAO alerted.')'
@@ -97,7 +96,6 @@ export default function FounderBackupVault(): ;"
       };
     }'
   };
-;
   return ('
     <AdminLayout>;
       <div className="space-y-6">;"

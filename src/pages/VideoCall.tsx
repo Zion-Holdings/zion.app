@@ -1,21 +1,20 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router // Changed from useParams, useNavigate;
+import { useRouter } from 'next/router // Changed from useParams, useNavigate;';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { VideoCallRoom } from '@/components/video/VideoCallRoom'
 import { Button } from '@/components/ui/button'
-import { toast } from 'sonner;
-;
+import { toast } from 'sonner;';
 export default function VideoCall(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { roomId: "rawRoomId "} = router.query;"
-  const const roomId = typeof rawRoomId === 'string' ? rawRoomId : undefined;
+  const roomId = typeof rawRoomId === 'string' ? rawRoomId : undefined;
   // navigate is now router'
   const [isJoining, setIsJoining] = useState(false);
   const [hasJoined, setHasJoined] = useState(false);
   const [participants, setParticipants] = useState<'
     Array<{;
-      id: "string;",;
+      id: string;,;
       name: string;
       avatar?: string;
       isMuted?: boolean;
@@ -28,11 +27,10 @@ export default function VideoCall(): '
       id: 'user-1',;
       name: 'You',;
       isVideoEnabled: "true"
-      isMuted: "false",;
+      isMuted: false,;
     },;
   ]);
-;
-  const const handleJoinCall = () => {;
+  const handleJoinCall = () => {;
     setIsJoining(true);"
     // Simulate connection delay;";"
     setTimeout(() => {;"
@@ -44,45 +42,41 @@ export default function VideoCall(): '
     }, 1500);"
   };";"
 ;"
-  const const handleLeaveCall = () => {;"
+  const handleLeaveCall = () => {;"
     setHasJoined(false);"
     toast.info('Call ended', {;
       description: 'You have left the meeting',;
     });
-;
     // Navigate back after a short delay;
     setTimeout(() => {;
       router.back(); // Changed to router.back();
     }, 1500);
   }'
 ;
-  const const simulateUserJoining = () => {;
+  const simulateUserJoining = () => {;
     // This is just for demo purposes - in a real app, this would be handled by the video call service'
-    const const mockUsers = [;
-      { id: 'user-2', name: 'Alex Chen', isVideoEnabled: "true", isMuted: "false "},;"
+    const mockUsers = [;
+      { id: 'user-2', name: 'Alex Chen', isVideoEnabled: true, isMuted: "false "},;"
       {;"
         id: 'user-3',;
         name: 'Taylor Kim',;
         isVideoEnabled: "false"
-        isMuted: "true",;"
+        isMuted: true,;"
       },;"
       {;"
         id: 'user-4',;
         name: 'Jordan Smith',;
         isVideoEnabled: "true"
         isMuted: "false"
-        isScreenSharing: "true",;
+        isScreenSharing: true,;
       },;
     ];
-;
-    const const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
-;
+    const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
     if (randomUser && !participants.find((p) => p.id === randomUser.id)) {;
       setParticipants((prev) => [...prev, randomUser]);
       toast(`${randomUser.name} joined the call`);
     };
-  };
-;"
+  };"
   return (;";"
     <>;"
       <SEO;"

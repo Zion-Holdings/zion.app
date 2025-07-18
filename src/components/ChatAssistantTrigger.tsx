@@ -9,9 +9,9 @@ export function ChatAssistantTrigger(): ;
   const [isOpen, setIsOpen] = useState(false);
 '
   // Handle sending messages to the AI chat assistant'
-  const const handleSendMessage = async (message: string): Promise<void> => {;
+  const handleSendMessage = async (message: string): Promise<void> => {;
     try {'
-      const const response = await fetch('
+      const response = await fetch('
         'https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat','
         {'
           method: 'POST','
@@ -43,7 +43,7 @@ export function ChatAssistantTrigger(): ;
         variant=outline;""
         className=fixed bottom-4 right-4 h-12 w-12 rounded-full shadow-lg bg-zion-purple text-white hover:bg-zion-purple-light z-50"
         aria-label="Open chat assistant;
-      >;
+      >;"
         <MessageSquare className="h-5 w-5" />
       </Button>;
 

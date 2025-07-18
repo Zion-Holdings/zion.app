@@ -1,25 +1,23 @@
 import { useFetchResume } from './useFetchResume'
-import { useResumeActions } from './useResumeActions;
-;
-export function useResumeBasic(): ;
-  const const fetchResumeOperations = useFetchResume()'
-  const const resumeActions = useResumeActions();
-;
+import  { useResumeActions }  from './useResumeActions;''
+export function useResumeBasic(): ;''
+  const fetchResumeOperations = useFetchResume()'
+  const resumeActions = useResumeActions()'
   return {'
-    // From useFetchResume;
-    isLoading: "fetchResumeOperations.isLoading || resumeActions.isLoading"
-    error: "fetchResumeOperations.error || resumeActions.error"
-    resume: "fetchResumeOperations.resume"
-    fetchResume: "fetchResumeOperations.fetchResume",;"
+    // From useFetchResume'
+    isLoading: "fetchResumeOperations.isLoading || resumeActions.isLoading
+    error: fetchResumeOperations.error || resumeActions.error"
+    resume: "fetchResumeOperations.resume
+    fetchResume: fetchResumeOperations.fetchResume,
 ;"
-    // From useResumeActions;"
-    createResume: "resumeActions.createResume"
+    // From useResumeActions"
+    createResume: resumeActions.createResume
     updateBasicInfo: "resumeActions.updateBasicInfo"
-    setActiveResume: "resumeActions.setActiveResume",;"
-  };"
-};"
-"
+    setActiveResume: resumeActions.setActiveResume,
+  };
 }"
-}";"
+"
+}
+}"
 }"
 }"

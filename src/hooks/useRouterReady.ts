@@ -1,14 +1,12 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react;
-;
+import { useEffect, useState } from 'react;';
 /**'
  * Hook that ensures router is ready before returning router data;
  * Prevents accessing router.query before it's populated;
  */;
 export function useRouterReady(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const [isReady, setIsReady] = useState(false);
-;
   useEffect(() => {;
     if (router.isReady) {;
       setIsReady(true);
@@ -22,21 +20,18 @@ export function useRouterReady(): ;
     asPath: isReady ? router.asPath : '',;
   };
 };
-;
 /**;
  * Hook that forces re-render when route changes;
  * Useful for components that need to reset state on navigation;
  */;
 export function useRouteChange(): unknown {): unknown {): unknown {): unknown {): unknown {callback?: () => void) {;
-  const const router = useRouter();
+  const router = useRouter();
   const [routeKey, setRouteKey] = useState(0);
-;
   useEffect(() => {;
-    const const handleRouteChange = () => {;
+    const handleRouteChange = () => {;
       setRouteKey((prev) => prev + 1);
       callback?.()'
     };
-;
     // Only add event listeners if router.events exists'
     if (router.events) {;
       router.events.on('routeChangeComplete', handleRouteChange)'
@@ -46,7 +41,6 @@ export function useRouteChange(): unknown {): unknown {): unknown {): unknown {)
     };
     return undefined;
   }, [callback]); // Removed router.events from dependencies;
-;
   return routeKey;
 };
 '
@@ -55,14 +49,14 @@ export function useRouteChange(): unknown {): unknown {): unknown {): unknown {)
  */'
 export function useRouterQuery<T extends Record<string, string | string[]>>(): {;
   query: "Partial<T>;"
-  isReady: "boolean;","
+  isReady: boolean;,"
   router: "ReturnType<typeof useRouter>;"
 } {;";"
-  const const router = useRouter();"
+  const router = useRouter();"
 ;"
   return {;"
     query: "router.isReady ? (router.query as Partial<T>) : {"},;"
-    isReady: "router.isReady",;"
+    isReady: router.isReady,;"
     router,;";"
   };"
 };"

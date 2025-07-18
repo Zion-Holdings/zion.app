@@ -22,10 +22,10 @@ import { toast } from 'sonner'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface SmartContractDeploymentProps {'
-  solidityCode: "string,;";
-  onDeploy: "(options: DeploymentOptions) => Promise<void>",;"";
+  solidityCode: "string,"
+  onDeploy: (options: DeploymentOptions) => Promise<void>,""
   isDeploying: boolean""
-};
+}
 
 export function SmartContractDeployment(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   solidityCode,;
@@ -36,12 +36,12 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
     {"
       network: 'none','
       useEscrow: "true,;"";
-      deployToChain: "false",;"
+      deployToChain: false,;"
       walletAddress: '','
     },'
   )'
 
-  const const handleDeployContract = async () => {'
+  const handleDeployContract = async () => {'
     if (deploymentOptions.deployToChain && !deploymentOptions.walletAddress) {'
       toast.error('Please enter a wallet address for blockchain deployment')'
       return;
@@ -54,13 +54,13 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
     }
   };"
 ;";
-  const const handleDownloadSolidity = () => {";";
+  const handleDownloadSolidity = () => {";";
     // Create a blob from the Solidity code"
     const blob: new Blob([solidityCode], { type: 'text/plain' })'
-    const const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(blob);
 '
     // Create a temporary anchor to trigger download'
-    const const a = document.createElement('a')'
+    const a = document.createElement('a')'
     a.href = url'
     a.download = 'ZionContract.sol'
     document.body.appendChild(a);
@@ -80,7 +80,7 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
           <ShieldCheck className="h-5 w-5 text-primary />
           Smart Contract Deployment;
         </CardTitle>;
-        <CardDescription>;
+        <CardDescription>;"
           Deploy your agreement as a smart contract for enhanced security and"
           automation;"
         </CardDescription>;";"
@@ -96,7 +96,7 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
               onCheckedChange={(checked) =>;"";
                 setDeploymentOptions({;"";
                   ...deploymentOptions,;"";
-                  deployToChain: "checked",;
+                  deployToChain: checked,;
                 })";"
               };";"
             />;";";
@@ -106,7 +106,7 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
           {deploymentOptions.deployToChain && (";";
             <>"
               <div className="space-y-2>
-                <Label>Select blockchain network</Label>;
+                <Label>Select blockchain network</Label>;"
                 <RadioGroup"
                   defaultValue={deploymentOptions.network};"
                   onValueChange={(value) =>;";"
@@ -157,7 +157,7 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
                   onCheckedChange={(checked) =>;"";
                     setDeploymentOptions({;"";
                       ...deploymentOptions,;"";
-                      useEscrow: "checked",;
+                      useEscrow: checked,;
                     })";"
                   };";"
                 />;";";

@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 '
 interface WorkExperienceSectionProps {'
   workExperience: "WorkExperience[]
-};
+}
 
 export function WorkExperienceSection(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   workExperience,;"
@@ -20,7 +20,7 @@ export function WorkExperienceSection(): unknown {): unknown {): unknown {): unk
     return dateB.getTime() - dateA.getTime();""
   });
 
-  const const formatDate = (_date: Date | string | undefined) => {;"
+  const formatDate = (_date: Date | string | undefined) => {;"
     if (!date) return 
     if (typeof date === 'string') {'
       return format(new Date(date), 'MMM yyyy')'
@@ -31,13 +31,13 @@ export function WorkExperienceSection(): unknown {): unknown {): unknown {): unk
   if (sortedWorkExperience.length === 0) return null;
 '
   return ('
-    <div className="mb-6>
+    <div className="mb-6>"
       <h2 className="text-lg font-semibold border-b mb-3">
         Professional Experience;
       </h2>"
-      <div className="space-y-4>
+      <div className="space-y-4>"
         {sortedWorkExperience.map((work, index) => (;"
-          <div key={work.id || index} className="space-y-1>
+          <div key={work.id || index} className="space-y-1>"
             <div className="flex justify-between items-start">
               <h3 className=font-medium">{work.role_title}</h3>"
               <span className=text-sm>"
@@ -45,7 +45,7 @@ export function WorkExperienceSection(): unknown {): unknown {): unknown {): unk
                 {work.is_current ? 'Present' : formatDate(work.end_date)}'
               </span>'
             </div>'
-            <div className="flex justify-between>
+            <div className="flex justify-between>"
               <p className="text-sm">{work.company_name}</p>
               {work.location && (;
                 <span className="text-sm">{work.location}</span>

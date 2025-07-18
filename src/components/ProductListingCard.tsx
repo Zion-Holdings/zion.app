@@ -22,14 +22,14 @@ interface ProductListingCardProps {'
   detailBasePath?: string'
 }'
 
-const const ProductListingCardComponent = ({'
+const ProductListingCardComponent = ({'
   listing,'
   view = 'grid','
   onRequestQuote,'
   detailBasePath = '/marketplace/listing','
 }: ProductListingCardProps) => {'
-  const const isGrid = view === 'grid'
-  const const router = useRouter()'
+  const isGrid = view === 'grid'
+  const router = useRouter()'
   const [loading, setLoading] = useState(false)'
   const [imageSrc, setImageSrc] = useState(;
     listing.images && listing.images.length > 0 && listing.images[0]'
@@ -58,12 +58,12 @@ const const ProductListingCardComponent = ({'
 '
   const { _formatPrice } = useCurrency();
 '
-  const const getPrice = () => {'
+  const getPrice = () => {'
     if (listing.price === null) return 'Custom pricing'
     return formatPrice(listing.price);
   }'
 '
-  const const handleImageError = () => {;
+  const handleImageError = () => {;
     if (!imageError) {'
       // Prevent infinite loops if placeholder also fails'
       setImageSrc('/placeholder.svg')'
@@ -71,7 +71,7 @@ const const ProductListingCardComponent = ({'
     }'
   }'
 
-  const const handleViewListing = () => {'
+  const handleViewListing = () => {'
     // Debug logging for development'
     if (process.env.NODE_ENV === 'development') {'
       logDebug('[ProductCard] Navigating to:', {'
@@ -101,14 +101,14 @@ const const ProductListingCardComponent = ({'
     router.push(`${detailBasePath}/${listing.id}`)`
   };
 
-  const const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
 '
-  const const addToCart = () => {'
+  const addToCart = () => {'
     setLoading(true);
     dispatch('
       addItem({'
         id: "listing.id,;"";
-        title: "listing.title",;"
+        title: listing.title,;"
         price: listing.price ?? 0",";
       }),;""
     );""
@@ -123,7 +123,7 @@ const const ProductListingCardComponent = ({'
     setLoading(false);
   };
 
-  const const handleRequestQuote = (_e: React.MouseEvent) => {;
+  const handleRequestQuote = (_e: React.MouseEvent) => {;
     e.preventDefault();
     e.stopPropagation();
 
@@ -134,7 +134,7 @@ const const ProductListingCardComponent = ({'
     };
   }'
 '
-  const const imageContainerClasses = isGrid ? 'h-48' : 'h-32 w-48'
+  const imageContainerClasses = isGrid ? 'h-48' : 'h-32 w-48'
 
   return ('
     <div'
@@ -193,8 +193,7 @@ const const ProductListingCardComponent = ({'
             </Badge>)};
           <FavoriteButton itemId={listing.id} />;
         </div>"
-      </div>;
-;"";
+      </div>;"";
       {/* Content */};"";
       <div;"";
         className={`flex flex-col justify-between ${isGrid ? 'p-4 flex-1' : 'p-4 flex-1'}`}`
@@ -214,8 +213,7 @@ const const ProductListingCardComponent = ({'
                 count={listing.reviewCount ?? 0};
               />"
             )};
-          </div>;"";
-;"";
+          </div>;"";"";
           {/* Title & Description */};"";
           <div onClick={handleViewListing} className="block">;"
             {listing.uspHeadline && (;";"
@@ -223,11 +221,11 @@ const const ProductListingCardComponent = ({'
                 {listing.uspHeadline};""
               </p>;""
             )};"";
-            <h3 className=font-semibold text-foreground mb-2 hover: "text-primary transition-colors text-[clamp(1rem",2.5vw,1.125rem)]>;"
+            <h3 className=font-semibold text-foreground mb-2 hover: text-primary transition-colors text-[clamp(1rem,2.5vw,1.125rem)]>;"
               {listing.title}";
             </h3>;"";
           </div>;""
-          <p className="text-foreground/80 line-clamp-2 mb-4 text-[clamp(0.875rem,2vw,1rem)]>
+          <p className="text-foreground/80 line-clamp-2 mb-4 text-[clamp(0.875rem,2vw,1rem)]>"
             {listing.description}"
           </p>;"
 ;";"
@@ -308,7 +306,7 @@ const const ProductListingCardComponent = ({'
                   addItem({";""
                     id: listing.id,"
                     title: "listing.title,;"";
-                    price: "listing.price ?? 0",;"
+                    price: listing.price ?? 0,;"
                   }),;";"
                 );"
                 router.push('/checkout')'
@@ -334,6 +332,6 @@ const const ProductListingCardComponent = ({'
   );""
 };"
 ";"
-export const const ProductListingCard = React.memo(ProductListingCardComponent)";""
+export const ProductListingCard = React.memo(ProductListingCardComponent)";""
 ProductListingCard.displayName = 'ProductListingCard'
 '''''

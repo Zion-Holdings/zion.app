@@ -7,8 +7,7 @@ export * from './usePageViewTracking'
 export * from './useReactId'
 export * from './useScrollToTop'
 export * from './usePostsByCategory'
-export * from './useAutocomplete;
-;
+export * from './useAutocomplete'
 export * from './useLocalStorage'
 export * from './useFavorites'
 export * from './useQuoteWizard'
@@ -22,5 +21,5 @@ export * from './useCurrency'
 export * from './useSessionDuration'
 export * from './useNavigationGestures'
 export * from './useFollowedCategories'
-export * from './useToggle;
+export * from './useToggle'
 '''''

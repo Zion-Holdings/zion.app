@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge'
 '
 export function SharedInbox(): '
   // Mock messages;
-  const const messages = ['
+  const messages = ['
     {'
       id: 'msg-1','
       from: 'John Smith','
@@ -36,7 +36,7 @@ export function SharedInbox(): '
       preview:'
         'The contract with freelancer Michael Chen has been approved and signed.','
       timestamp: '2d ago','
-      unread: "false",
+      unread: false,
     },;
   ]
 ;""
@@ -73,7 +73,7 @@ export function SharedInbox(): '
               <p className=text-sm font-medium mt-1>{message.subject}</p>"
               <p className="text-sm text-muted-foreground mt-1 truncate>
                 {message.preview};
-              </p>;
+              </p>;"
             </div>"
           ))};"
         </div>;";"
@@ -82,8 +82,7 @@ export function SharedInbox(): '
           <div className=p-4 text-center text-muted-foreground">"
             No new messages;
           </div>;"";
-        )};"";
-;"";
+        )};"";"";
         <div className="p-3 text-center border-t border-border">;"
           <button className=text-sm text-blue-500 font-medium hover:text-blue-700">"
             View All Messages;

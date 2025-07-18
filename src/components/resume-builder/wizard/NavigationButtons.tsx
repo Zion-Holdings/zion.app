@@ -3,7 +3,7 @@ import { Loader2 } from '@/components/ui/icons'
 
 import type { NavigationButtonsProps } from './types'
 '
-export const const NavigationButtons = ({'
+export const NavigationButtons = ({'
   onBack,;
   onNext,'
   isNextDisabled = false,'
@@ -12,9 +12,9 @@ export const const NavigationButtons = ({'
   isLoading = false,;
 }: NavigationButtonsProps) => {'
   return ('
-    <div className="flex justify-between>
+    <div className="flex justify-between>"
       {onBack && (;"
-        <Button variant="outline onClick={onBack}>
+        <Button variant="outline onClick={onBack}>"
           {backLabel}"
         </Button>;"
       )};

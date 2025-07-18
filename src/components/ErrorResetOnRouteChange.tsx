@@ -4,13 +4,12 @@ import { useToast } from '@/hooks/use-toast'
 import { useError } from '@/context/ErrorContext'
 
 export default function ErrorResetOnRouteChange(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _resetError } = useError();
   const { _dismiss } = useToast();
-
   useEffect(() => {;
     if (!router.events) return'
-    const const handleRouteChange = () => {'
+    const handleRouteChange = () => {'
       resetError();
       dismiss()'
     }'

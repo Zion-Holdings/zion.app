@@ -1,16 +1,15 @@
-import type { ReactNode } from 'react;
-;
+import type { ReactNode } from 'react;';
 interface DragDropContextProps {'
-  children: ReactNode;
-  onDragEnd?: (...args: "unknown[]) => void;";
-};
+  children: ReactNode
+  onDragEnd?: (...args: "unknown[]) => void"
+}
 export function DragDropContext(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: DragDropContextProps) {;"
   return <>{children}</>;";"
 };"
 ;"
 interface DroppableProps {;"
   children: "(provided: {;"
-    droppableProps: "Record<string", unknown>;"
+    droppableProps: Record<string, unknown>;"
     innerRef: "(el: HTMLElement | null) => void;"
     placeholder: "ReactNode;"
   }) => ReactNode;"
@@ -26,8 +25,8 @@ export function Droppable(): unknown {): unknown {): unknown {): unknown {): unk
 ;"
 interface DraggableProps {;"
   children: "(provided: {;"
-    draggableProps: "Record<string", unknown>;"
-    dragHandleProps: "Record<string", unknown>;"
+    draggableProps: Record<string, unknown>;"
+    dragHandleProps: Record<string, unknown>;"
     innerRef: "(el: HTMLElement | null) => void;"
   }) => ReactNode;"
   draggableId: "string;"

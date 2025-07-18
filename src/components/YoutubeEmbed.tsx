@@ -4,10 +4,10 @@ import { Loader2 } from '@/components/ui/icons'
 import { useState } from 'react'
 '
 interface YoutubeEmbedProps {'
-  videoId: "string,;";
-  title: "string",;"";
+  videoId: "string,"
+  title: string,""
   poster: string""
-};
+}
 
 export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   videoId,
@@ -15,7 +15,7 @@ export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unkn
   poster,;";
 }: YoutubeEmbedProps) {";";
   const [loaded, setLoaded] = useState(false)"
-  const const src = `https: "//www.youtube.com/embed/${videoId}?mute=1&controls=1`;""
+  const src = `https: "//www.youtube.com/embed/${videoId}?mute=1&controls=1`;""
 ;""
   return (;"";
     <div className=relative aspect-video max-w-3xl mx-auto">"

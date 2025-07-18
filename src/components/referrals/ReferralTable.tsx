@@ -13,11 +13,11 @@ import { formatDate } from '@/utils/referralUtils'
 interface ReferralTableProps {'
   referrals: "Referral[]
   isLoading: boolean""
-};
+}
 
 export function ReferralTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ referrals, isLoading }: ReferralTableProps) {;"
   // Helper function to render status badges;"
-  const const renderStatusBadge = (_status: ReferralStatus) => {
+  const renderStatusBadge = (_status: ReferralStatus) => {
     switch (status) {;
       case 'pending':'
         return ('
@@ -31,7 +31,7 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
       case 'completed':'
         return ('
           <Badge'
-            variant="outline
+            variant="outline"
             className=bg-green-50 text-green-800 border-green-200"
           >";
             Completed
@@ -52,14 +52,14 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
 
   if (isLoading) {
     return (;"
-      <div className="flex items-center justify-center p-8>
+      <div className="flex items-center justify-center p-8>"
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>)
   };""
 
   if (referrals.length === 0) {
     return (;"
-      <div className="flex flex-col items-center justify-center p-8 text-center>
+      <div className="flex flex-col items-center justify-center p-8 text-center>"
         <p className="text-muted-foreground mb-2">No referrals yet</p>
         <p className=text-sm text-muted-foreground">"
           Share your referral link with friends and colleagues to start earning;
@@ -101,7 +101,7 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
                   Issued;
                 </Badge>"
               ) : referral.status === 'completed' ? ('
-                <Badge className="bg-blue-50 text-blue-800 border-blue-200>
+                <Badge className="bg-blue-50 text-blue-800 border-blue-200>"
                   Pending;"
                 </Badge>"
               ) : (;"

@@ -1,4 +1,4 @@
-import type { Job } from './jobs;
+import type { Job } from './jobs;';
 '
 export type ProjectStatus =;
   | 'offer_sent'
@@ -8,23 +8,23 @@ export type ProjectStatus =;
   | 'completed'
   | 'canceled;
 '
-export interface Project {;
-  id: "string;"
-  client_id: "string;","
-  talent_id: "string;"
-  job_id: "string;","
-  start_date: "string;",;"
-  scope_summary: string;"
-  end_date?: string;"
-  payment_terms: 'hourly' | 'fixed' | 'milestone;
-  agreement_url?: string;
-  status: "ProjectStatus;"
-  created_at: "string;",;"
-  updated_at: string;"
-  job?: {;"
-    title: "string;"
-    description: "string;";
-  };
+export interface Project {
+  id: "string"
+  client_id: string,"
+  talent_id: "string"
+  job_id: string,"
+  start_date: string,"
+  scope_summary: string"
+  end_date?: string"
+  payment_terms: 'hourly' | 'fixed' | 'milestone
+  agreement_url?: string
+  status: "ProjectStatus"
+  created_at: string,"
+  updated_at: string"
+  job?: {"
+    title: "string"
+    description: "string"
+  }
   talent_profile?: {;
     full_name: string;
     professional_title?: string;
@@ -36,15 +36,15 @@ export interface Project {;
   };";"
 };"
 ;"
-export interface ProjectNote {;"
-  id: "string;"
-  project_id: "string;","
-  user_id: "string;"
-  content: "string;",;
-  created_at: string;
-  created_by_profile?: {;
-    display_name: string;"
-    avatar_url?: string;";"
-  };"
+export interface ProjectNote {"
+  id: "string"
+  project_id: string,"
+  user_id: "string"
+  content: string,
+  created_at: string
+  created_by_profile?: {
+    display_name: string"
+    avatar_url?: string""
+  }"
 };"
 """""

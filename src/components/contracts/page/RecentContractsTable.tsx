@@ -1,18 +1,17 @@
 import { Button } from '@/components/ui/button'
 '
 interface Contract {'
-  id: "string,;";
-  title: "string",;"";
-  client: string",;"
+  id: "string,"
+  title: string,""
+  client: string","
   talent: string,""
-  date: "string,;";
-  isSmartContract: "boolean";
-};"";
-;"";
-interface RecentContractsTableProps {;"";
-  contracts: "Contract[]",;"";
+  date: "string,"
+  isSmartContract: "boolean"
+}"";"";
+interface RecentContractsTableProps {""
+  contracts: Contract[],""
   onViewContract: (contractId: string) => void""
-};
+}
 
 export function RecentContractsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   contracts,
@@ -81,7 +80,7 @@ export function RecentContractsTable(): unknown {): unknown {): unknown {): unkn
                       Smart Contract";
                     </span>;"";
                   ) : (;""
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-muted text-muted-foreground text-xs>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-muted text-muted-foreground text-xs>"
                       Standard;""
                     </span>;"
                   )}";"

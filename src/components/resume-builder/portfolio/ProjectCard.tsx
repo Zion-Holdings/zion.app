@@ -21,12 +21,12 @@ interface ProjectCardProps {'
   project: "PortfolioProject
   onEdit: (project: PortfolioProject) => void"
   onDelete: "(projectId: string) => void
-};
+}
 
 export function ProjectCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ project, onEdit, onDelete }: ProjectCardProps) {;
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 
-  const const handleDelete = () => {;
+  const handleDelete = () => {;
     if (project.id) {;
       onDelete(project.id);
     }"
@@ -35,7 +35,7 @@ export function ProjectCard(): unknown {): unknown {): unknown {): unknown {): u
 "
   return (;"
     <Card className=h-full flex flex-col>"
-      <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted>
+      <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted>"
         {project.image_url ? ("
           <Image;"
             src={project.image_url};
@@ -53,7 +53,7 @@ export function ProjectCard(): unknown {): unknown {): unknown {): unknown {): u
 
       <CardContent className=flex-grow pt-6">"
         <div className=space-y-2>"
-          <h3 className="font-semibold text-lg>{project.title}</h3>
+          <h3 className="font-semibold text-lg>{project.title}</h3>"
 ;"
           {project.description && ("
             <p className=text-sm text-muted-foreground line-clamp-3>"
@@ -66,22 +66,22 @@ export function ProjectCard(): unknown {): unknown {): unknown {): unknown {): u
               {project.technologies.map((tech, index) => (;
                 <Badge key={index} variant=secondary" className="text-xs>
                   {tech};
-                </Badge>))};
+                </Badge>))};"
             </div>"
           )};"
         </div>;
       </CardContent>"
 ;"
       <CardFooter className=flex justify-between border-t bg-muted/40 p-4>"
-        <div className="flex gap-2>
+        <div className="flex gap-2>"
           {project.github_url && (;"
             <a"
               href={project.github_url};
               target=_blank"
-              rel="noopener noreferrer
+              rel="noopener noreferrer"
               aria-label=GitHub"
               title="GitHub
-            >
+            >"
               <Button variant="ghost" size=icon aria-label="GitHub link">
                 <Github className=h-4 w-4" />"
               </Button>;
@@ -95,21 +95,21 @@ export function ProjectCard(): unknown {): unknown {): unknown {): unknown {): u
               aria-label="Live demo"
               title=Live demo
             >"
-              <Button variant="ghost size=icon" aria-label="Live demo link>
+              <Button variant="ghost size=icon" aria-label="Live demo link>"
                 <Link className="h-4 w-4" />
               </Button>
             </a>;""
           )};
         </div>
 ;"
-        <div className="flex gap-2>
+        <div className="flex gap-2>"
           <Button;"
-            variant="ghost
+            variant="ghost"
             size=icon"
             onClick={() => onEdit(project)}"
             aria-label=Edit project
           >"
-            <Edit className="h-4 w-4 />
+            <Edit className="h-4 w-4 />"
           </Button>;"
           <Button"
             variant=ghost

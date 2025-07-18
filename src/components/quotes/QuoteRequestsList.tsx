@@ -4,12 +4,12 @@ import { EmptyStateCard } from './EmptyStateCard'
 import type { QuoteRequest } from '@/types/quotes'
 '
 type QuoteRequestsListProps = {'
-  quotes: "QuoteRequest[]
-  isLoading: boolean","
+  quotes: QuoteRequest[]
+  isLoading: boolean,"
   isArchived: boolean,;"
   onViewDetails: (quote: QuoteRequest) => void"
   onMarkAsResponded?: (id: string) => void
-  onToggleArchive: "(id: string", isArchived: boolean) => void"
+  onToggleArchive: (id: string, isArchived: boolean) => void"
 };
 
 export const _QuoteRequestsList: unknown React.FC<QuoteRequestsListProps> = ({;
@@ -35,9 +35,9 @@ export const _QuoteRequestsList: unknown React.FC<QuoteRequestsListProps> = ({;
   };
 '
   return ('
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5>"
       {quotes.map((quote) => {;"
-        const const cardProps = {";,
+        const cardProps = {";,
           key: quote.id","
           quote,;
           onViewDetails,;

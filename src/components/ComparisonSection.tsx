@@ -13,7 +13,7 @@ import {;
 
 export function ComparisonSection(): '
   return ('
-    <section className="py-20 bg-zion-blue-dark>;
+    <section className="py-20 bg-zion-blue-dark>;"
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">;"
         <div className=text-center mb-12">"
           <GradientHeading>Compare & Save</GradientHeading>";""
@@ -22,12 +22,11 @@ export function ComparisonSection(): '
             traditional providers;
           </p>;
         </div>;
-;
         <div className="max-w-4xl mx-auto">;"
           <div className=bg-zion-blue-light rounded-lg border border-zion-purple/20 overflow-hidden">";
             <Table>;
               <TableHeader>;"
-                <TableRow className="border-b border-zion-purple/20>;
+                <TableRow className="border-b border-zion-purple/20>;"
                   <TableHead className="text-white">Service</TableHead>;"
                   <TableHead className=text-white text-center">";
                     Traditional Providers;
@@ -73,7 +72,7 @@ export function ComparisonSection(): '
                     savings: '100%','
                   },'
                 ].map((item, index) => ('
-                  <TableRow key={index} className="border-b border-zion-blue>;
+                  <TableRow key={index} className="border-b border-zion-blue>;"
                     <TableCell className="font-medium text-white">;"
                       {item.service};";"
                     </TableCell>;"
@@ -90,17 +89,16 @@ export function ComparisonSection(): '
               </TableBody>;
             </Table>;
           </div>;
-;
           <div className="mt-8 flex justify-between items-center bg-zion-blue p-6 rounded-lg border border-zion-purple/20">;"
             <div className=flex items-start">""
               <CheckCircle2 className=mr-2 h-6 w-6 text-green-400 flex-shrink-0 mt-1 />"
-              <p className="text-white>;
+              <p className="text-white>;"
                 <span className="font-bold">Total Annual Savings: </span>;"
                 <span className=text-green-400 font-bold text-xl">";
                   Up to 65%;
                 </span>;"
                 <span className="block text-sm text-zion-slate-light mt-1>
-                  Results may vary based on specific requirements and service;
+                  Results may vary based on specific requirements and service;"
                   levels"
                 </span>;"
               </p>;";"

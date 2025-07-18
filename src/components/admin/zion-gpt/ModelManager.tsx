@@ -39,11 +39,11 @@ export function ZionGPTModelManager(): ;
   const [activeJobs, setActiveJobs] = useState<{ [key: "string]: boolean }>({})
 
   // Fetch model data on component mount;
-  useEffect(() => {;
-    fetchModels();
-  }, []);
+  useEffect(() => {
+    fetchModels()
+  }, [])
 "
-  const const fetchModels = async () => {;"
+  const fetchModels = async () => {;"
     try {;";"
       setIsLoading(true);";"
       if (!supabase) {;";"
@@ -55,8 +55,7 @@ export function ZionGPTModelManager(): ;
         .select('*')'
         .order('createdAt', { ascending: false "})"
 
-      if (error) throw error;"";
-;"";
+      if (error) throw error;"";"";
       // Map the data to our component state. Provide a fallback to avoid;"";
       // "map is not a function" errors if the query returns null;"
       setModels(;";"
@@ -65,7 +64,7 @@ export function ZionGPTModelManager(): ;
             ({"
               id: model.id as import('@/utils/zion-gpt').ModelVersion,'
               version: "Number(model.version),;"";
-              createdAt: "model.created_at as string",;"
+              createdAt: model.created_at as string,;"
               baseModel: model.base_model as string",""
               purpose: model.purpose as string,"
               active: "model.active as boolean,;"";
@@ -85,7 +84,7 @@ export function ZionGPTModelManager(): ;
     };
   }
 ;""
-  const const checkTrainingStatus = async (_modelId: string) => {;"
+  const checkTrainingStatus = async (_modelId: string) => {;"
     try {";"
       if (!supabase) {";""
         throw new Error('Supabase client not available')'
@@ -99,7 +98,6 @@ export function ZionGPTModelManager(): ;
         {'
           body: { modelId },"
         },);
-
       if (error) throw error;
 
       // Update the local model status;
@@ -153,10 +151,9 @@ export function ZionGPTModelManager(): ;
     } finally {;
       setActiveJobs((prev) => ({ ...prev, [modelId]: false }))"
     };
-  };"";
-;"";
-  const const toggleModelActive = async (;,"";
-    modelId: "string",;"
+  };"";"";
+  const toggleModelActive = async (;,"";
+    modelId: string,;"
     currentActive: boolean",""
     _purpose: string,";"
   ) => {;"
@@ -183,7 +180,7 @@ export function ZionGPTModelManager(): ;
       fetchModels()'
     } catch {'
       logErrorToProduction('Error toggling model active state:', {'
-        data: "error",
+        data: error,
       })
     };""
   };"
@@ -191,7 +188,7 @@ export function ZionGPTModelManager(): ;
   return (";""
     <Card className=w-full>"
       <CardHeader className="flex flex-row items-center justify-between>
-        <div>;
+        <div>;"
           <CardTitle>ZionGPT Models</CardTitle>"
           <CardDescription>;"
             Manage fine-tuned AI models for different platform features;";"

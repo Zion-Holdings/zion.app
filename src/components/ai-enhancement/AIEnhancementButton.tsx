@@ -35,7 +35,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   const [showActions, setShowActions] = useState(false);
   const [generatedContent, setGeneratedContent] = useState<string | null>(null);
 
-  const const handleEnhance = async () => {;
+  const handleEnhance = async () => {;
     if ('
       (!options.content || options.content.trim().length < contentLength) &&'
       (!options.context || options.context.trim().length < contentLength);
@@ -48,7 +48,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
       return;
     };
 
-    const const enhancedContent = await enhanceContent(options);
+    const enhancedContent = await enhanceContent(options);
 
     if (enhancedContent) {;
       setGeneratedContent(enhancedContent);
@@ -56,7 +56,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     };
   };
 
-  const const handleAccept = () => {;
+  const handleAccept = () => {;
     if (generatedContent) {'
       onEnhanced(generatedContent)'
       setShowActions(false);
@@ -68,11 +68,11 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     };
   };
 
-  const const handleRegenerate = async () => {;
+  const handleRegenerate = async () => {;
     await handleEnhance();
   };
 
-  const const handleCancel = () => {;
+  const handleCancel = () => {;
     setShowActions(false);
     setGeneratedContent(null)'
   }'
@@ -115,7 +115,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
           <X className="h-4 w-4 mr-1 />
           Cancel;
         </Button>;
-      </div>;
+      </div>;"
     )"
   };"
 ;";"

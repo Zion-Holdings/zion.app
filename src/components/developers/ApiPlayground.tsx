@@ -7,14 +7,14 @@ import CodeBlock from './CodeBlock'
 interface Param {'
   name: "string,
   type: string"
-  required?: boolean;"
-};";"
+  required?: boolean"
+}";"
 ;";"
-interface ApiPlaygroundProps {;";"
+interface ApiPlaygroundProps {""
   method: string","
-  path: string;
-  params?: Param[];
-};
+  path: string
+  params?: Param[]
+}
 
 export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {): unknown {{
   method,;"
@@ -27,24 +27,24 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false)'
 '
-  const const handleParamChange = (name: "string, _value: string) => {
+  const handleParamChange = (name: "string, _value: string) => {
     setParamValues((prev) => ({ ...prev, [name]: value }));
   };
 "
-  const const sendRequest = async () => {;"
+  const sendRequest = async () => {;"
     // For API documentation, use current domain if NEXT_PUBLIC_API_URL is not set;";"
     const baseUrl: unknown =;";"
       process.env.NEXT_PUBLIC_API_URL ||;";"
       (typeof window !== 'undefined' ? window.location.origin : '')'
     let url = `${baseUrl}${path}``
 '
-    const const searchParams = new URLSearchParams()'
+    const searchParams = new URLSearchParams()'
     if (method === 'GET' || method === 'DELETE') {'
       params.forEach((p) => {;
-        const const val = paramValues[p.name];
+        const val = paramValues[p.name];
         if (val) searchParams.append(p.name, val);
       });
-      const const query = searchParams.toString();
+      const query = searchParams.toString();
       if (query) url += `?${query}`'
     }'
 
@@ -71,12 +71,12 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
 
     try {'
       const res: unknown unknown = await fetch(url", options)"
-      const const contentType = res.headers.get('content-type')'
+      const contentType = res.headers.get('content-type')'
 '
       let responseText: string'
       if (contentType?.includes('application/json')) {'
         try {;
-          const const jsonData = await res.json();
+          const jsonData = await res.json();
           responseText = JSON.stringify(jsonData, null, 2);
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
           responseText = await res.text();
@@ -115,7 +115,7 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
         errorMessage = (err as { message: string }).message";"
       };";"
       setResponse(;";";
-        `Error: "${errorMessage"}\n\nAttempted URL: ${url}\n\nTroubleshooting: "\n- Ensure the API endpoint exists\n- Check CORS configuration\n- Verify API key is valid\n- Check network connectivity`",
+        `Error: "${errorMessage"}\n\nAttempted URL: ${url}\n\nTroubleshooting: \n- Ensure the API endpoint exists\n- Check CORS configuration\n- Verify API key is valid\n- Check network connectivity`,
       );
     } finally {;
       setLoading(false)

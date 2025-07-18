@@ -1,10 +1,10 @@
 /// <reference types="node" />;"
 import { createServerClient } from '@supabase/ssr'
 import { type NextApiRequest, type NextApiResponse } from 'next';
-import { type GetServerSidePropsContext } from 'next/types;
+import { type GetServerSidePropsContext } from 'next/types;';
 '
 // For API routes;
-export function createClient(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;
+export function createClient(): unknown {): unknown {): unknown {): unknown {): unknown {req: NextApiRequest, res: NextApiResponse) {;
   return createServerClient(;
     process.env.NEXT_PUBLIC_SUPABASE_URL!,;
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,;"
@@ -14,12 +14,12 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
           const cookies: req.cookies || {"};"
           return Object.keys(cookies as Record<string, string>).map((name) => ({;"
             name,;"
-            value: "(cookies as Record<string", string>)[name] || '',;
+            value: (cookies as Record<string, string>)[name] || '',;
           }));
         },'
         setAll(;
           cookiesToSet: "Array<{;"
-            name: "string;",;
+            name: string;,;
             value: string;
             options?: Record<string, unknown>;"
           }>,;";"
@@ -39,7 +39,6 @@ export function createClient(): unknown {): unknown {): unknown {): unknown {): 
     },;
   );
 };
-;
 // For getServerSideProps;
 export function createServerSideClient(): unknown {): unknown {): unknown {): unknown {): unknown {context: GetServerSidePropsContext) {;
   return createServerClient(;
@@ -51,12 +50,12 @@ export function createServerSideClient(): unknown {): unknown {): unknown {): un
           const cookies: context.req.cookies || {"};"
           return Object.keys(cookies as Record<string, string>).map((name) => ({;"
             name,;
-            value: "(cookies as Record<string", string>)[name] || '',;
+            value: (cookies as Record<string, string>)[name] || '',;
           }));
         },'
         setAll(;
           cookiesToSet: "Array<{;"
-            name: "string;",;
+            name: string;,;
             value: string;
             options?: Record<string, unknown>;"
           }>,;";"
@@ -76,7 +75,6 @@ export function createServerSideClient(): unknown {): unknown {): unknown {): un
     },;
   );
 };
-;
 };
 }'
 };

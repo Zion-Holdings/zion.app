@@ -1,10 +1,10 @@
 import React from 'react''
 import YoutubeEmbed from '@/components/YoutubeEmbed'
 
-interface ProductVideoSectionProps {;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface ProductVideoSectionProps {
+  className?: string
+  style?: React.CSSProperties
+}
 
 export function ProductVideoSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,'
@@ -25,7 +25,7 @@ export function ProductVideoSection(): unknown {): unknown {): unknown {): unkno
           title=Zion Product Demo"
           poster="/images/blog-placeholder.svg
         />;
-      </div>;
+      </div>;"
     </section>)"
 };"
 ;";"

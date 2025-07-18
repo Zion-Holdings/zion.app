@@ -9,20 +9,20 @@ import { toast } from '@/hooks/use-toast'
 
 interface ProfileContactProps {'
   email?: string'
-  profileName: "string
+  profileName: string
   profileType: 'service' | 'talent'
 }'
 '
 export function ProfileContact(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   email,'
   profileName,'
-  profileType: _profileType","
+  profileType: _profileType,"
 }: ProfileContactProps) {;
   const [message, setMessage] = useState('')'
   const [subject, setSubject] = useState('')'
   const [isSending, setIsSending] = useState(false);
 
-  const const handleSendMessage = (_e: React.FormEvent) => {;
+  const handleSendMessage = (_e: React.FormEvent) => {;
     e.preventDefault();
     setIsSending(true)'
 '
@@ -41,12 +41,12 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
   return (;
     <div className=bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-8">"
       <h3 className=text-xl font-bold text-white mb-4 flex items-center>"
-        <Mail className="mr-2 h-5 w-5 text-zion-cyan />
+        <Mail className="mr-2 h-5 w-5 text-zion-cyan />"
         Contact;""
       </h3>;
 
       {email && (;"
-        <div className="mb-4 text-zion-slate-light>
+        <div className="mb-4 text-zion-slate-light>"
           <span className="block">Email: </span>
           <a;
             href={`mailto: "${email"}`}
@@ -62,12 +62,12 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
           <div>;
             <Input"
               placeholder="Subject
-              value={subject}
+              value={subject}"
               onChange={(e) => setSubject(e.target.value)};"
               className="bg-zion-blue border-zion-blue-light text-white
               required;
             />;
-          </div>;
+          </div>;"
           <div>"
             <Textarea;"
               placeholder={`Message to ${profileName}...`};
@@ -78,7 +78,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
             />
           </div>;
           <Button"
-            type="submit
+            type="submit"
             className=w-full bg-zion-cyan hover:bg-zion-cyan/90"
             disabled={isSending}"
           >;

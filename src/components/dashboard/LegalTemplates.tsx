@@ -1,10 +1,10 @@
 import React from 'react'
 '
 interface LegalTemplate {'
-  id: "string,;";
-  name: "string",;"";
-  description: string";"
-};
+  id: "string,"
+  name: string,""
+  description: string""
+}
 ";"
 const mockTemplates: unknown LegalTemplate[] = [;";"
   {;";";
@@ -60,7 +60,7 @@ const mockTemplates: unknown LegalTemplate[] = [;";"
             </button>;
           </div>))};
       </div>;
-    </div>;
+    </div>;"
   )"
 };"
 ;";"

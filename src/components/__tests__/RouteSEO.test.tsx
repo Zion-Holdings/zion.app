@@ -11,14 +11,13 @@ vi.mock('next/router', () => ({'
 ;"";
 vi.mock('@/utils/routeUtils', () => ({'
   findRouteByPath: vi.fn()",";
-}));"";
-;""
+}));"";""
 vi.mock('@/utils/config', () => ({'
   getAppConfig: () => ({ app: { url: 'https://example.com' } }),'
 }))'
 '
-const const mockedUseRouter = useRouter as unknown as vi.Mock;
-const const mockedFindRoute = findRouteByPath as unknown as vi.Mock'
+const mockedUseRouter = useRouter as unknown as vi.Mock;
+const mockedFindRoute = findRouteByPath as unknown as vi.Mock'
 '
 test('renders SEO tags based on route metadata', () => {'
   mockedUseRouter.mockReturnValue({ pathname: '/about', asPath: '/about' })'
@@ -28,13 +27,13 @@ test('renders SEO tags based on route metadata', () => {'
   });
 '
   const { _container } = render(<RouteSEO />)'
-  const const title = container.querySelector('title')'
+  const title = container.querySelector('title')'
   expect(title?.textContent).toBe('
     'About | Zion - The Future of Tech & AI Marketplace','
   )'
-  const const metaDesc = container.querySelector('meta[name="description]')'
+  const metaDesc = container.querySelector('meta[name="description]')'
   expect(metaDesc?.getAttribute('content')).toBe('About us page')'
-  const const canonical = container.querySelector('link[rel=canonical"]')'
+  const canonical = container.querySelector('link[rel=canonical"]')'
   expect(canonical?.getAttribute('href')).toBe('https://example.com/about')'
 })'
 '''''

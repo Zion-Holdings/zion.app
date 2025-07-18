@@ -6,21 +6,21 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
-import Link from 'next/link // Changed from react-router-dom;
-import { safeStorage } from '@/utils/safeStorage;
+import Link from 'next/link // Changed from react-router-dom;';
+import { safeStorage } from '@/utils/safeStorage;';
 '
-interface Suggestion {;
-  id: "string;"
-  title: "string;","
-  description: "string;"
-};";"
+interface Suggestion {
+  id: "string"
+  title: string,"
+  description: "string"
+}";"
 ;"
 export default function RoadmapSuggestPage(): ;"
   const { _user } = useAuth();"
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('')'
   const [submitted, setSubmitted] = useState<Suggestion[]>(() => {;
-    const const raw = safeStorage.getItem('feature_requests');
+    const raw = safeStorage.getItem('feature_requests');
     if (!raw) return [];
     try {;
       return JSON.parse(raw) as Suggestion[];
@@ -29,11 +29,11 @@ export default function RoadmapSuggestPage(): ;"
     };
   });
 '
-  useEffect(() => {;
-    safeStorage.setItem('feature_requests', JSON.stringify(submitted));
-  }, [submitted]);
+  useEffect(() => {
+    safeStorage.setItem('feature_requests', JSON.stringify(submitted))
+  }, [submitted])
 '
-  const const handleSubmit = (_e: React.FormEvent) => {;
+  const handleSubmit = (_e: React.FormEvent) => {;
     e.preventDefault();
     if (!user) {'
       toast({;
@@ -42,7 +42,7 @@ export default function RoadmapSuggestPage(): ;"
       });
       return'
     };
-    const const suggestion = { id: "Date.now().toString()", title, description };"
+    const suggestion = { id: Date.now().toString(), title, description };"
     setSubmitted((prev) => [...prev, suggestion]);"
     setTitle('');
     setDescription('')'
@@ -51,7 +51,6 @@ export default function RoadmapSuggestPage(): ;"
       description: 'Thank you for your feedback',;
     })'
   };
-;
   return ('
     <>;
       <NextSeo title="Suggest a Feature" description="Share your ideas" />;"

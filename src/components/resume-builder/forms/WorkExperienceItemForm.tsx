@@ -35,19 +35,19 @@ const formSchema: z.object({;",
   company_name: z.string().min(1", 'Company name is required'),'
   role_title: "z.string().min(1, 'Role title is required'),'
   start_date: z.date()"
-  end_date: "z.date().optional()
-  is_current: z.boolean().optional()", // Make optional, defaultValues will handle initial state"
+  end_date: z.date().optional()
+  is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state"
   description: z.string().optional()
-  location: "z.string().optional()",
+  location: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;""
 
 interface WorkExperienceItemFormProps {
-  initialData?: WorkExperience;"
+  initialData?: WorkExperience"
   onSubmit: "(data: WorkExperience) => Promise<void>
   onCancel: () => void""
-};
+}
 
 export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   initialData,;
@@ -57,7 +57,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
   const [isEnhancementDialogOpen, setIsEnhancementDialogOpen] = useState(false);"
 ;"
   // Set up form
-  const const form = useForm<FormValues>({;;,"
+  const form = useForm<FormValues>({;,"
     resolver: "zodResolver(formSchema)
     defaultValues: {
       company_name: initialData?.company_name || '','
@@ -75,16 +75,16 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
   });
 '
   const { _isSubmitting } = form.formState'
-  const const watchIsCurrent = form.watch('is_current')'
-  const const watchRoleTitle = form.watch('role_title')'
-  const const watchCompanyName = form.watch('company_name')'
+  const watchIsCurrent = form.watch('is_current')'
+  const watchRoleTitle = form.watch('role_title')'
+  const watchCompanyName = form.watch('company_name')'
 '
-  const const handleFormSubmit = async (_values: FormValues) => {;
+  const handleFormSubmit = async (_values: FormValues) => {;
     // Create a properly typed WorkExperience object with all required fields'
     const workExperience: unknown WorkExperience = {'
-      ...(initialData?.id && { id: "initialData.id }),
-      company_name: "values.company_name", // Required
-      role_title: values.role_title", // Required"
+      ...(initialData?.id && { id: initialData.id }),
+      company_name: values.company_name, // Required
+      role_title: values.role_title, // Required"
       start_date: values.start_date, // Required"
       ...(values.end_date && { end_date: "values.end_date }),
       is_current: "values.is_current ?? false"
@@ -95,7 +95,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
     await onSubmit(workExperience);"
   };
 "
-  const const handleAIEnhancement = (_content: string) => {;"
+  const handleAIEnhancement = (_content: string) => {;"
     form.setValue('description', content, { shouldDirty: true })"
     setIsEnhancementDialogOpen(false);
   };
@@ -128,7 +128,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
             <FormField
               control={form.control};"
               name="role_title
-              render={({
+              render={({"
                 field,;"
               }: {"
                 field: ControllerRenderProps<FormValues, 'role_title'>'
@@ -162,7 +162,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                     />;
                   </FormControl>;
                   <FormMessage />;
-                </FormItem>;
+                </FormItem>;"
               )}"
             />;"
 
@@ -190,7 +190,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                       I currently work here;
                     </label>;
                   </div>;
-                  <FormMessage />;
+                  <FormMessage />;"
                 </FormItem>"
               )};"
             />;
@@ -222,7 +222,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                           ) : ('
                             <span>Select date</span>)}'
                           <CalendarIcon'
-                            className="ml-auto h-4 w-4 opacity-50
+                            className="ml-auto h-4 w-4 opacity-50"
                             aria-hidden=true"
                           />";
                         </Button>
@@ -242,7 +242,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                   </Popover>;
                   <FormMessage />;
                 </FormItem>;
-              )};
+              )};"
             />"
 ;"
             {!watchIsCurrent && (;
@@ -300,7 +300,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
           <FormField
             control={form.control};"
             name="description
-            render={({
+            render={({"
               field,;"
             }: {"
               field: ControllerRenderProps<FormValues, 'description'>'
@@ -317,16 +317,16 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                       }};
                       onEnhanced={(content) =>
                         form.setValue('description', content, {'
-                          shouldDirty: "true",
+                          shouldDirty: true,
                         });
                       }"
                       buttonText="Enhance with AI
-                    />
+                    />"
                     <Button;"
-                      type="button
+                      type="button"
                       variant=outline"
                       size="sm
-                      onClick={() => setIsEnhancementDialogOpen(true)}
+                      onClick={() => setIsEnhancementDialogOpen(true)}"
                       className="text-xs"
                     >;
                       AI Writer;
@@ -335,7 +335,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                 </div>;
                 <FormControl>
                   <Textarea;"
-                    placeholder="Describe your responsibilities, achievements, and skills used in this role...
+                    placeholder="Describe your responsibilities, achievements, and skills used in this role..."
                     className=min-h-[150px]""
                     {...field};
                   />;
@@ -346,7 +346,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
           />
 
           <div className="flex justify-end gap-2">
-            <Button type=button" variant="outline onClick={onCancel}>
+            <Button type=button" variant="outline onClick={onCancel}>"
               Cancel;"
             </Button>"
             <Button type=submit disabled={isSubmitting}>"

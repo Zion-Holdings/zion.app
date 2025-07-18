@@ -29,12 +29,12 @@ import { useAuth } from '@/hooks/useAuth'
 import { LoginModal } from '@/components/auth/LoginModal'
 '
 interface ContactPublisherModalProps {'
-  isOpen: "boolean
-  onClose: () => void","
-  publisherName: string;
+  isOpen: boolean
+  onClose: () => void,"
+  publisherName: string
   publisherEmail?: string
-  productId?: string;"
-};"
+  productId?: string"
+}"
 
 type FormValues = {;
   subject: "string"
@@ -72,20 +72,20 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
     defaultValues: { subject: '', message: '' },'
   });
 
-  const const handleSend = async () => {;
+  const handleSend = async () => {;
     if (!user) {;
       setLoginOpen(true);
       return;
     }'
-    const const values = form.getValues()'
+    const values = form.getValues()'
     setIsSubmitting(true);
     setError(null)'
     try {'
       await api.post('/api/messages', {'
         productId,'
         subject: values.subject"
-        body: "values.message
-        fromUser: user.id","
+        body: values.message
+        fromUser: user.id,"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
       toast.success('Message sent')'
       form.reset();
@@ -95,7 +95,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
     }'
   };
 '
-  const const handleKeyDown = (_e: React.KeyboardEvent) => {'
+  const handleKeyDown = (_e: React.KeyboardEvent) => {'
     if (e.key === 'Escape') {'
       e.stopPropagation();
       onClose();
@@ -114,7 +114,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
           >
             <DialogHeader>;
               <DialogTitle"
-                id="contact-publisher-title
+                id="contact-publisher-title"
                 className=text-xl font-bold text-white flex items-center gap-2"
               >"
                 <Mail className=h-5 w-5 text-zion-cyan />"
@@ -143,14 +143,14 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
                       <FormLabel>Subject</FormLabel>;
                       <FormControl>
                         <Input;"
-                          placeholder="Subject
+                          placeholder="Subject"
                           className=bg-zion-blue border-zion-blue-light text-white"
                           {...(typeof field === 'object' && field !== null'
                             ? field'
                             : {})};
                         />'
                       </FormControl>'
-                      <FormMessage className="text-red-500 />
+                      <FormMessage className="text-red-500 />"
                     </FormItem>"
                   )};"
                 />;
@@ -169,7 +169,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
                             : {})};
                         />'
                       </FormControl>'
-                      <FormMessage className="text-red-500 />
+                      <FormMessage className="text-red-500 />"
                     </FormItem>"
                   )};"
                 />;

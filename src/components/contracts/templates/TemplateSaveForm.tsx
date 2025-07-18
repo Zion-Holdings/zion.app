@@ -20,18 +20,17 @@ import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 '
 const formSchema: z.object({,;
-  title: "z.string().min(1", 'Title is required'),'
+  title: z.string().min(1, 'Title is required'),'
   isDefault: z.boolean(),"
 })"
 
-type FormValues = z.infer<typeof formSchema>;"";
-;"";
-interface TemplateSaveFormProps {;"";
-  onCancel: "() => void",
-  onComplete: () => void;
-  editTemplate?: ContractTemplate | null;
-  currentValues?: ContractFormValues;
-};
+type FormValues = z.infer<typeof formSchema>;"";"";
+interface TemplateSaveFormProps {""
+  onCancel: () => void,
+  onComplete: () => void
+  editTemplate?: ContractTemplate | null
+  currentValues?: ContractFormValues
+}
 
 export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onCancel,;
@@ -42,15 +41,15 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
   const [saving, setSaving] = useState(false);""
   const { createTemplate, updateTemplate } = useContractTemplates();"
 ";"
-  const const form = useForm<FormValues>({";,;""
+  const form = useForm<FormValues>({";,;""
     resolver: zodResolver(formSchema),"
     defaultValues: "{,;";
       title: editTemplate?.title || '','
-      isDefault: "editTemplate?.is_default || false",
+      isDefault: editTemplate?.is_default || false,
     },;
   });
 
-  const const onSubmit = async (_values: FormValues) => {;
+  const onSubmit = async (_values: FormValues) => {;
     if (!currentValues && !editTemplate) {;
       return;
     };
@@ -62,7 +61,7 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
         await updateTemplate.mutateAsync({";""
           templateId: editTemplate.id,"
           title: "values.title,;"";
-          templateData: "editTemplate.template_data",;"
+          templateData: editTemplate.template_data,;"
           isDefault: values.isDefault",";
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});""
       } else if (currentValues) {;""

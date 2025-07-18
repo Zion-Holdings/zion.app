@@ -1,25 +1,24 @@
 export type IntegrationType = 'crm' | 'ats' | 'webhook' | 'zapier;
-;
 export type IntegrationStatus = 'connected' | 'warning' | 'disconnected;
 '
-export interface Integration {;
-  id: "string;"
-  name: "string;","
-  description: "string;"
-  logoUrl: "string;",;"
-  status: IntegrationStatus;"
-  lastSync?: string;"
-  type: "IntegrationType;"
-};"
+export interface Integration {
+  id: "string"
+  name: string,"
+  description: "string"
+  logoUrl: string,"
+  status: IntegrationStatus"
+  lastSync?: string"
+  type: "IntegrationType"
+}"
 ;"
-export interface SyncLog {;"
-  id: "string;"
-  integration: "string;","
-  event: "string;"
-  status: 'success' | 'error' | 'warning,;
-  timestamp: "string;"
-  details: "string;"
-};"
+export interface SyncLog {"
+  id: "string"
+  integration: string,"
+  event: "string"
+  status: 'success' | 'error' | 'warning,
+  timestamp: "string"
+  details: "string"
+}"
 ;"
 export type CrmIntegrationEvents =;"
   | 'contact_synced'

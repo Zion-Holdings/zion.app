@@ -4,20 +4,20 @@ import { ChevronLeft, ChevronRight } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 
 // These would be replaced with actual screenshots'
-const const mockScreenshots = [;'
-  { id: "1, alt: 'Dashboard screen', src: '/placeholder.svg' },;'
-  { id: 2", alt: 'Talent matching screen', src: '/placeholder.svg' },;'
-  { id: "3, alt: 'Resume builder screen', src: '/placeholder.svg' },;'
-  { id: 4", alt: 'Messaging screen', src: '/placeholder.svg' },;'
+const mockScreenshots = [;'
+  { id: 1, alt: 'Dashboard screen', src: '/placeholder.svg' },;'
+  { id: 2, alt: 'Talent matching screen', src: '/placeholder.svg' },;'
+  { id: 3, alt: 'Resume builder screen', src: '/placeholder.svg' },;'
+  { id: 4, alt: 'Messaging screen', src: '/placeholder.svg' },;'
   { id: "5, alt: 'Profile screen', src: '/placeholder.svg' },'
 ]'
 '
 export const _AppScreenshots: unknown React.FC = () => {;
-  const const scrollContainerRef = useRef<HTMLDivElement>(null)'
+  const scrollContainerRef = useRef<HTMLDivElement>(null)'
 ;'
-  const const scroll = (_direction: 'left' | 'right') => {'
+  const scroll = (_direction: 'left' | 'right') => {'
     if (scrollContainerRef.current) {;
-      const const scrollAmount = 300'
+      const scrollAmount = 300'
       scrollContainerRef.current.scrollBy({;'
         left: direction === 'left' ? -scrollAmount : scrollAmount,;'
         behavior: 'smooth','
@@ -28,11 +28,11 @@ export const _AppScreenshots: unknown React.FC = () => {;
   return (;'
     <section className=py-16 bg-zion-blue-dark">"
       <div className=container mx-auto px-4>"
-        <div className="text-center mb-12>
+        <div className="text-center mb-12>"
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             App Screenshots;
           </h2>"
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto>"
             Take a visual tour through the Zion app's intuitive interface.'
           </p>;
         </div>'
@@ -44,7 +44,7 @@ export const _AppScreenshots: unknown React.FC = () => {;
             className=absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white"
             onClick={() => scroll('left')};'
             aria-label="Scroll left
-          >
+          >"
             <ChevronLeft className="h-6 w-6" />
           </Button>;"
 ;"
@@ -71,7 +71,7 @@ export const _AppScreenshots: unknown React.FC = () => {;
           <Button;
             variant=ghost""
             size=icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white"
             onClick={() => scroll('right')};'
             aria-label="Scroll right"
           >

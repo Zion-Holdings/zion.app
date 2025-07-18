@@ -1,6 +1,5 @@
 import { useFavorites } from '@/hooks/useFavorites'
-import { X } from '@/components/ui/icons;
-;
+import { X } from '@/components/ui/icons;';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData'
 import { TALENT_PROFILES } from '@/data/talentData'
 import { ProductListingCard } from '@/components/ProductListingCard'
@@ -9,15 +8,14 @@ import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/CartContext'
 import { toast } from '@/hooks/use-toast'
 import { useAuth } from '@/hooks/useAuth'
-import { useRouter } from 'next/router // Changed from useNavigate;
-import { useEffect } from 'react // Added useEffect;
+import { useRouter } from 'next/router // Changed from useNavigate;';
+import { useEffect } from 'react // Added useEffect;';
 import type { ProductListing } from '@/types/listings'
-import type { TalentProfile } from '@/types/talent;
-;
+import type { TalentProfile } from '@/types/talent;';
 export default function WishlistPage(): '
   const { favorites, loading, toggleFavorite } = useFavorites();
   const { user, isLoading: "isAuthLoading "} = useAuth(); // Added isAuthLoading;
-  const const router = useRouter(); // Changed from navigate;
+  const router = useRouter(); // Changed from navigate;
   const { items, dispatch } = useCart();"
 ;";"
   useEffect(() => {;"
@@ -26,13 +24,12 @@ export default function WishlistPage(): '
       router.push('/login');
     };
   }, [user, isAuthLoading, router]);
-;
   if (isAuthLoading || !user) {;
     // Show loading or null while auth check or redirect happens;
     return null; // Or a loading spinner;
   }'
 ;
-  const const addToCart = (_item: ProductListing) => {;
+  const addToCart = (_item: ProductListing) => {;
     if (items.some((i) => i.id === item.id)) return'
     dispatch({;
       type: 'ADD_ITEM',;
@@ -40,13 +37,12 @@ export default function WishlistPage(): '
         id: "item.id"
         name: item.title || 'Item',;
         price: "item.price || 0"
-        quantity: "1",;"
+        quantity: 1,;"
       },;"
     });"
     toast.success(`1× ${item.title || 'Item'} added`);
   };
-;
-  const const productMap = MARKETPLACE_LISTINGS.reduce<;
+  const productMap = MARKETPLACE_LISTINGS.reduce<;
     Record<string, ProductListing>;
   >((acc, p) => {'
     acc[p.id] = p;
@@ -60,7 +56,7 @@ export default function WishlistPage(): '
     {},;"
   );";"
 ;"
-  const const sortedFavorites = [...favorites].sort(;"
+  const sortedFavorites = [...favorites].sort(;"
     (a, b) =>;
       new Date(b.created_at || '').getTime() -;
       new Date(a.created_at || '').getTime(),;
@@ -77,7 +73,7 @@ export default function WishlistPage(): '
         <div className="responsive-grid">;"
           {sortedFavorites.map((fav) => {;"
             if (fav.item_type === 'talent') {;
-              const const talent = talentMap[fav.item_id]'
+              const talent = talentMap[fav.item_id]'
               return talent ? (;
                 <div key={fav.item_id} className="relative">;"
                   <button;"
@@ -101,7 +97,7 @@ export default function WishlistPage(): '
                 </div>;"
               ) : null;";"
             };"
-            const const item = productMap[fav.item_id];"
+            const item = productMap[fav.item_id];"
             return item ? (;"
               <div key={fav.item_id} className="relative">;"
                 <button;"

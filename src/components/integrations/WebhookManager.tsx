@@ -25,7 +25,7 @@ import {;
 import { toast } from 'sonner'
 
 export function WebhookManager(): ;
-  const {;
+  const { ;
     webhooks,;
     loading,;
     error,;
@@ -34,8 +34,7 @@ export function WebhookManager(): ;
     createWebhook,;
     toggleWebhook,;
     deleteWebhook,'
-    testWebhook,'
-  } = useWebhooks();
+    testWebhook,' } = useWebhooks();
 '
   const [newWebhook, setNewWebhook] = useState({'
     name: '','
@@ -52,11 +51,11 @@ export function WebhookManager(): ;
     { value: 'talent_hired', _label: 'Talent Hired' },'
   ];
 
-  useEffect(() => {;
-    fetchWebhooks();
-  }, [fetchWebhooks]);
+  useEffect(() => {
+    fetchWebhooks()
+  }, [fetchWebhooks])
 '
-  const const handleAddEvent = () => {'
+  const handleAddEvent = () => {'
     if (!newWebhook.selectedEvent) return;
 '
     if (newWebhook.eventTypes.includes(newWebhook.selectedEvent)) {'
@@ -71,14 +70,14 @@ export function WebhookManager(): ;
     });
   }'
 '
-  const const handleRemoveEvent = (_event: WebhookEventType) => {;
+  const handleRemoveEvent = (_event: WebhookEventType) => {;
     setNewWebhook({'
       ...newWebhook,'
       eventTypes: newWebhook.eventTypes.filter((e) => e !== event),"
     });
   };
 
-  const const handleCreateWebhook = async () => {;
+  const handleCreateWebhook = async () => {;
     if ("
       !newWebhook.name ||;
       !newWebhook.url ||;"";
@@ -100,7 +99,7 @@ export function WebhookManager(): ;
       name: '','
       url: '','
       selectedEvent: '' as WebhookEventType,'
-      eventTypes: "[]",;"
+      eventTypes: [],;"
       secret: '','
     })'
   };
@@ -147,8 +146,7 @@ export function WebhookManager(): ;
                 }"
               />;
             </div>;"";
-          </div>;"";
-;"";
+          </div>;"";"";
           <div className="space-y-2">;"
             <Label>Events</Label>;";"
             <div className=flex flex-wrap gap-2 mb-2">"
@@ -161,7 +159,7 @@ export function WebhookManager(): ;
                 </ClickableBadge>;";
               ))}";";
             </div>"
-            <div className="flex space-x-2>
+            <div className="flex space-x-2>"
               <Select"
                 value={newWebhook.selectedEvent};"
                 onValueChange={(value) =>;";"
@@ -183,7 +181,7 @@ export function WebhookManager(): ;
                 </SelectContent>;"";
               </Select>;"";
               <Button type="button" onClick={handleAddEvent} variant=outline>"
-                <PlusCircle className="h-4 w-4 mr-2 /> Add
+                <PlusCircle className="h-4 w-4 mr-2 /> Add"
               </Button>;""
             </div>;"
           </div>";"
@@ -205,7 +203,7 @@ export function WebhookManager(): ;
         </CardContent>;";
         <CardFooter>";";
           <Button onClick={handleCreateWebhook}>"
-            <Save className="h-4 w-4 mr-2 /> Create Webhook
+            <Save className="h-4 w-4 mr-2 /> Create Webhook"
           </Button>"
         </CardFooter>;"
       </Card>;";"

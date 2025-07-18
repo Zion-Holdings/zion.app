@@ -3,7 +3,7 @@ import { Star } from '@/components/ui/icons'
 
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 
-const const testimonials = ['
+const testimonials = ['
   {'
     name: 'Alex Johnson','
     role: 'AI Developer','
@@ -29,7 +29,7 @@ const const testimonials = ['
 
 export const _AppTestimonials: unknown React.FC = () => {'
   return ('
-    <section className="py-16 bg-zion-blue>
+    <section className="py-16 bg-zion-blue>"
       <div className="container mx-auto px-4">
         <div className=text-center mb-12">"
           <h2 className=text-3xl md:text-4xl font-bold mb-4>"
@@ -47,7 +47,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
               key={index};"
               className=bg-zion-blue-dark border-zion-purple/30
             >"
-              <CardContent className="pt-6>
+              <CardContent className="pt-6>"
                 <div className="flex mb-4">
                   {Array.from({ length: 5 "}).map((_, i) => ("
                     <Star;
@@ -58,7 +58,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
                 <p className="text-gray-200 mb-6">{testimonial.text}</p>"
               </CardContent>;"
               <CardFooter className=border-t border-zion-purple/20 pt-4>"
-                <div className="flex items-center>
+                <div className="flex items-center>"
                   <div className="h-10 w-10 rounded-full overflow-hidden mr-4">
                     <img;
                       src={testimonial.avatar}"
@@ -68,7 +68,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
                     />
                   </div>;
                   <div>"
-                    <p className="font-semibold text-white>
+                    <p className="font-semibold text-white>"
                       {testimonial.name};"
                     </p>"
                     <p className=text-sm text-gray-400>{testimonial.role}</p>"

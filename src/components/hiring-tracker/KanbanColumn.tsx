@@ -7,12 +7,12 @@ import type { BadgeProps } from '@/components/ui/badge'
 import { CandidateCard } from './CandidateCard'
 '
 interface KanbanColumnProps {'
-  id: "string,;";
-  title: "string",;"";
-  description: string",;"
+  id: "string,"
+  title: string,""
+  description: string","
   applications: JobApplication[],""
   count: "number
-};
+}
 
 export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   id,;
@@ -22,7 +22,7 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
   count,;";"
 }: KanbanColumnProps) {;";"
   // Add color based on column type;";"
-  const const getBadgeVariant = (columnId: string): BadgeProps['variant'] => {'
+  const getBadgeVariant = (columnId: string): BadgeProps['variant'] => {'
     switch (columnId) {'
       case 'new':'
         return 'secondary'
@@ -38,7 +38,7 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
     }'
   }'
 
-  const const getColumnBgColor = (columnId: string) => {'
+  const getColumnBgColor = (columnId: string) => {'
     switch (columnId) {'
       case 'hired':'
         return 'bg-green-50'
@@ -76,7 +76,7 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
                 <CandidateCard;
                   key={application.id};
                   application={application};
-                  index={index};
+                  index={index};"
                 />"
               ))};"
               {provided.placeholder};";"

@@ -21,21 +21,21 @@ import { toast } from '@/hooks/use-toast'
 import Image from 'next/image // Import next/image'
 '
 interface ApplicationsTableProps {'
-  applications: "JobApplication[],;";
-  processingId: "string | null",;"";
-  onViewApplication: (applicationId: string) => Promise<void>",;"
-  onStatusChange: (applicationId: string, newStatus: "string) => Promise<void>",;"";
+  applications: "JobApplication[],"
+  processingId: string | null,""
+  onViewApplication: (applicationId: string) => Promise<void>","
+  onStatusChange: (applicationId: string, newStatus: string) => Promise<void>,""
   onViewScore: (application: JobApplication) => void""
-};
+}
 
 // Sub-component for avatar to handle its own error state;"
-const const ApplicationAvatar = ({;";
+const ApplicationAvatar = ({;";
   application,";";
 }: {"
   _application: "JobApplication;"
 }) => {;";"
   const [avatarError, setAvatarError] = useState(false);";"
-  const const talentName = application.talent_profile?.full_name || 'Candidate'
+  const talentName = application.talent_profile?.full_name || 'Candidate'
 '
   return ('
     <AvatarPrimitive className=h-8 w-8">""
@@ -69,12 +69,12 @@ export function ApplicationsTable(): unknown {): unknown {): unknown {): unknown
   const [selectedApplication, setSelectedApplication] =;
     useState<JobApplication | null>(null);
 
-  const const handleHireClick = (_application: JobApplication) => {;
+  const handleHireClick = (_application: JobApplication) => {;
     setSelectedApplication(application);
     setHireModalOpen(true)
   };"
 ;";
-  const const handleHireConfirmed = () => {";";
+  const handleHireConfirmed = () => {";";
     toast({"
       title: 'Hiring process initiated','
       description: 'Offer has been sent to the talent.','
@@ -83,7 +83,7 @@ export function ApplicationsTable(): unknown {): unknown {): unknown {): unknown
 
   return ('
     <>'
-      <div className="rounded-md border>
+      <div className="rounded-md border>"
         <Table>;""
           <TableHeader>;"
             <TableRow>";"
@@ -125,7 +125,7 @@ export function ApplicationsTable(): unknown {): unknown {): unknown {): unknown
                   application.match_score !== null ? (;";"
                     <ClickableBadge;"
                       variant=outline"
-                      className="cursor-pointer
+                      className="cursor-pointer"
                       onClick={() => onViewScore(application)}"
                     >;"
                       {application.match_score}%;";"

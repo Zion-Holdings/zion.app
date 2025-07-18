@@ -1,18 +1,18 @@
-import React from 'react';
-import * as React from 'react';
-import { ChevronDown } from '@/components/ui/icons;
-;
+import React from 'react''
+import * as React from 'react''
+import { ChevronDown } from '@/components/ui/icons'
+
 import { cn } from '@/lib/utils'
-import type { SafeRef } from '@/types/ref-types;
-;
+import type { SafeRef } from '@/types/ref-types'
+
 interface SidebarGroupProps extends React.HTMLAttributes<HTMLDivElement> {;
   title?: string;
   icon?: React.ReactNode;
   defaultExpanded?: boolean'
-  showChevron?: boolean;
+  showChevron?: boolean'
 };
 '
-const SidebarGroup: React.forwardRef<HTMLDivElement", SidebarGroupProps>(;
+const SidebarGroup: React.forwardRef<HTMLDivElement", SidebarGroupProps>(
   (;
     {;
       title,;
@@ -23,42 +23,41 @@ const SidebarGroup: React.forwardRef<HTMLDivElement", SidebarGroupProps>(;
       children,;
       ...props;
     },;
-    ref,;
-  ) => {;
-    const [expanded, setExpanded] = React.useState(defaultExpanded);"
-;";"
-    return (;"
-      <div;"
-        ref={ref as SafeRef<HTMLDivElement>};
+    ref,) => {;
+    const [expanded, setExpanded] = React.useState(defaultExpanded)
+;""
+    return (;
+      <div
+        ref={ref as SafeRef<HTMLDivElement>}"
         className={cn('px-3 py-2', className)}'
-        {...props};
+        {...props}'
       >;
         {title && ('
-          <button;
+          <button'
             type="button"
-            className="flex w-full items-center justify-between rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover:bg-secondary/30"
-            onClick={() => setExpanded(!expanded)};"
-          >;"
-            <div className="flex items-center gap-2">;
+            className=flex w-full items-center justify-between rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover:bg-secondary/30"
+            onClick={() => setExpanded(!expanded)}"
+          >;
+            <div className=flex items-center gap-2">"
               {icon};
-              <span>{title}</span>;"
-            </div>;";"
+              <span>{title}</span>
+            </div>;"
             {showChevron && (;"
-              <ChevronDown;"
+              <ChevronDown"
                 className={cn(;"
-                  'h-4 w-4 transition-transform',;
-                  expanded ? 'rotate-0' : '-rotate-90',;
+                  'h-4 w-4 transition-transform','
+                  expanded ? 'rotate-0' : '-rotate-90','
                 )}'
-              />;
+              />'
             )};
           </button>'
-        )};
-        <div className={cn('mt-1', !expanded && 'hidden')}>{children}</div>;
+        )}'
+        <div className={cn('mt-1', !expanded && 'hidden')}>{children}</div>'
       </div>'
-    );
+    )'
   },;
 )'
-;
-SidebarGroup.displayName = 'SidebarGroup;
+'
+SidebarGroup.displayName = 'SidebarGroup'
 export { SidebarGroup }'
 '''''

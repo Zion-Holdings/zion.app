@@ -3,13 +3,13 @@ import { Eye, Info, AlertTriangle, Ban } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 '
 interface ActionButtonsProps {'
-  flagId: "string,;";
-  status: "string",;"";
-  onAction: (",;"
+  flagId: "string,"
+  status: string,""
+  onAction: (","
     flagId: string,"
     action: 'warning' | 'suspension' | 'ban' | 'ignore','
-  ) => void;
-};
+  ) => void
+}
 
 export const _ActionButtons: unknown React.FC<ActionButtonsProps> = ({;
   flagId,'

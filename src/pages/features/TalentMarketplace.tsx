@@ -4,10 +4,9 @@ import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link;
-;
+import Link from 'next/link;';
 export default function TalentMarketplace(): '
-  const const schema = {;
+  const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
     name: 'Talent Marketplace','

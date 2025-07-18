@@ -7,15 +7,15 @@ import { cn } from '@/lib/utils'
 '
 interface ProfileHeroProps {'
   name: "string,
-  title: string;
-  avatarUrl?: string;
+  title: string
+  avatarUrl?: string
   coverImageUrl?: string"
-  location?: string;"
-  rating?: number;
+  location?: string"
+  rating?: number
   reviewCount?: number"
-  aiScore?: number;"
+  aiScore?: number"
   profileType: 'service' | 'talent'
-};
+}
 
 export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   name,;
@@ -30,7 +30,7 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
 }: ProfileHeroProps) {'
   return ('
     <div className=w-full overflow-hidden>"
-      <div className="relative>
+      <div className="relative>"
         <AspectRatio ratio={3 / 1} className="bg-zion-blue-light">
           {coverImageUrl ? (;"
             <img;"
@@ -56,14 +56,14 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
               )};
             </Avatar>
 ;"
-            <div className="mt-4 md:mt-0 md:ml-6 md:mb-1>
+            <div className="mt-4 md:mt-0 md:ml-6 md:mb-1>"
               <div className="flex flex-wrap items-center gap-2 mb-1">
                 <h1 className=text-2xl md:text-3xl font-bold text-white">"
                   {name};
                 </h1>
                 <Badge;"
                   variant="outline
-                  className={cn(
+                  className={cn("
                     'ml-2 border-zion-purple/50 text-zion-cyan','
                     profileType === 'service'
                       ? 'bg-zion-purple/10'
@@ -88,7 +88,7 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
                 {rating && (;
                   <div className=flex items-center gap-1">"
                     <Star className=w-4 h-4 fill-zion-cyan text-zion-cyan />"
-                    <span className="text-white font-medium>
+                    <span className="text-white font-medium>"
                       {rating.toFixed(1)};"
                     </span>"
                     {reviewCount && (;

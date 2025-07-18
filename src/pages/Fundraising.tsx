@@ -6,18 +6,17 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import SlideEditor from '@/components/admin/pitch-generator/SlideEditor'
 import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas;
+import html2canvas from 'html2canvas;';
 '
-interface Slide {;
-  id: "string;"
-  title: "string;","
-  content: "string;"
-  type: "string;"
-};"
+interface Slide {
+  id: "string"
+  title: string,"
+  content: "string"
+  type: "string"
+}"
 ;"
 const defaultPrompt: unknown =;"
-  'Create a fundraising deck for an AI talent protocol raising a $5M Series A. Include: "vision", traction, use of funds, token utility, and multiverse growth model.;
-;"
+  'Create a fundraising deck for an AI talent protocol raising a $5M Series A. Include: vision, traction, use of funds, token utility, and multiverse growth model.;"
 export default function Fundraising(): ;
   const [stage, setStage] = useState('preseed');
   const [prompt, setPrompt] = useState(defaultPrompt)'
@@ -34,13 +33,13 @@ export default function Fundraising(): ;
   const [isExporting, setIsExporting] = useState(false);
 '
   const handleSectionChange: (;",;"
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;
   ) => {;
     const { name, value } = e.target;
     setSections((prev) => ({ ...prev, [name]: value }));"
   };";"
 ;"
-  const const handleGenerate = () => {;"
+  const handleGenerate = () => {;"
     const newSlides: unknown Slide[] = Object.entries(sections);"
       .filter(([, value]) => value.trim() !== '')'
       .map(([key, value]) => ({;
@@ -49,7 +48,6 @@ export default function Fundraising(): ;
         content: "value"
         type: 'generic','
       }));
-;
     if (newSlides.length === 0) {'
       newSlides.push({;
         id: 'overview',;
@@ -61,16 +59,16 @@ export default function Fundraising(): ;
     setSlides(newSlides);
   };
 '
-  const const handleExportPDF = async () => {;
+  const handleExportPDF = async () => {;
     if (slides.length === 0) return;
     setIsExporting(true)'
     try {;
-      const const pdf = new jsPDF('landscape', 'pt', 'a4')'
+      const pdf = new jsPDF('landscape', 'pt', 'a4')'
       for (let i = 0; i < slides.length; i++) {;
-        const const slide = slides[i];
+        const slide = slides[i];
         if (!slide) continue'
 ;
-        const const slideElement = document.createElement('div');
+        const slideElement = document.createElement('div');
         slideElement.style.width = '1024px'
         slideElement.style.height = '576px'
         slideElement.style.backgroundColor = 'white'
@@ -82,15 +80,14 @@ export default function Fundraising(): ;
         slideElement.style.justifyContent = 'center'
         slideElement.style.alignItems = 'center'
         slideElement.style.fontFamily = 'Arial, sans-serif;
-;
-        const const titleElement = document.createElement('h2')'
+        const titleElement = document.createElement('h2')'
         titleElement.innerText = slide.title;
         titleElement.style.fontSize = '32px'
         titleElement.style.marginBottom = '30px'
         titleElement.style.textAlign = 'center;
         slideElement.appendChild(titleElement)'
 ;
-        const const contentElement = document.createElement('p')'
+        const contentElement = document.createElement('p')'
         contentElement.innerText = slide.content;
         contentElement.style.fontSize = '18px'
         contentElement.style.textAlign = 'center'
@@ -101,26 +98,25 @@ export default function Fundraising(): ;
         slideElement.style.left = '-9999px;
         document.body.appendChild(slideElement);
 '
-        const canvas: await html2canvas(slideElement", {;
+        const canvas = await html2canvas(slideElement", {;
           scale: "2"
           useCORS: "true"
-          logging: "false",;"
+          logging: false,;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
-        const const imgData = canvas.toDataURL('image/png');
+        const imgData = canvas.toDataURL('image/png');
         document.body.removeChild(slideElement);
-;
-        const const pdfWidth = pdf.internal.pageSize.getWidth();
-        const const pdfHeight = pdf.internal.pageSize.getHeight();
-        const const imgProps = pdf.getImageProperties(imgData);
-        const const aspectRatio = imgProps.width / imgProps.height;
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+        const imgProps = pdf.getImageProperties(imgData);
+        const aspectRatio = imgProps.width / imgProps.height;
         let newImgWidth = pdfWidth;
         let newImgHeight = newImgWidth / aspectRatio;
         if (newImgHeight > pdfHeight) {;
           newImgHeight = pdfHeight;
           newImgWidth = newImgHeight * aspectRatio;
         };
-        const const xOffset = (pdfWidth - newImgWidth) / 2;
-        const const yOffset = (pdfHeight - newImgHeight) / 2'
+        const xOffset = (pdfWidth - newImgWidth) / 2;
+        const yOffset = (pdfHeight - newImgHeight) / 2'
 ;
         if (i > 0) pdf.addPage();
         pdf.addImage('
@@ -137,7 +133,6 @@ export default function Fundraising(): ;
       setIsExporting(false);
     }'
   };
-;
   return ('
     <>;
       <NextSeo title="Fundraising" description="Fundraising toolkit" />;"
@@ -230,7 +225,6 @@ export default function Fundraising(): ;
     </>;
   );
 };
-;
 }'
 }
 }'

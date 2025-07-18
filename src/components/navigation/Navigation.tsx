@@ -4,22 +4,22 @@ import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
 import { cn } from '@/lib/utils'
 
-interface NavigationProps {;
-  className?: string;
-};
+interface NavigationProps {
+  className?: string
+}
 
 export function Navigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: NavigationProps) {'
-  const const router = useRouter()'
+  const router = useRouter()'
   const { _isAuthenticated } = useAuth();
 '
-  const const isActive = (_path: string) => {'
+  const isActive = (_path: string) => {'
     if (path === '/') {'
       return router.pathname === '/'
     }'
     return router.pathname.startsWith(path)'
   };
 '
-  const const navigationItems = ['
+  const navigationItems = ['
     { href: '/', label: 'Home' },'
     {'
       href: '/marketplace','
@@ -59,7 +59,7 @@ export function Navigation(): unknown {): unknown {): unknown {): unknown {): un
   return ('
     <nav className={cn('flex items-center space-x-6', className)}>'
       {navigationItems.map((item) => ('
-        <div key={item.href} className="relative group>
+        <div key={item.href} className="relative group>"
           <Link;"
             href={item.href}"
             className={cn(;

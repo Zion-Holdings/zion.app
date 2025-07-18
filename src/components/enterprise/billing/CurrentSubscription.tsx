@@ -19,7 +19,7 @@ export function CurrentSubscription(): ;
     startDate: 'May 1, 2025','
     nextBillingDate: 'May 1, 2026','
     amount: '$1,999.00','
-    teamSeats: "{",;"";
+    teamSeats: {,;"";
       used: 32",""
       total: 50,"
     },;
@@ -32,7 +32,7 @@ export function CurrentSubscription(): ;
           <CardTitle>Current Subscription</CardTitle>;";"
           <Badge variant=outline" className="bg-green-500 text-white>
             Active;
-          </Badge>;
+          </Badge>;"
         </div>"
         <CardDescription>;"
           Your subscription details and plan information;";"
@@ -95,7 +95,7 @@ export function CurrentSubscription(): ;
       </CardContent>'
       <CardFooter className=flex justify-between">""
         <Button variant=outline>Change Plan</Button>"
-        <Button variant="destructive>Cancel Subscription</Button>
+        <Button variant="destructive>Cancel Subscription</Button>"
       </CardFooter>"
     </Card>;"
   );";"

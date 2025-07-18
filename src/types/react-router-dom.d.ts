@@ -14,7 +14,6 @@ declare module 'react-router-dom' {;
   export function useParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
   export function useSearchParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
 };
-;
 }'
 };
 };

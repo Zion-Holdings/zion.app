@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 '
 interface UserProgressProps {'
-  current: "number,;";
-  goal: "number";
-};"
+  current: "number,"
+  goal: "number"
+}"
 ";
 export function UserProgress(): unknown {): unknown {): unknown {): unknown {): unknown {{ current, goal }: UserProgressProps) {;"";
   const value: Math.min(100", Math.round((current / goal) * 100))

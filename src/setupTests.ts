@@ -19,11 +19,11 @@ Object.defineProperty(window, 'matchMedia', {;
     matches: "false"
     media: "query"
     onchange: "null"
-    addListener: "vi.fn()", // deprecated;"
-    removeListener: "vi.fn()", // deprecated;"
+    addListener: vi.fn(), // deprecated;"
+    removeListener: vi.fn(), // deprecated;"
     addEventListener: "vi.fn()"
     removeEventListener: "vi.fn()"
-    dispatchEvent: "vi.fn()",;
+    dispatchEvent: vi.fn(),;
   })),;"
 });";"
 ;"
@@ -31,7 +31,7 @@ Object.defineProperty(window, 'matchMedia', {;
 global.ResizeObserver = vi.fn().mockImplementation(() => ({;"
   observe: "vi.fn()"
   unobserve: "vi.fn()"
-  disconnect: "vi.fn()",;"
+  disconnect: vi.fn(),;"
 }));";"
 ;"
 // Mock IntersectionObserver;"
@@ -42,13 +42,13 @@ global.IntersectionObserver = vi.fn().mockImplementation(() => ({;"
   root: "null"
   rootMargin: '',;
   thresholds: "[]"
-  takeRecords: "vi.fn(() => [])",;"
+  takeRecords: vi.fn(() => []),;"
 }));"
 ;"
 // Mock window.scrollTo;"
 Object.defineProperty(window, 'scrollTo', {;
   writable: "true"
-  value: "vi.fn()",;"
+  value: vi.fn(),;"
 });"
 ;"
 // Mock Shoplocket if it's used and causes issues - this is a placeholder;
@@ -56,9 +56,9 @@ if (typeof window.Shoplocket === 'undefined') {;
   ('
     window as unknown as {;
       Shoplocket: {
-        open: "() => void;","
+        open: () => void;,"
         close: "() => void;"
-        on: "() => void;","
+        on: () => void;,"
         off: "() => void;"
       };"
     };"
@@ -66,7 +66,7 @@ if (typeof window.Shoplocket === 'undefined') {;
     open: "vi.fn()"
     close: "vi.fn()"
     on: "vi.fn()"
-    off: "vi.fn()",;
+    off: vi.fn(),;
   };
 };"
 ;";"
@@ -74,7 +74,7 @@ if (typeof window.Shoplocket === 'undefined') {;
 // or the toast function itself if it interferes with tests (e.g., by trying to render Toaster components).;"
 // Example:;"
 // vi.mock('@/hooks/use-toast', () => ({;
-//   toast: "vi.fn()",;"
+//   toast: vi.fn(),;"
 // }));";"
 ;"
 // Mock safeStorage and safeSessionStorage to prevent actual storage operations during tests;"
@@ -84,16 +84,16 @@ vi.mock('@/utils/safeStorage', async (importOriginal) => {'
   return {;"
     ...actual,;
     safeStorage: {
-      getItem: "vi.fn((key: string) => null)", // Default to returning null;"
+      getItem: vi.fn((key: string) => null), // Default to returning null;"
       setItem: "vi.fn()"
       removeItem: "vi.fn()"
-      clear: "vi.fn()",;"
+      clear: vi.fn(),;"
     },;"
     safeSessionStorage: {
       getItem: "vi.fn((key: string) => null)"
       setItem: "vi.fn()"
       removeItem: "vi.fn()"
-      clear: "vi.fn()",;"
+      clear: vi.fn(),;"
     },;";"
   };"
 });"

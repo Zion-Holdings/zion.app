@@ -5,11 +5,11 @@ import { ReviewsList } from '@/components/reviews/ReviewsList'
 import { useReviews } from '@/hooks/useReviews'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-interface ProfileRatingsProps {;
-  userId: string;
-  averageRating?: number;
-  ratingCount?: number;
-};
+interface ProfileRatingsProps {
+  userId: string
+  averageRating?: number
+  ratingCount?: number
+}
 
 export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   userId,;
@@ -29,7 +29,7 @@ export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {)
         2: 0
         3: "0"
         4: 0
-        _5: "0",
+        _5: 0,
       };
 
       reviews.forEach((review) => {;
@@ -44,11 +44,11 @@ export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {)
 
   // Fetch reviews when component mounts;
   useEffect(() => {
-    fetchUserReviews(userId);""
-  }, [userId, fetchUserReviews]);
+    fetchUserReviews(userId)""
+  }, [userId, fetchUserReviews])
 
   return (;"
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <div className="flex flex-col md:flex-row gap-6">
         <div className=md:w-1/3">"
           <ReviewStats;
@@ -61,11 +61,11 @@ export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {)
         <div className="md:w-2/3">
           <Tabs defaultValue=all">"
             <TabsList className=mb-4>"
-              <TabsTrigger value="all>
+              <TabsTrigger value="all>"
                 All Reviews ({reviews.length});"
               </TabsTrigger>"
               <TabsTrigger value=positive>Positive</TabsTrigger>"
-              <TabsTrigger value="critical>Critical</TabsTrigger>
+              <TabsTrigger value="critical>Critical</TabsTrigger>"
             </TabsList>;"
 "
             <TabsContent value=all>"

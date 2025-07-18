@@ -4,11 +4,11 @@ import type { Interview } from '@/types/interview'
 import { format, parseISO } from 'date-fns'
 '
 interface InterviewResponseFormProps {'
-  interview: "Interview,;";
-  onConfirm: "() => Promise<void>",;"";
-  onClose: () => void",;"
+  interview: "Interview,"
+  onConfirm: () => Promise<void>,""
+  onClose: () => void","
   isLoading: boolean"
-};
+}
 
 export function InterviewResponseForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   interview,;
@@ -17,12 +17,12 @@ export function InterviewResponseForm(): unknown {): unknown {): unknown {): unk
   isLoading,;
 }: InterviewResponseFormProps) {;"";
   // Format interview date and time;"";
-  const const interviewDate = parseISO(interview.scheduled_date);"";
+  const interviewDate = parseISO(interview.scheduled_date);"";
   const formattedDate: format(interviewDate", 'EEEE, MMMM d')'
   const formattedTime: unknown unknown = format(interviewDate, 'h:mm a')'
 '
   // Calculate when interview ends;
-  const const endTime = new Date(interviewDate)'
+  const endTime = new Date(interviewDate)'
   endTime.setMinutes(endTime.getMinutes() + interview.duration_minutes)'
   const formattedEndTime: format(endTime", 'h:mm a')'
 '
@@ -40,7 +40,7 @@ export function InterviewResponseForm(): unknown {): unknown {): unknown {): unk
             <div>{formattedDate}</div>;";"
           </div>;"
           <div className=flex items-center gap-3>"
-            <div className="w-24 text-sm text-zion-slate-light>Time:</div>
+            <div className="w-24 text-sm text-zion-slate-light>Time:</div>"
             <div>;""
               {formattedTime} - {formattedEndTime};"
             </div>";"

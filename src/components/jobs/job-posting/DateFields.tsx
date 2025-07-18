@@ -12,11 +12,11 @@ import { FormControl } from '@/components/ui/form'
 import { cn } from '@/lib/utils'
 '
 interface DateFieldsProps {'
-  startDate: "Date | undefined,;";
-  setStartDate: "(date: Date | undefined) => void",;"";
+  startDate: "Date | undefined,"
+  setStartDate: (date: Date | undefined) => void,""
   endDate: Date | undefined","
   setEndDate: (date: Date | undefined) => void"
-};
+}
 
 export function DateFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   startDate,;
@@ -53,7 +53,7 @@ export function DateFields(): unknown {): unknown {): unknown {): unknown {): un
               onSelect={setStartDate};
               disabled={(date) => date > new Date()};
               initialFocus;
-            />;
+            />;"
           </PopoverContent>"
         </Popover>;"
       </div>;";"
@@ -83,7 +83,7 @@ export function DateFields(): unknown {): unknown {): unknown {): unknown {): un
               initialFocus;
             />;
           </PopoverContent>;
-        </Popover>;
+        </Popover>;"
       </div>"
     </div>;"
   );";"

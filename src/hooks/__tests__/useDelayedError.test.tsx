@@ -1,64 +1,59 @@
 import { renderHook, act } from '@testing-library/react'
 import { useDelayedError } from '../useDelayedError'
-import { vi } from 'vitest;
-;
-describe('useDelayedError', () => {;
+import { vi } from 'vitest;''
+describe('useDelayedError', () => {'
   beforeEach(() => {;
     vi.useFakeTimers();
   });
-;
   afterEach(() => {'
-    vi.runOnlyPendingTimers();
+    vi.runOnlyPendingTimers()'
     vi.useRealTimers();
   })'
-;
-  test('returns error only after the specified delay', () => {;
+'
+  test('returns error only after the specified delay', () => {'
     const { result, rerender } = renderHook('
-      ({ err }) => useDelayedError(err, 1000),;
-      { initialProps: "{ err: null "} },;"
-    );";"
+      ({ err }) => useDelayedError(err, 1000),'
+      { initialProps: "{ err: null } },
+    );""
+
+    expect(result.current).toBeNull()
 ;"
-    expect(result.current).toBeNull();"
-;"
-    rerender({ err: new Error('fail') });
-;
+    rerender({ err: new Error('fail') })'
     act(() => {;
       vi.advanceTimersByTime(500);
     });
     expect(result.current).toBeNull();
-;
     act(() => {'
-      vi.advanceTimersByTime(500);
+      vi.advanceTimersByTime(500)'
     });
     expect(result.current).toBeInstanceOf(Error)'
-    if (result.current instanceof Error) {;
-      expect(result.current.message).toBe('fail');
+    if (result.current instanceof Error) {'
+      expect(result.current.message).toBe('fail')'
     };
   })'
-;
-  test('resets timer if error changes before delay elapses', () => {;
+'
+  test('resets timer if error changes before delay elapses', () => {'
     const { result, rerender } = renderHook('
-      ({ err }) => useDelayedError(err, 1000),;
-      { initialProps: { err: new Error('first') } },;
+      ({ err }) => useDelayedError(err, 1000),'
+      { initialProps: { err: new Error('first') } },'
     );
 '
-    act(() => {;
+    act(() => {'
       vi.advanceTimersByTime(500);
     })'
-;
-    rerender({ err: new Error('second') });
-;
+'
+    rerender({ err: new Error('second') })'
     act(() => {;
       vi.advanceTimersByTime(999);
     });
     expect(result.current).toBeNull();
 '
-    act(() => {;
+    act(() => {'
       vi.advanceTimersByTime(1);
     })'
-    if (result.current instanceof Error) {;
+    if (result.current instanceof Error) {'
       expect(result.current.message).toBe('second')'
-    };
+    }'
   });
 })'
 '''''

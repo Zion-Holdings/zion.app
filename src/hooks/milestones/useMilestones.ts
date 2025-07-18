@@ -3,42 +3,40 @@ import { useCreateMilestone } from './useCreateMilestone'
 import { useUpdateMilestone } from './useUpdateMilestone'
 import { useDeleteMilestone } from './useDeleteMilestone'
 import { useUploadDeliverable } from './useUploadDeliverable'
-;
-export const const _useMilestones = (projectId?: string) => {;
-  const { milestones, activities, isLoading, error, refetch } ='
-    useLoadMilestones(projectId);
-  const { createMilestone, isSubmitting: "isCreating "} =;"
-    useCreateMilestone(projectId);";"
-  const {;"
-    updateMilestoneStatus,;"
+'
+export const _useMilestones = (projectId?: string) => {;
+  const { milestones, activities, isLoading, error, refetch } = '
+    useLoadMilestones(projectId)'
+  const { createMilestone, isSubmitting: "isCreating } =
+    useCreateMilestone(projectId);""
+  const {;
+    updateMilestoneStatus,
     updateMilestone,;"
-    isSubmitting: "isUpdating",;"
-  } = useUpdateMilestone();"
-  const { deleteMilestone, isSubmitting: "isDeleting "} = useDeleteMilestone();"
-  const { uploadDeliverable, isSubmitting: "isUploading "} =;
-    useUploadDeliverable();
-;"
-  // Combine all loading states;";"
-  const const isSubmitting = isCreating || isUpdating || isDeleting || isUploading;"
-;"
-  // Function to upload deliverable with project_id;"
-  const const handleUploadDeliverable = async (milestoneId: "string", _file: File) => {;
-    if (!projectId) return null;
+    isSubmitting: isUpdating,"
+  } = useUpdateMilestone();
+  const { deleteMilestone, isSubmitting: isDeleting "} = useDeleteMilestone()"
+  const { uploadDeliverable, isSubmitting: isUploading  } = "
+    useUploadDeliverable()"
+  // Combine all loading states;
+  const isSubmitting = isCreating || isUpdating || isDeleting || isUploading;"
+"
+  // Function to upload deliverable with project_id;
+  const handleUploadDeliverable = async (milestoneId: string, _file: File) => {
+    if (!projectId) return null
     return await uploadDeliverable(milestoneId, projectId, file);
   };
-;
   return {;
     milestones,;
     activities,;
     isLoading,;
     error,;
-    isSubmitting,;"
-    createMilestone,;";"
-    updateMilestoneStatus,;"
-    updateMilestone,;"
+    isSubmitting,"
+    createMilestone,;"
+    updateMilestoneStatus,;
+    updateMilestone,"
     deleteMilestone,;"
-    uploadDeliverable: "handleUploadDeliverable",;"
-    refetch,;";"
+    uploadDeliverable: handleUploadDeliverable,
+    refetch,;"
   };"
-};"
-"""""
+}
+""""

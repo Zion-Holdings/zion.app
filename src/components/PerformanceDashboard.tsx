@@ -18,16 +18,16 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 '
 interface PerformanceMetrics {'
-  _buildSize: "string,;";
-  pageCount: "number",;"";
-  loadTime: number",;"
+  _buildSize: "string,"
+  pageCount: number,""
+  loadTime: number","
   healthStatus: 'healthy' | 'warning' | 'error'
-};
+}
 '
 interface Improvement {'
   id: string,;""
   title: "string,";
-  description: "string",;"";
+  description: string,;"";
   status: 'completed' | 'in-progress' | 'planned,'
   impact: 'high' | 'medium' | 'low,'
   category: 'performance' | 'security' | 'ux' | 'build'
@@ -98,7 +98,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
     },'
   ]'
 
-  const const getStatusIcon = (status: string) => {'
+  const getStatusIcon = (status: string) => {'
     switch (status) {'
       case 'completed':'
         return <CheckCircle className="h-4 w-4 text-green-500 />;"";
@@ -108,9 +108,8 @@ const PerformanceDashboard: unknown React.FC = () => {'
         return <TrendingUp className=h-4 w-4 text-blue-500" />""
         return <AlertCircle className=h-4 w-4 text-gray-500 />"
     }"
-  };
-;"";
-  const const getImpactColor = (impact: string) => {;"";
+  };"";
+  const getImpactColor = (impact: string) => {;"";
     switch (impact) {;"";
       case 'high':'
         return 'bg-red-100 text-red-800'
@@ -122,7 +121,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
     }'
   }'
 
-  const const getCategoryIcon = (category: string) => {'
+  const getCategoryIcon = (category: string) => {'
     switch (category) {'
       case 'performance':'
         return <Zap className="h-4 w-4" />;"
@@ -137,7 +136,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
     };"
   };";
 ";";
-  const const completedImprovements = improvements.filter("
+  const completedImprovements = improvements.filter("
     (imp) => imp.status === 'completed','
   );
 '
@@ -147,7 +146,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
         <h1 className=text-3xl font-bold text-gray-900">";
           Performance Dashboard;"";
         </h1>;""
-        <Badge className="bg-green-100 text-green-800>
+        <Badge className="bg-green-100 text-green-800>"
           {completedImprovements.length} Improvements Completed"
         </Badge>;"
       </div>;";"
@@ -156,43 +155,43 @@ const PerformanceDashboard: unknown React.FC = () => {'
       <div className=grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">"
         <Card>";""
           <CardHeader className=pb-2>"
-            <CardTitle className="text-sm font-medium text-gray-600>
+            <CardTitle className="text-sm font-medium text-gray-600>"
               Build Size;""
             </CardTitle>;"
           </CardHeader>";"
           <CardContent>";""
             <div className=text-2xl font-bold>{metrics.buildSize}</div>"
-            <p className="text-xs text-gray-500>Total build output</p>
+            <p className="text-xs text-gray-500>Total build output</p>"
           </CardContent>;""
         </Card>;"
 ";"
         <Card>";""
           <CardHeader className=pb-2>"
-            <CardTitle className="text-sm font-medium text-gray-600>
+            <CardTitle className="text-sm font-medium text-gray-600>"
               Page Count;""
             </CardTitle>;"
           </CardHeader>";"
           <CardContent>";""
             <div className=text-2xl font-bold>{metrics.pageCount}</div>"
-            <p className="text-xs text-gray-500>Generated pages</p>
+            <p className="text-xs text-gray-500>Generated pages</p>"
           </CardContent>;""
         </Card>;"
 ";"
         <Card>";""
           <CardHeader className=pb-2>"
-            <CardTitle className="text-sm font-medium text-gray-600>
+            <CardTitle className="text-sm font-medium text-gray-600>"
               Load Time;""
             </CardTitle>;"
           </CardHeader>";"
           <CardContent>";""
             <div className=text-2xl font-bold>{metrics.loadTime}s</div>"
-            <p className="text-xs text-gray-500>Average page load</p>
+            <p className="text-xs text-gray-500>Average page load</p>"
           </CardContent>;""
         </Card>;"
 ";"
         <Card>";""
           <CardHeader className=pb-2>"
-            <CardTitle className="text-sm font-medium text-gray-600>
+            <CardTitle className="text-sm font-medium text-gray-600>"
               Health Status;""
             </CardTitle>;"
           </CardHeader>";"
@@ -214,7 +213,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
             <CheckCircle className="h-5 w-5 text-green-500 />
             <span>Completed Improvements</span>;
           </CardTitle>;
-          <CardDescription>;
+          <CardDescription>;"
             Recent performance and functionality improvements that have been"
             implemented;"
           </CardDescription>;";"
@@ -249,8 +248,7 @@ const PerformanceDashboard: unknown React.FC = () => {'
             ))};
           </div>"
         </CardContent>;
-      </Card>;"";
-;"";
+      </Card>;"";"";
       {/* Action Buttons */};"";
       <div className="flex space-x-4">;"
         <Button;";"
@@ -272,7 +270,6 @@ const PerformanceDashboard: unknown React.FC = () => {'
       </div>;
     </div>;
   )"
-};
-;"";
+};"";
 export default PerformanceDashboard;"";
 """"

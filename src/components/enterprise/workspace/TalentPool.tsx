@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 '
 export function TalentPool(): '
   // Mock talent data;
-  const const talents = ['
+  const talents = ['
     {'
       id: 'talent-1','
       name: 'Jessica Lee','
@@ -38,7 +38,7 @@ export function TalentPool(): '
     },"
   ];"
 ;";"
-  const const getStatusBadge = (status: string) => {;";"
+  const getStatusBadge = (status: string) => {;";"
     switch (status) {;";"
       case 'available':'
         return <Badge className=bg-green-500">Available</Badge>""
@@ -46,7 +46,7 @@ export function TalentPool(): '
         return ('
           <Badge'
             variant=outline"
-            className="bg-amber-100 text-amber-800 border-amber-200
+            className="bg-amber-100 text-amber-800 border-amber-200"
           >;""
             Interviewing;"
           </Badge>";"
@@ -55,7 +55,7 @@ export function TalentPool(): '
         return ('
           <Badge'
             variant=outline"
-            className="bg-blue-100 text-blue-800 border-blue-200
+            className="bg-blue-100 text-blue-800 border-blue-200"
           >"
             Hired;"
           </Badge>;";"
@@ -69,7 +69,7 @@ export function TalentPool(): '
     <Card>";";
       <CardHeader>"
         <div className="flex items-center justify-between>
-          <div>;
+          <div>;"
             <CardTitle>Dedicated Talent Pool</CardTitle>"
             <CardDescription>;"
               Candidates matched to your company;";"

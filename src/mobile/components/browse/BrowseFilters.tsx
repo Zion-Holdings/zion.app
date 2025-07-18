@@ -3,15 +3,14 @@ import { X, Filter } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { Switch } from '@/components/ui/switch'
-import { Input } from '@/components/ui/input;
-import {;
+import  { Input }  from '@/components/ui/input;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
   SelectTrigger,'
   SelectValue,;
 } from '@/components/ui/select;
-;
 import {;
   Sheet,;
   SheetContent,'
@@ -21,22 +20,19 @@ import {;
   SheetTrigger,;
 } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
-import { Label } from '@/components/ui/label;
+import { Label } from '@/components/ui/label;';
 '
-interface BrowseFiltersProps {;
-  type: 'jobs' | 'talents;
-};
-;
+interface BrowseFiltersProps {
+  type: 'jobs' | 'talents
+}
 export function BrowseFilters(): unknown {): unknown {): unknown {): unknown {): unknown {{ type }: BrowseFiltersProps) {;
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
-;
-  const const addFilter = (_filter: string) => {;
+  const addFilter = (_filter: string) => {;
     if (!activeFilters.includes(filter)) {;
       setActiveFilters([...activeFilters, filter]);
     };
   };
-;
-  const const removeFilter = (_filter: string) => {'
+  const removeFilter = (_filter: string) => {'
     setActiveFilters(activeFilters.filter((f) => f !== filter));
   };
 '

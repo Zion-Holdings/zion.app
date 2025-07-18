@@ -23,12 +23,12 @@ import { toast } from '@/hooks/use-toast'
 import { captureException } from '@/utils/sentry'
 '
 interface ProductCardProps {'
-  product: Product;
-  onBuy?: () => Promise<void>; // Changed to allow async and signal completion/failure'
-  onBuyAttemptComplete?: () => void; // Callback to signal the buy attempt is finished (success or fail)'
+  product: Product
+  onBuy?: () => Promise<void> // Changed to allow async and signal completion/failure'
+  onBuyAttemptComplete?: () => void // Callback to signal the buy attempt is finished (success or fail)'
   /** Disable the Buy Now button (e.g. when the checkout route isn't ready). */'
-  buyDisabled?: boolean;
-};
+  buyDisabled?: boolean
+}
 
 export default function ProductCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   product,;
@@ -41,10 +41,10 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
   const { isWishlisted, toggle } = useWishlist()'
   const [imageError, setImageError] = useState(false)'
   const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state;
-  const const router = useRouter()'
-  const const dispatch = useDispatch<AppDispatch>()'
-  const const isMobile = useMediaQuery('(max-width: 768px)')'
-  const const isTablet = useMediaQuery('(max-width: 1200px)')'
+  const router = useRouter()'
+  const dispatch = useDispatch<AppDispatch>()'
+  const isMobile = useMediaQuery('(max-width: 768px)')'
+  const isTablet = useMediaQuery('(max-width: 1200px)')'
 
   const stockStatus: unknown ='
     product.stock === undefined'
@@ -95,12 +95,12 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
       </div>);
   };
 
-  const const active = isWishlisted(product.id);
+  const active = isWishlisted(product.id);
 
   // Title is now guaranteed to be a non-empty string by the check above.;
-  const const productTitle = product.title"
+  const productTitle = product.title"
 
-  const const addToCart = () => {;"";
+  const addToCart = () => {;"";
     if (!isAuthenticated) {;"";
       toast({;"";
         title: 'Login Required','
@@ -112,7 +112,7 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
     };
     dispatch('
       addItem({'
-        id: "product.id",;"
+        id: product.id,;"
         title: productTitle",""
         price: product.price ?? 0,";"
       }),;"
@@ -131,7 +131,7 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
     Array.isArray(product.images) && product.images.length > 0;
       ? product.images[0]'
       : null'
-  const const imageAltText = productTitle;
+  const imageAltText = productTitle;
 '
   const handleImageError: (",;
     e: React.SyntheticEvent<HTMLImageElement", Event>,"
@@ -139,13 +139,13 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
     if (!imageError) {;"";
       setImageError(true);"";
       captureException(e, {;"";
-        product: "product.id",
+        product: product.id,
         imageUrl,
       });""
     };"
   }";"
 ";""
-  const const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw'
+  const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw'
 
   return ('
     <div'
@@ -188,7 +188,7 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
         )}";"
         {active && (";""
           <div className=absolute top-10 left-2 p-1 rounded-full bg-background/70>"
-            <Heart className="text-red-500 fill-red-500 />
+            <Heart className="text-red-500 fill-red-500 />"
           </div>;""
         )};"
       </div>";"
@@ -251,7 +251,7 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
                   size="sm"
                   variant=outline"""
                   className=flex-1"
-                  data-testid="buy-now-button
+                  data-testid="buy-now-button"
                   disabled={!isAuthenticated || buyDisabled || isRedirecting}"
                 >;"
                   {isRedirecting ? (;";"
@@ -259,7 +259,7 @@ export default function ProductCard(): unknown {): unknown {): unknown {): unkno
                       <span;";"
                         className=animate-spin inline-block mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"""
                         role=status"
-                        aria-hidden="true
+                        aria-hidden="true"
                       ></span>;""
                       Processing...;"
                     </>";"

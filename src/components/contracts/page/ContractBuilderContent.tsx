@@ -14,7 +14,7 @@ const mockTalent: unknown "TalentProfile = {,;";
   user_id: 'user-abc-123','
   full_name: 'Alex Chen','
   professional_title: 'Full Stack Developer','
-  hourly_rate: "85",;"
+  hourly_rate: 85,;"
   profile_picture_url: '','
   skills: ['React', 'Node.js', 'Smart Contracts'],'
 }'
@@ -43,13 +43,13 @@ export function ContractBuilderContent(): ;
     },;""
   ]);"
 ";"
-  const const handleContractGenerated = (_content: string) => {";""
+  const handleContractGenerated = (_content: string) => {";""
     logDebug('Contract generated:', {'
       preview: content.substring(0, 100) + '...','
     })'
   };
 '
-  const const handleViewContract = (_contractId: string) => {'
+  const handleViewContract = (_contractId: string) => {'
     logDebug('Viewing contract:', { data: "{ contractId "} });"
     // Future implementation: View specific contract details";"
   };

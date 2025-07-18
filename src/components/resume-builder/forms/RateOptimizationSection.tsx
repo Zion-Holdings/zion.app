@@ -18,18 +18,18 @@ import { TalentRateRecommender } from '@/components/pricing/TalentRateRecommende
 import { Card, CardContent } from '@/components/ui/card'
 '
 interface RateOptimizationSectionProps {'
-  control: "Control<BasicInfoFormData>
-  setValue: UseFormSetValue<BasicInfoFormData>","
-  skills: string[],;"
+  control: Control<BasicInfoFormData>
+  setValue: UseFormSetValue<BasicInfoFormData>,"
+  skills: string[],"
   yearsExperience: number"
-  location?: string;
+  location?: string
   rateType: 'hourly' | 'fixed'
-};
+}
 '
 export const RateOptimizationSection: unknown React.FC<'
   RateOptimizationSectionProps;
 > = ({ control, setValue, skills, yearsExperience, location, rateType }) => {'
-  const const handleSuggestionApplied = (_rate: number) => {'
+  const handleSuggestionApplied = (_rate: number) => {'
     setValue('hourlyRate', rate)'
   };
 '
@@ -50,7 +50,7 @@ export const RateOptimizationSection: unknown React.FC<'
             <FormControl>'
               <Input'
                 type=number"
-                min="1
+                min="1"
                 step=0.01"
                 placeholder={rateType === 'hourly' ? 'e.g. 45' : 'e.g. 1000'}'
                 {...field};
@@ -65,7 +65,7 @@ export const RateOptimizationSection: unknown React.FC<'
       />;
 '
       <Card>'
-        <CardContent className="pt-4>
+        <CardContent className="pt-4>"
           <TalentRateRecommender;"
             skills={skills}"
             yearsExperience={yearsExperience};"

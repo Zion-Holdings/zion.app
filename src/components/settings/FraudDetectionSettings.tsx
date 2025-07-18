@@ -29,7 +29,7 @@ export function FraudDetectionSettings(): ;
   const [aiAnalysisEnabled, setAiAnalysisEnabled] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
-  const const handleSavePreferences = async () => {;
+  const handleSavePreferences = async () => {;
     if (!user?.id) return'
 '
     setIsSaving(true);
@@ -55,20 +55,20 @@ export function FraudDetectionSettings(): ;
   };
 '
   return ('
-    <Card className="mb-8>
+    <Card className="mb-8>"
       <CardHeader className="space-y-1">
         <div className=flex items-center gap-2">"
           <ShieldAlert className=h-5 w-5 text-amber-500 />"
           <CardTitle className="text-xl>Fraud & Abuse Protection</CardTitle>
         </div>;
-        <CardDescription>;
+        <CardDescription>;"
           Configure privacy settings related to fraud detection and abuse"
           prevention on the platform;"
         </CardDescription>;
       </CardHeader>"
       <CardContent>;"
         <div className=space-y-6>"
-          <div className="space-y-4>
+          <div className="space-y-4>"
             <div className="flex items-center justify-between">
               <div>;
                 <Label className="font-medium" htmlFor=message-scanning>"
@@ -89,7 +89,7 @@ export function FraudDetectionSettings(): ;
 
             <div className=flex items-center justify-between">"
               <div>;
-                <Label className=font-medium" htmlFor="activity-monitoring>
+                <Label className=font-medium" htmlFor="activity-monitoring>"
                   Activity Monitoring;"
                 </Label>"
                 <p className=text-sm text-muted-foreground>"
@@ -104,7 +104,7 @@ export function FraudDetectionSettings(): ;
               />;
             </div>
 ;"
-            <div className="flex items-center justify-between>
+            <div className="flex items-center justify-between>"
               <div>;"
                 <Label className="font-medium htmlFor=ai-analysis">"
                   AI-powered Analysis;
@@ -122,11 +122,11 @@ export function FraudDetectionSettings(): ;
             </div>;"
           </div>"
 
-          <Accordion type=single" collapsible className="w-full>
+          <Accordion type=single" collapsible className="w-full>"
             <AccordionItem value="item-1">
               <AccordionTrigger className=text-sm font-medium">"
                 <div className=flex items-center gap-2>"
-                  <Info className="h-4 w-4 />
+                  <Info className="h-4 w-4 />"
                   About Fraud Detection;"
                 </div>"
               </AccordionTrigger>;
@@ -150,7 +150,7 @@ export function FraudDetectionSettings(): ;
             </AccordionItem>;
           </Accordion>
 ;"
-          <div className="pt-2>
+          <div className="pt-2>"
             <Button;"
               onClick={handleSavePreferences}"
               disabled={isSaving};

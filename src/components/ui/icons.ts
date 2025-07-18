@@ -2,7 +2,7 @@
  * Optimized icon exports for better tree shaking and bundle size;
  * This file centralizes all icon imports to reduce bundle size;
  */;
-;
+
 // Layout & Design Icons;
 export {;
   Grid,;
@@ -16,8 +16,8 @@ export {;
   Move,;
   RotateCcw,;
   LayoutGrid,;
-} from 'lucide-react;
-;
+} from 'lucide-react'
+
 // Utility Icons;
 export {;
   Home,;
@@ -30,12 +30,12 @@ export {;
   ZoomOut,;
   Eye,;
   EyeOff,'
-  Sun,;
+  Sun,'
   Moon,;
   Monitor,'
-  PowerOff,;
-} from 'lucide-react;
-;
+  PowerOff,'
+} from 'lucide-react'
+
 // Status Icons;
 export {;
   Check,;
@@ -49,12 +49,12 @@ export {;
   Clock,;
   Calendar,;
   Bell,'
-  Ban,;
+  Ban,'
   ShieldAlert,;
   HelpCircle,'
-  ShieldCheck,;
-} from 'lucide-react;
-;
+  ShieldCheck,'
+} from 'lucide-react'
+
 // Media Icons;
 export {;
   Play,;
@@ -63,12 +63,12 @@ export {;
   VolumeX,;
   Image,;
   Video,'
-  Camera,;
+  Camera,'
   Mic,;
   MicOff,'
-  PlayCircle,;
-} from 'lucide-react;
-;
+  PlayCircle,'
+} from 'lucide-react'
+
 // File & Document Icons;
 export {;
   File,;
@@ -79,12 +79,12 @@ export {;
   FilePlus,;
   Folder,;
   FolderOpen,'
-  Save,;
+  Save,'
   Clipboard,;
   PaperclipIcon,'
-  Archive,;
-} from 'lucide-react;
-;
+  Archive,'
+} from 'lucide-react'
+
 // Social & User Icons;
 export {;
   User,;
@@ -97,12 +97,12 @@ export {;
   UserCheck,;
   Shield,;
   Lock,'
-  Unlock,;
+  Unlock,'
   LockKeyhole,;
   Key,'
-  UserIcon,;
-} from 'lucide-react;
-;
+  UserIcon,'
+} from 'lucide-react'
+
 // Business & Finance Icons;
 export {;
   DollarSign,;
@@ -124,15 +124,15 @@ export {;
   BadgeCheck,;
   Crown,;
   Medal,'
-  Trophy,;
+  Trophy,'
   Handshake,;
   ShoppingCart,'
-  BadgePlus,;
-} from 'lucide-react;
+  BadgePlus,'
+} from 'lucide-react'
 '
-// Data Visualization Icons;
-export { BarChart, LineChart } from 'lucide-react;
-;
+// Data Visualization Icons'
+export { BarChart, LineChart } from 'lucide-react'
+
 // Development & Tech Icons;
 export {;
   Code,;
@@ -155,12 +155,12 @@ export {;
   Lightbulb,;
   Webhook,;
   Network,'
-  Recycle,;
+  Recycle,'
   Truck,;
   Smartphone,'
-  Building,;
-} from 'lucide-react;
-;
+  Building,'
+} from 'lucide-react'
+
 // Action Icons;
 export {;
   Plus,;
@@ -203,12 +203,12 @@ export {;
   Link as LinkIcon,;
   Megaphone,;
   Pin,'
-  Instagram,;
+  Instagram,'
   Youtube,;
   Github,'
-  Slack,;
-} from 'lucide-react;
-;
+  Slack,'
+} from 'lucide-react'
+
 // Navigation & UI Icons;
 export {;
   Menu,;
@@ -230,17 +230,17 @@ export {;
   ArrowUpZA,;
   Circle,;
   CircleDot,'
-  Dot,;
+  Dot,'
   GripVertical,;
   PanelLeft,'
-  ImageIcon,;
-} from 'lucide-react;
-;
+  ImageIcon,'
+} from 'lucide-react'
+
 // Export type for icon component props'
-export type IconProps = {;
+export type IconProps = {'
   size?: number;
   className?: string'
-  color?: string;
-  'aria-label'?: string;
+  color?: string'
+  'aria-label'?: string'
 }'
 '''''

@@ -5,27 +5,26 @@ import { BrowseFilters } from '@/mobile/components/browse/BrowseFilters'
 import { BrowseCards } from '@/mobile/components/browse/BrowseCards'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
-import { logInfo } from '@/utils/productionLogger;
+import { logInfo } from '@/utils/productionLogger;';
 '
 type Job = {;
   id: "string;"
-  title: "string;","
+  title: string;,"
   company: "string;"
-  location: "string;","
+  location: string;,"
   postedAt: "string;"
   description: "string;"
 };";"
 ;"
 export function MobileBrowse(): ;"
   const { _user } = useAuth();"
-  const const isClient = user?.userType === 'client' || user?.userType === 'admin'
+  const isClient = user?.userType === 'client' || user?.userType === 'admin'
   const [browseType, setBrowseType] = useState<'jobs' | 'talents'>(;
     isClient ? 'talents' : 'jobs',;
   );
   const [jobs, setJobs] = useState<Job[]>([]);
   const [_loading, setLoading] = useState<boolean>(true);
   const [_error, setError] = useState<string | null>(null);
-;
   useEffect(() => {;
     (async () => {;
       try {'
@@ -67,8 +66,7 @@ export function MobileBrowse(): ;"
       };
     })()'
   }, []);
-;
-  const const talentsData = ['
+  const talentsData = ['
     {;
       id: '1',;
       title: 'Sarah Johnson',;
@@ -79,7 +77,7 @@ export function MobileBrowse(): ;"
       badges: ['UI/UX', 'Figma', 'User Testing'],;
       price: '$75/hr',;
       image: '',;
-      match: "95",;"
+      match: 95,;"
     },;"
     {;"
       id: '2',;
@@ -91,7 +89,7 @@ export function MobileBrowse(): ;"
       badges: ['React', 'Node.js', 'AWS'],;
       price: '$90/hr',;
       image: '',;
-      match: "89",;"
+      match: 89,;"
     },;"
     {;"
       id: '3',;
@@ -103,11 +101,10 @@ export function MobileBrowse(): ;"
       badges: ['Agile', 'Scrum', 'JIRA'],;
       price: '$85/hr',;
       image: '',;
-      _match: "82",;
+      _match: 82,;
     },;
   ];
-;
-  const const handleViewDetails = (id: string) => {;
+  const handleViewDetails = (id: string) => {;
     logInfo(`View details for item ${id}`);"
     // Navigate to details page;";"
   };"
@@ -144,7 +141,7 @@ export function MobileBrowse(): ;"
               ? jobs.map((job) => ({'
                   ...job,;
                   subtitle: "job.company"
-                  badges: "[]",;
+                  badges: [],;
                 }));
               : talentsData;
           };

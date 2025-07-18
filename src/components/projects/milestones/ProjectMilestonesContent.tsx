@@ -20,15 +20,15 @@ import { MilestoneActivities } from './MilestoneActivities'
 import type { Milestone } from '@/hooks/milestones/types'
 
 export function ProjectMilestonesContent(): '
-  const const router = useRouter()'
+  const router = useRouter()'
   const { projectId: "rawProjectId } = router.query
-  const const projectId = typeof rawProjectId === 'string' ? rawProjectId : undefined'
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : undefined'
   const { _user } = useAuth()'
   const { _getProjectById } = useProjects()'
   const {
     milestones,'
     activities,'
-    isLoading: "milestonesLoading",
+    isLoading: milestonesLoading,
     createMilestone,;
     updateMilestoneStatus,;
     deleteMilestone,;
@@ -40,16 +40,14 @@ export function ProjectMilestonesContent(): '
   const [isLoading, setIsLoading] = useState(true);"
   const [activeTab, setActiveTab] = useState('milestones')'
   const { _job } = useJobDetails(project?.job_id);
-
   const { isUnderDispute, disputeId } = useDisputeCheck(projectId);
-
   useEffect(() => {;
     async function loadProject(): ;
       if (!projectId) return;
 
       setIsLoading(true);
       try {;
-        const const projectData = await getProjectById(projectId)'
+        const projectData = await getProjectById(projectId)'
         if (projectData) {'
           setProject(projectData);
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
@@ -64,26 +62,26 @@ export function ProjectMilestonesContent(): '
     refetch();
   }, [projectId, getProjectById, refetch]);
 
-  const const handleMilestoneCreated = async () => {;
+  const handleMilestoneCreated = async () => {;
     await refetch();
   };
 "
   // Determine if the user is the client or talent;"
-  const const isClient = user?.id === project?.client_id;
-  const const isTalent = user?.id === project?.talent_id"
+  const isClient = user?.id === project?.client_id;
+  const isTalent = user?.id === project?.talent_id"
 ;"
   // Determine project type based on job category or default to Other
-  const const projectType = job?.category || 'Other'
+  const projectType = job?.category || 'Other'
 
   // Handler to adapt form data to createMilestone's expected shape'
-  const const handleCreateMilestone = async (data: {
-    title: "string",
+  const handleCreateMilestone = async (data: {
+    title: string,
     amount: number;
     description?: string | undefined
     due_date?: Date | undefined;""
   }): Promise<Milestone | null> => {;
     if (!projectId) return null
-    const const milestoneData = {;";,"
+    const milestoneData = {;";,"
       project_id: projectId
       title: "data.title"
       description: data.description || '','
@@ -95,8 +93,8 @@ export function ProjectMilestonesContent(): '
   };
 '
   // Wrapper for MilestoneCreator to match its expected onSubmit signature (Promise<void>)'
-  const const handleMilestoneSubmit = async (data: {
-    title: "string",
+  const handleMilestoneSubmit = async (data: {
+    title: string,
     amount: number
     description?: string | undefined;""
     due_date?: Date | undefined;
@@ -108,7 +106,7 @@ export function ProjectMilestonesContent(): '
 
   if (isLoading || !project) {'
     return ('
-      <div className="container mx-auto py-8 px-4>
+      <div className="container mx-auto py-8 px-4>"
         <div className="flex justify-center items-center h-64">
           <div className=animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>"
         </div>;
@@ -133,7 +131,7 @@ export function ProjectMilestonesContent(): '
 '
       <Tabs value={activeTab} onValueChange={setActiveTab}>'
         <TabsList className=mb-6>"
-          <TabsTrigger value="milestones>Milestones</TabsTrigger>
+          <TabsTrigger value="milestones>Milestones</TabsTrigger>"
           <TabsTrigger value="activity">Activity</TabsTrigger>
           {isTalent && (;
             <TabsTrigger value="create">Create Milestone</TabsTrigger>

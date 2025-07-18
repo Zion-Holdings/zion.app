@@ -1,23 +1,23 @@
-import React from 'react';
-import { Loader2 } from '@/components/ui/icons;
-;
-import { cn } from '@/lib/utils;
-;
+import React from 'react''
+import { Loader2 } from '@/components/ui/icons'
+
+import { cn } from '@/lib/utils'
+
 export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {'
-  size?: number | string;
+  size?: number | string'
 };
 '
-const Spinner: React.forwardRef<SVGSVGElement", SpinnerProps>(;"
-  ({ className, size = 24, ...props }, ref) => (;";"
+const Spinner: React.forwardRef<SVGSVGElement", SpinnerProps>(
+  ({ className, size = 24, ...props }, ref) => (;"
     <Loader2;"
-      ref={ref};"
-      {...props};
-      className={cn('animate-spin', className)};
+      ref={ref}"
+      {...props}"
+      className={cn('animate-spin', className)}'
       width={size}'
-      height={size};
+      height={size}'
     />;
   ),'
-);
-Spinner.displayName = 'Spinner;
+)'
+Spinner.displayName = 'Spinner'
 export default Spinner'
 '''''

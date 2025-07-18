@@ -8,20 +8,20 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { formatDistanceToNow } from 'date-fns'
 '
 interface JobMatchProps {'
-  matchId: "string,;";
-  talentId: "string",;"";
-  name: string",;"
+  matchId: "string,"
+  talentId: string,""
+  name: string","
   title: string,""
-  company: "string,;";
-  avatar: "string",;"";
-  location: string",;"
+  company: "string,"
+  avatar: string,""
+  location: string","
   category: string,""
-  matchPercent: "number,;"
-  skills: string[];";
-  onApply?: (matchId: string) => void";";
+  matchPercent: "number,"
+  skills: string[]"
+  onApply?: (matchId: string) => void""
   onViewDetails?: (matchId: string) => void"
   onInvite?: (matchId: "string) => void
-};
+}
 
 export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   matchId,;
@@ -37,26 +37,26 @@ export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): 
   onViewDetails,;
   onInvite,;
 }: JobMatchProps) {;
-  const const handleApply = () => {;
+  const handleApply = () => {;
     if (onApply) {;
       onApply(matchId);
     };
   };
 
-  const const handleViewDetails = () => {;
+  const handleViewDetails = () => {;
     if (onViewDetails) {;
       onViewDetails(matchId);
     };
   };
 
-  const const handleInvite = () => {;
+  const handleInvite = () => {;
     if (onInvite) {;
       onInvite(matchId);
     };
   };
 
   // Generate a formatted date for display"
-  const const postedDate = new Date();"
+  const postedDate = new Date();"
   postedDate.setDate(postedDate.getDate() - Math.floor(Math.random() * 14)); // Random date within last 2 weeks;";"
 ;";"
   return (;";"
@@ -87,7 +87,7 @@ export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): 
           </div>;";"
 ;"
           <div className=flex items-center gap-2 mb-2>"
-            <Avatar className="h-6 w-6>
+            <Avatar className="h-6 w-6>"
               {avatar ? (;""
                 <AvatarImage src={avatar} alt={name} />;"
               ) : (";"
@@ -123,7 +123,7 @@ export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): 
               </Button>;";"
             )};";"
             {onViewDetails && (;";"
-              <Button onClick={handleViewDetails} variant=outline" size="sm>
+              <Button onClick={handleViewDetails} variant=outline" size="sm>"
                 View Details;""
               </Button>;"
             )}";"

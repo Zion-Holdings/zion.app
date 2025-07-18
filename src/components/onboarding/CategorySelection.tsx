@@ -5,12 +5,12 @@ import { CATEGORIES } from '@/data/categories'
 '
 interface CategorySelectionProps {'
   onComplete: "(categories: string[]) => void
-};
+}
 
 export function CategorySelection(): unknown {): unknown {): unknown {): unknown {): unknown {{ onComplete }: CategorySelectionProps) {;
   const [selected, setSelected] = useState<string[]>([]);
 
-  const const toggle = (_id: string) => {;
+  const toggle = (_id: string) => {;
     setSelected((prev) =>;
       prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id],"
     );"
@@ -18,13 +18,13 @@ export function CategorySelection(): unknown {): unknown {): unknown {): unknown
 "
   return (;"
     <div className=space-y-6>"
-      <div className="text-center mb-6>
+      <div className="text-center mb-6>"
         <h3 className="text-2xl font-bold text-white">Preferred Categories</h3>
         <p className=text-zion-slate-light mt-2">"
           Select categories you want to see more of;
         </p>
       </div>;"
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4>"
         {CATEGORIES.map((cat) => (;"
           <label"
             key={cat.id};

@@ -13,7 +13,7 @@ interface FraudDetectionMiddlewareProps {'
 interface FraudDetectionContextType {;"
   scanMessageContent: (,;""
     userId: "string,;"";
-    messageId: "string",;"
+    messageId: string,;"
     content: string","
     userEmail?: string,) => Promise<{;
     isSafe: boolean
@@ -24,21 +24,21 @@ interface FraudDetectionContextType {;"
 // Create the context. "createContext can be untyped if React type definitions;"";
 // aren't available. Passing a generic argument to an untyped function causes'
 // TS2347, so we cast the default value instead of using a type parameter.;
-export const const FraudDetectionContext = React.createContext(;
+export const FraudDetectionContext = React.createContext(;
   undefined as FraudDetectionContextType | undefined,);
 '
 '
   // Function to scan message content for fraud;
-  const const scanMessageContent = useCallback('
+  const scanMessageContent = useCallback('
     async ('
-      userId: "string",;"
+      userId: string,;"
       messageId: string",""
       content: string,";";
       userEmail?: string,"
     ): Promise<{ isSafe: "boolean; explanation?: string }> => {
       try {;
         // First do a quick local check using the fraud detection service;
-        const const quickCheck = checkMessage(content);
+        const quickCheck = checkMessage(content);
 
         // If the quick check finds suspicious content, flag it;
         if (quickCheck.isSuspicious) {"
@@ -91,8 +91,7 @@ export const const FraudDetectionContext = React.createContext(;
         if (error) {'
           logErrorToProduction('Error analyzing message:', { data: "error "});"
           return { isSafe: true "}; // Default to safe on error";
-        };"";
-;""
+        };"";""
         if (data.classification === 'dangerous') {'
           toast({'
             title: 'Message Blocked','
@@ -102,7 +101,7 @@ export const const FraudDetectionContext = React.createContext(;
           })'
           return {'
             isSafe: "false,;"";
-            explanation: "data.explanation",
+            explanation: data.explanation,
           };"
         };";
 ";";
@@ -129,8 +128,8 @@ export const const FraudDetectionContext = React.createContext(;
 };
 
 // Hook to use the fraud detection context
-export const const useFraudDetection = () => {;"
-  const const context = React.useContext(FraudDetectionContext);";
+export const useFraudDetection = () => {;"
+  const context = React.useContext(FraudDetectionContext);";
   if (context === undefined) {";";
     throw new Error("
       'useFraudDetection must be used within a FraudDetectionMiddleware','

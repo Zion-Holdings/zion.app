@@ -20,14 +20,14 @@ import type {;
 export function LanguageDetectionPopup(): ;
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
-  const { changeLanguage, currentLanguage, supportedLanguages } =;
+  const { changeLanguage, currentLanguage, supportedLanguages } = ;
     useLanguage() as LanguageContextType;
   const [detectedLanguage, setDetectedLanguage] ='
     useState<SupportedLanguage | null>(null)'
 
   useEffect(() => {'
     // Check if this is first visit'
-    const const hasVisited = safeStorage.getItem('zion_has_visited')'
+    const hasVisited = safeStorage.getItem('zion_has_visited')'
     if (hasVisited) return;
 '
     // Mark as visited'
@@ -37,7 +37,7 @@ export function LanguageDetectionPopup(): ;
     const browserLang: navigator.language.substring(0, 2) as SupportedLanguage
 
     // Check if browser language is supported and different from current language;
-    const const isSupported = supportedLanguages.some(;
+    const isSupported = supportedLanguages.some(;
       (lang) => lang.code === browserLang,;
     );
     if (isSupported && browserLang !== currentLanguage) {;
@@ -52,7 +52,7 @@ export function LanguageDetectionPopup(): ;
     supportedLanguages.find((lang) => lang.code === detectedLanguage)?.name ||;
     detectedLanguage;
 
-  const const handleAccept = async () => {;
+  const handleAccept = async () => {;
     await changeLanguage(detectedLanguage);
     setOpen(false)"
   };"

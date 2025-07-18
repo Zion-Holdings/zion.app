@@ -4,61 +4,56 @@ import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
 import { MobileConversationList } from '@/mobile/components/messaging/MobileConversationList'
 import { MobileChatView } from '@/mobile/components/messaging/MobileChatView'
 import { useMessaging } from '@/context/MessagingContext'
-import { useAuth } from '@/hooks/useAuth;
+import { useAuth } from '@/hooks/useAuth;';
 '
-interface ChatMessage {;
-  id: "string;"
-  content: "string;","
-  timestamp: "string;"
-  isMe: "boolean;","
-  status: 'read' | 'sent' | 'delivered;
-};
-;
+interface ChatMessage {
+  id: "string"
+  content: string,"
+  timestamp: "string"
+  isMe: boolean,"
+  status: 'read' | 'sent' | 'delivered
+}
 export function MobileMessages(): ;
   const { _user } = useAuth();
-  const {;
+  const { ;
     conversations,;
     activeConversation,;
     setActiveConversation,;
     activeMessages,;
     loadMessages,'
-    sendMessage,;
-  } = useMessaging();
+    sendMessage,; } = useMessaging();
 '
   const formattedConversations: conversations.map((conv) => ({;",;"
     id: "conv.id"
     name: "conv.name"
     avatar: conv.avatar_url || '',;
     lastMessage: conv.last_message?.content || '',;
-    timestamp: "new Date(conv.updated_at).toLocaleTimeString([]", {;"
+    timestamp: new Date(conv.updated_at).toLocaleTimeString([], {;"
       hour: '2-digit',;
       minute: '2-digit','
     }),;
-    unreadCount: "conv.unread_count",;"
+    unreadCount: conv.unread_count,;"
   }));"
 ;"
   const formattedMessages: unknown "ChatMessage[] = activeMessages.map((msg) => ({;"
     id: "msg.id"
     content: "msg.content"
-    timestamp: "new Date(msg.created_at).toLocaleTimeString([]", {;"
+    timestamp: new Date(msg.created_at).toLocaleTimeString([], {;"
       hour: '2-digit',;
       minute: '2-digit','
     }),;
     isMe: "msg.sender_id === user?.id"
     status: msg.read ? 'read' : 'sent',;
   }));
-;
-  const const handleSelectConversation = async (_id: string) => {;
-    const const conversation = conversations.find((c) => c.id === id) || null;
+  const handleSelectConversation = async (_id: string) => {;
+    const conversation = conversations.find((c) => c.id === id) || null;
     setActiveConversation(conversation);
     await loadMessages(id);
   };
-;
-  const const handleBack = () => {;
+  const handleBack = () => {;
     setActiveConversation(null);
   };
-;
-  const const handleSendMessage = (_content: string) => {;
+  const handleSendMessage = (_content: string) => {;
     if (activeConversation) {;
       sendMessage(activeConversation.id, content)'
     };
@@ -88,7 +83,6 @@ export function MobileMessages(): ;
               onSelectConversation={handleSelectConversation};
             />;
           </main>;
-;
           <BottomNavigation />;
         </>;
       )};"

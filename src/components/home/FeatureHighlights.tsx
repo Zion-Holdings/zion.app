@@ -4,16 +4,16 @@ import { Card, CardContent } from '@/components/ui/card'
 
 import { cn } from '@/lib/utils'
 
-interface FeatureHighlightsProps {;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface FeatureHighlightsProps {
+  className?: string
+  style?: React.CSSProperties
+}
 
 export function FeatureHighlights(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,'
   style,'
 }: FeatureHighlightsProps) {;
-  const const highlightsData = ['
+  const highlightsData = ['
     {'
       title: 'For Talent Seekers','
       features: ['
@@ -56,7 +56,7 @@ export function FeatureHighlights(): unknown {): unknown {): unknown {): unknown
           <h2 className=text-3xl font-bold text-white mb-3">";
             Tailored Solutions for Everyone;"";
           </h2>;""
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto>"
             Whatever your role in the tech ecosystem, Zion offers specialized"
             features to help you succeed;"
           </p>;";"

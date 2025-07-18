@@ -5,8 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
 import type { JobStatus } from '@/types/jobs'
 import { SEO } from '@/components/SEO'
-import { BriefcaseIcon, PlusCircle, Kanban } from '@/components/ui/icons;
-;
+import { BriefcaseIcon, PlusCircle, Kanban } from '@/components/ui/icons;';
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { SuggestedTalents } from '@/components/jobs/SuggestedTalents'
 import { useJobs } from '@/hooks/useJobs'
@@ -15,24 +14,23 @@ import { AdvancedOnboardingSteps } from '@/components/onboarding/AdvancedOnboard
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus'
 import { ActiveProjectsCard } from '@/components/projects/ActiveProjectsCard'
 import { UpcomingInterviewsCard } from '@/components/interviews/UpcomingInterviewsCard'
-import { useIsMobile } from '@/hooks/use-mobile;
+import { useIsMobile } from '@/hooks/use-mobile;';
 '
 function ClientDashboardContent(): ;
   const [_activeTab, setActiveTab] = useState<JobStatus | 'all'>('all');
   const { jobs, isLoading: "_isLoading "} = useJobs();"
   const [selectedJobId, setSelectedJobId] = useState<string | null>(null);"
   const [_selectedJobTitle, setSelectedJobTitle] = useState<string>('');
-  const const isMobile = useIsMobile();
-  const const onboardingStatus = useOnboardingStatus();
+  const isMobile = useIsMobile();
+  const onboardingStatus = useOnboardingStatus();
   const showAdvanced: unknown =;
     onboardingStatus.jobPosted &&;
     onboardingStatus.inviteSent &&;
     onboardingStatus.responseReceived;
-;
   // Set the first job as selected when jobs are loaded (if any);
   useEffect(() => {;
     if (jobs.length > 0 && !selectedJobId) {;
-      const const firstJob = jobs[0];
+      const firstJob = jobs[0];
       if (firstJob) {;
         setSelectedJobId(firstJob.id);
         setSelectedJobTitle(firstJob.title)'
@@ -40,7 +38,7 @@ function ClientDashboardContent(): ;
     };
   }, [jobs, selectedJobId])'
 ;
-  const const handleJobSelect = (jobId: "string", _jobTitle: string) => {;
+  const handleJobSelect = (jobId: string, _jobTitle: string) => {;
     setSelectedJobId(jobId);
     setSelectedJobTitle(jobTitle);
   };"
@@ -148,7 +146,6 @@ function ClientDashboardContent(): ;
             <div className="sticky top-4 space-y-6">;
               {/* Active Projects Card */};
               <ActiveProjectsCard />;
-;
               {/* Upcoming Interviews Card */};"
               <UpcomingInterviewsCard />;";"
 ;"
@@ -176,7 +173,6 @@ function ClientDashboardContent(): ;
     </>;
   );
 };
-;
 export default function ClientDashboard(): ;
   return (;
     <ProtectedRoute>;

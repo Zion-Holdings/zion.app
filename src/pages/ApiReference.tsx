@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import ApiPlayground from '@/components/developers/ApiPlayground;
+import ApiPlayground from '@/components/developers/ApiPlayground;';
 '
 export function ApiReference(): ;
   const [activeEndpoint, setActiveEndpoint] = useState('get-jobs')'
 ;
   // Sample endpoint data;
-  const const endpoints = ['
+  const endpoints = ['
     {;
       id: 'get-jobs',;
       method: 'GET',;
@@ -19,25 +19,25 @@ export function ApiReference(): ;
           name: 'status',;
           type: 'string',;
           description: 'Filter by job status (open, closed, draft)',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'category',;
           type: 'string',;
           description: 'Filter by job category',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'limit',;
           type: 'integer',;
-          description: 'Number of results per page (default: "20", max: 100)',;
-          required: "false",;"
+          description: 'Number of results per page (default: 20, max: 100)',;
+          required: false,;"
         },;"
         {;"
           name: 'offset',;
           type: 'integer',;
           description: 'Pagination offset (default: 0)',;
-          required: "false",;"
+          required: false,;"
         },;"
       ],;"
       responses: {;"
@@ -81,7 +81,7 @@ export function ApiReference(): ;
 }`,;"
         },;"
       },;"
-      requestExample: "`curl -X GET \\;",;"
+      requestExample: `curl -X GET \\;,;"
   https://api.ziontechgroup.com/v1/api/jobs?status=open&limit=10 \\;"
   -H "Authorization: Bearer YOUR_API_KEY"`,;"
     },;"
@@ -119,13 +119,13 @@ export function ApiReference(): ;
           name: 'skills',;
           type: 'array',;
           description: 'Array of required skills',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'deadline',;
           type: 'string',;
           description: 'Application deadline (ISO date format)',;
-          required: "false",;"
+          required: false,;"
         },;"
       ],;"
       responses: {;"
@@ -159,7 +159,7 @@ export function ApiReference(): ;
 }`,;"
         },;"
       },;"
-      requestExample: "`curl -X POST \\;",;"
+      requestExample: `curl -X POST \\;,;"
   https://api.ziontechgroup.com/v1/api/jobs \\;"
   -H "Authorization: Bearer YOUR_API_KEY" \\;"
   -H "Content-Type: application/json" \\;"
@@ -186,43 +186,43 @@ export function ApiReference(): ;
           name: 'skills',;
           type: 'string',;
           description: 'Comma-separated list of skills',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'category',;
           type: 'string',;
           description: 'Filter by talent category',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'rate_min',;
           type: 'integer',;
           description: 'Minimum hourly rate',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'rate_max',;
           type: 'integer',;
           description: 'Maximum hourly rate',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'availability',;
           type: 'string',;
           description: 'Availability type (full-time, part-time)',;
-          required: "false",;"
+          required: false,;"
         },;"
         {;"
           name: 'limit',;
           type: 'integer',;
-          description: 'Number of results per page (default: "20", max: 100)',;
-          required: "false",;"
+          description: 'Number of results per page (default: 20, max: 100)',;
+          required: false,;"
         },;"
         {;"
           name: 'offset',;
           type: 'integer',;
           description: 'Pagination offset (default: 0)',;
-          required: "false",;"
+          required: false,;"
         },;"
       ],;"
       responses: {;"
@@ -250,13 +250,12 @@ export function ApiReference(): ;
         },;"
       },;"
       requestExample: "`curl -X GET \\;"
-  https: "//api.ziontechgroup.com/v1/api/talent?skills=React",Node.js&limit=10 \\;"
+  https: //api.ziontechgroup.com/v1/api/talent?skills=React,Node.js&limit=10 \\;"
   -H "Authorization: Bearer YOUR_API_KEY"`,;
     },;
   ];
-;
   // Find the active endpoint data;"
-  const const activeEndpointData = endpoints.find((e) => e.id === activeEndpoint);";"
+  const activeEndpointData = endpoints.find((e) => e.id === activeEndpoint);";"
 ;"
   return (;"
     <ApiDocsLayout>;"
@@ -273,7 +272,7 @@ export function ApiReference(): ;
                     className={`w-full text-left px-3 py-2 rounded-md text-sm flex items-center ${;"
                       activeEndpoint === endpoint.id;"
                         ? 'bg-zion-purple/20 text-zion-cyan'
-                        : 'text-zinc-400 hover: "text-white hover:bg-zinc-900;"
+                        : 'text-zinc-400 hover: "text-white hover:bg-zinc-900;"}
                     }`};
                   >;"
                     <span;
@@ -300,7 +299,7 @@ export function ApiReference(): ;
                       ? 'bg-green-950 text-green-500'
                       : activeEndpointData.method === 'POST'
                         ? 'bg-blue-950 text-blue-500'
-                        : 'bg-yellow-950 text-yellow-500'
+                        : 'bg-yellow-950 text-yellow-500'}
                   }`};
                 >;
                   {activeEndpointData.method}'
@@ -409,7 +408,7 @@ export function ApiReference(): ;
                                   ? 'bg-green-950 text-green-500'
                                   : status === '401' || status === '403'
                                     ? 'bg-orange-950 text-orange-500'
-                                    : 'bg-red-950 text-red-500'
+                                    : 'bg-red-950 text-red-500'}
                               }`};
                             >;
                               {status}'

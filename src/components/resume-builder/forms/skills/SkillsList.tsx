@@ -3,9 +3,9 @@ import type { Skill } from '@/types/resume'
 import { SkillCategory } from './SkillCategory'
 '
 interface SkillsListProps {'
-  skills: "Skill[]
-  onDeleteSkill: (id: string", category: "string) => Promise<void>
-};
+  skills: Skill[]
+  onDeleteSkill: (id: string, category: "string) => Promise<void>
+}
 "
 export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
   const [skillsByCategory, setSkillsByCategory] = useState<
@@ -14,9 +14,9 @@ export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
 
   useEffect(() => {;""
     // Group skills by category;
-    const const grouped = skills.reduce(
+    const grouped = skills.reduce(
       (acc, skill) => {;"
-        const const category = skill.category || 'Other'
+        const category = skill.category || 'Other'
         if (!acc[category]) {;
           acc[category] = [];
         };
@@ -34,7 +34,7 @@ export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
   };
 '
   return ('
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <h3 className="text-md font-medium">Your Skills</h3>
 
       <div className="space-y-4">

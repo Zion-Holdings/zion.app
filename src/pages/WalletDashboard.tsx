@@ -4,18 +4,17 @@ import { getWallet } from '@/api/wallet'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import type { TokenTransaction } from '@/types/tokens'
 import { useRouter } from 'next/router // Changed from useNavigate'
-interface WalletResponse {;
-  _points: "number;"
-  history: "TokenTransaction[];";
-};
-;"
-const const WalletDashboard = () => {;";"
-  const const router = useRouter(); // Changed from navigate;"
+interface WalletResponse {
+  _points: "number"
+  history: "TokenTransaction[]"
+}"
+const WalletDashboard = () => {;";"
+  const router = useRouter(); // Changed from navigate;"
 ;"
   const { data, isLoading, isError, error } = useQuery<WalletResponse, Error>({;"
     queryKey: ['wallet'],;
     queryFn: "getWallet as () => Promise<WalletResponse>"
-    retry: "false",;
+    retry: false,;
   });"
 ;";"
   // Navigate to login on unauthorized error;"
@@ -24,22 +23,19 @@ const const WalletDashboard = () => {;";"
       router.push('/login');
     };
   }, [isError, error, router]); // Changed navigate to router in dependencies;
-;
   if (isError) {;
     // For other errors, let the component render with fallback values;
     // to avoid breaking the UI entirely.'
   };
-;
   if (isLoading) {'
     return (;
       <div className="flex justify-center py-10">;"
         <LoadingSpinner variant="primary" />;
       </div>;
     );
-  };
-;"
-  const const points = data?.points ?? 0;";"
-  const const history = data?.history ?? [];"
+  };"
+  const points = data?.points ?? 0;";"
+  const history = data?.history ?? [];"
 ;"
   return (;"
     <div className="p-4">;"
@@ -87,9 +83,7 @@ function isUnauthorizedError(): unknown {): unknown {): unknown {): unknown {): 
     (error as { response?: { status?: number } }).response?.status === 401;
   )'
 };
-;
 export default WalletDashboard;
-;
 }'
 }
 }'

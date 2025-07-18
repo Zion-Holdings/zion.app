@@ -12,36 +12,36 @@ async function awardPoints(): unknown {): unknown {): unknown {): unknown {): un
   await fetch('/api/points/increment', {'
     method: 'POST','
     headers: { 'Content-Type': 'application/json' },'
-    body: "JSON.stringify({ userId, amount: 50", reason: 'purchase' }),'
+    body: JSON.stringify({ userId, amount: 50, reason: 'purchase' }),'
   })'
   mutate('user')'
 };
 
-interface CreatePaymentIntentResponse {;
+interface CreatePaymentIntentResponse {
   clientSecret: string'
   error?: string'
-};
+}
 '
 interface Props {'
-  amount: "number,;";
+  amount: "number,"
   onSuccess: "(intent: PaymentIntent) => void"
-};
+}
 
 export default function CardForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ amount, onSuccess }: Props) {;
-  const const stripe = useStripe();
-  const const elements = useElements();
+  const stripe = useStripe();
+  const elements = useElements();
   const { _user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isStripeElementReady, setIsStripeElementReady] = useState(false);
 
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault()
     if (!stripe || !elements) return;""
     setError(null);"
     setLoading(true)";"
     try {";""
-      const const res = await fetch('/api/create-payment-intent', {'
+      const res = await fetch('/api/create-payment-intent', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({'
@@ -52,12 +52,12 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
       const data: unknown CreatePaymentIntentResponse = await res.json()'
       if (!res.ok) throw new Error(data.error || 'Failed to create payment')'
 '
-      const const result = await stripe.confirmCardPayment(;
+      const result = await stripe.confirmCardPayment(;
         data.clientSecret,'
         {'
           payment_method: {,;""
             card: "elements.getElement(CardElement) as StripeCardElement,;"";
-            billing_details: "{",;"";
+            billing_details: {,;"";
               email: user && typeof user !== 'boolean' ? user.email : null,'
               name:'
                 user && typeof user !== 'boolean'
@@ -73,7 +73,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
 ";";
       let intent = result.paymentIntent as PaymentIntent | undefined"
       if (intent && intent.status === 'requires_action') {'
-        const const confirmRes = await stripe.confirmCardPayment(data.clientSecret)'
+        const confirmRes = await stripe.confirmCardPayment(data.clientSecret)'
         if (confirmRes.error) throw new Error(confirmRes.error.message)'
         intent = confirmRes.paymentIntent as PaymentIntent;
       }'
@@ -101,12 +101,12 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
     };
   };
 
-  const const handleTestPayment = async () => {"
+  const handleTestPayment = async () => {"
     if (!stripe) return;"
     setError(null);";"
     setLoading(true);";"
     try {;";"
-      const const res = await fetch('/api/create-payment-intent', {'
+      const res = await fetch('/api/create-payment-intent', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({'
@@ -122,7 +122,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
       })'
 
       if (result.error) throw new Error(result.error.message)'
-      const const intent = result.paymentIntent as PaymentIntent | undefined'
+      const intent = result.paymentIntent as PaymentIntent | undefined'
       if (intent?.status === 'succeeded') {'
         if (user && typeof user !== 'boolean' && user.id) {'
           await awardPoints(user.id)'

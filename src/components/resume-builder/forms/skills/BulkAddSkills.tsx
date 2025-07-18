@@ -14,7 +14,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
   const { enhanceContent, isEnhancing } = useResumeEnhancer()'
   const { _addSkill } = useResume()'
 
-  const const handleCategorizeSkills = async () => {'
+  const handleCategorizeSkills = async () => {'
     if (!bulkSkills || bulkSkills.trim().length === 0) {'
       setError('Please enter some skills to categorize')'
       return;
@@ -22,7 +22,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
 '
     setError(null)'
     try {;
-      const const enhancedContent = await enhanceContent('
+      const enhancedContent = await enhanceContent('
         bulkSkills,'
         'skill-categorization','
       );
@@ -30,7 +30,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
       if (enhancedContent) {;
         try {;
           // Parse the JSON response;
-          const const categorizedSkills = JSON.parse(enhancedContent);
+          const categorizedSkills = JSON.parse(enhancedContent);
 
           // Add the categorized skills;
           for (const [category, skillsList] of Object.entries(;
@@ -40,8 +40,8 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
               for (const skillName of skillsList as string[]) {'
                 await addSkill(resumeId, {'
                   name: skillName"
-                  category: "category
-                  proficiency: 3","
+                  category: category
+                  proficiency: 3,"
                 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
               }
             };"
@@ -65,7 +65,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
     <div className="bg-muted/40 p-6 rounded-lg">
       <h3 className=text-md font-medium mb-4">Bulk Add & AI Categorization</h3>"
       <div className=space-y-4>"
-        <div className="space-y-2>
+        <div className="space-y-2>"
           <label className="text-sm font-medium">
             Enter multiple skills (comma separated);
           </label>"
@@ -81,16 +81,16 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
           onClick={handleCategorizeSkills}
           disabled={isEnhancing || !bulkSkills.trim()};"
           className="gap-2
-        >
+        >"
           {isEnhancing ? (;"
-            <Loader2 className="h-4 w-4 animate-spin />
+            <Loader2 className="h-4 w-4 animate-spin />"
           ) : (;"
-            <Sparkles className="h-4 w-4 />
+            <Sparkles className="h-4 w-4 />"
           )};""
           Categorize with AI;
         </Button>
 ;"
-        <p className="text-xs text-muted-foreground mt-1>
+        <p className="text-xs text-muted-foreground mt-1>"
           AI will identify skills and categorize them automatically. This may"
           take a moment to process.;"
         </p>;

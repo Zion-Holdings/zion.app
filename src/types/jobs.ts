@@ -9,43 +9,43 @@ export type JobCategory =;
   | 'business'
   | 'other;
 '
-export interface JobBudget {;
-  min: "number;"
-  max: "number;","
-  currency: "string;"
-};"
+export interface JobBudget {
+  min: "number"
+  max: number,"
+  currency: "string"
+}"
 ;"
-export interface Job {;"
-  id: "string;"
-  client_id: "string;","
-  title: "string;",;"
-  description: string;"
-  location?: string;"
-  category: "JobCategory;"
-  skills: "string[];","
-  budget: "JobBudget;"
-  deadline: "string;","
-  status: "JobStatus;"
-  created_at: "string;","
-  updated_at: "string;"
-};"
+export interface Job {"
+  id: "string"
+  client_id: string,"
+  title: string,"
+  description: string"
+  location?: string"
+  category: "JobCategory"
+  skills: string[],"
+  budget: "JobBudget"
+  deadline: string,"
+  status: "JobStatus"
+  created_at: string,"
+  updated_at: "string"
+}"
 ;"
-export interface JobFormData {;"
-  title: "string;"
-  description: "string;","
-  category: "JobCategory;"
-  skills: "string;","
-  budgetMin: "number;"
-  budgetMax: "number;","
-  deadline: "Date;"
-};";"
+export interface JobFormData {"
+  title: "string"
+  description: string,"
+  category: "JobCategory"
+  skills: string,"
+  budgetMin: "number"
+  budgetMax: number,"
+  deadline: "Date"
+}";"
 ;"
 // Add JobMatch interface to be shared across components;"
 export interface JobMatch {;"
   id: "string;"
-  job_id: "string;","
+  job_id: string;,"
   talent_id: "string;"
-  match_score: "number;",;"
+  match_score: number;,;"
   matched_skills: string[];"
   status?: 'new' | 'viewed' | 'applied' | 'declined;
   created_at: string'
@@ -54,12 +54,12 @@ export interface JobMatch {;"
   talent_profile?: {'
     id?: string;
     user_id: "string;"
-    full_name: "string;",;"
+    full_name: string;,;"
     professional_title: string;"
     profile_picture_url?: string;"
     hourly_rate?: number;"
     bio: "string;"
-    years_experience: "number;","
+    years_experience: number;,"
     key_projects: "{ title: string; description: string "}[];
     skills: string[];
     location?: string;
@@ -68,15 +68,15 @@ export interface JobMatch {;"
   };";"
 };"
 ;"
-export interface ResumeAttachment {;"
-  id: "string;"
-  title: "string;","
-  type: 'ai_resume' | 'custom_upload;
-  file_url?: string;
-  resume_id?: string;
+export interface ResumeAttachment {"
+  id: "string"
+  title: string,"
+  type: 'ai_resume' | 'custom_upload
+  file_url?: string
+  resume_id?: string
   summary?: string'
-  skills?: string[];
-};
+  skills?: string[]
+}
 '
 export type ApplicationStatus =;
   | 'new'
@@ -86,26 +86,26 @@ export type ApplicationStatus =;
   | 'hired'
   | 'rejected;
 '
-export interface JobApplication {;
-  id: "string;"
-  job_id: "string;",;"
-  talent_id: string;";"
-  resume_id?: string;"
-  status: ApplicationStatus;"
-  cover_letter?: string;"
-  is_shortlisted: "boolean;",;
-  created_at: string;
-  updated_at?: string;"
-  viewed_at?: string;";"
-  job?: Job;"
-  talent_profile?: {;"
-    id?: string;"
-    full_name: "string;",;"
-    professional_title: string;"
-    profile_picture_url?: string;"
-    bio: "string;"
-    skills: "string[];";
-  };
+export interface JobApplication {
+  id: "string"
+  job_id: string,"
+  talent_id: string""
+  resume_id?: string"
+  status: ApplicationStatus"
+  cover_letter?: string"
+  is_shortlisted: boolean,
+  created_at: string
+  updated_at?: string"
+  viewed_at?: string""
+  job?: Job"
+  talent_profile?: {"
+    id?: string"
+    full_name: string,"
+    professional_title: string"
+    profile_picture_url?: string"
+    bio: "string"
+    skills: "string[]"
+  }
   resume?: ResumeAttachment;
   // New fields for resume scoring;"
   match_score?: number;";"
@@ -113,7 +113,7 @@ export interface JobApplication {;
   match_breakdown?: {;"
     skills_match?: {;"
       score: "number;"
-      matching: "string[];","
+      matching: string[];,"
       missing: "string[];"
     };"
     experience_match?: {;"
@@ -122,7 +122,7 @@ export interface JobApplication {;
     };"
     certifications_match?: {;"
       score: "number;"
-      matching: "string[];","
+      matching: string[];,"
       missing: "string[];"
     };"
     education_match?: {;"

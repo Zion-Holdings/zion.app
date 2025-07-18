@@ -61,7 +61,7 @@ import {;
 } from '@/components/ui/select'
 
 export function WebhooksManager(): ;
-  const {;
+  const { ;
     webhooks,;
     loading,;
     testResult,;
@@ -70,9 +70,7 @@ export function WebhooksManager(): ;
     toggleWebhook,;
     deleteWebhook,;
     testWebhook,;
-    clearTestResult,;
-  } = useWebhooks();
-
+    clearTestResult,; } = useWebhooks();
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<string | null>(;
     null,)'
@@ -92,7 +90,7 @@ export function WebhooksManager(): ;
     fetchWebhooks()'
   }, [fetchWebhooks])'
 
-  const const handleCreateWebhook = async () => {'
+  const handleCreateWebhook = async () => {'
     if ('
       webhookName.trim() === '' ||'
       webhookUrl.trim() === '' ||'
@@ -112,23 +110,23 @@ export function WebhooksManager(): ;
   };
 '
   const handleToggleStatus: async (,;
-    webhookId: "string",;"
+    webhookId: string,;"
     _currentStatus: boolean","
   ) => {;
     await toggleWebhook(webhookId, !currentStatus);
   };
 
-  const const handleDeleteWebhook = async (_webhookId: string) => {;
+  const handleDeleteWebhook = async (_webhookId: string) => {;
     await deleteWebhook(webhookId);
     setShowDeleteConfirm(null);
   };
 
-  const const handleTestWebhook = async (_webhookId: string) => {;
+  const handleTestWebhook = async (_webhookId: string) => {;
     await testWebhook(webhookId, testEventType)
     setShowTestResult(true);"
   };";
 ";";
-  const const resetWebhookForm = () => {"
+  const resetWebhookForm = () => {"
     setWebhookName('')'
     setWebhookUrl('')'
     setWebhookSecret('')'
@@ -137,7 +135,7 @@ export function WebhooksManager(): ;
 '
   // Event type options'
   const eventOptions: unknown "{,;";
-    value: "WebhookEventType",;"";
+    value: WebhookEventType,;"";
     label: string",;"
     description: string;"";
   }[] = [;"";
@@ -164,7 +162,7 @@ export function WebhooksManager(): ;
   ];
 
   // Toggle an event selection;
-  const const toggleEvent = (_event: WebhookEventType) => {;
+  const toggleEvent = (_event: WebhookEventType) => {;
     setSelectedEvents((prev) =>;
       prev.includes(event) ? prev.filter((e) => e !== event) : [...prev, event],'
     )'
@@ -177,7 +175,7 @@ export function WebhooksManager(): ;
           <Webhook className=mr-2 size={20} /> Webhooks";";
         </CardTitle>"
         <CardDescription className="text-zinc-400>
-          Set up webhooks to get notified when events happen in your Zion;
+          Set up webhooks to get notified when events happen in your Zion;"
           account."
         </CardDescription>;"
       </CardHeader>;";"
@@ -224,7 +222,7 @@ export function WebhooksManager(): ;
                     placeholder=https://example.com/webhook"""
                     className=bg-zinc-800 border-zinc-700";";
                   />"
-                  <p className="text-xs text-zinc-500>
+                  <p className="text-xs text-zinc-500>"
                     The URL where webhook payloads will be sent when events"
                     occur.;"
                   </p>;";"
@@ -312,7 +310,7 @@ export function WebhooksManager(): ;
               <p>No webhooks found.</p>"
               <p className="text-sm mt-1>
                 Create one to receive event notifications.;
-              </p>;
+              </p>;"
             </div>"
           ) : (;"
             webhooks.map((webhook) => (;";"
@@ -372,8 +370,7 @@ export function WebhooksManager(): ;
                       </DropdownMenuContent>"
                     </DropdownMenu>;
                   </div>;"";
-                </div>;"";
-;"";
+                </div>;"";"";
                 <div className="mt-3 flex flex-wrap gap-2">;
                   {webhook.event_types.map((event: WebhookEventType) => (";"
                     <Badge;";"
@@ -436,8 +433,7 @@ export function WebhooksManager(): ;
             <DialogDescription className=text-zinc-400>"
               Send a test webhook to your endpoint.;
             </DialogDescription>"
-          </DialogHeader>;
-;"";
+          </DialogHeader>;"";
           {!showTestResult ? (;"";
             <>;"";
               <div className="space-y-4 py-4">;"
@@ -519,7 +515,7 @@ export function WebhooksManager(): ;
                   onClick={() => {;
                     setShowTestDialog(null);
                     setShowTestResult(false);
-                    clearTestResult();
+                    clearTestResult();"
                   }}"
                 >;"
                   Close;";"

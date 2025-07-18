@@ -4,7 +4,7 @@ import { logInfo, logWarn } from '@/utils/productionLogger'
 '
 export default function OfflineToast(): '
   useEffect(() => {;
-    const const handleOffline = () => {'
+    const handleOffline = () => {'
       toast({'
         title: 'Offline','
         description:'
@@ -13,13 +13,13 @@ export default function OfflineToast(): '
       })'
     };
 '
-    const const handleOnline = () => {'
+    const handleOnline = () => {'
       toast.success('Back online. Syncing queued actions...')'
       navigator.serviceWorker.ready;
         .then((reg) => {;
           try {;
             // Use MessageChannel to properly handle async response'
-            const const channel = new MessageChannel()'
+            const channel = new MessageChannel()'
 
             // Set up response handler'
             channel.port1.onmessage = (event) => {'
@@ -48,7 +48,7 @@ export default function OfflineToast(): '
         })'
     };
 '
-    const const handleMessage = (_event: MessageEvent) => {'
+    const handleMessage = (_event: MessageEvent) => {'
       if (event.data?.type === 'QUEUE_SYNCED') {'
         toast.success('Offline actions synchronized')'
       } else if (event.data?.type === 'SYNC_FAILED') {'

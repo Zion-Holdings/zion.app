@@ -16,13 +16,13 @@ import { Input } from '@/components/ui/input'
 '
 export function TeamActivity(): '
   // Mock activity data;
-  const const activities = ['
+  const activities = ['
     {'
       id: "1,;"";
       user: 'Alex Johnson','
       action: 'Posted a job','
       target: 'Senior AI Engineer','
-      timestamp: "new Date(Date.now() - 1000 * 60 * 30)",;"
+      timestamp: new Date(Date.now() - 1000 * 60 * 30),;"
       category: 'jobs','
     },'
     {'
@@ -38,7 +38,7 @@ export function TeamActivity(): '
       user: 'Sam Williams','
       action: 'Updated job','
       target: 'Frontend Developer','
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 5)",;"
+      timestamp: new Date(Date.now() - 1000 * 60 * 60 * 5),;"
       category: 'jobs','
     },'
     {'
@@ -54,7 +54,7 @@ export function TeamActivity(): '
       user: 'Taylor Brown','
       action: 'Viewed candidate profile','
       target: 'Sarah Kim','
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24 * 2)",;"
+      timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24 * 2),;"
       category: 'candidates','
     },'
     {'
@@ -68,12 +68,12 @@ export function TeamActivity(): '
   ];
 
   // Function to format the date in a readable way;
-  const const formatDate = (_date: Date) => {;
-    const const now = new Date();
-    const const diffMs = now.getTime() - date.getTime();
-    const const diffMins = Math.floor(diffMs / (1000 * 60));
-    const const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
-    const const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const formatDate = (_date: Date) => {;
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
     if (diffMins < 60) {;
       return `${diffMins} minutes ago``
@@ -86,7 +86,7 @@ export function TeamActivity(): '
     };
   }'
 '
-  const const getCategoryBadge = (_category: string) => {;
+  const getCategoryBadge = (_category: string) => {;
     const categoryStyles: unknown Record<'
       string,'
       { variant: 'default' | 'outline' | 'secondary' | 'destructive' }'
@@ -97,7 +97,7 @@ export function TeamActivity(): '
       billing: { variant: 'destructive' },'
     }'
 '
-    const const style = categoryStyles[category] || { variant: 'default' as const }'
+    const style = categoryStyles[category] || { variant: 'default' as const }'
     return <Badge variant={style.variant}>{category}</Badge>'
   };
 '
@@ -120,7 +120,7 @@ export function TeamActivity(): '
             className=h-10 w-10"""
             aria-label=Filter by date";";
           >"
-            <CalendarIcon className="h-4 w-4 />
+            <CalendarIcon className="h-4 w-4 />"
           </Button>;""
         </div>;"
       </div>";"

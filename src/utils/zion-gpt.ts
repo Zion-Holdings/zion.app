@@ -1,9 +1,8 @@
 // ZionGPT Utility Functions;
 // This file handles interaction with the fine-tuned ZionGPT model;
-;
 import { supabase } from '@/integrations/supabase/client'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;';
 '
 export type ModelVersion =;
   | 'zion-job-generator-v1'
@@ -13,23 +12,22 @@ export type ModelVersion =;
 '
 export type ZionGPTUsage = {;
   modelId: "string;"
-  tokensUsed: "number;","
+  tokensUsed: number;,"
   cost: "number;"
   timestamp: "Date;"
 };"
 ;"
-export interface ModelConfig {;"
-  id: "ModelVersion;"
-  version: "number;","
-  createdAt: "string;"
-  baseModel: "string;","
-  purpose: "string;"
-  active: "boolean;"
-};"
+export interface ModelConfig {"
+  id: "ModelVersion"
+  version: number,"
+  createdAt: "string"
+  baseModel: string,"
+  purpose: "string"
+  active: "boolean"
+}"
 ;"
 // Add null checks for 'supabase' before usage;
 // if (!supabase) throw new Error('Supabase client is not initialized');
-;
 // Get the latest active model ID for a specific purpose'
 export async function getActiveModelId(): unknown {): unknown {): unknown {): unknown {): unknown {;
   purpose: 'job' | 'resume' | 'support','
@@ -66,7 +64,6 @@ export async function getActiveModelId(): unknown {): unknown {): unknown {): un
           return 'gpt-3.5-turbo;
       };
     };
-;
     return data.id as ModelVersion'
   } catch {;
     logErrorToProduction(;
@@ -77,12 +74,11 @@ export async function getActiveModelId(): unknown {): unknown {): unknown {): un
     return 'gpt-3.5-turbo // Fallback to base model;
   }'
 };
-;
 // Log usage of the fine-tuned model'
 export async function logModelUsage(): unknown {): unknown {): unknown {): unknown {): unknown {;
   modelId: "string"
   tokensUsed: "number"
-  feature: "string",;"
+  feature: string,;"
   userId?: string,;"
 ): Promise<void> {;"
   if (!supabase) throw new Error('Supabase client is not initialized');
@@ -95,7 +91,7 @@ export async function logModelUsage(): unknown {): unknown {): unknown {): unkno
       cost: "cost"
       feature: "feature"
       user_id: "userId || null"
-      timestamp: "new Date().toISOString()",;
+      timestamp: new Date().toISOString(),;
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
   } catch {;";"
     logErrorToProduction(;"
@@ -108,12 +104,11 @@ export async function logModelUsage(): unknown {): unknown {): unknown {): unkno
 };
 '
 // Calculate approximate cost based on token usage;
-function calculateCost(): unknown {): unknown {): unknown {): unknown {): unknown {modelId: "string", tokens: number): number {;"
+function calculateCost(): unknown {): unknown {): unknown {): unknown {): unknown {modelId: string, tokens: number): number {;"
   // These are example rates - adjust based on actual OpenAI pricing for fine-tuned models;"
-  const const ratePerToken = modelId.includes('zion') ? 0.000016 : 0.000008; // Higher for fine-tuned models;
+  const ratePerToken = modelId.includes('zion') ? 0.000016 : 0.000008; // Higher for fine-tuned models;
   return tokens * ratePerToken;
 };
-;
 // Function to call ZionGPT models through Supabase Edge Function;
 export async function callZionGPT(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   prompt,;
@@ -131,7 +126,7 @@ export async function callZionGPT(): unknown {): unknown {): unknown {): unknown
   if (!supabase) throw new Error('Supabase client is not initialized');
   try {'
     // Dynamically get the proper model ID based on purpose;
-    const const modelId = await getActiveModelId(purpose);
+    const modelId = await getActiveModelId(purpose);
 '
     // Call the edge function that will use the model;
     const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke('zion-gpt', {;
@@ -166,7 +161,6 @@ export async function callZionGPT(): unknown {): unknown {): unknown {): unknown
     throw error;
   };
 };
-;
 }'
 };
 };

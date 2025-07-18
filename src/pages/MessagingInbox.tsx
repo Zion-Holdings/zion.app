@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { MessageSquare, Video } from '@/components/ui/icons;
-;
+import { MessageSquare, Video } from '@/components/ui/icons;';
 import { useMessaging } from '@/context/MessagingContext'
-import { ProtectedRoute } from '@/components/ProtectedRoute;
-import {;
+import  { ProtectedRoute }  from '@/components/ProtectedRoute;';
+import {;';
   ConversationsList,'
   ConversationDetailView,;
 } from '@/components/messaging'
@@ -11,25 +10,22 @@ import { useIsMobile } from '@/hooks/use-mobile'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
-import { useRouter } from 'next/router // Changed from react-router-dom;
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { useRouter } from 'next/router // Changed from react-router-dom;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export default function MessagingInbox(): ;
-  const {;
+  const { ;
     conversations,;
     activeConversation,;
     setActiveConversation,;
     markAsRead,;
     fetchConversations,;
-    isLoading,;
-  } = useMessaging();
-  const const isMobile = useIsMobile();
-  const const router = useRouter(); // Changed from navigate;
-  const [_activeCall, setActiveCall] = useState<string | null>(null);
-;
-  useEffect(() => {;
+    isLoading,; } = useMessaging();
+  const isMobile = useIsMobile();
+  const router = useRouter(); // Changed from navigate;
+  const [_activeCall, setActiveCall] = useState<string | null>(null);';
+  useEffect(() => {;';
     // Fetch conversations when component mounts'
-    const const loadData = async () => {;
+    const loadData = async () => {;
       try {;
         await fetchConversations()'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
@@ -37,11 +33,9 @@ export default function MessagingInbox(): ;
         toast.error('Failed to load messages. Please try again.');
       };
     };
-;
     loadData()'
   }, [fetchConversations]);
-;
-  const const startVideoCall = () => {'
+  const startVideoCall = () => {'
     if (!activeConversation) {;
       toast.error('Please select a conversation first')'
       return;
@@ -54,11 +48,9 @@ export default function MessagingInbox(): ;
     toast.success('Starting video call', {;
       description: 'Initializing video call connection...',;
     });
-;
     // Navigate to video call page;
     router.push(`/call/${roomId}`); // Changed from navigate'
   };
-;
   return ('
     <ProtectedRoute>;
       <div className="min-h-screen bg-zion-blue">;"
@@ -99,7 +91,6 @@ export default function MessagingInbox(): ;
                   markAsRead={markAsRead};
                 />;
               )};
-;
               {/* Conversation Detail */};
               <ConversationDetailView />;
             </div>;"

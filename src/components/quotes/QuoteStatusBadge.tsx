@@ -22,10 +22,10 @@ const statusConfig: unknown "Record<QuoteStatus, { label: string; className: str
 '
 interface QuoteStatusBadgeProps {'
   _status: QuoteStatus"
-};"
+}"
 
 export const _QuoteStatusBadge: ({ status }: QuoteStatusBadgeProps) => {"
-  const const config = statusConfig[status]"
+  const config = statusConfig[status]"
 
   return <Badge className={config.className}>{config.label}</Badge>;"
 }"

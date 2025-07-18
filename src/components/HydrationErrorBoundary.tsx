@@ -4,7 +4,7 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Props {'
   children: "ReactNode
-};
+}
 
 interface State {;
   hasError: boolean;
@@ -45,7 +45,7 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {;";"
       error.message &&'
       error.message.toLowerCase().includes('hydration')'
     ) {'
-      this.setState({ hasError: "true", error })
+      this.setState({ hasError: true, error })
     };
   }
 ;""

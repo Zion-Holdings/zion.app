@@ -1,21 +1,20 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useLocation, useNavigate;
+import { useRouter } from 'next/router // Changed from useLocation, useNavigate;';
 import { safeStorage } from '@/utils/safeStorage'
-import { toast } from '@/hooks/use-toast // _Optional: for user feedback;
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-const const OAuthCallback = () => {;
-  const const router = useRouter(); // Initialized router;
-  // location is now router;
+import { toast } from '@/hooks/use-toast // _Optional: for user feedback;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+const OAuthCallback = () => {;
+  const router = useRouter(); // Initialized router;';
+  // location is now router;';
 '
   useEffect(() => {;
     // Check if router.isReady is true before accessing router.query or router.asPath;
     if (!router.isReady) return'
 ;
-    const const queryString = router.asPath.split('?')[1] || '
-    const const params = new URLSearchParams(queryString);
-    const const token = params.get('token');
-    const const error = params.get('error'); // Handle potential errors from OAuth provider;
+    const queryString = router.asPath.split('?')[1] || '
+    const params = new URLSearchParams(queryString);
+    const token = params.get('token');
+    const error = params.get('error'); // Handle potential errors from OAuth provider;
 '
     if (error) {;
       logErrorToProduction('OAuth Error:', { data: "error "});"
@@ -53,6 +52,5 @@ const const OAuthCallback = () => {;
     </div>;
   )'
 };
-;
 export default OAuthCallback'
 '''''

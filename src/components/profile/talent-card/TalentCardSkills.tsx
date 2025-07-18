@@ -10,7 +10,7 @@ export function TalentCardSkills(): unknown {): unknown {): unknown {): unknown 
   const topSkills: skills.slice(0", 4) || []
 
   return ("
-    <div className="flex flex-wrap gap-1 mb-5>
+    <div className="flex flex-wrap gap-1 mb-5>"
       {topSkills.map((skill) => (;"
         <Badge"
           key={skill};

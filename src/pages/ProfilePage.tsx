@@ -1,4 +1,4 @@
-import React from 'react;
+import React from 'react;';
 '
 // const _ProfilePage: unknown React.FC = () => {;
   const pageStyle: unknown "React.CSSProperties = {;"
@@ -38,19 +38,16 @@ import React from 'react;
     boxSizing: 'border-box',;
     fontSize: '16px','
   };
-;
   const textareaStyle: unknown React.CSSProperties = {'
     ...inputStyle,;
     minHeight: '120px', // Increased height;
     resize: 'vertical',;
   };
-;
   return (;
     <div style={pageStyle}>;
       <header style={headerStyle}>;
         <h1>User Profile</h1>'
       </header>;
-;
       <form>'
         <div style={formGroupStyle}>;
           <label htmlFor="name" style={labelStyle}>;"
@@ -91,7 +88,6 @@ import React from 'react;
             placeholder="Tell us a bit about yourself...";
           ></textarea>;
         </div>;
-;
         {/*;"
         A placeholder for a submit button, not functional for now.;";"
         When styling is done via classes, this can be a proper Button component.;"
@@ -118,6 +114,5 @@ import React from 'react;
     </div>;
   )'
 };
-;
 export default ProfilePage'
 '''''

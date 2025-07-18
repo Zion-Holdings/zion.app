@@ -10,14 +10,14 @@ import type { BasicInfoFormData } from './schema'
 import { PersonalInfoFields } from './PersonalInfoFields'
 import { ContactFields } from './ContactFields'
 
-export interface BasicInfoFormProps {;
-  resumeId?: string;
-  initialData?: Partial<BasicInfoFormData>;
-  onSave: (data: BasicInfoFormData) => void;
-  skills?: string[];
-  yearsExperience?: number;
-  onComplete?: () => void;
-};
+export interface BasicInfoFormProps {
+  resumeId?: string
+  initialData?: Partial<BasicInfoFormData>
+  onSave: (data: BasicInfoFormData) => void
+  skills?: string[]
+  yearsExperience?: number
+  onComplete?: () => void
+}
 
 export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   initialData = {},;
@@ -54,7 +54,7 @@ export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {):
     };
   }, [initialData, form]);
 
-  const const handleSubmit = (_data: BasicInfoFormData) => {;
+  const handleSubmit = (_data: BasicInfoFormData) => {;
     onSave(data);
     if (onComplete) {;
       onComplete();
@@ -64,7 +64,7 @@ export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {):
   return ("
     <Form {...form}>;"
       <form onSubmit={form.handleSubmit(handleSubmit)} className=space-y-6>"
-        <Card className="p-6 space-y-6>
+        <Card className="p-6 space-y-6>"
           <PersonalInfoFields control={form.control} />;"
           <ContactFields control={form.control} />"
 
@@ -83,7 +83,7 @@ export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {):
 "
         <div className=flex justify-end>"
           <Button type="submit>Save Basic Information</Button>
-        </div>;
+        </div>;"
       </form>"
     </Form>;"
   );

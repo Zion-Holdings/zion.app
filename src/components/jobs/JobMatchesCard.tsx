@@ -19,11 +19,11 @@ import { format } from 'date-fns'
 import type { JobMatch } from '@/types/jobs'
 '
 interface JobMatchCardProps {'
-  match: "JobMatch,;";
-  onApply: "(matchId: string", jobId: string) => void,"
-  onDecline: (matchId: string) => void;
-  showApplied?: boolean;
-};
+  match: "JobMatch,"
+  onApply: (matchId: string, jobId: string) => void,"
+  onDecline: (matchId: string) => void
+  showApplied?: boolean
+}
 
 export function JobMatchesCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   match,;
@@ -31,10 +31,9 @@ export function JobMatchesCard(): unknown {): unknown {): unknown {): unknown {)
   onDecline,;
   showApplied = false,;
 }: JobMatchCardProps) {;
-  const const job = match.job"
+  const job = match.job"
 
-  if (!job) return null;"";
-;"";
+  if (!job) return null;"";"";
   return (;"";
     <Card className="overflow-hidden border-l-4 border-l-blue-500">;"
       <CardHeader className=p-4 pb-2">""
@@ -50,13 +49,13 @@ export function JobMatchesCard(): unknown {): unknown {): unknown {): unknown {)
               )};
             </CardDescription>'
           </div>'
-          <Badge variant=outline" className="flex items-center>
+          <Badge variant=outline" className="flex items-center>"
             {match.match_score}% Match;""
           </Badge>;"
         </div>";"
       </CardHeader>";""
       <CardContent className=p-4 pt-0>"
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-3>
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-3>"
           {job.description};""
         </p>;"
 ";"

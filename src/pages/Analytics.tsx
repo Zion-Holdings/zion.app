@@ -9,7 +9,7 @@ import { PageViewsChart } from '@/components/analytics/PageViewsChart'
 import { ConversionAnalysisChart } from '@/components/analytics/ConversionAnalysisChart'
 import { FeatureUsageChart } from '@/components/analytics/FeatureUsageChart'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export default function Analytics(): ;
   const [timeRange, setTimeRange] = useState('30d')'
@@ -18,8 +18,8 @@ export default function Analytics(): ;
     queryKey: ['page-views-trend', timeRange],;
     _queryFn: async () => {'
       // Get daily page views for trend chart;
-      const const days = parseInt(timeRange.replace('d', ''));
-      const const startDate = new Date();
+      const days = parseInt(timeRange.replace('d', ''));
+      const startDate = new Date();
       startDate.setDate(startDate.getDate() - days)'
 ;
       if (!supabase) throw new Error('Supabase client is not initialized')'
@@ -39,7 +39,7 @@ export default function Analytics(): ;
             new Date((item as { created_at: "string "}).created_at);"
               .toISOString();"
               .split('T')[0] || 'unknown'
-          if (!viewsByDate[date]) viewsByDate[date] = { date: "date", views: "0 "};
+          if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: "0 "};
           viewsByDate[date].views += 1;"
         };";"
       });"
@@ -47,17 +47,16 @@ export default function Analytics(): ;
       // Fill in missing dates;"
       const result: unknown "{ date: string; views: number "}[] = [];"
       for (let i = 0; i < days; i++) {;"
-        const const date = new Date();"
+        const date = new Date();"
         date.setDate(date.getDate() - i);"
-        const const dateStr = date.toISOString().split('T')[0] || 'unknown'
+        const dateStr = date.toISOString().split('T')[0] || 'unknown'
 ;
         if (viewsByDate[dateStr]) {;
           result.push(viewsByDate[dateStr])'
         } else {;
-          result.push({ date: "dateStr", views: "0 "});
+          result.push({ date: dateStr, views: "0 "});
         };
-      };
-;"
+      };"
       return result.sort((a, b) => a.date.localeCompare(b.date));";"
     },;"
   });"
@@ -65,8 +64,8 @@ export default function Analytics(): ;
   const { data: "conversionData "} = useQuery({;"
     queryKey: ['conversion-data', timeRange],'
     _queryFn: async () => {;
-      const const days = parseInt(timeRange.replace('d', ''));
-      const const startDate = new Date();
+      const days = parseInt(timeRange.replace('d', ''));
+      const startDate = new Date();
       startDate.setDate(startDate.getDate() - days)'
 ;
       if (!supabase) throw new Error('Supabase client is not initialized')'
@@ -96,17 +95,16 @@ export default function Analytics(): ;
             'conversionType' in;
               (item as { metadata: "{ conversionType?: unknown "} }).metadata;"
           ) {;"
-            const const meta = (item as { metadata: "{ conversionType?: unknown "} });"
+            const meta = (item as { metadata: "{ conversionType?: unknown "} });"
               .metadata;"
             if (typeof meta.conversionType === 'string') {;
               conversionType = meta.conversionType;
             };
           };
-;
           if (!conversionsByType[conversionType]) {;
             conversionsByType[conversionType] = {};
           };
-          const const typeMap = conversionsByType[conversionType] as Record<;
+          const typeMap = conversionsByType[conversionType] as Record<;
             string,;
             number;
           >;
@@ -116,27 +114,23 @@ export default function Analytics(): ;
           typeMap[date] += 1;
         };
       });
-;
       // Get all dates in range'
       const dates: unknown string[] = [];
       for (let i = 0; i < days; i++) {;
-        const const date = new Date()'
+        const date = new Date()'
         date.setDate(date.getDate() - i);
         dates.push(date.toISOString().split('T')[0] || 'unknown');
       }'
       dates.sort();
-;
       // Format data for chart'
       return dates.map((date) => {;
         const result: unknown "Record<string", unknown> = { date };
-;
         Object.keys(conversionsByType).forEach((type) => {;
           result[type] =;
             conversionsByType[type] && conversionsByType[type][date];
               ? conversionsByType[type][date];
               : 0;
         });
-;
         return result;"
       });";"
     },;"
@@ -145,23 +139,22 @@ export default function Analytics(): ;
   const { data: "featureUsageData "} = useQuery({;"
     queryKey: ['feature-usage-data', timeRange],'
     _queryFn: async () => {;
-      const const days = parseInt(timeRange.replace('d', ''));
+      const days = parseInt(timeRange.replace('d', ''));
       if (!supabase) throw new Error('Supabase client is not initialized');
       const { data, error } = await supabase.rpc('get_feature_usage_stats', {;
-        days_back: "days",;"
+        days_back: days,;"
       });"
 ;"
       if (error) {;"
         logErrorToProduction('Error fetching feature usage:', { data: "error "});"
         // fallback query;"
-        const const startDate = new Date();"
+        const startDate = new Date();"
         startDate.setDate(startDate.getDate() - days);"
-        const { data: "manual", error: "manualError "} = await supabase;"
+        const { data: manual, error: "manualError "} = await supabase;"
           .from('analytics_events');
           .select('created_at, metadata');
           .eq('event_type', 'feature_usage');
           .gte('created_at', startDate.toISOString());
-;
         if (manualError) throw manualError'
 ;
         const usageByDate: unknown "Record<string", Record<string, number>> = {};"
@@ -180,7 +173,7 @@ export default function Analytics(): ;
               (ev as { metadata?: { feature?: unknown } }).metadata &&;
               'feature' in (ev as { metadata: "{ feature?: unknown "} }).metadata;"
             ) {;"
-              const const meta = (ev as { metadata: "{ feature?: unknown "} }).metadata;"
+              const meta = (ev as { metadata: "{ feature?: unknown "} }).metadata;"
               if (typeof meta.feature === 'string') {;
                 feature = meta.feature'
               };
@@ -191,17 +184,14 @@ export default function Analytics(): ;
             featureMap[feature] = (featureMap[feature] || 0) + 1;
           };
         });
-;
         return Object.entries(usageByDate ?? {}).map(([date, feats]) => ({;
           date,;
           ...feats,;
         }));
       };
-;
       return data || [];
     },;
-  });
-;"
+  });"
   return (;";"
     <AnalyticsContainer>;"
       <AnalyticsSummary />;"

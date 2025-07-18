@@ -7,10 +7,10 @@ import {;
 import { LoginCard } from './login'
 '
 interface LoginModalProps {'
-  isOpen: "boolean,;";
+  isOpen: "boolean,"
   onOpenChange: "(open: boolean) => void"
 }
-;""
+""
 export function LoginModal(): unknown {): unknown {): unknown {): unknown {): unknown {{ isOpen, onOpenChange }: LoginModalProps) {;"
   return (";"
     <Dialog open={isOpen} onOpenChange={onOpenChange}>";""

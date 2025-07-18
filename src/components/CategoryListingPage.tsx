@@ -17,25 +17,25 @@ import { safeStorage } from '@/utils/safeStorage'
 
 // Example listing type'
 export interface Listing {'
-  id: "string,;";
-  title: "string",;
+  id: "string,"
+  title: string,
   description: string","
-  category: string;
-  subcategory?: string;
-  image?: string;
-  tags?: string[];
-  author?: string;
+  category: string
+  subcategory?: string
+  image?: string
+  tags?: string[]
+  author?: string
   authorImage?: string
-  aiScore?: number;"
-  rating?: number;";
-  reviewCount?: number";";
+  aiScore?: number"
+  rating?: number"
+  reviewCount?: number""
   price?: number | null"
-  createdAt: "string;"
-};";
+  createdAt: "string"
+}";
 ";";
 interface CategoryListingPageProps {"
   title: "string,;";
-  description: "string",;""
+  description: string,;""
   listings: Listing[];
   sortOptions?: { label: string; value: string "}[]""
   filterOptions?: { label: string; value: string }[]"
@@ -44,7 +44,7 @@ interface CategoryListingPageProps {"
 export function CategoryListingPage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   description,;
-  listings: "initialListings",;"
+  listings: initialListings,;"
   sortOptions = [;";"
     { label: 'Newest First', value: 'newest' },'
     { label: 'Oldest First', value: 'oldest' },'
@@ -76,16 +76,16 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
 '
   useEffect(() => {'
     safeStorage.setItem('category_selected_sort', selectedSort)'
-  }, [selectedSort]);
+  }, [selectedSort])
 '
   useEffect(() => {'
     safeStorage.setItem('category_selected_filter', selectedFilter)'
-  }, [selectedFilter]);
+  }, [selectedFilter])
 
   useEffect(() => {;
     let mounted = true;
     setIsLoading(true);
-    const const timeout = setTimeout(() => {;
+    const timeout = setTimeout(() => {;
       if (mounted) setIsLoading(false);
     }, 300);
     return () => {;
@@ -95,7 +95,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
   }, [searchQuery, selectedSort, selectedFilter]);
 
   // Process listings based on filters and search;
-  const const processedListings = initialListings;
+  const processedListings = initialListings;
     .filter((listing) => {;
       // Apply search filter;
       const matchesSearch: unknown =;
@@ -144,7 +144,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
       <div className=min-h-screen bg-zion-blue py-12 px-4">""
         <div className=container mx-auto>"
           <div className="text-center mb-12>;
-            <GradientHeading>{title}</GradientHeading>;
+            <GradientHeading>{title}</GradientHeading>;"
             <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
               {description}
             </p>;""
@@ -152,12 +152,12 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
 ";"
           {/* Filters and Search */}";""
           <div className=bg-zion-blue-dark rounded-lg p-6 mb-8 border border-zion-blue-light>"
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4>;
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4>;"
               <div className="relative">;"
                 <Search className=absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate" />"
                 <Input";""
                   type=text"
-                  placeholder="Search listings...
+                  placeholder="Search listings..."
                   value={searchQuery};""
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>;"
                     setSearchQuery(e.target.value)";"
@@ -170,7 +170,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
                 <SelectTrigger className=bg-zion-blue border border-zion-blue-light text-white">""
                   <div className=flex items-center>"
                     {selectedSort === 'a-z' ? ('
-                      <ArrowDownAZ className="mr-2 h-4 w-4 />;
+                      <ArrowDownAZ className="mr-2 h-4 w-4 />;"
                     ) : selectedSort === 'z-a' ? ('
                       <ArrowUpZA className="mr-2 h-4 w-4" />
                     ) : null};"
@@ -181,7 +181,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
                     </span>;
                   </div>'
                 </SelectTrigger>'
-                <SelectContent className="bg-zion-blue-dark border border-zion-blue-light>
+                <SelectContent className="bg-zion-blue-dark border border-zion-blue-light>"
                   {sortOptions.map((option) => (;""
                     <SelectItem;"
                       key={option.value}";"
@@ -192,7 +192,6 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
                     </SelectItem>))}"
                 </SelectContent>;
               </Select>;
-;
               <Select value={selectedFilter} onValueChange={setSelectedFilter}>;
                 <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">;"
                   <div className=flex items-center">""
@@ -219,7 +218,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
           </div>;";
 ";";
           {/* Results Count */}"
-          <div className="mb-6>;
+          <div className="mb-6>;"
             <p className="text-zion-slate-light">;"
               Showing {processedListings.length} results;";"
               {searchQuery && ` for ${searchQuery}"`}`

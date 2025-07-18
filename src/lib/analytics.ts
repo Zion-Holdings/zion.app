@@ -1,8 +1,8 @@
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client;
+import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client;';
 '
 async function logEventToSupabase(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  eventName: "string",;"
+  eventName: string,;"
   eventParams?: Record<string, unknown>,;"
 ) {;"
   if (!isSupabaseConfigured) return;"
@@ -13,7 +13,7 @@ async function logEventToSupabase(): unknown {): unknown {): unknown {): unknown
       {;
         event_type: "eventName"
         path: typeof window !== 'undefined' ? window.location.pathname : '',;
-        metadata: "eventParams",;"
+        metadata: eventParams,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;";"
     ]);"
   } catch {;"
@@ -25,8 +25,8 @@ async function logEventToSupabase(): unknown {): unknown {): unknown {): unknown
   };
 };
 '
-export const const _initGA = () => {;
-  const const measurementId = process.env.NEXT_PUBLIC_GA_ID;
+export const _initGA = () => {;
+  const measurementId = process.env.NEXT_PUBLIC_GA_ID;
   if (!measurementId) {'
     logErrorToProduction(;
       'NEXT_PUBLIC_GA_ID is not defined. GA4 initialization skipped.',;
@@ -36,7 +36,7 @@ export const const _initGA = () => {;
     return;
   };
 '
-  const const doNotTrack = navigator.doNotTrack;
+  const doNotTrack = navigator.doNotTrack;
   if (doNotTrack === '1' || doNotTrack === 'yes') {'
     logErrorToProduction(;
       'Do Not Track is enabled. GA4 initialization skipped.',;
@@ -51,7 +51,7 @@ export const const _initGA = () => {;
   };
 }'
 export const _fireEvent: async (;",;"
-  eventName: "string",;"
+  eventName: string,;"
   eventParams?: Record<string, unknown>,;";"
 ) => {;"
   if (!window.gtag) {;"
@@ -72,7 +72,7 @@ export const _fireEvent: async (;",;"
 }'
 ;
 // Replace 'any' with a more specific type for event data;
-export function trackEvent(): unknown {): unknown {): unknown {): unknown {): unknown {event: "string", data: "Record<string", unknown>) {;"
+export function trackEvent(): unknown {): unknown {): unknown {): unknown {): unknown {event: string, data: Record<string, unknown>) {;"
   if (;"
     typeof window !== 'undefined' &&;
     (window as unknown as Record<string, unknown>).gtag;
@@ -86,7 +86,7 @@ export function trackEvent(): unknown {): unknown {): unknown {): unknown {): un
 }'
 ;
 // Replace 'any' with a more specific type for pageview data;
-export function trackPageview(): unknown {): unknown {): unknown {): unknown {): unknown {url: "string", data: "Record<string", unknown> = {}) {;"
+export function trackPageview(): unknown {): unknown {): unknown {): unknown {): unknown {url: string, data: Record<string, unknown> = {}) {;"
   if (;"
     typeof window !== 'undefined' &&;
     (window as unknown as Record<string, unknown>).gtag;
@@ -96,7 +96,7 @@ export function trackPageview(): unknown {): unknown {): unknown {): unknown {):
         ...args: unknown[]'
       ) => void;
     )('config', process.env.NEXT_PUBLIC_GA_ID, {;
-      page_path: "url",;
+      page_path: url,;
       ...data,;
     });"
   };";"
@@ -104,7 +104,7 @@ export function trackPageview(): unknown {): unknown {): unknown {): unknown {):
 ;"
 export function trackConversion(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   conversionId: "string"
-  data: "Record<string", unknown> = {},;"
+  data: Record<string, unknown> = {},;"
 ) {;"
   if (;"
     typeof window !== 'undefined' &&;
@@ -115,7 +115,7 @@ export function trackConversion(): unknown {): unknown {): unknown {): unknown {
         ...args: unknown[]'
       ) => void;
     )('event', 'conversion', {;
-      send_to: "conversionId",;
+      send_to: conversionId,;
       ...data,;
     });"
   };";"
@@ -123,7 +123,7 @@ export function trackConversion(): unknown {): unknown {): unknown {): unknown {
 ;"
 export function trackCustomEvent(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   eventName: "string"
-  parameters: "Record<string", unknown> = {},;"
+  parameters: Record<string, unknown> = {},;"
 ) {;"
   if (;"
     typeof window !== 'undefined' &&;
@@ -136,7 +136,6 @@ export function trackCustomEvent(): unknown {): unknown {): unknown {): unknown 
     )('event', eventName, parameters);
   };
 };
-;
 };
 }'
 };

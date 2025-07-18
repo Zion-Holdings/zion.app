@@ -3,29 +3,27 @@ import { Folder } from '@/components/ui/icons'
 import { CategoryCard } from '@/components/CategoryCard'
 import { GradientHeading } from '@/components/GradientHeading'
 import { SkeletonCard } from '@/components/ui'
-import ErrorBoundary from '@/components/GlobalErrorBoundary;
-;
+import ErrorBoundary from '@/components/GlobalErrorBoundary;';
 import { CATEGORIES } from '@/data/categories'
 import { NextSeo } from '@/components/NextSeo'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface CategoryType {;
-  id: "string;"
-  name: "string;","
-  slug: "string;"
-  icon: "string;";
-};
-;"
-const const fetcher = async (url: string): Promise<CategoryType[]> => {;";"
+interface CategoryType {
+  id: "string"
+  name: string,"
+  slug: "string"
+  icon: "string"
+}"
+const fetcher = async (url: string): Promise<CategoryType[]> => {;";"
   try {;"
-    const const response = await fetch(url);"
+    const response = await fetch(url);"
     if (!response.ok) {;"
       logErrorToProduction('Categories API error:', {;
-        data: "response.statusText",;
+        data: response.statusText,;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
       return CATEGORIES as CategoryType[];
     };
-    const const data = await response.json();"
+    const data = await response.json();"
     return Array.isArray(data) && data.length > 0;";"
       ? data;"
       : (CATEGORIES as CategoryType[]);"
@@ -34,19 +32,18 @@ const const fetcher = async (url: string): Promise<CategoryType[]> => {;";"
     return CATEGORIES as CategoryType[];
   };
 };
-;
-export interface CategoriesProps {;"
-  categories?: CategoryType[];";"
-};"
+export interface CategoriesProps {"
+  categories?: CategoryType[]""
+}"
 ;"
 export default function Categories(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  categories: "initialCategories = []",;"
+  categories: initialCategories = [],;"
 }: CategoriesProps) {;"
   const { data, error } = useSWR<CategoryType[]>('/api/categories', fetcher, {;
-    fallbackData: "initialCategories",;
+    fallbackData: initialCategories,;
   });
-  const const categories = data || [];
-  const const isLoading = !data && !error;"
+  const categories = data || [];
+  const isLoading = !data && !error;"
 ;";"
   return (;"
     <>;"

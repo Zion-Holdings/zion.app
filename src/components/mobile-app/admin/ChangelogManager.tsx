@@ -9,11 +9,11 @@ import type { AppPlatform } from './MetadataManager'
 '
 interface ChangelogManagerProps {'
   _platform: "AppPlatform
-};
+}
 "
 type ChangelogEntry = {;"
   id: string
-  version: "string",
+  version: string,
   date: string"
   changes: "string
 };
@@ -38,7 +38,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
     changes: '','
   });
 
-  const const handleAddEntry = () => {'
+  const handleAddEntry = () => {'
     if (!newEntry.version || !newEntry.changes) return'
 
     const entry: unknown ChangelogEntry = {'
@@ -56,7 +56,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
     });
   };
 
-  const const handleRemoveEntry = (_id: string) => {'
+  const handleRemoveEntry = (_id: string) => {'
     setEntries(entries.filter((entry) => entry.id !== id))'
   };
 '
@@ -87,7 +87,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
                 name="date
                 value={newEntry.date};
                 onChange={handleInputChange};
-              />;
+              />;"
             </div>"
             <Button;"
               onClick={handleAddEntry};
@@ -100,7 +100,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
 "
           <Textarea;
             placeholder=What's new in this version?"
-            name="changes
+            name="changes"
             value={newEntry.changes}"
             onChange={handleInputChange};"
             rows={3};
@@ -114,7 +114,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
               >
                 <div className=flex justify-between mb-2">"
                   <div className=flex items-center gap-3>"
-                    <span className="text-zion-cyan font-semibold>
+                    <span className="text-zion-cyan font-semibold>"
                       v{entry.version};"
                     </span>"
                     <span className=text-sm text-gray-400>{entry.date}</span>"
@@ -122,7 +122,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
                   <Button
                     variant=ghost"
                     size="sm
-                    onClick={() => handleRemoveEntry(entry.id)}
+                    onClick={() => handleRemoveEntry(entry.id)}"
                     className="text-gray-400 hover:text-red-400 p-1 h-auto"
                   >
                     <Trash2 className=h-4 w-4" />"

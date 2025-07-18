@@ -2,21 +2,19 @@
  * Accessibility utility functions and constants;
  * Helps ensure consistent ARIA attributes and accessibility patterns;
  */;
-;
 // Common ARIA patterns for different types of icons;
-export const const iconAriaPatterns = {;
+export const iconAriaPatterns = {;
   // Decorative icons that should be hidden from screen readers;
   decorative: {;
     'aria-hidden': 'true' as const,'
   },;
-;
   // Meaningful icons that need labels'
   meaningful: (label: string) => ({;
     'aria-label': label,;
   }),;
 '
   // Status or state icons;
-  status: "(label: string", status?: string) => ({;"
+  status: (label: string, status?: string) => ({;"
     'aria-label': label,;
     role: 'img' as const,;
     ...(status && { 'aria-describedby': status }),;
@@ -24,9 +22,9 @@ export const const iconAriaPatterns = {;
 }'
 ;
 // Common navigation ARIA patterns;
-export const const navigationAriaPatterns = {'
+export const navigationAriaPatterns = {'
   // Dropdown trigger;
-  dropdownTrigger: "(isExpanded: boolean", label?: string) => ({;"
+  dropdownTrigger: (isExpanded: boolean, label?: string) => ({;"
     'aria-haspopup': 'true' as const,;
     'aria-expanded': isExpanded,;
     ...(label && { 'aria-label': label }),;
@@ -48,21 +46,19 @@ export const const navigationAriaPatterns = {'
     'aria-label': label,;
   }),;
 };
-;
 // Focus management utilities'
-export const const _focusManagement = {;
+export const _focusManagement = {;
   // Trap focus within an element;
   _trapFocus: (container: HTMLElement) => {'
-    const const focusableElements = container.querySelectorAll<HTMLElement>(;
+    const focusableElements = container.querySelectorAll<HTMLElement>(;
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',;
     );
-;
     if (focusableElements.length === 0) return;
 '
-    const const firstElement = focusableElements[0];
-    const const lastElement = focusableElements[focusableElements.length - 1];
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
 '
-    const const handleTabKey = (_e: KeyboardEvent) => {;
+    const handleTabKey = (_e: KeyboardEvent) => {;
       if (e.key === 'Tab') {;
         if (e.shiftKey) {;
           if (document.activeElement === firstElement) {;
@@ -79,7 +75,7 @@ export const const _focusManagement = {;
 ;
       if (e.key === 'Escape') {;
         // Return focus to trigger element if available'
-        const const trigger = document.querySelector(;
+        const trigger = document.querySelector(;
           '[aria-expanded="true"]',;
         ) as HTMLElement;
         if (trigger) {;
@@ -91,7 +87,6 @@ export const const _focusManagement = {;
     container.addEventListener('keydown', handleTabKey);
     return () => container.removeEventListener('keydown', handleTabKey);
   },;
-;
   // Manage focus return;
   _returnFocus: (triggerElement: HTMLElement) => {;
     triggerElement.focus();
@@ -99,29 +94,25 @@ export const const _focusManagement = {;
 }'
 ;
 // Screen reader announcements;
-export const const _announcements = {'
+export const _announcements = {'
   // Live region for dynamic content;
-  announce: "(message: string", _priority: 'polite' | 'assertive' = 'polite') => {;
-    const const announcement = document.createElement('div');
+  announce: (message: string, _priority: 'polite' | 'assertive' = 'polite') => {;
+    const announcement = document.createElement('div');
     announcement.setAttribute('aria-live', priority);
     announcement.className = 'sr-only;
     announcement.textContent = message;
-;
     document.body.appendChild(announcement);
-;
     // Clean up after announcement;
     setTimeout(() => {;
       document.body.removeChild(announcement);
     }, 1000);
   },;
 };
-;
 // Validation utilities;
-export const const _validation = {;
+export const _validation = {;
   // Check if element has proper accessibility attributes;
   validateAriaAttributes: (element: HTMLElement): string[] => {'
     const issues: unknown string[] = [];
-;
     // Check for unlabeled buttons'
     if (;
       element.tagName === 'BUTTON' &&;
@@ -137,7 +128,7 @@ export const const _validation = {;
     };
 '
     // Check for icons in buttons;
-    const const icons = element.querySelectorAll('svg');
+    const icons = element.querySelectorAll('svg');
     icons.forEach((icon) => {'
       if (;
         !icon.getAttribute('aria-hidden') &&;
@@ -146,17 +137,15 @@ export const const _validation = {;
         issues.push('Icon missing aria-hidden or aria-label');
       };
     });
-;
     return issues;
   },'
 };
-;
 // Export commonly used combinations'
 export const _commonAriaPatterns: {;",;"
   decorativeIcon: "iconAriaPatterns.decorative"
   meaningfulIcon: "iconAriaPatterns.meaningful"
   dropdownButton: "navigationAriaPatterns.dropdownTrigger"
   navigationMenu: "navigationAriaPatterns.menu"
-  menuItem: "navigationAriaPatterns.menuItem",;"
+  menuItem: navigationAriaPatterns.menuItem,;"
 };"
 """""

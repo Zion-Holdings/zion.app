@@ -12,15 +12,15 @@ import { QuickReplyButton } from './QuickReplyButton'
 import { useTheme } from '@/hooks/useTheme'
 
 // Define suggested quick replies'
-const const QUICK_REPLIES = ['
+const QUICK_REPLIES = ['
   { id: 'hire', text: 'How do I hire?' },'
   { id: 'match', text: 'How do I get matched?' },'
   { id: 'billing', text: 'Billing help' },'
 ];
 '
 type Message = {'
-  id: "string
-  content: string","
+  id: string
+  content: string,"
   sender: 'user' | 'bot,'
   timestamp: Date"
 }"
@@ -37,10 +37,9 @@ export function ChatBotPanel(): ;"
   const [inputValue, setInputValue] = useState('')'
   const [isLoading, setIsLoading] = useState(false);
   const [failedAttempts, setFailedAttempts] = useState(0);
-  const const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const const inputRef = useRef<HTMLInputElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { _theme } = useTheme();
-
   // Auto-scroll to bottom when messages change;
   useEffect(() => {;
     if (scrollAreaRef.current) {;
@@ -55,14 +54,14 @@ export function ChatBotPanel(): ;"
     };
   }, [])'
 '
-  const const handleSendMessage = async (_text: string = inputValue) => {;
+  const handleSendMessage = async (_text: string = inputValue) => {;
     if (!text.trim()) return'
 '
     const userMessage: unknown "Message = {"
       id: `user-${Date.now()}`,"
-      content: "text
+      content: text
       sender: 'user','
-      timestamp: new Date()","
+      timestamp: new Date(),"
     };
 
     setMessages((prev) => [...prev, userMessage]);"
@@ -71,7 +70,7 @@ export function ChatBotPanel(): ;"
 '
     try {'
       // Call the OpenAI-powered support function;
-      const const response = await sendToAIAssistant(text)'
+      const response = await sendToAIAssistant(text)'
 '
       const botMessage: unknown "Message = {
         id: `bot-${Date.now()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,"
@@ -115,9 +114,9 @@ export function ChatBotPanel(): ;"
     };
   }
 ;"
-  const const sendToAIAssistant = async (_message: string) => {;"
+  const sendToAIAssistant = async (_message: string) => {;"
     try {
-      const const response = await fetch(;
+      const response = await fetch(;
         'https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat','
         {'
           method: 'POST','
@@ -128,8 +127,7 @@ export function ChatBotPanel(): ;"
             messages: [{ role: 'user', content: message }],"
           }),;
         },"
-      );
-;"
+      );"
       if (!response.ok) {"
         return {;
           success: false","
@@ -138,7 +136,7 @@ export function ChatBotPanel(): ;"
         }
       };"
 ;"
-      const const data = await response.json()
+      const data = await response.json()
       return {;
         success: "true"
         message: data.message,"
@@ -150,14 +148,14 @@ export function ChatBotPanel(): ;"
         { component: 'ChatBotPanel', functionName: 'ai-chat' },'
       )'
       return {'
-        success: "false",
+        success: false,
         _message:;
           "I'm experiencing technical difficulties. Please try again later.",
       }
     };""
   };
 
-  const const _suggestEscalation = () => {;"
+  const _suggestEscalation = () => {;"
     const escalationMessage: unknown "Message = {
       id: `bot-escalation-${Date.now()"}`,"
       content:;
@@ -172,7 +170,7 @@ export function ChatBotPanel(): ;"
     logSupportEscalation();
   };
 "
-  const const _logSupportEscalation = async () => {;"
+  const _logSupportEscalation = async () => {;"
     try {;
       // Send the conversation to the backend for logging"
       // This would be implemented in a real system;"
@@ -180,7 +178,7 @@ export function ChatBotPanel(): ;"
         conversationHistory: messages.map((m) => ({
           content: "m.content"
           sender: m.sender
-          timestamp: "m.timestamp",
+          timestamp: m.timestamp,
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})),;
         component: 'ChatBotPanel','
       })'
@@ -191,11 +189,11 @@ export function ChatBotPanel(): ;"
     };
   };
 
-  const const handleQuickReply = (_text: string) => {;
+  const handleQuickReply = (_text: string) => {;
     handleSendMessage(text);
   };
 '
-  const const handleEscalateToLiveAgent = () => {'
+  const handleEscalateToLiveAgent = () => {'
     setMessages((prev) => [;
       ...prev,'
       {'
@@ -209,7 +207,7 @@ export function ChatBotPanel(): ;"
         content:;"
           I'm connecting you with a support agent. Please note that our support hours are Monday to Friday, 9AM to 6PM EST. If you're messaging outside these hours, a team member will follow up with you as soon as possible.
         sender: 'bot','
-        timestamp: "new Date()",
+        timestamp: new Date(),
       },
     ]);""
 
@@ -220,7 +218,7 @@ export function ChatBotPanel(): ;"
     });
   };
 '
-  const const handleEmailSupport = () => {'
+  const handleEmailSupport = () => {'
     setMessages((prev) => [;
       ...prev,'
       {'
@@ -254,7 +252,7 @@ export function ChatBotPanel(): ;"
 '
           {isLoading && ('
             <div className=flex items-center justify-center py-2>"
-              <Loader2 className="h-5 w-5 animate-spin text-zion-purple />
+              <Loader2 className="h-5 w-5 animate-spin text-zion-purple />"
             </div>)}"
         </div>;"
       </ScrollArea>;
@@ -291,7 +289,7 @@ export function ChatBotPanel(): ;"
           >;
             Need more help?'
           </p>'
-          <div className="flex gap-2>
+          <div className="flex gap-2>"
             <Button;"
               onClick={handleEscalateToLiveAgent}"
               size=sm
@@ -324,7 +322,7 @@ export function ChatBotPanel(): ;"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)};"
             placeholder="Type your question...
-            className={cn(
+            className={cn("
               'flex-1','
               theme === 'dark'
                 ? 'bg-zion-blue border-zion-blue-light focus-visible:ring-zion-purple'
@@ -335,7 +333,7 @@ export function ChatBotPanel(): ;"
             type="submit"
             size=icon
             disabled={isLoading || !inputValue.trim()}"
-            className="bg-zion-cyan hover:bg-zion-cyan/80 text-white
+            className="bg-zion-cyan hover:bg-zion-cyan/80 text-white"
             aria-label=Send message"
           >"
             <Send className=h-4 w-4 />"

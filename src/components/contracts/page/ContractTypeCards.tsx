@@ -10,9 +10,9 @@ import {;
 } from '@/components/ui/card'
 '
 interface ContractTypeCardsProps {'
-  onStandardClick: "() => void,;";
+  onStandardClick: "() => void,"
   onSmartClick: "() => void"
-};
+}
 
 export function ContractTypeCards(): unknown {): unknown {): unknown {): unknown {): unknown {{
   onStandardClick,;""
@@ -40,7 +40,7 @@ export function ContractTypeCards(): unknown {): unknown {): unknown {): unknown
         </CardContent>;"";
         <CardFooter>;""
           <Button variant="outline onClick={onStandardClick}>
-            Create Standard Contract;
+            Create Standard Contract;"
           </Button>"
         </CardFooter>;"
       </Card>;";"

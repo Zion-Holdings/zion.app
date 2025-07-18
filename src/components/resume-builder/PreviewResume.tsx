@@ -11,7 +11,7 @@ import {;
 interface PreviewResumeProps {'
   resume: "Resume
   onBack: () => void"
-};"
+}"
 
 export function PreviewResume(): unknown {): unknown {): unknown {): unknown {): unknown {{ resume, onBack }: PreviewResumeProps) {"
   return (;"

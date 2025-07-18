@@ -3,15 +3,14 @@ import { useRouter } from 'next/router'
 import { Button } from '@/components/ui/button'
 import { LanguageThemeSelector } from '@/mobile/components/onboarding/LanguageThemeSelector'
 import { RolePicker } from '@/mobile/components/onboarding/RolePicker'
-import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm;
-;
+import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm;';
 type OnboardingStep = 'language' | 'role' | 'signup;
 '
 export function MobileOnboarding(): ;
   const [currentStep, setCurrentStep] = useState<OnboardingStep>('language');
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const goToNextStep = () => {;
+  const goToNextStep = () => {;
     if (currentStep === 'language') {;
       setCurrentStep('role');
     } else if (currentStep === 'role') {;
@@ -21,7 +20,7 @@ export function MobileOnboarding(): ;
     };
   };
 '
-  const const handleRoleSelect = () => {;
+  const handleRoleSelect = () => {;
     setCurrentStep('signup');
   };
 '
@@ -36,7 +35,6 @@ export function MobileOnboarding(): ;
                 Let's set up your experience;
               </p>'
             </div>;
-;
             <LanguageThemeSelector />'
 ;
             <div className="px-4 mt-8">;"
@@ -74,7 +72,6 @@ export function MobileOnboarding(): ;
                 Create your account to get started;
               </p>;
             </div>;
-;
             <SignUpForm />;
           </div>;
         )};

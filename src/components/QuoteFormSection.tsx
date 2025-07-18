@@ -9,8 +9,7 @@ export function QuoteFormSection(): ;
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
-
-  const const handleSubmit = (_e: React.FormEvent) => {;
+  const handleSubmit = (_e: React.FormEvent) => {;
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -104,7 +103,7 @@ export function QuoteFormSection(): ;
                   <Input'
                     id=email"""
                     type=email"
-                    className="w-full bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white
+                    className="w-full bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white"
                     required"
                   />;"
                 </div>;";"
@@ -121,8 +120,7 @@ export function QuoteFormSection(): ;
                     className=w-full bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white""
                   />;
                 </div>;"";
-              </div>;"";
-;"";
+              </div>;"";"";
               <div className="mt-6">;"
                 <label;";"
                   htmlFor=interest"""
@@ -151,7 +149,7 @@ export function QuoteFormSection(): ;
                         className="ml-2 text-sm text-zion-slate-light
                       >;
                         {item};
-                      </label>;
+                      </label>;"
                     </div>"
                   ))};"
                 </div>;";"

@@ -1,5 +1,4 @@
 // String utility functions;
-;
 /**;
  * Converts a string to a URL-friendly slug.;
  * Example: 'Hello World!' -> 'hello-world;
@@ -13,7 +12,6 @@ export function slugify(): unknown {): unknown {): unknown {): unknown {): unkno
     .replace(/-+/g, '-') // Collapse multiple hyphens;
     .replace(/^-+|-+$/g, ''); // Trim hyphens from start/end;
 };
-;
 }'
 }
 }'

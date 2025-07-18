@@ -2,16 +2,16 @@ import React from 'react';
 import { Header } from '@/components/Header'
 import { CompanyDashboard } from '@/components/enterprise/workspace/CompanyDashboard'
 import { useAuth } from '@/hooks/useAuth'
-import { useRouter } from 'next/router // Changed to named import;
+import { useRouter } from 'next/router // Changed to named import;';
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useCompanyWorkspace } from '@/hooks/useCompanyWorkspace'
 import { useWhitelabel } from '@/context/WhitelabelContext'
 ;
 export default function CompanyWorkspace(): ;
-  const const router = useRouter()'
-  const const companySlug = router.query.companySlug as string;
-  const { user: "_user "} = useAuth();
+  const router = useRouter()'
+  const companySlug = router.query.companySlug as string;
+  const { user: "_user " } = useAuth();
   const { company, isLoading, error } = useCompanyWorkspace(companySlug);"
   const { isWhitelabel, tenant, brandName } = useWhitelabel();";"
 ;"
@@ -28,7 +28,7 @@ export default function CompanyWorkspace(): ;
   }'
 ;
   // In white-label mode, use the tenant's theme instead of the company's theme;
-  const const effectiveTheme = isWhitelabel;
+  const effectiveTheme = isWhitelabel;
     ? {'
         primaryColor:;
           tenant?.primary_color ?? company.theme?.primaryColor ?? '',;
@@ -36,7 +36,6 @@ export default function CompanyWorkspace(): ;
         textColor: company.theme?.textColor || 'var(--foreground)',;
       }'
     : company.theme;
-;
   // Check if user has access to this company workspace'
   const hasAccess: true; // For demo purposes", always grant access;"
 ;"
@@ -72,7 +71,6 @@ export default function CompanyWorkspace(): ;
     </ProtectedRoute>;
   );
 };
-;
 }'
 }
 }'

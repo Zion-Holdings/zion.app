@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
 import type { JobMatch } from '@/types/jobs'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useJobMatches(): unknown {): unknown {): unknown {): unknown {): unknown {jobId: string) {;
-  const [matches, setMatches] = useState<JobMatch[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [matches, setMatches] = useState<JobMatch[]>([]);';
+  const [isLoading, setIsLoading] = useState(true);';
   const [isProcessing, setIsProcessing] = useState(false)'
 ;
-  const const fetchMatches = async () => {;
+  const fetchMatches = async () => {;
     setIsLoading(true)'
     try {;
       if (!supabase) throw new Error('Supabase client not initialized')'
@@ -49,11 +48,11 @@ export function useJobMatches(): unknown {): unknown {): unknown {): unknown {):
     };
   }'
 ;
-  const const triggerAIMatching = async () => {;
+  const triggerAIMatching = async () => {;
     setIsProcessing(true)'
     try {;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const const response = await supabase.functions.invoke('job-talent-matcher', {;
+      const response = await supabase.functions.invoke('job-talent-matcher', {;
         body: "{ jobId "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       });"
 ;";"
@@ -78,11 +77,9 @@ export function useJobMatches(): unknown {): unknown {): unknown {): unknown {):
       setIsProcessing(false);
     };
   };
-;
-  useEffect(() => {;
-    fetchMatches();
-  }, [jobId]);
-;
+  useEffect(() => {
+    fetchMatches()
+  }, [jobId])
   return {;
     matches,;
     isLoading,;
@@ -90,7 +87,6 @@ export function useJobMatches(): unknown {): unknown {): unknown {): unknown {):
     triggerAIMatching,;
   };
 };
-;
 }'
 }
 }'

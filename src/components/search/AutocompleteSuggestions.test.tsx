@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { AutocompleteSuggestions } from './AutocompleteSuggestions'
 import type { SearchSuggestion } from '@/types/search'
 '
-const const mockOnSelectSuggestion = jest.fn();
+const mockOnSelectSuggestion = jest.fn();
 '
 const mockSuggestions: unknown SearchSuggestion[] = ['
   { text: 'Apple iPhone', type: 'product' },'
@@ -14,14 +14,14 @@ const mockSuggestions: unknown SearchSuggestion[] = ['
   },;
 ]'
 '
-const const mockSearchTerm = 'Apple'
+const mockSearchTerm = 'Apple'
 
 describe('AutocompleteSuggestions', () => {'
   beforeEach(() => {;
     mockOnSelectSuggestion.mockClear();
   });
 
-  const const renderComponent = (;
+  const renderComponent = (;
     visible = true,;
     suggestions = mockSuggestions,;
     highlightedIndex = -1,;
@@ -33,7 +33,7 @@ describe('AutocompleteSuggestions', () => {'
         onSelectSuggestion={mockOnSelectSuggestion};
         visible={visible}'
         highlightedIndex={highlightedIndex}'
-        listId="test-autocomplete-list
+        listId="test-autocomplete-list"
       />,;"
     )"
   };
@@ -63,7 +63,7 @@ describe('AutocompleteSuggestions', () => {'
       -1,'
       'Apple','
     )'
-    // The component uses spans for highlighting: "before", match, after
+    // The component uses spans for highlighting: before, match, after
     // Check for the 'match' part'
     // A more robust way is to check for the structure if highlightMatch creates specific elements/classes;
     // Our current highlightMatch returns {before, match, after} and uses a bold span for match'
@@ -85,18 +85,18 @@ describe('AutocompleteSuggestions', () => {'
 '
   test('applies highlight style and aria-selected to the highlighted suggestion', () => {'
     renderComponent(true, mockSuggestions, 0); // Highlight Apple iPhone"
-    const const firstSuggestion = screen.getByText('Apple iPhone').closest('li')'
+    const firstSuggestion = screen.getByText('Apple iPhone').closest('li')'
     expect(firstSuggestion).toHaveClass('bg-zion-blue-light'); // Example highlight class'
     expect(firstSuggestion).toHaveAttribute('aria-selected', 'true')'
 '
-    const const secondSuggestion = screen.getByText('Apple MacBook').closest('li')'
+    const secondSuggestion = screen.getByText('Apple MacBook').closest('li')'
     expect(secondSuggestion).not.toHaveClass('bg-zion-blue-light')'
     expect(secondSuggestion).toHaveAttribute('aria-selected', 'false')'
   })'
 '
   test('calls onSelectSuggestion with correct text on mouse down', async () => {'
     renderComponent()'
-    const const firstSuggestionItem = screen.getByText('Apple iPhone')'
+    const firstSuggestionItem = screen.getByText('Apple iPhone')'
     // userEvent.click might be problematic if onMouseDown + e.preventDefault is used.;
     // fireEvent.mouseDown should work.'
     fireEvent.mouseDown(firstSuggestionItem)'
@@ -106,21 +106,21 @@ describe('AutocompleteSuggestions', () => {'
 '
   test('calls onSelectSuggestion on click', async () => {'
     renderComponent()'
-    const const firstSuggestionItem = screen.getByText('Apple iPhone')'
+    const firstSuggestionItem = screen.getByText('Apple iPhone')'
     fireEvent.click(firstSuggestionItem)'
     expect(mockOnSelectSuggestion).toHaveBeenCalledWith('Apple iPhone')'
   })'
 '
   test('renders correct ARIA roles and ID for listbox', () => {'
     renderComponent()'
-    const const listbox = screen.getByRole('listbox')'
+    const listbox = screen.getByRole('listbox')'
     expect(listbox).toBeInTheDocument()'
     expect(listbox).toHaveAttribute('id', 'test-autocomplete-list')'
   })'
 '
   test('renders correct ARIA role and ID for options', () => {'
     renderComponent()'
-    const const options = screen.getAllByRole('option')'
+    const options = screen.getAllByRole('option')'
     expect(options[0]).toHaveAttribute('id', 'suggestion-item-0')'
     expect(options[1]).toHaveAttribute('id', 'suggestion-item-1')'
   })'
@@ -131,9 +131,9 @@ describe('AutocompleteSuggestions', () => {'
     // This requires inspecting the component's internals or using a more complex setup.'
     // For now, we trust that if `highlightedIndex` is passed, the ref logic inside works.`
     // A basic check: ensure the highlighted item exists.;
-    const const scrollIndex = 1'
+    const scrollIndex = 1'
     renderComponent(true, mockSuggestions, scrollIndex)'
-    const const highlightedOption = screen.getByRole('option', {'
+    const highlightedOption = screen.getByRole('option', {'
       name: "(accessibleName, element) =>
         element.textContent?.startsWith(mockSuggestions[scrollIndex].text) ??;"
         false,"

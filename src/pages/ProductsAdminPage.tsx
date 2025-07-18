@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import AdminLayout from '@/components/admin/AdminLayout
+import  AdminLayout  from '@/components/admin/AdminLayout
 import {
   Table,
   TableHead,
   TableHeader,
   TableRow,
   TableBody,
-  TableCell,
+  TableCell,';
 } from '@/components/ui/table
-import { Input } from '@/components/ui/input
-import { Switch } from '@/components/ui/switch
+import  { Input }  from '@/components/ui/input';
+import  { Switch }  from '@/components/ui/switch
 
 interface Product {
   id: number;
-  name: string;
-  category: string;
+  name: string;';
+  category: string;';
   status: 'approved' | 'pending' | 'rejected
 }
 

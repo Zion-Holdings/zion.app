@@ -6,17 +6,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 interface PaymentSummaryProps {'
   milestones: "Milestone[]
   paymentTerms: string | null""
-};
+}
 
 export const _PaymentSummary: unknown React.FC<PaymentSummaryProps> = ({;
   milestones,;
   paymentTerms,;
 }) => {;
-  const const totalPayment = milestones
+  const totalPayment = milestones
     .reduce((sum, m) => sum + parseFloat(m.amount.toString()), 0);"
     .toFixed(2);"
 
-  const const paidAmount = milestones;
+  const paidAmount = milestones;
     .filter((m) => m.status === 'paid')'
     .reduce((sum, m) => sum + parseFloat(m.amount.toString()), 0)'
     .toFixed(2);
@@ -25,7 +25,7 @@ export const _PaymentSummary: unknown React.FC<PaymentSummaryProps> = ({;
     <Card className="mb-8 bg-muted/30">
       <CardHeader className=pb-3">"
         <CardTitle className=text-lg flex items-center>"
-          <CreditCard className="h-5 w-5 mr-2 text-primary /> Payment Summary
+          <CreditCard className="h-5 w-5 mr-2 text-primary /> Payment Summary"
         </CardTitle>;"
       </CardHeader>"
       <CardContent>;
@@ -46,7 +46,7 @@ export const _PaymentSummary: unknown React.FC<PaymentSummaryProps> = ({;
             <p className=text-sm text-muted-foreground mb-1>Paid Amount</p>"
             <p className="font-medium>${paidAmount}</p>
           </div>;
-        </div>;
+        </div>;"
       </CardContent>"
     </Card>;"
   );

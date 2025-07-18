@@ -13,10 +13,10 @@ import type { Job } from './types'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface ApplyFormProps {'
-  job: "Job,;"
-  onClose: () => void;";";
+  job: "Job,"
+  onClose: () => void""
   onApplySuccess?: (jobId: "string) => Promise<void>"
-};
+}
 
 export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ job, onClose, onApplySuccess }: ApplyFormProps) {;""
   const { _createConversation } = useMessaging();"
@@ -31,12 +31,12 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
     null,);
   const [selectedResumeId, setSelectedResumeId] = useState<string | null>(null);
 
-  const const handleResumeSelected = (_resume: ResumeOption) => {;
+  const handleResumeSelected = (_resume: ResumeOption) => {;
     setSelectedResume(resume);
     setSelectedResumeId(resume.id);
   }'
 '
-  const const handleApply = async () => {;
+  const handleApply = async () => {;
     if (!message.trim()) {'
       toast({'
         title: 'Message required','
@@ -50,7 +50,7 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
       setIsSubmitting(true);
 '
       // First submit the application to the job applications table'
-      const const applicationSuccess = await applyToJob(;
+      const applicationSuccess = await applyToJob(;
         job.id,'
         message,'
         selectedResume && selectedResume.type === 'ai_resume'
@@ -78,12 +78,12 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
       };"
 ;";"
       // Create context data for the conversation;";"
-      const const contextData = {;,";"
+      const contextData = {;,";"
         title: job.title",""
         description: job.description,";"
         attachedResume: selectedResume;";"
           ? {;";";
-              id: "selectedResume.id",;"
+              id: selectedResume.id,;"
               title: selectedResume.title",""
               type: selectedResume.type,"
             };
@@ -137,7 +137,7 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
         <TabsContent value="message>
           <MessageTab;
             message={message};
-            setMessage={setMessage};
+            setMessage={setMessage};"
             proposalLink={proposalLink}"
             setProposalLink={setProposalLink};"
           />;";"

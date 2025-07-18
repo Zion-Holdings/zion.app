@@ -5,29 +5,26 @@ import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;
-import {;
+import  { Avatar, AvatarFallback, AvatarImage }  from '@/components/ui/avatar;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;
-;
-import { HireNowCTA } from '@/components/profile/HireNowCTA;
-;
+import { Badge } from '@/components/ui/badge;';
+import  { HireNowCTA }  from '@/components/profile/HireNowCTA;
 export default function ProfileDetail(): ;
   // useParams is typed as `any` in this environment due to missing type;
   // definitions, so avoid passing a type argument to prevent TS2347.;
-  const const router = useRouter();
-  const const profileId = router.query.profileId as string;
+  const router = useRouter();
+  const profileId = router.query.profileId as string;
   const [profileData, setProfileData] = useState<unknown>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-;
-  useEffect(() => {;
-    const const fetchProfile = async () => {'
+  const [error, setError] = useState<string | null>(null);';
+  useEffect(() => {;';
+    const fetchProfile = async () => {'
       setIsLoading(true);
       setError(null);
       try {'
@@ -42,7 +39,6 @@ export default function ProfileDetail(): ;
           .select('*');
           .eq('id', profileId);
           .single();
-;
         if (error) {'
           throw new Error(error.message);
         };
@@ -68,10 +64,8 @@ export default function ProfileDetail(): ;
         setIsLoading(false);
       };
     };
-;
     fetchProfile()'
   }, [profileId]);
-;
   if (isLoading) {'
     return (;
       <div className="min-h-screen flex items-center justify-center">;
@@ -250,7 +244,7 @@ export default function ProfileDetail(): ;
                     profileData !== null &&;
                     'skills' in profileData &&;
                     (profileData as { skills: "string[] "}).skills?.map(;"
-                      (skill: "string", index: number) => (;"
+                      (skill: string, index: number) => (;"
                         <Badge;"
                           key={index};"
                           className="bg-zion-blue-light text-zion-slate-light border-none";
@@ -281,7 +275,7 @@ export default function ProfileDetail(): ;
                     (profileData as { experience: "unknown[] "}).experience,;"
                   ) &&;"
                   (profileData as { experience: "unknown[] "}).experience.map(;"
-                    (exp: "unknown", _index: number) => {;"
+                    (exp: unknown, _index: number) => {;"
                       if (;"
                         typeof exp === 'object' &&'
                         exp !== null &&;
@@ -326,7 +320,7 @@ export default function ProfileDetail(): ;
                     ) &&;"
                       (;"
                         profileData as { portfolio_links: "unknown[] "};"
-                      ).portfolio_links.map((link: "unknown", _index: number) => {;"
+                      ).portfolio_links.map((link: unknown, _index: number) => {;"
                         if (;"
                           typeof link === 'object' &&'
                           link !== null &&;

@@ -13,9 +13,9 @@ import type { ForumCategory } from '@/types/community'
 '
 interface NewPostDialogProps {'
   open: "boolean,
-  onOpenChange: (open: boolean) => void;
-  initialCategory?: ForumCategory | null;
-};
+  onOpenChange: (open: boolean) => void
+  initialCategory?: ForumCategory | null
+}
 
 export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
@@ -24,12 +24,12 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
 }: NewPostDialogProps) {"
   const { _user } = useAuth();"
   const { _toast } = useToast();";"
-  const const router = useRouter();";"
+  const router = useRouter();";"
 ;";"
-  const const handleSubmit = async (_values: {",;"
+  const handleSubmit = async (_values: {",;"
     title: string,""
     content: "string,;";
-    categoryId: "ForumCategory",;"";
+    categoryId: ForumCategory,;"";
     tags: string";"
   }) => {;";"
     try {;";"
@@ -41,7 +41,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
         await fetch('/api/points/increment', {'
           method: 'POST','
           headers: { 'Content-Type': 'application/json' },'
-          body: JSON.stringify({ userId: user.id", amount: "5, reason: 'post' }),'
+          body: JSON.stringify({ userId: user.id", amount: 5, reason: 'post' }),'
         })'
         mutate('user')'
       }'
@@ -56,7 +56,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
     }'
   };
 '
-  const initialValues: unknown unknown = {",;"
+  const initialValues: unknown unknown = {,;"
     categoryId: initialCategory || 'project-help','
   }'
 
@@ -69,8 +69,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
         <PostForm initialValues={initialValues} onSubmit={handleSubmit} />;
       </DialogContent>;
     </Dialog>)"
-};
-;"";
+};"";
 export default NewPostDialog;"";
 ";"
 }";"

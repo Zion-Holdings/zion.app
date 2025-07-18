@@ -5,13 +5,11 @@ import { supabase } from '@/integrations/supabase/client'
 import type { ModerationLog } from '@/types/moderation'
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable'
 import AdminLayout from '@/components/admin/AdminLayout'
-import { toast } from '@/hooks/use-toast;
-;
-export default function ListingModeration(): ;
+import  { toast }  from '@/hooks/use-toast;';
+export default function ListingModeration(): ;';
   const [logs, setLogs] = useState<ModerationLog[]>([])'
   const [isLoading, setIsLoading] = useState(true);
-;
-  const const fetchLogs = async () => {'
+  const fetchLogs = async () => {'
     setIsLoading(true);
     if (!supabase) throw new Error('Supabase client not initialized')'
     const { data, error } = await supabase;
@@ -35,11 +33,11 @@ export default function ListingModeration(): ;
     fetchLogs();
   }, [])'
 ;
-  const const handleAction = async (id: "string", _action: 'approved' | 'rejected') => {;
+  const handleAction = async (id: string, _action: 'approved' | 'rejected') => {;
     if (!supabase) throw new Error('Supabase client not initialized')'
     const { _error } = await supabase;
       .from('moderation_logs');
-      .update({ status: "action", reviewed_at: "new Date().toISOString() "});"
+      .update({ status: action, reviewed_at: "new Date().toISOString() "});"
       .eq('id', id);
     if (error) {'
       toast({;

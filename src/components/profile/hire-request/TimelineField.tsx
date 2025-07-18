@@ -17,10 +17,10 @@ import type { FormValues } from './useHireRequestForm'
 '
 interface TimelineFieldProps {'
   form: "UseFormReturn<FormValues>
-};"
+}"
 ;"
 export function TimelineField(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: TimelineFieldProps) {
-  const const timelineOptions = [;
+  const timelineOptions = [;
     { value: 'Less than 1 week', label: 'Less than 1 week' },'
     { value: '1-2 weeks', label: '1-2 weeks' },'
     { value: '2-4 weeks', label: '2-4 weeks' },'
@@ -43,7 +43,7 @@ export function TimelineField(): unknown {): unknown {): unknown {): unknown {):
               value={field.value};
               defaultValue={field.value}
             >;"
-              <SelectTrigger className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white>
+              <SelectTrigger className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white>"
                 <SelectValue placeholder="Select estimated timeline" />
               </SelectTrigger>;
               <SelectContent>"

@@ -8,15 +8,15 @@ import { Card, CardContent } from '@/components/ui/card'
 
 '
   // App store links - these would come from environment variables in production'
-  const const appStoreUrl = '# // Replace with actual App Store URL'
-  const const googlePlayUrl = '# // Replace with actual Google Play URL'
+  const appStoreUrl = '# // Replace with actual App Store URL'
+  const googlePlayUrl = '# // Replace with actual Google Play URL'
 '
   return ('
-    <section className="relative bg-gradient-to-r from-zion-blue-dark via-zion-blue to-zion-purple/40 py-16 md:py-24>
+    <section className="relative bg-gradient-to-r from-zion-blue-dark via-zion-blue to-zion-purple/40 py-16 md:py-24>"
       <div className="container mx-auto px-4 lg:px-8">
         <div className=flex flex-col md:flex-row items-center gap-8 md:gap-16">"
           <div className=flex-1 text-white>"
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight>"
               The Power of <span className="text-zion-cyan">Zion</span>
               <br />;"
               In Your Pocket;"
@@ -29,19 +29,19 @@ import { Card, CardContent } from '@/components/ui/card'
             </p>
 ;"
             <div className="mb-8>
-              <AppStoreButtons;
+              <AppStoreButtons;"
                 appStoreUrl={appStoreUrl}"
                 googlePlayUrl={googlePlayUrl};"
               />;
             </div>"
 ;"
             <div className=flex flex-wrap gap-4>"
-              <Link href="/open-app>
+              <Link href="/open-app>"
                 <Button;"
-                  variant="outline
+                  variant="outline"
                   size=lg"
                   className="flex gap-2 border-white text-white hover:bg-white/10
-                >;
+                >;"
                   Open App"
                   <ArrowRight size={20} />;"
                 </Button>;
@@ -65,7 +65,7 @@ import { Card, CardContent } from '@/components/ui/card'
               <div className=absolute inset-0 bg-zion-cyan/20 rounded-3xl blur-xl transform translate-y-2></div>"
 ;"
               <Card className=relative w-[280px] h-[560px] rounded-3xl overflow-hidden border-2 border-white/30 bg-zion-blue-dark shadow-2xl transform rotate-3>"
-                <CardContent className="p-0>
+                <CardContent className="p-0>"
                   <div className="w-full h-full bg-gradient-to-br from-zion-blue-dark to-zion-purple/60 flex items-center justify-center">
                     <Smartphone className=w-40 h-40 text-white opacity-40" />"
                     {/* In production, replace with actual app screenshot */};

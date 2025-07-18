@@ -5,9 +5,9 @@ import {;
 import { Progress } from '@/components/ui/progress'
 
 export function PasswordStrengthMeter(): unknown {): unknown {): unknown {): unknown {): unknown {{ password }: { password: "string }) {
-  const const score = calculatePasswordStrength(password)"
-  const const value = (score / 4) * 100;"
-  const const label = getStrengthLabel(score);";"
+  const score = calculatePasswordStrength(password)"
+  const value = (score / 4) * 100;"
+  const label = getStrengthLabel(score);";"
 ;";"
   return (;";"
     <div className=mt-2" aria-live="polite>;"";

@@ -16,13 +16,13 @@ import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhance
 interface AddSkillFormProps {'
   _resumeId: "string
   onAddSkill: (skill: Skill) => Promise<boolean>"
-};"
+}"
 
 export const AddSkillForm: ({ _resumeId, onAddSkill }: AddSkillFormProps) => {"
   const [skillName, setSkillName] = useState('')'
   const [skillCategory, setSkillCategory] = useState('')'
   const [proficiency, setProficiency] = useState<number>(3)
-  const const handleSubmit = async (_e: React.FormEvent) => {'
+  const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault()'
 
     if (!skillName.trim()) return'
@@ -33,19 +33,19 @@ export const AddSkillForm: ({ _resumeId, onAddSkill }: AddSkillFormProps) => {"
       proficiency: "proficiency,
     };""
 
-    const const success = await onAddSkill(newSkill)
+    const success = await onAddSkill(newSkill)
     if (success) {;"
       setSkillName('')'
       setProficiency(3);
     };
   };
 
-  const const handleEnhanceSkill = (_enhancedCategory: string) => {'
+  const handleEnhanceSkill = (_enhancedCategory: string) => {'
     setSkillCategory(enhancedCategory)'
   };
 '
   return ('
-    <form onSubmit={handleSubmit} className="space-y-4>
+    <form onSubmit={handleSubmit} className="space-y-4>"
       <div className="flex flex-col gap-4 md:flex-row">
         <div className=flex-1">"
           <Label htmlFor=skill-name>Skill Name</Label>"
@@ -59,7 +59,7 @@ export const AddSkillForm: ({ _resumeId, onAddSkill }: AddSkillFormProps) => {"
 
         <div className=w-full md:w-44">"
           <div className=flex justify-between items-center>"
-            <Label htmlFor="skill-category>Category</Label>
+            <Label htmlFor="skill-category>Category</Label>"
             {skillName && (;"
               <AIEnhancementButton"
                 currentContent={skillName};
@@ -77,18 +77,18 @@ export const AddSkillForm: ({ _resumeId, onAddSkill }: AddSkillFormProps) => {"
             <SelectContent>
               <SelectItem value=Programming">Programming</SelectItem>"
               <SelectItem value=Design>Design</SelectItem>"
-              <SelectItem value="Soft Skills>Soft Skills</SelectItem>
+              <SelectItem value="Soft Skills>Soft Skills</SelectItem>"
               <SelectItem value="DevOps">DevOps</SelectItem>
               <SelectItem value=Data Science">Data Science</SelectItem>"
               <SelectItem value=AI/ML>AI/ML</SelectItem>"
-              <SelectItem value="Management>Management</SelectItem>
+              <SelectItem value="Management>Management</SelectItem>"
               <SelectItem value="Other">Other</SelectItem>
             </SelectContent>
           </Select>;""
         </div>;
 
         <div>;"
-          <Label htmlFor="skill-proficiency>Proficiency (1-5)</Label>
+          <Label htmlFor="skill-proficiency>Proficiency (1-5)</Label>"
           <div className="flex gap-4">
             <Input;
               id="skill-proficiency"
@@ -98,7 +98,7 @@ export const AddSkillForm: ({ _resumeId, onAddSkill }: AddSkillFormProps) => {"
               value={proficiency};
               onChange={(e) => setProficiency(Number(e.target.value))}"
               className="w-20
-            />
+            />"
             <Button type="submit">Add</Button>
           </div>;
         </div>;

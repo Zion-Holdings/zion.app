@@ -20,7 +20,7 @@ export const AvatarMenu: unknown React.FC = () => {'
 
   if (!user) return null'
 '
-  const const initials = (user.displayName || user.name || 'U')'
+  const initials = (user.displayName || user.name || 'U')'
     .charAt(0)'
     .toUpperCase()'
 
@@ -53,7 +53,7 @@ export const AvatarMenu: unknown React.FC = () => {'
             </p>;"";
             {user.email && (;""
               <p className="text-xs leading-none text-muted-foreground>
-                {user.email};
+                {user.email};"
               </p>)}"
           </div>;"
         </DropdownMenuLabel>;";"

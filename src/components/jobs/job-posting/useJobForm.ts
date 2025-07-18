@@ -15,20 +15,18 @@ export interface JobPostingProps {'
   onSuccess: "(() => void) | undefined"
 }";"
 ";""
-export const const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {"
+export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {"
   const { _user } = useAuth()
-  const const router = useRouter();
-
+  const router = useRouter();
   const [startDate, setStartDate] = useState<Date | undefined>(undefined);
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
   const [isRemote, setIsRemote] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [initialValues, setInitialValues] = useState<JobSchemaType | null>("
     null,;
-  );"";
-;"";
-  const const form = useForm<JobSchemaType>({;,"";
-    resolver: "zodResolver(jobSchema)",;"
+  );"";"";
+  const form = useForm<JobSchemaType>({;,"";
+    resolver: zodResolver(jobSchema),;"
     defaultValues: {",;"
       title: '','
       company: '','
@@ -52,7 +50,7 @@ export const const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) 
   })'
 '
   // Function to create/update jobs that will be implemented by parent component;
-  const const submitJob = async (_values: JobSchemaType) => {'
+  const submitJob = async (_values: JobSchemaType) => {'
     if (!user) {'
       toast.error('You must be logged in to post a job')'
       router.push('/login')'
@@ -62,13 +60,13 @@ export const const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) 
     setIsLoading(true);
 '
     try {'
-      const const publishedDate = startDate ? startDate.toString() : 
-      const const expiryDate = endDate ? endDate.toString() : 
+      const publishedDate = startDate ? startDate.toString() : 
+      const expiryDate = endDate ? endDate.toString() : 
 
-      const const jobData = {'
+      const jobData = {'
         ...values,'
         published_date: "publishedDate,;"";
-        expiry_date: "expiryDate",;"
+        expiry_date: expiryDate,;"
         is_remote: isRemote",""
         user_id: user.id,"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};

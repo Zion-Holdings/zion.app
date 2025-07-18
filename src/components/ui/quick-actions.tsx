@@ -1,282 +1,282 @@
-import React, { useState } from 'react;
+import React, { useState } from 'react'
 import {;
   Zap,;
   Download,;
   Trash2,'
-  RefreshCw,;
-  Settings,;
+  RefreshCw,'
+  Settings,
   Activity,'
-  Monitor,;
+  Monitor,'
 } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger'
 '
-interface QuickAction {;
-  id: "string;"
-  label: "string;","
-  description: "string;"
-  icon: "React.ReactNode;","
-  action: "() => void;"
-  category: 'performance' | 'development' | 'maintenance;
+interface QuickAction {'
+  id: string
+  label: string,"
+  description: string
+  icon: React.ReactNode,
+  action: () => void"
+  category: 'performance' | 'development' | 'maintenance'
   dangerous?: boolean'
-};
-;
+}'
+
 export function QuickActions(): '
-  const { _user } = useAuth();
-  const const isAdmin = user?.userType === 'admin' || user?.role === 'admin;
+  const { _user } = useAuth()'
+  const isAdmin = user?.userType === 'admin' || user?.role === 'admin'
   const isAllowed: unknown =;
     process.env.NODE_ENV !== 'production' ||'
-    isAdmin ||;
-    localStorage.getItem('quick-actions') === 'true;
-;
+    isAdmin ||'
+    localStorage.getItem('quick-actions') === 'true'
+
   const [isVisible, setIsVisible] = useState(false);
   const [isProcessing, setIsProcessing] = useState<string | null>(null);
 '
-  if (!isAllowed) {;
+  if (!isAllowed) {'
     return null;
   }'
-;
-  const const executeAction = async (actionId: "string", action: () => void) => {;
-    setIsProcessing(actionId);"
-    try {;";"
-      await action();"
-    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
+'
+  const executeAction = async (actionId: "string, action: () => void) => {
+    setIsProcessing(actionId)"
+    try {;"
+      await action();
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {"
       logErrorToProduction(`Failed to execute action ${actionId}:`, {;"
-        data: "error",;
+        data: error,"
       });
     } finally {;
       setIsProcessing(null);
     };
-  };"
-;";"
+  }"
+
   const actions: unknown QuickAction[] = [;"
-    // Performance Actions;"
-    {;"
-      id: 'enable-performance-monitor',;
-      label: 'Enable Performance Monitor',;
-      description: 'Show real-time performance metrics',;
-      icon: <Activity className="w-4 h-4" />,;"
+    // Performance Actions"
+    {;
+      id: 'enable-performance-monitor','
+      label: 'Enable Performance Monitor','
+      description: 'Show real-time performance metrics','
+      icon: <Activity className=w-4 h-4" />,"
       category: 'performance','
-      _action: () => {;
+      _action: () => {'
         localStorage.setItem('performance-monitoring', 'true')'
-        window.location.reload();
+        window.location.reload()'
       },;
     },'
-    {;
-      id: 'enable-bundle-analyzer',;
-      label: 'Enable Bundle Analyzer',;
-      description: 'Monitor bundle size and chunks',;
-      icon: <Package className="w-4 h-4" />,;"
+    {'
+      id: 'enable-bundle-analyzer','
+      label: 'Enable Bundle Analyzer','
+      description: 'Monitor bundle size and chunks','
+      icon: <Package className=w-4 h-4 />,"
       category: 'performance','
-      _action: () => {;
+      _action: () => {'
         localStorage.setItem('bundle-analyzer', 'true')'
-        window.location.reload();
+        window.location.reload()'
       },;
     },'
-    {;
-      id: 'clear-cache',;
-      label: 'Clear Cache',;
-      description: 'Clear browser cache and storage',;
-      icon: <Trash2 className="w-4 h-4" />,;"
-      category: 'maintenance',;
-      dangerous: "true",;"
-      _action: () => {;"
-        if ('caches' in window) {;
+    {'
+      id: 'clear-cache','
+      label: 'Clear Cache','
+      description: 'Clear browser cache and storage','
+      icon: <Trash2 className="w-4 h-4 />,"
+      category: 'maintenance','
+      dangerous: true,
+      _action: () => {;
+        if ('caches' in window) {'
           caches.keys().then((names) => {;
             names.forEach((name) => caches.delete(name));
           });
         };
         localStorage.clear();
         sessionStorage.clear()'
-        window.location.reload();
+        window.location.reload()'
       },;
     },'
-    {;
-      id: 'preload-critical-resources',;
-      label: 'Preload Critical Resources',;
-      description: 'Preload fonts, images, and critical assets',;
-      icon: <Zap className="w-4 h-4" />,;"
-      category: 'performance',;
+    {'
+      id: 'preload-critical-resources','
+      label: 'Preload Critical Resources','
+      description: 'Preload fonts, images, and critical assets','
+      icon: <Zap className="w-4 h-4" />,
+      category: 'performance','
       _action: () => {;
         // Preload critical fonts'
-        const const criticalFonts = [;
-          '/fonts/inter-var.woff2',;
-          '/fonts/cal-sans.woff2',;
+        const criticalFonts = ['
+          '/fonts/inter-var.woff2','
+          '/fonts/cal-sans.woff2','
         ];
 '
-        criticalFonts.forEach((font) => {;
-          const const link = document.createElement('link');
+        criticalFonts.forEach((font) => {'
+          const link = document.createElement('link')'
           link.rel = 'preload'
           link.as = 'font'
           link.type = 'font/woff2'
-          link.crossOrigin = 'anonymous;
+          link.crossOrigin = 'anonymous'
           link.href = font'
-          document.head.appendChild(link);
-        });
-'
-        // Preload critical images;
-        const const criticalImages = ['/logos/zion-logo.png', '/images/hero-bg.webp'];
-'
-        criticalImages.forEach((img) => {;
-          const const link = document.createElement('link');
-          link.rel = 'preload'
-          link.as = 'image;
-          link.href = img;
           document.head.appendChild(link)'
         });
+'
+        // Preload critical images'
+        const criticalImages = ['/logos/zion-logo.png', '/images/hero-bg.webp']'
+'
+        criticalImages.forEach((img) => {'
+          const link = document.createElement('link')'
+          link.rel = 'preload'
+          link.as = 'image'
+          link.href = img;
+          document.head.appendChild(link)'
+        })'
       },;
     },'
-    {;
-      id: 'download-performance-report',;
-      label: 'Download Performance Report',;
-      description: 'Export current performance metrics',;
-      icon: <Download className="w-4 h-4" />,;"
-      category: 'development',;
+    {'
+      id: 'download-performance-report','
+      label: 'Download Performance Report','
+      description: 'Export current performance metrics','
+      icon: <Download className=w-4 h-4" />,"
+      category: 'development','
       _action: () => {'
-        const metrics: {;",;"
+        const metrics: {;,
           timestamp: "new Date().toISOString()"
-          performance: performance.getEntriesByType('navigation')[0],;
-          resources: performance.getEntriesByType('resource').slice(0, 20),;
+          performance: performance.getEntriesByType('navigation')[0],'
+          resources: performance.getEntriesByType('resource').slice(0, 20),'
           memory:;
             (performance as Performance & { memory?: Record<string, unknown> })'
-              .memory || {},;
-          userAgent: "navigator.userAgent"
+              .memory || {},'
+          userAgent: navigator.userAgent
           screen: {
             width: "screen.width"
-            height: "screen.height"
-            colorDepth: "screen.colorDepth",;"
-          },;";"
+            height: screen.height
+            colorDepth: screen.colorDepth,
+          },;"
         };"
-;"
-        const blob: new Blob([JSON.stringify(metrics", null, 2)], {;"
-          type: 'application/json',;
+
+        const blob: new Blob([JSON.stringify(metrics, null, 2)], {"
+          type: 'application/json','
         });
 '
-        const const url = URL.createObjectURL(blob);
-        const const a = document.createElement('a');
+        const url = URL.createObjectURL(blob)'
+        const a = document.createElement('a')'
         a.href = url;
-        a.download = `performance-report-${Date.now()}.json`;
+        a.download = `performance-report-${Date.now()}.json``
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a)'
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url)'
       },;
     },'
-    {;
-      id: 'test-error-boundary',;
-      label: 'Test Error Boundary',;
-      description: 'Trigger an error to test Sentry integration',;
-      icon: <Monitor className="w-4 h-4" />,;"
-      category: 'development',;
-      dangerous: "true",;"
-      _action: () => {;"
-        throw new Error(;"
+    {'
+      id: 'test-error-boundary','
+      label: 'Test Error Boundary','
+      description: 'Trigger an error to test Sentry integration','
+      icon: <Monitor className="w-4 h-4 />,"
+      category: 'development','
+      dangerous: true,
+      _action: () => {;
+        throw new Error("
           'Test error for Sentry integration - this is intentional!','
-        );
+        )'
       },;
     },'
-    {;
-      id: 'refresh-app',;
-      label: 'Hard Refresh',;
-      description: 'Force reload with cache bypass',;
-      icon: <RefreshCw className="w-4 h-4" />,;"
-      category: 'maintenance',;
+    {'
+      id: 'refresh-app','
+      label: 'Hard Refresh','
+      description: 'Force reload with cache bypass','
+      icon: <RefreshCw className="w-4 h-4 />,"
+      category: 'maintenance','
       _action: () => {;
         window.location.reload();
       },'
-    },;
+    },'
   ];
 '
-  const categorizedActions: {;",;"
-    performance: actions.filter((a) => a.category === 'performance'),;
-    development: actions.filter((a) => a.category === 'development'),;
-    maintenance: actions.filter((a) => a.category === 'maintenance'),;
+  const categorizedActions: {;","
+    performance: actions.filter((a) => a.category === 'performance'),'
+    development: actions.filter((a) => a.category === 'development'),'
+    maintenance: actions.filter((a) => a.category === 'maintenance'),'
   };
 '
-  const categoryColors: {;","
-    performance:;
+  const categoryColors: {;,
+    performance: "
       'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200','
-    development:;
+    development:'
       'bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200','
-    maintenance:;
+    maintenance:'
       'bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200','
-  };
-;
+  }'
+"
   if (!isVisible) {'
-    return (;
-      <div className="fixed bottom-4 left-4 z-50">;"
+    return ('
+      <div className=fixed bottom-4 left-4 z-50>"
         <Button;"
-          variant="outline"
+          variant=outline
           size="sm"
-          onClick={() => setIsVisible(true)};"
-          className="bg-background/80 backdrop-blur-sm"
-        >;"
-          <Settings className="w-4 h-4 mr-2" />;
+          onClick={() => setIsVisible(true)}
+          className=bg-background/80 backdrop-blur-sm"
+        >"
+          <Settings className=w-4 h-4 mr-2 />"
           Quick Actions;
         </Button>;
-      </div>;"
-    );";"
+      </div>"
+    );
   };"
-;"
-  return (;"
-    <div className="fixed bottom-4 left-4 z-50 w-80">;"
-      <Card className="bg-background/95 backdrop-blur-sm border shadow-lg max-h-96 overflow-y-auto">;"
-        <CardHeader className="pb-2">;"
-          <div className="flex items-center justify-between">;"
-            <CardTitle className="text-sm flex items-center">;"
-              <Settings className="w-4 h-4 mr-2" />;"
+"
+  return (;
+    <div className=fixed bottom-4 left-4 z-50 w-80">"
+      <Card className=bg-background/95 backdrop-blur-sm border shadow-lg max-h-96 overflow-y-auto>"
+        <CardHeader className="pb-2>"
+          <div className="flex items-center justify-between">
+            <CardTitle className=text-sm flex items-center">"
+              <Settings className=w-4 h-4 mr-2 />"
               Quick Actions;"
-            </CardTitle>;"
-            <Button;"
+            </CardTitle>
+            <Button;
               variant="ghost"
-              size="sm"
-              onClick={() => setIsVisible(false)};"
-              className="h-6 w-6 p-0";
-            >;"
-              ✕;";"
-            </Button>;"
-          </div>;"
+              size=sm
+              onClick={() => setIsVisible(false)}"
+              className="h-6 w-6 p-0"
+            >"
+              ✕;"
+            </Button>;
+          </div>"
         </CardHeader>;"
-        <CardContent className="pt-0 space-y-4">;"
+        <CardContent className=pt-0 space-y-4>"
           {Object.entries(categorizedActions).map(;"
-            ([category, categoryActions]) => (;"
-              <div key={category}>;"
-                <div className="flex items-center gap-2 mb-2">;"
-                  <Badge;";"
+            ([category, categoryActions]) => (
+              <div key={category}>;
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge;"
                     className={;"
-                      categoryColors[category as keyof typeof categoryColors];"
-                    };"
+                      categoryColors[category as keyof typeof categoryColors]
+                    };
                     variant="outline"
-                  >;";"
-                    {category};"
+                  >;
+                    {category}"
                   </Badge>;"
-                </div>;"
-                <div className="space-y-2">;"
-                  {categoryActions.map((action) => (;"
-                    <div key={action.id} className="space-y-1">;"
-                      <Button;"
-                        variant={action.dangerous ? 'destructive' : 'outline'};
-                        size="sm"
-                        onClick={() => executeAction(action.id, action.action)};"
-                        disabled={isProcessing === action.id};"
-                        className="w-full justify-start h-auto p-3"
-                      >;"
-                        <div className="flex items-start gap-3 w-full">;"
-                          <div className="mt-0.5">;"
+                </div>
+                <div className=space-y-2">"
+                  {categoryActions.map((action) => (;
+                    <div key={action.id} className=space-y-1">"
+                      <Button;
+                        variant={action.dangerous ? 'destructive' : 'outline'}'
+                        size=sm"
+                        onClick={() => executeAction(action.id, action.action)}"
+                        disabled={isProcessing === action.id};
+                        className=w-full justify-start h-auto p-3"
+                      >"
+                        <div className=flex items-start gap-3 w-full>"
+                          <div className="mt-0.5>"
                             {isProcessing === action.id ? (;"
-                              <RefreshCw className="w-4 h-4 animate-spin" />;"
-                            ) : (;";"
-                              action.icon;"
-                            )};"
+                              <RefreshCw className="w-4 h-4 animate-spin />"
+                            ) : (;""
+                              action.icon;
+                            )}
                           </div>;"
-                          <div className="flex-1 text-left">;"
-                            <div className="font-medium text-sm">;"
-                              {action.label};"
-                            </div>;"
-                            <div className="text-xs opacity-70 mt-1">;
+                          <div className="flex-1 text-left>"
+                            <div className="font-medium text-sm">
+                              {action.label};
+                            </div>"
+                            <div className="text-xs opacity-70 mt-1>
                               {action.description};
                             </div>;
                           </div>;
@@ -288,13 +288,13 @@ export function QuickActions(): '
               </div>;
             ),;
           )};
-        </CardContent>;
-      </Card>;"
-    </div>;";"
-  );"
-};"
-"
+        </CardContent>;"
+      </Card>"
+    </div>;"
+  );
 }"
-}";"
+"
+}
+}"
 }"
 }"

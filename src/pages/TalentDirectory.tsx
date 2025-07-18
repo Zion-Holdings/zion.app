@@ -8,36 +8,32 @@ import { FilterSidebar } from '@/components/talent/FilterSidebar'
 import { TalentResults } from '@/components/talent/TalentResults'
 import { TalentSkeleton } from '@/components/talent/TalentSkeleton'
 import { ErrorBanner } from '@/components/talent/ErrorBanner'
-import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;
+import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;';
 import { useTalentDirectory } from '@/hooks/useTalentDirectory'
-import { SORT_OPTIONS } from '@/data/sortOptions;
-;
+import { SORT_OPTIONS } from '@/data/sortOptions;';
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import type { TalentProfile } from '@/types/talent;
-import {;
-  Pagination,;
+import  type { TalentProfile }  from '@/types/talent;
+import {;';
+  Pagination,;';
   PaginationContent,'
   PaginationItem,;
   PaginationButton,;
   PaginationNext,'
   PaginationPrevious,;
 } from '@/components/ui/pagination;
-;
 export default function TalentDirectory(): ;
-  const const router = useRouterReady(); // Use our custom hook;
+  const router = useRouterReady(); // Use our custom hook;
   const [currentPage, setCurrentPage] = useState(1);
-  const const itemsPerPage = 10;
+  const itemsPerPage = 10;
   const [initialized, setInitialized] = useState(false);
-;
   // Force re-render and reset state when route changes;
-  const const routeKey = useRouteChange(() => {;
+  const routeKey = useRouteChange(() => {;
     setInitialized(false);
     setCurrentPage(1);
   });
-;
   // Use our custom hook to manage state;
-  const {;
+  const { ;
     filteredTalents,;
     total,;
     isLoading,;
@@ -61,9 +57,7 @@ export default function TalentDirectory(): ;
     toggleAvailability,;
     toggleRegion,;
     clearFilters,;
-    toggleSection,;
-  } = useTalentDirectory(currentPage, itemsPerPage);
-;
+    toggleSection,; } = useTalentDirectory(currentPage, itemsPerPage);
   // Local state for modal and selected talent;
   const [_isHireModalOpen, setIsHireModalOpen] = useState(false);
   const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>('
@@ -71,20 +65,16 @@ export default function TalentDirectory(): ;
   );
 '
   const { user } = useAuth();
-  const const isAdmin = user?.userType === 'admin;
-;
-  useEffect(() => {;
-    setCurrentPage(1);
-  }, [filteredTalents, total]);
-;
-  const const totalPages = Math.ceil(total / itemsPerPage);
-  const const paginatedTalents = filteredTalents;
-;
+  const isAdmin = user?.userType === 'admin;
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [filteredTalents, total])
+  const totalPages = Math.ceil(total / itemsPerPage);
+  const paginatedTalents = filteredTalents;
   // Load filters from query parameters on first load;
   useEffect(() => {;
     if (!router.isReady || initialized) return;
-;
-    const {;
+    const { ;
       search,;
       skills,;
       availability,;
@@ -94,9 +84,7 @@ export default function TalentDirectory(): ;
       expMin,;
       expMax,;
       sort,;
-      page,'
-    } = router.query as Record<string, string>;
-;
+      page,' } = router.query as Record<string, string>;
     if (page) setCurrentPage(parseInt(page, 10) || 1)'
     if (search) setSearchTerm(search);
     if (skills) skills.split(',').forEach((s) => toggleSkill(s))'
@@ -142,8 +130,8 @@ export default function TalentDirectory(): ;
     if (sortOption !== 'relevance') query.sort = sortOption;
     if (currentPage > 1) query.page = String(currentPage)'
 ;
-    router.replace({ pathname: "router.pathname", query }, undefined, {;"
-      shallow: "true",;
+    router.replace({ pathname: router.pathname, query }, undefined, {;"
+      shallow: true,;
     });
   }, [;
     router.isReady,;
@@ -165,13 +153,11 @@ export default function TalentDirectory(): ;
     toggleRegion,;
     toggleSkill,;
   ]); // Fixed dependencies;
-;
-  const const handleRequestHire = (talent: TalentProfile) => {;
+  const handleRequestHire = (talent: TalentProfile) => {;
     setSelectedTalent(talent);
     setIsHireModalOpen(true);
   };
-;
-  const const viewProfile = (id: string) => {;
+  const viewProfile = (id: string) => {;
     // Navigate to the talent profile page;
     router.push(`/talent/${id}`); // Changed to router.push;"
   };";"
@@ -186,7 +172,6 @@ export default function TalentDirectory(): ;
       </div>;
     );
   };
-;
   if (;
     !isLoading &&;
     !error &&;

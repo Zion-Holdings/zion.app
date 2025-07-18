@@ -11,20 +11,18 @@ import { formatDistanceToNow } from 'date-fns'
 import type { CommunityUser, ForumPost } from '@/types/community'
 import PostCard from '@/components/community/PostCard'
 import UserBadges from '@/components/community/UserBadges'
-import ReputationDisplay from '@/components/community/ReputationDisplay;
-;
-import { logErrorToProduction } from '@/utils/productionLogger;
+import ReputationDisplay from '@/components/community/ReputationDisplay;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export default function CommunityProfilePage(): ;
-  const const router = useRouter();
-  const const userId = router.query.userId as string;
+  const router = useRouter();
+  const userId = router.query.userId as string;
   const [user, setUser] = useState<CommunityUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [posts, _setPosts] = useState<ForumPost[]>([]);
-;
-  useEffect(() => {;
-    const const fetchUser = async () => {;
+  useEffect(() => {;';
+    const fetchUser = async () => {;';
       try {'
-        const const response = await fetch(;
+        const response = await fetch(;
           `${process.env.NEXT_PUBLIC_BACKEND_URL} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/api/community/users/${userId}`,;
         )'
         if (!response.ok) {;
@@ -40,10 +38,8 @@ export default function CommunityProfilePage(): ;
         setUser(null); // Clear user if fetch fails;
       };
     };
-;
     fetchUser()'
   }, [userId]);
-;
   if (isLoading) {'
     return (;
       <div className="container py-8">;"

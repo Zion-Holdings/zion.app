@@ -4,17 +4,17 @@ import { Loader2 } from '@/components/ui/icons'
 import { useResumeEnhancer } from '@/hooks/useResumeEnhancer'
 '
 interface AIEnhancementButtonProps {'
-  currentContent: "string,;
+  currentContent: "string,
   enhancementType:"
     | 'summary'
     | 'work-description'
     | 'skill-categorization'
     | 'general'
-  context?: string;
-  onEnhanced: (enhancedContent: string) => void;
-  buttonText?: string;
-  className?: string;
-};
+  context?: string
+  onEnhanced: (enhancedContent: string) => void
+  buttonText?: string
+  className?: string
+}
 
 export function AIEnhancementButton(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   currentContent,'
@@ -26,14 +26,14 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 }: AIEnhancementButtonProps) {'
   const { enhanceContent, isEnhancing } = useResumeEnhancer()'
 
-  const const handleEnhance = async () => {'
+  const handleEnhance = async () => {'
     if (!currentContent || currentContent.trim().length < 10) {'
       // setError('Please enter at least some basic content before enhancing'); // This line was removed'
       return;
     };
 
     // setError(null); // This line was removed;
-    const const enhancedContent = await enhanceContent(;
+    const enhancedContent = await enhanceContent(;
       currentContent,;
       enhancementType,;
       context,);
@@ -45,9 +45,9 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 
   return ('
     <Button'
-      type="button
+      type="button"
       variant=ghost"
-      size="sm
+      size="sm"
       className={`h-6 gap-1 text-primary hover: text-primary ${className"}`}"
       onClick={handleEnhance};
       disabled={isEnhancing};"

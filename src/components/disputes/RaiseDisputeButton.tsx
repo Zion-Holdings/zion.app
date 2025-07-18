@@ -33,9 +33,9 @@ export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknow
   className,;
 }: RaiseDisputeButtonProps) {;
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const const router = useRouter();
+  const router = useRouter();
 
-  const const handleDisputeCreated = (_disputeId: string) => {;
+  const handleDisputeCreated = (_disputeId: string) => {;
     setIsDialogOpen(false);
     router.push(`/dashboard/disputes/${disputeId}`)`
   };
@@ -48,7 +48,7 @@ export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknow
         className={className};
         onClick={() => setIsDialogOpen(true)}'
       >'
-        <ShieldAlert className="h-4 w-4 mr-2 />
+        <ShieldAlert className="h-4 w-4 mr-2 />"
         Raise Dispute;""
       </Button>;"
 ";"

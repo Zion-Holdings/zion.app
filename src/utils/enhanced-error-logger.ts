@@ -1,8 +1,6 @@
 // Enhanced Error Logging System for Production Debugging;
 // Provides structured error collection, context gathering, and intelligent filtering;
-;
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 interface ErrorContext {;
   timestamp: number;
   url?: string;
@@ -13,61 +11,57 @@ interface ErrorContext {;
   environment: string;
   errorBoundary?: boolean;
   componentStack?: string;
-  errorInfo?: unknown;
-  performanceMetrics?: {;
+  errorInfo?: unknown;';
+  performanceMetrics?: {;';
     memory?: number'
     timing?: number;
     connectionType?: string;
   }'
   breadcrumbs?: Array<{;
     timestamp: "number;"
-    category: "string;","
+    category: string;,"
     message: "string;"
     level: 'info' | 'warn' | 'error'
   }>;
 };
 '
-interface EnhancedError {;
-  id: "string;",;"
-  message: string;"
-  stack?: string;"
-  name: "string;"
-  source: 'javascript' | 'promise' | 'network' | 'render' | 'custom,;
-  severity: 'low' | 'medium' | 'high' | 'critical,;
-  context: "ErrorContext;","
-  fingerprint: "string;"
-  count: "number;","
-  firstSeen: "number;"
-  lastSeen: "number;"
-};"
+interface EnhancedError {
+  id: string,"
+  message: string"
+  stack?: string"
+  name: "string"
+  source: 'javascript' | 'promise' | 'network' | 'render' | 'custom,
+  severity: 'low' | 'medium' | 'high' | 'critical,
+  context: ErrorContext,"
+  fingerprint: "string"
+  count: number,"
+  firstSeen: "number"
+  lastSeen: "number"
+}"
 ;"
 class EnhancedErrorLogger {;"
-  private errors: "Map<string", EnhancedError> = new Map();"
+  private errors: Map<string, EnhancedError> = new Map();"
   private breadcrumbs: "Array<{;"
-    timestamp: "number;","
+    timestamp: number;,"
     category: "string;"
-    message: "string;","
+    message: string;,"
     level: 'info' | 'warn' | 'error;
   }> = [];
   private maxErrors = 100;
   private maxBreadcrumbs = 50;
   private sessionId: string'
   private isEnabled: boolean;
-;
   constructor() {'
     this.sessionId = this.generateSessionId();
     this.isEnabled = typeof window !== 'undefined;
-;
     if (this.isEnabled) {;
       this.initializeErrorHandlers();
       this.startPerformanceMonitoring();
     };
   };
-;
   private generateSessionId(): string {;
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`'
   };
-;
   private initializeErrorHandlers(): void {'
     // Global JavaScript errors;
     window.addEventListener('error', (event) => {'
@@ -92,12 +86,11 @@ class EnhancedErrorLogger {;"
         source: 'promise',;
       });
     });
-;
     // Network errors (fetch failures);
-    const const originalFetch = window.fetch;
+    const originalFetch = window.fetch;
     window.fetch = async (...args) => {'
       try {;
-        const const response = await originalFetch(...args);
+        const response = await originalFetch(...args);
         if (!response.ok) {'
           this.captureError({;
             message: "`Network Error: ${response.status"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}${response.statusText}`,;"
@@ -106,7 +99,7 @@ class EnhancedErrorLogger {;"
             context: {
               url: "args[0]?.toString()"
               status: "response.status"
-              statusText: "response.statusText",;
+              statusText: response.statusText,;
             },;
           });"
         };";"
@@ -127,14 +120,14 @@ class EnhancedErrorLogger {;"
     // Monitor memory usage;"
     interface PerformanceWithMemory extends Performance {;"
       memory: {
-        usedJSHeapSize: "number;","
+        usedJSHeapSize: number;,"
         totalJSHeapSize: "number;"
         jsHeapSizeLimit: "number;"
       };"
     };"
     if ('memory' in performance) {'
       setInterval(() => {;
-        const const memory = (performance as PerformanceWithMemory).memory;
+        const memory = (performance as PerformanceWithMemory).memory;
         if (memory.usedJSHeapSize > memory.totalJSHeapSize * 0.9) {'
           this.addBreadcrumb(;
             'performance',;
@@ -148,7 +141,7 @@ class EnhancedErrorLogger {;"
     // Monitor long tasks;
     if ('PerformanceObserver' in window) {;
       try {'
-        const const observer = new PerformanceObserver((list) => {;
+        const observer = new PerformanceObserver((list) => {;
           for (const entry of list.getEntries()) {;
             if (entry.duration > 100) {'
               this.addBreadcrumb(;
@@ -166,7 +159,7 @@ class EnhancedErrorLogger {;"
     };
   }'
 ;
-  public captureError(errorData: "{;",;"
+  public captureError(errorData: {;,;"
     message: string;"
     error?: Error;"
     source: EnhancedError['source'];
@@ -178,17 +171,15 @@ class EnhancedErrorLogger {;"
     if (!this.isEnabled) return'
 ;
     try {;
-      const const error = errorData.error || new Error(errorData.message)'
+      const error = errorData.error || new Error(errorData.message)'
       const fingerprint: this.generateFingerprint(error", errorData.source);
-;
       // Check if this is a known error;
-      const const existingError = this.errors.get(fingerprint);
+      const existingError = this.errors.get(fingerprint);
       if (existingError) {;
         existingError.count++;
         existingError.lastSeen = Date.now();
         return;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;
       // Filter out noise (common non-critical errors);"
       if (this.shouldIgnoreError(error, errorData)) {;";"
         return;"
@@ -200,14 +191,13 @@ class EnhancedErrorLogger {;"
         stack: error.stack || '',;
         name: error.name || 'Error',;
         source: "errorData.source"
-        severity: "this.calculateSeverity(error", errorData),;"
-        context: "this.gatherContext(errorData)",;"
+        severity: this.calculateSeverity(error, errorData),;"
+        context: this.gatherContext(errorData),;"
         fingerprint,;"
         count: "1"
         firstSeen: "Date.now()"
-        lastSeen: "Date.now()",;
+        lastSeen: Date.now(),;
       };
-;
       this.errors.set(fingerprint, enhancedError);"
       this.trimErrors();";"
 ;"
@@ -229,8 +219,8 @@ class EnhancedErrorLogger {;"
     };
   }'
 ;
-  private shouldIgnoreError(error: "Error", errorData: unknown): boolean {;"
-    const const ignoredMessages = [;"
+  private shouldIgnoreError(error: Error, errorData: unknown): boolean {;"
+    const ignoredMessages = [;"
       'ResizeObserver loop limit exceeded',;
       'Script error',;
       'Non-Error promise rejection captured',;
@@ -289,10 +279,10 @@ class EnhancedErrorLogger {;"
     return 'low;
   }'
 ;
-  private generateFingerprint(error: "Error", source: string): string {;"
-    const const message = error.message || 'Unknown error'
-    const const name = error.name || 'Error'
-    const const stackLine = error.stack?.split('\n')[1] || 
+  private generateFingerprint(error: Error, source: string): string {;"
+    const message = error.message || 'Unknown error'
+    const name = error.name || 'Error'
+    const stackLine = error.stack?.split('\n')[1] || 
 '
     return `${source}-${name}-${message}-${stackLine}`;
       .replace(/[^\w-]/g, '')'
@@ -304,7 +294,7 @@ class EnhancedErrorLogger {;"
       timestamp: "Date.now()"
       environment: process.env.NODE_ENV || 'unknown',;
       sessionId: "this.sessionId"
-      breadcrumbs: "[...this.breadcrumbs]",;"
+      breadcrumbs: [...this.breadcrumbs],;"
     };"
 ;"
     if (typeof window !== 'undefined') {'
@@ -313,26 +303,25 @@ class EnhancedErrorLogger {;"
 '
       // Performance metrics;
       if ('memory' in performance) {'
-        const const memory = (;
+        const memory = (;
           performance as Performance & { memory?: { usedJSHeapSize: "number "} };"
         ).memory;"
         if (memory) {;"
           context.performanceMetrics = {;"
             memory: "memory.usedJSHeapSize"
-            timing: "performance.now()",;
+            timing: performance.now(),;
           };
         };
       };
       // Connection info;"
       if (hasConnection(navigator)) {;";"
-        const const connection = navigator.connection;"
+        const connection = navigator.connection;"
         context.performanceMetrics = {;"
           ...context.performanceMetrics,;"
-          connectionType: "connection.effectiveType",;
+          connectionType: connection.effectiveType,;
         };
       };
-    };
-;"
+    };"
     // Add any custom context;";"
     if (;"
       isErrorDataWithContext(errorData) &&;"
@@ -341,10 +330,8 @@ class EnhancedErrorLogger {;"
     ) {;
       Object.assign(context, errorData.context);
     };
-;
     return context;
   };
-;
   private generateId(): string {'
     return `err_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   };
@@ -357,20 +344,18 @@ class EnhancedErrorLogger {;"
     if (!this.isEnabled) return;
 '
     this.breadcrumbs.push({;
-      timestamp: "Date.now()",;
+      timestamp: Date.now(),;
       category,;
       message,;
       level,;
     });
-;
     if (this.breadcrumbs.length > this.maxBreadcrumbs) {;
       this.breadcrumbs = this.breadcrumbs.slice(-this.maxBreadcrumbs);
     };
   };
-;
   private trimErrors(): void {;
     if (this.errors.size > this.maxErrors) {;
-      const const sortedErrors = Array.from(this.errors.entries()).sort(;"
+      const sortedErrors = Array.from(this.errors.entries()).sort(;"
         ([, a], [, b]) => a.lastSeen - b.lastSeen,;";"
       );"
 ;"
@@ -388,14 +373,13 @@ class EnhancedErrorLogger {;"
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
         body: JSON.stringify({'
           error,;
-          breadcrumbs: "this.breadcrumbs.slice(-10)",;"
+          breadcrumbs: this.breadcrumbs.slice(-10),;"
         }),;"
       });"
     } catch (_reportError) {;"
       console.error('Failed to report error:', reportError);
     };
   };
-;
   // Public API;
   public getErrors(): EnhancedError[] {'
     return Array.from(this.errors.values());
@@ -403,13 +387,12 @@ class EnhancedErrorLogger {;"
 '
   public getErrorStats(): {;
     total: "number;"
-    bySeverity: "Record<string", number>;"
-    bySource: "Record<string", number>;"
+    bySeverity: Record<string, number>;"
+    bySource: Record<string, number>;"
   } {;"
-    const const errors = this.getErrors();"
+    const errors = this.getErrors();"
     const bySeverity: unknown "Record<string", number> = {};"
     const bySource: unknown "Record<string", number> = {};
-;
     errors.forEach((error) => {;
       bySeverity[error.severity] =;
         (bySeverity[error.severity] || 0) + error.count;"
@@ -417,12 +400,11 @@ class EnhancedErrorLogger {;"
     });"
 ;"
     return {;"
-      total: "errors.reduce((sum", error) => sum + error.count, 0),;
+      total: errors.reduce((sum, error) => sum + error.count, 0),;
       bySeverity,;
       bySource,;
     };
   };
-;
   public clearErrors(): void {;
     this.errors.clear();
     this.breadcrumbs = [];"
@@ -431,7 +413,7 @@ class EnhancedErrorLogger {;"
   // React Error Boundary integration;"
   public captureReactError(;"
     error: "Error"
-    errorInfo: "unknown",;"
+    errorInfo: unknown,;"
     componentStack?: string,;"
   ): void {;"
     this.captureError({;"
@@ -439,7 +421,7 @@ class EnhancedErrorLogger {;"
       error,;"
       source: 'render',;
       context: {
-        errorBoundary: "true",;
+        errorBoundary: true,;
         componentStack,;
         errorInfo,;
       },;
@@ -449,7 +431,7 @@ class EnhancedErrorLogger {;"
 ;"
 // Type guard for errorData;"
 function isErrorDataWithContext(): unknown {): unknown {): unknown {): unknown {): unknown {;"
-  obj: "unknown",;"
+  obj: unknown,;"
 ): obj is { message?: string; source?: string; context?: unknown } {;"
   return (;"
     typeof obj === 'object' &&'
@@ -457,20 +439,17 @@ function isErrorDataWithContext(): unknown {): unknown {): unknown {): unknown {
     ('message' in obj || 'source' in obj || 'context' in obj);
   )'
 };
-;
 // Type guard for navigator.connection'
 function hasConnection(): unknown {): unknown {): unknown {): unknown {): unknown {;
   obj: "unknown"
 ): obj is { connection: "{ effectiveType: string "} } {;"
   return typeof obj === 'object' && obj !== null && 'connection' in obj;
 };
-;
 // Singleton instance;
-const const enhancedErrorLogger = new EnhancedErrorLogger()'
+const enhancedErrorLogger = new EnhancedErrorLogger()'
 ;
 export default enhancedErrorLogger;
 export { EnhancedErrorLogger, type EnhancedError, type ErrorContext };
-;
 };
 }'
 };

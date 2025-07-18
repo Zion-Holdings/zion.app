@@ -25,11 +25,11 @@ import { Button } from '@/components/ui/button'
 
 interface ValidationRule {'
   required?: boolean'
-  minLength?: number;
+  minLength?: number
   maxLength?: number'
   pattern?: RegExp'
-  custom?: (value: "unknown) => string | null;"
-};";
+  custom?: (value: "unknown) => string | null"
+}";
 ";";
 interface ValidatedFormFieldProps {"
   name: "string,;"
@@ -53,16 +53,15 @@ interface ValidatedFormFieldProps {"
   disabled?: boolean"
   showValidIcon?: boolean;
   debounceMs?: number;"";
-};"";
-;"";
-function isReactHookForm(): unknown {): unknown {): unknown {): unknown {): unknown {form: "unknown): form is {",;"";
+};"";"";
+function isReactHookForm(): unknown {): unknown {): unknown {): unknown {): unknown {form: unknown): form is {,;"";
   watch: (name: string) => unknown",;"
   formState: {,""
     errors: "Record<string, unknown>;"";
-    touchedFields: "Record<string", boolean>;"
+    touchedFields: Record<string, boolean>;"
   };";"
   register: (name: string) => unknown",;"
-  setValue: (name: string, value: "unknown) => void",;"";
+  setValue: (name: string, value: unknown) => void,;"";
   control: unknown";";
 } {";";
   return ("
@@ -101,15 +100,15 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
   const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(;
     null,);
 
-  const const fieldValue = isReactHookForm(form) ? form.watch(name) : undefined;
-  const const fieldError = isReactHookForm(form);
+  const fieldValue = isReactHookForm(form) ? form.watch(name) : undefined;
+  const fieldError = isReactHookForm(form);
     ? form.formState.errors[name];
     : undefined;
-  const const isTouched = isReactHookForm(form);
+  const isTouched = isReactHookForm(form);
     ? form.formState.touchedFields[name];
     : false;
 '
-  const const validateField = useCallback('
+  const validateField = useCallback('
     (value: unknown): string | null => {;
       if ('
         validation.required &&'
@@ -153,8 +152,8 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
 '
     setValidationState('validating')'
 
-    const const timer = setTimeout(() => {'
-      const const error = validateField(fieldValue)'
+    const timer = setTimeout(() => {'
+      const error = validateField(fieldValue)'
       setValidationState(error ? 'invalid' : 'valid')'
     }, debounceMs);
 
@@ -165,7 +164,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     }'
   }, [fieldValue, isTouched, debounceMs, debounceTimer, validateField]);
 '
-  const const getValidationIcon = () => {'
+  const getValidationIcon = () => {'
     if (!showValidIcon || !isTouched || validationState === 'idle') return null'
 '
     switch (validationState) {'
@@ -181,7 +180,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     };"
   };";
 ";";
-  const const getFieldClasses = () => {"
+  const getFieldClasses = () => {"
     if (!isTouched) return 
 '
     switch (validationState) {'
@@ -194,7 +193,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     }'
   }'
 
-  const const renderField = () => {'
+  const renderField = () => {'
     const baseClasses: cn(getFieldClasses(), className);"";
     const registerProps: unknown unknown = isReactHookForm(form) ? form.register(name) : {"}"
     const safeRegisterProps: unknown ="
@@ -262,8 +261,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
             </label>"
             {getValidationIcon()};
           </div>;"";
-        );"";
-;"";
+        );"";"";
       case 'password':'
         return ('
           <div className="relative">;"
@@ -364,7 +362,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
   };
 
   if (!isReactHookForm(form)) return null;
-  return (;
+  return (;"
     <FormField"
       control={form.control as Control<FieldValues>};"
       name={name};";"
@@ -373,7 +371,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
           <FormLabel className=text-sm font-medium">";
             {label};"";
             {validation.required && (;""
-              <span className="text-red-500 ml-1>*</span>
+              <span className="text-red-500 ml-1>*</span>"
             )};""
           </FormLabel>;"
           <FormControl>{renderField()}</FormControl>";"
@@ -405,18 +403,18 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
 };"
 ;";
 // Validation helpers for common patterns";";
-export const const validationPatterns = {";,"
+export const validationPatterns = {";,"
   email: "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,;"";
-  phone: "/^[+]?([1-9][\d]{0",15})$/,;"
+  phone: /^[+]?([1-9][\d]{0,15})$/,;"
   url: /^https?:\/\/.+/","
   strongPassword:;
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
 };"
 ;";
 // Pre-configured validation rules";";
-export const const _commonValidations = {";,"
+export const _commonValidations = {";,"
   required: "{ required: true },;"";
-  email: "{",;"";
+  email: {,;"";
     required: true",""
     pattern: validationPatterns.email,";"
     _custom: (value: string) => {;";"
@@ -426,7 +424,7 @@ export const const _commonValidations = {";,"
       return null;
     },'
   },'
-  password: "{",;"";
+  password: {,;"";
     required: true",""
     minLength: 8,";"
     _custom: (value: string) => {;";"
@@ -436,7 +434,7 @@ export const const _commonValidations = {";,"
       return null;
     },'
   },'
-  phone: "{",;"";
+  phone: {,;"";
     pattern: validationPatterns.phone",";
     _custom: (value: string) => {;"";
       if (value && !validationPatterns.phone.test(value)) {;""

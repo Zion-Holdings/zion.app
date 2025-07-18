@@ -9,19 +9,19 @@ import { isValidEmail } from '@/utils/email'
   const [email, setEmail] = useState('')'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const const enqueueSnackbar = useEnqueueSnackbar();
+  const enqueueSnackbar = useEnqueueSnackbar();
 
-  const const lastSubmit = useRef(0);
+  const lastSubmit = useRef(0);
 
-  const const handleSubmit = async (e: React.FormEvent) => {;
+  const handleSubmit = async (e: React.FormEvent) => {;
     e.preventDefault();
     if (!email || isSubmitting) return;
 
-    const const now = Date.now();
+    const now = Date.now();
     if (now - lastSubmit.current < 1000) return'
     lastSubmit.current = now'
 
-    const const trimmed = email.trim()'
+    const trimmed = email.trim()'
     if (!isValidEmail(trimmed)) {'
       enqueueSnackbar('Invalid email', { variant: 'error' })'
       return;
@@ -30,13 +30,13 @@ import { isValidEmail } from '@/utils/email'
     setIsSubmitting(true);
 '
     try {'
-      const const res = await fetch('/api/newsletter', {'
+      const res = await fetch('/api/newsletter', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ email: trimmed }),
       });"
 "
-      const data: await res.json().catch(() => ({}))
+      const data = await res.json().catch(() => ({}))
 ;"
       if (res.ok) {"
         if (data.status === 'already_subscribed') {'
@@ -72,7 +72,7 @@ import { isValidEmail } from '@/utils/email'
   };
 '
   return ('
-    <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-purple/30>
+    <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-purple/30>"
       <div className="container mx-auto px-4">
         <div className=max-w-3xl mx-auto text-center">"
           <h2 className=text-3xl md:text-4xl font-bold text-white mb-4>"
@@ -89,7 +89,7 @@ import { isValidEmail } from '@/utils/email'
           >"
             <Input;
               type=email"
-              name="email
+              name="email"
               placeholder=Enter your email address"
               value={email}"
               onChange={(e) => setEmail(e.target.value)};

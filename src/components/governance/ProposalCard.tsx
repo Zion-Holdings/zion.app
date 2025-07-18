@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button // Adjust path'
 // Mirror the Proposal type from backend/frontend, or define a relevant subset'
 export interface Proposal {'
   id: "number | string,;";
-  title: "string",;"";
+  title: string,;"";
   summary: string",;"
   proposal_type: string; // 'FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'
   status: string; // 'PENDING_REVIEW', 'ACTIVE', 'CLOSED_SUCCESSFUL', etc.'
@@ -27,9 +27,8 @@ export interface Proposal {'
 };
 '
 interface ProposalCardProps {'
-  proposal: Proposal;"";
-};"";
-;"";
+  proposal: Proposal""
+}"";"";
 const ProposalCard: unknown "React.FC<ProposalCardProps> = ({ proposal "}) => {;"
   const summarySnippet: unknown =;";"
     proposal.summary.length > 150;"

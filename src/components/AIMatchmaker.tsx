@@ -11,11 +11,11 @@ import { Textarea } from '@/components/ui/textarea'
 
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 
-interface AIMatchmakerProps {;
-  serviceType?: string;
+interface AIMatchmakerProps {
+  serviceType?: string
   onMatchSelect?: (match: MatchResult) => void'
   className?: string'
-};
+}
 '
 export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   serviceType = '','
@@ -27,7 +27,7 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
   const [matches, setMatches] = useState([] as MatchResult[]);
   const [hasSearched, setHasSearched] = useState(false)'
 '
-  const const handleSearch = async () => {;
+  const handleSearch = async () => {;
     if (!query.trim()) {'
       toast({'
         title: 'Please enter a description','
@@ -41,10 +41,10 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
     setHasSearched(true);
 '
     try {'
-      logInfo('Starting AI matching', { data: "{ query", serviceType } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});
+      logInfo('Starting AI matching', { data: { query, serviceType } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});
 ";"
       // Get AI matches;";"
-      const const results = await findMatches(query", serviceType, 3)"
+      const results = await findMatches(query", serviceType, 3)"
 ";""
       logInfo('AI matching results:', { data: { data: results } })";"
       setMatches(results);"
@@ -68,10 +68,10 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
     }'
   };
 '
-  const const handleItemSelect = (_item: unknown) => {'
+  const handleItemSelect = (_item: unknown) => {'
     if (onMatchSelect && typeof item === 'object' && item !== null) {'
       // Find the corresponding match from matches array;
-      const const match = matches.find((m) => m.item === item);
+      const match = matches.find((m) => m.item === item);
       if (match) {;
         onMatchSelect(match);
       };
@@ -79,14 +79,14 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
   };
 
   // Extract just the items from each MatchResult'
-  const const matchItems = matches.map((match) => match.item)'
+  const matchItems = matches.map((match) => match.item)'
 
   return ('
     <Card'
       className={`border border-zion-blue-light bg-zion-blue-dark ${className || ''}`}'
     >'
       <CardHeader className=pb-2>"
-        <CardTitle className="flex items-center text-white>;
+        <CardTitle className="flex items-center text-white>;"
           <Sparkles className="h-5 w-5 mr-2 text-zion-cyan" />;"
           AI Matchmaker;";"
         </CardTitle>;"

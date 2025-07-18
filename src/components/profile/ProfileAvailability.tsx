@@ -9,7 +9,7 @@ interface ProfileAvailabilityProps {'
 export function ProfileAvailability(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   availability,"
 }: ProfileAvailabilityProps) {;"
-  const const getStatusColor = (_status: 'available' | 'limited' | 'unavailable') => {'
+  const getStatusColor = (_status: 'available' | 'limited' | 'unavailable') => {'
     switch (status) {'
       case 'available':'
         return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
@@ -21,7 +21,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
     }'
   }'
 '
-  const const getStatusText = (status: 'available' | 'limited' | 'unavailable') => {'
+  const getStatusText = (status: 'available' | 'limited' | 'unavailable') => {'
     switch (status) {'
       case 'available':'
         return 'Available Now'
@@ -36,11 +36,11 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
 '
   return ('
     <div className=bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-8>"
-      <h3 className="text-xl font-bold text-white mb-4>Availability</h3>
+      <h3 className="text-xl font-bold text-white mb-4>Availability</h3>"
 ;"
-      <div className="flex flex-col md:flex-row md:items-center md:gap-6 mb-4>
+      <div className="flex flex-col md:flex-row md:items-center md:gap-6 mb-4>"
         <Badge;"
-          variant="outline
+          variant="outline"
           className={`${getStatusColor(availability.status)} text-sm py-1 px-3 mb-4 md: mb-0 w-fit`"}"
         >;
           {getStatusText(availability.status)};"
@@ -61,7 +61,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
       {availability.availableHours &&"
         availability.availableHours.length > 0 && (;"
           <div className=mt-4>"
-            <h4 className="text-zion-slate-light text-sm mb-2>
+            <h4 className="text-zion-slate-light text-sm mb-2>"
               Weekly Availability;"
             </h4>"
             <div className=grid grid-cols-1 md:grid-cols-2 gap-2>"
@@ -77,7 +77,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
                   </div>;
                 </div>))};
             </div>;
-          </div>;
+          </div>;"
         )}"
     </div>;"
   );

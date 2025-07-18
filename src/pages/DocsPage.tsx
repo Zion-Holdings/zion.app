@@ -1,15 +1,14 @@
 import React from 'react';
 import Link from 'next/link'
-import ReactMarkdown from 'react-markdown;
-;
-export interface DocsPageProps {;
-  /**;
-   * Markdown content for the currently viewed document.;
+import  ReactMarkdown  from 'react-markdown;
+export interface DocsPageProps {
+  /**';
+   * Markdown content for the currently viewed document.'
    */'
-  content?: string; // Made content optional;
-};
+  content?: string // Made content optional
+}
 '
-const const NAV_ITEMS = [;
+const NAV_ITEMS = [;
   { title: 'Introduction', slug: 'introduction' },;
   { title: 'Architecture', slug: 'architecture' },;
   { title: 'Governance', slug: 'governance' },;

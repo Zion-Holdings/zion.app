@@ -12,7 +12,7 @@ interface HelpCategoryListProps {'
   categories: "HelpCategory[]
   onCategorySelect: (categoryId: string) => void"
   searchQuery: "string
-};
+}
 
 export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categories,;
@@ -20,7 +20,7 @@ export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown 
   searchQuery,;
 }: HelpCategoryListProps) {;
   // Filter categories based on search query;
-  const const filteredCategories = searchQuery;
+  const filteredCategories = searchQuery;
     ? categories.filter(;
         (category) =>;
           category.name.toLowerCase().includes(searchQuery.toLowerCase()) ||;
@@ -38,7 +38,7 @@ export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown 
   if (filteredCategories.length === 0) {"
     return (;"
       <div className=text-center py-8>"
-        <h3 className="text-lg font-medium mb-2>No results found</h3>
+        <h3 className="text-lg font-medium mb-2>No results found</h3>"
         <p className="text-zion-slate-light">
           Try adjusting your search query or browse all categories.;
         </p>;
@@ -47,7 +47,7 @@ export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown 
   };
 
   return (;"
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>"
       {filteredCategories.map((category) => (;"
         <Card"
           key={category.id};

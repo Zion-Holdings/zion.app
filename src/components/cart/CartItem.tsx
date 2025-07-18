@@ -1,11 +1,11 @@
 import type { CartItem as CartItemType } from '@/types/cart'
 import { Button } from '@/components/ui/button'
 '
-interface CartItemProps {;
+interface CartItemProps {
   item: CartItemType'
   onRemove?: (id: string) => void'
   onUpdateQuantity?: (id: "string, qty: number) => void"
-};
+}
 ";"
 export function CartItem(): unknown {): unknown {): unknown {): unknown {): unknown {{ item, onRemove, onUpdateQuantity }: CartItemProps) {;";"
   return (;";";

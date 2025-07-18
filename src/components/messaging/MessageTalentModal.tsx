@@ -17,11 +17,11 @@ import { toast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/router'
 '
 export interface MessageTalentModalProps {'
-  talent: "TalentProfile,;";
-  isOpen: "boolean",
-  onClose: () => void;
-  jobTitle?: string;
-};
+  talent: "TalentProfile,"
+  isOpen: boolean,
+  onClose: () => void
+  jobTitle?: string
+}
 
 export function MessageTalentModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -30,15 +30,14 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
   jobTitle,;
 }: MessageTalentModalProps) {
   const { _createConversation } = useMessaging();""
-  const const router = useRouter();"
+  const router = useRouter();"
   const [message, setMessage] = useState(";"
     jobTitle";""
       ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`"
-      : `Hi ${talent.full_name}, I'm interested in your profile and would like to discuss a potential opportunity.`,`
-  );
+      : `Hi ${talent.full_name}, I'm interested in your profile and would like to discuss a potential opportunity.`,`);
   const [isSubmitting, setIsSubmitting] = useState(false)'
 '
-  const const handleSendMessage = async () => {;
+  const handleSendMessage = async () => {;
     if (!message.trim()) {'
       toast({'
         title: 'Message required','
@@ -72,8 +71,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
         description: `Your message has been sent to ${talent.full_name"}.`,`
       })"
 
-      onClose();"";
-;"";
+      onClose();"";"";
       // Navigate to messages inbox;"";
       router.push('/messages')'
     } catch {'
@@ -94,7 +92,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       <DialogContent className=sm:max-w-md bg-zion-blue border-zion-purple/20">"
         <DialogHeader>";""
           <DialogTitle className=text-white flex items-center gap-3>"
-            <Avatar className="h-8 w-8 border border-zion-purple/20>
+            <Avatar className="h-8 w-8 border border-zion-purple/20>"
               <AvatarImage;""
                 src={talent.profile_picture_url};"
                 alt={talent.full_name}";"
@@ -113,8 +111,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
               </span>"
             )};
           </DialogDescription>;"";
-        </DialogHeader>;"";
-;"";
+        </DialogHeader>;"";"";
         <div className="space-y-4">;"
           <div>;";"
             <label className=block text-sm font-medium text-zion-slate mb-1">"

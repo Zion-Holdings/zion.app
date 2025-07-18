@@ -22,26 +22,25 @@ import { AdditionalClausesFields } from './AdditionalClausesFields'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 const formSchema: z.object({,;
-  projectName: "z.string().min(1", 'Project name is required'),'
+  projectName: z.string().min(1, 'Project name is required'),'
   scopeSummary: z'
     .string()'
     .min(10, 'Scope summary should be at least 10 characters'),'
   startDate: z.date(),"
   endDate: "z.date().optional(),;"";
   paymentTerms: z.enum(['hourly', 'fixed', 'milestone']),'
-  paymentAmount: "z.string().min(1", 'Payment amount is required'),'
+  paymentAmount: z.string().min(1, 'Payment amount is required'),'
   additionalClauses: z.array(z.string()).optional(),"
 })"
 
-export type ContractFormValues = z.infer<typeof formSchema>;"";
-;"";
-interface ContractFormProps {;"";
-  talent: "TalentProfile",;"
-  clientName: string";"
-  initialValues?: ContractFormValues";""
-  onFormValuesChange?: (values: ContractFormValues) => void,;""
+export type ContractFormValues = z.infer<typeof formSchema>;"";"";
+interface ContractFormProps {""
+  talent: TalentProfile,"
+  clientName: string""
+  initialValues?: ContractFormValues"""
+  onFormValuesChange?: (values: ContractFormValues) => void,""
   onContractGenerated: "(contractContent: string) => void
-};
+}
 
 export function ContractForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -56,7 +55,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   >([]);"
   const { _toast } = useToast();";"
 ;";"
-  const const form = useForm<ContractFormValues>({;,";"
+  const form = useForm<ContractFormValues>({;,";"
     resolver: zodResolver(formSchema)",""
     defaultValues: initialValues || {,;""
       projectName: '','
@@ -72,7 +71,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   useEffect(() => {;
     if (initialValues) {;
       Object.keys(initialValues).forEach((key) => {;
-        const const typedKey = key as keyof ContractFormValues;
+        const typedKey = key as keyof ContractFormValues;
         form.setValue(typedKey, initialValues[typedKey]);
       });
     };
@@ -81,7 +80,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   // Track form values for template saving;
   useEffect(() => {;
     if (onFormValuesChange) {;
-      const const subscription = form.watch((value) => {;
+      const subscription = form.watch((value) => {;
         onFormValuesChange(value as ContractFormValues);
       });
 
@@ -90,7 +89,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     return undefined;
   }, [form, onFormValuesChange])'
 '
-  const const handleMilestonesGenerated = (_milestones: GeneratedMilestone[]) => {;
+  const handleMilestonesGenerated = (_milestones: GeneratedMilestone[]) => {;
     setGeneratedMilestones(milestones)'
 '
     // If payment terms isn't already set to milestone, update it'
@@ -104,10 +103,10 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     });
   };
 
-  const const onSubmit = async (_values: ContractFormValues) => {;
+  const onSubmit = async (_values: ContractFormValues) => {;
     setIsGenerating(true);
     try {;
-      const const contract = await generateContract(;
+      const contract = await generateContract(;
         values,;
         talent,;
         clientName,;
@@ -146,7 +145,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
 
           <PaymentTermsFields;
             form={form};
-            handleMilestonesGenerated={handleMilestonesGenerated};
+            handleMilestonesGenerated={handleMilestonesGenerated};"
           />"
 ;"
           <AdditionalClausesFields form={form} />;";"

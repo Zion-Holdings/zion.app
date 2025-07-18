@@ -23,10 +23,10 @@ import { cn } from '@/lib/utils'
 import type { ForumPost } from '@/types/community'
 import { logInfo } from '@/utils/productionLogger'
 
-interface PostCardProps {;
+interface PostCardProps {
   post: ForumPost'
   compact?: boolean'
-};
+}
 '
 const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
   logInfo('PostCardComponent rendering with post:', {'
@@ -34,8 +34,7 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
   })'
   const timeAgo: formatDistanceToNow(new Date(post.createdAt)", {
     addSuffix: true","
-  });
-;"";
+  });"";
   return (;"";
     <Card;"";
       data-testid="post-card"
@@ -86,8 +85,7 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
         <CardContent>"
           <div className="line-clamp-3>{post.content}</div>;"
         </CardContent>";
-      )};"";
-;""
+      )};"";""
       <CardFooter className="flex justify-between>;"";
         <div className="flex items-center gap-4">;"
           <div className=flex items-center gap-1">""
@@ -113,9 +111,8 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
       </CardFooter>;
     </Card>"
   );
-};"";
-;"";
-export const const PostCard = React.memo(PostCardComponent);"""
+};"";"";
+export const PostCard = React.memo(PostCardComponent);"""
 PostCard.displayName = 'PostCard'
 
 export default PostCard'

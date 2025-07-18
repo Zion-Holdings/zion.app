@@ -8,7 +8,7 @@ import { HELP_CATEGORIES } from './help-content'
 '
 interface HelpArticleViewProps {'
   articleId: "string
-};"
+}"
 ;"
 export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {): unknown {{ articleId }: HelpArticleViewProps) {
   const [feedbackGiven, setFeedbackGiven] = useState<;
@@ -18,7 +18,7 @@ export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {
   // Find the article in all categories;
   let article;
   for (const category of HELP_CATEGORIES) {;
-    const const found = category.articles.find((a) => a.id === articleId);
+    const found = category.articles.find((a) => a.id === articleId);
     if (found) {;
       article = found;
       break;
@@ -29,7 +29,7 @@ export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {
     return <div>Article not found</div>;
   }'
 '
-  const const handleFeedback = (_type: 'helpful' | 'not-helpful') => {'
+  const handleFeedback = (_type: 'helpful' | 'not-helpful') => {'
     setFeedbackGiven(type)'
 
     // In a real implementation, this would send feedback to the server'
@@ -40,8 +40,7 @@ export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {
           ? "We're glad this article was helpful."
           : We'll work on improving this article.,"
     })"
-  };
-;"
+  };"
   return ("
     <div>;
       <Card className=p-6">"
@@ -57,15 +56,15 @@ export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {
           ))};
         </div>'
 '
-        <div className="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6>
+        <div className="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6>"
           <div className="flex flex-col sm:flex-row items-center justify-between">
             <div className=text-sm text-zion-slate-light mb-4 sm:mb-0">"
               Was this article helpful?;
             </div>
 ;"
-            <div className="flex items-center space-x-3>
+            <div className="flex items-center space-x-3>"
               <Button;"
-                variant="outline
+                variant="outline"
                 size=sm"
                 className={"
                   feedbackGiven === 'helpful'

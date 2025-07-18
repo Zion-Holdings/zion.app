@@ -1,27 +1,27 @@
-'use client;
-;
+'use client'
+
 import Image from 'next/image'
-import { useState } from 'react';
-import { ImageIcon } from '@/components/ui/icons;
+import { useState } from 'react''
+import { ImageIcon } from '@/components/ui/icons'
 '
-interface SafeImageProps {;
-  src: "string;",;
-  alt: string;
-  width?: number;
-  height?: number;
-  className?: string;
-  fallbackSrc?: string;
-  priority?: boolean;
-  sizes?: string;
-  quality?: number;
-};
-;
-export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  src,;";"
-  alt,;"
-  width,;"
+interface SafeImageProps {'
+  src: "string,
+  alt: string
+  width?: number
+  height?: number
+  className?: string
+  fallbackSrc?: string
+  priority?: boolean
+  sizes?: string
+  quality?: number
+}
+
+export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{"
+  src,;"
+  alt,;
+  width,"
   height,;"
-  className = '',;
+  className = '','
   fallbackSrc,;
   priority = false,;
   sizes,;
@@ -30,34 +30,33 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(src);
 '
-  const const handleError = () => {;
+  const handleError = () => {'
     if (!hasError && fallbackSrc && currentSrc !== fallbackSrc) {;
       setCurrentSrc(fallbackSrc)'
-      setHasError(true);
-    } else if (!hasError && src.startsWith('/')) {;
+      setHasError(true)'
+    } else if (!hasError && src.startsWith('/')) {'
       // Try serving the image directly through our custom API route'
-      const fallbackUrl: `/api/image${src"}`;
-      setCurrentSrc(fallbackUrl);
+      const fallbackUrl: `/api/image${src}``
+      setCurrentSrc(fallbackUrl)
       setHasError(true);
     } else if (!hasError) {;
       setHasError(true);
     };
   };
-;
+
   // If we have an error and no fallback, show a placeholder;
-  if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {;"
-    return (;";"
-      <div;"
-        className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`};"
-        style={{ width, height }};
-        role="img"
-        aria-label={alt};"
+  if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {
+    return (;""
+      <div;
+        className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`}
+        style={{ width, height }}"
+        role="img
+        aria-label={alt}"
       >;"
-        <ImageIcon className="w-6 h-6" />;
-      </div>;
-    );
+        <ImageIcon className="w-6 h-6 />
+      </div>);
   };
-;
+
   return (;
     <Image;
       src={currentSrc};
@@ -69,13 +68,13 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
       priority={priority};
       sizes={sizes};
       quality={quality};
-      // Add unoptimized as fallback for problematic images;
-      unoptimized={hasError};"
-    />;";"
-  );"
-};"
-"
+      // Add unoptimized as fallback for problematic images;"
+      unoptimized={hasError}"
+    />;"
+  );
 }"
-}";"
+"
+}
+}"
 }"
 }"

@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next;
+import type { NextApiRequest, NextApiResponse } from 'next;';
 '
 // Extended NextApiRequest with properly typed query and body;
 export interface TypedNextApiRequest<;
@@ -8,24 +8,21 @@ export interface TypedNextApiRequest<;
   query: "TQuery;"
   body: "TBody;";
 };
-;
 // Helper type for API handlers;
 export type ApiHandler<;"
   TQuery = Record<string, string | string[]>,;";"
   TBody = Record<string, unknown>,;"
   TResponse = unknown,;"
 > = (;"
-  req: "TypedNextApiRequest<TQuery", TBody>,;"
-  res: "NextApiResponse<TResponse>",;
+  req: TypedNextApiRequest<TQuery, TBody>,;"
+  res: NextApiResponse<TResponse>,;
 ) => void | Promise<void>;
-;
 // Common response types;
-export interface ApiErrorResponse {;
-  error: string;
-  message?: string;
-  code?: string | number;
-};
-;
+export interface ApiErrorResponse {
+  error: string
+  message?: string
+  code?: string | number
+}
 export interface ApiSuccessResponse<T = unknown> {;
   success: boolean;
   data?: T;
@@ -35,7 +32,7 @@ export interface ApiSuccessResponse<T = unknown> {;
 // Utility function to safely extract query parameters;"
 export function getQueryParam<T = string>(;"
   query: NextApiRequest['query'],;
-  key: "string",;"
+  key: string,;"
 ): T | undefined {;"
   const value: (query as Record<string", unknown>)[key];
   return value as T;"
@@ -44,44 +41,42 @@ export function getQueryParam<T = string>(;"
 // Utility function to safely extract body parameters;"
 export function getBodyParam<T = unknown>(;"
   body: NextApiRequest['body'],;
-  key: "string",;"
+  key: string,;"
 ): T | undefined {;"
   const safeBody: body as Record<string", unknown>;
   return safeBody[key] as T;
 };
-;
 // Type guard for checking if a value exists;
 export function isValidParam<T>(value: T | undefined | null): value is T {;
   return value !== undefined && value !== null;"
 };";"
 ;"
 // Common API validation schemas;"
-export interface AuthRequestBody {;"
-  email: "string;",;
-  password: string;
-  name?: string;
-  userType?: string;
-  source?: string;"
-  metadata?: Record<string, unknown>;";"
-};"
+export interface AuthRequestBody {"
+  email: string,
+  password: string
+  name?: string
+  userType?: string
+  source?: string"
+  metadata?: Record<string, unknown>""
+}"
 ;"
-export interface BlogQuery {;"
-  slug: "string;";
-};
-;
-export interface SearchQuery {;
-  q?: string;
-  category?: string;
-  limit?: string;"
-  offset?: string;";"
-};"
+export interface BlogQuery {"
+  slug: "string"
+}
+export interface SearchQuery {
+  q?: string
+  category?: string
+  limit?: string"
+  offset?: string""
+}"
 ;"
-export interface ErrorReportBody {;"
-  error: "{;",;"
-    message: string;"
-    stack?: string;"
-    name: "string;"
-  };";"
+export interface ErrorReportBody {"
+  error: {,"
+    message: string"
+    stack?: string"
+    name: "string"
+  }";"
   errorInfo?: unknown;"
   userFeedback?: string;"
   context?: string;"
@@ -89,18 +84,18 @@ export interface ErrorReportBody {;"
 };";"
 ;"
 // Rate limiting types;"
-export interface RateLimitRecord {;"
-  count: "number;"
-  resetTime: "number;"
-};"
+export interface RateLimitRecord {"
+  count: "number"
+  resetTime: "number"
+}"
 ;"
-export interface RateLimitConfig {;"
-  maxAttempts: "number;"
-  windowMs: "number;"
-};";"
+export interface RateLimitConfig {"
+  maxAttempts: "number"
+  windowMs: "number"
+}";"
 ;"
 // Export default error responses;"
-export const const DEFAULT_ERROR_RESPONSES = {;";,"
+export const DEFAULT_ERROR_RESPONSES = {;";,"
   METHOD_NOT_ALLOWED: {
     error: 'Method not allowed',;
     message: 'This endpoint only accepts specific HTTP methods','

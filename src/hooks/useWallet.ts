@@ -2,22 +2,19 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
 import type { Wallet, TokenTransaction } from '@/types/tokens'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useWallet(): ;
   const { _user } = useAuth();
   const [wallet, setWallet] = useState<Wallet | null>(null);
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-;
   async function fetchWallet(): ;
     if (!user?.id) {;
-      setWallet(null);
-      setLoading(false);
+      setWallet(null);';
+      setLoading(false);';
       return'
     };
-;
     try {'
       setLoading(true);
       if (!supabase) throw new Error('Supabase client not initialized')'
@@ -26,11 +23,9 @@ export function useWallet(): ;
         .select('*');
         .eq('user_id', user.id);
         .single();
-;
       if (error) {;
         throw error'
       };
-;
       setWallet(data)'
     } catch (err: unknown) {;
       logErrorToProduction('Error fetching wallet:', { data: "err "});
@@ -39,7 +34,6 @@ export function useWallet(): ;
       setLoading(false);
     };
   };
-;
   async function fetchTransactions(): ;
     if (!user?.id) {;"
       setTransactions([]);";"
@@ -60,47 +54,45 @@ export function useWallet(): ;
     };"
   };"
 ;"
-  async function earnTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;"
+  async function earnTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: number, reason?: string) {;"
     if (!user?.id) return;"
     setWallet((prev) =>;"
       prev ? { ...prev, balance: "prev.balance + amount "} : prev,;"
     );"
     setTransactions((prev) => {;"
-      const const newTransaction = {;";,"
+      const newTransaction = {;";,"
         id: "crypto.randomUUID()"
-        user_id: "user.id",;"
+        user_id: user.id,;"
         amount,;"
         transaction_type: 'earn' as const,;
         reason: "reason || null"
-        created_at: "new Date().toISOString()",;
+        created_at: new Date().toISOString(),;
       };"
       return [newTransaction, ...prev];";"
     });"
   };"
 ;"
-  async function spendTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;"
+  async function spendTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: number, reason?: string) {;"
     if (!user?.id) return;"
     setWallet((prev) =>;"
-      prev ? { ...prev, balance: "Math.max(0", prev.balance - amount) } : prev,;"
+      prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev,;"
     );"
     setTransactions((prev) => {;"
-      const const newTransaction = {;";,"
+      const newTransaction = {;";,"
         id: "crypto.randomUUID()"
-        user_id: "user.id",;"
+        user_id: user.id,;"
         amount,;"
         transaction_type: 'burn' as const,;
         reason: "reason || null"
-        created_at: "new Date().toISOString()",;
+        created_at: new Date().toISOString(),;
       };
       return [newTransaction, ...prev];
     });
   };
-;
-  useEffect(() => {;
-    fetchWallet();
-    fetchTransactions();
-  }, [user?.id]);
-;
+  useEffect(() => {
+    fetchWallet()
+    fetchTransactions()
+  }, [user?.id])
   return {;
     wallet,;
     transactions,;

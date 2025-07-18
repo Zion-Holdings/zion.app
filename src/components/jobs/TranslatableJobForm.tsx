@@ -13,17 +13,17 @@ import { toast } from '@/components/ui/use-toast'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface TranslatableJobFormData {'
-  title: "Record<SupportedLanguage, string>;"";
-  description: "Record<SupportedLanguage", string>;"
+  title: "Record<SupportedLanguage, string>""
+  description: Record<SupportedLanguage, string>"
   requirements: Record<SupportedLanguage", string>""
-  budget: string,;""
+  budget: string,""
   deadline: "string
-};
+}
 
-interface TranslatableJobFormProps {;
-  onSubmit: (formData: TranslatableJobFormData) => void;
-  isSubmitting?: boolean;
-};
+interface TranslatableJobFormProps {
+  onSubmit: (formData: TranslatableJobFormData) => void
+  isSubmitting?: boolean
+}
 
 export function TranslatableJobForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onSubmit,;
@@ -32,7 +32,6 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
   const { t } = useTranslation();
   const { translateContent, isTranslating } = useTranslationService();
   const { supportedLanguages, currentLanguage } = useLanguage();
-
   const [activeTab, setActiveTab] ="
     useState<SupportedLanguage>(currentLanguage);"
 ;";"
@@ -69,20 +68,20 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
   const [deadline, setDeadline] = useState('')'
 
   // Handle text changes;
-  const const handleTitleChange = (_value: string) => {;
+  const handleTitleChange = (_value: string) => {;
     setTitle({ ...title, [activeTab]: value });
   };
 
-  const const handleDescriptionChange = (_value: string) => {;
+  const handleDescriptionChange = (_value: string) => {;
     setDescription({ ...description, [activeTab]: value });
   };
 
-  const const handleRequirementsChange = (_value: string) => {;
+  const handleRequirementsChange = (_value: string) => {;
     setRequirements({ ...requirements, [activeTab]: value });
   };
 
   // Handle form submission;
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
 
     // Complete any missing translations with auto-translation;
@@ -98,8 +97,8 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
   };
 
   // Auto translate content when language tab changes;
-  const const handleTabChange = async (_tab: string) => {;
-    const const selectedLanguage = tab as SupportedLanguage;
+  const handleTabChange = async (_tab: string) => {;
+    const selectedLanguage = tab as SupportedLanguage;
     if (selectedLanguage !== activeTab) {;
       setActiveTab(selectedLanguage);
     }'
@@ -180,8 +179,8 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
   };
 
   // Ensure all translations are available;
-  const const _ensureAllTranslations = async () => {;
-    const const promises = [];
+  const _ensureAllTranslations = async () => {;
+    const promises = [];
 
     if (!title.en && !title.es && !title.fr && !title.pt && !title.ar) return;
     if (;
@@ -271,8 +270,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
                   <span className=mr-1>{lang.flag}</span> {lang.name}"
                 </TabsTrigger>"
               ))};
-            </TabsList>;"";
-;"";
+            </TabsList>;"";"";
             {supportedLanguages.map((lang) => (;"";
               <TabsContent key={lang.code} value={lang.code} className="mt-2">;"
                 <div className=space-y-1">";
@@ -385,14 +383,14 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
             onValueChange={handleTabChange}'
             className=w-full";";
           >"
-            <TabsList className="w-full>
+            <TabsList className="w-full>"
               {supportedLanguages.map((lang) => (;""
                 <TabsTrigger;"
                   key={lang.code}";"
                   value={lang.code}";""
                   className=flex-1";";
                 >"
-                  <span className="mr-1>{lang.flag}</span> {lang.name}
+                  <span className="mr-1>{lang.flag}</span> {lang.name}"
                 </TabsTrigger>"
               ))};"
             </TabsList>;";"

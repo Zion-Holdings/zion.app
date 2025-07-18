@@ -1,12 +1,12 @@
-import React from 'react;
+import  React  from 'react;
 import {;
   ArrowRight,;
   Zap,;
   Users,;
   Globe,;
   Shield,;
-  TrendingUp,;
-  Star,;
+  TrendingUp,;';
+  Star,;';
   CheckCircle,'
   Play,;
   Target,;
@@ -16,20 +16,18 @@ import {;
 import { useTranslation } from 'react-i18next'
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
-import { Button } from '@/components/ui/button;
-import {;
+import  { Button }  from '@/components/ui/button;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;
-;
+import { Badge } from '@/components/ui/badge;';
 export default function Home(): '
   const { t } = useTranslation();
-;
-  const const features = ['
+  const features = ['
     {;
       icon: <Zap className="h-6 w-6" />,;"
       title: t('home.features.ai.title', 'AI-Powered Matching'),'
@@ -63,8 +61,7 @@ export default function Home(): '
       ),;
     },'
   ];
-;
-  const const stats = ['
+  const stats = ['
     {;
       label: t('home.stats.talent', 'Talent'),;
       value: '10K+',;
@@ -87,7 +84,7 @@ export default function Home(): '
     },;"
   ];";"
 ;"
-  const const testimonials = [;"
+  const testimonials = [;"
     {;"
       name: 'Sarah Chen',;
       role: 'AI Research Lead',;
@@ -96,7 +93,7 @@ export default function Home(): '
         'home.testimonials.sarah',;
         'Zion connected us with world-class AI researchers. The platform is incredible!','
       ),;
-      rating: "5",;"
+      rating: 5,;"
     },;"
     {;"
       name: 'Marcus Rodriguez',;
@@ -106,7 +103,7 @@ export default function Home(): '
         'home.testimonials.marcus',;
         'Found our entire development team through Zion. Game changer for our startup.','
       ),;
-      rating: "5",;"
+      rating: 5,;"
     },;"
     {;"
       name: 'Dr. Emily Watson',;
@@ -116,7 +113,7 @@ export default function Home(): '
         'home.testimonials.emily',;
         'The quality of opportunities and the professional network is outstanding.','
       ),;
-      rating: "5",;"
+      rating: 5,;"
     },;";"
   ];"
 ;"

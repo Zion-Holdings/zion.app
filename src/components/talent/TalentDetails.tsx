@@ -7,21 +7,21 @@ export interface TalentDetailsProps {'
 };"
 const TalentDetails: unknown "React.FC<TalentDetailsProps> = ({ talent }) => (
   <main;"
-    className="min-h-screen bg-zion-blue py-8 text-white
+    className="min-h-screen bg-zion-blue py-8 text-white"
     data-testid=talent-details"
   >"
     <div className=container mx-auto px-4 space-y-6>"
-      <h1 className="text-3xl font-bold>{talent.full_name}</h1>
+      <h1 className="text-3xl font-bold>{talent.full_name}</h1>"
       {talent.professional_title && (;"
         <p className="text-zion-slate-light>{talent.professional_title}</p>
-      )};
+      )};"
 "
       {talent.bio && <p>{talent.bio}</p>};"
 
       {talent.skills && talent.skills.length > 0 && ("
         <section>;"
           <h2 className=text-xl font-semibold mb-2>Skills</h2>"
-          <ul className="flex flex-wrap gap-2>
+          <ul className="flex flex-wrap gap-2>"
             {talent.skills.map((skill) => (;"
               <li"
                 key={skill};
@@ -38,28 +38,28 @@ const TalentDetails: unknown "React.FC<TalentDetailsProps> = ({ talent }) => (
       {talent.social && ("
         <section>;"
           <h2 className=text-xl font-semibold mb-2>Contact</h2>"
-          <ul className="space-y-1>
+          <ul className="space-y-1>"
             {Object.entries(talent.social).map(([platform, url]) => (;""
               <li key={platform}>;
                 <a
                   href={url};"
-                  className="text-zion-cyan underline
+                  className="text-zion-cyan underline"
                   target=_blank"
                   rel="noopener noreferrer
                 >;
                   {platform};
                 </a>;
               </li>))};
-          </ul>;
+          </ul>;"
         </section>"
       )};"
 
       {talent.key_projects && talent.key_projects.length > 0 && ("
         <section>;"
           <h2 className=text-xl font-semibold mb-2>Portfolio</h2>"
-          <ul className="space-y-2>
+          <ul className="space-y-2>"
             {talent.key_projects.map((proj, i) => (;"
-              <li key={i} className="border-b border-zion-purple/20 pb-2>
+              <li key={i} className="border-b border-zion-purple/20 pb-2>"
                 <h3 className="font-medium">{proj.title}</h3>
                 <p className=text-sm text-zion-slate">{proj.description}</p>"
               </li>))}

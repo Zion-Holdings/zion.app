@@ -13,29 +13,28 @@ import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus
 import { useCommunity } from '@/context'
 import type { ForumCategory } from '@/types/community'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { logInfo } from '@/utils/productionLogger;
+import { logInfo } from '@/utils/productionLogger;';
 '
 export default function CommunityPage(): ;
   logInfo('CommunityPage rendering');
   const { user, loading } = useRequireAuth()'
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState('categories');
-  const const router = useRouter();
+  const router = useRouter();
   const [showNewPost, setShowNewPost] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const { _markCommunityVisited } = useAdvancedOnboardingStatus();
-;
   // Combine posts for Q&A section, removing duplicates by id;
-  const const qaPosts = Array.from(;
+  const qaPosts = Array.from(;
     new Map(;
       [...featuredPosts, ...recentPosts].map((post) => [post.id, post]),;
     ).values(),;
   )'
 ;
-  const const initialCategory = router.query.category as ForumCategory | null;
+  const initialCategory = router.query.category as ForumCategory | null;
 '
   useEffect(() => {;
-    const const wantsNew = router.query.new === '1;
+    const wantsNew = router.query.new === '1;
     if (wantsNew && !user) {;
       setLoginOpen(true);
       setShowNewPost(false);
@@ -50,7 +49,7 @@ export default function CommunityPage(): ;
 ;
   // Handle tab changes in URL query params for better UX;
   useEffect(() => {'
-    const const tab = router.query.tab as string;
+    const tab = router.query.tab as string;
     if (tab && ['categories', 'featured', 'recent', 'qa'].includes(tab)) {;
       setActiveTab(tab);
     };
@@ -79,35 +78,33 @@ export default function CommunityPage(): ;
     );
   };"
 ;";"
-  const const handleTabChange = (_value: string) => {;"
+  const handleTabChange = (_value: string) => {;"
     setActiveTab(value);"
     // Update URL to reflect active tab;"
     const newQuery: { ...router.query", tab: "value "};"
-    router.replace({ pathname: "router.pathname", query: "newQuery "}, undefined, {;"
-      shallow: "true",;
+    router.replace({ pathname: router.pathname, query: "newQuery "}, undefined, {;"
+      shallow: true,;
     });
-  };
-;"
-  const const handleDialogChange = (_open: boolean) => {;";"
+  };"
+  const handleDialogChange = (_open: boolean) => {;";"
     setShowNewPost(open);"
     if (!open) {;"
       const currentQuery: { ...router.query "};"
       delete currentQuery.new;"
       router.replace(;"
-        { pathname: "router.pathname", query: "currentQuery "},;"
+        { pathname: router.pathname, query: "currentQuery "},;"
         undefined,;"
         { shallow: "true "},;
       );
     };
-  };
-;"
-  const const handleLoginModalChange = (_open: boolean) => {;";"
+  };"
+  const handleLoginModalChange = (_open: boolean) => {;";"
     setLoginOpen(open);"
     if (!open) {;"
       const currentQuery: { ...router.query "};"
       delete currentQuery.new;"
       router.replace(;"
-        { pathname: "router.pathname", query: "currentQuery "},;"
+        { pathname: router.pathname, query: "currentQuery "},;"
         undefined,;"
         { shallow: "true "},;"
       );";"
@@ -143,7 +140,6 @@ export default function CommunityPage(): ;
               Join the conversation, ask questions, and share your knowledge;
             </p>;
           </div>;
-;
           <CreatePostButton;
             onRequireLogin={(target) => {;
               router.push(target);
@@ -209,7 +205,6 @@ export default function CommunityPage(): ;
           </TabsContent>;
         </Tabs>;
       </div>;
-;
       <NewPostDialog;
         open={showNewPost};
         onOpenChange={handleDialogChange};

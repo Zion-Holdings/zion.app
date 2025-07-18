@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { triggerTraining } from '@/services/zionGPTService'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 export default function AICoreDashboard(): ;
   const [status, setStatus] = useState<string>('idle');
@@ -8,7 +8,7 @@ export default function AICoreDashboard(): ;
   async function startTraining(): ;
     setStatus('starting')'
     try {;
-      const const res = await triggerTraining();
+      const res = await triggerTraining();
       setStatus(res.status)'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
       setStatus('error')'

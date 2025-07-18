@@ -22,11 +22,11 @@ interface ApiDocsLayoutProps {'
 }"
 ;"
 export function ApiDocsLayout(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: ApiDocsLayoutProps) {;";"
-  const const router = useRouter();";"
-  const const currentPath = usePathname();";"
+  const router = useRouter();";"
+  const currentPath = usePathname();";"
   const [searchValue, setSearchValue] = useState('')'
 '
-  const const navigationItems = ['
+  const navigationItems = ['
     { title: 'Getting Started', path: '/developers/docs/getting-started' },'
     { title: 'API Reference', path: '/developers/docs/reference' },'
     { title: 'Webhooks', path: '/developers/docs/webhooks' },'
@@ -34,17 +34,17 @@ export function ApiDocsLayout(): unknown {): unknown {): unknown {): unknown {):
     { title: 'Error Codes & Rate Limits', path: '/developers/docs/errors' },'
   ];
 '
-  const const handleSelectSuggestion = (_suggestion: SearchSuggestion) => {'
-//     const const _path = getDocsSearchPath(suggestion.text);
+  const handleSelectSuggestion = (_suggestion: SearchSuggestion) => {'
+//     const _path = getDocsSearchPath(suggestion.text);
     if (path) {'
       router.push(path)'
       setSearchValue('')'
     };
   };
 
-  const const handleSubmit = (_e: React.FormEvent) => {'
+  const handleSubmit = (_e: React.FormEvent) => {'
     e.preventDefault()'
-//     const const _path = getDocsSearchPath(searchValue);
+//     const _path = getDocsSearchPath(searchValue);
     if (path) {'
       router.push(path)'
       setSearchValue('')'
@@ -73,8 +73,7 @@ export function ApiDocsLayout(): unknown {): unknown {): unknown {): unknown {):
               placeholder=Search documentation"
             />"
           </form>;
-        </div>;"";
-;"";
+        </div>;"";"";
         <nav;"";
           role="navigation"
           aria-label=Main"""

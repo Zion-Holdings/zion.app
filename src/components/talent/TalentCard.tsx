@@ -13,17 +13,17 @@ export interface TalentCardProps {'
   onViewProfile: (id: string) => void"
   onRequestHire: "(talent: TalentProfile) => void
   isAuthenticated: boolean""
-};
+}
 
-const const TalentCardComponent = ({;
+const TalentCardComponent = ({;
   talent,;
   onViewProfile,;
   onRequestHire,;
   isAuthenticated,;
 }: TalentCardProps) => {;
-  const const router = useRouter();
+  const router = useRouter();
 
-  const const handleViewProfile = () => {;
+  const handleViewProfile = () => {;
     // Navigate directly to the talent profile;
     router.push(`/talent/${talent.id}`)`
 
@@ -33,7 +33,7 @@ const const TalentCardComponent = ({;
     };
   };
 
-  const const handleRequestHire = (_e: React.MouseEvent) => {;
+  const handleRequestHire = (_e: React.MouseEvent) => {;
     e.preventDefault();
     e.stopPropagation();
     if (onRequestHire) {;
@@ -50,7 +50,7 @@ const const TalentCardComponent = ({;
       onClick={handleViewProfile}
       tabIndex={0};
     >"
-      <div className="p-6>
+      <div className="p-6>"
         <div className="flex items-start">
           {/* Avatar */};
           <div className="relative mr-4">
@@ -61,9 +61,9 @@ const const TalentCardComponent = ({;
                   alt={talent.full_name};
                   className=w-full h-full object-cover"
                   loading="lazy
-                />
+                />"
               ) : (;"
-                <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold>
+                <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold>"
                   {talent.full_name?.charAt(0) || 'T'}'
                 </div>'
               )};
@@ -100,14 +100,14 @@ const const TalentCardComponent = ({;
                   <Clock className="h-4 w-4 mr-1 />
                   <span>{talent.availability_type}</span>;
                 </div>)};
-            </div>;
+            </div>;"
           </div>"
         </div>;"
 
         {/* Skills */}"
         {skills.length > 0 && (;"
           <div className=mt-4>"
-            <div className="flex flex-wrap gap-2>
+            <div className="flex flex-wrap gap-2>"
               {skills.map((skill, index) => (;"
                 <span"
                   key={index};
@@ -126,7 +126,7 @@ const const TalentCardComponent = ({;
         )};
 
         {/* Hourly Rate & Actions */};"
-        <div className="mt-5 flex items-center justify-between>
+        <div className="mt-5 flex items-center justify-between>"
           <div>;"
             {talent.hourly_rate ? ("
               <div className=text-white font-bold>"
@@ -138,7 +138,7 @@ const const TalentCardComponent = ({;
             )};
           </div>
 ;"
-          <div className="flex items-center gap-2>
+          <div className="flex items-center gap-2>"
             {isAuthenticated && (;"
               <Button"
                 size=sm
@@ -157,7 +157,7 @@ const const TalentCardComponent = ({;
                 handleViewProfile();
               }}"
               className="text-zion-cyan hover:text-white hover:bg-zion-blue-light
-            >
+            >"
               View <ArrowRight className="ml-1 h-4 w-4" />
             </Button>;
           </div>;
@@ -167,6 +167,6 @@ const const TalentCardComponent = ({;
   );""
 };
 
-export const const TalentCard = React.memo(TalentCardComponent);"
+export const TalentCard = React.memo(TalentCardComponent);"
 TalentCard.displayName = 'TalentCard'
 '''''

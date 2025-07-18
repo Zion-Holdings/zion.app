@@ -34,12 +34,12 @@ import { supabase } from '@/integrations/supabase/client'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface ServiceQuoteModalProps {'
-  open: "boolean,;";
-  onOpenChange: "(open: boolean) => void",;"";
-  service: ProductListing | null";"
-};";"
+  open: "boolean,"
+  onOpenChange: (open: boolean) => void,""
+  service: ProductListing | null""
+}";"
 ;";"
-const const BUDGET_RANGES = [;";"
+const BUDGET_RANGES = [;";"
   { label: 'Less than $5,000', value: '0-5000' },'
   { label: '$5,000 - $10,000', value: '5000-10000' },'
   { label: '$10,000 - $25,000', value: '10000-25000' },'
@@ -47,7 +47,7 @@ const const BUDGET_RANGES = [;";"
   { label: '$50,000+', value: '50000+' },'
 ];
 '
-const const TIMELINE_OPTIONS = ['
+const TIMELINE_OPTIONS = ['
   { label: 'Less than 1 month', value: 'lt-1month' },'
   { label: '1-3 months', value: '1-3months' },'
   { label: '3-6 months', value: '3-6months' },'
@@ -79,26 +79,25 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {"
+  const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {"
     e.preventDefault();
-    setIsSubmitting(true);"";
-;"";
+    setIsSubmitting(true);"";"";
     try {;"";
       if (!supabase) throw new Error('Supabase client not initialized')'
       // Call Supabase function to process the quote'
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke('process-quote', {'
-        body: "{",;"
+        body: {,;"
           service: service";"
             ? {";""
                 id: service.id,"
                 title: "service.title,;"";
-                category: "service.category",
+                category: service.category,
               };"
             : null,;";
           quoteDetails: {";";
             ...formData,"
             startDate: "startDate?.toISOString(),;"";
-            endDate: "endDate?.toISOString()",
+            endDate: endDate?.toISOString(),
           },;
         },;
       });
@@ -136,12 +135,12 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
     }'
   };
 '
-  const const nextStep = () => {'
+  const nextStep = () => {'
     if (currentStep === 'details') setCurrentStep('timeline')'
     else if (currentStep === 'timeline') setCurrentStep('contact')'
   };
 '
-  const const prevStep = () => {'
+  const prevStep = () => {'
     if (currentStep === 'timeline') setCurrentStep('details')'
     else if (currentStep === 'contact') setCurrentStep('timeline')'
   }'
@@ -308,7 +307,7 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
                         className="p-3 pointer-events-auto bg-zion-blue-dark text-white
                       />;
                     </PopoverContent>;
-                  </Popover>;
+                  </Popover>;"
                 </div>"
               </div>;"
             </div>;";"
@@ -328,7 +327,7 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
                   value={formData.email};";"
                   onChange={handleInputChange};"
                   placeholder=your@email.com"
-                  className="bg-zion-blue-dark border-zion-blue-light text-white
+                  className="bg-zion-blue-dark border-zion-blue-light text-white"
                   required;""
                 />;"
               </div>";"
@@ -347,7 +346,7 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
                   <div className=flex justify-between">""
                     <span className=text-zion-slate-light>Budget:</span>"
                     <span className="text-white>
-                      {;
+                      {;"
                         BUDGET_RANGES.find((b) => b.value === formData.budget)"
                           ?.label;"
                       };";"
@@ -358,7 +357,7 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
                     <span className="text-white>
                       {;
                         TIMELINE_OPTIONS.find(;
-                          (t) => t.value === formData.timeframe,;
+                          (t) => t.value === formData.timeframe,;"
                         )?.label"
                       };"
                     </span>;";"
@@ -394,8 +393,7 @@ export function ServiceQuoteModal(): unknown {): unknown {): unknown {): unknown
               >;
                 Previous;
               </Button>"
-            )};
-;"";
+            )};"";
             <div;"";
               className={cn(;"";
                 'flex gap-2','

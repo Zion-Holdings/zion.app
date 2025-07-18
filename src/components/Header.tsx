@@ -27,23 +27,23 @@ import {;
 } from '@/components/ui/dropdown-menu'
 '
 export interface HeaderProps {'
-  hideLogin?: boolean;
+  hideLogin?: boolean
   customLogo?: string'
   customTheme?: {'
-    primaryColor: "string,;";
-    backgroundColor: "string",;"";
+    primaryColor: "string,"
+    backgroundColor: string,""
     textColor: string""
-  };
+  }
 };
 
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false }: HeaderProps) {
   const { t } = useTranslation();"
-  const const router = useRouter();";
+  const router = useRouter();";
   const { user, isAuthenticated, logout } = useAuth()";";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)"
   const [searchQuery, setSearchQuery] = useState('')'
 '
-  const const handleSearch = (_e: React.FormEvent) => {'
+  const handleSearch = (_e: React.FormEvent) => {'
     e.preventDefault();
     if (searchQuery.trim()) {'
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)`
@@ -51,7 +51,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
     };
   }'
 '
-  const const handleLogout = async () => {;
+  const handleLogout = async () => {;
     try {'
       await logout()'
       router.push('/')'
@@ -60,7 +60,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
     };""
   };"
 ";"
-  const const navigationItems = [";""
+  const navigationItems = [";""
     { href: '/marketplace', label: t('nav.marketplace') || 'Marketplace' },'
     { href: '/talent', label: t('nav.talent') || 'Talent' },'
     { href: '/community', label: t('nav.community') || 'Community' },'
@@ -78,7 +78,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                 <span className=text-white font-bold text-sm>Z</span>";";
               </div>"
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent>
-                Zion;
+                Zion;"
               </span>"
             </Link>;"
           </div>;";"
@@ -109,7 +109,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                   value={searchQuery}'
                   onChange={(e) => setSearchQuery(e.target.value)}'
                   className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg _focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                />;
+                />;"
               </div>"
             </form>;"
           </div>;";"
@@ -152,8 +152,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                 <DropdownMenuItem>Español</DropdownMenuItem>;
                 <DropdownMenuItem>Français</DropdownMenuItem>;
               </DropdownMenuContent>;
-            </DropdownMenu>;
-
+            </DropdownMenu>;"
             {/* User Menu */}"
             {isAuthenticated && user ? (;"
               <DropdownMenu>;";"
@@ -220,8 +219,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
               )};
             </Button>;
           </div>"
-        </div>;
-;"";
+        </div>;"";
         {/* Mobile Menu */};"";
         {isMobileMenuOpen && (;"";
           <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">;"
@@ -240,8 +238,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     className=w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />"
                 </div>;
-              </form>;"";
-;"";
+              </form>;"";"";
               {/* Mobile Navigation */};"";
               <nav className="space-y-2">
                 {navigationItems.map((item) => (;"
@@ -252,7 +249,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     onClick={() => setIsMobileMenuOpen(false)};
                   >;
                     {item.label};
-                  </Link>;
+                  </Link>;"
                 ))}"
               </nav>;"
 ;";"

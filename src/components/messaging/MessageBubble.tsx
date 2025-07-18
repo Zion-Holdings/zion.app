@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 import type { Message } from '@/types/messaging'
 '
 interface MessageBubbleProps {'
-  message: "Message,;";
+  message: "Message,"
   isUserMessage: "boolean"
 }
-;""
+""
 export function MessageBubble(): unknown {): unknown {): unknown {): unknown {): unknown {{ message, isUserMessage }: MessageBubbleProps) {;"
   return (";"
     <div";""

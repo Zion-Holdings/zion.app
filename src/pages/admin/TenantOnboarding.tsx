@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { useAuth } from '@/hooks/useAuth;
-import {;
+import  { useAuth }  from '@/hooks/useAuth;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -12,8 +12,8 @@ import {;
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
-import {;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -23,8 +23,7 @@ import {;
 import { toast } from 'sonner'
 import { supabase } from '@/integrations/supabase/client'
 import { Switch } from '@/components/ui/switch'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 export default function TenantOnboarding(): '
   const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState('company');
@@ -38,39 +37,35 @@ export default function TenantOnboarding(): '
     company_size: '',;
     industry: '',;
     custom_domain: '',;
-    is_co_branded: "true",;"
+    is_co_branded: true,;"
   });"
 ;"
   // Check if user has admin role;"
-  const const isAdmin = user?.role === 'admin;
+  const isAdmin = user?.role === 'admin;
 '
   if (!isAdmin) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
   };
-;
-  const const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {'
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {'
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   }'
 ;
-  const const handleSelectChange = (name: "string", _value: string) => {;"
+  const handleSelectChange = (name: string, _value: string) => {;"
     setFormData((prev) => ({ ...prev, [name]: value }));"
   };"
 ;"
-  const const handleSwitchChange = (name: "string", _checked: boolean) => {;
+  const handleSwitchChange = (name: string, _checked: boolean) => {;
     setFormData((prev) => ({ ...prev, [name]: checked }));
   };
-;
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
-    setIsSubmitting(true);
-;"
+    setIsSubmitting(true);"
     try {;";"
       // Generate subdomain if not provided;"
       const subdomain: unknown =;"
         formData.subdomain ||;"
         formData.brand_name.toLowerCase().replace(/[^a-z0-9]/g, '');
-;
       // Create landing page copy'
       const landingPageCopy: {;",;"
         headline: 'AI Hiring Assistant',;
@@ -93,11 +88,10 @@ export default function TenantOnboarding(): '
           is_active: "true"
           account_manager_id: "user.id"
           dns_verified: "false"
-          email_template_override: "null",;"
+          email_template_override: null,;"
         });"
         .select('id, brand_name, subdomain')'
         .single();
-;
       if (error) throw error'
 ;
       toast.success('Tenant created successfully!', {;
@@ -114,7 +108,7 @@ export default function TenantOnboarding(): '
         company_size: '',;
         industry: '',;
         custom_domain: '',;
-        is_co_branded: "true",;
+        is_co_branded: true,;
       });"
     } catch (error: unknown) {;";"
       logErrorToProduction(;"
@@ -150,7 +144,6 @@ export default function TenantOnboarding(): '
               Create a new white-label instance of Zion Hire AI for a company.;
             </p>;
           </div>;
-;
           <Card>;
             <CardHeader>;
               <CardTitle>New Tenant Setup</CardTitle>;
@@ -385,7 +378,6 @@ export default function TenantOnboarding(): '
     </>;
   );
 };
-;
 }'
 }
 }'

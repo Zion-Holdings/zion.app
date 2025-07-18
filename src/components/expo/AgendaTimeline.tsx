@@ -1,5 +1,5 @@
 export function AgendaTimeline(): ;
-  const const items = [;
+  const items = [;
     'AI Breakthroughs & Tools','
     'DAO Governance Updates','
     'Talent Showcase & Matchmaking','

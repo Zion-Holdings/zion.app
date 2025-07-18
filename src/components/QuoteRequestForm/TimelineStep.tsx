@@ -13,9 +13,9 @@ import { cn } from '@/lib/utils'
 import type { QuoteFormData } from '@/types/quotes'
 '
 interface TimelineStepProps {'
-  formData: "QuoteFormData,;";
-  updateFormData: "(data: Partial<QuoteFormData>) => void";
-};"
+  formData: "QuoteFormData,"
+  updateFormData: "(data: Partial<QuoteFormData>) => void"
+}"
 ";
 export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): unknown {{ formData, updateFormData }: TimelineStepProps) {;"";
   return (;""
@@ -31,7 +31,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${;""
                 formData.timeline === 'fixed'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
               }`}`
               onClick={() => updateFormData({ timeline: 'fixed' })}'
             >'
@@ -45,7 +45,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${";""
                 formData.timeline === 'flexible'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
               }`}`
               onClick={() => updateFormData({ timeline: 'flexible' })}'
             >'
@@ -92,8 +92,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
                     />;
                   </PopoverContent>"
                 </Popover>;
-              </div>;"";
-;"";
+              </div>;"";"";
               <div>;"";
                 <Label className="block mb-2 text-zion-slate-light">
                   End Date

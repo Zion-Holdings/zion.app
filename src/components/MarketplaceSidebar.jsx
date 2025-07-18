@@ -7,18 +7,18 @@ export default function MarketplaceSidebar({ children }) {
   const [isOpen, setIsOpen] = useState(!isMobile);
 
   useEffect(() => {
-    setIsOpen(!isMobile);
-  }, [isMobile]);
+    setIsOpen(!isMobile)
+  }, [isMobile])
 
   return (
     <GlobalErrorBoundary>
       <div className="relative flex>
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(!isOpen)}"
           className=md:hidden p-2 text-white"
           aria-expanded={isOpen}
           aria-label="Toggle marketplace sidebar
-        >
+        >"
           {isOpen ? <X className=h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
         <aside

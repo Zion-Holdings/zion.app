@@ -18,10 +18,10 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-interface InteractiveFeaturesProps {;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface InteractiveFeaturesProps {
+  className?: string
+  style?: React.CSSProperties
+}
 
 export function InteractiveFeatures(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
@@ -29,7 +29,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
 }: InteractiveFeaturesProps) {'
   const [openIndex, setOpenIndex] = React.useState<number | null>(null)'
 
-  const const features = ['
+  const features = ['
     {'
       title: 'AI Talent Matching','
       description:'
@@ -66,7 +66,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
     },;
   ];
 
-  const const handleToggle = (_index: number) => {'
+  const handleToggle = (_index: number) => {'
     setOpenIndex((prev) => (prev === index ? null : index))'
   };
 '
@@ -82,7 +82,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
           </p>;"";
         </div>;""
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
-          {features.map((feature, index) => (;
+          {features.map((feature, index) => (;"
             <Card"
               key={index};"
               onMouseEnter={() => setOpenIndex(index)};";"
@@ -131,8 +131,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
       </div>;
     </section>;
   )"
-};
-;"";
+};"";
 export default InteractiveFeatures;"";
 ";"
 }";"

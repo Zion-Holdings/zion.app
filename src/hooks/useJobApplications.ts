@@ -3,15 +3,14 @@ import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import type { JobApplication, ApplicationStatus } from '@/types/jobs'
 import { toast } from 'sonner'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export const const _useJobApplications = (jobId?: string) => {;
-  const { _user } = useAuth();
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export const _useJobApplications = (jobId?: string) => {;';
+  const { _user } = useAuth();';
   const [applications, setApplications] = useState<JobApplication[]>([])'
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 '
-  const const fetchApplications = async () => {;
+  const fetchApplications = async () => {;
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {;
       setIsLoading(false);
@@ -27,7 +26,7 @@ export const const _useJobApplications = (jobId?: string) => {;
           `'
           *,;
           job: "jobs(*)"
-          talent_profile: "profiles!talent_id(id", display_name, avatar_url, bio);"
+          talent_profile: profiles!talent_id(id, display_name, avatar_url, bio);"
         `,;"
         );"
         .order('created_at', { ascending: "false "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
@@ -49,9 +48,8 @@ export const const _useJobApplications = (jobId?: string) => {;
             .from('jobs');
             .select('id');
             .eq('client_id', user.id);
-;
           if (jobIds && jobIds.length > 0) {'
-            const const jobIdArray = jobIds.map((job: unknown) =>;
+            const jobIdArray = jobIds.map((job: unknown) =>;
               typeof job === 'object' && job !== null && 'id' in job;
                 ? (job as { id: "string "}).id;"
                 : undefined,;"
@@ -67,12 +65,11 @@ export const const _useJobApplications = (jobId?: string) => {;
 ;"
       // Transform the data to match our application types. Default to an empty;"
       // array to avoid "map is not a function" errors when no data is returned;
-      const const transformedData = (data ?? []).map((app: JobApplication) => app);
-;"
+      const transformedData = (data ?? []).map((app: JobApplication) => app);"
       setApplications(transformedData as JobApplication[]);";"
       setError(null);"
     } catch (err: unknown) {;"
-      const const message = err instanceof Error ? err.message : String(err);"
+      const message = err instanceof Error ? err.message : String(err);"
       logErrorToProduction('Error fetching applications:', { data: "err "});"
       setError('Failed to fetch applications: ' + message);
       toast.error('Failed to fetch applications');
@@ -83,7 +80,7 @@ export const const _useJobApplications = (jobId?: string) => {;
 '
   const applyToJob: async (;",;"
     jobId: "string"
-    coverLetter: "string",;"
+    coverLetter: string,;"
     resumeId?: string,;"
     resumeFile?: File,;"
   ) => {;"
@@ -92,10 +89,8 @@ export const const _useJobApplications = (jobId?: string) => {;
       toast.error('You must be logged in to apply for jobs');
       return false;
     };
-;
     try {'
       let resumeUrl: string | undefined;
-;
       if (resumeFile) {'
         const fileName: `resume-${user.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}-${Date.now()}-${resumeFile.name}`;
         const { error: "uploadError "} = await supabase.storage;"
@@ -131,16 +126,15 @@ export const const _useJobApplications = (jobId?: string) => {;
         };
         return false;
       };
-;
       // Add the new application to the local state'
-      const const newApplication = {;
+      const newApplication = {;
         ...(data as JobApplication),;
         resume: resumeUrl'
           ? {;
               id: "crypto.randomUUID()"
               title: resumeFile?.name || 'Uploaded CV',;
               type: 'custom_upload',;
-              file_url: "resumeUrl",;"
+              file_url: resumeUrl,;"
             };"
           : typeof data === 'object' && data !== null && 'resume' in data;
             ? (data as { resume?: string }).resume'
@@ -151,7 +145,7 @@ export const const _useJobApplications = (jobId?: string) => {;
       toast.success('Application submitted successfully');
       return true;
     } catch (err: unknown) {'
-      const const message = err instanceof Error ? err.message : String(err);
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error applying to job:', { data: "err "});"
       toast.error('Failed to submit application: ' + message);
       return false'
@@ -160,7 +154,7 @@ export const const _useJobApplications = (jobId?: string) => {;
 '
   const updateApplicationStatus: async (;",;"
     applicationId: "string"
-    _status: "ApplicationStatus",;"
+    _status: ApplicationStatus,;"
   ) => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     try {'
@@ -168,9 +162,7 @@ export const const _useJobApplications = (jobId?: string) => {;
         .from('job_applications')'
         .update({ status });
         .eq('id', applicationId);
-;
       if (error) throw error;
-;
       // Update the local state;
       setApplications((prev) =>;
         prev.map((app) =>;
@@ -181,25 +173,24 @@ export const const _useJobApplications = (jobId?: string) => {;
       toast.success(`Application status updated to ${status}`);
       return true;
     } catch (err: unknown) {'
-      const const message = err instanceof Error ? err.message : String(err);
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating application status:', { data: "err "});"
       toast.error('Failed to update application status: ' + message);
       return false'
     };
   };
 '
-  const const markApplicationAsViewed = async (_applicationId: string) => {;
+  const markApplicationAsViewed = async (_applicationId: string) => {;
     if (!supabase) throw new Error('Supabase client not initialized');
     try {'
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;
         .from('job_applications')'
         .update({;
           status: 'viewed',;
-          viewed_at: "new Date().toISOString()",;"
+          viewed_at: new Date().toISOString(),;"
         });"
         .eq('id', applicationId);
         .is('viewed_at', null); // Only update if not already viewed;
-;
       if (error) throw error;
 '
       // Update the local state;
@@ -214,24 +205,22 @@ export const const _useJobApplications = (jobId?: string) => {;
       return true;"
     } catch (err: unknown) {;"
       logErrorToProduction('Error marking application as viewed:', {;
-        data: "err",;
+        data: err,;
       });
       return false;
     };
   };
-;
   // Fetch applications when component mounts or dependencies change;
   useEffect(() => {;
     if (user) {;
       fetchApplications();
     };
-  }, [user, jobId]);
-;"
+  }, [user, jobId]);"
   return {;";"
     applications,;"
     isLoading,;"
     error,;"
-    refetch: "fetchApplications",;
+    refetch: fetchApplications,;
     applyToJob,;
     updateApplicationStatus,;"
     markApplicationAsViewed,;";"

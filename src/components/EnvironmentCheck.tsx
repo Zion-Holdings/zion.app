@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 '
 interface EnvironmentStatus {'
-  _variable: "string,;";
-  value: "string",;
+  _variable: "string,"
+  value: string,
   status: 'ok' | 'missing' | 'placeholder'
-};
+}
 
 export const EnvironmentCheck: unknown React.FC = () => {;
   const [envStatus, setEnvStatus] = useState<EnvironmentStatus[]>([]);
   const [showDetails, setShowDetails] = useState(false)'
 '
   useEffect(() => {;
-    const const checkEnvironment = () => {'
-      const const requiredVars = ['
+    const checkEnvironment = () => {'
+      const requiredVars = ['
         'NEXT_PUBLIC_SUPABASE_URL','
         'NEXT_PUBLIC_SUPABASE_ANON_KEY','
         'NEXT_PUBLIC_APP_URL','
@@ -20,7 +20,7 @@ export const EnvironmentCheck: unknown React.FC = () => {;
       ];
 '
       const status: unknown EnvironmentStatus[] = requiredVars.map((variable) => {'
-        const const value = process.env[variable] || 
+        const value = process.env[variable] || 
         let status: 'ok' | 'missing' | 'placeholder' = 'ok'
 '
         if (!value) {'
@@ -46,7 +46,7 @@ export const EnvironmentCheck: unknown React.FC = () => {;
     checkEnvironment();
   }, [])'
 '
-  const const hasIssues = envStatus.some((item) => item.status !== 'ok')'
+  const hasIssues = envStatus.some((item) => item.status !== 'ok')'
 '
   if (!hasIssues) {'
     return null; // Don't show anything if everything is OK'

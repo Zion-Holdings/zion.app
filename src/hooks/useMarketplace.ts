@@ -2,23 +2,22 @@ import { useState, useCallback } from 'react';
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { getMarketplaceErrorMessage } from '@/services/marketplace'
 import { useQuery } from '@tanstack/react-query'
-import { logDev } from '@/utils/developmentLogger;
+import { logDev } from '@/utils/developmentLogger;';
 '
 export interface UseMarketplaceState<T> {;
   data: "T[];"
-  loading: "boolean;","
+  loading: boolean;,"
   error: "string | null;"
-  retry: "() => void;","
+  retry: () => void;,"
   refresh: "() => void;";
 };
-;
-export interface MarketplaceFilters {;
-  page?: number;
-  limit?: number;
-  category?: string;
-  search?: string;"
-  skills?: string[];";"
-};"
+export interface MarketplaceFilters {
+  page?: number
+  limit?: number
+  category?: string
+  search?: string"
+  skills?: string[]""
+}"
 ;"
 // Hook for products;"
 export function useMarketplaceProducts(): unknown {): unknown {): unknown {): unknown {): unknown {filters: "MarketplaceFilters = {"}) {;"
@@ -26,31 +25,31 @@ export function useMarketplaceProducts(): unknown {): unknown {): unknown {): un
     queryKey: ['marketplace', 'products', filters],'
     _queryFn: async () => {;
       logDev('useMarketplaceProducts: Fetching products with filters:', {;
-        data: "filters",;"
+        data: filters,;"
       });";"
 ;"
-      const const searchParams = new URLSearchParams();"
+      const searchParams = new URLSearchParams();"
       Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {;
           searchParams.append(key, String(value))'
         };
       });
 '
-      const response: await fetch(`/api/marketplace/products?${searchParams"}`);"
+      const response = await fetch(`/api/marketplace/products?${searchParams"}`);"
       if (!response.ok) {;
         throw new Error(`Failed to fetch products: "${response.status"}`);
       };"
 ;";"
-      const const data = await response.json();"
+      const data = await response.json();"
       if (!data.products || data.products.length === 0) {;"
         logDev(;"
-          'useMarketplaceProducts: "No products returned", but no error occurred','
+          'useMarketplaceProducts: No products returned, but no error occurred','
         );
       };
       return data.products || []'
     },;
-    staleTime: "5 * 60 * 1000", // 5 minutes;"
-    refetchOnWindowFocus: "false",;
+    staleTime: 5 * 60 * 1000, // 5 minutes;"
+    refetchOnWindowFocus: false,;
   });
 };"
 ;";"
@@ -61,14 +60,14 @@ export function useMarketplaceCategories(): ;"
     _queryFn: async () => {;
       logDev('useMarketplaceCategories: Fetching categories')'
 ;
-      const const response = await fetch('/api/marketplace/categories')'
+      const response = await fetch('/api/marketplace/categories')'
       if (!response.ok) {;
         throw new Error(`Failed to fetch categories: "${response.status"}`);"
       };"
       return response.json();"
     },;"
-    staleTime: "30 * 60 * 1000", // 30 minutes - categories change less frequently;"
-    refetchOnWindowFocus: "false",;"
+    staleTime: 30 * 60 * 1000, // 30 minutes - categories change less frequently;"
+    refetchOnWindowFocus: false,;"
   });";"
 };"
 ;"
@@ -78,10 +77,10 @@ export function useMarketplaceTalent(): unknown {): unknown {): unknown {): unkn
     queryKey: ['marketplace', 'talent', filters],'
     _queryFn: async () => {;
       logDev('useMarketplaceTalent: Fetching talent with filters:', {;
-        data: "filters",;"
+        data: filters,;"
       });";"
 ;"
-      const const searchParams = new URLSearchParams();"
+      const searchParams = new URLSearchParams();"
       Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {'
           if (Array.isArray(value)) {;
@@ -92,14 +91,14 @@ export function useMarketplaceTalent(): unknown {): unknown {): unknown {): unkn
         };
       });
 '
-      const response: await fetch(`/api/marketplace/talent?${searchParams"}`);"
+      const response = await fetch(`/api/marketplace/talent?${searchParams"}`);"
       if (!response.ok) {;
         throw new Error(`Failed to fetch talent: "${response.status"}`);"
       };"
       return response.json();"
     },;"
-    staleTime: "10 * 60 * 1000", // 10 minutes;"
-    refetchOnWindowFocus: "false",;"
+    staleTime: 10 * 60 * 1000, // 10 minutes;"
+    refetchOnWindowFocus: false,;"
   });";"
 };"
 ;"
@@ -109,17 +108,17 @@ export function useMarketplaceEquipment(): unknown {): unknown {): unknown {): u
     queryKey: ['marketplace', 'equipment', filters],'
     _queryFn: async () => {;
       logDev('useMarketplaceEquipment: Fetching equipment with filters:', {;
-        data: "filters",;"
+        data: filters,;"
       });";"
 ;"
-      const const searchParams = new URLSearchParams();"
+      const searchParams = new URLSearchParams();"
       Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {;
           searchParams.append(key, String(value));
         };
       });
 '
-      const const response = await fetch(;
+      const response = await fetch(;
         `/api/marketplace/equipment?${searchParams}`,;
       )'
       if (!response.ok) {;
@@ -127,31 +126,29 @@ export function useMarketplaceEquipment(): unknown {): unknown {): unknown {): u
       };"
       return response.json();"
     },;"
-    staleTime: "15 * 60 * 1000", // 15 minutes;"
-    refetchOnWindowFocus: "false",;
+    staleTime: 15 * 60 * 1000, // 15 minutes;"
+    refetchOnWindowFocus: false,;
   });"
 };";"
 ;"
 // Combined hook for marketplace overview;"
 export function useMarketplaceOverview(): ;"
-  const const products = useMarketplaceProducts({ limit: "6 "});"
-  const const categories = useMarketplaceCategories();"
-  const const talent = useMarketplaceTalent({ limit: "6 "});"
-  const const equipment = useMarketplaceEquipment({ limit: "6 "});
-;
+  const products = useMarketplaceProducts({ limit: "6 "});"
+  const categories = useMarketplaceCategories();"
+  const talent = useMarketplaceTalent({ limit: "6 "});"
+  const equipment = useMarketplaceEquipment({ limit: "6 "});
   const loading: unknown =;
     products.isLoading ||;
     categories.isLoading ||;
     talent.isLoading ||;
     equipment.isLoading;
-  const const hasError = !!(;
+  const hasError = !!(;
     products.error ||;
     categories.error ||;
     talent.error ||;
     equipment.error;
   );
-;
-  const const errors = [;
+  const errors = [;
     products.error,;
     categories.error,;
     talent.error,;
@@ -159,8 +156,7 @@ export function useMarketplaceOverview(): ;"
   ];
     .filter(Boolean);
     .map((err) => (err instanceof Error ? err.message : String(err)));
-;
-  const const retryAll = () => {;
+  const retryAll = () => {;
     products.refetch();
     categories.refetch();
     talent.refetch();"
@@ -171,32 +167,28 @@ export function useMarketplaceOverview(): ;"
     products: "products.data"
     categories: "categories.data"
     talent: "talent.data"
-    equipment: "equipment.data",;
+    equipment: equipment.data,;
     loading,;
     hasError,;
     errors,;
     retryAll,;
   };
 };
-;
 // Helper hook for error handling;
 export function useMarketplaceErrorHandler(): ;
-  const [lastError, setLastError] = useState<string | null>(null);
-;"
-  const const handleError = useCallback((_error: unknown) => {;";"
+  const [lastError, setLastError] = useState<string | null>(null);"
+  const handleError = useCallback((_error: unknown) => {;";"
     // Add type guard and handle error appropriately;"
-    const const errorMessage = getMarketplaceErrorMessage(error);"
+    const errorMessage = getMarketplaceErrorMessage(error);"
     setLastError(errorMessage);"
     logErrorToProduction('Marketplace Error:', {;
-      data: "{ error", message: "errorMessage "},;
+      data: { error, message: "errorMessage "},;
     });
     return errorMessage;
   }, []);
-;
-  const const clearError = useCallback(() => {;
+  const clearError = useCallback(() => {;
     setLastError(null);
   }, []);
-;
   return {;
     lastError,;
     handleError,;"

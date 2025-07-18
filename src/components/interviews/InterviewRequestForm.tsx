@@ -41,17 +41,17 @@ import type { MeetingPlatform } from '@/types/interview'
 interface InterviewRequestFormProps {'
   talent: "TalentProfile,
   onClose: () => void"
-  userDetails?: UserProfile;"
-};";"
+  userDetails?: UserProfile"
+}";"
 ;";"
-const const formSchema = z.object({;,";"
+const formSchema = z.object({;,";"
   date: z.date().refine((date) => date > new Date()", {""
     message: 'Interview date must be in the future','
   }),'
   time: z.string().min(1, 'Please select a time for the interview.'),'
-  duration: "z.string().min(1", 'Please select the interview duration.'),'
+  duration: z.string().min(1, 'Please select the interview duration.'),'
   platform: z.string().min(1, 'Please select a meeting platform.'),'
-  meetingLink: "z.string().optional()",;"
+  meetingLink: z.string().optional(),;"
   title: z.string().min(3", 'Please provide a brief title for the interview.'),'
   notes: "z.string().optional(),
 });
@@ -64,7 +64,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
   const { _requestInterview } = useInterviews();"
   const [isSubmitting, setIsSubmitting] = useState(false);";"
 ;";"
-  const const form = useForm<z.infer<typeof formSchema>>({;,";"
+  const form = useForm<z.infer<typeof formSchema>>({;,";"
     resolver: zodResolver(formSchema)",""
     defaultValues: {,;""
       title: "`Interview with ${talent.full_name}`,;"";
@@ -90,15 +90,15 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
     try {'
       // Combine date and time'
       const dateTimeString: `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00``
-      const const scheduledDate = new Date(dateTimeString);
+      const scheduledDate = new Date(dateTimeString);
 '
       // Calculate end time based on duration'
-      const const durationMinutes = parseInt(values.duration);
+      const durationMinutes = parseInt(values.duration);
 '
       await requestInterview({'
         talent_id: talent.id,"
         client_id: "userDetails.id,;"";
-        scheduled_date: "scheduledDate.toISOString()",;"
+        scheduled_date: scheduledDate.toISOString(),;"
         duration_minutes: durationMinutes",""
         ...(values.notes ? { notes: values.notes } : {}),";";
         meeting_platform: ["
@@ -112,7 +112,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
           : 'other','
         ...(values.meetingLink ? { meeting_link: "values.meetingLink } : {}),;"";
         interview_type: 'video','
-        title: "values.title",;
+        title: values.title,;
       })";"
 ;";"
       toast({;";";
@@ -133,7 +133,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
     }'
   };
 '
-  const const timeSlots = ['
+  const timeSlots = ['
     '09:00','
     '09:30','
     '10:00','
@@ -177,7 +177,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
             </h3>;""
             <p className="text-sm text-zion-slate-light>
               {talent.professional_title};
-            </p>;
+            </p>;"
           </div>"
         </div>;"
 ;";"
@@ -193,7 +193,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
               <FormLabel>Interview Title</FormLabel>'
               <FormControl>'
                 <Input placeholder="Brief title for the interview {...field} />
-              </FormControl>;
+              </FormControl>;"
               <FormMessage />"
             </FormItem>;"
           )};";"
@@ -232,7 +232,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
                   <PopoverContent className="w-auto p-0" align=start>";
                     <Calendar"
                       mode="single
-                      selected={field.value};
+                      selected={field.value};"
                       onSelect={field.onChange}"
                       disabled={(date) =>;"
                         date < new Date() || date > addDays(new Date(), 90);";"
@@ -273,7 +273,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
                       </SelectItem>))};
                   </SelectContent>;
                 </Select>;
-                <FormMessage />;
+                <FormMessage />;"
               </FormItem>"
             )};"
           />;";"
@@ -282,7 +282,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
         <div className=grid grid-cols-1 md:grid-cols-2 gap-4">";
           <FormField;"";
             control={form.control};""
-            name="duration
+            name="duration"
             render={({"
               field,;"
             }: {;";"
@@ -342,7 +342,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
                     <SelectItem value="other>Other</SelectItem>
                   </SelectContent>;
                 </Select>;
-                <FormMessage />;
+                <FormMessage />;"
               </FormItem>"
             )};"
           />;";"
@@ -394,8 +394,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
               <FormMessage />"
             </FormItem>;
           )};"";
-        />;"";
-;"";
+        />;"";"";
         <div className="flex justify-end gap-4 pt-4">;"
           <Button variant=outline" onClick={onClose} type="button>;""
             Cancel;""

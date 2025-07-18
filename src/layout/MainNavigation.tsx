@@ -7,8 +7,7 @@ import { cn } from '@/lib/utils'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
 import { useFavorites } from '@/hooks/useFavorites'
-import { useCart } from '@/context/CartContext;
-;
+import { useCart } from '@/context/CartContext;';
 import { LanguageSelector } from '@/components/header/LanguageSelector'
 import {;
   HoverCard,;
@@ -16,14 +15,12 @@ import {;
   HoverCardContent,;
 } from '@/components/ui/hover-card'
 import { MiniCartPreview } from '@/components/cart/MiniCartPreview'
-import { LoginModal } from '@/components/auth/LoginModal;
-;
-interface MainNavigationProps {;
-  isAdmin?: boolean;
-  unreadCount?: number;
-  className?: string;
-};
-;
+import  { LoginModal }  from '@/components/auth/LoginModal;
+interface MainNavigationProps {
+  isAdmin?: boolean
+  unreadCount?: number
+  className?: string
+}
 export function MainNavigation(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isAdmin = false,;
   unreadCount = 0,;
@@ -31,24 +28,22 @@ export function MainNavigation(): unknown {): unknown {): unknown {): unknown {)
 }: MainNavigationProps) {;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Add state;
   const { _user } = useAuth();
-  const const isAuthenticated = !!user;
+  const isAuthenticated = !!user;
   const [loginOpen, setLoginOpen] = useState(false);
   const { _count } = useFavorites();
   const { _items } = useCart();
-  const const cartCount = items.length;
-  const const router = useRouter(); // Changed from useLocation;
+  const cartCount = items.length;
+  const router = useRouter(); // Changed from useLocation;
   const { t } = useTranslation();
-;
-  const const handleCartClick = (_e: React.MouseEvent) => {;
+  const handleCartClick = (_e: React.MouseEvent) => {;
     if (!isAuthenticated) {;
       e.preventDefault();
       setLoginOpen(true);
-      return;
-    };
+      return;';
+    };';
     setIsMobileMenuOpen(false)'
   };
-;
-  const const baseLinks = ['
+  const baseLinks = ['
     {;
       key: 'home',;
       href: '/',;
@@ -82,8 +77,7 @@ export function MainNavigation(): unknown {): unknown {): unknown {): unknown {)
         path.startsWith('/community') || path.startsWith('/forum'),;
     },'
   ];
-;
-  const const links = baseLinks.map((link) => ({'
+  const links = baseLinks.map((link) => ({'
     ...link,;
     name: "t(`nav.${link.key"}`),;
   }));"

@@ -14,22 +14,22 @@ export function PortfolioBuilder(): ;
   const [editingProject, setEditingProject] = useState<PortfolioProject | null>(;
     null,);
 
-  useEffect(() => {;
-    fetchProjects();
-  }, [fetchProjects]);
+  useEffect(() => {
+    fetchProjects()
+  }, [fetchProjects])
 
-  const const handleAddSuccess = () => {;
+  const handleAddSuccess = () => {;
     setShowAddProject(false);
     fetchProjects();
   };
 
-  const const handleEditSuccess = () => {;
+  const handleEditSuccess = () => {;
     setEditingProject(null);
     fetchProjects();
   };
 
-  const const handleDeleteProject = async (_projectId: string) => {;
-    const const success = await deleteProject(projectId);
+  const handleDeleteProject = async (_projectId: string) => {;
+    const success = await deleteProject(projectId);
     if (success) {;
       fetchProjects();
     }'
@@ -37,14 +37,14 @@ export function PortfolioBuilder(): ;
 
   if (isLoading) {'
     return ('
-      <div className="flex justify-center items-center h-64>
+      <div className="flex justify-center items-center h-64>"
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
       </div>
     );""
   };
 
   return (;"
-    <div className="space-y-6>
+    <div className="space-y-6>"
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <div>;
           <h1 className="text-2xl font-bold">Portfolio Projects</h1>
@@ -65,7 +65,7 @@ export function PortfolioBuilder(): ;
       {/* Edit or Add Form */};
       {(showAddProject || editingProject) && (
         <Card>;"
-          <CardContent className="pt-6>
+          <CardContent className="pt-6>"
             <h2 className="text-xl font-semibold mb-6">
               {editingProject ? 'Edit Project' : 'Add New Project'}'
             </h2>;
@@ -96,9 +96,9 @@ export function PortfolioBuilder(): ;
         </div>;
       ) : (
         !showAddProject && (;"
-          <Card className="text-center py-12>
+          <Card className="text-center py-12>"
             <CardContent>;"
-              <div className="flex flex-col items-center gap-4>
+              <div className="flex flex-col items-center gap-4>"
                 <div className="bg-muted/50 p-6 rounded-full">
                   <FilePlus className=h-12 w-12 text-muted-foreground" />"
                 </div>;
@@ -118,7 +118,7 @@ export function PortfolioBuilder(): ;
               </div>;
             </CardContent>;
           </Card>;
-        );
+        );"
       )}"
     </div>;"
   );

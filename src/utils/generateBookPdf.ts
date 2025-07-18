@@ -1,8 +1,7 @@
-import { jsPDF } from 'jspdf;
-;
+import { jsPDF } from 'jspdf;';
 export async function generateBookPdf(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<Blob> {'
-  const const doc = new jsPDF();
-  const const margin = 20;
+  const doc = new jsPDF();
+  const margin = 20;
   let y = margin'
 ;
   doc.setFont('Times', 'bold')'
@@ -19,7 +18,7 @@ export async function generateBookPdf(): unknown {): unknown {): unknown {): unk
     { maxWidth: "170 "},;"
   );";"
 ;"
-  const const sections = [;"
+  const sections = [;"
     {;"
       title: "Intro – Founder's Story"
       content: 'Early vision and motivations\nCommunity roots',;
@@ -70,7 +69,6 @@ export async function generateBookPdf(): unknown {): unknown {): unknown {): unk
 ;
   return doc.output('blob');
 };
-;
 }'
 }
 }'

@@ -30,7 +30,7 @@ const categories: unknown ForumCategoryInfo[] = ['
     id: 'project-help','
     name: 'Project Help','
     description: 'Get help with your ongoing projects and collaboration.','
-    adminOnly: "false",;"
+    adminOnly: false,;"
     icon: 'MessageSquare','
   },'
   {'
@@ -56,7 +56,7 @@ const categories: unknown ForumCategoryInfo[] = ['
   },;
 ];
 
-const const iconMap = {;
+const iconMap = {;
   Briefcase,;
   MessageSquare,;
   Code,;
@@ -64,18 +64,18 @@ const const iconMap = {;
   Megaphone,'
 }'
 
-export const const ForumCategories = () => {'
+export const ForumCategories = () => {'
   const { _user } = useAuth()'
-  const const isAdmin = user?.userType === 'admin' || user?.role === 'admin'
+  const isAdmin = user?.userType === 'admin' || user?.role === 'admin'
 
-  const const visibleCategories = categories.filter('
+  const visibleCategories = categories.filter('
     (category) => !category.adminOnly || isAdmin,'
   );
 '
   return ('
     <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">
       {visibleCategories.map((category) => {;"
-        const const Icon = iconMap[category.icon as keyof typeof iconMap];";
+        const Icon = iconMap[category.icon as keyof typeof iconMap];";
         return (";";
           <Link key={category.id} href={`/community/category/${category.id}`}>"
             <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer>;"";

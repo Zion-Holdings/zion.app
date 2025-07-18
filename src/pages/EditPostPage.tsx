@@ -6,23 +6,21 @@ import { Button } from '@/components/ui/button'
 import PostForm from '@/components/community/PostForm'
 import { useToast } from '@/hooks/use-toast'
 import type { ForumPost, ForumCategory } from '@/types/community'
-import { useAuth } from '@/hooks/useAuth;
+import { useAuth } from '@/hooks/useAuth;';
 '
-interface PostFormValues {;
-  title: "string;"
-  content: "string;","
-  categoryId: "ForumCategory;"
-  tags: "string;";
-};
-;
+interface PostFormValues {
+  title: "string"
+  content: string,"
+  categoryId: "ForumCategory"
+  tags: "string"
+}
 export default function EditPostPage(): ;
-  const const router = useRouter();
+  const router = useRouter();
   const { _postId } = router.query as { postId?: string };
   const { _toast } = useToast();
   const { _user } = useAuth();
   const [post, _setPost] = useState<ForumPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-;
   useEffect(() => {;
     // Reactivate: Use mock data for post API;
     setIsLoading(true);
@@ -45,7 +43,7 @@ export default function EditPostPage(): ;
         downvotes: "0"
         categoryId: 'project-help',;
         tags: ['ziongpt', 'project-management'],;
-        replyCount: "2",;
+        replyCount: 2,;
       });
       setIsLoading(false);
     }, 400);"
@@ -73,9 +71,8 @@ export default function EditPostPage(): ;
   };";"
 ;"
   // Check if the user is the author or an admin;"
-  const const isAuthor = user?.id === post.authorId;"
-  const const isAdmin = user?.userType === 'admin' || user?.role === 'admin;
-;
+  const isAuthor = user?.id === post.authorId;"
+  const isAdmin = user?.userType === 'admin' || user?.role === 'admin;
   if (!isAuthor && !isAdmin) {'
     return (;
       <div className="container py-8">;"
@@ -95,7 +92,7 @@ export default function EditPostPage(): ;
     tags: post.tags.join(', '),;
   }'
 ;
-  const const handleSubmit = async (_values: PostFormValues) => {;
+  const handleSubmit = async (_values: PostFormValues) => {;
     try {'
       // Here we would normally update the post in the database;
       // For now, we'll just simulate a successful update;
@@ -144,7 +141,6 @@ export default function EditPostPage(): ;
         </div>;"
 ;"
         <h1 className="text-3xl font-bold mb-8">Edit Post</h1>;
-;
         <PostForm;
           initialValues={initialValues};
           onSubmit={handleSubmit};

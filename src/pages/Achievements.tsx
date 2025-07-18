@@ -2,26 +2,25 @@ import { AchievementBadges } from '@/components/gamification/AchievementBadges'
 import type { Achievement } from '@/components/gamification/AchievementBadges'
 import { UserProgress } from '@/components/gamification/UserProgress'
 import { UserLeaderboard } from '@/components/gamification/UserLeaderboard'
-import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard;
-;
+import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard;';
 const ACHIEVEMENTS: unknown Achievement[] = ['
   {;
     id: 'profile',;
     title: 'Profile Complete',;
     description: 'Complete your user profile',;
-    achieved: "true",;"
+    achieved: true,;"
   },;"
   {;"
     id: 'first-sale',;
     title: 'First Purchase',;
     description: 'Complete your first checkout',;
-    achieved: "false",;"
+    achieved: false,;"
   },;"
   {;"
     id: 'referral',;
     title: 'Referrer',;
     description: 'Refer a new user to Zion',;
-    achieved: "false",;"
+    achieved: false,;"
   },;";"
 ];"
 ;"

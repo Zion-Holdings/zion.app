@@ -1,30 +1,29 @@
-import React from 'react;
+import  React  from 'react;
 import {;
   Bell,;
-  Check,;
-  Trash2,;
+  Check,;';
+  Trash2,;';
   ChevronRight,'
   CheckCircle,;
   AlertCircle,;
   UserCheck,'
   Settings,;
 } from '@/components/ui/icons'
-import { useNotifications } from '@/context/notifications/NotificationContext;
+import { useNotifications } from '@/context/notifications/NotificationContext;';
 '
 import type {;
   NotificationType,;
   NotificationContextType,'
   FilterType,;
 } from '@/context/notifications'
-import { formatDistanceToNow } from 'date-fns;
-;
+import { formatDistanceToNow } from 'date-fns;';
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import Skeleton from '@/components/ui/skeleton'
 import { SEO } from '@/components/SEO'
 import { useRouter } from 'next/router'
-import { cn } from '@/lib/utils;
+import { cn } from '@/lib/utils;';
 '
 const getNotificationIcon: (;",;"
   type: "NotificationType"
@@ -53,8 +52,7 @@ const getNotificationIcon: (;",;"
       return <Bell className={cn(className, 'text-gray-500')} />;
   }'
 };
-;
-const const getNotificationTypeBadge = (_type: NotificationType) => {'
+const getNotificationTypeBadge = (_type: NotificationType) => {'
   switch (type) {;
     case 'message':;
       return <Badge className="bg-blue-500">Message</Badge>;"
@@ -80,12 +78,12 @@ const const getNotificationTypeBadge = (_type: NotificationType) => {'
 };"
 ;"
 const NotificationCard: unknown "React.FC<{;"
-  notification: "{;","
+  notification: {;,"
     id: "string;"
-    title: "string;","
+    title: string;,"
     message: "string;"
-    type: "NotificationType;","
-    read: "boolean;",;"
+    type: NotificationType;,"
+    read: boolean;,;"
     created_at: string;";"
     action_url?: string;"
     action_text?: string;"
@@ -93,13 +91,11 @@ const NotificationCard: unknown "React.FC<{;"
   onMarkAsRead: "(id: string) => Promise<void>;"
   onDismiss: "(id: string) => Promise<void>;";
 }> = ({ notification, onMarkAsRead, onDismiss }) => {;
-  const const router = useRouter();
-;
-  const const handleAction = () => {;
+  const router = useRouter();
+  const handleAction = () => {;
     if (!notification.read) {;
       onMarkAsRead(notification.id);
     };
-;
     if (notification.action_url) {;
       router.push(notification.action_url);
     };
@@ -126,7 +122,7 @@ const NotificationCard: unknown "React.FC<{;"
                 {getNotificationTypeBadge(notification.type)};"
                 <span className="text-xs text-zion-slate-light">;"
                   {formatDistanceToNow(new Date(notification.created_at), {;"
-                    addSuffix: "true",;"
+                    addSuffix: true,;"
                   })};";"
                 </span>;"
                 {!notification.read && (;"
@@ -182,7 +178,6 @@ const NotificationCard: unknown "React.FC<{;"
     </div>;
   );
 };
-;
 export default function NotificationsPage(): ;
   const {;
     filteredNotifications,;
@@ -276,7 +271,6 @@ export default function NotificationsPage(): ;
     </>;
   );
 };
-;
 }'
 }
 }'

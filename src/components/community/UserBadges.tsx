@@ -15,9 +15,9 @@ import {'
 '
 interface UserBadgesProps {'
   badges: "Badge[]
-};
+}
 
-const const iconMap = {;
+const iconMap = {;
   Trophy,;
   Award,;
   BadgeCheck,;
@@ -60,7 +60,7 @@ export const UserBadges: unknown unknown = ({ badges }: UserBadgesProps) => {";"
             </Tooltip>;
           </TooltipProvider>);
       })};
-    </div>;
+    </div>;"
   )"
 };"
 ;";"

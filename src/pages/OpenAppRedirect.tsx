@@ -6,25 +6,23 @@ import Link from 'next/link'
 ;
 // This component handles deep linking to the mobile app;
 const OpenAppRedirect: unknown React.FC = () => {'
-  const const router = useRouter();
+  const router = useRouter();
   const [status, setStatus] = useState<'redirecting' | 'failed' | 'timeout'>(;
     'redirecting',;
   );
-;
   useEffect(() => {'
-    const const attemptAppOpen = async () => {;
-      const const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      const const isAndroid = /Android/.test(navigator.userAgent)'
+    const attemptAppOpen = async () => {;
+      const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const isAndroid = /Android/.test(navigator.userAgent)'
 ;
       // App scheme URLs (these would be your actual app's URL schemes);
-      const const appScheme = 'zion://'
-      const const androidAppUrl = 'market://details?id=app.zion.marketplace;
+      const appScheme = 'zion://'
+      const androidAppUrl = 'market://details?id=app.zion.marketplace;
       const iosAppUrl: unknown =;
         'https://apps.apple.com/app/zion-ai-marketplace/id0000000000'
-      const const fallbackUrl = '/mobile-launch // Fallback to mobile launch page;
+      const fallbackUrl = '/mobile-launch // Fallback to mobile launch page;
 '
       let timeout: number | undefined;
-;
       // Try to open the app'
       if (isAndroid || isiOS) {;
         // Set a timeout to redirect to app store if the app doesn't open'

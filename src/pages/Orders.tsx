@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import { FileText, Clock } from '@/components/ui/icons;
-// Changed from react-router-dom;
+import  { FileText, Clock }  from '@/components/ui/icons;';
+// Changed from react-router-dom;';
 import { useAuth } from '@/hooks/useAuth'
-import { useGetOrdersQuery } from '@/hooks/useOrders;
-;
-import {;
-  Table,;
+import  { useGetOrdersQuery }  from '@/hooks/useOrders;
+import {;';
+  Table,;';
   TableBody,'
   TableCell,;
   TableHead,;
@@ -14,15 +13,13 @@ import {;
 } from '@/components/ui/table'
 import { Badge } from '@/components/ui/badge'
 import Skeleton from '@/components/ui/skeleton'
-import { EmptyState } from '@/components/ui/empty-state;
-;
+import { EmptyState } from '@/components/ui/empty-state;';
 export default function OrdersPage(): '
   const { _user } = useAuth();
-  const { data: "orders", isLoading } = useGetOrdersQuery(user?.id);
+  const { data: orders, isLoading } = useGetOrdersQuery(user?.id);"
+  const formatDate = (date: string) => new Date(date).toLocaleDateString();";"
 ;"
-  const const formatDate = (date: string) => new Date(date).toLocaleDateString();";"
-;"
-  const const getStatusBadge = (_status: string) => {;"
+  const getStatusBadge = (_status: string) => {;"
     switch (status) {;"
       case 'in_escrow':'
         return (;

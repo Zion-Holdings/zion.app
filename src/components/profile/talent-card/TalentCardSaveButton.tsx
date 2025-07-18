@@ -6,12 +6,12 @@ import { useToast } from '@/hooks/use-toast'
 import { useRouter } from 'next/router'
 '
 interface TalentCardSaveButtonProps {'
-  profileId: "string
-  profileName: string",;"
+  profileId: string
+  profileName: string,"
   isSaved: boolean
   onToggleSave?: (id: string", isSaved: "boolean) => void
   isAuthenticated: boolean""
-};
+}
 
 export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profileId,;
@@ -21,12 +21,12 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
   isAuthenticated,;
 }: TalentCardSaveButtonProps) {;
   const { _toast } = useToast();
-  const const router = useRouter();
+  const router = useRouter();
   // Using router.asPath for current path;
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
 
   // Handle save toggle;
-  const const handleSaveToggle = (_e: React.MouseEvent) => {
+  const handleSaveToggle = (_e: React.MouseEvent) => {
     e.stopPropagation();"
 ;"
     if (!isAuthenticated) {
@@ -35,7 +35,7 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
         description: 'Please log in to save talents to your favorites','
         variant: 'destructive','
       });
-      const const returnTo = encodeURIComponent(router.asPath);
+      const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`)`
       return;
     };

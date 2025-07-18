@@ -1,17 +1,16 @@
 import React from 'react';
 // Removed: "import { RouteObject "} from 'react-router'
-// Removed: "import { Navigate "} from 'react-router-dom;
-;
+// Removed: "import  { Navigate "}  from 'react-router-dom;
 // Redefined AppRouteObject without react-router types;
-export interface AppRouteObject {;
-  path?: string;
-  element?: React.ReactNode; // Keep as ReactNode for component references;
-  index?: boolean;
-  children?: AppRouteObject[];
-  metaTitle?: string;
+export interface AppRouteObject {
+  path?: string
+  element?: React.ReactNode // Keep as ReactNode for component references
+  index?: boolean
+  children?: AppRouteObject[]';
+  metaTitle?: string'
   requiresAuth?: boolean'
-  // caseSensitive?: boolean; // Removed as it was from RouteObject;
-};
+  // caseSensitive?: boolean // Removed as it was from RouteObject
+}
 '
 // Ensure this interface still meets the needs of guardRoutes and other usages.;
 // It might need further adjustments based on how it's consumed elsewhere,;
@@ -57,7 +56,7 @@ import RoadmapSuggestPage from '@/pages/RoadmapSuggest'
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent'
 import { CommunityProvider } from '@/context'
 import VerifyIdentity from '@/pages/VerifyIdentity'
-import StartupOSPage from '@/pages/StartupOS // Import the new page;
+import StartupOSPage from '@/pages/StartupOS // Import the new page;';
 import GlobalMapPage from '@/pages/GlobalMap'
 import SummitPage from '@/pages/SummitPage'
 import OrgChartPage from '@/pages/OrgChart'
@@ -67,10 +66,9 @@ import FounderBackupVault from '@/pages/FounderBackupVault'
 import CongressPage from '@/pages/Congress'
 import UNBridgePage from '@/pages/UNBridge'
 import InternationalProposalsPage from '@/pages/InternationalProposals'
-import DocsPage from '@/pages/DocsPage // Added import for DocsPage;
-import CartPage from '@/pages/Cart // Import CartPage;
-const const Signup = React.lazy(() => import('@/pages/Signup'));
-;
+import DocsPage from '@/pages/DocsPage // Added import for DocsPage;';
+import CartPage from '@/pages/Cart // Import CartPage;';
+const Signup = React.lazy(() => import('@/pages/Signup'));
 import {;
   AuthRoutes,;
   DashboardRoutes as _DashboardRoutes,;
@@ -105,7 +103,7 @@ export const primaryRoutes: unknown AppRouteObject[] = guardRoutes([;
     path: '/marketplace',;
     element: "<MarketplaceLanding />"
     metaTitle: 'Marketplace - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/categories',;
@@ -116,23 +114,23 @@ export const primaryRoutes: unknown AppRouteObject[] = guardRoutes([;
     path: '/blog',;
     element: "<Blog />"
     metaTitle: 'Blog - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/services',;
     element: "<ServicesPage />"
     metaTitle: 'Services - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;";"
 ]);"
 ;"
 export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
   { path: '/login', element: "<LoginForm /> "},;"
   ...primaryRoutes,;"
-  { path: '/about', element: "<AboutPage />", metaTitle: 'About - Zion' },;
-  { path: '/register', element: "<Signup />", metaTitle: 'Register - Zion' },;
-  { path: '/signup', element: "<Signup />", metaTitle: 'Sign Up - Zion' },;
-  { path: '/summit', element: "<SummitPage />", metaTitle: 'Zion Global Summit' },'
+  { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },;
+  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },;
+  { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },;
+  { path: '/summit', element: <SummitPage />, metaTitle: 'Zion Global Summit' },'
   {;
     path: '/zion-global-2025',;
     element: "<SummitPage />"
@@ -142,7 +140,7 @@ export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
     path: '/dashboard',;
     element: "<Dashboard />"
     metaTitle: 'Dashboard - Zion',;
-    requiresAuth: "true",;"
+    requiresAuth: true,;"
   },;"
   { path: '/partners', element: "<PartnersPage /> "},;"
   {;"
@@ -160,15 +158,15 @@ export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
     element: "<InvestorMatchPage />"
     metaTitle: 'Investor Match - Zion','
   },;
-  { path: '/grants', element: "<GrantsPage />", metaTitle: 'Grants - Zion' },;
-  { path: '/team', element: "<OrgChartPage />", metaTitle: 'Team - Zion' },'
+  { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },;
+  { path: '/team', element: <OrgChartPage />, metaTitle: 'Team - Zion' },'
   {;
     path: '/governance/org-chart',;
     element: "<OrgChartPage />"
     metaTitle: 'Org Chart - Zion','
   },;
   { path: '/blog/:slug', element: "<BlogPost /> "},;"
-  { path: '/roadmap', element: "<RoadmapPage />", metaTitle: 'Roadmap - Zion' },'
+  { path: '/roadmap', element: <RoadmapPage />, metaTitle: 'Roadmap - Zion' },'
   {;
     path: '/roadmap/suggest',;
     element: "<RoadmapSuggestPage />"
@@ -183,10 +181,10 @@ export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
     path: '/verify',;
     element: "<VerifyIdentity />"
     metaTitle: 'Verify Identity',;
-    requiresAuth: "true",;"
+    requiresAuth: true,;"
   },;"
-  { path: '/cart', element: "<CartPage />", metaTitle: 'Cart - Zion' }, // Added cart route;
-  { path: '/checkout/:id', element: "<CheckoutPage />", requiresAuth: "true "},;"
+  { path: '/cart', element: <CartPage />, metaTitle: 'Cart - Zion' }, // Added cart route;
+  { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: "true "},;"
   { path: '/oauth', element: "<OAuthCallback /> "},;"
   { path: '/auth/*', element: "<AuthRoutes /> "},;"
   { path: '/marketplace/*', element: "<MarketplaceRoutes /> "},;"
@@ -241,49 +239,49 @@ export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
     path: '/startup-os',;
     element: "<StartupOSPage />"
     metaTitle: 'Startup OS - Zion',;
-    requiresAuth: "true", // Assuming it requires authentication;"
+    requiresAuth: true, // Assuming it requires authentication;"
   },;"
   {;"
     path: '/founder-dashboard',;
-    element: "<StartupOSPage />", // Reuses the same page component;"
+    element: <StartupOSPage />, // Reuses the same page component;"
     metaTitle: 'Founder Dashboard - Zion',;
-    requiresAuth: "true",;"
+    requiresAuth: true,;"
   },;"
   {;"
     path: '/founder/backup',;
     element: "<FounderBackupVault />"
     metaTitle: 'Founder Backup Vault - Zion',;
-    requiresAuth: "true",;"
+    requiresAuth: true,;"
   },;"
   {;"
     path: '/global',;
     element: "<GlobalMapPage />"
     metaTitle: 'Global Map - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/convene',;
     element: "<CongressPage />"
     metaTitle: 'Planetary Congress - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/protocol/congress',;
     element: "<CongressPage />"
     metaTitle: 'Planetary Congress - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/protocol/un-bridge',;
     element: "<UNBridgePage />"
     metaTitle: 'UN Bridge - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   {;"
     path: '/proposals/international',;
     element: "<InternationalProposalsPage />"
     metaTitle: 'International Proposals - Zion',;
-    requiresAuth: "false",;"
+    requiresAuth: false,;"
   },;"
   // Route for documentation page;"
   {;"
@@ -292,9 +290,8 @@ export const _allRoutes: unknown AppRouteObject[] = guardRoutes([;"
     metaTitle: 'Documentation - Zion',;
   },'
   // Wildcard for error handling - ensure this is last;
-  { path: '*', element: "<ErrorRoutes />", metaTitle: 'Not Found - Zion' },;
+  { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },;
 ]);
-;
 }'
 }
 }'

@@ -1,5 +1,5 @@
-import React, { useState } from 'react;
-import {;
+import  React, { useState }  from 'react;';
+import {;';
   Send,'
   ChevronLeft,;
   MoreVertical,;
@@ -8,34 +8,32 @@ import {;
 } from '@/components/ui/icons'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
-;
+import { Input } from '@/components/ui/input;';
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/router'
-import { toast } from 'sonner;
+import { toast } from 'sonner;';
 '
-interface Message {;
-  id: "string;"
-  content: "string;","
-  timestamp: "string;",;"
-  isMe: boolean;"
-  sender?: string;"
-  avatar?: string;"
-  status?: 'sent' | 'delivered' | 'read;
-};
+interface Message {
+  id: "string"
+  content: string,"
+  timestamp: string,"
+  isMe: boolean"
+  sender?: string"
+  avatar?: string"
+  status?: 'sent' | 'delivered' | 'read
+}
 '
-interface MobileChatViewProps {;
+interface MobileChatViewProps {
   contact: {
-    id: "string;",;"
-    name: string;";"
-    avatar?: string;"
-    status?: string;"
-  };"
+    id: string,"
+    name: string""
+    avatar?: string"
+    status?: string"
+  }"
   messages: "Message[];"
-  onBack: "() => void;","
+  onBack: () => void;,"
   onSendMessage: "(content: string) => void;";
 };
-;
 export function MobileChatView(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   contact,;"
   messages,;";"
@@ -43,38 +41,35 @@ export function MobileChatView(): unknown {): unknown {): unknown {): unknown {)
   onSendMessage,;"
 }: MobileChatViewProps) {;"
   const [newMessage, setNewMessage] = useState('');
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const handleSend = () => {;
+  const handleSend = () => {;
     if (newMessage.trim() !== '') {'
       onSendMessage(newMessage);
       setNewMessage('')'
     };
   };
 '
-  const const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {;
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {;
     if (e.key === 'Enter' && !e.shiftKey) {;
       e.preventDefault();
       handleSend();
     }'
   };
-;
-  const const startVideoCall = () => {'
+  const startVideoCall = () => {'
     const roomId: `mobile-${contact.id"}`;
     toast.success('Starting video call', {;
       description: "`Connecting with ${contact.name"}...`,;
     });
-;
     // Navigate to video call page;
     router.push(`/call/${roomId}`);"
   };";"
 ;"
-  const const startAudioCall = () => {;"
+  const startAudioCall = () => {;"
     const roomId: `mobile-audio-${contact.id"}`;"
     toast.success('Starting audio call', {;
       description: "`Connecting with ${contact.name"}...`,;
     });
-;
     // Navigate to video call page with audio-only flag;"
     router.push(`/call/${roomId}?audioOnly=true`);";"
   };"
@@ -175,8 +170,7 @@ export function MobileChatView(): unknown {): unknown {): unknown {): unknown {)
         <div className="flex items-center gap-2">;"
           <Button variant="ghost" size="icon" aria-label="Attach file">;"
             <PaperclipIcon className="h-5 w-5" />;
-          </Button>;
-;"
+          </Button>;"
           <Input;";"
             value={newMessage};"
             onChange={(e) => setNewMessage(e.target.value)};"

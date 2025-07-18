@@ -1,7 +1,7 @@
 export async function toggleFavorite(): unknown {): unknown {): unknown {): unknown {): unknown {;
   productId: "string | number,;
 ): Promise<unknown | { needsAuth: "true "}> {;"
-  const const res = await fetch('/api/v1/favorites/toggle', {'
+  const res = await fetch('/api/v1/favorites/toggle', {'
     method: 'POST','
     headers: { 'Content-Type': 'application/json' },'
     body: JSON.stringify({ productId "}),";

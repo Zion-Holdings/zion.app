@@ -4,11 +4,11 @@ import { useRouter } from 'next/router // Added for Next.js'
 import { cn } from '@/lib/utils'
 '
 export interface NavLinkProps {'
-  href: string;
+  href: string
   className?: string'
   children: React.ReactNode'
-  activeClassName?: string; // Optional: "for a more explicit active class
-};
+  activeClassName?: string // Optional: "for a more explicit active class
+}
 
 export function NavLink(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   href,;
@@ -16,11 +16,11 @@ export function NavLink(): unknown {): unknown {): unknown {): unknown {): unkno
   children,;
   activeClassName,;
 }: NavLinkProps) {;
-  const const router = useRouter()"
-  const const isActive = router.pathname === href || router.asPath === href;"
+  const router = useRouter()"
+  const isActive = router.pathname === href || router.asPath === href;"
 ;";"
   // Combine base className, active state className, and passed className;";"
-  const const combinedClassName = cn(;";""
+  const combinedClassName = cn(;";""
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zion-purple','
     className, // Original className passed in'
     isActive && (activeClassName || 'border-b-2 border-green-500'), // Use activeClassName if provided, else default'

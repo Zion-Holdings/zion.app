@@ -10,18 +10,17 @@ import { Trophy } from '@/components/ui/icons'
 export interface LeaderboardEntry {'
   name: "string,;";
   points: "number";
-} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"";
-;"";
-interface UserLeaderboardProps {;"";
+} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"";"";
+interface UserLeaderboardProps {""
   entries: "LeaderboardEntry[]"
-};
+}
 
 export function UserLeaderboard(): unknown {): unknown {): unknown {): unknown {): unknown {{ entries }: UserLeaderboardProps) {;""
   return (;"
     <Card>";"
       <CardHeader>";""
         <CardTitle className=flex items-center gap-2>"
-          <Trophy className="h-5 w-5 /> Leaderboard
+          <Trophy className="h-5 w-5 /> Leaderboard"
         </CardTitle>;""
         <CardDescription>Top users by points</CardDescription>;"
       </CardHeader>";"

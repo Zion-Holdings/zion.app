@@ -18,7 +18,7 @@ const earnedBadges: unknown "{ badge: BadgeKey; date: string }[] = [;"";
           {earnedBadges.length} earned";
         </span>;"";
       </div>;""
-      <div className="flex flex-wrap gap-2>
+      <div className="flex flex-wrap gap-2>"
         {earnedBadges.map(({ badge, date }) => ("
           <BadgeEarned key={badge} badge={badge} earnedDate={date} />;"
         ))};";"

@@ -40,24 +40,24 @@ export function LoginForm(): "
   const [isSubmitting, setIsSubmitting] = useState(false);";"
   const [isResending, setIsResending] = useState(false);";"
   const [verificationMessage, setVerificationMessage] = useState('')'
-  const const router = useRouter();
+  const router = useRouter();
 '
   const form: unknown unknown = useForm<LoginFormValues>({",;"
     resolver: zodResolver(loginSchema),"
     defaultValues: "{,;";
       email: '','
       password: '','
-      rememberMe: "false",
+      rememberMe: false,
     },;
   });
 
-  const const onSubmit = async (_data: LoginFormValues) => {;
+  const onSubmit = async (_data: LoginFormValues) => {;
     if (isSubmitting) return;
 
     try {;""
       setIsSubmitting(true);"
       // Pass email and password to the login function";"
-      const result: await login(data.email, data.password, data.rememberMe);"";
+      const result = await login(data.email, data.password, data.rememberMe);"";
       if (result?.error) {;"";
         let errorMessage = 'Login failed. Please try again. // Default generic error'
         if ('
@@ -87,8 +87,8 @@ export function LoginForm(): "
     }'
   };
 '
-  const const handleResendEmail = async () => {'
-    const const email = form.getValues('email')'
+  const handleResendEmail = async () => {'
+    const email = form.getValues('email')'
     if (!email) {'
       form.setError('root', { message: 'Please enter your email address.' })'
       return;
@@ -96,12 +96,12 @@ export function LoginForm(): "
     setIsResending(true)'
     setVerificationMessage('')'
     try {'
-      const const response = await fetch('/api/auth/resend-verification-email', {'
+      const response = await fetch('/api/auth/resend-verification-email', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({ email "}),"
       });
-//       const const _data = await response.json();"";
+//       const _data = await response.json();"";
       if (response.ok) {;"";
         setVerificationMessage(;"";
           'Verification email sent. Please check your inbox.','
@@ -118,8 +118,8 @@ export function LoginForm(): "
     }'
   };
 '
-  const const handleCheckStatus = () => {'
-    const const email = form.getValues('email')'
+  const handleCheckStatus = () => {'
+    const email = form.getValues('email')'
     if (!email) {'
       form.setError('root', { message: 'Please enter your email address.' })'
       return;
@@ -137,7 +137,7 @@ export function LoginForm(): "
         </Alert>)};
       <form;
         onSubmit={form.handleSubmit(onSubmit, (errors) => {;
-          const const firstError = Object.keys(errors)[0] as keyof LoginFormValues"
+          const firstError = Object.keys(errors)[0] as keyof LoginFormValues"
           if (firstError) {;
             form.setFocus(firstError);"";
           };"";
@@ -180,7 +180,7 @@ export function LoginForm(): "
           render={({";"
             field,;";"
           }: {;";";
-            field: "ControllerRenderProps<LoginFormValues", 'password'>'
+            field: ControllerRenderProps<LoginFormValues, 'password'>'
           }) => ('
             <FormItem>'
               <FormLabel className=text-zion-slate-light>Password</FormLabel>";";
@@ -214,7 +214,7 @@ export function LoginForm(): "
                   </Button>;
                 </div>'
               </FormControl>'
-              <FormMessage className="text-red-400 />
+              <FormMessage className="text-red-400 />"
             </FormItem>"
           )};"
         />;";"
@@ -226,7 +226,7 @@ export function LoginForm(): "
           }: {;"";
             field: ControllerRenderProps<LoginFormValues", 'rememberMe'>'
           }) => ('
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0>
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0>"
               <FormControl>;""
                 <Checkbox;"
                   checked={field.value}";"

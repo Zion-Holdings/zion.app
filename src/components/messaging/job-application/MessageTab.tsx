@@ -3,12 +3,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 '
-export interface MessageTabProps {;'
-  message: "string,;";
-  setMessage: "(message: string) => void",;"";
+export interface MessageTabProps {'
+  message: "string,"
+  setMessage: (message: string) => void,""
   proposalLink: string","
   setProposalLink: (link: string) => void"
-};
+}
 
 export function MessageTab(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   message,;
@@ -42,7 +42,7 @@ export function MessageTab(): unknown {): unknown {): unknown {): unknown {): un
           onChange={(e) => setProposalLink(e.target.value)};"
           className=bg-zion-blue-dark/20 border-zion-purple/30 text-white"
           placeholder="https://...
-        />;
+        />;"
       </div>"
     </div>;"
   );";"

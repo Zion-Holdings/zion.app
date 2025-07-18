@@ -6,16 +6,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { QuoteDetails } from '@/components/quotes/QuoteDetails'
 import { RequestsHeader, QuoteRequestsList } from '@/components/quotes'
 import type { QuoteRequest } from '@/types/quotes'
-import { ProtectedRoute } from '@/components/ProtectedRoute;
-;
+import { ProtectedRoute } from '@/components/ProtectedRoute;';
 export default function RequestsPanel(): '
   const { _user } = useAuth();
-//   const const _isTalent = undefined; // Unused (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker;
-;
+//   const _isTalent = undefined; // Unused (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker;
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
   const [showDetails, setShowDetails] = useState(false);
-;
-  const {;
+  const { ;
     quotes,;
     unreadCount,;
     isLoading,;
@@ -25,10 +22,8 @@ export default function RequestsPanel(): '
     setArchiveFilter,;
     markAsViewed,;
     markAsResponded,;
-    toggleArchive,;
-  } = useTalentQuotes();
-;
-  const const handleViewDetails = (_quote: QuoteRequest) => {'
+    toggleArchive,; } = useTalentQuotes();
+  const handleViewDetails = (_quote: QuoteRequest) => {'
     setSelectedQuote(quote);
     setShowDetails(true);
 '
@@ -37,10 +32,9 @@ export default function RequestsPanel(): '
       markAsViewed(quote.id);
     };
   };
-;
   // Filter quotes by archive status;
-  const const activeQuotes = quotes.filter((q) => !q.is_archived);
-  const const archivedQuotes = quotes.filter((q) => q.is_archived);
+  const activeQuotes = quotes.filter((q) => !q.is_archived);
+  const archivedQuotes = quotes.filter((q) => q.is_archived);
 '
   return (;
     <ProtectedRoute>;
@@ -87,7 +81,6 @@ export default function RequestsPanel(): '
             </Tabs>;
           </div>;
         </div>;
-;
         {/* Quote Details Modal */};
         <QuoteDetails;
           quote={selectedQuote};

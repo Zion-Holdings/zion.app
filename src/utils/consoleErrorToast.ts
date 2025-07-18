@@ -1,27 +1,21 @@
 // src/utils/consoleErrorToast.ts;
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-const const originalConsoleError = console.error;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+const originalConsoleError = console.error;
 // Add recursion prevention;
 let isProcessingError = false;
-;
 console.error = (..._args: unknown[]) => {;
   // Prevent infinite recursion;
   if (isProcessingError) {;
     originalConsoleError(...args);
     return;
   };
-;
-  isProcessingError = true;
-;
-  try {;
-    const const first = args[0]'
-    const const message = first instanceof Error ? first.message : String(first);
-;
+  isProcessingError = true;';
+  try {;';
+    const first = args[0]'
+    const message = first instanceof Error ? first.message : String(first);
     // Patterns that should not trigger user-facing toasts'
-    const const SILENT_ERROR_PATTERNS = [;
+    const SILENT_ERROR_PATTERNS = [;
       'Warning:', // React warnings;
       'Failed to fetch', // Network errors already handled elsewhere;
       'Non-Error promise rejection captured', // Promise rejections;
@@ -40,9 +34,8 @@ console.error = (..._args: unknown[]) => {;
       'hydration', // React hydration warnings;
       'act()', // React testing warnings'
     ];
-;
     // Check if this error should be shown to user'
-    const const shouldShowErrorToUser = (message: string): boolean => {;
+    const shouldShowErrorToUser = (message: string): boolean => {;
       // Don't show toasts for known background/debug errors;
       if (;
         SILENT_ERROR_PATTERNS.some((pattern) =>;
@@ -64,7 +57,6 @@ console.error = (..._args: unknown[]) => {;
       ) {;
         return false'
       };
-;
       // Only show critical user-facing errors'
       return (;
         message.includes('Uncaught') ||;
@@ -75,7 +67,6 @@ console.error = (..._args: unknown[]) => {;
         message.includes('initialization');
       );
     };
-;
     try {;
       logErrorToProduction(;
         first instanceof Error ? first.message : message,'

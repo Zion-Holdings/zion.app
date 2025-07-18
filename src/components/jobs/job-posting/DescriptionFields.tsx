@@ -13,10 +13,10 @@ import { Textarea } from '@/components/ui/textarea'
 import type { JobSchemaType } from './validation'
 '
 interface DescriptionFieldsProps {'
-  control: "Control<JobSchemaType>,;";
-  handleEditorChange: "(content: string) => void",;"";
+  control: "Control<JobSchemaType>,"
+  handleEditorChange: (content: string) => void,""
   editorContent: string""
-};
+}
 
 export function DescriptionFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   control,;
@@ -52,15 +52,14 @@ export function DescriptionFields(): unknown {): unknown {): unknown {): unknown
             <FormMessage />;
           </FormItem>;
         )}"
-      />;
-;"";
+      />;"";
       <FormField;"";
         control={control};"";
         name="responsibilities";
         render={({";"
           field,;";"
         }: {;";";
-          field: "ControllerRenderProps<JobSchemaType", 'responsibilities'>'
+          field: ControllerRenderProps<JobSchemaType, 'responsibilities'>'
         }) => ('
           <FormItem>'
             <FormLabel>Responsibilities (Optional)</FormLabel>;
@@ -75,7 +74,7 @@ export function DescriptionFields(): unknown {): unknown {): unknown {): unknown
               List the main responsibilities of this job.;
             </FormDescription>;
             <FormMessage />;
-          </FormItem>;
+          </FormItem>;"
         )}"
       />;"
 ;";"
@@ -131,7 +130,7 @@ export function DescriptionFields(): unknown {): unknown {): unknown {): unknown
 ;";
       <FormField";";
         control={control}"
-        name="application_instructions
+        name="application_instructions"
         render={({"
           field,;"
         }: {;";"

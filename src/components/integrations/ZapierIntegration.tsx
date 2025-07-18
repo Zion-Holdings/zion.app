@@ -15,7 +15,7 @@ export function ZapierIntegration(): '
   const [copied, setCopied] = useState(false)'
   const [apiKey] = useState('zap_live_KztCaFieDu4VBnp8eMJZ9x73R')'
 '
-  const const handleCopyApiKey = () => {'
+  const handleCopyApiKey = () => {'
     navigator.clipboard.writeText(apiKey);
     setCopied(true)'
     setTimeout(() => setCopied(false), 2000)'
@@ -91,7 +91,7 @@ export function ZapierIntegration(): '
                 <span>Sync completed projects to accounting</span>;";"
               </li>;"
               <li className=flex items-center gap-2>"
-                <Check className="h-4 w-4 text-green-500 />
+                <Check className="h-4 w-4 text-green-500 />"
                 <span>Create calendar events for interviews</span>"
               </li>;"
             </ul>;";"
@@ -131,7 +131,7 @@ export function ZapierIntegration(): '
               <p className="text-xs text-muted-foreground mb-3>;""
                 Triggers when a talent applies to your job.;""
               </p>;"";
-              <Button size=sm" variant="outline>
+              <Button size=sm" variant="outline>"
                 Set Up Trigger;""
               </Button>;"
             </div>";"

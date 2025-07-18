@@ -13,7 +13,7 @@ import {;
 import { Badge } from '@/components/ui/badge'
 '
 export function EnterprisePricingTable(): ;
-  const const plans = ['
+  const plans = ['
     {'
       name: 'Teams','
       price: '$599','
@@ -39,7 +39,7 @@ export function EnterprisePricingTable(): ;
       billing: '/month','
       description: 'Ideal for growing companies','
       users: 'Up to 50 users','
-      popular: "true",;"
+      popular: true,;"
       features: [;";"
         { name: 'Private hiring portal', included: true "},""
         { name: 'Dedicated talent pool', included: true },"
@@ -71,8 +71,7 @@ export function EnterprisePricingTable(): ;
         { name: 'Dedicated success manager', included: true },"
       ],"
     },;
-  ];"";
-;"";
+  ];"";"";
   return (;"";
     <section id="pricing" className=py-20 px-4 md:px-6>"
       <div className="container mx-auto max-w-7xl>;"";
@@ -80,7 +79,7 @@ export function EnterprisePricingTable(): ;
           <h2 className=text-3xl md:text-4xl font-bold mb-4">";
             Enterprise Plans;"";
           </h2>;""
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto>"
             Choose the perfect plan for your team size and requirements;""
           </p>;"
         </div>";"
@@ -147,7 +146,7 @@ export function EnterprisePricingTable(): ;
         <div className="mt-8 text-center text-sm text-muted-foreground>
           All plans include SSL security, 99.9% uptime SLA, and dedicated;
           support;
-        </div>;
+        </div>;"
       </div>"
     </section>;"
   );";"

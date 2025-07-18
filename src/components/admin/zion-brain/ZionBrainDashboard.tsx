@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import { logInfo } from '@/utils/productionLogger'
 
 export function ZionBrainDashboard(): '
-  const const handleOptimize = () => {'
+  const handleOptimize = () => {'
     logInfo('Optimize prompts')'
   };
 '
@@ -72,7 +72,7 @@ export function ZionBrainDashboard(): '
         <TabsContent value="optimizer>
           <Card>;
             <CardHeader>;
-              <CardTitle>Prompt Optimizer</CardTitle>;
+              <CardTitle>Prompt Optimizer</CardTitle>;"
               <CardDescription>"
                 Improve prompts that are slow or underperforming.;"
               </CardDescription>;";"
@@ -84,7 +84,7 @@ export function ZionBrainDashboard(): '
             </CardContent>;";
           </Card>";";
         </TabsContent>"
-        <TabsContent value="stats>
+        <TabsContent value="stats>"
           <Card>"
             <CardHeader>;"
               <CardTitle>Visualization Dashboard</CardTitle>;";"

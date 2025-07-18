@@ -6,22 +6,21 @@ import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady'
 import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput'
 import { generateSearchSuggestions } from '@/data/marketplaceData'
 import type { SearchSuggestion } from '@/types/search'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
+import { logErrorToProduction } from '@/utils/productionLogger;';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
 '
-interface SearchResult {;
-  id: "string;"
-  type: 'product' | 'service' | 'talent' | 'blog' | 'doc,;
-  title: "string;"
-  description: "string;"
-};"
+interface SearchResult {
+  id: "string"
+  type: 'product' | 'service' | 'talent' | 'blog' | 'doc,
+  title: "string"
+  description: "string"
+}"
 ;"
-function highlight(): unknown {): unknown {): unknown {): unknown {): unknown {text: "string", term: string) {;"
+function highlight(): unknown {): unknown {): unknown {): unknown {): unknown {text: string, term: string) {;"
   if (!term) return text;"
   const escaped: term.replace(/[.*+?^${"}()|[\]\\]/g, '\\$&');
   const regex: new RegExp(`(${escaped"})`, 'gi');
-  const const parts = text.split(regex)'
+  const parts = text.split(regex)'
   return (;
     <>;
       {parts.map((part, i) =>'
@@ -38,45 +37,42 @@ function highlight(): unknown {): unknown {): unknown {): unknown {): unknown {t
 };";"
 ;"
 export default function SearchPage(): ;"
-  const const router = useRouterReady(); // Use our custom hook;"
+  const router = useRouterReady(); // Use our custom hook;"
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const suggestions: unknown SearchSuggestion[] = generateSearchSuggestions();
-;
   // Force re-render and reset state when route changes;
-  const const routeKey = useRouteChange(() => {;
+  const routeKey = useRouteChange(() => {;
     setResults([])'
     setLoading(false);
   });
 '
-  const const productResults = results.filter(;
+  const productResults = results.filter(;
     (r) => r.type === 'product' || r.type === 'service','
   );
-  const const talentResults = results.filter((r) => r.type === 'talent');
-  const const docResults = results.filter((r) => r.type === 'doc');
-  const const blogResults = results.filter((r) => r.type === 'blog')'
-  const marketplaceResults: [...productResults", ...talentResults];
-;"
+  const talentResults = results.filter((r) => r.type === 'talent');
+  const docResults = results.filter((r) => r.type === 'doc');
+  const blogResults = results.filter((r) => r.type === 'blog')'
+  const marketplaceResults: [...productResults", ...talentResults];"
   // Sync query with URL parameter changes;";"
   useEffect(() => {;"
     if (!router.isReady) return;"
 ;
-    const const urlQuery = (router.query.q as string) || 
+    const urlQuery = (router.query.q as string) || 
     if (urlQuery !== query) {;
       setQuery(urlQuery);
     };
   }, [router.isReady, router.query.q, query]); // Fixed dependency array;
-;
-  const const fetchResults = useCallback(async (_term: string) => {;
+  const fetchResults = useCallback(async (_term: string) => {;
     if (!term.trim()) {;
       setResults([]);
       return'
     };
     setLoading(true);
     try {'
-      const res: await fetch(`/api/search?query=${encodeURIComponent(term)"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
-      const const data = await res.json();
+      const res = await fetch(`/api/search?query=${encodeURIComponent(term)"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
+      const data = await res.json();
       if (data && data.results && Array.isArray(data.results)) {;"
         setResults(data.results);";"
       } else {;"
@@ -93,7 +89,6 @@ export default function SearchPage(): ;"
       setLoading(false);
     };
   }, []);
-;
   useEffect(() => {;
     if (!router.isReady) return;
     if (query.trim()) {;
@@ -102,8 +97,7 @@ export default function SearchPage(): ;"
       setResults([]);
     };
   }, [router.isReady, query, fetchResults]);
-;
-  const const handleSubmit = (_e: React.FormEvent) => {;
+  const handleSubmit = (_e: React.FormEvent) => {;
     e.preventDefault();
     if (query.trim()) {;
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
@@ -121,7 +115,7 @@ export default function SearchPage(): ;"
             value={query};
             onChange={setQuery};
             onSelectSuggestion={(suggestion) => {;
-              const const searchTerm = suggestion.text.trim();"
+              const searchTerm = suggestion.text.trim();"
               setQuery(searchTerm);";"
               router.push(`/search?q=${encodeURIComponent(searchTerm)}`);"
             }};"

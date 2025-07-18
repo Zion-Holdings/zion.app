@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO'
 import { setCookie, getCookie } from '@/utils/cookies'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage;';
 '
 export default function PrivacySettings(): ;
   const [consent, setConsent] = useState<'granted' | 'denied' | null>(null);
-;
   useEffect(() => {'
     const stored: unknown =;
       getCookie('analyticsConsent') || safeStorage.getItem('analyticsConsent');
@@ -16,7 +15,7 @@ export default function PrivacySettings(): ;
     };
   }, [])'
 ;
-  const const handleChange = (_value: 'granted' | 'denied') => {'
+  const handleChange = (_value: 'granted' | 'denied') => {'
     setConsent(value);
     setCookie('analyticsConsent', value, 365);
     safeStorage.setItem('analyticsConsent', value);
@@ -51,7 +50,6 @@ export default function PrivacySettings(): ;
     </>;
   );
 };
-;
 }'
 }
 }'

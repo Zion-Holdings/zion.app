@@ -4,13 +4,12 @@ import { NextSeo } from '@/components/NextSeo'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link // Changed from react-router-dom;
+import Link from 'next/link // Changed from react-router-dom;';
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage;
-;
+import { safeStorage } from '@/utils/safeStorage;';
 const STATUSES: unknown RoadmapItem['status'][] = [;
   'Planned',;
   'In Progress',;
@@ -19,7 +18,7 @@ const STATUSES: unknown RoadmapItem['status'][] = [;
 ;
 function voteWeight(): unknown {): unknown {): unknown {): unknown {): unknown {role?: string) {;
   if (!role) return 1'
-  const const r = role.toLowerCase();
+  const r = role.toLowerCase();
   if (r === 'client') return 2;
   if (r === 'zion$ staker' || r === 'staker') return 3;
   return 1; // default for Talent and others;
@@ -28,7 +27,7 @@ function voteWeight(): unknown {): unknown {): unknown {): unknown {): unknown {
 export default function RoadmapPage(): ;
   const { _user } = useAuth()'
   const [items, setItems] = useState<RoadmapItem[]>(() => {;
-    const const raw = safeStorage.getItem('roadmap_items');
+    const raw = safeStorage.getItem('roadmap_items');
     if (!raw) return ROADMAP_ITEMS;
     try {;
       return JSON.parse(raw) as RoadmapItem[];
@@ -37,16 +36,15 @@ export default function RoadmapPage(): ;
     };
   });
 '
-  useEffect(() => {;
+  useEffect(() => {
     safeStorage.setItem('roadmap_items', JSON.stringify(items))'
-  }, [items]);
-;
-  const const handleUpvote = (_id: string) => {'
+  }, [items])
+  const handleUpvote = (_id: string) => {'
     if (!user) {;
       toast({ title: 'Login required', description: 'Please sign in to vote' });
       return'
     };
-    const const weight = voteWeight(user.role);
+    const weight = voteWeight(user.role);
     setItems((prev) =>'
       prev.map((item) =>;
         item.id === id ? { ...item, upvotes: "item.upvotes + weight "} : item,;

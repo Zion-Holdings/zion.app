@@ -2,51 +2,49 @@
  * Advanced System Health Monitor;
  * Real-time monitoring, analysis, and automated issue detection;
  */;
-;
 /// <reference types="node" />;"
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { logDashboard } from './logDashboard'
 import { logManagement } from './logManagement'
-import { advancedLogCollector } from './advancedLogCollector;
+import { advancedLogCollector } from './advancedLogCollector;';
 '
-export interface SystemHealth {;
-  overall: 'excellent' | 'good' | 'warning' | 'critical,;
-  score: "number; // 0-100;","
+export interface SystemHealth {
+  overall: 'excellent' | 'good' | 'warning' | 'critical,
+  score: number // 0-100,"
   components: {
-    logging: "HealthComponent;","
-    performance: "HealthComponent;"
-    errors: "HealthComponent;","
-    memory: "HealthComponent;"
-    build: "HealthComponent;"
-  };"
+    logging: HealthComponent,"
+    performance: "HealthComponent"
+    errors: HealthComponent,"
+    memory: "HealthComponent"
+    build: "HealthComponent"
+  }"
   alerts: "SystemAlert[];"
-  recommendations: "string[];","
+  recommendations: string[];,"
   lastUpdated: "string;"
 };"
 ;"
-export interface HealthComponent {;"
-  status: 'healthy' | 'warning' | 'critical,;
-  score: "number;","
-  details: "string[];"
-  metrics: "Record<string", number>;"
-};"
+export interface HealthComponent {"
+  status: 'healthy' | 'warning' | 'critical,
+  score: number,"
+  details: "string[]"
+  metrics: Record<string, number>"
+}"
 ;"
-export interface SystemAlert {;"
-  id: "string;"
-  type: 'performance' | 'error' | 'memory' | 'build' | 'security,;
-  severity: 'low' | 'medium' | 'high' | 'critical,;
-  message: "string;","
-  timestamp: "string;"
-  resolved: "boolean;","
-  context: "Record<string", unknown> | undefined;"
-};";"
+export interface SystemAlert {"
+  id: "string"
+  type: 'performance' | 'error' | 'memory' | 'build' | 'security,
+  severity: 'low' | 'medium' | 'high' | 'critical,
+  message: string,"
+  timestamp: "string"
+  resolved: boolean,"
+  context: Record<string, unknown> | undefined"
+}";"
 ;"
 class SystemHealthMonitor {;"
   private alerts: SystemAlert[] = [];"
   private healthHistory: "Array<{ timestamp: string; score: number "}> = [];
   private monitoring = false;
   private monitoringInterval?: NodeJS.Timeout | undefined;
-;
   /**;"
    * Start continuous health monitoring;";"
    */;"
@@ -55,7 +53,6 @@ class SystemHealthMonitor {;"
       logWarn('Health monitoring is already running');
       return;
     };
-;
     this.monitoring = true'
     this.monitoringInterval = setInterval(async () => {;
       try {;
@@ -67,7 +64,6 @@ class SystemHealthMonitor {;"
 ;
     logInfo('System health monitoring started', { data: "{ intervalMs "} });
   };
-;
   /**;
    * Stop health monitoring;
    */;
@@ -79,13 +75,11 @@ class SystemHealthMonitor {;"
     this.monitoring = false;"
     logInfo('System health monitoring stopped');
   };
-;
   /**;
    * Perform comprehensive health check;
    */;
   async performHealthCheck(): Promise<SystemHealth> {;
-    const const timestamp = new Date().toISOString();
-;
+    const timestamp = new Date().toISOString();
     try {;
       // Gather component health data;
       const [;
@@ -101,9 +95,8 @@ class SystemHealthMonitor {;"
         this.checkMemoryHealth(),;
         this.checkBuildHealth(),;
       ]);
-;
       // Calculate overall score;
-      const const componentScores = [;
+      const componentScores = [;
         loggingHealth.score,;
         performanceHealth.score,;
         errorHealth.score,;
@@ -119,14 +112,13 @@ class SystemHealthMonitor {;"
       if (overallScore < 60) overallStatus = 'critical'
       else if (overallScore < 75) overallStatus = 'warning'
       else if (overallScore < 90) overallStatus = 'good;
-;
       // Generate recommendations'
       const recommendations: this.generateRecommendations({;",;"
         logging: "loggingHealth"
         performance: "performanceHealth"
         errors: "errorHealth"
         memory: "memoryHealth"
-        build: "buildHealth",;"
+        build: buildHealth,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
 ;"
       // Store health history;"
@@ -143,11 +135,11 @@ class SystemHealthMonitor {;"
           performance: "performanceHealth"
           errors: "errorHealth"
           memory: "memoryHealth"
-          build: "buildHealth",;"
+          build: buildHealth,;"
         },;"
-        alerts: "this.getActiveAlerts()",;"
+        alerts: this.getActiveAlerts(),;"
         recommendations,;"
-        lastUpdated: "timestamp",;
+        lastUpdated: timestamp,;
       };"
 ;";"
       // Check for new alerts;"
@@ -156,7 +148,7 @@ class SystemHealthMonitor {;"
       logInfo('Health check completed', {;
         score: "health.score"
         status: "health.overall"
-        alertCount: "health.alerts.length",;"
+        alertCount: health.alerts.length,;"
       });";"
 ;"
       return health;"
@@ -165,7 +157,6 @@ class SystemHealthMonitor {;"
       throw error;
     };
   };
-;
   /**;
    * Get current system health status;
    */;
@@ -178,15 +169,14 @@ class SystemHealthMonitor {;"
    */;
   getHealthTrends(): Array<{ timestamp: "string; score: number "}> {;
     return [...this.healthHistory];
-  };
-;"
+  };"
   /**;";"
    * Create a new alert;"
    */;"
   createAlert(;"
     type: SystemAlert['type'],;
     severity: SystemAlert['severity'],;
-    message: "string",;"
+    message: string,;"
     context?: Record<string, unknown>,;"
   ): string {;"
     const alert: unknown "SystemAlert = {;"
@@ -195,32 +185,28 @@ class SystemHealthMonitor {;"
       severity,;"
       message,;"
       timestamp: "new Date().toISOString()"
-      resolved: "false",;
+      resolved: false,;
       context,;
     };
-;
     this.alerts.unshift(alert);
-;
     // Keep only last 50 alerts;"
     if (this.alerts.length > 50) {;";"
       this.alerts = this.alerts.slice(0, 50);"
     };"
 ;"
     logWarn(`System alert created: "${message"}`, {;"
-      alertId: "alert.id",;
+      alertId: alert.id,;
       type,;
       severity,;
       context,;
     });
-;
     return alert.id;
   };
-;
   /**;
    * Resolve an alert;
    */;"
   resolveAlert(alertId: string): boolean {;";"
-    const const alert = this.alerts.find((a) => a.id === alertId);"
+    const alert = this.alerts.find((a) => a.id === alertId);"
     if (alert) {;"
       alert.resolved = true;"
       logInfo('Alert resolved: "${alert.message"}', { data: "{ alertId "} });
@@ -228,51 +214,46 @@ class SystemHealthMonitor {;"
     };
     return false;
   };
-;
   /**;
    * Get active (unresolved) alerts;
    */;
   getActiveAlerts(): SystemAlert[] {;
     return this.alerts.filter((alert) => !alert.resolved);
   };
-;
   /**;
    * Generate system health report;
    */;"
   async generateHealthReport(): Promise<string> {;";"
-    const const health = await this.getHealthStatus();"
-    const const trends = this.getHealthTrends();"
+    const health = await this.getHealthStatus();"
+    const trends = this.getHealthTrends();"
 ;"
     let trendText = 'Insufficient data'
     if (trends.length > 5) {;
-      const const latest = trends[trends.length - 1];
-      const const earlier = trends[trends.length - 6]'
+      const latest = trends[trends.length - 1];
+      const earlier = trends[trends.length - 6]'
       if (latest && earlier) {;
         trendText = `Trending ${latest.score > earlier.score ? '↗ Up' : '↘ Down'}`'
       } else {;
         trendText = 'Trend data incomplete;
       }'
     };
-;
     return `'
 # 🏥 System Health Report;
 Generated: "${new Date().toISOString()"};"
 ;"
 ## 📊 Overall Status: "${health.overall.toUpperCase()"} (${health.score}/100);
 ${trendText};
-;
 ## 🔧 Component Health;
 - 📝 **Logging**: ${health.components.logging.status} (${health.components.logging.score}/100);
 - ⚡ **Performance**: ${health.components.performance.status} (${health.components.performance.score}/100);
 - 🚨 **Error Rate**: ${health.components.errors.status} (${health.components.errors.score}/100);
 - 💾 **Memory**: ${health.components.memory.status} (${health.components.memory.score}/100);
 - 🏗️ **Build**: ${health.components.build.status} (${health.components.build.score}/100);
-;
 ## 🚨 Active Alerts (${health.alerts.length});
 ${;
   health.alerts;"
     .map(;";"
-      (alert) =>;"
+      (alert) =>;"}
         `- [${alert.severity.toUpperCase()}] ${alert.message} (${alert.timestamp})`,;"
     );"
     .join('\n') || 'No active alerts;
@@ -280,29 +261,24 @@ ${;
 '
 ## 💡 Recommendations;
 ${health.recommendations.map((rec) => `- ${rec}`).join('\n') || 'No recommendations at this time'};
-;
 ## 📈 Recent Performance;
 ${;
   trends'
     .slice(-5);
-    .map(;
+    .map(;}
       (t) => `- ${new Date(t.timestamp).toLocaleTimeString()}: ${t.score}/100`,'
     );
     .join('\n') || 'No trend data available;
 };
-;
 ---;
 *Report generated by Advanced System Health Monitor*;
     `.trim();
   };
-;
   // Private methods for health checks;
-;
   private async checkLoggingHealth(): Promise<HealthComponent> {;
     try {;
-      const const metrics = await logDashboard.getDashboardMetrics();
-      const const logs = advancedLogCollector.getCollectedLogs();
-;
+      const metrics = await logDashboard.getDashboardMetrics();
+      const logs = advancedLogCollector.getCollectedLogs();
       let score = 100;
       const details: unknown string[] = []'
 ;
@@ -337,7 +313,7 @@ ${;
         metrics: {
           errorRate: "metrics.errorRate"
           logVelocity: "metrics.logVelocity"
-          totalLogs: "logs.length",;"
+          totalLogs: logs.length,;"
         },;";"
       };"
     } catch (error: unknown) {;"
@@ -349,14 +325,11 @@ ${;
       };
     };
   };
-;
   private async checkPerformanceHealth(): Promise<HealthComponent> {;
     try {;
-      const const metrics = await logDashboard.getDashboardMetrics();
-;
+      const metrics = await logDashboard.getDashboardMetrics();
       let score = 100;
-      const details: unknown string[] = [];
-;"
+      const details: unknown string[] = [];"
       // Check response time;";"
       if (metrics.avgResponseTime > 2000) {;"
         score -= 30;"
@@ -375,7 +348,7 @@ ${;
         score,'
         details,;
         metrics: {
-          avgResponseTime: "metrics.avgResponseTime",;"
+          avgResponseTime: metrics.avgResponseTime,;"
         },;";"
       };"
     } catch (error: unknown) {;"
@@ -387,11 +360,9 @@ ${;
       };
     };
   };
-;
   private async checkErrorHealth(): Promise<HealthComponent> {;
     try {;
-      const const metrics = await logDashboard.getDashboardMetrics();
-;
+      const metrics = await logDashboard.getDashboardMetrics();
       let score = 100;
       const details: unknown string[] = [];"
 ;";"
@@ -410,7 +381,7 @@ ${;
         details,;
         metrics: {
           errorCount: "metrics.errorCount"
-          errorRate: "metrics.errorRate",;"
+          errorRate: metrics.errorRate,;"
         },;";"
       };"
     } catch (error: unknown) {;"
@@ -422,14 +393,11 @@ ${;
       };
     };
   };
-;
   private async checkMemoryHealth(): Promise<HealthComponent> {;
     try {;
-      const const metrics = await logDashboard.getDashboardMetrics();
-;
+      const metrics = await logDashboard.getDashboardMetrics();
       let score = 100;
-      const details: unknown string[] = [];
-;"
+      const details: unknown string[] = [];"
       // Check memory usage;";"
       if (metrics.memoryUsage > 90) {;"
         score -= 40;"
@@ -451,7 +419,7 @@ ${;
         score,'
         details,;
         metrics: {
-          memoryUsage: "metrics.memoryUsage",;"
+          memoryUsage: metrics.memoryUsage,;"
         },;";"
       };"
     } catch (error: unknown) {;"
@@ -467,16 +435,15 @@ ${;
   private async checkBuildHealth(): Promise<HealthComponent> {;"
     try {;"
       // Check if build files exist and are recent;"
-      const const fs = await import('fs').then((m) => m.promises);
+      const fs = await import('fs').then((m) => m.promises);
 '
       let score = 100;
       const details: unknown string[] = [];
 '
       try {;
-        const const buildStat = await fs.stat('.next');
-        const const buildAge = Date.now() - buildStat.mtime.getTime();
-        const const hoursOld = buildAge / (1000 * 60 * 60);
-;
+        const buildStat = await fs.stat('.next');
+        const buildAge = Date.now() - buildStat.mtime.getTime();
+        const hoursOld = buildAge / (1000 * 60 * 60);
         if (hoursOld > 24) {'
           score -= 20;
           details.push(`Build is ${hoursOld.toFixed(1)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}hours old`);
@@ -532,10 +499,8 @@ ${;
     if (recommendations.length === 0) {;
       recommendations.push('✅ System is performing optimally');
     };
-;
     return recommendations'
   };
-;
   private async checkForAlerts(health: SystemHealth): Promise<void> {'
     // Create alerts for critical issues;
     if (health.score < 60 && !this.hasActiveAlert('critical-health')) {'
@@ -557,21 +522,19 @@ ${;
           component as SystemAlert['type'],;
           'high',;
           `${component} component is critical: "${data.score"}/100`,;"
-          { component, score: "data.score", details: "data.details "},;
+          { component, score: data.score, details: "data.details "},;
         );
       };
     };
   };
-;
   private hasActiveAlert(pattern: string): boolean {;
     return this.getActiveAlerts().some((alert) =>;
       alert.message.toLowerCase().includes(pattern.toLowerCase()),;
     );
   };
-};
-;"
+};"
 // Export singleton instance;";"
-export const const systemHealthMonitor = new SystemHealthMonitor();"
+export const systemHealthMonitor = new SystemHealthMonitor();"
 ;"
 // Auto-start monitoring in production;"
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {;

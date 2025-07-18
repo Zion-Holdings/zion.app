@@ -7,14 +7,14 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Props {'
   children: "React.ReactNode
-};
+}
 
 export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: Props) {"
   const { _user } = useAuth();"
 
   useEffect(() => {"
-    const const params = new URLSearchParams(window.location.search);"
-    const const code = params.get('ref')'
+    const params = new URLSearchParams(window.location.search);"
+    const code = params.get('ref')'
     if (code) {'
       safeStorage.setItem('referralCode', code)'
     }'
@@ -22,12 +22,12 @@ export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknow
 
   useEffect(() => {'
     async function sendReferral(): '
-      const const code = safeStorage.getItem('referralCode')'
+      const code = safeStorage.getItem('referralCode')'
       if (!code || !user?.id) return;
       try {'
         if (!supabase) return'
         await supabase.functions.invoke('track-referral', {'
-          body: { refCode: code, userId: "user.id", email: user.email } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},"
+          body: { refCode: code, userId: user.id, email: user.email } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},"
         });"
         safeStorage.removeItem('referralCode')'
       } catch {'

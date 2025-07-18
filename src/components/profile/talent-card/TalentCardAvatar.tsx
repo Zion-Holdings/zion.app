@@ -4,14 +4,14 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 interface TalentCardAvatarProps {'
   profilePicture: "string | undefined
   fullName: string""
-};
+}
 
 export function TalentCardAvatar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profilePicture,;
   fullName,
 }: TalentCardAvatarProps) {;"
   // Get initials for avatar fallback;"
-  const const getInitials = (_name: string) => {
+  const getInitials = (_name: string) => {
     return name;
       .split(' ')'
       .map((part) => part[0])'

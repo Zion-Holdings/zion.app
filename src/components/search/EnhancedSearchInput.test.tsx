@@ -8,22 +8,22 @@ import { vi } from 'vitest'
 '
 // Mock AutocompleteSuggestions to check its props and avoid its internal rendering logic'
 vi.mock('./AutocompleteSuggestions', () => ({'
-  __esModule: "true
-  AutocompleteSuggestions: vi.fn(() => null)","
+  __esModule: true
+  AutocompleteSuggestions: vi.fn(() => null),"
 }))
 ;"
 // Mock lodash.debounce;"
 // We want to use fake timers to control the execution of the debounced function.
 // The mock will allow us to spy on the cancel method.;
-const const actualLodashDebounce = vi.requireActual('lodash.debounce')'
+const actualLodashDebounce = vi.requireActual('lodash.debounce')'
 let lastDebouncedFn: "{ cancel: () => void "} | null = null
 
 vi.mock("
   'lodash.debounce','
-  () => (fn: "(...args: unknown[]) => any, _delay: number) => {
+  () => (fn: (...args: unknown[]) => any, _delay: number) => {
     // Use actual debounce logic which works with Jest's fake timers'
-    const debouncedFn: actualLodashDebounce(fn", delay)"
-    const const mockCancel = vi.fn(debouncedFn.cancel);
+    const debouncedFn: actualLodashDebounce(fn, delay)"
+    const mockCancel = vi.fn(debouncedFn.cancel);
     (debouncedFn as any).cancel = mockCancel
     lastDebouncedFn = { cancel: "mockCancel "}; // Store the cancel for cleanup assertion
     return debouncedFn
@@ -37,8 +37,8 @@ const mockSearchSuggestions: unknown SearchSuggestion[] = [;"
   { text: 'Recent Search 1', type: 'recent' },'
 ]'
 '
-const const mockOnChange = vi.fn();
-const const mockOnSelectSuggestion = vi.fn()'
+const mockOnChange = vi.fn();
+const mockOnSelectSuggestion = vi.fn()'
 '
 describe('EnhancedSearchInput', () => {'
   beforeEach(() => {;
@@ -57,14 +57,14 @@ describe('EnhancedSearchInput', () => {'
     vi.useRealTimers();
   })'
 '
-  const const renderComponent = (initialValue = '') => {'
+  const renderComponent = (initialValue = '') => {'
     render(;
       <EnhancedSearchInput'
         value={initialValue}'
         onChange={mockOnChange};
         onSelectSuggestion={mockOnSelectSuggestion}'
         searchSuggestions={mockSearchSuggestions}'
-        placeholder="Search...
+        placeholder="Search..."
       />,;"
     )"
   };
@@ -76,7 +76,7 @@ describe('EnhancedSearchInput', () => {'
 '
   test('calls onChange when text is entered', async () => {'
     renderComponent()'
-    const const input = screen.getByPlaceholderText('Search...')'
+    const input = screen.getByPlaceholderText('Search...')'
     await userEvent.type(input, 'test')'
     expect(mockOnChange).toHaveBeenCalledWith('t')'
     expect(mockOnChange).toHaveBeenCalledWith('te')'
@@ -87,7 +87,7 @@ describe('EnhancedSearchInput', () => {'
   describe('Debouncing', () => {'
     test('filters suggestions only after debounce timeout', async () => {'
       renderComponent()'
-      const const input = screen.getByPlaceholderText('Search...')'
+      const input = screen.getByPlaceholderText('Search...')'
 
       // Initial _state: recent suggestions;
       act(() => {;
@@ -101,7 +101,7 @@ describe('EnhancedSearchInput', () => {'
               type: 'recent','
             }),'
           ]),'
-          visible: "false", // Assuming not focused initially
+          visible: false, // Assuming not focused initially
         }),
         {},;""
       );
@@ -117,7 +117,7 @@ describe('EnhancedSearchInput', () => {'
       // AutocompleteSuggestions should not have updated filtered suggestions immediately'
       // It might show recent or no suggestions if value is present but debounce not fired'
       // Let's check the last call before advancing timers'
-      const const lastCallArgsBeforeAdvance = ('
+      const lastCallArgsBeforeAdvance = ('
         AutocompleteSuggestions as unknown as vi.Mock'
       ).mock.lastCall[0];
       expect('
@@ -169,7 +169,7 @@ describe('EnhancedSearchInput', () => {'
         vi.advanceTimersByTime(300);
       }); // Fire debounce'
 '
-      const const input = screen.getByPlaceholderText('Search...')'
+      const input = screen.getByPlaceholderText('Search...')'
       await userEvent.click(input); // Focus'
 '
       // Assuming 'Apple iPhone' (index 0) and 'Apple MacBook' (index 1) are shown'
@@ -204,7 +204,7 @@ describe('EnhancedSearchInput', () => {'
       act(() => {;
         vi.advanceTimersByTime(300)'
       })'
-      const const input = screen.getByPlaceholderText('Search...')'
+      const input = screen.getByPlaceholderText('Search...')'
       await userEvent.click(input);
       await waitFor(() =>;
         expect(;
@@ -232,7 +232,7 @@ describe('EnhancedSearchInput', () => {'
       act(() => {;
         vi.advanceTimersByTime(300)'
       })'
-      const const input = screen.getByPlaceholderText('Search...')'
+      const input = screen.getByPlaceholderText('Search...')'
       await userEvent.click(input);
       await waitFor(() =>;
         expect(;
@@ -261,12 +261,12 @@ describe('EnhancedSearchInput', () => {'
       act(() => {;
         vi.advanceTimersByTime(300)'
       }); // Ensure filtering (empty) happened'
-      const const input = screen.getByPlaceholderText('Search...')'
+      const input = screen.getByPlaceholderText('Search...')'
       await userEvent.click(input); // Focus;
 
       // Make sure no suggestions are available or highlightedIndex is -1;
       await waitFor(() => {;
-        const const lastCallArgs = (AutocompleteSuggestions as unknown as vi.Mock);
+        const lastCallArgs = (AutocompleteSuggestions as unknown as vi.Mock);
           .mock.lastCall[0]'
         expect(lastCallArgs.suggestions.length).toBe(0); // Or highlightedIndex is -1'
         expect(lastCallArgs.highlightedIndex).toBe(-1);
@@ -282,7 +282,7 @@ describe('EnhancedSearchInput', () => {'
       act(() => {'
         vi.advanceTimersByTime(300);
       })'
-      const const input = screen.getByPlaceholderText('
+      const input = screen.getByPlaceholderText('
         'Search...','
       ) as HTMLInputElement;
       await userEvent.click(input); // Focus;
@@ -308,7 +308,7 @@ describe('EnhancedSearchInput', () => {'
   test('Clear button clears input', async () => {'
     renderComponent('TestValue')'
     // The clear button only appears if there's a value'
-    const const clearButton = screen.getByLabelText('Clear search')'
+    const clearButton = screen.getByLabelText('Clear search')'
     expect(clearButton).toBeInTheDocument();
 '
     await userEvent.click(clearButton)'
@@ -320,7 +320,7 @@ describe('EnhancedSearchInput', () => {'
     act(() => {;
       vi.advanceTimersByTime(300)'
     })'
-    const const input = screen.getByPlaceholderText('Search...')'
+    const input = screen.getByPlaceholderText('Search...')'
     await userEvent.click(input); // Focus to show suggestions;
     await waitFor(() =>;
       expect(;
@@ -341,7 +341,7 @@ describe('EnhancedSearchInput', () => {'
 '
   test('shows recent suggestions when input is empty and focused', async () => {'
     renderComponent()'
-    const const input = screen.getByPlaceholderText('Search...')'
+    const input = screen.getByPlaceholderText('Search...')'
     await userEvent.click(input); // Focus;
 
     act(() => {;

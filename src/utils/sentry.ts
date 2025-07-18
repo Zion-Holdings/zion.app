@@ -1,4 +1,4 @@
-export function captureException(): unknown {): unknown {): unknown {): unknown {): unknown {error: "unknown", context?: unknown): void {;"
+export function captureException(): unknown {): unknown {): unknown {): unknown {): unknown {error: unknown, context?: unknown): void {;"
   if (typeof window === 'undefined') {;
     import('@sentry/nextjs').then((Sentry) => {;
       if ('
@@ -12,7 +12,6 @@ export function captureException(): unknown {): unknown {): unknown {): unknown 
     });
   };
 };
-;
 }'
 }
 }'

@@ -6,40 +6,40 @@ import { EmptyMatchesCard } from './EmptyMatchesCard'
 import { JobMatchCard } from './JobMatchCard'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 
-interface SuggestedTalentsProps {;
+interface SuggestedTalentsProps {
   jobId: string'
   jobTitle?: string'
-};
+}
 '
 interface TalentProfile {'
-  id: "string,;";
-  user_id: "string",;"";
-  full_name: string",;"
+  id: "string,"
+  user_id: string,""
+  full_name: string","
   professional_title: string,""
-  profile_picture_url: "string,;";
-  hourly_rate: "number",;"";
-  bio: string",;"
+  profile_picture_url: "string,"
+  hourly_rate: number,""
+  bio: string","
   years_experience: number,""
-  key_projects: "string[],;";
-  skills: "string[]",;"";
-  location: string",;"
+  key_projects: "string[],"
+  skills: string[],""
+  location: string","
   category: string,""
-  company_name: "string;"
-};";
+  company_name: "string"
+}";
 ";";
 interface SuggestedTalent {"
-  id: "string,;";
-  job_id: "string",;"";
-  match_score: number",;"
+  id: "string,"
+  job_id: string,""
+  match_score: number","
   talent_profile: TalentProfile"
-};
+}
 
 export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId, jobTitle }: SuggestedTalentsProps) {;
   const [talents, setTalents] = useState<SuggestedTalent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const const fetchSuggestedTalents = useCallback(async () => {"
+  const fetchSuggestedTalents = useCallback(async () => {"
     setIsLoading(true);
     try {;"";
       if (!supabase) {;"";
@@ -82,7 +82,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
       setTalents(data || [])'
     } catch {'
       logErrorToProduction('Error fetching suggested talents:', {'
-        data: "error",;"
+        data: error,;"
       });";"
       toast({;"
         title: 'Error','
@@ -95,7 +95,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     }'
   }, [jobId])'
 
-  const const handleViewProfile = (_talentId: string) => {'
+  const handleViewProfile = (_talentId: string) => {'
     // Implement logic to view talent profile'
     logInfo('View talent profile:', { data: { data: talentId } })";";
     toast({"
@@ -104,7 +104,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     })
   };""
 ;"
-  const const handleInvite = (_talentId: string) => {";"
+  const handleInvite = (_talentId: string) => {";"
     // Implement logic to invite talent";""
     logInfo('Invite talent:', { data: { data: talentId } })";";
     toast({"
@@ -113,19 +113,19 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     });
   };
 
-  const const handleRefresh = () => {;
+  const handleRefresh = () => {;
     setIsProcessing(true);
     fetchSuggestedTalents().finally(() => {;
       setIsProcessing(false);
     });
   };
 
-  useEffect(() => {;
-    fetchSuggestedTalents();
+  useEffect(() => {
+    fetchSuggestedTalents()
   }, [fetchSuggestedTalents])
-;""
+""
   // Transform data to match JobMatchCard component props;"
-  const const transformedTalents = talents.map((talent) => {";"
+  const transformedTalents = talents.map((talent) => {";"
     return {";""
       id: talent.talent_profile?.id || '','
       name: talent.talent_profile?.full_name || 'Talent','

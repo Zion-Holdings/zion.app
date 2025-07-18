@@ -9,13 +9,13 @@ import { AIEnhancementPanel } from './AIEnhancementPanel'
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer'
 '
 interface AIEnhancementDialogProps {'
-  title: "string,;";
-  isOpen: "boolean",;"";
-  onClose: () => void",;"
+  title: "string,"
+  isOpen: boolean,""
+  onClose: () => void","
   onApply: (content: string) => void,"
-  defaultOptions: AIEnhancementOptions;
-  initialContent?: string;
-};
+  defaultOptions: AIEnhancementOptions
+  initialContent?: string
+}
 
 export function AIEnhancementDialog(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
@@ -25,11 +25,10 @@ export function AIEnhancementDialog(): unknown {): unknown {): unknown {): unkno
   defaultOptions,;
   initialContent,;
 }: AIEnhancementDialogProps) {;
-  const const handleApply = (_content: string) => {;
+  const handleApply = (_content: string) => {;
     onApply(content);
     onClose()"
-  };
-;"";
+  };"";
   return (;"";
     <Dialog open={isOpen} onOpenChange={() => onClose()}>;"";
       <DialogContent className="max-w-3xl">

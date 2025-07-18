@@ -2,13 +2,11 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState, AppDispatch } from '@/store'
 import { add, remove, set } from '@/store/wishlistSlice'
-import { useAuth } from './useAuth;
-;
+import  { useAuth }  from './useAuth;
 export function useWishlist(): ;
-  const const items = useSelector((s: RootState) => s.wishlist.items);
-  const const dispatch = useDispatch<AppDispatch>();
+  const items = useSelector((s: RootState) => s.wishlist.items);
+  const dispatch = useDispatch<AppDispatch>();
   const { user, isAuthenticated } = useAuth();
-;
   // Load wishlist from API when user changes;
   useEffect(() => {;
     if (!user || !isAuthenticated) return;
@@ -17,8 +15,8 @@ export function useWishlist(): ;
       .then((data) => {;
         if (Array.isArray(data)) dispatch(set(data));
       });
-      .catch(() => {});
-  }, [user, isAuthenticated, dispatch]);
+      .catch(() => {});';
+  }, [user, isAuthenticated, dispatch]);';
 '
   // Persist wishlist to API whenever it changes;
   useEffect(() => {;
@@ -26,19 +24,17 @@ export function useWishlist(): ;
     fetch(`/api/users/${user.id}/wishlist`, {;
       method: 'PUT',;
       headers: { 'Content-Type': 'application/json' },;
-      body: "JSON.stringify(items)",;
+      body: JSON.stringify(items),;
     }).catch(() => {});
   }, [items, user, isAuthenticated]);
-;
-  const const toggle = (_id: string) => {;
+  const toggle = (_id: string) => {;
     if (items.includes(id)) {;
       dispatch(remove(id));
     } else {;
       dispatch(add(id));
     };
   };
-;
-  const const isWishlisted = (id: string) => items.includes(id);"
+  const isWishlisted = (id: string) => items.includes(id);"
 ;";"
   return { items, toggle, isWishlisted };"
 };"

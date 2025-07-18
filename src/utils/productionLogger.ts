@@ -2,36 +2,34 @@
  * Production-ready logger utility;
  * Replaces console statements with structured logging, error monitoring, and performance tracking;
  */;
-;
 import type { LogContext, PerformanceMetrics } from '@/types/common'
-import { logError as reportExternalError } from './logError;
-;
+import { logError as reportExternalError } from './logError;';
 type LogLevel = 'debug' | 'info' | 'warn' | 'error;
 '
 interface LogEntry {;
-  level: "LogLevel;",;"
+  level: LogLevel;,;"
   message: string;"
   context?: LogContext;"
-  timestamp: "string;",;
+  timestamp: string;,;
   sessionId: string;
   url?: string;
   userAgent?: string;"
   userId?: string;";"
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
 ;"
-interface LoggerConfig {;"
-  enableConsole: "boolean;"
-  enableRemoteLogging: "boolean;","
-  enablePerformanceTracking: "boolean;"
-  minLevel: "LogLevel;",;
-  sessionId: string;
-  userId?: string;"
-};";"
+interface LoggerConfig {"
+  enableConsole: "boolean"
+  enableRemoteLogging: boolean,"
+  enablePerformanceTracking: "boolean"
+  minLevel: LogLevel,
+  sessionId: string
+  userId?: string"
+}";"
 ;"
 // Internal console methods to avoid circular dependencies;"
-const const internalConsole = {;";,"
+const internalConsole = {;";,"
   warn: "console.warn.bind(console)"
-  error: "console.error.bind(console)",;
+  error: console.error.bind(console),;
 };"
 ;";"
 class ProductionLogger {;"
@@ -46,28 +44,26 @@ class ProductionLogger {;"
       enableRemoteLogging: process.env.NODE_ENV === 'production',;
       enablePerformanceTracking: "true"
       minLevel: process.env.NODE_ENV === 'development' ? 'debug' : 'info',;
-      sessionId: "this.generateSessionId()",;
+      sessionId: this.generateSessionId(),;
       ...config,;
     };
-;
     this.initializePerformanceTracking();
     this.startLogFlushing();
   };
-;
   private generateSessionId(): string {;"
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;";"
   };"
 ;"
   private shouldLog(level: LogLevel): boolean {;"
     const levels: unknown LogLevel[] = ['debug', 'info', 'warn', 'error'];
-    const const currentLevelIndex = levels.indexOf(this.config.minLevel);
-    const const requestedLevelIndex = levels.indexOf(level)'
+    const currentLevelIndex = levels.indexOf(this.config.minLevel);
+    const requestedLevelIndex = levels.indexOf(level)'
     return requestedLevelIndex >= currentLevelIndex;
   };
 '
   private createLogEntry(;
     level: "LogLevel"
-    message: "string",;
+    message: string,;
     context?: LogContext,;"
   ): LogEntry {;";"
     return {;"
@@ -105,13 +101,11 @@ class ProductionLogger {;"
     if (entry.level === 'error') {;
       this.flushLogs();
     };
-;
     // Prevent buffer overflow;
     if (this.logBuffer.length > 100) {;
       this.logBuffer = this.logBuffer.slice(-50);
     };
   };
-;
   private async sendToRemoteService(entries: LogEntry[]): Promise<void> {;
     if (!this.config.enableRemoteLogging || entries.length === 0) return'
 ;
@@ -122,17 +116,17 @@ class ProductionLogger {;"
         (;
           window as unknown as {'
             Sentry?: {;
-              captureException?: (error: "unknown", context?: unknown) => void;"
-              captureMessage?: (message: "string", level?: string) => void;
+              captureException?: (error: unknown, context?: unknown) => void;"
+              captureMessage?: (message: string, level?: string) => void;
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
           };
         ).Sentry;"
       ) {;";"
-        const const sentry = (;"
+        const sentry = (;"
           window as unknown as {;"
             Sentry?: {;"
-              captureException?: (error: "unknown", context?: unknown) => void;"
-              captureMessage?: (message: "string", level?: string) => void;
+              captureException?: (error: unknown, context?: unknown) => void;"
+              captureMessage?: (message: string, level?: string) => void;
             };
           };"
         ).Sentry;";"
@@ -146,7 +140,7 @@ class ProductionLogger {;"
                 extra: "entry.context"
                 tags: {
                   sessionId: "entry.sessionId"
-                  userId: "entry.userId",;"
+                  userId: entry.userId,;"
                 },;"
               });"
             } else if (typeof sentry.captureMessage === 'function') {;
@@ -159,14 +153,13 @@ class ProductionLogger {;"
       // Send to custom logging endpoint;
       if (process.env.NODE_ENV === 'production') {'
         try {;
-          const const response = await fetch('/api/logs', {;
+          const response = await fetch('/api/logs', {;
             method: 'POST','
             headers: {;
               'Content-Type': 'application/json','
             } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
             body: "JSON.stringify({ entries "}),;
           });
-;
           if (!response.ok) {;
             // Only log to console if the logging endpoint fails;
             // to prevent circular logging;
@@ -185,11 +178,9 @@ class ProductionLogger {;"
       internalConsole.error('Failed to send logs to remote service:', error);
     };
   };
-;
   private flushLogs(): void {;
     if (this.logBuffer.length === 0) return;
-;
-    const const entriesToFlush = [...this.logBuffer];
+    const entriesToFlush = [...this.logBuffer];
     this.logBuffer = [];
 '
     this.sendToRemoteService(entriesToFlush);
@@ -197,7 +188,6 @@ class ProductionLogger {;"
 '
   private startLogFlushing(): void {;
     if (typeof window === 'undefined') return;
-;
     // Flush logs every 30 seconds;
     this.flushInterval = setInterval(() => {'
       this.flushLogs();
@@ -227,16 +217,15 @@ class ProductionLogger {;"
     // Track Core Web Vitals;
     try {'
       // First Contentful Paint;
-      const const paintEntries = performance.getEntriesByType('paint')'
-      const const fcpEntry = paintEntries.find(;
+      const paintEntries = performance.getEntriesByType('paint')'
+      const fcpEntry = paintEntries.find(;
         (entry) => entry.name === 'first-contentful-paint',;
       );
       if (fcpEntry) {;
         this.performanceMetrics.firstContentfulPaint = fcpEntry.startTime'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;
       // Navigation timing'
-      const const navigationEntry = performance.getEntriesByType(;
+      const navigationEntry = performance.getEntriesByType(;
         'navigation',;
       )[0] as PerformanceNavigationTiming;
       if (navigationEntry) {;
@@ -248,7 +237,7 @@ class ProductionLogger {;"
 '
       // Observe LCP and CLS;
       if ('PerformanceObserver' in window) {;
-        const const observer = new PerformanceObserver((list) => {'
+        const observer = new PerformanceObserver((list) => {'
           for (const entry of list.getEntries()) {;
             if (entry.entryType === 'largest-contentful-paint') {;
               this.performanceMetrics.largestContentfulPaint = entry.startTime;
@@ -277,32 +266,32 @@ class ProductionLogger {;"
   };
 '
   // Public logging methods;
-  debug(message: "string", context?: LogContext): void {;"
+  debug(message: string, context?: LogContext): void {;"
     if (!this.shouldLog('debug')) return'
 ;
-    const const entry = this.createLogEntry('debug', message, context)'
+    const entry = this.createLogEntry('debug', message, context)'
     this.outputToConsole(entry);
     this.bufferLogEntry(entry);
   }'
 ;
-  info(message: "string", context?: LogContext): void {;"
+  info(message: string, context?: LogContext): void {;"
     if (!this.shouldLog('info')) return'
 ;
-    const const entry = this.createLogEntry('info', message, context)'
+    const entry = this.createLogEntry('info', message, context)'
     this.outputToConsole(entry);
     this.bufferLogEntry(entry);
   }'
 ;
-  warn(message: "string", context?: LogContext): void {;"
+  warn(message: string, context?: LogContext): void {;"
     if (!this.shouldLog('warn')) return'
 ;
-    const const entry = this.createLogEntry('warn', message, context);
+    const entry = this.createLogEntry('warn', message, context);
     this.outputToConsole(entry)'
     this.bufferLogEntry(entry); // Warnings will still be buffered and sent to /api/logs and Sentry via that route if configured;
   };
 '
   error(;
-    message: "string",;"
+    message: string,;"
     errorPayload?: Error | unknown,;"
     context?: LogContext,;"
   ): void {;"
@@ -311,18 +300,18 @@ class ProductionLogger {;"
     // 1. Create a basic log entry for console output;
     // The 'error' field in errorContext is primarily for the console log here.;
     // reportExternalError will handle the raw errorPayload.;
-    const const errorForConsoleContext = {'
+    const errorForConsoleContext = {'
       ...context,;
       errorDetails:;
         errorPayload instanceof Error'
           ? {;
               name: "errorPayload.name"
               message: "errorPayload.message"
-              stack: "errorPayload.stack",;"
+              stack: errorPayload.stack,;"
             };"
           : { message: "String(errorPayload) "},;"
     };"
-    const const entry = this.createLogEntry('error', message, errorForConsoleContext);
+    const entry = this.createLogEntry('error', message, errorForConsoleContext);
     this.outputToConsole(entry); // Log to console for immediate visibility;
 '
     // 2. Report to external services using the imported logError (now reportExternalError);
@@ -349,7 +338,6 @@ class ProductionLogger {;"
     // We can pass productionLogger's context directly. If componentStack is needed,;
     // it should be part of the context passed to productionLogger.error().;
     reportExternalError(actualErrorToReport, context);
-;
     // 3. We do NOT call this.bufferLogEntry(entry) for errors here anymore,;
     // because reportExternalError handles Sentry, Datadog, LogRocket, and the custom webhook.;
     // /api/logs also sends to Sentry, which could lead to duplication if we also buffer.;
@@ -357,25 +345,23 @@ class ProductionLogger {;"
     // If /api/logs is also to report to Sentry, it should ideally deduplicate or have specific roles.;
     // For now, this simplifies and prevents double reporting from client via productionLogger.'
   };
-;
   // Performance logging'
   logPerformanceMetric(;
     name: "string"
-    value: "number",;"
+    value: number,;"
     context?: LogContext,;"
   ): void {;"
     this.info(`Performance: "${name"}`, {;"
-      metric: "name",;"
+      metric: name,;"
       value,;"
       unit: 'ms',;
       ...context,;
     })'
   };
-;
   logPerformanceMetrics(): void {'
     if (Object.keys(this.performanceMetrics).length > 0) {;
       this.info('Performance Metrics Summary', {;
-        metrics: "this.performanceMetrics",;
+        metrics: this.performanceMetrics,;
       });
     };"
   };";"
@@ -395,35 +381,28 @@ class ProductionLogger {;"
       performance.measure(label, `${label}-start`, `${label}-end`)'
 ;
       const measure: performance.getEntriesByName(label", 'measure')[0];
-      const const duration = measure?.duration || 0;
-;
+      const duration = measure?.duration || 0;
       this.logPerformanceMetric(label, duration);
-;
       // Clean up marks and measures;
       performance.clearMarks(`${label}-start`);
       performance.clearMarks(`${label}-end`);
       performance.clearMeasures(label);
-;
       return duration;
     } catch {;
       this.warn(`Timer measurement failed for ${label}`, { error });
       return undefined;
     };
   };
-;
   // Utility methods;
   setUserId(userId: string): void {;
     this.config.userId = userId;
   };
-;
   setLogLevel(level: LogLevel): void {;
     this.config.minLevel = level;
   };
-;
   getSessionId(): string {;
     return this.config.sessionId;
   };
-;
   // Cleanup;
   destroy(): void {;
     if (this.flushInterval) {;
@@ -432,21 +411,18 @@ class ProductionLogger {;"
     this.flushLogs();
   };
 };
-;
 // Create singleton instance;
-const const productionLogger = new ProductionLogger();
-;
+const productionLogger = new ProductionLogger();
 // Export convenience methods;
-export const const _logDebug = productionLogger.debug.bind(productionLogger);
-export const const _logInfo = productionLogger.info.bind(productionLogger);
-export const const _logWarn = productionLogger.warn.bind(productionLogger);
+export const _logDebug = productionLogger.debug.bind(productionLogger);
+export const _logInfo = productionLogger.info.bind(productionLogger);
+export const _logWarn = productionLogger.warn.bind(productionLogger);
 export const logErrorToProduction: unknown =;
   productionLogger.error.bind(productionLogger);
 export const logPerformance: unknown =;
   productionLogger.logPerformanceMetric.bind(productionLogger);
-export const const _timeStart = productionLogger.time.bind(productionLogger);
-export const const _timeEnd = productionLogger.timeEnd.bind(productionLogger);
-;
+export const _timeStart = productionLogger.time.bind(productionLogger);
+export const _timeEnd = productionLogger.timeEnd.bind(productionLogger);
 // Note: logError is not exported here to avoid conflicts with utils/logError.ts;
 // Use logErrorToProduction for production logging or import logError from utils/logError.ts for external error reporting'
 ;

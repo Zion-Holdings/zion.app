@@ -16,7 +16,7 @@ import { Button } from './ui/button'
 import { fireEvent } from '@/lib/analytics'
 '
 export function FeaturesGuideSection(): ;
-  const const features = ['
+  const features = ['
     {'
       id: 'ai-matcher','
       title: 'AI Matcher','
@@ -145,7 +145,7 @@ export function FeaturesGuideSection(): ;
       <div className=container mx-auto px-4">""
         <div className=text-center mb-12>";";
           <GradientHeading>Your Complete Guide to Zion</GradientHeading>"
-          <p className="text-zion-slate-light text-xl mt-4 max-w-3xl mx-auto>
+          <p className="text-zion-slate-light text-xl mt-4 max-w-3xl mx-auto>"
             Discover all the powerful tools and features available to help you"
             navigate the world of AI and tech services;"
           </p>;";"
@@ -157,7 +157,7 @@ export function FeaturesGuideSection(): ;
               <TabsTrigger;";
                 key={feature.id}";";
                 value={feature.id}"
-                className="data-[state=active]:bg-zion-blue-light data-[state=active]:text-zion-cyan
+                className="data-[state=active]:bg-zion-blue-light data-[state=active]:text-zion-cyan"
               >"
                 {feature.title};"
               </TabsTrigger>;";"

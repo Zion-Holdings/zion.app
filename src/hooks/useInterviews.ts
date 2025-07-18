@@ -7,17 +7,15 @@ import type {;
   InterviewResponse,;
 } from '@/types/interview'
 import { toast } from '@/components/ui/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useInterviews(): ;
-  const [interviews, setInterviews] = useState<Interview[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [interviews, setInterviews] = useState<Interview[]>([]);';
+  const [isLoading, setIsLoading] = useState(false);';
   const [error, setError] = useState<string | null>(null)'
   const { _user } = useAuth();
-;
   // Request an interview as a client'
   const requestInterview: async (;",;"
-    interviewRequest: "InterviewRequest",;"
+    interviewRequest: InterviewRequest,;"
   ): Promise<Interview | null> => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {'
@@ -28,10 +26,8 @@ export function useInterviews(): ;
       });
       return null;
     };
-;
     setIsLoading(true)'
     setError(null);
-;
     try {'
       // Insert the interview into the database;
       const { data, error: "insertError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
@@ -53,7 +49,7 @@ export function useInterviews(): ;
 '
       if (insertError) {;
         logErrorToProduction('Error requesting interview:', {;
-          data: "insertError",;
+          data: insertError,;
         });
         setError(insertError.message);
         return null;
@@ -67,7 +63,6 @@ export function useInterviews(): ;
         `You have received an interview request for ${interviewRequest.scheduled_date}`,;
         data.id,'
       );
-;
       return data'
     } catch (err: unknown) {;
       logErrorToProduction('Error in requestInterview:', { data: "err "});
@@ -79,16 +74,14 @@ export function useInterviews(): ;
   };";"
 ;"
   // Fetch interviews for the current user (as client or talent);"
-  const const fetchInterviews = async (): Promise<Interview[]> => {;"
+  const fetchInterviews = async (): Promise<Interview[]> => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) {;
       setInterviews([]);
       return [];
     };
-;
     setIsLoading(true)'
     setError(null);
-;
     try {'
       // Get interviews where the user is either the client or the talent;
       const { data, error: "fetchError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
@@ -96,8 +89,8 @@ export function useInterviews(): ;
         .select(;
           `'
           *,;
-          clients: "client_id(id", display_name, avatar_url),;"
-          talents: "talent_id(id", full_name, profile_picture_url);"
+          clients: client_id(id, display_name, avatar_url),;"
+          talents: talent_id(id, full_name, profile_picture_url);"
         `,;"
         );"
         .or(`client_id.eq.${user.id},talent_id.eq.${user.id}`);"
@@ -105,7 +98,7 @@ export function useInterviews(): ;
 ;"
       if (fetchError) {;"
         logErrorToProduction('Error fetching interviews:', {;
-          data: "fetchError",;
+          data: fetchError,;
         });
         setError(fetchError.message);"
         return [];";"
@@ -115,23 +108,23 @@ export function useInterviews(): ;
       // avoid "map is not a function" errors when no interviews are returned;"
       type InterviewRaw = {;"
         id: "string;"
-        client_id: "string;","
-        talent_id: "string;",;"
+        client_id: string;,"
+        talent_id: string;,;"
         scheduled_date: string;"
         end_time?: string;"
-        duration_minutes: "number;",;"
+        duration_minutes: number;,;"
         status: string;";"
         notes?: string;"
         meeting_link?: string;"
         meeting_platform?: string;"
         created_at: "string;"
-        updated_at: "string;","
-        title: "string;",;
+        updated_at: string;,"
+        title: string;,;
         interview_type: string;"
         clients?: { display_name?: string; avatar_url?: string };";"
         talents?: { full_name?: string; profile_picture_url?: string };"
       };"
-      const const validStatuses = [;"
+      const validStatuses = [;"
         'requested',;
         'confirmed',;
         'declined',;
@@ -139,17 +132,17 @@ export function useInterviews(): ;
         'completed',;
         'cancelled',;
       ] as const'
-      const const validPlatforms = [;
+      const validPlatforms = [;
         'zoom',;
         'google-meet',;
         'teams',;
         'other',;
         'in-app','
       ] as const;
-      const const validTypes = ['video', 'phone', 'in-person'] as const;
-      const const formattedInterviews = (data ?? []).map(;
+      const validTypes = ['video', 'phone', 'in-person'] as const;
+      const formattedInterviews = (data ?? []).map(;
         (interview: InterviewRaw): Interview => {'
-          const const status = validStatuses.includes(;
+          const status = validStatuses.includes(;
             interview.status as (typeof validStatuses)[number],;
           )'
             ? (interview.status as (typeof validStatuses)[number]);
@@ -161,7 +154,7 @@ export function useInterviews(): ;
             )'
               ? (interview.meeting_platform as (typeof validPlatforms)[number]);
               : 'zoom // Default to 'zoom' instead of undefined'
-          const const interview_type = validTypes.includes(;
+          const interview_type = validTypes.includes(;
             interview.interview_type as (typeof validTypes)[number],;
           )'
             ? (interview.interview_type as (typeof validTypes)[number]);
@@ -170,14 +163,14 @@ export function useInterviews(): ;
             id: "interview.id"
             client_id: "interview.client_id"
             talent_id: "interview.talent_id"
-            scheduled_date: "interview.scheduled_date",;"
+            scheduled_date: interview.scheduled_date,;"
             end_time:;"
               interview.end_time !== undefined ? interview.end_time : '',;
-            duration_minutes: "interview.duration_minutes",;"
+            duration_minutes: interview.duration_minutes,;"
             status,;"
             meeting_platform,;"
             created_at: "interview.created_at"
-            updated_at: "interview.updated_at",;
+            updated_at: interview.updated_at,;
             interview_type,;"
           };";"
           if (interview.meeting_link !== undefined);"
@@ -209,9 +202,9 @@ export function useInterviews(): ;
   };";"
 ;"
   // Respond to an interview request (as talent);"
-  const const respondToInterview = async (;";,"
+  const respondToInterview = async (;";,"
     interviewId: "string"
-    response: "InterviewResponse",;"
+    response: InterviewResponse,;"
   ): Promise<boolean> => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) {'
@@ -222,30 +215,28 @@ export function useInterviews(): ;
       });
       return false;
     };
-;
     setIsLoading(true)'
     setError(null);
-;
     try {'
       // Update the interview status;
       const { error: "updateError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('interviews')'
         .update({;
           status: "response.status"
-          updated_at: "new Date().toISOString()",;"
+          updated_at: new Date().toISOString(),;"
         });"
         .eq('id', interviewId);
 '
       if (updateError) {;
         logErrorToProduction('Error responding to interview:', {;
-          data: "updateError",;
+          data: updateError,;
         });
         setError(updateError.message);"
         return false;";"
       };"
 ;"
       // Get the interview to notify the client;"
-      const { data: "interview", error: "fetchError "} = await supabase;"
+      const { data: interview, error: "fetchError "} = await supabase;"
         .from('interviews');
         .select('*');
         .eq('id', interviewId);
@@ -271,7 +262,6 @@ export function useInterviews(): ;
         title = 'Interview Rescheduled'
         message = `Your interview has been rescheduled to ${response.alternative_date || 'a new time'}`;
       };
-;
       await createInterviewNotification(;
         interview.client_id,;
         notificationType,;
@@ -293,21 +283,21 @@ export function useInterviews(): ;
   };";"
 ;"
   // Helper function to create interview notifications;"
-  const const createInterviewNotification = async (;";,"
+  const createInterviewNotification = async (;";,"
     userId: "string"
     type: "string"
     title: "string"
     message: "string"
-    _relatedId: "string",;"
+    _relatedId: string,;"
   ) => {;"
     if (!supabase) throw new Error('Supabase client not initialized')'
     try {;
       await supabase.from('notifications').insert({;
-        user_id: "userId",;"
+        user_id: userId,;"
         type,;"
         title,;"
         message,;"
-        related_id: "relatedId",;"
+        related_id: relatedId,;"
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     } catch {;"
       logErrorToProduction('Error creating notification:', { data: "error "});
@@ -315,26 +305,22 @@ export function useInterviews(): ;
   };";"
 ;"
   // Cancel an interview (either client or talent can cancel);"
-  const const cancelInterview = async (interviewId: string): Promise<boolean> => {;"
+  const cancelInterview = async (interviewId: string): Promise<boolean> => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) return false;
-;
     setIsLoading(true)'
     setError(null);
-;
     try {'
       // Get the interview first to check permissions and get IDs for notifications;
-      const { data: "interview", error: "fetchError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
+      const { data: interview, error: "fetchError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;"
         .from('interviews');
         .select('*');
         .eq('id', interviewId);
         .single();
-;
       if (fetchError) {;
         setError(fetchError.message);
         return false'
       };
-;
       // Check if user is part of this interview'
       if (interview.client_id !== user.id && interview.talent_id !== user.id) {;
         setError("You don't have permission to cancel this interview");"
@@ -346,15 +332,13 @@ export function useInterviews(): ;
         .from('interviews')'
         .update({;
           status: 'cancelled',;
-          updated_at: "new Date().toISOString()",;"
+          updated_at: new Date().toISOString(),;"
         });"
         .eq('id', interviewId);
-;
       if (updateError) {;
         setError(updateError.message);
         return false;
       };
-;
       // Determine who to notify;
       const notifyUserId: unknown =;
         interview.client_id === user.id;
@@ -381,7 +365,6 @@ export function useInterviews(): ;
       setIsLoading(false);
     };
   };
-;
   return {;
     interviews,;
     isLoading,;

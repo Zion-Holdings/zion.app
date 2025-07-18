@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { NextSeo } from '@/components/NextSeo'
-import { Button } from '@/components/ui/button;
-;
-const const modules = ['
+import { Button } from '@/components/ui/button;';
+const modules = ['
   {;
     title: 'Module 1 — \uD83C\uDF0D Introduction to Zion','
     points: [;
       'What is Zion OS?',;
-      'Mission: "AI", Talent, Trust',;
+      'Mission: AI, Talent, Trust',;
       'Multiverse and Nation-as-a-DAO',;
     ],;
   },'
@@ -50,14 +49,14 @@ const const modules = ['
 '
 async function fetchWithRetry(): unknown {): unknown {): unknown {): unknown {): unknown {;
   url: "string"
-  options: "RequestInit",;
+  options: RequestInit,;
   retries = 3,;"
   backoff = 500,;";"
 ) {;"
   try {;"
-    const res: await fetch(url", options);"
+    const res = await fetch(url", options);"
     if (!res.ok) {;"
-      const const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');
       throw new Error(text || `Request failed with status ${res.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
     };
     return res.json();
@@ -79,14 +78,12 @@ export default function FounderCoursePage(): ;"
   const [loadingSummary, setLoadingSummary] = useState(false);
   const [loadingQuiz, setLoadingQuiz] = useState(false);
   const [error, setError] = useState<string | null>(null);
-;
-  const const completeModule = () => setProgress((p) => p + 1);
-;
-  const const callSummary = async (_text: string) => {'
+  const completeModule = () => setProgress((p) => p + 1);
+  const callSummary = async (_text: string) => {'
     setError(null);
     setLoadingSummary(true);
     try {'
-      const const data = await fetchWithRetry(;
+      const data = await fetchWithRetry(;
         '/api/summarize','
         {;
           method: 'POST',;
@@ -105,12 +102,11 @@ export default function FounderCoursePage(): ;"
       setLoadingSummary(false);
     };
   };
-;
-  const const callQuiz = async (_topic: string) => {'
+  const callQuiz = async (_topic: string) => {'
     setError(null);
     setLoadingQuiz(true);
     try {'
-      const const data = await fetchWithRetry(;
+      const data = await fetchWithRetry(;
         '/api/generate-quiz','
         {;
           method: 'POST',;
@@ -185,7 +181,7 @@ export default function FounderCoursePage(): ;"
             <div key={i}>;"
               <p className="font-medium">{q.question}</p>;"
               <ul className="list-disc pl-6">;"
-                {q.options.map((o: "string", j: number) => (;
+                {q.options.map((o: string, j: number) => (;
                   <li key={j}>{o}</li>;
                 ))};
               </ul>;

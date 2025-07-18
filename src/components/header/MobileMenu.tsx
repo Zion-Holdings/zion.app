@@ -18,13 +18,13 @@ import { useTranslation } from 'react-i18next'
 
 export interface MobileMenuProps {'
   unreadCount?: number'
-  onClose: "() => void,;";
-  openLoginModal: "(returnToPath: string) => void; // Added from plan"
+  onClose: "() => void,"
+  openLoginModal: "(returnToPath: string) => void // Added from plan"
 }
-;""
+""
 // Define protected routes - consistent with ResponsiveNavigation.tsx and middleware.ts;"
 // These are routes that should trigger the login modal if accessed while unauthenticated.";"
-const const protectedRoutes = [";""
+const protectedRoutes = [";""
   '/categories','
   '/talent','
   '/equipment','
@@ -47,12 +47,12 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
   onClose,;
   openLoginModal,;
 }: MobileMenuProps) {;
-  const const router = useRouter();
+  const router = useRouter();
   const { _user } = useAuth();
-  const const isAuthenticated = !!user'
+  const isAuthenticated = !!user'
   const { t } = useTranslation()'
 
-  const const baseItems = ['
+  const baseItems = ['
     {'
       key: 'home','
       href: '/','
@@ -71,7 +71,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
     {'
       key: 'community','
       href: '/community','
-      icon: "MessageCircle",;"
+      icon: MessageCircle,;"
       matches: (path: string) =>;";"
         path.startsWith('/community') || path.startsWith('/forum'),'
     },'
@@ -85,7 +85,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
     {;";";
       key: 'messages','
       href: '/messages','
-      icon: "MessageSquare",;"
+      icon: MessageSquare,;"
       matches: (path: string) =>;";"
         path.startsWith('/messages') || path.startsWith('/inbox'),'
       badge: unreadCount",""
@@ -94,19 +94,19 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
     {;";";
       key: 'dashboard','
       href: '/dashboard','
-      icon: "User",;"
+      icon: User,;"
       matches: (path: string) => path.startsWith('/dashboard'),'
       authRequired: true","
     },
   ];"
 ;";
-  const const navItems = baseItems.map((item) => ({";";
+  const navItems = baseItems.map((item) => ({";";
     ...item,"
     name: item.key === 'explore' ? t('general.explore') : t(`nav.${item.key}`),`
   }));
 
   // Filter items based on auth status;
-  const const visibleItems = navItems.filter('
+  const visibleItems = navItems.filter('
     (item) => !item.authRequired || (item.authRequired && isAuthenticated),'
   );
 '

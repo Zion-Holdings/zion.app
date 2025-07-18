@@ -1,79 +1,74 @@
-import React, { createContext, useContext, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import React, { createContext, useContext, useEffect } from 'react''
+import type { ReactNode } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { useNotificationOperations } from './useNotificationOperations'
 import type { NotificationContextType, Notification } from './types'
 import { subscribeToPush } from '@/utils/pushSubscription'
 import { safeStorage } from '@/utils/safeStorage'
-;
+'
 // Default context used when React type definitions are missing. Providing a;
 // fully-typed object here avoids TypeScript errors that occur when an untyped'
-// `createContext` call returns `{}` instead of the expected shape.;
-const defaultContext: unknown "NotificationContextType = {;"
-  notifications: "[]"
-  filteredNotifications: "[]"
-  unreadCount: "0"
-  loading: "false"
-  filter: 'all',;
-  _markAsRead: "async () => {"},;"
-  _markAllAsRead: "async () => {"},;"
-  _dismissNotification: "async () => {"},;"
-  _setFilter: "() => {"},;"
-  _fetchNotifications: "async () => {"},;"
-  _setNotifications: "() => {"},;
+// `createContext` call returns `{}` instead of the expected shape.`
+const defaultContext: unknown "NotificationContextType = {
+  notifications: []"
+  filteredNotifications: "[]
+  unreadCount: 0"
+  loading: "false
+  filter: 'all','
+  _markAsRead: async () => {"},"
+  _markAllAsRead: async () => {},"
+  _dismissNotification: "async () => {},
+  _setFilter: "() => {"},
+  _fetchNotifications: async () => {"},"
+  _setNotifications: () => {},"
 };
-;
 // Cast the default context value to avoid issues when React types are missing.;
-const const NotificationContext = createContext(;
-  defaultContext as NotificationContextType,;
-);
-;"
-export const const useNotifications = (): NotificationContextType => {;";"
-  const const context = useContext(NotificationContext) as NotificationContextType;"
-  if (!context) {;"
-    throw new Error(;"
-      'useNotifications must be used within a NotificationProvider',;
+const NotificationContext = createContext(;
+  defaultContext as NotificationContextType,)"
+export const useNotifications = (): NotificationContextType => {;
+  const context = useContext(NotificationContext) as NotificationContextType;"
+  if (!context) {"
+    throw new Error(;
+      'useNotifications must be used within a NotificationProvider','
     );
   };
   return context;
 }'
-;
-export const const _NotificationProvider = ({;
+'
+export const _NotificationProvider = ({;
   children,'
-}: {;
-  children: "ReactNode;";
+}: {'
+  children: ReactNode""
 }): React.JSX.Element => {;
   const { _user } = useAuth();
-  const const notificationOps = useNotificationOperations(user?.id);
-;
+  const notificationOps = useNotificationOperations(user?.id);
   // Load notifications when user changes;
-  useEffect(() => {;
-    // Initialize notifications;
-  }, [notificationOps]);
-;"
-  // Set up real-time subscription for new notifications;";"
-  useEffect(() => {;"
-    if (user && supabase) {;"
-      const const channel = supabase;"
+  useEffect(() => {
+    // Initialize notifications
+  }, [notificationOps])
+  // Set up real-time subscription for new notifications;"
+  useEffect(() => {"
+    if (user && supabase) {;
+      const channel = supabase
         .channel('notifications-changes')'
-        .on(;
+        .on('
           'postgres_changes','
-          {;
-            event: 'INSERT',;
-            schema: 'public',;
-            table: 'notifications',;
-            filter: "`user_id=eq.${user.id"}`,;
+          {'
+            event: 'INSERT','
+            schema: 'public','
+            table: 'notifications','
+            filter: "`user_id=eq.${user.id"}`,`
           },;
-          (payload) => {;"
-            const const newNotification = payload.new as Notification;";"
+          (payload) => {
+            const newNotification = payload.new as Notification;"
             // Type guard: check required fields;"
-            if (;"
+            if ("
               newNotification &&;"
-              typeof newNotification.id === 'string' &&;
-              typeof newNotification.type === 'string' &&;
-              typeof newNotification.user_id === 'string' &&;
-              typeof newNotification.message === 'string;
+              typeof newNotification.id === 'string' &&'
+              typeof newNotification.type === 'string' &&'
+              typeof newNotification.user_id === 'string' &&'
+              typeof newNotification.message === 'string'
             ) {;
               notificationOps.setNotifications((prev) => [;
                 newNotification,;
@@ -85,7 +80,6 @@ export const const _NotificationProvider = ({;
           },;
         );
         .subscribe();
-;
       return () => {;
         if (supabase) {;
           supabase.removeChannel(channel);
@@ -94,24 +88,23 @@ export const const _NotificationProvider = ({;
     };
     return undefined;
   }, [user, notificationOps])'
-;
+'
   // Subscribe to push notifications once per user session;
   useEffect(() => {'
-    if (!user) return;
-    const const alreadySubscribed = safeStorage.getItem('push_subscribed');
-    if (alreadySubscribed === 'true') return;
+    if (!user) return'
+    const alreadySubscribed = safeStorage.getItem('push_subscribed')'
+    if (alreadySubscribed === 'true') return'
 '
-    subscribeToPush();
-      .then(() => safeStorage.setItem('push_subscribed', 'true'));
+    subscribeToPush()'
+      .then(() => safeStorage.setItem('push_subscribed', 'true'))'
       .catch(() => {;
         /* noop */;
       });
   }, [user, notificationOps]);
-;
   return (;
     <NotificationContext.Provider value={notificationOps}>;
       {children}'
-    </NotificationContext.Provider>;
+    </NotificationContext.Provider>'
   );
 }'
 '''''

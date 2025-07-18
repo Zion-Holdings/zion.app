@@ -8,9 +8,9 @@ export function FloatingCTA(): ;
   const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {;
-    const const handleScroll = () => {;
-      const const scrollPosition = window.scrollY;
-      const const threshold = 600; // Show CTA after scrolling 600px;
+    const handleScroll = () => {;
+      const scrollPosition = window.scrollY;
+      const threshold = 600; // Show CTA after scrolling 600px;
 
       if (scrollPosition > threshold && !isClosed) {;
         setIsVisible(true);
@@ -25,7 +25,7 @@ export function FloatingCTA(): ;
     };
   }, [isClosed]);
 
-  const const handleClose = () => {;
+  const handleClose = () => {;
     setIsClosed(true);
     setIsVisible(false);
   }'

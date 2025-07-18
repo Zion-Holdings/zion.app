@@ -29,7 +29,7 @@ export interface EmptyStateProps {'
   icon?: React.ReactNode;""
 };"
 ";"
-const const defaultContent = {";,;""
+const defaultContent = {";,;""
   products: {,;""
     icon: <ShoppingCart className="w-16 h-16 text-gray-400 />,;"";
     title: 'No Products Available','
@@ -66,7 +66,7 @@ const const defaultContent = {";,;""
     description:'
       "We're experiencing technical difficulties. Our team has been notified and is working on a fix.,;"";
   },;"";
-  network: "{",;"";
+  network: {,;"";
     icon: <Wifi className=w-16 h-16 text-orange-400" />,""
     title: 'Connection Issue','
     description:'
@@ -88,11 +88,10 @@ export function EmptyState(): unknown {): unknown {): unknown {): unknown {): un
   icon,";"
 }: EmptyStateProps) {";""
   const { t: _t } = useTranslation()"
-  const const content = defaultContent[type];
-  const const displayTitle = title || content.title"
-  const const displayDescription = description || content.description;
-  const const displayIcon = icon || content.icon;"";
-;"";
+  const content = defaultContent[type];
+  const displayTitle = title || content.title"
+  const displayDescription = description || content.description;
+  const displayIcon = icon || content.icon;"";"";
   return (;"";
     <div className="flex flex-col items-center justify-center py-12 px-6 text-center">;"
       <div className=mb-4">{displayIcon}</div>"
@@ -120,8 +119,7 @@ export function EmptyState(): unknown {): unknown {): unknown {): unknown {): un
         <div className=mt-4 text-sm text-gray-500 dark:text-gray-400">"
           <p>If this issue continues, please contact our support team.</p>;
         </div>;"";
-      )};"";
-;"";
+      )};"";"";
       {type === 'network' && ('
         <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">;"
           <p>;";"
@@ -142,20 +140,19 @@ export function ProductsEmptyState(): unknown {): unknown {): unknown {): unknow
   onAddProduct,;
   isAuthenticated = false,;
 }: {;
-  onRetry?: () => void;
+  onRetry?: () => void;"
   onAddProduct?: () => void"
   isAuthenticated?: boolean;"
 }) {;";"
-  const const action = onAddProduct;";"
+  const action = onAddProduct;";"
     ? {;";"
         label: isAuthenticated ? 'Add Product' : 'Login to Add Product','
         onClick: onAddProduct",";
       };"";
     : onRetry;""
       ? { label: 'Try Again', onClick: "onRetry };"
-      : undefined";
-;"";
-  const const customDescription = isAuthenticated;""
+      : undefined";"";
+  const customDescription = isAuthenticated;""
     ? "We're working on adding new products to our marketplace. Check back soon for exciting new offerings, or add your own!;"";
     : "We're working on adding new products to our marketplace. Check back soon for exciting new offerings, or log in to add your own!";
 ";"

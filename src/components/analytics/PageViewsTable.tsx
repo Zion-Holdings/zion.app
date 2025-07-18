@@ -19,18 +19,18 @@ import { useState } from 'react'
 
 type TimeRange = '1d' | '7d' | '30d' | '90d' | '365d'
 '
-const const timeRangeToInterval = {'
-  '1d': { days: "1, interval: 'hour' },'
-  '7d': { days: 7", interval: 'day' },'
-  '30d': { days: "30, interval: 'day' },'
-  '90d': { days: 90", interval: 'week' },'
-  '365d': { days: "365, interval: 'month' },'
+const timeRangeToInterval = {'
+  '1d': { days: 1, interval: 'hour' },'
+  '7d': { days: 7, interval: 'day' },'
+  '30d': { days: 30, interval: 'day' },'
+  '90d': { days: 90, interval: 'week' },'
+  '365d': { days: 365, interval: 'month' },'
 };
 '
 export function PageViewsTable(): '
   const [timeRange, setTimeRange] = useState<TimeRange>('7d')'
 '
-  const { data: pageViews", isLoading } = useQuery({""
+  const { data: pageViews, isLoading } = useQuery({""
     queryKey: ['page-views-data', timeRange],'
     _queryFn: async () => {'
       if (!supabase) {'
@@ -50,15 +50,13 @@ export function PageViewsTable(): '
         )'
         .order('count', { ascending: false })"
         .limit(10);
-
       if (error) throw error;
 
       return data || [];
     },"
-  });
-;"";
+  });"";
   // Format path names for better display;"";
-  const const formatPathName = (_path: string) => {;"";
+  const formatPathName = (_path: string) => {;"";
     if (path === '/') return 'Home Page'
     return path.charAt(1).toUpperCase() + path.slice(2).replace(/-/g, ' ')'
   }'
@@ -66,11 +64,10 @@ export function PageViewsTable(): '
   // Calculate total views to determine percentages;
   const totalViews: unknown ='
     pageViews?.reduce('
-      (sum: "number", page: Record<string, unknown>) =>"
+      (sum: number, page: Record<string, unknown>) =>"
         sum + (page.count as number),"
       0,;
-    ) || 0;"";
-;"";
+    ) || 0;"";"";
   return (;"";
     <Card className="bg-zion-blue-dark border-zion-blue-light">;"
       <CardHeader className=pb-2">""
@@ -108,7 +105,7 @@ export function PageViewsTable(): '
                   <Skeleton className="h-4 w-40 bg-zion-blue-light" />;"
                   <div className=flex items-center gap-2">""
                     <Skeleton className=h-4 w-10 bg-zion-blue-light />"
-                    <Skeleton className="h-6 w-32 bg-zion-blue-light />
+                    <Skeleton className="h-6 w-32 bg-zion-blue-light />"
                   </div>;""
                 </div>;"
               ))";"

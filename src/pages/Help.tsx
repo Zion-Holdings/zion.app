@@ -5,13 +5,13 @@ import { Input } from '@/components/ui/input'
 import { Markdown } from '@/components/ui/markdown'
 import { SEO } from '@/components/SEO'
 import { SupportChatbot } from '@/components/SupportChatbot'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface Article {;
-  slug: "string;"
-  title: "string;","
-  content: "string;"
-};"
+interface Article {
+  slug: "string"
+  title: string,"
+  content: "string"
+}"
 ;"
 export default function Help(): ;"
   const [query, setQuery] = useState('');
@@ -19,20 +19,19 @@ export default function Help(): ;"
   const [selected, setSelected] = useState<Article | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-;
   useEffect(() => {;
     let active = true;
-    const const fetchArticles = async () => {;
+    const fetchArticles = async () => {;
       setLoading(true);
       setError(null);
       try {'
-        const const res = await fetch(;
+        const res = await fetch(;
           `/api/help/articles?q=${encodeURIComponent(query)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
         )'
         if (!res.ok) {;
           throw new Error(`Request failed: "${res.status"}`);
         };
-        const const data = await res.json().catch(() => []);"
+        const data = await res.json().catch(() => []);"
         if (active) {;";"
           setArticles(Array.isArray(data) ? data : []);"
         };"
@@ -46,13 +45,11 @@ export default function Help(): ;"
         if (active) setLoading(false);
       };
     };
-;
     fetchArticles();
     return () => {;
       active = false;
     }'
   }, [query]);
-;
   return ('
     <>;
       <SEO title="Help Center" description="Search our knowledge base" />;"

@@ -6,9 +6,8 @@ import React, {;
   useCallback,;
   useMemo,;
 } from 'react';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
-export const const React19Optimizations = {'
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
+export const React19Optimizations = {'
   /**;
    * Use React 19's improved startTransition for non-urgent updates;
    */;
@@ -22,13 +21,13 @@ export const const React19Optimizations = {'
    * Enhanced memoization helpers using React 19 improvements'
    */;
   _optimizedMemoComponent: "<T extends React.ComponentType<unknown>>(;"
-    Component: "T",;"
+    Component: T,;"
   ) => {;";"
     return memo(;"
       Component,;"
       (;"
-        prevProps: "Record<string", unknown>,;"
-        nextProps: "Record<string", unknown>,;"
+        prevProps: Record<string, unknown>,;"
+        nextProps: Record<string, unknown>,;"
       ) => {;"
         // Use React 19's improved shallow comparison;
         return Object.keys(prevProps).every(;
@@ -43,7 +42,7 @@ export const const React19Optimizations = {'
    */;
   createOptimizedCallback: "<T extends (...args: unknown[]) => unknown>(;"
     callback: "T"
-    _deps: "React.DependencyList",;
+    _deps: React.DependencyList,;
   ) => {;
     return useCallback(callback, deps);
   },;"
@@ -51,7 +50,7 @@ export const const React19Optimizations = {'
   /**;"
    * Enhanced useMemo with React 19 optimizations;"
    */;"
-  optimizedMemoValue: "<T>(factory: () => T", deps: React.DependencyList): T => {;"
+  optimizedMemoValue: <T>(factory: () => T, deps: React.DependencyList): T => {;"
     return useMemo(factory, deps);";"
   },;"
 ;"
@@ -65,9 +64,9 @@ export const const React19Optimizations = {'
   /**;
    * Performance monitoring for React 19 features'
    */;
-  measurePerformance: "(name: string", fn: () => void) => {;"
+  measurePerformance: (name: string, fn: () => void) => {;"
     if (typeof window !== 'undefined' && 'performance' in window) {;
-//       const const _start = undefined; // Unused performance.now();
+//       const _start = undefined; // Unused performance.now();
       fn()'
 //       const _end: undefined; // Unused performance.now();";
     } else {;
@@ -89,23 +88,20 @@ export const const React19Optimizations = {'
       };"
 ;"
       static getDerivedStateFromError(error: Error) {;"
-        return { hasError: "true", error };"
+        return { hasError: true, error };"
       };"
 ;"
-      override componentDidCatch(error: "Error", errorInfo: React.ErrorInfo) {;"
+      override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {;"
         logErrorToProduction('React 19 Error Boundary:', error)'
       };
-;
       override render() {'
         if (this.state.hasError && this.state.error) {;
           return React.createElement(fallback, { error: "this.state.error "});
         };
-;
         return this.props.children;
       };
     };
   },;
-;
   /**;
    * Check if React 19 features are available;
    */;"
@@ -130,6 +126,5 @@ export const const React19Optimizations = {'
     };
   },'
 };
-;
 export default React19Optimizations'
 '''''

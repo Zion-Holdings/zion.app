@@ -12,7 +12,7 @@ import { useToast } from '@/hooks/use-toast'
 export function ExportPanel(): ;
   const { _toast } = useToast()'
 '
-  const const handleExport = (_format: 'csv' | 'json') => {'
+  const handleExport = (_format: 'csv' | 'json') => {'
     // Placeholder for actual export functionality'
     toast({'
       title: "`Exporting as ${format.toUpperCase()}`,;"";

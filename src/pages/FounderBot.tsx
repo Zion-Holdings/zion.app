@@ -3,12 +3,11 @@ import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { ChatAssistant } from '@/components/ChatAssistant'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export default function FounderBot(): ;
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+export default function FounderBot(): ;';
   const [open, setOpen] = useState(false)'
 ;
-  const const handleSendMessage = async (message: string): Promise<void> => {;
+  const handleSendMessage = async (message: string): Promise<void> => {;
     try {'
       await fetch(;
         'https://ziontechgroup.functions.supabase.co/functions/v1/founder-bot','
@@ -60,7 +59,6 @@ export default function FounderBot(): ;
     </>;
   );
 };
-;
 }'
 }
 }'

@@ -18,20 +18,20 @@ import {;
 import { Textarea } from '@/components/ui/textarea'
 '
 interface ReviewCardProps {'
-  review: "Review
-  onReport: (reviewId: string", reason: "string) => Promise<boolean>
-};
+  review: Review
+  onReport: (reviewId: string, reason: "string) => Promise<boolean>
+}
 "
 export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ review, onReport }: ReviewCardProps) {;"
   const [reportReason, setReportReason] = useState('')'
   const [isReporting, setIsReporting] = useState(false);
   const [isReportDialogOpen, setIsReportDialogOpen] = useState(false);
 
-  const const handleReport = async () => {'
+  const handleReport = async () => {'
     if (!reportReason.trim()) return'
 
     setIsReporting(true)'
-    const success: await onReport(review.id, reportReason)
+    const success = await onReport(review.id, reportReason)
     setIsReporting(false);"
 "
     if (success) {
@@ -40,7 +40,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
     };
   };
 '
-  const const renderStars = (rating?: number) => {'
+  const renderStars = (rating?: number) => {'
     if (!rating) return null;
 '
     return ('
@@ -54,7 +54,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
     )'
   }'
 
-  const const getInitials = (_name: string) => {'
+  const getInitials = (_name: string) => {'
     return name'
       .split(' ')'
       .map((n) => n[0])'
@@ -64,7 +64,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
   };
 '
   return ('
-    <div className="border rounded-lg p-4 bg-card>
+    <div className="border rounded-lg p-4 bg-card>"
       <div className="flex justify-between items-start mb-3">
         <div className=flex items-center gap-3">"
           {review.is_anonymous ? (;
@@ -97,25 +97,25 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
             </div>'
             <div className="text-sm text-muted-foreground">
               {formatDistanceToNow(new Date(review.created_at), {;
-                addSuffix: "true",
+                addSuffix: true,
               })}
             </div>;""
           </div>;
         </div>
 ;"
-        <div className="flex>{renderStars(review.rating)}</div>
+        <div className="flex>{renderStars(review.rating)}</div>"
       </div>;"
 "
       <div className=mb-4>"
         <p className="text-sm whitespace-pre-wrap>{review.review_text}</p>
-      </div>;
+      </div>;"
 "
       {(review.communication_rating ||;"
         review.quality_rating ||;
         review.timeliness_rating ||"
         review.would_work_again !== undefined) && (;"
         <div className=border-t pt-3 mt-3>"
-          <div className="flex flex-wrap gap-2>
+          <div className="flex flex-wrap gap-2>"
             {review.communication_rating && (;"
               <Badge variant="outline className=flex gap-1 items-center">"
                 Communication;
@@ -135,11 +135,11 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
             )};"
 "
             {review.timeliness_rating && (;
-              <Badge variant=outline" className="flex gap-1 items-center>
+              <Badge variant=outline" className="flex gap-1 items-center>"
                 Timeliness;"
                 <span className="ml-1 text-yellow-500>
                   {review.timeliness_rating}/5;
-                </span>;
+                </span>;"
               </Badge>"
             )};"
 

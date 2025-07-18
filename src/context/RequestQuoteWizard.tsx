@@ -1,84 +1,77 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react''
+import type { ReactNode } from 'react''
 import { useRouter } from 'next/router'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { toast } from '@/hooks/use-toast'
-import axios from 'axios;
-;
-export type WizardStep = 'Services' | 'Details' | 'Success;
+import axios from 'axios;''
+export type WizardStep = 'Services' | 'Details' | 'Success'
 '
-export interface RequestQuoteWizardContextType {;
-  step: "WizardStep;"
-  selectedService: "string | null;","
-  goToStep: "(step: WizardStep) => void;"
-  selectService: "(serviceId: string) => void;"
-  startQuote: "(serviceId: string) => void;"
-  submitQuote: "(message: string) => Promise<void>;"
-};"
-;"
-const defaultContext: unknown "RequestQuoteWizardContextType = {;"
-  step: 'Services',;
+export interface RequestQuoteWizardContextType {
+  step: "WizardStep
+  selectedService: string | null,
+  goToStep: "(step: WizardStep) => void"
+  selectService: (serviceId: string) => void
+  startQuote: "(serviceId: string) => void"
+  submitQuote: (message: string) => Promise<void>
+}"
+"
+const defaultContext: unknown RequestQuoteWizardContextType = {
+  step: 'Services','
   selectedService: "null"
-  _goToStep: "() => {"},;"
-  _selectService: "() => {"},;"
-  _startQuote: "() => {"},;"
-  _submitQuote: "async () => {"},;
+  _goToStep: () => {},"
+  _selectService: "() => {},
+  _startQuote: "() => {"},
+  _submitQuote: async () => {"},"
 };
-;
 const RequestQuoteWizardContext: unknown =;
   createContext<RequestQuoteWizardContextType>(defaultContext);
-;
 export function useRequestQuoteWizard(): unknown {): unknown {): unknown {): unknown {): unknown {): RequestQuoteWizardContextType {;
   return useContext(RequestQuoteWizardContext);
-};"
-;";"
+}
+;"
 export function RequestQuoteWizardProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  children,;"
-}: {;"
-  children: "ReactNode;"
-}) {;"
-  const [step, setStep] = useState<WizardStep>('Services');
+  children,
+}: {;
+  children: "ReactNode"
+}) {;
+  const [step, setStep] = useState<WizardStep>('Services')'
   const [selectedService, setSelectedService] = useState<string | null>(null);
-  const const router = useRouter();
+  const router = useRouter();
 '
-  const const goToStep = (next: WizardStep) => setStep(next);
-;
-  const const selectService = (_serviceId: string) => {'
-    setSelectedService(serviceId);
+  const goToStep = (next: WizardStep) => setStep(next)'
+  const selectService = (_serviceId: string) => {'
+    setSelectedService(serviceId)'
     goToStep('Details')'
-  };
-;
-  const const startQuote = (_serviceId: string) => {'
-    setSelectedService(serviceId);
-    goToStep('Details');
   }'
-;
-  const const submitQuote = async (_message: string) => {;
+  const startQuote = (_serviceId: string) => {'
+    setSelectedService(serviceId)'
+    goToStep('Details')'
+  }'
+'
+  const submitQuote = async (_message: string) => {;
     if (!selectedService) return'
-    try {;
-      await axios.post('/api/quotes', {;
-        service_id: "selectedService"
-        user_message: "message",;"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
-      toast.success('Quote request submitted');
-      router.push('/dashboard/quotes');
+    try {'
+      await axios.post('/api/quotes', {'
+        service_id: selectedService"
+        user_message: message,"
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
+      toast.success('Quote request submitted')'
+      router.push('/dashboard/quotes')'
       setStep('Success')'
-    } catch {;
-      logErrorToProduction('Failed to submit quote', { data: "error "});"
+    } catch {'
+      logErrorToProduction('Failed to submit quote', { data: error "})"
       toast({ title: 'Error submitting quote', variant: 'destructive' })'
-    };
+    }'
   };
 '
-  useEffect(() => {;
-    if (typeof window !== 'undefined') {;
+  useEffect(() => {'
+    if (typeof window !== 'undefined') {'
       ('
-        window as Window & {;
-          wizardState?: { step: "WizardStep; selectedService: string | null "};
-        };
-      ).wizardState = { step, selectedService };
+        window as Window & {'
+          wizardState?: { step: WizardStep; selectedService: string | null }"
+        }).wizardState = { step, selectedService };
     };
   }, [step, selectedService]);
-;
   return (;
     <RequestQuoteWizardContext.Provider;
       value={{;
@@ -90,16 +83,16 @@ export function RequestQuoteWizardProvider(): unknown {): unknown {): unknown {)
         submitQuote,;
       }};
     >;
-      {children};"
-    </RequestQuoteWizardContext.Provider>;";"
+      {children}"
+    </RequestQuoteWizardContext.Provider>;
   );"
-};"
-"
-};"
-}";"
-};";"
-}";
-};"
 }"
+
+}
+}""
+};
+}""
+}
+}
 }
 }"

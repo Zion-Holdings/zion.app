@@ -9,13 +9,13 @@ interface ActiveFiltersProps {'
   selectedAvailability: "string[],
   toggleAvailability: "(status: string) => void"
   selectedRegions: string[],"
-  toggleRegion: "(region: string) => void
-  priceRange: [number", number]"
+  toggleRegion: (region: string) => void
+  priceRange: [number, number]"
   setPriceRange: (range: [number, number]) => void"
   experienceRange: "[number, number]
-  setExperienceRange: "(range: [number", number]) => void
+  setExperienceRange: (range: [number, number]) => void
   clearFilters: () => void""
-};
+}
 
 export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   selectedSkills,;
@@ -61,7 +61,7 @@ export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {):
         <ClickableBadge
           key={status};"
           className="bg-zion-purple/20 hover:bg-zion-purple/30 text-zion-purple border-none flex items-center gap-1 pl-2
-          onClick={() => toggleAvailability(status)}
+          onClick={() => toggleAvailability(status)}"
         >;"
           {status === 'full-time'
             ? 'Full-time'
@@ -69,7 +69,7 @@ export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {):
               ? 'Part-time'
               : 'Project-based'}'
           <X className="h-3 w-3 />
-        </ClickableBadge>;
+        </ClickableBadge>;"
       ))}"
 ;"
       {selectedRegions.map((region) => (;
@@ -89,7 +89,7 @@ export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {):
           onClick={() => setPriceRange([50, 200])}
         >;
           ${priceRange[0]}-${priceRange[1]}/hr"
-          <X className="h-3 w-3 />
+          <X className="h-3 w-3 />"
         </ClickableBadge>"
       )};"
 
@@ -106,7 +106,7 @@ export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {):
       <Button;
         variant=ghost"
         size="sm
-        onClick={clearFilters}
+        onClick={clearFilters}"
         className="h-7 text-xs text-zion-purple hover:text-zion-purple-light hover:bg-transparent"
       >;
         Clear All;

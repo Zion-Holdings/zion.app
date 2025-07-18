@@ -6,20 +6,19 @@ import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig'
 import { ethers } from 'ethers'
 
 const ConnectWalletButton: unknown React.FC = () => {;
-  const {;
+  const { ;
     isConnected,;
     connectWallet,;
     disconnectWallet,;
     displayAddress,;
     address,'
-    provider,'
-  } = useWallet();
+    provider,' } = useWallet();
 '
   const validProvider: unknown ='
     provider && typeof provider === 'object'
       ? (provider as ethers.Provider);
       : null;
-  const const zionBalance = useTokenBalance(;
+  const zionBalance = useTokenBalance(;
     address,;
     ZION_TOKEN_CONTRACT_ADDRESS,;
     validProvider,)'

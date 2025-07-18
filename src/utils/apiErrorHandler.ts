@@ -1,11 +1,10 @@
 import { toast } from '@/hooks/use-toast'
 ;
-export interface ParsedApiError {;
+export interface ParsedApiError {
   status?: number | undefined'
-  code?: string | number | undefined;
-  message: "string;";
-};
-;
+  code?: string | number | undefined
+  message: "string"
+}
 export function parseApiError(): unknown {): unknown {): unknown {): unknown {): unknown {error: unknown): ParsedApiError {;
   // Type guard for error shape;
   function isApiError(): unknown {): unknown {): unknown {): unknown {): unknown {obj: unknown): obj is {;
@@ -32,13 +31,11 @@ export function parseApiError(): unknown {): unknown {): unknown {): unknown {):
     error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
   const code: unknown string | number | undefined ='
     backendCode !== undefined ? backendCode : status;
-;
   // Prioritize backend message first'
   let msg = error?.response?.data?.message;
   if (!msg && typeof error?.response?.data?.error === 'string') {;
     msg = error.response.data.error;
   };
-;
   if (!msg) {'
     // If no backend message, try status-specific messages;
     switch (status) {;

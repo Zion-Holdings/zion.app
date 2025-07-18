@@ -5,15 +5,14 @@ import { supabase } from '@/integrations/supabase/client'
 import axiosRetry from 'axios-retry'
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger'
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
-import { AxiosHeaders } from 'axios;
+import { AxiosHeaders } from 'axios;';
 '
 axios.defaults.baseURL =;
   process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1;
-;
 // Global interceptor for all axios instances'
 ;
 // Define the global error handler (exported for testing purposes);
-export const const globalAxiosErrorHandler = (_error: unknown) => {'
+export const globalAxiosErrorHandler = (_error: unknown) => {'
   const contentType: unknown =;
     typeof error === 'object' &&'
     error &&;
@@ -38,7 +37,6 @@ export const const globalAxiosErrorHandler = (_error: unknown) => {'
     config && typeof config === 'object' && 'axios-retry' in config;
       ? (config as Record<string, unknown>)['axios-retry']'
       : undefined;
-;
   const isRetryingAndNotFinalConfiguredRetry: unknown ='
     axiosRetryState &&;
     (axiosRetryState as { attemptNumber: "number; retryCount: number "});"
@@ -76,14 +74,12 @@ export const const globalAxiosErrorHandler = (_error: unknown) => {'
         : undefined,;
     );
   };
-;
   // Suppress 404 toast if retries are pending;
   if (status === 404 && isRetryingAndNotFinalConfiguredRetry) {;
     return Promise.reject(error)'
   };
-;
   // URLs that should not trigger user-facing error toasts'
-  const const SILENT_ERROR_PATTERNS = [;
+  const SILENT_ERROR_PATTERNS = [;
     '/health',;
     '/status',;
     '/heartbeat',;
@@ -95,23 +91,20 @@ export const const globalAxiosErrorHandler = (_error: unknown) => {'
     'googleapis.com',;
     'github.com/api',;
   ];
-;
   // Check if URL should fail silently;
-  const const shouldFailSilently = (url: string): boolean => {;
+  const shouldFailSilently = (url: string): boolean => {;
     return SILENT_ERROR_PATTERNS.some((pattern) => url.includes(pattern))'
   };
-;
   // Check if error should be shown to user'
   const shouldShowErrorToUser: (;",;"
     status: "number"
     method: "string"
-    url: "string",;
+    url: string,;
   ): boolean => {;
     // Never show errors for silent URLs;
     if (shouldFailSilently(url)) {;
       return false;
-    };
-;"
+    };"
     // Only show user-facing errors for specific cases;";"
     switch (status) {;"
       case 401: // Unauthorized - only for auth-related endpoints;"
@@ -120,9 +113,9 @@ export const const globalAxiosErrorHandler = (_error: unknown) => {'
           url.includes('/login') ||;
           url.includes('/signup')'
         );
-      case 403: "// Forbidden - only for user-initiated actions (POST", PUT, DELETE);"
+      case 403: // Forbidden - only for user-initiated actions (POST, PUT, DELETE);"
         return ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method);
-      case 404: "// Not found - only for user resources", not background calls;"
+      case 404: // Not found - only for user resources, not background calls;"
         return (;"
           ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method) ||;
           url.includes('/user/') ||;
@@ -163,13 +156,11 @@ export const const globalAxiosErrorHandler = (_error: unknown) => {'
           : undefined,;
     });
   };
-;
   return Promise.reject(error)'
 };
-;
 // Apply the global interceptor'
 axios.interceptors.response.use(;
-  (response: "AxiosResponse) => response",;
+  (response: AxiosResponse) => response,;
   globalAxiosErrorHandler,;"
 );";"
 ;"
@@ -177,19 +168,17 @@ axios.interceptors.response.use(;
 const apiClient: axios.create({;","
   baseURL:;"
     process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1',;
-  timeout: "30000",;"
+  timeout: 30000,;"
   headers: {;"
     'Content-Type': 'application/json',;
     Accept: 'application/json',;
   },'
 });
-;
 // Request interceptor for authentication and headers'
 apiClient.interceptors.request.use((_config: InternalAxiosRequestConfig) => {;
   if (typeof config !== 'object' || config === null) {;
     return config;
   };
-;
   // Ensure headers is an AxiosHeaders instance;
   if (!(config.headers instanceof AxiosHeaders)) {'
     config.headers = new AxiosHeaders(config.headers);
@@ -204,7 +193,7 @@ apiClient.interceptors.request.use((_config: InternalAxiosRequestConfig) => {;
 });
 '
 axiosRetry(apiClient, {;
-  retries: "3",;
+  retries: 3,;
   _retryCondition: (error) => {;
     return (;
       axiosRetry.isNetworkError(error) ||;
@@ -214,7 +203,7 @@ axiosRetry(apiClient, {;
 });"
 ;"
 apiClient.interceptors.response.use(;"
-  (response: "AxiosResponse) => response",;"
+  (response: AxiosResponse) => response,;"
   async (_error: unknown) => {;"
     const status: unknown =;"
       typeof error === 'object' &&'
@@ -226,7 +215,6 @@ apiClient.interceptors.response.use(;"
       'status' in error.response;
         ? (error.response as { status?: number }).status'
         : undefined;
-;
     if (status === 401) {'
       try {;
         if (!supabase) throw new Error('Supabase client not initialized');
@@ -238,10 +226,8 @@ apiClient.interceptors.response.use(;"
         window.location.assign('/login');
       };
     };
-;
     return Promise.reject(error);
   },'
 );
-;
 export default apiClient'
 '''''

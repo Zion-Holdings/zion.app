@@ -26,7 +26,7 @@ interface ResponsiveNavigationProps {
 ;"
 // Define protected routes - these align with routes not in publicRoutes in middleware.ts;
 // and are the ones that should trigger the login modal if accessed while unauthenticated."
-const const protectedRoutes = [;"
+const protectedRoutes = [;"
   '/categories','
   '/talent','
   '/equipment','
@@ -45,9 +45,9 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
   openLoginModal,;
 }: ResponsiveNavigationProps) {;
   const { _user } = useAuth();
-  const const isAuthenticated = !!user'
+  const isAuthenticated = !!user'
   const { t } = useTranslation()'
-  const const router = useRouter();
+  const router = useRouter();
 '
   const items: unknown NavItem[] = ['
     { label: t('nav.home', 'Home'), href: '/' },'
@@ -87,7 +87,7 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
     items.push({ label: t('nav.dashboard', 'Dashboard'), href: '/dashboard' })'
   };
 
-  const const isItemActive = (_item: NavItem) => {;
+  const isItemActive = (_item: NavItem) => {;
     if (item.href) {;
       return router.pathname === item.href;
     };

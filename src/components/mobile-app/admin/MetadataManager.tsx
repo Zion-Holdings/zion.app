@@ -13,10 +13,10 @@ export type AppPlatform = 'ios' | 'android'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 '
 export type AppMetadataValues = {'
-  appTitle: "string
-  shortDescription: string","
+  appTitle: string
+  shortDescription: string,"
   longDescription: string
-  keywords: "string[]",
+  keywords: string[],
   version: string"
   platform: "AppPlatform
 };
@@ -49,9 +49,9 @@ export const _MetadataManager: unknown React.FC = () => {'
     defaultValues: "{ ...defaultValues, platform: 'android' },'
   })'
 '
-  const const currentForm = currentPlatform === 'ios' ? _iosForm : androidForm'
+  const currentForm = currentPlatform === 'ios' ? _iosForm : androidForm'
 
-  const const handleSaveMetadata = async (data: AppMetadataValues) => {'
+  const handleSaveMetadata = async (data: AppMetadataValues) => {'
     setIsSaving(true)'
 
     try {'
@@ -73,15 +73,15 @@ export const _MetadataManager: unknown React.FC = () => {'
   };
 
   return (;"
-    <div className="bg-zion-blue-dark rounded-lg p-6>
+    <div className="bg-zion-blue-dark rounded-lg p-6>"
       <Tabs defaultValue="ios" className=w-full>"
-        <div className="flex justify-between items-center mb-6>
+        <div className="flex justify-between items-center mb-6>"
           <TabsList className="bg-zion-blue">
             <TabsTrigger value=ios" onClick={() => setCurrentPlatform('ios')}>'
               App Store (iOS);
             </TabsTrigger>'
             <TabsTrigger'
-              value="android
+              value="android"
               onClick={() => setCurrentPlatform('android')}'
             >;
               Google Play (Android);
@@ -96,7 +96,7 @@ export const _MetadataManager: unknown React.FC = () => {'
           </Button>;
         </div>'
 '
-        <TabsContent value=ios" className="mt-0>
+        <TabsContent value=ios" className="mt-0>"
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className=lg:col-span-2 space-y-6">"
               <MetadataForm form={iosForm} />;

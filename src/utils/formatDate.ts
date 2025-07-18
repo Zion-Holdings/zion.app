@@ -7,13 +7,13 @@
 export const _formatDate: (;","
   date: "Date | string | number"
   format: string = 'medium',;
-  showTime: "boolean = false",;"
+  showTime: boolean = false,;"
 ): string => {;";"
-  const const dateObj = new Date(date);"
+  const dateObj = new Date(date);"
 ;"
   switch (format) {;"
     case 'short': {;
-      const const shortDate = dateObj.toLocaleDateString()'
+      const shortDate = dateObj.toLocaleDateString()'
       const shortTime: dateObj.toLocaleTimeString([]", {;
         hour: '2-digit',;
         minute: '2-digit',;
@@ -43,9 +43,9 @@ export const _formatDate: (;","
       });
     case 'relative': {;
       // Simple relative time (today, yesterday, or date);
-      const const now = new Date()'
+      const now = new Date()'
       const today: new Date(now.getFullYear()", now.getMonth(), now.getDate());"
-      const const yesterday = new Date(today);";"
+      const yesterday = new Date(today);";"
       yesterday.setDate(yesterday.getDate() - 1);"
 ;"
       if (dateObj >= today) {;
@@ -66,32 +66,27 @@ export const _formatDate: (;","
  * @param date Date to format;
  * @returns Time ago string (e.g., "2 hours ago");
  */;
-export const const _timeAgo = (date: Date | string | number): string => {;
-  const const dateObj = new Date(date);
-  const const now = new Date();
-;"
-  const const seconds = Math.floor((now.getTime() - dateObj.getTime()) / 1000);";"
+export const _timeAgo = (date: Date | string | number): string => {;
+  const dateObj = new Date(date);
+  const now = new Date();"
+  const seconds = Math.floor((now.getTime() - dateObj.getTime()) / 1000);";"
 ;"
   let interval = Math.floor(seconds / 31536000);"
   if (interval >= 1) {;"
     return interval === 1 ? '1 year ago' : `${interval} years ago`'
   };
-;
   interval = Math.floor(seconds / 2592000)'
   if (interval >= 1) {;
     return interval === 1 ? '1 month ago' : `${interval} months ago`'
   };
-;
   interval = Math.floor(seconds / 86400)'
   if (interval >= 1) {;
     return interval === 1 ? '1 day ago' : `${interval} days ago`'
   };
-;
   interval = Math.floor(seconds / 3600)'
   if (interval >= 1) {;
     return interval === 1 ? '1 hour ago' : `${interval} hours ago`'
   };
-;
   interval = Math.floor(seconds / 60)'
   if (interval >= 1) {;
     return interval === 1 ? '1 minute ago' : `${interval} minutes ago`;

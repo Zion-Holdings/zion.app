@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea'
 interface GeneratedDescriptionDisplayProps {'
   description: "string
   onSave: (editedDescription: string) => void""
-};
+}
 
 export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   description,;
@@ -24,7 +24,7 @@ export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState(description);
 
-  const const handleSave = () => {;"
+  const handleSave = () => {;"
     onSave(editedDescription);"
     setIsEditing(false)
     toast({;
@@ -39,7 +39,7 @@ export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {
         <CardTitle className="text-white flex items-center justify-between">
           Generated Description;
           <Button"
-            variant="outline
+            variant="outline"
             size=sm"
             onClick={() => setIsEditing(!isEditing)}"
             className=border-zion-blue-light text-zion-slate-light hover:text-white
@@ -76,7 +76,7 @@ export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {
             className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white
           >;
             Save Changes;
-          </Button>;
+          </Button>;"
         </CardFooter>)}"
     </Card>;"
   );

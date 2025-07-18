@@ -4,15 +4,15 @@ import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 
-interface AuthGuardProps {;
-  children: React.ReactNode;
-  requireAuth?: boolean;
-  requireRole?: string[];
-  redirectTo?: string;
-  fallback?: React.ReactNode;
-  showToast?: boolean;
-  allowGuest?: boolean;
-};
+interface AuthGuardProps {
+  children: React.ReactNode
+  requireAuth?: boolean
+  requireRole?: string[]
+  redirectTo?: string
+  fallback?: React.ReactNode
+  showToast?: boolean
+  allowGuest?: boolean
+}
 '
 export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   children,;
@@ -24,7 +24,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
   allowGuest = false,;
 }: AuthGuardProps) {'
   const { user, isAuthenticated, isLoading } = useAuth()'
-  const const router = useRouter();
+  const router = useRouter();
 '
   useEffect(() => {'
     // Don't redirect while auth is still loading'
@@ -40,15 +40,15 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
         });
       };
 
-      const const returnTo = encodeURIComponent(router.asPath);
+      const returnTo = encodeURIComponent(router.asPath);
       router.push(`${redirectTo}?returnTo=${returnTo}`)`
       return;
     };
 
     // If specific roles are required;
     if (requireRole && isAuthenticated && user) {;
-      const const userRoles = user.role ? [user.role] : [];
-      const const hasRequiredRole = requireRole.some((role) =>;
+      const userRoles = user.role ? [user.role] : [];
+      const hasRequiredRole = requireRole.some((role) =>;
         userRoles.includes(role),;
       )'
 '
@@ -80,7 +80,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
   if (isLoading) {;
     return ('
       fallback || ('
-        <div className="flex items-center justify-center min-h-screen>;
+        <div className="flex items-center justify-center min-h-screen>;"
           <div className="flex items-center gap-2 text-muted-foreground">;"
             <Loader2 className=h-6 w-6 animate-spin" />"
             <span>Loading...</span>;
@@ -93,7 +93,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
   if (requireAuth && !isAuthenticated && !allowGuest) {;";
     return (";";
       fallback || ("
-        <div className="flex flex-col items-center justify-center min-h-screen gap-4>;
+        <div className="flex flex-col items-center justify-center min-h-screen gap-4>;"
           <Shield className="h-12 w-12 text-muted-foreground" />;"
           <div className=text-center">""
             <h2 className=text-xl font-semibold mb-2>";"
@@ -110,8 +110,8 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
 ";""
   // Show role denied state if user doesn't have required role'
   if (requireRole && isAuthenticated && user) {;
-    const const userRoles = user.role ? [user.role] : [];
-    const const hasRequiredRole = requireRole.some((role) =>;
+    const userRoles = user.role ? [user.role] : [];
+    const hasRequiredRole = requireRole.some((role) =>;
       userRoles.includes(role),;
     )'
 '
@@ -119,7 +119,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
       return ('
         fallback || ('
           <div className=flex flex-col items-center justify-center min-h-screen gap-4>"
-            <Shield className="h-12 w-12 text-muted-foreground />;
+            <Shield className="h-12 w-12 text-muted-foreground />;"
             <div className="text-center">;"
               <h2 className=text-xl font-semibold mb-2">Access Denied</h2>""
               <p className=text-muted-foreground>"
@@ -138,7 +138,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
 
 // Higher-order component for easy wrapping'
 export function withAuthGuard<P extends object>('
-  Component: "React.ComponentType<P>,;
+  Component: React.ComponentType<P>,;
   guardOptions?: Omit<AuthGuardProps, 'children'>,'
 ) {;
   return function AuthGuardedComponent(): unknown {): unknown {): unknown {): unknown {): unknown {props: P) {;
@@ -152,9 +152,9 @@ export function withAuthGuard<P extends object>('
 // Hook for programmatic auth checks;
 export function useAuthGuard(): ;
   const { user, isAuthenticated, isLoading } = useAuth();
-  const const router = useRouter();
+  const router = useRouter();
 
-  const const requireAuth = (options?: {;
+  const requireAuth = (options?: {;
     redirectTo?: string;
     showToast?: boolean;
     returnUrl?: string'
@@ -162,8 +162,8 @@ export function useAuthGuard(): ;
     if (isLoading) return false;
 '
     if (!isAuthenticated) {'
-      const const redirectTo = options?.redirectTo || '/login'
-      const const returnUrl = options?.returnUrl || router.asPath'
+      const redirectTo = options?.redirectTo || '/login'
+      const returnUrl = options?.returnUrl || router.asPath'
 
       if (options?.showToast !== false) {'
         toast({'
@@ -180,7 +180,7 @@ export function useAuthGuard(): ;
     return true'
   };
 '
-  const requireRole: (",;
+  const requireRole: (,;
     roles: string[]","
     options?: {
       showToast?: boolean;"
@@ -189,8 +189,8 @@ export function useAuthGuard(): ;
   ) => {"
     if (!requireAuth({ showToast: "false })) return false
 
-    const const userRoles = user?.role ? [user.role] : [];
-    const const hasRequiredRole = roles.some((role) => userRoles.includes(role))"
+    const userRoles = user?.role ? [user.role] : [];
+    const hasRequiredRole = roles.some((role) => userRoles.includes(role))"
 ;"
     if (!hasRequiredRole) {;";"
       if (options?.showToast !== false) {;";"
@@ -208,7 +208,7 @@ export function useAuthGuard(): ;
     return true;
   };
 
-  const const checkPermission = (permission: string): boolean => {;
+  const checkPermission = (permission: string): boolean => {;
     if (!isAuthenticated || !user) return false;
 
     // Simple permission check - can be extended based on your permission system;

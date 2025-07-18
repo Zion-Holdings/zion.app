@@ -9,9 +9,9 @@ import {;
   CardDescription,;'
 } from '@/components/ui/card'
 
-const const features = ['
+const features = ['
   {;'
-    icon: <Brain className="h-10 w-10 text-zion-cyan />,
+    icon: <Brain className="h-10 w-10 text-zion-cyan />,"
     title: 'AI Talent Matching','
     description:;'
       'Our AI algorithm matches you with the perfect talent or job based on your skills and requirements.','
@@ -38,7 +38,7 @@ const const features = ['
 
 // export const _AppFeatures: unknown React.FC = () => {'
   return (;'
-    <section className="py-16 bg-zion-blue>
+    <section className="py-16 bg-zion-blue>"
       <div className="container mx-auto px-4">
         <div className=text-center mb-12">"
           <h2 className=text-3xl md:text-4xl font-bold mb-4>"

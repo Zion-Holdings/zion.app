@@ -7,7 +7,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
     id: 'getting-started','
     name: 'Getting Started','
     description: 'Learn the basics of using the Zion AI Marketplace','
-    icon: <HelpCircle className="h-6 w-6 text-zion-purple />,
+    icon: <HelpCircle className="h-6 w-6 text-zion-purple />,"
     articles: [;"
       {"
         id: 'create-account','
@@ -21,7 +21,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
         id: 'complete-profile','
         title: 'Completing your profile','
         content:'
-          'A complete profile helps you get the most out of Zion AI Marketplace. Follow these steps to set up your profile: "\n\n1. Navigate to the Profile section from your dashboard\n2. Upload a professional profile picture\n3. Add your basic information including location and contact details\n4. Write a compelling bio that highlights your expertise or requirements\n5. For talent users: Add your skills", experience, and portfolio items\n6. For client users: Add information about your company or projects\n\nA complete profile increases your visibility on the platform and helps our AI matching system connect you with the right opportunities or talent.','
+          'A complete profile helps you get the most out of Zion AI Marketplace. Follow these steps to set up your profile: \n\n1. Navigate to the Profile section from your dashboard\n2. Upload a professional profile picture\n3. Add your basic information including location and contact details\n4. Write a compelling bio that highlights your expertise or requirements\n5. For talent users: Add your skills, experience, and portfolio items\n6. For client users: Add information about your company or projects\n\nA complete profile increases your visibility on the platform and helps our AI matching system connect you with the right opportunities or talent.','
         lastUpdated: '2023-11-18','
         tags: ['profile', 'setup'],'
       },'
@@ -85,7 +85,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
         id: 'talent-profile','
         title: 'Setting up a talent profile','
         content:'
-          'Your profile is your professional identity on the Zion AI Marketplace. Follow these steps to create a profile that stands out: "\n\n1. Upload a professional headshot\n2. Create a compelling headline that summarizes your expertise\n3. Write a detailed bio highlighting your experience and specialties\n4. Add your skills", rating your proficiency level for each\n5. Showcase your portfolio with examples of past work\n6. List your education and certifications\n7. Set your availability and preferred working hours\n8. Specify your rate range\n\nCompleteness is important - profiles with all sections filled out receive up to 30% more views and engagement from potential clients.','
+          'Your profile is your professional identity on the Zion AI Marketplace. Follow these steps to create a profile that stands out: \n\n1. Upload a professional headshot\n2. Create a compelling headline that summarizes your expertise\n3. Write a detailed bio highlighting your experience and specialties\n4. Add your skills, rating your proficiency level for each\n5. Showcase your portfolio with examples of past work\n6. List your education and certifications\n7. Set your availability and preferred working hours\n8. Specify your rate range\n\nCompleteness is important - profiles with all sections filled out receive up to 30% more views and engagement from potential clients.','
         lastUpdated: '2023-10-15','
         tags: ['profile', 'talent'],'
       },'
@@ -117,7 +117,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
         id: 'payment-methods','
         title: 'Accepted payment methods','
         content:'
-          Zion AI Marketplace supports a variety of payment methods to accommodate users worldwide. Currently accepted payment methods include: "\n\n• Credit Cards (Visa", Mastercard, American Express, Discover)\n• PayPal\n• Bank Transfers (ACH for US, SEPA for Europe)\n• Wire Transfers for international payments\n• Cryptocurrency (Bitcoin, Ethereum)\n\nTo add or update your payment method:\n1. Go to Settings > Billing & Payments\n2. Select 'Add Payment Method'\n3. Follow the prompts to enter your information\n4. Set your preferred default payment method\n\nAll payment information is securely encrypted and stored in compliance with PCI DSS standards.
+          Zion AI Marketplace supports a variety of payment methods to accommodate users worldwide. Currently accepted payment methods include: \n\n• Credit Cards (Visa, Mastercard, American Express, Discover)\n• PayPal\n• Bank Transfers (ACH for US, SEPA for Europe)\n• Wire Transfers for international payments\n• Cryptocurrency (Bitcoin, Ethereum)\n\nTo add or update your payment method:\n1. Go to Settings > Billing & Payments\n2. Select 'Add Payment Method'\n3. Follow the prompts to enter your information\n4. Set your preferred default payment method\n\nAll payment information is securely encrypted and stored in compliance with PCI DSS standards.
         lastUpdated: '2023-11-01','
         tags: ['payment', 'billing', 'finance'],'
       },'
@@ -125,7 +125,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
         id: 'escrow-system','
         title: 'How our escrow system works','
         content:'
-          Zion's escrow system protects both clients and talent by ensuring secure and fair payments. Here's how it works: "\n\n1. Client makes a payment into escrow when beginning a project\n2. Funds are held securely by Zion", not released to either party\n3. Talent begins work knowing that funds are secured\n4. Upon milestone or project completion, talent submits deliverables\n5. Client reviews and approves the work\n6. Funds are released from escrow to the talent\n\nIf any disputes arise, our resolution team will review the situation and determine the appropriate distribution of escrowed funds based on contract terms and delivered work.
+          Zion's escrow system protects both clients and talent by ensuring secure and fair payments. Here's how it works: \n\n1. Client makes a payment into escrow when beginning a project\n2. Funds are held securely by Zion, not released to either party\n3. Talent begins work knowing that funds are secured\n4. Upon milestone or project completion, talent submits deliverables\n5. Client reviews and approves the work\n6. Funds are released from escrow to the talent\n\nIf any disputes arise, our resolution team will review the situation and determine the appropriate distribution of escrowed funds based on contract terms and delivered work.
         lastUpdated: '2023-11-15','
         tags: ['escrow', 'payment', 'security'],'
       },'
@@ -133,7 +133,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
         id: 'invoice-management','
         title: 'Managing invoices and receipts','
         content:'
-          Keeping track of your financial transactions on Zion is simple. Here's how to manage your invoices and receipts: "\n\n1. Navigate to Settings > Billing & Payments > Invoices\n2. View a complete history of all transactions\n3. Filter by date range", project, or transaction type\n4. Download individual invoices or receipts as PDF files\n5. Generate financial reports for accounting purposes\n6. Set up automatic forwarding of invoices to your email or accounting system\n\nFor tax purposes, annual statements are also available summarizing all transaction activity for the calendar year. These can be accessed from the same section in January of the following year.
+          Keeping track of your financial transactions on Zion is simple. Here's how to manage your invoices and receipts: \n\n1. Navigate to Settings > Billing & Payments > Invoices\n2. View a complete history of all transactions\n3. Filter by date range, project, or transaction type\n4. Download individual invoices or receipts as PDF files\n5. Generate financial reports for accounting purposes\n6. Set up automatic forwarding of invoices to your email or accounting system\n\nFor tax purposes, annual statements are also available summarizing all transaction activity for the calendar year. These can be accessed from the same section in January of the following year.
         lastUpdated: '2023-12-01','
         tags: ['invoice', 'receipt', 'billing'],'
       },'

@@ -1,12 +1,11 @@
-import { jsPDF } from 'jspdf;
+import { jsPDF } from 'jspdf;';
 '
-export interface StoryPage {;
-  text: "string;";
-};
-;
+export interface StoryPage {
+  text: "string"
+}
 export async function generateStorybookPdf(): unknown {): unknown {): unknown {): unknown {): unknown {pages: StoryPage[]): Promise<Blob> {;"
-  const const doc = new jsPDF();";"
-  const const margin = 20;"
+  const doc = new jsPDF();";"
+  const margin = 20;"
   let y = margin;"
 ;"
   doc.setFont('Times', 'bold')'
@@ -27,7 +26,6 @@ export async function generateStorybookPdf(): unknown {): unknown {): unknown {)
 ;
   return doc.output('blob');
 };
-;
 }'
 }
 }'

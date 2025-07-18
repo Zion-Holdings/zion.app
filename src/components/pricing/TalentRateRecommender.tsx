@@ -14,12 +14,12 @@ import { PricingSuggestionBox } from './PricingSuggestionBox'
 import { useAuth } from '@/hooks/useAuth'
 '
 interface TalentRateRecommenderProps {'
-  skills: "string[],;
+  skills: "string[],
   yearsExperience: number"
-  location?: string;"
+  location?: string"
   onSuggestionApplied: (value: number) => void
   rateType: 'hourly' | 'fixed'
-};
+}
 
 export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps> = ({;
   skills,;
@@ -31,8 +31,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
   const [isLoading, setIsLoading] = useState(false);
   const [suggestion, setSuggestion] = useState<PricingSuggestion | null>(null);
   const { _user } = useAuth();
-
-  const const generateSuggestion = async () => {;
+  const generateSuggestion = async () => {;
     if (skills.length === 0 || yearsExperience <= 0) {;
       return;
     };
@@ -45,21 +44,21 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
         ...(typeof location === 'string' ? { location } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),'
       }'
 '
-      const const result = await getTalentRateSuggestion(params);
+      const result = await getTalentRateSuggestion(params);
       setSuggestion(result)'
     } catch {'
       logErrorToProduction('Error generating rate suggestion:', {'
-        data: "error",
+        data: error,
       });
     } finally {;
       setIsLoading(false);
     }
   };""
 
-  const const handleApplySuggestion = () => {
+  const handleApplySuggestion = () => {
     if (suggestion) {;"
       // We'll use the middle of the range as the suggested rate'
-      const const suggestedRate = Math.round(;
+      const suggestedRate = Math.round(;
         (suggestion.minRate + suggestion.maxRate) / 2,;
       );
       onSuggestionApplied(suggestedRate)'
@@ -96,7 +95,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
             isLoading={isLoading};
             onApplySuggestion={handleApplySuggestion};
             rateType={rateType};
-          />)};
+          />)};"
       </div>"
     </div>;"
   );

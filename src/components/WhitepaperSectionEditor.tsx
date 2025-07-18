@@ -4,10 +4,10 @@ import { useUndoRedo } from '@/hooks/useUndoRedo'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface WhitepaperSectionEditorProps {'
-  title: "string,;";
-  content: "string",;"";
+  title: "string,"
+  content: string,""
   onContentChange: (newContent: string) => void""
-};
+}
 
 const WhitepaperSectionEditor: unknown React.FC<WhitepaperSectionEditorProps> = ({;
   title,;
@@ -18,13 +18,12 @@ const WhitepaperSectionEditor: unknown React.FC<WhitepaperSectionEditorProps> = 
   const [suggestions, setSuggestions] = useState<string | null>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const { value, set } = useUndoRedo(content);
-
   // keep external content prop in sync if it changes;
-  useEffect(() => {;
-    set(content);
-  }, [content, set]);
+  useEffect(() => {
+    set(content)
+  }, [content, set])
 
-  const const handleGetSuggestions = async () => {;
+  const handleGetSuggestions = async () => {;
     setIsLoadingSuggestions(true)
     setSuggestionsError(null);"
     setSuggestions(null);";
@@ -36,13 +35,12 @@ const WhitepaperSectionEditor: unknown React.FC<WhitepaperSectionEditorProps> = 
       const { data, error: "funcError } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;"";
         'get-whitepaper-section-suggestions','
         {'
-          body: "{",;"";
+          body: {,;"";
             sectionTitle: title",""
             sectionContent: content,"
           },"
         },;
-      );"";
-;"";
+      );"";"";
       if (funcError) {;"";
         throw new Error(`Supabase function error: "${funcError.message"}`);"
       };";"
@@ -51,8 +49,7 @@ const WhitepaperSectionEditor: unknown React.FC<WhitepaperSectionEditorProps> = 
         throw new Error("
           `Suggestion generation error: "${(data as unknown as { error: string }).error}`,;"
         )";
-      };"";
-;""
+      };"";""
       if (!data || !(data as unknown as { suggestions: "string }).suggestions) {;"";
         throw new Error('No suggestions received from the function.')'
       }'

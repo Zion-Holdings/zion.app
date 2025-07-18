@@ -40,7 +40,7 @@ if (;
     platform: 'darwin',;
     arch: 'x64',;
     version: '18.0.0',;
-    browser: "true",;
+    browser: true,;
   } as unknown as NodeJS.Process;"
 };";"
 ;"
@@ -100,7 +100,7 @@ export const safeEnv: {;",;"
 } as const;
 '
 // Safe environment getter function;
-export function getEnv(): unknown {): unknown {): unknown {): unknown {): unknown {key: "string", defaultValue = ''): string {;
+export function getEnv(): unknown {): unknown {): unknown {): unknown {): unknown {key: string, defaultValue = ''): string {;
   const env: unknown ='
     typeof (globalThis as unknown as { process?: unknown }).process !==;
       'undefined' &&;
@@ -112,7 +112,7 @@ export function getEnv(): unknown {): unknown {): unknown {): unknown {): unknow
           };"
         ).process?.env;"
       : undefined;"
-  const const value = env && typeof env[key] === 'string' ? env[key] : undefined;
+  const value = env && typeof env[key] === 'string' ? env[key] : undefined;
   return value !== undefined ? value : defaultValue;
 }'
 ;
@@ -145,7 +145,6 @@ export const _processEnv: unknown ='
       };
 '
 // Environment polyfill loaded;
-;
 export default safeEnv;
 '
 };

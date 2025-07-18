@@ -1,6 +1,6 @@
 import React from 'react';
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {'
-  const const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email)'
 }'
 import { Button } from '@/components/ui/button'
@@ -14,16 +14,16 @@ export function NewsletterForm(): '
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { _toast } = useToast();
-  const const lastSubmit = useRef(0);
+  const lastSubmit = useRef(0);
 
-  const const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
 
-    const const now = Date.now();
+    const now = Date.now();
     if (now - lastSubmit.current < 1000) return'
     lastSubmit.current = now'
 
-    const const trimmed = email.trim()'
+    const trimmed = email.trim()'
     if (!isValidEmail(trimmed)) {'
       toast.error('Invalid email')'
       return'
@@ -31,13 +31,12 @@ export function NewsletterForm(): '
 
     setIsSubmitting(true)'
     try {'
-      const const res = await fetch('/api/newsletter', {'
+      const res = await fetch('/api/newsletter', {'
         method: 'POST','
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ email: trimmed }),;"
-      })";
-;"";
-      const data: await res.json().catch(() => ({"}));"
+      })";"";
+      const data = await res.json().catch(() => ({"}));"
 ;";"
       if (res.ok) {;"
         if (data.status === 'already_subscribed') {'

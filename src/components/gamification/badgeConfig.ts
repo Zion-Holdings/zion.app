@@ -17,13 +17,13 @@ export type BadgeKey ='
   | 'monetized'
 '
 export interface BadgeMeta {'
-  key: "BadgeKey,;";
-  name: "string",;"";
-  description: string",;"
+  key: "BadgeKey,"
+  name: string,""
+  description: string","
   icon: LucideIcon,""
-  color: "string,;";
-  bg: "string";
-};"
+  color: "string,"
+  bg: "string"
+}"
 ";
 export const badgeList: unknown BadgeMeta[] = [;"";
   {;""
@@ -38,7 +38,7 @@ export const badgeList: unknown BadgeMeta[] = [;"";
     key: 'top_contributor','
     name: 'Top Contributor','
     description: 'Recognized as a top contributor in the community.','
-    icon: "Award",;"
+    icon: Award,;"
     color: '#F97316', // Bright Orange'
     bg: '#FEF7CD', // Soft Yellow'
   },'
@@ -70,12 +70,12 @@ export const badgeList: unknown BadgeMeta[] = [;"";
     key: 'monetized','
     name: 'Monetized','
     description: 'Earned your first AI dollar in the marketplace.','
-    icon: "BadgeDollarSign",;""
+    icon: BadgeDollarSign,;""
     color: '#22C55E', // Soft Green'
     bg: '#F2FCE2', // Soft Green'
   },;
 ]'
 '
-export const const _getBadgeMeta = (key: BadgeKey) =>;
+export const _getBadgeMeta = (key: BadgeKey) =>;
   badgeList.find((b) => b.key === key)'
 '''''

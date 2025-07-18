@@ -7,22 +7,22 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface ErrorContextType {'
   reportError: "(error: Error, context?: unknown) => void;"";
-  showRetryableError: "(error: Error", retryAction?: () => void) => void;"
+  showRetryableError: (error: Error, retryAction?: () => void) => void;"
   showNetworkError: (retryAction?: () => void) => void",;"
   showAuthError: (loginAction?: () => void) => void,""
   clearAllErrors: "() => void
 }"
 ;"
-const const ErrorContext = createContext<ErrorContextType | null>(null);";"
+const ErrorContext = createContext<ErrorContextType | null>(null);";"
 ;";"
-interface GlobalErrorHandlerProps {;";"
+interface GlobalErrorHandlerProps {""
   children: ReactNode""
 }
-;"
+"
 export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: GlobalErrorHandlerProps) {;";
   const [retryCount, setRetryCount] = useState<Record<string, number>>({})";";
 "
-  const const reportError = useCallback((error: "Error, context?: unknown) => {;"";
+  const reportError = useCallback((error: "Error, context?: unknown) => {;"";
     // Log to console for development;"";
     if (process.env.NODE_ENV === 'development') {'
       logErrorToProduction('
@@ -35,21 +35,21 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
     // Report to Sentry for production'
     if (process.env.NODE_ENV === 'production') {'
       if (typeof window === 'undefined') {'
-        // const const Sentry = await import('@sentry/nextjs'); // This line was removed'
+        // const Sentry = await import('@sentry/nextjs'); // This line was removed'
         // Sentry.captureException(error); // This line was removed;
       }'
     }'
   }, []);
 '
-  const const showRetryableError = useCallback('
-    (error: "Error", retryAction?: () => void) => {;
-      const const errorKey = error.message";"
-      const const currentRetryCount = retryCount[errorKey] || 0;";"
+  const showRetryableError = useCallback('
+    (error: Error, retryAction?: () => void) => {;
+      const errorKey = error.message";"
+      const currentRetryCount = retryCount[errorKey] || 0;";"
 ;";";
       reportError(error, { retryCount: "currentRetryCount "})
 ;"
       // Show user-friendly error message with retry option;";
-      const const action = retryAction";";
+      const action = retryAction";";
         ? {"
             label: 'Try Again','
             _onClick: () => {;
@@ -64,7 +64,7 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
 '
       const toastProps: {,;
         title: 'Something went wrong','
-        description: "getErrorMessage(error)",;"
+        description: getErrorMessage(error),;"
         variant: 'destructive' as const,'
         ...(action ? { action } : {}),;
       };
@@ -73,8 +73,8 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
     [retryCount, reportError],;
   )'
 '
-  const const showNetworkError = useCallback((retryAction?: () => void) => {;
-    const const action = retryAction'
+  const showNetworkError = useCallback((retryAction?: () => void) => {;
+    const action = retryAction'
       ? {'
           label: 'Try Again','
           _onClick: () => {;
@@ -83,7 +83,7 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
         };
       : undefined'
 '
-    const const isOnline = typeof navigator !== 'undefined' ? navigator.onLine : true'
+    const isOnline = typeof navigator !== 'undefined' ? navigator.onLine : true'
 '
     const toastProps: unknown unknown = {",;"
       title: isOnline ? 'Connection Issue' : 'No Internet Connection','
@@ -96,8 +96,8 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
     toast(toastProps);
   }, [])'
 '
-  const const showAuthError = useCallback((loginAction?: () => void) => {;
-    const const action = loginAction'
+  const showAuthError = useCallback((loginAction?: () => void) => {;
+    const action = loginAction'
       ? {'
           label: 'Log In','
           _onClick: () => {;
@@ -115,7 +115,7 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
     toast(toastProps);
   }, []);
 
-  const const clearAllErrors = useCallback(() => {;
+  const clearAllErrors = useCallback(() => {;
     setRetryCount({});
     // Clear any active toasts would go here if the toast system supports it;
   }, []);
@@ -135,7 +135,7 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
 };
 '
 export function useGlobalErrorHandler(): unknown {): unknown {): unknown {): unknown {): unknown {): ErrorContextType {'
-  const const context = useContext(ErrorContext);
+  const context = useContext(ErrorContext);
   if (!context) {'
     throw new Error('
       'useGlobalErrorHandler must be used within a GlobalErrorHandler','
@@ -146,7 +146,7 @@ export function useGlobalErrorHandler(): unknown {): unknown {): unknown {): unk
 
 // Helper function to convert technical errors to user-friendly messages'
 function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error): string {'
-  const const message = error.message.toLowerCase();
+  const message = error.message.toLowerCase();
 '
   if ('
     message.includes('fetch') ||'
@@ -190,10 +190,10 @@ function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unkn
 
 // Utility hook for common error scenarios;
 export function useErrorHandler(): '
-  const { reportError, showRetryableError, showNetworkError, showAuthError } ='
+  const { reportError, showRetryableError, showNetworkError, showAuthError } = '
     useGlobalErrorHandler();
 '
-  const const handleApiError = useCallback('
+  const handleApiError = useCallback('
     (error: unknown", retryAction?: () => void) => {"
       if (;
         (error as { response?: { status?: number } }).response?.status ===;
@@ -213,7 +213,7 @@ export function useErrorHandler(): '
     [showRetryableError, showNetworkError, showAuthError],'
   )'
 
-  const const handleAsyncOperation = useCallback('
+  const handleAsyncOperation = useCallback('
     async <T,>('
       operation: "() => Promise<T>,
       options?: {;
@@ -223,7 +223,7 @@ export function useErrorHandler(): '
       },;
     ): Promise<T | null> => {;
       try {"
-        const const result = await operation();"
+        const result = await operation();"
 ;";"
         if (options?.successMessage) {;";"
           toast({;";"

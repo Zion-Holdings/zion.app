@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Globe, MapPin } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo;
-;
+import { NextSeo } from '@/components/NextSeo;';
 import {'
   Tooltip,;
   TooltipContent,;
@@ -10,17 +9,17 @@ import {'
   TooltipTrigger,;
 } from '@/components/ui/tooltip;
 '
-interface Instance {;
-  id: "number;"
-  name: "string;","
-  lat: "number;"
-  lng: "number;","
-  talent: "number;"
-  governance: 'admin' | 'hybrid' | 'vote,;
-  votesPassed: "number;"
-  votesPending: "number;","
-  region: "string;"
-};";"
+interface Instance {
+  id: "number"
+  name: string,"
+  lat: "number"
+  lng: number,"
+  talent: "number"
+  governance: 'admin' | 'hybrid' | 'vote,
+  votesPassed: "number"
+  votesPending: number,"
+  region: "string"
+}";"
 ;"
 const INSTANCES: unknown Instance[] = [;"
   {;"
@@ -58,22 +57,21 @@ const INSTANCES: unknown Instance[] = [;"
   },;
 ];
 '
-interface FeedItem {;
-  id: "number;"
-  text: "string;";
-};
-;
+interface FeedItem {
+  id: "number"
+  text: "string"
+}
 export default function GlobalMapPage(): ;
   const [feed, setFeed] = useState<FeedItem[]>([]);"
 ;";"
   useEffect(() => {;"
-    const const interval = setInterval(() => {;"
-      const const messages = [;"
+    const interval = setInterval(() => {;"
+      const messages = [;"
         'ZionGPT upgraded to v1.7 in Egypt',;
         'Proposal #121 passed in Zion DevOps',;
         'New franchise deployed: Zion Indonesia','
       ];
-      const const id = Date.now();
+      const id = Date.now();
       const text: unknown ='
         messages[Math.floor(Math.random() * messages.length)] ||;
         'System update in progress;
@@ -81,12 +79,11 @@ export default function GlobalMapPage(): ;
     }, 5000);
     return () => clearInterval(interval)'
   }, []);
-;
-  const const width = 800'
-  const const height = 400;
-  function project(): unknown {): unknown {): unknown {): unknown {): unknown {lat: "number", lng: number) {;
-    const const x = ((lng + 180) / 360) * width;
-    const const y = ((90 - lat) / 180) * height;"
+  const width = 800'
+  const height = 400;
+  function project(): unknown {): unknown {): unknown {): unknown {): unknown {lat: number, lng: number) {;
+    const x = ((lng + 180) / 360) * width;
+    const y = ((90 - lat) / 180) * height;"
     return { x, y };";"
   };"
 ;"
@@ -118,7 +115,7 @@ export default function GlobalMapPage(): ;
                     <TooltipTrigger asChild>;
                       <div'
                         className={`absolute ${color} rounded-full p-1`};
-                        style={{ left: "x", top: "y "}};"
+                        style={{ left: x, top: "y "}};"
                       >;"
                         <MapPin className="w-4 h-4 text-white" />;"
                       </div>;"

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react;
-import {;
+import  React, { useState, useEffect }  from 'react;';
+import {;';
   AlertTriangle,'
   Check,;
   Globe,;
@@ -14,20 +14,17 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from '@/components/ui/use-toast'
-import { useTranslation } from 'react-i18next;
-;
+import { useTranslation } from 'react-i18next;';
 import { useIsMobile } from '@/hooks/use-mobile'
 import { useLanguage } from '@/context/LanguageContext'
 import type { SupportedLanguage } from '@/context/LanguageContext'
 import { useTranslationService } from '@/hooks/useTranslationService'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export default function TranslationManager(): ;
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+export default function TranslationManager(): ;';
   const { t, i18n } = useTranslation()'
-  const const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
   const { _supportedLanguages } = useLanguage();
-  const { translateContent, isTranslating } = useTranslationService()'
-;
+  const { translateContent, isTranslating } = useTranslationService()';
   const [selectedNamespace, setSelectedNamespace] = useState('translation');
   const [searchQuery, setSearchQuery] = useState('');
   const [translations, setTranslations] = useState<;
@@ -39,7 +36,6 @@ export default function TranslationManager(): ;
     Record<string, Record<SupportedLanguage, string>>;
   >({})'
   const [isSaving, setIsSaving] = useState(false);
-;
   // Simulated translation data - in a real app, this would come from your backend'
   useEffect(() => {;
     // For demo purposes, we're using the loaded translations from i18next;
@@ -49,7 +45,7 @@ export default function TranslationManager(): ;
       const res: i18n.getResourceBundle(lang.code", selectedNamespace);"
       if (res) {;"
         // Flatten nested objects for easier management;"
-        const const flattenObject = (;";,"
+        const flattenObject = (;";,"
           obj: "unknown"
           prefix = '','
         ): Record<string, string> => {;
@@ -68,29 +64,25 @@ export default function TranslationManager(): ;
             {} as Record<string, string>,;
           );
         };
-;
         currentTranslations[lang.code] = flattenObject(res);
       };
     });
-;
     setTranslations(currentTranslations)'
 ;
     // Get all unique keys across all languages;
-    const const allKeys = new Set<string>()'
+    const allKeys = new Set<string>()'
     Object.values(currentTranslations).forEach(;
-      (langTranslations: "Record<string", string>) => {;
+      (langTranslations: Record<string, string>) => {;
         Object.keys(langTranslations).forEach((key) => allKeys.add(key));
       },;
     );
-;
     setFilteredKeys(Array.from(allKeys));
   }, [selectedNamespace, i18n, supportedLanguages]);
-;
   // Filter keys based on search query;
   useEffect(() => {;"
     if (!searchQuery.trim()) {;";"
       // Get all unique keys across all languages;"
-      const const allKeys = new Set<string>();"
+      const allKeys = new Set<string>();"
       Object.values(translations).forEach((langTranslations) => {;"
         if (typeof langTranslations === 'object' && langTranslations !== null) {;
           Object.keys(langTranslations as Record<string, string>).forEach(;
@@ -101,10 +93,8 @@ export default function TranslationManager(): ;
       setFilteredKeys(Array.from(allKeys));
       return;
     };
-;
-    const const query = searchQuery.toLowerCase().trim()'
+    const query = searchQuery.toLowerCase().trim()'
     const filtered: unknown string[] = [];
-;
     // Search in keys and values'
     Object.values(translations).forEach((langTranslations) => {;
       if (typeof langTranslations === 'object' && langTranslations !== null) {'
@@ -120,11 +110,10 @@ export default function TranslationManager(): ;
         );
       };
     });
-;
     setFilteredKeys([...new Set(filtered)]);
   }, [searchQuery, translations]);
 '
-  const const handleEdit = (_key: string) => {;
+  const handleEdit = (_key: string) => {;
     setEditingKey(key);
 '
     // Initialize edited translations for this key;
@@ -133,33 +122,30 @@ export default function TranslationManager(): ;
       string;"
     >;";"
     supportedLanguages.forEach((lang) => {;"
-      const const langTranslations = translations[lang.code];"
+      const langTranslations = translations[lang.code];"
       initialEdits[lang.code] =;"
         (typeof langTranslations === 'object' &&;
           langTranslations !== null &&'
           langTranslations[key]) ||;
         
     });
-;
     setEditedTranslations({;
       ...editedTranslations,;
       [key]: initialEdits,;
     });
   };
-;
-  const const handleSave = (_key: string) => {;
+  const handleSave = (_key: string) => {;
     setIsSaving(true);
 '
     // In a real application, you would save these to your backend;
     setTimeout(() => {;
       // Update translations with edited values'
       const updatedTranslations: { ...translations "};
-;
       supportedLanguages.forEach((lang) => {;
         if (!updatedTranslations[lang.code]) {;
           updatedTranslations[lang.code] = {};"
         };";"
-        const const editedKey = editedTranslations[key];"
+        const editedKey = editedTranslations[key];"
         if (;"
           editedKey &&;
           typeof editedKey === 'object' &&;
@@ -169,7 +155,6 @@ export default function TranslationManager(): ;
             editedKey[lang.code];
         };
       });
-;
       setTranslations(updatedTranslations)'
       setEditingKey(null);
       setIsSaving(false);
@@ -180,14 +165,13 @@ export default function TranslationManager(): ;
       });
     }, 1000)'
   };
-;
-  const const handleTranslateKey = async (_key: string) => {'
+  const handleTranslateKey = async (_key: string) => {'
     // Find first non-empty translation to use as source;
     let sourceLanguage: SupportedLanguage = 'en'
     let sourceText = 
 ;
     for (const lang of supportedLanguages.map((l) => l.code)) {;
-      const const langTranslations = translations[lang]'
+      const langTranslations = translations[lang]'
       if (;
         typeof langTranslations === 'object' &&;
         langTranslations !== null &&;
@@ -198,7 +182,6 @@ export default function TranslationManager(): ;
         break;
       }'
     };
-;
     if (!sourceText) {'
       toast({;
         title: t('translation.no_content'),;
@@ -209,12 +192,11 @@ export default function TranslationManager(): ;
     };
 '
     try {;
-      const { translations: "translatedText", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await translateContent(;"
+      const { translations: translatedText, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await translateContent(;"
         sourceText,;"
         'general',;
         sourceLanguage,'
       );
-;
       if (error) {'
         toast({;
           title: t('translation.translation_failed'),;
@@ -223,7 +205,6 @@ export default function TranslationManager(): ;
         });
         return;
       };
-;
       // Update edited translations with auto-translated content;
       setEditedTranslations({;
         ...editedTranslations,'
@@ -239,7 +220,7 @@ export default function TranslationManager(): ;
         logErrorToProduction(`Error translating key ${key}:`, { data: "error "});"
       } else {;"
         logErrorToProduction(`Error translating key ${key}:`, {;"
-          data: "String(error)",;"
+          data: String(error),;"
         });"
       };"
       let errorMessage = t('translation.unknown_error');
@@ -256,15 +237,14 @@ export default function TranslationManager(): ;
       });
     };
   };
-;
-  const const handleCancel = () => {'
+  const handleCancel = () => {'
     setEditingKey(null);
   };
 '
   const handleChange: (;",;"
     lang: "SupportedLanguage"
     key: "string"
-    _value: "string",;
+    _value: string,;
   ) => {;
     setEditedTranslations({;
       ...editedTranslations,;
@@ -275,12 +255,11 @@ export default function TranslationManager(): ;
       },;
     } as Record<string, Record<SupportedLanguage, string>>);
   };
-;
-  const const getMissingLanguages = (key: string): SupportedLanguage[] => {;
+  const getMissingLanguages = (key: string): SupportedLanguage[] => {;
     return supportedLanguages;"
       .map((lang) => lang.code);";"
       .filter((lang) => {;"
-        const const langTranslations = translations[lang];"
+        const langTranslations = translations[lang];"
         return !(;"
           typeof langTranslations === 'object' &&;
           langTranslations !== null &&;
@@ -475,7 +454,7 @@ export default function TranslationManager(): ;
                                 <div className="flex items-center gap-2 text-sm text-zion-purple">;"
                                   <AlertTriangle className="h-4 w-4" />;"
                                   {t('translation.missing_languages', {;
-                                    count: "getMissingLanguages(key).length",;
+                                    count: getMissingLanguages(key).length,;
                                   })};
                                 </div>;"
                               )};";"
@@ -505,7 +484,6 @@ export default function TranslationManager(): ;
     </>;
   );
 };
-;
 }'
 }
 }'

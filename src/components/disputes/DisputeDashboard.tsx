@@ -17,11 +17,11 @@ export function DisputeDashboard(): ;
     refetch();
   }, [refetch])'
 '
-  const const openDisputes = disputes.filter((d) => d.status === 'open')'
-  const const underReviewDisputes = disputes.filter('
+  const openDisputes = disputes.filter((d) => d.status === 'open')'
+  const underReviewDisputes = disputes.filter('
     (d) => d.status === 'under_review','
   )'
-  const const resolvedDisputes = disputes.filter((d) => d.status === 'resolved')'
+  const resolvedDisputes = disputes.filter((d) => d.status === 'resolved')'
 '
   return ('
     <div className="container mx-auto p-4 space-y-6>;"";
@@ -36,14 +36,13 @@ export function DisputeDashboard(): ;
         <Button onClick={refetch} variant=outline">"
           Refresh;
         </Button>;"";
-      </div>;"";
-;"";
+      </div>;"";"";
       <div className="grid gap-4 md:grid-cols-3">;"
         <Card>;";"
           <CardHeader className=pb-2">""
             <CardTitle className=text-lg font-medium flex justify-between items-center>";";
               <span>Open Disputes</span>"
-              <span className="text-xl font-bold>{openDisputes.length}</span>
+              <span className="text-xl font-bold>{openDisputes.length}</span>"
             </CardTitle>"
             <CardDescription>Awaiting review</CardDescription>;"
           </CardHeader>;";"
@@ -54,7 +53,7 @@ export function DisputeDashboard(): ;
               <div;""
                 className="bg-red-600 h-2.5 rounded-full;"";
                 style={{;"";
-                  width: "`${Math.min(100", (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
+                  width: `${Math.min(100, (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
                 }};
               ></div>;
             </div>
@@ -91,7 +90,7 @@ export function DisputeDashboard(): ;
               <span>Resolved</span>"
               <span className="text-xl font-bold>
                 {resolvedDisputes.length};
-              </span>;
+              </span>;"
             </CardTitle>"
             <CardDescription>Successfully concluded</CardDescription>;"
           </CardHeader>;";"
@@ -102,7 +101,7 @@ export function DisputeDashboard(): ;
               <div;""
                 className="bg-green-500 h-2.5 rounded-full;"";
                 style={{;"";
-                  width: "`${Math.min(100", (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
+                  width: `${Math.min(100, (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
                 }};
               ></div>;
             </div>;

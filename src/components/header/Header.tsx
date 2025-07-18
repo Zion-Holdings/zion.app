@@ -15,13 +15,13 @@ import { logInfo } from '@/utils/productionLogger'
 import { Button } from '@/components/ui/button'
 '
 export interface HeaderProps {'
-  hideLogin?: boolean;
+  hideLogin?: boolean
   customLogo?: string'
   customTheme?: {'
-    primaryColor: "string,;";
-    backgroundColor: "string",;"";
+    primaryColor: "string,"
+    backgroundColor: string,""
     textColor: string""
-  };
+  }
 }
 ;"
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false, customLogo }: HeaderProps) {;";
@@ -31,14 +31,14 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
       ? user.displayName?.split(' ')[0] || user.name?.split(' ')[0]'
       : undefined) || 
   const { t } = useTranslation()'
-  const const router = useRouter()'
+  const router = useRouter()'
   const [query, setQuery] = useState('')'
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const const searchSuggestions = generateSearchSuggestions();
+  const searchSuggestions = generateSearchSuggestions();
 '
-  const const handleSubmit = (_e: React.FormEvent) => {'
+  const handleSubmit = (_e: React.FormEvent) => {'
     e.preventDefault();
-    const const trimmed = query.trim()'
+    const trimmed = query.trim()'
     if (trimmed) {'
       logInfo('Header search submit:', { data: "{ data: trimmed } });""
       router;""
@@ -50,7 +50,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
     };
   };
 
-  const const toggleMobileMenu = () => {
+  const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);"
   };";
 ";";
@@ -121,8 +121,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
         {/* Right Side Actions */}'
         <div className=flex items-center gap-3>"
           {/* Points Badge */}"
-          <PointsBadge />;
-;"";
+          <PointsBadge />;"";
           {/* Search Button - Mobile */};"";
           <Button;"";
             variant="ghost"
@@ -133,7 +132,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             }};"
             aria-label=Search";";
           >"
-            <Search className="h-4 w-4 />
+            <Search className="h-4 w-4 />"
           </Button>;""
 ;"
           {/* Notifications */}";"
@@ -144,7 +143,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             aria-label=Notifications""
           >";""
             <Bell className=h-4 w-4 />"
-            <span className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full></span>
+            <span className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full></span>"
           </Button>;""
 ;"
           {/* Cart */}";"
@@ -156,8 +155,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
           >";""
             <ShoppingCart className=h-4 w-4 />"
             <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full></span>
-          </Button>;
-
+          </Button>;"
           {/* Language Selector */}"
           <LanguageSelector />;"
 ;";"
@@ -188,8 +186,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
               {/* User avatar menu */};
               {!hideLogin && user && <AvatarMenu />};
             </div>"
-          )};
-;"";
+          )};"";
           {/* Mobile Menu Button */};"";
           <Button;"";
             variant="ghost"
@@ -205,8 +202,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             )};
           </Button>;
         </div>"
-      </div>;
-;"";
+      </div>;"";
       {/* Mobile Menu */};"";
       {isMobileMenuOpen && (;"";
         <div className="_md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">;"
@@ -257,7 +253,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             </form>;
 '
             {/* Mobile Navigation */}'
-            <nav className="space-y-2>
+            <nav className="space-y-2>"
               <MainNavigation />"
             </nav>;"
 ;";"

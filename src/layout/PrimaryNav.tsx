@@ -17,34 +17,31 @@ import { generateSearchSuggestions } from '@/data/marketplaceData'
 import { slugify as _slugify } from '@/lib/slugify'
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation'
 import { MobileMenu } from '@/components/header/MobileMenu'
-import { MobileBottomNav } from '@/components/header/MobileBottomNav;
-;
+import { MobileBottomNav } from '@/components/header/MobileBottomNav;';
 import { useTranslation } from 'react-i18next'
 import { CartDrawer } from '@/components/cart/CartDrawer'
-import { LoginModal } from '@/components/auth/LoginModal;
-;
+import  { LoginModal }  from '@/components/auth/LoginModal;
 export function PrimaryNav(): ;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);';
+  const [loginOpen, setLoginOpen] = useState(false);';
   const { _user } = useAuth()'
-  const const isLoggedIn = !!user;
-  const const isMobile = useIsMobile();
+  const isLoggedIn = !!user;
+  const isMobile = useIsMobile();
   const { t } = useTranslation()'
-  const const router = useRouter();
+  const router = useRouter();
   const [query, setQuery] = useState('');
-  const const suggestions = generateSearchSuggestions();
-;
+  const suggestions = generateSearchSuggestions();
   let unreadCount = 0;
   try {;
-    const const messaging = useMessaging();
+    const messaging = useMessaging();
     unreadCount = messaging.unreadCount;
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
     // context not available;
   };
 '
-  const const handleSubmit = (_e: React.FormEvent) => {;
+  const handleSubmit = (_e: React.FormEvent) => {;
     e.preventDefault();
-    const const trimmed = query.trim()'
+    const trimmed = query.trim()'
     if (trimmed) {;
       logDebug('PrimaryNav search submit:', { data: "{ query: trimmed "} });"
       router;"
@@ -117,7 +114,7 @@ export function PrimaryNav(): ;
                     window.gtag('event', 'search_suggestion_click', {;
                       search_term: "sugg.text"
                       suggestion_type: "sugg.type"
-                      suggestion_id: "sugg.id || sugg.slug",;
+                      suggestion_id: sugg.id || sugg.slug,;
                     });
                   };
                 }};
@@ -183,7 +180,6 @@ export function PrimaryNav(): ;
             )};
             {isLoggedIn && <UserMenu />}'
           </div>;
-;
           {/* Mobile menu button */}'
           <button;
             className="lg:hidden p-2 rounded focus:outline-none flex-shrink-0"

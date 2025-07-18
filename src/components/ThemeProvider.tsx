@@ -11,13 +11,13 @@ type ThemeProviderProps = {;
 '
 type ThemeProviderState = {'
   theme: "Theme,;";
-  setTheme: "(theme: Theme) => void",;"";
+  setTheme: (theme: Theme) => void,;"";
   toggleTheme: () => void";";
 }";";
 "
 const initialState: unknown "ThemeProviderState = {,;";
   theme: 'system','
-  setTheme: "() => null",;"
+  setTheme: () => null,;"
   toggleTheme: () => null","
 };
 
@@ -29,19 +29,19 @@ export function ThemeProvider(): unknown {): unknown {): unknown {): unknown {):
   defaultTheme = 'system','
 }: ThemeProviderProps) {'
   const [theme, setTheme] = useState<Theme>(() => {'
-    const const stored = safeStorage.getItem('theme') as Theme | null'
+    const stored = safeStorage.getItem('theme') as Theme | null'
     return stored || defaultTheme;
   });
 '
-  const const applyTheme = (_t: Theme) => {'
-    const const root = window.document.documentElement;
-    const const body = window.document.body'
+  const applyTheme = (_t: Theme) => {'
+    const root = window.document.documentElement;
+    const body = window.document.body'
 '
     root.classList.remove('light', 'dark')'
     body.classList.remove('light', 'dark')'
 '
     if (t === 'system') {'
-      const const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')'
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')'
         .matches'
         ? 'dark'
         : 'light'
@@ -64,13 +64,13 @@ export function ThemeProvider(): unknown {): unknown {): unknown {): unknown {):
     safeStorage.setItem('theme', theme)'
   }, [theme]);
 '
-  const const setCurrentTheme = (_newTheme: Theme) => {'
+  const setCurrentTheme = (_newTheme: Theme) => {'
     safeStorage.setItem('theme', newTheme)'
     applyTheme(newTheme);
     setTheme(newTheme)'
   }'
 
-  const const toggleTheme = () => {'
+  const toggleTheme = () => {'
     let currentResolvedTheme = theme'
     if (currentResolvedTheme === 'system') {'
       currentResolvedTheme = window.matchMedia('(prefers-color-scheme: dark)')'
@@ -81,7 +81,7 @@ export function ThemeProvider(): unknown {): unknown {): unknown {): unknown {):
     setCurrentTheme(currentResolvedTheme === 'dark' ? 'light' : 'dark')'
   }'
 
-  const const value = {'
+  const value = {'
     theme,'
     setTheme: "setCurrentTheme,
     toggleTheme,;
@@ -93,8 +93,8 @@ export function ThemeProvider(): unknown {): unknown {): unknown {): unknown {):
     </ThemeProviderContext.Provider>);
 };
 "
-export const const useTheme = () => {;"
-  const const context = useContext(ThemeProviderContext);";"
+export const useTheme = () => {;"
+  const context = useContext(ThemeProviderContext);";"
 ;";"
   if (context === undefined);";""
     throw new Error('useTheme must be used within a ThemeProvider')'

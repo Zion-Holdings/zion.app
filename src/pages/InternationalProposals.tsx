@@ -1,13 +1,13 @@
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo;
+import { NextSeo } from '@/components/NextSeo;';
 '
-interface Proposal {;
-  id: "number;"
-  title: "string;","
-  institution: "string;"
-  status: 'Draft' | 'Submitted' | 'Under Review' | 'Accepted,;
-  region: "string;"
-};";"
+interface Proposal {
+  id: "number"
+  title: string,"
+  institution: "string"
+  status: 'Draft' | 'Submitted' | 'Under Review' | 'Accepted,
+  region: "string"
+}";"
 ;"
 const SAMPLE_PROPOSALS: unknown Proposal[] = [;"
   {;"
@@ -18,7 +18,6 @@ const SAMPLE_PROPOSALS: unknown Proposal[] = [;"
     region: 'Global',;
   },'
 ];
-;
 export default function InternationalProposalsPage(): '
   return (;
     <div className="min-h-screen bg-background">;"

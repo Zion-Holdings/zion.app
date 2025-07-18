@@ -5,7 +5,7 @@ import {;
   getFirestore,;
 } from 'firebase/firestore'
 import { getPerformance } from 'firebase/performance'
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;';
 '
 const firebaseConfig: {;",;"
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',;
@@ -15,9 +15,7 @@ const firebaseConfig: {;",;"
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '',;
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '',;
 };
-;
-const const app = initializeApp(firebaseConfig);
-;
+const app = initializeApp(firebaseConfig);
 // Firestore tries to use IndexedDB for persistence which can fail in;
 // environments where access to local storage is blocked (e.g. third-party;
 // iframes or private browsing). Attempt to initialize normally and fall back to;
@@ -31,9 +29,8 @@ try {;
   });
   db = getFirestore(app);
 };
-;
 // Initialize Firebase Performance Monitoring;"
-const const perf = getPerformance(app);";"
+const perf = getPerformance(app);";"
 ;"
 export { db, perf };"
 """""

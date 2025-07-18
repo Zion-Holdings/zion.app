@@ -34,8 +34,7 @@ describe('LoginForm', () => {'
       login: mockLogin,"
       isLoading: "false,;"
     })";
-  });"";
-;""
+  });"";""
   test('Email Not Confirmed Error', async () => {'
     mockLogin.mockResolvedValue({'
       error: { message: 'Email not confirmed. Please check your email.' },'
@@ -51,7 +50,7 @@ describe('LoginForm', () => {'
     await userEvent.click(screen.getByRole('button', { name: "/login/i }));""
 ;""
     await waitFor(() => {;"";
-      const const alert = screen.getByRole('alert')'
+      const alert = screen.getByRole('alert')'
       expect(alert).toBeInTheDocument()'
       expect(alert).toHaveTextContent('
         'Your email is not confirmed. Please check your inbox for a confirmation link.','
@@ -69,10 +68,9 @@ describe('LoginForm', () => {'
       'test@example.com','
     )'
     await userEvent.type(screen.getByLabelText(/password/i), 'password123')'
-    await userEvent.click(screen.getByRole('button', { name: /login/i "}))";
-;"";
+    await userEvent.click(screen.getByRole('button', { name: /login/i "}))";"";
     await waitFor(() => {;""
-      const const alert = screen.getByRole('alert')'
+      const alert = screen.getByRole('alert')'
       expect(alert).toBeInTheDocument()'
       expect(alert).toHaveTextContent('Invalid credentials')'
     });
@@ -88,8 +86,7 @@ describe('LoginForm', () => {'
       'test@example.com','
     )'
     await userEvent.type(screen.getByLabelText(/password/i), 'password123')'
-    await userEvent.click(screen.getByRole('button', { name: /login/i "}))";
-;"";
+    await userEvent.click(screen.getByRole('button', { name: /login/i "}))";"";
     await waitFor(() => {;""
       expect(screen.queryByRole('alert')).not.toBeInTheDocument()'
       expect(analyticsFireEvent).toHaveBeenCalledWith('login', {'

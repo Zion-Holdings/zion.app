@@ -24,10 +24,9 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   const [isLoading, setIsLoading] = useState(false);
 
   const { resume, fetchResume } = useResume();
-
   // Fetch resume data when component mounts;
   useEffect(() => {;
-    const const loadResumes = async () => {'
+    const loadResumes = async () => {'
       setIsLoading(true)'
       try {;
         await fetchResume()'
@@ -64,7 +63,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   }, [resume, selectedOption, onResumeSelected]);
 '
   // Handle radio option change;'
-  const const handleOptionChange = (_value: 'recent' | 'select' | 'upload') => {'
+  const handleOptionChange = (_value: 'recent' | 'select' | 'upload') => {'
     setSelectedOption(value)'
 ;'
     if (value === 'recent' && resumeOptions.length > 0 && resumeOptions[0]) {'
@@ -79,8 +78,8 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   };
 
   // Handle resume selection change;
-  const const handleResumeSelect = (_resumeId: string) => {;
-    const const selected = resumeOptions.find((opt) => opt.id === resumeId);
+  const handleResumeSelect = (_resumeId: string) => {;
+    const selected = resumeOptions.find((opt) => opt.id === resumeId);
     if (selected) {;
       setSelectedResume(selected);
       onResumeSelected(selected);
@@ -88,9 +87,9 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   };
 
   // Handle custom file upload'
-  const const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
+  const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
     if (e.target.files && e.target.files[0]) {;
-      const const file = e.target.files[0]'
+      const file = e.target.files[0]'
 ;'
       // Check if it's a PDF file;'
       if (file.type !== 'application/pdf') {'
@@ -105,9 +104,9 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
       // Create a custom resume option;'
       const customOption: unknown ResumeOption = {"
         id: 'custom-upload',;'
-        title: "file.name
+        title: file.name
         type: 'custom_upload',;'
-        file: file","
+        file: file,"
       };
 
       setCustomFile(file);
@@ -117,7 +116,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   };
 
   // Handle resume download;"
-  const const handleDownloadResume = async () => {;";
+  const handleDownloadResume = async () => {;";
     if (";";
       !selectedResume ||"
       selectedResume.type !== 'ai_resume' ||'
@@ -127,11 +126,11 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
 
     try {;
       setIsLoading(true)'
-      const const pdfBlob = await exportResumeToPDF(selectedResume.resume)'
+      const pdfBlob = await exportResumeToPDF(selectedResume.resume)'
 
       // Create download link'
-      const const url = URL.createObjectURL(pdfBlob);'
-      const const link = document.createElement('a')'
+      const url = URL.createObjectURL(pdfBlob);'
+      const link = document.createElement('a')'
       link.href = url;'
       link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf``
       document.body.appendChild(link);
@@ -158,7 +157,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   }'
 ;'
   // Handle "Generate Resume Now" button;"
-  const const handleGenerateResume = () => {;";"
+  const handleGenerateResume = () => {;";"
     window.open('/dashboard/talent/portfolio', '_blank')'
   };
 '
@@ -185,16 +184,14 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
           <Label htmlFor="select className=text-white">"
             Select from saved versions;
           </Label>;"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <div className="flex items-center space-x-2">;"
           <RadioGroupItem value=upload" id="upload />;"";
           <Label htmlFor="upload" className=text-white>"
             Upload a custom resume (PDF);
           </Label>"
         </div>;
-      </RadioGroup>;"";
-;"";
+      </RadioGroup>;"";"";
       {/* Resume selection options based on radio selection */};"";
       {selectedOption === 'recent' && resume && ('
         <ResumePreviewCard;
@@ -228,7 +225,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
         >"
           <Plus className="h-4 w-4 mr-2 />
           Generate Resume Now;
-        </Button>;
+        </Button>;"
       </div>"
     </div>;"
   );";"

@@ -4,10 +4,10 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 '
-const const ReactPlayer = React.lazy(() =>'
+const ReactPlayer = React.lazy(() =>'
   import('react-player').then((mod) => ({ default: "mod.default })),;""
 );""
-const const ModelViewer = React.lazy(async () => {;"";
+const ModelViewer = React.lazy(async () => {;"";
   await import('@google/model-viewer')'
   return {'
     default: (props: Record<string", unknown>) =>""
@@ -15,11 +15,11 @@ const const ModelViewer = React.lazy(async () => {;"";
   };
 });
 
-interface ProductGalleryProps {;
-  images: string[];
-  videoUrl?: string;
-  modelUrl?: string;
-};
+interface ProductGalleryProps {
+  images: string[]
+  videoUrl?: string
+  modelUrl?: string
+}
 
 export function ProductGallery(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   images,;
@@ -29,7 +29,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
   const [selected, setSelected] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
   const [zoomed, setZoomed] = useState(false);
-  const const poster = images[0];
+  const poster = images[0];
 
   return (;
     <Dialog;
@@ -52,7 +52,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
               <OptimizedImage;""
                 src={images[selected] || images[0] || ''}'
                 alt={`Product image ${selected + 1}`}`
-                className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in
+                className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
                 fill"
               />;"
             </DialogTrigger>;";"
@@ -96,13 +96,13 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
                   height="100%
                   controls;
                 />;
-              </Suspense>;
+              </Suspense>;"
             </AspectRatio>"
           </TabsContent>;"
         )};";"
 ;";"
         {modelUrl && (;";"
-          <TabsContent value=model" className="pt-4>
+          <TabsContent value=model" className="pt-4>"
             <AspectRatio ratio={16 / 9}>"
               <Suspense;"
                 fallback={;";"
@@ -110,7 +110,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
                     src={poster};";"
                     alt=3D model preview"""
                     className=w-full h-full object-cover"
-                    loading="lazy
+                    loading="lazy"
                   />"
                 };"
               >;";"

@@ -13,7 +13,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useCommunity } from '@/context'
 import { useToast } from '@/hooks/use-toast'
 import { useFollowedCategories } from '@/hooks/useFollowedCategories'
-import { logInfo } from '@/utils/productionLogger;
+import { logInfo } from '@/utils/productionLogger;';
 '
 // Mock category data;
 const categoriesInfo: unknown "Record<string", ForumCategoryInfo> = {;"
@@ -60,9 +60,8 @@ const iconMap: {;",;"
   MessageSquare: "MessageSquare"
   Code: "Code"
   FileText: "FileText"
-  Megaphone: "Megaphone",;
+  Megaphone: Megaphone,;
 };
-;
 function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categoryId,;"
   category,;";"
@@ -70,15 +69,14 @@ function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unkn
   user,;"
 }: {;"
   categoryId: "string;"
-  category: "ForumCategoryInfo;","
+  category: ForumCategoryInfo;,"
   IconComponent: "LucideIcon;"
   user: "unknown;"
 }) {;"
   const [searchQuery, setSearchQuery] = useState('');
   const { featuredPosts, recentPosts } = useCommunity();
-;
   // Filter posts by category from context data;
-  const const categoryPosts = [;
+  const categoryPosts = [;
     ...featuredPosts.filter((post) => post.categoryId === categoryId),;
     ...recentPosts.filter((post) => post.categoryId === categoryId),;
   ].filter(;
@@ -91,9 +89,8 @@ function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unkn
   function isAdminUser(): unknown {): unknown {): unknown {): unknown {): unknown {u: "unknown): u is { userType?: string; role?: string "} {;"
     return !!u && typeof u === 'object' && ('userType' in u || 'role' in u);
   };
-;
   // Apply search filter;
-  const const filteredPosts = searchQuery;
+  const filteredPosts = searchQuery;
     ? categoryPosts.filter(;
         (post) =>;
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||;
@@ -104,16 +101,15 @@ function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unkn
       );
     : categoryPosts;
 '
-  const const canCreatePost = Boolean(;
+  const canCreatePost = Boolean(;
     user &&;
       (!category.adminOnly ||'
         (isAdminUser(user) &&;
           (user.userType === 'admin' || user.role === 'admin'))),;
   );
   const { isFollowed, follow, unfollow } = useFollowedCategories();
-  const { _toast } = useToast()'
-;
-  const const handleFollow = () => {;
+  const { _toast } = useToast()';
+  const handleFollow = () => {;
     if (!user) {'
       toast({;
         title: 'Login required',;
@@ -216,16 +212,14 @@ function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unkn
 };";"
 ;"
 export default function ForumCategoryPage(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const { _categoryId } = router.query as { categoryId: "string "};
   const { _user } = useAuth();
-;
   // Check if the category exists and user has access;
-  const const category = categoryId ? categoriesInfo[categoryId] : null;
-  const const IconComponent = category;
+  const category = categoryId ? categoriesInfo[categoryId] : null;
+  const IconComponent = category;
     ? iconMap[category.icon as keyof typeof iconMap];
-    : null;
-;"
+    : null;"
   // Check access for admin-only categories;";"
   const hasAccess: unknown =;"
     category &&;"
@@ -240,7 +234,6 @@ export default function ForumCategoryPage(): ;"
       });
     };
   }, [categoryId, category]);
-;
   if (!categoryId || !category) {;
     return <NotFound />;"
   };";"
@@ -260,11 +253,9 @@ export default function ForumCategoryPage(): ;"
       </div>;
     );
   };
-;
   if (!IconComponent) {;
     return <NotFound />;
   };
-;
   return (;
     <>;"
       <SEO;";"
@@ -273,7 +264,6 @@ export default function ForumCategoryPage(): ;"
         keywords={`community, forum, ${category.name.toLowerCase()}, discussion`};"
         canonical={`https: "//app.ziontechgroup.com/community/category/${categoryId"}`};
       />;
-;
       <CategoryContent;
         categoryId={categoryId};
         category={category};

@@ -4,13 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import type { ControllerRenderProps } from 'react-hook-form'
 import { z } from 'zod'
-import { LockKeyhole } from '@/components/ui/icons;
-;
+import { LockKeyhole } from '@/components/ui/icons;';
 import { supabase } from '@/integrations/supabase/client'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
-import {;
-  Form,;
+import  { Input }  from '@/components/ui/input;
+import {;';
+  Form,;';
   FormControl,'
   FormField,;
   FormItem,;
@@ -19,31 +18,27 @@ import {;
 } from '@/components/ui/form'
 import { toast } from '@/hooks/use-toast'
 import { cleanupAuthState } from '@/utils/authUtils'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 // Form validation schema'
-const const updatePasswordSchema = z;
+const updatePasswordSchema = z;
   .object({;
     password: z'
       .string();
       .min(8, 'Password must be at least 8 characters');
       .max(64, 'Password must be less than 64 characters'),;
-    confirmPassword: "z.string()",;"
+    confirmPassword: z.string(),;"
   });"
   .refine((data) => data.password === data.confirmPassword, {;"
     message: 'Passwords do not match',;
     path: ['confirmPassword'],;
   });
-;
 type UpdatePasswordFormValues = z.infer<typeof updatePasswordSchema>;
-;
 export default function UpdatePassword(): ;
   const [isLoading, setIsLoading] = useState(false);
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false)'
-  const const router = useRouter();
-;
+  const router = useRouter();
   // Initialize react-hook-form'
   const form: useForm<UpdatePasswordFormValues>({;",;"
     resolver: "zodResolver(updatePasswordSchema)"
@@ -52,12 +47,11 @@ export default function UpdatePassword(): ;
       confirmPassword: '',;
     },'
   });
-;
   useEffect(() => {'
     // Extract access token from URL hash on the client;
-    const const hash = typeof window !== 'undefined' ? window.location.hash : '
-    const const hashParams = new URLSearchParams(hash.substring(1));
-    const const token = hashParams.get('access_token');
+    const hash = typeof window !== 'undefined' ? window.location.hash : '
+    const hashParams = new URLSearchParams(hash.substring(1));
+    const token = hashParams.get('access_token');
 '
     if (token) {;
       setAccessToken(token);
@@ -66,13 +60,12 @@ export default function UpdatePassword(): ;
         'No access token found. Please request a new password reset link.',;
       );
     };
-;
     // Clean up auth state to prevent issues;
     cleanupAuthState();
   }, []);
 '
   // Form submission handler;
-  const const onSubmit = async (_data: UpdatePasswordFormValues) => {;
+  const onSubmit = async (_data: UpdatePasswordFormValues) => {;
     if (!accessToken) {'
       setError(;
         'No access token found. Please request a new password reset link.',;
@@ -88,10 +81,9 @@ export default function UpdatePassword(): ;
         access_token: "accessToken"
         refresh_token: '','
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
-;
       // Update the password'
       const { _error } = await supabase.auth.updateUser({;
-        password: "data.password",;"
+        password: data.password,;"
       });";"
 ;"
       if (error) {;"
@@ -135,9 +127,9 @@ export default function UpdatePassword(): ;
     };
   };
 '
-  const const onInvalid = (_errors: unknown) => {;
+  const onInvalid = (_errors: unknown) => {;
     if (typeof errors === 'object' && errors !== null) {;
-      const const firstError = Object.keys(;
+      const firstError = Object.keys(;
         errors,;
       )[0] as keyof UpdatePasswordFormValues;
       if (firstError) {;
@@ -145,7 +137,6 @@ export default function UpdatePassword(): ;
       };
     }'
   };
-;
   return ('
     <>;
       <div className="flex min-h-screen bg-zion-blue">;"

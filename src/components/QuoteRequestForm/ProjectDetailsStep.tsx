@@ -4,9 +4,9 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 '
 interface ProjectDetailsStepProps {'
-  formData: "QuoteFormData,;";
+  formData: "QuoteFormData,"
   updateFormData: "(data: Partial<QuoteFormData>) => void"
-};
+}
 
 export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknown {): unknown {{
   formData,;""
@@ -17,8 +17,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
       <div>"
         <h3 className="text-xl font-semibold text-white mb-4>;"
           Tell us about your project";
-        </h3>;"";
-;""
+        </h3>;"";""
         <div className="space-y-4>;"";
           <div>;"";
             <Label htmlFor="projectName" className=text-zion-slate-light>"
@@ -48,7 +47,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
                 updateFormData({ projectDescription: e.target.value })";";
               }"
               className="min-h-32 bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white
-            />;
+            />;"
           </div>"
         </div>;"
       </div>;";"
@@ -75,7 +74,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
                   },";
                 });"";
               };""
-              className="bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white
+              className="bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white"
             />;""
           </div>;"
 ";"
@@ -95,7 +94,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
                   },";
                 });"";
               };""
-              className="bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white
+              className="bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white"
             />;""
           </div>;"
 ";"
@@ -112,7 +111,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
                 updateFormData({;"";
                   contactInfo: {;"";
                     ...formData.contactInfo,;"";
-                    email: "e.target.value",;
+                    email: e.target.value,;
                   },";"
                 });";"
               };";";
@@ -132,7 +131,7 @@ export function ProjectDetailsStep(): unknown {): unknown {): unknown {): unknow
                 updateFormData({;"";
                   contactInfo: {;"";
                     ...formData.contactInfo,;"";
-                    phone: "e.target.value",;
+                    phone: e.target.value,;
                   },";"
                 });";"
               };";";

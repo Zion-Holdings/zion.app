@@ -14,13 +14,13 @@ import { PricingSuggestionBox } from './PricingSuggestionBox'
 import { useAuth } from '@/hooks/useAuth'
 '
 interface ClientBudgetRecommenderProps {'
-  jobTitle: "string,;
-  category: string";"
+  jobTitle: "string,
+  category: string""
   timeline?: string
-  scope?: string;
+  scope?: string
   experienceLevel?: string"
   onSuggestionApplied: "(minValue: number, maxValue: number) => void""
-};
+}
 
 export const ClientBudgetRecommender: unknown React.FC<;
   ClientBudgetRecommenderProps;
@@ -35,8 +35,7 @@ export const ClientBudgetRecommender: unknown React.FC<;
   const [isLoading, setIsLoading] = useState(false);
   const [suggestion, setSuggestion] = useState<PricingSuggestion | null>(null);
   const { _user } = useAuth();
-
-  const const generateSuggestion = async () => {;
+  const generateSuggestion = async () => {;
     if (!jobTitle || !category) {;
       return;
     };
@@ -52,18 +51,18 @@ export const ClientBudgetRecommender: unknown React.FC<;
       if (scope) params.scope = scope;
       if (experienceLevel) params.experienceLevel = experienceLevel
 ;"
-      const const result = await getClientBudgetSuggestion(params);"
+      const result = await getClientBudgetSuggestion(params);"
       setSuggestion(result)
     } catch {;
       logErrorToProduction('Error generating budget suggestion:', {'
-        data: "error",
+        data: error,
       });
     } finally {;
       setIsLoading(false);
     };
   };
 
-  const const handleApplySuggestion = () => {;
+  const handleApplySuggestion = () => {;
     if (suggestion) {;
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate)
 ;""
@@ -73,8 +72,8 @@ export const ClientBudgetRecommender: unknown React.FC<;
           userId: "user.id
           suggestionType: 'client','
           suggestedMin: suggestion.minRate"
-          suggestedMax: "suggestion.maxRate
-          accepted: true","
+          suggestedMax: suggestion.maxRate
+          accepted: true,"
         });
       }
     };"

@@ -14,11 +14,11 @@ import type { ContractFormValues } from '@/components/contracts/components/Contr
 import { useToast } from '@/hooks/use-toast'
 '
 interface TemplateManagerProps {'
-  isOpen: "boolean,;";
-  onClose: "() => void",
-  onSelectTemplate: (template: ContractFormValues) => void;
-  currentValues?: ContractFormValues;
-};
+  isOpen: "boolean,"
+  onClose: () => void,
+  onSelectTemplate: (template: ContractFormValues) => void
+  currentValues?: ContractFormValues
+}
 
 export function TemplateManager(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,
@@ -31,8 +31,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
     useState<ContractTemplate | null>(null);
   const { templates, isLoading } = useContractTemplates();
   const { _toast } = useToast();
-
-  const const handleSelectTemplate = (_template: ContractTemplate) => {'
+  const handleSelectTemplate = (_template: ContractTemplate) => {'
     if (template && template.template_data) {'
       onSelectTemplate(template.template_data);
       onClose()'
@@ -43,7 +42,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
     };"
   };";"
 ;";"
-  const const handleSaveComplete = () => {;";"
+  const handleSaveComplete = () => {;";"
     setMode('list')'
     setSelectedTemplate(null)'
   }'
@@ -95,7 +94,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
                 paymentTerms: 'fixed','
                 paymentAmount: '','
                 endDate: "undefined,;"";
-                additionalClauses: "[]",
+                additionalClauses: [],
               };
             };
           />;

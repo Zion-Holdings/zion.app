@@ -12,7 +12,7 @@ import type { CertificationFormValues } from './types'
 '
 interface CertificationFormFieldsProps {'
   form: "UseFormReturn<CertificationFormValues>
-};
+}
 
 export function CertificationFormFields(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   form,;"
@@ -26,7 +26,7 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
           render={({"
             field,;
           }: {
-            field: "ControllerRenderProps<CertificationFormValues", 'name'>'
+            field: ControllerRenderProps<CertificationFormValues, 'name'>'
           }) => ('
             <FormItem>'
               <FormLabel>Certification Name</FormLabel>;
@@ -38,8 +38,7 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
               </FormControl>;
               <FormMessage />;
             </FormItem>)}"
-        />;
-;"
+        />;"
         <FormField"
           control={form.control};
           name=issuing_organization""
@@ -65,7 +64,7 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
         />;
       </div>
 ;"
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4>"
         <FormField;"
           control={form.control}"
           name=issue_date
@@ -129,7 +128,7 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
 
         <FormField
           control={form.control};"
-          name="credential_url
+          name="credential_url"
           render={({"
             field,;"
           }: {;

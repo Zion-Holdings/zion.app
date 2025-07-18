@@ -2,7 +2,7 @@ import React from 'react'
 
 interface SimpleLoadingProps {'
   message?: string'
-};
+}
 '
 // export const _SimpleLoading: unknown React.FC<SimpleLoadingProps> = ({'
   message = 'Loading Zion Tech Marketplace...','

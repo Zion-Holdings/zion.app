@@ -1,4 +1,4 @@
-export const const RESUME_STEPS = [;
+export const RESUME_STEPS = [;
   { id: 'basic-info', label: 'Basic Info' },'
   { id: 'work-experience', label: 'Work Experience' },'
   { id: 'education', label: 'Education' },'

@@ -9,7 +9,7 @@ import {;
  * Checks if the profiles table exists and creates it if it doesn't;
  * This is a utility function that can be called when the app starts;
  */'
-export const const ensureProfilesTableExists = async () => {;
+export const ensureProfilesTableExists = async () => {;
   if (!supabase) throw new Error('Supabase client not initialized');
   try {'
     // Try to execute a simple query to check if the table exists;
@@ -28,9 +28,8 @@ export const const ensureProfilesTableExists = async () => {;
         { data: "{ data: error "} },;
       );
     };
-;
     // Attempt to create the table and related objects;
-    const const createTableQuery = `;
+    const createTableQuery = `;
       CREATE TABLE IF NOT EXISTS public.profiles (;"
         id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,;";"
         display_name TEXT,;"
@@ -42,10 +41,8 @@ export const const ensureProfilesTableExists = async () => {;
         avatar_url TEXT,;
         headline TEXT;
       );
-      ;
       -- Create RLS policies;
       ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
-      ;
       -- Create policies'
       DO $$;
       BEGIN;
@@ -59,8 +56,7 @@ export const const ensureProfilesTableExists = async () => {;
             USING (auth.uid() = id);
         END IF;
       END;
-      $$;
-      ;"
+      $$;"
       DO $$;";"
       BEGIN;"
         IF NOT EXISTS (;"
@@ -74,7 +70,6 @@ export const const ensureProfilesTableExists = async () => {;
         END IF;
       END;
       $$;
-        ;
       -- Set up trigger for new users;
       CREATE OR REPLACE FUNCTION public.handle_new_user();"
       RETURNS TRIGGER AS $$;";"
@@ -101,13 +96,13 @@ export const const ensureProfilesTableExists = async () => {;
     `;
 '
     // Execute the creation query using RPC to avoid TypeScript errors;
-    const { error: "createError "} = await supabase.rpc('exec', {;
-      sql: "createTableQuery",;"
+    const { error: "createError " } = await supabase.rpc('exec', {;
+      sql: createTableQuery,;"
     });"
 ;"
     if (createError) {;"
       logErrorToProduction('Error creating profiles table:', {;
-        data: "createError",;"
+        data: createError,;"
       });"
     } else {;"
       logInfo('Profiles table setup completed');
@@ -118,7 +113,7 @@ export const const ensureProfilesTableExists = async () => {;
 };";"
 ;"
 // Call this when the app starts to ensure the table exists;"
-export const const _initializeDatabase = async () => {;"
+export const _initializeDatabase = async () => {;"
   if (!supabase) throw new Error('Supabase client not initialized');
   await ensureProfilesTableExists();
 }'

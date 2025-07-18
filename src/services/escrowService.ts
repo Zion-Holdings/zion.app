@@ -1,8 +1,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { OrderStatus } from '@/lib/orderStatusMachine'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-export const const holdInEscrow = async (_params: "{;",;"
+import { logErrorToProduction } from '@/utils/productionLogger;';
+export const holdInEscrow = async (_params: {;,;"
   amount: number;"
   currency?: string;"
   providerAccountId: "string;"
@@ -24,7 +23,7 @@ export const const holdInEscrow = async (_params: "{;",;"
   };"
 };";"
 ;"
-export const const releaseEscrow = async (_paymentIntentId: string) => {;"
+export const releaseEscrow = async (_paymentIntentId: string) => {;"
   try {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke('escrow-service', {;
@@ -41,7 +40,7 @@ export const const releaseEscrow = async (_paymentIntentId: string) => {;"
   };"
 };";"
 ;"
-export const const disputeOrder = async (_orderId: string) => {;"
+export const disputeOrder = async (_orderId: string) => {;"
   try {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke('escrow-service', {;

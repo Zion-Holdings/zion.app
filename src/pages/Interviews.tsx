@@ -5,25 +5,20 @@ import type { Interview } from '@/types/interview'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { InterviewCard } from '@/components/interviews/InterviewCard;
-;
-import { format, isAfter, parseISO, startOfDay } from 'date-fns;
-;
+import { InterviewCard } from '@/components/interviews/InterviewCard;';
+import { format, isAfter, parseISO, startOfDay } from 'date-fns;';
 function InterviewsContent(): '
   const { interviews, isLoading, fetchInterviews } = useInterviews();
   const [activeTab, setActiveTab] = useState('upcoming');
-;
-  useEffect(() => {;
-    fetchInterviews();
-  }, [fetchInterviews]);
-;
+  useEffect(() => {
+    fetchInterviews()
+  }, [fetchInterviews])
   // Filter interviews based on status and date;
-  const const now = new Date();
-//   const const _today = undefined; // Unused startOfDay(now);
-;
-  const const upcomingInterviews = interviews'
+  const now = new Date();
+//   const _today = undefined; // Unused startOfDay(now);
+  const upcomingInterviews = interviews'
     .filter((interview) => {;
-      const const interviewDate = parseISO(interview.scheduled_date);
+      const interviewDate = parseISO(interview.scheduled_date);
       return ('
         isAfter(interviewDate, now) &&;
         ['confirmed', 'requested'].includes(interview.status);
@@ -35,20 +30,19 @@ function InterviewsContent(): '
         parseISO(b.scheduled_date).getTime(),;
     );
 '
-  const const pendingInterviews = interviews.filter(;
+  const pendingInterviews = interviews.filter(;
     (interview) => interview.status === 'requested',;
   );
 '
-  const const pastInterviews = interviews.filter((interview) => {;
-    const const interviewDate = parseISO(interview.scheduled_date);
+  const pastInterviews = interviews.filter((interview) => {;
+    const interviewDate = parseISO(interview.scheduled_date);
     return ('
       !isAfter(interviewDate, now) ||;
       ['completed', 'declined', 'cancelled'].includes(interview.status);
     )'
   });
-;
   // Group interviews by date'
-  const const groupInterviewsByDate = (_interviews: Interview[]) => {;
+  const groupInterviewsByDate = (_interviews: Interview[]) => {;
     const grouped: unknown "Record<string", Interview[]> = {};"
 ;"
     interviews.forEach((interview) => {;"
@@ -58,16 +52,14 @@ function InterviewsContent(): '
       };
       grouped[dateKey].push(interview);
     });
-;
     return grouped;
   };
-;
-  const const upcomingGrouped = groupInterviewsByDate(upcomingInterviews)'
-  const const pendingGrouped = groupInterviewsByDate(pendingInterviews);
-  const const pastGrouped = groupInterviewsByDate(pastInterviews);
+  const upcomingGrouped = groupInterviewsByDate(upcomingInterviews)'
+  const pendingGrouped = groupInterviewsByDate(pendingInterviews);
+  const pastGrouped = groupInterviewsByDate(pastInterviews);
 '
   const renderInterviewGroups: (;",;"
-    groupedInterviews: "Record<string", Interview[]>,;
+    groupedInterviews: Record<string, Interview[]>,;
   ) => {;
     return Object.entries(groupedInterviews);
       .sort(;"
@@ -200,7 +192,6 @@ function InterviewsContent(): '
     </>;
   );
 };
-;
 export default function Interviews(): ;
   return (;
     <ProtectedRoute>;

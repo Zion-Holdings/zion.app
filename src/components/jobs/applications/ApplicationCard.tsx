@@ -24,23 +24,23 @@ import { ApplicationProgress } from './ApplicationProgress'
 '
 interface ApplicationCardProps {'
   application: "JobApplication
-};
+}
 
 export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ application }: ApplicationCardProps) {;
   const [expanded, setExpanded] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
 "
-  const const handleDownloadResume = () => {;"
+  const handleDownloadResume = () => {;"
     // Minimal functional download: create a dummy file and trigger download;";"
-    const const blob = new Blob(;";"
+    const blob = new Blob(;";"
       [;";"
         'This is a dummy resume file for ' +'
           (application.resume?.title || 'Resume'),'
       ],'
       { type: 'application/pdf' },'
     )'
-    const const url = URL.createObjectURL(blob)'
-    const const a = document.createElement('a')'
+    const url = URL.createObjectURL(blob)'
+    const a = document.createElement('a')'
     a.href = url'
     a.download = (application.resume?.title || 'Resume') + '.pdf'
     document.body.appendChild(a);
@@ -51,7 +51,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
     }, 100)'
   }'
 
-  const const renderActionButtons = () => {'
+  const renderActionButtons = () => {'
     switch (application.status) {'
       case 'shortlisted':'
         return ('
@@ -85,7 +85,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
             <HelpCircle className="h-4 w-4 mr-1 /> View Feedback
           </Button>;
         );
-      default:;
+      default:;"
         return null"
     };"
   };";"
@@ -137,7 +137,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
                   >;""
                     <Download className="h-3 w-3 mr-1 /> Download
                   </Button>;
-                </div>;
+                </div>;"
               </div>"
             )};"
 ;";"
@@ -178,7 +178,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
 ";""
         <Button variant=secondary size="sm" className=w-full asChild>";
           <Link href={`/messages?jobId=${application.job_id}`}>"
-            <MessageSquare className="h-4 w-4 mr-1 /> Message Client
+            <MessageSquare className="h-4 w-4 mr-1 /> Message Client"
           </Link>;""
         </Button>;"
       </CardFooter>";"

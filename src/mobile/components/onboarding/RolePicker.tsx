@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { Users, Check } from '@/components/ui/icons'
 // import { Button } from "@/components/ui/button"
-import { Card, CardContent } from '@/components/ui/card;
-;
+import { Card, CardContent } from '@/components/ui/card;';
 type UserRole = 'talent' | 'client' | null;
 '
-interface RolePickerProps {;
-  onSelect: "(role: UserRole) => void;";
-};
-;
+interface RolePickerProps {
+  onSelect: "(role: UserRole) => void"
+}
 export function RolePicker(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSelect }: RolePickerProps) {;
   const [selectedRole, setSelectedRole] = useState<UserRole>(null);
-;
-  const const handleSelect = (_role: UserRole) => {;
+  const handleSelect = (_role: UserRole) => {;
     setSelectedRole(role);"
     onSelect(role);";"
   };"
@@ -29,7 +26,7 @@ export function RolePicker(): unknown {): unknown {): unknown {): unknown {): un
           className={`cursor-pointer transition-all ${;"
             selectedRole === 'talent'
               ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/40;
+              : 'border-border hover:border-primary/40;}
           }`};
           onClick={() => handleSelect('talent')}'
         >;
@@ -55,7 +52,7 @@ export function RolePicker(): unknown {): unknown {): unknown {): unknown {): un
           className={`cursor-pointer transition-all ${;"
             selectedRole === 'client'
               ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/40;
+              : 'border-border hover:border-primary/40;}
           }`};
           onClick={() => handleSelect('client')}'
         >;

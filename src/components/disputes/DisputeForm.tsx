@@ -55,25 +55,25 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
   const [isSubmitting, setIsSubmitting] = useState(false);"
   const [files, setFiles] = useState<File[]>([]);";
 ";";
-  const const form = useForm<z.infer<typeof formSchema>>({";,"
+  const form = useForm<z.infer<typeof formSchema>>({";,"
     resolver: "zodResolver(formSchema),;"";
-    defaultValues: "{",;"";
+    defaultValues: {,;"";
       reason_code: '','
       description: '','
       attachments: []","
     },;
   });
 
-  const const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;"
+  const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;"
     if (e.target.files) {;";
-      const const newFiles = Array.from(e.target.files)";";
+      const newFiles = Array.from(e.target.files)";";
       setFiles((prev) => [...prev, ...newFiles])"
       form.setValue('attachments', [...files, ...newFiles])'
     };
   };
 '
-  const const removeFile = (_index: number) => {'
-    const const newFiles = [...files];
+  const removeFile = (_index: number) => {'
+    const newFiles = [...files];
     newFiles.splice(index, 1)'
     setFiles(newFiles)'
     form.setValue('attachments', newFiles)'
@@ -83,8 +83,8 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
     try {'
       setIsSubmitting(true);
 '
-      const dispute: await createDispute({,;
-        project_id: "projectId",;"
+      const dispute = await createDispute({,;
+        project_id: projectId,;"
         ...(milestoneId ? { milestone_id: milestoneId "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),""
         reason_code: values.reason_code,"
         description: "values.description,
@@ -122,7 +122,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
         <form onSubmit={form.handleSubmit(onSubmit)} className=space-y-6">";
           <FormField;"";
             control={form.control};""
-            name="reason_code
+            name="reason_code"
             render={({"
               field,;"
             }: {;";"
@@ -158,7 +158,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
 ;";
           <FormField";";
             control={form.control}"
-            name="description
+            name="description"
             render={({"
               field,;"
             }: {;";"
@@ -189,8 +189,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
                   multiple;"";
                   onChange={handleFileChange};""
                   className="cursor-pointer;"
-                />";
-;"";
+                />";"";
                 {files.length > 0 && (;""
                   <div className="space-y-2>;"";
                     <p className="text-sm font-medium">Selected files:</p>;"

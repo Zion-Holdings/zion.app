@@ -1,8 +1,8 @@
-import React from 'react;
+import  React  from 'react;
 import {;
   UserCheck,;
-  Bell,;
-  MessageSquare,;
+  Bell,;';
+  MessageSquare,;';
   LogOut,'
   Send,;
   Settings,;
@@ -14,8 +14,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useRequireAuth } from '@/hooks/useAuthGuard'
 import { Button } from '@/components/ui/button'
 import { Header } from '@/components/Header'
-import { Badge } from '@/components/ui/badge;
-;
+import { Badge } from '@/components/ui/badge;';
 import { useGetOrdersQuery } from '@/hooks/useOrders'
 import { useFavorites } from '@/hooks/useFavorites'
 import { useToast } from '@/hooks/use-toast'
@@ -23,83 +22,81 @@ import { EmptyState } from '@/components/ui/empty-state'
 import Link from 'next/link'
 ;
 // Lazy load heavy components to prevent router abort;
-const const CommunityDiscussion = dynamic('
+const CommunityDiscussion = dynamic('
   () =>;
     import('@/components/CommunityDiscussion').then((mod) => ({;
-      default: "mod.CommunityDiscussion",;"
+      default: mod.CommunityDiscussion,;"
     })),;"
   {;"
     loading: () => (;"
       <div className="h-32 bg-zion-blue-light rounded animate-pulse" />;"
     ),;"
-    ssr: "false",;
+    ssr: false,;
   },;"
 );";"
 ;"
-const const PointsBadge = dynamic(;"
+const PointsBadge = dynamic(;"
   () =>;"
     import('@/components/loyalty/PointsBadge').then((mod) => ({;
-      default: "mod.PointsBadge",;"
+      default: mod.PointsBadge,;"
     })),;"
   {;"
     loading: () => (;"
       <span className="text-zion-cyan font-medium">Loading...</span>;"
     ),;"
-    ssr: "false",;
+    ssr: false,;
   },;"
 );";"
 ;"
-const const ApiKeysManager = dynamic(;"
+const ApiKeysManager = dynamic(;"
   () =>;"
     import('@/components/developers/ApiKeysManager').then((mod) => ({;
-      default: "mod.ApiKeysManager",;"
+      default: mod.ApiKeysManager,;"
     })),;"
   {;"
     loading: () => (;"
       <div className="h-24 bg-zion-blue-light rounded animate-pulse" />;"
     ),;"
-    ssr: "false",;
+    ssr: false,;
   },;"
 );";"
 ;"
-const const NotificationBell = dynamic(;"
+const NotificationBell = dynamic(;"
   () =>;"
     import('@/components/NotificationBell').then((mod) => ({;
-      default: "mod.NotificationBell",;"
+      default: mod.NotificationBell,;"
     })),;"
   {;"
     loading: "() => <Bell size={16"} className="text-zion-cyan" />,;"
-    ssr: "false",;
+    ssr: false,;
   },;"
 );";"
 ;"
-const const GuidedTour = dynamic(;"
+const GuidedTour = dynamic(;"
   () =>;"
     import('@/components/onboarding/GuidedTour').then((mod) => ({;
-      default: "mod.GuidedTour",;"
+      default: mod.GuidedTour,;"
     })),;"
   {;"
-    ssr: "false",;"
+    ssr: false,;"
   },;";"
 );"
 ;"
 // Lazy load notification functions;"
-const const loadNotificationFunctions = () => import('@/utils/notifications');
-;
+const loadNotificationFunctions = () => import('@/utils/notifications');
 export default function Dashboard(): ;
   const { _logout } = useAuth();
   const { user, loading } = useRequireAuth(); // This will handle authentication and redirects'
   const { _toast } = useToast();
-;
   // Add safe checks for user ID to prevent premature API calls'
-  const const userId = user?.id;
-  const { data: "orders = []", isLoading: "ordersLoading "} =;"
+  const userId = user?.id;
+  const { data: orders = [], isLoading: "ordersLoading "} =;"
     useGetOrdersQuery(userId);";"
   const { _favorites } = useFavorites();"
 ;"
   // Type assertion to work around Supabase User type limitations - userWithExtendedProps can remain for now if it accesses non-standard props.;"
   // Standard props like user_metadata should resolve correctly on the original 'user' object.;
-  const const userWithExtendedProps = user as unknown as {;
+  const userWithExtendedProps = user as unknown as {;
     displayName?: string;
     email?: string;
     userType?: string;
@@ -111,7 +108,6 @@ export default function Dashboard(): ;
     'talent;
   const roleForTour: unknown =;
     userType === 'client' || userType === 'admin' ? 'client' : 'talent;
-;
   if (loading) {'
     return (;
       <div className="min-h-screen flex items-center justify-center">;"
@@ -134,12 +130,11 @@ export default function Dashboard(): ;
       </div>;
     );
   };
-;
-  const const handleTestNotification = async () => {;"
+  const handleTestNotification = async () => {;"
     try {;";"
       const { _createTestNotification } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await loadNotificationFunctions();"
       // Using type assertion as a workaround for persistent TS error.;"
-      const const result = await createTestNotification(;"
+      const result = await createTestNotification(;"
         (user as { id?: string })?.id ?? '',;
       );
       if (result.success) {'
@@ -261,7 +256,7 @@ export default function Dashboard(): ;
                           await createOnboardingNotification({;"
                             userId: user?.id ?? '',;
                             missingMilestone: 'profile_completed',;
-                            userRole: "roleForTour",;"
+                            userRole: roleForTour,;"
                           });"
                           toast({;"
                             title: 'Onboarding notification sent',;

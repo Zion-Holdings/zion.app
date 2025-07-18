@@ -1,14 +1,14 @@
 import React from 'react';
 import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons'
-import { cn } from '@/lib/utils;
+import { cn } from '@/lib/utils;';
 '
-interface SeverityIndicatorProps {;
-  severity: 'safe' | 'suspicious' | 'dangerous;
+interface SeverityIndicatorProps {
+  severity: 'safe' | 'suspicious' | 'dangerous
   showIcon?: boolean'
-  showText?: boolean;
-  size?: 'sm' | 'md' | 'lg;
-  className?: string;
-};
+  showText?: boolean
+  size?: 'sm' | 'md' | 'lg
+  className?: string
+}
 '
 export function SeverityIndicator(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   severity,;
@@ -17,7 +17,7 @@ export function SeverityIndicator(): unknown {): unknown {): unknown {): unknown
   size = 'md','
   className,;
 }: SeverityIndicatorProps) {;
-  const const getSeverityIcon = () => {'
+  const getSeverityIcon = () => {'
     switch (severity) {;
       case 'dangerous':;
         return (;

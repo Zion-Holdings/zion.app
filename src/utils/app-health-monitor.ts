@@ -1,44 +1,44 @@
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
 '
 // Application Health Monitor;
 // Comprehensive monitoring system for application health, performance, and reliability;
 '
-interface HealthMetric {;
-  name: "string;"
-  value: "number;","
-  unit: "string;"
-  status: 'healthy' | 'warning' | 'critical,;
+interface HealthMetric {
+  name: "string"
+  value: number,"
+  unit: "string"
+  status: 'healthy' | 'warning' | 'critical,
   threshold: {
-    warning: "number;","
-    critical: "number;"
-  };"
+    warning: number,"
+    critical: "number"
+  }"
   timestamp: "number;"
 };"
 ;"
-interface HealthCheck {;"
-  name: "string;"
-  status: 'pass' | 'fail' | 'warn,;
-  message: "string;"
-  duration: "number;",;
-  timestamp: number;"
-  details?: Record<string, unknown>;";"
-};"
+interface HealthCheck {"
+  name: "string"
+  status: 'pass' | 'fail' | 'warn,
+  message: "string"
+  duration: number,
+  timestamp: number"
+  details?: Record<string, unknown>""
+}"
 ;"
-interface HealthReport {;"
-  status: 'healthy' | 'degraded' | 'unhealthy,;
-  score: "number;","
-  timestamp: "number;"
-  uptime: "number;","
-  checks: "HealthCheck[];"
-  metrics: "HealthMetric[];","
-  recommendations: "string[];"
-  version: "string;","
-  environment: "string;"
-};"
+interface HealthReport {"
+  status: 'healthy' | 'degraded' | 'unhealthy,
+  score: number,"
+  timestamp: "number"
+  uptime: number,"
+  checks: "HealthCheck[]"
+  metrics: HealthMetric[],"
+  recommendations: "string[]"
+  version: string,"
+  environment: "string"
+}"
 ;"
 class AppHealthMonitor {;"
-  private checks: "Map<string", () => Promise<HealthCheck>> = new Map();"
-  private metrics: "Map<string", HealthMetric> = new Map();"
+  private checks: Map<string, () => Promise<HealthCheck>> = new Map();"
+  private metrics: Map<string, HealthMetric> = new Map();"
   private startTime: number = Date.now();";"
   private isClient: boolean;"
 ;"
@@ -46,18 +46,15 @@ class AppHealthMonitor {;"
     this.isClient = typeof window !== 'undefined;
     this.setupDefaultChecks();
     this.setupDefaultMetrics();
-;
     // Start monitoring if on client side;
     if (this.isClient) {;
       this.startContinuousMonitoring();
     }'
   };
-;
   private setupDefaultChecks(): void {'
     // Memory health check;
     this.addHealthCheck('memory', async () => {'
-      const const startTime = performance.now();
-;
+      const startTime = performance.now();
       try {'
         let memoryUsage = 0;
         let status: 'pass' | 'warn' | 'fail' = 'pass'
@@ -65,7 +62,7 @@ class AppHealthMonitor {;"
 '
         interface PerformanceMemory {;
           usedJSHeapSize: "number;"
-          totalJSHeapSize: "number;","
+          totalJSHeapSize: number;,"
           jsHeapSizeLimit: "number;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
         function hasMemory(): unknown {): unknown {): unknown {): unknown {): unknown {;"
@@ -77,7 +74,7 @@ class AppHealthMonitor {;"
           );
         }'
         if (hasMemory(performance)) {;
-          const const memory = performance.memory;
+          const memory = performance.memory;
           memoryUsage = memory.usedJSHeapSize / 1024 / 1024; // MB'
           if (memoryUsage > 100) {;
             status = 'fail'
@@ -102,24 +99,23 @@ class AppHealthMonitor {;"
           status: 'fail',;
           message: "`Memory check failed: ${error"}`,;"
           duration: "performance.now() - startTime"
-          timestamp: "Date.now()",;
+          timestamp: Date.now(),;
         };"
       };";"
     });"
 ;"
     // Performance health check;"
     this.addHealthCheck('performance', async () => {;
-      const const startTime = performance.now();
+      const startTime = performance.now();
 '
       try {;
-        const const entries = performance.getEntriesByType('navigation');
-        const const navEntry = entries[0] as PerformanceNavigationTiming'
+        const entries = performance.getEntriesByType('navigation');
+        const navEntry = entries[0] as PerformanceNavigationTiming'
 ;
         let status: 'pass' | 'warn' | 'fail' = 'pass'
         let message = 'Page performance is good;
-;
         if (navEntry) {;
-          const const loadTime = navEntry.loadEventEnd - navEntry.loadEventStart;
+          const loadTime = navEntry.loadEventEnd - navEntry.loadEventStart;
           const domContentLoaded: unknown ='
             navEntry.domContentLoadedEventEnd -;
             navEntry.domContentLoadedEventStart;
@@ -137,7 +133,7 @@ class AppHealthMonitor {;"
             status,'
             message,;
             duration: "performance.now() - startTime"
-            timestamp: "Date.now()",;
+            timestamp: Date.now(),;
             details: {;
               loadTime,;
               domContentLoaded,;
@@ -152,7 +148,7 @@ class AppHealthMonitor {;"
           status: 'pass',;
           message: 'Performance metrics not available',;
           duration: "performance.now() - startTime"
-          timestamp: "Date.now()",;"
+          timestamp: Date.now(),;"
         };"
       } catch {;"
         return {;"
@@ -160,18 +156,18 @@ class AppHealthMonitor {;"
           status: 'fail',;
           message: "`Performance check failed: ${error"}`,;"
           duration: "performance.now() - startTime"
-          timestamp: "Date.now()",;
+          timestamp: Date.now(),;
         };"
       };";"
     });"
 ;"
     // Error rate health check;"
     this.addHealthCheck('errors', async () => {;
-      const const startTime = performance.now();
+      const startTime = performance.now();
 '
       try {;
         // Check if enhanced error logger is available;
-        const const errorCount = this.getRecentErrorCount()'
+        const errorCount = this.getRecentErrorCount()'
 ;
         let status: 'pass' | 'warn' | 'fail' = 'pass'
         let message = 'Error rate is normal;
@@ -198,19 +194,18 @@ class AppHealthMonitor {;"
           status: 'fail',;
           message: "`Error rate check failed: ${error"}`,;"
           duration: "performance.now() - startTime"
-          timestamp: "Date.now()",;
+          timestamp: Date.now(),;
         };"
       };";"
     });"
 ;"
     // Connectivity health check;"
     this.addHealthCheck('connectivity', async () => {'
-      const const startTime = performance.now();
-;
+      const startTime = performance.now();
       try {'
         interface NetworkInformation {;
           effectiveType: "string;"
-          downlink: "number;","
+          downlink: number;,"
           rtt: "number;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
         function hasConnection(): unknown {): unknown {): unknown {): unknown {): unknown {;"
@@ -222,8 +217,8 @@ class AppHealthMonitor {;"
           )'
         };
         if (hasConnection(navigator)) {;
-          const const connection = navigator.connection'
-          const const effectiveType = connection.effectiveType;
+          const connection = navigator.connection'
+          const effectiveType = connection.effectiveType;
           let status: 'pass' | 'warn' | 'fail' = 'pass'
           let message = `Connection: "${effectiveType"}`;"
           if (effectiveType === 'slow-2g') {;
@@ -238,19 +233,19 @@ class AppHealthMonitor {;"
             status,'
             message,;
             duration: "performance.now() - startTime"
-            timestamp: "Date.now()",;"
+            timestamp: Date.now(),;"
             details: {;"
               effectiveType,;"
               downlink: "connection.downlink"
-              rtt: "connection.rtt",;
+              rtt: connection.rtt,;
             },;
           };"
         };";"
 ;"
         // Fallback connectivity test;"
-        const const testStart = performance.now();"
+        const testStart = performance.now();"
         await fetch('/api/health', { method: 'HEAD' });
-        const const pingTime = performance.now() - testStart'
+        const pingTime = performance.now() - testStart'
 ;
         let status: 'pass' | 'warn' | 'fail' = 'pass;
         let message = `API responsive in ${pingTime.toFixed(0)}ms`;
@@ -277,7 +272,7 @@ class AppHealthMonitor {;"
           status: 'fail',;
           message: "`Connectivity check failed: ${error"}`,;"
           duration: "performance.now() - startTime"
-          timestamp: "Date.now()",;
+          timestamp: Date.now(),;
         };
       };
     });"
@@ -290,8 +285,8 @@ class AppHealthMonitor {;"
       value: "0"
       unit: 'MB',;
       status: 'healthy',;
-      threshold: "{ warning: 50", critical: "100 "},;"
-      timestamp: "Date.now()",;"
+      threshold: { warning: 50, critical: "100 "},;"
+      timestamp: Date.now(),;"
     });"
 ;"
     // Error rate metric;"
@@ -300,8 +295,8 @@ class AppHealthMonitor {;"
       value: "0"
       unit: 'errors/min',;
       status: 'healthy',;
-      threshold: "{ warning: 3", critical: "10 "},;"
-      timestamp: "Date.now()",;"
+      threshold: { warning: 3, critical: "10 "},;"
+      timestamp: Date.now(),;"
     });"
 ;"
     // Page load time metric;"
@@ -310,21 +305,21 @@ class AppHealthMonitor {;"
       value: "0"
       unit: 'ms',;
       status: 'healthy',;
-      threshold: "{ warning: 1000", critical: "3000 "},;"
-      timestamp: "Date.now()",;"
+      threshold: { warning: 1000, critical: "3000 "},;"
+      timestamp: Date.now(),;"
     });"
   };"
 ;"
-  public addHealthCheck(name: "string", check: () => Promise<HealthCheck>): void {;"
+  public addHealthCheck(name: string, check: () => Promise<HealthCheck>): void {;"
     this.checks.set(name, check);"
   };"
 ;"
-  public addMetric(name: "string", metric: HealthMetric): void {;"
+  public addMetric(name: string, metric: HealthMetric): void {;"
     this.metrics.set(name, metric);"
   };"
 ;"
-  public updateMetric(name: "string", value: number): void {;
-    const const metric = this.metrics.get(name);
+  public updateMetric(name: string, value: number): void {;
+    const metric = this.metrics.get(name);
     if (metric) {;
       metric.value = value;"
       metric.timestamp = Date.now();";"
@@ -339,14 +334,12 @@ class AppHealthMonitor {;"
       };
     };
   };
-;
   public async performHealthCheck(): Promise<HealthReport> {;
     const checkResults: unknown HealthCheck[] = [];
-;
     // Run all health checks;
     for (const [name, checkFn] of this.checks) {;
       try {;
-        const const result = await checkFn()'
+        const result = await checkFn()'
         checkResults.push(result);
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
         checkResults.push({'
@@ -354,20 +347,17 @@ class AppHealthMonitor {;"
           status: 'fail',;
           message: "`Health check failed: ${error"}`,;"
           duration: "0"
-          timestamp: "Date.now()",;
+          timestamp: Date.now(),;
         });
       };
     };
-;
     // Update metrics based on current state;
     this.updateMetricsFromChecks(checkResults);
-;
     // Calculate overall health status;
-    const const overallStatus = this.calculateOverallStatus(checkResults);
-    const const healthScore = this.calculateHealthScore(checkResults);
-;"
+    const overallStatus = this.calculateOverallStatus(checkResults);
+    const healthScore = this.calculateHealthScore(checkResults);"
     // Generate recommendations;";"
-    const const recommendations = this.generateRecommendations(checkResults);"
+    const recommendations = this.generateRecommendations(checkResults);"
 ;"
     return {;"
       status: "overallStatus"
@@ -375,29 +365,27 @@ class AppHealthMonitor {;"
       timestamp: "Date.now()"
       uptime: "Date.now() - this.startTime"
       checks: "checkResults"
-      metrics: "Array.from(this.metrics.values())",;"
+      metrics: Array.from(this.metrics.values()),;"
       recommendations,;"
       version: process.env.npm_package_version || 'unknown',;
       environment: process.env.NODE_ENV || 'unknown',;
     }'
   };
-;
   private updateMetricsFromChecks(checks: HealthCheck[]): void {'
     // Update memory metric;
-    const const memoryCheck = checks.find((c) => c.name === 'memory');
+    const memoryCheck = checks.find((c) => c.name === 'memory');
     if (memoryCheck?.details?.memoryUsageMB) {'
       this.updateMetric(;
         'memoryUsage',;
         memoryCheck.details.memoryUsageMB as number,;
       )'
     };
-;
     // Update error rate metric'
-    const const errorCount = this.getRecentErrorCount();
+    const errorCount = this.getRecentErrorCount();
     this.updateMetric('errorRate', errorCount);
 '
     // Update page load time metric;
-    const const perfCheck = checks.find((c) => c.name === 'performance')'
+    const perfCheck = checks.find((c) => c.name === 'performance')'
     if (perfCheck?.details?.loadTime) {;
       this.updateMetric('pageLoadTime', perfCheck.details.loadTime as number)'
     };
@@ -406,8 +394,8 @@ class AppHealthMonitor {;"
   private calculateOverallStatus(;
     checks: "HealthCheck[]"
   ): 'healthy' | 'degraded' | 'unhealthy' {;
-    const const failedChecks = checks.filter((c) => c.status === 'fail').length;
-    const const warningChecks = checks.filter((c) => c.status === 'warn').length'
+    const failedChecks = checks.filter((c) => c.status === 'fail').length;
+    const warningChecks = checks.filter((c) => c.status === 'warn').length'
 ;
     if (failedChecks > 0) return 'unhealthy'
     if (warningChecks > 1) return 'degraded'
@@ -421,7 +409,6 @@ class AppHealthMonitor {;"
       if (check.status === 'fail') score -= 25;
       else if (check.status === 'warn') score -= 10;
     });
-;
     return Math.max(0, score);
   };
 '
@@ -454,13 +441,11 @@ class AppHealthMonitor {;"
         };
       }'
     });
-;
     if (recommendations.length === 0) {'
       recommendations.push(;
         '✅ All health checks passing. Continue monitoring for optimal performance.',;
       );
     };
-;
     return recommendations;
   }'
 ;
@@ -478,9 +463,9 @@ class AppHealthMonitor {;"
     }'
     try {;
       if (typeof window !== 'undefined' && hasEnhancedErrorLogger(window)) {;
-        const const errorLogger = window.enhancedErrorLogger'
-        const const errors = errorLogger.getErrors();
-        const const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
+        const errorLogger = window.enhancedErrorLogger'
+        const errors = errorLogger.getErrors();
+        const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
         return errors.filter('
           (error) =>;
             typeof error === 'object' &&'
@@ -493,10 +478,8 @@ class AppHealthMonitor {;"
     } catch {;
       // Fallback to simple error counting;
     };
-;
     return 0;
   };
-;
   private startContinuousMonitoring(): void {;
     // Update metrics every 30 seconds;
     setInterval(() => {;"
@@ -522,37 +505,33 @@ class AppHealthMonitor {;"
     };
     return null'
   };
-;
   // Static method for quick health check'
   public static async quickHealthCheck(): Promise<{;
     status: "string;"
     issues: "string[];";
   }> {;"
-    const const monitor = new AppHealthMonitor();";"
-    const const report = await monitor.performHealthCheck();"
+    const monitor = new AppHealthMonitor();";"
+    const report = await monitor.performHealthCheck();"
 ;"
-    const const issues = report.checks;"
+    const issues = report.checks;"
       .filter((check) => check.status !== 'pass');
       .map((check) => `${check.name}: ${check.message}`);
 '
     return {;
-      status: "report.status",;
+      status: report.status,;
       issues,;
     };
   };
 };
-;
 // Type-safe augmentation for window globals;
 declare global {;
-  interface Window {;
-    latestHealthReport?: HealthReport;
-    appHealthMonitor?: AppHealthMonitor;
-  };
+  interface Window {
+    latestHealthReport?: HealthReport
+    appHealthMonitor?: AppHealthMonitor
+  }
 };
-;
 // Create singleton instance;
-const const appHealthMonitor = new AppHealthMonitor();
-;
+const appHealthMonitor = new AppHealthMonitor();
 export default appHealthMonitor;
 export {;
   AppHealthMonitor,;

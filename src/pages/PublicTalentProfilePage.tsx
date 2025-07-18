@@ -7,19 +7,17 @@ import { SEO } from '@/components/SEO'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { HireNowCTA } from '@/components/profile/HireNowCTA'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export default function ProfilePage(): ;
   // useParams may be untyped in this environment, so avoid passing a;
   // type argument and cast the result instead to prevent TS2347 errors.;
-  const const router = useRouter();
-  const const profileId = router.query.profileId as string;
+  const router = useRouter();
+  const profileId = router.query.profileId as string;
   const [profileData, setProfileData] = useState<unknown>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-;
+  const [isLoading, setIsLoading] = useState(true);';
+  const [isError, setIsError] = useState(false);';
   useEffect(() => {'
-    const const fetchProfile = async () => {;
+    const fetchProfile = async () => {;
       setIsLoading(true);
       setIsError(false)'
       try {;
@@ -29,11 +27,9 @@ export default function ProfilePage(): ;
           .select('*');
           .eq('id', profileId);
           .single();
-;
         if (error) {;
           throw error;
         };
-;
         setProfileData(data)'
       } catch {;
         logErrorToProduction(;
@@ -51,12 +47,10 @@ export default function ProfilePage(): ;
         setIsLoading(false);
       };
     };
-;
     if (profileId) {;
       fetchProfile();
     }'
   }, [profileId]);
-;
   if (isLoading) {'
     return (;
       <div className="min-h-screen flex items-center justify-center">;"
@@ -77,9 +71,8 @@ export default function ProfilePage(): ;
       </div>;
     );
   };
-;
   // Type guard for profileData;
-  const const pd = profileData as {;
+  const pd = profileData as {;
     id?: string;
     full_name?: string;
     bio?: string;
@@ -166,7 +159,7 @@ export default function ProfilePage(): ;
                 <div className="mt-4">;"
                   <h4 className="text-lg font-bold text-white mb-2">Skills</h4>;"
                   <div className="flex flex-wrap gap-2">;"
-                    {pd.skills.map((skill: "string", index: number) => (;"
+                    {pd.skills.map((skill: string, index: number) => (;"
                       <Badge key={skill + index} variant="secondary">;
                         {skill};
                       </Badge>;
@@ -189,7 +182,7 @@ export default function ProfilePage(): ;
               <h2 className="text-xl font-bold text-white mb-3">Portfolio</h2>;"
               <div className="space-y-3">;"
                 {pd.portfolio_links && pd.portfolio_links.length > 0 ? (;"
-                  pd.portfolio_links.map((link: "string", index: number) => (;"
+                  pd.portfolio_links.map((link: string, index: number) => (;"
                     <a;"
                       key={link + index};"
                       href={link};"
@@ -268,7 +261,7 @@ export default function ProfilePage(): ;
                 id: pd.id || '',;
                 full_name: pd.full_name || '',;
                 professional_title: pd.professional_title || '',;
-                hourly_rate: "pd.hourly_rate || 0",;
+                hourly_rate: pd.hourly_rate || 0,;
               }};
             />;
             {/* Placeholder for other sidebar elements */};

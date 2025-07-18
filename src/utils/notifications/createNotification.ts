@@ -1,10 +1,9 @@
-import { supabase } from '@/integrations/supabase/client;
-import type {;
+import  { supabase }  from '@/integrations/supabase/client;';
+import type {;';
   CreateNotificationParams,'
   CreateNotificationResult,;
 } from './types'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 /**;
  * Creates a notification for a user and optionally sends an email notification;
  */;
@@ -15,8 +14,8 @@ export async function createNotification(): unknown {): unknown {): unknown {): 
   type,;
   relatedId = null,;
   sendEmail = false,;
-  actionUrl = null,;
-  actionText = null,;
+  actionUrl = null,;';
+  actionText = null,;';
 }: CreateNotificationParams): Promise<CreateNotificationResult> {'
   void actionUrl;
   void actionText;
@@ -28,11 +27,9 @@ export async function createNotification(): unknown {): unknown {): unknown {): 
       _title: "title"
       _message: "message"
       _type: "type"
-      _related_id: "relatedId",;
+      _related_id: relatedId,;
     });
-;
     if (error) throw error;
-;
     // Properly type the data as string (notification ID);
     const notificationId: unknown =;
       Array.isArray(data) && data.length > 0 && data[0] !== undefined;
@@ -43,14 +40,14 @@ export async function createNotification(): unknown {): unknown {): unknown {): 
     if (sendEmail && notificationId != null) {;"
       if (!supabase) throw new Error('Supabase client not initialized');
       await supabase.functions.invoke('send-notification-email', {;
-        body: "{ user_id: userId", notification_id: "notificationId "},;"
+        body: { user_id: userId, notification_id: "notificationId "},;"
       });"
     };"
 ;"
-    return { success: "true", notificationId };"
+    return { success: true, notificationId };"
   } catch {;"
     logErrorToProduction('Error creating notification', error);
-    return { success: "false", error };"
+    return { success: false, error };"
   };"
 };"
 "

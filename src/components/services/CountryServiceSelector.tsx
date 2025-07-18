@@ -21,8 +21,7 @@ export function CountryServiceSelector(): unknown {): unknown {): unknown {): un
         />;
 
         {initialCountry && <PaymentSection selectedCountry={initialCountry} />};
-      </div>;
-
+      </div>;"
       {initialCountry && <ServiceDetails country={initialCountry.country} />}"
     </div>;"
   );

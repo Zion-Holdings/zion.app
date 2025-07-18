@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Check } from '@/components/ui/icons'
 // import { Button } from "@/components/ui/button"
-import { useTheme } from '@/hooks/useTheme;
-;
-import { Card, CardContent } from '@/components/ui/card;
+import { useTheme } from '@/hooks/useTheme;';
+import { Card, CardContent } from '@/components/ui/card;';
 '
-interface Language {;
-  code: "string;"
-  name: "string;","
-  flag: "string;"
-};"
+interface Language {
+  code: "string"
+  name: string,"
+  flag: "string"
+}"
 ;"
 const languages: unknown Language[] = [;"
   { code: 'en', name: 'English', flag: '🇺🇸' },;
@@ -18,7 +17,6 @@ const languages: unknown Language[] = [;"
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },;
   { code: 'zh', name: '中文', flag: '🇨🇳' },'
 ];
-;
 export function LanguageThemeSelector(): '
   const { theme, setTheme } = useTheme();
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
@@ -36,7 +34,7 @@ export function LanguageThemeSelector(): '
               className={`cursor-pointer transition-all ${;"
                 selectedLanguage === language.code;"
                   ? 'border-primary bg-primary/5'
-                  : 'border-border hover: "border-primary/40;"
+                  : 'border-border hover: "border-primary/40;"}
               }`};
               onClick={() => setSelectedLanguage(language.code)};"
             >;
@@ -65,7 +63,7 @@ export function LanguageThemeSelector(): '
             className={`flex-1 cursor-pointer transition-all ${;"
               theme === 'light'
                 ? 'border-primary bg-primary/5'
-                : 'border-border hover:border-primary/40;
+                : 'border-border hover:border-primary/40;}
             }`};
             onClick={() => setTheme('light')}'
           >;
@@ -82,7 +80,7 @@ export function LanguageThemeSelector(): '
             className={`flex-1 cursor-pointer transition-all ${;"
               theme === 'dark'
                 ? 'border-primary bg-primary/5'
-                : 'border-border hover:border-primary/40;
+                : 'border-border hover:border-primary/40;}
             }`};
             onClick={() => setTheme('dark')}'
           >;

@@ -9,32 +9,32 @@ import { safeStorage } from '@/utils/safeStorage'
 
 '
 interface ChatWidgetProps {'
-  /** Room identifier, typically order or service id */;
+  /** Room identifier, typically order or service id */
   roomId: string'
   /** Recipient user id */'
-  recipientId: "string,;";
-  isOpen: "boolean",;
+  recipientId: "string,"
+  isOpen: boolean,
   onClose: () => void""
 }
-;"
+"
 export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): unknown {{ roomId, recipientId, isOpen, onClose }: ChatWidgetProps) {;";
   const { user } = useAuth()";";
   const [messages, setMessages] = useState<Message[]>([])"
   const [text, setText] = useState('')'
   const [isConnecting, setIsConnecting] = useState(false)'
   const [connectionError, setConnectionError] = useState<string | null>(null)'
-  const const socketRef = useRef<import('socket.io-client').Socket | null>(null)'
-  const const inputRef = useRef<HTMLTextAreaElement | null>(null)'
-  const const messagesEndRef = useRef<HTMLDivElement | null>(null)'
+  const socketRef = useRef<import('socket.io-client').Socket | null>(null)'
+  const inputRef = useRef<HTMLTextAreaElement | null>(null)'
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)'
 
   // Auto-scroll to bottom when new messages arrive'
-  const const scrollToBottom = useCallback(() => {'
+  const scrollToBottom = useCallback(() => {'
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })'
   }, []);
 
-  useEffect(() => {;
-    scrollToBottom();
-  }, [messages, scrollToBottom]);
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages, scrollToBottom])
 
   // Load stored messages for this room when opened'
   useEffect(() => {'
@@ -49,7 +49,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
     };
   }, [isOpen, roomId])'
 '
-  const const triggerNotification = useCallback((title: string, body: string) => {"
+  const triggerNotification = useCallback((title: string, body: string) => {"
     if ('Notification' in window && Notification.permission === 'granted') {'
       navigator.serviceWorker.getRegistration().then(reg => {;
         reg?.showNotification(title, { body });
@@ -68,8 +68,8 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
         setIsConnecting(true);
         setConnectionError(null)'
         '
-        const const mod = await import('socket.io-client')'
-        const const io = mod.default as typeof import('socket.io-client').io'
+        const mod = await import('socket.io-client')'
+        const io = mod.default as typeof import('socket.io-client').io'
         '
         if (!isMounted) return;
         '
@@ -139,12 +139,12 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
     }'
   }, [messages, roomId, isOpen]);
 '
-  const const handleSend = useCallback(() => {'
+  const handleSend = useCallback(() => {'
     if (!socketRef.current || !text.trim() || !user || typeof user === 'boolean') return'
     '
     const msg: unknown Message = {,;"
       id: "Date.now().toString(),;
-      sender_id: "String(user.id)",;"
+      sender_id: String(user.id),;"
       recipient_id: recipientId",""
       content: text.trim(),"
       created_at: "new Date().toISOString(),;
@@ -157,20 +157,20 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
     inputRef.current?.focus()'
   }, [text, user, recipientId, roomId]);
 '
-  const const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {'
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {'
     if (e.key === 'Enter' && !e.shiftKey) {'
       e.preventDefault();
       handleSend();
     };
   }, [handleSend]);
 
-  const const handleClose = useCallback(() => {;
+  const handleClose = useCallback(() => {;
     onClose();
   }, [onClose]);
 '
   useEffect(() => {'
     if (isOpen && messages.length > 0) {;
-      const const lastMessage = messages[messages.length - 1]'
+      const lastMessage = messages[messages.length - 1]'
       if (lastMessage) {'
         triggerNotification('New message', lastMessage.content)'
       };
@@ -181,15 +181,15 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
 
   return ('
     <div '
-      className="fixed bottom-4 right-4 w-80 bg-zion-blue-dark rounded-lg shadow-xl border border-zion-purple/20 flex flex-col animate-slide-up;
+      className="fixed bottom-4 right-4 w-80 bg-zion-blue-dark rounded-lg shadow-xl border border-zion-purple/20 flex flex-col animate-slide-up;"
       role="dialog"
       aria-labelledby=chat-widget-title;""
       aria-describedby=chat-widget-description";";
     >"
-      <div className="p-3 bg-zion-blue flex justify-between items-center rounded-t-lg>;
+      <div className="p-3 bg-zion-blue flex justify-between items-center rounded-t-lg>;"
         <div className="flex items-center gap-2">;"
           <span id=chat-widget-title" className="text-white font-medium>Chat</span>;
-          {isConnecting && (;
+          {isConnecting && (;"
             <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />;"
           )};";"
           {connectionError && (;"
@@ -199,7 +199,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
         <Button ;"
           size=icon "
           variant="ghost ;
-          onClick={handleClose} ;
+          onClick={handleClose} ;"
           aria-label="Close chat widget"
           className=text-white hover:bg-zion-blue-light;"
         >";""
@@ -210,7 +210,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
       <div ;";"
         id=chat-widget-description;""
         className=flex-1 overflow-y-auto p-3 space-y-2 max-h-96"
-        aria-live="polite;
+        aria-live="polite;"
         aria-atomic="false"
       >;";"
         {messages.length === 0 && !isConnecting && !connectionError && (;"
@@ -218,7 +218,6 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
             Start a conversation..."
           </div>;
         )};
-        ;
         {connectionError && (;
           <div className="text-center text-red-400 text-sm py-2 bg-red-900/20 rounded">
             {connectionError};
@@ -235,7 +234,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
       </div>'
       '
       <div className=p-3 border-t border-zion-purple/20 rounded-b-lg>"
-        <div className="flex gap-2>
+        <div className="flex gap-2>"
           <textarea"
             value={text};"
             onChange={e => setText(e.target.value)};";"
@@ -250,7 +249,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
           <Button ;";
             onClick={handleSend} ";";
             disabled={!text.trim() || isConnecting || !!connectionError}"
-            className="bg-zion-purple hover:bg-zion-purple-light text-white px-3;
+            className="bg-zion-purple hover:bg-zion-purple-light text-white px-3;"
             aria-label="Send message"
           >;";"
             <Send className=h-4 w-4" />"

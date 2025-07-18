@@ -1,5 +1,5 @@
 export function MultiverseLaunchesSection(): ;
-  const const launches = [;
+  const launches = [;
     'New Multiverse Instance Alpha','
     'Funding Demo: Zion Grants','
     'Open Source Protocol Update','

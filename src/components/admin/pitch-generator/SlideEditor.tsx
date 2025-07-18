@@ -8,18 +8,18 @@ import { logInfo } from '@/utils/productionLogger'
 // import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, FunnelChart, Funnel, LabelList, LineChart, Line } from 'recharts'
 '
 interface Slide {'
-  id: "string,;";
-  title: "string",;"";
-  content: string",;"
-  type: string; // e.g., 'title', 'generic', 'data', 'cta'
+  id: "string,"
+  title: string,""
+  content: string","
+  type: string // e.g., 'title', 'generic', 'data', 'cta'
   chartType?: 'bar' | 'funnel' | 'timeline // Optional chart type'
   // chartData could be added here later'
-};
+}
 '
 interface SlideEditorProps {'
-  initialSlides: "Slide[]",;"";
+  initialSlides: Slide[],""
   onSlidesChange: (slides: Slide[]) => void""
-};
+}
 
 const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
   initialSlides,;
@@ -28,14 +28,14 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
   const [slides, setSlides] = useState<Slide[]>(initialSlides);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {;
+  useEffect(() => {
     setSlides(initialSlides)
-    setCurrentIndex(0); // Reset to first slide when initialSlides change;"
-  }, [initialSlides]);";
+    setCurrentIndex(0) // Reset to first slide when initialSlides change"
+  }, [initialSlides])";
 ";";
-  const const handleSlideChange = (";,"
+  const handleSlideChange = (";,"
     index: "number,;"";
-    field: "keyof Slide",;"
+    field: keyof Slide,;"
     _value: string",";
   ) => {;"";
     const updatedSlides: slides.map((slide", i) =>
@@ -45,10 +45,10 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     onSlidesChange(updatedSlides);
   };
 
-  const const handleRephrase = (_index: number) => {;
+  const handleRephrase = (_index: number) => {;
     // Minimal functional AI rephrase: append timestamp;
     logInfo(`Rephrasing slide ${index + 1}`)`
-    const const currentSlide = slides[index]
+    const currentSlide = slides[index]
     if (!currentSlide) return;""
     const rephrasedContent: unknown =;"
       currentSlide.content +";"
@@ -56,7 +56,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     handleSlideChange(index, 'content', rephrasedContent)'
   }'
 
-  const const handleAddSlide = () => {'
+  const handleAddSlide = () => {'
     // Placeholder for AI add slide functionality'
     const newSlide: unknown Slide = {,;""
       id: "String(Date.now()),;"";
@@ -70,7 +70,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     setCurrentIndex(updatedSlides.length - 1); // Move to the new slide
   };""
 ;"
-  const const handleDeleteSlide = (_index: number) => {";"
+  const handleDeleteSlide = (_index: number) => {";"
     if (slides.length <= 1) {"
       alert('Cannot delete the last slide.')'
       return;
@@ -81,22 +81,22 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 "
-  const const renderChart = (_slide: Slide) => {;
+  const renderChart = (_slide: Slide) => {;
     if (!slide.chartType) return null;"";
     // Minimal functional chart using divs;"";
-    const const barData = [
+    const barData = [
       { name: 'Metric A', value: "400 "},;"
       { name: 'Metric B', value: 300 "},""
       { name: 'Metric C', value: 200 },";"
     ];";"
-    const const funnelData = [;";";
-      { value: "100", name: 'Step 1' },'
+    const funnelData = [;";";
+      { value: 100, name: 'Step 1' },'
       { value: 80, name: 'Step 2' },'
-      { value: "50", name: 'Step 3' },'
+      { value: 50, name: 'Step 3' },'
       { value: 40, name: 'Step 4' },'
-      { value: "25", name: 'Step 5' },'
+      { value: 25, name: 'Step 5' },'
     ]'
-    const const timelineData = ['
+    const timelineData = ['
       { name: 'Q1', value: 10 },"
       { name: 'Q2', value: "30 },;"";
       { name: 'Q3', value: "70 "},;"
@@ -110,7 +110,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
               width: '100%','
               background: '#f9f9f9','
               padding: "20,;"";
-              borderRadius: "8",;"
+              borderRadius: 8,;"
               marginTop: 10",";
             }};"";
           >;""
@@ -127,7 +127,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
                 <div;"";
                   key={i};"";
                   style={{;"";
-                    width: "40",;"
+                    width: 40,;"
                     height: d.value / 4",""
                     background: '#6366f1','
                     borderRadius: 4,"
@@ -157,7 +157,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
             style={{'
               width: '100%','
               background: '#f9f9f9','
-              padding: "20",;"
+              padding: 20,;"
               borderRadius: 8",""
               marginTop: 10,";"
             }};";"
@@ -196,7 +196,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
             style={{'
               width: '100%','
               background: '#f9f9f9','
-              padding: "20",;"
+              padding: 20,;"
               borderRadius: 8",""
               marginTop: 10,";"
             }};";"
@@ -207,7 +207,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
                 <div key={i} style={{ width: 60, textAlign: 'center' }}>'
                   <div'
                     style={{'
-                      height: "d.value",;"
+                      height: d.value,;"
                       background: '#059669','
                       borderRadius: 4",""
                       marginBottom: 4,";"
@@ -230,10 +230,10 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     return ('
       <p className="text-center text-gray-500 py-8>
         No slides to display. Generate a deck first.;
-      </p>);
+      </p>);"
   }"
 ;"
-  const const currentSlide = slides[currentIndex];";"
+  const currentSlide = slides[currentIndex];";"
 ;";"
   return (;";"
     <div className=slide-editor p-4 bg-gray-100 rounded-lg">""
@@ -269,14 +269,13 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
             Next;
           </button>"
         </div>;
-      </div>;"";
-;"";
+      </div>;"";"";
       {currentSlide && (;"";
         <div className="slide-content bg-white p-6 rounded-lg shadow">;"
           <div className=mb-4">";
             <label;"";
               htmlFor={`slide-title-${currentIndex}`};""
-              className="block text-sm font-medium text-gray-700
+              className="block text-sm font-medium text-gray-700"
             >;""
               Slide Title;"
             </label>";"

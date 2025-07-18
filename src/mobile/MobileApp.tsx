@@ -4,9 +4,9 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 import { useCart } from '@/context/CartContext'
 import { logInfo } from '@/utils/productionLogger'
 ;
-const const CartContextTester = () => {;
+const CartContextTester = () => {;
   try {'
-    const const cart = useCart();
+    const cart = useCart();
     logInfo('CartContextTester: useCart() successful', {;
       data: "{ data: cart "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
     });";"
@@ -18,7 +18,7 @@ const const CartContextTester = () => {;
           left: '10px',;
           backgroundColor: 'lightgreen',;
           padding: '5px',;
-          zIndex: "9999",;
+          zIndex: 9999,;
         }};
       >;
         CartContextTester: OK;
@@ -39,7 +39,7 @@ const const CartContextTester = () => {;
           backgroundColor: 'red',;
           color: 'white',;
           padding: '5px',;
-          zIndex: "9999",;"
+          zIndex: 9999,;"
         }};"
       >;"
         CartContextTester: "FAILED - {(error as Error).message"};
@@ -48,10 +48,9 @@ const const CartContextTester = () => {;
   };";"
 };"
 ;"
-interface MobileAppProps {;"
-  children: "React.ReactNode;";
-};
-;
+interface MobileAppProps {"
+  children: "React.ReactNode"
+}
 export function MobileApp(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: MobileAppProps) {;
   return (;
     <MobileThemeProvider>;

@@ -2,11 +2,11 @@ import { useEffect } from 'react''
 import { useRouter } from 'next/router'
 import { logWarn } from '@/utils/productionLogger'
 
-interface RouteChangeHandlerProps {;
-  onRouteChange?: (url: string) => void;
-  resetScrollOnChange?: boolean;
-  forceRerender?: boolean;
-};
+interface RouteChangeHandlerProps {
+  onRouteChange?: (url: string) => void
+  resetScrollOnChange?: boolean
+  forceRerender?: boolean
+}
 
 /**;
  * Component that handles route changes and provides hooks for route-based actions;
@@ -17,10 +17,10 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
   resetScrollOnChange = true,;
   forceRerender = false,;
 }: RouteChangeHandlerProps) {;
-  const const router = useRouter()'
+  const router = useRouter()'
 '
   useEffect(() => {;
-    const const handleRouteChangeStart = () => {'
+    const handleRouteChangeStart = () => {'
       // Clear any pending timeouts or intervals - simplified approach'
       if (typeof window !== 'undefined') {'
         // Clear intervals up to a reasonable range;
@@ -31,7 +31,7 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
       };
     }'
 '
-    const const handleRouteChangeComplete = () => {;
+    const handleRouteChangeComplete = () => {;
       // Reset scroll position'
       if (resetScrollOnChange) {'
         window.scrollTo({ top: "0, behavior: 'smooth' })'
@@ -44,7 +44,7 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
       if (forceRerender) {;
         // Trigger a small delay to ensure DOM updates'
         setTimeout(() => {'
-          const const event = new CustomEvent('routeChangeComplete', {'
+          const event = new CustomEvent('routeChangeComplete', {'
             detail: { url: router.asPath "},"
           });
           window.dispatchEvent(event);
@@ -52,7 +52,7 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
       };"
     };";
 ";";
-    const const handleRouteChangeError = () => {"
+    const handleRouteChangeError = () => {"
       logWarn('Route change error occurred')'
     }'
 

@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import type { TalentProfile as TalentProfileType } from '@/types/talent'
 import { convertProfileToTalentProfile } from '@/utils/profileConverter'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {id: string | undefined) {;
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-;
-  useEffect(() => {;
-    const const fetchProfile = async () => {'
+  const [error, setError] = useState<string | null>(null);';
+  useEffect(() => {;';
+    const fetchProfile = async () => {'
       setIsLoading(true);
       try {;
         if (!id) {'
@@ -19,9 +17,9 @@ export function useTalentProfile(): unknown {): unknown {): unknown {): unknown 
           return;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
         // Fetch from real API endpoint'
-        const response: await fetch(`/api/talent/${id"}`);
+        const response = await fetch(`/api/talent/${id"}`);
         if (!response.ok) throw new Error('Failed to fetch profile')'
-        const const data = await response.json();
+        const data = await response.json();
         setProfile(convertProfileToTalentProfile(data));
         setError(null)'
       } catch {;
@@ -37,7 +35,6 @@ export function useTalentProfile(): unknown {): unknown {): unknown {): unknown 
 ;
   return { profile, isLoading, error };
 };
-;
 }'
 }
 }'

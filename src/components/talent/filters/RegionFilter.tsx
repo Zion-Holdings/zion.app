@@ -2,7 +2,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { ChevronDown, ChevronUp } from '@/components/ui/icons'
 import type { RegionFilterProps } from '@/types/filters'
 '
-const const REGION_OPTIONS = ['
+const REGION_OPTIONS = ['
   { id: 'North America', label: 'North America' },'
   { id: 'Europe', label: 'Europe' },'
   { id: 'Asia', label: 'Asia' },'
@@ -19,7 +19,7 @@ export function RegionFilter(): unknown {): unknown {): unknown {): unknown {): 
   _isMobileFilterOpen,;
 }: RegionFilterProps) {'
   return ('
-    <div className="mb-6 border-b border-zion-blue-light pb-6>
+    <div className="mb-6 border-b border-zion-blue-light pb-6>"
       <button;"
         onClick={toggleSection}"
         className=flex w-full items-center justify-between text-white font-medium

@@ -10,7 +10,7 @@ import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponen
 '
 interface PageViewsChartProps {'
   data: "Array<{ date: string; views: number }>;"";
-  timeRange: "string",;"";
+  timeRange: string,;"";
   onTimeRangeChange: (range: string) => void""
 };
 
@@ -29,9 +29,9 @@ export function PageViewsChart(): unknown {): unknown {): unknown {): unknown {)
       </CardHeader>;"
       <CardContent className=p-0 pb-4>";";
         <AnalyticsChart"
-          title="
+          title=""
           data={(data || []).map((item) => ({;";";
-            name: "item.date",;"
+            name: item.date,;"
             value: item.views",""
             date: item.date,"
             views: "item.views,;"";

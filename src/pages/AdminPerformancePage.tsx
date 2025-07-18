@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
-import AdminLayout from '@/components/admin/AdminLayout;
-;
-const const DevDashboard = dynamic(() => import('@/pages/dev/dashboard'), {'
+import AdminLayout from '@/components/admin/AdminLayout;';
+const DevDashboard = dynamic(() => import('@/pages/dev/dashboard'), {'
   loading: () => (;
     <div className="min-h-screen flex items-center justify-center">;"
       <div className="text-center">;"
@@ -13,14 +12,13 @@ const const DevDashboard = dynamic(() => import('@/pages/dev/dashboard'), {'
       </div>;"
     </div>;"
   ),;"
-  ssr: "false",;"
+  ssr: false,;"
 });"
 ;"
-const const allowedRoles = ['founder', 'admin', 'finance'];
-;
+const allowedRoles = ['founder', 'admin', 'finance'];
 export default function AdminPerformancePage(): ;
   const { user, isLoading } = useAuth();
-  const const router = useRouter()'
+  const router = useRouter()'
 ;
   useEffect(() => {;
     if (!isLoading) {'
@@ -59,7 +57,6 @@ export default function AdminPerformancePage(): ;
       </AdminLayout>;
     );
   };
-;
   return (;
     <AdminLayout>;
       <DevDashboard />;"

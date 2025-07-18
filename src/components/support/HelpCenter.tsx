@@ -13,27 +13,27 @@ export default function HelpCenter(): ;
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null)'
   const [searchQuery, setSearchQuery] = useState('')'
 
-  const const handleCategorySelect = (_categoryId: string) => {;
+  const handleCategorySelect = (_categoryId: string) => {;
     setSelectedCategory(categoryId);
     setSelectedArticle(null);
   };
 
-  const const handleArticleSelect = (_articleId: string) => {;
+  const handleArticleSelect = (_articleId: string) => {;
     setSelectedArticle(articleId);
   };
 
-  const const handleBackToCategories = () => {;
+  const handleBackToCategories = () => {;
     setSelectedCategory(null);
     setSelectedArticle(null);
   };
 
-  const const handleBackToArticles = () => {;
+  const handleBackToArticles = () => {;
     setSelectedArticle(null)'
   }'
 
   return ('
     <>'
-      <div className="container mx-auto px-4 py-8>
+      <div className="container mx-auto px-4 py-8>"
         <div className="max-w-4xl mx-auto">
           <h1 className=text-3xl font-bold mb-2 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">"
             Help Center;
@@ -54,7 +54,7 @@ export default function HelpCenter(): ;
           </div>;
 
           <Tabs defaultValue="articles" className=mb-8>"
-            <TabsList className="w-full grid grid-cols-3 mb-6>
+            <TabsList className="w-full grid grid-cols-3 mb-6>"
               <TabsTrigger value="articles">Articles</TabsTrigger>
               <TabsTrigger value=faq">FAQ</TabsTrigger>"
               <TabsTrigger value=contact>Contact Us</TabsTrigger>"
@@ -113,7 +113,7 @@ export default function HelpCenter(): ;
                       Our AI matching algorithm analyzes your requirements and;
                       preferences to match you with the most compatible talent;
                       or services. The process takes into account skills,;
-                      experience, availability, and past performance to ensure;
+                      experience, availability, and past performance to ensure;"
                       optimal results."
                     </p>;"
                   </div>;
@@ -137,7 +137,7 @@ export default function HelpCenter(): ;
                     <p className="text-zion-slate-light>
                       Zion offers flexible payment options including;
                       milestone-based payments, hourly rates, or fixed project;
-                      fees. Funds are held in escrow until deliverables are;
+                      fees. Funds are held in escrow until deliverables are;"
                       approved, ensuring security for both clients and talent."
                     </p>;"
                   </div>;
@@ -160,7 +160,7 @@ export default function HelpCenter(): ;
             <TabsContent value="contact">
               <div className=grid grid-cols-1 md:grid-cols-2 gap-8">"
                 <div className=bg-zion-blue-light/20 rounded-lg p-6>"
-                  <h2 className="text-xl font-semibold mb-4>
+                  <h2 className="text-xl font-semibold mb-4>"
                     Contact Support;"
                   </h2>"
                   <p className=text-zion-slate-light mb-4>"
@@ -169,7 +169,7 @@ export default function HelpCenter(): ;
                   </p>"
 ;"
                   <div className=space-y-4>"
-                    <div className="flex items-center>
+                    <div className="flex items-center>"
                       <div className="bg-zion-purple/10 p-2 rounded-full mr-3">
                         <svg;
                           xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@ export default function HelpCenter(): ;
                           viewBox="0 0 20 20"
                           fill=currentColor
                         >"
-                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z />
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z />"
                           <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                         </svg>;
                       </div>"
@@ -189,7 +189,7 @@ export default function HelpCenter(): ;
                       </a>;
                     </div>
 ;"
-                    <div className="flex items-center>
+                    <div className="flex items-center>"
                       <div className="bg-zion-purple/10 p-2 rounded-full mr-3">
                         <svg;
                           xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +197,7 @@ export default function HelpCenter(): ;
                           viewBox="0 0 20 20"
                           fill=currentColor
                         >"
-                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z />
+                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z />"
                         </svg>;"
                       </div>"
                       <span className=text-zion-slate-light>"
@@ -242,7 +242,7 @@ export default function HelpCenter(): ;
               </div>;
             </TabsContent>;
           </Tabs>;
-        </div>;
+        </div>;"
       </div>"
     </>;"
   );

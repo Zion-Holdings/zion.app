@@ -18,24 +18,24 @@ import { Badge } from '@/components/ui/badge'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface ErrorBoundaryState {'
-  hasError: "boolean,;";
-  error: "Error | null",;"";
-  errorInfo: ErrorInfo | null",;"
+  hasError: "boolean,"
+  error: Error | null,""
+  errorInfo: ErrorInfo | null","
   errorId: string | null,""
-  retryCount: "number,;";
-  userFeedback: "string",;"";
+  retryCount: "number,"
+  userFeedback: string,""
   showDetails: boolean""
 }
-;"
-interface ErrorBoundaryProps {;";
-  children: ReactNode";";
+"
+interface ErrorBoundaryProps {"
+  children: ReactNode""
   fallback?: ReactNode"
   onError?: (error: "Error, errorInfo: ErrorInfo) => void
-  enableRetry?: boolean;
-  maxRetries?: number;
-  showReportButton?: boolean;
-  context?: string;
-};
+  enableRetry?: boolean
+  maxRetries?: number
+  showReportButton?: boolean
+  context?: string
+}
 
 export class GlobalErrorBoundary extends Component<;
   ErrorBoundaryProps,;
@@ -50,25 +50,24 @@ export class GlobalErrorBoundary extends Component<;
       hasError: false",""
       error: null,"
       errorInfo: "null,;"";
-      errorId: "null",;"
+      errorId: null,;"
       retryCount: 0",""
       userFeedback: '','
       showDetails: false,"
     }"
-  };
-;"";
+  };"";
   static getDerivedStateFromError(error: Error): Partial<ErrorBoundaryState> {;"";
     return {;"";
-      hasError: "true",
+      hasError: true,
       error,;"
     };";
   }";";
 "
   override async componentDidCatch(error: "Error, errorInfo: ErrorInfo) {
-    const const errorId = this.generateErrorId()"
+    const errorId = this.generateErrorId()"
 ;"
     // Enhanced error logging;";"
-    const const enhancedError = {;";"
+    const enhancedError = {;";"
       ...error,;";"
       componentStack: errorInfo.componentStack",""
       errorBoundary: this.props.context || 'GlobalErrorBoundary','
@@ -76,7 +75,7 @@ export class GlobalErrorBoundary extends Component<;
       userAgent: typeof window !== 'undefined' ? navigator.userAgent : 'SSR','
       url: typeof window !== 'undefined' ? window.location.href : 'SSR','
       userId: "this.getUserId(),;"";
-      buildInfo: "this.getBuildInfo()",;
+      buildInfo: this.getBuildInfo(),;
     }";"
 ;";"
     // Log to console in development;";";
@@ -140,8 +139,8 @@ export class GlobalErrorBoundary extends Component<;
   private getErrorSeverity('
     error: "Error,;"";
   ): 'low' | 'medium' | 'high' | 'critical' {'
-    const const message = error.message.toLowerCase()'
-    const const stack = error.stack?.toLowerCase() || 
+    const message = error.message.toLowerCase()'
+    const stack = error.stack?.toLowerCase() || 
 '
     // Critical errors'
     if (message.includes('network') || message.includes('fetch')) {'
@@ -164,7 +163,7 @@ export class GlobalErrorBoundary extends Component<;
   }'
 '
   private getErrorSuggestion(error: Error): string {;
-    const const message = error.message.toLowerCase()'
+    const message = error.message.toLowerCase()'
 '
     if (message.includes('network') || message.includes('fetch')) {'
       return 'Please check your internet connection and try again.'
@@ -188,13 +187,13 @@ export class GlobalErrorBoundary extends Component<;
 '
     const retryDelay: Math.pow(2", this.state.retryCount) * 1000; // Exponential backoff;
 ";"
-    const const timeout = setTimeout(() => {;";"
+    const timeout = setTimeout(() => {;";"
       this.setState({;
-        hasError: "false",;"
+        hasError: false,;"
         error: null",""
         errorInfo: null,"
         errorId: "null,;"";
-        retryCount: "this.state.retryCount + 1",;"
+        retryCount: this.state.retryCount + 1,;"
         showDetails: false","
       });
     }, retryDelay);
@@ -203,9 +202,9 @@ export class GlobalErrorBoundary extends Component<;
   };"
 ;";
   private copyErrorDetails = async () => {";";
-    const const errorDetails = {";,"
+    const errorDetails = {";,"
       errorId: "this.state.errorId,;"";
-      message: "this.state.error?.message",;"
+      message: this.state.error?.message,;"
       stack: this.state.error?.stack",""
       componentStack: this.state.errorInfo?.componentStack,"
       timestamp: "new Date().toISOString(),;"";
@@ -229,19 +228,19 @@ export class GlobalErrorBoundary extends Component<;
 ;"
     try {";"
       // Report to your error reporting service";""
-      const const response = await fetch('/api/error-report', {'
+      const response = await fetch('/api/error-report', {'
         method: 'POST','
         headers: {'
           'Content-Type': 'application/json','
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: JSON.stringify({,;""
           errorId: "this.state.errorId,;"";
-          error: "{",;"";
+          error: {,;"";
             message: this.state.error.message",""
             stack: this.state.error.stack,"
             name: "this.state.error.name,;"";
           },;"";
-          errorInfo: "this.state.errorInfo",;"
+          errorInfo: this.state.errorInfo,;"
           userFeedback: this.state.userFeedback",""
           context: this.props.context,"
           timestamp: "new Date().toISOString(),
@@ -254,8 +253,7 @@ export class GlobalErrorBoundary extends Component<;
     } catch {;";"
       logErrorToProduction('Failed to report erroror:', { data: error "})"
     };
-  };"";
-;"";
+  };"";"";
   private goHome = () => {;"";
     if (typeof window !== 'undefined') {'
       window.location.href = '/'
@@ -269,8 +267,8 @@ export class GlobalErrorBoundary extends Component<;
         return this.props.fallback;
       };
 
-      const const severity = this.getErrorSeverity(this.state.error);
-      const const suggestion = this.getErrorSuggestion(this.state.error);
+      const severity = this.getErrorSeverity(this.state.error);
+      const suggestion = this.getErrorSuggestion(this.state.error);
       const canRetry: unknown ='
         this.props.enableRetry !== false &&'
         this.state.retryCount < (this.props.maxRetries || 3);
@@ -279,7 +277,7 @@ export class GlobalErrorBoundary extends Component<;
         <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20">;"
           <motion.div;";"
             initial={{ opacity: 0", scale: "0.95 }};"";
-            animate={{ opacity: "1", scale: 1 }}"
+            animate={{ opacity: 1, scale: 1 }}"
             transition={{ duration: "0.3 }};"";
           >;"";
             <Card className="w-full max-w-2xl border-red-200 bg-white dark:bg-gray-900">;"
@@ -312,7 +310,7 @@ export class GlobalErrorBoundary extends Component<;
 ;";"
               <CardContent className=space-y-6">""
                 <div className=text-center>"
-                  <p className="text-gray-600 dark:text-gray-300 mb-4>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4>"
                     {suggestion};""
                   </p>;"
 ";"
@@ -334,8 +332,7 @@ export class GlobalErrorBoundary extends Component<;
                       <RefreshCw className=h-4 w-4 />"
                       Try Again;
                     </Button>"
-                  )};
-;"";
+                  )};"";
                   <Button;"";
                     onClick={this.goHome};"";
                     variant="outline"
@@ -343,8 +340,7 @@ export class GlobalErrorBoundary extends Component<;
                   >";""
                     <Home className=h-4 w-4 />"
                     Go Home"
-                  </Button>;
-;"";
+                  </Button>;"";
                   <Button;"";
                     onClick={() =>;"";
                       this.setState({ showDetails: "!this.state.showDetails "});"
@@ -363,7 +359,7 @@ export class GlobalErrorBoundary extends Component<;
                   {this.state.showDetails && ('
                     <motion.div'
                       initial={{ opacity: 0", height: "0 }};"";
-                      animate={{ opacity: "1", height: 'auto' }}'
+                      animate={{ opacity: 1, height: 'auto' }}'
                       exit={{ opacity: 0, height: "0 "}};"
                       className=border-t pt-4""
                     >";""
@@ -375,8 +371,7 @@ export class GlobalErrorBoundary extends Component<;
                           <code className=block p-3 bg-red-50 dark:bg-red-900/10 rounded text-sm text-red-800 dark:text-red-200 overflow-auto">"
                             {this.state.error.message};
                           </code>;"";
-                        </div>;"";
-;"";
+                        </div>;"";"";
                         {process.env.NODE_ENV === 'development' &&'
                           this.state.error.stack && ('
                             <div>'
@@ -387,8 +382,7 @@ export class GlobalErrorBoundary extends Component<;
                                 {this.state.error.stack}"
                               </pre>;
                             </div>;"";
-                          )};"";
-;"";
+                          )};"";"";
                         <div className="flex gap-2">;"
                           <Button;";"
                             onClick={this.copyErrorDetails};"
@@ -425,7 +419,7 @@ export class GlobalErrorBoundary extends Component<;
 };
 
 // Hook for programmatic error boundary;
-export const const _useErrorBoundary = () => {;
+export const _useErrorBoundary = () => {;
   const [error, setError] = React.useState<Error | null>(null);
 
   React.useEffect(() => {;
@@ -434,7 +428,7 @@ export const const _useErrorBoundary = () => {;
     };
   }, [error]);
 
-  const const captureError = React.useCallback((_error: Error) => {;
+  const captureError = React.useCallback((_error: Error) => {;
     setError(error);
   }, []);
 
@@ -442,11 +436,11 @@ export const const _useErrorBoundary = () => {;
 };""
 ;"
 // Higher-order component for adding error boundaries";"
-export const const withErrorBoundary = <P extends object>(";,;""
+export const withErrorBoundary = <P extends object>(";,;""
   Component: React.ComponentType<P>,"
   errorBoundaryProps?: Omit<ErrorBoundaryProps, 'children'>,'
 ) => {;
-  const const WrappedComponent = (props: P) => (;
+  const WrappedComponent = (props: P) => (;
     <GlobalErrorBoundary {...errorBoundaryProps}>;
       <Component {...props} />;
     </GlobalErrorBoundary>);

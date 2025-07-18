@@ -1,11 +1,11 @@
 import React from 'react'
 '
 interface PerformanceData {'
-  _activeUsers30d: "number,;";
-  totalListings: "number",;"";
-  avgResponseTime: string",;"
+  _activeUsers30d: "number,"
+  totalListings: number,""
+  avgResponseTime: string","
   conversionRate: string"
-};
+}
 
 const DataSync: unknown React.FC = () => {;
   // Replace placeholderData with real API call;
@@ -18,8 +18,8 @@ const DataSync: unknown React.FC = () => {;
       try {;
         // Reactivate: Use mock data for performance API;"";
         await new Promise((resolve) => setTimeout(resolve, 400));"";
-        const const result = {;,"";
-          activeUsers30d: "1245",;"
+        const result = {;,"";
+          activeUsers30d: 1245,;"
           totalListings: 312",""
           avgResponseTime: '2.1s','
           conversionRate: '4.7%','

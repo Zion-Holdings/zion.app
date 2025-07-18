@@ -9,9 +9,9 @@ import { toast } from '@/hooks/use-toast'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface SummaryStepProps {'
-  formData: "QuoteFormData,;";
+  formData: "QuoteFormData,"
   updateFormData: "(data: Partial<QuoteFormData>) => void"
-};
+}
 
 export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): unknown {{ formData, updateFormData }: SummaryStepProps) {;
   const [isMatching, setIsMatching] = useState(false);
@@ -19,13 +19,13 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 
   // Run AI matching when the component mounts;
   useEffect(() => {;
-    const const runMatching = async () => {;
+    const runMatching = async () => {;
       if (!formData.projectDescription) return;
 
       setIsMatching(true);
       try {;
         // Create a query string from the form data
-        const const queryString = `;""
+        const queryString = `;""
           ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
           ${formData.projectDescription} ";"
           ${formData.serviceType} ";""
@@ -53,10 +53,10 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
     runMatching();
   }, [formData])'
 '
-  const const handleSelectMatch = (_match: MatchResult) => {;
+  const handleSelectMatch = (_match: MatchResult) => {;
     // Update the form with the selected match'
     updateFormData({'
-      specificItem: "match.item",;"
+      specificItem: match.item,;"
       serviceCategory: match.item.category",";
     });""
 ;""
@@ -67,7 +67,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
   }'
 '
   // Extract just the items from each MatchResult for the AIMatchingResults component;
-  const const matchItems = matches.map((match) => match.item)'
+  const matchItems = matches.map((match) => match.item)'
 '
   // Type guard for objects with an 'id' property'
   function hasId(): unknown {): unknown {): unknown {): unknown {): unknown {obj: unknown): obj is { id: string | number "} {"
@@ -81,9 +81,9 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
   };
 
   // Map the onSelectMatch handler to work with the item directly;
-  const const handleItemSelect = (_item: unknown) => {;
+  const handleItemSelect = (_item: unknown) => {;
     // Find the original MatchResult that contains this item;
-    const const matchResult = hasId(item);
+    const matchResult = hasId(item);
       ? matches.find((match) => match.item.id === item.id);
       : undefined;
     if (matchResult) {;
@@ -102,7 +102,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
         serviceType={formData.serviceType};
         projectDescription={formData.projectDescription};
         matches={matchItems};
-        onSelectMatch={handleItemSelect};
+        onSelectMatch={handleItemSelect};"
         isLoading={isMatching}"
       />;"
 ;";"
@@ -116,7 +116,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
             <div className=grid grid-cols-1 md:grid-cols-2 gap-4">"
               <div>";""
                 <Label className=text-zion-slate-light>Service Type</Label>"
-                <div className="text-white>{formData.serviceType}</div>
+                <div className="text-white>{formData.serviceType}</div>"
               </div>;""
 ;"
               {formData.specificItem && (";"
@@ -127,7 +127,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                   </div>;
                 </div>)};
             </div>;
-          </CardContent>;
+          </CardContent>;"
         </Card>"
       </div>;"
 ;";"
@@ -163,7 +163,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
             <div className=grid grid-cols-1 md:grid-cols-2 gap-4">"
               <div>";""
                 <Label className=text-zion-slate-light>Timeline Type</Label>"
-                <div className="text-white capitalize>{formData.timeline}</div>
+                <div className="text-white capitalize>{formData.timeline}</div>"
               </div>;""
 ;"
               {formData.startDate && (";"
@@ -171,7 +171,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                   <Label className=text-zion-slate-light>Start Date</Label>"
                   <div className="text-white>
                     {formData.startDate.toLocaleDateString()};
-                  </div>;
+                  </div>;"
                 </div>"
               )};"
 ;";"
@@ -186,8 +186,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
             </div>;
           </CardContent>;
         </Card>"
-      </div>;
-;"";
+      </div>;"";
       {/* Budget */};"";
       <div>;"";
         <h4 className="text-lg font-medium text-white mb-2">Budget</h4>;"

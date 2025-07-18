@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Search, Filter } from '@/components/ui/icons;
-import {;
+import  { Search, Filter }  from '@/components/ui/icons;';
+import {;';
   Card,'
   CardContent,;
   CardDescription,;
@@ -9,8 +9,8 @@ import {;
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
-import {;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
+import {;';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -25,7 +25,6 @@ import {;
   TableHeader,'
   TableRow,;
 } from '@/components/ui/table;
-;
 import { SEO } from '@/components/SEO'
 ;
 // Remove all commented-out references to MOCK_SUPPORT_REQUESTS and any remaining TODOs about mock data. Only real API integration and empty state logic remain.;
@@ -35,9 +34,8 @@ export default function SupportRequests(): ;
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [priorityFilter, setPriorityFilter] = useState<string | null>(null);
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
-;
   // Apply filters to the request data;
-  // const const filteredRequests = MOCK_SUPPORT_REQUESTS.filter(request => {;
+  // const filteredRequests = MOCK_SUPPORT_REQUESTS.filter(request => {;
   //   // Apply search query filter;
   //   if (searchQuery &&;
   //       !request.issue.toLowerCase().includes(searchQuery.toLowerCase()) &&;
@@ -45,17 +43,14 @@ export default function SupportRequests(): ;
   //       !request.id.toLowerCase().includes(searchQuery.toLowerCase())) {;
   //     return false;
   //   };
-;
   //   // Apply status filter;
   //   if (statusFilter && request.status !== statusFilter) {;
   //     return false;
   //   };
-;
   //   // Apply priority filter;
   //   if (priorityFilter && request.priority !== priorityFilter) {;
   //     return false;
   //   };
-;
   //   // Apply category filter;
   //   if (categoryFilter && request.category !== categoryFilter) {;
   //     return false;
@@ -65,12 +60,12 @@ export default function SupportRequests(): ;
   // });
 '
   // Count by status for the summary dashboard;
-  // const const openCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'open').length;
-  // const const inProgressCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'in-progress').length;
-  // const const resolvedCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'resolved').length;
-  // const const totalCount = MOCK_SUPPORT_REQUESTS.length;
+  // const openCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'open').length;
+  // const inProgressCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'in-progress').length;
+  // const resolvedCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'resolved').length;
+  // const totalCount = MOCK_SUPPORT_REQUESTS.length;
 '
-  const const resetFilters = () => {;
+  const resetFilters = () => {;
     setSearchQuery('');
     setStatusFilter(null);
     setPriorityFilter(null);

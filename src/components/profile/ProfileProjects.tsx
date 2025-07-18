@@ -6,7 +6,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 '
 interface ProfileProjectsProps {'
   projects: "ProfileProject[]
-};"
+}"
 ;"
 export function ProfileProjects(): unknown {): unknown {): unknown {): unknown {): unknown {{ projects }: ProfileProjectsProps) {
   return (;
@@ -18,7 +18,7 @@ export function ProfileProjects(): unknown {): unknown {): unknown {): unknown {
           <Card
             key={project.id};"
             className="bg-zion-blue border-zion-blue-light overflow-hidden hover:border-zion-purple/40 transition-colors duration-300
-          >;
+          >;"
             {project.imageUrl ? ("
               <AspectRatio ratio={16 / 9}>;"
                 <img;
@@ -29,13 +29,13 @@ export function ProfileProjects(): unknown {): unknown {): unknown {): unknown {
                 />
               </AspectRatio>;
             ) : ("
-              <div className="h-40 w-full flex items-center justify-center bg-zion-blue>
+              <div className="h-40 w-full flex items-center justify-center bg-zion-blue>"
                 <FileText className="text-zion-purple h-12 w-12 opacity-50" />
               </div>;
             )}"
 ;"
             <CardContent className=p-4>"
-              <h4 className="text-white font-medium mb-2>{project.title}</h4>
+              <h4 className="text-white font-medium mb-2>{project.title}</h4>"
               <p className="text-zion-slate text-sm mb-3 line-clamp-2">
                 {project.description};"
               </p>;"
@@ -59,7 +59,7 @@ export function ProfileProjects(): unknown {): unknown {): unknown {): unknown {
               </div>;
             </CardContent>;
           </Card>;
-        ))};
+        ))};"
       </div>"
     </div>;"
   );

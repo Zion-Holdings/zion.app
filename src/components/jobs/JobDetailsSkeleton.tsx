@@ -1,6 +1,6 @@
 import Skeleton from '@/components/ui/skeleton'
 
-export const const JobDetailsSkeleton = () => ('
+export const JobDetailsSkeleton = () => ('
   <div'
     className="container mx-auto px-4 py-8 space-y-6;"";
     data-testid="job-details-skeleton"

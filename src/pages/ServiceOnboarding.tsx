@@ -2,14 +2,12 @@ import { useRouter } from 'next/router'
 import React from 'react';
 import { ServiceProviderRegistrationForm } from '@/components/profile/ServiceProviderRegistrationForm'
 import { Header } from '@/components/Header'
-import { useAuth } from '@/hooks/useAuth;
-;
+import  { useAuth }  from '@/hooks/useAuth;
 export default function ServiceOnboarding(): ;
   const { user, isLoading } = useAuth();
-;
   // If not authenticated, redirect to login;
-  if (!isLoading && !user) {;
-    return null; // Redirect handled by useRouter;
+  if (!isLoading && !user) {;';
+    return null; // Redirect handled by useRouter;';
   }'
 ;
   return (;
@@ -26,7 +24,6 @@ export default function ServiceOnboarding(): ;
               profile to get discovered on the Zion Marketplace.;
             </p>;
           </div>;
-;
           <ServiceProviderRegistrationForm />;
         </div>;
       </div>;"

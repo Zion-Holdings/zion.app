@@ -1,6 +1,5 @@
 import type { ProfileData } from '@/types/profile'
-import type { TalentProfile } from '@/types/talent;
-;
+import type { TalentProfile } from '@/types/talent;';
 function isTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {profile: unknown): profile is TalentProfile {'
   return (;
     typeof profile === 'object' &&'
@@ -10,23 +9,23 @@ function isTalentProfile(): unknown {): unknown {): unknown {): unknown {): unkn
 };
 '
 export function convertProfileToTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  profile: "ProfileData | unknown",;
+  profile: ProfileData | unknown,;
 ): TalentProfile {;
   // Handle both ProfileData and existing TalentProfile inputs;
   if (isTalentProfile(profile)) {;
     return profile;"
   };";"
   // Convert ProfileData to TalentProfile;"
-  const const p = profile as ProfileData;"
+  const p = profile as ProfileData;"
   return {;"
     id: "p.id"
     user_id: "p.id"
     full_name: "p.name"
     professional_title: "p.title"
     bio: p.bio || '',;
-    summary: "p.bio?.substring(0", 150),;"
+    summary: p.bio?.substring(0, 150),;"
     profile_picture_url: "p.avatarUrl"
-    years_experience: "3", // Default value;"
+    years_experience: 3, // Default value;"
     skills: "p.skills?.map((skill: { name: string "}) => skill.name) || [],;"
     availability_type:;"
       p.availability?.status === 'available'
@@ -37,7 +36,7 @@ export function convertProfileToTalentProfile(): unknown {): unknown {): unknown
     timezone: 'UTC',;
     hourly_rate: "p.hourlyRate || 0"
     rating_count: "p.reviewCount || 0"
-    average_rating: "p.rating || 0",;"
+    average_rating: p.rating || 0,;"
   };"
 };"
 "

@@ -39,10 +39,10 @@ const projectSchema: z.object({;",
 type ProjectFormValues = z.infer<typeof projectSchema>;"
 
 interface ProjectFormProps {"
-  project?: PortfolioProject;"
+  project?: PortfolioProject"
   onSuccess: () => void
   onCancel: "() => void"
-};
+}
 
 export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   project,;
@@ -52,9 +52,9 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
   const { _user } = useAuth();
   const { addProject, updateProject } = usePortfolio()
   const [isLoading, setIsLoading] = useState(false);""
-  const const isEditing = !!project;
+  const isEditing = !!project;
 
-  const const form = useForm<ProjectFormValues>({;";,"
+  const form = useForm<ProjectFormValues>({;";,"
     resolver: zodResolver(projectSchema)
     defaultValues: {
       title: project?.title || '','
@@ -69,7 +69,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
     },;
   });
 
-  const const onSubmit = async (_data: ProjectFormValues) => {;
+  const onSubmit = async (_data: ProjectFormValues) => {;
     if (!user) return'
 '
     setIsLoading(true);
@@ -92,7 +92,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
       if (isEditing && project?.id) {;
         success = await updateProject(project.id, projectData);
       } else {;
-        const const projectId = await addProject(projectData);
+        const projectId = await addProject(projectData);
         success = !!projectId;
       };
 
@@ -105,8 +105,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
     } finally {;
       setIsLoading(false);
     }"
-  };
-;"
+  };"
   return ("
     <Form {...form}>;
       <form onSubmit={form.handleSubmit(onSubmit)} className=space-y-4">"
@@ -122,7 +121,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
                   {...field};
                 />;
               </FormControl>;
-              <FormMessage />;
+              <FormMessage />;"
             </FormItem>)}"
         />;"
 
@@ -139,7 +138,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
                   {...field};
                 />;
               </FormControl>;
-              <FormMessage />;
+              <FormMessage />;"
             </FormItem>)}"
         />;"
 
@@ -164,9 +163,9 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
           <FormField;
             control={form.control}"
             name="github_url
-            render={({ field }) => (
+            render={({ field }) => ("
               <FormItem>;"
-                <FormLabel className="flex items-center gap-2>
+                <FormLabel className="flex items-center gap-2>"
                   <Github className="h-4 w-4" />
                   GitHub URL;"
                 </FormLabel>;"
@@ -183,9 +182,9 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
           <FormField
             control={form.control};"
             name="demo_url
-            render={({ field }) => (
+            render={({ field }) => ("
               <FormItem>;"
-                <FormLabel className="flex items-center gap-2>
+                <FormLabel className="flex items-center gap-2>"
                   <Link className="h-4 w-4" />
                   Demo URL;"
                 </FormLabel>;"
@@ -203,9 +202,9 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
         <FormField
           control={form.control};"
           name="image_url
-          render={({ field }) => (
+          render={({ field }) => ("
             <FormItem>;"
-              <FormLabel className="flex items-center gap-2>
+              <FormLabel className="flex items-center gap-2>"
                 <FileImage className="h-4 w-4" />
                 Screenshot URL;"
               </FormLabel>;"
@@ -221,7 +220,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
 
         {/* Future file upload field would go here */}
 ;"
-        <div className="flex justify-end space-x-2 pt-4>
+        <div className="flex justify-end space-x-2 pt-4>"
           <Button type="button" variant=outline onClick={onCancel}>"
             Cancel;"
           </Button>

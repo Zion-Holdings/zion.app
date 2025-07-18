@@ -3,31 +3,30 @@ import {;
   logErrorToProduction,;
   logDebug,;
 } from '@/utils/productionLogger;
-;
-interface ErrorDetails {;
-  message: string;
+interface ErrorDetails {
+  message: string
   stack?: string'
-  componentStack?: string;
-  filename?: string | null;
+  componentStack?: string
+  filename?: string | null
   lineno?: number | null'
-  colno?: number | null;
-  url: "string;"
-  userAgent: "string;","
-  timestamp: "string;",;"
-  traceId: string;"
-  logs?: string[];"
-  source:;"
+  colno?: number | null
+  url: "string"
+  userAgent: string,"
+  timestamp: string,"
+  traceId: string"
+  logs?: string[]"
+  source:"
     | 'GlobalErrorBoundary'
     | 'logError'
     | 'window.onerror'
     | 'unhandledrejection'
-    | string; // string for flexibility;
-};
+    | string // string for flexibility
+}
 '
 export async function sendErrorToBackend(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  errorDetails: "ErrorDetails",;"
+  errorDetails: ErrorDetails,;"
 ): Promise<void> {;"
-  const const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;"
+  const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;"
 ;"
   if (!webhookUrl || webhookUrl === '') {;
     // Only log once per session to avoid spam'
@@ -42,16 +41,14 @@ export async function sendErrorToBackend(): unknown {): unknown {): unknown {): 
     };
     return'
   };
-;
   try {'
-    const response: await fetch(webhookUrl", {;
+    const response = await fetch(webhookUrl", {;
       method: 'POST','
       headers: {;
         'Content-Type': 'application/json','
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
-      body: "JSON.stringify(errorDetails)",;
-    });
-;"
+      body: JSON.stringify(errorDetails),;
+    });"
     if (response.ok) {;";"
       logInfo(`Error report sent successfully from ${errorDetails.source}.`);"
     } else {;"
@@ -62,13 +59,13 @@ export async function sendErrorToBackend(): unknown {): unknown {): unknown {): 
     };"
   } catch {;"
     logErrorToProduction('Error sending report from ${errorDetails.source}:', {;
-      data: "error",;
+      data: error,;
     });
   };
 };"
 ;";"
 export async function reportError(): ;"
-  const const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;"
+  const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;"
 ;"
   if (!webhookUrl || webhookUrl.trim() === '') {'
     // Only log once per session to avoid spam;
@@ -81,7 +78,6 @@ export async function reportError(): ;"
     return;
   };
 };
-;
 };
 }'
 };

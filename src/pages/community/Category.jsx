@@ -73,5 +73,5 @@ export default function Category() {
 
   return (
     <QueryClientProvider client={queryClient}>{content}</QueryClientProvider>
-  );
+  )
 }

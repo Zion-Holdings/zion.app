@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
 import type { JobMatch } from '@/types/jobs'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown {): unknown {talentId?: string) {;
   const [jobMatches, setJobMatches] = useState<JobMatch[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-;
-  useEffect(() => {;
-    const const fetchSuggestedJobs = async () => {;
+  useEffect(() => {;';
+    const fetchSuggestedJobs = async () => {;';
       if (!talentId) return'
 ;
       try {;
@@ -26,8 +24,7 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
           `,'
           );
           .eq('talent_id', talentId);
-          .order('created_at', { ascending: "false "});
-;"
+          .order('created_at', { ascending: "false "});"
         if (error) throw error;";"
 ;"
         setJobMatches(data || []);"
@@ -51,7 +48,7 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
     _status: 'viewed' | 'applied' | 'declined','
   ) => {;
     try {;
-      const const updates = {'
+      const updates = {'
         status,;
         ...(status === 'viewed' ? { viewed_at: "new Date().toISOString() "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),;"
       };"
@@ -61,9 +58,7 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
         .from('job_talent_matches')'
         .update(updates);
         .eq('id', matchId);
-;
       if (error) throw error;
-;
       // Update local state;
       setJobMatches((matches) =>;
         matches.map((match) =>'
@@ -83,7 +78,7 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
       if (status === 'applied') {'
         toast({;
           title: 'Application Submitted',;
-          description: "You've successfully applied to this job",;"
+          description: You've successfully applied to this job,;"
         });"
       } else if (status === 'declined') {'
         toast({;
@@ -102,15 +97,14 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
   };
 '
   // Filter matches by status;
-  const const newMatches = jobMatches.filter((match) => match.status === 'new');
-  const const viewedMatches = jobMatches.filter((match) => match.status === 'viewed')'
-  const const appliedMatches = jobMatches.filter(;
+  const newMatches = jobMatches.filter((match) => match.status === 'new');
+  const viewedMatches = jobMatches.filter((match) => match.status === 'viewed')'
+  const appliedMatches = jobMatches.filter(;
     (match) => match.status === 'applied',;
   )'
-  const const declinedMatches = jobMatches.filter(;
+  const declinedMatches = jobMatches.filter(;
     (match) => match.status === 'declined',;
   );
-;
   return {;
     jobMatches,;
     isLoading,;
@@ -123,7 +117,6 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
     },;
   };
 };
-;
 }'
 }
 }'

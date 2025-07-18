@@ -7,9 +7,9 @@ export function LoginCard(): ;
   const [isSignUpView, setIsSignUpView] = useState(false);
 
   // This function will now specifically set to SignUp view;
-  const const showSignUpView = () => setIsSignUpView(true)'
+  const showSignUpView = () => setIsSignUpView(true)'
   // This function will now specifically set to SignIn view'
-  const const showSignInView = () => setIsSignUpView(false);
+  const showSignInView = () => setIsSignUpView(false);
 '
   return ('
     <div className="mx-auto w-full max-w-sm lg:w-96>;"";

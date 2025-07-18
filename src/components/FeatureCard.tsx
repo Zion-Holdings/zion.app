@@ -2,12 +2,12 @@ import { cn } from '@/lib/utils'
 import React from 'react'
 '
 interface FeatureCardProps {'
-  title: "string,;";
-  description: "string",
-  icon: React.ReactNode;
-  className?: string;
-  key?: string | number; // Added key prop;
-};
+  title: "string,"
+  description: string,
+  icon: React.ReactNode
+  className?: string
+  key?: string | number // Added key prop
+}
 
 export function FeatureCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;

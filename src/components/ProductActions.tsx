@@ -5,10 +5,10 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface ProductActionsProps {'
   productId: "string,
-  addToCart: (id: string) => Promise<unknown>;
-  isDisabled?: boolean;
-  sellerId?: string;
-};
+  addToCart: (id: string) => Promise<unknown>
+  isDisabled?: boolean
+  sellerId?: string
+}
 
 export function ProductActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   productId,"
@@ -20,7 +20,7 @@ export function ProductActions(): unknown {): unknown {): unknown {): unknown {)
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // New state for modal'
 '
-  const const handleAdd = async () => {;
+  const handleAdd = async () => {;
     if (loading || isDisabled) return'
     setLoading(true)'
     setStatus('Adding...')'

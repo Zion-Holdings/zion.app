@@ -7,26 +7,26 @@ import Image from 'next/image'
 export interface Benefit {'
   title: "string,
   description: string
-  icon?: React.ReactNode;
-};
+  icon?: React.ReactNode
+}
 
-export interface Testimonial {;
-  name: string;
-  role?: string;
+export interface Testimonial {
+  name: string
+  role?: string
   text: string"
-  avatar?: string;"
-};
+  avatar?: string"
+}
 "
-interface ServiceLandingTemplateProps {;"
-  title: string,;"
+interface ServiceLandingTemplateProps {"
+  title: string,"
   subtitle: string"
-  heroImage?: string;
+  heroImage?: string
   description: string"
   benefits: "Benefit[],
   testimonials: "Testimonial[]"
   ctaText: string,"
   ctaLink: "string
-};
+}
 
 export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplateProps> = ({;
   title,;
@@ -40,9 +40,9 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
 }) => {"
   return (;"
     <div className=bg-background text-white>"
-      <section className="bg-zion-blue py-16 px-4 text-center>
+      <section className="bg-zion-blue py-16 px-4 text-center>"
         <div className="container mx-auto">
-          <GradientHeading level=h1" className="mb-4>
+          <GradientHeading level=h1" className="mb-4>"
             {title};"
           </GradientHeading>"
           <p className=text-xl text-zion-slate-light max-w-3xl mx-auto>"
@@ -65,18 +65,18 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
 
       <section className=py-12 px-4">"
         <div className=container mx-auto text-center>"
-          <p className="text-lg text-zion-slate-light max-w-3xl mx-auto>
+          <p className="text-lg text-zion-slate-light max-w-3xl mx-auto>"
             {description}"
           </p>;"
         </div>;
       </section>"
 ;"
       <section className=py-16 bg-zion-blue-light>"
-        <div className="container mx-auto px-4>
+        <div className="container mx-auto px-4>"
           <h2 className="text-2xl font-bold text-white text-center mb-8">
             Benefits;
           </h2>"
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>"
             {benefits.map((benefit, idx) => (;"
               <div"
                 key={idx};
@@ -87,7 +87,7 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
                     {benefit.icon};
                   </div>
                 )};"
-                <h3 className="text-lg font-bold mb-2>{benefit.title}</h3>
+                <h3 className="text-lg font-bold mb-2>{benefit.title}</h3>"
                 <p className="text-zion-slate-light">{benefit.description}</p>
               </div>;
             ))}
@@ -95,7 +95,7 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
         </div>;
       </section>
 ;"
-      <section className="py-16 bg-zion-blue>
+      <section className="py-16 bg-zion-blue>"
         <div className="container mx-auto px-4">
           <h2 className=text-2xl font-bold text-white text-center mb-8">"
             What Our Clients Say;
@@ -106,12 +106,12 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
                 key={idx};"
                 className=bg-zion-blue-dark border-zion-purple/30
               >"
-                <CardContent className="pt-6>
+                <CardContent className="pt-6>"
                   <p className="text-gray-200 mb-6">{t.text}</p>"
                 </CardContent>;"
                 <CardFooter className=border-t border-zion-purple/20 pt-4>"
                   <div className="flex items-center>
-                    {t.avatar && (;
+                    {t.avatar && (;"
                       <Image"
                         src={t.avatar};"
                         alt={t.name};
@@ -122,14 +122,14 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
                       />
                     )};
                     <div>"
-                      <p className="font-semibold text-white>{t.name}</p>
+                      <p className="font-semibold text-white>{t.name}</p>"
                       {t.role && (;"
                         <p className="text-sm text-gray-400>{t.role}</p>
                       )};
                     </div>;
                   </div>;
                 </CardFooter>;
-              </Card>;
+              </Card>;"
             ))}"
           </div>;"
         </div>;

@@ -8,7 +8,7 @@ import {;
   Briefcase,'
 } from '@/components/ui/icons'
 
-const const features = ['
+const features = ['
   {'
     title: 'Private Hiring Portal','
     description:'
@@ -59,8 +59,7 @@ export function EnterpriseFeatures(): ";";
             Our enterprise solutions offer powerful tools designed for large"
             teams and complex hiring needs;
           </p>;"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">;
           {features.map((feature) => (";"
             <div;";"

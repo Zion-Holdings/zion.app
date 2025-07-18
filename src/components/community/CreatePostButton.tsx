@@ -28,11 +28,11 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
   onRequireLogin,;
 }: CreatePostButtonProps) {;
   const { _user } = useAuth();
-  const const router = useRouter();
+  const router = useRouter();
   const { _toast } = useToast()
 ;"
-  const const handleClick = () => {;";
-    const const target = categoryId";";
+  const handleClick = () => {;";
+    const target = categoryId";";
       ? `/community?new=1&category=${categoryId}`"
       : '/community?new=1'
 '
@@ -48,7 +48,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
       if (onRequireLogin) {;
         onRequireLogin(target);
       } else {;
-        const const returnTo = encodeURIComponent(target);
+        const returnTo = encodeURIComponent(target);
         router.push(`/auth/login?returnTo=${returnTo}`)`
       };
     };
@@ -69,7 +69,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
         {!user && (;
           <TooltipContent>Please log in to use this feature</TooltipContent>)};
       </Tooltip>;
-    </TooltipProvider>;
+    </TooltipProvider>;"
   )"
 };"
 ;";"

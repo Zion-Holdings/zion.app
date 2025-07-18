@@ -12,14 +12,14 @@ import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 
-interface QuickAccessProps {;
-  className?: string;
-  style?: React.CSSProperties;
-};
+interface QuickAccessProps {
+  className?: string
+  style?: React.CSSProperties
+}
 '
 export function QuickAccess(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: QuickAccessProps) {'
   const { t } = useTranslation();
-  const const quickLinks = ['
+  const quickLinks = ['
     {'
       title: t('home.tool_ai_matcher'),'
       description: t('home.tool_ai_matcher_desc'),'
@@ -95,7 +95,7 @@ export function QuickAccess(): unknown {): unknown {): unknown {): unknown {): u
           ))};
         </div>;
       </div>;
-    </section>;
+    </section>;"
   )"
 };"
 ;";"

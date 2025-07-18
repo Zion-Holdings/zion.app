@@ -1,14 +1,13 @@
-import { enhancedGlobalErrorHandler } from './globalToastManager;
-import {;
+import  { enhancedGlobalErrorHandler }  from './globalToastManager;';
+import {;';
   consoleErrorHandler,'
   fetchErrorHandler,;
 } from './enhancedErrorHandlers'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
+import  { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 /**;
  * Initialize global error handlers with enhanced toast management;
- */;
-export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;
+ */;';
+export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;';
   // Console error handler is automatically initialized when the module loads'
   // Fetch error handler is automatically initialized when the module loads;
   // API error handler is a singleton that can be used throughout the app;
@@ -18,9 +17,8 @@ export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown
     // Handle unhandled promise rejections;
     window.addEventListener('unhandledrejection', (event) => {;
       logErrorToProduction('Unhandled promise rejection:', {;
-        data: "event.reason",;
+        data: event.reason,;
       });
-;
       // Only show toast for user-facing errors;
       if (event.reason && !shouldIgnoreError(event.reason)) {;
         enhancedGlobalErrorHandler.reportError(;"
@@ -47,7 +45,7 @@ export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown
             context: 'globalError',;
             filename: "event.filename"
             lineno: "event.lineno"
-            colno: "event.colno",;
+            colno: event.colno,;
           },;
         });"
       };";"
@@ -56,14 +54,13 @@ export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown
 ;"
   logInfo('Enhanced global error handlers initialized');
 };
-;
 /**;
  * Determine if an error should be ignored (not shown to user);
  */'
 function shouldIgnoreError(): unknown {): unknown {): unknown {): unknown {): unknown {error: unknown): boolean {;
-  const const message = (error as Error)?.message || String(error);
+  const message = (error as Error)?.message || String(error);
 '
-  const const ignorePatterns = [;
+  const ignorePatterns = [;
     'Script error',;
     'Network request failed',;
     'Loading chunk',;
@@ -74,12 +71,10 @@ function shouldIgnoreError(): unknown {): unknown {): unknown {): unknown {): un
     'webpack',;
     'HMR',;
   ];
-;
   return ignorePatterns.some((pattern) =>;
     message.toLowerCase().includes(pattern.toLowerCase()),;
   );
 };
-;
 /**;
  * Clean up global error handlers'
  */;

@@ -5,14 +5,14 @@ import { useAuth } from '@/hooks/useAuth'
 '
 interface AnalyticsContainerProps {'
   children: "React.ReactNode
-};
+}
 
 export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: AnalyticsContainerProps) {"
   const { isAuthenticated, isLoading, user } = useAuth();"
-  const const router = useRouter();";"
+  const router = useRouter();";"
 ;";"
   // Check if user is admin (using either role or userType);";"
-  const const isAdmin = user?.role === 'admin' || user?.userType === 'admin'
+  const isAdmin = user?.role === 'admin' || user?.userType === 'admin'
 '
   useEffect(() => {'
     if (!isLoading) {;
@@ -65,7 +65,7 @@ export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknow
             Track user behavior, page views, and conversion rates;
           </p>;
         </div>;
-        {children};
+        {children};"
       </main>"
     </div>;"
   );";"

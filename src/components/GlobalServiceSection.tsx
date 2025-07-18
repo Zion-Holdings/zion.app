@@ -10,7 +10,7 @@ import {;
 
 import { Button } from './ui/button'
 
-const const services = ['
+const services = ['
   {'
     title: 'Servers','
     description:'
@@ -76,8 +76,7 @@ export function GlobalServiceSection(): ";";
               </p>"
             </div>;
           ))};"";
-        </div>;"";
-;"";
+        </div>;"";"";
         <div className="flex justify-center mt-12">;"
           <Button className=bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg py-6 px-8">"
             Get Your Free Commercial Proposal;

@@ -12,14 +12,14 @@ import { Button } from '@/components/ui/button'
 import type { JobApplication, ApplicationStatus } from '@/types/jobs'
 '
 interface ApplicationActionsProps {'
-  application: "JobApplication,;";
-  processingId: "string | null",;"";
-  onViewApplication: (applicationId: string) => Promise<void>",;"
+  application: "JobApplication,"
+  processingId: string | null,""
+  onViewApplication: (applicationId: string) => Promise<void>","
   onStatusChange: (,""
-    applicationId: "string,;"";
-    newStatus: "ApplicationStatus",
-  ) => Promise<void>;
-};
+    applicationId: "string,""
+    newStatus: ApplicationStatus,
+  ) => Promise<void>
+}
 
 export function ApplicationActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;

@@ -9,12 +9,12 @@ export function ExperienceFilter(): unknown {): unknown {): unknown {): unknown 
   toggleSection,;
   _isMobileFilterOpen,;
 }: ExperienceFilterProps) {;
-  const const handleChange = (_values: number[]) => {'
+  const handleChange = (_values: number[]) => {'
     setExperienceRange([values[0] || 0, values[1] || 15])'
   };
 '
   return ('
-    <div className="mb-6 border-b border-zion-blue-light pb-6>
+    <div className="mb-6 border-b border-zion-blue-light pb-6>"
       <button;"
         onClick={toggleSection}"
         className=flex w-full items-center justify-between text-white font-medium

@@ -11,22 +11,22 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 '
 export interface Message {'
-  id: "string,;";
+  id: "string,"
   role: 'user' | 'assistant,'
-  message: "string",
+  message: string,
   timestamp: Date
-  read?: boolean;""
-};"
+  read?: boolean""
+}"
 ";"
-export interface ChatAssistantProps {";""
-  isOpen: boolean,;"
-  onClose: "() => void,";
-  recipient: "{",;
+export interface ChatAssistantProps {"""
+  isOpen: boolean,"
+  onClose: "() => void,"
+  recipient: {,
     id: string","
-    name: string;
+    name: string
     avatarUrl?: string
-    role?: string;"
-  };";
+    role?: string"
+  }";
   conversationId?: string";";
   initialMessages?: Message[]"
   onSendMessage: "(message: string, conversationId?: string) => Promise<void>
@@ -45,11 +45,11 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   contextHeader,;
   starterQuestions = [],;
 }: ChatAssistantProps) {;
-  const const auth = useContext(AuthContext)"
-  const const isGuest = !auth?.isAuthenticated;"
+  const auth = useContext(AuthContext)"
+  const isGuest = !auth?.isAuthenticated;"
 ;";"
   // Hooks called unconditionally at the top;";"
-  const const localStorageKey = `chatHistory-${recipient.id}`; // Key is always generated";"
+  const localStorageKey = `chatHistory-${recipient.id}`; // Key is always generated";"
   const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<;"
     Message[];";"
   >(;"
@@ -60,7 +60,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   const [loggedInMessages, setLoggedInMessages] =;
     useState<Message[]>(initialMessages);
 
-  const const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const [pendingApiCallParams, setPendingApiCallParams] = useState<{;
     message: string;
     conversationId?: string | undefined;
@@ -96,8 +96,8 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   }, [isGuest, initialMessages, recipient.id])'
 '
   // Determine currentMessages and setCurrentMessages based on isGuest;
-  const const currentMessages = isGuest ? displayGuestMessages : loggedInMessages'
-  const const setCurrentMessages = (,;"
+  const currentMessages = isGuest ? displayGuestMessages : loggedInMessages'
+  const setCurrentMessages = (,;"
     valueOrFn: "Message[] | ((val: Message[]) => Message[]),
   ) => {;
     if (isGuest) {;
@@ -114,7 +114,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
     };"
   };";"
 ;";"
-  const const debouncedApiCallParams = useDebounce(pendingApiCallParams, 3000)"
+  const debouncedApiCallParams = useDebounce(pendingApiCallParams, 3000)"
 
   useEffect(() => {;
     if (debouncedApiCallParams) {;
@@ -125,14 +125,13 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   }, [debouncedApiCallParams, onSendMessage]);
 
   useEffect(() => {"
-    scrollToBottom();
-  }, [currentMessages]); // currentMessages will correctly refer to either guest or logged-in state;
-;
-  const const _scrollToBottom = () => {;
+    scrollToBottom()
+  }, [currentMessages]) // currentMessages will correctly refer to either guest or logged-in state;
+  const _scrollToBottom = () => {;
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })'
   };
 
-  const const handleSendMessage = async (_messageContent: string) => {'
+  const handleSendMessage = async (_messageContent: string) => {'
     if (!messageContent.trim()) return'
 
     if (!isGuest) {'
@@ -143,7 +142,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
         message: messageContent,"
         timestamp: "new Date(),;
       };
-      setCurrentMessages((prev: "Message[]) => [...prev", newMessage]);"
+      setCurrentMessages((prev: Message[]) => [...prev, newMessage]);"
       setPendingApiCallParams({ message: messageContent", conversationId })"
     } else {;
       // Guest user;
@@ -152,30 +151,30 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
     };
   }
 ;"
-  const const handleModalSendConfirm = () => {;";
+  const handleModalSendConfirm = () => {;";
     if (!guestMessage) return";";
 "
     const newMessage: unknown "Message = {,;";
-      id: "Date.now().toString()",;"
+      id: Date.now().toString(),;"
       role: 'user','
       message: guestMessage",""
       timestamp: new Date(),";";
     }"
     setCurrentMessages((prev: "Message[]) => [...prev, newMessage]); // This will now use the guest-aware setCurrentMessages;
-    setPendingApiCallParams({ message: "guestMessage", conversationId })
+    setPendingApiCallParams({ message: guestMessage, conversationId })
 
     setShowGuestModal(false);
     setGuestMessage(null);
   };
 
-  const const handleModalCancel = () => {;
+  const handleModalCancel = () => {;
     setShowGuestModal(false);
     setGuestMessage(null);
   }
 ;""
   useEffect(() => {;"
     if (!isOpen) return";"
-    const const handleKeyDown = (_e: KeyboardEvent) => {";""
+    const handleKeyDown = (_e: KeyboardEvent) => {";""
       if (e.key === 'Escape') {'
         e.preventDefault()'
         onClose();
@@ -190,13 +189,13 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   return ('
     <div'
       className=fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-      role="dialog;
+      role="dialog;"
       aria-modal="true"
       aria-labelledby=chat-assistant-title;"
     >";""
       <div className=w-full max-w-xl bg-zion-blue rounded-lg shadow-xl overflow-hidden flex flex-col max-h-[80vh]>";";
         {/* Header */}"
-        <div className="bg-zion-blue-dark p-3 flex items-center justify-between border-b border-zion-purple/20>;
+        <div className="bg-zion-blue-dark p-3 flex items-center justify-between border-b border-zion-purple/20>;"
           <div className="flex items-center space-x-3">;"
             <Avatar className=h-10 w-10 border border-zion-purple/20">"
               <AvatarImage src={recipient.avatarUrl} alt={recipient.name} />";""
@@ -209,13 +208,13 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
                 {recipient.name}";
               </h2>;
               {recipient.role && (;"
-                <div className="text-xs text-zion-slate>{recipient.role}</div>
+                <div className="text-xs text-zion-slate>{recipient.role}</div>"
               )};""
             </div>;"
           </div>";"
           <Button";""
             variant=ghost"
-            size="icon;
+            size="icon;"
             className="text-white hover:bg-zion-purple/10 rounded-full"
             onClick={onClose};";"
             aria-label=Close chat;"
@@ -223,7 +222,6 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
             <X className=h-5 w-5 />"
           </Button>"
         </div>;
-;
         {/* Context Header (Optional) */};
         {contextHeader && (;
           <div className="border-b border-zion-purple/20 bg-zion-blue-dark/50 p-3">
@@ -244,7 +242,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
                   {starterQuestions.map((q, idx) => (";
                     <Button;
                       key={idx};"
-                      variant="outline;
+                      variant="outline;"
                       className="text-xs"
                       onClick={() => handleSendMessage(q)};
                     >;
@@ -266,14 +264,13 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
           <ChatInput onSend={handleSendMessage} />;
         </div>"
       </div>;
-;
       {showGuestModal && guestMessage && (;
         <div;
           className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4"
           role=dialog;""
           aria-modal=true"
           aria-labelledby="confirm-message-title;
-        >;
+        >;"
           <div className="bg-zion-blue-darker p-6 rounded-lg shadow-xl w-full max-w-md">;"
             <h3;";"
               id=confirm-message-title;""

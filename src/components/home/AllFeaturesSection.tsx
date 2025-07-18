@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 
-interface AllFeaturesSectionProps {;
+interface AllFeaturesSectionProps {
   className?: string'
   style?: React.CSSProperties'
-};
+}
 '
-const const features = ['
+const features = ['
   { key: 'ai_talent_matching', link: '/match' },'
   { key: 'talent_directory', link: '/talents' },'
   { key: 'services_marketplace', link: '/services' },'

@@ -1,15 +1,15 @@
-export interface Message {;
-  id: "string,;";
+export interface Message {
+  id: "string,"
   role: 'user' | 'assistant,'
-  message: "string",
+  message: string,
   timestamp: Date
-  read?: boolean;""
-};"
+  read?: boolean""
+}"
 ";"
-export interface Recipient {";""
+export interface Recipient {"""
   id: string,"
   name: string"
-  avatarUrl?: string;
-  role?: string;
-};
+  avatarUrl?: string
+  role?: string
+}
 """"

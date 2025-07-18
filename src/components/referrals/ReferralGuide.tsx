@@ -7,7 +7,7 @@ import {;
 } from '@/components/ui/card'
 '
 export function ReferralGuide(): ;
-  const const steps = ['
+  const steps = ['
     {'
       title: 'Share your referral link','
       description:'
@@ -42,11 +42,11 @@ export function ReferralGuide(): ;
         <div className=space-y-4>"
           {steps.map((step, index) => (;"
             <div key={index} className=flex gap-4>"
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground>"
                 {index + 1};"
               </div>"
               <div className=space-y-1>"
-                <h4 className="font-medium>{step.title}</h4>
+                <h4 className="font-medium>{step.title}</h4>"
                 <p className="text-sm text-muted-foreground">
                   {step.description};
                 </p>;

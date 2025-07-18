@@ -2,18 +2,16 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;
-const const NotFound = () => {;
-  const const router = useRouter()'
+import  { logErrorToProduction }  from '@/utils/productionLogger;';
+const NotFound = () => {;';
+  const router = useRouter()'
   const { t } = useTranslation();
-;
   useEffect(() => {'
-    logErrorToProduction(;
-      '404 Error: User attempted to access non-existent route:',;
+    logErrorToProduction(
+      '404 Error: User attempted to access non-existent route:',
       router.asPath,'
-    );
-  }, [router.asPath]);
+    )
+  }, [router.asPath])
 '
   return (;
     <div className="flex flex-1 items-center justify-center bg-gray-100">;"
@@ -32,6 +30,5 @@ const const NotFound = () => {;
     </div>;
   )'
 };
-;
 export default NotFound'
 '''''

@@ -3,7 +3,7 @@ import { resetPassword } from '../auth'
 // Mock global fetch;
 global.fetch = jest.fn()'
 ;
-const const API_URL = process.env.NEXT_PUBLIC_API_URL || '
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '
 ;
 describe('Auth Service', () => {'
   beforeEach(() => {;
@@ -12,36 +12,36 @@ describe('Auth Service', () => {'
 ;
   describe('resetPassword', () => {;
     it('should call fetch with correct parameters and return data on success', async () => {;
-      const const mockToken = 'test-token'
-      const const mockPassword = 'newPassword123'
-      const const mockResponseData = { message: 'Password reset successfully' };
+      const mockToken = 'test-token'
+      const mockPassword = 'newPassword123'
+      const mockResponseData = { message: 'Password reset successfully' };
 '
       (fetch as jest.Mock).mockResolvedValueOnce({;
         ok: "true"
-        json: "async () => mockResponseData",;"
+        json: async () => mockResponseData,;"
       });"
 ;"
-      const result: await resetPassword(mockToken", mockPassword);"
+      const result = await resetPassword(mockToken", mockPassword);"
 ;"
       expect(fetch).toHaveBeenCalledWith(`${API_URL}/auth/reset-password`, {;"
         method: 'POST','
         headers: {;
           'Content-Type': 'application/json','
         },;
-        body: "JSON.stringify({ token: mockToken", newPassword: "mockPassword "}),;"
+        body: JSON.stringify({ token: mockToken, newPassword: "mockPassword "}),;"
       });";"
       expect(result.data).toEqual(mockResponseData);"
     });"
 ;"
     it('should throw an error if the fetch call is not ok', async () => {;
-      const const mockToken = 'test-token'
-      const const mockPassword = 'newPassword123'
-      const const mockErrorResponse = { message: 'Invalid token' };
+      const mockToken = 'test-token'
+      const mockPassword = 'newPassword123'
+      const mockErrorResponse = { message: 'Invalid token' };
 '
       (fetch as jest.Mock).mockResolvedValueOnce({;
         ok: "false"
         status: "400"
-        json: "async () => mockErrorResponse",;"
+        json: async () => mockErrorResponse,;"
       });"
 ;"
       await expect(resetPassword(mockToken, mockPassword)).rejects.toThrow(;"
@@ -50,8 +50,8 @@ describe('Auth Service', () => {'
     })'
 ;
     it('should throw a generic error if the response is not ok and no message is present', async () => {;
-      const const mockToken = 'test-token'
-      const const mockPassword = 'newPassword123;
+      const mockToken = 'test-token'
+      const mockPassword = 'newPassword123;
 '
       (fetch as jest.Mock).mockResolvedValueOnce({;
         ok: "false"
@@ -65,12 +65,12 @@ describe('Auth Service', () => {'
     })'
 ;
     it('should handle non-JSON error responses gracefully', async () => {;
-      const const mockToken = 'test-token'
-      const const mockPassword = 'newPassword123;
+      const mockToken = 'test-token'
+      const mockPassword = 'newPassword123;
 '
       (fetch as jest.Mock).mockResolvedValueOnce({;
         ok: "false"
-        status: "503",;"
+        status: 503,;"
         _json: async () => {;"
           throw new Error('Network error')'
         }, // Simulate non-JSON response by throwing during .json();

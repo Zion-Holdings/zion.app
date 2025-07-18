@@ -1,15 +1,13 @@
 import { toast } from '@/hooks/use-toast'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { isPublicRoute } from '../config/publicRoutes'
-import { logDebug } from '@/utils/productionLogger;
-;
+import { logDebug } from '@/utils/productionLogger;';
 if (typeof window !== 'undefined' && window.fetch) {'
-  const const originalFetch = window.fetch.bind(window);
+  const originalFetch = window.fetch.bind(window);
   let lastMessage = 
   let lastTime = 0;
-;
   // URLs that should not trigger user-facing error toasts (background/polling requests)'
-  const const SILENT_ERROR_PATTERNS = [;
+  const SILENT_ERROR_PATTERNS = [;
     '/_next/',;
     '/api/auth/session',;
     '/api/health',;
@@ -23,14 +21,13 @@ if (typeof window !== 'undefined' && window.fetch) {'
     'googleapis.com', // Google API calls;
     'github.com/api', // GitHub API calls;
   ];
-;
   // Check if URL should fail silently;
-  const const shouldFailSilently = (url: string): boolean => {'
+  const shouldFailSilently = (url: string): boolean => {'
     return SILENT_ERROR_PATTERNS.some((pattern) => url.includes(pattern));
   };
 '
   // Check if error should be shown to user;
-  const const shouldShowErrorToUser = (status: "number", url: string): boolean => {;
+  const shouldShowErrorToUser = (status: number, url: string): boolean => {;
     // Never show errors for silent URLs;"
     if (shouldFailSilently(url)) {;";"
       return false;"
@@ -49,12 +46,11 @@ if (typeof window !== 'undefined' && window.fetch) {'
           context: 'globalFetchInterceptorPublicPageContext','
           status,;
           apiUrl: "url"
-          pageUrl: "window.location.pathname",;
+          pageUrl: window.location.pathname,;
         },;
       );
       return false; // Suppress toast;
     };
-;
     // Original logic for showing user-facing errors for specific status codes,;"
     // now only applies if not an auth error on a public page.;";"
     switch (status) {;"
@@ -85,13 +81,11 @@ if (typeof window !== 'undefined' && window.fetch) {'
         return false; // Do not show toast for other statuses or non-API URLs unless specified;
     };
   };
-;
   window.fetch = async (;
     ...args: Parameters<typeof fetch>;
   ): Promise<Response> => {;
     try {'
-      const const response = await originalFetch(...args);
-;
+      const response = await originalFetch(...args);
       if (!response.ok) {'
         const url: unknown =;
           typeof args[0] === 'string;
@@ -123,10 +117,9 @@ if (typeof window !== 'undefined' && window.fetch) {'
             );
           };
           return response;
-        };
-;"
+        };"
         // If shouldShowErrorToUser is true, proceed to notify.;";"
-        const const statusTitle = (status: number): string => {;"
+        const statusTitle = (status: number): string => {;"
           switch (status) {;"
             case 401:;"
               return 'Unauthorized;
@@ -148,8 +141,8 @@ if (typeof window !== 'undefined' && window.fetch) {'
           };
         }'
 ;
-        const const notify = (msg: "string", status?: number) => {;"
-          const const now = Date.now();";"
+        const notify = (msg: string, status?: number) => {;"
+          const now = Date.now();";"
           if (msg !== lastMessage || now - lastTime > 5000) {;"
             toast({;"
               title:;"
@@ -186,10 +179,10 @@ if (typeof window !== 'undefined' && window.fetch) {'
         } else {;
           // Try to get a more specific error message from the response;
           try {;
-            const const data = await response.clone().json();
+            const data = await response.clone().json();
             if (data) {;
-              const const code = data.code || data.error;
-              const const message = data.message || data.error;
+              const code = data.code || data.error;
+              const message = data.message || data.error;
               if (message) {;
                 notify('
                   code ? `${code} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: ${message}` : String(message),;
@@ -209,7 +202,7 @@ if (typeof window !== 'undefined' && window.fetch) {'
       return response;
     } catch {'
       // Only show network errorors for user-initiated requests;
-      const const url = typeof args[0] === 'string' ? args[0] : 
+      const url = typeof args[0] === 'string' ? args[0] : 
 ;
       if (!shouldFailSilently(url)) {;
         let const data = undefined'

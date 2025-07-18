@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from '@/components/Header'
 import { TransactionHistory } from '@/components/transactions/TransactionHistory'
 import { GradientHeading } from '@/components/GradientHeading'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
 '
 export default function Payments(): ;
   return (;
@@ -118,8 +118,7 @@ export default function Payments(): ;
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
-import { Checkbox } from '@/components/ui/checkbox;
-
+import { Checkbox } from '@/components/ui/checkbox;';
 }'
 }
 }'

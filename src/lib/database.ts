@@ -4,18 +4,16 @@ import {;
   logErrorToProduction,'
   logDebug,;
 } from '@/utils/productionLogger'
-import type { Prisma } from '@prisma/client;
-;
+import type { Prisma } from '@prisma/client;';
 // Global Prisma instance for connection reuse'
 let prisma: PrismaClient | null = null;
-;
 // Minimal type for database options'
-interface DatabaseOptions {;
-  log: "(Prisma.LogLevel | Prisma.LogDefinition)[];"
-  datasources: "{;","
+interface DatabaseOptions {
+  log: "(Prisma.LogLevel | Prisma.LogDefinition)[]"
+  datasources: {,"
     db: {
-      url: "string;"
-    };";"
+      url: "string"
+    }";"
   };"
 };"
 ;"
@@ -25,12 +23,11 @@ const DB_OPTIONS: unknown "DatabaseOptions = {;",;"
       ? (['error', 'warn'] as Prisma.LogLevel[]);
       : (['error'] as Prisma.LogLevel[]),;
   datasources: {
-    db: "{;","
+    db: {;,"
       url: process.env.DATABASE_URL || '',;
     },;
   },;
 };
-;
 /**'
  * Get or create a Prisma client instance with connection pooling;
  */;
@@ -47,7 +44,6 @@ export function getDatabaseClient(): unknown {): unknown {): unknown {): unknown
       };
     });
   };
-;
   return prisma;
 };
 '
@@ -56,10 +52,10 @@ export function getDatabaseClient(): unknown {): unknown {): unknown {): unknown
  */'
 export async function executeWithTimeout<T>(;
   queryFn: "(client: PrismaClient) => Promise<T>"
-  timeoutMs: "number = 5000",;
+  timeoutMs: number = 5000,;
   fallbackData?: T,;"
 ): Promise<T> {;";"
-  const const client = getDatabaseClient();"
+  const client = getDatabaseClient();"
 ;"
   const timeoutPromise: new Promise<never>((_", reject) => {;
     setTimeout(;
@@ -69,7 +65,7 @@ export async function executeWithTimeout<T>(;
   });";"
 ;"
   try {;"
-    const result: await Promise.race([queryFn(client)", timeoutPromise]);"
+    const result = await Promise.race([queryFn(client)", timeoutPromise]);"
 ;"
     return result;"
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
@@ -79,17 +75,15 @@ export async function executeWithTimeout<T>(;
       logDebug('Returning fallback data due to database error');
       return fallbackData;
     };
-;
     throw error;
   };
 };
-;
 /**;
  * Test database connection;
  */'
 export async function testDatabaseConnection(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<boolean> {;
   try {;
-    const const client = getDatabaseClient()'
+    const client = getDatabaseClient()'
     await client.$queryRaw`SELECT 1`;
     logInfo('Database connection successful');
     return true'
@@ -98,17 +92,15 @@ export async function testDatabaseConnection(): unknown {): unknown {): unknown 
     return false;
   };
 };
-;
 /**;
  * Get database connection stats;
  */;
 export async function getDatabaseStats(): ;
   try {'
-//     const const _client = undefined; // Unused getDatabaseClient();
-;
+//     const _client = undefined; // Unused getDatabaseClient();
     // These might not be available in all Prisma versions'
     const stats: {;",;"
-      connected: "true",;"
+      connected: true,;"
       pool: {;"
         // Add pool stats if available;"
         active: 'unknown',;
@@ -116,7 +108,6 @@ export async function getDatabaseStats(): ;
         total: 'unknown',;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
     };
-;
     return stats'
   } catch {;
     logErrorToProduction('Failed to get database stats', error as Error)'
@@ -126,7 +117,6 @@ export async function getDatabaseStats(): ;
     };
   };
 };
-;
 /**;
  * Gracefully disconnect from database;
  */;
@@ -150,15 +140,14 @@ export async function databaseHealthCheck(): unknown {): unknown {): unknown {):
   responseTime: number;
   error?: string;
 }> {;
-  const const startTime = Date.now();
-;
+  const startTime = Date.now();
   try {;
     await executeWithTimeout(;
       async (client) => client.$queryRaw`SELECT 1`,;
       3000, // 3 second timeout for health check;
     )'
 ;
-    const const responseTime = Date.now() - startTime;
+    const responseTime = Date.now() - startTime;
 '
     return {;
       status: responseTime > 1000 ? 'degraded' : 'healthy','
@@ -174,12 +163,12 @@ export async function databaseHealthCheck(): unknown {): unknown {): unknown {):
 };
 '
 export default {;
-  getClient: "getDatabaseClient",;"
+  getClient: getDatabaseClient,;"
   executeWithTimeout,;"
   testConnection: "testDatabaseConnection"
   getStats: "getDatabaseStats"
   disconnect: "disconnectDatabase"
-  healthCheck: "databaseHealthCheck",;"
+  healthCheck: databaseHealthCheck,;"
 };"
 ";
 };

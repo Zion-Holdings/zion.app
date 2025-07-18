@@ -6,7 +6,7 @@ import Link from 'next/link'
 ;
 export function ApiWebhooks(): ;
   // Sample webhook event payload'
-  const const newApplicationPayload = `{;
+  const newApplicationPayload = `{;
   "event_type": "new_application"
   "created_at": "2023-06-10T15:42:31Z"
   "data": {;"
@@ -20,7 +20,7 @@ export function ApiWebhooks(): ;
   };";"
 }`;"
 ;"
-  const const newHirePayload = `{;"
+  const newHirePayload = `{;"
   "event_type": "talent_hired"
   "created_at": "2023-06-12T09:15:22Z"
   "data": {;"
@@ -34,7 +34,7 @@ export function ApiWebhooks(): ;
   };";"
 }`;"
 ;"
-  const const quoteReceivedPayload = `{;"
+  const quoteReceivedPayload = `{;"
   "event_type": "quote_received"
   "created_at": "2023-06-15T11:30:00Z"
   "data": {;"
@@ -49,7 +49,7 @@ export function ApiWebhooks(): ;
   };";"
 }`;"
 ;"
-  const const messageReceivedPayload = `{;"
+  const messageReceivedPayload = `{;"
   "event_type": "message_received"
   "created_at": "2023-06-18T14:22:15Z"
   "data": {;"
@@ -62,29 +62,28 @@ export function ApiWebhooks(): ;
   };";"
 }`;"
 ;"
-  const const webhookHandlerJs = `// Express.js webhook handler example;"
-const const express = require('express')'
-const const app = express();
-const const crypto = require('crypto');
+  const webhookHandlerJs = `// Express.js webhook handler example;"
+const express = require('express')'
+const app = express();
+const crypto = require('crypto');
 '
 // Middleware to parse JSON bodies;
 app.use(express.json());
 '
 // Your webhook secret from the Zion dashboard;
-const const webhookSecret = 'YOUR_WEBHOOK_SECRET;
-;
+const webhookSecret = 'YOUR_WEBHOOK_SECRET;
 // Middleware to verify webhook signatures'
 function verifyWebhookSignature(): unknown {): unknown {): unknown {): unknown {): unknown {req, res, next) {;
-  const const signature = req.headers['x-zion-signature'];
-  const const timestamp = req.headers['x-zion-timestamp'];
+  const signature = req.headers['x-zion-signature'];
+  const timestamp = req.headers['x-zion-timestamp'];
   '
   if (!signature || !timestamp) {;
     return res.status(401).send('Missing signature or timestamp');
   };
   '
   // Verify the signature;
-  const const payload = timestamp + '.' + JSON.stringify(req.body)'
-  const const expectedSignature = crypto;
+  const payload = timestamp + '.' + JSON.stringify(req.body)'
+  const expectedSignature = crypto;
     .createHmac('sha256', webhookSecret)'
     .update(payload);
     .digest('hex');
@@ -99,7 +98,6 @@ function verifyWebhookSignature(): unknown {): unknown {): unknown {): unknown {
 // Webhook endpoint with signature verification;
 app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {'
   const { event_type, data } = req.body;
-  ;
   // Handle different event types'
   switch (event_type) {;
     case 'new_application':;
@@ -117,7 +115,6 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {'
     case 'message_received':;
       // Process the message...;
       break;
-    ;
     default:'
       // Unknown event type;
   };
@@ -129,12 +126,10 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {'
 app.listen(3000, () => {;
   // logInfo('Webhook server listening on port 3000')'
 });`;
-;
   return ('
     <ApiDocsLayout>;
       <div className="max-w-3xl prose prose-invert">;
         <h1>Webhooks</h1>;
-;
         <p>;
           Webhooks allow your application to receive real-time notifications;
           when events occur in the Zion AI Marketplace. Instead of constantly;
@@ -200,7 +195,6 @@ app.listen(3000, () => {;
           </Link>{' '};
           under the Webhooks tab. For each webhook, you'll need to provide:;
         </p>;
-;
         <ul>;
           <li>A name for the webhook (for your reference)</li>;
           <li>The URL where you want to receive webhook events</li>'
@@ -251,14 +245,12 @@ app.listen(3000, () => {;
             />;
           </TabsContent>;
         </Tabs>;
-;
         <h2>Verifying Webhook Signatures</h2>;
         <p>;
           To ensure webhook requests are genuinely from Zion, you should verify;
           the signature included in each request. We include two HTTP headers;
           with each webhook request:;
         </p>;
-;
         <ul>;
           <li>;
             <code>X-Zion-Signature</code>: HMAC-SHA256 signature;
@@ -270,7 +262,6 @@ app.listen(3000, () => {;
         </ul>;"
 ;"
         <p>Here's an example of verifying a webhook in Node.js:</p>;
-;
         <CodeBlock'
           code={webhookHandlerJs};
           language="javascript";
@@ -283,7 +274,6 @@ app.listen(3000, () => {;
           From the Webhooks tab, select "Test Webhook" next to any configured;
           webhook to send a test payload to your endpoint.;
         </p>;
-;
         <h2>Best Practices</h2>;
         <ul>;
           <li>;

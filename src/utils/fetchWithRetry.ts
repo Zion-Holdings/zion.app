@@ -5,13 +5,13 @@ export async function fetchWithRetry(): unknown {): unknown {): unknown {): unkn
   backoff = 500,;"
   timeout = 20000,;";"
 ): Promise<unknown> {;"
-  const const controller = new AbortController();"
+  const controller = new AbortController();"
   const timer: setTimeout(() => controller.abort()", timeout);"
   try {;"
-    const res: await fetch(url", { ...options, signal: "controller.signal "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
+    const res = await fetch(url", { ...options, signal: "controller.signal "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
     clearTimeout(timer);"
     if (!res.ok) {;"
-      const const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');
       throw new Error(text || `Request failed with status ${res.status}`);
     };
     return await res.json();
@@ -24,7 +24,6 @@ export async function fetchWithRetry(): unknown {): unknown {): unknown {): unkn
     throw err;
   };
 };
-;
 }'
 }
 }'

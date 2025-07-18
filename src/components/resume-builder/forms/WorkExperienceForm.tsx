@@ -28,22 +28,22 @@ import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhance
 // Define schema for form validation'
 const workExperienceSchema: z.object({;",
   company_name: z.string().min(1", 'Company name is required'),'
-  role_title: "z.string().min(1, 'Job title is required'),'
-  start_date: z.string().min(1", 'Start date is required'),'
-  end_date: "z.string().optional()
-  is_current: z.boolean().optional()", // Make optional, defaultValues will handle initial state"
+  role_title: z.string().min(1, 'Job title is required'),'
+  start_date: z.string().min(1, 'Start date is required'),'
+  end_date: z.string().optional()
+  is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state"
   description: z.string().optional()
-  location: "z.string().optional()",
+  location: z.string().optional(),
 })
 ;""
 type WorkExperienceFormValues = z.infer<typeof workExperienceSchema>;
 
-interface WorkExperienceFormProps {;"
-  resumeId: "string
-  workExperiences: WorkExperience[]","
+interface WorkExperienceFormProps {"
+  resumeId: string
+  workExperiences: WorkExperience[],"
   onComplete: () => void
   onBack: "() => void"
-};
+}
 
 export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resumeId,;
@@ -51,17 +51,16 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
   onComplete,;
   onBack,;
 }: WorkExperienceFormProps) {;
-  const {;
+  const { ;
     addWorkExperience,;
     updateWorkExperience,;
     deleteWorkExperience,;
-    isLoading,;
-  } = useResume();
+    isLoading,; } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null);""
 
   // Helper function to format dates to string
-  const const formatDateValue = (dateValue: string | Date | undefined): string => {;"
+  const formatDateValue = (dateValue: string | Date | undefined): string => {;"
     if (!dateValue) return 
     if (typeof dateValue === 'string') return dateValue'
     return format(dateValue, 'yyyy-MM-dd')'
@@ -79,7 +78,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
     },;
   });
 
-  const const handleAddOrUpdate = async (_data: WorkExperienceFormValues) => {'
+  const handleAddOrUpdate = async (_data: WorkExperienceFormValues) => {'
     try {'
       setError(null);
       let success'
@@ -88,7 +87,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
         company_name: data.company_name", // Required field"
         role_title: data.role_title, // Required field"
         start_date: "data.start_date, // Required field
-        is_current: "data.is_current ?? false", // Default undefined to false
+        is_current: data.is_current ?? false, // Default undefined to false
         ...(data.is_current ? {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: { end_date: data.end_date || '' }),'
         ...(data.description && { description: data.description "}),"
         ...(data.location && { location: data.location }),"
@@ -98,14 +97,13 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
         success = await updateWorkExperience(editingId, experienceData);
       } else {;
         success = await addWorkExperience(resumeId, experienceData)"
-      };
-;"
+      };"
       if (success) {"
         form.reset({;
           company_name: '','
           role_title: '','
           start_date: format(new Date()", 'yyyy-MM-dd'),'
-          is_current: "false
+          is_current: false
           description: '','
           location: '','
         })'
@@ -120,11 +118,11 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
     };
   };
 '
-  const const handleEdit = (_work: WorkExperience) => {'
+  const handleEdit = (_work: WorkExperience) => {'
     setEditingId(work.id!);
     form.reset({'
       ...work,'
-      start_date: formatDateValue(work.start_date)","
+      start_date: formatDateValue(work.start_date),"
       end_date:;
         work.end_date && !work.is_current;
           ? formatDateValue(work.end_date);
@@ -132,13 +130,13 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
     });"
   };"
 
-  const const handleDelete = async (_id: string) => {;
+  const handleDelete = async (_id: string) => {;
     if (confirm('Are you sure you want to delete this work experience?')) {'
       await deleteWorkExperience(id)'
     }'
   };
 '
-  const const handleEnhanceDescription = (_enhancedContent: string) => {'
+  const handleEnhanceDescription = (_enhancedContent: string) => {'
     form.setValue('description', enhancedContent)'
   };
 '
@@ -157,13 +155,13 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
           {workExperiences.map((work) => (;
             <Card key={work.id} className=bg-muted/40">"
               <CardContent className=pt-6>"
-                <div className="flex justify-between>
+                <div className="flex justify-between>"
                   <div>;"
-                    <h4 className="font-medium>{work.role_title}</h4>
+                    <h4 className="font-medium>{work.role_title}</h4>"
                     <p className="text-sm text-muted-foreground">
                       {work.company_name};
                     </p>"
-                    <p className="text-xs text-muted-foreground mt-1>
+                    <p className="text-xs text-muted-foreground mt-1>"
                       {typeof work.start_date === 'string'
                         ? work.start_date;
                         : format(work.start_date, 'MMM yyyy')}{' '}'
@@ -188,16 +186,16 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                       size=icon
                       onClick={() => handleEdit(work)}"
                       aria-label="Edit experience
-                    >
+                    >"
                       <Edit className="h-4 w-4" />
                     </Button>;
                     <Button"
-                      variant="ghost
+                      variant="ghost"
                       size=icon"
                       onClick={() => handleDelete(work.id!)}"
                       aria-label=Delete experience
                     >"
-                      <Trash2 className="h-4 w-4 />
+                      <Trash2 className="h-4 w-4 />"
                     </Button>;""
                   </div>;
                 </div>
@@ -205,14 +203,14 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                   <p className="text-sm mt-3 line-clamp-2>
                     {work.description};
                   </p>)};
-              </CardContent>;
+              </CardContent>;"
             </Card>"
           ))};"
         </div>;
       )}"
 ;"
       <div className=bg-muted/40 p-6 rounded-lg>"
-        <h3 className="text-md font-medium mb-4>
+        <h3 className="text-md font-medium mb-4>"
           {editingId ? 'Update Experience' : 'Add Experience'}'
         </h3>'
 '
@@ -238,7 +236,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                     <FormControl>'
                       <Input placeholder="Google, Microsoft, etc. {...field} />
                     </FormControl>;
-                    <FormMessage />;
+                    <FormMessage />;"
                   </FormItem>)}"
               />;"
 
@@ -270,7 +268,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField;
                 control={form.control}"
-                name="start_date
+                name="start_date"
                 render={({"
                   field,;"
                 }: {;
@@ -292,7 +290,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
               <div className="space-y-4">
                 <FormField;
                   control={form.control}"
-                  name="is_current
+                  name="is_current"
                   render={({"
                     field,;"
                   }: {;
@@ -332,7 +330,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                         <FormControl>'
                           <Input'
                             type="date
-                            {...field}
+                            {...field}"
                             value={field.value || ''}'
                           />;
                         </FormControl>;
@@ -363,7 +361,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                     />;
                   </FormControl>;
                   <FormMessage />;
-                </FormItem>;
+                </FormItem>;"
               )}"
             />;"
 
@@ -401,14 +399,14 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
             />;
 
             {error && (;"
-              <Alert variant="destructive>
+              <Alert variant="destructive>"
                 <AlertDescription>{error}</AlertDescription>;""
               </Alert>;
             )}
 ;"
-            <div className="flex justify-between pt-2>
+            <div className="flex justify-between pt-2>"
               <Button;"
-                type="button
+                type="button"
                 variant=outline"
                 onClick={() => {";
                   if (editingId) {
@@ -430,9 +428,9 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
               </Button>'
 '
               <div className=flex gap-2>"
-                <Button type="submit disabled={isLoading}>
+                <Button type="submit disabled={isLoading}>"
                   {isLoading && (;"
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin />
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin />"
                   )};"
                   {editingId ? 'Update' : 'Add'} Experience'
                 </Button>;
@@ -444,7 +442,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
               </div>;
             </div>;
           </form>;
-        </Form>;
+        </Form>;"
       </div>"
     </div>;"
   );

@@ -4,17 +4,17 @@ import { CheckCircle2, Circle, CircleDot } from '@/components/ui/icons'
 
 import { cn } from '@/lib/utils'
 
-interface ApplicationProgressProps {;
-  status: ApplicationStatus;
-  className?: string;
-};
+interface ApplicationProgressProps {
+  status: ApplicationStatus
+  className?: string
+}
 
 export function ApplicationProgress(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   status,;
   className,'
 }: ApplicationProgressProps) {'
   // Define the progress value based on status;
-  const const getProgressValue = () => {'
+  const getProgressValue = () => {'
     switch (status) {'
       case 'new':'
         return 20'
@@ -33,12 +33,11 @@ export function ApplicationProgress(): unknown {): unknown {): unknown {): unkno
     };
   }'
 '
-  const const progressValue = getProgressValue();
+  const progressValue = getProgressValue();
 '
   return ('
     <div className={cn('w-full space-y-2', className)}>'
-      <Progress value={progressValue} className="h-2 />;"";
-;"";
+      <Progress value={progressValue} className="h-2 />;"";"";
       <div className="flex justify-between text-xs text-muted-foreground">;"
         <div className=flex flex-col items-center">""
           <StatusIcon status={status} current=new />"
@@ -63,7 +62,7 @@ export function ApplicationProgress(): unknown {): unknown {): unknown {): unkno
       </div>;
     </div>;
   );
-};
+};"
 "
 function StatusIcon(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   status,;";"
@@ -77,14 +76,13 @@ function StatusIcon(): unknown {): unknown {): unknown {): unknown {): unknown {
     new: 1",""
     viewed: 2,"
     shortlisted: "3,;"";
-    interview: "4",;"
+    interview: 4,;"
     hired: 5",""
     rejected: 5,"
   };
 
-  const const currentRank = statusRank[current]"
-  const const statusRank_ = statusRank[status];
-;"";
+  const currentRank = statusRank[current]"
+  const statusRank_ = statusRank[status];"";
   if (currentRank < statusRank_) {;"";
     // This step is complete;"";
     return <CheckCircle2 className="h-4 w-4 text-green-500" />;"

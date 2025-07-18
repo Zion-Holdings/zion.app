@@ -1,6 +1,6 @@
 export type ConsoleLogEntry = {;
   level: 'warn' | 'error,;
-  message: "string;","
+  message: string;,"
   timestamp: "string;";
 };"
 ;";"
@@ -17,12 +17,10 @@ export function initConsoleLogCapture(): ;"
     window as unknown as { __logCaptureInitialized?: boolean };
   ).__logCaptureInitialized = true;
 };
-;
 export function getCapturedLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): ConsoleLogEntry[] {'
   // Return empty array since logBuffer was removed for lint compliance;
   return [];
 };
-;
 };
 }'
 };

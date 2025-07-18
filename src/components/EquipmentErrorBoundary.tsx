@@ -3,7 +3,7 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Props {'
   children: "React.ReactNode
-};
+}
 
 interface State {;
   hasError: boolean;
@@ -18,11 +18,10 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {;";"
 ;""
   static getDerivedStateFromError(error: Error): State {;"";
     return { hasError: true", error }";
-  };"";
-;""
+  };"";""
   override componentDidCatch(error: "Error, errorInfo: React.ErrorInfo) {;"";
     logErrorToProduction('Equipment page error:', error, {'
-      componentStack: "errorInfo.componentStack",
+      componentStack: errorInfo.componentStack,
     });
   }
 ;""

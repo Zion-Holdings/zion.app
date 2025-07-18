@@ -5,37 +5,33 @@ import { ChatWidget } from '@/components/ChatWidget'
 import { useRouter } from 'next/router'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import ImageWithRetry from '@/components/ui/ImageWithRetry;
-;
+import ImageWithRetry from '@/components/ui/ImageWithRetry;';
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData'
 import { toast } from '@/hooks/use-toast'
 import { PaymentButton } from '@/components/transactions/PaymentButton'
-import { ProfileContact } from '@/components/profile/ProfileContact;
+import { ProfileContact } from '@/components/profile/ProfileContact;';
 import {'
   Dialog,;
   DialogContent,;
   DialogHeader,'
   DialogTitle,;
 } from '@/components/ui/dialog'
-import { useCurrency } from '@/hooks/useCurrency;
-;
+import  { useCurrency }  from '@/hooks/useCurrency;
 export default function ListingDetail(): ;
   // useParams may be untyped in this environment, so avoid passing a;
   // type argument and cast the result instead to prevent TS2347 errors.;
-  const const router = useRouter();
-  const const id = router.query.id as string;
+  const router = useRouter();
+  const id = router.query.id as string;
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, _setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const { _user } = useAuth();
-  const { _formatPrice } = useCurrency();
-;
+  const { _user } = useAuth();';
+  const { _formatPrice } = useCurrency();';
   // Find the listing from our shared data source - now also checking equipment listings'
-  const const listing = MARKETPLACE_LISTINGS.find((item) => item.id === id);
-;
+  const listing = MARKETPLACE_LISTINGS.find((item) => item.id === id);
   if (!listing) {'
     return (;
       <div className="min-h-screen bg-zion-blue py-12 px-4">;"
@@ -58,8 +54,7 @@ export default function ListingDetail(): ;
       </div>;
     );
   };
-;
-  const const handleContact = () => {;
+  const handleContact = () => {;
     if (user) {;
       setIsChatOpen(true);
     } else {;
@@ -290,9 +285,9 @@ export default function ListingDetail(): ;
                           className="object-cover"
                           fill;";"
                           onError={(e) => {;"
-                            const const target = e.target as HTMLImageElement;"
+                            const target = e.target as HTMLImageElement;"
                             target.src =;"
-                              'https://ui-avatars.com/api/?name=' +;
+                              'https://ui-avatars.com/api/?name="+;"
                               encodeURIComponent(listing.author.name)'
                           }};
                         />;
@@ -333,7 +328,6 @@ export default function ListingDetail(): ;
           </div>;
         </div>;
       </div>;
-;
       <ChatWidget;
         roomId={listing.id};
         recipientId={listing.author.id};

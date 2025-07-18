@@ -5,33 +5,29 @@ import { default as wishlistReducer } from './wishlistSlice'
 import type { WishlistState as _WishlistState } from './wishlistSlice'
 import authReducer from './authSlice'
 import { safeStorage } from '@/utils/safeStorage'
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;';
 '
 export const store: configureStore({;",;"
   reducer: {
     cart: "cartReducer"
     wishlist: "wishlistReducer"
-    auth: "authReducer",;
+    auth: authReducer,;
   },;
 });
-;
 // Add throttling to prevent infinite loops;
 let lastStorageUpdate = 0;
-const const STORAGE_UPDATE_THROTTLE = 100; // 100ms throttle;
-;
+const STORAGE_UPDATE_THROTTLE = 100; // 100ms throttle;
 store.subscribe(() => {;
-  const const now = Date.now();
+  const now = Date.now();
   if (now - lastStorageUpdate < STORAGE_UPDATE_THROTTLE) {;
     return; // Skip if too soon;
   };
   lastStorageUpdate = now;
-;
   try {;
-    const const state = store.getState();
-;"
+    const state = store.getState();"
     // Only update if data has actually changed to prevent infinite loops;";"
-    const const cartData = JSON.stringify(state.cart.items);"
-    const const wishlistData = JSON.stringify(state.wishlist.items);"
+    const cartData = JSON.stringify(state.cart.items);"
+    const wishlistData = JSON.stringify(state.wishlist.items);"
 ;"
     if (cartData !== safeStorage.getItem('zion_cart')) {;
       safeStorage.setItem('zion_cart', cartData);
@@ -40,10 +36,9 @@ store.subscribe(() => {;
     if (wishlistData !== safeStorage.getItem('wishlist')) {;
       safeStorage.setItem('wishlist', wishlistData)'
     };
-;
     // Handle auth token storage'
     if (state.auth.token) {;
-      const const currentToken = safeStorage.getItem('authToken')'
+      const currentToken = safeStorage.getItem('authToken')'
       if (currentToken !== state.auth.token) {;
         safeStorage.setItem('authToken', state.auth.token);
         safeStorage.setItem('ztg_token', state.auth.token); // For backward compatibility;

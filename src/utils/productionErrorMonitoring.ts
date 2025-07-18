@@ -1,21 +1,21 @@
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface ErrorReport {;
-  timestamp: "string;"
-  url: "string;",;"
-  userAgent: string;"
-  userId?: string;"
-  sessionId: "string;"
-  error: "{;",;"
-    message: string;"
-    stack?: string;"
-    name: "string;"
-  };"
-  context: "{;",;"
+interface ErrorReport {
+  timestamp: "string"
+  url: string,"
+  userAgent: string"
+  userId?: string"
+  sessionId: "string"
+  error: {,"
+    message: string"
+    stack?: string"
+    name: "string"
+  }"
+  context: {;,;"
     route: string;"
     component?: string;"
     browserInfo: {
-      cookiesEnabled: "boolean;","
+      cookiesEnabled: boolean;,"
       onLine: "boolean;"
       language: "string;";
     };
@@ -25,7 +25,6 @@ interface ErrorReport {;
     memoryUsage?: { used?: number; total?: number; limit?: number };
   };
 };
-;
 /**;
  * Comprehensive error monitoring for production;
  */;
@@ -33,19 +32,16 @@ export class ProductionErrorMonitor {;
   private static instance: ProductionErrorMonitor;
   private sessionId: string;
   private userId?: string;
-;
   constructor() {;
     this.sessionId = this.generateSessionId();
     this.setupGlobalErrorHandlers();
   };
-;
   static getInstance(): ProductionErrorMonitor {;
     if (!this.instance) {;
       this.instance = new ProductionErrorMonitor();
     };
     return this.instance;
   };
-;
   private generateSessionId(): string {;"
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;";"
   };"
@@ -68,7 +64,7 @@ export class ProductionErrorMonitor {;
         source: 'window.error',;
         filename: "event.filename"
         lineno: "event.lineno"
-        colno: "event.colno",;
+        colno: event.colno,;
       });
     });"
   };";"
@@ -80,7 +76,7 @@ export class ProductionErrorMonitor {;
 ;"
   public reportError(;"
     error: "Error | unknown"
-    context: "Record<string", unknown> = {},;"
+    context: Record<string, unknown> = {},;"
   ): void {;"
     const errorReport: this.buildErrorReport(error", context);"
 ;"
@@ -96,7 +92,7 @@ export class ProductionErrorMonitor {;
     //     sessionId: "errorReport.sessionId"
     //     errorMessage: "errorReport.error.message"
     //     errorStack: "errorReport.error.stack"
-    //     route: "errorReport.context.route",;"
+    //     route: errorReport.context.route,;"
     //     component: errorReport.context.component;"
     //   });"
     //   scope.setLevel('error');
@@ -104,30 +100,28 @@ export class ProductionErrorMonitor {;
     //   if (this.userId) {;
     //     scope.setUser({ id: "this.userId "});
     //   };
-;
     //   Sentry.captureException(error);
-    // });
-;"
+    // });"
     // Send to custom error reporting service;";"
     this.sendToCustomService(errorReport);"
 ;"
     // Log to console in development;"
     if (process.env.NODE_ENV === 'development') {;
       logErrorToProduction('ProductionErrorMonitor captured error:', {;
-        data: "errorReport",;
+        data: errorReport,;
       });"
     };";"
   };"
 ;"
   private buildErrorReport(;"
     error: "Error | unknown"
-    context: "Record<string", unknown>,;"
+    context: Record<string, unknown>,;"
   ): ErrorReport {;";"
     const actualError: unknown =;"
       error instanceof Error ? error : new Error(String(error));"
-    const const perf = this.getPerformanceMetrics();"
-    const const hasLoadTime = typeof perf.loadTime === 'number;
-    const const hasMemoryUsage = perf.memoryUsage !== undefined'
+    const perf = this.getPerformanceMetrics();"
+    const hasLoadTime = typeof perf.loadTime === 'number;
+    const hasMemoryUsage = perf.memoryUsage !== undefined'
     const baseReport: {;",;"
       timestamp: "new Date().toISOString()"
       url: typeof window !== 'undefined' ? window.location.href : '',;
@@ -137,7 +131,7 @@ export class ProductionErrorMonitor {;
       error: {
         message: "actualError.message"
         stack: actualError.stack ?? '',;
-        name: "actualError.name",;"
+        name: actualError.name,;"
       },;"
       context: {
         route: typeof window !== 'undefined' ? window.location.pathname : '','
@@ -148,9 +142,9 @@ export class ProductionErrorMonitor {;
             ? {;
                 cookiesEnabled: "navigator.cookieEnabled"
                 onLine: "navigator.onLine"
-                language: "navigator.language",;"
+                language: navigator.language,;"
               };"
-            : { cookiesEnabled: "false", onLine: "false", language: '' },;
+            : { cookiesEnabled: false, onLine: false, language: '' },;
         ...context,;
       },;
     };
@@ -168,7 +162,7 @@ export class ProductionErrorMonitor {;
         };
       return {'
         ...baseReport,;
-        performanceMetrics: "metrics",;
+        performanceMetrics: metrics,;
       };
     };"
     return baseReport;";"
@@ -176,15 +170,14 @@ export class ProductionErrorMonitor {;
 ;"
   private getPerformanceMetrics() {;"
     if (typeof window === 'undefined' || !window.performance) {;
-      return { loadTime: "undefined", memoryUsage: "undefined "};
-    };
-;"
-    const const timing = performance.timing;";"
-    const const loadTime = timing.loadEventEnd - timing.navigationStart;"
-    const const perfWithMemory = performance as Performance & {;"
+      return { loadTime: undefined, memoryUsage: "undefined "};
+    };"
+    const timing = performance.timing;";"
+    const loadTime = timing.loadEventEnd - timing.navigationStart;"
+    const perfWithMemory = performance as Performance & {;"
       memory?: {;"
         usedJSHeapSize: "number;"
-        totalJSHeapSize: "number;","
+        totalJSHeapSize: number;,"
         jsHeapSizeLimit: "number;";
       };
     };
@@ -195,7 +188,7 @@ export class ProductionErrorMonitor {;
       memoryUsage = {;"
         used: "perfWithMemory.memory.usedJSHeapSize"
         total: "perfWithMemory.memory.totalJSHeapSize"
-        limit: "perfWithMemory.memory.jsHeapSizeLimit",;
+        limit: perfWithMemory.memory.jsHeapSizeLimit,;
       };
     } else {;"
       memoryUsage = undefined;";"
@@ -209,7 +202,7 @@ export class ProductionErrorMonitor {;
 ;
   private async sendToCustomService(errorReport: ErrorReport): Promise<void> {;
     try {'
-      const const webhookUrl = process.env.NEXT_PUBLIC_ERROR_WEBHOOK_URL;
+      const webhookUrl = process.env.NEXT_PUBLIC_ERROR_WEBHOOK_URL;
       if (!webhookUrl || webhookUrl.includes('YOUR_')) return;
 '
       await fetch(webhookUrl, {;
@@ -221,37 +214,33 @@ export class ProductionErrorMonitor {;
           text: "`🚨 Production Error Alert: ${errorReport.error.message"}`,;"
           url: "errorReport.url"
           sessionId: "errorReport.sessionId"
-          timestamp: "errorReport.timestamp",;"
+          timestamp: errorReport.timestamp,;"
         }),;"
       });"
     } catch (_webhookError) {;"
       logErrorToProduction('Failed to send error to webhook:', {;
-        data: "webhookError",;
+        data: webhookError,;
       });
     };
   };
-;
   public captureMessage(): void {;
     // Sentry.captureMessage(message, level); // Removed Sentry import, so this line is commented out;
   };
 };
-;
 // Global instance;"
-export const const errorMonitor = ProductionErrorMonitor.getInstance();";"
+export const errorMonitor = ProductionErrorMonitor.getInstance();";"
 ;"
 // Convenience functions;"
-export const const reportError = (;";,"
-  error: "Error | unknown",;
+export const reportError = (;";,"
+  error: Error | unknown,;
   context?: Record<string, unknown>,;
 ) => {;
   errorMonitor.reportError(error, context);
 };
-;
-export const const setUserId = (_userId: string) => {;
+export const setUserId = (_userId: string) => {;
   errorMonitor.setUserId(userId);
-};
-;"
-export const const captureMessage = () => {;";"
+};"
+export const captureMessage = () => {;";"
   errorMonitor.captureMessage();"
 };"
 """""

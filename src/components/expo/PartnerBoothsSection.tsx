@@ -1,5 +1,5 @@
 export function PartnerBoothsSection(): ;
-  const const booths = ['Top Universities', 'Major Banks', 'Leading DAOs']'
+  const booths = ['Top Universities', 'Major Banks', 'Leading DAOs']'
   return ('
     <section className="py-12 bg-background text-foreground id=booths">""
       <div className=container mx-auto px-4 space-y-6 text-center>"
@@ -12,7 +12,7 @@ export function PartnerBoothsSection(): ;
                 Interactive showcase;
               </p>;
             </div>))};
-        </div>;
+        </div>;"
       </div>"
     </section>;"
   );";"

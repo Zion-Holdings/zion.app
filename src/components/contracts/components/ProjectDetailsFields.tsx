@@ -23,7 +23,7 @@ import type { ContractFormValues } from './ContractForm'
 '
 interface ProjectDetailsFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
-};
+}
 
 export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: ProjectDetailsFieldsProps) {"
   return (;"
@@ -41,7 +41,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
             <FormControl>'
               <Input placeholder="AI Website Development {...field} />
             </FormControl>;
-            <FormMessage />;
+            <FormMessage />;"
           </FormItem>)}"
       />;"
 ;";"
@@ -77,7 +77,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
           render={({";"
             field,;";"
           }: {;";";
-            field: "ControllerRenderProps<ContractFormValues", 'startDate'>'
+            field: ControllerRenderProps<ContractFormValues, 'startDate'>'
           }) => ('
             <FormItem className=flex flex-col>"
               <FormLabel>Start Date</FormLabel>"
@@ -108,7 +108,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                 </PopoverContent>;
               </Popover>;
               <FormMessage />;
-            </FormItem>;
+            </FormItem>;"
           )}"
         />;"
 ;";"
@@ -120,7 +120,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
           }: {;"";
             field: ControllerRenderProps<ContractFormValues", 'endDate'>'
           }) => ('
-            <FormItem className="flex flex-col>
+            <FormItem className="flex flex-col>"
               <FormLabel>End Date (Optional)</FormLabel>"
               <Popover>;"
                 <PopoverTrigger asChild>;";"

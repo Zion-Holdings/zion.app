@@ -2,27 +2,25 @@ import React from 'react';
 import { Search } from '@/components/ui/icons'
 // import { Card } from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;
-;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;';
 import { Input } from '@/components/ui/input'
-import { cn } from '@/lib/utils;
+import { cn } from '@/lib/utils;';
 '
-interface Conversation {;
-  id: "string;",;"
-  name: string;"
-  avatar?: string;"
-  lastMessage: "string;"
-  timestamp: "string;",;
-  unreadCount: number;
-  isTyping?: boolean;
-};"
+interface Conversation {
+  id: string,"
+  name: string"
+  avatar?: string"
+  lastMessage: "string"
+  timestamp: string,
+  unreadCount: number
+  isTyping?: boolean
+}"
 ;";"
-interface MobileConversationListProps {;"
-  conversations: Conversation[];"
-  activeConversation?: string;"
-  onSelectConversation: "(id: string) => void;";
-};
-;
+interface MobileConversationListProps {"
+  conversations: Conversation[]"
+  activeConversation?: string"
+  onSelectConversation: "(id: string) => void"
+}
 export function MobileConversationList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversations,;"
   activeConversation,;";"

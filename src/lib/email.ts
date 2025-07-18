@@ -1,23 +1,22 @@
 import sgMail from '@sendgrid/mail'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface EmailOptions {;
-  to: "string;"
-  templateId: "string;",;"
-  dynamicTemplateData: {;";"
-    orderId?: string;"
-    downloadLinks?: string[]; // Assuming download links are an array of strings;"
-    supportContact?: string;"
-    [key: "string]: unknown; // Allow other dynamic data;";
-  };
+interface EmailOptions {
+  to: "string"
+  templateId: string,"
+  dynamicTemplateData: {""
+    orderId?: string"
+    downloadLinks?: string[] // Assuming download links are an array of strings"
+    supportContact?: string"
+    [key: "string]: unknown // Allow other dynamic data"
+  }
 };
-;
 export async function sendEmailWithSendGrid(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   to,;
   templateId,;
   dynamicTemplateData,;"
 }: EmailOptions): Promise<void> {;";"
-  const const apiKey = process.env.SENDGRID_API_KEY;"
+  const apiKey = process.env.SENDGRID_API_KEY;"
 ;"
   if (!apiKey) {;"
     logErrorToProduction('SENDGRID_API_KEY is not set. Email not sent.');
@@ -31,9 +30,8 @@ export async function sendEmailWithSendGrid(): unknown {): unknown {): unknown {
     to: "to"
     from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com', // It's good practice to set a verified sender email in SendGrid;
     templateId: "templateId"
-    dynamicTemplateData: "dynamicTemplateData",;
-  };
-;"
+    dynamicTemplateData: dynamicTemplateData,;
+  };"
   try {;";"
     await sgMail.send(msg);"
     logInfo(`Email sent to ${to} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}using template ${templateId}`);"
@@ -60,28 +58,26 @@ export async function sendEmailWithSendGrid(): unknown {): unknown {): unknown {
 ;"
 export async function sendResetEmail(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   email: "string"
-  token: "string",;"
+  token: string,;"
 ): Promise<void> {;"
-  const const apiKey = process.env.SENDGRID_API_KEY;"
+  const apiKey = process.env.SENDGRID_API_KEY;"
   if (!apiKey) {;"
     logErrorToProduction('SENDGRID_API_KEY is not set. Reset email not sent.');
     return'
   };
-;
   sgMail.setApiKey(apiKey)'
 ;
-  const const from = process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com'
-  const const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000;
+  const from = process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000;
   const resetUrl: `${appUrl"}/reset-password/${token}`;"
 ;"
   const msg: {;",;"
-    to: "email",;"
+    to: email,;"
     from,;"
     subject: 'Password Reset',;
     text: "`Reset your password using this link: ${resetUrl"}`,;"
     html: `<p>Reset your password by clicking the link below:</p><p><a href="${resetUrl}">${resetUrl}</a></p>`,;
-  };
-;"
+  };"
   try {;";"
     await sgMail.send(msg);"
     logInfo(`Password reset email sent to ${email} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
@@ -103,13 +99,13 @@ export async function sendResetEmail(): unknown {): unknown {): unknown {): unkn
   };"
 };"
 ;"
-export async function sendFeedbackEmail(): unknown {): unknown {): unknown {): unknown {): unknown {data: "{;",;
+export async function sendFeedbackEmail(): unknown {): unknown {): unknown {): unknown {): unknown {data: {;,;
   rating: number;
   comment?: string | undefined;
   url?: string | undefined;
   userAgent?: string | undefined;
 }): Promise<void> {;"
-  const const apiKey = process.env.SENDGRID_API_KEY;";"
+  const apiKey = process.env.SENDGRID_API_KEY;";"
   const to: unknown =;"
     process.env.FEEDBACK_EMAIL_TO || process.env.NEXT_PUBLIC_SUPPORT_EMAIL;"
   if (!apiKey || !to) {;"
@@ -118,13 +114,12 @@ export async function sendFeedbackEmail(): unknown {): unknown {): unknown {): u
   };
 '
   sgMail.setApiKey(apiKey);
-;
-  const const msg = {'
+  const msg = {'
     to,;
     from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',;
     subject: 'New Feedback Received',;
     text: "`Rating: ${data.rating"}\nComment: ${data.comment || 'N/A'}\nURL: ${;
-      data.url || 'N/A'
+      data.url || 'N/A'}
     }\nUserAgent: ${data.userAgent || 'N/A'}`,;
   };
 '

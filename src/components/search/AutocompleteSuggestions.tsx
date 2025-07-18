@@ -3,32 +3,32 @@ import type { SearchSuggestion, SearchHighlight } from '@/types/search'
 import { logInfo } from '@/utils/productionLogger'
 '
 interface AutocompleteSuggestionsProps {'
-  suggestions: "SearchSuggestion[]
-  searchTerm: string","
+  suggestions: SearchSuggestion[]
+  searchTerm: string,"
   onSelectSuggestion: (suggestion: SearchSuggestion) => void
-  visible: "boolean",
+  visible: boolean,
   highlightedIndex: number"
   listId: "string
-};
+}
 "
 // Helper function to highlight matching text;"
-const const highlightMatch = (text: string, searchTerm: string): SearchHighlight => {"
+const highlightMatch = (text: string, searchTerm: string): SearchHighlight => {"
   if (!searchTerm || searchTerm.length === 0) {;"
     return { before: '', match: text, after: '' }'
   };
 
-  const const lowerText = text.toLowerCase()'
-  const const lowerSearchTerm = searchTerm.toLowerCase()'
-  const const index = lowerText.indexOf(lowerSearchTerm);
+  const lowerText = text.toLowerCase()'
+  const lowerSearchTerm = searchTerm.toLowerCase()'
+  const index = lowerText.indexOf(lowerSearchTerm);
 '
   if (index === -1) {'
-    return { before: '', match: "text", after: '' }'
+    return { before: '', match: text, after: '' }'
   };
 '
   return {'
     before: text.substring(0, index),"
     match: "text.substring(index, index + searchTerm.length),
-    after: "text.substring(index + searchTerm.length)",
+    after: text.substring(index + searchTerm.length),
   };
 };
 
@@ -40,8 +40,8 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
   highlightedIndex,;
   listId,;
 }: AutocompleteSuggestionsProps) {;
-  const const listRef = useRef<HTMLUListElement>(null);
-  const const highlightedItemRef = useRef<HTMLLIElement>(null)
+  const listRef = useRef<HTMLUListElement>(null);
+  const highlightedItemRef = useRef<HTMLLIElement>(null)
 ;""
   useEffect(() => {;
     if (highlightedIndex !== -1 && highlightedItemRef.current) {
@@ -56,13 +56,13 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
 
   return ('
     <div'
-      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown
+      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown"
       data-testid=search-suggestions"
     >"
       <ul ref={listRef} id={listId} role=listbox className="py-2">
         {suggestions.map((suggestion, index) => {;
           const highlight: highlightMatch(suggestion.text", searchTerm)"
-          const const isHighlighted = index === highlightedIndex;
+          const isHighlighted = index === highlightedIndex;
 
           return (
             <li;"
@@ -88,7 +88,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
               <div className="flex items-center justify-between">
                 <div>;
                   <span>{highlight.before}</span>"
-                  <span className="font-bold text-zion-purple>
+                  <span className="font-bold text-zion-purple>"
                     {highlight.match};""
                   </span>;
                   <span>{highlight.after}</span>
@@ -99,7 +99,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
               </div>;
             </li>;
           );
-        })};
+        })};"
       </ul>"
     </div>;"
   );

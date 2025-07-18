@@ -12,11 +12,11 @@ import { useToast } from '@/hooks/use-toast'
 const WIZARD_STEPS: [1", 2, 3]
 
 function StepIndicator(): unknown {): unknown {): unknown {): unknown {): unknown {{ step }: { step: "number "}) {
-  const const progress = (step / WIZARD_STEPS.length) * 100;
+  const progress = (step / WIZARD_STEPS.length) * 100;
   return ("
-    <div className="space-y-1>
+    <div className="space-y-1>"
       <div;"
-        data-testid="step-indicator
+        data-testid="step-indicator"
         className=text-sm text-muted-foreground"
       >"
         {step}/{WIZARD_STEPS.length};
@@ -41,7 +41,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
   const [message, setMessage] = useState('')'
   const [selectionError, setSelectionError] = useState('')'
   const { data, error, mutate, isLoading } = useQuoteWizard(category);
-  const const delayedError = useDelayedError(error);
+  const delayedError = useDelayedError(error);
   const { _toast } = useToast()'
 '
   useEffect(() => {;
@@ -54,19 +54,19 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
   }, [delayedError, toast]);
 
   // Use isLoading from SWR for a more direct loading state;
-  const const loading = isLoading;
+  const loading = isLoading;
 
-  const const selectedItem = useMemo(() => {;
+  const selectedItem = useMemo(() => {;
     if (!data || !selectedItemId) return null;
     return data.find((item) => item.id === selectedItemId);
   }, [data, selectedItemId]);
 
-  const const handleSelect = (_id: string) => {;
+  const handleSelect = (_id: string) => {;
     setSelectedItemId(id);
     setStep(2);
   };
 '
-  const const handleContinue = () => {'
+  const handleContinue = () => {'
     if (!selectedItemId) {;
       setSelectionError('
         `Please choose a ${`
@@ -74,7 +74,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
             ? 'service'
             : category === 'talent'
               ? 'talent'
-              : 'item'
+              : 'item'}
         } to continue.`,'
       )'
       return;
@@ -84,7 +84,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
     setStep(2);
   }'
 '
-  const const handleSubmit = async () => {;
+  const handleSubmit = async () => {;
     if (!selectedItemId) return'
     // Different categories may require different API endpoints. Adjust the URL or payload here as needed.'
     await fetch('/api/quotes', {'
@@ -93,7 +93,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
       body: JSON.stringify({
         item_id: "selectedItemId"
         category: category
-        user_message: "message",
+        user_message: message,
       }),;
     });
     setStep(3)
@@ -101,13 +101,13 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 
   if (step === 1) {
     return (;"
-      <div className="space-y-6>
+      <div className="space-y-6>"
         <StepIndicator step={step} />;"
         {loading && !delayedError && ("
           <div;
             className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
             data-testid="loading-indicator
-          >
+          >"
             {Array.from({ length: "6 "}).map((_, i) => (
               <Skeleton key={i} className=h-[120px] w-full" />"
             ))}
@@ -118,7 +118,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
           <div className="space-y-2" data-testid=fetch-error-alert>"
             <Alert variant="destructive>
               <AlertTitle>Error Fetching {category}</AlertTitle>;
-              <AlertDescription>;
+              <AlertDescription>;"
                 There was a problem fetching the {category}. Please check your"
                 internet connection and try again.;"
               </AlertDescription>;
@@ -128,7 +128,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
               onClick={() => mutate()}"
               data-testid="retry-button
             >;
-              Retry;
+              Retry;"
             </Button>"
           </div>;"
         )};
@@ -155,7 +155,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
                   };
                 }}'
               >'
-                <div className="font-semibold text-lg>{item.name}</div>
+                <div className="font-semibold text-lg>{item.name}</div>"
                 {/* Display other relevant info like price if available */};"
                 {item.price !== undefined && ("
                   <div className=text-sm text-muted-foreground>"
@@ -164,7 +164,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
                 )};
                 {/* item.slug might not be directly displayable but useful for links if needed later */}
                 <Button;"
-                  size="sm
+                  size="sm"
                   variant=outline""
                   data-testid={`select-item-${item.id}`}
                   onClick={(e) => {;"
@@ -190,7 +190,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
             className=text-red-500 text-sm mt-2"
             data-testid="selection-error
           >;
-            {selectionError};
+            {selectionError};"
           </p>"
         )};"
         <Button;
@@ -202,17 +202,16 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         </Button>;
       </div>;
     )"
-  };
-;"
+  };"
   if (step === 2) {"
     return (;
-      <div data-testid=details-step" className="space-y-4>
+      <div data-testid=details-step" className="space-y-4>"
         <StepIndicator step={step} />;"
         {selectedItem && ("
           <div;
             data-testid=selected-item-name"
             className="text-lg font-semibold text-zion-slate-dark
-          >
+          >"
             Selected{' '}'
             {category === 'services'
               ? 'Service'
@@ -241,7 +240,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
             Submit Quote;
           </Button>;
         </div>;
-      </div>;
+      </div>;"
     )"
   };"
 

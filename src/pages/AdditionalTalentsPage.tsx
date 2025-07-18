@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { DynamicListingPage } from '@/components/DynamicListingPage'
-import type { ProductListing } from '@/types/listings;
-;
+import type { ProductListing } from '@/types/listings;';
 const ADDITIONAL_TALENT_LISTINGS: unknown ProductListing[] = ['
   {;
     id: 'talent-17',;
@@ -195,11 +194,9 @@ const ADDITIONAL_TALENT_LISTINGS: unknown ProductListing[] = ['
     location: 'Remote',;
   },'
 ];
-;
-const const ADDITIONAL_TALENT_FILTERS = Array.from('
+const ADDITIONAL_TALENT_FILTERS = Array.from('
   new Set(ADDITIONAL_TALENT_LISTINGS.map((t) => t.category)),;
-).map((c) => ({ label: "c", value: "c.toLowerCase().replace(/\s+/g", '-') }));
-;
+).map((c) => ({ label: c, value: c.toLowerCase().replace(/\s+/g, '-') }));
 export default function AdditionalTalentsPage(): ;
   const [listings] = useState<ProductListing[]>(['
     ...ADDITIONAL_TALENT_LISTINGS,;
@@ -211,7 +208,7 @@ export default function AdditionalTalentsPage(): ;
       categorySlug="additional-talents"
       listings={listings};"
       categoryFilters={ADDITIONAL_TALENT_FILTERS};"
-      initialPrice={{ min: "100", max: "200 "}};"
+      initialPrice={{ min: 100, max: "200 "}};"
     />;";"
   );"
 };"

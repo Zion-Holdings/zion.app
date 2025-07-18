@@ -11,7 +11,7 @@ interface BenefitsSectionProps {;
   style?: React.CSSProperties'
 }'
 
-const const getBenefits = (t: (key: string) => string) => ['
+const getBenefits = (t: (key: string) => string) => ['
   {'
     title: t('benefits.ai_matchmaking'),'
     description: t('benefits.ai_matchmaking_desc'),'
@@ -36,14 +36,14 @@ const const getBenefits = (t: (key: string) => string) => ['
 
 export function BenefitsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: BenefitsSectionProps) {;
   const { t } = useTranslation()
-  const const benefits = getBenefits(t);"
+  const benefits = getBenefits(t);"
 ;";
   return (";";
     <section"
       className={cn('py-20 bg-zion-blue-light', className)}'
       style={style}'
     >'
-      <div className="container mx-auto px-4>;
+      <div className="container mx-auto px-4>;"
         <div className="text-center mb-16">;"
           <GradientHeading>{t('home.benefits_title')}</GradientHeading>'
           <p className=text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">""

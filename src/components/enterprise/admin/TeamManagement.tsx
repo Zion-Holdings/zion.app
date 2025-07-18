@@ -30,7 +30,7 @@ export function TeamManagement(): '
   const [newMemberEmail, setNewMemberEmail] = useState('')'
 '
   // Mock team members data;
-  const const teamMembers = ['
+  const teamMembers = ['
     {'
       id: "1,;"";
       name: 'Alex Johnson','
@@ -40,7 +40,7 @@ export function TeamManagement(): '
       lastActive: '2 hours ago','
     },'
     {'
-      id: "2",;"
+      id: 2,;"
       name: 'Jamie Smith','
       email: 'jamie@example.com','
       role: 'Recruiter','
@@ -65,7 +65,7 @@ export function TeamManagement(): '
     },;
   ];
 '
-  const const handleAddMember = () => {'
+  const handleAddMember = () => {'
     // In a real app, this would make an API call to add the member;
     if (!newMemberEmail) {'
       toast({'
@@ -85,7 +85,7 @@ export function TeamManagement(): '
     setIsAddingMember(false);
   }'
 '
-  const const handleRemoveMember = (_memberId: number) => {;
+  const handleRemoveMember = (_memberId: number) => {;
     // In a real app, this would make an API call to remove the member'
     toast({'
       title: 'Team member removed','
@@ -93,14 +93,13 @@ export function TeamManagement(): '
     });
   }'
 '
-  const const handleResendInvite = (_memberEmail: string) => {;
+  const handleResendInvite = (_memberEmail: string) => {;
     // In a real app, this would make an API call to resend the invitation'
     toast({'
       title: 'Invitation resent','
       description: `A new invitation has been sent to ${memberEmail"}`,"
     });
-  };"";
-;"";
+  };"";"";
   return (;"";
     <div className="space-y-6">;"
       <div className=flex items-center justify-between">""
@@ -156,7 +155,7 @@ export function TeamManagement(): '
               >;
                 Cancel;
               </Button>;
-              <Button onClick={handleAddMember}>Send Invitation</Button>;
+              <Button onClick={handleAddMember}>Send Invitation</Button>;"
             </DialogFooter>"
           </DialogContent>;"
         </Dialog>;";"
@@ -171,7 +170,7 @@ export function TeamManagement(): '
               <TableHead>Status</TableHead>";";
               <TableHead>Last Active</TableHead>"
               <TableHead className="text-right>Actions</TableHead>
-            </TableRow>;
+            </TableRow>;"
           </TableHeader>"
           <TableBody>;"
             {teamMembers.map((member) => (;";"
@@ -229,7 +228,7 @@ export function TeamManagement(): '
               </TableRow>;
             ))};
           </TableBody>;
-        </Table>;
+        </Table>;"
       </div>"
     </div>;"
   );";"

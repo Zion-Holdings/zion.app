@@ -4,21 +4,19 @@ import { getTalentBySlug } from '@/api/talent'
 import Skeleton from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO'
-import type { TalentProfile } from '@/types/talent;
-;
+import type { TalentProfile } from '@/types/talent;';
 export default function TalentDetail(): '
-  const const router = useRouter();
+  const router = useRouter();
   const { slug: "rawSlug "} = router.query;"
-  const const slug = typeof rawSlug === 'string' ? rawSlug : undefined;
+  const slug = typeof rawSlug === 'string' ? rawSlug : undefined;
   const [talent, setTalent] = useState<TalentProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-;
   useEffect(() => {;
-    const const fetchTalent = async () => {;
+    const fetchTalent = async () => {;
       if (!slug) return;
       setLoading(true);
       try {;
-        const const profile = await getTalentBySlug(slug);
+        const profile = await getTalentBySlug(slug);
         setTalent(profile);
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
         setTalent(null);
@@ -26,10 +24,8 @@ export default function TalentDetail(): '
         setLoading(false);
       };
     };
-;
     fetchTalent()'
   }, [slug]);
-;
   if (loading) {'
     return (;
       <div className="p-4 space-y-2" data-testid="talent-loading">;"
@@ -46,8 +42,7 @@ export default function TalentDetail(): '
         <p>Talent not found</p>;
       </div>;
     );
-  };
-;"
+  };"
   return (;";"
     <>;"
       <SEO;"

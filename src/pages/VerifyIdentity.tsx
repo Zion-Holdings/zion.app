@@ -4,14 +4,13 @@ import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label;
+import { Label } from '@/components/ui/label;';
 '
 export default function VerifyIdentity(): ;
   const [name, setName] = useState('');
   const [_idFile, setIdFile] = useState<File | null>(null)'
   const [submitted, setSubmitted] = useState(false);
-;
-  const const handleSubmit = (_e: React.FormEvent) => {'
+  const handleSubmit = (_e: React.FormEvent) => {'
     e.preventDefault();
     // Normally you'd upload to the server here;
     setSubmitted(true);

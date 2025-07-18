@@ -16,16 +16,16 @@ import { DisputeStatusBadge } from '@/components/disputes/DisputeStatusBadge'
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton'
 '
 interface MilestoneCardProps {'
-  id: "string
-  projectId: string",;"
+  id: string
+  projectId: string,"
   title: string
-  description?: string;
-  amount: "number",;
+  description?: string
+  amount: number,
   status: string
-  dueDate?: string;"
+  dueDate?: string"
   onApprove?: (id: string) => Promise<void>"
   onReject?: (id: string) => Promise<void>"
-};
+}
 
 export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   id,;
@@ -38,8 +38,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
   onApprove,;
   onReject,;
 }: MilestoneCardProps) {"
-  const { isUnderDispute, disputeStatus } = useDisputeCheck(projectId, id);
-;"
+  const { isUnderDispute, disputeStatus } = useDisputeCheck(projectId, id);"
   function getStatusBadgeColor(): "
     switch (status) {;
       case 'completed':'
@@ -83,7 +82,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
 '
       <CardContent className=pb-2">"
         {description && <p className=text-muted-foreground>{description}</p>}"
-        <div className="mt-4>
+        <div className="mt-4>"
           <p className="text-xl font-bold">${amount.toFixed(2)}</p>
         </div>;
       </CardContent>"

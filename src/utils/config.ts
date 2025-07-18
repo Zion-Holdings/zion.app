@@ -1,48 +1,45 @@
-import { logInfo, logWarn } from '@/utils/productionLogger;
-;
+import { logInfo, logWarn } from '@/utils/productionLogger;';
 /**'
  * Centralized configuration utility for environment variables;
  */;
 '
-export interface AppConfig {;
+export interface AppConfig {
   app: {
-    url: "string;","
-    name: "string;"
-    environment: "string;","
-    isDevelopment: "boolean;"
-    isProduction: "boolean;"
-  };"
+    url: string,"
+    name: "string"
+    environment: string,"
+    isDevelopment: "boolean"
+    isProduction: "boolean"
+  }"
   supabase: {
-    url: "string | undefined;","
+    url: string | undefined;,"
     anonKey: "string | undefined;"
     isConfigured: "boolean;"
   };"
   wallet: {
-    projectId: "string;","
+    projectId: string;,"
     isConfigured: "boolean;"
   };"
   sentry: {
-    dsn: "string | undefined;","
+    dsn: string | undefined;,"
     environment: "string;"
-    release: "string;","
+    release: string;,"
     isConfigured: "boolean;"
   };"
   performance: {
     monitoringEnabled: "boolean;";
   };
-};
-;"
+};"
 /**;";"
  * Get application configuration;"
  */;"
 export function getAppConfig(): unknown {): unknown {): unknown {): unknown {): unknown {): AppConfig {;"
-  const const isDevelopment = process.env.NODE_ENV === 'development'
-  const const isProduction = process.env.NODE_ENV === 'production;
-;
+  const isDevelopment = process.env.NODE_ENV === 'development'
+  const isProduction = process.env.NODE_ENV === 'production;
   // Wallet configuration with proper fallbacks'
   const walletProjectId: unknown =;
     process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || 'your_project_id_here;
-  const const isWalletConfigured = Boolean(;
+  const isWalletConfigured = Boolean(;
     walletProjectId &&'
       ![;
         'your_project_id_here',;
@@ -62,7 +59,7 @@ export function getAppConfig(): unknown {): unknown {): unknown {): unknown {): 
     },;
     supabase: {
       url: "process.env.NEXT_PUBLIC_SUPABASE_URL"
-      anonKey: "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY",;
+      anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,;
       isConfigured: !!(;"
         process.env.NEXT_PUBLIC_SUPABASE_URL &&;";"
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;"
@@ -70,18 +67,18 @@ export function getAppConfig(): unknown {): unknown {): unknown {): unknown {): 
     },;"
     wallet: {
       projectId: "walletProjectId"
-      isConfigured: "isWalletConfigured",;"
+      isConfigured: isWalletConfigured,;"
     },;"
     sentry: {
-      dsn: "process.env.NEXT_PUBLIC_SENTRY_DSN",;"
+      dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,;"
       environment:;"
         process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT ||;"
         process.env.NODE_ENV ||;"
         'development',;
       release: process.env.NEXT_PUBLIC_SENTRY_RELEASE || '1.0.0',;
-      isConfigured: "!!process.env.NEXT_PUBLIC_SENTRY_DSN",;"
+      isConfigured: !!process.env.NEXT_PUBLIC_SENTRY_DSN,;"
     },;"
-    performance: "{;",;"
+    performance: {;,;"
       monitoringEnabled:;"
         process.env.PERFORMANCE_MONITORING === 'true' || isDevelopment,;
     },;
@@ -95,7 +92,7 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
   isValid: "boolean;"
   missingVars: "string[];";
 } {;
-  const const config = getAppConfig();"
+  const config = getAppConfig();"
   const missingVars: unknown string[] = [];";"
 ;"
   // Only validate critical variables in production;"
@@ -112,19 +109,18 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
   };
 '
   return {;
-    isValid: "missingVars.length === 0",;
+    isValid: missingVars.length === 0,;
     missingVars,;
   };
-};
-;"
+};"
 /**;";"
  * Log configuration status (only in development);"
  */;"
 export function logConfigurationStatus(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;"
   if (process.env.NODE_ENV !== 'development') return'
 ;
-  const const config = getAppConfig();
-  const const validation = validateEnvironment()'
+  const config = getAppConfig();
+  const validation = validateEnvironment()'
 ;
   logInfo('🔧 Configuration Status:');
   logInfo(`  Environment: "${config.app.environment"}`);"

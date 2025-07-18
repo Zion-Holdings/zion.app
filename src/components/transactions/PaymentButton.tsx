@@ -10,14 +10,14 @@ import { useRouter } from 'next/router'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface PaymentButtonProps {'
-  amount: "number
-  serviceId: string","
-  providerId: string;
-  buttonText?: string;
-  className?: string;
-  onPaymentInitiated?: () => void;
-  redirectUrl?: string;
-};
+  amount: number
+  serviceId: string,"
+  providerId: string
+  buttonText?: string
+  className?: string
+  onPaymentInitiated?: () => void
+  redirectUrl?: string
+}
 
 export function PaymentButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   amount,;"
@@ -30,11 +30,11 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
 }: PaymentButtonProps) {'
   const [isProcessing, setIsProcessing] = useState(false)'
   const { isAuthenticated, user } = useAuth();
-  const const router = useRouter()'
+  const router = useRouter()'
 '
   if (!supabase) throw new Error('Supabase client not initialized')'
 '
-  const const handlePaymentClick = async () => {;
+  const handlePaymentClick = async () => {;
     if (!isAuthenticated) {'
       toast({'
         title: 'Authentication required','
@@ -44,8 +44,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
       const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`)`
       router.push(`/auth/login?returnTo=${returnTo}`)`
       return"
-    };
-;"
+    };"
     if (!supabase) {"
       toast({
         title: 'Payment error','
@@ -70,8 +69,8 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
             serviceId,'
             providerId,'
             userId: user?.id"
-            successUrl: "redirectUrl || window.location.href
-            cancelUrl: window.location.href","
+            successUrl: redirectUrl || window.location.href
+            cancelUrl: window.location.href,"
           },;
         },);
 

@@ -1,5 +1,5 @@
 export function KeynotesSection(): ;
-  const const speakers = ['Founder Keynote', 'Nations Panel', 'DAO Speakers']'
+  const speakers = ['Founder Keynote', 'Nations Panel', 'DAO Speakers']'
   return ('
     <section className="py-12 bg-zion-blue-light text-center id=keynotes">""
       <div className=container mx-auto px-4 space-y-6>"

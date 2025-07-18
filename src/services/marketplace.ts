@@ -1,103 +1,102 @@
 import axios from 'axios'
 import type { ApiResponse, SearchFilters } from '@/types/common'
-import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios;
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios;';
 '
 // TypeScript interfaces;
-import { logError, logWarn } from '@/utils/logger;
+import { logError, logWarn } from '@/utils/logger;';
 '
-export interface MarketplaceItem {;
-  id: "string;"
-  name: "string;","
-  description: "string;"
-  price: "number;","
-  currency: "string;"
-  category: "string;","
-  tags: "string[];"
-  images: "string[];","
-  rating: "number;"
-  reviewCount: "number;","
-  created_at: "string;",;
-  updated_at: string;
-  seller_id?: string;
-  in_stock?: boolean;"
-  specifications?: Record<string, string>;";"
-};"
+export interface MarketplaceItem {
+  id: "string"
+  name: string,"
+  description: "string"
+  price: number,"
+  currency: "string"
+  category: string,"
+  tags: "string[]"
+  images: string[],"
+  rating: "number"
+  reviewCount: number,"
+  created_at: string,
+  updated_at: string
+  seller_id?: string
+  in_stock?: boolean"
+  specifications?: Record<string, string>""
+}"
 ;"
-export interface Category {;"
-  id: "string;",;
-  name: string;
-  description?: string;
-  icon?: string;"
-  product_count?: number;";"
-};"
+export interface Category {"
+  id: string,
+  name: string
+  description?: string
+  icon?: string"
+  product_count?: number""
+}"
 ;"
-export interface TalentProfile {;"
-  id: "string;"
-  full_name: "string;","
-  professional_title: "string;"
-  description: "string;","
-  skills: "string[];"
-  hourly_rate: "number;","
-  currency: "string;"
-  availability: "string;","
-  location: "string;"
-  rating: "number;",;
-  reviewCount: number;
-  bio?: string;"
-  portfolio_items?: PortfolioItem[];";"
-};"
+export interface TalentProfile {"
+  id: "string"
+  full_name: string,"
+  professional_title: "string"
+  description: string,"
+  skills: "string[]"
+  hourly_rate: number,"
+  currency: "string"
+  availability: string,"
+  location: "string"
+  rating: number,
+  reviewCount: number
+  bio?: string"
+  portfolio_items?: PortfolioItem[]""
+}"
 ;"
-export interface PortfolioItem {;"
-  id: "string;"
-  title: "string;",;"
-  description: string;"
-  image_url?: string;"
-  project_url?: string;"
-  technologies: "string[];"
-};"
+export interface PortfolioItem {"
+  id: "string"
+  title: string,"
+  description: string"
+  image_url?: string"
+  project_url?: string"
+  technologies: "string[]"
+}"
 ;"
-export interface Equipment {;"
-  id: "string;"
-  name: "string;","
-  description: "string;"
-  category: "string;","
-  price: "number;"
-  currency: "string;","
-  location: "string;"
-  availability: "string;",;"
-  specifications: string[];"
-  images?: string[];"
-  rating: "number;"
-  reviewCount: "number;"
-};"
+export interface Equipment {"
+  id: "string"
+  name: string,"
+  description: "string"
+  category: string,"
+  price: "number"
+  currency: string,"
+  location: "string"
+  availability: string,"
+  specifications: string[]"
+  images?: string[]"
+  rating: "number"
+  reviewCount: "number"
+}"
 ;"
-export interface Product {;"
-  id: "string;",;"
-  name: string;"
-  title?: string;"
-  description: "string;"
-  price: "number;","
-  currency: "string;"
-  category: "string;","
-  tags: "string[];"
-  images: "string[];","
-  rating: "number;"
-  reviewCount: "number;","
-  created_at: "string;",;
-  updated_at: string;
-  seller_id?: string;
-  in_stock?: boolean;
-  stock?: number;
-  specifications?: Record<string, string>;
-};"
+export interface Product {"
+  id: string,"
+  name: string"
+  title?: string"
+  description: "string"
+  price: number,"
+  currency: "string"
+  category: string,"
+  tags: "string[]"
+  images: string[],"
+  rating: "number"
+  reviewCount: number,"
+  created_at: string,
+  updated_at: string
+  seller_id?: string
+  in_stock?: boolean
+  stock?: number
+  specifications?: Record<string, string>
+}"
 ;";"
 // Use internal Next.js API routes instead of external URLs;"
-const const createMarketplaceClient = () => {;"
-  const const client = axios.create({;";,"
+const createMarketplaceClient = () => {;"
+  const client = axios.create({;";,"
     baseURL: '', // Use relative URLs for internal API routes;
-    withCredentials: "false",;
-  });
-;"
+    withCredentials: false,;
+  });"
   // Request interceptor for debugging;";"
   client.interceptors.request.use(;"
     async (_config: InternalAxiosRequestConfig) => {;"
@@ -131,14 +130,12 @@ const const createMarketplaceClient = () => {;"
       return Promise.reject();
     },;
   );
-;
   return client;
 };
-;
-const const marketplaceClient = createMarketplaceClient();"
+const marketplaceClient = createMarketplaceClient();"
 ;";"
 // Helper function to get error message for UI display;"
-export const const _getMarketplaceErrorMessage = (error: unknown): string => {;"
+export const _getMarketplaceErrorMessage = (error: unknown): string => {;"
   const status: unknown =;"
     typeof error === 'object' &&'
     error !== null &&;
@@ -167,12 +164,11 @@ export const const _getMarketplaceErrorMessage = (error: unknown): string => {;"
     return 'Unable to load marketplace data. Please try again.;
   };
 };
-;
 // Export the client for advanced usage;
 export { marketplaceClient }'
 ;
 // Add product validation and auto-generation utilities;
-export const const _validateProductData = (product: Product): boolean => {'
+export const _validateProductData = (product: Product): boolean => {'
   const requiredFields: unknown (keyof Product)[] = [;
     'id',;
     'title',;
@@ -180,22 +176,22 @@ export const const _validateProductData = (product: Product): boolean => {'
     'category',;
   ];
   return requiredFields.every((field) => {'
-    const const value = product[field];
+    const value = product[field];
     return typeof value === 'string' && value.trim() !== 
   });
 }'
 ;
-export const const _generateProductId = (name: string): string => {;
-  const const timestamp = Date.now()'
+export const _generateProductId = (name: string): string => {;
+  const timestamp = Date.now()'
   const randomSuffix: Math.random().toString(36).substring(2", 8);"
-  const const slug = name;"
+  const slug = name;"
     .toLowerCase();
     .replace(/[^a-z0-9]/g, '-');
     .substring(0, 20);
   return `${slug}-${timestamp}-${randomSuffix}`;
 };
 '
-export const const ensureProductIntegrity = (products: Product[]): Product[] => {;
+export const ensureProductIntegrity = (products: Product[]): Product[] => {;
   return products.map((product) => ({;
     ...product,'
     // Ensure required fields have default values;
@@ -212,7 +208,7 @@ export const const ensureProductIntegrity = (products: Product[]): Product[] => 
     reviewCount:;
       typeof product.reviewCount === 'number' ? product.reviewCount : 0,;
     created_at: "product.created_at || new Date().toISOString()"
-    updated_at: "product.updated_at || new Date().toISOString()",;
+    updated_at: product.updated_at || new Date().toISOString(),;
   }));"
 };";"
 ;"
@@ -221,7 +217,7 @@ export async function fetchProducts(): unknown {): unknown {): unknown {): unkno
   filters: "SearchFilters = {"},;"
 ): Promise<Product[]> {;";"
   try {;"
-    const const searchParams = new URLSearchParams();"
+    const searchParams = new URLSearchParams();"
 ;"
     if (filters.query) searchParams.append('search', filters.query);
     if (filters.category) searchParams.append('category', filters.category)'
@@ -232,14 +228,11 @@ export async function fetchProducts(): unknown {): unknown {): unknown {): unkno
     if (filters.priceRange?.max);
       searchParams.append('maxPrice', filters.priceRange.max.toString());
 '
-    const response: await fetch(`/api/marketplace/products?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
-;
+    const response = await fetch(`/api/marketplace/products?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     };
-;
     const data: unknown ApiResponse<Product[]> = await response.json();
-;
     if (data.error) {;
       throw new Error(data.error);"
     };";"
@@ -253,18 +246,14 @@ export async function fetchProducts(): unknown {): unknown {): unknown {): unkno
 ;"
 export async function fetchCategories(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<Category[]> {;"
   try {;"
-    const const response = await fetch('/api/marketplace/categories');
-;
+    const response = await fetch('/api/marketplace/categories');
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: ${response.statusText}`);
     };
-;
     const data: unknown ApiResponse<Category[]> = await response.json();
-;
     if (data.error) {;
       throw new Error(data.error)'
     };
-;
     return data.data || []'
   } catch {;
     logError('Failed to fetch categories:', { data: "error "});
@@ -276,7 +265,7 @@ export async function fetchTalent(): unknown {): unknown {): unknown {): unknown
   filters: "SearchFilters = {"},;"
 ): Promise<TalentProfile[]> {;";"
   try {;"
-    const const searchParams = new URLSearchParams();"
+    const searchParams = new URLSearchParams();"
 ;"
     if (filters.query) searchParams.append('search', filters.query)'
     if (filters.category);
@@ -284,14 +273,11 @@ export async function fetchTalent(): unknown {): unknown {): unknown {): unknown
     if (filters.tags?.length);
       searchParams.append('skills', filters.tags.join(','));
 '
-    const response: await fetch(`/api/marketplace/talent?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
-;
+    const response = await fetch(`/api/marketplace/talent?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     };
-;
     const data: unknown ApiResponse<TalentProfile[]> = await response.json();
-;
     if (data.error) {;
       throw new Error(data.error);"
     };";"
@@ -307,21 +293,18 @@ export async function fetchEquipment(): unknown {): unknown {): unknown {): unkn
   filters: "SearchFilters = {"},;"
 ): Promise<Equipment[]> {;";"
   try {;"
-    const const searchParams = new URLSearchParams();"
+    const searchParams = new URLSearchParams();"
 ;"
     if (filters.query) searchParams.append('search', filters.query);
     if (filters.category) searchParams.append('category', filters.category)'
     if (filters.tags?.length);
       searchParams.append('tags', filters.tags.join(','));
 '
-    const response: await fetch(`/api/marketplace/equipment?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
-;
+    const response = await fetch(`/api/marketplace/equipment?${searchParams"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     };
-;
     const data: unknown ApiResponse<Equipment[]> = await response.json();
-;
     if (data.error) {;
       throw new Error(data.error);"
     };";"

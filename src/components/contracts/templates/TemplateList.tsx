@@ -33,11 +33,11 @@ import {;
 import { useState } from 'react'
 '
 interface TemplateListProps {'
-  templates: "ContractTemplate[],;";
-  isLoading: "boolean",;"";
-  onSelect: (template: ContractTemplate) => void",;"
+  templates: "ContractTemplate[],"
+  isLoading: boolean,""
+  onSelect: (template: ContractTemplate) => void","
   onEdit: (template: ContractTemplate) => void"
-};
+}
 
 export function TemplateList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   templates,;
@@ -48,28 +48,27 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
   const { _user } = useAuth();
-  const const router = useRouter();
+  const router = useRouter();
 
-  const const handleDeleteClick = (_templateId: string) => {;
+  const handleDeleteClick = (_templateId: string) => {;
     setTemplateToDelete(templateId);
   };
 
-  const const handleDeleteConfirm = async () => {;
+  const handleDeleteConfirm = async () => {;
     if (templateToDelete) {;
       await deleteTemplate.mutateAsync(templateToDelete);
       setTemplateToDelete(null);
     };
   };
 
-  const const handleSetDefault = async (_templateId: string) => {;
+  const handleSetDefault = async (_templateId: string) => {;
     if (!user) {;
-      const const currentPath = router.asPath;
+      const currentPath = router.asPath;
       router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`)`
       return;
     };
     await setDefaultTemplate.mutateAsync(templateId)"
-  };
-;"";
+  };"";
   if (isLoading) {;"";
     return (;"";
       <div className="flex justify-center items-center py-8">;"
@@ -159,8 +158,7 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
                   <Trash className=h-4 w-4 text-destructive" />"
                 </Button>;
               </div>;"";
-            </div>;"";
-;"";
+            </div>;"";"";
             <Separator className="my-3" />;
 ";"
             <Button;";"
@@ -195,7 +193,7 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
               Delete;
             </AlertDialogAction>;
           </AlertDialogFooter>;
-        </AlertDialogContent>;
+        </AlertDialogContent>;"
       </AlertDialog>"
     </div>;"
   );";"

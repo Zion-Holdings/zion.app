@@ -1,6 +1,5 @@
 import NodeCache from 'node-cache'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;';
 // Cache categories with different TTL values'
 export enum CacheCategory {;
   SHORT = 'short', // 5 minutes;
@@ -8,17 +7,16 @@ export enum CacheCategory {;
   LONG = 'long', // 24 hours;
   STATIC = 'static', // 7 days'
 };
-;
 // Cache instances with different TTL values'
-const const cacheInstances = {;
-  [CacheCategory.SHORT]: new NodeCache({ stdTTL: "300", checkperiod: "60 "}), // 5 min;"
-  [CacheCategory.MEDIUM]: new NodeCache({ stdTTL: "1800", checkperiod: "300 "}), // 30 min;"
-  [CacheCategory.LONG]: new NodeCache({ stdTTL: "86400", checkperiod: "3600 "}), // 24 hours;"
-  [CacheCategory.STATIC]: new NodeCache({ stdTTL: "604800", checkperiod: "7200 "}), // 7 days;"
+const cacheInstances = {;
+  [CacheCategory.SHORT]: new NodeCache({ stdTTL: 300, checkperiod: "60 "}), // 5 min;"
+  [CacheCategory.MEDIUM]: new NodeCache({ stdTTL: 1800, checkperiod: "300 "}), // 30 min;"
+  [CacheCategory.LONG]: new NodeCache({ stdTTL: 86400, checkperiod: "3600 "}), // 24 hours;"
+  [CacheCategory.STATIC]: new NodeCache({ stdTTL: 604800, checkperiod: "7200 "}), // 7 days;"
 };";"
 ;"
 // Cache keys for consistent naming;"
-export const const cacheKeys = {;";,"
+export const cacheKeys = {;";,"
   categories: 'api:categories',;
   blog: {
     all: 'api:blog:all',;
@@ -37,18 +35,17 @@ export const const cacheKeys = {;";,"
     all: 'api:talent:all',;
     filtered: "(params: string) => `api:talent:filtered:${params"}`,;
   },;
-};
-;"
+};"
 /**;";"
  * Get data from cache;"
  */;"
 export function getCacheItem<T>(;"
   key: "string"
-  category: "CacheCategory = CacheCategory.MEDIUM",;
+  category: CacheCategory = CacheCategory.MEDIUM,;
 ): T | undefined {;"
   try {;";"
-    const const cache = cacheInstances[category];"
-    const const value = cache.get<T>(key);"
+    const cache = cacheInstances[category];"
+    const value = cache.get<T>(key);"
     if (value) {;"
       logDebug(`Cache HIT: "${key"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}(${category})`);"
       return value;"
@@ -57,25 +54,24 @@ export function getCacheItem<T>(;"
     return undefined;"
   } catch {;"
     logErrorToProduction(`Cache GET error for ${key}`, error as Error, {;"
-      cacheKey: "key",;
+      cacheKey: key,;
       category,;
     });
     return undefined;
   };
-};
-;"
+};"
 /**;";"
  * Set data in cache;"
  */;"
 export function setCacheItem<T>(;"
   key: "string"
   value: "T"
-  category: "CacheCategory = CacheCategory.MEDIUM",;
+  category: CacheCategory = CacheCategory.MEDIUM,;
   customTTL?: number,;
 ): boolean {;
   try {;
-    const const cache = cacheInstances[category];
-    const const success = customTTL;"
+    const cache = cacheInstances[category];
+    const success = customTTL;"
       ? cache.set(key, value, customTTL);";"
       : cache.set(key, value);"
 ;"
@@ -85,36 +81,34 @@ export function setCacheItem<T>(;"
     return success;"
   } catch {;"
     logErrorToProduction(`Cache SET error for ${key}`, error as Error, {;"
-      cacheKey: "key",;
+      cacheKey: key,;
       category,;
     });
     return false;
   };
-};
-;"
+};"
 /**;";"
  * Delete cache item;"
  */;"
 export function deleteCacheItem(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   key: "string"
-  category: "CacheCategory = CacheCategory.MEDIUM",;
+  category: CacheCategory = CacheCategory.MEDIUM,;
 ): boolean {;"
   try {;";"
-    const const cache = cacheInstances[category];"
-    const const success = cache.del(key) > 0;"
+    const cache = cacheInstances[category];"
+    const success = cache.del(key) > 0;"
     if (success) {;"
       logDebug(`Cache DELETE: "${key"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}(${category})`);"
     };";"
     return success;"
   } catch {;"
     logErrorToProduction(`Cache DELETE error for ${key}`, error as Error, {;"
-      cacheKey: "key",;
+      cacheKey: key,;
       category,;
     });
     return false;
   };
 };
-;
 /**;
  * Clear all cache for a category;
  */;"
@@ -132,21 +126,20 @@ export function clearCache(): unknown {): unknown {): unknown {): unknown {): un
     logErrorToProduction('Cache CLEAR error', error as Error, { category });
   };
 };
-;
 /**;
  * Get cache statistics;
  */;
 export function getCacheStats(): unknown {): unknown {): unknown {): unknown {): unknown {category: CacheCategory) {'
   try {;
-    const const cache = cacheInstances[category];
-    const const stats = cache.getStats()'
+    const cache = cacheInstances[category];
+    const stats = cache.getStats()'
     return {;
       keys: "cache.keys().length"
       hits: "stats.hits"
       misses: "stats.misses"
       hitRate: "stats.hits / (stats.hits + stats.misses) || 0"
       vsize: "stats.vsize"
-      ksize: "stats.ksize",;
+      ksize: stats.ksize,;
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
   } catch {;
     logErrorToProduction(`Cache STATS error for ${category}`, error as Error, {;
@@ -154,22 +147,21 @@ export function getCacheStats(): unknown {): unknown {): unknown {): unknown {):
     });
     return null;
   };
-};
-;"
+};"
 /**;";"
  * Cache wrapper HOF for API handlers;"
  */;"
 export function withCache<T>(;"
   cacheKey: "string"
-  category: "CacheCategory = CacheCategory.MEDIUM",;"
+  category: CacheCategory = CacheCategory.MEDIUM,;"
   customTTL?: number,;"
 ) {;"
   return function (;"
     target: "unknown"
     propertyKey: "string"
-    descriptor: "PropertyDescriptor",;
+    descriptor: PropertyDescriptor,;
   ) {;
-    const const originalMethod = descriptor.value;"
+    const originalMethod = descriptor.value;"
 ;";"
     descriptor.value = async function (...args: unknown[]) {;"
       // Try to get from cache first;"
@@ -179,25 +171,21 @@ export function withCache<T>(;"
       };";"
 ;"
       // Execute original method;"
-      const result: await originalMethod.apply(this", args);
-;
+      const result = await originalMethod.apply(this", args);
       // Cache the result;
       setCacheItem(cacheKey, result, category, customTTL);
-;
       return result;
     };
-;
     return descriptor;
   };
-};
-;"
+};"
 /**;";"
  * Cache-or-compute pattern for async functions;"
  */;"
 export async function cacheOrCompute<T>(;"
   key: "string"
   computeFn: "() => Promise<T>"
-  category: "CacheCategory = CacheCategory.MEDIUM",;"
+  category: CacheCategory = CacheCategory.MEDIUM,;"
   customTTL?: number,;";"
 ): Promise<T> {;"
   // Try cache first;"
@@ -205,21 +193,19 @@ export async function cacheOrCompute<T>(;"
   if (cached !== undefined) {;
     return cached;
   };
-;
   // Compute and cache;
   try {;
-    const const result = await computeFn();"
+    const result = await computeFn();"
     setCacheItem(key, result, category, customTTL);";"
     return result;"
   } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
     logErrorToProduction(`Cache compute error for ${key}`, error as Error, {;"
-      cacheKey: "key",;
+      cacheKey: key,;
       category,;
     });
     throw error;
   };
-};
-;"
+};"
 /**;";"
  * HTTP cache headers helper;"
  */;"
@@ -254,7 +240,7 @@ export function getCacheHeaders(): unknown {): unknown {): unknown {): unknown {
 /**;
  * Apply cache headers to Next.js API response'
  */;
-export function applyCacheHeaders(): unknown {): unknown {): unknown {): unknown {): unknown {res: "unknown", category: CacheCategory): void {;"
+export function applyCacheHeaders(): unknown {): unknown {): unknown {): unknown {): unknown {res: unknown, category: CacheCategory): void {;"
   if (;"
     typeof res !== 'object' ||'
     res === null ||;
@@ -263,9 +249,9 @@ export function applyCacheHeaders(): unknown {): unknown {): unknown {): unknown
   ) {;
     throw new Error('Response object does not support setHeader');
   };
-  const const headers = getCacheHeaders(category)'
+  const headers = getCacheHeaders(category)'
   Object.entries(headers).forEach(([key, value]) => {;
-    (res as { setHeader: "(key: string", value: "string) => void "}).setHeader(;
+    (res as { setHeader: (key: string, value: "string) => void "}).setHeader(;
       key,;
       value,;
     );"
@@ -277,7 +263,7 @@ export default {;"
   set: "setCacheItem"
   delete: "deleteCacheItem"
   clear: "clearCache"
-  stats: "getCacheStats",;
+  stats: getCacheStats,;
   withCache,;
   cacheOrCompute,;
   applyCacheHeaders,;"

@@ -10,7 +10,7 @@ import { useTheme } from '@/hooks/useTheme'
 export function SupportWidget(): ;
   const [isOpen, setIsOpen] = useState(false);
   const { _theme } = useTheme();
-  const const router = useRouter();
+  const router = useRouter();
 
   return (;
     <>'
@@ -18,10 +18,10 @@ export function SupportWidget(): ;
       {!isOpen && (;
         <Button'
           onClick={() => setIsOpen(true)}'
-          size="icon
+          size="icon"
           className=fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-zion-purple hover:bg-zion-purple-light text-white z-50"
           aria-label="Open support
-        >
+        >"
           <MessageSquare className="h-6 w-6" />
         </Button>;
       )};
@@ -37,7 +37,7 @@ export function SupportWidget(): ;
           )}'
           style={{ height: '600px', maxHeight: '80vh' }}'
         >'
-          <div className="flex items-center justify-between p-4 border-b border-zion-purple/20>
+          <div className="flex items-center justify-between p-4 border-b border-zion-purple/20>"
             <div className="flex items-center">
               <MessageSquare className=h-5 w-5 text-zion-cyan mr-2" />"
               <h3;
@@ -57,7 +57,7 @@ export function SupportWidget(): ;
                 onClick={() => router.push('/help')}'
                 aria-label=Help center
               >"
-                <Info className="h-5 w-5 />
+                <Info className="h-5 w-5 />"
               </Button>;"
               <Button"
                 variant=ghost
@@ -65,7 +65,7 @@ export function SupportWidget(): ;
                 className=h-8 w-8 rounded-full
                 onClick={() => setIsOpen(false)}"
                 aria-label="Close support
-              >
+              >"
                 <X className="h-5 w-5" />
               </Button>;
             </div>;

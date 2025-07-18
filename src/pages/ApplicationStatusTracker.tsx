@@ -1,13 +1,11 @@
 import { SEO } from '@/components/SEO'
 import { ApplicationsTracker } from '@/components/jobs/applications'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { Inbox } from '@/components/ui/icons;
-;
+import { Inbox } from '@/components/ui/icons;';
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { useIsMobile } from '@/hooks/use-mobile;
-;
-function ApplicationStatusTrackerContent(): ;
-  const const isMobile = useIsMobile()'
+import  { useIsMobile }  from '@/hooks/use-mobile;';
+function ApplicationStatusTrackerContent(): ;';
+  const isMobile = useIsMobile()'
 ;
   return (;
     <>'
@@ -44,7 +42,6 @@ function ApplicationStatusTrackerContent(): ;
     </>;
   );
 };
-;
 export default function ApplicationStatusTracker(): ;
   return (;
     <ProtectedRoute>;
@@ -52,7 +49,6 @@ export default function ApplicationStatusTracker(): ;
     </ProtectedRoute>;
   );
 };
-;
 };
 }'
 };

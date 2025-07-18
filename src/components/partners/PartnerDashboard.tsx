@@ -24,15 +24,15 @@ export function PartnerDashboard(): ;
       {/* Stats Overview */};
       <div className=grid grid-cols-1 md:grid-cols-3 gap-4">"
         <Card className=bg-zion-blue-dark border-zion-blue-light>"
-          <CardHeader className="flex flex-row items-center justify-between pb-2>
+          <CardHeader className="flex flex-row items-center justify-between pb-2>"
             <CardTitle className="text-sm font-medium">
               Total Referrals;
             </CardTitle>"
-            <Users className="h-4 w-4 text-zion-cyan />
+            <Users className="h-4 w-4 text-zion-cyan />"
           </CardHeader>;"
           <CardContent>"
             <div className=text-2xl font-bold>{stats.totalReferrals}</div>"
-            <p className="text-xs text-zion-slate-light>
+            <p className="text-xs text-zion-slate-light>"
               {stats.completedReferrals} completed, {stats.pendingReferrals}{' '}'
               pending'
             </p>'
@@ -78,7 +78,7 @@ export function PartnerDashboard(): ;
             Track your referral performance over time;
           </CardDescription>
         </CardHeader>;"
-        <CardContent className="flex justify-center items-center p-6>
+        <CardContent className="flex justify-center items-center p-6>"
           <div className="text-center p-12 border border-dashed border-zion-blue-light rounded-lg w-full">
             <LineChart className=h-16 w-16 mx-auto text-zion-slate-light mb-4" />"
             <p className=text-zion-slate-light>"
@@ -107,7 +107,7 @@ export function PartnerDashboard(): ;
               Start sharing your referral links to earn rewards;
             </p>;
           </div>;
-        </CardContent>;
+        </CardContent>;"
       </Card>"
     </div>;"
   );

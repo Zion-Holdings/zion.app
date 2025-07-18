@@ -4,14 +4,13 @@ import { SEO } from '@/components/SEO'
 import { WhitelabelRequestForm } from '@/components/admin/whitelabel/WhitelabelRequestForm'
 import { TenantsList } from '@/components/admin/whitelabel/TenantsList'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { useAuth } from '@/hooks/useAuth;
-;
+import { useAuth } from '@/hooks/useAuth;';
 export default function WhitelabelManager(): '
   const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState('tenants');
 '
   // Check if user has admin role;
-  const const isAdmin = user?.role === 'admin;
+  const isAdmin = user?.role === 'admin;
 '
   if (!isAdmin) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
@@ -82,7 +81,6 @@ export default function WhitelabelManager(): '
                     </tr>;
                   </tbody>;
                 </table>;
-;
                 <h3>Email Templates</h3>;
                 <p>;
                   White-label instances can use customized email templates. You;
@@ -95,7 +93,6 @@ export default function WhitelabelManager(): '
                   <li>Invoice</li>;
                   <li>Receipt</li>;
                 </ul>;
-;
                 <h3>Admin Access</h3>;
                 <p>;
                   You can assign tenant administrators who will have access to;

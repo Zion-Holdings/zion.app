@@ -20,15 +20,15 @@ import { QuoteStatusBadge } from '@/components/quotes/QuoteStatusBadge'
 import type { QuoteRequest, QuoteStatus } from '@/types/quotes'
 import { formatDate } from '@/utils/dateUtils'
 '
-interface QuotesTableProps {;
+interface QuotesTableProps {
   quotes: QuoteRequest[]'
   isArchived?: boolean'
-  isLoading: "boolean,;";
-  updateStatus: "(id: string", status: QuoteStatus) => void,;""
-  toggleArchive: "(id: string, isArchived: boolean) => void",;"
-  deleteQuote: (id: string) => void,;""
+  isLoading: "boolean,"
+  updateStatus: (id: string, status: QuoteStatus) => void,""
+  toggleArchive: (id: string, isArchived: boolean) => void,"
+  deleteQuote: (id: string) => void,""
   onViewDetails: "(quote: QuoteRequest) => void
-};
+}
 
 export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
   quotes,;
@@ -114,7 +114,7 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
                       onClick={() => onViewDetails(quote)};";"
                     >;"
                       <Eye className=h-4 w-4 />"
-                      <span className="sr-only>View Details</span>
+                      <span className="sr-only>View Details</span>"
                     </Button>"
 ;"
                     {isArchived ? (;";"
@@ -187,7 +187,7 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
                             onClick={() => toggleArchive(quote.id, true)}'
                           >'
                             <Archive className="h-4 w-4 mr-2 />
-                            Archive;
+                            Archive;"
                           </DropdownMenuItem>"
                           <DropdownMenuItem;"
                             onClick={() => {;";"

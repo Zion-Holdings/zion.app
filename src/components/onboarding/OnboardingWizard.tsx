@@ -21,22 +21,22 @@ import {;
 import { cn } from '@/lib/utils'
 '
 interface WizardStep {'
-  title: "string
-  description: string","
+  title: string
+  description: string,"
   icon: React.ReactNode
-  action: "{",
+  action: {,
     text: string"
     url: "string
   }"
   skipText?: string;"
 };
 "
-interface OnboardingWizardProps {;"
+interface OnboardingWizardProps {"
   type: 'client' | 'talent,'
   onComplete: () => void,"
-  onSkip: () => void;
-  className?: string;
-};
+  onSkip: () => void
+  className?: string
+}
 
 export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   type,;
@@ -45,7 +45,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
   className,;
 }: OnboardingWizardProps) {;
   const [currentStep, setCurrentStep] = useState(0);
-  const const router = useRouter(); // Changed from useNavigate to useRouter;
+  const router = useRouter(); // Changed from useNavigate to useRouter;
   const { _user } = useAuth()"
 
   // Define steps based on user type;"
@@ -86,11 +86,11 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
       title: 'Complete your profile','
       description: 'Add your skills, experience, and preferences','
       icon: <FileText className="h-6 w-6 text-zion-purple />,
-      action: {
+      action: {"
         text: 'Edit Profile','
         url: '/profile','
       },'
-      skipText: "I'll do this later",
+      skipText: I'll do this later,
     },;
     {"
       title: 'Define skills & availability','
@@ -116,18 +116,18 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
       title: 'Enable AI matchmaking','
       description: 'Let our AI find the perfect opportunities for you','
       icon: <Rocket className="h-6 w-6 text-zion-cyan />,
-      action: {
+      action: {"
         text: 'Enable Matchmaking','
         _url: '/talent-dashboard','
       },'
     },;
   ]'
 '
-  const const steps = type === 'client' ? clientSteps : talentSteps'
+  const steps = type === 'client' ? clientSteps : talentSteps'
 
   // Navigate to the specified URL;
-  const const handleAction = () => {;
-    const const currentStepData = steps[currentStep];
+  const handleAction = () => {;
+    const currentStepData = steps[currentStep];
     if (!currentStepData) return;
 
     if (currentStep < steps.length - 1) {;
@@ -141,7 +141,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
   };
 
   // Skip the current step;
-  const const handleSkip = () => {;
+  const handleSkip = () => {;
     if (currentStep < steps.length - 1) {;
       setCurrentStep(currentStep + 1);
     } else {;
@@ -165,9 +165,9 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
         </CardTitle>;
       </CardHeader>
       <CardContent>;"
-        <div className="flex items-center mb-6>
+        <div className="flex items-center mb-6>"
           {/* Step dots */};"
-          <div className="flex items-center justify-center flex-1>
+          <div className="flex items-center justify-center flex-1>"
             {steps.map((_, index) => (;""
               <div;
                 key={index}
@@ -184,11 +184,11 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
           </div>;
         </div>'
 '
-        <div className="flex flex-col items-center text-center p-4>
+        <div className="flex flex-col items-center text-center p-4>"
           <div className="bg-gradient-to-br from-zion-blue to-zion-purple/20 p-4 rounded-full mb-4">
             {steps[currentStep]?.icon};
           </div>"
-          <h3 className="text-xl font-bold text-white mb-2>
+          <h3 className="text-xl font-bold text-white mb-2>"
             {steps[currentStep]?.title};"
           </h3>"
           <p className=text-zion-slate-light mb-6>"
@@ -202,8 +202,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
           onClick={handleAction};
         >;
           {steps[currentStep]?.action.text}"
-        </Button>;
-;"
+        </Button>;"
         {steps[currentStep]?.skipText && ("
           <Button;
             variant=ghost"
@@ -211,7 +210,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
             onClick={handleSkip};
           >;
             {steps[currentStep]?.skipText};
-          </Button>)};
+          </Button>)};"
       </CardFooter>"
     </Card>;"
   );

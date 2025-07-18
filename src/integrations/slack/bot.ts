@@ -1,25 +1,23 @@
 // Mock implementation of Slack bot that doesn't require external dependencies'
 // This replaces the original implementation which had dependency issues;
-import { switchNetlifySite } from 'scripts/switch-netlify-site.js;
+import { switchNetlifySite } from 'scripts/switch-netlify-site.js;';
 '
-interface SlackCommand {;
-  text: "string;";
-};
-;
-interface SlackAck {;"
-  (): Promise<void>;";"
-};"
+interface SlackCommand {
+  text: "string"
+}
+interface SlackAck {"
+  (): Promise<void>""
+}"
 ;"
-interface SlackRespond {;"
-  (text: "string): Promise<void>;"
-};";"
+interface SlackRespond {"
+  (text: "string): Promise<void>"
+}";"
 ;"
 // Define console type to avoid TypeScript errors;"
-interface SafeConsole {;"
-  log: "(message: string) => void;"
-  warn: "(message: string) => void;";
-};
-;
+interface SafeConsole {"
+  log: "(message: string) => void"
+  warn: "(message: string) => void"
+}
 // Declare available globals;
 declare const globalThis: unknown {;"
   console?: SafeConsole;";"
@@ -37,9 +35,9 @@ type CommandHandler = (args: {;"
   respond: "SlackRespond;"
 }) => Promise<void>;"
 class MockApp {;"
-  private commandHandlers: "Record<string", CommandHandler> = {};"
+  private commandHandlers: Record<string, CommandHandler> = {};"
 ;"
-  command(commandName: "string", handler: CommandHandler) {;
+  command(commandName: string, handler: CommandHandler) {;
     this.commandHandlers[commandName] = handler;
     return this;
   };"
@@ -56,9 +54,8 @@ class MockApp {;"
     return Promise.resolve();
   };
 };
-;
 // Create a mock app instance;
-const const app = new MockApp()'
+const app = new MockApp()'
 ;
 async function askZionGPT(): unknown {): unknown {): unknown {): unknown {): unknown {prompt: string): Promise<string> {;
   // Safely log without direct console reference'
@@ -89,13 +86,13 @@ app.command(;"
         await respond('Please provide job details via the web interface.')'
         break;
       case 'suggest-talent': {;
-        const const query = args.join(' ')'
-        const answer: await askZionGPT(`Suggest talent for ${query"}`);"
+        const query = args.join(' ')'
+        const answer = await askZionGPT(`Suggest talent for ${query"}`);"
         await respond(answer);"
         break;"
       };
       case 'track-project': {;
-        const const project = args.join(' ');
+        const project = args.join(' ');
         await respond(`Tracking project **${project}** - feature coming soon.`);
         break'
       };
@@ -120,12 +117,11 @@ app.command(;
       await switchNetlifySite();"
       await respond('Rollback complete. DNS switched to the previous site.');
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (err: unknown) {'
-      const const message = err instanceof Error ? err.message : String(err);
+      const message = err instanceof Error ? err.message : String(err);
       await respond(`Rollback failed: "${message"}`);
     };
   },;
-);
-;"
+);"
 // Mock startup with safer environment access;";"
 (async () => {;"
   // Get PORT from environment or use default;"

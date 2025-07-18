@@ -1,46 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import { Heart } from 'lucide-react;
-;
+import { Heart } from 'lucide-react;';
 import { SEO } from '@/components/SEO'
 import { useAuth } from '@/hooks/useAuth'
 import { useSupabase } from '@/hooks/useSupabase'
 import { TalentCard } from '@/components/talent/TalentCard'
 import { EmptyState } from '@/components/ui/empty-state'
 import { toast } from '@/hooks/use-toast'
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger;';
 '
-interface TalentProfile {;
-  id: "string;"
-  user_id: "string;","
-  full_name: "string;",;"
-  professional_title: string;"
-  profile_picture_url?: string;"
-  hourly_rate: "number;"
-  bio: "string;","
-  years_experience: "number;"
-  key_projects: "string[];","
-  skills: "string[];"
-  location: "string;","
-  availability: "string;"
-  is_verified: "boolean;";
-};
-;
+interface TalentProfile {
+  id: "string"
+  user_id: string,"
+  full_name: string,"
+  professional_title: string"
+  profile_picture_url?: string"
+  hourly_rate: "number"
+  bio: string,"
+  years_experience: "number"
+  key_projects: string[],"
+  skills: "string[]"
+  location: string,"
+  availability: "string"
+  is_verified: "boolean"
+}
 export default function SavedTalentsPage(): ;
   const { user } = useAuth();
   const { supabase } = useSupabase();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const const router = useRouter();
-;
+  const router = useRouter();
   useEffect(() => {;
     if (!user) {;
       router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
     };
   }, [user, router]);
-;
   useEffect(() => {;"
-    const const fetchSavedTalents = async () => {;";"
+    const fetchSavedTalents = async () => {;";"
       setIsLoading(true);"
       try {;"
         if (!user) {;"
@@ -71,14 +67,13 @@ export default function SavedTalentsPage(): ;
           `;"
           );"
           .eq("user_id", user.id);
-;
         if (error) {;"
           throw error;";"
         };"
 ;"
         if (data) {;"
-          const const savedTalentItems = data as unknown as { talent_profile: "TalentProfile "}[];"
-          const const talentProfiles = savedTalentItems.map((item: "unknown) => (item as { talent_profile: TalentProfile "}).talent_profile);"
+          const savedTalentItems = data as unknown as { talent_profile: "TalentProfile "}[];"
+          const talentProfiles = savedTalentItems.map((item: "unknown) => (item as { talent_profile: TalentProfile "}).talent_profile);"
           setSavedTalents(talentProfiles);"
         };"
       } catch (error) {;"
@@ -86,21 +81,19 @@ export default function SavedTalentsPage(): ;
         toast({;
           title: "Error"
           description: "Failed to load saved talents. Please try again later."
-          variant: "destructive",;
+          variant: destructive,;
         });
       } finally {;
         setIsLoading(false);
       };
     };
-;
     fetchSavedTalents();
   }, [user, supabase]);
-;
-  const const handleViewProfile = (talentId: string) => {;"
+  const handleViewProfile = (talentId: string) => {;"
     router.push(`/talent/${talentId}`);";"
   };"
 ;"
-  const const handleRequestHire = (talent: TalentProfile) => {;"
+  const handleRequestHire = (talent: TalentProfile) => {;"
     logInfo('Request to hire:', { data: "{ data: talent "} });"
     toast({;"
       title: "Hire Request Sent"

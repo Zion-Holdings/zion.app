@@ -15,7 +15,7 @@ export function ContractHeader(): unknown {): unknown {): unknown {): unknown {)
       </div>";";
 "
       <Button size="lg onClick={onCreateClick}>
-        Create New Contract;
+        Create New Contract;"
       </Button>"
     </div>;"
   );";"

@@ -1,28 +1,24 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link;
-;
+import Link from 'next/link;';
 export function ApiGettingStarted(): '
   const authExample: `curl -X GET \\;","
   https://api.ziontechgroup.com/v1/jobs \\;
   -H "Authorization: Bearer YOUR_API_KEY"`;"
 ;"
-  const const quickStartJs = `import axios from 'axios;
-;
-const const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {;
+  const quickStartJs = `import axios from 'axios;';
+const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {;
   headers: {
     Authorization: "\`Bearer \${API_KEY"}\`;
   };
-});
-;"
+});"
 logInfo(response.data);`;";"
 ;"
   return (;"
     <ApiDocsLayout>;"
       <div className="max-w-3xl prose prose-invert">;
-        <h1>Getting Started</h1>;
-;"
+        <h1>Getting Started</h1>;"
         <h2>Overview</h2>;";"
         <p>;"
           The Zion AI Marketplace API provides programmatic access to jobs,;"
@@ -59,7 +55,6 @@ logInfo(response.data);`;";"
             https://api.ziontechgroup.com/v1;
           </code>;
         </div>;
-;
         <h2>Content Type</h2>;
         <p>;
           All requests must use <code>application/json</code> content type. Set;
@@ -69,13 +64,11 @@ logInfo(response.data);`;";"
 ;"
         <h2>Quick Start</h2>;"
         <p>Here's a simple example of fetching jobs using JavaScript:</p>;
-;
         <CodeBlock'
           code={quickStartJs};
           language="javascript";
           showLineNumbers={true};
         />;
-;
         <h2>Available APIs</h2>;
         <ul>;
           <li>;
@@ -94,7 +87,6 @@ logInfo(response.data);`;";"
             <strong>Webhooks API</strong> - Set up event notifications;
           </li>;
         </ul>;
-;
         <h2>Postman Collection</h2>;"
         <p>;";"
           Download our Postman collection to quickly test all available;"

@@ -1,10 +1,10 @@
 import React from 'react''
 import { cn } from '@/lib/utils'
 
-interface ContainerProps {;
-  children: React.ReactNode;
-  className?: string;
-};
+interface ContainerProps {
+  children: React.ReactNode
+  className?: string
+}
 
 /**'
  * Provides a consistent max-width and horizontal padding for page sections.'

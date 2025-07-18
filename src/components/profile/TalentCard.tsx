@@ -9,11 +9,11 @@ import React, { useState } from 'react // Import React and useState'
 export interface TalentCardProps {'
   talent: "TalentProfile
   onViewProfile: (id: string) => void"
-  onRequestHire: "(talent: TalentProfile) => void
-  isSaved: boolean","
+  onRequestHire: (talent: TalentProfile) => void
+  isSaved: boolean,"
   onToggleSave: (id: string, isSaved: "boolean) => void"
   isAuthenticated: boolean"
-};
+}
 
 export function TalentCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -25,13 +25,13 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
 }: TalentCardProps) {;
   const [avatarError, setAvatarError] = useState(false);
 
-  const const handleViewProfile = () => {;
+  const handleViewProfile = () => {;
     if (onViewProfile) {;
       onViewProfile(talent.id);
     };
   };
 
-  const const handleRequestHire = (_e: React.MouseEvent) => {;
+  const handleRequestHire = (_e: React.MouseEvent) => {;
     e.preventDefault();
     e.stopPropagation();
     if (onRequestHire) {;
@@ -39,7 +39,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
     };
   };
 
-  const const handleToggleSave = (_e: React.MouseEvent) => {;
+  const handleToggleSave = (_e: React.MouseEvent) => {;
     e.preventDefault();
     e.stopPropagation();
     if (onToggleSave) {;
@@ -48,7 +48,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
   };"
 "
   const skills: talent.skills?.slice(0, 5) || []
-  const const talentNameInitial = talent.full_name?.charAt(0) || 'T'
+  const talentNameInitial = talent.full_name?.charAt(0) || 'T'
 
   return ('
     <Card'
@@ -58,7 +58,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
       <div className="p-6">
         <div className=flex items-start">"
           <div className=relative mr-4>"
-            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light relative>
+            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light relative>"
               {' '}'
               {/* Added relative for Image */}'
               {talent.profile_picture_url && !avatarError ? (;
@@ -78,7 +78,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
               )};
             </div>
             {talent.is_verified && (;"
-              <div className="absolute -bottom-1 -right-1 bg-zion-blue p-0.5 rounded-full>
+              <div className="absolute -bottom-1 -right-1 bg-zion-blue p-0.5 rounded-full>"
                 <CheckCircle2 className="w-5 h-5 text-zion-cyan" />
               </div>;"
             )};"
@@ -105,9 +105,9 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
               {talent.professional_title};
             </p>
 ;"
-            <div className="mt-2 flex flex-wrap gap-3 text-sm>
+            <div className="mt-2 flex flex-wrap gap-3 text-sm>"
               {talent.location && (;"
-                <div className="flex items-center text-zion-slate-light>
+                <div className="flex items-center text-zion-slate-light>"
                   <MapPin className="h-4 w-4 mr-1" />
                   <span>{talent.location}</span>;"
                 </div>;"
@@ -127,7 +127,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
               {skills.map((skill, index) => (;
                 <span
                   key={index};"
-                  className="px-2 py-1 text-xs rounded-full bg-zion-blue-light text-zion-slate-light
+                  className="px-2 py-1 text-xs rounded-full bg-zion-blue-light text-zion-slate-light"
                 >"
                   {skill};"
                 </span>;
@@ -149,7 +149,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
                 <span className="text-zion-slate-light font-normal">/hr</span>
               </div>;
             ) : ("
-              <div className="text-zion-slate-light>Rate not specified</div>
+              <div className="text-zion-slate-light>Rate not specified</div>"
             )};"
           </div>"
 
@@ -159,7 +159,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
                 size="sm"
                 variant=secondary
                 onClick={handleRequestHire}"
-                className="bg-zion-purple hover:bg-zion-purple-light text-white
+                className="bg-zion-purple hover:bg-zion-purple-light text-white"
               >"
                 Hire;"
               </Button>;

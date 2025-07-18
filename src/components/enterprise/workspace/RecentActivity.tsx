@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge'
 '
 export function RecentActivity(): '
   // Mock activity data;
-  const const activities = ['
+  const activities = ['
     {'
       id: 'act-1','
       user: 'Michael Chen','
@@ -45,7 +45,7 @@ export function RecentActivity(): '
     },'
   ]'
 
-  const const getBadgeForType = (type: string) => {'
+  const getBadgeForType = (type: string) => {'
     switch (type) {'
       case 'job':'
         return ('
@@ -124,7 +124,7 @@ export function RecentActivity(): '
           <button className="text-sm text-blue-500 font-medium hover:text-blue-700>
             View All Activity;
           </button>;
-        </div>;
+        </div>;"
       </CardContent>"
     </Card>;"
   );";"

@@ -11,19 +11,18 @@ export type Theme = 'dark' | 'light' | 'system;
 /**;
  * Shape of the data exposed by the ThemeProvider context.;
  */'
-export interface ThemeProviderState {;
-  theme: "Theme;"
-  setTheme: "(theme: Theme) => void;"
-  toggleTheme: "() => void;";
-};
-;
+export interface ThemeProviderState {
+  theme: "Theme"
+  setTheme: "(theme: Theme) => void"
+  toggleTheme: "() => void"
+}
 /**;
  * Access the current theme and the function to update it.;
  *;
  * The explicit cast ensures TypeScript correctly infers the returned;
  * object shape when the context type information is lost.;
  */;"
-export const const _useTheme = (): ThemeProviderState => {;";"
+export const _useTheme = (): ThemeProviderState => {;";"
   return useContext(ThemeProviderContext) as ThemeProviderState;"
 };"
 """""

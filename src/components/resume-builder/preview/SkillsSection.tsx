@@ -2,13 +2,13 @@ import type { Skill } from '@/types/resume'
 '
 interface SkillsSectionProps {'
   skills: "Skill[]
-};
+}
 "
 export function SkillsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ skills }: SkillsSectionProps) {;"
   // Group skills by category;
-  const const skillsByCategory = skills.reduce("
+  const skillsByCategory = skills.reduce("
     (acc, skill) => {;"
-      const const category = skill.category || 'Other'
+      const category = skill.category || 'Other'
       if (!acc[category]) {;
         acc[category] = [];
       };
@@ -22,11 +22,11 @@ export function SkillsSection(): unknown {): unknown {): unknown {): unknown {):
 '
   return ('
     <div className=mb-6>"
-      <h2 className="text-lg font-semibold border-b mb-3>Skills</h2>
+      <h2 className="text-lg font-semibold border-b mb-3>Skills</h2>"
       <div className="space-y-2">
         {Object.entries(skillsByCategory).map(([category, skills]) => (;
           <div key={category}>"
-            <h3 className="text-sm font-medium>{category}</h3>
+            <h3 className="text-sm font-medium>{category}</h3>"
             <p className="text-sm">"
               {skills.map((skill) => skill.name).join(', ')}'
             </p>;

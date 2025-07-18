@@ -6,7 +6,7 @@ import { AppTestimonials } from '@/components/mobile-app/AppTestimonials'
 import { MobileEmailCapture } from '@/components/mobile-app/MobileEmailCapture'
 import { AppStoreBanner } from '@/components/mobile-app/AppStoreBanner'
 import { QrCodeDownload } from '@/components/mobile-app/QrCodeDownload'
-import { CommunityTrust } from '@/components/mobile-app/CommunityTrust;
+import { CommunityTrust } from '@/components/mobile-app/CommunityTrust;';
 '
 // const _MobileLaunchPage: unknown React.FC = () => {;
   return (;
@@ -17,19 +17,12 @@ import { CommunityTrust } from '@/components/mobile-app/CommunityTrust;
         keywords="Zion mobile app, AI talent app, tech job app, project management app, iOS app, Android app"
         canonical="/mobile-launch";
       />;
-;
       <MobileLaunchHero />;
-;
       <MobileFeatureShowcase />;
-;
       <QrCodeDownload />;
-;
       <CommunityTrust />;
-;
       <AppTestimonials />;
-;
       <MobileEmailCapture />;
-;
       <AppStoreBanner />;
     </>;
   );"

@@ -9,20 +9,20 @@ import { PreviewResume } from '../PreviewResume'
 import { logInfo } from '@/utils/productionLogger'
 '
 interface ResumeStepContentProps {'
-  activeTab: "string
-  resume: Resume","
+  activeTab: string
+  resume: Resume,"
   onNextStep: () => void
   onPrevStep: "() => void"
-};
+}
 
-export const const ResumeStepContent = ({;
+export const ResumeStepContent = ({;
   resume,;
   onNextStep,
   onPrevStep,;""
 }: ResumeStepContentProps) => {;
   return (
     <>;"
-      <TabsContent value="basic-info>
+      <TabsContent value="basic-info>"
         <BasicInfoForm;"
           resumeId={resume?.id ?? ''}'
           initialData={resume?.basic_info};

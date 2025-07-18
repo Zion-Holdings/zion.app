@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router;
+import { useRouter } from 'next/router;';
 async function registerUser(): unknown {): unknown {): unknown {): unknown {): unknown {userData) {'
   // Stub implementation for testing;
-  return { success: "true", user: "userData "};"
+  return { success: true, user: "userData "};"
 };"
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
@@ -12,8 +12,8 @@ import { AuthContext } from '@/context/auth/AuthContext'
 import type { AuthContextType } from '@/types/auth'
 import { registerUser } from '@/services/authService'
 import { toast } from '@/hooks/use-toast'
-import { safeStorage } from '@/utils/safeStorage;
-// mailchimpService is imported within Signup.tsx but its usage is conditional.;
+import  { safeStorage }  from '@/utils/safeStorage;';
+// mailchimpService is imported within Signup.tsx but its usage is conditional.;';
 // Mocking it to prevent potential issues if it's called.;
 jest.mock('@/integrations/mailchimp', () => ({;
   mailchimpService: {
@@ -26,11 +26,10 @@ jest.mock('@/integrations/mailchimp', () => ({;
 jest.mock('@/services/authService');
 jest.mock('@/hooks/use-toast');
 jest.mock('@/utils/safeStorage');
-;
-const const mockNavigate = jest.fn()'
+const mockNavigate = jest.fn()'
 // Mock useLocation at the module level for default behavior (will be used by mockUseRouter);
-const const mockRawLocation = { search: '', pathname: '/signup' }; // Store the raw parts;
-const const mockUseLocationValues = jest.fn(() => mockRawLocation)'
+const mockRawLocation = { search: '', pathname: '/signup' }; // Store the raw parts;
+const mockUseLocationValues = jest.fn(() => mockRawLocation)'
 ;
 jest.mock('next/router', () => ({;
   ...jest.requireActual('next/router'), // Import and retain default behavior;
@@ -38,26 +37,24 @@ jest.mock('next/router', () => ({;
     const { search, pathname } = mockUseLocationValues(); // Get current mocked location values'
     return {;
       push: "mockNavigate"
-      replace: "mockNavigate", // Assuming replace can also use mockNavigate for testing;"
+      replace: mockNavigate, // Assuming replace can also use mockNavigate for testing;"
       pathname: "pathname"
       asPath: "pathname + search"
       query: "Object.fromEntries(new URLSearchParams(search))"
-      isReady: "true", // Important for tests that might depend on router.isReady;
+      isReady: true, // Important for tests that might depend on router.isReady;
     };
   },;
 }));"
 ;";"
 // Typed mock for registerUser;"
-const const mockRegisterUser = registerUser as jest.Mock;"
+const mockRegisterUser = registerUser as jest.Mock;"
 ;"
 describe('Signup Page', () => {;
   let _mockSetUser: jest.Mock;
   let mockAuthContextValue: AuthContextType;
-;
   beforeEach(() => {;
     jest.clearAllMocks()'
     mockSetUser = jest.fn();
-;
     // Reset useLocation mock to default before each test'
     // Update the raw location object that mockUseLocationValues will use;
     mockRawLocation.search = 
@@ -80,11 +77,11 @@ describe('Signup Page', () => {;
       loginWithWeb3: "jest.fn()"
       onboardingStep: "0"
       setOnboardingStep: "jest.fn()"
-      tokens: "null",;"
+      tokens: null,;"
     };"
   });"
 ;"
-  const const renderSignup = (initialEntries = ['/signup']) => {'
+  const renderSignup = (initialEntries = ['/signup']) => {'
     return render(;
       <MemoryRouter initialEntries={initialEntries}>;
         <AuthContext.Provider value={mockAuthContextValue}>'
@@ -100,7 +97,7 @@ describe('Signup Page', () => {;
     );";"
   };"
 ;"
-  const const fillForm = (overrideEmail?: string) => {;"
+  const fillForm = (overrideEmail?: string) => {;"
     fireEvent.input(screen.getByTestId('display-name-input'), {;
       target: { value: 'Test User' },'
     });
@@ -114,27 +111,27 @@ describe('Signup Page', () => {;
       target: { value: 'Password123' },'
     });
     // Click the "I agree to the Terms of Service and Privacy Policy" checkbox;"
-    const const termsCheckbox = screen.getByRole('checkbox', {;
-      name: "/i agree to the terms of service/i",;
+    const termsCheckbox = screen.getByRole('checkbox', {;
+      name: /i agree to the terms of service/i,;
     });
     fireEvent.click(termsCheckbox);
   };"
 ;";"
-  const const fillFormWithNewsletter = (overrideEmail?: string) => {;"
+  const fillFormWithNewsletter = (overrideEmail?: string) => {;"
     fillForm(overrideEmail);"
     // Click the newsletter checkbox;"
-    const const newsletterCheckbox = screen.getByRole('checkbox', {;
-      name: "/subscribe to our newsletter/i",;"
+    const newsletterCheckbox = screen.getByRole('checkbox', {;
+      name: /subscribe to our newsletter/i,;"
     });";"
     fireEvent.click(newsletterCheckbox);"
   };"
 ;"
   it('should successfully register, store token, update context, and redirect to home', async () => {;
-    const const mockToken = 'test-auth-token'
-    const const mockUser = { id: '1', email: 'test@example.com', name: 'Test User' }'
+    const mockToken = 'test-auth-token'
+    const mockUser = { id: '1', email: 'test@example.com', name: 'Test User' }'
     mockRegisterUser.mockResolvedValue({;
-      res: "{ ok: true", status: "201 "},;"
-      data: "{ token: mockToken", user: "mockUser "},;"
+      res: { ok: true, status: "201 "},;"
+      data: { token: mockToken, user: "mockUser "},;"
     });";"
 ;"
     renderSignup();"
@@ -164,14 +161,12 @@ describe('Signup Page', () => {;
 ;
   it('should show "Email already registered – please login." toast for duplicate email error', async () => {'
     mockRegisterUser.mockResolvedValue({;
-      res: "{ ok: false", status: "409 "},;"
+      res: { ok: false, status: "409 "},;"
       data: { message: 'Email is already registered', code: 'EMAIL_EXISTS' },'
     });
-;
     renderSignup()'
     fillForm();
     fireEvent.click(screen.getByTestId('create-account-button'));
-;
     await waitFor(() => {'
       expect(toast.error).toHaveBeenCalledWith(;
         'Email already registered – please login.',;
@@ -184,29 +179,28 @@ describe('Signup Page', () => {;
   })'
 ;
   it('should redirect to "next" path on successful registration if provided', async () => {;
-    const const mockToken = 'test-auth-token-next;
+    const mockToken = 'test-auth-token-next;
     const mockUser: {;",;"
       id: '2',;
       email: 'nextuser@example.com',;
       name: 'Next User',;
     }'
     mockRegisterUser.mockResolvedValue({;
-      res: "{ ok: true", status: "201 "},;"
-      data: "{ token: mockToken", user: "mockUser "},;"
+      res: { ok: true, status: "201 "},;"
+      data: { token: mockToken, user: "mockUser "},;"
     });"
 ;"
     // Mock useLocation to return a search string with a 'next' param for this specific test'
     // Update the raw location object for this specific test;
     mockRawLocation.search = '?next=/custom-path'
     mockRawLocation.pathname = '/signup;
-;
     renderSignup(['/signup?next=/custom-path']); // Initial entry for MemoryRouter;
     fillForm('nextuser@example.com'); // Use a unique email for this test;
     fireEvent.click(screen.getByTestId('create-account-button'));
 '
     await waitFor(() => {;
       expect(mockNavigate).toHaveBeenCalledWith('/custom-path', {;
-        replace: "true",;"
+        replace: true,;"
       });"
     });"
     expect(safeStorage.setItem).toHaveBeenCalledWith('authToken', mockToken);
@@ -231,8 +225,8 @@ describe('Signup Page', () => {;
     fireEvent.input(screen.getByTestId('confirm-password-input'), {;
       target: { value: 'PasswordMismatch' },'
     });
-    const const termsCheckbox = screen.getByRole('checkbox', {;
-      name: "/i agree to the terms of service/i",;"
+    const termsCheckbox = screen.getByRole('checkbox', {;
+      name: /i agree to the terms of service/i,;"
     });"
     fireEvent.click(termsCheckbox);"
 ;"
@@ -245,7 +239,6 @@ describe('Signup Page', () => {;
     })'
     // Also check that the form field error is displayed;
     expect(screen.getByText('Passwords do not match')).toBeInTheDocument();
-;
     expect(mockRegisterUser).not.toHaveBeenCalled(); // API call should not be made'
     expect(safeStorage.setItem).not.toHaveBeenCalled();
     expect(mockSetUser).not.toHaveBeenCalled();
@@ -253,10 +246,9 @@ describe('Signup Page', () => {;
 ;
   it('should show generic error toast for 500 server error', async () => {'
     mockRegisterUser.mockResolvedValue({;
-      res: "{ ok: false", status: "500 "},;"
+      res: { ok: false, status: "500 "},;"
       data: { message: 'Internal Server Error' },'
     });
-;
     renderSignup()'
     fillForm();
     fireEvent.click(screen.getByTestId('create-account-button'));
@@ -271,21 +263,20 @@ describe('Signup Page', () => {;
   })'
 ;
   it('should not call mailchimpService if newsletter is not opted in', async () => {;
-    const const mockToken = 'test-auth-token-no-newsletter;
+    const mockToken = 'test-auth-token-no-newsletter;
     const mockUser: {;",;"
       id: '3',;
       email: 'nonewsletter@example.com',;
       name: 'No Newsletter User',;
     }'
     mockRegisterUser.mockResolvedValue({;
-      res: "{ ok: true", status: "201 "},;"
-      data: "{ token: mockToken", user: "mockUser "},;"
+      res: { ok: true, status: "201 "},;"
+      data: { token: mockToken, user: "mockUser "},;"
     });"
 ;"
     renderSignup();"
     fillForm('nonewsletter@example.com'); // Does not click newsletter checkbox;
     fireEvent.click(screen.getByTestId('create-account-button'));
-;
     await waitFor(() => {'
       expect(toast.success).toHaveBeenCalledWith(;
         'Registration successful! Welcome!',;
@@ -320,7 +311,6 @@ describe('Signup Page', () => {;
     expect(mockRegisterUser).not.toHaveBeenCalled();
   });
 });
-;
 }'
 }
 }'

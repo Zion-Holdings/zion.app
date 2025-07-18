@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router;
+import  { useRouter }  from 'next/router;
 import {;
-  ArrowUp,;
-  Filter,;
+  ArrowUp,;';
+  Filter,;';
   SortAsc,'
   TrendingUp,;
   Star,;
@@ -9,11 +9,9 @@ import {;
   RefreshCw,;
 } from '@/components/ui/icons'
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion;
-;
+import { motion, AnimatePresence } from 'framer-motion;';
 import { toast } from '@/hooks/use-toast'
-import apiClient from '@/services/apiClient;
-;
+import apiClient from '@/services/apiClient;';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import type { ProductListing } from '@/types/listings'
 import { SkeletonCard } from '@/components/ui/skeleton'
@@ -23,28 +21,28 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Spinner from '@/components/ui/spinner'
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary'
 import { useCurrency } from '@/hooks/useCurrency'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;';
 '
 // Enhanced initial equipment with more variety;
 // Remove all INITIAL_EQUIPMENT and any other hardcoded/sample/mock equipment data. Fetch equipment from real API/data source or show empty/error state if unavailable.;
 '
-interface EquipmentStats {;
-  averagePrice: "number;"
-  averageRating: "number;","
-  totalProducts: "number;"
-  availableCount: "number;"
-};"
+interface EquipmentStats {
+  averagePrice: "number"
+  averageRating: number,"
+  totalProducts: "number"
+  availableCount: "number"
+}"
 ;"
-interface EquipmentFilterControlsProps {;"
-  sortBy: "string;"
-  setSortBy: "(value: string) => void;"
-  filterCategory: "string;","
-  setFilterCategory: "(value: string) => void;"
-  categories: "string[];","
-  showRecommended: "boolean;"
-  setShowRecommended: "(value: boolean) => void;"
-  loading: "boolean;"
-};"
+interface EquipmentFilterControlsProps {"
+  sortBy: "string"
+  setSortBy: "(value: string) => void"
+  filterCategory: string,"
+  setFilterCategory: "(value: string) => void"
+  categories: string[],"
+  showRecommended: "boolean"
+  setShowRecommended: "(value: boolean) => void"
+  loading: "boolean"
+}"
 ;"
 // Market insights component;"
 const EquipmentMarketInsights: ({ stats "}: { stats: "EquipmentStats "}) => (;"
@@ -83,9 +81,8 @@ const EquipmentMarketInsights: ({ stats "}: { stats: "EquipmentStats "}) => (;"
     </CardContent>;
   </Card>;
 );
-;
 // Filter controls;
-const const EquipmentFilterControls = ({;
+const EquipmentFilterControls = ({;
   sortBy,;
   setSortBy,;
   filterCategory,;
@@ -137,9 +134,8 @@ const const EquipmentFilterControls = ({;
     </Button>;
   </div>;
 );
-;
 // Equipment card'
-const const EquipmentCard = ({;
+const EquipmentCard = ({;
   equipment,;
   onViewDetails,'
 }: {;
@@ -223,7 +219,7 @@ const EquipmentLoadingGrid: ({ count = 8 "}: { count?: number }) => (;"
 ;"
 // Error fallback component;"
 function _EquipmentErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  error: "_error",;"
+  error: _error,;"
   resetErrorBoundary,;"
 }: {;"
   error: "Error;"
@@ -258,35 +254,34 @@ function _EquipmentErrorFallback(): unknown {): unknown {): unknown {): unknown 
 ;";"
 // Main component;"
 function EquipmentPageContent(): ;"
-  const const router = useRouter();"
+  const router = useRouter();"
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
-;
   // Remove dataSeed and artificial API delay'
-  // const const _dataSeed = useMemo(() => {;
+  // const _dataSeed = useMemo(() => {;
   //   return `equipment-${filterCategory}-${showRecommended}`;
   // }, [filterCategory, showRecommended])'
 ;
-  const const fetchEquipment = useCallback(async (_page: "number", _limit: number) => {;"
+  const fetchEquipment = useCallback(async (_page: number, _limit: number) => {;"
     // Only fetch real data from the API;"
     try {;"
-      const const res = await apiClient.get('/equipment');
+      const res = await apiClient.get('/equipment');
       if (Array.isArray(res?.data)) {'
         return {;
           items: "res.data"
           hasMore: "false"
-          total: "res.data.length",;"
+          total: res.data.length,;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";"
       };"
     } catch (apiErr: unknown) {;"
       if (apiErr instanceof Error) {;"
         logErrorToProduction('Error in fetchEquipment:', {;
-          data: "apiErr.message",;"
+          data: apiErr.message,;"
         });"
       } else {;"
         logErrorToProduction('Error in fetchEquipment:', {;
-          data: "String(apiErr)",;
+          data: String(apiErr),;
         });
       };"
       throw apiErr;";"
@@ -295,12 +290,12 @@ function EquipmentPageContent(): ;"
     return {;"
       items: "[]"
       hasMore: "false"
-      total: "0",;"
+      total: 0,;"
     };";"
   }, []);"
 ;"
-  const {;"
-    items: "equipment",;
+  const { ;"
+    items: equipment,;
     loading,;
     error,;
     hasMore,;
@@ -309,18 +304,14 @@ function EquipmentPageContent(): ;"
     lastElementRef,;
     refresh,;
     scrollToTop,;
-    loadMore,;
-  } = useInfiniteScrollPagination(fetchEquipment, 12);
-;
+    loadMore,; } = useInfiniteScrollPagination(fetchEquipment, 12);
   // Refresh when filters change;
   useEffect(() => {;
-    const const timeoutId = setTimeout(() => {;
+    const timeoutId = setTimeout(() => {;
       refresh();
     }, 100); // Small delay to prevent rapid successive refreshes;
-;
     return () => clearTimeout(timeoutId);
   }, [sortBy, filterCategory, showRecommended, refresh]);
-;
   const stats: unknown EquipmentStats = useMemo(;
     () => ({;
       averagePrice: Math.round(;
@@ -338,7 +329,7 @@ function EquipmentPageContent(): ;"
     [equipment],;
   )'
 ;
-  const const categories = useMemo(() => {;
+  const categories = useMemo(() => {;
     // Use all possible categories, not just from current items'
     return [;
       'AI Hardware',;
@@ -351,10 +342,10 @@ function EquipmentPageContent(): ;"
 ;
   const [showScrollTop, setShowScrollTop] = useState(false);
   useEffect(() => {'
-    const const handleScroll = () => setShowScrollTop(window.scrollY > 800);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => setShowScrollTop(window.scrollY > 800)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 '
   // Loading state;
   if (loading && equipment.length === 0) {;
@@ -364,8 +355,8 @@ function EquipmentPageContent(): ;"
         data-testid="loading-state-equipment-container"
       >;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           className="text-center mb-8"
         >;"
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
@@ -396,7 +387,7 @@ function EquipmentPageContent(): ;"
       errorMessage = String(error);"
     };"
     // Notify toast once for visibility (supports unit tests expectations);"
-    toast({ title: "errorMessage", variant: 'destructive' })'
+    toast({ title: errorMessage, variant: 'destructive' })'
     return (;
       <main className="container py-8">;"
         <div className="text-center space-y-4">;"
@@ -439,8 +430,8 @@ function EquipmentPageContent(): ;"
     <main className="container py-8">;"
       <motion.div;"
         className="text-center mb-8"
-        initial={{ opacity: "0", y: "-20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "-20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
       >;"
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
           Datacenter Equipment;"
@@ -452,8 +443,8 @@ function EquipmentPageContent(): ;"
 ;"
       {stats && (;"
         <motion.div;"
-          initial={{ opacity: "0", y: "20 "}};"
-          animate={{ opacity: "1", y: "0 "}};"
+          initial={{ opacity: 0, y: "20 "}};"
+          animate={{ opacity: 1, y: "0 "}};"
           transition={{ delay: "0.2 "}};
         >;
           <EquipmentMarketInsights stats={stats} />;"
@@ -461,8 +452,8 @@ function EquipmentPageContent(): ;"
       )};"
 ;"
       <motion.div;"
-        initial={{ opacity: "0", y: "20 "}};"
-        animate={{ opacity: "1", y: "0 "}};"
+        initial={{ opacity: 0, y: "20 "}};"
+        animate={{ opacity: 1, y: "0 "}};"
         transition={{ delay: "0.3 "}};
       >;
         <EquipmentFilterControls;
@@ -488,10 +479,10 @@ function EquipmentPageContent(): ;"
             <motion.div;"
               key={item.id};"
               ref={index === equipment.length - 1 ? lastElementRef : null};"
-              initial={{ opacity: "0", scale: "0.9 "}};"
-              animate={{ opacity: "1", scale: "1 "}};"
-              exit={{ opacity: "0", scale: "0.9 "}};"
-              transition={{ delay: "Math.min(index * 0.03", 0.5) }};"
+              initial={{ opacity: 0, scale: "0.9 "}};"
+              animate={{ opacity: 1, scale: "1 "}};"
+              exit={{ opacity: 0, scale: "0.9 "}};"
+              transition={{ delay: Math.min(index * 0.03, 0.5) }};"
               whileHover={{ _scale: "1.02 "}};"
             >;";"
               <EquipmentCard;"
@@ -555,16 +546,15 @@ function EquipmentPageContent(): ;"
             Showing {equipment.length} datacenter equipment items;
           </div>;
         </motion.div>;
-      )};
-;"
+      )};"
       <AnimatePresence>;";"
         {showScrollTop && (;"
           <motion.button;"
             onClick={scrollToTop};"
             className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
-            initial={{ opacity: "0", scale: "0 "}};"
-            animate={{ opacity: "1", scale: "1 "}};"
-            exit={{ opacity: "0", scale: "0 "}};"
+            initial={{ opacity: 0, scale: "0 "}};"
+            animate={{ opacity: 1, scale: "1 "}};"
+            exit={{ opacity: 0, scale: "0 "}};"
             whileHover={{ scale: "1.1 "}};"
             whileTap={{ scale: "0.9 "}};"
           >;"
@@ -575,7 +565,6 @@ function EquipmentPageContent(): ;"
     </main>;
   );
 };
-;
 // Main export with error boundary;
 export default function EquipmentPage(): ;
   return (;

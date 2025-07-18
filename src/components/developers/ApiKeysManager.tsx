@@ -58,7 +58,7 @@ import {;
 import CodeBlock from './CodeBlock'
 
 export function ApiKeysManager(): ;
-  const {;
+  const { ;
     keys,;
     loading,;
     newApiKey,;
@@ -66,9 +66,7 @@ export function ApiKeysManager(): ;
     createApiKey,;
     regenerateApiKey,;
     revokeApiKey,;
-    clearNewApiKey,;
-  } = useApiKeys();
-
+    clearNewApiKey,; } = useApiKeys();
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<string | null>(;
     null,);
@@ -85,7 +83,7 @@ export function ApiKeysManager(): ;
     fetchApiKeys()'
   });
 '
-  const const handleCreateKey = async () => {'
+  const handleCreateKey = async () => {'
     if (keyName.trim() === '' || selectedScopes.length === 0) return'
 
     await createApiKey(keyName, selectedScopes)'
@@ -94,19 +92,19 @@ export function ApiKeysManager(): ;
     setSelectedScopes([]);
   };
 
-  const const handleRegenerateKey = async (_keyId: string) => {;
+  const handleRegenerateKey = async (_keyId: string) => {;
     await regenerateApiKey(keyId);
     setShowRegenerateConfirm(null);
   };
 
-  const const handleRevokeKey = async (_keyId: string) => {;
+  const handleRevokeKey = async (_keyId: string) => {;
     await revokeApiKey(keyId)'
     setShowDeleteConfirm(null)'
   };
 '
   // Scope options'
   const scopeOptions: unknown "{,;";
-    value: "ApiKeyScope",;"";
+    value: ApiKeyScope,;"";
     label: string",;"
     description: string;"";
   }[] = [;"";
@@ -138,20 +136,20 @@ export function ApiKeysManager(): ;
   ];
 
   // Toggle a scope selection;
-  const const toggleScope = (_scope: ApiKeyScope) => {;
+  const toggleScope = (_scope: ApiKeyScope) => {;
     setSelectedScopes((prev) =>;
       prev.includes(scope) ? prev.filter((s) => s !== scope) : [...prev, scope],'
     )'
   };
 '
-  const const getExampleCode = (_key: string) => {'
+  const getExampleCode = (_key: string) => {'
     return `curl -X GET "_https://api.ziontechgroup.com/v1/jobs" \\;"
   -H Authorization: "Bearer ${key"} \\;"";
   -H "Content-Type: application/json"`
   };"
 ;";
   // Reset form when dialog closes";";
-  const const handleDialogClose = () => {"
+  const handleDialogClose = () => {"
     setKeyName('')'
     setSelectedScopes([])'
     setShowCreateDialog(false)'
@@ -166,8 +164,7 @@ export function ApiKeysManager(): ;
         <CardDescription className=text-zinc-400>"
           Create and manage API keys for accessing the Zion APIs."
         </CardDescription>;
-      </CardHeader>;"";
-;"";
+      </CardHeader>;"";"";
       <CardContent>;"";
         <div className="flex justify-between items-center mb-6">;"
           <p className=text-sm text-zinc-400">""
@@ -184,8 +181,7 @@ export function ApiKeysManager(): ;
                 <DialogDescription className=text-zinc-400">"
                   Generate a new API key for accessing the Zion APIs.;
                 </DialogDescription>;"";
-              </DialogHeader>;"";
-;"";
+              </DialogHeader>;"";"";
               <div className="space-y-4 py-4">;"
                 <div className=space-y-2">""
                   <Label htmlFor=key-name>Key Name</Label>";";
@@ -207,7 +203,7 @@ export function ApiKeysManager(): ;
                         className="flex items-center space-x-2
                       >;
                         <Checkbox;
-                          id={scope.value};
+                          id={scope.value};"
                           checked={selectedScopes.includes(scope.value)}"
                           onCheckedChange={() => toggleScope(scope.value)};"
                         />;";"
@@ -221,7 +217,7 @@ export function ApiKeysManager(): ;
                           </span>;
                         </Label>;
                       </div>;
-                    ))};
+                    ))};"
                   </div>"
                 </div>;"
               </div>;";"
@@ -267,7 +263,7 @@ export function ApiKeysManager(): ;
             <div className=text-sm text-zinc-400">""
               <span className=font-medium>Example usage:</span>";";
             </div>"
-            <CodeBlock code={getExampleCode(newApiKey)} language="bash />
+            <CodeBlock code={getExampleCode(newApiKey)} language="bash />"
           </div>;""
         )};"
 ";"
@@ -340,7 +336,7 @@ export function ApiKeysManager(): ;
                         className=cursor-pointer text-red-500"";
                         disabled={!key.is_active};"";
                       >;""
-                        <X size={14} className="mr-2 /> Revoke
+                        <X size={14} className="mr-2 /> Revoke"
                       </DropdownMenuItem>"
                     </DropdownMenuContent>;"
                   </DropdownMenu>;";"
@@ -356,8 +352,7 @@ export function ApiKeysManager(): ;
                       {scope}"
                     </Badge>;
                   ))};"";
-                </div>;"";
-;"";
+                </div>;"";"";
                 <div className="mt-3 text-xs text-zinc-500 flex items-center space-x-4">;"
                   <span>;";"
                     Created: {format(new Date(key.created_at)", 'MMM d, yyyy')}'
