@@ -1,98 +1,99 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';'
 import { toast } from 'sonner';
-import {
-  createJobPosting,
-  updateJobPosting,
-  getJobPostingById,
-  getJobPostingsByUserId,
-} from '@/services/jobPostingService';
-import type { JobSchemaType } from '@/components/jobs/job-posting/validation';
+import {;
+  createJobPosting,;
+  updateJobPosting,;
+  getJobPostingById,;
+  getJobPostingsByUserId,;'
+} from '@/services/jobPostingService';'
+import type { JobSchemaType } from '@/components/jobs/job-posting/validation';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useJobPostings = () => {
+;
+export const _useJobPostings: unknown unknown = () => {;
   const [isLoading, setIsLoading] = useState(false);
-
-  const createJob = useCallback(
-    async (_jobData: JobSchemaType & { user_id: string }) => {
+;
+  const createJob: unknown unknown = useCallback(;'
+    async (_jobData: "JobSchemaType & { user_id: string "}) => {;
       setIsLoading(true);
-      try {
-        const result = await createJobPosting(jobData);
+      try {;
+        const result: unknown unknown = await createJobPosting(jobData);"
         toast.success('Job posting created successfully!');
         return result;
-      } catch (error: unknown) {
-        logErrorToProduction('Error creating job posting:', { data: error });
-        const message =
-          error instanceof Error
-            ? error.message
+      } catch (error) {} catch (error: unknown) {;'
+        logErrorToProduction('Error creating job posting:', { data: "error "});
+        const message: unknown unknown =;
+          error instanceof Error;
+            ? error.message;"
             : 'Failed to create job posting';
         toast.error(message);
         throw error;
-      } finally {
+      } finally {;
         setIsLoading(false);
-      }
-    },
-    [],
+      };
+    },;
+    [],;
   );
-
-  const updateJob = useCallback(
-    async (jobId: string, _jobData: Partial<JobSchemaType>) => {
+;
+  const updateJob: unknown unknown = useCallback(;'
+    async (jobId: "string", _jobData: Partial<JobSchemaType>) => {;
       setIsLoading(true);
-      try {
-        const result = await updateJobPosting(jobId, jobData);
+      try {;
+        const result: unknown unknown = await updateJobPosting(jobId, jobData);"
         toast.success('Job posting updated successfully!');
         return result;
-      } catch (error: unknown) {
-        logErrorToProduction('Error updating job posting:', { data: error });
-        const message =
-          error instanceof Error
-            ? error.message
+      } catch (error) {} catch (error: unknown) {;'
+        logErrorToProduction('Error updating job posting:', { data: "error "});
+        const message: unknown unknown =;
+          error instanceof Error;
+            ? error.message;"
             : 'Failed to update job posting';
         toast.error(message);
         throw error;
-      } finally {
+      } finally {;
         setIsLoading(false);
-      }
-    },
-    [],
+      };
+    },;
+    [],;
   );
-
-  const getJobById = useCallback(async (_jobId: string) => {
+;
+  const getJobById: unknown unknown = useCallback(async (_jobId: string) => {;
     setIsLoading(true);
-    try {
-      const result = await getJobPostingById(jobId);
+    try {;
+      const result: unknown unknown = await getJobPostingById(jobId);
       return result;
-    } catch (error: unknown) {
-      logErrorToProduction('Error fetching job posting:', { data: error });
-      const message =
+    } catch (error) {} catch (error: unknown) {;'
+      logErrorToProduction('Error fetching job posting:', { data: "error "});
+      const message: unknown unknown =;"
         error instanceof Error ? error.message : 'Failed to fetch job posting';
       toast.error(message);
       throw error;
-    } finally {
+    } finally {;
       setIsLoading(false);
-    }
+    };
   }, []);
-
-  const getJobsByUserId = useCallback(async (_userId: string) => {
+;
+  const getJobsByUserId: unknown unknown = useCallback(async (_userId: string) => {;
     setIsLoading(true);
-    try {
-      const result = await getJobPostingsByUserId(userId);
+    try {;
+      const result: unknown unknown = await getJobPostingsByUserId(userId);
       return result;
-    } catch (error: unknown) {
-      logErrorToProduction('Error fetching job postings:', { data: error });
-      const message =
+    } catch (error) {} catch (error: unknown) {;'
+      logErrorToProduction('Error fetching job postings:', { data: "error "});
+      const message: unknown unknown =;"
         error instanceof Error ? error.message : 'Failed to fetch job postings';
       toast.error(message);
       throw error;
-    } finally {
+    } finally {;
       setIsLoading(false);
-    }
+    };
   }, []);
-
-  return {
-    createJob,
-    updateJob,
-    getJobById,
-    getJobsByUserId,
-    isLoading,
+;
+  return {;
+    createJob,;
+    updateJob,;
+    getJobById,;
+    getJobsByUserId,;
+    isLoading,;
   };
 };
+'

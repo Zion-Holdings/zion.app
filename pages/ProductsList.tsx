@@ -1,3 +1,3 @@
 import React from 'react';
-const ProductsList = () => <div>Products List Placeholder</div>;
-export default ProductsList; 
+const ProductsList: unknown unknown = () => <div>Products List Placeholder</div>;
+export default ProductsList; '

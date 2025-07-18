@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react';'
 import { useAnalytics } from '@/context/AnalyticsContext';
-
-/**
- * Track feature usage when a component mounts.
- * @param feature Name of the feature being used
- */
-export function useFeatureUsage(feature: string) {
+;
+/**;
+ * Track feature usage when a component mounts.;
+ * @param feature Name of the feature being used;
+ */;
+export function useFeatureUsage(): unknown {feature: string) {;
   const { _trackEvent } = useAnalytics();
-
-  useEffect(() => {
-    if (feature) {
+;
+  useEffect(() => {;
+    if (feature) {;'
       trackEvent('feature_usage', { feature });
-    }
-    // we only want to run this once on mount
+    };
+    // we only want to run this once on mount;
   }, []);
-}
+};
+'

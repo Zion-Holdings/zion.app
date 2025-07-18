@@ -1,45 +1,46 @@
-// Content analysis functionality
-import { suspiciousPhrases } from './constants';
+// Content analysis functionality;
+import { suspiciousPhrases } from './constants';'
 import type { AnalysisResult } from './types';
-
-/**
- * Analyzes text content for suspicious patterns
- */
-export const analyzeContent = (content: string): AnalysisResult => {
-  const contentLower = content.toLowerCase();
-  const reasons: string[] = [];
-
-  // Check for suspicious phrases
-  for (const phrase of suspiciousPhrases) {
-    if (contentLower.includes(phrase.toLowerCase())) {
+;
+/**;
+ * Analyzes text content for suspicious patterns;
+ */;
+export const _analyzeContent: unknown unknown = (content: string): AnalysisResult => {;
+  const contentLower: unknown unknown = content.toLowerCase();
+  const reasons: unknown string[] = [];
+;
+  // Check for suspicious phrases;
+  for (const phrase of suspiciousPhrases) {;
+    if (contentLower.includes(phrase.toLowerCase())) {;'
       reasons.push(`Contains suspicious phrase: "${phrase}"`);
-    }
-  }
-
-  // Check for links (simplified check)
-  const hasExternalLinks = /(https?:\/\/|www\.)[^\s]+/g.test(contentLower);
-  if (
-    hasExternalLinks &&
-    (contentLower.includes('payment') ||
-      contentLower.includes('money') ||
-      contentLower.includes('deal'))
-  ) {
+    };
+  };
+;
+  // Check for links (simplified check);
+  const hasExternalLinks: unknown unknown = /(https?:\/\/|www\.)[^\s]+/g.test(contentLower);
+  if (;
+    hasExternalLinks &&;"
+    (contentLower.includes('payment') ||;'
+      contentLower.includes('money') ||;'
+      contentLower.includes('deal'));
+  ) {;'
     reasons.push('Contains external payment links');
-  }
-
-  // Check for excessive capitalization (potential scam)
-  const capitalRatio = (content.match(/[A-Z]/g) || []).length / content.length;
-  if (capitalRatio > 0.3 && content.length > 20) {
+  };
+;
+  // Check for excessive capitalization (potential scam);
+  const capitalRatio: unknown unknown = (content.match(/[A-Z]/g) || []).length / content.length;
+  if (capitalRatio > 0.3 && content.length > 20) {;'
     reasons.push('Excessive capitalization');
-  }
-
-  // Check for poor grammar with repetitive punctuation
-  if (/[!?]{3,}/.test(content)) {
+  };
+;
+  // Check for poor grammar with repetitive punctuation;
+  if (/[!?]{3,}/.test(content)) {;'
     reasons.push('Suspicious punctuation pattern');
-  }
-
-  return {
-    isSuspicious: reasons.length > 0,
-    reasons,
+  };
+;
+  return {;'
+    isSuspicious: "reasons.length > 0",;
+    reasons,;
   };
 };
+"

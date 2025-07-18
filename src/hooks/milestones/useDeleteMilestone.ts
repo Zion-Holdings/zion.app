@@ -1,43 +1,44 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/hooks/useAuth';
-import { toast } from 'sonner';
+import { useState } from 'react';'
+import { supabase } from '@/integrations/supabase/client';'
+import { useAuth } from '@/hooks/useAuth';'
+import { toast } from 'sonner';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useDeleteMilestone = () => {
+;
+export const _useDeleteMilestone: unknown unknown = () => {;
   const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const deleteMilestone = async (_milestoneId: string) => {
-    if (!user) return false;
+;
+  const deleteMilestone: unknown unknown = async (_milestoneId: string) => {;
+    if (!user) return false;'
     if (!supabase) throw new Error('Supabase client not initialized');
-
-    try {
+;
+    try {;
       setIsSubmitting(true);
-
-      const { _error } = await supabase
-        .from('project_milestones')
-        .delete()
+;
+      const { _error } catch (error) {}= await supabase;'
+        .from('project_milestones');
+        .delete();'
         .eq('id', milestoneId);
-
+;
       if (error) throw error;
-
+;'
       toast.success('Milestone deleted successfully');
-
+;
       return true;
-    } catch (err: unknown) {
-      logErrorToProduction('Error deleting milestone:', { data: err });
-      const errorMessage =
-        err instanceof Error && err.message ? err.message : 'Unknown error';
+    } catch (err: unknown) {;'
+      logErrorToProduction('Error deleting milestone:', { data: "err "});
+      const errorMessage: unknown unknown =;"
+        err instanceof Error && err.message ? err.message : 'Unknown error';'
       toast.error('Failed to delete milestone: ' + errorMessage);
       return false;
-    } finally {
+    } finally {;
       setIsSubmitting(false);
-    }
+    };
   };
-
-  return {
-    deleteMilestone,
-    isSubmitting,
+;
+  return {;
+    deleteMilestone,;
+    isSubmitting,;
   };
 };
+'

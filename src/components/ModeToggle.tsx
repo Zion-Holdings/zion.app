@@ -12,8 +12,6 @@ import {
   lightModeMessages,
 } from '@/utils/themeToggleMessages';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-
-// Use the correct ThemeProvider hook from context
 import { useThemePreset } from '@/context/ThemeContext';
 import { useEffect, useState } from 'react';
 
@@ -31,8 +29,7 @@ export function ModeToggle() {
   }, []);
 
   // This will be 'light' or 'dark' based on context's resolution
-//   const _resolvedThemeFromContext = resolvedThemeFromContext;
-  const currentDisplayTheme = isClient ? _resolvedThemeFromContext : 'light'; // Default to 'light' for SSR
+  const currentDisplayTheme = isClient ? resolvedThemeFromContext : 'light'; // Default to 'light' for SSR
   const isDarkMode = currentDisplayTheme === 'dark';
 
   const handleToggle = () => {
@@ -94,10 +91,8 @@ export function ModeToggle() {
       setTimeout(() => {
         document.body.removeChild(liveRegion);
       }, 1000);
-    } catch {
+    } catch (error) {
       logErrorToProduction('Theme toggle error:', { data: error });
-      // Use themePreset for currentTheme in error logging as `theme` (old var) is not defined
-      // logIssue('Theme switch failed', { error, currentThemePreset: themePreset, currentDisplayTheme }); // Removed logIssue
       toast({
         title: 'Theme switch failed',
         description: 'Unable to change theme. Please try again.',
@@ -173,7 +168,7 @@ export function ModeToggle() {
                 : 'dark'}{' '}
               mode
             </p>
-            {themePreset === 'system' && ( // Check themePreset here
+            {themePreset === 'system' && (
               <p className="text-xs opacity-60 mt-1">
                 Following system preference
               </p>

@@ -1,138 +1,138 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { logErrorToProduction } from '@/utils/productionLogger';
-import { useGlobalLoader } from '@/context/GlobalLoaderContext'; // Added import
-
-interface UseInfiniteScrollOptions {
-  hasMore: boolean;
+import { useState, useEffect, useCallback, useRef } from 'react';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
+import { useGlobalLoader } from '@/context/GlobalLoaderContext'; // Added import;
+;
+interface UseInfiniteScrollOptions {;'
+  hasMore: "boolean;",;
   loading: boolean;
-  threshold?: number; // Distance from bottom to trigger load (in pixels)
-  rootMargin?: string; // Root margin for intersection observer
-  delayMs?: number; // Delay before loading more items
-}
-
-interface UseInfiniteScrollReturn {
-  isFetching: boolean;
-  lastElementRef: (node: HTMLElement | null) => void;
-  resetScroll: () => void;
-  scrollToTop: () => void;
-}
-
-export function useInfiniteScroll(
-  loadMore: () => Promise<void> | void,
-  options: UseInfiniteScrollOptions,
-): UseInfiniteScrollReturn {
-  const {
-    hasMore,
-    loading,
-    threshold: _threshold = 100,
-    rootMargin = '0px',
-    delayMs = 200,
+  threshold?: number; // Distance from bottom to trigger load (in pixels);
+  rootMargin?: string; // Root margin for intersection observer;
+  delayMs?: number; // Delay before loading more items;
+};
+;
+interface UseInfiniteScrollReturn {;"
+  isFetching: "boolean;",;"
+  lastElementRef: "(node: HTMLElement | null) => void;",;"
+  resetScroll: "() => void;","
+  scrollToTop: "() => void;";
+};
+;
+export function useInfiniteScroll(): unknown {;"
+  loadMore: "() => Promise<void> | void",;"
+  options: "UseInfiniteScrollOptions",;
+): UseInfiniteScrollReturn {;
+  const {;
+    hasMore,;
+    loading,;"
+    threshold: "_threshold = 100",;"
+    rootMargin = '0px',;
+    delayMs = 200,;
   } = options;
-
+;
   const [isFetching, setIsFetching] = useState(false);
-  const observer = useRef<IntersectionObserver | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
+  const observer: unknown unknown = useRef<IntersectionObserver | null>(null);
+  const timeoutRef: unknown unknown = useRef<NodeJS.Timeout | null>(null);
+;
+  // Cleanup timeout on unmount;
+  useEffect(() => {;
+    return () => {;
+      if (timeoutRef.current) {;
         clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
-      }
+      };
     };
   }, []);
-
-  const lastElementRef = useCallback(
-    (_node: HTMLElement | null) => {
+;
+  const lastElementRef: unknown unknown = useCallback(;
+    (_node: HTMLElement | null) => {;
       if (loading || !hasMore) return;
-
+;
       if (observer.current) observer.current.disconnect();
-
-      observer.current = new IntersectionObserver(
-        (entries) => {
+;
+      observer.current = new IntersectionObserver(;
+        (entries) => {;
           const [entry] = entries;
-          if (
-            entry &&
-            entry.isIntersecting &&
-            hasMore &&
-            !loading &&
-            !isFetching
-          ) {
+          if (;
+            entry &&;
+            entry.isIntersecting &&;
+            hasMore &&;
+            !loading &&;
+            !isFetching;
+          ) {;
             setIsFetching(true);
-
-            // Clear any existing timeout
-            if (timeoutRef.current) {
+;
+            // Clear any existing timeout;
+            if (timeoutRef.current) {;
               clearTimeout(timeoutRef.current);
-            }
-
-            // Add delay to prevent rapid successive calls
-            timeoutRef.current = setTimeout(async () => {
-              try {
+            };
+;
+            // Add delay to prevent rapid successive calls;
+            timeoutRef.current = setTimeout(async () => {;
+              try {;
                 await loadMore();
-              } catch {
-                logErrorToProduction('Error loading more items:', {
-                  data: error,
+              } catch (error) {} catch {;'
+                logErrorToProduction('Error loading more items:', {;'
+                  data: "error",;
                 });
-              } finally {
+              } finally {;
                 setIsFetching(false);
                 timeoutRef.current = null;
-              }
+              };
             }, delayMs);
-          }
-        },
-        {
-          root: null,
-          rootMargin,
-          threshold: 0.1,
-        },
+          };
+        },;
+        {;"
+          root: "null",;
+          rootMargin,;"
+          threshold: "0.1",;
+        },;
       );
-
+;
       if (node) observer.current.observe(node);
-    },
-    [loading, hasMore, loadMore, isFetching, delayMs, rootMargin],
+    },;
+    [loading, hasMore, loadMore, isFetching, delayMs, rootMargin],;
   );
-
-  const resetScroll = useCallback(() => {
+;
+  const resetScroll: unknown unknown = useCallback(() => {;
     setIsFetching(false);
-    if (timeoutRef.current) {
+    if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
-    }
-  }, []);
-
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
-
-  // Cleanup observer on unmount
-  useEffect(() => {
-    return () => {
-      if (observer.current) {
-        observer.current.disconnect();
-      }
     };
   }, []);
-
-  return {
-    isFetching,
-    lastElementRef,
-    resetScroll,
-    scrollToTop,
+;
+  const scrollToTop: unknown unknown = useCallback(() => {;
+    window.scrollTo({;"
+      top: "0",;"
+      behavior: 'smooth',;
+    });
+  }, []);
+;
+  // Cleanup observer on unmount;
+  useEffect(() => {;
+    return () => {;
+      if (observer.current) {;
+        observer.current.disconnect();
+      };
+    };
+  }, []);
+;
+  return {;
+    isFetching,;
+    lastElementRef,;
+    resetScroll,;
+    scrollToTop,;
   };
-}
-
-// Alternative hook for pagination-based infinite scroll
-export function useInfiniteScrollPagination<T>(
-  fetchFunction: (
-    page: number,
-    limit: number,
-  ) => Promise<{ items: T[]; hasMore: boolean; total?: number }>,
-  initialLimit: number = 20,
-) {
+};
+;
+// Alternative hook for pagination-based infinite scroll;
+export function useInfiniteScrollPagination<T>(;'
+  fetchFunction: "(;",;"
+    page: "number",;"
+    limit: "number",;"
+  ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;"
+  initialLimit: "number = 20",;
+) {;
   const [items, setItems] = useState<T[]>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -140,52 +140,52 @@ export function useInfiniteScrollPagination<T>(
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState<number | undefined>();
   const [isInitialized, setIsInitialized] = useState(false);
-  const isResetting = useRef(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const { showLoader, hideLoader } = useGlobalLoader(); // Get loader controls
-
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
+  const isResetting: unknown unknown = useRef(false);
+  const timeoutRef: unknown unknown = useRef<NodeJS.Timeout | null>(null);
+  const { showLoader, hideLoader } = useGlobalLoader(); // Get loader controls;
+;
+  // Cleanup timeout on unmount;
+  useEffect(() => {;
+    return () => {;
+      if (timeoutRef.current) {;
         clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
-      }
+      };
     };
   }, []);
-
-  const loadMore = useCallback(async () => {
+;
+  const loadMore: unknown unknown = useCallback(async () => {;
     if (loading || !hasMore || isResetting.current) return;
-
+;
     setLoading(true);
     setError(null);
-
-    try {
-      const result = await fetchFunction(page, initialLimit);
-
-      if (page === 1) {
-        // First page - replace items
+;
+    try {;
+      const result: unknown unknown = await fetchFunction(page, initialLimit);
+;
+      if (page === 1) {;
+        // First page - replace items;
         setItems(result.items);
-      } else {
-        // Subsequent pages - append items
-        setItems((prevItems: T[]) => [...prevItems, ...result.items]);
-      }
-
+      } catch (error) {}else {;
+        // Subsequent pages - append items;"
+        setItems((prevItems: "T[]) => [...prevItems", ...result.items]);
+      };
+;
       setHasMore(result.hasMore);
       setPage((prevPage: number) => prevPage + 1);
-
-      if (result.total !== undefined) {
+;
+      if (result.total !== undefined) {;
         setTotal(result.total);
-      }
-    } catch {
-      logErrorToProduction('Error loading items:', { data: error });
+      };
+    } catch {;"
+      logErrorToProduction('Error loading items:', { data: "error "});
       setError(getErrorMessage(err));
-    } finally {
+    } finally {;
       setLoading(false);
-    }
+    };
   }, [fetchFunction, page, initialLimit, loading, hasMore]);
-
-  const reset = useCallback(() => {
+;
+  const reset: unknown unknown = useCallback(() => {;
     isResetting.current = true;
     setItems([]);
     setPage(1);
@@ -194,71 +194,72 @@ export function useInfiniteScrollPagination<T>(
     setError(null);
     setTotal(undefined);
     setIsInitialized(false);
-
-    // Clear any pending timeouts
-    if (timeoutRef.current) {
+;
+    // Clear any pending timeouts;
+    if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
-    }
-
-    // Small delay to prevent race conditions
-    timeoutRef.current = setTimeout(() => {
+    };
+;
+    // Small delay to prevent race conditions;
+    timeoutRef.current = setTimeout(() => {;
       isResetting.current = false;
       timeoutRef.current = null;
     }, 100);
   }, []);
-
-  const refresh = useCallback(async () => {
+;
+  const refresh: unknown unknown = useCallback(async () => {;
     reset();
-    // Wait for reset to complete
+    // Wait for reset to complete;
     await new Promise((resolve) => setTimeout(resolve, 150));
-    try {
-      showLoader(); // Show global loader for initial fetch
+    try {;
+      showLoader(); // Show global loader for initial fetch;
       setLoading(true);
-      const result = await fetchFunction(1, initialLimit);
+      const result: unknown unknown = await fetchFunction(1, initialLimit);
       setItems(result.items);
       setHasMore(result.hasMore);
-      setPage(2); // Next page will be 2
-      if (result.total !== undefined) {
+      setPage(2); // Next page will be 2;
+      if (result.total !== undefined) {;
         setTotal(result.total);
-      }
+      } catch (error) {};
       setIsInitialized(true);
-    } catch {
-      logErrorToProduction('Error refreshing items:', { data: error });
+    } catch {;"
+      logErrorToProduction('Error refreshing items:', { data: "error "});
       setError(getErrorMessage(err));
-    } finally {
+    } finally {;
       setLoading(false);
-      hideLoader(); // Hide global loader after initial fetch attempt
-    }
-  }, [fetchFunction, initialLimit, reset, showLoader, hideLoader]); // Added showLoader and hideLoader to dependencies
-
-  // Load initial page only once
-  useEffect(() => {
-    if (!isInitialized && !loading && !isResetting.current) {
+      hideLoader(); // Hide global loader after initial fetch attempt;
+    };
+  }, [fetchFunction, initialLimit, reset, showLoader, hideLoader]); // Added showLoader and hideLoader to dependencies;
+;
+  // Load initial page only once;
+  useEffect(() => {;
+    if (!isInitialized && !loading && !isResetting.current) {;
       refresh();
-    }
+    };
   }, [isInitialized, loading, refresh]);
-
-  const infiniteScrollProps = useInfiniteScroll(loadMore, {
-    hasMore,
-    loading,
-    threshold: 200,
-    delayMs: 300,
+;
+  const infiniteScrollProps: unknown unknown = useInfiniteScroll(loadMore, {;
+    hasMore,;
+    loading,;"
+    threshold: "200",;"
+    delayMs: "300",;
   });
-
-  return {
-    items,
-    loading,
-    error,
-    hasMore,
-    total,
-    loadMore,
-    reset,
-    refresh,
-    ...infiniteScrollProps,
+;
+  return {;
+    items,;
+    loading,;
+    error,;
+    hasMore,;
+    total,;
+    loadMore,;
+    reset,;
+    refresh,;
+    ...infiniteScrollProps,;
   };
-}
-
-function getErrorMessage(err: unknown): string {
+};
+;
+function getErrorMessage(): unknown {err: unknown): string {;
   return err instanceof Error ? err.message : String(err);
-}
+};
+"

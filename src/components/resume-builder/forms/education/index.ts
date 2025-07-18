@@ -1,2 +1,3 @@
-export { EducationForm } from './EducationForm';
+export { EducationForm } from './EducationForm';'
 export * from './types';
+'

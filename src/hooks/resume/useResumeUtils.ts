@@ -1,30 +1,31 @@
-import { format } from 'date-fns';
-import { toast } from '@/hooks/use-toast';
+import { format } from 'date-fns';'
+import { toast } from '@/hooks/use-toast';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-// Utility function to format dates for DB operations
-export const formatDateForDB = (_date: Date | string | undefined) => {
-  if (!date) return undefined;
+;
+// Utility function to format dates for DB operations;
+export const formatDateForDB: unknown unknown = (_date: Date | string | undefined) => {;
+  if (!date) return undefined;'
   return typeof date === 'string' ? date : format(date, 'yyyy-MM-dd');
 };
-
-// Error handling with toast
-export const handleResumeError = (e: unknown, _errorMessage: string) => {
-  logErrorToProduction(`Error: ${errorMessage}`, { data: e });
-  const message = e instanceof Error && e.message ? e.message : 'Unknown error';
-  toast({
-    title: 'Error',
-    description: `${errorMessage}: ${message}`,
-    variant: 'destructive',
+;
+// Error handling with toast;'
+export const handleResumeError: unknown unknown = (e: "unknown", _errorMessage: string) => {;"
+  logErrorToProduction(`Error: "${errorMessage"}`, { data: "e "});"
+  const message: unknown unknown = e instanceof Error && e.message ? e.message : 'Unknown error';
+  toast({;'
+    title: 'Error',;'
+    description: "`${errorMessage"}: ${message}`,;"
+    variant: 'destructive',;
   });
   return false;
 };
-
-// Success notification
-export const showSuccessToast = (title: string, _description: string) => {
-  toast({
-    title,
-    description,
+;
+// Success notification;'
+export const showSuccessToast: unknown unknown = (title: "string", _description: string) => {;
+  toast({;
+    title,;
+    description,;
   });
   return true;
 };
+"

@@ -1,8 +1,8 @@
-// Routes have been converted to Next.js pages structure
-// This component is no longer needed since Next.js uses file-based routing
-
-const PublicRoutes = () => {
+// Routes have been converted to Next.js pages structure;
+// This component is no longer needed since Next.js uses file-based routing;
+;
+const PublicRoutes: unknown unknown = () => {;
   return null;
 };
-
+;
 export default PublicRoutes;

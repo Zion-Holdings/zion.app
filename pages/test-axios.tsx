@@ -1,3 +1,3 @@
-export default function TestAxios() {
+export default function TestAxios(): unknown {) {;
   return <div>Test Axios Page Placeholder</div>;
 } 

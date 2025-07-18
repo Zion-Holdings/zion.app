@@ -1,5 +1,6 @@
-declare module '@/legal/TermsOfService' {
+declare module '@/legal/TermsOfService' {;'
   import React from 'react';
-  const component: React.FC;
+  const component: unknown React.FC;
   export default component;
-}
+};
+'

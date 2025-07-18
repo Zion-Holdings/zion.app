@@ -1,123 +1,124 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';'
 import { safeStorage } from '@/utils/safeStorage';
-import type {
-  Notification,
-  FilterType,
-  NotificationContextType,
-} from './types';
-import createAxiosInstance from '@/lib/axios';
+import type {;
+  Notification,;
+  FilterType,;
+  NotificationContextType,;'
+} from './types';'
+import createAxiosInstance from '@/lib/axios';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useNotificationOperations = (
-  userId?: string,
-): NotificationContextType => {
+;
+export const _useNotificationOperations: unknown unknown = (;
+  userId?: string,;
+): NotificationContextType => {;
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(false);
-  const [filter, setFilter] = useState<FilterType>(
-    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',
+  const [filter, setFilter] = useState<FilterType>(;'
+    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',;
   );
-
-  useEffect(() => {
+;
+  useEffect(() => {;'
     safeStorage.setItem('notification_filter', filter);
   }, [filter]);
-
-  const fetchNotifications = useCallback(async () => {
+;
+  const fetchNotifications: unknown unknown = useCallback(async () => {;
     if (!userId) return;
-
+;
     setLoading(true);
-    try {
-      const axios = createAxiosInstance();
-      const res = await axios.get(`/api/notifications`, { params: { userId } });
+    try {;
+      const axios: unknown unknown = createAxiosInstance();'
+      const res: unknown unknown = await axios.get(`/api/notifications`, { params: "{ userId "} catch (error) {}});
       setNotifications(res.data || []);
-    } catch {
-      logErrorToProduction('Error fetching notifications:', { data: error });
-    } finally {
+    } catch {;"
+      logErrorToProduction('Error fetching notifications:', { data: "error "});
+    } finally {;
       setLoading(false);
-    }
+    };
   }, [userId]);
-
-  const markAsRead = useCallback(
-    async (_id: string) => {
+;
+  const markAsRead: unknown unknown = useCallback(;
+    async (_id: string) => {;
       if (!userId) return;
-
-      try {
-        const axios = createAxiosInstance();
-        await axios.patch(`/api/notifications/${id}`, { read: true });
+;
+      try {;
+        const axios: unknown unknown = createAxiosInstance();"
+        await axios.patch(`/api/notifications/${id} catch (error) {}`, { read: "true "});
         await fetchNotifications();
-      } catch {
-        logErrorToProduction('Error marking notification as read:', {
-          data: error,
+      } catch {;"
+        logErrorToProduction('Error marking notification as read:', {;'
+          data: "error",;
         });
-      }
-    },
-    [userId, fetchNotifications],
+      };
+    },;
+    [userId, fetchNotifications],;
   );
-
-  const markAllAsRead = useCallback(async () => {
+;
+  const markAllAsRead: unknown unknown = useCallback(async () => {;
     if (!userId) return;
-
-    try {
-      const axios = createAxiosInstance();
-      await Promise.all(
-        notifications
-          .filter((n) => !n.read)
-          .map((n) =>
-            axios.patch(`/api/notifications/${n.id}`, { read: true }),
-          ),
+;
+    try {;
+      const axios: unknown unknown = createAxiosInstance();
+      await Promise.all(;
+        notifications;
+          .filter((n) => !n.read);
+          .map((n) =>;"
+            axios.patch(`/api/notifications/${n.id} catch (error) {}`, { read: "true "}),;
+          ),;
       );
       await fetchNotifications();
-    } catch {
-      logErrorToProduction('Error marking all notifications as read:', {
-        data: error,
+    } catch {;"
+      logErrorToProduction('Error marking all notifications as read:', {;'
+        data: "error",;
       });
-    }
+    };
   }, [userId, fetchNotifications, notifications]);
-
-  const dismissNotification = useCallback(
-    async (_id: string) => {
+;
+  const dismissNotification: unknown unknown = useCallback(;
+    async (_id: string) => {;
       if (!userId) return;
-
-      try {
-        const axios = createAxiosInstance();
-        await axios.delete(`/api/notifications/${id}`);
+;
+      try {;
+        const axios: unknown unknown = createAxiosInstance();
+        await axios.delete(`/api/notifications/${id} catch (error) {}`);
         await fetchNotifications();
-      } catch {
-        logErrorToProduction('Error dismissing notification:', { data: error });
-      }
-    },
-    [userId, fetchNotifications],
+      } catch {;"
+        logErrorToProduction('Error dismissing notification:', { data: "error "});
+      };
+    },;
+    [userId, fetchNotifications],;
   );
-
-  const filteredNotifications = notifications.filter((notification) => {
-    switch (filter) {
-      case 'unread':
-        return !notification.read;
-      case 'messages':
-        return notification.type === 'message';
-      case 'onboarding':
-        return notification.type === 'onboarding';
-      case 'system':
-        return notification.type === 'system';
-      case 'orders':
+;
+  const filteredNotifications: unknown unknown = notifications.filter((notification) => {;
+    switch (filter) {;"
+      case 'unread':;
+        return !notification.read;'
+      case 'messages':;'
+        return notification.type === 'message';'
+      case 'onboarding':;'
+        return notification.type === 'onboarding';'
+      case 'system':;'
+        return notification.type === 'system';'
+      case 'orders':;'
         return notification.type === 'order_status';
-      default:
+      default:;
         return true;
-    }
+    };
   });
-
-  const unreadCount = notifications.filter((n) => !n.read).length;
-
-  return {
-    notifications,
-    filteredNotifications,
-    unreadCount,
-    loading,
-    filter,
-    markAsRead,
-    markAllAsRead,
-    dismissNotification,
-    setFilter,
-    fetchNotifications,
-    setNotifications,
+;
+  const unreadCount: unknown unknown = notifications.filter((n) => !n.read).length;
+;
+  return {;
+    notifications,;
+    filteredNotifications,;
+    unreadCount,;
+    loading,;
+    filter,;
+    markAsRead,;
+    markAllAsRead,;
+    dismissNotification,;
+    setFilter,;
+    fetchNotifications,;
+    setNotifications,;
   };
 };
+'

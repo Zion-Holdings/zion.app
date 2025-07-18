@@ -1,75 +1,76 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import PostForm from './PostForm';
-import { useAuth } from '@/hooks/useAuth';
-import { useToast } from '@/hooks/use-toast';
-import { useRouter } from 'next/router';
-import { mutate } from 'swr';
+import {;
+  Dialog,;
+  DialogContent,;
+  DialogHeader,;
+  DialogTitle,;
+} from '@/components/ui/dialog';'
+import PostForm from './PostForm';'
+import { useAuth } from '@/hooks/useAuth';'
+import { useToast } from '@/hooks/use-toast';'
+import { useRouter } from 'next/router';'
+import { mutate } from 'swr';'
 import type { ForumCategory } from '@/types/community';
-
-interface NewPostDialogProps {
-  open: boolean;
+;
+interface NewPostDialogProps {;'
+  open: "boolean;",;
   onOpenChange: (open: boolean) => void;
   initialCategory?: ForumCategory | null;
-}
-
-export function NewPostDialog({
-  open,
-  onOpenChange,
-  initialCategory,
-}: NewPostDialogProps) {
+};
+;
+export function NewPostDialog(): unknown {{;
+  open,;
+  onOpenChange,;
+  initialCategory,;
+}: NewPostDialogProps) {;
   const { _user } = useAuth();
   const { _toast } = useToast();
-  const router = useRouter();
-
-  const handleSubmit = async (_values: {
-    title: string;
-    content: string;
-    categoryId: ForumCategory;
-    tags: string;
-  }) => {
-    try {
-      toast({
-        title: 'Post created',
-        description: 'Your post has been published successfully',
-      });
-      if (user?.id) {
-        await fetch('/api/points/increment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: user.id, amount: 5, reason: 'post' }),
-        });
+  const router: unknown unknown = useRouter();
+;"
+  const handleSubmit: unknown unknown = async (_values: "{;",;"
+    title: "string;","
+    content: "string;",;"
+    categoryId: "ForumCategory;","
+    tags: "string;";
+  }) => {;
+    try {;
+      toast({;"
+        title: 'Post created',;'
+        description: 'Your post has been published successfully',;
+      } catch (error) {});
+      if (user?.id) {;'
+        await fetch('/api/points/increment', {;'
+          method: 'POST',;'
+          headers: { 'Content-Type': 'application/json' },;'
+          body: "JSON.stringify({ userId: user.id", amount: "5", reason: 'post' }),;
+        });'
         mutate('user');
-      }
+      };
       onOpenChange(false);
       router.push(`/community/category/${values.categoryId}`);
-    } catch {
-      toast({
-        title: 'Error',
-        description: 'There was a problem creating your post',
-        variant: 'destructive',
+    } catch {;
+      toast({;'
+        title: 'Error',;'
+        description: 'There was a problem creating your post',;'
+        variant: 'destructive',;
       });
-    }
+    };
   };
-
-  const initialValues = {
-    categoryId: initialCategory || 'project-help',
+;
+  const initialValues: unknown unknown = {;'
+    categoryId: initialCategory || 'project-help',;
   };
-
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-zion-blue-dark border border-zion-blue-light text-white max-w-2xl">
-        <DialogHeader>
-          <DialogTitle>Create New Post</DialogTitle>
-        </DialogHeader>
-        <PostForm initialValues={initialValues} onSubmit={handleSubmit} />
-      </DialogContent>
-    </Dialog>
+;
+  return (;
+    <Dialog open={open} onOpenChange={onOpenChange}>;'
+      <DialogContent className="bg-zion-blue-dark border border-zion-blue-light text-white max-w-2xl">;
+        <DialogHeader>;
+          <DialogTitle>Create New Post</DialogTitle>;
+        </DialogHeader>;
+        <PostForm initialValues={initialValues} onSubmit={handleSubmit} />;
+      </DialogContent>;
+    </Dialog>;
   );
-}
-
+};
+;
 export default NewPostDialog;
+"

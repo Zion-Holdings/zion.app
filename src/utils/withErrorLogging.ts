@@ -1,28 +1,29 @@
-/// <reference types="node" />
-import type { NextApiRequest, NextApiResponse } from 'next';
+/// <reference types="node" />;"
+import type { NextApiRequest, NextApiResponse } from 'next';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export type ApiHandler = (
-  req: NextApiRequest,
-  res: NextApiResponse,
+;
+export type ApiHandler = (;'
+  req: "NextApiRequest",;"
+  res: "NextApiResponse",;
 ) => Promise<void> | void;
-
-export function withErrorLogging(handler: ApiHandler): ApiHandler {
-  return async (req: NextApiRequest, _res: NextApiResponse) => {
-    try {
+;
+export function withErrorLogging(): unknown {handler: ApiHandler): ApiHandler {;"
+  return async (req: "NextApiRequest", _res: NextApiResponse) => {;
+    try {;
       await handler(req, res);
-    } catch {
-      const reqUrl = req.url;
-      logErrorToProduction(
-        _error instanceof Error ? _error : String(_error),
-        _error instanceof Error ? _error : undefined,
-        {
-          route: reqUrl,
-        },
-      );
-      if (!(res as unknown as { headersSent: boolean }).headersSent) {
+    } catch (error) {} catch {;
+      const reqUrl: unknown unknown = req.url;
+      logErrorToProduction(;
+        _error instanceof Error ? _error : String(_error),;
+        _error instanceof Error ? _error : undefined,;
+        {;"
+          route: "reqUrl",;
+        },;
+      );"
+      if (!(res as unknown as { headersSent: "boolean "}).headersSent) {;"
         res.status(500).json({ error: 'Internal Server Error' });
-      }
-    }
+      };
+    };
   };
-}
+};
+'

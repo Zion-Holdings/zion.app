@@ -1,6 +1,7 @@
-declare module 'stripe' {
-  const Stripe: { [key: string]: unknown };
+declare module 'stripe' {;'
+  const Stripe: unknown "{ [key: string]: unknown "};
   export default Stripe;
-}
-
+};
+;
 export {};
+"

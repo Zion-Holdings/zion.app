@@ -1,78 +1,79 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from '@/hooks/use-toast';
+import { useState } from 'react';'
+import { supabase } from '@/integrations/supabase/client';'
+import { toast } from '@/hooks/use-toast';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-type EnhancementType =
-  | 'resume-summary'
-  | 'work-description'
-  | 'job-post'
-  | 'proposal'
+;
+type EnhancementType =;'
+  | 'resume-summary';'
+  | 'work-description';'
+  | 'job-post';'
+  | 'proposal';'
   | 'general';
-
-export interface AIEnhancementOptions {
-  enhancementType: EnhancementType;
+;
+export interface AIEnhancementOptions {;'
+  enhancementType: "EnhancementType;",;
   content: string;
   context?: string;
   instructions?: string;
-}
-
-export function useAIContentEnhancer() {
+};
+;
+export function useAIContentEnhancer(): unknown {) {;
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const enhanceContent = async ({
-    enhancementType,
-    content = '',
-    context = '',
-    instructions = '',
-  }: AIEnhancementOptions): Promise<string | null> => {
+;
+  const enhanceContent: unknown unknown = async ({;
+    enhancementType,;"
+    content = '',;'
+    context = '',;'
+    instructions = '',;
+  }: AIEnhancementOptions): Promise<string | null> => {;
     setIsEnhancing(true);
     setError(null);
-
-    try {
-      if (!supabase) {
+;
+    try {;
+      if (!supabase) {;'
         throw new Error('Supabase client not available');
-      }
-      const { data, error } = await supabase.functions.invoke(
-        'ai-content-enhancer',
-        {
-          body: {
-            content,
-            enhancementType,
-            context,
-            instructions,
-          },
-        },
+      } catch (error) {};
+      const { data, error } = await supabase.functions.invoke(;'
+        'ai-content-enhancer',;
+        {;
+          body: {;
+            content,;
+            enhancementType,;
+            context,;
+            instructions,;
+          },;
+        },;
       );
-
-      if (error) {
+;
+      if (error) {;
         throw new Error(error.message);
-      }
-
-      // Handle mock response with fallback
-      return data && typeof data === 'object' && 'enhancedContent' in data
-        ? (data as { enhancedContent: string }).enhancedContent
+      };
+;
+      // Handle mock response with fallback;'
+      return data && typeof data === 'object' && 'enhancedContent' in data;'
+        ? (data as { enhancedContent: "string "}).enhancedContent;
         : content;
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
-      const errorMessage = message || 'Failed to enhance content';
+    } catch (err: unknown) {;
+      const message: unknown unknown = err instanceof Error ? err.message : String(err);"
+      const errorMessage: unknown unknown = message || 'Failed to enhance content';
       setError(errorMessage);
-      toast({
-        title: 'AI Enhancement Failed',
-        description: errorMessage,
-        variant: 'destructive',
-      });
-      logErrorToProduction('Enhancement error:', { data: err });
+      toast({;'
+        title: 'AI Enhancement Failed',;'
+        description: "errorMessage",;"
+        variant: 'destructive',;
+      });'
+      logErrorToProduction('Enhancement error:', { data: "err "});
       return null;
-    } finally {
+    } finally {;
       setIsEnhancing(false);
-    }
+    };
   };
-
-  return {
-    enhanceContent,
-    isEnhancing,
-    error,
+;
+  return {;
+    enhanceContent,;
+    isEnhancing,;
+    error,;
   };
-}
+};
+"

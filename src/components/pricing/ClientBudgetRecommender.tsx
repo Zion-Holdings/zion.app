@@ -1,107 +1,108 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import React, { useState } from 'react';'
+import { Button } from '@/components/ui/button';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
 import { Sparkles } from 'lucide-react';
-import {
-  getClientBudgetSuggestion,
-  trackPricingSuggestion,
+import {;
+  getClientBudgetSuggestion,;
+  trackPricingSuggestion,;'
 } from '@/services/pricingSuggestionService';
-import type {
-  PricingSuggestion,
-  ClientBudgetParams,
-} from '@/services/pricingSuggestionService';
-import { PricingSuggestionBox } from './PricingSuggestionBox';
+import type {;
+  PricingSuggestion,;
+  ClientBudgetParams,;'
+} from '@/services/pricingSuggestionService';'
+import { PricingSuggestionBox } from './PricingSuggestionBox';'
 import { useAuth } from '@/hooks/useAuth';
-
-interface ClientBudgetRecommenderProps {
-  jobTitle: string;
+;
+interface ClientBudgetRecommenderProps {;'
+  jobTitle: "string;",;
   category: string;
   timeline?: string;
   scope?: string;
-  experienceLevel?: string;
-  onSuggestionApplied: (minValue: number, maxValue: number) => void;
-}
-
-export const ClientBudgetRecommender: React.FC<
-  ClientBudgetRecommenderProps
-> = ({
-  jobTitle,
-  category,
-  timeline,
-  scope,
-  experienceLevel,
-  onSuggestionApplied,
-}) => {
+  experienceLevel?: string;"
+  onSuggestionApplied: "(minValue: number", maxValue: "number) => void;";
+};
+;
+export const ClientBudgetRecommender: unknown React.FC<;
+  ClientBudgetRecommenderProps;
+> = ({;
+  jobTitle,;
+  category,;
+  timeline,;
+  scope,;
+  experienceLevel,;
+  onSuggestionApplied,;
+}) => {;
   const [isLoading, setIsLoading] = useState(false);
   const [suggestion, setSuggestion] = useState<PricingSuggestion | null>(null);
   const { _user } = useAuth();
-
-  const generateSuggestion = async () => {
-    if (!jobTitle || !category) {
+;
+  const generateSuggestion: unknown unknown = async () => {;
+    if (!jobTitle || !category) {;
       return;
-    }
-
+    };
+;
     setIsLoading(true);
-    try {
-      const params: ClientBudgetParams = {
-        jobTitle,
-        category,
-      };
-
+    try {;
+      const params: unknown ClientBudgetParams = {;
+        jobTitle,;
+        category,;
+      } catch (error) {};
+;
       if (timeline) params.timeline = timeline;
       if (scope) params.scope = scope;
       if (experienceLevel) params.experienceLevel = experienceLevel;
-
-      const result = await getClientBudgetSuggestion(params);
+;
+      const result: unknown unknown = await getClientBudgetSuggestion(params);
       setSuggestion(result);
-    } catch {
-      logErrorToProduction('Error generating budget suggestion:', {
-        data: error,
+    } catch {;"
+      logErrorToProduction('Error generating budget suggestion:', {;'
+        data: "error",;
       });
-    } finally {
+    } finally {;
       setIsLoading(false);
-    }
+    };
   };
-
-  const handleApplySuggestion = () => {
-    if (suggestion) {
+;
+  const handleApplySuggestion: unknown unknown = () => {;
+    if (suggestion) {;
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate);
-
-      // Track this suggestion application
-      if (user && user.id) {
-        trackPricingSuggestion({
-          userId: user.id,
-          suggestionType: 'client',
-          suggestedMin: suggestion.minRate,
-          suggestedMax: suggestion.maxRate,
-          accepted: true,
+;
+      // Track this suggestion application;
+      if (user && user.id) {;
+        trackPricingSuggestion({;"
+          userId: "user.id",;"
+          suggestionType: 'client',;'
+          suggestedMin: "suggestion.minRate",;"
+          suggestedMax: "suggestion.maxRate",;"
+          accepted: "true",;
         });
-      }
-    }
+      };
+    };
   };
-
-  return (
-    <div className="space-y-4">
-      <div>
-        {!suggestion && !isLoading ? (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={generateSuggestion}
-            disabled={!jobTitle || !category}
-            className="w-full"
-          >
-            <Sparkles className="h-4 w-4 mr-2" /> Get Budget Recommendation
-          </Button>
-        ) : (
-          <PricingSuggestionBox
-            suggestion={suggestion}
-            isLoading={isLoading}
-            onApplySuggestion={handleApplySuggestion}
-            rateType="hourly"
-          />
-        )}
-      </div>
-    </div>
+;
+  return (;"
+    <div className="space-y-4">;
+      <div>;
+        {!suggestion && !isLoading ? (;
+          <Button;"
+            type="button";"
+            variant="outline";
+            onClick={generateSuggestion};
+            disabled={!jobTitle || !category};"
+            className="w-full";
+          >;"
+            <Sparkles className="h-4 w-4 mr-2" /> Get Budget Recommendation;
+          </Button>;
+        ) : (;
+          <PricingSuggestionBox;
+            suggestion={suggestion};
+            isLoading={isLoading};
+            onApplySuggestion={handleApplySuggestion};"
+            rateType="hourly";
+          />;
+        )};
+      </div>;
+    </div>;
   );
 };
+"
