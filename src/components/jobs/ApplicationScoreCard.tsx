@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Loader2, Star, BarChart2, Lightbulb } from '@/components/ui/icons';
+import { Loader2, Star, BarChart, Lightbulb } from '@/components/ui/icons';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -139,7 +139,7 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
             {/* Summary */}
             <div className="flex items-start mb-4">
               <div className="p-2 bg-primary/10 rounded-full mr-3 mt-0.5">
-                <BarChart2 className="h-5 w-5 text-primary" />
+                <BarChart className="h-5 w-5 text-primary" />
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Summary</div>
