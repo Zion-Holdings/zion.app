@@ -27,7 +27,7 @@ function isValidIntercomAppId(): unknown {): unknown {): unknown {): unknown {):
   return /^[a-zA-Z0-9]{6,}$/.test(appId);
 };
 
-export default function IntercomChat(): ;
+export defaultault function IntercomChat(): ;
   useEffect(() => {'
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID'
 

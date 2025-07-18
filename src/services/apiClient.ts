@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client'
 import axiosRetry from 'axios-retry'
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger'
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
-import { AxiosHeaders } from 'axios;;
+import { AxiosHeaders } from 'axios;
 '
 axios.defaults.baseURL =;
   process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1;

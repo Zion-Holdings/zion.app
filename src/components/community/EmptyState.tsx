@@ -48,5 +48,5 @@ const EmptyState: unknown React.FC<EmptyStateProps> = ({;
   )
 };"
 ;";
-export default EmptyState";";
+export defaultault EmptyState";";
 """

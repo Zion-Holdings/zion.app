@@ -685,5 +685,5 @@ export const AdvancedSearchResults: unknown React.FC = () => {
   )'
 }'
 
-export default AdvancedSearchResults'
+export defaultault AdvancedSearchResults'
 '''''

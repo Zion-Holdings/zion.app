@@ -1,4 +1,4 @@
-import { logWarn } from '@/utils/productionLogger;;
+import { logWarn } from '@/utils/productionLogger;
 '
 /**;
  * IMMEDIATE Process Polyfill;

@@ -9,9 +9,9 @@ import type { TokenTransaction } from '@/types/tokens'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { useToast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export default function TokenManager(): ;
+export defaultault function TokenManager(): ;
   const { _user } = useAuth();
   const { _toast } = useToast()'
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);

@@ -72,5 +72,5 @@ const NAV_ITEMS = [;
   );"
 };";"
 ;"
-export default DocsPage;"
+export defaultault DocsPage;"
 """""

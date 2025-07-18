@@ -14,7 +14,7 @@ function decodeToken(token) {
   }
 }
 ;
-export default function OAuthCallback() {
+export defaultault function OAuthCallback() {
   const router = useRouter(); // Initialized router
   // location is now router
   const { setUser } = useAuth();

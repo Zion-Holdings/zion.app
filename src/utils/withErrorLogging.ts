@@ -1,6 +1,6 @@
 /// <reference types="node" />;"
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export type ApiHandler = (;
   req: "NextApiRequest"

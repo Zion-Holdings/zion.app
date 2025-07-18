@@ -23,7 +23,7 @@ interface GuestCheckoutModalProps {'
   onSubmit: (details: { email: string; address: string "}) => void"
 };
 
-export default function GuestCheckoutModal(): unknown {): unknown {): unknown {): unknown {): unknown {{
+export defaultault function GuestCheckoutModal(): unknown {): unknown {): unknown {): unknown {): unknown {{
   open,;"
   onOpenChange,;";
   onSubmit,";";

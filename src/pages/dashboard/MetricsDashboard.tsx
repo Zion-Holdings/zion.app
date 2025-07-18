@@ -10,7 +10,7 @@ import  { ProtectedRoute }  from '@/components/ProtectedRoute;
 interface MetricsDashboardProps {
   adminView?: boolean';
 }';
-export default function MetricsDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+export defaultault function MetricsDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   adminView = false,;
 }: MetricsDashboardProps) {;
   const [internalOnly, setInternalOnly] = useState(adminView)'

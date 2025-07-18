@@ -166,5 +166,5 @@ export const AppFallback: unknown "React.FC<AppFallbackProps> = ({ error, retry 
   )'
 }'
 
-export default AppFallback'
+export defaultault AppFallback'
 '''''

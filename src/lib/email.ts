@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 '
 interface EmailOptions {
   to: "string"

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Header } from '@/components/Header'
-import { ShieldAlert } from '@/components/ui/icons;;
-import { useTranslation } from 'react-i18next;;
-export default function Unauthorized(): '
+import { ShieldAlert } from '@/components/ui/icons;
+import { useTranslation } from 'react-i18next;
+export defaultault function Unauthorized(): '
   const { t } = useTranslation();
   return (;
     <>'

@@ -1,7 +1,7 @@
 /// <reference types="node" />;"
 import { createServerClient } from '@supabase/ssr'
 import { type NextApiRequest, type NextApiResponse } from 'next';
-import { type GetServerSidePropsContext } from 'next/types;;
+import { type GetServerSidePropsContext } from 'next/types;
 '
 // For API routes;
 export function createClient(): unknown {): unknown {): unknown {): unknown {): unknown {req: NextApiRequest, res: NextApiResponse) {;

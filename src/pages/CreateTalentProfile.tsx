@@ -1,6 +1,6 @@
 import React from 'react';
-import { TalentRegistrationForm } from '@/components/profile/TalentRegistrationForm;;
-export default function CreateTalentProfile(): '
+import { TalentRegistrationForm } from '@/components/profile/TalentRegistrationForm;
+export defaultault function CreateTalentProfile(): '
   return (;
     <div className="bg-zion-blue min-h-screen py-8 md:py-12">;"
       <div className="container mx-auto px-4">;"

@@ -108,7 +108,7 @@ export function SearchTabs(): unknown {): unknown {): unknown {): unknown {): un
   )
 };""
 
-export default SearchTabs
+export defaultault SearchTabs
 "
 }"
 }

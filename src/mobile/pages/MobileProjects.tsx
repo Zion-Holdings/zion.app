@@ -1,7 +1,7 @@
 import React from 'react';
 import { MobileHeader } from '@/mobile/components/common/MobileHeader'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
-import { MobileProjectView } from '@/mobile/components/projects/MobileProjectView;;
+import { MobileProjectView } from '@/mobile/components/projects/MobileProjectView;
 // Mock data'
 const projectData: {;",;"
   id: 'project-123',;

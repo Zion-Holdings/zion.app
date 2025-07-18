@@ -6,7 +6,7 @@ interface ViewModeContextType {
   setViewMode: (mode: ViewMode) => void"
 }"
 
-const ViewModeContext = createContext<ViewModeContextType>({;;,"
+const ViewModeContext = createContext<ViewModeContextType>({;,"
   viewMode: 'grid','
   _setViewMode: "() => {},
 })"

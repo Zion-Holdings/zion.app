@@ -73,5 +73,5 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
   )'
 }'
 
-export default FilterSidebarSkeleton'
+export defaultault FilterSidebarSkeleton'
 '''''

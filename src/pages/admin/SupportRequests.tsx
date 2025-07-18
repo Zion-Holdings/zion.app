@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Search, Filter }  from '@/components/ui/icons;;
-import {;;
+import { Search, Filter }  from '@/components/ui/icons;
+import {;
   Card,'
   CardContent,;
   CardDescription,;
@@ -9,8 +9,8 @@ import {;;
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;;
-import {;;
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -29,5 +29,5 @@ import { SEO } from '@/components/SEO'
 ;
 // Remove all commented-out references to MOCK_SUPPORT_REQUESTS and any remaining TODOs about mock data. Only real API integration and empty state logic remain.;
 '
-export default function SupportRequests(): ;
+export defaultault function SupportRequests(): ;
   const [searchQuery, setSearchQuery] = useState('');

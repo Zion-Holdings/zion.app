@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Check } from '@/components/ui/icons'
 // import { Button } from "@/components/ui/button"
-import { Card, CardContent } from '@/components/ui/card;;
+import { Card, CardContent } from '@/components/ui/card;
 type UserRole = 'talent' | 'client' | null;
 '
 interface RolePickerProps {

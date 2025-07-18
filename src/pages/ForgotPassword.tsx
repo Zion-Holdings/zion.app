@@ -4,10 +4,10 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 import axios from 'axios'
-import  { logErrorToProduction }  from '@/utils/productionLogger;;
+import  { logErrorToProduction }  from '@/utils/productionLogger;
 const API_URL = process.env.NEXT_PUBLIC_API_URL ||';
 '
-export default function ForgotPassword(): ;
+export defaultault function ForgotPassword(): ;
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

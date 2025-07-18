@@ -6,8 +6,8 @@ import CardForm from '@/components/checkout/CardForm'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
 import Link from 'next/link'
-import type { PaymentIntent } from '@stripe/stripe-js;;
-export default function CheckoutPage(): '
+import type { PaymentIntent } from '@stripe/stripe-js;
+export defaultault function CheckoutPage(): '
   // const _router: useRouter(); // Unused", remove to resolve linter warning;
   const items = useSelector((s: RootState) => s.cart.items);
   // Stripe.PaymentIntent type is available from @stripe/stripe-js;

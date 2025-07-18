@@ -2,7 +2,7 @@ import { AchievementBadges } from '@/components/gamification/AchievementBadges'
 import type { Achievement } from '@/components/gamification/AchievementBadges'
 import { UserProgress } from '@/components/gamification/UserProgress'
 import { UserLeaderboard } from '@/components/gamification/UserLeaderboard'
-import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard;;
+import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard;
 const ACHIEVEMENTS: unknown Achievement[] = ['
   {;
     id: 'profile',;
@@ -30,7 +30,7 @@ const LEADERBOARD: unknown LeaderboardEntry[] = [;"
   { name: 'Carol', points: "780 "},;"
 ];";"
 ;"
-export default function AchievementsPage(): ;"
+export defaultault function AchievementsPage(): ;"
   return (;"
     <div className="container max-w-3xl py-10 space-y-6">;"
       <h1 className="text-3xl font-bold">Achievements</h1>;

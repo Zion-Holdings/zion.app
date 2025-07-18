@@ -3,4 +3,4 @@
 const DashboardRoutes = () => {;
   return null;
 };
-export default DashboardRoutes;
+export defaultault DashboardRoutes;

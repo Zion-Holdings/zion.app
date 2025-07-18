@@ -1,9 +1,9 @@
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { ZionBrainDashboard } from '@/components/admin/zion-brain;;
+import { ZionBrainDashboard } from '@/components/admin/zion-brain;
 '
-export default function ZionBrain(): ;
+export defaultault function ZionBrain(): ;
   return (;
     <ProtectedRoute adminOnly={true}>'
       <SEO;

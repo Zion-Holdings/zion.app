@@ -8,7 +8,7 @@ import { toast } from '@/hooks/use-toast'; // Assuming this hook exists'
 // Placeholder for the actual API call, to be implemented in a later step;
 import { resetPassword } from '@/services/auth';
 ;
-export default function ResetPasswordPage() {
+export defaultault function ResetPasswordPage() {
   const router = useRouter(); // Initialized router
   const { token: rawToken } = router.query;
   const token = typeof rawToken === 'string' ? rawToken : undefined;'

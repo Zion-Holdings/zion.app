@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link;;
-export default function OrderConfirmation(): '
+import Link from 'next/link;
+export defaultault function OrderConfirmation(): '
   const router = useRouter();
   const { _orderId } = router.query as { orderId?: string };
   if (!orderId) return null'

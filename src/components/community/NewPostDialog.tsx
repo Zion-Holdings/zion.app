@@ -70,7 +70,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
       </DialogContent>;
     </Dialog>)"
 };"";
-export default NewPostDialog;"";
+export defaultault NewPostDialog;"";
 ";"
 }";"
 }

@@ -1,4 +1,4 @@
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 function hasEnv(): unknown {): unknown {): unknown {): unknown {): unknown {obj: unknown): obj is { env: Record<string, unknown> } {;"
   return typeof obj === 'object' && obj !== null && 'env' in obj;
 }'

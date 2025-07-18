@@ -5,9 +5,9 @@ import { Card, CardContent } from '@/components/ui/card'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
-import { CAREER_JOBS } from '@/data/careersJobs;;
+import { CAREER_JOBS } from '@/data/careersJobs;
 '
-export default function Careers(): ;
+export defaultault function Careers(): ;
   const applyEmail = 'careers@ziontechgroup.com;
   const jobs = CAREER_JOBS;
 '

@@ -235,7 +235,7 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
   )
 };"
 ;";
-export default AuthConfigurationError";";
+export defaultault AuthConfigurationError";";
 "";
 }"";
 }"

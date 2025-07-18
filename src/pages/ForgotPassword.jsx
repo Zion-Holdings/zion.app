@@ -43,4 +43,4 @@ const ForgotPassword = () => {
   );
 };
 ;
-export default ForgotPassword;
+export defaultault ForgotPassword;

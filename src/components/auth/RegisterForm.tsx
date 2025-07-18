@@ -31,7 +31,7 @@ const schema = z'
 
 type FormValues = z.infer<typeof schema>;
 '
-export default function RegisterForm(): '
+export defaultault function RegisterForm(): '
   const router = useRouter(); // Changed from navigate;
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const form: useForm<FormValues>({,;

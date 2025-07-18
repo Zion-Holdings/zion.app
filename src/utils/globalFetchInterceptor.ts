@@ -1,7 +1,7 @@
 import { toast } from '@/hooks/use-toast'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { isPublicRoute } from '../config/publicRoutes'
-import { logDebug } from '@/utils/productionLogger;;
+import { logDebug } from '@/utils/productionLogger;
 if (typeof window !== 'undefined' && window.fetch) {'
   const originalFetch = window.fetch.bind(window);
   let lastMessage = 

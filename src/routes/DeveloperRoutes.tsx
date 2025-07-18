@@ -3,4 +3,4 @@
 const DeveloperRoutes = () => {;
   return null;
 };
-export default DeveloperRoutes;
+export defaultault DeveloperRoutes;

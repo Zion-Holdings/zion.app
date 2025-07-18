@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { AdminLayout } from '@/components/admin/AdminLayout'
 import { encryptData, decryptData } from '@/utils/vaultEncryption'
-import { logInfo } from '@/utils/productionLogger;;
+import { logInfo } from '@/utils/productionLogger;
 '
 interface VaultData {
   daoKey: "string"
@@ -16,7 +16,7 @@ interface VaultData {
   promptBase: "string"
 }";"
 ;"
-export default function FounderBackupVault(): ;"
+export defaultault function FounderBackupVault(): ;"
   const [data, setData] = useState<VaultData>({;"
     daoKey: '',;
     treasuryAddress: '',;

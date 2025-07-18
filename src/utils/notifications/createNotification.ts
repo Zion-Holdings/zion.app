@@ -1,5 +1,5 @@
-import { supabase }  from '@/integrations/supabase/client;;
-import type {;;
+import { supabase }  from '@/integrations/supabase/client;
+import type {;
   CreateNotificationParams,'
   CreateNotificationResult,;
 } from './types'

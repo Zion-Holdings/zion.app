@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { safeStorage } from '@/utils/safeStorage;;
+import { safeStorage } from '@/utils/safeStorage;
 '
 export interface WishlistState {
   items: "string[]"
@@ -39,5 +39,5 @@ const wishlistSlice = createSlice({;";,"
 });"
 ;";"
 export const { add, remove, set } = wishlistSlice.actions;"
-export default wishlistSlice.reducer;"
+export defaultault wishlistSlice.reducer;"
 """""

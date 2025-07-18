@@ -1,4 +1,4 @@
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface ErrorReport {
   timestamp: "string"

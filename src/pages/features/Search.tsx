@@ -4,8 +4,8 @@ import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link;;
-export default function SearchFeature(): '
+import Link from 'next/link;
+export defaultault function SearchFeature(): '
   const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast'
 import { useAuth } from '@/hooks/useAuth'
-import { supabase } from '@/integrations/supabase/client;;
+import { supabase } from '@/integrations/supabase/client;
 import type {'
   ReferralCode,;
   ReferralStats,;
@@ -9,8 +9,8 @@ import type {'
   ReferralReward,;
 } from '@/types/referrals'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export function useReferrals(): ;;
-  const { _user } = useAuth();;
+export function useReferrals(): ;
+  const { _user } = useAuth();
   const [referralCode, setReferralCode] = useState<ReferralCode | null>(null)'
   const [isLoading, setIsLoading] = useState(true);
   const [referrals, setReferrals] = useState<Referral[]>([]);

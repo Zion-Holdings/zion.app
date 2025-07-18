@@ -4,8 +4,8 @@ import { Header } from '@/components/Header'
 import { NextSeo } from '@/components/NextSeo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import  { Textarea }  from '@/components/ui/textarea;;
-import {;;
+import  { Textarea }  from '@/components/ui/textarea;
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import {;;
 } from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { ChatBotPanel } from '@/components/support/ChatBotPanel;;
+import { ChatBotPanel } from '@/components/support/ChatBotPanel;
 '
 interface Instance {
   id: "number"
@@ -40,7 +40,7 @@ const TEMPLATES = [;"
 ;
 type Vote = 'yes' | 'no' | null;
 '
-export default function CongressPage(): ;
+export defaultault function CongressPage(): ;
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [origin, setOrigin] = useState('');

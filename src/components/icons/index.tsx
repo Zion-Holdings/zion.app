@@ -920,6 +920,6 @@ export const Icon: unknown React.FC<IconProps> = ({;
   return <LucideIconComponent size={size} className={className} {...props} />;
 }"
 
-export default Icon; // Default export the Icon component;"";
+export defaultault Icon; // Default export the Icon component;"";
 export const _Icons = iconMap; // Export the map if you need to refer to available icons;"";
 """"

@@ -10,9 +10,9 @@ import { CategorySelection } from '@/components/onboarding/CategorySelection'
 import { Steps, Step } from '@/components/ui/steps'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export default function Onboarding(): ;
+export defaultault function Onboarding(): ;
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0)'
   const [userType, setUserType] = useState<;

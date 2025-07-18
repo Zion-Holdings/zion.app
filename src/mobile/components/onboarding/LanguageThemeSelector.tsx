@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Check } from '@/components/ui/icons'
 // import { Button } from "@/components/ui/button"
-import { useTheme } from '@/hooks/useTheme;;
-import { Card, CardContent } from '@/components/ui/card;;
+import { useTheme } from '@/hooks/useTheme;
+import { Card, CardContent } from '@/components/ui/card;
 '
 interface Language {
   code: "string"

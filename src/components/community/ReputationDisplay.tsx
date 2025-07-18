@@ -50,5 +50,5 @@ export const ReputationDisplay = ({'
   )
 };""
 ;"
-export default ReputationDisplay";"
+export defaultault ReputationDisplay";"
 """

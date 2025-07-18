@@ -8,7 +8,7 @@ function InnerProvider(): unknown {): unknown {): unknown {): unknown {): unknow
   return <>{children}</>;
 }"
 ;"
-export default function ToastProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{;";"
+export defaultault function ToastProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{;";"
   children,;";"
 }: {;";"
   children: React.ReactNode""

@@ -152,7 +152,7 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
   )
 };"
 ;";
-export default ApiPlayground";";
+export defaultault ApiPlayground";";
 "";
 }"";
 }"

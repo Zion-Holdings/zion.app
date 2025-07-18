@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import  { Button }  from '@/components/ui/button;;
-import {;;
+import  { Button }  from '@/components/ui/button;
+import {;
   Select,'
   SelectTrigger,;
   SelectValue,;
@@ -12,7 +12,7 @@ import {;;
 import { useToast } from '@/hooks/use-toast'
 import { callZionGPT } from '@/utils/zion-gpt'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { suggestFix } from '@/utils/suggestFix;;
+import { suggestFix } from '@/utils/suggestFix;
 '
 const SCENARIOS = [;
   { value: 'ubi', label: 'UBI' },;
@@ -29,7 +29,7 @@ const ROLES = [;
 ;
 const SECTORS = ['Health', 'Creative', 'Infrastructure', 'Tech'];
 '
-export default function WorkFuturesSimulator(): ;
+export defaultault function WorkFuturesSimulator(): ;
   const [scenario, setScenario] = useState('ubi');
   const [role, setRole] = useState('talent');
   const [sector, setSector] = useState('Health');

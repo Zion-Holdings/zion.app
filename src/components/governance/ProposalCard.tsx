@@ -113,5 +113,5 @@ const ProposalCard: unknown "React.FC<ProposalCardProps> = ({ proposal "}) => {;
   )
 };""
 ;"
-export default ProposalCard";"
+export defaultault ProposalCard";"
 """

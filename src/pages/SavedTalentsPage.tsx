@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import { Heart } from 'lucide-react;;
+import { Heart } from 'lucide-react;
 import { SEO } from '@/components/SEO'
 import { useAuth } from '@/hooks/useAuth'
 import { useSupabase } from '@/hooks/useSupabase'
 import { TalentCard } from '@/components/talent/TalentCard'
 import { EmptyState } from '@/components/ui/empty-state'
 import { toast } from '@/hooks/use-toast'
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger;;
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 interface TalentProfile {
   id: "string"
@@ -24,4 +24,4 @@ interface TalentProfile {
   availability: "string"
   is_verified: "boolean"
 }
-export default function SavedTalentsPage(): ;
+export defaultault function SavedTalentsPage(): ;

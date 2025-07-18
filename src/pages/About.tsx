@@ -4,7 +4,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
 ;
-export default function About(): ;
+export defaultault function About(): ;
   const team = ['
     {;
       name: 'Alex Johnson',;

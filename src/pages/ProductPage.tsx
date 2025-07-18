@@ -8,7 +8,7 @@ import { toast } from '@/hooks/use-toast';
 import { SEO } from '@/components/SEO';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
-export default function ProductPage() {
+export defaultault function ProductPage() {
   const router = useRouter();
   const { id: rawId } = router.query;
   const id = typeof rawId === 'string' ? rawId : undefined;

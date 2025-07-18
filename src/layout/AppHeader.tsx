@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation'
 import { Logo } from '@/components/header/Logo'
 import { Container } from '@/components/Container'
-import { useTranslation } from 'react-i18next;;
+import { useTranslation } from 'react-i18next;
 import { MobileMenu } from '@/components/header/MobileMenu'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { MobileBottomNav } from '@/components/header/MobileBottomNav'
@@ -14,10 +14,10 @@ import { LoginModal } from '@/components/auth/LoginModal'
 import { UserMenu } from '@/components/header/UserMenu'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
-import { cn } from '@/lib/utils // Import cn utility;;
+import { cn } from '@/lib/utils // Import cn utility;
 import  { useRouter }  from 'next/router;
-export function AppHeader(): ;;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);;
+export function AppHeader(): ;
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false)'
   const isMobile = useIsMobile();
   const { t } = useTranslation();

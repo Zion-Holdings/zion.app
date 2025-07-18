@@ -4,7 +4,7 @@ import { SearchResultCard } from '@/components/search/SearchResultCard'
 import { SearchBar } from '@/components/SearchBar'
 import { SearchEmptyState } from '@/components/marketplace/EmptyState'
 import { generateSearchSuggestions } from '@/data/marketplaceData'
-import { logErrorToProduction } from '@/utils/logErrorToProduction;;
+import { logErrorToProduction } from '@/utils/logErrorToProduction;
 '
 interface SearchResult {
   id: "string"
@@ -14,7 +14,7 @@ interface SearchResult {
 }"
 const LIMIT = 20;";"
 ;"
-export default function SearchResultsPage(): ;"
+export defaultault function SearchResultsPage(): ;"
   const router = useRouter();"
   const [query, setQuery] = useState('')'
 ;

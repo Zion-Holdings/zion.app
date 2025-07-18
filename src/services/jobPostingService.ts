@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client'
-import type { JobSchemaType } from '@/components/jobs/job-posting/validation;;
+import type { JobSchemaType } from '@/components/jobs/job-posting/validation;
 '
 export interface JobPosting extends JobSchemaType {;
   id: "string;"

@@ -97,7 +97,7 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
   )'
 }'
 
-export default MarketplaceSearch;
+export defaultault MarketplaceSearch;
 
 }'
 }

@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo;;
+import { NextSeo } from '@/components/NextSeo;
 '
 interface Proposal {
   id: "number"
@@ -18,7 +18,7 @@ const SAMPLE_PROPOSALS: unknown Proposal[] = [;"
     region: 'Global',;
   },'
 ];
-export default function InternationalProposalsPage(): '
+export defaultault function InternationalProposalsPage(): '
   return (;
     <div className="min-h-screen bg-background">;"
       <NextSeo;"

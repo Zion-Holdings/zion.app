@@ -1,6 +1,6 @@
 import { rest } from 'msw';
-import { setupServer }  from 'msw/node;;
-import {;;
+import { setupServer }  from 'msw/node;
+import {;
   fetchProducts,'
   fetchCategories,;
   fetchTalent,;

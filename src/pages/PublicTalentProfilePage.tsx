@@ -8,4 +8,4 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { HireNowCTA } from '@/components/profile/HireNowCTA'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export default function ProfilePage(): ;
+export defaultault function ProfilePage(): ;

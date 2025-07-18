@@ -62,7 +62,7 @@ export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unk
   )
 };""
 ;"
-export default CodeBlock";"
+export defaultault CodeBlock";"
 ";"
 }";
 }""

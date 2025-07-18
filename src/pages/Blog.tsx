@@ -7,8 +7,8 @@ import { GradientHeading } from '@/components/GradientHeading'
 import { SEO } from '@/components/SEO'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import  { Input }  from '@/components/ui/input;;
-import {;;
+import  { Input }  from '@/components/ui/input;
+import {;
   Select,'
   SelectValue,;
   SelectTrigger,;
@@ -17,9 +17,9 @@ import {;;
 } from '@/components/ui/select'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import type { BlogPost } from '@/types/blog'
-import { BLOG_POSTS } from '@/data/blog-posts;;
+import { BLOG_POSTS } from '@/data/blog-posts;
 import { fetchWithRetry } from '@/utils/fetchWithRetry'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 // Categories for filtering'
 const CATEGORIES = [;
   'All Categories',;
@@ -35,7 +35,7 @@ export interface BlogProps {;
   posts?: BlogPost[];
 }'
 ;
-export default function Blog(): unknown {): unknown {): unknown {): unknown {): unknown {{ posts: "initialPosts = BLOG_POSTS "}: BlogProps) {;"
+export defaultault function Blog(): unknown {): unknown {): unknown {): unknown {): unknown {{ posts: "initialPosts = BLOG_POSTS "}: BlogProps) {;"
   logInfo('BlogPage rendering. Initial BLOG_POSTS:', {;
     data: "{ data: initialPosts "},;"
   });"

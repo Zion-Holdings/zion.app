@@ -1,13 +1,13 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link;;
+import Link from 'next/link;
 export function ApiGettingStarted(): '
   const authExample: `curl -X GET \\;","
   https://api.ziontechgroup.com/v1/jobs \\;
   -H "Authorization: Bearer YOUR_API_KEY"`;"
 ;"
-  const quickStartJs = `import axios from 'axios;;
+  const quickStartJs = `import axios from 'axios;
 const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {;
   headers: {
     Authorization: "\`Bearer \${API_KEY"}\`;

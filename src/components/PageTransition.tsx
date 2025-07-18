@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'
 '
-export default function PageTransition(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export defaultault function PageTransition(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   children,'
 }: {'
   children: "React.ReactNode;"

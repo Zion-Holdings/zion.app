@@ -2,7 +2,7 @@ import React from 'react';
 import { Users, TrendingUp } from '@/components/ui/icons'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate'
 ;
-export default function AITalentMatchingPage(): ;
+export defaultault function AITalentMatchingPage(): ;
   const benefits = ['
     {;
       title: 'Precise Candidate Matching','

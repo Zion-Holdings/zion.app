@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { GradientHeading } from '@/components/GradientHeading;;
+import { GradientHeading } from '@/components/GradientHeading;
 '
-export default function Philosophy(): ;
+export defaultault function Philosophy(): ;
   return (;
     <>'
       <SEO;

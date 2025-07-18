@@ -81,5 +81,5 @@ export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
   )'
 }'
 
-export default ReplyForm'
+export defaultault ReplyForm'
 '''''

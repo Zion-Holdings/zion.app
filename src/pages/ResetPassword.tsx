@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react // Added useEffect for router.isReady;;
-import { useRouter } from 'next/router // Changed from useParams, useNavigate;;
+import { useState, useEffect } from 'react // Added useEffect for router.isReady;
+import { useRouter } from 'next/router // Changed from useParams, useNavigate;
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
@@ -8,11 +8,11 @@ import { toast } from '@/hooks/use-toast'
 import  { resetPassword }  from '@/services/auth;
 function strength(): unknown {): unknown {): unknown {): unknown {): unknown {pw: string) {;
   if (pw.length < 8) return 0;
-  if (pw.length < 10) return 1;;
-  if (pw.length < 12) return 2;;
+  if (pw.length < 10) return 1;
+  if (pw.length < 12) return 2;
   return 3'
 };
-export default function ResetPassword(): '
+export defaultault function ResetPassword(): '
   const router = useRouter();
   const [token, setToken] = useState('')'
   // navigate is now router;

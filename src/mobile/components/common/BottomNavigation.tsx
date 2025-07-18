@@ -1,8 +1,8 @@
 import React from 'react';
 import { Home, Users, User } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
-import Link from 'next/link;;
-import { cn } from '@/lib/utils;;
+import Link from 'next/link;
+import { cn } from '@/lib/utils;
 '
 export function BottomNavigation(): ;
   const router = useRouter();

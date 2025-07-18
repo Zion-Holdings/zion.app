@@ -3,4 +3,4 @@
 const ContentRoutes = () => {;
   return null;
 };
-export default ContentRoutes;
+export defaultault ContentRoutes;

@@ -1,4 +1,4 @@
-export default function LoaderOverlay(): ;
+export defaultault function LoaderOverlay(): ;
   return (;
     <div;
       data-testid="loader-overlay;"";"

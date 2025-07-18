@@ -3,8 +3,8 @@ import { ArrowLeft } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 import { CASE_STUDIES } from '@/data/case-studies'
 import { SEO } from '@/components/SEO'
-import  { Button }  from '@/components/ui/button;;
-import {;;
+import  { Button }  from '@/components/ui/button;
+import {;
   Breadcrumb,'
   BreadcrumbList,;
   BreadcrumbItem,;
@@ -12,8 +12,8 @@ import {;;
   BreadcrumbSeparator,;
 } from '@/components/ui/breadcrumb'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import { getBreadcrumbsForPath } from '@/utils/routeUtils;;
-export default function CaseStudy(): '
+import { getBreadcrumbsForPath } from '@/utils/routeUtils;
+export defaultault function CaseStudy(): '
   const router = useRouter();
   const slug = router.query.slug as string;
   const study = CASE_STUDIES.find((s) => s.slug === slug)'

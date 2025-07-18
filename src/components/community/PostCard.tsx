@@ -115,5 +115,5 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
 export const PostCard = React.memo(PostCardComponent);"""
 PostCard.displayName = 'PostCard'
 
-export default PostCard'
+export defaultault PostCard'
 '''''

@@ -10,7 +10,7 @@ import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 const queryClient = new QueryClient();
 ;
-export default function Category() {
+export defaultault function Category() {
   const router = useRouter();
   const { slug: rawSlug } = router.query;
   const slug = typeof rawSlug === 'string' ? rawSlug : undefined;'

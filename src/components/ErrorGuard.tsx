@@ -11,7 +11,7 @@ function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown
     </div>);
 }"
 
-export default function ErrorGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{;"";
+export defaultault function ErrorGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{;"";
   children,;"";
 }: {;"";
   children: "React.ReactNode"

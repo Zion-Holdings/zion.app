@@ -99,7 +99,7 @@ export function QuickAccess(): unknown {): unknown {): unknown {): unknown {): u
   )"
 };"
 ;";"
-export default QuickAccess;";"
+export defaultault QuickAccess;";"
 ;""
 };"
 }"

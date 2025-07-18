@@ -1,9 +1,9 @@
 import React from 'react';
 import { XCircle } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router // Changed from useNavigate;;
+import { useRouter } from 'next/router // Changed from useNavigate;
 '
-export default function PaymentCanceled(): ;
+export defaultault function PaymentCanceled(): ;
   const router = useRouter(); // Changed from navigate;
 '
   return (;

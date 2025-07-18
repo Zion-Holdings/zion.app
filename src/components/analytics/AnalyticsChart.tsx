@@ -46,7 +46,7 @@ interface AnalyticsChartProps {"
   height?: number
 }
 '
-export default function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+export defaultault function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   title,;
   description,'
   data,'

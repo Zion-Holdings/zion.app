@@ -57,7 +57,7 @@ export function AllFeaturesSection(): unknown {): unknown {): unknown {): unknow
   )
 };""
 ;"
-export default AllFeaturesSection";"
+export defaultault AllFeaturesSection";"
 ";"
 }";
 }""

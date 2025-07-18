@@ -155,5 +155,5 @@ export const InstallPrompt: React.FC = () => {
     </>;
   )"
 };"";
-export default InstallPrompt;"";
+export defaultault InstallPrompt;"";
 """"

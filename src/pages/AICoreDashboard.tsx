@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { triggerTraining } from '@/services/zionGPTService'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export default function AICoreDashboard(): ;
+export defaultault function AICoreDashboard(): ;
   const [status, setStatus] = useState<string>('idle');
 '
   async function startTraining(): ;

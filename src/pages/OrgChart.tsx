@@ -20,7 +20,7 @@ const sections = [
   'DAO Delegates',
 ] as const;
 
-export default function OrgChart() {
+export defaultault function OrgChart() {
   const [role, setRole] = useState<'ALL' | RoleType>('ALL');
   const [zone, setZone] = useState('ALL');
   const [team, setTeam] = useState('ALL');

@@ -2,9 +2,9 @@ import React from 'react';
 import { Header } from '@/components/Header'
 import { IntegrationsHub } from '@/components/integrations/IntegrationsHub'
 import { SEO } from '@/components/SEO'
-import { ProtectedRoute } from '@/components/ProtectedRoute;;
+import { ProtectedRoute } from '@/components/ProtectedRoute;
 '
-export default function IntegrationsPage(): ;
+export defaultault function IntegrationsPage(): ;
   return (;
     <ProtectedRoute adminOnly={true}>'
       <SEO;

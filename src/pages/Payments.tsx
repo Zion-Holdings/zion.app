@@ -2,9 +2,9 @@ import React from 'react';
 import { Header } from '@/components/Header'
 import { TransactionHistory } from '@/components/transactions/TransactionHistory'
 import { GradientHeading } from '@/components/GradientHeading'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
 '
-export default function Payments(): ;
+export defaultault function Payments(): ;
   return (;
     <>'
       <Header />;

@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { GradientHeading } from '@/components/GradientHeading'
-import Link from 'next/link;;
+import Link from 'next/link;
 '
-export default function DevNet(): ;
+export defaultault function DevNet(): ;
   return (;
     <>'
       <Header />;

@@ -29,7 +29,7 @@ export function ProductVideoSection(): unknown {): unknown {): unknown {): unkno
     </section>)"
 };"
 ;";"
-export default ProductVideoSection;";"
+export defaultault ProductVideoSection;";"
 ;""
 };"
 }"

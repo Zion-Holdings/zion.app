@@ -73,7 +73,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
   )"
 };"
 ;";"
-export default CreatePostButton;";"
+export defaultault CreatePostButton;";"
 ;""
 };"
 }"

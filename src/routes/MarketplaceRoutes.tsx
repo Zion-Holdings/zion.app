@@ -3,4 +3,4 @@
 const MarketplaceRoutes = () => {;
   return null;
 };
-export default MarketplaceRoutes;
+export defaultault MarketplaceRoutes;

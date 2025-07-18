@@ -9,5 +9,5 @@ export const UserMenu: React.FC = () => {
   return <AvatarMenu />'
 }'
 
-export default UserMenu'
+export defaultault UserMenu'
 '''''

@@ -27,7 +27,7 @@ declare module '@reown/appkit/react' {;
 };"
 ;"
 declare module '@reown/appkit-adapter-ethers' {;
-  import { ethers } from 'ethers;;
+  import { ethers } from 'ethers;
   export class EthersAdapter {'
     constructor(options?: { ethers?: typeof ethers; provider?: unknown });
   };

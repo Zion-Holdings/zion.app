@@ -100,7 +100,7 @@ export function ZionBrainDashboard(): '
     </div>)
 };"
 ;";
-export default ZionBrainDashboard";";
+export defaultault ZionBrainDashboard";";
 "";
 }"";
 }"

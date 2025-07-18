@@ -9,9 +9,9 @@ import { PageViewsChart } from '@/components/analytics/PageViewsChart'
 import { ConversionAnalysisChart } from '@/components/analytics/ConversionAnalysisChart'
 import { FeatureUsageChart } from '@/components/analytics/FeatureUsageChart'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export default function Analytics(): ;
+export defaultault function Analytics(): ;
   const [timeRange, setTimeRange] = useState('30d')'
 ;
   const { data: "pageViewTrends "} = useQuery({;"

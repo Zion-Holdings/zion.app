@@ -340,5 +340,5 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
   )
 };"
 ;";
-export default SlideEditor";";
+export defaultault SlideEditor";";
 """

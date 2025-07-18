@@ -10,5 +10,5 @@ const JsonLd: unknown React.FC<JsonLdProps> = ({ data "}) => ("
     <script type=application/ld+json>{JSON.stringify(data)}</script>"
   </Head>"
 );"";
-export default JsonLd;"";
+export defaultault JsonLd;"";
 """"

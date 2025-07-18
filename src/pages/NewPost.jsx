@@ -7,7 +7,7 @@ const ReactMarkdown = React.lazy(() => import('react-markdown'));';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 ;
-export default function NewPost() {
+export defaultault function NewPost() {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: { title: '', content: '' },'
   });

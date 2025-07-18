@@ -4,7 +4,7 @@ import { ListingScoreCard } from '@/components/ListingScoreCard';
 import Skeleton from '@/components/ui/skeleton';
 import { useDelayedError } from '@/hooks/useDelayedError';
 ;
-export default function RecommendationsPage() {
+export defaultault function RecommendationsPage() {
   const { user } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);

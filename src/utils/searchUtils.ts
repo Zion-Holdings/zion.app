@@ -1,4 +1,4 @@
-import type { SearchSuggestion } from '@/types/search;;
+import type { SearchSuggestion } from '@/types/search;
 '
 export interface SearchResult {
   id: "string"

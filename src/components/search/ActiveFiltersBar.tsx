@@ -144,5 +144,5 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     </div>;
   )"
 };"
-export default ActiveFiltersBar"
+export defaultault ActiveFiltersBar"
 """

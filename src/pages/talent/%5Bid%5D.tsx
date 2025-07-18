@@ -1,3 +1,3 @@
-export default function TalentProfilePage(): ;
+export defaultault function TalentProfilePage(): ;
   // ... existing code ...;
 };

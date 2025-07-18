@@ -4,7 +4,7 @@ import { NEW_PRODUCTS } from '@/data/newProductsData'
 import type { ProductListing } from '@/types/listings'
 import type { Product } from '@/services/marketplace'
 ;
-export default function FavoritesPage(): ;
+export defaultault function FavoritesPage(): ;
   const { _favorites } = useFavorites()';
   const map: unknown "Record<string", ProductListing> = {};
   for (const p of NEW_PRODUCTS) {;

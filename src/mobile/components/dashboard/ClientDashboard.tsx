@@ -1,5 +1,5 @@
-import React  from 'react;;
-import {;;
+import React  from 'react;
+import {;
   ChevronRight,'
   Plus,;
   UserCheck,;
@@ -8,8 +8,8 @@ import {;;
 } from '@/components/ui/icons'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge;;
-import Link from 'next/link;;
+import { Badge } from '@/components/ui/badge;
+import Link from 'next/link;
 export function ClientDashboard(): '
   return (;
     <div className="space-y-6 px-4 pb-24">;"

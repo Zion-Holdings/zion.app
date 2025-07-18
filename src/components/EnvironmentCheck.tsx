@@ -146,5 +146,5 @@ export const EnvironmentCheck: React.FC = () => {
   )
 };""
 ;"
-export default EnvironmentCheck";"
+export defaultault EnvironmentCheck";"
 """

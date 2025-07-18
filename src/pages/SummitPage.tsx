@@ -5,9 +5,9 @@ import { AgendaSection } from '@/components/summit/AgendaSection'
 import { SpeakersSection } from '@/components/summit/SpeakersSection'
 import { PartnersSection } from '@/components/summit/PartnersSection'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { RegistrationForm } from '@/components/summit/RegistrationForm;;
+import { RegistrationForm } from '@/components/summit/RegistrationForm;
 '
-export default function SummitPage(): ;
+export defaultault function SummitPage(): ;
   return (;
     <>'
       <SEO;

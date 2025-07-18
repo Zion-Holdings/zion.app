@@ -1,21 +1,21 @@
-import { SEO } from '@/components/SEO;;
+import { SEO } from '@/components/SEO;
 import {'
   AlertCircle,;
   CheckCircle,;
   Clock,'
   ExternalLink,;
 } from '@/components/ui/icons'
-import { useState, useEffect } from 'react;;
+import { useState, useEffect } from 'react;
 import { Button } from '@/components/ui/button'
-import  Link  from 'next/link;;
-import {;;
+import  Link  from 'next/link;
+import {;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { logWarn } from '@/utils/productionLogger;;
+import { logWarn } from '@/utils/productionLogger;
 '
 interface ServiceStatus {
   name: "string"
@@ -50,7 +50,7 @@ const FALLBACK_SERVICES: unknown ServiceStatus[] = [;"
     lastChecked: new Date().toISOString(),;
   },;
 ];
-export default function Status(): ;
+export defaultault function Status(): ;
   const [externalStatusLoaded, setExternalStatusLoaded] = useState(false);"
   const [showFallback, setShowFallback] = useState(false);";"
   const [uptime, setUptime] = useState<number | null>(null);"

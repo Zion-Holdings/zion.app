@@ -1,5 +1,5 @@
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client;;
+import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client;
 '
 async function logEventToSupabase(): unknown {): unknown {): unknown {): unknown {): unknown {;
   eventName: string,;"

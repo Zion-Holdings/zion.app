@@ -1,6 +1,6 @@
 import React from 'react';
-import { ServiceProviderRegistrationForm } from '@/components/profile/ServiceProviderRegistrationForm;;
-export default function CreateServiceProfile(): '
+import { ServiceProviderRegistrationForm } from '@/components/profile/ServiceProviderRegistrationForm;
+export defaultault function CreateServiceProfile(): '
   return (;
     <div className="bg-zion-blue min-h-screen py-8 md:py-12">;"
       <div className="container mx-auto px-4">;"

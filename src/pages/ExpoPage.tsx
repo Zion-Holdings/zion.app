@@ -8,9 +8,9 @@ import { MultiverseLaunchesSection } from '@/components/expo/MultiverseLaunchesS
 import { InteractiveMap } from '@/components/expo/InteractiveMap'
 import { LivestreamSection } from '@/components/expo/LivestreamSection'
 import { ExpoGPTPrompt } from '@/components/expo/ExpoGPTPrompt'
-import { ExportsSection } from '@/components/expo/ExportsSection;;
+import { ExportsSection } from '@/components/expo/ExportsSection;
 '
-export default function ExpoPage(): ;
+export defaultault function ExpoPage(): ;
   return (;
     <>'
       <SEO;

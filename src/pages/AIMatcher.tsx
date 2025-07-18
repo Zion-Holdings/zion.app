@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router'
 import { Header } from '@/components/Header'
 import { GradientHeading } from '@/components/GradientHeading'
-import  { AIMatchmaker }  from '@/components/AIMatchmaker;;
-import {;;
+import  { AIMatchmaker }  from '@/components/AIMatchmaker;
+import {;
   Select,'
   SelectValue,;
   SelectTrigger,;
@@ -12,8 +12,8 @@ import {;;
 } from '@/components/ui/select'
 import { toast } from '@/hooks/use-toast'
 import { useFeatureUsage } from '@/hooks/useFeatureUsage'
-import type { MatchResult } from '@/lib/ai-matchmaking;;
-export default function AIMatcherPage(): '
+import type { MatchResult } from '@/lib/ai-matchmaking;
+export defaultault function AIMatcherPage(): '
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   useFeatureUsage('AI Matchmaker');

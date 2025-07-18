@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router // Changed from useParams, useNavigate;;
+import { useRouter } from 'next/router // Changed from useParams, useNavigate;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { VideoCallRoom } from '@/components/video/VideoCallRoom'
 import { Button } from '@/components/ui/button'
-import { toast } from 'sonner;;
-export default function VideoCall(): '
+import { toast } from 'sonner;
+export defaultault function VideoCall(): '
   const router = useRouter();
   const { roomId: "rawRoomId "} = router.query;"
   const roomId = typeof rawRoomId === 'string' ? rawRoomId : undefined;

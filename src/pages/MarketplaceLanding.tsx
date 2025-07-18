@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router // Changed from useNavigate;;
+import { useRouter } from 'next/router // Changed from useNavigate;
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard'
 import type { Product } from '@/services/marketplace'
-import { showError } from '@/utils/showToast;;
+import { showError } from '@/utils/showToast;
 '
 async function fetchProducts(): ;
   const res = await fetch('/api/products?limit=20')'
@@ -13,7 +13,7 @@ async function fetchProducts(): ;
   return res.json() as Promise<Product[]>;
 }'
 ;
-export default function MarketplaceLanding(): ;
+export defaultault function MarketplaceLanding(): ;
   const router = useRouter(); // Changed from navigate'
   const {;
     data: products = [],;"

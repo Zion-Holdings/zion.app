@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DynamicListingPage } from '@/components/DynamicListingPage'
-import type { ProductListing } from '@/types/listings;;
+import type { ProductListing } from '@/types/listings;
 const ADDITIONAL_TALENT_LISTINGS: unknown ProductListing[] = ['
   {;
     id: 'talent-17',;
@@ -197,7 +197,7 @@ const ADDITIONAL_TALENT_LISTINGS: unknown ProductListing[] = ['
 const ADDITIONAL_TALENT_FILTERS = Array.from('
   new Set(ADDITIONAL_TALENT_LISTINGS.map((t) => t.category)),;
 ).map((c) => ({ label: c, value: c.toLowerCase().replace(/\s+/g, '-') }));
-export default function AdditionalTalentsPage(): ;
+export defaultault function AdditionalTalentsPage(): ;
   const [listings] = useState<ProductListing[]>(['
     ...ADDITIONAL_TALENT_LISTINGS,;
   ]);

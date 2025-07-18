@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/SEO'
-import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager;;
+import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager;
 '
 // const _AppMetadataManager: unknown React.FC = () => {;
   return (;

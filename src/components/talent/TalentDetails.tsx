@@ -72,5 +72,5 @@ const TalentDetails: unknown "React.FC<TalentDetailsProps> = ({ talent }) => (
   </main>
 );""
 
-export default TalentDetails
+export defaultault TalentDetails
 """

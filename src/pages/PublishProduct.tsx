@@ -4,8 +4,8 @@ import { ProductSubmissionForm } from '@/components/ProductSubmissionForm'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
 import  { SEO }  from '@/components/SEO;
-export default function PublishProduct(): ;;
-  const { isAuthenticated, isLoading } = useAuth();;
+export defaultault function PublishProduct(): ;
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter()'
 ;
   useEffect(() => {;

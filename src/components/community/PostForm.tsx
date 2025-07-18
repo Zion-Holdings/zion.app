@@ -170,5 +170,5 @@ export const PostForm = ({;
   )'
 }'
 
-export default PostForm'
+export defaultault PostForm'
 '''''

@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
-import { SEO } from '@/components/SEO;;
+import { SEO } from '@/components/SEO;
 '
-export default function FoundationPage(): ;
+export defaultault function FoundationPage(): ;
   return (;
     <>'
       <SEO;

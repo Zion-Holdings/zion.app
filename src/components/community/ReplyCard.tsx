@@ -93,5 +93,5 @@ export const ReplyCard = ({;
   )
 };""
 ;"
-export default ReplyCard";"
+export defaultault ReplyCard";"
 """

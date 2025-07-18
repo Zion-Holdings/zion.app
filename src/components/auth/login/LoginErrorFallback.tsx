@@ -1,6 +1,6 @@
 import type { FallbackProps } from 'react-error-boundary'
 '
-export default function LoginErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;
+export defaultault function LoginErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;
   return ('
     <div'
       role="alert;"""

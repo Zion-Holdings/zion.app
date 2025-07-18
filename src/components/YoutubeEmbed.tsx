@@ -9,7 +9,7 @@ interface YoutubeEmbedProps {'
   poster: string""
 }
 
-export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export defaultault function YoutubeEmbed(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   videoId,
   title,;"
   poster,;";

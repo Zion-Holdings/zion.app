@@ -3,4 +3,4 @@
 const ErrorRoutes = () => {;
   return null;
 };
-export default ErrorRoutes;
+export defaultault ErrorRoutes;

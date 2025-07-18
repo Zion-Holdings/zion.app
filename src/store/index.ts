@@ -5,7 +5,7 @@ import { default as wishlistReducer } from './wishlistSlice'
 import type { WishlistState as _WishlistState } from './wishlistSlice'
 import authReducer from './authSlice'
 import { safeStorage } from '@/utils/safeStorage'
-import { logWarn } from '@/utils/productionLogger;;
+import { logWarn } from '@/utils/productionLogger;
 '
 export const store: configureStore({;",;"
   reducer: {

@@ -13,7 +13,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useCommunity } from '@/context'
 import { useToast } from '@/hooks/use-toast'
 import { useFollowedCategories } from '@/hooks/useFollowedCategories'
-import { logInfo } from '@/utils/productionLogger;;
+import { logInfo } from '@/utils/productionLogger;
 '
 // Mock category data;
 const categoriesInfo: unknown "Record<string", ForumCategoryInfo> = {;"

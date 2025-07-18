@@ -21,7 +21,7 @@ interface ProfileProps {
   orders?: Order[];
 }
 
-export default function Profile({
+export defaultault function Profile({
   user: initialUser,
   orders = [],
 }: ProfileProps) {

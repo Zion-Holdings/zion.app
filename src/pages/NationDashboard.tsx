@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRouter }  from 'next/router;;
-export default function NationDashboard(): ;;
+import { useRouter }  from 'next/router;
+export defaultault function NationDashboard(): ;
   const router = useRouter()'
   const { _slug } = router.query as { slug?: string };
   if (!slug) return null;

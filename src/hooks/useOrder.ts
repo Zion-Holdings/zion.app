@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import type { Order } from './useOrders;;
+import type { Order } from './useOrders;
 '
 export interface OrderItem {
   name: "string"

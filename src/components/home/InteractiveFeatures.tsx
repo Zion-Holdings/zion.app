@@ -132,7 +132,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
     </section>;
   )"
 };"";
-export default InteractiveFeatures;"";
+export defaultault InteractiveFeatures;"";
 ";"
 }";"
 }

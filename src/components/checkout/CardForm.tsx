@@ -27,7 +27,7 @@ interface Props {'
   onSuccess: "(intent: PaymentIntent) => void"
 }
 
-export default function CardForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ amount, onSuccess }: Props) {;
+export defaultault function CardForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ amount, onSuccess }: Props) {;
   const stripe = useStripe();
   const elements = useElements();
   const { _user } = useAuth();

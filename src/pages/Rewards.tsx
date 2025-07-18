@@ -1,4 +1,4 @@
-import { Gift } from '@/components/ui/icons;;
+import { Gift } from '@/components/ui/icons;
 '
 const REWARDS = [;
   { id: 'coupon5', title: '$5 Coupon', cost: "500 "},;"
@@ -6,7 +6,7 @@ const REWARDS = [;
   { id: 'swag-pack', title: 'Swag Pack', cost: "2000 "},;"
 ];";"
 ;"
-export default function RewardsPage(): ;"
+export defaultault function RewardsPage(): ;"
   return (;"
     <div className="container max-w-xl py-10">;"
       <h1 className="text-3xl font-bold mb-6">Rewards</h1>;"

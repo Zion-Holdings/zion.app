@@ -2,13 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Trash2, Download, Send } from '@/components/ui/icons'
 import { supabase } from '@/integrations/supabase/client'
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor'
-import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel;;
+import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel;
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;;
+import { Input } from '@/components/ui/input;
 '
 // Added Send icon;
 import { toast } from 'sonner'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface WhitepaperSection {
   id: "string"

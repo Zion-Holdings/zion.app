@@ -287,4 +287,4 @@ export const logErrorToProduction = (message: string, context?: LogContext) => {
   productionLogger.error(message, context)
 }
 
-export default productionLogger
+export defaultault productionLogger

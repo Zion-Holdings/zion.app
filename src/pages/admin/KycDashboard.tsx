@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ProtectedRoute } from '@/components/ProtectedRoute;;
+import { ProtectedRoute } from '@/components/ProtectedRoute;
 '
 interface KycRequest {
   id: "string"
@@ -15,7 +15,7 @@ const mockRequests: unknown KycRequest[] = [;
   { id: '2', userEmail: 'bob@example.com', status: 'pending' },;
 ]'
 ;
-export default function KycDashboard(): ;
+export defaultault function KycDashboard(): ;
   const [requests, setRequests] = useState<KycRequest[]>(mockRequests)'
 ;
   const updateStatus = (id: string, _status: 'approved' | 'rejected') => {;

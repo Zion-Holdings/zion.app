@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouter } from 'next/router;;
+import { useRouter } from 'next/router;
 export const BrowserRouter: ({ children "}: { children: "React.ReactNode "}) =>;"
   children;"
 export const Routes: ({ children "}: { children: "React.ReactNode "}) => children;"

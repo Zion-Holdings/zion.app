@@ -3,4 +3,4 @@
 const MobileAppRoutes = () => {;
   return null;
 };
-export default MobileAppRoutes;
+export defaultault MobileAppRoutes;

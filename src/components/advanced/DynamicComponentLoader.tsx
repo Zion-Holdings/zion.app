@@ -351,5 +351,5 @@ export const createDynamicComponent: unknown unknown = <T extends ComponentType<
 //   }"
 // );"
 ;";"
-export default DynamicComponentLoader;";"
+export defaultault DynamicComponentLoader;";"
 """

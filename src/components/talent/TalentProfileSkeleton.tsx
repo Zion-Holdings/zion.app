@@ -65,5 +65,5 @@ const TalentProfileSkeleton: unknown React.FC = () => ('
   </main>"
 );"
 
-export default TalentProfileSkeleton"
+export defaultault TalentProfileSkeleton"
 """

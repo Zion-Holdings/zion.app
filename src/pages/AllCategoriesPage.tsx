@@ -1,7 +1,7 @@
 import { CategoryCard } from '@/components/CategoryCard'
 import { Users } from '@/components/ui/icons'
 import { GradientHeading } from '@/components/GradientHeading'
-import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;;
+import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;
 '
 // Reusing the categories array from CategoriesSection.tsx;
 // Ideally, this would come from a shared data source or API;
@@ -36,7 +36,7 @@ const categories = ['
   },;"
 ];";"
 ;"
-export default function AllCategoriesPage(): ;"
+export defaultault function AllCategoriesPage(): ;"
   return (;"
     <div className="min-h-screen bg-zion-blue">;"
       <div className="container mx-auto px-4 py-12">;"

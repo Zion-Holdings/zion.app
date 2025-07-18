@@ -1,4 +1,4 @@
-import React from 'react;;
+import React from 'react;
 '
 // const _ProfilePage: unknown React.FC = () => {;
   const pageStyle: unknown "React.CSSProperties = {;"

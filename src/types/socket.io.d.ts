@@ -1,6 +1,6 @@
 declare module 'socket.io' {'
   const anySocket: unknown;
-  export default anySocket;
+  export defaultault anySocket;
 }'
 ;
 declare module 'socket.io-client' {'
@@ -11,7 +11,7 @@ declare module 'socket.io-client' {'
   }
   export function io(): unknown {): unknown {): unknown {): unknown {): unknown {...args: unknown[]): Socket;"
   const defaultExport: unknown typeof io;";"
-  export default defaultExport;"
+  export defaultault defaultExport;"
 };"
 "
 }"

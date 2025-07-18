@@ -37,5 +37,5 @@ const ConnectWalletButton: unknown React.FC = () => {;
   return <button onClick={connectWallet}>Connect Wallet</button>'
 }'
 
-export default ConnectWalletButton'
+export defaultault ConnectWalletButton'
 '''''

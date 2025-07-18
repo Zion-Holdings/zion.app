@@ -9,11 +9,11 @@ import { useTalentProfile } from '@/hooks/useTalentProfile'
 import { HireRequestModal } from '@/components/profile/hire-request'
 import { useAuthStatus } from '@/hooks/talent'
 import { MessageTalentModal } from '@/components/messaging/MessageTalentModal'
-import { StickyAction } from '@/components/ui/sticky-action;;
+import { StickyAction } from '@/components/ui/sticky-action;
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
 import type { UserProfile } from '@/types/auth'
 import { toast } from '@/hooks/use-toast'
 import  { SEO }  from '@/components/SEO;
-export default function TalentProfilePage(): ;
+export defaultault function TalentProfilePage(): ;
   const router = useRouter();

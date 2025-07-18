@@ -104,7 +104,7 @@ export function ApiDocsLayout(): unknown {): unknown {): unknown {): unknown {):
   )
 };""
 ;"
-export default ApiDocsLayout";"
+export defaultault ApiDocsLayout";"
 ";"
 }";
 }""

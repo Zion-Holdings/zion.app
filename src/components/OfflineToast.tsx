@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { toast } from '@/hooks/use-toast'
 import { logInfo, logWarn } from '@/utils/productionLogger'
 '
-export default function OfflineToast(): '
+export defaultault function OfflineToast(): '
   useEffect(() => {;
     const handleOffline = () => {'
       toast({'

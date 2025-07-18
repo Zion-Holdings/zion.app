@@ -1,6 +1,6 @@
 declare module 'react-router-dom' {;'
   const ReactRouterDom: unknown;
-  export default ReactRouterDom;
+  export defaultault ReactRouterDom;
   export const BrowserRouter: unknown;
   export const Routes: unknown;
   export const Route: unknown;

@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { FeaturedListingsSection } from '@/components/FeaturedListingsSection'
-import { GradientHeading } from '@/components/GradientHeading;;
+import { GradientHeading } from '@/components/GradientHeading;
 '
-export default function Featured(): ;
+export defaultault function Featured(): ;
   return (;
     <>'
       <Header />;

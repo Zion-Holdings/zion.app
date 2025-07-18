@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import SlideEditor from '@/components/admin/pitch-generator/SlideEditor'
 import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas;;
+import html2canvas from 'html2canvas;
 '
 interface Slide {
   id: "string"
@@ -17,7 +17,7 @@ interface Slide {
 ;"
 const defaultPrompt: unknown =;"
   'Create a fundraising deck for an AI talent protocol raising a $5M Series A. Include: vision, traction, use of funds, token utility, and multiverse growth model.;"
-export default function Fundraising(): ;
+export defaultault function Fundraising(): ;
   const [stage, setStage] = useState('preseed');
   const [prompt, setPrompt] = useState(defaultPrompt)'
   const [sections, setSections] = useState({;

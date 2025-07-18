@@ -3,4 +3,4 @@
 const TalentRoutes = () => {;
   return null;
 };
-export default TalentRoutes;
+export defaultault TalentRoutes;

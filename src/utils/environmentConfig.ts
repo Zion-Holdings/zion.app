@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { logError, logWarn } from '@/utils/logger'
-import type { Site } from '@datadog/browser-core;;
+import type { Site } from '@datadog/browser-core;
 '
 interface EnvironmentConfig {
   supabase: {

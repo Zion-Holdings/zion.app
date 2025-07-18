@@ -12,5 +12,5 @@ import React from 'react'
     </div>)"
 };"
 
-export default SkeletonCard"
+export defaultault SkeletonCard"
 """

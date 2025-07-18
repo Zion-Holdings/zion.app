@@ -62,7 +62,7 @@ interface FieldValidationState {""
   error: "string | null
 }
 
-export default function SignupForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSuccess, onError }: SignupFormProps) {;
+export defaultault function SignupForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSuccess, onError }: SignupFormProps) {;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);

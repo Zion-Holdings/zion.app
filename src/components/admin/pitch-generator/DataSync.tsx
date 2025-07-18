@@ -66,5 +66,5 @@ const DataSync: unknown React.FC = () => {;
   )
 };""
 ;"
-export default DataSync";"
+export defaultault DataSync";"
 """

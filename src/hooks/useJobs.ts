@@ -4,7 +4,7 @@ import type { Job, JobStatus } from '@/types/jobs'
 import { toast } from 'sonner'
 import { useAuth } from './useAuth'
 import { createJob, updateJob, getJobById } from '@/services/jobService'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export const _useJobs: (userId?: string", status?: JobStatus) => {;
   const { _user } = useAuth();

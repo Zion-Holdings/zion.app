@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { ArrowUp, Filter, SortAsc, Star } from '@/components/ui/icons'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useRouter } from 'next/router;;
+import { useRouter } from 'next/router;
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import type { ProductListing } from '@/types/listings'
 import { SkeletonCard } from '@/components/ui/skeleton'
@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Spinner from '@/components/ui/spinner'
 import { SERVICES, type Service } from '@/data/servicesData'
-import { useCurrency } from '@/hooks/useCurrency;;
+import { useCurrency } from '@/hooks/useCurrency;
 // Initial services from existing data - convert Service to ProductListing'
 // const _INITIAL_SERVICES: unknown ProductListing[] = SERVICES.map(;
   (service: "Service) => ({;"

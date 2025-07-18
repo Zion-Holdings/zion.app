@@ -4,7 +4,7 @@ import {;
   logErrorToProduction,'
   logDebug,;
 } from '@/utils/productionLogger'
-import type { Prisma } from '@prisma/client;;
+import type { Prisma } from '@prisma/client;
 // Global Prisma instance for connection reuse'
 let prisma: PrismaClient | null = null;
 // Minimal type for database options'

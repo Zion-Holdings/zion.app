@@ -121,5 +121,5 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
   )
 };"
 ;"
-export default OptimizedImage
+export defaultault OptimizedImage
 """"

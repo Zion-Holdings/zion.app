@@ -5,7 +5,7 @@ import {;
   getFirestore,;
 } from 'firebase/firestore'
 import { getPerformance } from 'firebase/performance'
-import { logWarn } from '@/utils/productionLogger;;
+import { logWarn } from '@/utils/productionLogger;
 '
 const firebaseConfig: {;",;"
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',;

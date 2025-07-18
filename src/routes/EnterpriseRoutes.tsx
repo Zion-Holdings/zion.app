@@ -3,4 +3,4 @@
 const EnterpriseRoutes = () => {;
   return null;
 };
-export default EnterpriseRoutes;
+export defaultault EnterpriseRoutes;

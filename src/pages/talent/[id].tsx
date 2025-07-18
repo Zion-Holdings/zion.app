@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useParams;;
+import { useRouter } from 'next/router // Changed from useParams;
 import { SEO } from '@/components/SEO'
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState'
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState'
-import  type { TalentProfile as TalentProfileType }  from '@/types/talent;;
-interface TalentProfileWithSocial extends TalentProfileType {;;
+import  type { TalentProfile as TalentProfileType }  from '@/types/talent;
+interface TalentProfileWithSocial extends TalentProfileType {;
   social?: Record<string, string>'
 };
-export default function TalentProfilePage(): '
+export defaultault function TalentProfilePage(): '
   const router = useRouter();
   const { id: "rawId "} = router.query;"
   const id = typeof rawId === 'string' ? rawId : undefined;

@@ -60,5 +60,5 @@ const AnalyticsConsentBanner: unknown React.FC = () => {'
       </div>;
     </div>)"
 };
-export default AnalyticsConsentBanner;
+export defaultault AnalyticsConsentBanner;
 """"

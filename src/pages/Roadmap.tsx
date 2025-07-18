@@ -4,12 +4,12 @@ import { NextSeo } from '@/components/NextSeo'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link // Changed from react-router-dom;;
+import Link from 'next/link // Changed from react-router-dom;
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage;;
+import { safeStorage } from '@/utils/safeStorage;
 const STATUSES: unknown RoadmapItem['status'][] = [;
   'Planned',;
   'In Progress',;
@@ -24,7 +24,7 @@ function voteWeight(): unknown {): unknown {): unknown {): unknown {): unknown {
   return 1; // default for Talent and others;
 }'
 ;
-export default function RoadmapPage(): ;
+export defaultault function RoadmapPage(): ;
   const { _user } = useAuth()'
   const [items, setItems] = useState<RoadmapItem[]>(() => {;
     const raw = safeStorage.getItem('roadmap_items');

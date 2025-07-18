@@ -17,5 +17,5 @@ const ErrorTriggerComponent: unknown "React.FC<{ onMount?: boolean }> = ({
   return <div>This should not render.</div>'
 }'
 
-export default ErrorTriggerComponent'
+export defaultault ErrorTriggerComponent'
 '''''

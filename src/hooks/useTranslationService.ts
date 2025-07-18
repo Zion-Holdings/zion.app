@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 // Only use the public client-side OpenAI key - never reference server-side secrets'
 const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 import { useLanguage } from '@/context/LanguageContext'
-import type { SupportedLanguage } from '@/context/LanguageContext;;
+import type { SupportedLanguage } from '@/context/LanguageContext;
 type ContentType = 'job' | 'profile' | 'service' | 'general;
 '
 interface TranslationResponse {

@@ -30,5 +30,5 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
   return <JsonLd data={data} />'
 }'
 
-export default BreadcrumbJsonLd'
+export defaultault BreadcrumbJsonLd'
 '''''

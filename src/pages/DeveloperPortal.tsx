@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { List } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'
-import type { LucideIcon } from 'lucide-react;;
+import type { LucideIcon } from 'lucide-react;
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ApiKeysManager } from '@/components/developers/ApiKeysManager'
 import { WebhooksManager } from '@/components/developers/WebhooksManager'
 import { ApiDocumentation } from '@/components/developers/ApiDocumentation'
-import { ApiLogs } from '@/components/developers/ApiLogs;;
+import { ApiLogs } from '@/components/developers/ApiLogs;
 '
 interface TabDefinition {
   id: "string"

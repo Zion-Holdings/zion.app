@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import PostForm from '@/components/community/PostForm'
 import { useToast } from '@/hooks/use-toast'
 import type { ForumPost, ForumCategory } from '@/types/community'
-import { useAuth } from '@/hooks/useAuth;;
+import { useAuth } from '@/hooks/useAuth;
 '
 interface PostFormValues {
   title: "string"
@@ -14,5 +14,5 @@ interface PostFormValues {
   categoryId: "ForumCategory"
   tags: "string"
 }
-export default function EditPostPage(): ;
+export defaultault function EditPostPage(): ;
   const router = useRouter();

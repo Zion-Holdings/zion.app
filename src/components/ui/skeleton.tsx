@@ -63,7 +63,7 @@ Skeleton.displayName = 'Skeleton'
   );
 }
 ;""
-export default Skeleton;
+export defaultault Skeleton;
 
 // Add Keyframes for shimmer animation (e.g. in a global CSS or a style tag if no global CSS file is specified);"
 // For this example, I'll assume these keyframes are added to a global CSS file or a style tag in the main HTML.'

@@ -442,5 +442,5 @@ const HealthDashboard: unknown React.FC = () => {;
   )"
 };"
 ;";"
-export default HealthDashboard;";"
+export defaultault HealthDashboard;";"
 """

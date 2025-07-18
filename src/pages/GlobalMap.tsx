@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Globe, MapPin } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo;;
+import { NextSeo } from '@/components/NextSeo;
 import {'
   Tooltip,;
   TooltipContent,;
@@ -61,7 +61,7 @@ interface FeedItem {
   id: "number"
   text: "string"
 }
-export default function GlobalMapPage(): ;
+export defaultault function GlobalMapPage(): ;
   const [feed, setFeed] = useState<FeedItem[]>([]);"
 ;";"
   useEffect(() => {;"

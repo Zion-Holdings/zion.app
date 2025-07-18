@@ -1,6 +1,6 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { ForumPost } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export async function fetchPostsByCategory(): unknown {): unknown {): unknown {): unknown {): unknown {;
   categoryId: string,;"

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage'
-import { logWarn } from '@/utils/productionLogger;;
+import { logWarn } from '@/utils/productionLogger;
 /**'
  * Persist state to localStorage and keep it in sync.;
  * @param key Storage key;

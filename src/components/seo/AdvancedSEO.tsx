@@ -30,7 +30,7 @@ interface SEOProps {;
   canonical?: string;
 };
 
-export default function AdvancedSEO(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,'
   description,'
   keywords = [],;

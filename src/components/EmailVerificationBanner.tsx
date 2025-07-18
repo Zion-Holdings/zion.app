@@ -55,5 +55,5 @@ const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = 
   )'
 }'
 
-export default EmailVerificationBanner'
+export defaultault EmailVerificationBanner'
 '''''

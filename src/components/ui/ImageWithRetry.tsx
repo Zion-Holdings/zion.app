@@ -63,7 +63,7 @@ export function ImageWithRetry(): unknown {): unknown {): unknown {): unknown {)
   )'
 }'
 
-export default ImageWithRetry;
+export defaultault ImageWithRetry;
 
 }'
 }

@@ -25,5 +25,5 @@ export const JobDetailsSkeleton = () => ('
   </div>
 );"
 ;";
-export default JobDetailsSkeleton";";
+export defaultault JobDetailsSkeleton";";
 """

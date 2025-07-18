@@ -2,13 +2,13 @@ import React from 'react';
 import { Header } from '@/components/Header'
 import { CompanyDashboard } from '@/components/enterprise/workspace/CompanyDashboard'
 import { useAuth } from '@/hooks/useAuth'
-import { useRouter } from 'next/router // Changed to named import;;
+import { useRouter } from 'next/router // Changed to named import;
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useCompanyWorkspace } from '@/hooks/useCompanyWorkspace'
 import { useWhitelabel } from '@/context/WhitelabelContext'
 ;
-export default function CompanyWorkspace(): ;
+export defaultault function CompanyWorkspace(): ;
   const router = useRouter()'
   const companySlug = router.query.companySlug as string;
   const { user: "_user " } = useAuth();

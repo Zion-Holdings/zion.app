@@ -12,7 +12,7 @@ import { generateTraceId } from '@/utils/generateTraceId'
 
 // Fallback is defined inside GlobalErrorBoundary to access state'
 '
-export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export defaultault function GlobalErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   children,'
 }: {'
   children: React.ReactNode""

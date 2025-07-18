@@ -3,7 +3,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { TERMS_SECTIONS } from './termsContent';
 ;
-export default function TermsOfService() {
+export defaultault function TermsOfService() {
   const [active, setActive] = useState(TERMS_SECTIONS[0].id);
   const headingRefs = useRef({});
 

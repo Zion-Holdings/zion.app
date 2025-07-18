@@ -680,5 +680,5 @@ export const SearchResultsPage: unknown React.FC = () => {
   )'
 }'
 
-export default SearchResultsPage'
+export defaultault SearchResultsPage'
 '''''

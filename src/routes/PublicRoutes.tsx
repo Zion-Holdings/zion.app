@@ -3,4 +3,4 @@
 const PublicRoutes = () => {;
   return null;
 };
-export default PublicRoutes;
+export defaultault PublicRoutes;

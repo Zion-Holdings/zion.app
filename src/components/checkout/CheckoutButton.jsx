@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button''
 import { useAuth } from '@/hooks/useAuth''
 import { getStripe } from '@/utils/getStripe''
 import { logErrorToProduction } from '@/utils/productionLogger''
-export default function CheckoutButton({ priceId, quantity = 1 }) {
+export defaultault function CheckoutButton({ priceId, quantity = 1 }) {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
   const handleClick = async () => {
