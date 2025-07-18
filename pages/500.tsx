@@ -9,18 +9,18 @@ import { logInfo } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 
 export default function Custom500() {
-  const { _user } = useAuth();
+  const { user } = useAuth();
   const { t } = useTranslation();
   const router = useRouter();
 
   useEffect(() => {
     const err = new Error('500 - Server Error');
     const eventId = captureException(err, {
-      user: _user ? { id: _user.id, email: _user.email } : undefined,
+      user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
     logInfo('Reported 500 error', { data:  { data:  { errorId: eventId } } });
-  }, [_user]);
+  }, [user]);
 
   return (
     <>

@@ -12,7 +12,7 @@ import { ShoppingCart } from 'lucide-react';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {
-  const { _user } = useAuth();
+  const { user } = useAuth();
   const { t } = useTranslation();
   const router = useRouter();
 
