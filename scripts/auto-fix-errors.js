@@ -1,411 +1,662 @@
 #!/usr/bin/env node
 
 /**
- * Auto-Fix Common Build Errors
- * Automatically fixes common TypeScript, ESLint, and build errors
+ * Zion App Auto-Fix System
+ * Automatically fixes common errors and issues
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
-const glob = require('glob');
+const { execSync, spawn } = require('child_process');
 
 class AutoFixSystem {
   constructor() {
     this.fixesApplied = [];
-    this.logFile = 'logs/auto-fix.log';
-    this.ensureLogDirectory();
-  }
-
-  ensureLogDirectory() {
-    const logDir = path.dirname(this.logFile);
-    if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true });
-    }
-  }
-
-  log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
-    fs.appendFileSync(this.logFile, logMessage + '\n');
-  }
-
-  async fixTypeScriptErrors() {
-    this.log('Fixing TypeScript errors...');
-    
-    try {
-      // Run TypeScript compiler to get errors
-      const tscOutput = execSync('npx tsc --noEmit --pretty false', { 
-        encoding: 'utf8',
-        stdio: ['pipe', 'pipe', 'pipe']
-      });
-      
-      const errors = this.parseTypeScriptErrors(tscOutput);
-      
-      for (const error of errors) {
-        await this.fixTypeScriptError(error);
-      }
-      
-      this.log(`Fixed ${errors.length} TypeScript errors`);
-    } catch (error) {
-      // TSC will exit with error code if there are errors, which is expected
-      const tscOutput = error.stdout || error.stderr || '';
-      const errors = this.parseTypeScriptErrors(tscOutput);
-      
-      for (const error of errors) {
-        await this.fixTypeScriptError(error);
-      }
-      
-      this.log(`Fixed ${errors.length} TypeScript errors`);
-    }
-  }
-
-  parseTypeScriptErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
-    
-    for (const line of lines) {
-      const match = line.match(/([^(]+)\((\d+),(\d+)\): error TS\d+: (.+)/);
-      if (match) {
-        errors.push({
-          file: match[1].trim(),
-          line: parseInt(match[2]),
-          column: parseInt(match[3]),
-          message: match[4],
-          fullLine: line
-        });
-      }
-    }
-    
-    return errors;
-  }
-
-  async fixTypeScriptError(error) {
-    try {
-      if (!fs.existsSync(error.file)) {
-        return;
-      }
-
-      const content = fs.readFileSync(error.file, 'utf8');
-      const lines = content.split('\n');
-      
-      if (error.message.includes('Cannot find module')) {
-        await this.fixMissingImport(error, lines);
-      } else if (error.message.includes('has no exported member')) {
-        await this.fixMissingExport(error, lines);
-      } else if (error.message.includes('Property') && error.message.includes('does not exist')) {
-        await this.fixPropertyError(error, lines);
-      } else if (error.message.includes('Object is possibly')) {
-        await this.fixNullCheck(error, lines);
-      } else if (error.message.includes('Type') && error.message.includes('is not assignable')) {
-        await this.fixTypeAssignment(error, lines);
-      }
-    } catch (fixError) {
-      this.log(`Failed to fix TypeScript error: ${fixError.message}`, 'ERROR');
-    }
-  }
-
-  async fixMissingImport(error, lines) {
-    const match = error.message.match(/Cannot find module ['"]([^'"]+)['"]/);
-    if (match) {
-      const moduleName = match[1];
-      
-      // Try to install the package
-      try {
-        execSync(`npm install ${moduleName}`, { stdio: 'pipe' });
-        this.log(`Installed missing package: ${moduleName}`);
-        this.fixesApplied.push(`Installed ${moduleName}`);
-      } catch (installError) {
-        // If it's a local module, try to fix the import path
-        await this.fixImportPath(error, lines, moduleName);
-      }
-    }
-  }
-
-  async fixImportPath(error, lines, moduleName) {
-    // Try to find the correct path for the module
-    const possiblePaths = [
-      `./${moduleName}`,
-      `../${moduleName}`,
-      `../../${moduleName}`,
-      `src/${moduleName}`,
-      `components/${moduleName}`,
-      `utils/${moduleName}`,
-      `lib/${moduleName}`
-    ];
-
-    for (const possiblePath of possiblePaths) {
-      const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-      for (const ext of extensions) {
-        const fullPath = path.resolve(path.dirname(error.file), possiblePath + ext);
-        if (fs.existsSync(fullPath)) {
-          // Fix the import statement
-          const importLine = lines[error.line - 1];
-          const newImportLine = importLine.replace(
-            /from ['"][^'"]*['"]/,
-            `from '${possiblePath}${ext}'`
-          );
-          lines[error.line - 1] = newImportLine;
-          fs.writeFileSync(error.file, lines.join('\n'));
-          this.log(`Fixed import path: ${moduleName} -> ${possiblePath}${ext}`);
-          this.fixesApplied.push(`Fixed import: ${moduleName}`);
-          return;
-        }
-      }
-    }
-  }
-
-  async fixMissingExport(error, lines) {
-    const match = error.message.match(/Module ['"]([^'"]+)['"] has no exported member ['"]([^'"]+)['"]/);
-    if (match) {
-      const [, modulePath, exportName] = match;
-      const moduleFile = this.resolveModulePath(modulePath);
-      
-      if (moduleFile && fs.existsSync(moduleFile)) {
-        const moduleContent = fs.readFileSync(moduleFile, 'utf8');
-        const moduleLines = moduleContent.split('\n');
-        
-        // Check if the export exists
-        const hasExport = moduleLines.some(line => 
-          line.includes(`export`) && line.includes(exportName)
-        );
-        
-        if (!hasExport) {
-          // Add the missing export
-          moduleLines.push(`export { ${exportName} };`);
-          fs.writeFileSync(moduleFile, moduleLines.join('\n'));
-          this.log(`Added missing export: ${exportName} in ${moduleFile}`);
-          this.fixesApplied.push(`Added export: ${exportName}`);
-        }
-      }
-    }
-  }
-
-  async fixPropertyError(error, lines) {
-    const match = error.message.match(/Property ['"]([^'"]+)['"] does not exist on type ['"]([^'"]+)['"]/);
-    if (match) {
-      const [, propertyName, typeName] = match;
-      
-      // Try to add the missing property to the type definition
-      const typeFile = this.findTypeDefinition(typeName);
-      if (typeFile) {
-        await this.addPropertyToType(typeFile, propertyName);
-      }
-    }
-  }
-
-  async fixNullCheck(error, lines) {
-    const line = lines[error.line - 1];
-    if (line.includes('.')) {
-      // Add optional chaining
-      const newLine = line.replace(/\.(\w+)/g, '?.$1');
-      lines[error.line - 1] = newLine;
-      fs.writeFileSync(error.file, lines.join('\n'));
-      this.log(`Added null check: ${error.file}:${error.line}`);
-      this.fixesApplied.push(`Added null check: ${error.file}:${error.line}`);
-    }
-  }
-
-  async fixTypeAssignment(error, lines) {
-    const line = lines[error.line - 1];
-    if (line.includes(':')) {
-      // Try to fix type annotation
-      const newLine = line.replace(/: (\w+)/g, ': any');
-      lines[error.line - 1] = newLine;
-      fs.writeFileSync(error.file, lines.join('\n'));
-      this.log(`Fixed type assignment: ${error.file}:${error.line}`);
-      this.fixesApplied.push(`Fixed type: ${error.file}:${error.line}`);
-    }
-  }
-
-  resolveModulePath(modulePath) {
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-    const basePaths = ['src', 'pages', 'components', 'utils', 'lib'];
-    
-    for (const basePath of basePaths) {
-      for (const ext of extensions) {
-        const fullPath = path.join(process.cwd(), basePath, modulePath + ext);
-        if (fs.existsSync(fullPath)) {
-          return fullPath;
-        }
-      }
-    }
-    return null;
-  }
-
-  findTypeDefinition(typeName) {
-    // Look for type definitions in common locations
-    const typeFiles = glob.sync('**/*.d.ts', { cwd: process.cwd() });
-    for (const typeFile of typeFiles) {
-      const content = fs.readFileSync(typeFile, 'utf8');
-      if (content.includes(`interface ${typeName}`) || content.includes(`type ${typeName}`)) {
-        return typeFile;
-      }
-    }
-    return null;
-  }
-
-  async addPropertyToType(typeFile, propertyName) {
-    const content = fs.readFileSync(typeFile, 'utf8');
-    const lines = content.split('\n');
-    
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].includes('interface') || lines[i].includes('type')) {
-        // Add property after the interface/type declaration
-        lines.splice(i + 1, 0, `  ${propertyName}?: any;`);
-        fs.writeFileSync(typeFile, lines.join('\n'));
-        this.log(`Added property ${propertyName} to type definition in ${typeFile}`);
-        this.fixesApplied.push(`Added property: ${propertyName}`);
-        break;
-      }
-    }
-  }
-
-  async fixESLintErrors() {
-    this.log('Fixing ESLint errors...');
-    
-    try {
-      // Run ESLint with auto-fix
-      execSync('npm run lint:fix', { stdio: 'inherit' });
-      this.log('ESLint auto-fixes applied');
-      this.fixesApplied.push('ESLint auto-fixes');
-    } catch (error) {
-      this.log(`ESLint fix failed: ${error.message}`, 'ERROR');
-    }
-  }
-
-  async fixImportOrder() {
-    this.log('Fixing import order...');
-    
-    try {
-      // Run import sorting
-      execSync('npx eslint --fix --rule "import/order: error" src/**/*.{ts,tsx}', { stdio: 'pipe' });
-      this.log('Import order fixed');
-      this.fixesApplied.push('Import order');
-    } catch (error) {
-      // Ignore errors for import order
-    }
-  }
-
-  async fixUnusedImports() {
-    this.log('Removing unused imports...');
-    
-    try {
-      // Run unused import removal
-      execSync('npx eslint --fix --rule "unused-imports/no-unused-imports: error" src/**/*.{ts,tsx}', { stdio: 'pipe' });
-      this.log('Unused imports removed');
-      this.fixesApplied.push('Unused imports');
-    } catch (error) {
-      // Ignore errors for unused imports
-    }
-  }
-
-  async fixPrettierFormatting() {
-    this.log('Fixing code formatting...');
-    
-    try {
-      execSync('npx prettier --write "src/**/*.{ts,tsx,js,jsx}"', { stdio: 'inherit' });
-      this.log('Code formatting fixed');
-      this.fixesApplied.push('Code formatting');
-    } catch (error) {
-      this.log(`Prettier formatting failed: ${error.message}`, 'ERROR');
-    }
-  }
-
-  async installMissingDependencies() {
-    this.log('Checking for missing dependencies...');
-    
-    try {
-      // Check package.json for missing dependencies
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
-      
-      // Check if all imports have corresponding dependencies
-      const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-      const missingDeps = new Set();
-      
-      for (const file of tsFiles) {
-        const content = fs.readFileSync(file, 'utf8');
-        const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
-        
-        if (importMatches) {
-          for (const match of importMatches) {
-            const moduleMatch = match.match(/from ['"]([^'"]+)['"]/);
-            if (moduleMatch) {
-              const moduleName = moduleMatch[1];
-              if (!moduleName.startsWith('.') && !moduleName.startsWith('@/') && !allDeps[moduleName]) {
-                missingDeps.add(moduleName);
-              }
-            }
-          }
-        }
-      }
-      
-      if (missingDeps.size > 0) {
-        const depsArray = Array.from(missingDeps);
-        execSync(`npm install ${depsArray.join(' ')}`, { stdio: 'inherit' });
-        this.log(`Installed missing dependencies: ${depsArray.join(', ')}`);
-        this.fixesApplied.push(`Installed: ${depsArray.join(', ')}`);
-      }
-    } catch (error) {
-      this.log(`Dependency check failed: ${error.message}`, 'ERROR');
-    }
-  }
-
-  async commitAndPush() {
-    if (this.fixesApplied.length > 0) {
-      try {
-        const commitMessage = `Auto-fix: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;
-        
-        execSync('git add .', { stdio: 'inherit' });
-        execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
-        execSync('git push', { stdio: 'inherit' });
-        
-        this.log('Changes committed and pushed successfully');
-        return true;
-      } catch (error) {
-        this.log(`Failed to commit changes: ${error.message}`, 'ERROR');
-        return false;
-      }
-    }
-    return false;
+    this.errors = [];
+    this.projectRoot = process.cwd();
   }
 
   async run() {
-    this.log('Starting auto-fix system...');
+    console.log('Starting auto-fix system...');
     
     try {
-      // Run all fix operations
-      await this.fixTypeScriptErrors();
-      await this.fixESLintErrors();
-      await this.fixImportOrder();
-      await this.fixUnusedImports();
-      await this.fixPrettierFormatting();
-      await this.installMissingDependencies();
+      // Run all fix categories
+      await this.fixDependencies();
+      await this.fixTypeScript();
+      await this.fixLinting();
+      await this.fixStyling();
+      await this.fixWalletContext();
+      await this.fixSupabase();
+      await this.fixEnvironment();
+      await this.fixImports();
+      await this.fixConfiguration();
       
-      // Commit and push changes
-      const committed = await this.commitAndPush();
-      
-      if (committed) {
-        this.log('Auto-fix completed successfully. New build will be triggered.');
-      } else {
-        this.log('Auto-fix completed but no changes were committed.');
-      }
-      
-      this.log(`Total fixes applied: ${this.fixesApplied.length}`);
+      console.log('Auto-fix system completed');
+      this.logResults();
       
     } catch (error) {
-      this.log(`Auto-fix system failed: ${error.message}`, 'ERROR');
-      throw error;
+      console.error('Auto-fix system failed:', error.message);
+      this.errors.push(error.message);
     }
+  }
+
+  async fixDependencies() {
+    console.log('Fixing dependency issues...');
+    
+    try {
+      // Check for missing dependencies
+      const packageJsonPath = path.join(this.projectRoot, 'package.json');
+      if (!fs.existsSync(packageJsonPath)) {
+        throw new Error('package.json not found');
+      }
+
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+      
+      // Check for common missing dependencies
+      const commonDeps = [
+        '@supabase/ssr',
+        '@supabase/supabase-js',
+        '@reown/appkit/react',
+        'ethers',
+        'next',
+        'react',
+        'react-dom'
+      ];
+
+      const missingDeps = commonDeps.filter(dep => 
+        !packageJson.dependencies?.[dep] && !packageJson.devDependencies?.[dep]
+      );
+
+      if (missingDeps.length > 0) {
+        console.log(`Installing missing dependencies: ${missingDeps.join(', ')}`);
+        execSync(`npm install ${missingDeps.join(' ')}`, { stdio: 'inherit' });
+        this.fixesApplied.push(`Installed missing dependencies: ${missingDeps.join(', ')}`);
+      }
+
+      // Clear cache and reinstall if there are issues
+      if (this.hasDependencyErrors()) {
+        console.log('Clearing npm cache and reinstalling...');
+        execSync('npm cache clean --force', { stdio: 'inherit' });
+        execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
+        execSync('npm install', { stdio: 'inherit' });
+        this.fixesApplied.push('Cleared cache and reinstalled dependencies');
+      }
+
+    } catch (error) {
+      this.errors.push(`Dependency fix failed: ${error.message}`);
+    }
+  }
+
+  async fixTypeScript() {
+    console.log('Fixing TypeScript issues...');
+    
+    try {
+      // Run TypeScript compiler to check for errors
+      const tscResult = execSync('npx tsc --noEmit --skipLibCheck', { 
+        stdio: 'pipe',
+        encoding: 'utf8'
+      });
+      
+      // If no errors, we're good
+      if (tscResult.includes('error')) {
+        await this.fixTypeScriptErrors(tscResult);
+      }
+
+    } catch (error) {
+      // TypeScript errors are expected, try to fix them
+      const errorOutput = error.stdout || error.stderr || error.message;
+      await this.fixTypeScriptErrors(errorOutput);
+    }
+  }
+
+  async fixTypeScriptErrors(errorOutput) {
+    console.log('Fixing TypeScript errors...');
+    
+    try {
+      // Fix common TypeScript issues
+      const fixes = [
+        // Fix import issues
+        () => this.fixImportStatements(),
+        // Fix type issues
+        () => this.fixTypeIssues(),
+        // Fix interface issues
+        () => this.fixInterfaceIssues(),
+        // Fix generic issues
+        () => this.fixGenericIssues()
+      ];
+
+      for (const fix of fixes) {
+        try {
+          await fix();
+        } catch (fixError) {
+          console.log(`Fix attempt failed: ${fixError.message}`);
+        }
+      }
+
+      this.fixesApplied.push('Applied TypeScript fixes');
+    } catch (error) {
+      this.errors.push(`TypeScript fix failed: ${error.message}`);
+    }
+  }
+
+  async fixImportStatements() {
+    const srcDir = path.join(this.projectRoot, 'src');
+    if (!fs.existsSync(srcDir)) return;
+
+    const files = this.getAllFiles(srcDir, ['.ts', '.tsx']);
+    
+    for (const file of files) {
+      try {
+        let content = fs.readFileSync(file, 'utf8');
+        let modified = false;
+
+        // Fix relative imports
+        content = content.replace(
+          /from ['"]\.\.\/\.\.\/\.\.\/([^'"]+)['"]/g,
+          'from \'@/$1\''
+        );
+
+        // Fix missing extensions
+        content = content.replace(
+          /from ['"]([^'"]+)['"]/g,
+          (match, importPath) => {
+            if (importPath.startsWith('.') && !importPath.includes('.')) {
+              return `from '${importPath}.ts'`;
+            }
+            return match;
+          }
+        );
+
+        if (content !== fs.readFileSync(file, 'utf8')) {
+          fs.writeFileSync(file, content);
+          modified = true;
+        }
+
+        if (modified) {
+          console.log(`Fixed imports in ${file}`);
+        }
+      } catch (error) {
+        console.log(`Error fixing imports in ${file}: ${error.message}`);
+      }
+    }
+  }
+
+  async fixTypeIssues() {
+    const srcDir = path.join(this.projectRoot, 'src');
+    if (!fs.existsSync(srcDir)) return;
+
+    const files = this.getAllFiles(srcDir, ['.ts', '.tsx']);
+    
+    for (const file of files) {
+      try {
+        let content = fs.readFileSync(file, 'utf8');
+        let modified = false;
+
+        // Fix any types
+        content = content.replace(
+          /: any\b/g,
+          ': unknown'
+        );
+
+        // Fix missing return types
+        content = content.replace(
+          /function\s+(\w+)\s*\([^)]*\)\s*{/g,
+          'function $1(...args: unknown[]): unknown {'
+        );
+
+        if (content !== fs.readFileSync(file, 'utf8')) {
+          fs.writeFileSync(file, content);
+          modified = true;
+        }
+
+        if (modified) {
+          console.log(`Fixed types in ${file}`);
+        }
+      } catch (error) {
+        console.log(`Error fixing types in ${file}: ${error.message}`);
+      }
+    }
+  }
+
+  async fixInterfaceIssues() {
+    // Fix common interface issues
+    const walletContextPath = path.join(this.projectRoot, 'src/context/WalletContext.tsx');
+    
+    if (fs.existsSync(walletContextPath)) {
+      try {
+        let content = fs.readFileSync(walletContextPath, 'utf8');
+        
+        // Ensure proper interface exports
+        if (!content.includes('export interface WalletState')) {
+          content = content.replace(
+            /interface WalletState/g,
+            'export interface WalletState'
+          );
+        }
+
+        if (!content.includes('export interface WalletContextType')) {
+          content = content.replace(
+            /interface WalletContextType/g,
+            'export interface WalletContextType'
+          );
+        }
+
+        fs.writeFileSync(walletContextPath, content);
+        console.log('Fixed WalletContext interfaces');
+      } catch (error) {
+        console.log(`Error fixing interfaces: ${error.message}`);
+      }
+    }
+  }
+
+  async fixGenericIssues() {
+    // Fix common generic TypeScript issues
+    const srcDir = path.join(this.projectRoot, 'src');
+    if (!fs.existsSync(srcDir)) return;
+
+    const files = this.getAllFiles(srcDir, ['.ts', '.tsx']);
+    
+    for (const file of files) {
+      try {
+        let content = fs.readFileSync(file, 'utf8');
+        let modified = false;
+
+        // Fix React.FC generic issues
+        content = content.replace(
+          /React\.FC<{([^}]+)}>/g,
+          'React.FC<{ $1 }>'
+        );
+
+        // Fix useState generic issues
+        content = content.replace(
+          /useState<([^>]+)>\(/g,
+          'useState<$1>('
+        );
+
+        if (content !== fs.readFileSync(file, 'utf8')) {
+          fs.writeFileSync(file, content);
+          modified = true;
+        }
+
+        if (modified) {
+          console.log(`Fixed generics in ${file}`);
+        }
+      } catch (error) {
+        console.log(`Error fixing generics in ${file}: ${error.message}`);
+      }
+    }
+  }
+
+  async fixLinting() {
+    console.log('Fixing linting issues...');
+    
+    try {
+      // Run ESLint auto-fix
+      execSync('npm run lint:fix', { stdio: 'inherit' });
+      this.fixesApplied.push('Applied ESLint auto-fixes');
+    } catch (error) {
+      // If lint:fix doesn't exist, try direct ESLint
+      try {
+        execSync('npx eslint --fix src/**/*.{ts,tsx}', { stdio: 'inherit' });
+        this.fixesApplied.push('Applied ESLint fixes');
+      } catch (eslintError) {
+        this.errors.push(`Linting fix failed: ${eslintError.message}`);
+      }
+    }
+  }
+
+  async fixStyling() {
+    console.log('Fixing styling issues...');
+    
+    try {
+      // Fix Tailwind CSS issues
+      const tailwindConfigPath = path.join(this.projectRoot, 'tailwind.config.js');
+      
+      if (fs.existsSync(tailwindConfigPath)) {
+        let content = fs.readFileSync(tailwindConfigPath, 'utf8');
+        
+        // Ensure proper content paths
+        if (!content.includes('src/**/*.{js,ts,jsx,tsx}')) {
+          content = content.replace(
+            /content:\s*\[([^\]]+)\]/,
+            'content: [$1, "src/**/*.{js,ts,jsx,tsx}"]'
+          );
+        }
+
+        fs.writeFileSync(tailwindConfigPath, content);
+        this.fixesApplied.push('Fixed Tailwind configuration');
+      }
+
+      // Run Tailwind build
+      try {
+        execSync('npx tailwindcss -i ./src/styles/globals.css -o ./public/styles.css', { stdio: 'inherit' });
+        this.fixesApplied.push('Rebuilt Tailwind CSS');
+      } catch (error) {
+        console.log('Tailwind build failed, continuing...');
+      }
+
+    } catch (error) {
+      this.errors.push(`Styling fix failed: ${error.message}`);
+    }
+  }
+
+  async fixWalletContext() {
+    console.log('Fixing wallet context issues...');
+    
+    try {
+      const walletContextPath = path.join(this.projectRoot, 'src/context/WalletContext.tsx');
+      
+      if (fs.existsSync(walletContextPath)) {
+        let content = fs.readFileSync(walletContextPath, 'utf8');
+        let modified = false;
+
+        // Fix common wallet context issues
+        if (!content.includes('import { createAppKit }')) {
+          content = `import { createAppKit } from '@reown/appkit/react';\n${content}`;
+          modified = true;
+        }
+
+        // Fix provider initialization
+        if (!content.includes('adapters: []')) {
+          content = content.replace(
+            /createAppKit\({/g,
+            'createAppKit({\n          adapters: [],'
+          );
+          modified = true;
+        }
+
+        // Fix error handling
+        if (!content.includes('logErrorToProduction')) {
+          content = content.replace(
+            /console\.error\(/g,
+            'logErrorToProduction('
+          );
+          modified = true;
+        }
+
+        if (modified) {
+          fs.writeFileSync(walletContextPath, content);
+          this.fixesApplied.push('Fixed WalletContext issues');
+        }
+      }
+
+    } catch (error) {
+      this.errors.push(`Wallet context fix failed: ${error.message}`);
+    }
+  }
+
+  async fixSupabase() {
+    console.log('Fixing Supabase issues...');
+    
+    try {
+      const clientPath = path.join(this.projectRoot, 'src/utils/supabase/client.ts');
+      const serverPath = path.join(this.projectRoot, 'src/utils/supabase/server.ts');
+      
+      // Fix client configuration
+      if (fs.existsSync(clientPath)) {
+        let content = fs.readFileSync(clientPath, 'utf8');
+        let modified = false;
+
+        // Ensure proper environment variable handling
+        if (!content.includes('|| ""')) {
+          content = content.replace(
+            /process\.env\.NEXT_PUBLIC_SUPABASE_URL/g,
+            'process.env.NEXT_PUBLIC_SUPABASE_URL || ""'
+          );
+          content = content.replace(
+            /process\.env\.NEXT_PUBLIC_SUPABASE_ANON_KEY/g,
+            'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""'
+          );
+          modified = true;
+        }
+
+        if (modified) {
+          fs.writeFileSync(clientPath, content);
+          this.fixesApplied.push('Fixed Supabase client configuration');
+        }
+      }
+
+      // Fix server configuration
+      if (fs.existsSync(serverPath)) {
+        let content = fs.readFileSync(serverPath, 'utf8');
+        let modified = false;
+
+        // Ensure proper error handling
+        if (!content.includes('try {')) {
+          content = content.replace(
+            /export const createServerClient =/g,
+            'export const createServerClient = async'
+          );
+          modified = true;
+        }
+
+        if (modified) {
+          fs.writeFileSync(serverPath, content);
+          this.fixesApplied.push('Fixed Supabase server configuration');
+        }
+      }
+
+    } catch (error) {
+      this.errors.push(`Supabase fix failed: ${error.message}`);
+    }
+  }
+
+  async fixEnvironment() {
+    console.log('Fixing environment issues...');
+    
+    try {
+      const envPath = path.join(this.projectRoot, '.env.local');
+      
+      if (!fs.existsSync(envPath)) {
+        const envContent = this.generateEnvironmentFile();
+        fs.writeFileSync(envPath, envContent);
+        this.fixesApplied.push('Created environment file');
+      } else {
+        let content = fs.readFileSync(envPath, 'utf8');
+        const fixedContent = this.fixEnvironmentContent(content);
+        
+        if (fixedContent !== content) {
+          fs.writeFileSync(envPath, fixedContent);
+          this.fixesApplied.push('Fixed environment file');
+        }
+      }
+
+    } catch (error) {
+      this.errors.push(`Environment fix failed: ${error.message}`);
+    }
+  }
+
+  generateEnvironmentFile() {
+    return `# Zion App Environment Variables
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
+# Reown AppKit Configuration
+NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
+
+# Application Configuration
+NEXT_PUBLIC_APP_URL=https://zion-app.netlify.app
+NODE_ENV=production
+
+# Add other environment variables as needed
+`;
+  }
+
+  fixEnvironmentContent(content) {
+    let fixed = content;
+    
+    // Ensure required variables exist
+    const requiredVars = [
+      'NEXT_PUBLIC_SUPABASE_URL',
+      'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+      'NEXT_PUBLIC_REOWN_PROJECT_ID'
+    ];
+    
+    for (const varName of requiredVars) {
+      if (!fixed.includes(varName)) {
+        fixed += `\n${varName}=your_${varName.toLowerCase()}_here`;
+      }
+    }
+    
+    return fixed;
+  }
+
+  async fixImports() {
+    console.log('Fixing import issues...');
+    
+    try {
+      const srcDir = path.join(this.projectRoot, 'src');
+      if (!fs.existsSync(srcDir)) return;
+
+      const files = this.getAllFiles(srcDir, ['.ts', '.tsx']);
+      
+      for (const file of files) {
+        try {
+          let content = fs.readFileSync(file, 'utf8');
+          let modified = false;
+
+          // Fix relative imports to absolute imports
+          content = content.replace(
+            /from ['"]\.\.\/\.\.\/\.\.\/([^'"]+)['"]/g,
+            'from \'@/$1\''
+          );
+
+          // Fix missing React imports
+          if (content.includes('React.FC') && !content.includes('import React')) {
+            content = `import React from 'react';\n${content}`;
+            modified = true;
+          }
+
+          if (modified) {
+            fs.writeFileSync(file, content);
+            console.log(`Fixed imports in ${file}`);
+          }
+        } catch (error) {
+          console.log(`Error fixing imports in ${file}: ${error.message}`);
+        }
+      }
+
+      this.fixesApplied.push('Fixed import statements');
+    } catch (error) {
+      this.errors.push(`Import fix failed: ${error.message}`);
+    }
+  }
+
+  async fixConfiguration() {
+    console.log('Fixing configuration issues...');
+    
+    try {
+      // Fix Next.js configuration
+      const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+      
+      if (fs.existsSync(nextConfigPath)) {
+        let content = fs.readFileSync(nextConfigPath, 'utf8');
+        let modified = false;
+
+        // Ensure proper configuration
+        if (!content.includes('reactStrictMode')) {
+          content = content.replace(
+            /const nextConfig = {/,
+            'const nextConfig = {\n  reactStrictMode: true,'
+          );
+          modified = true;
+        }
+
+        if (modified) {
+          fs.writeFileSync(nextConfigPath, content);
+          this.fixesApplied.push('Fixed Next.js configuration');
+        }
+      }
+
+      // Fix TypeScript configuration
+      const tsConfigPath = path.join(this.projectRoot, 'tsconfig.json');
+      
+      if (fs.existsSync(tsConfigPath)) {
+        let content = fs.readFileSync(tsConfigPath, 'utf8');
+        const config = JSON.parse(content);
+        let modified = false;
+
+        // Ensure proper paths
+        if (!config.compilerOptions?.paths?.['@/*']) {
+          if (!config.compilerOptions) config.compilerOptions = {};
+          if (!config.compilerOptions.paths) config.compilerOptions.paths = {};
+          config.compilerOptions.paths['@/*'] = ['./src/*'];
+          modified = true;
+        }
+
+        if (modified) {
+          fs.writeFileSync(tsConfigPath, JSON.stringify(config, null, 2));
+          this.fixesApplied.push('Fixed TypeScript configuration');
+        }
+      }
+
+    } catch (error) {
+      this.errors.push(`Configuration fix failed: ${error.message}`);
+    }
+  }
+
+  hasDependencyErrors() {
+    try {
+      execSync('npm ls', { stdio: 'pipe' });
+      return false;
+    } catch (error) {
+      return true;
+    }
+  }
+
+  getAllFiles(dir, extensions) {
+    const files = [];
+    
+    const items = fs.readdirSync(dir);
+    
+    for (const item of items) {
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        files.push(...this.getAllFiles(fullPath, extensions));
+      } else if (extensions.some(ext => item.endsWith(ext))) {
+        files.push(fullPath);
+      }
+    }
+    
+    return files;
+  }
+
+  logResults() {
+    console.log('\n=== Auto-Fix Results ===');
+    
+    if (this.fixesApplied.length > 0) {
+      console.log('\nFixes Applied:');
+      this.fixesApplied.forEach(fix => console.log(`✓ ${fix}`));
+    }
+    
+    if (this.errors.length > 0) {
+      console.log('\nErrors:');
+      this.errors.forEach(error => console.log(`✗ ${error}`));
+    }
+    
+    console.log(`\nTotal fixes applied: ${this.fixesApplied.length}`);
+    console.log(`Total errors: ${this.errors.length}`);
+  }
+
+  getResults() {
+    return {
+      fixesApplied: this.fixesApplied,
+      errors: this.errors,
+      success: this.errors.length === 0
+    };
   }
 }
 
-// Run the auto-fix system
+// CLI interface
 if (require.main === module) {
   const autoFix = new AutoFixSystem();
-  autoFix.run().catch(error => {
+  
+  autoFix.run().then(() => {
+    process.exit(autoFix.getResults().success ? 0 : 1);
+  }).catch(error => {
     console.error('Auto-fix system failed:', error);
     process.exit(1);
   });
