@@ -16,11 +16,11 @@ export default function Custom500() {
   useEffect(() => {
     const err = new Error('500 - Server Error');
     const eventId = captureException(err, {
-      user: user ? { id: user.id, email: user.email } : undefined,
+      user: _user ? { id: _user.id, email: _user.email } : undefined,
       extra: { path: window.location.pathname },
     });
     logInfo('Reported 500 error', { data:  { data:  { errorId: eventId } } });
-  }, [user]);
+  }, [_user]);
 
   return (
     <>
