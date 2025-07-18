@@ -87,7 +87,7 @@ export const getServerSideProps = async (context: unknown) => { // Added type fo
 
     // Optionally, set status code on response if available in context
     if (context && typeof context === 'object' && 'res' in context && context.res) {
-      (context.res as any).statusCode = 500;
+      (context.res as { statusCode?: number }).statusCode = 500;
     }
     // Return props, perhaps indicating an error state to the component
     return { props: { serverSideErrorOccurred: true } };

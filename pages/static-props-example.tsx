@@ -66,9 +66,9 @@ export async function getStaticProps() {
       props: { data },
       revalidate: 3600 // Revalidate every hour
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Gracefully handle all errors by falling back to mock data
-    logWarn('API fetch error, data will be empty:', { data:  { data: error?.message || error } });
+    logWarn('API fetch error, data will be empty:', { data:  { data: error instanceof Error ? error.message : String(error) } });
     return { 
       props: { data: [] },
       revalidate: 300 // Retry in 5 minutes
