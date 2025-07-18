@@ -2,12 +2,19 @@
 const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
-      // Fix watchpack issue
+      // Fix watchpack issue with proper path handling
       config.watchOptions = {
         ...config.watchOptions,
         poll: 1000,
         aggregateTimeout: 300,
-        ignored: ['**/node_modules', '**/.next', '**/logs']
+        ignored: ['**/node_modules', '**/.next', '**/logs', '**/automation', '**/scripts'],
+        followSymlinks: false
+      };
+      
+      // Use memory cache to avoid file system issues
+      config.cache = {
+        type: 'memory',
+        maxGenerations: 1
       };
     }
     return config;
@@ -30,6 +37,11 @@ const nextConfig = {
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
     pagesBufferLength: 2,
+  },
+  // Fix path resolution issues
+  distDir: '.next',
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
   },
 };
 
