@@ -34,7 +34,7 @@ export async function findMatches(
     if (!response.ok) throw new Error('Failed to fetch matches');
     const data = await response.json();
     return data;
-  } catch (__error) {
+  } catch {
     return [];
   }
 }

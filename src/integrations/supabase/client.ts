@@ -61,7 +61,7 @@ if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === '
 
 
 // Enhanced helper function to check online status
-async function checkOnline(): Promise<boolean> {
+async function _checkOnline(): Promise<boolean> {
   if (typeof navigator !== 'undefined' && 'onLine' in navigator) {
     return navigator.onLine;
   }
