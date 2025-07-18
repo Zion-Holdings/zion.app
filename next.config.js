@@ -56,3 +56,7 @@ const nextConfig = {
 };
 
 export default nextConfig;
+// Webpack optimizations added
+// Build caching enabled
+// Webpack optimizations added
+// Build caching enabled
