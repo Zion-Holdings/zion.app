@@ -13,7 +13,7 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
 
 
 interface Slide {
-  _id: string;
+  id: string;
   title: string;
   content: string;
   type: string;
