@@ -1,8 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { NextApiRequest, NextApiResponse } from 'next;
 import fs from 'fs;
 import path from 'path;
 import { logErrorToProduction } from '@/utils/productionLogger;
+=======
+import type { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
+import path from 'path';
+import { logErrorToProduction } from '@/utils/productionLogger';
+>>>>>>> a27d4aeaa5faafde73125deeb4dcc4c861d1d190
 
 interface LogEntry {
   id: string;
@@ -84,6 +91,7 @@ export default async function handler(
       error: 'Internal server error',
       timestamp
     });
+<<<<<<< HEAD
 
 
 =======
@@ -110,3 +118,7 @@ const Logs: NextPage = () => {
 export default Logs;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 `
+=======
+  }
+}
+>>>>>>> a27d4aeaa5faafde73125deeb4dcc4c861d1d190
