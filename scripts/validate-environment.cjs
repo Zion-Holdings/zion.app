@@ -155,7 +155,7 @@ function validateEnvironment() {
     const _value = process.env[varName];
     
     if (config.required) {
-      const _error = config.validation(_value);
+      const _error = config._validation(_value);
       if (_error) {
         _errors.push({
           variable: varName,

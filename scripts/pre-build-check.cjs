@@ -18,7 +18,7 @@ try {
  * are properly configured in Netlify. It provides clear instructions for fixing issues.
  */
 
-const { _validateEnvironment } = require('./validate-environment.cjs');
+const { validateEnvironment } = require('./validate-environment.cjs');
 
 // Remove all disallowed console statements (console.log, console.info, etc.)
 // Prefix unused variables/arguments with underscores
