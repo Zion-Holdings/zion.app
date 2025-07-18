@@ -1,5 +1,5 @@
 {
-  "id": "codeQuality-1752835919632-ui0rp2ccm",
+  "id": "codeQuality-1752835924495-fto22978x",
   "type": "codeQuality",
   "improvement": {
     "type": "codeQuality",
@@ -11,8 +11,7 @@
       "codeSmells": []
     }
   },
-  "timestamp": 1752835919632,
+  "timestamp": 1752835924495,
   "nodeId": "node-1",
-  "status": "completed",
-  "completedAt": 1752835924005
+  "status": "queued"
 }
