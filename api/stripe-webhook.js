@@ -18,15 +18,15 @@ export default async function handler(req, res) {
     res.status(405).end('Method Not Allowed');
     return;
   }
-  const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'];
+  const sig = req.headers['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
   let event;
   try {
     const buf = await buffer(req);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
-  } catch (_err) {
-    console.error('Webhook signature verification failed.', _err);
-    res.status(400).send(`Webhook Error: ${_err.message}`);
+  } catch (error) {
+    console.error('Webhook signature verification failed.', error);
+    res.status(400).send(`Webhook Error: ${error.message}`);
     return;
   }
 
@@ -42,8 +42,8 @@ export default async function handler(req, res) {
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
-      } catch (_err) {
-        console.error('Failed to update order', _err);
+      } catch (error) {
+        console.error('Failed to update order', error);
       }
       if (session.customer_details?.email && process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID) {
         try {
@@ -52,8 +52,8 @@ export default async function handler(req, res) {
             templateId: process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID,
             dynamicTemplateData: { orderId },
           });
-        } catch (_err) {
-          console.error('Failed to send receipt email', _err);
+        } catch (error) {
+          console.error('Failed to send receipt email', error);
         }
       }
     }

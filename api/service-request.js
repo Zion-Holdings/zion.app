@@ -1,4 +1,3 @@
-const { withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 
 async function handler(req, res) {
@@ -33,4 +32,4 @@ async function handler(req, res) {
   res.json({ success: true });
 }
 
-module.exports = withSentry(handler);
+module.exports = handler;
