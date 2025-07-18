@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD:src/pages/JobDetails.tsx
+import { Calendar, Clock, DollarSign, Briefcase } from '@/components/ui/icons';
+import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
+=======
 import { useRouter } from 'next/router';
 import { formatDistanceToNow } from 'date-fns';
 import { Calendar, DollarSign, Clock, Briefcase } from 'lucide-react';
@@ -9,11 +13,23 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { JobDetailsSkeleton } from '@/components/jobs';
 import { useJobDetails } from '@/hooks/useJobDetails';
 import { useAuth } from '@/hooks/useAuth';
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b:src/pages/JobDetails.tsx.backup
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+<<<<<<< HEAD:src/pages/JobDetails.tsx
+import { formatDistanceToNow } from 'date-fns';
+import { toast } from 'sonner';
+import { useAuth } from '@/hooks/useAuth';
+import useJobDetails from '@/hooks/useJobDetails';
+import { ApplyToJobModal } from '@/components/messaging/job-application';
+import { SEO } from '@/components/SEO';
+import { useWhitelabel } from '@/context/WhitelabelContext';
+import { JobDetailsSkeleton } from '@/components/jobs';
+=======
 import { ApplyToJobModal } from '@/components/jobs/ApplyToJobModal';
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b:src/pages/JobDetails.tsx.backup
 
 interface Job {
   id: string;
@@ -78,12 +94,6 @@ export default function JobDetails() {
     
     setIsApplyModalOpen(true);
   };
-
-  const _handleApplySuccess = undefined; // Unused async (_appliedJobId: string) => {
-    toast.success("Application submitted successfully!");
-    setIsApplyModalOpen(false);
-  };
-
 
   const isOwnJob = user?.id === job.client_id;
 
@@ -192,19 +202,14 @@ export default function JobDetails() {
         </div>
       </main>
       
-      {/* Job application modal */}
-      {job && (
+      {isApplyModalOpen && (
         <ApplyToJobModal
-          job={{
-            id: job.id,
-            title: job.title,
-            description: job.description || '',
-            company_name: job.company_name ?? "Company",
-            budget: formatBudget(job.budget),
-            client_id: job.client_id,
-          }}
-          isOpen={isApplyModalOpen}
+          jobId={jobId || ''}
           onClose={() => setIsApplyModalOpen(false)}
+          onSuccess={() => {
+            toast.success("Application submitted successfully!");
+            setIsApplyModalOpen(false);
+          }}
         />
       )}
     </>

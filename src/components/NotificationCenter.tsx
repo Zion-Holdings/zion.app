@@ -20,7 +20,11 @@ import {
 } from '@/components/notifications';
 import type { FilterType } from '@/components/notifications/NotificationFilter';
 
+<<<<<<< HEAD
+export const NotificationCenter: React.FC = () => {
+=======
 const NotificationCenter: React.FC = () => {
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b
   const {
     filteredNotifications,
     unreadCount,
@@ -45,9 +49,9 @@ const NotificationCenter: React.FC = () => {
         try {
           await fetchNotifications();
           setError(null);
-        } catch {
+        } catch (err) {
           logErrorToProduction('Failed to fetch notifications:', {
-            data: error,
+            data: err,
           });
           setError("Couldn't load notifications");
           enqueueSnackbar(
@@ -70,7 +74,7 @@ const NotificationCenter: React.FC = () => {
 
       loadNotifications();
     }
-  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar]);
+  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar, error]);
 
   const handleMarkAllAsRead = async () => {
     try {
@@ -78,9 +82,9 @@ const NotificationCenter: React.FC = () => {
       enqueueSnackbar('All notifications marked as read', {
         variant: 'success',
       });
-    } catch {
+    } catch (err) {
       logErrorToProduction('Failed to mark notifications as read:', {
-        data: error,
+        data: err,
       });
       enqueueSnackbar(
         typeof err === 'object' &&
@@ -98,7 +102,7 @@ const NotificationCenter: React.FC = () => {
     }
   };
 
-  const handleFilterChange = (_newFilter: FilterType) => {
+  const handleFilterChange = (newFilter: FilterType) => {
     setFilter(newFilter as FilterType);
   };
 

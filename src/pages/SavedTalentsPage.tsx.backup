@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+<<<<<<< HEAD:src/pages/SavedTalentsPage.tsx
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { EmptyState } from "@/components/ui/empty-state";
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
+export default function SavedTalentsPage() {
+  const { user } = useAuth();
+=======
 import { Heart } from 'lucide-react';
 
 import { SEO } from '@/components/SEO';
@@ -29,6 +37,7 @@ interface TalentProfile {
 export default function SavedTalentsPage() {
   const { user } = useAuth();
   const { supabase } = useSupabase();
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b:src/pages/SavedTalentsPage.tsx.backup
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -111,6 +120,8 @@ export default function SavedTalentsPage() {
     });
   };
 
+<<<<<<< HEAD:src/pages/SavedTalentsPage.tsx
+=======
   const _handleToggleSave = undefined; // Unused async (talentId: string, _isCurrentlySaved: boolean) => {
     try {
       if (!user) {
@@ -185,6 +196,7 @@ export default function SavedTalentsPage() {
     }
   };
 
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b:src/pages/SavedTalentsPage.tsx.backup
   return (
     <>
       <SEO
@@ -215,9 +227,9 @@ export default function SavedTalentsPage() {
               <TalentCard
                 key={talent.id}
                 talent={talent}
-                onViewProfile={handleViewProfile}
-                onRequestHire={handleRequestHire}
-                isAuthenticated={!!user}
+                onViewProfile={() => handleViewProfile(talent.id)}
+                onRequestHire={() => handleRequestHire(talent)}
+                isSaved={true}
               />
             ))}
           </div>

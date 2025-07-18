@@ -29,7 +29,11 @@ const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
 );
 Skeleton.displayName = 'Skeleton';
 
+<<<<<<< HEAD
+export const SkeletonCard: React.FC = () => {
+=======
 // export const _SkeletonCard: React.FC = () => {
+>>>>>>> b37ebba4446956d5d94efdabe1cff2346bf41376
   return (
     <div className="flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue p-4">
       {/* Image Placeholder */}

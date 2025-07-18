@@ -3,7 +3,11 @@ import { QrCode } from '@/components/ui/icons';
 
 import { AppStoreButtons } from './AppStoreButtons';
 
+<<<<<<< HEAD
+export const QrCodeDownload: React.FC = () => {
+=======
 // export const _QrCodeDownload: React.FC = () => {
+>>>>>>> b37ebba4446956d5d94efdabe1cff2346bf41376
   // App store links - these would come from environment variables in production
   const appStoreUrl = '#'; // Replace with actual App Store URL
   const googlePlayUrl = '#'; // Replace with actual Google Play URL
