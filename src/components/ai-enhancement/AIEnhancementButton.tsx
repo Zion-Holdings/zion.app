@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Loader2, RefreshCw, Check, X, Sparkles } from '@/components/ui/icons';
+import { Loader2, RefreshCw, Check, X, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 

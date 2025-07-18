@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Sparkles } from '@/components/ui/icons';
+import { ArrowRight, Zap, Target, Sparkles } from 'lucide-react';
 import { GradientHeading } from "@/components/GradientHeading";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
