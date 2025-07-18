@@ -1,0 +1,18 @@
+{
+  "id": "codeQuality-1752833539693-jbavzm69m",
+  "type": "codeQuality",
+  "improvement": {
+    "type": "codeQuality",
+    "severity": "medium",
+    "data": {
+      "lintErrors": 5,
+      "coverage": 0,
+      "bundleSizeIncrease": 0,
+      "codeSmells": []
+    }
+  },
+  "timestamp": 1752833539693,
+  "nodeId": "zion-master-node",
+  "status": "completed",
+  "completedAt": 1752833543737
+}

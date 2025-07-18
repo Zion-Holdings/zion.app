@@ -1,9 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { NextApiRequest, NextApiResponse } from 'next;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection;
 import { systemHealthMonitor } from '@/utils/systemHealthMonitor;
 import { logDashboard } from '@/utils/logDashboard;
+=======
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection';
+import { systemHealthMonitor } from '@/utils/systemHealthMonitor';
+import { logDashboard } from '@/utils/logDashboard';
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c
 
 interface ErrorMonitoringResponse {
   success: boolean;
@@ -11,7 +19,13 @@ interface ErrorMonitoringResponse {
   error?: string;
   timestamp: string;
 
-async function handleGet(req: NextApiRequest, res: NextApiResponse, action: string) {
+async function handleGet(
+  req: NextApiRequest,
+  res: NextApiResponse<ErrorMonitoringResponse>,
+  action: string
+) {
+  const timestamp = new Date().toISOString();
+
   try {
     switch (action) {
       case 'errors':
@@ -19,61 +33,84 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse, action: stri
         res.status(200).json({
           success: true,
           data: errors,
-          timestamp: new Date().toISOString()
+          timestamp
         });
         break;
+
       case 'health':
         const health = await systemHealthMonitor.getStatus();
         res.status(200).json({
           success: true,
           data: health,
-          timestamp: new Date().toISOString()
+          timestamp
         });
         break;
+
+      case 'logs':
+        const logs = await logDashboard.getRecentLogs();
+        res.status(200).json({
+          success: true,
+          data: logs,
+          timestamp
+        });
+        break;
+
       default:
         res.status(400).json({
           success: false,
           error: 'Invalid action',
-          timestamp: new Date().toISOString()
+          timestamp
         });
 
   } catch (error) {
-    logErrorToProduction('Error in GET error-monitoring:', error);
+    logErrorToProduction('Error in GET error monitoring:', error);
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp: new Date().toISOString()
+      timestamp
     });
 
 
-async function handlePost(req: NextApiRequest, res: NextApiResponse, action: string) {
+async function handlePost(
+  req: NextApiRequest,
+  res: NextApiResponse<ErrorMonitoringResponse>,
+  action: string
+) {
+  const timestamp = new Date().toISOString();
+
   try {
     switch (action) {
-      case 'clear':
+      case 'clear-errors':
         await enhancedErrorCollector.clearErrors();
         res.status(200).json({
           success: true,
-          message: 'Errors cleared',
-          timestamp: new Date().toISOString()
+          message: 'Errors cleared successfully',
+          timestamp
         });
         break;
+
       default:
         res.status(400).json({
           success: false,
           error: 'Invalid action',
-          timestamp: new Date().toISOString()
+          timestamp
         });
 
   } catch (error) {
-    logErrorToProduction('Error in POST error-monitoring:', error);
+    logErrorToProduction('Error in POST error monitoring:', error);
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp: new Date().toISOString()
+      timestamp
     });
 
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<ErrorMonitoringResponse>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ErrorMonitoringResponse>
+) {
+  const timestamp = new Date().toISOString();
+
   try {
     const { method, query } = req;
     const action = (query as Record<string, unknown>).action as string;
@@ -93,7 +130,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         res.status(405).json({
           success: false,
           error: 'Method not allowed',
-          timestamp: new Date().toISOString()
+          timestamp
         });
 
   } catch (error) {
@@ -101,8 +138,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp: new Date().toISOString()
+      timestamp
     });
+<<<<<<< HEAD
 
 
 =======
@@ -128,3 +166,7 @@ const ErrorMonitoring: NextPage = () => {
 
 export default ErrorMonitoring;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+=======
+  }
+}
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c

@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { NextApiRequest, NextApiResponse } from 'next;
 import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+=======
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c
 
 interface HealthApiResponse {
   health: HealthData;
@@ -44,6 +50,7 @@ export default async function handler(
       error: 'Internal server error',
       timestamp
     });
+<<<<<<< HEAD
 
 
 =======
@@ -69,3 +76,7 @@ const Health: NextPage = () => {
 
 export default Health;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+=======
+  }
+}
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c
