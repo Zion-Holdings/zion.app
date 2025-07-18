@@ -10,8 +10,8 @@ const fs = require('fs');
 const path = require('path');
 
 function checkEnvironment() {
-  console.log('🔍 Checking Development Environment');
-  console.log('==================================\n');
+  console.warn('🔍 Checking Development Environment');
+  console.warn('==================================\n');
 
   let allGood = true;
   const warnings = [];
@@ -19,22 +19,22 @@ function checkEnvironment() {
 
   // Check Node.js version
   const nodeVersion = process.version;
-  console.log(`📦 Node.js Version: ${nodeVersion}`);
+  console.warn(`📦 Node.js Version: ${nodeVersion}`);
   
   const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
   if (majorVersion < 18) {
     errors.push('Node.js version should be 18 or higher');
   } else {
-    console.log('   ✅ Node.js version is compatible\n');
+    console.warn('   ✅ Node.js version is compatible\n');
   }
 
   // Check for package.json
   if (fs.existsSync('package.json')) {
-    console.log('📋 Package.json: ✅ Found');
+    console.warn('📋 Package.json: ✅ Found');
     
     // Check if node_modules exists
     if (fs.existsSync('node_modules')) {
-      console.log('📁 Node modules: ✅ Installed');
+      console.warn('📁 Node modules: ✅ Installed');
     } else {
       errors.push('node_modules not found - run `./setup.sh npm` to install dependencies');
       warnings.push('For limited functionality without internet, run `./offline-dev.sh`');
@@ -44,15 +44,15 @@ function checkEnvironment() {
   }
 
   // Check for environment files
-  console.log('\n🌍 Environment Configuration:');
-  console.log('=============================');
+  console.warn('\n🌍 Environment Configuration:');
+  console.warn('=============================');
   
   const envFiles = ['.env.local', '.env', '.env.development'];
   let hasEnvFile = false;
   
   envFiles.forEach(file => {
     if (fs.existsSync(file)) {
-      console.log(`   ✅ ${file} found`);
+      console.warn(`   ✅ ${file} found`);
       hasEnvFile = true;
     }
   });
@@ -62,8 +62,8 @@ function checkEnvironment() {
   }
 
   // Check Next.js config
-  console.log('\n⚙️  Configuration Files:');
-  console.log('=======================');
+  console.warn('\n⚙️  Configuration Files:');
+  console.warn('=======================');
   
   // Check package.json type field to determine correct config file
   let packageType = 'commonjs'; // default

@@ -40,7 +40,7 @@ function calculateImprovement(baseline, current) {
 }
 
 // Format bytes to human readable
-function formatBytes(bytes) {
+function _formatBytes(bytes) {
   if (bytes === 0) return '0 Bytes';
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
@@ -113,7 +113,7 @@ function generateReport() {
   if (analysis.mainBundle) {
     const current = analysis.mainBundle.size;
     const target = TARGETS.mainBundle;
-    const improvement = calculateImprovement(BASELINE.mainBundle, current);
+    const _improvement = calculateImprovement(BASELINE.mainBundle, current);
     
     // console.log(`📦 Main Bundle (_app):`);
     // console.log(`   Current: ${formatBytes(current)}`);
@@ -125,7 +125,7 @@ function generateReport() {
       // console.log(`   ✅ TARGET ACHIEVED!`);
     } else {
       const remaining = current - target;
-      const remainingPercent = ((remaining / current) * 100).toFixed(1);
+      const _remainingPercent = ((remaining / current) * 100).toFixed(1);
       // console.log(`   ⚠️  Still ${formatBytes(remaining)} (${remainingPercent}%) over target`);
     }
     // console.log();
@@ -148,7 +148,7 @@ function generateReport() {
       .sort((a, b) => b.size - a.size)
       .slice(0, 10) // Show top 10
       .forEach(chunk => {
-        const overTarget = chunk.size - TARGETS.maxChunkSize;
+        const _overTarget = chunk.size - TARGETS.maxChunkSize;
         // console.log(`   📄 ${chunk.name}: ${formatBytes(chunk.size)} (+${formatBytes(overTarget)})`);
       });
     // console.log();
@@ -161,7 +161,7 @@ function generateReport() {
   // console.log('🎯 OPTIMIZATION PROGRESS:');
   // console.log('=========================');
   
-  const mainBundleProgress = analysis.mainBundle ? 
+  const _mainBundleProgress = analysis.mainBundle ? 
     ((BASELINE.mainBundle - analysis.mainBundle.size) / (BASELINE.mainBundle - TARGETS.mainBundle)) * 100 : 0;
   
   // console.log(`📈 Main Bundle Optimization: ${Math.min(100, mainBundleProgress).toFixed(1)}% complete`);
@@ -240,7 +240,7 @@ try {
   
   // Exit with appropriate code
   process.exit(results.success ? 0 : 1);
-} catch (error) {
+} catch {
   // console.error('❌ Error during bundle optimization analysis:', error.message);
   process.exit(1);
 } 

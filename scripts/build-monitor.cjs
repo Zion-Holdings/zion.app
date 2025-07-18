@@ -133,9 +133,9 @@ async function _runPerformanceBenchmark() {
       _buildOutput += data.toString();
     });
     
-    build.on('close', (code) => {
+    build.on('close', () => {
       const buildTime = Date.now() - startTime;
-      const buildTimeSeconds = (buildTime / 1000).toFixed(1);
+      const _buildTimeSeconds = (buildTime / 1000).toFixed(1);
       
     });
   });
@@ -192,7 +192,7 @@ async function runBuildMonitor() {
   // const benchmark = await runPerformanceBenchmark();
   
   // Step 4: Generate report
-  const report = generateBuildReport(bundleAnalysis, null);
+  const _report = generateBuildReport(bundleAnalysis, null);
   
 }
 

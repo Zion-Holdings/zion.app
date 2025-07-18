@@ -69,7 +69,7 @@ function getDirSize(dirPath) {
   
   try {
     calculateSize(dirPath);
-  } catch (error) {
+  } catch {
     console.warn(`Warning: Could not calculate size for ${dirPath}`);
   }
   
