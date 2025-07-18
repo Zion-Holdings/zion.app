@@ -13,5 +13,6 @@
   },
   "timestamp": 1752833543056,
   "nodeId": "node-1",
-  "status": "queued"
+  "status": "completed",
+  "completedAt": 1752833546905
 }
