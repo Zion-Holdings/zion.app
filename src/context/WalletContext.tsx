@@ -5,7 +5,6 @@ import {
 } from '@/utils/productionLogger';
 import { _getAppKitProjectId as getAppKitProjectId } from '@/config/env';
 import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
-
 import React, {
   createContext,
   useState,
@@ -17,7 +16,6 @@ import React, {
 } from 'react';
 import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react';
-
 import { createAppKit } from '@reown/appkit/react';
 import type {
   mainnet as _MainnetType,
