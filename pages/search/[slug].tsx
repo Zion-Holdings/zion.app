@@ -231,23 +231,23 @@ function offlineSearch(
 export default function SearchResultsPage({
   initialResults,
   query,
-  slug,
+  _slug,
   totalCount,
 }: SearchResultsPageProps) {
   const router = useRouter();
   const { isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
-  const [loading, setLoading] = useState(false);
+  const [_loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
   const debouncedQuery = useDebounce(searchQuery, 300);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [_viewMode, _setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortBy, setSortBy] = useState('relevance');
-  const [categoryFilter, setCategoryFilter] = useState('all');
-  const [minPrice, setMinPrice] = useState('');
-  const [maxPrice, setMaxPrice] = useState('');
-  const [minRating, setMinRating] = useState('');
-  const [totalResults, setTotalResults] = useState(totalCount);
+  const [sortBy, _setSortBy] = useState('relevance');
+  const [categoryFilter, _setCategoryFilter] = useState('all');
+  const [minPrice, _setMinPrice] = useState('');
+  const [maxPrice, _setMaxPrice] = useState('');
+  const [minRating, _setMinRating] = useState('');
+  const [_totalResults, setTotalResults] = useState(totalCount);
 
   // Fetch search results
   const fetchResults = async (searchTerm: string, page = 1) => {
@@ -303,7 +303,7 @@ export default function SearchResultsPage({
   };
 
   // Handle search input change
-  const handleSearch = (newQuery: string) => {
+  const _handleSearch = (newQuery: string) => {
     setSearchQuery(newQuery);
     if (newQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
@@ -320,16 +320,16 @@ export default function SearchResultsPage({
       setResults([]);
       setTotalResults(0);
     }
-  }, [debouncedQuery]);
+  }, [debouncedQuery, fetchResults]);
 
   // Load more results
-  const loadMore = () => {
+  const _loadMore = () => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
     fetchResults(searchQuery, nextPage);
   };
 
-  const categories = Array.from(
+  const _categories = Array.from(
     new Set(results.map((r) => r.category).filter(Boolean)),
   );
 
@@ -360,7 +360,7 @@ export default function SearchResultsPage({
   });
 
   // Group results by type for better display
-  const groupedResults = filteredResults.reduce(
+  const _groupedResults = filteredResults.reduce(
     (acc, result) => {
       if (!acc[result.type]) acc[result.type] = [];
       acc[result.type]!.push(result);
@@ -369,7 +369,7 @@ export default function SearchResultsPage({
     {} as Record<string, SearchResult[]>,
   );
 
-  const renderResultCard = (result: SearchResult) => {
+  const _renderResultCard = (result: SearchResult) => {
     switch (result.type) {
       case 'product':
       case 'equipment':
