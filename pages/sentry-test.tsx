@@ -7,7 +7,7 @@ const SentryTestPage = () => {
   const handleClientError = () => {
     try {
       throw new Error('Sentry Client Test Error - Button Clicked!');
-    } catch (error) {
+    } catch (_error) {
       // Sentry.captureException(error); // Removed
       alert('Client-side error thrown and captured by Sentry. Check your Sentry dashboard (or console for DSN issues).');
     }
@@ -20,7 +20,7 @@ const SentryTestPage = () => {
       // This example focuses on an error captured via an interaction.
       await fetch('/api/sentry-test-error-api'); // This API route needs to be created
       alert('Server-side API error trigger attempted. Check your Sentry dashboard (or console for DSN issues).');
-    } catch (error) {
+    } catch (_error) {
       // This catch is for the fetch failing, not Sentry capturing the API's error directly here.
       // Sentry should capture it on the API route side.
       // Sentry.captureException(error); // Removed
