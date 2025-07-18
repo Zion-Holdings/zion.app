@@ -19,7 +19,7 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 export default function VerifyStatus() {
 
   const router = useRouter();
-  const { user: authUser, isLoading: authLoading } = useAuth(); // Get user from AuthContext
+  const { user: _authUser, isLoading: _authLoading } = useAuth(); // Get user from AuthContext
   const { email: emailParam } = router.query;
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -72,7 +72,7 @@ export default function VerifyStatus() {
       } else {
         setError(data.message || 'Failed to resend verification email');
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Please try again.');
     } finally {
       setIsResending(false);
@@ -128,7 +128,7 @@ export default function VerifyStatus() {
         setMessage('No active session found. Please click the verification link in your email. If you have just done so, please wait a few moments and try again, or attempt to log in.');
         setError('');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error checking verification status:', { data: err });
       setError('An unexpected error occurred while checking status. Please try again.');
     } finally {

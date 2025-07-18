@@ -6,21 +6,21 @@
 import BuildPerformanceOptimizer from '../src/utils/build-performance-optimizer.js';
 
 async function main() {
-  console.log('🚀 Starting Zion App Performance Analysis...\n');
+  console.warn('🚀 Starting Zion App Performance Analysis...\n');
   
   try {
     // Run the analysis
     await BuildPerformanceOptimizer.runAnalysis('.next');
     
-    console.log('\n✅ Performance analysis completed successfully!');
-    console.log('\n💡 Next steps:');
-    console.log('  1. Review the generated build-performance-report.md');
-    console.log('  2. Implement high-impact optimizations first');
-    console.log('  3. Re-run analysis after optimizations to measure improvement');
-    console.log('  4. Set up automated performance monitoring in CI/CD');
+    console.warn('\n✅ Performance analysis completed successfully!');
+    console.warn('\n💡 Next steps:');
+    console.warn('  1. Review the generated build-performance-report.md');
+    console.warn('  2. Implement high-impact optimizations first');
+    console.warn('  3. Re-run analysis after optimizations to measure improvement');
+    console.warn('  4. Set up automated performance monitoring in CI/CD');
     
-  } catch (error) {
-    console.error('❌ Performance analysis failed:', error.message);
+  } catch {
+    console.error('❌ Performance analysis failed');
     process.exit(1);
   }
 }

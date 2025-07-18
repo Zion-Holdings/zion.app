@@ -4,10 +4,10 @@
 // Try multiple CDNs for Workbox
 try {
   importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw-no-eval.js');
-} catch (e) {
+} catch {
   try {
     importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@6.1.5/build/workbox-sw.js');
-  } catch (e2) {
+  } catch {
     try {
       importScripts('https://unpkg.com/workbox-sw@6.1.5/build/workbox-sw.js');
     } catch (e3) {

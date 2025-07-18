@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
 const currentFilename = fileURLToPath(import.meta.url);
-const currentDirname = path.dirname(currentFilename);
+const _currentDirname = path.dirname(currentFilename);
 
 // Configuration
 const config = {
@@ -52,8 +52,8 @@ class BundleAnalyzer {
       // Save detailed report
       this.saveReport();
       
-    } catch (error) {
-      console.error('❌ Analysis failed:', error.message);
+    } catch {
+      console.error('❌ Analysis failed');
       process.exit(1);
     }
   }
@@ -69,7 +69,7 @@ class BundleAnalyzer {
         env: { ...process.env, ANALYZE: 'true' }
       });
       
-    } catch (error) {
+    } catch {
       // console.log('   ⚠️  Build failed, analyzing existing files...');
     }
   }
@@ -88,7 +88,7 @@ class BundleAnalyzer {
           size,
           type: packageJson.dependencies[name] ? 'production' : 'development'
         });
-      } catch (error) {
+      } catch {
         // Skip if size cannot be determined
       }
     }
@@ -115,7 +115,7 @@ class BundleAnalyzer {
         // Fallback: estimate based on entire package directory
         return this.getDirectorySize(path.join('node_modules', name));
       }
-    } catch (error) {
+    } catch {
       // Return 0 if cannot determine size
     }
     return 0;
@@ -137,7 +137,7 @@ class BundleAnalyzer {
           totalSize += stats.size;
         }
       }
-    } catch (error) {
+    } catch {
       // Return 0 if cannot read directory
     }
     
@@ -152,10 +152,10 @@ class BundleAnalyzer {
         encoding: 'utf8'
       });
       
-      const data = JSON.parse(output);
+      const _data = JSON.parse(output);
       // Analysis of duplicates would go here
       
-    } catch (error) {
+    } catch {
       // console.log('   ⚠️  Could not analyze duplicates');
     }
   }
@@ -223,9 +223,9 @@ class BundleAnalyzer {
   displayResults() {
     // Top 10 largest dependencies
     const topDeps = this.results.dependencies.slice(0, 10);
-    topDeps.forEach((dep, index) => {
-      const sizeFormatted = this.formatSize(dep.size);
-      const indicator = dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
+    topDeps.forEach((dep, _index) => {
+      const _sizeFormatted = this.formatSize(dep.size);
+      const _indicator = dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
       // console.log(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
     });
 

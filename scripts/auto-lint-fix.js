@@ -41,7 +41,7 @@ async function main() {
     console.warn('Running ESLint checks and auto-fixing...');
     executeCommand('npm run lint-format');
     console.warn('ESLint auto-fixing completed.');
-  } catch (error) {
+  } catch {
     console.warn('ESLint command finished with an error. This might be due to unfixable issues. Continuing to check for changes.');
   }
 
@@ -88,7 +88,7 @@ async function main() {
       executeCommand('npm test');
       testsPassed = true;
       console.warn('Tests passed successfully.');
-    } catch (testError) {
+    } catch {
       console.error('Tests FAILED after applying fixes. Error details logged by executeCommand.');
       // testError object is already logged by executeCommand's catch block if it was thrown from there.
     }
@@ -113,7 +113,7 @@ async function main() {
         console.warn(`Force pushing reverted state (pre-fix commit) to origin/${GIT_BRANCH_NAME}...`);
         executeCommand(`git push origin ${GIT_BRANCH_NAME} --force`);
         console.warn('Reverted state pushed. Branch should not contain the failed changes.');
-      } catch (revertPushError) {
+      } catch {
         console.error('Failed to push the reverted state. The remote branch might still contain the bad commit or be in an inconsistent state.');
         // This is a more problematic scenario. Further manual intervention might be needed.
       }
