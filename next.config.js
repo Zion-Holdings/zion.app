@@ -236,16 +236,6 @@ const nextConfig = {
       };
     }
 
-    // Fix webpack cache configuration to prevent conflicts
-    if (config.cache) {
-      config.cache = {
-        ...config.cache,
-        type: 'memory', // Use memory cache instead of filesystem
-        maxMemoryGenerations: dev ? 3 : 10,
-        cacheUnaffected: false, // Disable to prevent conflicts
-      };
-    }
-
     // Remove usedExports to prevent conflicts with cacheUnaffected
     if (config.optimization && config.optimization.usedExports) {
       delete config.optimization.usedExports;
