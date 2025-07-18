@@ -55,10 +55,9 @@ export default [
       }
     },
     rules: {
-      // React rules
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off", // We use TypeScript
-      "react/display-name": "warn",
+      // Basic JSX rules without React plugin
+      "no-undef": "error",
+      "no-unused-vars": "warn",
     },
     settings: {
       react: {

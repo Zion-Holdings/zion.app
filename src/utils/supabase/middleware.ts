@@ -75,6 +75,4 @@ export async function updateSession(request: NextRequest) {
       request: {
         headers: request.headers,
       },
-    })
-  }
-}
+    })}

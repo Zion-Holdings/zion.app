@@ -16,8 +16,10 @@ export default function Custom404() {
   useEffect(() => {
     const err = new Error('404 - Page Not Found');
     captureException(err);
-    logInfo('404 page accessed', { path: router.asPath });
-  }, [router.asPath]);
+    if (router && typeof router.asPath === 'string') {
+      logInfo('404 page accessed', { path: router.asPath });
+    }
+  }, [router]);
 
   return (
     <>

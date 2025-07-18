@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-18T09:40:13.205Z",
+  "timestamp": "2025-07-18T09:52:16.082Z",
   "totalSize": 0,
   "chunks": [],
   "dependencies": [
@@ -20,6 +20,12 @@
       "version": "^8.37.0",
       "size": 2001877,
       "type": "development"
+    },
+    {
+      "name": "lucide-react",
+      "version": "^0.525.0",
+      "size": 856827,
+      "type": "production"
     },
     {
       "name": "@types/react",
@@ -191,10 +197,10 @@
   ],
   "performance": {},
   "summary": {
-    "totalDependencies": 23,
-    "productionDependencies": 13,
+    "totalDependencies": 24,
+    "productionDependencies": 14,
     "largeDependencies": 3,
-    "totalSize": 14511516
+    "totalSize": 15368343
   },
   "actionPlan": [
     {
