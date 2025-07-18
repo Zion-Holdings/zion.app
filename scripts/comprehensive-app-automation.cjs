@@ -323,9 +323,9 @@ automation.startContinuousImprovement();
         'improve:continuous': 'npm run auto:improve'
       };
       
-      package.scripts = { ...package.scripts, ...newScripts };
+      packageJson.scripts = { ...packageJson.scripts, ...newScripts };
       
-      fs.writeFileSync(packagePath, JSON.stringify(package, null, 2));
+      fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
       this.log('✅ Package.json scripts updated');
       return true;
     } catch (error) {
