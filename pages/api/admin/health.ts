@@ -49,8 +49,8 @@ export default async function handler(
       message: `System health: ${healthData.metrics.status} (Score: ${healthData.metrics.score}/100)`
     });
 
-  } catch {
-    logErrorToProduction('Health check API 'Error occurred'', 'Error occurred');
+  } catch (error) {
+    logErrorToProduction('Health check API error:', error);
     
     return res.status(500).json({
       health: {} as HealthData,
