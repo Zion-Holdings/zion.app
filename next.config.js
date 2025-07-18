@@ -13,6 +13,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Output static files
+  output: 'export',
+  trailingSlash: true,
   // Minimal environment
   env: {},
 };

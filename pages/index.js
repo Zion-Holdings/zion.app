@@ -1,11 +1,24 @@
-export default function Home() {
+import React from 'react';
+import Head from 'next/head';
+
+export default function index() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>🚀 Zion App is Running!</h1>
-      <p>✅ The app has been successfully automated and is now running.</p>
-      <p>🎉 All critical issues have been fixed.</p>
-      <p>🔧 Comprehensive automation system is active.</p>
-      <p>📊 Build status: Working</p>
-    </div>
+    <>
+      <Head>
+        <title>index - Zion App</title>
+        <meta name="description" content="index page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">index</h1>
+        <p className="text-lg mb-4">
+          This page is under construction.
+        </p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,12 +1,24 @@
-import React from 'react';'import { useRouter } from 'next/router';';
-export default function DynamicPage() {
-  const router = useRouter();
-  const { slug } = router.query;
+import React from 'react';
+import Head from 'next/head';
 
+export default function slug() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>'      <h1>Dynamic Page</h1>
-      <p>Parameter: {slug}</p>
-      <p>Route: pages/category/[slug].tsx</p>
-    </div>
+    <>
+      <Head>
+        <title>category/[slug] - Zion App</title>
+        <meta name="description" content="category/[slug] page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">category/[slug]</h1>
+        <p className="text-lg mb-4">
+          This page is under construction.
+        </p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,12 +1,24 @@
-import React from 'react';'import { useRouter } from 'next/router';';
-export default function DynamicPage() {
-  const router = useRouter();
-  const { id } = router.query;
+import React from 'react';
+import Head from 'next/head';
 
+export default function id() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>'      <h1>Dynamic Page</h1>
-      <p>Parameter: {id}</p>
-      <p>Route: pages/checkout/[id].tsx</p>
-    </div>
+    <>
+      <Head>
+        <title>checkout/[id] - Zion App</title>
+        <meta name="description" content="checkout/[id] page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">checkout/[id]</h1>
+        <p className="text-lg mb-4">
+          This page is under construction.
+        </p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
 }

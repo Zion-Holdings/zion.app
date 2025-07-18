@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "auto:fix": "node scripts/master-automation.cjs",
-    "auto:start": "node scripts/master-automation.cjs start"
+    "test": "jest"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -27,6 +25,8 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.52.0",
     "@swc/helpers": "^0.5.17",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "cors": "^2.8.5",
     "ethers": "^6.15.0",
     "express": "^5.1.0",
@@ -40,9 +40,7 @@
     "react-dom": "^19.1.0",
     "react-i18next": "^15.6.0",
     "styled-jsx": "^5.1.7",
-    "zod": "^4.0.5",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0"
+    "zod": "^4.0.5"
   },
   "devDependencies": {
     "@types/node": "20.19.8",
