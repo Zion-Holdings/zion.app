@@ -1,3 +1,3 @@
-// Type definitions for community
-export interface community {
-  // TODO: Add proper type definitions
+// Type definitions for community;
+export interface community {;
+  // TODO: Add proper type definitions;

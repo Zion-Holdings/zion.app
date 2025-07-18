@@ -1,6 +1,6 @@
-export interface MailchimpMember {
-  email: string
-  mergeFields?: Record<string, string>
+export interface MailchimpMember {;
+  email: string;
+  mergeFields?: Record<string, string>;
 
 /**;
  * Basic Mailchimp API wrapper used on both the client and Supabase edge;

@@ -1,243 +1,82 @@
-<<<<<<< HEAD
-import React from 'react';;
-import * as React from 'react';;
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog;'
-;;
-import { cn } from '@/lib/utils;;
-import { buttonVariants } from '@/components/ui/button;'
+<<<<<<< HEAD;
 
-const AlertDialog: unknown = AlertDialogPrimitive.Root;
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog;'';
 
-const AlertDialogTrigger: unknown = AlertDialogPrimitive.Trigger;
+import { buttonVariants } from '@/components/ui/button;'';
+  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,;''';
+  <AlertDialogPrimitive.Overlay;''';
+      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',;'';
 
-const AlertDialogPortal: unknown = AlertDialogPrimitive.Portal;
-
-const AlertDialogOverlay: unknown = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,;''
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>;
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Overlay;''
-    className={cn(;;
-      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',;'
-      className,;
-    )};
-=======
-import React from 'react'
-import * as React from 'react''
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
-
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
-
-const AlertDialog = AlertDialogPrimitive.Root;
-
-const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-
-const AlertDialogPortal = AlertDialogPrimitive.Portal;
-
-const AlertDialogOverlay = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,'
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>'
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Overlay'
-    className={cn('
-      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0','
-      className,)};
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-    {...props};
-    ref={ref};
-  />;
-));
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
-
-const AlertDialogContent = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Content>,;
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>;
->(({ className, ...props }, ref) => (;
-<<<<<<< HEAD
-  <AlertDialogPortal>;''
-    <AlertDialogOverlay />;
-    <AlertDialogPrimitive.Content;
-      ref={ref};''
-      className={cn(;;
-        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg',;'
-        className,;
-      )};
-=======
-  <AlertDialogPortal>'
-    <AlertDialogOverlay />'
-    <AlertDialogPrimitive.Content;
-      ref={ref}'
-      className={cn('
-        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg','
-        className,)};
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-      {...props};
-    />;
-  </AlertDialogPortal>;
-));
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
-<<<<<<< HEAD
-
-const AlertDialogHeader: unknown = ({;
-  className,;''
-  ...props;
-}: React.HTMLAttributes<HTMLDivElement>) => (;
-  <div;''
-    className={cn(;;
-      'flex flex-col space-y-2 text-center sm:text-left',;'
-      className,;''
-    )};
-    {...props};
-  />;''
-);;
-AlertDialogHeader.displayName = 'AlertDialogHeader;'
-
-const AlertDialogFooter: unknown = ({;
-  className,;''
-  ...props;
-}: React.HTMLAttributes<HTMLDivElement>) => (;
-  <div;''
-    className={cn(;;
-      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',;'
-      className,;''
-    )};
-    {...props};
-  />;''
-);;
-AlertDialogFooter.displayName = 'AlertDialogFooter;'
-
-const AlertDialogTitle: unknown = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Title>,;''
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>;
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Title;''
-    ref={ref};;
-    className={cn('text-lg font-semibold', className)};'
-=======
-
-const AlertDialogHeader = ({;
-  className,'
-  ...props'
-}: React.HTMLAttributes<HTMLDivElement>) => (;
-  <div'
-    className={cn('
-      'flex flex-col space-y-2 text-center sm:text-left','
-      className,'
-    )}'
-    {...props};
-  />'
-)'
-AlertDialogHeader.displayName = 'AlertDialogHeader'
-
-const AlertDialogFooter = ({;
-  className,'
-  ...props'
-}: React.HTMLAttributes<HTMLDivElement>) => (;
-  <div'
-    className={cn('
-      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2','
-      className,'
-    )}'
-    {...props};
-  />'
-)'
-AlertDialogFooter.displayName = 'AlertDialogFooter'
-
-const AlertDialogTitle = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Title>,'
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>'
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Title'
-    ref={ref}'
-    className={cn('text-lg font-semibold', className)}'
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-    {...props};
-  />;
-));
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
-<<<<<<< HEAD
-
-const AlertDialogDescription: unknown = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Description>,;''
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>;
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Description;''
-    ref={ref};;
-    className={cn('text-sm text-muted-foreground', className)};'
-=======
-
-const AlertDialogDescription = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Description>,'
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>'
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Description'
-    ref={ref}'
-    className={cn('text-sm text-muted-foreground', className)}'
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-    {...props};
-  />;
-));
-AlertDialogDescription.displayName =;
-  AlertDialogPrimitive.Description.displayName;
-
-const AlertDialogAction = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Action>,;
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>;
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Action;
-    ref={ref};
-    className={cn(buttonVariants(), className)};
-    {...props};
-  />;
-));
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName;
-
-const AlertDialogCancel = React.forwardRef<;
-  React.ElementRef<typeof AlertDialogPrimitive.Cancel>,;
-<<<<<<< HEAD
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>;''
->(({ className, ...props }, ref) => (;
-  <AlertDialogPrimitive.Cancel;
-    ref={ref};''
-    className={cn(;;
-      buttonVariants({ variant: 'outline' }),;;'
-      'mt-2 sm:mt-0',;'
-=======
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>'
->(({ className, ...props }, ref) => ('
-  <AlertDialogPrimitive.Cancel;
-    ref={ref}'
-    className={cn('
-      buttonVariants({ variant: 'outline' }),'
-      'mt-2 sm:mt-0','
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-      className,;
-    )};
-    {...props};
-  />;
-));
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
-
-export {;
-  AlertDialog,;
-  AlertDialogPortal,;
-  AlertDialogOverlay,;
-  AlertDialogTrigger,;
-  AlertDialogContent,;
-  AlertDialogHeader,;
-  AlertDialogFooter,;
-  AlertDialogTitle,;
-<<<<<<< HEAD
-  AlertDialogDescription,;''
-  AlertDialogAction,;
-  AlertDialogCancel,;
-};''
-''''''
-=======
-  AlertDialogDescription,'
-  AlertDialogAction,'
-  AlertDialogCancel,;
-}'
-'''''';;
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+  <AlertDialogPortal>;''';
+      ref={ref};''';
+        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg',;'';
+  <AlertDialogPortal>'';
+    <AlertDialogOverlay />'';
+      ref={ref}'';
+      className={cn('';
+        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg','';
+  className,;''';
+  <div;''';
+      'flex flex-col space-y-2 text-center sm:text-left',;'';
+      className,;''';
+  />;''';
+AlertDialogHeader.displayName = 'AlertDialogHeader;'';
+  className,;''';
+  <div;''';
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',;'';
+      className,;''';
+  />;''';
+AlertDialogFooter.displayName = 'AlertDialogFooter;'';
+  React.ElementRef<typeof AlertDialogPrimitive.Title>,;''';
+  <AlertDialogPrimitive.Title;''';
+    className={cn('text-lg font-semibold', className)};'';
+  className,'';
+  ...props'';
+  <div'';
+    className={cn('';
+      'flex flex-col space-y-2 text-center sm:text-left','';
+      className,'';
+    )}'';
+  />'';
+)'';
+AlertDialogHeader.displayName = 'AlertDialogHeader'';
+  className,'';
+  ...props'';
+  <div'';
+    className={cn('';
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2','';
+      className,'';
+    )}'';
+  />'';
+)'';
+AlertDialogFooter.displayName = 'AlertDialogFooter'';
+  React.ElementRef<typeof AlertDialogPrimitive.Title>,'';
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>'';
+  <AlertDialogPrimitive.Title'';
+    ref={ref}'';
+    className={cn('text-lg font-semibold', className)}'';
+  React.ElementRef<typeof AlertDialogPrimitive.Description>,;''';
+  <AlertDialogPrimitive.Description;''';
+    className={cn('text-sm text-muted-foreground', className)};'';
+  React.ElementRef<typeof AlertDialogPrimitive.Description>,'';
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>'';
+  <AlertDialogPrimitive.Description'';
+    ref={ref}'';
+    className={cn('text-sm text-muted-foreground', className)}'';
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>;''';
+    ref={ref};''';
+      buttonVariants({ variant: 'outline' }),;;'';
+      'mt-2 sm:mt-0',;'';
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>'';
+>(({ className, ...props }, ref) => ('';
+    ref={ref}'';
+    className={cn('';
+      buttonVariants({ variant: 'outline' }),'';
+      'mt-2 sm:mt-0','';
+  AlertDialogDescription,;''';
+};''';
+''''''';
+  AlertDialogDescription,'';
+  AlertDialogAction,'';
+}'';
+'''''''

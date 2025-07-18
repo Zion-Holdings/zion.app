@@ -1,4 +1,4 @@
-// Utility functions for consoleErrorToast
-export const consoleErrorToast = {
-  // TODO: Implement utility functions
+// Utility functions for consoleErrorToast;
+export const consoleErrorToast = {;
+  // TODO: Implement utility functions;
 };

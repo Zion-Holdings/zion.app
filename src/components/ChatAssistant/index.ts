@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-export { ChatAssistant } from './ChatAssistant;;
-export { ChatInput } from './ChatInput;;
-export { ChatMessage } from './ChatMessage;;
-export * from './types''
-''''''
-=======
-// Module for index
-export const index = {
-  // TODO: Implement module functionality
-};
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+<<<<<<< HEAD;
+export { ChatAssistant } from '';
+export { ChatInput } from '';
+export { ChatMessage } from '';
+export * from './types''';
+'''''''

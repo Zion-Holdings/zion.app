@@ -2,7 +2,6 @@
   "name": "codex-scripts",
   "version": "1.0.0",
   "description": "Scripts for Codex integration",
-  "type": "module",
   "private": true,
   "dependencies": {
     "@octokit/rest": "^20.0.0",

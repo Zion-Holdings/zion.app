@@ -1,5 +1,5 @@
-// Hook for useToggle
-export const useUseToggle = () => {
-  // TODO: Implement hook logic
+// Hook for useToggle;
+export const useUseToggle = () => {;
+  // TODO: Implement hook logic;
   return {};
 };

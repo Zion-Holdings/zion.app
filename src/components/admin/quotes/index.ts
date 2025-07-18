@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-export { QuoteStatusCards } from './QuoteStatusCards;;
-export { QuotesFilter } from './QuotesFilter;;
-export { QuotesTable } from './QuotesTable;'
-''''''
-=======
-// Module for index
-export const index = {
-  // TODO: Implement module functionality
-};
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+<<<<<<< HEAD;
+export { QuoteStatusCards } from '';
+export { QuotesFilter } from '';
+export { QuotesTable } from './QuotesTable;'';
+'''''''

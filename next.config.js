@@ -2,19 +2,12 @@
 const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
-      // Fix watchpack issue with proper path handling
+      // Fix watchpack issue
       config.watchOptions = {
         ...config.watchOptions,
         poll: 1000,
         aggregateTimeout: 300,
-        ignored: ['**/node_modules', '**/.next', '**/logs', '**/automation', '**/scripts'],
-        followSymlinks: false
-      };
-      
-      // Use memory cache to avoid file system issues
-      config.cache = {
-        type: 'memory',
-        maxGenerations: 1
+        ignored: ['**/node_modules', '**/.next', '**/logs']
       };
     }
     return config;
@@ -39,10 +32,20 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   // Fix path resolution issues
-  distDir: '.next',
-  generateBuildId: async () => {
-    return 'build-' + Date.now();
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  // Ensure proper module resolution
+  transpilePackages: [],
+  // Fix asset handling
+  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
+  // Ensure proper environment detection
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

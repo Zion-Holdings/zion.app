@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-export { MilestoneManager } from './MilestoneManager;;
-export { MilestoneCreator } from './MilestoneCreator;;
-export { ProjectActions } from './ProjectActions;;
-export { ProjectHeader } from './ProjectHeader;'
-''''''
-=======
-// Module for index
-export const index = {
-  // TODO: Implement module functionality
-};
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+<<<<<<< HEAD;
+export { MilestoneManager } from '';
+export { MilestoneCreator } from '';
+export { ProjectActions } from '';
+export { ProjectHeader } from './ProjectHeader;'';
+'''''''

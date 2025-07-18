@@ -1,190 +1,34 @@
-<<<<<<< HEAD
-import { Button } from '@/components/ui/button;;
-import { Download } from '@/components/ui/icons;'
-;;
-import type { QuoteRequest } from '@/types/quotes;'
+<<<<<<< HEAD;
 
-interface ExportToCSVProps {;
-  quotes: QuoteRequest[];
-  filename?: string;''
-};
+import { Download } from '@/components/ui/icons;'';
+import type { QuoteRequest } from '@/types/quotes;'';
+  filename?: string;''';
+export const ExportToCSV: unknown = ({;''';
+  filename = 'quote-requests',;''';
+    // Define CSV Headers;''';
+      'ID',;;'';
+      'Talent Name',;;'';
+      'Requester Name',;;'';
+      'Requester Email',;;'';
+      'Project Name',;;'';
+      'Project Summary',;;'';
+      'Budget',;;'';
+      'Timeline',;;'';
+      'Status',;;'';
+      'Created Date',;'';
+    ];''';
+    const rows: unknown = quotes.map((quote) => [;''';
+      quote.talent_name || 'Unknown',;'';
 
-export const ExportToCSV: unknown = ({;''
-  quotes,;;
-  filename = 'quote-requests',;''
-}: ExportToCSVProps) => {;
-  const handleExport: unknown = () => {;
-    // Define CSV Headers;''
-    const headers: unknown = [;;
-      'ID',;;'
-      'Talent Name',;;'
-      'Requester Name',;;'
-      'Requester Email',;;'
-      'Project Name',;;'
-      'Project Summary',;;'
-      'Budget',;;'
-      'Timeline',;;'
-      'Status',;;'
-      'Created Date',;'
-    ];''
-
-    // Format quote data for CSV;
-    const rows: unknown = quotes.map((quote) => [;''
-      quote.id,;;
-      quote.talent_name || 'Unknown',;'
-=======
-import { Button } from '@/components/ui/button'
-import { Download } from '@/components/ui/icons'
-
-import type { QuoteRequest } from '@/types/quotes'
-
-interface ExportToCSVProps {;
-  quotes: QuoteRequest[];
-  filename?: string'
-}'
-
-export const ExportToCSV = ({'
-  quotes,'
-  filename = 'quote-requests','
-}: ExportToCSVProps) => {'
-  const handleExport = () => {;
-    // Define CSV Headers'
-    const headers = ['
-      'ID','
-      'Talent Name','
-      'Requester Name','
-      'Requester Email','
-      'Project Name','
-      'Project Summary','
-      'Budget','
-      'Timeline','
-      'Status','
-      'Created Date','
-    ]'
-'
-    // Format quote data for CSV;
-    const rows = quotes.map((quote) => ['
-      quote.id,'
-      quote.talent_name || 'Unknown','
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-      quote.requester_name,;
-      quote.requester_email,;
-      quote.project_name,;
-      quote.project_summary,;
-<<<<<<< HEAD
-      quote.budget_display ||;''
-        (quote.budget_min && quote.budget_max;
-          ? `$${quote.budget_min} - $${quote.budget_max}`;
-          : quote.budget_min;''`
-            ? `$${quote.budget_min}`;;
-            : 'Not specified'),;'
-      quote.timeline,;
-      quote.status,;
-      new Date(quote.created_at).toLocaleDateString(),;''
-    ]);
-
-    // Create CSV content;''
-    const csvContent: unknown = [;;
-      headers.join(','),;''
-      ...rows.map((row) =>;
-        row;
-          .map((cell) =>;''
-            // Escape commas and quotes in cell values;;
-            typeof cell === 'string' &&;;'
-            (cell.includes(',') || cell.includes('"'));;'`
-              ? `"${cell.replace(/"/g, '""')}"`;";";""
-              : cell,;";";";""
-          );";";";";""
-          .join(','),;''
-      ),;;
-    ].join('\n');'
-;''
-    // Create download link;;
-    const blob: unknown "unknown = new Blob([csvContent]", { type: 'text/csv;charset=utf-8;' });''
-    const url: unknown = URL.createObjectURL(blob);;
-    const link: unknown = document.createElement('a');;'
-    link.setAttribute('href', url);''
-    link.setAttribute(;;
-      'download',;;'`
-      `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;'
-=======
-      quote.budget_display ||'
-        (quote.budget_min && quote.budget_max'`
-          ? `$${quote.budget_min} - $${quote.budget_max}`;`
-          : quote.budget_min'``
-            ? `$${quote.budget_min}`;
-            : 'Not specified'),'
-      quote.timeline,;
-      quote.status,;
-      new Date(quote.created_at).toLocaleDateString(),'
-    ])'
-
-    // Create CSV content'
-    const csvContent = ['
-      headers.join(','),'
-      ...rows.map((row) =>'
-        row;
-          .map((cell) =>'
-            // Escape commas and quotes in cell values'
-            typeof cell === 'string' &&'`
-            (cell.includes(',') || cell.includes('"'))'``
-              ? `${cell.replace(//g, '""')};
-              : cell,;"
-          )"
-          .join(','),'
-      ),'
-    ].join('\n')'
-'
-    // Create download link'
-    const blob: new Blob([csvContent], { type: 'text/csv;charset=utf-8' })'
-    const url = URL.createObjectURL(blob)'
-    const link = document.createElement('a')'
-    link.setAttribute('href', url)'
-    link.setAttribute('`
-      'download','``
-      `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-    );
-    document.body.appendChild(link);
-
-    // Download file and clean up;
-    link.click();
-    setTimeout(() => {;
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-<<<<<<< HEAD
-    }, 100);''
-  };
-
-  return (;''
-    <Button;;
-      variant="outline";";";";""
-      onClick={handleExport};";";";";""
-      className="flex items-center gap-2";"
-      disabled={quotes.length === 0};
-    >;
-      <Download size={16} />;
-      Export CSV;""
-    </Button>;";""
-  );";";""
-};";";";""
-""""""
-=======
-    }, 100)'
-  }'
-
-  return ('
-    <Button'
-      variant=outline"
-      onClick={handleExport}"
-      className=flex items-center gap-2"
-      disabled={quotes.length === 0};
-    >;
-      <Download size={16} />;
-      Export CSV"
-    </Button>;
-  );"
-}"`
-""'';;`
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-`
+      quote.budget_display ||;''';
+          : quote.budget_min;''';
+            : 'Not specified'),;'';
+      new Date(quote.created_at).toLocaleDateString(),;''';
+    // Create CSV content;''';
+      headers.join(','),;''';
+          .map((cell) =>;''';
+            typeof cell === 'string' &&;;'';
+            (cell.includes(',') || cell.includes('';
+              ? `"${cell.replace(/"/g, '""'';
+            (cell.includes(',') || cell.includes('';
+              ? `${cell.replace(//g, ''

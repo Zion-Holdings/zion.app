@@ -1,4 +1,4 @@
-// Utility functions for themeConfig
-export const themeConfig = {
-  // TODO: Implement utility functions
+// Utility functions for themeConfig;
+export const themeConfig = {;
+  // TODO: Implement utility functions;
 };

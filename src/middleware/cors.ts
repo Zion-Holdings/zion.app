@@ -1,4 +1,4 @@
-// Module for cors
-export const cors = {
-  // TODO: Implement module functionality
+// Module for cors;
+export const cors = {;
+  // TODO: Implement module functionality;
 };

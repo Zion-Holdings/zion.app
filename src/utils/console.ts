@@ -1,4 +1,4 @@
-// Utility functions for console
-export const console = {
-  // TODO: Implement utility functions
+// Utility functions for console;
+export const console = {;
+  // TODO: Implement utility functions;
 };

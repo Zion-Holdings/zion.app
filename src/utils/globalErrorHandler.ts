@@ -1,4 +1,4 @@
-// Utility functions for globalErrorHandler
-export const globalErrorHandler = {
-  // TODO: Implement utility functions
+// Utility functions for globalErrorHandler;
+export const globalErrorHandler = {;
+  // TODO: Implement utility functions;
 };

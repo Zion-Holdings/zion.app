@@ -1,4 +1,4 @@
-// Utility functions for performance
-export const performance = {
-  // TODO: Implement utility functions
+// Utility functions for performance;
+export const performance = {;
+  // TODO: Implement utility functions;
 };

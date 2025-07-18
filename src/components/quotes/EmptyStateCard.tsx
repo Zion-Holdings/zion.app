@@ -1,71 +1,10 @@
-<<<<<<< HEAD
-import React from 'react';;
-import { MessageSquare } from '@/components/ui/icons;;
-import { Card, CardContent } from '@/components/ui/card;'
-;''
-type EmptyStateCardProps = {;;
-  _type: 'active' | 'archived;'
-};''
-;;
-export const _EmptyStateCard: unknown "React.FC<EmptyStateCardProps> = ({ type "}) => {;";";";";""
-  const isActive: unknown = type === 'active;'
-;''
-  return (;;
-    <Card className="bg-zion-blue-dark border border-zion-blue-light text-center py-12">;";";";""
-      <CardContent>;";";";";""
-        <div className="mx-auto w-16 h-16 bg-zion-blue-light opacity-60 rounded-full flex items-center justify-center mb-4">;";";";""
-          {isActive ? (;";";";";""
-            <MessageSquare className="h-8 w-8 text-white" />;";";";""
-          ) : (;";";";";""
-            <ArchiveIcon className="h-8 w-8 text-white" />;";";""
-          )};";";";""
-        </div>;";";";";""
-        <h3 className="text-xl font-medium text-white mb-2">;";";";";""
-          {isActive ? 'No hire requests yet' : 'No archived requests'};''
-        </h3>;;
-        <p className="text-zion-slate-light max-w-md mx-auto">;";";";""
-          {isActive;";";";";""
-            ? "You haven't received any hire requests yet. Promote your profile and services to attract potential clients.";";";";";""
-            : "You haven't archived any hire requests yet. Archive requests to keep your active list organized."};"
-        </p>;
-      </CardContent>;""
-    </Card>;";""
-  );";";""
-};";";";""
-""""""
-=======
-import React from 'react'
-import { MessageSquare } from '@/components/ui/icons'
-import { Card, CardContent } from '@/components/ui/card'
-'
-type EmptyStateCardProps = {'
-  _type: 'active' | 'archived'
-}'
-'
-export const _EmptyStateCard: unknown "React.FC<EmptyStateCardProps> = ({ type }) => {
-  const isActive = type === 'active'
-'
-  return ('
-    <Card className="bg-zion-blue-dark border border-zion-blue-light text-center py-12">
-      <CardContent>;
-        <div className="mx-auto w-16 h-16 bg-zion-blue-light opacity-60 rounded-full flex items-center justify-center mb-4">
-          {isActive ? (;
-            <MessageSquare className="h-8 w-8 text-white" />
-          ) : (;
-            <ArchiveIcon className="h-8 w-8 text-white" />
-          )};
-        </div>"
-        <h3 className="text-xl font-medium text-white mb-2>"
-          {isActive ? 'No hire requests yet' : 'No archived requests'}'
-        </h3>'
-        <p className="text-zion-slate-light max-w-md mx-auto">
-          {isActive;
-            ? "You haven't received any hire requests yet. Promote your profile and services to attract potential clients."
-            : You haven't archived any hire requests yet. Archive requests to keep your active list organized.}"
-        </p>;
-      </CardContent>"
-    </Card>;
-  );"
-}"
-""'';;
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+<<<<<<< HEAD;
+
+import { Card, CardContent } from '@/components/ui/card;'';
+;''';
+  _type: 'active' | 'archived;'';
+};''';
+            ? "You haven'';
+            : "You haven'';
+            ? "You haven'';
+            : You haven''

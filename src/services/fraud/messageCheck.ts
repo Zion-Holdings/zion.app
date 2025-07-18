@@ -1,4 +1,4 @@
-// Service for messageCheck
-export const messageCheckService = {
-  // TODO: Implement service methods
+// Service for messageCheck;
+export const messageCheckService = {;
+  // TODO: Implement service methods;
 };

@@ -1,4 +1,4 @@
-// Utility functions for fontConfig
-export const fontConfig = {
-  // TODO: Implement utility functions
+// Utility functions for fontConfig;
+export const fontConfig = {;
+  // TODO: Implement utility functions;
 };

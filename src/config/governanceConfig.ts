@@ -1,4 +1,4 @@
-// Module for governanceConfig
-export const governanceConfig = {
-  // TODO: Implement module functionality
+// Module for governanceConfig;
+export const governanceConfig = {;
+  // TODO: Implement module functionality;
 };
