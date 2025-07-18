@@ -7,9 +7,9 @@ import {
 } from '@/utils/globalToastManager';
 
 // Deduplication settings
-const _DEDUPE_DELAY = 3000; // 3 seconds
-const _lastKey: string | null = null;
-const _lastShown = undefined; // Unused 0;
+// const _DEDUPE_DELAY = 3000; // 3 seconds
+// const _lastKey: string | null = null;
+// const _lastShown = undefined; // Unused 0;
 
 interface ToastActionProps {
   label: string;

@@ -2,7 +2,7 @@ import React from 'react';
 import { SEO } from '@/components/SEO';
 import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager';
 
-const _AppMetadataManager: React.FC = () => {
+// const _AppMetadataManager: React.FC = () => {
   return (
     <>
       <SEO

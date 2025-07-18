@@ -9,7 +9,7 @@ const earnedBadges: { badge: BadgeKey; date: string }[] = [
   { badge: 'first_action', date: '2024-09-08' },
 ];
 
-export const _MyBadgesPreview: React.FC = () => {
+// export const _MyBadgesPreview: React.FC = () => {
   return (
     <div className="p-4 bg-zion-blue rounded-xl shadow-md mx-auto w-full max-w-sm">
       <div className="mb-2 flex items-center gap-2">

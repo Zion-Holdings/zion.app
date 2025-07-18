@@ -104,7 +104,7 @@ export async function testDatabaseConnection(): Promise<boolean> {
  */
 export async function getDatabaseStats() {
   try {
-    const _client = undefined; // Unused getDatabaseClient();
+//     const _client = undefined; // Unused getDatabaseClient();
 
     // These might not be available in all Prisma versions
     const stats = {

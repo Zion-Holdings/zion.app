@@ -19,7 +19,7 @@ function InterviewsContent() {
 
   // Filter interviews based on status and date
   const now = new Date();
-  const _today = undefined; // Unused startOfDay(now);
+//   const _today = undefined; // Unused startOfDay(now);
 
   const upcomingInterviews = interviews
     .filter((interview) => {

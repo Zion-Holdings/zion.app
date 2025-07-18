@@ -5,7 +5,7 @@ const generateId = (_label: string) => {
   return label.toLowerCase().replace(/[^\w]+/g, '-');
 };
 
-const _GenesisPage: React.FC = () => {
+// const _GenesisPage: React.FC = () => {
   const autoDeployModules = [
     "/marketplace (Jobs, Talent, Quotes)",
     "/gpt (ZionGPT Core + Prompt Router)",

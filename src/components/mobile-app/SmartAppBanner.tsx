@@ -60,7 +60,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
 
   // Detect iOS or Android
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  const _bannerLink = undefined; // Unused isIOS ? appStoreUrl : googlePlayUrl;
+//   const _bannerLink = undefined; // Unused isIOS ? appStoreUrl : googlePlayUrl;
 
   return (
     <div className="fixed top-0 left-0 right-0 bg-zion-blue-dark border-b border-zion-purple/30 p-3 z-50 animate-fade-in">

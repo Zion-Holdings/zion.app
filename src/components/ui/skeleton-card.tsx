@@ -1,7 +1,7 @@
 // src/components/ui/skeleton.tsx
 import React from 'react';
 
-const _SkeletonCard: React.FC = () => {
+// const _SkeletonCard: React.FC = () => {
   return (
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 animate-pulse">
       <div className="bg-gray-300 dark:bg-gray-600 h-48 w-full rounded-md"></div>

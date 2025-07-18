@@ -28,7 +28,7 @@ const pathMap: Record<string, string> = {
 
 const resolvePath = (path: string): string => pathMap[path] ?? path;
 
-export const _SitemapPage: React.FC = () => {
+// export const _SitemapPage: React.FC = () => {
   return (
     <>
       <SEO

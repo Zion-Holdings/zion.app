@@ -121,7 +121,7 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({
+// export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({
   req,
 }: {
   req: NextApiRequest;

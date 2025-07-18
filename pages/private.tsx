@@ -118,7 +118,7 @@ export default function PrivatePage({ user }: PrivatePageProps) {
   )
 }
 
-export const _getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+// export const _getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const supabase = createServerSideClient(context)
 
   const { data, error } = await supabase.auth.getUser()

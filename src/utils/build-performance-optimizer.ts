@@ -75,7 +75,7 @@ class BuildPerformanceOptimizer {
 
   private async analyzeStaticChunks(buildDir: string): Promise<void> {
     const fs = await import('fs');
-    const _path = await import('path');
+//     const _path = await import('path');
 
     const staticDir = path.join(buildDir, 'static', 'chunks');
 

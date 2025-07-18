@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AppStoreButtons } from './AppStoreButtons';
 
-export const _MobileAppHero: React.FC = () => {
+// export const _MobileAppHero: React.FC = () => {
   // These would come from environment variables or a config
   const appStoreUrl = '#'; // Replace with actual App Store URL when available
   const googlePlayUrl = '#'; // Replace with actual Google Play URL when available

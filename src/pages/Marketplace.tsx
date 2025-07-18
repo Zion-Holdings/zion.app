@@ -278,7 +278,7 @@ export default function Marketplace() {
     useApiErrorHandling();
 
   // Handle Add Product button with authentication check
-  // const _handleAddProduct = useCallback(() => {
+//   // const _handleAddProduct = useCallback(() => {
   //   if (!isAuthenticated) {
   //     setIsAuthModalOpen(true); // Use the new auth modal
   //     return;
@@ -299,7 +299,7 @@ export default function Marketplace() {
   // }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
-  const _fetchProducts = useCallback(
+//   const _fetchProducts = useCallback(
     async (page: number, _limit: number) => {
       try {
         const params = {

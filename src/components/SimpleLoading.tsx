@@ -4,7 +4,7 @@ interface SimpleLoadingProps {
   message?: string;
 }
 
-export const _SimpleLoading: React.FC<SimpleLoadingProps> = ({
+// export const _SimpleLoading: React.FC<SimpleLoadingProps> = ({
   message = 'Loading Zion Tech Marketplace...',
 }) => {
   return (

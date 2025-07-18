@@ -220,7 +220,25 @@
     "continuous-heal": "node scripts/continuous-healing.js",
     "heal-and-deploy": "node scripts/heal-and-deploy.js",
     "auto-heal-pipeline": "npm run auto-fix && npm run build && npm run post-build-heal",
-    "heal-deploy-monitor": "npm run heal-and-deploy && npm run continuous-heal"
+    "heal-deploy-monitor": "npm run heal-and-deploy && npm run continuous-heal",
+    "advanced-heal:start": "node scripts/advanced-self-healing-system.cjs start",
+    "advanced-heal:stop": "node scripts/advanced-self-healing-system.cjs stop",
+    "advanced-heal:status": "node scripts/advanced-self-healing-system.cjs status",
+    "advanced-heal:report": "node scripts/advanced-self-healing-system.cjs report",
+    "advanced-heal:monitor": "node scripts/advanced-self-healing-system.cjs monitor",
+    "cursor-chat:comprehensive": "node scripts/cursor-chat-trigger.cjs comprehensive",
+    "cursor-chat:specific": "node scripts/cursor-chat-trigger.cjs specific",
+    "improvement:start": "node scripts/continuous-improvement-pipeline.cjs start",
+    "improvement:stop": "node scripts/continuous-improvement-pipeline.cjs stop",
+    "improvement:status": "node scripts/continuous-improvement-pipeline.cjs status",
+    "improvement:report": "node scripts/continuous-improvement-pipeline.cjs report",
+    "improvement:run": "node scripts/continuous-improvement-pipeline.cjs run",
+    "auto-improve": "npm run improvement:start",
+    "auto-heal:advanced": "npm run advanced-heal:start",
+    "continuous:start": "npm run improvement:start",
+    "continuous:stop": "npm run improvement:stop",
+    "continuous:status": "npm run improvement:status",
+    "continuous:report": "npm run improvement:report"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -490,3 +508,4 @@
     "postcss": "8.5.6"
   }
 }
+

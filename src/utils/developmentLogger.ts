@@ -123,7 +123,7 @@ class DevelopmentLogger {
       | 'update' = 'info',
   ): void {
     if (!this.enabled) return;
-    const _emoji = getEmojiForLevel(level);
+//     const _emoji = getEmojiForLevel(level);
     logInfo(`[COMPONENT] ${_emoji} ${name} ${action}`, { data: props });
   }
 }

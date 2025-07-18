@@ -73,7 +73,7 @@ let heliaNode: unknown | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from orbitdb.ts or have more transports
-// const _libp2pOptions = {
+// // const _libp2pOptions = {
 //   addresses: {
 //     listen: ['/ip4/0.0.0.0/tcp/0']
 //   },
@@ -121,7 +121,7 @@ export async function saveJSON(data: unknown): Promise<string> {
   }
 
   try {
-    const _helia = await getHelia();
+//     const _helia = await getHelia();
     const jsonService = heliaJson();
     const cid = await jsonService.add(data);
     return cid.toString();
@@ -147,7 +147,7 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
   }
 
   try {
-    const _helia = await getHelia();
+//     const _helia = await getHelia();
     const jsonService = heliaJson();
     const data = await jsonService.get(cidString);
     return data;
