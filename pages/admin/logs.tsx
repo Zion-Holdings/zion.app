@@ -66,8 +66,7 @@ const LogLevelIcon = ({ level }: { level: LogEntry['level'] }) => {
       return <AlertCircle className="h-4 w-4 text-red-500" />;
     case 'critical':
       return <XCircle className="h-4 w-4 text-red-700" />;
-    _default:
-      return <Info className="h-4 w-4 text-gray-500" />;
+    return <Info className="h-4 w-4 text-gray-500" />;
   }
 };
 

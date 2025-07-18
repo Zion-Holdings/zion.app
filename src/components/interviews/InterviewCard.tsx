@@ -116,8 +116,7 @@ export function InterviewCard({ interview, onRefresh }: InterviewCardProps) {
         return <Badge className="bg-green-700">Completed</Badge>;
       case 'cancelled':
         return <Badge variant="outline" className="border-destructive text-destructive">Cancelled</Badge>;
-      _default:
-        return <Badge>{interview.status}</Badge>;
+      return <Badge>{interview.status}</Badge>;
     }
   };
   

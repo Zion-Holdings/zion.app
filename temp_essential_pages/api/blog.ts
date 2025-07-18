@@ -26,8 +26,8 @@ export default function handler(
         p.tags.some(t => match(t))
     );
     return res.status(200).json(results);
-  } catch (_err) {
-    console.error('Blog API error:', err);
-    return res.status(500).json({ error: 'Internal Server Error: Failed to fetch blog posts' });
+  } catch {
+    console.or('Blog API or:', );
+    return res.status(500).json({ or: 'Internal Server Error: Failed to fetch blog posts' });
   }
 }

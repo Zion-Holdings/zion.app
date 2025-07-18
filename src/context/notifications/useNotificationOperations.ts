@@ -26,8 +26,8 @@ export const useNotificationOperations = (
       const axios = createAxiosInstance();
       const res = await axios.get(`/api/notifications`, { params: { userId } });
       setNotifications(res.data || []);
-    } catch (_err) {
-      logErrorToProduction('Error fetching notifications:', { data: err });
+    } catch {
+      logErrorToProduction('Error fetching notifications:', { data: 'Error occurred' });
     } finally {
       setLoading(false);
     }
@@ -41,8 +41,8 @@ export const useNotificationOperations = (
         const axios = createAxiosInstance();
         await axios.patch(`/api/notifications/${id}`, { read: true });
         await fetchNotifications();
-      } catch (_err) {
-        logErrorToProduction('Error marking notification as read:', { data: err });
+      } catch {
+        logErrorToProduction('Error marking notification as read:', { data: 'Error occurred' });
       }
     },
     [userId, fetchNotifications],
@@ -61,8 +61,8 @@ export const useNotificationOperations = (
           ),
       );
       await fetchNotifications();
-    } catch (_err) {
-      logErrorToProduction('Error marking all notifications as read:', { data: err });
+    } catch {
+      logErrorToProduction('Error marking all notifications as read:', { data: 'Error occurred' });
     }
   }, [userId, fetchNotifications, notifications]);
 
@@ -74,8 +74,8 @@ export const useNotificationOperations = (
         const axios = createAxiosInstance();
         await axios.delete(`/api/notifications/${id}`);
         await fetchNotifications();
-      } catch (_err) {
-        logErrorToProduction('Error dismissing notification:', { data: err });
+      } catch {
+        logErrorToProduction('Error dismissing notification:', { data: 'Error occurred' });
       }
     },
     [userId, fetchNotifications],

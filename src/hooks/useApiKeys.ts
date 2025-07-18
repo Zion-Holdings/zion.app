@@ -81,8 +81,8 @@ export function useApiKeys() {
       }
 
       setKeys(result.keys || []);
-    } catch (_err) {
-      logErrorToProduction('Error fetching API keys:', { data: err });
+    } catch {
+      logErrorToProduction('Error fetching API keys:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -141,8 +141,8 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error creating API key:', { data: err });
+    } catch {
+      logErrorToProduction('Error creating API key:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -199,8 +199,8 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error regenerating API key:', { data: err });
+    } catch {
+      logErrorToProduction('Error regenerating API key:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -253,8 +253,8 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error revoking API key:', { data: err });
+    } catch {
+      logErrorToProduction('Error revoking API key:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -302,8 +302,8 @@ export function useApiKeys() {
       setTotalLogs(result.count || 0);
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error fetching API logs:', { data: err });
+    } catch {
+      logErrorToProduction('Error fetching API logs:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

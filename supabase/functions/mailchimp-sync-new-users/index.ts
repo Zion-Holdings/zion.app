@@ -33,10 +33,10 @@ serve(async (req) => {
       JSON.stringify({ synced: users?.length || 0 }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
-  } catch (_err) {
-    console.error("mailchimp-sync-new-users error", err);
+  } catch {
+    console.or("mailchimp-sync-new-users or", );
     return new Response(
-      JSON.stringify({ error: err.message }),
+      JSON.stringify({ or: .message }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }

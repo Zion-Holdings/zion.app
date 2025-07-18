@@ -17,8 +17,8 @@ export default async function handler(
       return res.status(401).json({ message: 'No active session' });
     }
     return res.status(200).json(session);
-  } catch (_err) {
-    logError('Session endpoint error:', { data: err });
+  } catch {
+    logError('Session endpoint 'Error occurred'or:', { data: 'Error occurred' });
     return res.status(500).json({ message: 'Internal server error' });
   }
 }

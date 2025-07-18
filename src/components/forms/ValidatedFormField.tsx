@@ -131,8 +131,7 @@ export function ValidatedFormField({
         return <CheckCircle className="h-4 w-4 text-green-500" />;
       case 'invalid':
         return <AlertCircle className="h-4 w-4 text-red-500" />;
-      _default:
-        return null;
+      return null;
     }
   };
 

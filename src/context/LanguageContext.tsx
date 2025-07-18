@@ -241,8 +241,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
         }
       }, 50);
       
-    } catch (_err) {
-      logErrorToProduction('LanguageContext: Error changing language:', { data: err });
+    } catch {
+      logErrorToProduction('LanguageContext: Error changing language:', { data: 'Error occurred' });
       toast({
         title: 'Error',
         description: 'Failed to change language',

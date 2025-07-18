@@ -171,8 +171,8 @@ export default function TokenSimulator() {
         purpose: 'support',
       });
       setGptOutput(result);
-    } catch (_err) {
-      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'TokenSimulator.handleGPT' });
+    } catch {
+      logErrorToProduction(err instanceof Error ? 'Error occurred' : String(err), err instanceof Error ? err : undefined, { context: 'TokenSimulator.handleGPT' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setGptOutput(suggestion);
       toast({ title: 'GPT analysis failed', variant: 'destructive' });

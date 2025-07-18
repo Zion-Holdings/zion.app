@@ -31,9 +31,9 @@ serve(async () => {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
-  } catch (_err) {
-    console.error('mailchimp-export-segments error', err);
-    return new Response(JSON.stringify({ error: err.message }), {
+  } catch {
+    console.or('mailchimp-export-segments or', );
+    return new Response(JSON.stringify({ or: .message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });

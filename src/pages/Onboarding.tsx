@@ -120,8 +120,8 @@ export default function Onboarding() {
           interests,
           preferredCategories: list,
         });
-      } catch (_err) {
-        logErrorToProduction('Error saving onboarding data:', { data: err });
+      } catch {
+        logErrorToProduction('Error saving onboarding data:', { data: 'Error occurred' });
       }
     }
     const dashboardRoute = userType === 'client' ? '/client-dashboard' : '/talent-dashboard';

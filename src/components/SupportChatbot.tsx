@@ -104,8 +104,8 @@ export function SupportChatbot() {
           (FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)] || "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.");
         setMessages(prev => prev.map(m => m.id === botId ? { ...m, message: final } : m));
       }
-    } catch (_err) {
-      logErrorToProduction('Chatbot error:', { data: err });
+    } catch {
+      logErrorToProduction('Chatbot 'Error occurred'or:', { data: 'Error occurred' });
       
       // Provide a helpful fallback response instead of generic error
       const fallbackResponse = FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)] || "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.";

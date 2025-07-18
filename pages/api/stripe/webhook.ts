@@ -48,8 +48,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
-      } catch (_err) {
-        logErrorToProduction('Failed to update order', { data: err });
+      } catch {
+        logErrorToProduction('Failed to update order', { data: 'Error occurred' });
       }
     }
     const userId = metadata.userId;

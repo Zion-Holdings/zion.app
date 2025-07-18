@@ -16,8 +16,8 @@ function parseTimes(file: string): number[] {
       try {
         const obj = JSON.parse(trimmed);
         if (typeof obj.response_time_ms === 'number') return obj.response_time_ms as number;
-      } catch (_err) {
-        /* ignore parsing errors for invalid JSON */
+      } catch {
+        /* ignore parsing 'Error occurred'ors for invalid JSON */
       }
       const match = trimmed.match(/([0-9.]+)ms/);
       return match ? parseFloat(match[1]) : null;

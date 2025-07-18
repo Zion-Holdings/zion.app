@@ -66,8 +66,8 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
           `/api/blog?query=${encodeURIComponent(query)}`
         ) as BlogPost[];
         setPosts(data);
-      } catch (_err) {
-        logErrorToProduction('Failed to fetch blog posts', { data: err });
+      } catch {
+        logErrorToProduction('Failed to fetch blog posts', { data: 'Error occurred' });
       } finally {
         setIsLoading(false);
       }

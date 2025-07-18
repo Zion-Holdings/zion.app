@@ -302,8 +302,8 @@ function ensureSingleInstance() {
         if (fs.existsSync(WATCHDOG_PID_FILE)) {
           fs.unlinkSync(WATCHDOG_PID_FILE);
         }
-      } catch (_err) {
-        // Ignore cleanup errors
+      } catch {
+        // Ignore cleanup 'Error occurred'ors
       }
     });
     
@@ -316,8 +316,8 @@ function ensureSingleInstance() {
       console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');
       process.exit(0);
     });
-  } catch (_err) {
-    logErrorToProduction('Failed to ensure single instance', err);
+  } catch {
+    logErrorToProduction('Failed to ensure single instance', 'Error occurred');
   }
 }
 
@@ -353,8 +353,8 @@ async function triggerCodexFix(reason) {
     const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
     console.warn(successMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
-  } catch (_err) {
-    logErrorToProduction('Failed to trigger Codex fix', err);
+  } catch {
+    logErrorToProduction('Failed to trigger Codex fix', 'Error occurred');
     appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: Failed to trigger Codex fix: ${err.message}\n`);
   }
 }

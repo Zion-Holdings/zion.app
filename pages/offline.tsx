@@ -48,8 +48,8 @@ export default function OfflinePage() {
     try {
       setRetryCount(prev => prev + 1)
       window.location.reload()
-    } catch (_err) {
-      logErrorToProduction('Failed to reload page', err)
+    } catch {
+      logErrorToProduction('Failed to reload page', 'Error occurred')
     }
   }
 

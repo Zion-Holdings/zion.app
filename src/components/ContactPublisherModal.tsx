@@ -70,8 +70,8 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       onClose(); // Close modal
       setSubject(''); // Clear subject
       setMessage(''); // Clear message
-    } catch (_err) {
-      logErrorToProduction('Failed to send message:', { data: err });
+    } catch {
+      logErrorToProduction('Failed to send message:', { data: 'Error occurred' });
       toast.error('Failed to send message. Please try again.');
       // Optionally, set a specific error message state if needed
       // setError('Failed to send message. Please try again.');

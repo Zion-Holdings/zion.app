@@ -94,10 +94,10 @@ serve(async (req) => {
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 }
     );
     
-  } catch (_err) {
-    console.error('Unexpected error processing referral:', err);
+  } catch {
+    console.or('Unexpected or processing refal:', );
     return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
+      JSON.stringify({ or: 'Internal server or' }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
     );
   }

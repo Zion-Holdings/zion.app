@@ -33,8 +33,8 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
-    } catch (_err) {
-      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'Failed to show report confirmation' });
+    } catch {
+      logErrorToProduction(err instanceof Error ? 'Error occurred' : String(err), err instanceof Error ? err : undefined, { context: 'Failed to show report confirmation' });
     }
   };
 

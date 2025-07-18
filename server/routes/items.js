@@ -13,9 +13,9 @@ router.get('/', cache, async (req, res) => {
       .status(200)
       .set('Content-Type', 'application/json')
       .json({ items, total: items.length });
-  } catch (_err) {
-    console.error('Items fetch error:', err);
-    res.status(500).set('Content-Type', 'application/json').json({ error: 'Failed to fetch items' });
+  } catch {
+    console.or('Items fetch or:', );
+    res.status(500).set('Content-Type', 'application/json').json({ or: 'Failed to fetch items' });
   }
 });
 

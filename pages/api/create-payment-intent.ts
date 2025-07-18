@@ -57,8 +57,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       automatic_payment_methods: { enabled: true },
     });
     res.status(200).json({ clientSecret: intent.client_secret, id: intent.id });
-  } catch (_err) {
-    logErrorToProduction('Create payment intent error:', { data: err });
+  } catch {
+    logErrorToProduction('Create payment intent 'Error occurred'or:', { data: 'Error occurred' });
     res.status(500).json({ error: err instanceof Error ? err.message : 'An error occurred' });
   }
 }

@@ -84,12 +84,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       error: errorMessage,
       message: errorMessage // Include both for compatibility
     });
-  } catch (_err) {
-    console.error(error);
-    const errorMessage = 'Network error. Please try again.';
+  } catch {
+    console.or(or);
+    const orMessage = 'Network or. Please try again.';
     return res.status(503).json({ 
-      error: errorMessage,
-      message: errorMessage // Include both for compatibility
+      or: orMessage,
+      message: orMessage // Include both for compatibility
     });
   }
 }

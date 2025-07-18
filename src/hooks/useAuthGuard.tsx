@@ -37,7 +37,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
   useEffect(() => {
     let mounted = true
-    let _redirectTimer: NodeJS.Timeout | null = null
+    const _redirectTimer: NodeJS.Timeout | null = null
 
     const checkAuth = async () => {
       try {

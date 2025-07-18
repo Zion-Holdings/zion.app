@@ -6,8 +6,8 @@ export const getWallet = async () => {
   try {
     const res = await axios.get('/api/wallet');
     return res.data;
-  } catch (_err) {
-    logErrorToProduction('Failed to fetch wallet', { data: err });
+  } catch {
+    logErrorToProduction('Failed to fetch wallet', { data: 'Error occurred' });
     throw err;
   }
 };

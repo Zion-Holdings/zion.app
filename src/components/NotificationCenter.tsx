@@ -41,8 +41,8 @@ export const _NotificationCenter: React.FC = () => {
         try {
           await fetchNotifications();
           setError(null);
-        } catch (_err) {
-          logErrorToProduction('Failed to fetch notifications:', { data: err });
+        } catch {
+          logErrorToProduction('Failed to fetch notifications:', { data: 'Error occurred' });
           setError("Couldn't load notifications");
           enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
         } finally {
@@ -58,8 +58,8 @@ export const _NotificationCenter: React.FC = () => {
     try {
       await markAllAsRead();
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
-    } catch (_err) {
-      logErrorToProduction('Failed to mark notifications as read:', { data: err });
+    } catch {
+      logErrorToProduction('Failed to mark notifications as read:', { data: 'Error occurred' });
       enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };

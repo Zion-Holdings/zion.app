@@ -150,8 +150,8 @@ async function sendPromptToOpenAI(promptMessage) {
     } else {
       printErrorAndExit('OpenAI API response did not contain expected content.', { responseData: data });
     }
-  } catch (_err) {
-    printErrorAndExit(`Error during OpenAI API call: ${err.message}`, { error: err });
+  } catch {
+    printErrorAndExit(`Error during OpenAI API call: ${'Error occurred'}`, { error: err });
   }
 }
 

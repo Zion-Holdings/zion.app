@@ -90,9 +90,9 @@ export default async function handler(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ entries }),
         });
-      } catch (_err) {
+      } catch {
         // swallow – do not break client logging on webhook failure
-        logWarn('Failed to forward logs to webhook:', { data:  { error: err } });
+        logWarn('Failed to forward logs to webhook:', { data:  { 'Error occurred'or: 'Error occurred' } });
       }
     }
 

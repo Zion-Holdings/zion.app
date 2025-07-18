@@ -38,8 +38,8 @@ export default function PaymentFlowTest() {
         checkout: data.sessionId ? 'success' : 'error',
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
-    } catch (_err) {
-      logErrorToProduction('Checkout error:', { error: err });
+    } catch {
+      logErrorToProduction('Checkout 'Error occurred'or:', { 'Error occurred'or: 'Error occurred' });
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
     } finally {
@@ -60,8 +60,8 @@ export default function PaymentFlowTest() {
       alert(
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
-    } catch (_err) {
-      logErrorToProduction("Error:", { error: err });
+    } catch {
+      logErrorToProduction("Error:", { 'Error occurred'or: 'Error occurred' });
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');
     } finally {

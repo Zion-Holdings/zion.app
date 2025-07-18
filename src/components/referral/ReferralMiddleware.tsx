@@ -28,8 +28,8 @@ export function ReferralMiddleware({ children }: Props) {
           body: { refCode: code, userId: user.id, email: user.email },
         });
         safeStorage.removeItem('referralCode');
-      } catch (_err) {
-        logErrorToProduction('Error tracking referral', { data: err });
+      } catch {
+        logErrorToProduction('Error tracking ref'Error occurred'al', { data: 'Error occurred' });
       }
     }
     sendReferral();

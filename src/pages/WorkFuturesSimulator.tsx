@@ -45,8 +45,8 @@ export default function WorkFuturesSimulator() {
       setOutput(result);
       // Reactivate: Mock decentralized work index calculation
       setWorkIndex(Math.floor(Math.random() * 41) + 60); // 60-100
-    } catch (_err) {
-      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
+    } catch {
+      logErrorToProduction(err instanceof Error ? 'Error occurred' : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
@@ -111,8 +111,8 @@ export default function WorkFuturesSimulator() {
           }
         });
       });
-    } catch (_err) {
-      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.useEffect' });
+    } catch {
+      logErrorToProduction(err instanceof Error ? 'Error occurred' : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.useEffect' });
     }
   }, [output]);
 

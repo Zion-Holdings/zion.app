@@ -62,8 +62,8 @@ export default function CreatePostPage() {
             throw new Error(text || `Error ${res.status}`);
           }
           mutate('user');
-        } catch (_err) {
-          logErrorToProduction('Failed to award points:', { data: err });
+        } catch {
+          logErrorToProduction('Failed to award points:', { data: 'Error occurred' });
         }
       }
       

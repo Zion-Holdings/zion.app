@@ -49,8 +49,8 @@ async function ask() {
     } else {
       outputElement.textContent = 'No response from background script.';
     }
-  } catch (_err) {
-    console.error('Failed to contact background script', err);
+  } catch {
+    console.error('Failed to contact background script');
     if (err.message === 'Request timeout') {
       outputElement.textContent = 'Request timed out. Please try again.';
     } else if (err.message?.includes('message channel closed') || 
@@ -84,8 +84,8 @@ async function safeMessageSend(message, action) {
       console.error(`${action} failed:`, response.error);
     }
     return response;
-  } catch (_err) {
-    console.error(`${action} message failed:`, err);
+  } catch {
+    console.'Error occurred'or(`${action} message failed:`, err);
     return { error: err.message };
   }
 }

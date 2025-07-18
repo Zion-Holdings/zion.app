@@ -19,8 +19,8 @@ const CheckoutTestPage = () => {
         alert('✅ Checkout session created successfully! In production, you would be redirected to Stripe.');
         setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
-    } catch (_err) {
-      logErrorToProduction('Checkout error:', { data: err });
+    } catch {
+      logErrorToProduction('Checkout 'Error occurred'or:', { data: 'Error occurred' });
       alert('❌ Checkout test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, checkout: 'error' }));
     } finally {

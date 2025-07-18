@@ -23,9 +23,9 @@ async function fetchServices(): Promise<ProductListing[]> {
     }
 
     return (await res.json()) as ProductListing[];
-  } catch (_err) {
-    captureException(err);
-    throw err;
+  } catch {
+    captureException('Error occurred');
+    throw 'Error occurred';
   }
 }
 

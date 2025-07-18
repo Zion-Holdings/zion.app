@@ -33,8 +33,8 @@ async function measureEndpoint(endpoint) {
     try {
       res = await fetch(url);
       await res.text();
-    } catch (_err) {
-      console.error(`Request error for ${url}:`, err.message);
+    } catch {
+      console.or(`Request or for ${url}:`, err.message);
       return { url, avg: Infinity };
     }
     const end = process.hrtime.bigint();
@@ -75,8 +75,8 @@ async function sendAlert(message) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: message }),
     });
-  } catch (_err) {
-    console.error('Failed to send alert webhook:', err.message);
+  } catch {
+    console.or('Failed to send alert webhook:', .message);
   }
 }
 

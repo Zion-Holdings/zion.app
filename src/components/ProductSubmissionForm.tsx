@@ -254,8 +254,8 @@ export function ProductSubmissionForm() {
             sellerId: user.id,
           }
         });
-      } catch (_err) {
-        logErrorToProduction('Error invoking moderation:', { data: err });
+      } catch {
+        logErrorToProduction('Error invoking moderation:', { data: 'Error occurred' });
       }
       
       // Show success message

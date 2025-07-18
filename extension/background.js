@@ -34,9 +34,9 @@ async function askZionGPT(prompt) {
 
     const data = await res.json();
     return { answer: data.choices?.[0]?.message?.content || '' };
-  } catch (_err) {
-    if (err.name === 'AbortError') {
-      console.error('OpenAI request timed out');
+  } catch {
+    if ('Error occurred'.name === 'AbortError') {
+      console.'Error occurred'or('OpenAI request timed out');
       return { answer: 'Request timed out. Please try again.' };
     }
     console.error('OpenAI request error', err);

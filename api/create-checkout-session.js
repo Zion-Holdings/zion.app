@@ -1,5 +1,4 @@
 import Stripe from 'stripe';
-import { withSentry } from './withSentry.cjs';
 
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 
