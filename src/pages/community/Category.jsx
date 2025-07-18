@@ -22,13 +22,13 @@ export default function Category() {
   const [hasMore, setHasMore] = useState(true);
   const LIMIT = 10;
 
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     const res = await fetch(
       `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`
     );
     if (!res.ok) throw new Error('Request failed');
     return res.json();
-  };
+  }, [slug, offset]);
 
   useEffect(() => {
     if (!slug) return;
