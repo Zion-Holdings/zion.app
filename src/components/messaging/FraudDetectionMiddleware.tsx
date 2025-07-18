@@ -29,9 +29,13 @@ export const FraudDetectionContext = React.createContext(
   undefined as FraudDetectionContextType | undefined,
 );
 
+<<<<<<< HEAD
 export const FraudDetectionMiddleware: React.FC<
   FraudDetectionMiddlewareProps
 > = ({ children }) => {
+=======
+const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> = (props) => {
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b
   // Function to scan message content for fraud
   const scanMessageContent = useCallback(
     async (
@@ -129,7 +133,7 @@ export const FraudDetectionMiddleware: React.FC<
 
   return (
     <FraudDetectionContext.Provider value={contextValue}>
-      {children}
+      {props.children}
     </FraudDetectionContext.Provider>
   );
 };

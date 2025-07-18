@@ -128,7 +128,7 @@ export class ApiErrorBoundary extends Component<
           isRetrying: false,
         });
       }, 500);
-    } catch (_retryError) {
+    } catch (retryError) {
       logErrorToProduction('Retry failed:', { data: retryError });
       if (typeof window === 'undefined') {
         const Sentry = (await import('@sentry/nextjs')).default;

@@ -199,7 +199,7 @@
     "netlify:monitor": "npm run build:monitor:start",
     "netlify:status": "npm run self-heal:status && npm run build:monitor:status",
     "netlify:stop": "npm run self-heal:stop && npm run build:monitor:stop",
-    "self-heal": "node scripts/self-healing.cjs",
+    "self-heal": "node scripts/self-healing-system.cjs",
     "health-monitor": "node scripts/health-monitor.cjs",
     "build-monitor": "node scripts/build-monitor.cjs",
     "auto-fix": "node scripts/auto-fix-errors.cjs",

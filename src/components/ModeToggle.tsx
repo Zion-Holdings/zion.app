@@ -31,6 +31,7 @@ export function ModeToggle() {
   }, []);
 
   // This will be 'light' or 'dark' based on context's resolution
+  const _resolvedThemeFromContext = resolvedThemeFromContext;
   const currentDisplayTheme = isClient ? _resolvedThemeFromContext : 'light'; // Default to 'light' for SSR
   const isDarkMode = currentDisplayTheme === 'dark';
 

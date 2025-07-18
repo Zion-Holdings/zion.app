@@ -20,7 +20,11 @@ import {
 } from '@/components/notifications';
 import type { FilterType } from '@/components/notifications/NotificationFilter';
 
+<<<<<<< HEAD
 export const NotificationCenter: React.FC = () => {
+=======
+const NotificationCenter: React.FC = () => {
+>>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b
   const {
     filteredNotifications,
     unreadCount,

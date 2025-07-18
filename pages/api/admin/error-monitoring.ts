@@ -8,6 +8,7 @@ interface ErrorMonitoringResponse {
   success: boolean;
   data?: Record<string, unknown>;
   error?: string;
+  message?: string;
   timestamp: string;
 }
 
