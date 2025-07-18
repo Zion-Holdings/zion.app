@@ -87,7 +87,7 @@ function offlineSearch(
       match(p.category) ||
       p.tags?.some((t) => match(t)),
   ).map((p) => {
-    const result: any = {
+    const result: ProductSearchResult = {
       id: p.id,
       title: p.title ?? '',
       description: p.description ?? '',
