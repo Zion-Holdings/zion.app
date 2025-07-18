@@ -2,12 +2,29 @@
 const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
-      // Fix watchpack issue
+      // Fix watchpack issue with proper path handling
       config.watchOptions = {
         ...config.watchOptions,
         poll: 1000,
         aggregateTimeout: 300,
-        ignored: ['**/node_modules', '**/.next', '**/logs']
+        ignored: ['**/node_modules', '**/.next', '**/logs', '**/automation', '**/scripts', '**/temp', '**/tmp'],
+        followSymlinks: false
+      };
+      
+      // Use memory cache to avoid file system issues
+      config.cache = {
+        type: 'memory',
+        maxGenerations: 1
+      };
+      
+      // Fix path resolution issues
+      config.resolve = {
+        ...config.resolve,
+        fallback: {
+          ...config.resolve.fallback,
+          path: require.resolve('path-browserify'),
+          fs: false
+        }
       };
     }
     return config;
