@@ -31,7 +31,7 @@ export default function FounderBackupVault() {
   const [failCount, setFailCount] = useState(0);
 
   const handleChange = (field: keyof VaultData) => (_e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setData({ ...data, [field]: e.target.value });
+    setData({ ...data, [field]: _e.target.value });
   };
 
   const allFilled = Object.values(data).every(Boolean);
@@ -48,8 +48,8 @@ export default function FounderBackupVault() {
       zip.file('vault.enc', encryptedData);
       const blob = await zip.generateAsync({ type: 'blob' });
       saveAs(blob, 'zion_backup.zip');
-    } catch {
-      console.('Failed to create ZIP:', );
+    } catch (error) {
+      console.log('Failed to create ZIP:', error);
       // Fallback: save as encrypted file directly
       const blob = new Blob([encryptedData], { type: 'application/octet-stream' });
       saveAs(blob, 'zion_backup.enc');
