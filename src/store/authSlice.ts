@@ -1,31 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit;'';
-import type { PayloadAction } from '@reduxjs/toolkit;'
-;'';
-export interface AuthState {;;
-  token: "string | null;",;";";";";""
-  isLoggedIn: "boolean;";";";""
-};";";";""
-;";";";";"";
-const initialState: unknown "AuthState = {;",;";";";";""
-  token: "null",;";";";";""
-  isLoggedIn: "false",;";""
-};";";""
-;";";";"";
-const authSlice: unknown = createSlice({;";,";";";""
-  name: 'auth',;'
-  initialState,;
-  reducers: {;
-    setToken(state, action: PayloadAction<string | null>) {;
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface AuthState {
+  token: string | null;
+}
+
+const initialState: AuthState = {
+  token: null,
+};
+
+const authSlice = createSlice({
+  name: 'auth',
+  initialState,
+  reducers: {
+    setToken: (state, action: PayloadAction<string>) => {
       state.token = action.payload;
-      state.isLoggedIn = !!action.payload;
-    },;
-    clearAuth(state) {;
+    },
+    clearToken: (state) => {
       state.token = null;
-      state.isLoggedIn = false;
-    },;
-  },;
-});''
-;
-export const { setToken, clearAuth } = authSlice.actions;
-export default authSlice.reducer;''
-''''''
+    },
+  },
+});
+
+export const { setToken, clearToken } = authSlice.actions;
+export default authSlice.reducer;
