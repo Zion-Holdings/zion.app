@@ -1,1 +1,1 @@
-export type RoleType = 'Admin' | 'Lead' | 'Builder' | ''
+export type RoleType = 'Admin' | 'Lead' | 'Builder' | '';

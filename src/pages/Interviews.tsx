@@ -1,2 +1,2 @@
-
-        ['confirmed', 'requested'].includes(interview.status);''
+['confirmed', 'requested'].includes(interview.status);
+('');

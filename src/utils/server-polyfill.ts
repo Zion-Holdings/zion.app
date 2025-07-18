@@ -21,15 +21,15 @@ if (typeof window === 'undefined') {
       host: '',
       pathname: '',
       search: '',
-      hash: ''
+      hash: '',
     },
     navigator: {
-      userAgent: 'Node.js'
+      userAgent: 'Node.js',
     },
     document: {
       createElement: () => ({}),
       getElementById: () => null,
-      querySelector: () => null
+      querySelector: () => null,
     },
     addEventListener: () => {},
     removeEventListener: () => {},
@@ -37,14 +37,14 @@ if (typeof window === 'undefined') {
       getItem: () => null,
       setItem: () => {},
       removeItem: () => {},
-      clear: () => {}
+      clear: () => {},
     },
     sessionStorage: {
       getItem: () => null,
       setItem: () => {},
       removeItem: () => {},
-      clear: () => {}
-    }
+      clear: () => {},
+    },
   };
 }
 

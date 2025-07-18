@@ -1,2 +1,1 @@
-
-  const router = useRouter(); // Changed from navigate''
+const router = useRouter(); // Changed from navigate''

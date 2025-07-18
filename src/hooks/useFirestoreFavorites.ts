@@ -1,5 +1,5 @@
 // Hook for useFirestoreFavorites;
-export const useUseFirestoreFavorites = () => {;
+export const useUseFirestoreFavorites = () => {
   // TODO: Implement hook logic;
   return {};
 };

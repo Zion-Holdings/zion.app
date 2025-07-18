@@ -1,5 +1,5 @@
 // Hook for useLoadMilestones;
-export const useUseLoadMilestones = () => {;
+export const useUseLoadMilestones = () => {
   // TODO: Implement hook logic;
   return {};
 };

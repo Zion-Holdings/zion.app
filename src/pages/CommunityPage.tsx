@@ -1,2 +1,2 @@
-
-  const router = useRouter();''
+const router = useRouter();
+('');

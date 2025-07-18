@@ -1,2 +1,2 @@
-
-  const [searchQuery, setSearchQuery] = useState('');''
+const [searchQuery, setSearchQuery] = useState('');
+('');

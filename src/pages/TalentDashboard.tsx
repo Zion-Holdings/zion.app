@@ -1,2 +1,2 @@
-
-  const onboardingStatus = useOnboardingStatus();''
+const onboardingStatus = useOnboardingStatus();
+('');

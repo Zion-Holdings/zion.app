@@ -1,2 +1,2 @@
-
-    const raw = safeStorage.getItem('roadmap_items');''
+const raw = safeStorage.getItem('roadmap_items');
+('');

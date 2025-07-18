@@ -1,5 +1,5 @@
 // Hook for types;
-export const useTypes = () => {;
+export const useTypes = () => {
   // TODO: Implement hook logic;
   return {};
 };

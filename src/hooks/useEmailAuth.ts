@@ -1,5 +1,5 @@
 // Hook for useEmailAuth;
-export const useUseEmailAuth = () => {;
+export const useUseEmailAuth = () => {
   // TODO: Implement hook logic;
   return {};
 };

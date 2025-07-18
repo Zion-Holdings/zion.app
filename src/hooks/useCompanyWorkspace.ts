@@ -1,5 +1,5 @@
 // Hook for useCompanyWorkspace;
-export const useUseCompanyWorkspace = () => {;
+export const useUseCompanyWorkspace = () => {
   // TODO: Implement hook logic;
   return {};
 };

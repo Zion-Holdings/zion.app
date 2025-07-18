@@ -1,5 +1,5 @@
 // Hook for useResumeUtils;
-export const useUseResumeUtils = () => {;
+export const useUseResumeUtils = () => {
   // TODO: Implement hook logic;
   return {};
 };

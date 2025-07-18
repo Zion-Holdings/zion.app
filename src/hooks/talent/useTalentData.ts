@@ -1,5 +1,5 @@
 // Hook for useTalentData;
-export const useUseTalentData = () => {;
+export const useUseTalentData = () => {
   // TODO: Implement hook logic;
   return {};
 };

@@ -1,2 +1,2 @@
-
-  const suggestions = generateSearchSuggestions();''
+const suggestions = generateSearchSuggestions();
+('');
