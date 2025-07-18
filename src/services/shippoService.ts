@@ -68,7 +68,7 @@ export async function createShipment(addressTo: ShippoAddress, parcels: ShippoPa
 
     return res.data as ShippoShipment;
   } catch {
-    logErrorToProduction('Shippo create shipment 'Error occurred'or:', { data: 'Error occurred' });
+    logErrorToProduction('Shippo create shipment erroror:', { data: error });
     throw err;
   }
 }

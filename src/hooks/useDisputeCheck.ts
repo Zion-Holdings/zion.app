@@ -55,7 +55,7 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
           setDisputeId(null);
         }
       } catch {
-        logErrorToProduction('Error checking dispute status:', { data: 'Error occurred' });
+        logErrorToProduction('Error checking dispute status:', { data: error });
         setIsUnderDispute(false);
         setDisputeStatus(null);
         setDisputeId(null);

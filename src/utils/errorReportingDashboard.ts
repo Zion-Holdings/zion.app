@@ -143,7 +143,7 @@ class ErrorReportingDashboard {
 
       this.calculateHealthScore();
     } catch {
-      logErrorToProduction('Failed to update performance metrics', 'Error occurred');
+      logErrorToProduction('Failed to update performance metrics', error);
     }
   }
 

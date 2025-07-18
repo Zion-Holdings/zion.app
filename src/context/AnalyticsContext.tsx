@@ -82,8 +82,8 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
         }]);
       }
     } catch {
-      // Log 'Error occurred' but don't fail the tracking
-      console.warn('Failed to store analytics event:', 'Error occurred');
+      // Log error but don't fail the tracking
+      console.warn('Failed to store analytics event:', error);
     }
 
     // Send to analytics service if configured
@@ -91,7 +91,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     //   try {
     //     analytics.track(type, event.metadata);
     //   } catch {
-    //     console.warn('Failed to send analytics event:', 'Error occurred');
+    //     console.warn('Failed to send analytics event:', error);
     //   }
     // }
   }, [user, router.pathname]);

@@ -145,7 +145,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
         setListings(filteredListings);
       } catch {
-        logErrorToProduction('Category load 'Error occurred'or:', { data: 'Error occurred' });
+        logErrorToProduction('Category load erroror:', { data: error });
         toast({ title: 'Error', description: 'Failed to load category' });
       } finally {
         setIsLoading(false);

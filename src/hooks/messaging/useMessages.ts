@@ -50,7 +50,7 @@ export function useMessages(
         await markAsRead(conversationId);
       }
     } catch {
-      logErrorToProduction('Error fetching messages:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching messages:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -96,7 +96,7 @@ export function useMessages(
       // Return the sent message
       return data;
     } catch {
-      logErrorToProduction('Error sending message:', { data: 'Error occurred' });
+      logErrorToProduction('Error sending message:', { data: error });
       toast({
         title: "Failed to send message",
         description: "Please try again later",
@@ -152,7 +152,7 @@ export function useMessages(
         );
       });
     } catch {
-      logErrorToProduction('Error marking messages as read:', { data: 'Error occurred' });
+      logErrorToProduction('Error marking messages as read:', { data: error });
     }
   };
 

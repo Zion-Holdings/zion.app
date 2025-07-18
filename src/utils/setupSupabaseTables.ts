@@ -104,7 +104,7 @@ export const ensureProfilesTableExists = async () => {
       logInfo('Profiles table setup completed');
     }
   } catch {
-    logErrorToProduction('Error setting up profiles table:', { data: 'Error occurred' });
+    logErrorToProduction('Error setting up profiles table:', { data: error });
   }
 };
 

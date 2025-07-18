@@ -18,7 +18,7 @@ export default function FounderBot() {
         body: JSON.stringify({ messages: [{ role: 'user', content: message }] })
       });
     } catch {
-      logErrorToProduction(err instanceof Error ? 'Error occurred' : String(err), err instanceof Error ? err : undefined, { message: 'Founder bot error' });
+      logErrorToProduction(err instanceof Error ? error : String(err), err instanceof Error ? err : undefined, { message: 'Founder bot error' });
     }
   };
 

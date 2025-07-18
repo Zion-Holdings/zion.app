@@ -151,7 +151,7 @@ export function HireConfirmationModal({
             return;
           }
         } catch {
-          logErrorToProduction('Error updating availability:', { data: 'Error occurred' });
+          logErrorToProduction('Error updating availability:', { data: error });
           toast({
             title: 'Error updating availability',
             description: 'Failed to update candidate availability status.',
@@ -169,7 +169,7 @@ export function HireConfirmationModal({
       onConfirm();
       onClose();
     } catch {
-      logErrorToProduction('Error hiring candidate:', { data: 'Error occurred' });
+      logErrorToProduction('Error hiring candidate:', { data: error });
       toast({
         title: 'Error hiring candidate',
         description: 'Failed to hire candidate. Please try again.',

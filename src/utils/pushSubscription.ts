@@ -38,6 +38,6 @@ export async function subscribeToPush() {
       body: JSON.stringify(subscription)
     });
   } catch {
-    logErrorToProduction('Push subscription failed', { data: 'Error occurred' });
+    logErrorToProduction('Push subscription failed', { data: error });
   }
 }

@@ -443,7 +443,7 @@ export const bundleOptimization = {
     try {
       return await importFn();
     } catch {
-      logErrorToProduction('Dynamic import failed:', { data: _'Error occurred' });
+      logErrorToProduction('Dynamic import failed:', { data: _error });
       throw new Error('Failed to load component');
     }
   },

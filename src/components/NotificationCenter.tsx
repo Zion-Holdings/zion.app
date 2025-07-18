@@ -42,7 +42,7 @@ export const _NotificationCenter: React.FC = () => {
           await fetchNotifications();
           setError(null);
         } catch {
-          logErrorToProduction('Failed to fetch notifications:', { data: 'Error occurred' });
+          logErrorToProduction('Failed to fetch notifications:', { data: error });
           setError("Couldn't load notifications");
           enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
         } finally {
@@ -59,7 +59,7 @@ export const _NotificationCenter: React.FC = () => {
       await markAllAsRead();
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch {
-      logErrorToProduction('Failed to mark notifications as read:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to mark notifications as read:', { data: error });
       enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };

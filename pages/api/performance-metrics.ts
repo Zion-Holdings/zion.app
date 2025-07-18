@@ -82,7 +82,7 @@ export default async function handler(
     });
 
   } catch {
-    logError('Error processing performance metrics:', { data: 'Error occurred' });
+    logError('Error processing performance metrics:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process performance metrics'

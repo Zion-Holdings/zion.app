@@ -17,7 +17,7 @@ export async function enableDevToolsInStaging() {
       await import(/* @vite-ignore */ 'react-devtools');
       logInfo('DevTools enabled');
     } catch {
-      logErrorToProduction('Failed to load react-devtools (import is commented out)', { data: 'Error occurred' });
+      logErrorToProduction('Failed to load react-devtools (import is commented out)', { data: error });
     }
   }
 }

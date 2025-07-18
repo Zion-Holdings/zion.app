@@ -25,7 +25,7 @@ export async function subscribeToNewsletter(email: string): Promise<void> {
         dynamicTemplateData: {},
       });
     } catch {
-      logErrorToProduction('Failed to send SendGrid welcome email:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to send SendGrid welcome email:', { data: error });
     }
   }
 }

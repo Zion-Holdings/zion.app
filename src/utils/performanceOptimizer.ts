@@ -85,7 +85,7 @@ class PerformanceOptimizer {
 
       logInfo('Performance monitoring initialized');
     } catch {
-      logErrorToProduction('Failed to initialize performance monitoring', { data: 'Error occurred' });
+      logErrorToProduction('Failed to initialize performance monitoring', { data: error });
     }
   }
 
@@ -243,7 +243,7 @@ class PerformanceOptimizer {
       this.optimizationApplied = true;
       logInfo('Performance optimizations applied successfully');
     } catch {
-      logErrorToProduction('Failed to apply performance optimizations', { data: 'Error occurred' });
+      logErrorToProduction('Failed to apply performance optimizations', { data: error });
     }
   }
 
@@ -368,7 +368,7 @@ class PerformanceOptimizer {
       };
       localStorage.setItem('app-cache-info', JSON.stringify(cacheData));
     } catch {
-      logWarn('Failed to set localStorage cache', { data:  { data:  { 'Error occurred' } } });
+      logWarn('Failed to set localStorage cache', { data:  { data:  { error } } });
     }
 
     logInfo('Advanced caching enabled');

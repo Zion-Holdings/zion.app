@@ -62,7 +62,7 @@ export function DisputeDetail() {
         const messagesData = await getDisputeMessages(disputeId);
         setMessages(messagesData);
       } catch {
-        logErrorToProduction('Error loading dispute data:', { data: 'Error occurred' });
+        logErrorToProduction('Error loading dispute data:', { data: error });
         toast.error("Failed to load dispute");
       } finally {
         setIsLoading(false);
@@ -121,7 +121,7 @@ export function DisputeDetail() {
         setMessage("");
       }
     } catch {
-      logErrorToProduction('Error sending message:', { data: 'Error occurred' });
+      logErrorToProduction('Error sending message:', { data: error });
     } finally {
       setIsSending(false);
     }

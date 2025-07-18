@@ -103,7 +103,7 @@ export function DisputeForm({
         }
       }
     } catch {
-      logErrorToProduction('Error submitting dispute:', { data: 'Error occurred' });
+      logErrorToProduction('Error submitting dispute:', { data: error });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {
       setIsSubmitting(false);

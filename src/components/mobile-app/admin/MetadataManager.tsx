@@ -53,8 +53,8 @@ export const MetadataManager: React.FC = () => {
       
       toast.success(`${currentPlatform === "ios" ? "iOS" : "Android"} metadata saved successfully!`);
     } catch {
-      toast.'Error occurred'("Failed to save metadata");
-      logErrorToProduction("Failed to save metadata", { data: 'Error occurred' });
+      toast.error("Failed to save metadata");
+      logErrorToProduction("Failed to save metadata", { data: error });
     } finally {
       setIsSaving(false);
     }

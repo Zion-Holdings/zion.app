@@ -34,7 +34,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       res.status(200).json(data || []);
       return;
     } catch {
-      logErrorToProduction('Error fetching reviews:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching reviews:', { data: error });
       res.status(500).json({ error: 'Failed to fetch reviews' });
       return;
     }
@@ -75,7 +75,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       res.status(201).json(data);
       return;
     } catch {
-      logErrorToProduction('Error creating review:', { data: 'Error occurred' });
+      logErrorToProduction('Error creating review:', { data: error });
       res.status(500).json({ error: 'Failed to create review' });
       return;
     }

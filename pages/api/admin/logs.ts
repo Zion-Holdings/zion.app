@@ -115,12 +115,12 @@ export default async function handler(
       lastUpdated: new Date().toISOString(),
     });
   } catch {
-    logErrorToProduction('Error reading logs:', 'Error occurred');
+    logErrorToProduction('Error reading logs:', error);
     return res.status(500).json({ 
       message: 'Internal Server Error',
       logs: [],
       statistics: {
-        'Error occurred'Count: 0,
+        errorCount: 0,
         warningCount: 0,
         totalCount: 0,
         filteredCount: 0,

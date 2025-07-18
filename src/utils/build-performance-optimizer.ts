@@ -63,8 +63,8 @@ class BuildPerformanceOptimizer {
       return this._performanceMetrics;
       
     } catch {
-      logErrorToProduction('❌ Error during build analysis:', 'Error occurred');
-      throw 'Error occurred';
+      logErrorToProduction('❌ Error during build analysis:', error);
+      throw error;
     }
   }
 
@@ -344,7 +344,7 @@ Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 
       // Remove logInfo(`\n📄 Detailed report saved to: ${reportPath}`);
       
     } catch {
-      logErrorToProduction('❌ Analysis failed:', 'Error occurred');
+      logErrorToProduction('❌ Analysis failed:', error);
       process.exit(1);
     }
   }

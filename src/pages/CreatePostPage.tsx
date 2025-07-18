@@ -63,7 +63,7 @@ export default function CreatePostPage() {
           }
           mutate('user');
         } catch {
-          logErrorToProduction('Failed to award points:', { data: 'Error occurred' });
+          logErrorToProduction('Failed to award points:', { data: error });
         }
       }
       

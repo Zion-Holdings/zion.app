@@ -54,7 +54,7 @@ export function useHireRequest() {
       }
       return { success: true, requestId };
     } catch {
-      logErrorToProduction('Error submitting hire request:', { data: 'Error occurred' });
+      logErrorToProduction('Error submitting hire request:', { data: error });
       
       const errorMessage = error instanceof Error 
         ? error.message 

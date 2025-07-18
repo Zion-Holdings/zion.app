@@ -43,7 +43,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
         
         setMatches(results);
       } catch {
-        logErrorToProduction('Error during AI matching:', { data: 'Error occurred' });
+        logErrorToProduction('Error during AI matching:', { data: error });
         toast({
           title: "Matching Error",
           description: "We couldn't find matches for your request. Please try again.",

@@ -66,10 +66,10 @@ export async function executeWithTimeout<T>(
     
     return result;
   } catch {
-    logErrorToProduction('Database query failed', 'Error occurred' as Error);
+    logErrorToProduction('Database query failed', error as Error);
     
     if (fallbackData !== undefined) {
-      logDebug('Returning fallback data due to database 'Error occurred'');
+      logDebug('Returning fallback data due to database error');
       return fallbackData;
     }
     
@@ -87,7 +87,7 @@ export async function testDatabaseConnection(): Promise<boolean> {
     logInfo('Database connection successful');
     return true;
   } catch {
-    logErrorToProduction('Database connection failed', 'Error occurred' as Error);
+    logErrorToProduction('Database connection failed', error as Error);
     return false;
   }
 }
@@ -115,7 +115,7 @@ export async function getDatabaseStats() {
     logErrorToProduction('Failed to get database stats', error as Error);
     return {
       connected: false,
-      error: error instanceof Error ? 'Error occurred' : 'Unknown error'
+      error: error instanceof Error ? error : 'Unknown error'
     };
   }
 }
@@ -130,7 +130,7 @@ export async function disconnectDatabase(): Promise<void> {
       prisma = null;
     logInfo('Database disconnected successfully');
     } catch {
-    logErrorToProduction('Error disconnecting from database', 'Error occurred' as Error);
+    logErrorToProduction('Error disconnecting from database', error as Error);
     }
   }
 }
@@ -161,7 +161,7 @@ export async function databaseHealthCheck(): Promise<{
     return {
       status: 'unhealthy',
       responseTime: Date.now() - startTime,
-      error: error instanceof Error ? 'Error occurred' : 'Unknown error'
+      error: error instanceof Error ? error : 'Unknown error'
     };
   }
 }

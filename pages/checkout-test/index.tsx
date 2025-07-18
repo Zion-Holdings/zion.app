@@ -20,7 +20,7 @@ const CheckoutTestPage = () => {
         setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
     } catch {
-      logErrorToProduction('Checkout 'Error occurred'or:', { data: 'Error occurred' });
+      logErrorToProduction('Checkout erroror:', { data: error });
       alert('❌ Checkout test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, checkout: 'error' }));
     } finally {

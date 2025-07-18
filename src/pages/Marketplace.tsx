@@ -313,7 +313,7 @@ export default function Marketplace() {
       });
       return { items, hasMore, total };
     } catch {
-      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: 'Error occurred' });
+      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
       return { items: [], hasMore: false, total: 0 };
     }
   }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
@@ -567,7 +567,7 @@ export default function Marketplace() {
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch {
-                    logErrorToProduction('Failed to navigate to checkout:', { data: 'Error occurred' });
+                    logErrorToProduction('Failed to navigate to checkout:', { data: error });
                     toast({
                       title: "Navigation Error",
                       description: "Could not navigate to checkout. Please try again.",

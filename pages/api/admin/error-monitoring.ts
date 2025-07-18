@@ -44,7 +44,7 @@ export default async function handler(
     
     res.status(500).json({
       success: false,
-      'Error occurred': 'Internal server 'Error occurred'',
+      message: 'Internal server error',
       timestamp
     });
   }
@@ -72,10 +72,10 @@ async function handleGet(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error generating 'Error occurred' report:', 'Error occurred');
+        logErrorToProduction('Error generating error report:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to generate 'Error occurred' report',
+          error: 'Failed to generate error report',
           timestamp
         });
       }
@@ -96,10 +96,10 @@ async function handleGet(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error getting system health:', 'Error occurred');
+        logErrorToProduction('Error getting system health:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to get system health',
+          error: 'Failed to get system health',
           timestamp
         });
       }
@@ -125,11 +125,11 @@ async function handleGet(
           timestamp
         });
       } catch {
-        // Log and handle dashboard data retrieval 'Error occurred's gracefully
-        logErrorToProduction('Error getting dashboard data:', 'Error occurred');
+        // Log and handle dashboard data retrieval errors gracefully
+        logErrorToProduction('Error getting dashboard data:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to get dashboard data',
+          error: 'Failed to get dashboard data',
           timestamp
         });
       }
@@ -168,10 +168,10 @@ async function handleGet(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error getting comprehensive monitoring data:', 'Error occurred');
+        logErrorToProduction('Error getting comprehensive monitoring data:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to get comprehensive monitoring data',
+          error: 'Failed to get comprehensive monitoring data',
           timestamp
         });
       }
@@ -227,10 +227,10 @@ async function handlePost(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error creating test 'Error occurred':', 'Error occurred');
+        logErrorToProduction('Error creating test error:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to create test 'Error occurred'',
+          error: 'Failed to create test error',
           timestamp
         });
       }
@@ -251,10 +251,10 @@ async function handlePost(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error triggering health check:', 'Error occurred');
+        logErrorToProduction('Error triggering health check:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to trigger health check',
+          error: 'Failed to trigger health check',
           timestamp
         });
       }
@@ -277,10 +277,10 @@ async function handlePost(
           timestamp
         });
       } catch {
-        logErrorToProduction('Error clearing old logs:', 'Error occurred');
+        logErrorToProduction('Error clearing old logs:', error);
         res.status(500).json({
           success: false,
-          'Error occurred': 'Failed to clear old logs',
+          error: 'Failed to clear old logs',
           timestamp
         });
       }

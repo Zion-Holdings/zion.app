@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPag
     const stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
     return { props: { session: { id: stripeSession.id, amount_total: stripeSession.amount_total, currency: stripeSession.currency, customer_details: stripeSession.customer_details } } };
   } catch {
-    logErrorToProduction('Failed to load session', { data: 'Error occurred' });
+    logErrorToProduction('Failed to load session', { data: error });
     return { props: { session: null } };
   }
 };

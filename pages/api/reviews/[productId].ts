@@ -40,7 +40,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.status(200).json(data || []);
     return;
   } catch {
-    logErrorToProduction('Error fetching reviews:', { data: 'Error occurred' });
+    logErrorToProduction('Error fetching reviews:', { data: error });
     res.status(500).json({
       error: 'Internal server error while fetching reviews.',
       details: error instanceof Error ? error.message : 'Unknown error'

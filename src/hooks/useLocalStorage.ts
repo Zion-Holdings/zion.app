@@ -15,7 +15,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
       const item = safeStorage.getItem(key);
       return item ? (JSON.parse(item) as T) : initialValue;
     } catch {
-      logWarn('useLocalStorage: Error reading key', { data: { key, 'Error occurred' } });
+      logWarn('useLocalStorage: Error reading key', { data: { key, error } });
       return initialValue;
     }
   });
@@ -28,7 +28,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
         safeStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch {
-      logWarn('useLocalStorage: Error setting key', { data: { key, 'Error occurred' } });
+      logWarn('useLocalStorage: Error setting key', { data: { key, error } });
     }
   };
 

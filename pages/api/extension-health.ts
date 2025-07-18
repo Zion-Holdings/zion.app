@@ -28,10 +28,10 @@ export default async function handler(
       environment: process.env['NODE_ENV'],
     });
   } catch {
-    logErrorToProduction('Extension health check 'Error occurred':', 'Error occurred');
+    logErrorToProduction('Extension health check error:', error);
     return res.status(500).json({
-      status: ''Error occurred'',
-      message: 'Internal server 'Error occurred'',
+      status: 'error',
+      message: 'Internal server error',
     });
   }
 } 

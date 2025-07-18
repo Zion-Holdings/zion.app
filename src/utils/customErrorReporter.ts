@@ -45,7 +45,7 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
       );
     }
   } catch {
-    logErrorToProduction('Error sending report from ${'Error occurred'Details.source}:', { data: error });
+    logErrorToProduction('Error sending report from ${errorDetails.source}:', { data: error });
   }
 }
 

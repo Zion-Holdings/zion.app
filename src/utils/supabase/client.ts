@@ -105,7 +105,7 @@ export function createClient(): SupabaseClient | null {
     logDebug('Supabase client successfully initialized.');
   } catch {
     logErrorToProduction('Supabase client initialization failed catastrophically:', {
-      'Error occurred',
+      error,
       urlUsed: supabaseUrl.substring(0, 20) + '...', // Avoid logging full key
     });
     supabaseClient = null; // Ensure client is null on failure

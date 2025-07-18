@@ -60,7 +60,7 @@ export async function createNotification({
 
     return { success: true, notificationId: data };
   } catch {
-    logErrorToProduction('Error creating notification:', { data: 'Error occurred' });
+    logErrorToProduction('Error creating notification:', { data: error });
     return { success: false, error };
   }
 }

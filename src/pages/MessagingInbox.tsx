@@ -34,7 +34,7 @@ export default function MessagingInbox() {
       try {
         await fetchConversations();
       } catch {
-        logErrorToProduction('Failed to load conversations:', { data: 'Error occurred' });
+        logErrorToProduction('Failed to load conversations:', { data: error });
         toast.error("Failed to load messages. Please try again.");
       }
     };

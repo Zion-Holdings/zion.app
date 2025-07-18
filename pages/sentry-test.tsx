@@ -82,7 +82,7 @@ export const getServerSideProps = async (_context: unknown) => { // Added type f
     // For testing, we want Sentry to capture it. Re-throwing is a common pattern.
     // However, since this is a test page, we might just log and return empty props
     // or props indicating an error occurred for the page to display.
-    logErrorToProduction('Simulated error in getServerSideProps for sentry-test.tsx:', { data: 'Error occurred' });
+    logErrorToProduction('Simulated error in getServerSideProps for sentry-test.tsx:', { data: error });
     // Sentry.captureException(error); // Removed
 
     // Optionally, set status code on response if available in context

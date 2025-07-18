@@ -17,7 +17,7 @@ async function logEventToSupabase(
       },
     ]);
   } catch {
-    logErrorToProduction('Error logging analytics event to Supabase', 'Error occurred' as Error, { eventName, eventParams, context: 'SupabaseAnalytics' });
+    logErrorToProduction('Error logging analytics event to Supabase', error as Error, { eventName, eventParams, context: 'SupabaseAnalytics' });
   }
 }
 

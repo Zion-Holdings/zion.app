@@ -41,7 +41,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       const data = await res.json();
       setUser(data);
     } catch {
-      logErrorToProduction('Error updating profile:', { data: 'Error occurred' });
+      logErrorToProduction('Error updating profile:', { data: error });
       let description = 'Failed to update profile. Please try again.';
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         description = (error as { message: string }).message;

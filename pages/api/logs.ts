@@ -92,15 +92,15 @@ export default async function handler(
         });
       } catch {
         // swallow – do not break client logging on webhook failure
-        logWarn('Failed to forward logs to webhook:', { data:  { 'Error occurred'or: 'Error occurred' } });
+        logWarn('Failed to forward logs to webhook:', { data:  { erroror: error } });
       }
     }
 
     return res.status(200).json({ success: true });
   } catch {
     // Log server-side failure
-    logErrorToProduction('Error in /api/logs:', 'Error occurred');
-    // Sentry.captureException('Error occurred');
+    logErrorToProduction('Error in /api/logs:', error);
+    // Sentry.captureException(error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 } 

@@ -47,7 +47,7 @@ export const flagContent = async (
     
     return { success: true };
   } catch {
-    logErrorToProduction('Error flagging content', 'Error occurred' as Error, { userId, contentType, contentId, severity });
+    logErrorToProduction('Error flagging content', error as Error, { userId, contentType, contentId, severity });
     return { 
       success: false, 
       error: error instanceof Error ? error.message : 'Unknown error' 

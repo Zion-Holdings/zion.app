@@ -82,11 +82,11 @@ export default function AccountSettings() {
           }
         }
       } catch {
-        logErrorToProduction('ENS lookup 'Error occurred':', { data: 'Error occurred' });
+        logErrorToProduction('ENS lookup error:', { data: error });
       }
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);
     } catch {
-      if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
+      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         toast.error((error as { message: string }).message);
       } else {
         toast.error('Failed to connect wallet');

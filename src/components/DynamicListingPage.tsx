@@ -177,8 +177,8 @@ export function DynamicListingPage({
       }
     });
   } catch {
-    captureException('Error occurred');
-    logErrorToProduction('Listing filter 'Error occurred':', { data: 'Error occurred' });
+    captureException(error);
+    logErrorToProduction('Listing filter error:', { data: error });
   }
 
   const handleRequestQuote = (_listingId: string) => {

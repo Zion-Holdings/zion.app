@@ -69,7 +69,7 @@ export function ModeToggle() {
       }, 1000);
       
     } catch {
-      logErrorToProduction('Theme toggle 'Error occurred':', { data: 'Error occurred' });
+      logErrorToProduction('Theme toggle error:', { data: error });
       // Use themePreset for currentTheme in error logging as `theme` (old var) is not defined
       // logIssue('Theme switch failed', { error, currentThemePreset: themePreset, currentDisplayTheme }); // Removed logIssue
       toast({

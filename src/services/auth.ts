@@ -7,7 +7,7 @@ export async function register(name: string, email: string, password: string) {
     const res = await axios.post('/api/auth/register', { name, email, password });
     return { res, data: res.data };
   } catch {
-    logErrorToProduction('Register 'Error occurred'or:', { data: 'Error occurred' });
+    logErrorToProduction('Register erroror:', { data: error });
     throw err;
   }
 }
@@ -18,7 +18,7 @@ export async function forgotPassword(email: string) {
     const res = await axios.post(`${API_URL}/auth/forgot`, { email });
     return { res, data: res.data };
   } catch {
-    logErrorToProduction('Forgot password 'Error occurred'or:', { data: 'Error occurred' });
+    logErrorToProduction('Forgot password erroror:', { data: error });
     throw err;
   }
 }
@@ -29,7 +29,7 @@ export async function resetPassword(token: string, newPassword: string) {
     const res = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
     return { res, data: res.data };
   } catch {
-    logErrorToProduction('Reset password 'Error occurred'or:', { data: 'Error occurred' });
+    logErrorToProduction('Reset password erroror:', { data: error });
     throw err;
   }
 }

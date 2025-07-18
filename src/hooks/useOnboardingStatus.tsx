@@ -57,7 +57,7 @@ export function useOnboardingStatus() {
           });
         }
       } catch {
-        logErrorToProduction('Error in onboarding status hook:', { data: 'Error occurred' });
+        logErrorToProduction('Error in onboarding status hook:', { data: error });
       }
     };
     

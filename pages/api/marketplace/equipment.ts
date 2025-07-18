@@ -66,7 +66,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     
     return res.status(200).json(paginatedEquipment);
   } catch {
-    logErrorToProduction('Error in marketplace equipment API:', { data: 'Error occurred' });
+    logErrorToProduction('Error in marketplace equipment API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

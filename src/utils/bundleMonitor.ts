@@ -96,7 +96,7 @@ class BundleMonitor {
       }
 
     } catch {
-      logErrorToProduction('Failed to collect bundle metrics:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to collect bundle metrics:', { data: error });
     }
   }
 

@@ -37,7 +37,7 @@ export const _getStaticProps: GetStaticProps<CategoriesProps> = async () => {
       return { props: { categories: CATEGORIES } };
     }
   } catch {
-    logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: 'Error occurred' });
+    logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
     return { props: { categories: CATEGORIES } };
   }
 };

@@ -60,7 +60,7 @@ export default async function handler(
     res.status(statusCode).json(healthReport);
 
   } catch {
-    logError('Health check failed:', { data: _'Error occurred' });
+    logError('Health check failed:', { data: _error });
     
     res.status(503).json({
       error: 'Health check failed',
@@ -205,7 +205,7 @@ async function gatherMetrics(): Promise<SystemHealth['metrics']> {
     // - Database connection pool metrics
 
   } catch {
-    logError('Failed to gather metrics:', { data: _'Error occurred' });
+    logError('Failed to gather metrics:', { data: _error });
   }
 
   return metrics;

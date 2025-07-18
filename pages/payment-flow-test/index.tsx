@@ -39,7 +39,7 @@ export default function PaymentFlowTest() {
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
     } catch {
-      logErrorToProduction('Checkout 'Error occurred'or:', { 'Error occurred'or: 'Error occurred' });
+      logErrorToProduction('Checkout erroror:', { erroror: error });
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
     } finally {
@@ -61,7 +61,7 @@ export default function PaymentFlowTest() {
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
     } catch {
-      logErrorToProduction("Error:", { 'Error occurred'or: 'Error occurred' });
+      logErrorToProduction("Error:", { erroror: error });
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');
     } finally {

@@ -25,7 +25,7 @@ async function getJobs(filters = {}) {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
   } catch {
-    // logErrorToProduction('Error fetching jobs:', { data: error.response?.data || 'Error occurred' });
+    // logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error });
     throw error;
   }
 }
@@ -36,7 +36,7 @@ async function createJob(jobData) {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
   } catch {
-    // logErrorToProduction('Error creating job:', { data: error.response?.data || 'Error occurred' });
+    // logErrorToProduction('Error creating job:', { data: error.response?.data || error });
     throw error;
   }
 }
@@ -47,7 +47,7 @@ async function searchTalent(filters = {}) {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
   } catch {
-    // logErrorToProduction('Error searching talent:', { data: error.response?.data || 'Error occurred' });
+    // logErrorToProduction('Error searching talent:', { data: error.response?.data || error });
     throw error;
   }
 }
@@ -77,7 +77,7 @@ async function main() {
     const talent = await searchTalent({ skills: 'React', limit: 10 });
     // logInfo('Talent:', { data: talent });
   } catch {
-    // logErrorToProduction('Something went wrong:', { data: 'Error occurred' });
+    // logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 
@@ -236,7 +236,7 @@ async function main() {
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
     // logInfo('Talent:', { data: talent });
   } catch {
-    // logErrorToProduction('Something went wrong:', { data: 'Error occurred' });
+    // logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 

@@ -173,7 +173,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
 
   } catch {
-    logErrorToProduction('Talent API 'Error occurred':', { data: 'Error occurred' });
+    logErrorToProduction('Talent API error:', { data: error });
     res.status(500).json({ 
       error: 'internal_server_error',
       message: 'An internal server error occurred while fetching talent profiles' 

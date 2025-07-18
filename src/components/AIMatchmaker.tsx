@@ -56,7 +56,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         description: `Found ${results.length} matches based on your description.`,
       });
     } catch {
-      logErrorToProduction('Error during AI matching:', { data: 'Error occurred' });
+      logErrorToProduction('Error during AI matching:', { data: error });
       toast({
         title: "Matching Error",
         description: "We couldn't find matches for your request. Please try again.",

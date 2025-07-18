@@ -77,7 +77,7 @@ export default async function handler(
     res.end(imageBuffer);
     
   } catch {
-    logErrorToProduction('Image serving 'Error occurred':', 'Error occurred');
-    res.status(500).json({ 'Error occurred': 'Internal server 'Error occurred'' });
+    logErrorToProduction('Image serving error:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 } 

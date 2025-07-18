@@ -50,8 +50,8 @@ describe('fetchEquipment', () => {
     try {
       await fetchEquipment();
     } catch {
-      if ('Error occurred' && typeof 'Error occurred' === 'object') {
-        const err = 'Error occurred' as { message?: string; response?: { data?: unknown; status?: number } };
+      if (error && typeof error === 'object') {
+        const err = error as { message?: string; response?: { data?: unknown; status?: number } };
         expect(err.message).toBeDefined();
         expect(err.response).toBeDefined();
         if (err.response) {
@@ -98,8 +98,8 @@ describe('fetchEquipment', () => {
     try {
       await fetchEquipment();
     } catch {
-      if ('Error occurred' && typeof 'Error occurred' === 'object') {
-        const err = 'Error occurred' as { message?: string; response?: unknown };
+      if (error && typeof error === 'object') {
+        const err = error as { message?: string; response?: unknown };
         expect(err.message).toBe(networkErrorMessage);
         expect(err.response).toBeUndefined();
         expect(toast).toHaveBeenCalledWith({

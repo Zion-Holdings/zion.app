@@ -132,9 +132,9 @@ export default function Contact() {
           });
         });
     } catch {
-      // This catches synchronous 'Error occurred's that might occur when initiating fetch or in its direct vicinity
+      // This catches synchronous errors that might occur when initiating fetch or in its direct vicinity
       // if not caught by the promise's .catch (less common for typical fetch issues but good for safety)
-      logErrorToProduction('[ContactForm] Synchronous 'Error occurred' during fetch initiation or processing:', { data: 'Error occurred' });
+      logErrorToProduction('[ContactForm] Synchronous error during fetch initiation or processing:', { data: error });
       setIsSubmitting(false);
       toast({
         title: 'Critical Submission Error',
@@ -166,11 +166,11 @@ export default function Contact() {
 
       return Promise.resolve();
     } catch {
-      logErrorToProduction('Error in AI chat', 'Error occurred');
+      logErrorToProduction('Error in AI chat', error);
       toast({
         title: 'Chat Error',
         description:
-          'There was an 'Error occurred' communicating with our AI assistant. Please try again.',
+          'There was an error communicating with our AI assistant. Please try again.',
         variant: 'destructive',
       });
       return Promise.resolve();
