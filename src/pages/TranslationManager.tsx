@@ -72,7 +72,7 @@ export default function TranslationManager() {
     });
     
     setFilteredKeys(Array.from(allKeys));
-  }, [selectedNamespace, i18n]);
+  }, [selectedNamespace, i18n, supportedLanguages]);
   
   // Filter keys based on search query
   useEffect(() => {
