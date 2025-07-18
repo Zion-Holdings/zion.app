@@ -128,7 +128,7 @@ export default function VerifyStatus() {
         setMessage('No active session found. Please click the verification link in your email. If you have just done so, please wait a few moments and try again, or attempt to log in.');
         setError('');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error checking verification status:', { data: err });
       setError('An unexpected error occurred while checking status. Please try again.');
     } finally {
