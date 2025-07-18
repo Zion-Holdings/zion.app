@@ -5,7 +5,7 @@ import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {id: string | undefined) {;
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);';
+  const [error, setError] = useState<string | null>(null);;
   useEffect(() => {;';
     const fetchProfile = async () => {'
       setIsLoading(true);

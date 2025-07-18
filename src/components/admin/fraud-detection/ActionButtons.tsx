@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Eye, Info, AlertTriangle, Ban } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 '

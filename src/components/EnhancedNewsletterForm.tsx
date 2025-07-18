@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {;
   const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email)'

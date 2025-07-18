@@ -1,4 +1,4 @@
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;;
 '
 // Application Health Monitor;
 // Comprehensive monitoring system for application health, performance, and reliability;

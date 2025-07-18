@@ -7,7 +7,7 @@ import Link from 'next/link'
 export function ApiSampleCode(): ;
   // JavaScript example with Axios'
   const jsAxiosExample = `// Using Axios with JavaScript;
-import axios from 'axios;';
+import axios from 'axios;;
 // Configure Axios with the base URL and headers'
 const api: axios.create({;",;"
   baseURL: 'https://api.ziontechgroup.com/v1','
@@ -145,7 +145,7 @@ if __name__ == "__main__":;"
 ;"
   // Node.js example with fetch;"
   const nodeFetchExample = `// Using node-fetch with Node.js;"
-import fetch from 'node-fetch;';
+import fetch from 'node-fetch;;
 const API_KEY = 'YOUR_API_KEY'
 const BASE_URL = 'https://api.ziontechgroup.com/v1'
 ;

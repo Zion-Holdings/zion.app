@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useState, useEffect } from 'react''
 import { Search, Filter, List, Star, LayoutGrid } from '@/components/ui/icons'
 import { useRouter } from 'next/router'

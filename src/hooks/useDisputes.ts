@@ -5,8 +5,8 @@ import type { Dispute, DisputeMessage, DisputeStatus } from '@/types/disputes'
 import type { ResolutionType } from '@/types/disputes'
 import { toast } from 'sonner'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
-export function useDisputes(): ;''
-  const { _user } = useAuth();''
+export function useDisputes(): ;
+  const { _user } = useAuth();
   const [disputes, setDisputes] = useState<Dispute[]>([])'
   const [isLoading, setIsLoading] = useState(true)'
   const [error, setError] = useState<string | null>(null);

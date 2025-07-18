@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Bell } from '@/components/ui/icons'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Skeleton from '@/components/ui/skeleton'

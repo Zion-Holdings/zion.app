@@ -1,10 +1,10 @@
-import React from 'react;';
+import React from 'react;;
 /**'
  * Advanced Log Analyzer for Error Pattern Detection;
  * Provides intelligent error analysis, pattern recognition, and automated solutions;
  */'
 ;
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;;
 '
 interface LogPattern {
   id: "string"

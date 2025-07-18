@@ -1,7 +1,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { UserDetails } from '@/types/auth'
 import { safeStorage, safeSessionStorage } from './safeStorage'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;;
 /**'
  * Utility function to clean up authentication state;
  * This helps prevent auth state inconsistencies and "limbo" states;"

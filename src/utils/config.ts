@@ -1,4 +1,4 @@
-import { logInfo, logWarn } from '@/utils/productionLogger;';
+import { logInfo, logWarn } from '@/utils/productionLogger;;
 /**'
  * Centralized configuration utility for environment variables;
  */;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router // Changed from useNavigate;';
-import { CheckCircle2 } from '@/components/ui/icons;';
-import { useTranslation } from 'react-i18next;';
+import { useRouter } from 'next/router // Changed from useNavigate;;
+import { CheckCircle2 } from '@/components/ui/icons;;
+import { useTranslation } from 'react-i18next;;
 export default function PaymentSuccess(): '
   const router = useRouter(); // Changed from navigate;
   const { t } = useTranslation();

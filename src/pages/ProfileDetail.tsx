@@ -5,15 +5,15 @@ import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
-import  { Avatar, AvatarFallback, AvatarImage }  from '@/components/ui/avatar;';
-import {;';
+import  { Avatar, AvatarFallback, AvatarImage }  from '@/components/ui/avatar;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;';
+import { Badge } from '@/components/ui/badge;;
 import  { HireNowCTA }  from '@/components/profile/HireNowCTA;
 export default function ProfileDetail(): ;
   // useParams is typed as `any` in this environment due to missing type;
@@ -22,7 +22,7 @@ export default function ProfileDetail(): ;
   const profileId = router.query.profileId as string;
   const [profileData, setProfileData] = useState<unknown>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);';
+  const [error, setError] = useState<string | null>(null);;
   useEffect(() => {;';
     const fetchProfile = async () => {'
       setIsLoading(true);

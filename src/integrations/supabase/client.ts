@@ -10,7 +10,7 @@ import  { logWarn, logDebug }  from '@/utils/productionLogger;
 export { createClient };
 // Export the actual supabase client instance (which could be SupabaseClient | null);
 // This is what AuthProvider and other parts of the app will use.;';
-export const supabase = actualSupabaseClientFromUtils;';
+export const supabase = actualSupabaseClientFromUtils;;
 // Get actual environment variables'
 const envSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const envSupabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

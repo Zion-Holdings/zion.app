@@ -2,7 +2,7 @@ import { useEffect } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import type { UserProfile, UserDetails } from '@/types/auth'
 import type { Message, Conversation } from '@/types/messaging'
-import { toast } from '@/hooks/use-toast;''
+import { toast } from '@/hooks/use-toast;
 // Allow either UserProfile or UserDetails'
 type UserWithProfile = UserProfile | UserDetails | null'
 // Define NewMessage type for payload handler'

@@ -1,5 +1,5 @@
 import  { useState, useEffect }  from 'react;
-import {;';
+import {;;
   Star,;';
   Shield,'
   RotateCcw,;
@@ -11,7 +11,7 @@ import { useRouter } from 'next/router'
 import { NextSeo } from '@/components/NextSeo'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { AspectRatio } from '@/components/ui/aspect-ratio;';
+import { AspectRatio } from '@/components/ui/aspect-ratio;;
 import { toast } from '@/hooks/use-toast'
 import { useAuth } from '@/hooks/useAuth'
 import { useCart } from '@/context/CartContext'
@@ -20,7 +20,7 @@ import { equipmentListings } from '@/data/equipmentData'
 import type { ProductListing } from '@/types/listings'
 import { motion } from 'framer-motion'
 import { useCurrency } from '@/hooks/useCurrency'
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 '
 interface EquipmentSpecification {
   name: "string"

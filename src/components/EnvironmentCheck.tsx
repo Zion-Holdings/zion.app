@@ -6,7 +6,7 @@ interface EnvironmentStatus {'
   status: 'ok' | 'missing' | 'placeholder'
 }
 
-export const EnvironmentCheck: unknown React.FC = () => {;
+export const EnvironmentCheck: React.FC = () => {
   const [envStatus, setEnvStatus] = useState<EnvironmentStatus[]>([]);
   const [showDetails, setShowDetails] = useState(false)'
 '

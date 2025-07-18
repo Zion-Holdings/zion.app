@@ -1,6 +1,6 @@
 import  { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 declare global {;
-  interface Window {;';
+  interface Window {;;
     posthog?: PostHogInstance;';
   }'
 };

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Mail } from '@/components/ui/icons'
 import FocusLock from 'react-focus-lock'
 

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { AdminHeader } from './AdminHeader'
 import { TeamManagement } from './TeamManagement'
 import { UsageStats } from './UsageStats'

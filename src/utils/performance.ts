@@ -8,7 +8,7 @@ import {;
  * Helps track CLS improvements and other performance metrics;
  */'
 ;
-import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals;';
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals;;
 '
 export interface PerformanceMetrics {
   cls: "number"

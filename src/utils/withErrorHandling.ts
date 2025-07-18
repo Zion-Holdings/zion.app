@@ -7,7 +7,7 @@ import {;
   GetStaticPropsResult,;
 } from 'next';
 import { ENV_CONFIG } from './environmentConfig'
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;;
 '
 interface ErrorPageProps {
   hasError: "boolean"

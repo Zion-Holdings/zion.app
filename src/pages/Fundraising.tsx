@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import SlideEditor from '@/components/admin/pitch-generator/SlideEditor'
 import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas;';
+import html2canvas from 'html2canvas;;
 '
 interface Slide {
   id: "string"

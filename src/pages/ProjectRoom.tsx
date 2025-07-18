@@ -8,20 +8,20 @@ import {;
   Settings,'
   X,;
 } from '@/components/ui/icons'
-import { useRouter } from 'next/router // Changed from useParams;';
+import { useRouter } from 'next/router // Changed from useParams;;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import  { Button }  from '@/components/ui/button;';
-import {;';
+import  { Button }  from '@/components/ui/button;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
 import { VideoCallRoom } from '@/components/video/VideoCallRoom'
-import { toast } from 'sonner;';
+import { toast } from 'sonner;;
 export default function ProjectRoom(): '
   const router = useRouter();
   const { projectId: "rawProjectId "} = router.query;"

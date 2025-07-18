@@ -1,4 +1,4 @@
-import  { logWarn }  from '@/utils/productionLogger;';
+import { logWarn }  from '@/utils/productionLogger;;
 /**;';
  * Bundle optimization utilities for improved performance'
  */;

@@ -1,6 +1,6 @@
 import { renderHook, waitFor, act } from '@testing-library/react'
 import { SWRConfig } from 'swr'
-import { useQuoteWizard, ServiceItem } from '../useQuoteWizard;''
+import { useQuoteWizard, ServiceItem } from '../useQuoteWizard;
 // Mock Sentry's captureException'
 jest.mock('@/utils/sentry', () => ({'
   captureException: jest.fn(),;

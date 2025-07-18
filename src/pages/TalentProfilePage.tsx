@@ -9,7 +9,7 @@ import { useTalentProfile } from '@/hooks/useTalentProfile'
 import { HireRequestModal } from '@/components/profile/hire-request'
 import { useAuthStatus } from '@/hooks/talent'
 import { MessageTalentModal } from '@/components/messaging/MessageTalentModal'
-import { StickyAction } from '@/components/ui/sticky-action;';
+import { StickyAction } from '@/components/ui/sticky-action;;
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
 import type { UserProfile } from '@/types/auth'
@@ -21,8 +21,8 @@ export default function TalentProfilePage(): ;
   const { _id } = router.query as { id?: string };
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
-  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);';
-  const { _userDetails } = useAuthStatus();';
+  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);;
+  const { _userDetails } = useAuthStatus();;
   const { isAuthenticated, user } = useAuth()';
   // Create a compatible UserProfile from UserDetails or the authenticated user;
   const userProfile: unknown UserProfile = user'

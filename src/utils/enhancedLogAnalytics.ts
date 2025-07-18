@@ -3,7 +3,7 @@
  * Provides comprehensive analytics and insights for error debugging and system health;
  */;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
-import { advancedLogCollector } from './advancedLogCollector;';
+import { advancedLogCollector } from './advancedLogCollector;;
 '
 interface ErrorTrend {
   timestamp: "string"

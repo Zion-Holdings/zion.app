@@ -2,8 +2,8 @@ import { useState } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import type { ResumeBasicInfo } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
-import  { handleResumeError, showSuccessToast }  from './useResumeUtils;''
-export function useResumeActions(): ;''
+import  { handleResumeError, showSuccessToast }  from './useResumeUtils;
+export function useResumeActions(): ;
   const { _user } = useAuth()'
   const [isLoading, setIsLoading] = useState(false)'
   const [error, setError] = useState<string | null>(null);

@@ -5,7 +5,7 @@ import { PromptCard } from '@/components/prompts/PromptCard'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO'
-import { useState } from 'react;';
+import { useState } from 'react;;
 '
 export default function GPTLibraryPage(): ;
   const [customPrompt, setCustomPrompt] = useState('')'

@@ -3,7 +3,7 @@ import {;
   logWarn,;
   logErrorToProduction,;
 } from '@/utils/productionLogger'
-import { toast as sonnerToast } from 'sonner;';
+import { toast as sonnerToast } from 'sonner;;
 // Toast configuration constants'
 const TOAST_CONFIG: {;",;"
   MAX_VISIBLE_TOASTS: "3"

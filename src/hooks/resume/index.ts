@@ -40,7 +40,7 @@ export function useResume(): ;
     if (result) {;
       setResume(result);
     };
-    return result;''
+    return result;
   };''
 '
   return {'

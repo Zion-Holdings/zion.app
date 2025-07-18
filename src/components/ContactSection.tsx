@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useState } from 'react''
 import { Mail } from '@/components/ui/icons'
 import { GradientHeading } from '@/components/GradientHeading'

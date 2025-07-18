@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Loader2 } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
-import  { Button }  from '@/components/ui/button;';
-import {;';
+import  { Button }  from '@/components/ui/button;;
+import {;;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -13,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import  { Label }  from '@/components/ui/label;
-import {;';
+import {;;
   Card,;';
   CardContent,'
   CardDescription,;
@@ -21,7 +21,7 @@ import {;';
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { toast } from 'sonner;';
+import { toast } from 'sonner;;
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { ScrollArea } from '@/components/ui/scroll-area'

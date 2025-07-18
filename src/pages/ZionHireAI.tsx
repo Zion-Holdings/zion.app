@@ -1,5 +1,5 @@
-import  React  from 'react;';
-import {;';
+import React  from 'react;;
+import {;;
   ArrowRight,'
   BarChart3,;
   Users,;
@@ -8,19 +8,19 @@ import {;';
 } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import  { useWhitelabel }  from '@/context/WhitelabelContext;';
-import {;';
+import  { useWhitelabel }  from '@/context/WhitelabelContext;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import { useAuth } from '@/hooks/useAuth'
 import  Link  from 'next/link;
-export default function ZionHireAI(): ;';
-  const { isWhitelabel, brandName, primaryColor } = useWhitelabel();';
+export default function ZionHireAI(): ;;
+  const { isWhitelabel, brandName, primaryColor } = useWhitelabel();;
   const { _isAuthenticated } = useAuth()';
   return (;
     <>'

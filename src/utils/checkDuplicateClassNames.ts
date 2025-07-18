@@ -1,4 +1,4 @@
-import { logWarn } from '@/utils/productionLogger;';
+import { logWarn } from '@/utils/productionLogger;;
 if (process.env.NODE_ENV !== 'production' && typeof document !== 'undefined') {;
   // Dev-only _utility: scan for duplicate classNames'
   setTimeout(() => {;

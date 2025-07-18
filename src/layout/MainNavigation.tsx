@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslation } from 'react-i18next'
 import { useFavorites } from '@/hooks/useFavorites'
-import { useCart } from '@/context/CartContext;';
+import { useCart } from '@/context/CartContext;;
 import { LanguageSelector } from '@/components/header/LanguageSelector'
 import {;
   HoverCard,;

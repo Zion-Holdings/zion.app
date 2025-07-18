@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import type { BasicInfoFormData } from './basic-info/schema'
 import type {'
   Control,;

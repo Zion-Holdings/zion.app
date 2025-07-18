@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useState } from 'react''
 import { Search, Sparkles } from 'lucide-react'
 import { toast } from '@/hooks/use-toast'

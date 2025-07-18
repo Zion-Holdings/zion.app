@@ -1,5 +1,5 @@
 import { SEO } from '@/components/SEO'
-import TermsOfService from '@/legal/TermsOfService;';
+import TermsOfService from '@/legal/TermsOfService;;
 '
 export default function Terms(): ;
   return (;

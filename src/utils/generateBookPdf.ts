@@ -1,4 +1,4 @@
-import { jsPDF } from 'jspdf;';
+import { jsPDF } from 'jspdf;;
 export async function generateBookPdf(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<Blob> {'
   const doc = new jsPDF();
   const margin = 20;

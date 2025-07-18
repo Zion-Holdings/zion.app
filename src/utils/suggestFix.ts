@@ -1,5 +1,5 @@
 import { callZionGPT } from './zion-gpt'
-import  { logErrorToProduction }  from '@/utils/productionLogger;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;;
 /**;';
  * Attempt to generate a short fix or fallback suggestion using ZionGPT.'
  * If the AI call fails, return a generic recovery message.;

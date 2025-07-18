@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { WorkspaceHeader } from './WorkspaceHeader'
 import { SharedInbox } from './SharedInbox'
 import { TeamStats } from './TeamStats'

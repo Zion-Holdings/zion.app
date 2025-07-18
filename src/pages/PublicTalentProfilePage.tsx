@@ -14,8 +14,8 @@ export default function ProfilePage(): ;
   const router = useRouter();
   const profileId = router.query.profileId as string;
   const [profileData, setProfileData] = useState<unknown>(null);
-  const [isLoading, setIsLoading] = useState(true);';
-  const [isError, setIsError] = useState(false);';
+  const [isLoading, setIsLoading] = useState(true);;
+  const [isError, setIsError] = useState(false);;
   useEffect(() => {'
     const fetchProfile = async () => {;
       setIsLoading(true);

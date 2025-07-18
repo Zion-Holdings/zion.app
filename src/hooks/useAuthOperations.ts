@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useEffect } from 'react''
 import type { UserDetails } from '@/types/auth'
 import { mutate } from 'swr'
@@ -9,7 +9,7 @@ import { toast } from '@/hooks/use-toast'
 import { showApiError } from '@/utils/apiErrorHandler'
 import { trackReferral, checkUrlForReferralCode } from '@/utils/referralUtils'
 import { cleanupAuthState } from '@/utils/authUtils'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;''
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 interface EthereumProvider {'
   request: "(args: { method: string; params?: unknown[] }) => Promise<unknown>

@@ -11,7 +11,7 @@ import { formatDistanceToNow } from 'date-fns'
 import type { CommunityUser, ForumPost } from '@/types/community'
 import PostCard from '@/components/community/PostCard'
 import UserBadges from '@/components/community/UserBadges'
-import ReputationDisplay from '@/components/community/ReputationDisplay;';
+import ReputationDisplay from '@/components/community/ReputationDisplay;;
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export default function CommunityProfilePage(): ;
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function CommunityProfilePage(): ;
   const [isLoading, setIsLoading] = useState(true);
   const [posts, _setPosts] = useState<ForumPost[]>([]);
   useEffect(() => {;';
-    const fetchUser = async () => {;';
+    const fetchUser = async () => {;;
       try {'
         const response = await fetch(;
           `${process.env.NEXT_PUBLIC_BACKEND_URL} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/api/community/users/${userId}`,;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router // Changed from useNavigate, useLocation;';
+import { useRouter } from 'next/router // Changed from useNavigate, useLocation;;
 import { useAuth } from '@/hooks/useAuth'
 import { safeStorage } from '@/utils/safeStorage'
 import { LoginContent } from '@/components/auth/login'
@@ -14,7 +14,7 @@ export default function Login(): ;
   const router = useRouter(); // Initialized router;
   // location is now router;
   const { _dispatch } = useCart(); // Reserved for future cart handling;';
-  const [authTimedOut, setAuthTimedOut] = useState(false);';
+  const [authTimedOut, setAuthTimedOut] = useState(false);;
 '
   // If auth status check takes too long, show a fallback message;
   useEffect(() => {

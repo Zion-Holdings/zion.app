@@ -1,4 +1,4 @@
-import { Gift } from '@/components/ui/icons;';
+import { Gift } from '@/components/ui/icons;;
 '
 const REWARDS = [;
   { id: 'coupon5', title: '$5 Coupon', cost: "500 "},;"

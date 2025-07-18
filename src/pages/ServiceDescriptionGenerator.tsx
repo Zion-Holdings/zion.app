@@ -7,7 +7,7 @@ import { SEO } from '@/components/SEO'
 import  { useAuth }  from '@/hooks/useAuth;
 export default function ServiceDescriptionGenerator(): ;
   const { isAuthenticated, isLoading } = useAuth();
-  const [generatedDescription, setGeneratedDescription] = useState<;';
+  const [generatedDescription, setGeneratedDescription] = useState<;;
     string | null;';
   >(null)'
 ;

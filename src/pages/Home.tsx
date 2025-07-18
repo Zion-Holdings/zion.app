@@ -16,15 +16,15 @@ import {;
 import { useTranslation } from 'react-i18next'
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
-import  { Button }  from '@/components/ui/button;';
-import {;';
+import  { Button }  from '@/components/ui/button;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;';
+import { Badge } from '@/components/ui/badge;;
 export default function Home(): '
   const { t } = useTranslation();
   const features = ['

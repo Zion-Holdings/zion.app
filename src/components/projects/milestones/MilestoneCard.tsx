@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Check, X } from '@/components/ui/icons'
 import {;
   Card,'

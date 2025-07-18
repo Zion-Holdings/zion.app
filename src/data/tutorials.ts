@@ -1,4 +1,4 @@
-import type { Tutorial } from '@/types/tutorial;''
+import type { Tutorial } from '@/types/tutorial;
 export const _TUTORIALS: unknown Tutorial[] = ['
   {'
     title: 'Setting Up a Private GPT Model','

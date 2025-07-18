@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useState, useEffect } from 'react''
 import { Search, Filter, ArrowDownAZ, ArrowUpZA } from '@/components/ui/icons'
 import { GradientHeading } from '@/components/GradientHeading'

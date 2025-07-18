@@ -1,3 +1,3 @@
-import WalletDashboard from './WalletDashboard;';
+import WalletDashboard from './WalletDashboard;;
 export default WalletDashboard'
 '''''

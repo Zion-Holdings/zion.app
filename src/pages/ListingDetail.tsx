@@ -5,13 +5,13 @@ import { ChatWidget } from '@/components/ChatWidget'
 import { useRouter } from 'next/router'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import ImageWithRetry from '@/components/ui/ImageWithRetry;';
+import ImageWithRetry from '@/components/ui/ImageWithRetry;;
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData'
 import { toast } from '@/hooks/use-toast'
 import { PaymentButton } from '@/components/transactions/PaymentButton'
-import { ProfileContact } from '@/components/profile/ProfileContact;';
+import { ProfileContact } from '@/components/profile/ProfileContact;;
 import {'
   Dialog,;
   DialogContent,;
@@ -28,8 +28,8 @@ export default function ListingDetail(): ;
   const [isLoading, _setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const { _user } = useAuth();';
-  const { _formatPrice } = useCurrency();';
+  const { _user } = useAuth();;
+  const { _formatPrice } = useCurrency();;
   // Find the listing from our shared data source - now also checking equipment listings'
   const listing = MARKETPLACE_LISTINGS.find((item) => item.id === id);
   if (!listing) {'

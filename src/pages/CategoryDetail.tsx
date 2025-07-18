@@ -2,7 +2,7 @@ import React from 'react';
 import { GradientHeading } from '@/components/GradientHeading'
 import { Eye, Mic, Code } from '@/components/ui/icons'
 import { ProductListingCard } from '@/components/ProductListingCard'
-import { useState, useEffect, useRef, Suspense } from 'react;';
+import { useState, useEffect, useRef, Suspense } from 'react;;
 import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/listingData'
 import type { ProductListing } from '@/types/listings'
 import { useRouter } from 'next/router'
@@ -13,7 +13,7 @@ import { NextSeo } from '@/components/NextSeo'
 import { Header } from '@/components/Header'
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import apiClient from '@/services/apiClient;';
+import apiClient from '@/services/apiClient;;
 '
 // const _AUTO_SERVICE_TITLES = [;
   'AI-Powered Customer Support',;

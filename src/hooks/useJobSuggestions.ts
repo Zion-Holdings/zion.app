@@ -7,7 +7,7 @@ export function useJobSuggestions(): unknown {): unknown {): unknown {): unknown
   const [jobMatches, setJobMatches] = useState<JobMatch[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {;';
-    const fetchSuggestedJobs = async () => {;';
+    const fetchSuggestedJobs = async () => {;;
       if (!talentId) return'
 ;
       try {;

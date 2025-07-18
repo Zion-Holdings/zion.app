@@ -2,7 +2,7 @@ import axios from 'axios'
 import { safeStorage } from '@/utils/safeStorage'
 import { store } from '@/store'
 import { setToken } from '@/store/authSlice'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;;
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '
 ;
 export async function loginUser(): unknown {): unknown {): unknown {): unknown {): unknown {email: string, password: string) {;"

@@ -7,7 +7,7 @@ import React, {;
 } from 'react''
 import type { ReactNode } from 'react''
 import axios from 'axios'
-import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;''
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;
 '
 export interface GlobalLoaderContextType {
   loading: "boolean

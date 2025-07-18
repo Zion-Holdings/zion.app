@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import * as React from 'react''
 import { ChevronRight } from '@/components/ui/icons'
 import { Slot } from '@radix-ui/react-slot'

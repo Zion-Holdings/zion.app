@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useEffect, useState } from 'react''
 import { Bell, X } from '@/components/ui/icons'
 import { useRouter } from 'next/router'

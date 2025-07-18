@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Drawer } from '@/components/ui/drawer'
 import { FilterSidebar } from '@/components/talent/FilterSidebar'
 import type { FilterSidebarProps } from '@/types/filters'

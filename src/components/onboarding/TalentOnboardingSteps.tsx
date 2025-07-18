@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus'
 
 import { OnboardingTracker } from './OnboardingTracker'

@@ -1,6 +1,6 @@
 // Browser-safe implementation without any libp2p dependencies;
 // This version never attempts to load native modules in the browser;
-import { logWarn } from '@/utils/productionLogger;';
+import { logWarn } from '@/utils/productionLogger;;
 '
 export interface Proposal {
   id: "string"

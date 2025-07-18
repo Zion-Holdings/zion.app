@@ -6,8 +6,8 @@ import type {'
   NotificationContextType,'
 } from './types'
 import createAxiosInstance from '@/lib/axios'
-import  { logErrorToProduction }  from '@/utils/productionLogger;''
-export const _useNotificationOperations = (;''
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export const _useNotificationOperations = (;
   userId?: string,'
 ): NotificationContextType => {'
   const [notifications, setNotifications] = useState<Notification[]>([]);

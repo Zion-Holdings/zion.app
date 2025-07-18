@@ -2,8 +2,8 @@ import { supabase } from '@/integrations/supabase/client'
 import { cleanupAuthState } from '@/utils/authUtils'
 import type { UserDetails } from '@/types/auth'
 import  { logWarn, logErrorToProduction }  from '@/utils/productionLogger'
-export const useLogout = (setUser: (user: UserDetails | null) => void) => {;''
-  const logout = async () => {;''
+export const useLogout = (setUser: (user: UserDetails | null) => void) => {;
+  const logout = async () => {;
     try {'
       // Clean up existing auth state'
       cleanupAuthState();

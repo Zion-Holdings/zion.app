@@ -4,8 +4,8 @@ import type { ResumeBasicInfo } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
 export function useResumeList(): ;
-  const { _user } = useAuth();''
-  const [isLoading, setIsLoading] = useState(false);''
+  const { _user } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null)'
   const [resumes, setResumes] = useState<ResumeBasicInfo[]>([])'
   const fetchResumes = async () => {'

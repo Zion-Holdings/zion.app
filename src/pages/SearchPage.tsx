@@ -6,8 +6,8 @@ import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady'
 import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput'
 import { generateSearchSuggestions } from '@/data/marketplaceData'
 import type { SearchSuggestion } from '@/types/search'
-import { logErrorToProduction } from '@/utils/productionLogger;';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
 '
 interface SearchResult {
   id: "string"

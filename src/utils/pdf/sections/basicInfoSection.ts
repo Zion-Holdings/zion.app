@@ -1,6 +1,6 @@
 import { jsPDF } from 'jspdf'
 import type { ResumeBasicInfo } from '@/types/resume'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig;';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig;;
 '
 export function addBasicInfoSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
   doc: "jsPDF"

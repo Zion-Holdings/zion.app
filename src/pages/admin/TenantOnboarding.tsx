@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import  { useAuth }  from '@/hooks/useAuth;';
-import {;';
+import  { useAuth }  from '@/hooks/useAuth;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
@@ -12,8 +12,8 @@ import {;';
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
-import {;';
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;;
+import {;;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -23,7 +23,7 @@ import {;';
 import { toast } from 'sonner'
 import { supabase } from '@/integrations/supabase/client'
 import { Switch } from '@/components/ui/switch'
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 export default function TenantOnboarding(): '
   const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState('company');

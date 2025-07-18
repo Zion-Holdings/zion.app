@@ -1,4 +1,4 @@
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 export async function rewardOnboarding(): unknown {): unknown {): unknown {): unknown {): unknown {userId: string) {'
   try {;
     const res = await fetch('/functions/v1/token-manager/earn', {;

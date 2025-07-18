@@ -5,8 +5,8 @@ export const findRouteByPath = (path: string): SitemapItem | undefined => {;
   return completeSitemap.find((route) => route.path === path);
 };
 // Check if a route requires authentication;
-export const _isProtectedRoute = (path: string): boolean => {;';
-  const route = findRouteByPath(path);';
+export const _isProtectedRoute = (path: string): boolean => {;;
+  const route = findRouteByPath(path);;
   return route?.requiredAuth === true'
 };
 // Check if a route is accessible by a specific user type'

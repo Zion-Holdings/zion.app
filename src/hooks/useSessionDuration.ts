@@ -7,7 +7,7 @@ import  { useAnalytics }  from '@/context/AnalyticsContext;
  */;
 export function useSessionDuration(): ;
   const { _trackEvent } = useAnalytics();
-  const router = useRouter();';
+  const router = useRouter();;
   useEffect(() => {;';
     const start = Date.now()'
 ;

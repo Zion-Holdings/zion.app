@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { QrCode } from '@/components/ui/icons'
 
 import { AppStoreButtons } from './AppStoreButtons'

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import type { ProductListing } from '@/types/listings'
 import type { TalentProfile } from '@/types/talent'

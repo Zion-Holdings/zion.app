@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Mail, Send } from '@/components/ui/icons'
 import { Input } from '@/components/ui/input'

@@ -17,13 +17,13 @@ import { generateSearchSuggestions } from '@/data/marketplaceData'
 import { slugify as _slugify } from '@/lib/slugify'
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation'
 import { MobileMenu } from '@/components/header/MobileMenu'
-import { MobileBottomNav } from '@/components/header/MobileBottomNav;';
+import { MobileBottomNav } from '@/components/header/MobileBottomNav;;
 import { useTranslation } from 'react-i18next'
 import { CartDrawer } from '@/components/cart/CartDrawer'
 import  { LoginModal }  from '@/components/auth/LoginModal;
 export function PrimaryNav(): ;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);';
-  const [loginOpen, setLoginOpen] = useState(false);';
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);;
+  const [loginOpen, setLoginOpen] = useState(false);;
   const { _user } = useAuth()'
   const isLoggedIn = !!user;
   const isMobile = useIsMobile();

@@ -2,7 +2,7 @@
  * Real-time Error Reporting Dashboard;
  * Provides comprehensive monitoring, health scoring, and alerting;
  */;
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;;
 '
 interface HealthMetrics {
   status: 'healthy' | 'warning' | 'critical,

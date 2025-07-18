@@ -2,7 +2,7 @@
 import type { FraudFlag, FraudSeverity } from '@/types/fraud'
 import { analyzeContent } from './analyzeContent'
 import { flagContent } from './flagContent'
-import { logDebug } from '@/utils/productionLogger;';
+import { logDebug } from '@/utils/productionLogger;;
 '
 /**;
  * Create a monitoring system helper to easily monitor any content;

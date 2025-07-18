@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icons'
 '
 

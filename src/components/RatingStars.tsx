@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Star } from '@/components/ui/icons'
 
 export function RatingStars(): unknown {): unknown {): unknown {): unknown {): unknown {{;

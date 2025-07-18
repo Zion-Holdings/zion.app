@@ -4,8 +4,8 @@ import type { Resume } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
 export function useFetchResume(): ;
-  const { _user } = useAuth();''
-  const [isLoading, setIsLoading] = useState(false);''
+  const { _user } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null)'
   const [resume, setResume] = useState<Resume | null>(null)'
   const fetchResume = async (resumeId?: string) => {'

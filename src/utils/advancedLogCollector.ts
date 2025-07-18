@@ -4,7 +4,7 @@
  */;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { logAnalyzer } from './logAnalyzer'
-import { errorReportingDashboard } from './errorReportingDashboard;';
+import { errorReportingDashboard } from './errorReportingDashboard;;
 '
 interface LogCollectionConfig {
   enableRealTimeAnalysis: "boolean"

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Search, Menu, X, Bell, ShoppingCart } from '@/components/ui/icons'
 import { Logo } from './Logo'
 import { AvatarMenu } from './AvatarMenu'

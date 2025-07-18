@@ -3,8 +3,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Check, Flag, Search, Settings, X, Users } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
-import  { Button }  from '@/components/ui/button;';
-import {;';
+import  { Button }  from '@/components/ui/button;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
@@ -12,7 +12,7 @@ import {;';
   CardTitle,;
 } from '@/components/ui/card'
 import  { Input }  from '@/components/ui/input;
-import {;';
+import {;;
   Table,;';
   TableBody,'
   TableCell,;
@@ -21,7 +21,7 @@ import {;';
   TableRow,;
 } from '@/components/ui/table'
 import  { Badge }  from '@/components/ui/badge;
-import {;';
+import {;;
   Dialog,;';
   DialogContent,'
   DialogDescription,;
@@ -31,10 +31,10 @@ import {;';
 } from '@/components/ui/dialog'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { toast } from '@/hooks/use-toast;';
+import { toast } from '@/hooks/use-toast;;
 import { supabase } from '@/integrations/supabase/client'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { EmptyState } from '@/components/ui/empty-state;';
+import { EmptyState } from '@/components/ui/empty-state;;
 '
 interface PartnerProfile {
   id: "string"

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { ResumeSelector } from '../resume-selector/index'
 import type { ResumeOption } from '../resume-selector/index'
 import { Button } from '@/components/ui/button'
@@ -28,7 +28,7 @@ export function ResumeTab(): unknown {): unknown {): unknown {): unknown {): unk
     }'
   };
 '
-  return (;'
+  return (;
     <div className="space-y-4>;"
       <ResumeSelector onResumeSelected={handleResumeSelected} />";"";
       {onApply && (;""

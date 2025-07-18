@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router;';
+import { useRouter } from 'next/router;;
 async function registerUser(): unknown {): unknown {): unknown {): unknown {): unknown {userData) {'
   // Stub implementation for testing;
   return { success: true, user: "userData "};"
@@ -12,7 +12,7 @@ import { AuthContext } from '@/context/auth/AuthContext'
 import type { AuthContextType } from '@/types/auth'
 import { registerUser } from '@/services/authService'
 import { toast } from '@/hooks/use-toast'
-import  { safeStorage }  from '@/utils/safeStorage;';
+import  { safeStorage }  from '@/utils/safeStorage;;
 // mailchimpService is imported within Signup.tsx but its usage is conditional.;';
 // Mocking it to prevent potential issues if it's called.;
 jest.mock('@/integrations/mailchimp', () => ({;

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { cn } from '@/lib/utils'
 
 interface SidebarItemProps extends React.HTMLAttributes<HTMLDivElement> {;

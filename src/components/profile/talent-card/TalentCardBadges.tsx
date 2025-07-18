@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Award } from '@/components/ui/icons'
 import { Badge } from '@/components/ui/badge'
 '

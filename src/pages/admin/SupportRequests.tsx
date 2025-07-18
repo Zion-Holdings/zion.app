@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import  { Search, Filter }  from '@/components/ui/icons;';
-import {;';
+import { Search, Filter }  from '@/components/ui/icons;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
@@ -9,8 +9,8 @@ import {;';
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;';
-import {;';
+import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;;
+import {;;
   Select,'
   SelectContent,;
   SelectItem,;

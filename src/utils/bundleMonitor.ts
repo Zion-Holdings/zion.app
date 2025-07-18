@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger;';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;;
 '
 interface BundleMetrics {
   timestamp: "number"

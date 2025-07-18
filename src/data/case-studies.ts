@@ -1,4 +1,4 @@
-import type { CaseStudy } from '@/types/caseStudy;''
+import type { CaseStudy } from '@/types/caseStudy;
 export const CASE_STUDIES: unknown CaseStudy[] = ['
   {'
     title: 'Optimizing Job Matching with AI','

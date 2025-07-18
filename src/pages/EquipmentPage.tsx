@@ -9,9 +9,9 @@ import {;
   RefreshCw,;
 } from '@/components/ui/icons'
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion;';
+import { motion, AnimatePresence } from 'framer-motion;;
 import { toast } from '@/hooks/use-toast'
-import apiClient from '@/services/apiClient;';
+import apiClient from '@/services/apiClient;;
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import type { ProductListing } from '@/types/listings'
 import { SkeletonCard } from '@/components/ui/skeleton'
@@ -21,7 +21,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Spinner from '@/components/ui/spinner'
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary'
 import { useCurrency } from '@/hooks/useCurrency'
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 '
 // Enhanced initial equipment with more variety;
 // Remove all INITIAL_EQUIPMENT and any other hardcoded/sample/mock equipment data. Fetch equipment from real API/data source or show empty/error state if unavailable.;

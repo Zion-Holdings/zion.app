@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation;';
+import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation;;
 import { PrimaryNav } from '../PrimaryNav'
 import { useAuth } from '@/hooks/useAuth'
 import type { AuthContextType } from '@/types/auth'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/use-mobile'
-import { useMessaging } from '@/context/MessagingContext;';
+import { useMessaging } from '@/context/MessagingContext;;
 '
 // Mock hooks;
 jest.mock('@/hooks/useAuth');

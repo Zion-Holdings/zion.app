@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Calendar, User, Mail, Clock, DollarSign } from '@/components/ui/icons'
 
 import {;

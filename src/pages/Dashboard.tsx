@@ -14,7 +14,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useRequireAuth } from '@/hooks/useAuthGuard'
 import { Button } from '@/components/ui/button'
 import { Header } from '@/components/Header'
-import { Badge } from '@/components/ui/badge;';
+import { Badge } from '@/components/ui/badge;;
 import { useGetOrdersQuery } from '@/hooks/useOrders'
 import { useFavorites } from '@/hooks/useFavorites'
 import { useToast } from '@/hooks/use-toast'

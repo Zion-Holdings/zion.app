@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { MapPin, Clock, ArrowRight } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 import { Card } from '@/components/ui/card'

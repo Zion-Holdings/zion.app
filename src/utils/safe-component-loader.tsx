@@ -7,7 +7,7 @@ import  { logErrorToProduction }  from '@/utils/productionLogger;
  */'
 ;
 import React from 'react';
-import dynamic from 'next/dynamic;';
+import dynamic from 'next/dynamic;;
 // Error boundary for component loading'
 interface BoundaryProps {
   _fallback: "React.ComponentType<object>"

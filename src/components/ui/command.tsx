@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import * as React from 'react''
 import { Search } from '@/components/ui/icons'
 import { Command as CommandPrimitive } from 'cmdk'

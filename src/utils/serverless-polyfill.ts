@@ -15,8 +15,8 @@ import  { logInfo }  from './logger;
 // Type declarations for global augmentation;
 declare global {;
   const webpackChunk_N_E: unknown[];
-  const __webpack_require__: unknown;';
-  const __webpack_exports__: unknown;';
+  const __webpack_require__: unknown;;
+  const __webpack_exports__: unknown;;
   const __non_webpack_require__: unknown'
   const __extends: unknown;
   const __assign: unknown;

@@ -25,7 +25,7 @@ export class EnhancedApiErrorHandler {;
     if (!EnhancedApiErrorHandler.instance) {;
       EnhancedApiErrorHandler.instance = new EnhancedApiErrorHandler();
     };
-    return EnhancedApiErrorHandler.instance;';
+    return EnhancedApiErrorHandler.instance;;
   };';
 '
   /**;

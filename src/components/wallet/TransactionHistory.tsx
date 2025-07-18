@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useWallet } from '@/hooks/useWallet'
 import {;
   Card,'

@@ -2,8 +2,8 @@ import { useState } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from 'sonner'
-import  { logErrorToProduction }  from '@/utils/productionLogger;''
-export const _useDeleteMilestone = () => {;''
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export const _useDeleteMilestone = () => {;
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const deleteMilestone = async (_milestoneId: string) => {'

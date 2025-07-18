@@ -9,7 +9,7 @@ import type { ReactNode } from 'react''
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { logInfo } from '@/utils/productionLogger;''
+import { logInfo } from '@/utils/productionLogger;
 // Analytics event types'
 export type AnalyticsEventType ='
   | 'page_view'

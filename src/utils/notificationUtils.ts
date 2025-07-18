@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 '
 type NotificationType =;
   | 'message'

@@ -56,7 +56,7 @@ import RoadmapSuggestPage from '@/pages/RoadmapSuggest'
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent'
 import { CommunityProvider } from '@/context'
 import VerifyIdentity from '@/pages/VerifyIdentity'
-import StartupOSPage from '@/pages/StartupOS // Import the new page;';
+import StartupOSPage from '@/pages/StartupOS // Import the new page;;
 import GlobalMapPage from '@/pages/GlobalMap'
 import SummitPage from '@/pages/SummitPage'
 import OrgChartPage from '@/pages/OrgChart'
@@ -66,8 +66,8 @@ import FounderBackupVault from '@/pages/FounderBackupVault'
 import CongressPage from '@/pages/Congress'
 import UNBridgePage from '@/pages/UNBridge'
 import InternationalProposalsPage from '@/pages/InternationalProposals'
-import DocsPage from '@/pages/DocsPage // Added import for DocsPage;';
-import CartPage from '@/pages/Cart // Import CartPage;';
+import DocsPage from '@/pages/DocsPage // Added import for DocsPage;;
+import CartPage from '@/pages/Cart // Import CartPage;;
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {;
   AuthRoutes,;

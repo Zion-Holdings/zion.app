@@ -1,6 +1,6 @@
-import { jsPDF } from 'jspdf;';
+import { jsPDF } from 'jspdf;;
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export interface FontBuffers {;';
+export interface FontBuffers {;;
   regular: ArrayBuffer;';
   bold?: ArrayBuffer'
   italic?: ArrayBuffer;

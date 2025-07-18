@@ -5,7 +5,7 @@ import  { logInfo }  from '@/utils/productionLogger;
  * Custom hook to track page views for analytics purposes;
  * Attaches event listeners to track route changes and logs page views;
  */;';
-export function usePageViewTracking(): ;';
+export function usePageViewTracking(): ;;
   const router = useRouter()'
 ;
   useEffect(() => {;

@@ -7,8 +7,8 @@ import type { ContractTemplate } from '@/types/contracts'
 import type { ContractFormValues } from '@/components/contracts/components/ContractForm'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
 export function useContractTemplates(): ;
-  const { user, isAuthenticated } = useAuth();''
-  const queryClient = useQueryClient();''
+  const { user, isAuthenticated } = useAuth();
+  const queryClient = useQueryClient();
   const { _toast } = useToast()'
   const [isLoading, setIsLoading] = useState(false)'
   // Fetch templates for the current user'

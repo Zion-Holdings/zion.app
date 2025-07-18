@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import  { DelayTolerantDAO }  from '@/offworld/delayDao;
 export default function OffworldLab(): ;
-  const [latency, setLatency] = useState(0);';
-  const [queuedVotes, setQueuedVotes] = useState(0);';
+  const [latency, setLatency] = useState(0);;
+  const [queuedVotes, setQueuedVotes] = useState(0);;
   const [dao] = useState(() => new DelayTolerantDAO())'
 ;
   const tickLatency = () => setLatency((l) => (l + 1) % 60);

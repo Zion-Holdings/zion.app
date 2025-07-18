@@ -1,6 +1,6 @@
 import React from 'react';
-import  { useRouter }  from 'next/router;';
-import {;';
+import { useRouter }  from 'next/router;;
+import {;;
   ArrowUp,'
   Filter,;
   SortAsc,;
@@ -12,7 +12,7 @@ import ProductCard from '@/components/ProductCard'
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { AuthModal } from '@/components/auth/AuthModal;';
+import { AuthModal } from '@/components/auth/AuthModal;;
 import { SkeletonCard } from '@/components/ui/skeleton'
 import { ErrorState } from '@/components/jobs/applications/ErrorState'
 import { ProductsEmptyState } from '@/components/marketplace/EmptyState'

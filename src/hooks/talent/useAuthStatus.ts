@@ -1,6 +1,6 @@
 import { useState } from 'react''
-import  { logInfo }  from '@/utils/productionLogger;''
-export function useAuthStatus(): ;''
+import  { logInfo }  from '@/utils/productionLogger;
+export function useAuthStatus(): ;
   // Mock authenticated status'
   const [isAuthenticated, setIsAuthenticated] = useState(false)'
   // Mock user details'

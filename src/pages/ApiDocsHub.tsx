@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Code, AlertCircle, Zap } from '@/components/ui/icons'
-import Link from 'next/link;';
+import Link from 'next/link;;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 ;
 export function ApiDocsHub(): ;

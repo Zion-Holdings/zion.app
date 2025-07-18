@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo;';
+import { NextSeo } from '@/components/NextSeo;;
 '
 interface Proposal {
   id: "number"

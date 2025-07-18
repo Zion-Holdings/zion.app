@@ -1,5 +1,5 @@
 import { safeStorage } from './safeStorage'
-import  { logErrorToProduction }  from '@/utils/productionLogger;';
+import  { logErrorToProduction }  from '@/utils/productionLogger;;
 /**;';
  * Formats a date for display in the referral system'
  * @param date Date or string to format;

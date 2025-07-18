@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react''
 import type { ReactNode } from 'react''
 import { useWhitelabelTenant } from '@/hooks/useWhitelabelTenant'
-import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant;''
-import { logInfo } from '@/utils/productionLogger;''
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant;
+import { logInfo } from '@/utils/productionLogger;
 '
 export interface WhitelabelContextType {
   isWhitelabel: "boolean

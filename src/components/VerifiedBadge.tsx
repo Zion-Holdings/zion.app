@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { CheckCircle } from '@/components/ui/icons'
 
 import {'

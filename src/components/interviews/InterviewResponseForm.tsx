@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Button } from '@/components/ui/button'
 import type { Interview } from '@/types/interview'
 import { format, parseISO } from 'date-fns'

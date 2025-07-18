@@ -6,7 +6,7 @@ import type { Milestone, MilestoneActivity } from './types'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
 export const _useLoadMilestones = (projectId?: string) => {;
   const [milestones, setMilestones] = useState<Milestone[]>([]);
-  const [activities, setActivities] = useState<;''
+  const [activities, setActivities] = useState<;
     Record<string, MilestoneActivity[]>;''
   >({})'
   const [isLoading, setIsLoading] = useState(true)'

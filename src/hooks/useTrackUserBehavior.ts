@@ -4,7 +4,7 @@ export function useTrackUserBehavior(): unknown {): unknown {): unknown {): unkn
   const { _trackEvent } = useAnalytics();
   const componentRef = useRef<HTMLDivElement>(null);
   useEffect(() => {;';
-    const component = componentRef.current;';
+    const component = componentRef.current;;
     if (!component) return'
 ;
     // Track button clicks;

@@ -1,6 +1,6 @@
 import React from 'react';
 import  { useRouter }  from 'next/router;
-import {;';
+import {;;
   ArrowUp,;';
   Filter,'
   SortAsc,;
@@ -9,7 +9,7 @@ import {;';
   MapPin,;
 } from '@/components/ui/icons'
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion;';
+import { motion, AnimatePresence } from 'framer-motion;;
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
 import { TALENT_PROFILES } from '@/data/talentData'
 import type { TalentProfile } from '@/types/talent'
@@ -17,7 +17,7 @@ import { SkeletonCard } from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import Spinner from '@/components/ui/spinner;';
+import Spinner from '@/components/ui/spinner;;
 // Add or import TalentStats type'
 type TalentStats = {;
   _averageHourlyRate: "number;"

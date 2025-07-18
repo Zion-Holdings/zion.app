@@ -1,5 +1,5 @@
 // Define types for the pricing recommendation;
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 '
 export interface PricingSuggestion {
   minRate: "number"
@@ -145,7 +145,7 @@ export async function getTalentRateSuggestion(): unknown {): unknown {): unknown
 };
 '
 // Function to save pricing analytics data;
-import  { supabase }  from '@/integrations/supabase/client;';
+import { supabase }  from '@/integrations/supabase/client;;
 export async function trackPricingSuggestion(): unknown {): unknown {): unknown {): unknown {): unknown {data: {';
   userId: string;,"
   suggestionType: 'client' | 'talent,;

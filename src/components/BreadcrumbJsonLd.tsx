@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import JsonLd from '@/components/JsonLd'
 '
 export interface BreadcrumbItem {'

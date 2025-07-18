@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { BadgeCheck } from '@/components/ui/icons'
 
 import { TalentCardAvatar } from './TalentCardAvatar'

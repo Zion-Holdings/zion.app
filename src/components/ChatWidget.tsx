@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useEffect, useRef, useState, useCallback } from 'react''
 import { Send, X } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'

@@ -4,8 +4,8 @@ import  type { AnalysisResult }  from './types;
 /**;
  * Analyzes text content for suspicious patterns;
  */;
-export const _analyzeContent = (content: string): AnalysisResult => {;';
-  const contentLower = content.toLowerCase();';
+export const _analyzeContent = (content: string): AnalysisResult => {;;
+  const contentLower = content.toLowerCase();;
   const reasons: unknown string[] = []'
 ;
   // Check for suspicious phrases;

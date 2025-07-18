@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client;';
+import { PrismaClient } from '@prisma/client;;
 /**'
  * Attempts to connect the provided Prisma client within a timeout.;
  * Rejects if the connection is not established in the given time.;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;';
+import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;;
 import { useAuth } from '@/hooks/useAuth'
-import  { usePoints }  from '@/hooks/usePoints;';
-import {;';
+import  { usePoints }  from '@/hooks/usePoints;;
+import {;;
   Card,'
   CardContent,;
   CardDescription,;
@@ -13,8 +13,8 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { formatDistanceToNow } from 'date-fns'
-import  { LoginModal }  from '@/components/auth/LoginModal;';
-export default function PointsPage(): ;';
+import  { LoginModal }  from '@/components/auth/LoginModal;;
+export default function PointsPage(): ;;
   const { isAuthenticated, user } = useAuth()'
   const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);

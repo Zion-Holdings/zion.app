@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { ChevronRight } from '@/components/ui/icons'
 import { completeSitemap, dynamicPaths } from '@/config/sitemap'
 import Link from 'next/link'

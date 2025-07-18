@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import YoutubeEmbed from '@/components/YoutubeEmbed'
 
 interface ProductVideoSectionProps {

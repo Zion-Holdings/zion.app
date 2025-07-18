@@ -1,5 +1,5 @@
 import { fetchProductById } from '../productService'
-import type { ProductDetailsData } from '../../types/product;';
+import type { ProductDetailsData } from '../../types/product;;
 '
 // Mock product data for successful response;
 const mockProduct: unknown "ProductDetailsData = {;"

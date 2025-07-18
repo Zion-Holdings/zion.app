@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import type { BlogAuthor } from '@/types/blog'
 '
 interface AuthorBioProps {'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react;''
+import { useState, useEffect } from 'react;
 export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): unknown {breakpoint = 768) {'
   // Avoid referencing `window` during SSR;
   const [isMobile, setIsMobile] = useState(false);

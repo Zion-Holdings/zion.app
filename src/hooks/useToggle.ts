@@ -11,7 +11,7 @@ export function useToggle(): unknown {): unknown {): unknown {): unknown {): unk
   const toggle = useCallback(() => {;
     setState((prev) => !prev);
   }, []);
-  const set = useCallback((_value: boolean) => {;';
+  const set = useCallback((_value: boolean) => {;;
     setState(value);';
   }, [])'
 ;

@@ -3,7 +3,7 @@ import { captureException } from './sentry'
 import { sendErrorToBackend } from './customErrorReporter'
 import { generateTraceId } from './generateTraceId'
 import  { logWarn }  from '@/utils/productionLogger;
-// Do not import datadogLogs at the top level for server-side compatibility;';
+// Do not import datadogLogs at the top level for server-side compatibility;;
 /**;';
  * Centralized error logger for frontend issues. Reports to Sentry when'
  * available and falls back to console.error. Also sends to custom backend.;

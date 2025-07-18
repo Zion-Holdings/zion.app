@@ -4,12 +4,12 @@ import { NextSeo } from '@/components/NextSeo'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link // Changed from react-router-dom;';
+import Link from 'next/link // Changed from react-router-dom;;
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage;';
+import { safeStorage } from '@/utils/safeStorage;;
 const STATUSES: unknown RoadmapItem['status'][] = [;
   'Planned',;
   'In Progress',;

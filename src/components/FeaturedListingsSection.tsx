@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { ProductListingCard } from '@/components/ProductListingCard'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'

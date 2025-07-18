@@ -9,7 +9,7 @@ import { addSkillsSection } from './sections/skillsSection'
 import { addWorkExperienceSection } from './sections/workExperienceSection'
 import { addEducationSection } from './sections/educationSection'
 import { addCertificationsSection } from './sections/certificationsSection'
-import { addPortfolioSection } from './sections/portfolioSection;';
+import { addPortfolioSection } from './sections/portfolioSection;;
 '
 export interface ExportOptions {;
   theme: 'light' | 'dark;

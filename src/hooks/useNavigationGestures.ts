@@ -18,7 +18,7 @@ export function useNavigationGestures(): ;
     const handleTouchEnd = (_e: TouchEvent) => {;
       if (e.changedTouches[0]) {;
         const deltaX = e.changedTouches[0].clientX - startX.current;
-        const deltaTime = Date.now() - startTime.current;';
+        const deltaTime = Date.now() - startTime.current;;
         if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {;';
           router.back()'
         };

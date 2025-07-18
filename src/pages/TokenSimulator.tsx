@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import  { Button }  from '@/components/ui/button;';
-import {;';
+import  { Button }  from '@/components/ui/button;;
+import {;;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import { Slider } from '@/components/ui/slider'
 import { useToast } from '@/hooks/use-toast'
 import { callZionGPT } from '@/utils/zion-gpt'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { suggestFix } from '@/utils/suggestFix;';
+import { suggestFix } from '@/utils/suggestFix;;
 '
 interface Inputs {
   circulating: "number"

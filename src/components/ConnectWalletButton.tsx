@@ -1,5 +1,5 @@
 // src/components/ConnectWalletButton.tsx;
-import React from 'react''
+import React from 'react'
 import { useWallet } from '@/context/WalletContext'
 import { useTokenBalance } from '@/hooks/useTokenBalance'
 import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig'

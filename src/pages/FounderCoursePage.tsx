@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NextSeo } from '@/components/NextSeo'
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 const modules = ['
   {;
     title: 'Module 1 — \uD83C\uDF0D Introduction to Zion','

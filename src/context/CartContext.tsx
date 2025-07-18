@@ -3,8 +3,8 @@ import type { CartContextType, CartAction, CartItem } from '@/types/cart'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState, AppDispatch } from '@/store'
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice'
-import { safeStorage } from '@/utils/safeStorage // Import safeStorage;''
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;''
+import { safeStorage } from '@/utils/safeStorage // Import safeStorage;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 '
 const CartContext = createContext<CartContextType | undefined>(undefined)'
 export function useCart(): unknown {): unknown {): unknown {): unknown {): unknown {): CartContextType {'

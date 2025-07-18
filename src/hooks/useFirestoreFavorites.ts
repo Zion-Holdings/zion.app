@@ -19,7 +19,7 @@ export function useFirestoreFavorites(): ;
   const [favorites, setFavorites] = useState<FirestoreFavorite[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {;
-    const fetchFavorites = async () => {;''
+    const fetchFavorites = async () => {;
       if (!user) {;''
         setFavorites([])'
         setLoading(false)'

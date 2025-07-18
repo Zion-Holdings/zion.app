@@ -1,5 +1,5 @@
-import  { enhancedGlobalErrorHandler }  from './globalToastManager;';
-import {;';
+import { enhancedGlobalErrorHandler }  from './globalToastManager;;
+import {;;
   consoleErrorHandler,'
   fetchErrorHandler,;
 } from './enhancedErrorHandlers'
@@ -7,7 +7,7 @@ import  { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 /**;
  * Initialize global error handlers with enhanced toast management;
  */;';
-export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;';
+export function initializeGlobalErrorHandlers(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;;
   // Console error handler is automatically initialized when the module loads'
   // Fetch error handler is automatically initialized when the module loads;
   // API error handler is a singleton that can be used throughout the app;

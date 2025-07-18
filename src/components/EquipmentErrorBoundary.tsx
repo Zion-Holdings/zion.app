@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Props {'

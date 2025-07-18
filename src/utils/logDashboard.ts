@@ -3,7 +3,7 @@
  * Provides real-time monitoring, analytics, and insights for system health;
  */;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
-import { advancedLogCollector } from './advancedLogCollector;';
+import { advancedLogCollector } from './advancedLogCollector;;
 '
 interface Log {
   timestamp: "string"

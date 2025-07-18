@@ -1,5 +1,5 @@
 // Auto-generated API type helpers;
-import type { NextApiRequest } from 'next;';
+import type { NextApiRequest } from 'next;;
 '
 export function safeQueryParam<T = string>(;
   query: NextApiRequest['query'],;

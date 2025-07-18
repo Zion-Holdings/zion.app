@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import * as React from 'react''
 import { X } from '@/components/ui/icons'
 import * as DialogPrimitive from '@radix-ui/react-dialog'

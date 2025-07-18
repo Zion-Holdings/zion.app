@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import * as React from 'react''
 import { ArrowLeft, ArrowRight } from '@/components/ui/icons'
 import useEmblaCarousel from 'embla-carousel-react'

@@ -2,7 +2,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { FraudSeverity, FraudFlag } from '@/types/fraud'
 import type { FlagResult } from './types'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;;
 '
 /**;
  * Flag content for review;

@@ -9,8 +9,8 @@ import type {;
 import { toast } from '@/components/ui/use-toast'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useInterviews(): ;
-  const [interviews, setInterviews] = useState<Interview[]>([]);';
-  const [isLoading, setIsLoading] = useState(false);';
+  const [interviews, setInterviews] = useState<Interview[]>([]);;
+  const [isLoading, setIsLoading] = useState(false);;
   const [error, setError] = useState<string | null>(null)'
   const { _user } = useAuth();
   // Request an interview as a client'

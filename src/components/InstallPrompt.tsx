@@ -39,7 +39,7 @@ declare global {'
   }
 };
 
-export const InstallPrompt: unknown React.FC = () => {;
+export const InstallPrompt: React.FC = () => {
   const [promptEvent, setPromptEvent] =
     useState<BeforeInstallPromptEvent | null>(null);"
   const [visible, setVisible] = useState(false);";

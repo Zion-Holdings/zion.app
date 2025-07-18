@@ -27,7 +27,7 @@ const createHelia = () =>;"
   });"
 ;"
 // Browser-safe logging;"
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
 '
 // Browser-safe memory stores;
 class _MemoryBlockstore {;
@@ -69,8 +69,8 @@ class _MemoryDatastore {;"
 // Placeholder types for OrbitDB and Helia;
 type OrbitDB = object;
 type Helia = object;
-let orbit: OrbitDB | null = null;';
-let heliaNode: Helia | null = null;';
+let orbit: OrbitDB | null = null;;
+let heliaNode: Helia | null = null;;
 '
 // Simplified libp2p options for this Helia instance;
 // Depending on use case, might share libp2p from ipfs.ts or have more transports;

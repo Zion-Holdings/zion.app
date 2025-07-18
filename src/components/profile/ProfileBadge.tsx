@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Star, Clock, Award } from '@/components/ui/icons'
 
 import { cn } from '@/lib/utils'

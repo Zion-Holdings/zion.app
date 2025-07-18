@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react'
 import { useDelayedError } from '../useDelayedError'
-import { vi } from 'vitest;''
+import { vi } from 'vitest;
 describe('useDelayedError', () => {'
   beforeEach(() => {;
     vi.useFakeTimers();

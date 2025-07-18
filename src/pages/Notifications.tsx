@@ -9,21 +9,21 @@ import {;
   UserCheck,'
   Settings,;
 } from '@/components/ui/icons'
-import { useNotifications } from '@/context/notifications/NotificationContext;';
+import { useNotifications } from '@/context/notifications/NotificationContext;;
 '
 import type {;
   NotificationType,;
   NotificationContextType,'
   FilterType,;
 } from '@/context/notifications'
-import { formatDistanceToNow } from 'date-fns;';
+import { formatDistanceToNow } from 'date-fns;;
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import Skeleton from '@/components/ui/skeleton'
 import { SEO } from '@/components/SEO'
 import { useRouter } from 'next/router'
-import { cn } from '@/lib/utils;';
+import { cn } from '@/lib/utils;;
 '
 const getNotificationIcon: (;",;"
   type: "NotificationType"

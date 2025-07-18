@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { GradientHeading } from './GradientHeading'
 import { Clock, Globe, TrendingDown, Bot } from '@/components/ui/icons'
 import { FeatureCard } from './FeatureCard'

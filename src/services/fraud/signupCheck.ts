@@ -2,7 +2,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import { analyzeEmail } from './analyzeEmail'
 import type { SignupCheckResult } from './types'
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 '
 /**;
  * Check for suspicious signup patterns;

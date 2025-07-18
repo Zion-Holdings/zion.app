@@ -1,12 +1,12 @@
-import  React, { useState }  from 'react;';
-import type {;';
+import React, { useState }  from 'react;;
+import type {;;
   ReactNode as _ReactNode,'
   ReactElement as _ReactElement,;
 } from 'react';
-import  { useRouter }  from 'next/router;';
+import { useRouter }  from 'next/router;;
 // Assume useAuth hook exists and provides user object with emailVerified status and email;';
 import { useAuth } from '@/hooks/useAuth'
-import EmailVerificationBanner from '@/components/EmailVerificationBanner // Assuming path;';
+import EmailVerificationBanner from '@/components/EmailVerificationBanner // Assuming path;;
 import { PrimaryNav } from './PrimaryNav'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { BackToTopButton } from '@/components/BackToTopButton'
@@ -22,7 +22,7 @@ import LoaderOverlay from '@/components/LoaderOverlay'
 import ErrorOverlay from '@/components/ErrorOverlay'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { useSessionDuration } from '@/hooks/useSessionDuration'
-import { useNavigationGestures } from '@/hooks/useNavigationGestures;';
+import { useNavigationGestures } from '@/hooks/useNavigationGestures;;
 '
 function useSafePathname(): ;
   const router = useRouter();

@@ -19,7 +19,7 @@ import { ProtectedRoute } from '@/components/ProtectedRoute'
 import type { Project, ProjectStatus } from '@/types/projects'
 import { Button } from '@/components/ui/button'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-import {;';
+import {;;
   Card,;';
   CardContent,'
   CardDescription,;
@@ -50,8 +50,8 @@ function ProjectDetailsContent(): ;
   const router = useRouter();
   // Get projectId from Next.js router query params;
   const { _projectId } = router.query as { projectId?: string };
-  const { _user } = useAuth();';
-  const { getProjectById, updateProjectStatus } = useProjects();';
+  const { _user } = useAuth();;
+  const { getProjectById, updateProjectStatus } = useProjects();;
 '
   const [project, setProject] = useState<Project | null>(null);
   const [_isLoading, _setIsLoading] = useState(false);

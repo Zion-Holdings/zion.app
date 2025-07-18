@@ -12,18 +12,18 @@ import {;
   updateQuantity as updateQuantityAction,;
 } from '@/store/cartSlice'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import  GuestCheckoutModal  from '@/components/cart/GuestCheckoutModal;';
+import  GuestCheckoutModal  from '@/components/cart/GuestCheckoutModal;;
 // CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart;';
-// import  { CartItem as CartItemType }  from '@/types/cart;';
+// import { CartItem as CartItemType }  from '@/types/cart;;
 // safeStorage is no longer needed here for reading;';
 // import { safeStorage } from '@/utils/safeStorage'
 import { getStripe } from '@/utils/getStripe'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion;';
+import { motion } from 'framer-motion;;
 import { useWishlist } from '@/hooks/useWishlist'
 import { toast } from '@/hooks/use-toast'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;';
+import { Badge } from '@/components/ui/badge;;
 '
 export default function CartPage(): ;
   const { t: "_t " } = useTranslation();

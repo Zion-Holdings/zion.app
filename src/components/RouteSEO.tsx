@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { useRouter } from 'next/router'
 import { findRouteByPath } from '@/utils/routeUtils'
 import { SEO } from './SEO'

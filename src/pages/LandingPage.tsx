@@ -1,5 +1,5 @@
-import  { Header }  from '@/components/Header;';
-import {;';
+import { Header }  from '@/components/Header;;
+import {;;
   ArrowRight,'
   Users,;
   Zap,;
@@ -22,8 +22,8 @@ import { FeaturesGuideSection } from '@/components/FeaturesGuideSection'
 import { SocialShareSection } from '@/components/SocialShareSection'
 import { useTranslation } from 'react-i18next'
 import  { useLanguage }  from '@/context/LanguageContext;
-export default function LandingPage(): ;';
-  const { t } = useTranslation();';
+export default function LandingPage(): ;;
+  const { t } = useTranslation();;
   const { _isRTL } = useLanguage()';
   // Tools and features showcase;
   const toolsFeatures = ['

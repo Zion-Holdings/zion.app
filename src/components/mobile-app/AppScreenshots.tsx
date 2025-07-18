@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 
 // These would be replaced with actual screenshots'
-const mockScreenshots = [;'
+const mockScreenshots = [;
   { id: 1, alt: 'Dashboard screen', src: '/placeholder.svg' },;'
   { id: 2, alt: 'Talent matching screen', src: '/placeholder.svg' },;'
   { id: 3, alt: 'Resume builder screen', src: '/placeholder.svg' },;'
@@ -12,20 +12,20 @@ const mockScreenshots = [;'
   { id: "5, alt: 'Profile screen', src: '/placeholder.svg' },'
 ]'
 '
-export const _AppScreenshots: unknown React.FC = () => {;
+export const _AppScreenshots: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)'
-;'
+;
   const scroll = (_direction: 'left' | 'right') => {'
     if (scrollContainerRef.current) {;
       const scrollAmount = 300'
-      scrollContainerRef.current.scrollBy({;'
+      scrollContainerRef.current.scrollBy({;
         left: direction === 'left' ? -scrollAmount : scrollAmount,;'
         behavior: 'smooth','
       })'
     }'
   };
 '
-  return (;'
+  return (;
     <section className=py-16 bg-zion-blue-dark">"
       <div className=container mx-auto px-4>"
         <div className="text-center mb-12>"

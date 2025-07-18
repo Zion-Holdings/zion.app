@@ -11,7 +11,7 @@ export function useReviews(): unknown {): unknown {): unknown {): unknown {): un
   const [userReview, setUserReview] = useState<Review | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   // Fetch reviews for a project;';
-  const fetchProjectReviews = async (_projectId: string) => {;';
+  const fetchProjectReviews = async (_projectId: string) => {;;
     if (!projectId) return'
 ;
     setIsLoading(true);

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;';
+import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;;
 '
 interface UseInfiniteScrollOptions {
   hasMore: boolean,

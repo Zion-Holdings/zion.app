@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { LogOut, UserIcon, Package } from '@/components/ui/icons'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/useAuth'

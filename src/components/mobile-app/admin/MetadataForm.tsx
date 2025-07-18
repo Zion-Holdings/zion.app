@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { X } from '@/components/ui/icons'
 import type { UseFormReturn } from 'react-hook-form'
 import type { AppMetadataValues } from './MetadataManager'

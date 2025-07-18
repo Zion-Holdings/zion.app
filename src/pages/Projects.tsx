@@ -2,7 +2,7 @@ import React from 'react';
 import { Clock } from '@/components/ui/icons'
 import { useProjects } from '@/hooks/useProjects'
 import  { SEO }  from '@/components/SEO;
-import {;';
+import {;;
   Card,;';
   CardContent,'
   CardDescription,;
@@ -12,8 +12,8 @@ import {;';
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import  Link  from 'next/link;';
-function ProjectsContent(): ;';
+import  Link  from 'next/link;;
+function ProjectsContent(): ;;
   const { projects, isLoading } = useProjects()';
   return (;
     <>'

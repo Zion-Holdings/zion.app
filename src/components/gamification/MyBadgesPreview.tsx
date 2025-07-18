@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { BadgeEarned } from './BadgeEarned'
 import type { BadgeKey } from './badgeConfig'
 '

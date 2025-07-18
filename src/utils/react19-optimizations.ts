@@ -6,7 +6,7 @@ import React, {;
   useCallback,;
   useMemo,;
 } from 'react';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
 export const React19Optimizations = {'
   /**;
    * Use React 19's improved startTransition for non-urgent updates;

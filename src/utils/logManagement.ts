@@ -4,7 +4,7 @@
  */;
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { advancedLogCollector } from './advancedLogCollector'
-import { logDashboard } from './logDashboard;';
+import { logDashboard } from './logDashboard;;
 '
 export interface LogAnalysisResult {;
   patterns: "Array<{;"

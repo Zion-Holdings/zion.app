@@ -9,7 +9,7 @@ interface Session {;
   currency?: string | null;
   customer_details?: { email?: string | null; name?: string | null } | null;
 };';
-export default function CheckoutSuccess(): ;';
+export default function CheckoutSuccess(): ;;
   const searchParams = NextNavigation.useSearchParams()'
   const [session, setSession] = useState<Session | null>(null);
   useEffect(() => {'

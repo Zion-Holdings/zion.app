@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import Link from 'next/link'
 import { useWhitelabel } from '@/context/WhitelabelContext'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'

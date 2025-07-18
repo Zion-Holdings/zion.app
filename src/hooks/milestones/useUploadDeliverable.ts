@@ -3,8 +3,8 @@ import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from 'sonner'
 import { useRecordActivity } from './useRecordActivity'
-import  { logErrorToProduction }  from '@/utils/productionLogger;''
-export const _useUploadDeliverable = () => {;''
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+export const _useUploadDeliverable = () => {;
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const { _recordMilestoneActivity } = useRecordActivity();

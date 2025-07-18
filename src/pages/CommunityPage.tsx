@@ -13,7 +13,7 @@ import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus
 import { useCommunity } from '@/context'
 import type { ForumCategory } from '@/types/community'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { logInfo } from '@/utils/productionLogger;';
+import { logInfo } from '@/utils/productionLogger;;
 '
 export default function CommunityPage(): ;
   logInfo('CommunityPage rendering');

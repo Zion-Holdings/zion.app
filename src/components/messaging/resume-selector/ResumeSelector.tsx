@@ -14,7 +14,7 @@ import type { ResumeOption, ResumeSelectorProps } from './types'
 import { logErrorToProduction } from '@/utils/productionLogger'
 
 export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{ onResumeSelected }: ResumeSelectorProps) {'
-  const [selectedOption, setSelectedOption] = useState<;'
+  const [selectedOption, setSelectedOption] = useState<;
     'recent' | 'select' | 'upload'
   >('recent')'
   const [selectedResume, setSelectedResume] = useState<ResumeOption | null>(;
@@ -65,7 +65,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   // Handle radio option change;'
   const handleOptionChange = (_value: 'recent' | 'select' | 'upload') => {'
     setSelectedOption(value)'
-;'
+;
     if (value === 'recent' && resumeOptions.length > 0 && resumeOptions[0]) {'
       setSelectedResume(resumeOptions[0])'
       onResumeSelected(resumeOptions[0]);'
@@ -90,10 +90,10 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
     if (e.target.files && e.target.files[0]) {;
       const file = e.target.files[0]'
-;'
+;
       // Check if it's a PDF file;'
       if (file.type !== 'application/pdf') {'
-        toast({;'
+        toast({;
           title: 'Invalid file type',;'
           description: 'Please upload a PDF file',;'
           variant: 'destructive','
@@ -103,7 +103,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
 '
       // Create a custom resume option;'
       const customOption: unknown ResumeOption = {"
-        id: 'custom-upload',;'
+        id: 'custom-upload',;
         title: file.name
         type: 'custom_upload',;'
         file: file,"
@@ -129,9 +129,9 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
       const pdfBlob = await exportResumeToPDF(selectedResume.resume)'
 
       // Create download link'
-      const url = URL.createObjectURL(pdfBlob);'
+      const url = URL.createObjectURL(pdfBlob);
       const link = document.createElement('a')'
-      link.href = url;'
+      link.href = url;
       link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf`;
       document.body.appendChild(link);
       link.click();
@@ -161,7 +161,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
     window.open('/dashboard/talent/portfolio', '_blank')'
   };
 '
-  return (;'
+  return (;
     <div className=space-y-4">""
       <h3 className=text-lg font-medium text-white>Attach Resume</h3>"
 ;"

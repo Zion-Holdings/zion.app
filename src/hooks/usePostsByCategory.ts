@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { fetchPostsByCategory } from '@/services/forumPostService'
-import type { ForumPost } from '@/types/community;';
+import type { ForumPost } from '@/types/community;;
 export function usePostsByCategory(): unknown {): unknown {): unknown {): unknown {): unknown {slug?: string, page = 1) {'
   return useSuspenseQuery({;
     queryKey: ['posts', 'category', slug, page],;

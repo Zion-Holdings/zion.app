@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Clock, Award, Zap } from '@/components/ui/icons'
 
 import {;
@@ -10,7 +10,7 @@ import {;
 } from '@/components/ui/card'
 
 const features = ['
-  {;'
+  {;
     icon: <Brain className="h-10 w-10 text-zion-cyan />,"
     title: 'AI Talent Matching','
     description:;'
@@ -37,7 +37,7 @@ const features = ['
 ]'
 
 // export const _AppFeatures: unknown React.FC = () => {'
-  return (;'
+  return (;
     <section className="py-16 bg-zion-blue>"
       <div className="container mx-auto px-4">
         <div className=text-center mb-12">"

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 import { Heart } from '@/components/ui/icons'
 
 import { cn } from '@/lib/utils'

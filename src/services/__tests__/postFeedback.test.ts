@@ -1,5 +1,5 @@
 import { postFeedback } from '../feedbackService'
-import fetchMock from 'jest-fetch-mock;';
+import fetchMock from 'jest-fetch-mock;;
 fetchMock.enableMocks()'
 ;
 describe('postFeedback', () => {'

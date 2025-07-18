@@ -6,7 +6,7 @@
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger'
 import { logDashboard } from './logDashboard'
 import { logManagement } from './logManagement'
-import { advancedLogCollector } from './advancedLogCollector;';
+import { advancedLogCollector } from './advancedLogCollector;;
 '
 export interface SystemHealth {
   overall: 'excellent' | 'good' | 'warning' | 'critical,
