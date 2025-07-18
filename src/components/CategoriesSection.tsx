@@ -69,7 +69,7 @@ const getIcon = (iconName?: string) => {
     case "Users": return <Users className="w-10 h-10" />;
     case "HardDrive": return <HardDrive className="w-10 h-10" />;
     case "Lightbulb": return <Lightbulb className="w-10 h-10" />;
-    _default: return <HelpCircle className="w-10 h-10" />; // Default icon
+    return <HelpCircle className="w-10 h-10" />; // Default icon
   }
 };
 

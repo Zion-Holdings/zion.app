@@ -15,8 +15,8 @@ export function useFraudPreventionSignup() {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
       return data.ip;
-    } catch (_error) {
-      logErrorToProduction('Error getting IP:', { data: error });
+    } catch {
+      logErrorToProduction('Error getting IP:', { data: 'Error occurred' });
       return undefined;
     }
   };
@@ -71,8 +71,8 @@ export function useFraudPreventionSignup() {
       
       // No suspicious patterns found
       return true;
-    } catch (_error) {
-      logErrorToProduction('Error in fraud check:', { data: error });
+    } catch {
+      logErrorToProduction('Error in fraud check:', { data: 'Error occurred' });
       // On error, allow the signup but log the error
       return true;
     } finally {

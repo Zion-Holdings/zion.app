@@ -64,10 +64,10 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             setError(null);
           }
           return;
-        } catch (_err) {
+        } catch {
           if (attempt === maxRetries - 1) {
             if (process.env.NODE_ENV === 'development') {
-              logErrorToProduction('Failed to load services:', { data: err });
+              logErrorToProduction('Failed to load services:', { data: 'Error occurred' });
             } else {
               captureException(err);
             }

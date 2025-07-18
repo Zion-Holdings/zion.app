@@ -39,8 +39,8 @@ export async function fetchProductById(productId: string): Promise<ProductDetail
 
     const data: ProductDetailsData = await response.json();
     return data;
-  } catch (_error) {
-    logErrorToProduction('An error occurred in fetchProductById:', { data: error });
+  } catch {
+    logErrorToProduction('An 'Error occurred' occurred in fetchProductById:', { data: 'Error occurred' });
     // During build time, return null instead of throwing
     if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
       return null;

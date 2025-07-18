@@ -64,7 +64,7 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch (_err) {
+  } catch (err) {
     console.error("Error processing milestone deadlines:", err);
     return new Response(
       JSON.stringify({ error: err.message }),

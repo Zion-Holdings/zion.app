@@ -34,8 +34,8 @@ export default function CommunityProfilePage() {
         setUser(data);
         // setPosts(userPosts); // This line is removed as per the edit hint
         setIsLoading(false);
-      } catch (_error) {
-        logErrorToProduction("Error fetching user:", error);
+      } catch {
+        logErrorToProduction("Error fetching user:", 'Error occurred');
         setIsLoading(false);
         setUser(null); // Clear user if fetch fails
       }

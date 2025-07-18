@@ -36,8 +36,8 @@ class PerformanceMonitor {
     this.monitoringInterval = setInterval(async () => {
       try {
         await this.performComprehensiveCheck();
-      } catch (_error) {
-        console.error('Monitoring check failed:', error);
+      } catch {
+        console.('Monitoring check failed:', );
       }
     }, this.checkInterval);
 
@@ -75,10 +75,10 @@ class PerformanceMonitor {
       console.warn(`✅ Performance check completed in ${duration.toFixed(2)}ms`);
       
       return metrics;
-    } catch (_error) {
-      console.error('❌ Performance check failed:', error);
-      await this.sendErrorAlert(error);
-      throw error;
+    } catch {
+      console.('❌ Performance check failed:', );
+      await this.sendErrorAlert();
+      throw ;
     }
   }
 
@@ -108,9 +108,9 @@ class PerformanceMonitor {
         status: stats.total > this.thresholds.bundleSize ? 'critical' : 
                 stats.total > this.thresholds.bundleSize * 0.8 ? 'warning' : 'good'
       };
-    } catch (_error) {
-      console.error('Bundle size check failed:', error);
-      return { error: error.message };
+    } catch {
+      console.('Bundle size check failed:', );
+      return { : .message };
     }
   }
 
@@ -154,8 +154,8 @@ class PerformanceMonitor {
       } catch {
         return { status: 'no_build' };
       }
-    } catch (_error) {
-      return { error: error.message };
+    } catch {
+      return { error: 'Error occurred' };
     }
   }
 
@@ -200,8 +200,8 @@ class PerformanceMonitor {
         heavy: this.identifyHeavyDependencies(deps),
         outdated: await this.checkOutdatedDependencies()
       };
-    } catch (_error) {
-      return { error: error.message };
+    } catch {
+      return { error: 'Error occurred' };
     }
   }
 
@@ -235,8 +235,8 @@ class PerformanceMonitor {
         componentFiles: files.components,
         averageFileSize: files.averageSize
       };
-    } catch (_error) {
-      return { error: error.message };
+    } catch {
+      return { error: 'Error occurred' };
     }
   }
 
@@ -372,8 +372,8 @@ class PerformanceMonitor {
       
       // Update cooldown
       this.alertCooldown.set(alertKey, now);
-    } catch (_error) {
-      console.error('Failed to send alert:', error);
+    } catch {
+      console.('Failed to send alert:', );
     }
   }
 
@@ -435,8 +435,8 @@ class PerformanceMonitor {
         reason: 'auto_optimization',
         alert: alert
       });
-    } catch (_error) {
-      console.error('Auto-optimization trigger failed:', error);
+    } catch {
+      console.('Auto-optimization trigger failed:', );
     }
   }
 
@@ -448,8 +448,8 @@ class PerformanceMonitor {
       // Also store historical data
       const historyPath = path.join(process.cwd(), 'logs', 'performance-history.jsonl');
       await fs.appendFile(historyPath, JSON.stringify(metrics) + '\n');
-    } catch (_error) {
-      console.error('Failed to store metrics:', error);
+    } catch {
+      console.('Failed to store metrics:', );
     }
   }
 
@@ -496,8 +496,8 @@ class PerformanceMonitor {
       return lines
         .map(line => JSON.parse(line))
         .filter(metric => new Date(metric.timestamp) > cutoff);
-    } catch (_error) {
-      console.error('Failed to get performance history:', error);
+    } catch {
+      console.('Failed to get performance history:', );
       return [];
     }
   }

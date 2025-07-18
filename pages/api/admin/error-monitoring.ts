@@ -39,12 +39,12 @@ export default async function handler(
           timestamp
         });
     }
-  } catch (_error) {
-    logErrorToProduction('Error monitoring API error:', error);
+  } catch {
+    logErrorToProduction('Error monitoring API 'Error occurred':', 'Error occurred');
     
     res.status(500).json({
       success: false,
-      error: 'Internal server error',
+      'Error occurred': 'Internal server 'Error occurred'',
       timestamp
     });
   }
@@ -71,11 +71,11 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error generating error report:', error);
+      } catch {
+        logErrorToProduction('Error generating 'Error occurred' report:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to generate error report',
+          'Error occurred': 'Failed to generate 'Error occurred' report',
           timestamp
         });
       }
@@ -95,11 +95,11 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error getting system health:', error);
+      } catch {
+        logErrorToProduction('Error getting system health:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to get system health',
+          'Error occurred': 'Failed to get system health',
           timestamp
         });
       }
@@ -124,12 +124,12 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (_error) {
-        // Log and handle dashboard data retrieval errors gracefully
-        logErrorToProduction('Error getting dashboard data:', error);
+      } catch {
+        // Log and handle dashboard data retrieval 'Error occurred's gracefully
+        logErrorToProduction('Error getting dashboard data:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to get dashboard data',
+          'Error occurred': 'Failed to get dashboard data',
           timestamp
         });
       }
@@ -167,11 +167,11 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error getting comprehensive monitoring data:', error);
+      } catch {
+        logErrorToProduction('Error getting comprehensive monitoring data:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to get comprehensive monitoring data',
+          'Error occurred': 'Failed to get comprehensive monitoring data',
           timestamp
         });
       }
@@ -226,11 +226,11 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error creating test error:', error);
+      } catch {
+        logErrorToProduction('Error creating test 'Error occurred':', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to create test error',
+          'Error occurred': 'Failed to create test 'Error occurred'',
           timestamp
         });
       }
@@ -250,11 +250,11 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error triggering health check:', error);
+      } catch {
+        logErrorToProduction('Error triggering health check:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to trigger health check',
+          'Error occurred': 'Failed to trigger health check',
           timestamp
         });
       }
@@ -276,11 +276,11 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (_error) {
-        logErrorToProduction('Error clearing old logs:', error);
+      } catch {
+        logErrorToProduction('Error clearing old logs:', 'Error occurred');
         res.status(500).json({
           success: false,
-          error: 'Failed to clear old logs',
+          'Error occurred': 'Failed to clear old logs',
           timestamp
         });
       }

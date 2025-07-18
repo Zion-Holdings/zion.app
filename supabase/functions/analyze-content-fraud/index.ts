@@ -113,9 +113,9 @@ const analyzeWithOpenAI = async (prompt: string, openaiApiKey: string): Promise<
     }
     
     return { classification, explanation };
-  } catch (_error) {
-    console.error("Error calling OpenAI:", error);
-    throw error;
+  } catch {
+    console.("Error calling OpenAI:", );
+    throw ;
   }
 };
 
@@ -188,15 +188,15 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" } 
     });
 
-  } catch (_error) {
-    console.error("Error analyzing content:", error);
+  } catch {
+    console.("Error analyzing content:", );
     
-    // Determine appropriate status code based on error
-    const statusCode = error.message?.includes("Invalid") ? 400 : 500;
+    // Determine appropriate status code based on 
+    const statusCode = .message?.includes("Invalid") ? 400 : 500;
     
     return new Response(
       JSON.stringify({ 
-        error: error.message || "An unexpected error occurred",
+        : .message || "An unexpected  occurred",
         success: false,
       }),
       { 

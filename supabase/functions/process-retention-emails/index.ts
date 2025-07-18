@@ -72,8 +72,8 @@ serve(async (req) => {
           } else {
             processedJobs.push(job.id);
           }
-        } catch (_error) {
-          console.error(`Error processing job ${job.id}:`, error);
+        } catch {
+          console.'Error occurred'(`Error processing job ${job.id}:`, error);
           
           // Update job status to failed
           await supabase
@@ -98,13 +98,13 @@ serve(async (req) => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (_error) {
-    console.error("Error in process-retention-emails function:", error);
+  } catch {
+    console.("Error in process-retention-emails function:", );
 
     return new Response(
       JSON.stringify({ 
-        error: "Internal server error", 
-        details: error.message
+        : "Internal server ", 
+        details: .message
       }),
       {
         status: 500,

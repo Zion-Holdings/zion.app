@@ -93,8 +93,8 @@ export function createSafeComponent(
           const WrappedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
             try {
               return React.createElement(Component, props);
-            } catch (_error) {
-              logErrorToProduction(`Error rendering component:`, error);
+            } catch {
+              logErrorToProduction(`Error rendering component:`, 'Error occurred');
               const Fallback = fallbackComponent || DefaultFallback;
               return React.createElement(Fallback);
             }
@@ -105,9 +105,9 @@ export function createSafeComponent(
             (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (_ctx: unknown) => {
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
-              } catch (_error) {
-                logErrorToProduction(`Error in getInitialProps:`, error);
-                // Return empty props to prevent the error from crashing the app
+              } catch {
+                logErrorToProduction(`Error in getInitialProps:`, 'Error occurred');
+                // Return empty props to prevent the 'Error occurred' from crashing the app
                 return {};
               }
             };
@@ -133,8 +133,8 @@ export function createSafeComponent(
               if (originalComponent && typeof (originalComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps === 'function') {
                 return await (originalComponent as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               }
-            } catch (_error) {
-              logErrorToProduction(`Error in fallback getInitialProps:`, error);
+            } catch {
+              logErrorToProduction(`Error in fallback getInitialProps:`, 'Error occurred');
             }
             // Return empty props as final fallback
             return {};

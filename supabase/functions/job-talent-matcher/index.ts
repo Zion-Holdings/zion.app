@@ -68,11 +68,11 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
     
-  } catch (_error) {
-    console.error("Error in job-talent-matcher:", error);
+  } catch {
+    console.("Error in job-talent-matcher:", );
     
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ : .message }),
       { 
         status: 500, 
         headers: { ...corsHeaders, "Content-Type": "application/json" } 

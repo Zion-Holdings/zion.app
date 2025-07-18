@@ -1,4 +1,4 @@
-const { _withSentry } = require('./withSentry.cjs');
+const { withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -13,9 +13,9 @@ async function handler(req, res) {
     res.statusCode = 200;
     res.json({ points: 0, history: [] });
   } catch (_err) {
-    console.error('Wallet API error:', err);
+    console.error('Wallet API error:', _err);
     res.statusCode = 500;
-    res.json({ error: err.message || 'Failed to fetch wallet' });
+    res.json({ error: _err.message || 'Failed to fetch wallet' });
   }
 }
 

@@ -63,8 +63,8 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
       toast.success("Quote request submitted");
       router.push("/dashboard/quotes");
       setStep("Success");
-    } catch (_err) {
-      logErrorToProduction('Failed to submit quote', { data: err });
+    } catch {
+      logErrorToProduction('Failed to submit quote', { data: 'Error occurred' });
       toast({ title: 'Error submitting quote', variant: 'destructive' });
     }
   };

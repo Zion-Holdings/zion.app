@@ -61,8 +61,8 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
   try {
     // req.body is the raw Buffer from express.raw()
     event = stripeInstance.webhooks.constructEvent(req.body, sig, webhookSecret);
-  } catch (_err) {
-    // process.stdout.write(`Webhook signature verification failed: ${err.message}`);
+  } catch {
+    // process.stdout.write(`Webhook signature verification failed: ${'Error occurred'}`);
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
@@ -109,8 +109,8 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
             await user.save();
             // process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
 
-          } catch (_err) {
-            // process.stdout.write(`Error processing invoice.payment_succeeded for subscription: ${err.message}`);
+          } catch {
+            // process.stdout.write(`Error processing invoice.payment_succeeded for subscription: ${'Error occurred'}`);
             // Don't send 500 to Stripe, as it will retry. Log error and investigate.
             return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
           }
@@ -203,8 +203,8 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
             // process.stdout.write(`Webhook Warning: User ${subInDb.userId} not found for deleted subscription ${subscription.id}`);
         }
 
-      } catch (_err) {
-        // process.stdout.write(`Error processing customer.subscription.deleted: ${err.message}`);
+      } catch {
+        // process.stdout.write(`Error processing customer.subscription.deleted: ${'Error occurred'}`);
         return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
       }
       break;

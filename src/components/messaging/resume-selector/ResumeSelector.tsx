@@ -32,8 +32,8 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
       setIsLoading(true);
       try {
         await fetchResume();
-      } catch (_error) {
-        logErrorToProduction('Error loading resumes:', { data: error });
+      } catch {
+        logErrorToProduction('Error loading resumes:', { data: 'Error occurred' });
       } finally {
         setIsLoading(false);
       }
@@ -141,8 +141,8 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
         title: "Success!",
         description: "Your resume has been downloaded.",
       });
-    } catch (_error) {
-      logErrorToProduction('Error downloading PDF:', { data: error });
+    } catch {
+      logErrorToProduction('Error downloading PDF:', { data: 'Error occurred' });
       toast({
         title: "Download failed",
         description: "There was an error downloading your resume.",

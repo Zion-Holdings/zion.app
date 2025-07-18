@@ -53,8 +53,8 @@ export function ProjectMilestonesContent() {
         if (projectData) {
           setProject(projectData);
         }
-      } catch (_error) {
-        logErrorToProduction('Error loading project:', { data: error });
+      } catch {
+        logErrorToProduction('Error loading project:', { data: 'Error occurred' });
       } finally {
         setIsLoading(false);
       }

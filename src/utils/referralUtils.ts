@@ -69,8 +69,8 @@ export async function trackReferral(userId: string, email: string): Promise<bool
       safeStorage.removeItem('referral_code');
       return true;
     }
-  } catch (_error) {
-    logErrorToProduction('Error tracking referral:', { data: error });
+  } catch {
+    logErrorToProduction('Error tracking referral:', { data: 'Error occurred' });
   }
   return false;
 }

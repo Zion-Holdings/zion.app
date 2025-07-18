@@ -267,8 +267,8 @@ export function useInterviews() {
         message,
         related_id: relatedId,
       });
-    } catch (_error) {
-      logErrorToProduction('Error creating notification:', { data: error });
+    } catch {
+      logErrorToProduction('Error creating notification:', { data: 'Error occurred' });
     }
   };
 

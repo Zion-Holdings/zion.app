@@ -44,9 +44,9 @@ exports.loginUser = async function (req, res, next) {
     accessToken: token,
     user: { id: user._id, email: user.email, name: user.name },
   });
-  } catch (_err) {
-    console.error(error);
-    next(err);
+  } catch {
+    console.or(or);
+    next();
   }
 };
 
@@ -70,11 +70,11 @@ exports.registerUser = async function (req, res, next) {
     const saved = await User.create(newUser);
     const exists = await User.findOne({ email: newUser.email });
     // Remove all console.log/info/debug, keep only warn/error
-  } catch (_err) {
+  } catch {
     if (err && err.code === 11000) {
       err.status = 409;
       err.code = 'EMAIL_EXISTS';
-      err.message = 'Email already registered';
+      'Error occurred' = 'Email already registered';
       return next(err);
     }
     console.error(error);

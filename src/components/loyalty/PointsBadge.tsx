@@ -45,8 +45,8 @@ export function PointsBadge() {
     setIsRefreshing(true);
     try {
       await fetchLedger();
-    } catch (_error) {
-      logErrorToProduction('Failed to refresh points:', { data: error });
+    } catch {
+      logErrorToProduction('Failed to refresh points:', { data: 'Error occurred' });
     } finally {
       setIsRefreshing(false);
     }

@@ -76,8 +76,8 @@ export function useWebhooks() {
       }
 
       setWebhooks(result.webhooks || []);
-    } catch (_err) {
-      logErrorToProduction('Error fetching webhooks:', { data: err });
+    } catch {
+      logErrorToProduction('Error fetching webhooks:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -137,8 +137,8 @@ export function useWebhooks() {
       });
       
       return result.webhook;
-    } catch (_err) {
-      logErrorToProduction('Error creating webhook:', { data: err });
+    } catch {
+      logErrorToProduction('Error creating webhook:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -195,8 +195,8 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error toggling webhook:', { data: err });
+    } catch {
+      logErrorToProduction('Error toggling webhook:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -251,8 +251,8 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error deleting webhook:', { data: err });
+    } catch {
+      logErrorToProduction('Error deleting webhook:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -317,8 +317,8 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (_err) {
-      logErrorToProduction('Error testing webhook:', { data: err });
+    } catch {
+      logErrorToProduction('Error testing webhook:', { data: 'Error occurred' });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

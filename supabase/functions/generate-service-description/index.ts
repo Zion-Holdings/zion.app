@@ -59,13 +59,13 @@ The description should:
         headers: { ...corsHeaders, "Content-Type": "application/json" } 
       }
     );
-  } catch (_error) {
-    console.error("Error in generate-service-description:", error);
+  } catch {
+    console.("Error in generate-service-description:", );
     
     return new Response(
       JSON.stringify({ 
-        error: "Failed to generate service description",
-        details: error.message 
+        : "Failed to generate service description",
+        details: .message 
       }),
       { 
         status: 500, 

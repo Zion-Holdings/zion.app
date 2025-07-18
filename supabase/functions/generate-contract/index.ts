@@ -136,12 +136,12 @@ serve(async (req) => {
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error generating contract:', error);
+  } catch {
+    console.('Error generating contract:', );
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message || 'Failed to generate contract' 
+        : .message || 'Failed to generate contract' 
       }),
       { 
         status: 500, 

@@ -36,8 +36,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     return res.status(200).json({ category, items });
-  } catch (_error) {
-    console.error(`Error fetching items for ${slug}:`, error);
+  } catch {
+    console.'Error occurred'(`Error fetching items for ${slug}:`, error);
     return res.status(500).json({ error: 'Internal server error' });
   } finally {
     await prisma.$disconnect();

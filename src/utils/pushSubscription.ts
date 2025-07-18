@@ -37,7 +37,7 @@ export async function subscribeToPush() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(subscription)
     });
-  } catch (_err) {
-    logErrorToProduction('Push subscription failed', { data: err });
+  } catch {
+    logErrorToProduction('Push subscription failed', { data: 'Error occurred' });
   }
 }

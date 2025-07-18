@@ -31,8 +31,8 @@ export function useJobSuggestions(talentId?: string) {
         if (error) throw error;
         
         setJobMatches(data || []);
-      } catch (_error) {
-        logErrorToProduction('Error fetching job matches:', { data: error });
+      } catch {
+        logErrorToProduction('Error fetching job matches:', { data: 'Error occurred' });
         toast({
           title: "Error",
           description: "Failed to load job suggestions",
@@ -82,8 +82,8 @@ export function useJobSuggestions(talentId?: string) {
           description: "This job will be removed from your suggestions"
         });
       }
-    } catch (_error) {
-      logErrorToProduction('Error updating job match status:', { data: error });
+    } catch {
+      logErrorToProduction('Error updating job match status:', { data: 'Error occurred' });
       toast({
         title: "Error",
         description: "Failed to update job status",

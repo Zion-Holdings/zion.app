@@ -54,10 +54,6 @@ export default function TalentDirectory() {
     setSortOption,
     isMobileFilterOpen,
     setIsMobileFilterOpen,
-    _isHireModalOpen,
-    setIsHireModalOpen,
-    _selectedTalent,
-    setSelectedTalent,
     expandedSections,
     error,
     isAuthenticated,
@@ -68,7 +64,11 @@ export default function TalentDirectory() {
     toggleSection,
   } = useTalentDirectory(currentPage, itemsPerPage);
 
-  const { _user } = useAuth();
+  // Local state for modal and selected talent
+  const [_isHireModalOpen, setIsHireModalOpen] = useState(false);
+  const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(null);
+
+  const { user } = useAuth();
   const isAdmin = user?.userType === 'admin';
 
   useEffect(() => {
@@ -108,7 +108,18 @@ export default function TalentDirectory() {
     if (sort && SORT_OPTIONS.some((o) => o.value === sort))
       setSortOption(sort);
     setInitialized(true);
-  }, [router.isReady, router.query, initialized]);
+  }, [
+    router.isReady, 
+    router.query, 
+    initialized, 
+    setSearchTerm, 
+    toggleSkill, 
+    toggleAvailability, 
+    toggleRegion, 
+    setPriceRange, 
+    setExperienceRange, 
+    setSortOption
+  ]);
 
   // Persist filters to query parameters
   useEffect(() => {
@@ -146,14 +157,21 @@ export default function TalentDirectory() {
     sortOption,
     currentPage,
     initialized,
+    setSearchTerm,
+    setExperienceRange,
+    setPriceRange,
+    setSortOption,
+    toggleAvailability,
+    toggleRegion,
+    toggleSkill,
   ]); // Fixed dependencies
 
-  const handleRequestHire = (_talent: TalentProfile) => {
+  const handleRequestHire = (talent: TalentProfile) => {
     setSelectedTalent(talent);
     setIsHireModalOpen(true);
   };
 
-  const viewProfile = (_id: string) => {
+  const viewProfile = (id: string) => {
     // Navigate to the talent profile page
     router.push(`/talent/${id}`); // Changed to router.push
   };

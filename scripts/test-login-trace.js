@@ -127,10 +127,10 @@ async function makeLoginRequest(email, password) {
       data,
       success: response.ok
     };
-  } catch (_error) {
+  } catch {
     return {
       status: 0,
-      data: { error: error.message },
+      data: { error: 'Error occurred' },
       success: false
     };
   }

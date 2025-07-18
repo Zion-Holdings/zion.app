@@ -36,8 +36,8 @@ export const _getStaticProps: GetStaticProps<CategoriesProps> = async () => {
       logInfo(`API request failed with status ${res.status}, falling back to default categories.`);
       return { props: { categories: CATEGORIES } };
     }
-  } catch (_error) {
-    logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
+  } catch {
+    logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: 'Error occurred' });
     return { props: { categories: CATEGORIES } };
   }
 };

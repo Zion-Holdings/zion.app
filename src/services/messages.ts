@@ -41,8 +41,8 @@ export async function sendMessage({
 
     const data = await response.json();
     return data;
-  } catch (_error) {
-    logErrorToProduction('Failed to send message:', { data: error });
+  } catch {
+    logErrorToProduction('Failed to send message:', { data: 'Error occurred' });
     return {
       success: false,
       error: error instanceof Error ? error.message : String(error),

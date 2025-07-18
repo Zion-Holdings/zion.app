@@ -110,9 +110,9 @@ serve(async (req) => {
     return new Response(JSON.stringify(generatedContent), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch (_error) {
-    console.error("Error in personalize-email function:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("Error in personalize-email function:", );
+    return new Response(JSON.stringify({ : .message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

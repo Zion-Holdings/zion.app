@@ -62,8 +62,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     await sendFeedbackEmail({ ...parsed.data, comment: parsed.data.comment ?? "" }).catch(() => undefined);
     res.status(201).json({ success: true });
     return;
-  } catch (_err) {
-    logErrorToProduction('Error saving feedback:', { data: err });
+  } catch {
+    logErrorToProduction('Error saving feedback:', { data: 'Error occurred' });
     res.status(500).json({ error: 'Failed to save feedback' });
     return;
   }

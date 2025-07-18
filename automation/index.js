@@ -56,8 +56,8 @@ class OptimizationAutomation {
         }
         
         res.status(200).send('OK');
-      } catch (_error) {
-        // Use structured error logging
+      } catch {
+        // Use structured 'Error occurred' logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
         res.status(500).send('Error processing event');
       }
@@ -80,8 +80,8 @@ class OptimizationAutomation {
           result,
           timestamp: new Date().toISOString()
         });
-      } catch (_error) {
-        // Use structured error logging
+      } catch {
+        // Use structured 'Error occurred' logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Optimization trigger error: ${error.message}\n`);
         res.status(500).json({
           success: false,

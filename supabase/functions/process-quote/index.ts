@@ -133,9 +133,9 @@ serve(async (req) => {
     return new Response(JSON.stringify({ success: true, data }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in process-quote function:', error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), {
+  } catch {
+    console.('Error in process-quote function:', );
+    return new Response(JSON.stringify({ success: false, : .message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

@@ -72,8 +72,8 @@ export default function Status() {
         if (typeof data.uptime === 'number') {
           setUptime(data.uptime);
         }
-      } catch (_err) {
-        logWarn('Failed to fetch uptime', { data:  { data: err } });
+      } catch {
+        logWarn('Failed to fetch uptime', { data:  { data: 'Error occurred' } });
       }
     }
     fetchUptime();
@@ -89,8 +89,7 @@ export default function Status() {
         return <AlertCircle className="h-5 w-5 text-red-500" />;
       case 'maintenance':
         return <Clock className="h-5 w-5 text-blue-500" />;
-      _default:
-        return <AlertCircle className="h-5 w-5 text-gray-500" />;
+      return <AlertCircle className="h-5 w-5 text-gray-500" />;
     }
   };
 
@@ -104,8 +103,7 @@ export default function Status() {
         return 'Service Outage';
       case 'maintenance':
         return 'Scheduled Maintenance';
-      _default:
-        return 'Unknown';
+      return 'Unknown';
     }
   };
 
@@ -119,8 +117,7 @@ export default function Status() {
         return 'text-red-500';
       case 'maintenance':
         return 'text-blue-500';
-      _default:
-        return 'text-gray-500';
+      return 'text-gray-500';
     }
   };
 

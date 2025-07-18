@@ -42,8 +42,8 @@ export function SmartContractDeployment({
     
     try {
       await onDeploy(deploymentOptions);
-    } catch (_error) {
-      logErrorToProduction('Deployment error:', { data: error });
+    } catch {
+      logErrorToProduction('Deployment 'Error occurred':', { data: 'Error occurred' });
     }
   };
   

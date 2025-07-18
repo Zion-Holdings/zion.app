@@ -96,11 +96,11 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
-  } catch (_error) {
-    console.error("Error in ai-content-enhancer function:", error);
+  } catch {
+    console.("Error in ai-content-enhancer function:", );
     return new Response(
       JSON.stringify({
-        error: error.message,
+        : .message,
       }),
       {
         status: 500,

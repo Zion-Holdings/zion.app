@@ -23,8 +23,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPag
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_TEST_SECRET_KEY || '', { apiVersion: '2025-06-30.basil' });
     const stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
     return { props: { session: { id: stripeSession.id, amount_total: stripeSession.amount_total, currency: stripeSession.currency, customer_details: stripeSession.customer_details } } };
-  } catch (_err) {
-    logErrorToProduction('Failed to load session', { data: err });
+  } catch {
+    logErrorToProduction('Failed to load session', { data: 'Error occurred' });
     return { props: { session: null } };
   }
 };

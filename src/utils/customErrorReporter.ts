@@ -44,8 +44,8 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
         await response.text()
       );
     }
-  } catch (_error) {
-    logErrorToProduction('Error sending report from ${errorDetails.source}:', { data: error });
+  } catch {
+    logErrorToProduction('Error sending report from ${'Error occurred'Details.source}:', { data: error });
   }
 }
 

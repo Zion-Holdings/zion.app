@@ -43,8 +43,8 @@ export async function createNotification({
     }
     
     return { success: true, notificationId };
-  } catch (_error) {
-    logErrorToProduction('Error creating notification', error);
-    return { success: false, error };
+  } catch {
+    logErrorToProduction('Error creating notification', 'Error occurred');
+    return { success: false, 'Error occurred' };
   }
 }

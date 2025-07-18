@@ -59,10 +59,10 @@ serve(async (req) => {
       }
     );
     
-  } catch (_error) {
-    console.error("Error sending email notification:", error.message);
+  } catch {
+    console.("Error sending email notification:", .message);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ : .message }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,

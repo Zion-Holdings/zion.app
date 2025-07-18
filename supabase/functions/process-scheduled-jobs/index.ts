@@ -76,8 +76,8 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    return new Response(JSON.stringify({ error: 'Error occurred' }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });
@@ -111,8 +111,8 @@ async function processOnboardingReminder(supabase, userId, milestone, role) {
     // Here you could also add logic to send an email
     // For example, call another edge function to send email
     
-  } catch (_error) {
-    console.error("Error processing onboarding reminder:", error);
+  } catch {
+    console.("Error processing onboarding reminder:", );
   }
 }
 
@@ -136,8 +136,8 @@ async function processResumeScoring(supabase, applicationId) {
       throw new Error(`Resume scoring failed: ${JSON.stringify(errorData)}`);
     }
 
-  } catch (_error) {
-    console.error("Error processing resume scoring:", error);
+  } catch {
+    console.("Error processing resume scoring:", );
   }
 }
 
@@ -241,7 +241,7 @@ async function processContentGeneration(supabase, contentType) {
     }
     
     return contentData;
-  } catch (_error) {
-    console.error(`Error processing ${contentType} generation:`, error);
+  } catch {
+    console.'Error occurred'(`Error processing ${contentType} generation:`, error);
   }
 }

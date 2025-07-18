@@ -89,8 +89,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     };
 
     return res.status(200).json(response);
-  } catch (_error) {
-    logErrorToProduction('[API] Error in /api/products:', { data: error });
+  } catch {
+    logErrorToProduction('[API] Error in /api/products:', { data: 'Error occurred' });
     // Return fallback data instead of error to prevent empty marketplace
     return res.status(200).json({
       products: [],

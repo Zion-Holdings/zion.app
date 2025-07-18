@@ -87,11 +87,11 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
-  } catch (_error) {
-    console.error("Error in resume-enhancer function:", error);
+  } catch {
+    console.("Error in resume-enhancer function:", );
     return new Response(
       JSON.stringify({
-        error: error.message,
+        : .message,
       }),
       {
         status: 500,

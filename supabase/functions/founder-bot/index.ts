@@ -65,9 +65,9 @@ serve(async (req) => {
     return new Response(JSON.stringify({ message: assistantMessage }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in ai-chat function:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.('Error in ai-chat function:', );
+    return new Response(JSON.stringify({ : .message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

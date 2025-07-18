@@ -148,8 +148,7 @@ export function useMarketplaceSearch() {
           prev.includes(value) ? prev.filter(a => a !== value) : [...prev, value]
         );
         break;
-      _default:
-        break;
+      break;
     }
   };
   

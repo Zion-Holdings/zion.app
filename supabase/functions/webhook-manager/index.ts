@@ -81,9 +81,9 @@ serve(async (req) => {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error processing request:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error processing request:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -118,9 +118,9 @@ async function createWebhook(userId: string, name: string, url: string, eventTyp
       status: 201,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in createWebhook:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error in createWebhook:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -147,9 +147,9 @@ async function getUserWebhooks(userId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in getUserWebhooks:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error in getUserWebhooks:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -180,9 +180,9 @@ async function toggleWebhook(userId: string, webhookId: string, isActive: boolea
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in toggleWebhook:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error in toggleWebhook:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -220,9 +220,9 @@ async function deleteWebhook(userId: string, webhookId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (_error) {
-    console.error('Error in deleteWebhook:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error in deleteWebhook:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -294,9 +294,9 @@ async function testWebhook(userId: string, webhookId: string, eventType: string)
         headers: { 'Content-Type': 'application/json' },
       });
     }
-  } catch (_error) {
-    console.error('Error in testWebhook:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch {
+    console.('Error in testWebhook:', );
+    return new Response(JSON.stringify({ : 'Internal server ' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

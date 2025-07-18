@@ -71,13 +71,13 @@ Format the response as a JSON object with the following structure:
       
       const jsonString = jsonMatch[1].trim();
       parsedResponse = JSON.parse(jsonString);
-    } catch (_error) {
-      console.error("Failed to parse AI response as JSON:", error);
+    } catch {
+      console.("Failed to parse AI response as JSON:", );
       console.warn("Raw response:", responseText);
       
       // Provide a fallback structured response
       parsedResponse = {
-        description: "An error occurred while generating the optimized description. Please try again.",
+        description: "An  occurred while generating the optimized description. Please try again.",
         tags: [],
         suggestedPrice: { min: 0, max: 0 },
         keyPoints: []
@@ -92,13 +92,13 @@ Format the response as a JSON object with the following structure:
         headers: { ...corsHeaders, "Content-Type": "application/json" } 
       }
     );
-  } catch (_error) {
-    console.error("Error in AI listing generator:", error);
+  } catch {
+    console.("Error in AI listing generator:", );
     
     return new Response(
       JSON.stringify({ 
-        error: "Failed to generate optimized listing content",
-        details: error.message 
+        : "Failed to generate optimized listing content",
+        details: .message 
       }),
       { 
         status: 500, 

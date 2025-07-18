@@ -96,8 +96,8 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
       setStartDate(new Date());
       setEndDate(undefined);
       setCurrentStep('details');
-    } catch (_error) {
-      logErrorToProduction('Error submitting quote:', { data: error });
+    } catch {
+      logErrorToProduction('Error submitting quote:', { data: 'Error occurred' });
       toast({
         title: "Error",
         description: "There was an error submitting your quote request. Please try again.",

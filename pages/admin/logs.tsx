@@ -66,8 +66,7 @@ const LogLevelIcon = ({ level }: { level: LogEntry['level'] }) => {
       return <AlertCircle className="h-4 w-4 text-red-500" />;
     case 'critical':
       return <XCircle className="h-4 w-4 text-red-700" />;
-    _default:
-      return <Info className="h-4 w-4 text-gray-500" />;
+    return <Info className="h-4 w-4 text-gray-500" />;
   }
 };
 
@@ -137,8 +136,8 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
         const data = await response.json();
         setLogs(data.logs);
       }
-    } catch (_error) {
-      logErrorToProduction('Failed to refresh logs:', error);
+    } catch {
+      logErrorToProduction('Failed to refresh logs:', 'Error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -430,12 +429,12 @@ export const _getServerSideProps: GetServerSideProps = async () => {
         lastUpdated: new Date().toISOString(),
       },
     };
-  } catch (_error) {
-            logErrorToProduction('Error reading logs:', error);
+  } catch {
+            logErrorToProduction('Error reading logs:', 'Error occurred');
     return {
       props: {
         logs: [],
-        errorCount: 0,
+        'Error occurred'Count: 0,
         warningCount: 0,
         totalCount: 0,
         lastUpdated: new Date().toISOString(),

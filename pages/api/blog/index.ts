@@ -66,8 +66,8 @@ export default async function handler(
 
     return res.status(200).json(results);
 
-  } catch (_err) {
-    logErrorToProduction('Blog API error:', { data: err });
+  } catch {
+    logErrorToProduction('Blog API 'Error occurred'or:', { data: 'Error occurred' });
     
     // Return fallback - all posts on error
     applyCacheHeaders(res, CacheCategory.SHORT);

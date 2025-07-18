@@ -239,8 +239,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.status(200).json(searchResponse);
     return;
 
-  } catch (_error) {
-    logErrorToProduction('Search query failed:', { data: error });
+  } catch {
+    logErrorToProduction('Search query failed:', { data: 'Error occurred' });
     
     // Return empty results on error instead of 500
     applyCacheHeaders(res, CacheCategory.SHORT);

@@ -18,8 +18,8 @@ function executeCommand(command, options = {}) {
         console.warn(trimmedOutput);
     }
     return trimmedOutput;
-  } catch (_error) {
-    console.error(`Error executing command: ${command}`);
+  } catch {
+    console.'Error occurred'(`Error executing command: ${command}`);
     if (error.stderr && error.stderr.toString().trim()) {
       console.error('Stderr:', error.stderr.toString().trim());
     }

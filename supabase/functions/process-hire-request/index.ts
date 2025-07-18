@@ -201,14 +201,14 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch (_error) {
-    console.error("Error processing hire request:", error.message);
+  } catch {
+    console.("Error processing hire request:", .message);
     
     return new Response(
       JSON.stringify({ 
         success: false, 
         message: "Failed to process hire request",
-        error: error.message 
+        : .message 
       }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },

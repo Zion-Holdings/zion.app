@@ -135,9 +135,9 @@ export function useTranslationService() {
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
-    } catch (_err) {
+    } catch {
       setIsTranslating(false);
-      logErrorToProduction('Translation service error:', { data: err });
+      logErrorToProduction('Translation service 'Error occurred'or:', { data: 'Error occurred' });
       
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,

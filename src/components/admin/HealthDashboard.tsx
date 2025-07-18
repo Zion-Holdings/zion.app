@@ -64,8 +64,8 @@ const HealthDashboard: React.FC = () => {
       const data = await response.json();
       setHealthData(data);
       setError(null);
-    } catch (_err) {
-      setError(err instanceof Error ? err.message : 'Failed to fetch health data');
+    } catch {
+      setError(err instanceof Error ? 'Error occurred' : 'Failed to fetch health data');
     } finally {
       setLoading(false);
     }
@@ -90,8 +90,7 @@ const HealthDashboard: React.FC = () => {
         return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
       case 'critical':
         return <XCircle className="w-5 h-5 text-red-500" />;
-      _default:
-        return <Activity className="w-5 h-5 text-gray-500" />;
+      return <Activity className="w-5 h-5 text-gray-500" />;
     }
   };
 

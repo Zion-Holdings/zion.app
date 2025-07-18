@@ -125,9 +125,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("Checkout error:", error.message);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("Checkout :", .message);
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

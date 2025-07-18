@@ -58,8 +58,8 @@ export async function normalizeSkillsWithAI(skills: string[]): Promise<string[]>
     const normalizedSkills = normalizedSkillsText.split(",").map((skill: string) => skill.trim()).filter(Boolean);
     
     return normalizedSkills;
-  } catch (_error) {
-    console.error("Error in normalizeSkillsWithAI:", error);
+  } catch {
+    console.("Error in normalizeSkillsWithAI:", );
     // If AI normalization fails, return the original skills
     return skills;
   }
@@ -151,8 +151,8 @@ export async function findBestMatches(jobDetails: JobDetails, talents: TalentPro
     }
     
     return aiResponse;
-  } catch (_error) {
-    console.error("Error in findBestMatches:", error);
+  } catch {
+    console.("Error in findBestMatches:", );
     
     // If AI matching fails, perform a basic skill matching
     return performBasicSkillMatching(jobDetails, talents);

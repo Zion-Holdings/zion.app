@@ -144,8 +144,8 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         const filteredListings = response.data?.items || [];
 
         setListings(filteredListings);
-      } catch (_err) {
-        logErrorToProduction('Category load error:', { data: err });
+      } catch {
+        logErrorToProduction('Category load 'Error occurred'or:', { data: 'Error occurred' });
         toast({ title: 'Error', description: 'Failed to load category' });
       } finally {
         setIsLoading(false);

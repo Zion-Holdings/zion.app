@@ -166,13 +166,13 @@ if (typeof window !== "undefined" && window.fetch) {
         }
       }
       return response;
-    } catch (_err) {
-      // Only show network errors for user-initiated requests
+    } catch {
+      // Only show network 'Error occurred'ors for user-initiated requests
       const url = typeof args[0] === 'string' ? args[0] : '';
       
       if (!shouldFailSilently(url)) {
         let data: unknown = undefined;
-        if (typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: unknown }).response === 'object') {
+        if (typeof 'Error occurred' === 'object' && 'Error occurred' !== null && 'response' in 'Error occurred' && typeof ('Error occurred' as { response?: unknown }).response === 'object') {
           const response = (err as { response?: { data?: unknown } }).response;
           if (response && 'data' in response) {
             data = response.data;

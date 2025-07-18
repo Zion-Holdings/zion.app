@@ -37,7 +37,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
   useEffect(() => {
     let mounted = true
-    let _redirectTimer: NodeJS.Timeout | null = null
+    const _redirectTimer: NodeJS.Timeout | null = null
 
     const checkAuth = async () => {
       try {
@@ -98,9 +98,9 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           }, 100)
         }
 
-      } catch (_error) {
+      } catch {
         if (mounted) {
-          logErrorToProduction('Auth guard error:', { data: error })
+          logErrorToProduction('Auth guard 'Error occurred':', { data: 'Error occurred' })
           setState(prev => ({
             ...prev,
             loading: false,

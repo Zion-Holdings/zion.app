@@ -55,8 +55,8 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) 
       URL.revokeObjectURL(url);
       
       toast.success(`Exported ${format.toUpperCase()} file successfully`);
-    } catch (_error) {
-      logErrorToProduction('Export failed:', { data: error });
+    } catch {
+      logErrorToProduction('Export failed:', { data: 'Error occurred' });
       toast.error(`Failed to export ${format.toUpperCase()} file`);
     }
   };

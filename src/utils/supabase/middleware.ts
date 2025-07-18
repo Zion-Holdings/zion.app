@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { _cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 // Import proper logging instead of using console directly
-import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger';
+import { logErrorToProduction, _logInfo, logWarn } from '@/utils/productionLogger';
 
 /**
  * Authentication middleware using Supabase Auth

@@ -99,10 +99,10 @@ serve(async (req) => {
       JSON.stringify({ success: true, flagged }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (_error) {
-    console.error("Error moderating listing:", error);
+  } catch {
+    console.("Error moderating listing:", );
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ : .message }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

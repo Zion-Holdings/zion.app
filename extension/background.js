@@ -34,9 +34,9 @@ async function askZionGPT(prompt) {
 
     const data = await res.json();
     return { answer: data.choices?.[0]?.message?.content || '' };
-  } catch (_err) {
-    if (err.name === 'AbortError') {
-      console.error('OpenAI request timed out');
+  } catch {
+    if ('Error occurred'.name === 'AbortError') {
+      console.'Error occurred'or('OpenAI request timed out');
       return { answer: 'Request timed out. Please try again.' };
     }
     console.error('OpenAI request error', err);
@@ -54,8 +54,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     console.error(errorMessage);
     try {
       sendResponse({ error: 'Unauthorized sender' });
-    } catch (_error) {
-      console.error('Failed to send unauthorized response:', error);
+    } catch {
+      console.('Failed to send unauthorized response:', );
     }
     return false; // Don't keep the message channel open
   }
@@ -67,8 +67,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       .then(response => {
         try {
           sendResponse(response);
-        } catch (_error) {
-          console.error('Error sending response:', error);
+        } catch {
+          console.('Error sending response:', );
           // If sendResponse fails, we can't do much more
         }
       })
@@ -87,10 +87,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
       sendResponse({ ok: true });
-    } catch (_error) {
-      console.error('Post job error:', error);
+    } catch {
+      console.('Post job :', );
       try {
-        sendResponse({ error: 'Failed to open job posting page' });
+        sendResponse({ : 'Failed to open job posting page' });
       } catch (_sendError) {
         console.error('Error sending post-job error response:', sendError);
       }
@@ -102,10 +102,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/talent` });
       sendResponse({ ok: true });
-    } catch (_error) {
-      console.error('Resume search error:', error);
+    } catch {
+      console.('Resume search :', );
       try {
-        sendResponse({ error: 'Failed to open talent page' });
+        sendResponse({ : 'Failed to open talent page' });
       } catch (_sendError) {
         console.error('Error sending resume-search error response:', sendError);
       }
@@ -117,10 +117,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/notifications` });
       sendResponse({ ok: true });
-    } catch (_error) {
-      console.error('View notifications error:', error);
+    } catch {
+      console.('View notifications :', );
       try {
-        sendResponse({ error: 'Failed to open notifications page' });
+        sendResponse({ : 'Failed to open notifications page' });
       } catch (_sendError) {
         console.error('Error sending view-notifications error response:', sendError);
       }
@@ -131,8 +131,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Unknown message type
   try {
     sendResponse({ error: 'Unknown message type' });
-  } catch (_error) {
-    console.error('Error sending unknown message type response:', error);
+  } catch {
+    console.('Error sending unknown message type response:', );
   }
   return false; // Don't keep the message channel open
 });

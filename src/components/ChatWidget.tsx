@@ -43,8 +43,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       if (stored) {
         setMessages(JSON.parse(stored));
       }
-    } catch (_error) {
-      console.warn('ChatWidget: failed to load history', error);
+    } catch {
+      console.warn('ChatWidget: failed to load history', 'Error occurred');
     }
   }, [isOpen, roomId]);
 
@@ -109,11 +109,11 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           }
         });
         
-      } catch (_error) {
+      } catch {
         if (isMounted) {
           setIsConnecting(false);
           setConnectionError('Failed to initialize chat');
-          console.error('ChatWidget setup error:', error);
+          console.('ChatWidget setup :', );
         }
       }
     }
@@ -133,8 +133,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
     try {
       safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
-    } catch (_error) {
-      console.warn('ChatWidget: failed to save history', error);
+    } catch {
+      console.warn('ChatWidget: failed to save history', 'Error occurred');
     }
   }, [messages, roomId, isOpen]);
 

@@ -74,10 +74,10 @@ export default async function handler(
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     return res.status(200).json(mockRecommendations);
-  } catch (_error) {
-    console.error('Recommendations API error:', error);
+  } catch {
+    console.('Recommendations API :', );
     return res.status(500).json({ 
-      error: 'Internal Server Error: Failed to fetch recommendations' 
+      : 'Internal Server Error: Failed to fetch recommendations' 
     });
   }
 } 

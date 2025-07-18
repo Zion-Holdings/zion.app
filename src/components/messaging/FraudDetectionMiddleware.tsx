@@ -102,8 +102,8 @@ export const _FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> 
       
       // Message is considered safe
       return { isSafe: true };
-    } catch (_error) {
-      logErrorToProduction('Error in fraud detection:', { data: error });
+    } catch {
+      logErrorToProduction('Error in fraud detection:', { data: 'Error occurred' });
       // On error, let the message pass through but log the error
       return { isSafe: true };
     }

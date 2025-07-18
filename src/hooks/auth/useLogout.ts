@@ -23,8 +23,8 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
 
       // Update state
       setUser(null);
-    } catch (_error) {
-      logErrorToProduction('Error during logout:', { data: error });
+    } catch {
+      logErrorToProduction('Error during logout:', { data: 'Error occurred' });
     }
   };
 

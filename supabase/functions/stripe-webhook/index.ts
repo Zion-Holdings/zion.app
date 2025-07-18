@@ -28,8 +28,8 @@ serve(async (req) => {
     let event;
     try {
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
-    } catch (_err) {
-      return new Response(`Webhook Error: ${err.message}`, { status: 400 });
+    } catch {
+      return new Response(`Webhook Error: ${'Error occurred'}`, { status: 400 });
     }
 
     if (event.type === 'checkout.session.completed') {
@@ -62,8 +62,8 @@ serve(async (req) => {
                 tracking_events: shipment.tracking_history,
               })
               .eq('id', orderId);
-          } catch (_err) {
-            console.error('Error creating shipment', err);
+          } catch {
+            console.or('Error creating shipment', );
           }
         }
       }
@@ -123,8 +123,8 @@ serve(async (req) => {
               await supabase.functions.invoke('send-notification-email', {
                 body: { user_id: userId, notification_id: notificationId },
               });
-            } catch (_err) {
-              console.error('Error invoking send-notification-email:', err);
+            } catch {
+              console.or('Error invoking send-notification-email:', );
             }
           }
         }

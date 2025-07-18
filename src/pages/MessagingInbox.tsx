@@ -33,8 +33,8 @@ export default function MessagingInbox() {
     const loadData = async () => {
       try {
         await fetchConversations();
-      } catch (_error) {
-        logErrorToProduction('Failed to load conversations:', { data: error });
+      } catch {
+        logErrorToProduction('Failed to load conversations:', { data: 'Error occurred' });
         toast.error("Failed to load messages. Please try again.");
       }
     };

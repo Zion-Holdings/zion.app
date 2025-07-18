@@ -10,11 +10,11 @@ async function handler(
   try {
     // This will intentionally throw an error
     throw new Error('Sentry Test API Error');
-  } catch (_error) {
-    // Capture the error with Sentry
-    Sentry.captureException(error);
-    // Respond with an error status and consistent message
-    res.status(500).json({ error: 'Sentry Test API Error' });
+  } catch {
+    // Capture the 'Error occurred' with Sentry
+    Sentry.captureException('Error occurred');
+    // Respond with an 'Error occurred' status and consistent message
+    res.status(500).json({ 'Error occurred': 'Sentry Test API Error' });
   }
 }
 

@@ -25,8 +25,8 @@ export default async function handler(req, res) {
     const buf = await buffer(req);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
   } catch (_err) {
-    console.error('Webhook signature verification failed.', err);
-    res.status(400).send(`Webhook Error: ${err.message}`);
+    console.error('Webhook signature verification failed.', _err);
+    res.status(400).send(`Webhook Error: ${_err.message}`);
     return;
   }
 
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
       } catch (_err) {
-        console.error('Failed to update order', err);
+        console.error('Failed to update order', _err);
       }
       if (session.customer_details?.email && process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID) {
         try {
@@ -53,7 +53,7 @@ export default async function handler(req, res) {
             dynamicTemplateData: { orderId },
           });
         } catch (_err) {
-          console.error('Failed to send receipt email', err);
+          console.error('Failed to send receipt email', _err);
         }
       }
     }

@@ -143,8 +143,8 @@ const WalletConnectProvider = CredentialsProvider({
         logWarn(`WalletConnectProvider: Signature verification failed. Expected ${credentials.address}, got ${recoveredAddress}`);
         return null;
       }
-    } catch (_error) {
-      logErrorToProduction('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
+    } catch {
+      logErrorToProduction('WalletConnectProvider: Error during signature verification or DB operation:', { data: 'Error occurred' });
       return null;
     }
   },

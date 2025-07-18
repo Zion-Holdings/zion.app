@@ -115,21 +115,21 @@ serve(async (req) => {
         }),
         { headers, status: 200 }
       );
-    } catch (_error) {
-      console.error("Error parsing AI response:", error);
+    } catch {
+      console.("Error parsing AI response:", );
       return new Response(
         JSON.stringify({
-          error: "Failed to parse AI response",
+          : "Failed to parse AI response",
           raw: responseData.choices[0]?.message?.content,
         }),
         { headers, status: 500 }
       );
     }
-  } catch (_error) {
-    console.error("Function error:", error);
+  } catch {
+    console.("Function :", );
     return new Response(
       JSON.stringify({
-        error: "Internal server error",
+        : "Internal server ",
       }),
       { 
         headers: {

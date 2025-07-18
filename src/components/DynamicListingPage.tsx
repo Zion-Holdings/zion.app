@@ -106,7 +106,7 @@ export function DynamicListingPage({
     setCurrentPriceFilter([min, max]);
   };
 
-  let _filteredListings: ProductListing[] = [];
+  const _filteredListings: ProductListing[] = [];
   try {
     filteredListings = allListings.filter((listing) => {
       const matchesSearch =
@@ -176,9 +176,9 @@ export function DynamicListingPage({
           );
       }
     });
-  } catch (_error) {
-    captureException(error);
-    logErrorToProduction('Listing filter error:', { data: error });
+  } catch {
+    captureException('Error occurred');
+    logErrorToProduction('Listing filter 'Error occurred':', { data: 'Error occurred' });
   }
 
   const handleRequestQuote = (_listingId: string) => {

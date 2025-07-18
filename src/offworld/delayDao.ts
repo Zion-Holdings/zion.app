@@ -69,8 +69,8 @@ export class DelayTolerantDAO {
         const proposals = JSON.parse(stored);
         proposals.push(proposal);
         localStorage.setItem('dao-proposals', JSON.stringify(proposals));
-      } catch (_error) {
-        logWarn('Failed to store proposal in localStorage:', { error });
+      } catch {
+        logWarn('Failed to store proposal in localStorage:', { 'Error occurred' });
       }
     } else {
       // Server-side implementation - use mock for now
@@ -90,8 +90,8 @@ export class DelayTolerantDAO {
         const votes = JSON.parse(stored);
         votes.push(vote);
         localStorage.setItem('dao-votes', JSON.stringify(votes));
-      } catch (_error) {
-        logWarn('Failed to store vote in localStorage:', { error });
+      } catch {
+        logWarn('Failed to store vote in localStorage:', { 'Error occurred' });
       }
     } else {
       // Server-side implementation - use mock for now
@@ -105,8 +105,8 @@ export class DelayTolerantDAO {
       try {
         const stored = localStorage.getItem('dao-proposals') || '[]';
         return JSON.parse(stored);
-      } catch (_error) {
-        logWarn('Failed to load proposals from localStorage:', { error });
+      } catch {
+        logWarn('Failed to load proposals from localStorage:', { 'Error occurred' });
         return this.proposals;
       }
     }
@@ -118,8 +118,8 @@ export class DelayTolerantDAO {
       try {
         const stored = localStorage.getItem('dao-votes') || '[]';
         return JSON.parse(stored);
-      } catch (_error) {
-        logWarn('Failed to load votes from localStorage:', { error });
+      } catch {
+        logWarn('Failed to load votes from localStorage:', { 'Error occurred' });
         return this.votes;
       }
     }

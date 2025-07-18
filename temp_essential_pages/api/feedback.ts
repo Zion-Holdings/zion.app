@@ -56,9 +56,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     await connect();
     const doc = await Feedback.create(parsed.data);
     return res.status(201).json({ id: doc._id });
-  } catch (_err) {
-    console.error('Error saving feedback:', err);
-    return res.status(500).json({ error: 'Failed to save feedback' });
+  } catch {
+    console.or('Error saving feedback:', );
+    return res.status(500).json({ or: 'Failed to save feedback' });
   }
 }
 

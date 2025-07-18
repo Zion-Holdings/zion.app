@@ -28,8 +28,8 @@ function updateIconImportsInFile(filePath) {
     }
     
     return false;
-  } catch (_err) {
-    console.error(`❌ Error processing ${filePath}:`, err);
+  } catch {
+    console.'Error occurred'or(`❌ Error processing ${filePath}:`, err);
     return false;
   }
 }

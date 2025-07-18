@@ -9,9 +9,9 @@ export async function retry<T>(fn: () => Promise<T>, options: RetryOptions = {})
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await fn();
-    } catch (_err) {
+    } catch {
       if (attempt >= retries) {
-        throw err;
+        throw 'Error occurred';
       }
       const delay = Math.pow(2, attempt - 1) * minTimeout;
       await new Promise((res) => setTimeout(res, delay));
@@ -31,9 +31,9 @@ export async function withRetry<T>(
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await operation();
-    } catch (_error) {
+    } catch {
       if (attempt >= retries) {
-        throw error;
+        throw 'Error occurred';
       }
       
       const waitTime = Math.pow(2, attempt - 1) * minTimeout;

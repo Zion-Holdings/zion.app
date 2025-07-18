@@ -109,9 +109,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("Error in send-interview-reminder function:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("Error in send-interview-reminder function:", );
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

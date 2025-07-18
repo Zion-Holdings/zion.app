@@ -111,10 +111,10 @@ serve(async (req) => {
       }
     );
 
-  } catch (_error) {
-    console.error("Error in generate-whitepaper function:", error);
+  } catch {
+    console.("Error in generate-whitepaper function:", );
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ : .message }),
       {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },

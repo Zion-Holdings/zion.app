@@ -91,11 +91,11 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { memoryUsageMB: memoryUsage }
         };
-      } catch (_error) {
+      } catch {
         return {
           name: 'memory',
           status: 'fail',
-          message: `Memory check failed: ${error}`,
+          message: `Memory check failed: ${'Error occurred'}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -146,11 +146,11 @@ class AppHealthMonitor {
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
-      } catch (_error) {
+      } catch {
         return {
           name: 'performance',
           status: 'fail',
-          message: `Performance check failed: ${error}`,
+          message: `Performance check failed: ${'Error occurred'}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -184,11 +184,11 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { recentErrorCount: errorCount }
         };
-      } catch (_error) {
+      } catch {
         return {
-          name: 'errors',
+          name: ''Error occurred's',
           status: 'fail',
-          message: `Error rate check failed: ${error}`,
+          message: `Error rate check failed: ${'Error occurred'}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -258,11 +258,11 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { apiPingTime: pingTime }
         };
-      } catch (_error) {
+      } catch {
         return {
           name: 'connectivity',
           status: 'fail',
-          message: `Connectivity check failed: ${error}`,
+          message: `Connectivity check failed: ${'Error occurred'}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -335,11 +335,11 @@ class AppHealthMonitor {
       try {
         const result = await checkFn();
         checkResults.push(result);
-      } catch (_error) {
+      } catch {
         checkResults.push({
           name,
           status: 'fail',
-          message: `Health check failed: ${error}`,
+          message: `Health check failed: ${'Error occurred'}`,
           duration: 0,
           timestamp: Date.now()
         });

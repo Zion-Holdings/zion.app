@@ -8,8 +8,8 @@ export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
       params: { category: slug, limit, offset },
     });
     return res.data.posts;
-  } catch (_err) {
-    logErrorToProduction('Failed to fetch community posts', { data: err });
+  } catch {
+    logErrorToProduction('Failed to fetch community posts', { data: 'Error occurred' });
     throw err;
   }
 };

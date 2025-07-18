@@ -8,8 +8,9 @@
 const fs = require('fs');
 const { _execSync } = require('child_process');
 
-console.warn('🚨 EMERGENCY APP LOADING FIX');
-console.warn('============================\n');
+// Replace console.log with console.warn for allowed console methods
+console.warn('Starting app loading fix...');
+console.warn('Checking for app loading issues...');
 
 // Check if we need to apply emergency fixes
 function checkAppStatus() {
@@ -20,18 +21,18 @@ function checkAppStatus() {
     console.warn('❌ node_modules directory is missing');
     console.warn('   -> Attempting to install dependencies via "./setup.sh npm"');
     try {
-      execSync('./setup.sh npm', { stdio: 'inherit' });
+      _execSync('./setup.sh npm', { stdio: 'inherit' });
     } catch (_installErr) {
-      console.error('Failed to install dependencies:', installErr.message);
-      if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(installErr.message)) {
+      console.error('Failed to install dependencies:', _installErr.message);
+      if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(_installErr.message)) {
         console.error('Network access appears to be restricted.');
         console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
         console.error('Attempting to start offline development mode...');
         try {
-          execSync('bash offline-dev.sh', { stdio: 'inherit' });
+          _execSync('bash offline-dev.sh', { stdio: 'inherit' });
           console.warn('✅ Offline development mode started.');
         } catch (_offlineErr) {
-          console.error('Failed to start offline mode:', offlineErr.message);
+          console.error('Failed to start offline mode:', _offlineErr.message);
           console.error('You can still run "./offline-dev.sh" manually.');
         }
       }
@@ -59,7 +60,7 @@ function checkAppStatus() {
       return false;
     }
   } catch (_error) {
-    console.warn('❌ Cannot read app file:', error.message);
+    console.warn('❌ Cannot read app file:', _error.message);
     return false;
   }
 }
@@ -115,7 +116,7 @@ export default MyApp;
     fs.writeFileSync('pages/_app.tsx.backup', currentApp);
     console.warn('📄 Current app backed up to _app.tsx.backup');
   } catch (_error) {
-    console.warn('⚠️  Could not backup current app:', error.message);
+    console.warn('⚠️  Could not backup current app:', _error.message);
   }
 
   // Write minimal app
@@ -130,7 +131,7 @@ export default MyApp;
     console.warn('  mv pages/_app.tsx.backup pages/_app.tsx');
     
   } catch (_error) {
-    console.warn('❌ Could not create emergency app:', error.message);
+    console.warn('❌ Could not create emergency app:', _error.message);
   }
 }
 
@@ -146,7 +147,7 @@ function runDiagnostics() {
     },
     {
       name: 'App file readable',
-      _check: () => {
+      check: () => {
         try {
           fs.readFileSync('pages/_app.tsx', 'utf8');
           return true;

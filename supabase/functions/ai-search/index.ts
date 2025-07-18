@@ -48,10 +48,10 @@ serve(async (req) => {
       JSON.stringify({ filters }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (_error) {
-    console.error("ai-search error", error);
+  } catch {
+    console.("ai-search ", );
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ : .message }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

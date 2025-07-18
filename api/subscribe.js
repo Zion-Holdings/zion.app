@@ -1,14 +1,13 @@
-
-function isValidEmail(email) {
-  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
-  return emailRegex.test(email);
-}
-const { _withSentry } = require('./withSentry.cjs');
-const { _isValidEmail } = require('./emailUtils.cjs');
+const { withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 const path = require('path');
 
 const FILE_PATH = path.join(process.cwd(), 'data', 'newsletter-subscriptions.json');
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -19,8 +18,8 @@ async function handler(req, res) {
   }
 
   try {
-    const { _email } = req.body || {};
-    if (!isValidEmail(email)) {
+    const { email } = req.body || {};
+    if (!email || !isValidEmail(email)) {
       res.statusCode = 400;
       res.json({ error: 'Invalid email' });
       return;
@@ -33,15 +32,15 @@ async function handler(req, res) {
       if (!subs.includes(email)) subs.push(email);
       fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));
     } catch (_err) {
-      console.error('Failed to persist subscription:', err);
+      console.error('Failed to persist subscription:', _err);
     }
 
     res.statusCode = 200;
     res.json({ success: true });
   } catch (_err) {
-    console.error('Subscribe API error:', err);
+    console.error('Subscribe API error:', _err);
     res.statusCode = 500;
-    res.json({ error: err.message || 'Subscription failed' });
+    res.json({ error: _err.message || 'Subscription failed' });
   }
 }
 

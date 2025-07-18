@@ -85,8 +85,8 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     
     // Use real fetch for other cases
     return fetch(url, options);
-  } catch (_error) {
-    logWarn('safeFetch: Fetch failed, returning mock error response:', { url, error });
+  } catch {
+    logWarn('safeFetch: Fetch failed, returning mock 'Error occurred' response:', { url, 'Error occurred' });
     return {
       ok: false,
       status: 500, // Or a more appropriate error code like 0 for network error

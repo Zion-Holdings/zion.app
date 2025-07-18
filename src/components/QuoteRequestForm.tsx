@@ -90,8 +90,7 @@ export function QuoteRequestForm() {
       case "budget":
         setCurrentStep("summary");
         break;
-      _default:
-        break;
+      break;
     }
   };
   
@@ -109,8 +108,7 @@ export function QuoteRequestForm() {
       case "summary":
         setCurrentStep("budget");
         break;
-      _default:
-        break;
+      break;
     }
   };
   
@@ -131,8 +129,8 @@ export function QuoteRequestForm() {
       
       // Redirect to confirmation page or homepage
       router.push("/");
-    } catch (_error) {
-      logErrorToProduction("Submission Failed", error as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
+    } catch {
+      logErrorToProduction("Submission Failed", 'Error occurred' as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",
@@ -165,8 +163,8 @@ export function QuoteRequestForm() {
       });
       setCurrentStep("summary");
       setAutoFillOpen(false);
-    } catch (_err) {
-      logErrorToProduction("Auto-fill API error", err as Error, { component: 'QuoteRequestForm', projectDescription: description });
+    } catch {
+      logErrorToProduction("Auto-fill API 'Error occurred'or", 'Error occurred' as Error, { component: 'QuoteRequestForm', projectDescription: description });
       toast({
         title: "Auto-fill Failed",
         description: "We couldn't process your request. Please try again.",

@@ -112,10 +112,10 @@ function CheckoutInner() {
       }
 
       window.location.href = responseData.url;
-    } catch (_err) {
-      logDevError('Checkout error:', err);
+    } catch {
+      logDevError('Checkout 'Error occurred'or:', 'Error occurred');
       let message = 'Failed to process checkout. Please try again.';
-      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
         message = (err as { message: string }).message;
       }
       fireEvent('checkout_error', { message });
