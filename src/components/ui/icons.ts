@@ -153,7 +153,9 @@ export {
   Webhook,
   Network,
   Recycle,
-  Truck
+  Truck,
+  Smartphone,
+  Building
 } from 'lucide-react';
 
 // Action Icons
