@@ -286,15 +286,15 @@ export default function SearchResultsPage({
   }, [sortBy, categoryFilter, minPrice, maxPrice, minRating]);
 
   // Handle search input change
-  const _handleSearch = undefined; // Unused (_newQuery: string) => {
-    setSearchQuery(newQuery);
-    if (newQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
-        shallow: true,
-      });
-      setCurrentPage(1);
-    }
-  };
+  // const _handleSearch = () => {
+  //   setSearchQuery(newQuery);
+  //   if (newQuery.trim()) {
+  //     router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
+  //       shallow: true,
+  //     });
+  //     setCurrentPage(1);
+  //   }
+  // };
 
   useEffect(() => {
     if (debouncedQuery.trim()) {
@@ -306,15 +306,15 @@ export default function SearchResultsPage({
   }, [debouncedQuery, fetchResults]);
 
   // Load more results
-  const _loadMore = undefined; // Unused () => {
-    const nextPage = currentPage + 1;
-    setCurrentPage(nextPage);
-    fetchResults(searchQuery, nextPage);
-  };
+  // const _loadMore = () => {
+  //   const nextPage = currentPage + 1;
+  //   setCurrentPage(nextPage);
+  //   fetchResults(searchQuery, nextPage);
+  // };
 
-  const _categories = undefined; // Unused Array.from(
-    new Set(results.map((r) => r.category).filter(Boolean)),
-  );
+  // const _categories = Array.from(
+  //   new Set(results.map((r) => r.category).filter(Boolean)),
+  // );
 
   const filteredResults = results.filter((r) => {
     if (
@@ -343,95 +343,95 @@ export default function SearchResultsPage({
   });
 
   // Group results by type for better display
-  const _groupedResults = undefined; // Unused filteredResults.reduce(
-    (acc, result) => {
-      if (!acc[result.type]) acc[result.type] = [];
-      acc[result.type]!.push(result);
-      return acc;
-    },
-    {} as Record<string, SearchResult[]>,
-  );
+  // const _groupedResults = filteredResults.reduce(
+  //   (acc, result) => {
+  //     if (!acc[result.type]) acc[result.type] = [];
+  //     acc[result.type]!.push(result);
+  //     return acc;
+  //   },
+  //   {} as Record<string, SearchResult[]>,
+  // );
 
-  const _renderResultCard = undefined; // Unused (_result: SearchResult) => {
-    switch (result.type) {
-      case 'product':
-      case 'equipment':
-        return (
-          <div key={result.id} data-testid="result-card">
-            <ProductCard
-              product={{
-                id: result.id,
-                name: result.title,
-                title: result.title,
-                description: result.description || '',
-                price: result.price || 0,
-                images: result.image ? [result.image] : [],
-                rating: result.rating || 0,
-                reviewCount: 0,
-                tags: result.tags || [],
-                category: result.category || '',
-                currency: '$',
-                created_at: new Date().toISOString(),
-                updated_at: new Date().toISOString(),
-                stock: (result as ProductSearchResult).stock ?? 0,
-                in_stock: ((result as ProductSearchResult).stock ?? 0) > 0
-              }}
-            />
-          </div>
-        );
-      case 'talent':
-        return (
-          <div key={result.id} data-testid="result-card">
-            <TalentCard
-              talent={{
-                id: result.id,
-                user_id: result.id,
-                full_name: result.title,
-                professional_title: result.description || '',
-                profile_picture_url: result.image ?? '',
-                average_rating: result.rating ?? 0,
-                skills: result.tags || [],
-                location: result.category || '',
-                bio: result.description || '',
-                summary: result.description || '',
-                is_verified: false,
-                availability_type: 'available',
-              }}
-              onViewProfile={(_id: string) => {
-                router.push(`/talent/${id}`);
-              }}
-              onRequestHire={(talent) => {
-                router.push(`/talent/${talent.id}?action=hire`);
-              }}
-              isAuthenticated={isAuthenticated}
-            />
-          </div>
-        );
-      case 'category':
-        return (
-          <div key={result.id} data-testid="result-card">
-            <CategoryCard
-              title={result.title}
-              description={result.description || ''}
-              icon={result.image || '📁'}
-            />
-          </div>
-        );
-      default:
-        return (
-          <div
-            key={result.id}
-            className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow"
-            data-testid="result-card"
-          >
-            <h3 className="font-semibold">{result.title}</h3>
-            <p className="text-gray-600 dark:text-gray-200">
-              {result.description}
-            </p>
-          </div>
-        );
-    }
-  };
+  // const _renderResultCard = (_result: SearchResult) => {
+  //   switch (result.type) {
+  //     case 'product':
+  //     case 'equipment':
+  //       return (
+  //         <div key={result.id} data-testid="result-card">
+  //           <ProductCard
+  //             product={{
+  //               id: result.id,
+  //               name: result.title,
+  //               title: result.title,
+  //               description: result.description || '',
+  //               price: result.price || 0,
+  //               images: result.image ? [result.image] : [],
+  //               rating: result.rating || 0,
+  //               reviewCount: 0,
+  //               tags: result.tags || [],
+  //               category: result.category || '',
+  //               currency: '$',
+  //               created_at: new Date().toISOString(),
+  //               updated_at: new Date().toISOString(),
+  //               stock: (result as ProductSearchResult).stock ?? 0,
+  //               in_stock: ((result as ProductSearchResult).stock ?? 0) > 0
+  //             }}
+  //           />
+  //         </div>
+  //       );
+  //     case 'talent':
+  //       return (
+  //         <div key={result.id} data-testid="result-card">
+  //           <TalentCard
+  //             talent={{
+  //               id: result.id,
+  //               user_id: result.id,
+  //               full_name: result.title,
+  //               professional_title: result.description || '',
+  //               profile_picture_url: result.image ?? '',
+  //               average_rating: result.rating ?? 0,
+  //               skills: result.tags || [],
+  //               location: result.category || '',
+  //               bio: result.description || '',
+  //               summary: result.description || '',
+  //               is_verified: false,
+  //               availability_type: 'available',
+  //             }}
+  //             onViewProfile={(_id: string) => {
+  //               router.push(`/talent/${id}`);
+  //             }}
+  //             onRequestHire={(talent) => {
+  //               router.push(`/talent/${talent.id}?action=hire`);
+  //             }}
+  //             isAuthenticated={isAuthenticated}
+  //           />
+  //         </div>
+  //       );
+  //     case 'category':
+  //       return (
+  //         <div key={result.id} data-testid="result-card">
+  //           <CategoryCard
+  //             title={result.title}
+  //             description={result.description || ''}
+  //             icon={result.image || '📁'}
+  //           />
+  //         </div>
+  //       );
+  //     default:
+  //       return (
+  //         <div
+  //           key={result.id}
+  //           className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow"
+  //           data-testid="result-card"
+  //         >
+  //           <h3 className="font-semibold">{result.title}</h3>
+  //           <p className="text-gray-600 dark:text-gray-200">
+  //             {result.description}
+  //           </p>
+  //         </div>
+  //       );
+  //   }
+  // };
 
   return (
     <>

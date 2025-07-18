@@ -96,28 +96,27 @@ export function TalentOnboardingForm() {
   };
 
   // Handle CV upload
-  const _handleCvUpload = undefined; // Unused async (_file: File) => {
-    if (!supabase) {
-      throw new Error("Supabase client not initialized");
-    }
+  // const _handleCvUpload = async (_file: File) => {
+  //   if (!supabase) {
+  //     throw new Error("Supabase client not initialized");
+  //   }
     
-    const fileName = `cv-${user?.id}-${Date.now()}`;
-    const { error: cvError } = await supabase.storage
-      .from('resumes')
-      .upload(fileName, file);
+  //   const fileName = `cv-${user?.id}-${Date.now()}`;
+  //   const { error: cvError } = await supabase.storage
+  //     .from('resumes')
+  //     .upload(fileName, file);
       
-    if (cvError) {
-      // logErrorToProduction('Error uploading CV:', { data: cvError }); // This line was removed
-      throw new Error("Failed to upload CV");
-    }
+  //   if (cvError) {
+  //     throw new Error("Failed to upload CV");
+  //   }
     
-    // Get the public URL
-    const { data: { publicUrl } } = supabase.storage
-      .from('resumes')
-      .getPublicUrl(fileName);
+  //   // Get the public URL
+  //   const { data: { publicUrl } } = supabase.storage
+  //     .from('resumes')
+  //     .getPublicUrl(fileName);
     
-    return publicUrl;
-  };
+  //   return publicUrl;
+  // };
 
   // Rest of the file remains unchanged...
   // [Previous implementation continues...]

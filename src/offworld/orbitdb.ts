@@ -78,16 +78,16 @@ let heliaNode: Helia | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from ipfs.ts or have more transports
-const _libp2pOptions = undefined; // Unused {
-  addresses: {
-    listen: ['/ip4/0.0.0.0/tcp/0']
-  },
-  transports: [], // Will be populated server-side if needed
-  connectionEncryption: [], // Will be populated server-side if needed
-  streamMuxers: [], // Will be populated server-side if needed
-  peerDiscovery: [], // Will be populated server-side if needed
-  services: {} // Will be populated server-side if needed
-};
+// const _libp2pOptions = {
+//   addresses: {
+//     listen: ['/ip4/0.0.0.0/tcp/0']
+//   },
+//   transports: [], // Will be populated server-side if needed
+//   connectionEncryption: [], // Will be populated server-side if needed
+//   streamMuxers: [], // Will be populated server-side if needed
+//   peerDiscovery: [], // Will be populated server-side if needed
+//   services: {} // Will be populated server-side if needed
+// };
 
 export async function initOrbit(_repoPath = './orbitdb-helia') {
   if (orbit) {
