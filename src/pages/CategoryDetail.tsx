@@ -153,7 +153,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     }
 
     load();
-  }, [slug]);
+  }, [slug, toast]);
 
   useEffect(() => {
     if (slug !== 'innovation') return;

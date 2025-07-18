@@ -70,7 +70,7 @@ export default function SearchPage() {
     if (urlQuery !== query) {
       setQuery(urlQuery);
     }
-  }, [router.isReady, router.query.q]); // Fixed dependency array
+  }, [router.isReady, router.query.q, query]); // Fixed dependency array
 
   const fetchResults = useCallback(async (term: string) => {
     if (!term.trim()) {
