@@ -1,9 +1,9 @@
-import { NotificationCenter } from './NotificationCenter;
+import { NotificationCenter } from './NotificationCenter'
 ;'
-export function NotificationBell(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export function NotificationBell(): unknown {): unknown {): unknown {): unknown {): unknown {) {'
   return <NotificationCenter />;
 };
-;
+
 };'
 }
 }'

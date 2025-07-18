@@ -449,6 +449,57 @@ export GIT_AUTHOR_EMAIL="advanced-self-healing@zion.app"
 - [Continuous Improvement Guide](docs/CONTINUOUS_IMPROVEMENT_GUIDE.md)
 - [Self-Healing Quick Reference](docs/SELF_HEALING_QUICK_REFERENCE.md)
 
+## 🚀 Advanced Features
+
+### 🤖 Distributed AI System for Multi-Computer Management
+
+The project includes a comprehensive distributed AI system that can control and coordinate multiple computers with Cursor installed for continuous app improvement.
+
+#### Quick Start
+
+```bash
+# Install AI assistants on local computer
+npm run distributed-ai:install
+
+# Discover computers with Cursor installed
+npm run multi-computer:discover
+
+# Install AI assistants on all discovered computers
+npm run multi-computer:install-all
+
+# Start the complete distributed AI system
+npm run multi-computer:setup
+
+# Check system status
+npm run multi-computer:status
+```
+
+#### Key Features
+
+- **Multi-Computer Management**: Automatically discovers and manages computers with Cursor
+- **AI Assistant Coordination**: Coordinates multiple AI assistants across different computers
+- **Intelligent Task Distribution**: Distributes tasks based on computer capabilities and load
+- **Continuous Improvement**: Automatically optimizes system performance
+- **Health Monitoring**: Monitors computer and AI assistant health
+- **Fault Tolerance**: Handles computer failures gracefully
+
+#### AI Assistant Types
+
+- **Code Analyzer**: Linting, code review, refactoring
+- **Security Scanner**: Vulnerability detection, dependency analysis
+- **Performance Optimizer**: Performance analysis, optimization
+- **Test Generator**: Test generation, maintenance, coverage
+- **Documentation Generator**: Documentation maintenance, API docs
+
+#### System Architecture
+
+The distributed AI system consists of:
+- **Distributed AI Controller**: Manages multiple computers and task distribution
+- **Cursor AI Installer**: Installs AI assistants on multiple computers
+- **AI Coordinator**: Coordinates AI assistants across different computers
+
+For detailed documentation, see [Distributed AI System Guide](./docs/DISTRIBUTED_AI_SYSTEM.md).
+
 ---
 
 *This README provides a general overview. For more detailed information on specific parts of the system, please refer to the README files within the relevant subdirectories and the `docs/` folder.*
