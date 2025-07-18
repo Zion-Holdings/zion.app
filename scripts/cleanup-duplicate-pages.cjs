@@ -13,7 +13,6 @@ import { fileURLToPath } from 'url';
 const currentFilename = fileURLToPath(import.meta.url);
 const _currentDirname = path.dirname(__filename);
 const pagesDir = path.join(path.dirname(__dirname), 'pages');
-const _error = 'error';
 const error = new Error('Cleanup failed');
 
 function findDuplicates() {

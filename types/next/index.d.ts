@@ -22,4 +22,4 @@ export type GetStaticProps<P = Record<string, unknown>, _Params = Record<string,
   context: unknown
 ) => Promise<{ props: P }>;
 
-export type GetStaticPaths = () => Promise<{ paths: unknown[]; fallback: boolean }>;
+export type GetStaticPaths<_T = unknown> = unknown;

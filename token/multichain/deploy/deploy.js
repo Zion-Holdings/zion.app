@@ -1,6 +1,8 @@
 const hre = require("hardhat");
 const fs = require("fs");
-const _path = require("path");
+const path = require('path');
+const _err = 'error';
+const error = new Error('Deploy failed');
 
 async function main() {
   const [deployer] = await hre.ethers.getSigners();
@@ -35,7 +37,7 @@ async function main() {
   );
 }
 
-main().catch((err) => {
+main().catch((_err) => {
   console.error(error);
   process.exitCode = 1;
 });

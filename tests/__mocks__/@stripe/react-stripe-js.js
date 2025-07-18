@@ -46,7 +46,7 @@ const useElements = () => {
   };
 };
 
-const loadStripe = (_type) => {
+const _loadStripe = (_type) => {
   return Promise.resolve({
     elements: jest.fn(() => ({
       create: jest.fn(() => ({
@@ -66,10 +66,10 @@ const CardElement = ({ _event, ...props }) => {
   return <div data-testid="card-element" {...props} />;
 };
 
-const PaymentElement = (props) => <div data-testid="mock-payment-element" {...props} />;
-const IdealBankElement = (props) => <div data-testid="mock-ideal-bank-element" {...props} />;
-const AddressElement = (props) => <div data-testid="mock-address-element" {...props} />;
-const LinkAuthenticationElement = (props) => <div data-testid="mock-link-authentication-element" {...props} />;
+const PaymentElement = (_props) => <div data-testid="mock-payment-element" {..._props} />;
+const IdealBankElement = (_props) => <div data-testid="mock-ideal-bank-element" {..._props} />;
+const AddressElement = (_props) => <div data-testid="mock-address-element" {..._props} />;
+const LinkAuthenticationElement = (_props) => <div data-testid="mock-link-authentication-element" {..._props} />;
 
 const resetMocks = () => {
   mockStripe.confirmCardPayment.mockClear().mockResolvedValue({ paymentIntent: { id: 'pi_mock', status: 'succeeded' }, error: null });

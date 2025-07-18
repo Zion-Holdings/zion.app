@@ -16,3 +16,21 @@ export interface NextApiResponse<T = unknown> {
 export type GetStaticProps<T = unknown> = unknown;
 export type GetStaticPaths<T = unknown> = unknown;
 export type GetServerSideProps<T = unknown> = unknown;
+
+type NextPageWithLayout<T = {}> = NextPage<T> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type NextPageWithAuth<T = {}> = NextPage<T> & {
+  requireAuth?: boolean;
+};
+
+type NextPageWithSeo<T = {}> = NextPage<T> & {
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+    type?: string;
+  };
+};
