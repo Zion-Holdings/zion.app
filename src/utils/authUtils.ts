@@ -89,7 +89,7 @@ export const checkNewRegistration = async (_user: UserDetails) => {
           }
         });
     }
-  } catch (_error) {
-    logErrorToProduction('Error checking or scheduling welcome email:', { data: error });
+  } catch {
+    logErrorToProduction('Error checking or scheduling welcome email:', { data: 'Error occurred' });
   }
 };

@@ -176,9 +176,9 @@ export function DynamicListingPage({
           );
       }
     });
-  } catch (_error) {
-    captureException(error);
-    logErrorToProduction('Listing filter error:', { data: error });
+  } catch {
+    captureException('Error occurred');
+    logErrorToProduction('Listing filter 'Error occurred':', { data: 'Error occurred' });
   }
 
   const handleRequestQuote = (_listingId: string) => {

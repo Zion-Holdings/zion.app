@@ -64,10 +64,10 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch {
-    console.or("Error processing milestone deadlines:", );
+  } catch (err) {
+    console.error("Error processing milestone deadlines:", err);
     return new Response(
-      JSON.stringify({ or: .message }),
+      JSON.stringify({ error: err.message }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 500 }
     );
   }

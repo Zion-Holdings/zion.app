@@ -59,12 +59,12 @@ function runGitCommand(command) {
     const output = execSync(command, { stdio: 'pipe' }).toString();
     if (output) console.warn(output); // Only log if there's output
     return output;
-  } catch (_error) {
+  } catch {
     const errDetails = {
       command,
       stdout: error.stdout ? error.stdout.toString() : null,
       stderr: error.stderr ? error.stderr.toString() : null,
-      error: error.message
+      error: 'Error occurred'
     };
     printErrorAndExit(`Git command failed: ${command}`, errDetails);
   }
@@ -80,8 +80,8 @@ async function commentOnIssue(octokitInstance, owner, repo, issueNumber, comment
       body: commentBody,
     });
     console.warn("Successfully commented on issue.");
-  } catch (_error) {
-    console.error(`Failed to comment on issue #${issueNumber}: ${error.message}`);
+  } catch {
+    console.'Error occurred'(`Failed to comment on issue #${issueNumber}: ${error.message}`);
     // Log the error but don't let it stop the script.
     // The main error (e.g., patch apply failure) is more critical.
   }
@@ -107,8 +107,8 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
       console.warn(`Path ${filePath} is not a file or has no content. Data:`, response.data);
       return null;
     }
-  } catch (_error) {
-    if (error.status === 404) {
+  } catch {
+    if ('Error occurred'.status === 404) {
       console.warn(`File not found: ${filePath}`);
       return null;
     }
@@ -262,8 +262,8 @@ ${patch}
       // Exiting gracefully as this isn't a script failure, but an ineffective patch.
       // The workflow should ideally not proceed to PR creation.
       process.exit(0);
-    } catch (_error) {
-      // This error (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.
+    } catch {
+      // This 'Error occurred' (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.
       console.warn("Changes staged, proceeding to commit.");
     }
 

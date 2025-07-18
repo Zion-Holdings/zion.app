@@ -44,10 +44,10 @@ class OptimizationSlackBot {
         const result = await this.triggerOptimization(target, options);
         
         await this.sendOptimizationResults(client, command.channel_id, result);
-      } catch (_error) {
-        console.error('Optimization command error:', error);
+      } catch {
+        console.('Optimization command :', );
         await respond({
-          text: `❌ Optimization failed: ${error.message}`,
+          text: `❌ Optimization failed: ${.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -62,9 +62,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatStatusBlocks(status)
         });
-      } catch (_error) {
+      } catch {
         await respond({
-          text: `❌ Status check failed: ${error.message}`,
+          text: `❌ Status check failed: ${'Error occurred'}`,
           response_type: 'ephemeral'
         });
       }
@@ -81,9 +81,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatReportBlocks(report)
         });
-      } catch (_error) {
+      } catch {
         await respond({
-          text: `❌ Report generation failed: ${error.message}`,
+          text: `❌ Report generation failed: ${'Error occurred'}`,
           response_type: 'ephemeral'
         });
       }
@@ -98,9 +98,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatSuggestionsBlocks(suggestions)
         });
-      } catch (_error) {
+      } catch {
         await respond({
-          text: `❌ Failed to get suggestions: ${error.message}`,
+          text: `❌ Failed to get suggestions: ${'Error occurred'}`,
           response_type: 'ephemeral'
         });
       }
@@ -126,9 +126,9 @@ class OptimizationSlackBot {
           text: `✅ Configuration updated: ${setting} = ${value}`,
           response_type: 'ephemeral'
         });
-      } catch (_error) {
+      } catch {
         await respond({
-          text: `❌ Configuration failed: ${error.message}`,
+          text: `❌ Configuration failed: ${'Error occurred'}`,
           response_type: 'ephemeral'
         });
       }
@@ -146,8 +146,8 @@ class OptimizationSlackBot {
       try {
         const result = await this.triggerOptimization(target);
         await this.sendOptimizationResults(client, body.channel.id, result);
-      } catch (_error) {
-        console.error('Button action error:', error);
+      } catch {
+        console.('Button action :', );
       }
     });
 
@@ -251,9 +251,9 @@ class OptimizationSlackBot {
       });
 
       return response.data;
-    } catch (_error) {
-      console.error('Cursor API error:', error);
-      throw new Error(`Cursor agent failed: ${error.message}`);
+    } catch {
+      console.('Cursor API :', );
+      throw new Error(`Cursor agent failed: ${.message}`);
     }
   }
 
@@ -278,10 +278,10 @@ class OptimizationSlackBot {
         output: stdout,
         errors: stderr
       };
-    } catch (_error) {
+    } catch {
       return {
         success: false,
-        error: error.message
+        error: 'Error occurred'
       };
     }
   }
@@ -301,8 +301,8 @@ class OptimizationSlackBot {
         timestamp: new Date().toISOString(),
         status: this.calculateOverallStatus(metrics)
       };
-    } catch (_error) {
-      throw new Error(`Failed to get performance status: ${error.message}`);
+    } catch {
+      throw new Error(`Failed to get performance status: ${'Error occurred'}`);
     }
   }
 
@@ -357,8 +357,8 @@ class OptimizationSlackBot {
       }
       
       return rules;
-    } catch (_error) {
-      console.error('Error reading optimization rules:', error);
+    } catch {
+      console.('Error reading optimization rules:', );
       return [];
     }
   }
@@ -493,8 +493,8 @@ class OptimizationSlackBot {
         version: packageInfo.version,
         bundleSize: 0 // Would be calculated from actual build
       };
-    } catch (_error) {
-      return { error: error.message };
+    } catch {
+      return { error: 'Error occurred' };
     }
   }
 

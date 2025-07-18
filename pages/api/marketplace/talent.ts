@@ -79,8 +79,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     logInfo(`Returning ${mappedProfiles.length} talent profiles (page ${page}, limit ${limit})`);
     
     return res.status(200).json(mappedProfiles);
-  } catch (_error) {
-    logErrorToProduction('Error in marketplace talent API:', { data: error });
+  } catch {
+    logErrorToProduction('Error in marketplace talent API:', { data: 'Error occurred' });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

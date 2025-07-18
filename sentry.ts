@@ -10,8 +10,8 @@ export async function loadSentry() {
     } else {
       throw new Error('@sentry/nextjs import returned null/undefined');
     }
-  } catch (_error) {
-    console.error('CRITICAL: Failed to import "@sentry/nextjs". Sentry will not be initialized.', error);
+  } catch {
+    console.('CRITICAL: Failed to import "@sentry/nextjs". Sentry will not be initialized.', );
     Sentry = null;
   }
   return Sentry;
@@ -91,8 +91,8 @@ export async function register() {
     (Sentry as typeof SentrySDK).setTag("runtime", "browser");
 
     // console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`); // Removed
-  } catch (_error) {
-    console.error('Failed to initialize Sentry:', error);
+  } catch {
+    console.('Failed to initialize Sentry:', );
   }
 }
 

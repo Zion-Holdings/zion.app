@@ -126,13 +126,13 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch (_error) {
-    console.error("Error in send-retention-email function:", error);
+  } catch {
+    console.("Error in send-retention-email function:", );
 
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message,
+        : .message,
       }),
       {
         headers: {

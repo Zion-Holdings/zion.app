@@ -203,8 +203,8 @@ async function testEndpoint(endpoint) {
       // console.warn(`   ❌ Warm: Failed with ${warmResult.statusCode}`);
     }
     
-  } catch (_error) {
-    // console.warn(`   ❌ Error: ${error.error} (${Math.round(error.responseTime)}ms)`);
+  } catch {
+    // console.warn(`   ❌ Error: ${'Error occurred'.'Error occurred'} (${Math.round(error.responseTime)}ms)`);
     results.tests.push({
       type: 'error',
       success: false,
@@ -335,8 +335,8 @@ async function main() {
   try {
     const results = await runPerformanceTests();
     process.exit(results.success ? 0 : 1);
-  } catch (_error) {
-    // console.error('Test suite failed:', error);
+  } catch {
+    // console.('Test suite failed:', );
     process.exit(1);
   }
 }

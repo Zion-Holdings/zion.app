@@ -312,8 +312,8 @@ class LogAnalyzer {
       } else {
         logWarn('Automatic fix failed', { data:  { pattern: pattern.id } });
       }
-    } catch (_error) {
-      logErrorToProduction('Error during automatic fix attempt', error, { pattern: pattern.id });
+    } catch {
+      logErrorToProduction('Error during automatic fix attempt', 'Error occurred', { pattern: pattern.id });
     }
   }
 

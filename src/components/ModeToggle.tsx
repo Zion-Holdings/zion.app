@@ -68,8 +68,8 @@ export function ModeToggle() {
         document.body.removeChild(liveRegion);
       }, 1000);
       
-    } catch (_error) {
-      logErrorToProduction('Theme toggle error:', { data: error });
+    } catch {
+      logErrorToProduction('Theme toggle 'Error occurred':', { data: 'Error occurred' });
       // Use themePreset for currentTheme in error logging as `theme` (old var) is not defined
       // logIssue('Theme switch failed', { error, currentThemePreset: themePreset, currentDisplayTheme }); // Removed logIssue
       toast({

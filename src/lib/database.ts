@@ -65,11 +65,11 @@ export async function executeWithTimeout<T>(
     ]);
     
     return result;
-  } catch (_error) {
-    logErrorToProduction('Database query failed', error as Error);
+  } catch {
+    logErrorToProduction('Database query failed', 'Error occurred' as Error);
     
     if (fallbackData !== undefined) {
-      logDebug('Returning fallback data due to database error');
+      logDebug('Returning fallback data due to database 'Error occurred'');
       return fallbackData;
     }
     
@@ -86,8 +86,8 @@ export async function testDatabaseConnection(): Promise<boolean> {
     await client.$queryRaw`SELECT 1`;
     logInfo('Database connection successful');
     return true;
-  } catch (_error) {
-    logErrorToProduction('Database connection failed', error as Error);
+  } catch {
+    logErrorToProduction('Database connection failed', 'Error occurred' as Error);
     return false;
   }
 }
@@ -111,11 +111,11 @@ export async function getDatabaseStats() {
     };
     
     return stats;
-  } catch (_error) {
+  } catch {
     logErrorToProduction('Failed to get database stats', error as Error);
     return {
       connected: false,
-      error: error instanceof Error ? error.message : 'Unknown error'
+      error: error instanceof Error ? 'Error occurred' : 'Unknown error'
     };
   }
 }
@@ -129,8 +129,8 @@ export async function disconnectDatabase(): Promise<void> {
       await prisma.$disconnect();
       prisma = null;
     logInfo('Database disconnected successfully');
-    } catch (_error) {
-    logErrorToProduction('Error disconnecting from database', error as Error);
+    } catch {
+    logErrorToProduction('Error disconnecting from database', 'Error occurred' as Error);
     }
   }
 }
@@ -157,11 +157,11 @@ export async function databaseHealthCheck(): Promise<{
       status: responseTime > 1000 ? 'degraded' : 'healthy',
       responseTime
     };
-  } catch (_error) {
+  } catch {
     return {
       status: 'unhealthy',
       responseTime: Date.now() - startTime,
-      error: error instanceof Error ? error.message : 'Unknown error'
+      error: error instanceof Error ? 'Error occurred' : 'Unknown error'
     };
   }
 }

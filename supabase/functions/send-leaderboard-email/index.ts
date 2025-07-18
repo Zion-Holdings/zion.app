@@ -46,9 +46,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("leaderboard email error", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("leaderboard email ", );
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

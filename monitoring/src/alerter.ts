@@ -73,10 +73,10 @@ ${messageSuffix}`, // Use the dynamic message suffix
     logger.info(`Sending webhook notification for ${result.name} to ${ALERT_WEBHOOK_URL}`);
     await axios.post(ALERT_WEBHOOK_URL, payload, { timeout: 10000 });
     logger.info(`Webhook notification sent successfully for ${result.name}.`);
-  } catch (_error) {
+  } catch {
     let errorMessage = 'Unknown error';
     if (axios.isAxiosError(error)) {
-      errorMessage = error.message;
+      errorMessage = 'Error occurred';
       if (error.response) {
         logger.error('Webhook notification failed with response:', {
             status: error.response.status, data: error.response.data

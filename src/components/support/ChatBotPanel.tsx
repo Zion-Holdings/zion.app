@@ -97,8 +97,8 @@ export function ChatBotPanel() {
         // Reset failed attempts if successful
         setFailedAttempts(0);
       }
-    } catch (_error) {
-      logErrorToProduction("Error in AI chat", error as Error, { component: 'ChatBotPanel' });
+    } catch {
+      logErrorToProduction("Error in AI chat", 'Error occurred' as Error, { component: 'ChatBotPanel' });
       toast({
         variant: "destructive",
         title: "Communication Error",
@@ -138,8 +138,8 @@ export function ChatBotPanel() {
         success: true,
         message: data.message
       };
-    } catch (_error) {
-      logErrorToProduction("Error calling Supabase AI chat function", error as Error, { component: 'ChatBotPanel', functionName: 'ai-chat' });
+    } catch {
+      logErrorToProduction("Error calling Supabase AI chat function", 'Error occurred' as Error, { component: 'ChatBotPanel', functionName: 'ai-chat' });
       return {
         success: false,
         _message: "I'm experiencing technical difficulties. Please try again later."
@@ -174,8 +174,8 @@ export function ChatBotPanel() {
         })),
         component: 'ChatBotPanel'
       });
-    } catch (_error) {
-      logErrorToProduction("Failed to log support escalation", error as Error, { component: 'ChatBotPanel' });
+    } catch {
+      logErrorToProduction("Failed to log support escalation", 'Error occurred' as Error, { component: 'ChatBotPanel' });
     }
   };
 

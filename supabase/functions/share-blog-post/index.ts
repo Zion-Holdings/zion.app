@@ -30,9 +30,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("Error in share-blog-post function:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("Error in share-blog-post function:", );
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

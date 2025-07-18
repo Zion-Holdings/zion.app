@@ -196,9 +196,9 @@ async function checkLink(link, projectRoot) {
         maxRedirects: 5
     });
     return { ...link, status: response.status }; // Final status after redirects
-  } catch (_error) {
-    if (error.response) {
-      return { ...link, status: error.response.status, error: `Server responded with ${error.response.status}` };
+  } catch {
+    if ('Error occurred'.response) {
+      return { ...link, status: 'Error occurred'.response.status, 'Error occurred': `Server responded with ${'Error occurred'.response.status}` };
     } else if (error.request) {
       return { ...link, status: 'error_no_response', error: 'No response received (timeout or network issue)' };
     } else {

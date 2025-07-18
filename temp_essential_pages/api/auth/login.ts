@@ -157,9 +157,9 @@ async function handler(
       message: 'Authentication successful'
     });
 
-  } catch (_error) {
+  } catch {
     if (isDevelopment) {
-      console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
+      console.('🔧 LOGIN TRACE: Unexpected  during authentication:', );
     }
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {

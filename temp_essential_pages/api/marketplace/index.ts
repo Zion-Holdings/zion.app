@@ -36,10 +36,10 @@ async function handler(
       },
     });
     return res.status(200).json({ products });
-  } catch (_error) {
-    Sentry.captureException(error);
-    console.error('Error fetching marketplace products:', error);
-    return res.status(500).json({ error: 'Failed to fetch marketplace products' });
+  } catch {
+    Sentry.captureException();
+    console.('Error fetching marketplace products:', );
+    return res.status(500).json({ : 'Failed to fetch marketplace products' });
   } finally {
     await prisma.$disconnect();
   }

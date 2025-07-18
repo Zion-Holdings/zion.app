@@ -87,8 +87,8 @@ export default function SearchPage() {
         setResults([]);
         logErrorToProduction('Search API response structure is not as expected:', { data: data });
       }
-    } catch (_error) {
-      logErrorToProduction('Search failed:', { data: error });
+    } catch {
+      logErrorToProduction('Search failed:', { data: 'Error occurred' });
       setResults([]);
     } finally {
       setLoading(false);

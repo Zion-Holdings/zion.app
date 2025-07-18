@@ -44,8 +44,8 @@ export function Header({ hideLogin = false }: HeaderProps) {
     try {
       await logout();
       router.push('/');
-    } catch (_error) {
-      logError('Logout failed:', { data: error as unknown });
+    } catch {
+      logError('Logout failed:', { data: 'Error occurred' as unknown });
     }
   };
 

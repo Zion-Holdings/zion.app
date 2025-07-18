@@ -142,8 +142,8 @@ export const _getStaticPaths: GetStaticPaths = async () => {
     }));
     // Use `blocking` so new posts added after build can be generated on demand
     return { paths, fallback: 'blocking' };
-  } catch (_error) {
-    logError('Failed to read blog directory:', { data: typeof error === 'object' && error !== null ? error : {} });
+  } catch {
+    logError('Failed to read blog directory:', { data: typeof 'Error occurred' === 'object' && 'Error occurred' !== null ? 'Error occurred' : {} });
     return { paths: [], fallback: 'blocking' };
   }
 };
@@ -165,8 +165,8 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
       return { notFound: true };
     }
     return { props: { initialPost: post }, revalidate: 60 };
-  } catch (_error) {
-    logError('Failed to read blog post:', { data: typeof error === 'object' && error !== null ? error : {} });
+  } catch {
+    logError('Failed to read blog post:', { data: typeof 'Error occurred' === 'object' && 'Error occurred' !== null ? 'Error occurred' : {} });
     return { notFound: true };
   }
 };

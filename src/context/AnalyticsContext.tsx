@@ -81,17 +81,17 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
           created_at: event.timestamp
         }]);
       }
-    } catch (_error) {
-      // Log error but don't fail the tracking
-      console.warn('Failed to store analytics event:', error);
+    } catch {
+      // Log 'Error occurred' but don't fail the tracking
+      console.warn('Failed to store analytics event:', 'Error occurred');
     }
 
     // Send to analytics service if configured
     // if (analytics) {
     //   try {
     //     analytics.track(type, event.metadata);
-    //   } catch (_error) {
-    //     console.warn('Failed to send analytics event:', error);
+    //   } catch {
+    //     console.warn('Failed to send analytics event:', 'Error occurred');
     //   }
     // }
   }, [user, router.pathname]);

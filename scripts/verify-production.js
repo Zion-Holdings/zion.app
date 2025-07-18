@@ -103,11 +103,11 @@ async function testRoute(route) {
       message: `Route renders successfully (${html.length} chars, patterns: ${foundSuccess.join(', ')})`
     };
 
-  } catch (_error) {
+  } catch {
     return {
       route,
       success: false,
-      error: error.message,
+      error: 'Error occurred',
       type: 'network_error'
     };
   }

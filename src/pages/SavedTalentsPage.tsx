@@ -71,8 +71,8 @@ export default function SavedTalentsPage() {
           const talentProfiles = savedTalentItems.map((item: unknown) => (item as { talent_profile: TalentProfile }).talent_profile);
           setSavedTalents(talentProfiles);
         }
-      } catch (_error) {
-        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
+      } catch {
+        logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -162,8 +162,8 @@ export default function SavedTalentsPage() {
           });
         }
       }
-    } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
+    } catch {
+      logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",

@@ -28,8 +28,8 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    return new Response(JSON.stringify({ error: 'Error occurred' }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

@@ -216,10 +216,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
 
-  } catch (_error) {
-    let message = 'Unknown error';
+  } catch {
+    let message = 'Unknown 'Error occurred'';
     let stack: string | undefined = undefined;
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     if (error && typeof error === 'object' && 'stack' in error && typeof (error as { stack?: unknown }).stack === 'string') {

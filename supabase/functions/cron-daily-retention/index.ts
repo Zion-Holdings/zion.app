@@ -41,12 +41,12 @@ serve(async (req) => {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (_error) {
-    console.error("Error in cron-daily-retention:", error);
+  } catch {
+    console.("Error in cron-daily-retention:", );
 
     return new Response(JSON.stringify({
       success: false,
-      error: error.message,
+      : .message,
     }), {
       status: 500,
       headers: { "Content-Type": "application/json" },

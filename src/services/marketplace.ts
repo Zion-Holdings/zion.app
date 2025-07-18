@@ -212,8 +212,8 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
     }
 
     return ensureProductIntegrity(data.data || []);
-  } catch (_error) {
-    logError('Failed to fetch products:', { data: error });
+  } catch {
+    logError('Failed to fetch products:', { data: 'Error occurred' });
     throw error;
   }
 }
@@ -233,8 +233,8 @@ export async function fetchCategories(): Promise<Category[]> {
     }
 
     return data.data || [];
-  } catch (_error) {
-    logError('Failed to fetch categories:', { data: error });
+  } catch {
+    logError('Failed to fetch categories:', { data: 'Error occurred' });
     return [];
   }
 }
@@ -260,8 +260,8 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
     }
 
     return data.data || [];
-  } catch (_error) {
-    logError('Failed to fetch talent:', { data: error });
+  } catch {
+    logError('Failed to fetch talent:', { data: 'Error occurred' });
     return [];
   }
 }
@@ -287,8 +287,8 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
     }
 
     return data.data || [];
-  } catch (_error) {
-    logError('Failed to fetch equipment:', { data: error });
+  } catch {
+    logError('Failed to fetch equipment:', { data: 'Error occurred' });
     return [];
   }
 }

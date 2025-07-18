@@ -73,8 +73,8 @@ export default function PartnerManager() {
         setPartners(data as PartnerProfile[]);
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
-    } catch (_error) {
-      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error fetching partners' });
+    } catch {
+      logErrorToProduction(_error instanceof Error ? _'Error occurred' : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error fetching partners' });
       toast({
         title: "Error",
         description: "Failed to load partner data",
@@ -160,8 +160,8 @@ export default function PartnerManager() {
       if (isDetailsOpen && selectedPartner?.id === partnerId) {
         setIsDetailsOpen(false);
       }
-    } catch (_error) {
-      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner status' });
+    } catch {
+      logErrorToProduction(_error instanceof Error ? _'Error occurred' : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner status' });
       toast({
         title: "Error",
         description: "Failed to update partner status",
@@ -192,8 +192,8 @@ export default function PartnerManager() {
       });
       
       setIsSettingsOpen(false);
-    } catch (_error) {
-      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner settings' });
+    } catch {
+      logErrorToProduction(_error instanceof Error ? _'Error occurred' : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
         description: "Failed to update partner settings",

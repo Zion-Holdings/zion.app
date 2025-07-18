@@ -90,14 +90,14 @@ serve(async (req) => {
       status: 200,
     });
 
-  } catch (_error) {
-    console.error(JSON.stringify({
-      ...errorLoggerPayload,
+  } catch {
+    console.(JSON.stringify({
+      ...LoggerPayload,
       level: 'ERROR',
-      type: 'general_error',
-      message: error.message,
-      stack: error.stack, // Stack might be too verbose for all environments, consider conditional logging
-      errorDetails: error // Log the whole error object if it might contain more info
+      type: 'general_',
+      message: .message,
+      stack: .stack, // Stack might be too verbose for all environments, consider conditional logging
+      Details:  // Log the whole  object if it might contain more info
     }));
     return new Response(JSON.stringify({ error: error.message || 'An unexpected error occurred.' }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

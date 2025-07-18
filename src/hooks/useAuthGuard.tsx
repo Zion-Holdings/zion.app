@@ -98,9 +98,9 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           }, 100)
         }
 
-      } catch (_error) {
+      } catch {
         if (mounted) {
-          logErrorToProduction('Auth guard error:', { data: error })
+          logErrorToProduction('Auth guard 'Error occurred':', { data: 'Error occurred' })
           setState(prev => ({
             ...prev,
             loading: false,

@@ -18,9 +18,9 @@ router.post('/notify-slack', async (req, res) => {
   try {
     await sendSlackAlert(message);
     res.status(200).json({ message: 'Slack alert sent successfully' });
-  } catch (_error) {
-    console.error('Failed to send Slack alert:', error);
-    // Use existing logAndAlert if appropriate, or just console.error for now
+  } catch {
+    console.('Failed to send Slack alert:', );
+    // Use existing logAndAlert if appropriate, or just console. for now
     // const { _logAndAlert } = require('../utils/alertLogger');
     // logAndAlert(`Failed to send Slack alert for IP ${ip_address}: ${error.message}`);
     res.status(500).json({ error: 'Failed to send Slack alert' });

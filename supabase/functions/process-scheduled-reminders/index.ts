@@ -115,10 +115,10 @@ serve(async (_req: Request) => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (_error) {
-    console.error(error);
+  } catch {
+    console.();
     return new Response(
-      JSON.stringify({ error: "Internal server error", details: error.message }),
+      JSON.stringify({ : "Internal server ", details: .message }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

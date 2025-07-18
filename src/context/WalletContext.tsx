@@ -197,8 +197,8 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
           isWalletSystemAvailable: true,
           isConnected: false, // Explicitly false until wallet connects
         }));
-      } catch (_error) {
-        logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
+      } catch {
+        logErrorToProduction('WalletContext: CRITICAL 'Error occurred' creating appKitInstance with valid Project ID:', { data: 'Error occurred' });
         appKitRef.current = null;
         setWallet((_prev) => ({
           ...initialWalletState,
@@ -274,8 +274,8 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
               isWalletSystemAvailable: true,
             }));
           }
-        } catch (_error) {
-          logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
+        } catch {
+          logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: 'Error occurred' });
           // AppKit exists, but failed to get signer or other error
           setWallet((_prev) => ({
             ...initialWalletState,
@@ -393,8 +393,8 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
       try {
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
-      } catch (_error) {
-        logErrorToProduction('WalletContext: Error during disconnect.', { data: error });
+      } catch {
+        logErrorToProduction('WalletContext: Error during disconnect.', { data: 'Error occurred' });
         logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }
     } else {

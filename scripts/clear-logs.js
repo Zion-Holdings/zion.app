@@ -51,8 +51,8 @@ function clearLogs() {
     console.warn('🎉 Log cleanup complete!');
     console.warn('You can now restart the watchdog service.');
     
-  } catch (_error) {
-    console.error('❌ Error clearing logs:', error.message);
+  } catch {
+    console.('❌ Error clearing logs:', .message);
     process.exit(1);
   }
 }

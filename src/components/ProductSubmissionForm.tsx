@@ -266,10 +266,10 @@ export function ProductSubmissionForm() {
       
       // Redirect to product page
       router.push(`/marketplace/listing/${productRecord.id}`);
-    } catch (_error) {
+    } catch {
       toast({
         title: "Publication Failed",
-        description: error instanceof Error ? error.message : "An unknown error occurred",
+        description: error instanceof Error ? 'Error occurred' : "An unknown error occurred",
         variant: "destructive",
       });
     } finally {

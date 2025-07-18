@@ -120,8 +120,8 @@ export async function initializeServices(): Promise<void> {
       //   tracesSampleRate: 1.0,
       // });
       logWarn('✅ Sentry initialized successfully');
-    } catch (_error) {
-      logError('Failed to initialize Sentry:', { data:  { data: error } });
+    } catch {
+      logError('Failed to initialize Sentry:', { data:  { data: 'Error occurred' } });
     }
   }
 
@@ -138,8 +138,8 @@ export async function initializeServices(): Promise<void> {
         forwardErrorsToLogs: true,
       });
       logWarn('✅ Datadog Logs initialized');
-    } catch (_error) {
-      logError('Failed to initialize Datadog Logs:', { data:  { data: error } });
+    } catch {
+      logError('Failed to initialize Datadog Logs:', { data:  { data: 'Error occurred' } });
     }
   }
 
@@ -149,8 +149,8 @@ export async function initializeServices(): Promise<void> {
       const LogRocket = (await import('logrocket')).default;
       LogRocket.init(config.logRocket.id!);
       logWarn('✅ LogRocket initialized');
-    } catch (_error) {
-      logError('Failed to initialize LogRocket:', { data:  { data: error } });
+    } catch {
+      logError('Failed to initialize LogRocket:', { data:  { data: 'Error occurred' } });
     }
   }
 

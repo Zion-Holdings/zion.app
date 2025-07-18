@@ -29,8 +29,8 @@ export function ChatAssistantTrigger() {
       }
       
       return Promise.resolve();
-    } catch (_error) {
-      logErrorToProduction('Error in AI chat:', { data: error });
+    } catch {
+      logErrorToProduction('Error in AI chat:', { data: 'Error occurred' });
       return Promise.resolve();
     }
   };

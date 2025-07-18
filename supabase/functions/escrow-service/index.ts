@@ -100,10 +100,10 @@ serve(async (req) => {
           { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 400 }
         );
     }
-  } catch {
-    console.or("escrow-service or", );
+  } catch (err) {
+    console.error("escrow-service error:", err);
     return new Response(
-      JSON.stringify({ or: .message }),
+      JSON.stringify({ error: err.message }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 500 }
     );
   }

@@ -63,8 +63,8 @@ export function useInfiniteScroll(
           timeoutRef.current = setTimeout(async () => {
             try {
               await loadMore();
-            } catch (_error) {
-              logErrorToProduction('Error loading more items:', { data: error });
+            } catch {
+              logErrorToProduction('Error loading more items:', { data: 'Error occurred' });
             } finally {
               setIsFetching(false);
               timeoutRef.current = null;

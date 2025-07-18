@@ -152,9 +152,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("Transaction management error:", error.message);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch {
+    console.("Transaction management :", .message);
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

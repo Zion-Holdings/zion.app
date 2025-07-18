@@ -442,8 +442,8 @@ export const bundleOptimization = {
   async dynamicImport<T>(importFn: () => Promise<T>): Promise<T> {
     try {
       return await importFn();
-    } catch (_error) {
-      logErrorToProduction('Dynamic import failed:', { data: _error });
+    } catch {
+      logErrorToProduction('Dynamic import failed:', { data: _'Error occurred' });
       throw new Error('Failed to load component');
     }
   },

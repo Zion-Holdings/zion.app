@@ -71,8 +71,8 @@ export default async function handler(
     };
 
     return res.status(200).json(response);
-  } catch (_error) {
-    logErrorToProduction('KB Chat API error:', { data: error });
+  } catch {
+    logErrorToProduction('KB Chat API 'Error occurred':', { data: 'Error occurred' });
     return res.status(500).json({ error: 'Internal server error' });
   }
 }

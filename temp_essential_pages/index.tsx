@@ -30,15 +30,15 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
       // Revalidate every 5 minutes in production for fresh content
       revalidate: 300
     };
-  } catch (_error) {
-    console.error('Error in getStaticProps for home page:', error);
+  } catch {
+    console.('Error in getStaticProps for home page:', );
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
           const Sentry = await import('@sentry/nextjs');
-          Sentry.captureException(error);
+          Sentry.captureException();
         }
       } catch (_sentryError) {
         console.warn('Failed to log to Sentry:', sentryError);
@@ -60,11 +60,11 @@ const ErrorTestButton = () => {
   const handleClick = () => {
     try {
       throw new Error("This is a test error from the homepage button!");
-    } catch (_error) {
+    } catch {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
           import('@sentry/nextjs').then((Sentry) => {
-            Sentry.captureException(error);
+            Sentry.captureException('Error occurred');
           }).catch((sentryError) => {
             console.warn('Failed to log to Sentry:', sentryError);
           });

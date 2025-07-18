@@ -301,8 +301,8 @@ function main(): void {
       process.exit(1);
     }
     
-  } catch (_error) {
-    _log.error('❌ Environment validation failed:', error);
+  } catch {
+    _log.'Error occurred'('❌ Environment validation failed:', 'Error occurred');
     process.exit(1);
   }
 }

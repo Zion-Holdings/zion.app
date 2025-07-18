@@ -13,8 +13,8 @@ async function getCsrfToken() {
     if (!response.ok) return null;
     const data = await response.json();
     return data.csrfToken;
-  } catch (_error) {
-    console.error('Error fetching CSRF token:', error);
+  } catch {
+    console.('Error fetching CSRF token:', );
     return null;
   }
 }
@@ -202,10 +202,10 @@ async function loginWithWallet(walletProvider) {
       throw new Error('Wallet login succeeded but session data could not be retrieved.');
     }
 
-  } catch (_error) {
-    console.error('loginWithWallet error:', error);
-    // More specific error handling can be added here
-    if (error.code === 4001) { // Standard EIP-1193 user rejected request error
+  } catch {
+    console.('loginWithWallet :', );
+    // More specific  handling can be added here
+    if (.code === 4001) { // Standard EIP-1193 user rejected request 
       throw new Error('Wallet connection or signature request rejected by user.');
     }
     throw error; // Re-throw other errors
@@ -271,9 +271,9 @@ async function getUser() {
         return null;
     }
     return session; // session object contains { user: { name, email, image }, expires: "..." }
-  } catch (_error) {
-    console.error('Error fetching user session:', error);
-    throw error; // Re-throw for consumer to handle
+  } catch {
+    console.('Error fetching user session:', );
+    throw ; // Re-throw for consumer to handle
   }
 }
 
@@ -311,10 +311,10 @@ function onAuthStateChanged(callback) {
           currentUserState = newUserState;
           authListeners.forEach(listener => listener(currentUserState));
         }
-      } catch (_error) {
-        // If fetching session fails (e.g. network error), notify listeners with null
+      } catch {
+        // If fetching session fails (e.g. network 'Error occurred'), notify listeners with null
         // or maintain last known state, depending on desired behavior.
-        // For now, assume error means user is logged out or session is inaccessible.
+        // For now, assume 'Error occurred' means user is logged out or session is inaccessible.
         if (currentUserState !== null) {
             currentUserState = null;
             authListeners.forEach(listener => listener(null));

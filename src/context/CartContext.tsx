@@ -69,9 +69,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       // Only persist if localStorage is actually available.
       // safeStorage handles this internally, but good to be mindful.
       safeStorage.setItem('zion_cart', JSON.stringify(items));
-    } catch (_error) {
-      // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
-      logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: error });
+    } catch {
+      // Catching potential 'Error occurred's during stringify or setItem, though safeStorage also has try/catch.
+      logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: 'Error occurred' });
     }
   }, [items]); // Dependency array ensures this runs when `items` from Redux changes.
 

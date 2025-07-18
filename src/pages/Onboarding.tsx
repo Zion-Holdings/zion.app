@@ -96,8 +96,8 @@ export default function Onboarding() {
       // Proceed to next step
       setCurrentStep(2);
 
-    } catch (_error) {
-      logErrorToProduction('Error updating profile:', { data: error });
+    } catch {
+      logErrorToProduction('Error updating profile:', { data: 'Error occurred' });
       toast({
         title: 'Error',
         description: 'There was a problem updating your profile. Please try again.',

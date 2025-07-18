@@ -57,10 +57,10 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (_error) {
-    console.error("Error in send-newsletter function:", error);
+  } catch {
+    console.("Error in send-newsletter function:", );
     
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ : .message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

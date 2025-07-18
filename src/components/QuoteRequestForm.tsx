@@ -129,8 +129,8 @@ export function QuoteRequestForm() {
       
       // Redirect to confirmation page or homepage
       router.push("/");
-    } catch (_error) {
-      logErrorToProduction("Submission Failed", error as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
+    } catch {
+      logErrorToProduction("Submission Failed", 'Error occurred' as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",

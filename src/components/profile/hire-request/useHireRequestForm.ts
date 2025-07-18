@@ -83,8 +83,8 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
       if (result.success) {
         onClose();
       }
-    } catch (_error) {
-      logErrorToProduction('Error submitting hire request:', { data: error });
+    } catch {
+      logErrorToProduction('Error submitting hire request:', { data: 'Error occurred' });
     } finally {
       setIsSubmitting(false);
     }

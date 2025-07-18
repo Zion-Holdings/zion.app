@@ -424,8 +424,8 @@ export const _SearchResultsPage: React.FC = () => {
         resultCount: data.results.length, 
         totalCount: data.totalCount 
       });
-    } catch (_error) {
-      logErrorToProduction('Search failed', { data: error });
+    } catch {
+      logErrorToProduction('Search failed', { data: 'Error occurred' });
       setResults([]);
       setTotalCount(0);
     } finally {

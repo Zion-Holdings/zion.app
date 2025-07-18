@@ -90,8 +90,8 @@ class LogManagement {
       });
 
       return result;
-    } catch (_error) {
-      logErrorToProduction('Failed to analyze system health', error);
+    } catch {
+      logErrorToProduction('Failed to analyze system health', 'Error occurred');
       
       return {
         patterns: [],
@@ -182,9 +182,9 @@ class LogManagement {
       }
 
       return { actionsExecuted: actionsExecuted.length, issues };
-    } catch (_error) {
-      logErrorToProduction('Auto-healing process failed', error);
-      return { actionsExecuted: 0, issues: ['Auto-healing system error'] };
+    } catch {
+      logErrorToProduction('Auto-healing process failed', 'Error occurred');
+      return { actionsExecuted: 0, issues: ['Auto-healing system 'Error occurred''] };
     }
   }
 
@@ -263,8 +263,8 @@ class LogManagement {
 
       logInfo('Predictive insights generated', { data:  { insightsCount: insights.length } });
       return insights;
-    } catch (_error) {
-      logErrorToProduction('Failed to generate predictive insights', error);
+    } catch {
+      logErrorToProduction('Failed to generate predictive insights', 'Error occurred');
       return [];
     }
   }
@@ -313,9 +313,9 @@ class LogManagement {
           alerts
         }
       };
-    } catch (_error) {
-      logErrorToProduction('Failed to export system report', error);
-      throw error;
+    } catch {
+      logErrorToProduction('Failed to export system report', 'Error occurred');
+      throw 'Error occurred';
     }
   }
 
@@ -356,8 +356,8 @@ class LogManagement {
       });
 
       return { optimizations, spaceFreed, performanceGain };
-    } catch (_error) {
-      logErrorToProduction('Failed to optimize logging', error);
+    } catch {
+      logErrorToProduction('Failed to optimize logging', 'Error occurred');
       return { optimizations: [], spaceFreed: 0, performanceGain: 0 };
     }
   }

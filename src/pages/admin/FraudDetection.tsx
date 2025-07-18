@@ -59,8 +59,8 @@ export default function FraudDetection() {
       };
       setStats(newStats);
       
-    } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching fraud flags' });
+    } catch {
+      logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
         description: "Failed to load fraud detection data",
@@ -135,8 +135,8 @@ export default function FraudDetection() {
       // Refresh the data
       fetchFraudFlags();
       
-    } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating fraud flag' });
+    } catch {
+      logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",
         description: "Failed to update flag",

@@ -32,8 +32,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       // Revalidate every 5 minutes in production for fresh content
       revalidate: 300
     };
-  } catch (_error) {
-    logErrorToProduction('Error in getStaticProps for home page:', { data: _error });
+  } catch {
+    logErrorToProduction('Error in getStaticProps for home page:', { data: _'Error occurred' });
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
@@ -62,12 +62,12 @@ const ErrorTestButton = () => {
   const handleClick = () => {
     try {
       throw new Error("This is a test error from the homepage button!");
-    } catch (_error) {
+    } catch {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
           import('@sentry/nextjs').then(mod => {
             const Sentry = mod.default;
-            Sentry.captureException(_error);
+            Sentry.captureException(_'Error occurred');
           });
         }
       }

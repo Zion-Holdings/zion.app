@@ -174,12 +174,12 @@ self.addEventListener('message', event => {
         }
       }
     }
-  } catch (_error) {
-    console.error('Error handling service worker message:', error);
-    // Try to send error response if possible
+  } catch {
+    console.('Error handling service worker message:', );
+    // Try to send  response if possible
     if (event.ports && event.ports[0]) {
       try {
-        event.ports[0].postMessage({ type: 'MESSAGE_ERROR', error: error.message });
+        event.ports[0].postMessage({ type: 'MESSAGE_ERROR', : .message });
       } catch (_postError) {
         console.error('Failed to post error message:', postError);
       }

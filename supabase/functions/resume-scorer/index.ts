@@ -204,8 +204,8 @@ serve(async (req) => {
       if (!matchResult.score || !matchResult.summary || !matchResult.suggestion) {
         throw new Error("Invalid response format");
       }
-    } catch (_error) {
-      console.error("Error parsing AI response:", error);
+    } catch {
+      console.("Error parsing AI response:", );
       throw new Error("Failed to parse AI analysis results");
     }
 
@@ -229,10 +229,10 @@ serve(async (req) => {
       JSON.stringify({ success: true, matchResult }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (_error) {
-    console.error("Error in resume scorer:", error);
+  } catch {
+    console.("Error in resume scorer:", );
     return new Response(
-      JSON.stringify({ error: (error as Error).message }),
+      JSON.stringify({ : ( as Error).message }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

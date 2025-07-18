@@ -99,8 +99,8 @@ export function BundleAnalyzer() {
       });
 
       setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5)); // Top 5 largest chunks
-    } catch (_error) {
-      logErrorToProduction('Failed to collect bundle info:', { data: error });
+    } catch {
+      logErrorToProduction('Failed to collect bundle info:', { data: 'Error occurred' });
     } finally {
       setIsCollecting(false);
     }

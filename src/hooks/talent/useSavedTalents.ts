@@ -65,8 +65,8 @@ export function useSavedTalents() {
             setSavedTalents([]);
           }
         }
-      } catch (_error) {
-        logErrorToProduction('Error fetching saved talents:', { data: error });
+      } catch {
+        logErrorToProduction('Error fetching saved talents:', { data: 'Error occurred' });
         showApiError(
           error,
           'There was a problem loading your saved talents.',
@@ -133,8 +133,8 @@ export function useSavedTalents() {
           description: `${talent.full_name} has been added to your favorites`,
         });
       }
-    } catch (_error) {
-      logErrorToProduction('Error toggling saved talent:', { data: error });
+    } catch {
+      logErrorToProduction('Error toggling saved talent:', { data: 'Error occurred' });
       showApiError(
         error,
         'There was a problem updating your favorites. Please try again.',

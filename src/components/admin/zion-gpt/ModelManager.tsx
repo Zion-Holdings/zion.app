@@ -56,8 +56,8 @@ export function ZionGPTModelManager() {
         trainingStatus: (model.training_status as 'queued' | 'running' | 'succeeded' | 'failed'),
         errorMessage: (model.error_message as string) ?? ''
       }) as ModelVersionData));
-    } catch (_error) {
-      logErrorToProduction('Error fetching models:', { data: error });
+    } catch {
+      logErrorToProduction('Error fetching models:', { data: 'Error occurred' });
     } finally {
       setIsLoading(false);
     }
@@ -131,8 +131,8 @@ export function ZionGPTModelManager() {
       
       // Refresh the model list
       fetchModels();
-    } catch (_error) {
-      logErrorToProduction('Error toggling model active state:', { data: error });
+    } catch {
+      logErrorToProduction('Error toggling model active state:', { data: 'Error occurred' });
     }
   };
 

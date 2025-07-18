@@ -64,8 +64,8 @@ function processFile(filePath) {
       return true;
     }
     return false;
-  } catch (_error) {
-    console.error(`❌ Error processing ${filePath}:`, _error.message);
+  } catch {
+    console.'Error occurred'(`❌ Error processing ${filePath}:`, _error.message);
     return false;
   }
 }

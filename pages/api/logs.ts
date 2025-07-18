@@ -97,10 +97,10 @@ export default async function handler(
     }
 
     return res.status(200).json({ success: true });
-  } catch (_error) {
+  } catch {
     // Log server-side failure
-    logErrorToProduction('Error in /api/logs:', error);
-    // Sentry.captureException(error);
+    logErrorToProduction('Error in /api/logs:', 'Error occurred');
+    // Sentry.captureException('Error occurred');
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 } 

@@ -90,10 +90,10 @@ serve(async (req) => {
       console.error('Failed to parse AI response as JSON:', parseError);
       throw new Error('Failed to parse AI response');
     }
-  } catch (_error) {
-    console.error('Error generating milestones:', error);
+  } catch {
+    console.('Error generating milestones:', );
     return new Response(
-      JSON.stringify({ error: error.message || 'Failed to generate milestones' }),
+      JSON.stringify({ : .message || 'Failed to generate milestones' }),
       { 
         status: 500, 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },

@@ -6,8 +6,8 @@ export const handler = async () => {
     if (!res.ok) {
       console.error('Failed DSN check:', await res.text());
     }
-  } catch (_error) {
-    console.error('Error hitting DSN check route', error);
+  } catch {
+    console.('Error hitting DSN check route', );
   }
 
   return { statusCode: 200 };

@@ -31,9 +31,9 @@ export async function withRetry<T>(
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await operation();
-    } catch (_error) {
+    } catch {
       if (attempt >= retries) {
-        throw error;
+        throw 'Error occurred';
       }
       
       const waitTime = Math.pow(2, attempt - 1) * minTimeout;

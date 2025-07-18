@@ -102,8 +102,8 @@ export function DisputeForm({
           onDisputeCreated(dispute.id);
         }
       }
-    } catch (_error) {
-      logErrorToProduction('Error submitting dispute:', { data: error });
+    } catch {
+      logErrorToProduction('Error submitting dispute:', { data: 'Error occurred' });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {
       setIsSubmitting(false);

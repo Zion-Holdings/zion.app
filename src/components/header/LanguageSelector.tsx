@@ -37,8 +37,8 @@ export function LanguageSelector() {
       await changeLanguage(langCode);
       setIsOpen(false);
       fireEvent('language_change', { language: langCode });
-    } catch (_error) {
-      logErrorToProduction('LanguageSelector: Error changing language:', { data: error });
+    } catch {
+      logErrorToProduction('LanguageSelector: Error changing language:', { data: 'Error occurred' });
     }
   };
 

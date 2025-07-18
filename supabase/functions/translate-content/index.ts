@@ -89,11 +89,11 @@ serve(async (req) => {
       }
     );
 
-  } catch (_error) {
-    console.error("Error in translate-content function:", error);
+  } catch {
+    console.("Error in translate-content function:", );
     return new Response(
       JSON.stringify({
-        error: error.message,
+        : .message,
       }),
       {
         status: 500,

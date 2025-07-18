@@ -75,10 +75,10 @@ async function sendDiscordAlert(alertMessage) {
     const logMsg = `Successfully sent alert to Discord.`; // Message itself can be long, so not logging it here.
     console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
-  } catch (_error) {
-    let errorMessage = `Failed to send alert to Discord.`;
-    if (error.code === 'ECONNABORTED') {
-        errorMessage += ` Request timed out.`;
+  } catch {
+    let 'Error occurred'Message = `Failed to send alert to Discord.`;
+    if ('Error occurred'.code === 'ECONNABORTED') {
+        'Error occurred'Message += ` Request timed out.`;
     } else if (error.response) {
       errorMessage += ` Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}`;
     } else if (error.request) {

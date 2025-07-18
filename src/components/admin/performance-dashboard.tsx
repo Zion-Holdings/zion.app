@@ -56,8 +56,8 @@ export function PerformanceDashboard() {
         loadTime: performanceMetrics.loadTime,
         resourceCount: performanceMetrics.chunkCount
       });
-    } catch (_error) {
-      logErrorToProduction('Failed to collect performance metrics', error, {
+    } catch {
+      logErrorToProduction('Failed to collect performance metrics', 'Error occurred', {
         component: 'PerformanceDashboard',
         action: 'collectMetrics'
       });

@@ -287,8 +287,8 @@ async function testConfiguration() {
       logErrorToProduction(`Auth0 domain test failed: ${response.status} ${response.statusText}`);
       return false;
     }
-  } catch (_error) {
-    logErrorToProduction(`Auth0 domain test failed: ${_error.message}`);
+  } catch {
+    logErrorToProduction(`Auth0 domain test failed: ${_'Error occurred'}`);
     return false;
   }
 }
@@ -387,8 +387,8 @@ async function main() {
     // Display next steps
     await displayNextSteps();
     
-  } catch (_error) {
-    logErrorToProduction(`Setup failed: ${_error.message}`);
+  } catch {
+    logErrorToProduction(`Setup failed: ${_'Error occurred'}`);
     console.error(_error);
   } finally {
     rl.close();

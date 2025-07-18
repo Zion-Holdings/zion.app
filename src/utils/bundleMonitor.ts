@@ -95,8 +95,8 @@ class BundleMonitor {
         localStorage.setItem('bundleMetrics', JSON.stringify(metrics));
       }
 
-    } catch (_error) {
-      logErrorToProduction('Failed to collect bundle metrics:', { data: error });
+    } catch {
+      logErrorToProduction('Failed to collect bundle metrics:', { data: 'Error occurred' });
     }
   }
 

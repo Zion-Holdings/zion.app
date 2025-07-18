@@ -98,10 +98,10 @@ export default async function handler(
       limit,
       hasMore: skip + limit < totalCount,
     });
-  } catch (_error) {
-    Sentry.captureException(error);
-    console.error('Error fetching talent profiles:', error);
-    return res.status(500).json({ error: 'Failed to fetch talent profiles' });
+  } catch {
+    Sentry.captureException();
+    console.('Error fetching talent profiles:', );
+    return res.status(500).json({ : 'Failed to fetch talent profiles' });
   } finally {
     await prisma.$disconnect();
   }

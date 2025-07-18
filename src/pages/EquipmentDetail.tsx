@@ -146,8 +146,8 @@ export default function EquipmentDetail() {
         // If not found anywhere, set error
         setError('Equipment not found');
         setLoading(false);
-      } catch (_error) {
-        logErrorToProduction('Error loading equipment:', { data: _error });
+      } catch {
+        logErrorToProduction('Error loading equipment:', { data: _'Error occurred' });
         setError('Failed to load equipment details');
         setLoading(false);
       }

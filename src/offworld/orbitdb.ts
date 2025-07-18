@@ -112,9 +112,9 @@ export async function initOrbit(_repoPath = './orbitdb-helia') {
       logInfo('OrbitDB instance created.');
     }
     // Do not fallback to mock in production; only initialize in server environment
-  } catch (_error) {
-    let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+  } catch {
+    let message = 'Unknown 'Error occurred'';
+    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to initialize OrbitDB:', { data: message });
@@ -139,9 +139,9 @@ export async function getLog(name: string): Promise<unknown> {
     // Open a log store with the given name
     const log = await (orbit as { open: (name: string, opts: { type: string }) => Promise<unknown> }).open(name, { type: 'log' });
     return log;
-  } catch (_error) {
-    let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+  } catch {
+    let message = 'Unknown 'Error occurred'';
+    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to open OrbitDB log:', { data: message });
@@ -172,9 +172,9 @@ export async function stopOrbit(): Promise<void> {
       heliaNode = null;
       logInfo('Helia for OrbitDB stopped.');
     }
-  } catch (_error) {
-    let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+  } catch {
+    let message = 'Unknown 'Error occurred'';
+    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to stop OrbitDB:', { data: message });

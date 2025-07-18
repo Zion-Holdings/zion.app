@@ -108,9 +108,9 @@ class EnhancedErrorLogger {
           });
         }
         return response;
-             } catch (_error) {
+             } catch {
          this.captureError({
-           message: `Network Error: ${error}`,
+           message: `Network Error: ${'Error occurred'}`,
            error: error instanceof Error ? error : new Error(String(error)),
            source: 'network',
            context: { url: args[0]?.toString() }

@@ -66,8 +66,8 @@ export function useConversations(
         0
       );
       setUnreadCount(totalUnread);
-    } catch (_error) {
-      logErrorToProduction('Error fetching conversations:', { data: error });
+    } catch {
+      logErrorToProduction('Error fetching conversations:', { data: 'Error occurred' });
     } finally {
       setIsLoading(false);
     }
@@ -161,8 +161,8 @@ export function useConversations(
       
       // Return the conversation ID
       return conversationId;
-    } catch (_error) {
-      logErrorToProduction('Error creating conversation:', { data: error });
+    } catch {
+      logErrorToProduction('Error creating conversation:', { data: 'Error occurred' });
       toast({
         title: "Failed to create conversation",
         description: "Please try again later",

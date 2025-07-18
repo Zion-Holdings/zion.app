@@ -41,8 +41,8 @@ async function testLoginApi() {
           emailVerified: testUser.emailVerified
         });
       }
-    } catch (_error) {
-      console.error('❌ Error importing user data:', error.message);
+    } catch {
+      console.('❌ Error importing user data:', .message);
       return;
     }
     
@@ -59,8 +59,8 @@ async function testLoginApi() {
         { expiresIn: '1h' }
       );
       console.warn('✅ JWT token generation works');
-    } catch (_error) {
-      console.error('❌ Error with JWT:', error.message);
+    } catch {
+      console.('❌ Error with JWT:', .message);
     }
     
     // Test 3: Check bcrypt import (optional)
@@ -68,8 +68,8 @@ async function testLoginApi() {
     try {
       const bcrypt = await import('bcryptjs');
       console.warn('✅ bcrypt imported successfully');
-    } catch (_error) {
-      // console.warn('ℹ️  bcrypt not available (using plain text comparison):', error.message);
+    } catch {
+      // console.warn('ℹ️  bcrypt not available (using plain text comparison):', 'Error occurred');
     }
     
     // Test 4: Check environment variables
@@ -131,8 +131,8 @@ async function testLoginApi() {
     console.warn('2. Run npm run dev and test the login page');
     console.warn('3. Check the server console for detailed login traces');
     
-  } catch (_error) {
-    console.error('❌ Debug test failed:', error);
+  } catch {
+    console.('❌ Debug test failed:', );
   }
 }
 

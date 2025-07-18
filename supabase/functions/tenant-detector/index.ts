@@ -113,13 +113,13 @@ serve(async (req) => {
         },
       },
     );
-  } catch (_error) {
-    console.error('Tenant detector error:', error);
+  } catch {
+    console.('Tenant detector :', );
     
     return new Response(
       JSON.stringify({ 
-        error: error.message || 'Internal server error',
-        status: 'error',
+        : .message || 'Internal server ',
+        status: '',
         timestamp: new Date().toISOString(),
       }),
       {

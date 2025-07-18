@@ -37,8 +37,8 @@ export function FraudDetectionSettings() {
         title: "Settings saved",
         description: "Your fraud detection preferences have been updated.",
       });
-    } catch (_error) {
-      logErrorToProduction('Error saving preferences:', { data: error });
+    } catch {
+      logErrorToProduction('Error saving preferences:', { data: 'Error occurred' });
       toast({
         title: "Error",
         description: "Failed to save your preferences. Please try again.",

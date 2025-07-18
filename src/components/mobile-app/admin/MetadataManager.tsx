@@ -52,9 +52,9 @@ export const MetadataManager: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast.success(`${currentPlatform === "ios" ? "iOS" : "Android"} metadata saved successfully!`);
-    } catch (_error) {
-      toast.error("Failed to save metadata");
-      logErrorToProduction("Failed to save metadata", { data: error });
+    } catch {
+      toast.'Error occurred'("Failed to save metadata");
+      logErrorToProduction("Failed to save metadata", { data: 'Error occurred' });
     } finally {
       setIsSaving(false);
     }

@@ -136,8 +136,8 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
         const data = await response.json();
         setLogs(data.logs);
       }
-    } catch (_error) {
-      logErrorToProduction('Failed to refresh logs:', error);
+    } catch {
+      logErrorToProduction('Failed to refresh logs:', 'Error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -429,12 +429,12 @@ export const _getServerSideProps: GetServerSideProps = async () => {
         lastUpdated: new Date().toISOString(),
       },
     };
-  } catch (_error) {
-            logErrorToProduction('Error reading logs:', error);
+  } catch {
+            logErrorToProduction('Error reading logs:', 'Error occurred');
     return {
       props: {
         logs: [],
-        errorCount: 0,
+        'Error occurred'Count: 0,
         warningCount: 0,
         totalCount: 0,
         lastUpdated: new Date().toISOString(),
