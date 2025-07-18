@@ -36,8 +36,8 @@ class PerformanceMonitor {
     this.monitoringInterval = setInterval(async () => {
       try {
         await this.performComprehensiveCheck();
-      } catch {
-        console.('Monitoring check failed:', );
+      } catch (err) {
+        console.error('Monitoring check failed:', err);
       }
     }, this.checkInterval);
 
@@ -75,10 +75,10 @@ class PerformanceMonitor {
       console.warn(`✅ Performance check completed in ${duration.toFixed(2)}ms`);
       
       return metrics;
-    } catch {
-      console.('❌ Performance check failed:', );
+    } catch (err) {
+      console.error('❌ Performance check failed:', err);
       await this.sendErrorAlert();
-      throw ;
+      throw err;
     }
   }
 
@@ -108,9 +108,9 @@ class PerformanceMonitor {
         status: stats.total > this.thresholds.bundleSize ? 'critical' : 
                 stats.total > this.thresholds.bundleSize * 0.8 ? 'warning' : 'good'
       };
-    } catch {
-      console.('Bundle size check failed:', );
-      return { : .message };
+    } catch (err) {
+      console.error('Bundle size check failed:', err);
+      return { error: err.message };
     }
   }
 
@@ -372,8 +372,8 @@ class PerformanceMonitor {
       
       // Update cooldown
       this.alertCooldown.set(alertKey, now);
-    } catch {
-      console.('Failed to send alert:', );
+    } catch (err) {
+      console.error('Failed to send alert:', err);
     }
   }
 
@@ -435,8 +435,8 @@ class PerformanceMonitor {
         reason: 'auto_optimization',
         alert: alert
       });
-    } catch {
-      console.('Auto-optimization trigger failed:', );
+    } catch (err) {
+      console.error('Auto-optimization trigger failed:', err);
     }
   }
 

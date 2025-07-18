@@ -1,4 +1,3 @@
-const { withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 const path = require('path');
 
@@ -31,17 +30,17 @@ async function handler(req, res) {
         : [];
       if (!subs.includes(email)) subs.push(email);
       fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));
-    } catch (_err) {
-      console.error('Failed to persist subscription:', _err);
+    } catch (error) {
+      console.error('Failed to persist subscription:', error);
     }
 
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (_err) {
-    console.error('Subscribe API error:', _err);
+  } catch (error) {
+    console.error('Subscribe API error:', error);
     res.statusCode = 500;
-    res.json({ error: _err.message || 'Subscription failed' });
+    res.json({ error: error.message || 'Subscription failed' });
   }
 }
 
-module.exports = withSentry(handler);
+module.exports = handler;
