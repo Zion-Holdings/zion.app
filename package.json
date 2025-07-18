@@ -182,7 +182,13 @@
     "automation:test-cursor": "node automation/tests/test-cursor-connection.js",
     "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js",
     "optimize:bundle": "node scripts/optimize-bundle.cjs",
-    "optimize:icons": "node scripts/optimize-icon-imports.cjs"
+    "optimize:icons": "node scripts/optimize-icon-imports.cjs",
+    "self-heal": "node scripts/self-healing.js",
+    "auto-fix": "node scripts/auto-fix-errors.js",
+    "build-monitor": "node scripts/build-monitor.js",
+    "build-pipeline": "npm run lint:fix && npm run type-check && npm run build && npm run test",
+    "heal-and-build": "npm run auto-fix && npm run build",
+    "monitor-and-heal": "npm run build-monitor"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

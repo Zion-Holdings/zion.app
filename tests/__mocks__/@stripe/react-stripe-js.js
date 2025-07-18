@@ -62,8 +62,8 @@ const Elements = ({ children, _type, ...props }) => {
   return children;
 };
 
-const CardElement = ({ _event, ...props }) => {
-  return <div data-testid="card-element" {...props} />;
+const CardElement = ({ _event, ..._props }) => {
+  return <div data-testid="card-element" {..._props} />;
 };
 
 const PaymentElement = (_props) => <div data-testid="mock-payment-element" {..._props} />;
