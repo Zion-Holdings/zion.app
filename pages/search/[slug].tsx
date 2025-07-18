@@ -2,18 +2,11 @@ import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
-import { Search, Filter, Grid, List } from '@/components/ui/icons';
-
-
-
 
 import { SEO } from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import ProductCard from '@/components/ProductCard';
 import { TalentCard } from '@/components/talent/TalentCard';
 import { CategoryCard } from '@/components/CategoryCard';
-import { SearchEmptyState } from '@/components/marketplace/EmptyState';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
@@ -59,10 +52,10 @@ interface CategorySearchResult extends BaseSearchResult {
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
 // Type guard functions
-const hasPrice = (result: SearchResult): result is ProductSearchResult => 
+const _hasPrice = (result: SearchResult): result is ProductSearchResult => 
   result.type === 'product' || result.type === 'equipment';
 
-const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
+const _hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
