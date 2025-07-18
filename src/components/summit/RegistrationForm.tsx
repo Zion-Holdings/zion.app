@@ -10,9 +10,9 @@ export function RegistrationForm() {
   const [role, setRole] = useState('');
   const [country, setCountry] = useState('');
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     await new Promise((r) => setTimeout(r, 500));

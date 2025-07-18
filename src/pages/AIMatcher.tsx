@@ -13,7 +13,7 @@ export default function AIMatcherPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   useFeatureUsage('AI Matchmaker');
   
-  const handleMatchSelect = (match: MatchResult) => {
+  const handleMatchSelect = (_match: MatchResult) => {
     // Get the item type from the category
     let itemType = "service";
     const category = match.item.category.toLowerCase();

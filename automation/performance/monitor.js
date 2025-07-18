@@ -2,7 +2,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const axios = require('axios');
-const { performance } = require('perf_hooks');
+const { _performance } = require('perf_hooks');
 
 class PerformanceMonitor {
   constructor() {
@@ -36,7 +36,7 @@ class PerformanceMonitor {
     this.monitoringInterval = setInterval(async () => {
       try {
         await this.performComprehensiveCheck();
-      } catch (error) {
+      } catch (_error) {
         console.error('Monitoring check failed:', error);
       }
     }, this.checkInterval);
@@ -75,7 +75,7 @@ class PerformanceMonitor {
       console.warn(`✅ Performance check completed in ${duration.toFixed(2)}ms`);
       
       return metrics;
-    } catch (error) {
+    } catch (_error) {
       console.error('❌ Performance check failed:', error);
       await this.sendErrorAlert(error);
       throw error;
@@ -108,7 +108,7 @@ class PerformanceMonitor {
         status: stats.total > this.thresholds.bundleSize ? 'critical' : 
                 stats.total > this.thresholds.bundleSize * 0.8 ? 'warning' : 'good'
       };
-    } catch (error) {
+    } catch (_error) {
       console.error('Bundle size check failed:', error);
       return { error: error.message };
     }
@@ -154,7 +154,7 @@ class PerformanceMonitor {
       } catch {
         return { status: 'no_build' };
       }
-    } catch (error) {
+    } catch (_error) {
       return { error: error.message };
     }
   }
@@ -200,7 +200,7 @@ class PerformanceMonitor {
         heavy: this.identifyHeavyDependencies(deps),
         outdated: await this.checkOutdatedDependencies()
       };
-    } catch (error) {
+    } catch (_error) {
       return { error: error.message };
     }
   }
@@ -235,7 +235,7 @@ class PerformanceMonitor {
         componentFiles: files.components,
         averageFileSize: files.averageSize
       };
-    } catch (error) {
+    } catch (_error) {
       return { error: error.message };
     }
   }
@@ -372,7 +372,7 @@ class PerformanceMonitor {
       
       // Update cooldown
       this.alertCooldown.set(alertKey, now);
-    } catch (error) {
+    } catch (_error) {
       console.error('Failed to send alert:', error);
     }
   }
@@ -435,7 +435,7 @@ class PerformanceMonitor {
         reason: 'auto_optimization',
         alert: alert
       });
-    } catch (error) {
+    } catch (_error) {
       console.error('Auto-optimization trigger failed:', error);
     }
   }
@@ -448,7 +448,7 @@ class PerformanceMonitor {
       // Also store historical data
       const historyPath = path.join(process.cwd(), 'logs', 'performance-history.jsonl');
       await fs.appendFile(historyPath, JSON.stringify(metrics) + '\n');
-    } catch (error) {
+    } catch (_error) {
       console.error('Failed to store metrics:', error);
     }
   }
@@ -476,7 +476,7 @@ class PerformanceMonitor {
 
     try {
       await axios.post(this.slackWebhook, payload);
-    } catch (slackError) {
+    } catch (_slackError) {
       console.error('Failed to send error alert to Slack:', slackError);
     }
   }
@@ -496,7 +496,7 @@ class PerformanceMonitor {
       return lines
         .map(line => JSON.parse(line))
         .filter(metric => new Date(metric.timestamp) > cutoff);
-    } catch (error) {
+    } catch (_error) {
       console.error('Failed to get performance history:', error);
       return [];
     }

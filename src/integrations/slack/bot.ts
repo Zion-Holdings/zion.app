@@ -63,7 +63,7 @@ async function askZionGPT(prompt: string): Promise<string> {
   return `AI response to: ${prompt}`;
 }
 
-app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand, ack: SlackAck, respond: SlackRespond }) => {
+app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand, ack: SlackAck, _respond: SlackRespond }) => {
   await ack();
   const [action, ...args] = command?.text.split(/\s+/) || [];
 
@@ -94,7 +94,7 @@ app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand,
   }
 });
 
-app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond: SlackRespond }) => {
+app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, _respond: SlackRespond }) => {
   await ack();
   try {
     await switchNetlifySite();

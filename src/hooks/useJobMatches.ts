@@ -36,7 +36,7 @@ export function useJobMatches(jobId: string) {
 
       if (error) throw error;
       setMatches(data || []);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching job matches:', { data: error });
       toast({
         title: "Error",
@@ -65,7 +65,7 @@ export function useJobMatches(jobId: string) {
       
       // Refresh the matches list
       await fetchMatches();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error triggering AI matching:', { data: error });
       toast({
         title: "Matching Failed",

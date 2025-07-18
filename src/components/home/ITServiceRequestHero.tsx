@@ -21,10 +21,10 @@ export function ITServiceRequestHero() {
   const [location, setLocation] = useState("");
   const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-  const { t } = useTranslation();
+  const { _toast } = useToast();
+  cons_t { t } = useTranslation();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name || !email || !location) {

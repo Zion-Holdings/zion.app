@@ -86,7 +86,7 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
     });
   }
 
-  const removeFilter = (filterKey: string) => {
+  const removeFilter = (_filterKey: string) => {
     if (filterKey.startsWith('type-')) {
       const typeToRemove = filterKey.replace('type-', '');
       const newTypes = filters.types.filter(t => t !== typeToRemove);

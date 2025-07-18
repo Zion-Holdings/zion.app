@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const _path = require('path');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 // Get all files that still use React Router
 const files = execSync('grep -r "useNavigate" src --include="*.tsx" --include="*.ts" -l', { encoding: 'utf8' })
@@ -32,7 +32,7 @@ files.forEach(file => {
     
     fs.writeFileSync(file, content);
     console.warn(`✅ Fixed ${file}`);
-  } catch (error) {
+  } catch (_error) {
     console.warn(`❌ Error fixing ${file}:`, error.message);
   }
 });

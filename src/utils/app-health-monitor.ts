@@ -91,7 +91,7 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { memoryUsageMB: memoryUsage }
         };
-      } catch (error) {
+      } catch (_error) {
         return {
           name: 'memory',
           status: 'fail',
@@ -146,7 +146,7 @@ class AppHealthMonitor {
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
-      } catch (error) {
+      } catch (_error) {
         return {
           name: 'performance',
           status: 'fail',
@@ -184,7 +184,7 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { recentErrorCount: errorCount }
         };
-      } catch (error) {
+      } catch (_error) {
         return {
           name: 'errors',
           status: 'fail',
@@ -258,7 +258,7 @@ class AppHealthMonitor {
           timestamp: Date.now(),
           details: { apiPingTime: pingTime }
         };
-      } catch (error) {
+      } catch (_error) {
         return {
           name: 'connectivity',
           status: 'fail',
@@ -335,7 +335,7 @@ class AppHealthMonitor {
       try {
         const result = await checkFn();
         checkResults.push(result);
-      } catch (error) {
+      } catch (_error) {
         checkResults.push({
           name,
           status: 'fail',

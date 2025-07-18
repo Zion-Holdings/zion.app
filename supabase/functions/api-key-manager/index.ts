@@ -60,10 +60,10 @@ serve(async (req) => {
         const { name, scopes, expiresAt } = await req.json() as CreateKeyRequest;
         return await createApiKey(user.id, name, scopes, expiresAt);
       } else if (path === 'regenerate') {
-        const { keyId } = await req.json() as RegenerateKeyRequest;
+        const { _keyId } = await req.json() as RegenerateKeyRequest;
         return await regenerateApiKey(user.id, keyId);
       } else if (path === 'revoke') {
-        const { keyId } = await req.json() as RegenerateKeyRequest;
+        const { _keyId } = await req.json() as RegenerateKeyRequest;
         return await revokeApiKey(user.id, keyId);
       }
     } else if (req.method === 'GET') {
@@ -80,7 +80,7 @@ serve(async (req) => {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error processing request:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -148,7 +148,7 @@ async function createApiKey(userId: string, name: string, scopes: string[], expi
       status: 201,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in createApiKey:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -177,7 +177,7 @@ async function getUserApiKeys(userId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in getUserApiKeys:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -253,7 +253,7 @@ async function regenerateApiKey(userId: string, keyId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in regenerateApiKey:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -286,7 +286,7 @@ async function revokeApiKey(userId: string, keyId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in revokeApiKey:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -339,7 +339,7 @@ async function getApiLogs(userId: string, limit = 50, offset = 0) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in getApiLogs:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

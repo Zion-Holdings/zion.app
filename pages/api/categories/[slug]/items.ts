@@ -16,7 +16,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
     return;
   }
 
-  const { slug } = request['query'] as { slug: string | string[] };
+  const { _slug } = request['query'] as { slug: string | string[] };
 
   if (typeof slug !== 'string') {
     response.status(400).json({ message: 'Invalid slug provided.' });
@@ -123,7 +123,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         logInfo('Database returned empty results, using fallback data for better UX');
         usingFallback = true;
       }
-    } catch (dbError) {
+    } catch (_dbError) {
       logWarn('Database query failed or timed out, using fallback data:', { data:  { data: dbError } });
       usingFallback = true;
     }
@@ -156,7 +156,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
 
     response.status(200).json(responseData);
     return;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Failed to fetch items for category ${slug}:', { data: error });
     
     // Ensure we always return JSON, never HTML
@@ -165,7 +165,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         extra: { slug, path: request['url'] },
         user: (request as { user?: { id: string; email: string } }).user ? { id: (request as { user?: { id: string; email: string } }).user!.id, email: (request as { user?: { id: string; email: string } }).user!.email } : undefined,
       });
-    } catch (sentryError) {
+    } catch (_sentryError) {
       logErrorToProduction('Sentry capture failed:', { data: sentryError });
     }
     
@@ -177,7 +177,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
   } finally {
     try {
       await prisma.$disconnect();
-    } catch (disconnectError) {
+    } catch (_disconnectError) {
       logErrorToProduction('Prisma disconnect error:', { data: disconnectError });
     }
   }

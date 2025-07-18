@@ -16,12 +16,12 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', details: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone || !formData.details) {
       enqueueSnackbar('Please fill in all required fields.', { variant: 'error' });

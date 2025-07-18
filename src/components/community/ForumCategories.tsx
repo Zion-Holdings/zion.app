@@ -57,7 +57,7 @@ const iconMap = {
 };
 
 export const ForumCategories = () => {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
 
   const visibleCategories = categories.filter(
@@ -65,7 +65,7 @@ export const ForumCategories = () => {
   );
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">
       {visibleCategories.map((category) => {
         const Icon = iconMap[category.icon as keyof typeof iconMap];
         return (

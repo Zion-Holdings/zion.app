@@ -8,7 +8,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function usePortfolio() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
@@ -105,7 +105,7 @@ export function usePortfolio() {
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('portfolio_projects')
         .update({
           title: project.title,
@@ -154,7 +154,7 @@ export function usePortfolio() {
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('portfolio_projects')
         .delete()
         .eq('id', projectId)

@@ -21,7 +21,7 @@ interface MobileBottomNavProps {
 
 export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const router = useRouter();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAuthenticated = !!user;
   const { items: wishlistItems } = useWishlist(); // Renamed to avoid conflict
   const favoritesCount = wishlistItems.length;

@@ -10,9 +10,9 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   const router = useRouter();
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
 
-  const isActive = (path: string) => {
+  const isActive = (_path: string) => {
     if (path === '/') {
       return router.pathname === '/';
     }

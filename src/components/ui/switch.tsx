@@ -7,7 +7,7 @@ const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, onCheckedChange, onKeyDown, ...props }, ref) => {
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleKeyDown = (_event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === "ArrowLeft") onCheckedChange?.(false)
     if (event.key === "ArrowRight") onCheckedChange?.(true)
     onKeyDown?.(event)

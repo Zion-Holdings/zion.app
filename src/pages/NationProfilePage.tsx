@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NationProfilePage() {
   const router = useRouter();
-  const { slug } = router.query as { slug?: string };
+  const { _slug } = router.query as { slug?: string };
   if (!slug) return null;
 
   return (

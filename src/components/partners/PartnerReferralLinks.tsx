@@ -24,7 +24,7 @@ export function PartnerReferralLinks() {
   // Get the base referral link
   const baseLink = getReferralLink();
   
-  const handleCopyLink = (link: string) => {
+  const handleCopyLink = (_link: string) => {
     navigator.clipboard.writeText(link);
     toast({
       title: "Link copied!",

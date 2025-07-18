@@ -13,7 +13,7 @@ interface AuthButtonsProps {
 export function AuthButtons({ providers = ['google', 'github', 'facebook', 'credentials'] }: AuthButtonsProps) {
   const [loadingProvider, setLoadingProvider] = useState<string | null>(null);
 
-  const handleSignIn = async (provider: Provider) => {
+  const handleSignIn = async (_provider: Provider) => {
     setLoadingProvider(provider);
     await signIn(provider);
   };

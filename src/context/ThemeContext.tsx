@@ -19,9 +19,9 @@ const initialState: ThemeContextState = {
   theme: 'light', // Default, can be overridden by preset
   themePreset: 'light',
   primaryColor: '#3b82f6', // Default primary color
-  toggleTheme: () => {},
-  setThemePreset: () => {},
-  setPrimaryColor: () => {},
+  _toggleTheme: () => {},
+  _setThemePreset: () => {},
+  _setPrimaryColor: () => {},
 }
 
 const ThemeContext = createContext<ThemeContextState>(initialState)
@@ -86,11 +86,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     });
   }
 
-  const handleSetThemePreset = (preset: ThemePreset) => {
+  const handleSetThemePreset = (_preset: ThemePreset) => {
     setThemePresetState(preset)
   }
 
-  const handleSetPrimaryColor = (color: string) => {
+  const handleSetPrimaryColor = (_color: string) => {
     setPrimaryColorState(color)
   }
 

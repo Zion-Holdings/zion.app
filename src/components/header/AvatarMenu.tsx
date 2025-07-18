@@ -16,7 +16,7 @@ import {
 
  // Assuming lucide-react is used
 
-export const AvatarMenu: React.FC = () => {
+export const _AvatarMenu: React.FC = () => {
   const { user, logout, avatarUrl } = useAuth();
 
   if (!user) return null;

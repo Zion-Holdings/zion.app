@@ -15,15 +15,15 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
   const [minPrice, setMinPrice] = useState<string>(typeof filters.minPrice === 'string' ? filters.minPrice : '');
   const [maxPrice, setMaxPrice] = useState<string>(typeof filters.maxPrice === 'string' ? filters.maxPrice : '');
 
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleCategoryChange = (_e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
     onFilterChange?.({ ...filters, category: e.target.value });
   };
-  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMinPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(e.target.value);
     onFilterChange?.({ ...filters, minPrice: e.target.value });
   };
-  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMaxPriceChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     setMaxPrice(e.target.value);
     onFilterChange?.({ ...filters, maxPrice: e.target.value });
   };

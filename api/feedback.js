@@ -1,4 +1,4 @@
-const { withSentry } = require('./withSentry.cjs');
+const { _withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 const path = require('path');
 
@@ -39,7 +39,7 @@ async function handler(req, res) {
     fs.writeFileSync(file, JSON.stringify(existing, null, 2));
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (err) {
+  } catch (_err) {
     console.error('Feedback API error:', err);
     res.statusCode = 500;
     res.json({ error: 'Failed to save feedback' });

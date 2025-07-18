@@ -28,7 +28,7 @@ import { ProjectOfferBanner } from "@/components/projects/ProjectOfferBanner";
 import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingInterviewsCard";
 
 function TalentDashboardContent() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [, setActiveTab] = useState("job-matches");
   const onboardingStatus = useOnboardingStatus();
   const showAdvanced =

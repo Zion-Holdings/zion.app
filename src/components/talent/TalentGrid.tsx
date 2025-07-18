@@ -22,7 +22,7 @@ export function TalentGrid({
   clearFilters,
   handleRequestHire
 }: TalentGridProps) {
-  const handleRequestHireInternal = (talent: TalentProfile) => {
+  const handleRequestHireInternal = (_talent: TalentProfile) => {
     if (handleRequestHire) {
       handleRequestHire(talent);
     } else {
@@ -31,7 +31,7 @@ export function TalentGrid({
     }
   };
 
-  const handleViewProfile = (id: string) => {
+  const handleViewProfile = (_id: string) => {
     if (viewProfile) {
       viewProfile(id);
     } else {

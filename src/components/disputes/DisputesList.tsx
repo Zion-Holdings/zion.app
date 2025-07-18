@@ -29,7 +29,7 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
     ? disputes 
     : disputes.filter(dispute => dispute.status === statusFilter);
 
-  const getStatusBadgeVariant = (status: DisputeStatus) => {
+  const getStatusBadgeVariant = (_status: DisputeStatus) => {
     switch (status) {
       case "open":
         return "default";

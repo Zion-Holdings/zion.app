@@ -42,7 +42,7 @@ export function ChatBotPanel() {
   const [failedAttempts, setFailedAttempts] = useState(0);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { theme } = useTheme();
+  const { _theme } = useTheme();
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -58,7 +58,7 @@ export function ChatBotPanel() {
     }
   }, []);
 
-  const handleSendMessage = async (text: string = inputValue) => {
+  const handleSendMessage = async (_text: string = inputValue) => {
     if (!text.trim()) return;
     
     const userMessage: Message = {
@@ -97,7 +97,7 @@ export function ChatBotPanel() {
         // Reset failed attempts if successful
         setFailedAttempts(0);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction("Error in AI chat", error as Error, { component: 'ChatBotPanel' });
       toast({
         variant: "destructive",
@@ -114,7 +114,7 @@ export function ChatBotPanel() {
     }
   };
 
-  const sendToAIAssistant = async (message: string) => {
+  const sendToAIAssistant = async (_message: string) => {
     try {
       const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
         method: "POST",
@@ -138,11 +138,11 @@ export function ChatBotPanel() {
         success: true,
         message: data.message
       };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction("Error calling Supabase AI chat function", error as Error, { component: 'ChatBotPanel', functionName: 'ai-chat' });
       return {
         success: false,
-        message: "I'm experiencing technical difficulties. Please try again later."
+        _message: "I'm experiencing technical difficulties. Please try again later."
       };
     }
   };
@@ -174,12 +174,12 @@ export function ChatBotPanel() {
         })),
         component: 'ChatBotPanel'
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction("Failed to log support escalation", error as Error, { component: 'ChatBotPanel' });
     }
   };
 
-  const handleQuickReply = (text: string) => {
+  const handleQuickReply = (_text: string) => {
     handleSendMessage(text);
   };
 

@@ -10,7 +10,7 @@ export default function AICoreDashboard() {
     try {
       const res = await triggerTraining();
       setStatus(res.status);
-    } catch (err) {
+    } catch (_err) {
       setStatus('error');
       logErrorToProduction(err instanceof Error ? err.message : String(err), { message: 'Training error' });
     }

@@ -30,7 +30,7 @@ export default async function handler(
     // Return sorted categories alphabetically by name
     const sortedCategories = mockCategories.sort((a, b) => a.name.localeCompare(b.name));
     return res.status(200).json(sortedCategories);
-  } catch (error) {
+  } catch (_error) {
     console.error('Failed to fetch categories:', error);
     return res.status(500).json({ error: 'Internal Server Error: Failed to fetch categories' });
   }

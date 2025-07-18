@@ -13,12 +13,12 @@ const defaultContext: MessagingContextType = {
   activeConversation: null,
   activeMessages: [],
   isLoading: false,
-  sendMessage: async () => {},
-  createConversation: async () => {},
-  markAsRead: async () => {},
-  setActiveConversation: () => {},
-  fetchConversations: async () => {},
-  loadMessages: async () => {}
+  _sendMessage: async () => {},
+  _createConversation: async () => {},
+  _markAsRead: async () => {},
+  _setActiveConversation: () => {},
+  _fetchConversations: async () => {},
+  _loadMessages: async () => {}
 };
 
 // "createContext" may be untyped if React type definitions are missing.
@@ -40,7 +40,7 @@ export function useMessaging(): MessagingContextType {
 
 // Provider component
 export function MessagingProvider({ children }: { children: ReactNode }) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   const {
     messages,

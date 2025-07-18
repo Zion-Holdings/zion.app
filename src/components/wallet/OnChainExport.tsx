@@ -27,7 +27,7 @@ export function OnChainExport() {
   const [isConnected, setIsConnected] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [exportStatus, setExportStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const { user: _user } = useAuth();
   
   const handleConnectWallet = async () => {

@@ -65,7 +65,7 @@ export async function executeWithTimeout<T>(
     ]);
     
     return result;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Database query failed', error as Error);
     
     if (fallbackData !== undefined) {
@@ -86,7 +86,7 @@ export async function testDatabaseConnection(): Promise<boolean> {
     await client.$queryRaw`SELECT 1`;
     logInfo('Database connection successful');
     return true;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Database connection failed', error as Error);
     return false;
   }
@@ -111,7 +111,7 @@ export async function getDatabaseStats() {
     };
     
     return stats;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Failed to get database stats', error as Error);
     return {
       connected: false,
@@ -129,7 +129,7 @@ export async function disconnectDatabase(): Promise<void> {
       await prisma.$disconnect();
       prisma = null;
     logInfo('Database disconnected successfully');
-    } catch (error) {
+    } catch (_error) {
     logErrorToProduction('Error disconnecting from database', error as Error);
     }
   }
@@ -157,7 +157,7 @@ export async function databaseHealthCheck(): Promise<{
       status: responseTime > 1000 ? 'degraded' : 'healthy',
       responseTime
     };
-  } catch (error) {
+  } catch (_error) {
     return {
       status: 'unhealthy',
       responseTime: Date.now() - startTime,

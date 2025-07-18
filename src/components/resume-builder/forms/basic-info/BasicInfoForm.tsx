@@ -53,7 +53,7 @@ export function BasicInfoForm({
     }
   }, [initialData, form]);
 
-  const handleSubmit = (data: BasicInfoFormData) => {
+  const handleSubmit = (_data: BasicInfoFormData) => {
     onSave(data);
     if (onComplete) {
       onComplete();

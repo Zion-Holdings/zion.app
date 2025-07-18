@@ -13,12 +13,12 @@ export function FooterNewsletter(): React.ReactElement {
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailError, setEmailError] = useState('');
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
 
   const lastSubmit = useRef(0);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return; // ignore bots
     const now = Date.now();

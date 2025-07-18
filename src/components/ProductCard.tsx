@@ -33,7 +33,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyDisabled = false }: ProductCardProps) {
   // Move all hooks to the top, before any early returns
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state

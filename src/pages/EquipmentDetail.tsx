@@ -85,10 +85,10 @@ export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } =
 
 export default function EquipmentDetail() {
   const router = useRouter();
-  const { id } = router.query as { id?: string };
+  const { _id } = router.query as { id?: string };
   const { isAuthenticated, user: _user } = useAuth();
   const { items, dispatch } = useCart();
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -138,7 +138,7 @@ export default function EquipmentDetail() {
               setLoading(false);
               return;
             }
-          } catch (storageError) {
+          } catch (_storageError) {
             logErrorToProduction('Error reading from sessionStorage:', { data: storageError });
           }
         }

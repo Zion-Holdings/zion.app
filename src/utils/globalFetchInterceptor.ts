@@ -166,7 +166,7 @@ if (typeof window !== "undefined" && window.fetch) {
         }
       }
       return response;
-    } catch (err) {
+    } catch (_err) {
       // Only show network errors for user-initiated requests
       const url = typeof args[0] === 'string' ? args[0] : '';
       

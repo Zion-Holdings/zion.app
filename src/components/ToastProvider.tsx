@@ -3,7 +3,7 @@ import { SnackbarProvider, useSnackbar } from 'notistack';
 import { setEnqueueSnackbarRef } from '@/context/SnackbarContext';
 
 function InnerProvider({ children }: { children: React.ReactNode }) {
-  const { enqueueSnackbar } = useSnackbar();
+  const { _enqueueSnackbar } = useSnackbar();
   setEnqueueSnackbarRef(enqueueSnackbar);
   return <>{children}</>;
 }

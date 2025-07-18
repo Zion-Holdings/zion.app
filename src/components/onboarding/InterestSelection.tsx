@@ -10,7 +10,7 @@ interface InterestSelectionProps {
 export function InterestSelection({ onComplete }: InterestSelectionProps) {
   const [selected, setSelected] = useState<string[]>([]);
 
-  const toggle = (interest: string) => {
+  const toggle = (_interest: string) => {
     setSelected(prev =>
       prev.includes(interest)
         ? prev.filter(i => i !== interest)

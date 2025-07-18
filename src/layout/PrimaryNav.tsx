@@ -27,10 +27,10 @@ import { LoginModal } from '@/components/auth/LoginModal';
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isLoggedIn = !!user;
   const isMobile = useIsMobile();
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const router = useRouter();
   const [query, setQuery] = useState('');
   const suggestions = generateSearchSuggestions();
@@ -43,7 +43,7 @@ export function PrimaryNav() {
     // context not available
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
@@ -127,7 +127,7 @@ export function PrimaryNav() {
                 <>
                   <Link
                     href="/auth/login"
-                    className="text-sm hover:text-primary whitespace-nowrap"
+                    className="text-sm _hover:text-primary whitespace-nowrap"
                     data-testid="login-link"
                     onClick={(e) => {
                       e.preventDefault();
@@ -149,7 +149,7 @@ export function PrimaryNav() {
           </div>
           
           {/* Tablet view (md to lg) - simplified controls */}
-          <div className="hidden md:flex lg:hidden items-center gap-2 order-2">
+          <div className="hidden _md:flex lg:hidden items-center gap-2 order-2">
             <ModeToggle />
             <LanguageSelector />
             {!isLoggedIn && (

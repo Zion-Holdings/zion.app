@@ -24,10 +24,10 @@ if (missing.length > 0) {
   console.error('Attempting to start offline development mode...');
 
   try {
-    const { execSync } = require('child_process');
+    const { _execSync } = require('child_process');
     execSync('bash offline-dev.sh', { stdio: 'inherit' });
     console.warn('\u2705 Offline development environment started.');
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to launch offline mode:', err.message);
   }
 

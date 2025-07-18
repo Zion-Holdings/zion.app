@@ -98,7 +98,7 @@ export default async function handler(
       limit,
       hasMore: skip + limit < totalCount,
     });
-  } catch (error) {
+  } catch (_error) {
     Sentry.captureException(error);
     console.error('Error fetching talent profiles:', error);
     return res.status(500).json({ error: 'Failed to fetch talent profiles' });

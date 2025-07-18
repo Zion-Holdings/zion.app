@@ -7,7 +7,7 @@ import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 export default function EnterpriseAdmin() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   // Check if user has enterprise admin role
   const isEnterpriseAdmin = user?.role === "enterprise_admin";

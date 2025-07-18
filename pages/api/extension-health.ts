@@ -27,7 +27,7 @@ export default async function handler(
       version: '1.0.0',
       environment: process.env['NODE_ENV'],
     });
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Extension health check error:', error);
     return res.status(500).json({
       status: 'error',

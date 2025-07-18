@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (token_hash && type) {
     const supabase = createClient(req, res)
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { _error } = await supabase.auth.verifyOtp({
       type: type as 'email' | 'phone' | 'recovery' | 'signup',
       token_hash: token_hash as string,
     })

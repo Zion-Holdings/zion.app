@@ -21,7 +21,7 @@ const mockTalent: TalentProfile = {
 };
 
 export function ContractBuilderContent() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [showBuilderType, setShowBuilderType] = useState<'none' | 'standard' | 'smart'>('none');
   const [recentContracts, _setRecentContracts] = useState([
     {
@@ -42,11 +42,11 @@ export function ContractBuilderContent() {
     }
   ]);
 
-  const handleContractGenerated = (content: string) => {
+  const handleContractGenerated = (_content: string) => {
     logDebug('Contract generated:', { preview: content.substring(0, 100) + '...' });
   };
 
-  const handleViewContract = (contractId: string) => {
+  const handleViewContract = (_contractId: string) => {
     logDebug('Viewing contract:', { data:  { contractId } });
     // Future implementation: View specific contract details
   };

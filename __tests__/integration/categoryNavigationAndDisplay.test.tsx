@@ -24,8 +24,8 @@ jest.mock('next/router', () => ({
 jest.mock('next/link', () => {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require('react');
-  const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
-    return React.createElement('a', { href, onClick: (e: any) => {
+  const MockLink = ({ children, href }: { _children: React.ReactNode; href: string }) => {
+    return React.createElement('a', { href, _onClick: (e: any) => {
       e.preventDefault(); // Prevent actual navigation
       // Simulate router push behavior for testing purposes
       const url = new URL(href, 'http://localhost'); // Base URL needed for URL constructor

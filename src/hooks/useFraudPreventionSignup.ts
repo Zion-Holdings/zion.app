@@ -15,7 +15,7 @@ export function useFraudPreventionSignup() {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
       return data.ip;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error getting IP:', { data: error });
       return undefined;
     }
@@ -35,7 +35,7 @@ export function useFraudPreventionSignup() {
         
         // Create a fraud flag for admin review
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { error } = await supabase.from('fraud_flags').insert({
+        const { _error } = await supabase.from('fraud_flags').insert({
           user_email: email,
           content_type: 'signup',
           content_id: email, // Using email as content ID for signup attempts
@@ -71,7 +71,7 @@ export function useFraudPreventionSignup() {
       
       // No suspicious patterns found
       return true;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error in fraud check:', { data: error });
       // On error, allow the signup but log the error
       return true;

@@ -70,11 +70,11 @@ export default function ITOnsiteServicesPage() {
       return a.country.localeCompare(b.country);
     });
   
-  const handleCountrySelect = (country: CountryPricing) => {
+  const handleCountrySelect = (_country: CountryPricing) => {
     router.push(`/it-onsite-services/${slugify(country.country)}?service=standard`);
   };
 
-  const handleQuote = (country: CountryPricing) => {
+  const handleQuote = (_country: CountryPricing) => {
     setQuoteCountry(country);
     setQuoteOpen(true);
   };

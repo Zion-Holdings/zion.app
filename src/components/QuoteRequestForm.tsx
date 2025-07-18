@@ -29,7 +29,7 @@ const serviceStepSchema = z.object({
 
 export function QuoteRequestForm() {
   const router = useRouter();
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>("service");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [autoFillLoading, setAutoFillLoading] = useState(false);
@@ -56,7 +56,7 @@ export function QuoteRequestForm() {
     }
   });
   
-  const updateFormData = (data: Partial<QuoteFormData>) => {
+  const updateFormData = (_data: Partial<QuoteFormData>) => {
     setFormData(prev => ({
       ...prev,
       ...data
@@ -90,7 +90,7 @@ export function QuoteRequestForm() {
       case "budget":
         setCurrentStep("summary");
         break;
-      default:
+      _default:
         break;
     }
   };
@@ -109,7 +109,7 @@ export function QuoteRequestForm() {
       case "summary":
         setCurrentStep("budget");
         break;
-      default:
+      _default:
         break;
     }
   };
@@ -131,7 +131,7 @@ export function QuoteRequestForm() {
       
       // Redirect to confirmation page or homepage
       router.push("/");
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction("Submission Failed", error as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
       toast({
         title: "Submission Failed",
@@ -143,7 +143,7 @@ export function QuoteRequestForm() {
     }
   };
 
-  const handleAutoFill = async (description: string) => {
+  const handleAutoFill = async (_description: string) => {
     setAutoFillLoading(true);
     try {
       const res = await fetch("/api/openai/match", {
@@ -165,7 +165,7 @@ export function QuoteRequestForm() {
       });
       setCurrentStep("summary");
       setAutoFillOpen(false);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction("Auto-fill API error", err as Error, { component: 'QuoteRequestForm', projectDescription: description });
       toast({
         title: "Auto-fill Failed",

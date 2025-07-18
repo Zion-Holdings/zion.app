@@ -11,9 +11,9 @@ fetchMock.enableMocks();
 let mockStoreObj: { [key: string]: string } = {};
 const mockLocalStorage = {
   getItem: jest.fn((key: string): string | null => mockStoreObj[key] || null),
-  setItem: jest.fn((key: string, value: string) => { mockStoreObj[key] = value; }),
-  removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
-  clear: jest.fn(() => { mockStoreObj = {}; })
+  setItem: jest.fn((key: string, _value: string) => { mockStoreObj[key] = value; }),
+  _removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
+  _clear: jest.fn(() => { mockStoreObj = {}; })
 };
 Object.defineProperty(global, 'localStorage', { value: mockLocalStorage, configurable: true });
 // Support for environments where 'window' is the global context for localStorage
@@ -26,8 +26,8 @@ if (typeof window !== 'undefined') {
 jest.mock('@/utils/safeStorage', () => ({
   safeStorage: {
     getItem: jest.fn((key: string) => mockStoreObj[key] || null), // delegate to the same store for simplicity
-    setItem: jest.fn((key: string, value: string) => { mockStoreObj[key] = value; }),
-    removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
+    setItem: jest.fn((key: string, _value: string) => { mockStoreObj[key] = value; }),
+    _removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
   }
 }));
 
@@ -119,7 +119,7 @@ describe('Integration Test: Signup and Authenticated Call', () => {
     expect(axios.defaults?.headers?.common['Authorization']).toBe('Bearer test-jwt-token');
 
     // 5. Mock the subsequent /api/users/me endpoint (or any protected route)
-    const mockUserMeResponse = { id: 'user-123', email: 'test@example.com', name: 'Test User' };
+    const mockUserMeResponse = { id: 'user-123', email: 'test@example.com', _name: 'Test User' };
     fetchMock.mockResponseOnce(async (request) => {
       if (request.url.endsWith('/api/users/me') && request.headers.get('Authorization') === 'Bearer test-jwt-token') {
         return Promise.resolve(JSON.stringify(mockUserMeResponse));

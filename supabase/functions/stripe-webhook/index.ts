@@ -28,7 +28,7 @@ serve(async (req) => {
     let event;
     try {
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
-    } catch (err) {
+    } catch (_err) {
       return new Response(`Webhook Error: ${err.message}`, { status: 400 });
     }
 
@@ -62,7 +62,7 @@ serve(async (req) => {
                 tracking_events: shipment.tracking_history,
               })
               .eq('id', orderId);
-          } catch (err) {
+          } catch (_err) {
             console.error('Error creating shipment', err);
           }
         }
@@ -123,7 +123,7 @@ serve(async (req) => {
               await supabase.functions.invoke('send-notification-email', {
                 body: { user_id: userId, notification_id: notificationId },
               });
-            } catch (err) {
+            } catch (_err) {
               console.error('Error invoking send-notification-email:', err);
             }
           }

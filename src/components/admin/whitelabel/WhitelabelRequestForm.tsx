@@ -43,7 +43,7 @@ export function WhitelabelRequestForm() {
     },
   });
   
-  const onSubmit = async (values: FormValues) => {
+  const onSubmit = async (_values: FormValues) => {
     try {
       const tenantData = {
         brand_name: values.brand_name,
@@ -63,7 +63,7 @@ export function WhitelabelRequestForm() {
       }
       
       // Submit to Supabase
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('whitelabel_tenants')
         .insert(tenantData)
         .select()

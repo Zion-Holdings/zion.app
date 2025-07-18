@@ -70,7 +70,7 @@ export function TeamActivity() {
   ];
 
   // Function to format the date in a readable way
-  const formatDate = (date: Date) => {
+  const formatDate = (_date: Date) => {
     const now = new Date();
     const diffMs = now.getTime() - date.getTime();
     const diffMins = Math.floor(diffMs / (1000 * 60));
@@ -88,7 +88,7 @@ export function TeamActivity() {
     }
   };
 
-  const getCategoryBadge = (category: string) => {
+  const getCategoryBadge = (_category: string) => {
     const categoryStyles: Record<string, { variant: "default" | "outline" | "secondary" | "destructive" }> = {
       jobs: { variant: "default" },
       candidates: { variant: "outline" },

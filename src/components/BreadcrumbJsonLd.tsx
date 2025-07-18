@@ -2,7 +2,7 @@ import React from 'react';
 import JsonLd from '@/components/JsonLd';
 
 export interface BreadcrumbItem {
-  label: string;
+  _label: string;
   path: string;
 }
 

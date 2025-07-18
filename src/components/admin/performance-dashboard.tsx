@@ -56,7 +56,7 @@ export function PerformanceDashboard() {
         loadTime: performanceMetrics.loadTime,
         resourceCount: performanceMetrics.chunkCount
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to collect performance metrics', error, {
         component: 'PerformanceDashboard',
         action: 'collectMetrics'
@@ -84,7 +84,7 @@ export function PerformanceDashboard() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
   };
 
-  const getScoreIcon = (score: number) => {
+  const getScoreIcon = (_score: number) => {
     if (score >= 90) return <CheckCircle className="w-4 h-4 text-green-600" />;
     if (score >= 70) return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
     return <AlertTriangle className="w-4 h-4 text-red-600" />;

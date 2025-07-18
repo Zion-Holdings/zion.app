@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { useCompanyWorkspace } from "@/hooks/useCompanyWorkspace";
 
 export function AdminHeader() {
-  // const { user } = useAuth(); // Unused but available
-  const { company } = useCompanyWorkspace();
+  // const { _user } = useAuth(); // Unused but available
+  const { _company } = useCompanyWorkspace();
 
   return (
     <div className="space-y-4">

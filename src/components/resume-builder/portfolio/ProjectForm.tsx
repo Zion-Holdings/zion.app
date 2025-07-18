@@ -49,7 +49,7 @@ interface ProjectFormProps {
 }
 
 export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const { addProject, updateProject } = usePortfolio();
   const [isLoading, setIsLoading] = useState(false);
   const isEditing = !!project;
@@ -67,7 +67,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
     }
   });
   
-  const onSubmit = async (data: ProjectFormValues) => {
+  const onSubmit = async (_data: ProjectFormValues) => {
     if (!user) return;
     
     setIsLoading(true);
@@ -97,7 +97,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         onSuccess();
         form.reset();
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error saving project:', { data: error });
     } finally {
       setIsLoading(false);

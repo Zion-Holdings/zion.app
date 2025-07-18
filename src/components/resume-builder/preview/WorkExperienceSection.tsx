@@ -17,7 +17,7 @@ export function WorkExperienceSection({ workExperience }: WorkExperienceSectionP
     return dateB.getTime() - dateA.getTime();
   });
 
-  const formatDate = (date: Date | string | undefined) => {
+  const formatDate = (_date: Date | string | undefined) => {
     if (!date) return '';
     if (typeof date === 'string') {
       return format(new Date(date), 'MMM yyyy');

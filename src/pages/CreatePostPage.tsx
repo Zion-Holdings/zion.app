@@ -20,8 +20,8 @@ interface PostFormValues {
 
 export default function CreatePostPage() {
   const router = useRouter();
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
 
   useEffect(() => {
     if (!user) {
@@ -33,7 +33,7 @@ export default function CreatePostPage() {
   // Get category from URL query params if available
   const initialCategory = router.query.category as ForumCategory | null;
   
-  const initialValues: Partial<PostFormValues> = {
+  const _initialValues: Partial<PostFormValues> = {
     categoryId: initialCategory || "project-help"
   };
 
@@ -62,7 +62,7 @@ export default function CreatePostPage() {
             throw new Error(text || `Error ${res.status}`);
           }
           mutate('user');
-        } catch (err) {
+        } catch (_err) {
           logErrorToProduction('Failed to award points:', { data: err });
         }
       }

@@ -36,7 +36,7 @@ export default function ProductPage() {
           const data = await res.json();
           setProduct(data);
         }
-      } catch (err) {
+      } catch (_err) {
         // Fail silently and fall back to local data
         logErrorToProduction('Error fetching product', { data: err });
       }

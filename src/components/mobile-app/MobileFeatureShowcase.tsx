@@ -8,7 +8,7 @@ import { CheckCircle, Users, Star, Mail } from '@/components/ui/icons';
 
 
 
-export const MobileFeatureShowcase: React.FC = () => {
+export const _MobileFeatureShowcase: React.FC = () => {
   const features = [
     {
       icon: <Users className="h-8 w-8 text-zion-cyan" />,

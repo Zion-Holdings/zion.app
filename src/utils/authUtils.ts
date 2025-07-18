@@ -27,7 +27,7 @@ export const cleanupAuthState = () => {
         safeStorage.removeItem(key);
       }
     });
-  } catch (e) {
+  } catch (_e) {
     logWarn('Storage access error:', { data:  { data:  e } });
   }
   
@@ -38,7 +38,7 @@ export const cleanupAuthState = () => {
         safeSessionStorage.removeItem(key);
       }
     });
-  } catch (e) {
+  } catch (_e) {
     logWarn('Storage access error:', { data:  { data:  e } });
   }
 };
@@ -46,7 +46,7 @@ export const cleanupAuthState = () => {
 /**
  * Utility function to check new user registration and schedule welcome emails
  */
-export const checkNewRegistration = async (user: UserDetails) => {
+export const checkNewRegistration = async (_user: UserDetails) => {
   if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Check if user has received welcome email already
@@ -89,7 +89,7 @@ export const checkNewRegistration = async (user: UserDetails) => {
           }
         });
     }
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error checking or scheduling welcome email:', { data: error });
   }
 };

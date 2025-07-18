@@ -11,8 +11,8 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function Web3Login() {
 
-  const { loginWithWeb3 } = useAuth();
-  const { isWalletSystemAvailable } = useAppWallet();
+  const { _loginWithWeb3 } = useAuth();
+  const { _isWalletSystemAvailable } = useAppWallet();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleWeb3Login = async () => {

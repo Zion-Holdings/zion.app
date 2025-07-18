@@ -44,7 +44,7 @@ export default function ResetPassword() {
   }
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault()
     if (password !== confirm) {
       toast.error('Passwords do not match')

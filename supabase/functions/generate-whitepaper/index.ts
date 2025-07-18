@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface WhitepaperParams {
-  tokenName: string;
+  _tokenName: string;
   tokenSupply: string;
   useCases: string;
   rewardsLogic: string;
@@ -111,7 +111,7 @@ serve(async (req) => {
       }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in generate-whitepaper function:", error);
     return new Response(
       JSON.stringify({ error: error.message }),

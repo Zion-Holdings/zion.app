@@ -9,7 +9,7 @@ interface BudgetStepProps {
 }
 
 export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
-  const handleBudgetTypeSelect = (type: "fixed" | "hourly" | "range") => {
+  const handleBudgetTypeSelect = (_type: "fixed" | "hourly" | "range") => {
     if (type === "range" && !formData.budget.maxAmount) {
       updateFormData({
         budget: {
@@ -28,9 +28,9 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
     }
   };
 
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
 
-  const formatCurrency = (value: number) => {
+  const formatCurrency = (_value: number) => {
     return formatPrice(value);
   };
 

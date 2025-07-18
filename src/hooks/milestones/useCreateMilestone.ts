@@ -9,9 +9,9 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useCreateMilestone = (projectId?: string) => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { recordMilestoneActivity } = useRecordActivity();
+  const { _recordMilestoneActivity } = useRecordActivity();
   
   const createMilestone = async (milestoneData: Omit<Milestone, 'id' | 'created_at' | 'updated_at' | 'created_by'> & { description?: string | undefined; due_date?: string | undefined }) => {
     if (!user || !projectId) return null;

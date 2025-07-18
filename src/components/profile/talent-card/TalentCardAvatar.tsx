@@ -9,7 +9,7 @@ interface TalentCardAvatarProps {
 
 export function TalentCardAvatar({ profilePicture, fullName }: TalentCardAvatarProps) {
   // Get initials for avatar fallback
-  const getInitials = (name: string) => {
+  const getInitials = (_name: string) => {
     return name
       .split(' ')
       .map(part => part[0])

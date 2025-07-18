@@ -22,13 +22,13 @@ export function TalentCardSaveButton({
   onToggleSave,
   isAuthenticated
 }: TalentCardSaveButtonProps) {
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const router = useRouter();
   // Using router.asPath for current path
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
   
   // Handle save toggle
-  const handleSaveToggle = (e: React.MouseEvent) => {
+  const handleSaveToggle = (_e: React.MouseEvent) => {
     e.stopPropagation();
 
     if (!isAuthenticated) {

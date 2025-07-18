@@ -15,7 +15,7 @@ const mockSingle_CreateShared = sinon.stub();
 globalThis.Deno = globalThis.Deno || {};
 // @ts-expect-error Deno env mock - providing test environment variables for isolated testing
 globalThis.Deno.env = {
-    get: (key: string) => {
+    _get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
         if (key === 'SUPABASE_SERVICE_ROLE_KEY') return 'test-service-role-key'; // Important for admin client
         return undefined;

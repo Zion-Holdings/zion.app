@@ -58,8 +58,8 @@ import type { ProjectNote } from "@/types/projects";
 function ProjectDetailsContent() {
   const router = useRouter();
   // Get projectId from Next.js router query params
-  const { projectId } = router.query as { projectId?: string };
-  const { user } = useAuth();
+  const { _projectId } = router.query as { projectId?: string };
+  const { _user } = useAuth();
   const { getProjectById, updateProjectStatus } = useProjects();
   
   const [project, setProject] = useState<Project | null>(null);
@@ -77,7 +77,7 @@ function ProjectDetailsContent() {
     }
   }, [projectId, getProjectById, router]);
   
-  const fetchProjectNotes = async (projectId: string) => {
+  const fetchProjectNotes = async (_projectId: string) => {
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const { data: _data, error } = await supabase
@@ -142,7 +142,7 @@ function ProjectDetailsContent() {
     }
   };
   
-  const handleStatusChange = async (newStatus: ProjectStatus) => {
+  const handleStatusChange = async (_newStatus: ProjectStatus) => {
     if (!project) return;
     
     const success = await updateProjectStatus(project.id, newStatus);
@@ -163,7 +163,7 @@ function ProjectDetailsContent() {
     }
   };
   
-  const getStatusBadge = (status: ProjectStatus) => {
+  const getStatusBadge = (_status: ProjectStatus) => {
     switch (status) {
       case "offer_sent":
         return <Badge variant="outline">Offer Sent</Badge>;

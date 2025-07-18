@@ -20,11 +20,11 @@ export interface GlobalLoaderContextType {
 
 const defaultState: GlobalLoaderContextType = {
   loading: false,
-  setLoading: () => {},
+  _setLoading: () => {},
   error: null,
-  setError: () => {},
-  showLoader: () => {},
-  hideLoader: () => {},
+  _setError: () => {},
+  _showLoader: () => {},
+  _hideLoader: () => {},
 };
 
 const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
@@ -40,15 +40,15 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-    const onRequest = (config: InternalAxiosRequestConfig) => {
+    const onRequest = (_config: InternalAxiosRequestConfig) => {
       showLoader();
       return config;
     };
-    const onResponse = (response: AxiosResponse) => {
+    const onResponse = (_response: AxiosResponse) => {
       hideLoader();
       return response;
     };
-    const onError = (err: unknown) => {
+    const onError = (_err: unknown) => {
       hideLoader();
       setError(err);
       return Promise.reject(err);
@@ -61,7 +61,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
     const resInterceptor = resInterceptors.use(onResponse, onError);
 
     const originalCreate = axios.create;
-    axios.create = (...args: Parameters<typeof originalCreate>) => {
+    axios.create = (..._args: Parameters<typeof originalCreate>) => {
       const instance = originalCreate(...args);
       if (instance.interceptors && instance.interceptors.request && typeof instance.interceptors.request.use === 'function') {
         instance.interceptors.request.use(onRequest, onError);
@@ -83,7 +83,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   // useEffect(() => {
   //   hideLoader();
   // }, [router.asPath]); // Changed to router.asPath
-  // Commented out: This was hiding the loader prematurely for pages with their own client-side data fetching.
+  // Commented _out: This was hiding the loader prematurely for pages with their own client-side data fetching.
   // The loader should now primarily be hidden by the Axios interceptor or manually.
 
   // Auto-dismiss loader after 15 seconds

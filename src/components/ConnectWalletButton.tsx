@@ -5,7 +5,7 @@ import { useTokenBalance } from '@/hooks/useTokenBalance';
 import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
 import { ethers } from 'ethers';
 
-const ConnectWalletButton: React.FC = () => {
+const _ConnectWalletButton: React.FC = () => {
   const { isConnected, connectWallet, disconnectWallet, displayAddress, address, provider } = useWallet();
 
   const validProvider = provider && typeof provider === 'object' ? (provider as ethers.Provider) : null;

@@ -18,7 +18,7 @@ interface TalentCardFooterProps {
 
 export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: TalentCardFooterProps) {
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
-  const { userDetails } = useAuthStatus();
+  const { _userDetails } = useAuthStatus();
   const router = useRouter();
 
   // Create a compatible UserProfile from UserDetails
@@ -33,7 +33,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
     role: userDetails?.userType || '',
     displayName: userDetails?.name || '',
     points: 0,
-    avatarUrl: userDetails?.avatar || ''
+    _avatarUrl: userDetails?.avatar || ''
   };
 
   // Handle request to hire
@@ -49,7 +49,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
   };
 
   // Handle view profile
-  const handleViewProfile = (e: React.MouseEvent) => {
+  const handleViewProfile = (_e: React.MouseEvent) => {
     e.stopPropagation();
     
     // Navigate to the talent profile page

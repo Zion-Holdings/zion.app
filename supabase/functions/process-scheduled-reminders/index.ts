@@ -11,7 +11,7 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-serve(async (req: Request) => {
+serve(async (_req: Request) => {
   // Handle CORS
   if (req.method === "OPTIONS") {
     return new Response(null, {
@@ -115,7 +115,7 @@ serve(async (req: Request) => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error(error);
     return new Response(
       JSON.stringify({ error: "Internal server error", details: error.message }),

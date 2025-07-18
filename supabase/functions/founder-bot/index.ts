@@ -10,7 +10,7 @@ const corsHeaders = {
 };
 
 interface Message {
-  role: string;
+  _role: string;
   content: string;
 }
 
@@ -25,7 +25,7 @@ serve(async (req) => {
   }
 
   try {
-    const { messages } = await req.json() as RequestBody;
+    const { _messages } = await req.json() as RequestBody;
 
     // Prepare the system message to define the founder clone behavior
     const systemMessage: Message = {
@@ -65,7 +65,7 @@ serve(async (req) => {
     return new Response(JSON.stringify({ message: assistantMessage }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in ai-chat function:', error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,

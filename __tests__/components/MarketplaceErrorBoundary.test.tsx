@@ -8,7 +8,7 @@ import { mutate } from 'swr';
 jest.mock('@sentry/nextjs');
 jest.mock('swr');
 
-const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
+const ThrowError = ({ shouldThrow }: { _shouldThrow: boolean }) => {
   if (shouldThrow) {
     throw new Error('Test error');
   }

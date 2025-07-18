@@ -113,7 +113,7 @@ serve(async (req) => {
         },
       },
     );
-  } catch (error) {
+  } catch (_error) {
     console.error('Tenant detector error:', error);
     
     return new Response(

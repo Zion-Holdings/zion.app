@@ -49,16 +49,16 @@ function createPR(avg: number): void {
 function main() {
   const times = parseTimes(LOG_FILE);
   if (!times.length) {
-    // console.log('No log entries found');
+    // console.warn('No log entries found');
     return;
   }
   const avg = average(times);
-  // console.log(`Average response time: ${avg.toFixed(2)}ms`);
+  // console.warn(`Average response time: ${avg.toFixed(2)}ms`);
   if (avg > THRESHOLD_MS) {
-    // console.log('Threshold exceeded. Opening PR...');
+    // console.warn('Threshold exceeded. Opening PR...');
     createPR(avg);
   } else {
-    // console.log('Performance within threshold');
+    // console.warn('Performance within threshold');
   }
 }
 

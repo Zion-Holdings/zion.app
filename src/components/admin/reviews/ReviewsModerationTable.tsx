@@ -58,14 +58,14 @@ export function ReviewsModerationTable({
       reviewId,
       status,
     }: {
-      reviewId: string;
+      _reviewId: string;
       status: ReviewStatus;
     }) => {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
       
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("reviews")
         .update({ status })
         .eq("id", reviewId);
@@ -73,7 +73,7 @@ export function ReviewsModerationTable({
       if (error) throw error;
       return { reviewId, status };
     },
-    onSuccess: (data) => {
+    _onSuccess: (data) => {
       toast({
         title: "Review updated",
         description: `Review has been ${data.status}.`,
@@ -81,7 +81,7 @@ export function ReviewsModerationTable({
       onRefresh();
       setViewDetailsOpen(false);
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       toast({
         title: "Error",
         description: `Failed to update review: ${error.message}`,
@@ -91,7 +91,7 @@ export function ReviewsModerationTable({
   });
 
 
-  const getInitials = (name: string) => {
+  const getInitials = (_name: string) => {
     return name
       .split(" ")
       .map((n) => n[0])
@@ -121,20 +121,20 @@ export function ReviewsModerationTable({
     );
   }
 
-  const handleApprove = (reviewId: string) => {
+  const handleApprove = (_reviewId: string) => {
     updateReviewStatus({ reviewId, status: "approved" });
   };
 
-  const handleReject = (reviewId: string) => {
+  const handleReject = (_reviewId: string) => {
     updateReviewStatus({ reviewId, status: "rejected" });
   };
 
-  const handleViewDetails = (review: Review) => {
+  const handleViewDetails = (_review: Review) => {
     setSelectedReview(review);
     setViewDetailsOpen(true);
   };
 
-  const renderStars = (rating: number) => {
+  const renderStars = (_rating: number) => {
     return (
       <div className="flex">
         {[1, 2, 3, 4, 5].map((star) => (

@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 interface HireRequest {
-  talent: {
+  _talent: {
     id: string;
     full_name: string;
     professional_title: string;
@@ -91,10 +91,10 @@ serve(async (req) => {
           if (jsonMatch) {
             enhancedContent = JSON.parse(jsonMatch[0]);
           }
-        } catch (jsonError) {
+        } catch (_jsonError) {
           // Continue without enhanced content
         }
-      } catch (aiError) {
+      } catch (_aiError) {
         // Continue without enhanced content
       }
     }
@@ -201,7 +201,7 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error processing hire request:", error.message);
     
     return new Response(

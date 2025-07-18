@@ -21,7 +21,7 @@ const TestComponent = () => {
 };
 
 describe('WalletProvider', () => {
-  let mockAppKit: any;
+  let _mockAppKit: any;
   let mockAppKitInstance: any;
 
   beforeEach(() => {

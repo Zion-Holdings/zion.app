@@ -41,7 +41,7 @@ export function EnhancedSearchInput({
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
 
   const debounced = useDebounce(value, 200);
 
@@ -92,7 +92,7 @@ export function EnhancedSearchInput({
 
   const router = useRouter();
 
-  const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
+  const handleSelectSuggestion = (_suggestionObj: SearchSuggestion) => {
     logInfo('EnhancedSearchInput handleSelectSuggestion called:', { data:  { data: suggestionObj } });
     onChange(suggestionObj.text);
     if (onSelectSuggestion) {
@@ -116,7 +116,7 @@ export function EnhancedSearchInput({
     setHighlightedIndex(-1);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.key) {
       case 'ArrowDown':
         if (isFocused && filteredSuggestions.length > 0) {

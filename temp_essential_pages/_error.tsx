@@ -131,7 +131,7 @@ function ErrorPage({ statusCode, hasGetInitialPropsRun, err }: ErrorProps) {
   );
 }
 
-ErrorPage.getInitialProps = async (context: NextPageContext) => {
+ErrorPage.getInitialProps = async (_context: NextPageContext) => {
   const { res, err } = context;
   const statusCode = res?.statusCode || err?.statusCode || 404;
 

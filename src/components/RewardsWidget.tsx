@@ -5,11 +5,11 @@ import { useAuth } from "@/hooks/useAuth";
 import { LoginModal } from "@/components/auth/LoginModal";
 
 export function RewardsWidget() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [open, setOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
-  const points = (user && typeof user !== 'boolean') ? user.points ?? 0 : 0;
+  const points = (user && typeof user !== 'boolean') ? user.points ?? _0 : 0;
 
   const getTier = (pts: number) => {
     if (pts >= 500) return "Gold";

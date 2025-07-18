@@ -32,7 +32,7 @@ type PartnerFormValues = z.infer<typeof partnerFormSchema>;
 
 export function PartnerRegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   const form = useForm<PartnerFormValues>({
     resolver: zodResolver(partnerFormSchema),

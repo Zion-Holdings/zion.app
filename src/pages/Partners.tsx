@@ -25,7 +25,7 @@ export default function Partners() {
 
   logInfo('PartnersPage rendering');
   const [activeTab, setActiveTab] = useState("overview");
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
   const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
@@ -35,7 +35,7 @@ export default function Partners() {
       try {
         const res = await fetch('/api/auth/health');
         setAuthServiceAvailable(res.ok);
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Partner login auth health check failed', { data: err });
         setAuthServiceAvailable(false);
       }

@@ -42,7 +42,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
         );
         
         setMatches(results);
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error during AI matching:', { data: error });
         toast({
           title: "Matching Error",
@@ -57,7 +57,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
     runMatching();
   }, [formData]);
   
-  const handleSelectMatch = (match: MatchResult) => {
+  const handleSelectMatch = (_match: MatchResult) => {
     // Update the form with the selected match
     updateFormData({
       specificItem: match.item,
@@ -79,7 +79,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
   }
   
   // Map the onSelectMatch handler to work with the item directly
-  const handleItemSelect = (item: unknown) => {
+  const handleItemSelect = (_item: unknown) => {
     // Find the original MatchResult that contains this item
     const matchResult = hasId(item) ? matches.find(match => match.item.id === item.id) : undefined;
     if (matchResult) {

@@ -1,4 +1,4 @@
-const { withSentry } = require('./withSentry.cjs');
+const { _withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -20,7 +20,7 @@ async function handler(req, res) {
     console.warn('New contact message:', { name, email, message });
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (err) {
+  } catch (_err) {
     console.error('Contact API error:', err);
     res.statusCode = 500;
     res.json({ error: err.message || 'Failed to send message' });

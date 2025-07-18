@@ -12,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import type { JobSchemaType } from "./validation";
 
 interface BasicInfoFieldsProps {
-  control: Control<JobSchemaType>;
+  _control: Control<JobSchemaType>;
 }
 
 export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => {

@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 let db: Firestore;
 try {
   db = getFirestore(app);
-} catch (e) {
+} catch (_e) {
   logWarn('Firestore storage unavailable, using memory cache.', { data:  { data:  e } });
   db = getFirestore(app);
 }

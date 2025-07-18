@@ -26,7 +26,7 @@ interface QuickAction {
 }
 
 export function QuickActions() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('quick-actions') === 'true';
 
@@ -41,7 +41,7 @@ export function QuickActions() {
     setIsProcessing(actionId);
     try {
       await action();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(`Failed to execute action ${actionId}:`, { data: error });
     } finally {
       setIsProcessing(null);
@@ -56,7 +56,7 @@ export function QuickActions() {
       description: 'Show real-time performance metrics',
       icon: <Activity className="w-4 h-4" />,
       category: 'performance',
-      action: () => {
+      _action: () => {
         localStorage.setItem('performance-monitoring', 'true');
         window.location.reload();
       },
@@ -67,7 +67,7 @@ export function QuickActions() {
       description: 'Monitor bundle size and chunks',
       icon: <Package className="w-4 h-4" />,
       category: 'performance',
-      action: () => {
+      _action: () => {
         localStorage.setItem('bundle-analyzer', 'true');
         window.location.reload();
       },
@@ -79,7 +79,7 @@ export function QuickActions() {
       icon: <Trash2 className="w-4 h-4" />,
       category: 'maintenance',
       dangerous: true,
-      action: () => {
+      _action: () => {
         if ('caches' in window) {
           caches.keys().then(names => {
             names.forEach(name => caches.delete(name));
@@ -96,7 +96,7 @@ export function QuickActions() {
       description: 'Preload fonts, images, and critical assets',
       icon: <Zap className="w-4 h-4" />,
       category: 'performance',
-      action: () => {
+      _action: () => {
         // Preload critical fonts
         const criticalFonts = [
           '/fonts/inter-var.woff2',
@@ -134,7 +134,7 @@ export function QuickActions() {
       description: 'Export current performance metrics',
       icon: <Download className="w-4 h-4" />,
       category: 'development',
-      action: () => {
+      _action: () => {
         const metrics = {
           timestamp: new Date().toISOString(),
           performance: performance.getEntriesByType('navigation')[0],
@@ -169,7 +169,7 @@ export function QuickActions() {
       icon: <Monitor className="w-4 h-4" />,
       category: 'development',
       dangerous: true,
-      action: () => {
+      _action: () => {
         throw new Error('Test error for Sentry integration - this is intentional!');
       },
     },
@@ -179,7 +179,7 @@ export function QuickActions() {
       description: 'Force reload with cache bypass',
       icon: <RefreshCw className="w-4 h-4" />,
       category: 'maintenance',
-      action: () => {
+      _action: () => {
         window.location.reload();
       },
     },

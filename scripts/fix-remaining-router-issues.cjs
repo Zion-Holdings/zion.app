@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 console.warn('🔧 Fixing remaining React Router issues...\n');
 

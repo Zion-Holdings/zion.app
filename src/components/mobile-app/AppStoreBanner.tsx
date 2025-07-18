@@ -6,7 +6,7 @@ import { safeStorage } from "@/utils/safeStorage";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 
-export const AppStoreBanner: React.FC = () => {
+export const _AppStoreBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const isMobile = useIsMobile();
   

@@ -54,7 +54,7 @@ export function LoginForm() {
     },
   });
 
-  const onSubmit = async (data: LoginFormValues) => {
+  const onSubmit = async (_data: LoginFormValues) => {
     if (isSubmitting) return;
 
     try {

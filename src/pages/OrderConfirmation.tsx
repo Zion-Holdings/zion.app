@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function OrderConfirmation() {
   const router = useRouter();
-  const { orderId } = router.query as { orderId?: string };
+  const { _orderId } = router.query as { orderId?: string };
   if (!orderId) return null;
   return (
     <div className="container max-w-2xl py-10 text-center">

@@ -31,7 +31,7 @@ export const FraudDetectionContext = React.createContext(
   undefined as FraudDetectionContextType | undefined
 );
 
-export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> = ({ children }) => {
+export const _FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> = ({ children }) => {
   // Function to scan message content for fraud
   const scanMessageContent = useCallback(async (
     userId: string,
@@ -102,7 +102,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       
       // Message is considered safe
       return { isSafe: true };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error in fraud detection:', { data: error });
       // On error, let the message pass through but log the error
       return { isSafe: true };

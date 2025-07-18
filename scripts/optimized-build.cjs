@@ -54,48 +54,48 @@ const optimizedEnv = {
 };
 
 // Comment out all console.log statements (lines 57-98, 109, 112, 116, 127, 135, 141, 149, 154, 160, 178, 182, 194, 200-203, 206-222, 230, 233, 245, 253, 312, 317, 325, 328, 333, 350, 353, 364, 368-371, 373, 375, 379)
-// console.log("🚀 Starting ENHANCED build for 176+ pages...");
-// console.log("📊 Memory limit: 6GB");
-// console.log("👷 Workers: 1 (single worker)");
-// console.log("⚡ CSS inlining: disabled");
-// console.log("🔧 Source maps: disabled");
-// console.log("💾 Build cache: disabled");
-// console.log("⚙️  Static optimization: disabled");
-// console.log("🚫 Output file tracing: Plugin managed");
-// console.log("Turbotrace: enabled in development mode");
-// console.log("🧠 Thread pool: limited to 4 threads");
-// console.log("📦 Output mode: standard Next.js");
-// console.log("🔌 Plugin: Auto-detected Netlify Next.js (supports ISR & API)");
-// console.log(`📦 Build command: ${buildCommand}`);
-// console.log('📦 Ensuring TypeScript is available...');
-// console.log('🔄 Installing all dependencies (including devDependencies)...');
-// console.log('✅ Dependencies installed successfully');
-// console.log("\n🔍 Running Pre-Deployment Checks...");
-// console.log("✅ Pre-Deployment Checks Passed.");
-// console.log("\n🔍 Pre-build validation...");
-// console.log("✅ next.config.js found");
-// console.log("\n🏗️  Starting build process...");
-// console.log("\n✅ Enhanced build completed successfully!");
-// console.log("\n📊 Running bundle analysis...");
-// console.log("\n🔍 Verifying build output...");
-// console.log(fs.existsSync(nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
-// console.log(fs.existsSync(serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
-// console.log(fs.existsSync(staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
-// console.log("✅ Next.js build ready for Netlify plugin");
-// console.log("\n📊 Enhanced Build Performance Report:");
-// console.log("- Memory optimizations: ✅ Applied (6GB limit with semi-space optimization)");
-// console.log("- CSS optimization: ✅ Disabled inlining for speed");
-// console.log("- Source maps: ✅ Disabled for production");
-// console.log("- EventEmitter fix: ✅ Max listeners increased to 50");
-// console.log("- Workers: ✅ Single worker for memory management");
-// console.log("- Build cache: ✅ Disabled to prevent memory issues");
-// console.log("- Static optimization: ✅ Disabled to prevent timeout");
-// console.log("- Output file tracing: ✅ Plugin managed (prevents hanging)");
-// console.log("- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)");
-// console.log("- Thread pool: ✅ Limited to 4 threads");
-// console.log("- Output mode: ✅ Standard Next.js (supports ISR & API routes)");
-// console.log("- Plugin: ✅ Auto-detected Netlify Next.js plugin");
-// console.log(`- Build time: ✅ ${buildTime} seconds`);
+// console.warn("🚀 Starting ENHANCED build for 176+ pages...");
+// console.warn("📊 Memory limit: 6GB");
+// console.warn("👷 Workers: 1 (single worker)");
+// console.warn("⚡ CSS inlining: disabled");
+// console.warn("🔧 Source maps: disabled");
+// console.warn("💾 Build cache: disabled");
+// console.warn("⚙️  Static optimization: disabled");
+// console.warn("🚫 Output file tracing: Plugin managed");
+// console.warn("Turbotrace: enabled in development mode");
+// console.warn("🧠 Thread pool: limited to 4 threads");
+// console.warn("📦 Output mode: standard Next.js");
+// console.warn("🔌 Plugin: Auto-detected Netlify Next.js (supports ISR & API)");
+// console.warn(`📦 Build command: ${buildCommand}`);
+// console.warn('📦 Ensuring TypeScript is available...');
+// console.warn('🔄 Installing all dependencies (including devDependencies)...');
+// console.warn('✅ Dependencies installed successfully');
+// console.warn("\n🔍 Running Pre-Deployment Checks...");
+// console.warn("✅ Pre-Deployment Checks Passed.");
+// console.warn("\n🔍 Pre-build validation...");
+// console.warn("✅ next.config.js found");
+// console.warn("\n🏗️  Starting build process...");
+// console.warn("\n✅ Enhanced build completed successfully!");
+// console.warn("\n📊 Running bundle analysis...");
+// console.warn("\n🔍 Verifying build output...");
+// console.warn(fs.existsSync(nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
+// console.warn(fs.existsSync(serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
+// console.warn(fs.existsSync(staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
+// console.warn("✅ Next.js build ready for Netlify plugin");
+// console.warn("\n📊 Enhanced Build Performance Report:");
+// console.warn("- Memory optimizations: ✅ Applied (6GB limit with semi-space optimization)");
+// console.warn("- CSS optimization: ✅ Disabled inlining for speed");
+// console.warn("- Source maps: ✅ Disabled for production");
+// console.warn("- EventEmitter fix: ✅ Max listeners increased to 50");
+// console.warn("- Workers: ✅ Single worker for memory management");
+// console.warn("- Build cache: ✅ Disabled to prevent memory issues");
+// console.warn("- Static optimization: ✅ Disabled to prevent timeout");
+// console.warn("- Output file tracing: ✅ Plugin managed (prevents hanging)");
+// console.warn("- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)");
+// console.warn("- Thread pool: ✅ Limited to 4 threads");
+// console.warn("- Output mode: ✅ Standard Next.js (supports ISR & API routes)");
+// console.warn("- Plugin: ✅ Auto-detected Netlify Next.js plugin");
+// console.warn(`- Build time: ✅ ${buildTime} seconds`);
 
 // Enhanced memory monitoring
 const startTime = Date.now();
@@ -106,14 +106,14 @@ const _buildCommand = process.argv.includes('--analyze')
   ? "npx next build --no-lint && npx @next/bundle-analyzer"
   : "npx next build --no-lint";
 
-// console.log(`📦 Build command: ${_buildCommand}`);
+// console.warn(`📦 Build command: ${_buildCommand}`);
 
 // Install TypeScript in production mode
-// console.log('📦 Ensuring TypeScript is available...');
+// console.warn('📦 Ensuring TypeScript is available...');
 
 // Force reinstall all dependencies including devDependencies
 // This is needed because Netlify sets NODE_ENV=production which skips devDependencies
-// console.log('🔄 Installing all dependencies (including devDependencies)...');
+// console.warn('🔄 Installing all dependencies (including devDependencies)...');
 try {
   execSync('npm install --production=false', {
     stdio: 'inherit',
@@ -124,40 +124,40 @@ try {
       NPM_CONFIG_PRODUCTION: 'false' // Also ensure npm config doesn't skip devDependencies
     }
   });
-  // console.log('✅ Dependencies installed successfully');
-} catch (error) {
+  // console.warn('✅ Dependencies installed successfully');
+} catch (_error) {
   console.error('❌ Failed to install dependencies:', error.message);
   process.exit(1);
 }
 
 async function _main() {
   try {
-    // console.log("\n🔍 Running Pre-Deployment Checks...");
+    // console.warn("\n🔍 Running Pre-Deployment Checks...");
     const preCheckResults = await runPreDeployChecks();
     if (preCheckResults.warnings.some(w => w.includes('Missing environment variables') || w.includes('Security vulnerabilities detected'))) {
       // Decide if critical warnings should halt the build. For now, just log.
       console.warn("⚠️ Pre-deployment checks reported warnings. Review logs from deploy-optimization script.");
     } else {
-      // console.log("✅ Pre-Deployment Checks Passed.");
+      // console.warn("✅ Pre-Deployment Checks Passed.");
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Pre-Deployment Checks Failed:", error.message);
     process.exit(1); // Exit if pre-checks fail critically
   }
   
   try {
-    // console.log("\n🔍 Pre-build validation...");
+    // console.warn("\n🔍 Pre-build validation...");
 
     // Check for common issues before building
   const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
   if (fs.existsSync(_nextConfigPath)) {
-    // console.log("✅ next.config.js found");
+    // console.warn("✅ next.config.js found");
   } else {
     console.warn("⚠️  next.config.js not found");
   }
   
   // Enhanced build execution with better error handling
-  // console.log("\n🏗️  Starting build process...");
+  // console.warn("\n🏗️  Starting build process...");
   
   _buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
     env: optimizedEnv,
@@ -175,11 +175,11 @@ async function _main() {
     const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
     
     if (code === 0) {
-      // console.log("\n✅ Enhanced build completed successfully!");
+      // console.warn("\n✅ Enhanced build completed successfully!");
       
       // Bundle analysis if requested
       if (process.argv.includes('--analyze')) {
-        // console.log("\n📊 Running bundle analysis...");
+        // console.warn("\n📊 Running bundle analysis...");
         try {
           execSync('npx @next/bundle-analyzer', { 
             env: optimizedEnv,
@@ -191,35 +191,35 @@ async function _main() {
       }
       
       // Post-build verification
-      // console.log("\n🔍 Verifying build output...");
+      // console.warn("\n🔍 Verifying build output...");
       
       const _nextDir = path.join(process.cwd(), '.next');
       const _serverDir = path.join(_nextDir, 'server');
       const _staticDir = path.join(_nextDir, 'static');
       
-      // console.log(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
-      // console.log(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
-      // console.log(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
-      // console.log("✅ Next.js build ready for Netlify plugin");
+      // console.warn(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
+      // console.warn(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
+      // console.warn(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
+      // console.warn("✅ Next.js build ready for Netlify plugin");
       
       // Enhanced performance report
-      // console.log("\n📊 Enhanced Build Performance Report:");
-      // console.log("- Memory optimizations: ✅ Applied (6GB limit with semi-space optimization)");
-      // console.log("- CSS optimization: ✅ Disabled inlining for speed");
-      // console.log("- Source maps: ✅ Disabled for production");
-      // console.log("- EventEmitter fix: ✅ Max listeners increased to 50");
-      // console.log("- Workers: ✅ Single worker for memory management");
-      // console.log("- Build cache: ✅ Disabled to prevent memory issues");
-      // console.log("- Static optimization: ✅ Disabled to prevent timeout");
-      // console.log("- Output file tracing: ✅ Plugin managed (prevents hanging)");
-      // console.log("- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)");
-      // console.log("- Thread pool: ✅ Limited to 4 threads");
-      // console.log("- Output mode: ✅ Standard Next.js (supports ISR & API routes)");
-      // console.log("- Plugin: ✅ Auto-detected Netlify Next.js plugin");
-      // console.log(`- Build time: ✅ ${_buildTime} seconds`);
-      // console.log("- Pages processed: ~176 pages");
-      // console.log("- ISR & API routes: ✅ Fully supported");
-      // console.log("- Bundle optimization: ✅ Chunk splitting enabled");
+      // console.warn("\n📊 Enhanced Build Performance Report:");
+      // console.warn("- Memory optimizations: ✅ Applied (6GB limit with semi-space optimization)");
+      // console.warn("- CSS optimization: ✅ Disabled inlining for speed");
+      // console.warn("- Source maps: ✅ Disabled for production");
+      // console.warn("- EventEmitter fix: ✅ Max listeners increased to 50");
+      // console.warn("- Workers: ✅ Single worker for memory management");
+      // console.warn("- Build cache: ✅ Disabled to prevent memory issues");
+      // console.warn("- Static optimization: ✅ Disabled to prevent timeout");
+      // console.warn("- Output file tracing: ✅ Plugin managed (prevents hanging)");
+      // console.warn("- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)");
+      // console.warn("- Thread pool: ✅ Limited to 4 threads");
+      // console.warn("- Output mode: ✅ Standard Next.js (supports ISR & API routes)");
+      // console.warn("- Plugin: ✅ Auto-detected Netlify Next.js plugin");
+      // console.warn(`- Build time: ✅ ${_buildTime} seconds`);
+      // console.warn("- Pages processed: ~176 pages");
+      // console.warn("- ISR & API routes: ✅ Fully supported");
+      // console.warn("- Bundle optimization: ✅ Chunk splitting enabled");
       
       // Bundle size analysis
       try {
@@ -227,10 +227,10 @@ async function _main() {
         if (fs.existsSync(_buildManifest)) {
           const manifest = JSON.parse(fs.readFileSync(_buildManifest, 'utf8'));
           const _pageCount = Object.keys(manifest.pages || {}).length;
-          // console.log(`- Total pages in manifest: ${_pageCount}`);
+          // console.warn(`- Total pages in manifest: ${_pageCount}`);
         }
       } catch (_manifestError) {
-        // console.log("- Manifest analysis: ⚠️  Could not analyze build manifest");
+        // console.warn("- Manifest analysis: ⚠️  Could not analyze build manifest");
       }
       
     } else {
@@ -242,7 +242,7 @@ async function _main() {
   
   // Handle process termination gracefully
   process.on('SIGINT', () => {
-    // console.log('\n🛑 Build interrupted by user');
+    // console.warn('\n🛑 Build interrupted by user');
     if (_buildProcess) {
       _buildProcess.kill('SIGTERM');
     }
@@ -250,14 +250,14 @@ async function _main() {
   });
   
   process.on('SIGTERM', () => {
-    // console.log('\n🛑 Build terminated');
+    // console.warn('\n🛑 Build terminated');
     if (_buildProcess) {
       _buildProcess.kill('SIGTERM');
     }
     process.exit(1);
   });
   
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Failed to start build:", error.message);
     process.exit(1);
   }
@@ -298,7 +298,7 @@ async function runBuildWorkflow() {
   // and then call await analyzeAndReport();
 
   // The script is not executed by calling main(). It executes from top to bottom.
-  // The try-catch block that starts with `console.log("\n🔍 Pre-build validation...");` is the main execution block after setup.
+  // The try-catch block that starts with `console.warn("\n🔍 Pre-build validation...");` is the main execution block after setup.
   // I will convert that main execution block into an async function and call it.
 
   // Let's rename the main execution logic to `executeBuildSequence` and make it async.
@@ -309,28 +309,28 @@ async function runBuildWorkflow() {
 
 async function executeBuildSequence() {
   try {
-    // console.log("\n🔍 Running Pre-Deployment Checks...");
+    // console.warn("\n🔍 Running Pre-Deployment Checks...");
     const preCheckResults = await runPreDeployChecks();
     if (preCheckResults.warnings.some(w => w.includes('Missing environment variables') || w.includes('Security vulnerabilities detected'))) {
       console.warn("⚠️ Pre-deployment checks reported warnings. Review logs from deploy-optimization script.");
     } else {
-      // console.log("✅ Pre-Deployment Checks Passed.");
+      // console.warn("✅ Pre-Deployment Checks Passed.");
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Pre-Deployment Checks Failed:", error.message);
     process.exit(1);
   }
 
   try {
-    // console.log("\n🔍 Pre-build validation...");
+    // console.warn("\n🔍 Pre-build validation...");
     const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
     if (fs.existsSync(_nextConfigPath)) {
-      // console.log("✅ next.config.js found");
+      // console.warn("✅ next.config.js found");
     } else {
       console.warn("⚠️  next.config.js not found");
     }
 
-    // console.log("\n🏗️  Starting build process...");
+    // console.warn("\n🏗️  Starting build process...");
     _buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
       env: optimizedEnv,
       stdio: 'inherit',
@@ -347,10 +347,10 @@ async function executeBuildSequence() {
       const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
 
       if (code === 0) {
-        // console.log("\n✅ Enhanced build completed successfully!");
+        // console.warn("\n✅ Enhanced build completed successfully!");
 
         if (process.argv.includes('--analyze')) {
-          // console.log("\n📊 Running bundle analysis...");
+          // console.warn("\n📊 Running bundle analysis...");
           try {
             execSync('npx @next/bundle-analyzer', {
               env: optimizedEnv,
@@ -361,36 +361,36 @@ async function executeBuildSequence() {
           }
         }
 
-        // console.log("\n🔍 Verifying build output...");
+        // console.warn("\n🔍 Verifying build output...");
         const _nextDir = path.join(process.cwd(), '.next');
         const _serverDir = path.join(_nextDir, 'server');
         const _staticDir = path.join(_nextDir, 'static');
-        // console.log(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
-        // console.log(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
-        // console.log(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
-        // console.log("✅ Next.js build ready for Netlify plugin");
+        // console.warn(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
+        // console.warn(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
+        // console.warn(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
+        // console.warn("✅ Next.js build ready for Netlify plugin");
 
-        // console.log("\n📊 Enhanced Build Performance Report (details from optimized-build.cjs):");
+        // console.warn("\n📊 Enhanced Build Performance Report (details from optimized-build.cjs):");
         // ... (original report logs) ...
-        // console.log(`- Build time: ✅ ${_buildTime} seconds`);
+        // console.warn(`- Build time: ✅ ${_buildTime} seconds`);
 
         // Apply Netlify self fix
         try {
-          // console.log("\n🔧 Applying Netlify self reference fix...");
+          // console.warn("\n🔧 Applying Netlify self reference fix...");
           const netlifyFix = require('./netlify-self-fix.cjs');
           netlifyFix.main();
-          // console.log("✅ Netlify self fix applied successfully.");
-        } catch (fixError) {
+          // console.warn("✅ Netlify self fix applied successfully.");
+        } catch (_fixError) {
           console.error("❌ Netlify self fix failed:", fixError.message);
           // This is critical for Netlify deployment
           process.exit(1);
         }
 
         try {
-          // console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.cjs)...");
+          // console.warn("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.cjs)...");
           await analyzeAndReport(); // Call the imported function
-          // console.log("✅ Post-Build Analysis & Reporting Completed.");
-        } catch (reportError) {
+          // console.warn("✅ Post-Build Analysis & Reporting Completed.");
+        } catch (_reportError) {
           console.error("❌ Post-Build Analysis & Reporting Failed:", reportError.message);
           // Decide if this failure is critical. For now, just log.
         }
@@ -403,18 +403,18 @@ async function executeBuildSequence() {
     });
 
     process.on('SIGINT', () => {
-      // console.log('\n🛑 Build interrupted by user');
+      // console.warn('\n🛑 Build interrupted by user');
       if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
 
     process.on('SIGTERM', () => {
-      // console.log('\n🛑 Build terminated');
+      // console.warn('\n🛑 Build terminated');
       if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
 
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Failed to start build sequence:", error.message);
     process.exit(1);
   }

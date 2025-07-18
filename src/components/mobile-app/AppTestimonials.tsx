@@ -25,7 +25,7 @@ const testimonials = [
     role: "Full Stack Developer",
     text: "I love being able to check job matches and respond to clients while on the go. The notification system is particularly useful.",
     rating: 4,
-    avatar: "/placeholder.svg"
+    _avatar: "/placeholder.svg"
   }
 ];
 

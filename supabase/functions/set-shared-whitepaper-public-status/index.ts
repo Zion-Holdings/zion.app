@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface UpdateParams {
-  whitepaperId: string;
+  _whitepaperId: string;
   isPublic: boolean;
 }
 
@@ -67,7 +67,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in set-shared-whitepaper-public-status function:", error);
     return new Response(
       JSON.stringify({ error: error.message }),

@@ -33,7 +33,7 @@ export default function SearchResultsPage() {
   const [typeFilter, setTypeFilter] = useState<'all' | 'product' | 'service' | 'talent'>('all');
   const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>('relevance');
 
-  const fetchResults = useCallback(async (term: string) => {
+  const fetchResults = useCallback(async (_term: string) => {
     if (!term.trim()) {
       setResults([]);
       return;
@@ -48,7 +48,7 @@ export default function SearchResultsPage() {
         setResults([]);
         logErrorToProduction('Search API response structure is not as expected:', { data: data });
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Search failed:', { data: error });
       setResults([]);
     } finally {

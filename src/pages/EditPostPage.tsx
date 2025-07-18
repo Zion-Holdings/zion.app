@@ -17,9 +17,9 @@ interface PostFormValues {
 
 export default function EditPostPage() {
   const router = useRouter();
-  const { postId } = router.query as { postId?: string };
-  const { toast } = useToast();
-  const { user } = useAuth();
+  const { _postId } = router.query as { postId?: string };
+  const { _toast } = useToast();
+  const { _user } = useAuth();
   const [post, _setPost] = useState<ForumPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   

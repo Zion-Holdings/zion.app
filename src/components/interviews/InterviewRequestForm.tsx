@@ -42,7 +42,7 @@ const formSchema = z.object({
 });
 
 export function InterviewRequestForm({ talent, onClose, userDetails }: InterviewRequestFormProps) {
-  const { requestInterview } = useInterviews();
+  const { _requestInterview } = useInterviews();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -93,7 +93,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         description: `Your interview request with ${talent.full_name} has been sent.`,
       });
       onClose();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to schedule interview:', { data: error });
       toast({
         title: "Failed to schedule interview",

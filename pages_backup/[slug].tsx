@@ -38,7 +38,7 @@ const StaticPage: React.FC<PageProps> = ({ content, meta }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const _getStaticPaths: GetStaticPaths = async () => {
   const dir = path.join(process.cwd(), 'content', 'pages');
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
 
@@ -49,7 +49,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .map((f) => ({ params: { slug: f.replace(/\.md$/, '') } }))
     .filter(p => !reservedSlugs.includes(p.params.slug));
 
-  return { paths, fallback: false };
+  return { paths, _fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<PageProps> = async ({ params }: { params?: { slug?: string } }) => {

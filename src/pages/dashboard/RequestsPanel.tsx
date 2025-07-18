@@ -13,7 +13,7 @@ import type { QuoteRequest } from "@/types/quotes";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 export default function RequestsPanel() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const _isTalent = (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker';
   
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
@@ -32,7 +32,7 @@ export default function RequestsPanel() {
     toggleArchive
   } = useTalentQuotes();
 
-  const handleViewDetails = (quote: QuoteRequest) => {
+  const handleViewDetails = (_quote: QuoteRequest) => {
     setSelectedQuote(quote);
     setShowDetails(true);
     

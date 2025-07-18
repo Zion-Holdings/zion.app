@@ -239,7 +239,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.status(200).json(searchResponse);
     return;
 
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Search query failed:', { data: error });
     
     // Return empty results on error instead of 500

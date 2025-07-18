@@ -124,7 +124,7 @@ const Toaster = dynamic(
     try {
       const mod = await import('sonner');
       return mod.Toaster;
-    } catch (err) {
+    } catch (_err) {
       ProductionLogger.logWarn('Toaster dependency missing:', { error: err });
       return () => null;
     }
@@ -156,7 +156,7 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   const [error, setError] = React.useState<Error | null>(null);
 
   React.useEffect(() => {
-    const handleError = (event: ErrorEvent) => {
+    const handleError = (_event: ErrorEvent) => {
       ProductionLogger.logErrorToProduction(`Error in ${name}: ` + String(event.error));
       setError(event.error);
       setHasError(true);

@@ -9,7 +9,7 @@ const mockInvoke = sinon.stub();
 
 // @ts-expect-error Deno test global - mocking Deno environment for test setup
 globalThis.Deno = {
-    env: {
+    _env: {
         get: (key: string) => {
             if (key === 'SUPABASE_URL') return 'http://localhost:54321';
             if (key === 'SUPABASE_ANON_KEY') return 'test-anon-key';

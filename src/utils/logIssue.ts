@@ -13,7 +13,7 @@ export function logIssue(message: string, context?: Record<string, unknown>) {
     } else {
       captureException(new Error(message));
     }
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to report issue:', { data: err });
   }
 }

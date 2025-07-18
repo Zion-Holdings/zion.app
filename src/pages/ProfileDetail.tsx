@@ -187,7 +187,7 @@ export default function ProfileDetail() {
               </CardHeader>
               <CardContent>
                 {typeof profileData === 'object' && profileData !== null && 'experience' in profileData && (profileData as { experience: unknown[] }).experience ? (
-                  Array.isArray((profileData as { experience: unknown[] }).experience) && (profileData as { experience: unknown[] }).experience.map((exp: unknown, index: number) => {
+                  Array.isArray((profileData as { experience: unknown[] }).experience) && (profileData as { experience: unknown[] }).experience.map((exp: unknown, _index: number) => {
                     if (typeof exp === 'object' && exp !== null && 'company' in exp) {
                       return (
                         <div key={index}>
@@ -211,7 +211,7 @@ export default function ProfileDetail() {
               <CardContent>
                 {typeof profileData === 'object' && profileData !== null && 'portfolio_links' in profileData && (profileData as { portfolio_links: unknown[] }).portfolio_links ? (
                   <div className="flex flex-col gap-3">
-                    {Array.isArray((profileData as { portfolio_links: unknown[] }).portfolio_links) && (profileData as { portfolio_links: unknown[] }).portfolio_links.map((link: unknown, index: number) => {
+                    {Array.isArray((profileData as { portfolio_links: unknown[] }).portfolio_links) && (profileData as { portfolio_links: unknown[] }).portfolio_links.map((link: unknown, _index: number) => {
                       if (typeof link === 'object' && link !== null && 'url' in link && 'title' in link) {
                         return (
                           <a key={index} href={(link as { url: string }).url} target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-white flex items-center gap-2">

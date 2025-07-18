@@ -65,7 +65,7 @@ interface EnhancedProfile {
 
 export function TalentRegistrationForm() {
   // Remove the useToast() hook since we're importing the toast function directly
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [skillTags, setSkillTags] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -97,12 +97,12 @@ export function TalentRegistrationForm() {
   };
 
   // Handle removing skill tags
-  const handleRemoveSkill = (skill: string) => {
+  const handleRemoveSkill = (_skill: string) => {
     setSkillTags(skillTags.filter((s) => s !== skill));
   };
 
   // Handle key press in skills input (add on enter)
-  const handleSkillKeyPress = (e: React.KeyboardEvent) => {
+  const handleSkillKeyPress = (_e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleAddSkill();
@@ -110,7 +110,7 @@ export function TalentRegistrationForm() {
   };
 
   // Handle avatar upload
-  const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAvatarUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -230,7 +230,7 @@ export function TalentRegistrationForm() {
   };
 
   // Get category color
-  const getCategoryColor = (category: CategoryType) => {
+  const getCategoryColor = (_category: CategoryType) => {
     switch (category) {
       case 'programming': return 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-500';
       case 'devops': return 'bg-green-500/20 hover:bg-green-500/30 text-green-500';
@@ -242,7 +242,7 @@ export function TalentRegistrationForm() {
   };
 
   // Send notification email
-  const sendEnhancementNotification = async (userId: string, email: string) => {
+  const sendEnhancementNotification = async (userId: string, _email: string) => {
     if (!supabase) {
       logErrorToProduction('Supabase client not initialized for email notification');
       return;
@@ -274,7 +274,7 @@ export function TalentRegistrationForm() {
   };
 
   // Handle form submission
-  const onSubmit = async (values: TalentFormValues) => {
+  const onSubmit = async (_values: TalentFormValues) => {
     if (skillTags.length === 0) {
       toast({
         title: "Skills required",
@@ -375,7 +375,7 @@ export function TalentRegistrationForm() {
 
       // Here would be the actual code to save the profile to Supabase
       /*
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('talent_profiles')
         .insert({
           user_id: user.id,

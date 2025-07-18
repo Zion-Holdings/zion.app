@@ -24,7 +24,7 @@ import { ResumeVersionSelector } from './ResumeVersionSelector';
 import { RESUME_STEPS } from './constants';
 
 export function ResumeWizard() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const { 
     isLoading, 
     error, 
@@ -45,7 +45,7 @@ export function ResumeWizard() {
     }
   }, [user, fetchResume]);
   
-  const handleCreateNewResume = async (title: string) => {
+  const handleCreateNewResume = async (_title: string) => {
     const resumeId = await createResume({ title: title.trim() });
     if (resumeId) {
       await fetchResume(resumeId);
@@ -73,7 +73,7 @@ export function ResumeWizard() {
     }
   };
 
-  const handleResumeChange = (resumeId: string) => {
+  const handleResumeChange = (_resumeId: string) => {
     fetchResume(resumeId);
   };
   

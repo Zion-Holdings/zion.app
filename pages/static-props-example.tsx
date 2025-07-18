@@ -3,7 +3,7 @@ import { logWarn } from '@/utils/productionLogger';
 
 
 interface StaticPropsExamplePageProps {
-  data: unknown[];
+  _data: unknown[];
 }
 
 const StaticPropsExamplePage: React.FC<StaticPropsExamplePageProps> = ({ data }) => {

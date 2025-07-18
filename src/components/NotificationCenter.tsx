@@ -16,7 +16,7 @@ import {
 } from '@/components/notifications';
 import type { FilterType } from '@/components/notifications/NotificationFilter';
 
-export const NotificationCenter: React.FC = () => {
+export const _NotificationCenter: React.FC = () => {
   const { 
     filteredNotifications, 
     unreadCount, 
@@ -41,7 +41,7 @@ export const NotificationCenter: React.FC = () => {
         try {
           await fetchNotifications();
           setError(null);
-        } catch (err) {
+        } catch (_err) {
           logErrorToProduction('Failed to fetch notifications:', { data: err });
           setError("Couldn't load notifications");
           enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
@@ -58,13 +58,13 @@ export const NotificationCenter: React.FC = () => {
     try {
       await markAllAsRead();
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Failed to mark notifications as read:', { data: err });
       enqueueSnackbar((typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') ? (err as { response?: { data?: { message?: string } } }).response!.data!.message! : (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };
 
-  const handleFilterChange = (newFilter: FilterType) => {
+  const handleFilterChange = (_newFilter: FilterType) => {
     setFilter(newFilter as FilterType);
   };
 

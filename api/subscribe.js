@@ -1,5 +1,5 @@
-const { withSentry } = require('./withSentry.cjs');
-const { isValidEmail } = require('./emailUtils.cjs');
+const { _withSentry } = require('./withSentry.cjs');
+const { _isValidEmail } = require('./emailUtils.cjs');
 const fs = require('fs');
 const path = require('path');
 
@@ -14,7 +14,7 @@ async function handler(req, res) {
   }
 
   try {
-    const { email } = req.body || {};
+    const { _email } = req.body || {};
     if (!isValidEmail(email)) {
       res.statusCode = 400;
       res.json({ error: 'Invalid email' });
@@ -27,13 +27,13 @@ async function handler(req, res) {
         : [];
       if (!subs.includes(email)) subs.push(email);
       fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));
-    } catch (err) {
+    } catch (_err) {
       console.error('Failed to persist subscription:', err);
     }
 
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (err) {
+  } catch (_err) {
     console.error('Subscribe API error:', err);
     res.statusCode = 500;
     res.json({ error: err.message || 'Subscription failed' });

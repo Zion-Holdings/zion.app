@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 interface WhitepaperData {
-  tokenName: string;
+  _tokenName: string;
   tokenSupply: string;
   sections: Array<{ id: string; title: string; content: string }>;
   distributionChartData: Array<{ name: string; value: number }>;
@@ -66,7 +66,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in create-shared-whitepaper function:", error);
     return new Response(
       JSON.stringify({ error: error.message }),

@@ -18,8 +18,8 @@ try {
         active: () => null
       }),
       trace: (name, fn) => fn ? fn() : Promise.resolve(),
-      setUser: () => {},
-      addTags: () => {},
+      _setUser: () => {},
+      _addTags: () => {},
       // Add other commonly used methods as no-ops
       wrap: (name, fn) => fn,
       plugin: () => tracer
@@ -28,7 +28,7 @@ try {
     tracer = require('dd-trace').init();
     // console.log('✅ Datadog tracing initialized');
   }
-} catch (error) {
+} catch (_error) {
   console.warn('⚠️ Failed to initialize dd-trace, using mock implementation:', error.message);
   // Fallback mock tracer
   tracer = {
@@ -37,14 +37,14 @@ try {
       active: () => null
     }),
     trace: (name, fn) => fn ? fn() : Promise.resolve(),
-    setUser: () => {},
-    addTags: () => {},
+    _setUser: () => {},
+    _addTags: () => {},
     wrap: (name, fn) => fn,
     plugin: () => tracer
   };
 }
 
-const { exec } = require('child_process'); // Make sure this is imported
+const { _exec } = require('child_process'); // Make sure this is imported
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const mongooseMorgan = require('mongoose-morgan');
@@ -57,8 +57,8 @@ const syncRoutes = require('./routes/sync');
 const alertsRoutes = require('./routes/alerts'); // Add this
 const equipmentRoutes = require('./routes/items');
 const stripeRoutes = require('./routes/stripe'); // Add this for Stripe webhooks
-const { logAndAlert } = require('./utils/alertLogger');
-const { logBug } = require('./utils/bugLogger.cjs');
+const { _logAndAlert } = require('./utils/alertLogger');
+const { _logBug } = require('./utils/bugLogger.cjs');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
@@ -133,7 +133,7 @@ app.get('/healthz', (req, res) => {
       service: process.env.npm_package_name,
       version: process.env.npm_package_version
     });
-  } catch (error) {
+  } catch (_error) {
     // If any checks fail, respond with a 503 status
     res.status(503).json({
       status: 'DOWN',

@@ -6,7 +6,7 @@ import { useEnqueueSnackbar } from '@/context';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { isValidEmail } from '@/utils/email';
 
-export const MobileEmailCapture: React.FC = () => {
+export const _MobileEmailCapture: React.FC = () => {
 
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +15,7 @@ export const MobileEmailCapture: React.FC = () => {
 
   const lastSubmit = useRef(0);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
 

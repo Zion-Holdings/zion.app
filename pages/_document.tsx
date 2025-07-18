@@ -157,7 +157,7 @@ export default function Document() {
       const root = document.documentElement;
       root.classList.add(className);
       root.setAttribute('data-theme', className);
-    } catch(e) {}
+    } catch(_e) {}
   })();`;
   
   // Simple loader timeout without complex error handling

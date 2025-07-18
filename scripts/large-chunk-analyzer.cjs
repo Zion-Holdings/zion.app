@@ -9,8 +9,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// console.log('🔍 LARGE CHUNK ANALYZER');
-// console.log('=======================\n');
+// console.warn('🔍 LARGE CHUNK ANALYZER');
+// console.warn('=======================\n');
 
 const TARGET_SIZE = 244000; // 244KB target
 const buildStatsPath = path.join(process.cwd(), '.next');
@@ -183,38 +183,38 @@ function analyzeLargeChunks() {
 function generateDetailedReport() {
   const analysis = analyzeLargeChunks();
   
-  // console.log(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
-  // console.log(`===============================`);
-  // console.log(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
-  // console.log(`Total size: ${formatBytes(analysis.totalSize)}`);
-  // console.log(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
-  // console.log();
+  // console.warn(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
+  // console.warn(`===============================`);
+  // console.warn(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
+  // console.warn(`Total size: ${formatBytes(analysis.totalSize)}`);
+  // console.warn(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
+  // console.warn();
 
   if (analysis.largeChunks.length === 0) {
-    // console.log('🎉 No chunks exceed the target size!');
+    // console.warn('🎉 No chunks exceed the target size!');
     return { success: true, analysis };
   }
 
   // Sort by size (largest first)
   analysis.largeChunks.sort((a, b) => b.size - a.size);
 
-  // console.log(`🔍 LARGE CHUNKS BREAKDOWN:`);
-  // console.log(`=========================`);
+  // console.warn(`🔍 LARGE CHUNKS BREAKDOWN:`);
+  // console.warn(`=========================`);
   
   analysis.largeChunks.forEach((chunk, _index) => {
     const _urgency = chunk.strategy.priority === 'critical' ? '🚨' : 
                    chunk.strategy.priority === 'high' ? '⚠️' : 
                    chunk.strategy.priority === 'medium' ? '📊' : '📝';
     
-    // console.log(`${_index + 1}. ${_urgency} ${chunk.name}`);
-    // console.log(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
-    // console.log(`   Category: ${chunk.category}`);
-    // console.log(`   Priority: ${chunk.strategy.priority}`);
+    // console.warn(`${_index + 1}. ${_urgency} ${chunk.name}`);
+    // console.warn(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
+    // console.warn(`   Category: ${chunk.category}`);
+    // console.warn(`   Priority: ${chunk.strategy.priority}`);
     
     chunk.strategy.actions.forEach(_action => {
-      // console.log(`   • ${_action}`);
+      // console.warn(`   • ${_action}`);
     });
-    // console.log();
+    // console.warn();
   });
 
   // Generate category-based recommendations
@@ -232,54 +232,54 @@ function generateDetailedReport() {
     categoryStats[chunk.category].chunks.push(chunk.name);
   });
 
-  // console.log(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
-  // console.log(`======================================`);
+  // console.warn(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
+  // console.warn(`======================================`);
   
   Object.entries(categoryStats)
     .sort(([,a], [,b]) => b.totalSize - a.totalSize)
     .forEach(([category, stats]) => {
-      // console.log(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
-      // console.log(`   Chunks: ${stats.chunks.join(', ')}`);
+      // console.warn(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
+      // console.warn(`   Chunks: ${stats.chunks.join(', ')}`);
       
       const _strategy = getOptimizationStrategy(category, stats.totalSize);
-      // console.log(`   Priority: ${_strategy.priority}`);
-      // console.log(`   Actions:`);
+      // console.warn(`   Priority: ${_strategy.priority}`);
+      // console.warn(`   Actions:`);
       // _strategy.actions.forEach(action => {
-      //   console.log(`     • ${action}`);
+      //   console.warn(`     • ${action}`);
       // });
-      // console.log();
+      // console.warn();
     });
 
   // Implementation guidance
-  // console.log(`🚀 IMPLEMENTATION GUIDANCE:`);
-  // console.log(`==========================`);
+  // console.warn(`🚀 IMPLEMENTATION GUIDANCE:`);
+  // console.warn(`==========================`);
   
   const criticalChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'critical');
   const highPriorityChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'high');
   
   if (criticalChunks.length > 0) {
-    // console.log(`🚨 CRITICAL ISSUES (Fix Immediately):`);
+    // console.warn(`🚨 CRITICAL ISSUES (Fix Immediately):`);
     // criticalChunks.forEach(chunk => {
-    //   console.log(`   • ${chunk.name} (${chunk.category})`);
+    //   console.warn(`   • ${chunk.name} (${chunk.category})`);
     // });
-    // console.log();
+    // console.warn();
   }
 
   if (highPriorityChunks.length > 0) {
-    // console.log(`⚠️  HIGH PRIORITY (Next Sprint):`);
+    // console.warn(`⚠️  HIGH PRIORITY (Next Sprint):`);
     // highPriorityChunks.forEach(chunk => {
-    //   console.log(`   • ${chunk.name} (${chunk.category})`);
+    //   console.warn(`   • ${chunk.name} (${chunk.category})`);
     // });
-    // console.log();
+    // console.warn();
   }
 
-  // console.log(`📝 SUGGESTED NEXT STEPS:`);
-  // console.log(`1. Address critical P2P library chunks immediately`);
-  // console.log(`2. Implement dynamic imports for UI/chart libraries`);
-  // console.log(`3. Review and optimize vendor bundling strategy`);
-  // console.log(`4. Consider alternative lighter libraries`);
-  // console.log(`5. Implement component-level code splitting`);
-  // console.log();
+  // console.warn(`📝 SUGGESTED NEXT STEPS:`);
+  // console.warn(`1. Address critical P2P library chunks immediately`);
+  // console.warn(`2. Implement dynamic imports for UI/chart libraries`);
+  // console.warn(`3. Review and optimize vendor bundling strategy`);
+  // console.warn(`4. Consider alternative lighter libraries`);
+  // console.warn(`5. Implement component-level code splitting`);
+  // console.warn();
 
   return { success: analysis.largeChunks.length <= 3, analysis };
 }
@@ -309,13 +309,13 @@ function saveAnalysis(analysis) {
   };
   
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  // console.log(`📄 Detailed analysis saved to: ${reportPath}`);
+  // console.warn(`📄 Detailed analysis saved to: ${reportPath}`);
 }
 
 // Main execution
 try {
   if (!fs.existsSync(buildStatsPath)) {
-    // console.log('❌ No build output found. Run `npm run build` first.');
+    // console.warn('❌ No build output found. Run `npm run build` first.');
     process.exit(1);
   }
 
@@ -323,9 +323,9 @@ try {
   saveAnalysis(analysis);
   
   if (success) {
-    // console.log('\n🎉 Chunk optimization target achieved!');
+    // console.warn('\n🎉 Chunk optimization target achieved!');
   } else {
-    // console.log('\n⚡ Continue chunk optimization efforts.');
+    // console.warn('\n⚡ Continue chunk optimization efforts.');
   }
   
   process.exit(success ? 0 : 1);

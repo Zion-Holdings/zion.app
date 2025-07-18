@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 
 
 export default function Home() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
 
   const features = [
     {

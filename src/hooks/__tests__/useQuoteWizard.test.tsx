@@ -10,7 +10,7 @@ jest.mock('@/utils/sentry', () => ({
 const mockFetcher = jest.fn();
 
 // Helper to wrap hook with SWRConfig and a clear cache
-const renderUseQuoteWizard = (category: string) => {
+const renderUseQuoteWizard = (_category: string) => {
   return renderHook(() => useQuoteWizard(category), {
     wrapper: ({ children }) => (
       <SWRConfig value={{ provider: () => new Map(), fetcher: mockFetcher }}>
@@ -34,7 +34,7 @@ describe('useQuoteWizard', () => {
   test('should fetch data successfully and return it', async () => {
     mockFetcher.mockResolvedValue(mockServiceItems);
 
-    const { result } = renderUseQuoteWizard('services');
+    const { _result } = renderUseQuoteWizard('services');
 
     expect(result.current.isLoading).toBe(true);
 
@@ -48,7 +48,7 @@ describe('useQuoteWizard', () => {
 
   test('should return empty array for successful fetch with no data', async () => {
     mockFetcher.mockResolvedValue([]);
-    const { result } = renderUseQuoteWizard('talent');
+    const { _result } = renderUseQuoteWizard('talent');
 
     expect(result.current.isLoading).toBe(true);
     await waitFor(() => expect(result.current.isLoading).toBe(false));
@@ -70,7 +70,7 @@ describe('useQuoteWizard', () => {
     mockFetcher.mockRejectedValueOnce(mockError); // Retry 3
 
 
-    const { result } = renderUseQuoteWizard('equipment');
+    const { _result } = renderUseQuoteWizard('equipment');
 
     expect(result.current.isLoading).toBe(true);
 
@@ -104,7 +104,7 @@ describe('useQuoteWizard', () => {
       // Mock fetch to consistently fail
       mockFetcher.mockRejectedValue(mockError);
 
-      const { result } = renderHook(() => useQuoteWizard('services'), {
+      const { _result } = renderHook(() => useQuoteWizard('services'), {
         wrapper: ({ children }) => (
           <SWRConfig value={{ provider: () => new Map(), fetcher: mockFetcher, dedupingInterval: 0 }}>
             {children}
@@ -152,7 +152,7 @@ describe('useQuoteWizard', () => {
         // Let SWR handle retry counts. We just keep failing the fetcher.
         mockFetcher.mockRejectedValue(mockError);
 
-        const { result } = renderHook(() => useQuoteWizard('services'), {
+        const { _result } = renderHook(() => useQuoteWizard('services'), {
           wrapper: ({ children }) => (
             // Disable SWR's dedupingInterval for tests to ensure fetcher is called as expected
             <SWRConfig value={{ provider: () => new Map(), fetcher: mockFetcher, dedupingInterval: 0 }}>

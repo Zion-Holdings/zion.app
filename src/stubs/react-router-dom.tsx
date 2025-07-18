@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 
 // Minimal router context so React Router hooks don't throw errors
 const RouterContext = createContext<{ navigate: (url: string) => void }>({
-  navigate: () => {},
+  _navigate: () => {},
 });
 
-export const BrowserRouter = ({ children }: { children: React.ReactNode }) => {
+export const BrowserRouter = ({ children }: { _children: React.ReactNode }) => {
   const nextRouter = useRouter();
-  const navigate = (url: string) => {
+  const navigate = (_url: string) => {
     if (url) nextRouter.push(url);
   };
   return (
@@ -28,7 +28,7 @@ export const Link = ({ to, href, ...props }: LinkProps) => {
   return <a href={href ?? to} {...props} />;
 };
 export const NavLink = Link;
-export const Navigate = ({ to }: { to: string }) => {
+export const Navigate = ({ to }: { _to: string }) => {
   const nextRouter = useRouter();
   useEffect(() => {
     if (to) nextRouter.push(to);

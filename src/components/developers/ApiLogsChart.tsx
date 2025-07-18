@@ -9,7 +9,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    let chart: unknown;
+    let _chart: unknown;
     const scriptId = "chartjs-script";
     const win = window as unknown as { Chart?: unknown };
 

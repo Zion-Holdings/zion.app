@@ -13,7 +13,7 @@ interface SuggestedJobsProps {
 }
 
 export function SuggestedJobs({ talentId }: SuggestedJobsProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const currentTalentId = talentId || user?.id;
   const { 
     isLoading, 
@@ -30,7 +30,7 @@ export function SuggestedJobs({ talentId }: SuggestedJobsProps) {
     // In a real app, this might redirect to application form or open a modal
   };
 
-  const handleDecline = (matchId: string) => {
+  const handleDecline = (_matchId: string) => {
     updateJobMatchStatus(matchId, 'declined');
   };
 

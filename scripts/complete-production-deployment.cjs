@@ -9,8 +9,8 @@
 const https = require('https');
 const fs = require('fs');
 
-console.log('🚀 COMPLETE PRODUCTION DEPLOYMENT');
-console.log('=================================\n');
+console.warn('🚀 COMPLETE PRODUCTION DEPLOYMENT');
+console.warn('=================================\n');
 
 class ProductionDeploymentCompleter {
   constructor() {
@@ -19,58 +19,58 @@ class ProductionDeploymentCompleter {
   }
 
   printWelcome() {
-    console.log('🎯 CURRENT STATUS: 95% Complete → Target: 100% Production Ready');
-    console.log('⏱️  ESTIMATED TIME: 15 minutes');
-    console.log('🎉 GOAL: Complete enterprise production deployment\n');
+    console.warn('🎯 CURRENT STATUS: 95% Complete → Target: 100% Production Ready');
+    console.warn('⏱️  ESTIMATED TIME: 15 minutes');
+    console.warn('🎉 GOAL: Complete enterprise production deployment\n');
   }
 
   printEnvironmentSetup() {
-    console.log('📋 STEP 1: ENVIRONMENT CONFIGURATION (5 minutes)');
-    console.log('================================================\n');
+    console.warn('📋 STEP 1: ENVIRONMENT CONFIGURATION (5 minutes)');
+    console.warn('================================================\n');
     
-    console.log('🔧 REQUIRED: Configure Supabase Environment Variables');
-    console.log('');
-    console.log('📍 WHERE TO SET:');
-    console.log('  • Netlify Dashboard → Site Settings → Environment Variables');
-    console.log('  • OR: Local .env.production file (for testing)');
-    console.log('');
-    console.log('🔑 VARIABLES TO ADD:');
-    console.log('  1. NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url');
-    console.log('  2. NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key');
-    console.log('');
-    console.log('📖 HOW TO GET THESE VALUES:');
-    console.log('  1. Go to: https://supabase.com/dashboard');
-    console.log('  2. Select your project (or create new one)');
-    console.log('  3. Go to Settings → API');
-    console.log('  4. Copy "Project URL" and "anon public" key');
-    console.log('');
-    console.log('⚡ QUICK SETUP OPTION:');
-    console.log('  • Use Supabase free tier for instant setup');
-    console.log('  • Create project in 2 minutes');
-    console.log('  • No credit card required');
-    console.log('');
+    console.warn('🔧 REQUIRED: Configure Supabase Environment Variables');
+    console.warn('');
+    console.warn('📍 WHERE TO SET:');
+    console.warn('  • Netlify Dashboard → Site Settings → Environment Variables');
+    console.warn('  • OR: Local .env.production file (for testing)');
+    console.warn('');
+    console.warn('🔑 VARIABLES TO ADD:');
+    console.warn('  1. NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url');
+    console.warn('  2. NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key');
+    console.warn('');
+    console.warn('📖 HOW TO GET THESE VALUES:');
+    console.warn('  1. Go to: https://supabase.com/dashboard');
+    console.warn('  2. Select your project (or create new one)');
+    console.warn('  3. Go to Settings → API');
+    console.warn('  4. Copy "Project URL" and "anon public" key');
+    console.warn('');
+    console.warn('⚡ QUICK SETUP OPTION:');
+    console.warn('  • Use Supabase free tier for instant setup');
+    console.warn('  • Create project in 2 minutes');
+    console.warn('  • No credit card required');
+    console.warn('');
   }
 
   printNetlifyDeployment() {
-    console.log('🌐 STEP 2: NETLIFY DEPLOYMENT UPDATE (3 minutes)');
-    console.log('==============================================\n');
+    console.warn('🌐 STEP 2: NETLIFY DEPLOYMENT UPDATE (3 minutes)');
+    console.warn('==============================================\n');
     
-    console.log('📍 NETLIFY CONFIGURATION:');
-    console.log('  1. Go to: https://app.netlify.com/sites/ziontechgroup/settings/deploys');
-    console.log('  2. Add environment variables from Step 1');
-    console.log('  3. Trigger new deployment');
-    console.log('');
-    console.log('🔄 DEPLOYMENT COMMANDS:');
-    console.log('  • Netlify will auto-deploy from main branch');
-    console.log('  • OR manually trigger: Site Overview → Trigger Deploy');
-    console.log('');
+    console.warn('📍 NETLIFY CONFIGURATION:');
+    console.warn('  1. Go to: https://app.netlify.com/sites/ziontechgroup/settings/deploys');
+    console.warn('  2. Add environment variables from Step 1');
+    console.warn('  3. Trigger new deployment');
+    console.warn('');
+    console.warn('🔄 DEPLOYMENT COMMANDS:');
+    console.warn('  • Netlify will auto-deploy from main branch');
+    console.warn('  • OR manually trigger: Site Overview → Trigger Deploy');
+    console.warn('');
   }
 
   async validateCurrentDeployment() {
-    console.log('🔍 STEP 3: CURRENT DEPLOYMENT VALIDATION (2 minutes)');
-    console.log('===============================================\n');
+    console.warn('🔍 STEP 3: CURRENT DEPLOYMENT VALIDATION (2 minutes)');
+    console.warn('===============================================\n');
     
-    console.log('Checking current production status...\n');
+    console.warn('Checking current production status...\n');
     
     const endpoints = [
       { name: 'Main App', path: '/', expected: 200 },
@@ -83,14 +83,14 @@ class ProductionDeploymentCompleter {
       const status = result.success ? '✅' : '❌';
       const responseTime = result.responseTime;
       
-      console.log(`  ${status} ${endpoint.name}: ${result.status} (${responseTime}ms)`);
+      console.warn(`  ${status} ${endpoint.name}: ${result.status} (${responseTime}ms)`);
       
       if (endpoint.name === 'Bundle Size' && result.success) {
-        console.log(`    📦 Optimized bundle serving correctly`);
+        console.warn(`    📦 Optimized bundle serving correctly`);
       }
     }
     
-    console.log('');
+    console.warn('');
   }
 
   async checkEndpoint(path) {
@@ -116,74 +116,74 @@ class ProductionDeploymentCompleter {
   }
 
   printValidationCommands() {
-    console.log('✅ STEP 4: VALIDATION & VERIFICATION (3 minutes)');
-    console.log('===============================================\n');
+    console.warn('✅ STEP 4: VALIDATION & VERIFICATION (3 minutes)');
+    console.warn('===============================================\n');
     
-    console.log('🔧 RUN THESE COMMANDS AFTER ENV SETUP:');
-    console.log('');
-    console.log('# 1. Validate environment configuration');
-    console.log('npm run validate:env:production');
-    console.log('');
-    console.log('# 2. Complete deployment validation');
-    console.log('npm run deploy:validate');
-    console.log('');
-    console.log('# 3. Monitor production health');
-    console.log('npm run monitor:production');
-    console.log('');
-    console.log('# 4. Final verification');
-    console.log('npm run deploy:verify');
-    console.log('');
+    console.warn('🔧 RUN THESE COMMANDS AFTER ENV SETUP:');
+    console.warn('');
+    console.warn('# 1. Validate environment configuration');
+    console.warn('npm run validate:env:production');
+    console.warn('');
+    console.warn('# 2. Complete deployment validation');
+    console.warn('npm run deploy:validate');
+    console.warn('');
+    console.warn('# 3. Monitor production health');
+    console.warn('npm run monitor:production');
+    console.warn('');
+    console.warn('# 4. Final verification');
+    console.warn('npm run deploy:verify');
+    console.warn('');
   }
 
   printSuccessMetrics() {
-    console.log('🎉 STEP 5: SUCCESS CONFIRMATION (2 minutes)');
-    console.log('==========================================\n');
+    console.warn('🎉 STEP 5: SUCCESS CONFIRMATION (2 minutes)');
+    console.warn('==========================================\n');
     
-    console.log('🎯 SUCCESS CRITERIA - ALL MUST BE ✅:');
-    console.log('');
-    console.log('✅ Build System: Complete (96.7% bundle reduction achieved)');
-    console.log('✅ Performance: Excellent (159KB main bundle)');
-    console.log('✅ Security: A+ Grade (Enterprise headers implemented)');
-    console.log('✅ Monitoring: Operational (Health checks active)');
-    console.log('✅ Infrastructure: Live (Netlify CDN optimized)');
-    console.log('⏳ Environment: Configure Supabase variables → ✅');
-    console.log('');
-    console.log('📊 EXPECTED RESULTS AFTER COMPLETION:');
-    console.log('  🔥 Main bundle: 159KB (96.7% optimization maintained)');
-    console.log('  ⚡ Loading speed: Sub-second page loads');
-    console.log('  🔒 Security: A+ rating with full HTTPS');
-    console.log('  📈 Monitoring: Real-time health validation');
-    console.log('  🌐 Global: Edge deployment across all regions');
-    console.log('');
+    console.warn('🎯 SUCCESS CRITERIA - ALL MUST BE ✅:');
+    console.warn('');
+    console.warn('✅ Build System: Complete (96.7% bundle reduction achieved)');
+    console.warn('✅ Performance: Excellent (159KB main bundle)');
+    console.warn('✅ Security: A+ Grade (Enterprise headers implemented)');
+    console.warn('✅ Monitoring: Operational (Health checks active)');
+    console.warn('✅ Infrastructure: Live (Netlify CDN optimized)');
+    console.warn('⏳ Environment: Configure Supabase variables → ✅');
+    console.warn('');
+    console.warn('📊 EXPECTED RESULTS AFTER COMPLETION:');
+    console.warn('  🔥 Main bundle: 159KB (96.7% optimization maintained)');
+    console.warn('  ⚡ Loading speed: Sub-second page loads');
+    console.warn('  🔒 Security: A+ rating with full HTTPS');
+    console.warn('  📈 Monitoring: Real-time health validation');
+    console.warn('  🌐 Global: Edge deployment across all regions');
+    console.warn('');
   }
 
   printQuickStart() {
-    console.log('⚡ QUICK START OPTION');
-    console.log('====================\n');
+    console.warn('⚡ QUICK START OPTION');
+    console.warn('====================\n');
     
-    console.log('🚀 FASTEST PATH TO 100% (5 minutes):');
-    console.log('');
-    console.log('1. Create Supabase project: https://supabase.com/dashboard');
-    console.log('2. Copy URL + anon key');
-    console.log('3. Add to Netlify env vars');
-    console.log('4. Trigger deployment');
-    console.log('5. Run validation commands');
-    console.log('');
-    console.log('🎯 RESULT: 100% Enterprise Production Ready! 🚀');
-    console.log('');
+    console.warn('🚀 FASTEST PATH TO 100% (5 minutes):');
+    console.warn('');
+    console.warn('1. Create Supabase project: https://supabase.com/dashboard');
+    console.warn('2. Copy URL + anon key');
+    console.warn('3. Add to Netlify env vars');
+    console.warn('4. Trigger deployment');
+    console.warn('5. Run validation commands');
+    console.warn('');
+    console.warn('🎯 RESULT: 100% Enterprise Production Ready! 🚀');
+    console.warn('');
   }
 
   printNextSteps() {
-    console.log('🔮 IMMEDIATE NEXT STEPS AFTER 100%');
-    console.log('=================================\n');
+    console.warn('🔮 IMMEDIATE NEXT STEPS AFTER 100%');
+    console.warn('=================================\n');
     
-    console.log('📈 PHASE 4 OPTIONS (Choose one):');
-    console.log('  1. 🔍 Real User Monitoring - Track actual user performance');
-    console.log('  2. 🎨 UI/UX Enhancements - Improve user experience');
-    console.log('  3. 📱 Progressive Web App - Mobile app features');
-    console.log('  4. 🚀 Advanced Features - Custom business logic');
-    console.log('  5. 🌍 Global Scaling - Multi-region optimization');
-    console.log('');
+    console.warn('📈 PHASE 4 OPTIONS (Choose one):');
+    console.warn('  1. 🔍 Real User Monitoring - Track actual user performance');
+    console.warn('  2. 🎨 UI/UX Enhancements - Improve user experience');
+    console.warn('  3. 📱 Progressive Web App - Mobile app features');
+    console.warn('  4. 🚀 Advanced Features - Custom business logic');
+    console.warn('  5. 🌍 Global Scaling - Multi-region optimization');
+    console.warn('');
   }
 
   async run() {
@@ -196,11 +196,11 @@ class ProductionDeploymentCompleter {
     this.printQuickStart();
     this.printNextSteps();
     
-    console.log('=' .repeat(60));
-    console.log('🎯 STATUS: READY FOR FINAL 5% → 100% COMPLETION!');
-    console.log('⏱️  TIME NEEDED: 15 minutes');
-    console.log('🚀 OUTCOME: Enterprise Production Ready!');
-    console.log('=' .repeat(60));
+    console.warn('=' .repeat(60));
+    console.warn('🎯 STATUS: READY FOR FINAL 5% → 100% COMPLETION!');
+    console.warn('⏱️  TIME NEEDED: 15 minutes');
+    console.warn('🚀 OUTCOME: Enterprise Production Ready!');
+    console.warn('=' .repeat(60));
   }
 }
 

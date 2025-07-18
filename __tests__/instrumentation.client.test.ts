@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/nextjs';
 import { Integrations } from "@sentry/tracing"; // Import this if it's used in the Sentry.init call options
 
 describe('Sentry Initialization', () => {
-  let consoleWarnSpy: jest.SpyInstance;
+  let _consoleWarnSpy: jest.SpyInstance;
   let sentryInitSpy: jest.SpyInstance;
   const originalEnv = { ...process.env }; // Shallow copy to preserve original values
 

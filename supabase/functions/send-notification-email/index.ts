@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface EmailRequest {
-  user_id: string;
+  _user_id: string;
   notification_id: string;
 }
 
@@ -59,7 +59,7 @@ serve(async (req) => {
       }
     );
     
-  } catch (error) {
+  } catch (_error) {
     console.error("Error sending email notification:", error.message);
     return new Response(
       JSON.stringify({ error: error.message }),

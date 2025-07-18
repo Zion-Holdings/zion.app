@@ -36,7 +36,7 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
   const [selectionError, setSelectionError] = useState('');
   const { data, error, mutate, isLoading } = useQuoteWizard(category);
   const delayedError = useDelayedError(error);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   useEffect(() => {
     if (delayedError) {
@@ -55,7 +55,7 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     return data.find(item => item.id === selectedItemId);
   }, [data, selectedItemId]);
 
-  const handleSelect = (id: string) => {
+  const handleSelect = (_id: string) => {
     setSelectedItemId(id);
     setStep(2);
   };

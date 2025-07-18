@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 console.warn('🔄 Converting React Router to Next.js routing...\n');
 
@@ -71,7 +71,7 @@ files.forEach(file => {
       skipped++;
     }
     
-  } catch (error) {
+  } catch (_error) {
     console.warn(`   ❌ Error: ${error.message}`);
     skipped++;
   }
@@ -89,7 +89,7 @@ try {
   console.warn('🧪 Testing build...');
   execSync('npm run build > build-test.log 2>&1');
   console.warn('✅ Build test passed!');
-} catch (error) {
+} catch (_error) {
   console.warn('❌ Build test failed. Check build-test.log for details.');
 }
 

@@ -78,7 +78,7 @@ export function withCors(
   handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void,
   options: CorsOptions = {}
 ) {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+  return async (req: NextApiRequest, _res: NextApiResponse) => {
     // Apply CORS headers
     applyCorsHeaders(req, res, options);
 

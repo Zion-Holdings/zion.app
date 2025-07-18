@@ -36,7 +36,7 @@ export function RecentActivity() {
       action: "added comments to",
       target: "Frontend Developer application",
       timestamp: "2d ago",
-      type: "comment"
+      _type: "comment"
     }
   ];
 

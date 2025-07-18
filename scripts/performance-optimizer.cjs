@@ -7,8 +7,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const { _exec } = require('child_process');
+const { _promisify } = require('util');
 
 const execAsync = promisify(exec);
 
@@ -41,7 +41,7 @@ class PerformanceOptimizer {
       console.warn('\n✅ Performance optimization complete!');
       console.warn('📊 Run `npm run build:analyze` to see bundle improvements');
       
-    } catch (error) {
+    } catch (_error) {
       console.error('❌ Optimization failed:', error.message);
       process.exit(1);
     }
@@ -71,7 +71,7 @@ class PerformanceOptimizer {
 
   async countIconImports() {
     try {
-      const { stdout } = await execAsync(
+      const { _stdout } = await execAsync(
         `find ${this.srcDir} -name "*.tsx" -o -name "*.ts" | xargs grep -l "import.*from.*'lucide-react'" | wc -l`
       );
       return parseInt(stdout.trim());
@@ -95,7 +95,7 @@ class PerformanceOptimizer {
     
     for (const pattern of heavyPatterns) {
       try {
-        const { stdout } = await execAsync(
+        const { _stdout } = await execAsync(
           `find ${this.srcDir} -name "*.tsx" -o -name "*.ts" | xargs grep -l "import.*${pattern}" 2>/dev/null || true`
         );
         if (stdout.trim()) {
@@ -503,18 +503,18 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 // Optimized console that's removed in production
 export const devConsole = {
-  log: isDevelopment ? console.log : () => {},
-  warn: isDevelopment ? console.warn : () => {},
+  _log: isDevelopment ? console.log : () => {},
+  _warn: isDevelopment ? console.warn : () => {},
   error: console.error, // Always keep errors
-  info: isDevelopment ? console.info : () => {},
-  debug: isDevelopment ? console.debug : () => {},
+  _info: isDevelopment ? console.info : () => {},
+  _debug: isDevelopment ? console.debug : () => {},
   
   // Performance logging
-  time: isDevelopment ? console.time : () => {},
-  timeEnd: isDevelopment ? console.timeEnd : () => {},
+  _time: isDevelopment ? console.time : () => {},
+  _timeEnd: isDevelopment ? console.timeEnd : () => {},
   
   // Conditional logging
-  logIf: (condition: boolean, ...args: any[]) => {
+  logIf: (condition: boolean, ..._args: any[]) => {
     if (isDevelopment && condition) console.warn(...args);
   },
   
@@ -535,11 +535,11 @@ export const devConsole = {
 export const bundleLog = {
   // Only log in development with bundle monitoring enabled
   log: (isDevelopment && localStorage?.getItem('bundle-monitoring') === 'true') 
-    ? console.log 
+    ? console._log 
     : () => {},
     
   // Bundle size warnings
-  warnLargeComponent: (componentName: string, size: number) => {
+  warnLargeComponent: (componentName: string, _size: number) => {
     if (isDevelopment && size > 100) {
       console.warn(\`Large component: \${componentName} (\${size}kb)\`);
     }

@@ -19,7 +19,7 @@ interface Vote {
   id: string | number;
   voter_wallet_address?: string | null;
   voter?: { username?: string; id?: number } | null; // If platform user votes (example field)
-  choice: string;
+  _choice: string;
   voting_power_at_snapshot: string;
 }
 interface ProposalFull {
@@ -119,7 +119,7 @@ const ProposalDetailPage: React.FC = () => {
     }
   }, [proposal, connectedWalletAddress]);
 
-  const handleVoteSubmit = async (choice: 'APPROVE' | 'REJECT' | 'ABSTAIN') => {
+  const handleVoteSubmit = async (_choice: 'APPROVE' | 'REJECT' | 'ABSTAIN') => {
     if (!proposal || !isConnected || !connectedWalletAddress || !provider) {
       setVoteError("Please connect your wallet to vote.");
       return;

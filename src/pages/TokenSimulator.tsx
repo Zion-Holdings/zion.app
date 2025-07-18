@@ -57,13 +57,13 @@ export default function TokenSimulator() {
   const [months, setMonths] = useState(12);
   const [forecast, setForecast] = useState<number[]>([]);
   const [gptOutput, setGptOutput] = useState('');
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const velocityChart = useRef<HTMLCanvasElement | null>(null);
   const supplyChart = useRef<HTMLCanvasElement | null>(null);
 
   const handleChange =
-    (field: keyof Inputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (field: keyof Inputs) => (_e: React.ChangeEvent<HTMLInputElement>) => {
       const value = parseFloat(e.target.value);
       setInputs((prev) => ({ ...prev, [field]: isNaN(value) ? 0 : value }));
     };
@@ -83,7 +83,7 @@ export default function TokenSimulator() {
 
   useEffect(() => {
     // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
-    let chart: unknown;
+    let _chart: unknown;
     const id = 'chartjs-script';
     const load = () => {
       if (!velocityChart.current || typeof window.Chart !== 'function') return;
@@ -126,7 +126,7 @@ export default function TokenSimulator() {
 
   useEffect(() => {
     // Chart.js is loaded dynamically at runtime, so we must use 'unknown' here for chart instance
-    let chart: unknown;
+    let _chart: unknown;
     const id = 'chartjs-script2';
     const load = () => {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
@@ -171,7 +171,7 @@ export default function TokenSimulator() {
         purpose: 'support',
       });
       setGptOutput(result);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'TokenSimulator.handleGPT' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setGptOutput(suggestion);
@@ -206,7 +206,7 @@ export default function TokenSimulator() {
   };
 
   const exportPDF = async () => {
-    const { jsPDF } = await import('jspdf');
+    const { _jsPDF } = await import('jspdf');
     const doc = new jsPDF();
     doc.text('ZION$ Simulation Summary', 10, 10);
     forecast.forEach((v, i) => {

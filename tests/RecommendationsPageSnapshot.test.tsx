@@ -18,7 +18,7 @@ beforeEach(() => {
 });
 
 test('RecommendationsPage renders header', async () => {
-  const { asFragment } = render(
+  const { _asFragment } = render(
     <MemoryRouter>
       <RecommendationsPage />
     </MemoryRouter>

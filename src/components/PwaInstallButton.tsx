@@ -11,7 +11,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 const DISMISS_KEY = 'pwaDismissed';
 const DISMISS_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-export const PwaInstallButton: React.FC = () => {
+export const _PwaInstallButton: React.FC = () => {
   const [promptEvent, setPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalling, setIsInstalling] = useState(false);
 
@@ -25,7 +25,7 @@ export const PwaInstallButton: React.FC = () => {
 
     if (recentlyDismissed || inStandalone) return;
 
-    const handler = (e: BeforeInstallPromptEvent) => {
+    const handler = (_e: BeforeInstallPromptEvent) => {
       e.preventDefault();
       setPromptEvent(e);
     };
@@ -58,7 +58,7 @@ export const PwaInstallButton: React.FC = () => {
         safeStorage.setItem(DISMISS_KEY, Date.now().toString());
         setPromptEvent(null);
       }
-    } catch (err) {
+    } catch (_err) {
       setIsInstalling(false);
       toast('Installation failed', { description: 'Please try again later.' });
       logErrorToProduction('PWA install error:', { data: err });

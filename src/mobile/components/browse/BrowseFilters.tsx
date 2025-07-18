@@ -19,13 +19,13 @@ interface BrowseFiltersProps {
 export function BrowseFilters({ type }: BrowseFiltersProps) {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   
-  const addFilter = (filter: string) => {
+  const addFilter = (_filter: string) => {
     if (!activeFilters.includes(filter)) {
       setActiveFilters([...activeFilters, filter]);
     }
   };
   
-  const removeFilter = (filter: string) => {
+  const removeFilter = (_filter: string) => {
     setActiveFilters(activeFilters.filter(f => f !== filter));
   };
   

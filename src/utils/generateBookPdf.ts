@@ -25,7 +25,7 @@ export async function generateBookPdf(): Promise<Blob> {
     { title: 'Chapter 4 – The Multiverse & Digital Nations', content: 'Cross-chain identity\nImmersive virtual economies' },
     { title: 'Chapter 5 – ZionDAO + The Constitution', content: 'Community law and governance\nOn-chain proposals' },
     { title: 'Chapter 6 – Building a Post-Platform World', content: 'Protocol over platform philosophy\nRoadmap to v10' },
-    { title: 'Appendix – Protocol Maps & Timelines', content: 'Architecture diagrams\nKey governance votes' }
+    { title: 'Appendix – Protocol Maps & Timelines', _content: 'Architecture diagrams\nKey governance votes' }
   ];
 
   sections.forEach((section) => {

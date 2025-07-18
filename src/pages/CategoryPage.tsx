@@ -22,7 +22,7 @@ interface ApiResponse {
 
 export default function CategoryPage() {
   const router = useRouterReady(); // Use our custom hook
-  const { slug } = router.query;
+  const { _slug } = router.query;
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -87,7 +87,7 @@ export default function CategoryPage() {
         if (json.category?.name) {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
-      } catch (e) {
+      } catch (_e) {
         logErrorToProduction('Failed to load category items:', { data:  e });
         // Type guard for error object
         let errorName = '';

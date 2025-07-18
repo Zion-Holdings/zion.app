@@ -16,7 +16,7 @@ import { yamux } from '@chainsafe/libp2p-yamux';
 const buildDir = process.argv[2] || 'dist'; // Default to 'dist'
 
 async function deploy() {
-  // console.log('Initializing minimal Libp2p for Helia...');
+  // console.warn('Initializing minimal Libp2p for Helia...');
   const libp2p = await createLibp2p({
     transports: [tcp()], // TCP transport for local operations
     connectionEncryption: [noise()],
@@ -27,7 +27,7 @@ async function deploy() {
     datastore: new MemoryDatastore(), // Ephemeral
   });
 
-  // console.log('Initializing Helia...');
+  // console.warn('Initializing Helia...');
   const helia = await createHelia({
     libp2p: libp2p,
     blockstore: new MemoryBlockstore(), // Ephemeral
@@ -35,7 +35,7 @@ async function deploy() {
   });
 
   const fsHelia = unixfs(helia);
-  // console.log(`Gathering files from directory: ${buildDir}`);
+  // console.warn(`Gathering files from directory: ${buildDir}`);
 
   async function* streamFiles(dir, relativePathBase = '') {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -53,7 +53,7 @@ async function deploy() {
     }
   }
 
-  // console.log('Adding files to Helia (UnixFS)...');
+  // console.warn('Adding files to Helia (UnixFS)...');
   // The addAll method expects an iterable of objects with `path` and `content`.
   // If `wrapWithDirectory` behavior is desired, we add the top buildDir itself.
   // Helia's addDirectory or addBytes under a path might be more direct.
@@ -71,7 +71,7 @@ async function deploy() {
   }
 
   if (filesToAdd.length === 0) {
-    // console.log('No files found to deploy.');
+    // console.warn('No files found to deploy.');
     await helia.stop();
     await libp2p.stop();
     return;
@@ -122,13 +122,13 @@ async function deploy() {
   if (!rootCid) {
     throw new Error('Failed to deploy: No root CID obtained.');
   }
-  // console.log('IPFS CID:', rootCid.toString());
-  // console.log('Note: This CID is local to the Helia node run by this script.');
-  // console.log('For persistence, this content needs to be pinned on a public IPFS node or pinning service.');
+  // console.warn('IPFS CID:', rootCid.toString());
+  // console.warn('Note: This CID is local to the Helia node run by this script.');
+  // console.warn('For persistence, this content needs to be pinned on a public IPFS node or pinning service.');
 
   await helia.stop();
   await libp2p.stop();
-  // console.log('Helia and Libp2p stopped.');
+  // console.warn('Helia and Libp2p stopped.');
 }
 
 deploy().catch(err => {

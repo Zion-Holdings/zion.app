@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { TalentProfile } from '@/types/talent';
 
-// API returns `{ profile: TalentProfile }`; swr will store just the profile
+// API returns `{ _profile: TalentProfile }`; swr will store just the profile
 type TalentProfileResponse = { profile: TalentProfile | null };
 
 // fetcher-like function for handling API responses
@@ -30,13 +30,13 @@ const handleApiResponse = async (res: Response) => {
   return res.json();
 };
 
-const TalentPage: React.FC = () => {
+const _TalentPage: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query as { id?: string };
+  const { _id } = router.query as { id?: string };
 
   const { data, error, isLoading } = useSWR<TalentProfile | null>(
     id ? `/api/talent/${id}` : null,
-    async (url: string) => {
+    async (_url: string) => {
       const result: TalentProfileResponse = await fetch(url).then(handleApiResponse);
       return result.profile;
     }

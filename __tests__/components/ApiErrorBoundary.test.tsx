@@ -14,7 +14,7 @@ jest.mock('@sentry/nextjs', () => ({
 }));
 
 // Component that throws an error
-const ThrowError = ({ shouldError }: { shouldError: boolean }) => {
+const ThrowError = ({ shouldError }: { _shouldError: boolean }) => {
   if (shouldError) {
     throw new Error('Test error for ApiErrorBoundary');
   }
@@ -22,7 +22,7 @@ const ThrowError = ({ shouldError }: { shouldError: boolean }) => {
 };
 
 describe('ApiErrorBoundary', () => {
-  let queryClient: QueryClient;
+  let _queryClient: QueryClient;
 
   beforeEach(() => {
     queryClient = new QueryClient({

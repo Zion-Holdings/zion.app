@@ -129,7 +129,7 @@ function ExperienceStep() {
     setExperiences([...experiences, { id: newId }]);
   };
   
-  const removeExperience = (id: string) => {
+  const removeExperience = (_id: string) => {
     setExperiences(experiences.filter(exp => exp.id !== id));
   };
   
@@ -201,7 +201,7 @@ function EducationStep() {
     setEducations([...educations, { id: newId }]);
   };
   
-  const removeEducation = (id: string) => {
+  const removeEducation = (_id: string) => {
     setEducations(educations.filter(edu => edu.id !== id));
   };
   
@@ -271,11 +271,11 @@ function SkillsStep() {
     setSkills([...skills, { id: newId, name: "", proficiency: "beginner" }]);
   };
   
-  const removeSkill = (id: string) => {
+  const removeSkill = (_id: string) => {
     setSkills(skills.filter(skill => skill.id !== id));
   };
   
-  const updateSkill = (id: string, field: string, value: string) => {
+  const updateSkill = (id: string, field: string, _value: string) => {
     setSkills(skills.map(skill => 
       skill.id === id ? { ...skill, [field]: value } : skill
     ));

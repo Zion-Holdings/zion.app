@@ -51,7 +51,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
 
         const gaps = data
           .filter((d: unknown) => typeof d === 'object' && d !== null && 'actual_value' in d && (d as { actual_value?: number }).actual_value !== null && (d as { actual_value?: number }).actual_value !== undefined)
-          .map((d: unknown) => {
+          .map((_d: unknown) => {
             if (typeof d === 'object' && d !== null && 'actual_value' in d && 'suggested_min' in d && 'suggested_max' in d) {
               return Math.abs(
                 Number((d as { actual_value: number }).actual_value) -
@@ -62,7 +62,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
           });
         const averagePriceGap = gaps.length ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length : 0;
 
-        const categoryMap: Record<string, { count: number; accepted: number }> = {};
+        const categoryMap: Record<string, { _count: number; accepted: number }> = {};
         data.forEach((d: unknown) => {
           let cat = 'other';
           if (typeof d === 'object' && d !== null && 'category' in d) {
@@ -83,7 +83,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
         }));
 
         const recentSuggestions = data
-          .sort((a: unknown, b: unknown) => {
+          .sort((a: unknown, _b: unknown) => {
             if (
               typeof a === 'object' && a !== null && 'created_at' in a &&
               typeof b === 'object' && b !== null && 'created_at' in b
@@ -93,7 +93,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
             return 0;
           })
           .slice(0, 10)
-          .map((d: unknown) => {
+          .map((_d: unknown) => {
             if (typeof d === 'object' && d !== null) {
               const t = (d as { suggestion_type?: unknown }).suggestion_type;
               return {
@@ -146,7 +146,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
           isLoading: false,
           error: null
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error fetching pricing suggestion analytics:', { data: error });
         setAnalytics({
           ...analytics,

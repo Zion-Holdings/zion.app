@@ -9,7 +9,7 @@ jest.mock('react-redux', () => ({
 }));
 
 test('Checkout page renders header', () => {
-  const { asFragment } = render(
+  const { _asFragment } = render(
     <MemoryRouter>
       <Checkout />
     </MemoryRouter>

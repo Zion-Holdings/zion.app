@@ -9,7 +9,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useJobs = (userId?: string, status?: JobStatus) => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -52,7 +52,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
     }
   };
   
-  const updateJobStatus = async (jobId: string, newStatus: JobStatus) => {
+  const updateJobStatus = async (jobId: string, _newStatus: JobStatus) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error: updateError } = await supabase
@@ -75,7 +75,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
     }
   };
   
-  const deleteJob = async (jobId: string) => {
+  const deleteJob = async (_jobId: string) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error: deleteError } = await supabase

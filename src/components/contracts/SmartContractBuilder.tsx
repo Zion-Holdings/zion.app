@@ -45,9 +45,9 @@ export function SmartContractBuilder({
   const [deployStatus, setDeployStatus] = useState<string>('');
   const [deploymentInfo, setDeploymentInfo] = useState<SmartContractInfo | null>(null);
   
-  const { deploySmartContract } = useSmartContracts();
+  const { _deploySmartContract } = useSmartContracts();
 
-  const handleLoadTemplate = (templateData: ContractFormValues) => {
+  const handleLoadTemplate = (_templateData: ContractFormValues) => {
     setFormValues(templateData);
   };
 
@@ -68,7 +68,7 @@ export function SmartContractBuilder({
         setDeployStatus('error');
         toast.error("Failed to deploy smart contract");
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error deploying contract:', { data: error });
       setDeployStatus('error');
       toast.error("Failed to deploy smart contract");
@@ -76,7 +76,7 @@ export function SmartContractBuilder({
   };
 
   // Modified to match the expected interface
-  const handleFormSubmit = (contract: string) => {
+  const handleFormSubmit = (_contract: string) => {
     // This should be a function that takes a string (contract content)
     // Since we need to adapt the interface, we'll implement the simplest solution that works
     if (onContractGenerated) {

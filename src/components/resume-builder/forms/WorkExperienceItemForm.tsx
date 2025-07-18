@@ -60,12 +60,12 @@ export function WorkExperienceItemForm({
     },
   });
   
-  const { isSubmitting } = form.formState;
+  const { _isSubmitting } = form.formState;
   const watchIsCurrent = form.watch("is_current");
   const watchRoleTitle = form.watch("role_title");
   const watchCompanyName = form.watch("company_name");
 
-  const handleFormSubmit = async (values: FormValues) => {
+  const handleFormSubmit = async (_values: FormValues) => {
     // Create a properly typed WorkExperience object with all required fields
     const workExperience: WorkExperience = {
       ...(initialData?.id && { id: initialData.id }),
@@ -81,7 +81,7 @@ export function WorkExperienceItemForm({
     await onSubmit(workExperience);
   };
 
-  const handleAIEnhancement = (content: string) => {
+  const handleAIEnhancement = (_content: string) => {
     form.setValue("description", content, { shouldDirty: true });
     setIsEnhancementDialogOpen(false);
   };

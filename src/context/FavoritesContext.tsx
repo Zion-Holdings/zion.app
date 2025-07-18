@@ -38,7 +38,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     safeStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const toggleFavorite = async (productId: string) => {
+  const toggleFavorite = async (_productId: string) => {
     try {
       const result = await toggleFavoriteRequest(productId);
       if (
@@ -59,7 +59,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
           ? prev.filter(id => id !== productId)
           : [...prev, productId]
       );
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Toggle favorite failed', { data: err });
     }
   };

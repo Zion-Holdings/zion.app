@@ -9,8 +9,8 @@ import { logInfo } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 
 export default function Custom500() {
-  const { user } = useAuth();
-  const { t } = useTranslation();
+  const { _user } = useAuth();
+  cons_t { t } = useTranslation();
   const router = useRouter();
 
   useEffect(() => {

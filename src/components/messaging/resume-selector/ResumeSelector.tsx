@@ -32,7 +32,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
       setIsLoading(true);
       try {
         await fetchResume();
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error loading resumes:', { data: error });
       } finally {
         setIsLoading(false);
@@ -63,7 +63,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
   }, [resume, selectedOption, onResumeSelected]);
   
   // Handle radio option change
-  const handleOptionChange = (value: 'recent' | 'select' | 'upload') => {
+  const handleOptionChange = (_value: 'recent' | 'select' | 'upload') => {
     setSelectedOption(value);
     
     if (value === 'recent' && resumeOptions.length > 0 && resumeOptions[0]) {
@@ -78,7 +78,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
   };
   
   // Handle resume selection change
-  const handleResumeSelect = (resumeId: string) => {
+  const handleResumeSelect = (_resumeId: string) => {
     const selected = resumeOptions.find(opt => opt.id === resumeId);
     if (selected) {
       setSelectedResume(selected);
@@ -87,7 +87,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
   };
   
   // Handle custom file upload
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       
@@ -141,7 +141,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
         title: "Success!",
         description: "Your resume has been downloaded.",
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error downloading PDF:', { data: error });
       toast({
         title: "Download failed",

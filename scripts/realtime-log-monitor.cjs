@@ -95,7 +95,7 @@ class RealtimeLogMonitor {
     let _lastSize = 0;
     try {
       _lastSize = fs.statSync(filePath).size;
-    } catch (error) {
+    } catch (_error) {
       return; // File doesn't exist
     }
 

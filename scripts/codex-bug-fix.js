@@ -38,7 +38,7 @@ if (!ISSUE_TITLE) printErrorAndExit('Missing ISSUE_TITLE environment variable');
 let REPO_CONTEXT;
 try {
   REPO_CONTEXT = JSON.parse(REPO_CONTEXT_JSON);
-} catch (e) {
+} catch (_e) {
   printErrorAndExit('Failed to parse REPO_CONTEXT_JSON', { rawValue: REPO_CONTEXT_JSON, error: e.message });
 }
 
@@ -46,7 +46,7 @@ let ISSUE_LABELS = [];
 if (ISSUE_LABELS_JSON) {
   try {
     ISSUE_LABELS = JSON.parse(ISSUE_LABELS_JSON);
-  } catch (e) {
+  } catch (_e) {
     printErrorAndExit('Failed to parse ISSUE_LABELS_JSON', { rawValue: ISSUE_LABELS_JSON, error: e.message });
   }
 }
@@ -59,7 +59,7 @@ function runGitCommand(command) {
     const output = execSync(command, { stdio: 'pipe' }).toString();
     if (output) console.warn(output); // Only log if there's output
     return output;
-  } catch (error) {
+  } catch (_error) {
     const errDetails = {
       command,
       stdout: error.stdout ? error.stdout.toString() : null,
@@ -80,7 +80,7 @@ async function commentOnIssue(octokitInstance, owner, repo, issueNumber, comment
       body: commentBody,
     });
     console.warn("Successfully commented on issue.");
-  } catch (error) {
+  } catch (_error) {
     console.error(`Failed to comment on issue #${issueNumber}: ${error.message}`);
     // Log the error but don't let it stop the script.
     // The main error (e.g., patch apply failure) is more critical.
@@ -107,7 +107,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
       console.warn(`Path ${filePath} is not a file or has no content. Data:`, response.data);
       return null;
     }
-  } catch (error) {
+  } catch (_error) {
     if (error.status === 404) {
       console.warn(`File not found: ${filePath}`);
       return null;
@@ -141,7 +141,7 @@ async function sendPromptToOpenAI(promptMessage) {
       let apiError = errorText;
       try {
         apiError = JSON.parse(errorText);
-      } catch (e) { /* ignore */ }
+      } catch (_e) { /* ignore */ }
       printErrorAndExit(`OpenAI API error: ${response.status} ${response.statusText}`, { errorDetails: apiError });
     }
     const data = await response.json();
@@ -150,7 +150,7 @@ async function sendPromptToOpenAI(promptMessage) {
     } else {
       printErrorAndExit('OpenAI API response did not contain expected content.', { responseData: data });
     }
-  } catch (err) {
+  } catch (_err) {
     printErrorAndExit(`Error during OpenAI API call: ${err.message}`, { error: err });
   }
 }
@@ -190,7 +190,7 @@ async function main() {
         } else {
           console.warn(`No content returned for ${filePath.trim()}.`);
         }
-      } catch (error) {
+      } catch (_error) {
         console.warn(`Skipping file ${filePath.trim()} due to error: ${error.message}`);
       }
     }
@@ -232,7 +232,7 @@ async function main() {
       fs.writeFileSync(patchFilePath, patch);
       runGitCommand(`git apply --whitespace=fix ${patchFilePath}`);
       console.warn("Patch applied successfully via git apply.");
-    } catch (applyError) {
+    } catch (_applyError) {
       // This catch is for fs.writeFileSync or if runGitCommand for git apply throws (which it will on failure)
       if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath);
       const failureMessage = `Failed to apply the patch suggested by Codex for issue #${ISSUE_NUMBER}.
@@ -262,7 +262,7 @@ ${patch}
       // Exiting gracefully as this isn't a script failure, but an ineffective patch.
       // The workflow should ideally not proceed to PR creation.
       process.exit(0);
-    } catch (error) {
+    } catch (_error) {
       // This error (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.
       console.warn("Changes staged, proceeding to commit.");
     }

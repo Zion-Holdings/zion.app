@@ -26,7 +26,7 @@ export interface MarketplaceFilters {
 export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'products', filters],
-    queryFn: async () => {
+    _queryFn: async () => {
       logDev('useMarketplaceProducts: Fetching products with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
@@ -56,7 +56,7 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
 export function useMarketplaceCategories() {
   return useQuery({
     queryKey: ['marketplace', 'categories'],
-    queryFn: async () => {
+    _queryFn: async () => {
       logDev('useMarketplaceCategories: Fetching categories');
       
       const response = await fetch('/api/marketplace/categories');
@@ -74,7 +74,7 @@ export function useMarketplaceCategories() {
 export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'talent', filters],
-    queryFn: async () => {
+    _queryFn: async () => {
       logDev('useMarketplaceTalent: Fetching talent with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
@@ -103,7 +103,7 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
 export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'equipment', filters],
-    queryFn: async () => {
+    _queryFn: async () => {
       logDev('useMarketplaceEquipment: Fetching equipment with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
@@ -161,7 +161,7 @@ export function useMarketplaceOverview() {
 export function useMarketplaceErrorHandler() {
   const [lastError, setLastError] = useState<string | null>(null);
 
-  const handleError = useCallback((error: unknown) => {
+  const handleError = useCallback((_error: unknown) => {
     // Add type guard and handle error appropriately
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);

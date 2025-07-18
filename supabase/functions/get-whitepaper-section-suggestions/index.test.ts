@@ -6,7 +6,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 let mockSupabaseClientSuggestions: unknown;
 const mockInvokeSuggestions = sinon.stub();
 
-// @ts-expect-error: Deno test global setup for testing environment
+// @ts-expect-_error: Deno test global setup for testing environment
 globalThis.Deno = globalThis.Deno || {}; // Ensure Deno object exists
 // @ts-expect-error: Mocking Deno.env for test environment configuration
 globalThis.Deno.env = {

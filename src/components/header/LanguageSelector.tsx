@@ -16,7 +16,7 @@ import {
 } from '@/context/LanguageContext';
 
 export function LanguageSelector() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   // Fallback in case the context fails to provide languages for any reason
   const availableLanguages =
@@ -31,18 +31,18 @@ export function LanguageSelector() {
   const currentFlag =
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
-  const handleLanguageChange = async (langCode: SupportedLanguage) => {
+  const handleLanguageChange = async (_langCode: SupportedLanguage) => {
     logInfo('LanguageSelector: Language item clicked:', { data: langCode });
     try {
       await changeLanguage(langCode);
       setIsOpen(false);
       fireEvent('language_change', { language: langCode });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('LanguageSelector: Error changing language:', { data: error });
     }
   };
 
-  const handleOpenChange = (open: boolean) => {
+  const handleOpenChange = (_open: boolean) => {
     setIsOpen(open);
     fireEvent('language_selector_toggle', { open });
   };

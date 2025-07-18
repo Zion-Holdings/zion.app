@@ -31,7 +31,7 @@ export default function Help() {
         if (active) {
           setArticles(Array.isArray(data) ? data : []);
         }
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Help article fetch error:', { data: err });
         if (active) {
           setArticles([]);

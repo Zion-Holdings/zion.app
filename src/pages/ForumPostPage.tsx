@@ -33,12 +33,12 @@ export default function ForumPostPage() {
   // Cast the result instead to provide the expected shape.
   const router = useRouter();
   const _postId = router.query.postId as string;
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const [post, setPost] = useState<ForumPost | null>(null);
   const [replies, setReplies] = useState<ForumReply[]>([]);
   
-  // Reactivate: Use a mock API integration for forum post and replies
+  // _Reactivate: Use a mock API integration for forum post and replies
   useEffect(() => {
     // Simulate API call
     setTimeout(() => {
@@ -137,7 +137,7 @@ export default function ForumPostPage() {
     });
   };
 
-  const handleSubmitReply = async (content: string) => {
+  const handleSubmitReply = async (_content: string) => {
     if (!user) {
       toast({
         title: "Authentication required",
@@ -171,7 +171,7 @@ export default function ForumPostPage() {
     });
   };
 
-  const handleMarkAsAnswer = (replyId: string) => {
+  const handleMarkAsAnswer = (_replyId: string) => {
     // Only post author or admin can mark an answer
     if (!isAuthor && !isAdminOrMod) {
       toast({

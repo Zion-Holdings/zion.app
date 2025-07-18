@@ -57,7 +57,7 @@ export default async function handler(
             timestamp: Date.now()
           })
         });
-      } catch (analyticsError) {
+      } catch (_analyticsError) {
         logError('Failed to send to analytics service:', { data: analyticsError });
         // Don't fail the request if analytics fails
       }
@@ -81,7 +81,7 @@ export default async function handler(
       metricsCount: performanceReport.metrics.length
     });
 
-  } catch (error) {
+  } catch (_error) {
     logError('Error processing performance metrics:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error',

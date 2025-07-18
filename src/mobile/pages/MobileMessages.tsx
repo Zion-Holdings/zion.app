@@ -16,7 +16,7 @@ interface ChatMessage {
 }
 
 export function MobileMessages() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const {
     conversations,
     activeConversation,
@@ -43,7 +43,7 @@ export function MobileMessages() {
     status: msg.read ? 'read' : 'sent'
   }));
 
-  const handleSelectConversation = async (id: string) => {
+  const handleSelectConversation = async (_id: string) => {
     const conversation = conversations.find(c => c.id === id) || null;
     setActiveConversation(conversation);
     await loadMessages(id);
@@ -53,7 +53,7 @@ export function MobileMessages() {
     setActiveConversation(null);
   };
 
-  const handleSendMessage = (content: string) => {
+  const handleSendMessage = (_content: string) => {
     if (activeConversation) {
       sendMessage(activeConversation.id, content);
     }

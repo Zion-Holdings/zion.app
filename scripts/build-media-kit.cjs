@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -17,7 +17,7 @@ try {
   }
   execSync(`zip -r ${zipFile} .`, { cwd: kitDir, stdio: 'inherit' });
   console.warn('Media kit archive created at', zipFile);
-} catch (err) {
+} catch (_err) {
   console.error('Failed to create media kit archive:', err);
   process.exit(1);
 }

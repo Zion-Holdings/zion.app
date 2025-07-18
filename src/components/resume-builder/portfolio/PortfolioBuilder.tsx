@@ -30,7 +30,7 @@ export function PortfolioBuilder() {
     fetchProjects();
   };
   
-  const handleDeleteProject = async (projectId: string) => {
+  const handleDeleteProject = async (_projectId: string) => {
     const success = await deleteProject(projectId);
     if (success) {
       fetchProjects();
@@ -72,7 +72,7 @@ export function PortfolioBuilder() {
             
             <ProjectForm 
               {...(editingProject ? { project: editingProject } : {})}
-              onSuccess={editingProject ? handleEditSuccess : handleAddSuccess}
+              onSuccess={editingProject ? _handleEditSuccess : handleAddSuccess}
               onCancel={() => {
                 setShowAddProject(false);
                 setEditingProject(null);

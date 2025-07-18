@@ -23,7 +23,7 @@ export function useAISearch() {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const search = async (query: string) => {
+  const search = async (_query: string) => {
     setLoading(true);
     const response = await fetch(
       "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
@@ -36,7 +36,7 @@ export function useAISearch() {
     const data: unknown = await response.json();
       const filters: SearchFilters = (data as { filters?: SearchFilters }).filters || {};
 
-      const items: SearchResult[] = [];
+      const _items: SearchResult[] = [];
       const matchSkill = (skills: string[] | undefined) => {
         if (!filters.skills || filters.skills.length === 0) return true;
         return skills?.some((s) =>

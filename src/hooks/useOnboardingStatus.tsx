@@ -16,7 +16,7 @@ interface OnboardingStatus {
 }
 
 export function useOnboardingStatus() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [status, setStatus] = useState<OnboardingStatus>({
     profileCompleted: false,
     skillsAdded: false,
@@ -56,7 +56,7 @@ export function useOnboardingStatus() {
             responseReceived: data.quote_received || false
           });
         }
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error in onboarding status hook:', { data: err });
       }
     };

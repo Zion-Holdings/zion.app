@@ -10,7 +10,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [deploymentStatus, setDeploymentStatus] = useState<'idle' | 'deploying' | 'success' | 'error'>('idle');
   

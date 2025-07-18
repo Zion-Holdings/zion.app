@@ -24,10 +24,10 @@ export interface RequestQuoteWizardContextType {
 const defaultContext: RequestQuoteWizardContextType = {
   step: "Services",
   selectedService: null,
-  goToStep: () => {},
-  selectService: () => {},
-  startQuote: () => {},
-  submitQuote: async () => {},
+  _goToStep: () => {},
+  _selectService: () => {},
+  _startQuote: () => {},
+  _submitQuote: async () => {},
 };
 
 const RequestQuoteWizardContext = createContext<RequestQuoteWizardContextType>(defaultContext);
@@ -43,17 +43,17 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   const goToStep = (next: WizardStep) => setStep(next);
 
-  const selectService = (serviceId: string) => {
+  const selectService = (_serviceId: string) => {
     setSelectedService(serviceId);
     goToStep("Details");
   };
 
-  const startQuote = (serviceId: string) => {
+  const startQuote = (_serviceId: string) => {
     setSelectedService(serviceId);
     goToStep("Details");
   };
 
-  const submitQuote = async (message: string) => {
+  const submitQuote = async (_message: string) => {
     if (!selectedService) return;
     try {
       await axios.post('/api/quotes', {
@@ -63,7 +63,7 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
       toast.success("Quote request submitted");
       router.push("/dashboard/quotes");
       setStep("Success");
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Failed to submit quote', { data: err });
       toast({ title: 'Error submitting quote', variant: 'destructive' });
     }

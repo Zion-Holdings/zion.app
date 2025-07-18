@@ -11,7 +11,7 @@ import type { AppPlatform } from "./MetadataManager";
 import { toast } from "sonner";
 
 interface ScreenshotManagerProps {
-  platform: AppPlatform;
+  _platform: AppPlatform;
 }
 
 type Screenshot = {
@@ -25,13 +25,13 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       addScreenshots(Array.from(e.target.files));
     }
   };
   
-  const addScreenshots = (files: File[]) => {
+  const addScreenshots = (_files: File[]) => {
     // Filter for image files only
     const imageFiles = files.filter(file => file.type.startsWith('image/'));
     
@@ -64,7 +64,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
     }
   };
   
-  const removeScreenshot = (id: string) => {
+  const removeScreenshot = (_id: string) => {
     setScreenshots(prev => {
       const filtered = prev.filter(screenshot => screenshot.id !== id);
       
@@ -78,7 +78,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
     });
   };
   
-  const handleDragOver = (e: React.DragEvent) => {
+  const handleDragOver = (_e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(true);
   };
@@ -87,7 +87,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
     setIsDragging(false);
   };
   
-  const handleDrop = (e: React.DragEvent) => {
+  const handleDrop = (_e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
     

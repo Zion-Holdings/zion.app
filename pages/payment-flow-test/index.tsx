@@ -21,7 +21,7 @@ export default function PaymentFlowTest() {
     { id: '3', title: 'Test Product 3', price: 5.75 },
   ];
 
-  const addToCart = (p: { id: string; title: string; price: number }) => {
+  const addToCart = (_p: { id: string; title: string; price: number }) => {
     dispatch(addItem({ id: p.id, title: p.title, price: p.price }));
     alert(`Added ${p.title} to cart`);
   };
@@ -29,7 +29,7 @@ export default function PaymentFlowTest() {
   const runCheckoutSessionTest = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/checkout-session', {
+      const { _data } = await axios.post('/api/checkout-session', {
         cartItems: [{ title: 'Test Product', price: 1, quantity: 1 }],
         customer_email: 'test@example.com',
       });
@@ -38,7 +38,7 @@ export default function PaymentFlowTest() {
         checkout: data.sessionId ? 'success' : 'error',
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Checkout error:', { error: err });
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
@@ -50,7 +50,7 @@ export default function PaymentFlowTest() {
   const runPaymentIntentTest = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/create-payment-intent', {
+      const { _data } = await axios.post('/api/create-payment-intent', {
         amount: 50,
       });
       setResults((r) => ({
@@ -60,7 +60,7 @@ export default function PaymentFlowTest() {
       alert(
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction("Error:", { error: err });
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');

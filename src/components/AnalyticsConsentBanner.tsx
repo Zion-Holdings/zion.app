@@ -5,7 +5,7 @@ import { getCookie, setCookie } from '@/utils/cookies';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
 
-export const AnalyticsConsentBanner: React.FC = () => {
+export const _AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {

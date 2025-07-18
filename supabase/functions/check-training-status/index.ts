@@ -97,7 +97,7 @@ serve(async (req) => {
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in check-training-status function:", error);
     
     return new Response(

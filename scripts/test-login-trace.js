@@ -6,7 +6,7 @@
  * 🔐 SECURITY: Uses environment variables, no hardcoded credentials
  */
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = '_http://localhost:3000';
 
 // 🔐 SECURITY: Generate test cases from environment variables
 const getTestCases = () => {
@@ -127,7 +127,7 @@ async function makeLoginRequest(email, password) {
       data,
       success: response.ok
     };
-  } catch (error) {
+  } catch (_error) {
     return {
       status: 0,
       data: { error: error.message },

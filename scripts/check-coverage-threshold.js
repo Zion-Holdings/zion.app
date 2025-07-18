@@ -44,7 +44,7 @@ try {
     // process.stdout.write(`::set-output name=coverage_below_threshold::false\n`);
   }
 
-} catch (error) {
+} catch (_error) {
   process.stdout.write('Error checking coverage threshold:\n');
   process.stdout.write(error.message + '\n');
   process.exit(1);

@@ -61,7 +61,7 @@ async function fetchWithRetry(
       throw new Error(text || `Request failed with status ${res.status}`);
     }
     return res.json();
-  } catch (err) {
+  } catch (_err) {
     if (retries > 0) {
       await new Promise((r) => setTimeout(r, backoff));
       return fetchWithRetry(url, options, retries - 1, backoff * 2);
@@ -82,7 +82,7 @@ export default function FounderCoursePage() {
 
   const completeModule = () => setProgress((p) => p + 1);
 
-  const callSummary = async (text: string) => {
+  const callSummary = async (_text: string) => {
     setError(null);
     setLoadingSummary(true);
     try {
@@ -105,7 +105,7 @@ export default function FounderCoursePage() {
     }
   };
 
-  const callQuiz = async (topic: string) => {
+  const callQuiz = async (_topic: string) => {
     setError(null);
     setLoadingQuiz(true);
     try {

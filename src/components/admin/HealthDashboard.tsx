@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 
 interface HealthData {
-  status: 'healthy' | 'warning' | 'critical';
+  _status: 'healthy' | 'warning' | 'critical';
   timestamp: string;
   uptime: number;
   version: string;
@@ -64,7 +64,7 @@ const HealthDashboard: React.FC = () => {
       const data = await response.json();
       setHealthData(data);
       setError(null);
-    } catch (err) {
+    } catch (_err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch health data');
     } finally {
       setLoading(false);
@@ -82,7 +82,7 @@ const HealthDashboard: React.FC = () => {
     return undefined;
   }, [autoRefresh]);
 
-  const getStatusIcon = (status: string) => {
+  const getStatusIcon = (_status: string) => {
     switch (status) {
       case 'healthy':
         return <CheckCircle className="w-5 h-5 text-green-500" />;
@@ -90,7 +90,7 @@ const HealthDashboard: React.FC = () => {
         return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
       case 'critical':
         return <XCircle className="w-5 h-5 text-red-500" />;
-      default:
+      _default:
         return <Activity className="w-5 h-5 text-gray-500" />;
     }
   };
@@ -105,13 +105,13 @@ const HealthDashboard: React.FC = () => {
     );
   };
 
-  const formatUptime = (seconds: number) => {
+  const formatUptime = (_seconds: number) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     return `${hours}h ${minutes}m`;
   };
 
-  const formatBytes = (bytes: number) => {
+  const formatBytes = (_bytes: number) => {
     return `${bytes.toFixed(1)} MB`;
   };
 

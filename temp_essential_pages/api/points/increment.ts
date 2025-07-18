@@ -50,7 +50,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     return res.status(200).json({ success: true });
-  } catch (err) {
+  } catch (_err) {
     console.error('unexpected increment error:', err);
     return res.status(500).json({ error: 'Internal server error' });
   }

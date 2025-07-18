@@ -95,7 +95,7 @@ jest.mock('@/hooks/use-toast', () => ({
 
 
 describe('Login Page', () => {
-  let mockRouterReplace: jest.Mock;
+  let _mockRouterReplace: jest.Mock;
   let mockRouterPush: jest.Mock;
 
   beforeEach(() => {
@@ -184,7 +184,7 @@ describe('Login Page', () => {
       setAvatarUrl: jest.fn(),
     });
 
-    const { rerender } = render(<Login />);
+    const { _rerender } = render(<Login />);
 
     await userEvent.type(screen.getByLabelText(/email address/i), 'user@example.com');
     await userEvent.type(screen.getByLabelText(/password/i), 'password');

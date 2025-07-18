@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import type { PointsLedgerEntry } from '@/types/points';
 
 export function usePoints() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [ledger, setLedger] = useState<PointsLedgerEntry[]>([]);
   const [balance, setBalance] = useState(0);
   const [loading, setLoading] = useState(true);

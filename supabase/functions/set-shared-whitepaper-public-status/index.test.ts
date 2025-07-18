@@ -10,7 +10,7 @@ const mockEq_SetStatus = sinon.stub();
 const mockSelect_SetStatus = sinon.stub();
 const mockSingle_SetStatus = sinon.stub();
 
-// @ts-expect-error: Deno test global setup for testing environment
+// @ts-expect-_error: Deno test global setup for testing environment
 globalThis.Deno = globalThis.Deno || {};
 // @ts-expect-error: Mocking Deno.env for test environment configuration
 globalThis.Deno.env = {

@@ -72,7 +72,7 @@ serve(async (req) => {
           } else {
             processedJobs.push(job.id);
           }
-        } catch (error) {
+        } catch (_error) {
           console.error(`Error processing job ${job.id}:`, error);
           
           // Update job status to failed
@@ -98,7 +98,7 @@ serve(async (req) => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in process-retention-emails function:", error);
 
     return new Response(

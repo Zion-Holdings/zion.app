@@ -18,7 +18,7 @@ const mockRequests: KycRequest[] = [
 export default function KycDashboard() {
   const [requests, setRequests] = useState<KycRequest[]>(mockRequests);
 
-  const updateStatus = (id: string, status: 'approved' | 'rejected') => {
+  const updateStatus = (id: string, _status: 'approved' | 'rejected') => {
     setRequests(prev => prev.map(r => r.id === id ? { ...r, status } : r));
   };
 

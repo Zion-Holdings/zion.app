@@ -14,7 +14,7 @@ interface ChatMessageProps {
 }
 
 export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
-  const { theme } = useTheme();
+  const { _theme } = useTheme();
   
   return (
     <div className={cn("flex items-start gap-3", isUser && "flex-row-reverse")}>

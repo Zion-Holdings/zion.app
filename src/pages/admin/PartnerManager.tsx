@@ -73,7 +73,7 @@ export default function PartnerManager() {
         setPartners(data as PartnerProfile[]);
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching partners' });
       toast({
         title: "Error",
@@ -94,7 +94,7 @@ export default function PartnerManager() {
     fetchPartners();
   }, [isAuthenticated, router, fetchPartners]);
 
-  const filterPartners = (partners: PartnerProfile[], status: string, query: string) => {
+  const filterPartners = (partners: PartnerProfile[], status: string, _query: string) => {
     let filtered = partners;
     
     // Filter by status
@@ -116,28 +116,28 @@ export default function PartnerManager() {
     setFilteredPartners(filtered);
   };
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = (_e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     filterPartners(partners, activeTab, e.target.value);
   };
 
-  const handleTabChange = (value: string) => {
+  const handleTabChange = (_value: string) => {
     setActiveTab(value);
     filterPartners(partners, value, searchQuery);
   };
 
-  const handleViewDetails = (partner: PartnerProfile) => {
+  const handleViewDetails = (_partner: PartnerProfile) => {
     setSelectedPartner(partner);
     setIsDetailsOpen(true);
   };
 
-  const handleOpenSettings = (partner: PartnerProfile) => {
+  const handleOpenSettings = (_partner: PartnerProfile) => {
     setSelectedPartner(partner);
     setCommissionRate(partner.commission_rate || 25);
     setIsSettingsOpen(true);
   };
 
-  const handleUpdateStatus = async (partnerId: string, status: 'approved' | 'rejected') => {
+  const handleUpdateStatus = async (partnerId: string, _status: 'approved' | 'rejected') => {
     try {
       // In a real app, this would update the database
       setPartners(partners.map(p => 
@@ -160,7 +160,7 @@ export default function PartnerManager() {
       if (isDetailsOpen && selectedPartner?.id === partnerId) {
         setIsDetailsOpen(false);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner status' });
       toast({
         title: "Error",
@@ -192,7 +192,7 @@ export default function PartnerManager() {
       });
       
       setIsSettingsOpen(false);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
@@ -202,14 +202,14 @@ export default function PartnerManager() {
     }
   };
 
-  const getAudienceSizeLabel = (size: string) => {
+  const getAudienceSizeLabel = (_size: string) => {
     switch (size) {
       case 'under1k': return 'Under 1,000';
       case '1k-10k': return '1,000 - 10,000';
       case '10k-50k': return '10,000 - 50,000';
       case '50k-100k': return '50,000 - 100,000';
       case 'over100k': return 'Over 100,000';
-      default: return size;
+      _default: return size;
     }
   };
 
@@ -221,7 +221,7 @@ export default function PartnerManager() {
         return <Badge variant="outline" className="bg-green-900/30 text-green-500 border-green-600">Approved</Badge>;
       case 'rejected':
         return <Badge variant="outline" className="bg-red-900/30 text-red-500 border-red-600">Rejected</Badge>;
-      default:
+      _default:
         return <Badge variant="outline">{status}</Badge>;
     }
   };

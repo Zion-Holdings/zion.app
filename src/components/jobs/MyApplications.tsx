@@ -15,7 +15,7 @@ import type { ApplicationStatus } from "@/types/jobs";
 export function MyApplications() {
   const { applications, isLoading, error } = useJobApplications();
   
-  const getStatusBadge = (status: ApplicationStatus) => {
+  const getStatusBadge = (_status: ApplicationStatus) => {
     switch (status) {
       case "new":
         return <Badge variant="secondary">New</Badge>;

@@ -31,7 +31,7 @@ export async function processJobMatching(job: JobData, talents: TalentProfile[])
     // Use OpenAI to find best matches
     const bestMatches = await findBestMatches(jobDetails, talents);
     return bestMatches;
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in processJobMatching:", error);
     throw error;
   }

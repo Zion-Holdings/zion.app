@@ -10,7 +10,7 @@ import { toast } from "./ui/use-toast";
 import { useTranslation } from 'react-i18next';
 
 export function SocialShareSection() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   
   // Current URL is not available during SSR, guard with typeof check
   const shareUrl = typeof window !== 'undefined'

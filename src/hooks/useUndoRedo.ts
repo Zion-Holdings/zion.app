@@ -13,7 +13,7 @@ export function useUndoRedo<T>(initial: T) {
     future: [],
   });
 
-  const set = useCallback((value: T) => {
+  const set = useCallback((_value: T) => {
     setState((prev) => ({
       past: [...prev.past, prev.present],
       present: value,

@@ -217,7 +217,7 @@ function main() {
     console.warn('🎉 Auth0 environment setup complete!');
     console.warn('   Next steps: Update .env.local with your Auth0 credentials and run npm run validate-env\n');
     
-  } catch (error) {
+  } catch (_error) {
     console.error('❌ Setup failed:', error.message);
     process.exit(1);
   }

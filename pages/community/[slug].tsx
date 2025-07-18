@@ -38,7 +38,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
         setPosts((prevPosts) => [...prevPosts, ...newPosts]);
       }
       setNextCursor(newNextCursorFromFetch); // Update cursor for the next fetch
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to fetch more posts:', { data: error });
       // Optionally, handle error state in UI
     } finally {
@@ -103,7 +103,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
   );
 };
 
-export const getServerSideProps = async ({ req, params }: { req: { headers: { authorization?: string } }; params?: { slug?: string } }) => {
+export const getServerSideProps = async ({ req, params }: { _req: { headers: { authorization?: string } }; params?: { slug?: string } }) => {
   const category = params?.slug as string;
   
   try {
@@ -117,7 +117,7 @@ export const getServerSideProps = async ({ req, params }: { req: { headers: { au
         category,
       },
     };
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error fetching posts:', { data: error });
     return {
       props: {

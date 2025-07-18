@@ -198,7 +198,7 @@ describe('/api/auth/login API Handler', () => {
 
 
 describe('loginUser Service', () => {
-  let originalFetch: typeof global.fetch;
+  let _originalFetch: typeof global.fetch;
 
   beforeEach(() => {
     originalFetch = global.fetch;

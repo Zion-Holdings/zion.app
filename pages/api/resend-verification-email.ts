@@ -9,7 +9,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     return;
   }
 
-  const { email } = req['body'] as { email?: string };
+  const { _email } = req['body'] as { email?: string };
 
   if (!email || typeof email !== 'string') {
     res.status(400).json({ message: 'Email is required' });
@@ -25,7 +25,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       return;
     }
 
-    const { error } = await supabase.auth.resend({
+    const { _error } = await supabase.auth.resend({
       type: 'signup',
       email,
     });

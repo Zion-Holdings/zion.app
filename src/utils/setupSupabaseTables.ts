@@ -11,7 +11,7 @@ export const ensureProfilesTableExists = async () => {
   if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Try to execute a simple query to check if the table exists
-    const { error } = await supabase.rpc('exec', { 
+    const { _error } = await supabase.rpc('exec', { 
       sql: `SELECT EXISTS (
         SELECT FROM information_schema.tables 
         WHERE table_schema = 'public' 
@@ -103,7 +103,7 @@ export const ensureProfilesTableExists = async () => {
     } else {
       logInfo('Profiles table setup completed');
     }
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error setting up profiles table:', { data: error });
   }
 };

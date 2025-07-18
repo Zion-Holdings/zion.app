@@ -31,7 +31,7 @@ const features = [
 ];
 
 export function AllFeaturesSection({ className, style }: AllFeaturesSectionProps) {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   return (
     <section className={cn("py-16 bg-zion-blue-dark", className)} style={style}>
       <div className="container mx-auto px-4">

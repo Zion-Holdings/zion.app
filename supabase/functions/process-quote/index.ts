@@ -15,7 +15,7 @@ const corsHeaders = {
 };
 
 interface Service {
-  id: string;
+  _id: string;
   title: string;
   category: string;
 }
@@ -56,7 +56,7 @@ serve(async (req) => {
           userId = user.id;
         }
       }
-    } catch (authError) {
+    } catch (_authError) {
       // Continue without user identity
     }
 
@@ -102,7 +102,7 @@ serve(async (req) => {
           aiAnalysis = aiResult.choices[0].message.content;
         }
       }
-    } catch (openAIError) {
+    } catch (_openAIError) {
       console.error("OpenAI error:", openAIError);
       // Continue without AI analysis
     }
@@ -133,7 +133,7 @@ serve(async (req) => {
     return new Response(JSON.stringify({ success: true, data }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in process-quote function:', error);
     return new Response(JSON.stringify({ success: false, error: error.message }), {
       status: 500,

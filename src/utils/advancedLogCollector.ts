@@ -486,7 +486,7 @@ if (typeof window !== 'undefined') {
   import('./logError').then((logErrorModule) => {
     const originalLogError = logErrorModule.logError;
     if (originalLogError) {
-      (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (...args: unknown[]) => {
+      (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (..._args: unknown[]) => {
         // Type guards for args
         const message = typeof args[0] === 'string' ? args[0] : 'Unknown error';
         const error = args[1] instanceof Error ? args[1] : undefined;

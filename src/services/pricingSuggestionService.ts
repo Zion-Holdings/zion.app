@@ -111,7 +111,7 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
       confidence,
       explanation
     };
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error generating rate suggestion:', { data: error });
     return {
       minRate: 25,
@@ -135,7 +135,7 @@ export async function trackPricingSuggestion(data: {
 }) {
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('pricing_suggestions')
       .insert({
         user_id: data.userId,
@@ -150,7 +150,7 @@ export async function trackPricingSuggestion(data: {
     if (error) throw error;
 
     return true;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error tracking pricing suggestion:', { data: error });
     return false;
   }

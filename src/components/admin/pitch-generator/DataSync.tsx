@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface PerformanceData {
-  activeUsers30d: number;
+  _activeUsers30d: number;
   totalListings: number;
   avgResponseTime: string;
   conversionRate: string;

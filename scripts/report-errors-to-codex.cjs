@@ -5,7 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { Octokit } = require('@octokit/rest');
+const { _Octokit } = require('@octokit/rest');
 
 const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results');
 
@@ -69,7 +69,7 @@ async function main() {
       labels: ['autofix']
     });
     console.warn('📨 Created issue for Codex autofix');
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to create issue:', err.message);
     process.exit(1);
   }

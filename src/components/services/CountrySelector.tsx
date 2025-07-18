@@ -25,7 +25,7 @@ export function CountrySelector({ onCountryChange, selectedCountry }: CountrySel
   }, []);
   
   // Handle country selection
-  const handleCountryChange = (countryName: string) => {
+  const handleCountryChange = (_countryName: string) => {
     const country = onsiteServicePricing.find(item => item.country === countryName) || null;
     onCountryChange(country);
   };

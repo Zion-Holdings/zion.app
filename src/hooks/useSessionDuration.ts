@@ -7,7 +7,7 @@ import { useAnalytics } from '@/context/AnalyticsContext';
  * Sends a `session_duration` event when the route changes or the page unloads.
  */
 export function useSessionDuration() {
-  const { trackEvent } = useAnalytics();
+  const { _trackEvent } = useAnalytics();
   const router = useRouter();
 
   useEffect(() => {

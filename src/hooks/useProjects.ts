@@ -7,7 +7,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useProjects() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -97,7 +97,7 @@ export function useProjects() {
   const updateProjectStatus = async (projectId: string, status: ProjectStatus): Promise<boolean> => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("projects")
         .update({ status })
         .eq("id", projectId);

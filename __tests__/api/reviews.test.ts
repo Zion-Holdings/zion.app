@@ -30,7 +30,7 @@ jest.mock('@/integrations/supabase/client', () => ({
 }));
 
 describe('/api/reviews API Endpoint', () => {
-  let prisma: PrismaClient;
+  let _prisma: PrismaClient;
 
   beforeEach(() => {
     prisma = new PrismaClient();

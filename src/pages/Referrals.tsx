@@ -19,7 +19,7 @@ import { useRouter } from 'next/router'; // Changed from useNavigate
 
 export default function ReferralsPage() {
   const router = useRouter(); // Changed from navigate
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
   const {
     isLoading,
     referralCode: _referralCode,

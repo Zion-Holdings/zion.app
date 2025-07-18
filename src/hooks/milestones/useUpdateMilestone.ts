@@ -10,9 +10,9 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useUpdateMilestone = () => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { recordMilestoneActivity } = useRecordActivity();
+  const { _recordMilestoneActivity } = useRecordActivity();
   
   const updateMilestoneStatus = async (milestoneId: string, newStatus: MilestoneStatus, comment?: string) => {
     if (!user) return false;
@@ -35,7 +35,7 @@ export const useUpdateMilestone = () => {
       
       // Update the milestone status
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('project_milestones')
         .update({ status: newStatus })
         .eq('id', milestoneId);
@@ -96,14 +96,14 @@ export const useUpdateMilestone = () => {
     }
   };
   
-  const updateMilestone = async (milestoneId: string, data: Partial<Milestone>) => {
+  const updateMilestone = async (milestoneId: string, _data: Partial<Milestone>) => {
     if (!user) return false;
     
     try {
       setIsSubmitting(true);
       
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('project_milestones')
         .update(data)
         .eq('id', milestoneId);

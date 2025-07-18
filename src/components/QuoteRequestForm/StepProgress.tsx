@@ -14,7 +14,7 @@ export function StepProgress({ currentStep }: StepProgressProps) {
     { id: "details", label: "Details" },
     { id: "timeline", label: "Timeline" },
     { id: "budget", label: "Budget" },
-    { id: "summary", label: "Summary" }
+    { id: "summary", _label: "Summary" }
   ];
 
   const getStepStatus = (stepId: QuoteRequestSteps) => {

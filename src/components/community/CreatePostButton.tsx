@@ -18,9 +18,9 @@ interface CreatePostButtonProps {
  * login page with a "next" parameter so they can come back after logging in.
  */
 export function CreatePostButton({ categoryId, className, onRequireLogin }: CreatePostButtonProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const handleClick = () => {
     const target = categoryId

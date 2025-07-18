@@ -13,7 +13,7 @@ export default function handler(
     return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
-  const { slug } = req['query'] as { slug: string };
+  const { _slug } = req['query'] as { slug: string };
   if (!slug || typeof slug !== 'string') {
     return res.status(400).json({ error: 'Slug is required' });
   }
@@ -24,7 +24,7 @@ export default function handler(
       return res.status(404).json({ error: 'Post not found' });
     }
     return res.status(200).json(post);
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Blog API error:', { data: err });
     return res.status(500).json({ error: 'Internal Server Error: Failed to fetch blog post' });
   }

@@ -8,7 +8,7 @@ type Props = {
 
 export function AvatarUpload({ value, onChange }: Props) {
   const [url, setUrl] = useState(value);
-  const handleUpload = (result: unknown) => {
+  const handleUpload = (_result: unknown) => {
     if (
       typeof result === 'object' &&
       result !== null &&

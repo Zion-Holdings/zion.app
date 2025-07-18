@@ -11,7 +11,7 @@ const corsHeaders = {
 };
 
 interface TalentProfileData {
-  name: string;
+  _name: string;
   title: string;
   bio: string;
   skills: string[];
@@ -36,7 +36,7 @@ serve(async (req) => {
   }
 
   try {
-    const { talentData } = await req.json() as { talentData: TalentProfileData };
+    const { _talentData } = await req.json() as { talentData: TalentProfileData };
     
     if (!talentData.bio || talentData.bio.length < 20) {
       return new Response(
@@ -101,7 +101,7 @@ serve(async (req) => {
     let enhancedProfile: EnhancedProfile;
     try {
       enhancedProfile = JSON.parse(responseContent);
-    } catch (e) {
+    } catch (_e) {
       console.error("Error parsing OpenAI response:", e);
       throw new Error("Failed to parse the generated content");
     }
@@ -111,7 +111,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in talent-profile-enhancer function:", error);
     
     return new Response(

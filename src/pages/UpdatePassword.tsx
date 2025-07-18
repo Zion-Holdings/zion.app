@@ -72,7 +72,7 @@ export default function UpdatePassword() {
   }, []);
 
   // Form submission handler
-  const onSubmit = async (data: UpdatePasswordFormValues) => {
+  const onSubmit = async (_data: UpdatePasswordFormValues) => {
     if (!accessToken) {
       setError("No access token found. Please request a new password reset link.");
       return;
@@ -88,7 +88,7 @@ export default function UpdatePassword() {
       });
 
       // Update the password
-      const { error } = await supabase.auth.updateUser({
+      const { _error } = await supabase.auth.updateUser({
         password: data.password,
       });
 
@@ -128,7 +128,7 @@ export default function UpdatePassword() {
     }
   };
 
-  const onInvalid = (errors: unknown) => {
+  const onInvalid = (_errors: unknown) => {
     if (typeof errors === 'object' && errors !== null) {
       const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
       if (firstError) {

@@ -20,10 +20,10 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 }
 
 export default function Custom500() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
 
-  const handleError = (error: Error, info: React.ErrorInfo) => {
+  const handleError = (error: Error, _info: React.ErrorInfo) => {
     logErrorToProduction(error, {
       route: router.asPath,
       componentStack: info.componentStack ?? undefined,

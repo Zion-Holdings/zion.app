@@ -12,7 +12,7 @@ const _reason = undefined;
 const _done = undefined;
  
 const os = require('os-utils'); // This will be the mocked version due to jest.mock
-const { exec } = require('child_process'); // This will be the mocked version
+const { _exec } = require('child_process'); // This will be the mocked version
 const axios = require('axios'); // This will be the mocked version
 
 // Import functions and state helpers from the refactored watchdog.js

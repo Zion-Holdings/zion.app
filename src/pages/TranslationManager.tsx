@@ -25,7 +25,7 @@ export default function TranslationManager() {
 
   const { t, i18n } = useTranslation();
   const isMobile = useIsMobile();
-  const { supportedLanguages } = useLanguage();
+  const { _supportedLanguages } = useLanguage();
   const { translateContent, isTranslating } = useTranslationService();
   
   const [selectedNamespace, setSelectedNamespace] = useState("translation");
@@ -108,7 +108,7 @@ export default function TranslationManager() {
     setFilteredKeys([...new Set(filtered)]);
   }, [searchQuery, translations]);
   
-  const handleEdit = (key: string) => {
+  const handleEdit = (_key: string) => {
     setEditingKey(key);
     
     // Initialize edited translations for this key
@@ -124,7 +124,7 @@ export default function TranslationManager() {
     });
   };
   
-  const handleSave = (key: string) => {
+  const handleSave = (_key: string) => {
     setIsSaving(true);
     
     // In a real application, you would save these to your backend
@@ -153,7 +153,7 @@ export default function TranslationManager() {
     }, 1000);
   };
   
-  const handleTranslateKey = async (key: string) => {
+  const handleTranslateKey = async (_key: string) => {
     // Find first non-empty translation to use as source
     let sourceLanguage: SupportedLanguage = 'en';
     let sourceText = '';
@@ -224,7 +224,7 @@ export default function TranslationManager() {
     setEditingKey(null);
   };
   
-  const handleChange = (lang: SupportedLanguage, key: string, value: string) => {
+  const handleChange = (lang: SupportedLanguage, key: string, _value: string) => {
     setEditedTranslations({
       ...editedTranslations,
       [key]: {

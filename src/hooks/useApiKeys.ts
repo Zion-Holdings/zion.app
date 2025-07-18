@@ -31,7 +31,7 @@ export interface ApiLog {
 }
 
 export function useApiKeys() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [keys, setKeys] = useState<ApiKey[]>([]);
   const [logs, setLogs] = useState<ApiLog[]>([]);
   const [totalLogs, setTotalLogs] = useState(0);
@@ -81,7 +81,7 @@ export function useApiKeys() {
       }
 
       setKeys(result.keys || []);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error fetching API keys:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -141,7 +141,7 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error creating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -155,7 +155,7 @@ export function useApiKeys() {
   };
 
   // Regenerate API key
-  const regenerateApiKey = async (keyId: string) => {
+  const regenerateApiKey = async (_keyId: string) => {
     if (!user) return;
     
     setLoading(true);
@@ -199,7 +199,7 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error regenerating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -213,7 +213,7 @@ export function useApiKeys() {
   };
 
   // Revoke API key
-  const revokeApiKey = async (keyId: string) => {
+  const revokeApiKey = async (_keyId: string) => {
     if (!user) return;
     
     setLoading(true);
@@ -253,7 +253,7 @@ export function useApiKeys() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error revoking API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -302,7 +302,7 @@ export function useApiKeys() {
       setTotalLogs(result.count || 0);
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error fetching API logs:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({

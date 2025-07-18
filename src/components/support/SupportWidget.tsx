@@ -13,7 +13,7 @@ import { useTheme } from "@/hooks/useTheme";
 
 export function SupportWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme } = useTheme();
+  const { _theme } = useTheme();
   const router = useRouter();
   
   return (

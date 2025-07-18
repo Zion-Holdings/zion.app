@@ -12,7 +12,7 @@ import { useAuth } from '@/hooks/useAuth';
 
 // Types (should ideally be shared)
 interface ProposalSlim { // For nested proposal object
-  id: number | string;
+  _id: number | string;
   title: string;
 }
 interface UserVote {
@@ -26,7 +26,7 @@ interface UserVote {
 
 const MyVotesPage: React.FC = () => {
   const { isConnected, address: connectedWalletAddress } = useWallet();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [votes, setVotes] = useState<UserVote[]>([]);
   const [isLoading, setIsLoading] = useState(false); // Set to false initially if wallet not connected
   const [error, setError] = useState<string | null>(null);

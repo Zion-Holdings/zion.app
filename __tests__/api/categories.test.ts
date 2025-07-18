@@ -20,7 +20,7 @@ jest.mock('@prisma/client', () => {
 let consoleErrorSpy: jest.SpyInstance;
 
 describe('/api/categories API Endpoint', () => {
-  let mockPrismaCategory: any;
+  let _mockPrismaCategory: any;
 
   beforeEach(() => {
     jest.clearAllMocks();

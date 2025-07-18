@@ -32,7 +32,7 @@ interface AccountProps {
 function Account({ user: initialUser, orders }: AccountProps) {
   const [user, setUser] = useState(initialUser);
 
-  const handleSubmit = async (values: ProfileValues) => {
+  const handleSubmit = async (_values: ProfileValues) => {
     try {
       const res = await fetch(`/api/users/${user.id}`, {
         method: 'PATCH',
@@ -114,7 +114,7 @@ export default function ProtectedAccount(props: AccountProps) {
 export const getServerSideProps: GetServerSideProps<AccountProps> = async ({
   req,
 }: {
-  req: NextApiRequest;
+  _req: NextApiRequest;
 }) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 

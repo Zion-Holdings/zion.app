@@ -15,7 +15,7 @@ import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function SavedTalentsPage() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -71,7 +71,7 @@ export default function SavedTalentsPage() {
           const talentProfiles = savedTalentItems.map((item: unknown) => (item as { talent_profile: TalentProfile }).talent_profile);
           setSavedTalents(talentProfiles);
         }
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
@@ -86,11 +86,11 @@ export default function SavedTalentsPage() {
     fetchSavedTalents();
   }, [user]);
 
-  const handleViewProfile = (talentId: string) => {
+  const handleViewProfile = (_talentId: string) => {
     router.push(`/talent/${talentId}`);
   };
 
-  const handleRequestHire = (talent: TalentProfile) => {
+  const handleRequestHire = (_talent: TalentProfile) => {
     logInfo('Request to hire:', { data:  { data: talent } });
     toast({
       title: "Hire Request Sent",
@@ -98,7 +98,7 @@ export default function SavedTalentsPage() {
     });
   };
 
-  const _handleToggleSave = async (talentId: string, isCurrentlySaved: boolean) => {
+  const _handleToggleSave = async (talentId: string, _isCurrentlySaved: boolean) => {
     try {
       if (!user) {
         logWarn("User not authenticated.");
@@ -108,7 +108,7 @@ export default function SavedTalentsPage() {
       if (isCurrentlySaved) {
         if (!supabase) throw new Error('Supabase client is not initialized');
         // Remove from saved talents
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('saved_talents')
           .delete()
           .eq('user_id', user.id)
@@ -128,7 +128,7 @@ export default function SavedTalentsPage() {
       } else {
         if (!supabase) throw new Error('Supabase client is not initialized');
         // Add to saved talents
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('saved_talents')
           .insert([{ user_id: user.id, talent_id: talentId }]);
   
@@ -162,7 +162,7 @@ export default function SavedTalentsPage() {
           });
         }
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",

@@ -41,7 +41,7 @@ export default function Onboarding() {
     }
   };
 
-  const handleUserTypeSelect = (type: "serviceProvider" | "talent" | "client") => {
+  const handleUserTypeSelect = (_type: "serviceProvider" | "talent" | "client") => {
     setUserType(type);
     
     // Direct to specific registration page based on user type
@@ -57,7 +57,7 @@ export default function Onboarding() {
     setCurrentStep(1);
   };
 
-  const handleProfileComplete = async (data: { displayName: string, bio: string, headline: string }) => {
+  const handleProfileComplete = async (data: { displayName: string, bio: string, _headline: string }) => {
     if (!user || !userType) {
       toast({
         title: "Authentication Error",
@@ -96,7 +96,7 @@ export default function Onboarding() {
       // Proceed to next step
       setCurrentStep(2);
 
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error updating profile:', { data: error });
       toast({
         title: 'Error',
@@ -106,12 +106,12 @@ export default function Onboarding() {
     }
   };
 
-  const handleInterestsComplete = (list: string[]) => {
+  const handleInterestsComplete = (_list: string[]) => {
     setInterests(list);
     setCurrentStep(3);
   };
 
-  const handleCategoriesComplete = async (list: string[]) => {
+  const handleCategoriesComplete = async (_list: string[]) => {
     setCategories(list);
     if (user) {
       try {
@@ -120,7 +120,7 @@ export default function Onboarding() {
           interests,
           preferredCategories: list,
         });
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error saving onboarding data:', { data: err });
       }
     }

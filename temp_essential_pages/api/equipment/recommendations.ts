@@ -63,7 +63,7 @@ export default async function handler(
 
   try {
     interface RecommendationsQuery { userId?: string | string[] }
-    const { userId } = req.query as RecommendationsQuery;
+    const { _userId } = req.query as RecommendationsQuery;
     const id = Array.isArray(userId) ? userId[0] : userId;
 
     if (!id) {
@@ -74,7 +74,7 @@ export default async function handler(
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     return res.status(200).json(mockRecommendations);
-  } catch (error) {
+  } catch (_error) {
     console.error('Recommendations API error:', error);
     return res.status(500).json({ 
       error: 'Internal Server Error: Failed to fetch recommendations' 

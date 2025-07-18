@@ -29,7 +29,7 @@ interface ProfileProps {
 export default function Profile({ user: initialUser, orders = [] }: ProfileProps) {
   const [user, setUser] = useState(initialUser);
 
-  const handleSubmit = async (values: ProfileValues) => {
+  const handleSubmit = async (_values: ProfileValues) => {
     const res = await fetch(`/api/users/${user.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },

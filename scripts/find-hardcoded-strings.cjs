@@ -189,7 +189,7 @@ function generateReport(results) {
       });
       report += `\n**Action needed:**\n`;
       report += `1. Add \`import { useTranslation } from 'react-i18next';\`\n`;
-      report += `2. Add \`const { t } = useTranslation();\` in the component\n`;
+      report += `2. Add \`cons_t { t } = useTranslation();\` in the component\n`;
       report += `3. Replace hardcoded strings with \`t('key')\` calls\n\n`;
     });
   }
@@ -266,35 +266,35 @@ function findFiles(dir, extensions, excludedDirs = []) {
 }
 
 function main() {
-  // console.log('🔍 Scanning for hardcoded strings...');
+  // console.warn('🔍 Scanning for hardcoded strings...');
   
   const extensions = ['.tsx', '.ts', '.jsx', '.js'];
   const files = findFiles('.', extensions, EXCLUDED_DIRS);
   
-  // console.log(`📁 Found ${files.length} files to analyze`);
+  // console.warn(`📁 Found ${files.length} files to analyze`);
   
   const results = files.map(analyzeFile).filter(Boolean);
-  // console.log(`✅ Analyzed ${results.length} files`);
+  // console.warn(`✅ Analyzed ${results.length} files`);
   
   const report = generateReport(results);
   fs.writeFileSync(OUTPUT_FILE, report);
   
-  // console.log(`📝 Report saved to: ${OUTPUT_FILE}`);
+  // console.warn(`📝 Report saved to: ${OUTPUT_FILE}`);
   
   // Console summary
   const filesWithHardcoded = results.filter(r => r.hardcodedStrings.length > 0);
   const filesWithTranslation = results.filter(r => r.hasTranslation);
   
-  // console.log(`\n📊 Summary:`);
-  // console.log(`   Files with translation: ${filesWithTranslation.length}`);
-  // console.log(`   Files with hardcoded strings: ${filesWithHardcoded.length}`);
-  // console.log(`   Translation coverage: ${Math.round((filesWithTranslation.length / results.length) * 100)}%`);
+  // console.warn(`\n📊 Summary:`);
+  // console.warn(`   Files with translation: ${filesWithTranslation.length}`);
+  // console.warn(`   Files with hardcoded strings: ${filesWithHardcoded.length}`);
+  // console.warn(`   Translation coverage: ${Math.round((filesWithTranslation.length / results.length) * 100)}%`);
   
   if (filesWithHardcoded.length > 0) {
-    // console.log(`\n⚠️  Found hardcoded strings in ${filesWithHardcoded.length} files`);
-    // console.log(`   Check ${OUTPUT_FILE} for details`);
+    // console.warn(`\n⚠️  Found hardcoded strings in ${filesWithHardcoded.length} files`);
+    // console.warn(`   Check ${OUTPUT_FILE} for details`);
   } else {
-    // console.log(`\n🎉 No hardcoded strings found!`);
+    // console.warn(`\n🎉 No hardcoded strings found!`);
   }
 }
 

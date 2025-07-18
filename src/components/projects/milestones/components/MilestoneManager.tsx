@@ -46,7 +46,7 @@ export function MilestoneManager({
   refetch,
 }: MilestoneManagerProps) {
   const enqueueSnackbar = useEnqueueSnackbar();
-  const handleMilestoneApproved = async (milestoneId: string) => {
+  const handleMilestoneApproved = async (_milestoneId: string) => {
     try {
       await onUpdateStatus(milestoneId, 'completed' as MilestoneStatus);
       enqueueSnackbar('Milestone approved', { variant: 'success' });
@@ -57,7 +57,7 @@ export function MilestoneManager({
     }
   };
 
-  const handleMilestoneRejected = async (milestoneId: string) => {
+  const handleMilestoneRejected = async (_milestoneId: string) => {
     try {
       await onUpdateStatus(milestoneId, 'rejected' as MilestoneStatus);
       enqueueSnackbar('Milestone rejected', { variant: 'success' });
@@ -69,7 +69,7 @@ export function MilestoneManager({
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 _lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2">
         <MilestonesList
           milestones={milestones}
@@ -82,7 +82,7 @@ export function MilestoneManager({
           onUploadDeliverable={onUploadDeliverable}
           isSubmitting={isSubmitting}
           onApprove={isClient ? handleMilestoneApproved : async () => {}}
-          onReject={isClient ? handleMilestoneRejected : async () => {}}
+          onReject={isClient ? _handleMilestoneRejected : async () => {}}
         />
       </div>
       <div>

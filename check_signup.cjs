@@ -59,7 +59,7 @@ async function checkSignupPage() {
       results.elements.createAccountButton = true;
     }
 
-  } catch (error) {
+  } catch (_error) {
     console.error('Error during Puppeteer script execution:', error);
     results.genericErrors.push(error.message);
   } finally {

@@ -41,7 +41,7 @@ export async function fetchMarketplaceData(
     }
 
     return data;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error fetching marketplace data:', { data: error });
     
     // Log to Sentry with context

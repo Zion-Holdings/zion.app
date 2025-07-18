@@ -10,7 +10,7 @@ try {
   } catch {
     try {
       importScripts('https://unpkg.com/workbox-sw@6.1.5/build/workbox-sw.js');
-    } catch (e3) {
+    } catch (_e3) {
       console.error('Failed to load Workbox from all CDNs:', e3);
       // Fallback to basic service worker without Workbox
       self.skipWaiting();
@@ -71,7 +71,7 @@ let bgSyncPlugin = null;
 try {
   bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
     maxRetentionTime: 24 * 60,
-    callbacks: {
+    _callbacks: {
       queueDidReplay: async () => {
         const clients = await self.clients.matchAll();
         for (const client of clients) {
@@ -80,7 +80,7 @@ try {
       }
     }
   });
-} catch (e) {
+} catch (_e) {
   console.warn('BackgroundSync disabled: storage unavailable', e);
 }
 
@@ -130,7 +130,7 @@ self.addEventListener('message', event => {
           if (event.ports && event.ports[0]) {
             try {
               event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });
-            } catch (postError) {
+            } catch (_postError) {
               console.error('Failed to post sync success message:', postError);
             }
           }
@@ -142,7 +142,7 @@ self.addEventListener('message', event => {
             clients.forEach(client => {
               try {
                 client.postMessage({ type: 'SYNC_FAILED', error: err.message });
-              } catch (postError) {
+              } catch (_postError) {
                 console.error('Failed to post sync failure message:', postError);
               }
             });
@@ -157,7 +157,7 @@ self.addEventListener('message', event => {
               clients.forEach(client => {
                 try {
                   client.postMessage({ type: 'SYNC_TIMEOUT', error: 'Sync operation timed out' });
-                } catch (postError) {
+                } catch (_postError) {
                   console.error('Failed to post sync timeout message:', postError);
                 }
               });
@@ -169,18 +169,18 @@ self.addEventListener('message', event => {
       if (event.ports && event.ports[0]) {
         try {
           event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });
-        } catch (postError) {
+        } catch (_postError) {
           console.error('Failed to post error message:', postError);
         }
       }
     }
-  } catch (error) {
+  } catch (_error) {
     console.error('Error handling service worker message:', error);
     // Try to send error response if possible
     if (event.ports && event.ports[0]) {
       try {
         event.ports[0].postMessage({ type: 'MESSAGE_ERROR', error: error.message });
-      } catch (postError) {
+      } catch (_postError) {
         console.error('Failed to post error message:', postError);
       }
     }

@@ -8,7 +8,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 interface Props { children: React.ReactNode }
 
 export function ReferralMiddleware({ children }: Props) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -28,7 +28,7 @@ export function ReferralMiddleware({ children }: Props) {
           body: { refCode: code, userId: user.id, email: user.email },
         });
         safeStorage.removeItem('referralCode');
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error tracking referral', { data: err });
       }
     }

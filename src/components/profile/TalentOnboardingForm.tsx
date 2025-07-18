@@ -49,7 +49,7 @@ const talentSchema = z.object({
 type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   const form = useForm<TalentFormValues>({
     resolver: zodResolver(talentSchema),
@@ -80,7 +80,7 @@ export function TalentOnboardingForm() {
   });
   
   // Handle profile picture upload
-  const _handleProfilePictureUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const _handleProfilePictureUpload = async (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
@@ -96,7 +96,7 @@ export function TalentOnboardingForm() {
   };
 
   // Handle CV upload
-  const _handleCvUpload = async (file: File) => {
+  const _handleCvUpload = async (_file: File) => {
     if (!supabase) {
       throw new Error("Supabase client not initialized");
     }

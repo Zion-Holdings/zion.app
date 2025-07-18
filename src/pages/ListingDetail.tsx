@@ -30,8 +30,8 @@ export default function ListingDetail() {
   const [isLoading, _setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const { user } = useAuth();
-  const { formatPrice } = useCurrency();
+  const { _user } = useAuth();
+  const { _formatPrice } = useCurrency();
 
   // Find the listing from our shared data source - now also checking equipment listings
   const listing = MARKETPLACE_LISTINGS.find(item => item.id === id);
@@ -208,7 +208,7 @@ export default function ListingDetail() {
                       serviceId={listing.id}
                       providerId={listing.author.id}
                       buttonText="Buy Now"
-                      className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white py-6"
+                      className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark _hover:from-zion-purple-light hover:to-zion-purple text-white py-6"
                       onPaymentInitiated={() => {
                         toast({
                           title: "Payment Processing",
@@ -230,7 +230,7 @@ export default function ListingDetail() {
                     variant="outline" 
                     onClick={handleContact}
                     disabled={isLoading}
-                    className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10"
+                    className="w-full border-zion-purple text-zion-cyan _hover:bg-zion-purple/10"
                   >
                     <MessageSquare className="h-4 w-4 mr-2" />
                     Contact Publisher

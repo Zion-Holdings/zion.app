@@ -18,7 +18,7 @@ import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 
 export function FraudDetectionSettings() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [messageScanningEnabled, setMessageScanningEnabled] = useState(true);
   const [activityMonitoringEnabled, setActivityMonitoringEnabled] = useState(true);
   const [aiAnalysisEnabled, setAiAnalysisEnabled] = useState(true);
@@ -37,7 +37,7 @@ export function FraudDetectionSettings() {
         title: "Settings saved",
         description: "Your fraud detection preferences have been updated.",
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error saving preferences:', { data: error });
       toast({
         title: "Error",

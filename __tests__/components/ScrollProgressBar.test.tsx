@@ -13,7 +13,7 @@ describe('ScrollProgressBar', () => {
     });
     Object.defineProperty(window, 'scrollY', { value: 0, writable: true });
 
-    const { container } = render(<ScrollProgressBar />);
+    const { _container } = render(<ScrollProgressBar />);
     const bar = container.querySelector('div > div') as HTMLDivElement;
     expect(bar.style.width).toBe('0%');
 

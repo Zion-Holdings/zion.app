@@ -54,7 +54,7 @@ export function InteractiveFeatures({ className, style }: InteractiveFeaturesPro
     },
   ];
 
-  const handleToggle = (index: number) => {
+  const handleToggle = (_index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 

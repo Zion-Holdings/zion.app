@@ -47,7 +47,7 @@ export function AIEnhancementPanel({
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    field: keyof AIEnhancementOptions
+    _field: keyof AIEnhancementOptions
   ) => {
     setOptions({
       ...options,

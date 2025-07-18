@@ -108,7 +108,7 @@ class EnhancedErrorLogger {
           });
         }
         return response;
-             } catch (error) {
+             } catch (_error) {
          this.captureError({
            message: `Network Error: ${error}`,
            error: error instanceof Error ? error : new Error(String(error)),
@@ -211,7 +211,7 @@ class EnhancedErrorLogger {
         this.reportError(enhancedError);
       }
 
-    } catch (loggerError) {
+    } catch (_loggerError) {
       logErrorToProduction('Error in enhanced error logger:', loggerError);
     }
   }
@@ -347,7 +347,7 @@ class EnhancedErrorLogger {
           breadcrumbs: this.breadcrumbs.slice(-10)
         })
       });
-    } catch (reportError) {
+    } catch (_reportError) {
       console.error('Failed to report error:', reportError);
     }
   }

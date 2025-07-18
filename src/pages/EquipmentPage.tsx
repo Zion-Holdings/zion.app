@@ -110,7 +110,7 @@ const EquipmentFilterControls = ({
 
 // Equipment card
 const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing; onViewDetails: () => void }) => {
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
   return (
     <Card data-testid="equipment-item" className="h-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-3">
@@ -363,7 +363,7 @@ function EquipmentPageContent() {
               animate={{ opacity: 1, scale: 1 }} 
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ delay: Math.min(index * 0.03, 0.5) }} 
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ _scale: 1.02 }}
             >
               <EquipmentCard
                 equipment={item}

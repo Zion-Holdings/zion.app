@@ -27,7 +27,7 @@ export function TalentProfile({
   onRequestHire,
   onMessageTalent
 }: TalentProfileProps) {
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
   
   // Create proper availability object from talent profile
   const availability: Availability = {

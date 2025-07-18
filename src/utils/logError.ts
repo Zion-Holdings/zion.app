@@ -91,7 +91,7 @@ export function logError(
         logWarn('Failed to log error to LogRocket:', { data:  { data: lrError } });
       });
     }
-  } catch (err) {
+  } catch (_err) {
     // Use console logging to avoid circular dependencies
     console.error('Failed to report error to Sentry:', err);
   }
@@ -138,7 +138,7 @@ export function logError(
       console.error('Error sending logError to backend:', err);
     });
 
-  } catch (err) {
+  } catch (_err) {
     // Use console logging to avoid circular dependencies
     console.error('Failed to prepare or send error to custom backend:', err);
   }

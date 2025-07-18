@@ -52,7 +52,7 @@ export const navigationAriaPatterns = {
 // Focus management utilities
 export const focusManagement = {
   // Trap focus within an element
-  trapFocus: (container: HTMLElement) => {
+  _trapFocus: (container: HTMLElement) => {
     const focusableElements = container.querySelectorAll<HTMLElement>(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
@@ -62,7 +62,7 @@ export const focusManagement = {
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
     
-    const handleTabKey = (e: KeyboardEvent) => {
+    const handleTabKey = (_e: KeyboardEvent) => {
       if (e.key === 'Tab') {
         if (e.shiftKey) {
           if (document.activeElement === firstElement) {
@@ -91,7 +91,7 @@ export const focusManagement = {
   },
   
   // Manage focus return
-  returnFocus: (triggerElement: HTMLElement) => {
+  _returnFocus: (triggerElement: HTMLElement) => {
     triggerElement.focus();
   }
 };
@@ -99,7 +99,7 @@ export const focusManagement = {
 // Screen reader announcements
 export const announcements = {
   // Live region for dynamic content
-  announce: (message: string, priority: 'polite' | 'assertive' = 'polite') => {
+  announce: (message: string, _priority: 'polite' | 'assertive' = 'polite') => {
     const announcement = document.createElement('div');
     announcement.setAttribute('aria-live', priority);
     announcement.className = 'sr-only';

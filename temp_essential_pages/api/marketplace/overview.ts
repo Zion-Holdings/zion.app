@@ -51,7 +51,7 @@ export default async function handler(
         count: cat._count.category,
       })),
     });
-  } catch (error) {
+  } catch (_error) {
     Sentry.captureException(error);
     console.error('Error fetching marketplace overview:', error);
     return res.status(500).json({ error: 'Failed to fetch marketplace overview' });

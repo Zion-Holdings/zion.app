@@ -20,7 +20,7 @@ export function CommentsSection({ slug }: CommentsSectionProps) {
     }
   }, [slug]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
     const newComment = addComment(slug, { name: name.trim(), text: text.trim() });

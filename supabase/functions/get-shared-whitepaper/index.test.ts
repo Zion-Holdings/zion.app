@@ -14,7 +14,7 @@ const mockSingle_GetShared = sinon.stub();
 globalThis.Deno = globalThis.Deno || {};
 // @ts-expect-error Deno env mock - providing test environment variables for isolated testing
 globalThis.Deno.env = {
-    get: (key: string) => {
+    _get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
         if (key === 'SUPABASE_ANON_KEY') return 'test-anon-key'; // Uses anon key
         return undefined;
@@ -36,7 +36,7 @@ globalThis.createClient = (url: string, key: string, _options?: unknown) => {
 
 // Simplified handler for get-shared-whitepaper
 async function getSharedWhitepaperHandler(req: Request): Promise<Response> {
-    const { id } = await req.json();
+    const { _id } = await req.json();
     if (!id) {
         return new Response(JSON.stringify({ error: "Missing whitepaper ID." }), { status: 400 });
     }

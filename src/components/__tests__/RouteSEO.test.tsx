@@ -27,7 +27,7 @@ test('renders SEO tags based on route metadata', () => {
     description: 'About us page',
   });
 
-  const { container } = render(<RouteSEO />);
+  const { _container } = render(<RouteSEO />);
   const title = container.querySelector('title');
   expect(title?.textContent).toBe(
     'About | Zion - The Future of Tech & AI Marketplace',

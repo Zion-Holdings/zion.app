@@ -42,7 +42,7 @@ const slugify = (text: string): string => {
 };
 
 
-const WhitepaperGeneratorPage: React.FC = () => {
+const _WhitepaperGeneratorPage: React.FC = () => {
   const [tokenName, setTokenName] = useState('My Awesome Token');
   const [tokenSupply, setTokenSupply] = useState<string>('1000000000');
   const [useCases, setUseCases] = useState('To facilitate transactions and reward users in our innovative freelance AI marketplace. It will be used for payments, staking for dispute resolution, and accessing premium features.');
@@ -97,7 +97,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     return parsed;
   }, []);
 
-  const handleDistributionChange = (id: string, field: 'name' | 'percentage', value: string) => {
+  const handleDistributionChange = (id: string, field: 'name' | 'percentage', _value: string) => {
     setDistributionData(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
@@ -105,11 +105,11 @@ const WhitepaperGeneratorPage: React.FC = () => {
     setDistributionData(prev => [...prev, { id: crypto.randomUUID(), name: '', percentage: '' }]);
   };
 
-  const removeDistributionItem = (id: string) => {
+  const removeDistributionItem = (_id: string) => {
     setDistributionData(prev => prev.filter(item => item.id !== id));
   };
 
-  const distributionChartData: DistributionChartItem[] = React.useMemo(() => {
+  const _distributionChartData: DistributionChartItem[] = React.useMemo(() => {
     return distributionData
       .map(item => ({
         name: item.name || 'Unnamed',
@@ -179,7 +179,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     }
   };
 
-  const handleSectionContentChange = (id: string, newContent: string) => {
+  const handleSectionContentChange = (id: string, _newContent: string) => {
     setSections(prevSections =>
       prevSections.map(section =>
         section.id === id ? { ...section, content: newContent } : section
@@ -254,7 +254,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         scale: 2, // Increase scale for better resolution
         useCORS: true, // If there are any external images/fonts (though unlikely here)
         logging: true, // For debugging
-        onclone: (_documentClone) => {
+        _onclone: (_documentClone) => {
             // You might need to re-apply some styles here if they don't transfer well
             // For example, ensure SVGs from recharts are fully rendered.
             // This is advanced usage of html2canvas.
@@ -520,7 +520,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
           {shareableLink && !isSharing && currentSharedWhitepaperId && (
             <div className="mt-4 p-3 border rounded-md bg-green-50">
               <div className="flex justify-between items-center">
-                <label className="block text-sm font-medium text-green-700">Shareable Link:</label>
+                <label className="block text-sm font-medium text-green-700">Shareable _Link:</label>
                 <Button
                     onClick={handleTogglePublicStatus}
                     variant="outline"

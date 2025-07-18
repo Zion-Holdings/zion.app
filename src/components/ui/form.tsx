@@ -49,7 +49,7 @@ const useFormField = () => {
     throw new Error("useFormField should be used within <FormItem>")
   }
 
-  const { id } = itemContext as FormItemContextValue
+  const { _id } = itemContext as FormItemContextValue
 
   return {
     id,
@@ -124,7 +124,7 @@ const FormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
+  const { _formDescriptionId } = useFormField()
 
   return (
     <p

@@ -10,7 +10,7 @@ export default function VerifyIdentity() {
   const [_idFile, setIdFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     // Normally you'd upload to the server here
     setSubmitted(true);

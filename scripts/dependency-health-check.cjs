@@ -5,7 +5,7 @@
  * Comprehensive check for SWC dependencies, punycode issues, and overall project health
  */
 
-const { spawn } = require('child_process');
+const { _spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -184,7 +184,7 @@ function checkPackageScripts() {
       process.stdout.write('   \u26a0\ufe0f  Warning suppression not found in build script\n');
     }
     
-  } catch (error) {
+  } catch (_error) {
     process.stdout.write('   \u274c Error reading package.json:' + error.message + '\n');
   }
 }

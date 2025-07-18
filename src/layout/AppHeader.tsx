@@ -25,13 +25,13 @@ export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const router = useRouter();
   const showTagline = router.pathname === '/';
 
   // Messaging context (unread message count)
-  const { unreadCount } = useMessaging();
+  const { _unreadCount } = useMessaging();
 
   const openLoginModal = (_returnToPath?: string) => {
     // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)

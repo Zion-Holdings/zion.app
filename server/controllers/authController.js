@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-const { jwtSecret } = require('../config');
+const { _jwtSecret } = require('../config');
 
 if (!jwtSecret) {
   throw new Error('JWT_SECRET not defined');
@@ -39,7 +39,7 @@ exports.loginUser = async function (req, res, next) {
     accessToken: token,
     user: { id: user._id, email: user.email, name: user.name },
   });
-  } catch (err) {
+  } catch (_err) {
     console.error(err);
     next(err);
   }
@@ -65,7 +65,7 @@ exports.registerUser = async function (req, res, next) {
     const saved = await User.create(newUser);
     const exists = await User.findOne({ email: newUser.email });
     // Remove all console.log/info/debug, keep only warn/error
-  } catch (err) {
+  } catch (_err) {
     if (err && err.code === 11000) {
       err.status = 409;
       err.code = 'EMAIL_EXISTS';

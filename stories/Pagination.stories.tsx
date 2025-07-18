@@ -15,7 +15,7 @@ const meta: Meta<typeof Pagination> = {
 };
 export default meta;
 
-const Example = ({ total }: { total: number }) => {
+const Example = ({ total }: { _total: number }) => {
   const [current, setCurrent] = useState(1);
   return (
     <Pagination>

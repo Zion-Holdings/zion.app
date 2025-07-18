@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 console.warn('📦 Installing build dependencies for Netlify...');
 
@@ -19,7 +19,7 @@ try {
     stdio: 'inherit'
   });
   console.warn('✅ Build dependencies installed successfully');
-} catch (error) {
+} catch (_error) {
   console.error('❌ Failed to install build dependencies:', error.message);
   process.exit(1);
 } 

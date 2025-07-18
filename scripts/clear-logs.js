@@ -43,7 +43,7 @@ function clearLogs() {
           fs.writeFileSync(logFile, '');
           console.warn(`✅ Cleared ${path.basename(logFile)}`);
         }
-      } catch (err) {
+      } catch (_err) {
         console.warn(`⚠️  Could not clear ${logFile}: ${err.message}`);
       }
     });
@@ -51,7 +51,7 @@ function clearLogs() {
     console.warn('🎉 Log cleanup complete!');
     console.warn('You can now restart the watchdog service.');
     
-  } catch (error) {
+  } catch (_error) {
     console.error('❌ Error clearing logs:', error.message);
     process.exit(1);
   }

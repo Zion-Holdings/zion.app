@@ -12,7 +12,7 @@ const statusConfig: Record<QuoteStatus, { label: string, className: string }> = 
 };
 
 interface QuoteStatusBadgeProps {
-  status: QuoteStatus;
+  _status: QuoteStatus;
 }
 
 export const QuoteStatusBadge = ({ status }: QuoteStatusBadgeProps) => {

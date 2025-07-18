@@ -19,7 +19,7 @@ export function ProfileRatings({ userId, averageRating = 0, ratingCount = 0 }: P
   // Calculate rating distribution
   useEffect(() => {
     if (reviews.length > 0) {
-      const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+      const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, _5: 0 };
       
       reviews.forEach((review) => {
         if (review.rating >= 1 && review.rating <= 5) {

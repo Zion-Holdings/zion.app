@@ -11,7 +11,7 @@
  *   CURSOR_PROJECT_ID – project identifier
  *   GITHUB_TOKEN     – permission to push
  */
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const fetchModule = require('node-fetch');
@@ -69,7 +69,7 @@ async function run() {
       execSync('git config user.name "cursor-bot"');
       execSync('git config user.email "bot@example.com"');
       execSync(`git commit -am "${message || 'cursor auto fix'}"`);
-    } catch (err) {
+    } catch (_err) {
       console.error('Auto-fix failed for issue', issue.id, err);
     }
   }

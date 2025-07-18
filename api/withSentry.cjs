@@ -4,7 +4,7 @@ function withSentry(handler) {
   return async (req, res) => {
     try {
       await handler(req, res);
-    } catch (err) {
+    } catch (_err) {
       captureException(err && err.stack ? err.stack : err);
       if (!res.headersSent) {
         res.statusCode = 500;

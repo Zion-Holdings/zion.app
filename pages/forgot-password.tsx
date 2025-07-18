@@ -31,7 +31,7 @@ const ForgotPassword = () => {
   const [error, setError] = useState<string | null>(null); // Added error state
   const [loading, setLoading] = useState(false); // Added loading state
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setMessage('');

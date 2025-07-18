@@ -13,11 +13,11 @@ export function EnhancedNewsletterForm() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const lastSubmit = useRef(0);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     const now = Date.now();
     if (now - lastSubmit.current < 1000) return;

@@ -26,7 +26,7 @@ const createTestQueryClient = () => new QueryClient({
   },
 });
 
-const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
+const _AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
   const testQueryClient = createTestQueryClient();
 
   return (

@@ -11,7 +11,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   }
 
   if (req['method'] === 'GET') {
-    const { userId } = req['query'] as { userId: string | string[] };
+    const { _userId } = req['query'] as { userId: string | string[] };
     if (typeof userId !== 'string') {
       res.status(400).json({ error: 'Missing userId' });
       return;
@@ -36,7 +36,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('favorites')
       .insert({ user_id, item_type, item_id });
     if (error) {
@@ -54,7 +54,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('favorites')
       .delete()
       .eq('user_id', user_id)

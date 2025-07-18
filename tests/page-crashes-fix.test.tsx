@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 // Mock components to avoid import issues in tests
-const MockPageErrorBoundary = ({ children, pageName }: { children: React.ReactNode; pageName?: string }) => {
+const MockPageErrorBoundary = ({ children, pageName }: { _children: React.ReactNode; pageName?: string }) => {
   return <div data-testid="page-error-boundary" data-page={pageName}>{children}</div>;
 };
 
@@ -31,7 +31,7 @@ describe('Page Crashes Fix - Issue #3', () => {
     });
 
     it('should detect placeholder vs real Auth0 values', () => {
-      const isPlaceholder = (value: string) => {
+      const isPlaceholder = (_value: string) => {
         return value.includes('placeholder') || 
                value.includes('your_') ||
                value.includes('dev-') ||
@@ -281,7 +281,7 @@ export const validateAuth0Config = (config: Record<string, string>) => {
   return required.every(key => config[key] && config[key].length > 0);
 };
 
-export const isPlaceholderValue = (value: string) => {
+export const isPlaceholderValue = (_value: string) => {
   const placeholderPatterns = [
     'placeholder',
     'your_',

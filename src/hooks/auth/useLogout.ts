@@ -17,13 +17,13 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       // Inform backend to clear authToken cookie
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
-      } catch (cookieErr) {
+      } catch (_cookieErr) {
         logWarn('useLogout: Failed to clear auth cookie', { data:  { data: cookieErr } });
       }
 
       // Update state
       setUser(null);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error during logout:', { data: error });
     }
   };

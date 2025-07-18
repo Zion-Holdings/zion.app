@@ -12,7 +12,7 @@ export function useAutocomplete(products: ProductListing[]) {
   }), [products]);
 
   const getSuggestions = useMemo(() =>
-    debounce((query: string) => {
+    debounce((_query: string) => {
       if (!query) {
         setSuggestions([]);
         return;

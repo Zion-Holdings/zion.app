@@ -16,7 +16,7 @@ export const useApiErrorHandling = () => {
   const queryClient = useQueryClient();
 
   const handleApiError = useCallback(
-    (error: Error, options: ApiErrorHandlingOptions = {}) => {
+    (error: Error, _options: ApiErrorHandlingOptions = {}) => {
       const {
         showToast = true,
         logToSentry = true,
@@ -67,7 +67,7 @@ export const useApiErrorHandling = () => {
         title: 'Refreshed',
         description: 'Data has been refreshed successfully',
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to retry queries:', { data: error });
       toast({
         title: 'Retry Failed',
@@ -78,7 +78,7 @@ export const useApiErrorHandling = () => {
   }, [queryClient]);
 
   const retryQuery = useCallback(
-    async (queryKey: string[]) => {
+    async (_queryKey: string[]) => {
       try {
         await queryClient.invalidateQueries({ queryKey });
         await queryClient.refetchQueries({ queryKey });
@@ -86,7 +86,7 @@ export const useApiErrorHandling = () => {
           title: 'Refreshed',
           description: 'Data has been refreshed successfully',
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Failed to retry query:', { data: error });
         toast({
           title: 'Retry Failed',
@@ -98,7 +98,7 @@ export const useApiErrorHandling = () => {
     [queryClient]
   );
 
-  const isNetworkError = useCallback((error: Error) => {
+  const isNetworkError = useCallback((_error: Error) => {
     return error.message?.includes('fetch') ||
            error.message?.includes('network') ||
            error.message?.includes('timeout') ||

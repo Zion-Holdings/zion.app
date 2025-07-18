@@ -37,7 +37,7 @@ export function useMessagingRealtime(
           table: 'messages', 
           filter: `recipient_id=eq.${user.id}` 
         }, 
-        (payload: unknown) => {
+        (_payload: unknown) => {
           // Type guard for payload shape
           if (
             typeof payload === 'object' && payload !== null &&

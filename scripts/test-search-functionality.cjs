@@ -5,7 +5,7 @@
  * Tests the search API and basic functionality after bug fixes
  */
 
-const { spawn } = require('child_process');
+const { _spawn } = require('child_process');
 
 console.warn('🔍 Testing Search Functionality After Bug Fixes\n');
 
@@ -23,7 +23,7 @@ async function testSearchAPI() {
     } else {
       console.warn('   ❌ Search API error:', data.error || 'Unknown error');
     }
-  } catch (error) {
+  } catch (_error) {
     console.warn('   ❌ Search API failed:', error.message);
     console.warn('   💡 Make sure the development server is running: npm run dev');
   }
@@ -43,7 +43,7 @@ async function testSuggestionsAPI() {
     } else {
       console.warn('   ❌ Suggestions API error');
     }
-  } catch (error) {
+  } catch (_error) {
     console.warn('   ❌ Suggestions API failed:', error.message);
   }
 }

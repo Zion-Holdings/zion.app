@@ -35,11 +35,11 @@ export function ContractBuilder({
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false);
   const [showSmartContractBuilder, setShowSmartContractBuilder] = useState(false);
 
-  const handleLoadTemplate = (templateData: ContractFormValues) => {
+  const handleLoadTemplate = (_templateData: ContractFormValues) => {
     setFormValues(templateData);
   };
 
-  const handleContractGenerated = (contract: string) => {
+  const handleContractGenerated = (_contract: string) => {
     setGeneratedContract(contract);
     setActiveTab("preview");
     if (onContractGenerated) {

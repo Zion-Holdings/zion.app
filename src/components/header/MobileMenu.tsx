@@ -44,9 +44,9 @@ function isProtectedRoute(href: string): boolean {
 
 export function MobileMenu({ unreadCount = 0, onClose, openLoginModal }: MobileMenuProps) {
   const router = useRouter();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAuthenticated = !!user;
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
 
   const baseItems = [
     {

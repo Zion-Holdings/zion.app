@@ -17,7 +17,7 @@ interface TranslationResponse {
 
 export function useTranslationService() {
   const [isTranslating, setIsTranslating] = useState(false);
-  const { currentLanguage } = useLanguage();
+  const { _currentLanguage } = useLanguage();
   
   const translateContent = async (
     content: string,
@@ -135,7 +135,7 @@ export function useTranslationService() {
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
-    } catch (err) {
+    } catch (_err) {
       setIsTranslating(false);
       logErrorToProduction('Translation service error:', { data: err });
       
@@ -155,7 +155,7 @@ export function useTranslationService() {
     }
   };
   
-  const getTranslation = (translations: Record<SupportedLanguage, string>, fallback: string = '') => {
+  const getTranslation = (translations: Record<SupportedLanguage, string>, _fallback: string = '') => {
     if (!translations) return fallback;
     return translations[currentLanguage] || translations.en || fallback;
   };

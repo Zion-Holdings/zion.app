@@ -23,7 +23,7 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleParamChange = (name: string, value: string) => {
+  const handleParamChange = (name: string, _value: string) => {
     setParamValues((prev) => ({ ...prev, [name]: value }));
   };
 

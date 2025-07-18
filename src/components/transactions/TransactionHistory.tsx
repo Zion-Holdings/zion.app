@@ -45,8 +45,8 @@ interface Transaction {
 }
 
 export function TransactionHistory() {
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const getInitialFilter = (): 'all' | 'pending' | 'completed' | 'escrow' => {
     const value = safeStorage.getItem('transaction_filter');
     if (value === 'all' || value === 'pending' || value === 'completed' || value === 'escrow') {
@@ -62,7 +62,7 @@ export function TransactionHistory() {
   
   const { data: transactions, isLoading, error, refetch } = useQuery({
     queryKey: ['transactions', user?.id, filter],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!user) return [];
       if (!supabase) return [];
       
@@ -94,7 +94,7 @@ export function TransactionHistory() {
     enabled: !!user,
   });
 
-  const handleManageTransaction = async (transactionId: string, action: 'release' | 'refund' | 'cancel') => {
+  const handleManageTransaction = async (transactionId: string, _action: 'release' | 'refund' | 'cancel') => {
     try {
       if (!supabase) {
         toast({
@@ -116,7 +116,7 @@ export function TransactionHistory() {
       });
       
       refetch();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error managing transaction:', { data: error });
       toast({
         title: "Error",
@@ -126,7 +126,7 @@ export function TransactionHistory() {
     }
   };
   
-  const getStatusBadge = (status: string, inEscrow: boolean) => {
+  const getStatusBadge = (status: string, _inEscrow: boolean) => {
     switch(status) {
       case 'in_escrow':
         return (
@@ -183,9 +183,9 @@ export function TransactionHistory() {
     }
   }; 
 
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
 
-  const formatCurrency = (amount: number) => {
+  const formatCurrency = (_amount: number) => {
     return formatPrice(amount);
   };
 

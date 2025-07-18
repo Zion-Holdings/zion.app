@@ -33,14 +33,14 @@ export function LeaveReviewModal({
     setOpen(isOpen);
   }, [isOpen]);
   
-  const handleOpenChange = (open: boolean) => {
+  const handleOpenChange = (_open: boolean) => {
     setOpen(open);
     if (!open) {
       onClose();
     }
   };
   
-  const handleSubmit = async (formValues: ReviewFormValues) => {
+  const handleSubmit = async (_formValues: ReviewFormValues) => {
     if (userReview) {
       // Update existing review
       const updates = formValues;

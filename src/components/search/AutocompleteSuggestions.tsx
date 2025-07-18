@@ -74,7 +74,7 @@ export function AutocompleteSuggestions({
             <li
               key={`${suggestion.type}-${index}`}
               id={`suggestion-item-${index}`}
-              ref={isHighlighted ? highlightedItemRef : null}
+              ref={isHighlighted ? _highlightedItemRef : null}
               role="option"
               aria-selected={isHighlighted}
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`}

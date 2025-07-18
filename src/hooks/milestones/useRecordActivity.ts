@@ -5,7 +5,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useRecordActivity = () => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   const recordMilestoneActivity = async (
     milestoneId: string, 

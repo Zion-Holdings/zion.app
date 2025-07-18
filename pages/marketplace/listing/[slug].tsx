@@ -24,7 +24,7 @@ import {
 } from '@/components/ui/breadcrumb';
 
 interface ListingPageProps {
-  listing: ProductListing | null;
+  _listing: ProductListing | null;
 }
 
 interface ApiProduct {
@@ -127,7 +127,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
+export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
 
@@ -171,7 +171,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
           };
         }
       }
-    } catch (apiError) {
+    } catch (_apiError) {
       logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data:  { data: apiError } });
       if (typeof window === 'undefined') {
         const Sentry = await import('@sentry/nextjs');
@@ -249,7 +249,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
     
     return { props: { listing } };
 
-  } catch (error) {
+  } catch (_error) {
     if (typeof window === 'undefined') {
       const Sentry = await import('@sentry/nextjs');
       Sentry.captureException(error);

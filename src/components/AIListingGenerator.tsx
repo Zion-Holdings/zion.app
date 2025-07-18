@@ -35,7 +35,7 @@ interface AIListingGeneratorProps {
 }
 
 export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIListingGeneratorProps) {
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const [title, setTitle] = useState(initialValues.title || "");
   const [category, setCategory] = useState(initialValues.category || "");
   const [keyFeatures, setKeyFeatures] = useState(initialValues.keyFeatures || "");
@@ -43,7 +43,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
   const [isLoading, setIsLoading] = useState(false);
   const [generatedContent, setGeneratedContent] = useState(null as GeneratedContent | null);
 
-  const handleInputChange = (e: { target: { value: string } }, field: string) => {
+  const handleInputChange = (e: { target: { value: string } }, _field: string) => {
     switch(field) {
       case 'title':
         setTitle(e.target.value);
@@ -94,7 +94,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         title: "Content Generated",
         description: "AI has created optimized listing content for you."
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error generating content:', { data: error });
       toast({
         title: "Generation Failed",

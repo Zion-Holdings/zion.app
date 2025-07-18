@@ -79,7 +79,7 @@ describe('Accessibility Fixes for Issue #17', () => {
     const mockService = {
       id: '1',
       title: 'Test Service',
-      category: 'Test Category'
+      _category: 'Test Category'
     };
     
     render(
@@ -98,7 +98,7 @@ describe('Accessibility Fixes for Issue #17', () => {
   });
   
   test('Navigation components have no accessibility violations', async () => {
-    const { container } = render(<UserProfileDropdown />);
+    const { _container } = render(<UserProfileDropdown />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -107,10 +107,10 @@ describe('Accessibility Fixes for Issue #17', () => {
     const mockService = {
       id: '1',
       title: 'Test Service',
-      category: 'Test Category'
+      _category: 'Test Category'
     };
     
-    const { container } = render(
+    const { _container } = render(
       <ServiceQuoteModal 
         open={true} 
         onOpenChange={() => {}} 

@@ -70,7 +70,7 @@ function checkEnvironment() {
   try {
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     packageType = packageJson.type || 'commonjs';
-  } catch (error) {
+  } catch (_error) {
     // Will be caught later
   }
 

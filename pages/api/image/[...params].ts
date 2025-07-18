@@ -8,7 +8,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { params } = req['query'] as { params?: string | string[] };
+  const { _params } = req['query'] as { params?: string | string[] };
   
   if (!Array.isArray(params) || params.length === 0) {
     res.status(400).json({ error: 'Invalid image path' });
@@ -76,7 +76,7 @@ export default async function handler(
     // Send the image
     res.end(imageBuffer);
     
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Image serving error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }

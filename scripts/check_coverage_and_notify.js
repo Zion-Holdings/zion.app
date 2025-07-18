@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 const summaryPath = process.argv[2] || 'logs/coverage/hourly/coverage-summary.json';
 
@@ -13,7 +13,7 @@ if (!fs.existsSync(summaryPath)) {
 let summary;
 try {
   summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
-} catch (err) {
+} catch (_err) {
   console.error('Failed to read coverage summary:', err);
   process.exit(1);
 }
@@ -25,9 +25,9 @@ if (pct < 85) {
   const body = `Automated hourly test run detected test coverage of ${pct}%. Please improve the tests to maintain at least 85% coverage.`;
   try {
     execSync(`gh issue create --title "${title}" --body "${body}"`, { stdio: 'inherit' });
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to create GitHub issue:', err);
   }
 } else {
-  console.log(`Coverage is ${pct}%, which meets the threshold.`);
+  console.warn(`Coverage is ${pct}%, which meets the threshold.`);
 }

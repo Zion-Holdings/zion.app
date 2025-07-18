@@ -33,7 +33,7 @@ export function observeCLS(callback: (cls: number) => void): void {
   }
 
   let clsValue = 0;
-  const clsEntries: PerformanceEntry[] = [];
+  const _clsEntries: PerformanceEntry[] = [];
 
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
@@ -118,7 +118,7 @@ export function observeFID(callback: (fid: number) => void): void {
 export function initPerformanceMonitoring(): void {
   if (typeof window === 'undefined') return;
 
-  const metrics: Partial<PerformanceMetrics> = {};
+  const _metrics: Partial<PerformanceMetrics> = {};
 
   observeCLS((cls) => {
     metrics.cls = cls;
@@ -255,7 +255,7 @@ export function observeFontLoading(): void {
 export function preloadCriticalResources(): void {
   if (typeof window === 'undefined') return;
 
-  const criticalResources: string[] = [
+  const _criticalResources: string[] = [
     // Critical assets only - fonts are handled by Next.js font optimization
     // Add other critical resources like critical CSS or images here if needed
   ];
@@ -466,7 +466,7 @@ export const memoryOptimization = {
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
-    let timeout: NodeJS.Timeout;
+    let _timeout: NodeJS.Timeout;
     return (...args: Parameters<T>) => {
       clearTimeout(timeout);
       timeout = setTimeout(() => func(...args), wait);
@@ -478,7 +478,7 @@ export const memoryOptimization = {
     func: T,
     limit: number
   ): (...args: Parameters<T>) => void {
-    let inThrottle: boolean;
+    let _inThrottle: boolean;
     return (...args: Parameters<T>) => {
       if (!inThrottle) {
         func(...args);

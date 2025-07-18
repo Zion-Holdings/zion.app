@@ -582,7 +582,7 @@ Once these are set, the application is **100% production-ready** for enterprise 
       
       this.printResults();
       
-    } catch (error) {
+    } catch (_error) {
       console.error('❌ Production readiness implementation failed:', error);
       process.exit(1);
     }
@@ -590,28 +590,28 @@ Once these are set, the application is **100% production-ready** for enterprise 
 
   printResults() {
     
-    // console.log('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
-    // console.log('='.repeat(60));
+    // console.warn('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
+    // console.warn('='.repeat(60));
     
-    // console.log('\n✅ IMPLEMENTED FEATURES:');
+    // console.warn('\n✅ IMPLEMENTED FEATURES:');
     this.results.implemented.forEach(item => {
-      // console.log(`  ✅ ${item}`);
+      // console.warn(`  ✅ ${item}`);
     });
     
-    // console.log('\n🚀 NEXT STEPS:');
-    // console.log('  1. Configure environment variables (see .env.production.example)');
-    // console.log('  2. Run: npm run validate:env:production');
-    // console.log('  3. Run: npm run build:production');
-    // console.log('  4. Deploy to production');
-    // console.log('  5. Run: npm run monitor:production');
+    // console.warn('\n🚀 NEXT STEPS:');
+    // console.warn('  1. Configure environment variables (see .env.production.example)');
+    // console.warn('  2. Run: npm run validate:env:production');
+    // console.warn('  3. Run: npm run build:production');
+    // console.warn('  4. Deploy to production');
+    // console.warn('  5. Run: npm run monitor:production');
     
-    // console.log('\n📋 DOCUMENTATION CREATED:');
-    // console.log('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
-    // console.log('  📄 .env.production.example');
-    // console.log('  🔧 scripts/validate-production-env.cjs');
-    // console.log('  📊 scripts/production-monitor.cjs');
+    // console.warn('\n📋 DOCUMENTATION CREATED:');
+    // console.warn('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
+    // console.warn('  📄 .env.production.example');
+    // console.warn('  🔧 scripts/validate-production-env.cjs');
+    // console.warn('  📊 scripts/production-monitor.cjs');
     
-    // console.log('\n�� STATUS: ENTERPRISE PRODUCTION READY! 🚀');
+    // console.warn('\n�� STATUS: ENTERPRISE PRODUCTION READY! 🚀');
   }
 }
 

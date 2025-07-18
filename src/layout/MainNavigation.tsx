@@ -26,16 +26,16 @@ interface MainNavigationProps {
 
 export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Add state
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAuthenticated = !!user;
   const [loginOpen, setLoginOpen] = useState(false);
-  const { count } = useFavorites();
-  const { items } = useCart();
+  const { _count } = useFavorites();
+  const { _items } = useCart();
   const cartCount = items.length;
   const router = useRouter(); // Changed from useLocation
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
 
-  const handleCartClick = (e: React.MouseEvent) => {
+  const handleCartClick = (_e: React.MouseEvent) => {
     if (!isAuthenticated) {
       e.preventDefault();
       setLoginOpen(true);

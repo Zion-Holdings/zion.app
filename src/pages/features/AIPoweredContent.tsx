@@ -18,7 +18,7 @@ export default function AIPoweredContent() {
     "url": "https://app.ziontechgroup.com/features/ai-content-generation"
   };
 
-  const { markAiExplored } = useAdvancedOnboardingStatus();
+  const { _markAiExplored } = useAdvancedOnboardingStatus();
 
   useEffect(() => {
     markAiExplored();

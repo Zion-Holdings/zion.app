@@ -11,7 +11,7 @@ export function useContractTemplates() {
 
   const { user, isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
   // Fetch templates for the current user
@@ -21,7 +21,7 @@ export function useContractTemplates() {
     error: templatesError 
   } = useQuery({
     queryKey: ['contractTemplates', user?.id],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) throw new Error('Supabase client not initialized');
       if (!isAuthenticated || !user) {
         return [];
@@ -49,7 +49,7 @@ export function useContractTemplates() {
       templateData, 
       isDefault = false 
     }: {
-      title: string;
+      _title: string;
       templateData: ContractFormValues;
       isDefault?: boolean;
     }) => {
@@ -86,14 +86,14 @@ export function useContractTemplates() {
         setIsLoading(false);
       }
     },
-    onSuccess: () => {
+    _onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contractTemplates', user?.id] });
       toast({
         title: "Template saved",
         description: "Contract template has been successfully saved.",
       });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       logErrorToProduction('Error saving template:', { data: error });
       toast({
         title: "Failed to save template",
@@ -111,7 +111,7 @@ export function useContractTemplates() {
       templateData,
       isDefault = false
     }: {
-      templateId: string;
+      _templateId: string;
       title: string;
       templateData: ContractFormValues;
       isDefault?: boolean;
@@ -152,14 +152,14 @@ export function useContractTemplates() {
         setIsLoading(false);
       }
     },
-    onSuccess: () => {
+    _onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contractTemplates', user?.id] });
       toast({
         title: "Template updated",
         description: "Contract template has been successfully updated.",
       });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       logErrorToProduction('Error updating template:', { data: error });
       toast({
         title: "Failed to update template",
@@ -171,13 +171,13 @@ export function useContractTemplates() {
 
   // Delete a template
   const deleteTemplate = useMutation({
-    mutationFn: async (templateId: string) => {
+    _mutationFn: async (templateId: string) => {
       if (!user) throw new Error("User not authenticated");
       if (!supabase) throw new Error('Supabase client not initialized');
       setIsLoading(true);
       
       try {
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('contract_templates')
           .delete()
           .eq('id', templateId)
@@ -188,14 +188,14 @@ export function useContractTemplates() {
         setIsLoading(false);
       }
     },
-    onSuccess: () => {
+    _onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contractTemplates', user?.id] });
       toast({
         title: "Template deleted",
         description: "Contract template has been successfully deleted.",
       });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       logErrorToProduction('Error deleting template:', { data: error });
       toast({
         title: "Failed to delete template",
@@ -207,7 +207,7 @@ export function useContractTemplates() {
 
   // Set a template as default
   const setDefaultTemplate = useMutation({
-    mutationFn: async (templateId: string) => {
+    _mutationFn: async (templateId: string) => {
       if (!user) throw new Error("User not authenticated");
       if (!supabase) throw new Error('Supabase client not initialized');
       setIsLoading(true);
@@ -220,7 +220,7 @@ export function useContractTemplates() {
           .eq('user_id', user.id)
           .eq('is_default', true);
         // Then set the new default
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('contract_templates')
           .update({ is_default: true })
           .eq('id', templateId)
@@ -231,14 +231,14 @@ export function useContractTemplates() {
         setIsLoading(false);
       }
     },
-    onSuccess: () => {
+    _onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contractTemplates', user?.id] });
       toast({
         title: "Default template set",
         description: "Default contract template has been updated.",
       });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       logErrorToProduction('Error setting default template:', { data: error });
       toast({
         title: "Failed to set default template",

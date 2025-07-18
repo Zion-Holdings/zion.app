@@ -116,7 +116,7 @@ function main() {
       fs.unlinkSync(item.file);
       console.warn(`✅ Deleted: ${item.file}`);
       deleteCount++;
-    } catch (error) {
+    } catch (_error) {
       console.warn(`❌ Failed to delete: ${item.file} - ${error.message}`);
       errorCount++;
     }

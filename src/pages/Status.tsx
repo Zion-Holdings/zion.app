@@ -50,7 +50,7 @@ export default function Status() {
   const [externalStatusLoaded, setExternalStatusLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
   const [uptime, setUptime] = useState<number | null>(null);
-  const statusUrl = process.env.NEXT_PUBLIC_STATUS_PAGE_URL || "https://status.ziontechgroup.com";
+  const statusUrl = process.env.NEXT_PUBLIC_STATUS_PAGE_URL || "_https://status.ziontechgroup.com";
 
   useEffect(() => {
     // Try to load external status page, fallback after timeout
@@ -72,14 +72,14 @@ export default function Status() {
         if (typeof data.uptime === 'number') {
           setUptime(data.uptime);
         }
-      } catch (err) {
+      } catch (_err) {
         logWarn('Failed to fetch uptime', { data:  { data: err } });
       }
     }
     fetchUptime();
   }, []);
 
-  const getStatusIcon = (status: ServiceStatus['status']) => {
+  const getStatusIcon = (_status: ServiceStatus['status']) => {
     switch (status) {
       case 'operational':
         return <CheckCircle className="h-5 w-5 text-green-500" />;
@@ -89,7 +89,7 @@ export default function Status() {
         return <AlertCircle className="h-5 w-5 text-red-500" />;
       case 'maintenance':
         return <Clock className="h-5 w-5 text-blue-500" />;
-      default:
+      _default:
         return <AlertCircle className="h-5 w-5 text-gray-500" />;
     }
   };
@@ -104,7 +104,7 @@ export default function Status() {
         return 'Service Outage';
       case 'maintenance':
         return 'Scheduled Maintenance';
-      default:
+      _default:
         return 'Unknown';
     }
   };
@@ -119,7 +119,7 @@ export default function Status() {
         return 'text-red-500';
       case 'maintenance':
         return 'text-blue-500';
-      default:
+      _default:
         return 'text-gray-500';
     }
   };

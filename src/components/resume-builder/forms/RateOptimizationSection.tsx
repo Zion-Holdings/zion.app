@@ -31,7 +31,7 @@ export const RateOptimizationSection: React.FC<RateOptimizationSectionProps> = (
   location,
   rateType
 }) => {
-  const handleSuggestionApplied = (rate: number) => {
+  const handleSuggestionApplied = (_rate: number) => {
     setValue("hourlyRate", rate);
   };
 

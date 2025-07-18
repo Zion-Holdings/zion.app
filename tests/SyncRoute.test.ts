@@ -4,7 +4,7 @@ import express from 'express';
 import syncRoutes from '../server/routes/sync';
 import crypto from 'crypto';
 
-let server: any;
+let _server: any;
 let baseUrl = '';
 
 beforeAll(() => {
@@ -12,7 +12,7 @@ beforeAll(() => {
   app.use(express.json());
   app.use('/sync', syncRoutes);
   server = app.listen(0);
-  const { port } = server.address() as any;
+  const { _port } = server.address() as any;
   baseUrl = `http://127.0.0.1:${port}`;
 });
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { sendSlackAlert } = require('../../src/integrations/slack/bot'); // Adjust path as needed
+const { _sendSlackAlert } = require('../../src/integrations/slack/bot'); // Adjust path as needed
 
 router.post('/notify-slack', async (req, res) => {
   const { ip_address, route, reason, timestamp } = req.body;
@@ -18,10 +18,10 @@ router.post('/notify-slack', async (req, res) => {
   try {
     await sendSlackAlert(message);
     res.status(200).json({ message: 'Slack alert sent successfully' });
-  } catch (error) {
+  } catch (_error) {
     console.error('Failed to send Slack alert:', error);
     // Use existing logAndAlert if appropriate, or just console.error for now
-    // const { logAndAlert } = require('../utils/alertLogger');
+    // const { _logAndAlert } = require('../utils/alertLogger');
     // logAndAlert(`Failed to send Slack alert for IP ${ip_address}: ${error.message}`);
     res.status(500).json({ error: 'Failed to send Slack alert' });
   }

@@ -31,7 +31,7 @@ export function useJobSuggestions(talentId?: string) {
         if (error) throw error;
         
         setJobMatches(data || []);
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error fetching job matches:', { data: error });
         toast({
           title: "Error",
@@ -46,7 +46,7 @@ export function useJobSuggestions(talentId?: string) {
     fetchSuggestedJobs();
   }, [talentId]);
 
-  const updateJobMatchStatus = async (matchId: string, status: 'viewed' | 'applied' | 'declined') => {
+  const updateJobMatchStatus = async (matchId: string, _status: 'viewed' | 'applied' | 'declined') => {
     try {
       const updates = {
         status,
@@ -54,7 +54,7 @@ export function useJobSuggestions(talentId?: string) {
       };
       
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("job_talent_matches")
         .update(updates)
         .eq("id", matchId);
@@ -82,7 +82,7 @@ export function useJobSuggestions(talentId?: string) {
           description: "This job will be removed from your suggestions"
         });
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error updating job match status:', { data: error });
       toast({
         title: "Error",

@@ -8,14 +8,14 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useReviews(projectId?: string) {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [userReview, setUserReview] = useState<Review | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Fetch reviews for a project
-  const fetchProjectReviews = async (projectId: string) => {
+  const fetchProjectReviews = async (_projectId: string) => {
     if (!projectId) return;
     
     setIsLoading(true);
@@ -64,7 +64,7 @@ export function useReviews(projectId?: string) {
   };
   
   // Fetch reviews for a user (to display on profile)
-  const fetchUserReviews = async (userId: string) => {
+  const fetchUserReviews = async (_userId: string) => {
     if (!userId) return;
     
     setIsLoading(true);
@@ -99,7 +99,7 @@ export function useReviews(projectId?: string) {
   };
   
   // Submit a review
-  const submitReview = async (review: {
+  const submitReview = async (_review: {
     project_id: string;
     reviewee_id: string;
     rating: number;
@@ -166,14 +166,14 @@ export function useReviews(projectId?: string) {
   };
   
   // Update a review
-  const updateReview = async (reviewId: string, updates: Partial<Review>) => {
+  const updateReview = async (reviewId: string, _updates: Partial<Review>) => {
     if (!user) return false;
     
     setIsSubmitting(true);
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("reviews")
         .update(updates)
         .eq("id", reviewId)
@@ -207,12 +207,12 @@ export function useReviews(projectId?: string) {
   };
   
   // Report a review
-  const reportReview = async (reviewId: string, reason: string) => {
+  const reportReview = async (reviewId: string, _reason: string) => {
     if (!user) return false;
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("review_reports")
         .insert({
           review_id: reviewId,

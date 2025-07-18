@@ -6,9 +6,9 @@ import { AppLayout } from '@/layout/AppLayout'; // Assuming this component exist
 import type { NextPageWithLayout } from '@/types/next';
 import React, { useEffect } from 'react';
 
-const SearchPage: NextPageWithLayout = () => {
+const _SearchPage: NextPageWithLayout = () => {
   const router = useRouter();
-  const { q } = router.query;
+  const { _q } = router.query;
   const {
     searchQuery,
     setSearchQuery,

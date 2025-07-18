@@ -77,7 +77,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
 
       if (error) throw error;
       setTalents(data || []);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching suggested talents:', { data: error });
       toast({
         title: "Error",
@@ -89,7 +89,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
     }
   }, [jobId]);
 
-  const handleViewProfile = (talentId: string) => {
+  const handleViewProfile = (_talentId: string) => {
     // Implement logic to view talent profile
     logInfo('View talent profile:', { data:  { data: talentId } });
     toast({
@@ -98,7 +98,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
     });
   };
 
-  const handleInvite = (talentId: string) => {
+  const handleInvite = (_talentId: string) => {
     // Implement logic to invite talent
     logInfo('Invite talent:', { data:  { data: talentId } });
     toast({

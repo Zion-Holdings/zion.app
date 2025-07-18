@@ -15,7 +15,7 @@ const RegisterPage = () => {
   }, []);
 
   const handleSuccess = ({ email, emailVerificationRequired }: {
-    email: string;
+    _email: string;
     emailVerificationRequired: boolean;
   }) => {
     if (emailVerificationRequired) {

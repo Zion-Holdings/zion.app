@@ -5,7 +5,7 @@ import { logErrorToProduction } from '@/utils/productionLogger';
 export type ApiHandler = (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void;
 
 export function withErrorLogging(handler: ApiHandler): ApiHandler {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+  return async (req: NextApiRequest, _res: NextApiResponse) => {
     try {
       await handler(req, res);
     } catch (_error) {

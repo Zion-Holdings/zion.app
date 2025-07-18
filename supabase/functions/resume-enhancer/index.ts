@@ -87,7 +87,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in resume-enhancer function:", error);
     return new Response(
       JSON.stringify({

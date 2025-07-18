@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface SendNewsletterRequest {
-  subject: string;
+  _subject: string;
   previewText: string;
   body: string;
   testMode?: boolean;
@@ -57,7 +57,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in send-newsletter function:", error);
     
     return new Response(JSON.stringify({ error: error.message }), {

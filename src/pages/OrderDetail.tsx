@@ -13,8 +13,8 @@ import { OrderTimeline } from '@/components/orders/OrderTimeline';
 
 export default function OrderDetailPage() {
   const router = useRouter();
-  const { orderId } = router.query as { orderId?: string };
-  const { user } = useAuth();
+  const { _orderId } = router.query as { orderId?: string };
+  const { _user } = useAuth();
   const { data: order, isLoading } = useGetOrderQuery(orderId);
 
   if (!supabase) throw new Error('Supabase client not initialized');

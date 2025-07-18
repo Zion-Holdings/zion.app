@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface Milestone {
-  title: string;
+  _title: string;
   description: string;
   dueDate: string;
   estimatedHours: number;
@@ -79,7 +79,7 @@ serve(async (req) => {
       The project will be divided into the following milestones:
       `;
       
-      milestones.forEach((milestone: Milestone, index: number) => {
+      milestones.forEach((milestone: Milestone, _index: number) => {
         prompt += `
         Milestone ${index + 1}: ${milestone.title}
         - Description: ${milestone.description}
@@ -136,7 +136,7 @@ serve(async (req) => {
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error generating contract:', error);
     return new Response(
       JSON.stringify({ 

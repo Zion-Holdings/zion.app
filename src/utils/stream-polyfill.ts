@@ -244,7 +244,7 @@ const streamModule = {
       (stream as { on: (event: string, cb: (err?: Error) => unknown) => void }).on('close', callback);
     }
   },
-  pipeline: (...streams: unknown[]) => {
+  _pipeline: (...streams: unknown[]) => {
     // Simple pipeline implementation
     let current = streams[0];
     for (let i = 1; i < streams.length; i++) {

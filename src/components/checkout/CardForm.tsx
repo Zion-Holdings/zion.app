@@ -29,12 +29,12 @@ interface Props {
 export default function CardForm({ amount, onSuccess }: Props) {
   const stripe = useStripe();
   const elements = useElements();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isStripeElementReady, setIsStripeElementReady] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     if (!stripe || !elements) return;
     setError(null);

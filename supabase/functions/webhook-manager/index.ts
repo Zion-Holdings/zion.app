@@ -68,7 +68,7 @@ serve(async (req) => {
         const { webhookId, eventType } = await req.json() as WebhookTestRequest;
         return await testWebhook(user.id, webhookId, eventType);
       } else if (path === 'delete') {
-        const { webhookId } = await req.json();
+        const { _webhookId } = await req.json();
         return await deleteWebhook(user.id, webhookId);
       }
     } else if (req.method === 'GET') {
@@ -81,7 +81,7 @@ serve(async (req) => {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error processing request:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -118,7 +118,7 @@ async function createWebhook(userId: string, name: string, url: string, eventTyp
       status: 201,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in createWebhook:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -147,7 +147,7 @@ async function getUserWebhooks(userId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in getUserWebhooks:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -180,7 +180,7 @@ async function toggleWebhook(userId: string, webhookId: string, isActive: boolea
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in toggleWebhook:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -220,7 +220,7 @@ async function deleteWebhook(userId: string, webhookId: string) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in deleteWebhook:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
@@ -284,7 +284,7 @@ async function testWebhook(userId: string, webhookId: string, eventType: string)
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
-    } catch (fetchError) {
+    } catch (_fetchError) {
       console.error('Error sending test webhook:', fetchError);
       return new Response(JSON.stringify({ 
         error: 'Failed to send test webhook', 
@@ -294,7 +294,7 @@ async function testWebhook(userId: string, webhookId: string, eventType: string)
         headers: { 'Content-Type': 'application/json' },
       });
     }
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in testWebhook:', error);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

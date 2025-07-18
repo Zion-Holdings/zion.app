@@ -14,8 +14,8 @@ process.stdout.on('error', err => {
 
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const { _exec } = require('child_process');
+const { _promisify } = require('util');
 
 const execAsync = promisify(exec);
 
@@ -42,7 +42,7 @@ class LogHealthSummary {
   }
 
   async generateSummary() {
-    // console.log('🔍 Generating comprehensive health summary...\n');
+    // console.warn('🔍 Generating comprehensive health summary...\n');
 
     await this.checkBuildHealth();
     await this.checkTestHealth();
@@ -58,7 +58,7 @@ class LogHealthSummary {
   }
 
   async checkBuildHealth() {
-    // console.log('📦 Checking build health...');
+    // console.warn('📦 Checking build health...');
     
     try {
       // Check if .next exists and is recent
@@ -71,26 +71,26 @@ class LogHealthSummary {
         
         // Get build size
         try {
-          const { stdout } = await execAsync('du -sh .next 2>/dev/null || echo "0B"');
+          const { _stdout } = await execAsync('du -sh .next 2>/dev/null || echo "0B"');
           this.results.build.size = stdout.trim();
-        } catch (error) {
+        } catch (_error) {
           this.results.build.size = 'Unknown';
         }
         
-        // console.log(`  ✅ Build exists (${this.results.build.status}, ${this.results.build.size})`);
+        // console.warn(`  ✅ Build exists (${this.results.build.status}, ${this.results.build.size})`);
       } else {
         this.results.build.status = 'missing';
-        // console.log('  ⚠️  No build found (run "npm run build" to generate)');
+        // console.warn('  ⚠️  No build found (run "npm run build" to generate)');
       }
-    } catch (error) {
+    } catch (_error) {
       this.results.build.status = 'error';
       this.results.build.errors.push(error.message);
-      // console.log('  ❌ Build check failed');
+      // console.warn('  ❌ Build check failed');
     }
   }
 
   async checkTestHealth() {
-    // console.log('🧪 Checking test health...');
+    // console.warn('🧪 Checking test health...');
     
     try {
       // Check Playwright results
@@ -100,13 +100,13 @@ class LogHealthSummary {
         const ageHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
 
         if (ageHours > 24) {
-          // console.log(`  ℹ️  Playwright results are stale (${ageHours.toFixed(1)}h old), ignoring`);
+          // console.warn(`  ℹ️  Playwright results are stale (${ageHours.toFixed(1)}h old), ignoring`);
         } else {
           const content = fs.readFileSync(playwrightResults, 'utf-8');
 
           // Ignore connection errors that indicate server wasn't running
           if (/ERR_CONNECTION_REFUSED/.test(content)) {
-            // console.log('  ℹ️  Playwright failures due to connection issues, treating as skipped');
+            // console.warn('  ℹ️  Playwright failures due to connection issues, treating as skipped');
           } else {
             const results = JSON.parse(content);
             this.results.tests.playwright = {
@@ -114,7 +114,7 @@ class LogHealthSummary {
               failures: results.stats?.unexpected || 0,
               total: results.stats?.expected + results.stats?.unexpected || 0
             };
-            // console.log(`  📋 Playwright: ${this.results.tests.playwright.failures} failures`);
+            // console.warn(`  📋 Playwright: ${this.results.tests.playwright.failures} failures`);
           }
         }
       }
@@ -122,24 +122,24 @@ class LogHealthSummary {
       // Check Jest coverage
       if (fs.existsSync('coverage')) {
         this.results.tests.coverage = 'available';
-        // console.log('  ✅ Test coverage available');
+        // console.warn('  ✅ Test coverage available');
       }
 
       this.results.tests.status = 
         (this.results.tests.playwright?.failures || 0) === 0 ? 'passing' : 'failures';
         
-    } catch (error) {
+    } catch (_error) {
       this.results.tests.status = 'error';
-      // console.log('  ⚠️  Test check incomplete');
+      // console.warn('  ⚠️  Test check incomplete');
     }
   }
 
   async checkLogHealth() {
-    // console.log('📋 Checking log health...');
+    // console.warn('📋 Checking log health...');
     
     try {
       // Run the error monitor to get health info
-      const { stdout } = await execAsync('npm run logs:health 2>&1 || echo "Error running health check"');
+      const { _stdout } = await execAsync('npm run logs:health 2>&1 || echo "Error running health check"');
       
       // Parse health score from output
       const healthMatch = stdout.match(/Score: (\d+)\/100 \(([A-F])\)/);
@@ -160,20 +160,20 @@ class LogHealthSummary {
       }
       
       this.results.logs.fileCount = totalLogFiles;
-      // console.log(`  ✅ Log health: ${this.results.logs.health || 'Unknown'}/100, ${totalLogFiles} files`);
+      // console.warn(`  ✅ Log health: ${this.results.logs.health || 'Unknown'}/100, ${totalLogFiles} files`);
       
-    } catch (error) {
-      // console.log('  ⚠️  Log health check incomplete');
+    } catch (_error) {
+      // console.warn('  ⚠️  Log health check incomplete');
     }
   }
 
   async checkDependencyHealth() {
-    // console.log('📦 Checking dependency health...');
+    // console.warn('📦 Checking dependency health...');
 
     try {
       const online = await this.hasNetwork();
       if (!online) {
-        // console.log('  ⚠️  No network connection - skipping npm audit/outdated checks');
+        // console.warn('  ⚠️  No network connection - skipping npm audit/outdated checks');
         this.results.dependencies.vulnerabilities = 0;
         this.results.dependencies.outdated = 0;
         return;
@@ -184,7 +184,7 @@ class LogHealthSummary {
       try {
         const auditData = JSON.parse(auditOutput);
         this.results.dependencies.vulnerabilities = auditData.metadata?.vulnerabilities?.total || 0;
-      } catch (parseError) {
+      } catch (_parseError) {
         // If audit fails, assume clean
         this.results.dependencies.vulnerabilities = 0;
       }
@@ -194,24 +194,24 @@ class LogHealthSummary {
         const { stdout: outdatedOutput } = await execAsync('npm outdated --json 2>/dev/null || echo "{}"');
         const outdatedData = JSON.parse(outdatedOutput || '{}');
         this.results.dependencies.outdated = Object.keys(outdatedData).length;
-      } catch (outdatedError) {
+      } catch (_outdatedError) {
         this.results.dependencies.outdated = 0;
       }
 
-      // console.log(`  ✅ Dependencies: ${this.results.dependencies.vulnerabilities} vulnerabilities, ${this.results.dependencies.outdated} outdated`);
+      // console.warn(`  ✅ Dependencies: ${this.results.dependencies.vulnerabilities} vulnerabilities, ${this.results.dependencies.outdated} outdated`);
       
-    } catch (error) {
-      // console.log('  ⚠️  Dependency check incomplete');
+    } catch (_error) {
+      // console.warn('  ⚠️  Dependency check incomplete');
     }
   }
 
   async checkPerformanceHealth() {
-    // console.log('⚡ Checking performance health...');
+    // console.warn('⚡ Checking performance health...');
     
     try {
       // Check build performance
       if (fs.existsSync('.next')) {
-        const { stdout } = await execAsync('find .next -name "*.js" | wc -l');
+        const { _stdout } = await execAsync('find .next -name "*.js" | wc -l');
         this.results.performance.jsFiles = parseInt(stdout.trim());
         
         // Check for bundle analysis
@@ -226,14 +226,14 @@ class LogHealthSummary {
         await execAsync('curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || echo "000"');
         const responseTime = Date.now() - startTime;
         this.results.performance.serverResponseTime = responseTime;
-      } catch (error) {
+      } catch (_error) {
         this.results.performance.serverResponseTime = null;
       }
 
-      // console.log(`  ✅ Performance: ${this.results.performance.jsFiles || 0} JS files, response time: ${this.results.performance.serverResponseTime || 'N/A'}ms`);
+      // console.warn(`  ✅ Performance: ${this.results.performance.jsFiles || 0} JS files, response time: ${this.results.performance.serverResponseTime || 'N/A'}ms`);
       
-    } catch (error) {
-      // console.log('  ⚠️  Performance check incomplete');
+    } catch (_error) {
+      // console.warn('  ⚠️  Performance check incomplete');
     }
   }
 
@@ -306,35 +306,35 @@ class LogHealthSummary {
   }
 
   displaySummary() {
-    // console.log('\n🏥 PROJECT HEALTH SUMMARY');
-    // console.log('=' .repeat(50));
+    // console.warn('\n🏥 PROJECT HEALTH SUMMARY');
+    // console.warn('=' .repeat(50));
     
-    // console.log(`\n📊 OVERALL HEALTH: ${this.results.overall.score}/100 (${this.results.overall.grade})`);
-    // console.log(`Status: ${this.results.overall.status}`);
+    // console.warn(`\n📊 OVERALL HEALTH: ${this.results.overall.score}/100 (${this.results.overall.grade})`);
+    // console.warn(`Status: ${this.results.overall.status}`);
     
     if (this.results.overall.issues.length > 0) {
-      // console.log('\n⚠️  ISSUES DETECTED:');
+      // console.warn('\n⚠️  ISSUES DETECTED:');
       this.results.overall.issues.forEach((issue, index) => {
-        // console.log(`${index + 1}. ${issue}`);
+        // console.warn(`${index + 1}. ${issue}`);
       });
     }
 
-    // console.log('\n📋 COMPONENT STATUS:');
-    // console.log(`Build: ${this.results.build.status} (${this.results.build.size || 'Unknown'})`);
-    // console.log(`Tests: ${this.results.tests.status} (${this.results.tests.playwright?.failures || 0} failures)`);
-    // console.log(`Logs: ${this.results.logs.health || 'Unknown'}/100 (${this.results.logs.fileCount || 0} files)`);
-    // console.log(`Dependencies: ${this.results.dependencies.vulnerabilities} vulnerabilities, ${this.results.dependencies.outdated} outdated`);
-    // console.log(`Performance: ${this.results.performance.jsFiles || 0} JS files`);
+    // console.warn('\n📋 COMPONENT STATUS:');
+    // console.warn(`Build: ${this.results.build.status} (${this.results.build.size || 'Unknown'})`);
+    // console.warn(`Tests: ${this.results.tests.status} (${this.results.tests.playwright?.failures || 0} failures)`);
+    // console.warn(`Logs: ${this.results.logs.health || 'Unknown'}/100 (${this.results.logs.fileCount || 0} files)`);
+    // console.warn(`Dependencies: ${this.results.dependencies.vulnerabilities} vulnerabilities, ${this.results.dependencies.outdated} outdated`);
+    // console.warn(`Performance: ${this.results.performance.jsFiles || 0} JS files`);
 
-    // console.log('\n🎯 RECOMMENDATIONS:');
+    // console.warn('\n🎯 RECOMMENDATIONS:');
     // if (this.results.overall.score >= 85) {
-    //   console.log('✅ Project is in excellent health! Keep up the good work.');
+    //   console.warn('✅ Project is in excellent health! Keep up the good work.');
     // } else if (this.results.overall.score >= 70) {
-    //   console.log('👍 Project is in good health. Address minor issues when convenient.');
+    //   console.warn('👍 Project is in good health. Address minor issues when convenient.');
     // } else if (this.results.overall.score >= 50) {
-    //   console.log('⚠️  Project needs attention. Address issues to improve stability.');
+    //   console.warn('⚠️  Project needs attention. Address issues to improve stability.');
     // } else {
-    //   console.log('🚨 Project requires immediate attention. Multiple critical issues detected.');
+    //   console.warn('🚨 Project requires immediate attention. Multiple critical issues detected.');
     // }
   }
 
@@ -347,22 +347,22 @@ class LogHealthSummary {
     }
     
     fs.writeFileSync(summaryPath, JSON.stringify(this.results, null, 2));
-    // console.log(`\n📄 Full summary saved to: ${summaryPath}`);
+    // console.warn(`\n📄 Full summary saved to: ${summaryPath}`);
   }
 }
 
 async function main() {
-  // console.log('🚀 Project Health Summary Generator\n');
+  // console.warn('🚀 Project Health Summary Generator\n');
   
   const healthChecker = new LogHealthSummary();
   const results = await healthChecker.generateSummary();
   
   // Exit with appropriate code
   if (results.overall.score >= 70) {
-    // console.log('\n✅ Project health is acceptable');
+    // console.warn('\n✅ Project health is acceptable');
     process.exit(0);
   } else {
-    // console.log('\n⚠️  Project health needs improvement');
+    // console.warn('\n⚠️  Project health needs improvement');
     process.exit(1);
   }
 }

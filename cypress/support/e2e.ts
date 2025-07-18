@@ -6,7 +6,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   Cypress.log({
     name: 'Uncaught Exception',
     message: err.message,
-    consoleProps: () => {
+    _consoleProps: () => {
       return {
         Error: err,
         Runnable: runnable,

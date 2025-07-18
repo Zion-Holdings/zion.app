@@ -87,7 +87,7 @@ import {
 
 // Utility to wrap routes with ErrorGuard
 function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
-  return routes.map((route: AppRouteObject) => {
+  return routes.map((_route: AppRouteObject) => {
     const wrappedRoute = { ...route };
     if (route.element) {
       wrappedRoute.element = <ErrorGuard>{route.element}</ErrorGuard>;

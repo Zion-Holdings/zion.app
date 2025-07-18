@@ -53,7 +53,7 @@ const mockUseLocalStorage = UseLocalStorageHook.useLocalStorage as unknown as vi
 const mockUseDebounce = UseDebounceHook.useDebounce as unknown as vi.Mock;
 
 // Helper to provide context
-const renderWithAuth = (ui: React.ReactElement, { providerProps, ...renderOptions }: { providerProps: any, [key: string]: any }) => {
+const renderWithAuth = (ui: React.ReactElement, { providerProps, ...renderOptions }: { providerProps: any, [_key: string]: any }) => {
   return render(
     <AuthContext.Provider value={providerProps}>{ui}</AuthContext.Provider>,
     renderOptions
@@ -241,7 +241,7 @@ describe('ChatAssistant', () => {
   });
 
   describe('Guest Chat History Persistence', () => {
-    const guestAuthProviderProps = { isAuthenticated: false, user: null, isLoading: false };
+    const guestAuthProviderProps = { isAuthenticated: false, user: null, _isLoading: false };
     let mockSetStoredValue: vi.Mock;
 
     beforeEach(() => {

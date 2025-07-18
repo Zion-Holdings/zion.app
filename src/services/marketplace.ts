@@ -101,7 +101,7 @@ const createMarketplaceClient = () => {
 
   // Request interceptor for debugging
   client.interceptors.request.use(
-    async (config: InternalAxiosRequestConfig) => {
+    async (_config: InternalAxiosRequestConfig) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logWarn(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
@@ -114,7 +114,7 @@ const createMarketplaceClient = () => {
 
   // Response interceptor with error logging
   client.interceptors.response.use(
-    (response: AxiosResponse) => {
+    (_response: AxiosResponse) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logWarn(`Marketplace API Response: ${response.status}`);
       }
@@ -212,7 +212,7 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
     }
 
     return ensureProductIntegrity(data.data || []);
-  } catch (error) {
+  } catch (_error) {
     logError('Failed to fetch products:', { data: error });
     throw error;
   }
@@ -233,7 +233,7 @@ export async function fetchCategories(): Promise<Category[]> {
     }
 
     return data.data || [];
-  } catch (error) {
+  } catch (_error) {
     logError('Failed to fetch categories:', { data: error });
     return [];
   }
@@ -260,7 +260,7 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
     }
 
     return data.data || [];
-  } catch (error) {
+  } catch (_error) {
     logError('Failed to fetch talent:', { data: error });
     return [];
   }
@@ -287,7 +287,7 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
     }
 
     return data.data || [];
-  } catch (error) {
+  } catch (_error) {
     logError('Failed to fetch equipment:', { data: error });
     return [];
   }

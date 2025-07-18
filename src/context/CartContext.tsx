@@ -25,7 +25,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Redux store (cartSlice.ts) is responsible for initial hydration from localStorage.
   // This useEffect was redundant.
 
-  const dispatch = (action: CartAction) => {
+  const dispatch = (_action: CartAction) => {
     switch (action.type) {
       case 'ADD_ITEM':
         reduxDispatch(
@@ -69,7 +69,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       // Only persist if localStorage is actually available.
       // safeStorage handles this internally, but good to be mindful.
       safeStorage.setItem('zion_cart', JSON.stringify(items));
-    } catch (error) {
+    } catch (_error) {
       // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
       logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: error });
     }

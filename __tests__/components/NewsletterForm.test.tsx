@@ -6,7 +6,7 @@ import * as toastHook from '@/hooks/use-toast';
 vi.mock('@/hooks/use-toast');
 
 describe('NewsletterForm', () => {
-  let originalFetch: typeof global.fetch;
+  let _originalFetch: typeof global.fetch;
 
   beforeEach(() => {
     originalFetch = global.fetch;

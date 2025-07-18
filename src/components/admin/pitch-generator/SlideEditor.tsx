@@ -30,7 +30,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     setCurrentIndex(0); // Reset to first slide when initialSlides change
   }, [initialSlides]);
 
-  const handleSlideChange = (index: number, field: keyof Slide, value: string) => {
+  const handleSlideChange = (index: number, field: keyof Slide, _value: string) => {
     const updatedSlides = slides.map((slide, i) =>
       i === index ? { ...slide, [field]: value } : slide
     );
@@ -38,7 +38,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     onSlidesChange(updatedSlides);
   };
 
-  const handleRephrase = (index: number) => {
+  const handleRephrase = (_index: number) => {
     // Minimal functional AI rephrase: append timestamp
     logInfo(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index];
@@ -61,7 +61,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     setCurrentIndex(updatedSlides.length - 1); // Move to the new slide
   };
 
-  const handleDeleteSlide = (index: number) => {
+  const handleDeleteSlide = (_index: number) => {
     if (slides.length <= 1) {
         alert("Cannot delete the last slide.");
         return;
@@ -72,7 +72,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     setCurrentIndex(prevIndex => Math.max(0, prevIndex -1));
   };
 
-  const renderChart = (slide: Slide) => {
+  const renderChart = (_slide: Slide) => {
     if (!slide.chartType) return null;
     // Minimal functional chart using divs
     const barData = [

@@ -62,7 +62,7 @@ export function ContactPublisherModal({
   publisherEmail,
   productId,
 }: ContactPublisherModalProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [loginOpen, setLoginOpen] = React.useState(false);
@@ -96,7 +96,7 @@ export function ContactPublisherModal({
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (_e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       e.stopPropagation();
       onClose();

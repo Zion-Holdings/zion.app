@@ -48,7 +48,7 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
     },
   });
 
-  const handleAddOrUpdate = async (data: CertificationFormValues) => {
+  const handleAddOrUpdate = async (_data: CertificationFormValues) => {
     try {
       setError(null);
       let success;
@@ -84,7 +84,7 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
     }
   };
 
-  const handleEdit = (cert: Certification) => {
+  const handleEdit = (_cert: Certification) => {
     setEditingId(cert.id!);
     form.reset({
       ...cert,
@@ -93,7 +93,7 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
     });
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (_id: string) => {
     if (confirm('Are you sure you want to delete this certification?')) {
       await deleteCertification(id);
     }

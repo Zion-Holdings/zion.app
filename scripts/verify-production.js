@@ -103,7 +103,7 @@ async function testRoute(route) {
       message: `Route renders successfully (${html.length} chars, patterns: ${foundSuccess.join(', ')})`
     };
 
-  } catch (error) {
+  } catch (_error) {
     return {
       route,
       success: false,
@@ -125,7 +125,7 @@ async function checkServerHealth() {
     } else {
       return true; // Server is up, health endpoint might not exist
     }
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 }
@@ -142,9 +142,9 @@ async function main() {
     results.push(result);
     
     if (result.success) {
-      // console.log(`✅ ${route} - ${result.message}`); // Removed console.log
+      // console.warn(`✅ ${route} - ${result.message}`); // Removed console.log
     } else {
-      // console.log(`❌ ${route} - ${result.error}`); // Removed console.log
+      // console.warn(`❌ ${route} - ${result.error}`); // Removed console.log
     }
     
     // Add small delay between requests
@@ -154,11 +154,11 @@ async function main() {
   const failed = results.filter(r => !r.success);
   
   if (failed.length > 0) {
-    // console.log(`❌ Failed: ${failed.length}/${results.length}`); // Removed console.log
-    // console.log('\n🔍 Failed Routes:'); // Removed console.log
+    // console.warn(`❌ Failed: ${failed.length}/${results.length}`); // Removed console.log
+    // console.warn('\n🔍 Failed Routes:'); // Removed console.log
     
     failed.forEach(result => {
-      // console.log(`  • ${result.route}: ${result.error} (${result.type})`); // Removed console.log
+      // console.warn(`  • ${result.route}: ${result.error} (${result.type})`); // Removed console.log
     });
     
     // Only fail if more than 50% of routes fail
@@ -166,11 +166,11 @@ async function main() {
     if (failureRate > 0.5) {
       process.exit(1);
     } else {
-      // console.log('\n⚠️ Some routes failed but overall verification PASSED'); // Removed console.log
+      // console.warn('\n⚠️ Some routes failed but overall verification PASSED'); // Removed console.log
     }
   } else {
-    // console.log('\n🎉 All routes verified successfully!'); // Removed console.log
-    // console.log('✅ Production verification PASSED'); // Removed console.log
+    // console.warn('\n🎉 All routes verified successfully!'); // Removed console.log
+    // console.warn('✅ Production verification PASSED'); // Removed console.log
   }
 }
 

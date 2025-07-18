@@ -30,7 +30,7 @@ import type { BlogPost } from "@/types/blog";
 export default function BlogPost() {
 
   const router = useRouter();
-  const { slug } = router.query as { slug: string };
+  const { _slug } = router.query as { slug: string };
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -54,7 +54,7 @@ export default function BlogPost() {
         setRelatedPosts(related);
         setIsLoading(false);
         return;
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Failed to fetch blog post', { data: err });
         setError('Failed to load article');
       }
@@ -107,7 +107,7 @@ export default function BlogPost() {
   }
 
   // Helper function to get share URL
-  const getShareUrl = (platform: string) => {
+  const getShareUrl = (_platform: string) => {
     if (!post) return '';
     
     const url = encodeURIComponent(window.location.href);

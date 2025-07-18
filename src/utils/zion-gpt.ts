@@ -53,7 +53,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     }
     
     return data.id as ModelVersion;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'getActiveModelId' });
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
@@ -81,7 +81,7 @@ export async function logModelUsage(
         timestamp: new Date().toISOString()
       });
       
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'logModelUsage' });
     // Non-blocking - we don't want to fail the main operation
   }
@@ -135,7 +135,7 @@ export async function callZionGPT({
       );
     }
     return (typeof data === 'object' && data && 'completion' in data) ? (data as { completion: string }).completion : '';
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
     throw error;
   }

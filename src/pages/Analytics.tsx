@@ -17,7 +17,7 @@ export default function Analytics() {
   
   const { data: pageViewTrends } = useQuery({
     queryKey: ['page-views-trend', timeRange],
-    queryFn: async () => {
+    _queryFn: async () => {
       // Get daily page views for trend chart
       const days = parseInt(timeRange.replace('d', ''));
       const startDate = new Date();
@@ -34,7 +34,7 @@ export default function Analytics() {
       
       // Group by date
       const viewsByDate: Record<string, { date: string; views: number }> = {};
-      (data ?? []).forEach((item: unknown) => {
+      (data ?? []).forEach((_item: unknown) => {
         if (typeof item === 'object' && item !== null && 'created_at' in item) {
           const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
           if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
@@ -62,7 +62,7 @@ export default function Analytics() {
   
   const { data: conversionData } = useQuery({
     queryKey: ['conversion-data', timeRange],
-    queryFn: async () => {
+    _queryFn: async () => {
       const days = parseInt(timeRange.replace('d', ''));
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days);
@@ -78,7 +78,7 @@ export default function Analytics() {
       
       // Group by conversion type and date
       const conversionsByType: Record<string, Record<string, number>> = {};
-      data?.forEach((item: unknown) => {
+      data?.forEach((_item: unknown) => {
         if (typeof item === 'object' && item !== null && 'created_at' in item) {
           const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
           let conversionType = 'unknown';
@@ -131,7 +131,7 @@ export default function Analytics() {
 
   const { data: featureUsageData } = useQuery({
     queryKey: ['feature-usage-data', timeRange],
-    queryFn: async () => {
+    _queryFn: async () => {
       const days = parseInt(timeRange.replace('d', ''));
       if (!supabase) throw new Error('Supabase client is not initialized');
       const { data, error } = await supabase.rpc('get_feature_usage_stats', {
@@ -152,7 +152,7 @@ export default function Analytics() {
         if (manualError) throw manualError;
 
         const usageByDate: Record<string, Record<string, number>> = {};
-        (manual ?? []).forEach((ev: unknown) => {
+        (manual ?? []).forEach((_ev: unknown) => {
           if (typeof ev === 'object' && ev !== null && 'created_at' in ev) {
             const date = new Date((ev as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
             let feature = 'unknown';

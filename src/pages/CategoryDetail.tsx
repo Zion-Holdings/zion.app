@@ -107,7 +107,7 @@ interface CategoryDetailProps {
 
 export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps = {}) {
   const router = useRouter();
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   // Get slug from Next.js router query params
   const params = router.query as { slug?: string };
@@ -144,7 +144,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         const filteredListings = response.data?.items || [];
 
         setListings(filteredListings);
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Category load error:', { data: err });
         toast({ title: 'Error', description: 'Failed to load category' });
       } finally {
@@ -167,7 +167,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   }
 
   // Handle requesting a quote
-  const handleRequestQuote = (listingId: string) => {
+  const handleRequestQuote = (_listingId: string) => {
     const listing = listings.find(item => item.id === listingId);
     
     if (listing) {

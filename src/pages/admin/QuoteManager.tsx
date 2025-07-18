@@ -18,7 +18,7 @@ import {
 } from "@/components/admin/quotes";
 
 export default function QuoteManager() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
   const isAdmin = user?.userType === 'admin';
   
@@ -51,7 +51,7 @@ export default function QuoteManager() {
     closed: quotes.filter(q => q.status === 'closed').length
   };
 
-  const handleViewDetails = (quote: QuoteRequest) => {
+  const handleViewDetails = (_quote: QuoteRequest) => {
     setSelectedQuote(quote);
     setShowDetails(true);
   };

@@ -9,7 +9,7 @@ interface ViewModeContextType {
 
 const ViewModeContext = createContext<ViewModeContextType>({
   viewMode: 'grid',
-  setViewMode: () => {},
+  _setViewMode: () => {},
 });
 
 export const useViewMode = (): ViewModeContextType => useContext(ViewModeContext);

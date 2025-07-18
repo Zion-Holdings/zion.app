@@ -7,13 +7,13 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Remove all devConsole methods except warn and error
 export const devConsole = {
-  warn: (...args: unknown[]) => { logWarn('[DEV WARN]', { data: args }); },
-  error: (...args: unknown[]) => { logErrorToProduction('[DEV ERROR]', { data: args }); },
+  _warn: (...args: unknown[]) => { logWarn('[DEV WARN]', { data: args }); },
+  _error: (...args: unknown[]) => { logErrorToProduction('[DEV ERROR]', { data: args }); },
 };
 
 // Only keep warnLargeComponent if it uses console.warn
 export const bundleLog = {
-  warnLargeComponent: (componentName: string, size: number) => {
+  warnLargeComponent: (componentName: string, _size: number) => {
     if (process.env.NODE_ENV === 'development' && size > 100) {
       console.warn(`Large component: ${componentName} (${size}kb)`);
     }

@@ -56,7 +56,7 @@ export default function GrantsPage() {
     defaultValues: { category: categories[0] || 'Ecosystem Tools' },
   });
 
-  const saveGrant = (values: FormValues, status: Grant['status']) => {
+  const saveGrant = (values: FormValues, _status: Grant['status']) => {
     const grant: Grant = { ...values, id: Date.now(), status };
     setGrants((prev) => [...prev, grant]);
     form.reset({ category: categories[0] || 'Ecosystem Tools' });

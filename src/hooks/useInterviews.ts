@@ -11,7 +11,7 @@ export function useInterviews() {
   const [interviews, setInterviews] = useState<Interview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   // Request an interview as a client
   const requestInterview = async (interviewRequest: InterviewRequest): Promise<Interview | null> => {
@@ -256,7 +256,7 @@ export function useInterviews() {
     type: string,
     title: string,
     message: string,
-    relatedId: string
+    _relatedId: string
   ) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
@@ -267,7 +267,7 @@ export function useInterviews() {
         message,
         related_id: relatedId,
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error creating notification:', { data: error });
     }
   };

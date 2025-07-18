@@ -48,7 +48,7 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
     // Show user-friendly error message with retry option
     const action = retryAction ? {
       label: "Try Again",
-      onClick: () => {
+      _onClick: () => {
         setRetryCount(prev => ({
           ...prev,
           [errorKey]: currentRetryCount + 1
@@ -69,7 +69,7 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
   const showNetworkError = useCallback((retryAction?: () => void) => {
     const action = retryAction ? {
       label: "Try Again",
-      onClick: () => {
+      _onClick: () => {
         retryAction();
       }
     } : undefined;
@@ -90,7 +90,7 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
   const showAuthError = useCallback((loginAction?: () => void) => {
     const action = loginAction ? {
       label: "Log In",
-      onClick: () => {
+      _onClick: () => {
         loginAction();
       }
     } : undefined;

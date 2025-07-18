@@ -93,7 +93,7 @@ async function getHelia(): Promise<unknown> {
       heliaNode = await createHelia();
       
       browserLogInfo('Helia Initialized for IPFS.');
-    } catch (error) {
+    } catch (_error) {
       let message = 'Unknown error';
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         message = (error as { message: string }).message;
@@ -117,7 +117,7 @@ export async function saveJSON(data: unknown): Promise<string> {
     const jsonService = heliaJson();
     const cid = await jsonService.add(data);
     return cid.toString();
-  } catch (error) {
+  } catch (_error) {
     let message = 'Unknown error';
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
@@ -138,7 +138,7 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
     const jsonService = heliaJson();
     const data = await jsonService.get(cidString);
     return data;
-  } catch (error) {
+  } catch (_error) {
     let message = 'Unknown error';
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
@@ -161,7 +161,7 @@ export async function stopIpfsNode(): Promise<void> {
       heliaNode = null;
       browserLogInfo('General IPFS Helia node stopped.');
     }
-  } catch (error) {
+  } catch (_error) {
     let message = 'Unknown error';
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;

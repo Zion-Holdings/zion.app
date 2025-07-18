@@ -59,7 +59,7 @@ export const VideoCallRoom: React.FC<VideoCallRoomProps> = ({
     return () => clearInterval(timer);
   }, []);
 
-  const formatDuration = (seconds: number) => {
+  const formatDuration = (_seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;

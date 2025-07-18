@@ -25,7 +25,7 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
     : null;
 
   // Get suggestion color
-  const getSuggestionColor = (suggestion: string | undefined) => {
+  const getSuggestionColor = (_suggestion: string | undefined) => {
     switch (suggestion) {
       case "Strongly Recommended":
         return "bg-green-100 text-green-800";
@@ -33,7 +33,7 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
         return "bg-blue-100 text-blue-800";
       case "Low Match":
         return "bg-orange-100 text-orange-800";
-      default:
+      _default:
         return "bg-gray-100 text-gray-800";
     }
   };
@@ -49,7 +49,7 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
       setIsScoring(true);
       
       // Call the trigger_resume_scoring function
-      const { error } = await supabase.rpc(
+      const { _error } = await supabase.rpc(
         'trigger_resume_scoring',
         { application_id: application.id }
       );

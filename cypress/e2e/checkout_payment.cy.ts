@@ -44,7 +44,7 @@ describe('test checkout purchase', () => {
 
     cy.window().then((win) => {
       win.Stripe = () => ({
-        redirectToCheckout: ({ sessionId: id }) => {
+        _redirectToCheckout: ({ sessionId: id }) => {
           win.location.href = `/success?session_id=${id}`;
           return Promise.resolve({});
         },

@@ -87,7 +87,7 @@ function findApiFiles(dir) {
         files.push(fullPath);
       }
     }
-  } catch (error) {
+  } catch (_error) {
     // Skip directories that can't be read
   }
   

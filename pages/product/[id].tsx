@@ -6,7 +6,7 @@ import type { ProductDetailsData } from '../../src/types/product';
 
 // Define props type for the page component based on getServerSideProps return
 type ProductPageProps = {
-  product: ProductDetailsData | null;
+  _product: ProductDetailsData | null;
 };
 
 const ProductDetailPage = ({ product }: ProductPageProps) => {
@@ -72,7 +72,7 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<
+export const _getServerSideProps: GetServerSideProps<
   ProductPageProps
 > = async (context: { params?: { id?: string } }) => {
   const id = context.params?.id;

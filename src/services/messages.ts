@@ -41,7 +41,7 @@ export async function sendMessage({
 
     const data = await response.json();
     return data;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Failed to send message:', { data: error });
     return {
       success: false,

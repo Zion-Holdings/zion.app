@@ -48,7 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Failed to update order', { data: err });
       }
     }
@@ -68,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
           const fileContent = fs.readFileSync(file, 'utf8');
           ledger = JSON.parse(String(fileContent));
-        } catch (readError) {
+        } catch (_readError) {
           // Log the error for debugging but continue with empty ledger
           logErrorToProduction('Failed to read points file:', { data: readError });
         }

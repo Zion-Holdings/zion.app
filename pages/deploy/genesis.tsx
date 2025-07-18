@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Helper function to generate IDs
-const generateId = (label: string) => {
+const generateId = (_label: string) => {
   return label.toLowerCase().replace(/[^\w]+/g, '-');
 };
 
-const GenesisPage: React.FC = () => {
+const _GenesisPage: React.FC = () => {
   const autoDeployModules = [
     "/marketplace (Jobs, Talent, Quotes)",
     "/gpt (ZionGPT Core + Prompt Router)",
@@ -136,7 +136,7 @@ const GenesisPage: React.FC = () => {
                 name="colorPaletteUpload"
                 id="colorPaletteUpload"
                 accept=".json"
-                className="mt-1 block w-full text-sm text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
+                className="mt-1 block w-full text-sm text-gray-200 _file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
               />
             </div>
             <div>
@@ -181,7 +181,7 @@ const GenesisPage: React.FC = () => {
 
         <section className="bg-gray-800 p-6 rounded-lg shadow-xl">
           <h2 className="text-2xl font-semibold text-purple-300 mb-6">Bonus Modules (Optional)</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 _md:grid-cols-2 gap-6">
             {bonusModules.map((module) => {
               const moduleId = generateId(module);
               return (

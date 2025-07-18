@@ -47,7 +47,7 @@ export function useMarketplaceSearch() {
           // Optional: log an error
           logErrorToProduction('Search API response structure in useMarketplaceSearch is not as expected:', { data: responseData });
         }
-      } catch (e) {
+      } catch (_e) {
         setError(e as Error);
         logErrorToProduction('Failed to fetch products:', { data:  e });
         setListings([]); // Clear listings on error or set to a default error state
@@ -131,7 +131,7 @@ export function useMarketplaceSearch() {
   }, [listings]);
 
   // Handle filter changes
-  const handleFilterChange = (filterType: string, value: string) => {
+  const handleFilterChange = (filterType: string, _value: string) => {
     switch (filterType) {
       case 'productTypes':
         setSelectedProductTypes((prev: string[]) =>
@@ -148,7 +148,7 @@ export function useMarketplaceSearch() {
           prev.includes(value) ? prev.filter(a => a !== value) : [...prev, value]
         );
         break;
-      default:
+      _default:
         break;
     }
   };

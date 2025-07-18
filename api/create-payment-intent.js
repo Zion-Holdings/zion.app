@@ -56,7 +56,7 @@ async function handler(req, res) {
     });
     res.statusCode = 200;
     res.json({ clientSecret: intent.client_secret, id: intent.id });
-  } catch (err) {
+  } catch (_err) {
     console.error('Create payment intent error:', err);
     res.statusCode = 500;
     res.json({ error: err.message });

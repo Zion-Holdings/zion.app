@@ -13,7 +13,7 @@ export async function rewardOnboarding(userId: string) {
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
     }
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to reward onboarding:', { data: err });
   }
 }
@@ -29,7 +29,7 @@ export async function rewardReferral(userId: string) {
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
     }
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to reward referral:', { data: err });
   }
 }
@@ -45,7 +45,7 @@ export async function rewardFiveStarReview(userId: string) {
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
     }
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to reward review:', { data: err });
   }
 }

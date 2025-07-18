@@ -85,7 +85,7 @@ const LaunchToolkitPage = () => {
       const zipBlob = await zip.generateAsync({ type: 'blob' });
       saveAs(zipBlob, 'Zion_Launch_Toolkit.zip');
 
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error creating ZIP:', { data: error });
       setZipError(error instanceof Error ? error.message : 'An unknown error occurred while creating ZIP.');
     } finally {
@@ -104,7 +104,7 @@ const LaunchToolkitPage = () => {
         }
         const text = await response.text();
         setExplainerCopy(text);
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error loading explainer copy:', { data: error });
         setExplainerCopy('Could not load explainer copy.');
         setLoadCopyError(error instanceof Error ? error.message : 'An unknown error occurred.');
@@ -116,7 +116,7 @@ const LaunchToolkitPage = () => {
     fetchExplainerCopy();
   }, []); // Empty dependency array means this runs once on mount
 
-  const loadTemplate = async (url: string) => {
+  const loadTemplate = async (_url: string) => {
     setSelectedTemplateUrl(url);
     setSelectedTemplateContent(''); // Clear previous template content
     setGeneratedPressRelease(''); // Clear previous generated content
@@ -129,7 +129,7 @@ const LaunchToolkitPage = () => {
       }
       const text = await response.text();
       setSelectedTemplateContent(text);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error loading template:', { data: error });
       setSelectedTemplateContent('');
       setLoadError(error instanceof Error ? error.message : 'An unknown error occurred.');

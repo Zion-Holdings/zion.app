@@ -120,7 +120,7 @@ describe('Signup form', () => {
   });
 
   it('shows error toast and alert on general failure', async () => {
-    const { mockToast } = setup(false, 'Signup failed');
+    const { _mockToast } = setup(false, 'Signup failed');
     
     fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'john@example.com' } });
@@ -144,7 +144,7 @@ describe('Signup form', () => {
   });
 
   it('handles duplicate email error with 409 status', async () => {
-    const { mockToast } = setup(false, 'Email already registered', 409);
+    const { _mockToast } = setup(false, 'Email already registered', 409);
     
     fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'existing@example.com' } });
@@ -175,7 +175,7 @@ describe('Signup form', () => {
   });
 
   it('clears error message when form is resubmitted', async () => {
-    const { mockToast } = setup(false, 'Email already registered', 409);
+    const { _mockToast } = setup(false, 'Email already registered', 409);
     
     // Fill and submit form to trigger error
     fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });

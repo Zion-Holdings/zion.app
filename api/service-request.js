@@ -1,4 +1,4 @@
-const { withSentry } = require('./withSentry.cjs');
+const { _withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 
 async function handler(req, res) {

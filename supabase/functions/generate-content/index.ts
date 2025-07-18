@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface ContentGenerationRequest {
-  contentType: 'blog' | 'newsletter';
+  _contentType: 'blog' | 'newsletter';
   prompt?: string;
   topic?: string;
   autoPublish?: boolean;
@@ -206,7 +206,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in generate-content function:", error);
     
     return new Response(JSON.stringify({ error: error.message }), {

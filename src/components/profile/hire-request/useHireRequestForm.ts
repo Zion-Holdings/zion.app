@@ -40,7 +40,7 @@ const formSchema = baseFormSchema.refine(data => data.budgetMax >= data.budgetMi
 
 export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetails }: UseHireRequestFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { submitHireRequest } = useHireRequest();
+  const { _submitHireRequest } = useHireRequest();
 
   // Initialize the form
   const form = useForm<FormValues>({
@@ -83,7 +83,7 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
       if (result.success) {
         onClose();
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error submitting hire request:', { data: error });
     } finally {
       setIsSubmitting(false);

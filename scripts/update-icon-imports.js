@@ -28,7 +28,7 @@ function updateIconImportsInFile(filePath) {
     }
     
     return false;
-  } catch (err) {
+  } catch (_err) {
     console.error(`❌ Error processing ${filePath}:`, err);
     return false;
   }

@@ -28,7 +28,7 @@ declare global {
   interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent;
     // appinstalled event is standard, but if issues arise, it can be augmented too
-    // appinstalled: Event;
+    // _appinstalled: Event;
   }
   
   interface Window {
@@ -52,7 +52,7 @@ export const InstallPrompt: React.FC = () => {
       return;
     }
 
-    const handler = (e: BeforeInstallPromptEvent) => {
+    const handler = (_e: BeforeInstallPromptEvent) => {
       e.preventDefault();
       safeSessionStorage.setItem(SHOWN_KEY, 'true');
       setPromptEvent(e);
@@ -80,7 +80,7 @@ export const InstallPrompt: React.FC = () => {
   const install = async () => {
     if (!promptEvent) return;
     promptEvent.prompt();
-    const { outcome } = await promptEvent.userChoice;
+    const { _outcome } = await promptEvent.userChoice;
     if (outcome === 'accepted') {
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'pwa_install_accepted');

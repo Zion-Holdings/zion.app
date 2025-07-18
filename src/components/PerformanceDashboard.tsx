@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 
 
 interface PerformanceMetrics {
-  buildSize: string;
+  _buildSize: string;
   pageCount: number;
   loadTime: number;
   healthStatus: 'healthy' | 'warning' | 'error';
@@ -82,7 +82,7 @@ const PerformanceDashboard: React.FC = () => {
       description: 'Created production monitoring endpoint for environment and service health',
       status: 'completed',
       impact: 'medium',
-      category: 'security'
+      _category: 'security'
     }
   ];
 
@@ -91,7 +91,7 @@ const PerformanceDashboard: React.FC = () => {
       case 'completed': return <CheckCircle className="h-4 w-4 text-green-500" />;
       case 'in-progress': return <AlertCircle className="h-4 w-4 text-yellow-500" />;
       case 'planned': return <TrendingUp className="h-4 w-4 text-blue-500" />;
-      default: return <AlertCircle className="h-4 w-4 text-gray-500" />;
+      _default: return <AlertCircle className="h-4 w-4 text-gray-500" />;
     }
   };
 
@@ -100,7 +100,7 @@ const PerformanceDashboard: React.FC = () => {
       case 'high': return 'bg-red-100 text-red-800';
       case 'medium': return 'bg-yellow-100 text-yellow-800';
       case 'low': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
+      _default: return 'bg-gray-100 text-gray-800';
     }
   };
 

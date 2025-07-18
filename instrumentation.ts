@@ -43,7 +43,7 @@ async function initializeSentryOrMock() {
         onRequestError = null;
         console.warn('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
-    } catch (error) {
+    } catch (_error) {
       console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js:', error);
       Sentry = null;
       onRequestError = null;
@@ -136,7 +136,7 @@ export async function register() {
         return event;
       },
       
-      initialScope: (scope: unknown) => {
+      _initialScope: (scope: unknown) => {
         if (
           typeof scope === 'object' && scope !== null &&
           'setTag' in scope && typeof (scope as { setTag?: unknown }).setTag === 'function'
@@ -164,7 +164,7 @@ export async function register() {
     });
     
     console.warn("instrumentation.ts: Server-side Sentry initialized successfully");
-  } catch (error) {
+  } catch (_error) {
     console.error("instrumentation.ts: Failed to initialize Sentry:", error);
   }
 }

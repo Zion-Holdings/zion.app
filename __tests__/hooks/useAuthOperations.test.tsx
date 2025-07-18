@@ -62,7 +62,7 @@ global.fetch = vi.fn(); // Changed vi.fn to vi.fn
 
 
 describe('useAuthOperations', () => {
-  let setUser: vi.Mock; // Changed vi.Mock to vi.Mock
+  let _setUser: vi.Mock; // Changed vi.Mock to vi.Mock
   let setIsLoading: vi.Mock; // Changed vi.Mock to vi.Mock
   let setAvatarUrl: vi.Mock; // Changed vi.Mock to vi.Mock
 
@@ -92,7 +92,7 @@ describe('useAuthOperations', () => {
       const mockError = { message: 'Supabase sign-up error' };
       supabase.auth.signUp.mockResolvedValueOnce({ data: null, error: mockError });
 
-      const { result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
+      const { _result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
 
       await act(async () => {
         await result.current.signUp(signUpParams.email, signUpParams.password, { name: signUpParams.display_name });
@@ -118,7 +118,7 @@ describe('useAuthOperations', () => {
       const mockGenericError = new Error('Generic network failure');
       supabase.auth.signUp.mockRejectedValueOnce(mockGenericError);
 
-      const { result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
+      const { _result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
 
       await act(async () => {
         await result.current.signUp(signUpParams.email, signUpParams.password, { name: signUpParams.display_name });
@@ -145,7 +145,7 @@ describe('useAuthOperations', () => {
       supabase.auth.signUp.mockResolvedValueOnce({ data: { user: mockUser }, error: null });
       (referralUtils.trackReferral as vi.Mock).mockResolvedValueOnce(true); // Simulate referral was used, changed vi.Mock
 
-      const { result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
+      const { _result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
 
       await act(async () => {
         await result.current.signUp(signUpParams.email, signUpParams.password, { name: signUpParams.display_name });

@@ -23,8 +23,8 @@ export function ProjectMilestonesContent() {
   const router = useRouter();
   const { projectId: rawProjectId } = router.query;
   const projectId = typeof rawProjectId === 'string' ? rawProjectId : undefined;
-  const { user } = useAuth();
-  const { getProjectById } = useProjects();
+  const { _user } = useAuth();
+  const { _getProjectById } = useProjects();
   const {
     milestones,
     activities,
@@ -39,7 +39,7 @@ export function ProjectMilestonesContent() {
   const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('milestones');
-  const { job } = useJobDetails(project?.job_id);
+  const { _job } = useJobDetails(project?.job_id);
 
   const { isUnderDispute, disputeId } = useDisputeCheck(projectId);
 
@@ -53,7 +53,7 @@ export function ProjectMilestonesContent() {
         if (projectData) {
           setProject(projectData);
         }
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error loading project:', { data: error });
       } finally {
         setIsLoading(false);

@@ -141,7 +141,7 @@ export function ChatAssistant({
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSendMessage = async (messageContent: string) => {
+  const handleSendMessage = async (_messageContent: string) => {
     if (!messageContent.trim()) return;
 
     if (!isGuest) {
@@ -184,7 +184,7 @@ export function ChatAssistant({
 
   useEffect(() => {
     if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (_e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
         onClose();

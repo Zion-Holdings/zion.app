@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 const PROJECT_ROOT = process.cwd();
 
@@ -40,7 +40,7 @@ class ProjectHealthSummary {
       });
 
       this.summary.metrics.devServerStatus = isRunning;
-    } catch (error) {
+    } catch (_error) {
       this.summary.improvements.push({
         category: '🚀 Development Server',
         status: '⚠️  Unknown',
@@ -129,7 +129,7 @@ class ProjectHealthSummary {
       });
 
       this.summary.metrics.buildStatus = 'passing';
-    } catch (error) {
+    } catch (_error) {
       this.summary.improvements.push({
         category: '🏗️  Build System',
         status: '⚠️  Issues Detected',
@@ -165,7 +165,7 @@ class ProjectHealthSummary {
 
       this.summary.metrics.lintErrors = errorCount;
       this.summary.metrics.lintWarnings = warningCount;
-    } catch (error) {
+    } catch (_error) {
       this.summary.improvements.push({
         category: '🔍 Code Quality',
         status: '⚠️  Unknown',
@@ -182,7 +182,7 @@ class ProjectHealthSummary {
     try {
       const result = execSync(`grep -r "${pattern}" src/ pages/ --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" | wc -l`, { encoding: 'utf8' });
       return parseInt(result.trim()) || 0;
-    } catch (error) {
+    } catch (_error) {
       return 0;
     }
   }
@@ -254,7 +254,7 @@ class ProjectHealthSummary {
    * Generate the complete summary
    */
   generateSummary() {
-    // console.log('🔍 Analyzing Zion App Clone health...\n');
+    // console.warn('🔍 Analyzing Zion App Clone health...\n');
 
     this.checkDevServer();
     this.analyzeConsoleReplacement();
@@ -271,85 +271,85 @@ class ProjectHealthSummary {
    * Print the formatted summary
    */
   printSummary() {
-    // console.log('=' .repeat(80));
-    // console.log('🏆 ZION APP CLONE - PROJECT HEALTH SUMMARY');
-    // console.log('=' .repeat(80));
-    // console.log(`📅 Generated: ${new Date().toLocaleString()}\n`);
+    // console.warn('=' .repeat(80));
+    // console.warn('🏆 ZION APP CLONE - PROJECT HEALTH SUMMARY');
+    // console.warn('=' .repeat(80));
+    // console.warn(`📅 Generated: ${new Date().toLocaleString()}\n`);
 
     // Overall Status
     const totalImprovements = this.summary.improvements.length;
     const completedImprovements = this.summary.improvements.filter(i => i.status.includes('✅')).length;
     const completionRate = Math.round((completedImprovements / totalImprovements) * 100);
 
-    // console.log('📊 OVERALL PROJECT STATUS');
-    // console.log('-' .repeat(40));
-    // console.log(`✅ Completion Rate: ${completionRate}% (${completedImprovements}/${totalImprovements})`);
-    // console.log(`🚀 Build Status: ${this.summary.metrics.buildStatus || 'Unknown'}`);
-    // console.log(`📝 Console Replacements: 927 statements across 325 files`);
-    // console.log(`🎯 Type Definitions: ${this.summary.metrics.typeDefinitions || 0}+ interfaces created\n`);
+    // console.warn('📊 OVERALL PROJECT STATUS');
+    // console.warn('-' .repeat(40));
+    // console.warn(`✅ Completion Rate: ${completionRate}% (${completedImprovements}/${totalImprovements})`);
+    // console.warn(`🚀 Build Status: ${this.summary.metrics.buildStatus || 'Unknown'}`);
+    // console.warn(`📝 Console Replacements: 927 statements across 325 files`);
+    // console.warn(`🎯 Type Definitions: ${this.summary.metrics.typeDefinitions || 0}+ interfaces created\n`);
 
     // Detailed Improvements
-    // console.log('🔧 IMPLEMENTED IMPROVEMENTS');
-    // console.log('-' .repeat(40));
+    // console.warn('🔧 IMPLEMENTED IMPROVEMENTS');
+    // console.warn('-' .repeat(40));
     this.summary.improvements.forEach(improvement => {
-      // console.log(`${improvement.category}`);
-      // console.log(`   Status: ${improvement.status}`);
-      // console.log(`   Impact: ${improvement.impact}`);
-      // console.log(`   ${improvement.description}`);
+      // console.warn(`${improvement.category}`);
+      // console.warn(`   Status: ${improvement.status}`);
+      // console.warn(`   Impact: ${improvement.impact}`);
+      // console.warn(`   ${improvement.description}`);
       
       if (improvement.details) {
         Object.entries(improvement.details).forEach(([key, value]) => {
           if (Array.isArray(value)) {
-            // console.log(`   ${key}:`);
+            // console.warn(`   ${key}:`);
             value.forEach(item => {
-              // console.log(`     • ${item}`);
+              // console.warn(`     • ${item}`);
             });
           } else {
-            // console.log(`   ${key}: ${value}`);
+            // console.warn(`   ${key}: ${value}`);
           }
         });
       }
-      // console.log('');
+      // console.warn('');
     });
 
     // Key Metrics
-    // console.log('📈 KEY METRICS');
-    // console.log('-' .repeat(40));
-    // console.log(`🏗️  Build: ${this.summary.metrics.buildStatus === 'passing' ? '✅ Passing' : '⚠️  With Warnings'}`);
-    // console.log(`🔍 Lint Errors: ${this.summary.metrics.lintErrors || 'Unknown'}`);
-    // console.log(`📝 Files with Logger: ${this.summary.metrics.consoleReplacementFiles || 0}`);
-    // console.log(`⚡ Optimization Files: ${this.summary.metrics.optimizationFiles || 0}`);
-    // console.log(`🎯 Type Definitions: ${this.summary.metrics.typeDefinitions || 0}\n`);
+    // console.warn('📈 KEY METRICS');
+    // console.warn('-' .repeat(40));
+    // console.warn(`🏗️  Build: ${this.summary.metrics.buildStatus === 'passing' ? '✅ Passing' : '⚠️  With Warnings'}`);
+    // console.warn(`🔍 Lint Errors: ${this.summary.metrics.lintErrors || 'Unknown'}`);
+    // console.warn(`📝 Files with Logger: ${this.summary.metrics.consoleReplacementFiles || 0}`);
+    // console.warn(`⚡ Optimization Files: ${this.summary.metrics.optimizationFiles || 0}`);
+    // console.warn(`🎯 Type Definitions: ${this.summary.metrics.typeDefinitions || 0}\n`);
 
     // Recommendations
-    // console.log('💡 NEXT STEPS RECOMMENDATIONS');
-    // console.log('-' .repeat(40));
+    // console.warn('💡 NEXT STEPS RECOMMENDATIONS');
+    // console.warn('-' .repeat(40));
     this.summary.recommendations.forEach((rec, index) => {
-      // console.log(`${index + 1}. ${rec.priority === 'High' ? '🔴' : rec.priority === 'Medium' ? '🟡' : '🟢'} ${rec.priority} Priority - ${rec.category}`);
-      // console.log(`   Action: ${rec.action}`);
-      // console.log(`   Benefit: ${rec.benefit}\n`);
+      // console.warn(`${index + 1}. ${rec.priority === 'High' ? '🔴' : rec.priority === 'Medium' ? '🟡' : '🟢'} ${rec.priority} Priority - ${rec.category}`);
+      // console.warn(`   Action: ${rec.action}`);
+      // console.warn(`   Benefit: ${rec.benefit}\n`);
     });
 
     // Quick Commands
-    // console.log('⚡ QUICK COMMANDS');
-    // console.log('-' .repeat(40));
-    // console.log('🚀 Start development:     npm run dev');
-    // console.log('🔍 Run linting:          npm run lint -- --fix');
-    // console.log('🏗️  Build production:     npm run build');
-    // console.log('📝 Replace more console:  npm run console:replace');
-    // console.log('⚡ Deploy optimize:       npm run deploy:optimize\n');
+    // console.warn('⚡ QUICK COMMANDS');
+    // console.warn('-' .repeat(40));
+    // console.warn('🚀 Start development:     npm run dev');
+    // console.warn('🔍 Run linting:          npm run lint -- --fix');
+    // console.warn('🏗️  Build production:     npm run build');
+    // console.warn('📝 Replace more console:  npm run console:replace');
+    // console.warn('⚡ Deploy optimize:       npm run deploy:optimize\n');
 
     // Success Message
-    // console.log('🎉 CONGRATULATIONS!');
-    // console.log('-' .repeat(40));
-    // console.log('The Zion App Clone has been significantly improved with:');
-    // console.log('• ✅ Production-ready logging system');
-    // console.log('• ✅ Performance optimization infrastructure');
-    // console.log('• ✅ Enhanced TypeScript type safety');
-    // console.log('• ✅ Automated code quality tools');
-    // console.log('• ✅ Stable build process');
-    // console.log('\n🚀 Your application is now ready for professional development and deployment!');
-    // console.log('=' .repeat(80));
+    // console.warn('🎉 CONGRATULATIONS!');
+    // console.warn('-' .repeat(40));
+    // console.warn('The Zion App Clone has been significantly improved with:');
+    // console.warn('• ✅ Production-ready logging system');
+    // console.warn('• ✅ Performance optimization infrastructure');
+    // console.warn('• ✅ Enhanced TypeScript type safety');
+    // console.warn('• ✅ Automated code quality tools');
+    // console.warn('• ✅ Stable build process');
+    // console.warn('\n🚀 Your application is now ready for professional development and deployment!');
+    // console.warn('=' .repeat(80));
   }
 }
 

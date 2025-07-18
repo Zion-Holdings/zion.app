@@ -20,7 +20,7 @@ export async function fetchHomeData() {
 }
 
 // Use getStaticProps instead of getServerSideProps for better reliability and caching
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
     await fetchHomeData();
     return { 
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       // Revalidate every 5 minutes in production for fresh content
       revalidate: 300
     };
-  } catch (error) {
+  } catch (_error) {
     console.error('Error in getStaticProps for home page:', error);
     
     // Log to Sentry if available, but don't block the page
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
           const Sentry = await import('@sentry/nextjs');
           Sentry.captureException(error);
         }
-      } catch (sentryError) {
+      } catch (_sentryError) {
         console.warn('Failed to log to Sentry:', sentryError);
       }
     }
@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
         hasError: false, // Don't show error on home page, show fallback content
         timestamp: Date.now()
       },
-      revalidate: 60 // Retry more frequently if there was an error
+      _revalidate: 60 // Retry more frequently if there was an error
     };
   }
 };
@@ -60,7 +60,7 @@ const ErrorTestButton = () => {
   const handleClick = () => {
     try {
       throw new Error("This is a test error from the homepage button!");
-    } catch (error) {
+    } catch (_error) {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
           import('@sentry/nextjs').then((Sentry) => {
@@ -95,7 +95,7 @@ const ErrorTestButton = () => {
   );
 };
 
-const IndexPage: React.FC<HomePageProps> = (props) => {
+const _IndexPage: React.FC<HomePageProps> = (props) => {
   const router = useRouter();
   const showDebug = router.query.debug === 'true';
   const showButton = process.env.NODE_ENV === 'development' || showDebug;

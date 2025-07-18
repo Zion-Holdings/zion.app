@@ -10,7 +10,7 @@ import { safeStorage } from '@/utils/safeStorage';
 import { setCookie } from '@/utils/cookies';
 
 export function LanguageSwitcher() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const { currentLanguage, changeLanguage, supportedLanguages } = useLanguage();
   const availableLanguages =
     supportedLanguages && supportedLanguages.length > 0
@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
 
   const toggleOpen = () => setOpen((o) => !o);
 
-  const selectLanguage = async (lang: SupportedLanguage) => {
+  const selectLanguage = async (_lang: SupportedLanguage) => {
     await changeLanguage(lang);
     setCookie('i18n_lang', lang);
     safeStorage.setItem('i18n_lang', lang);
@@ -61,14 +61,14 @@ export function LanguageSwitcher() {
     }
   }, [open, currentLanguage, availableLanguages]);
 
-  const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleButtonKeyDown = (_e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       toggleOpen();
     }
   };
 
-  const handleListKeyDown = (e: React.KeyboardEvent<HTMLUListElement>) => {
+  const handleListKeyDown = (_e: React.KeyboardEvent<HTMLUListElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setHighlighted((h) => (h + 1) % availableLanguages.length);

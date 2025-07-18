@@ -195,7 +195,7 @@ export class ProductionErrorMonitor {
           timestamp: errorReport.timestamp
         })
       });
-    } catch (webhookError) {
+    } catch (_webhookError) {
       logErrorToProduction('Failed to send error to webhook:', { data: webhookError });
     }
   }
@@ -213,7 +213,7 @@ export const reportError = (error: Error | unknown, context?: Record<string, unk
   errorMonitor.reportError(error, context);
 };
 
-export const setUserId = (userId: string) => {
+export const setUserId = (_userId: string) => {
   errorMonitor.setUserId(userId);
 };
 

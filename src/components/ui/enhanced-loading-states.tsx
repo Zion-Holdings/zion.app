@@ -420,7 +420,7 @@ export const PerformanceIndicator: React.FC<PerformanceIndicatorProps> = ({
   itemCount,
   className
 }) => {
-  const getPerformanceColor = (time: number) => {
+  const getPerformanceColor = (_time: number) => {
     if (time < 100) return 'text-green-500';
     if (time < 300) return 'text-yellow-500';
     return 'text-red-500';

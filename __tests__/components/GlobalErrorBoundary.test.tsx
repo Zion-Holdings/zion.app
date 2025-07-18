@@ -10,7 +10,7 @@ jest.mock('@/utils/logError', () => ({
 }));
 
 // Mocking console.error to keep test output clean
-let consoleErrorMock: jest.SpyInstance;
+let _consoleErrorMock: jest.SpyInstance;
 
 beforeAll(() => {
   consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});

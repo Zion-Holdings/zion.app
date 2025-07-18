@@ -59,7 +59,7 @@ export function IntegrationConnectionModal({ isOpen, onClose, integration }: Int
   
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="_sm:max-w-md">
         <DialogHeader className="flex flex-row items-center gap-4">
           <Image
             src={integration.logoUrl || "/placeholder.svg"}

@@ -79,7 +79,7 @@ describe('Categories Page Component', () => {
     ];
     // Initial render with empty, SWR will update
     mockUseSWR.mockReturnValueOnce({ data: [], error: null, isLoading: true });
-    const { rerender } = render(<Categories categories={[]} />);
+    const { _rerender } = render(<Categories categories={[]} />);
 
     // Simulate SWR update
     mockUseSWR.mockReturnValueOnce({ data: swrCategories, error: null, isLoading: false });

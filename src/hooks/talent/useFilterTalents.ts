@@ -36,7 +36,7 @@ export function useFilterTalents(
     initial.sortOption || 'relevance'
   );
   
-  const toggleSkill = (skill: string) => {
+  const toggleSkill = (_skill: string) => {
     setSelectedSkills(prev => 
       prev.includes(skill) 
         ? prev.filter(s => s !== skill)
@@ -44,7 +44,7 @@ export function useFilterTalents(
     );
   };
   
-  const toggleAvailability = (availability: string) => {
+  const toggleAvailability = (_availability: string) => {
     setSelectedAvailability(prev => 
       prev.includes(availability) 
         ? prev.filter(a => a !== availability)
@@ -52,7 +52,7 @@ export function useFilterTalents(
     );
   };
   
-  const toggleRegion = (region: string) => {
+  const toggleRegion = (_region: string) => {
     setSelectedRegions(prev => 
       prev.includes(region) 
         ? prev.filter(r => r !== region)

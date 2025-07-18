@@ -16,7 +16,7 @@ interface ExportPanelProps {
 }
 
 export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) => {
-  const handleExport = (format: 'json' | 'csv') => {
+  const handleExport = (_format: 'json' | 'csv') => {
     try {
       let content: string;
       let fileName: string;
@@ -55,7 +55,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) 
       URL.revokeObjectURL(url);
       
       toast.success(`Exported ${format.toUpperCase()} file successfully`);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Export failed:', { data: error });
       toast.error(`Failed to export ${format.toUpperCase()} file`);
     }

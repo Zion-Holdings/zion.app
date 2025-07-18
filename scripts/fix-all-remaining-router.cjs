@@ -139,7 +139,7 @@ const patterns = [
 
 function fixFile(filePath) {
   try {
-    console.log(`Processing: ${filePath}`);
+    console.warn(`Processing: ${filePath}`);
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
     
@@ -157,26 +157,26 @@ function fixFile(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.log(`✓ Fixed: ${filePath}`);
+      console.warn(`✓ Fixed: ${filePath}`);
     } else {
-      console.log(`- No changes needed: ${filePath}`);
+      console.warn(`- No changes needed: ${filePath}`);
     }
     
-  } catch (error) {
+  } catch (_error) {
     console.error(`Error processing ${filePath}:`, error.message);
   }
 }
 
 // Process all files
-console.log('Starting React Router to Next.js conversion...\n');
+console.warn('Starting React Router to Next.js conversion...\n');
 
 filesToFix.forEach(filePath => {
   if (fs.existsSync(filePath)) {
     fixFile(filePath);
   } else {
-    console.log(`- File not found: ${filePath}`);
+    console.warn(`- File not found: ${filePath}`);
   }
 });
 
-console.log('\n✓ Conversion complete!');
-console.log('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.'); 
+console.warn('\n✓ Conversion complete!');
+console.warn('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.'); 

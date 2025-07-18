@@ -135,7 +135,7 @@ describe('useSavedTalents', () => {
       supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For initial load of saved IDs
       supabase.in.mockResolvedValueOnce({ data: [talentToToggle], error: null });      // For initial load of talent profiles
 
-      const { result } = renderHook(() => useSavedTalents());
+      const { _result } = renderHook(() => useSavedTalents());
       await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); }); // Initial fetch
 
       const mockDeleteError = new Error('Supabase delete error');
@@ -182,7 +182,7 @@ describe('useSavedTalents', () => {
         supabase.eq.mockResolvedValueOnce({ data: [], error: null });
         // No profiles needed if no IDs, so inFn won't be called for initial load
 
-        const { result } = renderHook(() => useSavedTalents());
+        const { _result } = renderHook(() => useSavedTalents());
         await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); }); // Initial fetch
 
         const mockInsertError = new Error('Supabase insert error');

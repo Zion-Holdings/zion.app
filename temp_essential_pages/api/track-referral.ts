@@ -18,7 +18,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     const data = await response.json().catch(() => ({}));
     return res.status(response.status).json(data);
-  } catch (err) {
+  } catch (_err) {
     console.error('Error calling track-referral function:', err);
     return res.status(500).json({ error: 'Internal server error' });
   }

@@ -52,14 +52,14 @@ const GuidedTour = dynamic(() => import("@/components/onboarding/GuidedTour").th
 const loadNotificationFunctions = () => import("@/utils/notifications");
 
 export default function Dashboard() {
-  const { logout } = useAuth();
+  const { _logout } = useAuth();
   const { user, loading } = useRequireAuth(); // This will handle authentication and redirects
-  const { toast } = useToast();
+  const { _toast } = useToast();
   
   // Add safe checks for user ID to prevent premature API calls
   const userId = user?.id;
   const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId);
-  const { favorites } = useFavorites();
+  const { _favorites } = useFavorites();
 
   // Type assertion to work around Supabase User type limitations - userWithExtendedProps can remain for now if it accesses non-standard props.
   // Standard props like user_metadata should resolve correctly on the original 'user' object.
@@ -92,7 +92,7 @@ export default function Dashboard() {
 
   const handleTestNotification = async () => {
     try {
-      const { createTestNotification } = await loadNotificationFunctions();
+      const { _createTestNotification } = await loadNotificationFunctions();
       // Using type assertion as a workaround for persistent TS error.
       const result = await createTestNotification((user as { id?: string })?.id ?? "");
       if (result.success) {
@@ -158,7 +158,7 @@ export default function Dashboard() {
                     <span className="text-zion-cyan font-medium">65%</span>
                   </div>
                   <div className="w-full bg-zion-blue rounded-full h-2">
-                    <div className="bg-gradient-to-r from-zion-cyan to-zion-purple h-2 rounded-full" style={{ width: "65%" }}></div>
+                    <div className="bg-gradient-to-r from-zion-cyan to-zion-purple h-2 rounded-full" style={{ _width: "65%" }}></div>
                   </div>
                   
                   <div className="flex justify-between items-center">
@@ -193,7 +193,7 @@ export default function Dashboard() {
                       variant="outline"
                       onClick={async () => {
                         try {
-                          const { createOnboardingNotification } = await loadNotificationFunctions();
+                          const { _createOnboardingNotification } = await loadNotificationFunctions();
                           await createOnboardingNotification({
                              userId: user?.id ?? "",
                             missingMilestone: 'profile_completed',
@@ -221,7 +221,7 @@ export default function Dashboard() {
                       variant="outline"
                       onClick={async () => {
                         try {
-                          const { createSystemNotification } = await loadNotificationFunctions();
+                          const { _createSystemNotification } = await loadNotificationFunctions();
                           await createSystemNotification({
                              userId: user?.id ?? "", // Already correct, no assertion was here in the last error log for this specific one
                             title: "New Feature Available!",

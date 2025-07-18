@@ -34,7 +34,7 @@ export default function Fundraising() {
   const [isExporting, setIsExporting] = useState(false);
 
   const handleSectionChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setSections((prev) => ({ ...prev, [name]: value }));

@@ -14,8 +14,8 @@ import { safeStorage } from '@/utils/safeStorage';
 
 export default function RoadmapFeaturePage() {
   const router = useRouter();
-  const { id } = router.query as { id?: string };
-  const { user } = useAuth();
+  const { _id } = router.query as { id?: string };
+  const { _user } = useAuth();
   const [items, setItems] = useState<RoadmapItem[]>(() => {
     const raw = safeStorage.getItem('roadmap_items');
     if (!raw) return ROADMAP_ITEMS;

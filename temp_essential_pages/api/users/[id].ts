@@ -3,7 +3,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { users } from './data';
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query as { id: string | string[] };
+  const { _id } = req.query as { id: string | string[] };
   const user = users[String(id)];
   if (!user) {
     return res.status(404).json({ error: 'User not found' });

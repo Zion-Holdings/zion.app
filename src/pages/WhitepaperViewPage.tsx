@@ -13,13 +13,13 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 // Placeholder for user context/role checking
 // In a real app, this would come from an auth context
 const useAuth = () => {
-    // const { user } = useUserContext(); // Example from a real app
+    // const { _user } = useUserContext(); // Example from a real app
     // return { isAdmin: user?.role === 'admin', isAuthenticated: !!user };
     return { isAdmin: false, isAuthenticated: false }; // Default to non-admin, not authenticated for this example
 };
 
 interface SharedWhitepaper {
-  whitepaper_data: {
+  _whitepaper_data: {
     tokenName: string;
     tokenSupply: string;
     sections: Array<{ id: string; title: string; content: string }>;
@@ -37,7 +37,7 @@ const WhitepaperViewPage: React.FC = () => {
   const [sharedData, setSharedData] = useState<SharedWhitepaper | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { isAdmin } = useAuth(); // Get admin status
+  const { _isAdmin } = useAuth(); // Get admin status
 
   useEffect(() => {
     const fetchWhitepaper = async () => {

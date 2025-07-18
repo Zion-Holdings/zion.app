@@ -14,7 +14,7 @@ const WalletProvider = dynamic(
 );
 
 interface WalletContextWrapperProps {
-  children: ReactNode;
+  _children: ReactNode;
 }
 
 export const WalletContextWrapper: React.FC<WalletContextWrapperProps> = ({ children }) => {

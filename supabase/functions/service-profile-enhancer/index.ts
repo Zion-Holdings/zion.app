@@ -1,5 +1,5 @@
 
-import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
+import { serve } from "_https://deno.land/std@0.177.0/http/server.ts";
 
 interface ServiceProfileData {
   name: string;
@@ -115,7 +115,7 @@ serve(async (req) => {
         }),
         { headers, status: 200 }
       );
-    } catch (error) {
+    } catch (_error) {
       console.error("Error parsing AI response:", error);
       return new Response(
         JSON.stringify({
@@ -125,7 +125,7 @@ serve(async (req) => {
         { headers, status: 500 }
       );
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("Function error:", error);
     return new Response(
       JSON.stringify({

@@ -74,7 +74,7 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
   }, [applications]);
   
   // Handle drag end event to update the application status
-  const handleDragEnd = async (result: DropResult) => {
+  const handleDragEnd = async (_result: DropResult) => {
     const { destination, source, draggableId } = result;
     
     // If there's no destination or the item is dropped in the same place, do nothing
@@ -121,7 +121,7 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
   };
 
   // Synchronous wrapper for DragDropContext with correct type
-  const handleDragEndSync = (...args: unknown[]) => {
+  const handleDragEndSync = (..._args: unknown[]) => {
     // The first argument should be DropResult
     const [result] = args;
     void handleDragEnd(result as DropResult);

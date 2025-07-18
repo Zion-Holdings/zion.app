@@ -19,7 +19,7 @@ interface RetryConfig {
 const defaultRetryConfig: RetryConfig = {
   maxRetries: 2,
   retryDelay: 1000,
-  retryCondition: (error: Error) => {
+  _retryCondition: (error: Error) => {
     // Retry for network errors, but not for configuration errors
     return error.message.includes('fetch') || 
            error.message.includes('network') || 

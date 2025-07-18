@@ -68,7 +68,7 @@ export default function TalentDirectory() {
     toggleSection,
   } = useTalentDirectory(currentPage, itemsPerPage);
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin';
 
   useEffect(() => {
@@ -148,12 +148,12 @@ export default function TalentDirectory() {
     initialized,
   ]); // Fixed dependencies
 
-  const handleRequestHire = (talent: TalentProfile) => {
+  const handleRequestHire = (_talent: TalentProfile) => {
     setSelectedTalent(talent);
     setIsHireModalOpen(true);
   };
 
-  const viewProfile = (id: string) => {
+  const viewProfile = (_id: string) => {
     // Navigate to the talent profile page
     router.push(`/talent/${id}`); // Changed to router.push
   };

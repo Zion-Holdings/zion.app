@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { formatDateForDB, handleResumeError, showSuccessToast } from './useResumeUtils';
 
 export function useCertifications() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -20,7 +20,7 @@ export function useCertifications() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('certifications')
         .insert({
           resume_id: resumeId,
@@ -52,7 +52,7 @@ export function useCertifications() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('certifications')
         .update({
           name: certification.name,
@@ -84,7 +84,7 @@ export function useCertifications() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('certifications')
         .delete()
         .eq('id', certificationId);

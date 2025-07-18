@@ -57,7 +57,7 @@ const ProductListingCardComponent = ({
       ? 'warning'
       : 'success';
     
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
 
   const getPrice = () => {
     if (listing.price === null) return "Custom pricing";
@@ -111,7 +111,7 @@ const ProductListingCardComponent = ({
     setLoading(false);
   };
   
-  const handleRequestQuote = (e: React.MouseEvent) => {
+  const handleRequestQuote = (_e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     
@@ -127,7 +127,7 @@ const ProductListingCardComponent = ({
   return (
     <div
       data-testid="equipment-link"
-      className={`bg-card/70 backdrop-blur-md border border-primary/10 sm:border-primary/20 rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:animate-glowing-border transition-all duration-300`}
+      className={`bg-card/70 backdrop-blur-md border border-primary/10 _sm:border-primary/20 rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:animate-glowing-border transition-all duration-300`}
       onClick={handleViewListing}
       tabIndex={0}
       role="button"
@@ -239,7 +239,7 @@ const ProductListingCardComponent = ({
           <div className="flex gap-2">
             <Button
               size="sm"
-              className="bg-primary hover:bg-primary/80 text-primary-foreground"
+              className="bg-primary _hover:bg-primary/80 text-primary-foreground"
               onClick={(e) => {
                 e.stopPropagation(); // Prevent card click event
                 addToCart();
@@ -262,7 +262,7 @@ const ProductListingCardComponent = ({
             <Button
               size="sm"
               variant="default"
-              className="bg-green-600 hover:bg-green-700 text-white"
+              className="bg-green-600 _hover:bg-green-700 text-white"
               onClick={(e) => {
                 e.stopPropagation(); // Prevent card click event
                 // Add to cart first, then redirect to checkout

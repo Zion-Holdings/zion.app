@@ -63,7 +63,7 @@ serve(async (req) => {
       },
       status: 200,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error:", error.message);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: {

@@ -1,4 +1,4 @@
-const { EventEmitter } = require('events');
+const { _EventEmitter } = require('events');
 // Increase the max listeners limit to avoid MaxListenersExceededWarning
 // during server operations. The default value of 10 is often too low when
 // multiple modules attach listeners. Raising it to 50 ensures we don't hit

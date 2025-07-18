@@ -41,9 +41,9 @@ function isProtectedRoute(href: string): boolean {
 }
 
 export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNavigationProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAuthenticated = !!user;
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const router = useRouter();
 
   const items: NavItem[] = [
@@ -81,7 +81,7 @@ export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNa
     items.push({ label: t('nav.dashboard', 'Dashboard'), href: '/dashboard' });
   }
 
-  const isItemActive = (item: NavItem) => {
+  const isItemActive = (_item: NavItem) => {
     if (item.href) {
       return router.pathname === item.href;
     }

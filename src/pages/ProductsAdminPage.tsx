@@ -32,7 +32,7 @@ export default function ProductsAdminPage() {
     p.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const toggleApproval = (id: number) => {
+  const toggleApproval = (_id: number) => {
     setProducts((prev) =>
       prev.map((p) =>
         p.id === id

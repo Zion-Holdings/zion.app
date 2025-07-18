@@ -24,7 +24,7 @@ async function getJobs(filters = {}) {
   try {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
-  } catch (error) {
+  } catch (_error) {
     // logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error.message });
     throw error;
   }
@@ -35,7 +35,7 @@ async function createJob(jobData) {
   try {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
-  } catch (error) {
+  } catch (_error) {
     // logErrorToProduction('Error creating job:', { data: error.response?.data || error.message });
     throw error;
   }
@@ -46,7 +46,7 @@ async function searchTalent(filters = {}) {
   try {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
-  } catch (error) {
+  } catch (_error) {
     // logErrorToProduction('Error searching talent:', { data: error.response?.data || error.message });
     throw error;
   }
@@ -76,7 +76,7 @@ async function main() {
     // Search for talent with React skills
     const talent = await searchTalent({ skills: 'React', limit: 10 });
     // logInfo('Talent:', { data: talent });
-  } catch (error) {
+  } catch (_error) {
     // logErrorToProduction('Something went wrong:', { data: error });
   }
 }
@@ -235,7 +235,7 @@ async function main() {
     // Search for talent with Node.js skills
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
     // logInfo('Talent:', { data: talent });
-  } catch (error) {
+  } catch (_error) {
     // logErrorToProduction('Something went wrong:', { data: error });
   }
 }

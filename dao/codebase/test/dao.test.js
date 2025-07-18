@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const { _expect } = require("chai");
+const { _ethers } = require("hardhat");
 
 describe("ZionDAO", function () {
   it("should create proposal and vote", async function () {

@@ -9,7 +9,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end();
   }
 
-  const { email } = req['body'] as { email?: string };
+  const { _email } = req['body'] as { email?: string };
   if (!email) {
     return res.status(400).json({ message: 'Email is required' });
   }
@@ -23,7 +23,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     ENV_CONFIG.supabase.serviceRoleKey || ENV_CONFIG.supabase.anonKey
   );
 
-  const { error } = await supabase.auth.resend({ type: 'signup', email });
+  const { _error } = await supabase.auth.resend({ type: 'signup', email });
   if (error) {
     return res
       .status(error.status || 500)

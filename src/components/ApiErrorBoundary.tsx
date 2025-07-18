@@ -122,7 +122,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
           isRetrying: false,
         });
       }, 500);
-    } catch (retryError) {
+    } catch (_retryError) {
       logErrorToProduction('Retry failed:', { data: retryError });
       if (typeof window === 'undefined') {
         const Sentry = (await import('@sentry/nextjs')).default;
@@ -231,7 +231,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
 
 // Hook for accessing query client in function components
 export const useApiErrorHandler = () => {
-  const handleApiError = (error: Error) => {
+  const handleApiError = (_error: Error) => {
     if (typeof window === 'undefined') {
       import('@sentry/nextjs').then(mod => {
         const Sentry = mod.default;

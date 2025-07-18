@@ -15,7 +15,7 @@ export const React19Optimizations = {
   /**
    * Enhanced memoization helpers using React 19 improvements
    */
-  optimizedMemoComponent: <T extends React.ComponentType<unknown>>(Component: T) => {
+  _optimizedMemoComponent: <T extends React.ComponentType<unknown>>(Component: T) => {
     return memo(Component, (prevProps: Record<string, unknown>, nextProps: Record<string, unknown>) => {
       // Use React 19's improved shallow comparison
       return Object.keys(prevProps).every(
@@ -29,7 +29,7 @@ export const React19Optimizations = {
    */
   createOptimizedCallback: <T extends (...args: unknown[]) => unknown>(
     callback: T,
-    deps: React.DependencyList
+    _deps: React.DependencyList
   ) => {
     return useCallback(callback, deps);
   },
@@ -64,7 +64,7 @@ export const React19Optimizations = {
   /**
    * Enhanced error boundary pattern for React 19
    */
-  createErrorBoundary: (fallback: React.ComponentType<{ error: Error }>) => {
+  _createErrorBoundary: (fallback: React.ComponentType<{ error: Error }>) => {
     return class React19ErrorBoundary extends React.Component<
       { children: React.ReactNode },
       { hasError: boolean; error?: Error }
@@ -95,7 +95,7 @@ export const React19Optimizations = {
   /**
    * Check if React 19 features are available
    */
-  isReact19: () => {
+  _isReact19: () => {
     try {
       // Check for React 19 specific features
       return typeof startTransition === 'function' && 
@@ -108,7 +108,7 @@ export const React19Optimizations = {
   /**
    * Enable React 19 strict mode optimizations
    */
-  enableStrictModeOptimizations: () => {
+  _enableStrictModeOptimizations: () => {
     if (process.env.NODE_ENV === 'development') {
       // logInfo('React 19 Strict Mode optimizations enabled');
     }
