@@ -203,20 +203,11 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
   },
   webpack: (config, { isServer, dev }) => {
-    // Simplified webpack configuration to avoid Watchpack issues
-    if (dev) {
-      // Use polling instead of file watching to avoid path issues
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-        ignored: [
-          '**/node_modules/**',
-          '**/.git/**',
-          '**/logs/**',
-          '**/dist/**',
-          '**/build/**',
-          '**/.next/**',
-        ],
+    // Fix webpack cache configuration to prevent conflicts
+    if (config.cache) {
+      config.cache = {
+        type: 'memory', // Use memory cache to avoid filesystem issues
+        maxGenerations: dev ? 1 : 10,
       };
     }
 
@@ -236,6 +227,35 @@ const nextConfig = {
       net: false,
       tls: false,
     };
+
+    // Fix Watchpack path resolution issues by using polling instead of file watching
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/logs/**',
+          '**/dist/**',
+          '**/build/**',
+          '**/.next/**',
+        ],
+      };
+      
+      // Fix path resolution issues
+      config.resolve.modules = [
+        'node_modules',
+        path.resolve(__dirname, 'src'),
+        path.resolve(__dirname, 'pages'),
+        path.resolve(__dirname, 'components'),
+      ];
+    }
+
+    // Remove usedExports to prevent conflicts
+    if (config.optimization && config.optimization.usedExports) {
+      delete config.optimization.usedExports;
+    }
 
     return config;
   },

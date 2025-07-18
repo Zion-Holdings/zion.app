@@ -11,13 +11,7 @@ interface ErrorMonitoringResponse {
   timestamp: string;
 }
 
-async function handleGet(
-  req: NextApiRequest,
-  res: NextApiResponse<ErrorMonitoringResponse>,
-  action: string
-) {
-  const timestamp = new Date().toISOString();
-
+async function handleGet(req: NextApiRequest, res: NextApiResponse, action: string) {
   try {
     switch (action) {
       case 'errors':
@@ -25,86 +19,63 @@ async function handleGet(
         res.status(200).json({
           success: true,
           data: errors,
-          timestamp
+          timestamp: new Date().toISOString()
         });
         break;
-
       case 'health':
         const health = await systemHealthMonitor.getStatus();
         res.status(200).json({
           success: true,
           data: health,
-          timestamp
+          timestamp: new Date().toISOString()
         });
         break;
-
-      case 'logs':
-        const logs = await logDashboard.getRecentLogs();
-        res.status(200).json({
-          success: true,
-          data: logs,
-          timestamp
-        });
-        break;
-
       default:
         res.status(400).json({
           success: false,
           error: 'Invalid action',
-          timestamp
+          timestamp: new Date().toISOString()
         });
     }
   } catch (error) {
-    logErrorToProduction('Error in GET error monitoring:', error);
+    logErrorToProduction('Error in GET error-monitoring:', error);
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp
+      timestamp: new Date().toISOString()
     });
   }
 }
 
-async function handlePost(
-  req: NextApiRequest,
-  res: NextApiResponse<ErrorMonitoringResponse>,
-  action: string
-) {
-  const timestamp = new Date().toISOString();
-
+async function handlePost(req: NextApiRequest, res: NextApiResponse, action: string) {
   try {
     switch (action) {
-      case 'clear-errors':
+      case 'clear':
         await enhancedErrorCollector.clearErrors();
         res.status(200).json({
           success: true,
-          message: 'Errors cleared successfully',
-          timestamp
+          message: 'Errors cleared',
+          timestamp: new Date().toISOString()
         });
         break;
-
       default:
         res.status(400).json({
           success: false,
           error: 'Invalid action',
-          timestamp
+          timestamp: new Date().toISOString()
         });
     }
   } catch (error) {
-    logErrorToProduction('Error in POST error monitoring:', error);
+    logErrorToProduction('Error in POST error-monitoring:', error);
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp
+      timestamp: new Date().toISOString()
     });
   }
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ErrorMonitoringResponse>
-) {
-  const timestamp = new Date().toISOString();
-
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ErrorMonitoringResponse>) {
   try {
     const { method, query } = req;
     const action = (query as Record<string, unknown>).action as string;
@@ -124,7 +95,7 @@ export default async function handler(
         res.status(405).json({
           success: false,
           error: 'Method not allowed',
-          timestamp
+          timestamp: new Date().toISOString()
         });
     }
   } catch (error) {
@@ -132,7 +103,7 @@ export default async function handler(
     res.status(500).json({
       success: false,
       error: 'Internal server error',
-      timestamp
+      timestamp: new Date().toISOString()
     });
   }
 }
