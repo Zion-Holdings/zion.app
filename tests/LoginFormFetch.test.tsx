@@ -3,7 +3,6 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { LoginForm } from '@/components/auth/login';
 import * as authService from '@/services/authService';
-import * as authHook from '@/hooks/useAuth';
 
 // Use the real loginUser but spy on it
 vi.spyOn(authService, 'loginUser');

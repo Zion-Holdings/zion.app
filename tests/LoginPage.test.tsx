@@ -17,43 +17,10 @@
 
 describe('Login Page Rendering with Unavailable Wallet', () => {
   it('should render the core login form when WalletContext indicates an unavailable wallet system', () => {
-    const mockAuthContextValue = {
-      isAuthenticated: false,
-      isLoading: false,
-      user: null,
-      login: jest.fn().mockResolvedValue({ error: null }),
-      signup: jest.fn().mockResolvedValue({ error: null, emailVerificationRequired: false }),
-      logout: jest.fn().mockResolvedValue(undefined),
-      resetPassword: jest.fn().mockResolvedValue({ error: null }),
-      updateProfile: jest.fn().mockResolvedValue({ error: null }),
-      loginWithGoogle: jest.fn(),
-      loginWithFacebook: jest.fn(),
-      loginWithTwitter: jest.fn(),
-      loginWithWeb3: jest.fn().mockResolvedValue(undefined),
-      setUser: jest.fn(),
-      onboardingStep: 0,
-      tokens: null,
-      avatarUrl: null,
-      setAvatarUrl: jest.fn(),
-    };
-
-    const mockWalletContextValue = {
-      isWalletSystemAvailable: false,
-      appKit: null,
-      connectWallet: jest.fn(),
-      disconnectWallet: jest.fn(),
-      address: null,
-      provider: null,
-      signer: null,
-      chainId: null,
-      isConnected: false,
-      displayAddress: null,
-    };
-
     // render(
     //   <MemoryRouter initialEntries={['/login']}>
-    //     <AuthContext.Provider value={mockAuthContextValue}>
-    //       <WalletContext.Provider value={mockWalletContextValue}>
+    //     <AuthContext.Provider value={_mockAuthContextValue}>
+    //       <WalletContext.Provider value={_mockWalletContextValue}>
     //         <LoginPage />
     //       </WalletContext.Provider>
     //     </AuthContext.Provider>

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { LoginForm } from '@/components/auth/login';
 import * as authService from '@/services/authService';
 import * as authHook from '@/hooks/useAuth';
