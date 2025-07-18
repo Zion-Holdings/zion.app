@@ -6,7 +6,7 @@ import { captureException } from '@/utils/sentry';
 import { useTranslation } from 'react-i18next';
 
 export default function Custom403() {
-  const { _user } = useAuth();
+  const { user } = useAuth();
   const { t } = useTranslation();
 
   useEffect(() => {
