@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs').promises;
-const _path = require('path');
+const path = require('path');
 const axios = require('axios');
 const { _performance } = require('perf_hooks');
 

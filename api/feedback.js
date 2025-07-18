@@ -1,6 +1,6 @@
 const { _withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
-const _path = require('path');
+const path = require('path');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {

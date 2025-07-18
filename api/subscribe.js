@@ -1,5 +1,5 @@
 const fs = require('fs');
-const _path = require('path');
+const path = require('path');
 
 const FILE_PATH = path.join(process.cwd(), 'data', 'newsletter-subscriptions.json');
 

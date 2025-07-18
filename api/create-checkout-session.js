@@ -73,7 +73,7 @@ async function handler(req, res) {
 
     // Save order with pending status
     const fs = await import('fs');
-    const _path = await import('path');
+    const path = await import('path');
     const file = path.join(process.cwd(), 'data', 'orders.json');
     let orders = [];
     try {
