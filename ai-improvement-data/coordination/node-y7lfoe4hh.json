@@ -1,5 +1,5 @@
 {
-  "id": "node-kstepgmge",
+  "id": "node-y7lfoe4hh",
   "isMaster": false,
   "capabilities": [
     "code_analysis",
@@ -11,8 +11,8 @@
     "MEMORY_GB": 64,
     "DISK_GB": 100
   },
-  "status": "running",
-  "lastHeartbeat": 1752829622025,
+  "status": "initializing",
+  "lastHeartbeat": 1752829601315,
   "tasks": [],
   "improvements": []
 }

@@ -1,5 +1,5 @@
 {
-  "id": "node-kstepgmge",
+  "id": "node-kb3z152dr",
   "isMaster": false,
   "capabilities": [
     "code_analysis",
@@ -11,8 +11,8 @@
     "MEMORY_GB": 64,
     "DISK_GB": 100
   },
-  "status": "running",
-  "lastHeartbeat": 1752829622025,
+  "status": "initializing",
+  "lastHeartbeat": 1752829596825,
   "tasks": [],
   "improvements": []
 }
