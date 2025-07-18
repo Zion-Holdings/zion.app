@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';'
 import { Clock, Award, Zap } from '@/components/ui/icons';
 ;
 import {;
@@ -6,61 +6,61 @@ import {;
   CardContent,;
   CardHeader,;
   CardTitle,;
-  CardDescription,;
+  CardDescription,;'
 } from '@/components/ui/card';
 ;
-const features = [;
-  {;
-    icon: <Brain className="h-10 w-10 text-zion-cyan" />,;
+const features: unknown unknown = [;
+  {;'
+    icon: <Brain className="h-10 w-10 text-zion-cyan" />,;"
     title: 'AI Talent Matching',;
-    description:;
+    description:;'
       'Our AI algorithm matches you with the perfect talent or job based on your skills and requirements.',;
   },;
-  {;
-    icon: <Clock className="h-10 w-10 text-zion-cyan" />,;
+  {;'
+    icon: <Clock className="h-10 w-10 text-zion-cyan" />,;"
     title: '1-Click Hiring',;
-    description:;
+    description:;'
       'Streamlined hiring process that lets you connect with talent instantly with just one click.',;
   },;
-  {;
-    icon: <Award className="h-10 w-10 text-zion-cyan" />,;
+  {;'
+    icon: <Award className="h-10 w-10 text-zion-cyan" />,;"
     title: 'Resume Builder',;
-    description:;
+    description:;'
       'Create professional, AI-enhanced resumes that highlight your skills and increase your chances of getting hired.',;
   },;
-  {;
-    icon: <Zap className="h-10 w-10 text-zion-cyan" />,;
+  {;'
+    icon: <Zap className="h-10 w-10 text-zion-cyan" />,;"
     title: 'Real-time Notifications',;
-    description:;
+    description:;'
       'Get instant alerts about new job opportunities, messages, and hiring requests.',;
   },;
 ];
 ;
-// export const _AppFeatures: React.FC = () => {;
-  return (;
-    <section className="py-16 bg-zion-blue">;
-      <div className="container mx-auto px-4">;
-        <div className="text-center mb-12">;
+// export const _AppFeatures: unknown React.FC = () => {;
+  return (;'
+    <section className="py-16 bg-zion-blue">;"
+      <div className="container mx-auto px-4">;"
+        <div className="text-center mb-12">;"
           <h2 className="text-3xl md:text-4xl font-bold mb-4">;
             Powerful Features;
-          </h2>;
+          </h2>;"
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">;
             Everything you love about Zion, now in your pocket. Our mobile app;
             brings all the powerful features you need to succeed.;
           </p>;
         </div>;
-
+;"
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">;
           {features.map((feature, index) => (;
             <Card;
-              key={index};
+              key={index};"
               className="bg-zion-blue-dark border-zion-purple/30 hover:border-zion-cyan transition-colors duration-300";
             >;
-              <CardHeader>;
-                <div className="mb-4">{feature.icon}</div>;
+              <CardHeader>;"
+                <div className="mb-4">{feature.icon}</div>;"
                 <CardTitle className="text-white">{feature.title}</CardTitle>;
               </CardHeader>;
-              <CardContent>;
+              <CardContent>;"
                 <CardDescription className="text-gray-300">;
                   {feature.description};
                 </CardDescription>;
@@ -72,3 +72,4 @@ const features = [;
     </section>;
   );
 };
+"

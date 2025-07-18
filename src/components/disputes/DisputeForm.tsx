@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { FileText } from '@/components/ui/icons';
-import { useForm } from 'react-hook-form';
-import type { ControllerRenderProps } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';'
+import { FileText } from '@/components/ui/icons';'
+import { useForm } from 'react-hook-form';'
+import type { ControllerRenderProps } from 'react-hook-form';'
+import { zodResolver } from '@hookform/resolvers/zod';'
+import { z } from 'zod';'
+import { Button } from '@/components/ui/button';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 import {;
@@ -13,28 +13,28 @@ import {;
   FormField,;
   FormItem,;
   FormLabel,;
-  FormMessage,;
-} from '@/components/ui/form';
+  FormMessage,;'
+} from '@/components/ui/form';'
 import { Textarea } from '@/components/ui/textarea';
 import {;
   Select,;
   SelectContent,;
   SelectItem,;
   SelectTrigger,;
-  SelectValue,;
-} from '@/components/ui/select';
-import { Input } from '@/components/ui/input';
-import { disputeReasonLabels } from '@/types/disputes';
-import { useDisputes } from '@/hooks/useDisputes';
+  SelectValue,;'
+} from '@/components/ui/select';'
+import { Input } from '@/components/ui/input';'
+import { disputeReasonLabels } from '@/types/disputes';'
+import { useDisputes } from '@/hooks/useDisputes';'
 import { toast } from 'sonner';
 ;
-const formSchema = z.object({;
+const formSchema: unknown unknown = z.object({;
   reason_code: z;
-    .string();
+    .string();'
     .min(1, { message: 'Please select a reason for the dispute' }),;
   description: z;
-    .string();
-    .min(20, { message: 'Description must be at least 20 characters' }),;
+    .string();'
+    .min(20, { message: 'Description must be at least 20 characters' }),;'
   attachments: "z.array(z.unknown()).optional()",;
 });
 ;
@@ -45,7 +45,7 @@ type DisputeFormProps = {;
   onCancel?: () => void;
 };
 ;
-export function DisputeForm({;
+export function DisputeForm(): unknown {{;
   projectId,;
   milestoneId,;
   onDisputeCreated,;
@@ -55,38 +55,38 @@ export function DisputeForm({;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
 ;
-  const form = useForm<z.infer<typeof formSchema>>({;
-    resolver: "zodResolver(formSchema)",;
-    defaultValues: "{;",
-      reason_code: '',;
-      description: '',;
+  const form: unknown unknown = useForm<z.infer<typeof formSchema>>({;"
+    resolver: "zodResolver(formSchema)",;"
+    defaultValues: "{;",;"
+      reason_code: '',;'
+      description: '',;'
       attachments: "[]",;
     },;
   });
 ;
-  const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+  const handleFileChange: unknown unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     if (e.target.files) {;
-      const newFiles = Array.from(e.target.files);
-      setFiles((prev) => [...prev, ...newFiles]);
+      const newFiles: unknown unknown = Array.from(e.target.files);
+      setFiles((prev) => [...prev, ...newFiles]);"
       form.setValue('attachments', [...files, ...newFiles]);
     };
   };
 ;
-  const removeFile = (_index: number) => {;
-    const newFiles = [...files];
+  const removeFile: unknown unknown = (_index: number) => {;
+    const newFiles: unknown unknown = [...files];
     newFiles.splice(index, 1);
-    setFiles(newFiles);
+    setFiles(newFiles);'
     form.setValue('attachments', newFiles);
   };
 ;
-  async function onSubmit(values: z.infer<typeof formSchema>) {;
+  async function onSubmit(): unknown {values: z.infer<typeof formSchema>) {;
     try {;
       setIsSubmitting(true);
 ;
-      const dispute = await createDispute({;
-        project_id: "projectId",;
-        ...(milestoneId ? { milestone_id: "milestoneId "} : {}),;
-        reason_code: "values.reason_code",;
+      const dispute: unknown unknown = await createDispute({;'
+        project_id: "projectId",;"
+        ...(milestoneId ? { milestone_id: "milestoneId "} catch (error) {}: {}),;"
+        reason_code: "values.reason_code",;"
         description: "values.description",;
       });
 ;
@@ -96,38 +96,38 @@ export function DisputeForm({;
         if (files.length > 0) {;
           // logInfo(`Would upload ${files.length} files for dispute ${dispute.id}`);
         };
-
+;"
         toast.success('Your dispute has been submitted');
 ;
         if (onDisputeCreated) {;
           onDisputeCreated(dispute.id);
         };
       };
-    } catch {;
-      logErrorToProduction('Error submitting dispute:', { data: "error "});
+    } catch {;'
+      logErrorToProduction('Error submitting dispute:', { data: "error "});"
       toast.error('Failed to submit dispute. Please try again.');
     } finally {;
       setIsSubmitting(false);
     };
   };
-
-  return (;
-    <div className="space-y-6">;
-      <div className="flex items-center space-x-2">;
-        <FileText className="h-5 w-5 text-primary" />;
+;
+  return (;'
+    <div className="space-y-6">;"
+      <div className="flex items-center space-x-2">;"
+        <FileText className="h-5 w-5 text-primary" />;"
         <h2 className="text-xl font-semibold">Report an Issue</h2>;
       </div>;
-
-      <Form {...form}>;
+;
+      <Form {...form}>;"
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">;
           <FormField;
-            control={form.control};
+            control={form.control};"
             name="reason_code";
             render={({;
               field,;
             }: {;
               field: ControllerRenderProps<;
-                z.infer<typeof formSchema>,;
+                z.infer<typeof formSchema>,;"
                 'reason_code';
               >;
             }) => (;
@@ -138,7 +138,7 @@ export function DisputeForm({;
                   defaultValue={field.value};
                 >;
                   <FormControl>;
-                    <SelectTrigger>;
+                    <SelectTrigger>;'
                       <SelectValue placeholder="Select a reason" />;
                     </SelectTrigger>;
                   </FormControl>;
@@ -156,23 +156,23 @@ export function DisputeForm({;
               </FormItem>;
             )};
           />;
-
+;
           <FormField;
-            control={form.control};
+            control={form.control};"
             name="description";
             render={({;
               field,;
             }: {;
               field: ControllerRenderProps<;
-                z.infer<typeof formSchema>,;
+                z.infer<typeof formSchema>,;"
                 'description';
               >;
             }) => (;
               <FormItem>;
                 <FormLabel>Describe the issue in detail</FormLabel>;
                 <FormControl>;
-                  <Textarea;
-                    placeholder="Please provide specific details about the issue...";
+                  <Textarea;'
+                    placeholder="Please provide specific details about the issue...";"
                     className="min-h-[150px]";
                     {...field};
                   />;
@@ -181,33 +181,33 @@ export function DisputeForm({;
               </FormItem>;
             )};
           />;
-
+;
           <FormItem>;
             <FormLabel>Attachments (optional)</FormLabel>;
-            <FormControl>;
+            <FormControl>;"
               <div className="space-y-4">;
-                <Input;
+                <Input;"
                   type="file";
                   multiple;
-                  onChange={handleFileChange};
+                  onChange={handleFileChange};"
                   className="cursor-pointer";
                 />;
-
-                {files.length > 0 && (;
-                  <div className="space-y-2">;
-                    <p className="text-sm font-medium">Selected files:</p>;
+;
+                {files.length > 0 && (;"
+                  <div className="space-y-2">;"
+                    <p className="text-sm font-medium">Selected files:</p>;"
                     <ul className="space-y-1">;
                       {files.map((file, index) => (;
                         <li;
-                          key={index};
+                          key={index};"
                           className="flex items-center justify-between text-sm bg-muted/30 p-2 rounded";
                         >;
                           <span>;
                             {file.name} ({(file.size / 1024).toFixed(1)} KB);
                           </span>;
-                          <Button;
-                            type="button";
-                            variant="ghost";
+                          <Button;"
+                            type="button";"
+                            variant="ghost";"
                             size="sm";
                             onClick={() => removeFile(index)};
                           >;
@@ -222,14 +222,14 @@ export function DisputeForm({;
             </FormControl>;
             <FormMessage />;
           </FormItem>;
-
+;"
           <div className="flex justify-end space-x-2">;
-            {onCancel && (;
+            {onCancel && (;"
               <Button type="button" variant="outline" onClick={onCancel}>;
                 Cancel;
               </Button>;
-            )};
-            <Button type="submit" disabled={isSubmitting}>;
+            )};"
+            <Button type="submit" disabled={isSubmitting}>;"
               {isSubmitting ? 'Submitting...' : 'Submit Dispute'};
             </Button>;
           </div>;
@@ -238,3 +238,4 @@ export function DisputeForm({;
     </div>;
   );
 };
+'

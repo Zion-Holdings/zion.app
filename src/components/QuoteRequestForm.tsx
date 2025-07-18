@@ -1,146 +1,146 @@
-import { useState } from 'react';
-import { Loader2, Sparkles } from 'lucide-react';
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
-import { useToast } from '@/hooks/use-toast';
-import { useRouter } from 'next/router';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { GradientHeading } from '@/components/GradientHeading';
-import { StepProgress } from '@/components/QuoteRequestForm/StepProgress';
-import { ServiceTypeStep } from '@/components/QuoteRequestForm/ServiceTypeStep';
-import { ProjectDetailsStep } from '@/components/QuoteRequestForm/ProjectDetailsStep';
-import { TimelineStep } from '@/components/QuoteRequestForm/TimelineStep';
-import { BudgetStep } from '@/components/QuoteRequestForm/BudgetStep';
-import { SummaryStep } from '@/components/QuoteRequestForm/SummaryStep';
-import { AutoFillModal } from '@/components/QuoteRequestForm/AutoFillModal';
+import { useState } from 'react';'
+import { Loader2, Sparkles } from 'lucide-react';'
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';'
+import { useToast } from '@/hooks/use-toast';'
+import { useRouter } from 'next/router';'
+import { Button } from '@/components/ui/button';'
+import { Card, CardContent } from '@/components/ui/card';'
+import { GradientHeading } from '@/components/GradientHeading';'
+import { StepProgress } from '@/components/QuoteRequestForm/StepProgress';'
+import { ServiceTypeStep } from '@/components/QuoteRequestForm/ServiceTypeStep';'
+import { ProjectDetailsStep } from '@/components/QuoteRequestForm/ProjectDetailsStep';'
+import { TimelineStep } from '@/components/QuoteRequestForm/TimelineStep';'
+import { BudgetStep } from '@/components/QuoteRequestForm/BudgetStep';'
+import { SummaryStep } from '@/components/QuoteRequestForm/SummaryStep';'
+import { AutoFillModal } from '@/components/QuoteRequestForm/AutoFillModal';'
 import type { QuoteFormData } from '@/types/quotes';
-;
+;'
 import { z } from 'zod';
 ;
-export type QuoteRequestSteps =;
-  | 'service';
-  | 'details';
-  | 'timeline';
-  | 'budget';
+export type QuoteRequestSteps =;'
+  | 'service';'
+  | 'details';'
+  | 'timeline';'
+  | 'budget';'
   | 'summary';
 ;
-const serviceStepSchema = z.object({;
-  serviceType: "z.string().min(1)",;
+const serviceStepSchema: unknown unknown = z.object({;'
+  serviceType: "z.string().min(1)",;"
   specificItem: "z.object({ id: z.string() "}),;
 });
 ;
-export function QuoteRequestForm() {;
-  const router = useRouter();
-  const { _toast } = useToast();
+export function QuoteRequestForm(): unknown {) {;
+  const router: unknown unknown = useRouter();
+  const { _toast } = useToast();"
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>('service');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [autoFillLoading, setAutoFillLoading] = useState(false);
   const [autoFillOpen, setAutoFillOpen] = useState(false);
 ;
-  const [formData, setFormData] = useState<QuoteFormData>({;
-    serviceType: '',;
-    serviceCategory: '',;
-    specificItem: "null",;
-    projectName: '',;
-    projectDescription: '',;
-    startDate: "undefined",;
-    endDate: "undefined",;
-    timeline: 'flexible',;
-    budget: "{;",
-      amount: "0",;
+  const [formData, setFormData] = useState<QuoteFormData>({;'
+    serviceType: '',;'
+    serviceCategory: '',;'
+    specificItem: "null",;"
+    projectName: '',;'
+    projectDescription: '',;'
+    startDate: "undefined",;"
+    endDate: "undefined",;"
+    timeline: 'flexible',;'
+    budget: "{;",;"
+      amount: "0",;"
       type: 'fixed',;
-    },;
-    contactInfo: "{;",
-      name: '',;
-      email: '',;
-      phone: '',;
+    },;'
+    contactInfo: "{;",;"
+      name: '',;'
+      email: '',;'
+      phone: '',;'
       company: '',;
     },;
   });
 ;
-  const updateFormData = (_data: Partial<QuoteFormData>) => {;
+  const updateFormData: unknown unknown = (_data: Partial<QuoteFormData>) => {;
     setFormData((prev) => ({;
       ...prev,;
       ...data,;
     }));
   };
 ;
-  const handleNext = () => {;
-    switch (currentStep) {;
+  const handleNext: unknown unknown = () => {;
+    switch (currentStep) {;'
       case 'service': {;
-        const result = serviceStepSchema.safeParse({;
-          serviceType: "formData.serviceType",;
+        const result: unknown unknown = serviceStepSchema.safeParse({;'
+          serviceType: "formData.serviceType",;"
           specificItem: "formData.specificItem",;
         });
         if (!result.success) {;
-          toast({;
-            title: 'Service Required',;
-            description: 'Please select a service before continuing.',;
+          toast({;"
+            title: 'Service Required',;'
+            description: 'Please select a service before continuing.',;'
             variant: 'destructive',;
           });
           return;
-        };
+        };'
         setCurrentStep('details');
         break;
-      };
-      case 'details':;
+      };'
+      case 'details':;'
         setCurrentStep('timeline');
-        break;
-      case 'timeline':;
+        break;'
+      case 'timeline':;'
         setCurrentStep('budget');
-        break;
-      case 'budget':;
+        break;'
+      case 'budget':;'
         setCurrentStep('summary');
         break;
         break;
     };
   };
 ;
-  const handleBack = () => {;
-    switch (currentStep) {;
-      case 'details':;
+  const handleBack: unknown unknown = () => {;
+    switch (currentStep) {;'
+      case 'details':;'
         setCurrentStep('service');
-        break;
-      case 'timeline':;
+        break;'
+      case 'timeline':;'
         setCurrentStep('details');
-        break;
-      case 'budget':;
+        break;'
+      case 'budget':;'
         setCurrentStep('timeline');
-        break;
-      case 'summary':;
+        break;'
+      case 'summary':;'
         setCurrentStep('budget');
         break;
         break;
     };
   };
 ;
-  const handleSubmit = async () => {;
+  const handleSubmit: unknown unknown = async () => {;
     setIsSubmitting(true);
 ;
     try {;
-      // In a real application, you would send the data to your backend;
-      logDebug('Submitting form data:', { data: "{ data: formData "} });
+      // In a real application, you would send the data to your backend;'
+      logDebug('Submitting form data:', { data: "{ data: formData "} catch (error) {}});
 ;
       // Simulate API call;
       await new Promise((resolve) => setTimeout(resolve, 1500));
 ;
-      toast({;
+      toast({;"
         title: 'Quote Request Submitted',;
-        description:;
+        description:;'
           "We've received your request and will get back to you soon.",;
       });
 ;
-      // Redirect to confirmation page or homepage;
+      // Redirect to confirmation page or homepage;"
       router.push('/');
-    } catch {;
-      logErrorToProduction('Submission Failed', error as Error, {;
-        component: 'QuoteRequestForm',;
+    } catch {;'
+      logErrorToProduction('Submission Failed', error as Error, {;'
+        component: 'QuoteRequestForm',;'
         projectDescription: "formData.projectDescription",;
       });
-      toast({;
+      toast({;"
         title: 'Submission Failed',;
-        description:;
-          'There was an error submitting your request. Please try again.',;
+        description:;'
+          'There was an error submitting your request. Please try again.',;'
         variant: 'destructive',;
       });
     } finally {;
@@ -148,36 +148,36 @@ export function QuoteRequestForm() {;
     };
   };
 ;
-  const handleAutoFill = async (_description: string) => {;
+  const handleAutoFill: unknown unknown = async (_description: string) => {;
     setAutoFillLoading(true);
-    try {;
-      const res = await fetch('/api/openai/match', {;
-        method: 'POST',;
-        headers: { 'Content-Type': 'application/json' },;
+    try {;'
+      const res: unknown unknown = await fetch('/api/openai/match', {;'
+        method: 'POST',;'
+        headers: { 'Content-Type': 'application/json' } catch (error) {},;'
         body: "JSON.stringify({ projectDescription: description "}),;
-      });
+      });"
       if (!res.ok) throw new Error('Request failed');
       const { category, itemId, timeline, budget } = await res.json();
-      updateFormData({;
-        projectDescription: "description",;
-        serviceType: "category",;
+      updateFormData({;'
+        projectDescription: "description",;"
+        serviceType: "category",;"
         serviceCategory: "category",;
-        specificItem: itemId;
+        specificItem: itemId;"
           ? { id: "itemId", title: 'AI Selected Item', category };
-          : formData.specificItem,;
-        timeline: "timeline || formData.timeline",;
+          : formData.specificItem,;'
+        timeline: "timeline || formData.timeline",;"
         budget: "{ ...formData.budget", ...(budget || {}) },;
-      });
+      });"
       setCurrentStep('summary');
       setAutoFillOpen(false);
-    } catch {;
-      logErrorToProduction('Auto-fill API erroror', error as Error, {;
-        component: 'QuoteRequestForm',;
+    } catch {;'
+      logErrorToProduction('Auto-fill API erroror', error as Error, {;'
+        component: 'QuoteRequestForm',;'
         projectDescription: "description",;
       });
-      toast({;
-        title: 'Auto-fill Failed',;
-        description: "We couldn't process your request. Please try again.",;
+      toast({;"
+        title: 'Auto-fill Failed',;'
+        description: "We couldn't process your request. Please try again.",;"
         variant: 'destructive',;
       });
     } finally {;
@@ -185,30 +185,30 @@ export function QuoteRequestForm() {;
     };
   };
 ;
-  const renderStepContent = () => {;
-    switch (currentStep) {;
+  const renderStepContent: unknown unknown = () => {;
+    switch (currentStep) {;'
       case 'service':;
         return (;
           <ServiceTypeStep;
             formData={formData};
             updateFormData={updateFormData};
           />;
-        );
+        );'
       case 'details':;
         return (;
           <ProjectDetailsStep;
             formData={formData};
             updateFormData={updateFormData};
           />;
-        );
+        );'
       case 'timeline':;
         return (;
           <TimelineStep formData={formData} updateFormData={updateFormData} />;
-        );
+        );'
       case 'budget':;
         return (;
           <BudgetStep formData={formData} updateFormData={updateFormData} />;
-        );
+        );'
       case 'summary':;
         return (;
           <SummaryStep formData={formData} updateFormData={updateFormData} />;
@@ -218,52 +218,52 @@ export function QuoteRequestForm() {;
     };
   };
 ;
-  return (;
-    <div className="container mx-auto px-4 py-12">;
-      <div className="max-w-3xl mx-auto">;
+  return (;'
+    <div className="container mx-auto px-4 py-12">;"
+      <div className="max-w-3xl mx-auto">;"
         <div className="text-center mb-8 space-y-3">;
-          <GradientHeading>Request a Quote</GradientHeading>;
-          <p className="text-zion-slate-light mt-4">;
+          <GradientHeading>Request a Quote</GradientHeading>;"
+          <p className="text-zion-slate-light mt-4">;"
             Tell us about your project and we'll create a customized quote for;
             you;
-          </p>;
-          <div className="inline-flex items-center bg-zion-blue-dark py-1 px-3 rounded-full mt-3 border border-zion-purple/20">;
-            <Sparkles className="h-4 w-4 text-zion-cyan mr-1" />;
+          </p>;'
+          <div className="inline-flex items-center bg-zion-blue-dark py-1 px-3 rounded-full mt-3 border border-zion-purple/20">;"
+            <Sparkles className="h-4 w-4 text-zion-cyan mr-1" />;"
             <span className="text-sm text-white">AI-powered matching</span>;
           </div>;
-          <Button;
+          <Button;"
             size="sm";
             onClick={() => setAutoFillOpen(true)};
-            disabled={autoFillLoading};
+            disabled={autoFillLoading};"
             className="mt-2";
           >;
-            {autoFillLoading && (;
+            {autoFillLoading && (;"
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />;
             )};
             Auto Fill with AI;
           </Button>;
         </div>;
-
-        <Card className="bg-zion-blue-dark border border-zion-blue-light mb-8">;
+;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light mb-8">;"
           <CardContent className="px-6 py-8">;
             <StepProgress currentStep={currentStep} />;
-
+;"
             <div className="mt-8">{renderStepContent()}</div>;
-
-            <div className="flex justify-between mt-8">;
+;"
+            <div className="flex justify-between mt-8">;"
               {currentStep !== 'service' && (;
-                <Button;
+                <Button;'
                   variant="outline";
-                  onClick={handleBack};
+                  onClick={handleBack};"
                   className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10";
                 >;
                   Back;
                 </Button>;
               )};
-
+;"
               {currentStep !== 'summary' ? (;
                 <Button;
-                  onClick={handleNext};
+                  onClick={handleNext};'
                   className="ml-auto bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white";
                 >;
                   Continue;
@@ -271,9 +271,9 @@ export function QuoteRequestForm() {;
               ) : (;
                 <Button;
                   onClick={handleSubmit};
-                  disabled={isSubmitting};
+                  disabled={isSubmitting};"
                   className="ml-auto bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white";
-                >;
+                >;"
                   {isSubmitting ? 'Submitting...' : 'Submit Request'};
                 </Button>;
               )};
@@ -290,3 +290,4 @@ export function QuoteRequestForm() {;
     </div>;
   );
 };
+'

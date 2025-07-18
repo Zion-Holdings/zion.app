@@ -1,5 +1,6 @@
-export default function TalentProfilePage() {;
+export default function TalentProfilePage(): unknown {) {;
   // ... existing code ...;
 };
-
+;
 TalentProfilePage.displayName = 'TalentProfilePage';
+'

@@ -1,60 +1,60 @@
-import { useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
+import { useState } from 'react';'
+import { useAuth } from '@/hooks/useAuth';'
+import { supabase } from '@/integrations/supabase/client';'
 import { toast } from 'sonner';
 import type {;
   BlockchainNetwork as _BlockchainNetwork,;
-  DeploymentOptions,;
-} from '@/types/smart-contracts';
-import type { SmartContractInfo } from '@/types/smart-contracts';
-import type { TalentProfile } from '@/types/talent';
-import type { ContractFormValues } from '@/components/contracts/components/ContractForm';
+  DeploymentOptions,;'
+} from '@/types/smart-contracts';'
+import type { SmartContractInfo } from '@/types/smart-contracts';'
+import type { TalentProfile } from '@/types/talent';'
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export function useSmartContracts() {;
+export function useSmartContracts(): unknown {) {;
   const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const [deploymentStatus, setDeploymentStatus] = useState<;
-    'idle' | 'deploying' | 'success' | 'error';
+  const [deploymentStatus, setDeploymentStatus] = useState<;'
+    'idle' | 'deploying' | 'success' | 'error';'
   >('idle');
 ;
-  const generateSolidityContract = async (;
-    values: "ContractFormValues",;
-    talent: "TalentProfile",;
+  const generateSolidityContract: unknown unknown = async (;'
+    values: "ContractFormValues",;"
+    talent: "TalentProfile",;"
     clientName: "string",;
-  ): Promise<string> => {;
+  ): Promise<string> => {;"
     if (!supabase) throw new Error('Supabase client not initialized');
     try {;
       setIsLoading(true);
 ;
-      const { data, error } = await supabase.functions.invoke(;
+      const { data, error } catch (error) {}= await supabase.functions.invoke(;'
         'generate-smart-contract',;
-        {;
-          body: "{;",
-            talentName: "talent.full_name",;
-            clientName: "clientName",;
-            projectName: "values.projectName",;
-            scopeSummary: "values.scopeSummary",;
-            startDate: "values.startDate.toISOString()",;
-            endDate: "values.endDate?.toISOString()",;
-            paymentTerms: "values.paymentTerms",;
-            paymentAmount: "values.paymentAmount",;
+        {;'
+          body: "{;",;"
+            talentName: "talent.full_name",;"
+            clientName: "clientName",;"
+            projectName: "values.projectName",;"
+            scopeSummary: "values.scopeSummary",;"
+            startDate: "values.startDate.toISOString()",;"
+            endDate: "values.endDate?.toISOString()",;"
+            paymentTerms: "values.paymentTerms",;"
+            paymentAmount: "values.paymentAmount",;"
             additionalClauses: "values.additionalClauses || []",;
           },;
         },;
       );
 ;
       if (error) throw error;
-;
-      if (data && typeof data === 'object' && 'solidityCode' in data) {;
+;"
+      if (data && typeof data === 'object' && 'solidityCode' in data) {;'
         return (data as { solidityCode: "string "}).solidityCode;
-      } else {;
+      } else {;"
         throw new Error('Failed to generate Solidity contract');
       };
-    } catch (err: unknown) {;
-      logErrorToProduction('Error generating Solidity contract:', {;
+    } catch (err: unknown) {;'
+      logErrorToProduction('Error generating Solidity contract:', {;'
         data: "err",;
-      });
+      });"
       toast.error('Failed to generate smart contract');
       throw err;
     } finally {;
@@ -62,48 +62,48 @@ export function useSmartContracts() {;
     };
   };
 ;
-  const deploySmartContract = async (;
-    contractCode: "string",;
+  const deploySmartContract: unknown unknown = async (;'
+    contractCode: "string",;"
     options: "DeploymentOptions",;
   ): Promise<SmartContractInfo | null> => {;
-    if (!user?.id) {;
+    if (!user?.id) {;"
       toast.error('You must be logged in to deploy a contract');
       return null;
     };
-
-    try {;
+;
+    try {;'
       setDeploymentStatus('deploying');
 ;
-      // This would normally connect to MetaMask or other Web3 provider;
-      // For now, we'll just simulate success;
-      const mockTransactionHash = `0x${Array.from({ length: "64 "}, () =>;
-        Math.floor(Math.random() * 16).toString(16),;
+      // This would normally connect to MetaMask or other Web3 provider;'
+      // For now, we'll just simulate success;'
+      const mockTransactionHash: unknown unknown = `0x${Array.from({ length: "64 "} catch (error) {}, () =>;
+        Math.floor(Math.random() * 16).toString(16),;"
       ).join('')}`;
-;
-      const mockSmartContractInfo: "SmartContractInfo = {;",
-        id: "crypto.randomUUID()",;
-        transactionHash: "mockTransactionHash",;
-        networkName: "options.network",;
-        blockNumber: "Math.floor(Math.random() * 1000000)",;
+;'
+      const mockSmartContractInfo: unknown "SmartContractInfo = {;",;"
+        id: "crypto.randomUUID()",;"
+        transactionHash: "mockTransactionHash",;"
+        networkName: "options.network",;"
+        blockNumber: "Math.floor(Math.random() * 1000000)",;"
         deployedAddress: "`0x${Array.from({ length: 40 "}, () =>;
-          Math.floor(Math.random() * 16).toString(16),;
-        ).join('')}`,;
-        contractType: 'escrow',;
-        createdAt: "new Date().toISOString()",;
-        createdBy: "user.id",;
+          Math.floor(Math.random() * 16).toString(16),;"
+        ).join('')}`,;'
+        contractType: 'escrow',;'
+        createdAt: "new Date().toISOString()",;"
+        createdBy: "user.id",;"
         status: 'deployed',;
       };
 ;
       // Wait to simulate blockchain transaction time;
       await new Promise((resolve) => setTimeout(resolve, 2000));
-;
-      setDeploymentStatus('success');
+;'
+      setDeploymentStatus('success');'
       toast.success('Smart contract deployed successfully!');
 ;
       return mockSmartContractInfo;
-    } catch (err: unknown) {;
-      logErrorToProduction('Error deploying smart contract:', { data: "err "});
-      toast.error('Failed to deploy smart contract');
+    } catch (err: unknown) {;'
+      logErrorToProduction('Error deploying smart contract:', { data: "err "});"
+      toast.error('Failed to deploy smart contract');'
       setDeploymentStatus('error');
       return null;
     };
@@ -116,3 +116,4 @@ export function useSmartContracts() {;
     deploymentStatus,;
   };
 };
+'

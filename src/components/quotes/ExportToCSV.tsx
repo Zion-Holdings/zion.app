@@ -1,35 +1,35 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';'
 import { Download } from '@/components/ui/icons';
-;
+;'
 import type { QuoteRequest } from '@/types/quotes';
 ;
 interface ExportToCSVProps {;
   quotes: QuoteRequest[];
   filename?: string;
 };
-
-export const ExportToCSV = ({;
-  quotes,;
+;
+export const ExportToCSV: unknown unknown = ({;
+  quotes,;'
   filename = 'quote-requests',;
 }: ExportToCSVProps) => {;
-  const handleExport = () => {;
+  const handleExport: unknown unknown = () => {;
     // Define CSV Headers;
-    const headers = [;
-      'ID',;
-      'Talent Name',;
-      'Requester Name',;
-      'Requester Email',;
-      'Project Name',;
-      'Project Summary',;
-      'Budget',;
-      'Timeline',;
-      'Status',;
+    const headers: unknown unknown = [;'
+      'ID',;'
+      'Talent Name',;'
+      'Requester Name',;'
+      'Requester Email',;'
+      'Project Name',;'
+      'Project Summary',;'
+      'Budget',;'
+      'Timeline',;'
+      'Status',;'
       'Created Date',;
     ];
 ;
     // Format quote data for CSV;
-    const rows = quotes.map((quote) => [;
-      quote.id,;
+    const rows: unknown unknown = quotes.map((quote) => [;
+      quote.id,;'
       quote.talent_name || 'Unknown',;
       quote.requester_name,;
       quote.requester_email,;
@@ -39,7 +39,7 @@ export const ExportToCSV = ({;
         (quote.budget_min && quote.budget_max;
           ? `$${quote.budget_min} - $${quote.budget_max}`;
           : quote.budget_min;
-            ? `$${quote.budget_min}`;
+            ? `$${quote.budget_min}`;'
             : 'Not specified'),;
       quote.timeline,;
       quote.status,;
@@ -47,28 +47,28 @@ export const ExportToCSV = ({;
     ]);
 ;
     // Create CSV content;
-    const csvContent = [;
+    const csvContent: unknown unknown = [;'
       headers.join(','),;
       ...rows.map((row) =>;
         row;
           .map((cell) =>;
-            // Escape commas and quotes in cell values;
-            typeof cell === 'string' &&;
-            (cell.includes(',') || cell.includes('"'));
+            // Escape commas and quotes in cell values;'
+            typeof cell === 'string' &&;'
+            (cell.includes(',') || cell.includes('"'));'
               ? `"${cell.replace(/"/g, '""')}"`;
               : cell,;
-          );
+          );"
           .join(','),;
-      ),;
+      ),;'
     ].join('\n');
 ;
-    // Create download link;
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    // Create download link;'
+    const blob: unknown unknown = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url: unknown unknown = URL.createObjectURL(blob);'
+    const link: unknown unknown = document.createElement('a');'
     link.setAttribute('href', url);
-    link.setAttribute(;
-      'download',;
+    link.setAttribute(;'
+      'download',;'
       `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;
     );
     document.body.appendChild(link);
@@ -82,9 +82,9 @@ export const ExportToCSV = ({;
   };
 ;
   return (;
-    <Button;
+    <Button;'
       variant="outline";
-      onClick={handleExport};
+      onClick={handleExport};"
       className="flex items-center gap-2";
       disabled={quotes.length === 0};
     >;
@@ -93,3 +93,4 @@ export const ExportToCSV = ({;
     </Button>;
   );
 };
+"

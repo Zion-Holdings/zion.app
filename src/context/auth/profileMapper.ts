@@ -8,32 +8,32 @@ export interface SupabaseUser {;
   id: string;
   email?: string | null;
 };
-
-/**;
+;
+/**;'
  * Maps Supabase profile data to our app's user model;
  */;
-const userTypeMap = {;
-  creator: 'talent' as const,;
-  jobSeeker: 'talent' as const,;
-  employer: 'client' as const,;
-  buyer: 'client' as const,;
-  admin: 'admin' as const,;
+const userTypeMap: unknown unknown = {;'
+  creator: 'talent' as const,;'
+  jobSeeker: 'talent' as const,;'
+  employer: 'client' as const,;'
+  buyer: 'client' as const,;'
+  admin: 'admin' as const,;'
   null: "null as null",;
 };
 ;
-export function mapProfileToUser(;
-  user: "SupabaseUser",;
+export function mapProfileToUser(): unknown {;"
+  user: "SupabaseUser",;"
   profile: "unknown",;
 ): UserProfile {;
-  const p = profile as Record<string, unknown>;
-  const userType = p.user_type;
+  const p: unknown unknown = profile as Record<string, unknown>;
+  const userType: unknown unknown = p.user_type;
     ? userTypeMap[p.user_type as keyof typeof userTypeMap];
     : null;
-  return {;
-    id: "user.id",;
-    email: user.email || '',;
-    displayName: (p.display_name as string) || '',;
-    userType: "userType ?? null",;
+  return {;"
+    id: "user.id",;"
+    email: user.email || '',;'
+    displayName: (p.display_name as string) || '',;'
+    userType: "userType ?? null",;"
     profileComplete: "Boolean(p.profile_complete)",;
     created_at:;
       p.created_at && !isNaN(new Date(p.created_at as string).getTime());
@@ -42,13 +42,14 @@ export function mapProfileToUser(;
     updated_at:;
       p.updated_at && !isNaN(new Date(p.updated_at as string).getTime());
         ? new Date(p.updated_at as string).toISOString();
-        : new Date().toISOString(),;
-    avatarUrl: (p.avatar_url as string) || '',;
-    name: (p.display_name as string) || '',;
-    role: userType || '',;
-    points: "(p.points as number) ?? 0",;
-    emailVerified: "(p.email_verified as boolean) ?? false",;
-    interests: "(p.interests as string[]) || []",;
+        : new Date().toISOString(),;"
+    avatarUrl: (p.avatar_url as string) || '',;'
+    name: (p.display_name as string) || '',;'
+    role: userType || '',;'
+    points: "(p.points as number) ?? 0",;"
+    emailVerified: "(p.email_verified as boolean) ?? false",;"
+    interests: "(p.interests as string[]) || []",;"
     preferredCategories: "(p.preferred_categories as string[]) || []",;
   };
 };
+"

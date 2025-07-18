@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';'
 import type { TalentProfile } from '@/types/talent';
 ;
 export interface TalentFilterOptions {;
@@ -10,11 +10,11 @@ export interface TalentFilterOptions {;
   experienceRange?: [number, number];
   sortOption?: string;
 };
-
-export function useFilterTalents(;
-  talents: "TalentProfile[] = []",;
+;
+export function useFilterTalents(): unknown {;'
+  talents: "TalentProfile[] = []",;"
   initial: "TalentFilterOptions = {"},;
-) {;
+) {;"
   const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '');
   const [selectedSkills, setSelectedSkills] = useState<string[]>(;
     initial.selectedSkills || [],;
@@ -31,17 +31,17 @@ export function useFilterTalents(;
   const [experienceRange, setExperienceRange] = useState<[number, number]>(;
     initial.experienceRange || [0, 15],;
   );
-  const [sortOption, setSortOption] = useState<string>(;
+  const [sortOption, setSortOption] = useState<string>(;'
     initial.sortOption || 'relevance',;
   );
 ;
-  const toggleSkill = (_skill: string) => {;
+  const toggleSkill: unknown unknown = (_skill: string) => {;
     setSelectedSkills((prev) =>;
       prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill],;
     );
   };
 ;
-  const toggleAvailability = (_availability: string) => {;
+  const toggleAvailability: unknown unknown = (_availability: string) => {;
     setSelectedAvailability((prev) =>;
       prev.includes(availability);
         ? prev.filter((a) => a !== availability);
@@ -49,7 +49,7 @@ export function useFilterTalents(;
     );
   };
 ;
-  const toggleRegion = (_region: string) => {;
+  const toggleRegion: unknown unknown = (_region: string) => {;
     setSelectedRegions((prev) =>;
       prev.includes(region);
         ? prev.filter((r) => r !== region);
@@ -57,23 +57,23 @@ export function useFilterTalents(;
     );
   };
 ;
-  const clearFilters = () => {;
+  const clearFilters: unknown unknown = () => {;'
     setSearchTerm('');
     setSelectedSkills([]);
     setSelectedAvailability([]);
     setSelectedRegions([]);
     setPriceRange([50, 200]);
-    setExperienceRange([0, 15]);
+    setExperienceRange([0, 15]);'
     setSortOption('relevance');
   };
 ;
   // Filter and sort talents;
-  const filteredTalents = useMemo(() => {;
+  const filteredTalents: unknown unknown = useMemo(() => {;
     let result = [...talents];
 ;
     // Filter by search term;
     if (searchTerm) {;
-      const lowerSearch = searchTerm.toLowerCase();
+      const lowerSearch: unknown unknown = searchTerm.toLowerCase();
       result = result.filter(;
         (talent) =>;
           talent.full_name.toLowerCase().includes(lowerSearch) ||;
@@ -84,7 +84,7 @@ export function useFilterTalents(;
           ),;
       );
     };
-
+;
     // Filter by selected skills;
     if (selectedSkills.length > 0) {;
       result = result.filter((talent) =>;
@@ -95,46 +95,46 @@ export function useFilterTalents(;
         ),;
       );
     };
-
+;
     // Filter by availability;
     if (selectedAvailability.length > 0) {;
-      result = result.filter((talent) =>;
+      result = result.filter((talent) =>;'
         selectedAvailability.includes(talent.availability_type || ''),;
       );
     };
-
+;
     // Filter by location/region;
     if (selectedRegions.length > 0) {;
       result = result.filter((talent) =>;
         selectedRegions.some((region) => talent.location?.includes(region)),;
       );
     };
-
+;
     // Filter by price range;
     result = result.filter((talent) => {;
-      const hourlyRate = talent.hourly_rate || 0;
+      const hourlyRate: unknown unknown = talent.hourly_rate || 0;
       return hourlyRate >= priceRange[0] && hourlyRate <= priceRange[1];
     });
 ;
     // Filter by experience range;
     result = result.filter((talent) => {;
-      const years = talent.years_experience || 0;
+      const years: unknown unknown = talent.years_experience || 0;
       return years >= experienceRange[0] && years <= experienceRange[1];
     });
 ;
     // Sort talents;
-    switch (sortOption) {;
+    switch (sortOption) {;'
       case 'price-low':;
         result.sort((a, b) => (a.hourly_rate || 0) - (b.hourly_rate || 0));
-        break;
+        break;'
       case 'price-high':;
         result.sort((a, b) => (b.hourly_rate || 0) - (a.hourly_rate || 0));
-        break;
+        break;'
       case 'rating':;
         result.sort(;
           (a, b) => (b.average_rating || 0) - (a.average_rating || 0),;
         );
-        break;
+        break;'
       case 'experience':;
         result.sort(;
           (a, b) => (b.years_experience || 0) - (a.years_experience || 0),;
@@ -144,7 +144,7 @@ export function useFilterTalents(;
         // Default sorting by relevance (no specific order);
         break;
     };
-
+;
     return result;
   }, [;
     talents,;
@@ -176,3 +176,4 @@ export function useFilterTalents(;
     clearFilters,;
   };
 };
+'

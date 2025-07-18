@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react';'
 import { cn } from '@/lib/utils';
 ;
 interface SidebarGroupLabelProps extends React.HTMLAttributes<HTMLDivElement> {;
   className?: string;
   children?: React.ReactNode;
 };
-
-export function SidebarGroupLabel({;
+;
+export function SidebarGroupLabel(): unknown {{;
   className,;
   children,;
   ...props;
 }: SidebarGroupLabelProps) {;
   return (;
     <div;
-      className={cn(;
+      className={cn(;'
         'px-3 mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider',;
         className,;
       )};
@@ -23,3 +23,4 @@ export function SidebarGroupLabel({;
     </div>;
   );
 };
+'

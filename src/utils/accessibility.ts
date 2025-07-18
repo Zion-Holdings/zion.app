@@ -2,67 +2,67 @@
  * Accessibility utility functions and constants;
  * Helps ensure consistent ARIA attributes and accessibility patterns;
  */;
-
+;
 // Common ARIA patterns for different types of icons;
-export const iconAriaPatterns = {;
+export const iconAriaPatterns: unknown unknown = {;
   // Decorative icons that should be hidden from screen readers;
   decorative: {;
     'aria-hidden': 'true' as const,;
   },;
-
+;
   // Meaningful icons that need labels;
-  meaningful: (label: string) => ({;
+  meaningful: (label: string) => ({;'
     'aria-label': label,;
   }),;
-
-  // Status or state icons;
-  status: "(label: string", status?: string) => ({;
-    'aria-label': label,;
-    role: 'img' as const,;
+;
+  // Status or state icons;'
+  status: "(label: string", status?: string) => ({;"
+    'aria-label': label,;'
+    role: 'img' as const,;'
     ...(status && { 'aria-describedby': status }),;
   }),;
 };
 ;
 // Common navigation ARIA patterns;
-export const navigationAriaPatterns = {;
-  // Dropdown trigger;
-  dropdownTrigger: "(isExpanded: boolean", label?: string) => ({;
-    'aria-haspopup': 'true' as const,;
-    'aria-expanded': isExpanded,;
+export const navigationAriaPatterns: unknown unknown = {;
+  // Dropdown trigger;'
+  dropdownTrigger: "(isExpanded: boolean", label?: string) => ({;"
+    'aria-haspopup': 'true' as const,;'
+    'aria-expanded': isExpanded,;'
     ...(label && { 'aria-label': label }),;
   }),;
-
-  // Menu container;
-  menu: "{;",
+;
+  // Menu container;'
+  menu: "{;",;"
     role: 'menu' as const,;
   },;
-
-  // Menu item;
-  menuItem: "{;",
+;
+  // Menu item;'
+  menuItem: "{;",;"
     role: 'menuitem' as const,;
   },;
-
-  // Navigation landmark;
-  navigation: "(label: string) => ({;",
-    role: 'navigation' as const,;
+;
+  // Navigation landmark;'
+  navigation: "(label: string) => ({;",;"
+    role: 'navigation' as const,;'
     'aria-label': label,;
   }),;
 };
 ;
 // Focus management utilities;
-export const _focusManagement = {;
+export const _focusManagement: unknown unknown = {;
   // Trap focus within an element;
   _trapFocus: (container: HTMLElement) => {;
-    const focusableElements = container.querySelectorAll<HTMLElement>(;
+    const focusableElements: unknown unknown = container.querySelectorAll<HTMLElement>(;'
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',;
     );
 ;
     if (focusableElements.length === 0) return;
 ;
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
+    const firstElement: unknown unknown = focusableElements[0];
+    const lastElement: unknown unknown = focusableElements[focusableElements.length - 1];
 ;
-    const handleTabKey = (_e: KeyboardEvent) => {;
+    const handleTabKey: unknown unknown = (_e: KeyboardEvent) => {;'
       if (e.key === 'Tab') {;
         if (e.shiftKey) {;
           if (document.activeElement === firstElement) {;
@@ -76,10 +76,10 @@ export const _focusManagement = {;
           };
         };
       };
-
+;'
       if (e.key === 'Escape') {;
         // Return focus to trigger element if available;
-        const trigger = document.querySelector(;
+        const trigger: unknown unknown = document.querySelector(;'
           '[aria-expanded="true"]',;
         ) as HTMLElement;
         if (trigger) {;
@@ -87,11 +87,11 @@ export const _focusManagement = {;
         };
       };
     };
-;
-    container.addEventListener('keydown', handleTabKey);
+;'
+    container.addEventListener('keydown', handleTabKey);'
     return () => container.removeEventListener('keydown', handleTabKey);
   },;
-
+;
   // Manage focus return;
   _returnFocus: (triggerElement: HTMLElement) => {;
     triggerElement.focus();
@@ -99,11 +99,11 @@ export const _focusManagement = {;
 };
 ;
 // Screen reader announcements;
-export const _announcements = {;
-  // Live region for dynamic content;
-  announce: "(message: string", _priority: 'polite' | 'assertive' = 'polite') => {;
-    const announcement = document.createElement('div');
-    announcement.setAttribute('aria-live', priority);
+export const _announcements: unknown unknown = {;
+  // Live region for dynamic content;'
+  announce: "(message: string", _priority: 'polite' | 'assertive' = 'polite') => {;'
+    const announcement: unknown unknown = document.createElement('div');'
+    announcement.setAttribute('aria-live', priority);'
     announcement.className = 'sr-only';
     announcement.textContent = message;
 ;
@@ -117,32 +117,32 @@ export const _announcements = {;
 };
 ;
 // Validation utilities;
-export const _validation = {;
+export const _validation: unknown unknown = {;
   // Check if element has proper accessibility attributes;
   validateAriaAttributes: (element: HTMLElement): string[] => {;
-    const issues: string[] = [];
+    const issues: unknown string[] = [];
 ;
     // Check for unlabeled buttons;
-    if (;
-      element.tagName === 'BUTTON' &&;
+    if (;'
+      element.tagName === 'BUTTON' &&;'
       !element.getAttribute('aria-label') &&;
       !element.textContent?.trim();
-    ) {;
+    ) {;'
       issues.push('Button missing aria-label or text content');
     };
-
-    // Check for images without alt text;
-    if (element.tagName === 'IMG' && !element.getAttribute('alt')) {;
+;
+    // Check for images without alt text;'
+    if (element.tagName === 'IMG' && !element.getAttribute('alt')) {;'
       issues.push('Image missing alt attribute');
     };
-
-    // Check for icons in buttons;
-    const icons = element.querySelectorAll('svg');
+;
+    // Check for icons in buttons;'
+    const icons: unknown unknown = element.querySelectorAll('svg');
     icons.forEach((icon) => {;
-      if (;
-        !icon.getAttribute('aria-hidden') &&;
+      if (;'
+        !icon.getAttribute('aria-hidden') &&;'
         !icon.getAttribute('aria-label');
-      ) {;
+      ) {;'
         issues.push('Icon missing aria-hidden or aria-label');
       };
     });
@@ -152,10 +152,11 @@ export const _validation = {;
 };
 ;
 // Export commonly used combinations;
-export const _commonAriaPatterns = {;
-  decorativeIcon: "iconAriaPatterns.decorative",;
-  meaningfulIcon: "iconAriaPatterns.meaningful",;
-  dropdownButton: "navigationAriaPatterns.dropdownTrigger",;
-  navigationMenu: "navigationAriaPatterns.menu",;
+export const _commonAriaPatterns: unknown unknown = {;'
+  decorativeIcon: "iconAriaPatterns.decorative",;"
+  meaningfulIcon: "iconAriaPatterns.meaningful",;"
+  dropdownButton: "navigationAriaPatterns.dropdownTrigger",;"
+  navigationMenu: "navigationAriaPatterns.menu",;"
   menuItem: "navigationAriaPatterns.menuItem",;
 };
+"

@@ -1,12 +1,12 @@
-import { useAuthStatus } from './talent/useAuthStatus';
-import { useTalentData } from './talent/useTalentData';
-import { useFilterTalents } from './talent/useFilterTalents';
-import type { TalentFilterOptions } from './talent/useFilterTalents';
+import { useAuthStatus } from './talent/useAuthStatus';'
+import { useTalentData } from './talent/useTalentData';'
+import { useFilterTalents } from './talent/useFilterTalents';'
+import type { TalentFilterOptions } from './talent/useFilterTalents';'
 import { useUIState } from './talent/useUIState';
 ;
-export function useTalentDirectory(;
+export function useTalentDirectory(): unknown {;
   page = 1,;
-  limit = 12,;
+  limit = 12,;'
   initialFilters: "TalentFilterOptions = {"},;
 ) {;
   // Fetch auth status and saved talents;
@@ -55,7 +55,7 @@ export function useTalentDirectory(;
     total,;
     isLoading,;
     error,;
-
+;
     // Search and filter state;
     searchTerm,;
     setSearchTerm,;
@@ -68,7 +68,7 @@ export function useTalentDirectory(;
     setExperienceRange,;
     sortOption,;
     setSortOption,;
-
+;
     // UI state;
     isMobileFilterOpen,;
     setIsMobileFilterOpen,;
@@ -77,12 +77,12 @@ export function useTalentDirectory(;
     selectedTalent,;
     setSelectedTalent,;
     expandedSections,;
-
+;
     // Auth and user state;
     isAuthenticated,;
     userDetails,;
     savedTalents,;
-
+;
     // Actions;
     toggleSkill,;
     toggleAvailability,;
@@ -92,3 +92,4 @@ export function useTalentDirectory(;
     handleToggleSave,;
   };
 };
+"

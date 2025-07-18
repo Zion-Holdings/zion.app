@@ -1,30 +1,31 @@
-import React from 'react';
+import React from 'react';'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 ;
-interface TalentCardAvatarProps {;
-  profilePicture: "string | undefined;",
-  fullName: "string;"
+interface TalentCardAvatarProps {;'
+  profilePicture: "string | undefined;",;"
+  fullName: "string;";
 };
-
-export function TalentCardAvatar({;
+;
+export function TalentCardAvatar(): unknown {{;
   profilePicture,;
   fullName,;
 }: TalentCardAvatarProps) {;
   // Get initials for avatar fallback;
-  const getInitials = (_name: string) => {;
-    return name;
+  const getInitials: unknown unknown = (_name: string) => {;
+    return name;"
       .split(' ');
-      .map((part) => part[0]);
+      .map((part) => part[0]);'
       .join('');
       .toUpperCase();
   };
 ;
-  return (;
+  return (;'
     <Avatar className="w-14 h-14 border-2 border-zion-blue-light">;
-      <AvatarImage src={profilePicture || undefined} alt={fullName} />;
+      <AvatarImage src={profilePicture || undefined} alt={fullName} />;"
       <AvatarFallback className="bg-zion-purple/20 text-zion-purple">;
         {getInitials(fullName)};
       </AvatarFallback>;
     </Avatar>;
   );
 };
+"

@@ -1,7 +1,7 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';'
 import { useToggle } from '../useToggle';
-;
-describe('useToggle', () => {;
+;'
+describe('useToggle', () => {;'
   test('toggles value', () => {;
     const { _result } = renderHook(() => useToggle());
     expect(result.current[0]).toBe(false);
@@ -10,7 +10,7 @@ describe('useToggle', () => {;
     });
     expect(result.current[0]).toBe(true);
   });
-;
+;'
   test('sets value explicitly', () => {;
     const { _result } = renderHook(() => useToggle(true));
     expect(result.current[0]).toBe(true);
@@ -20,3 +20,4 @@ describe('useToggle', () => {;
     expect(result.current[0]).toBe(false);
   });
 });
+'

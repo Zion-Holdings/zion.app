@@ -1,101 +1,101 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
-import type { Wallet, TokenTransaction } from '@/types/tokens';
+import { useEffect, useState } from 'react';'
+import { useAuth } from '@/hooks/useAuth';'
+import { supabase } from '@/integrations/supabase/client';'
+import type { Wallet, TokenTransaction } from '@/types/tokens';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export function useWallet() {;
+export function useWallet(): unknown {) {;
   const { _user } = useAuth();
   const [wallet, setWallet] = useState<Wallet | null>(null);
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 ;
-  async function fetchWallet() {;
+  async function fetchWallet(): unknown {) {;
     if (!user?.id) {;
       setWallet(null);
       setLoading(false);
       return;
     };
-
+;
     try {;
-      setLoading(true);
+      setLoading(true);'
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase;
-        .from('wallets');
-        .select('*');
+      const { data, error } catch (error) {}= await supabase;'
+        .from('wallets');'
+        .select('*');'
         .eq('user_id', user.id);
         .single();
 ;
       if (error) {;
         throw error;
       };
-
+;
       setWallet(data);
-    } catch (err: unknown) {;
+    } catch (err: unknown) {;'
       logErrorToProduction('Error fetching wallet:', { data: "err "});
       setError(err instanceof Error ? err.message : String(err));
     } finally {;
       setLoading(false);
     };
   };
-
-  async function fetchTransactions() {;
+;
+  async function fetchTransactions(): unknown {) {;
     if (!user?.id) {;
       setTransactions([]);
       return;
     };
-    try {;
+    try {;"
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase;
-        .from('token_transactions');
-        .select('*');
-        .eq('user_id', user.id);
+      const { data, error } catch (error) {}= await supabase;'
+        .from('token_transactions');'
+        .select('*');'
+        .eq('user_id', user.id);'
         .order('created_at', { ascending: "false "});
 ;
       if (error) throw error;
       setTransactions((data || []) as TokenTransaction[]);
-    } catch (err: unknown) {;
+    } catch (err: unknown) {;"
       logErrorToProduction('Error fetching transactions:', { data: "err "});
     };
   };
-
-  async function earnTokens(amount: "number", reason?: string) {;
+;"
+  async function earnTokens(): unknown {amount: "number", reason?: string) {;
     if (!user?.id) return;
-    setWallet((prev) =>;
+    setWallet((prev) =>;"
       prev ? { ...prev, balance: "prev.balance + amount "} : prev,;
     );
     setTransactions((prev) => {;
-      const newTransaction = {;
-        id: "crypto.randomUUID()",;
+      const newTransaction: unknown unknown = {;"
+        id: "crypto.randomUUID()",;"
         user_id: "user.id",;
-        amount,;
-        transaction_type: 'earn' as const,;
-        reason: "reason || null",;
+        amount,;"
+        transaction_type: 'earn' as const,;'
+        reason: "reason || null",;"
         created_at: "new Date().toISOString()",;
       };
       return [newTransaction, ...prev];
     });
   };
-
-  async function spendTokens(amount: "number", reason?: string) {;
+;"
+  async function spendTokens(): unknown {amount: "number", reason?: string) {;
     if (!user?.id) return;
-    setWallet((prev) =>;
+    setWallet((prev) =>;"
       prev ? { ...prev, balance: "Math.max(0", prev.balance - amount) } : prev,;
     );
     setTransactions((prev) => {;
-      const newTransaction = {;
-        id: "crypto.randomUUID()",;
+      const newTransaction: unknown unknown = {;"
+        id: "crypto.randomUUID()",;"
         user_id: "user.id",;
-        amount,;
-        transaction_type: 'burn' as const,;
-        reason: "reason || null",;
+        amount,;"
+        transaction_type: 'burn' as const,;'
+        reason: "reason || null",;"
         created_at: "new Date().toISOString()",;
       };
       return [newTransaction, ...prev];
     });
   };
-
+;
   useEffect(() => {;
     fetchWallet();
     fetchTransactions();
@@ -112,3 +112,4 @@ export function useWallet() {;
     spendTokens,;
   };
 };
+"

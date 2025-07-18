@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { Check } from '@/components/ui/icons';
-import { useToast } from '@/hooks/use-toast';
+import React, { useState } from 'react';'
+import { Check } from '@/components/ui/icons';'
+import { useToast } from '@/hooks/use-toast';'
 import { Button } from '@/components/ui/button';
 import {;
   Card,;
   CardContent,;
   CardHeader,;
   CardTitle,;
-  CardFooter,;
-} from '@/components/ui/card';
+  CardFooter,;'
+} from '@/components/ui/card';'
 import { Textarea } from '@/components/ui/textarea';
 ;
-interface GeneratedDescriptionDisplayProps {;
-  description: "string;",
-  onSave: "(editedDescription: string) => void;"
+interface GeneratedDescriptionDisplayProps {;'
+  description: "string;",;"
+  onSave: "(editedDescription: string) => void;";
 };
-
-export function GeneratedDescriptionDisplay({;
+;
+export function GeneratedDescriptionDisplay(): unknown {{;
   description,;
   onSave,;
 }: GeneratedDescriptionDisplayProps) {;
@@ -24,33 +24,33 @@ export function GeneratedDescriptionDisplay({;
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState(description);
 ;
-  const handleSave = () => {;
+  const handleSave: unknown unknown = () => {;
     onSave(editedDescription);
     setIsEditing(false);
-    toast({;
-      title: 'Description Saved',;
+    toast({;"
+      title: 'Description Saved',;'
       description: 'Your edited description has been saved.',;
     });
   };
 ;
-  return (;
+  return (;'
     <Card className="border border-zion-blue-light bg-zion-blue-dark">;
-      <CardHeader>;
+      <CardHeader>;"
         <CardTitle className="text-white flex items-center justify-between">;
           Generated Description;
-          <Button;
-            variant="outline";
+          <Button;"
+            variant="outline";"
             size="sm";
-            onClick={() => setIsEditing(!isEditing)};
+            onClick={() => setIsEditing(!isEditing)};"
             className="border-zion-blue-light text-zion-slate-light hover:text-white";
           >;
             {isEditing ? (;
-              <>;
+              <>;"
                 <Check className="h-4 w-4 mr-1" />;
                 Done;
               </>;
             ) : (;
-              <>;
+              <>;"
                 <Pencil className="h-4 w-4 mr-1" />;
                 Edit;
               </>;
@@ -62,10 +62,10 @@ export function GeneratedDescriptionDisplay({;
         {isEditing ? (;
           <Textarea;
             value={editedDescription};
-            onChange={(e) => setEditedDescription(e.target.value)};
+            onChange={(e) => setEditedDescription(e.target.value)};"
             className="bg-zion-blue border border-zion-blue-light text-white min-h-[300px] resize-none";
           />;
-        ) : (;
+        ) : (;"
           <div className="bg-zion-blue p-4 rounded-md text-white min-h-[300px] whitespace-pre-wrap">;
             {editedDescription};
           </div>;
@@ -74,7 +74,7 @@ export function GeneratedDescriptionDisplay({;
       {isEditing && (;
         <CardFooter>;
           <Button;
-            onClick={handleSave};
+            onClick={handleSave};"
             className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white";
           >;
             Save Changes;
@@ -84,3 +84,4 @@ export function GeneratedDescriptionDisplay({;
     </Card>;
   );
 };
+"

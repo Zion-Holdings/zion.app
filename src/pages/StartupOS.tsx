@@ -1,47 +1,47 @@
-import React from 'react';
+import React from 'react';'
 import LegalTemplates from '@/components/dashboard/LegalTemplates'; // Import the component;
-
-// const _StartupOSPage: React.FC = () => {;
-  return (;
+;
+// const _StartupOSPage: unknown React.FC = () => {;
+  return (;'
     <div className="flex h-screen bg-gray-50">;
-      {/* Sidebar */};
-      <div className="w-64 bg-white p-6 shadow-md">;
+      {/* Sidebar */};"
+      <div className="w-64 bg-white p-6 shadow-md">;"
         <h2 className="text-xl font-semibold mb-6 text-gray-700">Startup OS</h2>;
         <nav>;
-          <ul>;
+          <ul>;"
             <li className="mb-3">;
-              <a;
-                href="#";
+              <a;"
+                href="#";"
                 className="text-gray-600 hover:text-blue-600 font-medium";
               >;
                 Dashboard Home;
               </a>;
-            </li>;
+            </li>;"
             <li className="mb-3">;
-              <a;
-                href="#";
+              <a;"
+                href="#";"
                 className="text-gray-600 hover:text-blue-600 font-medium";
               >;
                 My Profile;
               </a>;
-            </li>;
-            <li className="mb-3">;
+            </li>;"
+            <li className="mb-3">;"
               <a href="#" className="text-blue-600 font-semibold">;
-                Legal Templates;
+                Legal Templates;"
               </a>{' '};
               {/* Active link example */};
-            </li>;
+            </li>;'
             <li className="mb-3">;
-              <a;
-                href="#";
+              <a;"
+                href="#";"
                 className="text-gray-600 hover:text-blue-600 font-medium";
               >;
                 Cap Table;
               </a>;
-            </li>;
+            </li>;"
             <li className="mb-3">;
-              <a;
-                href="#";
+              <a;"
+                href="#";"
                 className="text-gray-600 hover:text-blue-600 font-medium";
               >;
                 Investor Relations;
@@ -50,9 +50,9 @@ import LegalTemplates from '@/components/dashboard/LegalTemplates'; // Import th
           </ul>;
         </nav>;
       </div>;
-
-      {/* Main Content Area */};
-      <div className="flex-grow p-8">;
+;
+      {/* Main Content Area */};"
+      <div className="flex-grow p-8">;"
         <h1 className="text-3xl font-bold mb-8 text-gray-800">;
           Founder Dashboard;
         </h1>;
@@ -63,3 +63,4 @@ import LegalTemplates from '@/components/dashboard/LegalTemplates'; // Import th
 };
 ;
 export default StartupOSPage;
+"

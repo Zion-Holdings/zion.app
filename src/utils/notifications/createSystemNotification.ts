@@ -1,10 +1,10 @@
-import { createNotification } from './createNotification';
+import { createNotification } from './createNotification';'
 import type { SystemNotificationParams } from './types';
 ;
 /**;
  * Creates a system notification for a user;
  */;
-export async function createSystemNotification({;
+export async function createSystemNotification(): unknown {{;
   userId,;
   title,;
   message,;
@@ -15,10 +15,11 @@ export async function createSystemNotification({;
   return createNotification({;
     userId,;
     title,;
-    message,;
+    message,;'
     type: 'system',;
     sendEmail,;
     actionUrl,;
     actionText,;
   });
 };
+'

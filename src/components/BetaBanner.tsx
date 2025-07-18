@@ -1,8 +1,8 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 ;
-export const _BetaBanner = () => {;
+export const _BetaBanner: unknown unknown = () => {;'
   if (process.env.NEXT_PUBLIC_APP_ENV !== 'beta') return null;
-  return (;
+  return (;'
     <div className="fixed bottom-4 right-4 z-50 max-w-sm">;
       <Alert>;
         <AlertDescription>;
@@ -12,3 +12,4 @@ export const _BetaBanner = () => {;
     </div>;
   );
 };
+"

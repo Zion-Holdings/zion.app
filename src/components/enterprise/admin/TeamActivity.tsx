@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';'
 import { Search, CalendarIcon } from '@/components/ui/icons';
 ;
 import {;
@@ -7,73 +7,73 @@ import {;
   TableCell,;
   TableHead,;
   TableHeader,;
-  TableRow,;
-} from '@/components/ui/table';
+  TableRow,;'
+} from '@/components/ui/table';'
 import { Badge } from '@/components/ui/badge';
-;
-import { Button } from '@/components/ui/button';
+;'
+import { Button } from '@/components/ui/button';'
 import { Input } from '@/components/ui/input';
 ;
-export function TeamActivity() {;
+export function TeamActivity(): unknown {) {;
   // Mock activity data;
-  const activities = [;
-    {;
-      id: "1",;
-      user: 'Alex Johnson',;
-      action: 'Posted a job',;
-      target: 'Senior AI Engineer',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 30)",;
+  const activities: unknown unknown = [;
+    {;'
+      id: "1",;"
+      user: 'Alex Johnson',;'
+      action: 'Posted a job',;'
+      target: 'Senior AI Engineer',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 30)",;"
       category: 'jobs',;
     },;
-    {;
-      id: "2",;
-      user: 'Jamie Smith',;
-      action: 'Contacted candidate',;
-      target: 'Michael Chen',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 120)",;
+    {;'
+      id: "2",;"
+      user: 'Jamie Smith',;'
+      action: 'Contacted candidate',;'
+      target: 'Michael Chen',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 120)",;"
       category: 'candidates',;
     },;
-    {;
-      id: "3",;
-      user: 'Sam Williams',;
-      action: 'Updated job',;
-      target: 'Frontend Developer',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 5)",;
+    {;'
+      id: "3",;"
+      user: 'Sam Williams',;'
+      action: 'Updated job',;'
+      target: 'Frontend Developer',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 5)",;"
       category: 'jobs',;
     },;
-    {;
-      id: "4",;
-      user: 'Alex Johnson',;
-      action: 'Added team member',;
-      target: 'Chris Rodriguez',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24)",;
+    {;'
+      id: "4",;"
+      user: 'Alex Johnson',;'
+      action: 'Added team member',;'
+      target: 'Chris Rodriguez',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24)",;"
       category: 'team',;
     },;
-    {;
-      id: "5",;
-      user: 'Taylor Brown',;
-      action: 'Viewed candidate profile',;
-      target: 'Sarah Kim',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24 * 2)",;
+    {;'
+      id: "5",;"
+      user: 'Taylor Brown',;'
+      action: 'Viewed candidate profile',;'
+      target: 'Sarah Kim',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24 * 2)",;"
       category: 'candidates',;
     },;
-    {;
-      id: "6",;
-      user: 'Jamie Smith',;
-      action: 'Updated budget',;
-      target: 'Monthly spending cap',;
-      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24 * 3)",;
+    {;'
+      id: "6",;"
+      user: 'Jamie Smith',;'
+      action: 'Updated budget',;'
+      target: 'Monthly spending cap',;'
+      timestamp: "new Date(Date.now() - 1000 * 60 * 60 * 24 * 3)",;"
       category: 'billing',;
     },;
   ];
 ;
   // Function to format the date in a readable way;
-  const formatDate = (_date: Date) => {;
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const diffMins = Math.floor(diffMs / (1000 * 60));
-    const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const formatDate: unknown unknown = (_date: Date) => {;
+    const now: unknown unknown = new Date();
+    const diffMs: unknown unknown = now.getTime() - date.getTime();
+    const diffMins: unknown unknown = Math.floor(diffMs / (1000 * 60));
+    const diffHrs: unknown unknown = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays: unknown unknown = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 ;
     if (diffMins < 60) {;
       return `${diffMins} minutes ago`;
@@ -86,45 +86,45 @@ export function TeamActivity() {;
     };
   };
 ;
-  const getCategoryBadge = (_category: string) => {;
-    const categoryStyles: Record<;
-      string,;
+  const getCategoryBadge: unknown unknown = (_category: string) => {;
+    const categoryStyles: unknown Record<;
+      string,;'
       { variant: 'default' | 'outline' | 'secondary' | 'destructive' };
-    > = {;
-      jobs: { variant: 'default' },;
-      candidates: { variant: 'outline' },;
-      team: { variant: 'secondary' },;
+    > = {;'
+      jobs: { variant: 'default' },;'
+      candidates: { variant: 'outline' },;'
+      team: { variant: 'secondary' },;'
       billing: { variant: 'destructive' },;
     };
-;
-    const style = categoryStyles[category] || { variant: 'default' as const };
+;'
+    const style: unknown unknown = categoryStyles[category] || { variant: 'default' as const };
     return <Badge variant={style.variant}>{category}</Badge>;
   };
 ;
-  return (;
-    <div className="space-y-6">;
-      <div className="flex items-center justify-between">;
-        <h3 className="text-xl font-medium">Recent Team Activity</h3>;
-        <div className="flex items-center gap-2">;
-          <div className="relative">;
+  return (;'
+    <div className="space-y-6">;"
+      <div className="flex items-center justify-between">;"
+        <h3 className="text-xl font-medium">Recent Team Activity</h3>;"
+        <div className="flex items-center gap-2">;"
+          <div className="relative">;"
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />;
-            <Input;
-              type="search";
-              placeholder="Search activities...";
+            <Input;"
+              type="search";"
+              placeholder="Search activities...";"
               className="w-[200px] md:w-[300px] pl-9";
             />;
           </div>;
-          <Button;
-            variant="outline";
-            size="icon";
-            className="h-10 w-10";
+          <Button;"
+            variant="outline";"
+            size="icon";"
+            className="h-10 w-10";"
             aria-label="Filter by date";
-          >;
+          >;"
             <CalendarIcon className="h-4 w-4" />;
           </Button>;
         </div>;
       </div>;
-
+;"
       <div className="rounded-md border">;
         <Table>;
           <TableHeader>;
@@ -138,13 +138,13 @@ export function TeamActivity() {;
           </TableHeader>;
           <TableBody>;
             {activities.map((activity) => (;
-              <TableRow key={activity.id}>;
+              <TableRow key={activity.id}>;"
                 <TableCell className="font-medium">{activity.user}</TableCell>;
                 <TableCell>{activity.action}</TableCell>;
-                <TableCell>;
+                <TableCell>;"
                   <span className="font-medium">{activity.target}</span>;
                 </TableCell>;
-                <TableCell>{getCategoryBadge(activity.category)}</TableCell>;
+                <TableCell>{getCategoryBadge(activity.category)}</TableCell>;"
                 <TableCell className="text-muted-foreground">;
                   {formatDate(activity.timestamp)};
                 </TableCell>;
@@ -153,12 +153,12 @@ export function TeamActivity() {;
           </TableBody>;
         </Table>;
       </div>;
-
-      <div className="flex items-center justify-between">;
+;"
+      <div className="flex items-center justify-between">;"
         <Button variant="outline" size="sm">;
           Previous;
-        </Button>;
-        <div className="text-sm text-muted-foreground">Page 1 of 10</div>;
+        </Button>;"
+        <div className="text-sm text-muted-foreground">Page 1 of 10</div>;"
         <Button variant="outline" size="sm">;
           Next;
         </Button>;
@@ -166,3 +166,4 @@ export function TeamActivity() {;
     </div>;
   );
 };
+"

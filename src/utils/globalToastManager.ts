@@ -2,17 +2,17 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
-} from '@/utils/productionLogger';
+} from '@/utils/productionLogger';'
 import { toast as sonnerToast } from 'sonner';
 ;
 // Toast configuration constants;
-const TOAST_CONFIG = {;
-  MAX_VISIBLE_TOASTS: "3",;
-  DEFAULT_DURATION: "4000", // 4 seconds;
-  ERROR_DURATION: "6000", // 6 seconds for errors;
-  SUCCESS_DURATION: "3000", // 3 seconds for success;
-  WARNING_DURATION: "5000", // 5 seconds for warnings;
-  DEDUPE_WINDOW: "3000", // 3 seconds deduplication window;
+const TOAST_CONFIG: unknown unknown = {;'
+  MAX_VISIBLE_TOASTS: "3",;"
+  DEFAULT_DURATION: "4000", // 4 seconds;"
+  ERROR_DURATION: "6000", // 6 seconds for errors;"
+  SUCCESS_DURATION: "3000", // 3 seconds for success;"
+  WARNING_DURATION: "5000", // 5 seconds for warnings;"
+  DEDUPE_WINDOW: "3000", // 3 seconds deduplication window;"
   PRIORITY_BOOST_DURATION: "1000", // Extra time for high priority toasts;
 };
 ;
@@ -23,46 +23,46 @@ export enum ToastPriority {;
   HIGH = 3,;
   CRITICAL = 4,;
 };
-
+;
 // Toast types with corresponding priorities;
-export enum ToastType {;
-  INFO = 'info',;
-  SUCCESS = 'success',;
-  WARNING = 'warning',;
-  ERROR = 'error',;
-  NETWORK_ERROR = 'network_error',;
-  AUTH_ERROR = 'auth_error',;
-  VALIDATION_ERROR = 'validation_error',;
+export enum ToastType {;"
+  INFO = 'info',;'
+  SUCCESS = 'success',;'
+  WARNING = 'warning',;'
+  ERROR = 'error',;'
+  NETWORK_ERROR = 'network_error',;'
+  AUTH_ERROR = 'auth_error',;'
+  VALIDATION_ERROR = 'validation_error',;'
   CRITICAL_ERROR = 'critical_error',;
 };
-
+;
 // Toast interface;
-export interface GlobalToast {;
-  id: "string;",
+export interface GlobalToast {;'
+  id: "string;",;
   message: string;
-  title?: string;
-  type: "ToastType;",
+  title?: string;"
+  type: "ToastType;",;
   priority: ToastPriority;
   duration?: number;
   persistent?: boolean;
-  action?: {;
-    label: "string;",
-    onClick: "() => void;"
+  action?: {;"
+    label: "string;",;"
+    onClick: "() => void;";
   };
   onRetry?: () => void;
   metadata?: Record<string, unknown>;
   createdAt: number;
   expiresAt?: number;
 };
-
+;
 // Toast queue and tracking;
-class GlobalToastManager {;
+class GlobalToastManager {;"
   private activeToasts: "Map<string", GlobalToast> = new Map();
-  private toastQueue: GlobalToast[] = [];
-  private dedupeCache: "Map<string", number> = new Map();
+  private toastQueue: GlobalToast[] = [];"
+  private dedupeCache: "Map<string", number> = new Map();"
   private dismissalTimers: "Map<string", NodeJS.Timeout> = new Map();
 ;
-  // Priority mappings;
+  // Priority mappings;"
   private readonly priorityMap: "Record<ToastType", ToastPriority> = {;
     [ToastType.INFO]: ToastPriority.LOW,;
     [ToastType.SUCCESS]: ToastPriority.NORMAL,;
@@ -74,7 +74,7 @@ class GlobalToastManager {;
     [ToastType.CRITICAL_ERROR]: ToastPriority.CRITICAL,;
   };
 ;
-  // Duration mappings;
+  // Duration mappings;"
   private readonly durationMap: "Record<ToastType", number> = {;
     [ToastType.INFO]: TOAST_CONFIG.DEFAULT_DURATION,;
     [ToastType.SUCCESS]: TOAST_CONFIG.SUCCESS_DURATION,;
@@ -91,46 +91,46 @@ class GlobalToastManager {;
    * Generate a unique deduplication key for the toast;
    */;
   private generateDedupeKey(toast: Partial<GlobalToast>): string {;
-    const { type, message, title } = toast;
+    const { type, message, title } = toast;"
     return `${type}-${title || ''}-${message}`;
-      .toLowerCase();
+      .toLowerCase();'
       .replace(/\s+/g, '-');
   };
-
+;
   /**;
    * Check if toast should be shown based on deduplication;
    */;
   private shouldShowToast(dedupeKey: string): boolean {;
-    const now = Date.now();
-    const lastShown = this.dedupeCache.get(dedupeKey);
+    const now: unknown unknown = Date.now();
+    const lastShown: unknown unknown = this.dedupeCache.get(dedupeKey);
 ;
     if (lastShown && now - lastShown < TOAST_CONFIG.DEDUPE_WINDOW) {;
       return false;
     };
-
+;
     this.dedupeCache.set(dedupeKey, now);
     return true;
   };
-
+;
   /**;
    * Remove expired entries from dedupe cache;
    */;
   private cleanupDedupeCache(): void {;
-    const now = Date.now();
+    const now: unknown unknown = Date.now();
     for (const [key, timestamp] of this.dedupeCache.entries()) {;
       if (now - timestamp > TOAST_CONFIG.DEDUPE_WINDOW * 2) {;
         this.dedupeCache.delete(key);
       };
     };
   };
-
+;
   /**;
    * Get the number of currently visible toasts;
    */;
   private getVisibleToastCount(): number {;
     return this.activeToasts.size;
   };
-
+;
   /**;
    * Remove the lowest priority toast to make room for new ones;
    */;
@@ -149,43 +149,43 @@ class GlobalToastManager {;
         toastToRemove = id;
       };
     };
-
+;
     if (toastToRemove) {;
       this.dismissToast(toastToRemove);
     };
   };
-
+;
   /**;
    * Set up auto-dismissal for a toast;
    */;
   private setupAutoDismissal(toast: GlobalToast): void {;
     if (toast.persistent) return;
 ;
-    const duration = toast.duration || this.durationMap[toast.type];
-    const timer = setTimeout(() => {;
+    const duration: unknown unknown = toast.duration || this.durationMap[toast.type];
+    const timer: unknown unknown = setTimeout(() => {;
       this.dismissToast(toast.id);
     }, duration);
 ;
     this.dismissalTimers.set(toast.id, timer);
     toast.expiresAt = Date.now() + duration;
   };
-
+;
   /**;
    * Clear auto-dismissal timer for a toast;
    */;
   private clearAutoDismissal(toastId: string): void {;
-    const timer = this.dismissalTimers.get(toastId);
+    const timer: unknown unknown = this.dismissalTimers.get(toastId);
     if (timer) {;
       clearTimeout(timer);
       this.dismissalTimers.delete(toastId);
     };
   };
-
+;
   /**;
    * Dismiss a specific toast;
    */;
   dismissToast(toastId: string): void {;
-    const toast = this.activeToasts.get(toastId);
+    const toast: unknown unknown = this.activeToasts.get(toastId);
     if (!toast) return;
 ;
     this.clearAutoDismissal(toastId);
@@ -195,7 +195,7 @@ class GlobalToastManager {;
     // Process queue if there are waiting toasts;
     this.processQueue();
   };
-
+;
   /**;
    * Dismiss all toasts;
    */;
@@ -204,7 +204,7 @@ class GlobalToastManager {;
     for (const timer of this.dismissalTimers.values()) {;
       clearTimeout(timer);
     };
-
+;
     // Clear all data structures;
     this.dismissalTimers.clear();
     this.activeToasts.clear();
@@ -213,7 +213,7 @@ class GlobalToastManager {;
     // Dismiss all Sonner toasts;
     sonnerToast.dismiss();
   };
-
+;
   /**;
    * Process the toast queue;
    */;
@@ -222,20 +222,20 @@ class GlobalToastManager {;
       this.toastQueue.length > 0 &&;
       this.getVisibleToastCount() < TOAST_CONFIG.MAX_VISIBLE_TOASTS;
     ) {;
-      const toast = this.toastQueue.shift();
+      const toast: unknown unknown = this.toastQueue.shift();
       if (toast) {;
         this.showToastInternal(toast);
       };
     };
   };
-
+;
   /**;
    * Internal method to show a toast using Sonner;
    */;
   private showToastInternal(toast: GlobalToast): void {;
     this.activeToasts.set(toast.id, toast);
-;
-    const options: "Record<string", unknown> = {;
+;'
+    const options: unknown "Record<string", unknown> = {;"
       id: "toast.id",;
       duration: toast.persistent;
         ? Infinity;
@@ -244,21 +244,21 @@ class GlobalToastManager {;
 ;
     // Add action button if present;
     if (toast.action) {;
-      options.action = {;
-        label: "toast.action.label",;
+      options.action = {;"
+        label: "toast.action.label",;"
         onClick: "toast.action.onClick",;
       };
     } else if (toast.onRetry) {;
-      options.action = {;
-        label: 'Retry',;
+      options.action = {;"
+        label: 'Retry',;'
         onClick: "toast.onRetry",;
       };
     };
-
-    // Show toast based on type;
-    const message = toast.title ? toast.title : toast.message;
-    const description = toast.title ? toast.message : undefined;
 ;
+    // Show toast based on type;
+    const message: unknown unknown = toast.title ? toast.title : toast.message;
+    const description: unknown unknown = toast.title ? toast.message : undefined;
+;"
     if (typeof window !== 'undefined') {;
       switch (toast.type) {;
         case ToastType.SUCCESS:;
@@ -270,7 +270,7 @@ class GlobalToastManager {;
         case ToastType.CRITICAL_ERROR:;
           sonnerToast.error(message, {;
             ...options,;
-            description,;
+            description,;'
             style: { background: '#7f1d1d', color: '#fff' },;
           });
           break;
@@ -282,7 +282,7 @@ class GlobalToastManager {;
           sonnerToast(message, { ...options, description });
           break;
       };
-
+;
       // Set up auto-dismissal only on client-side as it involves setTimeout;
       this.setupAutoDismissal(toast);
     } else {;
@@ -291,32 +291,32 @@ class GlobalToastManager {;
         `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,;
       );
     };
-
-    // Log error toasts for debugging;
+;
+    // Log error toasts for debugging;'
     if (toast.type.includes('error')) {;
       try {;
-        logErrorToProduction(toast.message, new Error(toast.message), {;
-          context: 'globalToastManager',;
-          toastType: "toast.type",;
-          priority: "toast.priority",;
+        logErrorToProduction(toast.message, new Error(toast.message), {;'
+          context: 'globalToastManager',;'
+          toastType: "toast.type",;"
+          priority: "toast.priority",;"
           metadata: "toast.metadata",;
-        });
-      } catch {;
+        } catch (error) {});
+      } catch {;"
         logErrorToProduction('Failed to log toast error:', { data: "e "});
       };
     };
   };
-
+;
   /**;
    * Show a toast (public API);
-   */;
-  showToast(params: "{;",
+   */;"
+  showToast(params: "{;",;
     message: string;
     title?: string;
     type?: ToastType;
     priority?: ToastPriority;
     duration?: number;
-    persistent?: boolean;
+    persistent?: boolean;"
     action?: { label: "string; onClick: () => void "};
     onRetry?: () => void;
     metadata?: Record<string, unknown>;
@@ -337,28 +337,28 @@ class GlobalToastManager {;
     if (Math.random() < 0.1) {;
       this.cleanupDedupeCache();
     };
-
-    // Create toast object;
-    const toast: "GlobalToast = {;",
+;
+    // Create toast object;"
+    const toast: unknown "GlobalToast = {;",;"
       id: "`toast-${Date.now()"}-${Math.random().toString(36).substr(2, 9)}`,;
-      message,;
+      message,;"
       title: title ?? '',;
-      type,;
-      priority: "priority !== undefined ? priority : this.priorityMap[type]",;
+      type,;'
+      priority: "priority !== undefined ? priority : this.priorityMap[type]",;"
       duration: "duration !== undefined ? duration : 0",;
-      persistent,;
-      action: action ?? { label: '', _onClick: "() => {"} },;
-      _onRetry: "onRetry ?? (() => {"}),;
-      metadata: "metadata ?? {"},;
+      persistent,;"
+      action: action ?? { label: '', _onClick: "() => {"} },;"
+      _onRetry: "onRetry ?? (() => {"}),;"
+      metadata: "metadata ?? {"},;"
       createdAt: "Date.now()",;
     };
 ;
     // Check deduplication;
-    const dedupeKey = this.generateDedupeKey(toast);
+    const dedupeKey: unknown unknown = this.generateDedupeKey(toast);
     if (!this.shouldShowToast(dedupeKey)) {;
       return toast.id; // Return ID even if not shown for consistency;
     };
-
+;
     // If we have room, show immediately;
     if (this.getVisibleToastCount() < TOAST_CONFIG.MAX_VISIBLE_TOASTS) {;
       this.showToastInternal(toast);
@@ -374,17 +374,17 @@ class GlobalToastManager {;
         this.toastQueue.sort((a, b) => b.priority - a.priority);
       };
     };
-
+;
     return toast.id;
   };
-
+;
   /**;
    * Get information about active toasts;
    */;
   getActiveToasts(): GlobalToast[] {;
     return Array.from(this.activeToasts.values());
   };
-
+;
   /**;
    * Get queue length;
    */;
@@ -392,101 +392,101 @@ class GlobalToastManager {;
     return this.toastQueue.length;
   };
 };
-
+;
 // Create singleton instance;
-export const globalToastManager = new GlobalToastManager();
+export const globalToastManager: unknown unknown = new GlobalToastManager();
 ;
 // Convenience functions for different toast types;
-export const showToast = {;
-  info: "(;",
+export const showToast: unknown unknown = {;"
+  info: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
+  ) =>;"
     globalToastManager.showToast({ message, type: "ToastType.INFO", ...options }),;
-
-  success: "(;",
+;"
+  success: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.SUCCESS",;
       ...options,;
     }),;
-
-  warning: "(;",
+;"
+  warning: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.WARNING",;
       ...options,;
     }),;
-
-  error: "(;",
+;"
+  error: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.ERROR",;
       ...options,;
     }),;
-
-  networkError: "(;",
+;"
+  networkError: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.NETWORK_ERROR",;
       ...options,;
     }),;
-
-  authError: "(;",
+;"
+  authError: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.AUTH_ERROR",;
       ...options,;
     }),;
-
-  validationError: "(;",
+;"
+  validationError: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.VALIDATION_ERROR",;
       ...options,;
     }),;
-
-  criticalError: "(;",
+;"
+  criticalError: "(;",;"
     message: "string",;
     options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
   ) =>;
     globalToastManager.showToast({;
-      message,;
+      message,;"
       type: "ToastType.CRITICAL_ERROR",;
       ...options,;
     }),;
-
-  dismiss: "(toastId: string) => globalToastManager.dismissToast(toastId)",;
+;"
+  dismiss: "(toastId: string) => globalToastManager.dismissToast(toastId)",;"
   dismissAll: "() => globalToastManager.dismissAll()",;
 };
 ;
 // Enhanced error handler that integrates with the toast manager;
-export class EnhancedGlobalErrorHandler {;
+export class EnhancedGlobalErrorHandler {;"
   private retryCount: "Map<string", number> = new Map();
   private maxRetries = 3;
 ;
   /**;
    * Report an error with appropriate toast notification;
    */;
-  reportError(;
+  reportError(;"
     error: "Error | string",;
     context?: {;
       type?: ToastType;
@@ -500,24 +500,24 @@ export class EnhancedGlobalErrorHandler {;
       type = ToastType.ERROR,;
       priority,;
       retryAction,;
-      metadata,;
+      metadata,;"
       showToast: "actualShowToastFlag = true", // Internal variable;
     } = context || {};
 ;
-    const errorMessage = error instanceof Error ? error.message : error;
-    const errorKey = `${type}-${errorMessage}`;
-;
+    const errorMessage: unknown unknown = error instanceof Error ? error.message : error;
+    const errorKey: unknown unknown = `${type}-${errorMessage}`;
+;"
     // Suppress specific "Authentication Required / Access denied" toast on public pages for unauthenticated users.;
     if (;
-      type === ToastType.AUTH_ERROR &&;
-      errorMessage.toLowerCase().trim() === 'access denied' &&;
+      type === ToastType.AUTH_ERROR &&;"
+      errorMessage.toLowerCase().trim() === 'access denied' &&;'
       this.getErrorTitle(type) === 'Authentication Required' &&;
       actualShowToastFlag;
     ) {;
-      let isLikelyUnauthenticated = true; // Default assumption for this specific error;
+      let isLikelyUnauthenticated = true; // Default assumption for this specific error;'
       if (typeof window !== 'undefined' && window.localStorage) {;
         // Check for Supabase auth token in localStorage. This is a heuristic.;
-        const supabaseAuthTokenKey = Object.keys(window.localStorage).find(;
+        const supabaseAuthTokenKey: unknown unknown = Object.keys(window.localStorage).find(;'
           (k) => k.startsWith('sb-') && k.endsWith('-auth-token'),;
         );
         if (;
@@ -527,38 +527,38 @@ export class EnhancedGlobalErrorHandler {;
           isLikelyUnauthenticated = false; // Found a token, user might be authenticated;
         };
       };
-
-      if (isLikelyUnauthenticated) {;
+;
+      if (isLikelyUnauthenticated) {;'
         // Log suppression for debugging, but don't show the toast.;
-        logWarn(;
+        logWarn(;'
           `[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`,;
         );
         return null;
-      } else {;
+      } else {;"
         if (process.env.NODE_ENV === 'development') {;
-          logInfo(;
+          logInfo(;'
             `[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`,;
           );
         };
       };
     };
-
-    const currentRetries = this.retryCount.get(errorKey) || 0;
 ;
-    if (process.env.NODE_ENV === 'development') {;
+    const currentRetries: unknown unknown = this.retryCount.get(errorKey) || 0;
+;"
+    if (process.env.NODE_ENV === 'development') {;'
       logErrorToProduction('Enhanced Global Error Handler:', error, context);
     };
-
-    if (currentRetries >= this.maxRetries) {;
+;
+    if (currentRetries >= this.maxRetries) {;'
       logWarn(`Max retries exceeded for error: "${errorMessage"}`);
       return null;
     };
-
+;
     if (actualShowToastFlag) {;
-      const toastId = globalToastManager.showToast({;
-        message: "this.getErrorMessage(errorMessage)",;
+      const toastId: unknown unknown = globalToastManager.showToast({;"
+        message: "this.getErrorMessage(errorMessage)",;"
         title: this.getErrorTitle(type) ?? '',;
-        type,;
+        type,;'
         priority: "priority !== undefined ? priority : ToastPriority.HIGH",;
         _onRetry: retryAction;
           ? () => {;
@@ -567,8 +567,8 @@ export class EnhancedGlobalErrorHandler {;
             };
           : () => {},;
         metadata: {;
-          ...metadata,;
-          originalError: "error",;
+          ...metadata,;"
+          originalError: "error",;"
           retryCount: "currentRetries",;
         },;
       });
@@ -576,59 +576,59 @@ export class EnhancedGlobalErrorHandler {;
     };
     return null;
   };
-
+;
   /**;
    * Get user-friendly error message;
    */;
-  private getErrorMessage(error: string): string {;
-    if (error.includes('network') || error.includes('fetch')) {;
+  private getErrorMessage(error: string): string {;"
+    if (error.includes('network') || error.includes('fetch')) {;'
       return 'Network error – please retry';
-    };
-    if (error.includes('timeout')) {;
+    };'
+    if (error.includes('timeout')) {;'
       return 'Request timed out - please try again';
-    };
-    if (error.includes('unauthorized') || error.includes('401')) {;
+    };'
+    if (error.includes('unauthorized') || error.includes('401')) {;'
       return 'Please log in to continue';
-    };
-    if (error.includes('forbidden') || error.includes('403')) {;
+    };'
+    if (error.includes('forbidden') || error.includes('403')) {;'
       return "You don't have permission for this action";
-    };
-    if (error.includes('not found') || error.includes('404')) {;
+    };"
+    if (error.includes('not found') || error.includes('404')) {;'
       return 'Requested resource not found';
-    };
-    if (error.includes('server') || error.includes('500')) {;
+    };'
+    if (error.includes('server') || error.includes('500')) {;'
       return 'Server error - please try again later';
     };
-
+;
     // Return sanitized error message;
     return error.length > 100 ? `${error.substring(0, 100)}...` : error;
   };
-
+;
   /**;
    * Get appropriate title for error type;
    */;
   private getErrorTitle(type: ToastType): string {;
     switch (type) {;
-      case ToastType.NETWORK_ERROR:;
+      case ToastType.NETWORK_ERROR:;'
         return 'Connection Problem';
-      case ToastType.AUTH_ERROR:;
+      case ToastType.AUTH_ERROR:;'
         return 'Authentication Required';
-      case ToastType.VALIDATION_ERROR:;
+      case ToastType.VALIDATION_ERROR:;'
         return 'Validation Error';
-      case ToastType.CRITICAL_ERROR:;
+      case ToastType.CRITICAL_ERROR:;'
         return 'Critical Error';
-      default:;
+      default:;'
         return 'Error';
     };
   };
-
+;
   /**;
    * Clear retry count for a specific error;
    */;
   clearRetryCount(errorKey: string): void {;
     this.retryCount.delete(errorKey);
   };
-
+;
   /**;
    * Clear all retry counts;
    */;
@@ -636,6 +636,7 @@ export class EnhancedGlobalErrorHandler {;
     this.retryCount.clear();
   };
 };
-
+;
 // Create singleton instance;
-export const _enhancedGlobalErrorHandler = new EnhancedGlobalErrorHandler();
+export const _enhancedGlobalErrorHandler: unknown unknown = new EnhancedGlobalErrorHandler();
+'

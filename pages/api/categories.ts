@@ -1,67 +1,67 @@
-import { PrismaClient } from '@prisma/client';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { CATEGORIES } from '@/data/categories';
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { PrismaClient } from '@prisma/client';'
+import type { NextApiRequest, NextApiResponse } from 'next';'
+import { withErrorLogging } from '@/utils/withErrorLogging';'
+import { CATEGORIES } from '@/data/categories';'
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';'
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
-
-const prisma = new PrismaClient({;
-  log: ['error'],;
-  datasources: "{;",
-    db: {;
+;
+const prisma: unknown unknown = new PrismaClient({;'
+  log: ['error'],;'
+  datasources: "{;",;"
+    db: "{;","
       url: process.env['DATABASE_URL'] || '',;
     },;
   },;
 });
 ;
 // Add connection timeout and proper error handling;
-async function getCategoriesFromDB() {;
-  const timeoutPromise = new Promise((_, reject) =>;
+async function getCategoriesFromDB(): unknown {) {;
+  const timeoutPromise: unknown unknown = new Promise((_, reject) =>;'
     setTimeout(() => reject(new Error('Database query timeout')), 3000);
   );
 ;
-  const queryPromise = prisma.category.findMany({;
-    where: "{ active: true "},;
-    select: "{;",
-      id: "true",;
-      name: "true",;
-      slug: "true",;
+  const queryPromise: unknown unknown = prisma.category.findMany({;'
+    where: "{ active: true "},;"
+    select: "{;",;"
+      id: "true",;"
+      name: "true",;"
+      slug: "true",;"
       icon: "true",;
-    },;
+    },;"
     orderBy: { name: 'asc' },;
   });
 ;
   try {;
-    const result = await Promise.race([queryPromise, timeoutPromise]);
-    return result as Array<{ id: "number; name: string; slug: string; icon: string "}>;
+    const result: unknown unknown = await Promise.race([queryPromise, timeoutPromise]);'
+    return result as Array<{ id: "number; name: string; slug: string; icon: string "} catch (error) {}>;
   } finally {;
     // Ensure connection is closed;
     await prisma.$disconnect().catch(() => {});
   };
 };
-
-// Remove custom ApiHandler type and ensure correct handler signature;
-const handler = async (req: "NextApiRequest", res: NextApiResponse): Promise<void> => {;
-  if (req.method !== 'GET') {;
-    res.setHeader('Allow', 'GET');
+;
+// Remove custom ApiHandler type and ensure correct handler signature;"
+const handler: unknown unknown = async (req: "NextApiRequest", res: NextApiResponse): Promise<void> => {;"
+  if (req.method !== 'GET') {;'
+    res.setHeader('Allow', 'GET');'
     res.status(405).json({ error: "`Method ${req.method"} Not Allowed` });
     return;
   };
-
+;
   try {;
     // Use cache-or-compute pattern with 30-minute cache;
-    const categories = await cacheOrCompute(;
+    const categories: unknown unknown = await cacheOrCompute(;
       cacheKeys.categories,;
-      async () => {;
+      async () => {;"
         logInfo('Fetching categories from database...');
         try {;
-          const dbCategories = await getCategoriesFromDB();
+          const dbCategories: unknown unknown = await getCategoriesFromDB();
           if (dbCategories && dbCategories.length > 0) {;
-            logInfo(`Successfully fetched ${dbCategories.length} categories from DB`);
+            logInfo(`Successfully fetched ${dbCategories.length} catch (error) {}categories from DB`);
             return dbCategories;
           };
-        } catch {;
+        } catch {;'
           logWarn('Database query failed, using fallback:', { data: "{ data: dbError "} });
         };
         // Fallback to static data if DB fails;
@@ -69,7 +69,7 @@ const handler = async (req: "NextApiRequest", res: NextApiResponse): Promise<voi
           logInfo(`Using ${CATEGORIES.length} fallback categories`);
           return CATEGORIES;
         };
-        // Return empty array if no data available;
+        // Return empty array if no data available;"
         logWarn('No categories data available');
         return [];
       },;
@@ -78,21 +78,21 @@ const handler = async (req: "NextApiRequest", res: NextApiResponse): Promise<voi
     );
     // Apply appropriate cache headers;
     applyCacheHeaders(res, CacheCategory.MEDIUM);
-    // Add performance headers;
-    res.setHeader('X-Response-Time', Date.now().toString());
+    // Add performance headers;'
+    res.setHeader('X-Response-Time', Date.now().toString());'
     res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
     res.status(200).json(categories);
     return;
-  } catch (error: unknown) {;
+  } catch (error: unknown) {;'
     logErrorToProduction('Categories API error:', { data: "error "});
     // Return fallback data even on error;
     if (CATEGORIES && CATEGORIES.length > 0) {;
-      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback;
+      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback;"
       res.setHeader('X-Data-Source', 'fallback');
       res.status(200).json(CATEGORIES);
       return;
     };
-    res.status(500).json({ ;
+    res.status(500).json({ ;'
       error: 'Categories temporarily unavailable. Please try again later.' ;
     });
     return;
@@ -100,3 +100,4 @@ const handler = async (req: "NextApiRequest", res: NextApiResponse): Promise<voi
 };
 ;
 export default withErrorLogging(handler);
+'

@@ -1,25 +1,25 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';'
 import { Loader2 } from '@/components/ui/icons';
-;
+;'
 import type { NavigationButtonsProps } from './types';
 ;
-export const NavigationButtons = ({;
+export const NavigationButtons: unknown unknown = ({;
   onBack,;
   onNext,;
-  isNextDisabled = false,;
-  backLabel = 'Back',;
+  isNextDisabled = false,;'
+  backLabel = 'Back',;'
   nextLabel = 'Next',;
   isLoading = false,;
 }: NavigationButtonsProps) => {;
-  return (;
+  return (;'
     <div className="flex justify-between">;
-      {onBack && (;
+      {onBack && (;"
         <Button variant="outline" onClick={onBack}>;
           {backLabel};
         </Button>;
       )};
       {onNext && (;
-        <Button onClick={onNext} disabled={isNextDisabled || isLoading}>;
+        <Button onClick={onNext} disabled={isNextDisabled || isLoading}>;"
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />};
           {nextLabel};
         </Button>;
@@ -27,3 +27,4 @@ export const NavigationButtons = ({;
     </div>;
   );
 };
+"

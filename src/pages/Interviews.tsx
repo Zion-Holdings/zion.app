@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Calendar, Clock, Video } from '@/components/ui/icons';
-import { useInterviews } from '@/hooks/useInterviews';
-import type { Interview } from '@/types/interview';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { SEO } from '@/components/SEO';
-import { ProtectedRoute } from '@/components/ProtectedRoute';
+import React, { useEffect, useState } from 'react';'
+import { Calendar, Clock, Video } from '@/components/ui/icons';'
+import { useInterviews } from '@/hooks/useInterviews';'
+import type { Interview } from '@/types/interview';'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';'
+import { SEO } from '@/components/SEO';'
+import { ProtectedRoute } from '@/components/ProtectedRoute';'
 import { InterviewCard } from '@/components/interviews/InterviewCard';
-;
+;'
 import { format, isAfter, parseISO, startOfDay } from 'date-fns';
 ;
-function InterviewsContent() {;
-  const { interviews, isLoading, fetchInterviews } = useInterviews();
+function InterviewsContent(): unknown {) {;
+  const { interviews, isLoading, fetchInterviews } = useInterviews();'
   const [activeTab, setActiveTab] = useState('upcoming');
 ;
   useEffect(() => {;
@@ -18,14 +18,14 @@ function InterviewsContent() {;
   }, [fetchInterviews]);
 ;
   // Filter interviews based on status and date;
-  const now = new Date();
-//   const _today = undefined; // Unused startOfDay(now);
+  const now: unknown unknown = new Date();
+//   const _today: unknown unknown = undefined; // Unused startOfDay(now);
 ;
-  const upcomingInterviews = interviews;
+  const upcomingInterviews: unknown unknown = interviews;
     .filter((interview) => {;
-      const interviewDate = parseISO(interview.scheduled_date);
+      const interviewDate: unknown unknown = parseISO(interview.scheduled_date);
       return (;
-        isAfter(interviewDate, now) &&;
+        isAfter(interviewDate, now) &&;'
         ['confirmed', 'requested'].includes(interview.status);
       );
     });
@@ -35,24 +35,24 @@ function InterviewsContent() {;
         parseISO(b.scheduled_date).getTime(),;
     );
 ;
-  const pendingInterviews = interviews.filter(;
+  const pendingInterviews: unknown unknown = interviews.filter(;'
     (interview) => interview.status === 'requested',;
   );
 ;
-  const pastInterviews = interviews.filter((interview) => {;
-    const interviewDate = parseISO(interview.scheduled_date);
+  const pastInterviews: unknown unknown = interviews.filter((interview) => {;
+    const interviewDate: unknown unknown = parseISO(interview.scheduled_date);
     return (;
-      !isAfter(interviewDate, now) ||;
+      !isAfter(interviewDate, now) ||;'
       ['completed', 'declined', 'cancelled'].includes(interview.status);
     );
   });
 ;
   // Group interviews by date;
-  const groupInterviewsByDate = (_interviews: Interview[]) => {;
-    const grouped: "Record<string", Interview[]> = {};
+  const groupInterviewsByDate: unknown unknown = (_interviews: Interview[]) => {;'
+    const grouped: unknown "Record<string", Interview[]> = {};
 ;
-    interviews.forEach((interview) => {;
-      const dateKey = format(parseISO(interview.scheduled_date), 'yyyy-MM-dd');
+    interviews.forEach((interview) => {;"
+      const dateKey: unknown unknown = format(parseISO(interview.scheduled_date), 'yyyy-MM-dd');
       if (!grouped[dateKey]) {;
         grouped[dateKey] = [];
       };
@@ -62,11 +62,11 @@ function InterviewsContent() {;
     return grouped;
   };
 ;
-  const upcomingGrouped = groupInterviewsByDate(upcomingInterviews);
-  const pendingGrouped = groupInterviewsByDate(pendingInterviews);
-  const pastGrouped = groupInterviewsByDate(pastInterviews);
+  const upcomingGrouped: unknown unknown = groupInterviewsByDate(upcomingInterviews);
+  const pendingGrouped: unknown unknown = groupInterviewsByDate(pendingInterviews);
+  const pastGrouped: unknown unknown = groupInterviewsByDate(pastInterviews);
 ;
-  const renderInterviewGroups = (;
+  const renderInterviewGroups: unknown unknown = (;'
     groupedInterviews: "Record<string", Interview[]>,;
   ) => {;
     return Object.entries(groupedInterviews);
@@ -74,12 +74,12 @@ function InterviewsContent() {;
         ([dateA], [dateB]) =>;
           parseISO(dateA).getTime() - parseISO(dateB).getTime(),;
       );
-      .map(([date, interviews]) => (;
-        <div key={date} className="mb-8">;
-          <h3 className="text-lg font-medium text-white mb-4 flex items-center">;
-            <Calendar className="h-5 w-5 mr-2" />;
+      .map(([date, interviews]) => (;"
+        <div key={date} className="mb-8">;"
+          <h3 className="text-lg font-medium text-white mb-4 flex items-center">;"
+            <Calendar className="h-5 w-5 mr-2" />;"
             {format(parseISO(date), 'EEEE, MMMM d, yyyy')};
-          </h3>;
+          </h3>;'
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">;
             {interviews.map((interview) => (;
               <InterviewCard;
@@ -97,98 +97,98 @@ function InterviewsContent() {;
 ;
   return (;
     <>;
-      <SEO;
-        title="Interviews | Zion AI Marketplace";
+      <SEO;"
+        title="Interviews | Zion AI Marketplace";"
         description="Manage your scheduled interviews with clients and talent";
-      />;
-      <main className="container mx-auto px-4 py-8">;
+      />;"
+      <main className="container mx-auto px-4 py-8">;"
         <div className="flex justify-between items-center mb-8">;
-          <div>;
-            <h1 className="text-3xl font-bold">Interviews</h1>;
+          <div>;"
+            <h1 className="text-3xl font-bold">Interviews</h1>;"
             <p className="text-muted-foreground mt-1">;
               Schedule and manage your video interviews;
             </p>;
           </div>;
         </div>;
-
+;
         <Tabs;
           defaultValue={activeTab};
-          onValueChange={setActiveTab};
+          onValueChange={setActiveTab};"
           className="space-y-8";
-        >;
-          <TabsList className="mb-6">;
-            <TabsTrigger value="upcoming" className="flex items-center">;
+        >;"
+          <TabsList className="mb-6">;"
+            <TabsTrigger value="upcoming" className="flex items-center">;"
               <Clock className="h-4 w-4 mr-2" />;
               Upcoming;
-              {upcomingInterviews.length > 0 && (;
+              {upcomingInterviews.length > 0 && (;"
                 <span className="ml-2 bg-primary rounded-full px-2 py-0.5 text-xs">;
                   {upcomingInterviews.length};
                 </span>;
               )};
-            </TabsTrigger>;
+            </TabsTrigger>;"
             <TabsTrigger value="pending">;
               Pending;
-              {pendingInterviews.length > 0 && (;
+              {pendingInterviews.length > 0 && (;"
                 <span className="ml-2 bg-amber-500 rounded-full px-2 py-0.5 text-xs">;
                   {pendingInterviews.length};
                 </span>;
               )};
-            </TabsTrigger>;
+            </TabsTrigger>;"
             <TabsTrigger value="past">Past</TabsTrigger>;
           </TabsList>;
-
+;"
           <TabsContent value="upcoming" className="space-y-6">;
-            {isLoading ? (;
-              <div className="flex justify-center py-12">;
+            {isLoading ? (;"
+              <div className="flex justify-center py-12">;"
                 <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>;
               </div>;
             ) : upcomingInterviews.length > 0 ? (;
               renderInterviewGroups(upcomingGrouped);
-            ) : (;
-              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;
-                <Video className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;
+            ) : (;"
+              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;"
+                <Video className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;"
                 <h3 className="text-xl font-medium mb-2">;
                   No upcoming interviews;
-                </h3>;
-                <p className="text-muted-foreground mb-6">;
+                </h3>;"
+                <p className="text-muted-foreground mb-6">;"
                   You don't have any scheduled interviews coming up.;
                 </p>;
               </div>;
             )};
           </TabsContent>;
-
+;'
           <TabsContent value="pending" className="space-y-6">;
-            {isLoading ? (;
-              <div className="flex justify-center py-12">;
+            {isLoading ? (;"
+              <div className="flex justify-center py-12">;"
                 <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>;
               </div>;
             ) : pendingInterviews.length > 0 ? (;
               renderInterviewGroups(pendingGrouped);
-            ) : (;
-              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;
-                <Clock className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;
+            ) : (;"
+              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;"
+                <Clock className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;"
                 <h3 className="text-xl font-medium mb-2">;
                   No pending interviews;
-                </h3>;
-                <p className="text-muted-foreground mb-6">;
+                </h3>;"
+                <p className="text-muted-foreground mb-6">;"
                   You don't have any interview requests that need your;
                   attention.;
                 </p>;
               </div>;
             )};
           </TabsContent>;
-
+;'
           <TabsContent value="past" className="space-y-6">;
-            {isLoading ? (;
-              <div className="flex justify-center py-12">;
+            {isLoading ? (;"
+              <div className="flex justify-center py-12">;"
                 <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>;
               </div>;
             ) : pastInterviews.length > 0 ? (;
               renderInterviewGroups(pastGrouped);
-            ) : (;
-              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;
-                <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;
-                <h3 className="text-xl font-medium mb-2">No past interviews</h3>;
+            ) : (;"
+              <div className="text-center py-12 bg-zion-blue-dark/40 rounded-lg border border-zion-blue-light">;"
+                <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />;"
+                <h3 className="text-xl font-medium mb-2">No past interviews</h3>;"
                 <p className="text-muted-foreground">;
                   Your interview history will appear here.;
                 </p>;
@@ -200,11 +200,12 @@ function InterviewsContent() {;
     </>;
   );
 };
-
-export default function Interviews() {;
+;
+export default function Interviews(): unknown {) {;
   return (;
     <ProtectedRoute>;
       <InterviewsContent />;
     </ProtectedRoute>;
   );
 };
+"

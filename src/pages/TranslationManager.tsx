@@ -4,31 +4,31 @@ import {;
   Check,;
   Globe,;
   Search,;
-  Loader2,;
-} from '@/components/ui/icons';
-import { Header } from '@/components/Header';
-import { SEO } from '@/components/SEO';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/components/ui/use-toast';
+  Loader2,;'
+} from '@/components/ui/icons';'
+import { Header } from '@/components/Header';'
+import { SEO } from '@/components/SEO';'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';'
+import { Input } from '@/components/ui/input';'
+import { Button } from '@/components/ui/button';'
+import { Textarea } from '@/components/ui/textarea';'
+import { toast } from '@/components/ui/use-toast';'
 import { useTranslation } from 'react-i18next';
-;
-import { useIsMobile } from '@/hooks/use-mobile';
-import { useLanguage } from '@/context/LanguageContext';
-import type { SupportedLanguage } from '@/context/LanguageContext';
-import { useTranslationService } from '@/hooks/useTranslationService';
+;'
+import { useIsMobile } from '@/hooks/use-mobile';'
+import { useLanguage } from '@/context/LanguageContext';'
+import type { SupportedLanguage } from '@/context/LanguageContext';'
+import { useTranslationService } from '@/hooks/useTranslationService';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export default function TranslationManager() {;
+export default function TranslationManager(): unknown {) {;
   const { t, i18n } = useTranslation();
-  const isMobile = useIsMobile();
+  const isMobile: unknown unknown = useIsMobile();
   const { _supportedLanguages } = useLanguage();
   const { translateContent, isTranslating } = useTranslationService();
-;
-  const [selectedNamespace, setSelectedNamespace] = useState('translation');
+;'
+  const [selectedNamespace, setSelectedNamespace] = useState('translation');'
   const [searchQuery, setSearchQuery] = useState('');
   const [translations, setTranslations] = useState<;
     Record<string, Record<string, string>>;
@@ -41,25 +41,25 @@ export default function TranslationManager() {;
   const [isSaving, setIsSaving] = useState(false);
 ;
   // Simulated translation data - in a real app, this would come from your backend;
-  useEffect(() => {;
-    // For demo purposes, we're using the loaded translations from i18next;
-    const currentTranslations: "Record<string", Record<string, string>> = {};
+  useEffect(() => {;'
+    // For demo purposes, we're using the loaded translations from i18next;'
+    const currentTranslations: unknown "Record<string", Record<string, string>> = {};
 ;
     supportedLanguages.forEach((lang) => {;
-      const res = i18n.getResourceBundle(lang.code, selectedNamespace);
+      const res: unknown unknown = i18n.getResourceBundle(lang.code, selectedNamespace);
       if (res) {;
         // Flatten nested objects for easier management;
-        const flattenObject = (;
-          obj: "unknown",;
+        const flattenObject: unknown unknown = (;"
+          obj: "unknown",;"
           prefix = '',;
-        ): Record<string, string> => {;
+        ): Record<string, string> => {;'
           if (typeof obj !== 'object' || obj === null) return {};
           return Object.keys(obj).reduce(;
-            (acc, key) => {;
-              const pre = prefix.length ? `${prefix}.` : '';
-              const value = (obj as Record<string, unknown>)[key];
+            (acc, key) => {;'
+              const pre: unknown unknown = prefix.length ? `${prefix}.` : '';
+              const value: unknown unknown = (obj as Record<string, unknown>)[key];'
               if (typeof value === 'object' && value !== null) {;
-                Object.assign(acc, flattenObject(value, `${pre}${key}`));
+                Object.assign(acc, flattenObject(value, `${pre}${key}`));'
               } else if (typeof value === 'string') {;
                 acc[`${pre}${key}`] = value;
               };
@@ -76,8 +76,8 @@ export default function TranslationManager() {;
     setTranslations(currentTranslations);
 ;
     // Get all unique keys across all languages;
-    const allKeys = new Set<string>();
-    Object.values(currentTranslations).forEach(;
+    const allKeys: unknown unknown = new Set<string>();
+    Object.values(currentTranslations).forEach(;'
       (langTranslations: "Record<string", string>) => {;
         Object.keys(langTranslations).forEach((key) => allKeys.add(key));
       },;
@@ -90,8 +90,8 @@ export default function TranslationManager() {;
   useEffect(() => {;
     if (!searchQuery.trim()) {;
       // Get all unique keys across all languages;
-      const allKeys = new Set<string>();
-      Object.values(translations).forEach((langTranslations) => {;
+      const allKeys: unknown unknown = new Set<string>();
+      Object.values(translations).forEach((langTranslations) => {;"
         if (typeof langTranslations === 'object' && langTranslations !== null) {;
           Object.keys(langTranslations as Record<string, string>).forEach(;
             (key) => allKeys.add(key),;
@@ -101,17 +101,17 @@ export default function TranslationManager() {;
       setFilteredKeys(Array.from(allKeys));
       return;
     };
-
-    const query = searchQuery.toLowerCase().trim();
-    const filtered: string[] = [];
+;
+    const query: unknown unknown = searchQuery.toLowerCase().trim();
+    const filtered: unknown string[] = [];
 ;
     // Search in keys and values;
-    Object.values(translations).forEach((langTranslations) => {;
+    Object.values(translations).forEach((langTranslations) => {;'
       if (typeof langTranslations === 'object' && langTranslations !== null) {;
         Object.entries(langTranslations as Record<string, string>).forEach(;
           ([key, value]) => {;
             if (;
-              key.toLowerCase().includes(query) ||;
+              key.toLowerCase().includes(query) ||;'
               (typeof value === 'string' && value.toLowerCase().includes(query));
             ) {;
               filtered.push(key);
@@ -124,20 +124,20 @@ export default function TranslationManager() {;
     setFilteredKeys([...new Set(filtered)]);
   }, [searchQuery, translations]);
 ;
-  const handleEdit = (_key: string) => {;
+  const handleEdit: unknown unknown = (_key: string) => {;
     setEditingKey(key);
 ;
-    // Initialize edited translations for this key;
-    const initialEdits: "Record<SupportedLanguage", string> = {} as Record<;
+    // Initialize edited translations for this key;'
+    const initialEdits: unknown "Record<SupportedLanguage", string> = {} as Record<;
       SupportedLanguage,;
       string;
     >;
     supportedLanguages.forEach((lang) => {;
-      const langTranslations = translations[lang.code];
-      initialEdits[lang.code] =;
+      const langTranslations: unknown unknown = translations[lang.code];
+      initialEdits[lang.code] =;"
         (typeof langTranslations === 'object' &&;
           langTranslations !== null &&;
-          langTranslations[key]) ||;
+          langTranslations[key]) ||;'
         '';
     });
 ;
@@ -147,21 +147,21 @@ export default function TranslationManager() {;
     });
   };
 ;
-  const handleSave = (_key: string) => {;
+  const handleSave: unknown unknown = (_key: string) => {;
     setIsSaving(true);
 ;
     // In a real application, you would save these to your backend;
     setTimeout(() => {;
       // Update translations with edited values;
-      const updatedTranslations = { ...translations };
+      const updatedTranslations: unknown unknown = { ...translations };
 ;
       supportedLanguages.forEach((lang) => {;
         if (!updatedTranslations[lang.code]) {;
           updatedTranslations[lang.code] = {};
         };
-        const editedKey = editedTranslations[key];
+        const editedKey: unknown unknown = editedTranslations[key];
         if (;
-          editedKey &&;
+          editedKey &&;'
           typeof editedKey === 'object' &&;
           editedKey[lang.code] !== undefined;
         ) {;
@@ -174,21 +174,21 @@ export default function TranslationManager() {;
       setEditingKey(null);
       setIsSaving(false);
 ;
-      toast({;
-        title: t('translation.saved'),;
+      toast({;'
+        title: t('translation.saved'),;'
         description: t('translation.changes_saved'),;
       });
     }, 1000);
   };
 ;
-  const handleTranslateKey = async (_key: string) => {;
-    // Find first non-empty translation to use as source;
-    let sourceLanguage: SupportedLanguage = 'en';
+  const handleTranslateKey: unknown unknown = async (_key: string) => {;
+    // Find first non-empty translation to use as source;'
+    let sourceLanguage: SupportedLanguage = 'en';'
     let sourceText = '';
 ;
     for (const lang of supportedLanguages.map((l) => l.code)) {;
-      const langTranslations = translations[lang];
-      if (;
+      const langTranslations: unknown unknown = translations[lang];
+      if (;'
         typeof langTranslations === 'object' &&;
         langTranslations !== null &&;
         langTranslations[key];
@@ -198,72 +198,72 @@ export default function TranslationManager() {;
         break;
       };
     };
-
+;
     if (!sourceText) {;
-      toast({;
-        title: t('translation.no_content'),;
-        description: t('translation.add_content_first'),;
+      toast({;'
+        title: t('translation.no_content'),;'
+        description: t('translation.add_content_first'),;'
         variant: 'destructive',;
       });
       return;
     };
-
-    try {;
-      const { translations: "translatedText", error } = await translateContent(;
-        sourceText,;
+;
+    try {;'
+      const { translations: "translatedText", error } catch (error) {}= await translateContent(;
+        sourceText,;"
         'general',;
         sourceLanguage,;
       );
 ;
       if (error) {;
-        toast({;
-          title: t('translation.translation_failed'),;
-          description: "error",;
+        toast({;'
+          title: t('translation.translation_failed'),;'
+          description: "error",;"
           variant: 'destructive',;
         });
         return;
       };
-
+;
       // Update edited translations with auto-translated content;
       setEditedTranslations({;
         ...editedTranslations,;
         [key]: translatedText,;
       });
 ;
-      toast({;
-        title: t('translation.translation_success'),;
+      toast({;'
+        title: t('translation.translation_success'),;'
         description: t('translation.content_translated'),;
       });
-    } catch (error: unknown) {;
-      if (typeof error === 'object' && error !== null) {;
+    } catch (error: unknown) {;'
+      if (typeof error === 'object' && error !== null) {;'
         logErrorToProduction(`Error translating key ${key}:`, { data: "error "});
       } else {;
-        logErrorToProduction(`Error translating key ${key}:`, {;
+        logErrorToProduction(`Error translating key ${key}:`, {;"
           data: "String(error)",;
         });
-      };
-      let errorMessage = t('translation.unknown_error');
+      };"
+      let errorMessage = t('translation.unknown_error');'
       if (typeof error === 'object' && error !== null && 'message' in error) {;
         errorMessage = String(;
-          (error as Record<string, unknown>).message ??;
+          (error as Record<string, unknown>).message ??;'
             t('translation.unknown_error'),;
         );
       };
-      toast({;
-        title: t('translation.translation_failed'),;
-        description: "errorMessage",;
+      toast({;'
+        title: t('translation.translation_failed'),;'
+        description: "errorMessage",;"
         variant: 'destructive',;
       });
     };
   };
 ;
-  const handleCancel = () => {;
+  const handleCancel: unknown unknown = () => {;
     setEditingKey(null);
   };
 ;
-  const handleChange = (;
-    lang: "SupportedLanguage",;
-    key: "string",;
+  const handleChange: unknown unknown = (;'
+    lang: "SupportedLanguage",;"
+    key: "string",;"
     _value: "string",;
   ) => {;
     setEditedTranslations({;
@@ -276,12 +276,12 @@ export default function TranslationManager() {;
     } as Record<string, Record<SupportedLanguage, string>>);
   };
 ;
-  const getMissingLanguages = (key: string): SupportedLanguage[] => {;
+  const getMissingLanguages: unknown unknown = (key: string): SupportedLanguage[] => {;
     return supportedLanguages;
       .map((lang) => lang.code);
       .filter((lang) => {;
-        const langTranslations = translations[lang];
-        return !(;
+        const langTranslations: unknown unknown = translations[lang];
+        return !(;"
           typeof langTranslations === 'object' &&;
           langTranslations !== null &&;
           langTranslations[key];
@@ -291,86 +291,86 @@ export default function TranslationManager() {;
 ;
   return (;
     <>;
-      <SEO;
-        title={t('translation.manager_title')};
+      <SEO;'
+        title={t('translation.manager_title')};'
         description={t('translation.manager_description')};
       />;
-      <Header />;
+      <Header />;'
       <main className={`container mx-auto px-${isMobile ? '4' : '6'} py-8`}>;
         <Card>;
-          <CardHeader>;
-            <CardTitle className="text-2xl">;
+          <CardHeader>;'
+            <CardTitle className="text-2xl">;"
               {t('translation.manager_title')};
             </CardTitle>;
           </CardHeader>;
-          <CardContent>;
+          <CardContent>;'
             <div className="space-y-6">;
-              {/* Search and filter */};
-              <div className="flex flex-col sm:flex-row gap-4">;
-                <div className="relative flex-1">;
+              {/* Search and filter */};"
+              <div className="flex flex-col sm:flex-row gap-4">;"
+                <div className="relative flex-1">;"
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />;
-                  <Input;
-                    type="search";
-                    placeholder={t('translation.search_placeholder')};
+                  <Input;"
+                    type="search";"
+                    placeholder={t('translation.search_placeholder')};'
                     className="pl-8";
                     value={searchQuery};
                     onChange={(e) => setSearchQuery(e.target.value)};
                   />;
                 </div>;
-                <Tabs;
+                <Tabs;"
                   defaultValue="translation";
                   value={selectedNamespace};
-                  onValueChange={(value) => setSelectedNamespace(value)};
+                  onValueChange={(value) => setSelectedNamespace(value)};"
                   className="w-full sm:w-auto";
                 >;
-                  <TabsList>;
-                    <TabsTrigger value="translation">General</TabsTrigger>;
+                  <TabsList>;"
+                    <TabsTrigger value="translation">General</TabsTrigger>;"
                     <TabsTrigger value="admin">Admin</TabsTrigger>;
                   </TabsList>;
                 </Tabs>;
               </div>;
-
-              {/* Translations table */};
-              <div className="border rounded-md">;
-                <div className="grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr_auto] border-b">;
-                  <div className="p-3 font-medium">{t('translation.key')}</div>;
-                  <div className="p-3 font-medium">;
+;
+              {/* Translations table */};"
+              <div className="border rounded-md">;"
+                <div className="grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr_auto] border-b">;"
+                  <div className="p-3 font-medium">{t('translation.key')}</div>;'
+                  <div className="p-3 font-medium">;"
                     {t('translation.translations')};
-                  </div>;
-                  <div className="hidden sm:block p-3 font-medium">;
+                  </div>;'
+                  <div className="hidden sm:block p-3 font-medium">;"
                     {t('translation.actions')};
                   </div>;
                 </div>;
-
-                {filteredKeys.length === 0 ? (;
-                  <div className="p-6 text-center text-muted-foreground">;
+;
+                {filteredKeys.length === 0 ? (;'
+                  <div className="p-6 text-center text-muted-foreground">;"
                     {t('translation.no_results')};
                   </div>;
-                ) : (;
+                ) : (;'
                   <div className="divide-y">;
                     {filteredKeys.map((key) => (;
                       <div;
-                        key={key};
+                        key={key};"
                         className="grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr_auto]";
-                      >;
+                      >;"
                         <div className="p-3 break-words">{key}</div>;
-                        {editingKey === key ? (;
-                          <div className="p-3">;
+                        {editingKey === key ? (;"
+                          <div className="p-3">;"
                             <div className="space-y-4">;
                               {supportedLanguages.map((lang) => (;
-                                <div key={lang.code}>;
+                                <div key={lang.code}>;"
                                   <div className="flex items-center gap-2 mb-1">;
                                     <span>{lang.flag}</span>;
                                     <span>{lang.name}</span>;
                                   </div>;
                                   {editedTranslations[key]?.[;
-                                    lang.code;
+                                    lang.code;"
                                   ]?.includes('\n') ||;
                                   (editedTranslations[key]?.[lang.code];
                                     ?.length || 0) > 100 ? (;
                                     <Textarea;
                                       value={;
-                                        editedTranslations[key]?.[lang.code] ||;
+                                        editedTranslations[key]?.[lang.code] ||;'
                                         '';
                                       };
                                       onChange={(e) =>;
@@ -379,14 +379,14 @@ export default function TranslationManager() {;
                                           key,;
                                           e.target.value,;
                                         );
-                                      };
-                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'};
+                                      };'
+                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'};'
                                       className="min-h-20";
                                     />;
                                   ) : (;
                                     <Input;
                                       value={;
-                                        editedTranslations[key]?.[lang.code] ||;
+                                        editedTranslations[key]?.[lang.code] ||;"
                                         '';
                                       };
                                       onChange={(e) =>;
@@ -395,100 +395,100 @@ export default function TranslationManager() {;
                                           key,;
                                           e.target.value,;
                                         );
-                                      };
+                                      };'
                                       dir={lang.code === 'ar' ? 'rtl' : 'ltr'};
                                     />;
                                   )};
                                 </div>;
                               ))};
-                            </div>;
+                            </div>;'
                             <div className="flex gap-2 mt-4">;
-                              <Button;
+                              <Button;"
                                 size="sm";
                                 onClick={() => handleSave(key)};
                                 disabled={isSaving};
                               >;
                                 {isSaving ? (;
-                                  <>;
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />;
+                                  <>;"
+                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />;"
                                     {t('general.saving')};
                                   </>;
                                 ) : (;
-                                  <>;
-                                    <Check className="mr-2 h-4 w-4" />;
+                                  <>;'
+                                    <Check className="mr-2 h-4 w-4" />;"
                                     {t('general.save')};
                                   </>;
                                 )};
                               </Button>;
-                              <Button;
-                                size="sm";
+                              <Button;'
+                                size="sm";"
                                 variant="outline";
                                 onClick={handleCancel};
-                              >;
+                              >;"
                                 {t('general.cancel')};
                               </Button>;
-                              <Button;
-                                size="sm";
+                              <Button;'
+                                size="sm";"
                                 variant="secondary";
                                 onClick={() => handleTranslateKey(key)};
                                 disabled={isTranslating};
                               >;
-                                {isTranslating ? (;
+                                {isTranslating ? (;"
                                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />;
-                                ) : (;
+                                ) : (;"
                                   <Globe className="mr-2 h-4 w-4" />;
-                                )};
+                                )};"
                                 {t('translation.auto_translate')};
                               </Button>;
                             </div>;
                           </div>;
-                        ) : (;
-                          <div className="p-3">;
+                        ) : (;'
+                          <div className="p-3">;"
                             <div className="space-y-2">;
                               {supportedLanguages.slice(0, 2).map((lang) => {;
-                                const langTranslations =;
+                                const langTranslations: unknown unknown =;
                                   translations[lang.code];
-                                const hasTranslation =;
+                                const hasTranslation: unknown unknown =;"
                                   typeof langTranslations === 'object' &&;
                                   langTranslations !== null &&;
                                   langTranslations[key];
                                 return (;
                                   <div;
-                                    key={lang.code};
+                                    key={lang.code};'
                                     className="flex items-start gap-2";
-                                  >;
+                                  >;"
                                     <span className="mt-0.5 flex-shrink-0">;
                                       {lang.flag};
                                     </span>;
-                                    <span;
-                                      className={`${!hasTranslation ? 'text-zion-purple italic' : ''}`};
+                                    <span;"
+                                      className={`${!hasTranslation ? 'text-zion-purple italic' : ''}`};'
                                       dir={lang.code === 'ar' ? 'rtl' : 'ltr'};
                                     >;
                                       {hasTranslation;
-                                        ? langTranslations[key];
+                                        ? langTranslations[key];'
                                         : t('translation.missing')};
                                     </span>;
                                   </div>;
                                 );
                               })};
-                              {getMissingLanguages(key).length > 0 && (;
-                                <div className="flex items-center gap-2 text-sm text-zion-purple">;
-                                  <AlertTriangle className="h-4 w-4" />;
-                                  {t('translation.missing_languages', {;
+                              {getMissingLanguages(key).length > 0 && (;'
+                                <div className="flex items-center gap-2 text-sm text-zion-purple">;"
+                                  <AlertTriangle className="h-4 w-4" />;"
+                                  {t('translation.missing_languages', {;'
                                     count: "getMissingLanguages(key).length",;
                                   })};
                                 </div>;
                               )};
                             </div>;
                           </div>;
-                        )};
+                        )};"
                         <div className="p-3 flex items-center justify-end">;
                           {editingKey === key ? null : (;
-                            <Button;
-                              size="sm";
+                            <Button;"
+                              size="sm";"
                               variant="outline";
                               onClick={() => handleEdit(key)};
-                            >;
+                            >;"
                               {t('translation.edit')};
                             </Button>;
                           )};
@@ -505,3 +505,4 @@ export default function TranslationManager() {;
     </>;
   );
 };
+'

@@ -1,69 +1,69 @@
-import React, { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useEnqueueSnackbar } from '@/context';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import React, { useState, useRef } from 'react';'
+import { Button } from '@/components/ui/button';'
+import { Input } from '@/components/ui/input';'
+import { useEnqueueSnackbar } from '@/context';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
 import { isValidEmail } from '@/utils/email';
 ;
-
+;'
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const enqueueSnackbar = useEnqueueSnackbar();
+  const enqueueSnackbar: unknown unknown = useEnqueueSnackbar();
 ;
-  const lastSubmit = useRef(0);
+  const lastSubmit: unknown unknown = useRef(0);
 ;
-  const handleSubmit = async (e: React.FormEvent) => {;
+  const handleSubmit: unknown unknown = async (e: React.FormEvent) => {;
     e.preventDefault();
     if (!email || isSubmitting) return;
 ;
-    const now = Date.now();
+    const now: unknown unknown = Date.now();
     if (now - lastSubmit.current < 1000) return;
     lastSubmit.current = now;
 ;
-    const trimmed = email.trim();
-    if (!isValidEmail(trimmed)) {;
+    const trimmed: unknown unknown = email.trim();
+    if (!isValidEmail(trimmed)) {;'
       enqueueSnackbar('Invalid email', { variant: 'error' });
       return;
     };
-
+;
     setIsSubmitting(true);
 ;
-    try {;
-      const res = await fetch('/api/newsletter', {;
-        method: 'POST',;
-        headers: { 'Content-Type': 'application/json' },;
+    try {;'
+      const res: unknown unknown = await fetch('/api/newsletter', {;'
+        method: 'POST',;'
+        headers: { 'Content-Type': 'application/json' } catch (error) {},;'
         body: "JSON.stringify({ email: trimmed "}),;
       });
 ;
-      const data = await res.json().catch(() => ({}));
+      const data: unknown unknown = await res.json().catch(() => ({}));
 ;
-      if (res.ok) {;
-        if (data.status === 'already_subscribed') {;
-          enqueueSnackbar(data.message || "You're already subscribed!", {;
+      if (res.ok) {;"
+        if (data.status === 'already_subscribed') {;'
+          enqueueSnackbar(data.message || "You're already subscribed!", {;"
             variant: 'success',;
           });
-        } else {;
-          enqueueSnackbar(data.message || 'Successfully subscribed!', {;
+        } else {;'
+          enqueueSnackbar(data.message || 'Successfully subscribed!', {;'
             variant: 'success',;
           });
         };
-        setIsSuccess(true);
+        setIsSuccess(true);'
         setEmail('');
         setTimeout(() => {;
           setIsSuccess(false);
         }, 5000);
-      } else {;
+      } else {;'
         logErrorToProduction('Newsletter subscription failed:', { data });
-        enqueueSnackbar(;
-          data.error || 'Subscription failed. Please try again.',;
+        enqueueSnackbar(;'
+          data.error || 'Subscription failed. Please try again.',;'
           { variant: 'error' },;
         );
       };
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('Error subscribing:', { data: "error "});
-      enqueueSnackbar(;
-        'Unable to subscribe right now. Please try again later.',;
+      enqueueSnackbar(;"
+        'Unable to subscribe right now. Please try again later.',;'
         { variant: 'error' },;
       );
     } finally {;
@@ -71,44 +71,44 @@ import { isValidEmail } from '@/utils/email';
     };
   };
 ;
-  return (;
-    <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-purple/30">;
-      <div className="container mx-auto px-4">;
-        <div className="max-w-3xl mx-auto text-center">;
+  return (;'
+    <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-purple/30">;"
+      <div className="container mx-auto px-4">;"
+        <div className="max-w-3xl mx-auto text-center">;"
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">;
             Get Early Access to New Features;
-          </h2>;
+          </h2>;"
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">;
-            Subscribe to our mobile app updates and be the first to try new;
+            Subscribe to our mobile app updates and be the first to try new;"
             features before they're released to the public.;
           </p>;
-
+;
           <form;
-            onSubmit={handleSubmit};
+            onSubmit={handleSubmit};'
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto";
           >;
-            <Input;
-              type="email";
-              name="email";
+            <Input;"
+              type="email";"
+              name="email";"
               placeholder="Enter your email address";
               value={email};
-              onChange={(e) => setEmail(e.target.value)};
+              onChange={(e) => setEmail(e.target.value)};"
               className="flex-grow bg-zion-blue-dark/70 text-white border-zion-purple/30 placeholder:text-gray-400";
               required;
             />;
-            <Button;
+            <Button;"
               type="submit";
-              disabled={isSubmitting || isSuccess};
+              disabled={isSubmitting || isSuccess};"
               className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-blue-dark font-medium";
             >;
-              {isSubmitting;
+              {isSubmitting;"
                 ? 'Subscribing...';
-                : isSuccess;
-                  ? 'Subscribed!';
+                : isSuccess;'
+                  ? 'Subscribed!';'
                   : 'Subscribe'};
             </Button>;
           </form>;
-
+;'
           <p className="text-sm text-gray-400 mt-4">;
             We respect your privacy and will never share your information.;
           </p>;
@@ -117,3 +117,4 @@ import { isValidEmail } from '@/utils/email';
     </section>;
   );
 };
+"

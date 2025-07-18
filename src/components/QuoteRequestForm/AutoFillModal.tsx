@@ -4,32 +4,32 @@ import {;
   DialogContent,;
   DialogFooter,;
   DialogHeader,;
-  DialogTitle,;
-} from '@/components/ui/dialog';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+  DialogTitle,;'
+} from '@/components/ui/dialog';'
+import { Textarea } from '@/components/ui/textarea';'
+import { Button } from '@/components/ui/button';'
 import { Progress } from '@/components/ui/progress';
 ;
-interface AutoFillModalProps {;
-  open: "boolean;",
-  onOpenChange: "(open: boolean) => void;",
-  onSubmit: "(description: string) => void;",
-  loading: "boolean;"
+interface AutoFillModalProps {;'
+  open: "boolean;",;"
+  onOpenChange: "(open: boolean) => void;",;"
+  onSubmit: "(description: string) => void;",;"
+  loading: "boolean;";
 };
-
-export function AutoFillModal({;
+;
+export function AutoFillModal(): unknown {{;
   open,;
   onOpenChange,;
   onSubmit,;
   loading,;
-}: AutoFillModalProps) {;
+}: AutoFillModalProps) {;"
   const [description, setDescription] = useState('');
   const [progress, setProgress] = useState(0);
 ;
   useEffect(() => {;
     if (loading) {;
       setProgress(0);
-      const id = setInterval(() => {;
+      const id: unknown unknown = setInterval(() => {;
         setProgress((p) => (p >= 90 ? 90 : p + 10));
       }, 300);
       return () => clearInterval(id);
@@ -40,41 +40,41 @@ export function AutoFillModal({;
     return undefined;
   }, [loading]);
 ;
-  const handleSubmit = () => {;
+  const handleSubmit: unknown unknown = () => {;
     if (!description.trim()) return;
     onSubmit(description);
   };
 ;
   return (;
-    <Dialog open={open} onOpenChange={onOpenChange}>;
+    <Dialog open={open} onOpenChange={onOpenChange}>;'
       <DialogContent className="sm:max-w-md bg-zion-blue border-zion-blue-light">;
-        <DialogHeader>;
+        <DialogHeader>;"
           <DialogTitle className="text-white text-lg">;
             Describe your project;
           </DialogTitle>;
-        </DialogHeader>;
+        </DialogHeader>;"
         <div className="space-y-4">;
           <Textarea;
             value={description};
-            onChange={(e) => setDescription(e.target.value)};
-            placeholder="Brief project description";
+            onChange={(e) => setDescription(e.target.value)};"
+            placeholder="Brief project description";"
             className="min-h-32 bg-zion-blue-dark border-zion-blue-light text-white";
           />;
           {loading && <Progress value={progress} />};
-        </div>;
+        </div>;"
         <DialogFooter className="mt-4">;
-          <Button;
+          <Button;"
             variant="outline";
-            onClick={() => onOpenChange(false)};
+            onClick={() => onOpenChange(false)};"
             className="border-zion-blue-light text-white hover:bg-zion-blue-light";
           >;
             Cancel;
           </Button>;
           <Button;
             onClick={handleSubmit};
-            disabled={loading || !description.trim()};
+            disabled={loading || !description.trim()};"
             className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white";
-          >;
+          >;"
             {loading ? 'Matching...' : 'Continue'};
           </Button>;
         </DialogFooter>;
@@ -82,3 +82,4 @@ export function AutoFillModal({;
     </Dialog>;
   );
 };
+'

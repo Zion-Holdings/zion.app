@@ -1,58 +1,58 @@
-import React, { useState, useRef } from 'react';
-import { Upload, Trash2, Plus } from '@/components/ui/icons';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import React, { useState, useRef } from 'react';'
+import { Upload, Trash2, Plus } from '@/components/ui/icons';'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';'
 import { Button } from '@/components/ui/button';
-;
-import type { AppPlatform } from './MetadataManager';
+;'
+import type { AppPlatform } from './MetadataManager';'
 import { toast } from 'sonner';
 ;
-interface ScreenshotManagerProps {;
-  _platform: "AppPlatform;"
-};
-
-type Screenshot = {;
-  id: "string;",
-  url: string;
-  file: "File;"
+interface ScreenshotManagerProps {;'
+  _platform: "AppPlatform;";
 };
 ;
-export const _ScreenshotManager: React.FC<ScreenshotManagerProps> = ({;
+type Screenshot = {;"
+  id: "string;",;"
+  url: "string;","
+  file: "File;";
+};
+;
+export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
   platform,;
 }) => {;
   const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
   const [isDragging, setIsDragging] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef: unknown unknown = useRef<HTMLInputElement>(null);
 ;
-  const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {;
+  const handleFileSelect: unknown unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     if (e.target.files) {;
       addScreenshots(Array.from(e.target.files));
     };
   };
 ;
-  const addScreenshots = (_files: File[]) => {;
-    // Filter for image files only;
-    const imageFiles = files.filter((file) => file.type.startsWith('image/'));
+  const addScreenshots: unknown unknown = (_files: File[]) => {;
+    // Filter for image files only;"
+    const imageFiles: unknown unknown = files.filter((file) => file.type.startsWith('image/'));
 ;
-    if (imageFiles.length === 0) {;
+    if (imageFiles.length === 0) {;'
       toast.error('Please select valid image files');
       return;
     };
-
-    // Limit the number of screenshots;
-    const maxScreenshots = platform === 'ios' ? 10 : 8;
-    const availableSlots = maxScreenshots - screenshots.length;
+;
+    // Limit the number of screenshots;'
+    const maxScreenshots: unknown unknown = platform === 'ios' ? 10 : 8;
+    const availableSlots: unknown unknown = maxScreenshots - screenshots.length;
 ;
     if (availableSlots <= 0) {;
-      toast.error(;
+      toast.error(;'
         `Maximum ${maxScreenshots} screenshots allowed for ${platform === 'ios' ? 'iOS' : 'Android'}`,;
       );
       return;
     };
-
-    const filesToAdd = imageFiles.slice(0, availableSlots);
 ;
-    const newScreenshots = filesToAdd.map((file) => ({;
-      id: "Math.random().toString(36).substring(2", 9),;
+    const filesToAdd: unknown unknown = imageFiles.slice(0, availableSlots);
+;
+    const newScreenshots: unknown unknown = filesToAdd.map((file) => ({;'
+      id: "Math.random().toString(36).substring(2", 9),;"
       url: "URL.createObjectURL(file)",;
       file,;
     }));
@@ -66,30 +66,30 @@ export const _ScreenshotManager: React.FC<ScreenshotManagerProps> = ({;
     };
   };
 ;
-  const removeScreenshot = (_id: string) => {;
+  const removeScreenshot: unknown unknown = (_id: string) => {;
     setScreenshots((prev) => {;
-      const filtered = prev.filter((screenshot) => screenshot.id !== id);
+      const filtered: unknown unknown = prev.filter((screenshot) => screenshot.id !== id);
 ;
       // Revoke object URL to avoid memory leaks;
-      const removed = prev.find((screenshot) => screenshot.id === id);
+      const removed: unknown unknown = prev.find((screenshot) => screenshot.id === id);
       if (removed) {;
         URL.revokeObjectURL(removed.url);
       };
-
+;
       return filtered;
     });
   };
 ;
-  const handleDragOver = (_e: React.DragEvent) => {;
+  const handleDragOver: unknown unknown = (_e: React.DragEvent) => {;
     e.preventDefault();
     setIsDragging(true);
   };
 ;
-  const handleDragLeave = () => {;
+  const handleDragLeave: unknown unknown = () => {;
     setIsDragging(false);
   };
 ;
-  const handleDrop = (_e: React.DragEvent) => {;
+  const handleDrop: unknown unknown = (_e: React.DragEvent) => {;
     e.preventDefault();
     setIsDragging(false);
 ;
@@ -98,62 +98,62 @@ export const _ScreenshotManager: React.FC<ScreenshotManagerProps> = ({;
     };
   };
 ;
-  return (;
+  return (;"
     <Card className="bg-zion-blue border-zion-purple/30">;
-      <CardHeader>;
+      <CardHeader>;"
         <CardTitle className="text-lg">App Screenshots</CardTitle>;
       </CardHeader>;
       <CardContent>;
         <div;
           className={`border-2 border-dashed rounded-lg p-4 mb-4 text-center transition-colors ${;
-            isDragging;
-              ? 'border-zion-cyan bg-zion-cyan/10';
+            isDragging;"
+              ? 'border-zion-cyan bg-zion-cyan/10';'
               : 'border-zion-purple/30';
           }`};
           onDragOver={handleDragOver};
           onDragLeave={handleDragLeave};
           onDrop={handleDrop};
-        >;
-          <Upload className="mx-auto h-8 w-8 text-gray-300 mb-2" />;
+        >;'
+          <Upload className="mx-auto h-8 w-8 text-gray-300 mb-2" />;"
           <p className="text-sm mb-2">Drag & drop screenshots here</p>;
           <input;
-            ref={fileInputRef};
+            ref={fileInputRef};"
             type="file";
-            multiple;
+            multiple;"
             accept="image/*";
-            onChange={handleFileSelect};
+            onChange={handleFileSelect};"
             className="hidden";
           />;
-          <Button;
+          <Button;"
             variant="outline";
-            onClick={() => fileInputRef.current?.click()};
+            onClick={() => fileInputRef.current?.click()};"
             className="mt-2";
-          >;
+          >;"
             <Plus className="mr-2 h-4 w-4" />;
             Select Files;
           </Button>;
         </div>;
-
-        <div className="text-xs text-gray-300 mb-4">;
-          {platform === 'ios';
-            ? 'Recommended size: 1290x2796 pixels for iPhone. Max 10 screenshots.';
+;"
+        <div className="text-xs text-gray-300 mb-4">;"
+          {platform === 'ios';'
+            ? 'Recommended size: 1290x2796 pixels for iPhone. Max 10 screenshots.';'
             : 'Vary by device. Include phone and tablet screenshots. Max 8 per device type.'};
         </div>;
-
+;'
         <div className="grid grid-cols-2 gap-3">;
-          {screenshots.map((screenshot) => (;
+          {screenshots.map((screenshot) => (;"
             <div key={screenshot.id} className="relative group">;
               <img;
-                src={screenshot.url};
-                alt="App screenshot";
-                className="w-full h-auto rounded border border-zion-purple/20";
+                src={screenshot.url};"
+                alt="App screenshot";"
+                className="w-full h-auto rounded border border-zion-purple/20";"
                 loading="lazy";
               />;
               <button;
-                onClick={() => removeScreenshot(screenshot.id)};
-                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
+                onClick={() => removeScreenshot(screenshot.id)};"
+                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";"
                 aria-label="Remove screenshot";
-              >;
+              >;"
                 <Trash2 className="h-3 w-3" />;
               </button>;
             </div>;
@@ -163,3 +163,4 @@ export const _ScreenshotManager: React.FC<ScreenshotManagerProps> = ({;
     </Card>;
   );
 };
+"

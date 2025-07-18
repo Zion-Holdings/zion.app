@@ -1,40 +1,41 @@
 // src/config/env.ts;
 import { logWarn } from '@/utils/productionLogger';
 ;
-export const _getAppKitProjectId = (): string => {;
+export const _getAppKitProjectId: unknown unknown = (): string => {;
   // Use environment variables directly instead of runtime config;
-  const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  const projectId: unknown unknown = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
 ;
   if (;
-    projectId &&;
-    projectId !== 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING' &&;
+    projectId &&;'
+    projectId !== 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING' &&;'
     projectId !== 'YOUR_DEFAULT_PROJECT_ID_FALLBACK';
   ) {;
     return projectId;
   };
-
+;
   // Return a specific fallback or throw an error if the project ID is critical and not set.;
   // Using a console warning and a non-functional fallback for now.;
-  logWarn(;
+  logWarn(;'
     'Warning: NEXT_PUBLIC_REOWN_PROJECT_ID is not set or is a placeholder. Using fallback.',;
-  );
+  );'
   return 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'; // Or consider throwing an error;
 };
 ;
-export const _getSupportEmail = (): string => {;
+export const _getSupportEmail: unknown unknown = (): string => {;
   // Use environment variables directly instead of runtime config;
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
+  const supportEmail: unknown unknown = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
 ;
   if (;
-    supportEmail &&;
-    supportEmail !== 'YOUR_SUPPORT_EMAIL_ENV_MISSING' &&;
+    supportEmail &&;'
+    supportEmail !== 'YOUR_SUPPORT_EMAIL_ENV_MISSING' &&;'
     supportEmail !== 'YOUR_SUPPORT_EMAIL_FALLBACK';
   ) {;
     return supportEmail;
   };
-
-  logWarn(;
+;
+  logWarn(;'
     "Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'.",;
-  );
+  );"
   return 'support@example.com';
 };
+'

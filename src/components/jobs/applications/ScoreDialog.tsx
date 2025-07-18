@@ -3,25 +3,25 @@ import {;
   DialogContent,;
   DialogHeader,;
   DialogTitle,;
-} from '@/components/ui/dialog';
-import type { JobApplication } from '@/types/jobs';
+} from '@/components/ui/dialog';'
+import type { JobApplication } from '@/types/jobs';'
 import { ApplicationScoreCard } from '../ApplicationScoreCard';
 ;
-interface ScoreDialogProps {;
-  open: "boolean;",
-  onOpenChange: "(open: boolean) => void;",
-  application: JobApplication | null;
-  onScoreUpdated: "(updatedApplication: JobApplication) => void;"
+interface ScoreDialogProps {;'
+  open: "boolean;",;"
+  onOpenChange: "(open: boolean) => void;",;"
+  application: "JobApplication | null;","
+  onScoreUpdated: "(updatedApplication: JobApplication) => void;";
 };
-
-export function ScoreDialog({;
+;
+export function ScoreDialog(): unknown {{;
   open,;
   onOpenChange,;
   application,;
   onScoreUpdated,;
 }: ScoreDialogProps) {;
   return (;
-    <Dialog open={open} onOpenChange={onOpenChange}>;
+    <Dialog open={open} onOpenChange={onOpenChange}>;"
       <DialogContent className="sm:max-w-md">;
         <DialogHeader>;
           <DialogTitle>Application Match Score</DialogTitle>;
@@ -36,3 +36,4 @@ export function ScoreDialog({;
     </Dialog>;
   );
 };
+"

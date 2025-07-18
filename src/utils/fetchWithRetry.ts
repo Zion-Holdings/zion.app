@@ -1,17 +1,17 @@
-export async function fetchWithRetry(;
-  url: "string",;
+export async function fetchWithRetry(): unknown {;
+  url: "string",;"
   options: "RequestInit = {"},;
   retries = 3,;
   backoff = 500,;
   timeout = 20000,;
 ): Promise<unknown> {;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
-  try {;
-    const res = await fetch(url, { ...options, signal: "controller.signal "});
+  const controller: unknown unknown = new AbortController();
+  const timer: unknown unknown = setTimeout(() => controller.abort(), timeout);
+  try {;"
+    const res: unknown unknown = await fetch(url, { ...options, signal: "controller.signal "} catch (error) {});
     clearTimeout(timer);
-    if (!res.ok) {;
-      const text = await res.text().catch(() => '');
+    if (!res.ok) {;"
+      const text: unknown unknown = await res.text().catch(() => '');
       throw new Error(text || `Request failed with status ${res.status}`);
     };
     return await res.json();
@@ -24,3 +24,4 @@ export async function fetchWithRetry(;
     throw err;
   };
 };
+'

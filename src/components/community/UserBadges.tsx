@@ -4,20 +4,20 @@ import {;
   Star,;
   MessageSquare,;
   Trophy,;
-  BadgeCheck,;
+  BadgeCheck,;'
 } from '@/components/ui/icons';
 import {;
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;
-  TooltipTrigger,;
+  TooltipTrigger,;'
 } from '@/components/ui/tooltip';
 ;
-interface UserBadgesProps {;
-  badges: "Badge[];"
+interface UserBadgesProps {;'
+  badges: "Badge[];";
 };
-
-const iconMap = {;
+;
+const iconMap: unknown unknown = {;
   Trophy,;
   Award,;
   BadgeCheck,;
@@ -25,33 +25,33 @@ const iconMap = {;
   MessageSquare,;
 };
 ;
-export const UserBadges = ({ badges }: UserBadgesProps) => {;
+export const UserBadges: unknown unknown = ({ badges }: UserBadgesProps) => {;
   if (!badges?.length) return null;
 ;
-  return (;
+  return (;"
     <div className="flex flex-wrap gap-2">;
-      {badges.map((badge) => {;
+      {badges.map((badge) => {;"
         // Get the correct icon component based on the badge's icon name;
-        const IconComponent =;
+        const IconComponent: unknown unknown =;
           iconMap[badge.icon as keyof typeof iconMap] || Trophy;
 ;
         return (;
           <TooltipProvider key={badge.id}>;
             <Tooltip>;
               <TooltipTrigger asChild>;
-                <div;
-                  style={{ backgroundColor: badge.color + '20' }};
+                <div;'
+                  style={{ backgroundColor: badge.color + '20' }};'
                   className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer";
                 >;
-                  <IconComponent;
-                    style={{ color: "badge.color "}};
+                  <IconComponent;"
+                    style={{ color: "badge.color "}};"
                     className="w-4 h-4";
                   />;
                 </div>;
               </TooltipTrigger>;
-              <TooltipContent>;
-                <div className="text-center">;
-                  <div className="font-medium">{badge.name}</div>;
+              <TooltipContent>;"
+                <div className="text-center">;"
+                  <div className="font-medium">{badge.name}</div>;"
                   <div className="text-xs text-gray-500">;
                     {badge.description};
                   </div>;
@@ -66,3 +66,4 @@ export const UserBadges = ({ badges }: UserBadgesProps) => {;
 };
 ;
 export default UserBadges;
+"

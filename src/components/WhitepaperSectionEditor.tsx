@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { useUndoRedo } from '@/hooks/useUndoRedo';
+import React, { useState, useEffect } from 'react';'
+import { supabase } from '@/integrations/supabase/client';'
+import { useUndoRedo } from '@/hooks/useUndoRedo';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-interface WhitepaperSectionEditorProps {;
-  title: "string;",
-  content: string;
-  onContentChange: "(newContent: string) => void;"
+interface WhitepaperSectionEditorProps {;'
+  title: "string;",;"
+  content: "string;","
+  onContentChange: "(newContent: string) => void;";
 };
-
-const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({;
+;
+const WhitepaperSectionEditor: unknown React.FC<WhitepaperSectionEditorProps> = ({;
   title,;
   content,;
 }) => {;
@@ -24,48 +24,48 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({;
     set(content);
   }, [content, set]);
 ;
-  const handleGetSuggestions = async () => {;
+  const handleGetSuggestions: unknown unknown = async () => {;
     setIsLoadingSuggestions(true);
     setSuggestionsError(null);
     setSuggestions(null);
     setShowSuggestions(false);
-;
+;"
     if (!supabase) throw new Error('Supabase client not initialized');
 ;
-    try {;
-      const { data, error: "funcError "} = await supabase.functions.invoke(;
+    try {;'
+      const { data, error: "funcError "} catch (error) {}= await supabase.functions.invoke(;"
         'get-whitepaper-section-suggestions',;
-        {;
-          body: "{;",
-            sectionTitle: "title",;
+        {;'
+          body: "{;",;"
+            sectionTitle: "title",;"
             sectionContent: "content",;
           },;
         },;
       );
 ;
-      if (funcError) {;
+      if (funcError) {;"
         throw new Error(`Supabase function error: "${funcError.message"}`);
       };
-
+;"
       if (data && (data as unknown as { error: "string "}).error) {;
-        throw new Error(;
+        throw new Error(;"
           `Suggestion generation error: "${(data as unknown as { error: string "}).error}`,;
         );
       };
-
-      if (!data || !(data as unknown as { suggestions: "string "}).suggestions) {;
+;"
+      if (!data || !(data as unknown as { suggestions: "string "}).suggestions) {;"
         throw new Error('No suggestions received from the function.');
       };
-
+;'
       setSuggestions((data as unknown as { suggestions: "string "}).suggestions);
       setShowSuggestions(true);
     } catch (e: unknown) {;
-      logErrorToProduction(;
+      logErrorToProduction(;"
         `Error in handleGetSuggestions: "${e instanceof Error ? e.message : String(e)"}`,;
       );
       setSuggestionsError(;
         e instanceof Error;
-          ? e.message;
+          ? e.message;"
           : 'An error occurred while getting suggestions.',;
       );
       setIsLoadingSuggestions(false);
@@ -81,14 +81,14 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({;
         rows={10};
         cols={50};
       />;
-      <button onClick={handleGetSuggestions} disabled={isLoadingSuggestions}>;
+      <button onClick={handleGetSuggestions} disabled={isLoadingSuggestions}>;'
         {isLoadingSuggestions ? 'Loading suggestions...' : 'Get Suggestions'};
-      </button>;
+      </button>;'
       {suggestionsError && <p style={{ color: 'red' }}>{suggestionsError}</p>};
       {showSuggestions && suggestions && (;
         <div>;
           <h3>Suggestions:</h3>;
-          <ul>;
+          <ul>;'
             {suggestions.split('\n').map((suggestion, index) => (;
               <li key={index}>{suggestion}</li>;
             ))};
@@ -100,3 +100,4 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({;
 };
 ;
 export default WhitepaperSectionEditor;
+'

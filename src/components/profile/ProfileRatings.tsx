@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-;
-import { ReviewStats } from '@/components/reviews/ReviewStats';
-import { ReviewsList } from '@/components/reviews/ReviewsList';
-import { useReviews } from '@/hooks/useReviews';
+;'
+import { ReviewStats } from '@/components/reviews/ReviewStats';'
+import { ReviewsList } from '@/components/reviews/ReviewsList';'
+import { useReviews } from '@/hooks/useReviews';'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 ;
 interface ProfileRatingsProps {;
@@ -10,8 +10,8 @@ interface ProfileRatingsProps {;
   averageRating?: number;
   ratingCount?: number;
 };
-
-export function ProfileRatings({;
+;
+export function ProfileRatings(): unknown {{;
   userId,;
   averageRating = 0,;
   ratingCount = 0,;
@@ -23,12 +23,12 @@ export function ProfileRatings({;
 ;
   // Calculate rating distribution;
   useEffect(() => {;
-    if (reviews.length > 0) {;
-      const distribution: "Record<number", number> = {;
-        1: "0",;
-        2: "0",;
-        3: "0",;
-        4: "0",;
+    if (reviews.length > 0) {;'
+      const distribution: unknown "Record<number", number> = {;"
+        1: "0",;"
+        2: "0",;"
+        3: "0",;"
+        4: "0",;"
         _5: "0",;
       };
 ;
@@ -47,9 +47,9 @@ export function ProfileRatings({;
     fetchUserReviews(userId);
   }, [userId, fetchUserReviews]);
 ;
-  return (;
-    <div className="space-y-6">;
-      <div className="flex flex-col md:flex-row gap-6">;
+  return (;"
+    <div className="space-y-6">;"
+      <div className="flex flex-col md:flex-row gap-6">;"
         <div className="md:w-1/3">;
           <ReviewStats;
             averageRating={averageRating};
@@ -57,17 +57,17 @@ export function ProfileRatings({;
             ratingDistribution={ratingDistribution};
           />;
         </div>;
-
-        <div className="md:w-2/3">;
-          <Tabs defaultValue="all">;
-            <TabsList className="mb-4">;
+;"
+        <div className="md:w-2/3">;"
+          <Tabs defaultValue="all">;"
+            <TabsList className="mb-4">;"
               <TabsTrigger value="all">;
                 All Reviews ({reviews.length});
-              </TabsTrigger>;
-              <TabsTrigger value="positive">Positive</TabsTrigger>;
+              </TabsTrigger>;"
+              <TabsTrigger value="positive">Positive</TabsTrigger>;"
               <TabsTrigger value="critical">Critical</TabsTrigger>;
             </TabsList>;
-
+;"
             <TabsContent value="all">;
               <ReviewsList;
                 reviews={reviews};
@@ -75,7 +75,7 @@ export function ProfileRatings({;
                 onReportReview={reportReview};
               />;
             </TabsContent>;
-
+;"
             <TabsContent value="positive">;
               <ReviewsList;
                 reviews={reviews.filter((r) => r.rating >= 4)};
@@ -83,7 +83,7 @@ export function ProfileRatings({;
                 onReportReview={reportReview};
               />;
             </TabsContent>;
-
+;"
             <TabsContent value="critical">;
               <ReviewsList;
                 reviews={reviews.filter((r) => r.rating < 4)};
@@ -97,3 +97,4 @@ export function ProfileRatings({;
     </div>;
   );
 };
+"

@@ -1,13 +1,13 @@
-import type { Education } from '@/types/resume';
+import type { Education } from '@/types/resume';'
 import { EducationItem } from './EducationItem';
 ;
-interface EducationListProps {;
-  educationEntries: "Education[];",
-  onEdit: "(education: Education) => void;",
-  onDelete: "(id: string) => void;"
+interface EducationListProps {;'
+  educationEntries: "Education[];",;"
+  onEdit: "(education: Education) => void;",;"
+  onDelete: "(id: string) => void;";
 };
-
-export function EducationList({;
+;
+export function EducationList(): unknown {{;
   educationEntries,;
   onEdit,;
   onDelete,;
@@ -15,9 +15,9 @@ export function EducationList({;
   if (!educationEntries || educationEntries.length === 0) {;
     return null;
   };
-
-  return (;
-    <div className="space-y-4">;
+;
+  return (;"
+    <div className="space-y-4">;"
       <h3 className="text-md font-medium">Added Education</h3>;
       {educationEntries.map((edu) => (;
         <EducationItem;
@@ -30,3 +30,4 @@ export function EducationList({;
     </div>;
   );
 };
+"

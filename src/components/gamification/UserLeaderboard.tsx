@@ -4,37 +4,37 @@ import {;
   CardDescription,;
   CardHeader,;
   CardTitle,;
-} from '@/components/ui/card';
+} from '@/components/ui/card';'
 import { Trophy } from '@/components/ui/icons';
 ;
-export interface LeaderboardEntry {;
-  name: "string;",
-  points: "number;"
+export interface LeaderboardEntry {;'
+  name: "string;",;"
+  points: "number;";
+} catch (error) {};
+;
+interface UserLeaderboardProps {;"
+  entries: "LeaderboardEntry[];";
 };
-
-interface UserLeaderboardProps {;
-  entries: "LeaderboardEntry[];"
-};
-
-export function UserLeaderboard({ entries }: UserLeaderboardProps) {;
+;
+export function UserLeaderboard(): unknown {{ entries }: UserLeaderboardProps) {;
   return (;
     <Card>;
-      <CardHeader>;
-        <CardTitle className="flex items-center gap-2">;
+      <CardHeader>;"
+        <CardTitle className="flex items-center gap-2">;"
           <Trophy className="h-5 w-5" /> Leaderboard;
         </CardTitle>;
         <CardDescription>Top users by points</CardDescription>;
       </CardHeader>;
-      <CardContent>;
+      <CardContent>;"
         <div className="space-y-2">;
           {entries.map((e, idx) => (;
             <div;
-              key={e.name};
+              key={e.name};"
               className="flex justify-between items-center p-2 rounded-md hover:bg-muted/50";
-            >;
+            >;"
               <span className="font-medium">;
                 {idx + 1}. {e.name};
-              </span>;
+              </span>;"
               <span className="text-sm">{e.points} pts</span>;
             </div>;
           ))};
@@ -43,3 +43,4 @@ export function UserLeaderboard({ entries }: UserLeaderboardProps) {;
     </Card>;
   );
 };
+"

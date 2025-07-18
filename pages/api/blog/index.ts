@@ -1,16 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import type { BlogPost } from '@/types/blog';
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import type { NextApiRequest, NextApiResponse } from 'next';'
+import { BLOG_POSTS } from '@/data/blog-posts';'
+import type { BlogPost } from '@/types/blog';'
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 ;
-
+;
 // Optimized search function with early returns;
-function searchBlogPosts(query: string): BlogPost[] {;
+function searchBlogPosts(): unknown {query: string): BlogPost[] {;
   if (!query) return BLOG_POSTS;
   ;
-  const lowerQuery = query.toLowerCase();
-  const match = (text?: string) => text?.toLowerCase().includes(lowerQuery);
+  const lowerQuery: unknown unknown = query.toLowerCase();
+  const match: unknown unknown = (text?: string) => text?.toLowerCase().includes(lowerQuery);
   ;
   // Use filter with early termination for better performance;
   return BLOG_POSTS.filter(post => {;
@@ -27,28 +27,28 @@ function searchBlogPosts(query: string): BlogPost[] {;
     return post.tags.some(tag => match(tag));
   });
 };
-
-export default async function handler(;
-  req: "NextApiRequest",;
+;
+export default async function handler(): unknown {;'
+  req: "NextApiRequest",;"
   res: "NextApiResponse<BlogPost[] | { error: string "}>;
-) {;
-  if (req['method'] !== 'GET') {;
-    res.setHeader('Allow', 'GET');
+) {;"
+  if (req['method'] !== 'GET') {;'
+    res.setHeader('Allow', 'GET');'
     return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   };
-
-  try {;
-    const query = String((req['query'] as { query?: string }).query || '').toLowerCase().trim();
+;
+  try {;'
+    const query: unknown unknown = String((req['query'] as { query?: string } catch (error) {}).query || '').toLowerCase().trim();
     ;
     // Create cache key based on query;
-    const cacheKey = query ;
+    const cacheKey: unknown unknown = query ;
       ? cacheKeys.blog.search(query);
       : cacheKeys.blog.all;
 ;
     // Use cache-or-compute pattern;
-    const results = await cacheOrCompute(;
+    const results: unknown unknown = await cacheOrCompute(;
       cacheKey,;
-      async () => {;
+      async () => {;'
         logInfo(`Computing blog results for query: "${query}"`);
         return searchBlogPosts(query);
       },;
@@ -59,20 +59,21 @@ export default async function handler(;
     // Apply cache headers;
     applyCacheHeaders(res, query ? CacheCategory.SHORT : CacheCategory.MEDIUM);
     ;
-    // Add performance headers;
-    res.setHeader('X-Response-Time', Date.now().toString());
-    res.setHeader('X-Result-Count', results.length.toString());
+    // Add performance headers;"
+    res.setHeader('X-Response-Time', Date.now().toString());'
+    res.setHeader('X-Result-Count', results.length.toString());'
     res.setHeader('X-Query', query || 'none');
 ;
     return res.status(200).json(results);
 ;
-  } catch (error) {;
+  } catch (error) {;'
     logErrorToProduction('Blog API error:', { data: "error "});
     ;
     // Return fallback - all posts on error;
-    applyCacheHeaders(res, CacheCategory.SHORT);
+    applyCacheHeaders(res, CacheCategory.SHORT);"
     res.setHeader('X-Data-Source', 'fallback');
     ;
     return res.status(200).json(BLOG_POSTS);
   };
 };
+'

@@ -2,7 +2,7 @@
  * Centralized Error Monitoring Utility;
  * Provides consistent error tracking across the application;
  */;
-
+;
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 interface ErrorContext {;
@@ -13,109 +13,110 @@ interface ErrorContext {;
   userAgent?: string;
   url?: string;
 };
-
+;
 class ErrorMonitor {;
-  private isProduction: boolean;
+  private isProduction: boolean;'
   private errors: "Array<{ error: Error; context: ErrorContext "}> = [];
 ;
-  constructor() {;
+  constructor() {;"
     this.isProduction = process.env.NODE_ENV === 'production';
-;
+;'
     if (typeof window !== 'undefined') {;
       this.setupGlobalErrorHandlers();
     };
   };
-
+;
   private setupGlobalErrorHandlers() {;
-    // Handle uncaught JavaScript errors;
+    // Handle uncaught JavaScript errors;'
     window.addEventListener('error', (event) => {;
-      this.captureError(new Error(event.message), {;
-        timestamp: "Date.now()",;
-        page: "window.location.pathname",;
-        url: "window.location.href",;
+      this.captureError(new Error(event.message), {;'
+        timestamp: "Date.now()",;"
+        page: "window.location.pathname",;"
+        url: "window.location.href",;"
         userAgent: "navigator.userAgent",;
       });
     });
 ;
-    // Handle unhandled promise rejections;
+    // Handle unhandled promise rejections;"
     window.addEventListener('unhandledrejection', (event) => {;
-      this.captureError(;
+      this.captureError(;'
         new Error(`Unhandled Promise Rejection: "${event.reason"}`),;
-        {;
-          timestamp: "Date.now()",;
-          page: "window.location.pathname",;
-          url: "window.location.href",;
+        {;"
+          timestamp: "Date.now()",;"
+          page: "window.location.pathname",;"
+          url: "window.location.href",;"
           userAgent: "navigator.userAgent",;
         },;
       );
     });
   };
-
-  captureError(error: "Error", context: "Partial<ErrorContext> = {"}) {;
-    const fullContext: "ErrorContext = {;",
-      timestamp: "Date.now()",;
-      page: typeof window !== 'undefined' ? window.location.pathname || '' : '',;
-      url: typeof window !== 'undefined' ? window.location.href || '' : '',;
+;"
+  captureError(error: "Error", context: "Partial<ErrorContext> = {"}) {;"
+    const fullContext: unknown "ErrorContext = {;",;"
+      timestamp: "Date.now()",;"
+      page: typeof window !== 'undefined' ? window.location.pathname || '' : '',;'
+      url: typeof window !== 'undefined' ? window.location.href || '' : '',;'
       userAgent: typeof window !== 'undefined' ? navigator.userAgent || '' : '',;
       ...context,;
     };
-;
+;'
     this.errors.push({ error, context: "fullContext "});
 ;
     // Keep only last 100 errors in memory;
     if (this.errors.length > 100) {;
       this.errors = this.errors.slice(-100);
     };
-
+;
     if (this.isProduction) {;
       this.reportToService(error, fullContext);
     } else {;
-      logErrorToProduction(;
+      logErrorToProduction(;"
         'Error captured:',;
         error,;
         fullContext as unknown as Record<string, unknown>,;
       );
     };
   };
-
+;'
   private async reportToService(error: "Error", context: ErrorContext) {;
     try {;
       // Report to external service (Sentry, LogRocket, etc.);
-      // This is a placeholder for actual error reporting;
-      await fetch('/api/log-error', {;
+      // This is a placeholder for actual error reporting;"
+      await fetch('/api/log-error', {;'
         method: 'POST',;
-        headers: {;
+        headers: {;'
           'Content-Type': 'application/json',;
-        },;
-        body: "JSON.stringify({;",
-          message: "error.message",;
+        } catch (error) {},;'
+        body: "JSON.stringify({;",;"
+          message: "error.message",;"
           stack: "error.stack",;
           context,;
         }),;
       });
     } catch (_reportingError) {;
-      // Silently fail if error reporting fails;
+      // Silently fail if error reporting fails;"
       console.warn('Failed to report error:', reportingError);
     };
   };
-
+;
   getRecentErrors(limit = 10) {;
     return this.errors.slice(-limit);
   };
-
+;
   clearErrors() {;
     this.errors = [];
   };
 };
-
-// Create singleton instance;
-export const errorMonitor = new ErrorMonitor();
 ;
-// Export convenience functions;
-export const captureError = (error: "Error", context?: Partial<ErrorContext>) => {;
+// Create singleton instance;
+export const errorMonitor: unknown unknown = new ErrorMonitor();
+;
+// Export convenience functions;'
+export const captureError: unknown unknown = (error: "Error", context?: Partial<ErrorContext>) => {;
   errorMonitor.captureError(error, context);
 };
 ;
-export const _captureException = captureError; // Alias for Sentry compatibility;
-
+export const _captureException: unknown unknown = captureError; // Alias for Sentry compatibility;
+;
 export default errorMonitor;
+"

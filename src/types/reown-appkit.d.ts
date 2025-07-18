@@ -7,38 +7,39 @@ declare module '@reown/appkit/react' {;
     metadata?: Record<string, unknown>;
     features?: Record<string, unknown>;
   };
-
-  export interface AppKitInstanceInterface {;
-    open: "() => Promise<void>;",
-    close: () => Promise<void>;
-    disconnect: "() => Promise<void>;",
-    _getState: "() => { isConnected?: boolean; [key: string]: unknown "}; // Allow other state properties;
-    getAddress: "() => string | null | undefined;",
-    getChainId: () => string | number | null | undefined; // Can be string or number;
-    getWalletProvider: "() => unknown; // The provider can be of various types;",
+;
+  export interface AppKitInstanceInterface {;'
+    open: "() => Promise<void>;",;"
+    close: "() => Promise<void>;","
+    disconnect: "() => Promise<void>;",;"
+    _getState: "() => { isConnected?: boolean; [key: string]: unknown "}; // Allow other state properties;"
+    getAddress: "() => string | null | undefined;",;"
+    getChainId: "() => string | number | null | undefined; // Can be string or number;","
+    getWalletProvider: "() => unknown; // The provider can be of various types;",;"
     subscribeProvider: "(callback: (provider: unknown) => void) => () => void; // Callback takes provider", returns unsubscribe;
-    // Optional event handlers as seen in WalletContext.tsx internal interface;
-    on?: (event: "string", callback: (...args: unknown[]) => void) => void;
+    // Optional event handlers as seen in WalletContext.tsx internal interface;"
+    on?: (event: "string", callback: (...args: unknown[]) => void) => void;"
     off?: (event: "string", callback: (...args: unknown[]) => void) => void;
     // Add any other methods that are used or expected from the AppKit object.;
   };
-
-  export function createAppKit(options: AppKitOptions): AppKitInstanceInterface;
-  export function useAppKit(): AppKitInstanceInterface | null;
+;
+  export function createAppKit(): unknown {options: AppKitOptions): AppKitInstanceInterface;
+  export function useAppKit(): unknown {): AppKitInstanceInterface | null;
 };
-
-declare module '@reown/appkit-adapter-ethers' {;
+;"
+declare module '@reown/appkit-adapter-ethers' {;'
   import { ethers } from 'ethers';
   export class EthersAdapter {;
     constructor(options?: { ethers?: typeof ethers; provider?: unknown });
   };
 };
-
+;'
 declare module '@reown/appkit/networks' {;
-  export const mainnet: unknown;
-  export const polygon: unknown;
-  export const goerli: unknown;
-  export const optimism: unknown;
-  export const arbitrum: unknown;
-  export const base: "unknown;"
+  export const mainnet: unknown unknown;
+  export const polygon: unknown unknown;
+  export const goerli: unknown unknown;
+  export const optimism: unknown unknown;
+  export const arbitrum: unknown unknown;'
+  export const base: unknown "unknown;";
 };
+"

@@ -1,23 +1,24 @@
-import { SEO } from "@/components/SEO";
-import TermsOfService from "@/legal/TermsOfService";
+import { SEO } from "@/components/SEO";"
+import TermsOfService from "@/legal/TermsOfService";"
 import { useTranslation } from "react-i18next";
 ;
-export default function Terms() {;
+export default function Terms(): unknown {) {;
   const { t } = useTranslation();
   ;
   return (;
     <>;
-      <SEO;
-        title={t('terms.title')};
-        description={t('terms.description')};
+      <SEO;"
+        title={t('terms.title')};'
+        description={t('terms.description')};'
         canonical="https://app.ziontechgroup.com/terms";
-      />;
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">;
+      />;"
+      <main className="min-h-screen bg-zion-blue pt-24 pb-20">;"
         <div className="container mx-auto px-4">;
           <TermsOfService />;
         </div>;
       </main>;
     </>;
   );
-};
+};"
 Terms.displayName = "Terms";
+"

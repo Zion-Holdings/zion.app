@@ -1,48 +1,48 @@
-import React, { useState } from 'react';
-import { Header } from '@/components/Header';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
+import React, { useState } from 'react';'
+import { Header } from '@/components/Header';'
+import { Input } from '@/components/ui/input';'
+import { Textarea } from '@/components/ui/textarea';'
+import { Label } from '@/components/ui/label';'
 import { Button } from '@/components/ui/button';
 import {;
   Card,;
   CardHeader,;
   CardTitle,;
   CardContent,;
-  CardDescription,;
+  CardDescription,;'
 } from '@/components/ui/card';
 import {;
   getInvestorMatches,;
-  generatePitchEmail,;
-} from '@/lib/investor-matching';
+  generatePitchEmail,;'
+} from '@/lib/investor-matching';'
 import type { InvestorMatch } from '@/lib/investor-matching';
 ;
-export default function InvestorMatchPage() {;
-  const [form, setForm] = useState({;
-    startup: '',;
-    industry: '',;
-    location: '',;
-    stage: '',;
-    teamSize: '',;
-    summary: '',;
+export default function InvestorMatchPage(): unknown {) {;
+  const [form, setForm] = useState({;'
+    startup: '',;'
+    industry: '',;'
+    location: '',;'
+    stage: '',;'
+    teamSize: '',;'
+    summary: '',;'
     link: '',;
   });
   const [matches, setMatches] = useState<InvestorMatch[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);'
   const [emailText, setEmailText] = useState('');
   const [selected, setSelected] = useState<InvestorMatch | null>(null);
 ;
-  const handleChange = (;
+  const handleChange: unknown unknown = (;'
     _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
   ) => {;
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 ;
-  const handleSubmit = async (_e: React.FormEvent) => {;
+  const handleSubmit: unknown unknown = async (_e: React.FormEvent) => {;
     e.preventDefault();
     setLoading(true);
-    const results = await getInvestorMatches(;
+    const results: unknown unknown = await getInvestorMatches(;
       form.industry,;
       form.location,;
       form.stage,;
@@ -51,7 +51,7 @@ export default function InvestorMatchPage() {;
     setLoading(false);
   };
 ;
-  const handleGenerateEmail = (_match: InvestorMatch) => {;
+  const handleGenerateEmail: unknown unknown = (_match: InvestorMatch) => {;
     setSelected(match);
     setEmailText(;
       generatePitchEmail(form.startup, match.investor.name, form.summary),;
@@ -60,116 +60,116 @@ export default function InvestorMatchPage() {;
 ;
   return (;
     <>;
-      <Header />;
-      <div className="min-h-screen bg-zion-blue py-12 px-4">;
-        <div className="container mx-auto max-w-3xl">;
+      <Header />;"
+      <div className="min-h-screen bg-zion-blue py-12 px-4">;"
+        <div className="container mx-auto max-w-3xl">;"
           <h1 className="text-3xl font-bold text-white mb-6">;
             Investor Matchmaker;
-          </h1>;
+          </h1>;"
           <form onSubmit={handleSubmit} className="space-y-4">;
-            <div>;
+            <div>;"
               <Label htmlFor="startup" className="text-white">;
                 Startup Name;
               </Label>;
-              <Input;
-                id="startup";
+              <Input;"
+                id="startup";"
                 name="startup";
                 value={form.startup};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="industry" className="text-white">;
                 Industry;
               </Label>;
-              <Input;
-                id="industry";
+              <Input;"
+                id="industry";"
                 name="industry";
                 value={form.industry};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="location" className="text-white">;
                 Location;
               </Label>;
-              <Input;
-                id="location";
+              <Input;"
+                id="location";"
                 name="location";
                 value={form.location};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="stage" className="text-white">;
                 Round Type;
               </Label>;
-              <Input;
-                id="stage";
+              <Input;"
+                id="stage";"
                 name="stage";
                 value={form.stage};
-                onChange={handleChange};
-                placeholder="Pre-seed, Seed, etc";
+                onChange={handleChange};"
+                placeholder="Pre-seed, Seed, etc";"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="teamSize" className="text-white">;
                 Team Size;
               </Label>;
-              <Input;
-                id="teamSize";
+              <Input;"
+                id="teamSize";"
                 name="teamSize";
                 value={form.teamSize};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="summary" className="text-white">;
                 Pitch Summary;
               </Label>;
-              <Textarea;
-                id="summary";
+              <Textarea;"
+                id="summary";"
                 name="summary";
                 value={form.summary};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
             </div>;
-            <div>;
+            <div>;"
               <Label htmlFor="link" className="text-white">;
                 Deck or Website Link;
               </Label>;
-              <Input;
-                id="link";
+              <Input;"
+                id="link";"
                 name="link";
                 value={form.link};
-                onChange={handleChange};
+                onChange={handleChange};"
                 className="bg-zion-blue border-zion-blue-light text-white";
               />;
-            </div>;
-            <Button type="submit" disabled={loading}>;
+            </div>;"
+            <Button type="submit" disabled={loading}>;"
               {loading ? 'Searching...' : 'Find Investors'};
             </Button>;
           </form>;
-        </div>;
+        </div>;'
         <div className="container mx-auto max-w-4xl mt-8 grid gap-4">;
           {matches.map((match) => (;
             <Card;
-              key={match.investor.id};
+              key={match.investor.id};"
               className="bg-zion-blue-dark border border-zion-blue-light text-white";
             >;
-              <CardHeader>;
+              <CardHeader>;"
                 <CardTitle className="text-xl">{match.investor.name}</CardTitle>;
                 <CardDescription>;
                   <a;
-                    href={match.investor.website};
-                    target="_blank";
-                    rel="noreferrer";
+                    href={match.investor.website};"
+                    target="_blank";"
+                    rel="noreferrer";"
                     className="underline text-zion-cyan";
                   >;
                     {match.investor.website};
@@ -177,9 +177,9 @@ export default function InvestorMatchPage() {;
                 </CardDescription>;
               </CardHeader>;
               <CardContent>;
-                <p>{match.reason}</p>;
+                <p>{match.reason}</p>;"
                 <p className="mt-2 text-sm">Relevance Score: "{match.score"}</p>;
-                <Button;
+                <Button;"
                   className="mt-4";
                   onClick={() => handleGenerateEmail(match)};
                 >;
@@ -189,11 +189,11 @@ export default function InvestorMatchPage() {;
             </Card>;
           ))};
         </div>;
-        {emailText && selected && (;
-          <div className="container mx-auto max-w-3xl mt-8 text-white">;
+        {emailText && selected && (;"
+          <div className="container mx-auto max-w-3xl mt-8 text-white">;"
             <h2 className="text-2xl font-bold mb-2">;
               Email to {selected.investor.name};
-            </h2>;
+            </h2>;"
             <pre className="whitespace-pre-wrap bg-zion-blue-dark p-4 border border-zion-blue-light rounded-lg">;
               {emailText};
             </pre>;
@@ -203,3 +203,4 @@ export default function InvestorMatchPage() {;
     </>;
   );
 };
+"

@@ -1,27 +1,27 @@
-import { useRouter } from 'next/router';
-import React, { useState, useEffect, useCallback } from 'react';
-import { toast } from 'sonner';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
-import { Form } from '@/components/ui/form';
-import { useJobForm } from './useJobForm';
-import { BasicInfoFields } from './BasicInfoFields';
-import { DateFields } from './DateFields';
-import { DescriptionFields } from './DescriptionFields';
-import { useJobPostings } from '@/hooks/useJobPostings';
-import type { JobSchemaType } from './validation';
+import { useRouter } from 'next/router';'
+import React, { useState, useEffect, useCallback } from 'react';'
+import { toast } from 'sonner';'
+import { Input } from '@/components/ui/input';'
+import { Label } from '@/components/ui/label';'
+import { Button } from '@/components/ui/button';'
+import { Form } from '@/components/ui/form';'
+import { useJobForm } from './useJobForm';'
+import { BasicInfoFields } from './BasicInfoFields';'
+import { DateFields } from './DateFields';'
+import { DescriptionFields } from './DescriptionFields';'
+import { useJobPostings } from '@/hooks/useJobPostings';'
+import type { JobSchemaType } from './validation';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-interface JobPostingFormProps {;
-  jobId: "string | undefined;",
-  onSuccess: "(() => void) | undefined;"
+interface JobPostingFormProps {;'
+  jobId: "string | undefined;",;"
+  onSuccess: "(() => void) | undefined;";
 };
-
-export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {;
-  // const _router = useRouter(); // Available for navigation if needed // Changed from useNavigate;
+;
+export function JobPostingForm(): unknown {{ jobId, onSuccess }: JobPostingFormProps) {;
+  // const _router: unknown unknown = useRouter(); // Available for navigation if needed // Changed from useNavigate;
   const { createJob, updateJob, getJobById } = useJobPostings();
-  const [isFormLoading, setIsFormLoading] = useState(false);
+  const [isFormLoading, setIsFormLoading] = useState(false);"
   const [editorContent, setEditorContent] = useState('');
 ;
   const {;
@@ -45,18 +45,18 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {;
       getJobById(jobId);
         .then((job) => {;
           if (job) {;
-            const currentValues = form.getValues();
-            Object.entries(job).forEach(([key, value]) => {;
+            const currentValues: unknown unknown = form.getValues();
+            Object.entries(job).forEach(([key, value]) => {;'
               if (key === 'published_date' && value) {;
-                setStartDate(new Date(value as string));
-                setValue('published_date', value as string);
+                setStartDate(new Date(value as string));'
+                setValue('published_date', value as string);'
               } else if (key === 'expiry_date' && value) {;
-                setEndDate(new Date(value as string));
-                setValue('expiry_date', value as string);
+                setEndDate(new Date(value as string));'
+                setValue('expiry_date', value as string);'
               } else if (key === 'is_remote') {;
-                setIsRemote(value as boolean);
+                setIsRemote(value as boolean);'
               } else if (key === 'description') {;
-                setEditorContent(value as string);
+                setEditorContent(value as string);'
                 setValue('description', value as string);
               } else if (key in currentValues) {;
                 setValue(;
@@ -67,8 +67,8 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {;
             });
           };
         });
-        .catch((error) => {;
-          logErrorToProduction('Failed to load job:', { data: "error "});
+        .catch((error) => {;'
+          logErrorToProduction('Failed to load job:', { data: "error "});"
           toast.error('Failed to load job');
         });
         .finally(() => {;
@@ -86,51 +86,51 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {;
     form,;
   ]);
 ;
-  const handleEditorChange = useCallback(;
+  const handleEditorChange: unknown unknown = useCallback(;
     (_value: string) => {;
-      setEditorContent(value);
+      setEditorContent(value);'
       setValue('description', value);
     },;
     [setValue],;
   );
 ;
-  const onSubmit = async (_values: JobSchemaType) => {;
+  const onSubmit: unknown unknown = async (_values: JobSchemaType) => {;
     setIsFormLoading(true);
 ;
     try {;
-      const jobData = await submitJob(values);
-      if (!jobData) {;
+      const jobData: unknown unknown = await submitJob(values);
+      if (!jobData) {;'
         toast.error('Failed to process job data');
         setIsFormLoading(false);
         return;
-      };
+      } catch (error) {};
       if (jobId) {;
         // For updates, we only need to pass the form data since the service handles the update;
-        await updateJob(jobId, jobData);
+        await updateJob(jobId, jobData);'
         toast.success('Job updated successfully!');
       } else {;
-        await createJob(jobData);
+        await createJob(jobData);'
         toast.success('Job posted successfully!');
-        form.reset();
+        form.reset();'
         setEditorContent('');
       };
-
+;
       if (onSuccess) {;
         onSuccess();
       };
     } catch (error: unknown) {;
-      if (;
+      if (;'
         typeof error === 'object' &&;
-        error !== null &&;
-        'message' in error &&;
+        error !== null &&;'
+        'message' in error &&;'
         typeof (error as { message?: unknown }).message === 'string';
-      ) {;
+      ) {;'
         logErrorToProduction('Error creating/updating job:', { data: "error "});
-        toast.error(;
+        toast.error(;"
           (error as { message: "string "}).message || 'Failed to post job',;
         );
-      } else {;
-        logErrorToProduction('Error creating/updating job:', { data: "error "});
+      } else {;'
+        logErrorToProduction('Error creating/updating job:', { data: "error "});"
         toast.error('Failed to post job');
       };
     } finally {;
@@ -139,57 +139,58 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {;
   };
 ;
   if (isLoading || isFormLoading) {;
-    return (;
+    return (;'
       <div className="flex items-center justify-center p-8">Loading...</div>;
     );
   };
-
+;
   return (;
-    <Form {...form}>;
+    <Form {...form}>;"
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">;
-        <div>;
-          <h3 className="text-lg font-medium">Post a Job</h3>;
+        <div>;"
+          <h3 className="text-lg font-medium">Post a Job</h3>;"
           <p className="text-sm text-muted-foreground">;
             Fill in the details below to create a job posting.;
           </p>;
         </div>;
-
+;
         <BasicInfoFields control={form.control} />;
-
+;
         <DateFields;
           startDate={startDate};
           setStartDate={setStartDate};
           endDate={endDate};
           setEndDate={setEndDate};
         />;
-
-        <div>;
+;
+        <div>;"
           <Label htmlFor="isRemote">;
-            <Input;
-              type="checkbox";
+            <Input;"
+              type="checkbox";"
               id="isRemote";
-              checked={isRemote};
+              checked={isRemote};"
               className="mr-2";
               onChange={(e) => setIsRemote(e.target.checked)};
             />;
             Remote;
           </Label>;
         </div>;
-
+;
         <DescriptionFields;
           control={form.control};
           handleEditorChange={handleEditorChange};
           editorContent={editorContent};
         />;
-
+;"
         <Button type="submit" disabled={isSubmitting || isFormLoading}>;
-          {isSubmitting || isFormLoading;
+          {isSubmitting || isFormLoading;"
             ? 'Submitting...';
-            : jobId;
-              ? 'Update Job';
+            : jobId;'
+              ? 'Update Job';'
               : 'Post Job'};
         </Button>;
       </form>;
     </Form>;
   );
 };
+'

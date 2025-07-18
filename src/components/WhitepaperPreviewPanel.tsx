@@ -5,74 +5,74 @@ import {;
   Pie,;
   Cell,;
   Tooltip,;
-  Legend,;
-} from 'recharts';
-const ReactMarkdown = React.lazy(() => import('react-markdown'));
+  Legend,;'
+} from 'recharts';'
+const ReactMarkdown: unknown unknown = React.lazy(() => import('react-markdown'));
 ;
-interface Section {;
-  id: "string;",
-  title: string;
-  content: "string;"
+interface Section {;'
+  id: "string;",;"
+  title: "string;","
+  content: "string;";
 };
-
-interface DistributionDataItem {;
-  name: "string;",
-  value: "number; // Expecting processed percentage for the chart;"
+;
+interface DistributionDataItem {;"
+  name: "string;",;"
+  value: "number; // Expecting processed percentage for the chart;";
 };
-
-interface WhitepaperPreviewPanelProps {;
+;
+interface WhitepaperPreviewPanelProps {;"
   sections?: Section[]; // optional to prevent runtime errors when data isn't loaded;
   distributionChartData: DistributionDataItem[];
   tokenName?: string; // Optional: to display in the preview if needed;
   tokenSupply?: string; // Optional;
 };
-
-const COLORS = [;
-  '#0088FE',;
-  '#00C49F',;
-  '#FFBB28',;
-  '#FF8042',;
-  '#AA00FF',;
-  '#FF00AA',;
-  '#00AAAA',;
+;
+const COLORS: unknown unknown = [;'
+  '#0088FE',;'
+  '#00C49F',;'
+  '#FFBB28',;'
+  '#FF8042',;'
+  '#AA00FF',;'
+  '#FF00AA',;'
+  '#00AAAA',;'
   '#AAAA00',;
 ];
 ;
-const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
+const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({;
   sections,;
   distributionChartData,;
   tokenName,;
   tokenSupply,;
-}) => {;
-  // Normalize sections to an array to avoid "Cannot read property 'map' of undefined" errors;
+}) => {;'
+  // Normalize sections to an array to avoid "Cannot read property 'map' of undefined" errors;"
   // when the data hasn't loaded yet. Using a local variable ensures optional chaining isn't;
   // required throughout the JSX below.;
-  const sectionList = sections ?? [];
+  const sectionList: unknown unknown = sections ?? [];
 ;
-  return (;
+  return (;'
     <div className="p-6 bg-white _dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">;
-      {tokenName && (;
+      {tokenName && (;"
         <h1 className="text-3xl font-bold mb-2 text-center">;
           {tokenName} - Whitepaper Draft;
         </h1>;
       )};
-      {tokenSupply && (;
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-6">;
+      {tokenSupply && (;"
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-6">;"
           Total Supply: "{tokenSupply"};
         </p>;
       )};
-
+;
       {/* Render available sections if any. Using sectionList avoids crashes when;
           sections is undefined. */};
       {sectionList.map((section) => {;
-        // Special handling for Token Distribution to inject the chart;
+        // Special handling for Token Distribution to inject the chart;"
         if (section.title.toLowerCase().includes('token distribution')) {;
-          return (;
+          return (;'
             <div key={section.id} className="mb-8 break-words">;
               <ReactMarkdown;
-                components={{;
+                components={{;"
                   h2: "({ ...props "}) => (;
-                    <h2;
+                    <h2;"
                       className="text-2xl font-semibold mt-6 mb-3";
                       {...props};
                     />;
@@ -80,27 +80,27 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
                 }};
               >;
                 {`## ${section.title}`};
-              </ReactMarkdown>;
+              </ReactMarkdown>;"
               <div className="mb-4">;
                 <ReactMarkdown>{section.content}</ReactMarkdown>;
               </div>;
-              {distributionChartData && distributionChartData.length > 0 && (;
-                <div className="my-6">;
+              {distributionChartData && distributionChartData.length > 0 && (;"
+                <div className="my-6">;"
                   <h3 className="text-xl font-semibold text-center mb-3">;
                     Distribution Chart;
-                  </h3>;
+                  </h3>;"
                   <ResponsiveContainer width="100%" height={300}>;
                     <PieChart>;
                       <Pie;
-                        data={distributionChartData};
-                        cx="50%";
+                        data={distributionChartData};"
+                        cx="50%";"
                         cy="50%";
                         labelLine={false};
                         label={({ name, percent }) =>;
                           `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`;
                         };
-                        outerRadius={100};
-                        fill="#8884d8";
+                        outerRadius={100};"
+                        fill="#8884d8";"
                         dataKey="value";
                       >;
                         {distributionChartData.map((entry, index) => (;
@@ -110,7 +110,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
                           />;
                         ))};
                       </Pie>;
-                      <Tooltip;
+                      <Tooltip;"
                         formatter={(value: "number", name: string) => [;
                           `${value}%`,;
                           name,;
@@ -125,19 +125,19 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
           );
         };
         // Default rendering for other sections;
-        return (;
+        return (;"
           <div key={section.id} className="mb-8 break-words">;
             {/* Ensure section titles are also rendered via ReactMarkdown if they contain markdown */};
             <ReactMarkdown;
-              components={{;
-                h2: "({ ...props "}) => (;
+              components={{;"
+                h2: "({ ...props "}) => (;"
                   <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} />;
                 ),;
               }};
             >;
               {`## ${section.title}`};
             </ReactMarkdown>;
-            {/* Assuming mb-4 was for the content block, not specific markdown elements */};
+            {/* Assuming mb-4 was for the content block, not specific markdown elements */};"
             <div className="mb-4">;
               <ReactMarkdown>{section.content}</ReactMarkdown>;
             </div>;
@@ -145,7 +145,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
         );
       })};
       {/* Show helper text when no sections are present */};
-      {sectionList.length === 0 && (;
+      {sectionList.length === 0 && (;"
         <p className="text-gray-500 dark:text-gray-400">;
           Whitepaper preview will appear here once content is generated and;
           sections are available.;
@@ -156,3 +156,4 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({;
 };
 ;
 export default WhitepaperPreviewPanel;
+"

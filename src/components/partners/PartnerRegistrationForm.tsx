@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';'
+import { z } from 'zod';'
+import { useForm } from 'react-hook-form';'
 import { zodResolver } from '@hookform/resolvers/zod';
 import {;
   Card,;
   CardContent,;
   CardDescription,;
   CardHeader,;
-  CardTitle,;
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+  CardTitle,;'
+} from '@/components/ui/card';'
+import { Button } from '@/components/ui/button';'
 import { Input } from '@/components/ui/input';
 import {;
   Form,;
@@ -18,83 +18,83 @@ import {;
   FormField,;
   FormItem,;
   FormLabel,;
-  FormMessage,;
+  FormMessage,;'
 } from '@/components/ui/form';
 import {;
   Select,;
   SelectContent,;
   SelectItem,;
   SelectTrigger,;
-  SelectValue,;
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/hooks/use-toast';
-import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
-import { logErrorToProduction } from '@/utils/productionLogger';
+  SelectValue,;'
+} from '@/components/ui/select';'
+import { Textarea } from '@/components/ui/textarea';'
+import { toast } from '@/hooks/use-toast';'
+import { useAuth } from '@/hooks/useAuth';'
+import { supabase } from '@/integrations/supabase/client';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
 import type { ControllerRenderProps } from 'react-hook-form';
 ;
-const partnerFormSchema = z.object({;
+const partnerFormSchema: unknown unknown = z.object({;'
   name: "z.string().min(2", { message: 'Name must be at least 2 characters.' }),;
   website: z;
-    .string();
+    .string();'
     .url({ message: 'Please enter a valid URL.' });
-    .optional();
-    .or(z.literal('')),;
-  twitter: "z.string().optional()",;
-  instagram: "z.string().optional()",;
-  youtube: "z.string().optional()",;
-  linkedin: "z.string().optional()",;
+    .optional();'
+    .or(z.literal('')),;'
+  twitter: "z.string().optional()",;"
+  instagram: "z.string().optional()",;"
+  youtube: "z.string().optional()",;"
+  linkedin: "z.string().optional()",;"
   niche: "z.string().min(2", { message: 'Please specify your niche.' }),;
   audience_size: z;
-    .string();
+    .string();'
     .nonempty({ message: 'Please select your audience size.' }),;
   payout_method: z;
-    .string();
+    .string();'
     .nonempty({ message: 'Please select a payout method.' }),;
   bio: z;
-    .string();
+    .string();'
     .min(10, { message: 'Bio must be at least 10 characters.' });
     .max(500),;
 });
 ;
 type PartnerFormValues = z.infer<typeof partnerFormSchema>;
 ;
-export function PartnerRegistrationForm() {;
+export function PartnerRegistrationForm(): unknown {) {;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _user } = useAuth();
 ;
-  const form = useForm<PartnerFormValues>({;
-    resolver: "zodResolver(partnerFormSchema)",;
-    defaultValues: "{;",
-      name: '',;
-      website: '',;
-      twitter: '',;
-      instagram: '',;
-      youtube: '',;
-      linkedin: '',;
-      niche: '',;
-      audience_size: '',;
-      payout_method: 'paypal',;
+  const form: unknown unknown = useForm<PartnerFormValues>({;'
+    resolver: "zodResolver(partnerFormSchema)",;"
+    defaultValues: "{;",;"
+      name: '',;'
+      website: '',;'
+      twitter: '',;'
+      instagram: '',;'
+      youtube: '',;'
+      linkedin: '',;'
+      niche: '',;'
+      audience_size: '',;'
+      payout_method: 'paypal',;'
       bio: '',;
     },;
   });
 ;
-  const checkExistingPartner = async () => {;
-    if (!supabase) {;
+  const checkExistingPartner: unknown unknown = async () => {;
+    if (!supabase) {;'
       throw new Error('Supabase client not available');
     };
-
-    const { data: "existingPartner "} = await supabase;
-      .from('partner_profiles');
-      .select('id');
+;'
+    const { data: "existingPartner "} = await supabase;"
+      .from('partner_profiles');'
+      .select('id');'
       .eq('user_id', user?.id);
       .single();
 ;
     if (existingPartner) {;
-      toast({;
-        title: 'Already registered',;
-        description: 'You have already registered as a partner.',;
+      toast({;'
+        title: 'Already registered',;'
+        description: 'You have already registered as a partner.',;'
         variant: 'destructive',;
       });
       setIsSubmitting(false);
@@ -103,50 +103,50 @@ export function PartnerRegistrationForm() {;
     return false;
   };
 ;
-  async function onSubmit(data: PartnerFormValues) {;
+  async function onSubmit(): unknown {data: PartnerFormValues) {;
     if (!user) {;
-      toast({;
-        title: 'Authentication required',;
-        description: 'You must be logged in to register as a partner.',;
+      toast({;'
+        title: 'Authentication required',;'
+        description: 'You must be logged in to register as a partner.',;'
         variant: 'destructive',;
       });
       return;
     };
-
+;
     if (!supabase) {;
-      toast({;
+      toast({;'
         title: 'Database connection error',;
-        description:;
-          'Unable to connect to the database. Please try again later.',;
+        description:;'
+          'Unable to connect to the database. Please try again later.',;'
         variant: 'destructive',;
       });
       return;
     };
-
+;
     setIsSubmitting(true);
     try {;
       // Check if they already have a partner profile;
-      const hasExistingPartner = await checkExistingPartner();
+      const hasExistingPartner: unknown unknown = await checkExistingPartner();
       if (hasExistingPartner) return;
 ;
-      // Insert new partner profile;
-      const { data: "_newPartner", error } = await supabase;
+      // Insert new partner profile;'
+      const { data: "_newPartner", error } catch (error) {}= await supabase;"
         .from('partner_profiles');
         .insert([;
-          {;
-            user_id: "user.id",;
-            name: "data.name",;
-            website: "data.website || null",;
-            social_media: "{;",
-              twitter: "data.twitter || null",;
-              instagram: "data.instagram || null",;
-              youtube: "data.youtube || null",;
+          {;'
+            user_id: "user.id",;"
+            name: "data.name",;"
+            website: "data.website || null",;"
+            social_media: "{;",;"
+              twitter: "data.twitter || null",;"
+              instagram: "data.instagram || null",;"
+              youtube: "data.youtube || null",;"
               linkedin: "data.linkedin || null",;
-            },;
-            niche: "data.niche",;
-            audience_size: "data.audience_size",;
-            payout_method: "data.payout_method",;
-            bio: "data.bio",;
+            },;"
+            niche: "data.niche",;"
+            audience_size: "data.audience_size",;"
+            payout_method: "data.payout_method",;"
+            bio: "data.bio",;"
             status: 'pending', // Partners need approval;
           },;
         ]);
@@ -154,40 +154,40 @@ export function PartnerRegistrationForm() {;
 ;
       if (error) throw error;
 ;
-      toast({;
-        title: 'Application submitted!',;
-        description: 'Your partner application has been submitted for review.',;
+      toast({;'
+        title: 'Application submitted!',;'
+        description: 'Your partner application has been submitted for review.',;'
         variant: 'default',;
       });
-;
-      // Create a referral code if they don't have one already;
-      const { data: "existingCode "} = await supabase;
-        .from('referral_codes');
-        .select('code');
+;'
+      // Create a referral code if they don't have one already;'
+      const { data: "existingCode "} = await supabase;"
+        .from('referral_codes');'
+        .select('code');'
         .eq('user_id', user.id);
         .single();
 ;
-      if (!existingCode) {;
+      if (!existingCode) {;'
         await supabase.rpc('generate_referral_code', { user_id: "user.id "});
       };
     } catch (error: unknown) {;
-      if (error instanceof Error) {;
-        logErrorToProduction('Error submitting partner application:', {;
+      if (error instanceof Error) {;"
+        logErrorToProduction('Error submitting partner application:', {;'
           data: "error",;
         });
-        toast({;
+        toast({;"
           title: 'Submission failed',;
-          description:;
-            error.message || 'There was a problem submitting your application.',;
+          description:;'
+            error.message || 'There was a problem submitting your application.',;'
           variant: 'destructive',;
         });
-      } else {;
-        logErrorToProduction('Error submitting partner application:', {;
+      } else {;'
+        logErrorToProduction('Error submitting partner application:', {;'
           data: "error",;
         });
-        toast({;
-          title: 'Submission failed',;
-          description: 'There was a problem submitting your application.',;
+        toast({;"
+          title: 'Submission failed',;'
+          description: 'There was a problem submitting your application.',;'
           variant: 'destructive',;
         });
       };
@@ -195,8 +195,8 @@ export function PartnerRegistrationForm() {;
       setIsSubmitting(false);
     };
   };
-
-  return (;
+;
+  return (;'
     <Card className="bg-zion-blue-dark border-zion-blue-light">;
       <CardHeader>;
         <CardTitle>Partner Registration</CardTitle>;
@@ -205,78 +205,78 @@ export function PartnerRegistrationForm() {;
         </CardDescription>;
       </CardHeader>;
       <CardContent>;
-        <Form {...form}>;
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">;
+        <Form {...form}>;"
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">;"
             <div className="space-y-4">;
               <FormField;
-                control={form.control};
+                control={form.control};"
                 name="name";
                 render={({;
                   field,;
-                }: {;
+                }: {;"
                   field: "ControllerRenderProps<PartnerFormValues", 'name'>;
                 }) => (;
                   <FormItem>;
                     <FormLabel>Name / Brand</FormLabel>;
-                    <FormControl>;
+                    <FormControl>;'
                       <Input placeholder="Your name or brand name" {...field} />;
                     </FormControl>;
                     <FormMessage />;
                   </FormItem>;
                 )};
               />;
-
+;
               <FormField;
-                control={form.control};
+                control={form.control};"
                 name="website";
                 render={({;
                   field,;
-                }: {;
+                }: {;"
                   field: "ControllerRenderProps<PartnerFormValues", 'website'>;
                 }) => (;
                   <FormItem>;
                     <FormLabel>Website (Optional)</FormLabel>;
-                    <FormControl>;
+                    <FormControl>;'
                       <Input placeholder="https://yourwebsite.com" {...field} />;
                     </FormControl>;
                     <FormMessage />;
                   </FormItem>;
                 )};
               />;
-
+;"
               <div className="grid sm:grid-cols-2 gap-4">;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="twitter";
                   render={({;
                     field,;
-                  }: {;
+                  }: {;"
                     field: "ControllerRenderProps<PartnerFormValues", 'twitter'>;
                   }) => (;
                     <FormItem>;
                       <FormLabel>Twitter (Optional)</FormLabel>;
-                      <FormControl>;
+                      <FormControl>;'
                         <Input placeholder="@username" {...field} />;
                       </FormControl>;
                       <FormMessage />;
                     </FormItem>;
                   )};
                 />;
-
+;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="instagram";
                   render={({;
                     field,;
                   }: {;
                     field: ControllerRenderProps<;
-                      PartnerFormValues,;
+                      PartnerFormValues,;"
                       'instagram';
                     >;
                   }) => (;
                     <FormItem>;
                       <FormLabel>Instagram (Optional)</FormLabel>;
-                      <FormControl>;
+                      <FormControl>;'
                         <Input placeholder="@username" {...field} />;
                       </FormControl>;
                       <FormMessage />;
@@ -284,38 +284,38 @@ export function PartnerRegistrationForm() {;
                   )};
                 />;
               </div>;
-
+;"
               <div className="grid sm:grid-cols-2 gap-4">;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="youtube";
                   render={({;
                     field,;
-                  }: {;
+                  }: {;"
                     field: "ControllerRenderProps<PartnerFormValues", 'youtube'>;
                   }) => (;
                     <FormItem>;
                       <FormLabel>YouTube (Optional)</FormLabel>;
-                      <FormControl>;
+                      <FormControl>;'
                         <Input placeholder="Channel name or URL" {...field} />;
                       </FormControl>;
                       <FormMessage />;
                     </FormItem>;
                   )};
                 />;
-
+;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="linkedin";
                   render={({;
                     field,;
-                  }: {;
+                  }: {;"
                     field: "ControllerRenderProps<PartnerFormValues", 'linkedin'>;
                   }) => (;
                     <FormItem>;
                       <FormLabel>LinkedIn (Optional)</FormLabel>;
                       <FormControl>;
-                        <Input;
+                        <Input;'
                           placeholder="Profile URL or username";
                           {...field};
                         />;
@@ -325,19 +325,19 @@ export function PartnerRegistrationForm() {;
                   )};
                 />;
               </div>;
-
+;
               <FormField;
-                control={form.control};
+                control={form.control};"
                 name="niche";
                 render={({;
                   field,;
-                }: {;
+                }: {;"
                   field: "ControllerRenderProps<PartnerFormValues", 'niche'>;
                 }) => (;
                   <FormItem>;
                     <FormLabel>Your Niche</FormLabel>;
                     <FormControl>;
-                      <Input;
+                      <Input;'
                         placeholder="AI development, machine learning, tech tutorials, etc.";
                         {...field};
                       />;
@@ -349,16 +349,16 @@ export function PartnerRegistrationForm() {;
                   </FormItem>;
                 )};
               />;
-
+;"
               <div className="grid sm:grid-cols-2 gap-4">;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="audience_size";
                   render={({;
                     field,;
                   }: {;
                     field: ControllerRenderProps<;
-                      PartnerFormValues,;
+                      PartnerFormValues,;"
                       'audience_size';
                     >;
                   }) => (;
@@ -369,19 +369,19 @@ export function PartnerRegistrationForm() {;
                         defaultValue={field.value};
                       >;
                         <FormControl>;
-                          <SelectTrigger>;
+                          <SelectTrigger>;'
                             <SelectValue placeholder="Select audience size" />;
                           </SelectTrigger>;
                         </FormControl>;
-                        <SelectContent>;
-                          <SelectItem value="under1k">Under 1,000</SelectItem>;
-                          <SelectItem value="1k-10k">1,000 - 10,000</SelectItem>;
+                        <SelectContent>;"
+                          <SelectItem value="under1k">Under 1,000</SelectItem>;"
+                          <SelectItem value="1k-10k">1,000 - 10,000</SelectItem>;"
                           <SelectItem value="10k-50k">;
                             10,000 - 50,000;
-                          </SelectItem>;
+                          </SelectItem>;"
                           <SelectItem value="50k-100k">;
                             50,000 - 100,000;
-                          </SelectItem>;
+                          </SelectItem>;"
                           <SelectItem value="over100k">Over 100,000</SelectItem>;
                         </SelectContent>;
                       </Select>;
@@ -389,15 +389,15 @@ export function PartnerRegistrationForm() {;
                     </FormItem>;
                   )};
                 />;
-
+;
                 <FormField;
-                  control={form.control};
+                  control={form.control};"
                   name="payout_method";
                   render={({;
                     field,;
                   }: {;
                     field: ControllerRenderProps<;
-                      PartnerFormValues,;
+                      PartnerFormValues,;"
                       'payout_method';
                     >;
                   }) => (;
@@ -408,14 +408,14 @@ export function PartnerRegistrationForm() {;
                         defaultValue={field.value};
                       >;
                         <FormControl>;
-                          <SelectTrigger>;
+                          <SelectTrigger>;'
                             <SelectValue placeholder="Select payout method" />;
                           </SelectTrigger>;
                         </FormControl>;
-                        <SelectContent>;
-                          <SelectItem value="paypal">PayPal</SelectItem>;
-                          <SelectItem value="bank">Bank Transfer</SelectItem>;
-                          <SelectItem value="crypto">Cryptocurrency</SelectItem>;
+                        <SelectContent>;"
+                          <SelectItem value="paypal">PayPal</SelectItem>;"
+                          <SelectItem value="bank">Bank Transfer</SelectItem>;"
+                          <SelectItem value="crypto">Cryptocurrency</SelectItem>;"
                           <SelectItem value="platform_credit">;
                             Platform Credit;
                           </SelectItem>;
@@ -426,19 +426,19 @@ export function PartnerRegistrationForm() {;
                   )};
                 />;
               </div>;
-
+;
               <FormField;
-                control={form.control};
+                control={form.control};"
                 name="bio";
                 render={({;
                   field,;
-                }: {;
+                }: {;"
                   field: "ControllerRenderProps<PartnerFormValues", 'bio'>;
                 }) => (;
                   <FormItem>;
                     <FormLabel>Bio</FormLabel>;
                     <FormControl>;
-                      <Textarea;
+                      <Textarea;'
                         placeholder="Tell us about yourself and how you plan to promote Zion AI";
                         rows={4};
                         {...field};
@@ -450,12 +450,12 @@ export function PartnerRegistrationForm() {;
                 )};
               />;
             </div>;
-
-            <Button;
-              type="submit";
+;
+            <Button;"
+              type="submit";"
               className="w-full bg-zion-purple hover:bg-zion-purple-dark";
               disabled={isSubmitting};
-            >;
+            >;"
               {isSubmitting ? 'Submitting...' : 'Submit Application'};
             </Button>;
           </form>;
@@ -464,3 +464,4 @@ export function PartnerRegistrationForm() {;
     </Card>;
   );
 };
+'

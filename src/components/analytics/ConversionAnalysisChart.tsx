@@ -4,49 +4,49 @@ import {;
   CardContent,;
   CardDescription,;
   CardHeader,;
-  CardTitle,;
-} from '@/components/ui/card';
+  CardTitle,;'
+} from '@/components/ui/card';'
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents';
 ;
-interface ConversionAnalysisProps {;
-  data: "Array<Record<string", unknown>>;
-  timeRange: "string;",
-  onTimeRangeChange: "(range: string) => void;"
+interface ConversionAnalysisProps {;'
+  data: "Array<Record<string", unknown>>;"
+  timeRange: "string;",;"
+  onTimeRangeChange: "(range: string) => void;";
 };
-
-export function ConversionAnalysisChart({;
+;
+export function ConversionAnalysisChart(): unknown {{;
   data,;
   timeRange,;
   onTimeRangeChange,;
 }: ConversionAnalysisProps) {;
-  const dataKeys =;
-    data && data.length > 0 && data[0];
+  const dataKeys: unknown unknown =;
+    data && data.length > 0 && data[0];"
       ? Object.keys(data[0]).filter((key) => key !== 'date');
       : [];
 ;
-  return (;
+  return (;'
     <Card className="bg-zion-blue-dark border-zion-blue-light">;
-      <CardHeader>;
+      <CardHeader>;"
         <CardTitle className="text-white text-lg">;
           Conversion Analysis;
-        </CardTitle>;
+        </CardTitle>;"
         <CardDescription className="text-zion-slate-light">;
           Track different conversion types;
         </CardDescription>;
       </CardHeader>;
       <CardContent>;
-        <AnalyticsChart;
+        <AnalyticsChart;"
           title="";
-          data={(data || []).map((item) => ({;
+          data={(data || []).map((item) => ({;"
             name: String(item.name || item.label || 'Unknown'),;
-            value:;
+            value:;'
               typeof item.value === 'number';
-                ? item.value;
+                ? item.value;'
                 : typeof item.count === 'number';
                   ? item.count;
                   : 0,;
           }))};
-          dataKeys={dataKeys};
+          dataKeys={dataKeys};'
           type="bar";
           timeRange={timeRange};
           onTimeRangeChange={onTimeRangeChange};
@@ -55,3 +55,4 @@ export function ConversionAnalysisChart({;
     </Card>;
   );
 };
+"

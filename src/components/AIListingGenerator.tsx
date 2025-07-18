@@ -1,32 +1,32 @@
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import React, { useState } from 'react';'
+import { ArrowRight, Sparkles } from 'lucide-react';'
+import { useToast } from '@/hooks/use-toast';'
+import { Button } from '@/components/ui/button';'
+import { Input } from '@/components/ui/input';'
 import { Textarea } from '@/components/ui/textarea';
 import {;
   Card,;
   CardContent,;
   CardFooter,;
   CardHeader,;
-  CardTitle,;
-} from '@/components/ui/card';
+  CardTitle,;'
+} from '@/components/ui/card';'
 import Skeleton from '@/components/ui/skeleton';
-;
-import { supabase } from '@/integrations/supabase/client';
-import { Badge } from '@/components/ui/badge';
+;'
+import { supabase } from '@/integrations/supabase/client';'
+import { Badge } from '@/components/ui/badge';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-interface GeneratedContent {;
-  description: "string;",
-  tags: string[];
-  suggestedPrice: "{;",
-    min: number;
-    max: "number;"
-  };
-  keyPoints: "string[];"
+interface GeneratedContent {;'
+  description: "string;",;"
+  tags: "string[];","
+  suggestedPrice: "{;",;"
+    min: "number;","
+    max: "number;";
+  };"
+  keyPoints: "string[];";
 };
-
+;
 interface AIListingGeneratorProps {;
   onApplyGenerated?: (content: GeneratedContent) => void;
   initialValues?: {;
@@ -36,18 +36,18 @@ interface AIListingGeneratorProps {;
     targetAudience?: string;
   };
 };
-
-export function AIListingGenerator({;
+;
+export function AIListingGenerator(): unknown {{;
   onApplyGenerated,;
   initialValues = {},;
 }: AIListingGeneratorProps) {;
-  const { _toast } = useToast();
-  const [title, setTitle] = useState(initialValues.title || '');
+  const { _toast } = useToast();"
+  const [title, setTitle] = useState(initialValues.title || '');'
   const [category, setCategory] = useState(initialValues.category || '');
-  const [keyFeatures, setKeyFeatures] = useState(;
+  const [keyFeatures, setKeyFeatures] = useState(;'
     initialValues.keyFeatures || '',;
   );
-  const [targetAudience, setTargetAudience] = useState(;
+  const [targetAudience, setTargetAudience] = useState(;'
     initialValues.targetAudience || '',;
   );
   const [isLoading, setIsLoading] = useState(false);
@@ -55,46 +55,46 @@ export function AIListingGenerator({;
     null as GeneratedContent | null,;
   );
 ;
-  const handleInputChange = (;
-    e: "{ target: { value: string "} },;
+  const handleInputChange: unknown unknown = (;'
+    e: "{ target: { value: string "} },;"
     _field: "string",;
   ) => {;
-    switch (field) {;
+    switch (field) {;"
       case 'title':;
         setTitle(e.target.value);
-        break;
+        break;'
       case 'category':;
         setCategory(e.target.value);
-        break;
+        break;'
       case 'keyFeatures':;
         setKeyFeatures(e.target.value);
-        break;
+        break;'
       case 'targetAudience':;
         setTargetAudience(e.target.value);
         break;
     };
   };
 ;
-  const handleGenerate = async () => {;
+  const handleGenerate: unknown unknown = async () => {;
     if (!title || !category) {;
-      toast({;
-        title: 'Missing required fields',;
-        description: 'Please provide at least a title and category.',;
+      toast({;'
+        title: 'Missing required fields',;'
+        description: 'Please provide at least a title and category.',;'
         variant: 'destructive',;
       });
       return;
     };
-
+;
     setIsLoading(true);
 ;
     try {;
-      if (!supabase) {;
+      if (!supabase) {;'
         throw new Error('Supabase client not available');
-      };
-
-      const { data, error } = await supabase.functions.invoke(;
+      } catch (error) {};
+;
+      const { data, error } = await supabase.functions.invoke(;'
         'ai-listing-generator',;
-        {;
+        {;'
           body: "{ title", category, keyFeatures, targetAudience },;
         },;
       );
@@ -102,27 +102,27 @@ export function AIListingGenerator({;
       if (error) {;
         throw new Error(error.message);
       };
-
+;
       if ((data as unknown as { error?: string })?.error) {;
         throw new Error((data as unknown as { error?: string }).error);
       };
-
+;
       setGeneratedContent(;
         (data as unknown as { generated?: GeneratedContent })?.generated ||;
           null,;
       );
-      toast({;
-        title: 'Content Generated',;
+      toast({;"
+        title: 'Content Generated',;'
         description: 'AI has created optimized listing content for you.',;
       });
-    } catch {;
+    } catch {;'
       logErrorToProduction('Error generating content:', { data: "error "});
-      toast({;
+      toast({;"
         title: 'Generation Failed',;
         description:;
           error instanceof Error;
-            ? error.message;
-            : 'Failed to generate content. Please try again.',;
+            ? error.message;'
+            : 'Failed to generate content. Please try again.',;'
         variant: 'destructive',;
       });
     } finally {;
@@ -130,103 +130,103 @@ export function AIListingGenerator({;
     };
   };
 ;
-  const handleApply = () => {;
+  const handleApply: unknown unknown = () => {;
     if (generatedContent && onApplyGenerated) {;
       onApplyGenerated(generatedContent);
-      toast({;
-        title: 'Content Applied',;
+      toast({;'
+        title: 'Content Applied',;'
         description: 'The generated content has been applied to your listing.',;
       });
     };
   };
 ;
-  return (;
-    <div className="space-y-6">;
+  return (;'
+    <div className="space-y-6">;"
       <Card className="border border-zion-blue-light bg-zion-blue-dark">;
-        <CardHeader>;
-          <CardTitle className="flex items-center text-white">;
+        <CardHeader>;"
+          <CardTitle className="flex items-center text-white">;"
             <Sparkles className="h-5 w-5 mr-2 text-zion-cyan" />;
             AI Listing Optimizer;
-          </CardTitle>;
+          </CardTitle>;"
           <p className="text-sm text-zion-slate-light">;
             Provide basic information and let AI generate optimized,;
             SEO-friendly content for your listing;
           </p>;
-        </CardHeader>;
-        <CardContent className="space-y-4">;
+        </CardHeader>;"
+        <CardContent className="space-y-4">;"
           <div className="space-y-2">;
-            <label;
-              htmlFor="title";
+            <label;"
+              htmlFor="title";"
               className="text-sm font-medium text-zion-slate-light";
             >;
               Title;
             </label>;
-            <Input;
+            <Input;"
               id="title";
-              value={title};
-              onChange={(e) => handleInputChange(e, 'title')};
-              placeholder="Enter your product or service title";
+              value={title};"
+              onChange={(e) => handleInputChange(e, 'title')};'
+              placeholder="Enter your product or service title";"
               className="bg-zion-blue border border-zion-blue-light text-white";
               disabled={isLoading};
             />;
-          </div>;
+          </div>;"
           <div className="space-y-2">;
-            <label;
-              htmlFor="category";
+            <label;"
+              htmlFor="category";"
               className="text-sm font-medium text-zion-slate-light";
             >;
               Category;
             </label>;
-            <Input;
+            <Input;"
               id="category";
-              value={category};
-              onChange={(e) => handleInputChange(e, 'category')};
-              placeholder="e.g. AI Tool, Digital Product, Service";
+              value={category};"
+              onChange={(e) => handleInputChange(e, 'category')};'
+              placeholder="e.g. AI Tool, Digital Product, Service";"
               className="bg-zion-blue border border-zion-blue-light text-white";
               disabled={isLoading};
             />;
-          </div>;
+          </div>;"
           <div className="space-y-2">;
-            <label;
-              htmlFor="keyFeatures";
+            <label;"
+              htmlFor="keyFeatures";"
               className="text-sm font-medium text-zion-slate-light";
             >;
               Key Features (Optional);
             </label>;
-            <Textarea;
+            <Textarea;"
               id="keyFeatures";
-              value={keyFeatures};
-              onChange={(e) => handleInputChange(e, 'keyFeatures')};
-              placeholder="Briefly describe the main features or benefits";
+              value={keyFeatures};"
+              onChange={(e) => handleInputChange(e, 'keyFeatures')};'
+              placeholder="Briefly describe the main features or benefits";"
               className="bg-zion-blue border border-zion-blue-light text-white min-h-20";
               disabled={isLoading};
             />;
-          </div>;
+          </div>;"
           <div className="space-y-2">;
-            <label;
-              htmlFor="targetAudience";
+            <label;"
+              htmlFor="targetAudience";"
               className="text-sm font-medium text-zion-slate-light";
             >;
               Target Audience (Optional);
             </label>;
-            <Input;
+            <Input;"
               id="targetAudience";
-              value={targetAudience};
-              onChange={(e) => handleInputChange(e, 'targetAudience')};
-              placeholder="e.g. Developers, Marketers, Startups";
+              value={targetAudience};"
+              onChange={(e) => handleInputChange(e, 'targetAudience')};'
+              placeholder="e.g. Developers, Marketers, Startups";"
               className="bg-zion-blue border border-zion-blue-light text-white";
               disabled={isLoading};
             />;
           </div>;
           <Button;
             onClick={handleGenerate};
-            disabled={isLoading || !title || !category};
+            disabled={isLoading || !title || !category};"
             className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white mt-2";
           >;
             {isLoading ? (;
               <>Generating Optimized Content...</>;
             ) : (;
-              <>;
+              <>;"
                 <Sparkles className="h-4 w-4 mr-2" />;
                 Generate Optimized Content;
               </>;
@@ -234,24 +234,24 @@ export function AIListingGenerator({;
           </Button>;
         </CardContent>;
       </Card>;
-
-      {isLoading && (;
+;
+      {isLoading && (;"
         <Card className="border border-zion-blue-light bg-zion-blue-dark overflow-hidden">;
-          <CardHeader>;
+          <CardHeader>;"
             <Skeleton className="h-8 w-3/4 bg-zion-blue-light/20" />;
-          </CardHeader>;
-          <CardContent className="space-y-4">;
-            <Skeleton className="h-32 w-full bg-zion-blue-light/20" />;
+          </CardHeader>;"
+          <CardContent className="space-y-4">;"
+            <Skeleton className="h-32 w-full bg-zion-blue-light/20" />;"
             <div className="flex flex-wrap gap-2">;
-              {[...Array(5)].map((_, i) => (;
+              {[...Array(5)].map((_, i) => (;"
                 <Skeleton key={i} className="h-6 w-16 bg-zion-blue-light/20" />;
               ))};
-            </div>;
-            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20" />;
+            </div>;"
+            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20" />;"
             <div className="space-y-2">;
               {[...Array(3)].map((_, i) => (;
                 <Skeleton;
-                  key={i};
+                  key={i};"
                   className="h-6 w-full bg-zion-blue-light/20";
                 />;
               ))};
@@ -259,45 +259,45 @@ export function AIListingGenerator({;
           </CardContent>;
         </Card>;
       )};
-
-      {generatedContent && !isLoading && (;
+;
+      {generatedContent && !isLoading && (;"
         <Card className="border border-zion-blue-light bg-zion-blue-dark">;
-          <CardHeader>;
+          <CardHeader>;"
             <CardTitle className="text-white">Generated Content</CardTitle>;
-          </CardHeader>;
+          </CardHeader>;"
           <CardContent className="space-y-4">;
-            <div>;
+            <div>;"
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">;
                 Description;
-              </h3>;
+              </h3>;"
               <p className="text-white">{generatedContent.description}</p>;
             </div>;
-
-            <div>;
+;
+            <div>;"
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">;
                 Tags;
-              </h3>;
+              </h3>;"
               <div className="flex flex-wrap gap-2">;
                 {generatedContent.tags?.map((tag, index) => (;
                   <Badge key={index}>{tag}</Badge>;
                 ))};
               </div>;
             </div>;
-
-            <div>;
+;
+            <div>;"
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">;
                 Suggested Price Range;
-              </h3>;
+              </h3>;"
               <p className="text-white">;
                 ${generatedContent.suggestedPrice.min.toFixed(2)} - $;
                 {generatedContent.suggestedPrice.max.toFixed(2)};
               </p>;
             </div>;
-
-            <div>;
+;
+            <div>;"
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">;
                 Key Selling Points;
-              </h3>;
+              </h3>;"
               <ul className="list-disc pl-5 text-white space-y-1">;
                 {generatedContent.keyPoints.map((point, index) => (;
                   <li key={index}>{point}</li>;
@@ -307,10 +307,10 @@ export function AIListingGenerator({;
           </CardContent>;
           <CardFooter>;
             <Button;
-              onClick={handleApply};
+              onClick={handleApply};"
               className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white";
             >;
-              Apply to My Listing;
+              Apply to My Listing;"
               <ArrowRight className="ml-2 h-4 w-4" />;
             </Button>;
           </CardFooter>;
@@ -319,3 +319,4 @@ export function AIListingGenerator({;
     </div>;
   );
 };
+"

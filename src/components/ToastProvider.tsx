@@ -1,25 +1,26 @@
-import React from 'react';
-import { SnackbarProvider, useSnackbar } from 'notistack';
+import React from 'react';'
+import { SnackbarProvider, useSnackbar } from 'notistack';'
 import { setEnqueueSnackbarRef } from '@/context/SnackbarContext';
-;
-function InnerProvider({ children }: { children: "React.ReactNode "}) {;
+;'
+function InnerProvider(): unknown {{ children }: { children: "React.ReactNode "}) {;
   const { _enqueueSnackbar } = useSnackbar();
   setEnqueueSnackbarRef(enqueueSnackbar);
   return <>{children}</>;
 };
-
-export default function ToastProvider({;
+;
+export default function ToastProvider(): unknown {{;
   children,;
-}: {;
-  children: "React.ReactNode;"
+}: {;"
+  children: "React.ReactNode;";
 }) {;
   return (;
     <SnackbarProvider;
       maxSnack={3};
-      autoHideDuration={4000};
+      autoHideDuration={4000};"
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }};
     >;
       <InnerProvider>{children}</InnerProvider>;
     </SnackbarProvider>;
   );
 };
+'

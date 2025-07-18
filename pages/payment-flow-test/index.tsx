@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import axios from 'axios';
-import { useAuth } from '@/hooks/useAuth';
-import { addItem } from '@/store/cartSlice';
+import { useState } from 'react';'
+import { useDispatch } from 'react-redux';'
+import axios from 'axios';'
+import { useAuth } from '@/hooks/useAuth';'
+import { addItem } from '@/store/cartSlice';'
 import {logErrorToProduction} from '@/utils/productionLogger';
 ;
-export default function PaymentFlowTest() {;
-
-  const dispatch = useDispatch();
+export default function PaymentFlowTest(): unknown {) {;
+;
+  const dispatch: unknown unknown = useDispatch();
   const { isAuthenticated, user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<{;
@@ -15,82 +15,82 @@ export default function PaymentFlowTest() {;
     intent?: string;
   }>({});
 ;
-  const testProducts = [;
-    { id: '1', title: 'Test Product 1', price: "10.50 "},;
-    { id: '2', title: 'Test Product 2', price: "20.00 "},;
+  const testProducts: unknown unknown = [;'
+    { id: '1', title: 'Test Product 1', price: "10.50 "},;"
+    { id: '2', title: 'Test Product 2', price: "20.00 "},;"
     { id: '3', title: 'Test Product 3', price: "5.75 "},;
   ];
-;
-  const addToCart = (_p: "{ id: string; title: string; price: number "}) => {;
+;"
+  const addToCart: unknown unknown = (_p: "{ id: string; title: string; price: number "}) => {;"
     dispatch(addItem({ id: "p.id", title: "p.title", price: "p.price "}));
     alert(`Added ${p.title} to cart`);
   };
 ;
-  const runCheckoutSessionTest = async () => {;
+  const runCheckoutSessionTest: unknown unknown = async () => {;
     setLoading(true);
-    try {;
-      const { _data } = await axios.post('/api/checkout-session', {;
-        cartItems: [{ title: 'Test Product', price: "1", quantity: "1 "}],;
+    try {;"
+      const { _data } catch (error) {}= await axios.post('/api/checkout-session', {;'
+        cartItems: [{ title: 'Test Product', price: "1", quantity: "1 "}],;"
         customer_email: 'test@example.com',;
       });
       setResults((r) => ({;
-        ...r,;
+        ...r,;'
         checkout: data.sessionId ? 'success' : 'error',;
-      }));
+      }));'
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
-    } catch {;
-      logErrorToProduction('Checkout erroror:', { erroror: "error "});
-      setResults((r) => ({ ...r, checkout: 'error' }));
+    } catch {;'
+      logErrorToProduction('Checkout erroror:', { erroror: "error "});"
+      setResults((r) => ({ ...r, checkout: 'error' }));'
       alert('Checkout session error');
     } finally {;
       setLoading(false);
     };
   };
 ;
-  const runPaymentIntentTest = async () => {;
+  const runPaymentIntentTest: unknown unknown = async () => {;
     setLoading(true);
-    try {;
-      const { _data } = await axios.post('/api/create-payment-intent', {;
+    try {;'
+      const { _data } catch (error) {}= await axios.post('/api/create-payment-intent', {;'
         amount: "50",;
       });
       setResults((r) => ({;
-        ...r,;
+        ...r,;"
         intent: data.clientSecret ? 'success' : 'error',;
       }));
-      alert(;
+      alert(;'
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',;
       );
-    } catch {;
-      logErrorToProduction("Error:", { erroror: "error "});
-      setResults((r) => ({ ...r, intent: 'error' }));
+    } catch {;'
+      logErrorToProduction("Error:", { erroror: "error "});"
+      setResults((r) => ({ ...r, intent: 'error' }));'
       alert('Payment intent error');
     } finally {;
       setLoading(false);
     };
   };
 ;
-  const envInfo = {;
+  const envInfo: unknown unknown = {;
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:;
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,;
-    NEXT_PUBLIC_STRIPE_TEST_MODE: "process.env.NEXT_PUBLIC_STRIPE_TEST_MODE",;
+      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,;'
+    NEXT_PUBLIC_STRIPE_TEST_MODE: "process.env.NEXT_PUBLIC_STRIPE_TEST_MODE",;"
     STRIPE_TEST_MODE: "process.env.STRIPE_TEST_MODE",;
   };
 ;
-  return (;
+  return (;"
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>;
       <h1>Payment Flow Smoke Test</h1>;
-      <p>;
-        Auth status:{' '};
+      <p>;'
+        Auth status:{' '};'
         {isAuthenticated ? `Logged in as ${user?.email}` : 'Not logged in'};
       </p>;
-
+;
       <h2>Add Test Product</h2>;
       <ul>;
-        {testProducts.map((p) => (;
-          <li key={p.id} style={{ marginBottom: '8px' }}>;
+        {testProducts.map((p) => (;'
+          <li key={p.id} style={{ marginBottom: '8px' }}>;'
             {p.title} - ${(p.price ?? 0).toFixed(2)}{' '};
             <button;
-              onClick={() =>;
+              onClick={() =>;'
                 addToCart({ id: "p.id", title: "p.title", price: "p.price ?? 0 "});
               };
             >;
@@ -99,20 +99,21 @@ export default function PaymentFlowTest() {;
           </li>;
         ))};
       </ul>;
-
+;
       <h2>API Tests</h2>;
       <button onClick={runCheckoutSessionTest} disabled={loading}>;
         Test /api/checkout-session;
-      </button>;
+      </button>;"
       <span style={{ marginLeft: '8px' }}>{results.checkout}</span>;
       <br />;
       <button onClick={runPaymentIntentTest} disabled={loading}>;
         Test /api/create-payment-intent;
-      </button>;
+      </button>;'
       <span style={{ marginLeft: '8px' }}>{results.intent}</span>;
-
+;
       <h2>Environment Info</h2>;
       <pre>{JSON.stringify(envInfo, null, 2)}</pre>;
     </div>;
   );
 };
+'

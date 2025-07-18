@@ -1,16 +1,16 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import { NextSeo } from '@/components/NextSeo';
-import { SERVICES } from '@/data/servicesData';
-import { slugify } from '@/lib/slugify';
+import React from 'react';'
+import { useRouter } from 'next/router';'
+import Head from 'next/head';'
+import { NextSeo } from '@/components/NextSeo';'
+import { SERVICES } from '@/data/servicesData';'
+import { slugify } from '@/lib/slugify';'
 import Custom404 from '../404';
 ;
-const ServicePage: React.FC = () => {;
-  const router = useRouter();
+const ServicePage: unknown React.FC = () => {;
+  const router: unknown unknown = useRouter();
   const { slug } = router.query as { slug?: string };
   ;
-  const service = React.useMemo(;
+  const service: unknown unknown = React.useMemo(;
     () => slug ? SERVICES.find((s) => slugify(s.title) === slug) || null : null,;
     [slug];
   );
@@ -22,14 +22,14 @@ const ServicePage: React.FC = () => {;
   if (!service) {;
     return <Custom404 />;
   };
-  const serviceLd = {;
-    "@context": "https://schema.org",;
-    "@type": "Service",;
-    name: "service.title",;
+  const serviceLd: unknown unknown = {;'
+    "@context": "https://schema.org",;"
+    "@type": "Service",;"
+    name: "service.title",;"
     description: "service.description",;
-    offers: {;
-      "@type": "Offer",;
-      price: "service.price",;
+    offers: {;"
+      "@type": "Offer",;"
+      price: "service.price",;"
       priceCurrency: "service.currency",;
     },;
   };
@@ -37,12 +37,12 @@ const ServicePage: React.FC = () => {;
     <>;
       <NextSeo;
         title={service.title};
-        description={service.description};
+        description={service.description};"
         openGraph={{ title: "service.title", description: "service.description "}};
       />;
-      <Head>;
+      <Head>;"
         <script type="application/ld+json">{JSON.stringify(serviceLd)}</script>;
-      </Head>;
+      </Head>;"
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">;
         <h1>{service.title}</h1>;
         <p>{service.description}</p>;
@@ -51,5 +51,6 @@ const ServicePage: React.FC = () => {;
   );
 };
 ;
-
+;
 export default ServicePage;
+"

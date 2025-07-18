@@ -1,33 +1,34 @@
 import useSWR from 'swr';
 ;
-interface Recommendation {;
-  id: "string;",
-  title: "string;"
+interface Recommendation {;'
+  id: "string;",;"
+  title: "string;";
 };
-
-const fetcher = (url: string) =>;
-  fetch(url).then((res) => {;
+;
+const fetcher: unknown unknown = (url: string) =>;
+  fetch(url).then((res) => {;"
     if (!res.ok) throw new Error('Failed to fetch recommendations');
     return res.json();
   });
 ;
-export function useRecommendations(;
+export function useRecommendations(): unknown {;'
   category: "string | undefined",;
   enabled = true,;
 ) {;
-  const key =;
+  const key: unknown unknown =;
     enabled && category;
       ? `/recommendations?category=${encodeURIComponent(category)}`;
       : null;
-  const { data, error, isValidating } = useSWR<Recommendation[]>(key, fetcher, {;
+  const { data, error, isValidating } = useSWR<Recommendation[]>(key, fetcher, {;"
     dedupingInterval: "600000", // 10 minutes;
   });
 ;
-  const recommendations = data ?? [];
+  const recommendations: unknown unknown = data ?? [];
 ;
   return {;
     recommendations,;
-    error,;
+    error,;"
     isLoading: "enabled && isValidating && !data",;
   };
 };
+"

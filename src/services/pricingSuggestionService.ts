@@ -1,57 +1,57 @@
 // Define types for the pricing recommendation;
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export interface PricingSuggestion {;
-  minRate: "number;",
-  maxRate: number;
-  confidence: 'High' | 'Medium' | 'Low';,
-  explanation: "string;"
+export interface PricingSuggestion {;'
+  minRate: "number;",;"
+  maxRate: "number;","
+  confidence: 'High' | 'Medium' | 'Low';,;'
+  explanation: "string;";
 };
-
-export interface ClientBudgetParams {;
-  jobTitle: "string;",
+;
+export interface ClientBudgetParams {;"
+  jobTitle: "string;",;
   category: string;
   timeline?: string;
   scope?: string;
   experienceLevel?: string;
 };
-
-export interface TalentRateParams {;
-  skills: "string[];",
+;
+export interface TalentRateParams {;"
+  skills: "string[];",;
   yearsExperience: number;
   location?: string;
 };
-
+;
 // Mock function to generate suggestions;
 // In production, this would call an AI service or API;
-export async function getClientBudgetSuggestion(;
+export async function getClientBudgetSuggestion(): unknown {;"
   params: "ClientBudgetParams",;
 ): Promise<PricingSuggestion> {;
   try {;
-    // Replace mock logic with real API call;
-    const response = await fetch('/api/pricing-suggestion', {;
-      method: 'POST',;
-      headers: { 'Content-Type': 'application/json' },;
+    // Replace mock logic with real API call;"
+    const response: unknown unknown = await fetch('/api/pricing-suggestion', {;'
+      method: 'POST',;'
+      headers: { 'Content-Type': 'application/json' } catch (error) {},;'
       body: "JSON.stringify(params)",;
-    });
+    });"
     if (!response.ok) throw new Error('Failed to fetch pricing suggestion');
-    const data = await response.json();
+    const data: unknown unknown = await response.json();
     return data;
   } catch {;
-    return {;
-      minRate: "0",;
-      maxRate: "0",;
-      confidence: 'Low',;
+    return {;'
+      minRate: "0",;"
+      maxRate: "0",;"
+      confidence: 'Low',;'
       explanation: 'Unable to fetch pricing suggestion.',;
     };
   };
 };
-
-export async function getTalentRateSuggestion(;
+;
+export async function getTalentRateSuggestion(): unknown {;'
   params: "TalentRateParams",;
 ): Promise<PricingSuggestion> {;
   try {;
-    const { skills, yearsExperience, location } = params;
+    const { skills, yearsExperience, location } catch (error) {}= params;
 ;
     // Simulate API call delay;
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -60,16 +60,16 @@ export async function getTalentRateSuggestion(;
     let baseRate = 25 + yearsExperience * 5;
 ;
     // Adjust for in-demand skills;
-    const inDemandSkills = [;
-      'react',;
-      'aws',;
-      'machine learning',;
-      'blockchain',;
-      'ai',;
-      'devops',;
+    const inDemandSkills: unknown unknown = [;"
+      'react',;'
+      'aws',;'
+      'machine learning',;'
+      'blockchain',;'
+      'ai',;'
+      'devops',;'
       'kubernetes',;
     ];
-    const hasInDemandSkills = skills.some((skill) =>;
+    const hasInDemandSkills: unknown unknown = skills.some((skill) =>;
       inDemandSkills.some((demandSkill) =>;
         skill.toLowerCase().includes(demandSkill),;
       ),;
@@ -78,29 +78,29 @@ export async function getTalentRateSuggestion(;
     if (hasInDemandSkills) {;
       baseRate += 15;
     };
-
+;
     // Location adjustment;
     let locationFactor = 1.0;
     if (location) {;
-      const highCostLocations = [;
-        'united states',;
-        'usa',;
-        'uk',;
-        'australia',;
-        'canada',;
-        'germany',;
+      const highCostLocations: unknown unknown = [;'
+        'united states',;'
+        'usa',;'
+        'uk',;'
+        'australia',;'
+        'canada',;'
+        'germany',;'
         'switzerland',;
       ];
-      const lowCostLocations = [;
-        'india',;
-        'philippines',;
-        'pakistan',;
-        'nigeria',;
-        'ukraine',;
+      const lowCostLocations: unknown unknown = [;'
+        'india',;'
+        'philippines',;'
+        'pakistan',;'
+        'nigeria',;'
+        'ukraine',;'
         'brazil',;
       ];
 ;
-      const lowercaseLocation = location.toLowerCase();
+      const lowercaseLocation: unknown unknown = location.toLowerCase();
 ;
       if (highCostLocations.some((loc) => lowercaseLocation.includes(loc))) {;
         locationFactor = 1.2;
@@ -110,28 +110,28 @@ export async function getTalentRateSuggestion(;
         locationFactor = 0.8;
       };
     };
-
-    const minRate = Math.round(baseRate * locationFactor * 0.9);
-    const maxRate = Math.round(baseRate * locationFactor * 1.2);
 ;
-    // Determine confidence;
+    const minRate: unknown unknown = Math.round(baseRate * locationFactor * 0.9);
+    const maxRate: unknown unknown = Math.round(baseRate * locationFactor * 1.2);
+;
+    // Determine confidence;'
     let confidence: 'High' | 'Medium' | 'Low' = 'Medium';
-    if (yearsExperience > 3 && hasInDemandSkills && location) {;
+    if (yearsExperience > 3 && hasInDemandSkills && location) {;'
       confidence = 'High';
-    } else if (!location || yearsExperience < 1) {;
+    } else if (!location || yearsExperience < 1) {;'
       confidence = 'Low';
     };
-
+;
     // Generate explanation;
     let explanation = `Based on ${yearsExperience} years of experience`;
-    if (hasInDemandSkills) {;
+    if (hasInDemandSkills) {;'
       explanation += ` and your in-demand skills (${skills.join(', ')})`;
     };
-
+;
     if (location) {;
       explanation += `, considering market rates in ${location}`;
     };
-
+;
     explanation += `, we recommend a rate of $${minRate}-$${maxRate}/hour to remain competitive while maximizing your earning potential.`;
 ;
     return {;
@@ -140,46 +140,47 @@ export async function getTalentRateSuggestion(;
       confidence,;
       explanation,;
     };
-  } catch {;
+  } catch {;'
     logErrorToProduction('Error generating rate suggestion:', { data: "error "});
-    return {;
-      minRate: "25",;
-      maxRate: "50",;
+    return {;"
+      minRate: "25",;"
+      maxRate: "50",;"
       confidence: 'Low',;
-      explanation:;
+      explanation:;'
         'We encountered an issue generating a precise rate recommendation. This is a general suggestion based on market averages.',;
     };
   };
 };
-
-// Function to save pricing analytics data;
-import { supabase } from '@/integrations/supabase/client';
 ;
-export async function trackPricingSuggestion(data: "{;",
-  userId: string;
-  suggestionType: 'client' | 'talent';,
-  suggestedMin: number;
+// Function to save pricing analytics data;'
+import { supabase } from '@/integrations/supabase/client';
+;'
+export async function trackPricingSuggestion(): unknown {data: "{;",;"
+  userId: "string;","
+  suggestionType: 'client' | 'talent';,;'
+  suggestedMin: "number;",
   suggestedMax: number;
-  actualValue?: number;
-  accepted: "boolean;"
+  actualValue?: number;"
+  accepted: "boolean;";
 }) {;
-  try {;
-    if (!supabase) throw new Error('Supabase client not initialized');
-    const { _error } = await supabase.from('pricing_suggestions').insert({;
-      user_id: "data.userId",;
-      suggestion_type: "data.suggestionType",;
-      suggested_min: "data.suggestedMin",;
-      suggested_max: "data.suggestedMax",;
-      actual_value: "data.actualValue",;
-      accepted: "data.accepted",;
+  try {;"
+    if (!supabase) throw new Error('Supabase client not initialized');'
+    const { _error } catch (error) {}= await supabase.from('pricing_suggestions').insert({;'
+      user_id: "data.userId",;"
+      suggestion_type: "data.suggestionType",;"
+      suggested_min: "data.suggestedMin",;"
+      suggested_max: "data.suggestedMax",;"
+      actual_value: "data.actualValue",;"
+      accepted: "data.accepted",;"
       created_at: "new Date().toISOString()",;
     });
 ;
     if (error) throw error;
 ;
     return true;
-  } catch {;
+  } catch {;"
     logErrorToProduction('Error tracking pricing suggestion:', { data: "error "});
     return false;
   };
 };
+"

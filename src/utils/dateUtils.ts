@@ -5,10 +5,11 @@ import { format } from 'date-fns';
  * @param dateString ISO date string to format;
  * @returns Formatted date string;
  */;
-export const _formatDate = (dateString: string): string => {;
-  try {;
+export const _formatDate: unknown unknown = (dateString: string): string => {;
+  try {;'
     return format(new Date(dateString), 'PP');
-  } catch {;
+  } catch (error) {} catch {;
     return dateString;
   };
 };
+'

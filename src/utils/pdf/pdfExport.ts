@@ -1,41 +1,41 @@
-import type { Resume } from '@/types/resume';
-import { jsPDF } from 'jspdf';
-import 'jspdf-autotable';
-import { getPdfThemeColors } from './themeConfig';
-import { loadCustomFonts } from './fontConfig';
-import type { FontFamily } from './fontConfig';
-import { addBasicInfoSection } from './sections/basicInfoSection';
-import { addSkillsSection } from './sections/skillsSection';
-import { addWorkExperienceSection } from './sections/workExperienceSection';
-import { addEducationSection } from './sections/educationSection';
-import { addCertificationsSection } from './sections/certificationsSection';
+import type { Resume } from '@/types/resume';'
+import { jsPDF } from 'jspdf';'
+import 'jspdf-autotable';'
+import { getPdfThemeColors } from './themeConfig';'
+import { loadCustomFonts } from './fontConfig';'
+import type { FontFamily } from './fontConfig';'
+import { addBasicInfoSection } from './sections/basicInfoSection';'
+import { addSkillsSection } from './sections/skillsSection';'
+import { addWorkExperienceSection } from './sections/workExperienceSection';'
+import { addEducationSection } from './sections/educationSection';'
+import { addCertificationsSection } from './sections/certificationsSection';'
 import { addPortfolioSection } from './sections/portfolioSection';
 ;
-export interface ExportOptions {;
+export interface ExportOptions {;'
   theme: 'light' | 'dark';
   includePortfolio?: boolean;
   maxProjects?: number;
   fontFamily?: FontFamily;
 };
-
-const defaultOptions: "ExportOptions = {;",
-  theme: 'light',;
-  includePortfolio: "true",;
-  maxProjects: "2",;
+;'
+const defaultOptions: unknown "ExportOptions = {;",;"
+  theme: 'light',;'
+  includePortfolio: "true",;"
+  maxProjects: "2",;"
   fontFamily: 'default',;
 };
 ;
-export async function exportResumeToPDF(;
-  resume: "Resume",;
+export async function exportResumeToPDF(): unknown {;'
+  resume: "Resume",;"
   options: "Partial<ExportOptions> = {"},;
-): Promise<Blob> {;
-  const mergedOptions: "ExportOptions = { ...defaultOptions", ...options };
+): Promise<Blob> {;"
+  const mergedOptions: unknown "ExportOptions = { ...defaultOptions", ...options };
   const { theme, includePortfolio, maxProjects, fontFamily } = mergedOptions;
 ;
   // Create new PDF document (A4);
-  const doc = new jsPDF({;
-    orientation: 'portrait',;
-    unit: 'mm',;
+  const doc: unknown unknown = new jsPDF({;"
+    orientation: 'portrait',;'
+    unit: 'mm',;'
     format: 'a4',;
   });
 ;
@@ -43,12 +43,12 @@ export async function exportResumeToPDF(;
   await loadCustomFonts(doc, fontFamily);
 ;
   // Set up colors based on theme;
-  const colors = getPdfThemeColors(theme);
+  const colors: unknown unknown = getPdfThemeColors(theme);
 ;
   // Set background color;
-  doc.setFillColor(colors.background);
+  doc.setFillColor(colors.background);'
   doc.rect(0, 0, 210, 297, 'F'); // Fill entire page;
-
+;
   // Set text color based on theme;
   doc.setTextColor(colors.text);
 ;
@@ -84,6 +84,7 @@ export async function exportResumeToPDF(;
       maxProjects,;
     );
   };
-
+;'
   return doc.output('blob');
 };
+'

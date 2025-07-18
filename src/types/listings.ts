@@ -1,21 +1,21 @@
 export interface ListingCategory {;
-  id: "string;",
-  name: string;
-  description: "string;",
-  icon: "string;"
+  id: "string;",;"
+  name: "string;","
+  description: "string;",;"
+  icon: "string;";
 };
-
-export interface ProductListing {;
-  id: "string;",
-  title: string;
-  description: "string;",
+;
+export interface ProductListing {;"
+  id: "string;",;"
+  title: "string;","
+  description: "string;",;
   category: string;
-  subcategory?: string; // Adding optional subcategory field;
-  price: "number | null;",
-  currency: string;
-  tags: "string[];",
-  author: {;
-    name: "string;",
+  subcategory?: string; // Adding optional subcategory field;"
+  price: "number | null;",;"
+  currency: "string;","
+  tags: "string[];",;"
+  author: "{;","
+    name: "string;",;
     id: string;
     avatarUrl?: string;
     email?: string; // Added optional email property;
@@ -35,13 +35,14 @@ export interface ProductListing {;
   specifications?: string[]; // Key specifications for filtering;
   uspHeadline?: string; // Short unique selling point headline;
 };
-
-export interface ListingItem {;
-  id: "string;",
-  title: string;
+;
+export interface ListingItem {;"
+  id: "string;",;"
+  title: "string;",
   category: string;
   image?: string;
   description?: string;
 };
-
+;"
 export type ListingView = 'grid' | 'list';
+'

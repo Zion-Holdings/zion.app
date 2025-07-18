@@ -1,11 +1,11 @@
-import { Header } from '@/components/Header';
-import { GradientHeading } from '@/components/GradientHeading';
+import { Header } from '@/components/Header';'
+import { GradientHeading } from '@/components/GradientHeading';'
 import Link from 'next/link';
 ;
-export default function DevNet() {;
+export default function DevNet(): unknown {) {;
   return (;
     <>;
-      <Header />;
+      <Header />;'
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">;
         <GradientHeading>DevNet Sandbox</GradientHeading>;
         <p>;
@@ -14,14 +14,14 @@ export default function DevNet() {;
           data.;
         </p>;
         <ul>;
-          <li>;
+          <li>;"
             <Link href="/faucet">Token Faucet</Link>;
           </li>;
           <li>;
-            {/* Link corrected to existing proposal creation page */};
+            {/* Link corrected to existing proposal creation page */};"
             <Link href="/governance/create">Proposal Sandbox</Link>;
           </li>;
-          <li>;
+          <li>;"
             <Link href="/gpt-playground">GPT Playground</Link>;
           </li>;
         </ul>;
@@ -32,3 +32,4 @@ export default function DevNet() {;
     </>;
   );
 };
+"

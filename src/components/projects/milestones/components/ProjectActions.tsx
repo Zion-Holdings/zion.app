@@ -1,35 +1,35 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import React from 'react';'
+import { Button } from '@/components/ui/button';'
+import Link from 'next/link';'
 import { ShieldAlert } from '@/components/ui/icons';
-;
+;'
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton';
 ;
-interface ProjectActionsProps {;
-  projectId: "string;",
+interface ProjectActionsProps {;'
+  projectId: "string;",;
   isUnderDispute: boolean;
-  disputeId?: string;
-  isTalent: "boolean;",
-  onAddMilestone: "() => void;"
+  disputeId?: string;"
+  isTalent: "boolean;",;"
+  onAddMilestone: "() => void;";
 };
-
-export function ProjectActions({;
+;
+export function ProjectActions(): unknown {{;
   projectId,;
   isUnderDispute,;
   disputeId,;
   isTalent,;
   onAddMilestone,;
 }: ProjectActionsProps) {;
-  return (;
+  return (;"
     <div className="flex gap-2">;
-      {isUnderDispute && disputeId ? (;
+      {isUnderDispute && disputeId ? (;"
         <Button variant="outline" asChild>;
-          <Link href={`/dashboard/disputes/${disputeId}`}>;
+          <Link href={`/dashboard/disputes/${disputeId}`}>;"
             <ShieldAlert className="h-4 w-4 mr-2" />;
             View Active Dispute;
           </Link>;
         </Button>;
-      ) : (;
+      ) : (;"
         <RaiseDisputeButton projectId={projectId} variant="outline" />;
       )};
       {isTalent && !isUnderDispute && (;
@@ -38,3 +38,4 @@ export function ProjectActions({;
     </div>;
   );
 };
+"

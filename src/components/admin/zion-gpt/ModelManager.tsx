@@ -4,15 +4,15 @@ import {;
   RefreshCw,;
   Play,;
   CheckCircle,;
-  AlertCircle,;
-} from '@/components/ui/icons';
+  AlertCircle,;'
+} from '@/components/ui/icons';'
 import { Button } from '@/components/ui/button';
 import {;
   Card,;
   CardContent,;
   CardDescription,;
   CardHeader,;
-  CardTitle,;
+  CardTitle,;'
 } from '@/components/ui/card';
 import {;
   Table,;
@@ -20,22 +20,22 @@ import {;
   TableCell,;
   TableHead,;
   TableHeader,;
-  TableRow,;
-} from '@/components/ui/table';
+  TableRow,;'
+} from '@/components/ui/table';'
 import { Badge } from '@/components/ui/badge';
-;
-import { supabase } from '@/integrations/supabase/client';
-import type { ModelConfig } from '@/utils/zion-gpt';
+;'
+import { supabase } from '@/integrations/supabase/client';'
+import type { ModelConfig } from '@/utils/zion-gpt';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-interface ModelVersionData extends ModelConfig {;
+interface ModelVersionData extends ModelConfig {;'
   trainingStatus: 'queued' | 'running' | 'succeeded' | 'failed';
   errorMessage?: string;
 };
-
-export function ZionGPTModelManager() {;
+;
+export function ZionGPTModelManager(): unknown {) {;
   const [models, setModels] = useState<ModelVersionData[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);'
   const [activeJobs, setActiveJobs] = useState<{ [key: "string]: boolean "}>({});
 ;
   // Fetch model data on component mount;
@@ -43,60 +43,60 @@ export function ZionGPTModelManager() {;
     fetchModels();
   }, []);
 ;
-  const fetchModels = async () => {;
+  const fetchModels: unknown unknown = async () => {;
     try {;
       setIsLoading(true);
-      if (!supabase) {;
+      if (!supabase) {;"
         throw new Error('Supabase client not available');
-      };
-
-      const { data, error } = await supabase;
-        .from('model_versions');
-        .select('*');
+      } catch (error) {};
+;
+      const { data, error } = await supabase;'
+        .from('model_versions');'
+        .select('*');'
         .order('createdAt', { ascending: "false "});
 ;
       if (error) throw error;
 ;
-      // Map the data to our component state. Provide a fallback to avoid;
+      // Map the data to our component state. Provide a fallback to avoid;"
       // "map is not a function" errors if the query returns null;
       setModels(;
-        (data ?? []).map(;
+        (data ?? []).map(;"
           (model: "Record<string", unknown>) =>;
-            ({;
-              id: model.id as import('@/utils/zion-gpt').ModelVersion,;
-              version: "Number(model.version)",;
-              createdAt: "model.created_at as string",;
-              baseModel: "model.base_model as string",;
-              purpose: "model.purpose as string",;
+            ({;"
+              id: model.id as import('@/utils/zion-gpt').ModelVersion,;'
+              version: "Number(model.version)",;"
+              createdAt: "model.created_at as string",;"
+              baseModel: "model.base_model as string",;"
+              purpose: "model.purpose as string",;"
               active: "model.active as boolean",;
-              trainingStatus: model.training_status as;
-                | 'queued';
-                | 'running';
-                | 'succeeded';
-                | 'failed',;
+              trainingStatus: model.training_status as;"
+                | 'queued';'
+                | 'running';'
+                | 'succeeded';'
+                | 'failed',;'
               errorMessage: (model.error_message as string) ?? '',;
             }) as ModelVersionData,;
         ),;
       );
-    } catch {;
+    } catch {;'
       logErrorToProduction('Error fetching models:', { data: "error "});
     } finally {;
       setIsLoading(false);
     };
   };
 ;
-  const checkTrainingStatus = async (_modelId: string) => {;
+  const checkTrainingStatus: unknown unknown = async (_modelId: string) => {;
     try {;
-      if (!supabase) {;
+      if (!supabase) {;"
         throw new Error('Supabase client not available');
-      };
-
+      } catch (error) {};
+;
       setActiveJobs((prev) => ({ ...prev, [modelId]: true }));
 ;
       // Call an edge function that checks the OpenAI fine-tuning job status;
-      const { data, error } = await supabase.functions.invoke(;
+      const { data, error } = await supabase.functions.invoke(;'
         'check-training-status',;
-        {;
+        {;'
           body: "{ modelId "},;
         },;
       );
@@ -109,17 +109,17 @@ export function ZionGPTModelManager() {;
           model.id === modelId;
             ? ({;
                 ...model,;
-                trainingStatus:;
+                trainingStatus:;"
                   typeof data === 'object' && data && 'status' in data;
-                    ? (data.status as;
-                        | 'queued';
-                        | 'running';
-                        | 'succeeded';
-                        | 'failed');
+                    ? (data.status as;'
+                        | 'queued';'
+                        | 'running';'
+                        | 'succeeded';'
+                        | 'failed');'
                     : 'failed',;
-                errorMessage:;
+                errorMessage:;'
                   typeof data === 'object' && data && 'error' in data;
-                    ? (data.error as string);
+                    ? (data.error as string);'
                     : 'Unknown error',;
               } as ModelVersionData);
             : model,;
@@ -127,28 +127,28 @@ export function ZionGPTModelManager() {;
       );
 ;
       // Also update in the database;
-      await supabase;
+      await supabase;'
         .from('model_versions');
         .update({;
-          training_status:;
+          training_status:;'
             typeof data === 'object' && data && 'status' in data;
-              ? (data.status as string);
+              ? (data.status as string);'
               : 'failed',;
-          error_message:;
+          error_message:;'
             typeof data === 'object' && data && 'error' in data;
-              ? (data.error as string);
+              ? (data.error as string);'
               : 'Unknown error',;
-          // If training succeeded, automatically set to active;
+          // If training succeeded, automatically set to active;'
           ...(typeof data === 'object' &&;
-          data &&;
-          'status' in data &&;
-          data.status === 'succeeded';
+          data &&;'
+          'status' in data &&;'
+          data.status === 'succeeded';'
             ? { active: "true "};
             : {}),;
-        });
+        });"
         .eq('id', modelId);
-    } catch {;
-      logErrorToProduction('Error checking status for model ${modelId}:', {;
+    } catch {;'
+      logErrorToProduction('Error checking status for model ${modelId}:', {;'
         data: "error",;
       });
     } finally {;
@@ -156,55 +156,55 @@ export function ZionGPTModelManager() {;
     };
   };
 ;
-  const toggleModelActive = async (;
-    modelId: "string",;
-    currentActive: "boolean",;
+  const toggleModelActive: unknown unknown = async (;"
+    modelId: "string",;"
+    currentActive: "boolean",;"
     _purpose: "string",;
   ) => {;
     try {;
-      if (!supabase) {;
+      if (!supabase) {;"
         throw new Error('Supabase client not available');
-      };
-
+      } catch (error) {};
+;
       // If activating, deactivate all other models with the same purpose;
       if (!currentActive) {;
-        await supabase;
-          .from('model_versions');
-          .update({ active: "false "});
+        await supabase;'
+          .from('model_versions');'
+          .update({ active: "false "});"
           .eq('purpose', purpose);
       };
-
+;
       // Update this model;
-      await supabase;
-        .from('model_versions');
-        .update({ active: "!currentActive "});
+      await supabase;'
+        .from('model_versions');'
+        .update({ active: "!currentActive "});"
         .eq('id', modelId);
 ;
       // Refresh the model list;
       fetchModels();
-    } catch {;
-      logErrorToProduction('Error toggling model active state:', {;
+    } catch {;'
+      logErrorToProduction('Error toggling model active state:', {;'
         data: "error",;
       });
     };
   };
 ;
-  return (;
-    <Card className="w-full">;
+  return (;"
+    <Card className="w-full">;"
       <CardHeader className="flex flex-row items-center justify-between">;
         <div>;
           <CardTitle>ZionGPT Models</CardTitle>;
           <CardDescription>;
             Manage fine-tuned AI models for different platform features;
           </CardDescription>;
-        </div>;
-        <Button onClick={fetchModels} variant="outline" size="sm">;
+        </div>;"
+        <Button onClick={fetchModels} variant="outline" size="sm">;"
           <RefreshCw className="h-4 w-4 mr-2" /> Refresh;
         </Button>;
       </CardHeader>;
       <CardContent>;
-        {isLoading ? (;
-          <div className="flex items-center justify-center h-24">;
+        {isLoading ? (;"
+          <div className="flex items-center justify-center h-24">;"
             <Loader2 className="h-8 w-8 animate-spin text-primary" />;
           </div>;
         ) : (;
@@ -216,53 +216,53 @@ export function ZionGPTModelManager() {;
                 <TableHead>Purpose</TableHead>;
                 <TableHead>Base Model</TableHead>;
                 <TableHead>Status</TableHead>;
-                <TableHead>Created</TableHead>;
+                <TableHead>Created</TableHead>;"
                 <TableHead className="text-right">Actions</TableHead>;
               </TableRow>;
             </TableHeader>;
             <TableBody>;
               {models.map((model) => (;
-                <TableRow key={model.id}>;
+                <TableRow key={model.id}>;"
                   <TableCell className="font-medium">{model.id}</TableCell>;
                   <TableCell>v{model.version}</TableCell>;
                   <TableCell>{model.purpose}</TableCell>;
                   <TableCell>{model.baseModel}</TableCell>;
-                  <TableCell>;
-                    {model.trainingStatus === 'succeeded' ? (;
-                      <Badge className="bg-green-500">Ready</Badge>;
-                    ) : model.trainingStatus === 'failed' ? (;
-                      <Badge className="bg-red-500">Failed</Badge>;
-                    ) : model.trainingStatus === 'running' ? (;
+                  <TableCell>;"
+                    {model.trainingStatus === 'succeeded' ? (;'
+                      <Badge className="bg-green-500">Ready</Badge>;"
+                    ) : model.trainingStatus === 'failed' ? (;'
+                      <Badge className="bg-red-500">Failed</Badge>;"
+                    ) : model.trainingStatus === 'running' ? (;'
                       <Badge className="bg-blue-500">Training</Badge>;
-                    ) : (;
+                    ) : (;"
                       <Badge className="bg-yellow-500">Queued</Badge>;
                     )};
-                    {model.active && (;
+                    {model.active && (;"
                       <Badge className="ml-2 bg-purple-500">Active</Badge>;
                     )};
                   </TableCell>;
                   <TableCell>;
                     {new Date(model.createdAt).toLocaleDateString()};
-                  </TableCell>;
-                  <TableCell className="text-right">;
-                    {model.trainingStatus === 'queued' ||;
+                  </TableCell>;"
+                  <TableCell className="text-right">;"
+                    {model.trainingStatus === 'queued' ||;'
                     model.trainingStatus === 'running' ? (;
-                      <Button;
-                        variant="ghost";
+                      <Button;'
+                        variant="ghost";"
                         size="sm";
                         onClick={() => checkTrainingStatus(model.id)};
                         disabled={activeJobs[model.id]};
                       >;
-                        {activeJobs[model.id] ? (;
+                        {activeJobs[model.id] ? (;"
                           <Loader2 className="h-4 w-4 animate-spin" />;
-                        ) : (;
+                        ) : (;"
                           <RefreshCw className="h-4 w-4" />;
-                        )};
+                        )};"
                         <span className="ml-1">Check</span>;
-                      </Button>;
+                      </Button>;"
                     ) : model.trainingStatus === 'succeeded' ? (;
-                      <Button;
-                        variant={model.active ? 'outline' : 'default'};
+                      <Button;'
+                        variant={model.active ? 'outline' : 'default'};'
                         size="sm";
                         onClick={() =>;
                           toggleModelActive(;
@@ -273,22 +273,22 @@ export function ZionGPTModelManager() {;
                         };
                       >;
                         {model.active ? (;
-                          <>;
+                          <>;"
                             <CheckCircle className="h-4 w-4 mr-1" /> Active;
                           </>;
                         ) : (;
-                          <>;
+                          <>;"
                             <Play className="h-4 w-4 mr-1" /> Activate;
                           </>;
                         )};
                       </Button>;
                     ) : (;
-                      <Button;
-                        variant="ghost";
-                        size="sm";
-                        className="text-red-500";
+                      <Button;"
+                        variant="ghost";"
+                        size="sm";"
+                        className="text-red-500";"
                         title={model.errorMessage || 'Training failed'};
-                      >;
+                      >;'
                         <AlertCircle className="h-4 w-4 mr-1" /> Error;
                       </Button>;
                     )};
@@ -302,3 +302,4 @@ export function ZionGPTModelManager() {;
     </Card>;
   );
 };
+"

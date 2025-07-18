@@ -1,39 +1,40 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
-import webpush from 'web-push';
+import type { NextApiRequest, NextApiResponse } from 'next';'
+import fs from 'fs';'
+import path from 'path';'
+import webpush from 'web-push';'
 import {logErrorToProduction} from '@/utils/productionLogger';
 ;
-
-const FILE_PATH = path.join(process.cwd(), 'data', 'push-subscriptions.json');
+;'
+const FILE_PATH: unknown unknown = path.join(process.cwd(), 'data', 'push-subscriptions.json');
 ;
-webpush.setVapidDetails(;
-  process.env.VAPID_SUBJECT || 'mailto:example@domain.com',;
-  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || '',;
+webpush.setVapidDetails(;'
+  process.env.VAPID_SUBJECT || 'mailto:example@domain.com',;'
+  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || '',;'
   process.env.VAPID_PRIVATE_KEY || '';
 );
-;
-export default async function handler(req: "NextApiRequest", res: NextApiResponse) {;
-  if (req.method !== 'POST') {;
-    res.setHeader('Allow', 'POST');
+;'
+export default async function handler(): unknown {req: "NextApiRequest", res: NextApiResponse) {;"
+  if (req.method !== 'POST') {;'
+    res.setHeader('Allow', 'POST');'
     return res.status(405).end('Method Not Allowed');
   };
   const { title, body, url } = req.body as { title?: unknown, body?: unknown, url?: unknown };
-  const payload = JSON.stringify({ title, body, url });
+  const payload: unknown unknown = JSON.stringify({ title, body, url });
 ;
-  const subs = fs.existsSync(FILE_PATH);
-    ? (() => {;
-        const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
+  const subs: unknown unknown = fs.existsSync(FILE_PATH);
+    ? (() => {;'
+        const fileContent: unknown unknown = fs.readFileSync(FILE_PATH, 'utf8');'
         return JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent));
       })();
     : [];
 ;
-  await Promise.all(;
+  await Promise.all(;'
     subs.map((sub: "{ endpoint: string; keys: { p256dh: string; auth: string "} }) =>;
-      webpush.sendNotification(sub, payload).catch((_err: unknown) => {;
+      webpush.sendNotification(sub, payload).catch((_err: unknown) => {;"
         logErrorToProduction('Push send failed', { data: "err "});
       });
     );
-  );
+  );"
       return res.status(200).json({ success: "true "});
 };
+"

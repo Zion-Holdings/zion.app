@@ -1,23 +1,23 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { useRequestQuoteWizard } from '@/context';
+import React from 'react';'
+import { Button } from '@/components/ui/button';'
+import { useRequestQuoteWizard } from '@/context';'
 import { FavoriteButton } from '@/components/FavoriteButton';
 ;
-interface ServiceCardProps {;
-  service: "{ id: string; title: string "};
-  onSelect?: (id: "string) => void;"
+interface ServiceCardProps {;'
+  service: "{ id: string; title: string "};"
+  onSelect?: (id: "string) => void;";
 };
-
-export default function ServiceCard({ service, onSelect }: ServiceCardProps) {;
+;
+export default function ServiceCard(): unknown {{ service, onSelect }: ServiceCardProps) {;
   const { _startQuote } = useRequestQuoteWizard();
 ;
-  const handleClick = () => {;
+  const handleClick: unknown unknown = () => {;
     if (onSelect) {;
       onSelect(service.id);
     };
   };
 ;
-  const handleRequestQuote = (_e: React.MouseEvent) => {;
+  const handleRequestQuote: unknown unknown = (_e: React.MouseEvent) => {;
     e.stopPropagation();
     startQuote(service.id);
   };
@@ -25,14 +25,14 @@ export default function ServiceCard({ service, onSelect }: ServiceCardProps) {;
   return (;
     <div;
       data-testid={`service-card-${service.id}`};
-      onClick={handleClick};
+      onClick={handleClick};"
       className="cursor-pointer p-4 border border-zion-blue-light rounded-lg bg-zion-blue-dark hover:border-zion-purple/50 relative";
     >;
-      <FavoriteButton itemId={service.id} />;
+      <FavoriteButton itemId={service.id} />;"
       <h3 className="text-white font-medium mb-2">{service.title}</h3>;
-      <Button;
+      <Button;"
         size="sm";
-        onClick={handleRequestQuote};
+        onClick={handleRequestQuote};"
         data-testid="request-quote-btn";
       >;
         Request Quote;
@@ -40,3 +40,4 @@ export default function ServiceCard({ service, onSelect }: ServiceCardProps) {;
     </div>;
   );
 };
+"

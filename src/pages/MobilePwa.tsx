@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react';'
 import { MobileApp } from '@/mobile/MobileApp';
 ;
-const MobilePwa: React.FC = () => (;
+const MobilePwa: unknown React.FC = () => (;
   <>;
     <MobileApp>;
       <div />;
@@ -10,3 +10,4 @@ const MobilePwa: React.FC = () => (;
 );
 ;
 export default MobilePwa;
+'

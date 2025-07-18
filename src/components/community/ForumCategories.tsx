@@ -4,59 +4,59 @@ import {;
   Code,;
   FileText,;
   Briefcase,;
-  Megaphone,;
+  Megaphone,;'
 } from '@/components/ui/icons';
 import {;
   Card,;
   CardContent,;
   CardHeader,;
   CardTitle,;
-  CardDescription,;
-} from '@/components/ui/card';
+  CardDescription,;'
+} from '@/components/ui/card';'
 import { useAuth } from '@/hooks/useAuth';
-;
+;'
 import type { ForumCategoryInfo } from '@/types/community';
 ;
-const categories: ForumCategoryInfo[] = [;
-  {;
-    id: 'getting-hired',;
+const categories: unknown ForumCategoryInfo[] = [;
+  {;'
+    id: 'getting-hired',;'
     name: 'Getting Hired',;
-    description:;
-      'Tips, strategies, and questions about getting hired on the platform.',;
-    adminOnly: "false",;
+    description:;'
+      'Tips, strategies, and questions about getting hired on the platform.',;'
+    adminOnly: "false",;"
     icon: 'Briefcase',;
   },;
-  {;
-    id: 'project-help',;
-    name: 'Project Help',;
-    description: 'Get help with your ongoing projects and collaboration.',;
-    adminOnly: "false",;
+  {;'
+    id: 'project-help',;'
+    name: 'Project Help',;'
+    description: 'Get help with your ongoing projects and collaboration.',;'
+    adminOnly: "false",;"
     icon: 'MessageSquare',;
   },;
-  {;
-    id: 'ai-tools',;
-    name: 'AI Tools Discussion',;
-    description: 'Discuss AI tools, frameworks, and best practices.',;
-    adminOnly: "false",;
+  {;'
+    id: 'ai-tools',;'
+    name: 'AI Tools Discussion',;'
+    description: 'Discuss AI tools, frameworks, and best practices.',;'
+    adminOnly: "false",;"
     icon: 'Code',;
   },;
-  {;
-    id: 'feedback',;
-    name: 'Feedback & Feature Requests',;
-    description: 'Share your feedback and suggest new features.',;
-    adminOnly: "false",;
+  {;'
+    id: 'feedback',;'
+    name: 'Feedback & Feature Requests',;'
+    description: 'Share your feedback and suggest new features.',;'
+    adminOnly: "false",;"
     icon: 'FileText',;
   },;
-  {;
-    id: 'announcements',;
-    name: 'Announcements',;
-    description: 'Official announcements from the Zion team.',;
-    adminOnly: "true",;
+  {;'
+    id: 'announcements',;'
+    name: 'Announcements',;'
+    description: 'Official announcements from the Zion team.',;'
+    adminOnly: "true",;"
     icon: 'Megaphone',;
   },;
 ];
 ;
-const iconMap = {;
+const iconMap: unknown unknown = {;
   Briefcase,;
   MessageSquare,;
   Code,;
@@ -64,28 +64,28 @@ const iconMap = {;
   Megaphone,;
 };
 ;
-export const ForumCategories = () => {;
-  const { _user } = useAuth();
-  const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
+export const ForumCategories: unknown unknown = () => {;
+  const { _user } = useAuth();'
+  const isAdmin: unknown unknown = user?.userType === 'admin' || user?.role === 'admin';
 ;
-  const visibleCategories = categories.filter(;
+  const visibleCategories: unknown unknown = categories.filter(;
     (category) => !category.adminOnly || isAdmin,;
   );
 ;
-  return (;
+  return (;'
     <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">;
       {visibleCategories.map((category) => {;
-        const Icon = iconMap[category.icon as keyof typeof iconMap];
+        const Icon: unknown unknown = iconMap[category.icon as keyof typeof iconMap];
         return (;
-          <Link key={category.id} href={`/community/category/${category.id}`}>;
-            <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer">;
-              <CardHeader className="flex flex-row items-center gap-4">;
-                <div className="p-2 bg-zion-purple/10 rounded-full">;
+          <Link key={category.id} href={`/community/category/${category.id}`}>;"
+            <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer">;"
+              <CardHeader className="flex flex-row items-center gap-4">;"
+                <div className="p-2 bg-zion-purple/10 rounded-full">;"
                   <Icon className="h-6 w-6 text-zion-purple" />;
-                </div>;
+                </div>;"
                 <CardTitle className="text-xl">{category.name}</CardTitle>;
               </CardHeader>;
-              <CardContent>;
+              <CardContent>;"
                 <CardDescription className="text-base">;
                   {category.description};
                 </CardDescription>;
@@ -99,3 +99,4 @@ export const ForumCategories = () => {;
 };
 ;
 export default ForumCategories;
+"

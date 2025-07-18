@@ -1,4 +1,4 @@
-const PhilosophyPage = () => {;
+const PhilosophyPage: unknown unknown = () => {;
   return (;
     <div>;
       <h1>Philosophy</h1>;

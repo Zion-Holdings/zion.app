@@ -1,6 +1,6 @@
 import React from 'react';
 ;
-const GovernancePage = () => {;
+const GovernancePage: unknown unknown = () => {;
   return (;
     <div>;
       <h1>Governance Page</h1>;
@@ -10,3 +10,4 @@ const GovernancePage = () => {;
 };
 ;
 export default GovernancePage;
+'

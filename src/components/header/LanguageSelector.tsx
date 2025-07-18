@@ -1,77 +1,77 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/button';
-import { fireEvent } from '@/lib/analytics';
+import React, { useState } from 'react';'
+import { useTranslation } from 'react-i18next';'
+import { Button } from '@/components/ui/button';'
+import { fireEvent } from '@/lib/analytics';'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import {;
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;
-  DropdownMenuTrigger,;
+  DropdownMenuTrigger,;'
 } from '@/components/ui/dropdown-menu';
 import {;
   useLanguage,;
   type SupportedLanguage,;
-  SUPPORTED_LANGUAGES,;
+  SUPPORTED_LANGUAGES,;'
 } from '@/context/LanguageContext';
 ;
-export function LanguageSelector() {;
+export function LanguageSelector(): unknown {) {;
   const { t } = useTranslation();
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   // Fallback in case the context fails to provide languages for any reason;
-  const availableLanguages =;
+  const availableLanguages: unknown unknown =;
     supportedLanguages && supportedLanguages.length > 0;
       ? supportedLanguages;
       : SUPPORTED_LANGUAGES;
   const [isOpen, setIsOpen] = useState(false);
-;
-  logInfo('LanguageSelector: Rendered with currentLanguage:', {;
+;'
+  logInfo('LanguageSelector: Rendered with currentLanguage:', {;'
     data: "currentLanguage",;
-  });
-  logInfo('LanguageSelector: Available languages:', {;
+  });"
+  logInfo('LanguageSelector: Available languages:', {;'
     data: "availableLanguages.map((l) => l.code)",;
   });
 ;
-  const currentFlag =;
+  const currentFlag: unknown unknown =;"
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 ;
-  const handleLanguageChange = async (_langCode: SupportedLanguage) => {;
+  const handleLanguageChange: unknown unknown = async (_langCode: SupportedLanguage) => {;'
     logInfo('LanguageSelector: Language item clicked:', { data: "langCode "});
     try {;
       await changeLanguage(langCode);
-      setIsOpen(false);
-      fireEvent('language_change', { language: "langCode "});
-    } catch {;
-      logErrorToProduction('LanguageSelector: Error changing language:', {;
+      setIsOpen(false);"
+      fireEvent('language_change', { language: "langCode "} catch (error) {});
+    } catch {;"
+      logErrorToProduction('LanguageSelector: Error changing language:', {;'
         data: "error",;
       });
     };
   };
 ;
-  const handleOpenChange = (_open: boolean) => {;
-    setIsOpen(open);
+  const handleOpenChange: unknown unknown = (_open: boolean) => {;
+    setIsOpen(open);"
     fireEvent('language_selector_toggle', { open });
   };
 ;
   return (;
     <DropdownMenu open={isOpen} onOpenChange={handleOpenChange}>;
       <DropdownMenuTrigger asChild>;
-        <Button;
-          variant="ghost";
-          size="icon";
-          className="text-foreground hover:bg-accent hover:text-accent-foreground relative";
+        <Button;'
+          variant="ghost";"
+          size="icon";"
+          className="text-foreground hover:bg-accent hover:text-accent-foreground relative";"
           aria-label={t('general.select_language')};
           aria-expanded={isOpen};
-          tabIndex={0};
+          tabIndex={0};'
           data-testid="language-selector";
-        >;
+        >;"
           <span className="text-lg" aria-hidden="true">;
             {currentFlag};
           </span>;
         </Button>;
       </DropdownMenuTrigger>;
-      <DropdownMenuContent;
-        align="end";
+      <DropdownMenuContent;"
+        align="end";"
         className="bg-popover border border-border min-w-[140px]" // Use popover background and standard border;
         sideOffset={5};
       >;
@@ -79,17 +79,17 @@ export function LanguageSelector() {;
           <DropdownMenuItem;
             key={lang.code};
             className={`cursor-pointer transition-colors ${;
-              currentLanguage === lang.code;
-                ? 'bg-primary/20 text-primary' // Use primary color for selected;
+              currentLanguage === lang.code;"
+                ? 'bg-primary/20 text-primary' // Use primary color for selected;'
                 : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover;
             }`};
             onClick={() => handleLanguageChange(lang.code)};
             onSelect={() => handleLanguageChange(lang.code)};
-          >;
-            <div className="flex items-center gap-2 w-full">;
-              <span className="text-lg flex-shrink-0">{lang.flag}</span>;
+          >;'
+            <div className="flex items-center gap-2 w-full">;"
+              <span className="text-lg flex-shrink-0">{lang.flag}</span>;"
               <span className="flex-1">{t(`language.${lang.code}`)}</span>;
-              {currentLanguage === lang.code && (;
+              {currentLanguage === lang.code && (;"
                 <span className="text-primary text-xs">✓</span> // Use primary color for checkmark;
               )};
             </div>;
@@ -99,3 +99,4 @@ export function LanguageSelector() {;
     </DropdownMenu>;
   );
 };
+"

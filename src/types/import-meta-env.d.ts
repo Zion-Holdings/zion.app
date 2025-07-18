@@ -1,10 +1,10 @@
 // src/types/import-meta-env.d.ts;
-
+;
 interface ImportMetaEnv {;
   // --- VITE specific variables (kept for potential Vitest/tooling use) ---;
   readonly VITE_REOWN_PROJECT_ID?: string; // Example if Vitest needs it;
   readonly VITE_API_URL?: string; // Example if Vitest needs it;
-
+;
   // --- NEXT_PUBLIC_ variables (for Next.js application code) ---;
   readonly NEXT_PUBLIC_SUPABASE_URL?: string;
   readonly NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
@@ -41,9 +41,10 @@ interface ImportMetaEnv {;
   readonly NEXT_PUBLIC_BASE_URL?: string;
 ;
   // Optional: Allow any other string keys;
-  readonly [key: "string]: string | undefined;"
+  readonly [key: "string]: string | undefined;";
 };
-
-interface ImportMeta {;
-  readonly env: "ImportMetaEnv;"
+;
+interface ImportMeta {;"
+  readonly env: "ImportMetaEnv;";
 };
+"

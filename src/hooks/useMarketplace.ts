@@ -1,17 +1,17 @@
-import { useState, useCallback } from 'react';
-import { logErrorToProduction } from '@/utils/productionLogger';
-import { getMarketplaceErrorMessage } from '@/services/marketplace';
-import { useQuery } from '@tanstack/react-query';
+import { useState, useCallback } from 'react';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
+import { getMarketplaceErrorMessage } from '@/services/marketplace';'
+import { useQuery } from '@tanstack/react-query';'
 import { logDev } from '@/utils/developmentLogger';
 ;
-export interface UseMarketplaceState<T> {;
-  data: "T[];",
-  loading: boolean;
-  error: "string | null;",
-  retry: () => void;
-  refresh: "() => void;"
+export interface UseMarketplaceState<T> {;'
+  data: "T[];",;"
+  loading: "boolean;","
+  error: "string | null;",;"
+  retry: "() => void;","
+  refresh: "() => void;";
 };
-
+;
 export interface MarketplaceFilters {;
   page?: number;
   limit?: number;
@@ -19,72 +19,72 @@ export interface MarketplaceFilters {;
   search?: string;
   skills?: string[];
 };
-
-// Hook for products;
-export function useMarketplaceProducts(filters: "MarketplaceFilters = {"}) {;
-  return useQuery({;
+;
+// Hook for products;"
+export function useMarketplaceProducts(): unknown {filters: "MarketplaceFilters = {"}) {;
+  return useQuery({;"
     queryKey: ['marketplace', 'products', filters],;
-    _queryFn: async () => {;
-      logDev('useMarketplaceProducts: Fetching products with filters:', {;
+    _queryFn: async () => {;'
+      logDev('useMarketplaceProducts: Fetching products with filters:', {;'
         data: "filters",;
       });
 ;
-      const searchParams = new URLSearchParams();
-      Object.entries(filters).forEach(([key, value]) => {;
+      const searchParams: unknown unknown = new URLSearchParams();
+      Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {;
           searchParams.append(key, String(value));
         };
       });
 ;
-      const response = await fetch(`/api/marketplace/products?${searchParams}`);
-      if (!response.ok) {;
+      const response: unknown unknown = await fetch(`/api/marketplace/products?${searchParams}`);
+      if (!response.ok) {;'
         throw new Error(`Failed to fetch products: "${response.status"}`);
       };
-
-      const data = await response.json();
+;
+      const data: unknown unknown = await response.json();
       if (!data.products || data.products.length === 0) {;
-        logDev(;
+        logDev(;"
           'useMarketplaceProducts: "No products returned", but no error occurred',;
         );
       };
       return data.products || [];
-    },;
-    staleTime: "5 * 60 * 1000", // 5 minutes;
+    },;'
+    staleTime: "5 * 60 * 1000", // 5 minutes;"
     refetchOnWindowFocus: "false",;
   });
 };
-
-// Hook for categories;
-export function useMarketplaceCategories() {;
-  return useQuery({;
-    queryKey: ['marketplace', 'categories'],;
-    _queryFn: async () => {;
-      logDev('useMarketplaceCategories: Fetching categories');
 ;
-      const response = await fetch('/api/marketplace/categories');
-      if (!response.ok) {;
+// Hook for categories;
+export function useMarketplaceCategories(): unknown {) {;
+  return useQuery({;"
+    queryKey: ['marketplace', 'categories'],;
+    _queryFn: async () => {;'
+      logDev('useMarketplaceCategories: Fetching categories');
+;'
+      const response: unknown unknown = await fetch('/api/marketplace/categories');
+      if (!response.ok) {;'
         throw new Error(`Failed to fetch categories: "${response.status"}`);
       };
       return response.json();
-    },;
-    staleTime: "30 * 60 * 1000", // 30 minutes - categories change less frequently;
+    },;"
+    staleTime: "30 * 60 * 1000", // 30 minutes - categories change less frequently;"
     refetchOnWindowFocus: "false",;
   });
 };
-
-// Hook for talent;
-export function useMarketplaceTalent(filters: "MarketplaceFilters = {"}) {;
-  return useQuery({;
+;
+// Hook for talent;"
+export function useMarketplaceTalent(): unknown {filters: "MarketplaceFilters = {"}) {;
+  return useQuery({;"
     queryKey: ['marketplace', 'talent', filters],;
-    _queryFn: async () => {;
-      logDev('useMarketplaceTalent: Fetching talent with filters:', {;
+    _queryFn: async () => {;'
+      logDev('useMarketplaceTalent: Fetching talent with filters:', {;'
         data: "filters",;
       });
 ;
-      const searchParams = new URLSearchParams();
-      Object.entries(filters).forEach(([key, value]) => {;
+      const searchParams: unknown unknown = new URLSearchParams();
+      Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {;
-          if (Array.isArray(value)) {;
+          if (Array.isArray(value)) {;'
             searchParams.append(key, value.join(','));
           } else {;
             searchParams.append(key, String(value));
@@ -92,66 +92,66 @@ export function useMarketplaceTalent(filters: "MarketplaceFilters = {"}) {;
         };
       });
 ;
-      const response = await fetch(`/api/marketplace/talent?${searchParams}`);
-      if (!response.ok) {;
+      const response: unknown unknown = await fetch(`/api/marketplace/talent?${searchParams}`);
+      if (!response.ok) {;'
         throw new Error(`Failed to fetch talent: "${response.status"}`);
       };
       return response.json();
-    },;
-    staleTime: "10 * 60 * 1000", // 10 minutes;
+    },;"
+    staleTime: "10 * 60 * 1000", // 10 minutes;"
     refetchOnWindowFocus: "false",;
   });
 };
-
-// Hook for equipment;
-export function useMarketplaceEquipment(filters: "MarketplaceFilters = {"}) {;
-  return useQuery({;
+;
+// Hook for equipment;"
+export function useMarketplaceEquipment(): unknown {filters: "MarketplaceFilters = {"}) {;
+  return useQuery({;"
     queryKey: ['marketplace', 'equipment', filters],;
-    _queryFn: async () => {;
-      logDev('useMarketplaceEquipment: Fetching equipment with filters:', {;
+    _queryFn: async () => {;'
+      logDev('useMarketplaceEquipment: Fetching equipment with filters:', {;'
         data: "filters",;
       });
 ;
-      const searchParams = new URLSearchParams();
-      Object.entries(filters).forEach(([key, value]) => {;
+      const searchParams: unknown unknown = new URLSearchParams();
+      Object.entries(filters).forEach(([key, value]) => {;"
         if (value !== undefined && value !== null && value !== '') {;
           searchParams.append(key, String(value));
         };
       });
 ;
-      const response = await fetch(;
+      const response: unknown unknown = await fetch(;
         `/api/marketplace/equipment?${searchParams}`,;
       );
-      if (!response.ok) {;
+      if (!response.ok) {;'
         throw new Error(`Failed to fetch equipment: "${response.status"}`);
       };
       return response.json();
-    },;
-    staleTime: "15 * 60 * 1000", // 15 minutes;
+    },;"
+    staleTime: "15 * 60 * 1000", // 15 minutes;"
     refetchOnWindowFocus: "false",;
   });
 };
-
-// Combined hook for marketplace overview;
-export function useMarketplaceOverview() {;
-  const products = useMarketplaceProducts({ limit: "6 "});
-  const categories = useMarketplaceCategories();
-  const talent = useMarketplaceTalent({ limit: "6 "});
-  const equipment = useMarketplaceEquipment({ limit: "6 "});
 ;
-  const loading =;
+// Combined hook for marketplace overview;
+export function useMarketplaceOverview(): unknown {) {;"
+  const products: unknown unknown = useMarketplaceProducts({ limit: "6 "});
+  const categories: unknown unknown = useMarketplaceCategories();"
+  const talent: unknown unknown = useMarketplaceTalent({ limit: "6 "});"
+  const equipment: unknown unknown = useMarketplaceEquipment({ limit: "6 "});
+;
+  const loading: unknown unknown =;
     products.isLoading ||;
     categories.isLoading ||;
     talent.isLoading ||;
     equipment.isLoading;
-  const hasError = !!(;
+  const hasError: unknown unknown = !!(;
     products.error ||;
     categories.error ||;
     talent.error ||;
     equipment.error;
   );
 ;
-  const errors = [;
+  const errors: unknown unknown = [;
     products.error,;
     categories.error,;
     talent.error,;
@@ -160,17 +160,17 @@ export function useMarketplaceOverview() {;
     .filter(Boolean);
     .map((err) => (err instanceof Error ? err.message : String(err)));
 ;
-  const retryAll = () => {;
+  const retryAll: unknown unknown = () => {;
     products.refetch();
     categories.refetch();
     talent.refetch();
     equipment.refetch();
   };
 ;
-  return {;
-    products: "products.data",;
-    categories: "categories.data",;
-    talent: "talent.data",;
+  return {;"
+    products: "products.data",;"
+    categories: "categories.data",;"
+    talent: "talent.data",;"
     equipment: "equipment.data",;
     loading,;
     hasError,;
@@ -178,22 +178,22 @@ export function useMarketplaceOverview() {;
     retryAll,;
   };
 };
-
+;
 // Helper hook for error handling;
-export function useMarketplaceErrorHandler() {;
+export function useMarketplaceErrorHandler(): unknown {) {;
   const [lastError, setLastError] = useState<string | null>(null);
 ;
-  const handleError = useCallback((_error: unknown) => {;
+  const handleError: unknown unknown = useCallback((_error: unknown) => {;
     // Add type guard and handle error appropriately;
-    const errorMessage = getMarketplaceErrorMessage(error);
-    setLastError(errorMessage);
-    logErrorToProduction('Marketplace Error:', {;
+    const errorMessage: unknown unknown = getMarketplaceErrorMessage(error);
+    setLastError(errorMessage);"
+    logErrorToProduction('Marketplace Error:', {;'
       data: "{ error", message: "errorMessage "},;
     });
     return errorMessage;
   }, []);
 ;
-  const clearError = useCallback(() => {;
+  const clearError: unknown unknown = useCallback(() => {;
     setLastError(null);
   }, []);
 ;
@@ -203,3 +203,4 @@ export function useMarketplaceErrorHandler() {;
     clearError,;
   };
 };
+"

@@ -1,21 +1,21 @@
-import React from 'react';
-import { SEO } from '@/components/SEO';
+import React from 'react';'
+import { SEO } from '@/components/SEO';'
 import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager';
 ;
-// const _AppMetadataManager: React.FC = () => {;
+// const _AppMetadataManager: unknown React.FC = () => {;
   return (;
     <>;
-      <SEO;
-        title="App Metadata Manager";
+      <SEO;'
+        title="App Metadata Manager";"
         description="Manage app store metadata for the Zion mobile application";
         noindex={true};
       />;
-
-      <div className="container py-8">;
+;"
+      <div className="container py-8">;"
         <h1 className="text-3xl font-bold text-zion-cyan mb-8">;
           App Metadata Manager;
         </h1>;
-
+;
         <MetadataManager />;
       </div>;
     </>;
@@ -23,3 +23,4 @@ import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager';
 };
 ;
 export default AppMetadataManager;
+"

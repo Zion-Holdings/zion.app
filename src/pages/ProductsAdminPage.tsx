@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';'
 import AdminLayout from '@/components/admin/AdminLayout';
 import {;
   Table,;
@@ -6,38 +6,38 @@ import {;
   TableHeader,;
   TableRow,;
   TableBody,;
-  TableCell,;
-} from '@/components/ui/table';
-import { Input } from '@/components/ui/input';
+  TableCell,;'
+} from '@/components/ui/table';'
+import { Input } from '@/components/ui/input';'
 import { Switch } from '@/components/ui/switch';
 ;
-interface Product {;
-  id: "number;",
-  name: string;
-  category: "string;",
+interface Product {;'
+  id: "number;",;"
+  name: "string;","
+  category: "string;",;"
   status: 'approved' | 'pending' | 'rejected';
 };
-
-const initialProducts: Product[] = [;
-  { id: "1", name: 'Alpha', category: 'Software', status: 'pending' },;
-  { id: "2", name: 'Beta', category: 'Hardware', status: 'approved' },;
+;
+const initialProducts: unknown Product[] = [;'
+  { id: "1", name: 'Alpha', category: 'Software', status: 'pending' },;'
+  { id: "2", name: 'Beta', category: 'Hardware', status: 'approved' },;'
   { id: "3", name: 'Gamma', category: 'Service', status: 'rejected' },;
 ];
 ;
-export default function ProductsAdminPage() {;
+export default function ProductsAdminPage(): unknown {) {;'
   const [search, setSearch] = useState('');
   const [products, setProducts] = useState(initialProducts);
 ;
-  const filtered = products.filter((p) =>;
+  const filtered: unknown unknown = products.filter((p) =>;
     p.name.toLowerCase().includes(search.toLowerCase()),;
   );
 ;
-  const toggleApproval = (_id: number) => {;
+  const toggleApproval: unknown unknown = (_id: number) => {;
     setProducts((prev) =>;
       prev.map((p) =>;
         p.id === id;
           ? {;
-              ...p,;
+              ...p,;'
               status: p.status === 'approved' ? 'rejected' : 'approved',;
             };
           : p,;
@@ -46,17 +46,17 @@ export default function ProductsAdminPage() {;
   };
 ;
   return (;
-    <AdminLayout>;
-      <div className="space-y-4">;
-        <div className="flex items-center justify-between">;
+    <AdminLayout>;'
+      <div className="space-y-4">;"
+        <div className="flex items-center justify-between">;"
           <h1 className="text-2xl font-bold">Products</h1>;
-          <Input;
+          <Input;"
             placeholder="Search products...";
             value={search};
-            onChange={(e) => setSearch(e.target.value)};
+            onChange={(e) => setSearch(e.target.value)};"
             className="max-w-xs";
           />;
-        </div>;
+        </div>;"
         <div className="rounded-md border">;
           <Table>;
             <TableHeader>;
@@ -64,7 +64,7 @@ export default function ProductsAdminPage() {;
                 <TableHead>ID</TableHead>;
                 <TableHead>Name</TableHead>;
                 <TableHead>Category</TableHead>;
-                <TableHead>Status</TableHead>;
+                <TableHead>Status</TableHead>;"
                 <TableHead className="text-center">Approve</TableHead>;
               </TableRow>;
             </TableHeader>;
@@ -74,9 +74,9 @@ export default function ProductsAdminPage() {;
                   <TableCell>{p.id}</TableCell>;
                   <TableCell>{p.name}</TableCell>;
                   <TableCell>{p.category}</TableCell>;
-                  <TableCell>{p.status}</TableCell>;
+                  <TableCell>{p.status}</TableCell>;"
                   <TableCell className="text-center">;
-                    <Switch;
+                    <Switch;"
                       checked={p.status === 'approved'};
                       onCheckedChange={() => toggleApproval(p.id)};
                     />;
@@ -90,3 +90,4 @@ export default function ProductsAdminPage() {;
     </AdminLayout>;
   );
 };
+'

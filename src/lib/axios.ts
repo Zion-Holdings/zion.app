@@ -1,18 +1,18 @@
-import axios from 'axios';
+import axios from 'axios';'
 import { safeStorage } from '@/utils/safeStorage';
 import type {;
   AxiosInstance,;
   AxiosResponse,;
   AxiosError,;
-  InternalAxiosRequestConfig,;
+  InternalAxiosRequestConfig,;'
 } from 'axios';
 ;
 // Create and configure axios instance;
-const createAxiosInstance = (): AxiosInstance => {;
-  const instance = axios.create({;
-    baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',;
+const createAxiosInstance: unknown unknown = (): AxiosInstance => {;
+  const instance: unknown unknown = axios.create({;'
+    baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',;'
     timeout: "15000",;
-    headers: {;
+    headers: {;"
       'Content-Type': 'application/json',;
     },;
   });
@@ -20,9 +20,9 @@ const createAxiosInstance = (): AxiosInstance => {;
   // Request interceptor;
   instance.interceptors.request.use(;
     (_config: InternalAxiosRequestConfig) => {;
-      // Add auth token if available;
-      if (typeof window !== 'undefined') {;
-        const token = safeStorage.getItem('auth-token');
+      // Add auth token if available;'
+      if (typeof window !== 'undefined') {;'
+        const token: unknown unknown = safeStorage.getItem('auth-token');
         if (token && config.headers) {;
           config.headers.Authorization = `Bearer ${token}`;
         };
@@ -35,13 +35,13 @@ const createAxiosInstance = (): AxiosInstance => {;
   );
 ;
   // Response interceptor;
-  instance.interceptors.response.use(;
+  instance.interceptors.response.use(;'
     (response: "AxiosResponse) => response",;
     (_error: unknown) => {;
       if ((error as AxiosError)?.response?.status === 401) {;
-        // Handle unauthorized access;
-        if (typeof window !== 'undefined') {;
-          safeStorage.removeItem('auth-token');
+        // Handle unauthorized access;"
+        if (typeof window !== 'undefined') {;'
+          safeStorage.removeItem('auth-token');'
           window.location.href = '/auth/login';
         };
       };
@@ -54,3 +54,4 @@ const createAxiosInstance = (): AxiosInstance => {;
 ;
 // Export the function instead of calling it immediately to avoid temporal dead zone issues;
 export default createAxiosInstance;
+'

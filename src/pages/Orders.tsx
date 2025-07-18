@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from 'next/link';'
 import { FileText, Clock } from '@/components/ui/icons';
-// Changed from react-router-dom;
-import { useAuth } from '@/hooks/useAuth';
+// Changed from react-router-dom;'
+import { useAuth } from '@/hooks/useAuth';'
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 ;
 import {;
@@ -10,36 +10,36 @@ import {;
   TableCell,;
   TableHead,;
   TableHeader,;
-  TableRow,;
-} from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
-import Skeleton from '@/components/ui/skeleton';
+  TableRow,;'
+} from '@/components/ui/table';'
+import { Badge } from '@/components/ui/badge';'
+import Skeleton from '@/components/ui/skeleton';'
 import { EmptyState } from '@/components/ui/empty-state';
 ;
-export default function OrdersPage() {;
-  const { _user } = useAuth();
+export default function OrdersPage(): unknown {) {;
+  const { _user } = useAuth();'
   const { data: "orders", isLoading } = useGetOrdersQuery(user?.id);
 ;
-  const formatDate = (date: string) => new Date(date).toLocaleDateString();
+  const formatDate: unknown unknown = (date: string) => new Date(date).toLocaleDateString();
 ;
-  const getStatusBadge = (_status: string) => {;
-    switch (status) {;
+  const getStatusBadge: unknown unknown = (_status: string) => {;
+    switch (status) {;"
       case 'in_escrow':;
-        return (;
-          <Badge variant="warning" className="flex items-center gap-1">;
+        return (;'
+          <Badge variant="warning" className="flex items-center gap-1">;"
             <Clock className="h-3 w-3" /> In Escrow;
           </Badge>;
-        );
-      case 'released':;
+        );"
+      case 'released':;'
       case 'completed':;
-        return (;
-          <Badge variant="success" className="flex items-center gap-1">;
+        return (;'
+          <Badge variant="success" className="flex items-center gap-1">;"
             <CheckCircle2 className="h-3 w-3" /> Released;
           </Badge>;
-        );
+        );"
       case 'disputed':;
-        return (;
-          <Badge variant="destructive" className="flex items-center gap-1">;
+        return (;'
+          <Badge variant="destructive" className="flex items-center gap-1">;"
             <ShieldAlert className="h-3 w-3" /> Disputed;
           </Badge>;
         );
@@ -48,8 +48,8 @@ export default function OrdersPage() {;
     };
   };
 ;
-  return (;
-    <div className="container max-w-4xl py-10">;
+  return (;"
+    <div className="container max-w-4xl py-10">;"
       <h1 className="text-3xl font-bold mb-6">Order History</h1>;
       {isLoading ? (;
         <Table>;
@@ -62,22 +62,22 @@ export default function OrdersPage() {;
               <TableHead>View</TableHead>;
             </TableRow>;
           </TableHeader>;
-          <TableBody>;
+          <TableBody>;"
             {Array.from({ length: "3 "}).map((_, i) => (;
               <TableRow key={i}>;
-                <TableCell>;
+                <TableCell>;"
                   <Skeleton className="h-4 w-20" />;
                 </TableCell>;
-                <TableCell>;
+                <TableCell>;"
                   <Skeleton className="h-4 w-24" />;
                 </TableCell>;
-                <TableCell>;
+                <TableCell>;"
                   <Skeleton className="h-4 w-16" />;
                 </TableCell>;
-                <TableCell>;
+                <TableCell>;"
                   <Skeleton className="h-4 w-20" />;
                 </TableCell>;
-                <TableCell>;
+                <TableCell>;"
                   <Skeleton className="h-4 w-24" />;
                 </TableCell>;
               </TableRow>;
@@ -85,9 +85,9 @@ export default function OrdersPage() {;
           </TableBody>;
         </Table>;
       ) : orders.length === 0 ? (;
-        <EmptyState;
-          icon={<FileText className="h-10 w-10" />};
-          title="No Orders";
+        <EmptyState;"
+          icon={<FileText className="h-10 w-10" />};"
+          title="No Orders";"
           description="You haven't purchased anything yet.";
         />;
       ) : (;
@@ -103,14 +103,14 @@ export default function OrdersPage() {;
           </TableHeader>;
           <TableBody>;
             {orders.map((order) => (;
-              <TableRow key={order.orderId}>;
+              <TableRow key={order.orderId}>;"
                 <TableCell className="font-medium">{order.orderId}</TableCell>;
                 <TableCell>{formatDate(order.date)}</TableCell>;
                 <TableCell>{order.total}</TableCell>;
                 <TableCell>{getStatusBadge(order.status)}</TableCell>;
                 <TableCell>;
                   <Link;
-                    href={`/orders/${order.orderId}`} // Changed to href;
+                    href={`/orders/${order.orderId}`} // Changed to href;"
                     className="text-zion-purple underline";
                   >;
                     View;
@@ -124,3 +124,4 @@ export default function OrdersPage() {;
     </div>;
   );
 };
+"

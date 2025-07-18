@@ -1,17 +1,17 @@
-import { Header } from '@/components/Header';
+import { Header } from '@/components/Header';'
 import { SEO } from '@/components/SEO';
 ;
-export default function FoundationPage() {;
+export default function FoundationPage(): unknown {) {;
   return (;
     <>;
-      <SEO;
-        title="Zion Foundation";
+      <SEO;'
+        title="Zion Foundation";"
         description="Public trust portal for the Zion protocol";
       />;
-      <Header />;
+      <Header />;"
       <main className="prose dark:prose-invert mx-auto p-8 max-w-3xl">;
         <h1>Zion Foundation</h1>;
-        <p>;
+        <p>;"
           The Zion Foundation stewards the protocol's vision while remaining;
           globally neutral and independent from any single jurisdiction.;
         </p>;
@@ -55,3 +55,4 @@ export default function FoundationPage() {;
     </>;
   );
 };
+'

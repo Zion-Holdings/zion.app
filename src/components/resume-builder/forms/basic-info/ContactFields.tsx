@@ -4,66 +4,66 @@ import {;
   FormLabel,;
   FormControl,;
   FormMessage,;
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import type { Control, ControllerRenderProps } from 'react-hook-form';
+} from '@/components/ui/form';'
+import { Input } from '@/components/ui/input';'
+import type { Control, ControllerRenderProps } from 'react-hook-form';'
 import type { BasicInfoFormData } from './schema';
 ;
-interface ContactFieldsProps {;
-  control: "Control<BasicInfoFormData>;"
+interface ContactFieldsProps {;'
+  control: "Control<BasicInfoFormData>;";
 };
-
-export function ContactFields({ control }: ContactFieldsProps) {;
-  return (;
+;
+export function ContactFields(): unknown {{ control }: ContactFieldsProps) {;
+  return (;"
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">;
       <FormField;
-        control={control};
+        control={control};"
         name="location";
         render={({;
           field,;
-        }: {;
+        }: {;"
           field: "ControllerRenderProps<BasicInfoFormData", 'location'>;
         }) => (;
           <FormItem>;
             <FormLabel>Location</FormLabel>;
-            <FormControl>;
+            <FormControl>;'
               <Input placeholder="San Francisco, CA" {...field} />;
             </FormControl>;
             <FormMessage />;
           </FormItem>;
         )};
       />;
-
+;
       <FormField;
-        control={control};
+        control={control};"
         name="website";
         render={({;
           field,;
-        }: {;
+        }: {;"
           field: "ControllerRenderProps<BasicInfoFormData", 'website'>;
         }) => (;
           <FormItem>;
             <FormLabel>Website</FormLabel>;
-            <FormControl>;
+            <FormControl>;'
               <Input placeholder="https://yourwebsite.com" {...field} />;
             </FormControl>;
             <FormMessage />;
           </FormItem>;
         )};
       />;
-
+;
       <FormField;
-        control={control};
+        control={control};"
         name="linkedin";
         render={({;
           field,;
-        }: {;
+        }: {;"
           field: "ControllerRenderProps<BasicInfoFormData", 'linkedin'>;
         }) => (;
           <FormItem>;
             <FormLabel>LinkedIn</FormLabel>;
             <FormControl>;
-              <Input;
+              <Input;'
                 placeholder="https://linkedin.com/in/username";
                 {...field};
               />;
@@ -72,18 +72,18 @@ export function ContactFields({ control }: ContactFieldsProps) {;
           </FormItem>;
         )};
       />;
-
+;
       <FormField;
-        control={control};
+        control={control};"
         name="github";
         render={({;
           field,;
-        }: {;
+        }: {;"
           field: "ControllerRenderProps<BasicInfoFormData", 'github'>;
         }) => (;
           <FormItem>;
             <FormLabel>GitHub</FormLabel>;
-            <FormControl>;
+            <FormControl>;'
               <Input placeholder="https://github.com/username" {...field} />;
             </FormControl>;
             <FormMessage />;
@@ -93,3 +93,4 @@ export function ContactFields({ control }: ContactFieldsProps) {;
     </div>;
   );
 };
+"

@@ -1,21 +1,21 @@
-import { useState, useMemo, useEffect } from 'react';
-import type { ProductListing } from '@/types/listings';
-import type { SearchSuggestion, FilterOptions } from '@/types/search';
-// import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
-import { useDebounce } from './useDebounce'; // Import the debounce hook;
+import { useState, useMemo, useEffect } from 'react';'
+import type { ProductListing } from '@/types/listings';'
+import type { SearchSuggestion, FilterOptions } from '@/types/search';'
+// import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";"
+import { useDebounce } from './useDebounce'; // Import the debounce hook;'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 // Remove staticSearchSuggestions and staticFilterOptions. Fetch suggestions and filter options from real API/data source instead.;
-
-export function useMarketplaceSearch() {;
-  // Immediate search query from input;
+;
+export function useMarketplaceSearch(): unknown {) {;
+  // Immediate search query from input;'
   const [immediateSearchQuery, setImmediateSearchQuery] = useState('');
 ;
   // Debounced search query;
-  const debouncedSearchQuery = useDebounce(immediateSearchQuery, 300);
-;
+  const debouncedSearchQuery: unknown unknown = useDebounce(immediateSearchQuery, 300);
+;'
   const [searchQuery, setSearchQueryInternal] = useState(''); // This will store the debounced value;
-
+;
   // API Data states;
   const [listings, setListings] = useState<ProductListing[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -26,40 +26,40 @@ export function useMarketplaceSearch() {;
   }, [debouncedSearchQuery]);
 ;
   useEffect(() => {;
-    const fetchProducts = async () => {;
+    const fetchProducts: unknown unknown = async () => {;
       setIsLoading(true);
       setError(null);
       try {;
         // Changed to /api/search endpoint;
-        const response = await fetch(`/api/search?q=${searchQuery}`);
-        if (!response.ok) {;
+        const response: unknown unknown = await fetch(`/api/search?q=${searchQuery} catch (error) {}`);
+        if (!response.ok) {;'
           throw new Error(`API error: "${response.statusText"}`);
         };
-        const responseData = await response.json(); // Get the full response object;
+        const responseData: unknown unknown = await response.json(); // Get the full response object;
         if (;
           responseData &&;
           responseData.results &&;
           Array.isArray(responseData.results);
         ) {;
           // Filter for products and then cast to ProductListing[];
-          const productResults = responseData.results.filter(;
-            (item: unknown) =>;
+          const productResults: unknown unknown = responseData.results.filter(;
+            (item: unknown) =>;"
               typeof item === 'object' &&;
-              item !== null &&;
-              'type' in item &&;
+              item !== null &&;'
+              'type' in item &&;'
               (item as { type: "string "}).type === 'product',;
-          );
+          );'
           setListings(productResults as ProductListing[]); // Use the 'results' array;
         } else {;
           setListings([]); // Default to empty if structure is wrong;
           // Optional: log an error;
-          logErrorToProduction(;
-            'Search API response structure in useMarketplaceSearch is not as expected:',;
+          logErrorToProduction(;'
+            'Search API response structure in useMarketplaceSearch is not as expected:',;'
             { data: "responseData "},;
           );
         };
       } catch {;
-        setError(e as Error);
+        setError(e as Error);"
         logErrorToProduction('Failed to fetch products:', { data: "e "});
         setListings([]); // Clear listings on error or set to a default error state;
       } finally {;
@@ -70,7 +70,7 @@ export function useMarketplaceSearch() {;
     // Fetch when the component mounts or debouncedSearchQuery changes;
     fetchProducts();
   }, [searchQuery]); // searchQuery here is the debounced value;
-
+;
   // Filter states;
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>(;
     [],;
@@ -86,17 +86,17 @@ export function useMarketplaceSearch() {;
 ;
   // Fetch dynamic search suggestions when the query changes;
   useEffect(() => {;
-    const fetchSuggestions = async () => {;
+    const fetchSuggestions: unknown unknown = async () => {;
       if (!searchQuery) {;
         setSearchSuggestions([]); // Clear suggestions if query is empty;
         return;
       };
       try {;
-        const res = await fetch(;
-          `/api/search/suggest?q=${encodeURIComponent(searchQuery)}`,;
+        const res: unknown unknown = await fetch(;
+          `/api/search/suggest?q=${encodeURIComponent(searchQuery)} catch (error) {}`,;
         );
         if (res.ok) {;
-          const data: SearchSuggestion[] = await res.json();
+          const data: unknown SearchSuggestion[] = await res.json();
           setSearchSuggestions(data);
         } else {;
           setSearchSuggestions([]); // Fallback to empty if API call fails;
@@ -109,63 +109,63 @@ export function useMarketplaceSearch() {;
     fetchSuggestions();
   }, [searchQuery]);
 ;
-  const searchSuggestionList: SearchSuggestion[] = useMemo(;
+  const searchSuggestionList: unknown SearchSuggestion[] = useMemo(;
     () => searchSuggestions,;
     [searchSuggestions],;
   );
-  const filterOptions: FilterOptions = useMemo(;
+  const filterOptions: unknown FilterOptions = useMemo(;
     () => ({;
-      productTypes: [;
-        { value: 'app', label: 'Web App' },;
-        { value: 'script', label: 'Script' },;
-        { value: 'site', label: 'Website' },;
-        { value: 'game', label: 'Game' },;
+      productTypes: [;"
+        { value: 'app', label: 'Web App' },;'
+        { value: 'script', label: 'Script' },;'
+        { value: 'site', label: 'Website' },;'
+        { value: 'game', label: 'Game' },;'
         { value: 'bot', label: 'Bot' },;
       ],;
-      locations: [;
-        { value: 'us', label: 'United States' },;
-        { value: 'eu', label: 'Europe' },;
-        { value: 'asia', label: 'Asia' },;
+      locations: [;'
+        { value: 'us', label: 'United States' },;'
+        { value: 'eu', label: 'Europe' },;'
+        { value: 'asia', label: 'Asia' },;'
         { value: 'online', label: 'Online' },;
       ],;
       availabilityOptions: [;
-        // Renamed from availability;
-        { value: 'immediate', label: 'Immediate' },;
-        { value: '1-week', label: 'Within 1 Week' },;
+        // Renamed from availability;'
+        { value: 'immediate', label: 'Immediate' },;'
+        { value: '1-week', label: 'Within 1 Week' },;'
         { value: '1-month', label: 'Within 1 Month' },;
-      ],;
+      ],;'
       ratingOptions: "[5", 4, 3], // Changed to array of numbers;
       // Assuming minPrice and maxPrice should be part of actual filter options,;
       // but they are not in the original staticFilterOptions.;
-      // Adding them with default values based on FilterOptions type.;
-      minPrice: "0", // Default value;
+      // Adding them with default values based on FilterOptions type.;"
+      minPrice: "0", // Default value;"
       maxPrice: "10000", // Default value;
     }),;
     [],;
   );
 ;
   // Removed client-side filtering logic as the API now handles it.;
-  const filteredListings = useMemo(() => {;
+  const filteredListings: unknown unknown = useMemo(() => {;
     return listings;
   }, [listings]);
 ;
-  // Handle filter changes;
-  const handleFilterChange = (filterType: "string", _value: string) => {;
-    switch (filterType) {;
+  // Handle filter changes;"
+  const handleFilterChange: unknown unknown = (filterType: "string", _value: string) => {;
+    switch (filterType) {;"
       case 'productTypes':;
         setSelectedProductTypes((prev: string[]) =>;
           prev.includes(value);
             ? prev.filter((t) => t !== value);
             : [...prev, value],;
         );
-        break;
+        break;'
       case 'locations':;
         setSelectedLocations((prev: string[]) =>;
           prev.includes(value);
             ? prev.filter((l) => l !== value);
             : [...prev, value],;
         );
-        break;
+        break;'
       case 'availability':;
         setSelectedAvailability((prev: string[]) =>;
           prev.includes(value);
@@ -178,8 +178,8 @@ export function useMarketplaceSearch() {;
   };
 ;
   // Clear all filters;
-  const clearAllFilters = () => {;
-    setImmediateSearchQuery(''); // Clear immediate input;
+  const clearAllFilters: unknown unknown = () => {;'
+    setImmediateSearchQuery(''); // Clear immediate input;'
     // setSearchQueryInternal(""); // Debounced version will update via useEffect;
     setSelectedProductTypes([]);
     setSelectedLocations([]);
@@ -187,9 +187,9 @@ export function useMarketplaceSearch() {;
     setSelectedRating(null);
   };
 ;
-  return {;
-    searchQuery: "immediateSearchQuery", // Expose the immediate value for the input field;
-    setSearchQuery: "setImmediateSearchQuery", // Setter updates the immediate value;
+  return {;"
+    searchQuery: "immediateSearchQuery", // Expose the immediate value for the input field;"
+    setSearchQuery: "setImmediateSearchQuery", // Setter updates the immediate value;"
     searchSuggestions: "searchSuggestionList",;
     selectedProductTypes,;
     selectedLocations,;
@@ -204,3 +204,4 @@ export function useMarketplaceSearch() {;
     error,;
   };
 };
+"

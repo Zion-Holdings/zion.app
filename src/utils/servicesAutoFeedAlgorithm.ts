@@ -4,7 +4,7 @@
  * @param args - Arguments for the auto-feed algorithm;
  * @returns An array of results (currently empty);
  */;
-export default function servicesAutoFeedAlgorithm(;
+export default function servicesAutoFeedAlgorithm(): unknown {;
   ..._args: unknown[];
 ): unknown[] {;
   return [];

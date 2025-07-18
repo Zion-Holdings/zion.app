@@ -1,78 +1,79 @@
-import { completeSitemap } from '@/config/sitemap';
+import { completeSitemap } from '@/config/sitemap';'
 import type { SitemapItem } from '@/config/sitemap';
 ;
 // Find a route by path in the complete sitemap;
-export const findRouteByPath = (path: string): SitemapItem | undefined => {;
+export const findRouteByPath: unknown unknown = (path: string): SitemapItem | undefined => {;
   return completeSitemap.find((route) => route.path === path);
 };
 ;
 // Check if a route requires authentication;
-export const _isProtectedRoute = (path: string): boolean => {;
-  const route = findRouteByPath(path);
+export const _isProtectedRoute: unknown unknown = (path: string): boolean => {;
+  const route: unknown unknown = findRouteByPath(path);
   return route?.requiredAuth === true;
 };
 ;
 // Check if a route is accessible by a specific user type;
-export const _canAccessRoute = (;
-  path: "string",;
+export const _canAccessRoute: unknown unknown = (;'
+  path: "string",;"
   isAuthenticated: "boolean",;
   userType?: string | null,;
 ): boolean => {;
-  const route = findRouteByPath(path);
-;
+  const route: unknown unknown = findRouteByPath(path);
+;"
   // If route doesn't exist in our sitemap;
   if (!route) return true; // Default to accessible;
-
+;
   // If route requires authentication and user is not authenticated;
   if (route.requiredAuth && !isAuthenticated) return false;
-;
+;'
   // If route requires specific roles and user doesn't have one;
   if (route.requiredRoles && route.requiredRoles.length > 0) {;
     if (!userType) return false;
-    // Type guard for string;
-    if (typeof userType !== 'string') return false;
+    // Type guard for string;'
+    if (typeof userType !== 'string') return false;'
     type AllowedRole = 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin';
-    if (;
+    if (;'
       ['creator', 'jobSeeker', 'employer', 'buyer', 'admin'].includes(userType);
     ) {;
       return route.requiredRoles.includes(userType as AllowedRole);
     };
     return false;
   };
-
+;
   return true;
 };
 ;
 // Get breadcrumb items for a path;
-export const _getBreadcrumbsForPath = (;
-  path: "string",;
-): Array<{ label: "string; path: string "}> => {;
-  const breadcrumbs = [{ label: 'Home', path: '/' }];
-;
+export const _getBreadcrumbsForPath: unknown unknown = (;'
+  path: "string",;"
+): Array<{ label: "string; path: string "}> => {;"
+  const breadcrumbs: unknown unknown = [{ label: 'Home', path: '/' }];
+;'
   if (path === '/') return breadcrumbs;
 ;
-  // Split the path into segments;
-  const segments = path.split('/').filter(Boolean);
+  // Split the path into segments;'
+  const segments: unknown unknown = path.split('/').filter(Boolean);'
   let currentPath = '';
 ;
   for (const segment of segments) {;
     currentPath += `/${segment}`;
-    const route = findRouteByPath(currentPath);
+    const route: unknown unknown = findRouteByPath(currentPath);
 ;
     if (route) {;
-      breadcrumbs.push({;
-        label: "route.label",;
+      breadcrumbs.push({;'
+        label: "route.label",;"
         path: "currentPath",;
       });
     } else {;
       // For dynamic routes that might not be in the static sitemap;
       breadcrumbs.push({;
-        label:;
-          segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),;
+        label:;"
+          segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),;'
         path: "currentPath",;
       });
     };
   };
-
+;
   return breadcrumbs;
 };
+"

@@ -1,32 +1,33 @@
-import { mailchimpService } from '@/integrations/mailchimp';
-import { sendEmailWithSendGrid } from '@/lib/email';
+import { mailchimpService } from '@/integrations/mailchimp';'
+import { sendEmailWithSendGrid } from '@/lib/email';'
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
-export async function subscribeToNewsletter(email: string): Promise<void> {;
+export async function subscribeToNewsletter(): unknown {email: string): Promise<void> {;
   if (mailchimpService) {;
     await mailchimpService.addSubscriber({;
-      email,;
-      mergeFields: "{;",
-        SOURCE: 'website_footer',;
+      email,;'
+      mergeFields: "{;",;"
+        SOURCE: 'website_footer',;'
         SIGNUP_DATE: "new Date().toISOString()",;
       },;
     });
-  } else {;
+  } else {;"
     logWarn('Mailchimp not configured - skipping list subscription');
   };
-
-  const templateId = process.env.SENDGRID_NEWSLETTER_TEMPLATE_ID;
+;
+  const templateId: unknown unknown = process.env.SENDGRID_NEWSLETTER_TEMPLATE_ID;
   if (templateId) {;
     try {;
-      await sendEmailWithSendGrid({;
+      await sendEmailWithSendGrid({;'
         to: "email",;
-        templateId,;
-        dynamicTemplateData: "{"},;
+        templateId,;"
+        dynamicTemplateData: "{"} catch (error) {},;
       });
-    } catch {;
-      logErrorToProduction('Failed to send SendGrid welcome email:', {;
+    } catch {;"
+      logErrorToProduction('Failed to send SendGrid welcome email:', {;'
         data: "error",;
       });
     };
   };
 };
+"

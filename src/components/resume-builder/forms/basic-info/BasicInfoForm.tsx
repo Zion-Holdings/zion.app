@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/components/ui/button';
-import { Form } from '@/components/ui/form';
-import { Card } from '@/components/ui/card';
-import { RateOptimizationSection } from '../RateOptimizationSection';
-import { basicInfoSchema } from './schema';
-import type { BasicInfoFormData } from './schema';
-import { PersonalInfoFields } from './PersonalInfoFields';
+import React, { useEffect } from 'react';'
+import { useForm } from 'react-hook-form';'
+import { zodResolver } from '@hookform/resolvers/zod';'
+import { Button } from '@/components/ui/button';'
+import { Form } from '@/components/ui/form';'
+import { Card } from '@/components/ui/card';'
+import { RateOptimizationSection } from '../RateOptimizationSection';'
+import { basicInfoSchema } from './schema';'
+import type { BasicInfoFormData } from './schema';'
+import { PersonalInfoFields } from './PersonalInfoFields';'
 import { ContactFields } from './ContactFields';
 ;
 export interface BasicInfoFormProps {;
@@ -18,25 +18,25 @@ export interface BasicInfoFormProps {;
   yearsExperience?: number;
   onComplete?: () => void;
 };
-
-export function BasicInfoForm({;
+;
+export function BasicInfoForm(): unknown {{;
   initialData = {},;
   onSave,;
   skills = [],;
   yearsExperience = 0,;
   onComplete,;
 }: BasicInfoFormProps) {;
-  const form = useForm<BasicInfoFormData>({;
-    resolver: "zodResolver(basicInfoSchema)",;
-    defaultValues: "{;",
-      fullName: '',;
-      title: '',;
-      email: '',;
-      phone: '',;
-      location: '',;
-      website: '',;
-      linkedin: '',;
-      github: '',;
+  const form: unknown unknown = useForm<BasicInfoFormData>({;'
+    resolver: "zodResolver(basicInfoSchema)",;"
+    defaultValues: "{;",;"
+      fullName: '',;'
+      title: '',;'
+      email: '',;'
+      phone: '',;'
+      location: '',;'
+      website: '',;'
+      linkedin: '',;'
+      github: '',;'
       hourlyRate: "0",;
       ...initialData,;
     },;
@@ -55,7 +55,7 @@ export function BasicInfoForm({;
     };
   }, [initialData, form]);
 ;
-  const handleSubmit = (_data: BasicInfoFormData) => {;
+  const handleSubmit: unknown unknown = (_data: BasicInfoFormData) => {;
     onSave(data);
     if (onComplete) {;
       onComplete();
@@ -63,29 +63,30 @@ export function BasicInfoForm({;
   };
 ;
   return (;
-    <Form {...form}>;
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">;
+    <Form {...form}>;"
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">;"
         <Card className="p-6 space-y-6">;
           <PersonalInfoFields control={form.control} />;
           <ContactFields control={form.control} />;
-
-          <div className="pt-4 border-t border-gray-200">;
+;"
+          <div className="pt-4 border-t border-gray-200">;"
             <h3 className="text-lg font-medium mb-4">Rate Information</h3>;
             <RateOptimizationSection;
               control={form.control};
               setValue={form.setValue};
               skills={skills};
-              yearsExperience={yearsExperience || 0};
-              location={form.getValues('location') || ''};
+              yearsExperience={yearsExperience || 0};"
+              location={form.getValues('location') || ''};'
               rateType="hourly";
             />;
           </div>;
         </Card>;
-
-        <div className="flex justify-end">;
+;"
+        <div className="flex justify-end">;"
           <Button type="submit">Save Basic Information</Button>;
         </div>;
       </form>;
     </Form>;
   );
 };
+"

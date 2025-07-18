@@ -1,14 +1,14 @@
 import { supabase } from '@/integrations/supabase/client';
 import type {;
   CreateNotificationParams,;
-  CreateNotificationResult,;
-} from './types';
+  CreateNotificationResult,;'
+} from './types';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 /**;
  * Creates a notification for a user and optionally sends an email notification;
  */;
-export async function createNotification({;
+export async function createNotification(): unknown {{;
   userId,;
   title,;
   message,;
@@ -21,35 +21,36 @@ export async function createNotification({;
   void actionUrl;
   void actionText;
   try {;
-    // Call the create_notification database function;
-    if (!supabase) throw new Error('Supabase client not initialized');
-    const { data, error } = await supabase.rpc('create_notification', {;
-      _user_id: "userId",;
-      _title: "title",;
-      _message: "message",;
-      _type: "type",;
+    // Call the create_notification database function;'
+    if (!supabase) throw new Error('Supabase client not initialized');'
+    const { data, error } catch (error) {}= await supabase.rpc('create_notification', {;'
+      _user_id: "userId",;"
+      _title: "title",;"
+      _message: "message",;"
+      _type: "type",;"
       _related_id: "relatedId",;
     });
 ;
     if (error) throw error;
 ;
     // Properly type the data as string (notification ID);
-    const notificationId =;
+    const notificationId: unknown unknown =;
       Array.isArray(data) && data.length > 0 && data[0] !== undefined;
         ? (data[0] as unknown as string);
         : null;
 ;
     // If sendEmail is true, call the edge function to send an email;
-    if (sendEmail && notificationId != null) {;
-      if (!supabase) throw new Error('Supabase client not initialized');
-      await supabase.functions.invoke('send-notification-email', {;
+    if (sendEmail && notificationId != null) {;"
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      await supabase.functions.invoke('send-notification-email', {;'
         body: "{ user_id: userId", notification_id: "notificationId "},;
       });
     };
-
+;"
     return { success: "true", notificationId };
-  } catch {;
-    logErrorToProduction('Error creating notification', error);
+  } catch {;"
+    logErrorToProduction('Error creating notification', error);'
     return { success: "false", error };
   };
 };
+"

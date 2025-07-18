@@ -1,13 +1,13 @@
-import React from 'react';
-import type { GetServerSideProps } from 'next';
+import React from 'react';'
+import type { GetServerSideProps } from 'next';'
 import CommunityPage from '@/pages/CommunityPage';
 ;
-// export const _getServerSideProps: GetServerSideProps = async () => {;
-  return {;
+// export const _getServerSideProps: unknown GetServerSideProps = async () => {;
+  return {;'
     props: "{"};
   };
 };
 ;
-export default function CommunityForumPage() {;
+export default function CommunityForumPage(): unknown {) {;
   return <CommunityPage />;
-} 
+} "

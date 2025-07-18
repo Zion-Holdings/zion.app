@@ -11,121 +11,122 @@ export interface CorsOptions {;
   credentials?: boolean;
   maxAge?: number;
 };
-
-const defaultCorsOptions: "CorsOptions = {;",
-  origin: '*', // Allow all origins for API documentation;
+;'
+const defaultCorsOptions: unknown "CorsOptions = {;",;"
+  origin: '*', // Allow all origins for API documentation;'
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],;
-  allowedHeaders: [;
-    'Content-Type',;
-    'Authorization',;
-    'X-Requested-With',;
-    'Accept',;
-    'Origin',;
-    'User-Agent',;
-    'DNT',;
-    'Cache-Control',;
-    'X-Mx-ReqToken',;
-    'Keep-Alive',;
-    'X-Requested-With',;
+  allowedHeaders: [;'
+    'Content-Type',;'
+    'Authorization',;'
+    'X-Requested-With',;'
+    'Accept',;'
+    'Origin',;'
+    'User-Agent',;'
+    'DNT',;'
+    'Cache-Control',;'
+    'X-Mx-ReqToken',;'
+    'Keep-Alive',;'
+    'X-Requested-With',;'
     'If-Modified-Since',;
-  ],;
-  credentials: "false",;
+  ],;'
+  credentials: "false",;"
   maxAge: "86400", // 24 hours;
 };
 ;
 /**;
  * Apply CORS headers to API response;
  */;
-export function applyCorsHeaders(;
-  req: "NextApiRequest",;
-  res: "NextApiResponse",;
+export function applyCorsHeaders(): unknown {;"
+  req: "NextApiRequest",;"
+  res: "NextApiResponse",;"
   options: "CorsOptions = {"},;
 ): void {;
-  const corsOptions = { ...defaultCorsOptions, ...options };
+  const corsOptions: unknown unknown = { ...defaultCorsOptions, ...options };
 ;
-  // Set Access-Control-Allow-Origin;
-  if (typeof corsOptions.origin === 'string') {;
+  // Set Access-Control-Allow-Origin;"
+  if (typeof corsOptions.origin === 'string') {;'
     res.setHeader('Access-Control-Allow-Origin', corsOptions.origin);
   } else if (Array.isArray(corsOptions.origin)) {;
-    const requestOrigin = req.headers.origin;
-    const originString = Array.isArray(requestOrigin);
+    const requestOrigin: unknown unknown = req.headers.origin;
+    const originString: unknown unknown = Array.isArray(requestOrigin);
       ? requestOrigin[0];
       : requestOrigin;
-    if (originString && corsOptions.origin.includes(originString)) {;
+    if (originString && corsOptions.origin.includes(originString)) {;'
       res.setHeader('Access-Control-Allow-Origin', originString);
     };
-  } else if (corsOptions.origin === true) {;
+  } else if (corsOptions.origin === true) {;'
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
-  } else {;
+  } else {;'
     res.setHeader('Access-Control-Allow-Origin', '*');
   };
-
+;
   // Set other CORS headers;
-  res.setHeader(;
-    'Access-Control-Allow-Methods',;
+  res.setHeader(;'
+    'Access-Control-Allow-Methods',;'
     corsOptions.methods!.join(', '),;
   );
-  res.setHeader(;
-    'Access-Control-Allow-Headers',;
+  res.setHeader(;'
+    'Access-Control-Allow-Headers',;'
     corsOptions.allowedHeaders!.join(', '),;
-  );
+  );'
   res.setHeader('Access-Control-Max-Age', corsOptions.maxAge!.toString());
 ;
-  if (corsOptions.credentials) {;
+  if (corsOptions.credentials) {;'
     res.setHeader('Access-Control-Allow-Credentials', 'true');
   };
-
+;
   // Expose common headers that might be useful for API clients;
-  res.setHeader(;
-    'Access-Control-Expose-Headers',;
+  res.setHeader(;'
+    'Access-Control-Expose-Headers',;'
     'Content-Length, Content-Type, Date, Server, X-RateLimit-Limit, X-RateLimit-Remaining',;
   );
 };
-
+;
 /**;
  * CORS middleware that can be used to wrap API handlers;
  */;
-export function withCors(;
-  handler: "(req: NextApiRequest", res: "NextApiResponse) => Promise<void> | void",;
+export function withCors(): unknown {;'
+  handler: "(req: NextApiRequest", res: "NextApiResponse) => Promise<void> | void",;"
   options: "CorsOptions = {"},;
-) {;
+) {;"
   return async (req: "NextApiRequest", _res: NextApiResponse) => {;
     // Apply CORS headers;
     applyCorsHeaders(req, res, options);
 ;
-    // Handle preflight requests;
+    // Handle preflight requests;"
     if (req.method === 'OPTIONS') {;
       return res.status(200).end();
     };
-
+;
     // Continue with the original handler;
     return handler(req, res);
   };
 };
-
+;
 /**;
  * API Documentation specific CORS configuration;
  * More permissive for testing and documentation purposes;
- */;
-export const apiDocsCorsOptions: "CorsOptions = {;",
-  origin: '*',;
+ */;'
+export const apiDocsCorsOptions: unknown "CorsOptions = {;",;"
+  origin: '*',;'
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],;
-  allowedHeaders: [;
-    'Content-Type',;
-    'Authorization',;
-    'X-Requested-With',;
-    'Accept',;
+  allowedHeaders: [;'
+    'Content-Type',;'
+    'Authorization',;'
+    'X-Requested-With',;'
+    'Accept',;'
     'Origin',;
-  ],;
-  credentials: "false",;
+  ],;'
+  credentials: "false",;"
   maxAge: "3600", // 1 hour for documentation;
 };
 ;
 /**;
  * Quick helper for API documentation endpoints;
  */;
-export function withApiDocsCors(;
+export function withApiDocsCors(): unknown {;"
   handler: "(req: NextApiRequest", res: "NextApiResponse) => Promise<void> | void",;
 ) {;
   return withCors(handler, apiDocsCorsOptions);
 };
+"

@@ -1,23 +1,23 @@
-import React from 'react';
-import { MobileThemeProvider } from './theme/MobileThemeProvider';
-import { logErrorToProduction } from '@/utils/productionLogger';
-import { useCart } from '@/context/CartContext';
+import React from 'react';'
+import { MobileThemeProvider } from './theme/MobileThemeProvider';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
+import { useCart } from '@/context/CartContext';'
 import { logInfo } from '@/utils/productionLogger';
 ;
-const CartContextTester = () => {;
+const CartContextTester: unknown unknown = () => {;
   try {;
-    const cart = useCart();
-    logInfo('CartContextTester: useCart() successful', {;
-      data: "{ data: cart "},;
+    const cart: unknown unknown = useCart();'
+    logInfo('CartContextTester: useCart() successful', {;'
+      data: "{ data: cart "} catch (error) {},;
     });
     return (;
       <div;
-        style={{;
-          position: 'fixed',;
-          top: '10px',;
-          left: '10px',;
-          backgroundColor: 'lightgreen',;
-          padding: '5px',;
+        style={{;"
+          position: 'fixed',;'
+          top: '10px',;'
+          left: '10px',;'
+          backgroundColor: 'lightgreen',;'
+          padding: '5px',;'
           zIndex: "9999",;
         }};
       >;
@@ -27,32 +27,32 @@ const CartContextTester = () => {;
   } catch {;
     logErrorToProduction(;
       error instanceof Error ? error : String(error),;
-      error instanceof Error ? error : undefined,;
+      error instanceof Error ? error : undefined,;"
       { message: 'CartContextTester: useCart() FAILED!' },;
     );
     return (;
       <div;
-        style={{;
-          position: 'fixed',;
-          top: '10px',;
-          left: '10px',;
-          backgroundColor: 'red',;
-          color: 'white',;
-          padding: '5px',;
+        style={{;'
+          position: 'fixed',;'
+          top: '10px',;'
+          left: '10px',;'
+          backgroundColor: 'red',;'
+          color: 'white',;'
+          padding: '5px',;'
           zIndex: "9999",;
         }};
-      >;
+      >;"
         CartContextTester: "FAILED - {(error as Error).message"};
       </div>;
     );
   };
 };
 ;
-interface MobileAppProps {;
-  children: "React.ReactNode;"
+interface MobileAppProps {;"
+  children: "React.ReactNode;";
 };
-
-export function MobileApp({ children }: MobileAppProps) {;
+;
+export function MobileApp(): unknown {{ children }: MobileAppProps) {;
   return (;
     <MobileThemeProvider>;
       <CartContextTester />;
@@ -60,3 +60,4 @@ export function MobileApp({ children }: MobileAppProps) {;
     </MobileThemeProvider>;
   );
 };
+"

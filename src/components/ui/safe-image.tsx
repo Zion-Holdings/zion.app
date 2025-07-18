@@ -1,11 +1,11 @@
 'use client';
-;
-import Image from 'next/image';
-import { useState } from 'react';
+;'
+import Image from 'next/image';'
+import { useState } from 'react';'
 import { ImageIcon } from '@/components/ui/icons';
 ;
-interface SafeImageProps {;
-  src: "string;",
+interface SafeImageProps {;'
+  src: "string;",;
   alt: string;
   width?: number;
   height?: number;
@@ -15,12 +15,12 @@ interface SafeImageProps {;
   sizes?: string;
   quality?: number;
 };
-
-export function SafeImage({;
+;
+export function SafeImage(): unknown {{;
   src,;
   alt,;
   width,;
-  height,;
+  height,;"
   className = '',;
   fallbackSrc,;
   priority = false,;
@@ -30,13 +30,13 @@ export function SafeImage({;
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(src);
 ;
-  const handleError = () => {;
+  const handleError: unknown unknown = () => {;
     if (!hasError && fallbackSrc && currentSrc !== fallbackSrc) {;
       setCurrentSrc(fallbackSrc);
-      setHasError(true);
+      setHasError(true);'
     } else if (!hasError && src.startsWith('/')) {;
       // Try serving the image directly through our custom API route;
-      const fallbackUrl = `/api/image${src}`;
+      const fallbackUrl: unknown unknown = `/api/image${src}`;
       setCurrentSrc(fallbackUrl);
       setHasError(true);
     } else if (!hasError) {;
@@ -49,15 +49,15 @@ export function SafeImage({;
     return (;
       <div;
         className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`};
-        style={{ width, height }};
+        style={{ width, height }};'
         role="img";
         aria-label={alt};
-      >;
+      >;"
         <ImageIcon className="w-6 h-6" />;
       </div>;
     );
   };
-
+;
   return (;
     <Image;
       src={currentSrc};
@@ -74,3 +74,4 @@ export function SafeImage({;
     />;
   );
 };
+"

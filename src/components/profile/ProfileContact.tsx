@@ -1,69 +1,69 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Mail, Send } from '@/components/ui/icons';
-import { Input } from '@/components/ui/input';
+import React from 'react';'
+import { Button } from '@/components/ui/button';'
+import { Mail, Send } from '@/components/ui/icons';'
+import { Input } from '@/components/ui/input';'
 import { Textarea } from '@/components/ui/textarea';
-;
-import { useState } from 'react';
+;'
+import { useState } from 'react';'
 import { toast } from '@/hooks/use-toast';
 ;
 interface ProfileContactProps {;
-  email?: string;
-  profileName: "string;",
+  email?: string;'
+  profileName: "string;",;"
   profileType: 'service' | 'talent';
 };
-
-export function ProfileContact({;
+;
+export function ProfileContact(): unknown {{;
   email,;
-  profileName,;
+  profileName,;'
   profileType: "_profileType",;
-}: ProfileContactProps) {;
-  const [message, setMessage] = useState('');
+}: ProfileContactProps) {;"
+  const [message, setMessage] = useState('');'
   const [subject, setSubject] = useState('');
   const [isSending, setIsSending] = useState(false);
 ;
-  const handleSendMessage = (_e: React.FormEvent) => {;
+  const handleSendMessage: unknown unknown = (_e: React.FormEvent) => {;
     e.preventDefault();
     setIsSending(true);
 ;
     // Here would be the actual API call to send the message;
     setTimeout(() => {;
-      setIsSending(false);
-      setMessage('');
+      setIsSending(false);'
+      setMessage('');'
       setSubject('');
-      toast({;
-        title: 'Message Sent',;
+      toast({;'
+        title: 'Message Sent',;'
         description: "`Your message has been sent to ${profileName"}.`,;
       });
     }, 1000);
   };
 ;
-  return (;
-    <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-8">;
-      <h3 className="text-xl font-bold text-white mb-4 flex items-center">;
+  return (;"
+    <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-8">;"
+      <h3 className="text-xl font-bold text-white mb-4 flex items-center">;"
         <Mail className="mr-2 h-5 w-5 text-zion-cyan" />;
         Contact;
       </h3>;
-
-      {email && (;
-        <div className="mb-4 text-zion-slate-light">;
+;
+      {email && (;"
+        <div className="mb-4 text-zion-slate-light">;"
           <span className="block">Email: </span>;
-          <a;
-            href={`mailto: "${email"}`};
+          <a;"
+            href={`mailto: "${email"}`};"
             className="text-zion-cyan hover:underline truncate block";
           >;
             {email};
           </a>;
         </div>;
       )};
-
-      <form onSubmit={handleSendMessage}>;
+;
+      <form onSubmit={handleSendMessage}>;"
         <div className="space-y-4">;
           <div>;
-            <Input;
+            <Input;"
               placeholder="Subject";
               value={subject};
-              onChange={(e) => setSubject(e.target.value)};
+              onChange={(e) => setSubject(e.target.value)};"
               className="bg-zion-blue border-zion-blue-light text-white";
               required;
             />;
@@ -72,17 +72,17 @@ export function ProfileContact({;
             <Textarea;
               placeholder={`Message to ${profileName}...`};
               value={message};
-              onChange={(e) => setMessage(e.target.value)};
+              onChange={(e) => setMessage(e.target.value)};"
               className="bg-zion-blue border-zion-blue-light text-white min-h-[120px]";
               required;
             />;
           </div>;
-          <Button;
-            type="submit";
+          <Button;"
+            type="submit";"
             className="w-full bg-zion-cyan hover:bg-zion-cyan/90";
             disabled={isSending};
-          >;
-            <Send className="mr-2 h-4 w-4" />;
+          >;"
+            <Send className="mr-2 h-4 w-4" />;"
             {isSending ? 'Sending...' : 'Send Message'};
           </Button>;
         </div>;
@@ -90,3 +90,4 @@ export function ProfileContact({;
     </div>;
   );
 };
+'

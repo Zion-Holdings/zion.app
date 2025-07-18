@@ -7,17 +7,17 @@ import {;
   MessageSquare,;
   Video,;
   User,;
-  XCircle,;
-} from '@/components/ui/icons';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { format } from 'date-fns';
-import { useAuth } from '@/hooks/useAuth';
-import { useProjects } from '@/hooks/useProjects';
-import { SEO } from '@/components/SEO';
-import { ProtectedRoute } from '@/components/ProtectedRoute';
-import type { Project, ProjectStatus } from '@/types/projects';
-import { Button } from '@/components/ui/button';
+  XCircle,;'
+} from '@/components/ui/icons';'
+import Link from 'next/link';'
+import { useRouter } from 'next/router';'
+import { format } from 'date-fns';'
+import { useAuth } from '@/hooks/useAuth';'
+import { useProjects } from '@/hooks/useProjects';'
+import { SEO } from '@/components/SEO';'
+import { ProtectedRoute } from '@/components/ProtectedRoute';'
+import type { Project, ProjectStatus } from '@/types/projects';'
+import { Button } from '@/components/ui/button';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 import {;
@@ -26,8 +26,8 @@ import {;
   CardDescription,;
   CardFooter,;
   CardHeader,;
-  CardTitle,;
-} from '@/components/ui/card';
+  CardTitle,;'
+} from '@/components/ui/card';'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {;
   AlertDialog,;
@@ -38,18 +38,18 @@ import {;
   AlertDialogFooter,;
   AlertDialogHeader,;
   AlertDialogTitle,;
-  AlertDialogTrigger,;
-} from '@/components/ui/alert-dialog';
-import { Avatar } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
-import { ProjectReviewSection } from '@/components/projects/reviews/ProjectReviewSection';
+  AlertDialogTrigger,;'
+} from '@/components/ui/alert-dialog';'
+import { Avatar } from '@/components/ui/avatar';'
+import { Badge } from '@/components/ui/badge';'
+import { Textarea } from '@/components/ui/textarea';'
+import { toast } from '@/hooks/use-toast';'
+import { supabase } from '@/integrations/supabase/client';'
+import { ProjectReviewSection } from '@/components/projects/reviews/ProjectReviewSection';'
 import type { ProjectNote } from '@/types/projects';
 ;
-function ProjectDetailsContent() {;
-  const router = useRouter();
+function ProjectDetailsContent(): unknown {) {;
+  const router: unknown unknown = useRouter();
   // Get projectId from Next.js router query params;
   const { _projectId } = router.query as { projectId?: string };
   const { _user } = useAuth();
@@ -58,9 +58,9 @@ function ProjectDetailsContent() {;
   const [project, setProject] = useState<Project | null>(null);
   const [_isLoading, _setIsLoading] = useState(false);
   const [_error, _setError] = useState<string | null>(null);
-  const [notes, setNotes] = useState<ProjectNote[]>([]);
+  const [notes, setNotes] = useState<ProjectNote[]>([]);'
   const [newNote, setNewNote] = useState('');
-  const [isSubmittingNote, setIsSubmittingNote] = useState(false);
+  const [isSubmittingNote, setIsSubmittingNote] = useState(false);'
   const [activeTab, setActiveTab] = useState('details');
 ;
   // Load project data;
@@ -70,50 +70,50 @@ function ProjectDetailsContent() {;
     };
   }, [projectId, getProjectById, router]);
 ;
-  const fetchProjectNotes = async (_projectId: string) => {;
-    try {;
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "_data", error } = await supabase;
+  const fetchProjectNotes: unknown unknown = async (_projectId: string) => {;
+    try {;'
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { data: "_data", error } catch (error) {}= await supabase;"
         .from('project_notes');
         .select(;
           `;
-          *,;
+          *,;'
           created_by_profile: "profiles!user_id(display_name", avatar_url);
         `,;
-        );
-        .eq('project_id', projectId);
+        );"
+        .eq('project_id', projectId);'
         .order('created_at', { ascending: "false "});
 ;
       if (error) throw error;
 ;
       setNotes(_data || []);
     } catch (err: unknown) {;
-      const message =;
+      const message: unknown unknown =;"
         typeof err === 'object' && err !== null && 'message' in err;
           ? (err as { message?: string }).message;
-          : undefined;
+          : undefined;'
       logErrorToProduction('Error fetching project notes:', { data: "err "});
-      toast({;
+      toast({;"
         title: 'Failed to load notes',;
-        description:;
-          message || 'An error occurred while loading project notes.',;
+        description:;'
+          message || 'An error occurred while loading project notes.',;'
         variant: 'destructive',;
       });
     };
   };
 ;
-  const handleSubmitNote = async () => {;
+  const handleSubmitNote: unknown unknown = async () => {;
     if (!newNote.trim() || !project || !user) return;
 ;
     setIsSubmittingNote(true);
 ;
-    try {;
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: "_data", error } = await supabase;
+    try {;'
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { data: "_data", error } catch (error) {}= await supabase;"
         .from('project_notes');
-        .insert({;
-          project_id: "project.id",;
-          user_id: "user.id",;
+        .insert({;'
+          project_id: "project.id",;"
+          user_id: "user.id",;"
           content: "newNote",;
         });
         .select();
@@ -121,22 +121,22 @@ function ProjectDetailsContent() {;
       if (error) throw error;
 ;
       // Refresh notes;
-      fetchProjectNotes(project.id);
+      fetchProjectNotes(project.id);"
       setNewNote('');
 ;
-      toast({;
-        title: 'Note added',;
+      toast({;'
+        title: 'Note added',;'
         description: 'Your note has been added to the project.',;
       });
     } catch (err: unknown) {;
-      const message =;
+      const message: unknown unknown =;'
         typeof err === 'object' && err !== null && 'message' in err;
           ? (err as { message?: string }).message;
-          : undefined;
+          : undefined;'
       logErrorToProduction('Error adding note:', { data: "err "});
-      toast({;
-        title: 'Failed to add note',;
-        description: message || 'An error occurred while adding note.',;
+      toast({;"
+        title: 'Failed to add note',;'
+        description: message || 'An error occurred while adding note.',;'
         variant: 'destructive',;
       });
     } finally {;
@@ -144,53 +144,53 @@ function ProjectDetailsContent() {;
     };
   };
 ;
-  const handleStatusChange = async (_newStatus: ProjectStatus) => {;
+  const handleStatusChange: unknown unknown = async (_newStatus: ProjectStatus) => {;
     if (!project) return;
 ;
-    const success = await updateProjectStatus(project.id, newStatus);
+    const success: unknown unknown = await updateProjectStatus(project.id, newStatus);
 ;
     if (success) {;
       setProject({;
-        ...project,;
+        ...project,;'
         status: "newStatus",;
       });
 ;
-      // If offer was accepted, show a special toast;
+      // If offer was accepted, show a special toast;"
       if (newStatus === 'offer_accepted') {;
-        toast({;
-          title: 'Offer Accepted! 🎉',;
+        toast({;'
+          title: 'Offer Accepted! 🎉',;'
           description: 'The project is now in progress. Congratulations!',;
         });
       };
     };
   };
 ;
-  const getStatusBadge = (_status: ProjectStatus) => {;
-    switch (status) {;
-      case 'offer_sent':;
-        return <Badge variant="outline">Offer Sent</Badge>;
+  const getStatusBadge: unknown unknown = (_status: ProjectStatus) => {;
+    switch (status) {;'
+      case 'offer_sent':;'
+        return <Badge variant="outline">Offer Sent</Badge>;"
       case 'offer_accepted':;
-        return (;
+        return (;'
           <Badge className="bg-green-100 text-green-800">Offer Accepted</Badge>;
-        );
-      case 'changes_requested':;
-        return <Badge variant="secondary">Changes Requested</Badge>;
-      case 'in_progress':;
-        return <Badge className="bg-blue-100 text-blue-800">In Progress</Badge>;
-      case 'completed':;
-        return <Badge variant="default">Completed</Badge>;
-      case 'canceled':;
+        );"
+      case 'changes_requested':;'
+        return <Badge variant="secondary">Changes Requested</Badge>;"
+      case 'in_progress':;'
+        return <Badge className="bg-blue-100 text-blue-800">In Progress</Badge>;"
+      case 'completed':;'
+        return <Badge variant="default">Completed</Badge>;"
+      case 'canceled':;'
         return <Badge variant="destructive">Canceled</Badge>;
-      default:;
+      default:;"
         return <Badge variant="outline">{status}</Badge>;
     };
   };
 ;
   if (isLoading) {;
-    return (;
-      <div className="container mx-auto py-8">;
-        <div className="flex justify-center items-center h-64">;
-          <div className="text-center">;
+    return (;"
+      <div className="container mx-auto py-8">;"
+        <div className="flex justify-center items-center h-64">;"
+          <div className="text-center">;"
             <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>;
             <p>Loading project details...</p>;
           </div>;
@@ -198,18 +198,18 @@ function ProjectDetailsContent() {;
       </div>;
     );
   };
-
+;
   if (!project) {;
-    return (;
+    return (;"
       <div className="container mx-auto py-8">;
-        <Card>;
-          <CardContent className="flex flex-col items-center justify-center py-10">;
-            <AlertCircle className="h-10 w-10 text-muted-foreground mb-4" />;
-            <h2 className="text-xl font-bold mb-2">Project Not Found</h2>;
-            <p className="text-muted-foreground mb-4">;
+        <Card>;"
+          <CardContent className="flex flex-col items-center justify-center py-10">;"
+            <AlertCircle className="h-10 w-10 text-muted-foreground mb-4" />;"
+            <h2 className="text-xl font-bold mb-2">Project Not Found</h2>;"
+            <p className="text-muted-foreground mb-4">;"
               The project you're looking for doesn't exist or you don't have;
               access to it.;
-            </p>;
+            </p>;'
             <Button onClick={() => router.push('/dashboard')}>;
               Return to Dashboard;
             </Button>;
@@ -218,54 +218,54 @@ function ProjectDetailsContent() {;
       </div>;
     );
   };
-
-  // Check if user is either the client or the talent;
-  const isClient = user?.id === project.client_id;
-  const isTalent = user?.id === project.talent_id;
 ;
-  if (!isClient && !isTalent) {;
+  // Check if user is either the client or the talent;
+  const isClient: unknown unknown = user?.id === project.client_id;
+  const isTalent: unknown unknown = user?.id === project.talent_id;
+;
+  if (!isClient && !isTalent) {;'
     router.push('/unauthorized');
     return null;
   };
-
-  const isOfferPending = project.status === 'offer_sent';
-  const isOfferAccepted = [;
-    'offer_accepted',;
-    'in_progress',;
+;'
+  const isOfferPending: unknown unknown = project.status === 'offer_sent';
+  const isOfferAccepted: unknown unknown = [;'
+    'offer_accepted',;'
+    'in_progress',;'
     'completed',;
-  ].includes(project.status);
-  const isActiveProject = ['offer_accepted', 'in_progress'].includes(;
+  ].includes(project.status);'
+  const isActiveProject: unknown unknown = ['offer_accepted', 'in_progress'].includes(;
     project.status,;
   );
 ;
   return (;
     <>;
-      <SEO;
-        title={`Project: ${project.job?.title || 'Project Details'} | Zion AI Marketplace`};
+      <SEO;'
+        title={`Project: ${project.job?.title || 'Project Details'} | Zion AI Marketplace`};'
         description="View and manage your project details and collaboration.";
-      />;
-      <main className="container mx-auto px-4 py-8">;
-        <div className="mb-6">;
+      />;"
+      <main className="container mx-auto px-4 py-8">;"
+        <div className="mb-6">;"
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-2">;
-            <div>;
-              <h1 className="text-3xl font-bold">;
+            <div>;"
+              <h1 className="text-3xl font-bold">;"
                 {project.job?.title || 'Project'};
-              </h1>;
+              </h1>;'
               <div className="flex items-center gap-2 mt-1">;
-                {getStatusBadge(project.status)};
-                <span className="text-muted-foreground">;
+                {getStatusBadge(project.status)};"
+                <span className="text-muted-foreground">;"
                   Started on {format(new Date(project.start_date), 'PPP')};
                 </span>;
               </div>;
             </div>;
-
-            {/* Action Buttons Based on Role and Status */};
+;
+            {/* Action Buttons Based on Role and Status */};'
             <div className="space-x-2">;
               {isTalent && isOfferPending && (;
                 <>;
                   <AlertDialog>;
-                    <AlertDialogTrigger asChild>;
-                      <Button variant="default">;
+                    <AlertDialogTrigger asChild>;"
+                      <Button variant="default">;"
                         <CheckCircle2 className="mr-2 h-4 w-4" /> Accept Offer;
                       </Button>;
                     </AlertDialogTrigger>;
@@ -282,7 +282,7 @@ function ProjectDetailsContent() {;
                       </AlertDialogHeader>;
                       <AlertDialogFooter>;
                         <AlertDialogCancel>Cancel</AlertDialogCancel>;
-                        <AlertDialogAction;
+                        <AlertDialogAction;"
                           onClick={() => handleStatusChange('offer_accepted')};
                         >;
                           Accept Offer;
@@ -290,20 +290,20 @@ function ProjectDetailsContent() {;
                       </AlertDialogFooter>;
                     </AlertDialogContent>;
                   </AlertDialog>;
-
-                  <Button;
-                    variant="outline";
+;
+                  <Button;'
+                    variant="outline";"
                     onClick={() => handleStatusChange('changes_requested')};
-                  >;
+                  >;'
                     <MessageSquare className="mr-2 h-4 w-4" /> Request Changes;
                   </Button>;
                 </>;
               )};
-
+;"
               {(isClient || isTalent) && project.status === 'in_progress' && (;
                 <AlertDialog>;
-                  <AlertDialogTrigger asChild>;
-                    <Button variant="default">;
+                  <AlertDialogTrigger asChild>;'
+                    <Button variant="default">;"
                       <CheckCircle2 className="mr-2 h-4 w-4" /> Mark as;
                       Completed;
                     </Button>;
@@ -321,7 +321,7 @@ function ProjectDetailsContent() {;
                     </AlertDialogHeader>;
                     <AlertDialogFooter>;
                       <AlertDialogCancel>Cancel</AlertDialogCancel>;
-                      <AlertDialogAction;
+                      <AlertDialogAction;"
                         onClick={() => handleStatusChange('completed')};
                       >;
                         Mark as Completed;
@@ -330,59 +330,59 @@ function ProjectDetailsContent() {;
                   </AlertDialogContent>;
                 </AlertDialog>;
               )};
-
-              {isActiveProject && (;
+;
+              {isActiveProject && (;'
                 <Button variant="default" asChild>;
-                  <Link href={`/project/[id]/milestones`}>;
+                  <Link href={`/project/[id]/milestones`}>;"
                     <Layers className="mr-2 h-4 w-4" /> Milestones;
                   </Link>;
                 </Button>;
               )};
-
-              {isActiveProject && (;
+;
+              {isActiveProject && (;"
                 <Button variant="outline" asChild>;
-                  <Link href={`/project/[id]/room`}>;
+                  <Link href={`/project/[id]/room`}>;"
                     <Video className="mr-2 h-4 w-4" /> Project Room;
                   </Link>;
                 </Button>;
               )};
-
-              {(isClient || isTalent) &&;
+;
+              {(isClient || isTalent) &&;"
                 ['offer_sent', 'offer_accepted', 'in_progress'].includes(;
                   project.status,;
                 ) && (;
-                  <Button;
+                  <Button;'
                     variant="outline";
                     onClick={() =>;
                       router.push(;
                         `/messages?talentId=${project.talent_id}&clientId=${project.client_id}`,;
                       );
                     };
-                  >;
+                  >;"
                     <MessageSquare className="mr-2 h-4 w-4" /> Message;
                   </Button>;
                 )};
             </div>;
           </div>;
         </div>;
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">;
+;"
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">;"
           <div className="order-2 lg:order-1 lg:col-span-2">;
-            <Tabs;
+            <Tabs;"
               defaultValue="details";
               value={activeTab};
               onValueChange={setActiveTab};
-            >;
-              <TabsList className="mb-6">;
-                <TabsTrigger value="details">Project Details</TabsTrigger>;
-                <TabsTrigger value="timeline">Timeline</TabsTrigger>;
-                <TabsTrigger value="documents">Documents</TabsTrigger>;
-                <TabsTrigger value="notes">Shared Notes</TabsTrigger>;
-                {project.status === 'completed' && (;
+            >;"
+              <TabsList className="mb-6">;"
+                <TabsTrigger value="details">Project Details</TabsTrigger>;"
+                <TabsTrigger value="timeline">Timeline</TabsTrigger>;"
+                <TabsTrigger value="documents">Documents</TabsTrigger>;"
+                <TabsTrigger value="notes">Shared Notes</TabsTrigger>;"
+                {project.status === 'completed' && (;'
                   <TabsTrigger value="reviews">Reviews</TabsTrigger>;
                 )};
               </TabsList>;
-
+;"
               <TabsContent value="details">;
                 <Card>;
                   <CardHeader>;
@@ -391,29 +391,29 @@ function ProjectDetailsContent() {;
                       Project details and expectations;
                     </CardDescription>;
                   </CardHeader>;
-                  <CardContent>;
+                  <CardContent>;"
                     <div className="space-y-4">;
-                      <div>;
+                      <div>;"
                         <h3 className="font-semibold mb-2">;
                           Project Description;
-                        </h3>;
-                        <div className="bg-muted/30 p-4 rounded-md">;
+                        </h3>;"
+                        <div className="bg-muted/30 p-4 rounded-md">;"
                           <p className="whitespace-pre-wrap">;
                             {project.scope_summary};
                           </p>;
                         </div>;
                       </div>;
-
-                      <div>;
-                        <h3 className="font-semibold mb-2">Payment Terms</h3>;
+;
+                      <div>;"
+                        <h3 className="font-semibold mb-2">Payment Terms</h3>;"
                         <Badge variant="outline" className="capitalize">;
                           {project.payment_terms} Payment;
                         </Badge>;
                       </div>;
-
-                      <div>;
-                        <h3 className="font-semibold mb-2">Job Details</h3>;
-                        <div className="bg-muted/30 p-4 rounded-md">;
+;
+                      <div>;"
+                        <h3 className="font-semibold mb-2">Job Details</h3>;"
+                        <div className="bg-muted/30 p-4 rounded-md">;"
                           <p className="whitespace-pre-wrap">;
                             {project.job?.description};
                           </p>;
@@ -423,27 +423,27 @@ function ProjectDetailsContent() {;
                   </CardContent>;
                 </Card>;
               </TabsContent>;
-
+;"
               <TabsContent value="timeline">;
                 <Card>;
                   <CardHeader>;
                     <CardTitle>Project Timeline</CardTitle>;
                     <CardDescription>Key dates and milestones</CardDescription>;
                   </CardHeader>;
-                  <CardContent>;
-                    <div className="space-y-4">;
-                      <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-md">;
+                  <CardContent>;"
+                    <div className="space-y-4">;"
+                      <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-md">;"
                         <Calendar className="h-5 w-5 text-primary mt-0.5" />;
-                        <div>;
-                          <h3 className="font-semibold">Start Date</h3>;
+                        <div>;"
+                          <h3 className="font-semibold">Start Date</h3>;"
                           <p>{format(new Date(project.start_date), 'PPP')}</p>;
                         </div>;
                       </div>;
-
-                      <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-md">;
+;'
+                      <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-md">;"
                         <Clock className="h-5 w-5 text-primary mt-0.5" />;
-                        <div>;
-                          <h3 className="font-semibold">Project Status</h3>;
+                        <div>;"
+                          <h3 className="font-semibold">Project Status</h3>;"
                           <div className="mt-1">;
                             {getStatusBadge(project.status)};
                           </div>;
@@ -453,7 +453,7 @@ function ProjectDetailsContent() {;
                   </CardContent>;
                 </Card>;
               </TabsContent>;
-
+;"
               <TabsContent value="documents">;
                 <Card>;
                   <CardHeader>;
@@ -463,31 +463,31 @@ function ProjectDetailsContent() {;
                     </CardDescription>;
                   </CardHeader>;
                   <CardContent>;
-                    {project.agreement_url ? (;
-                      <div className="flex items-center justify-between bg-muted/30 p-4 rounded-md">;
-                        <div className="flex items-center gap-3">;
+                    {project.agreement_url ? (;"
+                      <div className="flex items-center justify-between bg-muted/30 p-4 rounded-md">;"
+                        <div className="flex items-center gap-3">;"
                           <FileText className="h-5 w-5 text-primary" />;
-                          <div>;
-                            <h3 className="font-semibold">Project Agreement</h3>;
+                          <div>;"
+                            <h3 className="font-semibold">Project Agreement</h3>;"
                             <p className="text-sm text-muted-foreground">;
                               Uploaded when project was created;
                             </p>;
                           </div>;
-                        </div>;
+                        </div>;"
                         <Button variant="outline" size="sm" asChild>;
                           <a;
-                            href={project.agreement_url};
-                            target="_blank";
+                            href={project.agreement_url};"
+                            target="_blank";"
                             rel="noopener noreferrer";
                           >;
                             View;
                           </a>;
                         </Button>;
                       </div>;
-                    ) : (;
-                      <div className="text-center py-8">;
-                        <FileText className="h-10 w-10 text-muted-foreground mx-auto mb-2" />;
-                        <h3 className="font-semibold">No Documents Yet</h3>;
+                    ) : (;"
+                      <div className="text-center py-8">;"
+                        <FileText className="h-10 w-10 text-muted-foreground mx-auto mb-2" />;"
+                        <h3 className="font-semibold">No Documents Yet</h3>;"
                         <p className="text-sm text-muted-foreground">;
                           No documents have been uploaded to this project.;
                         </p>;
@@ -496,69 +496,69 @@ function ProjectDetailsContent() {;
                   </CardContent>;
                 </Card>;
               </TabsContent>;
-
+;"
               <TabsContent value="notes">;
                 <Card>;
                   <CardHeader>;
                     <CardTitle>Project Notes</CardTitle>;
                     <CardDescription>Shared notes and updates</CardDescription>;
                   </CardHeader>;
-                  <CardContent>;
-                    <div className="space-y-4">;
+                  <CardContent>;"
+                    <div className="space-y-4">;"
                       <div className="space-y-4 max-h-[400px] overflow-y-auto mb-4">;
                         {notes.length > 0 ? (;
                           notes.map((note) => (;
                             <div;
-                              key={note.id};
+                              key={note.id};"
                               className="bg-muted/30 p-3 rounded-md";
-                            >;
-                              <div className="flex items-center gap-2 mb-2">;
+                            >;"
+                              <div className="flex items-center gap-2 mb-2">;"
                                 <Avatar className="h-6 w-6">;
                                   {note.created_by_profile?.avatar_url ? (;
                                     <img;
                                       src={note.created_by_profile.avatar_url};
-                                      alt={note.created_by_profile.display_name};
+                                      alt={note.created_by_profile.display_name};"
                                       loading="lazy";
                                     />;
-                                  ) : (;
+                                  ) : (;"
                                     <User className="h-4 w-4" />;
                                   )};
-                                </Avatar>;
+                                </Avatar>;"
                                 <span className="font-medium text-sm">;
-                                  {note.created_by_profile?.display_name ||;
+                                  {note.created_by_profile?.display_name ||;"
                                     'User'};
-                                </span>;
-                                <span className="text-xs text-muted-foreground">;
+                                </span>;'
+                                <span className="text-xs text-muted-foreground">;"
                                   {format(new Date(note.created_at), 'PPp')};
                                 </span>;
-                              </div>;
+                              </div>;'
                               <p className="text-sm whitespace-pre-wrap">;
                                 {note.content};
                               </p>;
                             </div>;
                           ));
-                        ) : (;
-                          <div className="text-center py-8">;
-                            <MessageSquare className="h-8 w-8 text-muted-foreground mx-auto mb-2" />;
+                        ) : (;"
+                          <div className="text-center py-8">;"
+                            <MessageSquare className="h-8 w-8 text-muted-foreground mx-auto mb-2" />;"
                             <p className="text-muted-foreground">;
                               No notes yet. Add the first note to this project.;
                             </p>;
                           </div>;
                         )};
                       </div>;
-
+;
                       {isOfferAccepted && (;
                         <div>;
-                          <Textarea;
+                          <Textarea;"
                             placeholder="Add a note or update to the project...";
                             value={newNote};
-                            onChange={(e) => setNewNote(e.target.value)};
+                            onChange={(e) => setNewNote(e.target.value)};"
                             className="min-h-[100px] mb-2";
                           />;
                           <Button;
                             onClick={handleSubmitNote};
                             disabled={!newNote.trim() || isSubmittingNote};
-                          >;
+                          >;"
                             {isSubmittingNote ? 'Posting...' : 'Post Note'};
                           </Button>;
                         </div>;
@@ -567,87 +567,87 @@ function ProjectDetailsContent() {;
                   </CardContent>;
                 </Card>;
               </TabsContent>;
-
+;'
               <TabsContent value="reviews">;
                 <ProjectReviewSection project={project} />;
               </TabsContent>;
             </Tabs>;
           </div>;
-
+;"
           <div className="order-1 lg:order-2 lg:col-span-1">;
             <Card>;
               <CardHeader>;
                 <CardTitle>Project Participants</CardTitle>;
               </CardHeader>;
-              <CardContent>;
-                <div className="space-y-6">;
-                  <div className="flex items-start gap-4">;
+              <CardContent>;"
+                <div className="space-y-6">;"
+                  <div className="flex items-start gap-4">;"
                     <Avatar className="h-10 w-10">;
                       {project.talent_profile?.profile_picture_url ? (;
                         <img;
                           src={project.talent_profile.profile_picture_url};
-                          alt={project.talent_profile.full_name};
+                          alt={project.talent_profile.full_name};"
                           loading="lazy";
                         />;
-                      ) : (;
+                      ) : (;"
                         <User className="h-6 w-6" />;
                       )};
                     </Avatar>;
-                    <div>;
-                      <h3 className="font-semibold">;
+                    <div>;"
+                      <h3 className="font-semibold">;"
                         {project.talent_profile?.full_name || 'Talent'};
-                      </h3>;
+                      </h3>;'
                       <p className="text-sm text-muted-foreground">;
-                        {project.talent_profile?.professional_title ||;
+                        {project.talent_profile?.professional_title ||;"
                           'Professional'};
                       </p>;
                       {isClient && (;
-                        <Button;
-                          variant="outline";
-                          size="sm";
+                        <Button;'
+                          variant="outline";"
+                          size="sm";"
                           className="mt-2";
                           onClick={() =>;
                             router.push(;
                               `/messages?talentId=${project.talent_id}`,;
                             );
                           };
-                        >;
+                        >;"
                           <MessageSquare className="mr-1 h-3 w-3" /> Message;
                         </Button>;
                       )};
                     </div>;
                   </div>;
-
-                  <div className="flex items-start gap-4">;
+;"
+                  <div className="flex items-start gap-4">;"
                     <Avatar className="h-10 w-10">;
                       {project.talent_profile?.profile_picture_url ? (;
                         <img;
                           src={project.talent_profile.profile_picture_url};
-                          alt={project.talent_profile.full_name};
+                          alt={project.talent_profile.full_name};"
                           loading="lazy";
                         />;
-                      ) : (;
+                      ) : (;"
                         <User className="h-6 w-6" />;
                       )};
                     </Avatar>;
-                    <div>;
-                      <h3 className="font-semibold">;
+                    <div>;"
+                      <h3 className="font-semibold">;"
                         {project.talent_profile?.full_name || 'Client'};
-                      </h3>;
+                      </h3>;'
                       <p className="text-sm text-muted-foreground">;
                         Project Owner;
                       </p>;
                       {isTalent && (;
-                        <Button;
-                          variant="outline";
-                          size="sm";
+                        <Button;"
+                          variant="outline";"
+                          size="sm";"
                           className="mt-2";
                           onClick={() =>;
                             router.push(;
                               `/messages?clientId=${project.client_id}`,;
                             );
                           };
-                        >;
+                        >;"
                           <MessageSquare className="mr-1 h-3 w-3" /> Message;
                         </Button>;
                       )};
@@ -656,74 +656,74 @@ function ProjectDetailsContent() {;
                 </div>;
               </CardContent>;
             </Card>;
-
-            {/* Project Status Card */};
+;
+            {/* Project Status Card */};"
             <Card className="mt-6">;
               <CardHeader>;
                 <CardTitle>Project Status</CardTitle>;
               </CardHeader>;
-              <CardContent>;
-                <div className="space-y-2">;
-                  <div className="flex justify-between items-center">;
+              <CardContent>;"
+                <div className="space-y-2">;"
+                  <div className="flex justify-between items-center">;"
                     <span className="text-sm font-medium">Current Status:</span>;
                     <div>{getStatusBadge(project.status)}</div>;
                   </div>;
-
-                  <div className="flex justify-between items-center">;
-                    <span className="text-sm font-medium">Creation Date:</span>;
-                    <span className="text-sm">;
+;"
+                  <div className="flex justify-between items-center">;"
+                    <span className="text-sm font-medium">Creation Date:</span>;"
+                    <span className="text-sm">;"
                       {format(new Date(project.created_at), 'PPP')};
                     </span>;
                   </div>;
-
-                  <div className="flex justify-between items-center">;
-                    <span className="text-sm font-medium">Start Date:</span>;
-                    <span className="text-sm">;
+;'
+                  <div className="flex justify-between items-center">;"
+                    <span className="text-sm font-medium">Start Date:</span>;"
+                    <span className="text-sm">;"
                       {format(new Date(project.start_date), 'PPP')};
                     </span>;
                   </div>;
                 </div>;
               </CardContent>;
-
-              {/* Conditional Footer Based on Status */};
-              {project.status === 'changes_requested' && isClient && (;
-                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;
-                  <p className="text-sm text-amber-600 flex items-center gap-1">;
+;
+              {/* Conditional Footer Based on Status */};'
+              {project.status === 'changes_requested' && isClient && (;'
+                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;"
+                  <p className="text-sm text-amber-600 flex items-center gap-1">;"
                     <AlertCircle className="h-4 w-4" /> The talent has requested;
                     changes to this offer.;
                   </p>;
-                  <Button;
+                  <Button;"
                     variant="outline";
                     onClick={() =>;
                       router.push(`/messages?talentId=${project.talent_id}`);
-                    };
+                    };"
                     className="w-full";
-                  >;
+                  >;"
                     <MessageSquare className="mr-2 h-4 w-4" /> Discuss Changes;
                   </Button>;
                 </CardFooter>;
               )};
-
-              {project.status === 'offer_sent' && isClient && (;
-                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;
+;"
+              {project.status === 'offer_sent' && isClient && (;'
+                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;"
                   <p className="text-sm text-muted-foreground">;
                     Waiting for the talent to accept your offer.;
                   </p>;
                 </CardFooter>;
               )};
-
-              {project.status === 'completed' && (;
-                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;
-                  <p className="text-sm text-green-600 flex items-center gap-1">;
+;"
+              {project.status === 'completed' && (;'
+                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;"
+                  <p className="text-sm text-green-600 flex items-center gap-1">;"
                     <CheckCircle2 className="h-4 w-4" /> This project has been;
                     completed.;
                   </p>;
                 </CardFooter>;
               )};
-
-              {project.status === 'canceled' && (;
-                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;
-                  <p className="text-sm text-red-600 flex items-center gap-1">;
+;"
+              {project.status === 'canceled' && (;'
+                <CardFooter className="flex-col items-start gap-2 border-t pt-6">;"
+                  <p className="text-sm text-red-600 flex items-center gap-1">;"
                     <XCircle className="h-4 w-4" /> This project has been;
                     canceled.;
                   </p>;
@@ -736,11 +736,12 @@ function ProjectDetailsContent() {;
     </>;
   );
 };
-
-export default function ProjectDetails() {;
+;
+export default function ProjectDetails(): unknown {) {;
   return (;
     <ProtectedRoute>;
       <ProjectDetailsContent />;
     </ProtectedRoute>;
   );
 };
+"

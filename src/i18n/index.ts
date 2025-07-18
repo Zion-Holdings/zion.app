@@ -1,19 +1,19 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { safeStorage } from '../utils/safeStorage';
+import i18n from 'i18next';'
+import { initReactI18next } from 'react-i18next';'
+import LanguageDetector from 'i18next-browser-languagedetector';'
+import { safeStorage } from '../utils/safeStorage';'
 import { setCookie } from '../utils/cookies';
-;
-import enTranslation from './locales/en/translation.json';
-import enUsTranslation from './locales/en-US/translation.json';
-import esTranslation from './locales/es/translation.json';
-import ptTranslation from './locales/pt/translation.json';
-import frTranslation from './locales/fr/translation.json';
-import arTranslation from './locales/ar/translation.json';
+;'
+import enTranslation from './locales/en/translation.json';'
+import enUsTranslation from './locales/en-US/translation.json';'
+import esTranslation from './locales/es/translation.json';'
+import ptTranslation from './locales/pt/translation.json';'
+import frTranslation from './locales/fr/translation.json';'
+import arTranslation from './locales/ar/translation.json';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 if (!i18n) {;
-  logErrorToProduction(;
+  logErrorToProduction(;'
     'CRITICAL: i18next failed to import. Internationalization will not work.',;
   );
 } else {;
@@ -21,71 +21,71 @@ if (!i18n) {;
   i18n;
     .use(LanguageDetector) // Detect user language;
     .use(initReactI18next) // Initialize react-i18next;
-    .init({;
-      lng: 'en', // Explicitly set initial language to bypass detection issues during server start;
-      resources: "{;",
-        en: {;
+    .init({;'
+      lng: 'en', // Explicitly set initial language to bypass detection issues during server start;'
+      resources: "{;",;"
+        en: "{;","
           translation: "enTranslation",;
-        },;
-        'en-US': {;
+        },;"
+        'en-US': {;'
           translation: "enUsTranslation",;
-        },;
-        es: "{;",
+        },;"
+        es: "{;",;"
           translation: "esTranslation",;
-        },;
-        'es-ES': {;
+        },;"
+        'es-ES': {;'
           translation: "esTranslation",;
-        },;
-        fr: "{;",
+        },;"
+        fr: "{;",;"
           translation: "frTranslation",;
-        },;
-        pt: "{;",
+        },;"
+        pt: "{;",;"
           translation: "ptTranslation",;
-        },;
-        ar: "{;",
+        },;"
+        ar: "{;",;"
           translation: "arTranslation",;
         },;
-      },;
-      fallbackLng: 'en', // Default language;
-      preload: ['en-US', 'es-ES'],;
-      supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],;
+      },;"
+      fallbackLng: 'en', // Default language;'
+      preload: ['en-US', 'es-ES'],;'
+      supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],;'
       debug: "false", // Disabled debug to reduce console noise - enable only when needed;
       // Silence noisy i18next warnings in development logs;
-      // _logger: {;
-      //   log: "() => {"},;
-      //   _warn: "() => {"},;
+      // _logger: {;"
+      //   log: "() => {"},;"
+      //   _warn: "() => {"},;"
       //   error: "console.error",;
-      // },;
-      interpolation: "{;",
+      // },;"
+      interpolation: "{;",;"
         escapeValue: "false", // React already escapes by default;
       },;
-      // Performance optimizations;
-      load: 'languageOnly',;
-      cleanCode: "true", // Clean up language codes;
-      nonExplicitSupportedLngs: "false", // Don't auto-detect non-explicit languages;
-      initImmediate: "false", // Initialize synchronously to avoid missing key warnings;
-      detection: "{;",
-        order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users;
-        lookupCookie: 'i18n_lang',;
+      // Performance optimizations;"
+      load: 'languageOnly',;'
+      cleanCode: "true", // Clean up language codes;"
+      nonExplicitSupportedLngs: "false", // Don't auto-detect non-explicit languages;'
+      initImmediate: "false", // Initialize synchronously to avoid missing key warnings;"
+      detection: "{;",;"
+        order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users;'
+        lookupCookie: 'i18n_lang',;'
         caches: ['cookie'], // Re-enabled cookie caching for better performance;
       },;
     });
-    .catch(() => {;
+    .catch(() => {;'
       logErrorToProduction('Error initializing i18next or its detector');
       // This helps prevent an unhandled promise rejection if init fails.;
     });
 ;
-  // Add this check at the beginning of the relevant section;
+  // Add this check at the beginning of the relevant section;'
   if (typeof window !== 'undefined') {;
     // For RTL language support;
     document.documentElement.dir = i18n.dir();
 ;
-    // Listen for language changes to update RTL/LTR direction;
+    // Listen for language changes to update RTL/LTR direction;'
     i18n.on('languageChanged', (lng) => {;
       document.documentElement.dir = i18n.dir();
 ;
-      // Save language preference to cookie and localStorage;
-      setCookie('i18n_lang', lng);
+      // Save language preference to cookie and localStorage;'
+      setCookie('i18n_lang', lng);'
       safeStorage.setItem('i18n_lang', lng);
 ;
       // If user is authenticated, save language preference to profile;
@@ -93,28 +93,28 @@ if (!i18n) {;
     });
   };
 };
-
-// Capture missing translation keys on both client and server;
-i18n.on('missingKey', (lngs, namespace, key) => {;
-  logErrorToProduction(`Missing translation key: "${key"}`, {;
-    data: "{;",
+;
+// Capture missing translation keys on both client and server;'
+i18n.on('missingKey', (lngs, namespace, key) => {;'
+  logErrorToProduction(`Missing translation key: "${key"}`, {;"
+    data: "{;",;"
       languages: "lngs",;
       namespace,;
     },;
   });
-  // Also persist missing keys on the server for easier debugging;
+  // Also persist missing keys on the server for easier debugging;"
   if (typeof window === 'undefined') {;
     try {;
-      // Use dynamic imports for Node.js modules in server-side environment;
+      // Use dynamic imports for Node.js modules in server-side environment;'
       import('fs');
-        .then(async (fs) => {;
-//           const _path = await import('path');
-          const logsDir = path.join(process.cwd(), 'logs');
-          if (!fs.existsSync(logsDir)) {;
-            fs.mkdirSync(logsDir, { recursive: "true "});
-          };
-          const filePath = path.join(logsDir, 'missing-keys.log');
-          const line = `${new Date().toISOString()} ${lngs.join(',')} ${namespace} ${key}\n`;
+        .then(async (fs) => {;'
+//           const _path: unknown unknown = await import('path');'
+          const logsDir: unknown unknown = path.join(process.cwd(), 'logs');
+          if (!fs.existsSync(logsDir)) {;'
+            fs.mkdirSync(logsDir, { recursive: "true "} catch (error) {});
+          };"
+          const filePath: unknown unknown = path.join(logsDir, 'missing-keys.log');'
+          const line: unknown unknown = `${new Date().toISOString()} ${lngs.join(',')} ${namespace} ${key}\n`;
           fs.appendFileSync(filePath, line);
         });
         .catch(() => {;
@@ -127,3 +127,4 @@ i18n.on('missingKey', (lngs, namespace, key) => {;
 });
 ;
 export default i18n;
+'

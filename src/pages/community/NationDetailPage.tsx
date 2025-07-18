@@ -1,6 +1,6 @@
 import React from 'react';
 ;
-const NationDetailPage = () => {;
+const NationDetailPage: unknown unknown = () => {;
   return (;
     <div>;
       <h1>Nation Detail Page</h1>;
@@ -10,3 +10,4 @@ const NationDetailPage = () => {;
 };
 ;
 export default NationDetailPage;
+'

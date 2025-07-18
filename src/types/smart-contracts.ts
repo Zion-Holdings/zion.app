@@ -5,27 +5,28 @@ export interface SmartContractInfo {;
   transactionHash?: string;
   networkName?: BlockchainNetwork;
   blockNumber?: number;
-  deployedAddress?: string;
+  deployedAddress?: string;'
   contractType: 'escrow' | 'milestone' | 'simpleAgreement';
-  metadataUrl?: string;
-  createdAt: "string;",
-  createdBy: string;
+  metadataUrl?: string;'
+  createdAt: "string;",;"
+  createdBy: "string;","
   status: 'draft' | 'deployed' | 'executed' | 'cancelled';
 };
-
-export interface EscrowContractDetails {;
-  client: "string;",
-  talent: string;
-  amount: "number;",
-  currency: string;
-  deliverables: "string;",
+;
+export interface EscrowContractDetails {;'
+  client: "string;",;"
+  talent: "string;","
+  amount: "number;",;"
+  currency: "string;","
+  deliverables: "string;",;
   completionDeadline: string;
   arbitrator?: string;
 };
-
+;
 export interface DeploymentOptions {;
   network: BlockchainNetwork;
-  walletAddress?: string;
-  useEscrow: "boolean;",
-  deployToChain: "boolean;"
+  walletAddress?: string;"
+  useEscrow: "boolean;",;"
+  deployToChain: "boolean;";
 };
+"

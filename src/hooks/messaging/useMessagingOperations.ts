@@ -1,12 +1,12 @@
-import type { UserDetails } from '@/types/auth';
-import { useConversationState } from './useConversationState';
-import { useConversations } from './useConversations';
+import type { UserDetails } from '@/types/auth';'
+import { useConversationState } from './useConversationState';'
+import { useConversations } from './useConversations';'
 import { useMessages } from './useMessages';
 ;
 /**;
  * Hook that combines all messaging operations;
  */;
-export function useMessagingOperations(user: UserDetails | null) {;
+export function useMessagingOperations(): unknown {user: UserDetails | null) {;
   // State management;
   const {;
     messages,;
@@ -55,7 +55,7 @@ export function useMessagingOperations(user: UserDetails | null) {;
     activeConversation,;
     setActiveConversation,;
     isLoading,;
-
+;
     // Operations;
     sendMessage,;
     createConversation,;
@@ -64,3 +64,4 @@ export function useMessagingOperations(user: UserDetails | null) {;
     loadMessages,;
   };
 };
+'

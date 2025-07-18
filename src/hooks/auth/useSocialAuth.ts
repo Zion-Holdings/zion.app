@@ -1,111 +1,111 @@
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';'
+import { toast } from '@/hooks/use-toast';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export const _useSocialAuth = () => {;
-  const loginWithGoogle = async () => {;
+export const _useSocialAuth: unknown unknown = () => {;
+  const loginWithGoogle: unknown unknown = async () => {;
     try {;
-      const { _error } = await supabase!.auth.signInWithOAuth({;
+      const { _error } catch (error) {}= await supabase!.auth.signInWithOAuth({;'
         provider: 'google',;
       });
 ;
       if (error) {;
-        toast({;
-          title: 'Google login failed',;
-          description: "error.message",;
+        toast({;'
+          title: 'Google login failed',;'
+          description: "error.message",;"
           variant: 'destructive',;
         });
       };
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('Google login error:', { data: "error "});
-      const errorMessage =;
+      const errorMessage: unknown unknown =;
         error instanceof Error && error.message;
-          ? error.message;
+          ? error.message;"
           : 'An unexpected error occurred';
-      toast({;
-        title: 'Google login failed',;
-        description: "errorMessage",;
+      toast({;'
+        title: 'Google login failed',;'
+        description: "errorMessage",;"
         variant: 'destructive',;
       });
     };
   };
 ;
-  const loginWithGitHub = async () => {;
+  const loginWithGitHub: unknown unknown = async () => {;
     try {;
-      const { _error } = await supabase!.auth.signInWithOAuth({;
+      const { _error } catch (error) {}= await supabase!.auth.signInWithOAuth({;'
         provider: 'github',;
       });
 ;
       if (error) {;
-        toast({;
-          title: 'GitHub login failed',;
-          description: "error.message",;
+        toast({;'
+          title: 'GitHub login failed',;'
+          description: "error.message",;"
           variant: 'destructive',;
         });
       };
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('GitHub login error:', { data: "error "});
-      const errorMessage =;
+      const errorMessage: unknown unknown =;
         error instanceof Error && error.message;
-          ? error.message;
+          ? error.message;"
           : 'An unexpected error occurred';
-      toast({;
-        title: 'GitHub login failed',;
-        description: "errorMessage",;
+      toast({;'
+        title: 'GitHub login failed',;'
+        description: "errorMessage",;"
         variant: 'destructive',;
       });
     };
   };
 ;
-  const loginWithFacebook = async () => {;
+  const loginWithFacebook: unknown unknown = async () => {;
     try {;
-      const { _error } = await supabase!.auth.signInWithOAuth({;
+      const { _error } catch (error) {}= await supabase!.auth.signInWithOAuth({;'
         provider: 'facebook',;
       });
 ;
       if (error) {;
-        toast({;
-          title: 'Facebook login failed',;
-          description: "error.message",;
+        toast({;'
+          title: 'Facebook login failed',;'
+          description: "error.message",;"
           variant: 'destructive',;
         });
       };
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('Facebook login error:', { data: "error "});
-      const errorMessage =;
+      const errorMessage: unknown unknown =;
         error instanceof Error && error.message;
-          ? error.message;
+          ? error.message;"
           : 'An unexpected error occurred';
-      toast({;
-        title: 'Facebook login failed',;
-        description: "errorMessage",;
+      toast({;'
+        title: 'Facebook login failed',;'
+        description: "errorMessage",;"
         variant: 'destructive',;
       });
     };
   };
 ;
-  const loginWithTwitter = async () => {;
+  const loginWithTwitter: unknown unknown = async () => {;
     try {;
-      const { _error } = await supabase!.auth.signInWithOAuth({;
+      const { _error } catch (error) {}= await supabase!.auth.signInWithOAuth({;'
         provider: 'twitter',;
       });
 ;
       if (error) {;
-        toast({;
-          title: 'Twitter login failed',;
-          description: "error.message",;
+        toast({;'
+          title: 'Twitter login failed',;'
+          description: "error.message",;"
           variant: 'destructive',;
         });
       };
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('Twitter login error:', { data: "error "});
-      const errorMessage =;
+      const errorMessage: unknown unknown =;
         error instanceof Error && error.message;
-          ? error.message;
+          ? error.message;"
           : 'An unexpected error occurred';
-      toast({;
-        title: 'Twitter login failed',;
-        description: "errorMessage",;
+      toast({;'
+        title: 'Twitter login failed',;'
+        description: "errorMessage",;"
         variant: 'destructive',;
       });
     };
@@ -118,3 +118,4 @@ export const _useSocialAuth = () => {;
     loginWithTwitter,;
   };
 };
+'

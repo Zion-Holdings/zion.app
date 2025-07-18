@@ -1,33 +1,34 @@
 import { useEffect, useState } from 'react';
 ;
-export function ScrollProgressBar() {;
+export function ScrollProgressBar(): unknown {) {;
   const [progress, setProgress] = useState(0);
 ;
   useEffect(() => {;
-    const updateProgress = () => {;
-      const scrollTop = window.scrollY;
-      const docHeight =;
+    const updateProgress: unknown unknown = () => {;
+      const scrollTop: unknown unknown = window.scrollY;
+      const docHeight: unknown unknown =;
         document.documentElement.scrollHeight - window.innerHeight;
-      const value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const value: unknown unknown = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       setProgress(value);
     };
 ;
-    updateProgress();
-    window.addEventListener('scroll', updateProgress);
+    updateProgress();'
+    window.addEventListener('scroll', updateProgress);'
     window.addEventListener('resize', updateProgress);
-    return () => {;
-      window.removeEventListener('scroll', updateProgress);
+    return () => {;'
+      window.removeEventListener('scroll', updateProgress);'
       window.removeEventListener('resize', updateProgress);
     };
   }, []);
 ;
-  return (;
+  return (;'
     <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-muted">;
-      <div;
-        className="h-full bg-primary transition-all";
-        style={{ width: "`${progress"}%` }};
+      <div;"
+        className="h-full bg-primary transition-all";"
+        style={{ width: "`${progress"}%` }};"
         aria-hidden="true";
       />;
     </div>;
   );
 };
+"

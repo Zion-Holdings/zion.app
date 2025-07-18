@@ -1,12 +1,13 @@
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';'
 import { formatPriceByLocale } from '@/utils/currency';
 ;
-export function useCurrency() {;
+export function useCurrency(): unknown {) {;
   const { _currentLanguage } = useLanguage();
 ;
-  const formatPrice = (_amountUSD: number) => {;
+  const formatPrice: unknown unknown = (_amountUSD: number) => {;
     return formatPriceByLocale(amountUSD, currentLanguage);
   };
 ;
   return { formatPrice };
 };
+'

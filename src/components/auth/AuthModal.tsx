@@ -1,5 +1,5 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';'
+import { useRouter } from 'next/router';'
 import { Button } from '@/components/ui/button';
 import {;
   Dialog,;
@@ -7,28 +7,28 @@ import {;
   DialogHeader,;
   DialogTitle,;
   DialogDescription,;
-  DialogFooter,;
+  DialogFooter,;'
 } from '@/components/ui/dialog';
 ;
-interface AuthModalProps {;
-  isOpen: "boolean;",
+interface AuthModalProps {;'
+  isOpen: "boolean;",;
   onClose: () => void;
   returnUrl?: string;
 };
-
-export const _AuthModal: React.FC<AuthModalProps> = ({;
+;
+export const _AuthModal: unknown React.FC<AuthModalProps> = ({;
   isOpen,;
-  onClose,;
+  onClose,;"
   returnUrl = '/marketplace',;
 }) => {;
-  const router = useRouter();
+  const router: unknown unknown = useRouter();
 ;
-  const handleLogin = () => {;
+  const handleLogin: unknown unknown = () => {;
     onClose();
     router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 ;
-  const handleSignUp = () => {;
+  const handleSignUp: unknown unknown = () => {;
     onClose();
     router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`);
   };
@@ -36,17 +36,17 @@ export const _AuthModal: React.FC<AuthModalProps> = ({;
   if (!isOpen) {;
     return null;
   };
-
-  return (;
-    <Dialog open={isOpen} onOpenChange={(open: "boolean) => !open && onClose()"}>;
+;
+  return (;'
+    <Dialog open={isOpen} onOpenChange={(open: "boolean) => !open && onClose()"}>;"
       <DialogContent className="sm:max-w-[425px]">;
         <DialogHeader>;
           <DialogTitle>Authentication Required</DialogTitle>;
           <DialogDescription>;
             Please log in or sign up to continue with your purchase.;
           </DialogDescription>;
-        </DialogHeader>;
-        <DialogFooter className="gap-2 sm:justify-center">;
+        </DialogHeader>;"
+        <DialogFooter className="gap-2 sm:justify-center">;"
           <Button variant="outline" onClick={handleSignUp}>;
             Sign Up;
           </Button>;
@@ -56,3 +56,4 @@ export const _AuthModal: React.FC<AuthModalProps> = ({;
     </Dialog>;
   );
 };
+"

@@ -1,11 +1,11 @@
-import { jsPDF } from 'jspdf';
-import type { Skill } from '@/types/resume';
+import { jsPDF } from 'jspdf';'
+import type { Skill } from '@/types/resume';'
 import type { PdfThemeColors } from '@/utils/pdf/themeConfig';
 ;
-export function addSkillsSection(;
-  doc: "jsPDF",;
-  skills: "Skill[]",;
-  colors: "PdfThemeColors",;
+export function addSkillsSection(): unknown {;'
+  doc: "jsPDF",;"
+  skills: "Skill[]",;"
+  colors: "PdfThemeColors",;"
   startY: "number",;
 ): number {;
   if (skills.length === 0) return startY;
@@ -13,7 +13,7 @@ export function addSkillsSection(;
   let yPos = startY;
 ;
   doc.setFontSize(16);
-  doc.setTextColor(colors.heading);
+  doc.setTextColor(colors.heading);"
   doc.text('Skills', 20, yPos);
   yPos += 8;
 ;
@@ -22,9 +22,9 @@ export function addSkillsSection(;
   yPos += 8;
 ;
   // Group skills by category;
-  const skillsByCategory = skills.reduce(;
-    (acc, skill) => {;
-      const category = skill.category || 'Other';
+  const skillsByCategory: unknown unknown = skills.reduce(;
+    (acc, skill) => {;'
+      const category: unknown unknown = skill.category || 'Other';
       if (!acc[category]) {;
         acc[category] = [];
       };
@@ -37,17 +37,18 @@ export function addSkillsSection(;
   doc.setFontSize(11);
   doc.setTextColor(colors.text);
 ;
-  for (const [category, categorySkills] of Object.entries(skillsByCategory)) {;
+  for (const [category, categorySkills] of Object.entries(skillsByCategory)) {;'
     doc.setFont('helvetica', 'bold');
-    doc.text(category, 20, yPos);
+    doc.text(category, 20, yPos);'
     doc.setFont('helvetica', 'normal');
-;
-    const skillsText = categorySkills.map((skill) => skill.name).join(', ');
-    const skillLines = doc.splitTextToSize(skillsText, 160);
+;'
+    const skillsText: unknown unknown = categorySkills.map((skill) => skill.name).join(', ');
+    const skillLines: unknown unknown = doc.splitTextToSize(skillsText, 160);
     doc.text(skillLines, 30, yPos + 5);
 ;
     yPos += skillLines.length * 5 + 10;
   };
-
+;
   return yPos + 5;
 };
+'

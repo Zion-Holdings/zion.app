@@ -1,20 +1,21 @@
-import React from 'react';
-import { Header } from '@/components/Header';
-import { IntegrationsHub } from '@/components/integrations/IntegrationsHub';
-import { SEO } from '@/components/SEO';
+import React from 'react';'
+import { Header } from '@/components/Header';'
+import { IntegrationsHub } from '@/components/integrations/IntegrationsHub';'
+import { SEO } from '@/components/SEO';'
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 ;
-export default function IntegrationsPage() {;
+export default function IntegrationsPage(): unknown {) {;
   return (;
     <ProtectedRoute adminOnly={true}>;
-      <SEO;
-        title="Integrations - Zion AI Marketplace";
+      <SEO;'
+        title="Integrations - Zion AI Marketplace";"
         description="Connect your Zion account with CRMs and Applicant Tracking Systems.";
       />;
-      <Header />;
+      <Header />;"
       <main className="min-h-screen bg-background">;
         <IntegrationsHub />;
       </main>;
     </ProtectedRoute>;
   );
 };
+"

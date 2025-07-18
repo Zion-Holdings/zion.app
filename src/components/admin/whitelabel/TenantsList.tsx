@@ -5,9 +5,9 @@ import {;
   ExternalLink,;
   Users,;
   RefreshCcw,;
-  PowerOff,;
-} from '@/components/ui/icons';
-import { supabase } from '@/integrations/supabase/client';
+  PowerOff,;'
+} from '@/components/ui/icons';'
+import { supabase } from '@/integrations/supabase/client';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 import {;
@@ -16,21 +16,21 @@ import {;
   TableCell,;
   TableHead,;
   TableHeader,;
-  TableRow,;
-} from '@/components/ui/table';
+  TableRow,;'
+} from '@/components/ui/table';'
 import { Button } from '@/components/ui/button';
 import {;
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;
-  DropdownMenuTrigger,;
-} from '@/components/ui/dropdown-menu';
-import { Badge } from '@/components/ui/badge';
-import { toast } from '@/hooks/use-toast';
-import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
+  DropdownMenuTrigger,;'
+} from '@/components/ui/dropdown-menu';'
+import { Badge } from '@/components/ui/badge';'
+import { toast } from '@/hooks/use-toast';'
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';'
 import { format } from 'date-fns';
 ;
-export function TenantsList() {;
+export function TenantsList(): unknown {) {;
   const [tenants, setTenants] = useState<WhitelabelTenant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 ;
@@ -38,25 +38,25 @@ export function TenantsList() {;
     loadTenants();
   }, []);
 ;
-  const loadTenants = async () => {;
+  const loadTenants: unknown unknown = async () => {;
     try {;
       setIsLoading(true);
-      if (!supabase) {;
+      if (!supabase) {;'
         throw new Error('Supabase client not available');
-      };
-
-      const { data, error } = await supabase;
-        .from('whitelabel_tenants');
-        .select('*');
+      } catch (error) {};
+;
+      const { data, error } = await supabase;'
+        .from('whitelabel_tenants');'
+        .select('*');'
         .order('created_at', { ascending: "false "});
 ;
       if (error) throw error;
       setTenants(data as WhitelabelTenant[]);
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;"
       logErrorToProduction('Error loading tenants:', { data: "error "});
-      toast({;
-        variant: 'destructive',;
-        title: 'Failed to load tenants',;
+      toast({;"
+        variant: 'destructive',;'
+        title: 'Failed to load tenants',;'
         description: "(error as Error).message",;
       });
     } finally {;
@@ -64,15 +64,15 @@ export function TenantsList() {;
     };
   };
 ;
-  const toggleTenantStatus = async (_tenant: WhitelabelTenant) => {;
+  const toggleTenantStatus: unknown unknown = async (_tenant: WhitelabelTenant) => {;
     try {;
-      if (!supabase) {;
+      if (!supabase) {;"
         throw new Error('Supabase client not available');
-      };
-
-      const { _error } = await supabase;
-        .from('whitelabel_tenants');
-        .update({ is_active: "!(tenant as WhitelabelTenant).is_active "});
+      } catch (error) {};
+;
+      const { _error } = await supabase;'
+        .from('whitelabel_tenants');'
+        .update({ is_active: "!(tenant as WhitelabelTenant).is_active "});"
         .eq('id', (tenant as WhitelabelTenant).id);
 ;
       if (error) throw error;
@@ -80,37 +80,37 @@ export function TenantsList() {;
       // Update local state;
       setTenants(;
         tenants.map((t) =>;
-          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id;
+          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id;'
             ? { ...t, is_active: "!(t as WhitelabelTenant).is_active "};
             : t,;
         ),;
       );
 ;
-      toast({;
-        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;
+      toast({;"
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;'
         description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,;
       });
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;'
       logErrorToProduction('Error toggling tenant status:', { data: "error "});
-      toast({;
-        variant: 'destructive',;
-        title: 'Failed to update tenant',;
+      toast({;"
+        variant: 'destructive',;'
+        title: 'Failed to update tenant',;'
         description: "(error as Error).message",;
       });
     };
   };
 ;
-  const verifyDns = async (_tenant: WhitelabelTenant) => {;
+  const verifyDns: unknown unknown = async (_tenant: WhitelabelTenant) => {;
     try {;
-      if (!supabase) {;
+      if (!supabase) {;"
         throw new Error('Supabase client not available');
-      };
-
-      // In a real implementation, this would verify DNS records;
+      } catch (error) {};
+;
+      // In a real implementation, this would verify DNS records;'
       // For now, we'll just mark it as verified;
-      const { _error } = await supabase;
-        .from('whitelabel_tenants');
-        .update({ dns_verified: "true "});
+      const { _error } = await supabase;'
+        .from('whitelabel_tenants');'
+        .update({ dns_verified: "true "});"
         .eq('id', (tenant as WhitelabelTenant).id);
 ;
       if (error) throw error;
@@ -118,41 +118,41 @@ export function TenantsList() {;
       // Update local state;
       setTenants(;
         tenants.map((t) =>;
-          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id;
+          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id;'
             ? { ...t, dns_verified: "true "};
             : t,;
         ),;
       );
 ;
-      toast({;
-        title: 'DNS verified',;
+      toast({;"
+        title: 'DNS verified',;'
         description: "`Custom domain for ${(tenant as WhitelabelTenant).brand_name"} has been verified.`,;
       });
-    } catch (error: unknown) {;
+    } catch (error: unknown) {;"
       logErrorToProduction('Error verifying DNS:', { data: "error "});
-      toast({;
-        variant: 'destructive',;
-        title: 'Failed to verify DNS',;
+      toast({;"
+        variant: 'destructive',;'
+        title: 'Failed to verify DNS',;'
         description: "(error as Error).message",;
       });
     };
   };
 ;
-  return (;
-    <div className="space-y-4">;
-      <div className="flex justify-between items-center">;
-        <h2 className="text-xl font-semibold">White-Label Tenants</h2>;
-        <Button onClick={loadTenants} variant="outline" size="sm">;
+  return (;"
+    <div className="space-y-4">;"
+      <div className="flex justify-between items-center">;"
+        <h2 className="text-xl font-semibold">White-Label Tenants</h2>;"
+        <Button onClick={loadTenants} variant="outline" size="sm">;"
           <RefreshCcw className="mr-2 h-4 w-4" />;
           Refresh;
         </Button>;
       </div>;
-
-      {isLoading ? (;
-        <div className="flex justify-center p-8">;
+;
+      {isLoading ? (;"
+        <div className="flex justify-center p-8">;"
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>;
         </div>;
-      ) : (;
+      ) : (;"
         <div className="rounded-md border">;
           <Table>;
             <TableHeader>;
@@ -161,7 +161,7 @@ export function TenantsList() {;
                 <TableHead>Subdomain</TableHead>;
                 <TableHead>Custom Domain</TableHead>;
                 <TableHead>Status</TableHead>;
-                <TableHead>Created At</TableHead>;
+                <TableHead>Created At</TableHead>;"
                 <TableHead className="text-right">Actions</TableHead>;
               </TableRow>;
             </TableHeader>;
@@ -169,7 +169,7 @@ export function TenantsList() {;
               {tenants.length === 0 ? (;
                 <TableRow>;
                   <TableCell;
-                    colSpan={6};
+                    colSpan={6};"
                     className="text-center py-8 text-muted-foreground";
                   >;
                     No tenants found. Create a new white-label instance to get;
@@ -178,82 +178,82 @@ export function TenantsList() {;
                 </TableRow>;
               ) : (;
                 tenants.map((tenant) => (;
-                  <TableRow key={tenant.id}>;
+                  <TableRow key={tenant.id}>;"
                     <TableCell className="font-medium">;
                       {tenant.brand_name};
                     </TableCell>;
                     <TableCell>;
-                      <a;
-                        href={`https: "//${tenant.subdomain"}.ziontechmarketplace.com`};
-                        target="_blank";
-                        rel="noopener noreferrer";
+                      <a;"
+                        href={`https: "//${tenant.subdomain"}.ziontechmarketplace.com`};"
+                        target="_blank";"
+                        rel="noopener noreferrer";"
                         className="flex items-center hover:underline";
                       >;
-                        {tenant.subdomain};
+                        {tenant.subdomain};"
                         <ExternalLink className="ml-1 h-3 w-3" />;
                       </a>;
                     </TableCell>;
                     <TableCell>;
-                      {tenant.custom_domain ? (;
+                      {tenant.custom_domain ? (;"
                         <div className="flex items-center">;
-                          <a;
-                            href={`https: "//${tenant.custom_domain"}`};
-                            target="_blank";
-                            rel="noopener noreferrer";
+                          <a;"
+                            href={`https: "//${tenant.custom_domain"}`};"
+                            target="_blank";"
+                            rel="noopener noreferrer";"
                             className="hover:underline flex items-center";
                           >;
-                            {tenant.custom_domain};
+                            {tenant.custom_domain};"
                             <ExternalLink className="ml-1 h-3 w-3" />;
                           </a>;
                           <Badge;
-                            variant={;
+                            variant={;"
                               tenant.dns_verified ? 'default' : 'outline';
                             };
-                          >;
+                          >;'
                             {tenant.dns_verified ? 'Verified' : 'Pending'};
                           </Badge>;
                           {!tenant.dns_verified && (;
-                            <Button;
-                              variant="ghost";
+                            <Button;'
+                              variant="ghost";"
                               size="sm";
-                              onClick={() => verifyDns(tenant)};
+                              onClick={() => verifyDns(tenant)};"
                               className="ml-1 h-6 w-6 p-0";
-                            >;
-                              <RefreshCcw className="h-3 w-3" />;
+                            >;"
+                              <RefreshCcw className="h-3 w-3" />;"
                               <span className="sr-only">Verify DNS</span>;
                             </Button>;
                           )};
                         </div>;
-                      ) : (;
+                      ) : (;"
                         <span className="text-muted-foreground text-sm">;
                           None;
                         </span>;
                       )};
                     </TableCell>;
                     <TableCell>;
-                      <Badge;
+                      <Badge;"
                         variant={tenant.is_active ? 'default' : 'destructive'};
-                      >;
+                      >;'
                         {tenant.is_active ? 'Active' : 'Inactive'};
                       </Badge>;
                     </TableCell>;
-                    <TableCell>;
+                    <TableCell>;'
                       {format(new Date(tenant.created_at), 'MMM d, yyyy')};
-                    </TableCell>;
+                    </TableCell>;'
                     <TableCell className="text-right">;
                       <DropdownMenu>;
-                        <DropdownMenuTrigger asChild>;
-                          <Button variant="ghost" size="sm">;
-                            <MoreHorizontal className="h-4 w-4" />;
+                        <DropdownMenuTrigger asChild>;"
+                          <Button variant="ghost" size="sm">;"
+                            <MoreHorizontal className="h-4 w-4" />;"
                             <span className="sr-only">Actions</span>;
                           </Button>;
-                        </DropdownMenuTrigger>;
+                        </DropdownMenuTrigger>;"
                         <DropdownMenuContent align="end">;
-                          <DropdownMenuItem>;
+                          <DropdownMenuItem>;"
                             <Edit className="mr-2 h-4 w-4" />;
                             Edit Tenant;
                           </DropdownMenuItem>;
-                          <DropdownMenuItem>;
+                          <DropdownMenuItem>;"
                             <Users className="mr-2 h-4 w-4" />;
                             Manage Admins;
                           </DropdownMenuItem>;
@@ -261,12 +261,12 @@ export function TenantsList() {;
                             onClick={() => toggleTenantStatus(tenant)};
                           >;
                             {tenant.is_active ? (;
-                              <>;
+                              <>;"
                                 <PowerOff className="mr-2 h-4 w-4" />;
                                 Disable Tenant;
                               </>;
                             ) : (;
-                              <>;
+                              <>;"
                                 <PowerOff className="mr-2 h-4 w-4" />;
                                 Enable Tenant;
                               </>;
@@ -285,3 +285,4 @@ export function TenantsList() {;
     </div>;
   );
 };
+"

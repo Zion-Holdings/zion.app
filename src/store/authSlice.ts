@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';'
 import type { PayloadAction } from '@reduxjs/toolkit';
 ;
-export interface AuthState {;
-  token: "string | null;",
-  isLoggedIn: "boolean;"
+export interface AuthState {;'
+  token: "string | null;",;"
+  isLoggedIn: "boolean;";
 };
-
-const initialState: "AuthState = {;",
-  token: "null",;
+;"
+const initialState: unknown "AuthState = {;",;"
+  token: "null",;"
   isLoggedIn: "false",;
 };
 ;
-const authSlice = createSlice({;
+const authSlice: unknown unknown = createSlice({;"
   name: 'auth',;
   initialState,;
   reducers: {;
@@ -28,3 +28,4 @@ const authSlice = createSlice({;
 ;
 export const { setToken, clearAuth } = authSlice.actions;
 export default authSlice.reducer;
+'

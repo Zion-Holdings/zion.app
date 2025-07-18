@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react';'
 import { useRouter } from 'next/router';
 ;
 /**;
  * Scrolls to the top of the window whenever the route changes.;
  */;
-export function useScrollToTop() {;
-  const router = useRouter();
+export function useScrollToTop(): unknown {) {;
+  const router: unknown unknown = useRouter();
   const { _pathname } = router;
 ;
-  useEffect(() => {;
+  useEffect(() => {;'
     window.scrollTo({ top: "0", behavior: 'smooth' });
   }, [pathname]);
 };
+'

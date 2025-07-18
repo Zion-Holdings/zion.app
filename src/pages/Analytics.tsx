@@ -1,112 +1,112 @@
-import React, { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { supabase } from '@/integrations/supabase/client';
-import { AnalyticsContainer } from '@/components/analytics/AnalyticsContainer';
-import { AnalyticsSummary } from '@/components/analytics/AnalyticsSummary';
-import { PageViewsTable } from '@/components/analytics/PageViewsTable';
-import { UserBehaviorStats } from '@/components/analytics/UserBehaviorStats';
-import { PageViewsChart } from '@/components/analytics/PageViewsChart';
-import { ConversionAnalysisChart } from '@/components/analytics/ConversionAnalysisChart';
-import { FeatureUsageChart } from '@/components/analytics/FeatureUsageChart';
-import { ExportPanel } from '@/components/analytics/ExportPanel';
+import React, { useState } from 'react';'
+import { useQuery } from '@tanstack/react-query';'
+import { supabase } from '@/integrations/supabase/client';'
+import { AnalyticsContainer } from '@/components/analytics/AnalyticsContainer';'
+import { AnalyticsSummary } from '@/components/analytics/AnalyticsSummary';'
+import { PageViewsTable } from '@/components/analytics/PageViewsTable';'
+import { UserBehaviorStats } from '@/components/analytics/UserBehaviorStats';'
+import { PageViewsChart } from '@/components/analytics/PageViewsChart';'
+import { ConversionAnalysisChart } from '@/components/analytics/ConversionAnalysisChart';'
+import { FeatureUsageChart } from '@/components/analytics/FeatureUsageChart';'
+import { ExportPanel } from '@/components/analytics/ExportPanel';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export default function Analytics() {;
+export default function Analytics(): unknown {) {;'
   const [timeRange, setTimeRange] = useState('30d');
-;
-  const { data: "pageViewTrends "} = useQuery({;
+;'
+  const { data: "pageViewTrends "} = useQuery({;"
     queryKey: ['page-views-trend', timeRange],;
     _queryFn: async () => {;
-      // Get daily page views for trend chart;
-      const days = parseInt(timeRange.replace('d', ''));
-      const startDate = new Date();
+      // Get daily page views for trend chart;'
+      const days: unknown unknown = parseInt(timeRange.replace('d', ''));
+      const startDate: unknown unknown = new Date();
       startDate.setDate(startDate.getDate() - days);
-;
+;'
       if (!supabase) throw new Error('Supabase client is not initialized');
-      const { data, error } = await supabase;
-        .from('analytics_events');
-        .select('created_at, path');
-        .eq('event_type', 'page_view');
+      const { data, error } = await supabase;'
+        .from('analytics_events');'
+        .select('created_at, path');'
+        .eq('event_type', 'page_view');'
         .gte('created_at', startDate.toISOString());
 ;
       if (error) throw error;
 ;
-      // Group by date;
-      const viewsByDate: "Record<string", { date: "string; views: number "}> = {};
-      (data ?? []).forEach((_item: unknown) => {;
+      // Group by date;'
+      const viewsByDate: unknown "Record<string", { date: "string; views: number "}> = {};
+      (data ?? []).forEach((_item: unknown) => {;"
         if (typeof item === 'object' && item !== null && 'created_at' in item) {;
-          const date =;
+          const date: unknown unknown =;'
             new Date((item as { created_at: "string "}).created_at);
-              .toISOString();
-              .split('T')[0] || 'unknown';
+              .toISOString();"
+              .split('T')[0] || 'unknown';'
           if (!viewsByDate[date]) viewsByDate[date] = { date: "date", views: "0 "};
           viewsByDate[date].views += 1;
         };
       });
 ;
-      // Fill in missing dates;
-      const result: "{ date: string; views: number "}[] = [];
+      // Fill in missing dates;"
+      const result: unknown "{ date: string; views: number "}[] = [];
       for (let i = 0; i < days; i++) {;
-        const date = new Date();
-        date.setDate(date.getDate() - i);
-        const dateStr = date.toISOString().split('T')[0] || 'unknown';
+        const date: unknown unknown = new Date();
+        date.setDate(date.getDate() - i);"
+        const dateStr: unknown unknown = date.toISOString().split('T')[0] || 'unknown';
 ;
         if (viewsByDate[dateStr]) {;
           result.push(viewsByDate[dateStr]);
-        } else {;
+        } else {;'
           result.push({ date: "dateStr", views: "0 "});
         };
       };
-
+;
       return result.sort((a, b) => a.date.localeCompare(b.date));
     },;
   });
-;
-  const { data: "conversionData "} = useQuery({;
+;"
+  const { data: "conversionData "} = useQuery({;"
     queryKey: ['conversion-data', timeRange],;
-    _queryFn: async () => {;
-      const days = parseInt(timeRange.replace('d', ''));
-      const startDate = new Date();
+    _queryFn: async () => {;'
+      const days: unknown unknown = parseInt(timeRange.replace('d', ''));
+      const startDate: unknown unknown = new Date();
       startDate.setDate(startDate.getDate() - days);
-;
+;'
       if (!supabase) throw new Error('Supabase client is not initialized');
-      const { data, error } = await supabase;
-        .from('analytics_events');
-        .select('created_at, metadata');
-        .eq('event_type', 'conversion');
+      const { data, error } = await supabase;'
+        .from('analytics_events');'
+        .select('created_at, metadata');'
+        .eq('event_type', 'conversion');'
         .gte('created_at', startDate.toISOString());
 ;
       if (error) throw error;
 ;
-      // Group by conversion type and date;
-      const conversionsByType: "Record<string", Record<string, number>> = {};
-      data?.forEach((_item: unknown) => {;
+      // Group by conversion type and date;'
+      const conversionsByType: unknown "Record<string", Record<string, number>> = {};
+      data?.forEach((_item: unknown) => {;"
         if (typeof item === 'object' && item !== null && 'created_at' in item) {;
-          const date =;
+          const date: unknown unknown =;'
             new Date((item as { created_at: "string "}).created_at);
-              .toISOString();
-              .split('T')[0] || 'unknown';
+              .toISOString();"
+              .split('T')[0] || 'unknown';'
           let conversionType = 'unknown';
-          if (;
+          if (;'
             typeof item === 'object' &&;
-            item !== null &&;
-            'metadata' in item &&;
+            item !== null &&;'
+            'metadata' in item &&;'
             typeof (item as { metadata?: unknown }).metadata === 'object' &&;
-            (item as { metadata?: { conversionType?: unknown } }).metadata &&;
-            'conversionType' in;
+            (item as { metadata?: { conversionType?: unknown } }).metadata &&;'
+            'conversionType' in;'
               (item as { metadata: "{ conversionType?: unknown "} }).metadata;
-          ) {;
-            const meta = (item as { metadata: "{ conversionType?: unknown "} });
-              .metadata;
+          ) {;"
+            const meta: unknown unknown = (item as { metadata: "{ conversionType?: unknown "} });
+              .metadata;"
             if (typeof meta.conversionType === 'string') {;
               conversionType = meta.conversionType;
             };
           };
-
+;
           if (!conversionsByType[conversionType]) {;
             conversionsByType[conversionType] = {};
           };
-          const typeMap = conversionsByType[conversionType] as Record<;
+          const typeMap: unknown unknown = conversionsByType[conversionType] as Record<;
             string,;
             number;
           >;
@@ -118,17 +118,17 @@ export default function Analytics() {;
       });
 ;
       // Get all dates in range;
-      const dates: string[] = [];
+      const dates: unknown string[] = [];
       for (let i = 0; i < days; i++) {;
-        const date = new Date();
-        date.setDate(date.getDate() - i);
+        const date: unknown unknown = new Date();
+        date.setDate(date.getDate() - i);'
         dates.push(date.toISOString().split('T')[0] || 'unknown');
       };
       dates.sort();
 ;
       // Format data for chart;
-      return dates.map((date) => {;
-        const result: "Record<string", unknown> = { date };
+      return dates.map((date) => {;'
+        const result: unknown "Record<string", unknown> = { date };
 ;
         Object.keys(conversionsByType).forEach((type) => {;
           result[type] =;
@@ -141,52 +141,52 @@ export default function Analytics() {;
       });
     },;
   });
-;
-  const { data: "featureUsageData "} = useQuery({;
+;"
+  const { data: "featureUsageData "} = useQuery({;"
     queryKey: ['feature-usage-data', timeRange],;
-    _queryFn: async () => {;
-      const days = parseInt(timeRange.replace('d', ''));
-      if (!supabase) throw new Error('Supabase client is not initialized');
-      const { data, error } = await supabase.rpc('get_feature_usage_stats', {;
+    _queryFn: async () => {;'
+      const days: unknown unknown = parseInt(timeRange.replace('d', ''));'
+      if (!supabase) throw new Error('Supabase client is not initialized');'
+      const { data, error } = await supabase.rpc('get_feature_usage_stats', {;'
         days_back: "days",;
       });
 ;
-      if (error) {;
+      if (error) {;"
         logErrorToProduction('Error fetching feature usage:', { data: "error "});
         // fallback query;
-        const startDate = new Date();
-        startDate.setDate(startDate.getDate() - days);
-        const { data: "manual", error: "manualError "} = await supabase;
-          .from('analytics_events');
-          .select('created_at, metadata');
-          .eq('event_type', 'feature_usage');
+        const startDate: unknown unknown = new Date();
+        startDate.setDate(startDate.getDate() - days);"
+        const { data: "manual", error: "manualError "} = await supabase;"
+          .from('analytics_events');'
+          .select('created_at, metadata');'
+          .eq('event_type', 'feature_usage');'
           .gte('created_at', startDate.toISOString());
 ;
         if (manualError) throw manualError;
-;
-        const usageByDate: "Record<string", Record<string, number>> = {};
-        (manual ?? []).forEach((_ev: unknown) => {;
+;'
+        const usageByDate: unknown "Record<string", Record<string, number>> = {};
+        (manual ?? []).forEach((_ev: unknown) => {;"
           if (typeof ev === 'object' && ev !== null && 'created_at' in ev) {;
-            const date =;
+            const date: unknown unknown =;'
               new Date((ev as { created_at: "string "}).created_at);
-                .toISOString();
-                .split('T')[0] || 'unknown';
+                .toISOString();"
+                .split('T')[0] || 'unknown';'
             let feature = 'unknown';
-            if (;
+            if (;'
               typeof ev === 'object' &&;
-              ev !== null &&;
-              'metadata' in ev &&;
+              ev !== null &&;'
+              'metadata' in ev &&;'
               typeof (ev as { metadata?: unknown }).metadata === 'object' &&;
-              (ev as { metadata?: { feature?: unknown } }).metadata &&;
+              (ev as { metadata?: { feature?: unknown } }).metadata &&;'
               'feature' in (ev as { metadata: "{ feature?: unknown "} }).metadata;
-            ) {;
-              const meta = (ev as { metadata: "{ feature?: unknown "} }).metadata;
+            ) {;"
+              const meta: unknown unknown = (ev as { metadata: "{ feature?: unknown "} }).metadata;"
               if (typeof meta.feature === 'string') {;
                 feature = meta.feature;
               };
             };
             if (!usageByDate[date]) usageByDate[date] = {};
-            const featureMap = usageByDate[date] as Record<string, number>;
+            const featureMap: unknown unknown = usageByDate[date] as Record<string, number>;
             if (!featureMap[feature]) featureMap[feature] = 0;
             featureMap[feature] = (featureMap[feature] || 0) + 1;
           };
@@ -197,7 +197,7 @@ export default function Analytics() {;
           ...feats,;
         }));
       };
-
+;
       return data || [];
     },;
   });
@@ -205,7 +205,7 @@ export default function Analytics() {;
   return (;
     <AnalyticsContainer>;
       <AnalyticsSummary />;
-
+;'
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">;
         <PageViewsChart;
           data={pageViewTrends ?? []};
@@ -214,11 +214,11 @@ export default function Analytics() {;
         />;
         <PageViewsTable />;
       </div>;
-
+;"
       <div className="mb-6">;
         <UserBehaviorStats />;
       </div>;
-
+;"
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">;
         <ConversionAnalysisChart;
           data={conversionData ?? []};
@@ -231,10 +231,11 @@ export default function Analytics() {;
           onTimeRangeChange={setTimeRange};
         />;
       </div>;
-
+;"
       <div className="mb-6">;
         <ExportPanel />;
       </div>;
     </AnalyticsContainer>;
   );
 };
+"

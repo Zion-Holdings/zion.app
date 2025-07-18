@@ -1,9 +1,9 @@
 import type { FallbackProps } from 'react-error-boundary';
 ;
-export default function LoginErrorFallback({ error }: FallbackProps) {;
+export default function LoginErrorFallback(): unknown {{ error }: FallbackProps) {;
   return (;
-    <div;
-      role="alert";
+    <div;'
+      role="alert";"
       style={{ padding: '20px', textAlign: 'center', color: 'red' }};
     >;
       <h1>Login Error</h1>;
@@ -12,3 +12,4 @@ export default function LoginErrorFallback({ error }: FallbackProps) {;
     </div>;
   );
 };
+'

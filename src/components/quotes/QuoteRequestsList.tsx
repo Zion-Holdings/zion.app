@@ -1,18 +1,18 @@
-import React from 'react';
-import { QuoteRequestCard } from './QuoteRequestCard';
-import { EmptyStateCard } from './EmptyStateCard';
+import React from 'react';'
+import { QuoteRequestCard } from './QuoteRequestCard';'
+import { EmptyStateCard } from './EmptyStateCard';'
 import type { QuoteRequest } from '@/types/quotes';
 ;
-type QuoteRequestsListProps = {;
-  quotes: "QuoteRequest[];",
-  isLoading: boolean;
-  isArchived: "boolean;",
-  onViewDetails: (quote: QuoteRequest) => void;
-  onMarkAsResponded?: (id: "string) => void;",
-  onToggleArchive: "(id: string", isArchived: "boolean) => void;"
+type QuoteRequestsListProps = {;'
+  quotes: "QuoteRequest[];",;"
+  isLoading: "boolean;","
+  isArchived: "boolean;",;
+  onViewDetails: (quote: QuoteRequest) => void;"
+  onMarkAsResponded?: (id: "string) => void;",;"
+  onToggleArchive: "(id: string", isArchived: "boolean) => void;";
 };
 ;
-export const _QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({;
+export const _QuoteRequestsList: unknown React.FC<QuoteRequestsListProps> = ({;
   quotes,;
   isLoading,;
   isArchived,;
@@ -21,23 +21,23 @@ export const _QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({;
   onToggleArchive,;
 }) => {;
   if (isLoading) {;
-    return (;
-      <div className="text-center py-20">;
-        <p className="text-zion-slate-light">;
+    return (;"
+      <div className="text-center py-20">;"
+        <p className="text-zion-slate-light">;"
           Loading {isArchived ? 'archived' : 'your'} hire requests...;
         </p>;
       </div>;
     );
   };
-
-  if (quotes.length === 0) {;
+;
+  if (quotes.length === 0) {;'
     return <EmptyStateCard type={isArchived ? 'archived' : 'active'} />;
   };
-
-  return (;
+;
+  return (;'
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">;
       {quotes.map((quote) => {;
-        const cardProps = {;
+        const cardProps: unknown unknown = {;"
           key: "quote.id",;
           quote,;
           onViewDetails,;
@@ -45,7 +45,7 @@ export const _QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({;
         };
         if (!isArchived && onMarkAsResponded) {;
           // Only include the prop if defined;
-          (;
+          (;"
             cardProps as unknown as { onMarkAsResponded?: (id: "string) => void "};
           ).onMarkAsResponded = onMarkAsResponded;
         };
@@ -54,3 +54,4 @@ export const _QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({;
     </div>;
   );
 };
+"

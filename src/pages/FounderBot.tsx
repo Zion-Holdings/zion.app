@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Header } from '@/components/Header';
-import { SEO } from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { ChatAssistant } from '@/components/ChatAssistant';
+import React, { useState } from 'react';'
+import { Header } from '@/components/Header';'
+import { SEO } from '@/components/SEO';'
+import { Button } from '@/components/ui/button';'
+import { ChatAssistant } from '@/components/ChatAssistant';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export default function FounderBot() {;
+export default function FounderBot(): unknown {) {;
   const [open, setOpen] = useState(false);
 ;
-  const handleSendMessage = async (message: string): Promise<void> => {;
+  const handleSendMessage: unknown unknown = async (message: string): Promise<void> => {;
     try {;
-      await fetch(;
+      await fetch(;'
         'https://ziontechgroup.functions.supabase.co/functions/v1/founder-bot',;
-        {;
+        {;'
           method: 'POST',;
-          headers: {;
+          headers: {;'
             'Content-Type': 'application/json',;
-          },;
-          body: "JSON.stringify({;",
+          } catch (error) {},;'
+          body: "JSON.stringify({;",;"
             messages: [{ role: 'user', content: "message "}],;
           }),;
         },;
@@ -25,7 +25,7 @@ export default function FounderBot() {;
     } catch {;
       logErrorToProduction(;
         err instanceof Error ? error : String(err),;
-        err instanceof Error ? err : undefined,;
+        err instanceof Error ? err : undefined,;"
         { message: 'Founder bot error' },;
       );
     };
@@ -33,13 +33,13 @@ export default function FounderBot() {;
 ;
   return (;
     <>;
-      <SEO;
-        title="Founder AI";
+      <SEO;'
+        title="Founder AI";"
         description="Chat with the AI clone of our founder.";
       />;
-      <Header />;
-      <main className="min-h-screen bg-zion-blue text-white flex flex-col items-center justify-center p-4">;
-        <h1 className="text-3xl font-bold mb-6">Ask the Founder</h1>;
+      <Header />;"
+      <main className="min-h-screen bg-zion-blue text-white flex flex-col items-center justify-center p-4">;"
+        <h1 className="text-3xl font-bold mb-6">Ask the Founder</h1>;"
         <Button className="mb-4" onClick={() => setOpen(true)}>;
           Open Founder Chat;
         </Button>;
@@ -47,10 +47,10 @@ export default function FounderBot() {;
           <ChatAssistant;
             isOpen={open};
             onClose={() => setOpen(false)};
-            recipient={{;
-              id: 'founder-bot',;
-              name: 'Founder AI',;
-              avatarUrl: 'https://placehold.co/64x64?text=F',;
+            recipient={{;"
+              id: 'founder-bot',;'
+              name: 'Founder AI',;'
+              avatarUrl: 'https://placehold.co/64x64?text=F',;'
               role: 'Zion Founder Clone',;
             }};
             onSendMessage={handleSendMessage};
@@ -60,3 +60,4 @@ export default function FounderBot() {;
     </>;
   );
 };
+'

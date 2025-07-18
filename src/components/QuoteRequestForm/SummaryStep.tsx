@@ -1,48 +1,48 @@
-import { useEffect, useState } from 'react';
-import type { QuoteFormData } from '@/types/quotes';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { AIMatchingResults } from '@/components/AIMatchingResults';
-import { findMatches } from '@/lib/ai-matchmaking';
-import type { MatchResult } from '@/lib/ai-matchmaking';
-import { toast } from '@/hooks/use-toast';
+import { useEffect, useState } from 'react';'
+import type { QuoteFormData } from '@/types/quotes';'
+import { Card, CardContent } from '@/components/ui/card';'
+import { Label } from '@/components/ui/label';'
+import { AIMatchingResults } from '@/components/AIMatchingResults';'
+import { findMatches } from '@/lib/ai-matchmaking';'
+import type { MatchResult } from '@/lib/ai-matchmaking';'
+import { toast } from '@/hooks/use-toast';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-interface SummaryStepProps {;
-  formData: "QuoteFormData;",
-  updateFormData: "(data: Partial<QuoteFormData>) => void;"
+interface SummaryStepProps {;'
+  formData: "QuoteFormData;",;"
+  updateFormData: "(data: Partial<QuoteFormData>) => void;";
 };
-
-export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
+;
+export function SummaryStep(): unknown {{ formData, updateFormData }: SummaryStepProps) {;
   const [isMatching, setIsMatching] = useState(false);
   const [matches, setMatches] = useState<MatchResult[]>([]);
 ;
   // Run AI matching when the component mounts;
   useEffect(() => {;
-    const runMatching = async () => {;
+    const runMatching: unknown unknown = async () => {;
       if (!formData.projectDescription) return;
 ;
       setIsMatching(true);
       try {;
         // Create a query string from the form data;
-        const queryString = `;
-          ${formData.projectName} ;
+        const queryString: unknown unknown = `;
+          ${formData.projectName} catch (error) {};
           ${formData.projectDescription} ;
-          ${formData.serviceType} ;
+          ${formData.serviceType} ;"
           ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''};
           ${formData.timeline};
         `;
 ;
         // Get AI matches;
-        const results = await findMatches(queryString, formData.serviceType, 3);
+        const results: unknown unknown = await findMatches(queryString, formData.serviceType, 3);
 ;
         setMatches(results);
-      } catch {;
+      } catch {;'
         logErrorToProduction('Error during AI matching:', { data: "error "});
-        toast({;
+        toast({;"
           title: 'Matching Error',;
-          description:;
-            "We couldn't find matches for your request. Please try again.",;
+          description:;'
+            "We couldn't find matches for your request. Please try again.",;"
           variant: 'destructive',;
         });
       } finally {;
@@ -53,37 +53,37 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
     runMatching();
   }, [formData]);
 ;
-  const handleSelectMatch = (_match: MatchResult) => {;
+  const handleSelectMatch: unknown unknown = (_match: MatchResult) => {;
     // Update the form with the selected match;
-    updateFormData({;
-      specificItem: "match.item",;
+    updateFormData({;'
+      specificItem: "match.item",;"
       serviceCategory: "match.item.category",;
     });
 ;
-    toast({;
-      title: 'Match Selected',;
+    toast({;"
+      title: 'Match Selected',;'
       description: `You've selected ${match.item.title}`,;
     });
   };
 ;
   // Extract just the items from each MatchResult for the AIMatchingResults component;
-  const matchItems = matches.map((match) => match.item);
-;
-  // Type guard for objects with an 'id' property;
-  function hasId(obj: "unknown): obj is { id: string | number "} {;
-    return (;
+  const matchItems: unknown unknown = matches.map((match) => match.item);
+;'
+  // Type guard for objects with an 'id' property;'
+  function hasId(): unknown {obj: "unknown): obj is { id: string | number "} {;
+    return (;"
       typeof obj === 'object' &&;
-      obj !== null &&;
-      'id' in obj &&;
-      (typeof (obj as { id: "unknown "}).id === 'string' ||;
+      obj !== null &&;'
+      'id' in obj &&;'
+      (typeof (obj as { id: "unknown "}).id === 'string' ||;'
         typeof (obj as { id: "unknown "}).id === 'number');
     );
   };
-
+;
   // Map the onSelectMatch handler to work with the item directly;
-  const handleItemSelect = (_item: unknown) => {;
+  const handleItemSelect: unknown unknown = (_item: unknown) => {;
     // Find the original MatchResult that contains this item;
-    const matchResult = hasId(item);
+    const matchResult: unknown unknown = hasId(item);
       ? matches.find((match) => match.item.id === item.id);
       : undefined;
     if (matchResult) {;
@@ -91,12 +91,12 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
     };
   };
 ;
-  return (;
-    <div className="space-y-6">;
+  return (;'
+    <div className="space-y-6">;"
       <h3 className="text-xl font-semibold text-white mb-4">;
         Review Your Request;
       </h3>;
-
+;
       {/* AI Matching Results */};
       <AIMatchingResults;
         serviceType={formData.serviceType};
@@ -105,23 +105,23 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
         onSelectMatch={handleItemSelect};
         isLoading={isMatching};
       />;
-
+;
       {/* Service Information */};
-      <div>;
+      <div>;"
         <h4 className="text-lg font-medium text-white mb-2">;
           Service Information;
-        </h4>;
-        <Card className="bg-zion-blue-dark border border-zion-blue-light">;
-          <CardContent className="pt-4">;
+        </h4>;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light">;"
+          <CardContent className="pt-4">;"
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
-              <div>;
-                <Label className="text-zion-slate-light">Service Type</Label>;
+              <div>;"
+                <Label className="text-zion-slate-light">Service Type</Label>;"
                 <div className="text-white">{formData.serviceType}</div>;
               </div>;
-
+;
               {formData.specificItem && (;
-                <div>;
-                  <Label className="text-zion-slate-light">Selected Item</Label>;
+                <div>;"
+                  <Label className="text-zion-slate-light">Selected Item</Label>;"
                   <div className="text-white">;
                     {formData.specificItem.title};
                   </div>;
@@ -131,22 +131,22 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
           </CardContent>;
         </Card>;
       </div>;
-
+;
       {/* Project Details */};
-      <div>;
-        <h4 className="text-lg font-medium text-white mb-2">Project Details</h4>;
-        <Card className="bg-zion-blue-dark border border-zion-blue-light">;
-          <CardContent className="pt-4">;
+      <div>;"
+        <h4 className="text-lg font-medium text-white mb-2">Project Details</h4>;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light">;"
+          <CardContent className="pt-4">;"
             <div className="space-y-4">;
-              <div>;
-                <Label className="text-zion-slate-light">Project Name</Label>;
+              <div>;"
+                <Label className="text-zion-slate-light">Project Name</Label>;"
                 <div className="text-white">{formData.projectName}</div>;
               </div>;
-
-              <div>;
+;
+              <div>;"
                 <Label className="text-zion-slate-light">;
                   Project Description;
-                </Label>;
+                </Label>;"
                 <div className="text-white whitespace-pre-wrap">;
                   {formData.projectDescription};
                 </div>;
@@ -155,30 +155,30 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
           </CardContent>;
         </Card>;
       </div>;
-
+;
       {/* Timeline */};
-      <div>;
-        <h4 className="text-lg font-medium text-white mb-2">Timeline</h4>;
-        <Card className="bg-zion-blue-dark border border-zion-blue-light">;
-          <CardContent className="pt-4">;
+      <div>;"
+        <h4 className="text-lg font-medium text-white mb-2">Timeline</h4>;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light">;"
+          <CardContent className="pt-4">;"
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
-              <div>;
-                <Label className="text-zion-slate-light">Timeline Type</Label>;
+              <div>;"
+                <Label className="text-zion-slate-light">Timeline Type</Label>;"
                 <div className="text-white capitalize">{formData.timeline}</div>;
               </div>;
-
+;
               {formData.startDate && (;
-                <div>;
-                  <Label className="text-zion-slate-light">Start Date</Label>;
+                <div>;"
+                  <Label className="text-zion-slate-light">Start Date</Label>;"
                   <div className="text-white">;
                     {formData.startDate.toLocaleDateString()};
                   </div>;
                 </div>;
               )};
-
+;
               {formData.endDate && (;
-                <div>;
-                  <Label className="text-zion-slate-light">End Date</Label>;
+                <div>;"
+                  <Label className="text-zion-slate-light">End Date</Label>;"
                   <div className="text-white">;
                     {formData.endDate.toLocaleDateString()};
                   </div>;
@@ -188,26 +188,26 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
           </CardContent>;
         </Card>;
       </div>;
-
+;
       {/* Budget */};
-      <div>;
-        <h4 className="text-lg font-medium text-white mb-2">Budget</h4>;
-        <Card className="bg-zion-blue-dark border border-zion-blue-light">;
-          <CardContent className="pt-4">;
+      <div>;"
+        <h4 className="text-lg font-medium text-white mb-2">Budget</h4>;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light">;"
+          <CardContent className="pt-4">;"
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
-              <div>;
-                <Label className="text-zion-slate-light">Budget Type</Label>;
+              <div>;"
+                <Label className="text-zion-slate-light">Budget Type</Label>;"
                 <div className="text-white capitalize">;
                   {formData.budget.type};
                 </div>;
               </div>;
-
-              <div>;
-                <Label className="text-zion-slate-light">Amount</Label>;
+;
+              <div>;"
+                <Label className="text-zion-slate-light">Amount</Label>;"
                 <div className="text-white">;
                   ${formData.budget.amount.toLocaleString()};
                   {formData.budget.maxAmount;
-                    ? ` - $${formData.budget.maxAmount.toLocaleString()}`;
+                    ? ` - $${formData.budget.maxAmount.toLocaleString()}`;"
                     : ''};
                 </div>;
               </div>;
@@ -215,35 +215,35 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
           </CardContent>;
         </Card>;
       </div>;
-
+;
       {/* Contact Information */};
-      <div>;
+      <div>;'
         <h4 className="text-lg font-medium text-white mb-2">;
           Contact Information;
-        </h4>;
-        <Card className="bg-zion-blue-dark border border-zion-blue-light">;
-          <CardContent className="pt-4">;
+        </h4>;"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light">;"
+          <CardContent className="pt-4">;"
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
-              <div>;
-                <Label className="text-zion-slate-light">Name</Label>;
+              <div>;"
+                <Label className="text-zion-slate-light">Name</Label>;"
                 <div className="text-white">{formData.contactInfo.name}</div>;
               </div>;
-
-              <div>;
-                <Label className="text-zion-slate-light">Company</Label>;
-                <div className="text-white">;
+;
+              <div>;"
+                <Label className="text-zion-slate-light">Company</Label>;"
+                <div className="text-white">;"
                   {formData.contactInfo.company || 'N/A'};
                 </div>;
               </div>;
-
-              <div>;
-                <Label className="text-zion-slate-light">Email</Label>;
+;
+              <div>;'
+                <Label className="text-zion-slate-light">Email</Label>;"
                 <div className="text-white">{formData.contactInfo.email}</div>;
               </div>;
-
-              <div>;
-                <Label className="text-zion-slate-light">Phone</Label>;
-                <div className="text-white">;
+;
+              <div>;"
+                <Label className="text-zion-slate-light">Phone</Label>;"
+                <div className="text-white">;"
                   {formData.contactInfo.phone || 'N/A'};
                 </div>;
               </div>;
@@ -254,3 +254,4 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {;
     </div>;
   );
 };
+'

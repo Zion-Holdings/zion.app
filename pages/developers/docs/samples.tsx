@@ -1,14 +1,15 @@
 import type { GetServerSideProps } from 'next';
 ;
-// export const _getServerSideProps: GetServerSideProps = async () => {;
-  return {;
-    redirect: "{;",
-      destination: '/docs/sample-code',;
+// export const _getServerSideProps: unknown GetServerSideProps = async () => {;
+  return {;'
+    redirect: "{;",;"
+      destination: '/docs/sample-code',;'
       permanent: "false",;
     },;
   };
 };
 ;
-export default function SamplesRedirect() {;
+export default function SamplesRedirect(): unknown {) {;
   return null;
 };
+"

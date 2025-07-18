@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import type { ControllerRenderProps } from 'react-hook-form';
+import { useState } from 'react';'
+import { useForm } from 'react-hook-form';'
+import type { ControllerRenderProps } from 'react-hook-form';'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {;
   Form,;
@@ -8,76 +8,76 @@ import {;
   FormField,;
   FormItem,;
   FormLabel,;
-  FormMessage,;
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+  FormMessage,;'
+} from '@/components/ui/form';'
+import { Input } from '@/components/ui/input';'
+import { Button } from '@/components/ui/button';'
+import { Textarea } from '@/components/ui/textarea';'
 import type { ForumCategory } from '@/types/community';
 ;
-interface PostFormValues {;
-  title: "string;",
-  content: string;
-  categoryId: "ForumCategory;",
-  tags: "string;"
+interface PostFormValues {;'
+  title: "string;",;"
+  content: "string;","
+  categoryId: "ForumCategory;",;"
+  tags: "string;";
 };
-
+;
 interface PostFormProps {;
   initialValues?: Partial<PostFormValues>;
   onSubmit: (values: PostFormValues) => void;
   isEditing?: boolean;
 };
-
-export const PostForm = ({;
+;
+export const PostForm: unknown unknown = ({;
   initialValues,;
   onSubmit,;
   isEditing = false,;
 }: PostFormProps) => {;
-  const form = useForm<PostFormValues>({;
-    defaultValues: "{;",
-      title: initialValues?.title || '',;
-      content: initialValues?.content || '',;
-      categoryId: initialValues?.categoryId || 'project-help',;
+  const form: unknown unknown = useForm<PostFormValues>({;"
+    defaultValues: "{;",;"
+      title: initialValues?.title || '',;'
+      content: initialValues?.content || '',;'
+      categoryId: initialValues?.categoryId || 'project-help',;'
       tags: initialValues?.tags || '',;
     },;
   });
 ;
   const [isSubmitting, setIsSubmitting] = useState(false);
 ;
-  const handleSubmit = async (_values: PostFormValues) => {;
+  const handleSubmit: unknown unknown = async (_values: PostFormValues) => {;
     setIsSubmitting(true);
     try {;
       await onSubmit(values);
-    } finally {;
+    } catch (error) {}finally {;
       setIsSubmitting(false);
     };
   };
 ;
   return (;
     <Card>;
-      <CardHeader>;
+      <CardHeader>;'
         <CardTitle>{isEditing ? 'Edit Post' : 'Create New Post'}</CardTitle>;
       </CardHeader>;
       <CardContent>;
         <Form {...form}>;
-          <form;
+          <form;'
             className="space-y-6";
             onSubmit={form.handleSubmit(handleSubmit)};
           >;
             <FormField;
-              control={form.control};
+              control={form.control};"
               name="title";
               render={({;
                 field,;
-              }: {;
+              }: {;"
                 field: "ControllerRenderProps<PostFormValues", 'title'>;
               }) => (;
                 <FormItem>;
                   <FormLabel>Title</FormLabel>;
                   <FormControl>;
-                    <Input;
+                    <Input;'
                       placeholder="Enter post title...";
-                      {...field};
+                      {...field};"
                       data-testid="post-title-input";
                     />;
                   </FormControl>;
@@ -85,22 +85,22 @@ export const PostForm = ({;
                 </FormItem>;
               )};
             />;
-
+;
             <FormField;
-              control={form.control};
+              control={form.control};"
               name="content";
               render={({;
                 field,;
-              }: {;
+              }: {;"
                 field: "ControllerRenderProps<PostFormValues", 'content'>;
               }) => (;
                 <FormItem>;
                   <FormLabel>Content</FormLabel>;
                   <FormControl>;
-                    <Textarea;
-                      placeholder="Write your post content here...";
+                    <Textarea;'
+                      placeholder="Write your post content here...";"
                       className="min-h-[200px]";
-                      {...field};
+                      {...field};"
                       data-testid="post-content-input";
                     />;
                   </FormControl>;
@@ -108,22 +108,22 @@ export const PostForm = ({;
                 </FormItem>;
               )};
             />;
-
+;
             <FormField;
-              control={form.control};
+              control={form.control};"
               name="categoryId";
               render={({;
                 field,;
-              }: {;
+              }: {;"
                 field: "ControllerRenderProps<PostFormValues", 'categoryId'>;
               }) => (;
                 <FormItem>;
                   <FormLabel>Category</FormLabel>;
-                  <FormControl>;
-                    <select className="w-full p-2 border rounded-md" {...field}>;
-                      <option value="getting-hired">Getting Hired</option>;
-                      <option value="project-help">Project Help</option>;
-                      <option value="ai-tools">AI Tools Discussion</option>;
+                  <FormControl>;'
+                    <select className="w-full p-2 border rounded-md" {...field}>;"
+                      <option value="getting-hired">Getting Hired</option>;"
+                      <option value="project-help">Project Help</option>;"
+                      <option value="ai-tools">AI Tools Discussion</option>;"
                       <option value="feedback">;
                         Feedback & Feature Requests;
                       </option>;
@@ -133,19 +133,19 @@ export const PostForm = ({;
                 </FormItem>;
               )};
             />;
-
+;
             <FormField;
-              control={form.control};
+              control={form.control};"
               name="tags";
               render={({;
                 field,;
-              }: {;
+              }: {;"
                 field: "ControllerRenderProps<PostFormValues", 'tags'>;
               }) => (;
                 <FormItem>;
                   <FormLabel>Tags (comma-separated)</FormLabel>;
                   <FormControl>;
-                    <Input;
+                    <Input;'
                       placeholder="e.g. resume, hiring, flutter";
                       {...field};
                     />;
@@ -154,16 +154,16 @@ export const PostForm = ({;
                 </FormItem>;
               )};
             />;
-
-            <Button;
+;
+            <Button;"
               type="submit";
-              disabled={isSubmitting};
+              disabled={isSubmitting};"
               data-testid="publish-post-button";
             >;
-              {isSubmitting;
+              {isSubmitting;"
                 ? 'Submitting...';
-                : isEditing;
-                  ? 'Update Post';
+                : isEditing;'
+                  ? 'Update Post';'
                   : 'Create Post'};
             </Button>;
           </form>;
@@ -174,3 +174,4 @@ export const PostForm = ({;
 };
 ;
 export default PostForm;
+'

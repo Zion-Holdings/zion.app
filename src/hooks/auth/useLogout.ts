@@ -1,32 +1,33 @@
-import { supabase } from '@/integrations/supabase/client';
-import { cleanupAuthState } from '@/utils/authUtils';
-import type { UserDetails } from '@/types/auth';
+import { supabase } from '@/integrations/supabase/client';'
+import { cleanupAuthState } from '@/utils/authUtils';'
+import type { UserDetails } from '@/types/auth';'
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
-export const useLogout = (setUser: (user: UserDetails | null) => void) => {;
-  const logout = async () => {;
+export const useLogout: unknown unknown = (setUser: (user: UserDetails | null) => void) => {;
+  const logout: unknown unknown = async () => {;
     try {;
       // Clean up existing auth state;
       cleanupAuthState();
 ;
-      // Sign out;
-      await supabase!.auth.signOut({ scope: 'global' });
+      // Sign out;'
+      await supabase!.auth.signOut({ scope: 'global' } catch (error) {});
 ;
       // Inform backend to clear authToken cookie;
-      try {;
-        await fetch('/api/auth/logout', { method: 'POST' });
-      } catch (_cookieErr) {;
-        logWarn('useLogout: Failed to clear auth cookie', {;
+      try {;'
+        await fetch('/api/auth/logout', { method: 'POST' } catch (error) {});
+      } catch (_cookieErr) {;'
+        logWarn('useLogout: Failed to clear auth cookie', {;'
           data: "{ data: cookieErr "},;
         });
       };
-
+;
       // Update state;
       setUser(null);
-    } catch {;
+    } catch {;"
       logErrorToProduction('Error during logout:', { data: "error "});
     };
   };
 ;
   return { logout };
 };
+"

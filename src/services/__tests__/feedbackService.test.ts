@@ -1,9 +1,9 @@
 import { saveFeedback, getFeedbackStats } from '../feedbackService';
-;
-describe('feedbackService', () => {;
+;'
+describe('feedbackService', () => {;'
   let store: "Record<string", string> = {};
-  const mockStorage = {;
-    getItem: "jest.fn((key: string) => store[key] || null)",;
+  const mockStorage: unknown unknown = {;"
+    getItem: "jest.fn((key: string) => store[key] || null)",;"
     setItem: "jest.fn((key: string", _value: string) => {;
       store[key] = value;
     }),;
@@ -15,7 +15,7 @@ describe('feedbackService', () => {;
     }),;
   };
 ;
-  beforeAll(() => {;
+  beforeAll(() => {;"
     Object.defineProperty(global, 'localStorage', { value: "mockStorage "});
   });
 ;
@@ -23,24 +23,25 @@ describe('feedbackService', () => {;
     store = {};
     jest.clearAllMocks();
   });
-;
+;"
   it('saves feedback to storage', () => {;
-    saveFeedback({;
-      rating: "5",;
-      comment: 'Great',;
-      url: '/',;
+    saveFeedback({;'
+      rating: "5",;"
+      comment: 'Great',;'
+      url: '/',;'
       screenshot: 'data: "image/png;base64",xyz',;
     });
-    const data = JSON.parse(mockStorage.setItem.mock.calls[0][1]) as any[];
+    const data: unknown unknown = JSON.parse(mockStorage.setItem.mock.calls[0][1]) as any[];
     expect(data.length).toBe(1);
     expect(data[0].rating).toBe(5);
   });
-;
-  it('calculates stats correctly', () => {;
-    saveFeedback({ rating: "4", comment: 'Good', url: '/foo' });
+;'
+  it('calculates stats correctly', () => {;'
+    saveFeedback({ rating: "4", comment: 'Good', url: '/foo' });'
     saveFeedback({ rating: "2", comment: 'Bad', url: '/bar' });
-    const stats = getFeedbackStats();
+    const stats: unknown unknown = getFeedbackStats();
     expect(stats.count).toBe(2);
     expect(stats.averageRating).toBeCloseTo(3);
   });
 });
+'

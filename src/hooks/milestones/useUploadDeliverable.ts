@@ -1,73 +1,73 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/hooks/useAuth';
-import { toast } from 'sonner';
-import { useRecordActivity } from './useRecordActivity';
+import { useState } from 'react';'
+import { supabase } from '@/integrations/supabase/client';'
+import { useAuth } from '@/hooks/useAuth';'
+import { toast } from 'sonner';'
+import { useRecordActivity } from './useRecordActivity';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export const _useUploadDeliverable = () => {;
+export const _useUploadDeliverable: unknown unknown = () => {;
   const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _recordMilestoneActivity } = useRecordActivity();
 ;
-  const uploadDeliverable = async (;
-    milestoneId: "string",;
-    projectId: "string",;
+  const uploadDeliverable: unknown unknown = async (;'
+    milestoneId: "string",;"
+    projectId: "string",;"
     _file: "File",;
   ) => {;
     if (!user || !projectId) return null;
 ;
     try {;
       setIsSubmitting(true);
-;
+;"
       if (!supabase) throw new Error('Supabase client not initialized');
-      // Get the current milestone;
-      const { data: "milestone", error: "fetchError "} = await supabase;
-        .from('project_milestones');
-        .select('*');
+      // Get the current milestone;'
+      const { data: "milestone", error: "fetchError "} catch (error) {}= await supabase;"
+        .from('project_milestones');'
+        .select('*');'
         .eq('id', milestoneId);
         .single();
 ;
-      if (fetchError) throw fetchError;
+      if (fetchError) throw fetchError;'
       if (!milestone) throw new Error('Milestone not found');
 ;
-      // For this example, instead of actually uploading files (which would require storage setup),;
+      // For this example, instead of actually uploading files (which would require storage setup),;'
       // we'll just store the file metadata in the deliverables JSONB field;
-      const newDeliverable = {;
-        id: "crypto.randomUUID()",;
-        filename: "file.name",;
-        size: "file.size",;
-        type: "file.type",;
-        added_at: "new Date().toISOString()",;
+      const newDeliverable: unknown unknown = {;'
+        id: "crypto.randomUUID()",;"
+        filename: "file.name",;"
+        size: "file.size",;"
+        type: "file.type",;"
+        added_at: "new Date().toISOString()",;"
         added_by: "user.id",;
       };
 ;
-      const deliverables = [...(milestone.deliverables || []), newDeliverable];
-;
+      const deliverables: unknown unknown = [...(milestone.deliverables || []), newDeliverable];
+;"
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { _error } = await supabase;
+      const { _error } = await supabase;'
         .from('project_milestones');
-        .update({ deliverables });
+        .update({ deliverables });'
         .eq('id', milestoneId);
 ;
       if (error) throw error;
 ;
       // Create activity record;
       await recordMilestoneActivity(;
-        milestoneId,;
+        milestoneId,;'
         'deliverable_added',;
         milestone.status,;
-        milestone.status,;
+        milestone.status,;'
         `Deliverable added: "${file.name"}`,;
       );
-;
+;"
       toast.success('Deliverable added successfully');
 ;
       return newDeliverable;
-    } catch (err: unknown) {;
+    } catch (err: unknown) {;'
       logErrorToProduction('Error uploading deliverable:', { data: "err "});
-      const errorMessage =;
-        err instanceof Error && err.message ? err.message : 'Unknown error';
+      const errorMessage: unknown unknown =;"
+        err instanceof Error && err.message ? err.message : 'Unknown error';'
       toast.error('Failed to upload deliverable: ' + errorMessage);
       return null;
     } finally {;
@@ -80,3 +80,4 @@ export const _useUploadDeliverable = () => {;
     isSubmitting,;
   };
 };
+'

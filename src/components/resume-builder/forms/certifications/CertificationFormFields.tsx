@@ -4,34 +4,34 @@ import {;
   FormLabel,;
   FormControl,;
   FormMessage,;
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import type { UseFormReturn } from 'react-hook-form';
-import type { ControllerRenderProps } from 'react-hook-form';
+} from '@/components/ui/form';'
+import { Input } from '@/components/ui/input';'
+import type { UseFormReturn } from 'react-hook-form';'
+import type { ControllerRenderProps } from 'react-hook-form';'
 import type { CertificationFormValues } from './types';
 ;
-interface CertificationFormFieldsProps {;
-  form: "UseFormReturn<CertificationFormValues>;"
+interface CertificationFormFieldsProps {;'
+  form: "UseFormReturn<CertificationFormValues>;";
 };
-
-export function CertificationFormFields({;
+;
+export function CertificationFormFields(): unknown {{;
   form,;
 }: CertificationFormFieldsProps) {;
   return (;
-    <>;
+    <>;"
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
         <FormField;
-          control={form.control};
+          control={form.control};"
           name="name";
           render={({;
             field,;
-          }: {;
+          }: {;"
             field: "ControllerRenderProps<CertificationFormValues", 'name'>;
           }) => (;
             <FormItem>;
               <FormLabel>Certification Name</FormLabel>;
               <FormControl>;
-                <Input;
+                <Input;'
                   placeholder="AWS Certified Solutions Architect, PMP, etc.";
                   {...field};
                 />;
@@ -40,22 +40,22 @@ export function CertificationFormFields({;
             </FormItem>;
           )};
         />;
-
+;
         <FormField;
-          control={form.control};
+          control={form.control};"
           name="issuing_organization";
           render={({;
             field,;
           }: {;
             field: ControllerRenderProps<;
-              CertificationFormValues,;
+              CertificationFormValues,;"
               'issuing_organization';
             >;
           }) => (;
             <FormItem>;
               <FormLabel>Issuing Organization</FormLabel>;
               <FormControl>;
-                <Input;
+                <Input;'
                   placeholder="Amazon Web Services, PMI, etc.";
                   {...field};
                 />;
@@ -65,40 +65,40 @@ export function CertificationFormFields({;
           )};
         />;
       </div>;
-
+;"
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
         <FormField;
-          control={form.control};
+          control={form.control};"
           name="issue_date";
           render={({;
             field,;
-          }: {;
+          }: {;"
             field: "ControllerRenderProps<CertificationFormValues", 'issue_date'>;
           }) => (;
             <FormItem>;
               <FormLabel>Issue Date</FormLabel>;
-              <FormControl>;
+              <FormControl>;'
                 <Input type="date" {...field} value={field.value || ''} />;
               </FormControl>;
               <FormMessage />;
             </FormItem>;
           )};
         />;
-
+;
         <FormField;
-          control={form.control};
+          control={form.control};'
           name="expiration_date";
           render={({;
             field,;
           }: {;
             field: ControllerRenderProps<;
-              CertificationFormValues,;
+              CertificationFormValues,;"
               'expiration_date';
             >;
           }) => (;
             <FormItem>;
               <FormLabel>Expiration Date (Optional)</FormLabel>;
-              <FormControl>;
+              <FormControl>;'
                 <Input type="date" {...field} value={field.value || ''} />;
               </FormControl>;
               <FormMessage />;
@@ -106,44 +106,44 @@ export function CertificationFormFields({;
           )};
         />;
       </div>;
-
+;'
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;
         <FormField;
-          control={form.control};
+          control={form.control};"
           name="credential_id";
           render={({;
             field,;
           }: {;
             field: ControllerRenderProps<;
-              CertificationFormValues,;
+              CertificationFormValues,;"
               'credential_id';
             >;
           }) => (;
             <FormItem>;
               <FormLabel>Credential ID (Optional)</FormLabel>;
-              <FormControl>;
+              <FormControl>;'
                 <Input placeholder="ABC123XYZ" {...field} />;
               </FormControl>;
               <FormMessage />;
             </FormItem>;
           )};
         />;
-
+;
         <FormField;
-          control={form.control};
+          control={form.control};"
           name="credential_url";
           render={({;
             field,;
           }: {;
             field: ControllerRenderProps<;
-              CertificationFormValues,;
+              CertificationFormValues,;"
               'credential_url';
             >;
           }) => (;
             <FormItem>;
               <FormLabel>Credential URL (Optional)</FormLabel>;
               <FormControl>;
-                <Input;
+                <Input;'
                   placeholder="https://www.credential.com/verify/abc123";
                   {...field};
                 />;
@@ -156,3 +156,4 @@ export function CertificationFormFields({;
     </>;
   );
 };
+"

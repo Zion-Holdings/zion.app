@@ -1,33 +1,34 @@
-import { useState } from 'react';
-import { triggerTraining } from '@/services/zionGPTService';
+import { useState } from 'react';'
+import { triggerTraining } from '@/services/zionGPTService';'
 import { logErrorToProduction } from '@/utils/productionLogger';
 ;
-export default function AICoreDashboard() {;
+export default function AICoreDashboard(): unknown {) {;'
   const [status, setStatus] = useState<string>('idle');
 ;
-  async function startTraining() {;
+  async function startTraining(): unknown {) {;'
     setStatus('starting');
     try {;
-      const res = await triggerTraining();
+      const res: unknown unknown = await triggerTraining();
       setStatus(res.status);
-    } catch {;
+    } catch (error) {} catch {;'
       setStatus('error');
-      logErrorToProduction(err instanceof Error ? error : String(err), {;
+      logErrorToProduction(err instanceof Error ? error : String(err), {;'
         message: 'Training error',;
       });
     };
   };
-
-  return (;
-    <div className="p-6">;
+;
+  return (;'
+    <div className="p-6">;"
       <h1 className="text-2xl font-bold mb-4">ZionGPT Core</h1>;
-      <button;
+      <button;"
         className="bg-blue-600 text-white px-4 py-2 rounded";
         onClick={startTraining};
       >;
         Trigger Training;
-      </button>;
+      </button>;"
       <p className="mt-4">Status: "{status"}</p>;
     </div>;
   );
 };
+"

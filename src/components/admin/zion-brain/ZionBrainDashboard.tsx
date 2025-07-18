@@ -4,27 +4,27 @@ import {;
   CardContent,;
   CardDescription,;
   CardHeader,;
-  CardTitle,;
-} from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
+  CardTitle,;'
+} from '@/components/ui/card';'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';'
+import { Button } from '@/components/ui/button';'
 import { logInfo } from '@/utils/productionLogger';
 ;
-export function ZionBrainDashboard() {;
-  const handleOptimize = () => {;
+export function ZionBrainDashboard(): unknown {) {;
+  const handleOptimize: unknown unknown = () => {;'
     logInfo('Optimize prompts');
   };
 ;
-  return (;
-    <div className="space-y-6">;
-      <h1 className="text-2xl font-bold">Zion Brain</h1>;
+  return (;'
+    <div className="space-y-6">;"
+      <h1 className="text-2xl font-bold">Zion Brain</h1>;"
       <Tabs defaultValue="router" className="w-full">;
-        <TabsList>;
-          <TabsTrigger value="router">Prompt Router</TabsTrigger>;
-          <TabsTrigger value="reflex">Reflex Engine</TabsTrigger>;
-          <TabsTrigger value="optimizer">Prompt Optimizer</TabsTrigger>;
+        <TabsList>;"
+          <TabsTrigger value="router">Prompt Router</TabsTrigger>;"
+          <TabsTrigger value="reflex">Reflex Engine</TabsTrigger>;"
+          <TabsTrigger value="optimizer">Prompt Optimizer</TabsTrigger>;"
           <TabsTrigger value="stats">Visualization</TabsTrigger>;
-        </TabsList>;
+        </TabsList>;"
         <TabsContent value="router">;
           <Card>;
             <CardHeader>;
@@ -33,11 +33,11 @@ export function ZionBrainDashboard() {;
                 Route user prompts to the correct GPT ethereum.;
               </CardDescription>;
             </CardHeader>;
-            <CardContent>;
+            <CardContent>;"
               <p className="text-sm text-muted-foreground">;
                 Detects intent and forwards the request to one of the available;
                 chains.;
-              </p>;
+              </p>;"
               <ul className="list-disc pl-6 text-sm mt-2">;
                 <li>Resume builder</li>;
                 <li>DAO explainer</li>;
@@ -47,7 +47,7 @@ export function ZionBrainDashboard() {;
               </ul>;
             </CardContent>;
           </Card>;
-        </TabsContent>;
+        </TabsContent>;"
         <TabsContent value="reflex">;
           <Card>;
             <CardHeader>;
@@ -56,19 +56,19 @@ export function ZionBrainDashboard() {;
                 Monitors system activity and responds automatically.;
               </CardDescription>;
             </CardHeader>;
-            <CardContent>;
+            <CardContent>;"
               <ul className="list-disc pl-6 text-sm text-muted-foreground">;
                 <li>Surge in signups</li>;
                 <li>Spike in dispute flags</li>;
                 <li>Drop in ZION$ velocity</li>;
-              </ul>;
+              </ul>;"
               <p className="mt-2 text-sm">;
                 Automatically launches rewards, escalates support, or notifies;
                 admins.;
               </p>;
             </CardContent>;
           </Card>;
-        </TabsContent>;
+        </TabsContent>;"
         <TabsContent value="optimizer">;
           <Card>;
             <CardHeader>;
@@ -77,19 +77,19 @@ export function ZionBrainDashboard() {;
                 Improve prompts that are slow or underperforming.;
               </CardDescription>;
             </CardHeader>;
-            <CardContent>;
+            <CardContent>;"
               <Button size="sm" onClick={handleOptimize}>;
                 Run Optimization;
               </Button>;
             </CardContent>;
           </Card>;
-        </TabsContent>;
+        </TabsContent>;"
         <TabsContent value="stats">;
           <Card>;
             <CardHeader>;
               <CardTitle>Visualization Dashboard</CardTitle>;
             </CardHeader>;
-            <CardContent>;
+            <CardContent>;"
               <p className="text-sm text-muted-foreground">;
                 Logs usage per prompt type and highlights stuck users.;
               </p>;
@@ -100,5 +100,6 @@ export function ZionBrainDashboard() {;
     </div>;
   );
 };
-
+;
 export default ZionBrainDashboard;
+"

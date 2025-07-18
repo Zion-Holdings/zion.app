@@ -1,43 +1,43 @@
-import React from 'react';
-import * as React from 'react';
-import type { CSSProperties } from 'react';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import { useIsMobile } from '@/hooks/use-mobile';
+import React from 'react';'
+import * as React from 'react';'
+import type { CSSProperties } from 'react';'
+import { TooltipProvider } from '@/components/ui/tooltip';'
+import { useIsMobile } from '@/hooks/use-mobile';'
 import { cn } from '@/lib/utils';
 import type {;
   SidebarContext as SidebarContextType,;
-  SidebarState,;
+  SidebarState,;'
 } from '../sidebar.types';
+;'
+const SIDEBAR_COOKIE_NAME: unknown unknown = 'sidebar:state';
+const SIDEBAR_COOKIE_MAX_AGE: unknown unknown = 60 * 60 * 24 * 7;'
+const SIDEBAR_KEYBOARD_SHORTCUT: unknown unknown = 'b';
 ;
-const SIDEBAR_COOKIE_NAME = 'sidebar:state';
-const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
-const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
+const SidebarContext: unknown unknown = React.createContext<SidebarContextType | null>(null);
 ;
-const SidebarContext = React.createContext<SidebarContextType | null>(null);
-;
-export function useSidebar(): SidebarContextType {;
-  const context = React.useContext(SidebarContext);
-  if (!context) {;
+export function useSidebar(): unknown {): SidebarContextType {;
+  const context: unknown unknown = React.useContext(SidebarContext);
+  if (!context) {;'
     throw new Error('useSidebar must be used within a SidebarProvider.');
   };
-
+;
   return context as SidebarContextType;
 };
-
+;'
 export interface SidebarProviderProps extends React.ComponentProps<'div'> {;
   defaultOpen?: boolean;
-  open?: boolean;
-  onOpenChange?: (open: "boolean) => void;"
+  open?: boolean;'
+  onOpenChange?: (open: "boolean) => void;";
 };
-
-export const SidebarProvider = React.forwardRef<;
+;
+export const SidebarProvider: unknown unknown = React.forwardRef<;
   HTMLDivElement,;
   SidebarProviderProps;
 >(;
   (;
     {;
-      defaultOpen = true,;
-      open: "openProp",;
+      defaultOpen = true,;"
+      open: "openProp",;"
       onOpenChange: "setOpenProp",;
       className,;
       style,;
@@ -46,22 +46,22 @@ export const SidebarProvider = React.forwardRef<;
     },;
     ref,;
   ) => {;
-    const isMobile = useIsMobile();
+    const isMobile: unknown unknown = useIsMobile();
     const [openMobile, setOpenMobile] = React.useState(false);
 ;
     // This is the internal state of the sidebar.;
     // We use openProp and setOpenProp for control from outside the component.;
     const [_open, _setOpen] = React.useState(defaultOpen);
-    const open = openProp ?? _open;
-    const setOpen = React.useCallback(;
-      (value: boolean | ((value: boolean) => boolean)) => {;
-        const openState = typeof value === 'function' ? value(open) : value;
+    const open: unknown unknown = openProp ?? _open;
+    const setOpen: unknown unknown = React.useCallback(;
+      (value: boolean | ((value: boolean) => boolean)) => {;"
+        const openState: unknown unknown = typeof value === 'function' ? value(open) : value;
         if (setOpenProp) {;
           setOpenProp(openState);
         } else {;
           _setOpen(openState);
         };
-
+;
         // This sets the cookie to keep the sidebar state.;
         document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
       },;
@@ -69,7 +69,7 @@ export const SidebarProvider = React.forwardRef<;
     );
 ;
     // Helper to toggle the sidebar.;
-    const toggleSidebar = React.useCallback(() => {;
+    const toggleSidebar: unknown unknown = React.useCallback(() => {;
       return isMobile;
         ? setOpenMobile((open) => !open);
         : setOpen((open) => !open);
@@ -77,7 +77,7 @@ export const SidebarProvider = React.forwardRef<;
 ;
     // Adds a keyboard shortcut to toggle the sidebar.;
     React.useEffect(() => {;
-      const handleKeyDown = (_event: KeyboardEvent) => {;
+      const handleKeyDown: unknown unknown = (_event: KeyboardEvent) => {;
         if (;
           event.key === SIDEBAR_KEYBOARD_SHORTCUT &&;
           (event.metaKey || event.ctrlKey);
@@ -86,16 +86,16 @@ export const SidebarProvider = React.forwardRef<;
           toggleSidebar();
         };
       };
-;
-      window.addEventListener('keydown', handleKeyDown);
+;'
+      window.addEventListener('keydown', handleKeyDown);'
       return () => window.removeEventListener('keydown', handleKeyDown);
     }, [toggleSidebar]);
-;
+;'
     // We add a state so that we can do data-state="expanded" or "collapsed".;
-    // This makes it easier to style the sidebar with Tailwind classes.;
-    const state = open ? 'expanded' : ('collapsed' as SidebarState);
+    // This makes it easier to style the sidebar with Tailwind classes.;"
+    const state: unknown unknown = open ? 'expanded' : ('collapsed' as SidebarState);
 ;
-    const contextValue = React.useMemo(;
+    const contextValue: unknown unknown = React.useMemo(;
       (): SidebarContextType => ({;
         state,;
         open,;
@@ -121,13 +121,13 @@ export const SidebarProvider = React.forwardRef<;
         <TooltipProvider delayDuration={0}>;
           <div;
             style={;
-              {;
-                '--sidebar-width': '16rem',;
+              {;'
+                '--sidebar-width': '16rem',;'
                 '--sidebar-width-icon': '3rem',;
                 ...style,;
               } as CSSProperties;
             };
-            className={cn(;
+            className={cn(;'
               'group/sidebar-wrapper flex min-h-svh w-full [&:has([data-variant=inset])]:bg-sidebar',;
               className,;
             )};
@@ -140,7 +140,8 @@ export const SidebarProvider = React.forwardRef<;
       </SidebarContext.Provider>;
     );
   },;
-);
+);'
 SidebarProvider.displayName = 'SidebarProvider';
 ;
 export { SidebarContext };
+'

@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import React, { useState } from 'react';'
+import { Button } from '@/components/ui/button';'
+import { logErrorToProduction } from '@/utils/productionLogger';'
 import { Sparkles } from 'lucide-react';
 import {;
   getClientBudgetSuggestion,;
-  trackPricingSuggestion,;
+  trackPricingSuggestion,;'
 } from '@/services/pricingSuggestionService';
 import type {;
   PricingSuggestion,;
-  ClientBudgetParams,;
-} from '@/services/pricingSuggestionService';
-import { PricingSuggestionBox } from './PricingSuggestionBox';
+  ClientBudgetParams,;'
+} from '@/services/pricingSuggestionService';'
+import { PricingSuggestionBox } from './PricingSuggestionBox';'
 import { useAuth } from '@/hooks/useAuth';
 ;
-interface ClientBudgetRecommenderProps {;
-  jobTitle: "string;",
+interface ClientBudgetRecommenderProps {;'
+  jobTitle: "string;",;
   category: string;
   timeline?: string;
   scope?: string;
-  experienceLevel?: string;
-  onSuggestionApplied: "(minValue: number", maxValue: "number) => void;"
+  experienceLevel?: string;"
+  onSuggestionApplied: "(minValue: number", maxValue: "number) => void;";
 };
-
-export const ClientBudgetRecommender: React.FC<;
+;
+export const ClientBudgetRecommender: unknown React.FC<;
   ClientBudgetRecommenderProps;
 > = ({;
   jobTitle,;
@@ -36,26 +36,26 @@ export const ClientBudgetRecommender: React.FC<;
   const [suggestion, setSuggestion] = useState<PricingSuggestion | null>(null);
   const { _user } = useAuth();
 ;
-  const generateSuggestion = async () => {;
+  const generateSuggestion: unknown unknown = async () => {;
     if (!jobTitle || !category) {;
       return;
     };
-
+;
     setIsLoading(true);
     try {;
-      const params: ClientBudgetParams = {;
+      const params: unknown ClientBudgetParams = {;
         jobTitle,;
         category,;
-      };
+      } catch (error) {};
 ;
       if (timeline) params.timeline = timeline;
       if (scope) params.scope = scope;
       if (experienceLevel) params.experienceLevel = experienceLevel;
 ;
-      const result = await getClientBudgetSuggestion(params);
+      const result: unknown unknown = await getClientBudgetSuggestion(params);
       setSuggestion(result);
-    } catch {;
-      logErrorToProduction('Error generating budget suggestion:', {;
+    } catch {;"
+      logErrorToProduction('Error generating budget suggestion:', {;'
         data: "error",;
       });
     } finally {;
@@ -63,41 +63,41 @@ export const ClientBudgetRecommender: React.FC<;
     };
   };
 ;
-  const handleApplySuggestion = () => {;
+  const handleApplySuggestion: unknown unknown = () => {;
     if (suggestion) {;
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate);
 ;
       // Track this suggestion application;
       if (user && user.id) {;
-        trackPricingSuggestion({;
-          userId: "user.id",;
-          suggestionType: 'client',;
-          suggestedMin: "suggestion.minRate",;
-          suggestedMax: "suggestion.maxRate",;
+        trackPricingSuggestion({;"
+          userId: "user.id",;"
+          suggestionType: 'client',;'
+          suggestedMin: "suggestion.minRate",;"
+          suggestedMax: "suggestion.maxRate",;"
           accepted: "true",;
         });
       };
     };
   };
 ;
-  return (;
+  return (;"
     <div className="space-y-4">;
       <div>;
         {!suggestion && !isLoading ? (;
-          <Button;
-            type="button";
+          <Button;"
+            type="button";"
             variant="outline";
             onClick={generateSuggestion};
-            disabled={!jobTitle || !category};
+            disabled={!jobTitle || !category};"
             className="w-full";
-          >;
+          >;"
             <Sparkles className="h-4 w-4 mr-2" /> Get Budget Recommendation;
           </Button>;
         ) : (;
           <PricingSuggestionBox;
             suggestion={suggestion};
             isLoading={isLoading};
-            onApplySuggestion={handleApplySuggestion};
+            onApplySuggestion={handleApplySuggestion};"
             rateType="hourly";
           />;
         )};
@@ -105,3 +105,4 @@ export const ClientBudgetRecommender: React.FC<;
     </div>;
   );
 };
+"

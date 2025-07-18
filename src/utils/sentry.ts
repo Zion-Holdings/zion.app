@@ -1,8 +1,8 @@
-export function captureException(error: "unknown", context?: unknown): void {;
-  if (typeof window === 'undefined') {;
+export function captureException(): unknown {error: "unknown", context?: unknown): void {;"
+  if (typeof window === 'undefined') {;'
     import('@sentry/nextjs').then((Sentry) => {;
       if (;
-        context &&;
+        context &&;'
         (typeof context === 'object' || typeof context === 'function');
       ) {;
         Sentry.captureException(error, context);
@@ -12,3 +12,4 @@ export function captureException(error: "unknown", context?: unknown): void {;
     });
   };
 };
+'

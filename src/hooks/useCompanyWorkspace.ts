@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';'
 import type { Company } from '@/components/enterprise/workspace/CompanyDashboard';
 ;
-export function useCompanyWorkspace(companySlug?: string) {;
+export function useCompanyWorkspace(): unknown {companySlug?: string) {;
   const [company, setCompany] = useState<Company | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -12,25 +12,25 @@ export function useCompanyWorkspace(companySlug?: string) {;
     (async () => {;
       try {;
         if (!companySlug) {;
-          setCompany(null);
+          setCompany(null);'
           setError('No company slug provided');
           setIsLoading(false);
           return;
-        };
+        } catch (error) {};
         await new Promise((resolve) => setTimeout(resolve, 400));
-        setCompany({;
-          id: 'company-1',;
-          name: 'Zion AI',;
-          logoUrl: '/images/zion-logo.svg',;
-          plan: 'Pro',;
-          teamSize: "2",;
-          teamLimit: "10",;
-          billingCycle: 'monthly',;
+        setCompany({;'
+          id: 'company-1',;'
+          name: 'Zion AI',;'
+          logoUrl: '/images/zion-logo.svg',;'
+          plan: 'Pro',;'
+          teamSize: "2",;"
+          teamLimit: "10",;"
+          billingCycle: 'monthly',;'
           workspaceUrl: "`/workspace/${companySlug"}`,;
         });
         setError(null);
       } catch {;
-        setCompany(null);
+        setCompany(null);"
         setError('Company not found or erroror fetching data');
       } finally {;
         setIsLoading(false);
@@ -40,3 +40,4 @@ export function useCompanyWorkspace(companySlug?: string) {;
 ;
   return { company, isLoading, error };
 };
+'

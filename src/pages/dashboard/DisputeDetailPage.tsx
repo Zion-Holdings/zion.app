@@ -1,14 +1,14 @@
-import React from 'react';
-import { SEO } from '@/components/SEO';
-import { DisputeDetail } from '@/components/disputes';
+import React from 'react';'
+import { SEO } from '@/components/SEO';'
+import { DisputeDetail } from '@/components/disputes';'
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 ;
-function DisputeDetailPage() {;
+function DisputeDetailPage(): unknown {) {;
   return (;
     <ProtectedRoute>;
       <>;
-        <SEO;
-          title="Dispute Details | Zion AI Marketplace";
+        <SEO;'
+          title="Dispute Details | Zion AI Marketplace";"
           description="View and manage dispute details";
         />;
         <DisputeDetail />;
@@ -16,5 +16,6 @@ function DisputeDetailPage() {;
     </ProtectedRoute>;
   );
 };
-
+;
 export default DisputeDetailPage;
+"

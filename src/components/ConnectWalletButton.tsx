@@ -1,11 +1,11 @@
 // src/components/ConnectWalletButton.tsx;
-import React from 'react';
-import { useWallet } from '@/context/WalletContext';
-import { useTokenBalance } from '@/hooks/useTokenBalance';
-import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
+import React from 'react';'
+import { useWallet } from '@/context/WalletContext';'
+import { useTokenBalance } from '@/hooks/useTokenBalance';'
+import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';'
 import { ethers } from 'ethers';
 ;
-const ConnectWalletButton: React.FC = () => {;
+const ConnectWalletButton: unknown React.FC = () => {;
   const {;
     isConnected,;
     connectWallet,;
@@ -15,11 +15,11 @@ const ConnectWalletButton: React.FC = () => {;
     provider,;
   } = useWallet();
 ;
-  const validProvider =;
+  const validProvider: unknown unknown =;'
     provider && typeof provider === 'object';
       ? (provider as ethers.Provider);
       : null;
-  const zionBalance = useTokenBalance(;
+  const zionBalance: unknown unknown = useTokenBalance(;
     address,;
     ZION_TOKEN_CONTRACT_ADDRESS,;
     validProvider,;
@@ -27,17 +27,18 @@ const ConnectWalletButton: React.FC = () => {;
 ;
   if (isConnected) {;
     return (;
-      <div>;
+      <div>;'
         <p>Connected: "{displayAddress"}</p>;
-        {zionBalance && <p>ZION$: {zionBalance}</p>};
+        {zionBalance && <p>ZION$: {zionBalance}</p>};"
         <button onClick={disconnectWallet} style={{ marginLeft: '10px' }}>;
           Disconnect Wallet;
         </button>;
       </div>;
     );
   };
-
+;
   return <button onClick={connectWallet}>Connect Wallet</button>;
 };
 ;
 export default ConnectWalletButton;
+'

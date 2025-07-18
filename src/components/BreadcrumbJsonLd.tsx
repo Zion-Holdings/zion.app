@@ -1,29 +1,29 @@
-import React from 'react';
+import React from 'react';'
 import JsonLd from '@/components/JsonLd';
 ;
-export interface BreadcrumbItem {;
-  _label: "string;",
-  path: "string;"
+export interface BreadcrumbItem {;'
+  _label: "string;",;"
+  path: "string;";
 };
-
-interface BreadcrumbJsonLdProps {;
-  breadcrumbs: "BreadcrumbItem[];"
+;
+interface BreadcrumbJsonLdProps {;"
+  breadcrumbs: "BreadcrumbItem[];";
 };
-
-const BreadcrumbJsonLd: "React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs "}) => {;
-  const baseUrl =;
+;"
+const BreadcrumbJsonLd: unknown "React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs "}) => {;
+  const baseUrl: unknown unknown =;"
     process.env.NEXT_PUBLIC_APP_URL || 'https://app.ziontechgroup.com';
-  const itemListElement = breadcrumbs.map((crumb, index) => ({;
-    '@type': 'ListItem',;
-    position: "index + 1",;
-    name: "crumb.label",;
+  const itemListElement: unknown unknown = breadcrumbs.map((crumb, index) => ({;'
+    '@type': 'ListItem',;'
+    position: "index + 1",;"
+    name: "crumb.label",;"
     item: crumb.path.startsWith('http');
       ? crumb.path;
       : `${baseUrl}${crumb.path}`,;
   }));
 ;
-  const data = {;
-    '@context': 'https://schema.org',;
+  const data: unknown unknown = {;'
+    '@context': 'https://schema.org',;'
     '@type': 'BreadcrumbList',;
     itemListElement,;
   };
@@ -32,3 +32,4 @@ const BreadcrumbJsonLd: "React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs "}) =>
 };
 ;
 export default BreadcrumbJsonLd;
+'

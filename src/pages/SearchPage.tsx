@@ -1,31 +1,31 @@
-import { useRouter } from 'next/router';
-import React from 'react';
-import { useEffect, useState, useCallback } from 'react';
-import { Loader2 } from '@/components/ui/icons';
-import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
-import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput';
-import { generateSearchSuggestions } from '@/data/marketplaceData';
-import type { SearchSuggestion } from '@/types/search';
+import { useRouter } from 'next/router';'
+import React from 'react';'
+import { useEffect, useState, useCallback } from 'react';'
+import { Loader2 } from '@/components/ui/icons';'
+import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';'
+import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput';'
+import { generateSearchSuggestions } from '@/data/marketplaceData';'
+import type { SearchSuggestion } from '@/types/search';'
 import { logErrorToProduction } from '@/utils/productionLogger';
-;
+;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 ;
-interface SearchResult {;
-  id: "string;",
-  type: 'product' | 'service' | 'talent' | 'blog' | 'doc';
-  title: "string;",
-  description: "string;"
+interface SearchResult {;'
+  id: "string;",;"
+  type: 'product' | 'service' | 'talent' | 'blog' | 'doc';,'
+  title: "string;",;"
+  description: "string;";
 };
-
-function highlight(text: "string", term: string) {;
-  if (!term) return text;
-  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`(${escaped})`, 'gi');
-  const parts = text.split(regex);
+;"
+function highlight(): unknown {text: "string", term: string) {;
+  if (!term) return text;"
+  const escaped: unknown unknown = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');'
+  const regex: unknown unknown = new RegExp(`(${escaped})`, 'gi');
+  const parts: unknown unknown = text.split(regex);
   return (;
     <>;
       {parts.map((part, i) =>;
-        regex.test(part) ? (;
+        regex.test(part) ? (;'
           <mark key={i} className="bg-yellow-200 text-black">;
             {part};
           </mark>;
@@ -36,57 +36,57 @@ function highlight(text: "string", term: string) {;
     </>;
   );
 };
-
-export default function SearchPage() {;
-  const router = useRouterReady(); // Use our custom hook;
+;
+export default function SearchPage(): unknown {) {;
+  const router: unknown unknown = useRouterReady(); // Use our custom hook;"
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
-  const suggestions: SearchSuggestion[] = generateSearchSuggestions();
+  const suggestions: unknown SearchSuggestion[] = generateSearchSuggestions();
 ;
   // Force re-render and reset state when route changes;
-  const routeKey = useRouteChange(() => {;
+  const routeKey: unknown unknown = useRouteChange(() => {;
     setResults([]);
     setLoading(false);
   });
 ;
-  const productResults = results.filter(;
+  const productResults: unknown unknown = results.filter(;'
     (r) => r.type === 'product' || r.type === 'service',;
-  );
-  const talentResults = results.filter((r) => r.type === 'talent');
-  const docResults = results.filter((r) => r.type === 'doc');
-  const blogResults = results.filter((r) => r.type === 'blog');
-  const marketplaceResults = [...productResults, ...talentResults];
+  );'
+  const talentResults: unknown unknown = results.filter((r) => r.type === 'talent');'
+  const docResults: unknown unknown = results.filter((r) => r.type === 'doc');'
+  const blogResults: unknown unknown = results.filter((r) => r.type === 'blog');
+  const marketplaceResults: unknown unknown = [...productResults, ...talentResults];
 ;
   // Sync query with URL parameter changes;
   useEffect(() => {;
     if (!router.isReady) return;
-;
-    const urlQuery = (router.query.q as string) || '';
+;'
+    const urlQuery: unknown unknown = (router.query.q as string) || '';
     if (urlQuery !== query) {;
       setQuery(urlQuery);
     };
   }, [router.isReady, router.query.q, query]); // Fixed dependency array;
-
-  const fetchResults = useCallback(async (_term: string) => {;
+;
+  const fetchResults: unknown unknown = useCallback(async (_term: string) => {;
     if (!term.trim()) {;
       setResults([]);
       return;
     };
     setLoading(true);
     try {;
-      const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
-      const data = await res.json();
+      const res: unknown unknown = await fetch(`/api/search?query=${encodeURIComponent(term)} catch (error) {}`);
+      const data: unknown unknown = await res.json();
       if (data && data.results && Array.isArray(data.results)) {;
         setResults(data.results);
       } else {;
         setResults([]);
-        logErrorToProduction(;
-          'Search API response structure is not as expected:',;
+        logErrorToProduction(;'
+          'Search API response structure is not as expected:',;'
           { data: "data "},;
         );
       };
-    } catch {;
+    } catch {;"
       logErrorToProduction('Search failed:', { data: "error "});
       setResults([]);
     } finally {;
@@ -103,7 +103,7 @@ export default function SearchPage() {;
     };
   }, [router.isReady, query, fetchResults]);
 ;
-  const handleSubmit = (_e: React.FormEvent) => {;
+  const handleSubmit: unknown unknown = (_e: React.FormEvent) => {;
     e.preventDefault();
     if (query.trim()) {;
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
@@ -111,46 +111,46 @@ export default function SearchPage() {;
   };
 ;
   // Add key prop to force re-render when route changes;
-  const pageKey = `search-${routeKey}-${router.asPath}`;
+  const pageKey: unknown unknown = `search-${routeKey}-${router.asPath}`;
 ;
   return (;
-    <div key={pageKey}>;
-      <main className="container mx-auto px-4 py-8">;
+    <div key={pageKey}>;"
+      <main className="container mx-auto px-4 py-8">;"
         <form onSubmit={handleSubmit} className="mb-6">;
           <EnhancedSearchInput;
             value={query};
             onChange={setQuery};
             onSelectSuggestion={(suggestion) => {;
-              const searchTerm = suggestion.text.trim();
+              const searchTerm: unknown unknown = suggestion.text.trim();
               setQuery(searchTerm);
               router.push(`/search?q=${encodeURIComponent(searchTerm)}`);
             }};
-            searchSuggestions={suggestions};
+            searchSuggestions={suggestions};"
             placeholder="Search talent, jobs, and projects...";
           />;
         </form>;
-
-        {loading && (;
-          <div className="flex justify-center py-8">;
+;
+        {loading && (;"
+          <div className="flex justify-center py-8">;"
             <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />;
           </div>;
         )};
         {!loading &&;
           marketplaceResults.length === 0 &&;
           blogResults.length > 0 && (;
-            <div>;
+            <div>;"
               <p className="text-zion-slate-light mb-2">;
                 No marketplace results found. Related blog posts:;
-              </p>;
+              </p>;"
               <div className="space-y-4">;
                 {blogResults.map((r) => (;
                   <div;
-                    key={`blog-${r.id}`};
+                    key={`blog-${r.id}`};"
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4";
-                  >;
+                  >;"
                     <h3 className="text-lg font-bold text-white">;
                       {highlight(r.title, query)};
-                    </h3>;
+                    </h3>;"
                     <p className="text-zion-slate-light">;
                       {highlight(r.description, query)};
                     </p>;
@@ -162,87 +162,87 @@ export default function SearchPage() {;
         {!loading &&;
           marketplaceResults.length === 0 &&;
           blogResults.length === 0 &&;
-          query && (;
-            <p className="text-zion-slate-light">;
+          query && (;"
+            <p className="text-zion-slate-light">;"
               No results found for "{query}".;
             </p>;
           )};
-        {!loading && marketplaceResults.length > 0 && (;
-          <Tabs defaultValue="products" className="space-y-4">;
-            <TabsList className="mb-4">;
+        {!loading && marketplaceResults.length > 0 && (;"
+          <Tabs defaultValue="products" className="space-y-4">;"
+            <TabsList className="mb-4">;"
               <TabsTrigger value="products">;
                 Products ({productResults.length});
-              </TabsTrigger>;
+              </TabsTrigger>;"
               <TabsTrigger value="talent">;
                 Talent ({talentResults.length});
-              </TabsTrigger>;
-              <TabsTrigger value="docs">Docs ({docResults.length})</TabsTrigger>;
+              </TabsTrigger>;"
+              <TabsTrigger value="docs">Docs ({docResults.length})</TabsTrigger>;"
               <TabsTrigger value="blog">;
                 Blog ({blogResults.length});
               </TabsTrigger>;
-            </TabsList>;
+            </TabsList>;"
             <TabsContent value="products" className="space-y-4">;
-              {results;
+              {results;"
                 .filter((r) => r.type === 'product' || r.type === 'service');
                 .map((r) => (;
                   <div;
-                    key={`${r.type}-${r.id}`};
+                    key={`${r.type}-${r.id}`};'
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4";
-                  >;
+                  >;"
                     <h3 className="text-lg font-bold text-white">;
                       {highlight(r.title, query)};
-                    </h3>;
+                    </h3>;"
                     <p className="text-zion-slate-light">;
                       {highlight(r.description, query)};
                     </p>;
                   </div>;
                 ))};
-            </TabsContent>;
+            </TabsContent>;"
             <TabsContent value="talent" className="space-y-4">;
-              {results;
+              {results;"
                 .filter((r) => r.type === 'talent');
                 .map((r) => (;
                   <div;
-                    key={`talent-${r.id}`};
+                    key={`talent-${r.id}`};'
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4";
-                  >;
+                  >;"
                     <h3 className="text-lg font-bold text-white">;
                       {highlight(r.title, query)};
-                    </h3>;
+                    </h3>;"
                     <p className="text-zion-slate-light">;
                       {highlight(r.description, query)};
                     </p>;
                   </div>;
                 ))};
-            </TabsContent>;
+            </TabsContent>;"
             <TabsContent value="docs" className="space-y-4">;
-              {results;
+              {results;"
                 .filter((r) => r.type === 'doc');
                 .map((r) => (;
                   <div;
-                    key={`doc-${r.id}`};
+                    key={`doc-${r.id}`};'
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4";
-                  >;
+                  >;"
                     <h3 className="text-lg font-bold text-white">;
                       {highlight(r.title, query)};
-                    </h3>;
+                    </h3>;"
                     <p className="text-zion-slate-light">;
                       {highlight(r.description, query)};
                     </p>;
                   </div>;
                 ))};
-            </TabsContent>;
+            </TabsContent>;"
             <TabsContent value="blog" className="space-y-4">;
-              {results;
+              {results;"
                 .filter((r) => r.type === 'blog');
                 .map((r) => (;
                   <div;
-                    key={`blog-${r.id}`};
+                    key={`blog-${r.id}`};'
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4";
-                  >;
+                  >;"
                     <h3 className="text-lg font-bold text-white">;
                       {highlight(r.title, query)};
-                    </h3>;
+                    </h3>;"
                     <p className="text-zion-slate-light">;
                       {highlight(r.description, query)};
                     </p>;
@@ -255,3 +255,4 @@ export default function SearchPage() {;
     </div>;
   );
 };
+"
