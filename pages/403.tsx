@@ -1,11 +1,18 @@
-export default function Error403() {;
-  return (;
-    <>;
-      <head>;
-        <title>403 - Zion App</title>;
-      </head>;
-      <div className="min-h-screen flex items-center justify-center"";
-        <div className="text-center"";
-          <h1 className="text-6xl font-bold text-gray-900"";
-          <p className="text-xl text-gray-600 mt-4"";
-          <a href="/" className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg""
+import Head from 'next/head';
+
+export default function Error403() {
+  return (
+    <>
+      <Head>
+        <title>403 - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">403 - Forbidden</h1>
+        <p className="text-lg mb-4">You don't have permission to access this resource.</p>
+        <a href="/" className="text-blue-600 hover:underline">
+          Return to Home
+        </a>
+      </div>
+    </>
+  );
+}
