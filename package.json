@@ -239,7 +239,6 @@
     "continuous:stop": "npm run improvement:stop",
     "continuous:status": "npm run improvement:status",
     "continuous:report": "npm run improvement:report",
-<<<<<<< HEAD
     "ai-improvement:start": "node scripts/ai-continuous-improvement.cjs",
     "ai-improvement:stop": "pkill -f 'ai-continuous-improvement.cjs'",
     "ai-improvement:status": "curl -s http://localhost:3001/api/status | jq",
@@ -261,8 +260,7 @@
     "ai-delegate:logs": "tail -f logs/ai-improvement.log logs/cursor-delegator.log logs/multi-coordinator.log",
     "ai-delegate:setup": "node scripts/setup-ai-delegation.cjs",
     "ai-delegate:test": "node scripts/test-ai-delegation.cjs",
-    "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs"
-=======
+    "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs",
     "distributed-ai:start": "node scripts/distributed-ai-controller.cjs",
     "distributed-ai:install": "node scripts/cursor-ai-installer.cjs install-local",
     "distributed-ai:discover": "node scripts/cursor-ai-installer.cjs discover",
@@ -278,7 +276,6 @@
     "multi-computer:verify": "npm run distributed-ai:verify",
     "multi-computer:report": "npm run distributed-ai:report",
     "multi-computer:status": "npm run ai-coordinator:status"
->>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

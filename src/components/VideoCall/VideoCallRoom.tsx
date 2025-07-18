@@ -1,3 +1,3 @@
-import { VideoCallRoom as RealVideoCallRoom } from '../video/VideoCallRoom;
+import { VideoCallRoom as RealVideoCallRoom } from '../video/VideoCallRoom'
 export { RealVideoCallRoom as VideoCallRoom };'
 '''''

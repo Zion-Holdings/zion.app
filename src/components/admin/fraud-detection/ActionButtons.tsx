@@ -1,72 +1,72 @@
-import React from 'react';
+import React from 'react''
 import { Eye, Info, AlertTriangle, Ban } from '@/components/ui/icons;'
-import { Button } from '@/components/ui/button;
+import { Button } from '@/components/ui/button'
 ;'
-interface ActionButtonsProps {;;
-  flagId: "string;",;";";";";"
-  status: "string;",";";";";"
-  onAction: "(;",;";";";";"
-    flagId: "string",;";";";";"
-    action: 'warning' | 'suspension' | 'ban' | 'ignore',;
+interface ActionButtonsProps {;'
+  flagId: "string,;";";
+  status: "string",;"";
+  onAction: (",;";";"
+    flagId: string,";";"
+    action: 'warning' | 'suspension' | 'ban' | 'ignore','
   ) => void;
 };
-;
+
 export const _ActionButtons: unknown React.FC<ActionButtonsProps> = ({;
   flagId,;'
-  status,;
+  status,'
   onAction,;
 }) => {;'
-  return (;;
-    <div className="flex space-x-2">;";";";"
-      <Button;";";";";"
-        variant="ghost";";";";";"
-        size="icon";";";";";"
-        title="View Details";";";";";"
-        aria-label="View details";";";";";"
+  return (;'
+    <div className="flex space-x-2>;"";
+      <Button;"";
+        variant="ghost";";"
+        size=icon"";;""
+        title=View Details";";"
+        aria-label="View details;"";
         onClick={() => alert('View details (would open a detailed view)')};'
-      >;;
-        <Eye className="h-4 w-4" />;";";"
-      </Button>;";";";"
-      <Button;";";";";"
-        variant="ghost";";";";";"
-        size="icon";";";";";"
-        title="Send Warning";";";";";"
-        aria-label="Send warning";";";";";"
-        onClick={() => onAction(flagId, 'warning')};;
+      >;'
+        <Eye className="h-4 w-4" />;"
+      </Button>;";"
+      <Button;";";"
+        variant=ghost";";"
+        size="icon;"";
+        title="Send Warning";";"
+        aria-label=Send warning"";;""
+        onClick={() => onAction(flagId, 'warning')};'
         disabled={status === 'actioned' || status === 'ignored'};'
-      >;;
-        <Info className="h-4 w-4" />;";";"
-      </Button>;";";";"
-      <Button;";";";";"
-        variant="ghost";";";";";"
-        size="icon";";";";";"
-        title="Suspend User";";";";";"
-        aria-label="Suspend user";";";";";"
-        onClick={() => onAction(flagId, 'suspension')};;
+      >;'
+        <Info className=h-4 w-4 />";"
+      </Button>;";"
+      <Button;";";
+        variant="ghost";";"
+        size=icon"";;""
+        title=Suspend User";";"
+        aria-label="Suspend user;"";
+        onClick={() => onAction(flagId, 'suspension')};'
         disabled={status === 'actioned' || status === 'ignored'};'
-      >;;
-        <AlertTriangle className="h-4 w-4" />;";";"
-      </Button>;";";";"
-      <Button;";";";";"
-        variant="ghost";";";";";"
-        size="icon";";";";";"
-        title="Ban User";";";";";"
-        aria-label="Ban user";";";";";"
-        onClick={() => onAction(flagId, 'ban')};;
+      >;'
+        <AlertTriangle className="h-4 w-4" />;"
+      </Button>;";"
+      <Button;";";"
+        variant=ghost";";"
+        size="icon;"";
+        title="Ban User";";"
+        aria-label=Ban user"";;""
+        onClick={() => onAction(flagId, 'ban')};'
         disabled={status === 'actioned' || status === 'ignored'};'
-      >;;
-        <Ban className="h-4 w-4" />;";";";"
-      </Button>;";";";";"
+      >;'
+        <Ban className=h-4 w-4 />";";
+      </Button>";";"
       {status === 'pending' && (;'
-        <Button;;
-          variant="ghost";";";";";"
-          size="sm";";";";";"
-          onClick={() => onAction(flagId, 'ignore')};
+        <Button;'
+          variant="ghost;"";
+          size="sm";";""
+          onClick={() => onAction(flagId, 'ignore')}'
         >;
           Ignore;
         </Button>;
       )};'
-    </div>;
+    </div>'
   );
 };'
 '''''

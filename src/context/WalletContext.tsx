@@ -1,10 +1,10 @@
 import {
-  logInfo,
-  logWarn,
+  _logInfo as logInfo,
+  _logWarn as logWarn,
   logErrorToProduction,
-} from '@/utils/productionLogger
-import { getAppKitProjectId } from '@/config/env
-import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig
+} from '@/utils/productionLogger';
+import { _getAppKitProjectId as getAppKitProjectId } from '@/config/env';
+import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 
 import React, {
   createContext,
@@ -16,9 +16,9 @@ import React, {
   useMemo,
 } from 'react';
 import type { ReactNode } from 'react';
-import type { AppKitInstanceInterface } from '@reown/appkit/react
+import type { AppKitInstanceInterface } from '@reown/appkit/react';
 
-import { createAppKit } from '@reown/appkit/react
+import { createAppKit } from '@reown/appkit/react';
 import type {
   mainnet as _MainnetType,
   goerli as _GoerliType,
@@ -26,7 +26,7 @@ import type {
   optimism as _OptimismType,
   arbitrum as _ArbitrumType,
   base as _BaseType,
-} from '@reown/appkit/networks
+} from '@reown/appkit/networks';
 import {
   mainnet,
   goerli,
@@ -34,9 +34,9 @@ import {
   optimism,
   arbitrum,
   base,
-} from '@reown/appkit/networks
-import type { ethers as _EthersType } from 'ethers
-import { ethers } from 'ethers
+} from '@reown/appkit/networks';
+import type { ethers as _EthersType } from 'ethers';
+import { ethers } from 'ethers';
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
@@ -138,7 +138,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   ];
   if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
     const errorMessage =
-      'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.
+      'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.';
     if (process.env.NODE_ENV === 'development') {
       logErrorToProduction(errorMessage, {
         data: { resolvedProjectId: projectId },
@@ -159,7 +159,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     [],
   );
 
-  const ZION_CHAIN_MAP: Record<number, unknown> = {
+  const ZION_CHAIN_MAP: Record<number, any> = {
     1: mainnet,
     5: goerli,
     137: polygon,

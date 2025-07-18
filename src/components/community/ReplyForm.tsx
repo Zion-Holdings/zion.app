@@ -1,35 +1,35 @@
-import { useState } from 'react';
+import { useState } from 'react''
 import { useForm } from 'react-hook-form;'
 import type { ControllerRenderProps } from 'react-hook-form;'
 import { Button } from '@/components/ui/button;'
-import { Textarea } from '@/components/ui/textarea;
+import { Textarea } from '@/components/ui/textarea'
 import {;
   Form,;'
-  FormControl,;
-  FormField,;
+  FormControl,'
+  FormField,
   FormItem,;'
-  FormMessage,;;
+  FormMessage,;'
 } from '@/components/ui/form;'
-import { Card, CardContent } from '@/components/ui/card;
-;
+import { Card, CardContent } from '@/components/ui/card'
+
 interface ReplyFormProps {;
   onSubmit: (content: string) => Promise<void>;'
-  parentId?: string;
+  parentId?: string'
 };
 ;'
-interface ReplyFormValues {;;
-  content: "string;";";"
-};";";"
-;";";";"
-export const ReplyForm: unknown "unknown = ({ onSubmit", parentId }: ReplyFormProps) => {;";"
-  const [isSubmitting, setIsSubmitting] = useState(false);";";"
-;";";";"
-  const form: unknown = useForm<ReplyFormValues>({;";,";";";"
-    defaultValues: "{;",;";";";";"
-      content: '',;
+interface ReplyFormValues {;'
+  content: "string;"
+};";
+";";
+export const ReplyForm: unknown "unknown = ({ onSubmit", parentId }: ReplyFormProps) => {;
+  const [isSubmitting, setIsSubmitting] = useState(false)";"
+;";"
+  const form: unknown = useForm<ReplyFormValues>({;;,"";
+    defaultValues: "{",;;"";
+      content: '','
     },;
   });
-;
+
   const handleSubmit: unknown = async (_values: ReplyFormValues) => {;
     setIsSubmitting(true);
     try {;
@@ -38,40 +38,40 @@ export const ReplyForm: unknown "unknown = ({ onSubmit", parentId }: ReplyFormPr
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}finally {;
       setIsSubmitting(false);
     };'
-  };
-;
+  }'
+
   return (;'
-    <Card>;;
-      <CardContent className="pt-6">;"
-        <Form {...form}>;";"
-          <form onSubmit={form.handleSubmit(handleSubmit)}>;";";"
-            <FormField;";";";"
-              control={form.control};";";";";"
-              name="content";";"
-              render={({;";";"
-                field,;";";";"
-              }: {;";";";";"
-                field: "ControllerRenderProps<ReplyFormValues", 'content'>;
+    <Card>;'
+      <CardContent className=pt-6">"
+        <Form {...form}>;
+          <form onSubmit={form.handleSubmit(handleSubmit)}>;"";
+            <FormField;"";
+              control={form.control};"";
+              name="content";
+              render={({";"
+                field,;";"
+              }: {;";";
+                field: "ControllerRenderProps<ReplyFormValues", 'content'>'
               }) => (;
                 <FormItem>;'
-                  <FormControl>;
+                  <FormControl>'
                     <Textarea;
                       placeholder={;'
-                        parentId;;
+                        parentId;'
                           ? 'Write your reply...;'
-                          : 'Join the discussion...;
-                      };;
-                      className="min-h-[100px] resize-y";
+                          : 'Join the discussion...'
+                      };
+                      className=min-h-[100px] resize-y"
                       {...field};
                     />;
-                  </FormControl>;"
-                  <FormMessage />;";"
-                </FormItem>;";";"
-              )};";";";"
-            />;";";";";"
-            <div className="mt-4 flex justify-end">;";";";";"
-              <Button type="submit" disabled={isSubmitting}>;";";";";"
-                {isSubmitting ? 'Submitting...' : 'Post Reply'};
+                  </FormControl>"
+                  <FormMessage />;
+                </FormItem>;"";
+              )};"";
+            />;"";
+            <div className="mt-4 flex justify-end">;";"
+              <Button type=submit" disabled={isSubmitting}>";;""
+                {isSubmitting ? 'Submitting...' : 'Post Reply'}'
               </Button>;
             </div>;
           </form>;
@@ -79,7 +79,7 @@ export const ReplyForm: unknown "unknown = ({ onSubmit", parentId }: ReplyFormPr
       </CardContent>;
     </Card>;
   );'
-};
-;
+}'
+
 export default ReplyForm;'
 '''''

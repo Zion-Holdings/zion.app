@@ -1,26 +1,26 @@
 import { Button } from '@/components/ui/button;'
 import { useAuth } from '@/hooks/useAuth;'
-import { useRouter } from 'next/router;
+import { useRouter } from 'next/router'
 import {;'
-  Tooltip,;
-  TooltipContent,;
+  Tooltip,'
+  TooltipContent,
   TooltipProvider,;'
-  TooltipTrigger,;;
+  TooltipTrigger,;'
 } from '@/components/ui/tooltip;'
-import { useToast } from '@/hooks/use-toast;
-;
+import { useToast } from '@/hooks/use-toast'
+
 interface CreatePostButtonProps {;'
-  /** Optional category to preselect when creating a post */;
+  /** Optional category to preselect when creating a post */'
   categoryId?: string;
   className?: string;'
-  /** Callback invoked when the user must log in */;;
-  onRequireLogin?: (target: "string) => void;";
-};"
-;";"
-/**;";";"
- * Renders a button that navigates to the create post page.;";";";"
- * If the user is not authenticated, they are redirected to the;";";";";"
- * login page with a "next" parameter so they can come back after logging in.;
+  /** Callback invoked when the user must log in */;'
+  onRequireLogin?: (target: "string) => void
+}"
+;"
+/**;";"
+ * Renders a button that navigates to the create post page.;";"
+ * If the user is not authenticated, they are redirected to the;";"
+ * login page with a next" parameter so they can come back after logging in."
  */;
 export function CreatePostButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categoryId,;
@@ -29,54 +29,53 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
 }: CreatePostButtonProps) {;
   const { _user } = useAuth();
   const router: unknown = useRouter();
-  const { _toast } = useToast();"
-;";"
-  const handleClick: unknown = () => {;";";"
-    const target: unknown = categoryId;";";";"
-      ? `/community?new=1&category=${categoryId}`;";";";";"
-      : '/community?new=1;
+  const { _toast } = useToast()
+;"
+  const handleClick: unknown = () => {;";
+    const target: unknown = categoryId";";
+      ? `/community?new=1&category=${categoryId}`";";"
+      : '/community?new=1'
 ;'
-    if (user) {;
+    if (user) {'
       router.push(target);
     } else {;'
-      toast({;;
-        title: 'Login Required',;;
-        description: 'Please log in to create a post.',;;
-        variant: 'default',;
+      toast({;'
+        title: 'Login Required',;'
+        description: 'Please log in to create a post.',;'
+        variant: 'default','
       });
-;
+
       if (onRequireLogin) {;
         onRequireLogin(target);
       } else {;
         const returnTo: unknown = encodeURIComponent(target);
-        router.push(`/auth/login?returnTo=${returnTo}`);
+        router.push(`/auth/login?returnTo=${returnTo}`)`
       };
     };
   };
-;
+
   return (;
     <TooltipProvider>;
       <Tooltip>;'
-        <TooltipTrigger asChild>;
+        <TooltipTrigger asChild>'
           <Button;
             className={className};'
-            onClick={handleClick};;
-            data-testid="create-new-post-button";
+            onClick={handleClick};'
+            data-testid="create-new-post-button
           >;
             Create New Post;
           </Button>;
         </TooltipTrigger>;
         {!user && (;
-          <TooltipContent>Please log in to use this feature</TooltipContent>;
-        )};
+          <TooltipContent>Please log in to use this feature</TooltipContent>)};
       </Tooltip>;
     </TooltipProvider>;
-  );"
-};";"
-;";";"
-export default CreatePostButton;";";";"
-";";";"
-}";";"
-}";"
+  )"
+};"
+;";"
+export default CreatePostButton;";"
+;""
+};"
 }"
+}
 }"
