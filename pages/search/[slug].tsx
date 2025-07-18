@@ -32,6 +32,7 @@ interface ProductSearchResult extends BaseSearchResult {
   type: 'product' | 'equipment';
   price?: number;
   rating?: number;
+  stock?: number;
 }
 
 interface TalentSearchResult extends BaseSearchResult {
@@ -87,7 +88,7 @@ function offlineSearch(
       match(p.category) ||
       p.tags?.some((t) => match(t)),
   ).map((p) => {
-    const result: any = {
+    const result: ProductSearchResult = {
       id: p.id,
       title: p.title ?? '',
       description: p.description ?? '',
@@ -388,8 +389,8 @@ export default function SearchResultsPage({
                 currency: '$',
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString(),
-                stock: (result as any).stock,
-                in_stock: ((result as any).stock || 0) > 0
+                stock: (result as ProductSearchResult).stock,
+                in_stock: ((result as ProductSearchResult).stock || 0) > 0
               }}
             />
           </div>
