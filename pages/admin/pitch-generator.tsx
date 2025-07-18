@@ -178,7 +178,7 @@ const PitchGeneratorPage: React.FC = () => {
 
 
   const handleInputSubmit = (_data: unknown) => {
-    const typedData = data as Record<string, unknown>;
+    const typedData = _data as Record<string, unknown>;
     setInputData(typedData);
     setCurrentStep('data');
   };
@@ -243,7 +243,7 @@ const PitchGeneratorPage: React.FC = () => {
   };
 
   const handleSlidesUpdate = (_updatedSlides: Slide[]) => {
-    setGeneratedSlides(updatedSlides);
+    setGeneratedSlides(_updatedSlides);
   };
 
   const handleExportToPDF = async () => {
