@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Search, Send } from '@/components/ui/icons';
+import { Check, Search, Send, Handshake } from '@/components/ui/icons';
 import { GradientHeading } from "./GradientHeading";
 
 
