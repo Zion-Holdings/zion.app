@@ -6,9 +6,9 @@ import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
 import Custom404 from '../404';
 
-const _ServicePage: React.FC = () => {
+const ServicePage: React.FC = () => {
   const router = useRouter();
-  const { _slug } = router.query as { slug?: string };
+  const { slug } = router.query as { slug?: string };
   
   const service = React.useMemo(
     () => slug ? SERVICES.find((s) => slugify(s.title) === slug) || null : null,

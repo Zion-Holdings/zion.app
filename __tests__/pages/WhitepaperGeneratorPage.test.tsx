@@ -150,21 +150,21 @@ describe('WhitepaperGeneratorPage', () => {
 
   describe('Download Buttons', () => {
     // Simulate that sections have been generated
-    const _setupPageWithSections = undefined; // Unused () => {
-        render(<WhitepaperGeneratorPage />);
-        // Simulate generation and section rendering
-        act(() => {
-            // Directly set sections state for testing purposes
-            // This is a bit of a hack, ideally we'd trigger generation
-            // but that makes the test more complex. For isolated download tests, this is fine.
-            const _setSections = undefined; // Unused jest.requireActual('react').useState()[1]; // Get the setState function
-            // This part is tricky as we don't have direct access to page's internal setState.
-            // A better way would be to have a helper function or refactor the component for testability.
-            // For now, we'll assume sections are present by testing after a simulated generation.
-        });
-        // For the purpose of this test, we'll assume sections are populated by a prior action
-        // and buttons are enabled. If not, these tests will fail, indicating a setup issue.
-    };
+    // const _setupPageWithSections = () => {
+    //     render(<WhitepaperGeneratorPage />);
+    //     // Simulate generation and section rendering
+    //     act(() => {
+    //         // Directly set sections state for testing purposes
+    //         // This is a bit of a hack, ideally we'd trigger generation
+    //         // but that makes the test more complex. For isolated download tests, this is fine.
+    //         const _setSections = jest.requireActual('react').useState()[1]; // Get the setState function
+    //         // This part is tricky as we don't have direct access to page's internal setState.
+    //         // A better way would be to have a helper function or refactor the component for testability.
+    //         // For now, we'll assume sections are present by testing after a simulated generation.
+    //     });
+    //     // For the purpose of this test, we'll assume sections are populated by a prior action
+    //     // and buttons are enabled. If not, these tests will fail, indicating a setup issue.
+    // };
 
 
     test('"Download MD" button triggers download', async () => {

@@ -35,7 +35,7 @@ const proposalSchema = z.object({
 
 type ProposalFormData = z.infer<typeof proposalSchema>;
 
-const _CreateProposalPage: React.FC = () => {
+const CreateProposalPage: React.FC = () => {
   const router = useRouter();
   // const { user, token } = useAuth(); // Example
   // const { address: walletAddress } = useWallet(); // Example
@@ -58,7 +58,7 @@ const _CreateProposalPage: React.FC = () => {
     },
   });
 
-  const { _query } = router;
+  const { query } = router;
 
   useEffect(() => {
     const templateId = Array.isArray(query.template) ? query.template[0] : query.template;
@@ -80,13 +80,13 @@ const _CreateProposalPage: React.FC = () => {
     }
   }, [query.template, form]);
 
-  const onSubmit = async (_data: ProposalFormData) => {
+  const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);
     setApiError(null);
 
     const { reference_links_input, ...restOfData } = data;
     const reference_links = reference_links_input
-        ? reference_links_input.split('\n').map(link => link.trim()).filter(link => link)
+        ? reference_links_input.split('\n').map((link: string) => link.trim()).filter((link: string) => link)
         : [];
 
     const apiData = {

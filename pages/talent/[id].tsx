@@ -30,13 +30,13 @@ const handleApiResponse = async (res: Response) => {
   return res.json();
 };
 
-const _TalentPage: React.FC = () => {
+const TalentPage: React.FC = () => {
   const router = useRouter();
-  const { _id } = router.query as { id?: string };
+  const { id } = router.query as { id?: string };
 
   const { data, error, isLoading } = useSWR<TalentProfile | null>(
     id ? `/api/talent/${id}` : null,
-    async (_url: string) => {
+    async (url: string) => {
       const result: TalentProfileResponse = await fetch(url).then(handleApiResponse);
       return result.profile;
     }

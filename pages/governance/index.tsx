@@ -12,7 +12,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 
-const _GovernancePage: React.FC = () => {
+const GovernancePage: React.FC = () => {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
