@@ -4,18 +4,12 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { connectWithTimeout } from '@/utils/prismaConnect';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-
 interface ProductStats {
   avg: number | null;
   count: number;
 }
 
 const prisma = new PrismaClient();
-
-interface ProductStats {
-  avg: number | null;
-  count: number;
-}
 
 type ProductWithStats = ProductModel & {
   averageRating: number | null;
@@ -106,7 +100,7 @@ const handler = async (
       stats.map((s) => [s.productId, { avg: s._avg.rating, count: s._count.id }])
     );
 
-//     const _result: ProductWithStats[] = products.map((p) => {
+    const result: ProductWithStats[] = products.map((p) => {
       const productStats = statsMap.get(p.id);
       return {
         ...p,
