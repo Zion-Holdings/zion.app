@@ -240,14 +240,9 @@ const nextConfig = {
     if (config.cache) {
       config.cache = {
         ...config.cache,
-        type: 'filesystem',
-        compression: 'gzip',
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        type: 'memory', // Use memory cache instead of filesystem
         maxMemoryGenerations: dev ? 3 : 10,
         cacheUnaffected: false, // Disable to prevent conflicts
-        buildDependencies: {
-          config: [__filename],
-        },
       };
     }
 
@@ -261,24 +256,16 @@ const nextConfig = {
   experimental: {
     optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['@chakra-ui/react', 'lucide-react'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  },
+  // Use turbopack instead of deprecated turbo
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-    debug: false, // Reduce console noise
-    load: 'currentOnly', // Only load current language
-    cleanCode: true, // Better language code handling
-  },
-  // Enable Node.js runtime for middleware
-  nodeMiddleware: true,
 };
 
 // Remove experimental.esmExternals if it exists to prevent conflicts
