@@ -202,10 +202,14 @@ const nextConfig = {
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     // Handle critical dependency warnings
     config.ignoreWarnings = [
       /Critical dependency: the request of a dependency is an expression/,
+      /Serializing big strings/i,
+      /PackFileCacheStrategy/,
+      /Module not found.*can't resolve/i,
+      /export.*was not found in/i,
     ];
 
     // Ensure proper module resolution
@@ -216,10 +220,94 @@ const nextConfig = {
       tls: false,
     };
 
+    // Fix Watchpack path resolution issues
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/logs/**',
+          '**/dist/**',
+          '**/build/**',
+          '**/.next/**',
+        ],
+      };
+    }
+
+    // Fix webpack cache configuration to prevent conflicts
+    if (config.cache) {
+      config.cache = {
+        ...config.cache,
+        type: 'filesystem',
+        compression: 'gzip',
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        maxMemoryGenerations: dev ? 3 : 10,
+        cacheUnaffected: false, // Disable to prevent conflicts
+        buildDependencies: {
+          config: [__filename],
+        },
+      };
+    }
+
+    // Remove usedExports to prevent conflicts with cacheUnaffected
+    if (config.optimization && config.optimization.usedExports) {
+      delete config.optimization.usedExports;
+    }
+
     return config;
   },
-  // Remove experimental features for Node.js 22 compatibility
+  experimental: {
+    optimizeCss: process.env.NODE_ENV === 'production',
+    optimizePackageImports: ['@chakra-ui/react', 'lucide-react'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    debug: false, // Reduce console noise
+    load: 'currentOnly', // Only load current language
+    cleanCode: true, // Better language code handling
+  },
+  // Enable Node.js runtime for middleware
+  nodeMiddleware: true,
 };
+
+// Remove experimental.esmExternals if it exists to prevent conflicts
+if (nextConfig.experimental && "esmExternals" in nextConfig.experimental) {
+  delete nextConfig.experimental.esmExternals;
+}
+
+// Utility to recursively convert BigInt values to strings in an object
+function convertBigIntsToStrings(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(convertBigIntsToStrings);
+  } else if (obj && typeof obj === 'object') {
+    const result = {};
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        const value = obj[key];
+        if (typeof value === 'bigint') {
+          result[key] = value.toString();
+        } else if (typeof value === 'object' && value !== null) {
+          result[key] = convertBigIntsToStrings(value);
+        } else {
+          result[key] = value;
+        }
+      }
+    }
+    return result;
+  }
+  return obj;
+}
 
 export default nextConfig;
 
