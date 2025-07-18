@@ -305,7 +305,7 @@
     "multi-computer:status": "npm run ai-coordinator:status",
     "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
     "improve:all": "node scripts/automated-app-improvement.cjs",
-    "dev:fix": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev",
+    "dev:fix": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev",
     "auto-commit": "node scripts/auto-commit-improvements.cjs",
     "auto-deploy": "node scripts/auto-deploy-to-netlify.cjs",
     "fix-watchpack": "node scripts/fix-watchpack-issue.cjs",
