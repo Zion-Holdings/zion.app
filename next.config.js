@@ -49,52 +49,10 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   // Fix path resolution issues
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-  // Ensure proper module resolution
-  transpilePackages: [],
-  // Fix asset handling
-  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
-  // Ensure proper environment detection
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  distDir: '.next',
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
   },
 };
 
-module.exports = nextConfig;// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Webpack optimizations added
-// Build caching enabled
-// Security headers added
-// Security headers added
-// Webpack optimizations added
-// Build caching enabled
-// Webpack optimizations added
-// Build caching enabled
+export default nextConfig;
