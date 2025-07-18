@@ -3,9 +3,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 
 import { SEO } from '@/components/SEO';
-import { _ProductCard as ProductCard } from '@/components/marketplace/ProductCard';
-import { _TalentCard as TalentCard } from '@/components/talent/TalentCard';
-import { _CategoryCard as CategoryCard } from '@/components/marketplace/CategoryCard';
+import { _ProductCard } from '@/components/marketplace/ProductCard';
+import { _TalentCard } from '@/components/talent/TalentCard';
+import { _CategoryCard } from '@/components/marketplace/CategoryCard';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
@@ -51,10 +51,10 @@ interface CategorySearchResult extends BaseSearchResult {
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
 // Type guard functions
-const _hasPrice = undefined; // Unused (result: SearchResult): result is ProductSearchResult => 
+const hasPrice = (result: SearchResult): result is ProductSearchResult => 
   result.type === 'product' || result.type === 'equipment';
 
-const _hasRating = undefined; // Unused (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
+const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
@@ -217,14 +217,14 @@ export default function SearchResultsPage({
   slug: _slug,
   totalCount,
 }: SearchResultsPageProps) {
-  const router = useRouter();
+  const _router = useRouter();
   const { _isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [_loading, setLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(query);
-  const debouncedQuery = useDebounce(searchQuery, 300);
+  const [_searchQuery, setSearchQuery] = useState(query);
+  const debouncedQuery = useDebounce(_searchQuery, 300);
   const [_viewMode, _setViewMode] = useState<'grid' | 'list'>('grid');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [_currentPage, setCurrentPage] = useState(1);
   const [sortBy, _setSortBy] = useState('relevance');
   const [categoryFilter, _setCategoryFilter] = useState('all');
   const [minPrice, _setMinPrice] = useState('');
@@ -316,7 +316,7 @@ export default function SearchResultsPage({
   //   new Set(results.map((r) => r.category).filter(Boolean)),
   // );
 
-  const filteredResults = results.filter((r) => {
+  const _filteredResults = results.filter((r) => {
     if (
       categoryFilter !== 'all' &&
       categoryFilter &&

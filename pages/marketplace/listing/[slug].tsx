@@ -131,7 +131,6 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
-  const [_apiError, setApiError] = useState<string | null>(null);
 
   try {
     // Step 1: Try to fetch directly by ID from API

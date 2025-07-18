@@ -43,7 +43,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       if (stored) {
         setMessages(JSON.parse(stored));
       }
-    } catch {
+    } catch (error) {
       console.warn('ChatWidget: failed to load history', error);
     }
   }, [isOpen, roomId]);
@@ -109,11 +109,11 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           }
         });
         
-      } catch {
+      } catch (error) {
         if (isMounted) {
           setIsConnecting(false);
           setConnectionError('Failed to initialize chat');
-          console.('ChatWidget setup :', );
+          console.error('ChatWidget setup error:', error);
         }
       }
     }
@@ -156,7 +156,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     inputRef.current?.focus();
   }, [text, user, recipientId, roomId]);
 
-  const handleKeyDown = useCallback((_e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();

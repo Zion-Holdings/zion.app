@@ -45,7 +45,7 @@ export default function JobDetails() {
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
-  const formatBudget = (_budget: unknown) => {
+  const formatBudget = (budget: unknown) => {
     if (!budget || typeof budget !== 'object' || budget === null || !('min' in budget) || !('max' in budget)) {
       return "Not specified";
     }

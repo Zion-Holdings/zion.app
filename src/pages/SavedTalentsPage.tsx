@@ -86,11 +86,11 @@ export default function SavedTalentsPage() {
     fetchSavedTalents();
   }, [user]);
 
-  const handleViewProfile = (_talentId: string) => {
+  const handleViewProfile = (talentId: string) => {
     router.push(`/talent/${talentId}`);
   };
 
-  const handleRequestHire = (_talent: TalentProfile) => {
+  const handleRequestHire = (talent: TalentProfile) => {
     logInfo('Request to hire:', { data:  { data: talent } });
     toast({
       title: "Hire Request Sent",
