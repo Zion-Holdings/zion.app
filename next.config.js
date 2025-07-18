@@ -203,6 +203,20 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
   },
   webpack: (config, { isServer, dev }) => {
+    // Fix webpack cache configuration to prevent conflicts
+    if (config.cache) {
+      config.cache = {
+        ...config.cache,
+        type: 'filesystem',
+        compression: 'gzip',
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        maxMemoryGenerations: dev ? 3 : 10,
+        cacheUnaffected: false, // Disable to prevent conflicts
+        buildDependencies: {
+          config: [__filename],
+        },
+      };
+    }
     // Handle critical dependency warnings
     config.ignoreWarnings = [
       /Critical dependency: the request of a dependency is an expression/,
