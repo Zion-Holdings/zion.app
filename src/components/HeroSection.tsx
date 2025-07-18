@@ -7,7 +7,7 @@ import { HowItWorksVideo } from "@/components/HowItWorksVideo";
 
 
 export function HeroSection() {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden py-20 md:py-32 min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-background via-background to-muted/20">
       {/* Enhanced background effects */}

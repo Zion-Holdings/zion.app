@@ -22,7 +22,7 @@ export function ITServiceRequestHero() {
   const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _toast } = useToast();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();

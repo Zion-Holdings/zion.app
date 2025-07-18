@@ -1,3 +1,8 @@
+
+function isValidEmail(email) {
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  return emailRegex.test(email);
+}
 import React, { useState, useRef } from 'react';
 import { Loader2 } from '@/components/ui/icons';
 import { Input } from '@/components/ui/input';

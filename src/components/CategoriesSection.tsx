@@ -96,7 +96,7 @@ export function CategoriesSection({
   style,
   categories: fetchedCategories, // Rename prop for clarity
 }: CategoriesSectionProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const defaultCategories = getDefaultCategories(t);
   
   // Use fetchedCategories if provided, otherwise fallback to defaultCategories

@@ -42,7 +42,7 @@ const slugify = (text: string): string => {
 };
 
 
-const _WhitepaperGeneratorPage: React.FC = () => {
+const WhitepaperGeneratorPage: React.FC = () => {
   const [tokenName, setTokenName] = useState('My Awesome Token');
   const [tokenSupply, setTokenSupply] = useState<string>('1000000000');
   const [useCases, setUseCases] = useState('To facilitate transactions and reward users in our innovative freelance AI marketplace. It will be used for payments, staking for dispute resolution, and accessing premium features.');

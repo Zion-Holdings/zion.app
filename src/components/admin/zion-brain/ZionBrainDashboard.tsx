@@ -24,7 +24,7 @@ export function ZionBrainDashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Auto-Prompt Router</CardTitle>
-              <CardDescription>Route user prompts to the correct GPT chain.</CardDescription>
+              <CardDescription>Route user prompts to the correct GPT ethereum.</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">

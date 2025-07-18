@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { RootState } from '@/store';
 
 export function MiniCartPreview() {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const items = useSelector((s: RootState) => s.cart.items);
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 

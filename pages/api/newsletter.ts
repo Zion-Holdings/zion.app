@@ -1,3 +1,8 @@
+
+function isValidEmail(email) {
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  return emailRegex.test(email);
+}
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { subscribeToNewsletter } from '@/services/newsletterService';
 import { logErrorToProduction } from '@/utils/productionLogger';

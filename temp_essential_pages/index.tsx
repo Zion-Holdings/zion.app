@@ -95,7 +95,7 @@ const ErrorTestButton = () => {
   );
 };
 
-const _IndexPage: React.FC<HomePageProps> = (props) => {
+const IndexPage: React.FC<HomePageProps> = (props) => {
   const router = useRouter();
   const showDebug = router.query.debug === 'true';
   const showButton = process.env.NODE_ENV === 'development' || showDebug;

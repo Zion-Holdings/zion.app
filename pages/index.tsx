@@ -22,7 +22,7 @@ export async function fetchHomeData() {
 }
 
 // Use getStaticProps instead of getServerSideProps for better reliability and caching
-export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
     await fetchHomeData();
     return { 
@@ -33,17 +33,17 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
       revalidate: 300
     };
   } catch (_error) {
-    logErrorToProduction('Error in getStaticProps for home page:', { data: error });
+    logErrorToProduction('Error in getStaticProps for home page:', { data: _error });
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
           const Sentry = (await import('@sentry/nextjs')).default;
-          Sentry.captureException(error);
+          Sentry.captureException(_error);
         }
       } catch (_sentryError) {
-        logWarn('Failed to log to Sentry:', { data:  { data: sentryError } });
+        logWarn('Failed to log to Sentry:', { data:  { data: _sentryError } });
       }
     }
     
@@ -53,7 +53,7 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
         hasError: false, // Don't show error on home page, show fallback content
         timestamp: Date.now()
       },
-      _revalidate: 60 // Retry more frequently if there was an error
+      revalidate: 60 // Retry more frequently if there was an error
     };
   }
 };
@@ -67,11 +67,11 @@ const ErrorTestButton = () => {
         if (typeof window === 'undefined') {
           import('@sentry/nextjs').then(mod => {
             const Sentry = mod.default;
-            Sentry.captureException(error);
+            Sentry.captureException(_error);
           });
         }
       }
-      logErrorToProduction('Button error test:', { error });
+      logErrorToProduction('Button error test:', { error: _error });
     }
   };
 
@@ -96,7 +96,7 @@ const ErrorTestButton = () => {
   );
 };
 
-const _IndexPage: React.FC<HomePageProps> = (props) => {
+const IndexPage: React.FC<HomePageProps> = (props) => {
   const router = useRouter();
   const showDebug = router.query.debug === 'true';
   const showButton = process.env.NODE_ENV === 'development' || showDebug;

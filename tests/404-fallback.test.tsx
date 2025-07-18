@@ -66,7 +66,7 @@ mockI18n.use(initReactI18next).init({
 
 // Mock 404 Component (since we can't import the actual one due to linter issues)
 const Mock404Page = () => {
-  cons_t { t } = mockI18n;
+  const { t } = mockI18n;
   
   const handleGoBack = () => {
     if (window.history.length > 1) {

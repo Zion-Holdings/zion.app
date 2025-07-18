@@ -16,7 +16,7 @@ import {
 } from '@/context/LanguageContext';
 
 export function LanguageSelector() {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   // Fallback in case the context fails to provide languages for any reason
   const availableLanguages =

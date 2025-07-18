@@ -1,3 +1,8 @@
+
+async function registerUser(userData) {
+  // Stub implementation for testing
+  return { success: true, user: userData };
+}
 describe('register flow', () => {
   beforeEach(() => {
     // Ensure environment variables are set

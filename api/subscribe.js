@@ -1,3 +1,8 @@
+
+function isValidEmail(email) {
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  return emailRegex.test(email);
+}
 const { _withSentry } = require('./withSentry.cjs');
 const { _isValidEmail } = require('./emailUtils.cjs');
 const fs = require('fs');

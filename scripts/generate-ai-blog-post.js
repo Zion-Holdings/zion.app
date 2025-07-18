@@ -57,7 +57,7 @@ generateBlogPost(keywords)
     console.warn(`Blog post saved to ${filePath}`);
   })
   .catch((err) => {
-    console.error(err);
+    console.error(error);
     process.exit(1);
   });
 

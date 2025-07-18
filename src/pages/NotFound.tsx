@@ -7,7 +7,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 const NotFound = () => {
   const router = useRouter();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     logErrorToProduction(

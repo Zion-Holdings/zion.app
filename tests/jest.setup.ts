@@ -14,8 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-(global as any).TextDecoder = TextDecoder;
-
+global.TextDecoder = TextDecoder;
 
 // Set up a mock for Vite environment variables accessed via import.meta.env
 // This assumes that Babel (via babel-plugin-transform-import-meta or similar)
@@ -45,7 +44,7 @@ if (typeof global.window === 'undefined') {
 if (!window.matchMedia) {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: jest.fn().mockImplementation(query => ({
+    value: jest.fn().mockImplementation((query: string) => ({
       matches: false, // Default to false (light theme)
       media: query,
       onchange: null,
@@ -57,18 +56,6 @@ if (!window.matchMedia) {
     })),
   });
 }
-
-// Mock import.meta.env for Jest - This was ineffective for the SyntaxError
-// global.import = {
-//   // @ts-expect-error
-//   meta: {
-//     env: {
-//       VITE_SUPABASE_URL: 'mock_supabase_url',
-//       VITE_SUPABASE_ANON_KEY: 'mock_supabase_anon_key',
-//       MODE: 'test',
-//     },
-//   },
-// };
 
 // Mock the supabase client module to prevent import.meta.env parsing errors
 jest.mock('@/integrations/supabase/client', () => ({
@@ -94,11 +81,11 @@ jest.mock('firebase/app', () => ({
 jest.mock('firebase/firestore', () => {
   // Mock collection function to be available on the db instance (for v8 style)
   // and as a top-level export (for v9 style).
-  const mockCollection = jest.fn((firestoreInstanceOrPath, pathIfV8) => {
+  const mockCollection = jest.fn((firestoreInstanceOrPath: unknown, pathIfV8?: string) => {
     const actualPath = typeof firestoreInstanceOrPath === 'string' ? firestoreInstanceOrPath : pathIfV8;
     return {
       path: actualPath,
-      doc: jest.fn((docId) => ({
+      doc: jest.fn((docId: string) => ({
         id: docId,
         path: `${actualPath}/${docId}`,
         get: jest.fn(() => Promise.resolve({ exists: () => false, data: () => undefined })),
@@ -113,10 +100,10 @@ jest.mock('firebase/firestore', () => {
     };
   });
 
-  const mockDoc = jest.fn((firestoreInstanceOrCollectionRef, pathOrId, ...pathSegments) => {
+  const mockDoc = jest.fn((firestoreInstanceOrCollectionRef: unknown, pathOrId: string, ...pathSegments: string[]) => {
     let basePath = '';
-    if (typeof firestoreInstanceOrCollectionRef.path === 'string') {
-      basePath = firestoreInstanceOrCollectionRef.path;
+    if (typeof firestoreInstanceOrCollectionRef === 'object' && firestoreInstanceOrCollectionRef && 'path' in firestoreInstanceOrCollectionRef) {
+      basePath = (firestoreInstanceOrCollectionRef as { path: string }).path;
     }
     const fullPath = [basePath, pathOrId, ...pathSegments].filter(Boolean).join('/');
     return {
@@ -147,13 +134,13 @@ jest.mock('firebase/firestore', () => {
     updateDoc: jest.fn(() => Promise.resolve()),
     deleteDoc: jest.fn(() => Promise.resolve()),
     onSnapshot: jest.fn(() => jest.fn()), // Returns an unsubscribe function for document/query snapshots
-    query: jest.fn((collectionRef, ...constraints) => ({ ref: collectionRef, constraints })),
-    where: jest.fn((fieldPath, opStr, value) => ({ type: 'where', fieldPath, opStr, value })),
-    orderBy: jest.fn((fieldPath, directionStr) => ({ type: 'orderBy', fieldPath, directionStr })),
-    limit: jest.fn((count) => ({ type: 'limit', count })),
+    query: jest.fn((collectionRef: unknown, ...constraints: unknown[]) => ({ ref: collectionRef, constraints })),
+    where: jest.fn((fieldPath: string, opStr: string, value: unknown) => ({ type: 'where', fieldPath, opStr, value })),
+    orderBy: jest.fn((fieldPath: string, directionStr: string) => ({ type: 'orderBy', fieldPath, directionStr })),
+    limit: jest.fn((count: number) => ({ type: 'limit', count })),
     Timestamp: {
       now: jest.fn(() => ({ toDate: () => new Date() })),
-      fromDate: jest.fn((date) => ({ toDate: () => date })),
+      fromDate: jest.fn((date: Date) => ({ toDate: () => date })),
     },
     // Add other Firestore exports your code uses
   };
@@ -180,18 +167,18 @@ jest.mock('firebase/storage', () => ({
   getStorage: jest.fn(() => ({
     // Mock Storage instance properties/methods if needed
   })),
-  ref: jest.fn((storageInstance, path) => ({
+  ref: jest.fn((storageInstance: unknown, path: string) => ({
     // Mock StorageReference
     name: path ? path.substring(path.lastIndexOf('/') + 1) : 'mockfile.txt',
     fullPath: path || 'mock/full/path/mockfile.txt',
     // Add methods like uploadBytes, getDownloadURL, delete, etc.
   })),
-  uploadBytes: jest.fn((storageRef, data, metadata) => Promise.resolve({
+  uploadBytes: jest.fn((storageRef: unknown, data: unknown, metadata: unknown) => Promise.resolve({
     // Mock UploadResult
-    metadata: { fullPath: storageRef.fullPath, ...metadata },
+    metadata: { fullPath: (storageRef as { fullPath: string }).fullPath, ...(metadata as Record<string, unknown>) },
     ref: storageRef,
   })),
-  getDownloadURL: jest.fn((storageRef) => Promise.resolve(`https://mockstorage.com/${storageRef.fullPath}`)),
+  getDownloadURL: jest.fn((storageRef: { fullPath: string }) => Promise.resolve(`https://mockstorage.com/${storageRef.fullPath}`)),
   deleteObject: jest.fn(() => Promise.resolve()),
   // Add other Storage exports your code uses
 }));
@@ -229,7 +216,6 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 if (typeof BroadcastChannel === 'undefined') {
   global.BroadcastChannel = class BroadcastChannelMock {
     name: string;
-    
     constructor(name: string) {
       this.name = name;
     }
@@ -240,7 +226,7 @@ if (typeof BroadcastChannel === 'undefined') {
     addEventListener = jest.fn();
     removeEventListener = jest.fn();
     dispatchEvent = jest.fn();
-  } as typeof BroadcastChannel;
+  };
 }
 
 // Polyfill for window.scrollTo
@@ -250,7 +236,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-(axios as any).create = jest.fn(() => axios);
+(axios as Record<string, unknown>).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest
@@ -373,7 +359,7 @@ jest.mock('react-redux', () => {
     ...actualRedux,
     useDispatch: () => jest.fn(),
     // Provide predictable data for selectors so components don't explode
-    _useSelector: jest.fn((selector: unknown) => {
+    useSelector: jest.fn((selector: unknown) => {
       const mockState = {
         cart: { items: [] },
         wishlist: { items: [] },
@@ -399,24 +385,22 @@ jest.mock('@/hooks/useWishlist', () => {
 // Polyfill IntersectionObserver for components that use it (e.g., embla-carousel)
 if (typeof window.IntersectionObserver === 'undefined') {
   class MockIntersectionObserver {
-    root: Element | null = null;
-    rootMargin: string = '';
-    thresholds: ReadonlyArray<number> = [];
-    
     constructor() {}
     observe() {}
     unobserve() {}
     disconnect() {}
     takeRecords() { return []; }
   }
-  (window as any).IntersectionObserver = MockIntersectionObserver;
-  (global as any).IntersectionObserver = MockIntersectionObserver;
+  // @ts-expect-error IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
+  window.IntersectionObserver = MockIntersectionObserver;
+  // @ts-expect-error IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
+  global.IntersectionObserver = MockIntersectionObserver;
 }
 
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-(global as any).fetch = fetchMock;
+(global as Record<string, unknown>).fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
@@ -447,8 +431,8 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-if (global.vi && !global.vi.restoreAllMocks) {
-  (global.vi as unknown as Record<string, unknown>).restoreAllMocks = jest.restoreAllMocks;
+if (global.vi && !(global.vi as Record<string, unknown>).restoreAllMocks) {
+  (global.vi as Record<string, unknown>).restoreAllMocks = jest.restoreAllMocks;
 }
 
 // Mock @supabase/ssr createBrowserClient so components don't crash in tests
@@ -485,7 +469,7 @@ if (g.vi) {
 // This avoids the need to load i18n resources and keeps unit expectations simple.
 // -----------------------------
 jest.mock('react-i18next', () => {
-  const t = (_key: string) => {
+  const t = (key: string) => {
     // Return substring after last dot to convert 'categories.services' => 'services'
     if (key && key.includes('.')) {
       return key.split('.').pop();
@@ -505,7 +489,7 @@ jest.mock('react-i18next', () => {
 jest.mock('next/link', () => {
   const React = require('react');
   const forwardRef = React.forwardRef;
-  const LinkMock = ({ href, children, ...rest }: { href: string; children: React.ReactNode; rest?: Record<string, unknown> }, _ref: React.Ref<unknown>) => {
+  const LinkMock = ({ href, children, ...rest }: { href: string; children: React.ReactNode; rest?: Record<string, unknown> }, ref: React.Ref<unknown>) => {
     return React.createElement('a', { href, ref, ...rest }, children);
   };
   return { __esModule: true, default: forwardRef(LinkMock) };
@@ -550,24 +534,22 @@ jest.mock('@/context/auth/AuthContext', () => {
 // Simple Vitest global shim for suites still using `vi`
 // ---------------------------------------------------------------------------
 if (typeof global.vi === 'undefined') {
-  (global as any).vi = {
+  (global as Record<string, unknown>).vi = {
     fn: jest.fn,
     spyOn: jest.spyOn.bind(jest),
     mock: jest.mock.bind(jest),
     clearAllMocks: jest.clearAllMocks,
     resetAllMocks: jest.resetAllMocks,
-          mockResolvedValue: (val: unknown) => jest.fn().mockResolvedValue(val),
-      mockRejectedValue: (val: unknown) => jest.fn().mockRejectedValue(val),
+    mockResolvedValue: (val: unknown) => jest.fn().mockResolvedValue(val),
+    mockRejectedValue: (val: unknown) => jest.fn().mockRejectedValue(val),
   };
 }
-
-// Note: bcrypt mock removed - only mock if actually used in tests to avoid module resolution errors
 
 // Ensure matchMedia is defined for tests that rely on it
 if (typeof window !== 'undefined' && !window.matchMedia) {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: jest.fn().mockImplementation((query) => ({
+    value: jest.fn().mockImplementation((query: string) => ({
       matches: false,
       media: query,
       onchange: null,

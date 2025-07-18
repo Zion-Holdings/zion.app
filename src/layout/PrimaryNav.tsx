@@ -30,7 +30,7 @@ export function PrimaryNav() {
   const { _user } = useAuth();
   const isLoggedIn = !!user;
   const isMobile = useIsMobile();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const [query, setQuery] = useState('');
   const suggestions = generateSearchSuggestions();

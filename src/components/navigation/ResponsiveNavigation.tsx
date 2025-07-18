@@ -43,7 +43,7 @@ function isProtectedRoute(href: string): boolean {
 export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNavigationProps) {
   const { _user } = useAuth();
   const isAuthenticated = !!user;
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
 
   const items: NavItem[] = [

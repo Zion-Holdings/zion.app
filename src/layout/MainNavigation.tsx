@@ -33,7 +33,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { _items } = useCart();
   const cartCount = items.length;
   const router = useRouter(); // Changed from useLocation
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   const handleCartClick = (_e: React.MouseEvent) => {
     if (!isAuthenticated) {

@@ -19,7 +19,7 @@ interface QuickAccessProps {
 }
 
 export function QuickAccess({ className, style }: QuickAccessProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const quickLinks = [
     {
       title: t('home.tool_ai_matcher'),

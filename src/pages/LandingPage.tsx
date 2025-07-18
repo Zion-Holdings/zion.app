@@ -29,7 +29,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 
 export default function LandingPage() {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { _isRTL } = useLanguage();
   
   // Tools and features showcase

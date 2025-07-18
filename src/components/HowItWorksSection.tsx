@@ -39,7 +39,7 @@ const getSteps = (t: (key: string) => string) => [
 ];
 
 export function HowItWorksSection({ className, style }: HowItWorksSectionProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const steps = getSteps(t);
   
   return (
