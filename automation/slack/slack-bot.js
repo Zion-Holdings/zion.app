@@ -44,10 +44,10 @@ class OptimizationSlackBot {
         const result = await this.triggerOptimization(target, options);
         
         await this.sendOptimizationResults(client, command.channel_id, result);
-      } catch {
-        console.('Optimization command :', );
+      } catch (error) {
+        console.error('Optimization command error:', error);
         await respond({
-          text: `❌ Optimization failed: ${.message}`,
+          text: `❌ Optimization failed: ${error.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -62,9 +62,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatStatusBlocks(status)
         });
-      } catch {
+      } catch (error) {
         await respond({
-          text: `❌ Status check failed: ${'Error occurred'}`,
+          text: `❌ Status check failed: ${error.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -81,9 +81,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatReportBlocks(report)
         });
-      } catch {
+      } catch (error) {
         await respond({
-          text: `❌ Report generation failed: ${'Error occurred'}`,
+          text: `❌ Report generation failed: ${error.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -98,9 +98,9 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatSuggestionsBlocks(suggestions)
         });
-      } catch {
+      } catch (error) {
         await respond({
-          text: `❌ Failed to get suggestions: ${'Error occurred'}`,
+          text: `❌ Failed to get suggestions: ${error.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -126,9 +126,9 @@ class OptimizationSlackBot {
           text: `✅ Configuration updated: ${setting} = ${value}`,
           response_type: 'ephemeral'
         });
-      } catch {
+      } catch (error) {
         await respond({
-          text: `❌ Configuration failed: ${'Error occurred'}`,
+          text: `❌ Configuration failed: ${error.message}`,
           response_type: 'ephemeral'
         });
       }
@@ -146,8 +146,8 @@ class OptimizationSlackBot {
       try {
         const result = await this.triggerOptimization(target);
         await this.sendOptimizationResults(client, body.channel.id, result);
-      } catch {
-        console.('Button action :', );
+      } catch (error) {
+        console.error('Button action error:', error);
       }
     });
 
@@ -251,9 +251,9 @@ class OptimizationSlackBot {
       });
 
       return response.data;
-    } catch {
-      console.('Cursor API :', );
-      throw new Error(`Cursor agent failed: ${.message}`);
+    } catch (error) {
+      console.error('Cursor API error:', error);
+      throw new Error(`Cursor agent failed: ${error.message}`);
     }
   }
 
@@ -278,7 +278,8 @@ class OptimizationSlackBot {
         output: stdout,
         errors: stderr
       };
-    } catch {
+    } catch (error) {
+      console.error('Optimization script error:', error);
       return {
         success: false,
         error: 'Error occurred'
@@ -301,8 +302,9 @@ class OptimizationSlackBot {
         timestamp: new Date().toISOString(),
         status: this.calculateOverallStatus(metrics)
       };
-    } catch {
-      throw new Error(`Failed to get performance status: ${'Error occurred'}`);
+    } catch (error) {
+      console.error('Failed to get performance status:', error);
+      throw new Error(`Failed to get performance status: ${error.message}`);
     }
   }
 
@@ -357,8 +359,8 @@ class OptimizationSlackBot {
       }
       
       return rules;
-    } catch {
-      console.('Error reading optimization rules:', );
+    } catch (error) {
+      console.error('Error reading optimization rules:', error);
       return [];
     }
   }
@@ -493,7 +495,8 @@ class OptimizationSlackBot {
         version: packageInfo.version,
         bundleSize: 0 // Would be calculated from actual build
       };
-    } catch {
+    } catch (error) {
+      console.error('Error getting build info:', error);
       return { error: 'Error occurred' };
     }
   }

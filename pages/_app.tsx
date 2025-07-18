@@ -212,7 +212,7 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
                     <AuthProvider>
                       <ErrorBoundary name="CartProvider">
                         <CartProvider>
-                                                  {children}
+                          {children}
                         </CartProvider>
                       </ErrorBoundary>
                     </AuthProvider>

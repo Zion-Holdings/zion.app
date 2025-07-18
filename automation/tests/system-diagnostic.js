@@ -30,8 +30,8 @@ class SystemDiagnostic {
       this.printResults();
       
       return this.results;
-    } catch {
-      console.('❌ Diagnostic failed:', );
+    } catch (error) {
+      console.error('❌ Diagnostic failed:', error);
       this.results.overall = 'failed';
       return this.results;
     }
