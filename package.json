@@ -337,7 +337,21 @@
     "automation:trigger:improvement": "curl -X POST http://localhost:3001/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:trigger:ai": "curl -X POST http://localhost:3002/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'",
-    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build"
+    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
+    "automation:multi-computer": "node scripts/multi-computer-automation.cjs",
+    "automation:cursor": "node scripts/cursor-controller.cjs",
+    "automation:improvement": "node scripts/automated-app-improvement.cjs",
+    "automation:start-all": "concurrently \"npm run automation:multi-computer\" \"npm run automation:improvement\"",
+    "automation:stop-all": "pkill -f \"multi-computer-automation.cjs\" && pkill -f \"automated-app-improvement.cjs\"",
+    "automation:status": "ps aux | grep -E \"(multi-computer-automation|automated-app-improvement|cursor-controller)\" || echo 'No automation processes found'",
+    "cursor:open": "node scripts/cursor-controller.cjs open",
+    "cursor:focus": "node scripts/cursor-controller.cjs focus",
+    "cursor:fix": "node scripts/cursor-controller.cjs fix",
+    "cursor:auto-fix": "node scripts/cursor-controller.cjs auto-fix",
+    "cursor:monitor": "node scripts/cursor-controller.cjs monitor",
+    "improvement:start": "node scripts/automated-app-improvement.cjs",
+    "improvement:stop": "pkill -f \"automated-app-improvement.cjs\"",
+    "improvement:status": "ps aux | grep automated-app-improvement || echo 'No improvement process found'"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
