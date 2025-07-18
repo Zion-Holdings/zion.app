@@ -1,3 +1,5 @@
+const { withSentry } = require('../withSentry.cjs');
+
 const chains = {
   ethereum: 'Ethereum Mainnet',
   polygon: 'Polygon',

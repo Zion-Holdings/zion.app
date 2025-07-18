@@ -1,4 +1,4 @@
-const { _withSentry } = require('./withSentry.cjs');
+const { withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -27,8 +27,8 @@ async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
     res.statusCode = response.status;
     res.json(data);
-  } catch {
-    console.error('Onsite request API error');
+  } catch (_err) {
+    console.error('Onsite request API error:', _err);
     res.statusCode = 500;
     res.json({ error: 'Failed to process request' });
   }

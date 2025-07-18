@@ -1,16 +1,13 @@
 
 
-const { MongoMemoryServer } = require('mongodb-memory-server');
+import { MongoMemoryServer } from 'mongodb-memory-server';
 /** @jest-environment node */
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 process.env.JWT_SECRET = 'testsecret';
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { registerUser } = require('../../server/controllers/authController');
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const User = require('../../server/models/User');
+import { registerUser } from '../../server/controllers/authController';
+import User from '../../server/models/User';
 
 let mongoServer;
 

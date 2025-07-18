@@ -54,13 +54,13 @@ class Logger {
   // Performance timing
   time(label?: string): void {
     if (this.isDevelopment && label) {
-      console.time(label);
+      console.warn(`[TIMER START] ${label}`);
     }
   }
 
   timeEnd(label?: string): void {
     if (this.isDevelopment && label) {
-      console.timeEnd(label);
+      console.warn(`[TIMER END] ${label}`);
     }
   }
 }

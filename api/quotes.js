@@ -33,10 +33,10 @@ async function handler(req, res) {
 
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (_err) {
-    console.error('Quote API error:', err);
+  } catch {
+    console.error('Quote API error');
     res.statusCode = 500;
-    res.json({ error: err.message || 'Quote submission failed' });
+    res.json({ error: 'Quote submission failed' });
   }
 }
 module.exports = withSentry(handler);
