@@ -7,7 +7,7 @@ import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
 type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string | undefined; category?: string };
 // Fix the type casting to ensure SERVICES has the correct type
-// const _SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
+const _SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
   id: service.id,
   title: service.title || '',
   description: service.description || '',
