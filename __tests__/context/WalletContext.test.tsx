@@ -38,7 +38,6 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
   const subscriptionCallbacksStorage: (((provider?: any) => void) | ((provider?: any) => Promise<void>))[] = [];
   const onProviderChangedCallbacksStorage: ((() => void) | (() => Promise<void>))[] = [];
 
-  // eslint-disable-next-line prefer-const
   let _selfReferentialMock: TestMockAppKitInstance;
 
   const associatedMockEip1193Provider = {

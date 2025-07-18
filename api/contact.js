@@ -20,11 +20,11 @@ async function handler(req, res) {
     console.warn('New contact message:', { name, email, message });
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (_err) {
-    console.error('Contact API error:', err);
+  } catch (error) {
+    console.error('Contact API error:', error);
     res.statusCode = 500;
-    res.json({ error: err.message || 'Failed to send message' });
+    res.json({ error: error.message || 'Failed to send message' });
   }
 }
 
-module.exports = withSentry(handler);
+module.exports = handler;

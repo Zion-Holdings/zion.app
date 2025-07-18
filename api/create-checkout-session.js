@@ -87,11 +87,11 @@ async function handler(req, res) {
 
     res.statusCode = 200;
     res.json({ sessionId: session.id, orderId });
-  } catch (_err) {
-    console.error('Create checkout session error:', err);
+  } catch (error) {
+    console.error('Create checkout session error:', error);
     res.statusCode = 500;
-    res.json({ error: err.message });
+    res.json({ error: error.message });
   }
 }
 
-export default withSentry(handler);
+export default handler;
