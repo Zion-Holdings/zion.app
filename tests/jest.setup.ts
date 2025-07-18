@@ -373,7 +373,7 @@ jest.mock('react-redux', () => {
     ...actualRedux,
     useDispatch: () => jest.fn(),
     // Provide predictable data for selectors so components don't explode
-    useSelector: jest.fn((selector: unknown) => {
+    _useSelector: jest.fn((selector: unknown) => {
       const mockState = {
         cart: { items: [] },
         wishlist: { items: [] },
@@ -485,7 +485,7 @@ if (g.vi) {
 // This avoids the need to load i18n resources and keeps unit expectations simple.
 // -----------------------------
 jest.mock('react-i18next', () => {
-  const t = (key: string) => {
+  const t = (_key: string) => {
     // Return substring after last dot to convert 'categories.services' => 'services'
     if (key && key.includes('.')) {
       return key.split('.').pop();
@@ -505,7 +505,7 @@ jest.mock('react-i18next', () => {
 jest.mock('next/link', () => {
   const React = require('react');
   const forwardRef = React.forwardRef;
-  const LinkMock = ({ href, children, ...rest }: { href: string; children: React.ReactNode; rest?: Record<string, unknown> }, ref: React.Ref<unknown>) => {
+  const LinkMock = ({ href, children, ...rest }: { href: string; children: React.ReactNode; rest?: Record<string, unknown> }, _ref: React.Ref<unknown>) => {
     return React.createElement('a', { href, ref, ...rest }, children);
   };
   return { __esModule: true, default: forwardRef(LinkMock) };
