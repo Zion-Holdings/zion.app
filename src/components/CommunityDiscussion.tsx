@@ -34,7 +34,7 @@ const initialPosts: DiscussionPost[] = [
   },
 ];
 
-export const _CommunityDiscussion: React.FC = () => {
+export const CommunityDiscussion: React.FC = () => {
   const [posts, setPosts] = useState(initialPosts);
   const [showNew, setShowNew] = useState(false);
   const [newTitle, setNewTitle] = useState('');
