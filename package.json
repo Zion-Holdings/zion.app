@@ -7,7 +7,7 @@
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev",
+    "dev": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev",
     "dev:quiet": "npm run env:dev && NEXT_PRIVATE_SKIP_SIZE_WARN=1 next dev",
     "dev:verbose": "npm run env:dev && DEBUG=* next dev",
     "dev:monitor": "npm run env:dev && node scripts/performance-monitor.cjs && next dev",
