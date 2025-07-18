@@ -1,8 +1,5 @@
 
-async function registerUser(userData) {
-  // Stub implementation for testing
-  return { success: true, user: userData };
-}
+
 const { MongoMemoryServer } = require('mongodb-memory-server');
 /** @jest-environment node */
 // eslint-disable-next-line @typescript-eslint/no-require-imports

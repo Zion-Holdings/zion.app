@@ -1,8 +1,5 @@
 
-async function registerUser(userData) {
-  // Stub implementation for testing
-  return { success: true, user: userData };
-}
+
 /** @jest-environment node */
 import { expect } from '@playwright/test';
 // Note: test and createClient are imported but not used in this specific test file

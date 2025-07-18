@@ -102,8 +102,8 @@ describe('/api/log-error Endpoint', () => {
       if (typeof logErrorApiHandler !== 'function') {
         throw new Error("Failed to load API handler. Ensure pages/api/log-error.ts exports its handler function as default.");
       }
-    } catch (_e) {
-      console.error("Error loading API handler for tests:", e);
+    } catch {
+      console.error("Error loading API handler for tests");
       // This will cause tests to fail if handler can't be loaded.
       // Consider if the test setup needs to be different for Next.js API routes (e.g. using next-test-api-route-handler)
     }

@@ -1,5 +1,5 @@
 
-function isValidEmail(email) {
+function isValidEmail(req.body.email) {
   const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);
 }
@@ -20,7 +20,7 @@ async function handler(req, res) {
 
   try {
     const { _email } = req.body || {};
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(req.body.email)) {
       res.statusCode = 400;
       res.json({ error: 'Invalid email' });
       return;

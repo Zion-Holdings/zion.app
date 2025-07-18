@@ -203,13 +203,13 @@ export default function PartnerManager() {
   };
 
   const getAudienceSizeLabel = (_size: string) => {
-    switch (size) {
+    switch (_size) {
       case 'under1k': return 'Under 1,000';
       case '1k-10k': return '1,000 - 10,000';
       case '10k-50k': return '10,000 - 50,000';
       case '50k-100k': return '50,000 - 100,000';
       case 'over100k': return 'Over 100,000';
-      _default: return size;
+      default: return _size;
     }
   };
 
@@ -221,7 +221,7 @@ export default function PartnerManager() {
         return <Badge variant="outline" className="bg-green-900/30 text-green-500 border-green-600">Approved</Badge>;
       case 'rejected':
         return <Badge variant="outline" className="bg-red-900/30 text-red-500 border-red-600">Rejected</Badge>;
-      _default:
+      default:
         return <Badge variant="outline">{status}</Badge>;
     }
   };
