@@ -11,8 +11,8 @@
     "MEMORY_GB": 64,
     "DISK_GB": 100
   },
-  "status": "initializing",
-  "lastHeartbeat": 1752830832711,
+  "status": "running",
+  "lastHeartbeat": 1752831100884,
   "tasks": [],
   "improvements": []
 }
