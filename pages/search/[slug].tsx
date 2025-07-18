@@ -32,6 +32,7 @@ interface ProductSearchResult extends BaseSearchResult {
   type: 'product' | 'equipment';
   price?: number;
   rating?: number;
+  stock?: number;
 }
 
 interface TalentSearchResult extends BaseSearchResult {
@@ -388,8 +389,8 @@ export default function SearchResultsPage({
                 currency: '$',
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString(),
-                stock: (result as any).stock,
-                in_stock: ((result as any).stock || 0) > 0
+                stock: (result as ProductSearchResult).stock,
+                in_stock: ((result as ProductSearchResult).stock || 0) > 0
               }}
             />
           </div>
