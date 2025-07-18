@@ -1,0 +1,70 @@
+{
+  "computers": [
+    {
+      "name": "primary",
+      "host": "localhost",
+      "port": 3001,
+      "cursorPath": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+      "capabilities": ["linting", "testing", "building", "deployment", "ai-assistance"],
+      "maxConcurrentTasks": 3,
+      "os": "darwin"
+    }
+  ],
+  "aiAgents": [
+    {
+      "name": "code-analyzer",
+      "type": "analysis",
+      "priority": "high",
+      "commands": ["npm run lint", "npm run test", "npm run typecheck"],
+      "autoFix": true
+    },
+    {
+      "name": "performance-optimizer",
+      "type": "optimization",
+      "priority": "medium",
+      "commands": ["npm run analyze", "npm run optimize", "npm run bundle:analyze"],
+      "autoFix": true
+    },
+    {
+      "name": "security-scanner",
+      "type": "security",
+      "priority": "critical",
+      "commands": ["npm audit", "npm run security-scan"],
+      "autoFix": false
+    },
+    {
+      "name": "build-optimizer",
+      "type": "build",
+      "priority": "high",
+      "commands": ["npm run build", "npm run build:analyze"],
+      "autoFix": true
+    },
+    {
+      "name": "test-runner",
+      "type": "testing",
+      "priority": "medium",
+      "commands": ["npm run test:coverage", "npm run test:e2e"],
+      "autoFix": false
+    }
+  ],
+  "automationTasks": [
+    {
+      "name": "continuous-improvement",
+      "description": "Continuous app improvement loop",
+      "interval": 300000,
+      "tasks": ["lint", "test", "build", "optimize"]
+    },
+    {
+      "name": "error-fixing",
+      "description": "Automatic error fixing",
+      "trigger": "on-error",
+      "tasks": ["analyze-errors", "auto-fix", "test-fixes"]
+    },
+    {
+      "name": "performance-monitoring",
+      "description": "Performance monitoring and optimization",
+      "interval": 600000,
+      "tasks": ["performance-check", "optimize-bundle", "analyze-metrics"]
+    }
+  ]
+} 
