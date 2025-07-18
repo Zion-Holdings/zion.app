@@ -1,2 +1,4 @@
-// Define the types for our sitemap structure;
-export type SitemapItem = {;
+// Module for sitemap
+export const sitemap = {
+  // TODO: Implement module functionality
+};

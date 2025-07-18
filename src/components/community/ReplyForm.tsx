@@ -15,7 +15,7 @@ import { Card, CardContent } from '@/components/ui/card'
 interface ReplyFormProps {
   onSubmit: (content: string) => Promise<void>'
   parentId?: string'
-}
+
 '
 interface ReplyFormValues {'
   content: "string"
@@ -81,5 +81,5 @@ export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
   )'
 }'
 
-export defaultault ReplyForm'
-'''''
+export default ReplyForm'
+'''''';;

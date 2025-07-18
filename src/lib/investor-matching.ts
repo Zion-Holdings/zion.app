@@ -64,5 +64,5 @@ const investors: unknown Investor[] = [;"
 '
 export async function getInvestorMatches(): unknown {): unknown {): unknown {): unknown {): unknown {;
   industry: "string"
-  location: "string"
-  stage: string,;
+  location: "string'
+  stage: string,;';;

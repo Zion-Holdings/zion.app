@@ -13,7 +13,6 @@ export interface ProfileValues {'
 interface Props {
   defaultValues: ProfileValues"
   onSubmit: "(values: ProfileValues) => void
-}
 
 export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ defaultValues, onSubmit }: Props) {;
   const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({"
@@ -37,9 +36,8 @@ export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): u
       <Button type="submit">Save</Button>
     </form>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

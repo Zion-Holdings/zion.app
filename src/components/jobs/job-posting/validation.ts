@@ -41,4 +41,4 @@ export const jobSchema: z.object({,
 })'
 
 export type JobSchemaType = z.infer<typeof jobSchema>'
-'''''
+'''''';;

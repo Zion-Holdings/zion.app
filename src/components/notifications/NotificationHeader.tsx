@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 interface NotificationHeaderProps {'
   unreadCount: "number
   onMarkAllAsRead: () => Promise<void>""
-}
 
 export const _NotificationHeader: unknown React.FC<NotificationHeaderProps> = ({
   unreadCount,;"
@@ -25,4 +24,4 @@ export const _NotificationHeader: unknown React.FC<NotificationHeaderProps> = ({
     </div>;"
   );
 }"
-"""
+""'';;

@@ -11,7 +11,6 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 interface SummaryStepProps {'
   formData: "QuoteFormData,"
   updateFormData: "(data: Partial<QuoteFormData>) => void"
-}
 
 export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): unknown {{ formData, updateFormData }: SummaryStepProps) {;
   const [isMatching, setIsMatching] = useState(false);
@@ -28,9 +27,9 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
         const queryString = `;""
           ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
           ${formData.projectDescription} ";"
-          ${formData.serviceType} ";""
+          ${formData.serviceType} ";""`
           ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}'
-          ${formData.timeline}'
+          ${formData.timeline}'`
         `;
         // Get AI matches'
         const results: unknown unknown = await findMatches(queryString, formData.serviceType, 3)";"
@@ -60,7 +59,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
     });""
 ;""
     toast({;"";
-      title: 'Match Selected','
+      title: 'Match Selected','`
       description: `You've selected ${match.item.title}`,;
     });
   }'
@@ -203,7 +202,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                 <Label className="text-zion-slate-light>Amount</Label>;"";
                 <div className="text-white">;
                   ${formData.budget.amount.toLocaleString()}";"
-                  {formData.budget.maxAmount;";"
+                  {formData.budget.maxAmount;";"`
                     ? ` - $${formData.budget.maxAmount.toLocaleString()}`;";";
                     : ''}'
                 </div>;
@@ -255,8 +254,8 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

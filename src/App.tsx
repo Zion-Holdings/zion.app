@@ -16,4 +16,4 @@ function ScrollToTop(): ;
   return null'
 };
 '
-const App = ({ children "}: { children?: React.ReactNode }) => {";
+const App = ({ children "}: { children?: React.ReactNode }) => {';';;

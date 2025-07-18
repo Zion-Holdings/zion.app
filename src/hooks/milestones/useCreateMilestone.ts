@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import type { Milestone } from './types'
 import { useRecordActivity } from './useRecordActivity'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useCreateMilestone = (projectId?: string) => {';
+export const _useCreateMilestone = (projectId?: string) => {;
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const { _recordMilestoneActivity } = useRecordActivity();
@@ -49,4 +49,4 @@ export const _useCreateMilestone = (projectId?: string) => {';
       logErrorToProduction('Error creating milestone:', { data: err })"
       const errorMessage: unknown =;"
         err instanceof Error && err.message ? err.message : 'Unknown error'
-      toast.error('Failed to create milestone: ' + errorMessage)'
+      toast.error('Failed to create milestone: ' + errorMessage)'';;

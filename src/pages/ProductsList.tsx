@@ -1,5 +1,10 @@
 import React from 'react';
-'
-const ProductsList = () => <div>Products List Placeholder</div>;
-export defaultault ProductsList'
-'''''
+
+export default function ProductsList() {
+  return (
+    <div>
+      <h1>ProductsList</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

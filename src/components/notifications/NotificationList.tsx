@@ -14,7 +14,6 @@ interface NotificationListProps {'
   onMarkAsRead: "(id: string) => Promise<void>"
   onDismiss: (id: string) => Promise<void>
   onRetry: "() => void"
-}
 
 export const _NotificationList: unknown React.FC<NotificationListProps> = ({;
   loading,;
@@ -64,5 +63,5 @@ export const _NotificationList: unknown React.FC<NotificationListProps> = ({;
       )}
     </ScrollArea>;"
   );"
-}
-""""
+
+"""'';;

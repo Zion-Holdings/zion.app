@@ -42,7 +42,7 @@ export async function generateContract(): unknown {): unknown {): unknown {): un
 
   if (error) {;
     throw error;
-  }
+
 ;"
   // Type assertion needed for mock Supabase client compatibility;";
   if (";";
@@ -58,6 +58,6 @@ export async function generateContract(): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;

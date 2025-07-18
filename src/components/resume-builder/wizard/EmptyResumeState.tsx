@@ -21,5 +21,5 @@ export const _EmptyResumeState: ({ onCreateClick "}: EmptyResumeProps) => {
       </CardContent>
     </Card>;""
   );
-}
-"""
+
+""'';;

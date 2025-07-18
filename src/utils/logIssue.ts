@@ -1,5 +1,5 @@
 import { captureException } from './sentry'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 /**;
  * Wrapper to report minor issues or warnings to Sentry.;
@@ -20,4 +20,4 @@ export function logIssue(): unknown {): unknown {): unknown {): unknown {): unkn
 }"
 }";"
 }"
-}"
+}'';;

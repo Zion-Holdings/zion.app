@@ -19,9 +19,9 @@ export function AgendaSection(): ;
       </div>
     </section>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

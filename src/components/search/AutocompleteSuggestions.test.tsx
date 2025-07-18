@@ -139,7 +139,7 @@ describe('AutocompleteSuggestions', () => {'
         false,"
     });
     expect(highlightedOption).toHaveAttribute('aria-selected', 'true')'
-    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.'
+    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.'`
     // The useEffect for scrolling depends on this `highlightedIndex`.;
   })'
 '
@@ -179,4 +179,4 @@ describe('AutocompleteSuggestions', () => {'
     expect(screen.getByText('category')).toBeInTheDocument()'
   });
 })'
-'''''
+'''''';;`

@@ -15,7 +15,6 @@ interface ActiveFiltersProps {'
   experienceRange: "[number, number]
   setExperienceRange: (range: [number, number]) => void
   clearFilters: () => void""
-}
 
 export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   selectedSkills,;
@@ -113,9 +112,9 @@ export function ActiveFilters(): unknown {): unknown {): unknown {): unknown {):
       </Button>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

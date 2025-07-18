@@ -83,7 +83,7 @@ export function PartnerReferralLinks(): ;
     const allLinks = [{ name: 'Default', link: "baseLink }, ...generatedLinks]
 ;"
     const csvContent = ["
-      'Name,Link','
+      'Name,Link','`
       ...allLinks.map((l) => `${l.name},${l.link}`),;
     ].join('\n')'
 '
@@ -258,7 +258,7 @@ export function PartnerReferralLinks(): ;
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

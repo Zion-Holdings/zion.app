@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router // Changed from useParams, useNavigate';
+import { useState } from 'react;
+import { useRouter } from 'next/router // Changed from useParams, useNavigate;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { VideoCallRoom } from '@/components/video/VideoCallRoom'
 import { Button } from '@/components/ui/button'
-import { toast } from 'sonner';
-export defaultault function VideoCall(): '
+import { toast } from 'sonner;
+export default function VideoCall(): '
   const router = useRouter();
   const { roomId: "rawRoomId "} = router.query;"
   const roomId = typeof rawRoomId === 'string' ? rawRoomId : undefined;
@@ -14,4 +14,4 @@ export defaultault function VideoCall(): '
   const [hasJoined, setHasJoined] = useState(false);
   const [participants, setParticipants] = useState<'
     Array<{;
-      id: string;,;
+      id: string;,;';;

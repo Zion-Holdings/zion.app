@@ -1,14 +1,10 @@
-import { Loader2 } from '@/components/ui/icons'
+import React from 'react';
 
-export function LoadingState(): '
-  return ('
-    <div className="flex justify-center items-center p-8>;"";
-      <Loader2 className="h-8 w-8 animate-spin text-primary" />
-    </div>;"
-  );";
-}";";
-"";
-}"";
-}"
-}"
-}"
+export default function LoadingState() {
+  return (
+    <div>
+      <h1>LoadingState</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

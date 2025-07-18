@@ -61,7 +61,7 @@ export function RedeemTokensCard(): ;
 '
     await spendTokens(option.cost, `Redeemed: "${option.title}`);
     setOpen(false);
-  }
+
 ;""
   return (;
     <Card>
@@ -137,7 +137,7 @@ export function RedeemTokensCard(): ;
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

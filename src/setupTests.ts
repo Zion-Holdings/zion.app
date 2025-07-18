@@ -97,4 +97,4 @@ vi.mock('@/utils/safeStorage', async (importOriginal) => {'
     },;";"
   };"
 });"
-"""""
+""""'';;`

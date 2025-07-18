@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react;
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Header } from '@/components/Header'
@@ -10,8 +10,8 @@ import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage';
-export defaultault function RoadmapFeaturePage(): '
+import { safeStorage } from '@/utils/safeStorage;
+export default function RoadmapFeaturePage(): '
   const router = useRouter();
   const { _id } = router.query as { id?: string };
   const { _user } = useAuth()'
@@ -29,4 +29,4 @@ export defaultault function RoadmapFeaturePage(): '
   )'
   useEffect(() => {
     safeStorage.setItem('roadmap_items', JSON.stringify(items))
-  }, [items])
+  }, [items])';;`

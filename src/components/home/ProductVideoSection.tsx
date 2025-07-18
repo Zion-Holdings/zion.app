@@ -4,7 +4,6 @@ import YoutubeEmbed from '@/components/YoutubeEmbed'
 interface ProductVideoSectionProps {
   className?: string
   style?: React.CSSProperties
-}
 
 export function ProductVideoSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,'
@@ -29,9 +28,9 @@ export function ProductVideoSection(): unknown {): unknown {): unknown {): unkno
     </section>)"
 };"
 ;";"
-export defaultault ProductVideoSection;";"
+export default ProductVideoSection;";"
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

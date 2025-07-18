@@ -1,2 +1,4 @@
-import { completeSitemap } from '@/config/sitemap'
-import  type { SitemapItem }  from '@/config/sitemap';
+// Utility functions for routeUtils
+export const routeUtils = {
+  // TODO: Implement utility functions
+};

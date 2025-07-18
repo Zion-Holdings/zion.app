@@ -15,4 +15,4 @@ export interface CaseStudy {
   /** URL of downloadable case study PDF */"
   pdf: "string"
 }"
-"""""
+""""'';;

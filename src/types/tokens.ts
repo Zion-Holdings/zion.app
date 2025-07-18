@@ -5,7 +5,7 @@ export interface Wallet {
 }"
 ;"
 export type TransactionType = 'earn' | 'burn'
-;
+
 export interface TokenTransaction {
   id: string'
   user_id?: string
@@ -14,4 +14,4 @@ export interface TokenTransaction {
   reason: "string | null"
   created_at: "string"
 }"
-"""""
+""""'';;

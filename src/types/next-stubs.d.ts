@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 declare module 'next' {'
   export interface NextApiRequest {
     [key: "string]: unknown"
@@ -8,4 +8,4 @@ declare module 'next' {'
     status: "(statusCode: number) => NextApiResponse<T>;"
     json: "(data: T) => NextApiResponse<T>;"
     end: (data?: unknown) => NextApiResponse<T>;,"
-    setHeader: (name: string, value: "string | readonly string[]) => void;";
+    setHeader: (name: string, value: "string | readonly string[]) => void;';';;

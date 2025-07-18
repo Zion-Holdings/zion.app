@@ -44,7 +44,6 @@ interface AddMilestoneFormProps {'
   projectStartDate?: string | undefined
   projectEndDate?: string | undefined
   projectType?: string | undefined
-}
 
 export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   onSubmit,;"
@@ -257,6 +256,6 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;

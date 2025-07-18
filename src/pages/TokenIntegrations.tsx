@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import ConnectWalletButton from '@/components/ConnectWalletButton'
 import { useWallet } from '@/context/WalletContext'
 import  { Button }  from '@/components/ui/button;
-import {';
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -12,7 +12,7 @@ import {';
 } from '@/components/ui/select'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import  { Input }  from '@/components/ui/input;
-import {';
+import {;
   logInfo as _logInfo,'
   logErrorToProduction,;
 } from '@/utils/productionLogger;
@@ -31,14 +31,14 @@ const CHAINS: unknown Chain[] = [;"
   { id: 'avalanche', name: 'Avalanche', logo: '/logos/avalanche-logo.svg' },;
   { id: 'bnb', name: 'BNB', logo: '/logos/bnb-logo.svg' },;
 ]'
-;
+
 function suggestChain(): unknown {): unknown {): unknown {): unknown {): unknown {region: string, stake: number): string {;"
   if (stake > 1000) return 'ethereum'
   if (region === 'asia') return 'bnb'
   if (region === 'europe') return 'polygon'
   return 'optimism'
 };
-export defaultault function TokenIntegrations(): '
+export default function TokenIntegrations(): '
   const { address, isConnected } = useWallet();
   const [fromChain, setFromChain] = useState<string>('ethereum');
   const [toChain, setToChain] = useState<string>('polygon');
@@ -50,7 +50,7 @@ export defaultault function TokenIntegrations(): '
   const [region, setRegion] = useState('');
   const [stake, setStake] = useState(0);
   const [suggested, setSuggested] = useState<string | null>(null)'
-;
+
   // --- LayerZero Bridge Integration Point ---;
   // Reactivate: Mock fee estimation logic'
   const estimateFee: async (;",;"
@@ -103,4 +103,4 @@ export defaultault function TokenIntegrations(): '
       return;
     }'
     if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {;
-      setError('Please select chains and enter a valid amount to bridge.');
+      setError('Please select chains and enter a valid amount to bridge.');';;`

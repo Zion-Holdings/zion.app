@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { toast } from 'sonner'
 import { useRecordActivity } from './useRecordActivity'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useUploadDeliverable = () => {';
+export const _useUploadDeliverable = () => {;
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const { _recordMilestoneActivity } = useRecordActivity();
@@ -65,4 +65,4 @@ export const _useUploadDeliverable = () => {';
       logErrorToProduction('Error uploading deliverable:', { data: "err "})"
       const errorMessage: unknown =;"
         err instanceof Error && err.message ? err.message : 'Unknown error'
-      toast.error('Failed to upload deliverable: ' + errorMessage)'
+      toast.error('Failed to upload deliverable: ' + errorMessage)'';;`

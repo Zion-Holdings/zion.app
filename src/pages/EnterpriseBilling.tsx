@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { BillingDashboard } from '@/components/enterprise/billing/BillingDashboard'
 import { useAuth } from '@/hooks/useAuth'
 import { SEO } from '@/components/SEO'
-import { ProtectedRoute } from '@/components/ProtectedRoute';
-export defaultault function EnterpriseBilling(): '
+import { ProtectedRoute } from '@/components/ProtectedRoute;
+export default function EnterpriseBilling(): '
   const { _user } = useAuth();
   // Check if user has billing permissions'
   const hasBillingAccess: unknown =;
@@ -13,7 +13,7 @@ export defaultault function EnterpriseBilling(): '
   if (!hasBillingAccess) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }'
-;
+
   return (;
     <ProtectedRoute>'
       <SEO;
@@ -31,4 +31,4 @@ export defaultault function EnterpriseBilling(): '
 }"
 }";"
 }"
-}"
+}'';;

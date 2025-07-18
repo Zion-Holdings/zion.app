@@ -1,4 +1,4 @@
-import type { Prompt } from '@/types/prompts';
+import type { Prompt } from '@/types/prompts;
 '
 export const CATEGORY_LABELS: {;",
   talent: 'For Talents','
@@ -523,4 +523,4 @@ export const PROMPT_LIBRARY: unknown Prompt[] = [;
     text: 'Suggest webinar topics for venture capital trends','
   },;
 ]'
-'''''
+'''''';;

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { useAuth } from './useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface OnboardingStatus {
   profileCompleted: "boolean"
@@ -57,4 +57,4 @@ export function useOnboardingStatus(): ;"
         };"
       } catch {;"
         logErrorToProduction('Error in onboarding status hook:', {;
-          data: error,;
+          data: error,;';;

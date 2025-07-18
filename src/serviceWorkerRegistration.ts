@@ -1,4 +1,4 @@
-export function registerServiceWorker(): ;
-  if (;
-    'serviceWorker' in navigator &&;'
-    !(navigator as Navigator & { connection?: { saveData?: boolean } });
+// Module for serviceWorkerRegistration
+export const serviceWorkerRegistration = {
+  // TODO: Implement module functionality
+};

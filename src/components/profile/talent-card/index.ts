@@ -6,4 +6,4 @@ export { TalentCardFooter } from './TalentCardFooter'
 export { TalentCardHeader } from './TalentCardHeader'
 export { TalentCardSaveButton } from './TalentCardSaveButton'
 export { TalentCardSkills } from './TalentCardSkills'
-'''''
+'''''';;

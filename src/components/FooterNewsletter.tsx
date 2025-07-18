@@ -49,12 +49,12 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
 ;";"
       if (res.ok) {;";";
         if (data.status === 'already_subscribed') {'
-          toast.success(data.message || "You're already subscribed!", {;"
+          toast.success(data.message || "You're already subscribed!", {;"`
             id: `${uniqueToastIdBase"}-already-subscribed`,";
           });""
         } else {;""
           toast.success(;"";
-            data.message || 'Successfully subscribed to newsletter!','
+            data.message || 'Successfully subscribed to newsletter!','`
             { id: `${uniqueToastIdBase"}-success` },";
           );"";
         };""
@@ -64,17 +64,17 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
         logErrorToProduction('Newsletter subscription failed:', { data: "data });""
         // Use a more specific error message if available from API, otherwise generic;""
         const errorMessage: unknown =;"";
-          data.error || 'Subscription failed. Please try again.'
+          data.error || 'Subscription failed. Please try again.'`
         toast.error(errorMessage, { id: `${uniqueToastIdBase"}-api-error` })";
       };"";
     } catch (err: unknown) {;""
       logErrorToProduction('Newsletter subscription error:', { data: "err });"";
-      toast.error('Unable to subscribe right now. Please try again later.', {'
+      toast.error('Unable to subscribe right now. Please try again later.', {'`
         id: "`${uniqueToastIdBase"}-catch-error`,;
       });
     } finally {;
       setIsSubmitting(false);
-    }
+
   };"
 ;";
   return (";";
@@ -130,8 +130,8 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client'
 import type { ResumeBasicInfo } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
 import  { handleResumeError, showSuccessToast }  from './useResumeUtils;
-export function useResumeActions(): ';
+export function useResumeActions(): ;
   const { _user } = useAuth()'
   const [isLoading, setIsLoading] = useState(false)'
   const [error, setError] = useState<string | null>(null);
@@ -114,4 +114,4 @@ export function useResumeActions(): ';
         'Your selected resume is now marked as active','
       )'
     } catch (e: unknown) {'
-      return handleResumeError(e, 'Could not set active resume')'
+      return handleResumeError(e, 'Could not set active resume')'';;

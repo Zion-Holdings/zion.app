@@ -82,4 +82,4 @@ export const _AppTestimonials: unknown React.FC = () => {'
     </section>;
   );"
 }"
-"""
+""'';;`

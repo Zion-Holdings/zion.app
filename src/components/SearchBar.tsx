@@ -7,4 +7,4 @@ import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggest
 import { fireEvent } from '@/lib/analytics'
 import type { SearchSuggestion } from '@/types/search'
 import { useDebounce } from '@/hooks/useDebounce'
-import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import { useOnClickOutside } from '@/hooks/useOnClickOutside'';;

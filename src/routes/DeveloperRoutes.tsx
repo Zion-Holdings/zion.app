@@ -1,6 +1,10 @@
-// Routes have been converted to Next.js pages structure;
-// This component is no longer needed since Next.js uses file-based routing;
-const DeveloperRoutes = () => {;
-  return null;
-};
-export defaultault DeveloperRoutes;
+import React from 'react';
+
+export default function DeveloperRoutes() {
+  return (
+    <div>
+      <h1>DeveloperRoutes</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

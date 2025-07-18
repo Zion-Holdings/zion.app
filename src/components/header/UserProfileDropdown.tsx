@@ -215,5 +215,5 @@ const UserProfileDropdown: unknown React.FC = () => {;
   )
 };"
 ;";
-export defaultault UserProfileDropdown";";
-"""
+export default UserProfileDropdown";";
+""'';;

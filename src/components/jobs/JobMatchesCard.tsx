@@ -23,7 +23,6 @@ interface JobMatchCardProps {'
   onApply: (matchId: string, jobId: string) => void,"
   onDecline: (matchId: string) => void
   showApplied?: boolean
-}
 
 export function JobMatchesCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   match,;
@@ -125,4 +124,4 @@ export function JobMatchesCard(): unknown {): unknown {): unknown {): unknown {)
 }";
 }""
 }"
-}"
+}'';;

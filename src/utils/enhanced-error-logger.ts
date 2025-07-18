@@ -1,2 +1,4 @@
-// Enhanced Error Logging System for Production Debugging;
-// Provides structured error collection, context gathering, and intelligent filtering;
+// Utility functions for enhanced-error-logger
+export const enhanced-error-logger = {
+  // TODO: Implement utility functions
+};

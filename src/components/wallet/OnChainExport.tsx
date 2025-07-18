@@ -70,7 +70,7 @@ export function OnChainExport(): ;"
       });"
       setIsConnected(true)"
       toast({;
-        title: 'Wallet connected','
+        title: 'Wallet connected','`
         description: `Wallet ${address.slice(0", 6)}...${address.slice(-4)} connected successfully`,;
       })"
     } catch (error: unknown) {;
@@ -182,7 +182,6 @@ export function OnChainExport(): ;"
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

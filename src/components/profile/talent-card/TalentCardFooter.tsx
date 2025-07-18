@@ -13,7 +13,6 @@ interface TalentCardFooterProps {'
   profile: "TalentProfile,
   onViewProfile: (id: string) => void"
   onRequestHire?: (profile: "TalentProfile) => void
-}
 
 export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profile,;
@@ -119,7 +118,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

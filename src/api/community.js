@@ -11,5 +11,6 @@ export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
       data: 'Error occurred',
     })'
     throw err;
-  }
+
 };
+';;

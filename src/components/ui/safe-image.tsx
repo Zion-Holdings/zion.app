@@ -14,7 +14,6 @@ interface SafeImageProps {'
   priority?: boolean
   sizes?: string
   quality?: number
-}
 
 export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   src,;"
@@ -47,7 +46,7 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
   // If we have an error and no fallback, show a placeholder;
   if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {
     return (;""
-      <div;
+      <div;`
         className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`}
         style={{ width, height }}"
         role="img
@@ -74,7 +73,7 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

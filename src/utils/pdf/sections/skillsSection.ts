@@ -1,6 +1,6 @@
 import { jsPDF } from 'jspdf'
 import type { Skill } from '@/types/resume'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig;
 '
 export function addSkillsSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
   doc: "jsPDF"
@@ -13,4 +13,4 @@ export function addSkillsSection(): unknown {): unknown {): unknown {): unknown 
 ;"
   doc.setFontSize(16);"
   doc.setTextColor(colors.heading);"
-  doc.text('Skills', 20, yPos);
+  doc.text('Skills', 20, yPos);';;

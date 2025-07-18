@@ -9,7 +9,6 @@ import { useIsMobile } from '@/hooks/use-mobile'
 interface PreviewHeaderProps {'
   resume: "Resume
   onBack: () => void""
-}
 
 export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{ resume, onBack }: PreviewHeaderProps) {;
   const [isPrinting, setIsPrinting] = useState(false);
@@ -36,7 +35,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
         };"
         .no-print {
           display: none !important""
-        };
+        };`
       }`;
     document.head.appendChild(style);
 
@@ -51,7 +50,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
   };"
 ;"
   return (
-    <div;
+    <div;`
       className={`flex ${isMobile ? 'flex-col' : 'justify-between'} items-${isMobile ? 'stretch' : 'center'} gap-3`}'
     >'
       <Button variant="outline" onClick={onBack} className=gap-2 no-print>"
@@ -59,7 +58,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
         Back;""
       </Button>;
 
-      <div;"
+      <div;"`
         className={`flex ${isMobile ? 'flex-col' : 'flex-row'} space-${isMobile ? 'y-2' : 'x-2'} no-print`}'
       >'
         <PdfExportButton resume={resume} />;
@@ -81,9 +80,8 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

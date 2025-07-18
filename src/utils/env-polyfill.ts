@@ -1,4 +1,4 @@
-/**;
- * Environment Polyfill for Browser;
- *;
- * This polyfill ensures that process.env is always available in the browser environment.;
+// Utility functions for env-polyfill
+export const env-polyfill = {
+  // TODO: Implement utility functions
+};

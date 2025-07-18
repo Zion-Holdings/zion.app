@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 '
 interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {;
   src?: string;
@@ -30,4 +30,4 @@ interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {;
   'ios-src'?: string;
   loading?: 'auto' | 'lazy' | 'eager'
   reveal?: 'auto' | 'interaction' | 'manual'
-  'with-credentials'?: boolean;
+  'with-credentials'?: boolean;';;

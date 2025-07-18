@@ -88,7 +88,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
     setIsSubmitting(true)'
 
     try {'
-      // Combine date and time'
+      // Combine date and time'`
       const dateTimeString: `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00`;
       const scheduledDate = new Date(dateTimeString);
 '
@@ -116,7 +116,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
       })";"
 ;";"
       toast({;";";
-        title: 'Interview requested','
+        title: 'Interview requested','`
         description: "`Your interview request with ${talent.full_name"} has been sent.`,;
       })";"
       onClose();";"
@@ -363,7 +363,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
               <FormItem>'
                 <FormLabel>Meeting Link (Optional)</FormLabel>;
                 <FormControl>'
-                  <Input'
+                  <Input'`
                     placeholder={`Add your ${form.watch('platform')} link here`};
                     {...field};
                   />;
@@ -411,8 +411,8 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

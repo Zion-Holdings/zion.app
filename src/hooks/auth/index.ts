@@ -1,5 +1,5 @@
-export * from './useEmailAuth'
-export * from './useProfileManagement'
-export * from './useSocialAuth'
-export * from './useLogout'
-'''''
+// Hook for index
+export const useIndex = () => {
+  // TODO: Implement hook logic
+  return {};
+};

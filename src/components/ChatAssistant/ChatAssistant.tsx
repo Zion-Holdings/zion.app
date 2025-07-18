@@ -149,7 +149,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
       setGuestMessage(messageContent);
       setShowGuestModal(true);
     };
-  }
+
 ;"
   const handleModalSendConfirm = () => {;";
     if (!guestMessage) return";";
@@ -170,7 +170,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   const handleModalCancel = () => {;
     setShowGuestModal(false);
     setGuestMessage(null);
-  }
+
 ;""
   useEffect(() => {;"
     if (!isOpen) return";"
@@ -305,4 +305,4 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
 }";
 }""
 }"
-}"
+}'';;`

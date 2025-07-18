@@ -6,7 +6,7 @@ interface ChatMessageProps {'
   message: string
   timestamp?: Date'
   key?: string | number'
-}
+
 '
 export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, message, timestamp }: ChatMessageProps) {'
   const isUser = role === 'user'
@@ -63,6 +63,6 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;

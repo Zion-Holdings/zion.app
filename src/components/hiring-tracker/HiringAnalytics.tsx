@@ -15,7 +15,7 @@ import {;
 
 interface HiringAnalyticsProps {'
   jobId?: string'
-}
+
 '
 interface StatusDistributionEntry {'
   status: "string,;";
@@ -152,7 +152,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
                 };
               >;
                 {analyticsData.statusDistribution.map((_entry, index) => (;
-                  <Cell;
+                  <Cell;`
                     key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
@@ -206,7 +206,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
               <Tooltip />;"";
               <Bar dataKey="value" fill=#8884d8 radius={[0, 4, 4, 0]}>"
                 {analyticsData.funnelData.map((_entry, index) => (;
-                  <Cell;
+                  <Cell;`
                     key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
@@ -220,6 +220,6 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

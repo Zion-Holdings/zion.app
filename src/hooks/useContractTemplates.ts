@@ -69,4 +69,4 @@ export function useContractTemplates(): ;
             user_id: user.id"
             title: "title
             template_data: templateData"
-            is_default: isDefault,"
+            is_default: isDefault,'';;

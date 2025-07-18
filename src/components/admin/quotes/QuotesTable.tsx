@@ -28,7 +28,6 @@ interface QuotesTableProps {
   toggleArchive: (id: string, isArchived: boolean) => void,"
   deleteQuote: (id: string) => void,""
   onViewDetails: "(quote: QuoteRequest) => void
-}
 
 export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
   quotes,;
@@ -96,7 +95,7 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
                   {quote.budget_display ||"
                     (quote.budget_min && quote.budget_max;
                       ? `$${quote.budget_min} - $${quote.budget_max}`;"";
-                      : quote.budget_min;"";
+                      : quote.budget_min;"";`
                         ? `$${quote.budget_min}`;"";
                         : 'Not specified')}'
                 </TableCell>'
@@ -217,4 +216,4 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
     </div>;
   );"";
 };"";
-""""
+"""'';;`

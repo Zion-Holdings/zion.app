@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react;
 import dynamic from 'next/dynamic'
-import type { ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType, PropsWithChildren } from 'react;
 import { logErrorToProduction } from './productionLogger'
-import { logInfo } from '@/utils/productionLogger';
+import { logInfo } from '@/utils/productionLogger;
 // Loading component for dynamic imports'
 const LoadingSpinner = () => (;
   <div className="flex items-center justify-center p-8">;"
@@ -39,4 +39,4 @@ export function createDynamicImport<;";"
     try {;"
       return <DynamicComponent {...props} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/>;"
     } catch {;"
-      logErrorToProduction('Dynamic import failed:', { data: "error "});
+      logErrorToProduction('Dynamic import failed:', { data: "error '});';;

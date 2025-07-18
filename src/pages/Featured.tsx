@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { FeaturedListingsSection } from '@/components/FeaturedListingsSection'
-import { GradientHeading } from '@/components/GradientHeading';
+import { GradientHeading } from '@/components/GradientHeading;
 '
-export defaultault function Featured(): ;
+export default function Featured(): ;
   return (;
     <>'
       <Header />;
@@ -15,4 +15,4 @@ export defaultault function Featured(): ;
             >;"
               Featured Listings;"
             </GradientHeading>;"
-            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">;
+            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto'>;';;

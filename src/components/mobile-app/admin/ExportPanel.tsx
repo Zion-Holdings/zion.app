@@ -10,7 +10,6 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 interface ExportPanelProps {'
   platform: "AppPlatform
   metadata: AppMetadataValues""
-}
 
 export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
   platform,;"
@@ -44,13 +43,13 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
         content ='
           headers.join(',') +'
           '\n' +'
-          values'
+          values'`
             .map((value) => `"${String(value).replace(/"/g, '')}"`)"
             .join(',')'
 '
         // Add keywords as additional rows'
         content += '\n\nKeywords:\n' + metadata.keywords.join(',')'
-
+`
         fileName = `zion-app-metadata-${platform}-${metadata.version}.csv`'
       }'
 
@@ -66,10 +65,10 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
       link.click();
       document.body.removeChild(link)'
       URL.revokeObjectURL(url)'
-
+`
       toast.success(`Exported ${format.toUpperCase()} file successfully`)'
     } catch {'
-      logErrorToProduction('Export failed:', { data: "error "})
+      logErrorToProduction('Export failed:', { data: "error "})`
       toast.error(`Failed to export ${format.toUpperCase()} file`)
     };""
   };
@@ -124,5 +123,5 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
       </CardContent>
     </Card>;""
   );
-}
-"""
+
+""'';;`

@@ -1,5 +1,5 @@
 import React  from 'react;
-import {';
+import {;
   ArrowRight,'
   BarChart3,;
   Users,;
@@ -9,19 +9,19 @@ import {';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import  { useWhitelabel }  from '@/context/WhitelabelContext;
-import {';
+import {;
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button;
 import { useAuth } from '@/hooks/useAuth'
 import  Link  from 'next/link;
-export defaultault function ZionHireAI(): ;
-  const { isWhitelabel, brandName, primaryColor } = useWhitelabel()';
-  const { _isAuthenticated } = useAuth()';
+export default function ZionHireAI(): ;
+  const { isWhitelabel, brandName, primaryColor } = useWhitelabel();
+  const { _isAuthenticated } = useAuth();
   return (;
     <>'
       <SEO;
@@ -45,7 +45,7 @@ export defaultault function ZionHireAI(): ;
             <div className="grid gap-6 md:grid-cols-2 items-center">;"
               <div className="space-y-4">;"
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tighter text-white">;"
-                  {isWhitelabel;"
+                  {isWhitelabel;"`
                     ? `${brandName} Recruiting Assistant`;"
                     : 'Zion Hire AI'}'
                 </h1>;
@@ -293,4 +293,4 @@ export defaultault function ZionHireAI(): ;
                       <span>Co-branded or white-labeled</span>;"
                     </li>;"
                     <li className="flex items-center">;"
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2 py-0.5 rounded">;
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2 py-0.5 rounded'>;';;`

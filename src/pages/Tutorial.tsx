@@ -3,14 +3,14 @@ import { ArrowLeft } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 import { TUTORIALS } from '@/data/tutorials'
 import { SEO } from '@/components/SEO'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button;
 import ReactMarkdown from 'react-markdown'
-import type { Tutorial as TutorialType } from '@/types/tutorial';
+import type { Tutorial as TutorialType } from '@/types/tutorial;
 '
 interface TutorialPageProps {;
   tutorial?: TutorialType;
 }'
-export defaultault function Tutorial(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export default function Tutorial(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   tutorial: initialTutorial,;
 }: TutorialPageProps) {;
   const router = useRouter();
@@ -49,4 +49,4 @@ export defaultault function Tutorial(): unknown {): unknown {): unknown {): unkn
           {tutorial.author && (;"
             <p className="mt-8 text-white font-semibold">;"
               —{' '};
-              {typeof tutorial.author === 'string;
+              {typeof tutorial.author === 'string;';;

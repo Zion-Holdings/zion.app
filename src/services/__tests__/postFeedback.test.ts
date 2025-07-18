@@ -1,12 +1,12 @@
 import { postFeedback } from '../feedbackService'
-import fetchMock from 'jest-fetch-mock';
+import fetchMock from 'jest-fetch-mock;
 fetchMock.enableMocks()'
-;
+
 describe('postFeedback', () => {'
   beforeEach(() => {;
     fetchMock.resetMocks();
   })'
-;
+
   it('sends feedback and returns data on success', async () => {;
     fetchMock.mockResponseOnce(JSON.stringify({ success: "true "}), {;"
       status: 201,;"
@@ -38,4 +38,4 @@ describe('postFeedback', () => {'
     ).rejects.toThrow('Server error');
   });
 })'
-'''''
+'''''';;

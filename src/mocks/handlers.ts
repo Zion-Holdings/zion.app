@@ -1,6 +1,6 @@
-import { http, HttpResponse } from 'msw';
+import { http, HttpResponse } from 'msw;
 const API_URL = '/auth/login // Assuming login endpoint is /auth/login'
-;
+
 export const _handlers = [;
   // Successful login'
   http.post(API_URL, async ({ request }) => {;
@@ -42,7 +42,7 @@ export const _handlers = [;
   http.get('/api/products', ({ request }) => {'
     const url = new URL(request.url);
     const scenario = url.searchParams.get('scenario')'
-;
+
     if (scenario === 'success') {;
       return HttpResponse.json(['
         {;
@@ -96,7 +96,7 @@ export const _handlers = [;
     if (scenario === 'empty') {;
       return HttpResponse.json([]);
     }'
-;
+
     if (scenario === 'invalidDate') {;
       return HttpResponse.json(['
         {;
@@ -153,4 +153,4 @@ export const _handlers = [;
     );";"
   }),;"
 ];"
-"""""
+""""'';;

@@ -27,8 +27,8 @@ export async function getAllTalent(): unknown {): unknown {): unknown {): unknow
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

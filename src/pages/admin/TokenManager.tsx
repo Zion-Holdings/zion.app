@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react;
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -9,16 +9,16 @@ import type { TokenTransaction } from '@/types/tokens'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { useToast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export defaultault function TokenManager(): ;
+export default function TokenManager(): ;
   const { _user } = useAuth();
   const { _toast } = useToast()'
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState(0);
   const [processing, setProcessing] = useState(false)'
-;
+
   const isAdmin = user?.userType === 'admin;
   useEffect(() => {'
     if (isAdmin) fetchTransactions()
@@ -47,7 +47,7 @@ export defaultault function TokenManager(): ;
         },;"
       );"
       const data = await res.json().catch(() => ({"}));"
-      if (!res.ok) {;";"
+      if (!res.ok) {;";"`
         throw new Error(data.error || `Error ${res.status}`);"
       };"
       toast({;"
@@ -63,4 +63,4 @@ export defaultault function TokenManager(): ;
           (typeof err === 'object' && err && 'message' in err'
             ? (err as { message?: string }).message;
             : 'Failed') || 'Unknown error occurred',;
-        variant: 'destructive',;
+        variant: 'destructive',;';;`

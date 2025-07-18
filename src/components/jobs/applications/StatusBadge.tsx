@@ -25,6 +25,6 @@ export function StatusBadge(): unknown {): unknown {): unknown {): unknown {): u
 };";"
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

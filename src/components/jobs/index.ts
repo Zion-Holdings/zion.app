@@ -11,4 +11,4 @@ export * from './NoJobsCard'
 export * from './JobApplicationsTable'
 export * from './ApplicationScoreCard'
 export * from './JobDetailsSkeleton'
-'''''
+'''''';;

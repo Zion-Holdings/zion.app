@@ -14,7 +14,7 @@ const mockScreenshots = [;
 '
 export const _AppScreenshots: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)'
-;
+
   const scroll = (_direction: 'left' | 'right') => {'
     if (scrollContainerRef.current) {;
       const scrollAmount = 300'
@@ -81,5 +81,5 @@ export const _AppScreenshots: React.FC = () => {
       </div>
     </section>;"
   );"
-}
-""""
+
+"""'';;

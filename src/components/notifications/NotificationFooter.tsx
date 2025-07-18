@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 '
 interface NotificationFooterProps {'
   onClose: "() => void
-}
 
 "
   const router = useRouter(); // Changed from useNavigate to useRouter;"
@@ -27,4 +26,4 @@ interface NotificationFooterProps {'
     </div>;
   );"
 }"
-"""
+""'';;

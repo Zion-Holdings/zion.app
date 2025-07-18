@@ -67,6 +67,6 @@ export function FlaggedListingsTable(): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;

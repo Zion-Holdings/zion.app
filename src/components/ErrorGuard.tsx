@@ -11,7 +11,7 @@ function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown
     </div>);
 }"
 
-export defaultault function ErrorGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{;"";
+export default function ErrorGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{;"";
   children,;"";
 }: {;"";
   children: "React.ReactNode"
@@ -37,5 +37,5 @@ export defaultault function ErrorGuard(): unknown {): unknown {): unknown {): un
 }"
 }"
 }"
-}
-}"
+
+}'';;

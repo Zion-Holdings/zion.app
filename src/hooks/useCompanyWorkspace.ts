@@ -1,2 +1,5 @@
-import { useState, useEffect } from 'react''
-import  type { Company }  from '@/components/enterprise/workspace/CompanyDashboard'
+// Hook for useCompanyWorkspace
+export const useUseCompanyWorkspace = () => {
+  // TODO: Implement hook logic
+  return {};
+};

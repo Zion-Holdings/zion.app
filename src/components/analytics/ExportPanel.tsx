@@ -21,7 +21,7 @@ export function ExportPanel(): ;
 '
     // In a real implementation, this would trigger an API call to generate and download the export;
     setTimeout(() => {'
-      toast({'
+      toast({'`
         title: "`${format.toUpperCase()"} Export Ready`,;"
         description: 'Your export has been downloaded.','
       })'
@@ -63,6 +63,6 @@ export function ExportPanel(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

@@ -1,53 +1,21 @@
-import { useRouter } from 'next/router';;';'';
-import { useMarketplaceSearch } from '@/hooks/useMarketplaceSearch';;';'';
-import type { ProductListing } from '@/types/listings';;';'';
-import { ListingCard } from '@/components/ListingCard'; // Assuming this component exists;';;';'';
-import { AppLayout } from '@/layout/AppLayout'; // Assuming this component exists;';;';'';
-import type { NextPageWithLayout } from '@/types/next';;';'';
-import React, { useEffect } from 'react';
-;
-const SearchPage: unknown unknown unknown unknown unknown NextPageWithLayout = () => {;
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();
-  const { q } = router.query;
-  const {;
-    searchQuery,;
-    setSearchQuery,;
-    filteredListings,;
-    isLoading,;
-    error,;
-  } = useMarketplaceSearch();
-;
-  useEffect(() => {;
-    if (q) {;
-      setSearchQuery(q as string);''
-    };';'
-  }, [q, setSearchQuery]);';'
-;';;''
-  return (;';;';''
-    <div className="container mx-auto px-4 py-8">;";";";";""
-      <h1 className="text-3xl font-bold mb-8">Search Results for "{searchQuery}"</h1>;";";";""
-      {isLoading && <p>Loading...</p>};";";";";""
-      {error && <p className="text-red-500">Error loading results: "{error.message"}</p>};";";";""
-      {!isLoading && !error && filteredListings.length === 0 && (;";";";";""
-        <p>No results found for "{searchQuery}".</p>;";";""
-      )};";";";""
-      {!isLoading && !error && filteredListings.length > 0 && (;";";";";""
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">;"
-          {filteredListings.map((listing: ProductListing) => (;
-            <ListingCard key={listing.id} {...listing} />;
-          ))};
-        </div>;
-      )};
-    </div>;
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Index - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Index</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Index content will go here */}
+        </div>
+      </div>
+    </>
   );
 };
-;
-SearchPage.getLayout = function getLayout(): unknown {): unknown {): unknown {): unknown {): unknown {page: React.ReactElement) {;""
-  return <AppLayout>{page}</AppLayout>;";""
-};";";""
-;";";";"";
-export default SearchPage; ";";";""
-}";";""
-}";""
-}""
-}""
+
+export default Index;

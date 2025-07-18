@@ -19,7 +19,6 @@ interface ProductGalleryProps {
   images: string[]
   videoUrl?: string
   modelUrl?: string
-}
 
 export function ProductGallery(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   images,;
@@ -62,11 +61,11 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
               {images.map((img, idx) => (;
                 <div;"";
                   key={idx};"";
-                  onClick={() => setSelected(idx)};"";
+                  onClick={() => setSelected(idx)};"";`
                   className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}'
                 >'
                   <OptimizedImage;
-                    src={img}'
+                    src={img}'`
                     alt={`Thumbnail image ${idx + 1}`};
                     className="w-full h-full object-cover"
                     fill;
@@ -129,13 +128,13 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
       </Tabs>'
       {images.length > 0 && ('
         <DialogContent className=max-w-3xl p-0>";";
-          <div"
+          <div"`
             className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`};
             onClick={() => setZoomed(!zoomed)};
           >'
             <img'
               src={images[selected] || images[0] || ''}'
-              alt="Zoomed view;"""
+              alt="Zoomed view;"""`
               className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`};
             />;
           </div>;
@@ -146,6 +145,6 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

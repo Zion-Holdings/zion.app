@@ -33,7 +33,6 @@ interface ChartDataPoint {'
   value: number""
   fill?: string""
   [key: string]: string | number | undefined""
-}
 
 interface AnalyticsChartProps {"
   title: string"
@@ -44,9 +43,9 @@ interface AnalyticsChartProps {"
   timeRange?: string
   onTimeRangeChange?: (range: string) => void
   height?: number
-}
+
 '
-export defaultault function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+export default function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   title,;
   description,'
   data,'
@@ -190,6 +189,6 @@ export defaultault function AnalyticsChart(): unknown {): unknown {): unknown {)
 export { AnalyticsChart };
 
 }'
-}
+
 }'
-}'
+}'';;

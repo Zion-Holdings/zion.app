@@ -5,7 +5,6 @@ interface ReviewStatsProps {'
   averageRating: "number,
   totalReviews: number
   ratingDistribution?: Record<number, number>
-}
 
 export function ReviewStats(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   averageRating,;
@@ -33,7 +32,7 @@ export function ReviewStats(): unknown {): unknown {): unknown {): unknown {): u
                   key={i};"
                   className={`h-4 w-4 ${i <= Math.round(averageRating);
                       ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-gray-300'}
+                      : 'text-gray-300'}`
                   }`};
                 />;
               ))}'
@@ -66,7 +65,7 @@ export function ReviewStats(): unknown {): unknown {): unknown {): unknown {): u
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

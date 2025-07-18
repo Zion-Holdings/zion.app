@@ -12,4 +12,4 @@ export interface ApplyToJobModalProps {""
   onClose: () => void"
   onApplySuccess?: (jobId: string) => Promise<void>""
 }"";
-""""
+"""'';;

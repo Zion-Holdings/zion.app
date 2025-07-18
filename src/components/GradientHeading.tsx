@@ -34,6 +34,6 @@ export function GradientHeading(): unknown {): unknown {): unknown {): unknown {
 };
 
 }'
-}
+
 }'
-}'
+}'';;

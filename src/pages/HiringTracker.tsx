@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { useRouter } from 'next/router'
 import { KanbanBoard } from '@/components/hiring-tracker/KanbanBoard'
 import { HiringAnalytics } from '@/components/hiring-tracker/HiringAnalytics'
@@ -6,12 +6,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Briefcase } from '@/components/ui/icons'
-;
+
 function HiringTrackerContent(): ;
   const router = useRouter()'
   const jobId = router.query.jobId as string;
   const [_activeTab, setActiveTab] = useState<string>('kanban')'
-;
+
   return (;
     <>'
       <SEO;
@@ -45,4 +45,4 @@ function HiringTrackerContent(): ;
             <KanbanBoard jobId={jobId} />;"
           </TabsContent>;"
 ;"
-          <TabsContent value="analytics" className="mt-6">;
+          <TabsContent value="analytics" className="mt-6'>;';;

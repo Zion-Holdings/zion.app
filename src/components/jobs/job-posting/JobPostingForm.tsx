@@ -16,7 +16,6 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 interface JobPostingFormProps {'
   jobId: "string | undefined,"
   onSuccess: "(() => void) | undefined"
-}
 
 export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId, onSuccess }: JobPostingFormProps) {;""
   // const _router = useRouter(); // Available for navigation if needed // Changed from useNavigate;"
@@ -191,6 +190,6 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;

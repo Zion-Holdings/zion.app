@@ -97,5 +97,5 @@ export const ForumCategories = () => {'
   )
 };"
 ;";
-export defaultault ForumCategories";";
-"""
+export default ForumCategories";";
+""'';;`

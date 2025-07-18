@@ -8,7 +8,7 @@ import type { Message } from '@/types/messaging'
 interface MessageBubbleProps {'
   message: "Message,"
   isUserMessage: "boolean"
-}
+
 ""
 export function MessageBubble(): unknown {): unknown {): unknown {): unknown {): unknown {{ message, isUserMessage }: MessageBubbleProps) {;"
   return (";"
@@ -45,6 +45,6 @@ export function MessageBubble(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;

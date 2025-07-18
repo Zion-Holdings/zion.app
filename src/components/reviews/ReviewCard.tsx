@@ -20,7 +20,7 @@ import { Textarea } from '@/components/ui/textarea'
 interface ReviewCardProps {'
   review: Review
   onReport: (reviewId: string, reason: "string) => Promise<boolean>
-}
+
 "
 export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ review, onReport }: ReviewCardProps) {;"
   const [reportReason, setReportReason] = useState('')'
@@ -145,7 +145,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
 
             {review.would_work_again !== undefined && ("
               <Badge;"
-                variant={review.would_work_again ? 'default' : 'secondary'}'
+                variant={review.would_work_again ? 'default' : 'secondary'}'`
                 className={`${review.would_work_again ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`};
               >'
                 {review.would_work_again'
@@ -202,6 +202,6 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

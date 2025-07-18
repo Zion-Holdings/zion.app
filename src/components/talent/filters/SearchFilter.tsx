@@ -29,9 +29,9 @@ export function SearchFilter(): unknown {): unknown {): unknown {): unknown {): 
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

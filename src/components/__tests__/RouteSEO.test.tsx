@@ -36,4 +36,4 @@ test('renders SEO tags based on route metadata', () => {'
   const canonical = container.querySelector('link[rel=canonical"]')'
   expect(canonical?.getAttribute('href')).toBe('https://example.com/about')'
 })'
-'''''
+'''''';;

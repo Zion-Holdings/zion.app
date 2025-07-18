@@ -1,5 +1,5 @@
-import React from 'react';
-import LegalTemplates from '@/components/dashboard/LegalTemplates // Import the component';
+import React from 'react;
+import LegalTemplates from '@/components/dashboard/LegalTemplates // Import the component;
 // const _StartupOSPage: unknown React.FC = () => {'
   return (;
     <div className="flex h-screen bg-gray-50">;"
@@ -41,4 +41,4 @@ import LegalTemplates from '@/components/dashboard/LegalTemplates // Import the 
             <li className="mb-3">;"
               <a;"
                 href="#"
-                className="text-gray-600 hover:text-blue-600 font-medium";
+                className="text-gray-600 hover:text-blue-600 font-medium';';;

@@ -14,7 +14,6 @@ import { Textarea } from '@/components/ui/textarea'
 interface GeneratedDescriptionDisplayProps {'
   description: "string
   onSave: (editedDescription: string) => void""
-}
 
 export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   description,;
@@ -82,7 +81,7 @@ export function GeneratedDescriptionDisplay(): unknown {): unknown {): unknown {
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

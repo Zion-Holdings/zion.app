@@ -1,6 +1,4 @@
-declare module '@/legal/TermsOfService' {;
-  import React from 'react';
-  const component: unknown React.FC;
-  export defaultault component;
-}'
-'''''
+// Type definitions for TermsOfService.d
+export interface TermsOfService.d {
+  // TODO: Add proper type definitions
+}

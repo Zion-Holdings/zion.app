@@ -1,9 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import React from 'react;
+import { useState } from 'react;
 import { useToast } from '@/hooks/use-toast'
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;
 '
-export defaultault function RequestService(): ;
+export default function RequestService(): ;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -97,4 +97,4 @@ export defaultault function RequestService(): ;
     </div>;
   );
 };
-}'
+}'';;

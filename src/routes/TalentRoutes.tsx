@@ -1,6 +1,10 @@
-// Routes have been converted to Next.js pages structure;
-// This component is no longer needed since Next.js uses file-based routing;
-const TalentRoutes = () => {;
-  return null;
-};
-export defaultault TalentRoutes;
+import React from 'react';
+
+export default function TalentRoutes() {
+  return (
+    <div>
+      <h1>TalentRoutes</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

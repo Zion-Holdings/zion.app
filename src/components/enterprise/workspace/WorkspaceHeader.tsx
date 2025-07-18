@@ -69,4 +69,4 @@ export function WorkspaceHeader(): unknown {): unknown {): unknown {): unknown {
 }";
 }""
 }"
-}"
+}'';;

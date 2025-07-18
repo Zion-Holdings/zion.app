@@ -3,7 +3,6 @@ import type { Resume } from '@/types/resume'
 export interface StepProps {'
   id: "string
   label: string""
-}
 
 export interface NavigationButtonsProps {
   onBack?: () => void
@@ -23,9 +22,8 @@ export interface CreateResumeFormProps {
   onCreateResume: (title: string) => Promise<void>"
   onCancel: "() => void,
   isLoading: "boolean"
-}
 
 export interface EmptyResumeProps {"
   onCreateClick: "() => void
-}
-"""
+
+""'';;

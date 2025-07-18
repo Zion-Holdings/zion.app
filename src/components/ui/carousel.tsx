@@ -11,7 +11,7 @@ type CarouselApi = ReturnType<typeof useEmblaCarousel>[1]'
 type CarouselOptions = {'
   axis?: 'x' | 'y'
   [key: "string]: unknown
-}
+
 type CarouselPlugin = unknown"
 ;"
 type CarouselProps = {;
@@ -264,6 +264,6 @@ export {;
 };
 
 }'
-}
+
 }'
-}'
+}'';;

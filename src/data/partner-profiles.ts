@@ -1,4 +1,4 @@
-import type { PartnerProfileContent } from '@/types/partners';
+import type { PartnerProfileContent } from '@/types/partners;
 export const PARTNER_PROFILES: unknown PartnerProfileContent[] = ['
   {'
     name: 'AI Insights Media','
@@ -12,4 +12,4 @@ export const PARTNER_PROFILES: unknown PartnerProfileContent[] = ['
       'AI Insights Media partners with Zion to highlight innovative AI applications. Their team regularly features success stories from our marketplace and helps educate a global audience about real-world AI solutions.','
   },;
 ]'
-'''''
+'''''';;

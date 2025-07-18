@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useToast } from '@/hooks/use-toast'
 import { useError } from '@/context/ErrorContext'
 
-export defaultault function ErrorResetOnRouteChange(): ;
+export default function ErrorResetOnRouteChange(): ;
   const router = useRouter();
   const { _resetError } = useError();
   const { _dismiss } = useToast();
@@ -23,6 +23,6 @@ export defaultault function ErrorResetOnRouteChange(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;

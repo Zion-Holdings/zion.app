@@ -8,10 +8,10 @@ export interface TalentFilterOptions {
   priceRange?: [number, number]'
   experienceRange?: [number, number]'
   sortOption?: string
-}
+
 '
 export function useFilterTalents(): unknown {): unknown {): unknown {): unknown {): unknown {'
   talents: "TalentProfile[] = []
   initial: TalentFilterOptions = {"},"
 ) {;"
-  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '')'
+  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '')'';;

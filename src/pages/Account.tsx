@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import type { GetServerSideProps } from 'next';
+import { useState } from 'react;
+import type { GetServerSideProps } from 'next;
 import { toast } from '@/hooks/use-toast'
 import Link from 'next/link'
 import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
-import {';
+import {;
   ProfileForm,'
   type ProfileValues,;
 } from '@/components/profile/ProfileForm'
@@ -14,8 +14,8 @@ import { ApiKeysManager } from '@/components/developers/ApiKeysManager'
 import { SEO } from '@/components/SEO'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import type { Order } from '@/hooks/useOrders'
-import type { NextApiRequest } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest } from 'next;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface User {
   id: string,"
@@ -52,4 +52,4 @@ function Account(): unknown {): unknown {{ user: initialUser, orders }: AccountP
         description = (error as { message: "string "}).message;
       };"
       toast({;";"
-        title: 'Error updating profile','
+        title: 'Error updating profile','';;`

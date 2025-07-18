@@ -1,4 +1,4 @@
-import type { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings;
 '
 export const DEFAULT_EQUIPMENT_IMAGE: unknown ='
   'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'
@@ -34,7 +34,7 @@ export const _equipmentListings: unknown ProductListing[] = ['
     ],'
     stock: 5,"
   },;
-  {
+
     id: 'network-switch-1','
     title: 'Cisco Catalyst 9300 48-Port Switch','
     description:'
@@ -382,4 +382,4 @@ export const _equipmentListings: unknown ProductListing[] = ['
     ],'
   },;
 ]'
-'''''
+'''''';;

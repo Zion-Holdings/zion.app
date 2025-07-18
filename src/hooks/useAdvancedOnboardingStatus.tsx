@@ -1,10 +1,9 @@
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from './useLocalStorage;
 '
 export interface AdvancedOnboardingStatus {
   aiExplored: "boolean
   slackConnected: boolean,
   communityVisited: "boolean"
-}
 
 const defaultStatus: unknown "AdvancedOnboardingStatus = {"
   aiExplored: false
@@ -24,9 +23,9 @@ export function useAdvancedOnboardingStatus():
     setStatus((s) => ({ ...s, communityVisited: "true }))
 ;""
   return { status, markAiExplored, markSlackConnected, markCommunityVisited };
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

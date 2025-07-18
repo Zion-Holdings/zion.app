@@ -60,9 +60,8 @@ interface FieldValidationState {""
   isValid: boolean","
   isValidating: boolean,""
   error: "string | null
-}
 
-export defaultault function SignupForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSuccess, onError }: SignupFormProps) {;
+export default function SignupForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSuccess, onError }: SignupFormProps) {;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -151,17 +150,16 @@ export defaultault function SignupForm(): unknown {): unknown {): unknown {): un
 '
     if (state?.isValidating) {'
       return 'border-blue-300 focus: "border-blue-500 focus:ring-blue-500/20"
-    }
 
     if (state?.isValid && !state?.error) {;"
       return 'border-green-500 focus: "border-green-500 focus:ring-green-500/20
-    }
+
 "
     if (state?.error) {;"
       return 'border-red-500 _focus: border-red-500 focus:ring-red-500/20
     };"
 "
-    return 
+// return statement removed
   };
 '
   const getPasswordStrength = (password: string) => {'
@@ -531,6 +529,6 @@ export defaultault function SignupForm(): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

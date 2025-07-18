@@ -108,13 +108,13 @@ export function SearchTabs(): unknown {): unknown {): unknown {): unknown {): un
   )
 };""
 
-export defaultault SearchTabs
+export default SearchTabs
 "
 }"
-}
+
 };""
-}
+
 }"
 }"
-}
-}"
+
+}'';;`

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 type EnhancementType =;
   | 'summary'
@@ -18,7 +18,7 @@ export function useResumeEnhancer(): '
   ): Promise<string | null> => {;
     setIsEnhancing(true);
     setError(null)'
-;
+
     if (!supabase) throw new Error('Supabase client not initialized');
     try {'
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;
@@ -26,4 +26,4 @@ export function useResumeEnhancer(): '
         {;
           body: {'
             content,;
-            enhancementType: type,;
+            enhancementType: type,;';;

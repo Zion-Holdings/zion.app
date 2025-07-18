@@ -43,7 +43,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
                   category: category
                   proficiency: 3,"
                 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
-              }
+
             };"
           };"
 
@@ -103,4 +103,4 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
     </div>;
   );"
 }"
-"""
+""'';;

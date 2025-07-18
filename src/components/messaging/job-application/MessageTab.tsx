@@ -8,7 +8,6 @@ export interface MessageTabProps {'
   setMessage: (message: string) => void,""
   proposalLink: string","
   setProposalLink: (link: string) => void"
-}
 
 export function MessageTab(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   message,;
@@ -50,5 +49,5 @@ export function MessageTab(): unknown {): unknown {): unknown {): unknown {): un
 ;""
 };"
 }"
-}
-}"
+
+}'';;

@@ -45,9 +45,8 @@ export function PriceFilter(): unknown {): unknown {): unknown {): unknown {): u
         </div>)}
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

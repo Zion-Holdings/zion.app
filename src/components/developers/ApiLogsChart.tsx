@@ -3,7 +3,6 @@ import type { ApiLog } from '@/hooks/useApiKeys'
 '
 interface ApiLogsChartProps {'
   logs: "ApiLog[]
-}
 
 export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs }: ApiLogsChartProps) {"
   const canvasRef = useRef<HTMLCanvasElement | null>(null);"
@@ -85,5 +84,5 @@ export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): 
 ;""
 };"
 }"
-}
-}"
+
+}'';;

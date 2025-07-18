@@ -1,1 +1,4 @@
-// src/utils/consoleErrorToast.ts;
+// Utility functions for consoleErrorToast
+export const consoleErrorToast = {
+  // TODO: Implement utility functions
+};

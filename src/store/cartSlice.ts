@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { CartItem } from '@/types/cart'
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage;
 '
 export interface CartState {
   items: "CartItem[]"
@@ -16,7 +16,7 @@ const loadState = (): CartItem[] => {;"
     return [];
   };
 }'
-;
+
 const initialState: unknown "CartState = {;"
   items: loadState(),;"
 };"
@@ -52,5 +52,5 @@ const cartSlice = createSlice({;";,"
       if (item) {;";"
         item.quantity = action.payload.quantity;"
       };"
-    },;"
-    setItems: (state, _action: PayloadAction<CartItem[]>) => {;
+    },;'
+    setItems: (state, _action: PayloadAction<CartItem[]>) => {;';;

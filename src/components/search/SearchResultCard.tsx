@@ -5,7 +5,7 @@ interface SearchResult {'
   type: 'product' | 'service' | 'talent,'
   title: string"
   description: "string
-}
+
 "
 export function SearchResultCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ result }: { result: "SearchResult }) {
   return (;"
@@ -18,9 +18,9 @@ export function SearchResultCard(): unknown {): unknown {): unknown {): unknown 
       </CardContent>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

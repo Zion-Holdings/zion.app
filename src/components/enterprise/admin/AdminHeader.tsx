@@ -76,6 +76,6 @@ export function AdminHeader(): '
 };
 
 }'
-}
+
 }'
-}'
+}'';;

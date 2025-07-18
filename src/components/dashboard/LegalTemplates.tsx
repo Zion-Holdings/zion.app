@@ -4,7 +4,7 @@ interface LegalTemplate {'
   id: "string,"
   name: string,""
   description: string""
-}
+
 ";"
 const mockTemplates: unknown LegalTemplate[] = [;";"
   {;";";
@@ -64,5 +64,5 @@ const mockTemplates: unknown LegalTemplate[] = [;";"
   )"
 };"
 ;";"
-export defaultault LegalTemplates;";"
-"""
+export default LegalTemplates;";"
+""'';;

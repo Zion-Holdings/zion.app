@@ -26,4 +26,4 @@ export interface SupportTicket {
   createdAt: "string
   updatedAt: string"
 }"
-"""
+""'';;

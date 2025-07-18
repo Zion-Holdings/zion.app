@@ -118,15 +118,15 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
       }'
 '
       if (typeof value === 'string') {'
-        if (validation.minLength && value.length < validation.minLength) {;
+        if (validation.minLength && value.length < validation.minLength) {;`
           return `${label} must be at least ${validation.minLength} characters`;
         };
 
-        if (validation.maxLength && value.length > validation.maxLength) {;
+        if (validation.maxLength && value.length > validation.maxLength) {;`
           return `${label} must not exceed ${validation.maxLength} characters`;
         };
 
-        if (validation.pattern && !validation.pattern.test(value)) {;
+        if (validation.pattern && !validation.pattern.test(value)) {;`
           return `${label} format is invalid`;
         };
       };
@@ -189,7 +189,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
       case 'invalid':'
         return 'border-red-500 focus: "border-red-500 focus:ring-red-500/20,
       default:;"
-        return 
+// return statement removed
     }'
   }'
 
@@ -307,7 +307,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
             </div>;
           </div>;
         );
-    }
+
   };""
 ;"
   // Helper to safely render error messages as strings";"
@@ -322,7 +322,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     ) {;
       return (error as { message: string }).message";";
     }"
-    return 
+// return statement removed
   }'
 '
   if (type === 'checkbox') {'
@@ -450,10 +450,10 @@ export const _commonValidations = {";,"
 };
 }'
 }'
-}
+
 };
 }'
 }'
-}
-}
-}'
+
+
+}'';;`

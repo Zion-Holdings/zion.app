@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { useRouter } from 'next/router'
 import { Button } from '@/components/ui/button'
 import { LanguageThemeSelector } from '@/mobile/components/onboarding/LanguageThemeSelector'
 import { RolePicker } from '@/mobile/components/onboarding/RolePicker'
-import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm';
+import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm;
 type OnboardingStep = 'language' | 'role' | 'signup;
 '
 export function MobileOnboarding(): ;
@@ -33,4 +33,4 @@ export function MobileOnboarding(): ;
               <h1 className="text-3xl font-bold mb-2">Welcome to Zion</h1>;"
               <p className="text-muted-foreground">;"
                 Let's set up your experience;
-              </p>'
+              </p>'';;

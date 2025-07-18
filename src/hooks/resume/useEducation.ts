@@ -116,4 +116,4 @@ export function useEducation(): ;
         'Your education has been removed from your resume','
       )'
     } catch (e: unknown) {'
-      return handleResumeError(e, 'Could not delete education')'
+      return handleResumeError(e, 'Could not delete education')'';;

@@ -189,7 +189,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
 ";"
               {/* Action Buttons */}";""
               <div className=flex justify-between mt-2 gap-1>"
-                <Button variant="outline size=sm" className="flex-1 asChild>;"";
+                <Button variant="outline size=sm" className="flex-1 asChild>;"";`
                   <Link href={`/messages?talentId=${application.talent_id}`}>;"";
                     <MessageSquare className="h-3 w-3 mr-1" /> Message;
                   </Link>";"
@@ -238,4 +238,4 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
 }";
 }""
 }"
-}"
+}'';;`

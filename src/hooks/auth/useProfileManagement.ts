@@ -1,7 +1,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
 import type { UserDetails } from '@/types/auth'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export const _useProfileManagement: (;",
   setIsLoading: (loading: boolean) => void,
@@ -77,4 +77,4 @@ export const _useProfileManagement: (;",
 ;"
   return { updateProfile };
 }"
-"""
+""'';;

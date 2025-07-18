@@ -109,11 +109,11 @@ const HealthDashboard: unknown React.FC = () => {;
 
   const formatUptime = (_seconds: number) => {;
     const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
+    const minutes = Math.floor((seconds % 3600) / 60);`
     return `${hours}h ${minutes}m`;
   };
 
-  const formatBytes = (_bytes: number) => {;
+  const formatBytes = (_bytes: number) => {;`
     return `${bytes.toFixed(1)} MB;
   };""
 ;"
@@ -442,5 +442,5 @@ const HealthDashboard: unknown React.FC = () => {;
   )"
 };"
 ;";"
-export defaultault HealthDashboard;";"
-"""
+export default HealthDashboard;";"
+""'';;`

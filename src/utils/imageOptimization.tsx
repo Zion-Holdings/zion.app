@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react;
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { Buffer as NodeBuffer } from 'buffer';
+import { Buffer as NodeBuffer } from 'buffer;
 '
 interface OptimizedImageProps {
   src: string,
@@ -18,7 +18,7 @@ interface OptimizedImageProps {
   onError?: () => void
   fallbackSrc?: string
   lazy?: boolean
-}
+
 export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   src,;
   alt,'
@@ -26,4 +26,4 @@ export function OptimizedImage(): unknown {): unknown {): unknown {): unknown {)
   height,;
   className,'
   priority = false,;
-  placeholder = 'empty',;
+  placeholder = 'empty',;';;

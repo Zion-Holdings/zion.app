@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react;
 interface DragDropContextProps {'
   children: ReactNode
   onDragEnd?: (...args: "unknown[]) => void"
-}
+
 export function DragDropContext(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: DragDropContextProps) {;"
   return <>{children}</>;";"
 };"
@@ -49,4 +49,4 @@ export function Draggable(): unknown {): unknown {): unknown {): unknown {): unk
 }";
 };"
 };";"
-}";
+}';';;

@@ -6,5 +6,5 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 interface WhitepaperSectionEditorProps {'
   title: "string,"
   content: string,""
-  onContentChange: (newContent: string) => void""
-}
+  onContentChange: (newContent: string) => void"'
+}';;

@@ -1,2 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useRouter }  from 'next/router';
+// Hook for useNavigationGestures
+export const useUseNavigationGestures = () => {
+  // TODO: Implement hook logic
+  return {};
+};

@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils'
 interface FeatureHighlightsProps {
   className?: string
   style?: React.CSSProperties
-}
 
 export function FeatureHighlights(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,'
@@ -91,4 +90,4 @@ export function FeatureHighlights(): unknown {): unknown {): unknown {): unknown
 }";
 }""
 }"
-}"
+}'';;

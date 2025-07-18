@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 interface UploadSectionProps {'
   customFile: "File | null
   onFileUpload: (e: React.ChangeEvent<HTMLInputElement>) => void""
-}
 
 export function UploadSection(): unknown {): unknown {): unknown {): unknown {): unknown {{
   customFile,;"
@@ -46,9 +45,9 @@ export function UploadSection(): unknown {): unknown {): unknown {): unknown {):
       )}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

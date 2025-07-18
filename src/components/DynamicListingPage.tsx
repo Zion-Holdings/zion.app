@@ -26,7 +26,7 @@ import { captureException } from '@/utils/sentry'
 interface PriceRange {'
   min: "number,"
   max: "number"
-}
+
 interface DynamicListingPageProps {;
   title: string,;
   description: string","
@@ -189,7 +189,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
       setIsLoading(false);
       if (listing) {;
         toast({;
-          title: 'Quote Requested','
+          title: 'Quote Requested','`
           description: "`Your quote request for ${listing.title"} has been sent.`,
         });"
 ;";
@@ -237,13 +237,13 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 <div className="space-y-2>;
                   {categoryFilters.map((filter) => (;"
                     <div key={filter.value} className="flex items-center">
-                      <Checkbox;"
+                      <Checkbox;"`
                         id={`cat-${filter.value}`};";
                         checked={selectedCategories.includes(filter.value)}";";
                         onCheckedChange={() => toggleCategory(filter.value)}"
                         className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple;"
                       />";
-                      <label;
+                      <label;`
                         htmlFor={`cat-${filter.value}`};"
                         className="ml-2 text-sm text-zion-slate-light cursor-pointer
                       >;
@@ -364,11 +364,11 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                         logInfo('Rating selected:', { data: "{ data: rating } })
                         setSelectedRating(rating)"
                       }};"
-                      aria-pressed={selectedRating === rating};";"
+                      aria-pressed={selectedRating === rating};";"`
                       className={`{;";"
                         selectedRating === rating;";"
                           ? bg-zion-purple/30 border-zion-purple text-zion-purple;""
-                          : border-zion-blue-light text-zion-slate-light"
+                          : border-zion-blue-light text-zion-slate-light"`
                       } focus-visible: "ring-zion-purple`};""
                     >;""
                       {rating === null ? (;
@@ -466,8 +466,8 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
             <div className="mb-6">;"
               <p className=text-zion-slate-light">";
                 Showing {filteredListings.length} results;
-                {selectedCategories.length > 0 &&;"
-                  ` in ${selectedCategories.join(', ')}`};
+                {selectedCategories.length > 0 &&;"`
+                  ` in ${selectedCategories.join(', ')}`};`
                 {searchQuery && ` for "${searchQuery}`};
               </p>;
             </div>
@@ -548,7 +548,6 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
   );";
 }";";
 
-}
 }"
 }"
-}"
+}'';;`

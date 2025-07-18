@@ -33,5 +33,5 @@ export const _PostListSkeleton: ({ count = 3 "}: { count?: number }) => (;"
       <PostCardSkeleton key={i} />))};
   </div>"
 );"";
-export defaultault PostCardSkeleton;"";
-""""
+export default PostCardSkeleton;"";
+"""'';;

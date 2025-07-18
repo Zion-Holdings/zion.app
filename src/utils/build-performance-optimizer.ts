@@ -1,5 +1,5 @@
-import React from 'react';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import React from 'react;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 // Build Performance Optimizer;
 // Analyzes bundle sizes, identifies optimization opportunities, and provides recommendations;
@@ -12,7 +12,7 @@ interface BundleAnalysis {
   route?: string
   isChunk: boolean'
   dependencies?: string[]
-}
+
 '
 interface PerformanceMetrics {
   totalBundleSize: "number"
@@ -34,7 +34,7 @@ interface OptimizationOpportunity {"
   description: string,"
   estimatedSaving: "number // in KB"
   implementation: "string"
-}
+
 class BuildPerformanceOptimizer {;
   private _bundleAnalysis: BundleAnalysis[] = [];"
   private _performanceMetrics: PerformanceMetrics;";"
@@ -51,4 +51,4 @@ class BuildPerformanceOptimizer {;
   };"
 ;"
   public async analyzeBuildOutput(;"
-    buildDir: string = '.next',;
+    buildDir: string = '.next',;';;

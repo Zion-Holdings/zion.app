@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
 import { Button } from '@/components/ui/button'
@@ -10,9 +10,9 @@ import { CategorySelection } from '@/components/onboarding/CategorySelection'
 import { Steps, Step } from '@/components/ui/steps'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export defaultault function Onboarding(): ;
+export default function Onboarding(): ;
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0)'
   const [userType, setUserType] = useState<;
@@ -21,14 +21,14 @@ export defaultault function Onboarding(): ;
   const [interests, setInterests] = useState<string[]>([]);
   const [_categories, setCategories] = useState<string[]>([]);
   const router = useRouter()'
-;
+
   useEffect(() => {;
     // Redirect to login if user is not authenticated and auth state is not loading'
     if (!isLoading && !user) {;
       router.push('/login');
     };
   }, [user, isLoading, router])'
-;
+
   // Convert our user types to match what's expected in the UserProfile type'
   const mapUserTypeToDatabase: (;",;"
     type: 'serviceProvider' | 'talent' | 'client',;
@@ -60,7 +60,7 @@ export defaultault function Onboarding(): ;
     // Continue with the onboarding flow for clients;
     setCurrentStep(1);
   }'
-;
+
   const handleProfileComplete = async (data: {
     displayName: string;,"
     bio: "string;"
@@ -99,7 +99,7 @@ export defaultault function Onboarding(): ;
         title: 'Profile completed!',;
         description: 'Your profile has been set up successfully.',;
       })'
-;
+
       // Proceed to next step;
       setCurrentStep(2)'
     } catch {;
@@ -108,4 +108,4 @@ export defaultault function Onboarding(): ;
         title: 'Error','
         description:;
           'There was a problem updating your profile. Please try again.',;
-        variant: 'destructive',;
+        variant: 'destructive',;';;

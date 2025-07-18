@@ -36,7 +36,6 @@ interface OnboardingWizardProps {"
   onComplete: () => void,"
   onSkip: () => void
   className?: string
-}
 
 export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   type,;
@@ -60,7 +59,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
       },'
       skipText: I'll do this later,"
     },;"
-    {
+
       title: 'View suggested matches','
       description: 'Our AI system will find the best talent matches','
       icon: <Users className=h-6 w-6 text-zion-cyan" />,"
@@ -216,7 +215,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

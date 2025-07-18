@@ -16,10 +16,10 @@ export interface Dispute {
   created_at: string,"
   updated_at: string"
   resolved_at?: string"
-  resolution_summary?: string"
+  resolution_summary?: string'
   status: DisputeStatus,
   resolution_type: ResolutionType
   project?: {
     title?: string
     scope_summary?: string
-  }
+  }';;

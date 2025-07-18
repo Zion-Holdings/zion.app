@@ -13,4 +13,4 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 import {
   logInfo,'
   logErrorToProduction as prodLogError,'
-} from '@/utils/productionLogger'
+} from '@/utils/productionLogger'';;

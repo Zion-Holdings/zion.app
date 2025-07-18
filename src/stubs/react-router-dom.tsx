@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { createContext, useContext, useEffect } from 'react;
+import { useRouter } from 'next/router;
 // Minimal router context so React Router hooks don't throw errors;
 const RouterContext = createContext<{ navigate: "(url: string) => void "}>({;"
   _navigate: "() => {"},;"
@@ -45,5 +45,5 @@ export const useNavigate = () => {;";"
   return context.navigate;"
 };"
 export const useLocation = () => ({ pathname: '/' })'
-export const useParams: () => ({"});
-export const useSearchParams = () =>;
+export const useParams: () => ({'});
+export const useSearchParams = () =>;';;

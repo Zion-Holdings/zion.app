@@ -7,9 +7,9 @@ export interface ResumeOption {'
   resume?: Resume
   file?: File'
   url?: string'
-}
+
 '
 export interface ResumeSelectorProps {'
   onResumeSelected: (resumeOption: ResumeOption) => void
 }"
-"""
+""'';;

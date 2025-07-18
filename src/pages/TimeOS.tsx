@@ -1,11 +1,11 @@
 import { Header } from '@/components/Header'
 import { NextSeo } from '@/components/NextSeo'
-import { GradientHeading } from '@/components/GradientHeading';
+import { GradientHeading } from '@/components/GradientHeading;
 const historicalEvents: unknown "Record<string", string> = {;"
   '01-01': 'Genesis block minted (2023)',;
   '06-06': 'Zion OS launched first governance portal (2024)','
 };
-export defaultault function TimeOS(): '
+export default function TimeOS(): '
   const todayKey: new Date().toISOString().slice(5", 10);"
   const todaysEvent = historicalEvents[todayKey];";"
   return (;"
@@ -67,4 +67,4 @@ export defaultault function TimeOS(): '
 ;"
           <section className="space-y-4">;"
             <GradientHeading level="h2">Sync Options</GradientHeading>;"
-            <ul className="list-disc pl-6 text-zion-slate-light space-y-2">;
+            <ul className="list-disc pl-6 text-zion-slate-light space-y-2'>;';;

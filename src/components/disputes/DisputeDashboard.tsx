@@ -52,7 +52,7 @@ export function DisputeDashboard(): ;
             >;"";
               <div;""
                 className="bg-red-600 h-2.5 rounded-full;"";
-                style={{;"";
+                style={{;"";`
                   width: `${Math.min(100, (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
@@ -71,12 +71,12 @@ export function DisputeDashboard(): ;
             <CardDescription>Being actively processed</CardDescription>;"
           </CardHeader>;";
           <CardContent>";";
-            <div"
+            <div"`
               className={`w-full bg-yellow-100 rounded-full h-2.5 dark: "bg-yellow-900/20`};""
             >;""
               <div;"";
                 className=bg-yellow-500 h-2.5 rounded-full""
-                style={{";""
+                style={{";""`
                   width: `${Math.min(100, (underReviewDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
@@ -95,12 +95,12 @@ export function DisputeDashboard(): ;
             <CardDescription>Successfully concluded</CardDescription>;"
           </CardHeader>;";"
           <CardContent>;";"
-            <div;";"
+            <div;";"`
               className={`w-full bg-green-100 rounded-full h-2.5 dark: bg-green-900/20`"}";
             >;"";
               <div;""
                 className="bg-green-500 h-2.5 rounded-full;"";
-                style={{;"";
+                style={{;"";`
                   width: `${Math.min(100, (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
@@ -117,4 +117,4 @@ export function DisputeDashboard(): ;
 }"";
 }"
 }"
-}"
+}'';;`

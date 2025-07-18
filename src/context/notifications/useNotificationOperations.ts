@@ -7,7 +7,7 @@ import type {'
 } from './types'
 import createAxiosInstance from '@/lib/axios'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useNotificationOperations = (';
+export const _useNotificationOperations = (;
   userId?: string,'
 ): NotificationContextType => {'
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -28,4 +28,4 @@ export const _useNotificationOperations = (';
       const res = await axios.get(`/api/notifications`", { params: { userId } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}})"
       setNotifications(res.data || []);"
     } catch {
-      logErrorToProduction('Error fetching notifications:', { data: error "})"
+      logErrorToProduction('Error fetching notifications:', { data: error "})'';;`

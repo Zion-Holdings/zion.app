@@ -1,3 +1,4 @@
-// Removed circular dependency with productionLogger - using direct console methods instead;
-// Remove unused LOG_LEVELS constant;
-// const LOG_LEVELS: unknown LogLevel = {;
+// Utility functions for logger
+export const logger = {
+  // TODO: Implement utility functions
+};

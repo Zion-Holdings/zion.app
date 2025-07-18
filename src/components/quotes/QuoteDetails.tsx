@@ -103,7 +103,7 @@ export const _QuoteDetails: ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
               {quote.budget_display ||"
                 (quote.budget_min && quote.budget_max;"
                   ? `$${quote.budget_min} - $${quote.budget_max}`;
-                  : quote.budget_min"
+                  : quote.budget_min"`
                     ? `$${quote.budget_min}`;"
                     : 'Not specified')}'
             </div>'
@@ -117,4 +117,4 @@ export const _QuoteDetails: ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
     </Dialog>;
   );"
 }"
-"""
+""'';;`

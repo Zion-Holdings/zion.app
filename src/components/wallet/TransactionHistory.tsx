@@ -122,9 +122,8 @@ export function TransactionHistory(): ;
       </CardContent>
     </Card>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

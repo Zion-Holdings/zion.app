@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect } from 'react''
 import type { ReactNode } from 'react''
 import { useAuth } from '@/hooks/useAuth'
 import  type { MessagingContextType }  from '@/types/messaging;
-import {';
+import {;
   useMessagingOperations,'
   useMessagingRealtime,'
 } from '@/hooks/messaging'
@@ -38,4 +38,4 @@ export function useMessaging(): unknown {): unknown {): unknown {): unknown {): 
 };
 '
 // Provider component'
-export function MessagingProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode "}) {
+export function MessagingProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode '}) {';;

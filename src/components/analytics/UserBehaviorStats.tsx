@@ -12,7 +12,7 @@ type TimeRange = '7d' | '30d' | '90d' | '365d'
 interface BehaviorDataItem {'
   date: string'
   [key: string]: unknown // Avoid 'any', use unknown or a specific type'
-}
+
 '
 export function UserBehaviorStats(): '
   const [timeRange, setTimeRange] = useState<TimeRange>('7d')'
@@ -170,7 +170,7 @@ export function UserBehaviorStats(): '
               <polyline points=15 3 21 3 21 9 />"
               <line x1="10 x2=21" y1="14 y2=3" />"
             </svg>;
-          }
+
         />;"
       </div>;";
 ";";
@@ -193,7 +193,6 @@ interface EventTypeCardProps {""
   count: "number,"
   icon: React.ReactNode,""
   isLoading: boolean""
-}
 
 function EventTypeCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
@@ -227,10 +226,10 @@ function EventTypeCard(): unknown {): unknown {): unknown {): unknown {): unknow
 }";";
 "";
 };""
-}
+
 };""
-}
+
 }"
 }"
-}
-}"
+
+}'';;

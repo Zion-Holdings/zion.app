@@ -13,7 +13,6 @@ import { formatDate } from '@/utils/referralUtils'
 interface ReferralTableProps {'
   referrals: "Referral[]
   isLoading: boolean""
-}
 
 export function ReferralTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ referrals, isLoading }: ReferralTableProps) {;"
   // Helper function to render status badges;"
@@ -47,7 +46,7 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
           </Badge>);
       default:;
         return null;
-    }
+
   };""
 
   if (isLoading) {
@@ -116,6 +115,6 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;

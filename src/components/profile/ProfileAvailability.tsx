@@ -17,7 +17,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
         return 'bg-amber-500/20 text-amber-400 border-amber-500/30'
       case 'unavailable':'
         return 'bg-rose-500/20 text-rose-400 border-rose-500/30'
-        return 
+// return statement removed
     }'
   }'
 '
@@ -30,7 +30,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
       case 'unavailable':'
         return 'Currently Unavailable'
       default:;
-        return 
+// return statement removed
     };
   };
 '
@@ -83,7 +83,7 @@ export function ProfileAvailability(): unknown {): unknown {): unknown {): unkno
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

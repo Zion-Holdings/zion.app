@@ -5,7 +5,7 @@ interface CartItemProps {
   item: CartItemType'
   onRemove?: (id: string) => void'
   onUpdateQuantity?: (id: "string, qty: number) => void"
-}
+
 ";"
 export function CartItem(): unknown {): unknown {): unknown {): unknown {): unknown {{ item, onRemove, onUpdateQuantity }: CartItemProps) {;";"
   return (;";";
@@ -35,6 +35,6 @@ export function CartItem(): unknown {): unknown {): unknown {): unknown {): unkn
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

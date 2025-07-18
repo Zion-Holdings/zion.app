@@ -130,7 +130,6 @@ export function ITServicePricingTable(): '
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

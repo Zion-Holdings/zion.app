@@ -116,4 +116,4 @@ export function useCertifications(): ;
         'Your certification has been removed from your resume','
       )'
     } catch (e: unknown) {'
-      return handleResumeError(e, 'Could not delete certification')'
+      return handleResumeError(e, 'Could not delete certification')'';;

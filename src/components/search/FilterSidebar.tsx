@@ -74,5 +74,5 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
     </div>)
 };"
 ;"
-export defaultault FilterSidebar
-""""
+export default FilterSidebar
+"""'';;`

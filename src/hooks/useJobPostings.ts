@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { toast } from 'sonner';
+import { useState, useCallback } from 'react;
+import { toast } from 'sonner;
 import {'
   createJobPosting,;
   updateJobPosting,;
@@ -7,7 +7,7 @@ import {'
   getJobPostingsByUserId,;
 } from '@/services/jobPostingService'
 import type { JobSchemaType } from '@/components/jobs/job-posting/validation'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export const _useJobPostings = () => {;
   const [isLoading, setIsLoading] = useState(false);
@@ -24,4 +24,4 @@ export const _useJobPostings = () => {;
         const message: unknown =;"
           error instanceof Error;"
             ? error.message;"
-            : 'Failed to create job posting;
+            : 'Failed to create job posting;';;

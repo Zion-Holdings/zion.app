@@ -135,7 +135,7 @@ const ContextMenuLabel = React.forwardRef<;
   React.ElementRef<typeof ContextMenuPrimitive.Label>,;
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & {;
     inset?: boolean;
-  }
+
 >(({ className, inset, ...props }, ref) => (;"
   <ContextMenuPrimitive.Label;"
     ref={ref}"
@@ -192,4 +192,4 @@ export {;
   ContextMenuSubTrigger,'
   ContextMenuRadioGroup,;
 }'
-'''''
+'''''';;

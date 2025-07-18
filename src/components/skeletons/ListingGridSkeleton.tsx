@@ -11,9 +11,8 @@ export function ListingGridSkeleton(): unknown {): unknown {): unknown {): unkno
     </div>;
   )"
 };"
-export defaultault ListingGridSkeleton"
+export default ListingGridSkeleton"
 
-}
 }""
 }"
-}"
+}'';;

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { WhitelabelRequestForm } from '@/components/admin/whitelabel/WhitelabelRequestForm'
 import { TenantsList } from '@/components/admin/whitelabel/TenantsList'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { useAuth } from '@/hooks/useAuth';
-export defaultault function WhitelabelManager(): '
+import { useAuth } from '@/hooks/useAuth;
+export default function WhitelabelManager(): '
   const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState('tenants');
 '
@@ -15,7 +15,7 @@ export defaultault function WhitelabelManager(): '
   if (!isAdmin) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -55,4 +55,4 @@ export defaultault function WhitelabelManager(): '
             </TabsContent>;"
 ;"
             <TabsContent value="docs" className="space-y-6">;"
-              <div className="prose dark:prose-invert max-w-none">;
+              <div className="prose dark:prose-invert max-w-none'>;';;

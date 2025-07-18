@@ -1,3 +1,10 @@
-import { useEffect } from 'react''
-import { useRouter } from 'next/router'
-import { logWarn } from '@/utils/productionLogger'
+import React from 'react';
+
+export default function RouteChangeHandler() {
+  return (
+    <div>
+      <h1>RouteChangeHandler</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

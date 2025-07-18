@@ -110,4 +110,4 @@ export function useWorkExperience(): ;
         'Your work experience has been removed from your resume','
       )'
     } catch (e: unknown) {'
-      return handleResumeError(e, 'Could not delete work experience')'
+      return handleResumeError(e, 'Could not delete work experience')'';;

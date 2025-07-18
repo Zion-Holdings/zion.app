@@ -1,35 +1,21 @@
-import TutorialPage from '@/pages/Tutorial';;';'';
-import { TUTORIALS } from '@/data/tutorials';;';'';
-import type { GetStaticPaths, GetStaticProps } from 'next';;';'';
-import type { Tutorial } from '@/types/tutorial';;''
-;';;''
-interface PageProps {;';;';''
-  tutorial: "Tutorial;";"
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const [slug]: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>[slug] - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">[slug]</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* [slug] content will go here */}
+        </div>
+      </div>
+    </>
+  );
 };
-;
-export default function Page(): unknown {): unknown {): unknown {): unknown {): unknown {{ tutorial }: PageProps) {;""
-  return <TutorialPage tutorial={tutorial} />;";""
-};";";""
-;";";";""
-// export const _getStaticPaths: unknown unknown unknown unknown unknown GetStaticPaths = async () => {;";";";";""
-  const paths: unknown unknown unknown unknown unknown unknown = TUTORIALS.map(t => ({ params: "{ slug: t.slug "} }));";";";";""
-  return { paths, fallback: "false "};"
-};
-;
-export const _getStaticProps: unknown unknown unknown unknown unknown GetStaticProps = async ({;
-  params,;
-}: {;
-  params?: { slug?: string };""
-}) => {;";""
-  const slug: unknown unknown unknown unknown unknown unknown = params?.slug as string;";";""
-  const tutorial: unknown unknown unknown unknown unknown unknown = TUTORIALS.find(t => t.slug === slug) || null;";";";""
-  if (!tutorial) {;";";";";""
-    return { notFound: "true "};";";";""
-  };";";";";""
-  return { props: "{ tutorial "} };";";""
-};";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+
+export default [slug];

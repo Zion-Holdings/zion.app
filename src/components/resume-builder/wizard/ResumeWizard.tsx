@@ -156,6 +156,6 @@ export function ResumeWizard(): '
 };
 
 }'
-}
+
 }'
-}'
+}'';;

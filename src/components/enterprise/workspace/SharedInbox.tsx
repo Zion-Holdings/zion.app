@@ -61,7 +61,7 @@ export function SharedInbox(): '
               className={`flex flex-col p-4 hover:bg-muted/50 cursor-pointer ${message.unread ? 'bg-blue-50 dark:bg-blue-900/10' : ''}`}'
             >'
               <div className=flex items-center justify-between">"
-                <p";""
+                <p";""`
                   className={`font-medium ${message.unread ? 'font-semibold' : ''}`};
                 >;
                   {message.from}'
@@ -96,4 +96,4 @@ export function SharedInbox(): '
 }"";
 }"
 }"
-}"
+}'';;`

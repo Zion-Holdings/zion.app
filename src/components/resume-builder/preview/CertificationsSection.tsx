@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 '
 interface CertificationsSectionProps {'
   certifications: "Certification[]
-}
+
 "
 export function CertificationsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   certifications,;
@@ -53,7 +53,7 @@ export function CertificationsSection(): unknown {): unknown {): unknown {): unk
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

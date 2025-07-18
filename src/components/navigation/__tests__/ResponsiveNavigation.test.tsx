@@ -35,4 +35,4 @@ test('opens marketplace submenu when trigger is clicked', () => {'
   expect(screen.getByText('Overview')).toBeInTheDocument()'
   expect(screen.getByText('Categories')).toBeInTheDocument()'
 })'
-'''''
+'''''';;

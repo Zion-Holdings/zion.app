@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { useForm } from 'react-hook-form'
 import type { ControllerRenderProps } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -88,4 +88,4 @@ export function ProductSubmissionForm(): ;
     const file = e.target.files?.[0]'
     if (file) {'
       form.setValue('image', file)'
-      const reader = new FileReader();
+      const reader = new FileReader();';;

@@ -100,9 +100,9 @@ export function ZionBrainDashboard(): '
     </div>)
 };"
 ;";
-export defaultault ZionBrainDashboard";";
+export default ZionBrainDashboard";";
 "";
 }"";
 }"
 }"
-}"
+}'';;

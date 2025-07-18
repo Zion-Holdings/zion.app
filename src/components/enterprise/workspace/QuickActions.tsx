@@ -72,6 +72,6 @@ export function QuickActions(): ;
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

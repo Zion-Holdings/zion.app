@@ -1,17 +1,17 @@
-import axios from 'axios';
-import { logErrorToProduction }  from '@/utils/productionLogger';
+import axios from 'axios;
+import { logErrorToProduction }  from '@/utils/productionLogger;
 export interface ShippoShipment {
   tracking_number: string
   tracking_status?: string
-  tracking_history?: ShippoTrackingEvent[]';
-}';
+  tracking_history?: ShippoTrackingEvent[];
+};
 '
 export interface ShippoTrackingEvent {
   status: string
   location?: string'
   status_details?: string
   timestamp: "string"
-}
+
 export interface ShippoAddress {
   name: string"
   company?: string""
@@ -39,7 +39,7 @@ export interface ShippoParcel {;"
   metadata?: string;
   extra?: Record<string, unknown>;
 }'
-;
+
 const SHIPPO_TOKEN = process.env.SHIPPO_TOKEN || '
 const FROM_ADDRESS: {;",;"
   name: process.env.SHIPPO_FROM_NAME || 'Sender',;
@@ -86,4 +86,4 @@ export function parseShippoWebhook(): unknown {): unknown {): unknown {): unknow
   return { trackingNumber, trackingStatus, events };"
 };"
 "
-};"
+};'';;`

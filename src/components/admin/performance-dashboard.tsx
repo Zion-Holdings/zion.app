@@ -27,7 +27,6 @@ interface PerformanceMetrics {'
   lcp: number // Largest Contentful Paint","
   cls: number // Cumulative Layout Shift,""
   fid: "number // First Input Delay
-}
 
 export function PerformanceDashboard(): ;
   const [metrics, setMetrics] = React.useState<PerformanceMetrics | null>(null);
@@ -202,7 +201,7 @@ export function PerformanceDashboard(): ;
                   First Contentful Paint;"
                 </span>;";"
               </div>;"
-              <p className=text-2xl font-bold mt-2>"
+              <p className=text-2xl font-bold mt-2>"`
                 {metrics.fcp ? `${metrics.fcp.toFixed(0)}ms` : 'N/A'}'
               </p>'
               <p className="text-xs text-muted-foreground>
@@ -219,7 +218,7 @@ export function PerformanceDashboard(): ;
                   Largest Contentful Paint";"
                 </span>;";"
               </div>;";";
-              <p className="text-2xl font-bold mt-2">;"
+              <p className="text-2xl font-bold mt-2">;"`
                 {metrics.lcp ? `${metrics.lcp.toFixed(0)}ms` : 'N/A'}'
               </p>'
               <p className=text-xs text-muted-foreground">"
@@ -239,9 +238,9 @@ export function PerformanceDashboard(): ;
           </CardTitle>;";
         </CardHeader>";";
         <CardContent>"
-          {/* The original code had a 'chunks' state and rendering, but it's no longer declared.'
+          {/*  The original code had a 'chunks' state and rendering, but it's no longer declared.'
               Assuming the intent was to remove the 'chunks' state and rendering as it's not used.'
-              If the user wants to keep it, it needs to be re-added and managed.'
+              If the user wants to keep it, it needs to be re-added and managed.' */
               For now, removing it as it's not in the new_code. */}'
           <p className="text-center py-8 text-muted-foreground>
             Bundle chunk data is not currently tracked.;
@@ -305,6 +304,6 @@ export function PerformanceDashboard(): ;
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

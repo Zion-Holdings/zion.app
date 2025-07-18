@@ -1,10 +1,10 @@
-<Link href={`/project/${project.id}`}>View Details</Link>;
-                  </Button>;
-                </CardFooter>;
-              </Card>;
-            ))};
-          </div>;
-        )};
-      </main>;
-    </>;
+import React from 'react';
+
+export default function Projects() {
+  return (
+    <div>
+      <h1>Projects</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
+}

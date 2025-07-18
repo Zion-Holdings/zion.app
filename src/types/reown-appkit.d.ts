@@ -6,7 +6,7 @@ declare module '@reown/appkit/react' {;
     projectId?: string
     metadata?: Record<string, unknown>'
     features?: Record<string, unknown>
-  }
+
 '
   export interface AppKitInstanceInterface {
     open: "() => Promise<void>"
@@ -27,12 +27,12 @@ declare module '@reown/appkit/react' {;
 };"
 ;"
 declare module '@reown/appkit-adapter-ethers' {;
-  import { ethers } from 'ethers';
+  import { ethers } from 'ethers;
   export class EthersAdapter {'
     constructor(options?: { ethers?: typeof ethers; provider?: unknown });
   };
 }'
-;
+
 declare module '@reown/appkit/networks' {;
   export const mainnet: unknown'
   export const polygon: unknown;
@@ -42,4 +42,4 @@ declare module '@reown/appkit/networks' {;
   export const base: unknown "unknown;"
 };"
 "
-};"
+};'';;

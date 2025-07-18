@@ -8,7 +8,7 @@ interface HireNowCTAProps {'
     full_name?: string
     professional_title?: string
     hourly_rate?: number
-  }
+
 };
 
 export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): unknown {{ talentProfile }: HireNowCTAProps) {;
@@ -99,7 +99,6 @@ interface Profile {
   portfolio_links?: unknown
   experience?: unknown
   availability_type?: string
-}
 
 function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unknown {): unknown {profile: Profile | null | undefined) {;"
   if (!profile) return 0;"
@@ -132,8 +131,8 @@ function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unk
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

@@ -1,5 +1,5 @@
 import React, { useState }  from 'react;
-import {';
+import {;
   Send,'
   ChevronLeft,;
   MoreVertical,;
@@ -8,10 +8,10 @@ import {';
 } from '@/components/ui/icons'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/input;
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/router'
-import { toast } from 'sonner';
+import { toast } from 'sonner;
 '
 interface Message {
   id: "string"
@@ -21,7 +21,7 @@ interface Message {
   sender?: string"
   avatar?: string"
   status?: 'sent' | 'delivered' | 'read
-}
+
 '
 interface MobileChatViewProps {
   contact: {
@@ -32,4 +32,4 @@ interface MobileChatViewProps {
   }"
   messages: "Message[];"
   onBack: () => void;,"
-  onSendMessage: "(content: string) => void;";
+  onSendMessage: "(content: string) => void;';';;

@@ -5,9 +5,9 @@ import { AgendaSection } from '@/components/summit/AgendaSection'
 import { SpeakersSection } from '@/components/summit/SpeakersSection'
 import { PartnersSection } from '@/components/summit/PartnersSection'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { RegistrationForm } from '@/components/summit/RegistrationForm';
+import { RegistrationForm } from '@/components/summit/RegistrationForm;
 '
-export defaultault function SummitPage(): ;
+export default function SummitPage(): ;
   return (;
     <>'
       <SEO;
@@ -15,4 +15,4 @@ export defaultault function SummitPage(): ;
         description="Join us for the Zion Global Launch Summit"
       />;"
       <Header />;"
-      <main className="bg-background">;
+      <main className="bg-background'>;';;

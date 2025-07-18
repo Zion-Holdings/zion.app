@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 export interface EmptyMatchesCardProps {'
   onRefresh: "() => void,"
   isProcessing: "boolean"
-}
 
 export function EmptyMatchesCard(): unknown {): unknown {): unknown {): unknown {): unknown {{
   onRefresh,;""
@@ -39,4 +38,4 @@ export function EmptyMatchesCard(): unknown {): unknown {): unknown {): unknown 
 }"";
 }"
 }"
-}"
+}'';;

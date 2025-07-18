@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 '
 interface TalentCardBadgesProps {'
   featured: "boolean | undefined
-}
+
 "
 export function TalentCardBadges(): unknown {): unknown {): unknown {): unknown {): unknown {{ featured }: TalentCardBadgesProps) {;"
   if (!featured) return null;
@@ -17,9 +17,9 @@ export function TalentCardBadges(): unknown {): unknown {): unknown {): unknown 
       </Badge>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { supabase } from '@/integrations/supabase/client'
-import { logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger;
 '
 export interface WhitelabelTenant {
   id: "string"
@@ -19,5 +19,5 @@ export interface WhitelabelTenant {
   created_at: string;,"
   updated_at: "string;"
   account_manager_id: string | null;,"
-  dns_verified: "boolean;"
-  email_template_override: Record<string, unknown> | null;
+  dns_verified: "boolean;'
+  email_template_override: Record<string, unknown> | null;';;

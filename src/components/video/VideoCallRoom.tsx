@@ -20,7 +20,6 @@ interface Participant {'
   isVideoEnabled?: boolean
   isScreenSharing?: boolean
   isHost?: boolean
-}
 
 interface VideoCallRoomProps {
   roomId: string
@@ -30,7 +29,6 @@ interface VideoCallRoomProps {
   onToggleVideo?: (isEnabled: boolean) => void
   onToggleScreenShare?: (isSharing: boolean) => void
   className?: string
-}
 
 export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
   roomId,;
@@ -109,7 +107,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     }'
   };
 '
-  return ('
+  return ('`
     <Card className={`w-full ${className || 'max-w-5xl mx-auto'}`}>;
       <CardHeader className=flex flex-row items-center justify-between bg-zion-blue-dark rounded-t-lg p-4>"
         <div className="flex items-center space-x-2>"
@@ -243,5 +241,5 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
       </CardContent>
     </Card>;""
   );
-}
-"""
+
+""'';;`

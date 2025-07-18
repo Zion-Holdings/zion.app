@@ -3,7 +3,6 @@ import { format } from 'date-fns'
 '
 interface WorkExperienceSectionProps {'
   workExperience: "WorkExperience[]
-}
 
 export function WorkExperienceSection(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   workExperience,;"
@@ -62,7 +61,6 @@ export function WorkExperienceSection(): unknown {): unknown {): unknown {): unk
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

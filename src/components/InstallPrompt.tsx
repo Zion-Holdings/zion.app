@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react;
 import { X } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { safeSessionStorage } from '@/utils/safeStorage'
@@ -15,7 +15,7 @@ interface BeforeInstallPromptEvent extends Event {'
     platform: "string"
   }>;
   prompt(): Promise<void>;
-}
+
 ;""
 // Define gtag function type;"
 interface GtagFunction {""
@@ -32,11 +32,10 @@ declare global {'
     beforeinstallprompt: BeforeInstallPromptEvent'
     // appinstalled event is standard, but if issues arise, it can be augmented too'
     // _appinstalled: Event""
-  }
 
   interface Window {
     gtag?: GtagFunction
-  }
+
 };
 
 export const InstallPrompt: React.FC = () => {
@@ -131,7 +130,7 @@ export const InstallPrompt: React.FC = () => {
               transform: scale(0.9); /* Slightly less aggressive scaling */'
               transform-origin: "bottom right;
             }";"
-          };"
+          };"`
         `};";"
       </style>;"
       <div className=fixed bottom-4 right-4 z-[1000] pwa-install-button-container>"
@@ -155,5 +154,5 @@ export const InstallPrompt: React.FC = () => {
     </>;
   )"
 };"";
-export defaultault InstallPrompt;"";
-""""
+export default InstallPrompt;"";
+"""'';;`

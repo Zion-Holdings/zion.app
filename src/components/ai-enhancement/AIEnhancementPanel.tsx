@@ -21,7 +21,6 @@ interface AIEnhancementPanelProps {'
   onClose?: () => void
   showInstructions?: boolean
   initialContent?: string
-}
 
 export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,
@@ -176,5 +175,5 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
 ;""
 };"
 }"
-}
-}"
+
+}'';;

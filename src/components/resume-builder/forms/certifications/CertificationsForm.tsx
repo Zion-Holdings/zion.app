@@ -20,7 +20,6 @@ interface CertificationsFormProps {'
   certifications: Certification[],"
   onComplete: () => void
   onBack: "() => void"
-}
 
 export function CertificationsForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resumeId,;
@@ -184,9 +183,9 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link';
-export defaultault function InstantMessaging(): '
+import Link from 'next/link;
+export default function InstantMessaging(): '
   const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
@@ -14,7 +14,7 @@ export defaultault function InstantMessaging(): '
       'Chat in real time with clients and freelancers using Socket.IO based messaging.',;
     url: 'https://app.ziontechgroup.com/features/instant-messaging',;
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -88,4 +88,4 @@ export defaultault function InstantMessaging(): '
 }"
 }";"
 }"
-}"
+}'';;

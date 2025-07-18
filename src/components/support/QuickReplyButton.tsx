@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 interface QuickReplyButtonProps {'
   text: "string
   onClick: () => void""
-}
+
 "
 export function QuickReplyButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ text, onClick }: QuickReplyButtonProps) {;"
   return (
@@ -24,6 +24,6 @@ export function QuickReplyButton(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;

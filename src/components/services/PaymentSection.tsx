@@ -5,7 +5,7 @@ import { toast } from '@/hooks/use-toast'
 '
 interface PaymentSectionProps {'
   selectedCountry: "CountryPricing
-}
+
 "
 export function PaymentSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ selectedCountry }: PaymentSectionProps) {;"
   // Handle successful payment;
@@ -42,9 +42,8 @@ export function PaymentSection(): unknown {): unknown {): unknown {): unknown {)
       </p>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

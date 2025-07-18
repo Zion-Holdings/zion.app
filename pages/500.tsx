@@ -1,34 +1,23 @@
 import React from 'react';
-import { Center, Button, VStack, Heading, Text } from '@chakra-ui/react';
-import { NextSeo } from '@/components/NextSeo';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { captureException } from '@/utils/sentry';
-import { logInfo } from '@/utils/productionLogger';
+import Head from 'next/head';
 
-export default function Custom500() {
-  const router = useRouter();
-  const { user } = useAuth();
-
-  useEffect(() => {
-    const err = new Error('500 - Internal Server Error');
-    captureException(err);
-    logInfo('500 page accessed', { path: router.asPath });
-  }, [router.asPath]);
-
+export default function Error500() {
   return (
     <>
-      <NextSeo title="500 - Internal Server Error" description="Server error" />
-      <Center minH="100vh" flexDirection="column">
-        <VStack spacing={6}>
-          <Heading size="2xl">500 - Internal Server Error</Heading>
-          <Text>Sorry, something went wrong on our end.</Text>
-          <Button onClick={() => router.push('/')}>
+      <Head>
+        <title>500 - Zion App</title>
+      </Head>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-gray-900">500</h1>
+          <p className="text-xl text-gray-600 mt-4">
+            Internal Server Error
+          </p>
+          <a href="/" className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg">
             Go Home
-          </Button>
-        </VStack>
-      </Center>
+          </a>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,17 +1,21 @@
-import React from 'react';;';'';
-import type { GetServerSideProps } from 'next';;';'';
-import Blog from '../../src/pages/Blog';'
-;';';
-export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';;''
-  return {;';;';''
-    props: "{"};"
-  };
-};""
-;";"";
-export default function CommunityBlogPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";""
-  return <Blog />;";";";""
-} ";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Blog: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Blog - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Blog</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Blog content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Blog;

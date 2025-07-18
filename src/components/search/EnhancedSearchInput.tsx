@@ -24,7 +24,7 @@ interface EnhancedSearchInputProps {'
    * If provided, these will be shown when the input is empty.
    */
   searchSuggestions?: SearchSuggestion[]
-}
+
 "
 export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   value,;
@@ -107,16 +107,16 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     } else {
       // Provide a sensible default navigation if the parent did not supply a handler;"
       logWarn('onSelectSuggestion callback not provided')'
-      if (suggestionObj.id) {;
+      if (suggestionObj.id) {;`
         router.push(`/marketplace/listing/${suggestionObj.id}`)'
       } else if ('
         suggestionObj.type === 'doc' &&'
         suggestionObj.slug?.startsWith('/')'
       ) {'
         router.push(suggestionObj.slug)'
-      } else if (suggestionObj.type === 'blog' && suggestionObj.slug) {'
+      } else if (suggestionObj.type === 'blog' && suggestionObj.slug) {'`
         router.push(`/blog/${suggestionObj.slug}`);
-      } else {;
+      } else {;`
         router.push(`/search/${suggestionObj.slug || slugify(suggestionObj.text)}`,;
         );
       };
@@ -158,7 +158,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           e.preventDefault()'
           logInfo('EnhancedSearchInput manual submit:', {'
             data: "{ data: value },
-          });
+          });`
           router.push(`/search?q=${encodeURIComponent(value)}`);
           setIsFocused(false);
           setHighlightedIndex(-1);
@@ -223,7 +223,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete=list"
           aria-activedescendant={"
-            highlightedIndex !== -1;
+            highlightedIndex !== -1;`
               ? `suggestion-item-${highlightedIndex}`;"
               : undefined"
           };
@@ -252,11 +252,10 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
   );"
 }"
 
-}
 }""
 };
 }""
-}
-}
-}
-}"
+
+
+
+}'';;`

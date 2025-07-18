@@ -1,52 +1,21 @@
-})()}
-                </div>
-                <div>
-                  <span className="font-medium">App Metadata: </span>"
-                  <code className="text-xs">"
-                    {JSON.stringify(
-                      typeof user === 'object' && user !== null && 'app_metadata' in user && typeof (user as { app_metadata?: unknown }).app_metadata === 'object' && (user as { app_metadata?: object }).app_metadata'
-                        ? (user as { app_metadata: object }).app_metadata
-                        : {},
-                      null,
-                      2
-                    )}
-                  </code>
-                </div>
-              </div>
-            </div>
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-            <div className="flex gap-2">"
-              <Button onClick={() => router.push('/dashboard')}>'
-                Go to Dashboard
-              </Button>
-              <Button onClick={() => router.push('/')} variant="outline">"
-                Back to Home
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+const Private: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Private - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Private</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Private content will go here */}
+        </div>
       </div>
     </>
-  )
-}
-;
-export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  const supabase = createServerSideClient(context)
+  );
+};
 
-  const { data, error } = await supabase.auth.getUser()
-
-  if (error || !data?.user) {
-    return {
-      redirect: {
-        destination: '/auth/login','
-        permanent: false,
-      },
-    }
-  }
-
-  return {
-    props: {
-      user: data.user,
-    },
-  }
-}
+export default Private;

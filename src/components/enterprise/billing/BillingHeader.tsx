@@ -37,6 +37,6 @@ export function BillingHeader(): '
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

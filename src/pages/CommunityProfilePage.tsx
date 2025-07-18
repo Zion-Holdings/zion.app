@@ -1,4 +1,10 @@
-setIsLoading(false);
-        setUser(null); // Clear user if fetch fails;
-      };
-    };
+import React from 'react';
+
+export default function CommunityProfilePage() {
+  return (
+    <div>
+      <h1>CommunityProfilePage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

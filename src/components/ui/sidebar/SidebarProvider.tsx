@@ -5,7 +5,6 @@ interface SidebarContextType {'
   toggle: () => void,"
   open: () => void
   close: "() => void"
-}
 
 const SidebarContext = createContext<SidebarContextType>({;";,"
   isOpen: true
@@ -19,7 +18,6 @@ export const _useSidebar = (): SidebarContextType => useContext(SidebarContext);
 interface SidebarProviderProps {
   children: React.ReactNode
   defaultOpen?: boolean
-}
 
 export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   children,;
@@ -43,6 +41,6 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

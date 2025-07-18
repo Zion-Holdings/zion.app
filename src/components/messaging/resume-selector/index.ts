@@ -1,3 +1,4 @@
-export { ResumeSelector } from './ResumeSelector'
-export type { ResumeOption } from './types'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

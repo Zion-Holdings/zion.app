@@ -1,1 +1,4 @@
-// Common skills for filtering;
+// Module for filterConstants
+export const filterConstants = {
+  // TODO: Implement module functionality
+};

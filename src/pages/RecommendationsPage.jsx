@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { ListingScoreCard } from '@/components/ListingScoreCard';
-import Skeleton from '@/components/ui/skeleton';
-import { useDelayedError } from '@/hooks/useDelayedError';
-;
-export defaultault function RecommendationsPage() {
+import { useEffect, useState } from 'react;
+import { useAuth } from '@/hooks/useAuth;
+import { ListingScoreCard } from '@/components/ListingScoreCard;
+import Skeleton from '@/components/ui/skeleton;
+import { useDelayedError } from '@/hooks/useDelayedError;
+
+export default function RecommendationsPage() {
   const { user } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,6 @@ export defaultault function RecommendationsPage() {
         ))}
       </div>
     );
-  }
 
   if (delayedError) {
     return (
@@ -54,14 +53,13 @@ export defaultault function RecommendationsPage() {
         Failed to load recommendations.
       </div>
     )
-  }
 
   return (
     <div className="min-h-screen bg-zion-blue py-8 px-4">"
       <h1 className="text-2xl font-bold text-white mb-6">"
         AI Equipment Recommendations
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">"
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">'
         {items.map((item) => (
           <ListingScoreCard
             key={item.id}
@@ -75,4 +73,5 @@ export defaultault function RecommendationsPage() {
       </div>
     </div>
   );
-}
+
+';;`

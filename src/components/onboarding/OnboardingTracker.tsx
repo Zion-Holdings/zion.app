@@ -11,7 +11,6 @@ export interface OnboardingStep {'
   completed: boolean,"
   link: string
   action?: string
-}
 
 interface OnboardingTrackerProps {
   steps: OnboardingStep[]
@@ -77,9 +76,8 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

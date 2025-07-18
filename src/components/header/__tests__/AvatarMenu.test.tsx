@@ -145,4 +145,4 @@ describe('UserProfileDropdown', () => {'
     expect(screen.queryByText('Profile')).not.toBeInTheDocument()'
   });
 })'
-'''''
+'''''';;`

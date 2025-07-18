@@ -1,4 +1,4 @@
-import type { SearchSuggestion } from '@/types/search';
+import type { SearchSuggestion } from '@/types/search;
 '
 export interface SearchResult {
   id: "string"
@@ -13,7 +13,7 @@ export interface SearchResult {
   rating?: number
   tags?: string[]'
   date?: string
-}
+
 '
 export interface SearchFilters {
   types: "string[]"
@@ -62,5 +62,5 @@ export const matchesSearchTerm: (;",;"
  * Calculate relevance score for search results;"
  */;"
 export const calculateRelevanceScore = (;";,"
-  result: "SearchResult"
-  searchTerm: string,;
+  result: "SearchResult'
+  searchTerm: string,;';;`

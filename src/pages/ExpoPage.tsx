@@ -8,9 +8,9 @@ import { MultiverseLaunchesSection } from '@/components/expo/MultiverseLaunchesS
 import { InteractiveMap } from '@/components/expo/InteractiveMap'
 import { LivestreamSection } from '@/components/expo/LivestreamSection'
 import { ExpoGPTPrompt } from '@/components/expo/ExpoGPTPrompt'
-import { ExportsSection } from '@/components/expo/ExportsSection';
+import { ExportsSection } from '@/components/expo/ExportsSection;
 '
-export defaultault function ExpoPage(): ;
+export default function ExpoPage(): ;
   return (;
     <>'
       <SEO;
@@ -18,4 +18,4 @@ export defaultault function ExpoPage(): ;
         description="Virtual summit showcasing multiverse innovation"
       />;"
       <Header />;"
-      <main className="bg-background">;
+      <main className="bg-background'>;';;

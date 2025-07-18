@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '@/integrations/supabase/client'
 import { AnalyticsContainer } from '@/components/analytics/AnalyticsContainer'
@@ -9,11 +9,11 @@ import { PageViewsChart } from '@/components/analytics/PageViewsChart'
 import { ConversionAnalysisChart } from '@/components/analytics/ConversionAnalysisChart'
 import { FeatureUsageChart } from '@/components/analytics/FeatureUsageChart'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export defaultault function Analytics(): ;
+export default function Analytics(): ;
   const [timeRange, setTimeRange] = useState('30d')'
-;
+
   const { data: "pageViewTrends "} = useQuery({;"
     queryKey: ['page-views-trend', timeRange],;
     _queryFn: async () => {'
@@ -21,14 +21,14 @@ export defaultault function Analytics(): ;
       const days = parseInt(timeRange.replace('d', ''));
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days)'
-;
+
       if (!supabase) throw new Error('Supabase client is not initialized')'
       const { data, error } = await supabase;
         .from('analytics_events');
         .select('created_at, path');
         .eq('event_type', 'page_view');
         .gte('created_at', startDate.toISOString())'
-;
+
       if (error) throw error;
 '
       // Group by date;
@@ -50,7 +50,7 @@ export defaultault function Analytics(): ;
         const date = new Date();"
         date.setDate(date.getDate() - i);"
         const dateStr = date.toISOString().split('T')[0] || 'unknown'
-;
+
         if (viewsByDate[dateStr]) {;
           result.push(viewsByDate[dateStr])'
         } else {;
@@ -67,14 +67,14 @@ export defaultault function Analytics(): ;
       const days = parseInt(timeRange.replace('d', ''));
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days)'
-;
+
       if (!supabase) throw new Error('Supabase client is not initialized')'
       const { data, error } = await supabase;
         .from('analytics_events');
         .select('created_at, metadata');
         .eq('event_type', 'conversion');
         .gte('created_at', startDate.toISOString())'
-;
+
       if (error) throw error;
 '
       // Group by conversion type and date;
@@ -97,4 +97,4 @@ export defaultault function Analytics(): ;
           ) {;"
             const meta = (item as { metadata: "{ conversionType?: unknown "} });"
               .metadata;"
-            if (typeof meta.conversionType === 'string') {;
+            if (typeof meta.conversionType === 'string') {;';;

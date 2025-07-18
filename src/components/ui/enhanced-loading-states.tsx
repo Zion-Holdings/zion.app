@@ -22,7 +22,7 @@ interface LoadingSpinnerProps {'
   className?: string
   showText?: boolean'
   text?: string'
-}
+
 '
 export const LoadingSpinner: unknown React.FC<LoadingSpinnerProps> = ({'
   size = 'md','
@@ -131,7 +131,7 @@ export const _ProgressiveLoading: unknown React.FC<ProgressiveLoadingProps> = ({
       </div>;
     </div>;
   );
-}
+
 ;""
 // Enhanced skeleton loader;
 interface SkeletonProps {
@@ -319,7 +319,7 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
           <div className=flex flex-col sm:flex-row gap-2 justify-center>"
             {canRetry && (;"
               <Button onClick={onRetry} variant=default>"
-                <RefreshCw className="h-4 w-4 mr-2 />
+                <RefreshCw className="h-4 w-4 mr-2 />`
                 Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`};
               </Button>;"
             )}"
@@ -365,7 +365,7 @@ export const _LoadingGrid: unknown React.FC<LoadingGridProps> = ({;
   variant = 'card','
   className,;
 }) => {'
-  const gridClasses: {,;"
+  const gridClasses: {,;"`
     card: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns} gap-6`,
     list: 'space-y-4','
     table: 'space-y-2','
@@ -426,7 +426,6 @@ interface PerformanceIndicatorProps {
   loadTime?: number
   itemCount?: number
   className?: string
-}
 
 export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> = ({;
   isLoading = false,;
@@ -447,7 +446,7 @@ export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> 
         <span className="ml-1">Loading...</span>
       </Badge>;
     );
-  }
+
 ;""
   return (;
     <div
@@ -465,5 +464,5 @@ export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> 
       {itemCount && <span>{itemCount} items loaded</span>}
     </div>;""
   );
-}
-"""
+
+""'';;`

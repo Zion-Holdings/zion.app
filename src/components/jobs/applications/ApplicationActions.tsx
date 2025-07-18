@@ -19,7 +19,6 @@ interface ApplicationActionsProps {'
     applicationId: "string,""
     newStatus: ApplicationStatus,
   ) => Promise<void>
-}
 
 export function ApplicationActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
@@ -91,4 +90,4 @@ export function ApplicationActions(): unknown {): unknown {): unknown {): unknow
 }"";
 }"
 }"
-}"
+}'';;`

@@ -29,7 +29,7 @@ export function MyApplications(): '
         return <Badge className="bg-red-100 text-red-800">Rejected</Badge>;"
       default:;";"
         return <Badge variant=outline">{status}</Badge>"
-    }
+
   };"
 ;";
   if (isLoading) {";";
@@ -93,7 +93,7 @@ export function MyApplications(): '
                   </Link>;""
                 </Button>;""
 ;"";
-                <Button variant=default" size="sm className=text-xs" asChild>"
+                <Button variant=default" size="sm className=text-xs" asChild>"`
                   <Link href={`/messages?jobId=${application.job_id}`}>";""
                     <MessageSquare className=h-3 w-3 mr-1 /> Contact Client"
                   </Link>;
@@ -108,6 +108,6 @@ export function MyApplications(): '
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

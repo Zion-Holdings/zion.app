@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react;
 import { Users, TrendingUp } from '@/components/ui/icons'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate'
-;
-export defaultault function AITalentMatchingPage(): ;
+
+export default function AITalentMatchingPage(): ;
   const benefits = ['
     {;
       title: 'Precise Candidate Matching','
@@ -54,4 +54,4 @@ export defaultault function AITalentMatchingPage(): ;
 ;"
 AITalentMatchingPage.displayName = 'AITalentMatchingPage;
 
-}'
+}'';;

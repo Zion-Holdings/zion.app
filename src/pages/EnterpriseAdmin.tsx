@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { AdminDashboard } from '@/components/enterprise/admin/AdminDashboard'
 import { useAuth } from '@/hooks/useAuth'
 import { SEO } from '@/components/SEO'
-import { ProtectedRoute } from '@/components/ProtectedRoute';
+import { ProtectedRoute } from '@/components/ProtectedRoute;
 '
-export defaultault function EnterpriseAdmin(): ;
+export default function EnterpriseAdmin(): ;
   const { _user } = useAuth();
 '
   // Check if user has enterprise admin role;
@@ -14,7 +14,7 @@ export defaultault function EnterpriseAdmin(): ;
   if (!isEnterpriseAdmin) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }'
-;
+
   return (;
     <ProtectedRoute>'
       <SEO;
@@ -32,4 +32,4 @@ export defaultault function EnterpriseAdmin(): ;
 }"
 }";"
 }"
-}"
+}'';;

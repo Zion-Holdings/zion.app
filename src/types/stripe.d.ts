@@ -1,7 +1,4 @@
-declare module 'stripe' {;
-  const Stripe: unknown "{ [key: string]: unknown "};
-  export defaultault Stripe;"
-};";"
-;"
-export {};"
-"""""
+// Type definitions for stripe.d
+export interface stripe.d {
+  // TODO: Add proper type definitions
+}

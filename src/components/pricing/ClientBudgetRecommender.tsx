@@ -20,7 +20,6 @@ interface ClientBudgetRecommenderProps {'
   scope?: string
   experienceLevel?: string"
   onSuggestionApplied: "(minValue: number, maxValue: number) => void""
-}
 
 export const ClientBudgetRecommender: unknown React.FC<;
   ClientBudgetRecommenderProps;
@@ -75,7 +74,7 @@ export const ClientBudgetRecommender: unknown React.FC<;
           suggestedMax: suggestion.maxRate
           accepted: true,"
         });
-      }
+
     };"
   };"
 
@@ -101,5 +100,5 @@ export const ClientBudgetRecommender: unknown React.FC<;
       </div>
     </div>;""
   );
-}
-"""
+
+""'';;

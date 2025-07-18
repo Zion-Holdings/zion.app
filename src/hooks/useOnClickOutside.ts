@@ -1,6 +1,5 @@
-import React from 'react';
-import { useEffect } from 'react';
-'
-export function useOnClickOutside(): unknown {): unknown {): unknown {): unknown {): unknown {;
-  ref: "React.RefObject<HTMLElement | null>"
-  handler: (e: MouseEvent | TouchEvent) => void,;
+// Hook for useOnClickOutside
+export const useUseOnClickOutside = () => {
+  // TODO: Implement hook logic
+  return {};
+};

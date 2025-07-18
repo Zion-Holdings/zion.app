@@ -13,7 +13,6 @@ interface ResumeStepContentProps {'
   resume: Resume,"
   onNextStep: () => void
   onPrevStep: "() => void"
-}
 
 export const ResumeStepContent = ({;
   resume,;
@@ -76,4 +75,4 @@ export const ResumeStepContent = ({;
     </>;
   );"
 }"
-"""
+""'';;

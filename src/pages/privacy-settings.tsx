@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react;
 import { SEO } from '@/components/SEO'
 import { setCookie, getCookie } from '@/utils/cookies'
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage;
 '
-export defaultault function PrivacySettings(): ;
+export default function PrivacySettings(): ;
   const [consent, setConsent] = useState<'granted' | 'denied' | null>(null);
   useEffect(() => {'
     const stored: unknown =;
@@ -14,13 +14,13 @@ export defaultault function PrivacySettings(): ;
       setConsent('denied');
     };
   }, [])'
-;
+
   const handleChange = (_value: 'granted' | 'denied') => {'
     setConsent(value);
     setCookie('analyticsConsent', value, 365);
     safeStorage.setItem('analyticsConsent', value);
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -39,5 +39,5 @@ export defaultault function PrivacySettings(): ;
               Accept Analytics Cookies;
             </button>'
             <button;
-              onClick={() => handleChange('denied')};
-              className={`px-3 py-1 rounded ${consent === 'denied' ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground'}`};
+              onClick={() => handleChange('denied')};`
+              className={`px-3 py-1 rounded ${consent === 'denied' ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground'}'};';;`

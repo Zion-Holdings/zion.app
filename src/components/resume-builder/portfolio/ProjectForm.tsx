@@ -42,7 +42,6 @@ interface ProjectFormProps {"
   project?: PortfolioProject"
   onSuccess: () => void
   onCancel: "() => void"
-}
 
 export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   project,;
@@ -235,6 +234,6 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;

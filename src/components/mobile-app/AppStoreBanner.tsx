@@ -59,4 +59,4 @@ export const _AppStoreBanner: unknown React.FC = () => {'
     </div>;
   );"
 }"
-"""
+""'';;

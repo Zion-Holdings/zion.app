@@ -1,6 +1,10 @@
-import { useState, useEffect } from 'react';
-import { WifiOff, Wifi } from '@/components/ui/icons'
+import React from 'react';
 
-import { Alert, AlertDescription } from '@/components/ui/alert'
-
-export const _OfflineIndicator = () => {;
+export default function OfflineIndicator() {
+  return (
+    <div>
+      <h1>OfflineIndicator</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

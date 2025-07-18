@@ -1,11 +1,10 @@
-import { SkillsForm as SkillsFormComponent } from './skills'
-import type { SkillsFormProps } from './skills/types'
-'
-export function SkillsForm(): unknown {): unknown {): unknown {): unknown {): unknown {props: SkillsFormProps) {'
-  return <SkillsFormComponent {...props} />;
-};
+import React from 'react';
 
-}'
+export default function SkillsForm() {
+  return (
+    <div>
+      <h1>SkillsForm</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
 }
-}'
-}'

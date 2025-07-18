@@ -49,4 +49,4 @@ export const _CATEGORIES: unknown Category[] = [
     icon: 'Lightbulb','
   },;
 ]'
-'''''
+'''''';;

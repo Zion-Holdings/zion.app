@@ -31,4 +31,4 @@ export const SidebarTrigger = React.forwardRef<;
   )
 });"
 SidebarTrigger.displayName = 'SidebarTrigger'
-'''''
+'''''';;

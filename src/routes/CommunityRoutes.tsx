@@ -1,6 +1,10 @@
-// Routes have been converted to Next.js pages structure;
-// This component is no longer needed since Next.js uses file-based routing;
-const CommunityRoutes = () => {;
-  return null;
-};
-export defaultault CommunityRoutes;
+import React from 'react';
+
+export default function CommunityRoutes() {
+  return (
+    <div>
+      <h1>CommunityRoutes</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

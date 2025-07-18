@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Link from 'next/link'; // Changed from react-router-dom';
-import { forgotPassword } from '@/services/auth';
-;
+import React, { useState } from 'react;
+import Link from 'next/link'; // Changed from react-router-dom;
+import { forgotPassword } from '@/services/auth;
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');'
   const [message, setMessage] = useState('');'
@@ -16,7 +16,7 @@ const ForgotPassword = () => {
       );
     } catch (err) {
       setMessage(err.message || 'Failed to send reset instructions.');'
-    }
+
   };
 
   return (
@@ -37,10 +37,11 @@ const ForgotPassword = () => {
       </form>
       {message && <p>{message}</p>}
       <p>
-        Remember your password? <Link href="/login">Login</Link>"
+        Remember your password? <Link href="/login">Login</Link>'
       </p>
     </div>
   );
 };
-;
-export defaultault ForgotPassword;
+
+export default ForgotPassword;
+';;

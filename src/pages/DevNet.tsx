@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { GradientHeading } from '@/components/GradientHeading'
-import Link from 'next/link';
+import Link from 'next/link;
 '
-export defaultault function DevNet(): ;
+export default function DevNet(): ;
   return (;
     <>'
       <Header />;
@@ -22,4 +22,4 @@ export defaultault function DevNet(): ;
             <Link href="/governance/create">Proposal Sandbox</Link>;"
           </li>;"
           <li>;"
-            <Link href="/gpt-playground">GPT Playground</Link>;
+            <Link href="/gpt-playground'>GPT Playground</Link>;';;

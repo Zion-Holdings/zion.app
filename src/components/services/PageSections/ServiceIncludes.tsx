@@ -89,9 +89,8 @@ export function ServiceIncludes(): '
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

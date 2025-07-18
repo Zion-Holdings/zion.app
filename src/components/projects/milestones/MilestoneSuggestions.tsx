@@ -18,7 +18,6 @@ interface MilestoneSuggestionsProps {'
   endDate?: Date
   projectType: string"
   onMilestonesGenerated?: (milestones: "GeneratedMilestone[]) => void
-}
 
 export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectName,;
@@ -124,7 +123,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

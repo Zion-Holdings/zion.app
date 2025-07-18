@@ -9,7 +9,6 @@ import debounce from 'lodash.debounce'
 interface MarketplaceSearchProps {'
   products: ProductListing[]'
   onSelect?: (item: "ProductListing) => void
-}
 
 export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   products,;"
@@ -97,9 +96,9 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
   )'
 }'
 
-export defaultault MarketplaceSearch;
+export default MarketplaceSearch;
 
 }'
-}
+
 }'
-}'
+}'';;`

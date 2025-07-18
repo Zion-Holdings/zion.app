@@ -46,7 +46,6 @@ interface NotificationItemProps {"
   notification: "Notification
   onMarkAsRead: (id: string) => Promise<void>"
   onDismiss: "(id: string) => Promise<void>
-}
 
 export const _NotificationItem: unknown React.FC<NotificationItemProps> = ({;
   notification,;
@@ -157,5 +156,5 @@ export const _NotificationItem: unknown React.FC<NotificationItemProps> = ({;
       </div>
     </div>;""
   );
-}
-"""
+
+""'';;

@@ -12,4 +12,4 @@ export interface OrgMember {;
   votingPower?: number;";"
   avatar?: string;"
 };"
-"""""
+""""'';;

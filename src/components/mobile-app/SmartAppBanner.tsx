@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react''
-import  { X, ArrowRight }  from '@/components/ui/icons';
-import  { safeStorage }  from '@/utils/safeStorage';
-import  Link  from 'next/link';
-import  { useIsMobile }  from '@/hooks/use-mobile';
-interface SmartAppBannerProps {';
+import  { X, ArrowRight }  from '@/components/ui/icons;
+import  { safeStorage }  from '@/utils/safeStorage;
+import  Link  from 'next/link;
+import  { useIsMobile }  from '@/hooks/use-mobile;
+interface SmartAppBannerProps {;
   appName?: string'
   appIconSrc?: string;
   appStoreUrl?: string;
   googlePlayUrl?: string;
   delay?: number; // Delay in milliseconds before showing the banner
-}
 
 export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
   appName = 'Zion Marketplace',
@@ -29,7 +28,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
       }, delay);
 
       return () => clearTimeout(timer);
-    }
+
     return undefined;
   }, [isMobile, delay]);
 
@@ -54,7 +53,6 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
         (development only)
       </div>
     ) : null'
-  }
 
   // Detect iOS or Android
   const _isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -101,5 +99,5 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
         </div>
       </div>
     </div>
-  )"
-};
+  )'
+};';;

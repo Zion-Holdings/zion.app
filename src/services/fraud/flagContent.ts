@@ -1,1 +1,4 @@
-// Content flagging functionality;
+// Service for flagContent
+export const flagContentService = {
+  // TODO: Implement service methods
+};

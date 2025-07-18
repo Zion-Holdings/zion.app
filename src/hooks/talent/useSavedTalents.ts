@@ -6,4 +6,4 @@ import { showApiError } from '@/utils/apiErrorHandler'
 import { useAuthStatus } from '@/hooks/talent'
 import { useRouter } from 'next/router'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
-export function useSavedTalents(): ;
+export function useSavedTalents(): ;';;

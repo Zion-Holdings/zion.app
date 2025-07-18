@@ -1,15 +1,15 @@
 import { resetPassword } from '../auth'
-;
+
 // Mock global fetch;
 global.fetch = jest.fn()'
-;
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '
-;
+
 describe('Auth Service', () => {'
   beforeEach(() => {;
     jest.clearAllMocks(); // Clear mocks before each test;
   })'
-;
+
   describe('resetPassword', () => {;
     it('should call fetch with correct parameters and return data on success', async () => {;
       const mockToken = 'test-token'
@@ -48,7 +48,7 @@ describe('Auth Service', () => {'
         'Invalid token',;
       );
     })'
-;
+
     it('should throw a generic error if the response is not ok and no message is present', async () => {;
       const mockToken = 'test-token'
       const mockPassword = 'newPassword123;
@@ -63,7 +63,7 @@ describe('Auth Service', () => {'
         'Error 500: Failed to reset password',;
       );
     })'
-;
+
     it('should handle non-JSON error responses gracefully', async () => {;
       const mockToken = 'test-token'
       const mockPassword = 'newPassword123;
@@ -81,7 +81,7 @@ describe('Auth Service', () => {'
       ); // Falls back to generic error;
     });
   })'
-;
+
   // Optional: Add tests for the existing 'register' function if they don't exist;
   // describe('register', () => {;
   //   it('should call fetch for register and return data', async () => {;
@@ -89,4 +89,4 @@ describe('Auth Service', () => {'
   //   });
   // });
 })'
-'''''
+'''''';;`

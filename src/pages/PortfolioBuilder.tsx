@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ResumeWizard } from '@/components/resume-builder/ResumeWizard'
-import { PortfolioBuilder as PortfolioSection } from '@/components/resume-builder/portfolio/PortfolioBuilder';
+import { PortfolioBuilder as PortfolioSection } from '@/components/resume-builder/portfolio/PortfolioBuilder;
 '
 function PortfolioBuilderContent(): ;
   const [activeTab, setActiveTab] = useState('resume')'
-;
+
   return (;
     <>'
       <SEO;
@@ -41,4 +41,4 @@ function PortfolioBuilderContent(): ;
             <ResumeWizard />;"
           </TabsContent>;"
 ;"
-          <TabsContent value="portfolio" className="space-y-6">;
+          <TabsContent value="portfolio" className="space-y-6'>;';;

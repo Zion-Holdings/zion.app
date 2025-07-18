@@ -36,7 +36,7 @@ const SidebarMenuItem = React.forwardRef<;
           {badge && <span>{badge}</span>};
         </a>;
       );
-    }
+
 ;""
     return (;
       <button
@@ -79,4 +79,4 @@ const SidebarMenuGroup: unknown React.FC<SidebarMenuGroupProps> = ({;
 };"
 
 export { SidebarMenuItem, SidebarMenuGroup }"
-"""
+""'';;

@@ -14,4 +14,4 @@ export function useFraudPreventionSignup(): ;
       const data = await response.json();
       return data.ip'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {'
-      logErrorToProduction('Error getting IP:', { data: "error })
+      logErrorToProduction('Error getting IP:', { data: 'error })';;

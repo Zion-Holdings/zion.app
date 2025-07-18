@@ -1,28 +1,21 @@
-import { SEO } from "@/components/SEO";";";";";"";
-import TermsOfService from "@/legal/TermsOfService";";";";";"";
-import { useTranslation } from "react-i18next";"
-;
-export default function Terms(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const { t } = useTranslation();""
-  ;";""
-  return (;";";""
-    <>;";";";""
-      <SEO;";";";";""
-        title={t('terms.title')};';;';''
-        description={t('terms.description')};';;';''
-        canonical="https://app.ziontechgroup.com/terms";";";";""
-      />;";";";";""
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">;";";";";""
-        <div className="container mx-auto px-4">;"
-          <TermsOfService />;
-        </div>;""
-      </main>;";""
-    </>;";";""
-  );";";";""
-};";";";";""
-Terms.displayName = "Terms";";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Terms: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Terms - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Terms</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Terms content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Terms;

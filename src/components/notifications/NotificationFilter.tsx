@@ -12,7 +12,6 @@ export type FilterType ='
 interface NotificationFilterProps {'
   filter: "FilterType
   onFilterChange: (filter: FilterType) => void""
-}
 
 export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({
   filter,;"
@@ -47,5 +46,5 @@ export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({
       </Tabs>
     </div>;""
   );
-}
-"""
+
+""'';;

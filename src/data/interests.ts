@@ -1,8 +1,4 @@
-export const _INTERESTS = [;
-  'AI & Machine Learning','
-  'Web Development','
-  'Cloud Computing','
-  'Cybersecurity','
-  'Data Science','
-]'
-'''''
+// Module for interests
+export const interests = {
+  // TODO: Implement module functionality
+};

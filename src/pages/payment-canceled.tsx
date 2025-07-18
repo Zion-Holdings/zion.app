@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import { XCircle } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router // Changed from useNavigate';
+import { useRouter } from 'next/router // Changed from useNavigate;
 '
-export defaultault function PaymentCanceled(): ;
+export default function PaymentCanceled(): ;
   const router = useRouter(); // Changed from navigate;
 '
   return (;
@@ -31,4 +31,4 @@ export defaultault function PaymentCanceled(): ;
           <Button;"
             variant="outline"
             onClick={() => router.push('/dashboard')} // Changed to router.push;
-            className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white";
+            className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white';';;

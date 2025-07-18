@@ -13,4 +13,4 @@ export { VideoCallRoom } from '../video/VideoCallRoom'
 }) => {;"
   return <div>{children}</div>;";
 }";";
-"""
+""'';;

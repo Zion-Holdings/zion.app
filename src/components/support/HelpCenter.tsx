@@ -8,7 +8,7 @@ import { HelpArticleList } from './HelpArticleList'
 import { HelpArticleView } from './HelpArticleView'
 import { HELP_CATEGORIES } from './help-content'
 '
-export defaultault function HelpCenter(): ;
+export default function HelpCenter(): ;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)'
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null)'
   const [searchQuery, setSearchQuery] = useState('')'
@@ -248,7 +248,7 @@ export defaultault function HelpCenter(): ;
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

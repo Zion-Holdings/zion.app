@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react;
 import { Globe, MapPin } from '@/components/ui/icons'
 import { Header } from '@/components/Header'
-import { NextSeo } from '@/components/NextSeo';
+import { NextSeo } from '@/components/NextSeo;
 import {'
   Tooltip,;
   TooltipContent,;
@@ -60,8 +60,8 @@ const INSTANCES: unknown Instance[] = [;"
 interface FeedItem {
   id: "number"
   text: "string"
-}
-export defaultault function GlobalMapPage(): ;
+
+export default function GlobalMapPage(): ;
   const [feed, setFeed] = useState<FeedItem[]>([]);"
 ;";"
   useEffect(() => {;"
@@ -152,4 +152,4 @@ export defaultault function GlobalMapPage(): ;
               <h2 className="text-xl font-semibold mb-2">Live Feed</h2>;"
               <ul className="space-y-1">;"
                 {feed.map((f) => (;"
-                  <li key={f.id} className="text-sm">;
+                  <li key={f.id} className="text-sm'>;';;`

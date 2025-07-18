@@ -1,11 +1,10 @@
-import React  from 'react;
-const NationDetailPage = () => {;
-  return (;
-    <div>;
-      <h1>Nation Detail Page</h1>;
-      <p>This is a placeholder for the Nation Detail page.</p>';
-    </div>';
-  )'
-};
-export defaultault NationDetailPage'
-'''''
+import React from 'react';
+
+export default function NationDetailPage() {
+  return (
+    <div>
+      <h1>NationDetailPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

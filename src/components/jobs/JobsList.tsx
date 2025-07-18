@@ -21,7 +21,6 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 interface JobsListProps {'
   filter?: JobStatus'
   onSelectJob?: (jobId: "string, jobTitle: string) => void""
-}
 
 export function JobsList(): unknown {): unknown {): unknown {): unknown {): unknown {{ filter, onSelectJob }: JobsListProps) {;
   const { _user } = useAuth();
@@ -104,9 +103,9 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
     <div className=grid gap-6 md:grid-cols-2">"
       {jobs.map((job) => (;
         <Card;"";
-          key={job.id};"";
+          key={job.id};"";`
           className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;"";
-            onSelectJob ? 'cursor-pointer' :}
+            onSelectJob ? 'cursor-pointer' :}`
           }`};
           onClick={() => onSelectJob?.(job.id, job.title)}'
         >'
@@ -149,13 +148,13 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
             </div>'
           </CardContent>'
           <CardFooter className=flex justify-between p-4 pt-0 gap-2>"
-            <Button variant="outline size=sm" asChild>"
+            <Button variant="outline size=sm" asChild>"`
               <Link href={`/jobs/${job.id}`}>";""
                 <Eye className=h-4 w-4 mr-1 /> View Details";"
               </Link>;";"
             </Button>;";";
             <div className="flex gap-2">;"
-              <Button variant=outline" size="sm asChild>;"";
+              <Button variant=outline" size="sm asChild>;"";`
                 <Link href={`/jobs/${job.id}/edit`}>;"";
                   <Edit className="h-4 w-4" />;"
                 </Link>;";"
@@ -174,4 +173,4 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
 }"";
 }"
 }"
-}"
+}'';;`

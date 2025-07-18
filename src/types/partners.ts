@@ -58,4 +58,4 @@ export interface PartnerPayout {"
   created_at: string""
   completed_at?: string"
 }"
-"""""
+""""'';;

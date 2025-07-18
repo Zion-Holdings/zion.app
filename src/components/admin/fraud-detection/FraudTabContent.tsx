@@ -3,7 +3,7 @@ import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons'
 '
 interface FraudTabContentProps {'
   _tabValue: "string
-}
+
 "
 export const _FraudTabContent: unknown React.FC<FraudTabContentProps> = ({;"
   tabValue,;";"
@@ -46,4 +46,4 @@ export const _FraudTabContent: unknown React.FC<FraudTabContentProps> = ({;"
       return null;
   };"";
 };"";
-""""
+"""'';;

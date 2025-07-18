@@ -29,4 +29,4 @@ export const _QuoteStatusBadge: ({ status }: QuoteStatusBadgeProps) => {"
 
   return <Badge className={config.className}>{config.label}</Badge>;"
 }"
-"""
+""'';;

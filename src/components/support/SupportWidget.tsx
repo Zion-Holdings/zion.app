@@ -76,9 +76,9 @@ export function SupportWidget(): ;
       )}
     </>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

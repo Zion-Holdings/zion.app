@@ -8,7 +8,6 @@ interface MobileFilterBarProps {'
   searchTerm: "string
   setSearchTerm: (value: string) => void"
   setIsMobileFilterOpen: "(isOpen: boolean) => void
-}
 
 export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   searchTerm,"
@@ -47,7 +46,7 @@ export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

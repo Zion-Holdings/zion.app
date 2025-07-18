@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react;
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
 import { useTenantAdminStatus } from '@/hooks/useWhitelabelTenant'
@@ -10,4 +10,4 @@ export interface ProtectedRouteProps {'
   adminOnly?: boolean'
   tenantAdminAllowed?: boolean'
   requiredUserType?: 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin'
-}
+}';;

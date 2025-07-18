@@ -1,11 +1,10 @@
-</div>;
-      </div>;
-    </CardContent>;
-  </Card>;
-);
-// Filter controls;
-const EquipmentFilterControls = ({;
-  sortBy,;
-  setSortBy,;
-  filterCategory,;
-  setFilterCategory,;
+import React from 'react';
+
+export default function EquipmentPage() {
+  return (
+    <div>
+      <h1>EquipmentPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

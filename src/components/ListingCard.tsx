@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
@@ -13,4 +13,4 @@ interface ListingCardProps {'
   tags?: string[];"
   author?: { name: string; id?: string; avatarUrl?: string; email?: string }";";
   className?: string"
-  profileType?: 'service' | 'talent'
+  profileType?: 'service' | 'talent'';;

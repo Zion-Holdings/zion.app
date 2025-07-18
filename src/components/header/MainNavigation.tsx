@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 interface MainNavigationProps {
   className?: string
-}
+
 '
 export function MainNavigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: MainNavigationProps) {'
   const router = useRouter();
@@ -50,6 +50,6 @@ export function MainNavigation(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;

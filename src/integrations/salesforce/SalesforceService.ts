@@ -4,12 +4,12 @@ export interface SalesforceLead {
   Company: string,"
   Email: string"
   [key: string]: unknown // Avoid 'any', use unknown or a specific type
-}
+
 '
 export class SalesforceService {;
   private instanceUrl: string;
   private token: string'
-;
+
   constructor(instanceUrl: string, token: string) {;"
     if (!instanceUrl) throw new Error('Salesforce instance URL missing');
     if (!token) throw new Error('Salesforce access token missing');
@@ -22,7 +22,7 @@ export class SalesforceService {;
       `${this.instanceUrl}/services/data/v59.0/sobjects/Lead`,'
       {;
         method: 'POST',;
-        headers: {
+        headers: {`
           Authorization: "`Bearer ${this.token"}`,;"
           'Content-Type': 'application/json','
         },;
@@ -31,10 +31,10 @@ export class SalesforceService {;
     );"
 ;"
     if (!res.ok) {;"
-      const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');`
       throw new Error(`Salesforce error: "${res.status"} ${text}`);
     };"
     return res.json().catch(() => ({}));";"
   };"
 };"
-"""""
+""""'';;`

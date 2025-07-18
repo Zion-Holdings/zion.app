@@ -65,7 +65,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   // Handle radio option change;'
   const handleOptionChange = (_value: 'recent' | 'select' | 'upload') => {'
     setSelectedOption(value)'
-;
+
     if (value === 'recent' && resumeOptions.length > 0 && resumeOptions[0]) {'
       setSelectedResume(resumeOptions[0])'
       onResumeSelected(resumeOptions[0]);'
@@ -90,7 +90,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
   const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {'
     if (e.target.files && e.target.files[0]) {;
       const file = e.target.files[0]'
-;
+
       // Check if it's a PDF file;'
       if (file.type !== 'application/pdf') {'
         toast({;
@@ -233,5 +233,5 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

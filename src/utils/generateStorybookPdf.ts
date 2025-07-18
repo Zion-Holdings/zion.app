@@ -1,8 +1,8 @@
-import { jsPDF } from 'jspdf';
+import { jsPDF } from 'jspdf;
 '
 export interface StoryPage {
   text: "string"
-}
+
 export async function generateStorybookPdf(): unknown {): unknown {): unknown {): unknown {): unknown {pages: StoryPage[]): Promise<Blob> {;"
   const doc = new jsPDF();";"
   const margin = 20;"
@@ -11,7 +11,7 @@ export async function generateStorybookPdf(): unknown {): unknown {): unknown {)
   doc.setFont('Times', 'bold')'
   doc.setFontSize(24);
   doc.text('The Day the Protocol Woke Up', margin, y)'
-;
+
   doc.setFont('Times', 'normal');
   doc.setFontSize(14);
   pages.forEach((page, idx) => {;
@@ -23,7 +23,7 @@ export async function generateStorybookPdf(): unknown {): unknown {): unknown {)
     const lines: doc.splitTextToSize(page.text", 170);"
     doc.text(lines, margin, idx === 0 ? y : margin);"
   });"
-;
+
   return doc.output('blob');
 };
-}'
+}'';;

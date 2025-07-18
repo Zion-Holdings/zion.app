@@ -1,2 +1,4 @@
-// Common constants used across fraud detection modules;
-// Phrases that might indicate fraud;
+// Service for constants
+export const constantsService = {
+  // TODO: Implement service methods
+};

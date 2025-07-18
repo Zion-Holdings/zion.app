@@ -18,7 +18,7 @@ interface DropResult {""
   draggableId: string,
   source: DnDLocation
   destination?: DnDLocation | null
-}
+
 ""
 // Define the kanban board columns based on application statuses;"
 const COLUMNS = [";"
@@ -51,7 +51,6 @@ const COLUMNS = [";"
 
 interface KanbanBoardProps {
   jobId?: string
-}
 
 export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: KanbanBoardProps) {;
   const { applications, isLoading, updateApplicationStatus } = ;
@@ -138,7 +137,7 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
 '
   if (isLoading) {;
     return ('
-      <div'
+      <div'`
         className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`}'
       >'
         {Array.from({ length: "isMobile ? 1 : 5 }).map((_, i) => (;"";
@@ -168,7 +167,7 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
 '
   return (;
     <DragDropContext onDragEnd={handleDragEndSync}>'
-      <div'
+      <div'`
         className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`};
       >;
         {COLUMNS.map((column) => (;
@@ -186,6 +185,6 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

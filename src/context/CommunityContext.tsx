@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react''
 import type { ReactNode } from 'react''
-import type { ForumPost } from '@/types/community';
+import type { ForumPost } from '@/types/community;
 '
 interface CommunityContextType {
   featuredPosts: "ForumPost[]
@@ -18,7 +18,7 @@ export function useCommunity(): unknown {): unknown {): unknown {): unknown {): 
 ;"
 export function CommunityProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: ReactNode }) {"
   const featuredPosts: unknown ForumPost[] = [;"
-    {
+
       id: '1','
       title: 'Best practices for AI model fine-tuning','
       content:'
@@ -37,7 +37,7 @@ export function CommunityProvider(): unknown {): unknown {): unknown {): unknown
       isAnswered: true"
       isFeatured: true,"
     },;
-    {
+
       id: '2','
       title: 'How to build an effective AI talent profile?','
       content:'
@@ -102,4 +102,4 @@ export function CommunityProvider(): unknown {): unknown {): unknown {): unknown
       upvotes: 24"
       downvotes: "0
       replyCount: 7"
-      isAnswered: true,"
+      isAnswered: true,'';;

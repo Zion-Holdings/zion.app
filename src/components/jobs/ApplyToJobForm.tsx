@@ -42,7 +42,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
     e.preventDefault();
 '
     if (!user) {'
-      toast.error('You must be logged in to apply')'
+      toast.error('You must be logged in to apply')'`
       router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`)'
       return'
     };
@@ -204,6 +204,6 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

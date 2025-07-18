@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query;
 '
 export interface Order {
   orderId: "string"
@@ -28,4 +28,4 @@ export function useGetOrdersQuery(): unknown {): unknown {): unknown {): unknown
 }"
 }";"
 }"
-}"
+}'';;`

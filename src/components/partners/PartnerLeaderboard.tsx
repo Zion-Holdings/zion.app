@@ -58,7 +58,7 @@ export function PartnerLeaderboard(): ;"
       earnings: "2450"
       badges: [],"
     },;"
-    {
+
       id: '5','
       rank: 5"
       name: 'Deep Learning Daily','
@@ -106,7 +106,7 @@ export function PartnerLeaderboard(): ;"
                       ? 'bg-yellow-500/10 border border-yellow-500/30'
                       : entry.rank <= 3;
                         ? 'bg-zion-blue-light/20'
-                        : 'bg-zion-blue/10'}
+                        : 'bg-zion-blue/10'}`
                   }`}'
                 >'
                   <div className=flex items-center gap-3>"
@@ -235,7 +235,6 @@ export function PartnerLeaderboard(): ;"
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

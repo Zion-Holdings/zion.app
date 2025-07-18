@@ -5,7 +5,6 @@ import { OptimizedImage } from '@/components/ui/OptimizedImage'
 
 interface LogoProps {
   customLogo?: string
-}
 
 export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown {{ customLogo }: LogoProps) {;
   const { isWhitelabel, logoUrl, brandName } = useWhitelabel();
@@ -44,4 +43,4 @@ export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown 
 }";
 }""
 }"
-}"
+}'';;`

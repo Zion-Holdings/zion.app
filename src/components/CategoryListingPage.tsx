@@ -275,6 +275,6 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
 };
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

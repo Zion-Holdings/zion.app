@@ -12,7 +12,6 @@ interface ScoreDialogProps {'
   onOpenChange: (open: boolean) => void,""
   application: JobApplication | null","
   onScoreUpdated: (updatedApplication: JobApplication) => void"
-}
 
 export function ScoreDialog(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
@@ -39,4 +38,4 @@ export function ScoreDialog(): unknown {): unknown {): unknown {): unknown {): u
 }";
 }""
 }"
-}"
+}'';;

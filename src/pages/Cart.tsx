@@ -1,7 +1,10 @@
-description: wasWishlisted;
-        ? `${name} has been removed from your wishlist`;
-        : `${name} has been added to your wishlist`,;
-    });
-  };
-  const handleCheckout = async (details?: {;
-    email?: string;
+import React from 'react';
+
+export default function Cart() {
+  return (
+    <div>
+      <h1>Cart</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

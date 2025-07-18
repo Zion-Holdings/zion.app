@@ -22,4 +22,4 @@ export function useDisputes(): ;
       setIsLoading(true)'
 '
       const { data, error: "fetchError } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase
-        .from('disputes')'
+        .from('disputes')'';;

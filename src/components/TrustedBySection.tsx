@@ -110,4 +110,4 @@ const trustedCompanies = ['
 const CompanyLogo = ({;
   company,'
 }: {'
-  company: "(typeof trustedCompanies)[0]
+  company: '(typeof trustedCompanies)[0]';;

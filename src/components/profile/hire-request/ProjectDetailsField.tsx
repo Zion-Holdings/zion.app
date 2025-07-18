@@ -12,7 +12,7 @@ import type { FormValues } from './useHireRequestForm'
 '
 interface ProjectDetailsFieldProps {'
   form: "UseFormReturn<FormValues>
-}
+
 "
 export function ProjectDetailsField(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: ProjectDetailsFieldProps) {;"
   return (;
@@ -35,7 +35,6 @@ export function ProjectDetailsField(): unknown {): unknown {): unknown {): unkno
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

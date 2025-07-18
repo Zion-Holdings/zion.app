@@ -1,5 +1,5 @@
 import type { ProductDetailsData } from '../types/product'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 export async function fetchProductById(): unknown {): unknown {): unknown {): unknown {): unknown {;
   productId: string,;"
@@ -29,7 +29,7 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
 ;"
     const response = await fetch(`/api/marketplace/product/${productId"}`);"
 ;"
-    if (response.status === 404) {;"
+    if (response.status === 404) {;"`
       logWarn(`Product with ID "${productId}" not found.`);
       return null;
     };"
@@ -40,7 +40,7 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
         'Error fetching product ${productId}: ${response.status} ${response.statusText}',;
         { data: "errorText "},;"
       );"
-      throw new Error(;"
+      throw new Error(;"`
         `Failed to fetch product data. Status: "${response.status"}`,;
       );
     };"
@@ -54,4 +54,4 @@ export async function fetchProductById(): unknown {): unknown {): unknown {): un
     // During build time, return null instead of throwing;"
     if (;"
       typeof window === 'undefined' &&;
-      process.env.NODE_ENV === 'production;
+      process.env.NODE_ENV === 'production;';;`

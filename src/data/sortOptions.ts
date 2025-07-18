@@ -1,1 +1,4 @@
-// Sort options for talent directory;
+// Module for sortOptions
+export const sortOptions = {
+  // TODO: Implement module functionality
+};

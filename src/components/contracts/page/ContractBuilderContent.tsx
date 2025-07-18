@@ -92,6 +92,6 @@ export function ContractBuilderContent(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;

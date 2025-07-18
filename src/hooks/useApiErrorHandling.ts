@@ -1,4 +1,5 @@
+// Hook for useApiErrorHandling
+export const useUseApiErrorHandling = () => {
+  // TODO: Implement hook logic
+  return {};
 };
-      // Log to Sentry;
-      if (logToSentry) {;
-        // Remove all imports and dynamic imports of @sentry/nextjs from this file.;

@@ -1,17 +1,10 @@
-}> = ({;
-  sortBy,;
-  setSortBy,;
-  filterCategory,;
-  setFilterCategory,;
-  categories,;
-  priceRange,;
-  setPriceRange,;
-  minAiScore,;
-  setMinAiScore,;
-  minRating,;
-  setMinRating,;
-  filterAvailability,;
-  setFilterAvailability,;
-  availabilityOptions,;
-  filterLocation,;
-  setFilterLocation,;
+import React from 'react';
+
+export default function Marketplace() {
+  return (
+    <div>
+      <h1>Marketplace</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

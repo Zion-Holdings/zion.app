@@ -37,7 +37,6 @@ interface TemplateListProps {'
   isLoading: boolean,""
   onSelect: (template: ContractTemplate) => void","
   onEdit: (template: ContractTemplate) => void"
-}
 
 export function TemplateList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   templates,;
@@ -201,5 +200,5 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

@@ -1,6 +1,6 @@
-import { rest } from 'msw';
+import { rest } from 'msw;
 import { setupServer }  from 'msw/node;
-import {';
+import {;
   fetchProducts,'
   fetchCategories,;
   fetchTalent,;
@@ -77,4 +77,4 @@ const server = setupServer(;"
         featured: "false"
         location: 'US',;
         availability: 'Limited',;
-        brand: 'MLSolutions',;
+        brand: 'MLSolutions',;';;

@@ -141,4 +141,4 @@ export const SidebarInset = React.forwardRef<'
   )"
 });"
 SidebarInset.displayName = 'SidebarInset'
-'''''
+'''''';;

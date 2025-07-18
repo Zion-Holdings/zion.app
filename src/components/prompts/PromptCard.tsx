@@ -6,7 +6,6 @@ import type { Prompt } from '@/types/prompts'
 '
 interface PromptCardProps {'
   prompt: "Prompt
-}
 
 export function PromptCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ prompt }: PromptCardProps) {;
   const [copied, setCopied] = useState(false);
@@ -47,7 +46,7 @@ export function PromptCard(): unknown {): unknown {): unknown {): unknown {): un
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

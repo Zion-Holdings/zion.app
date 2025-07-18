@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react;
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { useLanguage, SUPPORTED_LANGUAGES } from '@/context/LanguageContext'
@@ -29,4 +29,4 @@ export function LanguageSwitcher(): ;
     safeStorage.setItem('i18n_lang', lang)'
     const langName: unknown ='
       availableLanguages.find((l) => l.code === lang)?.name || lang'
-    setAnnounce(t('language.language_changed', { language: "langName }))
+    setAnnounce(t('language.language_changed', { language: 'langName }))';;

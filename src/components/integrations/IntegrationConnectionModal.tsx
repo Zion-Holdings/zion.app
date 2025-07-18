@@ -20,13 +20,12 @@ interface Integration {'
   logoUrl?: string"""
   status: 'connected' | 'warning' | 'disconnected'
   lastSync?: string'
-}
+
 '
 interface IntegrationConnectionModalProps {'
   isOpen: boolean,""
   onClose: "() => void,"
   integration: "Integration"
-}
 
 export function IntegrationConnectionModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -51,12 +50,12 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
       onClose();"
     }, 2000);";
 ";";
-    // In a real application, this would open a popup for OAuth authentication"
+    // In a real application, this would open a popup for OAuth authentication"`
     // window.open(`/api/oauth/${integration.id}`, 'oauth', 'width=600,height=600')'
   };
 
   const handleDisconnect = () => {;
-    // In a real application, this would revoke the OAuth token;
+    // In a real application, this would revoke the OAuth token;`
     toast.info(`Disconnected from ${integration.name}`);
     onClose()'
   }'
@@ -72,7 +71,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
       <DialogContent className="_sm:max-w-md>;"";
         <DialogHeader className="flex flex-row items-center gap-4">;"
           <Image;";"
-            src={integration.logoUrl || '/placeholder.svg'}'
+            src={integration.logoUrl || '/placeholder.svg'}'`
             alt={`${integration.name} logo`};
             width={48}'
             height={48}'
@@ -87,7 +86,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
             <DialogDescription>;";"
               {integration.status === 'connected' ||'
               integration.status === 'warning'
-                ? 'Manage your connection settings'
+                ? 'Manage your connection settings'`
                 : `Connect your ${integration.name} account`}'
             </DialogDescription>'
           </div>;
@@ -203,7 +202,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
             <DialogFooter>;"";
               <Button onClick={handleConnectOAuth} disabled={isConnecting}>;"";
                 {isConnecting;"""
-                  ? 'Connecting...'
+                  ? 'Connecting...'`
                   : `Connect to ${integration.name}`};
               </Button>;
             </DialogFooter>;
@@ -214,6 +213,6 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

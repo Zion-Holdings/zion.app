@@ -10,4 +10,4 @@ export function useUIState(): ;
     availability: true"
     region: "true
     experience: true"
-    price: true,"
+    price: true,'';;

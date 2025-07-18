@@ -25,14 +25,14 @@ export function SocialShareSection(): '
   }'
 
   const shareToFacebook = () => {'
-    window.open('
+    window.open('`
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl"}`,;"
       '_blank','
     )'
   }'
 
   const shareToLinkedIn = () => {'
-    window.open('
+    window.open('`
       `https: //www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,""
       '_blank','
     );
@@ -98,7 +98,7 @@ export function SocialShareSection(): '
           <div className="flex flex-wrap gap-3">
             {shareLinks.map((link, index) => (;"
               <Button;";
-                key={index}";";
+                key={index}";";`
                 className={`${link.color} text-white`}"
                 size="sm"
                 onClick={link.onClick}"
@@ -117,6 +117,6 @@ export function SocialShareSection(): '
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

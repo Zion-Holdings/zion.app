@@ -24,6 +24,6 @@ export function SidebarGroupLabel(): unknown {): unknown {): unknown {): unknown
 };
 
 }'
-}
+
 }'
-}'
+}'';;

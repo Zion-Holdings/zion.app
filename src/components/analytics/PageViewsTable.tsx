@@ -151,6 +151,6 @@ export function PageViewsTable(): '
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

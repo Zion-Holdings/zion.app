@@ -1,5 +1,5 @@
 import React  from 'react;
-import {';
+import {;
   CheckCircle,'
   ChevronRight,;
   FileText,;
@@ -9,11 +9,11 @@ import {';
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;
 import { Progress } from '@/components/ui/progress'
 // import { SeverityIndicator } from "../common/SeverityIndicator"
 import { useRouter } from 'next/router'
-import { toast } from 'sonner';
+import { toast } from 'sonner;
 '
 interface Milestone {
   id: "string"
@@ -49,12 +49,12 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
     toast.success('Starting project call', {;
       description: 'Initializing video connection...',;
     });
-'
+'`
     router.push(`/call/${roomId}`);
   };
 '
   const messageClient = () => {;
-    toast.info('Opening message thread with client', {;
+    toast.info('Opening message thread with client', {;`
       description: "`Messaging ${project.client.name"}...`,;
     });"
     // Navigate to messaging with this client;";"
@@ -165,7 +165,7 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
                     {milestone.paymentStatus};
                   </Badge>;
                 </div>'
-;
+
                 <div className="pl-7">;"
                   <div className="flex justify-between text-sm">;"
                     <span className="text-muted-foreground">Due Date:</span>;"
@@ -186,4 +186,4 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
                     variant="outline"
                     className="w-full mt-3 gap-1"
                   >;"
-                    View Details <ChevronRight className="h-4 w-4" />;
+                    View Details <ChevronRight className="h-4 w-4' />;';;`

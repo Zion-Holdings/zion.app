@@ -1,3 +1,10 @@
-import { useEffect, useState } from 'react'
+import React from 'react';
 
-export function ScrollProgressBar(): ;
+export default function ScrollProgressBar() {
+  return (
+    <div>
+      <h1>ScrollProgressBar</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

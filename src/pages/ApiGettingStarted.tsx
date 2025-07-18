@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link';
+import Link from 'next/link;
 export function ApiGettingStarted(): '
   const authExample: `curl -X GET \\;","
-  https://api.ziontechgroup.com/v1/jobs \\;
+  https://api.ziontechgroup.com/v1/jobs \\;`
   -H "Authorization: Bearer YOUR_API_KEY"`;"
-;"
-  const quickStartJs = `import axios from 'axios';
+;"`
+  const quickStartJs = `import axios from 'axios;
 const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {;
-  headers: {
+  headers: {`
     Authorization: "\`Bearer \${API_KEY"}\`;
   };
-});"
+});"`
 logInfo(response.data);`;";"
 ;"
   return (;"
@@ -25,7 +25,7 @@ logInfo(response.data);`;";"
           talent profiles, quotes, and projects. Our RESTful API lets you;"
           integrate Zion's features into your own applications and workflows.;
         </p>'
-;
+
         <h2>Authentication</h2>;
         <p>'
           All API requests must include your API key in the Authorization;
@@ -51,4 +51,4 @@ logInfo(response.data);`;";"
         <h2>Base URL</h2>;"
         <p>All API requests should be made to the following base URL:</p>;"
         <div className="bg-zinc-900 p-4 rounded-md">;"
-          <code className="text-zion-cyan break-words">;
+          <code className="text-zion-cyan break-words'>;';;`

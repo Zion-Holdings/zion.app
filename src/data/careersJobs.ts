@@ -5,7 +5,7 @@ export interface CareerJob {
   type: string,
   department: string"
   description: "string
-}
+
 "
 export const CAREER_JOBS: unknown "Record<string, CareerJob[]> = {
   engineering: [;"
@@ -75,4 +75,4 @@ export const CAREER_JOBS: unknown "Record<string, CareerJob[]> = {
       department: 'Marketing','
       description:'
         'Develop compelling content that educates and inspires our audience about the future of AI and technology.','
-    },'
+    },'';;

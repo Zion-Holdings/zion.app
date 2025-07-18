@@ -68,13 +68,13 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 '
   const handleContinue = () => {'
     if (!selectedItemId) {;
-      setSelectionError('
+      setSelectionError('`
         `Please choose a ${;
           category === 'services'
             ? 'service'
             : category === 'talent'
               ? 'talent'
-              : 'item'}
+              : 'item'}`
         } to continue.`,'
       )'
       return;
@@ -142,9 +142,9 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         {!loading && !delayedError && data && data.length > 0 && (;
           <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">"
             {data.map((item: ServiceItem) => (;
-              <Card;"
+              <Card;"`
                 data-testid={`item-card-${item.id}`}"
-                key={item.id};
+                key={item.id};`
                 className={`p-4 space-y-2 cursor-pointer border-2 transition-colors rounded-lg shadow-sm ${selectedItemId === item.id ? 'border-zion-purple ring-2 ring-zion-purple' : 'hover:border-zion-purple/70'} focus-visible: outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`"}"
                 onClick={() => setSelectedItemId(item.id)};
                 tabIndex={0}
@@ -165,7 +165,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
                 {/* item.slug might not be directly displayable but useful for links if needed later */}
                 <Button;"
                   size="sm"
-                  variant=outline""
+                  variant=outline""`
                   data-testid={`select-item-${item.id}`}
                   onClick={(e) => {;"
                     e.stopPropagation();"
@@ -228,7 +228,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         <Textarea;"
           value={message}
           onChange={(e) => setMessage(e.target.value)};
-          data-testid="message-input"
+          data-testid="message-input"`
           placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`};
           rows={4}'
         />'
@@ -275,8 +275,8 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;`

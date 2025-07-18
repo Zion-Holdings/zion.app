@@ -9,7 +9,6 @@ interface ActionButtonsProps {'
     flagId: string,"
     action: 'warning' | 'suspension' | 'ban' | 'ignore','
   ) => void
-}
 
 export const _ActionButtons: unknown React.FC<ActionButtonsProps> = ({;
   flagId,'
@@ -69,4 +68,4 @@ export const _ActionButtons: unknown React.FC<ActionButtonsProps> = ({;
     </div>'
   );
 }'
-'''''
+'''''';;

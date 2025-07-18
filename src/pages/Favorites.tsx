@@ -3,9 +3,9 @@ import { useFavorites } from '@/context/FavoritesContext.jsx'
 import { NEW_PRODUCTS } from '@/data/newProductsData'
 import type { ProductListing } from '@/types/listings'
 import type { Product } from '@/services/marketplace'
-;
-export defaultault function FavoritesPage(): ;
-  const { _favorites } = useFavorites()';
+
+export default function FavoritesPage(): ;
+  const { _favorites } = useFavorites();
   const map: unknown "Record<string", ProductListing> = {};
   for (const p of NEW_PRODUCTS) {;
     map[p.id] = p;
@@ -38,4 +38,4 @@ export defaultault function FavoritesPage(): ;
       {items.length === 0 ? (;"
         <p>No favorites added.</p>;"
       ) : (;"
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>;';;

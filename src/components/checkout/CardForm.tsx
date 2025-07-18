@@ -20,14 +20,13 @@ async function awardPoints(): unknown {): unknown {): unknown {): unknown {): un
 interface CreatePaymentIntentResponse {
   clientSecret: string'
   error?: string'
-}
+
 '
 interface Props {'
   amount: "number,"
   onSuccess: "(intent: PaymentIntent) => void"
-}
 
-export defaultault function CardForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ amount, onSuccess }: Props) {;
+export default function CardForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ amount, onSuccess }: Props) {;
   const stripe = useStripe();
   const elements = useElements();
   const { _user } = useAuth();
@@ -168,7 +167,7 @@ export defaultault function CardForm(): unknown {): unknown {): unknown {): unkn
         className="w-full";
         aria-busy={loading}";"
         aria-label={`Pay $${amount.toFixed(2)}`};";"
-      >;";";
+      >;";";`
         {loading ? 'Processing...' : `Pay $${amount.toFixed(2)}`}'
       </Button>'
       {process.env.NODE_ENV === 'development' && ('
@@ -192,5 +191,5 @@ export defaultault function CardForm(): unknown {): unknown {): unknown {): unkn
 }"
 }"
 }"
-}
-}"
+
+}'';;`

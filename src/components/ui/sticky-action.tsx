@@ -7,7 +7,7 @@ interface StickyActionProps {'
   children: React.ReactNode'
   showAfterScroll?: number'
   position?: 'bottom' | 'top'
-}
+
 '
 export function StickyAction(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   className,;
@@ -57,9 +57,9 @@ export function StickyAction(): unknown {): unknown {): unknown {): unknown {): 
       )}
     </AnimatePresence>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

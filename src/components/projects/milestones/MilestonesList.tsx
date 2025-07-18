@@ -70,7 +70,7 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
           </Card>))};
       </div>;
     );
-  }
+
 ;"
   if (milestones.length === 0 && !showAddForm) {;"
     return (
@@ -130,4 +130,4 @@ export const _MilestonesList: unknown React.FC<MilestonesListProps> = ({;
     </div>'
   );
 }'
-'''''
+'''''';;

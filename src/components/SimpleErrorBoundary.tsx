@@ -1,11 +1,10 @@
-import React from 'react'
-import { logError } from '@/utils/logError'
-'
-interface ErrorBoundaryState {'
-  hasError: "boolean,"
-  error: "Error | undefined"
-}"
-";
-interface ErrorBoundaryProps {;"";
-  children: React.ReactNode;""
-  fallback?: React.ComponentType<{ error?: Error; retry: "() => void }>
+import React from 'react';
+
+export default function SimpleErrorBoundary() {
+  return (
+    <div>
+      <h1>SimpleErrorBoundary</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

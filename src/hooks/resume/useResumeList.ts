@@ -25,4 +25,4 @@ export function useResumeList(): ;
         .select('*')'
         .eq('user_id', user.id)'
         .order('is_active', { ascending: "false "})
-        .order('created_at', { ascending: false "})"
+        .order('created_at', { ascending: false "})'';;

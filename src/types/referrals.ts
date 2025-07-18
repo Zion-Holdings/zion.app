@@ -40,4 +40,4 @@ export interface ReferralStats {"
   completedReferrals: "number"
   totalRewards: "number"
 }"
-"""""
+""""'';;

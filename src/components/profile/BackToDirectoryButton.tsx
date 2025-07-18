@@ -17,9 +17,8 @@ export function BackToDirectoryButton(): '
       </Button>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

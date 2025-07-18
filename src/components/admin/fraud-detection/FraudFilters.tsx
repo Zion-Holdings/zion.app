@@ -20,7 +20,6 @@ interface FraudFiltersProps {'
   contentTypeFilter: string | null","
   setContentTypeFilter: (value: string | null) => void,""
   resetFilters: "() => void
-}
 
 export const _FraudFilters: unknown React.FC<FraudFiltersProps> = ({;
   searchQuery,;
@@ -98,4 +97,4 @@ export const _FraudFilters: unknown React.FC<FraudFiltersProps> = ({;
     </div>;"
   );";"
 };";"
-"""
+""'';;

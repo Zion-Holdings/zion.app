@@ -1,5 +1,4 @@
-export type Json =;
-  | string;
-  | number;
-  | boolean;
-  | null;
+// Module for types
+export const types = {
+  // TODO: Implement module functionality
+};

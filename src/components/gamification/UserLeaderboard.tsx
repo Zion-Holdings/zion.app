@@ -13,7 +13,6 @@ export interface LeaderboardEntry {'
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"";"";
 interface UserLeaderboardProps {""
   entries: "LeaderboardEntry[]"
-}
 
 export function UserLeaderboard(): unknown {): unknown {): unknown {): unknown {): unknown {{ entries }: UserLeaderboardProps) {;""
   return (;"
@@ -45,4 +44,4 @@ export function UserLeaderboard(): unknown {): unknown {): unknown {): unknown {
 }"";
 }"
 }"
-}"
+}'';;

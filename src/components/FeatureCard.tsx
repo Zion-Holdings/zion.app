@@ -7,7 +7,6 @@ interface FeatureCardProps {'
   icon: React.ReactNode
   className?: string
   key?: string | number // Added key prop
-}
 
 export function FeatureCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
@@ -33,4 +32,4 @@ export function FeatureCard(): unknown {): unknown {): unknown {): unknown {): u
 }";
 }""
 }"
-}"
+}'';;

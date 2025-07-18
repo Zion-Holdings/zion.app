@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export defaultault function PodcastHost(): ;
+export default function PodcastHost(): ;
   const [invitee, setInvitee] = useState('');
   const [bio, setBio] = useState('');
   const [topic, setTopic] = useState('');
@@ -83,4 +83,4 @@ export defaultault function PodcastHost(): ;
 }"
 }";"
 }"
-}"
+}'';;

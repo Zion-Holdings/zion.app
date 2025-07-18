@@ -14,7 +14,6 @@ import type { FormValues } from './useHireRequestForm'
 interface BudgetFieldsProps {
   form: UseFormReturn<FormValues>
   _talent?: TalentProfile
-}
 
 export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form, _talent }: BudgetFieldsProps) {'
   return ('
@@ -68,7 +67,6 @@ export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): 
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

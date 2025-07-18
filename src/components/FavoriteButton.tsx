@@ -16,7 +16,6 @@ import {'
 interface FavoriteButtonProps {
   itemId: string
   className?: string
-}
 
 export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ itemId, className }: FavoriteButtonProps) {;
   const { isWishlisted, toggle } = useWishlist();
@@ -78,6 +77,6 @@ export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;

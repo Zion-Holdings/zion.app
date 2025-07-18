@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react;
 import dynamic from 'next/dynamic'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
-import AdminLayout from '@/components/admin/AdminLayout';
+import AdminLayout from '@/components/admin/AdminLayout;
 const DevDashboard = dynamic(() => import('@/pages/dev/dashboard'), {'
   loading: () => (;
     <div className="min-h-screen flex items-center justify-center">;"
@@ -16,10 +16,10 @@ const DevDashboard = dynamic(() => import('@/pages/dev/dashboard'), {'
 });"
 ;"
 const allowedRoles = ['founder', 'admin', 'finance'];
-export defaultault function AdminPerformancePage(): ;
+export default function AdminPerformancePage(): ;
   const { user, isLoading } = useAuth();
   const router = useRouter()'
-;
+
   useEffect(() => {;
     if (!isLoading) {'
       if (!user) {;
@@ -29,7 +29,7 @@ export defaultault function AdminPerformancePage(): ;
       };
     };
   }, [user, isLoading, router])'
-;
+
   if (isLoading || !user) {;
     return ('
       <AdminLayout>;
@@ -49,4 +49,4 @@ export defaultault function AdminPerformancePage(): ;
           </h1>;"
           <button;"
             onClick={() => router.push('/admin')};
-            className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700";
+            className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700';';;

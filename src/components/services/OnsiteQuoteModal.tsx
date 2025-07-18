@@ -16,7 +16,6 @@ interface OnsiteQuoteModalProps {'
   open: "boolean,
   onOpenChange: (open: boolean) => void
   country?: string
-}
 
 export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
@@ -143,6 +142,6 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;

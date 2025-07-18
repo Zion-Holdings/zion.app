@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 interface PaymentSummaryProps {'
   milestones: "Milestone[]
   paymentTerms: string | null""
-}
 
 export const _PaymentSummary: unknown React.FC<PaymentSummaryProps> = ({;
   milestones,;
@@ -51,4 +50,4 @@ export const _PaymentSummary: unknown React.FC<PaymentSummaryProps> = ({;
     </Card>;"
   );
 }"
-"""
+""'';;

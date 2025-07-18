@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react;
 import { Header } from '@/components/Header'
 import { useAdminQuotes } from '@/hooks/useAdminQuotes'
 import { useAuth } from '@/hooks/useAuth'
@@ -13,4 +13,4 @@ import {;
   QuoteStatusCards,;
   QuotesFilter,'
   QuotesTable,;
-} from '@/components/admin/quotes'
+} from '@/components/admin/quotes'';;

@@ -16,7 +16,6 @@ interface CountryServiceCardProps {'
   onSelect: (country: CountryPricing) => void
   onQuote?: (country: CountryPricing) => void
   isPopular?: boolean
-}
 
 export function CountryServiceCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   country,;
@@ -87,7 +86,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       className={`h-full transition-all duration-300 hover:shadow-lg ${'
         isPopular'
           ? 'bg-gradient-to-br from-zion-blue-dark to-zion-purple/10 border-zion-purple'
-          : 'bg-zion-blue-dark border-zion-blue-light'}
+          : 'bg-zion-blue-dark border-zion-blue-light'}`
       }`}'
     >'
       <CardHeader className="pb-2>"
@@ -131,10 +130,10 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       </CardContent>;
       <CardFooter className="flex flex-col space-y-2">
         <Button;"
-          onClick={() => onSelect(country)};"
+          onClick={() => onSelect(country)};"`
           className={`w-full ${isPopular;
               ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple'
-              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"}
+              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"}`
           }`};
         >
           Select Service;
@@ -156,9 +155,9 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       </CardFooter>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

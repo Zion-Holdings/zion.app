@@ -1,12 +1,12 @@
 import axios from 'axios'
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage;
 import type {'
   AxiosInstance,;
   AxiosResponse,;
   AxiosError,'
   InternalAxiosRequestConfig,;
 } from 'axios'
-;
+
 // Create and configure axios instance;
 const createAxiosInstance = (): AxiosInstance => {'
   const instance: axios.create({;",;"
@@ -22,4 +22,4 @@ const createAxiosInstance = (): AxiosInstance => {'
     (_config: InternalAxiosRequestConfig) => {'
       // Add auth token if available;
       if (typeof window !== 'undefined') {;
-        const token = safeStorage.getItem('auth-token');
+        const token = safeStorage.getItem('auth-token');';;

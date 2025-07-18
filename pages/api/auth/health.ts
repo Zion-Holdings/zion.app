@@ -1,28 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger';
-;
-export default async function handler(
-  _req: NextApiRequest,
-  res: NextApiResponse
-) {
-  try {
-    // Basic health check for auth system
-    const healthStatus = {
-      status: 'healthy','
-      timestamp: new Date().toISOString(),
-      services: {
-        auth: 'operational','
-        database: 'operational''
-      }
-    };
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-    res.status(200).json(healthStatus);
-  } catch (error) {
-    logErrorToProduction('Auth health check failed:', error);'
-    res.status(500).json({
-      status: 'unhealthy','
-      timestamp: new Date().toISOString(),
-      error: 'Internal server error''
-    });
-  }
-}
+const Health: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Health - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Health</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Health content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Health;

@@ -1,4 +1,4 @@
-/**;
- * Real-time Error Reporting Dashboard;
- * Provides comprehensive monitoring, health scoring, and alerting;
- */;
+// Utility functions for errorReportingDashboard
+export const errorReportingDashboard = {
+  // TODO: Implement utility functions
+};

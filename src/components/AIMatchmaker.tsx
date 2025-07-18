@@ -15,7 +15,7 @@ interface AIMatchmakerProps {
   serviceType?: string
   onMatchSelect?: (match: MatchResult) => void'
   className?: string'
-}
+
 '
 export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   serviceType = '','
@@ -82,7 +82,7 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
   const matchItems = matches.map((match) => match.item)'
 
   return ('
-    <Card'
+    <Card'`
       className={`border border-zion-blue-light bg-zion-blue-dark ${className || ''}`}'
     >'
       <CardHeader className=pb-2>"
@@ -136,6 +136,6 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
 };
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

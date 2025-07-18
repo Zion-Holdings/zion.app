@@ -22,7 +22,6 @@ interface ContractBuilderProps {'
   talent: TalentProfile","
   clientName: string"
   onContractGenerated?: (contractContent: string) => void"
-}
 
 export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -145,7 +144,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
               scopeSummary: '','
               startDate: new Date(),;""
               paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
-              paymentAmount: talent.hourly_rate'
+              paymentAmount: talent.hourly_rate'`
                 ? `$${talent.hourly_rate}/hour`;
                 : '','
               additionalClauses: ['nda', 'ip'],'
@@ -158,6 +157,6 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

@@ -9,7 +9,7 @@ interface QuoteStatusCardsProps {'
     responded: number,""
     accepted: "number,"
     closed: "number"
-  }
+
 };
 
 export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
@@ -89,4 +89,4 @@ export const _QuoteStatusCards: unknown React.FC<QuoteStatusCardsProps> = ({;""
     </div>;"
   );";"
 };";"
-"""
+""'';;

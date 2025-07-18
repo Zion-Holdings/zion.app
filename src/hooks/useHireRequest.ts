@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import type { TalentProfile as _TalentProfile } from '@/types/talent';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import type { TalentProfile as _TalentProfile } from '@/types/talent;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export interface HireRequestData {
   talent: {
@@ -20,4 +20,4 @@ export interface HireRequestData {
     overview: string;,"
     timeline: "string;"
     budgetMin: number;,"
-    budgetMax: "number;";
+    budgetMax: "number;';';;

@@ -7,7 +7,7 @@ import Image from 'next/image // Import next/image'
 import React, { useState } from 'react // Import useState'
 '
 interface ListingScoreCardProps {'
-  title: "string,
+  title: 'string,
   description: string
   image?: string | undefined
   category: string
@@ -18,4 +18,4 @@ interface ListingScoreCardProps {'
   rating?: number | undefined
   reviewCount?: number | undefined
   className?: string | undefined
-}
+}';;

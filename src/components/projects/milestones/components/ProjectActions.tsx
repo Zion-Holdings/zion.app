@@ -11,7 +11,6 @@ interface ProjectActionsProps {'
   disputeId?: string"
   isTalent: boolean
   onAddMilestone: "() => void"
-}
 
 export function ProjectActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;
@@ -38,7 +37,7 @@ export function ProjectActions(): unknown {): unknown {): unknown {): unknown {)
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

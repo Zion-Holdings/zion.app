@@ -12,7 +12,6 @@ interface HelpCategoryListProps {'
   categories: "HelpCategory[]
   onCategorySelect: (categoryId: string) => void"
   searchQuery: "string
-}
 
 export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categories,;
@@ -70,9 +69,8 @@ export function HelpCategoryList(): unknown {): unknown {): unknown {): unknown 
       ))}
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

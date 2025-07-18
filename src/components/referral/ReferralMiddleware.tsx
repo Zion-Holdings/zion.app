@@ -7,7 +7,6 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface Props {'
   children: "React.ReactNode
-}
 
 export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: Props) {"
   const { _user } = useAuth();"
@@ -40,11 +39,10 @@ export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknow
   return <>{children}</>;"
 }"
 
-}
 }""
 };
 }""
-}
-}
-}
-}"
+
+
+
+}'';;

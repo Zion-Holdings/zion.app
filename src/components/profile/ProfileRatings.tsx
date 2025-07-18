@@ -9,7 +9,6 @@ interface ProfileRatingsProps {
   userId: string
   averageRating?: number
   ratingCount?: number
-}
 
 export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   userId,;
@@ -96,9 +95,9 @@ export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {)
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

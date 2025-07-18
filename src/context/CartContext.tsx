@@ -3,8 +3,8 @@ import type { CartContextType, CartAction, CartItem } from '@/types/cart'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState, AppDispatch } from '@/store'
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice'
-import { safeStorage } from '@/utils/safeStorage // Import safeStorage';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { safeStorage } from '@/utils/safeStorage // Import safeStorage;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 '
 const CartContext = createContext<CartContextType | undefined>(undefined)'
 export function useCart(): unknown {): unknown {): unknown {): unknown {): unknown {): CartContextType {'
@@ -16,7 +16,7 @@ export function useCart(): unknown {): unknown {): unknown {): unknown {): unkno
 export function CartProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "React.ReactNode }) {
   if (process.env.NODE_ENV === 'development') {'
     logInfo('[CartProvider] Initializing...')'
-  }
+
   const items = useSelector((state: RootState) => state.cart.items);
   const reduxDispatch = useDispatch<AppDispatch>();
   // Redux store (cartSlice.ts) is responsible for initial hydration from localStorage.'
@@ -43,4 +43,4 @@ export function CartProvider(): unknown {): unknown {): unknown {): unknown {): 
         break;
       default:'
         // Optional: handle unknown action types'
-        // logWarn(`[CartProvider] Unknown action type: "${(action as any).type"}`);
+        // logWarn(`[CartProvider] Unknown action type: "${(action as any).type"}');';;`

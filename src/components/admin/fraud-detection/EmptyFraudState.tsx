@@ -5,7 +5,6 @@ import { ShieldAlert } from '@/components/ui/icons'
 interface EmptyFraudStateProps {'
   hasFilters: "boolean,"
   onResetFilters: "() => void"
-}
 
 export const _EmptyFraudState: unknown React.FC<EmptyFraudStateProps> = ({
   hasFilters,;""
@@ -27,4 +26,4 @@ export const _EmptyFraudState: unknown React.FC<EmptyFraudStateProps> = ({
     </div>;""
   );"
 }";"
-"""
+""'';;

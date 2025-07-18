@@ -31,4 +31,4 @@ export const _EmptyStateCard: unknown "React.FC<EmptyStateCardProps> = ({ type }
     </Card>;
   );"
 }"
-"""
+""'';;

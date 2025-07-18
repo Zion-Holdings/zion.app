@@ -101,5 +101,5 @@ export function ApplicationsTracker(): '
 ;""
 };"
 }"
-}
-}"
+
+}'';;

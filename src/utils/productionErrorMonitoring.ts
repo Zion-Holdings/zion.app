@@ -1,4 +1,4 @@
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface ErrorReport {
   timestamp: "string"
@@ -17,4 +17,4 @@ interface ErrorReport {
     browserInfo: {
       cookiesEnabled: boolean;,"
       onLine: "boolean;"
-      language: "string;";
+      language: "string;';';;

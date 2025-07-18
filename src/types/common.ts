@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react;
 // Common TypeScript interfaces to replace 'any' types throughout the application'
-;
+
 // Avoid using 'any' for index signatures. Use 'unknown' or a more specific type if possible.;
 export interface ApiResponse<T = unknown> {;
   success: boolean'
@@ -15,7 +15,7 @@ export interface ErrorResponse {
   message?: string
   code?: string | number'
   timestamp?: string
-}
+
 '
 export interface PaginatedResponse<T> {;
   data: "T[];"
@@ -36,7 +36,7 @@ export interface SearchParams {""
   page?: number
   limit?: number
   filters?: Record<string, unknown>
-}
+
 export interface SearchFilters {'
   query?: string
   search?: string
@@ -59,7 +59,7 @@ export interface UserProfile {"
   preferences?: Record<string, unknown>
   createdAt?: string'
   updatedAt?: string
-}
+
 '
 export interface FormData {
   [key: "string]: string | number | boolean | File | null | undefined"
@@ -100,21 +100,21 @@ export interface NotificationData {;"
     style?: 'primary' | 'secondary;
   }>;
 }'
-;
+
 export interface FileUpload {
   file: File'
   progress?: number
   status: 'pending' | 'uploading' | 'success' | 'error
   url?: string
   error?: string
-}
+
 '
 export interface ComponentProps {
   className?: string
   children?: React.ReactNode'
   style?: React.CSSProperties
   'data-testid'?: string
-}
+
 '
 export interface AsyncState<T = unknown> {;
   data: "T | null;"
@@ -125,7 +125,7 @@ export interface AsyncState<T = unknown> {;
 ;"
 export interface RouteParams {"
   [key: "string]: string | string[] | undefined"
-}
+
 export interface MetaData {
   title?: string
   description?: string
@@ -163,13 +163,13 @@ export interface TimestampedRecord {"
 ;"
 export interface Identifiable {"
   id: "string | number"
-}
+
 export interface Sortable {
   sortOrder?: number
-}
+
 export interface Searchable {
   searchTerms?: string[]
-}
+
 export interface SoftDeletable {
   deletedAt?: string | null
   isDeleted?: boolean"
@@ -190,4 +190,4 @@ export interface ButtonProps extends ComponentProps {;
   disabled?: boolean;
   loading?: boolean'
   onClick?: EventHandler<React.MouseEvent<HTMLButtonElement>>;
-  type?: 'button' | 'submit' | 'reset;
+  type?: 'button' | 'submit' | 'reset;';;

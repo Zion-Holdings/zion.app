@@ -70,7 +70,6 @@ export function SpeakersSection(): '
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

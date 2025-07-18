@@ -13,7 +13,7 @@ export interface SearchSuggestion {
     | 'blog'
     | 'saved'
   iconUrl?: string
-}
+
 '
 export interface SearchHighlight {
   before: "string"
@@ -38,4 +38,4 @@ export interface FilterOptions {;"
   minPrice: number;,"
   maxPrice: "number;"
 };"
-"""""
+""""'';;

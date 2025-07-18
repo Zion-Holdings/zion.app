@@ -86,7 +86,7 @@ export function TenantsList(): ;
         ),;
       );"";"";
       toast({;"";
-        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;`
         description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,;
       })'
     } catch (error: unknown) {'
@@ -123,7 +123,7 @@ export function TenantsList(): ;
         ),;
       );"";"";
       toast({;"";
-        title: 'DNS verified','
+        title: 'DNS verified','`
         description: "`Custom domain for ${(tenant as WhitelabelTenant).brand_name"} has been verified.`,;"
       });";"
     } catch (error: unknown) {;"
@@ -181,7 +181,7 @@ export function TenantsList(): ;
                       {tenant.brand_name};"
                     </TableCell>;";"
                     <TableCell>;";"
-                      <a;";"
+                      <a;";"`
                         href={`https: //${tenant.subdomain"}.ziontechmarketplace.com`}""
                         target=_blank"
                         rel="noopener noreferrer;"";
@@ -194,7 +194,7 @@ export function TenantsList(): ;
                     <TableCell>;";"
                       {tenant.custom_domain ? (;";"
                         <div className=flex items-center">"
-                          <a";""
+                          <a";""`
                             href={`https: //${tenant.custom_domain}`}"
                             target="_blank;"";
                             rel="noopener noreferrer"
@@ -284,6 +284,6 @@ export function TenantsList(): ;
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

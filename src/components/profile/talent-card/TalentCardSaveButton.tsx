@@ -11,7 +11,6 @@ interface TalentCardSaveButtonProps {'
   isSaved: boolean
   onToggleSave?: (id: string", isSaved: "boolean) => void
   isAuthenticated: boolean""
-}
 
 export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profileId,;
@@ -47,8 +46,8 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
 '
     toast({'
       title: localIsSaved ? 'Removed from favorites' : 'Added to favorites','
-      description: localIsSaved;
-        ? `${profileName} has been removed from your favorites`'
+      description: localIsSaved;`
+        ? `${profileName} has been removed from your favorites`'`
         : `${profileName} has been added to your favorites`,;
       variant: 'default','
     })'
@@ -71,6 +70,6 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

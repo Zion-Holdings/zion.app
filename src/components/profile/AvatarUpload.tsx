@@ -4,7 +4,7 @@ import { CldUploadButton } from 'next-cloudinary'
 type Props = {'
   value?: string'
   onChange?: (url: "string) => void
-}
+
 "
 export function AvatarUpload(): unknown {): unknown {): unknown {): unknown {): unknown {{ value, onChange }: Props) {;"
   const [url, setUrl] = useState(value);
@@ -50,7 +50,7 @@ export function AvatarUpload(): unknown {): unknown {): unknown {): unknown {): 
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

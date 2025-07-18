@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react''
 import { useRouter } from 'next/router'
 import { supabase } from '@/utils/supabase/client'
-import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js // Added AuthChangeEvent and Session';
+import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js // Added AuthChangeEvent and Session;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 import  { toast }  from '@/hooks/use-toast'
 interface AuthGuardOptions {''
   redirectTo?: string'
   allowUnauthenticated?: boolean'
   requireEmailVerified?: boolean
-}
+
 '
 interface AuthGuardState {
   user: "User | null
@@ -28,5 +28,5 @@ export function useAuthGuard(): unknown {): unknown {): unknown {): unknown {): 
     user: null"
     loading: "true
     error: null"
-    isAuthenticated: "false
-    isEmailVerified: false,
+    isAuthenticated: 'false
+    isEmailVerified: false,';;

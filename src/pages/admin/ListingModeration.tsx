@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react;
 import { SEO } from '@/components/SEO'
 import { Card, CardContent } from '@/components/ui/card'
 import { supabase } from '@/integrations/supabase/client'
@@ -6,7 +6,7 @@ import type { ModerationLog } from '@/types/moderation'
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable'
 import AdminLayout from '@/components/admin/AdminLayout'
 import  { toast }  from '@/hooks/use-toast;
-export defaultault function ListingModeration(): ';
+export default function ListingModeration(): ;
   const [logs, setLogs] = useState<ModerationLog[]>([])'
   const [isLoading, setIsLoading] = useState(true);
   const fetchLogs = async () => {'
@@ -23,4 +23,4 @@ export defaultault function ListingModeration(): ';
       toast({;"
         title: 'Error',;
         description: 'Failed to load moderation logs',;
-        variant: 'destructive',;
+        variant: 'destructive',;';;

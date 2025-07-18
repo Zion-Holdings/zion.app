@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import  { JobPostingForm }  from '@/components/jobs;
-import {';
+import {;
   Card,'
   CardContent,;
   CardDescription,;
@@ -9,9 +9,9 @@ import {';
 } from '@/components/ui/card'
 import { SEO } from '@/components/SEO'
 import { useAuth } from '@/hooks/useAuth'
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile;
 '
-export defaultault function PostJob(): ;
+export default function PostJob(): ;
   const { isAuthenticated: _isAuthenticated, isLoading } = useAuth();"
   const isMobile = useIsMobile();";"
 ;"
@@ -34,7 +34,7 @@ export defaultault function PostJob(): ;
         className={`container mx-auto px-${isMobile ? '2' : '4'} py-${isMobile ? '6' : '12'} max-w-4xl`}'
       >;
         <Card className="border shadow-md">;"
-          <CardHeader>;"
+          <CardHeader>;"`
             <CardTitle className={`text-${isMobile ? '2xl' : '3xl'} font-bold`}>;
               Post a Job;
             </CardTitle>;
@@ -57,4 +57,4 @@ export defaultault function PostJob(): ;
 }"
 }";"
 }"
-}"
+}'';;`

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import  { Button }  from '@/components/ui/button;
-import {';
+import {;
   Card,'
   CardHeader,;
   CardTitle,;
@@ -15,8 +15,8 @@ import {;
   getInvestorMatches,'
   generatePitchEmail,;
 } from '@/lib/investor-matching'
-import type { InvestorMatch } from '@/lib/investor-matching';
-export defaultault function InvestorMatchPage(): '
+import type { InvestorMatch } from '@/lib/investor-matching;
+export default function InvestorMatchPage(): '
   const [form, setForm] = useState({;
     startup: '',;
     industry: '',;
@@ -31,5 +31,5 @@ export defaultault function InvestorMatchPage(): '
   const [emailText, setEmailText] = useState('');
   const [selected, setSelected] = useState<InvestorMatch | null>(null);
 '
-  const handleChange: (;",;"
-    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;
+  const handleChange: (;",;'
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,;';;

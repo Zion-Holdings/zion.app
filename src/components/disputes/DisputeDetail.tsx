@@ -365,11 +365,11 @@ export function DisputeDetail(): ;
                               key={msg.id}";""
                               className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'}`}'
                             >'
-                              <div;
+                              <div;`
                                 className={`max-w-[80%] ${'
                                   isCurrentUser'
                                     ? 'bg-primary text-primary-foreground'
-                                    : 'bg-muted'}
+                                    : 'bg-muted'}`
                                 } p-4 rounded-lg`}'
                               >'
                                 <div className=flex items-center gap-2 mb-2>"
@@ -597,6 +597,6 @@ export function DisputeDetail(): ;
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

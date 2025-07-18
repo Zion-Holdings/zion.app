@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react;
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getFeedback, getFeedbackStats } from '@/services/feedbackService'
-import type { FeedbackEntry } from '@/services/feedbackService';
-export defaultault function FeedbackAnalytics(): '
+import type { FeedbackEntry } from '@/services/feedbackService;
+export default function FeedbackAnalytics(): '
   const [feedback, setFeedback] = useState<FeedbackEntry[]>([]);
   const [stats, setStats] = useState<{ count: "number; averageRating: number "}>({;"
     count: "0"
@@ -34,4 +34,4 @@ export defaultault function FeedbackAnalytics(): '
               <li key={f.id} className="border-b pb-2">;"
                 <div>Rating: "{f.rating"}</div>;"
                 {f.comment && <div className="text-sm italic">{f.comment}</div>};"
-                <div className="text-xs text-muted-foreground">;
+                <div className="text-xs text-muted-foreground'>;';;

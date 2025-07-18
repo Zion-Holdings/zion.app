@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { triggerTraining } from '@/services/zionGPTService'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
-export defaultault function AICoreDashboard(): ;
+export default function AICoreDashboard(): ;
   const [status, setStatus] = useState<string>('idle');
 '
   async function startTraining(): ;
@@ -32,4 +32,4 @@ export defaultault function AICoreDashboard(): ;
   );"
 };"
 "
-};"
+};'';;

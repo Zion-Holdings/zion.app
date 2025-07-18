@@ -28,9 +28,9 @@ export function PreviewResume(): unknown {): unknown {): unknown {): unknown {):
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

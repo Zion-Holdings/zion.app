@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { NextSeo } from '@/components/NextSeo'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button;
 const modules = ['
   {;
     title: 'Module 1 — \uD83C\uDF0D Introduction to Zion','
@@ -56,4 +56,4 @@ async function fetchWithRetry(): unknown {): unknown {): unknown {): unknown {):
   try {;"
     const res = await fetch(url", options);"
     if (!res.ok) {;"
-      const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');';;

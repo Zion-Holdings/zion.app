@@ -83,4 +83,4 @@ export function ThemeProvider(): unknown {): unknown {): unknown {): unknown {):
 
   const value = {'
     theme,'
-    setTheme: "setCurrentTheme,
+    setTheme: 'setCurrentTheme,';;

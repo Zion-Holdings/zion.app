@@ -1,5 +1,5 @@
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client';
+import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client;
 '
 async function logEventToSupabase(): unknown {): unknown {): unknown {): unknown {): unknown {;
   eventName: string,;"
@@ -67,10 +67,10 @@ export const _fireEvent: async (;",;"
       eventParams,;
     );
   }'
-;
+
   await logEventToSupabase(eventName, eventParams);
 }'
-;
+
 // Replace 'any' with a more specific type for event data;
 export function trackEvent(): unknown {): unknown {): unknown {): unknown {): unknown {event: string, data: Record<string, unknown>) {;"
   if (;"
@@ -84,7 +84,7 @@ export function trackEvent(): unknown {): unknown {): unknown {): unknown {): un
     )('event', event, data);
   };
 }'
-;
+
 // Replace 'any' with a more specific type for pageview data;
 export function trackPageview(): unknown {): unknown {): unknown {): unknown {): unknown {url: string, data: Record<string, unknown> = {}) {;"
   if (;"
@@ -133,4 +133,4 @@ export function trackCustomEvent(): unknown {): unknown {): unknown {): unknown 
       (window as unknown as Record<string, unknown>).gtag as (;
         ...args: unknown[]'
       ) => void;
-    )('event', eventName, parameters);
+    )('event', eventName, parameters);';;

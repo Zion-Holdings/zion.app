@@ -3,8 +3,8 @@ import { GradientHeading } from '@/components/GradientHeading'
 import { ContactSection } from '@/components/ContactSection'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
-;
-export defaultault function About(): ;
+
+export default function About(): ;
   const team = ['
     {;
       name: 'Alex Johnson',;
@@ -55,7 +55,7 @@ export defaultault function About(): ;
       text: 'Expanded into decentralized talent marketplace empowering creators worldwide to launch cutting-edge AI solutions and collaborate.',;
     },;
   ]'
-;
+
   return (;
     <>'
       <SEO;
@@ -73,7 +73,7 @@ export defaultault function About(): ;
               artificial intelligence;
             </p>;
           </div>'
-;
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center content-section">;"
             <div>;"
               <h2 className="text-3xl font-bold text-white mb-6">;"
@@ -164,7 +164,7 @@ export defaultault function About(): ;
                   push the boundaries of what's possible.;
                 </p>;
               </div>'
-;
+
               <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">;"
                 <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">;"
                   <svg;"
@@ -280,4 +280,4 @@ export defaultault function About(): ;
             </Link>;"
             . For the latest updates, visit our{' '};
             <Link href="/blog" legacyBehavior>;"
-              <a className="text-zion-cyan underline">blog</a>;
+              <a className="text-zion-cyan underline'>blog</a>;';;

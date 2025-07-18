@@ -1,5 +1,10 @@
-const AdminRoutes = () => {;
-  // Placeholder component - admin routes are handled via Next.js pages structure;
-  return null;
-};
-export defaultault AdminRoutes;
+import React from 'react';
+
+export default function AdminRoutes() {
+  return (
+    <div>
+      <h1>AdminRoutes</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

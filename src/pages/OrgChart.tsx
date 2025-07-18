@@ -1,17 +1,17 @@
-import { useMemo, useState } from 'react';
-import { Header } from '@/components/Header';
-import { SEO } from '@/components/SEO';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useMemo, useState } from 'react;
+import { Header } from '@/components/Header;
+import { SEO } from '@/components/SEO;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Switch } from '@/components/ui/switch';
-import { orgMembers } from '@/data/orgMembers';
-import type { OrgMember, RoleType } from '@/types/org';
+} from '@/components/ui/select;
+import { Switch } from '@/components/ui/switch;
+import { orgMembers } from '@/data/orgMembers;
+import type { OrgMember, RoleType } from '@/types/org;
 
 const sections = [
   'Founders',
@@ -20,7 +20,7 @@ const sections = [
   'DAO Delegates',
 ] as const;
 
-export defaultault function OrgChart() {
+export default function OrgChart() {
   const [role, setRole] = useState<'ALL' | RoleType>('ALL');
   const [zone, setZone] = useState('ALL');
   const [team, setTeam] = useState('ALL');
@@ -141,7 +141,7 @@ export defaultault function OrgChart() {
         </div>
         {noResults && (
           <p className="text-destructive font-semibold">
-            No {team !== 'ALL' ? `${team} ` : ''}
+            No {team !== 'ALL' ? `${team} ` : ''}`
             {role !== 'ALL' ? `${role} ` : ''}in {zone}
           </p>
         )}
@@ -160,6 +160,5 @@ export defaultault function OrgChart() {
       </main>
     </>
   );
-}
 
-OrgChart.displayName = 'OrgChart';
+OrgChart.displayName = 'OrgChart';';;`

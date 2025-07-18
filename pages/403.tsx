@@ -1,26 +1,20 @@
-import { Center } from '@chakra-ui/react';
-import { NextSeo } from '@/components/NextSeo';
-import { useEffect } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { captureException } from '@/utils/sentry';
-import { useTranslation } from 'react-i18next';
-
-export default function Custom403() {
-  const { user } = useAuth();
-  const { t } = useTranslation();
-
-  useEffect(() => {
-    const err = new Error('403 - Forbidden');
-    captureException(err);
-  }, []);
-
+export default function Error403() {
   return (
     <>
-      <NextSeo title="403 - Forbidden" description="Access denied" />
-      <Center minH="100vh" flexDirection="column">
-        <h1>403 - {t('forbidden')}</h1>
-        <p>{t('access_denied')}</p>
-      </Center>
+      <head>
+        <title>403 - Zion App</title>
+      </head>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-gray-900">403</h1>
+          <p className="text-xl text-gray-600 mt-4">
+            Access Forbidden
+          </p>
+          <a href="/" className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg">
+            Go Home
+          </a>
+        </div>
+      </div>
     </>
   );
 }

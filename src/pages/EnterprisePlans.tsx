@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { EnterpriseHero } from '@/components/enterprise/EnterpriseHero'
 import { EnterpriseStickyNav } from '@/components/enterprise/EnterpriseStickyNav'
@@ -7,9 +7,9 @@ import { EnterpriseFeatures } from '@/components/enterprise/EnterpriseFeatures'
 import { EnterpriseCTA } from '@/components/enterprise/EnterpriseCTA'
 import { EnterpriseTrustBadges } from '@/components/enterprise/EnterpriseTrustBadges'
 import { EnterpriseTestimonials } from '@/components/enterprise/EnterpriseTestimonials'
-import { SEO } from '@/components/SEO';
+import { SEO } from '@/components/SEO;
 '
-export defaultault function EnterprisePlans(): ;
+export default function EnterprisePlans(): ;
   return (;
     <>'
       <SEO;
@@ -17,4 +17,4 @@ export defaultault function EnterprisePlans(): ;
         description="Scale your talent acquisition with Zion's enterprise solutions. Custom branded portals, dedicated talent pools, and powerful admin tools."
       />;"
       <Header />;"
-      <main className="min-h-screen bg-background">;
+      <main className="min-h-screen bg-background'>;';;

@@ -1,5 +1,5 @@
 import NodeCache from 'node-cache'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;
 // Cache categories with different TTL values'
 export enum CacheCategory {;
   SHORT = 'short', // 5 minutes;
@@ -20,19 +20,19 @@ export const cacheKeys = {;";,"
   categories: 'api:categories',;
   blog: {
     all: 'api:blog:all',;
-    bySlug: "(slug: string) => `api:blog:${slug"}`,;"
+    bySlug: "(slug: string) => `api:blog:${slug"}`,;"`
     search: "(query: string) => `api:blog:search:${query"}`,;"
   },;"
   jobs: {
-    all: 'api:jobs:all',;
+    all: 'api:jobs:all',;`
     filtered: "(params: string) => `api:jobs:filtered:${params"}`,;"
   },;"
-  search: {
-    results: "(query: string) => `api:search:${query"}`,;"
+  search: {`
+    results: "(query: string) => `api:search:${query"}`,;"`
     suggestions: "(query: string) => `api:search:suggest:${query"}`,;"
   },;"
   talent: {
-    all: 'api:talent:all',;
+    all: 'api:talent:all',;`
     filtered: "(params: string) => `api:talent:filtered:${params"}`,;
   },;
 };"
@@ -46,12 +46,12 @@ export function getCacheItem<T>(;"
   try {;";"
     const cache = cacheInstances[category];"
     const value = cache.get<T>(key);"
-    if (value) {;"
+    if (value) {;"`
       logDebug(`Cache HIT: "${key"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}(${category})`);"
       return value;"
-    };"
+    };"`
     logDebug(`Cache MISS: "${key"} (${category})`);"
     return undefined;"
-  } catch {;"
-    logErrorToProduction(`Cache GET error for ${key}`, error as Error, {;"
-      cacheKey: key,;
+  } catch {;"`
+    logErrorToProduction(`Cache GET error for ${key}`, error as Error, {;'
+      cacheKey: key,;';;`

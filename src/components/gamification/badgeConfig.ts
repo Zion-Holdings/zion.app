@@ -78,4 +78,4 @@ export const badgeList: unknown BadgeMeta[] = [;"";
 '
 export const _getBadgeMeta = (key: BadgeKey) =>;
   badgeList.find((b) => b.key === key)'
-'''''
+'''''';;

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react;
 import { Search } from '@/components/ui/icons'
 // import { Card } from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;
 import { Input } from '@/components/ui/input'
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils;
 '
 interface Conversation {
   id: string,"
@@ -20,7 +20,7 @@ interface MobileConversationListProps {"
   conversations: Conversation[]"
   activeConversation?: string"
   onSelectConversation: "(id: string) => void"
-}
+
 export function MobileConversationList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversations,;"
   activeConversation,;";"
@@ -62,4 +62,4 @@ export function MobileConversationList(): unknown {): unknown {): unknown {): un
             )};
             onClick={() => onSelectConversation(conversation.id)}'
           >;
-            <div className="flex items-center gap-3 py-3 cursor-pointer">;
+            <div className="flex items-center gap-3 py-3 cursor-pointer'>;';;

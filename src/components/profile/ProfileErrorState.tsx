@@ -24,9 +24,8 @@ export function ProfileErrorState(): unknown {): unknown {): unknown {): unknown
       </Button>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

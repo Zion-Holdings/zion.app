@@ -1,4 +1,4 @@
-import type { SearchSuggestion } from '@/types/search';
+import type { SearchSuggestion } from '@/types/search;
 '
 export interface DocsSearchItem extends SearchSuggestion {'
   path: "string
@@ -37,9 +37,9 @@ export const docsSearchSuggestions: unknown SearchSuggestion[] = DOCS_SEARCH_ITE
 )
 export function getDocsSearchPath(): unknown {): unknown {): unknown {): unknown {): unknown {text: string): string | undefined {;""
   return DOCS_SEARCH_ITEMS.find((item) => item.text === text)?.path;
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

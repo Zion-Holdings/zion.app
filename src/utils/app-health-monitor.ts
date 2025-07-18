@@ -1,4 +1,4 @@
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 // Application Health Monitor;
 // Comprehensive monitoring system for application health, performance, and reliability;
@@ -43,4 +43,4 @@ class AppHealthMonitor {;"
   private isClient: boolean;"
 ;"
   constructor() {;"
-    this.isClient = typeof window !== 'undefined;
+    this.isClient = typeof window !== 'undefined;';;

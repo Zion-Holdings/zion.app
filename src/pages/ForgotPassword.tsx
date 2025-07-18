@@ -1,13 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
+import React from 'react;
+import { useState } from 'react;
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 import axios from 'axios'
-import  { logErrorToProduction }  from '@/utils/productionLogger';
-const API_URL = process.env.NEXT_PUBLIC_API_URL ||';
+import  { logErrorToProduction }  from '@/utils/productionLogger;
+const API_URL = process.env.NEXT_PUBLIC_API_URL ||;
 '
-export defaultault function ForgotPassword(): ;
+export default function ForgotPassword(): ;
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,4 +38,4 @@ export defaultault function ForgotPassword(): ;
           'message' in err &&;
           typeof (err as { message?: string }).message === 'string;
         ) {;
-          msg = (err as { message: "string "}).message;
+          msg = (err as { message: "string '}).message;';;`

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import ApiPlayground from '@/components/developers/ApiPlayground';
+import ApiPlayground from '@/components/developers/ApiPlayground;
 '
 export function ApiReference(): ;
   const [activeEndpoint, setActiveEndpoint] = useState('get-jobs')'
-;
+
   // Sample endpoint data;
   const endpoints = ['
     {;
@@ -62,27 +62,27 @@ export function ApiReference(): ;
   ],;"
   "count": 42,;"
   "limit": 20,;"
-  "offset": 0;"
+  "offset": 0;"`
 }`,;"
         },;"
         '401': {;
-          description: 'Unauthorized','
+          description: 'Unauthorized','`
           example: `{;
   "error": "invalid_token"
-  "message": "The provided API key is invalid or expired"
+  "message": "The provided API key is invalid or expired"`
 }`,;"
         },;"
         '429': {;
-          description: 'Rate limit exceeded','
+          description: 'Rate limit exceeded','`
           example: `{;
   "error": "rate_limit_exceeded"
   "message": "Rate limit exceeded. Please try again in 60 seconds"
-  "retry_after": 60;"
+  "retry_after": 60;"`
 }`,;"
         },;"
-      },;"
+      },;"`
       requestExample: `curl -X GET \\;,;"
-  https://api.ziontechgroup.com/v1/api/jobs?status=open&limit=10 \\;"
+  https://api.ziontechgroup.com/v1/api/jobs?status=open&limit=10 \\;"`
   -H "Authorization: Bearer YOUR_API_KEY"`,;"
     },;"
     {;"
@@ -130,7 +130,7 @@ export function ApiReference(): ;
       ],;"
       responses: {;"
         '201': {;
-          description: 'Job created successfully','
+          description: 'Job created successfully','`
           example: `{;
   "id": "job-456"
   "title": "UX Designer"
@@ -142,11 +142,11 @@ export function ApiReference(): ;
     "currency": "USD"
   },;"
   "status": "open"
-  "created_at": "2023-05-15T10:12:00Z"
+  "created_at": "2023-05-15T10:12:00Z"`
 }`,;"
         },;"
         '400': {;
-          description: 'Bad request','
+          description: 'Bad request','`
           example: `{;
   "error": "validation_error"
   "message": "Invalid input"
@@ -155,10 +155,10 @@ export function ApiReference(): ;
       "field": "title"
       "error": "Title is required";
     };"
-  ];";"
+  ];";"`
 }`,;"
         },;"
-      },;"
+      },;"`
       requestExample: `curl -X POST \\;,;"
   https://api.ziontechgroup.com/v1/api/jobs \\;"
   -H "Authorization: Bearer YOUR_API_KEY" \\;"
@@ -173,7 +173,7 @@ export function ApiReference(): ;
       "currency": "USD"
     },;"
     "skills": ["Figma", "User Research", "Prototyping"],;"
-    "deadline": "2023-07-01T00:00:00Z"
+    "deadline": "2023-07-01T00:00:00Z"`
   }'`,;
     },'
     {;
@@ -227,7 +227,7 @@ export function ApiReference(): ;
       ],;"
       responses: {;"
         '200': {;
-          description: 'A list of talent profiles','
+          description: 'A list of talent profiles','`
           example: `{;
   "talent": [;"
     {;"
@@ -245,12 +245,12 @@ export function ApiReference(): ;
   ],;"
   "count": 38,;"
   "limit": 20,;"
-  "offset": 0;"
+  "offset": 0;"`
 }`,;"
         },;"
-      },;"
+      },;"`
       requestExample: "`curl -X GET \\;"
-  https: //api.ziontechgroup.com/v1/api/talent?skills=React,Node.js&limit=10 \\;"
+  https: //api.ziontechgroup.com/v1/api/talent?skills=React,Node.js&limit=10 \\;"`
   -H "Authorization: Bearer YOUR_API_KEY"`,;
     },;
   ];
@@ -268,14 +268,14 @@ export function ApiReference(): ;
               {endpoints.map((endpoint) => (;
                 <li key={endpoint.id}>;"
                   <button;";"
-                    onClick={() => setActiveEndpoint(endpoint.id)};"
+                    onClick={() => setActiveEndpoint(endpoint.id)};"`
                     className={`w-full text-left px-3 py-2 rounded-md text-sm flex items-center ${;"
                       activeEndpoint === endpoint.id;"
                         ? 'bg-zion-purple/20 text-zion-cyan'
-                        : 'text-zinc-400 hover: "text-white hover:bg-zinc-900;"}
+                        : 'text-zinc-400 hover: "text-white hover:bg-zinc-900;"}`
                     }`};
                   >;"
-                    <span;
+                    <span;`
                       className={`inline-block w-16 font-mono ${endpoint.method === 'GET' ? 'text-green-500' : endpoint.method === 'POST' ? 'text-blue-500' : 'text-yellow-500'}`};
                     >;
                       {endpoint.method}'
@@ -293,13 +293,13 @@ export function ApiReference(): ;
           {activeEndpointData ? (;"
             <div>;"
               <div className="flex items-center mb-6">;"
-                <span;"
+                <span;"`
                   className={`inline-block px-2 py-1 text-xs font-medium rounded mr-3 ${;"
                     activeEndpointData.method === 'GET'
                       ? 'bg-green-950 text-green-500'
                       : activeEndpointData.method === 'POST'
                         ? 'bg-blue-950 text-blue-500'
-                        : 'bg-yellow-950 text-yellow-500'}
+                        : 'bg-yellow-950 text-yellow-500'}`
                   }`};
                 >;
                   {activeEndpointData.method}'
@@ -344,4 +344,4 @@ export function ApiReference(): ;
                                   <th className="text-left py-2 px-4 text-zinc-400 font-medium">;"
                                     Required;"
                                   </th>;"
-                                  <th className="text-left py-2 px-4 text-zinc-400 font-medium">;
+                                  <th className="text-left py-2 px-4 text-zinc-400 font-medium'>;';;`

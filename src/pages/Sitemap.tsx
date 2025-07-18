@@ -1,8 +1,8 @@
 import { SEO } from '@/components/SEO'
 import { completeSitemap } from '@/config/sitemap'
-import Link from 'next/link';
+import Link from 'next/link;
 '
-export defaultault function Sitemap(): ;
+export default function Sitemap(): ;
   return (;
     <>'
       <SEO;
@@ -19,4 +19,4 @@ export defaultault function Sitemap(): ;
               <li key={route.path}>;"
                 <Link;"
                   href={route.path};"
-                  className="text-zion-cyan hover:underline";
+                  className="text-zion-cyan hover:underline';';;

@@ -3,10 +3,10 @@ import { Folder } from '@/components/ui/icons'
 import { CategoryCard } from '@/components/CategoryCard'
 import { GradientHeading } from '@/components/GradientHeading'
 import { SkeletonCard } from '@/components/ui'
-import ErrorBoundary from '@/components/GlobalErrorBoundary';
+import ErrorBoundary from '@/components/GlobalErrorBoundary;
 import { CATEGORIES } from '@/data/categories'
 import { NextSeo } from '@/components/NextSeo'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface CategoryType {
   id: "string"
@@ -36,7 +36,7 @@ export interface CategoriesProps {"
   categories?: CategoryType[]""
 }"
 ;"
-export defaultault function Categories(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
+export default function Categories(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   categories: initialCategories = [],;"
 }: CategoriesProps) {;"
   const { data, error } = useSWR<CategoryType[]>('/api/categories', fetcher, {;
@@ -66,7 +66,7 @@ export defaultault function Categories(): unknown {): unknown {): unknown {): un
               business or personal projects.;
             </p>;
           </div>'
-;
+
           <ErrorBoundary>;
             {isLoading && ('
               <div;
@@ -98,4 +98,4 @@ export defaultault function Categories(): unknown {): unknown {): unknown {): un
                       key={category.id};"
                       title={category.name};"
                       description={`Explore ${category.name.toLowerCase()} in our marketplace`};"
-                      icon={<Folder className="w-6 h-6" />};
+                      icon={<Folder className="w-6 h-6' />};';;`

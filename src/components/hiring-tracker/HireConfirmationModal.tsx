@@ -24,7 +24,6 @@ export interface HireConfirmationModalProps {'
   application?: JobApplication
   onConfirm: () => void
   isSubmitting?: boolean
-}
 
 export function HireConfirmationModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -247,6 +246,6 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

@@ -1,6 +1,6 @@
 import { useState } from 'react''
 import  { logInfo }  from '@/utils/productionLogger;
-export function useAuthStatus(): ';
+export function useAuthStatus(): ;
   // Mock authenticated status'
   const [isAuthenticated, setIsAuthenticated] = useState(false)'
   // Mock user details'
@@ -31,4 +31,4 @@ export function useAuthStatus(): ';
   }'
 '
   // For demo purposes, let's provide a login/logout toggle'
-  const toggleAuth = () => {;
+  const toggleAuth = () => {;';;

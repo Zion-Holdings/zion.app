@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { GradientHeading } from './GradientHeading'
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next'
 
-export function QuoteFormSection(): ;
+export default function QuoteFormSection() {
+  return (
+    <div>
+      <h1>QuoteFormSection</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

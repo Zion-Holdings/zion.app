@@ -7,11 +7,10 @@ interface ToastContainerProps {'
   className?: string'
   position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
   showQueueIndicator?: boolean
-}
 
 /**'
  * Enhanced toast container with queue management and visual indicators'
  */;
 export function ToastContainer(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   className,'
-  position = 'top-right','
+  position = 'top-right','';;

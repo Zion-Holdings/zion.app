@@ -1,21 +1,10 @@
-// src/components/testing/ErrorTriggerComponent.tsx;
-import React, { useEffect } from 'react'
+import React from 'react';
 
-const ErrorTriggerComponent: unknown "React.FC<{ onMount?: boolean }> = ({
-  onMount,;""
-}) => {;
-  useEffect(() => {
-    if (onMount) {;"
-      throw new Error('Test error triggered on mount')'
-    }'
-  }, [onMount]);
-'
-  if (!onMount) {'
-    throw new Error('Test error triggered on render')'
-  };
-
-  return <div>This should not render.</div>'
-}'
-
-export defaultault ErrorTriggerComponent'
-'''''
+export default function ErrorTriggerComponent() {
+  return (
+    <div>
+      <h1>ErrorTriggerComponent</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

@@ -5,7 +5,6 @@ import { INTERESTS } from '@/data/interests'
 '
 interface InterestSelectionProps {'
   onComplete: "(interests: string[]) => void
-}
 
 export function InterestSelection(): unknown {): unknown {): unknown {): unknown {): unknown {{ onComplete }: InterestSelectionProps) {;
   const [selected, setSelected] = useState<string[]>([]);
@@ -50,7 +49,7 @@ export function InterestSelection(): unknown {): unknown {): unknown {): unknown
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

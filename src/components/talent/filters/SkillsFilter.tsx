@@ -53,7 +53,7 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
                 onCheckedChange={() => toggleSkill(skill)};
                 className=border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
               />"
-              <label;
+              <label;`
                 htmlFor={`skill-${skill}`}
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer"
               >;
@@ -65,9 +65,9 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
       )}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

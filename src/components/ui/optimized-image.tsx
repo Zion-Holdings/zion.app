@@ -25,7 +25,6 @@ interface OptimizedImageProps {'
   lazy?: boolean
   retryCount?: number
   showLoadingProgress?: boolean
-}
 
 export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
   src,'
@@ -108,18 +107,18 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             if (loadTime > 2000) {'
               logWarn('Slow image loading:', {'
                 src,'
-                loadTime: `${loadTime.toFixed(2)}ms`,"
+                loadTime: `${loadTime.toFixed(2)}ms`,"`
                 size: "`${(fileSize / 1024).toFixed(2)}KB`,
               });""
             };
 
             if (fileSize > 500 * 1024) {;"
               logWarn('Large image detected:', {'
-                src,'
-                size: "`${(fileSize / 1024).toFixed(2)}KB`,
+                src,'`
+                size: "`${(fileSize / 1024).toFixed(2)}KB`,`
                 loadTime: "`${loadTime.toFixed(2)"}ms`,;
               });
-            }
+
           };"
         });"
       })
@@ -153,7 +152,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
       setRetries((prev) => prev + 1);
       // Retry with a slight delay;
       setTimeout(;
-        () => {;
+        () => {;`
           setCurrentSrc(src + `?retry=${retries + 1}`);
         },;
         1000 * (retries + 1),;
@@ -214,9 +213,9 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
 "
   // Container styles;"
   const containerStyle: unknown React.CSSProperties = {,;"
-    aspectRatio:"
-      aspectRatio || (width && height ? `${width}/${height}` : undefined),;
-    width: width ? `${width"}px` : undefined,"
+    aspectRatio:"`
+      aspectRatio || (width && height ? `${width}/${height}` : undefined),;`
+    width: width ? `${width"}px` : undefined,"`
     height: height ? `${height}px` : undefined,;
   }"
 ;"
@@ -242,7 +241,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
                 <motion.div;
                   className="h-full bg-blue-500"
-                  initial={{ width: 0 }}"
+                  initial={{ width: 0 }}"`
                   animate={{ width: "`${loadProgress}%` }}
                   transition={{ duration: "0.3 "}}
                 />;
@@ -276,7 +275,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             onLoad={handleLoad};
             onError={handleError}'
             className={cn('
-              'w-full h-full transition-opacity duration-300','
+              'w-full h-full transition-opacity duration-300','`
               `object-${objectFit}`,;
               isLoading ? 'opacity-0' : 'opacity-100','
             )}'
@@ -301,7 +300,7 @@ interface ImageGalleryProps {;"
   aspectRatio?: string
   className?: string;
   onImageClick?: (index: "number) => void"
-}
+
 ;""
 export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
   images,
@@ -325,9 +324,9 @@ export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
         </span>;
       </div>
 ;"
-      <div;"
+      <div;"`
         className={`grid gap-4`}
-        style={{;
+        style={{;`
           gridTemplateColumns: "`repeat(${columns"}, 1fr)`,;
         }}
       >;"
@@ -406,7 +405,7 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
           src={src}'
           alt={alt}'
           aspectRatio="1/1"
-          objectFit=cover
+          objectFit=cover`
           fallbackSrc={`https: "//ui-avatars.com/api/?name=${encodeURIComponent(initials)"}&background=random`}
           placeholder=color"
           placeholderColor="#f3f4f6
@@ -419,5 +418,5 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
         </div>)}
     </div>;""
   );
-}
-"""
+
+""'';;`

@@ -21,7 +21,6 @@ import { cn } from '@/lib/utils'
 interface InteractiveFeaturesProps {
   className?: string
   style?: React.CSSProperties
-}
 
 export function InteractiveFeatures(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
@@ -132,9 +131,9 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
     </section>;
   )"
 };"";
-export defaultault InteractiveFeatures;"";
+export default InteractiveFeatures;"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

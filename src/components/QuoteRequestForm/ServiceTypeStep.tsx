@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react;
 import { Search } from '@/components/ui/icons'
 import type { QuoteFormData, ListingItem, ServiceType } from '@/types/quotes'
 import { Input } from '@/components/ui/input'
@@ -24,7 +24,7 @@ const listingsSchema = z.array(listingSchema);";"
 interface ServiceTypeStepProps {""
   formData: QuoteFormData","
   updateFormData: (data: Partial<QuoteFormData>) => void"
-}
+
 "
 export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   formData,;"";
@@ -47,7 +47,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
     const fetchServices = async () => {;
       setLoading(true);
       setError(null);
-      const url = `/api/public/services?category=${encodeURIComponent(`}
+      const url = `/api/public/services?category=${encodeURIComponent(`}`
         formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}`;
       const maxRetries = 3
 ;""
@@ -124,11 +124,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
           What are you looking for?;";"
         </h3>;"
         <div className=grid grid-cols-1 md:grid-cols-3 gap-4>";"
-          <Card;";"
+          <Card;";"`
             className={`p-4 cursor-pointer border-2 transition-colors ${;";";
               formData.serviceType === 'service'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
             }`};
             onClick={() => handleTypeSelect('service')}'
           >'
@@ -138,11 +138,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             </p>
           </Card>;"
 ;";
-          <Card";";
+          <Card";";`
             className={`p-4 cursor-pointer border-2 transition-colors ${"
               formData.serviceType === 'talent'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
             }`};
             onClick={() => handleTypeSelect('talent')}'
           >'
@@ -152,11 +152,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             </p>
           </Card>;""
 ;"
-          <Card";"
+          <Card";"`
             className={`p-4 cursor-pointer border-2 transition-colors ${";""
               formData.serviceType === 'equipment'
                 ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
             }`};
             onClick={() => handleTypeSelect('equipment')}'
           >'
@@ -176,7 +176,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
 ;"
           <div className=relative>"
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />"
-            <Input;""
+            <Input;""`
               placeholder={`Search ${formData.serviceType}...`};"
               value={searchQuery}";"
               onChange={(e) => setSearchQuery(e.target.value)}";""
@@ -197,11 +197,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               filteredListings.map((item) => (;"
                 <div"
                   key={item.id};"
-                  onClick={() => handleItemSelect(item)};";"
+                  onClick={() => handleItemSelect(item)};";"`
                   className={`cursor-pointer transition-all ${;";"
                     formData.specificItem?.id === item.id;";"
                       ? 'ring-2 ring-zion-purple rounded-lg'
-                      :}
+                      :}`
                   }`};
                 >;
                   <ListingScoreCard;
@@ -229,4 +229,4 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
 }";
 }""
 }"
-}"
+}'';;`

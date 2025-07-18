@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { saveAs } from 'file-saver'
 import { AppLayout } from '@/layout/AppLayout'
 import { NextSeo } from '@/components/NextSeo'
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 // Card components are usually exported from 'card.tsx' like this:;
 // import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 // However, the provided JSX doesn't use Card, CardHeader, etc. explicitly as wrappers,;
@@ -22,14 +22,14 @@ const LaunchToolkitPage = () => {;
   const [generatedPressRelease, setGeneratedPressRelease] = React.useState('')'
   const [isLoadingTemplate, setIsLoadingTemplate] = React.useState(false);
   const [loadError, setLoadError] = React.useState('')'
-;
+
   const [explainerCopy, setExplainerCopy] = React.useState('')'
   const [isLoadingCopy, setIsLoadingCopy] = React.useState(false);
   const [loadCopyError, setLoadCopyError] = React.useState('');
 '
   const [isZipping, setIsZipping] = React.useState(false);
   const [zipError, setZipError] = React.useState('')'
-;
+
   type BundleType = 'general' | 'web3' | 'institutional'
   const [activeBundle, setActiveBundle] = React.useState<BundleType>('general');
   const toolkitAssets = ['
@@ -66,7 +66,7 @@ const LaunchToolkitPage = () => {;
       const zip = new JSZip();
       for (const assetPath of toolkitAssets) {'
         const response = await fetch(`/${assetPath"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`); // Fetch from public directory;"
-        if (!response.ok) {;
+        if (!response.ok) {;`
           logErrorToProduction(`Failed to fetch asset: "${assetPath"}`);"
           // Optionally, decide if one failed asset should stop the whole process;"
           // or if it should be skipped. For now, we'll log and continue.;
@@ -80,7 +80,7 @@ const LaunchToolkitPage = () => {;
         );
         zip.file(pathInZip, blob);
       }'
-;
+
       const zipBlob = await zip.generateAsync({ type: 'blob' });
       saveAs(zipBlob, 'Zion_Launch_Toolkit.zip')'
     } catch {;
@@ -88,4 +88,4 @@ const LaunchToolkitPage = () => {;
       setZipError(;"
         error instanceof Error;"
           ? error.message;"
-          : 'An unknown error occurred while creating ZIP.',;
+          : 'An unknown error occurred while creating ZIP.',;';;`

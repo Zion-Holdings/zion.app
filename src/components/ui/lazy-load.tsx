@@ -9,7 +9,7 @@ interface LazyLoadProps {
   children: ReactNode
   loadingComponent?: ReactNode'
   className?: string'
-}
+
 '
 export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   height = '200px','
@@ -81,6 +81,6 @@ export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;

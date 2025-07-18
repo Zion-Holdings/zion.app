@@ -1,6 +1,6 @@
 import React from 'react'
 
-export defaultault function Empty(): unknown {): unknown {): unknown {): unknown {): unknown {{ message }: { message: "string }) {;""
+export default function Empty(): unknown {): unknown {): unknown {): unknown {): unknown {{ message }: { message: "string }) {;""
   return (;""
     <div;"";
       className=text-center py-16 text-muted-foreground"""
@@ -12,6 +12,6 @@ export defaultault function Empty(): unknown {): unknown {): unknown {): unknown
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

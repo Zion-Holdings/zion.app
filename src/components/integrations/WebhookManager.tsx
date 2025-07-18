@@ -266,7 +266,7 @@ export function WebhookManager(): ;
                       </div>";";
                     </div>"
                     <div className="text-xs text-muted-foreground>;"";
-                      {webhook.last_triggered_at;"";
+                      {webhook.last_triggered_at;"";`
                         ? `Last triggered: "${new Date(webhook.last_triggered_at).toLocaleString()"}`;"
                         : 'Never triggered'}'
                     </div>;
@@ -340,6 +340,6 @@ export function WebhookManager(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

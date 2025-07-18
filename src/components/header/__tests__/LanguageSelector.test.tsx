@@ -45,10 +45,10 @@ describe('LanguageSelector', () => {'
     supportedLanguages.forEach((lang) => {;
       expect(screen.getByText(`language.${lang.code}`)).toBeInTheDocument()'
     })'
-
+`
     fireEvent.click(screen.getByText(`language.es`))'
 '
     await waitFor(() => expect(mockChangeLanguage).toHaveBeenCalledWith('es'))'
   });
 })'
-'''''
+'''''';;`

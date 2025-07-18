@@ -1,5 +1,5 @@
 import React  from 'react;
-import {';
+import {;
   ChevronRight,'
   Plus,;
   UserCheck,;
@@ -8,8 +8,8 @@ import {';
 } from '@/components/ui/icons'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
+import { Badge } from '@/components/ui/badge;
+import Link from 'next/link;
 export function ClientDashboard(): '
   return (;
     <div className="space-y-6 px-4 pb-24">;"
@@ -54,7 +54,7 @@ export function ClientDashboard(): '
                   ></div>;
                 </div>;
               </div>'
-;
+
               <div className="flex justify-between items-center">;"
                 <div className="flex -space-x-2">;"
                   <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">;"
@@ -64,4 +64,4 @@ export function ClientDashboard(): '
                     <UserCheck className="h-4 w-4" />;"
                   </div>;"
                 </div>;"
-                <Button size="sm" variant="outline">;
+                <Button size="sm" variant="outline'>;';;

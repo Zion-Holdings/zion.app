@@ -1,1 +1,4 @@
-export async function encryptData(): unknown {): unknown {): unknown {): unknown {): unknown {;
+// Utility functions for vaultEncryption
+export const vaultEncryption = {
+  // TODO: Implement utility functions
+};

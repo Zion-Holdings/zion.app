@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link';
-export defaultault function TalentMarketplace(): '
+import Link from 'next/link;
+export default function TalentMarketplace(): '
   const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
@@ -14,7 +14,7 @@ export defaultault function TalentMarketplace(): '
       'Hire vetted AI and tech professionals from around the world on Zion.',;
     url: 'https://app.ziontechgroup.com/features/talent-marketplace',;
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -87,4 +87,4 @@ export defaultault function TalentMarketplace(): '
 }"
 }";"
 }"
-}"
+}'';;

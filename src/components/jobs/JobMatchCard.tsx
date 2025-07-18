@@ -21,7 +21,6 @@ interface JobMatchProps {'
   onApply?: (matchId: string) => void""
   onViewDetails?: (matchId: string) => void"
   onInvite?: (matchId: "string) => void
-}
 
 export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   matchId,;
@@ -139,6 +138,6 @@ export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): 
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

@@ -4,7 +4,6 @@ interface EmailVerificationBannerProps {'
   onResendEmail: "() => void,
   userEmail: string | null | undefined
   isResending?: boolean // Optional prop for loading state
-}
 
 const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = ({;
   onResendEmail,;
@@ -55,5 +54,5 @@ const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = 
   )'
 }'
 
-export defaultault EmailVerificationBanner'
-'''''
+export default EmailVerificationBanner'
+'''''';;

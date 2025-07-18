@@ -1,123 +1,21 @@
-import { useState } from 'react';;';'';
-import { useDispatch } from 'react-redux';;';'';
-import axios from 'axios';;';'';
-import { useAuth } from '@/hooks/useAuth';;';'';
-import { addItem } from '@/store/cartSlice';;';'';
-import {logErrorToProduction} from '@/utils/productionLogger';
-;
-export default function PaymentFlowTest(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-;
-  const dispatch: unknown unknown unknown unknown unknown unknown = useDispatch();
-  const { isAuthenticated, user } = useAuth();
-  const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState<{;
-    checkout?: string;''
-    intent?: string;';'
-  }>({});';'
-;';;''
-  const testProducts: unknown unknown unknown unknown unknown unknown = [;';;';''
-    { id: '1', title: 'Test Product 1', price: "10.50 "},;";";";";""
-    { id: '2', title: 'Test Product 2', price: "20.00 "},;";";";";""
-    { id: '3', title: 'Test Product 3', price: "5.75 "},;";";""
-  ];";";";""
-;";";";";""
-  const addToCart: unknown unknown unknown unknown unknown unknown = (_p: "{ id: string; title: string; price: number "}) => {;";";";";""
-    dispatch(addItem({ id: "p.id", title: "p.title", price: "p.price "}));"
-    alert(`Added ${p.title} to cart`);
-  };""
-;";""
-  const runCheckoutSessionTest: unknown unknown unknown unknown unknown unknown = async () => {;";";""
-    setLoading(true);";";";""
-    try {;";";";";""
-      const { _data } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await axios.post('/api/checkout-session', {;';;';''
-        cartItems: [{ title: 'Test Product', price: "1", quantity: "1 "}],;";";";";""
-        customer_email: 'test@example.com',;';'
-      });';'
-      setResults((r) => ({;';;''
-        ...r,;';;';''
-        checkout: data.sessionId ? 'success' : 'error',;';;''
-      }));';;';''
-      alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');';;''
-    } catch {;';;';''
-      logErrorToProduction('Checkout erroror:', { erroror: "error "});";";";";""
-      setResults((r) => ({ ...r, checkout: 'error' }));';;';''
-      alert('Checkout session error');'
-    } finally {;
-      setLoading(false);
-    };
-  };''
-;';'
-  const runPaymentIntentTest: unknown unknown unknown unknown unknown unknown = async () => {;';'
-    setLoading(true);';;''
-    try {;';;';''
-      const { _data } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await axios.post('/api/create-payment-intent', {;';;';''
-        amount: "50",;";""
-      });";";""
-      setResults((r) => ({;";";";""
-        ...r,;";";";";""
-        intent: data.clientSecret ? 'success' : 'error',;';'
-      }));';;''
-      alert(;';;';''
-        data.clientSecret ? 'Payment intent created' : 'Payment intent failed',;';'
-      );';;''
-    } catch {;';;';''
-      logErrorToProduction("Error:", { erroror: "error "});";";";";""
-      setResults((r) => ({ ...r, intent: 'error' }));';;';''
-      alert('Payment intent error');'
-    } finally {;
-      setLoading(false);''
-    };';'
-  };';'
-;';;''
-  const envInfo: unknown unknown unknown unknown "unknown unknown = {;",;";";""
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:;";";";"'
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,;';;';''
-    NEXT_PUBLIC_STRIPE_TEST_MODE: "process.env.NEXT_PUBLIC_STRIPE_TEST_MODE",;";";";";""
-    STRIPE_TEST_MODE: "process.env.STRIPE_TEST_MODE",;";""
-  };";";""
-;";";";""
-  return (;";";";";""
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>;';'
-      <h1>Payment Flow Smoke Test</h1>;';;''
-      <p>;';;';''
-        Auth status:{' '};';;';''
-        {isAuthenticated ? `Logged in as ${user?.email}` : 'Not logged in'};'
-      </p>;''
-;';'
-      <h2>Add Test Product</h2>;';'
-      <ul>;';;''
-        {testProducts.map((p) => (;';;';''
-          <li key={p.id} style={{ marginBottom: '8px' }}>;';;';''
-            {p.title} - ${(p.price ?? 0).toFixed(2)}{' '};';'
-            <button;';;''
-              onClick={() =>;';;';''
-                addToCart({ id: "p.id", title: "p.title", price: "p.price ?? 0 "});"
-              };
-            >;
-              Add to Cart;
-            </button>;
-          </li>;
-        ))};
-      </ul>;
-;""
-      <h2>API Tests</h2>;";""
-      <button onClick={runCheckoutSessionTest} disabled={loading}>;";";""
-        Test /api/checkout-session;";";";""
-      </button>;";";";";""
-      <span style={{ marginLeft: '8px' }}>{results.checkout}</span>;''
-      <br />;';'
-      <button onClick={runPaymentIntentTest} disabled={loading}>;';'
-        Test /api/create-payment-intent;';;''
-      </button>;';;';''
-      <span style={{ marginLeft: '8px' }}>{results.intent}</span>;'
-;
-      <h2>Environment Info</h2>;
-      <pre>{JSON.stringify(envInfo, null, 2)}</pre>;''
-    </div>;';'
-  );';'
-};';;''
-';;''
-}';'
-}';'
-}''
-}''
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Index - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Index</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Index content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Index;

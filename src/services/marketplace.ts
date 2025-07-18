@@ -1,9 +1,9 @@
 import axios from 'axios'
 import type { ApiResponse, SearchFilters } from '@/types/common'
-import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios;
 '
 // TypeScript interfaces;
-import { logError, logWarn } from '@/utils/logger';
+import { logError, logWarn } from '@/utils/logger;
 '
 export interface MarketplaceItem {
   id: "string"
@@ -105,4 +105,4 @@ const createMarketplaceClient = () => {;"
         process.env.DEBUG_MARKETPLACE;
       ) {'
         logWarn(;
-          `Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`,;
+          `Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}',;';;`

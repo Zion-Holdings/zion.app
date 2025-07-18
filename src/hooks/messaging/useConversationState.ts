@@ -1,2 +1,5 @@
-import { useState } from 'react''
-import  type { Conversation, Message }  from '@/types/messaging'
+// Hook for useConversationState
+export const useUseConversationState = () => {
+  // TODO: Implement hook logic
+  return {};
+};

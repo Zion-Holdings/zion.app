@@ -14,7 +14,7 @@ const WalletProvider = dynamic('
 
 interface WalletContextWrapperProps {"
   _children: "ReactNode
-}
+
 export const _WalletContextWrapper: unknown React.FC<WalletContextWrapperProps> = ({
   children,;
 }) => {"
@@ -23,4 +23,4 @@ export const _WalletContextWrapper: unknown React.FC<WalletContextWrapperProps> 
 "
 // Re-export the hook for convenience;"
 export { useWallet } from './WalletContext'
-'''''
+'''''';;

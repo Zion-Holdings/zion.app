@@ -3,7 +3,7 @@ import type { ReactNode } from 'react''
 import { useRouter } from 'next/router'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { toast } from '@/hooks/use-toast'
-import axios from 'axios';
+import axios from 'axios;
 export type WizardStep = 'Services' | 'Details' | 'Success'
 '
 export interface RequestQuoteWizardContextType {
@@ -21,4 +21,4 @@ const defaultContext: unknown RequestQuoteWizardContextType = {
   _goToStep: () => {},"
   _selectService: "() => {},
   _startQuote: "() => {"},
-  _submitQuote: async () => {"},"
+  _submitQuote: async () => {"},'';;

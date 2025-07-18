@@ -11,14 +11,13 @@ interface SearchFilters {'
   maxPrice: number,
   minRating: number"
   sort: "string
-}
+
 "
 interface ActiveFiltersBarProps {"
   filters: SearchFilters
   onFiltersChange: (filters: SearchFilters) => void,
   onClearAll: () => void
   className?: string
-}
 
 export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
   filters,;
@@ -52,22 +51,22 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
       label: 'Category','
       value: filters.category,
     });
-  }
+
 ;""
   // Add price filter;
   if (filters.minPrice > 0 || filters.maxPrice < 10000) {
     activeFilters.push({;"
       key: 'price','
-      label: 'Price','
+      label: 'Price','`
       value: "`$${filters.minPrice} - $${filters.maxPrice}`,;
     });
-  }
+
 ;""
   // Add rating filter;
   if (filters.minRating > 0) {
     activeFilters.push({;"
       key: 'rating','
-      label: 'Rating','
+      label: 'Rating','`
       value: "`${filters.minRating}+ stars`,
     });""
   };
@@ -106,7 +105,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     return null'
   }'
 
-  return ('
+  return ('`
     <div className={`flex items-center gap-2 flex-wrap ${className}`}>;
       <span className=text-sm font-medium text-muted-foreground">"
         Active filters:;
@@ -125,7 +124,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
             variant=ghost"
             size="sm"
             className=h-4 w-4 p-0 hover:bg-transparent"
-            onClick={() => removeFilter(filter.key)}"
+            onClick={() => removeFilter(filter.key)}"`
             aria-label={`Remove ${filter.label} filter`};
           >
             <X className="h-3 w-3" />
@@ -144,5 +143,5 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     </div>;
   )"
 };"
-export defaultault ActiveFiltersBar"
-"""
+export default ActiveFiltersBar"
+""'';;`

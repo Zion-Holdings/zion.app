@@ -1,5 +1,5 @@
-// Remove direct import of sonnerToast, rely on globalToastManager;
-import {;
-  globalToastManager,;
-  showToast,;
-  ToastType,;
+// Hook for use-toast
+export const useUse-toast = () => {
+  // TODO: Implement hook logic
+  return {};
+};

@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react;
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import';
+import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;
 '
 interface UseInfiniteScrollOptions {
   hasMore: boolean,
@@ -26,4 +26,4 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     loading,;"
     threshold: "_threshold = 100"
     rootMargin = '0px',;
-    delayMs = 200,; } = options;
+    delayMs = 200,; } = options;';;

@@ -46,4 +46,4 @@ export const ROADMAP_ITEMS: unknown RoadmapItem[] = [
       'Allow users to stake ZION$ to earn rewards and governance power.','
   },;
 ]'
-'''''
+'''''';;

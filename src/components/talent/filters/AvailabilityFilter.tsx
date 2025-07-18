@@ -39,7 +39,7 @@ export function AvailabilityFilter(): unknown {): unknown {): unknown {): unknow
                 onCheckedChange={() => toggleAvailability(option.id)};
                 className=border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
               />"
-              <label;
+              <label;`
                 htmlFor={`availability-${option.id}`}
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer"
               >;
@@ -51,9 +51,9 @@ export function AvailabilityFilter(): unknown {): unknown {): unknown {): unknow
       )}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

@@ -8,7 +8,7 @@ import { toast } from 'sonner'
 '
 interface ScreenshotManagerProps {'
   _platform: "AppPlatform
-}
+
 "
 type Screenshot = {;"
   id: string
@@ -26,7 +26,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
   const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     if (e.target.files) {;
       addScreenshots(Array.from(e.target.files));
-    }
+
   };"
 ;"
   const addScreenshots = (_files: File[]) => {
@@ -59,7 +59,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
 
     setScreenshots((prev) => [...prev, ...newScreenshots]);
 
-    if (filesToAdd.length < imageFiles.length) {;
+    if (filesToAdd.length < imageFiles.length) {;`
       toast.warning(`Only added ${filesToAdd.length} screenshots. Maximum is ${maxScreenshots}.`,;
       );
     };
@@ -103,11 +103,11 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
         <CardTitle className="text-lg>App Screenshots</CardTitle>"
       </CardHeader>"
       <CardContent>;"
-        <div;
+        <div;`
           className={`border-2 border-dashed rounded-lg p-4 mb-4 text-center transition-colors ${"
             isDragging;"
               ? 'border-zion-cyan bg-zion-cyan/10'
-              : 'border-zion-purple/30'}
+              : 'border-zion-purple/30'}`
           }`}'
           onDragOver={handleDragOver}'
           onDragLeave={handleDragLeave};
@@ -119,7 +119,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
             ref={fileInputRef}"
             type=file
             multiple"
-            accept="image/*
+            accept="image/* 
             onChange={handleFileSelect}"
             className="hidden"
           />
@@ -161,5 +161,5 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
       </CardContent>
     </Card>;""
   );
-}
-"""
+
+""'';;` */

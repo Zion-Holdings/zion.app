@@ -4,7 +4,7 @@ import {;
   logErrorToProduction,'
   logDebug,;
 } from '@/utils/productionLogger'
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@prisma/client;
 // Global Prisma instance for connection reuse'
 let prisma: PrismaClient | null = null;
 // Minimal type for database options'
@@ -37,4 +37,4 @@ export function getDatabaseClient(): unknown {): unknown {): unknown {): unknown
     prisma = new PrismaClient(DB_OPTIONS);
 '
     // Handle graceful shutdown;
-    process.on('beforeExit', async () => {;
+    process.on('beforeExit', async () => {;';;

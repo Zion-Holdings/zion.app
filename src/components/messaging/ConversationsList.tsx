@@ -11,7 +11,6 @@ interface ConversationsListProps {'
   activeConversation: Conversation | null,""
   setActiveConversation: (conversation: Conversation) => void","
   markAsRead: (conversationId: string) => Promise<void>"
-}
 
 export function ConversationsList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversations,;
@@ -74,4 +73,4 @@ export function ConversationsList(): unknown {): unknown {): unknown {): unknown
 }"";
 }"
 }"
-}"
+}'';;

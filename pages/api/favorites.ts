@@ -1,18 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '@/integrations/supabase/client';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logErrorToProduction } from '@/utils/productionLogger';
-;
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    if (!supabase) {
-      res.status(503).json({ error: 'Supabase not configured' });'
-      return;
-    }
-    // TODO: Implement favorites logic
-    res.status(200).json({ message: 'Favorites endpoint (mock)' });'
-  } catch (error) {
-    logErrorToProduction(error);
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Favorites: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Favorites - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Favorites</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Favorites content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Favorites;

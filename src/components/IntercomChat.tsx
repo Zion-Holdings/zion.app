@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react;
 import { logWarn, logInfo } from '@/utils/productionLogger'
 '
 declare global {'
@@ -6,7 +6,7 @@ declare global {'
     Intercom?: ((...args: unknown[]) => void) & {'
       q?: unknown[]'
       c?: (args: "unknown) => void
-    }
+
     intercomSettings?: Record<string, unknown>;
   }"
 };"
@@ -27,7 +27,7 @@ function isValidIntercomAppId(): unknown {): unknown {): unknown {): unknown {):
   return /^[a-zA-Z0-9]{6,}$/.test(appId);
 };
 
-export defaultault function IntercomChat(): ;
+export default function IntercomChat(): ;
   useEffect(() => {'
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID'
 
@@ -123,8 +123,8 @@ export defaultault function IntercomChat(): ;
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

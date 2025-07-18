@@ -2,7 +2,7 @@ import type { JobApplication } from '@/types/jobs'
 '
 interface ScoreBadgeProps {'
   application: "JobApplication
-}
+
 "
 export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{ application }: ScoreBadgeProps) {;"
   const score = application.match_score || 0;";"
@@ -15,13 +15,13 @@ export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): un
   else if (score > 0) className = 'text-orange-700 bg-orange-100'
 
   return ('
-    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;
+    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;`
       {score ? `${score}%` : 'Not scored'}'
     </span>'
   );
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

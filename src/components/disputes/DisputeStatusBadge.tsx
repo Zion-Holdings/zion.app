@@ -9,7 +9,7 @@ import {'
 '
 interface DisputeStatusBadgeProps {'
   status: 'open' | 'under_review' | 'resolved' | 'closed'
-}
+
 '
 export function DisputeStatusBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{ status }: DisputeStatusBadgeProps) {'
   let variant: 'default' | 'destructive' | 'secondary' | 'outline' ='
@@ -51,4 +51,4 @@ export function DisputeStatusBadge(): unknown {): unknown {): unknown {): unknow
 }";
 }""
 }"
-}"
+}'';;

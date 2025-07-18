@@ -25,7 +25,6 @@ export function SidebarSection(): unknown {): unknown {): unknown {): unknown {)
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

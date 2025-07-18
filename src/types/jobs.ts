@@ -76,7 +76,7 @@ export interface ResumeAttachment {"
   resume_id?: string
   summary?: string'
   skills?: string[]
-}
+
 '
 export type ApplicationStatus =;
   | 'new'
@@ -105,7 +105,7 @@ export interface JobApplication {
     profile_picture_url?: string"
     bio: "string"
     skills: "string[]"
-  }
+
   resume?: ResumeAttachment;
   // New fields for resume scoring;"
   match_score?: number;";"
@@ -134,4 +134,4 @@ export interface JobApplication {
   scored_at?: string;";"
   notes?: string; // New field for client notes;"
 };"
-"""""
+""""'';;

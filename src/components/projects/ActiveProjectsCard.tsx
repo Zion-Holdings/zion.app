@@ -70,7 +70,7 @@ export function ActiveProjectsCard(): ;
           </Button>;
         </CardContent>;
       </Card>);
-  }
+
 ;""
   return (;
     <Card>
@@ -93,7 +93,7 @@ export function ActiveProjectsCard(): ;
                 className={'
                   project.status === 'in_progress'
                     ? 'bg-blue-100 text-blue-800 hover:bg-blue-100'
-                    : 
+
                 }'
               >'
                 {project.status === 'offer_accepted'
@@ -121,9 +121,9 @@ export function ActiveProjectsCard(): ;
         </CardFooter>)}
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

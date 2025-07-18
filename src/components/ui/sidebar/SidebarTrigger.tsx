@@ -26,7 +26,7 @@ export function SidebarTrigger(): unknown {): unknown {): unknown {): unknown {)
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

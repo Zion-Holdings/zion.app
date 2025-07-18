@@ -8,7 +8,6 @@ interface InterviewResponseFormProps {'
   onConfirm: () => Promise<void>,""
   onClose: () => void","
   isLoading: boolean"
-}
 
 export function InterviewResponseForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   interview,;
@@ -79,6 +78,6 @@ export function InterviewResponseForm(): unknown {): unknown {): unknown {): unk
 };
 
 }'
-}
+
 }'
-}'
+}'';;

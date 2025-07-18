@@ -9,7 +9,7 @@ import type { AppPlatform } from './MetadataManager'
 '
 interface ChangelogManagerProps {'
   _platform: "AppPlatform
-}
+
 "
 type ChangelogEntry = {;"
   id: string
@@ -141,5 +141,5 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({
       </CardContent>
     </Card>;""
   );
-}
-"""
+
+""'';;

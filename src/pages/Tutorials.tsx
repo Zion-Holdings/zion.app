@@ -3,9 +3,9 @@ import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link';
+import Link from 'next/link;
 '
-export defaultault function Tutorials(): ;
+export default function Tutorials(): ;
   return (;
     <>'
       <SEO;
@@ -35,4 +35,4 @@ export defaultault function Tutorials(): ;
                   </p>;"
                 </CardContent>;"
                 <CardFooter className="p-6 pt-0">;"
-                  <Button variant="link" className="text-zion-cyan p-0" asChild>;
+                  <Button variant="link" className="text-zion-cyan p-0' asChild>;';;

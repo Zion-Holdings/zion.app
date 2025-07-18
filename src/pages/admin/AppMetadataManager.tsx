@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react;
 import { SEO } from '@/components/SEO'
-import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager';
+import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager;
 '
 // const _AppMetadataManager: unknown React.FC = () => {;
   return (;
@@ -12,4 +12,4 @@ import { MetadataManager } from '@/components/mobile-app/admin/MetadataManager';
       />;"
 ;"
       <div className="container py-8">;"
-        <h1 className="text-3xl font-bold text-zion-cyan mb-8">;
+        <h1 className="text-3xl font-bold text-zion-cyan mb-8'>;';;

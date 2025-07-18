@@ -82,7 +82,7 @@ export function ZionGPTModelManager(): ;
     } finally {;
       setIsLoading(false);
     };
-  }
+
 ;""
   const checkTrainingStatus = async (_modelId: string) => {;"
     try {";"
@@ -299,4 +299,4 @@ export function ZionGPTModelManager(): ;
 }"";
 }"
 }"
-}"
+}'';;

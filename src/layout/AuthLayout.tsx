@@ -1,7 +1,7 @@
-import React from 'react';
-import type { ReactNode } from 'react';
+import React from 'react;
+import type { ReactNode } from 'react;
 import { Logo } from '@/components/header/Logo'
-import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { LanguageSelector } from '@/components/header/LanguageSelector;
 '
 interface AuthLayoutProps {
   children: "ReactNode"
@@ -21,9 +21,9 @@ export function AuthLayout(): unknown {): unknown {): unknown {): unknown {): un
   );"
 };";"
 ;"
-export defaultault AuthLayout;"
+export default AuthLayout;"
 "
 }"
 }";"
 }"
-}"
+}'';;

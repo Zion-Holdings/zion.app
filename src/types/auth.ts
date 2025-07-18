@@ -1,4 +1,4 @@
-import React  from 'react';
+import React  from 'react;
 export interface AuthState {'
   token: "string | null"
   isLoggedIn: "boolean"
@@ -21,7 +21,7 @@ export interface UserProfile {"
   emailVerified?: boolean
   interests?: string[]
   preferredCategories?: string[]
-}
+
 export interface UserDetails extends UserProfile {;
   headline?: string;
   createdAt?: string;"
@@ -79,4 +79,4 @@ export interface AuthContextType {;"
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;,"
   tokens: "unknown | null;"
 };"
-"""""
+""""'';;

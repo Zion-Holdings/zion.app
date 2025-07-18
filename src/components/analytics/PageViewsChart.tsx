@@ -46,6 +46,6 @@ export function PageViewsChart(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import type { Project, ProjectStatus } from '@/types/projects'
@@ -8,7 +8,7 @@ export function useProjects(): ;
   const { _user } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null)';
+  const [error, setError] = useState<string | null>(null);
   const fetchProjects = async () => {'
     if (!user) {;
       setIsLoading(false);
@@ -27,7 +27,7 @@ export function useProjects(): ;
           *,;
           job: jobs(title, description),;"
           talent_profile: profiles!talent_id(display_name:display_name, professional_title: bio, profile_picture_url: "avatar_url)"
-          client_profile: profiles!client_id(display_name, avatar_url);"
+          client_profile: profiles!client_id(display_name, avatar_url);"`
         `,;"
         );"
         .order('created_at', { ascending: "false "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
@@ -37,12 +37,12 @@ export function useProjects(): ;
       } else if (user.userType === 'client') {;
         query = query.eq('client_id', user.id);
       }'
-;
+
       const { data, error: "fetchError "} = await query;"
 ;";"
       if (fetchError) throw fetchError;"
 ;"
-      // Transform the data to match our project types. Default to an empty array;"
+      // Transform the data to match our project types. Default to an empty array;"`
       // to prevent "map is not a function" errors when `data` is null;
       const transformedData = (data ?? []) as Project[];"
       setProjects(transformedData);";"
@@ -62,12 +62,12 @@ export function useProjects(): ;
     try {'
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;
         .from('projects');
-        .select(;
+        .select(;`
           `'
           *,;
           job: jobs(title, description),;"
           talent_profile: profiles!talent_id(display_name:display_name, professional_title: bio, profile_picture_url: "avatar_url)"
-          client_profile: profiles!client_id(display_name, avatar_url);"
+          client_profile: profiles!client_id(display_name, avatar_url);"`
         `,;"
         );"
-        .eq('id', projectId);
+        .eq('id', projectId);';;`

@@ -46,4 +46,4 @@ const resolvePath = (path: string): string => pathMap[path] ?? path;
             <h2 className="text-xl font-bold mb-4 text-zion-cyan">;"
               Public Pages;";"
             </h2>;"
-            <ul className=space-y-2>"
+            <ul className=space-y-2>'';;

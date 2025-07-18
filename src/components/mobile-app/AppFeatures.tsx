@@ -70,5 +70,5 @@ const features = ['
       </div>
     </section>;"
   );"
-}
-""""
+
+"""'';;

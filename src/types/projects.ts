@@ -1,4 +1,4 @@
-import type { Job } from './jobs';
+import type { Job } from './jobs;
 '
 export type ProjectStatus =;
   | 'offer_sent'
@@ -23,5 +23,5 @@ export interface Project {
   updated_at: string"
   job?: {"
     title: "string"
-    description: "string"
-  }
+    description: "string'
+  }';;

@@ -270,6 +270,6 @@ export function BundleAnalyzer(): "
 };
 
 }'
-}
+
 }'
-}'
+}'';;

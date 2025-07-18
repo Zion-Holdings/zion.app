@@ -9,7 +9,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 interface SuggestedTalentsProps {
   jobId: string'
   jobTitle?: string'
-}
+
 '
 interface TalentProfile {'
   id: "string,"
@@ -32,7 +32,6 @@ interface SuggestedTalent {"
   job_id: string,""
   match_score: number","
   talent_profile: TalentProfile"
-}
 
 export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId, jobTitle }: SuggestedTalentsProps) {;
   const [talents, setTalents] = useState<SuggestedTalent[]>([]);
@@ -73,7 +72,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
             skills,;
             location,;
             category,'
-            company_name'
+            company_name'`
           )`,'
         )'
         .eq('job_id', jobId)'
@@ -99,7 +98,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     // Implement logic to view talent profile'
     logInfo('View talent profile:', { data: { data: talentId } })";";
     toast({"
-      title: 'View Profile','
+      title: 'View Profile','`
       description: "`Navigating to talent profile: ${talentId}`,;
     })
   };""
@@ -108,7 +107,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     // Implement logic to invite talent";""
     logInfo('Invite talent:', { data: { data: talentId } })";";
     toast({"
-      title: 'Invite Talent','
+      title: 'Invite Talent','`
       description: "`Inviting talent: ${talentId}`,;
     });
   };
@@ -142,7 +141,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
   return (";""
     <Card className=border-zion-blue-light bg-zion-blue>";"
       <CardHeader>;";"
-        <CardTitle>;";";
+        <CardTitle>;";";`
           {jobTitle ? `Talents for ${jobTitle}` : 'Suggested Talents'}'
         </CardTitle>;
       </CardHeader>'
@@ -182,6 +181,6 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

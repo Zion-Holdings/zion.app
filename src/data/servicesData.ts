@@ -1,1 +1,4 @@
-// Minimal ProductListing type for type safety;
+// Module for servicesData
+export const servicesData = {
+  // TODO: Implement module functionality
+};

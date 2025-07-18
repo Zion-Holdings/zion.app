@@ -53,4 +53,4 @@ import { AppStoreButtons } from './AppStoreButtons'
     </section>;"
   );
 }"
-"""
+""'';;

@@ -1,11 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
+import React from 'react;
+import { useState } from 'react;
 import { Header } from '@/components/Header'
 import { NextSeo } from '@/components/NextSeo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import  { Textarea }  from '@/components/ui/textarea;
-import {';
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import {';
 } from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { ChatBotPanel } from '@/components/support/ChatBotPanel';
+import { ChatBotPanel } from '@/components/support/ChatBotPanel;
 '
 interface Instance {
   id: "number"
@@ -37,10 +37,10 @@ const TEMPLATES = [;"
   'Multiverse Sync Activation',;
   'Emergency Governance Pause',;
 ]'
-;
+
 type Vote = 'yes' | 'no' | null;
 '
-export defaultault function CongressPage(): ;
+export default function CongressPage(): ;
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [origin, setOrigin] = useState('');
@@ -57,7 +57,7 @@ export defaultault function CongressPage(): ;
   const yesCount = INSTANCES.filter((i) => votes[i.id] === 'yes').length;
   const majority = total <= 5 ? total : Math.ceil((2 / 3) * total);
   const pass = yesCount >= majority'
-;
+
   const castVote = (id: number, _value: Vote) => {;
     setVotes((prev) => ({ ...prev, [id]: prev[id] === value ? null : value }));"
   };";"
@@ -107,4 +107,4 @@ export defaultault function CongressPage(): ;
                     <Button;
                       size="sm"
                       variant={votes[i.id] === 'no' ? 'destructive' : 'outline'};
-                      onClick={() => castVote(i.id, 'no')};
+                      onClick={() => castVote(i.id, 'no')};';;

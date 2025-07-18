@@ -10,7 +10,6 @@ interface TalentCardHeaderProps {'
   profilePicture?: string"
   availabilityType: string
   yearsExperience: "number"
-}
 
 export function TalentCardHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   fullName,;
@@ -47,7 +46,6 @@ export function TalentCardHeader(): unknown {): unknown {): unknown {): unknown 
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

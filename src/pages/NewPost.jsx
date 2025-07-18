@@ -1,13 +1,13 @@
-import React, { Suspense } from 'react';
-import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/router'; // Changed from useNavigate';
-import { logErrorToProduction } from '@/utils/productionLogger';
-;
-const ReactMarkdown = React.lazy(() => import('react-markdown'));';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-;
-export defaultault function NewPost() {
+import React, { Suspense } from 'react;
+import { useForm } from 'react-hook-form;
+import { useRouter } from 'next/router'; // Changed from useNavigate;
+import { logErrorToProduction } from '@/utils/productionLogger;
+
+const ReactMarkdown = React.lazy(() => import('react-markdown'));;
+import { Input } from '@/components/ui/input;
+import { Textarea } from '@/components/ui/textarea;
+
+export default function NewPost() {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: { title: '', content: '' },'
   });
@@ -28,7 +28,7 @@ export defaultault function NewPost() {
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.message || 'Failed to create post');'
-      }
+
       const data = await res.json();
       router.push(`/community/${data.id}`); // Changed to router.push
     } catch (e) {
@@ -36,7 +36,7 @@ export defaultault function NewPost() {
       setError(e.message);
     } finally {
       setIsSubmitting(false);
-    }
+
   };
 
   return (
@@ -64,7 +64,7 @@ export defaultault function NewPost() {
       {error && <p className="text-red-500 mt-2">{error}</p>}"
       {content && (
         <div className="mt-8">"
-          <h2 className="text-xl font-semibold mb-2">Preview</h2>"
+          <h2 className="text-xl font-semibold mb-2">Preview</h2>'
           <Suspense fallback={<div>Loading...</div>}>
             <ReactMarkdown>{content}</ReactMarkdown>
           </Suspense>
@@ -72,4 +72,5 @@ export defaultault function NewPost() {
       )}
     </div>
   );
-}
+
+';;`

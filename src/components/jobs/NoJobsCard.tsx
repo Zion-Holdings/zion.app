@@ -25,5 +25,5 @@ export function NoJobsCard(): unknown {): unknown {): unknown {): unknown {): un
 ;""
 };"
 }"
-}
-}"
+
+}'';;

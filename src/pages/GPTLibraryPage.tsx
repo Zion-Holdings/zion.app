@@ -5,11 +5,11 @@ import { PromptCard } from '@/components/prompts/PromptCard'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO'
-import { useState } from 'react';
+import { useState } from 'react;
 '
-export defaultault function GPTLibraryPage(): ;
+export default function GPTLibraryPage(): ;
   const [customPrompt, setCustomPrompt] = useState('')'
-;
+
   const grouped = PROMPT_LIBRARY.reduce<Record<Prompt['category'], Prompt[]>>(;
     (acc, p) => {'
       acc[p.category] = acc[p.category] || [];
@@ -24,7 +24,7 @@ export defaultault function GPTLibraryPage(): ;
     const encoded = encodeURIComponent(customPrompt);"
     window.open(`/zion-gpt?prompt=${encoded}`, '_blank');
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -58,4 +58,4 @@ export defaultault function GPTLibraryPage(): ;
                 placeholder="Enter your prompt"
                 value={customPrompt};"
                 onChange={(e) => setCustomPrompt(e.target.value)};"
-                className="flex-1";
+                className="flex-1';';;`

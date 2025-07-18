@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { Check, Search, Send, Handshake } from '@/components/ui/icons'
 import { GradientHeading } from './GradientHeading'
 
@@ -58,7 +58,7 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
               <div;";
                 key={step.title}";";
                 className={`flex flex-col md:flex-row items-center ${"
-                  index % 2 === 0 ? 'md:flex-row-reverse' :}
+                  index % 2 === 0 ? 'md:flex-row-reverse' :}`
                 } relative`}'
               >'
                 <div className="md:w-1/2 mb-6 md:mb-0 md:px-12 text-center md:text-right>;""
@@ -101,4 +101,4 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
 }";
 }""
 }"
-}"
+}'';;`

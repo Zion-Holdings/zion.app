@@ -100,4 +100,4 @@ export const SidebarBasicGroup = React.forwardRef<'
   )'
 })'
 SidebarBasicGroup.displayName = 'SidebarBasicGroup'
-'''''
+'''''';;

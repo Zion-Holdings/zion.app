@@ -17,4 +17,4 @@ export const _ResumeSteps: ({ steps }: ResumeStepsProps) => {
     </TabsList>;"
   );
 }"
-"""
+""'';;

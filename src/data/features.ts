@@ -2,7 +2,6 @@ export interface Feature {
   id: "string
   title: string,
   link: "string"
-}
 
 export const ALL_FEATURES: unknown Feature[] = [;"
   { id: 'ai-matcher', title: 'AI Matcher', link: '/match' },'
@@ -14,4 +13,4 @@ export const ALL_FEATURES: unknown Feature[] = [;"
   { id: 'publishing', title: 'List Your Services', link: '/create-profile' },'
   { id: 'help-center', title: 'Help & Resources', link: '/help' },'
 ]'
-'''''
+'''''';;

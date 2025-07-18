@@ -23,7 +23,7 @@ interface TalentResultsProps {'
     experienceRange: [number, number]
     setExperienceRange: (range: [number, number]) => void"
     clearFilters: () => void"
-  }
+
 };
 
 export function TalentResults(): unknown {): unknown {): unknown {): unknown {): unknown {{;
@@ -55,9 +55,8 @@ export function TalentResults(): unknown {): unknown {): unknown {): unknown {):
       />
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

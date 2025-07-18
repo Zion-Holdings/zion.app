@@ -25,7 +25,6 @@ interface AIMilestoneGeneratorProps {'
   projectType: string,
   onAddMilestones: (milestones: GeneratedMilestone[]) => void"
   onAddMilestone: "(milestone: GeneratedMilestone) => void
-}
 
 export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   scope,;
@@ -144,7 +143,7 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
                   <div className="flex items-center justify-between">
                     <div className=flex items-center flex-1">"
                       <input;
-                        type=checkbox"
+                        type=checkbox"`
                         id={`milestone-${index}`}"
                         checked={selectedMilestones[index] || false};
                         onChange={() => toggleMilestoneSelection(index)}
@@ -195,9 +194,9 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
       )}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

@@ -8,14 +8,13 @@ export interface Benefit {'
   title: "string,
   description: string
   icon?: React.ReactNode
-}
 
 export interface Testimonial {
   name: string
   role?: string
   text: string"
   avatar?: string"
-}
+
 "
 interface ServiceLandingTemplateProps {"
   title: string,"
@@ -26,7 +25,6 @@ interface ServiceLandingTemplateProps {"
   testimonials: "Testimonial[]"
   ctaText: string,"
   ctaLink: "string
-}
 
 export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplateProps> = ({;
   title,;
@@ -146,5 +144,5 @@ export const _ServiceLandingTemplate: unknown React.FC<ServiceLandingTemplatePro
       </section>
     </div>;""
   );
-}
-"""
+
+""'';;

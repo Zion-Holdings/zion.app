@@ -23,5 +23,5 @@ export function ContractHeader(): unknown {): unknown {): unknown {): unknown {)
 ;""
 };"
 }"
-}
-}"
+
+}'';;

@@ -17,7 +17,7 @@ import { useCart } from '@/context/CartContext'
 
 interface MobileBottomNavProps {
   unreadCount?: number
-}
+
 '
 export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {): unknown {{ unreadCount = 0 }: MobileBottomNavProps) {'
   const router = useRouter();
@@ -129,5 +129,5 @@ export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {
 ;""
 };"
 }"
-}
-}"
+
+}'';;

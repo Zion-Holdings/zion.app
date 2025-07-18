@@ -25,7 +25,6 @@ interface SmartContractDeploymentProps {'
   solidityCode: "string,"
   onDeploy: (options: DeploymentOptions) => Promise<void>,""
   isDeploying: boolean""
-}
 
 export function SmartContractDeployment(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   solidityCode,;
@@ -51,7 +50,7 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
       await onDeploy(deploymentOptions)'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {'
       logErrorToProduction('Deployment error:', { data: error "})"
-    }
+
   };"
 ;";
   const handleDownloadSolidity = () => {";";
@@ -197,6 +196,6 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;

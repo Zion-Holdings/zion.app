@@ -21,8 +21,8 @@ export interface HeaderProps {'
     primaryColor: "string,"
     backgroundColor: string,""
     textColor: string""
-  }
-}
+
+
 ;"
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false, customLogo }: HeaderProps) {;";
   const { _user } = useAuth()";";
@@ -91,23 +91,23 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                   if ('
                     suggestion.type === 'product' &&'
                     !suggestion.slug.startsWith('/marketplace/listing/')'
-                  ) {;
+                  ) {;`
                     path = `/marketplace/listing/${suggestion.slug}`'
                   } else if ('
                     suggestion.type === 'doc' &&'
                     !suggestion.slug.startsWith('/docs')'
                   ) {'
-                    // This case might need refinement based on actual doc slug structure;
+                    // This case might need refinement based on actual doc slug structure;`
                     path = `/docs/${suggestion.slug}`'
                   } else if ('
                     suggestion.type === 'blog' &&'
                     !suggestion.slug.startsWith('/blog/')'
-                  ) {;
+                  ) {;`
                     path = `/blog/${suggestion.slug}`;
                   };
                   router.push(path);
                 } else {'
-                  router.push('
+                  router.push('`
                     `/search?q=${encodeURIComponent(suggestion.text)}`,;
                   )'
                 }'
@@ -226,22 +226,22 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     if ('
                       suggestion.type === 'product' &&'
                       !suggestion.slug.startsWith('/marketplace/listing/')'
-                    ) {;
+                    ) {;`
                       path = `/marketplace/listing/${suggestion.slug}`'
                     } else if ('
                       suggestion.type === 'doc' &&'
                       !suggestion.slug.startsWith('/docs')'
-                    ) {;
+                    ) {;`
                       path = `/docs/${suggestion.slug}`'
                     } else if ('
                       suggestion.type === 'blog' &&'
                       !suggestion.slug.startsWith('/blog/')'
-                    ) {;
+                    ) {;`
                       path = `/blog/${suggestion.slug}`;
                     };
                     router.push(path);
                   } else {'
-                    router.push('
+                    router.push('`
                       `/search?q=${encodeURIComponent(suggestion.text)}`,;
                     )'
                   }'
@@ -287,6 +287,6 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

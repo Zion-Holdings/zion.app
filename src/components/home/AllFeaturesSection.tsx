@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 interface AllFeaturesSectionProps {
   className?: string'
   style?: React.CSSProperties'
-}
+
 '
 const features = ['
   { key: 'ai_talent_matching', link: '/match' },'
@@ -57,9 +57,9 @@ export function AllFeaturesSection(): unknown {): unknown {): unknown {): unknow
   )
 };""
 ;"
-export defaultault AllFeaturesSection";"
+export default AllFeaturesSection";"
 ";"
 }";
 }""
 }"
-}"
+}'';;`

@@ -23,7 +23,6 @@ interface GeneratedContent {'
 interface GeneratedContentDisplayProps {""
   content: GeneratedContent,""
   onApply: () => void""
-}
 
 export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {{
   content,;"
@@ -89,6 +88,6 @@ export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): u
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

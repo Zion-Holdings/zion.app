@@ -2,7 +2,6 @@ import type { TrackingEvent } from '@/hooks/useOrder'
 
 interface Props {
   events?: TrackingEvent[]
-}
 
 export function OrderTimeline(): unknown {): unknown {): unknown {): unknown {): unknown {{ events }: Props) {;
   if (!events || events.length === 0) {'
@@ -31,7 +30,6 @@ export function OrderTimeline(): unknown {): unknown {): unknown {): unknown {):
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

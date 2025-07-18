@@ -24,7 +24,7 @@ interface RateOptimizationSectionProps {'
   yearsExperience: number"
   location?: string
   rateType: 'hourly' | 'fixed'
-}
+
 '
 export const RateOptimizationSection: unknown React.FC<'
   RateOptimizationSectionProps;
@@ -78,4 +78,4 @@ export const RateOptimizationSection: unknown React.FC<'
     </div>'
   );
 }'
-'''''
+'''''';;

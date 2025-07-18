@@ -1,1 +1,4 @@
-// Define types for the pricing recommendation;
+// Service for pricingSuggestionService
+export const pricingSuggestionServiceService = {
+  // TODO: Implement service methods
+};

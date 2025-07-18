@@ -20,13 +20,11 @@ interface PostFormValues {'
   content: string,""
   categoryId: ForumCategory","
   tags: string"
-}
 
 interface PostFormProps {
   initialValues?: Partial<PostFormValues>
   onSubmit: (values: PostFormValues) => void
   isEditing?: boolean
-}
 
 export const PostForm = ({;
   initialValues,"
@@ -170,5 +168,5 @@ export const PostForm = ({;
   )'
 }'
 
-export defaultault PostForm'
-'''''
+export default PostForm'
+'''''';;

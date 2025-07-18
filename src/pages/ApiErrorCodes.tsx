@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link';
+import Link from 'next/link;
 export function ApiErrorCodes(): '
   const errorExample = `{;
   "error": "validation_error"
@@ -15,13 +15,13 @@ export function ApiErrorCodes(): '
       "field": "budget.min"
       "error": "Budget minimum must be greater than 0";
     };"
-  ];";"
+  ];";"`
 }`;"
-;"
+;"`
   const rateLimitExample = `{;"
   "error": "rate_limit_exceeded"
   "message": "Rate limit exceeded. Try again in 30 seconds"
-  "retry_after": 30;"
+  "retry_after": 30;"`
 }`;";"
 ;"
   const errorCodes = [;"
@@ -125,4 +125,4 @@ export function ApiErrorCodes(): '
 ;"
   return (;"
     <ApiDocsLayout>;"
-      <div className="max-w-3xl prose prose-invert">;
+      <div className="max-w-3xl prose prose-invert'>;';;`

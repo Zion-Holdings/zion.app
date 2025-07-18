@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 '
 interface ProjectHeaderProps {'
   title: "string
-}
+
 "
 export function ProjectHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{ title }: ProjectHeaderProps) {;"
   const router = useRouter(); // Changed from useNavigate to useRouter;
@@ -30,7 +30,6 @@ export function ProjectHeader(): unknown {): unknown {): unknown {): unknown {):
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

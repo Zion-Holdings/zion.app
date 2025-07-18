@@ -189,7 +189,6 @@ export function PartnerResources(): ;"
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

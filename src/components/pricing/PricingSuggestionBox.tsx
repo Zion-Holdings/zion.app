@@ -17,7 +17,6 @@ interface PricingSuggestionBoxProps {'
   isLoading: boolean,"
   onApplySuggestion: () => void
   rateType: 'hourly' | 'fixed'
-}
 
 export const _PricingSuggestionBox: unknown React.FC<PricingSuggestionBoxProps> = ({;
   suggestion,;
@@ -99,4 +98,4 @@ export const _PricingSuggestionBox: unknown React.FC<PricingSuggestionBoxProps> 
     </Card>;"
   );
 }"
-"""
+""'';;

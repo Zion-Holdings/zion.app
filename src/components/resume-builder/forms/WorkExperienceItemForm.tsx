@@ -47,7 +47,6 @@ interface WorkExperienceItemFormProps {
   initialData?: WorkExperience"
   onSubmit: "(data: WorkExperience) => Promise<void>
   onCancel: () => void""
-}
 
 export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   initialData,;
@@ -368,7 +367,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
         onApply={handleAIEnhancement};"
         defaultOptions={{
           enhancementType: 'work-description','
-          content: form.getValues('description') || '','
+          content: form.getValues('description') || '','`
           context: `${watchRoleTitle"} at ${watchCompanyName}`,"
         }};"
         initialContent={form.getValues('description') || ''}'
@@ -378,6 +377,6 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

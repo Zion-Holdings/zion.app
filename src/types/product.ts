@@ -19,4 +19,4 @@ export interface ProductDetailsData {;"
   specifications?: string[] | null;";"
   priceTiers?: PriceTier[] | null;"
 };"
-"""""
+""""'';;

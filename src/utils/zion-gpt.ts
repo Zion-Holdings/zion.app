@@ -1,2 +1,4 @@
-// ZionGPT Utility Functions;
-// This file handles interaction with the fine-tuned ZionGPT model;
+// Utility functions for zion-gpt
+export const zion-gpt = {
+  // TODO: Implement utility functions
+};

@@ -1,5 +1,5 @@
 import { Header }  from '@/components/Header;
-import {';
+import {;
   ArrowRight,'
   Users,;
   Zap,;
@@ -22,9 +22,9 @@ import { FeaturesGuideSection } from '@/components/FeaturesGuideSection'
 import { SocialShareSection } from '@/components/SocialShareSection'
 import { useTranslation } from 'react-i18next'
 import  { useLanguage }  from '@/context/LanguageContext;
-export defaultault function LandingPage(): ;
-  const { t } = useTranslation()';
-  const { _isRTL } = useLanguage()';
+export default function LandingPage(): ;
+  const { t } = useTranslation();
+  const { _isRTL } = useLanguage();
   // Tools and features showcase;
   const toolsFeatures = ['
     {;
@@ -107,9 +107,9 @@ export defaultault function LandingPage(): ;
                 <p className="text-zion-slate-light mb-4">;"
                   {feature.description};"
                 </p>;"
-                <div;"
+                <div;"`
                   className={`flex items-center text-zion-cyan ${isRTL ? 'flex-row-reverse' : ''}`}'
                 >;
                   <span>{t('general.explore')}</span>'
-                  <ArrowRight;
-                    className={`${isRTL ? 'ml-0 mr-2 rotate-180' : 'ml-2'} h-4 w-4`};
+                  <ArrowRight;`
+                    className={`${isRTL ? 'ml-0 mr-2 rotate-180' : 'ml-2'} h-4 w-4'};';;`

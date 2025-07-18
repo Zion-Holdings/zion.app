@@ -17,4 +17,4 @@ const FALLBACK_RESPONSES = [;""
   "Thanks for reaching out! While I'm having trouble connecting to my knowledge base, I can suggest checking our FAQ section or contacting our support team directly.",;"
   'I understand you need assistance. For immediate help, please visit our help center or reach out to support@ziontechgroup.com.','
   I'm currently experiencing technical difficulties, but I'd be happy to help you get to the right resource. Try browsing our documentation or contacting support.",""
-  'While I work on resolving my connection issues, you can find helpful information in our help section or contact our support team for immediate assistance.','
+  'While I work on resolving my connection issues, you can find helpful information in our help section or contact our support team for immediate assistance.','';;

@@ -1,5 +1,10 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { SEO } from '@/components/SEO';
 
-const markdown = ;
+export default function PrivacyPolicy() {
+  return (
+    <div>
+      <h1>PrivacyPolicy</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

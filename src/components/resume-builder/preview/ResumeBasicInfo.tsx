@@ -2,7 +2,7 @@ import type { ResumeBasicInfo } from '@/types/resume'
 '
 interface ResumeBasicInfoSectionProps {'
   basicInfo: "ResumeBasicInfo
-}
+
 "
 export function ResumeBasicInfoSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   basicInfo,;
@@ -17,7 +17,7 @@ export function ResumeBasicInfoSection(): unknown {): unknown {): unknown {): un
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

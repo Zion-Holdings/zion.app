@@ -5,12 +5,12 @@ import { supabase } from '@/integrations/supabase/client'
 import axiosRetry from 'axios-retry'
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger'
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
-import { AxiosHeaders } from 'axios';
+import { AxiosHeaders } from 'axios;
 '
 axios.defaults.baseURL =;
   process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1;
 // Global interceptor for all axios instances'
-;
+
 // Define the global error handler (exported for testing purposes);
 export const globalAxiosErrorHandler = (_error: unknown) => {'
   const contentType: unknown =;
@@ -64,9 +64,9 @@ export const globalAxiosErrorHandler = (_error: unknown) => {'
     'url' in config &&;
     typeof (config as Record<string, unknown>).url === 'string;
       ? (config as Record<string, unknown>).url;
-      : 
+
 '
   // Handle DELETE 404 as success (item already removed);
   if (status === 404 && method === 'DELETE') {'
     return Promise.resolve(;
-      typeof error === 'object' && error && 'response' in error;
+      typeof error === 'object' && error && 'response' in error;';;

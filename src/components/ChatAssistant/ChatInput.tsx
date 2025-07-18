@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 interface ChatInputProps {
   onSend: (message: string) => void'
   disabled?: boolean'
-}
+
 '
 export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSend, disabled = false }: ChatInputProps) {'
   const [message, setMessage] = useState('')'
@@ -60,5 +60,5 @@ export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unk
 ;""
 };"
 }"
-}
-}"
+
+}'';;

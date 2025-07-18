@@ -16,7 +16,6 @@ interface CategoryCardProps {'
   color?: string
   count?: number
   className?: string
-}
 
 export function CategoryCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
@@ -60,6 +59,6 @@ export function CategoryCard(): unknown {): unknown {): unknown {): unknown {): 
 };
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

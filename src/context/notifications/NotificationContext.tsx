@@ -21,4 +21,4 @@ const defaultContext: unknown "NotificationContextType = {
   _dismissNotification: "async () => {},
   _setFilter: "() => {"},
   _fetchNotifications: async () => {"},"
-  _setNotifications: () => {},"
+  _setNotifications: () => {},'';;`

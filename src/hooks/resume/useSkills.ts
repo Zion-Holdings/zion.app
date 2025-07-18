@@ -2,7 +2,7 @@ import { useState } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import type { Skill } from '@/types/resume'
 import { useAuth } from '@/hooks/useAuth'
-import { handleResumeError, showSuccessToast } from './useResumeUtils';
+import { handleResumeError, showSuccessToast } from './useResumeUtils;
 export function useSkills(): '
   const { _user } = useAuth()'
   const [isLoading, setIsLoading] = useState(false);
@@ -60,4 +60,4 @@ export function useSkills(): '
         'Your skill has been removed from your resume','
       )'
     } catch (e: unknown) {'
-      return handleResumeError(e, 'Could not delete skill')'
+      return handleResumeError(e, 'Could not delete skill')'';;

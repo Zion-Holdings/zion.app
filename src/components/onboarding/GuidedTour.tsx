@@ -10,7 +10,7 @@ interface Step {'
 
 const roleSteps: unknown Record<string", Step[]> = {"
   client: [;
-    {
+
       selector: '#profile-link','
       content: 'Edit your profile to help others find you.','
     },'
@@ -34,7 +34,7 @@ const roleSteps: unknown Record<string", Step[]> = {"
 interface GuidedTourProps {
   role: string'
   onFinish?: () => void'
-}
+
 '
 export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {'
   const prefKey = `guidedTourPreference: "${role"}`;
@@ -100,6 +100,6 @@ export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

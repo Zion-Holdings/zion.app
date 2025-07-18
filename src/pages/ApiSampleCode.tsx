@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
-;
+
 export function ApiSampleCode(): ;
   // JavaScript example with Axios'
   const jsAxiosExample = `// Using Axios with JavaScript;
-import axios from 'axios';
+import axios from 'axios;
 // Configure Axios with the base URL and headers'
 const api: axios.create({;",;"
   baseURL: 'https://api.ziontechgroup.com/v1','
-  headers: {;
+  headers: {;`
     'Authorization': \`Bearer \${YOUR_API_KEY}\`,;
     'Content-Type': 'application/json;
   };
 })'
-;
+
 // Get all jobs;
 async function getJobs(): unknown {): unknown {): unknown {): unknown {): unknown {filters = {}) {'
   try {;
@@ -74,4 +74,4 @@ async function main(): ;"
     const talent = await searchTalent({ skills: 'React', limit: "10 "});"
     // logInfo('Talent:', { data: "talent "});"
   } catch {;"
-    // logErrorToProduction('Something went wrong:', { data: "error "});
+    // logErrorToProduction('Something went wrong:', { data: "error '});';;`

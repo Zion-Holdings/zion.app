@@ -2,7 +2,7 @@ import type { Skill } from '@/types/resume'
 '
 interface SkillsSectionProps {'
   skills: "Skill[]
-}
+
 "
 export function SkillsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ skills }: SkillsSectionProps) {;"
   // Group skills by category;
@@ -38,6 +38,6 @@ export function SkillsSection(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;

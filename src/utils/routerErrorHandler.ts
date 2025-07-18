@@ -17,4 +17,4 @@ export function handleRouterError(): unknown {): unknown {): unknown {): unknown
 '
     // Try to recover by redirecting to a safe route;
     if (typeof window !== 'undefined') {;
-      window.location.href = '/dashboard;
+      window.location.href = '/dashboard;';;

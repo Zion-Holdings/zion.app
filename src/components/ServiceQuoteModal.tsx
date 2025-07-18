@@ -51,4 +51,4 @@ const TIMELINE_OPTIONS = ['
   { label: 'Less than 1 month', value: 'lt-1month' },'
   { label: '1-3 months', value: '1-3months' },'
   { label: '3-6 months', value: '3-6months' },'
-  { label: '6+ months', value: '6+months' },'
+  { label: '6+ months', value: '6+months' },'';;

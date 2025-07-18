@@ -1,4 +1,4 @@
-import React  from 'react';
+import React  from 'react;
 export interface CartItem {'
   id: "string"
   name: string,"
@@ -8,7 +8,7 @@ export interface CartItem {'
   image?: string"
   category?: string"
   type?: 'physical' | 'digital' | 'service
-}
+
 '
 export interface CartContextType {
   items: "CartItem[]"
@@ -20,4 +20,4 @@ export type CartAction =;"
   | { type: 'REMOVE_ITEM payload: "string "};"
   | { type: 'CLEAR_CART' };
   | { type: 'SET_ITEMS payload: "CartItem[] "};"
-"""""
+""""'';;

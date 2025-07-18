@@ -1,7 +1,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { UserDetails } from '@/types/auth'
 import { safeStorage, safeSessionStorage } from './safeStorage'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 /**'
  * Utility function to clean up authentication state;
  * This helps prevent auth state inconsistencies and "limbo" states;"
@@ -16,7 +16,7 @@ export const _cleanupAuthState = () => {;"
   safeStorage.removeItem('supabase.auth.token')'
   // Also clear from session storage if it was ever used there by Supabase or other logic;
   safeSessionStorage.removeItem('supabase.auth.token')'
-;
+
   // Remove all Supabase auth keys from localStorage;
   try {'
     Object.keys(localStorage).forEach((key) => {;
@@ -52,7 +52,7 @@ export const checkNewRegistration = async (_user: UserDetails) => {;"
       .eq('user_id', user.id);
       .eq('campaign_type', 'welcome_series');
       .maybeSingle()'
-;
+
     // If no welcome email sent yet, schedule one;
     if (!existingCampaign) {'
       // Create a scheduled job for the welcome email;
@@ -87,4 +87,4 @@ export const checkNewRegistration = async (_user: UserDetails) => {;"
     });";"
   };"
 };"
-"""""
+""""'';;

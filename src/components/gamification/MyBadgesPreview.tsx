@@ -30,4 +30,4 @@ const earnedBadges: unknown "{ badge: BadgeKey; date: string }[] = [;"";
     </div>;"
   );";
 }";";
-"""
+""'';;

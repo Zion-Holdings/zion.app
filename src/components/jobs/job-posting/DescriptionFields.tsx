@@ -16,7 +16,6 @@ interface DescriptionFieldsProps {'
   control: "Control<JobSchemaType>,"
   handleEditorChange: (content: string) => void,""
   editorContent: string""
-}
 
 export function DescriptionFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   control,;
@@ -160,6 +159,6 @@ export function DescriptionFields(): unknown {): unknown {): unknown {): unknown
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

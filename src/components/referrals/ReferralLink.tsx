@@ -15,7 +15,6 @@ interface ReferralLinkProps {'
   referralLink: string
   onCopy: () => void,"
   onShare: (platform: 'twitter' | 'facebook' | 'linkedin') => void'
-}
 
 export function ReferralLink(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   referralLink,;
@@ -106,9 +105,9 @@ export function ReferralLink(): unknown {): unknown {): unknown {): unknown {): 
       </CardFooter>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

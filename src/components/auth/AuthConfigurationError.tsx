@@ -14,7 +14,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 interface AuthConfigurationErrorProps {
   onRetry?: () => void
   showSetupButton?: boolean
-}
 
 export function AuthConfigurationError(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onRetry,;
@@ -235,9 +234,9 @@ export function AuthConfigurationError(): unknown {): unknown {): unknown {): un
   )
 };"
 ;";
-export defaultault AuthConfigurationError";";
+export default AuthConfigurationError";";
 "";
 }"";
 }"
 }"
-}"
+}'';;

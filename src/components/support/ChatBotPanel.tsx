@@ -72,7 +72,7 @@ export function ChatBotPanel(): ;"
       // Call the OpenAI-powered support function;
       const response = await sendToAIAssistant(text)'
 '
-      const botMessage: unknown "Message = {
+      const botMessage: unknown "Message = {`
         id: `bot-${Date.now()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,"
         content:;
           response.message ||
@@ -112,7 +112,7 @@ export function ChatBotPanel(): ;"
     } finally {;
       setIsLoading(false);
     };
-  }
+
 ;"
   const sendToAIAssistant = async (_message: string) => {;"
     try {
@@ -133,7 +133,7 @@ export function ChatBotPanel(): ;"
           success: false","
           message:;
             I'm having trouble connecting to my knowledge base right now.","
-        }
+
       };"
 ;"
       const data = await response.json()
@@ -151,12 +151,12 @@ export function ChatBotPanel(): ;"
         success: false,
         _message:;
           "I'm experiencing technical difficulties. Please try again later.",
-      }
+
     };""
   };
 
   const _suggestEscalation = () => {;"
-    const escalationMessage: unknown "Message = {
+    const escalationMessage: unknown "Message = {`
       id: `bot-escalation-${Date.now()"}`,"
       content:;
         I'm having trouble understanding your request. Would you like to speak with a human support agent or send an email to our support team?"
@@ -196,13 +196,13 @@ export function ChatBotPanel(): ;"
   const handleEscalateToLiveAgent = () => {'
     setMessages((prev) => [;
       ...prev,'
-      {'
+      {'`
         id: "`user-${Date.now()"}`,
         content: I'd like to speak with a human agent"
         sender: 'user','
         timestamp: "new Date(),
       },;"
-      {"
+      {"`
         id: `bot-${Date.now()}`,"
         content:;"
           I'm connecting you with a support agent. Please note that our support hours are Monday to Friday, 9AM to 6PM EST. If you're messaging outside these hours, a team member will follow up with you as soon as possible.
@@ -221,13 +221,13 @@ export function ChatBotPanel(): ;"
   const handleEmailSupport = () => {'
     setMessages((prev) => [;
       ...prev,'
-      {'
+      {'`
         id: "`user-${Date.now()}`,
         content: "I'd like to email support"
         sender: 'user','
         timestamp: new Date(),"
       },;"
-      {
+      {`
         id: `bot-${Date.now()"}`,"
         content:;
           'Please send your question to support@ziontechgroup.com. Our team will get back to you within 24 hours.','
@@ -344,7 +344,6 @@ export function ChatBotPanel(): ;"
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

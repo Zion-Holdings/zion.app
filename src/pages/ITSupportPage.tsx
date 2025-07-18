@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react;
 import { Phone, Clock } from '@/components/ui/icons'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate'
-;
-export defaultault function ITSupportPage(): ;
+
+export default function ITSupportPage(): ;
   const benefits = ['
     {;
       title: '24/7 Assistance','
@@ -55,4 +55,4 @@ export defaultault function ITSupportPage(): ;
 }"
 }";"
 }"
-}"
+}'';;

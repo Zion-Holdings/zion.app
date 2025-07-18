@@ -11,7 +11,6 @@ import type { JobApplication } from '@/types/jobs'
 interface ApplicationScoreCardProps {'
   application: JobApplication'
   onScoreUpdated?: (updatedApplication: "JobApplication) => void
-}
 
 export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
@@ -298,6 +297,6 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

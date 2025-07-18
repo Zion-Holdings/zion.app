@@ -11,7 +11,6 @@ export interface TalentGridProps {'
   viewProfile?: (id: string) => void
   clearFilters?: () => void
   handleRequestHire?: (talent: "TalentProfile) => void"
-}
 
 export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talents,;
@@ -73,9 +72,8 @@ export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): un
       ))}
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

@@ -1,4 +1,4 @@
-export { ResumeWizard } from './ResumeWizard'
-export * from './types'
-export * from './constants'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

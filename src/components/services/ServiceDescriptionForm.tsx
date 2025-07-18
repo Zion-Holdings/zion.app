@@ -36,7 +36,6 @@ type FormData = z.infer<typeof formSchema>;"
 
 interface ServiceDescriptionFormProps {
   onDescriptionGenerated: "(description: string) => void"
-}
 
 export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onDescriptionGenerated,;
@@ -212,7 +211,7 @@ export function ServiceDescriptionForm(): unknown {): unknown {): unknown {): un
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { supabase } from '@/integrations/supabase/client'
-import { toast } from 'sonner';
-import { logErrorToProduction, logWarn } from '@/utils/productionLogger';
+import { toast } from 'sonner;
+import { logErrorToProduction, logWarn } from '@/utils/productionLogger;
 '
 export interface MilestoneInput {
   scope: "string"
@@ -16,7 +16,7 @@ export interface GeneratedMilestone {"
   dueDate: "string"
   estimatedHours: number,"
   isAiGenerated: "boolean"
-}
+
 export function useMilestoneGenerator(): ;
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<;"
@@ -61,4 +61,4 @@ export function useMilestoneGenerator(): ;
       return milestonesWithFlag;"
     } catch {;"
       logErrorToProduction('Error generating milestones:', { data: "error "});"
-      toast.error('Failed to generate milestones');
+      toast.error('Failed to generate milestones');';;

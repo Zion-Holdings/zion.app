@@ -38,4 +38,4 @@ export function ApplyToJobModal(): unknown {): unknown {): unknown {): unknown {
 }";
 }""
 }"
-}"
+}'';;

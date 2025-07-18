@@ -23,7 +23,7 @@ const StarRatingInput: unknown "React.FC<{,;";
         key={star};";";
         type="button"
         onClick={() => onRate(star)};";"
-        className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"
+        className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"`
         aria-label={`Rate ${star}`};
       >;
         ★;
@@ -139,7 +139,7 @@ export function FeedbackWidget(): ;
                   <input";"
                     ref={fileInputRef}";""
                     type=file"
-                    accept="image/*;"";
+                    accept="image/* ;"";
                     onChange={handleFileSelect};"";
                     className="hidden"
                   />;";"
@@ -169,4 +169,4 @@ export function FeedbackWidget(): ;
 }"";
 }"
 }"
-}"
+}'';;` */

@@ -5,7 +5,6 @@ interface EducationListProps {'
   educationEntries: "Education[]
   onEdit: (education: Education) => void"
   onDelete: "(id: string) => void
-}
 
 export function EducationList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   educationEntries,;
@@ -30,7 +29,7 @@ export function EducationList(): unknown {): unknown {): unknown {): unknown {):
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

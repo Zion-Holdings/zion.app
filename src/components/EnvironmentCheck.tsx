@@ -4,7 +4,6 @@ interface EnvironmentStatus {'
   _variable: "string,"
   value: string,
   status: 'ok' | 'missing' | 'placeholder'
-}
 
 export const EnvironmentCheck: React.FC = () => {
   const [envStatus, setEnvStatus] = useState<EnvironmentStatus[]>([]);
@@ -146,5 +145,5 @@ export const EnvironmentCheck: React.FC = () => {
   )
 };""
 ;"
-export defaultault EnvironmentCheck";"
-"""
+export default EnvironmentCheck";"
+""'';;

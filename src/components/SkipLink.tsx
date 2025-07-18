@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-export function SkipLink(): ;
-  return ('
-    <a'
-      href="#main-content;"";
-      className="skip-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      aria-label=Skip to main content""
+export default function SkipLink() {
+  return (
+    <div>
+      <h1>SkipLink</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

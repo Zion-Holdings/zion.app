@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import { GradientHeading } from '@/components/GradientHeading'
 import { EnhancedNewsletterForm } from '@/components/EnhancedNewsletterForm'
 import { cn } from '@/lib/utils'
@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils'
 interface NewsletterSectionProps {
   className?: string
   style?: React.CSSProperties
-}
 
 export function NewsletterSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,'
@@ -35,4 +34,4 @@ export function NewsletterSection(): unknown {): unknown {): unknown {): unknown
 };";"
 ;""
 };"
-}"
+}'';;

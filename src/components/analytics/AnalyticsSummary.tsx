@@ -220,7 +220,7 @@ export function AnalyticsSummary(): '
         title=Avg. Session";"
         value={;";"
           isLoading ? (;";";
-            <Skeleton className="h-8 w-24 bg-zion-blue-light" />
+            <Skeleton className="h-8 w-24 bg-zion-blue-light" />`
           ) : (`${Math.round((stats?.averageSessionDuration || 0) / 1000)}s;
           );""
         };"
@@ -285,7 +285,7 @@ interface StatCardProps {"
   title: "string,"
   value: React.ReactNode,""
   icon: React.ReactNode""
-}
+
 ";"
 function StatCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ title, value, icon }: StatCardProps) {;";"
   return (;";";
@@ -308,10 +308,10 @@ function StatCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ 
 }";";
 "";
 };""
-}
+
 };""
-}
+
 }"
 }"
-}
-}"
+
+}'';;`

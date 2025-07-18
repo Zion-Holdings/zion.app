@@ -20,7 +20,6 @@ interface ApplicationRowProps {'
     newStatus: ApplicationStatus,"
   ) => Promise<void>""
   onViewScore: (application: JobApplication) => void""
-}
 
 export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
@@ -114,5 +113,5 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
 ;""
 };"
 }"
-}
-}"
+
+}'';;

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Menu, X } from '@/components/ui/icons'
 import { useMessaging } from '@/context/MessagingContext'
 import Link from 'next/link'
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation'
 import { Logo } from '@/components/header/Logo'
 import { Container } from '@/components/Container'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next;
 import { MobileMenu } from '@/components/header/MobileMenu'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { MobileBottomNav } from '@/components/header/MobileBottomNav'
@@ -14,10 +14,10 @@ import { LoginModal } from '@/components/auth/LoginModal'
 import { UserMenu } from '@/components/header/UserMenu'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
-import { cn } from '@/lib/utils // Import cn utility';
+import { cn } from '@/lib/utils // Import cn utility;
 import { useRouter }  from 'next/router;
 export function AppHeader(): ;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)';
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false)'
   const isMobile = useIsMobile();
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ export function AppHeader(): ;
   const router = useRouter();
   const showTagline = router.pathname === '/;
   // Messaging context (unread message count);
-  const { _unreadCount } = useMessaging()';
+  const { _unreadCount } = useMessaging();
   const openLoginModal = (_returnToPath?: string) => {;
     // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)'
     // using router.push with shallow:true before this function is called.;
@@ -33,7 +33,7 @@ export function AppHeader(): ;
     // If a returnToPath is passed, we could potentially use it for other logic here if needed in the future.;
     setLoginOpen(true);
   }'
-;
+
   return (;
     <>'
       <header;
@@ -126,4 +126,4 @@ export function AppHeader(): ;
             onClick={() => setMobileMenuOpen(false)};"
             aria-hidden="true"
           />;"
-          <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">;
+          <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto'>;';;

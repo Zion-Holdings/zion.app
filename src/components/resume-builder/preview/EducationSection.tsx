@@ -56,9 +56,8 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

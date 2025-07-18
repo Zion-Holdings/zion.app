@@ -1,15 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;';'';
-import { SERVICES } from '@/data/servicesData';;';''
-;';;';'';
-export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";";""
-  if (req['method'] !== 'GET') {;';;';''
-    res.setHeader('Allow', 'GET');';;';''
-    return res.status(405).end(`Method ${req['method']} Not Allowed`);''
-  };';'
-  return res.status(200).json(SERVICES);';'
-};';;''
-';;''
-}';'
-}';'
-}''
-}''
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Services: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Services - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Services</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Services content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Services;

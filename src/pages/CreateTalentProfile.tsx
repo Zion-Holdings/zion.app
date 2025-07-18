@@ -1,6 +1,6 @@
-import React from 'react';
-import { TalentRegistrationForm } from '@/components/profile/TalentRegistrationForm';
-export defaultault function CreateTalentProfile(): '
+import React from 'react;
+import { TalentRegistrationForm } from '@/components/profile/TalentRegistrationForm;
+export default function CreateTalentProfile(): '
   return (;
     <div className="bg-zion-blue min-h-screen py-8 md:py-12">;"
       <div className="container mx-auto px-4">;"
@@ -8,4 +8,4 @@ export defaultault function CreateTalentProfile(): '
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">;"
             Join Our Talent Network;"
           </h1>;"
-          <p className="text-zion-slate-light max-w-2xl mx-auto">;
+          <p className="text-zion-slate-light max-w-2xl mx-auto'>;';;

@@ -21,4 +21,4 @@ export function WaitlistSection(): '
       toast({'
         variant: 'destructive','
         title: 'Missing information','
-        description: 'Please fill all fields and agree to the terms.','
+        description: 'Please fill all fields and agree to the terms.','';;

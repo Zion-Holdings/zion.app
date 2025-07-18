@@ -1,1 +1,4 @@
-import type { NextApiRequest, NextApiResponse }  from 'next';
+// Module for cors
+export const cors = {
+  // TODO: Implement module functionality
+};

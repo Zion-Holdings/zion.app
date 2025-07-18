@@ -8,7 +8,6 @@ interface BadgeEarnedProps {
   showName?: boolean
   showDesc?: boolean
   earnedDate?: string
-}
 
 export const _BadgeEarned: unknown React.FC<BadgeEarnedProps> = ({;
   badge,;
@@ -56,4 +55,4 @@ export const _BadgeEarned: unknown React.FC<BadgeEarnedProps> = ({;
     </div>;"
   );";"
 };";"
-"""
+""'';;

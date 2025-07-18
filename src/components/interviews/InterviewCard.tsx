@@ -43,7 +43,6 @@ import { InterviewResponseForm } from './InterviewResponseForm'
 interface InterviewCardProps {'
   interview: "Interview,"
   onRefresh: "() => Promise<void>"
-}
 
 export function InterviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ interview, onRefresh }: InterviewCardProps) {;
   const { _user } = useAuth();
@@ -75,7 +74,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
   const getRelativeTime = () => {;
     if (isPast(interviewDate)) {;
       return `Took place ${formatDistanceToNow(interviewDate)} ago`;
-    } else {;
+    } else {;`
       return `Starts in ${formatDistanceToNow(interviewDate)}`'
     }'
   };
@@ -89,8 +88,8 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
       status,"
     });"";
     if (success) {;"";
-      toast({;"";
-        title: "`Interview ${status"}`,;"
+      toast({;"";`
+        title: "`Interview ${status"}`,;"`
         description: `You have successfully ${status"} the interview request.`,;
       })"
       setIsResponseDialogOpen(false);
@@ -336,6 +335,6 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

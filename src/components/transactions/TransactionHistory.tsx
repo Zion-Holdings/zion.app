@@ -49,7 +49,7 @@ interface Transaction {'
   cancelled_at?: string
   provider?: {
     display_name?: string
-  }
+
   service?: {;
     title?: string;
   };
@@ -96,9 +96,9 @@ export function TransactionHistory(): ;
           `'
           *,'
           provider: profiles!provider_id(display_name),"
-          service:services(title)"
+          service:services(title)"`
         `,;
-        );"
+        );"`
         .or(`user_id.eq.${user.id},provider_id.eq.${user.id}`)"
 
       if (filter === 'pending') {'
@@ -489,7 +489,7 @@ export function TransactionHistory(): ;
               No transactions found;
             </h3>"
             <p className="text-zion-slate-light max-w-md mx-auto>"
-              {filter !== 'all'
+              {filter !== 'all'`
                 ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.`;
                 : "You haven't made any transactions yet. Once you make a payment or receive one, it will appear here."}
             </p>;
@@ -497,9 +497,9 @@ export function TransactionHistory(): ;
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

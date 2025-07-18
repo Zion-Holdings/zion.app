@@ -1,4 +1,4 @@
-export {};
-declare global {;
-  interface BeforeInstallPromptEvent extends Event {;
-    readonly platforms: readonly string[];
+// Type definitions for pwa
+export interface pwa {
+  // TODO: Add proper type definitions
+}

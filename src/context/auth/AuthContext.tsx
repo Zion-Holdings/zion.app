@@ -7,4 +7,4 @@ import  type { AuthContextType }  from '@/types/auth'
 // default value so consumers still get some level of type safety.'
 export const _AuthContext = createContext<AuthContextType | undefined>('
   undefined,)'
-'''''
+'''''';;`

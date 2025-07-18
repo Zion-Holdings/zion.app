@@ -1,6 +1,4 @@
-import { supabase }  from '@/integrations/supabase/client;
-import type {';
-  CreateNotificationParams,'
-  CreateNotificationResult,;
-} from './types'
-import { logErrorToProduction }  from '@/utils/productionLogger';
+// Utility functions for createNotification
+export const createNotification = {
+  // TODO: Implement utility functions
+};

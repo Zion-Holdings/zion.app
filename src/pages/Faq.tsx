@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { FaqSection } from '@/components/FaqSection';
+import { FaqSection } from '@/components/FaqSection;
 '
-export defaultault function Faq(): ;
+export default function Faq(): ;
   return (;
     <>'
       <SEO;
@@ -22,4 +22,4 @@ export defaultault function Faq(): ;
 ;"
 Faq.displayName = 'Faq;
 
-}'
+}'';;

@@ -34,7 +34,7 @@ interface AIListingGeneratorProps {
     category?: string
     keyFeatures?: string
     targetAudience?: string
-  }
+
 };
 
 export function AIListingGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{
@@ -310,7 +310,6 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
   );";
 }";";
 
-}
 }"
 }"
-}"
+}'';;

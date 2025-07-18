@@ -1,4 +1,4 @@
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 export async function rewardOnboarding(): unknown {): unknown {): unknown {): unknown {): unknown {userId: string) {'
   try {;
     const res = await fetch('/functions/v1/token-manager/earn', {;
@@ -27,7 +27,7 @@ export async function rewardReferral(): unknown {): unknown {): unknown {): unkn
       body: JSON.stringify({ userId, amount: 20, reason: 'Referral' }),;
     })'
     if (!res.ok) {;
-      const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');`
       throw new Error(text || `Error ${res.status}`);
     }'
   } catch {;
@@ -43,7 +43,7 @@ export async function rewardFiveStarReview(): unknown {): unknown {): unknown {)
       body: JSON.stringify({ userId, amount: 10, reason: '5-star review' }),;
     })'
     if (!res.ok) {;
-      const text = await res.text().catch(() => '');
+      const text = await res.text().catch(() => '');`
       throw new Error(text || `Error ${res.status}`);
     }'
   } catch {;
@@ -56,4 +56,4 @@ export async function rewardFiveStarReview(): unknown {): unknown {): unknown {)
 }";
 };"
 };";"
-}";
+}';';;`

@@ -45,7 +45,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;""
                 formData.budget.type === 'fixed'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
               }`};
               onClick={() => handleBudgetTypeSelect('fixed')}'
             >'
@@ -55,11 +55,11 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               </p>
             </div>;""
 ;"
-            <div";"
+            <div";"`
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${";""
                 formData.budget.type === 'hourly'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
               }`};
               onClick={() => handleBudgetTypeSelect('hourly')}'
             >'
@@ -69,11 +69,11 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               </p>"
             </div>;"
 ;";"
-            <div;";"
+            <div;";"`
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;";"
                 formData.budget.type === 'range'
                   ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
               }`};
               onClick={() => handleBudgetTypeSelect('range')}'
             >'
@@ -199,4 +199,4 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
 }"";
 }"
 }"
-}"
+}'';;`

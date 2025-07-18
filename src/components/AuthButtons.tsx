@@ -8,7 +8,7 @@ type Provider = 'google' | 'github' | 'facebook' | 'credentials'
 
 interface AuthButtonsProps {'
   providers?: Provider[]'
-}
+
 '
 export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   providers = ['google', 'github', 'facebook', 'credentials'],'
@@ -22,7 +22,7 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
 '
   const gridCols: `grid-cols-${providers.length}`;"
 ";
-  return (;
+  return (;`
     <div className={`mt-6 grid ${gridCols} gap-3`}>;
       {providers.includes('google') && ('
         <Button'
@@ -118,7 +118,6 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
   );";
 }";";
 
-}
 }"
 }"
-}"
+}'';;`

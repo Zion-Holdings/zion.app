@@ -10,7 +10,6 @@ interface ResumePreviewCardProps {'
   resume: Resume
   onDownload: () => void,"
   isLoading: boolean"
-}
 
 export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resume,"
@@ -76,5 +75,5 @@ export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown
 ;""
 };"
 }"
-}
-}"
+
+}'';;

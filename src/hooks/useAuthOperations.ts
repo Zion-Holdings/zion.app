@@ -9,7 +9,7 @@ import { toast } from '@/hooks/use-toast'
 import { showApiError } from '@/utils/apiErrorHandler'
 import { trackReferral, checkUrlForReferralCode } from '@/utils/referralUtils'
 import { cleanupAuthState } from '@/utils/authUtils'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 '
 interface EthereumProvider {'
   request: "(args: { method: string; params?: unknown[] }) => Promise<unknown>
@@ -92,7 +92,7 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
           data: "null"
           error: error instanceof Error ? error.message : String(error),
         };
-      }
+
 ;""
       // Add this after successful signup;
       if (
@@ -145,7 +145,7 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
       };
 '
       toast({'
-        title: 'Signup successful!','
+        title: 'Signup successful!','`
         description: `Welcome, ${display_name}! Please check your email to verify your account.`,
       });"
 "
@@ -197,13 +197,13 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
     } finally {;
       setIsLoading(false);
     };
-  }
+
 ;"
   const resetPassword = async (_email: string) => {;"
     setIsLoading(true)
     try {;
       if (!supabase) throw new Error('Supabase client not initialized')'
-      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.auth.resetPasswordForEmail(email, {'
+      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.auth.resetPasswordForEmail(email, {'`
         redirectTo: "`${window.location.origin"}/update-password`,
       });"
 ;"
@@ -220,7 +220,7 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
       };"
 "
       toast({;
-        title: 'Password reset email sent!','
+        title: 'Password reset email sent!','`
         description: `Please check your email (${email"}) for instructions on how to reset your password.`,"
       });
 
@@ -231,4 +231,4 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
         title: 'Oh no! Something went wrong.','
         description: error instanceof Error ? error.message : String(error),;"
       })
-      return { data: null, error: 'Failed to send reset password email.' }'
+      return { data: null, error: 'Failed to send reset password email.' }'';;`

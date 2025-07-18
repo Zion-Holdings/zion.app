@@ -8,7 +8,6 @@ interface ConversationItemProps {'
   conversation: "Conversation,"
   isActive: boolean,""
   onClick: () => void""
-}
 
 export function ConversationItem(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversation,;
@@ -66,6 +65,6 @@ export function ConversationItem(): unknown {): unknown {): unknown {): unknown 
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

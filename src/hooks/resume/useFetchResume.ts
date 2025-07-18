@@ -37,4 +37,4 @@ export function useFetchResume(): ;
         await resumeQuery.single();"
 
       if (resumeError) {;
-        if (resumeError.code === 'PGRST116') {'
+        if (resumeError.code === 'PGRST116') {'';;

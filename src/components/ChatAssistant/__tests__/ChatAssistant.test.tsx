@@ -158,7 +158,7 @@ describe('ChatAssistant', () => {'
         />,"
         { providerProps: "authProviderProps },;""
       );""
-;
+
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement'
 '
       fireEvent.change(chatInput, { target: { value: 'Message 1' } })'
@@ -423,7 +423,7 @@ describe('ChatAssistant', () => {'
       // The component's useEffect for initialMessages should then overwrite this'
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {'
         // initialMessages prop takes precedence logic is handled inside ChatAssistant's useEffect'
-        // This mock just needs to provide a value and a setter.'
+        // This mock just needs to provide a value and a setter.'`
         // The key part is what `storedGuestMessages` is initially.;
         const [val, setVal] = React.useState<Message[]>(messagesFromStorage)'
         const setAndPersist: (",;
@@ -458,4 +458,4 @@ describe('ChatAssistant', () => {'
     })'
   });
 })'
-'''''
+'''''';;`

@@ -26,7 +26,6 @@ interface ApplicationsTableProps {'
   onViewApplication: (applicationId: string) => Promise<void>","
   onStatusChange: (applicationId: string, newStatus: string) => Promise<void>,""
   onViewScore: (application: JobApplication) => void""
-}
 
 // Sub-component for avatar to handle its own error state;"
 const ApplicationAvatar = ({;";
@@ -174,4 +173,4 @@ export function ApplicationsTable(): unknown {): unknown {): unknown {): unknown
 }"";
 }"
 }"
-}"
+}'';;

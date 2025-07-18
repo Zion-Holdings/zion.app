@@ -45,7 +45,7 @@ export function ClickableBadge(): unknown {): unknown {): unknown {): unknown {)
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

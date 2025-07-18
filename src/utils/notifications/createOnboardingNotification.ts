@@ -1,8 +1,8 @@
 import { createNotification } from './createNotification'
 import  type { OnboardingNotificationParams }  from './types;
-/**';
- * Creates an onboarding notification for a user';
- */;';
+/**;
+ * Creates an onboarding notification for a user;
+ */;;
 export async function createOnboardingNotification(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   userId,;
   missingMilestone,;
@@ -12,7 +12,7 @@ export async function createOnboardingNotification(): unknown {): unknown {): un
   let message = 
   let actionUrl = 
   let actionText = '
-;
+
   if (userRole === 'talent') {'
     switch (missingMilestone) {;
       case 'profile_completed':;
@@ -72,4 +72,4 @@ export async function createOnboardingNotification(): unknown {): unknown {): un
 }"
 }";"
 }"
-}"
+}'';;

@@ -15,7 +15,7 @@ interface ChatWidgetProps {'
   recipientId: "string,"
   isOpen: boolean,
   onClose: () => void""
-}
+
 "
 export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): unknown {{ roomId, recipientId, isOpen, onClose }: ChatWidgetProps) {;";
   const { user } = useAuth()";";
@@ -132,7 +132,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
   // Persist messages whenever they change while open;
   useEffect(() => {'
     if (!isOpen) return'
-    try {;
+    try {;`
       safeStorage.setItem(`chat-widget-${roomId} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, JSON.stringify(messages))'
     } catch (error) {'
       console.warn('ChatWidget: failed to save history', error)'
@@ -262,10 +262,10 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
 ";";
 
 };""
-}
+
 };""
-}
+
 }"
 }"
-}
-}"
+
+}'';;`

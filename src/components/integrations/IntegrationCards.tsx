@@ -24,7 +24,7 @@ interface IntegrationCardProps {'
   status?: 'connected' | 'disconnected' | 'pending'
   href?: string
   onConnect?: () => void
-}
+
 '
 export function IntegrationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   title,;
@@ -117,8 +117,8 @@ export function IntegrationCards(): ;";"
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

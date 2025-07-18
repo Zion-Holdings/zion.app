@@ -14,7 +14,6 @@ interface HireRequestModalProps {'
   isOpen: boolean,"
   onClose: () => void
   userDetails?: UserProfile
-}
 
 export function HireRequestModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -55,7 +54,7 @@ export function HireRequestModal(): unknown {): unknown {): unknown {): unknown 
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

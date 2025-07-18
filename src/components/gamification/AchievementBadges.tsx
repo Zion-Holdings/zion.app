@@ -10,7 +10,6 @@ export interface Achievement {'
 ";"
 interface AchievementBadgesProps {"""
   achievements: Achievement[]"
-}
 
 export function AchievementBadges(): unknown {): unknown {): unknown {): unknown {): unknown {{ achievements }: AchievementBadgesProps) {;
   return ("
@@ -36,5 +35,5 @@ export function AchievementBadges(): unknown {): unknown {): unknown {): unknown
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

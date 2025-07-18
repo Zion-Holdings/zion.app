@@ -83,5 +83,5 @@ export const AvatarMenu: unknown React.FC = () => {'
   )
 };"
 ;";
-export defaultault AvatarMenu";";
-"""
+export default AvatarMenu";";
+""'';;

@@ -20,7 +20,7 @@ export interface MobileMenuProps {'
   unreadCount?: number'
   onClose: "() => void,"
   openLoginModal: "(returnToPath: string) => void // Added from plan"
-}
+
 ""
 // Define protected routes - consistent with ResponsiveNavigation.tsx and middleware.ts;"
 // These are routes that should trigger the login modal if accessed while unauthenticated.";"
@@ -179,5 +179,5 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
 }"
 }"
 }"
-}
-}"
+
+}'';;`

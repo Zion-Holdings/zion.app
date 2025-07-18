@@ -108,7 +108,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
                           ? 'Professional Videographer with 5+ years experience'
                           : userType === 'talent'
                             ? 'Senior Motion Designer specialized in 3D Animation'
-                            : 'Creative Director at XYZ Studios'}
+                            : 'Creative Director at XYZ Studios'}`
                       }`};
                       className=bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                       {...(field as object)}"
@@ -128,13 +128,13 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
               <FormItem>;"
                 <FormLabel className="text-zion-slate-light>Bio</FormLabel>"
                 <FormControl>;"
-                  <Textarea"
+                  <Textarea"`
                     placeholder={`Tell us about your ${;
                       userType === 'serviceProvider'
                         ? 'services and expertise'
                         : userType === 'talent'
                           ? 'skills and experience'
-                          : 'business and needs'}
+                          : 'business and needs'}`
                     }`};
                     className=bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple min-h-[120px]"
                     {...(field as object)}"
@@ -155,9 +155,8 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
       </Form>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

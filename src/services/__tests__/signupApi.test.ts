@@ -1,13 +1,13 @@
 import { signup } from '../signupApi'
-import axios from 'axios';
+import axios from 'axios;
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>'
-;
+
 describe('signup service', () => {'
   afterEach(() => {;
     jest.resetAllMocks();
   })'
-;
+
   test('returns data on 201 response', async () => {'
     mockedAxios.post.mockResolvedValueOnce({;
       status: "201"
@@ -21,7 +21,7 @@ describe('signup service', () => {'
       password: 'pass',;
     });
   })'
-;
+
   test('throws on 400 response', async () => {'
     mockedAxios.post.mockResolvedValueOnce({;
       status: "400"
@@ -31,7 +31,7 @@ describe('signup service', () => {'
       'bad',;
     );
   })'
-;
+
   test('throws on 409 response', async () => {'
     mockedAxios.post.mockResolvedValueOnce({;
       status: "409"
@@ -41,7 +41,7 @@ describe('signup service', () => {'
       'Email already exists',;
     );
   })'
-;
+
   test('throws on network error', async () => {;
     mockedAxios.post.mockRejectedValueOnce(new Error('server down'));
     await expect(signup({ email: 'a@b.c', password: 'pass' })).rejects.toThrow(;
@@ -49,4 +49,4 @@ describe('signup service', () => {'
     );
   });
 })'
-'''''
+'''''';;

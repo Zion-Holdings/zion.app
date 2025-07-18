@@ -11,7 +11,6 @@ interface FeatureUsageChartProps {'
   data: "Array<Record<string, unknown>>""
   timeRange: string,""
   onTimeRangeChange: (range: string) => void""
-}
 
 export function FeatureUsageChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   data,;
@@ -56,4 +55,4 @@ export function FeatureUsageChart(): unknown {): unknown {): unknown {): unknown
 }";
 }""
 }"
-}"
+}'';;

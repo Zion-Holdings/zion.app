@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { ChatAssistant } from '@/components/ChatAssistant'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export defaultault function FounderBot(): ';
+export default function FounderBot(): ;
   const [open, setOpen] = useState(false)'
-;
+
   const handleSendMessage = async (message: string): Promise<void> => {;
     try {'
       await fetch(;
@@ -29,7 +29,7 @@ export defaultault function FounderBot(): ';
       );
     };
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -50,4 +50,4 @@ export defaultault function FounderBot(): ';
               id: 'founder-bot',;
               name: 'Founder AI',;
               avatarUrl: 'https://placehold.co/64x64?text=F',;
-              role: 'Zion Founder Clone',;
+              role: 'Zion Founder Clone',;';;

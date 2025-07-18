@@ -24,6 +24,6 @@ export function ResultsHeader(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

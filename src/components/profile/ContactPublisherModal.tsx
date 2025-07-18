@@ -161,7 +161,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
                     <FormItem>"
                       <FormLabel>Message</FormLabel>;
                       <FormControl>;"
-                        <Textarea"
+                        <Textarea"`
                           placeholder={`Message to ${publisherName}...`};
                           className=bg-zion-blue border-zion-blue-light text-white min-h-[120px]"
                           {...(typeof field === 'object' && field !== null'
@@ -192,6 +192,6 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

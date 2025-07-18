@@ -19,6 +19,6 @@ export function SidebarGroup(): unknown {): unknown {): unknown {): unknown {): 
 };
 
 }'
-}
+
 }'
-}'
+}'';;

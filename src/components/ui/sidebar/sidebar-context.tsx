@@ -28,7 +28,7 @@ export interface SidebarProviderProps extends React.ComponentProps<'div'> {'
   defaultOpen?: boolean'
   open?: boolean'
   onOpenChange?: (open: "boolean) => void
-}
+
 export const SidebarProvider = React.forwardRef<;
   HTMLDivElement,;
   SidebarProviderProps"
@@ -144,6 +144,6 @@ SidebarProvider.displayName = 'SidebarProvider'
 export { SidebarContext };
 
 }'
-}
+
 }'
-}'
+}'';;`

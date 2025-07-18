@@ -5,7 +5,6 @@ interface PerformanceData {'
   totalListings: number,""
   avgResponseTime: string","
   conversionRate: string"
-}
 
 const DataSync: unknown React.FC = () => {;
   // Replace placeholderData with real API call;
@@ -66,5 +65,5 @@ const DataSync: unknown React.FC = () => {;
   )
 };""
 ;"
-export defaultault DataSync";"
-"""
+export default DataSync";"
+""'';;

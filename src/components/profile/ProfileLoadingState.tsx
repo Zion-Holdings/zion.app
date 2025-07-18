@@ -8,9 +8,9 @@ export function ProfileLoadingState(): '
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

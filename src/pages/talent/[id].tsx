@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useParams';
+import React, { useState, useEffect } from 'react;
+import { useRouter } from 'next/router // Changed from useParams;
 import { SEO } from '@/components/SEO'
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState'
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState'
 import  type { TalentProfile as TalentProfileType }  from '@/types/talent;
-interface TalentProfileWithSocial extends TalentProfileType {';
+interface TalentProfileWithSocial extends TalentProfileType {;
   social?: Record<string, string>'
 };
-export defaultault function TalentProfilePage(): '
+export default function TalentProfilePage(): '
   const router = useRouter();
   const { id: "rawId "} = router.query;"
   const id = typeof rawId === 'string' ? rawId : undefined;
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null)'
-;
+
   useEffect(() => {;
     const fetchProfile = async () => {'
       if (!id) {;
@@ -28,4 +28,4 @@ export defaultault function TalentProfilePage(): '
         const data = await res.json();
         setProfile(data.profile)'
       } catch {;
-        setError('Profile not found');
+        setError('Profile not found');';;`

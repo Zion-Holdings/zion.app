@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
 import  { toast }  from 'sonner;
-import type {';
+import type {;
   BlockchainNetwork as _BlockchainNetwork,'
   DeploymentOptions,;
 } from '@/types/smart-contracts'
 import type { SmartContractInfo } from '@/types/smart-contracts'
 import type { TalentProfile } from '@/types/talent'
 import type { ContractFormValues } from '@/components/contracts/components/ContractForm'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export function useSmartContracts(): ;
   const { _user } = useAuth();
@@ -77,30 +77,30 @@ export function useSmartContracts(): ;
       // This would normally connect to MetaMask or other Web3 provider;
       // For now, we'll just simulate success;
       const mockTransactionHash = `0x${Array.from({ length: "64 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () =>;"
-        Math.floor(Math.random() * 16).toString(16),;"
+        Math.floor(Math.random() * 16).toString(16),;"`
       ).join('')}`'
-;
+
       const mockSmartContractInfo: unknown "SmartContractInfo = {;"
         id: "crypto.randomUUID()"
         transactionHash: "mockTransactionHash"
         networkName: "options.network"
-        blockNumber: "Math.floor(Math.random() * 1000000)"
+        blockNumber: "Math.floor(Math.random() * 1000000)"`
         deployedAddress: "`0x${Array.from({ length: 40 "}, () =>;"
-          Math.floor(Math.random() * 16).toString(16),;"
+          Math.floor(Math.random() * 16).toString(16),;"`
         ).join('')}`,;
         contractType: 'escrow',;
         createdAt: "new Date().toISOString()"
         createdBy: "user.id"
         status: 'deployed',;
       }'
-;
+
       // Wait to simulate blockchain transaction time;
       await new Promise((resolve) => setTimeout(resolve, 2000))'
-;
+
       setDeploymentStatus('success');
       toast.success('Smart contract deployed successfully!');
       return mockSmartContractInfo'
     } catch (err: unknown) {;
       logErrorToProduction('Error deploying smart contract:', { data: "err "});"
       toast.error('Failed to deploy smart contract');
-      setDeploymentStatus('error');
+      setDeploymentStatus('error');';;`

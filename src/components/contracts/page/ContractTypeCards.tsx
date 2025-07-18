@@ -12,7 +12,6 @@ import {;
 interface ContractTypeCardsProps {'
   onStandardClick: "() => void,"
   onSmartClick: "() => void"
-}
 
 export function ContractTypeCards(): unknown {): unknown {): unknown {): unknown {): unknown {{
   onStandardClick,;""
@@ -85,4 +84,4 @@ export function ContractTypeCards(): unknown {): unknown {): unknown {): unknown
 }";
 }""
 }"
-}"
+}'';;

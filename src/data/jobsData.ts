@@ -1,4 +1,4 @@
-import type { Job } from '@/types/jobs';
+import type { Job } from '@/types/jobs;
 export const JOB_POSTS: unknown Job[] = ['
   {'
     id: 'job-1','
@@ -30,4 +30,4 @@ export const JOB_POSTS: unknown Job[] = ['
     updated_at: '2024-05-05','
   },;
 ]'
-'''''
+'''''';;

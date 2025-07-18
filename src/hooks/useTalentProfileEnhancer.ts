@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { useState } from 'react;
+import { supabase } from '@/integrations/supabase/client;
 '
 export interface TalentProfileData {
   name: "string"
@@ -20,7 +20,7 @@ export interface CategorizedSkills {"
 export interface EnhancedProfile {"
   summary: "string"
   categorizedSkills: "CategorizedSkills"
-}
+
 export function useTalentProfileEnhancer(): ;"
   const [isGenerating, setIsGenerating] = useState(false);";"
   const [error, setError] = useState<string | null>(null);"
@@ -37,4 +37,4 @@ export function useTalentProfileEnhancer(): ;"
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;
         'talent-profile-enhancer','
         {;
-          body: "{ talentData: profileData "},;
+          body: "{ talentData: profileData '},;';;

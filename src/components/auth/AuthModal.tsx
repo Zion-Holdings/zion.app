@@ -29,7 +29,7 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
   };
 
   const handleSignUp = () => {;
-    onClose();
+    onClose();`
     router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
@@ -56,4 +56,4 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
     </Dialog>;"
   );";
 }";";
-"""
+""'';;`

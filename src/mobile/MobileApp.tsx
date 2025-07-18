@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import { MobileThemeProvider } from './theme/MobileThemeProvider'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { useCart } from '@/context/CartContext'
 import { logInfo } from '@/utils/productionLogger'
-;
+
 const CartContextTester = () => {;
   try {'
     const cart = useCart();
@@ -18,4 +18,4 @@ const CartContextTester = () => {;
           left: '10px',;
           backgroundColor: 'lightgreen',;
           padding: '5px',;
-          zIndex: 9999,;
+          zIndex: 9999,;';;

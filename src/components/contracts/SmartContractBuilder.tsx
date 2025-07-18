@@ -28,7 +28,6 @@ interface SmartContractBuilderProps {'
   talent: TalentProfile","
   clientName: string"
   onContractGenerated?: (contractContent: string) => void"
-}
 
 export function SmartContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
@@ -192,4 +191,4 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
 }"";
 }"
 }"
-}"
+}'';;

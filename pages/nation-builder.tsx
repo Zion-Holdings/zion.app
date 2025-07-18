@@ -1,2 +1,21 @@
-export { default } from '@/pages/NationBuilder';;';''
-''''''
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const NationBuilder: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>NationBuilder - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">NationBuilder</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* NationBuilder content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default NationBuilder;

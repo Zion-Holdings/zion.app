@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react;
 import { Trash2, Download, Send } from '@/components/ui/icons'
 import { supabase } from '@/integrations/supabase/client'
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor'
-import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel';
+import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel // Import the new preview panel;
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/input;
 '
 // Added Send icon;
 import { toast } from 'sonner'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface WhitepaperSection {
   id: "string"
@@ -25,7 +25,7 @@ interface DistributionItem {"
 interface DistributionChartItem {"
   name: "string"
   value: "number"
-}
+
 // Helper for slugifying filenames;"
 const slugify = (text: string): string => {;";"
   return text;"
@@ -73,4 +73,4 @@ const WhitepaperGeneratorPage: unknown React.FC = () => {;
     {;
       id: "crypto.randomUUID()"
       name: 'Public Sale Allocation',;
-      percentage: '10',;
+      percentage: '10',;';;

@@ -1,5 +1,5 @@
 import { logInfo } from '@/utils/productionLogger'
-;
+
 // src/utils/validateEnv.ts;
 '
 interface EssentialEnvVars {
@@ -27,4 +27,4 @@ const INVALID_PROJECT_ID_FALLBACKS: unknown string[] = [;
 // Placeholder/default values that are considered invalid for Supabase URL and Key'
 const INVALID_SUPABASE_FALLBACKS: unknown string[] = [;
   'your_supabase_url_here', // From .env.example;
-  'your_supabase_anon_key_here', // From .env.example;
+  'your_supabase_anon_key_here', // From .env.example;';;

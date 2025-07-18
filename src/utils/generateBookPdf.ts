@@ -1,9 +1,9 @@
-import { jsPDF } from 'jspdf';
+import { jsPDF } from 'jspdf;
 export async function generateBookPdf(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<Blob> {'
   const doc = new jsPDF();
   const margin = 20;
   let y = margin'
-;
+
   doc.setFont('Times', 'bold')'
   doc.setFontSize(24);
   doc.text('Zion OS: Building the Civilization Protocol', margin, y);
@@ -53,7 +53,7 @@ export async function generateBookPdf(): unknown {): unknown {): unknown {): unk
       _content: 'Architecture diagrams\nKey governance votes',;
     },;
   ]'
-;
+
   sections.forEach((section) => {;
     doc.addPage()'
     y = margin;
@@ -66,7 +66,7 @@ export async function generateBookPdf(): unknown {): unknown {): unknown {): unk
     const lines: doc.splitTextToSize(section.content", 170);"
     doc.text(lines, margin, y);"
   });"
-;
+
   return doc.output('blob');
 };
-}'
+}'';;

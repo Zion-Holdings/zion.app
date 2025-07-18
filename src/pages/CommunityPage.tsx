@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react;
 import { useRouter } from 'next/router'
 import CreatePostButton from '@/components/community/CreatePostButton'
 import { LoginModal } from '@/components/auth/LoginModal'
@@ -13,11 +13,11 @@ import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus
 import { useCommunity } from '@/context'
 import type { ForumCategory } from '@/types/community'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { logInfo } from '@/utils/productionLogger';
+import { logInfo } from '@/utils/productionLogger;
 '
-export defaultault function CommunityPage(): ;
+export default function CommunityPage(): ;
   logInfo('CommunityPage rendering');
   const { user, loading } = useRequireAuth()'
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState('categories');
-  const router = useRouter();
+  const router = useRouter();';;

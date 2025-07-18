@@ -48,7 +48,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
       {email && (;"
         <div className="mb-4 text-zion-slate-light>"
           <span className="block">Email: </span>
-          <a;
+          <a;`
             href={`mailto: "${email"}`}
             className=text-zion-cyan hover:underline truncate block""
           >;
@@ -69,7 +69,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
             />;
           </div>;"
           <div>"
-            <Textarea;"
+            <Textarea;"`
               placeholder={`Message to ${profileName}...`};
               value={message}"
               onChange={(e) => setMessage(e.target.value)};"
@@ -92,6 +92,6 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

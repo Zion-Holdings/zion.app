@@ -24,6 +24,6 @@ function Badge(): unknown {): unknown {): unknown {): unknown {): unknown {{ cla
 export { Badge, badgeVariants };
 
 }'
-}
+
 }'
-}'
+}'';;

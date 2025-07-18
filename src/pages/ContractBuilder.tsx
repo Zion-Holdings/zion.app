@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react;
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { ContractBuilderContent } from '@/components/contracts/page/ContractBuilderContent';
+import { ContractBuilderContent } from '@/components/contracts/page/ContractBuilderContent;
 function ContractBuilderPage(): '
   return (;
     <ProtectedRoute>;
@@ -11,4 +11,4 @@ function ContractBuilderPage(): '
           description="Create and deploy blockchain-backed smart contracts for your projects"
         />;"
 ;"
-        <main className="container mx-auto py-10 px-4">;
+        <main className="container mx-auto py-10 px-4'>;';;

@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils'
 
 interface NavigationProps {
   className?: string
-}
 
 export function Navigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: NavigationProps) {'
   const router = useRouter()'
@@ -95,6 +94,6 @@ export function Navigation(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;

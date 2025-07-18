@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router // Changed from useNavigate';
+import { useRouter } from 'next/router // Changed from useNavigate;
 import { useQuery } from '@tanstack/react-query'
-import { useEffect } from 'react';
+import { useEffect } from 'react;
 import ProductCard from '@/components/ProductCard'
 import type { Product } from '@/services/marketplace'
-import { showError } from '@/utils/showToast';
+import { showError } from '@/utils/showToast;
 '
 async function fetchProducts(): ;
   const res = await fetch('/api/products?limit=20')'
@@ -12,8 +12,8 @@ async function fetchProducts(): ;
   };
   return res.json() as Promise<Product[]>;
 }'
-;
-export defaultault function MarketplaceLanding(): ;
+
+export default function MarketplaceLanding(): ;
   const router = useRouter(); // Changed from navigate'
   const {;
     data: products = [],;"
@@ -42,4 +42,4 @@ export defaultault function MarketplaceLanding(): ;
   return (;"
     <div className="container py-8">;"
       <h1 className="text-3xl font-bold mb-6">Marketplace</h1>;"
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>;';;

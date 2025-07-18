@@ -1,7 +1,7 @@
 import { CategoryCard } from '@/components/CategoryCard'
 import { Users } from '@/components/ui/icons'
 import { GradientHeading } from '@/components/GradientHeading'
-import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary';
+import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;
 '
 // Reusing the categories array from CategoriesSection.tsx;
 // Ideally, this would come from a shared data source or API;
@@ -36,7 +36,7 @@ const categories = ['
   },;"
 ];";"
 ;"
-export defaultault function AllCategoriesPage(): ;"
+export default function AllCategoriesPage(): ;"
   return (;"
     <div className="min-h-screen bg-zion-blue">;"
       <div className="container mx-auto px-4 py-12">;"
@@ -64,4 +64,4 @@ export defaultault function AllCategoriesPage(): ;"
                 icon={category.icon};"
                 // The CategoryCard itself is a Link to its specific category page;"
                 // So we don't pass the category.link to a 'to' prop here directly;
-                // The 'link' in the categories array above is used by CategoryCard's internal Link;
+                // The 'link' in the categories array above is used by CategoryCard's internal Link;';;

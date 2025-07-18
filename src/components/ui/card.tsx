@@ -114,4 +114,4 @@ export {;
   CardContent,'
   cardVariants,;
 }'
-'''''
+'''''';;

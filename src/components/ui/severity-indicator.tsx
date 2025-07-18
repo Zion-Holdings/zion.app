@@ -8,7 +8,7 @@ interface SeverityIndicatorProps {'
   showText?: boolean'
   size?: 'sm' | 'md' | 'lg'
   className?: string
-}
+
 '
 export function SeverityIndicator(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   severity,;
@@ -55,9 +55,9 @@ export function SeverityIndicator(): unknown {): unknown {): unknown {): unknown
       {showText && <span className="capitalize text-sm>{severity}</span>}"
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

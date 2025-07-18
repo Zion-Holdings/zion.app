@@ -10,4 +10,4 @@ export { ApplicationActions } from './ApplicationActions'
 export { ApplicationCard } from './ApplicationCard'
 export { ApplicationProgress } from './ApplicationProgress'
 export { ApplicationRow } from './ApplicationRow'
-'''''
+'''''';;

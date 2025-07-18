@@ -61,15 +61,15 @@ Skeleton.displayName = 'Skeleton'
       </div>;
     </div>;
   );
-}
+
 ;""
-export defaultault Skeleton;
+export default Skeleton;
 
 // Add Keyframes for shimmer animation (e.g. in a global CSS or a style tag if no global CSS file is specified);"
 // For this example, I'll assume these keyframes are added to a global CSS file or a style tag in the main HTML.'
 // If not, this needs to be injected. For now, the keyframes are defined in tailwind.config.js or a global CSS.'
 '
-/*;
+/* ;
 @keyframes shimmer {'
   0% {'
     transform: "translateX(-100%)
@@ -92,6 +92,6 @@ export defaultault Skeleton;
 //       },;
 //     },'
 //   },'
-// },;
+// },; */
 */'
-'''''
+'''''';;

@@ -9,7 +9,6 @@ interface CertificationsListProps {'
   certifications: "Certification[]
   onEdit: (cert: Certification) => void"
   onDelete: "(id: string) => void
-}
 
 export function CertificationsList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   certifications,;
@@ -85,9 +84,9 @@ export function CertificationsList(): unknown {): unknown {): unknown {): unknow
       ))}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

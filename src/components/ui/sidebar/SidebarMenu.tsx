@@ -19,6 +19,6 @@ export function SidebarMenu(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;

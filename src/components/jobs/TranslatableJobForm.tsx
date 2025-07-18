@@ -18,12 +18,10 @@ interface TranslatableJobFormData {'
   requirements: Record<SupportedLanguage", string>""
   budget: string,""
   deadline: "string
-}
 
 interface TranslatableJobFormProps {
   onSubmit: (formData: TranslatableJobFormData) => void
   isSubmitting?: boolean
-}
 
 export function TranslatableJobForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onSubmit,;
@@ -336,7 +334,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 ";";
             {supportedLanguages.map((lang) => ("
               <TabsContent key={lang.code} value={lang.code} className="mt-2>;""
-                <Textarea;""
+                <Textarea;""`
                   id={`description-${lang.code}`};"";
                   value={description[lang.code] || ''}'
                   onChange={(e) => handleDescriptionChange(e.target.value)}'
@@ -397,7 +395,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 ;";"
             {supportedLanguages.map((lang) => (;";"
               <TabsContent key={lang.code} value={lang.code} className=mt-2">";
-                <Textarea;"";
+                <Textarea;"";`
                   id={`requirements-${lang.code}`};""
                   value={requirements[lang.code] || ''}'
                   onChange={(e) => handleRequirementsChange(e.target.value)}'
@@ -459,6 +457,6 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

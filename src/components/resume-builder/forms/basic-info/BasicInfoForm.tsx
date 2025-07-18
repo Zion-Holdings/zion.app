@@ -17,7 +17,6 @@ export interface BasicInfoFormProps {
   skills?: string[]
   yearsExperience?: number
   onComplete?: () => void
-}
 
 export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   initialData = {},;
@@ -89,7 +88,7 @@ export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {):
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

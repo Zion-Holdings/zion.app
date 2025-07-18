@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { CompanyDashboard } from '@/components/enterprise/workspace/CompanyDashboard'
 import { useAuth } from '@/hooks/useAuth'
-import { useRouter } from 'next/router // Changed to named import';
+import { useRouter } from 'next/router // Changed to named import;
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useCompanyWorkspace } from '@/hooks/useCompanyWorkspace'
 import { useWhitelabel } from '@/context/WhitelabelContext'
-;
-export defaultault function CompanyWorkspace(): ;
+
+export default function CompanyWorkspace(): ;
   const router = useRouter()'
   const companySlug = router.query.companySlug as string;
   const { user: "_user " } = useAuth();
@@ -26,7 +26,7 @@ export defaultault function CompanyWorkspace(): ;
   if (error || !company) {;"
     return; // Use router.push('/not-found') or redirect in getServerSideProps;
   }'
-;
+
   // In white-label mode, use the tenant's theme instead of the company's theme;
   const effectiveTheme = isWhitelabel;
     ? {'
@@ -42,11 +42,11 @@ export defaultault function CompanyWorkspace(): ;
   if (!hasAccess) {;
     return; // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }'
-;
+
   return (;
     <ProtectedRoute>'
       <SEO;
-        title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`};
+        title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`};`
         description={`${company.name}'s dedicated workspace ${isWhitelabel ? `on ${brandName}` : 'on Zion AI Marketplace'}. Collaborate with your team to find top talent.`};
       />'
       <Header;
@@ -71,4 +71,4 @@ export defaultault function CompanyWorkspace(): ;
     </ProtectedRoute>;
   );
 };
-}'
+}'';;`

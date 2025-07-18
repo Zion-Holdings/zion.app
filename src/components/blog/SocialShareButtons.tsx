@@ -17,7 +17,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
   const shareUrl: unknown =;"
     typeof window !== 'undefined'
       ? encodeURIComponent(window.location.href);
-      : 
+
   const shareText = encodeURIComponent(title);
 
   const shareToTwitter = () => {'
@@ -28,14 +28,14 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
   }'
 
   const shareToFacebook = () => {'
-    window.open('
+    window.open('`
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl}`,;"";
       '_blank','
     )'
   }'
 
   const shareToLinkedIn = () => {'
-    window.open('
+    window.open('`
       `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;"
       '_blank','
     )'
@@ -91,5 +91,5 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

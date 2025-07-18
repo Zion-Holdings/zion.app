@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react;
 '
 interface UndoRedoState<T> {;
   past: "T[];"
@@ -56,4 +56,4 @@ export function useUndoRedo<T>(initial: T) {;"
     canRedo,;";"
   };"
 };"
-"""""
+""""'';;

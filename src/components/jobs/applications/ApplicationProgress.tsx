@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils'
 interface ApplicationProgressProps {
   status: ApplicationStatus
   className?: string
-}
 
 export function ApplicationProgress(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   status,;
@@ -99,7 +98,7 @@ function StatusIcon(): unknown {): unknown {): unknown {): unknown {): unknown {
 }"
 };"
 }"
-}
+
 }"
-}
-}"
+
+}'';;

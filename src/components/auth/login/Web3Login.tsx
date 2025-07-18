@@ -53,13 +53,13 @@ export function Web3Login(): ;
       logErrorToProduction('Web3 login error:', { data: error "})"
     } finally {;
       setIsLoading(false);
-    }
+
   };"
 ;";
   const buttonDisabled = isLoading || !isWalletSystemAvailable";";
   const buttonTitle = !isWalletSystemAvailable"
     ? 'Web3 login is currently unavailable. Please ensure your Reown Project ID is configured.'
-    : 
+
 '
   let buttonContent'
   if (!isWalletSystemAvailable) {;
@@ -119,4 +119,4 @@ export function Web3Login(): ;
 }";
 }""
 }"
-}"
+}'';;

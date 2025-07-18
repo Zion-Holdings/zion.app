@@ -7,7 +7,6 @@ interface MobileFilterDrawerProps {'
   isMobileFilterOpen: "boolean
   setIsMobileFilterOpen: (isOpen: boolean) => void"
   filterProps: "FilterSidebarProps
-}
 
 export function MobileFilterDrawer(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isMobileFilterOpen,;
@@ -26,7 +25,6 @@ export function MobileFilterDrawer(): unknown {): unknown {): unknown {): unknow
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

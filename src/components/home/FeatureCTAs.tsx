@@ -31,7 +31,7 @@ import { cn } from '@/lib/utils'
 interface FeatureCTAsProps {
   className?: string
   style?: React.CSSProperties
-}
+
 '
 export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: FeatureCTAsProps) {'
   const { t } = useTranslation();
@@ -177,18 +177,18 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
                     </Badge>;";
                   )}";";
                 </div>"
-                <CardTitle className="mt-4>;"
+                <CardTitle className="mt-4>;"`
                   {t(`features.${feature.key}`)}";
                 </CardTitle>;"";
                 {feature.descriptionKey && (;""
-                  <CardDescription className="line-clamp-2>
+                  <CardDescription className="line-clamp-2>`
                     {t(`features.${feature.descriptionKey}`)}`"
                   </CardDescription>"
                 )};"
               </CardHeader>;";"
               <CardContent>;";"
                 {feature.detailsKey && (;";"
-                  <p className=text-sm text-muted-foreground">"
+                  <p className=text-sm text-muted-foreground">"`
                     {t(`features.${feature.detailsKey}`)}
                   </p>;"
                 )};";
@@ -196,14 +196,14 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
               <CardFooter>"
                 <Button asChild className="w-full gap-1>;""
                   <Link;""
-                    href={feature.link};"";
+                    href={feature.link};"";`
                     aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`};
                     className=cursor-pointer"""
                     {...(feature.key === 'ai_talent_matching' && {'
                       'data-testid': 'explore-ai-talent-matching-cta','
                     })};
                   >'
-                    <span>'
+                    <span>'`
                       {t('general.explore')} {t(`features.${feature.key}`)}'
                     </span>'
                     <ArrowRight className=h-4 w-4 />"
@@ -219,6 +219,6 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

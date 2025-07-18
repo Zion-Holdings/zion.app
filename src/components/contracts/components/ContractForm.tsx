@@ -40,7 +40,6 @@ interface ContractFormProps {""
   initialValues?: ContractFormValues"""
   onFormValuesChange?: (values: ContractFormValues) => void,""
   onContractGenerated: "(contractContent: string) => void
-}
 
 export function ContractForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -98,7 +97,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     };
 '
     toast({'
-      title: 'Milestones Generated','
+      title: 'Milestones Generated','`
       description: `${milestones.length} milestones have been generated and will be included in the contract.`,;
     });
   };
@@ -181,6 +180,6 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

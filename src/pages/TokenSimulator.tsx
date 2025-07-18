@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react;
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import  { Button }  from '@/components/ui/button;
-import {';
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import { Slider } from '@/components/ui/slider'
 import { useToast } from '@/hooks/use-toast'
 import { callZionGPT } from '@/utils/zion-gpt'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import { suggestFix } from '@/utils/suggestFix';
+import { suggestFix } from '@/utils/suggestFix;
 '
 interface Inputs {
   circulating: "number"
@@ -43,7 +43,7 @@ const SCENARIOS = [;
   { value: 'airdrop', label: 'Airdrop unlock' },;
   { value: 'zk', label: 'Real-world ZK employment rewards' },;
 ]'
-;
+
 // Type declaration for window.Chart;
 declare global {'
   interface Window {
@@ -51,9 +51,9 @@ declare global {'
   }"
 };";"
 ;"
-export defaultault function TokenSimulator(): ;"
+export default function TokenSimulator(): ;"
   const [inputs, setInputs] = useState<Inputs>(DEFAULT_INPUTS);"
   const [scenario, setScenario] = useState('growth');
   const [months, setMonths] = useState(12)'
   const [forecast, setForecast] = useState<number[]>([]);
-  const [gptOutput, setGptOutput] = useState('');
+  const [gptOutput, setGptOutput] = useState('');';;

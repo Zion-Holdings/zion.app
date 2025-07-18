@@ -166,6 +166,6 @@ export function FraudDetectionSettings(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;

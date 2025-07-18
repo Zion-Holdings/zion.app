@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router // Changed from useNavigate';
-import { CheckCircle2 } from '@/components/ui/icons';
-import { useTranslation } from 'react-i18next';
-export defaultault function PaymentSuccess(): '
+import { useRouter } from 'next/router // Changed from useNavigate;
+import { CheckCircle2 } from '@/components/ui/icons;
+import { useTranslation } from 'react-i18next;
+export default function PaymentSuccess(): '
   const router = useRouter(); // Changed from navigate;
   const { t } = useTranslation();
 '
@@ -17,11 +17,11 @@ export defaultault function PaymentSuccess(): '
         <h1 className="text-2xl font-bold text-white mb-2">;"
           {t('errors.payment_success_title')};
         </h1>'
-;
+
         <p className="text-zion-slate-light mb-6">;"
           {t('errors.payment_success_message')};
         </p>'
-;
+
         <div className="flex flex-col space-y-3">;"
           <Button;"
             onClick={() => router.push('/dashboard')} // Changed to router.push;
@@ -42,4 +42,4 @@ export defaultault function PaymentSuccess(): '
     </div>;
   );
 };
-}'
+}'';;

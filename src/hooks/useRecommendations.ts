@@ -1,4 +1,4 @@
-import useSWR from 'swr';
+import useSWR from 'swr;
 '
 interface Recommendation {
   id: "string"
@@ -34,4 +34,4 @@ export function useRecommendations(): unknown {): unknown {): unknown {): unknow
 }"
 }";"
 }"
-}"
+}'';;`

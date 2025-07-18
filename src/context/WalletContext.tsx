@@ -6,8 +6,8 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-} from 'react';
-import type { ReactNode } from 'react';
+} from 'react;
+import type { ReactNode } from 'react;
 
 // Define the shape of the wallet state and context
 export interface WalletState {
@@ -17,14 +17,12 @@ export interface WalletState {
   chainId: number | null;
   isConnected: boolean;
   isWalletSystemAvailable: boolean;
-}
 
 export interface WalletContextType extends WalletState {
   connectWallet: () => Promise<void>;
   disconnectWallet: () => Promise<void>;
   displayAddress: string | null;
   appKit: any | null;
-}
 
 const initialWalletState: WalletState = {
   provider: null,
@@ -102,6 +100,6 @@ export const useWallet = (): WalletContextType => {
   if (context === undefined) {
     console.error('useWallet must be used within a WalletProvider');
     return defaultWalletContext;
-  }
+
   return context;
-};
+};;`

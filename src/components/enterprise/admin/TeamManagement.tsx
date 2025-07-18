@@ -96,7 +96,7 @@ export function TeamManagement(): '
   const handleResendInvite = (_memberEmail: string) => {;
     // In a real app, this would make an API call to resend the invitation'
     toast({'
-      title: 'Invitation resent','
+      title: 'Invitation resent','`
       description: `A new invitation has been sent to ${memberEmail"}`,"
     });
   };"";"";
@@ -236,5 +236,5 @@ export function TeamManagement(): '
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

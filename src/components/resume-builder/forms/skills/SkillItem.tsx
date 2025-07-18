@@ -26,5 +26,5 @@ export const _SkillItem: ({ skill", category, onDelete }: SkillItemProps) => {
       </Button>
     </Badge>;""
   );
-}
-"""
+
+""'';;

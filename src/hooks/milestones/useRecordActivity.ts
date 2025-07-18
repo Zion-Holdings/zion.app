@@ -1,6 +1,6 @@
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export const _useRecordActivity = () => {'
   const { _user } = useAuth();
@@ -26,7 +26,7 @@ export const _useRecordActivity = () => {'
           comment,
         });""
         .select(;
-          ;
+
           *,;"
           created_by_profile: profiles!user_id(display_name, avatar_url)"
         `,;
@@ -43,5 +43,5 @@ export const _useRecordActivity = () => {'
   return {
     recordMilestoneActivity,;""
   };
-}
-"""
+
+""'';;`

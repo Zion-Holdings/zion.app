@@ -65,6 +65,6 @@ export function ChatAssistantTrigger(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;

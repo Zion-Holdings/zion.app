@@ -70,7 +70,6 @@ export function EducationItem(): unknown {): unknown {): unknown {): unknown {):
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

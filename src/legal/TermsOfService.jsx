@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { cn } from '@/lib/utils';
-import { TERMS_SECTIONS } from './termsContent';
-;
-export defaultault function TermsOfService() {
+import React, { useEffect, useRef, useState } from 'react;
+import { ScrollArea } from '@/components/ui/scroll-area;
+import { cn } from '@/lib/utils;
+import { TERMS_SECTIONS } from './termsContent;
+
+export default function TermsOfService() {
   const [active, setActive] = useState(TERMS_SECTIONS[0].id);
   const headingRefs = useRef({});
 
@@ -13,10 +13,10 @@ export defaultault function TermsOfService() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
-          }
+
         });
       },
-      {
+
         rootMargin: '0px 0px -70% 0px','
         threshold: 0.1,
       },
@@ -64,7 +64,7 @@ export defaultault function TermsOfService() {
               {section.title}
             </h2>
             <div
-              className="space-y-4 text-zion-slate-light""
+              className="space-y-4 text-zion-slate-light"'
               dangerouslySetInnerHTML={{ __html: section.content }}
             />
           </section>
@@ -72,4 +72,5 @@ export defaultault function TermsOfService() {
       </div>
     </div>
   );
-}
+
+';;`

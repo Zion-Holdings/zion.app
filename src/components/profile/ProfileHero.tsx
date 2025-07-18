@@ -15,7 +15,6 @@ interface ProfileHeroProps {'
   reviewCount?: number"
   aiScore?: number"
   profileType: 'service' | 'talent'
-}
 
 export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   name,;
@@ -110,9 +109,8 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

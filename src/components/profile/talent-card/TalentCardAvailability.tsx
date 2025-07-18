@@ -3,7 +3,6 @@ import { Clock } from '@/components/ui/icons'
 '
 interface TalentCardAvailabilityProps {'
   availabilityType: "string
-}
 
 export function TalentCardAvailability(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   availabilityType,"
@@ -45,7 +44,6 @@ export function TalentCardAvailability(): unknown {): unknown {): unknown {): un
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

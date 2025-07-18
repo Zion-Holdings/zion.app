@@ -8,7 +8,6 @@ interface TalentCardContentProps {'
   bio: string,"
   timezone: string | undefined
   skills: "string[] | undefined"
-}
 
 export function TalentCardContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   summary,;
@@ -42,9 +41,8 @@ export function TalentCardContent(): unknown {): unknown {): unknown {): unknown
       <TalentCardSkills skills={skills} />
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

@@ -19,7 +19,7 @@ export interface HireRequestFormProps {'
     name?: string
     email?: string
     id?: string
-  }
+
   onSubmitSuccess?: () => void;
 };
 
@@ -82,6 +82,6 @@ export function HireRequestForm(): unknown {): unknown {): unknown {): unknown {
 };
 
 }'
-}
+
 }'
-}'
+}'';;

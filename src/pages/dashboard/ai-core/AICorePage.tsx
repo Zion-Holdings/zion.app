@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 '
 const AICorePage = () => {;
   const [status, _setStatus] = React.useState('Online')'
@@ -19,5 +19,5 @@ const AICorePage = () => {;
   );"
 };";"
 ;"
-export defaultault AICorePage;"
-"""""
+export default AICorePage;"
+""""'';;`

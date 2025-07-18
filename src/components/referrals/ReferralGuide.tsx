@@ -56,9 +56,9 @@ export function ReferralGuide(): ;
       </CardContent>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

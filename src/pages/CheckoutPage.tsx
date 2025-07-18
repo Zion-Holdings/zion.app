@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
-import { useState } from 'react';
+import { useState } from 'react;
 import { Elements } from '@stripe/react-stripe-js'
 import { getStripe } from '@/utils/getStripe'
 import CardForm from '@/components/checkout/CardForm'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/store'
 import Link from 'next/link'
-import type { PaymentIntent } from '@stripe/stripe-js';
-export defaultault function CheckoutPage(): '
+import type { PaymentIntent } from '@stripe/stripe-js;
+export default function CheckoutPage(): '
   // const _router: useRouter(); // Unused", remove to resolve linter warning;
   const items = useSelector((s: RootState) => s.cart.items);
   // Stripe.PaymentIntent type is available from @stripe/stripe-js;
@@ -125,4 +125,4 @@ export defaultault function CheckoutPage(): '
 }"
 }";"
 }"
-}"
+}'';;`

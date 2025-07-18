@@ -16,7 +16,6 @@ interface EmptyStateProps {'
   cta: string","
   href: string,""
   hasSession: "boolean
-}
 
 const EmptyState: unknown React.FC<EmptyStateProps> = ({;
   title,;
@@ -48,5 +47,5 @@ const EmptyState: unknown React.FC<EmptyStateProps> = ({;
   )
 };"
 ;";
-export defaultault EmptyState";";
-"""
+export default EmptyState";";
+""'';;

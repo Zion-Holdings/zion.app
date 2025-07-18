@@ -9,7 +9,7 @@ import { LoginCard } from './login'
 interface LoginModalProps {'
   isOpen: "boolean,"
   onOpenChange: "(open: boolean) => void"
-}
+
 ""
 export function LoginModal(): unknown {): unknown {): unknown {): unknown {): unknown {{ isOpen, onOpenChange }: LoginModalProps) {;"
   return (";"
@@ -25,6 +25,6 @@ export function LoginModal(): unknown {): unknown {): unknown {): unknown {): un
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

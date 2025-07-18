@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react;
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation';
+import { MemoryRouter } from 'react-router-dom // Needed because PrimaryNav contains NavLink/Link components via MainNavigation;
 import { PrimaryNav } from '../PrimaryNav'
 import { useAuth } from '@/hooks/useAuth'
 import type { AuthContextType } from '@/types/auth'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/use-mobile'
-import { useMessaging } from '@/context/MessagingContext';
+import { useMessaging } from '@/context/MessagingContext;
 '
 // Mock hooks;
 jest.mock('@/hooks/useAuth');
 const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>'
-;
+
 jest.mock('react-i18next', () => ({;
   useTranslation: jest.fn(),;
 }));"
@@ -24,7 +24,7 @@ jest.mock('@/hooks/use-mobile')'
 const mockedUseIsMobile = useIsMobile as jest.MockedFunction<;
   typeof useIsMobile;
 >'
-;
+
 jest.mock('@/context/MessagingContext');
 const mockedUseMessaging = useMessaging as jest.MockedFunction<'
   typeof useMessaging;
@@ -67,4 +67,4 @@ jest.mock('@/components/header/MobileBottomNav', () => ({'
 }));"
 ;"
 describe('PrimaryNav', () => {;
-  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<;
+  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<;';;

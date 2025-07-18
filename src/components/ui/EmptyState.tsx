@@ -8,7 +8,7 @@ interface EmptyStateProps {
   onRetry?: () => void
   showRetry?: boolean'
   icon?: React.ReactNode'
-}
+
 '
 export function EmptyState(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   text = 'No items available','
@@ -37,9 +37,9 @@ export function EmptyState(): unknown {): unknown {): unknown {): unknown {): un
         </Button>)}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

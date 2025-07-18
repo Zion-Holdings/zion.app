@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import Head from 'next/head'
 '
 interface JsonLdProps {'
@@ -10,5 +10,5 @@ const JsonLd: unknown React.FC<JsonLdProps> = ({ data "}) => ("
     <script type=application/ld+json>{JSON.stringify(data)}</script>"
   </Head>"
 );"";
-export defaultault JsonLd;"";
-""""
+export default JsonLd;"";
+"""'';;

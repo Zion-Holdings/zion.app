@@ -5,7 +5,6 @@ import { CATEGORIES } from '@/data/categories'
 '
 interface CategorySelectionProps {'
   onComplete: "(categories: string[]) => void
-}
 
 export function CategorySelection(): unknown {): unknown {): unknown {): unknown {): unknown {{ onComplete }: CategorySelectionProps) {;
   const [selected, setSelected] = useState<string[]>([]);
@@ -46,9 +45,9 @@ export function CategorySelection(): unknown {): unknown {): unknown {): unknown
       </Button>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

@@ -1,5 +1,4 @@
-export * from './KanbanBoard'
-export * from './KanbanColumn'
-export * from './CandidateCard'
-export * from './HiringAnalytics'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

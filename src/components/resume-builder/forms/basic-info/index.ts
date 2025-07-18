@@ -1,3 +1,4 @@
-export * from './BasicInfoForm'
-export * from './schema'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

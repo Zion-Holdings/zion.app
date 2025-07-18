@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Zap, ChevronLeft, ChevronRight } from '@/components/ui/icons'
 import { MobileHeader } from '@/mobile/components/common/MobileHeader'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation'
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import  { Label }  from '@/components/ui/label;
-import {';
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import {';
   SelectValue,;
 } from '@/components/ui/select;
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card;
 type JobPostStep = 'details' | 'requirements' | 'budget' | 'preview;
 '
 export function MobileJobPost(): ;
@@ -60,7 +60,7 @@ export function MobileJobPost(): ;
         title={`Post a Job (${currentStep === 'preview' ? 4 : currentStep === 'budget' ? 3 : currentStep === 'requirements' ? 2 : 1}/4)`};
         showBack;
       />'
-;
+
       <main className="flex-1 py-4 pb-24 px-4">;"
         <div className="mb-6 flex justify-between">;"
           <div className="flex space-x-1">;"
@@ -110,4 +110,4 @@ export function MobileJobPost(): ;
 ;"
           <Button className="flex-1 gap-1" onClick={goToNextStep}>;"
             {currentStep === 'preview' ? 'Publish Job' : 'Continue'};
-            {currentStep !== 'preview' && <ChevronRight className="h-4 w-4" />};
+            {currentStep !== 'preview' && <ChevronRight className="h-4 w-4' />};';;`

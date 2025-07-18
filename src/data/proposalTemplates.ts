@@ -13,7 +13,7 @@ export interface ProposalTemplate {
   codeModule: string,
   votingOptions: string[]
   fundingNeeded?: string"
-}
+
 ;"
 export const PROPOSAL_TEMPLATES: unknown ProposalTemplate[] = ["
   {;"
@@ -152,4 +152,4 @@ export const PROPOSAL_TEMPLATES: unknown ProposalTemplate[] = ["
     votingOptions: ['YES', 'NO', 'ABSTAIN'],'
   },;
 ]'
-'''''
+'''''';;

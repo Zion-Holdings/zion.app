@@ -8,7 +8,7 @@ import { logErrorToProduction } from '@/utils/productionLogger'
 '
 interface MilestoneActivitiesProps {'
   projectId: "string
-}
+
 "
 interface Activity {"
   id: string
@@ -50,7 +50,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
             `'
             *,'
             milestone: milestone_id(title)
-            created_by_profile: profiles!user_id(display_name, avatar_url)"
+            created_by_profile: profiles!user_id(display_name, avatar_url)"`
           `,;
           )
           .eq('project_id', projectId)'
@@ -77,7 +77,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
     switch (activity.action) {;"
       case 'created':'
         return 'created a new milestone'
-      case 'status_changed':'
+      case 'status_changed':'`
         return `changed status from ${activity.previous_status || 'none'} to ${activity.new_status}`;
       case 'updated':'
         return 'updated milestone details'
@@ -182,8 +182,8 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
 };
 }""
 };
-}
-}
-}
-}
-}"
+
+
+
+
+}'';;`

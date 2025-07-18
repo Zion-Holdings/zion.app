@@ -90,9 +90,9 @@ export function TalentOnboardingForm(): ;"
       <p className="text-gray-600>Form implementation coming soon...</p>"
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

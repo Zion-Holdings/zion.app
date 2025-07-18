@@ -10,9 +10,9 @@ export function ErrorBanner(): unknown {): unknown {): unknown {): unknown {): u
       {msg}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

@@ -24,7 +24,7 @@ export interface ReviewFormValues {
   timeliness_rating?: number
   would_work_again?: boolean'
   is_anonymous?: boolean'
-}
+
 '
 interface ReviewFormProps {'
   projectId: string
@@ -33,7 +33,6 @@ interface ReviewFormProps {'
   onSubmit: (data: ReviewFormValues) => Promise<boolean>"
   defaultValues?: Review | undefined
   isSubmitting: boolean""
-}
 
 export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;
@@ -69,7 +68,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
           ...(defaultValues.is_anonymous !== undefined"
             ? { is_anonymous: defaultValues.is_anonymous }"
             : {}),;"
-        }
+
       : {;
           rating: "0"
           review_text: '','
@@ -121,14 +120,14 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       className=focus: outline-none transition-transform hover:scale-110
                       aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`};
                     >
-                      <Star;
+                      <Star;`
                         className={`h-10 w-10 ${'
                           star <='
                           (hoveredStar ||;}
                             (field as { value?: number }).value ||'
                             0)'
                             ? 'fill-yellow-400 text-yellow-400'
-                            : 'text-gray-300'
+                            : 'text-gray-300'`
                         } transition-colors`};
                       />'
                     </button>'
@@ -192,8 +191,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       defaultValue={;
                         (field as { value?: number }).value !== undefined
                           ? (field as { value?: number }).value!.toString();""
-                          : 
-                      }
+
                       className="flex flex-wrap gap-4"
                     >;
                       {[1, 2, 3, 4, 5].map((value) => ("
@@ -274,8 +272,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       defaultValue={;
                         (field as { value?: number }).value !== undefined
                           ? (field as { value?: number }).value!.toString();""
-                          : 
-                      }
+
                       className="flex flex-wrap gap-4"
                     >;
                       {[1, 2, 3, 4, 5].map((value) => ("
@@ -318,7 +315,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                           onCheckedChange={"
                             (field as { onChange: (v: boolean) => void })"
                               .onChange;"
-                          }
+
                         />;
                         <span className="text-sm text-muted-foreground">
                           {(field as { value?: boolean }).value ? 'Yes' : 'No'}'
@@ -379,6 +376,6 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

@@ -1,5 +1,10 @@
-const loading: unknown boolean = Boolean(rawLoading);
-  const pathname = useSafePathname();
-  const isAuthPage: unknown =;
-    /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(;
-      pathname,;
+import React from 'react';
+
+export default function AppLayout() {
+  return (
+    <div>
+      <h1>AppLayout</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

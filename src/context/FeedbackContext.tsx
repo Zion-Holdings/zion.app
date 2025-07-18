@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react;
 '
 interface FeedbackContextType {
   rating: "number
@@ -8,7 +8,7 @@ interface FeedbackContextType {
   setComment: "(c: string) => void"
   setScreenshot: (s: string | null) => void
   reset: "() => void"
-}
+
 const FeedbackContext = createContext<FeedbackContextType | undefined>(
   undefined,
 );""
@@ -25,4 +25,4 @@ export function FeedbackProvider(): unknown {): unknown {): unknown {): unknown 
   const [screenshot, setScreenshot] = useState<string | null>(null)'
   const reset = () => {'
     setRating(0)'
-    setComment('')'
+    setComment('')'';;

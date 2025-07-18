@@ -11,7 +11,6 @@ interface Contract {'
 interface RecentContractsTableProps {""
   contracts: Contract[],""
   onViewContract: (contractId: string) => void""
-}
 
 export function RecentContractsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   contracts,
@@ -106,4 +105,4 @@ export function RecentContractsTable(): unknown {): unknown {): unknown {): unkn
 }";
 }""
 }"
-}"
+}'';;

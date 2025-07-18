@@ -1,4 +1,4 @@
-import type { OrgMember } from '@/types/org';
+import type { OrgMember } from '@/types/org;
 export const _orgMembers: unknown OrgMember[] = ['
   {'
     id: "1
@@ -68,4 +68,4 @@ export const _orgMembers: unknown OrgMember[] = ['
     avatar: 'https://placehold.co/100x100','
   },;
 ]'
-'''''
+'''''';;

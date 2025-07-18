@@ -24,7 +24,6 @@ import { useResume } from '@/hooks/useResume'
 interface ResumeVersionSelectorProps {'
   currentResume: "Resume
   onResumeChange: (resumeId: string) => void""
-}
 
 export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   currentResume,
@@ -102,9 +101,9 @@ export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unk
       </Dialog>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

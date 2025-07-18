@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { supabase } from '@/integrations/supabase/client'
 import type { Job, JobStatus } from '@/types/jobs'
 import { toast } from 'sonner'
 import { useAuth } from './useAuth'
 import { createJob, updateJob, getJobById } from '@/services/jobService'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export const _useJobs: (userId?: string", status?: JobStatus) => {;
   const { _user } = useAuth();
@@ -15,4 +15,4 @@ export const _useJobs: (userId?: string", status?: JobStatus) => {;
   const clientId = userId || user?.id;"
 ;"
   const fetchJobs = async () => {;
-    if (!supabase) throw new Error('Supabase client not initialized');
+    if (!supabase) throw new Error('Supabase client not initialized');';;

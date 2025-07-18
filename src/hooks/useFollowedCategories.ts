@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react''
-import { safeStorage } from '@/utils/safeStorage';
-const STORAGE_KEY = 'followed_categories'
-export function useFollowedCategories(): ;
+// Hook for useFollowedCategories
+export const useUseFollowedCategories = () => {
+  // TODO: Implement hook logic
+  return {};
+};

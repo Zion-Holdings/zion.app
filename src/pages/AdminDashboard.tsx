@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react;
 import AdminLayout from '@/components/admin/AdminLayout'
-;
-export defaultault function AdminDashboard(): ;
+
+export default function AdminDashboard(): ;
   return ('
     <AdminLayout>;
       <div className="space-y-4">;"
@@ -14,4 +14,4 @@ export defaultault function AdminDashboard(): ;
 ;"
 AdminDashboard.displayName = 'AdminDashboard;
 
-}'
+}'';;

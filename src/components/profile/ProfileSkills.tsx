@@ -32,9 +32,8 @@ export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {):
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

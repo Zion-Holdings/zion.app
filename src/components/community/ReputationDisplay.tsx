@@ -36,7 +36,7 @@ export const ReputationDisplay = ({'
 '
   return ('
     <div className="space-y-1>;""
-      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;""
+      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;""`
         <Trophy className={`text-amber-500 ${sizeClasses[size].icon}`} />;"";
         <span className=font-semibold">{reputation}</span>""
         <span className=text-muted-foreground>rep</span>";"
@@ -50,5 +50,5 @@ export const ReputationDisplay = ({'
   )
 };""
 ;"
-export defaultault ReputationDisplay";"
-"""
+export default ReputationDisplay";"
+""'';;`

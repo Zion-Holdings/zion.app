@@ -15,7 +15,7 @@ interface AIMatchingResultsProps {
   isLoading?: boolean
   projectDescription?: string
   serviceType?: string
-}
+
 '
 export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   matches,;
@@ -205,7 +205,6 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
   );";
 }";";
 
-}
 }"
 }"
-}"
+}'';;

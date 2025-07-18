@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react;
 import { ArrowRight, Code, AlertCircle, Zap } from '@/components/ui/icons'
-import Link from 'next/link';
+import Link from 'next/link;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
-;
+
 export function ApiDocsHub(): ;
   const sections = ['
     {;
@@ -52,7 +52,7 @@ export function ApiDocsHub(): ;
           comprehensive guides and documentation to help you start working with;
           our API as quickly as possible.;
         </p>'
-;
+
         <div className="grid gap-6 md:grid-cols-2">;"
           {sections.map((section) => (;";"
             <Link;"
@@ -90,4 +90,4 @@ export function ApiDocsHub(): ;
             className="inline-flex items-center px-4 py-2 rounded-md bg-zion-purple text-white hover:bg-zion-purple/90 transition-colors"
           >;"
             Go to Developer Portal;"
-            <ArrowRight className="ml-2 h-4 w-4" />;
+            <ArrowRight className="ml-2 h-4 w-4' />;';;`

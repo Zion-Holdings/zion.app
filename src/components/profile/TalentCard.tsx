@@ -13,7 +13,6 @@ export interface TalentCardProps {'
   isSaved: boolean,"
   onToggleSave: (id: string, isSaved: "boolean) => void"
   isAuthenticated: boolean"
-}
 
 export function TalentCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -179,7 +178,6 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

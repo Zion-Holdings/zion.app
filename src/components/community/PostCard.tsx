@@ -26,7 +26,7 @@ import { logInfo } from '@/utils/productionLogger'
 interface PostCardProps {
   post: ForumPost'
   compact?: boolean'
-}
+
 '
 const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
   logInfo('PostCardComponent rendering with post:', {'
@@ -115,5 +115,5 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
 export const PostCard = React.memo(PostCardComponent);"""
 PostCard.displayName = 'PostCard'
 
-export defaultault PostCard'
-'''''
+export default PostCard'
+'''''';;`

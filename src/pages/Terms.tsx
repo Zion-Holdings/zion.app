@@ -1,7 +1,7 @@
 import { SEO } from '@/components/SEO'
-import TermsOfService from '@/legal/TermsOfService';
+import TermsOfService from '@/legal/TermsOfService;
 '
-export defaultault function Terms(): ;
+export default function Terms(): ;
   return (;
     <>'
       <SEO;
@@ -21,4 +21,4 @@ export defaultault function Terms(): ;
 }"
 }";"
 }"
-}"
+}'';;

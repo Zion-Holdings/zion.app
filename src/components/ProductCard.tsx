@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux'
 import type { AppDispatch } from '@/store'
 import { addItem } from '@/store/cartSlice'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react;
 import { useAuth } from '@/context/auth/AuthProvider'
 import { useRouter } from 'next/router'
 import type { Product } from '@/services/marketplace'
@@ -28,4 +28,4 @@ interface ProductCardProps {'
   onBuyAttemptComplete?: () => void // Callback to signal the buy attempt is finished (success or fail)'
   /** Disable the Buy Now button (e.g. when the checkout route isn't ready). */'
   buyDisabled?: boolean
-}
+}';;

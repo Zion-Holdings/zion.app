@@ -10,7 +10,6 @@ interface MilestoneCreatorProps {'
   projectStartDate?: string
   projectEndDate?: string | undefined
   projectType?: string
-}
 
 export function MilestoneCreator(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onSubmit,;
@@ -35,6 +34,6 @@ export function MilestoneCreator(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;

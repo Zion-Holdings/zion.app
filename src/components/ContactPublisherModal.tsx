@@ -8,7 +8,6 @@ interface ContactPublisherModalProps {'
   onClose: () => void,
   productId: string","
   sellerId: string"
-}
 
 export function ContactPublisherModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,"
@@ -150,7 +149,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
 }""
 };
 }""
-}
-}
-}
-}"
+
+
+
+}'';;

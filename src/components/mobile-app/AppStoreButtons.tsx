@@ -89,4 +89,4 @@ export const _AppStoreButtons: unknown React.FC<AppStoreButtonsProps> = ({'
     </div>;"
   );
 }"
-"""
+""'';;

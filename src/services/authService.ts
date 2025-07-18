@@ -2,9 +2,9 @@ import axios from 'axios'
 import { safeStorage } from '@/utils/safeStorage'
 import { store } from '@/store'
 import { setToken } from '@/store/authSlice'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '
-;
+
 export async function loginUser(): unknown {): unknown {): unknown {): unknown {): unknown {email: string, password: string) {;"
   const endpoint: `${API_URL"}/api/auth/login`;"
   const res = await axios.post(;"
@@ -25,7 +25,7 @@ export async function registerUser(): unknown {): unknown {): unknown {): unknow
   name: "string"
   email: "string"
   password: string,;"
-) {;"
+) {;"`
   const endpoint: `${API_URL"}/auth/register`;"
   try {;"
     const res = await axios.post(endpoint", { name, email, password } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
@@ -36,4 +36,4 @@ export async function registerUser(): unknown {): unknown {): unknown {): unknow
     logErrorToProduction('Register API erroror', error as Error, {;
       endpoint,;
       email,;
-    })'
+    })'';;`

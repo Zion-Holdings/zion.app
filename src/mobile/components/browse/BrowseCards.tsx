@@ -1,5 +1,5 @@
 import React, { useState }  from 'react;
-import {';
+import {;
   Bookmark,'
   ChevronRight,;
   MapPin,;
@@ -8,8 +8,8 @@ import {';
 } from '@/components/ui/icons'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge;
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;
 '
 interface BrowseItem {
   id: "string"
@@ -27,5 +27,5 @@ interface BrowseItem {
 interface BrowseCardsProps {"
   items: "BrowseItem[]"
   type: 'jobs' | 'talents,
-  onViewDetails: "(id: string) => void"
-}
+  onViewDetails: "(id: string) => void'
+}';;

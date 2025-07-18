@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react;
 import Link from 'next/link'
-import  ReactMarkdown  from 'react-markdown';
+import  ReactMarkdown  from 'react-markdown;
 export interface DocsPageProps {
-  /**';
+  /**;
    * Markdown content for the currently viewed document.'
    */'
   content?: string // Made content optional
-}
+
 '
 const NAV_ITEMS = [;
   { title: 'Introduction', slug: 'introduction' },;
@@ -16,7 +16,7 @@ const NAV_ITEMS = [;
   { title: 'Developer Tools', slug: 'developer-tools' },;
   { title: 'Legal + Manifestos', slug: 'legal' },;
 ]'
-;
+
 // const _DocsPage: unknown "React.FC<DocsPageProps> = ({ content "}) => {;"
   if (!content) {;"
     // Handle missing content, e.g. when used in src/routes/config.tsx;"
@@ -54,7 +54,7 @@ const NAV_ITEMS = [;
           <ul className="space-y-2">;"
             {NAV_ITEMS.map((item) => (;";"
               <li key={item.slug}>;"
-                <Link;"
+                <Link;"`
                   href={`/docs/${item.slug}`};"
                   className="text-blue-500 hover:underline";
                 >;
@@ -72,5 +72,5 @@ const NAV_ITEMS = [;
   );"
 };";"
 ;"
-export defaultault DocsPage;"
-"""""
+export default DocsPage;"
+""""'';;`

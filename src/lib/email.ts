@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 '
 interface EmailOptions {
   to: "string"
@@ -8,5 +8,5 @@ interface EmailOptions {
     orderId?: string"
     downloadLinks?: string[] // Assuming download links are an array of strings"
     supportContact?: string"
-    [key: "string]: unknown // Allow other dynamic data"
-  }
+    [key: "string]: unknown // Allow other dynamic data'
+  }';;

@@ -1,4 +1,4 @@
-/**;
- * Centralized Error Monitoring Utility;
- * Provides consistent error tracking across the application;
- */;
+// Utility functions for error-monitor
+export const error-monitor = {
+  // TODO: Implement utility functions
+};

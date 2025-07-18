@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import { NextSeo } from '@/components/NextSeo'
 import { Button } from '@/components/ui/button'
 import { generateStorybookPdf } from '@/utils/generateStorybookPdf'
 import type { StoryPage } from '@/utils/generateStorybookPdf'
-import { generateStorybookEpub } from '@/utils/generateStorybookEpub';
+import { generateStorybookEpub } from '@/utils/generateStorybookEpub;
 const pages: unknown "(StoryPage & { prompt: string "})[] = [;"
   {;"
     text: 'Zia loved exploring the digital forest of Zion, a place where everyone owned their work. Each talent was a shimmering treasure kept safe by tokens of trust.',;
@@ -46,13 +46,13 @@ const pages: unknown "(StoryPage & { prompt: string "})[] = [;"
     prompt: 'Bright protocol awakening under starry sky.',;
   },;
 ]'
-;
+
 const audioScript: pages.map((p", i) => `Page ${i + 1}: ${p.text}`).join('\n');
 '
-export defaultault function Storybook(): ;
+export default function Storybook(): ;
   const downloadPdf = async () => {;
     const blob = await generateStorybookPdf(pages)'
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a')'
     link.href = url;
-    link.download = 'zion-storybook.pdf;
+    link.download = 'zion-storybook.pdf;';;`

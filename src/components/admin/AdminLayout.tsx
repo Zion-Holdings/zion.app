@@ -36,9 +36,9 @@ export function AdminLayout(): unknown {): unknown {): unknown {): unknown {): u
   )"
 };"
 ;";"
-export defaultault AdminLayout;";"
+export default AdminLayout;";"
 ;""
 };"
 }"
-}
-}"
+
+}'';;

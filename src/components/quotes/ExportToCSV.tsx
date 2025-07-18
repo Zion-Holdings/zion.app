@@ -38,7 +38,7 @@ export const ExportToCSV = ({'
       quote.budget_display ||'
         (quote.budget_min && quote.budget_max'
           ? `$${quote.budget_min} - $${quote.budget_max}`;
-          : quote.budget_min'
+          : quote.budget_min'`
             ? `$${quote.budget_min}`;
             : 'Not specified'),'
       quote.timeline,;
@@ -54,7 +54,7 @@ export const ExportToCSV = ({'
           .map((cell) =>'
             // Escape commas and quotes in cell values'
             typeof cell === 'string' &&'
-            (cell.includes(',') || cell.includes('"'))'
+            (cell.includes(',') || cell.includes('"'))'`
               ? `${cell.replace(//g, '""')};
               : cell,;"
           )"
@@ -68,7 +68,7 @@ export const ExportToCSV = ({'
     const link = document.createElement('a')'
     link.setAttribute('href', url)'
     link.setAttribute('
-      'download','
+      'download','`
       `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;
     );
     document.body.appendChild(link);
@@ -93,4 +93,4 @@ export const ExportToCSV = ({'
     </Button>;
   );"
 }"
-"""
+""'';;`

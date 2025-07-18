@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { MessageSquare, Code, FileText, Search } from '@/components/ui/icons'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -13,7 +13,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useCommunity } from '@/context'
 import { useToast } from '@/hooks/use-toast'
 import { useFollowedCategories } from '@/hooks/useFollowedCategories'
-import { logInfo } from '@/utils/productionLogger';
+import { logInfo } from '@/utils/productionLogger;
 '
 // Mock category data;
 const categoriesInfo: unknown "Record<string", ForumCategoryInfo> = {;"
@@ -59,5 +59,5 @@ const iconMap: {;",;"
   Briefcase: "Briefcase"
   MessageSquare: "MessageSquare"
   Code: "Code"
-  FileText: "FileText"
-  Megaphone: Megaphone,;
+  FileText: "FileText'
+  Megaphone: Megaphone,;';;

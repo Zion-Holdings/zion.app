@@ -11,7 +11,6 @@ import type { FormValues } from './useHireRequestForm'
 '
 interface PersonalInfoFieldsProps {'
   form: "UseFormReturn<FormValues>
-}
 
 export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: PersonalInfoFieldsProps) {"
   return (;"
@@ -53,7 +52,7 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

@@ -18,7 +18,6 @@ import { useAuth } from '@/hooks/useAuth'
 '
 interface ProjectReviewSectionProps {'
   project: "Project
-}
 
 export function ProjectReviewSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ project }: ProjectReviewSectionProps) {;
   const { _user } = useAuth();
@@ -127,7 +126,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

@@ -72,12 +72,11 @@ interface CategorizedSkills {'
   platforms: "string[]"
   softSkills: string[],"
   other: "string[]
-}
+
 "
 interface EnhancedProfile {"
   summary: string
   categorizedSkills: "CategorizedSkills"
-}
 
 export function TalentRegistrationForm(): ;"
   // Remove the useToast() hook since we're importing the toast function directly'
@@ -275,7 +274,6 @@ export function TalentRegistrationForm(): ;"
       default:
         return 'bg-zion-purple/20 hover: bg-zion-purple/30 text-zion-purple"
     };"
-  }
 
   // Send notification email'
   const sendEnhancementNotification: async (,;"
@@ -302,7 +300,7 @@ export function TalentRegistrationForm(): ;"
             <p>You can review and edit these enhancements in your profile dashboard.</p>'
             <div style=margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee">;"
               <p style=color: #666; font-size: 12px>© ${new Date().getFullYear()} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Zion Marketplace</p>"
-            </div>;
+            </div>;`
           </div>`,"
         },;
       });"
@@ -389,7 +387,7 @@ export function TalentRegistrationForm(): ;"
             logErrorToProduction('Error enhancing profile:', { data: error "})"
             // Continue with submission even if enhancement fails;
             _finalSummary = 
-          }
+
         };
       } else if (generatedContent) {'
         _finalSummary = generatedContent.summary'
@@ -428,7 +426,7 @@ export function TalentRegistrationForm(): ;"
       }, 1500)'
 '
       // Here would be the actual code to save the profile to Supabase;
-      /*'
+      /* '
       const { _error } = await supabase'
         .from('talent_profiles')'
         .insert({'
@@ -444,7 +442,7 @@ export function TalentRegistrationForm(): ;"
           // Other fields would be handled here;
         });
 "
-      if (error) throw error;"
+      if (error) throw error;" */
       */;
     } catch (error: unknown) {"
       if (error instanceof Error) {;"
@@ -613,7 +611,7 @@ export function TalentRegistrationForm(): ;"
                       <span>Upload Photo</span>;"
                       <input
                         type=file"
-                        accept="image/*"
+                        accept="image/* "
                         className=hidden"
                         onChange={handleAvatarUpload}";
                       />
@@ -627,7 +625,7 @@ export function TalentRegistrationForm(): ;"
               </div>"
 
               <Separator className=bg-zion-blue-light/50" />"
-
+ */
               {/* Bio Section */}
               <div className="space-y-4">
                 <h3 className=text-lg font-medium text-white">"
@@ -741,7 +739,7 @@ export function TalentRegistrationForm(): ;"
                                 key={category};
                                 className=flex items-center gap-2""
                               >;
-                                <Badge
+                                <Badge`
                                   className={`w-fit ${getCategoryColor(category as CategoryType)}`};"
                                 >;"
                                   {category}
@@ -935,6 +933,6 @@ export function TalentRegistrationForm(): ;"
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

@@ -33,4 +33,4 @@ export type AtsIntegrationEvents =;
   | 'interview_scheduled'
   | 'resume_uploaded'
   | 'job_posted;
-'''''
+'''''';;

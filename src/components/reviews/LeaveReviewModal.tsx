@@ -16,7 +16,6 @@ interface LeaveReviewModalProps {'
   revieweeName: string
   isOpen: boolean,
   onClose: () => void""
-}
 
 export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;
@@ -66,7 +65,7 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
         handleOpenChange(false);
       };
       return success;
-    }
+
   };"
 ;"
   return (
@@ -98,6 +97,6 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

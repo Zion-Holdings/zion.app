@@ -24,7 +24,6 @@ import { ApplicationProgress } from './ApplicationProgress'
 '
 interface ApplicationCardProps {'
   application: "JobApplication
-}
 
 export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ application }: ApplicationCardProps) {;
   const [expanded, setExpanded] = useState(false);
@@ -176,7 +175,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
           </div>;"
         </div>";"
 ";""
-        <Button variant=secondary size="sm" className=w-full asChild>";
+        <Button variant=secondary size="sm" className=w-full asChild>";`
           <Link href={`/messages?jobId=${application.job_id}`}>"
             <MessageSquare className="h-4 w-4 mr-1 /> Message Client"
           </Link>;""
@@ -204,4 +203,4 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
 }";
 }""
 }"
-}"
+}'';;`

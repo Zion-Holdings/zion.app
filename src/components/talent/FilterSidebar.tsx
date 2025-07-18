@@ -112,9 +112,8 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
       )}
     </>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

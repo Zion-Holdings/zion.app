@@ -1,4 +1,4 @@
-import { logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger;
 '
 /**;
  * IMMEDIATE Process Polyfill;
@@ -163,4 +163,4 @@ if (_isBrowser && !_isNode) {;
         encoding?: string | number,;
         offset?: number,'
       ) {;
-        if (typeof input === 'string') {;
+        if (typeof input === 'string') {;';;

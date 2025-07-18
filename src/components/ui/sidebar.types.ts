@@ -48,4 +48,4 @@ export type SidebarContext = {'
   isMobile: "boolean,
   toggleSidebar: "() => void"
 };
-""""
+"""'';;

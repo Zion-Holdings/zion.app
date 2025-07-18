@@ -6,4 +6,4 @@ export const RESUME_STEPS = [;
   { id: 'certifications', label: 'Certifications' },'
   { id: 'preview', label: 'Preview' },'
 ]'
-'''''
+'''''';;

@@ -1,8 +1,8 @@
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/creator/CreatorSidebar'
 import { Header } from '@/components/Header'
-;
-export defaultault function CreatorDashboard(): ;
+
+export default function CreatorDashboard(): ;
   return ('
     <SidebarProvider>;
       <div className="min-h-screen flex w-full bg-zion-blue">;"
@@ -56,4 +56,4 @@ export defaultault function CreatorDashboard(): ;
               <h2 className="text-xl font-bold text-white mb-4">;"
                 Welcome back, Creator!;"
               </h2>;"
-              <p className="text-zion-slate text-lg mb-2 max-w-prose">;
+              <p className="text-zion-slate text-lg mb-2 max-w-prose'>;';;

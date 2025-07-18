@@ -13,7 +13,6 @@ export interface TalentCardProps {'
   onViewProfile: (id: string) => void"
   onRequestHire: "(talent: TalentProfile) => void
   isAuthenticated: boolean""
-}
 
 const TalentCardComponent = ({;
   talent,;
@@ -37,7 +36,7 @@ const TalentCardComponent = ({;
     e.stopPropagation();
     if (onRequestHire) {;
       onRequestHire(talent);
-    }
+
   };"
 ;"
   // Extract skills - limit to 5 for display
@@ -168,4 +167,4 @@ const TalentCardComponent = ({;
 
 export const TalentCard = React.memo(TalentCardComponent);"
 TalentCard.displayName = 'TalentCard'
-'''''
+'''''';;`

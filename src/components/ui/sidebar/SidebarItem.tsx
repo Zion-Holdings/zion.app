@@ -29,6 +29,6 @@ export function SidebarItem(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 }'
-}
+
 }'
-}'
+}'';;

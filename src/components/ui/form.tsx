@@ -19,7 +19,7 @@ const Form = FormProvider;
 '
 type FormFieldContextValue = {'
   name: "string
-}
+
 "
 const FormFieldContext = React.createContext<FormFieldContextValue>({;";,
   name: '','
@@ -59,8 +59,8 @@ const useFormField = () => {;
   return {'
     id,'
     name: "fieldContext.name"
-    formItemId: `${id}-form-item`,"
-    formDescriptionId: "`${id}-form-item-description`,
+    formItemId: `${id}-form-item`,"`
+    formDescriptionId: "`${id}-form-item-description`,`
     formMessageId: "`${id"}-form-item-message`,;
     ...fieldState,
   };"
@@ -115,8 +115,8 @@ const FormControl = React.forwardRef<;
       ref={ref};
       id={formItemId};
       aria-describedby={;
-        !error;
-          ? `${formDescriptionId}`;
+        !error;`
+          ? `${formDescriptionId}`;`
           : `${formDescriptionId} ${formMessageId}`;
       };
       aria-invalid={!!error}'
@@ -176,4 +176,4 @@ export {;
   FormMessage,'
   FormField,;
 }'
-'''''
+'''''';;`

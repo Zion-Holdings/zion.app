@@ -49,7 +49,7 @@ export function ReferralLeaderboard():
                         ? 'bg-slate-200 text-slate-800'
                         : entry.rank === 3;
                           ? 'bg-amber-200 text-amber-800'
-                          : 'bg-muted text-muted-foreground'}
+                          : 'bg-muted text-muted-foreground'}`
                   }`};
                 >;
                   {entry.rank}'
@@ -67,6 +67,6 @@ export function ReferralLeaderboard():
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

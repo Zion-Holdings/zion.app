@@ -14,9 +14,9 @@ export interface ProductListing {"
   price: "number | null"
   currency: string,"
   tags: "string[]"
-  author: {,"
+  author: {,'
     name: string,
     id: string
     avatarUrl?: string
     email?: string // Added optional email property
-  }
+  }';;

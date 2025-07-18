@@ -16,7 +16,6 @@ interface ApplyFormProps {'
   job: "Job,"
   onClose: () => void""
   onApplySuccess?: (jobId: "string) => Promise<void>"
-}
 
 export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ job, onClose, onApplySuccess }: ApplyFormProps) {;""
   const { _createConversation } = useMessaging();"
@@ -68,12 +67,12 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
       // Format message with proposal link if provided'
       let fullMessage = message;
 '
-      if (proposalLink) {'
+      if (proposalLink) {'`
         fullMessage += `\n\nHere's a link to my proposal: "${proposalLink};
       };""
 ;"
       // Add info about attached resume if available";"
-      if (selectedResume) {";""
+      if (selectedResume) {";""`
         fullMessage += `\n\nI've attached my resume: ${selectedResume.title}`"
       };"
 ;";"
@@ -104,7 +103,7 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
       };
 '
       toast({'
-        title: 'Application sent','
+        title: 'Application sent','`
         description: `Your application for "${job.title}" has been sent.`,
       });"
 ;";
@@ -181,6 +180,6 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

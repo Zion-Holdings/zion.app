@@ -17,12 +17,12 @@ export const ensureProfilesTableExists = async () => {;
       sql: `SELECT EXISTS ('
         SELECT FROM information_schema.tables ;
         WHERE table_schema = 'public' ;
-        AND table_name = 'profiles;
+        AND table_name = 'profiles;`
       );`,;
     })'
-;
+
     // If there's an error, log it and proceed with table creation;
     if (error) {'
       logWarn(;
         'Error checking if profiles table exists, attempting to create it:',;
-        { data: "{ data: error "} },;
+        { data: "{ data: error '} },;';;`

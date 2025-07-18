@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { List } from '@/components/ui/icons'
 import { useAuth } from '@/hooks/useAuth'
-import type { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react;
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ApiKeysManager } from '@/components/developers/ApiKeysManager'
 import { WebhooksManager } from '@/components/developers/WebhooksManager'
 import { ApiDocumentation } from '@/components/developers/ApiDocumentation'
-import { ApiLogs } from '@/components/developers/ApiLogs';
+import { ApiLogs } from '@/components/developers/ApiLogs;
 '
 interface TabDefinition {
   id: "string"
@@ -48,8 +48,8 @@ export function DeveloperPortal(): ;"
                 className={`inline-flex items-center px-4 py-3 border-b-2 text-sm font-medium ${;"
                   activeTab === tab.id;"
                     ? 'text-white border-zion-purple'
-                    : 'text-zinc-500 border-transparent hover: "text-zinc-400 hover:border-zinc-700;"}
+                    : 'text-zinc-500 border-transparent hover: "text-zinc-400 hover:border-zinc-700;"}`
                 }`};
                 onClick={() => setActiveTab(tab.id)};"
               >;
-                <Icon size={16} className="mr-2" />;
+                <Icon size={16} className="mr-2' />;';;`

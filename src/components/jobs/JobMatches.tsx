@@ -13,7 +13,6 @@ import Skeleton from '@/components/ui/skeleton'
 '
 interface JobMatchesProps {'
   jobId: "string
-}
 
 export function JobMatches(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: JobMatchesProps) {;
   const { matches, isLoading, isProcessing, triggerAIMatching } = ;
@@ -74,6 +73,6 @@ export function JobMatches(): unknown {): unknown {): unknown {): unknown {): un
 };
 
 }'
-}
+
 }'
-}'
+}'';;

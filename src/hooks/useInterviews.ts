@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react;
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
 import type {;
@@ -10,7 +10,7 @@ import { toast } from '@/components/ui/use-toast'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function useInterviews(): ;
   const [interviews, setInterviews] = useState<Interview[]>([]);
-  const [isLoading, setIsLoading] = useState(false)';
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null)'
   const { _user } = useAuth();
   // Request an interview as a client'
@@ -65,4 +65,4 @@ export function useInterviews(): ;
       );
       return data'
     } catch (err: unknown) {;
-      logErrorToProduction('Error in requestInterview:', { data: "err "});
+      logErrorToProduction('Error in requestInterview:', { data: "err '});';;`

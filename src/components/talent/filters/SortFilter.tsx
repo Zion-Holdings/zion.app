@@ -27,9 +27,9 @@ export function SortFilter(): unknown {): unknown {): unknown {): unknown {): un
       </Select>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

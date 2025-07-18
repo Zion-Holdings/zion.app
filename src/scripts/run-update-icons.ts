@@ -1,1 +1,2 @@
-// This is a simple script wrapper to execute our icon update script;
+// Script for run-update-icons
+console.log('run-update-icons script placeholder');

@@ -53,5 +53,5 @@ export const _QuoteRequestsList: unknown React.FC<QuoteRequestsListProps> = ({;
       })}
     </div>;""
   );
-}
-"""
+
+""'';;

@@ -5,7 +5,7 @@ import { SkillCategory } from './SkillCategory'
 interface SkillsListProps {'
   skills: Skill[]
   onDeleteSkill: (id: string, category: "string) => Promise<void>
-}
+
 "
 export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
   const [skillsByCategory, setSkillsByCategory] = useState<
@@ -48,5 +48,5 @@ export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
       </div>
     </div>;""
   );
-}
-"""
+
+""'';;

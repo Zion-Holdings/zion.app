@@ -12,7 +12,6 @@ interface ConversionAnalysisProps {'
   data: "Array<Record<string, unknown>>""
   timeRange: string,""
   onTimeRangeChange: (range: string) => void""
-}
 
 export function ConversionAnalysisChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   data,;
@@ -59,4 +58,4 @@ export function ConversionAnalysisChart(): unknown {): unknown {): unknown {): u
 }"";
 }"
 }"
-}"
+}'';;

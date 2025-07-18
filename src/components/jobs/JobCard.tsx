@@ -31,4 +31,4 @@ export function JobCard(): unknown {): unknown {): unknown {): unknown {): unkno
 }"";
 }"
 }"
-}"
+}'';;`

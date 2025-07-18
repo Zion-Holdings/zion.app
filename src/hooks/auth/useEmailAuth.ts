@@ -3,7 +3,7 @@ import { toast } from '@/hooks/use-toast'
 import type { UserDetails } from '@/types/auth'
 import { cleanupAuthState } from '@/utils/authUtils'
 import { safeStorage, safeSessionStorage } from '@/utils/safeStorage'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 '
 export const useEmailAuth: (;",
   setUser: (user: UserDetails | null) => void"
@@ -71,8 +71,8 @@ export const useEmailAuth: (;",
 '
       // Correction: I should import safeStorage and safeSessionStorage directly from the utils folder'
       // or expect them to be passed or available in a way that doesn't require direct import here if not already.'
-      // The original plan was to use them from authUtils.ts, let's stick to that.'
-      // The actual setItem calls will be done using `safeStorage` and `safeSessionStorage`;
+      // The original plan was to use them from authUtils.ts, let's stick to that.'`
+      // The actual setItem calls will be done using `safeStorage` and `safeSessionStorage`;`
       // which are already imported in `src/utils/authUtils.ts`.;
       // So, this hook will rely on those utilities.'
       // For now, I will write the logic as if they are available.'
@@ -167,7 +167,7 @@ export const useEmailAuth: (;",
   const resetPassword = async (_email: string) => {;
     try {;"
       setIsLoading(true)"
-      const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.resetPasswordForEmail(email, {;
+      const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.resetPasswordForEmail(email, {;`
         redirectTo: `${window.location.origin"}/update-password`,"
       });
 ;"
@@ -204,4 +204,4 @@ export const useEmailAuth: (;",
 ;"
   return { login, signup, resetPassword };
 }"
-"""
+""'';;`

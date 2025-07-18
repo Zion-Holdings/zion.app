@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react;
 import type { PortfolioProject } from '@/types/resume'
 import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
@@ -6,7 +6,7 @@ import { toast } from '@/hooks/use-toast'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function usePortfolio(): ;
   const { _user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false)';
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null)'
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
   const fetchProjects = useCallback(async () => {'
@@ -65,7 +65,7 @@ export function usePortfolio(): ;
         });"
         .select('id');
         .single()'
-;
+
       if (error) throw error;
 '
       toast({;
@@ -117,7 +117,7 @@ export function usePortfolio(): ;
         });"
         .eq('id', projectId);
         .eq('user_id', user.id)'
-;
+
       if (error) throw error;
 '
       toast({;
@@ -132,6 +132,6 @@ export function usePortfolio(): ;
       logErrorToProduction('Error updating portfolio project:', { data: "e "});"
       setError(message);"
       toast({;"
-        title: 'Error',;
+        title: 'Error',;`
         description: "`Could not update project: ${message"}`,;"
-        variant: 'destructive',;
+        variant: 'destructive',;';;`

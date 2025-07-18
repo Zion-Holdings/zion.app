@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link';
-export defaultault function Ecommerce(): '
+import Link from 'next/link;
+export default function Ecommerce(): '
   const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
@@ -14,7 +14,7 @@ export defaultault function Ecommerce(): '
       'Sell or purchase AI solutions and IT equipment through our secure marketplace.',;
     url: 'https://app.ziontechgroup.com/features/e-commerce',;
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -91,4 +91,4 @@ export defaultault function Ecommerce(): '
 }"
 }";"
 }"
-}"
+}'';;

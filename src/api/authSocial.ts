@@ -6,12 +6,12 @@ export function openAuthPopup(): unknown {): unknown {): unknown {): unknown {):
   const url: `/auth/${provider}`;"
   return window.open(";
     url,;""
-    'oauth','
+    'oauth','`
     `width=${width},height=${height},left=${left},top=${top}`,;
   );
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

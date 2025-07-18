@@ -1,4 +1,4 @@
-import type { StoryPage } from './generateStorybookPdf';
+import type { StoryPage } from './generateStorybookPdf;
 export async function generateStorybookEpub(): unknown {): unknown {): unknown {): unknown {): unknown {pages: StoryPage[]): Promise<Blob> {'
   const content = [;
     'The Day the Protocol Woke Up',;
@@ -7,4 +7,4 @@ export async function generateStorybookEpub(): unknown {): unknown {): unknown {
   ].join('\n\n');
   return new Blob([content], { type: 'application/epub+zip' });
 };
-}'
+}'';;`

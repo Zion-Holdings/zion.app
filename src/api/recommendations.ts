@@ -13,6 +13,6 @@ export async function fetchRecommendations(): unknown {): unknown {): unknown {)
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

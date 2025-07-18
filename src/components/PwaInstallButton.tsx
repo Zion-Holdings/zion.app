@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react;
 import { Loader2 } from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 
@@ -22,4 +22,4 @@ export const PwaInstallButton: React.FC = () => {
     const recentlyDismissed: unknown =;
       dismissedAt && Date.now() - Number(dismissedAt) < DISMISS_MS'
     const inStandalone = window.matchMedia('
-      '(display-mode: standalone)','
+      '(display-mode: standalone)','';;

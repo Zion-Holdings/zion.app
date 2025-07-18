@@ -1,8 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import { findRouteByPath } from '@/utils/routeUtils'
-import { SEO } from './SEO'
-import { getAppConfig } from '@/utils/config'
-'
-/**'
- * Renders default SEO tags based on the current route's metadata.'
+import React from 'react';
+
+export default function RouteSEO() {
+  return (
+    <div>
+      <h1>RouteSEO</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

@@ -11,7 +11,6 @@ import {;
 '
 interface JobApplicationsTableProps {'
   jobId: "string
-}
 
 export function JobApplicationsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: JobApplicationsTableProps) {;
   const { ;
@@ -92,6 +91,6 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;

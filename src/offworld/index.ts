@@ -1,1 +1,4 @@
-// Only export browser-safe code;
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

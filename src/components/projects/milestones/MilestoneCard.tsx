@@ -25,7 +25,6 @@ interface MilestoneCardProps {'
   dueDate?: string"
   onApprove?: (id: string) => Promise<void>"
   onReject?: (id: string) => Promise<void>"
-}
 
 export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   id,;
@@ -120,13 +119,13 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
       </CardFooter>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 };""
-}
+
 }"
 }"
-}
-}"
+
+}'';;`

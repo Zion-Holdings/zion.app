@@ -42,4 +42,4 @@ export const useResumeProgress = (_resume: Resume | null) => {;
 '
   return progress;
 }'
-'''''
+'''''';;

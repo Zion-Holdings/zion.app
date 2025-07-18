@@ -23,7 +23,6 @@ import type { ContractFormValues } from './ContractForm'
 '
 interface ProjectDetailsFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
-}
 
 export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: ProjectDetailsFieldsProps) {"
   return (;"
@@ -126,7 +125,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                 <PopoverTrigger asChild>;";"
                   <FormControl>;";"
                     <Button;";"
-                      variant={'outline'}'
+                      variant={'outline'}'`
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};
                     >'
                       {field.value ? ('
@@ -161,6 +160,6 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

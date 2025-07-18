@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { DollarSign } from '@/components/ui/icons'
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger'
 import { useRouter } from 'next/router'
@@ -40,4 +40,4 @@ const ProductListingCardComponent = ({'
 
   const stockStatus: unknown ='
     listing.stock === undefined'
-      ? 'In stock'
+      ? 'In stock'';;

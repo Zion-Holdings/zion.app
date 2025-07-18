@@ -9,7 +9,7 @@ interface AutocompleteSuggestionsProps {'
   visible: boolean,
   highlightedIndex: number"
   listId: "string
-}
+
 "
 // Helper function to highlight matching text;"
 const highlightMatch = (text: string, searchTerm: string): SearchHighlight => {"
@@ -66,11 +66,11 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
 
           return (
             <li;"
-              key={`${suggestion.type}-${index}`};"
+              key={`${suggestion.type}-${index}`};"`
               id={`suggestion-item-${index}`}
               ref={isHighlighted ? _highlightedItemRef : null};
               role="option"
-              aria-selected={isHighlighted}
+              aria-selected={isHighlighted}`
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`};
               data-testid=suggestion-item"
               onClick={(e) => {"
@@ -105,7 +105,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

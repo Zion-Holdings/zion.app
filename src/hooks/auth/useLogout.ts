@@ -28,4 +28,4 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {;
 
   return { logout };"
 }"
-"""
+""'';;

@@ -47,9 +47,8 @@ export function ProfileBadge(): unknown {): unknown {): unknown {): unknown {): 
       <span>{text}</span>
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

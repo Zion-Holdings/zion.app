@@ -1,4 +1,4 @@
-import type { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings;
 export const NEW_PRODUCTS: unknown ProductListing[] = ['
   {'
     id: 'np-crm-toolkit','
@@ -24,7 +24,7 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     aiScore: 90"
     stock: 10,"
   },;
-  {
+
     id: 'np-voice-translate','
     title: 'Real-Time Voice Translation API','
     description:'
@@ -48,7 +48,7 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     aiScore: 88
     stock: 10,"
   },;"
-  {
+
     id: 'np-data-viz-dashboard','
     title: 'Data Visualization Dashboard','
     description:'
@@ -120,7 +120,7 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     aiScore: 87"
     stock: 10,"
   },;
-  {
+
     id: 'np-social-sentiment','
     title: 'Social Media Sentiment Monitor','
     description:'
@@ -144,7 +144,7 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     aiScore: 85
     stock: 10,"
   },;"
-  {
+
     id: 'np-video-edit-suite','
     title: 'AI Video Editing Suite','
     description:'
@@ -216,7 +216,7 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     aiScore: 88"
     stock: 10,"
   },;
-  {
+
     id: 'np-chatbot-platform','
     title: 'Customer Support Chatbot Platform','
     description:'
@@ -241,4 +241,4 @@ export const NEW_PRODUCTS: unknown ProductListing[] = ['
     stock: 10,"
   },;"
 ]
-""""
+"""'';;

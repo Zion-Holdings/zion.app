@@ -13,7 +13,7 @@ import type { JobSchemaType } from './validation'
 '
 interface BasicInfoFieldsProps {'
   _control: "Control<JobSchemaType>
-}
+
 "
 export const _BasicInfoFields: unknown React.FC<BasicInfoFieldsProps> = ({;"
   control,;";"
@@ -114,4 +114,4 @@ export const _BasicInfoFields: unknown React.FC<BasicInfoFieldsProps> = ({;"
     </div>;
   );"";
 };"";
-""""
+"""'';;

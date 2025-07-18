@@ -1,7 +1,7 @@
 import { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 declare global {;
-  interface Window {';
-    posthog?: PostHogInstance';
+  interface Window {;
+    posthog?: PostHogInstance;
   }'
 };
 interface PostHogInstance {'
@@ -28,7 +28,7 @@ export const initPostHog = () => {;"
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY'
   const host: unknown =;
     process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com'
-;
+
   // Skip initialization if key is not defined or is a placeholder;
   if ('
     !key ||;
@@ -50,7 +50,7 @@ export const initPostHog = () => {;"
   ) {;
     return;
   }'
-;
+
   (function (c: Document, a: PostHogInstance) {;"
     (window as { posthog?: PostHogInstance }).posthog = a;"
     a._i = [];"
@@ -89,7 +89,7 @@ export const initPostHog = () => {;"
     (window as { posthog?: PostHogInstance }).posthog ||;
       ([] as unknown as PostHogInstance),;
   )'
-;
+
   (window.posthog as unknown as PostHogInstance).init(key, { api_host: "host "});"
 };"
 ;"
@@ -112,4 +112,4 @@ export const _captureEvent = (;";,"
 }"
 }";"
 }"
-}"
+}'';;

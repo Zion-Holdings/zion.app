@@ -1,18 +1,21 @@
-import BlogPage from '../../src/pages/Blog';;';'';
-import type { BlogProps } from '../../src/pages/Blog';;';'';
-import { BLOG_POSTS } from '@/data/blog-posts';;';'';
-import type { GetServerSideProps } from 'next';'
-;';';
-export const getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps<BlogProps> = async () => {;';'
-  // Example: Add a breadcrumb if you want to trace this specific SSR execution;';;''
-  // Sentry.addBreadcrumb({;';;';''
-  //   category: 'ssr',;';;';''
-  //   message: 'getServerSideProps for BlogPage called',;';;';''
-  //   level: 'info',;';'
-  // });';;''
-;';;';''
-  return { props: "{ posts: BLOG_POSTS "} };""
-};";""
-;";";"";
-export default BlogPage;";";";""
-""""""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Index - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Index</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Index content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Index;

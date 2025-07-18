@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react''
 import type { ReactNode } from 'react''
 import { SnackbarProvider, useSnackbar } from 'notistack'
-import type { OptionsObject, SnackbarKey } from 'notistack';
+import type { OptionsObject, SnackbarKey } from 'notistack;
 '
 export type EnqueueSnackbar = ('
   message: string,;"
@@ -19,4 +19,4 @@ const SnackbarContext = createContext<EnqueueSnackbar>(() => '')'
 export const _useEnqueueSnackbar = (): EnqueueSnackbar =>;
   useContext(SnackbarContext)'
 '
-const InnerProvider: ({ children "}: { _children: ReactNode }) => {"
+const InnerProvider: ({ children "}: { _children: ReactNode }) => {'';;

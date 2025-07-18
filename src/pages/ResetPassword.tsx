@@ -1,6 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from 'react // Added useEffect for router.isReady';
-import { useRouter } from 'next/router // Changed from useParams, useNavigate';
+import React from 'react;
+import { useState, useEffect } from 'react // Added useEffect for router.isReady;
+import { useRouter } from 'next/router // Changed from useParams, useNavigate;
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
@@ -9,10 +9,10 @@ import  { resetPassword }  from '@/services/auth;
 function strength(): unknown {): unknown {): unknown {): unknown {): unknown {pw: string) {;
   if (pw.length < 8) return 0;
   if (pw.length < 10) return 1;
-  if (pw.length < 12) return 2';
+  if (pw.length < 12) return 2;
   return 3'
 };
-export defaultault function ResetPassword(): '
+export default function ResetPassword(): '
   const router = useRouter();
   const [token, setToken] = useState('')'
   // navigate is now router;
@@ -26,7 +26,7 @@ export defaultault function ResetPassword(): '
       setToken(typeof rawToken === 'string' ? rawToken : '');
     };
   }, [router.isReady, router.query])'
-;
+
   if (!token && router.isReady) {;
     // Check token only after router is ready'
     return (;
@@ -78,7 +78,7 @@ export defaultault function ResetPassword(): '
         />;"
         <div className="h-2 bg-zinc-200 rounded">;"
           <div;"
-            className={`h-full rounded ${['bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500'][s]}`};
+            className={`h-full rounded ${['bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500'][s]}`};`
             style={{ width: "`${(s + 1) * 25"}%` }};"
           />;"
         </div>;"
@@ -98,4 +98,4 @@ export defaultault function ResetPassword(): '
             'Reset Password;
           )};
         </Button>;
-      </form>'
+      </form>'';;`

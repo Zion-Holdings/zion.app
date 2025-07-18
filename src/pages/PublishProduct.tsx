@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react;
 import { Header } from '@/components/Header'
 import { ProductSubmissionForm } from '@/components/ProductSubmissionForm'
 import { useAuth } from '@/hooks/useAuth'
 import { useRouter } from 'next/router'
 import  { SEO }  from '@/components/SEO;
-export defaultault function PublishProduct(): ;
-  const { isAuthenticated, isLoading } = useAuth()';
+export default function PublishProduct(): ;
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter()'
-;
+
   useEffect(() => {;
     if (!isLoading && !isAuthenticated) {'
       router.replace({;
@@ -55,4 +55,4 @@ export defaultault function PublishProduct(): ;
 ;"
 PublishProduct.displayName = 'PublishProduct;
 
-}'
+}'';;

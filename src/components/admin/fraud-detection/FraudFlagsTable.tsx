@@ -22,7 +22,6 @@ interface FraudFlagsTableProps {'
     flagId: string,"
     action: 'warning' | 'suspension' | 'ban' | 'ignore','
   ) => void
-}
 
 export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
   flags,;
@@ -113,4 +112,4 @@ export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
     </Table>'
   );
 }'
-'''''
+'''''';;

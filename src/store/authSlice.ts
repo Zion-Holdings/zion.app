@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit;
 '
 export interface AuthState {
   token: "string | null"
@@ -12,4 +12,4 @@ const initialState: unknown "AuthState = {;"
 };"
 ;"
 const authSlice = createSlice({;";,"
-  name: 'auth',;
+  name: 'auth',;';;

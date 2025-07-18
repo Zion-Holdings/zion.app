@@ -46,6 +46,6 @@ export function CompanyDashboard(): unknown {): unknown {): unknown {): unknown 
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

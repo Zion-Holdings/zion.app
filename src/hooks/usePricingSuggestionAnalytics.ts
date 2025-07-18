@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface PricingSuggestionAnalytics {;
   totalSuggestions: "number;"
@@ -48,11 +48,11 @@ export function usePricingSuggestionAnalytics(): unknown {): unknown {): unknown
           .select('*');
           .gte('created_at', since);
         if (error) throw error'
-;
+
         const totalSuggestions = data.length;
         const accepted = data.filter('
           (d: unknown) =>;
             typeof d === 'object' &&'
             d !== null &&;
             'accepted' in d &&;
-            (d as { accepted: "boolean "}).accepted,;
+            (d as { accepted: "boolean '}).accepted,;';;

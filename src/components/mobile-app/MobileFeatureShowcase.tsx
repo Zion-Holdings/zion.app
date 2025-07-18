@@ -65,4 +65,4 @@ import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icon
     </section>;
   );"
 }"
-"""
+""'';;

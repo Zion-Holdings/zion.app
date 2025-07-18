@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from 'sonner'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useDeleteMilestone = () => {';
+export const _useDeleteMilestone = () => {;
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const deleteMilestone = async (_milestoneId: string) => {'
@@ -25,4 +25,4 @@ export const _useDeleteMilestone = () => {';
       logErrorToProduction('Error deleting milestone:', { data: "err })
       const errorMessage: unknown =;"
         err instanceof Error && err.message ? err.message : 'Unknown error'
-      toast.error('Failed to delete milestone: ' + errorMessage)'
+      toast.error('Failed to delete milestone: ' + errorMessage)'';;

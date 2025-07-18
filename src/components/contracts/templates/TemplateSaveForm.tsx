@@ -30,7 +30,6 @@ interface TemplateSaveFormProps {""
   onComplete: () => void
   editTemplate?: ContractTemplate | null
   currentValues?: ContractFormValues
-}
 
 export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onCancel,;
@@ -143,6 +142,6 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

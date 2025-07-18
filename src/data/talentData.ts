@@ -104,7 +104,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'project','
     is_verified: false,"
     key_projects: [;
-      {
+
         title: 'Customer Segmentation Analysis','
         description:'
           'Conducted advanced customer segmentation for an e-commerce client, leading to targeted marketing campaigns that increased conversion rates by 35%.','
@@ -142,7 +142,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'full_time','
     is_verified: true,"
     key_projects: [;"
-      {
+
         title: 'Enterprise Security Assessment','
         description:'
           'Conducted comprehensive security assessment for a financial institution, identifying and mitigating 24 critical vulnerabilities before they could be exploited.','
@@ -256,7 +256,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'full_time','
     is_verified: true,"
     key_projects: [;
-      {
+
         title: 'Retail Analytics System','
         description:'
           'Built a computer vision system for retail stores that analyzes customer behavior, tracks inventory, and provides real-time insights, increasing conversion rates by 18%.','
@@ -294,7 +294,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'part_time','
     is_verified: true,"
     key_projects: [;"
-      {
+
         title: 'Multilingual Customer Service AI','
         description:'
           'Developed an NLP system supporting 14 languages for customer service applications, reducing response times by 62% and improving customer satisfaction scores.','
@@ -408,7 +408,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'part_time','
     is_verified: true,"
     key_projects: [;
-      {
+
         title: 'Autonomous Warehouse Robots','
         description:'
           'Designed reinforcement learning algorithms for a fleet of autonomous warehouse robots, improving picking efficiency by 42% and reducing errors by 67%.','
@@ -446,7 +446,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'project','
     is_verified: true,"
     key_projects: [;"
-      {
+
         title: 'AI-Assisted Radiology Platform','
         description:'
           'Developed a deep learning system for detecting abnormalities in chest X-rays with 97% sensitivity, reducing radiologist workload by 35% and improving early detection rates.','
@@ -560,7 +560,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'project','
     is_verified: true,"
     key_projects: [;
-      {
+
         title: 'NFT Marketplace','
         description:'
           'Built and deployed a full-stack NFT marketplace with custom smart contracts and IPFS storage.','
@@ -598,7 +598,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'full_time','
     is_verified: true,"
     key_projects: [;"
-      {
+
         title: 'Container Security Initiative','
         description:'
           'Implemented container scanning and runtime security across a fleet of Kubernetes clusters.','
@@ -712,7 +712,7 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
     availability_type: 'full_time','
     is_verified: true,"
     key_projects: [;
-      {
+
         title: 'Generative Adversarial Networks','
         description:'
           'Developed novel GAN architectures for high-resolution image synthesis published at CVPR.','
@@ -721,4 +721,4 @@ export const TALENT_PROFILES: unknown TalentProfile[] = ['
         title: 'Multimodal Representation Learning','
         description:'
           'Conducted research on combining vision and language models resulting in state-of-the-art benchmarks.','
-      },'
+      },'';;

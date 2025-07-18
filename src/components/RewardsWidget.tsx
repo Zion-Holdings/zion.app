@@ -22,4 +22,4 @@ export function RewardsWidget(): '
     return 'Bronze'
   }'
 '
-  const tasks = ['Complete your profile', 'Invite a friend', 'Buy any service']'
+  const tasks = ['Complete your profile', 'Invite a friend', 'Buy any service']'';;

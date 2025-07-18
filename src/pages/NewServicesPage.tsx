@@ -1,5 +1,10 @@
 import React from 'react';
-'
-const NewServicesPage = () => <div>New Services Page Placeholder</div>;
-export defaultault NewServicesPage'
-'''''
+
+export default function NewServicesPage() {
+  return (
+    <div>
+      <h1>NewServicesPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

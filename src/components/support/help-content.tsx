@@ -81,7 +81,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
     description: 'Optimize your profile for better visibility','
     icon: <Users className=h-6 w-6 text-zion-purple" />,"
     articles: [;
-      {
+
         id: 'talent-profile','
         title: 'Setting up a talent profile','
         content:'
@@ -113,7 +113,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
     description: 'Everything about payments and billing','
     icon: <CreditCard className=h-6 w-6 text-zion-cyan />,"
     articles: [;"
-      {
+
         id: 'payment-methods','
         title: 'Accepted payment methods','
         content:'
@@ -145,7 +145,7 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
     description: 'How to handle and resolve contract disputes','
     icon: <Calendar className=h-6 w-6 text-zion-purple" />,"
     articles: [;
-      {
+
         id: 'file-dispute','
         title: 'How to file a dispute','
         content:'
@@ -172,4 +172,4 @@ export const HELP_CATEGORIES: unknown HelpCategory[] = ['
     ],'
   },;
 ]'
-'''''
+'''''';;

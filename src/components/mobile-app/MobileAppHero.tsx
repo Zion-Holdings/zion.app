@@ -53,5 +53,5 @@ import { AppStoreButtons } from './AppStoreButtons'
       </div>
     </section>;"
   );"
-}
-""""
+
+"""'';;

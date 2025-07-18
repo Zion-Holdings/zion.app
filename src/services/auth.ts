@@ -27,7 +27,7 @@ export async function forgotPassword(): unknown {): unknown {): unknown {): unkn
 ;"
 export async function resetPassword(): unknown {): unknown {): unknown {): unknown {): unknown {token: string, newPassword: string) {;"
   const API_URL = process.env.NEXT_PUBLIC_API_URL || 
-  try {'
+  try {'`
     const res = await axios.post(`${API_URL"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/auth/reset-password`, {;"
       token,;"
       newPassword,;"
@@ -44,4 +44,4 @@ export async function resetPassword(): unknown {): unknown {): unknown {): unkno
 }";
 };"
 };";"
-}";
+}';';;`

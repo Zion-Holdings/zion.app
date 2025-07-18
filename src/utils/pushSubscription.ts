@@ -1,5 +1,5 @@
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger'
-;
+
 const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 '
 function urlBase64ToUint8Array(): unknown {): unknown {): unknown {): unknown {): unknown {base64String: string) {;
@@ -14,4 +14,4 @@ function urlBase64ToUint8Array(): unknown {): unknown {): unknown {): unknown {)
 };
 '
 export async function subscribeToPush(): ;
-  if (!('serviceWorker' in navigator) || !('PushManager' in window)) {;
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) {;';;

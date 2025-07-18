@@ -11,7 +11,7 @@ interface EmptyStateProps {'
     text: string
     href?: string
     onClick?: () => void
-  }
+
   secondaryAction?: {;
     text: string;
     href?: string;
@@ -81,7 +81,7 @@ export function EmptyState(): unknown {): unknown {): unknown {): unknown {): un
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;

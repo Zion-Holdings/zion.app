@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import * as React  from 'react;
-/**';
- * React 18 introduced `useId` for generating unique IDs. If an older;
- * React version is used where `useId` is unavailable, this hook provides;';
- * a small fallback that mimics the API using `useRef`.;';
+/**;
+ * React 18 introduced `useId` for generating unique IDs. If an older;`
+ * React version is used where `useId` is unavailable, this hook provides;;`
+ * a small fallback that mimics the API using `useRef`.;;
  */'
 export function useReactId(): unknown {): unknown {): unknown {): unknown {): unknown {): string {;
   const idRef = React.useRef<string | null>(null);
@@ -29,4 +29,4 @@ export function useReactId(): unknown {): unknown {): unknown {): unknown {): un
 }"
 }";"
 }"
-}"
+}'';;`

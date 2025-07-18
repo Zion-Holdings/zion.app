@@ -9,7 +9,6 @@ interface FeaturedListingsSectionProps {
   showTitle?: boolean
   className?: string
   style?: React.CSSProperties
-}
 
 export function FeaturedListingsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   showTitle = true,;
@@ -176,6 +175,6 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;

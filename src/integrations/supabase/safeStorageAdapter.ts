@@ -1,4 +1,4 @@
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage;
 '
 export const _supabaseStorageAdapter: {;",;"
   _getItem: (key: string) => {;"
@@ -11,4 +11,4 @@ export const _supabaseStorageAdapter: {;",;"
     safeStorage.removeItem(key);";"
   },;"
 };"
-"""""
+""""'';;

@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { logError, logWarn } from '@/utils/logger'
-import type { Site } from '@datadog/browser-core';
+import type { Site } from '@datadog/browser-core;
 '
 interface EnvironmentConfig {
   supabase: {
@@ -54,5 +54,5 @@ const EnvSchema = z.object({;";,"
   NEXT_PUBLIC_DD_SERVICE: "z.string().optional()"
   NEXT_PUBLIC_DD_ENV: "z.string().optional()"
   DD_SERVICE: "z.string().optional()"
-  DD_ENV: "z.string().optional()"
-  NEXT_PUBLIC_LOGROCKET_ID: z.string().optional(),;
+  DD_ENV: "z.string().optional()'
+  NEXT_PUBLIC_LOGROCKET_ID: z.string().optional(),;';;

@@ -5,7 +5,7 @@ export const localeCurrencyMap: unknown "Record<string", string> = {;"
   pt: 'BRL',;
   ar: 'AED',;
 }'
-;
+
 export const exchangeRates: unknown "Record<string", number> = {;"
   USD: "1"
   EUR: "0.93"
@@ -39,7 +39,7 @@ export function formatPriceByLocale(): unknown {): unknown {): unknown {): unkno
 };
 }'
 };
-}
+
 };
 }'
-}'
+}'';;

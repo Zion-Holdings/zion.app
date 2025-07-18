@@ -17,7 +17,6 @@ interface PaymentButtonProps {'
   className?: string
   onPaymentInitiated?: () => void
   redirectUrl?: string
-}
 
 export function PaymentButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
   amount,;"
@@ -41,7 +40,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
         description: 'Please sign in to make a purchase.','
       });
 '
-      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`);
+      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`);`
       router.push(`/auth/login?returnTo=${returnTo}`);
       return"
     };"
@@ -127,7 +126,6 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

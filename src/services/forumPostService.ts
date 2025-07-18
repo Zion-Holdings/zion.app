@@ -1,6 +1,6 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { ForumPost } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export async function fetchPostsByCategory(): unknown {): unknown {): unknown {): unknown {): unknown {;
   categoryId: string,;"
@@ -19,8 +19,8 @@ export async function fetchPostsByCategory(): unknown {): unknown {): unknown {)
     // If created_at is a timestamp, we fetch posts older than the cursor;"
     query = query.lt('created_at', cursor);
   }'
-;
+
   const { data, error } = await query;
 '
   if (error) {;
-    logErrorToProduction('Error fetching posts by category:', { data: "error "});
+    logErrorToProduction('Error fetching posts by category:', { data: "error '});';;

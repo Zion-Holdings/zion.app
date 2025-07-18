@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { TransactionHistory } from '@/components/transactions/TransactionHistory'
 import { GradientHeading } from '@/components/GradientHeading'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
 '
-export defaultault function Payments(): ;
+export default function Payments(): ;
   return (;
     <>'
       <Header />;
@@ -97,4 +97,4 @@ export defaultault function Payments(): ;
                         <Checkbox id="notify-push" defaultChecked />;"
                         <label;"
                           htmlFor="notify-push"
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white";
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white';';;

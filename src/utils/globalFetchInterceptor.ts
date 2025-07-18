@@ -1,7 +1,7 @@
 import { toast } from '@/hooks/use-toast'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { isPublicRoute } from '../config/publicRoutes'
-import { logDebug } from '@/utils/productionLogger';
+import { logDebug } from '@/utils/productionLogger;
 if (typeof window !== 'undefined' && window.fetch) {'
   const originalFetch = window.fetch.bind(window);
   let lastMessage = 
@@ -19,4 +19,4 @@ if (typeof window !== 'undefined' && window.fetch) {'
     '/telemetry',;
     'supabase.co', // Supabase internal calls;
     'googleapis.com', // Google API calls;
-    'github.com/api', // GitHub API calls;
+    'github.com/api', // GitHub API calls;';;

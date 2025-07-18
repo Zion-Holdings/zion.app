@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 '
 // const _ProfilePage: unknown React.FC = () => {;
   const pageStyle: unknown "React.CSSProperties = {;"
@@ -10,7 +10,7 @@ import React from 'react';
     borderRadius: '8px',;
     boxShadow: '0 2px 10px rgba(0,0,0,0.1)',;
   }'
-;
+
   const headerStyle: unknown "React.CSSProperties = {;"
     marginBottom: '30px',;
     paddingBottom: '20px',;
@@ -18,18 +18,18 @@ import React from 'react';
     textAlign: 'center',;
     color: '#333',;
   }'
-;
+
   const formGroupStyle: unknown "React.CSSProperties = {;"
     marginBottom: '20px', // Increased spacing;
   }'
-;
+
   const labelStyle: unknown "React.CSSProperties = {;"
     display: 'block',;
     marginBottom: '8px', // Increased spacing;
     fontWeight: 'bold',;
     color: '#555',;
   }'
-;
+
   const inputStyle: unknown "React.CSSProperties = {;"
     width: '100%',;
     padding: '12px', // Increased padding;
@@ -41,4 +41,4 @@ import React from 'react';
   const textareaStyle: unknown React.CSSProperties = {'
     ...inputStyle,;
     minHeight: '120px', // Increased height;
-    resize: 'vertical',;
+    resize: 'vertical',;';;

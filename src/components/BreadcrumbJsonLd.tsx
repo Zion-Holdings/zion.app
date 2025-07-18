@@ -4,7 +4,7 @@ import JsonLd from '@/components/JsonLd'
 export interface BreadcrumbItem {'
   _label: "string,"
   path: "string"
-}
+
 interface BreadcrumbJsonLdProps {;
   breadcrumbs: "BreadcrumbItem[]"
 }";"
@@ -30,5 +30,5 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
   return <JsonLd data={data} />'
 }'
 
-export defaultault BreadcrumbJsonLd'
-'''''
+export default BreadcrumbJsonLd'
+'''''';;`

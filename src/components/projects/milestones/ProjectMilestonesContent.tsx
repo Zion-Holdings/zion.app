@@ -179,8 +179,8 @@ export function ProjectMilestonesContent(): '
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

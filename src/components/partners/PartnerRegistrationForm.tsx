@@ -463,8 +463,8 @@ export function PartnerRegistrationForm(): '
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

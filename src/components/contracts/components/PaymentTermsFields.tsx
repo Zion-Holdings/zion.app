@@ -22,7 +22,6 @@ import type { ContractFormValues } from './ContractForm'
 interface PaymentTermsFieldsProps {'
   form: "UseFormReturn<ContractFormValues>,"
   handleMilestonesGenerated: "(milestones: GeneratedMilestone[]) => void"
-}
 
 export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,
@@ -110,6 +109,6 @@ export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknow
 };
 
 }'
-}
+
 }'
-}'
+}'';;

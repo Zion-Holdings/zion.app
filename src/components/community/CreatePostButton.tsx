@@ -48,7 +48,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
       if (onRequireLogin) {;
         onRequireLogin(target);
       } else {;
-        const returnTo = encodeURIComponent(target);
+        const returnTo = encodeURIComponent(target);`
         router.push(`/auth/login?returnTo=${returnTo}`);
       };
     };
@@ -73,9 +73,9 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
   )"
 };"
 ;";"
-export defaultault CreatePostButton;";"
+export default CreatePostButton;";"
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

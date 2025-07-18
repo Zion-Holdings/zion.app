@@ -1,3 +1,4 @@
-export { AuthProvider } from './auth'
-export { MessagingProvider } from './MessagingContext'
-export { NotificationProvider } from './notifications/NotificationContext'
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

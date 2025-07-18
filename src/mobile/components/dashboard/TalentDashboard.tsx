@@ -1,5 +1,5 @@
 import React  from 'react;
-import {';
+import {;
   ChevronRight,'
   FileText,;
   Image,;
@@ -8,8 +8,8 @@ import {';
 } from '@/components/ui/icons'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
+import { Badge } from '@/components/ui/badge;
+import Link from 'next/link;
 export function TalentDashboard(): '
   return (;
     <div className="space-y-6 px-4 pb-24">;"
@@ -87,4 +87,4 @@ export function TalentDashboard(): '
               </div>;"
               <div className="flex gap-2 mt-3">;"
                 <Button size="sm">Apply Now</Button>;"
-                <Button size="sm" variant="outline">;
+                <Button size="sm" variant="outline'>;';;

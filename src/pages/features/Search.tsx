@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import Link from 'next/link';
-export defaultault function SearchFeature(): '
+import Link from 'next/link;
+export default function SearchFeature(): '
   const schema = {;
     '@context': 'https://schema.org',;
     '@type': 'WebPage',;
@@ -14,7 +14,7 @@ export defaultault function SearchFeature(): '
       'Quickly locate products, services and talent using intelligent search filters.',;
     url: 'https://app.ziontechgroup.com/features/search',;
   }'
-;
+
   return (;
     <>'
       <SEO;
@@ -89,4 +89,4 @@ export defaultault function SearchFeature(): '
 }"
 }";"
 }"
-}"
+}'';;

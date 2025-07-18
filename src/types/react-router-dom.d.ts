@@ -1,6 +1,6 @@
 declare module 'react-router-dom' {;'
   const ReactRouterDom: unknown;
-  export defaultault ReactRouterDom;
+  export default ReactRouterDom;
   export const BrowserRouter: unknown;
   export const Routes: unknown;
   export const Route: unknown;
@@ -9,4 +9,4 @@ declare module 'react-router-dom' {;'
   export const Navigate: unknown;
   export const MemoryRouter: unknown;
   export const Outlet: unknown;
-  export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
+  export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;';;

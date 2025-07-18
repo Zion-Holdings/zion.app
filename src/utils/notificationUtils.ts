@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 type NotificationType =;
   | 'message'
@@ -10,4 +10,4 @@ type NotificationType =;
   | 'system'
   | 'project_update'
   | 'milestone_complete'
-  | 'order_status;
+  | 'order_status;';;

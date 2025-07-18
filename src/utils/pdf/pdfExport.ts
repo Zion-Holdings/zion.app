@@ -9,7 +9,7 @@ import { addSkillsSection } from './sections/skillsSection'
 import { addWorkExperienceSection } from './sections/workExperienceSection'
 import { addEducationSection } from './sections/educationSection'
 import { addCertificationsSection } from './sections/certificationsSection'
-import { addPortfolioSection } from './sections/portfolioSection';
+import { addPortfolioSection } from './sections/portfolioSection;
 '
 export interface ExportOptions {;
   theme: 'light' | 'dark;
@@ -17,7 +17,7 @@ export interface ExportOptions {;
   maxProjects?: number;
   fontFamily?: FontFamily;
 }'
-;
+
 const defaultOptions: unknown "ExportOptions = {;"
   theme: 'light',;
   includePortfolio: "true"
@@ -36,4 +36,4 @@ export async function exportResumeToPDF(): unknown {): unknown {): unknown {): u
   const doc = new jsPDF({;";,"
     orientation: 'portrait',;
     unit: 'mm',;
-    format: 'a4',;
+    format: 'a4',;';;

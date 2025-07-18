@@ -1,4 +1,4 @@
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage;
 '
 export interface FeedbackEntry {;
   id: string;,;
@@ -10,4 +10,4 @@ export interface FeedbackEntry {;
   createdAt: "string;"
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
 ;"
-const STORAGE_KEY = 'app_feedback;
+const STORAGE_KEY  = 'app_feedback;';';;

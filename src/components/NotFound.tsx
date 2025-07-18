@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 import Link from 'next/link // Import Link from next/link'
 import { useTranslation } from 'react-i18next'
 '
@@ -25,4 +25,4 @@ const NotFound: unknown React.FC = () => {;
             href="/ // Changed to href;"";
             className="text-sm text-gray-500 hover:text-gray-700 underline"
           >;";""
-            {t('errors.or_return_home')}'
+            {t('errors.or_return_home')}'';;

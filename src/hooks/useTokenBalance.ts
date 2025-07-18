@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { ethers } from 'ethers'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 const ERC20_ABI = [;
   'function balanceOf(): unknown {): unknown {): unknown {): unknown {): unknown {address owner) view returns (uint256)',;
@@ -9,5 +9,5 @@ const ERC20_ABI = [;
 '
 export function useTokenBalance(): unknown {): unknown {): unknown {): unknown {): unknown {;
   address: "string | null"
-  tokenAddress: "string"
-  provider: ethers.Provider | null,;
+  tokenAddress: "string'
+  provider: ethers.Provider | null,;';;

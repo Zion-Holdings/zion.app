@@ -1,6 +1,10 @@
-});
-type UpdatePasswordFormValues = z.infer<typeof updatePasswordSchema>;
-export defaultault function UpdatePassword(): ;
-  const [isLoading, setIsLoading] = useState(false);
-  const [accessToken, setAccessToken] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+import React from 'react';
+
+export default function UpdatePassword() {
+  return (
+    <div>
+      <h1>UpdatePassword</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

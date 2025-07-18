@@ -1,3 +1,4 @@
-export { SkillsForm } from './SkillsForm'
-export * from './types'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;
 '
 interface BundleMetrics {
   timestamp: "number"
@@ -50,7 +50,7 @@ class BundleMonitor {;"
           };
         });
       })'
-;
+
       observer.observe({ entryTypes: ['resource'] })'
     };
   };
@@ -63,4 +63,4 @@ class BundleMonitor {;"
       ) as PerformanceResourceTiming[];
       const jsEntries = resourceEntries.filter('
         (entry) =>;
-          entry.name.includes('/_next/static/') && entry.name.endsWith('.js'),;
+          entry.name.includes('/_next/static/') && entry.name.endsWith('.js'),;';;

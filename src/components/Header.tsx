@@ -33,7 +33,7 @@ export interface HeaderProps {'
     primaryColor: "string,"
     backgroundColor: string,""
     textColor: string""
-  }
+
 };
 
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false }: HeaderProps) {
@@ -285,6 +285,6 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

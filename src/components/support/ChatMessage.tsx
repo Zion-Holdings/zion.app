@@ -10,7 +10,7 @@ interface ChatMessageProps {'
   message: string
   isUser: boolean,"
   timestamp: Date"
-}
+
 "
 export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{ message, isUser, timestamp }: ChatMessageProps) {;
   const { _theme } = useTheme();"
@@ -90,8 +90,8 @@ function formatMessageWithLinks(): unknown {): unknown {): unknown {): unknown {
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

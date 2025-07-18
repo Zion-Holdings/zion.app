@@ -1,8 +1,10 @@
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { useRequestQuoteWizard } from '@/context'
-import { FavoriteButton } from '@/components/FavoriteButton'
-'
-interface ServiceCardProps {'
-  service: "{ id: string title: string }"";
-  onSelect?: (id: "string) => void"
+import React from 'react';
+
+export default function ServiceCard() {
+  return (
+    <div>
+      <h1>ServiceCard</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

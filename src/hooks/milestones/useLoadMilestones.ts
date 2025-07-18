@@ -1,2 +1,5 @@
-if (activitiesError) throw activitiesError;
-        activitiesMap[milestone.id] = activitiesData || [];
+// Hook for useLoadMilestones
+export const useUseLoadMilestones = () => {
+  // TODO: Implement hook logic
+  return {};
+};

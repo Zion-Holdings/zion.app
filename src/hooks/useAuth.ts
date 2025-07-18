@@ -1,7 +1,7 @@
 import { useContext } from 'react''
 import { AuthContext } from '@/context/auth/AuthContext'
 import type { AuthContextType } from '@/types/auth'
-import { logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger;
 '
 export const useAuth = (): AuthContextType => {'
   const context = useContext(AuthContext);
@@ -73,5 +73,5 @@ export const useAuth = (): AuthContextType => {'
   // If context is not undefined, it will be returned here.
   // All other throw new Error lines related to context being undefined are effectively bypassed by the above return.;"
   return context as AuthContextType;"
-}
-""""
+
+"""'';;

@@ -126,7 +126,7 @@ export function EnterprisePricingTable(): ;
                 <TableRow key={feature.name}>'
                   <TableCell className=font-medium>{feature.name}</TableCell>";"
                   {plans.map((plan) => (;"
-                    <TableCell;";"
+                    <TableCell;";"`
                       key={`${plan.name}-${feature.name}`};"
                       className=text-center";"
                     >;";"
@@ -154,5 +154,5 @@ export function EnterprisePricingTable(): ;
 ;""
 };"
 }"
-}
-}"
+
+}'';;`

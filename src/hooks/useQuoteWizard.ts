@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import { captureException } from '@/utils/sentry'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export interface ServiceItem {
   id: "string"
@@ -17,4 +17,4 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {;";"
     return res.json()'
   } catch {;
     if (process.env.NODE_ENV === 'development') {;
-      logErrorToProduction('Failed to fetch service items', { data: "error "});
+      logErrorToProduction('Failed to fetch service items', { data: "error '});';;

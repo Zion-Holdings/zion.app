@@ -19,7 +19,7 @@ export interface EducationFormProps {"
   educationEntries: Education[],
   onComplete: () => void"
   onBack: "() => void
-}
+
 "
 export interface EducationItemProps {"
   education: Education
@@ -32,4 +32,4 @@ export interface EducationFormFieldsProps {
   onSubmit: "(data: Education) => Promise<void>
   onCancel: () => void"
 }"
-"""
+""'';;

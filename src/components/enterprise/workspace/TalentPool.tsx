@@ -63,7 +63,7 @@ export function TalentPool(): '
       default:;";"
         return <Badge variant=outline">{status}</Badge>"
     };
-  }
+
 ;"
   return (;";
     <Card>";";
@@ -121,4 +121,4 @@ export function TalentPool(): '
 }"";
 }"
 }"
-}"
+}'';;

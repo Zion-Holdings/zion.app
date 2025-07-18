@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react;
 import { motion } from 'framer-motion'
 '
-export defaultault function PageTransition(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export default function PageTransition(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   children,'
 }: {'
   children: "React.ReactNode;"
@@ -12,4 +12,4 @@ export defaultault function PageTransition(): unknown {): unknown {): unknown {)
       animate={{ opacity: 1, y: "0 "}};"
       exit={{ opacity: 0", y: "-10 }};"";
       transition={{ duration: 0.3, ease: 'easeInOut' }}'
-      className=h-full"
+      className=h-full'';;

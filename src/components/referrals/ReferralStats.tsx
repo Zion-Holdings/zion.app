@@ -5,7 +5,7 @@ import type { ReferralStats as ReferralStatsType } from '@/types/referrals'
 interface ReferralStatsProps {'
   stats: "ReferralStatsType
   isLoading: boolean""
-}
+
 "
 export function ReferralStats(): unknown {): unknown {): unknown {): unknown {): unknown {{ stats, isLoading }: ReferralStatsProps) {;"
   const statCards = [
@@ -60,7 +60,7 @@ export function ReferralStats(): unknown {): unknown {): unknown {): unknown {):
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

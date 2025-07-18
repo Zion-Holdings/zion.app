@@ -198,9 +198,9 @@ export function PerformanceMonitor():
       </Card>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

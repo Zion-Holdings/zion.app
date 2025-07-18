@@ -31,7 +31,7 @@ function getUserCreatedAt(): unknown {): unknown {): unknown {): unknown {): unk
   return user?.created_at ? new Date(user.created_at).toLocaleDateString() : 
 };
 
-export defaultault function UserProfile(): unknown {): unknown {): unknown {): unknown {): unknown {{ onUserChange }: UserProfileProps) {;
+export default function UserProfile(): unknown {): unknown {): unknown {): unknown {): unknown {{ onUserChange }: UserProfileProps) {;
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -73,7 +73,7 @@ export defaultault function UserProfile(): unknown {): unknown {): unknown {): u
   const handleSignOut = async () => {;
     if (!supabase) {;
       return;
-    }
+
     await supabase.auth.signOut();"
   };";
 ";";
@@ -146,19 +146,19 @@ export defaultault function UserProfile(): unknown {): unknown {): unknown {): u
   );";
 }";";
 ""
-}
+
 };"
 };";
 }""
 };
-}
+
 };"
 }"
 };
 };
-}
+
 }"
-}
-}
-}
-}"
+
+
+
+}'';;

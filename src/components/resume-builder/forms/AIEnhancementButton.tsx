@@ -14,7 +14,6 @@ interface AIEnhancementButtonProps {'
   onEnhanced: (enhancedContent: string) => void
   buttonText?: string
   className?: string
-}
 
 export function AIEnhancementButton(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   currentContent,'
@@ -62,7 +61,6 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

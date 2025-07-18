@@ -15,7 +15,6 @@ interface NewPostDialogProps {'
   open: "boolean,
   onOpenChange: (open: boolean) => void
   initialCategory?: ForumCategory | null
-}
 
 export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
@@ -70,9 +69,9 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
       </DialogContent>;
     </Dialog>)"
 };"";
-export defaultault NewPostDialog;"";
+export default NewPostDialog;"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

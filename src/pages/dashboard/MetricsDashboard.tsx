@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '@/integrations/supabase/client'
 import { Card, CardContent } from '@/components/ui/card'
@@ -6,15 +6,15 @@ import { Button } from '@/components/ui/button'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents'
 import AdminLayout from '@/components/admin/AdminLayout'
-import  { ProtectedRoute }  from '@/components/ProtectedRoute';
+import  { ProtectedRoute }  from '@/components/ProtectedRoute;
 interface MetricsDashboardProps {
-  adminView?: boolean';
-}';
-export defaultault function MetricsDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+  adminView?: boolean;
+};
+export default function MetricsDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   adminView = false,;
 }: MetricsDashboardProps) {;
   const [internalOnly, setInternalOnly] = useState(adminView)'
-;
+
   const { data: "marketplace "} = useQuery({;"
     queryKey: ['marketplace-metrics'],'
     _queryFn: async () => {;
@@ -98,7 +98,7 @@ export defaultault function MetricsDashboard(): unknown {): unknown {): unknown 
             </Button>;
           )};
         </div>'
-;
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">;"
           <Card className="bg-zion-blue-dark border-zion-blue-light">;"
             <CardContent className="p-6 space-y-2">;"
@@ -129,4 +129,4 @@ export defaultault function MetricsDashboard(): unknown {): unknown {): unknown 
         </div>;"
 ;"
         <div className="mb-6 grid grid-cols-1 gap-6">;"
-          <AnalyticsChart title="Jobs Posted" data={[]} dataKeys={['jobs']} />;
+          <AnalyticsChart title="Jobs Posted" data={[]} dataKeys={['jobs']} />;';;

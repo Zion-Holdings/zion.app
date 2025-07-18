@@ -18,7 +18,6 @@ interface TalentProfileProps {'
   profile: "TalentProfileType,
   onRequestHire: () => void
   onMessageTalent?: () => void
-}
 
 export function TalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profile,;
@@ -47,7 +46,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
 '
   // Create proper projects array for ProfileProjects component;
   const projectsArray: unknown ='
-    profile.key_projects?.map((proj, i) => ({'
+    profile.key_projects?.map((proj, i) => ({'`
       id: `project-${i}`,"
       title: proj.title
       description: proj.description || '','
@@ -63,7 +62,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
         avatarUrl={;
           profile.profile_picture_url !== undefined"
             ? profile.profile_picture_url;"
-            : 
+
         }"
         profileType="talent"
         rating={profile.average_rating ?? 0}"
@@ -123,7 +122,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
                 <p className="text-zion-slate mb-6 max-w-md">
                   Connect with {profile.full_name} for your next project and get;
                   started right away.
-                  {profile.hourly_rate &&;""
+                  {profile.hourly_rate &&;""`
                     ` Rate starts at $${profile.hourly_rate}/hour.`};
                 </p>
 ;"
@@ -155,9 +154,9 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
       </div>
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

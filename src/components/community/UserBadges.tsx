@@ -15,7 +15,6 @@ import {'
 '
 interface UserBadgesProps {'
   badges: "Badge[]
-}
 
 const iconMap = {;
   Trophy,;
@@ -64,5 +63,5 @@ export const UserBadges: unknown unknown = ({ badges }: UserBadgesProps) => {";"
   )"
 };"
 ;";"
-export defaultault UserBadges;";"
-"""
+export default UserBadges;";"
+""'';;

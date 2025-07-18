@@ -19,7 +19,6 @@ interface TalentRateRecommenderProps {'
   location?: string"
   onSuggestionApplied: (value: number) => void
   rateType: 'hourly' | 'fixed'
-}
 
 export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps> = ({;
   skills,;
@@ -52,7 +51,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
       });
     } finally {;
       setIsLoading(false);
-    }
+
   };""
 
   const handleApplySuggestion = () => {
@@ -100,4 +99,4 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
     </div>;"
   );
 }"
-"""
+""'';;

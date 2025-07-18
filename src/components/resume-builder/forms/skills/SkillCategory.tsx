@@ -22,5 +22,5 @@ export const SkillCategory = ({;
       </div>
     </div>;"
   );"
-}
-""""
+
+"""'';;

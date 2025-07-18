@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import axios from 'axios;
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 export interface SignupPayload {
   email: string,
@@ -21,7 +21,7 @@ export interface SignupApiResponse {"
     id: string,
     email: string
     display_name?: string
-  }
+
   session?: Session;"
   emailVerificationRequired?: boolean;";"
 };"
@@ -36,4 +36,4 @@ export async function signupUser(): unknown {): unknown {): unknown {): unknown 
   };
 '
   try {;
-    const res = await axios.post('/api/auth/register', {;
+    const res = await axios.post('/api/auth/register', {;';;

@@ -1,5 +1,5 @@
 import { fetchProductById } from '../productService'
-import type { ProductDetailsData } from '../../types/product';
+import type { ProductDetailsData } from '../../types/product;
 '
 // Mock product data for successful response;
 const mockProduct: unknown "ProductDetailsData = {;"
@@ -29,4 +29,4 @@ describe('fetchProductById', () => {;
     global.fetch = mockFetch'
     // Spy on console methods before each test;
     consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});';;

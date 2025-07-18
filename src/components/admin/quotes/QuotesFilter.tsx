@@ -31,7 +31,6 @@ interface QuotesFilterProps {'
   dateRange: DateRange | undefined","
   setDateRange: (range: DateRange | undefined) => void,""
   onReset: "() => void
-}
 
 export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
   searchQuery,;
@@ -149,4 +148,4 @@ export const _QuotesFilter: unknown React.FC<QuotesFilterProps> = ({;
     </Card>;
   );"";
 };"";
-""""
+"""'';;

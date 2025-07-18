@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button''
 import { useAuth } from '@/hooks/useAuth''
 import { getStripe } from '@/utils/getStripe''
 import { logErrorToProduction } from '@/utils/productionLogger''
-export defaultault function CheckoutButton({ priceId, quantity = 1 }) {
+export default function CheckoutButton({ priceId, quantity = 1 }) {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
   const handleClick = async () => {
@@ -19,7 +19,7 @@ export defaultault function CheckoutButton({ priceId, quantity = 1 }) {
           priceId,
           quantity,
           customer_email: user?.email,
-          successUrl: `${window.location.origin}/checkout/success`,
+          successUrl: `${window.location.origin}/checkout/success`,`
           cancelUrl: `${window.location.origin}/checkout/cancel`,
         }),
       });
@@ -34,7 +34,7 @@ export defaultault function CheckoutButton({ priceId, quantity = 1 }) {
       logErrorToProduction('Checkout error:', { data: err })'
     } finally {
       setLoading(false);
-    }
+
   };
 
   return (
@@ -49,4 +49,5 @@ export defaultault function CheckoutButton({ priceId, quantity = 1 }) {
       )}
     </Button>
   )'
-}
+
+';;`

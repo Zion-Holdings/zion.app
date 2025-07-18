@@ -15,7 +15,6 @@ interface AutoFillModalProps {'
   onOpenChange: (open: boolean) => void,""
   onSubmit: (description: string) => void","
   loading: boolean"
-}
 
 export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,"
@@ -84,6 +83,6 @@ export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {):
 };
 
 }'
-}
+
 }'
-}'
+}'';;

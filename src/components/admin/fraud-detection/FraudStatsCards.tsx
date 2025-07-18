@@ -82,4 +82,4 @@ export const _FraudStatsCards: unknown React.FC<FraudStatsCardsProps> = ({ stats
     </div>;"
   );";
 }";";
-"""
+""'';;

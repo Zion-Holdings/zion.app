@@ -1,2 +1,4 @@
-import { createNotification } from './createNotification'
-import  type { HireRequestNotificationParams }  from './types';
+// Utility functions for createHireRequestNotifications
+export const createHireRequestNotifications = {
+  // TODO: Implement utility functions
+};

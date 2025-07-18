@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react;
 import { useRouter } from 'next/router'
 import { SearchResultCard } from '@/components/search/SearchResultCard'
 import { SearchBar } from '@/components/SearchBar'
 import { SearchEmptyState } from '@/components/marketplace/EmptyState'
 import { generateSearchSuggestions } from '@/data/marketplaceData'
-import { logErrorToProduction } from '@/utils/logErrorToProduction';
+import { logErrorToProduction } from '@/utils/logErrorToProduction;
 '
 interface SearchResult {
   id: "string"
@@ -14,10 +14,10 @@ interface SearchResult {
 }"
 const LIMIT = 20;";"
 ;"
-export defaultault function SearchResultsPage(): ;"
+export default function SearchResultsPage(): ;"
   const router = useRouter();"
   const [query, setQuery] = useState('')'
-;
+
   // Sync query state with the URL once the router is ready;
   useEffect(() => {'
     if (!router.isReady) return
@@ -32,4 +32,4 @@ export defaultault function SearchResultsPage(): ;"
     'all' | 'product' | 'service' | 'talent'
   >('all');
   const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>(;
-    'relevance',;
+    'relevance',;';;

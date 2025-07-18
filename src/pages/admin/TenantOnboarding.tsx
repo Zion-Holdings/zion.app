@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
 import  { useAuth }  from '@/hooks/useAuth;
-import {';
+import {;
   Card,'
   CardContent,;
   CardDescription,;
@@ -13,7 +13,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
-import {';
+import {;
   Select,'
   SelectContent,;
   SelectItem,;
@@ -23,8 +23,8 @@ import {';
 import { toast } from 'sonner'
 import { supabase } from '@/integrations/supabase/client'
 import { Switch } from '@/components/ui/switch'
-import { logErrorToProduction } from '@/utils/productionLogger';
-export defaultault function TenantOnboarding(): '
+import { logErrorToProduction } from '@/utils/productionLogger;
+export default function TenantOnboarding(): '
   const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState('company');
   const [isSubmitting, setIsSubmitting] = useState(false)'
@@ -50,9 +50,9 @@ export defaultault function TenantOnboarding(): '
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   }'
-;
+
   const handleSelectChange = (name: string, _value: string) => {;"
     setFormData((prev) => ({ ...prev, [name]: value }));"
   };"
-;"
-  const handleSwitchChange = (name: string, _checked: boolean) => {;
+;'
+  const handleSwitchChange = (name: string, _checked: boolean) => {;';;

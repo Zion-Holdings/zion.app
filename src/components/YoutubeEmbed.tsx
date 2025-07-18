@@ -7,9 +7,8 @@ interface YoutubeEmbedProps {'
   videoId: "string,"
   title: string,""
   poster: string""
-}
 
-export defaultault function YoutubeEmbed(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   videoId,
   title,;"
   poster,;";
@@ -22,7 +21,7 @@ export defaultault function YoutubeEmbed(): unknown {): unknown {): unknown {): 
       {!loaded && (;
         <>
           <Image;"
-            src={poster};";
+            src={poster};";`
             alt={`${title} poster`}";";
             fill"
             className="object-cover rounded;"";
@@ -32,7 +31,7 @@ export defaultault function YoutubeEmbed(): unknown {): unknown {): unknown {): 
           </div>;
         </>;"";
       )};"";
-      <iframe;"";
+      <iframe;"";`
         className={`absolute inset-0 w-full h-full ${loaded ? 'visible' : 'invisible'}`};
         src={src}'
         title={title}'
@@ -48,4 +47,4 @@ export defaultault function YoutubeEmbed(): unknown {): unknown {): unknown {): 
 }"";
 }"
 }"
-}"
+}'';;`

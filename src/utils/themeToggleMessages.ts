@@ -9,4 +9,4 @@ export const _lightModeMessages = [;"
   'Back to the light. Keep coding!',;
   'Bright theme engaged — go create.',;
 ]'
-'''''
+'''''';;

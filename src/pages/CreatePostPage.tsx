@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react;
 import { mutate } from 'swr'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -7,13 +7,13 @@ import PostForm from '@/components/community/PostForm'
 import { useAuth } from '@/hooks/useAuth'
 import { useToast } from '@/hooks/use-toast'
 import type { ForumCategory } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 interface PostFormValues {
   title: "string"
   content: string,"
   categoryId: "ForumCategory"
-  tags: "string"
-}
-export defaultault function CreatePostPage(): ;
-  const router = useRouter();
+  tags: "string'
+
+export default function CreatePostPage(): ;
+  const router = useRouter();';;

@@ -1,6 +1,6 @@
 import { renderHook, waitFor, act } from '@testing-library/react'
 import { SWRConfig } from 'swr'
-import { useQuoteWizard, ServiceItem } from '../useQuoteWizard';
+import { useQuoteWizard, ServiceItem } from '../useQuoteWizard;
 // Mock Sentry's captureException'
 jest.mock('@/utils/sentry', () => ({'
   captureException: jest.fn(),;
@@ -55,4 +55,4 @@ describe('useQuoteWizard', () => {'
   })'
 '
   test('should handle fetch error and set error state', async () => {'
-    const mockError = new Error('Failed to fetch')'
+    const mockError = new Error('Failed to fetch')'';;

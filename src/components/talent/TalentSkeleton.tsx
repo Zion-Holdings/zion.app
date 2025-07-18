@@ -20,9 +20,8 @@ export function TalentSkeleton(): '
         </div>))}
     </div>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;

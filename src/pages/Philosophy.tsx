@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { GradientHeading } from '@/components/GradientHeading';
+import { GradientHeading } from '@/components/GradientHeading;
 '
-export defaultault function Philosophy(): ;
+export default function Philosophy(): ;
   return (;
     <>'
       <SEO;
@@ -81,4 +81,4 @@ export defaultault function Philosophy(): ;
             <button className="bg-zion-cyan text-white px-6 py-3 rounded-lg">;"
               Sign with Wallet;"
             </button>;"
-            <p className="text-zion-slate-light text-sm">;
+            <p className="text-zion-slate-light text-sm'>;';;

@@ -32,4 +32,4 @@ export function VerifiedBadge(): unknown {): unknown {): unknown {): unknown {):
     <TooltipProvider>;
       <Tooltip>'
         <TooltipTrigger asChild>'
-          <span className="inline-flex text-blue-500">
+          <span className="inline-flex text-blue-500'>';;

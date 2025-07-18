@@ -1,4 +1,4 @@
-import type { CaseStudy } from '@/types/caseStudy';
+import type { CaseStudy } from '@/types/caseStudy;
 export const CASE_STUDIES: unknown CaseStudy[] = ['
   {'
     title: 'Optimizing Job Matching with AI','
@@ -56,4 +56,4 @@ export const CASE_STUDIES: unknown CaseStudy[] = ['
       'Startup X is a machine learning company building real-time analytics. They needed flexible GPU power to train complex models. Their on-premise infrastructure was small and cloud option','
   },;
 ]'
-'''''
+'''''';;

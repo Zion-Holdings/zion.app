@@ -85,4 +85,4 @@ export function TestimonialCarousel(): '
                     <CardFooter className=p-6 pt-0>";";
                       <Button"
                         variant="link;"";
-                        className="text-zion-cyan p-0"
+                        className="text-zion-cyan p-0'';;`

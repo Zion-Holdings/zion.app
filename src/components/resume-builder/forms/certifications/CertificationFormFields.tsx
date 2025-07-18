@@ -12,7 +12,6 @@ import type { CertificationFormValues } from './types'
 '
 interface CertificationFormFieldsProps {'
   form: "UseFormReturn<CertificationFormValues>
-}
 
 export function CertificationFormFields(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   form,;"
@@ -154,7 +153,6 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;

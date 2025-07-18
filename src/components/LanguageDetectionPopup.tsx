@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react;
 import { safeStorage } from '@/utils/safeStorage'
 import { useTranslation } from 'react-i18next'
 import {;
@@ -85,6 +85,6 @@ export function LanguageDetectionPopup(): ;
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

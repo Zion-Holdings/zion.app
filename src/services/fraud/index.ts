@@ -1,2 +1,4 @@
-// This file re-exports all fraud detection functionality;
-// to maintain backward compatibility;
+// Service for index
+export const indexService = {
+  // TODO: Implement service methods
+};

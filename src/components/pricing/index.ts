@@ -1,4 +1,4 @@
-export * from './PricingSuggestionBox'
-export * from './ClientBudgetRecommender'
-export * from './TalentRateRecommender'
-'''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

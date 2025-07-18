@@ -12,7 +12,7 @@ interface AuthGuardProps {
   fallback?: React.ReactNode
   showToast?: boolean
   allowGuest?: boolean
-}
+
 '
 export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   children,;
@@ -55,7 +55,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
       if (!hasRequiredRole) {;
         if (showToast) {'
           toast({'
-            title: 'Access Denied','
+            title: 'Access Denied','`
             description: `This feature requires ${requireRole.join(' or ')} privileges.`,;
             variant: 'destructive','
           })'
@@ -172,7 +172,7 @@ export function useAuthGuard(): ;
           variant: 'destructive','
         });
       };
-
+`
       router.push(`${redirectTo}?returnTo=${encodeURIComponent(returnUrl)}`);
       return false;
     };
@@ -195,7 +195,7 @@ export function useAuthGuard(): ;
     if (!hasRequiredRole) {;";"
       if (options?.showToast !== false) {;";"
         toast({;";""
-          title: 'Access Denied','
+          title: 'Access Denied','`
           description: `This feature requires ${roles.join(' or ')} privileges.`,;
           variant: 'destructive','
         });
@@ -233,10 +233,10 @@ export function useAuthGuard(): ;
 };
 }'
 }'
-}
+
 };
 }'
 }'
-}
-}
-}'
+
+
+}'';;`

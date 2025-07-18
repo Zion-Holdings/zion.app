@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import type { GetServerSideProps } from 'next';
-import { ProfileForm } from '@/components/profile/ProfileForm';
-import type { ProfileValues } from '@/components/profile/ProfileForm';
-import { PointsBadge } from '@/components/loyalty/PointsBadge';
-import type { Order } from '@/hooks/useOrders';
-import OrdersPage from './Orders';
-import AccountSettings from './AccountSettings';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from 'react;
+import type { GetServerSideProps } from 'next;
+import { ProfileForm } from '@/components/profile/ProfileForm;
+import type { ProfileValues } from '@/components/profile/ProfileForm;
+import { PointsBadge } from '@/components/loyalty/PointsBadge;
+import type { Order } from '@/hooks/useOrders;
+import OrdersPage from './Orders;
+import AccountSettings from './AccountSettings;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
 
 interface User {
   id: string;
@@ -14,14 +14,12 @@ interface User {
   bio: string;
   avatarUrl: string;
   points: number;
-}
 
 interface ProfileProps {
   user: User;
   orders?: Order[];
-}
 
-export defaultault function Profile({
+export default function Profile({
   user: initialUser,
   orders = [],
 }: ProfileProps) {
@@ -62,13 +60,12 @@ export defaultault function Profile({
       </Tabs>
     </div>
   );
-}
 
 export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({
   params: _params,
   req,
 }: { params: { [key: string]: string | string[] | undefined }; req: unknown }) => {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
 
   const getCookie = (reqObj: unknown): string => {
     if (
@@ -80,5 +77,5 @@ export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({
       return (
         (reqObj as { headers?: { cookie?: string } }).headers?.cookie || ''
       );
-    }
-    return '';
+
+    return '';';;`

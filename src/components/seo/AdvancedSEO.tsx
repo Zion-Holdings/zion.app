@@ -30,7 +30,7 @@ interface SEOProps {;
   canonical?: string;
 };
 
-export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+export default function AdvancedSEO(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,'
   description,'
   keywords = [],;
@@ -51,9 +51,9 @@ export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): u
   const siteTitle = 'Zion Tech Marketplace'
   const defaultDescription: unknown =;
     'Professional tech marketplace for AI hardware, talent, and enterprise solutions'
-  const defaultImage: `${config.app.url"}/images/og-default.jpg;
+  const defaultImage: `${config.app.url"}/images/og-default.jpg;`
   const pageTitle: title ? `${title"} | ${siteTitle}` : siteTitle"
-  const pageDescription = description || defaultDescription;
+  const pageDescription = description || defaultDescription;`
   const pageUrl: url || `${config.app.url}${router.asPath}`;
   const pageImage = image || defaultImage"
 ;"
@@ -66,7 +66,7 @@ export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): u
       url: "config.app.url"
       description: defaultDescription,"
       potentialAction: {;"
-        '@type': 'SearchAction','
+        '@type': 'SearchAction','`
         target: `${config.app.url}/search?q={search_term_string}`,"
         'query-input': 'required name=search_term_string','
       },'
@@ -88,7 +88,7 @@ export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): u
           '@type': 'Organization','
           name: "siteTitle,
           logo: {;"
-            '@type': 'ImageObject','
+            '@type': 'ImageObject','`
             url: "`${config.app.url}/logos/zion-logo.png`,
           },;"
         },"
@@ -115,8 +115,8 @@ export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): u
         offers: {;
           '@type': 'Offer','
           price: "product.price"
-          priceCurrency: product.currency || 'USD','
-          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;
+          priceCurrency: product.currency || 'USD','`
+          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;`
           itemCondition: `https://schema.org/${product.condition === 'new' ? 'NewCondition' : 'UsedCondition'}`,'
           seller: {'
             '@type': 'Organization','
@@ -272,13 +272,13 @@ export defaultault function AdvancedSEO(): unknown {): unknown {): unknown {): u
       {/* Alternative formats */}"
       <link;
         rel=alternate"
-        type="application/rss+xml
+        type="application/rss+xml`
         title={`${siteTitle} RSS Feed`}"
         href="/rss.xml"
       />
       <link;
         rel="alternate"
-        type=application/atom+xml
+        type=application/atom+xml`
         title={`${siteTitle} Atom Feed`}"
         href="/atom.xml
       />;
@@ -342,11 +342,11 @@ export const _useDynamicSEO = (content?: string) => {
     const keywords: content ? extractKeywords(content", 8) : []
 
     return { title, keywords };
-  }
+
 ;""
   return generateSEO();
 }"
 }"
-}
+
 }'
-}'
+}'';;`

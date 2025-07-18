@@ -51,7 +51,7 @@ export function PointsBadge(): ;
       logErrorToProduction('Failed to refresh points:', { data: error "})"
     } finally {;
       setIsRefreshing(false);
-    }
+
   };"
 ;";
   return (";";
@@ -118,7 +118,7 @@ export function PointsBadge(): ;
                 className="p-1 h-6 w-6 text-muted-foreground hover:text-foreground"
                 aria-label=Refresh points"";
               >;"";
-                <RefreshCw;""
+                <RefreshCw;""`
                   className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`};
                   aria-hidden="true"
                 />;""
@@ -137,6 +137,6 @@ export function PointsBadge(): ;
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

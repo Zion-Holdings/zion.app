@@ -1,7 +1,7 @@
 import { useState } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 '
 type EnhancementType ='
   | 'resume-summary'
@@ -15,7 +15,7 @@ export interface AIEnhancementOptions {
   content: string
   context?: string
   instructions?: string
-}
+
 export function useAIContentEnhancer(): '
   const [isEnhancing, setIsEnhancing] = useState(false);"
   const [error, setError] = useState<string | null>(null);
@@ -33,4 +33,4 @@ export function useAIContentEnhancer(): '
         throw new Error('Supabase client not available')'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
       const { data, error } = await supabase.functions.invoke('
-        'ai-content-enhancer','
+        'ai-content-enhancer','';;

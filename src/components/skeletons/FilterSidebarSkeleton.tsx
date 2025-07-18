@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils'
 
 export interface FilterSidebarSkeletonProps {
   className?: string
-}
 
 export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps> = ({;
   className,'
@@ -73,5 +72,5 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
   )'
 }'
 
-export defaultault FilterSidebarSkeleton'
-'''''
+export default FilterSidebarSkeleton'
+'''''';;

@@ -1,4 +1,4 @@
-import type { Project } from '@/types/projects';
+import type { Project } from '@/types/projects;
 export const _PROJECTS: unknown Project[] = ['
   {'
     id: 'project-1','
@@ -21,4 +21,4 @@ export const _PROJECTS: unknown Project[] = ['
     },'
   },;
 ]'
-'''''
+'''''';;

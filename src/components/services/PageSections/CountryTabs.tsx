@@ -21,7 +21,6 @@ interface CountryTabsProps {'
   onQuote?: (country: CountryPricing) => void"
   searchQuery: "string,
   setSearchQuery: "(query: string) => void"
-}
 
 export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   popularCountries,;
@@ -136,7 +135,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
                   ),;
                 )};
                 <PaginationItem>;
-                  <PaginationNext;
+                  <PaginationNext;`
                     href={`?page=${currentPage + 1}`};
                     onClick={(e) => {;
                       e.preventDefault();
@@ -153,7 +152,6 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
   );"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

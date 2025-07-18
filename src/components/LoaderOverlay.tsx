@@ -1,7 +1,10 @@
-export defaultault function LoaderOverlay(): ;
-  return (;
-    <div;
-      data-testid="loader-overlay;"";"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50""
-    >;
-      {/*
+import React from 'react';
+
+export default function LoaderOverlay() {
+  return (
+    <div>
+      <h1>LoaderOverlay</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

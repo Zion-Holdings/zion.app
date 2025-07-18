@@ -1,3 +1,4 @@
-export class TeamsService {;
-  private webhookUrl: string;
-  constructor(webhookUrl: string) {;
+// Module for TeamsService
+export const TeamsService = {
+  // TODO: Implement module functionality
+};

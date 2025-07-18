@@ -1,2 +1,4 @@
-export const SAMPLE_SERVICES = [;
-  {;
+// Module for sampleServices
+export const sampleServices = {
+  // TODO: Implement module functionality
+};

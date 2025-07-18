@@ -25,9 +25,9 @@ export function TalentCardSkills(): unknown {): unknown {): unknown {): unknown 
         </Badge>)}
     </div>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;

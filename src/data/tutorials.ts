@@ -1,4 +1,4 @@
-import type { Tutorial } from '@/types/tutorial';
+import type { Tutorial } from '@/types/tutorial;
 export const _TUTORIALS: unknown Tutorial[] = ['
   {'
     title: 'Setting Up a Private GPT Model','
@@ -44,4 +44,4 @@ export const _TUTORIALS: unknown Tutorial[] = ['
       'This guide provides a storyboard for a 3-minute screencast showing how to upload a product to the Zion marketplace.\n\n## Scene 1: Introduction (0:00–0:20)\nBriefly introduce Zion Marketplace and what viewers will learn.\n\n## Scene 2: Access the Seller Dashboard (0:20–0:40)\nLogin and navigate to **My Products** from your dashboard.\n\n## Scene 3: Start a New Listing (0:40–1:00)\nClick **Add Product** and select the appropriate category.\n\n## Scene 4: Enter Product Details (1:00–1:40)\nShow filling out the name, description, price, and uploading images.\n\n## Scene 5: Configure Shipping & Inventory (1:40–2:10)\nDemonstrate setting stock levels and shipping options.\n\n## Scene 6: Preview and Publish (2:10–2:40)\nPreview the listing, make adjustments, then click **Publish**.\n\n## Scene 7: Closing (2:40–3:00)\nSummarize the process and point viewers to support resources.','
   },;
 ]'
-'''''
+'''''';;`

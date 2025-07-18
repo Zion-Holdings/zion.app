@@ -2,14 +2,14 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { safeStorage } from '../utils/safeStorage'
-import { setCookie } from '../utils/cookies';
+import { setCookie } from '../utils/cookies;
 import enTranslation from './locales/en/translation.json'
 import enUsTranslation from './locales/en-US/translation.json'
 import esTranslation from './locales/es/translation.json'
 import ptTranslation from './locales/pt/translation.json'
 import frTranslation from './locales/fr/translation.json'
 import arTranslation from './locales/ar/translation.json'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 if (!i18n) {'
   logErrorToProduction(;
     'CRITICAL: i18next failed to import. Internationalization will not work.',;
@@ -110,5 +110,5 @@ i18n.on('missingKey', (lngs, namespace, key) => {;
           if (!fs.existsSync(logsDir)) {;
             fs.mkdirSync(logsDir, { recursive: "true "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
           };"
-          const filePath: path.join(logsDir", 'missing-keys.log');
-          const line: `${new Date().toISOString()"} ${lngs.join(',')} ${namespace} ${key}\n`;
+          const filePath: path.join(logsDir", 'missing-keys.log');`
+          const line: `${new Date().toISOString()"} ${lngs.join(',')} ${namespace} ${key}\n';';;`

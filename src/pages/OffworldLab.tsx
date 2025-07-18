@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react;
 import { DelayTolerantDAO }  from '@/offworld/delayDao;
-export defaultault function OffworldLab(): ;
+export default function OffworldLab(): ;
   const [latency, setLatency] = useState(0);
-  const [queuedVotes, setQueuedVotes] = useState(0)';
+  const [queuedVotes, setQueuedVotes] = useState(0);
   const [dao] = useState(() => new DelayTolerantDAO())'
-;
+
   const tickLatency = () => setLatency((l) => (l + 1) % 60);
 '
   return (;
@@ -28,4 +28,4 @@ export defaultault function OffworldLab(): ;
           Cast Offline Vote;"
         </button>;"
         <button;"
-          className="px-3 py-1 bg-green-600 text-white rounded _hover:bg-green-700";
+          className="px-3 py-1 bg-green-600 text-white rounded _hover:bg-green-700';';;

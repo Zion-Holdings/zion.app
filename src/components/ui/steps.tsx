@@ -7,7 +7,7 @@ interface StepProps {'
   label: string
   description?: string
   className?: string
-}
+
 '
 export function Step(): unknown {): unknown {): unknown {): unknown {): unknown {{ status, label, description, className }: StepProps) {'
   return (;
@@ -59,7 +59,6 @@ interface StepsProps {"
   currentStep: number"
   className?: string
   children: React.ReactNode""
-}
 
 export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown {{ currentStep, className, children }: StepsProps) {;"
   const childrenArray = React.Children.toArray(children);"
@@ -92,13 +91,12 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
       </div>
     </div>;"
   );"
-}
 
 }"
 }"
 };"
 }"
-}
+
 }"
-}
-}"
+
+}'';;`

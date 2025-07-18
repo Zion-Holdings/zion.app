@@ -1,6 +1,10 @@
-import { useRouter } from 'next/router'
 import React from 'react';
-import { TalentOnboardingForm } from '@/components/profile/TalentOnboardingForm'
-import { Header } from '@/components/Header'
-import  { useAuth }  from '@/hooks/useAuth';
-export defaultault function TalentOnboarding(): ';
+
+export default function TalentOnboarding() {
+  return (
+    <div>
+      <h1>TalentOnboarding</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

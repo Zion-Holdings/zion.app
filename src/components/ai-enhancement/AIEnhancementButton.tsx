@@ -123,7 +123,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     <Button;";"
       type=button""
       variant={variant};
-      size={size};
+      size={size};`
       className={`gap-1 ${className}`}
       onClick={handleEnhance};"
       disabled={isEnhancing};";
@@ -139,6 +139,6 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 };"";
 ";"
 }";"
-}
+
 }"
-}"
+}'';;`

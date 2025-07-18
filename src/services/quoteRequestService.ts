@@ -1,6 +1,6 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { QuoteRequest, QuoteStatus } from '@/types/quotes'
-;
+
 export const _quoteRequestService = {;
   // Get all quote requests (for admin)'
   _getAll: async () => {;
@@ -12,7 +12,7 @@ export const _quoteRequestService = {;
         *,;
         talent:talent_id ('
           display_name;
-        );
+        );`
       `,'
       );
       .order('created_at', { ascending: "false "});"
@@ -43,12 +43,12 @@ export const _quoteRequestService = {;
     if (!supabase) throw new Error('Supabase client not initialized')'
     const { data, error } = await supabase;
       .from('quote_requests');
-      .select(;
+      .select(;`
         `;
         *,;
         talent:talent_id ('
           display_name;
-        );
+        );`
       `,'
       );
-      .eq('id', id);
+      .eq('id', id);';;`

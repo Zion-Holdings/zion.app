@@ -11,7 +11,6 @@ import type { ContractFormValues } from './ContractForm'
 '
 interface AdditionalClausesFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
-}
 
 export function AdditionalClausesFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,"
@@ -184,4 +183,4 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
 }"";
 }"
 }"
-}"
+}'';;

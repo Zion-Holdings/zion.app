@@ -106,5 +106,5 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
       </CardContent>
     </Card>;"
   );"
-}
-""""
+
+"""'';;

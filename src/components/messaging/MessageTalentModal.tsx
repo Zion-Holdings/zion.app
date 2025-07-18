@@ -21,7 +21,6 @@ export interface MessageTalentModalProps {'
   isOpen: boolean,
   onClose: () => void
   jobTitle?: string
-}
 
 export function MessageTalentModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talent,;
@@ -33,7 +32,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
   const router = useRouter();"
   const [message, setMessage] = useState(";"
     jobTitle";""
-      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`"
+      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`"`
       : `Hi ${talent.full_name}, I'm interested in your profile and would like to discuss a potential opportunity.`,`);
   const [isSubmitting, setIsSubmitting] = useState(false)'
 '
@@ -51,7 +50,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       setIsSubmitting(true)'
 
       // Create context data for the conversation'
-      const contextData: {,;
+      const contextData: {,;`
         title: "jobTitle || `Discussion with ${talent.full_name"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;"
         description: talent.bio || talent.professional_title || '','
         image_url: talent.profile_picture_url || '','
@@ -67,7 +66,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       );
 '
       toast({'
-        title: 'Message sent','
+        title: 'Message sent','`
         description: `Your message has been sent to ${talent.full_name"}.`,;
       })"
 
@@ -151,6 +150,6 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
 };
 
 }'
-}
+
 }'
-}'
+}'';;`

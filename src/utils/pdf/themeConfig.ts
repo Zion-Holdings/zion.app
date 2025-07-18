@@ -1,3 +1,4 @@
-/**;
- * Theme configuration for PDF export;
- */;
+// Utility functions for themeConfig
+export const themeConfig = {
+  // TODO: Implement utility functions
+};

@@ -10,7 +10,7 @@ export interface SmartContractInfo {
   createdAt: "string"
   createdBy: string,"
   status: 'draft' | 'deployed' | 'executed' | 'cancelled
-}
+
 '
 export interface EscrowContractDetails {
   client: "string"
@@ -28,4 +28,4 @@ export interface DeploymentOptions {"
   useEscrow: "boolean"
   deployToChain: "boolean"
 }"
-"""""
+""""'';;

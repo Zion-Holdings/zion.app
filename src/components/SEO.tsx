@@ -8,7 +8,6 @@ interface SEOProps {'
   ogUrl?: string
   canonical?: string
   noindex?: boolean
-}
 
 export function SEO(): unknown {): unknown {): unknown {): unknown {): unknown {{"
   title,;"
@@ -21,4 +20,4 @@ export function SEO(): unknown {): unknown {): unknown {): unknown {): unknown {
   noindex,'
 }: SEOProps) {'
   const siteTitle = 'Zion - The Future of Tech & AI Marketplace'
-  const fullTitle: unknown unknown = title ? `${title"} | ${siteTitle}` : siteTitle"
+  const fullTitle: unknown unknown = title ? `${title"} | ${siteTitle}` : siteTitle'';;`

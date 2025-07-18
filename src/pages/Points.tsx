@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons';
+import React, { useState } from 'react;
+import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;
 import { useAuth } from '@/hooks/useAuth'
 import  { usePoints }  from '@/hooks/usePoints;
-import {';
+import {;
   Card,'
   CardContent,;
   CardDescription,;
@@ -14,12 +14,12 @@ import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { formatDistanceToNow } from 'date-fns'
 import  { LoginModal }  from '@/components/auth/LoginModal;
-export defaultault function PointsPage(): ';
+export default function PointsPage(): ;
   const { isAuthenticated, user } = useAuth()'
   const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
   const [redeeming, setRedeeming] = useState(false)'
-;
+
   async function handleRedeem(): unknown {): unknown {): unknown {): unknown {): unknown {reward: {
     id: string;,"
     cost: "number;"
@@ -33,5 +33,5 @@ export defaultault function PointsPage(): ';
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
         body: "JSON.stringify({;"
           userId: "user.id"
-          cost: "reward.cost"
-          reward: reward.title,;
+          cost: "reward.cost'
+          reward: reward.title,;';;

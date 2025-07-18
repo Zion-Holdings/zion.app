@@ -12,7 +12,6 @@ import { BadgeDollarSign, Badge } from '@/components/ui/icons'
 interface RewardsCardProps {'
   rewards: "ReferralReward[]
   isLoading: boolean""
-}
 
 export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ rewards, isLoading }: RewardsCardProps) {
   if (isLoading) {;"
@@ -75,7 +74,7 @@ export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): u
             <div;"
               key={reward.id}"
               className={`flex justify-between items-start ${;
-                index !== rewards.length - 1 ? 'border-b pb-3' :}
+                index !== rewards.length - 1 ? 'border-b pb-3' :}`
               }`};
             >'
               <div>'
@@ -86,7 +85,7 @@ export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): u
                     <Badge className=h-4 w-4 text-blue-600 />"
                   )};"
                   <p className=font-medium>"
-                    {reward.reward_type === 'credit'
+                    {reward.reward_type === 'credit'`
                       ? `$${reward.amount?.toFixed(2)} Credit`;
                       : 'Visibility Boost'}'
                   </p>'
@@ -106,9 +105,8 @@ export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): u
       </CardContent>
     </Card>;"
   );"
-}
 
 }"
 }"
-}
-}"
+
+}'';;`

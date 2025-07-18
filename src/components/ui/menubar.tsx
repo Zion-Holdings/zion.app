@@ -167,7 +167,7 @@ const MenubarLabel = React.forwardRef<;
   React.ElementRef<typeof MenubarPrimitive.Label>,;
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Label> & {;
     inset?: boolean;
-  }
+
 >(({ className, inset, ...props }, ref) => (;"
   <MenubarPrimitive.Label;"
     ref={ref}"
@@ -225,4 +225,4 @@ export {;
   MenubarSub,'
   MenubarShortcut,;
 }'
-'''''
+'''''';;

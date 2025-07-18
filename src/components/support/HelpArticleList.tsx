@@ -12,7 +12,6 @@ interface HelpArticleListProps {'
   categoryId: "string
   onArticleSelect: (articleId: string) => void"
   searchQuery: "string
-}
 
 export function HelpArticleList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   categoryId,;
@@ -86,8 +85,8 @@ function formatDate(): unknown {): unknown {): unknown {): unknown {): unknown {
 };
 }'
 }'
-}
+
 }'
 }'
-}
-}'
+
+}'';;

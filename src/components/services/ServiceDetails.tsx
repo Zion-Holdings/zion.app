@@ -12,7 +12,7 @@ import Image from 'next/image'
 '
 interface ServiceDetailsProps {'
   country: "string
-}
+
 "
 // Component to show service details for the selected country;"
 export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {): unknown {{ country }: ServiceDetailsProps) {;
@@ -85,9 +85,9 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       timeZones[country] || timeZones['default'] || 'Local timezone'
 
     return (;
-      `Our technicians in ${country} operate during business hours (8AM-6PM ${timezone}). ` +;
-      `Response times are typically within 4 hours for metropolitan areas. ` +;
-      `Please have site access permissions and contact details ready for our technicians. ` +;
+      `Our technicians in ${country} operate during business hours (8AM-6PM ${timezone}). ` +;`
+      `Response times are typically within 4 hours for metropolitan areas. ` +;`
+      `Please have site access permissions and contact details ready for our technicians. ` +;`
       `For remote locations, additional travel fees may apply.`;
     );
   }'
@@ -108,7 +108,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       <CardContent className="space-y-4>"
         <div className="overflow-hidden rounded-lg mb-4 relative h-48">
           <Image;"
-            src={getRegionalImage(country)};"
+            src={getRegionalImage(country)};"`
             alt={`Datacenter in ${country}`}
             fill;
             className="object-cover transform transition-transform duration-500 hover:scale-110"
@@ -165,9 +165,9 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       </CardFooter>
     </Card>;""
   );
-}
+
 "
 }"
-}
+
 }"
-}"
+}'';;`

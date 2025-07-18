@@ -1,4 +1,4 @@
-import { logInfo, logWarn } from '@/utils/productionLogger';
+import { logInfo, logWarn } from '@/utils/productionLogger;
 /**'
  * Centralized configuration utility for environment variables;
  */;
@@ -118,20 +118,20 @@ export function validateEnvironment(): unknown {): unknown {): unknown {): unkno
  */;"
 export function logConfigurationStatus(): unknown {): unknown {): unknown {): unknown {): unknown {): void {;"
   if (process.env.NODE_ENV !== 'development') return'
-;
+
   const config = getAppConfig();
   const validation = validateEnvironment()'
-;
+
   logInfo('🔧 Configuration Status:');
-  logInfo(`  Environment: "${config.app.environment"}`);"
+  logInfo(`  Environment: "${config.app.environment"}`);"`
   logInfo(`  App URL: "${config.app.url"}`);"
-  logInfo(;"
+  logInfo(;"`
     `  Supabase: ${config.supabase.isConfigured ? '✅' : '⚠️'} ${config.supabase.isConfigured ? 'Configured' : 'Using fallbacks'}`,;
   )'
-  logInfo(;
+  logInfo(;`
     `  Wallet: ${config.wallet.isConfigured ? '✅' : '⚠️'} ${config.wallet.isConfigured ? 'Configured' : 'Using placeholder'}`,;
   )'
-  logInfo(;
+  logInfo(;`
     `  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`,;
   );
 '
@@ -147,4 +147,4 @@ export function logConfigurationStatus(): unknown {): unknown {): unknown {): un
 }";
 };"
 };";"
-}";
+}';';;`

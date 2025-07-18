@@ -43,7 +43,6 @@ interface WorkExperienceFormProps {"
   workExperiences: WorkExperience[],"
   onComplete: () => void
   onBack: "() => void"
-}
 
 export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resumeId,;
@@ -448,7 +447,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
   );
 }"
 "
-}
+
 }"
 }"
-}"
+}'';;`

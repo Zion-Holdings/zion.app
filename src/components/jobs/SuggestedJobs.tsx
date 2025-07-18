@@ -8,7 +8,6 @@ import { NoJobsCard } from './NoJobsCard'
 
 interface SuggestedJobsProps {
   talentId?: string
-}
 
 export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {): unknown {{ talentId }: SuggestedJobsProps) {;
   const { _user } = useAuth()'
@@ -110,4 +109,4 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
 }"";
 }"
 }"
-}"
+}'';;

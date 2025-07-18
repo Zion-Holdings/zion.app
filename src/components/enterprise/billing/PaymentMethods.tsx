@@ -46,7 +46,7 @@ export function PaymentMethods(): '
           <div;"
             key={method.id}";"
             className={`flex items-center justify-between p-4 rounded-lg border ${";""
-              method.isDefault ? 'bg-muted border-primary' : 'border-border'}
+              method.isDefault ? 'bg-muted border-primary' : 'border-border'}`
             }`}'
           >'
             <div className=flex items-center space-x-4>"
@@ -93,4 +93,4 @@ export function PaymentMethods(): '
 }"";
 }"
 }"
-}"
+}'';;`

@@ -12,7 +12,7 @@ export async function ensureAnalyticsTablesExist(): '
       .from('analytics_events');
       .select('id');
       .limit(1)'
-;
+
     if (error && error.code === 'PGRST204') {;
       logInfo('Creating analytics tables...');
       await createAnalyticsTables();
@@ -29,4 +29,4 @@ async function createAnalyticsTables(): ;"
   try {;"
     if (!supabase) throw new Error('Supabase client not initialized')'
     // Create analytics_events table;
-    await supabase.rpc('exec', {;
+    await supabase.rpc('exec', {;';;

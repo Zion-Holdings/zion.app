@@ -1,23 +1,21 @@
-}
-;
-export const getServerSideProps: GetServerSideProps<LogsPageProps> = async () => {
-  try {
-    // This would normally fetch logs from your logging system
-    // For now, return mock data
-    const mockLogs: LogEntry[] = [
-      {
-        id: '1','
-        timestamp: new Date().toISOString(),
-        level: 'info','
-        message: 'Application started successfully','
-        category: 'system','
-        url: '/admin/logs''
-      },
-      {
-        id: '2','
-        timestamp: new Date(Date.now() - 60000).toISOString(),
-        level: 'warn','
-        message: 'Database connection slow','
-        category: 'database','
-        url: '/api/users''
-      }
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Logs: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>System Logs - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">System Logs</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Logs content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Logs;

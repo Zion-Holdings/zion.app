@@ -6,7 +6,7 @@ import  type { UserProfile }  from '@/types/auth'
 export interface SupabaseUser {'
   id: string'
   email?: string | null
-}
+
 '
 /**'
  * Maps Supabase profile data to our app's user model'
@@ -52,7 +52,6 @@ export function mapProfileToUser(): unknown {): unknown {): unknown {): unknown 
   };"
 }"
 
-}
 }""
 }"
-}"
+}'';;`

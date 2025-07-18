@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react;
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Link from 'next/link'
-;
+
 export function ApiWebhooks(): ;
   // Sample webhook event payload'
   const newApplicationPayload = `{;
@@ -17,9 +17,9 @@ export function ApiWebhooks(): ;
     "cover_letter": "I'm excited to apply for this position..."
     "resume_url": "https://storage.ziontechgroup.com/resumes/resume-123.pdf"
     "created_at": "2023-06-10T15:42:31Z"
-  };";"
+  };";"`
 }`;"
-;"
+;"`
   const newHirePayload = `{;"
   "event_type": "talent_hired"
   "created_at": "2023-06-12T09:15:22Z"
@@ -31,9 +31,9 @@ export function ApiWebhooks(): ;
     "start_date": "2023-07-01"
     "status": "offer_accepted"
     "created_at": "2023-06-12T09:15:22Z"
-  };";"
+  };";"`
 }`;"
-;"
+;"`
   const quoteReceivedPayload = `{;"
   "event_type": "quote_received"
   "created_at": "2023-06-15T11:30:00Z"
@@ -46,9 +46,9 @@ export function ApiWebhooks(): ;
     "budget_max": 8000,;"
     "status": "new"
     "created_at": "2023-06-15T11:30:00Z"
-  };";"
+  };";"`
 }`;"
-;"
+;"`
   const messageReceivedPayload = `{;"
   "event_type": "message_received"
   "created_at": "2023-06-18T14:22:15Z"
@@ -59,9 +59,9 @@ export function ApiWebhooks(): ;
     "recipient_id": "user-012"
     "content": "Hi, I'd like to discuss the project details."
     "created_at": "2023-06-18T14:22:15Z"
-  };";"
+  };";"`
 }`;"
-;"
+;"`
   const webhookHandlerJs = `// Express.js webhook handler example;"
 const express = require('express')'
 const app = express();
@@ -103,15 +103,15 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {'
     case 'new_application':;
       // Process the new application...;
       break'
-    ;
+
     case 'talent_hired':;
       // Update your system...;
       break'
-    ;
+
     case 'quote_received':;
       // Process the quote...;
       break'
-    ;
+
     case 'message_received':;
       // Process the message...;
       break;
@@ -124,8 +124,8 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {'
 });
 '
 app.listen(3000, () => {;
-  // logInfo('Webhook server listening on port 3000')'
+  // logInfo('Webhook server listening on port 3000')'`
 });`;
   return ('
     <ApiDocsLayout>;
-      <div className="max-w-3xl prose prose-invert">;
+      <div className="max-w-3xl prose prose-invert'>;';;`

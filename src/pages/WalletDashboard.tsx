@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react;
 import { useQuery } from '@tanstack/react-query'
 import { getWallet } from '@/api/wallet'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
@@ -20,4 +20,4 @@ const WalletDashboard = () => {;";"
   // Navigate to login on unauthorized error;"
   useEffect(() => {;"
     if (isError && isUnauthorizedError(error)) {;"
-      router.push('/login');
+      router.push('/login');';;

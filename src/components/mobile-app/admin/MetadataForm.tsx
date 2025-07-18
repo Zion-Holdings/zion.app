@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge'
 '
 interface MetadataFormProps {'
   _form: "UseFormReturn<AppMetadataValues>
-}
+
 "
 export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) => {
   const { control, watch, setValue } = form;"
@@ -163,4 +163,4 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form }) =>
     </Card>;"
   );
 }"
-"""
+""'';;
