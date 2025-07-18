@@ -124,7 +124,7 @@ const Toaster = dynamic(
     try {
       const mod = await import('sonner');
       return mod.Toaster;
-    } catch {
+    } catch (_err) {
       ProductionLogger.logWarn('Toaster dependency missing:', { error: _err });
       return () => null;
     }
