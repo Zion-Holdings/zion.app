@@ -1,62 +1,62 @@
 import { useState } from 'react''
 import type { FormEvent } from 'react''
-import { Input } from '@/components/ui/input;'
-import { Button } from '@/components/ui/button;'
-import { supabase } from '@/utils/supabase/client // Assuming supabase client is configured;'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { supabase } from '@/utils/supabase/client // Assuming supabase client is configured'
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger // Assuming logger utility'
-;'
-interface SignUpFormProps {;'
+'
+interface SignUpFormProps {'
   onSignInClick: "() => void; // Function to switch back to Sign In view;"
 };";
 ";";
-export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSignInClick }: SignUpFormProps) {";";"
-  const [email, setEmail] = useState('');'
-  const [password, setPassword] = useState('');'
+export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSignInClick }: SignUpFormProps) {"
+  const [email, setEmail] = useState('')'
+  const [password, setPassword] = useState('')'
   const [confirmPassword, setConfirmPassword] = useState('')'
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSignUp: unknown = async (_e: FormEvent) => {;
-    e.preventDefault();'
+  const const handleSignUp = async (_e: FormEvent) => {;
+    e.preventDefault()'
     setError(null)'
     setIsSuccess(false);
-;'
-    if (password !== confirmPassword) {;'
-      setError('Passwords do not match.');'
+'
+    if (password !== confirmPassword) {'
+      setError('Passwords do not match.')'
       return'
     };
-;'
-    if (password.length < 8) {;'
+'
+    if (password.length < 8) {'
       setError('Password must be at least 8 characters long.')'
       return;
     };
-;'
+'
     setIsLoading(true)'
 
-    try {;'
-      if (!supabase) {;'
+    try {'
+      if (!supabase) {'
         throw new Error('Supabase client not available')'
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};'
-;'
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'
+'
       const { data, error: "signUpError } = await supabase.auth.signUp({
         email,;""
-        password,;;"
-        // Options for email redirect, if needed for verification flow";;"
-        // options: {";;""
+        password,;"
+        // Options for email redirect, if needed for verification flow";"
+        // options: {";""
         //   emailRedirectTo: `${window.location.origin}/auth/callback`,"
         // },;"
       });";"
 ;";"
       if (signUpError) {;";"
-        logErrorToProduction('Supabase sign-up error:', { data: signUpError "})";;""
-        setError(signUpError.message || 'An error occurred during sign up.');'
-      } else if (data.user) {;'
-        logInfo('Supabase sign-up successful, user pending confirmation:', {;'
+        logErrorToProduction('Supabase sign-up error:', { data: signUpError "})""
+        setError(signUpError.message || 'An error occurred during sign up.')'
+      } else if (data.user) {'
+        logInfo('Supabase sign-up successful, user pending confirmation:', {'
           data: { data: data.user },"
         });
         // Check if user needs confirmation;
-        const firstIdentity: unknown = data.user.identities?.[0];
+        const const firstIdentity = data.user.identities?.[0];
         if (;
           data.user.identities &&;
           data.user.identities.length > 0 &&;
@@ -68,138 +68,138 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
           setError(;"";
             'Account created! Please check your email to verify your account before logging in.','
           );
-        } else {;'
-          // This case might happen if auto-confirmation is on or user already existed but unconfirmed;'
+        } else {'
+          // This case might happen if auto-confirmation is on or user already existed but unconfirmed'
           // For simplicity in the modal, we'll treat it as needing verification.'
-          setIsSuccess(true);'
-          setError(;'
+          setIsSuccess(true)'
+          setError('
             "Account created! If you don't see a verification email, please check your spam folder or try signing in.",;"
           );";"
-        };";";"
-        setEmail('');'
-        setPassword('');'
+        };"
+        setEmail('')'
+        setPassword('')'
         setConfirmPassword('')'
       } else {;
-        // Fallback, should ideally be covered by signUpError;'
-        logErrorToProduction(;'
-          'Supabase sign-up returned no error but no user or session.',;'
-        );'
+        // Fallback, should ideally be covered by signUpError'
+        logErrorToProduction('
+          'Supabase sign-up returned no error but no user or session.','
+        )'
         setError('Sign up failed due to an unknown error. Please try again.')'
-      };'
-    } catch (catchedError: unknown) {;'
-      logErrorToProduction('Exception during Supabase sign-up:', {;'
+      }'
+    } catch (catchedError: unknown) {'
+      logErrorToProduction('Exception during Supabase sign-up:', {'
         data: catchedError,";"
       });"
       setError(;";"
-        (catchedError as Error).message ||;";";"
+        (catchedError as Error).message ||;"
           'An unexpected error occurred. Please try again.','
       );
     } finally {;
-      setIsLoading(false);'
+      setIsLoading(false)'
     }'
   };
-;'
-  return (;'
+'
+  return ('
     <form onSubmit={handleSignUp} className=space-y-4>";"
       {error && (;";"
         <div;";";
           className={`p-3 rounded-md text-sm ${isSuccess ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-600'}`}`
         >;
           {error};
-        </div>;'
+        </div>'
       )}'
 
-      {!isSuccess && (;'
-        <>;'
-          <div className="space-y-1">;";"
+      {!isSuccess && ('
+        <>'
+          <div className="space-y-1">;"
             <label;";"
-              htmlFor=signup-email"";;""
+              htmlFor=signup-email"""
               className=text-sm font-medium text-zion-slate-light"
             >;"
               Email;";"
             </label>;";"
             <Input;";"
-              id=signup-email"";;""
+              id=signup-email"""
               type=email"
               value={email};"
               onChange={(e) => setEmail(e.target.value)};";"
               required;";"
               disabled={isLoading};";"
-              className=bg-zion-blue-light border-zion-blue-light focus:ring-zion-cyan text-white"";;""
+              className=bg-zion-blue-light border-zion-blue-light focus:ring-zion-cyan text-white"""
               placeholder=you@example.com";"
             />;"
           </div>;";"
-;";";"
+;"
           <div className=space-y-1>";";
-            <label";";"
+            <label"
               htmlFor="signup-password;"";
               className="text-sm font-medium text-zion-slate-light"
             >;"
               Password;";
             </label>";";
-            <Input";";"
+            <Input"
               id="signup-password;"";
               type="password"
               value={password};"
               onChange={(e) => setPassword(e.target.value)};";
               required";";
-              disabled={isLoading}";";"
+              disabled={isLoading}"
               className="bg-zion-blue-light border-zion-blue-light focus:ring-zion-cyan text-white;"";
               placeholder="••••••••";
             />";"
           </div>;";"
 ;";";
-          <div className="space-y-1">;";"
+          <div className="space-y-1">;"
             <label;";"
-              htmlFor=signup-confirm-password"";;""
+              htmlFor=signup-confirm-password"""
               className=text-sm font-medium text-zion-slate-light"
             >;"
               Confirm Password;";"
             </label>;";"
             <Input;";"
-              id=signup-confirm-password"";;""
+              id=signup-confirm-password"""
               type=password"
               value={confirmPassword};"
               onChange={(e) => setConfirmPassword(e.target.value)};";"
               required;";"
               disabled={isLoading};";"
-              className=bg-zion-blue-light border-zion-blue-light focus:ring-zion-cyan text-white"";;""
+              className=bg-zion-blue-light border-zion-blue-light focus:ring-zion-cyan text-white"""
               placeholder=••••••••"
             />;"
           </div>;";"
 ;";"
           <Button;";"
-            type=submit"";;""
+            type=submit"""
             className=w-full bg-zion-cyan hover:bg-zion-cyan-light text-black";"
             disabled={isLoading};";"
           >;";";
-            {isLoading ? 'Creating account...' : 'Create account'};'
+            {isLoading ? 'Creating account...' : 'Create account'}'
           </Button>'
         </>;
-      )};'
-;'
+      )}'
+'
       <div className="mt-4 text-center text-sm">;"
         {/* This button is styled to look like a link */};";"
-        <button;";";"
+        <button;"
           type=button";";
-          onClick={onSignInClick}";";"
+          onClick={onSignInClick}"
           className="font-medium text-zion-cyan hover:text-zion-cyan-light;"";
           style={{;"";
-            background: 'none',;'
-            border: 'none',;'
-            padding: "0",;";""
-            cursor: 'pointer',;'
+            background: 'none','
+            border: 'none','
+            padding: "0",;""
+            cursor: 'pointer','
             color: '#0af','
           }} // Re-apply inline style for consistency;
         >;
           Already have an account? Sign In;
         </button>;
-      </div>;'
+      </div>'
     </form>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

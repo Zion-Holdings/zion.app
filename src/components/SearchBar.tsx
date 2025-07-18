@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react''
-import { Search, X } from '@/components/ui/icons;'
+import { Search, X } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 
-import { Input } from '@/components/ui/input;'
-import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions;'
-import { fireEvent } from '@/lib/analytics;'
-import type { SearchSuggestion } from '@/types/search;'
-import { useDebounce } from '@/hooks/useDebounce;'
+import { Input } from '@/components/ui/input'
+import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions'
+import { fireEvent } from '@/lib/analytics'
+import type { SearchSuggestion } from '@/types/search'
+import { useDebounce } from '@/hooks/useDebounce'
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 
 /**;
@@ -35,21 +35,21 @@ interface SearchBarProps {;
 
 /**;
  * SearchBar component that allows users to search for content.;
- */;'
+ */'
 export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   value,;
-  onChange,;'
-  onSelectSuggestion,;'
+  onChange,'
+  onSelectSuggestion,'
   placeholder = 'Search...','
-}: SearchBarProps) {;'
-  const router: unknown = useRouter()'
+}: SearchBarProps) {'
+  const const router = useRouter()'
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
-  const [focused, setFocused] = useState(false);'
-  const [highlightedIndex, setHighlightedIndex] = useState(-1);'
-  const listId: unknown = 'searchbar-autocomplete-list'
-  const debounced: unknown "unknown = useDebounce(value, 150)
-  const inputRef: unknown = useRef<HTMLInputElement>(null);
-  const containerRef: unknown = useRef<HTMLDivElement>(null);
+  const [focused, setFocused] = useState(false)'
+  const [highlightedIndex, setHighlightedIndex] = useState(-1)'
+  const const listId = 'searchbar-autocomplete-list'
+  const debounced: useDebounce(value, 150)
+  const const inputRef = useRef<HTMLInputElement>(null);
+  const const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {;
     if (!debounced) {;
@@ -57,7 +57,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
       setHighlightedIndex(-1)"
       return;"
     };";"
-    const controller: unknown = new AbortController();";"
+    const const controller = new AbortController();";"
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {`
       signal: controller.signal,";"
     });";"
@@ -82,34 +82,34 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
     setHighlightedIndex(-1);
   });
 
-  const handleSelect: unknown = (_suggestion: SearchSuggestion) => {;
-    onChange(suggestion.text);'
+  const const handleSelect = (_suggestion: SearchSuggestion) => {;
+    onChange(suggestion.text)'
     if (onSelectSuggestion) onSelectSuggestion(suggestion)'
 
-    const searchQuery: unknown = encodeURIComponent(suggestion.text);'
+    const const searchQuery = encodeURIComponent(suggestion.text)'
     router.push(`/search?q=${searchQuery}`)`
     fireEvent('search', { search_term: "suggestion.text "})
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur()
   };""
-;;"
-  return (";;"
-    <div";;""
+;"
+  return (";"
+    <div";""
       className=relative w-full";";
-      ref={containerRef}";";"
+      ref={containerRef}"
       role="combobox;"";
       aria-expanded={focused && suggestions.length > 0};"";
-      aria-haspopup="listbox";";"
+      aria-haspopup="listbox"
       aria-controls={listId};";"
-      data-testid=search-bar"";;"
-    >";;""
-      <div className=relative>";";"
+      data-testid=search-bar""
+    >";""
+      <div className=relative>"
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zion-slate />;""
-        <Input;;""
-          ref={inputRef};;"";
-          type=text"";;""
-          id=main-search-input";";"
+        <Input;""
+          ref={inputRef};"";
+          type=text"""
+          id=main-search-input"
           name="search
           value={value};
           onChange={(e) => onChange(e.target.value)};
@@ -122,7 +122,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
           }};
           onBlur={(e) => {;
             // Only blur if not clicking on suggestions;
-            const relatedTarget: unknown = e.relatedTarget as HTMLElement;
+            const const relatedTarget = e.relatedTarget as HTMLElement;
             if (;
               !relatedTarget ||;
               !containerRef.current?.contains(relatedTarget);
@@ -132,25 +132,25 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
             };";"
           }};";"
           placeholder={placeholder};";"
-          className=pl-10 bg-zion-blue border border-zion-blue-light text-white _placeholder:text-zion-slate"";;""
+          className=pl-10 bg-zion-blue border border-zion-blue-light text-white _placeholder:text-zion-slate"""
           aria-autocomplete=list"
           aria-activedescendant={"
             highlightedIndex !== -1;
               ? `suggestion-item-${highlightedIndex}`;"";
               : undefined;"";
           };"";
-          autoComplete="search";"
+          autoComplete="search"
           onKeyDown={(e) => {;";"
-            if (!focused || suggestions.length === 0) {;";";"
+            if (!focused || suggestions.length === 0) {;"
               if (e.key === 'Escape') {'
-                e.preventDefault();'
+                e.preventDefault()'
                 setFocused(false)'
                 setHighlightedIndex(-1);
-                inputRef.current?.blur();'
-              };'
-              // If Enter is pressed and there's a value, navigate with query parameter;'
-              if (e.key === 'Enter' && value.trim()) {;'
-                e.preventDefault(); // Prevent form submission if SearchBar is in a form;'
+                inputRef.current?.blur()'
+              }'
+              // If Enter is pressed and there's a value, navigate with query parameter'
+              if (e.key === 'Enter' && value.trim()) {'
+                e.preventDefault(); // Prevent form submission if SearchBar is in a form'
                 fireEvent('search', { search_term: value })"
                 router.push(`/search?q=${encodeURIComponent(value)}`)`
                 setFocused(false);
@@ -162,29 +162,29 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
             switch (e.key) {;"";
               case 'ArrowDown':'
                 e.preventDefault();
-                setHighlightedIndex((prev) => (prev + 1) % suggestions.length);'
-                break;'
+                setHighlightedIndex((prev) => (prev + 1) % suggestions.length)'
+                break'
               case 'ArrowUp':'
                 e.preventDefault();
-                setHighlightedIndex(;'
+                setHighlightedIndex('
                   (prev) =>'
                     (prev - 1 + suggestions.length) % suggestions.length,;
-                );'
-                break;'
-              case 'Enter':;'
+                )'
+                break'
+              case 'Enter':'
                 if (highlightedIndex !== -1 && suggestions[highlightedIndex]) {'
                   e.preventDefault();
-                  handleSelect(suggestions[highlightedIndex]);'
-                } else if (value.trim()) {;'
+                  handleSelect(suggestions[highlightedIndex])'
+                } else if (value.trim()) {'
                   // This case should ideally be handled by the form's onSubmit,'
-                  // but if SearchBar is used standalone, this provides a fallback.;'
-                  e.preventDefault();'
+                  // but if SearchBar is used standalone, this provides a fallback.'
+                  e.preventDefault()'
                   fireEvent('search', { search_term: "value "})
                   router.push(`/search?q=${encodeURIComponent(value)}`)
                   setFocused(false);""
-                  inputRef.current?.blur();;"
-                }";;"
-                break";;""
+                  inputRef.current?.blur();"
+                }";"
+                break";""
               case 'Escape':'
                 e.preventDefault();
                 setFocused(false);
@@ -193,13 +193,13 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
                 break;
               default:;
                 break;
-            };'
+            }'
           }}'
         />;
-        {value && (;'
-          <button;'
-            className=absolute right-3 top-1/2 -translate-y-1/2 text-zion-slate hover:text-white";";"
-            onClick={() => onChange('')};'
+        {value && ('
+          <button'
+            className=absolute right-3 top-1/2 -translate-y-1/2 text-zion-slate hover:text-white"
+            onClick={() => onChange('')}'
             aria-label="Clear search;"";
           >;"";
             <X className="h-4 w-4" />
@@ -215,8 +215,8 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
         listId={listId};
       />
     </div>;""
-  );;"
-}";;"
+  );"
+}";"
 ";"
 }";
 }""

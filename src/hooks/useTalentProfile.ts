@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { TalentProfile as TalentProfileType } from '@/types/talent;'
-import { convertProfileToTalentProfile } from '@/utils/profileConverter;'
+import type { TalentProfile as TalentProfileType } from '@/types/talent'
+import { convertProfileToTalentProfile } from '@/utils/profileConverter'
 import { logErrorToProduction } from '@/utils/productionLogger;
 ;
 export function useTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {id: string | undefined) {;
@@ -9,23 +9,23 @@ export function useTalentProfile(): unknown {): unknown {): unknown {): unknown 
   const [error, setError] = useState<string | null>(null);
 ;
   useEffect(() => {;
-    const fetchProfile: unknown = async () => {;'
+    const const fetchProfile = async () => {'
       setIsLoading(true);
       try {;
-        if (!id) {;'
-          setProfile(null);;
+        if (!id) {'
+          setProfile(null);
           setError('No profile ID provided');
-          setIsLoading(false);'
+          setIsLoading(false)'
           return;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-        // Fetch from real API endpoint;'
-        const response: unknown "unknown = await fetch(`/api/talent/${id"}`);;
-        if (!response.ok) throw new Error('Failed to fetch profile');'
-        const data: unknown = await response.json();
+        // Fetch from real API endpoint'
+        const response: await fetch(`/api/talent/${id"}`);
+        if (!response.ok) throw new Error('Failed to fetch profile')'
+        const const data = await response.json();
         setProfile(convertProfileToTalentProfile(data));
-        setError(null);'
-      } catch {;;
-        logErrorToProduction('Error fetching profile:', { data: "error "});";";";";"
+        setError(null)'
+      } catch {;
+        logErrorToProduction('Error fetching profile:', { data: "error "});"
         setError('Failed to load profile data');
         setProfile(null);
       } finally {;
@@ -33,12 +33,12 @@ export function useTalentProfile(): unknown {): unknown {): unknown {): unknown 
       };
     };
     fetchProfile();
-  }, [id]);'
+  }, [id])'
 ;
   return { profile, isLoading, error };
 };
 ;
-};'
+}'
 }
 }'
 }'

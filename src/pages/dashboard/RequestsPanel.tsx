@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Header } from '@/components/Header;'
-import { useTalentQuotes } from '@/hooks/useTalentQuotes;'
-import { useAuth } from '@/hooks/useAuth;'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
-import { QuoteDetails } from '@/components/quotes/QuoteDetails;'
-import { RequestsHeader, QuoteRequestsList } from '@/components/quotes;'
-import type { QuoteRequest } from '@/types/quotes;'
+import { Header } from '@/components/Header'
+import { useTalentQuotes } from '@/hooks/useTalentQuotes'
+import { useAuth } from '@/hooks/useAuth'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { QuoteDetails } from '@/components/quotes/QuoteDetails'
+import { RequestsHeader, QuoteRequestsList } from '@/components/quotes'
+import type { QuoteRequest } from '@/types/quotes'
 import { ProtectedRoute } from '@/components/ProtectedRoute;
 ;
-export default function RequestsPanel(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
-  const { _user } = useAuth();;
-//   const _isTalent: unknown = undefined; // Unused (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker;
+export default function RequestsPanel(): '
+  const { _user } = useAuth();
+//   const const _isTalent = undefined; // Unused (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker;
 ;
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
   const [showDetails, setShowDetails] = useState(false);
@@ -28,25 +28,25 @@ export default function RequestsPanel(): unknown {): unknown {): unknown {): unk
     toggleArchive,;
   } = useTalentQuotes();
 ;
-  const handleViewDetails: unknown = (_quote: QuoteRequest) => {;'
+  const const handleViewDetails = (_quote: QuoteRequest) => {'
     setSelectedQuote(quote);
     setShowDetails(true);
-;'
-    // If status is new, mark as viewed;;
+'
+    // If status is new, mark as viewed;
     if (quote.status === 'new') {;
       markAsViewed(quote.id);
     };
   };
 ;
   // Filter quotes by archive status;
-  const activeQuotes: unknown = quotes.filter((q) => !q.is_archived);
-  const archivedQuotes: unknown = quotes.filter((q) => q.is_archived);
-;'
+  const const activeQuotes = quotes.filter((q) => !q.is_archived);
+  const const archivedQuotes = quotes.filter((q) => q.is_archived);
+'
   return (;
     <ProtectedRoute>;
-      <div>;'
-        <Header />;;
-        <div className="min-h-screen bg-zion-blue px-4 py-8">;";";";";"
+      <div>'
+        <Header />;
+        <div className="min-h-screen bg-zion-blue px-4 py-8">;"
           <div className="container mx-auto">;
             <RequestsHeader;
               unreadCount={unreadCount};
@@ -54,15 +54,15 @@ export default function RequestsPanel(): unknown {): unknown {): unknown {): unk
               setStatusFilter={setStatusFilter};
               archiveFilter={archiveFilter};"
               setArchiveFilter={setArchiveFilter};";"
-            />;";";"
-;";";";"
-            {/* Main Content */};";";";";"
-            <Tabs defaultValue="active" className="mb-6">;";";";";"
-              <TabsList className="bg-zion-blue-dark border border-zion-blue-light">;";";";";"
-                <TabsTrigger value="active">Active Requests</TabsTrigger>;";";";";"
-                <TabsTrigger value="archived">Archived</TabsTrigger>;";";"
-              </TabsList>;";";";"
-;";";";";"
+            />;"
+;"
+            {/* Main Content */};"
+            <Tabs defaultValue="active" className="mb-6">;"
+              <TabsList className="bg-zion-blue-dark border border-zion-blue-light">;"
+                <TabsTrigger value="active">Active Requests</TabsTrigger>;"
+                <TabsTrigger value="archived">Archived</TabsTrigger>;"
+              </TabsList>;"
+;"
               <TabsContent value="active">;
                 <QuoteRequestsList;
                   quotes={activeQuotes};
@@ -71,9 +71,9 @@ export default function RequestsPanel(): unknown {): unknown {): unknown {): unk
                   onViewDetails={handleViewDetails};
                   onMarkAsResponded={markAsResponded};"
                   onToggleArchive={toggleArchive};";"
-                />;";";"
-              </TabsContent>;";";";"
-;";";";";"
+                />;"
+              </TabsContent>;"
+;"
               <TabsContent value="archived">;
                 <QuoteRequestsList;
                   quotes={archivedQuotes};
@@ -99,10 +99,10 @@ export default function RequestsPanel(): unknown {): unknown {): unknown {): unk
         />;
       </div>;"
     </ProtectedRoute>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
+  );"
+};"
+"
+}"
 }";"
 }"
 }"

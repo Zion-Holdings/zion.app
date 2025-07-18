@@ -1,5 +1,5 @@
-declare module 'vitest/globals' {;'
+declare module 'vitest/globals' {'
   const vitestGlobals: unknown;
   export = vitestGlobals;
-};'
+}'
 '''''

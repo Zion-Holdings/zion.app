@@ -4,16 +4,16 @@ import { useRouter } from 'next/router;
 /**;
  * Scrolls to the top of the window whenever the route changes.;
  */;
-export function useScrollToTop(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
-  const router: unknown = useRouter();
+export function useScrollToTop(): '
+  const const router = useRouter();
   const { _pathname } = router;
-;'
-  useEffect(() => {;;
+'
+  useEffect(() => {;
     window.scrollTo({ top: "0", behavior: 'smooth' });
   }, [pathname]);
 };
 ;
-};'
+}'
 }
 }'
 }'

@@ -1,83 +1,83 @@
 import React from 'react''
 import { Button } from '@/components/ui/button'
-import {;'
+import {'
   Twitter,'
   Facebook,
-  Linkedin,;'
-  Link as LinkIcon,;'
+  Linkedin,'
+  Link as LinkIcon,'
 } from '@/components/ui/icons'
 
 import { toast } from '@/hooks/use-toast'
-;'
-interface SocialShareButtonsProps {;'
+'
+interface SocialShareButtonsProps {'
   title: "string;
 }";"
 ;"
 export function SocialShareButtons(): unknown {): unknown {): unknown {): unknown {): unknown {{ title }: SocialShareButtonsProps) {;";"
-  const shareUrl: unknown =;";";"
+  const shareUrl: unknown =;"
     typeof window !== 'undefined'
       ? encodeURIComponent(window.location.href);
       : 
-  const shareText: unknown = encodeURIComponent(title);
+  const const shareText = encodeURIComponent(title);
 
-  const shareToTwitter: unknown = () => {;'
-    window.open(;'
-      `https: //twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,";";"
+  const const shareToTwitter = () => {'
+    window.open('
+      `https: //twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,"
       '_blank','
-    );'
+    )'
   }'
 
-  const shareToFacebook: unknown = () => {;'
-    window.open(;'
+  const const shareToFacebook = () => {'
+    window.open('
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl}`,;"";
       '_blank','
-    );'
+    )'
   }'
 
-  const shareToLinkedIn: unknown = () => {;'
-    window.open(;'
-      `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;";"
-      '_blank',;'
+  const const shareToLinkedIn = () => {'
+    window.open('
+      `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;"
+      '_blank','
     )'
   };
-;'
-  const copyLink: unknown = () => {;'
+'
+  const const copyLink = () => {'
     if (typeof window === 'undefined') return'
-    navigator.clipboard;'
-      .writeText(window.location.href);'
-      .then(() => toast.success('Link copied to clipboard'));'
-      .catch(() => toast.error('Failed to copy link'));'
+    navigator.clipboard'
+      .writeText(window.location.href)'
+      .then(() => toast.success('Link copied to clipboard'))'
+      .catch(() => toast.error('Failed to copy link'))'
   }'
 
-  const buttons: unknown = [;'
-    {;'
-      icon: <Twitter className=h-4 w-4" />,";;""
-      label: 'Twitter',;'
+  const const buttons = ['
+    {'
+      icon: <Twitter className=h-4 w-4" />,""
+      label: 'Twitter','
       onClick: shareToTwitter,";"
     },;";"
     {;";";
-      icon: <Facebook className="h-4 w-4" />,;";"
-      label: 'Facebook',;'
+      icon: <Facebook className="h-4 w-4" />,;"
+      label: 'Facebook','
       onClick: shareToFacebook",";
     },;"";
-    {;"";;"
+    {;""
       icon: <Linkedin className="h-4 w-4 />,;"";
-      label: 'LinkedIn',;'
+      label: 'LinkedIn','
       onClick: "shareToLinkedIn",;"
     },;";"
-    {;";";"
-      icon: <LinkIcon className=h-4 w-4 />,";";"
-      label: 'Copy Link',;'
+    {;"
+      icon: <LinkIcon className=h-4 w-4 />,"
+      label: 'Copy Link','
       onClick: "copyLink,
     },;""
-  ];;"
-";;"
-  return (";;""
+  ];"
+";"
+  return (";""
     <div className=mt-12 flex flex-wrap gap-2>";"
       {buttons.map((btn) => (;"
         <Button;";"
-          key={btn.label};";";"
-          variant=outline";";"
+          key={btn.label};"
+          variant=outline"
           size="sm
           onClick={btn.onClick};
           aria-label={btn.label};

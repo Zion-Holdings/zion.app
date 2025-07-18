@@ -1,4 +1,4 @@
-import { createNotification } from './createNotification;'
+import { createNotification } from './createNotification'
 import type { SystemNotificationParams } from './types;
 ;
 /**;
@@ -11,19 +11,19 @@ export async function createSystemNotification(): unknown {): unknown {): unknow
   actionUrl = null,;
   actionText = null,;
   sendEmail = false,;
-}: SystemNotificationParams) {;'
+}: SystemNotificationParams) {'
   return createNotification({;
     userId,;
-    title,;'
-    message,;;
+    title,'
+    message,;
     type: 'system',;
     sendEmail,;
-    actionUrl,;'
+    actionUrl,'
     actionText,;
   });
 };
 ;
-};'
+}'
 }
 }'
 }'

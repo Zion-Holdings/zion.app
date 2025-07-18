@@ -1,23 +1,23 @@
-import { formatDistanceToNow } from 'date-fns;'
+import { formatDistanceToNow } from 'date-fns'
 import { Calendar, User, FileText, BarChart } from '@/components/ui/icons'
 
-import { Button } from '@/components/ui/button;'
-import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict;'
-import { TableRow, TableCell } from '@/components/ui/table;'
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
-import { StatusBadge } from './StatusBadge;'
-import { ScoreBadge } from './ScoreBadge;'
-import { ApplicationActions } from './ApplicationActions;'
-import Image from 'next/image // Import next/image;'
+import { Button } from '@/components/ui/button'
+import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict'
+import { TableRow, TableCell } from '@/components/ui/table'
+import type { JobApplication, ApplicationStatus } from '@/types/jobs'
+import { StatusBadge } from './StatusBadge'
+import { ScoreBadge } from './ScoreBadge'
+import { ApplicationActions } from './ApplicationActions'
+import Image from 'next/image // Import next/image'
 import React, { useState } from 'react // Import useState'
-;'
-interface ApplicationRowProps {;'
-  application: "JobApplication,;";";
+'
+interface ApplicationRowProps {'
+  application: "JobApplication,;";
   processingId: "string | null",;"";
-  onViewApplication: (applicationId: string) => Promise<void>",;";";"
-  onStatusChange: (,"";;"
+  onViewApplication: (applicationId: string) => Promise<void>",;"
+  onStatusChange: (,""
     applicationId: "string,;"";
-    newStatus: "ApplicationStatus",;";"
+    newStatus: "ApplicationStatus",;"
   ) => Promise<void>;";"
   onViewScore: (application: JobApplication) => void""
 };
@@ -29,22 +29,22 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
   onStatusChange,;"
   onViewScore,;";
 }: ApplicationRowProps) {";";
-  const [avatarError, setAvatarError] = useState(false)";";"
-  const talentName: unknown = application.talent_profile?.full_name || 'Unknown;'
+  const [avatarError, setAvatarError] = useState(false)"
+  const const talentName = application.talent_profile?.full_name || 'Unknown'
 '
   return (;
-    <TableRow key={application.id}>;'
-      <TableCell>;'
+    <TableRow key={application.id}>'
+      <TableCell>'
         <div className="flex items-center gap-3>;"";
-          <AvatarPrimitive className="h-9 w-9">;";"
+          <AvatarPrimitive className="h-9 w-9">;"
             {' '}'
             {/* Using renamed AvatarPrimitive */};
             {application.talent_profile?.profile_picture_url && !avatarError ? (;
-              <Image;'
+              <Image'
                 src={application.talent_profile.profile_picture_url}'
                 alt={talentName};
-                width={36} // Corresponds to h-9 w-9 (9 * 4px = 36px);'
-                height={36} // Corresponds to h-9 w-9;'
+                width={36} // Corresponds to h-9 w-9 (9 * 4px = 36px)'
+                height={36} // Corresponds to h-9 w-9'
                 className=rounded-full object-cover" // Ensure rounded and object-cover"
                 onError={() => setAvatarError(true)};
                 priority={false};"";
@@ -54,18 +54,18 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
             )}";"
           </AvatarPrimitive>;";"
           <div>;";";
-            <div className="font-medium">{talentName}</div>;";"
-            <div className=text-xs text-muted-foreground">";;""
+            <div className="font-medium">{talentName}</div>;"
+            <div className=text-xs text-muted-foreground">""
               {application.talent_profile?.professional_title || 'Talent'}'
-            </div>;'
+            </div>'
           </div>'
         </div>;
-      </TableCell>;'
-      <TableCell>;'
-        <div className=flex items-center gap-1>";";"
+      </TableCell>'
+      <TableCell>'
+        <div className=flex items-center gap-1>"
           <Calendar className="h-4 w-4 text-muted-foreground />;""
-          <span>;;""
-            {formatDistanceToNow(new Date(application.created_at), {;;"";
+          <span>;""
+            {formatDistanceToNow(new Date(application.created_at), {;"";
               addSuffix: true","
             })};
           </span>;
@@ -75,31 +75,31 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
         <StatusBadge status={application.status} />;"
       </TableCell>;";
       <TableCell>";";
-        <Button";";"
+        <Button"
           variant="ghost;"";
-          size="sm";";"
+          size="sm"
           onClick={() => onViewScore(application)};";"
-          className=flex items-center gap-1"";;"
-        >";;""
+          className=flex items-center gap-1""
+        >";""
           <BarChart className=h-4 w-4 mr-1 />"
           <ScoreBadge application={application} />"
         </Button>;
       </TableCell>;"";
       <TableCell>;"";
         {application.resume ? (;"";
-          <Button variant="ghost" size=sm asChild>";";
-            <a";";"
-              href={application.resume.file_url || '#'};'
+          <Button variant="ghost" size=sm asChild>";
+            <a"
+              href={application.resume.file_url || '#'}'
               target="_blank;"";
-              rel="noopener noreferrer";";"
+              rel="noopener noreferrer"
             >;";"
               <FileText className=h-4 w-4 mr-1" /> View";
             </a>;""
-          </Button>;;""
-        ) : (;;"";
+          </Button>;""
+        ) : (;"";
           <span className=text-muted-foreground text-sm">No resume</span>";
         )};"";
-      </TableCell>;"";;"
+      </TableCell>;""
       <TableCell className="text-right>
         <ApplicationActions;
           application={application};

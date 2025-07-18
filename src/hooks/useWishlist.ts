@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux;'
-import type { RootState, AppDispatch } from '@/store;'
-import { add, remove, set } from '@/store/wishlistSlice;'
+import { useSelector, useDispatch } from 'react-redux'
+import type { RootState, AppDispatch } from '@/store'
+import { add, remove, set } from '@/store/wishlistSlice'
 import { useAuth } from './useAuth;
 ;
-export function useWishlist(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const items: unknown = useSelector((s: RootState) => s.wishlist.items);
-  const dispatch: unknown = useDispatch<AppDispatch>();
+export function useWishlist(): ;
+  const const items = useSelector((s: RootState) => s.wishlist.items);
+  const const dispatch = useDispatch<AppDispatch>();
   const { user, isAuthenticated } = useAuth();
 ;
   // Load wishlist from API when user changes;
@@ -19,18 +19,18 @@ export function useWishlist(): unknown {): unknown {): unknown {): unknown {): u
       });
       .catch(() => {});
   }, [user, isAuthenticated, dispatch]);
-;'
+'
   // Persist wishlist to API whenever it changes;
   useEffect(() => {;
-    if (!user || !isAuthenticated) return;'
-    fetch(`/api/users/${user.id}/wishlist`, {;;
-      method: 'PUT',;;
-      headers: { 'Content-Type': 'application/json' },;;
+    if (!user || !isAuthenticated) return'
+    fetch(`/api/users/${user.id}/wishlist`, {;
+      method: 'PUT',;
+      headers: { 'Content-Type': 'application/json' },;
       body: "JSON.stringify(items)",;
     }).catch(() => {});
   }, [items, user, isAuthenticated]);
 ;
-  const toggle: unknown = (_id: string) => {;
+  const const toggle = (_id: string) => {;
     if (items.includes(id)) {;
       dispatch(remove(id));
     } else {;
@@ -38,12 +38,12 @@ export function useWishlist(): unknown {): unknown {): unknown {): unknown {): u
     };
   };
 ;
-  const isWishlisted: unknown = (id: string) => items.includes(id);"
+  const const isWishlisted = (id: string) => items.includes(id);"
 ;";"
-  return { items, toggle, isWishlisted };";";"
-};";";";"
-";";";"
-}";";"
+  return { items, toggle, isWishlisted };"
+};"
+"
+}"
 }";"
 }"
 }"

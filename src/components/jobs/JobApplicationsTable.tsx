@@ -1,15 +1,15 @@
 import { useState } from 'react''
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
+import type { JobApplication, ApplicationStatus } from '@/types/jobs'
 import { useJobApplications } from '@/hooks/useJobApplications'
 import {;
-  ApplicationsTable,;'
+  ApplicationsTable,'
   EmptyState,'
   ErrorState,
-  LoadingState,;'
-  ScoreDialog,;'
+  LoadingState,'
+  ScoreDialog,'
 } from './applications'
-;'
-interface JobApplicationsTableProps {;'
+'
+interface JobApplicationsTableProps {'
   jobId: "string
 };
 
@@ -28,8 +28,8 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
     useState<JobApplication | null>(null);"
   const [showScoreDialog, setShowScoreDialog] = useState(false);";"
 ;";"
-  const handleStatusChange: unknown = async (;,";"
-    applicationId: string",";;""
+  const const handleStatusChange = async (;,";"
+    applicationId: string",""
     _newStatus: string,"
   ) => {;
     setProcessingId(applicationId);
@@ -37,9 +37,9 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
       await updateApplicationStatus(;
         applicationId,;"";
         newStatus as ApplicationStatus,;"";
-      );"";""
+      );"""
       // If it's not already viewed, mark it as viewed'
-      const application: unknown = applications.find((app) => app.id === applicationId);
+      const const application = applications.find((app) => app.id === applicationId);
       if (application && !application.viewed_at) {;
         await markApplicationAsViewed(applicationId);
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
@@ -48,16 +48,16 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
     };
   };
 
-  const handleViewScore: unknown = (_application: JobApplication) => {;
+  const const handleViewScore = (_application: JobApplication) => {;
     setSelectedApplication(application);
     setShowScoreDialog(true);
   };
 
-  const handleViewApplication: unknown = async (_applicationId: string) => {;
+  const const handleViewApplication = async (_applicationId: string) => {;
     await markApplicationAsViewed(applicationId);
   };
 
-  const handleScoreUpdated: unknown = () => {;
+  const const handleScoreUpdated = () => {;
     refetch();
   };
 
@@ -88,12 +88,12 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
         onOpenChange={setShowScoreDialog};
         application={selectedApplication};
         onScoreUpdated={handleScoreUpdated};
-      />;'
+      />'
     </>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

@@ -1,6 +1,6 @@
-import type { UserDetails } from '@/types/auth;'
-import { useConversationState } from './useConversationState;'
-import { useConversations } from './useConversations;'
+import type { UserDetails } from '@/types/auth'
+import { useConversationState } from './useConversationState'
+import { useConversations } from './useConversations'
 import { useMessages } from './useMessages;
 ;
 /**;
@@ -60,12 +60,12 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
     sendMessage,;
     createConversation,;
     markAsRead,;
-    fetchConversations,;'
+    fetchConversations,'
     loadMessages,;
   };
 };
 ;
-};'
+}'
 }
 }'
 }'

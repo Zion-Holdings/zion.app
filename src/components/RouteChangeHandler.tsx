@@ -1,5 +1,5 @@
 import { useEffect } from 'react''
-import { useRouter } from 'next/router;'
+import { useRouter } from 'next/router'
 import { logWarn } from '@/utils/productionLogger'
 
 interface RouteChangeHandlerProps {;
@@ -17,11 +17,11 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
   resetScrollOnChange = true,;
   forceRerender = false,;
 }: RouteChangeHandlerProps) {;
-  const router: unknown = useRouter();'
+  const const router = useRouter()'
 '
   useEffect(() => {;
-    const handleRouteChangeStart: unknown = () => {;'
-      // Clear any pending timeouts or intervals - simplified approach;'
+    const const handleRouteChangeStart = () => {'
+      // Clear any pending timeouts or intervals - simplified approach'
       if (typeof window !== 'undefined') {'
         // Clear intervals up to a reasonable range;
         for (let i = 1; i < 100; i++) {;
@@ -29,22 +29,22 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
           clearTimeout(i);
         };
       };
-    };'
+    }'
 '
-    const handleRouteChangeComplete: unknown = () => {;
-      // Reset scroll position;'
-      if (resetScrollOnChange) {;'
+    const const handleRouteChangeComplete = () => {;
+      // Reset scroll position'
+      if (resetScrollOnChange) {'
         window.scrollTo({ top: "0, behavior: 'smooth' })'
       };
 
       // Call custom handler;
       onRouteChange?.(router.asPath);
-;'
+'
       // Force rerender if needed'
       if (forceRerender) {;
-        // Trigger a small delay to ensure DOM updates;'
-        setTimeout(() => {;'
-          const event: unknown = new CustomEvent('routeChangeComplete', {;'
+        // Trigger a small delay to ensure DOM updates'
+        setTimeout(() => {'
+          const const event = new CustomEvent('routeChangeComplete', {'
             detail: { url: router.asPath "},"
           });
           window.dispatchEvent(event);
@@ -52,19 +52,19 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
       };"
     };";
 ";";
-    const handleRouteChangeError: unknown = () => {";";"
-      logWarn('Route change error occurred');'
+    const const handleRouteChangeError = () => {"
+      logWarn('Route change error occurred')'
     }'
 
-    // Only add event listeners if router.events exists;'
-    if (router.events) {;'
-      router.events.on('routeChangeStart', handleRouteChangeStart);'
-      router.events.on('routeChangeComplete', handleRouteChangeComplete);'
+    // Only add event listeners if router.events exists'
+    if (router.events) {'
+      router.events.on('routeChangeStart', handleRouteChangeStart)'
+      router.events.on('routeChangeComplete', handleRouteChangeComplete)'
       router.events.on('routeChangeError', handleRouteChangeError)'
-;'
-      return () => {;'
-        router.events.off('routeChangeStart', handleRouteChangeStart);'
-        router.events.off('routeChangeComplete', handleRouteChangeComplete);'
+'
+      return () => {'
+        router.events.off('routeChangeStart', handleRouteChangeStart)'
+        router.events.off('routeChangeComplete', handleRouteChangeComplete)'
         router.events.off('routeChangeError', handleRouteChangeError)'
       };
     };
@@ -75,12 +75,12 @@ export function RouteChangeHandler(): unknown {): unknown {): unknown {): unknow
     forceRerender,;
     router.asPath,;
     router.events,;
-  ]);'
+  ])'
 '
   return null;
 };
 
-};'
+}'
 }
 }'
 }'

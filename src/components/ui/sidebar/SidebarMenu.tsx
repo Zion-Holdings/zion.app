@@ -7,18 +7,18 @@ interface SidebarMenuProps extends React.HTMLAttributes<HTMLUListElement> {;
 };
 ;
 export function SidebarMenu(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  className,;'
+  className,'
   children,;
   ...props;
-}: SidebarMenuProps) {;'
-  return (;;
+}: SidebarMenuProps) {'
+  return (;
     <ul className={cn('space-y-1', className)} {...props}>;
-      {children};'
+      {children}'
     </ul>;
   );
 };
 ;
-};'
+}'
 }
 }'
 }'

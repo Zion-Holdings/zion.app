@@ -5,92 +5,92 @@
 import React from 'react';
 import dynamic from 'next/dynamic;
 ;
-const LoadingSkeleton: unknown = () =>;'
-  React.createElement(;;
-    'div',;;
-    { className: 'animate-pulse space-y-4' },;;
-    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-3/4' }),;;
-    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-1/2' }),;;
-    React.createElement('div', { className: 'h-32 bg-gray-200 rounded' }),;'
+const const LoadingSkeleton = () =>'
+  React.createElement(;
+    'div',;
+    { className: 'animate-pulse space-y-4' },;
+    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-3/4' }),;
+    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-1/2' }),;
+    React.createElement('div', { className: 'h-32 bg-gray-200 rounded' }),'
   );
 ;
-// Chart components (heavy - only load when needed);'
-// export const DynamicChart: unknown = dynamic(;;
-//   () => import('../components/charts/Chart'),;'
-//   {;;
+// Chart components (heavy - only load when needed)'
+// export const const DynamicChart = dynamic(;
+//   () => import('../components/charts/Chart'),'
+//   {;
 //     loading: "LoadingSkeleton",;
 //     ssr: false;"
 //   };";"
-// );";";"
-;";";";"
-export const _DynamicPieChart: unknown = dynamic(;";";";";"
-  () => import('recharts').then((mod) => ({ default: "mod.PieChart "})),;";";";"
-  {;";";";";"
-    loading: "LoadingSkeleton",;";";";";"
+// );"
+;"
+export const const _DynamicPieChart = dynamic(;"
+  () => import('recharts').then((mod) => ({ default: "mod.PieChart "})),;"
+  {;"
+    loading: "LoadingSkeleton"
     ssr: "false",;"
   },;";"
-);";";"
-;";";";"
-export const _DynamicBarChart: unknown = dynamic(;";";";";"
-  () => import('recharts').then((mod) => ({ default: "mod.BarChart "})),;";";";"
-  {;";";";";"
-    loading: "LoadingSkeleton",;";";";";"
+);"
+;"
+export const const _DynamicBarChart = dynamic(;"
+  () => import('recharts').then((mod) => ({ default: "mod.BarChart "})),;"
+  {;"
+    loading: "LoadingSkeleton"
     ssr: "false",;
   },;
 );"
 ;";"
-// Developer tools;";";"
-export const _DynamicApiLogsChart: unknown = dynamic(;";";";"
-  () =>;";";";";"
-    import('../components/developers/ApiLogsChart').then((mod) => ({;;
-      default: "mod.ApiLogsChart",;";";"
-    })),;";";";"
-  {;";";";";"
-    loading: "LoadingSkeleton",;";";";";"
+// Developer tools;"
+export const const _DynamicApiLogsChart = dynamic(;"
+  () =>;"
+    import('../components/developers/ApiLogsChart').then((mod) => ({;
+      default: "mod.ApiLogsChart",;"
+    })),;"
+  {;"
+    loading: "LoadingSkeleton"
     ssr: "false",;
   },;"
 );";"
-;";";"
-// Analytics components;";";";"
-export const _DynamicAnalyticsChart: unknown = dynamic(;";";";";"
-  () => import('../components/analytics/AnalyticsChart'),;'
-  {;;
-    loading: "LoadingSkeleton",;";";";";"
+;"
+// Analytics components;"
+export const const _DynamicAnalyticsChart = dynamic(;"
+  () => import('../components/analytics/AnalyticsChart'),'
+  {;
+    loading: "LoadingSkeleton"
     ssr: "false",;
   },;
 );
 ;"
 // PDFGenerator and RichEditor components do not exist, so remove their dynamic imports;";"
-;";";"
-// Use ReactPlayer for video player;";";";"
-export const _DynamicVideoPlayer: unknown = dynamic(;";";";";"
-  () => import('react-player').then((mod) => ({ default: "mod.default "})),;";";";"
-  {;";";";";"
-    loading: "LoadingSkeleton",;";";";";"
+;"
+// Use ReactPlayer for video player;"
+export const const _DynamicVideoPlayer = dynamic(;"
+  () => import('react-player').then((mod) => ({ default: "mod.default "})),;"
+  {;"
+    loading: "LoadingSkeleton"
     ssr: "false",;
   },;"
 );";"
-;";";"
-// Use ModelViewer as defined in ProductGallery;";";";"
-const ModelViewer: unknown = React.lazy(async () => {;";";";";"
-  await import('@google/model-viewer');'
-  return {;;
-    default: "(props: Record<string", unknown>) =>;";";";";"
+;"
+// Use ModelViewer as defined in ProductGallery;"
+const const ModelViewer = React.lazy(async () => {;"
+  await import('@google/model-viewer')'
+  return {;
+    default: "(props: Record<string", unknown>) =>;"
       React.createElement('model-viewer', props),;
   };
-});'
+})'
 export { ModelViewer as DynamicModelViewer };
 ;
-// Virtual list for large datasets;'
-export const _DynamicVirtualList: unknown = dynamic(;;
-  () => import('react-window').then((mod) => ({ default: "mod.FixedSizeList "})),;";";";"
-  {;";";";";"
-    loading: "LoadingSkeleton",;";";";";"
+// Virtual list for large datasets'
+export const const _DynamicVirtualList = dynamic(;
+  () => import('react-window').then((mod) => ({ default: "mod.FixedSizeList "})),;"
+  {;"
+    loading: "LoadingSkeleton"
     ssr: "false",;"
   },;";"
-);";";"
-;";";";"
-// Usage examples:;";";";";"
-// Replace: import Chart from '../components/charts/Chart;'
+);"
+;"
+// Usage examples:;"
+// Replace: import Chart from '../components/charts/Chart'
 // With: "import { DynamicChart as Chart "} from '@/utils/dynamicComponents;
 '''''

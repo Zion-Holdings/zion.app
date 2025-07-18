@@ -1,17 +1,17 @@
 import React from 'react'
-import {;'
+import {'
   Dialog,'
   DialogContent,
-  DialogHeader,;'
-  DialogTitle,;'
-} from '@/components/ui/dialog;'
-import { AIEnhancementPanel } from './AIEnhancementPanel;'
+  DialogHeader,'
+  DialogTitle,'
+} from '@/components/ui/dialog'
+import { AIEnhancementPanel } from './AIEnhancementPanel'
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer'
-;'
-interface AIEnhancementDialogProps {;'
-  title: "string,;";";
+'
+interface AIEnhancementDialogProps {'
+  title: "string,;";
   isOpen: "boolean",;"";
-  onClose: () => void",;";";"
+  onClose: () => void",;"
   onApply: (content: string) => void,"
   defaultOptions: AIEnhancementOptions;
   initialContent?: string;
@@ -25,7 +25,7 @@ export function AIEnhancementDialog(): unknown {): unknown {): unknown {): unkno
   defaultOptions,;
   initialContent,;
 }: AIEnhancementDialogProps) {;
-  const handleApply: unknown = (_content: string) => {;
+  const const handleApply = (_content: string) => {;
     onApply(content);
     onClose()"
   };
@@ -37,17 +37,17 @@ export function AIEnhancementDialog(): unknown {): unknown {): unknown {): unkno
           <DialogTitle>{title}</DialogTitle>;
         </DialogHeader>
         <AIEnhancementPanel;""
-          title={title};;"
-          defaultOptions={defaultOptions}";;"
-          onApply={handleApply}";;""
+          title={title};"
+          defaultOptions={defaultOptions}";"
+          onApply={handleApply}";""
           initialContent={initialContent ?? ''}'
         />;
-      </DialogContent>;'
+      </DialogContent>'
     </Dialog>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

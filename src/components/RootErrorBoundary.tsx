@@ -1,6 +1,6 @@
 import React, { useState } from 'react''
-import { ErrorBoundary } from 'react-error-boundary;'
-import type { FallbackProps } from 'react-error-boundary;'
+import { ErrorBoundary } from 'react-error-boundary'
+import type { FallbackProps } from 'react-error-boundary'
 import { logErrorToProduction } from '@/utils/productionLogger'
 
 interface RootFallbackProps extends FallbackProps {;
@@ -8,20 +8,20 @@ interface RootFallbackProps extends FallbackProps {;
 };
 
 function RootFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  error,;'
+  error,'
   resetErrorBoundary,'
   traceId,;
-}: RootFallbackProps) {;'
-  return (;'
-    <div role="alert className=p-6 text-center space-y-4">";;"
-      <div>";;""
-        <h2 className=text-lg font-semibold>Something went wrong</h2>";";"
+}: RootFallbackProps) {'
+  return ('
+    <div role="alert className=p-6 text-center space-y-4">"
+      <div>";""
+        <h2 className=text-lg font-semibold>Something went wrong</h2>"
         <p className="text-sm text-gray-600>
           Please try again. If the problem persists contact support.;""
-        </p>;;"
-      </div>";;"
-      {traceId && (";;""
-        <p className=text-xs text-gray-500 data-testid="trace-id">;";"
+        </p>;"
+      </div>";"
+      {traceId && (";""
+        <p className=text-xs text-gray-500 data-testid="trace-id">;"
           Trace ID: {traceId"}"
         </p>;
       )};"";
@@ -31,7 +31,7 @@ function RootFallback(): unknown {): unknown {): unknown {): unknown {): unknown
       >";"
         Retry;";"
       </button>;";";
-      {process.env.NODE_ENV === 'development' && error && (;'
+      {process.env.NODE_ENV === 'development' && error && ('
         <pre className="mt-4 text-left text-xs whitespace-pre-wrap overflow-x-auto">
           {error.stack || error.message};
         </pre>)};
@@ -39,9 +39,9 @@ function RootFallback(): unknown {): unknown {): unknown {): unknown {): unknown
   );
 }
 ;""
-export default function RootErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;;"
-  children,";;"
-}: {";;""
+export default function RootErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
+  children,";"
+}: {";""
   children: React.ReactNode"
 }) {;
   const [traceId, setTraceId] = useState<string | null>(null);
@@ -55,23 +55,23 @@ export default function RootErrorBoundary(): unknown {): unknown {): unknown {):
           error instanceof Error ? error : undefined,;"";
           { type: 'UI Error', componentStack: "info.componentStack "},;"
         );";"
-        const id: unknown =;";";"
+        const id: unknown =;"
           'trace-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9)'
         setTraceId(id);
       }};
     >;
       <React.Suspense fallback={<div>Loading...</div>}>;
         {children};
-      </React.Suspense>;'
+      </React.Suspense>'
     </ErrorBoundary>'
   );
 };
 
 };
-};'
+}'
 }'
 }
-};'
+}'
 }'
 }
 }'

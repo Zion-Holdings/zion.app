@@ -1,16 +1,16 @@
 import React from 'react''
 import { Heart } from '@/components/ui/icons'
 
-import { cn } from '@/lib/utils;'
-import { useWishlist } from '@/hooks/useWishlist;'
-import { useAuth } from '@/hooks/useAuth;'
-import { toast } from '@/hooks/use-toast;'
+import { cn } from '@/lib/utils'
+import { useWishlist } from '@/hooks/useWishlist'
+import { useAuth } from '@/hooks/useAuth'
+import { toast } from '@/hooks/use-toast'
 import { LoginModal } from '@/components/auth/LoginModal'
-import {;'
+import {'
   Tooltip,'
   TooltipContent,
-  TooltipProvider,;'
-  TooltipTrigger,;'
+  TooltipProvider,'
+  TooltipTrigger,'
 } from '@/components/ui/tooltip'
 
 interface FavoriteButtonProps {;
@@ -23,47 +23,47 @@ export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {)
   const { _isAuthenticated } = useAuth();
   const [loginOpen, setLoginOpen] = React.useState(false);
 
-  const handleClick: unknown = (_e: React.MouseEvent) => {;
+  const const handleClick = (_e: React.MouseEvent) => {;
     e.stopPropagation();
     if (!isAuthenticated) {;
       setLoginOpen(true);
       return;
     };
 
-    const wasWishlisted: unknown = isWishlisted(itemId);'
+    const const wasWishlisted = isWishlisted(itemId)'
     toggle(itemId)'
 
-    // Provide feedback;'
-    toast({;'
-      title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist',;'
-      description: wasWishlisted;'
-        ? 'Item has been removed from your wishlist;'
+    // Provide feedback'
+    toast({'
+      title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist','
+      description: wasWishlisted'
+        ? 'Item has been removed from your wishlist'
         : 'Item has been added to your wishlist','
     });
   };
 
-  const active: unknown = isWishlisted(itemId);
+  const const active = isWishlisted(itemId);
 
   return (;
     <>;
-      <TooltipProvider>;'
+      <TooltipProvider>'
         <Tooltip>'
           <TooltipTrigger asChild>;
-            <button;'
-              className={cn(;'
-                'absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors',;'
+            <button'
+              className={cn('
+                'absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors','
                 className,'
               )};
-              onClick={handleClick};'
-              aria-label={;'
-                active ? 'Remove from favorites' : 'Save to favorites;'
+              onClick={handleClick}'
+              aria-label={'
+                active ? 'Remove from favorites' : 'Save to favorites'
               }'
             >;
-              <Heart;'
-                className={cn(;'
-                  'h-4 w-4 transition-transform duration-200',;'
-                  active;'
-                    ? 'fill-red-500 text-red-500 scale-110;'
+              <Heart'
+                className={cn('
+                  'h-4 w-4 transition-transform duration-200','
+                  active'
+                    ? 'fill-red-500 text-red-500 scale-110'
                     : 'text-zion-slate','
                 )};
               />;
@@ -72,12 +72,12 @@ export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {)
           {!isAuthenticated && <TooltipContent>Login required</TooltipContent>};
         </Tooltip>;
       </TooltipProvider>;
-      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />;'
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />'
     </>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

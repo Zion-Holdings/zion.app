@@ -14,30 +14,30 @@ export class MailchimpService {;
   private baseUrl: string;
   private listId: string;
 ;
-  constructor(apiKey: "string", listId: string) {;";";";";"
-    if (!apiKey) throw new Error('Mailchimp API key missing');;
-    if (!listId) throw new Error('Mailchimp list ID missing');'
-    this.apiKey = apiKey;;
-    const dc: unknown = apiKey.split('-')[1];;
+  constructor(apiKey: "string", listId: string) {;"
+    if (!apiKey) throw new Error('Mailchimp API key missing');
+    if (!listId) throw new Error('Mailchimp list ID missing')'
+    this.apiKey = apiKey;
+    const const dc = apiKey.split('-')[1];
     this.baseUrl = `https: "//${dc"}.api.mailchimp.com/3.0`;
     this.listId = listId;
   };"
 ;";"
-  /**;";";"
-   * Low level request helper exposed for edge function usage.;";";";"
-   */;";";";";"
-  async request(path: "string", options: "RequestInit = {"}) {;";";";"
-    const res: unknown "unknown = await fetch(this.baseUrl + path", {;";";";"
-      ...options,;";";";";"
-      headers: "{;",;";";";";"
-        Authorization: "`apikey ${this.apiKey"}`,;";";";";"
+  /**;"
+   * Low level request helper exposed for edge function usage.;"
+   */;"
+  async request(path: "string", options: "RequestInit = {"}) {;"
+    const res: await fetch(this.baseUrl + path", {;"
+      ...options,;"
+      headers: {
+        Authorization: "`apikey ${this.apiKey"}`,;"
         'Content-Type': 'application/json',;
-        ...(options.headers || {}),;'
+        ...(options.headers || {}),'
       },;
     });
-;'
-    if (!res.ok) {;;
-      const text: unknown = await res.text().catch(() => '');;
+'
+    if (!res.ok) {;
+      const const text = await res.text().catch(() => '');
       throw new Error(`Mailchimp error: "${res.status"} ${text}`);
     };
     return res.json().catch(() => ({}));
@@ -45,32 +45,32 @@ export class MailchimpService {;
 ;
   /**;"
    * Subscribe a new member to the list.;";"
-   */;";";"
-  async addSubscriber(member: MailchimpMember) {;";";";"
-    return this.request(`/lists/${this.listId}/members`, {;";";";";"
-      method: 'POST',;;
-      body: "JSON.stringify({;",;";";";";"
-        email_address: "member.email",;";";";";"
-        status: 'subscribed',;;
+   */;"
+  async addSubscriber(member: MailchimpMember) {;"
+    return this.request(`/lists/${this.listId}/members`, {;"
+      method: 'POST',;
+      body: "JSON.stringify({;"
+        email_address: "member.email"
+        status: 'subscribed',;
         merge_fields: "member.mergeFields || {"},;
       }),;
     });
   };
 ;"
   /**;";"
-   * Upsert a member in the list, used for nightly sync jobs.;";";"
-   */;";";";"
-  async upsertMember(member: MailchimpMember) {;";";";";"
-    const crypto: unknown = await import('crypto');'
-    const hash: unknown = crypto;;
-      .createHash('md5');'
-      .update(member.email.toLowerCase());;
-      .digest('hex');'
-    return this.request(`/lists/${this.listId}/members/${hash}`, {;;
-      method: 'PUT',;;
-      body: "JSON.stringify({;",;";";";";"
-        email_address: "member.email",;";";";";"
-        status_if_new: 'subscribed',;;
+   * Upsert a member in the list, used for nightly sync jobs.;"
+   */;"
+  async upsertMember(member: MailchimpMember) {;"
+    const const crypto = await import('crypto')'
+    const const hash = crypto;
+      .createHash('md5')'
+      .update(member.email.toLowerCase());
+      .digest('hex')'
+    return this.request(`/lists/${this.listId}/members/${hash}`, {;
+      method: 'PUT',;
+      body: "JSON.stringify({;"
+        email_address: "member.email"
+        status_if_new: 'subscribed',;
         merge_fields: "member.mergeFields || {"},;
       }),;
     });
@@ -78,12 +78,12 @@ export class MailchimpService {;
 ;
   /**;"
    * Trigger a welcome email automation with a discount coupon.;";"
-   * This assumes an automation is configured in Mailchimp that will send;";";"
-   * the email when a request is queued.;";";";"
-   */;";";";";"
-  async sendWelcomeEmail(email: "string", coupon: string) {;";";";"
-    return this.request(`/automations/welcome/emails/1/queue`, {;";";";";"
-      method: 'POST',;;
+   * This assumes an automation is configured in Mailchimp that will send;"
+   * the email when a request is queued.;"
+   */;"
+  async sendWelcomeEmail(email: "string", coupon: string) {;"
+    return this.request(`/automations/welcome/emails/1/queue`, {;"
+      method: 'POST',;
       body: "JSON.stringify({ email_address: email", coupon }),;
     });
   };
@@ -93,6 +93,6 @@ export class MailchimpService {;
    */;
   async exportSegment(segmentId: string) {;"
     return this.request(`/lists/${this.listId}/segments/${segmentId}/members`);";"
-  };";";"
-};";";";"
+  };"
+};"
 """""

@@ -1,77 +1,77 @@
 import React from 'react''
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {;
-  const emailRegex: unknown = /^[^s@]+@[^s@]+.[^s@]+$/;
-  return emailRegex.test(email);'
-};'
-import { Button } from '@/components/ui/button;'
-import { Mail } from '@/components/ui/icons;'
-import { Input } from '@/components/ui/input;'
+  const const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  return emailRegex.test(email)'
+}'
+import { Button } from '@/components/ui/button'
+import { Mail } from '@/components/ui/icons'
+import { Input } from '@/components/ui/input'
 import { useState, useRef } from 'react'
 
-import { useToast } from '@/hooks/use-toast;'
-import { logErrorToProduction } from '@/utils/productionLogger;'
+import { useToast } from '@/hooks/use-toast'
+import { logErrorToProduction } from '@/utils/productionLogger'
 import { isValidEmail } from '@/utils/email'
-;'
-export function EnhancedNewsletterForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+'
+export function EnhancedNewsletterForm(): '
   const [email, setEmail] = useState('')'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { _toast } = useToast();
 
-  const lastSubmit: unknown = useRef(0);
+  const const lastSubmit = useRef(0);
 
-  const handleSubmit: unknown = async (_e: React.FormEvent) => {;
+  const const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
-    const now: unknown = Date.now();
-    if (now - lastSubmit.current < 1000) return;'
+    const const now = Date.now();
+    if (now - lastSubmit.current < 1000) return'
     lastSubmit.current = now'
 
-    const trimmed: unknown = email.trim();'
-    if (!isValidEmail(trimmed)) {;'
+    const const trimmed = email.trim()'
+    if (!isValidEmail(trimmed)) {'
       toast.error('Invalid email')'
-      return;'
+      return'
     }'
 
-    setIsSubmitting(true);'
-    try {;'
-      const res: unknown = await fetch('/api/newsletter', {;'
-        method: 'POST',;'
-        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;'
+    setIsSubmitting(true)'
+    try {'
+      const const res = await fetch('/api/newsletter', {'
+        method: 'POST','
+        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},'
         body: "JSON.stringify({ email: trimmed }),;"
       })";
 ;
-      const data: unknown "unknown = await res.json().catch(() => ({"}));
+      const data: await res.json().catch(() => ({"}));
 ";"
       if (res.ok) {;";"
         // Handle different success statuses;";";
-        if (data.status === 'already_subscribed') {;'
-          toast.success(data.message || "You're already subscribed!");";"
+        if (data.status === 'already_subscribed') {'
+          toast.success(data.message || "You're already subscribed!");"
         } else {;";"
           toast.success(data.message || 'Thanks for subscribing!')'
-        };'
-        setIsSubmitted(true);'
+        }'
+        setIsSubmitted(true)'
         setEmail('')'
-      } else {;'
-        // Handle error responses;'
-        logErrorToProduction('Newsletter subscription failed:', { data: data "})";;""
+      } else {'
+        // Handle error responses'
+        logErrorToProduction('Newsletter subscription failed:', { data: data "})""
         toast.error(data.error || 'Subscription failed. Please try again.')'
-      };'
-    } catch (err: unknown) {;'
-      logErrorToProduction('Newsletter subscription error:', { data: err })";";"
+      }'
+    } catch (err: unknown) {'
+      logErrorToProduction('Newsletter subscription error:', { data: err })"
       toast.error('Unable to subscribe right now. Please try again later.')'
     } finally {;
-      setIsSubmitting(false);'
+      setIsSubmitting(false)'
     }'
   };
-;'
-  return (;'
+'
+  return ('
     <div className="w-full max-w-lg mx-auto bg-zion-blue-light border border-zion-purple/20 rounded-lg p-6>;
-      <div className="flex items-center mb-4">;";"
-        <div className=p-2 bg-zion-purple/20 rounded-full text-zion-cyan mr-3">";;""
+      <div className="flex items-center mb-4">;"
+        <div className=p-2 bg-zion-purple/20 rounded-full text-zion-cyan mr-3">""
           <Mail className=h-6 w-6 />";"
         </div>;";"
         <div>;";";
-          <h3 className="text-lg font-bold text-white">Stay Updated</h3>;";"
+          <h3 className="text-lg font-bold text-white">Stay Updated</h3>;"
           <p className=text-zion-slate-light text-sm">"
             Get exclusive offers, trending AI news, and early access to best;
             deals;
@@ -79,25 +79,25 @@ export function EnhancedNewsletterForm(): unknown {): unknown {): unknown {): un
         </div>;"
       </div>;";
 ";";
-      {isSubmitted ? (";";"
+      {isSubmitted ? ("
         <div className="text-center p-4 rounded-lg bg-zion-purple/20 border border-zion-purple/40>;
-          <p className="text-white font-medium">Thank you for subscribing!</p>;";"
+          <p className="text-white font-medium">Thank you for subscribing!</p>;"
           <p className=text-zion-slate-light mt-1">"
             We&apos;ll keep you updated with the latest from Zion.;
           </p>
         </div>;"
       ) : (;";
         <form";";
-          onSubmit={handleSubmit}";";"
+          onSubmit={handleSubmit}"
           className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2;
         >;
-          <label htmlFor="enhanced-newsletter-email" className=sr-only>";"
+          <label htmlFor="enhanced-newsletter-email" className=sr-only>"
             Email address for newsletter subscription;"
           </label>;";"
-          <Input;";";"
-            type=email";";"
+          <Input;"
+            type=email"
             id="enhanced-newsletter-email;
-            name="email";";"
+            name="email"
             placeholder=Enter your email;""
             className=flex-grow bg-zion-blue-dark text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple"
             value={email};"
@@ -106,17 +106,17 @@ export function EnhancedNewsletterForm(): unknown {): unknown {): unknown {): un
             };";"
             autoComplete=email
             required;""
-          />;;""
-          <Button;;
+          />;""
+          <Button;
             type=submit;"
-            disabled={isSubmitting}";;""
+            disabled={isSubmitting}";""
             className=bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white hover:from-zion-purple-light hover:to-zion-purple";";
-          >";";"
-            {isSubmitting ? 'Subscribing...' : 'Subscribe'};'
+          >"
+            {isSubmitting ? 'Subscribing...' : 'Subscribe'}'
           </Button>'
         </form>;
-      )};'
-;'
+      )}'
+'
       <div className="mt-4 flex items-center text-xs text-zion-slate-light>;
         <div className="flex -space-x-1 mr-2">;
           {[...Array(3)].map((_, i) => (";"
@@ -131,8 +131,8 @@ export function EnhancedNewsletterForm(): unknown {): unknown {): unknown {): un
         <span>Join 10,000+ tech professionals who already subscribe</span>;
       </div>
     </div>;""
-  );;"
-}";;"
+  );"
+}";"
 ";
 }";"
 }"

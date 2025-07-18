@@ -6,8 +6,8 @@ const MobilePwa: unknown React.FC = () => (;
     <MobileApp>;
       <div />;
     </MobileApp>;
-  </>;'
+  </>'
 );
 ;
-export default MobilePwa;'
+export default MobilePwa'
 '''''

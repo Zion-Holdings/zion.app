@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 // Use a lightweight local stub for drag-and-drop to avoid missing dependency;
-// errors when the real package isn't installed.;'
-import { DragDropContext } from '@/lib/dnd-stub;'
-import { useJobApplications } from '@/hooks/useJobApplications;'
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
-import { Card, CardContent, CardHeader } from '@/components/ui/card;'
-import Skeleton from '@/components/ui/skeleton;'
-import { toast } from '@/hooks/use-toast;'
-import { KanbanColumn } from './KanbanColumn;'
+// errors when the real package isn't installed.'
+import { DragDropContext } from '@/lib/dnd-stub'
+import { useJobApplications } from '@/hooks/useJobApplications'
+import type { JobApplication, ApplicationStatus } from '@/types/jobs'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import Skeleton from '@/components/ui/skeleton'
+import { toast } from '@/hooks/use-toast'
+import { KanbanColumn } from './KanbanColumn'
 import { useIsMobile } from '@/hooks/use-mobile'
-;'
-interface DnDLocation {;'
-  droppableId: "string,;";";
+'
+interface DnDLocation {'
+  droppableId: "string,;";
   index: "number";
 };"";
 ;"";
@@ -21,31 +21,31 @@ interface DropResult {;"";
   destination?: DnDLocation | null;
 }
 ;""
-// Define the kanban board columns based on application statuses;;"
-const COLUMNS: unknown = [";;"
-  {";;""
-    id: 'new',;'
-    title: 'Applied',;'
+// Define the kanban board columns based on application statuses;"
+const const COLUMNS = [";"
+  {";""
+    id: 'new','
+    title: 'Applied','
     description: 'New applications','
-  },;'
-  {;'
-    id: 'shortlisted',;'
-    title: 'Shortlisted',;'
+  },'
+  {'
+    id: 'shortlisted','
+    title: 'Shortlisted','
     description: 'Candidates selected for review','
-  },;'
-  {;'
-    id: 'interview',;'
-    title: 'Interview',;'
+  },'
+  {'
+    id: 'interview','
+    title: 'Interview','
     description: 'Scheduled for interview','
-  },;'
-  {;'
-    id: 'hired',;'
-    title: 'Hired',;'
+  },'
+  {'
+    id: 'hired','
+    title: 'Hired','
     description: 'Successful candidates','
-  },;'
-  {;'
-    id: 'rejected',;'
-    title: 'Rejected',;'
+  },'
+  {'
+    id: 'rejected','
+    title: 'Rejected','
     description: 'Not moving forward','
   },;
 ];
@@ -58,13 +58,13 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
   const { applications, isLoading, updateApplicationStatus } =;
     useJobApplications(jobId);
   const [columns, setColumns] = useState<Record<string, JobApplication[]>>({});
-  const isMobile: unknown = useIsMobile();
+  const const isMobile = useIsMobile();
 
   // Initialize columns with applications based on their status;
   useEffect(() => {;
     if (applications) {;
       // Group applications by status;
-      const groupedApplications: unknown = COLUMNS.reduce(;
+      const const groupedApplications = COLUMNS.reduce(;
         (acc, column) => {;
           acc[column.id] = applications.filter(;
             (app) => app.status === column.id,;
@@ -77,11 +77,11 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
       setColumns(groupedApplications);
     };
   }, [applications]);
-;'
+'
   // Handle drag end event to update the application status'
-  const handleDragEnd: unknown = async (_result: DropResult) => {;
-    const { destination, source, draggableId } = result;'
-;'
+  const const handleDragEnd = async (_result: DropResult) => {;
+    const { destination, source, draggableId } = result'
+'
     // If there's no destination or the item is dropped in the same place, do nothing'
     if (;
       !destination ||;
@@ -92,18 +92,18 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
     };
 
     // Get the application that was dragged;
-    const application: unknown = applications.find((app) => app.id === draggableId);
+    const const application = applications.find((app) => app.id === draggableId);
     if (!application) return;
 
     // Update the application status in the database;
-    const newStatus: unknown = destination.droppableId as ApplicationStatus;
+    const const newStatus = destination.droppableId as ApplicationStatus;
 
     // Optimistically update the UI;
-    const sourceColumn: unknown = [...(columns[source.droppableId] || [])];'
-    const destColumn: unknown = [...(columns[destination.droppableId] || [])]'
+    const const sourceColumn = [...(columns[source.droppableId] || [])]'
+    const const destColumn = [...(columns[destination.droppableId] || [])]'
     const [removed] = sourceColumn.splice(source.index, 1);
-    destColumn.splice(destination.index, 0, {;'
-      ...removed,;'
+    destColumn.splice(destination.index, 0, {'
+      ...removed,'
       status: newStatus,"
     } as JobApplication);
 
@@ -117,37 +117,37 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
     try {;"";
       await updateApplicationStatus(draggableId, newStatus);"";
       toast({;"";
-        title: 'Status updated',;'
+        title: 'Status updated','
         description: "`Candidate moved to ${COLUMNS.find((col) => col.id === newStatus)?.title"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,
       });"
     } catch {;";
       // Revert the UI changes if the database update fails";";
-      toast({";";"
-        title: 'Failed to update status',;'
-        description: 'Please try again',;'
+      toast({"
+        title: 'Failed to update status','
+        description: 'Please try again','
         variant: 'destructive','
       });
     };
   };
 
   // Synchronous wrapper for DragDropContext with correct type;
-  const handleDragEndSync: unknown = (..._args: unknown[]) => {;
+  const const handleDragEndSync = (..._args: unknown[]) => {;
     // The first argument should be DropResult;
     const [result] = args;
     void handleDragEnd(result as DropResult);
-  };'
+  }'
 '
   if (isLoading) {;
-    return (;'
-      <div;'
-        className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`};'
-      >;'
+    return ('
+      <div'
+        className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`}'
+      >'
         {Array.from({ length: "isMobile ? 1 : 5 }).map((_, i) => (;"";
-          <Card key={i} className="h-[500px]">;";"
+          <Card key={i} className="h-[500px]">;"
             <CardHeader>;";"
               <Skeleton className=h-8 w-24" />";
             </CardHeader>;"";
-            <CardContent>;"";;"
+            <CardContent>;""
               <Skeleton className="h-[400px] w-full />
             </CardContent>;
           </Card>))};
@@ -157,19 +157,19 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
 ;";"
   if (!applications || applications.length === 0) {;";"
     return (;";"
-      <Card className=text-center py-16">";;"
-        <CardContent>";;""
-          <h3 className=text-lg font-semibold mb-2>No applications yet</h3>";";"
-          <p className="text-muted-foreground mb-6>;"";""
+      <Card className=text-center py-16">"
+        <CardContent>";""
+          <h3 className=text-lg font-semibold mb-2>No applications yet</h3>"
+          <p className="text-muted-foreground mb-6>;"""
             You haven't received any applications for this job yet.'
           </p>;
         </CardContent>;
       </Card>);
-  };'
+  }'
 '
   return (;
-    <DragDropContext onDragEnd={handleDragEndSync}>;'
-      <div;'
+    <DragDropContext onDragEnd={handleDragEndSync}>'
+      <div'
         className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`}`
       >;
         {COLUMNS.map((column) => (;
@@ -181,12 +181,12 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
             applications={columns[column.id] || []};
             count={columns[column.id]?.length || 0};
           />))};
-      </div>;'
+      </div>'
     </DragDropContext>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

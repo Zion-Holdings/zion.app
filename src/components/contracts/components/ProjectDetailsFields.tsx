@@ -1,27 +1,27 @@
-import { format } from 'date-fns;'
+import { format } from 'date-fns'
 import { CalendarIcon } from '@/components/ui/icons'
 
 import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form'
 import {;
   FormField,;
-  FormItem,;'
+  FormItem,'
   FormLabel,'
   FormControl,
-  FormDescription,;'
-  FormMessage,;'
-} from '@/components/ui/form;'
-import { Input } from '@/components/ui/input;'
-import { Textarea } from '@/components/ui/textarea;'
-import { Button } from '@/components/ui/button;'
+  FormDescription,'
+  FormMessage,'
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
 import {'
   Popover,
-  PopoverContent,;'
-  PopoverTrigger,;'
-} from '@/components/ui/popover;'
-import { Calendar } from '@/components/ui/calendar;'
+  PopoverContent,'
+  PopoverTrigger,'
+} from '@/components/ui/popover'
+import { Calendar } from '@/components/ui/calendar'
 import type { ContractFormValues } from './ContractForm'
-;'
-interface ProjectDetailsFieldsProps {;'
+'
+interface ProjectDetailsFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
 };
 
@@ -32,13 +32,13 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
         control={form.control};";"
         name=projectName"";
         render={({;""
-          field,;;""
-        }: {;;"";
-          field: ControllerRenderProps<ContractFormValues", 'projectName'>;'
+          field,;""
+        }: {;"";
+          field: ControllerRenderProps<ContractFormValues", 'projectName'>'
         }) => ('
           <FormItem>;
-            <FormLabel>Project Name</FormLabel>;'
-            <FormControl>;'
+            <FormLabel>Project Name</FormLabel>'
+            <FormControl>'
               <Input placeholder="AI Website Development {...field} />
             </FormControl>;
             <FormMessage />;
@@ -49,14 +49,14 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
         control={form.control};";"
         name=scopeSummary"";
         render={({;""
-          field,;;""
-        }: {;;"";
+          field,;""
+        }: {;"";
           field: ControllerRenderProps<ContractFormValues", 'scopeSummary'>'
-        }) => (;'
+        }) => ('
           <FormItem>'
             <FormLabel>Scope Summary</FormLabel>;
-            <FormControl>;'
-              <Textarea;'
+            <FormControl>'
+              <Textarea'
                 placeholder="Describe the project scope, deliverables, and expectations...;"";
                 className="min-h-[120px]"
                 {...field};
@@ -67,9 +67,9 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
             </FormDescription>;
             <FormMessage />
           </FormItem>;""
-        )};;"
-      />";;"
-";;""
+        )};"
+      />";"
+";""
       <div className=grid grid-cols-1 md:grid-cols-2 gap-6>";"
         <FormField;";"
           control={form.control};";";
@@ -77,28 +77,28 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
           render={({";"
             field,;";"
           }: {;";";
-            field: "ControllerRenderProps<ContractFormValues", 'startDate'>;'
-          }) => (;'
+            field: "ControllerRenderProps<ContractFormValues", 'startDate'>'
+          }) => ('
             <FormItem className=flex flex-col>"
               <FormLabel>Start Date</FormLabel>"
               <Popover>;
                 <PopoverTrigger asChild>;"";
                   <FormControl>;"";
                     <Button;"";
-                      variant={'outline'};'
+                      variant={'outline'}'
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`}`
-                    >;'
-                      {field.value ? (;'
+                    >'
+                      {field.value ? ('
                         format(field.value, 'PPP')'
                       ) : (;
-                        <span>Pick a date</span>;'
-                      )};'
+                        <span>Pick a date</span>'
+                      )}'
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />;
                     </Button>";"
                   </FormControl>;";"
                 </PopoverTrigger>;";";
-                <PopoverContent className="w-auto p-0" align=start>";";
-                  <Calendar";";"
+                <PopoverContent className="w-auto p-0" align=start>";
+                  <Calendar"
                     mode="single
                     selected={field.value};
                     onSelect={field.onChange};
@@ -116,33 +116,33 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
           control={form.control};";"
           name=endDate"";
           render={({;""
-            field,;;""
-          }: {;;"";
-            field: ControllerRenderProps<ContractFormValues", 'endDate'>;'
-          }) => (;'
+            field,;""
+          }: {;"";
+            field: ControllerRenderProps<ContractFormValues", 'endDate'>'
+          }) => ('
             <FormItem className="flex flex-col>
               <FormLabel>End Date (Optional)</FormLabel>"
               <Popover>;"
                 <PopoverTrigger asChild>;";"
                   <FormControl>;";"
                     <Button;";"
-                      variant={'outline'};'
+                      variant={'outline'}'
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`}`
-                    >;'
-                      {field.value ? (;'
+                    >'
+                      {field.value ? ('
                         format(field.value, 'PPP')'
                       ) : (;
-                        <span>Pick a date</span>;'
-                      )};'
+                        <span>Pick a date</span>'
+                      )}'
                       <CalendarIcon className=ml-auto h-4 w-4 opacity-50" />";
                     </Button>;""
-                  </FormControl>;;""
-                </PopoverTrigger>;;"";
+                  </FormControl>;""
+                </PopoverTrigger>;"";
                 <PopoverContent className=w-auto p-0" align="start>;"";
                   <Calendar;"";
-                    mode="single";"
+                    mode="single"
                     selected={field.value || undefined};";"
-                    onSelect={field.onChange};";";"
+                    onSelect={field.onChange};"
                     disabled={(date) => date < form.getValues('startDate')}'
                     initialFocus;
                   />;
@@ -155,12 +155,12 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
             </FormItem>;
           )};
         />;
-      </div>;'
+      </div>'
     </>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

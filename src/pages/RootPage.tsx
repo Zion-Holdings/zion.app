@@ -1,24 +1,24 @@
-import Dashboard from './Dashboard;'
-import LandingPage from './LandingPage;'
-import { useAuth } from '@/hooks/useAuth;'
+import Dashboard from './Dashboard'
+import LandingPage from './LandingPage'
+import { useAuth } from '@/hooks/useAuth'
 import { NextSeo } from '@/components/NextSeo;
 ;
-export default function RootPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const { _user } = useAuth();'
+export default function RootPage(): ;
+  const { _user } = useAuth()'
 ;
   if (user) {;
-    return (;'
-      <>;;
+    return ('
+      <>;
         <NextSeo title="Dashboard - Zion" />;
         <Dashboard />;
       </>;
     );
   };"
 ;";"
-  return <LandingPage />;";";"
-};";";";"
-";";";"
-}";";"
+  return <LandingPage />;"
+};"
+"
+}"
 }";"
 }"
 }"

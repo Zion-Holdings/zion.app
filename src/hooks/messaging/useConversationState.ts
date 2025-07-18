@@ -4,7 +4,7 @@ import type { Conversation, Message } from '@/types/messaging;
 /**;
  * Hook to manage messaging state;
  */;
-export function useConversationState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export function useConversationState(): ;
   const [messages, setMessages] = useState<Message[]>([]);
   const [activeMessages, setActiveMessages] = useState<Message[]>([]);
   const [conversations, setConversations] = useState<Conversation[]>([]);
@@ -25,12 +25,12 @@ export function useConversationState(): unknown {): unknown {): unknown {): unkn
     setUnreadCount,;
     activeConversation,;
     setActiveConversation,;
-    isLoading,;'
+    isLoading,'
     setIsLoading,;
   };
 };
 ;
-};'
+}'
 }
 }'
 }'

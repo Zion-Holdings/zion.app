@@ -8,18 +8,18 @@ interface SidebarGroupContentProps;
 };
 ;
 export function SidebarGroupContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  className,;'
+  className,'
   children,;
   ...props;
-}: SidebarGroupContentProps) {;'
-  return (;;
+}: SidebarGroupContentProps) {'
+  return (;
     <div className={cn('space-y-1', className)} {...props}>;
-      {children};'
+      {children}'
     </div>;
   );
 };
 ;
-};'
+}'
 }
 }'
 }'

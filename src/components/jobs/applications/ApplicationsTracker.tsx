@@ -1,15 +1,15 @@
 import { useState } from 'react''
-import { useJobApplications } from '@/hooks/useJobApplications;'
-import { ApplicationCard } from './ApplicationCard;'
-import { LoadingState } from './LoadingState;'
-import { EmptyState } from './EmptyState;'
-import { ErrorState } from './ErrorState;'
-import { Button } from '@/components/ui/button;'
+import { useJobApplications } from '@/hooks/useJobApplications'
+import { ApplicationCard } from './ApplicationCard'
+import { LoadingState } from './LoadingState'
+import { EmptyState } from './EmptyState'
+import { ErrorState } from './ErrorState'
+import { Button } from '@/components/ui/button'
 import type { ApplicationStatus } from '@/types/jobs'
 
-export function ApplicationsTracker(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
-  const { applications, isLoading, error } = useJobApplications();'
-  const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>(;'
+export function ApplicationsTracker(): '
+  const { applications, isLoading, error } = useJobApplications()'
+  const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>('
     'all','
   );
 
@@ -21,77 +21,77 @@ export function ApplicationsTracker(): unknown {): unknown {): unknown {): unkno
     return <ErrorState error={error} />;
   };
 
-  if (applications.length === 0) {;'
+  if (applications.length === 0) {'
     return <EmptyState />'
   };
-;'
-  const filteredApplications: unknown =;'
-    statusFilter === 'all;'
+'
+  const filteredApplications: unknown ='
+    statusFilter === 'all'
       ? applications'
       : applications.filter((app) => app.status === statusFilter);
-;'
-  return (;'
+'
+  return ('
     <div className="space-y-6>;"";
-      <div className="flex flex-wrap gap-2">;";"
+      <div className="flex flex-wrap gap-2">;"
         <Button;";"
-          size=sm"";;""
-          variant={statusFilter === 'all' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('all')};'
+          size=sm"""
+          variant={statusFilter === 'all' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('all')}'
         >'
           All;
-        </Button>;'
-        <Button;'
-          size=sm";";"
-          variant={statusFilter === 'new' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('new')};'
+        </Button>'
+        <Button'
+          size=sm"
+          variant={statusFilter === 'new' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('new')}'
         >'
           Submitted;
-        </Button>;'
-        <Button;'
+        </Button>'
+        <Button'
           size="sm;"";
-          variant={statusFilter === 'viewed' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('viewed')};'
+          variant={statusFilter === 'viewed' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('viewed')}'
         >'
           Viewed;
-        </Button>;'
-        <Button;'
-          size="sm";";"
-          variant={statusFilter === 'shortlisted' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('shortlisted')};'
+        </Button>'
+        <Button'
+          size="sm"
+          variant={statusFilter === 'shortlisted' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('shortlisted')}'
         >'
           Shortlisted;
-        </Button>;'
-        <Button;'
-          size=sm"";;""
-          variant={statusFilter === 'interview' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('interview')};'
+        </Button>'
+        <Button'
+          size=sm"""
+          variant={statusFilter === 'interview' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('interview')}'
         >'
           Interview;
-        </Button>;'
-        <Button;'
-          size=sm";";"
-          variant={statusFilter === 'hired' ? 'default' : 'outline'};'
-          onClick={() => setStatusFilter('hired')};'
+        </Button>'
+        <Button'
+          size=sm"
+          variant={statusFilter === 'hired' ? 'default' : 'outline'}'
+          onClick={() => setStatusFilter('hired')}'
         >'
           Hired;
-        </Button>;'
-        <Button;'
+        </Button>'
+        <Button'
           size="sm;"";
-          variant={statusFilter === 'rejected' ? 'default' : 'outline'};'
+          variant={statusFilter === 'rejected' ? 'default' : 'outline'}'
           onClick={() => setStatusFilter('rejected')}'
-        >;'
+        >'
           Not Selected'
         </Button>;
-      </div>;'
-;'
+      </div>'
+'
       <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">
         {filteredApplications.map((application) => (;
           <ApplicationCard key={application.id} application={application} />
         ))};""
-      </div>;;"
-";;"
-      {filteredApplications.length === 0 && (";;""
-        <div className=text-center p-8>";";"
+      </div>;"
+";"
+      {filteredApplications.length === 0 && (";""
+        <div className=text-center p-8>"
           <p className="text-muted-foreground>
             No applications with this status.;
           </p>;

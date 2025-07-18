@@ -1,14 +1,14 @@
 import React from 'react';
-import { SEO } from '@/components/SEO;'
-import { DisputeDashboard } from '@/components/disputes;'
+import { SEO } from '@/components/SEO'
+import { DisputeDashboard } from '@/components/disputes'
 import { ProtectedRoute } from '@/components/ProtectedRoute;
 ;
-function DisputesPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+function DisputesPage(): '
   return (;
     <ProtectedRoute>;
-      <>;'
-        <SEO;;
-          title="Dispute Resolution Center | Zion AI Marketplace";";";";";"
+      <>'
+        <SEO;
+          title="Dispute Resolution Center | Zion AI Marketplace"
           description="View and manage disputes between clients and talents";
         />;
         <DisputeDashboard />;
@@ -16,10 +16,10 @@ function DisputesPage(): unknown {): unknown {): unknown {): unknown {): unknown
     </ProtectedRoute>;
   );"
 };";"
-;";";"
-export default DisputesPage;";";";"
-";";";"
-}";";"
+;"
+export default DisputesPage;"
+"
+}"
 }";"
 }"
 }"

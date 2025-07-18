@@ -7,18 +7,18 @@ import {;
 } from '@/utils/globalToastManager;
 ;
 // Deduplication settings;
-// const _DEDUPE_DELAY: unknown = 3000; // 3 seconds;'
+// const const _DEDUPE_DELAY = 3000; // 3 seconds'
 // const _lastKey: unknown string | null = null;
-// const _lastShown: unknown = undefined; // Unused 0;
-;'
-interface ToastActionProps {;;
-  label: "string;",;";";";";"
+// const const _lastShown = undefined; // Unused 0;
+'
+interface ToastActionProps {;
+  label: "string;"
   onClick: "() => void;";
 };"
 ;";"
-interface ToastProps {;";";"
-  title?: string;";";";"
-  description?: string;";";";";"
+interface ToastProps {;"
+  title?: string;"
+  description?: string;"
   variant?: 'default' | 'destructive' | 'success;
   action?: ToastActionProps;
   onRetry?: () => void;
@@ -27,49 +27,49 @@ interface ToastProps {;";";"
   priority?: ToastPriority;
   persistent?: boolean;
 };
-;'
+'
 /**;
  * Enhanced toast adapter that uses the global toast manager;
- */;'
-const toastAdapter: unknown = (_props: ToastProps | string) => {;;
-  if (typeof props === 'string') {;'
-    return globalToastManager.showToast({;;
-      message: "props",;";";";";"
+ */'
+const const toastAdapter = (_props: ToastProps | string) => {;
+  if (typeof props === 'string') {'
+    return globalToastManager.showToast({;
+      message: "props"
       type: "ToastType.INFO",;
     });
   };"
 ;";"
-  const {;";";"
-    title,;";";";"
-    description,;";";";";"
+  const {;"
+    title,;"
+    description,;"
     variant = 'default',;
     action,;
     onRetry,;
     duration,;
     priority,;
     persistent = false,;
-  } = props;'
+  } = props'
 ;
   // Map variant to toast type;
-  let type: ToastType;'
-  switch (variant) {;;
+  let type: ToastType'
+  switch (variant) {;
     case 'destructive':;
-      type = ToastType.ERROR;'
-      break;;
+      type = ToastType.ERROR'
+      break;
     case 'success':;
       type = ToastType.SUCCESS;
       break;
     default:;
-      type = ToastType.INFO;'
+      type = ToastType.INFO'
       break;
   };
-;'
-  // Use title as message if no description, otherwise use description;;
-  const message: unknown = description || title || 
-  const toastTitle: unknown = title && description ? title : undefined;
+'
+  // Use title as message if no description, otherwise use description;
+  const const message = description || title || 
+  const const toastTitle = title && description ? title : undefined;
 ;
-  return globalToastManager.showToast({;'
-    message,;;
+  return globalToastManager.showToast({'
+    message,;
     ...(toastTitle && { title: "toastTitle "}),;
     type,;
     ...(priority && { priority }),;
@@ -79,30 +79,30 @@ const toastAdapter: unknown = (_props: ToastProps | string) => {;;
     ...(onRetry && { onRetry }),;
   });"
 };";"
-;";";"
-// Convenience methods that use the global toast manager;";";";"
-toastAdapter.success = (;";";";";"
+;"
+// Convenience methods that use the global toast manager;"
+toastAdapter.success = (;"
   message: "string",;
   options?: { id?: string; duration?: number } & Record<string, unknown>,;
 ) => {;"
   return showToast.success(message, options);";"
-};";";"
-;";";";"
-toastAdapter.error = (;";";";";"
+};"
+;"
+toastAdapter.error = (;"
   message: "string",;
   options?: { id?: string; duration?: number } & Record<string, unknown>,;
 ) => {;"
   return showToast.error(message, options);";"
-};";";"
-;";";";"
-toastAdapter.info = (;";";";";"
+};"
+;"
+toastAdapter.info = (;"
   message: "string",;
   options?: { id?: string; duration?: number } & Record<string, unknown>,;
 ) => {;"
   return showToast.info(message, options);";"
-};";";"
-;";";";"
-toastAdapter.warning = (;";";";";"
+};"
+;"
+toastAdapter.warning = (;"
   message: "string",;
   options?: { id?: string; duration?: number } & Record<string, unknown>,;
 ) => {;
@@ -116,9 +116,9 @@ toastAdapter.dismiss = (toastId?: string | number) => {;
     globalToastManager.dismissAll();
   };"
 };";"
-;";";"
-// Enhanced useToast hook with global toast manager integration;";";";"
-export const _useToast: unknown = () => ({;";,";";";"
+;"
+// Enhanced useToast hook with global toast manager integration;"
+export const const _useToast = () => ({;";,"
   toast: "toastAdapter",;
   _dismiss: (toastId?: string) => {;
     if (toastId) {;
@@ -126,24 +126,24 @@ export const _useToast: unknown = () => ({;";,";";";"
     } else {;
       globalToastManager.dismissAll();"
     };";"
-  },;";";"
-;";";";"
-  // Additional methods from global toast manager;";";";";"
-  showToast: "globalToastManager.showToast.bind(globalToastManager)",;";";";";"
-  getActiveToasts: "globalToastManager.getActiveToasts.bind(globalToastManager)",;";";";";"
-  getQueueLength: "globalToastManager.getQueueLength.bind(globalToastManager)",;";";";";"
-  dismissAll: "globalToastManager.dismissAll.bind(globalToastManager)",;";";"
-;";";";"
-  // Convenience methods;";";";";"
-  success: "showToast.success",;";";";";"
-  error: "showToast.error",;";";";";"
-  warning: "showToast.warning",;";";";";"
-  info: "showToast.info",;";";";";"
-  networkError: "showToast.networkError",;";";";";"
-  authError: "showToast.authError",;";";";";"
-  validationError: "showToast.validationError",;";";";";"
+  },;"
+;"
+  // Additional methods from global toast manager;"
+  showToast: "globalToastManager.showToast.bind(globalToastManager)"
+  getActiveToasts: "globalToastManager.getActiveToasts.bind(globalToastManager)"
+  getQueueLength: "globalToastManager.getQueueLength.bind(globalToastManager)"
+  dismissAll: "globalToastManager.dismissAll.bind(globalToastManager)",;"
+;"
+  // Convenience methods;"
+  success: "showToast.success"
+  error: "showToast.error"
+  warning: "showToast.warning"
+  info: "showToast.info"
+  networkError: "showToast.networkError"
+  authError: "showToast.authError"
+  validationError: "showToast.validationError"
   criticalError: "showToast.criticalError",;"
 });";"
-;";";"
-export const _toast: unknown = toastAdapter;";";";"
+;"
+export const const _toast = toastAdapter;"
 """""

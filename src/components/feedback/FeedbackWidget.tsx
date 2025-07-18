@@ -1,27 +1,27 @@
 import React, { useState, useRef } from 'react'
 import {;
-  Dialog,;'
+  Dialog,'
   DialogContent,'
   DialogHeader,
-  DialogTitle,;'
-  DialogTrigger,;'
-} from '@/components/ui/dialog;'
-import { Card, CardContent } from '@/components/ui/card;'
-import { Button } from '@/components/ui/button;'
-import { Textarea } from '@/components/ui/textarea;'
-import { postFeedback } from '@/services/feedbackService;'
-import { useFeedback } from '@/context/FeedbackContext;'
+  DialogTitle,'
+  DialogTrigger,'
+} from '@/components/ui/dialog'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { postFeedback } from '@/services/feedbackService'
+import { useFeedback } from '@/context/FeedbackContext'
 import { useEnqueueSnackbar } from '@/context'
 
-const StarRatingInput: unknown "React.FC<{,;";";
+const StarRatingInput: unknown "React.FC<{,;";
   value: "number",;"";
-  onRate: (r: number) => void";";"
-}> = ({ value, onRate }) => (;";";"
+  onRate: (r: number) => void"
+}> = ({ value, onRate }) => (;"
   <div className=flex mb-2 aria-label="Star rating">;
     {[1, 2, 3, 4, 5].map((star) => (";"
       <button;";"
         key={star};";";
-        type="button";";"
+        type="button"
         onClick={() => onRate(star)};";"
         className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"
         aria-label={`Rate ${star}`}`
@@ -32,7 +32,7 @@ const StarRatingInput: unknown "React.FC<{,;";";
   </div>;
 );
 
-export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export function FeedbackWidget(): ;
   const [open, setOpen] = useState(false);
   const {;
     rating,;
@@ -44,14 +44,14 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
     reset,;
   } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
-  const enqueueSnackbar: unknown = useEnqueueSnackbar();
-  const fileInputRef: unknown = useRef<HTMLInputElement>(null);
+  const const enqueueSnackbar = useEnqueueSnackbar();
+  const const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileSelect: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {
-    const file: unknown = e.target.files?.[0];"
+  const const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
+    const const file = e.target.files?.[0];"
     if (!file) return;";
-    const reader: unknown = new FileReader()";";
-    reader.onloadend = () => {";";"
+    const const reader = new FileReader()";";
+    reader.onloadend = () => {"
       if (typeof reader.result === 'string') {'
         setScreenshot(reader.result);
       };
@@ -59,27 +59,27 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
     reader.readAsDataURL(file);
   };
 
-  const handleSubmit: unknown = async (_e: React.FormEvent) => {;
+  const const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
-    try {;'
+    try {'
       await postFeedback({'
         rating,;
-        comment,;'
-        ...(screenshot ? { screenshot } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),;'
+        comment,'
+        ...(screenshot ? { screenshot } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),'
         url: "window.location.pathname,;"";
-        userAgent: "navigator.userAgent",;";"
+        userAgent: "navigator.userAgent",;"
       });";"
-      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });'
-    } catch (err: unknown) {;'
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' })'
+    } catch (err: unknown) {'
       let message = 'An error occurred'
-      if (;'
-        err &&;'
-        typeof err === 'object' &&;'
-        'message' in err &&;'
+      if ('
+        err &&'
+        typeof err === 'object' &&'
+        'message' in err &&'
         typeof (err as { message?: unknown }).message === 'string'
       ) {;
-        message = (err as { message: string "}).message";;"
-      }";;""
+        message = (err as { message: string "}).message"
+      }";""
       enqueueSnackbar(message, { variant: 'error' })'
     };
     setSubmitted(true);
@@ -90,32 +90,32 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
   return (;
     <>;
       <Dialog open={open} onOpenChange={setOpen}>;
-        <DialogTrigger asChild>;'
+        <DialogTrigger asChild>'
           <Button'
             onClick={() => {;
-              setSubmitted(false);'
-            }};'
-            className=fixed bottom-6 left-6 z-[60]";";"
+              setSubmitted(false)'
+            }}'
+            className=fixed bottom-6 left-6 z-[60]"
             size="sm
           >;""
-            Feedback;;"
-          </Button>";;"
-        </DialogTrigger>";;""
+            Feedback;"
+          </Button>";"
+        </DialogTrigger>";""
         <DialogContent className=sm:max-w-md>";"
           <DialogHeader>;"
             <DialogTitle>Your Feedback</DialogTitle>;";"
-          </DialogHeader>;";";"
-          <Card className=border-none shadow-none>";";"
+          </DialogHeader>;"
+          <Card className=border-none shadow-none>"
             <CardContent className="p-0 pt-2>;"";
               {submitted ? (;"";
-                <p className="py-4">Thank you for your feedback!</p>;";"
+                <p className="py-4">Thank you for your feedback!</p>;"
               ) : (;";"
-                <form onSubmit={handleSubmit} className=space-y-3">";;"
-                  <div>";;""
+                <form onSubmit={handleSubmit} className=space-y-3">"
+                  <div>";""
                     <label className=text-sm>How satisfied are you?</label>";"
                     <StarRatingInput value={rating} onRate={setRating} />;"
                   </div>;";"
-                  <Textarea;";";"
+                  <Textarea;"
                     placeholder=Additional comments"
                     value={comment};"
                     onChange={(e) => setComment(e.target.value)};";"
@@ -123,12 +123,12 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
                   {screenshot && (;";"
                     <div className=space-y-2">";
                       <img;"";
-                        src={screenshot};"";;"
+                        src={screenshot};""
                         alt="Screenshot preview;"";
-                        className="w-full border rounded";"
+                        className="w-full border rounded"
                       />;";"
-                      <Button;";";"
-                        type=button";";"
+                      <Button;"
+                        type=button"
                         variant="ghost;"";
                         size="sm"
                         onClick={() => setScreenshot(null)};
@@ -136,23 +136,23 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
                         Remove screenshot;
                       </Button>
                     </div>;""
-                  )};;"
-                  <input";;"
-                    ref={fileInputRef}";;""
-                    type=file";";"
+                  )};"
+                  <input";"
+                    ref={fileInputRef}";""
+                    type=file"
                     accept="image/*;"";
                     onChange={handleFileSelect};"";
-                    className="hidden";";"
+                    className="hidden"
                   />;";"
-                  <div className=flex justify-end gap-2">";;"
-                    <Button";;""
-                      type=button";";"
+                  <div className=flex justify-end gap-2">"
+                    <Button";""
+                      type=button"
                       variant="outline;"";
                       size="sm"
                       onClick={() => fileInputRef.current?.click()};"
                     >;";
                       Add Screenshot";";
-                    </Button>";";"
+                    </Button>"
                     <Button type="submit disabled={rating === 0} size=sm">"
                       Submit;
                     </Button>;

@@ -5,32 +5,32 @@ import {;
   Search,;
   Bell,;
   User,;
-  LogOut,;'
+  LogOut,'
   Settings,'
   Globe,
-  ChevronDown,;'
-  ShoppingCart,;'
-} from '@/components/ui/icons;'
-import Link from 'next/link;'
-import { useRouter } from 'next/router;'
-import { useTranslation } from 'react-i18next;'
-import { useAuth } from '@/hooks/useAuth;'
-import { Button } from '@/components/ui/button;'
+  ChevronDown,'
+  ShoppingCart,'
+} from '@/components/ui/icons'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
+import { useAuth } from '@/hooks/useAuth'
+import { Button } from '@/components/ui/button'
 import { logError } from '@/utils/logError'
 
 import {;
-  DropdownMenu,;'
+  DropdownMenu,'
   DropdownMenuContent,'
   DropdownMenuItem,
-  DropdownMenuSeparator,;'
-  DropdownMenuTrigger,;'
+  DropdownMenuSeparator,'
+  DropdownMenuTrigger,'
 } from '@/components/ui/dropdown-menu'
-;'
+'
 export interface HeaderProps {'
   hideLogin?: boolean;
-  customLogo?: string;'
-  customTheme?: {;'
-    primaryColor: "string,;";";
+  customLogo?: string'
+  customTheme?: {'
+    primaryColor: "string,;";
     backgroundColor: "string",;"";
     textColor: string""
   };
@@ -38,45 +38,45 @@ export interface HeaderProps {'
 
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false }: HeaderProps) {
   const { t } = useTranslation();"
-  const router: unknown = useRouter();";
+  const const router = useRouter();";
   const { user, isAuthenticated, logout } = useAuth()";";
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)";";"
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)"
   const [searchQuery, setSearchQuery] = useState('')'
-;'
-  const handleSearch: unknown = (_e: React.FormEvent) => {'
+'
+  const const handleSearch = (_e: React.FormEvent) => {'
     e.preventDefault();
-    if (searchQuery.trim()) {;'
+    if (searchQuery.trim()) {'
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)`
       setSearchQuery('')'
     };
-  };'
+  }'
 '
-  const handleLogout: unknown = async () => {;
-    try {;'
-      await logout();'
-      router.push('/');'
-    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;'
+  const const handleLogout = async () => {;
+    try {'
+      await logout()'
+      router.push('/')'
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {'
       logError('Logout failed:', { data: "error as unknown })
     };""
-  };;"
-";;"
-  const navigationItems: unknown = [";;""
-    { href: '/marketplace', label: t('nav.marketplace') || 'Marketplace' },;'
-    { href: '/talent', label: t('nav.talent') || 'Talent' },;'
-    { href: '/community', label: t('nav.community') || 'Community' },;'
+  };"
+";"
+  const const navigationItems = [";""
+    { href: '/marketplace', label: t('nav.marketplace') || 'Marketplace' },'
+    { href: '/talent', label: t('nav.talent') || 'Talent' },'
+    { href: '/community', label: t('nav.community') || 'Community' },'
     { href: '/docs', label: t('nav.docs') || 'Docs' },'
   ];
-;'
-  return (;'
-    <header className=sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60>";";"
+'
+  return ('
+    <header className=sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60>"
       <div className="container mx-auto px-4 sm:px-6 lg:px-8>;"";
-        <div className="flex h-16 items-center justify-between">;";"
+        <div className="flex h-16 items-center justify-between">;"
           {/* Logo */};";"
-          <div className=flex items-center">";;""
-            <Link href=/ className="flex items-center space-x-2">;";"
-              <div className=h-8 w-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">";;""
+          <div className=flex items-center">""
+            <Link href=/ className="flex items-center space-x-2">;"
+              <div className=h-8 w-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">""
                 <span className=text-white font-bold text-sm>Z</span>";";
-              </div>";";"
+              </div>"
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent>
                 Zion;
               </span>"
@@ -94,20 +94,20 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                 {item.label};
               </Link>
             ))};""
-          </nav>;;"
-";;"
-          {/* Search Bar - Desktop */}";;""
-          <div className=hidden lg:flex flex-1 max-w-md mx-8>";";"
+          </nav>;"
+";"
+          {/* Search Bar - Desktop */}";""
+          <div className=hidden lg:flex flex-1 max-w-md mx-8>"
             <form onSubmit={handleSearch} className="w-full>;"";
-              <div className="relative">;";"
-                <Search className=absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />";;"
-                <input";;""
+              <div className="relative">;"
+                <Search className=absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />"
+                <input";""
                   type=text";";
-                  placeholder={";";"
+                  placeholder={"
                     t('search.placeholder') || 'Search marketplace...'
                   };
-                  value={searchQuery};'
-                  onChange={(e) => setSearchQuery(e.target.value)};'
+                  value={searchQuery}'
+                  onChange={(e) => setSearchQuery(e.target.value)}'
                   className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg _focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
                 />;
               </div>"
@@ -117,9 +117,9 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
           {/* Right Side Actions */};";"
           <div className=flex items-center space-x-4">";
             {/* Search Button - Mobile */};"";
-            <Button;"";;"
+            <Button;""
               variant="ghost;"";
-              size="icon";";"
+              size="icon"
               className=lg:hidden""
               onClick={() => {;
                 /* Toggle mobile search */;"";
@@ -129,24 +129,24 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             </Button>";"
 ;";"
             {/* Notifications */};";";
-            <Button variant="ghost" size=icon className="relative">;";"
-              <Bell className=h-4 w-4" />";;""
+            <Button variant="ghost" size=icon className="relative">;"
+              <Bell className=h-4 w-4" />""
               <span className=absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full></span>";"
             </Button>;"
 ;";"
-            {/* Cart */};";";"
-            <Button variant=ghost size="icon" className=relative>";";"
+            {/* Cart */};"
+            <Button variant=ghost size="icon" className=relative>"
               <ShoppingCart className="h-4 w-4 />;"";
               <span className="absolute -top-1 -right-1 h-2 w-2 bg-blue-500 rounded-full"></span>
             </Button>
 ;""
-            {/* Language Selector */};;"
-            <DropdownMenu>";;"
-              <DropdownMenuTrigger asChild>";;""
-                <Button variant=ghost size="icon">;";"
+            {/* Language Selector */};"
+            <DropdownMenu>";"
+              <DropdownMenuTrigger asChild>";""
+                <Button variant=ghost size="icon">;"
                   <Globe className=h-4 w-4" />";
                 </Button>;"";
-              </DropdownMenuTrigger>;"";;"
+              </DropdownMenuTrigger>;""
               <DropdownMenuContent align="end>
                 <DropdownMenuItem>English</DropdownMenuItem>;
                 <DropdownMenuItem>Español</DropdownMenuItem>;
@@ -159,24 +159,24 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
               <DropdownMenu>;";"
                 <DropdownMenuTrigger asChild>;";"
                   <Button;";"
-                    variant=ghost"";;""
+                    variant=ghost"""
                     className=flex items-center space-x-2";";
-                  >";";"
+                  >"
                     <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center>;"";
-                      <User className="h-4 w-4 text-white" />;";"
+                      <User className="h-4 w-4 text-white" />;"
                     </div>;";"
-                    <span className=hidden sm:block text-sm font-medium">";;""
-                      {user.name || user.email?.split('@')[0]};'
-                    </span>;'
+                    <span className=hidden sm:block text-sm font-medium">""
+                      {user.name || user.email?.split('@')[0]}'
+                    </span>'
                     <ChevronDown className=h-4 w-4 />";"
                   </Button>;";"
                 </DropdownMenuTrigger>;";";
-                <DropdownMenuContent align="end" className=w-56>";";"
-                  <DropdownMenuItem onClick={() => router.push('/dashboard')}>;'
+                <DropdownMenuContent align="end" className=w-56>"
+                  <DropdownMenuItem onClick={() => router.push('/dashboard')}>'
                     <User className="mr-2 h-4 w-4 />;""
-                    Dashboard;;""
-                  </DropdownMenuItem>;;"";
-                  <DropdownMenuItem onClick={() => router.push('/settings')}>;'
+                    Dashboard;""
+                  </DropdownMenuItem>;"";
+                  <DropdownMenuItem onClick={() => router.push('/settings')}>'
                     <Settings className=mr-2 h-4 w-4" />"
                     Settings;
                   </DropdownMenuItem>;"";
@@ -185,37 +185,37 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     <LogOut className="mr-2 h-4 w-4" />
                     Logout
                   </DropdownMenuItem>;""
-                </DropdownMenuContent>;;"
-              </DropdownMenu>";;"
-            ) : !hideLogin ? (";;""
+                </DropdownMenuContent>;"
+              </DropdownMenu>";"
+            ) : !hideLogin ? (";""
               <div className=hidden sm:flex items-center space-x-2>";";
-                <Button";";"
+                <Button"
                   variant="ghost;"";
-                  size="sm";";"
-                  onClick={() => router.push('/auth/login')};'
-                >;'
+                  size="sm"
+                  onClick={() => router.push('/auth/login')}'
+                >'
                   {t('auth.login') || 'Login'}'
-                </Button>;'
-                <Button;'
-                  size=sm"";;""
-                  onClick={() => router.push('/signup')};'
+                </Button>'
+                <Button'
+                  size=sm"""
+                  onClick={() => router.push('/signup')}'
                   className=bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700";";
-                >";";"
+                >"
                   {t('auth.signup') || 'Sign Up'}'
                 </Button>;
-              </div>;'
+              </div>'
             ) : null}'
 
-            {/* Mobile Menu Button */};'
-            <Button;'
+            {/* Mobile Menu Button */}'
+            <Button'
               variant="ghost;"";
-              size="icon";";"
+              size="icon"
               className=md:hidden"";
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)};""
-            >;;""
-              {isMobileMenuOpen ? (;;"";
-                <X className=h-5 w-5" />";;"
-              ) : (";;""
+            >;""
+              {isMobileMenuOpen ? (;"";
+                <X className=h-5 w-5" />"
+              ) : (";""
                 <Menu className=h-5 w-5 />"
               )};
             </Button>;
@@ -224,19 +224,19 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 ;"";
         {/* Mobile Menu */};"";
         {isMobileMenuOpen && (;"";
-          <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">;";"
+          <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">;"
             <div className=px-4 py-4 space-y-4">";
               {/* Mobile Search */};"";
-              <form onSubmit={handleSearch}>;"";;"
+              <form onSubmit={handleSearch}>;""
                 <div className="relative>;"";
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />;";"
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />;"
                   <input;";"
-                    type=text"";;"
-                    placeholder={";;""
+                    type=text""
+                    placeholder={";""
                       t('search.placeholder') || 'Search marketplace...'
                     };
-                    value={searchQuery};'
-                    onChange={(e) => setSearchQuery(e.target.value)};'
+                    value={searchQuery}'
+                    onChange={(e) => setSearchQuery(e.target.value)}'
                     className=w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />"
                 </div>;
@@ -247,7 +247,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                 {navigationItems.map((item) => (;"
                   <Link;";
                     key={item.href}";";
-                    href={item.href}";";"
+                    href={item.href}"
                     className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors
                     onClick={() => setIsMobileMenuOpen(false)};
                   >;
@@ -258,22 +258,22 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 ;";"
               {/* Mobile Auth Buttons */};";"
               {!isAuthenticated && !hideLogin && (;";"
-                <div className=flex flex-col space-y-2 pt-4 border-t border-border/40">";;"
-                  <Button";;""
+                <div className=flex flex-col space-y-2 pt-4 border-t border-border/40">"
+                  <Button";""
                     variant=outline";"
                     onClick={() => {;";"
                       setIsMobileMenuOpen(false);";";
                       router.push('/auth/login')'
-                    }};'
-                  >;'
-                    {t('auth.login') || 'Login'};'
+                    }}'
+                  >'
+                    {t('auth.login') || 'Login'}'
                   </Button>'
                   <Button;
-                    onClick={() => {;'
-                      setIsMobileMenuOpen(false);'
-                      router.push('/signup');'
-                    }};'
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700";";"
+                    onClick={() => {'
+                      setIsMobileMenuOpen(false)'
+                      router.push('/signup')'
+                    }}'
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
                   >;";""
                     {t('auth.signup') || 'Sign Up'}'
                   </Button>;
@@ -282,12 +282,12 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             </div>;
           </div>;
         )};
-      </div>;'
+      </div>'
     </header>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

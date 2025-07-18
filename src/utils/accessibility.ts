@@ -4,65 +4,65 @@
  */;
 ;
 // Common ARIA patterns for different types of icons;
-export const iconAriaPatterns: unknown = {;
+export const const iconAriaPatterns = {;
   // Decorative icons that should be hidden from screen readers;
   decorative: {;
-    'aria-hidden': 'true' as const,;'
+    'aria-hidden': 'true' as const,'
   },;
 ;
-  // Meaningful icons that need labels;'
-  meaningful: (label: string) => ({;;
+  // Meaningful icons that need labels'
+  meaningful: (label: string) => ({;
     'aria-label': label,;
   }),;
-;'
-  // Status or state icons;;
-  status: "(label: string", status?: string) => ({;";";";";"
-    'aria-label': label,;;
-    role: 'img' as const,;;
+'
+  // Status or state icons;
+  status: "(label: string", status?: string) => ({;"
+    'aria-label': label,;
+    role: 'img' as const,;
     ...(status && { 'aria-describedby': status }),;
   }),;
-};'
+}'
 ;
 // Common navigation ARIA patterns;
-export const navigationAriaPatterns: unknown = {;'
-  // Dropdown trigger;;
-  dropdownTrigger: "(isExpanded: boolean", label?: string) => ({;";";";";"
-    'aria-haspopup': 'true' as const,;;
-    'aria-expanded': isExpanded,;;
+export const const navigationAriaPatterns = {'
+  // Dropdown trigger;
+  dropdownTrigger: "(isExpanded: boolean", label?: string) => ({;"
+    'aria-haspopup': 'true' as const,;
+    'aria-expanded': isExpanded,;
     ...(label && { 'aria-label': label }),;
   }),;
-;'
-  // Menu container;;
-  menu: "{;",;";";";";"
+'
+  // Menu container;
+  menu: {
     role: 'menu' as const,;
   },;
-;'
-  // Menu item;;
-  menuItem: "{;",;";";";";"
+'
+  // Menu item;
+  menuItem: {
     role: 'menuitem' as const,;
   },;
-;'
-  // Navigation landmark;;
-  navigation: "(label: string) => ({;",;";";";";"
-    role: 'navigation' as const,;;
+'
+  // Navigation landmark;
+  navigation: "(label: string) => ({;"
+    role: 'navigation' as const,;
     'aria-label': label,;
   }),;
 };
 ;
-// Focus management utilities;'
-export const _focusManagement: unknown = {;
+// Focus management utilities'
+export const const _focusManagement = {;
   // Trap focus within an element;
-  _trapFocus: (container: HTMLElement) => {;'
-    const focusableElements: unknown = container.querySelectorAll<HTMLElement>(;;
+  _trapFocus: (container: HTMLElement) => {'
+    const const focusableElements = container.querySelectorAll<HTMLElement>(;
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',;
     );
 ;
     if (focusableElements.length === 0) return;
-;'
-    const firstElement: unknown = focusableElements[0];
-    const lastElement: unknown = focusableElements[focusableElements.length - 1];
-;'
-    const handleTabKey: unknown = (_e: KeyboardEvent) => {;;
+'
+    const const firstElement = focusableElements[0];
+    const const lastElement = focusableElements[focusableElements.length - 1];
+'
+    const const handleTabKey = (_e: KeyboardEvent) => {;
       if (e.key === 'Tab') {;
         if (e.shiftKey) {;
           if (document.activeElement === firstElement) {;
@@ -72,23 +72,23 @@ export const _focusManagement: unknown = {;
         } else {;
           if (document.activeElement === lastElement) {;
             e.preventDefault();
-            firstElement?.focus();'
+            firstElement?.focus()'
           };
         };
-      };'
-;;
+      }'
+;
       if (e.key === 'Escape') {;
-        // Return focus to trigger element if available;'
-        const trigger: unknown = document.querySelector(;;
+        // Return focus to trigger element if available'
+        const const trigger = document.querySelector(;
           '[aria-expanded="true"]',;
         ) as HTMLElement;
         if (trigger) {;
-          trigger.focus();'
+          trigger.focus()'
         };
       };
-    };'
-;;
-    container.addEventListener('keydown', handleTabKey);;
+    }'
+;
+    container.addEventListener('keydown', handleTabKey);
     return () => container.removeEventListener('keydown', handleTabKey);
   },;
 ;
@@ -96,14 +96,14 @@ export const _focusManagement: unknown = {;
   _returnFocus: (triggerElement: HTMLElement) => {;
     triggerElement.focus();
   },;
-};'
+}'
 ;
 // Screen reader announcements;
-export const _announcements: unknown = {;'
-  // Live region for dynamic content;;
-  announce: "(message: string", _priority: 'polite' | 'assertive' = 'polite') => {;;
-    const announcement: unknown = document.createElement('div');;
-    announcement.setAttribute('aria-live', priority);;
+export const const _announcements = {'
+  // Live region for dynamic content;
+  announce: "(message: string", _priority: 'polite' | 'assertive' = 'polite') => {;
+    const const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', priority);
     announcement.className = 'sr-only;
     announcement.textContent = message;
 ;
@@ -117,46 +117,46 @@ export const _announcements: unknown = {;'
 };
 ;
 // Validation utilities;
-export const _validation: unknown = {;
+export const const _validation = {;
   // Check if element has proper accessibility attributes;
-  validateAriaAttributes: (element: HTMLElement): string[] => {;'
+  validateAriaAttributes: (element: HTMLElement): string[] => {'
     const issues: unknown string[] = [];
 ;
-    // Check for unlabeled buttons;'
-    if (;;
-      element.tagName === 'BUTTON' &&;;
+    // Check for unlabeled buttons'
+    if (;
+      element.tagName === 'BUTTON' &&;
       !element.getAttribute('aria-label') &&;
-      !element.textContent?.trim();'
-    ) {;;
+      !element.textContent?.trim()'
+    ) {;
       issues.push('Button missing aria-label or text content');
     };
-;'
-    // Check for images without alt text;;
-    if (element.tagName === 'IMG' && !element.getAttribute('alt')) {;;
+'
+    // Check for images without alt text;
+    if (element.tagName === 'IMG' && !element.getAttribute('alt')) {;
       issues.push('Image missing alt attribute');
     };
-;'
-    // Check for icons in buttons;;
-    const icons: unknown = element.querySelectorAll('svg');
-    icons.forEach((icon) => {;'
-      if (;;
-        !icon.getAttribute('aria-hidden') &&;;
-        !icon.getAttribute('aria-label');'
-      ) {;;
+'
+    // Check for icons in buttons;
+    const const icons = element.querySelectorAll('svg');
+    icons.forEach((icon) => {'
+      if (;
+        !icon.getAttribute('aria-hidden') &&;
+        !icon.getAttribute('aria-label')'
+      ) {;
         issues.push('Icon missing aria-hidden or aria-label');
       };
     });
 ;
     return issues;
-  },;'
+  },'
 };
 ;
-// Export commonly used combinations;'
-export const _commonAriaPatterns: unknown "unknown = {;",;"
-  decorativeIcon: "iconAriaPatterns.decorative",;";";";";"
-  meaningfulIcon: "iconAriaPatterns.meaningful",;";";";";"
-  dropdownButton: "navigationAriaPatterns.dropdownTrigger",;";";";";"
-  navigationMenu: "navigationAriaPatterns.menu",;";";";";"
-  menuItem: "navigationAriaPatterns.menuItem",;";";"
-};";";";"
+// Export commonly used combinations'
+export const _commonAriaPatterns: {;",;"
+  decorativeIcon: "iconAriaPatterns.decorative"
+  meaningfulIcon: "iconAriaPatterns.meaningful"
+  dropdownButton: "navigationAriaPatterns.dropdownTrigger"
+  navigationMenu: "navigationAriaPatterns.menu"
+  menuItem: "navigationAriaPatterns.menuItem",;"
+};"
 """""

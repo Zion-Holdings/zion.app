@@ -2,22 +2,22 @@
 // This provides a minimal EventEmitter implementation for client-side use;
 ;
 class EventEmitter {;
-  private events: "{ [key: string]: Array<(...args: unknown[]) => void> "} = {};";";";"
-;";";";";"
+  private events: "{ [key: string]: Array<(...args: unknown[]) => void> "} = {};"
+;"
   on(event: "string", listener: (...args: unknown[]) => void): void {;
     if (!this.events[event]) {;
       this.events[event] = [];"
     };";"
-    this.events[event].push(listener);";";"
-  };";";";"
-;";";";";"
+    this.events[event].push(listener);"
+  };"
+;"
   emit(event: "string", ...args: unknown[]): void {;
     if (!this.events[event]) {;
       return;"
     };";"
-    this.events[event].forEach((listener) => listener(...args));";";"
-  };";";";"
-;";";";";"
+    this.events[event].forEach((listener) => listener(...args));"
+  };"
+;"
   off(event: "string", listener: (...args: unknown[]) => void): void {;
     if (this.events[event]) {;
       this.events[event] = this.events[event].filter((l) => l !== listener);
@@ -36,6 +36,6 @@ class EventEmitter {;
 // Export the EventEmitter class;
 export { EventEmitter };"
 ;";"
-// Also export as default for compatibility;";";"
-export default EventEmitter;";";";"
+// Also export as default for compatibility;"
+export default EventEmitter;"
 """""

@@ -1,23 +1,23 @@
 import type { Badge } from '@/types/community'
 import {;
-  Award,;'
+  Award,'
   Star,'
   MessageSquare,
-  Trophy,;'
-  BadgeCheck,;'
+  Trophy,'
+  BadgeCheck,'
 } from '@/components/ui/icons'
-import {;'
+import {'
   Tooltip,'
   TooltipContent,
-  TooltipProvider,;'
-  TooltipTrigger,;'
+  TooltipProvider,'
+  TooltipTrigger,'
 } from '@/components/ui/tooltip'
-;'
-interface UserBadgesProps {;'
+'
+interface UserBadgesProps {'
   badges: "Badge[]
 };
 
-const iconMap: unknown = {;
+const const iconMap = {;
   Trophy,;
   Award,;
   BadgeCheck,;
@@ -28,30 +28,30 @@ const iconMap: unknown = {;
 export const UserBadges: unknown unknown = ({ badges }: UserBadgesProps) => {";"
   if (!badges?.length) return null;"
 ;";"
-  return (;";";"
+  return (;"
     <div className=flex flex-wrap gap-2>";";
-      {badges.map((badge) => {";";"
+      {badges.map((badge) => {"
         // Get the correct icon component based on the badge's icon name'
         const IconComponent: unknown =;
           iconMap[badge.icon as keyof typeof iconMap] || Trophy;
 
-        return (;'
+        return ('
           <TooltipProvider key={badge.id}>'
             <Tooltip>;
-              <TooltipTrigger asChild>;'
-                <div;'
-                  style={{ backgroundColor: badge.color + '20' }};'
+              <TooltipTrigger asChild>'
+                <div'
+                  style={{ backgroundColor: badge.color + '20' }}'
                   className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer;""
-                >;;""
-                  <IconComponent;;"";
-                    style={{ color: badge.color "}}";;""
+                >;""
+                  <IconComponent;"";
+                    style={{ color: badge.color "}}""
                     className=w-4 h-4"
                   />;"
                 </div>;";"
               </TooltipTrigger>;";"
               <TooltipContent>;";"
-                <div className=text-center">";;""
-                  <div className=font-medium>{badge.name}</div>";";"
+                <div className=text-center">""
+                  <div className=font-medium>{badge.name}</div>"
                   <div className="text-xs text-gray-500>
                     {badge.description};
                   </div>;

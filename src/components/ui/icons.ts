@@ -29,11 +29,11 @@ export {;
   ZoomIn,;
   ZoomOut,;
   Eye,;
-  EyeOff,;'
+  EyeOff,'
   Sun,;
   Moon,;
-  Monitor,;'
-  PowerOff,;;
+  Monitor,'
+  PowerOff,;
 } from 'lucide-react;
 ;
 // Status Icons;
@@ -48,11 +48,11 @@ export {;
   Loader2,;
   Clock,;
   Calendar,;
-  Bell,;'
+  Bell,'
   Ban,;
   ShieldAlert,;
-  HelpCircle,;'
-  ShieldCheck,;;
+  HelpCircle,'
+  ShieldCheck,;
 } from 'lucide-react;
 ;
 // Media Icons;
@@ -62,11 +62,11 @@ export {;
   Volume2,;
   VolumeX,;
   Image,;
-  Video,;'
+  Video,'
   Camera,;
   Mic,;
-  MicOff,;'
-  PlayCircle,;;
+  MicOff,'
+  PlayCircle,;
 } from 'lucide-react;
 ;
 // File & Document Icons;
@@ -78,11 +78,11 @@ export {;
   FileAudio,;
   FilePlus,;
   Folder,;
-  FolderOpen,;'
+  FolderOpen,'
   Save,;
   Clipboard,;
-  PaperclipIcon,;'
-  Archive,;;
+  PaperclipIcon,'
+  Archive,;
 } from 'lucide-react;
 ;
 // Social & User Icons;
@@ -96,11 +96,11 @@ export {;
   LogIn,;
   UserCheck,;
   Shield,;
-  Lock,;'
+  Lock,'
   Unlock,;
   LockKeyhole,;
-  Key,;'
-  UserIcon,;;
+  Key,'
+  UserIcon,;
 } from 'lucide-react;
 ;
 // Business & Finance Icons;
@@ -123,14 +123,14 @@ export {;
   Badge,;
   BadgeCheck,;
   Crown,;
-  Medal,;'
+  Medal,'
   Trophy,;
   Handshake,;
-  ShoppingCart,;'
-  BadgePlus,;;
+  ShoppingCart,'
+  BadgePlus,;
 } from 'lucide-react;
-;'
-// Data Visualization Icons;;
+'
+// Data Visualization Icons;
 export { BarChart, LineChart } from 'lucide-react;
 ;
 // Development & Tech Icons;
@@ -154,11 +154,11 @@ export {;
   HardDrive,;
   Lightbulb,;
   Webhook,;
-  Network,;'
+  Network,'
   Recycle,;
   Truck,;
-  Smartphone,;'
-  Building,;;
+  Smartphone,'
+  Building,;
 } from 'lucide-react;
 ;
 // Action Icons;
@@ -202,11 +202,11 @@ export {;
   Linkedin,;
   Link as LinkIcon,;
   Megaphone,;
-  Pin,;'
+  Pin,'
   Instagram,;
   Youtube,;
-  Github,;'
-  Slack,;;
+  Github,'
+  Slack,;
 } from 'lucide-react;
 ;
 // Navigation & UI Icons;
@@ -229,18 +229,18 @@ export {;
   ArrowDownAZ,;
   ArrowUpZA,;
   Circle,;
-  CircleDot,;'
+  CircleDot,'
   Dot,;
   GripVertical,;
-  PanelLeft,;'
-  ImageIcon,;;
+  PanelLeft,'
+  ImageIcon,;
 } from 'lucide-react;
 ;
-// Export type for icon component props;'
+// Export type for icon component props'
 export type IconProps = {;
   size?: number;
-  className?: string;'
-  color?: string;;
+  className?: string'
+  color?: string;
   'aria-label'?: string;
-};'
+}'
 '''''

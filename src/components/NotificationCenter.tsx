@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Bell } from '@/components/ui/icons'
 
-// Use the shared icon wrapper;'
-;'
-import { Button } from '@/components/ui/button;'
+// Use the shared icon wrapper'
+'
+import { Button } from '@/components/ui/button'
 import {'
   Popover,
-  PopoverContent,;'
-  PopoverTrigger,;'
-} from '@/components/ui/popover;'
-import { useNotifications } from '@/context/notifications/NotificationContext;'
-import { useEnqueueSnackbar } from '@/context;'
+  PopoverContent,'
+  PopoverTrigger,'
+} from '@/components/ui/popover'
+import { useNotifications } from '@/context/notifications/NotificationContext'
+import { useEnqueueSnackbar } from '@/context'
 import { logErrorToProduction } from '@/utils/productionLogger'
-import {;'
+import {'
   NotificationFilter,'
   NotificationHeader,
-  NotificationList,;'
-  NotificationFooter,;'
-} from '@/components/notifications;'
+  NotificationList,'
+  NotificationFooter,'
+} from '@/components/notifications'
 import type { FilterType } from '@/components/notifications/NotificationFilter'
 
 export const _NotificationCenter: unknown React.FC = () => {;
@@ -36,31 +36,31 @@ export const _NotificationCenter: unknown React.FC = () => {;
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loadedOnce, setLoadedOnce] = useState(false);
-  const enqueueSnackbar: unknown = useEnqueueSnackbar();
+  const const enqueueSnackbar = useEnqueueSnackbar();
 
   // Refresh notifications when popover opens, but avoid duplicate;
   useEffect(() => {;
     if (open && !loadedOnce) {;
-      const loadNotifications: unknown = async () => {;'
+      const const loadNotifications = async () => {'
         try {'
           await fetchNotifications();
-          setError(null);'
-        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (err) {;'
-          logErrorToProduction('Failed to fetch notifications:', {;'
+          setError(null)'
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (err) {'
+          logErrorToProduction('Failed to fetch notifications:', {'
             data: "err,;"";
           });"";
-          setError("Couldn't load notifications");";"
+          setError("Couldn't load notifications");"
           enqueueSnackbar(;";"
-            typeof err === 'object' &&;'
-              err !== null &&;'
-              'response' in err &&;'
-              typeof (err as { response?: { data?: { message?: string } } });'
+            typeof err === 'object' &&'
+              err !== null &&'
+              'response' in err &&'
+              typeof (err as { response?: { data?: { message?: string } } })'
                 .response?.data?.message === 'string'
-              ? (err as { response?: { data?: { message?: string } } });'
+              ? (err as { response?: { data?: { message?: string } } })'
                   .response!.data!.message!'
               : err instanceof Error;
-                ? err.message;'
-                : String(err),;'
+                ? err.message'
+                : String(err),'
             { variant: 'error' },'
           );
         } finally {;
@@ -70,55 +70,55 @@ export const _NotificationCenter: unknown React.FC = () => {;
 
       loadNotifications();
     };
-  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar, error]);'
+  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar, error])'
 '
-  const handleMarkAllAsRead: unknown = async () => {;
-    try {;'
-      await markAllAsRead();'
-      enqueueSnackbar('All notifications marked as read', {;'
+  const const handleMarkAllAsRead = async () => {;
+    try {'
+      await markAllAsRead()'
+      enqueueSnackbar('All notifications marked as read', {'
         variant: 'success','
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});'
-    } catch (err) {;'
-      logErrorToProduction('Failed to mark notifications as read:', {;'
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})'
+    } catch (err) {'
+      logErrorToProduction('Failed to mark notifications as read:', {'
         data: err",";
       });"";
-      enqueueSnackbar(;"";;"
-        typeof err === 'object' &&;'
-          err !== null &&;'
-          'response' in err &&;'
-          typeof (err as { response?: { data?: { message?: string } } });'
+      enqueueSnackbar(;""
+        typeof err === 'object' &&'
+          err !== null &&'
+          'response' in err &&'
+          typeof (err as { response?: { data?: { message?: string } } })'
             .response?.data?.message === 'string'
-          ? (err as { response?: { data?: { message?: string } } }).response!;'
+          ? (err as { response?: { data?: { message?: string } } }).response!'
               .data!.message!'
           : err instanceof Error;
-            ? err.message;'
-            : String(err),;'
+            ? err.message'
+            : String(err),'
         { variant: 'error' },'
       );
     };
   };
 
-  const handleFilterChange: unknown = (newFilter: FilterType) => {;
+  const const handleFilterChange = (newFilter: FilterType) => {;
     setFilter(newFilter as FilterType);
   };
-;'
+'
   return ('
     <Popover open={open} onOpenChange={(v) => setOpen(v ?? false)}>;
-      <PopoverTrigger asChild>;'
-        <Button;'
+      <PopoverTrigger asChild>'
+        <Button'
           variant="ghost;"";
-          size="icon";";"
-          className=relative"";;""
+          size="icon"
+          className=relative"""
           aria-label=Open notifications";";
-        >";";"
+        >"
           <Bell className="h-5 w-5 text-zion-slate-light />;"";
           {unreadCount > 0 && (;"";
-            <span className="absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-zion-cyan text-[10px] text-white font-medium">;";"
-              {unreadCount > 9 ? '9+' : unreadCount};'
+            <span className="absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-zion-cyan text-[10px] text-white font-medium">;"
+              {unreadCount > 9 ? '9+' : unreadCount}'
             </span>'
           )};
-        </Button>;'
-      </PopoverTrigger>;'
+        </Button>'
+      </PopoverTrigger>'
       <PopoverContent className=w-[350px] p-0 bg-zion-blue border-zion-blue-light max-h-[500px] flex flex-col">"
         <NotificationHeader;
           unreadCount={unreadCount};

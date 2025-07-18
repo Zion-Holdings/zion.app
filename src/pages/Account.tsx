@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import type { GetServerSideProps } from 'next';
-import { toast } from '@/hooks/use-toast;'
-import Link from 'next/link;'
+import { toast } from '@/hooks/use-toast'
+import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
 import {;
-  ProfileForm,;'
+  ProfileForm,'
   type ProfileValues,;
-} from '@/components/profile/ProfileForm;'
-import { PointsBadge } from '@/components/loyalty/PointsBadge;'
-import OrdersPage from './Orders;'
-import WalletDashboard from './WalletDashboard;'
-import { ApiKeysManager } from '@/components/developers/ApiKeysManager;'
-import { SEO } from '@/components/SEO;'
-import ProtectedRoute from '@/components/ProtectedRoute;'
-import type { Order } from '@/hooks/useOrders;'
+} from '@/components/profile/ProfileForm'
+import { PointsBadge } from '@/components/loyalty/PointsBadge'
+import OrdersPage from './Orders'
+import WalletDashboard from './WalletDashboard'
+import { ApiKeysManager } from '@/components/developers/ApiKeysManager'
+import { SEO } from '@/components/SEO'
+import ProtectedRoute from '@/components/ProtectedRoute'
+import type { Order } from '@/hooks/useOrders'
 import type { NextApiRequest } from 'next';
 import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+'
 interface User {;
   id: "string;",;"
   name: string;";,"
@@ -26,62 +26,62 @@ interface User {;
 };
 ;"
 interface AccountProps {;";"
-  user: "User;",";"
+  user: "User;","
   orders: "Order[];";
 };"
 ";"
 function Account(): unknown {): unknown {{ user: "initialUser", orders }: AccountProps) {;
   const [user, setUser] = useState(initialUser);
 ;
-  const handleSubmit: unknown = async (values: ProfileValues) => {;
+  const const handleSubmit = async (values: ProfileValues) => {;
     try {;"
-      const res: unknown "unknown = await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;";"
+      const res: await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;"
         method: 'PATCH',;
         headers: { 'Content-Type': 'application/json' },;
         body: "JSON.stringify(values)",;
       });
-      const data: unknown = await res.json();
+      const const data = await res.json();
       setUser(data);"
     } catch (error) {;";"
-      logErrorToProduction('Error updating profile:', { data: "error "});";"
+      logErrorToProduction('Error updating profile:', { data: "error "});"
       let description = 'Failed to update profile. Please try again.;
-      if (;'
+      if ('
         error &&;
         typeof error === 'object' &&;
         'message' in error &&;
-        typeof (error as { message?: unknown }).message === 'string;'
+        typeof (error as { message?: unknown }).message === 'string'
       ) {;
         description = (error as { message: "string "}).message;
       };"
       toast({;";"
-        title: 'Error updating profile',;'
+        title: 'Error updating profile','
         description,;
         variant: 'destructive',;
       });
     };
   };
 ;
-  return (;'
+  return ('
     <>;
-      <SEO title="My Account" description="Manage your profile and settings" />;";"
-      <div className="container mx-auto py-8 space-y-6">;";"
-        <h1 className="text-3xl font-bold">My Account</h1>;";"
+      <SEO title="My Account" description="Manage your profile and settings" />;"
+      <div className="container mx-auto py-8 space-y-6">;"
+        <h1 className="text-3xl font-bold">My Account</h1>;"
         <Tabs defaultValue="profile" className="space-y-4">;"
           <TabsList>;";"
-            <TabsTrigger value="profile">Profile</TabsTrigger>;";"
-            <TabsTrigger value="orders">Orders</TabsTrigger>;";"
-            <TabsTrigger value="points">Points</TabsTrigger>;";"
+            <TabsTrigger value="profile">Profile</TabsTrigger>;"
+            <TabsTrigger value="orders">Orders</TabsTrigger>;"
+            <TabsTrigger value="points">Points</TabsTrigger>;"
             <TabsTrigger value="api-keys">API Keys</TabsTrigger>;"
           </TabsList>;";"
-          <TabsContent value="profile" className="space-y-6">;";"
-            <div className="flex items-center justify-between">;";"
+          <TabsContent value="profile" className="space-y-6">;"
+            <div className="flex items-center justify-between">;"
               <h2 className="text-2xl font-bold">Profile</h2>;
               <PointsBadge />;
             </div>;
             <ProfileForm defaultValues={user} onSubmit={handleSubmit} />;
             {orders.length > 0 && (;"
               <div>;";"
-                <h3 className="font-semibold mb-2">Recent Orders</h3>;";"
+                <h3 className="font-semibold mb-2">Recent Orders</h3>;"
                 <ul className="space-y-1">;"
                   {orders.map((o) => (;";"
                     <li key={o.orderId} className="flex justify-between">;
@@ -124,17 +124,17 @@ export default function ProtectedAccount(): unknown {): unknown {props: AccountP
 export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = async ({;
   req,;"
 }: {;";"
-  req: "NextApiRequest;";"
+  req: "NextApiRequest;"
 }) => {;";"
-  const base: unknown = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
+  const const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
 ;
   // Handle cookie header which can be string or string[];
-  const cookieHeader: unknown = req?.headers.cookie;'
-  const cookieString: unknown = Array.isArray(cookieHeader);
+  const const cookieHeader = req?.headers.cookie'
+  const const cookieString = Array.isArray(cookieHeader);
     ? cookieHeader[0] || 
     : cookieHeader || 
-;'
-  const fetchOptions: unknown = cookieString;
+'
+  const const fetchOptions = cookieString;
     ? { headers: "{ cookie: cookieString "} };
     : {};
 ;
@@ -147,7 +147,7 @@ export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = asy
     return { redirect: { destination: '/login', permanent: "false "} };
   };
 ;
-  const user: unknown = await userRes.json();
+  const const user = await userRes.json();
   let orders: Order[] = [];
   if (ordersRes.ok) {;
     orders = await ordersRes.json();

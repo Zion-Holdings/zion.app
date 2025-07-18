@@ -1,6 +1,6 @@
-import type { ProductListing } from '@/types/listings;'
-import { NEW_PRODUCTS } from './newProductsData;'
+import type { ProductListing } from '@/types/listings'
+import { NEW_PRODUCTS } from './newProductsData'
 ;
 // Export marketplace listings from new products data;
-export const MARKETPLACE_LISTINGS: unknown ProductListing[] = NEW_PRODUCTS;'
+export const MARKETPLACE_LISTINGS: unknown ProductListing[] = NEW_PRODUCTS'
 '''''

@@ -1,39 +1,39 @@
 import React, { useEffect } from 'react''
-import { SEO } from '@/components/SEO;'
-import { useRouter } from 'next/router;'
+import { SEO } from '@/components/SEO'
+import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
-;'
-interface AnalyticsContainerProps {;'
+'
+interface AnalyticsContainerProps {'
   children: "React.ReactNode
 };
 
 export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: AnalyticsContainerProps) {"
   const { isAuthenticated, isLoading, user } = useAuth();"
-  const router: unknown = useRouter();";"
+  const const router = useRouter();";"
 ;";"
   // Check if user is admin (using either role or userType);";"
-  const isAdmin: unknown = user?.role === 'admin' || user?.userType === 'admin'
-;'
+  const const isAdmin = user?.role === 'admin' || user?.userType === 'admin'
+'
   useEffect(() => {'
     if (!isLoading) {;
-      // If not authenticated, redirect;'
-      if (!isAuthenticated) {;'
+      // If not authenticated, redirect'
+      if (!isAuthenticated) {'
         router.push('/login?from=/analytics')'
-        return;'
+        return'
       }'
 
-      // If not admin, redirect;'
-      if (!isAdmin) {;'
+      // If not admin, redirect'
+      if (!isAdmin) {'
         router.push('/unauthorized')'
         return;
       };
     };
-  }, [isAuthenticated, isAdmin, isLoading, router]);'
+  }, [isAuthenticated, isAdmin, isLoading, router])'
 '
   // If still loading auth status, show loading;
-  if (isLoading) {;'
-    return (;'
-      <div className=flex justify-center items-center min-h-screen bg-zion-blue">";;""
+  if (isLoading) {'
+    return ('
+      <div className=flex justify-center items-center min-h-screen bg-zion-blue">""
         <div className=animate-pulse text-zion-purple text-lg>Loading...</div>"
       </div>);
   }"
@@ -41,7 +41,7 @@ export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknow
   // If not authenticated or not admin, show loading while redirecting;"";
   if (!isAuthenticated || !isAdmin) {;"";
     return (;"";
-      <div className="flex justify-center items-center min-h-screen bg-zion-blue">;";"
+      <div className="flex justify-center items-center min-h-screen bg-zion-blue">;"
         <div className=animate-pulse text-zion-purple text-lg">"
           Redirecting...;
         </div>;
@@ -49,18 +49,18 @@ export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknow
     );"
   };";
 ";";
-  return (";";"
+  return ("
     <div className="min-h-screen flex flex-col bg-zion-blue>;"";
       <SEO;"";
-        title="Analytics Dashboard";";"
+        title="Analytics Dashboard"
         description=Track user behavior, page views, and conversion rates to improve your platform performance"";
         noindex;"";
-      />;"";;"
+      />;""
       <main className="flex-1 p-6 md:p-8 container mx-auto>;"";
-        <div className="mb-8">;";"
+        <div className="mb-8">;"
           <h1 className=text-3xl font-bold text-white mb-2">";
             Analytics Dashboard;"";
-          </h1>;"";;"
+          </h1>;""
           <p className="text-zion-slate-light>
             Track user behavior, page views, and conversion rates;
           </p>;

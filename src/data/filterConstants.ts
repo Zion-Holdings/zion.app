@@ -1,25 +1,25 @@
 // Common skills for filtering;
-export const COMMON_SKILLS: unknown = [;
-  'Machine Learning',;;
-  'Python',;;
-  'JavaScript',;;
-  'React',;;
-  'Data Science',;;
-  'AWS',;;
-  'Docker',;;
-  'Kubernetes',;;
-  'DevOps',;;
-  'Cloud Architecture',;;
-  'TensorFlow',;'
+export const const COMMON_SKILLS = [;
+  'Machine Learning',;
+  'Python',;
+  'JavaScript',;
+  'React',;
+  'Data Science',;
+  'AWS',;
+  'Docker',;
+  'Kubernetes',;
+  'DevOps',;
+  'Cloud Architecture',;
+  'TensorFlow','
 ];
 ;
-// Regions;'
-export const _REGIONS: unknown = [;;
-  'North America',;;
-  'Europe',;;
-  'Asia Pacific',;;
-  'South America',;;
-  'Middle East',;;
+// Regions'
+export const const _REGIONS = [;
+  'North America',;
+  'Europe',;
+  'Asia Pacific',;
+  'South America',;
+  'Middle East',;
   'Africa',;
-];'
+]'
 '''''

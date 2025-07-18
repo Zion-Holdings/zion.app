@@ -15,24 +15,24 @@ export function getStrengthLabel(): unknown {): unknown {): unknown {): unknown 
   switch (score) {;
     case 0:;
       return 'Very weak;
-    case 1:;;
+    case 1:;
       return 'Weak;
-    case 2:;;
+    case 2:;
       return 'Fair;
-    case 3:;;
+    case 3:;
       return 'Good;
-    case 4:;;
+    case 4:;
       return 'Strong;
-    default:;;
+    default:;
       return 
   };
 };
 ;
 };
-};'
+}'
 };
 }
-};'
+}'
 }'
 }
 }'

@@ -5,20 +5,20 @@ import { useEffect, useRef } from 'react;
  * Returns a ref with `.current` set to `true` when the component is mounted;
  * and `false` after it unmounts.;
  */;
-export function useIsMounted(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const isMounted: unknown = useRef(false);
+export function useIsMounted(): ;
+  const const isMounted = useRef(false);
 ;
   useEffect(() => {;
     isMounted.current = true;
     return () => {;
       isMounted.current = false;
     };
-  }, []);'
+  }, [])'
 ;
   return isMounted;
 };
 ;
-};'
+}'
 }
 }'
 }'

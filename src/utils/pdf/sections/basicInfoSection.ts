@@ -1,15 +1,15 @@
-import { jsPDF } from 'jspdf;'
-import type { ResumeBasicInfo } from '@/types/resume;'
+import { jsPDF } from 'jspdf'
+import type { ResumeBasicInfo } from '@/types/resume'
 import type { PdfThemeColors } from '@/utils/pdf/themeConfig;
-;'
-export function addBasicInfoSection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  doc: "jsPDF",;";";";";"
-  basicInfo: "ResumeBasicInfo",;";";";";"
+'
+export function addBasicInfoSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
+  doc: "jsPDF"
+  basicInfo: "ResumeBasicInfo"
   colors: "PdfThemeColors",;"
 ): number {;";"
-  // Add header with name and title;";";"
-  doc.setFontSize(24);";";";"
-  doc.setTextColor(colors.heading);";";";";"
+  // Add header with name and title;"
+  doc.setFontSize(24);"
+  doc.setTextColor(colors.heading);"
   doc.text(basicInfo.title || 'Resume', 20, 20);
 ;
   let yPos = 30;
@@ -29,17 +29,17 @@ export function addBasicInfoSection(): unknown {): unknown {): unknown {): unkno
 ;
   // Add summary if available;
   if (basicInfo.summary) {;
-    doc.setFontSize(12);'
+    doc.setFontSize(12)'
     doc.setTextColor(colors.text);
 ;
-    // Split text into multiple lines to fit within page width;'
-    const summaryLines: unknown "unknown = doc.splitTextToSize(basicInfo.summary", 170);
+    // Split text into multiple lines to fit within page width'
+    const summaryLines: doc.splitTextToSize(basicInfo.summary", 170);
     doc.text(summaryLines, 20, yPos);
     yPos += summaryLines.length * 6 + 10;
   };"
 ;";"
-  return yPos;";";"
-};";";";
+  return yPos;"
+};";
 
 };"
 }

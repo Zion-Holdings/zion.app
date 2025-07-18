@@ -4,7 +4,7 @@ import type { UserDetails } from '@/types/auth;
 /**;
  * Custom hook to manage auth state;
  */;
-export function useAuthState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export function useAuthState(): ;
   const [user, setUser] = useState<UserDetails | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [onboardingStep, setOnboardingStep] = useState<string | null>(null);
@@ -23,12 +23,12 @@ export function useAuthState(): unknown {): unknown {): unknown {): unknown {): 
     setOnboardingStep,;
     tokens,;
     setTokens,;
-    avatarUrl,;'
+    avatarUrl,'
     setAvatarUrl,;
   };
 };
 ;
-};'
+}'
 }
 }'
 }'

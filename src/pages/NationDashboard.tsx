@@ -1,14 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router;
 ;
-export default function NationDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const router: unknown = useRouter();'
+export default function NationDashboard(): ;
+  const const router = useRouter()'
   const { _slug } = router.query as { slug?: string };
   if (!slug) return null;
-;'
-  return (;;
-    <div className="container mx-auto py-8 space-y-6">;";";";";"
-      <h1 className="text-3xl font-bold text-white">Dashboard for {slug}</h1>;";";";";"
+'
+  return (;
+    <div className="container mx-auto py-8 space-y-6">;"
+      <h1 className="text-3xl font-bold text-white">Dashboard for {slug}</h1>;"
       <ul className="list-disc pl-6 text-gray-300 space-y-2">;
         <li>Population metrics</li>;
         <li>Talent vs. Client ratio</li>;
@@ -17,12 +17,12 @@ export default function NationDashboard(): unknown {): unknown {): unknown {): u
         <li>DAO proposals for this nation</li>;
       </ul>;"
     </div>;";"
-  );";";"
-};";";";"
-;";";";";"
+  );"
+};"
+;"
 NationDashboard.displayName = 'NationDashboard;
 
-};'
+}'
 }
 }'
 }'

@@ -2,81 +2,81 @@ import { useRouter } from 'next/router;
 import {;
   ArrowUp,;
   Filter,;
-  SortAsc,;'
+  SortAsc,'
   TrendingUp,;
   Star,;
-  AlertTriangle,;'
-  RefreshCw,;;
-} from '@/components/ui/icons;'
+  AlertTriangle,'
+  RefreshCw,;
+} from '@/components/ui/icons'
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion;
-;;
-import { toast } from '@/hooks/use-toast;'
+;
+import { toast } from '@/hooks/use-toast'
 import apiClient from '@/services/apiClient;
-;;
-import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll;'
-import type { ProductListing } from '@/types/listings;'
-import { SkeletonCard } from '@/components/ui/skeleton;'
-import { Button } from '@/components/ui/button;'
-import { Badge } from '@/components/ui/badge;'
-import { Card, CardContent, CardHeader } from '@/components/ui/card;'
-import Spinner from '@/components/ui/spinner;'
-import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary;'
-import { useCurrency } from '@/hooks/useCurrency;'
+;
+import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll'
+import type { ProductListing } from '@/types/listings'
+import { SkeletonCard } from '@/components/ui/skeleton'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import Spinner from '@/components/ui/spinner'
+import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary'
+import { useCurrency } from '@/hooks/useCurrency'
 import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+'
 // Enhanced initial equipment with more variety;
 // Remove all INITIAL_EQUIPMENT and any other hardcoded/sample/mock equipment data. Fetch equipment from real API/data source or show empty/error state if unavailable.;
-;'
-interface EquipmentStats {;;
-  averagePrice: "number;",;";";";";"
-  averageRating: "number;",";";";";"
-  totalProducts: "number;",;";";";";"
-  availableCount: "number;";";"
-};";";"
-;";";";"
-interface EquipmentFilterControlsProps {;";";";";"
-  sortBy: "string;",;";";";";"
-  setSortBy: "(value: string) => void;",;";";";";"
-  filterCategory: "string;",";";";";"
-  setFilterCategory: "(value: string) => void;",;";";";";"
-  categories: "string[];",";";";";"
-  showRecommended: "boolean;",;";";";";"
-  setShowRecommended: "(value: boolean) => void;",;";";";";"
-  loading: "boolean;";";"
-};";";"
-;";";";"
-// Market insights component;";";";";"
-const EquipmentMarketInsights: unknown "unknown = ({ stats "}: { stats: "EquipmentStats "}) => (;";";";";"
-  <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">;";";";";"
-    <CardContent className="p-6">;";";";";"
-      <div className="flex items-center gap-2 mb-4">;";";";";"
-        <TrendingUp className="h-5 w-5 text-blue-400" />;";";";";"
-        <h3 className="text-lg font-semibold">Equipment Market Insights</h3>;";";";"
-      </div>;";";";";"
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">;";";";";"
-        <div className="text-center">;";";";";"
-          <div className="text-2xl font-bold text-blue-400">;";";"
-            ${Math.round(stats.averagePrice / 1000)}k;";";";"
-          </div>;";";";";"
-          <div className="text-sm text-muted-foreground">Avg Price</div>;";";";"
-        </div>;";";";";"
-        <div className="text-center">;";";";";"
-          <div className="text-2xl font-bold text-green-400">;";";"
-            {stats.averageRating.toFixed(1)};";";";"
-          </div>;";";";";"
-          <div className="text-sm text-muted-foreground">Avg Rating</div>;";";";"
-        </div>;";";";";"
-        <div className="text-center">;";";";";"
-          <div className="text-2xl font-bold text-purple-400">;";";"
-            {stats.totalProducts};";";";"
-          </div>;";";";";"
-          <div className="text-sm text-muted-foreground">Total Items</div>;";";";"
-        </div>;";";";";"
-        <div className="text-center">;";";";";"
-          <div className="text-2xl font-bold text-orange-400">;";";"
-            {stats.availableCount};";";";"
-          </div>;";";";";"
+'
+interface EquipmentStats {;
+  averagePrice: "number;"
+  averageRating: "number;","
+  totalProducts: "number;"
+  availableCount: "number;"
+};"
+;"
+interface EquipmentFilterControlsProps {;"
+  sortBy: "string;"
+  setSortBy: "(value: string) => void;"
+  filterCategory: "string;","
+  setFilterCategory: "(value: string) => void;"
+  categories: "string[];","
+  showRecommended: "boolean;"
+  setShowRecommended: "(value: boolean) => void;"
+  loading: "boolean;"
+};"
+;"
+// Market insights component;"
+const EquipmentMarketInsights: ({ stats "}: { stats: "EquipmentStats "}) => (;"
+  <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">;"
+    <CardContent className="p-6">;"
+      <div className="flex items-center gap-2 mb-4">;"
+        <TrendingUp className="h-5 w-5 text-blue-400" />;"
+        <h3 className="text-lg font-semibold">Equipment Market Insights</h3>;"
+      </div>;"
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">;"
+        <div className="text-center">;"
+          <div className="text-2xl font-bold text-blue-400">;"
+            ${Math.round(stats.averagePrice / 1000)}k;"
+          </div>;"
+          <div className="text-sm text-muted-foreground">Avg Price</div>;"
+        </div>;"
+        <div className="text-center">;"
+          <div className="text-2xl font-bold text-green-400">;"
+            {stats.averageRating.toFixed(1)};"
+          </div>;"
+          <div className="text-sm text-muted-foreground">Avg Rating</div>;"
+        </div>;"
+        <div className="text-center">;"
+          <div className="text-2xl font-bold text-purple-400">;"
+            {stats.totalProducts};"
+          </div>;"
+          <div className="text-sm text-muted-foreground">Total Items</div>;"
+        </div>;"
+        <div className="text-center">;"
+          <div className="text-2xl font-bold text-orange-400">;"
+            {stats.availableCount};"
+          </div>;"
           <div className="text-sm text-muted-foreground">In Stock</div>;
         </div>;
       </div>;
@@ -85,121 +85,121 @@ const EquipmentMarketInsights: unknown "unknown = ({ stats "}: { stats: "Equipme
 );
 ;
 // Filter controls;
-const EquipmentFilterControls: unknown = ({;
+const const EquipmentFilterControls = ({;
   sortBy,;
   setSortBy,;
   filterCategory,;
   setFilterCategory,;
   categories,;"
   showRecommended,;";"
-  setShowRecommended,;";";"
-  loading,;";";";"
-}: EquipmentFilterControlsProps) => (;";";";";"
-  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">;";";";"
-    {loading && (;";";";";"
-      <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />;";";";"
-    )};";";";";"
-    <div className="flex items-center gap-2">;";";";";"
-      <Filter className="h-4 w-4 text-muted-foreground" />;";"
-      <select;";";"
-        value={filterCategory};";";";"
-        onChange={(e) => setFilterCategory(e.target.value)};";";";";"
-        className="bg-background border border-border px-3 py-2 rounded";";";";"
-      >;";";";";"
+  setShowRecommended,;"
+  loading,;"
+}: EquipmentFilterControlsProps) => (;"
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">;"
+    {loading && (;"
+      <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />;"
+    )};"
+    <div className="flex items-center gap-2">;"
+      <Filter className="h-4 w-4 text-muted-foreground" />;"
+      <select;"
+        value={filterCategory};"
+        onChange={(e) => setFilterCategory(e.target.value)};"
+        className="bg-background border border-border px-3 py-2 rounded"
+      >;"
         <option value="">All Categories</option>;
         {categories.map((cat: string) => (;
           <option key={cat} value={cat}>;
             {cat};"
           </option>;";"
-        ))};";";"
-      </select>;";";";"
-    </div>;";";";";"
-    <div className="flex items-center gap-2">;";";";";"
-      <SortAsc className="h-4 w-4 text-muted-foreground" />;";"
-      <select;";";"
-        value={sortBy};";";";"
-        onChange={(e) => setSortBy(e.target.value)};";";";";"
-        className="bg-background border border-border px-3 py-2 rounded";";";";"
-      >;";";";";"
-        <option value="newest">Newest First</option>;";";";";"
-        <option value="price-low">Price: Low to High</option>;";";";";"
-        <option value="price-high">Price: High to Low</option>;";";";";"
-        <option value="rating">Highest Rated</option>;";"
-      </select>;";";"
-    </div>;";";";"
-    <Button;";";";";"
-      variant={showRecommended ? 'default' : 'outline'};;
-      size="sm";";";"
-      onClick={() => setShowRecommended(!showRecommended)};";";";"
-    >;";";";";"
-      <Star className="h-4 w-4 mr-1" />;";";";";"
+        ))};"
+      </select>;"
+    </div>;"
+    <div className="flex items-center gap-2">;"
+      <SortAsc className="h-4 w-4 text-muted-foreground" />;"
+      <select;"
+        value={sortBy};"
+        onChange={(e) => setSortBy(e.target.value)};"
+        className="bg-background border border-border px-3 py-2 rounded"
+      >;"
+        <option value="newest">Newest First</option>;"
+        <option value="price-low">Price: Low to High</option>;"
+        <option value="price-high">Price: High to Low</option>;"
+        <option value="rating">Highest Rated</option>;"
+      </select>;"
+    </div>;"
+    <Button;"
+      variant={showRecommended ? 'default' : 'outline'};
+      size="sm"
+      onClick={() => setShowRecommended(!showRecommended)};"
+    >;"
+      <Star className="h-4 w-4 mr-1" />;"
       {showRecommended ? 'All Equipment' : 'Recommended'};
     </Button>;
   </div>;
 );
 ;
-// Equipment card;'
-const EquipmentCard: unknown = ({;
+// Equipment card'
+const const EquipmentCard = ({;
   equipment,;
-  onViewDetails,;'
-}: {;;
-  equipment: "ProductListing;",;";";";";"
-  onViewDetails: "() => void;";"
+  onViewDetails,'
+}: {;
+  equipment: "ProductListing;"
+  onViewDetails: "() => void;"
 }) => {;";"
-  const { _formatPrice } = useCurrency();";";"
-  return (;";";";"
-    <Card;";";";";"
-      data-testid="equipment-item";";";";";"
-      className="h-full hover:shadow-lg transition-shadow";";";";"
-    >;";";";";"
-      <CardHeader className="pb-3">;";";";";"
-        <div className="flex items-start justify-between">;";";";";"
-          <div className="flex-1 min-w-0">;";";";";"
-            <h3 className="font-semibold text-lg truncate">;";";"
-              {equipment.title};";";";"
-            </h3>;";";";";"
-            <p className="text-sm text-muted-foreground">;";";"
-              {equipment.category};";";";"
-            </p>;";";";";"
-            <div className="flex items-center gap-2 mt-2">;";";";";"
+  const { _formatPrice } = useCurrency();"
+  return (;"
+    <Card;"
+      data-testid="equipment-item"
+      className="h-full hover:shadow-lg transition-shadow"
+    >;"
+      <CardHeader className="pb-3">;"
+        <div className="flex items-start justify-between">;"
+          <div className="flex-1 min-w-0">;"
+            <h3 className="font-semibold text-lg truncate">;"
+              {equipment.title};"
+            </h3>;"
+            <p className="text-sm text-muted-foreground">;"
+              {equipment.category};"
+            </p>;"
+            <div className="flex items-center gap-2 mt-2">;"
               <Badge variant="secondary" className="text-xs">;"
                 {equipment.brand};";"
-              </Badge>;";";"
-            </div>;";";";"
-          </div>;";";";";"
-          <div className="text-right">;";";";";"
+              </Badge>;"
+            </div>;"
+          </div>;"
+          <div className="text-right">;"
             <div className="text-xl font-bold text-blue-600">;"
               {formatPrice(equipment.price ?? 0)};";"
-            </div>;";";"
-            <Badge;";";";"
-              variant={;";";";";"
+            </div>;"
+            <Badge;"
+              variant={;"
                 equipment.availability === 'In Stock' ? 'default' : 'outline;
-              };;
+              };
               className="text-xs";
             >;
               {equipment.availability};"
             </Badge>;";"
-          </div>;";";"
-        </div>;";";";"
-      </CardHeader>;";";";";"
-      <CardContent className="pt-0">;";";";";"
-        <div className="flex items-center gap-4 mb-3">;";";";";"
-          <div className="flex items-center gap-1">;";";";";"
-            <Star className="h-4 w-4 text-yellow-500 fill-current" />;";";";";"
-            <span className="text-sm font-medium">;";";"
-              {equipment.rating?.toFixed(1)};";";";"
-            </span>;";";";";"
+          </div>;"
+        </div>;"
+      </CardHeader>;"
+      <CardContent className="pt-0">;"
+        <div className="flex items-center gap-4 mb-3">;"
+          <div className="flex items-center gap-1">;"
+            <Star className="h-4 w-4 text-yellow-500 fill-current" />;"
+            <span className="text-sm font-medium">;"
+              {equipment.rating?.toFixed(1)};"
+            </span>;"
             <span className="text-xs text-muted-foreground">;"
               ({equipment.reviewCount} reviews);";"
-            </span>;";";"
-          </div>;";";";"
-        </div>;";";";";"
-        <p className="text-sm text-muted-foreground mb-3 line-clamp-2">;";";"
-          {equipment.description};";";";"
-        </p>;";";";";"
-        <div className="flex items-center justify-between">;";";";";"
-          <span className="text-sm font-medium">{equipment.category}</span>;";";";";"
-          <Button size="sm" onClick={onViewDetails}>;";";";";"
+            </span>;"
+          </div>;"
+        </div>;"
+        <p className="text-sm text-muted-foreground mb-3 line-clamp-2">;"
+          {equipment.description};"
+        </p>;"
+        <div className="flex items-center justify-between">;"
+          <span className="text-sm font-medium">{equipment.category}</span>;"
+          <Button size="sm" onClick={onViewDetails}>;"
             <ShoppingCart className="h-4 w-4 mr-1" />;
             View Details;
           </Button>;
@@ -208,44 +208,44 @@ const EquipmentCard: unknown = ({;
     </Card>;
   );"
 };";"
-;";";"
-// Loading grid;";";";"
-const EquipmentLoadingGrid: unknown "unknown = ({ count = 8 "}: { count?: number }) => (;";";";"
-  <div;";";";";"
-    data-testid="loading-state-equipment";";";";";"
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6";";";";"
-  >;";";";";"
+;"
+// Loading grid;"
+const EquipmentLoadingGrid: ({ count = 8 "}: { count?: number }) => (;"
+  <div;"
+    data-testid="loading-state-equipment"
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  >;"
     {Array.from({ length: "count "}).map((_, i) => (;
       <SkeletonCard key={i} />;
     ))};
   </div>;"
 );";"
-;";";"
-// Error fallback component;";";";"
-function _EquipmentErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{;";";";";"
-  error: "_error",;";";"
-  resetErrorBoundary,;";";";"
-}: {;";";";";"
-  error: "Error;",;";";";";"
-  resetErrorBoundary: "() => void;";";";"
-}) {;";";";"
-  return (;";";";";"
-    <main className="container py-8">;";";";";"
-      <Card className="border-red-200 bg-red-50">;";";";";"
-        <CardContent className="p-8 text-center">;";";";";"
-          <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-600" />;";";";";"
-          <h2 className="text-2xl font-bold text-red-900 mb-2">;";";"
-            Something went wrong;";";";"
-          </h2>;";";";";"
-          <p className="text-red-700 mb-4">;";";";";"
+;"
+// Error fallback component;"
+function _EquipmentErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
+  error: "_error",;"
+  resetErrorBoundary,;"
+}: {;"
+  error: "Error;"
+  resetErrorBoundary: "() => void;"
+}) {;"
+  return (;"
+    <main className="container py-8">;"
+      <Card className="border-red-200 bg-red-50">;"
+        <CardContent className="p-8 text-center">;"
+          <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-600" />;"
+          <h2 className="text-2xl font-bold text-red-900 mb-2">;"
+            Something went wrong;"
+          </h2>;"
+          <p className="text-red-700 mb-4">;"
             We're having trouble loading the equipment listings. This might be a;
-            temporary issue.;'
-          </p>;;
-          <div className="flex gap-2 justify-center">;";";";";"
-            <Button onClick={resetErrorBoundary} variant="outline">;";";";";"
-              <RefreshCw className="h-4 w-4 mr-2" />;";";"
-              Try Again;";";";"
-            </Button>;";";";";"
+            temporary issue.'
+          </p>;
+          <div className="flex gap-2 justify-center">;"
+            <Button onClick={resetErrorBoundary} variant="outline">;"
+              <RefreshCw className="h-4 w-4 mr-2" />;"
+              Try Again;"
+            </Button>;"
             <Button onClick={() => window.location.reload()} variant="default">;
               Refresh Page;
             </Button>;
@@ -256,50 +256,50 @@ function _EquipmentErrorFallback(): unknown {): unknown {): unknown {): unknown 
   );
 };"
 ;";"
-// Main component;";";"
-function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";"
-  const router: unknown = useRouter();";";";";"
-  const [sortBy, setSortBy] = useState('newest');;
+// Main component;"
+function EquipmentPageContent(): ;"
+  const const router = useRouter();"
+  const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
 ;
-  // Remove dataSeed and artificial API delay;'
-  // const _dataSeed: unknown = useMemo(() => {;
+  // Remove dataSeed and artificial API delay'
+  // const const _dataSeed = useMemo(() => {;
   //   return `equipment-${filterCategory}-${showRecommended}`;
-  // }, [filterCategory, showRecommended]);'
-;;
-  const fetchEquipment: unknown = useCallback(async (_page: "number", _limit: number) => {;";";"
-    // Only fetch real data from the API;";";";"
-    try {;";";";";"
-      const res: unknown = await apiClient.get('/equipment');
-      if (Array.isArray(res?.data)) {;'
-        return {;;
-          items: "res.data",;";";";";"
-          hasMore: "false",;";";";";"
+  // }, [filterCategory, showRecommended])'
+;
+  const const fetchEquipment = useCallback(async (_page: "number", _limit: number) => {;"
+    // Only fetch real data from the API;"
+    try {;"
+      const const res = await apiClient.get('/equipment');
+      if (Array.isArray(res?.data)) {'
+        return {;
+          items: "res.data"
+          hasMore: "false"
           total: "res.data.length",;"
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";"
-      };";";"
-    } catch (apiErr: unknown) {;";";";"
-      if (apiErr instanceof Error) {;";";";";"
-        logErrorToProduction('Error in fetchEquipment:', {;;
-          data: "apiErr.message",;";";"
-        });";";";"
-      } else {;";";";";"
-        logErrorToProduction('Error in fetchEquipment:', {;;
+      };"
+    } catch (apiErr: unknown) {;"
+      if (apiErr instanceof Error) {;"
+        logErrorToProduction('Error in fetchEquipment:', {;
+          data: "apiErr.message",;"
+        });"
+      } else {;"
+        logErrorToProduction('Error in fetchEquipment:', {;
           data: "String(apiErr)",;
         });
       };"
       throw apiErr;";"
-    };";";"
-    // If no data, return empty;";";";"
-    return {;";";";";"
-      items: "[]",;";";";";"
-      hasMore: "false",;";";";";"
+    };"
+    // If no data, return empty;"
+    return {;"
+      items: "[]"
+      hasMore: "false"
       total: "0",;"
     };";"
-  }, []);";";"
-;";";";"
-  const {;";";";";"
+  }, []);"
+;"
+  const {;"
     items: "equipment",;
     loading,;
     error,;
@@ -314,7 +314,7 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
 ;
   // Refresh when filters change;
   useEffect(() => {;
-    const timeoutId: unknown = setTimeout(() => {;
+    const const timeoutId = setTimeout(() => {;
       refresh();
     }, 100); // Small delay to prevent rapid successive refreshes;
 ;
@@ -328,49 +328,49 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
           (equipment.length || 1),;
       ),;"
       averageRating: equipment.length;";"
-        ? equipment.reduce((sum, e) => sum + (e.rating || 0), 0) /;";";"
-          equipment.length;";";";"
-        : 0,;";";";";"
-      totalProducts: "equipment.length",;";";";";"
+        ? equipment.reduce((sum, e) => sum + (e.rating || 0), 0) /;"
+          equipment.length;"
+        : 0,;"
+      totalProducts: "equipment.length"
       availableCount: equipment.filter((e) => e.availability === 'In Stock');
         .length,;
     }),;
     [equipment],;
-  );'
+  )'
 ;
-  const categories: unknown = useMemo(() => {;
-    // Use all possible categories, not just from current items;'
-    return [;;
-      'AI Hardware',;;
-      'Servers & Compute',;;
-      'Networking',;;
-      'Storage Systems',;;
+  const const categories = useMemo(() => {;
+    // Use all possible categories, not just from current items'
+    return [;
+      'AI Hardware',;
+      'Servers & Compute',;
+      'Networking',;
+      'Storage Systems',;
       'Power & Cooling',;
     ];
-  }, []);'
+  }, [])'
 ;
   const [showScrollTop, setShowScrollTop] = useState(false);
-  useEffect(() => {;'
-    const handleScroll: unknown = () => setShowScrollTop(window.scrollY > 800);;
-    window.addEventListener('scroll', handleScroll);;
+  useEffect(() => {'
+    const const handleScroll = () => setShowScrollTop(window.scrollY > 800);
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-;'
+'
   // Loading state;
   if (loading && equipment.length === 0) {;
-    return (;'
-      <main;;
-        className="container py-8";";";";";"
-        data-testid="loading-state-equipment-container";";";"
-      >;";";";"
-        <motion.div;";";";";"
-          initial={{ opacity: "0", y: "20 "}};";";";";"
-          animate={{ opacity: "1", y: "0 "}};";";";";"
-          className="text-center mb-8";";";";"
-        >;";";";";"
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;";";"
-            Datacenter Equipment;";";";"
-          </h1>;";";";";"
+    return ('
+      <main;
+        className="container py-8"
+        data-testid="loading-state-equipment-container"
+      >;"
+        <motion.div;"
+          initial={{ opacity: "0", y: "20 "}};"
+          animate={{ opacity: "1", y: "0 "}};"
+          className="text-center mb-8"
+        >;"
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
+            Datacenter Equipment;"
+          </h1>;"
           <p className="text-muted-foreground text-lg">;
             Professional hardware for modern IT infrastructure;
           </p>;
@@ -380,35 +380,35 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
     );
   };"
 ;";"
-  // Error state;";";"
-  if (error && equipment.length === 0) {;";";";"
-    let errorMessage: string;";";";";"
+  // Error state;"
+  if (error && equipment.length === 0) {;"
+    let errorMessage: string;"
     if (typeof error === 'string') {;
-      errorMessage = error;'
-    } else if (;;
-      typeof error === 'object' &&;'
-      error &&;;
-      'message' in error &&;;
+      errorMessage = error'
+    } else if (;
+      typeof error === 'object' &&'
+      error &&;
+      'message' in error &&;
       typeof (error as { message?: unknown }).message === 'string;
-    ) {;;
+    ) {;
       errorMessage = (error as { message: "string "}).message;"
     } else {;";"
-      errorMessage = String(error);";";"
-    };";";";"
-    // Notify toast once for visibility (supports unit tests expectations);";";";";"
-    toast({ title: "errorMessage", variant: 'destructive' });'
-    return (;;
-      <main className="container py-8">;";";";";"
-        <div className="text-center space-y-4">;";";";";"
-          <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />;";";";";"
-          <h2 className="text-2xl font-bold">;";";";";"
-            Failed to load equipment: "{errorMessage"};";";";"
-          </h2>;";";";";"
-          <p className="text-muted-foreground max-w-md mx-auto">;";";"
-            Please try again later.;";";";"
-          </p>;";";";";"
-          <div className="flex gap-2 justify-center">;";";";";"
-            <Button onClick={refresh} variant="outline">;";";";";"
+      errorMessage = String(error);"
+    };"
+    // Notify toast once for visibility (supports unit tests expectations);"
+    toast({ title: "errorMessage", variant: 'destructive' })'
+    return (;
+      <main className="container py-8">;"
+        <div className="text-center space-y-4">;"
+          <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />;"
+          <h2 className="text-2xl font-bold">;"
+            Failed to load equipment: "{errorMessage"};"
+          </h2>;"
+          <p className="text-muted-foreground max-w-md mx-auto">;"
+            Please try again later.;"
+          </p>;"
+          <div className="flex gap-2 justify-center">;"
+            <Button onClick={refresh} variant="outline">;"
               <RefreshCw className="h-4 w-4 mr-2" />;
               Try Again;
             </Button>;
@@ -421,48 +421,48 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
     );
   };"
 ;";"
-  // Empty state when no equipment after load;";";"
-  if (!loading && !error && equipment.length === 0) {;";";";"
-    return (;";";";";"
-      <main className="container py-8 text-center">;";";";";"
-        <h2 className="text-2xl font-bold mb-4">;";";"
-          Equipment Catalog Currently Empty;";";";"
-        </h2>;";";";";"
+  // Empty state when no equipment after load;"
+  if (!loading && !error && equipment.length === 0) {;"
+    return (;"
+      <main className="container py-8 text-center">;"
+        <h2 className="text-2xl font-bold mb-4">;"
+          Equipment Catalog Currently Empty;"
+        </h2>;"
         <p className="text-muted-foreground mb-6">;
           Check back later for new listings.;
         </p>;
       </main>;"
     );";"
-  };";";"
-;";";";"
-  return (;";";";";"
-    <main className="container py-8">;";";";"
-      <motion.div;";";";";"
-        className="text-center mb-8";";";";";"
-        initial={{ opacity: "0", y: "-20 "}};";";";";"
-        animate={{ opacity: "1", y: "0 "}};";";";"
-      >;";";";";"
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;";";"
-          Datacenter Equipment;";";";"
-        </h1>;";";";";"
+  };"
+;"
+  return (;"
+    <main className="container py-8">;"
+      <motion.div;"
+        className="text-center mb-8"
+        initial={{ opacity: "0", y: "-20 "}};"
+        animate={{ opacity: "1", y: "0 "}};"
+      >;"
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;"
+          Datacenter Equipment;"
+        </h1>;"
         <p className="text-muted-foreground text-lg">;
           Professional hardware for modern IT infrastructure and AI workloads;
         </p>;"
       </motion.div>;";"
-;";";"
-      {stats && (;";";";"
-        <motion.div;";";";";"
-          initial={{ opacity: "0", y: "20 "}};";";";";"
-          animate={{ opacity: "1", y: "0 "}};";";";";"
+;"
+      {stats && (;"
+        <motion.div;"
+          initial={{ opacity: "0", y: "20 "}};"
+          animate={{ opacity: "1", y: "0 "}};"
           transition={{ delay: "0.2 "}};
         >;
           <EquipmentMarketInsights stats={stats} />;"
         </motion.div>;";"
-      )};";";"
-;";";";"
-      <motion.div;";";";";"
-        initial={{ opacity: "0", y: "20 "}};";";";";"
-        animate={{ opacity: "1", y: "0 "}};";";";";"
+      )};"
+;"
+      <motion.div;"
+        initial={{ opacity: "0", y: "20 "}};"
+        animate={{ opacity: "1", y: "0 "}};"
         transition={{ delay: "0.3 "}};
       >;
         <EquipmentFilterControls;
@@ -475,31 +475,31 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
           setShowRecommended={setShowRecommended};
           loading={loading};"
         />;";"
-      </motion.div>;";";"
-;";";";"
-      <motion.div;";";";";"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6";";";";";"
-        initial={{ opacity: "0 "}};";";";";"
-        animate={{ opacity: "1 "}};";";";";"
-        transition={{ delay: "0.4 "}};";";";"
-      >;";";";";"
+      </motion.div>;"
+;"
+      <motion.div;"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        initial={{ opacity: "0 "}};"
+        animate={{ opacity: "1 "}};"
+        transition={{ delay: "0.4 "}};"
+      >;"
         <AnimatePresence mode="popLayout">;"
           {equipment.map((item, index) => (;";"
-            <motion.div;";";"
-              key={item.id};";";";"
-              ref={index === equipment.length - 1 ? lastElementRef : null};";";";";"
-              initial={{ opacity: "0", scale: "0.9 "}};";";";";"
-              animate={{ opacity: "1", scale: "1 "}};";";";";"
-              exit={{ opacity: "0", scale: "0.9 "}};";";";";"
-              transition={{ delay: "Math.min(index * 0.03", 0.5) }};";";";";"
+            <motion.div;"
+              key={item.id};"
+              ref={index === equipment.length - 1 ? lastElementRef : null};"
+              initial={{ opacity: "0", scale: "0.9 "}};"
+              animate={{ opacity: "1", scale: "1 "}};"
+              exit={{ opacity: "0", scale: "0.9 "}};"
+              transition={{ delay: "Math.min(index * 0.03", 0.5) }};"
               whileHover={{ _scale: "1.02 "}};"
             >;";"
-              <EquipmentCard;";";"
-                equipment={item};";";";"
-                onViewDetails={() => {;";";";";"
+              <EquipmentCard;"
+                equipment={item};"
+                onViewDetails={() => {;"
                   if (typeof window !== 'undefined') {;
-                    try {;'
-                      sessionStorage.setItem(;;
+                    try {'
+                      sessionStorage.setItem(;
                         `equipment: "${item.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
                         JSON.stringify(item),;
                       );
@@ -514,43 +514,43 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
           ))};
         </AnimatePresence>;"
       </motion.div>;";"
-;";";"
-      {(isFetching || loading) && equipment.length > 0 && (;";";";"
-        <motion.div;";";";";"
-          className="mt-8";";";";";"
-          initial={{ opacity: "0 "}};";";";";"
+;"
+      {(isFetching || loading) && equipment.length > 0 && (;"
+        <motion.div;"
+          className="mt-8"
+          initial={{ opacity: "0 "}};"
           animate={{ opacity: "1 "}};
         >;
           <EquipmentLoadingGrid count={4} />;"
         </motion.div>;";"
-      )};";";"
-;";";";"
-      {hasMore && !loading && (;";";";";"
-        <div className="text-center mt-8">;";";";"
-          {isFetching ? (;";";";";"
-            <Spinner className="mx-auto h-6 w-6" />;";";";"
-          ) : (;";";";";"
+      )};"
+;"
+      {hasMore && !loading && (;"
+        <div className="text-center mt-8">;"
+          {isFetching ? (;"
+            <Spinner className="mx-auto h-6 w-6" />;"
+          ) : (;"
             <Button onClick={loadMore} variant="outline" size="lg">;"
               Load More Equipment;";"
-            </Button>;";";"
-          )};";";";"
-          {total !== undefined && (;";";";";"
+            </Button>;"
+          )};"
+          {total !== undefined && (;"
             <p className="mt-2 text-sm text-muted-foreground">;
               Showing {equipment.length} of {total} items;
             </p>;
           )};
         </div>;"
       )};";"
-;";";"
-      {!hasMore && equipment.length > 0 && (;";";";"
-        <motion.div;";";";";"
-          className="text-center mt-12 py-8 border-t";";";";";"
-          initial={{ opacity: "0 "}};";";";";"
-          animate={{ opacity: "1 "}};";";";"
-        >;";";";";"
-          <div className="text-muted-foreground text-lg mb-2">;";";";";"
-            🏭 You've explored all available equipment!;'
-          </div>;;
+;"
+      {!hasMore && equipment.length > 0 && (;"
+        <motion.div;"
+          className="text-center mt-12 py-8 border-t"
+          initial={{ opacity: "0 "}};"
+          animate={{ opacity: "1 "}};"
+        >;"
+          <div className="text-muted-foreground text-lg mb-2">;"
+            🏭 You've explored all available equipment!'
+          </div>;
           <div className="text-sm text-muted-foreground">;
             Showing {equipment.length} datacenter equipment items;
           </div>;
@@ -558,16 +558,16 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
       )};
 ;"
       <AnimatePresence>;";"
-        {showScrollTop && (;";";"
-          <motion.button;";";";"
-            onClick={scrollToTop};";";";";"
-            className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50";";";";";"
-            initial={{ opacity: "0", scale: "0 "}};";";";";"
-            animate={{ opacity: "1", scale: "1 "}};";";";";"
-            exit={{ opacity: "0", scale: "0 "}};";";";";"
-            whileHover={{ scale: "1.1 "}};";";";";"
-            whileTap={{ scale: "0.9 "}};";";";"
-          >;";";";";"
+        {showScrollTop && (;"
+          <motion.button;"
+            onClick={scrollToTop};"
+            className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
+            initial={{ opacity: "0", scale: "0 "}};"
+            animate={{ opacity: "1", scale: "1 "}};"
+            exit={{ opacity: "0", scale: "0 "}};"
+            whileHover={{ scale: "1.1 "}};"
+            whileTap={{ scale: "0.9 "}};"
+          >;"
             <ArrowUp className="h-5 w-5 text-primary-foreground" />;
           </motion.button>;
         )};
@@ -577,16 +577,16 @@ function EquipmentPageContent(): unknown {): unknown {): unknown {): unknown {):
 };
 ;
 // Main export with error boundary;
-export default function EquipmentPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export default function EquipmentPage(): ;
   return (;
     <EquipmentErrorBoundary>;
       <EquipmentPageContent />;"
     </EquipmentErrorBoundary>;";"
-  );";";"
-};";";";"
+  );"
+};"
 ";"
 };";"
-};";";"
+};"
 }";
 };"
 };";"

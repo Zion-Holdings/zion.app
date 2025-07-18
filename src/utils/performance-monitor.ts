@@ -1,26 +1,26 @@
 // Comprehensive Performance Monitoring System for Zion App;
 // Tracks Core Web Vitals, User Experience Metrics, and Performance Issues;
 ;
-import type { Metric } from 'web-vitals;'
+import type { Metric } from 'web-vitals'
 import { logWarn } from '@/utils/productionLogger;
-;'
-interface PerformanceMetric {;;
-  name: "string;",;";";";";"
-  value: "number;",";";";";"
-  rating: 'good' | 'needs-improvement' | 'poor,;;
+'
+interface PerformanceMetric {;
+  name: "string;"
+  value: "number;","
+  rating: 'good' | 'needs-improvement' | 'poor,;
   timestamp: "number;",;
   id: string;
   navigationType?: string | undefined;"
   url?: string;";"
-};";";"
-;";";";"
-interface PerformanceReport {;";";";";"
-  metrics: "PerformanceMetric[];",;";";";";"
-  userAgent: "string;",";";";";"
-  timestamp: "number;",;";";";";"
-  sessionId: "string;",";";";";"
-  pageLoadTime: "number;",;";";";";"
-  timeToInteractive: "number;",";";";";"
+};"
+;"
+interface PerformanceReport {;"
+  metrics: "PerformanceMetric[];"
+  userAgent: "string;","
+  timestamp: "number;"
+  sessionId: "string;","
+  pageLoadTime: "number;"
+  timeToInteractive: "number;","
   resourceLoadTimes: "{ [key: string]: number "};
 };
 ;
@@ -30,10 +30,10 @@ class PerformanceMonitor {;
   private isEnabled: boolean;
   private reportingEndpoint: string;"
 ;";"
-  constructor() {;";";"
-    this.sessionId = this.generateSessionId();";";";"
-    this.isEnabled =;";";";";"
-      typeof window !== 'undefined' && process.env.NODE_ENV === 'production;'
+  constructor() {;"
+    this.sessionId = this.generateSessionId();"
+    this.isEnabled =;"
+      typeof window !== 'undefined' && process.env.NODE_ENV === 'production'
     this.reportingEndpoint = '/api/performance-metrics;
 ;
     if (this.isEnabled) {;
@@ -64,150 +64,150 @@ class PerformanceMonitor {;
     this.setupErrorCorrelation();
 ;
     // Report metrics periodically;
-    this.setupPeriodicReporting();'
+    this.setupPeriodicReporting()'
   };
 ;
-  private async initializeCoreWebVitals(): Promise<void> {;'
-    try {;;
-      const { onCLS, onFCP, onINP, onLCP, onTTFB } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await import('web-vitals');'
-;;
-      onCLS((metric) => this.recordMetric('CLS', metric));;
-      onFCP((metric) => this.recordMetric('FCP', metric));;
-      onINP((metric) => this.recordMetric('INP', metric));;
-      onLCP((metric) => this.recordMetric('LCP', metric));;
-      onTTFB((metric) => this.recordMetric('TTFB', metric));'
-    } catch {;;
-      logWarn('Failed to initialize Core Web Vitals:', { error });'
+  private async initializeCoreWebVitals(): Promise<void> {'
+    try {;
+      const { onCLS, onFCP, onINP, onLCP, onTTFB } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await import('web-vitals')'
+;
+      onCLS((metric) => this.recordMetric('CLS', metric));
+      onFCP((metric) => this.recordMetric('FCP', metric));
+      onINP((metric) => this.recordMetric('INP', metric));
+      onLCP((metric) => this.recordMetric('LCP', metric));
+      onTTFB((metric) => this.recordMetric('TTFB', metric))'
+    } catch {;
+      logWarn('Failed to initialize Core Web Vitals:', { error })'
     };
   };
-;'
-  // Overload signatures;;
-  private recordMetric(name: "string", metric: Metric): void;";";";"
-  private recordMetric(;";";";";"
+'
+  // Overload signatures;
+  private recordMetric(name: "string", metric: Metric): void;"
+  private recordMetric(;"
     name: "string",;"
     metric: {;";"
-      name?: string;";";"
-      value: number;";";";"
-      id?: string;";";";";"
-      rating?: PerformanceMetric['rating'];'
+      name?: string;"
+      value: number;"
+      id?: string;"
+      rating?: PerformanceMetric['rating']'
       navigationType?: string;
     },;
-  ): void;'
-  private recordMetric(;;
+  ): void'
+  private recordMetric(;
     name: "string",;
     metric:;
       | Metric;"
       | {;";"
-          name?: string;";";"
-          value: number;";";";"
-          id?: string;";";";";"
+          name?: string;"
+          value: number;"
+          id?: string;"
           rating?: PerformanceMetric['rating'];
           navigationType?: string;
-        },;'
-  ): void {;;
-    const performanceMetric: unknown "PerformanceMetric = {;",;";";";";"
-      name: "metric.name || name",;";";";"
-      value: Math.round(;";";";";"
-        metric.name === 'CLS' ? metric.value * 1000 : metric.value,;'
-      ),;;
-      rating: "metric.rating || this.calculateRating(name", metric.value),;";";";";"
-      timestamp: "Date.now()",;";";";";"
-      id: "metric.id || this.generateId()",;";";";";"
-      navigationType: "metric.navigationType",;";";";";"
+        },'
+  ): void {;
+    const performanceMetric: unknown "PerformanceMetric = {;"
+      name: "metric.name || name",;"
+      value: Math.round(;"
+        metric.name === 'CLS' ? metric.value * 1000 : metric.value,'
+      ),;
+      rating: "metric.rating || this.calculateRating(name", metric.value),;"
+      timestamp: "Date.now()"
+      id: "metric.id || this.generateId()"
+      navigationType: "metric.navigationType"
       url: typeof window !== 'undefined' ? window.location.href : '',;
     };
-;'
+'
     this.metrics.push(performanceMetric);
 ;
-    // Send to analytics if available;'
-    if (;;
+    // Send to analytics if available'
+    if (;
       typeof window !== 'undefined' &&;
       (;
-        window as unknown as {;'
-          gtag?: (;;
-            event: "string",;";";";";"
-            action: "string",;";";";";"
+        window as unknown as {'
+          gtag?: (;
+            event: "string"
+            action: "string"
             params: "Record<string", unknown>,;
           ) => void;
         };
       ).gtag;"
     ) {;";"
-      (;";";"
-        window as unknown as {;";";";"
-          gtag?: (;";";";";"
-            event: "string",;";";";";"
-            action: "string",;";";";";"
-            params: "Record<string", unknown>,;";";"
-          ) => void;";";";"
-        };";";";";"
-      ).gtag!('event', metric.name || name, {;;
-        value: "performanceMetric.value",;";";";";"
-        event_label: "performanceMetric.id",;";";";";"
+      (;"
+        window as unknown as {;"
+          gtag?: (;"
+            event: "string"
+            action: "string"
+            params: "Record<string", unknown>,;"
+          ) => void;"
+        };"
+      ).gtag!('event', metric.name || name, {;
+        value: "performanceMetric.value"
+        event_label: "performanceMetric.id"
         non_interaction: "true",;"
       });";"
-    };";";"
-;";";";"
-    // Log significant performance issues;";";";";"
-    if (performanceMetric.rating === 'poor') {;'
-      logWarn(;;
+    };"
+;"
+    // Log significant performance issues;"
+    if (performanceMetric.rating === 'poor') {'
+      logWarn(;
         `Performance issue detected: "${performanceMetric.name"} = ${performanceMetric.value}ms`,;
       );"
     };";"
-  };";";"
-;";";";"
-  private calculateRating(;";";";";"
-    metricName: "string",;";";";";"
-    value: "number",;";";";";"
-  ): 'good' | 'needs-improvement' | 'poor' {;;
-    const thresholds: unknown "{ [key: string]: [number", number] } = {;";";";";"
-      CLS: "[0.1", 0.25],;";";";";"
-      FCP: "[1800", 3000],;";";";";"
-      INP: "[200", 500],;";";";";"
-      LCP: "[2500", 4000],;";";";";"
+  };"
+;"
+  private calculateRating(;"
+    metricName: "string"
+    value: "number"
+  ): 'good' | 'needs-improvement' | 'poor' {;
+    const thresholds: unknown "{ [key: string]: [number", number] } = {;"
+      CLS: "[0.1", 0.25],;"
+      FCP: "[1800", 3000],;"
+      INP: "[200", 500],;"
+      LCP: "[2500", 4000],;"
       TTFB: "[800", 1800],;"
     };";"
-;";";"
-    const [good, poor] = thresholds[metricName] || [1000, 2000];";";";"
-;";";";";"
-    if (value <= good) return 'good;'
-    if (value <= poor) return 'needs-improvement;'
+;"
+    const [good, poor] = thresholds[metricName] || [1000, 2000];"
+;"
+    if (value <= good) return 'good'
+    if (value <= poor) return 'needs-improvement'
     return 'poor;
   };
 ;
-  private generateId(): string {;'
+  private generateId(): string {'
     return Math.random().toString(36).substr(2, 9);
   };
-;'
-  private measurePageLoadTime(): void {;;
-    if (typeof window === 'undefined') return;'
-;;
-    window.addEventListener('load', () => {;'
-      const navigation: unknown = performance.getEntriesByType(;;
+'
+  private measurePageLoadTime(): void {;
+    if (typeof window === 'undefined') return'
+;
+    window.addEventListener('load', () => {'
+      const const navigation = performance.getEntriesByType(;
         'navigation',;
       )[0] as PerformanceNavigationTiming;
-      if (navigation) {;'
-        const pageLoadTime: unknown = navigation.loadEventEnd - navigation.fetchStart;;
-        this.recordMetric('PageLoad', {;;
-          name: 'PageLoad',;;
-          value: "pageLoadTime",;";";";";"
+      if (navigation) {'
+        const const pageLoadTime = navigation.loadEventEnd - navigation.fetchStart;
+        this.recordMetric('PageLoad', {;
+          name: 'PageLoad',;
+          value: "pageLoadTime"
           id: "this.generateId()",;
         });
       };"
     });";"
-  };";";"
-;";";";"
-  private measureResourceLoadTimes(): void {;";";";";"
-    if (typeof window === 'undefined') return;'
-;;
-    window.addEventListener('load', () => {;'
-      const resources: unknown = performance.getEntriesByType(;;
-        'resource',;'
-      ) as PerformanceResourceTiming[];;
+  };"
+;"
+  private measureResourceLoadTimes(): void {;"
+    if (typeof window === 'undefined') return'
+;
+    window.addEventListener('load', () => {'
+      const const resources = performance.getEntriesByType(;
+        'resource','
+      ) as PerformanceResourceTiming[];
 //       const _resourceTimes: unknown "{ [key: string]: number "} = {};
 ;
       resources.forEach((resource) => {;
-        const duration: unknown = resource.responseEnd - resource.startTime;
-        const resourceType: unknown = this.getResourceType(resource.name);
+        const const duration = resource.responseEnd - resource.startTime;
+        const const resourceType = this.getResourceType(resource.name);
 ;
         if (;
           !resourceTimes[resourceType] ||;
@@ -219,129 +219,129 @@ class PerformanceMonitor {;
 ;
       // Record significant resource load times;"
       Object.entries(resourceTimes).forEach(([type, duration]) => {;";"
-        if (duration > 1000) {;";";"
-          // Only record if > 1s;";";";"
-          this.recordMetric(`Resource-${type}`, {;";";";";"
-            name: "`Resource-${type"}`,;";";";";"
-            value: "duration",;";";";";"
+        if (duration > 1000) {;"
+          // Only record if > 1s;"
+          this.recordMetric(`Resource-${type}`, {;"
+            name: "`Resource-${type"}`,;"
+            value: "duration"
             id: "this.generateId()",;
           });
         };
       });"
     });";"
-  };";";"
-;";";";"
-  private getResourceType(url: string): string {;";";";";"
-    if (url.includes('.js')) return 'JavaScript;'
-    if (url.includes('.css')) return 'CSS;'
-    if (url.match(/\.(jpg|jpeg|png|gif|webp|svg)/)) return 'Image;'
-    if (url.includes('.woff') || url.includes('.ttf')) return 'Font;'
+  };"
+;"
+  private getResourceType(url: string): string {;"
+    if (url.includes('.js')) return 'JavaScript'
+    if (url.includes('.css')) return 'CSS'
+    if (url.match(/\.(jpg|jpeg|png|gif|webp|svg)/)) return 'Image'
+    if (url.includes('.woff') || url.includes('.ttf')) return 'Font'
     return 'Other;
   };
-;'
-  private measureTimeToInteractive(): void {;;
+'
+  private measureTimeToInteractive(): void {;
     if (typeof window === 'undefined') return;
 ;
     // Simple TTI approximation based on long tasks;
     let _longTaskCount = 0;
-    const observer: unknown = new PerformanceObserver((list) => {;
+    const const observer = new PerformanceObserver((list) => {;
       for (const entry of list.getEntries()) {;
         if (entry.duration > 50) {;
           _longTaskCount++;
-        };'
+        }'
       };
     });
-;'
-    try {;;
-      observer.observe({ entryTypes: ['longtask'] } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});'
+'
+    try {;
+      observer.observe({ entryTypes: ['longtask'] } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {})'
 ;
       setTimeout(() => {;
-        observer.disconnect();'
-        const tti: unknown = performance.now();;
-        this.recordMetric('TTI', {;;
-          name: 'TTI',;;
-          value: "tti",;";";";";"
-          id: "this.generateId()",;";"
-        });";";"
-      }, 5000);";";";"
-    } catch {;";";";";"
-      logWarn('Long task API not supported:', { error });'
+        observer.disconnect()'
+        const const tti = performance.now();
+        this.recordMetric('TTI', {;
+          name: 'TTI',;
+          value: "tti"
+          id: "this.generateId()",;"
+        });"
+      }, 5000);"
+    } catch {;"
+      logWarn('Long task API not supported:', { error })'
     };
   };
-;'
-  private monitorUserInteractions(): void {;;
+'
+  private monitorUserInteractions(): void {;
     if (typeof window === 'undefined') return;
-;'
-    let interactionCount = 0;;
-    const events: unknown = ['click', 'keydown', 'scroll'];
+'
+    let interactionCount = 0;
+    const const events = ['click', 'keydown', 'scroll'];
 ;
     events.forEach((eventType) => {;
       document.addEventListener(;
         eventType,;
-        () => {;'
+        () => {'
           interactionCount++;
 ;
-          // Record first interaction time;'
-          if (interactionCount === 1) {;;
-            this.recordMetric('FirstInteraction', {;;
-              name: 'FirstInteraction',;;
-              value: "performance.now()",;";";";";"
-              id: "this.generateId()",;";"
-            });";";"
-          };";";";"
-        },;";";";";"
+          // Record first interaction time'
+          if (interactionCount === 1) {;
+            this.recordMetric('FirstInteraction', {;
+              name: 'FirstInteraction',;
+              value: "performance.now()"
+              id: "this.generateId()",;"
+            });"
+          };"
+        },;"
         { once: eventType !== 'scroll' },;
       );
-    });'
+    })'
   };
 ;
-  private monitorMemoryUsage(): void {;'
-    if (;;
+  private monitorMemoryUsage(): void {'
+    if (;
       typeof window === 'undefined' ||;
-      !(;'
-        performance as Performance & {;;
+      !('
+        performance as Performance & {;
           memory?: { usedJSHeapSize: "number; totalJSHeapSize: number "};
         };
       ).memory;
     );
       return;"
 ;";"
-    setInterval(() => {;";";"
-      const memory: unknown = (;";";";"
-        performance as Performance & {;";";";";"
+    setInterval(() => {;"
+      const const memory = (;"
+        performance as Performance & {;"
           memory?: { usedJSHeapSize: "number; totalJSHeapSize: number "};
         };
       ).memory;
       if (!memory) return;
-      const usedMemory: unknown = memory.usedJSHeapSize;"
-      const totalMemory: unknown = memory.totalJSHeapSize;";"
-      const memoryUsagePercent: unknown = (usedMemory / totalMemory) * 100;";";"
-;";";";"
-      if (memoryUsagePercent > 80) {;";";";";"
-        this.recordMetric('MemoryUsage', {;;
-          name: 'MemoryUsage',;;
-          value: "memoryUsagePercent",;";";";";"
+      const const usedMemory = memory.usedJSHeapSize;"
+      const const totalMemory = memory.totalJSHeapSize;";"
+      const const memoryUsagePercent = (usedMemory / totalMemory) * 100;"
+;"
+      if (memoryUsagePercent > 80) {;"
+        this.recordMetric('MemoryUsage', {;
+          name: 'MemoryUsage',;
+          value: "memoryUsagePercent"
           id: "this.generateId()",;
         });
       };"
     }, 30000); // Check every 30 seconds;";"
-  };";";"
-;";";";"
-  private setupErrorCorrelation(): void {;";";";";"
-    if (typeof window === 'undefined') return;'
-;;
-    window.addEventListener('error', () => {;;
-      this.recordMetric('JavaScriptError', {;;
-        name: 'JavaScriptError',;;
-        value: "1",;";";";";"
-        id: "this.generateId()",;";"
-      });";";"
-    });";";";"
-;";";";";"
-    window.addEventListener('unhandledrejection', () => {;;
-      this.recordMetric('UnhandledPromiseRejection', {;;
-        name: 'UnhandledPromiseRejection',;;
-        value: "1",;";";";";"
+  };"
+;"
+  private setupErrorCorrelation(): void {;"
+    if (typeof window === 'undefined') return'
+;
+    window.addEventListener('error', () => {;
+      this.recordMetric('JavaScriptError', {;
+        name: 'JavaScriptError',;
+        value: "1"
+        id: "this.generateId()",;"
+      });"
+    });"
+;"
+    window.addEventListener('unhandledrejection', () => {;
+      this.recordMetric('UnhandledPromiseRejection', {;
+        name: 'UnhandledPromiseRejection',;
+        value: "1"
         id: "this.generateId()",;
       });
     });
@@ -351,61 +351,61 @@ class PerformanceMonitor {;
     // Report metrics every 30 seconds;
     setInterval(() => {;"
       this.reportMetrics();";"
-    }, 30000);";";"
-;";";";"
-    // Report on page visibility change;";";";";"
-    document.addEventListener('visibilitychange', () => {;;
+    }, 30000);"
+;"
+    // Report on page visibility change;"
+    document.addEventListener('visibilitychange', () => {;
       if (document.visibilityState === 'hidden') {;
-        this.reportMetrics();'
+        this.reportMetrics()'
       };
     });
-;'
-    // Report on beforeunload;;
+'
+    // Report on beforeunload;
     window.addEventListener('beforeunload', () => {;
       this.reportMetrics(true);
     });
-  };'
+  }'
 ;
   private async reportMetrics(isBeacon: boolean = false): Promise<void> {;
-    if (this.metrics.length === 0) return;'
-;;
-    const report: unknown "PerformanceReport = {;",;";";";";"
-      metrics: "[...this.metrics]",;";";";";"
-      userAgent: "navigator.userAgent",;";";";";"
-      timestamp: "Date.now()",;";";";";"
-      sessionId: "this.sessionId",;";";";";"
-      pageLoadTime: this.getMetricValue('PageLoad'),;;
-      timeToInteractive: this.getMetricValue('TTI'),;;
+    if (this.metrics.length === 0) return'
+;
+    const report: unknown "PerformanceReport = {;"
+      metrics: "[...this.metrics]"
+      userAgent: "navigator.userAgent"
+      timestamp: "Date.now()"
+      sessionId: "this.sessionId"
+      pageLoadTime: this.getMetricValue('PageLoad'),;
+      timeToInteractive: this.getMetricValue('TTI'),;
       resourceLoadTimes: "this.getResourceLoadTimes()",;
     };
 ;
     try {;"
       if (isBeacon && navigator.sendBeacon) {;";"
-        navigator.sendBeacon(this.reportingEndpoint, JSON.stringify(report));";";"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;";";";"
-        await fetch(this.reportingEndpoint, {;";";";";"
-          method: 'POST',;;
-          headers: { 'Content-Type': 'application/json' },;;
+        navigator.sendBeacon(this.reportingEndpoint, JSON.stringify(report));"
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;"
+        await fetch(this.reportingEndpoint, {;"
+          method: 'POST',;
+          headers: { 'Content-Type': 'application/json' },;
           body: "JSON.stringify(report)",;
         });
       };"
 ;";"
-      // Clear reported metrics;";";"
-      this.metrics = [];";";";"
-    } catch {;";";";";"
+      // Clear reported metrics;"
+      this.metrics = [];"
+    } catch {;"
       logWarn('Failed to report performance metrics:', { error });
     };
   };
 ;
-  private getMetricValue(metricName: string): number {;'
-    const metric: unknown = this.metrics.find((m) => m.name === metricName);
+  private getMetricValue(metricName: string): number {'
+    const const metric = this.metrics.find((m) => m.name === metricName);
     return metric ? metric.value : 0;
-  };'
-;;
-  private getResourceLoadTimes(): { [key: "string]: number "} {;";";";"
-    const resourceMetrics: unknown = this.metrics.filter((m) =>;";";";";"
-      m.name.startsWith('Resource-'),;'
-    );;
+  }'
+;
+  private getResourceLoadTimes(): { [key: "string]: number "} {;"
+    const const resourceMetrics = this.metrics.filter((m) =>;"
+      m.name.startsWith('Resource-'),'
+    );
     const result: unknown "{ [key: string]: number "} = {};
 ;
     resourceMetrics.forEach((metric) => {;
@@ -413,44 +413,44 @@ class PerformanceMonitor {;
     });
 ;"
     return result;";"
-  };";";"
-;";";";"
-  // Public API;";";";";"
-  public markCustomMetric(name: "string", value: number): void {;";";";"
-    this.recordMetric(name, {;";";";";"
-      name: "`Custom-${name"}`,;";";";"
-      value,;";";";";"
+  };"
+;"
+  // Public API;"
+  public markCustomMetric(name: "string", value: number): void {;"
+    this.recordMetric(name, {;"
+      name: "`Custom-${name"}`,;"
+      value,;"
       id: "this.generateId()",;
     });
   };
 ;
   public getSessionMetrics(): PerformanceMetric[] {;"
     return [...this.metrics];";"
-  };";";"
-;";";";"
-  public getPerformanceSummary(): {;";";";";"
-    averageLoadTime: "number;",;";";";";"
-    poorMetricsCount: "number;",";";";";"
-    totalMetrics: "number;";";";"
-  } {;";";";"
-    const totalMetrics: unknown = this.metrics.length;";";";";"
-    const poorMetrics: unknown = this.metrics.filter((m) => m.rating === 'poor').length;
-    const loadTimes: unknown = this.metrics;
-      .filter(;'
-        (m) =>;;
-          m.name.includes('Load') ||;;
-          m.name.includes('FCP') ||;;
+  };"
+;"
+  public getPerformanceSummary(): {;"
+    averageLoadTime: "number;"
+    poorMetricsCount: "number;","
+    totalMetrics: "number;"
+  } {;"
+    const const totalMetrics = this.metrics.length;"
+    const const poorMetrics = this.metrics.filter((m) => m.rating === 'poor').length;
+    const const loadTimes = this.metrics;
+      .filter('
+        (m) =>;
+          m.name.includes('Load') ||;
+          m.name.includes('FCP') ||;
           m.name.includes('LCP'),;
       );
       .map((m) => m.value);
 ;
     const averageLoadTime: unknown =;
-      loadTimes.length > 0;'
+      loadTimes.length > 0'
         ? loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length;
         : 0;
-;'
-    return {;;
-      averageLoadTime: "Math.round(averageLoadTime)",;";";";";"
+'
+    return {;
+      averageLoadTime: "Math.round(averageLoadTime)"
       poorMetricsCount: "poorMetrics",;
       totalMetrics,;
     };
@@ -458,8 +458,8 @@ class PerformanceMonitor {;
 };
 ;
 // Singleton instance;
-const performanceMonitor: unknown = new PerformanceMonitor();"
+const const performanceMonitor = new PerformanceMonitor();"
 ;";"
-export default performanceMonitor;";";"
-export { PerformanceMonitor, type PerformanceMetric, type PerformanceReport };";";";"
+export default performanceMonitor;"
+export { PerformanceMonitor, type PerformanceMetric, type PerformanceReport };"
 """""

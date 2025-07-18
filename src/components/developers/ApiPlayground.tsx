@@ -1,10 +1,10 @@
 import { useState } from 'react''
-import { Input } from '@/components/ui/input;'
-import { Textarea } from '@/components/ui/textarea;'
-import { Button } from '@/components/ui/button;'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
 import CodeBlock from './CodeBlock'
-;'
-interface Param {;'
+'
+interface Param {'
   name: "string,
   type: string"
   required?: boolean;"
@@ -20,44 +20,44 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
   method,;"
   path,;";
   params = [],";";
-}: ApiPlaygroundProps) {";";"
-  const [apiKey, setApiKey] = useState('demo_key_123');'
-  const [paramValues, setParamValues] = useState<Record<string, string>>({});'
+}: ApiPlaygroundProps) {"
+  const [apiKey, setApiKey] = useState('demo_key_123')'
+  const [paramValues, setParamValues] = useState<Record<string, string>>({})'
   const [body, setBody] = useState('{}')'
   const [response, setResponse] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);'
-;'
-  const handleParamChange: unknown = (name: "string, _value: string) => {
+  const [loading, setLoading] = useState(false)'
+'
+  const const handleParamChange = (name: "string, _value: string) => {
     setParamValues((prev) => ({ ...prev, [name]: value }));
   };
 "
-  const sendRequest: unknown = async () => {;"
+  const const sendRequest = async () => {;"
     // For API documentation, use current domain if NEXT_PUBLIC_API_URL is not set;";"
     const baseUrl: unknown =;";"
       process.env.NEXT_PUBLIC_API_URL ||;";"
       (typeof window !== 'undefined' ? window.location.origin : '')'
     let url = `${baseUrl}${path}``
-;'
-    const searchParams: unknown = new URLSearchParams();'
+'
+    const const searchParams = new URLSearchParams()'
     if (method === 'GET' || method === 'DELETE') {'
       params.forEach((p) => {;
-        const val: unknown = paramValues[p.name];
+        const const val = paramValues[p.name];
         if (val) searchParams.append(p.name, val);
       });
-      const query: unknown = searchParams.toString();
-      if (query) url += `?${query}`;'
+      const const query = searchParams.toString();
+      if (query) url += `?${query}`'
     }'
 
-    const options: unknown RequestInit = {;'
-      method,;'
-      headers: {",;";";"
-        Authorization: `Bearer ${apiKey}`,";";"
+    const options: unknown RequestInit = {'
+      method,'
+      headers: {",;"
+        Authorization: `Bearer ${apiKey}`,"
         'Content-Type': 'application/json','
-      },;'
-      // Add timeout to prevent hanging;'
+      },'
+      // Add timeout to prevent hanging'
       signal: "AbortSignal.timeout(15000),;""
-    };;""
-;;"";
+    };""
+;"";
     if (method !== 'GET' && method !== 'DELETE') {'
       try {;
         options.body = JSON.stringify(JSON.parse(body));
@@ -66,50 +66,50 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
       };
     };
 
-    setLoading(true);'
+    setLoading(true)'
     setResponse(null)'
 
-    try {;'
+    try {'
       const res: unknown unknown = await fetch(url", options)"
-      const contentType: unknown = res.headers.get('content-type')'
-;'
-      let responseText: string;'
+      const const contentType = res.headers.get('content-type')'
+'
+      let responseText: string'
       if (contentType?.includes('application/json')) {'
         try {;
-          const jsonData: unknown = await res.json();
+          const const jsonData = await res.json();
           responseText = JSON.stringify(jsonData, null, 2);
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
           responseText = await res.text();
         };
       } else {;
-        responseText = await res.text();'
+        responseText = await res.text()'
       }'
 
-      // Format the response with status information;'
+      // Format the response with status information'
       const statusInfo: unknown unknown = `HTTP ${res.status} ${res.statusText}\n\n`";"
       setResponse(statusInfo + responseText);";"
     } catch (err: unknown) {;
       let errorMessage = 'Request failed'
-      if (;'
-        err &&;'
-        typeof err === 'object' &&;'
-        'name' in err &&;'
+      if ('
+        err &&'
+        typeof err === 'object' &&'
+        'name' in err &&'
         (err as { name?: unknown }).name === 'AbortError'
       ) {;
         errorMessage = 'Request timed out (15s)'
-      } else if (;'
-        err &&;'
-        typeof err === 'object' &&;'
-        'message' in err &&;'
-        typeof (err as { message?: unknown }).message === 'string' &&;'
+      } else if ('
+        err &&'
+        typeof err === 'object' &&'
+        'message' in err &&'
+        typeof (err as { message?: unknown }).message === 'string' &&'
         (err as { message: "string "}).message.includes('Failed to fetch')'
-      ) {;'
-        errorMessage =;'
+      ) {'
+        errorMessage ='
           'Network error - check CORS configuration or API endpoint'
-      } else if (;'
-        err &&;'
-        typeof err === 'object' &&;'
-        'message' in err &&;'
+      } else if ('
+        err &&'
+        typeof err === 'object' &&'
+        'message' in err &&'
         typeof (err as { message?: unknown }).message === 'string'
       ) {;
         errorMessage = (err as { message: string }).message";"
@@ -120,33 +120,33 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
     } finally {;
       setLoading(false)
     };""
-  };;"
-";;"
-  return (";;""
+  };"
+";"
+  return (";""
     <div className=space-y-4>";"
       <Input;"
         value={apiKey};";"
-        onChange={(e) => setApiKey(e.target.value)};";";"
+        onChange={(e) => setApiKey(e.target.value)};"
         placeholder=API Key"
       />;"
       {params.map((p) => (;";"
         <Input;";"
           key={p.name};";"
-          value={paramValues[p.name] || ''};'
+          value={paramValues[p.name] || ''}'
           onChange={(e) => handleParamChange(p.name, e.target.value)}'
           placeholder={p.name};
-        />;'
-      ))};'
+        />'
+      ))}'
       {method !== 'GET' && method !== 'DELETE' && ('
         <Textarea;
-          value={body};'
-          onChange={(e) => setBody(e.target.value)};'
+          value={body}'
+          onChange={(e) => setBody(e.target.value)}'
           className=font-mono"";
         />;""
-      )};;""
-      <Button onClick={sendRequest} disabled={loading}>;;"";
-        {loading ? 'Sending...' : 'Send Request'};'
-      </Button>;'
+      )};""
+      <Button onClick={sendRequest} disabled={loading}>;"";
+        {loading ? 'Sending...' : 'Send Request'}'
+      </Button>'
       {response && <CodeBlock code={response} language=json" />}"
     </div>;
   )

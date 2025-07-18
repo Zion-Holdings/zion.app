@@ -10,18 +10,18 @@ export function useToggle(): unknown {): unknown {): unknown {): unknown {): unk
 ): [boolean, () => void, (value: boolean) => void] {;
   const [state, setState] = useState<boolean>(initial);
 ;
-  const toggle: unknown = useCallback(() => {;
+  const const toggle = useCallback(() => {;
     setState((prev) => !prev);
   }, []);
 ;
-  const set: unknown = useCallback((_value: boolean) => {;
+  const const set = useCallback((_value: boolean) => {;
     setState(value);
-  }, []);'
+  }, [])'
 ;
   return [state, toggle, set];
 };
 ;
-};'
+}'
 }
 }'
 }'

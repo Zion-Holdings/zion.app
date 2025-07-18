@@ -290,616 +290,616 @@ import {;
   XCircle as LucideXCircle,;
   XOctagon as LucideXOctagon,;
   XSquare as LucideXSquare,;
-  Youtube as LucideYoutube,;'
+  Youtube as LucideYoutube,'
   ZapOff as LucideZapOff,'
   Zap as LucideZap,
-  ZoomIn as LucideZoomIn,;'
-  ZoomOut as LucideZoomOut,;'
+  ZoomIn as LucideZoomIn,'
+  ZoomOut as LucideZoomOut,'
 } from 'lucide-react'
 
-export const Home: unknown = LucideHome;
-export const Bot: unknown = LucideBot;
-export const Sparkles: unknown = LucideSparkles;
-export const User: unknown = LucideUser;
-export const ArrowRight: unknown = LucideArrowRight;
-export const BarChart3: unknown = LucideBarChart3;
-export const Briefcase: unknown = LucideBriefcase;
-export const _BriefcaseIcon: unknown = LucideBriefcase;
-export const Monitor: unknown = LucideMonitor;
-export const Server: unknown = LucideServer;
-export const Bell: unknown = LucideBell;
-export const Calendar: unknown = LucideCalendar;
-export const _CalendarIcon: unknown = LucideCalendar;
-export const Check: unknown = LucideCheck;
-export const _CheckIcon: unknown = LucideCheck;
-export const ChevronDown: unknown = LucideChevronDown;
-export const ChevronUp: unknown = LucideChevronUp;
-export const ChevronLeft: unknown = LucideChevronLeft;
-export const ChevronRight: unknown = LucideChevronRight;
-export const _ChevronRightIcon: unknown = LucideChevronRight;
-export const Plus: unknown = LucidePlus;
-export const Minus: unknown = LucideMinus;
-export const X: unknown = LucideX;
-export const Edit: unknown = LucideEdit;
-export const Trash: unknown = LucideTrash;
-export const Settings: unknown = LucideSettings;
-export const Search: unknown = LucideSearch;
-export const Filter: unknown = LucideFilter;
-export const UploadCloud: unknown = LucideUploadCloud;
-export const DownloadCloud: unknown = LucideDownloadCloud;
-export const Copy: unknown = LucideCopy;
-export const ExternalLink: unknown = LucideExternalLink;
-export const _ExternalLinkIcon: unknown = LucideExternalLink;
-export const Link: unknown = LucideLink;
-export const MessageSquare: unknown = LucideMessageSquare;
-export const _MessageSquareIcon: unknown = LucideMessageSquare;
-export const Users: unknown = LucideUsers;
-export const FileText: unknown = LucideFileText;
-export const Image: unknown = LucideImage;
-export const AlertTriangle: unknown = LucideAlertTriangle;
-export const Info: unknown = LucideInfo;
-export const Mail: unknown = LucideMail;
-export const Lock: unknown = LucideLock;
-export const LogOut: unknown = LucideLogOut;
-export const LogIn: unknown = LucideLogIn;
-export const ShoppingCart: unknown = LucideShoppingCart;
-export const CreditCard: unknown = LucideCreditCard;
-export const DollarSign: unknown = LucideDollarSign;
-export const Percent: unknown = LucidePercent;
-export const Award: unknown = LucideAward;
-export const Activity: unknown = LucideActivity;
-export const Airplay: unknown = LucideAirplay;
-export const AlignCenter: unknown = LucideAlignCenter;
-export const AlignJustify: unknown = LucideAlignJustify;
-export const AlignLeft: unknown = LucideAlignLeft;
-export const AlignRight: unknown = LucideAlignRight;
-export const Anchor: unknown = LucideAnchor;
-export const Aperture: unknown = LucideAperture;
-export const Archive: unknown = LucideArchive;
-export const ArrowDownCircle: unknown = LucideArrowDownCircle;
-export const ArrowDownLeft: unknown = LucideArrowDownLeft;
-export const ArrowDownRight: unknown = LucideArrowDownRight;
-export const ArrowLeftCircle: unknown = LucideArrowLeftCircle;
-export const ArrowRightCircle: unknown = LucideArrowRightCircle;
-export const ArrowUpCircle: unknown = LucideArrowUpCircle;
-export const ArrowUpLeft: unknown = LucideArrowUpLeft;
-export const ArrowUpRight: unknown = LucideArrowUpRight;
-export const AtSign: unknown = LucideAtSign;
-export const BarChart: unknown = LucideBarChart;
-export const BarChart2: unknown = LucideBarChart2;
-export const BatteryCharging: unknown = LucideBatteryCharging;
-export const Battery: unknown = LucideBattery;
-export const BellOff: unknown = LucideBellOff;
-export const Bluetooth: unknown = LucideBluetooth;
-export const Bold: unknown = LucideBold;
-export const BookOpen: unknown = LucideBookOpen;
-export const Book: unknown = LucideBook;
-export const Bookmark: unknown = LucideBookmark;
-export const Box: unknown = LucideBox;
-export const CameraOff: unknown = LucideCameraOff;
-export const Camera: unknown = LucideCamera;
-export const Cast: unknown = LucideCast;
-export const CheckCircle: unknown = LucideCheckCircle;
-export const CheckSquare: unknown = LucideCheckSquare;
-export const ChevronDownSquare: unknown = LucideChevronDownSquare;
-export const ChevronLeftSquare: unknown = LucideChevronLeftSquare;
-export const ChevronRightSquare: unknown = LucideChevronRightSquare;
-export const ChevronUpSquare: unknown = LucideChevronUpSquare;
-export const ChevronsDown: unknown = LucideChevronsDown;
-export const ChevronsLeft: unknown = LucideChevronsLeft;
-export const ChevronsRight: unknown = LucideChevronsRight;
-export const ChevronsUp: unknown = LucideChevronsUp;
-export const Chrome: unknown = LucideChrome;
-export const Circle: unknown = LucideCircle;
-export const Clipboard: unknown = LucideClipboard;
-export const Clock: unknown = LucideClock;
-export const CloudDrizzle: unknown = LucideCloudDrizzle;
-export const CloudLightning: unknown = LucideCloudLightning;
-export const CloudOff: unknown = LucideCloudOff;
-export const CloudRain: unknown = LucideCloudRain;
-export const CloudSnow: unknown = LucideCloudSnow;
-export const Cloud: unknown = LucideCloud;
-export const Code: unknown = LucideCode;
-export const Codepen: unknown = LucideCodepen;
-export const Codesandbox: unknown = LucideCodesandbox;
-export const Coffee: unknown = LucideCoffee;
-export const Columns: unknown = LucideColumns;
-export const Command: unknown = LucideCommand;
-export const Compass: unknown = LucideCompass;
-export const Copyleft: unknown = LucideCopyleft;
-export const Copyright: unknown = LucideCopyright;
-export const CornerDownLeft: unknown = LucideCornerDownLeft;
-export const CornerDownRight: unknown = LucideCornerDownRight;
-export const CornerLeftDown: unknown = LucideCornerLeftDown;
-export const CornerLeftUp: unknown = LucideCornerLeftUp;
-export const CornerRightDown: unknown = LucideCornerRightDown;
-export const CornerRightUp: unknown = LucideCornerRightUp;
-export const CornerUpLeft: unknown = LucideCornerUpLeft;
-export const CornerUpRight: unknown = LucideCornerUpRight;
-export const Cpu: unknown = LucideCpu;
-export const Crop: unknown = LucideCrop;
-export const Crosshair: unknown = LucideCrosshair;
-export const Database: unknown = LucideDatabase;
-export const Delete: unknown = LucideDelete;
-export const Disc: unknown = LucideDisc;
-export const DivideCircle: unknown = LucideDivideCircle;
-export const DivideSquare: unknown = LucideDivideSquare;
-export const Divide: unknown = LucideDivide;
-export const Download: unknown = LucideDownload;
-export const Dribbble: unknown = LucideDribbble;
-export const Droplet: unknown = LucideDroplet;
-export const Edit2: unknown = LucideEdit2;
-export const Edit3: unknown = LucideEdit3;
-export const EyeOff: unknown = LucideEyeOff;
-export const Eye: unknown = LucideEye;
-export const Facebook: unknown = LucideFacebook;
-export const FastForward: unknown = LucideFastForward;
-export const Feather: unknown = LucideFeather;
-export const Figma: unknown = LucideFigma;
-export const FileMinus: unknown = LucideFileMinus;
-export const FilePlus: unknown = LucideFilePlus;
-export const File: unknown = LucideFile;
-export const Film: unknown = LucideFilm;
-export const Flag: unknown = LucideFlag;
-export const FolderMinus: unknown = LucideFolderMinus;
-export const FolderPlus: unknown = LucideFolderPlus;
-export const Folder: unknown = LucideFolder;
-export const Framer: unknown = LucideFramer;
-export const Frown: unknown = LucideFrown;
-export const Gift: unknown = LucideGift;
-export const GitBranch: unknown = LucideGitBranch;
-export const GitCommit: unknown = LucideGitCommit;
-export const GitMerge: unknown = LucideGitMerge;
-export const GitPullRequest: unknown = LucideGitPullRequest;
-export const Github: unknown = LucideGithub;
-export const Gitlab: unknown = LucideGitlab;
-export const Globe: unknown = LucideGlobe;
-export const Grid: unknown = LucideGrid;
-export const HardDrive: unknown = LucideHardDrive;
-export const Hash: unknown = LucideHash;
-export const Headphones: unknown = LucideHeadphones;
-export const Heart: unknown = LucideHeart;
-export const HelpCircle: unknown = LucideHelpCircle;
-export const Hexagon: unknown = LucideHexagon;
-export const Inbox: unknown = LucideInbox;
-export const Instagram: unknown = LucideInstagram;
-export const Italic: unknown = LucideItalic;
-export const Key: unknown = LucideKey;
-export const Layers: unknown = LucideLayers;
-export const Layout: unknown = LucideLayout;
-export const LifeBuoy: unknown = LucideLifeBuoy;
-export const Link2: unknown = LucideLink2;
-export const Linkedin: unknown = LucideLinkedin;
-export const List: unknown = LucideList;
-export const Loader: unknown = LucideLoader;
-export const Loader2: unknown = LucideLoader2;
-export const MapPin: unknown = LucideMapPin;
-export const Map: unknown = LucideMap;
-export const Maximize2: unknown = LucideMaximize2;
-export const Maximize: unknown = LucideMaximize;
-export const Meh: unknown = LucideMeh;
-export const Menu: unknown = LucideMenu;
-export const MessageCircle: unknown = LucideMessageCircle;
-export const MicOff: unknown = LucideMicOff;
-export const Mic: unknown = LucideMic;
-export const Minimize2: unknown = LucideMinimize2;
-export const Minimize: unknown = LucideMinimize;
-export const Moon: unknown = LucideMoon;
-export const MoreHorizontal: unknown = LucideMoreHorizontal;
-export const _MoreHorizontalIcon: unknown = LucideMoreHorizontal;
-export const MoreVertical: unknown = LucideMoreVertical;
-export const MousePointer: unknown = LucideMousePointer;
-export const Move: unknown = LucideMove;
-export const Music: unknown = LucideMusic;
-export const Megaphone: unknown = LucideMegaphone;
-export const Navigation2: unknown = LucideNavigation2;
-export const Navigation: unknown = LucideNavigation;
-export const Network: unknown = LucideNetwork;
-export const Octagon: unknown = LucideOctagon;
-export const Package: unknown = LucidePackage;
-export const Paperclip: unknown = LucidePaperclip;
-export const PauseCircle: unknown = LucidePauseCircle;
-export const Pause: unknown = LucidePause;
-export const PenTool: unknown = LucidePenTool;
-export const PhoneCall: unknown = LucidePhoneCall;
-export const PhoneForwarded: unknown = LucidePhoneForwarded;
-export const PhoneIncoming: unknown = LucidePhoneIncoming;
-export const PhoneMissed: unknown = LucidePhoneMissed;
-export const PhoneOff: unknown = LucidePhoneOff;
-export const PhoneOutgoing: unknown = LucidePhoneOutgoing;
-export const Phone: unknown = LucidePhone;
-export const PieChart: unknown = LucidePieChart;
-export const PlayCircle: unknown = LucidePlayCircle;
-export const Play: unknown = LucidePlay;
-export const Pocket: unknown = LucidePocket;
-export const Power: unknown = LucidePower;
-export const PowerOff: unknown = LucidePowerOff;
-export const Printer: unknown = LucidePrinter;
-export const Radio: unknown = LucideRadio;
-export const RefreshCcw: unknown = LucideRefreshCcw;
-export const RefreshCw: unknown = LucideRefreshCw;
-export const Repeat: unknown = LucideRepeat;
-export const Rewind: unknown = LucideRewind;
-export const RotateCcw: unknown = LucideRotateCcw;
-export const RotateCw: unknown = LucideRotateCw;
-export const Recycle: unknown = LucideRecycle;
-export const Rss: unknown = LucideRss;
-export const Save: unknown = LucideSave;
-export const Scissors: unknown = LucideScissors;
-export const ScreenShare: unknown = LucideScreenShare;
-export const ScreenShareOff: unknown = LucideScreenShareOff;
-export const _ScreenShareOffIcon: unknown = LucideScreenShareOff;
-export const Send: unknown = LucideSend;
-export const Share2: unknown = LucideShare2;
-export const Share: unknown = LucideShare;
-export const ShieldOff: unknown = LucideShieldOff;
-export const Shield: unknown = LucideShield;
-export const ShoppingBag: unknown = LucideShoppingBag;
-export const Shuffle: unknown = LucideShuffle;
-export const Sidebar: unknown = LucideSidebar;
-export const SkipBack: unknown = LucideSkipBack;
-export const SkipForward: unknown = LucideSkipForward;
-export const Slack: unknown = LucideSlack;
-export const Slash: unknown = LucideSlash;
-export const Sliders: unknown = LucideSliders;
-export const Smartphone: unknown = LucideSmartphone;
-export const Smile: unknown = LucideSmile;
-export const Speaker: unknown = LucideSpeaker;
-export const Square: unknown = LucideSquare;
-export const Star: unknown = LucideStar;
-export const StopCircle: unknown = LucideStopCircle;
-export const Sun: unknown = LucideSun;
-export const Sunrise: unknown = LucideSunrise;
-export const Sunset: unknown = LucideSunset;
-export const Table: unknown = LucideTable;
-export const Tablet: unknown = LucideTablet;
-export const Tag: unknown = LucideTag;
-export const Target: unknown = LucideTarget;
-export const Terminal: unknown = LucideTerminal;
-export const ThumbsDown: unknown = LucideThumbsDown;
-export const ThumbsUp: unknown = LucideThumbsUp;
-export const ToggleLeft: unknown = LucideToggleLeft;
-export const ToggleRight: unknown = LucideToggleRight;
-export const Trash2: unknown = LucideTrash2;
-export const Trello: unknown = LucideTrello;
-export const TrendingDown: unknown = LucideTrendingDown;
-export const TrendingUp: unknown = LucideTrendingUp;
-export const Triangle: unknown = LucideTriangle;
-export const Truck: unknown = LucideTruck;
-export const Tv: unknown = LucideTv;
-export const Twitch: unknown = LucideTwitch;
-export const Twitter: unknown = LucideTwitter;
-export const Type: unknown = LucideType;
-export const Umbrella: unknown = LucideUmbrella;
-export const Underline: unknown = LucideUnderline;
-export const Unlock: unknown = LucideUnlock;
-export const Upload: unknown = LucideUpload;
-export const UserCheck: unknown = LucideUserCheck;
-export const UserMinus: unknown = LucideUserMinus;
-export const UserPlus: unknown = LucideUserPlus;
-export const UserX: unknown = LucideUserX;
-export const VideoOff: unknown = LucideVideoOff;
-export const Video: unknown = LucideVideo;
-export const Voicemail: unknown = LucideVoicemail;
-export const Wallet: unknown = LucideWallet;
-export const Volume1: unknown = LucideVolume1;
-export const Volume2: unknown = LucideVolume2;
-export const VolumeX: unknown = LucideVolumeX;
-export const Volume: unknown = LucideVolume;
-export const Watch: unknown = LucideWatch;
-export const WifiOff: unknown = LucideWifiOff;
-export const Wifi: unknown = LucideWifi;
-export const Wind: unknown = LucideWind;
-export const XCircle: unknown = LucideXCircle;
-export const XOctagon: unknown = LucideXOctagon;
-export const XSquare: unknown = LucideXSquare;
-export const Youtube: unknown = LucideYoutube;
-export const ZapOff: unknown = LucideZapOff;
-export const Zap: unknown = LucideZap;
-export const ZoomIn: unknown = LucideZoomIn;
-export const ZoomOut: unknown = LucideZoomOut;
+export const const Home = LucideHome;
+export const const Bot = LucideBot;
+export const const Sparkles = LucideSparkles;
+export const const User = LucideUser;
+export const const ArrowRight = LucideArrowRight;
+export const const BarChart3 = LucideBarChart3;
+export const const Briefcase = LucideBriefcase;
+export const const _BriefcaseIcon = LucideBriefcase;
+export const const Monitor = LucideMonitor;
+export const const Server = LucideServer;
+export const const Bell = LucideBell;
+export const const Calendar = LucideCalendar;
+export const const _CalendarIcon = LucideCalendar;
+export const const Check = LucideCheck;
+export const const _CheckIcon = LucideCheck;
+export const const ChevronDown = LucideChevronDown;
+export const const ChevronUp = LucideChevronUp;
+export const const ChevronLeft = LucideChevronLeft;
+export const const ChevronRight = LucideChevronRight;
+export const const _ChevronRightIcon = LucideChevronRight;
+export const const Plus = LucidePlus;
+export const const Minus = LucideMinus;
+export const const X = LucideX;
+export const const Edit = LucideEdit;
+export const const Trash = LucideTrash;
+export const const Settings = LucideSettings;
+export const const Search = LucideSearch;
+export const const Filter = LucideFilter;
+export const const UploadCloud = LucideUploadCloud;
+export const const DownloadCloud = LucideDownloadCloud;
+export const const Copy = LucideCopy;
+export const const ExternalLink = LucideExternalLink;
+export const const _ExternalLinkIcon = LucideExternalLink;
+export const const Link = LucideLink;
+export const const MessageSquare = LucideMessageSquare;
+export const const _MessageSquareIcon = LucideMessageSquare;
+export const const Users = LucideUsers;
+export const const FileText = LucideFileText;
+export const const Image = LucideImage;
+export const const AlertTriangle = LucideAlertTriangle;
+export const const Info = LucideInfo;
+export const const Mail = LucideMail;
+export const const Lock = LucideLock;
+export const const LogOut = LucideLogOut;
+export const const LogIn = LucideLogIn;
+export const const ShoppingCart = LucideShoppingCart;
+export const const CreditCard = LucideCreditCard;
+export const const DollarSign = LucideDollarSign;
+export const const Percent = LucidePercent;
+export const const Award = LucideAward;
+export const const Activity = LucideActivity;
+export const const Airplay = LucideAirplay;
+export const const AlignCenter = LucideAlignCenter;
+export const const AlignJustify = LucideAlignJustify;
+export const const AlignLeft = LucideAlignLeft;
+export const const AlignRight = LucideAlignRight;
+export const const Anchor = LucideAnchor;
+export const const Aperture = LucideAperture;
+export const const Archive = LucideArchive;
+export const const ArrowDownCircle = LucideArrowDownCircle;
+export const const ArrowDownLeft = LucideArrowDownLeft;
+export const const ArrowDownRight = LucideArrowDownRight;
+export const const ArrowLeftCircle = LucideArrowLeftCircle;
+export const const ArrowRightCircle = LucideArrowRightCircle;
+export const const ArrowUpCircle = LucideArrowUpCircle;
+export const const ArrowUpLeft = LucideArrowUpLeft;
+export const const ArrowUpRight = LucideArrowUpRight;
+export const const AtSign = LucideAtSign;
+export const const BarChart = LucideBarChart;
+export const const BarChart2 = LucideBarChart2;
+export const const BatteryCharging = LucideBatteryCharging;
+export const const Battery = LucideBattery;
+export const const BellOff = LucideBellOff;
+export const const Bluetooth = LucideBluetooth;
+export const const Bold = LucideBold;
+export const const BookOpen = LucideBookOpen;
+export const const Book = LucideBook;
+export const const Bookmark = LucideBookmark;
+export const const Box = LucideBox;
+export const const CameraOff = LucideCameraOff;
+export const const Camera = LucideCamera;
+export const const Cast = LucideCast;
+export const const CheckCircle = LucideCheckCircle;
+export const const CheckSquare = LucideCheckSquare;
+export const const ChevronDownSquare = LucideChevronDownSquare;
+export const const ChevronLeftSquare = LucideChevronLeftSquare;
+export const const ChevronRightSquare = LucideChevronRightSquare;
+export const const ChevronUpSquare = LucideChevronUpSquare;
+export const const ChevronsDown = LucideChevronsDown;
+export const const ChevronsLeft = LucideChevronsLeft;
+export const const ChevronsRight = LucideChevronsRight;
+export const const ChevronsUp = LucideChevronsUp;
+export const const Chrome = LucideChrome;
+export const const Circle = LucideCircle;
+export const const Clipboard = LucideClipboard;
+export const const Clock = LucideClock;
+export const const CloudDrizzle = LucideCloudDrizzle;
+export const const CloudLightning = LucideCloudLightning;
+export const const CloudOff = LucideCloudOff;
+export const const CloudRain = LucideCloudRain;
+export const const CloudSnow = LucideCloudSnow;
+export const const Cloud = LucideCloud;
+export const const Code = LucideCode;
+export const const Codepen = LucideCodepen;
+export const const Codesandbox = LucideCodesandbox;
+export const const Coffee = LucideCoffee;
+export const const Columns = LucideColumns;
+export const const Command = LucideCommand;
+export const const Compass = LucideCompass;
+export const const Copyleft = LucideCopyleft;
+export const const Copyright = LucideCopyright;
+export const const CornerDownLeft = LucideCornerDownLeft;
+export const const CornerDownRight = LucideCornerDownRight;
+export const const CornerLeftDown = LucideCornerLeftDown;
+export const const CornerLeftUp = LucideCornerLeftUp;
+export const const CornerRightDown = LucideCornerRightDown;
+export const const CornerRightUp = LucideCornerRightUp;
+export const const CornerUpLeft = LucideCornerUpLeft;
+export const const CornerUpRight = LucideCornerUpRight;
+export const const Cpu = LucideCpu;
+export const const Crop = LucideCrop;
+export const const Crosshair = LucideCrosshair;
+export const const Database = LucideDatabase;
+export const const Delete = LucideDelete;
+export const const Disc = LucideDisc;
+export const const DivideCircle = LucideDivideCircle;
+export const const DivideSquare = LucideDivideSquare;
+export const const Divide = LucideDivide;
+export const const Download = LucideDownload;
+export const const Dribbble = LucideDribbble;
+export const const Droplet = LucideDroplet;
+export const const Edit2 = LucideEdit2;
+export const const Edit3 = LucideEdit3;
+export const const EyeOff = LucideEyeOff;
+export const const Eye = LucideEye;
+export const const Facebook = LucideFacebook;
+export const const FastForward = LucideFastForward;
+export const const Feather = LucideFeather;
+export const const Figma = LucideFigma;
+export const const FileMinus = LucideFileMinus;
+export const const FilePlus = LucideFilePlus;
+export const const File = LucideFile;
+export const const Film = LucideFilm;
+export const const Flag = LucideFlag;
+export const const FolderMinus = LucideFolderMinus;
+export const const FolderPlus = LucideFolderPlus;
+export const const Folder = LucideFolder;
+export const const Framer = LucideFramer;
+export const const Frown = LucideFrown;
+export const const Gift = LucideGift;
+export const const GitBranch = LucideGitBranch;
+export const const GitCommit = LucideGitCommit;
+export const const GitMerge = LucideGitMerge;
+export const const GitPullRequest = LucideGitPullRequest;
+export const const Github = LucideGithub;
+export const const Gitlab = LucideGitlab;
+export const const Globe = LucideGlobe;
+export const const Grid = LucideGrid;
+export const const HardDrive = LucideHardDrive;
+export const const Hash = LucideHash;
+export const const Headphones = LucideHeadphones;
+export const const Heart = LucideHeart;
+export const const HelpCircle = LucideHelpCircle;
+export const const Hexagon = LucideHexagon;
+export const const Inbox = LucideInbox;
+export const const Instagram = LucideInstagram;
+export const const Italic = LucideItalic;
+export const const Key = LucideKey;
+export const const Layers = LucideLayers;
+export const const Layout = LucideLayout;
+export const const LifeBuoy = LucideLifeBuoy;
+export const const Link2 = LucideLink2;
+export const const Linkedin = LucideLinkedin;
+export const const List = LucideList;
+export const const Loader = LucideLoader;
+export const const Loader2 = LucideLoader2;
+export const const MapPin = LucideMapPin;
+export const const Map = LucideMap;
+export const const Maximize2 = LucideMaximize2;
+export const const Maximize = LucideMaximize;
+export const const Meh = LucideMeh;
+export const const Menu = LucideMenu;
+export const const MessageCircle = LucideMessageCircle;
+export const const MicOff = LucideMicOff;
+export const const Mic = LucideMic;
+export const const Minimize2 = LucideMinimize2;
+export const const Minimize = LucideMinimize;
+export const const Moon = LucideMoon;
+export const const MoreHorizontal = LucideMoreHorizontal;
+export const const _MoreHorizontalIcon = LucideMoreHorizontal;
+export const const MoreVertical = LucideMoreVertical;
+export const const MousePointer = LucideMousePointer;
+export const const Move = LucideMove;
+export const const Music = LucideMusic;
+export const const Megaphone = LucideMegaphone;
+export const const Navigation2 = LucideNavigation2;
+export const const Navigation = LucideNavigation;
+export const const Network = LucideNetwork;
+export const const Octagon = LucideOctagon;
+export const const Package = LucidePackage;
+export const const Paperclip = LucidePaperclip;
+export const const PauseCircle = LucidePauseCircle;
+export const const Pause = LucidePause;
+export const const PenTool = LucidePenTool;
+export const const PhoneCall = LucidePhoneCall;
+export const const PhoneForwarded = LucidePhoneForwarded;
+export const const PhoneIncoming = LucidePhoneIncoming;
+export const const PhoneMissed = LucidePhoneMissed;
+export const const PhoneOff = LucidePhoneOff;
+export const const PhoneOutgoing = LucidePhoneOutgoing;
+export const const Phone = LucidePhone;
+export const const PieChart = LucidePieChart;
+export const const PlayCircle = LucidePlayCircle;
+export const const Play = LucidePlay;
+export const const Pocket = LucidePocket;
+export const const Power = LucidePower;
+export const const PowerOff = LucidePowerOff;
+export const const Printer = LucidePrinter;
+export const const Radio = LucideRadio;
+export const const RefreshCcw = LucideRefreshCcw;
+export const const RefreshCw = LucideRefreshCw;
+export const const Repeat = LucideRepeat;
+export const const Rewind = LucideRewind;
+export const const RotateCcw = LucideRotateCcw;
+export const const RotateCw = LucideRotateCw;
+export const const Recycle = LucideRecycle;
+export const const Rss = LucideRss;
+export const const Save = LucideSave;
+export const const Scissors = LucideScissors;
+export const const ScreenShare = LucideScreenShare;
+export const const ScreenShareOff = LucideScreenShareOff;
+export const const _ScreenShareOffIcon = LucideScreenShareOff;
+export const const Send = LucideSend;
+export const const Share2 = LucideShare2;
+export const const Share = LucideShare;
+export const const ShieldOff = LucideShieldOff;
+export const const Shield = LucideShield;
+export const const ShoppingBag = LucideShoppingBag;
+export const const Shuffle = LucideShuffle;
+export const const Sidebar = LucideSidebar;
+export const const SkipBack = LucideSkipBack;
+export const const SkipForward = LucideSkipForward;
+export const const Slack = LucideSlack;
+export const const Slash = LucideSlash;
+export const const Sliders = LucideSliders;
+export const const Smartphone = LucideSmartphone;
+export const const Smile = LucideSmile;
+export const const Speaker = LucideSpeaker;
+export const const Square = LucideSquare;
+export const const Star = LucideStar;
+export const const StopCircle = LucideStopCircle;
+export const const Sun = LucideSun;
+export const const Sunrise = LucideSunrise;
+export const const Sunset = LucideSunset;
+export const const Table = LucideTable;
+export const const Tablet = LucideTablet;
+export const const Tag = LucideTag;
+export const const Target = LucideTarget;
+export const const Terminal = LucideTerminal;
+export const const ThumbsDown = LucideThumbsDown;
+export const const ThumbsUp = LucideThumbsUp;
+export const const ToggleLeft = LucideToggleLeft;
+export const const ToggleRight = LucideToggleRight;
+export const const Trash2 = LucideTrash2;
+export const const Trello = LucideTrello;
+export const const TrendingDown = LucideTrendingDown;
+export const const TrendingUp = LucideTrendingUp;
+export const const Triangle = LucideTriangle;
+export const const Truck = LucideTruck;
+export const const Tv = LucideTv;
+export const const Twitch = LucideTwitch;
+export const const Twitter = LucideTwitter;
+export const const Type = LucideType;
+export const const Umbrella = LucideUmbrella;
+export const const Underline = LucideUnderline;
+export const const Unlock = LucideUnlock;
+export const const Upload = LucideUpload;
+export const const UserCheck = LucideUserCheck;
+export const const UserMinus = LucideUserMinus;
+export const const UserPlus = LucideUserPlus;
+export const const UserX = LucideUserX;
+export const const VideoOff = LucideVideoOff;
+export const const Video = LucideVideo;
+export const const Voicemail = LucideVoicemail;
+export const const Wallet = LucideWallet;
+export const const Volume1 = LucideVolume1;
+export const const Volume2 = LucideVolume2;
+export const const VolumeX = LucideVolumeX;
+export const const Volume = LucideVolume;
+export const const Watch = LucideWatch;
+export const const WifiOff = LucideWifiOff;
+export const const Wifi = LucideWifi;
+export const const Wind = LucideWind;
+export const const XCircle = LucideXCircle;
+export const const XOctagon = LucideXOctagon;
+export const const XSquare = LucideXSquare;
+export const const Youtube = LucideYoutube;
+export const const ZapOff = LucideZapOff;
+export const const Zap = LucideZap;
+export const const ZoomIn = LucideZoomIn;
+export const const ZoomOut = LucideZoomOut;
 
 // Define the props for your Icon component;
 export type IconProps = SVGProps<SVGSVGElement> & {;
   name: keyof typeof iconMap;
   size?: number | string;
-  className?: string;'
+  className?: string'
 }'
 
-// Create a map of icon names to component references;'
-const iconMap: unknown "unknown = {,;
-  home: "LucideHome",;";"
-  'bot-message-square': LucideBot, // Assuming Bot is used for bot-message-square;'
-  sparkles: LucideSparkles",";;""
-  user: LucideUser,";";"
+// Create a map of icon names to component references'
+const iconMap: {,;
+  home: "LucideHome",;"
+  'bot-message-square': LucideBot, // Assuming Bot is used for bot-message-square'
+  sparkles: LucideSparkles",""
+  user: LucideUser,"
   briefcase: "LucideBriefcase,;"";
-  server: "LucideServer",;";"
-  bell: LucideBell",";;""
-  calendar: LucideCalendar,";";"
+  server: "LucideServer",;"
+  bell: LucideBell",""
+  calendar: LucideCalendar,"
   check: "LucideCheck,;"";
-  'chevron-down': LucideChevronDown,;'
-  'chevron-up': LucideChevronUp,;'
-  'chevron-left': LucideChevronLeft,;'
-  'chevron-right': LucideChevronRight,;'
-  plus: "LucidePlus",;";"
-  minus: LucideMinus",";;""
-  x: LucideX,";";"
+  'chevron-down': LucideChevronDown,'
+  'chevron-up': LucideChevronUp,'
+  'chevron-left': LucideChevronLeft,'
+  'chevron-right': LucideChevronRight,'
+  plus: "LucidePlus",;"
+  minus: LucideMinus",""
+  x: LucideX,"
   edit: "LucideEdit,;"";
-  trash: "LucideTrash",;";"
-  settings: LucideSettings",";;""
-  search: LucideSearch,";";"
+  trash: "LucideTrash",;"
+  settings: LucideSettings",""
+  search: LucideSearch,"
   filter: "LucideFilter,;"";
-  'upload-cloud': LucideUploadCloud,;'
-  'download-cloud': LucideDownloadCloud,;'
-  copy: "LucideCopy",;";"
-  'external-link': LucideExternalLink,;'
-  link: LucideLink",";;""
-  'message-square': LucideMessageSquare,;'
-  users: LucideUsers,";";"
-  'file-text': LucideFileText,;'
+  'upload-cloud': LucideUploadCloud,'
+  'download-cloud': LucideDownloadCloud,'
+  copy: "LucideCopy",;"
+  'external-link': LucideExternalLink,'
+  link: LucideLink",""
+  'message-square': LucideMessageSquare,'
+  users: LucideUsers,"
+  'file-text': LucideFileText,'
   image: "LucideImage,;"";
-  'alert-triangle': LucideAlertTriangle,;'
-  info: "LucideInfo",;";"
-  mail: LucideMail",";;""
-  lock: LucideLock,";";"
-  'log-out': LucideLogOut,;'
-  'log-in': LucideLogIn,;'
-  'shopping-cart': LucideShoppingCart,;'
-  'credit-card': LucideCreditCard,;'
-  'dollar-sign': LucideDollarSign,;'
+  'alert-triangle': LucideAlertTriangle,'
+  info: "LucideInfo",;"
+  mail: LucideMail",""
+  lock: LucideLock,"
+  'log-out': LucideLogOut,'
+  'log-in': LucideLogIn,'
+  'shopping-cart': LucideShoppingCart,'
+  'credit-card': LucideCreditCard,'
+  'dollar-sign': LucideDollarSign,'
   percent: "LucidePercent,;"";
-  award: "LucideAward",;";"
-  activity: LucideActivity",";;""
-  airplay: LucideAirplay,";";"
-  'align-center': LucideAlignCenter,;'
-  'align-justify': LucideAlignJustify,;'
-  'align-left': LucideAlignLeft,;'
-  'align-right': LucideAlignRight,;'
+  award: "LucideAward",;"
+  activity: LucideActivity",""
+  airplay: LucideAirplay,"
+  'align-center': LucideAlignCenter,'
+  'align-justify': LucideAlignJustify,'
+  'align-left': LucideAlignLeft,'
+  'align-right': LucideAlignRight,'
   anchor: "LucideAnchor,;"";
-  aperture: "LucideAperture",;";"
-  archive: LucideArchive",";;""
-  'arrow-down-circle': LucideArrowDownCircle,;'
-  'arrow-down-left': LucideArrowDownLeft,;'
-  'arrow-down-right': LucideArrowDownRight,;'
-  'arrow-left-circle': LucideArrowLeftCircle,;'
-  'arrow-right': LucideArrowRight,;'
-  'arrow-right-circle': LucideArrowRightCircle,;'
-  'arrow-up-circle': LucideArrowUpCircle,;'
-  'arrow-up-left': LucideArrowUpLeft,;'
-  'arrow-up-right': LucideArrowUpRight,;'
-  'at-sign': LucideAtSign,;'
-  'bar-chart': LucideBarChart,;'
-  'bar-chart-2': LucideBarChart2,;'
-  'bar-chart-3': LucideBarChart3,;'
-  'battery-charging': LucideBatteryCharging,;'
-  battery: LucideBattery,";";"
-  'bell-off': LucideBellOff,;'
+  aperture: "LucideAperture",;"
+  archive: LucideArchive",""
+  'arrow-down-circle': LucideArrowDownCircle,'
+  'arrow-down-left': LucideArrowDownLeft,'
+  'arrow-down-right': LucideArrowDownRight,'
+  'arrow-left-circle': LucideArrowLeftCircle,'
+  'arrow-right': LucideArrowRight,'
+  'arrow-right-circle': LucideArrowRightCircle,'
+  'arrow-up-circle': LucideArrowUpCircle,'
+  'arrow-up-left': LucideArrowUpLeft,'
+  'arrow-up-right': LucideArrowUpRight,'
+  'at-sign': LucideAtSign,'
+  'bar-chart': LucideBarChart,'
+  'bar-chart-2': LucideBarChart2,'
+  'bar-chart-3': LucideBarChart3,'
+  'battery-charging': LucideBatteryCharging,'
+  battery: LucideBattery,"
+  'bell-off': LucideBellOff,'
   bluetooth: "LucideBluetooth,;"";
-  bold: "LucideBold",;";"
-  'book-open': LucideBookOpen,;'
-  book: LucideBook",";;""
-  bookmark: LucideBookmark,";";"
+  bold: "LucideBold",;"
+  'book-open': LucideBookOpen,'
+  book: LucideBook",""
+  bookmark: LucideBookmark,"
   box: "LucideBox,;"";
-  'camera-off': LucideCameraOff,;'
-  camera: "LucideCamera",;";"
-  cast: LucideCast",";;""
-  'check-circle': LucideCheckCircle,;'
-  'check-square': LucideCheckSquare,;'
-  'chevron-down-square': LucideChevronDownSquare,;'
-  'chevron-left-square': LucideChevronLeftSquare,;'
-  'chevron-right-square': LucideChevronRightSquare,;'
-  'chevron-up-square': LucideChevronUpSquare,;'
-  'chevrons-down': LucideChevronsDown,;'
-  'chevrons-left': LucideChevronsLeft,;'
-  'chevrons-right': LucideChevronsRight,;'
-  'chevrons-up': LucideChevronsUp,;'
-  chrome: LucideChrome,";";"
+  'camera-off': LucideCameraOff,'
+  camera: "LucideCamera",;"
+  cast: LucideCast",""
+  'check-circle': LucideCheckCircle,'
+  'check-square': LucideCheckSquare,'
+  'chevron-down-square': LucideChevronDownSquare,'
+  'chevron-left-square': LucideChevronLeftSquare,'
+  'chevron-right-square': LucideChevronRightSquare,'
+  'chevron-up-square': LucideChevronUpSquare,'
+  'chevrons-down': LucideChevronsDown,'
+  'chevrons-left': LucideChevronsLeft,'
+  'chevrons-right': LucideChevronsRight,'
+  'chevrons-up': LucideChevronsUp,'
+  chrome: LucideChrome,"
   circle: "LucideCircle,;"";
-  clipboard: "LucideClipboard",;";"
-  clock: LucideClock",";;""
-  'cloud-drizzle': LucideCloudDrizzle,;'
-  'cloud-lightning': LucideCloudLightning,;'
-  'cloud-off': LucideCloudOff,;'
-  'cloud-rain': LucideCloudRain,;'
-  'cloud-snow': LucideCloudSnow,;'
-  cloud: LucideCloud,";";"
+  clipboard: "LucideClipboard",;"
+  clock: LucideClock",""
+  'cloud-drizzle': LucideCloudDrizzle,'
+  'cloud-lightning': LucideCloudLightning,'
+  'cloud-off': LucideCloudOff,'
+  'cloud-rain': LucideCloudRain,'
+  'cloud-snow': LucideCloudSnow,'
+  cloud: LucideCloud,"
   code: "LucideCode,;"";
-  codepen: "LucideCodepen",;";"
-  codesandbox: LucideCodesandbox",";;""
-  coffee: LucideCoffee,";";"
+  codepen: "LucideCodepen",;"
+  codesandbox: LucideCodesandbox",""
+  coffee: LucideCoffee,"
   columns: "LucideColumns,;"";
-  command: "LucideCommand",;";"
-  compass: LucideCompass",";;""
-  copyleft: LucideCopyleft,";";"
+  command: "LucideCommand",;"
+  compass: LucideCompass",""
+  copyleft: LucideCopyleft,"
   copyright: "LucideCopyright,;"";
-  'corner-down-left': LucideCornerDownLeft,;'
-  'corner-down-right': LucideCornerDownRight,;'
-  'corner-left-down': LucideCornerLeftDown,;'
-  'corner-left-up': LucideCornerLeftUp,;'
-  'corner-right-down': LucideCornerRightDown,;'
-  'corner-right-up': LucideCornerRightUp,;'
-  'corner-up-left': LucideCornerUpLeft,;'
-  'corner-up-right': LucideCornerUpRight,;'
-  cpu: "LucideCpu",;";"
-  crop: LucideCrop",";;""
-  crosshair: LucideCrosshair,";";"
+  'corner-down-left': LucideCornerDownLeft,'
+  'corner-down-right': LucideCornerDownRight,'
+  'corner-left-down': LucideCornerLeftDown,'
+  'corner-left-up': LucideCornerLeftUp,'
+  'corner-right-down': LucideCornerRightDown,'
+  'corner-right-up': LucideCornerRightUp,'
+  'corner-up-left': LucideCornerUpLeft,'
+  'corner-up-right': LucideCornerUpRight,'
+  cpu: "LucideCpu",;"
+  crop: LucideCrop",""
+  crosshair: LucideCrosshair,"
   database: "LucideDatabase,;"";
-  delete: "LucideDelete",;";"
-  disc: LucideDisc",";;""
-  'divide-circle': LucideDivideCircle,;'
-  'divide-square': LucideDivideSquare,;'
-  divide: LucideDivide,";";"
+  delete: "LucideDelete",;"
+  disc: LucideDisc",""
+  'divide-circle': LucideDivideCircle,'
+  'divide-square': LucideDivideSquare,'
+  divide: LucideDivide,"
   download: "LucideDownload,;"";
-  dribbble: "LucideDribbble",;";"
-  droplet: LucideDroplet",";;""
-  'edit-2': LucideEdit2,;'
-  'edit-3': LucideEdit3,;'
-  'eye-off': LucideEyeOff,;'
-  eye: LucideEye,";";"
+  dribbble: "LucideDribbble",;"
+  droplet: LucideDroplet",""
+  'edit-2': LucideEdit2,'
+  'edit-3': LucideEdit3,'
+  'eye-off': LucideEyeOff,'
+  eye: LucideEye,"
   facebook: "LucideFacebook,;"";
-  'fast-forward': LucideFastForward,;'
-  feather: "LucideFeather",;";"
-  figma: LucideFigma",";;""
-  'file-minus': LucideFileMinus,;'
-  'file-plus': LucideFilePlus,;'
-  file: LucideFile,";";"
+  'fast-forward': LucideFastForward,'
+  feather: "LucideFeather",;"
+  figma: LucideFigma",""
+  'file-minus': LucideFileMinus,'
+  'file-plus': LucideFilePlus,'
+  file: LucideFile,"
   film: "LucideFilm,;"";
-  flag: "LucideFlag",;";"
-  'folder-minus': LucideFolderMinus,;'
-  'folder-plus': LucideFolderPlus,;'
-  folder: LucideFolder",";;""
-  framer: LucideFramer,";";"
+  flag: "LucideFlag",;"
+  'folder-minus': LucideFolderMinus,'
+  'folder-plus': LucideFolderPlus,'
+  folder: LucideFolder",""
+  framer: LucideFramer,"
   frown: "LucideFrown,;"";
-  gift: "LucideGift",;";"
-  'git-branch': LucideGitBranch,;'
-  'git-commit': LucideGitCommit,;'
-  'git-merge': LucideGitMerge,;'
-  'git-pull-request': LucideGitPullRequest,;'
-  github: LucideGithub",";;""
-  gitlab: LucideGitlab,";";"
+  gift: "LucideGift",;"
+  'git-branch': LucideGitBranch,'
+  'git-commit': LucideGitCommit,'
+  'git-merge': LucideGitMerge,'
+  'git-pull-request': LucideGitPullRequest,'
+  github: LucideGithub",""
+  gitlab: LucideGitlab,"
   globe: "LucideGlobe,;"";
-  grid: "LucideGrid",;";"
-  'hard-drive': LucideHardDrive,;'
-  hash: LucideHash",";;""
-  headphones: LucideHeadphones,";";"
+  grid: "LucideGrid",;"
+  'hard-drive': LucideHardDrive,'
+  hash: LucideHash",""
+  headphones: LucideHeadphones,"
   heart: "LucideHeart,;"";
-  'help-circle': LucideHelpCircle,;'
-  hexagon: "LucideHexagon",;";"
-  inbox: LucideInbox",";;""
-  instagram: LucideInstagram,";";"
+  'help-circle': LucideHelpCircle,'
+  hexagon: "LucideHexagon",;"
+  inbox: LucideInbox",""
+  instagram: LucideInstagram,"
   italic: "LucideItalic,;"";
-  key: "LucideKey",;";"
-  layers: LucideLayers",";;""
-  layout: LucideLayout,";";"
-  'life-buoy': LucideLifeBuoy,;'
-  'link-2': LucideLink2,;'
+  key: "LucideKey",;"
+  layers: LucideLayers",""
+  layout: LucideLayout,"
+  'life-buoy': LucideLifeBuoy,'
+  'link-2': LucideLink2,'
   linkedin: "LucideLinkedin,;"";
-  list: "LucideList",;";"
-  loader: LucideLoader",";;""
-  'loader-2': LucideLoader2,;'
-  'map-pin': LucideMapPin,;'
-  map: LucideMap,";";"
-  'maximize-2': LucideMaximize2,;'
+  list: "LucideList",;"
+  loader: LucideLoader",""
+  'loader-2': LucideLoader2,'
+  'map-pin': LucideMapPin,'
+  map: LucideMap,"
+  'maximize-2': LucideMaximize2,'
   maximize: "LucideMaximize,;"";
-  meh: "LucideMeh",;";"
-  menu: LucideMenu",";;""
-  'message-circle': LucideMessageCircle,;'
-  'mic-off': LucideMicOff,;'
-  mic: LucideMic,";";"
-  'minimize-2': LucideMinimize2,;'
+  meh: "LucideMeh",;"
+  menu: LucideMenu",""
+  'message-circle': LucideMessageCircle,'
+  'mic-off': LucideMicOff,'
+  mic: LucideMic,"
+  'minimize-2': LucideMinimize2,'
   minimize: "LucideMinimize,;"";
-  monitor: "LucideMonitor",;";"
-  moon: LucideMoon",";;""
-  'more-horizontal': LucideMoreHorizontal,;'
-  'more-vertical': LucideMoreVertical,;'
-  'mouse-pointer': LucideMousePointer,;'
-  move: LucideMove,";";"
+  monitor: "LucideMonitor",;"
+  moon: LucideMoon",""
+  'more-horizontal': LucideMoreHorizontal,'
+  'more-vertical': LucideMoreVertical,'
+  'mouse-pointer': LucideMousePointer,'
+  move: LucideMove,"
   music: "LucideMusic,;"";
-  megaphone: "LucideMegaphone",;";"
-  'navigation-2': LucideNavigation2,;'
-  navigation: LucideNavigation",";;""
-  network: LucideNetwork,";";"
+  megaphone: "LucideMegaphone",;"
+  'navigation-2': LucideNavigation2,'
+  navigation: LucideNavigation",""
+  network: LucideNetwork,"
   octagon: "LucideOctagon,;"";
-  package: "LucidePackage",;";"
-  paperclip: LucidePaperclip",";;""
-  'pause-circle': LucidePauseCircle,;'
-  pause: LucidePause,";";"
-  'pen-tool': LucidePenTool,;'
-  'phone-call': LucidePhoneCall,;'
-  'phone-forwarded': LucidePhoneForwarded,;'
-  'phone-incoming': LucidePhoneIncoming,;'
-  'phone-missed': LucidePhoneMissed,;'
-  'phone-off': LucidePhoneOff,;'
-  'phone-outgoing': LucidePhoneOutgoing,;'
+  package: "LucidePackage",;"
+  paperclip: LucidePaperclip",""
+  'pause-circle': LucidePauseCircle,'
+  pause: LucidePause,"
+  'pen-tool': LucidePenTool,'
+  'phone-call': LucidePhoneCall,'
+  'phone-forwarded': LucidePhoneForwarded,'
+  'phone-incoming': LucidePhoneIncoming,'
+  'phone-missed': LucidePhoneMissed,'
+  'phone-off': LucidePhoneOff,'
+  'phone-outgoing': LucidePhoneOutgoing,'
   phone: "LucidePhone,;"";
-  'pie-chart': LucidePieChart,;'
-  'play-circle': LucidePlayCircle,;'
-  play: "LucidePlay",;";"
-  pocket: LucidePocket",";;""
-  power: LucidePower,";";"
-  'power-off': LucidePowerOff,;'
+  'pie-chart': LucidePieChart,'
+  'play-circle': LucidePlayCircle,'
+  play: "LucidePlay",;"
+  pocket: LucidePocket",""
+  power: LucidePower,"
+  'power-off': LucidePowerOff,'
   printer: "LucidePrinter,;"";
-  radio: "LucideRadio",;";"
-  'refresh-ccw': LucideRefreshCcw,;'
-  'refresh-cw': LucideRefreshCw,;'
-  repeat: LucideRepeat",";;""
-  rewind: LucideRewind,";";"
-  'rotate-ccw': LucideRotateCcw,;'
-  'rotate-cw': LucideRotateCw,;'
+  radio: "LucideRadio",;"
+  'refresh-ccw': LucideRefreshCcw,'
+  'refresh-cw': LucideRefreshCw,'
+  repeat: LucideRepeat",""
+  rewind: LucideRewind,"
+  'rotate-ccw': LucideRotateCcw,'
+  'rotate-cw': LucideRotateCw,'
   recycle: "LucideRecycle,;"";
-  rss: "LucideRss",;";"
-  save: LucideSave",";;""
-  scissors: LucideScissors,";";"
-  'screen-share': LucideScreenShare,;'
-  'screen-share-off': LucideScreenShareOff,;'
+  rss: "LucideRss",;"
+  save: LucideSave",""
+  scissors: LucideScissors,"
+  'screen-share': LucideScreenShare,'
+  'screen-share-off': LucideScreenShareOff,'
   send: "LucideSend,;"";
-  share2: "LucideShare2",;";"
-  share: LucideShare",";;""
-  'shield-off': LucideShieldOff,;'
-  shield: LucideShield,";";"
-  'shopping-bag': LucideShoppingBag,;'
+  share2: "LucideShare2",;"
+  share: LucideShare",""
+  'shield-off': LucideShieldOff,'
+  shield: LucideShield,"
+  'shopping-bag': LucideShoppingBag,'
   shuffle: "LucideShuffle,;"";
-  sidebar: "LucideSidebar",;";"
-  'skip-back': LucideSkipBack,;'
-  'skip-forward': LucideSkipForward,;'
-  slack: LucideSlack",";;""
-  slash: LucideSlash,";";"
+  sidebar: "LucideSidebar",;"
+  'skip-back': LucideSkipBack,'
+  'skip-forward': LucideSkipForward,'
+  slack: LucideSlack",""
+  slash: LucideSlash,"
   sliders: "LucideSliders,;"";
-  smartphone: "LucideSmartphone",;";"
-  smile: LucideSmile",";;""
-  speaker: LucideSpeaker,";";"
+  smartphone: "LucideSmartphone",;"
+  smile: LucideSmile",""
+  speaker: LucideSpeaker,"
   square: "LucideSquare,;"";
-  star: "LucideStar",;";"
-  'stop-circle': LucideStopCircle,;'
-  sun: LucideSun",";;""
-  sunrise: LucideSunrise,";";"
+  star: "LucideStar",;"
+  'stop-circle': LucideStopCircle,'
+  sun: LucideSun",""
+  sunrise: LucideSunrise,"
   sunset: "LucideSunset,;"";
-  table: "LucideTable",;";"
-  tablet: LucideTablet",";;""
-  tag: LucideTag,";";"
+  table: "LucideTable",;"
+  tablet: LucideTablet",""
+  tag: LucideTag,"
   target: "LucideTarget,;"";
-  terminal: "LucideTerminal",;";"
-  'thumbs-down': LucideThumbsDown,;'
-  'thumbs-up': LucideThumbsUp,;'
-  'toggle-left': LucideToggleLeft,;'
-  'toggle-right': LucideToggleRight,;'
-  'trash-2': LucideTrash2,;'
-  trello: LucideTrello",";;""
-  'trending-down': LucideTrendingDown,;'
-  'trending-up': LucideTrendingUp,;'
-  triangle: LucideTriangle,";";"
+  terminal: "LucideTerminal",;"
+  'thumbs-down': LucideThumbsDown,'
+  'thumbs-up': LucideThumbsUp,'
+  'toggle-left': LucideToggleLeft,'
+  'toggle-right': LucideToggleRight,'
+  'trash-2': LucideTrash2,'
+  trello: LucideTrello",""
+  'trending-down': LucideTrendingDown,'
+  'trending-up': LucideTrendingUp,'
+  triangle: LucideTriangle,"
   truck: "LucideTruck,;"";
-  tv: "LucideTv",;";"
-  twitch: LucideTwitch",";;""
-  twitter: LucideTwitter,";";"
+  tv: "LucideTv",;"
+  twitch: LucideTwitch",""
+  twitter: LucideTwitter,"
   type: "LucideType,;"";
-  umbrella: "LucideUmbrella",;";"
-  underline: LucideUnderline",";;""
-  unlock: LucideUnlock,";";"
+  umbrella: "LucideUmbrella",;"
+  underline: LucideUnderline",""
+  unlock: LucideUnlock,"
   upload: "LucideUpload,;"";
-  'user-check': LucideUserCheck,;'
-  'user-minus': LucideUserMinus,;'
-  'user-plus': LucideUserPlus,;'
-  'user-x': LucideUserX,;'
-  'video-off': LucideVideoOff,;'
-  video: "LucideVideo",;";"
-  voicemail: LucideVoicemail",";;""
-  wallet: LucideWallet,";";"
-  'volume-1': LucideVolume1,;'
-  'volume-2': LucideVolume2,;'
-  'volume-x': LucideVolumeX,;'
+  'user-check': LucideUserCheck,'
+  'user-minus': LucideUserMinus,'
+  'user-plus': LucideUserPlus,'
+  'user-x': LucideUserX,'
+  'video-off': LucideVideoOff,'
+  video: "LucideVideo",;"
+  voicemail: LucideVoicemail",""
+  wallet: LucideWallet,"
+  'volume-1': LucideVolume1,'
+  'volume-2': LucideVolume2,'
+  'volume-x': LucideVolumeX,'
   volume: "LucideVolume,;"";
-  watch: "LucideWatch",;";"
-  'wifi-off': LucideWifiOff,;'
-  wifi: LucideWifi",";;""
-  wind: LucideWind,";";"
-  'x-circle': LucideXCircle,;'
-  'x-octagon': LucideXOctagon,;'
-  'x-square': LucideXSquare,;'
+  watch: "LucideWatch",;"
+  'wifi-off': LucideWifiOff,'
+  wifi: LucideWifi",""
+  wind: LucideWind,"
+  'x-circle': LucideXCircle,'
+  'x-octagon': LucideXOctagon,'
+  'x-square': LucideXSquare,'
   youtube: "LucideYoutube,;"";
-  'zap-off': LucideZapOff,;'
-  zap: "LucideZap",;";"
-  'zoom-in': LucideZoomIn,;'
+  'zap-off': LucideZapOff,'
+  zap: "LucideZap",;"
+  'zoom-in': LucideZoomIn,'
   'zoom-out': LucideZoomOut,'
 };
 
@@ -907,11 +907,11 @@ export const Icon: unknown React.FC<IconProps> = ({;
   name,;
   size = 24, // Default size;
   className,;
-  ...props;'
+  ...props'
 }) => {'
-  const LucideIconComponent: unknown = iconMap[name];
-;'
-  if (!LucideIconComponent) {;'
+  const const LucideIconComponent = iconMap[name];
+'
+  if (!LucideIconComponent) {'
     logWarn(`Icon ${name}" not found.`)`
     return null;
   };
@@ -921,5 +921,5 @@ export const Icon: unknown React.FC<IconProps> = ({;
 }"
 
 export default Icon; // Default export the Icon component;"";
-export const _Icons: unknown = iconMap; // Export the map if you need to refer to available icons;"";
+export const const _Icons = iconMap; // Export the map if you need to refer to available icons;"";
 """"

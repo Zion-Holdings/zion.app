@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react''
-import { useRouter } from 'next/router;'
-import { ThemeProvider } from './components/ThemeProvider;'
-import { WalletProvider } from './context/WalletContext;'
-import OfflineToast from './components/OfflineToast;'
-import InstallPrompt from './components/InstallPrompt;'
-import { SupportChatbot } from './components/SupportChatbot;'
-import RootErrorBoundary from './components/RootErrorBoundary;'
-import './App.css;'
+import { useRouter } from 'next/router'
+import { ThemeProvider } from './components/ThemeProvider'
+import { WalletProvider } from './context/WalletContext'
+import OfflineToast from './components/OfflineToast'
+import InstallPrompt from './components/InstallPrompt'
+import { SupportChatbot } from './components/SupportChatbot'
+import RootErrorBoundary from './components/RootErrorBoundary'
+import './App.css'
 '
-function ScrollToTop(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const router: unknown = useRouter();'
-  useEffect(() => {;'
+function ScrollToTop(): ;
+  const const router = useRouter()'
+  useEffect(() => {'
     window.scrollTo({ top: "0, behavior: 'smooth' })'
-  }, [router.pathname]);'
+  }, [router.pathname])'
   return null'
 };
-;'
-const App: unknown = ({ children "}: { children?: React.ReactNode }) => {";
+'
+const const App = ({ children "}: { children?: React.ReactNode }) => {";
   return (;
     <WalletProvider>;"
       <ThemeProvider defaultTheme="dark>

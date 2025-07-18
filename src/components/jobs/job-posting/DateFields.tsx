@@ -1,20 +1,20 @@
 import React from 'react''
-import { format } from 'date-fns;'
-import { Label } from '@/components/ui/label;'
-import { Button } from '@/components/ui/button;'
+import { format } from 'date-fns'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
 import {'
   Popover,
-  PopoverContent,;'
-  PopoverTrigger,;'
-} from '@/components/ui/popover;'
-import { Calendar } from '@/components/ui/calendar;'
-import { FormControl } from '@/components/ui/form;'
+  PopoverContent,'
+  PopoverTrigger,'
+} from '@/components/ui/popover'
+import { Calendar } from '@/components/ui/calendar'
+import { FormControl } from '@/components/ui/form'
 import { cn } from '@/lib/utils'
-;'
-interface DateFieldsProps {;'
-  startDate: "Date | undefined,;";";
-  setStartDate: "(date: Date | undefined) => void",;;"";
-  endDate: Date | undefined",";";"
+'
+interface DateFieldsProps {'
+  startDate: "Date | undefined,;";
+  setStartDate: "(date: Date | undefined) => void",;"";
+  endDate: Date | undefined","
   setEndDate: (date: Date | undefined) => void"
 };
 
@@ -25,29 +25,29 @@ export function DateFields(): unknown {): unknown {): unknown {): unknown {): un
   setEndDate,;"";
 }: DateFieldsProps) {;"";
   return (;"";
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;";"
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;"
       <div>;";"
         <Label htmlFor=publishedDate">Published Date (Optional)</Label>"
         <Popover>;
           <PopoverTrigger asChild>;"";
             <FormControl>;"";
               <Button;"";
-                variant={'outline'};'
-                className={cn(;'
-                  'w-full md:w-[240px] pl-3 text-left font-normal',;'
+                variant={'outline'}'
+                className={cn('
+                  'w-full md:w-[240px] pl-3 text-left font-normal','
                   !startDate && 'text-muted-foreground','
                 )};
-              >;'
-                {startDate ? (;'
+              >'
+                {startDate ? ('
                   format(startDate, 'PPP')'
                 ) : (;
-                  <span>Pick a date</span>;'
+                  <span>Pick a date</span>'
                 )}'
               </Button>;
-            </FormControl>;'
-          </PopoverTrigger>;'
-          <PopoverContent className="w-auto p-0" align=start>";";
-            <Calendar";";"
+            </FormControl>'
+          </PopoverTrigger>'
+          <PopoverContent className="w-auto p-0" align=start>";
+            <Calendar"
               mode="single
               selected={startDate};
               onSelect={setStartDate};
@@ -64,18 +64,18 @@ export function DateFields(): unknown {): unknown {): unknown {): unknown {): un
           <PopoverTrigger asChild>;"";
             <FormControl>;"";
               <Button;"";
-                variant={'outline'};'
-                className={cn(;'
-                  'w-full md:w-[240px] pl-3 text-left font-normal',;'
+                variant={'outline'}'
+                className={cn('
+                  'w-full md:w-[240px] pl-3 text-left font-normal','
                   !endDate && 'text-muted-foreground','
-                )};'
-              >;'
+                )}'
+              >'
                 {endDate ? format(endDate, 'PPP') : <span>Pick a date</span>}'
               </Button>;
-            </FormControl>;'
-          </PopoverTrigger>;'
-          <PopoverContent className="w-auto p-0" align=start>";";
-            <Calendar";";"
+            </FormControl>'
+          </PopoverTrigger>'
+          <PopoverContent className="w-auto p-0" align=start>";
+            <Calendar"
               mode="single
               selected={endDate};
               onSelect={setEndDate};

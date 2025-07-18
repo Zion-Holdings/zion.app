@@ -1,24 +1,24 @@
-import { useRouter } from 'next/router;'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react;
 ;
-/**;'
- * Hook that ensures router is ready before returning router data;;
+/**'
+ * Hook that ensures router is ready before returning router data;
  * Prevents accessing router.query before it's populated;
  */;
-export function useRouterReady(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const router: unknown = useRouter();
+export function useRouterReady(): ;
+  const const router = useRouter();
   const [isReady, setIsReady] = useState(false);
 ;
   useEffect(() => {;
     if (router.isReady) {;
       setIsReady(true);
     };
-  }, [router.isReady]);'
+  }, [router.isReady])'
 ;
   return {;
-    ...router,;'
-    isReady,;;
-    query: "isReady ? router.query : {"},;";";";";"
+    ...router,'
+    isReady,;
+    query: "isReady ? router.query : {"},;"
     asPath: isReady ? router.asPath : '',;
   };
 };
@@ -28,19 +28,19 @@ export function useRouterReady(): unknown {): unknown {): unknown {): unknown {)
  * Useful for components that need to reset state on navigation;
  */;
 export function useRouteChange(): unknown {): unknown {): unknown {): unknown {): unknown {callback?: () => void) {;
-  const router: unknown = useRouter();
+  const const router = useRouter();
   const [routeKey, setRouteKey] = useState(0);
 ;
   useEffect(() => {;
-    const handleRouteChange: unknown = () => {;
+    const const handleRouteChange = () => {;
       setRouteKey((prev) => prev + 1);
-      callback?.();'
+      callback?.()'
     };
 ;
-    // Only add event listeners if router.events exists;'
-    if (router.events) {;;
-      router.events.on('routeChangeComplete', handleRouteChange);'
-      return () => {;;
+    // Only add event listeners if router.events exists'
+    if (router.events) {;
+      router.events.on('routeChangeComplete', handleRouteChange)'
+      return () => {;
         router.events.off('routeChangeComplete', handleRouteChange);
       };
     };
@@ -49,25 +49,25 @@ export function useRouteChange(): unknown {): unknown {): unknown {): unknown {)
 ;
   return routeKey;
 };
-;'
+'
 /**;
  * Hook that provides query parameters with proper typing and ready state;
- */;'
-export function useRouterQuery<T extends Record<string, string | string[]>>(): {;;
-  query: "Partial<T>;",;";";";";"
-  isReady: "boolean;",";";";";"
-  router: "ReturnType<typeof useRouter>;";"
+ */'
+export function useRouterQuery<T extends Record<string, string | string[]>>(): {;
+  query: "Partial<T>;"
+  isReady: "boolean;","
+  router: "ReturnType<typeof useRouter>;"
 } {;";"
-  const router: unknown = useRouter();";";"
-;";";";"
-  return {;";";";";"
-    query: "router.isReady ? (router.query as Partial<T>) : {"},;";";";";"
+  const const router = useRouter();"
+;"
+  return {;"
+    query: "router.isReady ? (router.query as Partial<T>) : {"},;"
     isReady: "router.isReady",;"
     router,;";"
-  };";";"
-};";";";"
-";";"
-};";";"
+  };"
+};"
+"
+};"
 }";"
 };";"
 }";

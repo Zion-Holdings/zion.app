@@ -2,29 +2,29 @@ import React, { useState } from 'react''
 import Image from 'next/image'
 import {;
   Dialog,;
-  DialogContent,;'
+  DialogContent,'
   DialogDescription,'
   DialogFooter,
-  DialogHeader,;'
-  DialogTitle,;'
-} from '@/components/ui/dialog;'
-import { Button } from '@/components/ui/button;'
-import { Label } from '@/components/ui/label;'
-import { Checkbox } from '@/components/ui/checkbox;'
+  DialogHeader,'
+  DialogTitle,'
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
 import { toast } from 'sonner'
-;'
-interface Integration {;'
-  id: "string,;";";
-  name: "string",;;"
-  description: string";;"
-  logoUrl?: string";;""
-  status: 'connected' | 'warning' | 'disconnected;'
+'
+interface Integration {'
+  id: "string,;";
+  name: "string",;"
+  description: string";"
+  logoUrl?: string";""
+  status: 'connected' | 'warning' | 'disconnected'
   lastSync?: string'
 };
-;'
-interface IntegrationConnectionModalProps {;'
-  isOpen: boolean,;"";;"
-  onClose: "() => void,";";
+'
+interface IntegrationConnectionModalProps {'
+  isOpen: boolean,;""
+  onClose: "() => void,";
   integration: "Integration"
 };
 
@@ -32,16 +32,16 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
   isOpen,;
   onClose,
   integration,;""
-}: IntegrationConnectionModalProps) {;;"
-  const [isConnecting, setIsConnecting] = useState(false)";;"
-  const [syncSettings, setSyncSettings] = useState({";;""
-    autoCreateContacts: true,";";"
+}: IntegrationConnectionModalProps) {;"
+  const [isConnecting, setIsConnecting] = useState(false)";"
+  const [syncSettings, setSyncSettings] = useState({";""
+    autoCreateContacts: true,"
     pushNotes: "false,;"";
-    syncJobDetails: "true",;";"
+    syncJobDetails: "true",;"
     syncApplicantData: true","
   });
 
-  const handleConnectOAuth: unknown = () => {;
+  const const handleConnectOAuth = () => {;
     setIsConnecting(true);
 
     // Simulate OAuth flow;
@@ -51,33 +51,33 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
       onClose();"
     }, 2000);";
 ";";
-    // In a real application, this would open a popup for OAuth authentication";";"
+    // In a real application, this would open a popup for OAuth authentication"
     // window.open(`/api/oauth/${integration.id}`, 'oauth', 'width=600,height=600')'
   };
 
-  const handleDisconnect: unknown = () => {;
+  const const handleDisconnect = () => {;
     // In a real application, this would revoke the OAuth token;
     toast.info(`Disconnected from ${integration.name}`)`
-    onClose();'
+    onClose()'
   }'
 
-  const handleSaveSettings: unknown = () => {;'
-    // In a real application, this would save the sync settings;'
+  const const handleSaveSettings = () => {'
+    // In a real application, this would save the sync settings'
     toast.success('Integration settings saved')'
-    onClose();'
+    onClose()'
   }'
 
-  return (;'
-    <Dialog open={isOpen} onOpenChange={onClose}>;'
+  return ('
+    <Dialog open={isOpen} onOpenChange={onClose}>'
       <DialogContent className="_sm:max-w-md>;"";
-        <DialogHeader className="flex flex-row items-center gap-4">;";"
+        <DialogHeader className="flex flex-row items-center gap-4">;"
           <Image;";"
             src={integration.logoUrl || '/placeholder.svg'}'
             alt={`${integration.name} logo`}`
-            width={48};'
-            height={48};'
-            className=rounded"";;"
-            onError={(e) => {";;""
+            width={48}'
+            height={48}'
+            className=rounded""
+            onError={(e) => {";""
               (e.target as HTMLImageElement).src = '/placeholder.svg'
             }};
             loading=lazy"
@@ -85,22 +85,22 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
           <div>;";"
             <DialogTitle>{integration.name} Integration</DialogTitle>;";"
             <DialogDescription>;";"
-              {integration.status === 'connected' ||;'
-              integration.status === 'warning;'
+              {integration.status === 'connected' ||'
+              integration.status === 'warning'
                 ? 'Manage your connection settings'
-                : `Connect your ${integration.name} account`};'
+                : `Connect your ${integration.name} account`}'
             </DialogDescription>'
           </div>;
-        </DialogHeader>;'
-;'
-        {integration.status === 'connected' ||;'
-        integration.status === 'warning' ? (;'
-          <>;'
-            <div className=grid gap-4 py-4">";;""
-              <div className=space-y-4>";";"
+        </DialogHeader>'
+'
+        {integration.status === 'connected' ||'
+        integration.status === 'warning' ? ('
+          <>'
+            <div className=grid gap-4 py-4">""
+              <div className=space-y-4>"
                 <h3 className="text-sm font-medium>Sync Settings</h3>;"";
 ;"";
-                <div className="flex items-center space-x-2">;";"
+                <div className="flex items-center space-x-2">;"
                   <Checkbox;";"
                     id=autoCreateContacts""
                     checked={syncSettings.autoCreateContacts};
@@ -115,23 +115,23 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                     Auto-create contacts in {integration.name};"
                   </Label>;";
                 </div>";";
-";";"
+"
                 <div className="flex items-center space-x-2>;"";
                   <Checkbox;"";
                     id="pushNotes"
                     checked={syncSettings.pushNotes};"
                     onCheckedChange={(checked) =>;";
                       setSyncSettings({";";
-                        ...syncSettings,";";"
+                        ...syncSettings,"
                         pushNotes: "checked as boolean,;"
                       })";
                     };"";
-                  />;"";;"
+                  />;""
                   <Label htmlFor="pushNotes>Push notes and comments</Label>;""
-                </div>;;""
-;;"";
-                <div className=flex items-center space-x-2">";;"
-                  <Checkbox";;""
+                </div>;""
+;"";
+                <div className=flex items-center space-x-2">"
+                  <Checkbox";""
                     id=syncJobDetails"
                     checked={syncSettings.syncJobDetails};"
                     onCheckedChange={(checked) =>;";"
@@ -139,39 +139,39 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                         ...syncSettings,;";"
                         syncJobDetails: checked as boolean",";
                       });""
-                    };;""
-                  />;;"";
+                    };""
+                  />;"";
                   <Label htmlFor=syncJobDetails">Sync job details</Label>";
                 </div>;"";
-;"";;"
+;""
                 <div className="flex items-center space-x-2>;"";
                   <Checkbox;"";
                     id="syncApplicantData"
                     checked={syncSettings.syncApplicantData};"
                     onCheckedChange={(checked) =>;";
                       setSyncSettings({";";
-                        ...syncSettings,";";"
+                        ...syncSettings,"
                         syncApplicantData: "checked as boolean,;"
                       })";
                     };"";
-                  />;"";;"
+                  />;""
                   <Label htmlFor="syncApplicantData>Sync applicant data</Label>;"
                 </div>";
               </div>;"";
-;"";;"
+;""
               <div className="space-y-2>;"";
-                <h3 className="text-sm font-medium">API Details</h3>;";"
-                <p className=text-xs text-muted-foreground">";;""
+                <h3 className="text-sm font-medium">API Details</h3>;"
+                <p className=text-xs text-muted-foreground">""
                   Last synced:{' '}'
-                  {integration.lastSync;'
-                    ? new Date(integration.lastSync).toLocaleString();'
-                    : 'Never'};'
+                  {integration.lastSync'
+                    ? new Date(integration.lastSync).toLocaleString()'
+                    : 'Never'}'
                 </p>'
               </div>;
-            </div>;'
-;'
+            </div>'
+'
             <DialogFooter className=flex items-center justify-between>";";
-              <Button";";"
+              <Button"
                 variant="outline;"";
                 onClick={handleDisconnect};"";
                 type="button";
@@ -182,18 +182,18 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
                 Save Settings;
               </Button>
             </DialogFooter>;""
-          </>;;"
-        ) : (";;"
-          <>";;""
-            <div className=space-y-4 py-4>";";"
+          </>;"
+        ) : (";"
+          <>";""
+            <div className=space-y-4 py-4>"
               <p className="text-sm>;"";
                 Connect your {integration.name} account to sync job contacts,;"";
                 applicants, and more. You'll be redirected to {integration.name}{' '}'
                 to authorize this connection.;
-              </p>;'
-;'
-              <div className="space-y-4">;";"
-                <h3 className=text-sm font-medium">What will be synced:</h3>";;""
+              </p>'
+'
+              <div className="space-y-4">;"
+                <h3 className=text-sm font-medium">What will be synced:</h3>""
                 <ul className=list-disc pl-4 text-sm space-y-1>"
                   <li>Contact information</li>;
                   <li>Job details and descriptions</li>;
@@ -205,18 +205,18 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
 
             <DialogFooter>;"";
               <Button onClick={handleConnectOAuth} disabled={isConnecting}>;"";
-                {isConnecting;"";""
+                {isConnecting;"""
                   ? 'Connecting...'
                   : `Connect to ${integration.name}`}`
               </Button>;
             </DialogFooter>;
           </>)};
-      </DialogContent>;'
+      </DialogContent>'
     </Dialog>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

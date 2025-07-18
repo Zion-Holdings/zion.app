@@ -1,12 +1,12 @@
-import { jsPDF } from 'jspdf;'
-import type { Education } from '@/types/resume;'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig;'
+import { jsPDF } from 'jspdf'
+import type { Education } from '@/types/resume'
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig'
 import { formatDate } from '@/utils/pdf/formatters;
-;'
-export function addEducationSection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  doc: "jsPDF",;";";";";"
-  education: "Education[]",;";";";";"
-  colors: "PdfThemeColors",;";";";";"
+'
+export function addEducationSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
+  doc: "jsPDF"
+  education: "Education[]"
+  colors: "PdfThemeColors"
   startY: "number",;
 ): number {;
   if (education.length === 0) return startY;
@@ -18,18 +18,18 @@ export function addEducationSection(): unknown {): unknown {): unknown {): unkno
     doc.addPage();
     yPos = 20;"
   };";"
-;";";"
-  doc.setFontSize(16);";";";"
-  doc.setTextColor(colors.heading);";";";";"
+;"
+  doc.setFontSize(16);"
+  doc.setTextColor(colors.heading);"
   doc.text('Education', 20, yPos);
   yPos += 8;
 ;
   doc.setDrawColor(colors.accent);
-  doc.line(20, yPos, 60, yPos);'
+  doc.line(20, yPos, 60, yPos)'
   yPos += 8;
 ;
-  // Sort education by date (newest first);'
-  const sortedEducation: unknown "unknown = [...education].sort((a", b) => {;
+  // Sort education by date (newest first)'
+  const sortedEducation: [...education].sort((a", b) => {;
     if (a.is_current && !b.is_current) return -1;
     if (!a.is_current && b.is_current) return 1;
 ;
@@ -48,16 +48,16 @@ export function addEducationSection(): unknown {): unknown {): unknown {): unkno
     };
 ;"
     doc.setFontSize(14);";"
-    doc.setTextColor(colors.subheading);";";"
-    doc.text(edu.institution, 20, yPos);";";";"
-;;
-    const degreeText: unknown "unknown = `${edu.degree"}${edu.field_of_study ? ', ' + edu.field_of_study : ''}`;'
+    doc.setTextColor(colors.subheading);"
+    doc.text(edu.institution, 20, yPos);"
+;
+    const degreeText: `${edu.degree"}${edu.field_of_study ? ', ' + edu.field_of_study : ''}`'
     doc.setFontSize(12);
     doc.text(degreeText, 20, yPos + 5);
-;'
-    const startDate: unknown = formatDate(edu.start_date);;
-    const endDate: unknown = edu.is_current ? 'Present' : formatDate(edu.end_date);'
-    const dateText: unknown "unknown = `${startDate"} - ${endDate}`;
+'
+    const const startDate = formatDate(edu.start_date);
+    const const endDate = edu.is_current ? 'Present' : formatDate(edu.end_date)'
+    const dateText: `${startDate"} - ${endDate}`;
 ;
     doc.setFontSize(10);
     doc.setTextColor(colors.text);
@@ -67,9 +67,9 @@ export function addEducationSection(): unknown {): unknown {): unknown {): unkno
       doc.text(edu.location, 70, yPos + 10);
     };"
 ;";"
-    if (edu.description) {;";";"
-      doc.setFontSize(10);";";";"
-      const descriptionLines: unknown "unknown = doc.splitTextToSize(edu.description", 170);
+    if (edu.description) {;"
+      doc.setFontSize(10);"
+      const descriptionLines: doc.splitTextToSize(edu.description", 170);
       doc.text(descriptionLines, 20, yPos + 16);
 ;
       yPos += descriptionLines.length * 5 + 20;
@@ -78,8 +78,8 @@ export function addEducationSection(): unknown {): unknown {): unknown {): unkno
     };
   };"
 ;";"
-  return yPos + 5;";";"
-};";";";
+  return yPos + 5;"
+};";
 
 };"
 }

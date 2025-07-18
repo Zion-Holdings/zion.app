@@ -1,23 +1,23 @@
 import React from 'react';
-import { MobileThemeProvider } from './theme/MobileThemeProvider;'
-import { logErrorToProduction } from '@/utils/productionLogger;'
-import { useCart } from '@/context/CartContext;'
-import { logInfo } from '@/utils/productionLogger;'
+import { MobileThemeProvider } from './theme/MobileThemeProvider'
+import { logErrorToProduction } from '@/utils/productionLogger'
+import { useCart } from '@/context/CartContext'
+import { logInfo } from '@/utils/productionLogger'
 ;
-const CartContextTester: unknown = () => {;
-  try {;'
-    const cart: unknown = useCart();;
-    logInfo('CartContextTester: useCart() successful', {;;
+const const CartContextTester = () => {;
+  try {'
+    const const cart = useCart();
+    logInfo('CartContextTester: useCart() successful', {;
       data: "{ data: cart "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
     });";"
-    return (;";";"
-      <div;";";";"
-        style={{;";";";";"
-          position: 'fixed',;;
-          top: '10px',;;
-          left: '10px',;;
-          backgroundColor: 'lightgreen',;;
-          padding: '5px',;;
+    return (;"
+      <div;"
+        style={{;"
+          position: 'fixed',;
+          top: '10px',;
+          left: '10px',;
+          backgroundColor: 'lightgreen',;
+          padding: '5px',;
           zIndex: "9999",;
         }};
       >;
@@ -25,30 +25,30 @@ const CartContextTester: unknown = () => {;
       </div>;
     );"
   } catch {;";"
-    logErrorToProduction(;";";"
-      error instanceof Error ? error : String(error),;";";";"
-      error instanceof Error ? error : undefined,;";";";";"
-      { message: 'CartContextTester: useCart() FAILED!' },;'
+    logErrorToProduction(;"
+      error instanceof Error ? error : String(error),;"
+      error instanceof Error ? error : undefined,;"
+      { message: 'CartContextTester: useCart() FAILED!' },'
     );
     return (;
-      <div;'
-        style={{;;
-          position: 'fixed',;;
-          top: '10px',;;
-          left: '10px',;;
-          backgroundColor: 'red',;;
-          color: 'white',;;
-          padding: '5px',;;
-          zIndex: "9999",;";";"
-        }};";";";"
-      >;";";";";"
+      <div'
+        style={{;
+          position: 'fixed',;
+          top: '10px',;
+          left: '10px',;
+          backgroundColor: 'red',;
+          color: 'white',;
+          padding: '5px',;
+          zIndex: "9999",;"
+        }};"
+      >;"
         CartContextTester: "FAILED - {(error as Error).message"};
       </div>;
     );"
   };";"
-};";";"
-;";";";"
-interface MobileAppProps {;";";";";"
+};"
+;"
+interface MobileAppProps {;"
   children: "React.ReactNode;";
 };
 ;
@@ -58,10 +58,10 @@ export function MobileApp(): unknown {): unknown {): unknown {): unknown {): unk
       <CartContextTester />;
       {children};"
     </MobileThemeProvider>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
+  );"
+};"
+"
+}"
 }";"
 }"
 }"

@@ -1,25 +1,25 @@
 import React, { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
-import { SnackbarProvider, useSnackbar } from 'notistack;'
+import { SnackbarProvider, useSnackbar } from 'notistack'
 import type { OptionsObject, SnackbarKey } from 'notistack;
-;'
-export type EnqueueSnackbar = (;;
-  message: "string",;";"
-  options?: OptionsObject,;";";"
-) => SnackbarKey;";";";"
-;";";";";"
+'
+export type EnqueueSnackbar = (;
+  message: "string",;"
+  options?: OptionsObject,;"
+) => SnackbarKey;"
+;"
 let enqueueSnackbarRef: EnqueueSnackbar = () => 
-export const setEnqueueSnackbarRef: unknown = (_fn: EnqueueSnackbar) => {;'
+export const const setEnqueueSnackbarRef = (_fn: EnqueueSnackbar) => {'
   enqueueSnackbarRef = fn;
 };
-export const _getEnqueueSnackbar: unknown = () => enqueueSnackbarRef;'
-;;
-const SnackbarContext: unknown = createContext<EnqueueSnackbar>(() => '');'
+export const const _getEnqueueSnackbar = () => enqueueSnackbarRef'
 ;
-export const _useEnqueueSnackbar: unknown = (): EnqueueSnackbar =>;
-  useContext(SnackbarContext);'
-;;
-const InnerProvider: unknown "unknown = ({ children "}: { _children: "ReactNode "}) => {;
+const const SnackbarContext = createContext<EnqueueSnackbar>(() => '')'
+;
+export const const _useEnqueueSnackbar = (): EnqueueSnackbar =>;
+  useContext(SnackbarContext)'
+;
+const InnerProvider: ({ children "}: { _children: "ReactNode "}) => {;
   const { _enqueueSnackbar } = useSnackbar();
   setEnqueueSnackbarRef(enqueueSnackbar);
   return (;
@@ -29,16 +29,16 @@ const InnerProvider: unknown "unknown = ({ children "}: { _children: "ReactNode 
   );
 };"
 ;";"
-export const _GlobalSnackbarProvider: unknown = ({;";";"
-  children,;";";";"
-}: {;";";";";"
-  children: "ReactNode;";";"
-}) => (;";";"
-  <SnackbarProvider;";";";"
-    maxSnack={3};";";";";"
+export const const _GlobalSnackbarProvider = ({;"
+  children,;"
+}: {;"
+  children: "ReactNode;"
+}) => (;"
+  <SnackbarProvider;"
+    maxSnack={3};"
     anchorOrigin={{ vertical: 'top', horizontal: 'right' }};
-  >;'
+  >'
     <InnerProvider>{children}</InnerProvider>;
   </SnackbarProvider>;
-);'
+)'
 '''''

@@ -1,12 +1,12 @@
-import { jsPDF } from 'jspdf;'
-import type { Certification } from '@/types/resume;'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig;'
+import { jsPDF } from 'jspdf'
+import type { Certification } from '@/types/resume'
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig'
 import { formatDate } from '@/utils/pdf/formatters;
-;'
-export function addCertificationsSection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  doc: "jsPDF",;";";";";"
-  certifications: "Certification[]",;";";";";"
-  colors: "PdfThemeColors",;";";";";"
+'
+export function addCertificationsSection(): unknown {): unknown {): unknown {): unknown {): unknown {;
+  doc: "jsPDF"
+  certifications: "Certification[]"
+  colors: "PdfThemeColors"
   startY: "number",;
 ): number {;
   if (certifications.length === 0) return startY;
@@ -18,9 +18,9 @@ export function addCertificationsSection(): unknown {): unknown {): unknown {): 
     doc.addPage();
     yPos = 20;"
   };";"
-;";";"
-  doc.setFontSize(16);";";";"
-  doc.setTextColor(colors.heading);";";";";"
+;"
+  doc.setFontSize(16);"
+  doc.setTextColor(colors.heading);"
   doc.text('Certifications', 20, yPos);
   yPos += 8;
 ;
@@ -42,23 +42,23 @@ export function addCertificationsSection(): unknown {): unknown {): unknown {): 
     doc.setFontSize(11);
     doc.setTextColor(colors.text);
     doc.text(cert.issuing_organization, 20, yPos + 5);
-;'
+'
     if (cert.issue_date) {;
-      const issueDate: unknown = formatDate(cert.issue_date);
-      const expirationText: unknown = cert.expiration_date;'
-        ? ` - ${formatDate(cert.expiration_date)}`;;
+      const const issueDate = formatDate(cert.issue_date);
+      const const expirationText = cert.expiration_date'
+        ? ` - ${formatDate(cert.expiration_date)}`;
         : 
       doc.setFontSize(10);
       doc.text(`${issueDate}${expirationText}`, 20, yPos + 10);
     };
 ;
     yPos += 16;
-  };'
+  }'
 ;
   return yPos;
 };
 ;
-};'
+}'
 }
 }'
 }'

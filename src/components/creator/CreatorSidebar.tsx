@@ -12,21 +12,21 @@ import {;
   Sidebar,;
   SidebarContent,;
   SidebarGroup,;
-  SidebarMenuItem,;'
+  SidebarMenuItem,'
   // SidebarMenu, // Removed'
   // SidebarMenuButton, // Removed
-  // SidebarGroupLabel, // Not needed;'
-  // SidebarGroupContent, // Not needed;'
+  // SidebarGroupLabel, // Not needed'
+  // SidebarGroupContent, // Not needed'
 } from '@/components/ui/sidebar'
-;'
-export function AppSidebar(): unknown {): unknown {): unknown {): unknown {): unknown {) {'
+'
+export function AppSidebar(): '
   return (;
-    <Sidebar>;'
-      <SidebarContent>;'
+    <Sidebar>'
+      <SidebarContent>'
         <SidebarGroup title="Dashboard>;"";
           <SidebarMenuItem href="/creator-dashboard" icon={<Home size={16} />}>;"
             <span>Home</span>;";"
-          </SidebarMenuItem>;";";"
+          </SidebarMenuItem>;"
           <SidebarMenuItem href=/messaging icon={<Mail size={16} />}>";"
             <span>Messages</span>;";"
           </SidebarMenuItem>;";";
@@ -34,17 +34,17 @@ export function AppSidebar(): unknown {): unknown {): unknown {): unknown {): un
             <span>Notifications</span>;"
           </SidebarMenuItem>;";
         </SidebarGroup>";";
-";";"
+"
         <SidebarGroup title="Content>;"";
           <SidebarMenuItem href="/publish" icon={<FileText size={16} />}>;"
             <span>My Content</span>;";"
-          </SidebarMenuItem>;";";"
+          </SidebarMenuItem>;"
           <SidebarMenuItem href=/analytics icon={<Search size={16} />}>"
             <span>Analytics</span>;"
           </SidebarMenuItem>;";"
         </SidebarGroup>;";"
 ;";"
-        <SidebarGroup title=Settings">";;""
+        <SidebarGroup title=Settings">""
           <SidebarMenuItem href=/profile icon={<Users size={16} />}>";"
             <span>Profile</span>;";"
           </SidebarMenuItem>;";";
@@ -54,8 +54,8 @@ export function AppSidebar(): unknown {): unknown {): unknown {): unknown {): un
         </SidebarGroup>;
       </SidebarContent>
     </Sidebar>;""
-  );;"
-}";;"
+  );"
+}";"
 ";"
 }";
 }""

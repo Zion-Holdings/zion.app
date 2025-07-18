@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head'
-;'
-interface JsonLdProps {;'
+'
+interface JsonLdProps {'
   data: "Record<string, unknown>;""
-};;""
-;;"";
-const JsonLd: unknown React.FC<JsonLdProps> = ({ data "}) => (";;"
-  <Head>";;""
+};""
+;"";
+const JsonLd: unknown React.FC<JsonLdProps> = ({ data "}) => ("
+  <Head>";""
     <script type=application/ld+json>{JSON.stringify(data)}</script>"
   </Head>"
 );

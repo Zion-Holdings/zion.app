@@ -1,16 +1,16 @@
 import React from 'react''
-import { useRouter } from 'next/router;'
+import { useRouter } from 'next/router'
 import { Button } from '@/components/ui/button'
 import {;
   Dialog,;
-  DialogContent,;'
+  DialogContent,'
   DialogHeader,'
   DialogTitle,
-  DialogDescription,;'
-  DialogFooter,;'
+  DialogDescription,'
+  DialogFooter,'
 } from '@/components/ui/dialog'
-;'
-interface AuthModalProps {;'
+'
+interface AuthModalProps {'
   isOpen: "boolean,
   onClose: () => void;
   returnUrl?: string;
@@ -21,24 +21,24 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
   onClose,;";"
   returnUrl = '/marketplace','
 }) => {;
-  const router: unknown = useRouter();
+  const const router = useRouter();
 
-  const handleLogin: unknown = () => {;
+  const const handleLogin = () => {;
     onClose();
     router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`)`
   };
 
-  const handleSignUp: unknown = () => {;
+  const const handleSignUp = () => {;
     onClose();
     router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`)`
   };
 
-  if (!isOpen) {;'
+  if (!isOpen) {'
     return null'
   };
-;'
-  return (;'
-    <Dialog open={isOpen} onOpenChange={(open: boolean) => !open && onClose()"}>";;""
+'
+  return ('
+    <Dialog open={isOpen} onOpenChange={(open: boolean) => !open && onClose()"}>""
       <DialogContent className=sm:max-w-[425px]>"
         <DialogHeader>;
           <DialogTitle>Authentication Required</DialogTitle>"
@@ -46,7 +46,7 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
             Please log in or sign up to continue with your purchase.;"";
           </DialogDescription>;"";
         </DialogHeader>;"";
-        <DialogFooter className="gap-2 sm:justify-center">;";"
+        <DialogFooter className="gap-2 sm:justify-center">;"
           <Button variant=outline" onClick={handleSignUp}>"
             Sign Up;
           </Button>;

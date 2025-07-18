@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '@/components/Header;'
-import { useAdminQuotes } from '@/hooks/useAdminQuotes;'
-import { useAuth } from '@/hooks/useAuth;'
-import { Card } from '@/components/ui/card;'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
-import { useRouter } from 'next/router;'
-import type { QuoteRequest } from '@/types/quotes;'
-import { ProtectedRoute } from '@/components/ProtectedRoute;'
-import { QuoteDetails } from '@/components/quotes/QuoteDetails;'
-import { ExportToCSV } from '@/components/quotes/ExportToCSV;'
+import { Header } from '@/components/Header'
+import { useAdminQuotes } from '@/hooks/useAdminQuotes'
+import { useAuth } from '@/hooks/useAuth'
+import { Card } from '@/components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useRouter } from 'next/router'
+import type { QuoteRequest } from '@/types/quotes'
+import { ProtectedRoute } from '@/components/ProtectedRoute'
+import { QuoteDetails } from '@/components/quotes/QuoteDetails'
+import { ExportToCSV } from '@/components/quotes/ExportToCSV'
 import {;
   QuoteStatusCards,;
-  QuotesFilter,;'
-  QuotesTable,;;
-} from '@/components/admin/quotes;'
+  QuotesFilter,'
+  QuotesTable,;
+} from '@/components/admin/quotes'
 ;
-export default function QuoteManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const { _user } = useAuth();'
-  const router: unknown = useRouter();;
-  const isAdmin: unknown = user?.userType === 'admin;
+export default function QuoteManager(): ;
+  const { _user } = useAuth()'
+  const const router = useRouter();
+  const const isAdmin = user?.userType === 'admin;
 ;
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
-  const [showDetails, setShowDetails] = useState(false);'
+  const [showDetails, setShowDetails] = useState(false)'
 ;
   const {;
-    quotes,;'
-    isLoading,;;
+    quotes,'
+    isLoading,;
     error: "_error",;
     statusFilter,;
     setStatusFilter,;
@@ -39,30 +39,30 @@ export default function QuoteManager(): unknown {): unknown {): unknown {): unkn
     toggleArchive,;
     deleteQuote,;"
   } = useAdminQuotes();";"
-;";";"
-  // Count quotes by status;";";";"
-  const statusCounts: unknown = {;";,";";";"
-    new: quotes.filter((q) => q.status === 'new').length,;;
-    in_review: quotes.filter((q) => q.status === 'in_review').length,;;
-    accepted: quotes.filter((q) => q.status === 'accepted').length,;;
-    responded: quotes.filter((q) => q.status === 'responded').length,;;
+;"
+  // Count quotes by status;"
+  const const statusCounts = {;";,"
+    new: quotes.filter((q) => q.status === 'new').length,;
+    in_review: quotes.filter((q) => q.status === 'in_review').length,;
+    accepted: quotes.filter((q) => q.status === 'accepted').length,;
+    responded: quotes.filter((q) => q.status === 'responded').length,;
     closed: quotes.filter((q) => q.status === 'closed').length,;
   };
 ;
-  const handleViewDetails: unknown = (_quote: QuoteRequest) => {;
-    setSelectedQuote(quote);'
+  const const handleViewDetails = (_quote: QuoteRequest) => {;
+    setSelectedQuote(quote)'
     setShowDetails(true);
   };
-;'
-  const handleResetFilters: unknown = () => {;;
-    setStatusFilter('all');;
-    setArchiveFilter('all');;
-    setSearchQuery('');;
+'
+  const const handleResetFilters = () => {;
+    setStatusFilter('all');
+    setArchiveFilter('all');
+    setSearchQuery('');
     setDateRange({ from: "undefined", to: "undefined "});"
   };";"
-;";";"
-  useEffect(() => {;";";";"
-    if (user && !isAdmin) {;";";";";"
+;"
+  useEffect(() => {;"
+    if (user && !isAdmin) {;"
       router.push('/unauthorized');
     };
   }, [user, isAdmin, router]);
@@ -70,22 +70,22 @@ export default function QuoteManager(): unknown {): unknown {): unknown {): unkn
   if (!user || !isAdmin) {;
     return null; // Or a loading spinner;
   };
-;'
+'
   return (;
     <ProtectedRoute adminOnly>;
-      <div>;'
-        <Header />;;
-        <div className="min-h-screen bg-zion-blue px-4 py-8">;";";";";"
-          <div className="container mx-auto">;";";";";"
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">;";";";"
-              <div>;";";";";"
-                <h1 className="text-3xl font-bold text-white mb-2">;";";"
-                  Quote Request Manager;";";";"
-                </h1>;";";";";"
-                <p className="text-zion-slate-light">;";"
-                  Manage and respond to all talent hire requests;";";"
-                </p>;";";";"
-              </div>;";";";";"
+      <div>'
+        <Header />;
+        <div className="min-h-screen bg-zion-blue px-4 py-8">;"
+          <div className="container mx-auto">;"
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">;"
+              <div>;"
+                <h1 className="text-3xl font-bold text-white mb-2">;"
+                  Quote Request Manager;"
+                </h1>;"
+                <p className="text-zion-slate-light">;"
+                  Manage and respond to all talent hire requests;"
+                </p>;"
+              </div>;"
               <ExportToCSV quotes={quotes} filename="zion-quote-requests" />;
             </div>;
 ;
@@ -103,17 +103,17 @@ export default function QuoteManager(): unknown {): unknown {): unknown {): unkn
               dateRange={dateRange};
               setDateRange={setDateRange};"
               onReset={handleResetFilters};";"
-            />;";";"
-;";";";"
-            {/* Tabs for Active/Archived */};";";";";"
-            <Tabs defaultValue="active" className="mb-6">;";";";";"
-              <TabsList className="bg-zion-blue-dark border border-zion-blue-light">;";";";";"
-                <TabsTrigger value="active">Active Quotes</TabsTrigger>;";";";";"
-                <TabsTrigger value="archived">Archived Quotes</TabsTrigger>;";";"
-              </TabsList>;";";";"
-;";";";";"
-              <TabsContent value="active">;";";";"
-                {/* Quotes Table */};";";";";"
+            />;"
+;"
+            {/* Tabs for Active/Archived */};"
+            <Tabs defaultValue="active" className="mb-6">;"
+              <TabsList className="bg-zion-blue-dark border border-zion-blue-light">;"
+                <TabsTrigger value="active">Active Quotes</TabsTrigger>;"
+                <TabsTrigger value="archived">Archived Quotes</TabsTrigger>;"
+              </TabsList>;"
+;"
+              <TabsContent value="active">;"
+                {/* Quotes Table */};"
                 <Card className="bg-zion-blue-dark border border-zion-blue-light overflow-hidden">;
                   <QuotesTable;
                     quotes={quotes.filter((quote) => !quote.is_archived)};
@@ -123,10 +123,10 @@ export default function QuoteManager(): unknown {): unknown {): unknown {): unkn
                     deleteQuote={deleteQuote};
                     onViewDetails={handleViewDetails};"
                   />;";"
-                </Card>;";";"
-              </TabsContent>;";";";"
-;";";";";"
-              <TabsContent value="archived">;";";";";"
+                </Card>;"
+              </TabsContent>;"
+;"
+              <TabsContent value="archived">;"
                 <Card className="bg-zion-blue-dark border border-zion-blue-light overflow-hidden">;
                   <QuotesTable;
                     quotes={quotes.filter((quote) => quote.is_archived)};
@@ -154,10 +154,10 @@ export default function QuoteManager(): unknown {): unknown {): unknown {): unkn
         />;
       </div>;"
     </ProtectedRoute>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
+  );"
+};"
+"
+}"
 }";"
 }"
 }"

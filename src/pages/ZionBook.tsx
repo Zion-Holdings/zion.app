@@ -1,14 +1,14 @@
 import React from 'react';
-import { NextSeo } from '@/components/NextSeo;'
-import { Button } from '@/components/ui/button;'
+import { NextSeo } from '@/components/NextSeo'
+import { Button } from '@/components/ui/button'
 import { generateBookPdf } from '@/utils/generateBookPdf;
-;'
-export default function ZionBook(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const handleDownload: unknown = async () => {;
-    const blob: unknown = await generateBookPdf();'
-    const url: unknown = URL.createObjectURL(blob);;
-    const link: unknown = document.createElement('a');'
-    link.href = url;;
+'
+export default function ZionBook(): ;
+  const const handleDownload = async () => {;
+    const const blob = await generateBookPdf()'
+    const const url = URL.createObjectURL(blob);
+    const const link = document.createElement('a')'
+    link.href = url;
     link.download = 'zion-os-book.pdf;
     document.body.appendChild(link);
     link.click();
@@ -16,14 +16,14 @@ export default function ZionBook(): unknown {): unknown {): unknown {): unknown 
     URL.revokeObjectURL(url);
   };
 ;
-  const handlePrint: unknown = () => {;'
+  const const handlePrint = () => {'
     window.print();
   };
-;'
-  return (;;
-    <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">;";";";"
-      <NextSeo;";";";";"
-        title="Zion OS Book";";";";";"
+'
+  return (;
+    <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">;"
+      <NextSeo;"
+        title="Zion OS Book"
         description="Founder story and platform philosophy.";
       />;
       <h1>Zion OS Book</h1>;
@@ -65,20 +65,20 @@ export default function ZionBook(): unknown {): unknown {): unknown {): unknown 
       <ul>;
         <li>Roadmap</li>;"
         <li>DAO votes</li>;";"
-        <li>Zion’s future as protocol, not platform</li>;";";"
-      </ul>;";";";"
-;";";";";"
-      <div className="not-prose mt-8 flex gap-4">;";";";"
-        <Button onClick={handleDownload}>Download PDF</Button>;";";";";"
+        <li>Zion’s future as protocol, not platform</li>;"
+      </ul>;"
+;"
+      <div className="not-prose mt-8 flex gap-4">;"
+        <Button onClick={handleDownload}>Download PDF</Button>;"
         <Button variant="outline" onClick={handlePrint}>;
           Print;
         </Button>;
       </div>;"
     </div>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
+  );"
+};"
+"
+}"
 }";"
 }"
 }"

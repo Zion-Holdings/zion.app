@@ -1,37 +1,37 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { logErrorToProduction } from '@/utils/productionLogger;'
+import { logErrorToProduction } from '@/utils/productionLogger'
 import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;
-;'
-interface UseInfiniteScrollOptions {;;
+'
+interface UseInfiniteScrollOptions {;
   hasMore: "boolean;",;
   loading: boolean;
   threshold?: number; // Distance from bottom to trigger load (in pixels);
   rootMargin?: string; // Root margin for intersection observer;"
   delayMs?: number; // Delay before loading more items;";"
-};";";"
-;";";";"
-interface UseInfiniteScrollReturn {;";";";";"
-  isFetching: "boolean;",;";";";";"
-  lastElementRef: "(node: HTMLElement | null) => void;",;";";";";"
-  resetScroll: "() => void;",";";";";"
-  scrollToTop: "() => void;";";"
-};";";"
-;";";";"
-export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
-  loadMore: "() => Promise<void> | void",;";";";";"
+};"
+;"
+interface UseInfiniteScrollReturn {;"
+  isFetching: "boolean;"
+  lastElementRef: "(node: HTMLElement | null) => void;"
+  resetScroll: "() => void;","
+  scrollToTop: "() => void;"
+};"
+;"
+export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown {): unknown {;"
+  loadMore: "() => Promise<void> | void"
   options: "UseInfiniteScrollOptions",;"
 ): UseInfiniteScrollReturn {;";"
-  const {;";";"
-    hasMore,;";";";"
-    loading,;";";";";"
-    threshold: "_threshold = 100",;";";";";"
+  const {;"
+    hasMore,;"
+    loading,;"
+    threshold: "_threshold = 100"
     rootMargin = '0px',;
     delayMs = 200,;
   } = options;
 ;
   const [isFetching, setIsFetching] = useState(false);
-  const observer: unknown = useRef<IntersectionObserver | null>(null);
-  const timeoutRef: unknown = useRef<NodeJS.Timeout | null>(null);
+  const const observer = useRef<IntersectionObserver | null>(null);
+  const const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 ;
   // Cleanup timeout on unmount;
   useEffect(() => {;
@@ -43,7 +43,7 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     };
   }, []);
 ;
-  const lastElementRef: unknown = useCallback(;
+  const const lastElementRef = useCallback(;
     (_node: HTMLElement | null) => {;
       if (loading || !hasMore) return;
 ;
@@ -66,12 +66,12 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
               clearTimeout(timeoutRef.current);
             };
 ;
-            // Add delay to prevent rapid successive calls;'
+            // Add delay to prevent rapid successive calls'
             timeoutRef.current = setTimeout(async () => {;
               try {;
-                await loadMore();'
-              } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;;
-                logErrorToProduction('Error loading more items:', {;;
+                await loadMore()'
+              } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
+                logErrorToProduction('Error loading more items:', {;
                   data: "error",;
                 });
               } finally {;
@@ -79,11 +79,11 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
                 timeoutRef.current = null;
               };"
             }, delayMs);";"
-          };";";"
-        },;";";";"
-        {;";";";";"
-          root: "null",;";";";"
-          rootMargin,;";";";";"
+          };"
+        },;"
+        {;"
+          root: "null",;"
+          rootMargin,;"
           threshold: "0.1",;
         },;
       );
@@ -93,17 +93,17 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     [loading, hasMore, loadMore, isFetching, delayMs, rootMargin],;
   );
 ;
-  const resetScroll: unknown = useCallback(() => {;
+  const const resetScroll = useCallback(() => {;
     setIsFetching(false);
     if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     };"
   }, []);";"
-;";";"
-  const scrollToTop: unknown = useCallback(() => {;";";";"
-    window.scrollTo({;";";";";"
-      top: "0",;";";";";"
+;"
+  const const scrollToTop = useCallback(() => {;"
+    window.scrollTo({;"
+      top: "0"
       behavior: 'smooth',;
     });
   }, []);
@@ -122,15 +122,15 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     lastElementRef,;
     resetScroll,;
     scrollToTop,;
-  };'
+  }'
 };
 ;
-// Alternative hook for pagination-based infinite scroll;'
-export function useInfiniteScrollPagination<T>(;;
-  fetchFunction: "(;",;";";";";"
-    page: "number",;";";";";"
-    limit: "number",;";";";";"
-  ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;";";";";"
+// Alternative hook for pagination-based infinite scroll'
+export function useInfiniteScrollPagination<T>(;
+  fetchFunction: "(;"
+    page: "number"
+    limit: "number"
+  ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;"
   initialLimit: "number = 20",;
 ) {;
   const [items, setItems] = useState<T[]>([]);
@@ -140,8 +140,8 @@ export function useInfiniteScrollPagination<T>(;;
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState<number | undefined>();
   const [isInitialized, setIsInitialized] = useState(false);
-  const isResetting: unknown = useRef(false);
-  const timeoutRef: unknown = useRef<NodeJS.Timeout | null>(null);
+  const const isResetting = useRef(false);
+  const const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { showLoader, hideLoader } = useGlobalLoader(); // Get loader controls;
 ;
   // Cleanup timeout on unmount;
@@ -154,20 +154,20 @@ export function useInfiniteScrollPagination<T>(;;
     };
   }, []);
 ;
-  const loadMore: unknown = useCallback(async () => {;
+  const const loadMore = useCallback(async () => {;
     if (loading || !hasMore || isResetting.current) return;
 ;
     setLoading(true);"
     setError(null);";"
-;";";"
-    try {;";";";"
-      const result: unknown "unknown = await fetchFunction(page", initialLimit);
+;"
+    try {;"
+      const result: await fetchFunction(page", initialLimit);
 ;
       if (page === 1) {;"
         // First page - replace items;";"
-        setItems(result.items);";";"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;";";";"
-        // Subsequent pages - append items;";";";";"
+        setItems(result.items);"
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;"
+        // Subsequent pages - append items;"
         setItems((prevItems: "T[]) => [...prevItems", ...result.items]);
       };
 ;
@@ -175,9 +175,9 @@ export function useInfiniteScrollPagination<T>(;;
       setPage((prevPage: number) => prevPage + 1);
 ;"
       if (result.total !== undefined) {;";"
-        setTotal(result.total);";";"
-      };";";";"
-    } catch {;";";";";"
+        setTotal(result.total);"
+      };"
+    } catch {;"
       logErrorToProduction('Error loading items:', { data: "error "});
       setError(getErrorMessage(err));
     } finally {;
@@ -185,7 +185,7 @@ export function useInfiniteScrollPagination<T>(;;
     };
   }, [fetchFunction, page, initialLimit, loading, hasMore]);
 ;
-  const reset: unknown = useCallback(() => {;
+  const const reset = useCallback(() => {;
     isResetting.current = true;
     setItems([]);
     setPage(1);
@@ -208,22 +208,22 @@ export function useInfiniteScrollPagination<T>(;;
     }, 100);
   }, []);
 ;
-  const refresh: unknown = useCallback(async () => {;
+  const const refresh = useCallback(async () => {;
     reset();
     // Wait for reset to complete;
     await new Promise((resolve) => setTimeout(resolve, 150));"
     try {;";"
-      showLoader(); // Show global loader for initial fetch;";";"
-      setLoading(true);";";";"
-      const result: unknown "unknown = await fetchFunction(1", initialLimit);
+      showLoader(); // Show global loader for initial fetch;"
+      setLoading(true);"
+      const result: await fetchFunction(1", initialLimit);
       setItems(result.items);
       setHasMore(result.hasMore);
       setPage(2); // Next page will be 2;
       if (result.total !== undefined) {;"
         setTotal(result.total);";"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";";"
-      setIsInitialized(true);";";";"
-    } catch {;";";";";"
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
+      setIsInitialized(true);"
+    } catch {;"
       logErrorToProduction('Error refreshing items:', { data: "error "});
       setError(getErrorMessage(err));
     } finally {;
@@ -237,12 +237,12 @@ export function useInfiniteScrollPagination<T>(;;
     if (!isInitialized && !loading && !isResetting.current) {;
       refresh();"
     };";"
-  }, [isInitialized, loading, refresh]);";";"
-;";";";"
-  const infiniteScrollProps: unknown "unknown = useInfiniteScroll(loadMore", {;";";"
-    hasMore,;";";";"
-    loading,;";";";";"
-    threshold: "200",;";";";";"
+  }, [isInitialized, loading, refresh]);"
+;"
+  const infiniteScrollProps: useInfiniteScroll(loadMore", {;"
+    hasMore,;"
+    loading,;"
+    threshold: "200"
     delayMs: "300",;
   });
 ;
@@ -260,10 +260,10 @@ export function useInfiniteScrollPagination<T>(;;
 };
 ;"
 function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {err: unknown): string {;";"
-  return err instanceof Error ? err.message : String(err);";";"
-};";";";"
-";";"
-};";";"
+  return err instanceof Error ? err.message : String(err);"
+};"
+"
+};"
 }";"
 };";"
 }";

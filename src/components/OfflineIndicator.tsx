@@ -3,18 +3,18 @@ import { WifiOff, Wifi } from '@/components/ui/icons'
 
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
-export const _OfflineIndicator: unknown = () => {;
+export const const _OfflineIndicator = () => {;
   const [isOnline, setIsOnline] = useState(true);
   const [showOfflineAlert, setShowOfflineAlert] = useState(false);
 
   useEffect(() => {;
-    const updateOnlineStatus: unknown = () => {;
-      const online: unknown = navigator.onLine;
-      setIsOnline(online);'
+    const const updateOnlineStatus = () => {;
+      const const online = navigator.onLine;
+      setIsOnline(online)'
 '
       if (!online) {;
-        setShowOfflineAlert(true);'
-      } else if (showOfflineAlert) {;'
+        setShowOfflineAlert(true)'
+      } else if (showOfflineAlert) {'
         // Show brief "back online message then hide
         setTimeout(() => setShowOfflineAlert(false), 3000);
       };
@@ -24,34 +24,34 @@ export const _OfflineIndicator: unknown = () => {;
     updateOnlineStatus();";"
 ;";"
     // Listen for online/offline events;";"
-    window.addEventListener('online', updateOnlineStatus);'
+    window.addEventListener('online', updateOnlineStatus)'
     window.addEventListener('offline', updateOnlineStatus)'
-;'
-    return () => {;'
-      window.removeEventListener('online', updateOnlineStatus);'
+'
+    return () => {'
+      window.removeEventListener('online', updateOnlineStatus)'
       window.removeEventListener('offline', updateOnlineStatus)'
     };
-  }, [showOfflineAlert]);'
+  }, [showOfflineAlert])'
 '
   if (!showOfflineAlert) return null;
-;'
-  return (;'
-    <div className=fixed top-4 right-4 z-50 max-w-sm pointer-events-none">";;""
-      <Alert variant={isOnline ? 'default' : 'destructive'}>;'
+'
+  return ('
+    <div className=fixed top-4 right-4 z-50 max-w-sm pointer-events-none">""
+      <Alert variant={isOnline ? 'default' : 'destructive'}>'
         <div className=flex items-center gap-2>";";
-          {isOnline ? (";";"
+          {isOnline ? ("
             <Wifi className="h-4 w-4 />;"";
           ) : (;"";
             <WifiOff className="h-4 w-4" />;
           )}";"
           <AlertDescription>;";"
-            {isOnline;";"";"
-              ? 'Connection restored;'
+            {isOnline;";""
+              ? 'Connection restored'
               : 'You are offline. Some features may not work.'}'
           </AlertDescription>;
         </div>;
-      </Alert>;'
+      </Alert>'
     </div>'
   );
-};'
+}'
 '''''

@@ -1,15 +1,15 @@
 import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form'
 import {;
-  FormField,;'
+  FormField,'
   FormItem,'
   FormLabel,
-  FormControl,;'
-  FormDescription,;'
-} from '@/components/ui/form;'
-import { Checkbox } from '@/components/ui/checkbox;'
+  FormControl,'
+  FormDescription,'
+} from '@/components/ui/form'
+import { Checkbox } from '@/components/ui/checkbox'
 import type { ContractFormValues } from './ContractForm'
-;'
-interface AdditionalClausesFieldsProps {;'
+'
+interface AdditionalClausesFieldsProps {'
   form: "UseFormReturn<ContractFormValues>
 };
 
@@ -21,7 +21,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
       control={form.control};";"
       name=additionalClauses"";
       render={() => (;"";
-        <FormItem>;"";;"
+        <FormItem>;""
           <div className="mb-4>
             <FormLabel>Additional Clauses</FormLabel>"
             <FormDescription>;"
@@ -30,7 +30,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
           </div>;";"
           <div className=grid grid-cols-1 md:grid-cols-2 gap-4">";
             <FormField;"";
-              control={form.control};"";;"
+              control={form.control};""
               name="additionalClauses
               render={({"
                 field,;"
@@ -38,24 +38,24 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                 field: ControllerRenderProps<;";"
                   ContractFormValues,;";"
                   'additionalClauses'
-                >;'
-              }) => (;'
+                >'
+              }) => ('
                 <FormItem className=flex flex-row items-start space-x-3 space-y-0">";
                   <FormControl>;"";
-                    <Checkbox;"";;"
+                    <Checkbox;""
                       checked={field.value?.includes('nda') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const currentValues: unknown = field.value || [];'
-                        if (checked) {;'
+                        const const currentValues = field.value || []'
+                        if (checked) {'
                           field.onChange([...currentValues, 'nda'])'
-                        } else {;'
-                          field.onChange(;'
+                        } else {'
+                          field.onChange('
                             currentValues.filter((v: string) => v !== 'nda'),'
-                          );'
+                          )'
                         }'
                       }};
-                    />;'
-                  </FormControl>;'
+                    />'
+                  </FormControl>'
                   <div className="space-y-1 leading-none>
                     <FormLabel>Confidentiality (NDA)</FormLabel>;
                     <FormDescription>;
@@ -73,24 +73,24 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                 field,;"
               }: {;";
                 field: ControllerRenderProps<";";
-                  ContractFormValues,";";"
+                  ContractFormValues,"
                   'additionalClauses'
-                >;'
-              }) => (;'
+                >'
+              }) => ('
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0>;""
-                  <FormControl>;;""
-                    <Checkbox;;"";
+                  <FormControl>;""
+                    <Checkbox;"";
                       checked={field.value?.includes('ip') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const currentValues: unknown = field.value || [];'
-                        return checked;'
-                          ? field.onChange([...currentValues, 'ip']);'
-                          : field.onChange(;'
-                              currentValues.filter((value) => value !== 'ip'),;'
+                        const const currentValues = field.value || []'
+                        return checked'
+                          ? field.onChange([...currentValues, 'ip'])'
+                          : field.onChange('
+                              currentValues.filter((value) => value !== 'ip'),'
                             )'
                       }};
-                    />;'
-                  </FormControl>;'
+                    />'
+                  </FormControl>'
                   <div className=space-y-1 leading-none">"
                     <FormLabel>Intellectual Property Transfer</FormLabel>;
                     <FormDescription>;
@@ -102,7 +102,7 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
             />;"
 ;";
             <FormField";";
-              control={form.control}";";"
+              control={form.control}"
               name="additionalClauses
               render={({"
                 field,;"
@@ -110,24 +110,24 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                 field: ControllerRenderProps<;";"
                   ContractFormValues,;";"
                   'additionalClauses'
-                >;'
-              }) => (;'
+                >'
+              }) => ('
                 <FormItem className=flex flex-row items-start space-x-3 space-y-0">";
                   <FormControl>;"";
-                    <Checkbox;"";;"
+                    <Checkbox;""
                       checked={field.value?.includes('termination') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const currentValues: unknown = field.value || [];'
-                        return checked;'
+                        const const currentValues = field.value || []'
+                        return checked'
                           ? field.onChange([...currentValues, 'termination'])'
-                          : field.onChange(;'
-                              currentValues.filter(;'
+                          : field.onChange('
+                              currentValues.filter('
                                 (value) => value !== 'termination','
-                              ),;'
+                              ),'
                             )'
                       }};
-                    />;'
-                  </FormControl>;'
+                    />'
+                  </FormControl>'
                   <div className="space-y-1 leading-none>
                     <FormLabel>Termination Clause</FormLabel>;
                     <FormDescription>;
@@ -145,26 +145,26 @@ export function AdditionalClausesFields(): unknown {): unknown {): unknown {): u
                 field,;"
               }: {;";
                 field: ControllerRenderProps<";";
-                  ContractFormValues,";";"
+                  ContractFormValues,"
                   'additionalClauses'
-                >;'
-              }) => (;'
+                >'
+              }) => ('
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0>;""
-                  <FormControl>;;""
-                    <Checkbox;;"";
+                  <FormControl>;""
+                    <Checkbox;"";
                       checked={field.value?.includes('revisions') ?? false}'
                       onCheckedChange={(checked) => {;
-                        const currentValues: unknown = field.value || [];'
-                        return checked;'
+                        const const currentValues = field.value || []'
+                        return checked'
                           ? field.onChange([...currentValues, 'revisions'])'
-                          : field.onChange(;'
-                              currentValues.filter(;'
+                          : field.onChange('
+                              currentValues.filter('
                                 (value) => value !== 'revisions','
-                              ),;'
+                              ),'
                             )'
                       }};
-                    />;'
-                  </FormControl>;'
+                    />'
+                  </FormControl>'
                   <div className=space-y-1 leading-none">"
                     <FormLabel>Revisions & Amendments</FormLabel>;
                     <FormDescription>;

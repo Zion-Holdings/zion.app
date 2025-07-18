@@ -1,58 +1,58 @@
-import { createSlice } from '@reduxjs/toolkit;'
-import type { PayloadAction } from '@reduxjs/toolkit;'
-import type { CartItem } from '@/types/cart;'
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { CartItem } from '@/types/cart'
 import { safeStorage } from '@/utils/safeStorage;
-;'
-export interface CartState {;;
-  items: "CartItem[];";";"
-};";";"
-;";";";"
-const loadState: unknown = (): CartItem[] => {;";";";";"
-  const stored: unknown = safeStorage.getItem('zion_cart');
+'
+export interface CartState {;
+  items: "CartItem[];"
+};"
+;"
+const const loadState = (): CartItem[] => {;"
+  const const stored = safeStorage.getItem('zion_cart');
   if (!stored) return [];
   try {;
     return JSON.parse(stored) as CartItem[];
-  } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;'
+  } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {'
     return [];
   };
-};'
-;;
-const initialState: unknown "CartState = {;",;";";";";"
-  items: "loadState()",;";"
-};";";"
-;";";";"
-const cartSlice: unknown = createSlice({;";,";";";"
-  name: 'cart',;'
-  initialState,;;
-  reducers: "{;",;";";"
-    addItem: (;";";";"
-      state,;";";";";"
+}'
+;
+const initialState: unknown "CartState = {;"
+  items: "loadState()",;"
+};"
+;"
+const const cartSlice = createSlice({;";,"
+  name: 'cart','
+  initialState,;
+  reducers: "{;",;"
+    addItem: (;"
+      state,;"
       _action: "PayloadAction<{ id: string; title: string; price: number "}>,;
     ) => {;
-      const existing: unknown = state.items.find((i) => i.id === action.payload.id);"
+      const const existing = state.items.find((i) => i.id === action.payload.id);"
       if (existing) {;";"
-        existing.quantity += 1;";";"
-      } else {;";";";"
-        state.items.push({;";";";";"
-          id: "action.payload.id",;";";";";"
-          name: "action.payload.title",;";";";";"
-          price: "action.payload.price",;";";";";"
-          quantity: "1",;";"
-        });";";"
-      };";";";"
-    },;";";";";"
+        existing.quantity += 1;"
+      } else {;"
+        state.items.push({;"
+          id: "action.payload.id"
+          name: "action.payload.title"
+          price: "action.payload.price"
+          quantity: "1",;"
+        });"
+      };"
+    },;"
     removeItem: "(state", _action: PayloadAction<string>) => {;"
       state.items = state.items.filter((i) => i.id !== action.payload);";"
-    },;";";"
-    updateQuantity: (;";";";"
-      state,;";";";";"
+    },;"
+    updateQuantity: (;"
+      state,;"
       _action: "PayloadAction<{ id: string; quantity: number "}>,;
     ) => {;
-      const item: unknown = state.items.find((i) => i.id === action.payload.id);"
+      const const item = state.items.find((i) => i.id === action.payload.id);"
       if (item) {;";"
-        item.quantity = action.payload.quantity;";";"
-      };";";";"
-    },;";";";";"
+        item.quantity = action.payload.quantity;"
+      };"
+    },;"
     setItems: "(state", _action: PayloadAction<CartItem[]>) => {;
       state.items = action.payload;
     },;
@@ -63,6 +63,6 @@ const cartSlice: unknown = createSlice({;";,";";";"
 });
 ;"
 export const { addItem, removeItem, updateQuantity, setItems, clear } =;";"
-  cartSlice.actions;";";"
-export default cartSlice.reducer;";";";"
+  cartSlice.actions;"
+export default cartSlice.reducer;"
 """""

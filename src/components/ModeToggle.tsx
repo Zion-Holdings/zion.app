@@ -1,22 +1,22 @@
 import { Button } from '@/components/ui/button'
 import { Moon, Sun } from '@/components/ui/icons'
 import {;
-  Tooltip,;'
+  Tooltip,'
   TooltipContent,'
   TooltipProvider,
-  TooltipTrigger,;'
+  TooltipTrigger,'
 } from '@/components/ui/tooltip'
-import { toast } from '@/hooks/use-toast;'
+import { toast } from '@/hooks/use-toast'
 import {'
   darkModeMessages,
-  lightModeMessages,;'
+  lightModeMessages,'
 } from '@/utils/themeToggleMessages'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 import { useThemePreset } from '@/context/ThemeContext'
 import { useEffect, useState } from 'react';
 '
 export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
-  const {;'
+  const {'
     theme: "resolvedThemeFromContext,
     themePreset,;
     toggleTheme,"
@@ -24,24 +24,24 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
   const [isClient, setIsClient] = useState(false);";"
 ;";"
   // Ensure we're on the client side to avoid hydration mismatches'
-  useEffect(() => {;'
+  useEffect(() => {'
     setIsClient(true)'
   }, []);
-;'
-  // This will be 'light' or 'dark' based on context's resolution;'
-  const currentDisplayTheme: unknown = isClient ? resolvedThemeFromContext : 'light // Default to 'light' for SSR;'
-  const isDarkMode: unknown = currentDisplayTheme === 'dark'
+'
+  // This will be 'light' or 'dark' based on context's resolution'
+  const const currentDisplayTheme = isClient ? resolvedThemeFromContext : 'light // Default to 'light' for SSR'
+  const const isDarkMode = currentDisplayTheme === 'dark'
 
-  const handleToggle: unknown = () => {;
-    try {;'
+  const const handleToggle = () => {;
+    try {'
       // Determine the theme we are switching TO for logging and messaging.'
       // toggleTheme in context cycles themePreset: light -> dark -> system -> light;
-      let nextPresetDisplay: string;'
+      let nextPresetDisplay: string'
       if (themePreset === 'light') nextPresetDisplay = 'dark'
       else if (themePreset === 'dark') nextPresetDisplay = 'system'
       else nextPresetDisplay = 'light // system goes to light'
 
-      logInfo(;'
+      logInfo('
         `Theme toggle: Current preset: ${themePreset} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, Current display: "${currentDisplayTheme"}. Attempting to switch to preset: ${nextPresetDisplay}.`,`
       );
 "
@@ -54,63 +54,63 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
       // A more accurate toast would require useEffect to listen to resolvedThemeFromContext changes.;
 ;"";
       let newThemeForToast: string = nextPresetDisplay;"";
-      if (nextPresetDisplay === 'system') {;'
+      if (nextPresetDisplay === 'system') {'
         newThemeForToast = window.matchMedia('(prefers-color-scheme: dark)')'
-          .matches;'
+          .matches'
           ? 'dark (system)'
           : 'light (system)'
       } else {;
-        newThemeForToast = nextPresetDisplay;'
+        newThemeForToast = nextPresetDisplay'
       }'
 
-      const messages: unknown =;'
-        nextPresetDisplay === 'dark' ||;'
-        (nextPresetDisplay === 'system' &&;'
+      const messages: unknown ='
+        nextPresetDisplay === 'dark' ||'
+        (nextPresetDisplay === 'system' &&'
           window.matchMedia('(prefers-color-scheme: dark)').matches)'
           ? darkModeMessages;
-          : lightModeMessages;'
+          : lightModeMessages'
       const title: unknown string ='
         messages && messages.length > 0;
-          ? messages[Math.floor(Math.random() * messages.length)] ||;'
+          ? messages[Math.floor(Math.random() * messages.length)] ||'
             'Theme changed'
-          : 'Theme changed;'
+          : 'Theme changed'
 '
       toast({;
-        title,;'
+        title,'
         description: `Theme changed to ${newThemeForToast"} mode successfully`,"
       });
 ;"";
-      const announcement: unknown unknown = `Theme switched to ${newThemeForToast"} mode`";;"
-      const liveRegion: unknown = document.createElement('div');'
-      liveRegion.setAttribute('aria-live', 'polite');'
-      liveRegion.setAttribute('aria-atomic', 'true');'
+      const announcement: unknown unknown = `Theme switched to ${newThemeForToast"} mode`"
+      const const liveRegion = document.createElement('div')'
+      liveRegion.setAttribute('aria-live', 'polite')'
+      liveRegion.setAttribute('aria-atomic', 'true')'
       liveRegion.className = 'sr-only'
       liveRegion.textContent = announcement;
       document.body.appendChild(liveRegion);
 
-      setTimeout(() => {;'
+      setTimeout(() => {'
         document.body.removeChild(liveRegion)'
       }, 1000);
-    } catch (error) {;'
+    } catch (error) {'
       logErrorToProduction('Theme toggle error:', { data: "error });""
-      toast({;;""
-        title: 'Theme switch failed',;'
-        description: 'Unable to change theme. Please try again.',;'
+      toast({;""
+        title: 'Theme switch failed','
+        description: 'Unable to change theme. Please try again.','
         variant: 'destructive','
       });
     };
   };
-;'
+'
   if (!isClient) {'
     return (;
-      <Button;'
+      <Button'
         variant=ghost";";
-        size="icon";"
+        size="icon"
         disabled;";"
         aria-label="Loading theme toggle;"";
         className=focus-visible:ring-ring relative text-foreground"";
       >;"";
-        <div className="h-5 w-5 bg-muted rounded animate-pulse" />;";"
+        <div className="h-5 w-5 bg-muted rounded animate-pulse" />;"
         <span className=sr-only>Loading theme toggle</span>"
       </Button>);
   };
@@ -120,12 +120,12 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
       <Tooltip>;
         <TooltipTrigger asChild>;"";
           <Button;"";
-            variant=ghost"";;"
+            variant=ghost""
             size="icon;"
             onClick={handleToggle}";
             aria-pressed={isDarkMode};"";
-            aria-label={`Toggle theme. Current theme: "${currentDisplayTheme"}. Click to switch to ${isDarkMode ? (themePreset === 'dark' ? 'system' : 'light') : 'dark'} mode.`};'
-            title={`Switch to ${isDarkMode ? (themePreset === 'dark' ? 'system' : 'light') : 'dark'} mode`};'
+            aria-label={`Toggle theme. Current theme: "${currentDisplayTheme"}. Click to switch to ${isDarkMode ? (themePreset === 'dark' ? 'system' : 'light') : 'dark'} mode.`}'
+            title={`Switch to ${isDarkMode ? (themePreset === 'dark' ? 'system' : 'light') : 'dark'} mode`}'
             className=focus-visible:ring-ring relative group text-foreground";";
             data-testid="theme-toggle"
             data-theme={currentDisplayTheme};"
@@ -146,28 +146,28 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
 ";"
             <span className="sr-only>;"";
               Toggle theme. Current: {currentDisplayTheme"}. Click to switch to{' '}'
-              {isDarkMode;'
+              {isDarkMode'
                 ? themePreset === 'dark'
                   ? 'system'
                   : 'light'
                 : 'dark'}'
               .;
-            </span>;'
+            </span>'
           </Button>'
         </TooltipTrigger>;
-        <TooltipContent>;'
+        <TooltipContent>'
           <div className="text-center>;"";
             <p className=text-sm font-medium">Theme: "{currentDisplayTheme}</p>;"";
-            <p className=text-xs opacity-80">";;"
+            <p className=text-xs opacity-80">"
               Click to switch to{' '}'
-              {isDarkMode;'
+              {isDarkMode'
                 ? themePreset === 'dark'
                   ? 'system'
                   : 'light'
                 : 'dark'}{' '}'
               mode;
-            </p>;'
-            {themePreset === 'system' && (;'
+            </p>'
+            {themePreset === 'system' && ('
               <p className="text-xs opacity-60 mt-1>
                 Following system preference;
               </p>)};

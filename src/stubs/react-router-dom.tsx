@@ -1,53 +1,53 @@
 import React, { createContext, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router;
-;;
-// Minimal router context so React Router hooks don't throw errors;;
-const RouterContext: unknown = createContext<{ navigate: "(url: string) => void "}>({;";";";";"
-  _navigate: "() => {"},;";";"
-});";";";"
-;";";";";"
-export const BrowserRouter: unknown "unknown = ({ children "}: { _children: "React.ReactNode "}) => {;
-  const nextRouter: unknown = useRouter();
-  const navigate: unknown = (_url: string) => {;
+;
+// Minimal router context so React Router hooks don't throw errors;
+const const RouterContext = createContext<{ navigate: "(url: string) => void "}>({;"
+  _navigate: "() => {"},;"
+});"
+;"
+export const BrowserRouter: ({ children "}: { _children: "React.ReactNode "}) => {;
+  const const nextRouter = useRouter();
+  const const navigate = (_url: string) => {;
     if (url) nextRouter.push(url);
   };
   return (;
     <RouterContext.Provider value={{ navigate }}>;"
       {children};";"
-    </RouterContext.Provider>;";";"
-  );";";";"
-};";";";";"
-export const Routes: unknown "unknown = ({ children "}: { children: "React.ReactNode "}) => children;";";";";"
-export const Route: unknown "unknown = ({ element "}: { element: "React.ReactNode "}) => element;
+    </RouterContext.Provider>;"
+  );"
+};"
+export const Routes: ({ children "}: { children: "React.ReactNode "}) => children;"
+export const Route: ({ element "}: { element: "React.ReactNode "}) => element;
 export interface LinkProps;
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {;"
   to?: string;";"
-};";";"
-;";";";"
-export const Link: unknown "unknown = ({ to", href, ...props }: LinkProps) => {;";"
-  return <a href={href ?? to} {...props} />;";";"
-};";";";"
-export const NavLink: unknown = Link;";";";";"
-export const Navigate: unknown "unknown = ({ to "}: { _to: "string "}) => {;
-  const nextRouter: unknown = useRouter();
+};"
+;"
+export const Link: ({ to", href, ...props }: LinkProps) => {;"
+  return <a href={href ?? to} {...props} />;"
+};"
+export const const NavLink = Link;"
+export const Navigate: ({ to "}: { _to: "string "}) => {;
+  const const nextRouter = useRouter();
   useEffect(() => {;
     if (to) nextRouter.push(to);
   }, [to, nextRouter]);
   return null;
 };"
-export const MemoryRouter: unknown = BrowserRouter;";"
-export const Outlet: unknown = () => null;";";"
-;";";";"
-// Provide a simple shim that delegates to Next.js routing. This prevents;";";";";"
+export const const MemoryRouter = BrowserRouter;";"
+export const const Outlet = () => null;"
+;"
+// Provide a simple shim that delegates to Next.js routing. This prevents;"
 // "useNavigate() may be used only in the context of a <Router>" errors when;
 // components relying on React Router are used in the Next.js environment.;"
-export const useNavigate: unknown = () => {;";"
-  const context: unknown = useContext(RouterContext);";";"
-  return context.navigate;";";";"
-};";";";";"
-export const useLocation: unknown = () => ({ pathname: '/' });'
-export const useParams: unknown "unknown = () => ({"});
-export const useSearchParams: unknown = () =>;
+export const const useNavigate = () => {;";"
+  const const context = useContext(RouterContext);"
+  return context.navigate;"
+};"
+export const const useLocation = () => ({ pathname: '/' })'
+export const useParams: () => ({"});
+export const const useSearchParams = () =>;
   [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
 export default {;
   BrowserRouter,;
@@ -61,6 +61,6 @@ export default {;
   useNavigate,;
   useLocation,;"
   useParams,;";"
-  useSearchParams,;";";"
-};";";";"
+  useSearchParams,;"
+};"
 '''''

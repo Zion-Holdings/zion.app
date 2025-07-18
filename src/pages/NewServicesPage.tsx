@@ -1,6 +1,6 @@
 import React from 'react;
-;'
-const NewServicesPage: unknown = () => <div>New Services Page Placeholder</div>;
+'
+const const NewServicesPage = () => <div>New Services Page Placeholder</div>;
 ;
-export default NewServicesPage;'
+export default NewServicesPage'
 '''''

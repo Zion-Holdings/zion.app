@@ -1,31 +1,31 @@
 import React, { createContext, useContext, useState } from 'react;
-;;
+;
 export type ViewMode = 'grid' | 'list;
-;'
-interface ViewModeContextType {;;
-  viewMode: "ViewMode;",;";";";";"
-  setViewMode: "(mode: ViewMode) => void;";";"
-};";";"
-;";";";"
-const ViewModeContext: unknown = createContext<ViewModeContextType>({;";,";";";"
-  viewMode: 'grid',;;
+'
+interface ViewModeContextType {;
+  viewMode: "ViewMode;"
+  setViewMode: "(mode: ViewMode) => void;"
+};"
+;"
+const const ViewModeContext = createContext<ViewModeContextType>({;";,"
+  viewMode: 'grid',;
   _setViewMode: "() => {"},;
 });"
 ;";"
-export const _useViewMode: unknown = (): ViewModeContextType =>;";";"
-  useContext(ViewModeContext);";";";"
-;";";";";"
-export function ViewModeProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "React.ReactNode "}) {;";";";";"
+export const const _useViewMode = (): ViewModeContextType =>;"
+  useContext(ViewModeContext);"
+;"
+export function ViewModeProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "React.ReactNode "}) {;"
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
 ;
   return (;
     <ViewModeContext.Provider value={{ viewMode, setViewMode }}>;
-      {children};'
+      {children}'
     </ViewModeContext.Provider>;
   );
 };
 ;
-};'
+}'
 }
 }'
 }'

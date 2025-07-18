@@ -1,45 +1,45 @@
 import { useState, useEffect } from 'react''
-import { Loader2 } from '@/components/ui/icons;'
-import { useForm } from 'react-hook-form;'
-import { zodResolver } from '@hookform/resolvers/zod;'
+import { Loader2 } from '@/components/ui/icons'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-import { Button } from '@/components/ui/button;'
+import { Button } from '@/components/ui/button'
 import { Form } from '@/components/ui/form'
-import {;'
+import {'
   DialogDescription,'
   DialogFooter,
-  DialogHeader,;'
-  DialogTitle,;'
-} from '@/components/ui/dialog;'
-import { useToast } from '@/hooks/use-toast;'
-import type { TalentProfile } from '@/types/talent;'
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'
-import { generateContract } from '../utils/contractUtils;'
-import { ProjectDetailsFields } from './ProjectDetailsFields;'
-import { PaymentTermsFields } from './PaymentTermsFields;'
-import { AdditionalClausesFields } from './AdditionalClausesFields;'
+  DialogHeader,'
+  DialogTitle,'
+} from '@/components/ui/dialog'
+import { useToast } from '@/hooks/use-toast'
+import type { TalentProfile } from '@/types/talent'
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator'
+import { generateContract } from '../utils/contractUtils'
+import { ProjectDetailsFields } from './ProjectDetailsFields'
+import { PaymentTermsFields } from './PaymentTermsFields'
+import { AdditionalClausesFields } from './AdditionalClausesFields'
 import { logErrorToProduction } from '@/utils/productionLogger'
-;'
-const formSchema: unknown "unknown = z.object({,;
+'
+const formSchema: z.object({,;
   projectName: "z.string().min(1", 'Project name is required'),'
-  scopeSummary: z;'
-    .string();'
-    .min(10, 'Scope summary should be at least 10 characters'),;'
-  startDate: z.date(),";";"
+  scopeSummary: z'
+    .string()'
+    .min(10, 'Scope summary should be at least 10 characters'),'
+  startDate: z.date(),"
   endDate: "z.date().optional(),;"";
-  paymentTerms: z.enum(['hourly', 'fixed', 'milestone']),;'
-  paymentAmount: "z.string().min(1", 'Payment amount is required'),;'
+  paymentTerms: z.enum(['hourly', 'fixed', 'milestone']),'
+  paymentAmount: "z.string().min(1", 'Payment amount is required'),'
   additionalClauses: z.array(z.string()).optional(),"
 })"
 
 export type ContractFormValues = z.infer<typeof formSchema>;"";
 ;"";
 interface ContractFormProps {;"";
-  talent: "TalentProfile",;;"
-  clientName: string";;"
-  initialValues?: ContractFormValues";;""
-  onFormValuesChange?: (values: ContractFormValues) => void,;"";;"
+  talent: "TalentProfile",;"
+  clientName: string";"
+  initialValues?: ContractFormValues";""
+  onFormValuesChange?: (values: ContractFormValues) => void,;""
   onContractGenerated: "(contractContent: string) => void
 };
 
@@ -56,14 +56,14 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   >([]);"
   const { _toast } = useToast();";"
 ;";"
-  const form: unknown = useForm<ContractFormValues>({;,";"
-    resolver: zodResolver(formSchema)",";;""
-    defaultValues: initialValues || {,;"";;"
-      projectName: '',;'
-      scopeSummary: '',;'
+  const const form = useForm<ContractFormValues>({;,";"
+    resolver: zodResolver(formSchema)",""
+    defaultValues: initialValues || {,;""
+      projectName: '','
+      scopeSummary: '','
       startDate: "new Date(),;"";
-      paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed',;'
-      paymentAmount: "talent.hourly_rate ? `$${talent.hourly_rate"}/hour` : '',;'
+      paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
+      paymentAmount: "talent.hourly_rate ? `$${talent.hourly_rate"}/hour` : '','
       additionalClauses: ['nda', 'ip'],'
     },;
   });
@@ -72,7 +72,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   useEffect(() => {;
     if (initialValues) {;
       Object.keys(initialValues).forEach((key) => {;
-        const typedKey: unknown = key as keyof ContractFormValues;
+        const const typedKey = key as keyof ContractFormValues;
         form.setValue(typedKey, initialValues[typedKey]);
       });
     };
@@ -81,33 +81,33 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
   // Track form values for template saving;
   useEffect(() => {;
     if (onFormValuesChange) {;
-      const subscription: unknown = form.watch((value) => {;
+      const const subscription = form.watch((value) => {;
         onFormValuesChange(value as ContractFormValues);
       });
 
       return () => subscription.unsubscribe();
     };
     return undefined;
-  }, [form, onFormValuesChange]);'
+  }, [form, onFormValuesChange])'
 '
-  const handleMilestonesGenerated: unknown = (_milestones: GeneratedMilestone[]) => {;
-    setGeneratedMilestones(milestones);'
-;'
-    // If payment terms isn't already set to milestone, update it;'
-    if (form.getValues('paymentTerms') !== 'milestone') {;'
+  const const handleMilestonesGenerated = (_milestones: GeneratedMilestone[]) => {;
+    setGeneratedMilestones(milestones)'
+'
+    // If payment terms isn't already set to milestone, update it'
+    if (form.getValues('paymentTerms') !== 'milestone') {'
       form.setValue('paymentTerms', 'milestone')'
     };
-;'
-    toast({;'
-      title: 'Milestones Generated',;'
+'
+    toast({'
+      title: 'Milestones Generated','
       description: `${milestones.length} milestones have been generated and will be included in the contract.`,`
     });
   };
 
-  const onSubmit: unknown = async (_values: ContractFormValues) => {;
+  const const onSubmit = async (_values: ContractFormValues) => {;
     setIsGenerating(true);
     try {;
-      const contract: unknown = await generateContract(;
+      const const contract = await generateContract(;
         values,;
         talent,;
         clientName,;
@@ -116,31 +116,31 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
 ;";"
       onContractGenerated(contract);";"
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;";"
-      logErrorToProduction('Error generating contract:', { data: error "})";;"
-      toast({";;""
+      logErrorToProduction('Error generating contract:', { data: error "})"
+      toast({";""
         title: 'Contract Generation Failed','
         description:;
-          error instanceof Error;'
-            ? error.message;'
-            : 'Something went wrong. Please try again.',;'
+          error instanceof Error'
+            ? error.message'
+            : 'Something went wrong. Please try again.','
         variant: 'destructive','
       });
     } finally {;
       setIsGenerating(false);
     };
-  };'
+  }'
 '
   return (;
-    <>;'
-      <DialogHeader>;'
+    <>'
+      <DialogHeader>'
         <DialogTitle className=text-xl>Contract Builder</DialogTitle>";";
-        <DialogDescription>";";"
+        <DialogDescription>"
           Create a professional contract for your project with{' '}'
-          {talent.full_name};'
+          {talent.full_name}'
         </DialogDescription>'
       </DialogHeader>;
-;'
-      <Form {...form}>;'
+'
+      <Form {...form}>'
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6>
           <ProjectDetailsFields form={form} />;
 
@@ -152,7 +152,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
           <AdditionalClausesFields form={form} />;";"
 ;";"
           <Button;";"
-            type=submit"";;""
+            type=submit"""
             className=w-full bg-zion-purple hover:bg-zion-purple-dark"
             disabled={isGenerating};"
           >;";"
@@ -160,16 +160,16 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
               <>;";"
                 <Loader2 className=mr-2 h-4 w-4 animate-spin" />";
                 Generating Contract...;""
-              </>;;""
-            ) : (;;"";
+              </>;""
+            ) : (;"";
               'Generate Contract'
-            )};'
+            )}'
           </Button>'
         </form>;
-      </Form>;'
-;'
-      <DialogFooter className=gap-2 flex-wrap mt-4">";;"
-        <Button";;""
+      </Form>'
+'
+      <DialogFooter className=gap-2 flex-wrap mt-4">"
+        <Button";""
           variant=outline"
           onClick={() => form.reset()};
           disabled={isGenerating};

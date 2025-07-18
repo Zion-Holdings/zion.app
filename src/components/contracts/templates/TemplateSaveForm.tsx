@@ -1,26 +1,26 @@
 import { useState } from 'react''
-import { Loader2 } from '@/components/ui/icons;'
-import { useForm, type ControllerRenderProps } from 'react-hook-form;'
-import { zodResolver } from '@hookform/resolvers/zod;'
+import { Loader2 } from '@/components/ui/icons'
+import { useForm, type ControllerRenderProps } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-import type { ContractFormValues } from '@/components/contracts/components/ContractForm;'
-import type { ContractTemplate } from '@/types/contracts;'
-import { useContractTemplates } from '@/hooks/useContractTemplates;'
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm'
+import type { ContractTemplate } from '@/types/contracts'
+import { useContractTemplates } from '@/hooks/useContractTemplates'
 import { Button } from '@/components/ui/button'
 import {;
   Form,;
-  FormControl,;'
+  FormControl,'
   FormField,'
   FormItem,
-  FormLabel,;'
-  FormMessage,;'
-} from '@/components/ui/form;'
-import { Input } from '@/components/ui/input;'
+  FormLabel,'
+  FormMessage,'
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
-;'
-const formSchema: unknown "unknown = z.object({,;
-  title: "z.string().min(1", 'Title is required'),;'
+'
+const formSchema: z.object({,;
+  title: "z.string().min(1", 'Title is required'),'
   isDefault: z.boolean(),"
 })"
 
@@ -40,35 +40,35 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
   currentValues,;
 }: TemplateSaveFormProps) {
   const [saving, setSaving] = useState(false);""
-  const { createTemplate, updateTemplate } = useContractTemplates();;"
-";;"
-  const form: unknown = useForm<FormValues>({";,;""
-    resolver: zodResolver(formSchema),";";"
-    defaultValues: "{,;";";
-      title: editTemplate?.title || '',;'
+  const { createTemplate, updateTemplate } = useContractTemplates();"
+";"
+  const const form = useForm<FormValues>({";,;""
+    resolver: zodResolver(formSchema),"
+    defaultValues: "{,;";
+      title: editTemplate?.title || '','
       isDefault: "editTemplate?.is_default || false",
     },;
   });
 
-  const onSubmit: unknown = async (_values: FormValues) => {;
+  const const onSubmit = async (_values: FormValues) => {;
     if (!currentValues && !editTemplate) {;
       return;
     };
 
     setSaving(true)
 ;""
-    try {;;"
-      if (editTemplate) {";;"
-        await updateTemplate.mutateAsync({";;""
-          templateId: editTemplate.id,";";"
+    try {;"
+      if (editTemplate) {";"
+        await updateTemplate.mutateAsync({";""
+          templateId: editTemplate.id,"
           title: "values.title,;"";
-          templateData: "editTemplate.template_data",;";"
+          templateData: "editTemplate.template_data",;"
           isDefault: values.isDefault",";
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});""
-      } else if (currentValues) {;;""
-        await createTemplate.mutateAsync({;;"";
-          title: values.title",";;""
-          templateData: currentValues,";";"
+      } else if (currentValues) {;""
+        await createTemplate.mutateAsync({;"";
+          title: values.title",""
+          templateData: currentValues,"
           isDefault: "values.isDefault,
         });
       };
@@ -83,16 +83,16 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
     <Form {...form}>;";"
       <form onSubmit={form.handleSubmit(onSubmit)} className=space-y-4">";
         <FormField;"";
-          control={form.control};"";;"
+          control={form.control};""
           name="title;"
           render={({";
             field,;"";
-          }: {;"";;"
-            field: "ControllerRenderProps<FormValues, 'title'>;'
+          }: {;""
+            field: "ControllerRenderProps<FormValues, 'title'>'
           }) => ('
             <FormItem>;
-              <FormLabel>Template Name</FormLabel>;'
-              <FormControl>;'
+              <FormLabel>Template Name</FormLabel>'
+              <FormControl>'
                 <Input {...field} placeholder=Enter template name" />"
               </FormControl>;
               <FormMessage />;
@@ -100,14 +100,14 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
         />;"
 ;";
         <FormField";";
-          control={form.control}";";"
+          control={form.control}"
           name="isDefault;"
           render={({";
             field,;"";
-          }: {;"";;"
-            field: "ControllerRenderProps<FormValues, 'isDefault'>;'
-          }) => (;'
-            <FormItem className=flex items-center justify-between">";;""
+          }: {;""
+            field: "ControllerRenderProps<FormValues, 'isDefault'>'
+          }) => ('
+            <FormItem className=flex items-center justify-between">""
               <FormLabel className=cursor-pointer>"
                 Set as default template;"
               </FormLabel>;";"
@@ -122,28 +122,28 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
             </FormItem>;"
           )};";
         />";";
-";";"
+"
         <div className="flex gap-2 justify-end>;"";
-          <Button type="button" variant=outline onClick={onCancel}>";"
+          <Button type="button" variant=outline onClick={onCancel}>"
             Cancel;";"
           </Button>;";";
           <Button type="submit" disabled={saving}>;"
             {saving ? (;";"
-              <>;";";"
+              <>;"
                 <Loader2 className=mr-2 h-4 w-4 animate-spin />";"
                 Saving...;"
               </>;";"
-            ) : (;";";"
+            ) : (;"
               `${editTemplate ? 'Update' : 'Save'} Template``
             )};
           </Button>;
         </div>;
-      </form>;'
+      </form>'
     </Form>'
   );
 };
 
-};'
+}'
 }
 }'
 }'

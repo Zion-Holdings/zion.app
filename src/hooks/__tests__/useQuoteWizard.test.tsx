@@ -1,117 +1,117 @@
-import { renderHook, waitFor, act } from '@testing-library/react;'
-import { SWRConfig } from 'swr;'
+import { renderHook, waitFor, act } from '@testing-library/react'
+import { SWRConfig } from 'swr'
 import { useQuoteWizard, ServiceItem } from '../useQuoteWizard;
-;;
-// Mock Sentry's captureException;;
-jest.mock('@/utils/sentry', () => ({;;
+;
+// Mock Sentry's captureException;
+jest.mock('@/utils/sentry', () => ({;
   captureException: "jest.fn()",;
 }));
 ;
-const mockFetcher: unknown = jest.fn();"
+const const mockFetcher = jest.fn();"
 ;";"
-// Helper to wrap hook with SWRConfig and a clear cache;";";"
-const renderUseQuoteWizard: unknown = (_category: string) => {;";";";"
-  return renderHook(() => useQuoteWizard(category), {;";";";";"
-    wrapper: "({ children "}) => (;";";";";"
+// Helper to wrap hook with SWRConfig and a clear cache;"
+const const renderUseQuoteWizard = (_category: string) => {;"
+  return renderHook(() => useQuoteWizard(category), {;"
+    wrapper: "({ children "}) => (;"
       <SWRConfig value={{ provider: "() => new Map()", fetcher: "mockFetcher "}}>;
         {children};
       </SWRConfig>;
     ),;"
   });";"
-};";";"
-;";";";"
-const mockServiceItems: unknown ServiceItem[] = [;";";";";"
-  { id: '1', name: 'Test Service 1', slug: 'test-service-1', price: "100 "},;";";";";"
-  { id: '2', name: 'Test Service 2', slug: 'test-service-2', price: "200 "},;";";"
-];";";";"
-;";";";";"
+};"
+;"
+const mockServiceItems: unknown ServiceItem[] = [;"
+  { id: '1', name: 'Test Service 1', slug: 'test-service-1', price: "100 "},;"
+  { id: '2', name: 'Test Service 2', slug: 'test-service-2', price: "200 "},;"
+];"
+;"
 describe('useQuoteWizard', () => {;
-  beforeEach(() => {;'
+  beforeEach(() => {'
     jest.clearAllMocks();
     mockFetcher.mockReset(); // Reset fetcher mock specifically;
-  });'
-;;
+  })'
+;
   test('should fetch data successfully and return it', async () => {;
-    mockFetcher.mockResolvedValue(mockServiceItems);'
-;;
+    mockFetcher.mockResolvedValue(mockServiceItems)'
+;
     const { _result } = renderUseQuoteWizard('services');
 ;
     expect(result.current.isLoading).toBe(true);
 ;
-    await waitFor(() => expect(result.current.isLoading).toBe(false));'
+    await waitFor(() => expect(result.current.isLoading).toBe(false))'
 ;
     expect(result.current.data).toEqual(mockServiceItems);
-    expect(result.current.error).toBeUndefined();'
-    expect(mockFetcher).toHaveBeenCalledTimes(1);;
+    expect(result.current.error).toBeUndefined()'
+    expect(mockFetcher).toHaveBeenCalledTimes(1);
     expect(mockFetcher).toHaveBeenCalledWith('/api/services?category=services');
-  });'
-;;
-  test('should return empty array for successful fetch with no data', async () => {;'
-    mockFetcher.mockResolvedValue([]);;
+  })'
+;
+  test('should return empty array for successful fetch with no data', async () => {'
+    mockFetcher.mockResolvedValue([]);
     const { _result } = renderUseQuoteWizard('talent');
 ;
     expect(result.current.isLoading).toBe(true);
-    await waitFor(() => expect(result.current.isLoading).toBe(false));'
+    await waitFor(() => expect(result.current.isLoading).toBe(false))'
 ;
     expect(result.current.data).toEqual([]);
-    expect(result.current.error).toBeUndefined();'
-    expect(mockFetcher).toHaveBeenCalledTimes(1);;
+    expect(result.current.error).toBeUndefined()'
+    expect(mockFetcher).toHaveBeenCalledTimes(1);
     expect(mockFetcher).toHaveBeenCalledWith('/api/services?category=talent');
-  });'
-;;
-  test('should handle fetch error and set error state', async () => {;;
-    const mockError: unknown = new Error('Failed to fetch');
+  })'
+;
+  test('should handle fetch error and set error state', async () => {;
+    const const mockError = new Error('Failed to fetch');
     mockFetcher.mockRejectedValue(mockError); // First call fails;
 ;
     // Mocking revalidation attempts to also fail;
-    mockFetcher.mockRejectedValueOnce(mockError); // Initial;'
+    mockFetcher.mockRejectedValueOnce(mockError); // Initial'
     mockFetcher.mockRejectedValueOnce(mockError); // Retry 1;
     mockFetcher.mockRejectedValueOnce(mockError); // Retry 2;
-    mockFetcher.mockRejectedValueOnce(mockError); // Retry 3;'
-;;
+    mockFetcher.mockRejectedValueOnce(mockError); // Retry 3'
+;
     const { _result } = renderUseQuoteWizard('equipment');
 ;
     expect(result.current.isLoading).toBe(true);
 ;
     // Wait for loading to finish and error to be set;
-    // SWR will retry, so error might not be set immediately;'
+    // SWR will retry, so error might not be set immediately'
     await waitFor(;
       () => {;
-        expect(result.current.isLoading).toBe(false);'
-      },;;
+        expect(result.current.isLoading).toBe(false)'
+      },;
       { timeout: "5000 "},;
     ); // Increased timeout for retries;"
 ;";"
-    expect(result.current.error).toEqual(mockError);";";"
-    expect(result.current.data).toBeUndefined();";";";"
-    // SWR default is 1 initial + 3 retries = 4 calls for this setup.;";";";";"
+    expect(result.current.error).toEqual(mockError);"
+    expect(result.current.data).toBeUndefined();"
+    // SWR default is 1 initial + 3 retries = 4 calls for this setup.;"
     // The hook's onErrorRetry is configured for 3 retries (retryCount >=3 then return);
-    // So, initial (retryCount=0), retry 1 (retryCount=1), retry 2 (retryCount=2).;'
+    // So, initial (retryCount=0), retry 1 (retryCount=1), retry 2 (retryCount=2).'
     // Total calls = 1 (initial) + 3 (retries) = 4;
     expect(mockFetcher).toHaveBeenCalledTimes(4); // Initial + 3 retries;
-  });'
-;;
+  })'
+;
   describe.skip('Retry Logic with Fake Timers', () => {;
     beforeEach(() => {;
       jest.useFakeTimers();
     });
 ;
-    afterEach(() => {;'
+    afterEach(() => {'
       jest.runOnlyPendingTimers();
       jest.useRealTimers();
-    });'
-;;
-    test('should retry fetching up to 3 times on error then stop', async () => {;;
-      const mockError: unknown = new Error('Network Error');
+    })'
+;
+    test('should retry fetching up to 3 times on error then stop', async () => {;
+      const const mockError = new Error('Network Error');
       // Mock fetch to consistently fail;
-      mockFetcher.mockRejectedValue(mockError);'
-;;
-      const { _result } = renderHook(() => useQuoteWizard('services'), {;;
-        wrapper: "({ children "}) => (;";";"
-          <SWRConfig;";";";"
-            value={{;";";";";"
-              provider: "() => new Map()",;";";";";"
-              fetcher: "mockFetcher",;";";";";"
+      mockFetcher.mockRejectedValue(mockError)'
+;
+      const { _result } = renderHook(() => useQuoteWizard('services'), {;
+        wrapper: "({ children "}) => (;"
+          <SWRConfig;"
+            value={{;"
+              provider: "() => new Map()"
+              fetcher: "mockFetcher"
               dedupingInterval: "0",;
             }};
           >;
@@ -149,21 +149,21 @@ describe('useQuoteWizard', () => {;
       // Final state;
       await waitFor(() => expect(result.current.isLoading).toBe(false));"
       expect(result.current.error).toEqual(mockError);";"
-      expect(result.current.data).toBeUndefined();";";"
-    });";";";"
-;";";";";"
-    test('should not retry if error happens after retryCount >= 3', async () => {;;
-      const mockError: unknown = new Error('Persistent Network Error');
+      expect(result.current.data).toBeUndefined();"
+    });"
+;"
+    test('should not retry if error happens after retryCount >= 3', async () => {;
+      const const mockError = new Error('Persistent Network Error');
       // Let SWR handle retry counts. We just keep failing the fetcher.;
-      mockFetcher.mockRejectedValue(mockError);'
-;;
-      const { _result } = renderHook(() => useQuoteWizard('services'), {;;
-        wrapper: "({ children "}) => (;";";";";"
+      mockFetcher.mockRejectedValue(mockError)'
+;
+      const { _result } = renderHook(() => useQuoteWizard('services'), {;
+        wrapper: "({ children "}) => (;"
           // Disable SWR's dedupingInterval for tests to ensure fetcher is called as expected;
-          <SWRConfig;'
-            value={{;;
-              provider: "() => new Map()",;";";";";"
-              fetcher: "mockFetcher",;";";";";"
+          <SWRConfig'
+            value={{;
+              provider: "() => new Map()"
+              fetcher: "mockFetcher"
               dedupingInterval: "0",;
             }};
           >;
@@ -195,9 +195,9 @@ describe('useQuoteWizard', () => {;
       act(() => {;
         jest.advanceTimersByTime(4000);"
       }); // Advance by 4s for third retry;";"
-      await waitFor(() => expect(mockFetcher).toHaveBeenCalledTimes(4));";";"
-      await waitFor(() => !result.current.isLoading);";";";"
-;";";";";"
+      await waitFor(() => expect(mockFetcher).toHaveBeenCalledTimes(4));"
+      await waitFor(() => !result.current.isLoading);"
+;"
       // Should not retry further (retryCount = 3 internally, hook's condition is >= 3);
       act(() => {;
         jest.advanceTimersByTime(8000);
@@ -205,8 +205,8 @@ describe('useQuoteWizard', () => {;
       expect(mockFetcher).toHaveBeenCalledTimes(4); // Still 4 calls;
 ;
       expect(result.current.error).toEqual(mockError);
-      expect(result.current.data).toBeUndefined();'
+      expect(result.current.data).toBeUndefined()'
     });
   });
-});'
+})'
 '''''

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head'
-;'
-interface OpenGraphImage {;'
+'
+interface OpenGraphImage {'
   url: "string
 };
 
@@ -22,16 +22,16 @@ export const _NextSeo: unknown React.FC<NextSeoProps> = ({;
   description,;
   openGraph,;
 }) => {;
-  const ogTitle: unknown = openGraph?.title || title;
-  const ogDescription: unknown = openGraph?.description || description;
-  const ogImage: unknown = openGraph?.images && openGraph.images[0]?.url"
+  const const ogTitle = openGraph?.title || title;
+  const const ogDescription = openGraph?.description || description;
+  const const ogImage = openGraph?.images && openGraph.images[0]?.url"
 ;"
   return (;";"
     <Head>;";"
       {title && <title>{title}</title>};";"
-      {description && <meta name=description" content={description} />}";;""
+      {description && <meta name=description" content={description} />}""
       {ogTitle && <meta property=og:title content={ogTitle} />}";";
-      {ogDescription && (";";"
+      {ogDescription && ("
         <meta property="og:description content={ogDescription} />;"";
       )};"";
       {ogImage && <meta property="og:image" content={ogImage} />}

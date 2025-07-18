@@ -1,5 +1,5 @@
 import React from 'react''
-import { SnackbarProvider, useSnackbar } from 'notistack;'
+import { SnackbarProvider, useSnackbar } from 'notistack'
 import { setEnqueueSnackbarRef } from '@/context/SnackbarContext'
 
 function InnerProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "React.ReactNode }) {
@@ -16,19 +16,19 @@ export default function ToastProvider(): unknown {): unknown {): unknown {): unk
   return (;"
     <SnackbarProvider;";
       maxSnack={3}";";
-      autoHideDuration={4000}";";"
+      autoHideDuration={4000}"
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}'
     >;
-      <InnerProvider>{children}</InnerProvider>;'
+      <InnerProvider>{children}</InnerProvider>'
     </SnackbarProvider>'
   );
 };
 
 };
-};'
+}'
 }'
 }
-};'
+}'
 }'
 }
 }'

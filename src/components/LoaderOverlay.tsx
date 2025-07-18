@@ -1,4 +1,4 @@
-export default function LoaderOverlay(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+export default function LoaderOverlay(): ;
   return (;
     <div;
       data-testid="loader-overlay;"";
@@ -6,9 +6,9 @@ export default function LoaderOverlay(): unknown {): unknown {): unknown {): unk
     >;
       {/*
         Use a simple CSS spinner so the overlay still works even if lucide-react;""
-        icons fail to load. This prevents a blank black screen when dependencies;;"
-        are missing or scripts fail to load.";;"
-      */}";;""
+        icons fail to load. This prevents a blank black screen when dependencies;"
+        are missing or scripts fail to load.";"
+      */}";""
       <div className=h-12 w-12 border-4 border-primary border-t-transparent rounded-full animate-spin />"
     </div>;"
   );";"
