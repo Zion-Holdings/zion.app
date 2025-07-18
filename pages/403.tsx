@@ -11,11 +11,8 @@ export default function Custom403() {
 
   useEffect(() => {
     const err = new Error('403 - Forbidden');
-    captureException(err, {
-      user: user ? { id: user.id, email: user.email } : undefined,
-      extra: { path: window.location.pathname },
-    });
-  }, [user]);
+    captureException(err);
+  }, []);
 
   return (
     <>
