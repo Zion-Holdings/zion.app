@@ -20,7 +20,7 @@ serve(async (req) => {
       Deno.env.get("STRIPE_SECRET_KEY") || ""
     : Deno.env.get("STRIPE_SECRET_KEY") || "";
   const stripe = new Stripe(stripeKey, {
-    apiVersion: "2023-10-16",
+    apiVersion: "2025-06-30.basil",
   });
 
   try {

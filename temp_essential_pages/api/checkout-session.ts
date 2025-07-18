@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const stripe = new Stripe(getStripeKey(), { apiVersion: '2023-10-16' });
+    const stripe = new Stripe(getStripeKey(), { apiVersion: '2025-06-30.basil' });
 
     const line_items = cartItems.map((item: any) => {
       if (item.priceId) {

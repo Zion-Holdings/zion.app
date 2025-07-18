@@ -8,7 +8,7 @@ import { sendEmailWithSendGrid } from '../src/lib/email';
 // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
 // advancedFraudSignals option are not applicable to this server-side implementation.
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2023-10-16',
+  apiVersion: '2025-06-30.basil',
 });
 
 export const config = { api: { bodyParser: false } };

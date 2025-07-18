@@ -8,7 +8,7 @@ const useTest = process.env.STRIPE_TEST_MODE === 'true';
 const stripe = new Stripe(
   useTest ? process.env.STRIPE_TEST_SECRET_KEY || '' : process.env.STRIPE_SECRET_KEY || '',
   {
-    apiVersion: '2023-10-16',
+    apiVersion: '2025-06-30.basil',
   }
 );
 
