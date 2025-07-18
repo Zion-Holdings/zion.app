@@ -280,43 +280,43 @@ export default function Marketplace() {
   }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
-  const _fetchProducts = useCallback(async (page: number, _limit: number) => {
-    try {
-      const params = {
-        page,
-        limit,
-        ...(filterCategory && { category: filterCategory }),
-        sort: sortBy
-      };
-      logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
-      const response = await (apiClient as typeof apiClient).get('/products', { params });
-      let items: ProductListing[] = response.data?.items || [];
-      const total = response.data?.total ?? items.length;
-      const hasMore = (page * limit) < total;
-      if (showRecommended) {
-        items = items.filter((p) => p.rating != null && p.rating >= 4.3);
-      }
-      items = items.filter((p) => {
-        const price = p.price || 0;
-        const ai = p.aiScore || 0;
-        const rating = p.rating || 0;
-        const location = (p.location || '').toLowerCase();
-        const availability = (p.availability || '').toLowerCase();
-        return (
-          price >= priceRange[0] &&
-          price <= priceRange[1] &&
-          ai >= minAiScore &&
-          rating >= minRating &&
-          (!filterLocation || location.includes(filterLocation.toLowerCase())) &&
-          (!filterAvailability || availability === filterAvailability.toLowerCase())
-        );
-      });
-      return { items, hasMore, total };
-    } catch {
-      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
-      return { items: [], hasMore: false, total: 0 };
-    }
-  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
+  // const _fetchProducts = useCallback(async (page: number, _limit: number) => {
+  //   try {
+  //     const params = {
+  //       page,
+  //       limit,
+  //       ...(filterCategory && { category: filterCategory }),
+  //       sort: sortBy
+  //     };
+  //     logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
+  //     const response = await (apiClient as typeof apiClient).get('/products', { params });
+  //     let items: ProductListing[] = response.data?.items || [];
+  //     const total = response.data?.total ?? items.length;
+  //     const hasMore = (page * limit) < total;
+  //     if (showRecommended) {
+  //       items = items.filter((p) => p.rating != null && p.rating >= 4.3);
+  //     }
+  //     items = items.filter((p) => {
+  //       const price = p.price || 0;
+  //       const ai = p.aiScore || 0;
+  //       const rating = p.rating || 0;
+  //       const location = (p.location || '').toLowerCase();
+  //       const availability = (p.availability || '').toLowerCase();
+  //       return (
+  //         price >= priceRange[0] &&
+  //         price <= priceRange[1] &&
+  //         ai >= minAiScore &&
+  //         rating >= minRating &&
+  //         (!filterLocation || location.includes(filterLocation.toLowerCase())) &&
+  //         (!filterAvailability || availability === filterAvailability.toLowerCase())
+  //       );
+  //     });
+  //     return { items, hasMore, total };
+  //   } catch {
+  //     logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
+  //     return { items: [], hasMore: false, total: 0 };
+  //   }
+  // }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
 
   // useInfiniteScrollPagination hook
   const {

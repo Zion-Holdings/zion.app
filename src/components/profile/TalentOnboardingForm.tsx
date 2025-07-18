@@ -49,7 +49,7 @@ const talentSchema = z.object({
 type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
-  const { _user } = useAuth();
+  const { user } = useAuth();
   
   const form = useForm<TalentFormValues>({
     resolver: zodResolver(talentSchema),
@@ -78,48 +78,12 @@ export function TalentOnboardingForm() {
     },
     mode: "onChange",
   });
-  
-  // Handle profile picture upload
-  const _handleProfilePictureUpload = undefined; // Unused async (_e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    
-    // Preview the image
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      // setProfilePictureUrl(reader.result as string); // This line was removed
-    };
-    reader.readAsDataURL(file);
-    
-    // Store the file in the form data
-    form.setValue("basicInfo.profilePicture", file);
-  };
 
-  // Handle CV upload
-  // const _handleCvUpload = async (_file: File) => {
-  //   if (!supabase) {
-  //     throw new Error("Supabase client not initialized");
-  //   }
-    
-  //   const fileName = `cv-${user?.id}-${Date.now()}`;
-  //   const { error: cvError } = await supabase.storage
-  //     .from('resumes')
-  //     .upload(fileName, file);
-      
-  //   if (cvError) {
-  //     throw new Error("Failed to upload CV");
-  //   }
-    
-  //   // Get the public URL
-  //   const { data: { publicUrl } } = supabase.storage
-  //     .from('resumes')
-  //     .getPublicUrl(fileName);
-    
-  //   return publicUrl;
-  // };
-
-  // Rest of the file remains unchanged...
-  // [Previous implementation continues...]
-
-  return null;
+  // TODO: Implement the form UI and handlers
+  return (
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-4">Talent Onboarding Form</h2>
+      <p className="text-gray-600">Form implementation coming soon...</p>
+    </div>
+  );
 }
