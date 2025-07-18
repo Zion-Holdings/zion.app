@@ -83,3 +83,4 @@ module.exports = nextConfig;// Security headers added
 // Build caching enabled
 // Webpack optimizations added
 // Build caching enabled
+// Security headers added
