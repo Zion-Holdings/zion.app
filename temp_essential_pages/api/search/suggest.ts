@@ -75,10 +75,10 @@ export default async function handler(
     ].slice(0, limit);
 
     return res.status(200).json(suggestions);
-  } catch {
-    Sentry.captureException();
-    console.('Error fetching search suggestions:', );
-    return res.status(500).json({ : 'Failed to fetch suggestions' });
+  } catch (error) {
+    Sentry.captureException(error);
+    console.error('Error fetching search suggestions:', error);
+    return res.status(500).json({ error: 'Failed to fetch suggestions' });
   } finally {
     await prisma.$disconnect();
   }
