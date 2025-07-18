@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight, Check, ExternalLink, Users } from '@/components/ui/icons';
+import { ArrowRight, Check, ExternalLink, Users, Slack, Briefcase } from '@/components/ui/icons';
 import { logDebug } from '@/utils/productionLogger';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
