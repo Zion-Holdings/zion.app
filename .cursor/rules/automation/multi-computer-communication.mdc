@@ -1,0 +1,40 @@
+# Cursor Multi-Computer Communication Rules
+
+## Overview
+This rule set enables automated communication and collaboration between multiple computers running Cursor IDE.
+
+## Communication Protocol
+- Each computer runs a local communication server on port 3002
+- Master node runs on port 3004 for coordination
+- Automatic failover and reconnection handling
+- Real-time status updates and health monitoring
+
+## Chat Triggers
+- Build errors automatically trigger chat requests
+- Linting issues trigger code quality discussions
+- Performance issues trigger optimization chats
+- Security vulnerabilities trigger security reviews
+
+## Fix Application
+- Automatic application of linting fixes
+- Code formatting and style corrections
+- Build error resolution
+- Test failure investigation
+
+## Monitoring
+- Continuous health monitoring every 30 seconds
+- Automatic issue detection and reporting
+- Performance metrics collection
+- Error logging and analysis
+
+## Commands
+- `npm run cursor:start` - Start communication system
+- `npm run cursor:chat <category> <prompt>` - Trigger chat
+- `npm run cursor:fix <type>` - Apply fix
+- `npm run cursor:status` - Get status
+
+## Integration
+- Integrates with existing Cursor AI features
+- Supports custom automation scripts
+- Extensible for additional computer types
+- Compatible with CI/CD pipelines

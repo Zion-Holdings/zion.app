@@ -1,0 +1,46 @@
+# Auto-Fix Rules
+
+## Fix Categories
+
+### Linting Fixes
+- ESLint error correction
+- Prettier formatting
+- Code style consistency
+- Import organization
+
+### Build Fixes
+- Dependency resolution
+- Configuration errors
+- Compilation issues
+- Asset optimization
+
+### TypeScript Fixes
+- Type definition errors
+- Interface mismatches
+- Import/export issues
+- Generic type problems
+
+### Test Fixes
+- Test configuration
+- Mock setup
+- Assertion errors
+- Coverage issues
+
+## Fix Application Process
+1. **Detection**: Identify the issue type
+2. **Analysis**: Understand the root cause
+3. **Solution**: Generate or apply fix
+4. **Verification**: Test the fix
+5. **Documentation**: Log the change
+
+## Safety Measures
+- Backup before applying fixes
+- Test fixes in isolation
+- Rollback capability
+- Human review for critical changes
+
+## Integration
+- Works with existing Cursor AI
+- Supports custom fix scripts
+- Extensible for new fix types
+- Compatible with CI/CD
