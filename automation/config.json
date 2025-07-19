@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-19T00:10:18.697Z",
+  "status": "ACTIVE",
+  "features": {
+    "healthMonitoring": true,
+    "maintenanceAutomation": true,
+    "performanceTracking": true,
+    "errorDetection": true,
+    "selfHealing": true
+  },
+  "endpoints": {
+    "health": "http://localhost:3001/api/health",
+    "main": "http://localhost:3001/"
+  },
+  "scripts": {
+    "maintainer": "scripts/zion-app-maintainer.cjs",
+    "complete": "scripts/complete-zion-automation.cjs",
+    "simple": "scripts/simple-working-app.cjs"
+  }
+}
