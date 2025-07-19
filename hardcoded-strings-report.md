@@ -8917,10 +8917,10 @@ if (response.data.type ==="
 - "Submitting..."
 - "Failed to submit application"
 - "s a link to my proposal: ${proposalLink}`;
-  }
-      // Add info about attached resume if available
-      if (selectedResume) {
-        fullMessage += `\n\nI"
+}
+    // Add info about attached resume if available
+    if (selectedResume) {
+      fullMessage += `\n\nI"
 - "Message required"
 - "Please enter a message before applying."
 - "Application sent"

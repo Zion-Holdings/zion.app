@@ -40,7 +40,7 @@
 ### Code Quality Enhancements
 
 1. **src/utils/serverless-polyfill.ts** - Fixed unused expression by properly handling return values
-2. ****tests**/pages/Marketplace.test.tsx** - Removed unused `act` import to reduce warnings
+2. \***\*tests**/pages/Marketplace.test.tsx\*\* - Removed unused `act` import to reduce warnings
 
 ## 🏥 System Health Metrics
 

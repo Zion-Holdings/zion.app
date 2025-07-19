@@ -226,23 +226,19 @@ app.post('/api/codex/suggest-fix', (req, res) => {
       logAndAlert(
         `Codex execution failed. File: ${filePath || route || 'N/A'}. Error: ${error.message}`,
       );
-      return res
-        .status(500)
-        .json({
-          error: 'Codex fix process failed to start or execute.',
-          details: error.message,
-        });
+      return res.status(500).json({
+        error: 'Codex fix process failed to start or execute.',
+        details: error.message,
+      });
     }
     if (stderr) {
       console.warn(`Codex execution stderr: ${stderr}`);
     }
     // console.log(`Codex execution stdout: ${stdout}`);
-    res
-      .status(200)
-      .json({
-        message: 'Codex fix process triggered successfully.',
-        output: stdout,
-      });
+    res.status(200).json({
+      message: 'Codex fix process triggered successfully.',
+      output: stdout,
+    });
   });
 });
 

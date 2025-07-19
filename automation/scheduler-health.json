@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-07-19T22:50:27.383Z",
+  "timestamp": "2025-07-19T23:47:27.295Z",
   "isRunning": true,
-  "lastRun": "2025-07-19T22:49:27.378Z",
-  "nextRun": "2025-07-19T23:19:27.378Z",
-  "runCount": 1,
-  "successCount": 2,
-  "errorCount": 2,
-  "successRate": "25.00"
+  "lastRun": "2025-07-19T23:19:27.316Z",
+  "nextRun": "2025-07-19T23:49:27.316Z",
+  "runCount": 2,
+  "successCount": 10,
+  "errorCount": 6,
+  "successRate": "62.50"
 }

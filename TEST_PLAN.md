@@ -53,8 +53,9 @@ _ `config_integrity.log` shows:
 _ Detection of change for `.env`, listing old and new checksums.
 _ "WARNING: '.env' is not tracked by Git. Cannot revert automatically."
 _ The content of `.env` remains the modified version.
-* `checksums.txt` is updated with the *new* (modified) checksum for `.env`.
-* Notification sent: "File Modified & Not Tracked by Git".
+
+- `checksums.txt` is updated with the _new_ (modified) checksum for `.env`.
+- Notification sent: "File Modified & Not Tracked by Git".
 
 **4. Test Case: File Deletion (Git Tracked File)**
 a. Pre-requisite: Ensure a file listed in `scripts/config_integrity_check.txt` is tracked by Git (e.g., `babel.config.js`, assuming it exists and is tracked).
@@ -73,9 +74,9 @@ a. Add a non-existent file path (e.g., `nonexistent_config.yml`) to `scripts/con
 b. Re-run the script: `./scripts/monitor_config_changes.sh`
 c. **Expected Outcome:**
 _ `config_integrity.log` shows:
-_ "Warning: Target file 'nonexistent_config.yml' not found. Skipping."
-_ `checksums.txt` does not contain an entry for `nonexistent_config.yml`.
-_ No "error" notification specifically for this, as it's treated as a configuration issue (file path listed but not found).
+_ "Warning: Target file 'nonexistent*config.yml' not found. Skipping."
+* `checksums.txt` does not contain an entry for `nonexistent_config.yml`.
+\_ No "error" notification specifically for this, as it's treated as a configuration issue (file path listed but not found).
 
 **6. Test Case: No Changes**
 a. Ensure no monitored files are changed from their state as recorded in `checksums.txt`.

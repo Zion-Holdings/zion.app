@@ -37,7 +37,7 @@
 2. **dao/zkvote/test/zkballot.test.js** - Added eslint disable for zkballot test require imports
 3. **sentry.ts** - Fixed Sentry conditional require import with proper eslint disable
 4. **monitoring/src/index.ts** - Enhanced monitoring path require with eslint disable
-5. ****tests**/pages/TalentDirectory.test.tsx** - Fixed unused props variable in mock
+5. \***\*tests**/pages/TalentDirectory.test.tsx\*\* - Fixed unused props variable in mock
 
 ### Code Quality Enhancements
 
