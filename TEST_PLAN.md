@@ -74,9 +74,10 @@ a. Add a non-existent file path (e.g., `nonexistent_config.yml`) to `scripts/con
 b. Re-run the script: `./scripts/monitor_config_changes.sh`
 c. **Expected Outcome:**
 _ `config_integrity.log` shows:
-_ "Warning: Target file 'nonexistent*config.yml' not found. Skipping."
-* `checksums.txt` does not contain an entry for `nonexistent_config.yml`.
-\_ No "error" notification specifically for this, as it's treated as a configuration issue (file path listed but not found).
+_ "Warning: Target file 'nonexistent\*config.yml' not found. Skipping."
+
+- `checksums.txt` does not contain an entry for `nonexistent_config.yml`.
+  \_ No "error" notification specifically for this, as it's treated as a configuration issue (file path listed but not found).
 
 **6. Test Case: No Changes**
 a. Ensure no monitored files are changed from their state as recorded in `checksums.txt`.
