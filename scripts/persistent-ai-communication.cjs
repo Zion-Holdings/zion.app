@@ -23,8 +23,8 @@ class PersistentAICommunication {
         this.config = {
             serverUrl: process.env.AI_SERVER_URL || 'https://api.cursor.sh',
             apiKey: process.env.CURSOR_API_KEY || '',
-            localPort: process.env.LOCAL_PORT || 3002,
-            masterPort: process.env.MASTER_PORT || 3004,
+            localPort: process.env.LOCAL_PORT || 3005,
+            masterPort: process.env.MASTER_PORT || 3006,
             enableHeartbeat: true,
             enableAutoReconnect: true,
             enableActivityMonitoring: true,
