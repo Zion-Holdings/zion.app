@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-07-19T11:26:27.821Z",
+  "isRunning": true,
+  "lastRun": "2025-07-19T11:24:27.819Z",
+  "nextRun": "2025-07-19T11:54:27.819Z",
+  "runCount": 1,
+  "successCount": 4,
+  "errorCount": 4,
+  "successRate": "50.00"
+}
