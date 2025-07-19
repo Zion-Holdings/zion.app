@@ -11,7 +11,7 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "test": "jest --passWithNoTests",
+    "test": "vitest",
     "maintain": "node scripts/zion-app-maintainer.cjs",
     "automate": "node scripts/complete-zion-automation.cjs",
     "health": "curl -s http://localhost:3001/api/health",
