@@ -1,7 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
 const _currentFilename = path.basename(__filename);
 
 function analyzeBundle() {
@@ -31,8 +33,6 @@ function analyzeBundle() {
   }
 }
 
-if (require.main === module) {
-  analyzeBundle();
-}
+analyzeBundle();
 
-module.exports = { analyzeBundle }; 
+export { analyzeBundle }; 
