@@ -17,7 +17,7 @@ class BuildMonitor {
     this.errorLogPath = path.join(process.cwd(), 'logs', 'build-errors.log');
     this.buildHistory = [];
     this.maxHistorySize = 100;
-    
+
     // Ensure logs directory exists
     const logsDir = path.dirname(this.buildLogPath);
     if (!fs.existsSync(logsDir)) {
@@ -36,10 +36,10 @@ class BuildMonitor {
 
     // Watch for build-related files
     this.watchBuildFiles();
-    
+
     // Monitor build logs
     this.monitorBuildLogs();
-    
+
     // Start periodic build health checks
     this.startPeriodicChecks();
   }
@@ -54,12 +54,12 @@ class BuildMonitor {
       'src/**/*.tsx',
       'src/**/*.ts',
       'pages/**/*.tsx',
-      'pages/**/*.ts'
+      'pages/**/*.ts',
     ];
 
     const watcher = chokidar.watch(buildFiles, {
       ignored: /node_modules|\.git|\.next/,
-      persistent: true
+      persistent: true,
     });
 
     watcher.on('change', (filePath) => {
@@ -74,10 +74,10 @@ class BuildMonitor {
 
   async onBuildFileChange(filePath) {
     console.log(`Build file changed: ${filePath}`);
-    
+
     // Wait a bit for the file to be fully written
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     // Check if the change might cause build issues
     if (this.shouldTriggerBuildCheck(filePath)) {
       await this.triggerBuildCheck();
@@ -89,15 +89,15 @@ class BuildMonitor {
       'package.json',
       'next.config.js',
       'tsconfig.json',
-      '.env.local'
+      '.env.local',
     ];
-    
-    return criticalFiles.some(file => filePath.includes(file));
+
+    return criticalFiles.some((file) => filePath.includes(file));
   }
 
   async triggerBuildCheck() {
     console.log('Triggering build check due to file change...');
-    
+
     try {
       // Run a quick build check
       await this.runBuildCheck();
@@ -110,10 +110,10 @@ class BuildMonitor {
   async runBuildCheck() {
     return new Promise((resolve, reject) => {
       console.log('Running build check...');
-      
+
       const buildProcess = spawn('npm', ['run', 'build'], {
         stdio: ['pipe', 'pipe', 'pipe'],
-        cwd: process.cwd()
+        cwd: process.cwd(),
       });
 
       let output = '';
@@ -137,11 +137,11 @@ class BuildMonitor {
           success: code === 0,
           code,
           output,
-          errorOutput
+          errorOutput,
         };
 
         this.buildHistory.push(buildResult);
-        
+
         // Keep history size manageable
         if (this.buildHistory.length > this.maxHistorySize) {
           this.buildHistory.shift();
@@ -166,7 +166,7 @@ class BuildMonitor {
 
   analyzeBuildFailure(buildResult) {
     console.log('Analyzing build failure...');
-    
+
     const errorPatterns = {
       'Module not found': 'dependency',
       'Cannot resolve module': 'import',
@@ -175,7 +175,7 @@ class BuildMonitor {
       'Tailwind CSS': 'styling',
       'Wallet connection': 'wallet',
       'Supabase connection': 'database',
-      'Environment variable': 'env'
+      'Environment variable': 'env',
     };
 
     const errorText = buildResult.errorOutput.toLowerCase();
@@ -189,35 +189,34 @@ class BuildMonitor {
 
     if (detectedIssues.length > 0) {
       console.log(`Detected issues: ${detectedIssues.join(', ')}`);
-      this.triggerHealing('build_failure', { 
+      this.triggerHealing('build_failure', {
         issues: detectedIssues,
-        buildResult 
+        buildResult,
       });
     } else {
       console.log('No specific issues detected, triggering generic healing');
-      this.triggerHealing('build_failure', { 
+      this.triggerHealing('build_failure', {
         issues: ['unknown'],
-        buildResult 
+        buildResult,
       });
     }
   }
 
   async triggerHealing(issueType, data) {
     console.log(`Triggering healing for ${issueType}...`);
-    
+
     try {
       // Run self-healing script
       execSync('node scripts/self-healing.js', {
         stdio: 'inherit',
-        cwd: process.cwd()
+        cwd: process.cwd(),
       });
-      
+
       console.log('Healing process completed');
-      
+
       // Wait a bit and try building again
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 5000));
       await this.runBuildCheck();
-      
     } catch (error) {
       console.error('Healing process failed:', error.message);
     }
@@ -226,7 +225,7 @@ class BuildMonitor {
   monitorBuildLogs() {
     // Monitor the build log file for new entries
     const logWatcher = chokidar.watch(this.buildLogPath, {
-      persistent: true
+      persistent: true,
     });
 
     logWatcher.on('change', () => {
@@ -242,16 +241,17 @@ class BuildMonitor {
 
       const logContent = fs.readFileSync(this.buildLogPath, 'utf8');
       const lines = logContent.split('\n');
-      
+
       // Look for recent errors
       const recentErrors = lines
         .slice(-50) // Last 50 lines
-        .filter(line => 
-          line.includes('ERROR') || 
-          line.includes('error') || 
-          line.includes('Error') ||
-          line.includes('failed') ||
-          line.includes('Failed')
+        .filter(
+          (line) =>
+            line.includes('ERROR') ||
+            line.includes('error') ||
+            line.includes('Error') ||
+            line.includes('failed') ||
+            line.includes('Failed'),
         );
 
       if (recentErrors.length > 0) {
@@ -259,7 +259,7 @@ class BuildMonitor {
         this.analyzeBuildFailure({
           timestamp: new Date(),
           success: false,
-          errorOutput: recentErrors.join('\n')
+          errorOutput: recentErrors.join('\n'),
         });
       }
     } catch (error) {
@@ -269,29 +269,32 @@ class BuildMonitor {
 
   startPeriodicChecks() {
     // Run periodic build health checks
-    setInterval(async () => {
-      if (this.isMonitoring) {
-        console.log('Running periodic build health check...');
-        try {
-          await this.runBuildCheck();
-        } catch (error) {
-          console.error('Periodic build check failed:', error.message);
+    setInterval(
+      async () => {
+        if (this.isMonitoring) {
+          console.log('Running periodic build health check...');
+          try {
+            await this.runBuildCheck();
+          } catch (error) {
+            console.error('Periodic build check failed:', error.message);
+          }
         }
-      }
-    }, 30 * 60 * 1000); // Every 30 minutes
+      },
+      30 * 60 * 1000,
+    ); // Every 30 minutes
   }
 
   logBuildOutput(output) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [BUILD] ${output}`;
-    
+
     fs.appendFileSync(this.buildLogPath, logEntry);
   }
 
   logBuildError(error) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [BUILD_ERROR] ${error}`;
-    
+
     fs.appendFileSync(this.errorLogPath, logEntry);
   }
 
@@ -301,15 +304,17 @@ class BuildMonitor {
 
   getBuildStats() {
     const totalBuilds = this.buildHistory.length;
-    const successfulBuilds = this.buildHistory.filter(build => build.success).length;
+    const successfulBuilds = this.buildHistory.filter(
+      (build) => build.success,
+    ).length;
     const failedBuilds = totalBuilds - successfulBuilds;
-    
+
     return {
       totalBuilds,
       successfulBuilds,
       failedBuilds,
       successRate: totalBuilds > 0 ? (successfulBuilds / totalBuilds) * 100 : 0,
-      lastBuild: this.buildHistory[this.buildHistory.length - 1] || null
+      lastBuild: this.buildHistory[this.buildHistory.length - 1] || null,
     };
   }
 
@@ -322,23 +327,23 @@ class BuildMonitor {
 // CLI interface
 if (require.main === module) {
   const monitor = new BuildMonitor();
-  
+
   // Handle process signals
   process.on('SIGINT', () => {
     monitor.stopMonitoring();
     process.exit(0);
   });
-  
+
   process.on('SIGTERM', () => {
     monitor.stopMonitoring();
     process.exit(0);
   });
-  
+
   // Start monitoring
-  monitor.startMonitoring().catch(error => {
+  monitor.startMonitoring().catch((error) => {
     console.error('Failed to start build monitor:', error);
     process.exit(1);
   });
 }
 
-module.exports = BuildMonitor; 
+module.exports = BuildMonitor;

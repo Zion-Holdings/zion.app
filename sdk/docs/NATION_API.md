@@ -8,11 +8,11 @@ _Detailed function definitions, parameters, and return types will be specified h
 
 **Examples:**
 
-*   `deployNation(nationConfig)`
-*   `getNationStatus(nationId)`
-*   `updateNationConfiguration(nationId, newConfig)`
-*   `listDeployedNations(ownerId, pagination)`
-*   `getNationDetails(nationId)`
-*   `suspendNation(nationId)`
-*   `resumeNation(nationId)`
-*   `deleteNation(nationId)`
+- `deployNation(nationConfig)`
+- `getNationStatus(nationId)`
+- `updateNationConfiguration(nationId, newConfig)`
+- `listDeployedNations(ownerId, pagination)`
+- `getNationDetails(nationId)`
+- `suspendNation(nationId)`
+- `resumeNation(nationId)`
+- `deleteNation(nationId)`

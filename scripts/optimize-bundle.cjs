@@ -36,23 +36,23 @@ class BundleOptimizer {
 
   scanChunks() {
     // console.warn('🔍 Scanning build artifacts...');
-    
+
     try {
       const chunksDir = path.join(this.staticDir, 'chunks');
-      
+
       if (fs.existsSync(chunksDir)) {
         const files = fs.readdirSync(chunksDir, { recursive: true });
-        
-        files.forEach(file => {
+
+        files.forEach((file) => {
           if (file.endsWith('.js')) {
             const filePath = path.join(chunksDir, file);
             const stats = fs.statSync(filePath);
-            
+
             this.chunks.push({
               name: file,
               path: filePath,
               size: stats.size,
-              type: this.getChunkType(file)
+              type: this.getChunkType(file),
             });
           }
         });
@@ -62,28 +62,28 @@ class BundleOptimizer {
       const cssDir = path.join(this.staticDir, 'css');
       if (fs.existsSync(cssDir)) {
         const cssFiles = fs.readdirSync(cssDir);
-        cssFiles.forEach(file => {
+        cssFiles.forEach((file) => {
           if (file.endsWith('.css')) {
             const filePath = path.join(cssDir, file);
             const stats = fs.statSync(filePath);
-            
+
             this.chunks.push({
               name: file,
               path: filePath,
               size: stats.size,
-              type: 'css'
+              type: 'css',
             });
           }
         });
       }
-
     } catch (_error) {
       // console.error('Error scanning chunks:', error.message);
     }
   }
 
   getChunkType(filename) {
-    if (filename.includes('vendor') || filename.includes('node_modules')) return 'vendor';
+    if (filename.includes('vendor') || filename.includes('node_modules'))
+      return 'vendor';
     if (filename.includes('main') || filename.includes('_app')) return 'main';
     if (filename.includes('pages')) return 'pages';
     if (filename.includes('webpack')) return 'webpack';
@@ -92,15 +92,17 @@ class BundleOptimizer {
 
   analyzeChunks() {
     // console.warn('📈 Analyzing chunk sizes...');
-    
+
     // Sort by size
     this.chunks.sort((a, b) => b.size - a.size);
-    
+
     // Calculate total size
     this.totalSize = this.chunks.reduce((sum, chunk) => sum + chunk.size, 0);
-    
+
     // Find large chunks
-    this.largeChunks = this.chunks.filter(chunk => chunk.size > LARGE_CHUNK_THRESHOLD);
+    this.largeChunks = this.chunks.filter(
+      (chunk) => chunk.size > LARGE_CHUNK_THRESHOLD,
+    );
   }
 
   generateRecommendations() {
@@ -118,13 +120,13 @@ class BundleOptimizer {
           'Implement code splitting for heavy components',
           'Use dynamic imports for non-critical features',
           'Remove unused dependencies',
-          'Optimize image assets'
-        ]
+          'Optimize image assets',
+        ],
       });
     }
 
     // Large chunk recommendations
-    this.largeChunks.forEach(chunk => {
+    this.largeChunks.forEach((chunk) => {
       this.recommendations.push({
         priority: chunk.size > 500 * 1024 ? 'HIGH' : 'MEDIUM',
         category: 'Code Splitting',
@@ -133,16 +135,17 @@ class BundleOptimizer {
         actions: [
           'Use React.lazy() for heavy components',
           'Implement route-based code splitting',
-          'Extract vendor libraries to separate chunks'
-        ]
+          'Extract vendor libraries to separate chunks',
+        ],
       });
     });
 
     // Vendor chunk analysis
-    const vendorChunks = this.chunks.filter(chunk => chunk.type === 'vendor');
+    const vendorChunks = this.chunks.filter((chunk) => chunk.type === 'vendor');
     const vendorSize = vendorChunks.reduce((sum, chunk) => sum + chunk.size, 0);
-    
-    if (vendorSize > 2 * 1024 * 1024) { // 2MB
+
+    if (vendorSize > 2 * 1024 * 1024) {
+      // 2MB
       this.recommendations.push({
         priority: 'MEDIUM',
         category: 'Dependencies',
@@ -151,16 +154,17 @@ class BundleOptimizer {
         actions: [
           'Use modular imports (e.g., import only needed icons)',
           'Replace heavy libraries with lighter alternatives',
-          'Check for duplicate dependencies'
-        ]
+          'Check for duplicate dependencies',
+        ],
       });
     }
 
     // CSS optimization
-    const cssChunks = this.chunks.filter(chunk => chunk.type === 'css');
+    const cssChunks = this.chunks.filter((chunk) => chunk.type === 'css');
     const cssSize = cssChunks.reduce((sum, chunk) => sum + chunk.size, 0);
-    
-    if (cssSize > 100 * 1024) { // 100KB
+
+    if (cssSize > 100 * 1024) {
+      // 100KB
       this.recommendations.push({
         priority: 'LOW',
         category: 'CSS',
@@ -169,8 +173,8 @@ class BundleOptimizer {
         actions: [
           'Purge unused CSS',
           'Use critical CSS extraction',
-          'Implement CSS code splitting'
-        ]
+          'Implement CSS code splitting',
+        ],
       });
     }
   }
@@ -200,7 +204,7 @@ class BundleOptimizer {
     // if (this.recommendations.length > 0) {
     //   console.warn('💡 OPTIMIZATION RECOMMENDATIONS');
     //   console.warn('─'.repeat(50));
-      
+
     //   this.recommendations.forEach((rec, index) => {
     //     const priorityIcon = rec.priority === 'HIGH' ? '🔥' : rec.priority === 'MEDIUM' ? '⚠️' : '💡';
     //     console.warn(`${index + 1}. ${priorityIcon} [${rec.priority}] ${rec.category}`);
@@ -227,12 +231,16 @@ class BundleOptimizer {
       timestamp: new Date().toISOString(),
       totalSize: this.totalSize,
       targetSize: MAX_BUNDLE_SIZE,
-      status: this.totalSize <= MAX_BUNDLE_SIZE ? 'optimal' : 'needs_optimization',
+      status:
+        this.totalSize <= MAX_BUNDLE_SIZE ? 'optimal' : 'needs_optimization',
       chunks: this.chunks,
-      recommendations: this.recommendations
+      recommendations: this.recommendations,
     };
 
-    fs.writeFileSync('bundle-optimization-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'bundle-optimization-report.json',
+      JSON.stringify(report, null, 2),
+    );
     // console.warn('📁 Detailed report saved to: bundle-optimization-report.json');
   }
 

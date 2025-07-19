@@ -8,10 +8,10 @@ _Detailed function definitions, parameters, and return types will be specified h
 
 **Examples:**
 
-*   `getBalance(userId, tokenId)`
-*   `transferTokens(fromUserId, toUserId, tokenId, amount, memo)`
-*   `listTransactions(userId, filterOptions, pagination)`
-*   `initiatePayment(payerId, payeeId, tokenId, amount, description)`
-*   `getPaymentStatus(paymentId)`
-*   `registerPaymentHook(hookUrl, eventType)`
-*   `listPaymentHooks()`
+- `getBalance(userId, tokenId)`
+- `transferTokens(fromUserId, toUserId, tokenId, amount, memo)`
+- `listTransactions(userId, filterOptions, pagination)`
+- `initiatePayment(payerId, payeeId, tokenId, amount, description)`
+- `getPaymentStatus(paymentId)`
+- `registerPaymentHook(hookUrl, eventType)`
+- `listPaymentHooks()`

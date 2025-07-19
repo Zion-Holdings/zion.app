@@ -1,21 +1,23 @@
 ---
 {
-  "title": "How SMBs Can Leverage AI Marketplaces to Scale Fast",
-  "excerpt": "AI marketplaces offer accessible tools for rapid growth. Learn strategies for choosing, integrating, and scaling these solutions.",
-  "category": "Business Strategy",
-  "tags": ["AI", "Marketplace", "SMB"],
-  "featuredImage": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630",
-  "author": {
-    "name": "Editorial Team",
-    "title": "Staff Writer",
-    "avatarUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64",
-    "bio": "The Zion editorial team covers the latest in AI and technology, helping our community stay informed."
-  },
-  "publishedDate": "Jan 15, 2025",
-  "readTime": "7 min read",
-  "isFeatured": false
+  'title': 'How SMBs Can Leverage AI Marketplaces to Scale Fast',
+  'excerpt': 'AI marketplaces offer accessible tools for rapid growth. Learn strategies for choosing, integrating, and scaling these solutions.',
+  'category': 'Business Strategy',
+  'tags': ['AI', 'Marketplace', 'SMB'],
+  'featuredImage': 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630',
+  'author':
+    {
+      'name': 'Editorial Team',
+      'title': 'Staff Writer',
+      'avatarUrl': 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64',
+      'bio': 'The Zion editorial team covers the latest in AI and technology, helping our community stay informed.',
+    },
+  'publishedDate': 'Jan 15, 2025',
+  'readTime': '7 min read',
+  'isFeatured': false,
 }
 ---
+
 ### The Opportunity in AI Marketplaces
 
 Artificial intelligence continues to redefine how small and medium-sized businesses compete. Instead of building every AI capability from scratch, many companies now turn to AI marketplaces that offer prebuilt models and ready-made services. These online platforms act as a one-stop shop, letting SMBs browse a wide range of AI solutions—from natural language processing to predictive analytics—without the heavy upfront investment. By purchasing and deploying models on demand, businesses can accelerate experimentation and focus their resources on core product features.

@@ -15,6 +15,7 @@
 **File**: `pages/api/auth/register.ts`
 
 **Changes Made**:
+
 - Replaced external auth service forwarding with direct Supabase authentication
 - Added comprehensive error handling for Supabase-specific errors
 - Improved validation and user feedback
@@ -25,7 +26,7 @@
 The new implementation provides specific error handling for:
 
 - **409 Conflict**: User already exists
-- **429 Rate Limit**: Too many registration attempts  
+- **429 Rate Limit**: Too many registration attempts
 - **400 Bad Request**: Invalid email, weak password, validation errors
 - **500 Internal Server Error**: Unexpected errors
 
@@ -60,6 +61,7 @@ curl -X POST http://localhost:3000/api/auth/register \
 ## Environment Requirements
 
 ### Required Variables
+
 ```bash
 # Supabase Configuration (REQUIRED)
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
@@ -67,6 +69,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 ### No Longer Required
+
 ```bash
 # This is no longer needed for signup to work
 INTERNAL_AUTH_SERVICE_URL=https://external-auth-service.com

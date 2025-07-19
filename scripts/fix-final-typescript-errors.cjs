@@ -10,13 +10,13 @@ console.log('🔧 Fixing final TypeScript errors...');
 const filesToFix = [
   'pages/403.tsx',
   'src/utils/sentry.ts',
-  'src/utils/productionLogger.ts'
+  'src/utils/productionLogger.ts',
 ];
 
 let fixedFiles = 0;
 let totalIssues = 0;
 
-filesToFix.forEach(file => {
+filesToFix.forEach((file) => {
   try {
     if (fs.existsSync(file)) {
       let content = fs.readFileSync(file, 'utf8');
@@ -30,7 +30,7 @@ filesToFix.forEach(file => {
           (match, options) => {
             fileIssues++;
             return `captureException(err)`;
-          }
+          },
         );
       }
 
@@ -94,4 +94,6 @@ export const logWarn = (message: string, context?: any) => {
   }
 });
 
-console.log(`\n🎉 Fixed ${totalIssues} TypeScript issues across ${fixedFiles} files`); 
+console.log(
+  `\n🎉 Fixed ${totalIssues} TypeScript issues across ${fixedFiles} files`,
+);

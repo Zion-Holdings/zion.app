@@ -20,7 +20,7 @@
       "label": "Zion marketplace desktop view"
     },
     {
-      "src": "/images/screenshots/mobile-narrow.png", 
+      "src": "/images/screenshots/mobile-narrow.png",
       "sizes": "375x812",
       "type": "image/png",
       "form_factor": "narrow",
@@ -36,7 +36,7 @@
     },
     {
       "src": "/logos/zion-logo.png",
-      "sizes": "512x512", 
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
@@ -63,7 +63,7 @@
     },
     {
       "name": "Find Talent",
-      "short_name": "Talent", 
+      "short_name": "Talent",
       "description": "Browse technical talent",
       "url": "/talent",
       "icons": [
@@ -81,7 +81,7 @@
       "url": "/dashboard",
       "icons": [
         {
-          "src": "/icons/dashboard-shortcut.png", 
+          "src": "/icons/dashboard-shortcut.png",
           "sizes": "96x96",
           "type": "image/png"
         }

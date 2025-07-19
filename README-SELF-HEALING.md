@@ -29,25 +29,28 @@ A comprehensive automated system that monitors, detects, and fixes common issues
 
 ### Prerequisites
 
-- Node.js 16+ 
+- Node.js 16+
 - npm or yarn
 - Bash shell (for management scripts)
 
 ### Quick Start
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    npm install chokidar  # For file watching
    ```
 
 2. **Start all monitoring systems**:
+
    ```bash
    chmod +x scripts/*.sh
    ./scripts/start-monitoring.sh
    ```
 
 3. **Check status**:
+
    ```bash
    ./scripts/status-monitoring.sh
    ```
@@ -89,12 +92,14 @@ npm run build  # This will trigger self-healing automatically
 ## 🔍 What Gets Monitored
 
 ### Health Monitoring
+
 - Application endpoints (main site, API, auth)
 - Response times
 - Error rates
 - System resources (CPU, memory)
 
 ### Build Monitoring
+
 - Build success/failure rates
 - TypeScript compilation errors
 - ESLint errors
@@ -102,6 +107,7 @@ npm run build  # This will trigger self-healing automatically
 - Import/export problems
 
 ### File Monitoring
+
 - Critical configuration files
 - Source code changes
 - Environment variables
@@ -110,34 +116,40 @@ npm run build  # This will trigger self-healing automatically
 ## 🩹 Automatic Fixes
 
 ### Dependency Issues
+
 - Missing package installations
 - Cache clearing and reinstallation
 - Version conflicts resolution
 
 ### TypeScript Issues
+
 - Import/export fixes
 - Type annotation corrections
 - Interface and generic fixes
 - Path alias resolution
 
 ### Linting Issues
+
 - ESLint auto-fixes
 - Code formatting
 - Unused import removal
 
 ### Configuration Issues
+
 - Next.js configuration
 - TypeScript configuration
 - Tailwind CSS setup
 - Environment variable validation
 
 ### Wallet Context Issues
+
 - AppKit initialization
 - Provider configuration
 - Error handling improvements
 - Type safety enhancements
 
 ### Supabase Issues
+
 - Client configuration
 - Server configuration
 - Environment variable handling
@@ -146,12 +158,14 @@ npm run build  # This will trigger self-healing automatically
 ## 📊 Monitoring & Logs
 
 ### Log Files
+
 - `logs/build.log` - Build process logs
 - `logs/errors.log` - Error logs
 - `logs/health-metrics.json` - Health metrics
 - `logs/build-errors.log` - Build-specific errors
 
 ### Metrics Tracked
+
 - Uptime
 - Response times
 - Error rates
@@ -162,6 +176,7 @@ npm run build  # This will trigger self-healing automatically
 ## ⚙️ Configuration
 
 ### Environment Variables
+
 ```bash
 # Required for monitoring
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -173,6 +188,7 @@ NEXT_PUBLIC_APP_URL=https://zion-app.netlify.app
 ```
 
 ### Thresholds (Configurable)
+
 ```javascript
 // In health-monitor.js
 thresholds: {
@@ -224,16 +240,19 @@ The system recognizes and fixes these common error patterns:
 ### Common Issues
 
 1. **Scripts not executable**:
+
    ```bash
    chmod +x scripts/*.sh
    ```
 
 2. **Permission denied**:
+
    ```bash
    sudo chmod +x scripts/*.sh
    ```
 
 3. **Node modules missing**:
+
    ```bash
    npm install
    ```
@@ -246,6 +265,7 @@ The system recognizes and fixes these common error patterns:
 ### Debug Mode
 
 Enable debug logging:
+
 ```bash
 DEBUG=* npm run self-heal
 ```
@@ -253,6 +273,7 @@ DEBUG=* npm run self-heal
 ### Manual Fix Application
 
 Run specific fix categories:
+
 ```bash
 # Fix dependencies only
 node scripts/auto-fix-errors.js --dependencies
@@ -276,6 +297,7 @@ For issues with the self-healing system:
 ## 🔄 Continuous Improvement
 
 The self-healing system learns from:
+
 - Successful fix patterns
 - Error recurrence rates
 - Performance metrics
@@ -285,4 +307,4 @@ This allows the system to improve its fix strategies over time.
 
 ---
 
-**Note**: This system is designed to be autonomous and will automatically fix common issues. Monitor the logs to ensure it's working as expected and intervene only when necessary. 
+**Note**: This system is designed to be autonomous and will automatically fix common issues. Monitor the logs to ensure it's working as expected and intervene only when necessary.

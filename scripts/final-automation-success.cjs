@@ -16,11 +16,11 @@ class FinalAutomationSuccess {
   async runCommand(command, options = {}) {
     try {
       this.log(`Running: ${command}`);
-      const result = execSync(command, { 
-        cwd: this.projectRoot, 
+      const result = execSync(command, {
+        cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options 
+        ...options,
       });
       return { success: true, output: result };
     } catch (error) {
@@ -30,13 +30,17 @@ class FinalAutomationSuccess {
 
   ensureNodeVersion() {
     this.log('Ensuring Node.js 18 is active...');
-    
+
     try {
-      const nodeVersion = execSync('node --version', { encoding: 'utf8' }).trim();
+      const nodeVersion = execSync('node --version', {
+        encoding: 'utf8',
+      }).trim();
       this.log(`Current Node.js version: ${nodeVersion}`);
-      
+
       if (!nodeVersion.startsWith('v18')) {
-        this.log('⚠️  Warning: Not using Node.js 18. Consider switching for best compatibility.');
+        this.log(
+          '⚠️  Warning: Not using Node.js 18. Consider switching for best compatibility.',
+        );
         this.log('💡 Run: nvm use 18');
       } else {
         this.log('✅ Node.js 18 is active');
@@ -48,7 +52,7 @@ class FinalAutomationSuccess {
 
   createSuccessPage() {
     this.log('Creating success page...');
-    
+
     const successContent = `export default function Success() {
   return (
     <div style={{ 
@@ -154,21 +158,24 @@ class FinalAutomationSuccess {
   );
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', 'success.tsx'), successContent);
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', 'success.tsx'),
+      successContent,
+    );
     this.log('Created success page at /success');
   }
 
   async startServer() {
     this.log('Starting development server...');
-    
+
     return new Promise((resolve) => {
       const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         cwd: this.projectRoot,
         stdio: 'inherit',
         env: {
           ...process.env,
-          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096'
-        }
+          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+        },
       });
 
       let resolved = false;
@@ -205,14 +212,14 @@ class FinalAutomationSuccess {
 
   async runFinalAutomation() {
     this.log('🚀 Starting Final Automation Success...');
-    
+
     try {
       // Step 1: Ensure Node.js version
       this.ensureNodeVersion();
-      
+
       // Step 2: Create success page
       this.createSuccessPage();
-      
+
       // Step 3: Try to build
       const buildResult = await this.runCommand('npm run build');
       if (buildResult.success) {
@@ -220,17 +227,17 @@ class FinalAutomationSuccess {
       } else {
         this.log('⚠️  Build failed, but continuing...');
       }
-      
+
       // Step 4: Start server
       const serverResult = await this.startServer();
-      
+
       if (serverResult.success) {
         this.log('🎉 FINAL SUCCESS: App is running with full automation!');
         this.log('📈 Automation System Status: ACTIVE');
         this.log('🔄 Continuous Improvement: ENABLED');
         this.log('🔧 Self-Healing: ENABLED');
         this.log('📊 Monitoring: ENABLED');
-        
+
         // Keep the process running
         process.on('SIGINT', () => {
           this.log('Shutting down...');
@@ -239,14 +246,13 @@ class FinalAutomationSuccess {
           }
           process.exit(0);
         });
-        
+
         return true;
       } else {
         this.log('❌ Failed to start server');
         this.log('💡 Manual start: npm run dev -- --port 3001');
         return false;
       }
-      
     } catch (error) {
       this.log(`Error: ${error.message}`);
       return false;
@@ -257,16 +263,17 @@ class FinalAutomationSuccess {
 // Run if this script is executed directly
 if (require.main === module) {
   const automation = new FinalAutomationSuccess();
-  automation.runFinalAutomation()
-    .then(success => {
+  automation
+    .runFinalAutomation()
+    .then((success) => {
       if (!success) {
         process.exit(1);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Final automation failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = FinalAutomationSuccess; 
+module.exports = FinalAutomationSuccess;

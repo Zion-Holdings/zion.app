@@ -1,1 +1,26 @@
-[{"filePath":"/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/src/hooks/useCompanyWorkspace.ts","messages":[{"ruleId":"@typescript-eslint/no-unused-vars","severity":1,"message":"'err' is defined but never used.","line":33,"column":16,"nodeType":null,"messageId":"unusedVar","endLine":33,"endColumn":19}],"suppressedMessages":[],"errorCount":0,"fatalErrorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":"\nimport { useState, useEffect } from \"react\";\nimport type { Company } from \"@/components/enterprise/workspace/CompanyDashboard\";\n\nexport function useCompanyWorkspace(companySlug?: string) {\n  const [company, setCompany] = useState<Company | null>(null);\n  const [isLoading, setIsLoading] = useState(true);\n  const [error, setError] = useState<string | null>(null);\n\n  useEffect(() => {\n    // Reactivate: Use mock data for company API\n    setIsLoading(true);\n    (async () => {\n      try {\n        if (!companySlug) {\n          setCompany(null);\n          setError('No company slug provided');\n          setIsLoading(false);\n          return;\n        }\n        await new Promise(resolve => setTimeout(resolve, 400));\n        setCompany({\n          id: 'company-1',\n          name: 'Zion AI',\n          logoUrl: '/images/zion-logo.svg',\n          plan: 'Pro',\n          teamSize: 2,\n          teamLimit: 10,\n          billingCycle: 'monthly',\n          workspaceUrl: `/workspace/${companySlug}`,\n        });\n        setError(null);\n      } catch (err) {\n        setCompany(null);\n        setError('Company not found or error fetching data');\n      } finally {\n        setIsLoading(false);\n      }\n    })();\n  }, [companySlug]);\n\n  return { company, isLoading, error };\n}\n","usedDeprecatedRules":[]}]
+[
+  {
+    "filePath": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/src/hooks/useCompanyWorkspace.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'err' is defined but never used.",
+        "line": 33,
+        "column": 16,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 33,
+        "endColumn": 19
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 1,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "\nimport { useState, useEffect } from \"react\";\nimport type { Company } from \"@/components/enterprise/workspace/CompanyDashboard\";\n\nexport function useCompanyWorkspace(companySlug?: string) {\n  const [company, setCompany] = useState<Company | null>(null);\n  const [isLoading, setIsLoading] = useState(true);\n  const [error, setError] = useState<string | null>(null);\n\n  useEffect(() => {\n    // Reactivate: Use mock data for company API\n    setIsLoading(true);\n    (async () => {\n      try {\n        if (!companySlug) {\n          setCompany(null);\n          setError('No company slug provided');\n          setIsLoading(false);\n          return;\n        }\n        await new Promise(resolve => setTimeout(resolve, 400));\n        setCompany({\n          id: 'company-1',\n          name: 'Zion AI',\n          logoUrl: '/images/zion-logo.svg',\n          plan: 'Pro',\n          teamSize: 2,\n          teamLimit: 10,\n          billingCycle: 'monthly',\n          workspaceUrl: `/workspace/${companySlug}`,\n        });\n        setError(null);\n      } catch (err) {\n        setCompany(null);\n        setError('Company not found or error fetching data');\n      } finally {\n        setIsLoading(false);\n      }\n    })();\n  }, [companySlug]);\n\n  return { company, isLoading, error };\n}\n",
+    "usedDeprecatedRules": []
+  }
+]

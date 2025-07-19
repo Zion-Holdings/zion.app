@@ -10,6 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     message: 'API endpoint working',
     endpoint: 'points/redeem',
     method: req.method,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 }

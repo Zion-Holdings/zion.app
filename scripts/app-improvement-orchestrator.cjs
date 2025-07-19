@@ -13,12 +13,20 @@ class AppImprovementOrchestrator {
     this.successCount = 0;
     this.currentTask = null;
     this.continuousMode = process.argv.includes('--continuous');
-    
+
     this.automationSystems = [
-      { name: 'comprehensive', port: 3001, script: 'comprehensive-app-automation.cjs' },
+      {
+        name: 'comprehensive',
+        port: 3001,
+        script: 'comprehensive-app-automation.cjs',
+      },
       { name: 'ai', port: 3002, script: 'ai-continuous-improvement.cjs' },
       { name: 'cursor', port: 3005, script: 'cursor-ai-delegator.cjs' },
-      { name: 'coordinator', port: 3003, script: 'multi-computer-coordinator.cjs' }
+      {
+        name: 'coordinator',
+        port: 3003,
+        script: 'multi-computer-coordinator.cjs',
+      },
     ];
   }
 
@@ -41,7 +49,9 @@ class AppImprovementOrchestrator {
     this.startMonitoring();
 
     console.log('✅ App Improvement Orchestrator started successfully!');
-    console.log(`📊 Continuous mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`);
+    console.log(
+      `📊 Continuous mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`,
+    );
   }
 
   stop() {
@@ -51,7 +61,7 @@ class AppImprovementOrchestrator {
 
   async startAutomationSystems() {
     console.log('🚀 Starting automation systems...');
-    
+
     for (const system of this.automationSystems) {
       try {
         await this.startSystem(system);
@@ -64,13 +74,14 @@ class AppImprovementOrchestrator {
 
   async startSystem(system) {
     return new Promise((resolve, reject) => {
-      const process = spawn('node', [
-        path.join(__dirname, system.script),
-        'start'
-      ], {
-        stdio: 'pipe',
-        detached: false
-      });
+      const process = spawn(
+        'node',
+        [path.join(__dirname, system.script), 'start'],
+        {
+          stdio: 'pipe',
+          detached: false,
+        },
+      );
 
       process.stdout.on('data', (data) => {
         console.log(`[${system.name}] ${data.toString().trim()}`);
@@ -99,23 +110,26 @@ class AppImprovementOrchestrator {
     }
 
     // Run every 15 minutes in continuous mode
-    setInterval(async () => {
-      if (!this.isRunning) return;
-      
-      try {
-        await this.runImprovementCycle();
-      } catch (error) {
-        console.error('Improvement cycle failed:', error);
-        this.errorCount++;
-      }
-    }, 15 * 60 * 1000);
+    setInterval(
+      async () => {
+        if (!this.isRunning) return;
+
+        try {
+          await this.runImprovementCycle();
+        } catch (error) {
+          console.error('Improvement cycle failed:', error);
+          this.errorCount++;
+        }
+      },
+      15 * 60 * 1000,
+    );
   }
 
   async runImprovementCycle() {
     this.improvementCycle++;
     this.currentTask = `Improvement Cycle ${this.improvementCycle}`;
     this.lastImprovementTime = new Date();
-    
+
     console.log(`🔄 Starting Improvement Cycle ${this.improvementCycle}...`);
 
     try {
@@ -138,10 +152,14 @@ class AppImprovementOrchestrator {
       await this.commitAndPushChanges();
 
       this.successCount++;
-      console.log(`✅ Improvement Cycle ${this.improvementCycle} completed successfully`);
-      
+      console.log(
+        `✅ Improvement Cycle ${this.improvementCycle} completed successfully`,
+      );
     } catch (error) {
-      console.error(`❌ Improvement Cycle ${this.improvementCycle} failed:`, error);
+      console.error(
+        `❌ Improvement Cycle ${this.improvementCycle} failed:`,
+        error,
+      );
       this.errorCount++;
     } finally {
       this.currentTask = null;
@@ -150,12 +168,12 @@ class AppImprovementOrchestrator {
 
   async checkSystemHealth() {
     console.log('🏥 Checking system health...');
-    
+
     for (const system of this.automationSystems) {
       try {
         const response = await fetch(`http://localhost:${system.port}/health`);
         const health = await response.json();
-        
+
         if (health.status === 'healthy') {
           console.log(`✅ ${system.name} is healthy`);
         } else {
@@ -169,15 +187,15 @@ class AppImprovementOrchestrator {
 
   async runComprehensiveImprovements() {
     console.log('🔧 Running comprehensive improvements...');
-    
+
     try {
       // Trigger comprehensive automation
       const response = await fetch('http://localhost:3001/improve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ target: 'general', priority: 'high' })
+        body: JSON.stringify({ target: 'general', priority: 'high' }),
       });
-      
+
       if (response.ok) {
         console.log('✅ Comprehensive improvements triggered');
       } else {
@@ -190,15 +208,15 @@ class AppImprovementOrchestrator {
 
   async runAIImprovements() {
     console.log('🤖 Running AI improvements...');
-    
+
     try {
       // Trigger AI improvements
       const response = await fetch('http://localhost:3002/improve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ target: 'code-quality', priority: 'high' })
+        body: JSON.stringify({ target: 'code-quality', priority: 'high' }),
       });
-      
+
       if (response.ok) {
         console.log('✅ AI improvements triggered');
       } else {
@@ -211,23 +229,23 @@ class AppImprovementOrchestrator {
 
   async runCursorDelegations() {
     console.log('📝 Running Cursor delegations...');
-    
+
     try {
       // Submit tasks to Cursor delegator
       const tasks = [
         'Fix all TypeScript errors',
         'Optimize bundle size',
         'Improve code quality',
-        'Update dependencies'
+        'Update dependencies',
       ];
-      
+
       for (const task of tasks) {
         const response = await fetch('http://localhost:3005/api/tasks/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ task, priority: 'normal' })
+          body: JSON.stringify({ task, priority: 'normal' }),
         });
-        
+
         if (response.ok) {
           console.log(`✅ Task submitted: ${task}`);
         } else {
@@ -241,15 +259,18 @@ class AppImprovementOrchestrator {
 
   async distributeWorkload() {
     console.log('🌐 Distributing workload...');
-    
+
     try {
       // Distribute tasks across multiple computers
       const response = await fetch('http://localhost:3003/api/tasks/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ task: 'Comprehensive app improvement', priority: 'high' })
+        body: JSON.stringify({
+          task: 'Comprehensive app improvement',
+          priority: 'high',
+        }),
       });
-      
+
       if (response.ok) {
         console.log('✅ Workload distributed');
       } else {
@@ -262,14 +283,16 @@ class AppImprovementOrchestrator {
 
   async commitAndPushChanges() {
     console.log('💾 Committing and pushing changes...');
-    
+
     try {
       // Check if there are changes to commit
       const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      
+
       if (status.trim()) {
         execSync('git add .', { stdio: 'inherit' });
-        execSync('git commit -m "🤖 Automated improvements and fixes"', { stdio: 'inherit' });
+        execSync('git commit -m "🤖 Automated improvements and fixes"', {
+          stdio: 'inherit',
+        });
         execSync('git push', { stdio: 'inherit' });
         console.log('✅ Changes committed and pushed');
       } else {
@@ -282,17 +305,24 @@ class AppImprovementOrchestrator {
 
   startMonitoring() {
     // Monitor every 5 minutes
-    setInterval(() => {
-      if (!this.isRunning) return;
+    setInterval(
+      () => {
+        if (!this.isRunning) return;
 
-      console.log(`📊 Orchestrator Status:`);
-      console.log(`   - Improvement Cycles: ${this.improvementCycle}`);
-      console.log(`   - Success Count: ${this.successCount}`);
-      console.log(`   - Error Count: ${this.errorCount}`);
-      console.log(`   - Last Improvement: ${this.lastImprovementTime ? this.lastImprovementTime.toISOString() : 'Never'}`);
-      console.log(`   - Current Task: ${this.currentTask || 'None'}`);
-      console.log(`   - Continuous Mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`);
-    }, 5 * 60 * 1000);
+        console.log(`📊 Orchestrator Status:`);
+        console.log(`   - Improvement Cycles: ${this.improvementCycle}`);
+        console.log(`   - Success Count: ${this.successCount}`);
+        console.log(`   - Error Count: ${this.errorCount}`);
+        console.log(
+          `   - Last Improvement: ${this.lastImprovementTime ? this.lastImprovementTime.toISOString() : 'Never'}`,
+        );
+        console.log(`   - Current Task: ${this.currentTask || 'None'}`);
+        console.log(
+          `   - Continuous Mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`,
+        );
+      },
+      5 * 60 * 1000,
+    );
   }
 
   getStatus() {
@@ -303,23 +333,23 @@ class AppImprovementOrchestrator {
       errorCount: this.errorCount,
       lastImprovementTime: this.lastImprovementTime,
       currentTask: this.currentTask,
-      continuousMode: this.continuousMode
+      continuousMode: this.continuousMode,
     };
   }
 
   async runQuickImprovement() {
     console.log('⚡ Running quick improvement...');
-    
+
     try {
       // Run linting fixes
       execSync('npm run lint:fix', { stdio: 'inherit' });
-      
+
       // Run TypeScript check
       execSync('npm run typecheck', { stdio: 'inherit' });
-      
+
       // Run build check
       execSync('npm run build', { stdio: 'inherit' });
-      
+
       console.log('✅ Quick improvement completed');
     } catch (error) {
       console.error('❌ Quick improvement failed:', error);
@@ -330,44 +360,46 @@ class AppImprovementOrchestrator {
 // CLI interface
 if (require.main === module) {
   const orchestrator = new AppImprovementOrchestrator();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       orchestrator.start();
-      
+
       // Handle graceful shutdown
       process.on('SIGINT', async () => {
         console.log('\n🛑 Received SIGINT, shutting down gracefully...');
         orchestrator.stop();
         process.exit(0);
       });
-      
+
       process.on('SIGTERM', async () => {
         console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
         orchestrator.stop();
         process.exit(0);
       });
       break;
-      
+
     case 'stop':
       orchestrator.stop();
       break;
-      
+
     case 'status':
       const status = orchestrator.getStatus();
       console.log('Orchestrator Status:');
       console.log(JSON.stringify(status, null, 2));
       break;
-      
+
     case 'quick':
       orchestrator.runQuickImprovement();
       break;
-      
+
     default:
-      console.log('Usage: node app-improvement-orchestrator.cjs [start|stop|status|quick] [--continuous]');
+      console.log(
+        'Usage: node app-improvement-orchestrator.cjs [start|stop|status|quick] [--continuous]',
+      );
   }
 }
 
-module.exports = AppImprovementOrchestrator; 
+module.exports = AppImprovementOrchestrator;

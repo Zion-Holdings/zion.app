@@ -3,17 +3,22 @@
 ## Issue #13 - Social Icons Open in Same Tab
 
 ### Problem Description
+
 Social media icons (Twitter, Facebook, LinkedIn, Instagram, GitHub) were reported to open in the same tab instead of opening in a new tab, causing users to navigate away from the current page.
 
 ### Root Cause Analysis
+
 Upon investigation, **all social media links in the codebase already have the correct attributes**:
+
 - `target="_blank"` - Opens links in new tab
 - `rel="noopener noreferrer"` - Security attributes to prevent window.opener access
 
 ### Current Implementation Status
 
 #### ✅ **Footer Social Icons** (`src/components/Footer.tsx`)
+
 All social media links have proper attributes:
+
 ```tsx
 <a
   href={TWITTER_URL}
@@ -28,7 +33,9 @@ All social media links have proper attributes:
 ```
 
 #### ✅ **Profile Social Links** (`src/pages/ProfileDetail.tsx`)
+
 Profile social media links have proper attributes:
+
 ```tsx
 <a
   href={profileData.twitter_url}
@@ -44,7 +51,9 @@ Profile social media links have proper attributes:
 ```
 
 #### ✅ **Public Profile Social Links** (`src/pages/PublicTalentProfilePage.tsx`)
+
 Public profile social media links have proper attributes:
+
 ```tsx
 <a
   href={profileData.twitter_link}
@@ -59,7 +68,9 @@ Public profile social media links have proper attributes:
 ```
 
 #### ✅ **Blog Share Links** (`src/pages/BlogPost.tsx`)
+
 Blog social share links have proper attributes:
+
 ```tsx
 <a
   href={getShareUrl('twitter')}
@@ -79,11 +90,13 @@ Blog social share links have proper attributes:
 #### **Basic Functionality Test**
 
 1. **Navigate to Application Homepage**
+
    ```
    Visit: https://app.ziontechgroup.com/
    ```
 
 2. **Footer Social Icons Test**
+
    ```
    1. Scroll to footer section
    2. Locate social media icons (Twitter, LinkedIn, Facebook, Instagram, GitHub)
@@ -100,7 +113,7 @@ Blog social share links have proper attributes:
    ```
    Repeat above test for each social icon:
    ✅ Twitter -> https://twitter.com/ZionTechGroup
-   ✅ LinkedIn -> https://linkedin.com/company/ziontechgroup  
+   ✅ LinkedIn -> https://linkedin.com/company/ziontechgroup
    ✅ Facebook -> https://facebook.com/ZionTechGroup
    ✅ Instagram -> https://instagram.com/ZionTechGroup
    ✅ GitHub -> https://github.com/ZionTechGroup
@@ -109,6 +122,7 @@ Blog social share links have proper attributes:
 #### **Profile Social Links Test**
 
 4. **Navigate to a Talent Profile**
+
    ```
    1. Go to talent/profile section
    2. Find a profile with social media links
@@ -127,6 +141,7 @@ Blog social share links have proper attributes:
 #### **Cross-Browser Testing**
 
 6. **Browser Compatibility Test**
+
    ```
    Test social icon behavior in:
    ✅ Chrome (latest) - Cmd+Click, Middle-click, Right-click -> Open in new tab
@@ -157,6 +172,7 @@ Blog social share links have proper attributes:
 #### **Accessibility Testing**
 
 9. **Keyboard Navigation Test**
+
    ```
    1. Use Tab key to navigate to social icons
    2. Press Enter on focused social icon
@@ -199,6 +215,7 @@ Blog social share links have proper attributes:
 #### **If Social Icons Open in Same Tab**
 
 1. **Check Browser Settings**
+
    ```
    - Verify browser allows new tabs
    - Check if popup blocker is interfering
@@ -206,6 +223,7 @@ Blog social share links have proper attributes:
    ```
 
 2. **Clear Browser Cache**
+
    ```
    - Hard refresh (Ctrl+F5 or Cmd+Shift+R)
    - Clear browser cache and cookies
@@ -213,6 +231,7 @@ Blog social share links have proper attributes:
    ```
 
 3. **Inspect HTML Attributes**
+
    ```
    - Open browser dev tools
    - Inspect social media links
@@ -230,6 +249,7 @@ Blog social share links have proper attributes:
 ### Implementation Details
 
 #### **Environment Variables**
+
 ```env
 # Social media URLs (configurable via environment variables)
 NEXT_PUBLIC_SOCIAL_TWITTER_URL=https://twitter.com/ZionTechGroup
@@ -240,6 +260,7 @@ NEXT_PUBLIC_SOCIAL_GITHUB_URL=https://github.com/ZionTechGroup
 ```
 
 #### **Standard Attributes for All Social Links**
+
 ```tsx
 // Required attributes for all external social media links
 target="_blank"              // Opens in new tab
@@ -249,6 +270,7 @@ title="Platform Name"        // Tooltip on hover
 ```
 
 #### **Components Using Social Links**
+
 - `src/components/Footer.tsx` - Main footer social icons
 - `src/pages/ProfileDetail.tsx` - Talent profile social links
 - `src/pages/PublicTalentProfilePage.tsx` - Public profile social links
@@ -262,6 +284,7 @@ title="Platform Name"        // Tooltip on hover
 After any changes, verify:
 
 1. **Production Environment**
+
    ```bash
    # Test social links on live site
    curl -I https://app.ziontechgroup.com/
@@ -289,9 +312,10 @@ After any changes, verify:
 3. **Browser Specific**: Potential browser setting or extension interference
 4. **Testing Error**: Possible misunderstanding of expected behavior
 
-**Recommendation**: 
+**Recommendation**:
+
 - Test the current live version to confirm behavior
 - Clear browser cache if experiencing issues
 - Report specific component/page if problem persists
 
-**Current Status**: All social media links properly open in new tabs with proper security attributes across all components in the application. 
+**Current Status**: All social media links properly open in new tabs with proper security attributes across all components in the application.

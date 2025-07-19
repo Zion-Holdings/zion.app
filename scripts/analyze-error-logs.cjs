@@ -9,7 +9,7 @@ const path = require('path');
 
 const args = process.argv.slice(2);
 // Allow passing one or more files or directories. Default to "logs" directory
-const inputPaths = args.filter(a => !a.startsWith('--'));
+const inputPaths = args.filter((a) => !a.startsWith('--'));
 const DEFAULT_DIR = 'logs';
 const TARGET_PATHS = inputPaths.length ? inputPaths : [DEFAULT_DIR];
 // Load translation keys to filter false positives for "missingKey" log entries
@@ -21,16 +21,16 @@ function loadLocaleKeys() {
   allLocaleKeys = new Set();
 
   if (fs.existsSync(localesDir)) {
-    const localeDirs = fs.readdirSync(localesDir).filter(d =>
-      fs.statSync(path.join(localesDir, d)).isDirectory()
-    );
+    const localeDirs = fs
+      .readdirSync(localesDir)
+      .filter((d) => fs.statSync(path.join(localesDir, d)).isDirectory());
 
     for (const dir of localeDirs) {
       const file = path.join(localesDir, dir, 'translation.json');
       if (fs.existsSync(file)) {
         try {
           const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-          flattenKeys(data).forEach(k => allLocaleKeys.add(k));
+          flattenKeys(data).forEach((k) => allLocaleKeys.add(k));
         } catch {
           // ignore JSON parse errors
         }
@@ -78,13 +78,13 @@ const PATTERNS = [
   /usedExports can't/i,
   /unhandledRejection/i,
   /Uncaught Exception/i,
-  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i,
 ];
 // Patterns that should be ignored as they stem from known environment
 // limitations (e.g. IPv6 socket errors in headless browsers). These are not
 // actionable for developers and simply add noise to the log output.
 const SKIP_PATTERNS = [
-  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i,
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -106,20 +106,25 @@ function parseLine(line) {
     }
   }
 
-  const level = LEVELS.find(l => line.toLowerCase().includes(`[${l}]`));
+  const level = LEVELS.find((l) => line.toLowerCase().includes(`[${l}]`));
   let missingKeyMatch = line.match(/missing(?: translation)? key.*?([\w.-]+)/i);
   if (!missingKeyMatch) {
     missingKeyMatch = line.match(/missingKey\s+\S+\s+translation\s+(\S+)/i);
   }
-  return { level, message: line, missingKey: missingKeyMatch ? missingKeyMatch[1] : null };
+  return {
+    level,
+    message: line,
+    missingKey: missingKeyMatch ? missingKeyMatch[1] : null,
+  };
 }
 
 function checkFile(filePath) {
-  if (!fs.existsSync(filePath)) return { issues: [], counts: {}, missingKeys: [] };
+  if (!fs.existsSync(filePath))
+    return { issues: [], counts: {}, missingKeys: [] };
   const lines = fs.readFileSync(filePath, 'utf8').split('\n');
   const issues = [];
   const missingKeys = [];
-  const counts = Object.fromEntries(LEVELS.map(l => [l, 0]));
+  const counts = Object.fromEntries(LEVELS.map((l) => [l, 0]));
 
   for (const line of lines) {
     const parsed = parseLine(line);
@@ -129,11 +134,11 @@ function checkFile(filePath) {
       counts[parsed.level] += 1;
     }
 
-    if (SKIP_PATTERNS.some(p => p.test(parsed.message))) {
+    if (SKIP_PATTERNS.some((p) => p.test(parsed.message))) {
       continue; // Skip known environment noise
     }
 
-    if (PATTERNS.some(p => p.test(parsed.message))) {
+    if (PATTERNS.some((p) => p.test(parsed.message))) {
       issues.push(line.trim());
     }
 
@@ -144,20 +149,25 @@ function checkFile(filePath) {
     }
   }
 
-  return { issues: DEDUPE ? Array.from(new Set(issues)) : issues, counts, missingKeys: DEDUPE ? Array.from(new Set(missingKeys)) : missingKeys };
+  return {
+    issues: DEDUPE ? Array.from(new Set(issues)) : issues,
+    counts,
+    missingKeys: DEDUPE ? Array.from(new Set(missingKeys)) : missingKeys,
+  };
 }
 
 function main() {
   const files = [];
   const LOG_EXT_REGEX = /\.(log|txt)$/i;
 
-  TARGET_PATHS.forEach(p => {
+  TARGET_PATHS.forEach((p) => {
     if (!fs.existsSync(p)) return;
     const stat = fs.statSync(p);
     if (stat.isDirectory()) {
-      const dirFiles = fs.readdirSync(p)
-        .filter(f => LOG_EXT_REGEX.test(f))
-        .map(f => path.join(p, f));
+      const dirFiles = fs
+        .readdirSync(p)
+        .filter((f) => LOG_EXT_REGEX.test(f))
+        .map((f) => path.join(p, f));
       files.push(...dirFiles);
     } else if (stat.isFile()) {
       files.push(p);
@@ -176,7 +186,7 @@ function main() {
     const { issues, counts, missingKeys } = checkFile(file);
     const displayName = path.relative(process.cwd(), file);
     const issueLines = issues;
-    const countsLine = `Levels: ${LEVELS.map(l => `${l}:${counts[l] || 0}`).join(', ')}`;
+    const countsLine = `Levels: ${LEVELS.map((l) => `${l}:${counts[l] || 0}`).join(', ')}`;
 
     summaryLines.push(`\n--- ${displayName} ---`, countsLine);
     console.warn(`\n--- ${displayName} ---`);
@@ -187,11 +197,11 @@ function main() {
       const header = `=== Issues found in ${displayName} ===`;
       summaryLines.push(header, ...issueLines);
       console.warn(header);
-      issueLines.forEach(line => console.warn(line));
+      issueLines.forEach((line) => console.warn(line));
     }
 
     if (missingKeys && missingKeys.length) {
-      missingKeys.forEach(k => allMissingKeys.add(k));
+      missingKeys.forEach((k) => allMissingKeys.add(k));
     }
   }
 
@@ -205,34 +215,58 @@ function main() {
   const allText = summaryLines.join('\n');
   const hints = [];
   if (/Module not found|Can't resolve|Cannot find module/i.test(allText)) {
-    hints.push('Missing dependencies detected. Run "./setup.sh npm" to reinstall packages.');
+    hints.push(
+      'Missing dependencies detected. Run "./setup.sh npm" to reinstall packages.',
+    );
   }
   if (/EAI_AGAIN|network.*disabled/i.test(allText)) {
-    hints.push('Network errors detected. Ensure internet access before running the setup script.');
+    hints.push(
+      'Network errors detected. Ensure internet access before running the setup script.',
+    );
   }
   if (/Invalid or placeholder project ID/i.test(allText)) {
-    hints.push('Environment variables appear misconfigured. Check NEXT_PUBLIC_REOWN_PROJECT_ID and other required settings.');
+    hints.push(
+      'Environment variables appear misconfigured. Check NEXT_PUBLIC_REOWN_PROJECT_ID and other required settings.',
+    );
   }
   if (/Environment variable.*missing/i.test(allText)) {
-    hints.push('Some environment variables are missing. Review your .env files.');
+    hints.push(
+      'Some environment variables are missing. Review your .env files.',
+    );
   }
   if (/map is not a function/i.test(allText)) {
-    hints.push('Detected map is not a function errors. Verify array values before using .map().');
+    hints.push(
+      'Detected map is not a function errors. Verify array values before using .map().',
+    );
   }
-  if (/CreatePlatformSocket\(\).*Address family not supported by protocol/i.test(allText)) {
-    hints.push("Detected IPv6 socket errors. Configure tests to prefer IPv4 or disable IPv6 features.");
+  if (
+    /CreatePlatformSocket\(\).*Address family not supported by protocol/i.test(
+      allText,
+    )
+  ) {
+    hints.push(
+      'Detected IPv6 socket errors. Configure tests to prefer IPv4 or disable IPv6 features.',
+    );
   }
   if (/useNavigate\(\).*Router/i.test(allText)) {
-    hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');
+    hints.push(
+      'React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.',
+    );
   }
-  if (/usedExports.*cacheUnaffected|cacheUnaffected.*usedExports|usedExports can't/i.test(allText)) {
-    hints.push('Webpack cache/usedExports conflict detected. Remove cacheUnaffected or disable usedExports in your config.');
+  if (
+    /usedExports.*cacheUnaffected|cacheUnaffected.*usedExports|usedExports can't/i.test(
+      allText,
+    )
+  ) {
+    hints.push(
+      'Webpack cache/usedExports conflict detected. Remove cacheUnaffected or disable usedExports in your config.',
+    );
   }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
     console.warn(header);
     summaryLines.push(header);
-    hints.forEach(msg => {
+    hints.forEach((msg) => {
       console.warn('- ' + msg);
       summaryLines.push('- ' + msg);
     });
@@ -242,7 +276,7 @@ function main() {
     const header = '\n=== Missing Translation Keys ===';
     console.warn(header);
     summaryLines.push(header);
-    Array.from(allMissingKeys).forEach(key => {
+    Array.from(allMissingKeys).forEach((key) => {
       console.warn('- ' + key);
       summaryLines.push('- ' + key);
     });

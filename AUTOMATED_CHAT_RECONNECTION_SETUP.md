@@ -18,12 +18,14 @@ This system provides automated chat reconnection for all computers with Cursor i
 ## 📋 System Components
 
 ### Core Scripts
+
 - `scripts/automated-chat-reconnection.cjs` - Main system engine
 - `scripts/start-chat-reconnection.sh` - Unix/Linux/macOS startup script
 - `scripts/start-chat-reconnection.bat` - Windows startup script
 - `scripts/chat-reconnection-interface.html` - Web interface
 
 ### Ports Used
+
 - **3008**: UDP discovery port (multicast)
 - **3009**: HTTP chat server and WebSocket
 - **3010**: Master node WebSocket server
@@ -31,6 +33,7 @@ This system provides automated chat reconnection for all computers with Cursor i
 ## 🛠️ Installation
 
 ### Prerequisites
+
 - Node.js 18+ installed on all computers
 - Cursor IDE installed (optional but recommended)
 - Network connectivity between computers
@@ -38,6 +41,7 @@ This system provides automated chat reconnection for all computers with Cursor i
 ### Quick Start
 
 #### 1. Primary Computer Setup
+
 ```bash
 # Clone the repository (if not already done)
 git clone <repository-url>
@@ -51,6 +55,7 @@ chmod +x scripts/start-chat-reconnection.sh
 ```
 
 #### 2. Secondary Computer Setup
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -64,6 +69,7 @@ chmod +x scripts/start-chat-reconnection.sh
 ```
 
 #### 3. Windows Setup
+
 ```cmd
 # Navigate to project directory
 cd <project-directory>
@@ -75,6 +81,7 @@ scripts\start-chat-reconnection.bat start
 ## 🔧 Configuration
 
 ### Environment Variables
+
 Create a `.env.local` file in the project root:
 
 ```bash
@@ -97,6 +104,7 @@ LOG_LEVEL=info
 ### Service Installation
 
 #### macOS (LaunchAgent)
+
 ```bash
 # Install as service
 ./scripts/start-chat-reconnection.sh install
@@ -109,6 +117,7 @@ launchctl start com.cursor.chat-reconnection
 ```
 
 #### Linux (systemd)
+
 ```bash
 # Install as service
 ./scripts/start-chat-reconnection.sh install
@@ -122,6 +131,7 @@ sudo systemctl start cursor-chat-reconnection.service
 ```
 
 #### Windows (Service)
+
 ```cmd
 # Install as service
 scripts\start-chat-reconnection.bat install
@@ -138,6 +148,7 @@ sc stop CursorChatReconnection
 ### Command Line Interface
 
 #### Start the System
+
 ```bash
 # Unix/Linux/macOS
 ./scripts/start-chat-reconnection.sh start
@@ -147,6 +158,7 @@ scripts\start-chat-reconnection.bat start
 ```
 
 #### Check Status
+
 ```bash
 # Unix/Linux/macOS
 ./scripts/start-chat-reconnection.sh status
@@ -156,6 +168,7 @@ scripts\start-chat-reconnection.bat status
 ```
 
 #### View Logs
+
 ```bash
 # Unix/Linux/macOS
 ./scripts/start-chat-reconnection.sh logs
@@ -165,6 +178,7 @@ scripts\start-chat-reconnection.bat logs
 ```
 
 #### Stop the System
+
 ```bash
 # Unix/Linux/macOS
 ./scripts/start-chat-reconnection.sh stop
@@ -186,16 +200,19 @@ scripts\start-chat-reconnection.bat stop
 ### API Endpoints
 
 #### System Status
+
 ```bash
 curl http://localhost:3009/status
 ```
 
 #### List Computers
+
 ```bash
 curl http://localhost:3009/computers
 ```
 
 #### Send Chat Message
+
 ```bash
 curl -X POST http://localhost:3009/chat \
   -H "Content-Type: application/json" \
@@ -205,7 +222,9 @@ curl -X POST http://localhost:3009/chat \
 ## 🔍 Monitoring
 
 ### System Health
+
 The system continuously monitors:
+
 - Connection status of all computers
 - WebSocket connection health
 - Cursor process status
@@ -213,12 +232,15 @@ The system continuously monitors:
 - Chat message delivery
 
 ### Log Files
+
 - `logs/chat-reconnection.log` - Main system log
 - `logs/chat-reconnection.err` - Error log (macOS/Linux service)
 - `logs/chat-reconnection.pid` - Process ID file
 
 ### WebSocket Events
+
 The system uses WebSocket for real-time communication:
+
 - `chat` - Chat messages
 - `system` - System notifications
 - `computer_status` - Computer status updates
@@ -229,37 +251,45 @@ The system uses WebSocket for real-time communication:
 ### Common Issues
 
 #### System Won't Start
+
 1. Check if Node.js is installed: `node --version`
 2. Check if npm is installed: `npm --version`
 3. Check if dependencies are installed: `npm install`
 4. Check logs: `./scripts/start-chat-reconnection.sh logs`
 
 #### No Computers Discovered
+
 1. Check network connectivity
 2. Ensure firewall allows UDP port 3008
 3. Check if other computers are running the system
 4. Verify multicast is enabled on your network
 
 #### WebSocket Connection Failed
+
 1. Check if port 3009 is available
 2. Ensure no other service is using the port
 3. Check firewall settings
 4. Restart the system
 
 #### Cursor Not Detected
+
 1. Verify Cursor is installed in standard locations
 2. Check if Cursor is running
 3. The system works without Cursor (optional)
 
 ### Debug Mode
+
 Enable debug logging by setting environment variable:
+
 ```bash
 export LOG_LEVEL=debug
 ./scripts/start-chat-reconnection.sh start
 ```
 
 ### Network Configuration
+
 For networks with strict firewall rules, you may need to:
+
 1. Allow UDP port 3008 for discovery
 2. Allow TCP ports 3009-3010 for chat
 3. Enable multicast traffic (224.0.0.1)
@@ -267,22 +297,26 @@ For networks with strict firewall rules, you may need to:
 ## 🔄 Automatic Features
 
 ### Auto-Reconnection
+
 - Automatically reconnects when connection is lost
 - Exponential backoff with maximum 10 attempts
 - 5-second delay between attempts
 
 ### Health Monitoring
+
 - 15-second heartbeat intervals
 - Automatic cleanup of stale connections
 - Process health checks
 
 ### Chat Triggers
+
 - Automatic system health chats every 5 minutes
 - File change detection triggers
 - Build error detection
 - Performance monitoring
 
 ### Load Balancing
+
 - Distributes chat requests across available computers
 - Automatic failover if master node goes down
 - Round-robin distribution for worker nodes
@@ -290,12 +324,14 @@ For networks with strict firewall rules, you may need to:
 ## 📊 Performance
 
 ### Scalability
+
 - Supports unlimited number of computers
 - Efficient UDP multicast discovery
 - Lightweight WebSocket connections
 - Minimal resource usage
 
 ### Resource Usage
+
 - Memory: ~50MB per computer
 - CPU: <1% during idle
 - Network: ~1KB/s for heartbeats
@@ -304,11 +340,13 @@ For networks with strict firewall rules, you may need to:
 ## 🔒 Security
 
 ### Network Security
+
 - Local network only (no internet exposure)
 - No sensitive data transmitted
 - Optional API key for Cursor integration
 
 ### Access Control
+
 - No authentication required (local network)
 - Can be restricted by firewall rules
 - Optional API key validation
@@ -316,16 +354,28 @@ For networks with strict firewall rules, you may need to:
 ## 🚀 Advanced Configuration
 
 ### Custom Chat Categories
+
 Edit the `CHAT_CATEGORIES` array in the main script:
+
 ```javascript
 CHAT_CATEGORIES: [
-  'build', 'lint', 'test', 'deploy', 'optimize', 
-  'security', 'performance', 'bugfix', 'feature', 'refactor'
-]
+  'build',
+  'lint',
+  'test',
+  'deploy',
+  'optimize',
+  'security',
+  'performance',
+  'bugfix',
+  'feature',
+  'refactor',
+];
 ```
 
 ### Custom Ports
+
 Set environment variables to change default ports:
+
 ```bash
 export DISCOVERY_PORT=3008
 export CHAT_PORT=3009
@@ -333,7 +383,9 @@ export CHAT_MASTER_PORT=3010
 ```
 
 ### Custom Cursor Paths
+
 The system automatically detects Cursor in standard locations:
+
 - Windows: `C:\Users\%USERNAME%\AppData\Local\Programs\Cursor\Cursor.exe`
 - macOS: `/Applications/Cursor.app`
 - Linux: `/usr/bin/cursor`, `/usr/local/bin/cursor`
@@ -343,6 +395,7 @@ The system automatically detects Cursor in standard locations:
 ### WebSocket Messages
 
 #### Send Chat Message
+
 ```javascript
 {
   type: 'chat',
@@ -353,6 +406,7 @@ The system automatically detects Cursor in standard locations:
 ```
 
 #### Trigger Chat
+
 ```javascript
 {
   type: 'chat_trigger',
@@ -364,6 +418,7 @@ The system automatically detects Cursor in standard locations:
 ```
 
 #### Register Computer
+
 ```javascript
 {
   type: 'register',
@@ -379,7 +434,9 @@ The system automatically detects Cursor in standard locations:
 ### HTTP API
 
 #### GET /status
+
 Returns system status:
+
 ```json
 {
   "computerId": "hostname_timestamp_random",
@@ -393,7 +450,9 @@ Returns system status:
 ```
 
 #### GET /computers
+
 Returns list of discovered computers:
+
 ```json
 [
   {
@@ -408,7 +467,9 @@ Returns list of discovered computers:
 ```
 
 #### POST /chat
+
 Send a chat message:
+
 ```json
 {
   "message": "Hello world",
@@ -420,12 +481,14 @@ Send a chat message:
 ## 🤝 Contributing
 
 ### Development Setup
+
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Start in development mode: `node scripts/automated-chat-reconnection.cjs start`
 4. Make changes and test
 
 ### Testing
+
 ```bash
 # Test discovery
 curl http://localhost:3009/computers
@@ -446,6 +509,7 @@ This project is part of the Zion App ecosystem and follows the same licensing te
 ## 🆘 Support
 
 For issues and questions:
+
 1. Check the troubleshooting section
 2. Review the logs: `./scripts/start-chat-reconnection.sh logs`
 3. Check the web interface for system status
@@ -454,6 +518,7 @@ For issues and questions:
 ## 🔄 Updates
 
 The system automatically updates when you pull the latest code:
+
 ```bash
 git pull origin main
 ./scripts/start-chat-reconnection.sh restart
@@ -461,4 +526,4 @@ git pull origin main
 
 ---
 
-**🎉 You're all set!** The automated chat reconnection system is now running and will automatically discover and connect to other computers with Cursor installed on your network. 
+**🎉 You're all set!** The automated chat reconnection system is now running and will automatically discover and connect to other computers with Cursor installed on your network.

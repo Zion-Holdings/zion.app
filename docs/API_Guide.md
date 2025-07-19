@@ -33,7 +33,7 @@ curl http://127.0.0.1:8000/api/ping/ \
 ```
 
 ```json
-{"detail": "success"}
+{ "detail": "success" }
 ```
 
 ### Node Example
@@ -41,7 +41,7 @@ curl http://127.0.0.1:8000/api/ping/ \
 ```js
 // Using fetch in Node.js
 const res = await fetch('http://127.0.0.1:8000/api/ping/', {
-  headers: { 'X-API-KEY': 'abcd.1234...' }
+  headers: { 'X-API-KEY': 'abcd.1234...' },
 });
 const data = await res.json();
 console.log(data);

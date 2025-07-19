@@ -2,7 +2,7 @@
 
 /**
  * Setup Cursor Multi-Computer Communication
- * 
+ *
  * This script sets up Cursor communication across multiple computers
  * and configures the necessary environment variables and connections.
  */
@@ -19,37 +19,42 @@ class CursorMultiComputerSetup {
       envFile: '.env.local',
       cursorConfigDir: '.cursor',
       logsDir: 'logs',
-      scriptsDir: 'scripts'
+      scriptsDir: 'scripts',
     };
   }
 
   async setup() {
     console.log('🚀 Setting up Cursor Multi-Computer Communication...');
-    
+
     try {
       // 1. Create necessary directories
       await this.createDirectories();
-      
+
       // 2. Configure environment variables
       await this.configureEnvironment();
-      
+
       // 3. Setup Cursor configuration
       await this.setupCursorConfig();
-      
+
       // 4. Create startup scripts
       await this.createStartupScripts();
-      
+
       // 5. Test the setup
       await this.testSetup();
-      
-      console.log('✅ Cursor Multi-Computer Communication setup completed successfully!');
+
+      console.log(
+        '✅ Cursor Multi-Computer Communication setup completed successfully!',
+      );
       console.log('\n📋 Next steps:');
       console.log('1. Run: npm run cursor:start');
       console.log('2. On other computers, run: npm run cursor:start');
-      console.log('3. The computers will automatically connect and communicate');
-      console.log('4. Use: npm run cursor:chat <category> <prompt> to trigger chats');
+      console.log(
+        '3. The computers will automatically connect and communicate',
+      );
+      console.log(
+        '4. Use: npm run cursor:chat <category> <prompt> to trigger chats',
+      );
       console.log('5. Use: npm run cursor:fix <type> to apply fixes');
-      
     } catch (error) {
       console.error(`❌ Setup failed: ${error.message}`);
       throw error;
@@ -58,16 +63,16 @@ class CursorMultiComputerSetup {
 
   async createDirectories() {
     console.log('📁 Creating necessary directories...');
-    
+
     const directories = [
       this.config.logsDir,
       path.join(this.config.cursorConfigDir, 'rules'),
       path.join(this.config.cursorConfigDir, 'rules', 'automation'),
       'cursor-ai-data',
       'cursor-ai-data/coordination',
-      'cursor-ai-data/analysis'
+      'cursor-ai-data/analysis',
     ];
-    
+
     for (const dir of directories) {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
@@ -78,15 +83,15 @@ class CursorMultiComputerSetup {
 
   async configureEnvironment() {
     console.log('⚙️ Configuring environment variables...');
-    
+
     const envPath = this.config.envFile;
     let envContent = '';
-    
+
     // Read existing .env.local if it exists
     if (fs.existsSync(envPath)) {
       envContent = fs.readFileSync(envPath, 'utf8');
     }
-    
+
     // Add Cursor-specific environment variables
     const cursorEnvVars = [
       '',
@@ -100,15 +105,17 @@ class CursorMultiComputerSetup {
       'ENABLE_CURSOR_COMMUNICATION=true',
       'CURSOR_AUTO_FIX=true',
       'CURSOR_CONTINUOUS_MONITORING=true',
-      ''
+      '',
     ];
-    
+
     // Check if Cursor env vars already exist
-    const existingVars = cursorEnvVars.filter(line => 
-      line.startsWith('#') || line.trim() === '' || 
-      !envContent.includes(line.split('=')[0])
+    const existingVars = cursorEnvVars.filter(
+      (line) =>
+        line.startsWith('#') ||
+        line.trim() === '' ||
+        !envContent.includes(line.split('=')[0]),
     );
-    
+
     if (existingVars.length > 0) {
       envContent += existingVars.join('\n');
       fs.writeFileSync(envPath, envContent);
@@ -120,25 +127,29 @@ class CursorMultiComputerSetup {
 
   async setupCursorConfig() {
     console.log('🔧 Setting up Cursor configuration...');
-    
-    const cursorRulesDir = path.join(this.config.cursorConfigDir, 'rules', 'automation');
-    
+
+    const cursorRulesDir = path.join(
+      this.config.cursorConfigDir,
+      'rules',
+      'automation',
+    );
+
     // Create Cursor automation rules
     const automationRules = [
       {
         name: 'multi-computer-communication.mdc',
-        content: this.generateAutomationRules()
+        content: this.generateAutomationRules(),
       },
       {
         name: 'continuous-improvement.mdc',
-        content: this.generateContinuousImprovementRules()
+        content: this.generateContinuousImprovementRules(),
       },
       {
         name: 'auto-fix.mdc',
-        content: this.generateAutoFixRules()
-      }
+        content: this.generateAutoFixRules(),
+      },
     ];
-    
+
     for (const rule of automationRules) {
       const rulePath = path.join(cursorRulesDir, rule.name);
       fs.writeFileSync(rulePath, rule.content);
@@ -278,22 +289,22 @@ This rule set enables automated communication and collaboration between multiple
 
   async createStartupScripts() {
     console.log('📜 Creating startup scripts...');
-    
+
     const scripts = [
       {
         name: 'start-cursor-communication.sh',
-        content: this.generateStartupScript()
+        content: this.generateStartupScript(),
       },
       {
         name: 'start-cursor-communication.bat',
-        content: this.generateWindowsStartupScript()
-      }
+        content: this.generateWindowsStartupScript(),
+      },
     ];
-    
+
     for (const script of scripts) {
       const scriptPath = path.join(this.config.scriptsDir, script.name);
       fs.writeFileSync(scriptPath, script.content);
-      
+
       // Make shell script executable on Unix systems
       if (script.name.endsWith('.sh')) {
         try {
@@ -302,7 +313,7 @@ This rule set enables automated communication and collaboration between multiple
           // Ignore chmod errors on Windows
         }
       }
-      
+
       console.log(`✅ Created startup script: ${script.name}`);
     }
   }
@@ -392,26 +403,28 @@ pause
 
   async testSetup() {
     console.log('🧪 Testing setup...');
-    
+
     try {
       // Test if the communication script exists
-      const scriptPath = path.join(this.config.scriptsDir, 'cursor-multi-computer-communication.cjs');
+      const scriptPath = path.join(
+        this.config.scriptsDir,
+        'cursor-multi-computer-communication.cjs',
+      );
       if (!fs.existsSync(scriptPath)) {
         throw new Error('Communication script not found');
       }
-      
+
       // Test if environment file exists
       if (!fs.existsSync(this.config.envFile)) {
         throw new Error('Environment file not found');
       }
-      
+
       // Test if Cursor config directory exists
       if (!fs.existsSync(this.config.cursorConfigDir)) {
         throw new Error('Cursor config directory not found');
       }
-      
+
       console.log('✅ Setup test passed');
-      
     } catch (error) {
       console.error(`❌ Setup test failed: ${error.message}`);
       throw error;
@@ -602,25 +615,29 @@ Add custom automation rules to \`.cursor/rules/automation/\`:
 // Main execution
 if (require.main === module) {
   const setup = new CursorMultiComputerSetup();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'setup':
-      setup.setup()
+      setup
+        .setup()
         .then(() => setup.generateInstructions())
         .then(() => {
           console.log('\n🎉 Setup completed successfully!');
-          console.log('📖 See CURSOR_MULTI_COMPUTER_SETUP.md for detailed instructions.');
+          console.log(
+            '📖 See CURSOR_MULTI_COMPUTER_SETUP.md for detailed instructions.',
+          );
         })
         .catch((error) => {
           console.error(`❌ Setup failed: ${error.message}`);
           process.exit(1);
         });
       break;
-      
+
     case 'instructions':
-      setup.generateInstructions()
+      setup
+        .generateInstructions()
         .then(() => {
           console.log('✅ Instructions generated successfully!');
         })
@@ -629,7 +646,7 @@ if (require.main === module) {
           process.exit(1);
         });
       break;
-      
+
     default:
       console.log(`
 Usage: node setup-cursor-multi-computer.cjs <command>
@@ -644,4 +661,4 @@ Example:
   }
 }
 
-module.exports = CursorMultiComputerSetup; 
+module.exports = CursorMultiComputerSetup;

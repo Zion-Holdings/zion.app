@@ -20,7 +20,7 @@ export default function ChatWidget({
   className = '',
   autoJoin = true,
   showConnectionStatus = true,
-  maxHeight = '400px'
+  maxHeight = '400px',
 }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [inputMessage, setInputMessage] = useState('');
@@ -28,10 +28,10 @@ export default function ChatWidget({
   const [showTypingIndicator, setShowTypingIndicator] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
+
   // Get global reconnection manager
   const reconnectionManager = getGlobalReconnectionManager();
-  
+
   // WebSocket hook
   const {
     connectionState,
@@ -46,7 +46,7 @@ export default function ChatWidget({
     connect,
     disconnect,
     reconnect,
-    ping
+    ping,
   } = useWebSocket({
     autoConnect: true,
     autoReconnect: true,
@@ -83,7 +83,7 @@ export default function ChatWidget({
     },
     onConnectionQualityChange: (quality) => {
       console.log('ChatWidget: Connection quality changed to', quality);
-    }
+    },
   });
 
   // Get socket reference
@@ -110,7 +110,9 @@ export default function ChatWidget({
     };
 
     const handleConnectionQualityChange = (event: any) => {
-      console.log(`📊 Chat widget connection quality: ${event.previous} → ${event.current}`);
+      console.log(
+        `📊 Chat widget connection quality: ${event.previous} → ${event.current}`,
+      );
     };
 
     // Add event listeners
@@ -118,7 +120,10 @@ export default function ChatWidget({
     reconnectionManager.on('reconnection_success', handleReconnectionSuccess);
     reconnectionManager.on('reconnection_failure', handleReconnectionFailure);
     reconnectionManager.on('health_check', handleHealthCheck);
-    reconnectionManager.on('connection_quality_change', handleConnectionQualityChange);
+    reconnectionManager.on(
+      'connection_quality_change',
+      handleConnectionQualityChange,
+    );
 
     // Start health monitoring if socket is available
     if (socket) {
@@ -127,11 +132,23 @@ export default function ChatWidget({
 
     // Cleanup
     return () => {
-      reconnectionManager.off('reconnection_attempt', handleReconnectionAttempt);
-      reconnectionManager.off('reconnection_success', handleReconnectionSuccess);
-      reconnectionManager.off('reconnection_failure', handleReconnectionFailure);
+      reconnectionManager.off(
+        'reconnection_attempt',
+        handleReconnectionAttempt,
+      );
+      reconnectionManager.off(
+        'reconnection_success',
+        handleReconnectionSuccess,
+      );
+      reconnectionManager.off(
+        'reconnection_failure',
+        handleReconnectionFailure,
+      );
       reconnectionManager.off('health_check', handleHealthCheck);
-      reconnectionManager.off('connection_quality_change', handleConnectionQualityChange);
+      reconnectionManager.off(
+        'connection_quality_change',
+        handleConnectionQualityChange,
+      );
     };
   }, [reconnectionManager, socket]);
 
@@ -159,9 +176,9 @@ export default function ChatWidget({
     if (isOpen && messages.has(roomId)) {
       const roomMessages = messages.get(roomId) || [];
       const unreadMessageIds = roomMessages
-        .filter(msg => !msg.delivered && msg.sender !== 'user')
-        .map(msg => msg.id);
-      
+        .filter((msg) => !msg.delivered && msg.sender !== 'user')
+        .map((msg) => msg.id);
+
       if (unreadMessageIds.length > 0) {
         markMessagesAsRead(roomId, unreadMessageIds);
       }
@@ -223,7 +240,7 @@ export default function ChatWidget({
   const handleToggle = () => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
-    
+
     if (newIsOpen && !connectionState.isConnected) {
       connect();
     }
@@ -252,10 +269,14 @@ export default function ChatWidget({
     const getStatusColor = () => {
       if (connectionState.isConnected) {
         switch (connectionHealth.connectionQuality) {
-          case 'excellent': return 'text-green-500';
-          case 'good': return 'text-yellow-500';
-          case 'poor': return 'text-orange-500';
-          default: return 'text-green-500';
+          case 'excellent':
+            return 'text-green-500';
+          case 'good':
+            return 'text-yellow-500';
+          case 'poor':
+            return 'text-orange-500';
+          default:
+            return 'text-green-500';
         }
       }
       if (connectionState.isReconnecting) return 'text-yellow-500';
@@ -272,17 +293,22 @@ export default function ChatWidget({
         return quality.charAt(0).toUpperCase() + quality.slice(1);
       }
       if (connectionState.isConnecting) return 'Connecting...';
-      if (connectionState.isReconnecting) return `Reconnecting (${connectionState.reconnectAttempts})`;
+      if (connectionState.isReconnecting)
+        return `Reconnecting (${connectionState.reconnectAttempts})`;
       return 'Disconnected';
     };
 
     const getStatusIcon = () => {
       if (connectionState.isConnected) {
         switch (connectionHealth.connectionQuality) {
-          case 'excellent': return '🟢';
-          case 'good': return '🟡';
-          case 'poor': return '🟠';
-          default: return '🟢';
+          case 'excellent':
+            return '🟢';
+          case 'good':
+            return '🟡';
+          case 'poor':
+            return '🟠';
+          default:
+            return '🟢';
         }
       }
       if (connectionState.isReconnecting) return '🔄';
@@ -312,11 +338,24 @@ export default function ChatWidget({
     return (
       <div className="flex items-center gap-2 text-gray-500 text-sm italic p-2">
         <div className="flex gap-1">
-          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+          <div
+            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+            style={{ animationDelay: '0ms' }}
+          />
+          <div
+            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+            style={{ animationDelay: '150ms' }}
+          />
+          <div
+            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+            style={{ animationDelay: '300ms' }}
+          />
         </div>
-        <span>{typingUsers.length === 1 ? 'Someone is typing...' : `${typingUsers.length} people are typing...`}</span>
+        <span>
+          {typingUsers.length === 1
+            ? 'Someone is typing...'
+            : `${typingUsers.length} people are typing...`}
+        </span>
       </div>
     );
   };
@@ -324,22 +363,28 @@ export default function ChatWidget({
   // Message component
   const Message = ({ message }: { message: WebSocketMessage }) => {
     const isOwnMessage = message.sender === 'user';
-    const messageTime = new Date(message.timestamp).toLocaleTimeString([], { 
-      hour: '2-digit', 
-      minute: '2-digit' 
+    const messageTime = new Date(message.timestamp).toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
     });
 
     return (
-      <div className={`flex ${isOwnMessage ? 'justify-end' : 'justify-start'} mb-2`}>
-        <div className={`max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
-          isOwnMessage 
-            ? 'bg-blue-500 text-white' 
-            : 'bg-gray-200 text-gray-800'
-        }`}>
+      <div
+        className={`flex ${isOwnMessage ? 'justify-end' : 'justify-start'} mb-2`}
+      >
+        <div
+          className={`max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
+            isOwnMessage
+              ? 'bg-blue-500 text-white'
+              : 'bg-gray-200 text-gray-800'
+          }`}
+        >
           <div className="text-sm">{message.message}</div>
-          <div className={`text-xs mt-1 ${
-            isOwnMessage ? 'text-blue-100' : 'text-gray-500'
-          }`}>
+          <div
+            className={`text-xs mt-1 ${
+              isOwnMessage ? 'text-blue-100' : 'text-gray-500'
+            }`}
+          >
             {messageTime}
             {message.delivered && isOwnMessage && (
               <span className="ml-1">✓</span>
@@ -359,13 +404,33 @@ export default function ChatWidget({
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
         {isOpen ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
           <div className="relative">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
             </svg>
             {unreadCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -384,7 +449,10 @@ export default function ChatWidget({
             <div className="flex items-center gap-2">
               <h3 className="font-semibold text-gray-800">{title}</h3>
               {isJoined && (
-                <span className="w-2 h-2 bg-green-500 rounded-full" title="Connected to room" />
+                <span
+                  className="w-2 h-2 bg-green-500 rounded-full"
+                  title="Connected to room"
+                />
               )}
             </div>
             <div className="flex items-center gap-2">
@@ -395,8 +463,18 @@ export default function ChatWidget({
                   className="text-gray-400 hover:text-gray-600"
                   aria-label="Close chat"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               )}
@@ -404,7 +482,7 @@ export default function ChatWidget({
           </div>
 
           {/* Messages */}
-          <div 
+          <div
             className="p-4 overflow-y-auto"
             style={{ maxHeight, minHeight: '200px' }}
           >
@@ -424,7 +502,9 @@ export default function ChatWidget({
               </div>
             ) : roomMessages.length === 0 ? (
               <div className="text-center text-gray-500 py-8">
-                <div className="text-sm">No messages yet. Start the conversation!</div>
+                <div className="text-sm">
+                  No messages yet. Start the conversation!
+                </div>
               </div>
             ) : (
               <>
@@ -452,11 +532,23 @@ export default function ChatWidget({
                 />
                 <button
                   onClick={handleSendMessage}
-                  disabled={!inputMessage.trim() || !connectionState.isConnected}
+                  disabled={
+                    !inputMessage.trim() || !connectionState.isConnected
+                  }
                   className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
                   </svg>
                 </button>
               </div>

@@ -26,7 +26,7 @@ Allowed Callback URLs:
 http://localhost:3000/api/auth/callback
 https://yourdomain.com/api/auth/callback
 
-Allowed Logout URLs:  
+Allowed Logout URLs:
 http://localhost:3000
 https://yourdomain.com
 
@@ -47,7 +47,7 @@ This is the most important step for user registration to work:
 6. Enable these **REQUIRED** scopes:
    ```
    ✅ create:users
-   ✅ read:users  
+   ✅ read:users
    ✅ update:users
    ✅ update:users_app_metadata
    ✅ create:user_tickets
@@ -72,6 +72,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
 **Generate AUTH0_SECRET:**
+
 ```bash
 openssl rand -hex 32
 ```
@@ -79,10 +80,12 @@ openssl rand -hex 32
 ### 5. **📍 Find Your Configuration Values**
 
 **Domain & Base URL:**
+
 - Found in Auth0 Dashboard → Applications → [Your App] → Settings
 - Example: `dev-abc123.us.auth0.com`
 
 **Client ID & Secret:**
+
 - Found in Auth0 Dashboard → Applications → [Your App] → Settings
 - Keep Client Secret secure and never commit it to version control
 
@@ -96,24 +99,28 @@ openssl rand -hex 32
 ## 🔧 **Troubleshooting Common Issues**
 
 ### ❌ Error: "Authentication service not configured"
+
 ```
 Solution: Check that all AUTH0_* environment variables are set correctly
 ```
 
 ### ❌ Error: "Auth0 Management API Authorization Failed (401/403)"
+
 ```
-Solution: 
+Solution:
 1. Verify Management API is authorized for your application
 2. Ensure required scopes are enabled (create:users, read:users, etc.)
 3. Double-check CLIENT_ID and CLIENT_SECRET are correct
 ```
 
 ### ❌ Error: "Maximum call stack size exceeded"
+
 ```
 Solution: This was a bug in our code, now fixed in latest version
 ```
 
 ### ❌ Error: "Cannot find module 'undici'"
+
 ```
 Solution: Run: npm install undici --save
 ```
@@ -121,7 +128,7 @@ Solution: Run: npm install undici --save
 ## 🎯 **Verification Checklist**
 
 - [ ] Auth0 application created
-- [ ] Management API authorized for your application  
+- [ ] Management API authorized for your application
 - [ ] Required scopes enabled (create:users, read:users, etc.)
 - [ ] All environment variables set in `.env.local`
 - [ ] AUTH0_SECRET generated with `openssl rand -hex 32`
@@ -131,12 +138,14 @@ Solution: Run: npm install undici --save
 ## 🔄 **Development vs Production**
 
 **Development:**
+
 - Use `http://localhost:3000` URLs
 - Use test domain like `dev-abc123.us.auth0.com`
 - Enable detailed error logging
 
 **Production:**
-- Use your actual domain URLs  
+
+- Use your actual domain URLs
 - Use production Auth0 tenant
 - Keep secrets secure in environment variables
 - Enable Sentry error tracking
@@ -155,11 +164,11 @@ If you encounter issues:
 Once Auth0 is working:
 
 1. **Enable Email Verification**: Configure email templates in Auth0
-2. **Add Social Logins**: Configure Google, GitHub, etc. providers  
+2. **Add Social Logins**: Configure Google, GitHub, etc. providers
 3. **Set Up Roles**: Create user roles in Auth0 for different access levels
 4. **Configure Branding**: Customize Auth0 login pages with your branding
 5. **Add MFA**: Enable multi-factor authentication for enhanced security
 
 ---
 
-**💡 Pro Tip**: Always test in development first before deploying to production! 
+**💡 Pro Tip**: Always test in development first before deploying to production!

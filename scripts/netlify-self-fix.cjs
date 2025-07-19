@@ -15,13 +15,17 @@ function globSync(pattern) {
     // Simple fallback implementation
     const dir = path.dirname(pattern);
     const filename = path.basename(pattern);
-    
+
     if (!fs.existsSync(dir)) return [];
-    
+
     const files = fs.readdirSync(dir);
     return files
-      .filter(file => filename.includes('*') ? file.includes(filename.replace('*', '')) : file === filename)
-      .map(file => path.join(dir, file));
+      .filter((file) =>
+        filename.includes('*')
+          ? file.includes(filename.replace('*', ''))
+          : file === filename,
+      )
+      .map((file) => path.join(dir, file));
   }
 }
 
@@ -32,23 +36,26 @@ function patchVendorsFile() {
     // Find all vendors files in .next/server directory
     const serverDir = path.join(process.cwd(), '.next', 'server');
     const vendorsPattern = path.join(serverDir, 'vendors*.js');
-    
+
     const vendorFiles = globSync(vendorsPattern);
-    
+
     if (vendorFiles.length === 0) {
       // console.warn('📁 No vendors.js file found to patch');
       return;
     }
 
-    vendorFiles.forEach(vendorFile => {
+    vendorFiles.forEach((vendorFile) => {
       // console.warn(`🔧 Patching ${path.basename(vendorFile)}...`);
-      
+
       let content = fs.readFileSync(vendorFile, 'utf8');
-      
+
       // Check if file starts with problematic self reference
-      if (content.startsWith('(self["webpackChunk_N_E"]') || content.includes('self["webpackChunk_N_E"]')) {
+      if (
+        content.startsWith('(self["webpackChunk_N_E"]') ||
+        content.includes('self["webpackChunk_N_E"]')
+      ) {
         // console.warn('🎯 Found problematic self reference, applying fix...');
-        
+
         // Create comprehensive polyfill
         const polyfill = `// Netlify Serverless Self Polyfill
 if (typeof self === 'undefined') {
@@ -74,7 +81,7 @@ if (typeof self !== 'undefined' && !self.webpackChunk_N_E) {
 
         // Add polyfill at the beginning
         content = polyfill + content;
-        
+
         // Write the patched content back
         fs.writeFileSync(vendorFile, content, 'utf8');
         // console.warn(`✅ Successfully patched ${path.basename(vendorFile)}`);
@@ -82,7 +89,6 @@ if (typeof self !== 'undefined' && !self.webpackChunk_N_E) {
         // console.warn(`ℹ️ ${path.basename(vendorFile)} doesn't need patching`);
       }
     });
-
   } catch (_error) {
     console.error('❌ Error patching vendors file:', error.message);
     throw error;
@@ -93,36 +99,38 @@ function patchChunkFiles() {
   try {
     // Also patch any other chunks that might have self references
     const staticDir = path.join(process.cwd(), '.next', 'static', 'chunks');
-    
+
     if (!fs.existsSync(staticDir)) {
       // console.warn('📁 Static chunks directory not found');
       return;
     }
 
     const chunkFiles = globSync(path.join(staticDir, '*.js'));
-    
-    chunkFiles.forEach(chunkFile => {
+
+    chunkFiles.forEach((chunkFile) => {
       let content = fs.readFileSync(chunkFile, 'utf8');
-      
-      if (content.includes('self["webpackChunk_N_E"]') || content.includes('self.webpackChunk_N_E')) {
+
+      if (
+        content.includes('self["webpackChunk_N_E"]') ||
+        content.includes('self.webpackChunk_N_E')
+      ) {
         // console.warn(`🔧 Patching chunk ${path.basename(chunkFile)}...`);
-        
+
         // Replace self references with safe access
         content = content.replace(
           /self\["webpackChunk_N_E"\]/g,
-          '(typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : globalThis)["webpackChunk_N_E"]'
+          '(typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : globalThis)["webpackChunk_N_E"]',
         );
-        
+
         content = content.replace(
           /self\.webpackChunk_N_E/g,
-          '(typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : globalThis).webpackChunk_N_E'
+          '(typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : globalThis).webpackChunk_N_E',
         );
-        
+
         fs.writeFileSync(chunkFile, content, 'utf8');
         // console.warn(`✅ Patched chunk ${path.basename(chunkFile)}`);
       }
     });
-
   } catch (_error) {
     console.warn('⚠️ Error patching chunk files:', error.message);
     // Don't throw here as chunk patching is optional
@@ -132,8 +140,13 @@ function patchChunkFiles() {
 function createGlobalPolyfill() {
   try {
     // Create a global polyfill file that can be required early
-    const polyfillPath = path.join(process.cwd(), '.next', 'server', 'self-polyfill.js');
-    
+    const polyfillPath = path.join(
+      process.cwd(),
+      '.next',
+      'server',
+      'self-polyfill.js',
+    );
+
     const polyfillContent = `// Global self polyfill for Netlify serverless
 if (typeof global !== 'undefined' && typeof global.self === 'undefined') {
   global.self = global;
@@ -159,7 +172,6 @@ module.exports = {
 
     fs.writeFileSync(polyfillPath, polyfillContent, 'utf8');
     // console.warn('✅ Created global self polyfill');
-
   } catch (_error) {
     console.warn('⚠️ Could not create global polyfill:', error.message);
   }
@@ -167,19 +179,18 @@ module.exports = {
 
 function main() {
   // console.warn('🚀 Starting Netlify self reference fix...');
-  
+
   try {
     // Step 1: Patch vendors.js file
     patchVendorsFile();
-    
+
     // Step 2: Patch chunk files
     patchChunkFiles();
-    
+
     // Step 3: Create global polyfill
     createGlobalPolyfill();
-    
+
     // console.warn('✅ Netlify self fix completed successfully!');
-    
   } catch (_error) {
     console.error('❌ Netlify self fix failed:', error.message);
     process.exit(1);
@@ -191,4 +202,9 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { main, patchVendorsFile, patchChunkFiles, createGlobalPolyfill };
+module.exports = {
+  main,
+  patchVendorsFile,
+  patchChunkFiles,
+  createGlobalPolyfill,
+};

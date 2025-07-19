@@ -19,7 +19,7 @@ class NetlifyAutoFix {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
@@ -33,7 +33,7 @@ class NetlifyAutoFix {
 
   async applyAllFixes() {
     this.log('Starting comprehensive auto-fix process...');
-    
+
     const fixes = [
       'fixNetlifyConfig',
       'fixPackageJson',
@@ -44,9 +44,9 @@ class NetlifyAutoFix {
       'fixBuildScripts',
       'fixEnvironment',
       'fixPermissions',
-      'cleanCache'
+      'cleanCache',
     ];
-    
+
     for (const fix of fixes) {
       try {
         await this[fix]();
@@ -54,14 +54,14 @@ class NetlifyAutoFix {
         this.log(`Fix ${fix} failed: ${error.message}`, 'ERROR');
       }
     }
-    
+
     this.log(`Auto-fix completed. Applied ${this.fixesApplied.length} fixes.`);
     return this.fixesApplied;
   }
 
   async fixNetlifyConfig() {
     this.log('Fixing Netlify configuration...');
-    
+
     const netlifyConfig = `[build]
   command = "npm run build:netlify:prepare"
   publish = ".next"
@@ -161,42 +161,44 @@ class NetlifyAutoFix {
 
   async fixPackageJson() {
     this.log('Fixing package.json...');
-    
+
     if (!fs.existsSync('package.json')) {
       this.log('package.json not found, skipping...');
       return;
     }
-    
+
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-    
+
     // Ensure essential scripts exist
     const essentialScripts = {
-      'build': 'NODE_OPTIONS=\'--no-deprecation --require ./scripts/fix-self-global.js\' node scripts/pre-build-check.cjs && NODE_OPTIONS=\'--no-deprecation --require ./scripts/fix-self-global.js\' npx next build --no-lint',
+      build:
+        "NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint",
       'build:netlify': 'node scripts/optimized-build.cjs',
-      'build:netlify:prepare': 'prisma generate && node scripts/install-build-deps.cjs && node scripts/optimized-build.cjs',
-      'dev': 'node scripts/pre-dev-check.cjs && npm run env:dev && next dev',
-      'start': 'next start',
-      'lint': 'node scripts/pre-lint-check.cjs',
-      'lint:fix': 'node scripts/pre-lint-check.cjs --fix'
+      'build:netlify:prepare':
+        'prisma generate && node scripts/install-build-deps.cjs && node scripts/optimized-build.cjs',
+      dev: 'node scripts/pre-dev-check.cjs && npm run env:dev && next dev',
+      start: 'next start',
+      lint: 'node scripts/pre-lint-check.cjs',
+      'lint:fix': 'node scripts/pre-lint-check.cjs --fix',
     };
-    
+
     packageJson.scripts = {
       ...packageJson.scripts,
-      ...essentialScripts
+      ...essentialScripts,
     };
-    
+
     // Ensure engines are set
     packageJson.engines = {
       ...packageJson.engines,
       node: '>=18.0.0',
-      npm: '>=8.0.0'
+      npm: '>=8.0.0',
     };
-    
+
     // Add type module if not present
     if (!packageJson.type) {
       packageJson.type = 'module';
     }
-    
+
     fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
     this.fixesApplied.push('package-json');
     this.log('package.json fixed');
@@ -204,7 +206,7 @@ class NetlifyAutoFix {
 
   async fixNextConfig() {
     this.log('Fixing Next.js configuration...');
-    
+
     const nextConfig = `/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Disable telemetry
@@ -326,7 +328,7 @@ module.exports = nextConfig;`;
 
   async fixTypeScript() {
     this.log('Fixing TypeScript configuration...');
-    
+
     const tsConfig = {
       compilerOptions: {
         target: 'ES2020',
@@ -365,7 +367,7 @@ module.exports = nextConfig;`;
 
   async fixLinting() {
     this.log('Fixing ESLint configuration...');
-    
+
     const eslintConfig = `module.exports = {
   extends: [
     'next/core-web-vitals',
@@ -396,18 +398,18 @@ module.exports = nextConfig;`;
 
   async fixDependencies() {
     this.log('Fixing dependencies...');
-    
+
     try {
       // Clean install
       execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
       execSync('npm install --legacy-peer-deps', { stdio: 'inherit' });
-      
+
       // Update dependencies
       execSync('npm update', { stdio: 'inherit' });
-      
+
       // Fix audit issues
       execSync('npm audit fix --force', { stdio: 'inherit' });
-      
+
       this.fixesApplied.push('dependencies');
       this.log('Dependencies fixed');
     } catch (error) {
@@ -417,18 +419,18 @@ module.exports = nextConfig;`;
 
   async fixBuildScripts() {
     this.log('Fixing build scripts...');
-    
+
     // Create essential build scripts
     const scripts = {
       'scripts/fix-self-global.js': `// Fix for global self reference
 if (typeof globalThis === 'undefined') {
   global.globalThis = global;
 }`,
-      
+
       'scripts/pre-build-check.cjs': `#!/usr/bin/env node
 console.log('Pre-build check completed');
 process.exit(0);`,
-      
+
       'scripts/install-build-deps.cjs': `#!/usr/bin/env node
 const { execSync } = require('child_process');
 
@@ -440,7 +442,7 @@ try {
   console.error('Failed to install build dependencies:', error.message);
   process.exit(1);
 }`,
-      
+
       'scripts/optimized-build.cjs': `#!/usr/bin/env node
 const { execSync } = require('child_process');
 
@@ -464,9 +466,9 @@ try {
 } catch (error) {
   console.error('Build failed:', error.message);
   process.exit(1);
-}`
+}`,
     };
-    
+
     for (const [filePath, content] of Object.entries(scripts)) {
       const dir = path.dirname(filePath);
       if (!fs.existsSync(dir)) {
@@ -474,7 +476,7 @@ try {
       }
       fs.writeFileSync(filePath, content);
     }
-    
+
     // Make scripts executable
     for (const filePath of Object.keys(scripts)) {
       try {
@@ -483,14 +485,14 @@ try {
         // chmod might not work on Windows
       }
     }
-    
+
     this.fixesApplied.push('build-scripts');
     this.log('Build scripts fixed');
   }
 
   async fixEnvironment() {
     this.log('Fixing environment configuration...');
-    
+
     // Create .env.example if it doesn't exist
     if (!fs.existsSync('.env.example')) {
       const envExample = `# Environment Variables Example
@@ -519,22 +521,22 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
 
       fs.writeFileSync('.env.example', envExample);
     }
-    
+
     this.fixesApplied.push('environment');
     this.log('Environment configuration fixed');
   }
 
   async fixPermissions() {
     this.log('Fixing file permissions...');
-    
+
     try {
       // Make scripts executable
       execSync('chmod +x scripts/*.cjs', { stdio: 'pipe' });
       execSync('chmod +x scripts/*.js', { stdio: 'pipe' });
-      
+
       // Fix directory permissions
       execSync('chmod -R 755 .', { stdio: 'pipe' });
-      
+
       this.fixesApplied.push('permissions');
       this.log('File permissions fixed');
     } catch (error) {
@@ -544,7 +546,7 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
 
   async cleanCache() {
     this.log('Cleaning cache...');
-    
+
     const cacheDirs = [
       '.next',
       'node_modules/.cache',
@@ -552,9 +554,9 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
       'dist',
       'out',
       'coverage',
-      'test-results'
+      'test-results',
     ];
-    
+
     for (const dir of cacheDirs) {
       if (fs.existsSync(dir)) {
         try {
@@ -564,20 +566,20 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
         }
       }
     }
-    
+
     this.fixesApplied.push('cache-clean');
     this.log('Cache cleaned');
   }
 
   async testBuild() {
     this.log('Testing build after fixes...');
-    
+
     try {
-      execSync('npm run build:netlify:prepare', { 
+      execSync('npm run build:netlify:prepare', {
         stdio: 'inherit',
-        timeout: 300000 // 5 minutes
+        timeout: 300000, // 5 minutes
       });
-      
+
       this.log('Build test successful!');
       return true;
     } catch (error) {
@@ -590,7 +592,7 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
     return {
       fixesApplied: this.fixesApplied,
       timestamp: new Date().toISOString(),
-      totalFixes: this.fixesApplied.length
+      totalFixes: this.fixesApplied.length,
     };
   }
 }
@@ -598,24 +600,27 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
 // CLI interface
 if (require.main === module) {
   const autoFix = new NetlifyAutoFix();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'all':
       autoFix.applyAllFixes().then(() => {
-        console.log('\\nFix Report:', JSON.stringify(autoFix.getFixReport(), null, 2));
+        console.log(
+          '\\nFix Report:',
+          JSON.stringify(autoFix.getFixReport(), null, 2),
+        );
       });
       break;
-    
+
     case 'test':
       autoFix.testBuild();
       break;
-    
+
     case 'report':
       console.log(JSON.stringify(autoFix.getFixReport(), null, 2));
       break;
-    
+
     default:
       console.log(`
 Netlify Auto-Fix Script
@@ -635,4 +640,4 @@ Examples:
   }
 }
 
-module.exports = NetlifyAutoFix; 
+module.exports = NetlifyAutoFix;

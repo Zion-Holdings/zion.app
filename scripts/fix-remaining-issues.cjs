@@ -7,7 +7,10 @@ const { execSync } = require('child_process');
 // Find all JavaScript and TypeScript files
 const findFiles = () => {
   try {
-    const output = execSync('find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules', { encoding: 'utf8' });
+    const output = execSync(
+      'find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules',
+      { encoding: 'utf8' },
+    );
     return output.trim().split('\n').filter(Boolean);
   } catch (error) {
     console.error('Error finding files:', error.message);
@@ -78,7 +81,8 @@ const fixRemainingIssues = (filePath) => {
     }
 
     // Pattern 9: React Hook dependency issues - remove unnecessary dependencies
-    const pattern9 = /useEffect\s*\(\s*\(\)\s*=>\s*\{[^}]*\},\s*\[[^\]]*slug[^\]]*\]\s*\)/g;
+    const pattern9 =
+      /useEffect\s*\(\s*\(\)\s*=>\s*\{[^}]*\},\s*\[[^\]]*slug[^\]]*\]\s*\)/g;
     if (pattern9.test(content)) {
       content = content.replace(pattern9, (match) => {
         return match.replace(/,\s*slug\s*,?/, '').replace(/,\s*,/, ',');
@@ -101,11 +105,11 @@ const fixRemainingIssues = (filePath) => {
 // Main execution
 const main = () => {
   console.log('🔧 Fixing remaining lint issues...');
-  
+
   const files = findFiles();
   let fixedCount = 0;
 
-  files.forEach(file => {
+  files.forEach((file) => {
     if (fixRemainingIssues(file)) {
       fixedCount++;
     }
@@ -118,4 +122,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { fixRemainingIssues }; 
+module.exports = { fixRemainingIssues };

@@ -7,7 +7,7 @@ const files = ['.env.local', 'netlify.toml'];
 const placeholderRegex = /(your_|PLACEHOLDER|dummy)/i;
 let issueFound = false;
 
-files.forEach(file => {
+files.forEach((file) => {
   if (!_fs.existsSync(file)) return;
   const content = _fs.readFileSync(file, 'utf8');
   const lines = content.split(/\r?\n/);

@@ -21,22 +21,23 @@ const CONFIG = {
   cursorChatTimeout: 60000, // 1 minute
   healthCheckInterval: 300000, // 5 minutes
   autoCommitInterval: 300000, // 5 minutes
-  
+
   // Logging
   logFile: 'logs/advanced-self-healing.log',
   errorLogFile: 'logs/advanced-self-healing-errors.log',
   cursorChatLogFile: 'logs/cursor-chat-triggers.log',
-  
+
   // Git settings
   gitBranch: 'main',
   gitUserName: process.env.GIT_AUTHOR_NAME || 'Advanced Self-Healing Bot',
-  gitUserEmail: process.env.GIT_AUTHOR_EMAIL || 'advanced-self-healing@zion.app',
-  
+  gitUserEmail:
+    process.env.GIT_AUTHOR_EMAIL || 'advanced-self-healing@zion.app',
+
   // Cursor API settings
   cursorApiUrl: process.env.CURSOR_API_URL || 'https://api.cursor.sh',
   cursorApiKey: process.env.CURSOR_API_KEY,
   cursorWorkspaceId: process.env.CURSOR_WORKSPACE_ID,
-  
+
   // Error patterns and their fixes
   errorPatterns: {
     // Build errors
@@ -44,76 +45,78 @@ const CONFIG = {
       type: 'dependency',
       fix: 'npm install',
       severity: 'high',
-      cursorPrompt: 'Fix missing module dependency issue'
+      cursorPrompt: 'Fix missing module dependency issue',
     },
     'Cannot resolve module': {
       type: 'import',
       fix: 'check_imports',
       severity: 'medium',
-      cursorPrompt: 'Resolve module import path issues'
+      cursorPrompt: 'Resolve module import path issues',
     },
     'TypeScript error': {
       type: 'typescript',
       fix: 'fix_typescript',
       severity: 'medium',
-      cursorPrompt: 'Fix TypeScript type errors and type definitions'
+      cursorPrompt: 'Fix TypeScript type errors and type definitions',
     },
     'ESLint error': {
       type: 'linting',
       fix: 'npm run lint:fix',
       severity: 'low',
-      cursorPrompt: 'Fix ESLint code style and quality issues'
+      cursorPrompt: 'Fix ESLint code style and quality issues',
     },
     'Tailwind CSS': {
       type: 'styling',
       fix: 'fix_tailwind',
       severity: 'medium',
-      cursorPrompt: 'Fix Tailwind CSS class and styling issues'
+      cursorPrompt: 'Fix Tailwind CSS class and styling issues',
     },
     'Wallet connection': {
       type: 'wallet',
       fix: 'fix_wallet_context',
       severity: 'high',
-      cursorPrompt: 'Fix wallet connection and context issues'
+      cursorPrompt: 'Fix wallet connection and context issues',
     },
     'Supabase connection': {
       type: 'database',
       fix: 'fix_supabase',
       severity: 'high',
-      cursorPrompt: 'Fix Supabase database connection and authentication issues'
+      cursorPrompt:
+        'Fix Supabase database connection and authentication issues',
     },
     'Environment variable': {
       type: 'env',
       fix: 'fix_environment',
       severity: 'high',
-      cursorPrompt: 'Fix missing or incorrect environment variable configuration'
+      cursorPrompt:
+        'Fix missing or incorrect environment variable configuration',
     },
     'Memory heap': {
       type: 'memory',
       fix: 'increase_memory',
       severity: 'high',
-      cursorPrompt: 'Fix JavaScript heap out of memory issues'
+      cursorPrompt: 'Fix JavaScript heap out of memory issues',
     },
     'Build timeout': {
       type: 'timeout',
       fix: 'increase_timeout',
       severity: 'medium',
-      cursorPrompt: 'Fix build timeout and performance issues'
+      cursorPrompt: 'Fix build timeout and performance issues',
     },
     'Network error': {
       type: 'network',
       fix: 'retry_network',
       severity: 'medium',
-      cursorPrompt: 'Fix network connectivity and API call issues'
+      cursorPrompt: 'Fix network connectivity and API call issues',
     },
     'Permission denied': {
       type: 'permission',
       fix: 'fix_permissions',
       severity: 'high',
-      cursorPrompt: 'Fix file and directory permission issues'
-    }
+      cursorPrompt: 'Fix file and directory permission issues',
+    },
   },
-  
+
   // File patterns to monitor
   monitoredFiles: [
     'src/**/*.{js,jsx,ts,tsx}',
@@ -123,9 +126,9 @@ const CONFIG = {
     'hooks/**/*.{js,jsx,ts,tsx}',
     'context/**/*.{js,jsx,ts,tsx}',
     'api/**/*.{js,jsx,ts,tsx}',
-    '*.{js,jsx,ts,tsx,json,md}'
+    '*.{js,jsx,ts,tsx,json,md}',
   ],
-  
+
   // Critical files that require immediate attention
   criticalFiles: [
     'package.json',
@@ -136,8 +139,8 @@ const CONFIG = {
     'src/context/WalletContext.tsx',
     'src/utils/supabase/client.ts',
     'src/utils/supabase/server.ts',
-    'middleware.ts'
-  ]
+    'middleware.ts',
+  ],
 };
 
 class AdvancedSelfHealingSystem {
@@ -149,7 +152,7 @@ class AdvancedSelfHealingSystem {
     this.lastCommitTime = null;
     this.buildHistory = [];
     this.errorHistory = [];
-    
+
     this.ensureLogDirectory();
     this.log('Advanced Self-Healing System initialized');
   }
@@ -157,12 +160,12 @@ class AdvancedSelfHealingSystem {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
-    
+
     // Write to log file
     fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
-    
+
     // Write errors to separate error log
     if (level === 'ERROR') {
       fs.appendFileSync(CONFIG.errorLogFile, logEntry + '\n');
@@ -172,7 +175,7 @@ class AdvancedSelfHealingSystem {
   logCursorChat(message) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] CURSOR_CHAT: ${message}`;
-    
+
     fs.appendFileSync(CONFIG.cursorChatLogFile, logEntry + '\n');
   }
 
@@ -194,10 +197,10 @@ class AdvancedSelfHealingSystem {
 
     // Start continuous monitoring
     this.startContinuousMonitoring();
-    
+
     // Start health checks
     this.startHealthChecks();
-    
+
     // Start auto-commit system
     this.startAutoCommitSystem();
   }
@@ -210,7 +213,7 @@ class AdvancedSelfHealingSystem {
   startContinuousMonitoring() {
     setInterval(async () => {
       if (!this.isRunning) return;
-      
+
       try {
         await this.monitorAndFix();
       } catch (error) {
@@ -222,7 +225,7 @@ class AdvancedSelfHealingSystem {
   startHealthChecks() {
     setInterval(async () => {
       if (!this.isRunning) return;
-      
+
       try {
         await this.performHealthCheck();
       } catch (error) {
@@ -234,7 +237,7 @@ class AdvancedSelfHealingSystem {
   startAutoCommitSystem() {
     setInterval(async () => {
       if (!this.isRunning) return;
-      
+
       try {
         await this.autoCommitChanges();
       } catch (error) {
@@ -245,28 +248,28 @@ class AdvancedSelfHealingSystem {
 
   async monitorAndFix() {
     this.log('Running monitoring and fix cycle...');
-    
+
     // Check for build issues
     const buildIssues = await this.checkBuildIssues();
     if (buildIssues.length > 0) {
       this.log(`Found ${buildIssues.length} build issues`);
       await this.fixBuildIssues(buildIssues);
     }
-    
+
     // Check for lint issues
     const lintIssues = await this.checkLintIssues();
     if (lintIssues.length > 0) {
       this.log(`Found ${lintIssues.length} lint issues`);
       await this.fixLintIssues(lintIssues);
     }
-    
+
     // Check for type issues
     const typeIssues = await this.checkTypeIssues();
     if (typeIssues.length > 0) {
       this.log(`Found ${typeIssues.length} type issues`);
       await this.fixTypeIssues(typeIssues);
     }
-    
+
     // Check for runtime errors
     const runtimeIssues = await this.checkRuntimeIssues();
     if (runtimeIssues.length > 0) {
@@ -277,14 +280,14 @@ class AdvancedSelfHealingSystem {
 
   async checkBuildIssues() {
     const issues = [];
-    
+
     try {
       // Run a quick build check
-      const buildOutput = execSync('npm run build 2>&1', { 
+      const buildOutput = execSync('npm run build 2>&1', {
         encoding: 'utf8',
-        timeout: 300000 // 5 minutes
+        timeout: 300000, // 5 minutes
       });
-      
+
       // Parse build output for issues
       for (const [pattern, config] of Object.entries(CONFIG.errorPatterns)) {
         if (buildOutput.includes(pattern)) {
@@ -293,14 +296,14 @@ class AdvancedSelfHealingSystem {
             pattern,
             severity: config.severity,
             cursorPrompt: config.cursorPrompt,
-            output: buildOutput
+            output: buildOutput,
           });
         }
       }
     } catch (error) {
       // Build failed, extract error information
       const errorOutput = error.stdout || error.stderr || error.message;
-      
+
       for (const [pattern, config] of Object.entries(CONFIG.errorPatterns)) {
         if (errorOutput.includes(pattern)) {
           issues.push({
@@ -308,31 +311,31 @@ class AdvancedSelfHealingSystem {
             pattern,
             severity: config.severity,
             cursorPrompt: config.cursorPrompt,
-            output: errorOutput
+            output: errorOutput,
           });
         }
       }
     }
-    
+
     return issues;
   }
 
   async checkLintIssues() {
     const issues = [];
-    
+
     try {
-      const lintOutput = execSync('npm run lint 2>&1', { 
+      const lintOutput = execSync('npm run lint 2>&1', {
         encoding: 'utf8',
-        timeout: 120000 // 2 minutes
+        timeout: 120000, // 2 minutes
       });
-      
+
       if (lintOutput.includes('error') || lintOutput.includes('Error')) {
         issues.push({
           type: 'linting',
           pattern: 'ESLint error',
           severity: 'low',
           cursorPrompt: 'Fix ESLint code style and quality issues',
-          output: lintOutput
+          output: lintOutput,
         });
       }
     } catch (error) {
@@ -342,29 +345,29 @@ class AdvancedSelfHealingSystem {
         pattern: 'ESLint error',
         severity: 'low',
         cursorPrompt: 'Fix ESLint code style and quality issues',
-        output: errorOutput
+        output: errorOutput,
       });
     }
-    
+
     return issues;
   }
 
   async checkTypeIssues() {
     const issues = [];
-    
+
     try {
-      const typeOutput = execSync('npm run typecheck 2>&1', { 
+      const typeOutput = execSync('npm run typecheck 2>&1', {
         encoding: 'utf8',
-        timeout: 120000 // 2 minutes
+        timeout: 120000, // 2 minutes
       });
-      
+
       if (typeOutput.includes('error') || typeOutput.includes('Error')) {
         issues.push({
           type: 'typescript',
           pattern: 'TypeScript error',
           severity: 'medium',
           cursorPrompt: 'Fix TypeScript type errors and type definitions',
-          output: typeOutput
+          output: typeOutput,
         });
       }
     } catch (error) {
@@ -374,30 +377,32 @@ class AdvancedSelfHealingSystem {
         pattern: 'TypeScript error',
         severity: 'medium',
         cursorPrompt: 'Fix TypeScript type errors and type definitions',
-        output: errorOutput
+        output: errorOutput,
       });
     }
-    
+
     return issues;
   }
 
   async checkRuntimeIssues() {
     const issues = [];
-    
+
     // Check for runtime error logs
     const logFiles = [
       'logs/error.log',
       'logs/build.log',
-      'logs/self-healing.log'
+      'logs/self-healing.log',
     ];
-    
+
     for (const logFile of logFiles) {
       if (fs.existsSync(logFile)) {
         const logContent = fs.readFileSync(logFile, 'utf8');
         const recentLines = logContent.split('\n').slice(-100); // Last 100 lines
-        
+
         for (const line of recentLines) {
-          for (const [pattern, config] of Object.entries(CONFIG.errorPatterns)) {
+          for (const [pattern, config] of Object.entries(
+            CONFIG.errorPatterns,
+          )) {
             if (line.includes(pattern)) {
               issues.push({
                 type: config.type,
@@ -405,21 +410,21 @@ class AdvancedSelfHealingSystem {
                 severity: config.severity,
                 cursorPrompt: config.cursorPrompt,
                 output: line,
-                source: logFile
+                source: logFile,
               });
             }
           }
         }
       }
     }
-    
+
     return issues;
   }
 
   async fixBuildIssues(issues) {
     for (const issue of issues) {
       this.log(`Fixing build issue: ${issue.pattern}`);
-      
+
       try {
         await this.applyFix(issue);
         await this.triggerCursorChat(issue);
@@ -433,14 +438,14 @@ class AdvancedSelfHealingSystem {
   async fixLintIssues(issues) {
     for (const issue of issues) {
       this.log(`Fixing lint issue: ${issue.pattern}`);
-      
+
       try {
         // Try auto-fix first
-        execSync('npm run lint:fix', { 
+        execSync('npm run lint:fix', {
           stdio: 'inherit',
-          timeout: 120000
+          timeout: 120000,
         });
-        
+
         await this.triggerCursorChat(issue);
         this.fixesApplied.push(issue);
       } catch (error) {
@@ -452,7 +457,7 @@ class AdvancedSelfHealingSystem {
   async fixTypeIssues(issues) {
     for (const issue of issues) {
       this.log(`Fixing type issue: ${issue.pattern}`);
-      
+
       try {
         await this.applyFix(issue);
         await this.triggerCursorChat(issue);
@@ -466,7 +471,7 @@ class AdvancedSelfHealingSystem {
   async fixRuntimeIssues(issues) {
     for (const issue of issues) {
       this.log(`Fixing runtime issue: ${issue.pattern}`);
-      
+
       try {
         await this.applyFix(issue);
         await this.triggerCursorChat(issue);
@@ -527,7 +532,7 @@ class AdvancedSelfHealingSystem {
       permission: async () => {
         this.log('Applying permission fix...');
         await this.fixPermissions();
-      }
+      },
     };
 
     const fixStrategy = fixStrategies[issue.type];
@@ -539,7 +544,7 @@ class AdvancedSelfHealingSystem {
   async analyzeAndFixImports() {
     // Analyze import issues and fix them
     this.log('Analyzing import issues...');
-    
+
     // This would implement sophisticated import analysis
     // For now, we'll just run a basic check
     try {
@@ -551,12 +556,15 @@ class AdvancedSelfHealingSystem {
 
   async fixTailwindIssues() {
     this.log('Fixing Tailwind CSS issues...');
-    
+
     try {
       // Regenerate Tailwind CSS
-      execSync('npx tailwindcss -i ./src/styles/globals.css -o ./public/styles.css', { 
-        stdio: 'inherit' 
-      });
+      execSync(
+        'npx tailwindcss -i ./src/styles/globals.css -o ./public/styles.css',
+        {
+          stdio: 'inherit',
+        },
+      );
     } catch (error) {
       this.log(`Tailwind fix failed: ${error.message}`, 'ERROR');
     }
@@ -564,14 +572,17 @@ class AdvancedSelfHealingSystem {
 
   async fixWalletContext() {
     this.log('Fixing wallet context issues...');
-    
+
     // Check if WalletContext.tsx exists and has issues
     const walletContextPath = 'src/context/WalletContext.tsx';
     if (fs.existsSync(walletContextPath)) {
       const content = fs.readFileSync(walletContextPath, 'utf8');
-      
+
       // Check for common wallet issues
-      if (content.includes('ethereum') && !content.includes('window.ethereum')) {
+      if (
+        content.includes('ethereum') &&
+        !content.includes('window.ethereum')
+      ) {
         this.log('Wallet context needs ethereum provider check');
         // This would trigger a more specific fix
       }
@@ -580,14 +591,14 @@ class AdvancedSelfHealingSystem {
 
   async fixSupabaseIssues() {
     this.log('Fixing Supabase issues...');
-    
+
     // Check Supabase configuration
     const supabaseClientPath = 'src/utils/supabase/client.ts';
     const supabaseServerPath = 'src/utils/supabase/server.ts';
-    
+
     if (fs.existsSync(supabaseClientPath)) {
       const content = fs.readFileSync(supabaseClientPath, 'utf8');
-      
+
       // Check for common Supabase issues
       if (!content.includes('NEXT_PUBLIC_SUPABASE_URL')) {
         this.log('Supabase client missing environment variables');
@@ -597,14 +608,14 @@ class AdvancedSelfHealingSystem {
 
   async fixEnvironmentIssues() {
     this.log('Fixing environment issues...');
-    
+
     // Check for missing environment variables
     const envFiles = ['.env.local', '.env.example'];
-    
+
     for (const envFile of envFiles) {
       if (fs.existsSync(envFile)) {
         const content = fs.readFileSync(envFile, 'utf8');
-        
+
         // Check for placeholder values
         if (content.includes('YOUR_') || content.includes('placeholder')) {
           this.log(`Environment file ${envFile} contains placeholder values`);
@@ -615,20 +626,23 @@ class AdvancedSelfHealingSystem {
 
   async increaseMemoryLimit() {
     this.log('Increasing memory limit...');
-    
+
     // Update package.json scripts to include memory options
     const packageJsonPath = 'package.json';
     if (fs.existsSync(packageJsonPath)) {
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-      
+
       if (packageJson.scripts && packageJson.scripts.build) {
         if (!packageJson.scripts.build.includes('--max-old-space-size')) {
           packageJson.scripts.build = packageJson.scripts.build.replace(
             'next build',
-            'NODE_OPTIONS="--max-old-space-size=8192" next build'
+            'NODE_OPTIONS="--max-old-space-size=8192" next build',
           );
-          
-          fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+
+          fs.writeFileSync(
+            packageJsonPath,
+            JSON.stringify(packageJson, null, 2),
+          );
           this.log('Updated build script with increased memory limit');
         }
       }
@@ -637,7 +651,7 @@ class AdvancedSelfHealingSystem {
 
   async increaseTimeout() {
     this.log('Increasing timeout...');
-    
+
     // This would update various timeout configurations
     // For now, we'll just log the action
     this.log('Timeout increase applied');
@@ -645,7 +659,7 @@ class AdvancedSelfHealingSystem {
 
   async retryNetworkCalls() {
     this.log('Retrying network calls...');
-    
+
     // This would implement network retry logic
     // For now, we'll just log the action
     this.log('Network retry applied');
@@ -653,7 +667,7 @@ class AdvancedSelfHealingSystem {
 
   async fixPermissions() {
     this.log('Fixing permissions...');
-    
+
     try {
       // Fix file permissions
       execSync('chmod -R 755 .', { stdio: 'inherit' });
@@ -670,7 +684,7 @@ class AdvancedSelfHealingSystem {
     }
 
     this.log(`Triggering Cursor chat for issue: ${issue.pattern}`);
-    
+
     try {
       const chatData = {
         workspaceId: CONFIG.cursorWorkspaceId,
@@ -678,19 +692,21 @@ class AdvancedSelfHealingSystem {
         context: {
           issue: issue,
           timestamp: new Date().toISOString(),
-          system: 'advanced-self-healing'
-        }
+          system: 'advanced-self-healing',
+        },
       };
 
       await this.sendCursorChat(chatData);
-      
+
       this.cursorChatsTriggered.push({
         issue: issue.pattern,
         timestamp: new Date().toISOString(),
-        prompt: chatData.message
+        prompt: chatData.message,
       });
-      
-      this.logCursorChat(`Triggered chat for ${issue.pattern}: ${chatData.message}`);
+
+      this.logCursorChat(
+        `Triggered chat for ${issue.pattern}: ${chatData.message}`,
+      );
     } catch (error) {
       this.log(`Failed to trigger Cursor chat: ${error.message}`, 'ERROR');
     }
@@ -698,7 +714,7 @@ class AdvancedSelfHealingSystem {
 
   generateCursorPrompt(issue) {
     const basePrompt = issue.cursorPrompt || 'Fix the detected issue';
-    
+
     return `${basePrompt}
 
 Issue Details:
@@ -720,7 +736,7 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
   async sendCursorChat(chatData) {
     return new Promise((resolve, reject) => {
       const postData = JSON.stringify(chatData);
-      
+
       const options = {
         hostname: new URL(CONFIG.cursorApiUrl).hostname,
         port: 443,
@@ -729,17 +745,17 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
         headers: {
           'Content-Type': 'application/json',
           'Content-Length': Buffer.byteLength(postData),
-          'Authorization': `Bearer ${CONFIG.cursorApiKey}`
-        }
+          Authorization: `Bearer ${CONFIG.cursorApiKey}`,
+        },
       };
 
       const req = https.request(options, (res) => {
         let data = '';
-        
+
         res.on('data', (chunk) => {
           data += chunk;
         });
-        
+
         res.on('end', () => {
           if (res.statusCode === 200) {
             resolve(JSON.parse(data));
@@ -760,16 +776,16 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
 
   async performHealthCheck() {
     this.log('Performing health check...');
-    
+
     const healthChecks = [
       this.checkBuildHealth(),
       this.checkLintHealth(),
       this.checkTypeHealth(),
-      this.checkRuntimeHealth()
+      this.checkRuntimeHealth(),
     ];
-    
+
     const results = await Promise.allSettled(healthChecks);
-    
+
     let healthy = true;
     for (const result of results) {
       if (result.status === 'rejected') {
@@ -777,7 +793,7 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
         this.log(`Health check failed: ${result.reason}`, 'ERROR');
       }
     }
-    
+
     if (healthy) {
       this.log('All health checks passed');
     } else {
@@ -788,9 +804,9 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
 
   async checkBuildHealth() {
     try {
-      execSync('npm run build --dry-run', { 
+      execSync('npm run build --dry-run', {
         stdio: 'pipe',
-        timeout: 60000 
+        timeout: 60000,
       });
       return true;
     } catch (error) {
@@ -800,9 +816,9 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
 
   async checkLintHealth() {
     try {
-      execSync('npm run lint --dry-run', { 
+      execSync('npm run lint --dry-run', {
         stdio: 'pipe',
-        timeout: 30000 
+        timeout: 30000,
       });
       return true;
     } catch (error) {
@@ -812,9 +828,9 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
 
   async checkTypeHealth() {
     try {
-      execSync('npm run typecheck', { 
+      execSync('npm run typecheck', {
         stdio: 'pipe',
-        timeout: 30000 
+        timeout: 30000,
       });
       return true;
     } catch (error) {
@@ -840,29 +856,29 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
     try {
       // Check if there are any changes to commit
       const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      
+
       if (status.trim()) {
         this.log('Changes detected, creating auto-commit...');
-        
+
         // Stage all changes
         execSync('git add .', { stdio: 'inherit' });
-        
+
         // Create commit message
         const commitMessage = this.generateCommitMessage();
-        
+
         // Commit changes
-        execSync(`git commit -m "${commitMessage}"`, { 
+        execSync(`git commit -m "${commitMessage}"`, {
           stdio: 'inherit',
           env: {
             ...process.env,
             GIT_AUTHOR_NAME: CONFIG.gitUserName,
-            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail
-          }
+            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail,
+          },
         });
-        
+
         // Push to main branch
         execSync(`git push origin ${CONFIG.gitBranch}`, { stdio: 'inherit' });
-        
+
         this.lastCommitTime = new Date();
         this.log('Auto-commit and push completed successfully');
       } else {
@@ -877,12 +893,12 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
     const timestamp = new Date().toISOString();
     const fixCount = this.fixesApplied.length;
     const chatCount = this.cursorChatsTriggered.length;
-    
+
     return `🤖 Auto-fix: ${fixCount} issues resolved, ${chatCount} Cursor chats triggered
 
 - Timestamp: ${timestamp}
-- Fixes applied: ${this.fixesApplied.map(f => f.pattern).join(', ')}
-- Cursor chats: ${this.cursorChatsTriggered.map(c => c.issue).join(', ')}
+- Fixes applied: ${this.fixesApplied.map((f) => f.pattern).join(', ')}
+- Cursor chats: ${this.cursorChatsTriggered.map((c) => c.issue).join(', ')}
 
 Automated by Advanced Self-Healing System`;
   }
@@ -895,7 +911,7 @@ Automated by Advanced Self-Healing System`;
       cursorChatsTriggered: this.cursorChatsTriggered.length,
       lastCommitTime: this.lastCommitTime,
       buildHistory: this.buildHistory.length,
-      errorHistory: this.errorHistory.length
+      errorHistory: this.errorHistory.length,
     };
   }
 
@@ -907,31 +923,35 @@ Automated by Advanced Self-Healing System`;
       cursorChatsTriggered: this.cursorChatsTriggered,
       buildHistory: this.buildHistory.slice(-10), // Last 10 builds
       errorHistory: this.errorHistory.slice(-10), // Last 10 errors
-      recommendations: this.generateRecommendations()
+      recommendations: this.generateRecommendations(),
     };
-    
+
     const reportPath = 'logs/advanced-self-healing-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log(`Report generated: ${reportPath}`);
     return report;
   }
 
   generateRecommendations() {
     const recommendations = [];
-    
+
     if (this.fixesApplied.length > 10) {
-      recommendations.push('Consider implementing more robust error prevention strategies');
+      recommendations.push(
+        'Consider implementing more robust error prevention strategies',
+      );
     }
-    
+
     if (this.cursorChatsTriggered.length > 5) {
-      recommendations.push('Review common issues and implement automated fixes');
+      recommendations.push(
+        'Review common issues and implement automated fixes',
+      );
     }
-    
+
     if (this.errorHistory.length > 20) {
       recommendations.push('Consider adding more comprehensive error handling');
     }
-    
+
     return recommendations;
   }
 }
@@ -939,9 +959,9 @@ Automated by Advanced Self-Healing System`;
 // CLI interface
 if (require.main === module) {
   const system = new AdvancedSelfHealingSystem();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       system.start();
@@ -950,13 +970,13 @@ if (require.main === module) {
       system.stop();
       break;
     case 'status':
-      system.getStatus().then(status => {
+      system.getStatus().then((status) => {
         console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
     case 'report':
-      system.generateReport().then(report => {
+      system.generateReport().then((report) => {
         console.log(JSON.stringify(report, null, 2));
         process.exit(0);
       });
@@ -991,4 +1011,4 @@ Environment Variables:
   }
 }
 
-module.exports = AdvancedSelfHealingSystem; 
+module.exports = AdvancedSelfHealingSystem;

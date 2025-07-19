@@ -2,7 +2,7 @@ name: Deploy Playwright Report
 
 on:
   workflow_run:
-    workflows: ["UI E2E Tests"]
+    workflows: ['UI E2E Tests']
     types:
       - completed
 

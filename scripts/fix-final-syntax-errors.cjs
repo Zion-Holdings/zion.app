@@ -6,15 +6,12 @@ const path = require('path');
 console.log('🔧 Fixing final syntax errors...');
 
 // List of files that need specific fixes
-const filesToFix = [
-  'pages/404.tsx',
-  'pages/500.tsx'
-];
+const filesToFix = ['pages/404.tsx', 'pages/500.tsx'];
 
 let fixedFiles = 0;
 let totalIssues = 0;
 
-filesToFix.forEach(file => {
+filesToFix.forEach((file) => {
   try {
     if (fs.existsSync(file)) {
       let content = fs.readFileSync(file, 'utf8');
@@ -113,4 +110,6 @@ export default function Custom500() {
   }
 });
 
-console.log(`\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`); 
+console.log(
+  `\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`,
+);

@@ -17,7 +17,7 @@ class ProjectHealthSummary {
       timestamp: new Date().toISOString(),
       improvements: [],
       metrics: {},
-      recommendations: []
+      recommendations: [],
     };
   }
 
@@ -27,16 +27,19 @@ class ProjectHealthSummary {
   checkDevServer() {
     try {
       // Check if port 3001 is accessible (dev server running)
-      const response = execSync('curl -s -o /dev/null -w "%{http_code}" http://localhost:3001 2>/dev/null || echo "000"', { encoding: 'utf8' });
+      const response = execSync(
+        'curl -s -o /dev/null -w "%{http_code}" http://localhost:3001 2>/dev/null || echo "000"',
+        { encoding: 'utf8' },
+      );
       const isRunning = response.trim() !== '000';
-      
+
       this.summary.improvements.push({
         category: '🚀 Development Server',
         status: isRunning ? '✅ Running' : '⚠️  Not Running',
-        description: isRunning ? 
-          'Development server successfully running on localhost:3001' :
-          'Development server can be started with: npm run dev',
-        impact: 'High'
+        description: isRunning
+          ? 'Development server successfully running on localhost:3001'
+          : 'Development server can be started with: npm run dev',
+        impact: 'High',
       });
 
       this.summary.metrics.devServerStatus = isRunning;
@@ -45,7 +48,7 @@ class ProjectHealthSummary {
         category: '🚀 Development Server',
         status: '⚠️  Unknown',
         description: 'Unable to check server status',
-        impact: 'Medium'
+        impact: 'Medium',
       });
     }
   }
@@ -54,9 +57,11 @@ class ProjectHealthSummary {
    * Analyze console statement replacement
    */
   analyzeConsoleReplacement() {
-    const loggerFiles = this.countFilesWithPattern("from '@/utils/productionLogger'");
+    const loggerFiles = this.countFilesWithPattern(
+      "from '@/utils/productionLogger'",
+    );
     const remainingConsole = this.countFilesWithPattern('console\\.log\\(');
-    
+
     this.summary.improvements.push({
       category: '📝 Console Statement Cleanup',
       status: '✅ Completed',
@@ -64,9 +69,9 @@ class ProjectHealthSummary {
       details: {
         filesWithLogger: loggerFiles,
         estimatedReplacements: 927,
-        remainingConsoleStatements: remainingConsole
+        remainingConsoleStatements: remainingConsole,
       },
-      impact: 'High'
+      impact: 'High',
     });
 
     this.summary.metrics.consoleReplacementFiles = loggerFiles;
@@ -81,11 +86,11 @@ class ProjectHealthSummary {
       'src/utils/productionLogger.ts',
       'src/utils/performanceOptimizer.ts',
       'src/types/common.ts',
-      'scripts/replace-console-statements.cjs'
+      'scripts/replace-console-statements.cjs',
     ];
 
-    const existingFiles = optimizationFiles.filter(file => 
-      fs.existsSync(path.join(PROJECT_ROOT, file))
+    const existingFiles = optimizationFiles.filter((file) =>
+      fs.existsSync(path.join(PROJECT_ROOT, file)),
     );
 
     this.summary.improvements.push({
@@ -97,12 +102,12 @@ class ProjectHealthSummary {
           'Production Logger with Sentry integration',
           'Performance Optimizer with Core Web Vitals',
           'Comprehensive TypeScript type definitions',
-          'Automated console replacement system'
+          'Automated console replacement system',
         ],
         filesCreated: existingFiles.length,
-        totalFiles: optimizationFiles.length
+        totalFiles: optimizationFiles.length,
       },
-      impact: 'High'
+      impact: 'High',
     });
 
     this.summary.metrics.optimizationFiles = existingFiles.length;
@@ -115,7 +120,7 @@ class ProjectHealthSummary {
     try {
       // Check if build passes
       execSync('npm run build --silent', { stdio: 'pipe' });
-      
+
       this.summary.improvements.push({
         category: '🏗️  Build System',
         status: '✅ Healthy',
@@ -123,9 +128,9 @@ class ProjectHealthSummary {
         details: {
           webpackOptimizations: 'Fixed optimization.usedExports conflicts',
           sentryIntegration: 'Proper tree shaking implemented',
-          environmentValidation: 'Pre-build checks pass'
+          environmentValidation: 'Pre-build checks pass',
         },
-        impact: 'Critical'
+        impact: 'Critical',
       });
 
       this.summary.metrics.buildStatus = 'passing';
@@ -134,7 +139,7 @@ class ProjectHealthSummary {
         category: '🏗️  Build System',
         status: '⚠️  Issues Detected',
         description: 'Build has warnings but completes',
-        impact: 'Medium'
+        impact: 'Medium',
       });
 
       this.summary.metrics.buildStatus = 'warning';
@@ -146,10 +151,12 @@ class ProjectHealthSummary {
    */
   analyzeLintingImprovements() {
     try {
-      const lintOutput = execSync('npm run lint 2>&1 || true', { encoding: 'utf8' });
+      const lintOutput = execSync('npm run lint 2>&1 || true', {
+        encoding: 'utf8',
+      });
       const errorCount = (lintOutput.match(/error/g) || []).length;
       const warningCount = (lintOutput.match(/warning/g) || []).length;
-      
+
       this.summary.improvements.push({
         category: '🔍 Code Quality',
         status: errorCount === 0 ? '✅ Improved' : '⚠️  In Progress',
@@ -158,9 +165,9 @@ class ProjectHealthSummary {
           estimatedBefore: '3,264+ issues with critical errors',
           currentErrors: errorCount,
           currentWarnings: warningCount,
-          improvement: 'No build-blocking errors remaining'
+          improvement: 'No build-blocking errors remaining',
         },
-        impact: 'High'
+        impact: 'High',
       });
 
       this.summary.metrics.lintErrors = errorCount;
@@ -170,7 +177,7 @@ class ProjectHealthSummary {
         category: '🔍 Code Quality',
         status: '⚠️  Unknown',
         description: 'Unable to analyze linting status',
-        impact: 'Medium'
+        impact: 'Medium',
       });
     }
   }
@@ -180,7 +187,10 @@ class ProjectHealthSummary {
    */
   countFilesWithPattern(pattern) {
     try {
-      const result = execSync(`grep -r "${pattern}" src/ pages/ --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" | wc -l`, { encoding: 'utf8' });
+      const result = execSync(
+        `grep -r "${pattern}" src/ pages/ --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" | wc -l`,
+        { encoding: 'utf8' },
+      );
       return parseInt(result.trim()) || 0;
     } catch (_error) {
       return 0;
@@ -191,16 +201,22 @@ class ProjectHealthSummary {
    * Check TypeScript improvements
    */
   analyzeTypeScriptImprovements() {
-    const commonTypesExists = fs.existsSync(path.join(PROJECT_ROOT, 'src/types/common.ts'));
-    
+    const commonTypesExists = fs.existsSync(
+      path.join(PROJECT_ROOT, 'src/types/common.ts'),
+    );
+
     if (commonTypesExists) {
-      const content = fs.readFileSync(path.join(PROJECT_ROOT, 'src/types/common.ts'), 'utf8');
+      const content = fs.readFileSync(
+        path.join(PROJECT_ROOT, 'src/types/common.ts'),
+        'utf8',
+      );
       const interfaceCount = (content.match(/export interface/g) || []).length;
-      
+
       this.summary.improvements.push({
         category: '🎯 TypeScript Type Safety',
         status: '✅ Enhanced',
-        description: 'Comprehensive type definitions created to replace any types',
+        description:
+          'Comprehensive type definitions created to replace any types',
         details: {
           interfacesCreated: interfaceCount,
           typeCategories: [
@@ -208,10 +224,10 @@ class ProjectHealthSummary {
             'Component Props',
             'Form Data Types',
             'Performance Metrics',
-            'Error Handling Types'
-          ]
+            'Error Handling Types',
+          ],
         },
-        impact: 'High'
+        impact: 'High',
       });
 
       this.summary.metrics.typeDefinitions = interfaceCount;
@@ -226,27 +242,28 @@ class ProjectHealthSummary {
       {
         priority: 'Medium',
         category: 'Type Safety',
-        action: 'Continue replacing remaining "any" types with proper interfaces',
-        benefit: 'Improved IDE support and runtime error prevention'
+        action:
+          'Continue replacing remaining "any" types with proper interfaces',
+        benefit: 'Improved IDE support and runtime error prevention',
       },
       {
         priority: 'Low',
         category: 'Code Cleanup',
         action: 'Remove unused variables and imports flagged by linter',
-        benefit: 'Cleaner codebase and reduced bundle size'
+        benefit: 'Cleaner codebase and reduced bundle size',
       },
       {
         priority: 'High',
         category: 'Monitoring',
         action: 'Configure Sentry DSN for production error monitoring',
-        benefit: 'Real-time error tracking and performance monitoring'
+        benefit: 'Real-time error tracking and performance monitoring',
       },
       {
         priority: 'Medium',
         category: 'Performance',
         action: 'Enable performance monitoring in production',
-        benefit: 'Track Core Web Vitals and optimize user experience'
-      }
+        benefit: 'Track Core Web Vitals and optimize user experience',
+      },
     ];
   }
 
@@ -278,8 +295,12 @@ class ProjectHealthSummary {
 
     // Overall Status
     const totalImprovements = this.summary.improvements.length;
-    const completedImprovements = this.summary.improvements.filter(i => i.status.includes('✅')).length;
-    const completionRate = Math.round((completedImprovements / totalImprovements) * 100);
+    const completedImprovements = this.summary.improvements.filter((i) =>
+      i.status.includes('✅'),
+    ).length;
+    const completionRate = Math.round(
+      (completedImprovements / totalImprovements) * 100,
+    );
 
     // console.warn('📊 OVERALL PROJECT STATUS');
     // console.warn('-' .repeat(40));
@@ -291,17 +312,17 @@ class ProjectHealthSummary {
     // Detailed Improvements
     // console.warn('🔧 IMPLEMENTED IMPROVEMENTS');
     // console.warn('-' .repeat(40));
-    this.summary.improvements.forEach(improvement => {
+    this.summary.improvements.forEach((improvement) => {
       // console.warn(`${improvement.category}`);
       // console.warn(`   Status: ${improvement.status}`);
       // console.warn(`   Impact: ${improvement.impact}`);
       // console.warn(`   ${improvement.description}`);
-      
+
       if (improvement.details) {
         Object.entries(improvement.details).forEach(([key, value]) => {
           if (Array.isArray(value)) {
             // console.warn(`   ${key}:`);
-            value.forEach(item => {
+            value.forEach((item) => {
               // console.warn(`     • ${item}`);
             });
           } else {
@@ -359,4 +380,4 @@ if (require.main === module) {
   summary.generateSummary();
 }
 
-module.exports = ProjectHealthSummary; 
+module.exports = ProjectHealthSummary;

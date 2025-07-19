@@ -16,11 +16,11 @@ class UltimateFix {
   async runCommand(command, options = {}) {
     try {
       this.log(`Running: ${command}`);
-      const result = execSync(command, { 
-        cwd: this.projectRoot, 
+      const result = execSync(command, {
+        cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options 
+        ...options,
       });
       return { success: true, output: result };
     } catch (error) {
@@ -30,7 +30,7 @@ class UltimateFix {
 
   fixAllSyntaxErrors() {
     this.log('Fixing all syntax errors...');
-    
+
     // Fix API files with proper formatting
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (fs.existsSync(apiDir)) {
@@ -38,27 +38,36 @@ class UltimateFix {
         try {
           let content = fs.readFileSync(filePath, 'utf8');
           const originalContent = content;
-          
+
           // Fix common syntax issues
           content = content
             // Fix import statements
-            .replace(/import type\s*\{\s*([^}]+)\s*\}\s*from\s*'([^']+)'\s*export/g, "import type { $1 } from '$2';\n\nexport")
-            .replace(/import\s*\{\s*([^}]+)\s*\}\s*from\s*'([^']+)'\s*export/g, "import { $1 } from '$2';\n\nexport")
+            .replace(
+              /import type\s*\{\s*([^}]+)\s*\}\s*from\s*'([^']+)'\s*export/g,
+              "import type { $1 } from '$2';\n\nexport",
+            )
+            .replace(
+              /import\s*\{\s*([^}]+)\s*\}\s*from\s*'([^']+)'\s*export/g,
+              "import { $1 } from '$2';\n\nexport",
+            )
             // Fix function declarations
-            .replace(/export\s+default\s+function\s+handler\s*\(([^)]+)\)\s*\{/g, 'export default function handler($1) {')
+            .replace(
+              /export\s+default\s+function\s+handler\s*\(([^)]+)\)\s*\{/g,
+              'export default function handler($1) {',
+            )
             // Fix object literals
             .replace(/\{\s*'([^']+)':\s*'([^']+)'/g, "{ '$1': '$2'")
             .replace(/,\s*'([^']+)':\s*'([^']+)'/g, ", '$1': '$2'")
             // Fix return statements
             .replace(/\s*'\s*return\s+/g, '\n  return ')
             .replace(/\s*'\s*}\s*$/g, '\n}');
-          
+
           if (content !== originalContent) {
             fs.writeFileSync(filePath, content);
             this.log(`Fixed syntax in: ${filePath}`);
             return true;
           }
-          
+
           return false;
         } catch (error) {
           this.log(`Error fixing ${filePath}: ${error.message}`);
@@ -69,11 +78,11 @@ class UltimateFix {
       const processDirectory = (dir) => {
         const items = fs.readdirSync(dir);
         let fixedCount = 0;
-        
+
         for (const item of items) {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
-          
+
           if (stat.isDirectory()) {
             fixedCount += processDirectory(fullPath);
           } else if (item.endsWith('.ts') || item.endsWith('.js')) {
@@ -82,7 +91,7 @@ class UltimateFix {
             }
           }
         }
-        
+
         return fixedCount;
       };
 
@@ -93,9 +102,9 @@ class UltimateFix {
 
   createMinimalWorkingApp() {
     this.log('Creating minimal working app...');
-    
+
     // Create a very simple working app structure
-    
+
     // Create minimal _app.tsx
     const appContent = `import type { AppProps } from 'next/app';
 
@@ -103,8 +112,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', '_app.tsx'), appContent);
-    
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', '_app.tsx'),
+      appContent,
+    );
+
     // Create minimal index.tsx
     const indexContent = `export default function Home() {
   return (
@@ -152,8 +164,11 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', 'index.tsx'), indexContent);
-    
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', 'index.tsx'),
+      indexContent,
+    );
+
     // Create minimal API
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
@@ -172,21 +187,21 @@ export default function App({ Component, pageProps }: AppProps) {
 }`;
 
     fs.writeFileSync(path.join(apiDir, 'health.js'), healthContent);
-    
+
     this.log('Created minimal working app');
   }
 
   async startServer() {
     this.log('Starting development server...');
-    
+
     return new Promise((resolve) => {
       const server = spawn('npm', ['run', 'dev', '--', '--port', '3003'], {
         cwd: this.projectRoot,
         stdio: 'inherit',
         env: {
           ...process.env,
-          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096'
-        }
+          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+        },
       });
 
       let resolved = false;
@@ -220,28 +235,28 @@ export default function App({ Component, pageProps }: AppProps) {
 
   async runUltimateFix() {
     this.log('Starting ultimate fix...');
-    
+
     try {
       // Step 1: Fix all syntax errors
       this.fixAllSyntaxErrors();
-      
+
       // Step 2: Create minimal working app
       this.createMinimalWorkingApp();
-      
+
       // Step 3: Try to build
       const buildResult = await this.runCommand('npm run build');
       if (!buildResult.success) {
         this.log('Build failed, but continuing with minimal app...');
       }
-      
+
       // Step 4: Start server
       const serverResult = await this.startServer();
-      
+
       if (serverResult.success) {
         this.log('🎉 SUCCESS: App is running!');
         this.log('🌐 Open http://localhost:3003 in your browser');
         this.log('📊 Health check: http://localhost:3003/api/health');
-        
+
         // Keep the process running
         process.on('SIGINT', () => {
           this.log('Shutting down...');
@@ -250,14 +265,13 @@ export default function App({ Component, pageProps }: AppProps) {
           }
           process.exit(0);
         });
-        
+
         return true;
       } else {
         this.log('❌ Failed to start server');
         this.log('💡 Try running: npm run dev -- --port 3003');
         return false;
       }
-      
     } catch (error) {
       this.log(`Error: ${error.message}`);
       return false;
@@ -268,16 +282,17 @@ export default function App({ Component, pageProps }: AppProps) {
 // Run if this script is executed directly
 if (require.main === module) {
   const fixer = new UltimateFix();
-  fixer.runUltimateFix()
-    .then(success => {
+  fixer
+    .runUltimateFix()
+    .then((success) => {
       if (!success) {
         process.exit(1);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Fix failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = UltimateFix; 
+module.exports = UltimateFix;

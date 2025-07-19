@@ -10,7 +10,13 @@ class DependencyManager {
   }
 
   log(msg, type = 'info') {
-    const colors = { info: '\x1b[36m', success: '\x1b[32m', error: '\x1b[31m', warning: '\x1b[33m', reset: '\x1b[0m' };
+    const colors = {
+      info: '\x1b[36m',
+      success: '\x1b[32m',
+      error: '\x1b[31m',
+      warning: '\x1b[33m',
+      reset: '\x1b[0m',
+    };
     const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
@@ -26,7 +32,7 @@ class DependencyManager {
 
   async manageDependencies() {
     this.log('📦 Managing dependencies...', 'info');
-    
+
     // Check for outdated packages
     const outdated = await this.runCommand('npm outdated --json');
     if (outdated.success && outdated.output.trim()) {
@@ -51,9 +57,12 @@ class DependencyManager {
     const report = {
       timestamp: new Date().toISOString(),
       runtime,
-      updates: this.updates
+      updates: this.updates,
     };
-    fs.writeFileSync('automation/dependency-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'automation/dependency-report.json',
+      JSON.stringify(report, null, 2),
+    );
   }
 
   async runCycle() {
@@ -64,11 +73,14 @@ class DependencyManager {
   async start() {
     this.log('🚀 Starting Dependency Manager...', 'success');
     await this.runCycle();
-    setInterval(async () => {
-      await this.runCycle();
-    }, 30 * 60 * 1000); // Every 30 minutes
+    setInterval(
+      async () => {
+        await this.runCycle();
+      },
+      30 * 60 * 1000,
+    ); // Every 30 minutes
   }
 }
 
 const manager = new DependencyManager();
-manager.start().catch(console.error); 
+manager.start().catch(console.error);

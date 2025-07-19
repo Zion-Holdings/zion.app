@@ -19,14 +19,18 @@ function checkAppStatus() {
   // Ensure dependencies are installed
   if (!fs.existsSync('node_modules')) {
     console.warn('❌ node_modules directory is missing');
-    console.warn('   -> Attempting to install dependencies via "./setup.sh npm"');
+    console.warn(
+      '   -> Attempting to install dependencies via "./setup.sh npm"',
+    );
     try {
       _execSync('./setup.sh npm', { stdio: 'inherit' });
     } catch (_installErr) {
       console.error('Failed to install dependencies:', _installErr.message);
       if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(_installErr.message)) {
         console.error('Network access appears to be restricted.');
-        console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
+        console.error(
+          'Ensure internet connectivity or configure a proxy before running the setup script.',
+        );
         console.error('Attempting to start offline development mode...');
         try {
           _execSync('bash offline-dev.sh', { stdio: 'inherit' });
@@ -36,7 +40,9 @@ function checkAppStatus() {
           console.error('You can still run "./offline-dev.sh" manually.');
         }
       }
-      console.warn('   -> Please run "./setup.sh npm" manually when connectivity is restored.');
+      console.warn(
+        '   -> Please run "./setup.sh npm" manually when connectivity is restored.',
+      );
       return false;
     }
     return true;
@@ -49,10 +55,10 @@ function checkAppStatus() {
     const loadingFixMarkers = [
       'Force initializing after timeout',
       'Force completing app initialization due to timeout',
-      'Force initialization completion'
+      'Force initialization completion',
     ];
 
-    if (loadingFixMarkers.some(marker => appContent.includes(marker))) {
+    if (loadingFixMarkers.some((marker) => appContent.includes(marker))) {
       console.warn('✅ Latest loading fix is already applied');
       return true;
     } else {
@@ -68,7 +74,7 @@ function checkAppStatus() {
 // Create a minimal app component for emergency use
 function createMinimalApp() {
   console.warn('🔧 Creating minimal emergency app component...');
-  
+
   const minimalAppContent = `import React from 'react';
 import type { AppProps } from 'next/app';
 import '../src/index.css';
@@ -123,13 +129,12 @@ export default MyApp;
   try {
     fs.writeFileSync('pages/_app.tsx.emergency', minimalAppContent);
     console.warn('✅ Emergency app component created: _app.tsx.emergency');
-    
+
     console.warn('\n🔧 TO USE EMERGENCY APP:');
     console.warn('  mv pages/_app.tsx.emergency pages/_app.tsx');
     console.warn('  npm run build');
     console.warn('\n🔄 TO RESTORE ORIGINAL:');
     console.warn('  mv pages/_app.tsx.backup pages/_app.tsx');
-    
   } catch (_error) {
     console.warn('❌ Could not create emergency app:', _error.message);
   }
@@ -139,7 +144,7 @@ export default MyApp;
 function runDiagnostics() {
   console.warn('\n🔍 RUNNING APP DIAGNOSTICS');
   console.warn('==========================');
-  
+
   const checks = [
     {
       name: 'App file exists',
@@ -165,12 +170,12 @@ function runDiagnostics() {
       check: () => fs.existsSync('node_modules'),
     },
   ];
-  
+
   checks.forEach(({ name, check }) => {
     const result = check();
     console.warn(`  ${result ? '✅' : '❌'} ${name}`);
   });
-  
+
   console.warn('\n📊 RECOMMENDATIONS:');
   console.warn('  1. Try refreshing the browser (Ctrl+F5)');
   console.warn('  2. Clear browser cache');
@@ -183,7 +188,7 @@ function runDiagnostics() {
 // Main execution
 async function main() {
   const statusOk = checkAppStatus();
-  
+
   if (statusOk) {
     console.warn('\n🎯 RECOMMENDATIONS TO FIX LOADING:');
     console.warn('==================================');
@@ -193,7 +198,9 @@ async function main() {
     console.warn('4. 🔨 Rebuild app: npm run build');
     console.warn('5. 🚀 Restart dev server: npm run dev');
     console.warn('');
-    console.warn('💡 The app has timeout protection - it should load within 3 seconds');
+    console.warn(
+      '💡 The app has timeout protection - it should load within 3 seconds',
+    );
     console.warn('💡 If still stuck, check browser developer tools console');
   } else {
     createMinimalApp();
@@ -202,7 +209,9 @@ async function main() {
     console.warn('\n🎯 IMMEDIATE FIXES TO TRY:');
     console.warn('==========================');
     console.warn('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
-    console.warn('2. Clear cache: F12 → Application → Storage → Clear site data');
+    console.warn(
+      '2. Clear cache: F12 → Application → Storage → Clear site data',
+    );
     console.warn('3. Check console: F12 → Console tab for errors');
     console.warn('4. Rebuild: npm run build && npm run start');
     console.warn('');

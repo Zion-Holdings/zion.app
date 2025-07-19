@@ -13,7 +13,7 @@ const colors = {
   yellow: '\x1b[33m',
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
-  cyan: '\x1b[36m'
+  cyan: '\x1b[36m',
 };
 
 function colorize(text, color) {
@@ -30,9 +30,14 @@ function formatBytes(bytes) {
 
 function analyzeBuildOutput() {
   const buildDir = path.join(process.cwd(), '.next');
-  
+
   if (!fs.existsSync(buildDir)) {
-    console.warn(colorize('⚠️  Build directory not found. Please run "npm run build" first.', 'yellow'));
+    console.warn(
+      colorize(
+        '⚠️  Build directory not found. Please run "npm run build" first.',
+        'yellow',
+      ),
+    );
     return;
   }
 
@@ -69,14 +74,16 @@ function analyzeStaticFiles(staticDir) {
     }, 0);
 
     console.warn(colorize(`📄 JavaScript Files: ${jsFiles.length}`, 'green'));
-    console.warn(colorize(`📏 Total JS Size: ${formatBytes(totalJSSize)}`, 'green'));
+    console.warn(
+      colorize(`📏 Total JS Size: ${formatBytes(totalJSSize)}`, 'green'),
+    );
 
     // Find largest JS chunks
     const largechunks = jsFiles
-      .map(file => ({
+      .map((file) => ({
         name: path.basename(file),
         size: fs.statSync(file).size,
-        path: file
+        path: file,
       }))
       .sort((a, b) => b.size - a.size)
       .slice(0, 10);
@@ -94,7 +101,9 @@ function analyzeStaticFiles(staticDir) {
     }, 0);
 
     console.warn(colorize(`\n🎨 CSS Files: ${cssFiles.length}`, 'magenta'));
-    console.warn(colorize(`📏 Total CSS Size: ${formatBytes(totalCSSSize)}`, 'magenta'));
+    console.warn(
+      colorize(`📏 Total CSS Size: ${formatBytes(totalCSSSize)}`, 'magenta'),
+    );
   }
 }
 
@@ -110,7 +119,12 @@ function analyzeServerFiles(serverDir) {
     const totalServerSize = pageFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
-    console.warn(colorize(`📏 Total Server Size: ${formatBytes(totalServerSize)}`, 'green'));
+    console.warn(
+      colorize(
+        `📏 Total Server Size: ${formatBytes(totalServerSize)}`,
+        'green',
+      ),
+    );
   }
 }
 
@@ -146,10 +160,10 @@ function provideRecommendations() {
     '📊 Monitor Core Web Vitals in production',
     '🎯 Consider preloading critical resources',
     '📝 Use service workers for offline functionality',
-    '⚡ Implement tree shaking for unused code elimination'
+    '⚡ Implement tree shaking for unused code elimination',
   ];
 
-  recommendations.forEach(rec => {
+  recommendations.forEach((rec) => {
     console.warn(rec);
   });
 
@@ -163,4 +177,4 @@ function provideRecommendations() {
 }
 
 // Run analysis
-analyzeBuildOutput(); 
+analyzeBuildOutput();

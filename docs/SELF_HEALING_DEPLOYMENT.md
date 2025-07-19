@@ -7,13 +7,15 @@ This guide provides step-by-step instructions for deploying and configuring the 
 ## Prerequisites
 
 ### System Requirements
-- Node.js 18+ 
+
+- Node.js 18+
 - npm 8+
 - Git
 - Access to Netlify dashboard
 - Environment variables configured
 
 ### Required Permissions
+
 - Write access to project files
 - Ability to modify build configurations
 - Access to system logs
@@ -24,6 +26,7 @@ This guide provides step-by-step instructions for deploying and configuring the 
 ### 1. Local Development Setup
 
 #### Install Dependencies
+
 ```bash
 # Clone the repository
 git clone https://github.com/Zion-Holdings/zion.app.git
@@ -37,6 +40,7 @@ npm install --save-dev @types/node
 ```
 
 #### Configure Environment
+
 ```bash
 # Copy environment template
 cp .env.example .env.local
@@ -46,6 +50,7 @@ nano .env.local
 ```
 
 Required environment variables:
+
 ```bash
 # Self-healing system
 ENABLE_SELF_HEALING=true
@@ -60,6 +65,7 @@ SKIP_TYPE_CHECK=true
 ```
 
 #### Test Local Setup
+
 ```bash
 # Test self-healing system
 npm run self-heal:start
@@ -93,6 +99,7 @@ If you need to configure manually:
    - Navigate to "Build & deploy" → "Environment"
 
 2. **Set Environment Variables**
+
    ```bash
    ENABLE_SELF_HEALING=true
    AUTO_FIX_BUILD_ISSUES=true
@@ -112,19 +119,21 @@ If you need to configure manually:
 #### Verify Deployment
 
 1. **Check Build Logs**
+
    ```bash
    # View recent builds
    netlify builds:list
-   
+
    # View specific build
    netlify builds:view [BUILD_ID]
    ```
 
 2. **Monitor System Status**
+
    ```bash
    # Check if self-healing is active
    curl https://your-site.netlify.app/api/health
-   
+
    # View system logs
    netlify logs:tail
    ```
@@ -156,28 +165,31 @@ npm run continuous-heal
 #### Post-deployment Verification
 
 1. **Health Check**
+
    ```bash
    # Check system health
    npm run self-heal:health
-   
+
    # View status
    npm run netlify:status
    ```
 
 2. **Performance Test**
+
    ```bash
    # Test build performance
    npm run build:test
-   
+
    # Monitor resources
    npm run monitor:resources
    ```
 
 3. **Log Analysis**
+
    ```bash
    # View recent logs
    npm run logs:view
-   
+
    # Analyze performance
    npm run logs:performance
    ```
@@ -200,19 +212,21 @@ node scripts/netlify-healing-daemon.cjs status
 #### Configure Alerts
 
 1. **Log Monitoring**
+
    ```bash
    # Set up log monitoring
    npm run logs:monitor:realtime
-   
+
    # Configure alerts
    npm run logs:alerts
    ```
 
 2. **Performance Monitoring**
+
    ```bash
    # Start performance monitoring
    npm run monitor:performance
-   
+
    # Set up resource alerts
    npm run monitor:resources
    ```
@@ -222,6 +236,7 @@ node scripts/netlify-healing-daemon.cjs status
 #### Common Issues
 
 **Build Timeout**
+
 ```bash
 # Increase timeout in netlify.toml
 command_timeout = "45m"
@@ -231,6 +246,7 @@ npm run optimize:build
 ```
 
 **Memory Issues**
+
 ```bash
 # Increase memory allocation
 NODE_OPTIONS=--max-old-space-size=8192
@@ -240,6 +256,7 @@ npm run clean:cache
 ```
 
 **Permission Issues**
+
 ```bash
 # Fix permissions
 chmod +x scripts/*.cjs
@@ -414,18 +431,18 @@ const alerts = {
   buildFailure: {
     threshold: 3,
     window: '1h',
-    action: 'restart-daemon'
+    action: 'restart-daemon',
   },
   memoryUsage: {
     threshold: 0.9,
     window: '5m',
-    action: 'clean-cache'
+    action: 'clean-cache',
   },
   diskUsage: {
     threshold: 0.95,
     window: '10m',
-    action: 'clean-disk'
-  }
+    action: 'clean-disk',
+  },
 };
 ```
 
@@ -441,6 +458,7 @@ const alerts = {
 ### Reporting Issues
 
 When reporting issues, include:
+
 - System status output
 - Relevant log files
 - Environment information
@@ -454,4 +472,4 @@ When reporting issues, include:
 3. Make your changes
 4. Add tests
 5. Update documentation
-6. Submit a pull request 
+6. Submit a pull request

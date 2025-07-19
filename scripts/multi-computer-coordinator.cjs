@@ -14,7 +14,7 @@ class MultiComputerCoordinator {
     this.taskQueue = [];
     this.currentTasks = new Map();
     this.isMaster = process.env.IS_MASTER === 'true';
-    
+
     this.setupExpress();
     this.setupRoutes();
   }
@@ -22,11 +22,14 @@ class MultiComputerCoordinator {
   setupExpress() {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    
+
     // CORS
     this.app.use((req, res, next) => {
       res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+      res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept',
+      );
       next();
     });
   }
@@ -41,14 +44,14 @@ class MultiComputerCoordinator {
         isMaster: this.isMaster,
         nodeCount: this.nodes.size,
         taskQueueLength: this.taskQueue.length,
-        activeTasks: this.currentTasks.size
+        activeTasks: this.currentTasks.size,
       });
     });
 
     // Node registration
     this.app.post('/api/nodes/register', (req, res) => {
       const { nodeId, hostname, port, capabilities } = req.body;
-      
+
       if (!nodeId || !hostname || !port) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
@@ -61,7 +64,7 @@ class MultiComputerCoordinator {
     this.app.post('/api/nodes/:nodeId/status', (req, res) => {
       const { nodeId } = req.params;
       const { status, currentTask, load } = req.body;
-      
+
       this.updateNodeStatus(nodeId, status, currentTask, load);
       res.json({ success: true });
     });
@@ -70,7 +73,7 @@ class MultiComputerCoordinator {
     this.app.post('/api/tasks/:taskId/complete', (req, res) => {
       const { taskId } = req.params;
       const { result, error } = req.body;
-      
+
       this.completeTask(taskId, result, error);
       res.json({ success: true });
     });
@@ -80,14 +83,14 @@ class MultiComputerCoordinator {
       res.json({
         nodes: Array.from(this.nodes.values()),
         taskQueue: this.taskQueue,
-        activeTasks: Array.from(this.currentTasks.values())
+        activeTasks: Array.from(this.currentTasks.values()),
       });
     });
 
     // Submit task
     this.app.post('/api/tasks/submit', (req, res) => {
       const { task, priority = 'normal', targetNode = null } = req.body;
-      
+
       if (!task) {
         return res.status(400).json({ error: 'Task is required' });
       }
@@ -115,7 +118,7 @@ class MultiComputerCoordinator {
         isMaster: this.isMaster,
         nodeCount: this.nodes.size,
         taskQueueLength: this.taskQueue.length,
-        activeTasks: this.currentTasks.size
+        activeTasks: this.currentTasks.size,
       });
     });
   }
@@ -126,7 +129,9 @@ class MultiComputerCoordinator {
       return;
     }
 
-    console.log(`🚀 Starting Multi-Computer Coordinator (${this.isMaster ? 'Master' : 'Worker'})...`);
+    console.log(
+      `🚀 Starting Multi-Computer Coordinator (${this.isMaster ? 'Master' : 'Worker'})...`,
+    );
     this.isRunning = true;
 
     // Start task distributor
@@ -164,7 +169,7 @@ class MultiComputerCoordinator {
       status: 'online',
       lastSeen: new Date(),
       currentTask: null,
-      load: 0
+      load: 0,
     };
 
     this.nodes.set(nodeId, node);
@@ -183,7 +188,7 @@ class MultiComputerCoordinator {
 
   submitTask(task, priority = 'normal', targetNode = null) {
     const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    
+
     const taskObj = {
       id: taskId,
       task,
@@ -195,11 +200,11 @@ class MultiComputerCoordinator {
       startedAt: null,
       completedAt: null,
       result: null,
-      error: null
+      error: null,
     };
 
     this.taskQueue.push(taskObj);
-    
+
     // Sort queue by priority
     this.taskQueue.sort((a, b) => {
       const priorityOrder = { high: 3, normal: 2, low: 1 };
@@ -217,10 +222,10 @@ class MultiComputerCoordinator {
       task.result = result;
       task.error = error;
       task.completedAt = new Date();
-      
+
       // Remove from current tasks
       this.currentTasks.delete(taskId);
-      
+
       // Update node status
       if (task.assignedTo) {
         const node = this.nodes.get(task.assignedTo);
@@ -229,7 +234,7 @@ class MultiComputerCoordinator {
           node.load = Math.max(0, node.load - 1);
         }
       }
-      
+
       console.log(`✅ Task completed: ${taskId}`);
     }
   }
@@ -241,8 +246,9 @@ class MultiComputerCoordinator {
         return;
       }
 
-      const availableNodes = Array.from(this.nodes.values())
-        .filter(node => node.status === 'online' && !node.currentTask);
+      const availableNodes = Array.from(this.nodes.values()).filter(
+        (node) => node.status === 'online' && !node.currentTask,
+      );
 
       if (availableNodes.length === 0) {
         return; // No available nodes
@@ -250,7 +256,7 @@ class MultiComputerCoordinator {
 
       const task = this.taskQueue.shift();
       const selectedNode = this.selectBestNode(availableNodes, task);
-      
+
       if (selectedNode) {
         await this.assignTaskToNode(task, selectedNode);
       } else {
@@ -272,20 +278,23 @@ class MultiComputerCoordinator {
       task.status = 'assigned';
       task.assignedTo = node.id;
       task.startedAt = new Date();
-      
+
       this.currentTasks.set(task.id, task);
-      
+
       // Update node status
       node.currentTask = task.id;
       node.load += 1;
-      
+
       // Send task to node
       await this.sendTaskToNode(task, node);
-      
+
       console.log(`📤 Task ${task.id} assigned to node ${node.id}`);
     } catch (error) {
-      console.error(`Failed to assign task ${task.id} to node ${node.id}:`, error);
-      
+      console.error(
+        `Failed to assign task ${task.id} to node ${node.id}:`,
+        error,
+      );
+
       // Put task back in queue
       task.status = 'queued';
       task.assignedTo = null;
@@ -299,11 +308,14 @@ class MultiComputerCoordinator {
     // In a real implementation, this would send the task to the node
     // For now, we'll simulate this by executing the task locally
     console.log(`Sending task to node ${node.id}: ${task.task}`);
-    
+
     // Simulate task execution
-    setTimeout(() => {
-      this.completeTask(task.id, { success: true, nodeId: node.id }, null);
-    }, Math.random() * 10000 + 5000); // Random delay between 5-15 seconds
+    setTimeout(
+      () => {
+        this.completeTask(task.id, { success: true, nodeId: node.id }, null);
+      },
+      Math.random() * 10000 + 5000,
+    ); // Random delay between 5-15 seconds
   }
 
   startNodeHealthChecker() {
@@ -318,7 +330,7 @@ class MultiComputerCoordinator {
         if (now - node.lastSeen > timeout) {
           console.log(`⚠️ Node ${nodeId} appears to be offline`);
           node.status = 'offline';
-          
+
           // Reassign any tasks from offline nodes
           if (node.currentTask) {
             const task = this.currentTasks.get(node.currentTask);
@@ -337,13 +349,17 @@ class MultiComputerCoordinator {
 
   async startNodeDiscovery() {
     console.log('🔍 Starting node discovery...');
-    
+
     // In a real implementation, this would discover nodes on the network
     // For now, we'll simulate by adding some local nodes
-    
+
     // Add local node
-    this.registerNode('local', 'localhost', this.port, ['build', 'test', 'lint']);
-    
+    this.registerNode('local', 'localhost', this.port, [
+      'build',
+      'test',
+      'lint',
+    ]);
+
     // Simulate discovering other nodes
     setTimeout(() => {
       this.registerNode('node-1', '192.168.1.100', 3003, ['build', 'test']);
@@ -355,14 +371,16 @@ class MultiComputerCoordinator {
     if (!this.isMaster) return;
 
     console.log('📊 Distributing workload...');
-    
+
     // Analyze current workload
     const totalNodes = this.nodes.size;
     const activeTasks = this.currentTasks.size;
     const queuedTasks = this.taskQueue.length;
-    
-    console.log(`Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`);
-    
+
+    console.log(
+      `Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`,
+    );
+
     // Create tasks for different aspects of the project
     const tasks = [
       { task: 'Fix linting errors', priority: 'high' },
@@ -370,9 +388,9 @@ class MultiComputerCoordinator {
       { task: 'Optimize bundle size', priority: 'normal' },
       { task: 'Update dependencies', priority: 'normal' },
       { task: 'Run performance audit', priority: 'low' },
-      { task: 'Improve documentation', priority: 'low' }
+      { task: 'Improve documentation', priority: 'low' },
     ];
-    
+
     // Submit tasks
     for (const task of tasks) {
       this.submitTask(task.task, task.priority);
@@ -383,9 +401,9 @@ class MultiComputerCoordinator {
 // CLI interface
 if (require.main === module) {
   const coordinator = new MultiComputerCoordinator();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       coordinator.start();
@@ -400,8 +418,10 @@ if (require.main === module) {
       coordinator.distributeWorkload();
       break;
     default:
-      console.log('Usage: node multi-computer-coordinator.cjs [start|stop|status|distribute]');
+      console.log(
+        'Usage: node multi-computer-coordinator.cjs [start|stop|status|distribute]',
+      );
   }
 }
 
-module.exports = MultiComputerCoordinator; 
+module.exports = MultiComputerCoordinator;

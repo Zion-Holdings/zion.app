@@ -15,12 +15,12 @@ class AdvancedFileFixer {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
-    
+
     const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
-    
+
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
 
@@ -35,24 +35,26 @@ class AdvancedFileFixer {
     try {
       let content = fs.readFileSync(filePath, 'utf8');
       const originalContent = content;
-      
+
       // Check if the file is all on one line (corrupted)
       if (content.split('\n').length === 1 && content.length > 200) {
         this.log(`Fixing corrupted file: ${filePath}`);
-        
+
         // Extract imports
         const importMatches = content.match(/import[^;]+;/g) || [];
         const imports = importMatches.join('\n');
-        
+
         // Extract the main function
-        const functionMatch = content.match(/export\s+default\s+.*?function\s+handler\s*\([^)]*\)\s*\{([\s\S]*)\}/);
-        
+        const functionMatch = content.match(
+          /export\s+default\s+.*?function\s+handler\s*\([^)]*\)\s*\{([\s\S]*)\}/,
+        );
+
         if (functionMatch) {
           const functionBody = functionMatch[1];
-          
+
           // Reconstruct the file with proper formatting
           content = `${imports}\n\nexport default async function handler(req, res) {\n${functionBody}\n}`;
-          
+
           // Basic formatting
           content = content
             .replace(/\s+/g, ' ')
@@ -61,13 +63,13 @@ class AdvancedFileFixer {
             .replace(/;\s*/g, ';\n  ')
             .replace(/\n\s*\n/g, '\n')
             .replace(/\n\s*$/g, '\n');
-          
+
           fs.writeFileSync(filePath, content);
           this.log(`Successfully fixed: ${filePath}`);
           return true;
         }
       }
-      
+
       return false;
     } catch (error) {
       this.log(`Error fixing file ${filePath}: ${error.message}`, 'ERROR');
@@ -77,7 +79,7 @@ class AdvancedFileFixer {
 
   createBackupApiFiles() {
     this.log('Creating backup API files...');
-    
+
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       this.log('API directory not found');
@@ -91,12 +93,12 @@ class AdvancedFileFixer {
 
     const processDirectory = (dir, backupPath) => {
       const items = fs.readdirSync(dir);
-      
+
       for (const item of items) {
         const fullPath = path.join(dir, item);
         const backupFullPath = path.join(backupPath, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory()) {
           if (!fs.existsSync(backupFullPath)) {
             fs.mkdirSync(backupFullPath, { recursive: true });
@@ -114,10 +116,10 @@ class AdvancedFileFixer {
 
   restoreApiFiles() {
     this.log('Restoring API files from backup...');
-    
+
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
-    
+
     if (!fs.existsSync(backupDir)) {
       this.log('No backup found', 'ERROR');
       return false;
@@ -125,12 +127,12 @@ class AdvancedFileFixer {
 
     const processDirectory = (dir, restorePath) => {
       const items = fs.readdirSync(dir);
-      
+
       for (const item of items) {
         const fullPath = path.join(dir, item);
         const restoreFullPath = path.join(restorePath, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory()) {
           if (!fs.existsSync(restoreFullPath)) {
             fs.mkdirSync(restoreFullPath, { recursive: true });
@@ -149,7 +151,7 @@ class AdvancedFileFixer {
 
   createCleanApiFiles() {
     this.log('Creating clean API files...');
-    
+
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       fs.mkdirSync(apiDir, { recursive: true });
@@ -224,22 +226,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   async runFix() {
     this.log('Starting advanced file fix...');
-    
+
     try {
       // Create backup first
       this.createBackupApiFiles();
-      
+
       // Try to fix existing files
       const apiDir = path.join(this.projectRoot, 'pages', 'api');
       if (fs.existsSync(apiDir)) {
         const processDirectory = (dir) => {
           const items = fs.readdirSync(dir);
           let fixedCount = 0;
-          
+
           for (const item of items) {
             const fullPath = path.join(dir, item);
             const stat = fs.statSync(fullPath);
-            
+
             if (stat.isDirectory()) {
               fixedCount += processDirectory(fullPath);
             } else if (item.endsWith('.ts') || item.endsWith('.js')) {
@@ -248,13 +250,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               }
             }
           }
-          
+
           return fixedCount;
         };
 
         const fixedCount = processDirectory(apiDir);
         this.log(`Fixed ${fixedCount} API files`);
-        
+
         if (fixedCount === 0) {
           this.log('No files were fixed, creating clean API files...');
           this.createCleanApiFiles();
@@ -263,10 +265,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         this.log('API directory not found, creating clean structure...');
         this.createCleanApiFiles();
       }
-      
+
       this.log('Advanced file fix completed');
       return true;
-      
     } catch (error) {
       this.log(`Advanced file fix failed: ${error.message}`, 'ERROR');
       return false;
@@ -277,14 +278,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 // Run if this script is executed directly
 if (require.main === module) {
   const fixer = new AdvancedFileFixer();
-  fixer.runFix()
-    .then(success => {
+  fixer
+    .runFix()
+    .then((success) => {
       process.exit(success ? 0 : 1);
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Fix failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = AdvancedFileFixer; 
+module.exports = AdvancedFileFixer;

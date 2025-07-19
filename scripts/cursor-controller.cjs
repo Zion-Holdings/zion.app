@@ -2,7 +2,7 @@
 
 /**
  * Cursor Controller for Multi-Computer Automation
- * 
+ *
  * This script provides programmatic control over Cursor IDE instances
  * across multiple computers for automated app improvement tasks.
  */
@@ -24,7 +24,11 @@ class CursorController {
       case 'darwin':
         return '/Applications/Cursor.app/Contents/MacOS/Cursor';
       case 'win32':
-        return 'C:\\Users\\' + os.userInfo().username + '\\AppData\\Local\\Programs\\Cursor\\Cursor.exe';
+        return (
+          'C:\\Users\\' +
+          os.userInfo().username +
+          '\\AppData\\Local\\Programs\\Cursor\\Cursor.exe'
+        );
       case 'linux':
         return '/usr/bin/cursor';
       default:
@@ -34,19 +38,20 @@ class CursorController {
 
   async openCursor(projectPath = process.cwd()) {
     try {
-      const command = this.platform === 'darwin' 
-        ? `open -a Cursor "${projectPath}"`
-        : `"${this.cursorPath}" "${projectPath}"`;
-      
+      const command =
+        this.platform === 'darwin'
+          ? `open -a Cursor "${projectPath}"`
+          : `"${this.cursorPath}" "${projectPath}"`;
+
       execSync(command);
-      
+
       const instanceId = this.generateInstanceId();
       this.activeInstances.set(instanceId, {
         path: projectPath,
         startedAt: new Date(),
-        status: 'running'
+        status: 'running',
       });
-      
+
       console.log(`✅ Cursor opened for project: ${projectPath}`);
       return instanceId;
     } catch (error) {
@@ -60,11 +65,13 @@ class CursorController {
       if (this.platform === 'darwin') {
         execSync('osascript -e \'tell application "Cursor" to activate\'');
       } else if (this.platform === 'win32') {
-        execSync('tasklist /FI "IMAGENAME eq Cursor.exe" 2>NUL | find /I /N "Cursor.exe">NUL && start /B "" "Cursor.exe"');
+        execSync(
+          'tasklist /FI "IMAGENAME eq Cursor.exe" 2>NUL | find /I /N "Cursor.exe">NUL && start /B "" "Cursor.exe"',
+        );
       } else {
         execSync('wmctrl -a Cursor');
       }
-      
+
       console.log('✅ Cursor focused');
     } catch (error) {
       console.error(`❌ Failed to focus Cursor: ${error.message}`);
@@ -89,7 +96,7 @@ class CursorController {
         // For other platforms, we'll use keyboard shortcuts
         execSync(`xdotool key ${command}`);
       }
-      
+
       console.log(`✅ Executed Cursor command: ${command}`);
     } catch (error) {
       console.error(`❌ Failed to execute Cursor command: ${error.message}`);
@@ -117,7 +124,7 @@ class CursorController {
         // For other platforms
         execSync(`"${this.cursorPath}" "${filePath}"`);
       }
-      
+
       console.log(`✅ Opened file: ${filePath}`);
     } catch (error) {
       console.error(`❌ Failed to open file: ${error.message}`);
@@ -128,11 +135,13 @@ class CursorController {
   async saveFile() {
     try {
       if (this.platform === 'darwin') {
-        execSync('osascript -e \'tell application "Cursor" to activate\' && sleep 1 && osascript -e \'tell application "System Events" to keystroke "s" using command down\'');
+        execSync(
+          'osascript -e \'tell application "Cursor" to activate\' && sleep 1 && osascript -e \'tell application "System Events" to keystroke "s" using command down\'',
+        );
       } else {
         execSync('xdotool key ctrl+s');
       }
-      
+
       console.log('✅ File saved');
     } catch (error) {
       console.error(`❌ Failed to save file: ${error.message}`);
@@ -143,11 +152,13 @@ class CursorController {
   async closeFile() {
     try {
       if (this.platform === 'darwin') {
-        execSync('osascript -e \'tell application "Cursor" to activate\' && sleep 1 && osascript -e \'tell application "System Events" to keystroke "w" using command down\'');
+        execSync(
+          'osascript -e \'tell application "Cursor" to activate\' && sleep 1 && osascript -e \'tell application "System Events" to keystroke "w" using command down\'',
+        );
       } else {
         execSync('xdotool key ctrl+w');
       }
-      
+
       console.log('✅ File closed');
     } catch (error) {
       console.error(`❌ Failed to close file: ${error.message}`);
@@ -175,7 +186,7 @@ class CursorController {
         // For other platforms, we'll need to implement terminal opening
         console.log(`Would run terminal command: ${command}`);
       }
-      
+
       console.log(`✅ Executed terminal command: ${command}`);
     } catch (error) {
       console.error(`❌ Failed to execute terminal command: ${error.message}`);
@@ -186,7 +197,7 @@ class CursorController {
   async applyCursorFix(fixType, filePath = null) {
     try {
       console.log(`🔧 Applying ${fixType} fix...`);
-      
+
       switch (fixType) {
         case 'lint':
           await this.runTerminalCommand('npm run lint:fix');
@@ -209,7 +220,7 @@ class CursorController {
         default:
           throw new Error(`Unknown fix type: ${fixType}`);
       }
-      
+
       console.log(`✅ Applied ${fixType} fix successfully`);
     } catch (error) {
       console.error(`❌ Failed to apply ${fixType} fix: ${error.message}`);
@@ -220,16 +231,16 @@ class CursorController {
   async autoFixIssues() {
     try {
       console.log('🔧 Starting automatic issue fixing...');
-      
+
       const fixes = [
         { type: 'lint', description: 'Fixing linting issues' },
         { type: 'format', description: 'Formatting code' },
         { type: 'typecheck', description: 'Checking types' },
         { type: 'test', description: 'Running tests' },
         { type: 'build', description: 'Building project' },
-        { type: 'optimize', description: 'Optimizing performance' }
+        { type: 'optimize', description: 'Optimizing performance' },
       ];
-      
+
       for (const fix of fixes) {
         try {
           console.log(`📝 ${fix.description}...`);
@@ -238,7 +249,7 @@ class CursorController {
           console.warn(`⚠️ ${fix.description} failed: ${error.message}`);
         }
       }
-      
+
       console.log('✅ Automatic issue fixing completed');
     } catch (error) {
       console.error(`❌ Automatic issue fixing failed: ${error.message}`);
@@ -249,7 +260,7 @@ class CursorController {
   async monitorAndFix() {
     try {
       console.log('🔍 Starting continuous monitoring and fixing...');
-      
+
       // Monitor for common issues and fix them automatically
       setInterval(async () => {
         try {
@@ -260,7 +271,7 @@ class CursorController {
             console.log('🔧 Detected linting issues, fixing...');
             await this.applyCursorFix('lint');
           }
-          
+
           // Check for build issues
           try {
             execSync('npm run build', { stdio: 'pipe' });
@@ -268,7 +279,7 @@ class CursorController {
             console.log('🔧 Detected build issues, fixing...');
             await this.applyCursorFix('build');
           }
-          
+
           // Check for test failures
           try {
             execSync('npm run test', { stdio: 'pipe' });
@@ -276,12 +287,11 @@ class CursorController {
             console.log('🔧 Detected test failures, investigating...');
             // Don't auto-fix tests, just log
           }
-          
         } catch (error) {
           console.error(`❌ Monitoring cycle failed: ${error.message}`);
         }
       }, 30000); // Check every 30 seconds
-      
+
       console.log('✅ Continuous monitoring started');
     } catch (error) {
       console.error(`❌ Failed to start monitoring: ${error.message}`);
@@ -296,7 +306,7 @@ class CursorController {
   getActiveInstances() {
     return Array.from(this.activeInstances.entries()).map(([id, instance]) => ({
       id,
-      ...instance
+      ...instance,
     }));
   }
 
@@ -309,7 +319,7 @@ class CursorController {
         } else {
           execSync('taskkill /F /IM Cursor.exe');
         }
-        
+
         this.activeInstances.delete(instanceId);
         console.log(`✅ Closed Cursor instance: ${instanceId}`);
       } catch (error) {
@@ -326,10 +336,10 @@ module.exports = CursorController;
 // Main execution
 if (require.main === module) {
   const controller = new CursorController();
-  
+
   const command = process.argv[2];
   const args = process.argv.slice(3);
-  
+
   switch (command) {
     case 'open':
       controller.openCursor(args[0]).catch(console.error);
@@ -378,4 +388,4 @@ Commands:
   instances            List active Cursor instances
       `);
   }
-} 
+}

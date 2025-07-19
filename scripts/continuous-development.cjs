@@ -27,7 +27,7 @@ class ContinuousDevelopment {
     this.log('   • Continuously check for issues and fix them');
     this.log('   • Automatically commit and push improvements');
     this.log('   • Keep the app running and improving 24/7');
-    
+
     await this.initialize();
     await this.startDevelopmentServer();
     this.startHealthMonitoring();
@@ -37,10 +37,12 @@ class ContinuousDevelopment {
 
   async initialize() {
     this.log('🔧 Initializing development environment...');
-    
+
     // Check if we're in the right directory
     if (!fs.existsSync('package.json')) {
-      throw new Error('package.json not found. Please run this from the project root.');
+      throw new Error(
+        'package.json not found. Please run this from the project root.',
+      );
     }
 
     // Ensure git is available
@@ -64,11 +66,11 @@ class ContinuousDevelopment {
 
   async startDevelopmentServer() {
     this.log('🌐 Starting Next.js development server...');
-    
+
     return new Promise((resolve, reject) => {
       this.devProcess = spawn('npm', ['run', 'dev'], {
         stdio: 'pipe',
-        shell: true
+        shell: true,
       });
 
       this.devProcess.stdout.on('data', (data) => {
@@ -112,7 +114,7 @@ class ContinuousDevelopment {
 
   startHealthMonitoring() {
     this.log('🏥 Starting health monitoring...');
-    
+
     this.healthCheckInterval = setInterval(async () => {
       try {
         const response = await fetch('http://localhost:3001/api/health');
@@ -132,7 +134,7 @@ class ContinuousDevelopment {
 
   startContinuousImprovement() {
     this.log('🔧 Starting continuous improvement system...');
-    
+
     this.improvementInterval = setInterval(async () => {
       await this.runImprovements();
     }, 300000); // Run improvements every 5 minutes
@@ -140,26 +142,25 @@ class ContinuousDevelopment {
 
   async runImprovements() {
     this.log('🔍 Running continuous improvements...');
-    
+
     try {
       // Check for TypeScript errors
       await this.checkTypeScriptErrors();
-      
+
       // Check for linting issues
       await this.checkLintingIssues();
-      
+
       // Check for build issues
       await this.checkBuildIssues();
-      
+
       // Run automated fixes
       await this.runAutomatedFixes();
-      
+
       // Check for performance issues
       await this.checkPerformanceIssues();
-      
+
       // Check for security issues
       await this.checkSecurityIssues();
-      
     } catch (error) {
       this.log(`❌ Improvement cycle error: ${error.message}`, 'ERROR');
       this.issues.push(`Improvement cycle error: ${error.message}`);
@@ -170,7 +171,10 @@ class ContinuousDevelopment {
     try {
       const { stdout, stderr } = await this.execCommand('npx tsc --noEmit');
       if (stderr && stderr.trim()) {
-        this.log(`🔍 TypeScript errors found: ${stderr.substring(0, 200)}...`, 'WARN');
+        this.log(
+          `🔍 TypeScript errors found: ${stderr.substring(0, 200)}...`,
+          'WARN',
+        );
         this.issues.push(`TypeScript errors: ${stderr.substring(0, 100)}`);
       }
     } catch (error) {
@@ -208,7 +212,7 @@ class ContinuousDevelopment {
 
   async runAutomatedFixes() {
     this.log('🔧 Running automated fixes...');
-    
+
     try {
       // Run the existing automation script
       const { stdout, stderr } = await this.execCommand('npm run automate');
@@ -226,9 +230,9 @@ class ContinuousDevelopment {
     const performanceChecks = [
       'Check for large bundle sizes',
       'Check for unused dependencies',
-      'Check for memory leaks'
+      'Check for memory leaks',
     ];
-    
+
     this.log('⚡ Running performance checks...');
     // This is a placeholder for actual performance monitoring
     this.improvements.push('Performance monitoring active');
@@ -236,7 +240,9 @@ class ContinuousDevelopment {
 
   async checkSecurityIssues() {
     try {
-      const { stdout, stderr } = await this.execCommand('npm audit --audit-level moderate');
+      const { stdout, stderr } = await this.execCommand(
+        'npm audit --audit-level moderate',
+      );
       if (stderr && stderr.includes('vulnerabilities found')) {
         this.log(`🔒 Security vulnerabilities found`, 'WARN');
         this.issues.push('Security vulnerabilities detected');
@@ -250,7 +256,7 @@ class ContinuousDevelopment {
 
   startAutoCommit() {
     this.log('📝 Starting auto-commit system...');
-    
+
     setInterval(async () => {
       await this.autoCommit();
     }, 600000); // Commit every 10 minutes if there are changes
@@ -260,28 +266,27 @@ class ContinuousDevelopment {
     try {
       // Check if there are any changes
       const { stdout } = await this.execCommand('git status --porcelain');
-      
+
       if (stdout.trim()) {
         this.log('📝 Changes detected, creating commit...');
-        
+
         // Add all changes
         await this.execCommand('git add .');
-        
+
         // Create commit with timestamp
         const timestamp = new Date().toISOString();
         const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
-        
+
         await this.execCommand(`git commit -m "${commitMessage}"`);
-        
+
         // Push to remote
         await this.execCommand('git push origin main');
-        
+
         this.log('✅ Changes committed and pushed');
-        
+
         // Clear the lists
         this.issues = [];
         this.improvements = [];
-        
       } else {
         this.log('📝 No changes to commit');
       }
@@ -304,19 +309,19 @@ class ContinuousDevelopment {
 
   async stop() {
     this.log('🛑 Stopping Continuous Development System...');
-    
+
     if (this.healthCheckInterval) {
       clearInterval(this.healthCheckInterval);
     }
-    
+
     if (this.improvementInterval) {
       clearInterval(this.improvementInterval);
     }
-    
+
     if (this.devProcess) {
       this.devProcess.kill('SIGTERM');
     }
-    
+
     this.log('✅ Continuous Development System stopped');
     process.exit(0);
   }
@@ -344,4 +349,4 @@ global.continuousDev = continuousDev;
 continuousDev.start().catch((error) => {
   console.error('❌ Failed to start continuous development:', error);
   process.exit(1);
-}); 
+});

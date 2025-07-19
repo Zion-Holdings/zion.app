@@ -16,7 +16,7 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     message: 'Zion App is running successfully!',
     mode: 'Simple Working App',
-    build: 'Working'
+    build: 'Working',
   });
 });
 

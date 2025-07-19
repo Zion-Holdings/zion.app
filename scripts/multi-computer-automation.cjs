@@ -2,7 +2,7 @@
 
 /**
  * Multi-Computer Cursor Automation System
- * 
+ *
  * This script coordinates multiple computers with Cursor installed to work together
  * on continuous app improvement. It can:
  * - Discover and manage multiple Cursor instances across computers
@@ -27,31 +27,32 @@ const CONFIG = {
   DISCOVERY_PORT: 3001,
   HEARTBEAT_INTERVAL: 30000, // 30 seconds
   TASK_TIMEOUT: 300000, // 5 minutes
-  
+
   // AI agent settings
   MAX_CONCURRENT_AGENTS: 5,
   AGENT_MEMORY_SIZE: 1000,
-  
+
   // Task distribution settings
   TASK_PRIORITY_LEVELS: ['critical', 'high', 'medium', 'low'],
   LOAD_BALANCING_STRATEGY: 'round-robin',
-  
+
   // Communication settings
   WEBSOCKET_PORT: 3002,
   API_PORT: 3003,
-  
+
   // Cursor control settings
   CURSOR_COMMANDS: {
     open: 'open -a Cursor',
     focus: 'osascript -e \'tell application "Cursor" to activate\'',
     newFile: 'osascript -e \'tell application "Cursor" to make new document\'',
     save: 'osascript -e \'tell application "Cursor" to save active document\'',
-    close: 'osascript -e \'tell application "Cursor" to close active document\''
+    close:
+      'osascript -e \'tell application "Cursor" to close active document\'',
   },
-  
+
   // Logging
   LOG_LEVEL: process.env.LOG_LEVEL || 'info',
-  LOG_FILE: 'multi-computer-automation.log'
+  LOG_FILE: 'multi-computer-automation.log',
 };
 
 class MultiComputerAutomation {
@@ -64,10 +65,10 @@ class MultiComputerAutomation {
     this.startTime = Date.now();
     this.wss = null;
     this.server = null;
-    
+
     // Initialize logging
     this.setupLogging();
-    
+
     // Load configuration
     this.loadConfiguration();
   }
@@ -77,7 +78,7 @@ class MultiComputerAutomation {
       error: 0,
       warn: 1,
       info: 2,
-      debug: 3
+      debug: 3,
     };
 
     this.log = (level, message, data = {}) => {
@@ -89,11 +90,11 @@ class MultiComputerAutomation {
           level,
           message,
           data,
-          computer: os.hostname()
+          computer: os.hostname(),
         };
-        
+
         console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`, data);
-        
+
         // Write to log file
         fs.appendFileSync(CONFIG.LOG_FILE, JSON.stringify(logEntry) + '\n');
       }
@@ -101,15 +102,23 @@ class MultiComputerAutomation {
   }
 
   loadConfiguration() {
-    const configPath = path.join(process.cwd(), 'config', 'multi-computer-automation.json');
-    
+    const configPath = path.join(
+      process.cwd(),
+      'config',
+      'multi-computer-automation.json',
+    );
+
     if (fs.existsSync(configPath)) {
       try {
         const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
         Object.assign(CONFIG, config);
-        this.log('info', 'Loaded multi-computer automation configuration', { configPath });
+        this.log('info', 'Loaded multi-computer automation configuration', {
+          configPath,
+        });
       } catch (error) {
-        this.log('warn', 'Failed to load configuration, using defaults', { error: error.message });
+        this.log('warn', 'Failed to load configuration, using defaults', {
+          error: error.message,
+        });
       }
     } else {
       this.createDefaultConfiguration(configPath);
@@ -124,10 +133,16 @@ class MultiComputerAutomation {
           host: 'localhost',
           port: CONFIG.DISCOVERY_PORT,
           cursorPath: '/Applications/Cursor.app/Contents/MacOS/Cursor',
-          capabilities: ['linting', 'testing', 'building', 'deployment', 'ai-assistance'],
+          capabilities: [
+            'linting',
+            'testing',
+            'building',
+            'deployment',
+            'ai-assistance',
+          ],
           maxConcurrentTasks: 3,
-          os: 'darwin'
-        }
+          os: 'darwin',
+        },
       ],
       aiAgents: [
         {
@@ -135,57 +150,61 @@ class MultiComputerAutomation {
           type: 'analysis',
           priority: 'high',
           commands: ['npm run lint', 'npm run test', 'npm run typecheck'],
-          autoFix: true
+          autoFix: true,
         },
         {
           name: 'performance-optimizer',
           type: 'optimization',
           priority: 'medium',
-          commands: ['npm run analyze', 'npm run optimize', 'npm run bundle:analyze'],
-          autoFix: true
+          commands: [
+            'npm run analyze',
+            'npm run optimize',
+            'npm run bundle:analyze',
+          ],
+          autoFix: true,
         },
         {
           name: 'security-scanner',
           type: 'security',
           priority: 'critical',
           commands: ['npm audit', 'npm run security-scan'],
-          autoFix: false
+          autoFix: false,
         },
         {
           name: 'build-optimizer',
           type: 'build',
           priority: 'high',
           commands: ['npm run build', 'npm run build:analyze'],
-          autoFix: true
+          autoFix: true,
         },
         {
           name: 'test-runner',
           type: 'testing',
           priority: 'medium',
           commands: ['npm run test:coverage', 'npm run test:e2e'],
-          autoFix: false
-        }
+          autoFix: false,
+        },
       ],
       automationTasks: [
         {
           name: 'continuous-improvement',
           description: 'Continuous app improvement loop',
           interval: 300000, // 5 minutes
-          tasks: ['lint', 'test', 'build', 'optimize']
+          tasks: ['lint', 'test', 'build', 'optimize'],
         },
         {
           name: 'error-fixing',
           description: 'Automatic error fixing',
           trigger: 'on-error',
-          tasks: ['analyze-errors', 'auto-fix', 'test-fixes']
+          tasks: ['analyze-errors', 'auto-fix', 'test-fixes'],
         },
         {
           name: 'performance-monitoring',
           description: 'Performance monitoring and optimization',
           interval: 600000, // 10 minutes
-          tasks: ['performance-check', 'optimize-bundle', 'analyze-metrics']
-        }
-      ]
+          tasks: ['performance-check', 'optimize-bundle', 'analyze-metrics'],
+        },
+      ],
     };
 
     // Ensure config directory exists
@@ -200,62 +219,74 @@ class MultiComputerAutomation {
 
   async start() {
     this.log('info', 'Starting Multi-Computer Cursor Automation System...');
-    
+
     try {
       // Initialize network discovery
       await this.initializeNetworkDiscovery();
-      
+
       // Start AI agent management
       await this.initializeAIAgents();
-      
+
       // Start task distribution system
       await this.initializeTaskDistribution();
-      
+
       // Start communication server
       await this.startCommunicationServer();
-      
+
       // Start monitoring
       await this.startMonitoring();
-      
+
       this.isRunning = true;
-      this.log('info', 'Multi-Computer Cursor Automation System started successfully');
-      
+      this.log(
+        'info',
+        'Multi-Computer Cursor Automation System started successfully',
+      );
+
       // Start continuous improvement loop
       this.startContinuousImprovementLoop();
-      
     } catch (error) {
-      this.log('error', 'Failed to start Multi-Computer Cursor Automation System', { error: error.message });
+      this.log(
+        'error',
+        'Failed to start Multi-Computer Cursor Automation System',
+        { error: error.message },
+      );
       throw error;
     }
   }
 
   async initializeNetworkDiscovery() {
     this.log('info', 'Initializing network discovery...');
-    
+
     // Discover computers with Cursor installed
     await this.discoverComputers();
-    
+
     // Start heartbeat monitoring
     this.startHeartbeatMonitoring();
-    
-    this.log('info', 'Network discovery initialized', { 
-      computersFound: this.computers.size 
+
+    this.log('info', 'Network discovery initialized', {
+      computersFound: this.computers.size,
     });
   }
 
   async discoverComputers() {
     const networkRange = this.getNetworkRange();
-    
+
     for (const ip of networkRange) {
       try {
         const isCursorInstalled = await this.checkCursorInstallation(ip);
         if (isCursorInstalled) {
           const computerInfo = await this.getComputerInfo(ip);
           this.computers.set(ip, computerInfo);
-          this.log('info', 'Discovered computer with Cursor', { ip, info: computerInfo });
+          this.log('info', 'Discovered computer with Cursor', {
+            ip,
+            info: computerInfo,
+          });
         }
       } catch (error) {
-        this.log('debug', 'Failed to check computer', { ip, error: error.message });
+        this.log('debug', 'Failed to check computer', {
+          ip,
+          error: error.message,
+        });
       }
     }
   }
@@ -263,7 +294,7 @@ class MultiComputerAutomation {
   getNetworkRange() {
     const interfaces = os.networkInterfaces();
     const networkRange = [];
-    
+
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
         if (net.family === 'IPv4' && !net.internal) {
@@ -274,13 +305,15 @@ class MultiComputerAutomation {
         }
       }
     }
-    
+
     return networkRange;
   }
 
   async checkCursorInstallation(ip) {
     try {
-      const response = await this.makeHTTPRequest(`http://${ip}:${CONFIG.DISCOVERY_PORT}/health`);
+      const response = await this.makeHTTPRequest(
+        `http://${ip}:${CONFIG.DISCOVERY_PORT}/health`,
+      );
       return response.status === 'healthy';
     } catch (error) {
       return false;
@@ -289,7 +322,9 @@ class MultiComputerAutomation {
 
   async getComputerInfo(ip) {
     try {
-      const response = await this.makeHTTPRequest(`http://${ip}:${CONFIG.DISCOVERY_PORT}/info`);
+      const response = await this.makeHTTPRequest(
+        `http://${ip}:${CONFIG.DISCOVERY_PORT}/info`,
+      );
       return response;
     } catch (error) {
       return {
@@ -297,7 +332,7 @@ class MultiComputerAutomation {
         host: ip,
         port: CONFIG.DISCOVERY_PORT,
         capabilities: ['basic'],
-        maxConcurrentTasks: 1
+        maxConcurrentTasks: 1,
       };
     }
   }
@@ -305,10 +340,10 @@ class MultiComputerAutomation {
   makeHTTPRequest(url) {
     return new Promise((resolve, reject) => {
       const protocol = url.startsWith('https:') ? https : http;
-      
+
       const req = protocol.get(url, (res) => {
         let data = '';
-        res.on('data', (chunk) => data += chunk);
+        res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
           try {
             resolve(JSON.parse(data));
@@ -317,7 +352,7 @@ class MultiComputerAutomation {
           }
         });
       });
-      
+
       req.on('error', reject);
       req.setTimeout(5000, () => req.destroy());
     });
@@ -333,7 +368,10 @@ class MultiComputerAutomation {
             this.log('warn', 'Computer went offline', { ip });
           }
         } catch (error) {
-          this.log('debug', 'Heartbeat check failed', { ip, error: error.message });
+          this.log('debug', 'Heartbeat check failed', {
+            ip,
+            error: error.message,
+          });
         }
       });
     }, CONFIG.HEARTBEAT_INTERVAL);
@@ -341,27 +379,35 @@ class MultiComputerAutomation {
 
   async initializeAIAgents() {
     this.log('info', 'Initializing AI agents...');
-    
-    const config = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'config', 'multi-computer-automation.json'), 'utf8'));
-    
+
+    const config = JSON.parse(
+      fs.readFileSync(
+        path.join(process.cwd(), 'config', 'multi-computer-automation.json'),
+        'utf8',
+      ),
+    );
+
     for (const agentConfig of config.aiAgents) {
       const agent = new AIAgent(agentConfig, this);
       this.aiAgents.set(agentConfig.name, agent);
-      this.log('info', 'Initialized AI agent', { name: agentConfig.name, type: agentConfig.type });
+      this.log('info', 'Initialized AI agent', {
+        name: agentConfig.name,
+        type: agentConfig.type,
+      });
     }
-    
+
     this.log('info', 'AI agents initialized', { count: this.aiAgents.size });
   }
 
   async initializeTaskDistribution() {
     this.log('info', 'Initializing task distribution system...');
-    
+
     // Start task queue processor
     this.startTaskQueueProcessor();
-    
+
     // Start task scheduler
     this.startTaskScheduler();
-    
+
     this.log('info', 'Task distribution system initialized');
   }
 
@@ -375,9 +421,14 @@ class MultiComputerAutomation {
   }
 
   startTaskScheduler() {
-    const config = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'config', 'multi-computer-automation.json'), 'utf8'));
-    
-    config.automationTasks.forEach(taskConfig => {
+    const config = JSON.parse(
+      fs.readFileSync(
+        path.join(process.cwd(), 'config', 'multi-computer-automation.json'),
+        'utf8',
+      ),
+    );
+
+    config.automationTasks.forEach((taskConfig) => {
       if (taskConfig.interval) {
         setInterval(() => {
           this.scheduleTask(taskConfig);
@@ -388,57 +439,75 @@ class MultiComputerAutomation {
 
   async startCommunicationServer() {
     this.log('info', 'Starting communication server...');
-    
+
     // Create HTTP server
     this.server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      
+
       if (req.url === '/health') {
-        res.end(JSON.stringify({ status: 'healthy', uptime: process.uptime() }));
+        res.end(
+          JSON.stringify({ status: 'healthy', uptime: process.uptime() }),
+        );
       } else if (req.url === '/info') {
-        res.end(JSON.stringify({
-          name: os.hostname(),
-          host: req.socket.localAddress,
-          port: CONFIG.DISCOVERY_PORT,
-          capabilities: ['linting', 'testing', 'building', 'deployment', 'ai-assistance'],
-          maxConcurrentTasks: CONFIG.MAX_CONCURRENT_AGENTS,
-          os: os.platform()
-        }));
+        res.end(
+          JSON.stringify({
+            name: os.hostname(),
+            host: req.socket.localAddress,
+            port: CONFIG.DISCOVERY_PORT,
+            capabilities: [
+              'linting',
+              'testing',
+              'building',
+              'deployment',
+              'ai-assistance',
+            ],
+            maxConcurrentTasks: CONFIG.MAX_CONCURRENT_AGENTS,
+            os: os.platform(),
+          }),
+        );
       } else if (req.url === '/status') {
-        res.end(JSON.stringify({
-          computers: Array.from(this.computers.values()),
-          tasks: Array.from(this.tasks.values()),
-          agents: Array.from(this.aiAgents.keys()),
-          uptime: process.uptime()
-        }));
+        res.end(
+          JSON.stringify({
+            computers: Array.from(this.computers.values()),
+            tasks: Array.from(this.tasks.values()),
+            agents: Array.from(this.aiAgents.keys()),
+            uptime: process.uptime(),
+          }),
+        );
       } else {
         res.writeHead(404);
         res.end(JSON.stringify({ error: 'Not found' }));
       }
     });
-    
+
     // Create WebSocket server
     this.wss = new WebSocket.Server({ server: this.server });
-    
+
     this.wss.on('connection', (ws, req) => {
-      this.log('info', 'WebSocket connection established', { ip: req.socket.remoteAddress });
-      
+      this.log('info', 'WebSocket connection established', {
+        ip: req.socket.remoteAddress,
+      });
+
       ws.on('message', (message) => {
         try {
           const data = JSON.parse(message);
           this.handleWebSocketMessage(ws, data);
         } catch (error) {
-          this.log('error', 'Failed to parse WebSocket message', { error: error.message });
+          this.log('error', 'Failed to parse WebSocket message', {
+            error: error.message,
+          });
         }
       });
-      
+
       ws.on('close', () => {
         this.log('info', 'WebSocket connection closed');
       });
     });
-    
+
     this.server.listen(CONFIG.DISCOVERY_PORT, () => {
-      this.log('info', 'Communication server started', { port: CONFIG.DISCOVERY_PORT });
+      this.log('info', 'Communication server started', {
+        port: CONFIG.DISCOVERY_PORT,
+      });
     });
   }
 
@@ -460,59 +529,67 @@ class MultiComputerAutomation {
 
   async startMonitoring() {
     this.log('info', 'Starting monitoring system...');
-    
+
     // Monitor system resources
     setInterval(() => {
       this.monitorSystemResources();
     }, 60000); // Every minute
-    
+
     // Monitor task progress
     setInterval(() => {
       this.monitorTaskProgress();
     }, 30000); // Every 30 seconds
-    
+
     this.log('info', 'Monitoring system started');
   }
 
   monitorSystemResources() {
     const cpuUsage = process.cpuUsage();
     const memoryUsage = process.memoryUsage();
-    
+
     this.log('debug', 'System resources', {
       cpu: cpuUsage,
       memory: memoryUsage,
-      uptime: process.uptime()
+      uptime: process.uptime(),
     });
   }
 
   monitorTaskProgress() {
-    const activeTasks = Array.from(this.tasks.values()).filter(task => task.status === 'running');
-    const completedTasks = Array.from(this.tasks.values()).filter(task => task.status === 'completed');
-    const failedTasks = Array.from(this.tasks.values()).filter(task => task.status === 'failed');
-    
+    const activeTasks = Array.from(this.tasks.values()).filter(
+      (task) => task.status === 'running',
+    );
+    const completedTasks = Array.from(this.tasks.values()).filter(
+      (task) => task.status === 'completed',
+    );
+    const failedTasks = Array.from(this.tasks.values()).filter(
+      (task) => task.status === 'failed',
+    );
+
     this.log('info', 'Task progress', {
       active: activeTasks.length,
       completed: completedTasks.length,
       failed: failedTasks.length,
-      total: this.tasks.size
+      total: this.tasks.size,
     });
   }
 
   startContinuousImprovementLoop() {
     this.log('info', 'Starting continuous improvement loop...');
-    
+
     setInterval(async () => {
       try {
         await this.runContinuousImprovement();
       } catch (error) {
-        this.log('error', 'Continuous improvement loop failed', { error: error.message });
+        this.log('error', 'Continuous improvement loop failed', {
+          error: error.message,
+        });
       }
     }, 300000); // Every 5 minutes
   }
 
   async runContinuousImprovement() {
     this.log('info', 'Running continuous improvement cycle...');
-    
+
     // Run all AI agents
     for (const [name, agent] of this.aiAgents) {
       try {
@@ -521,25 +598,27 @@ class MultiComputerAutomation {
         this.log('error', 'AI agent failed', { name, error: error.message });
       }
     }
-    
+
     // Check for and fix any issues
     await this.checkAndFixIssues();
-    
+
     // Optimize performance
     await this.optimizePerformance();
-    
+
     this.log('info', 'Continuous improvement cycle completed');
   }
 
   async checkAndFixIssues() {
     this.log('info', 'Checking for issues...');
-    
+
     // Run linting
     try {
       execSync('npm run lint', { stdio: 'pipe' });
       this.log('info', 'Linting passed');
     } catch (error) {
-      this.log('warn', 'Linting failed, attempting auto-fix', { error: error.message });
+      this.log('warn', 'Linting failed, attempting auto-fix', {
+        error: error.message,
+      });
       try {
         execSync('npm run lint:fix', { stdio: 'pipe' });
         this.log('info', 'Auto-fix completed');
@@ -547,7 +626,7 @@ class MultiComputerAutomation {
         this.log('error', 'Auto-fix failed', { error: fixError.message });
       }
     }
-    
+
     // Run tests
     try {
       execSync('npm run test', { stdio: 'pipe' });
@@ -555,28 +634,30 @@ class MultiComputerAutomation {
     } catch (error) {
       this.log('warn', 'Tests failed', { error: error.message });
     }
-    
+
     // Check build
     try {
       execSync('npm run build', { stdio: 'pipe' });
       this.log('info', 'Build successful');
     } catch (error) {
-      this.log('warn', 'Build failed, attempting to fix', { error: error.message });
+      this.log('warn', 'Build failed, attempting to fix', {
+        error: error.message,
+      });
       await this.fixBuildIssues();
     }
   }
 
   async fixBuildIssues() {
     this.log('info', 'Attempting to fix build issues...');
-    
+
     // Common build fixes
     const fixes = [
       'npm run clean',
       'npm install',
       'npm run typecheck',
-      'npm run lint:fix'
+      'npm run lint:fix',
     ];
-    
+
     for (const fix of fixes) {
       try {
         execSync(fix, { stdio: 'pipe' });
@@ -589,12 +670,14 @@ class MultiComputerAutomation {
 
   async optimizePerformance() {
     this.log('info', 'Optimizing performance...');
-    
+
     try {
       execSync('npm run optimize', { stdio: 'pipe' });
       this.log('info', 'Performance optimization completed');
     } catch (error) {
-      this.log('warn', 'Performance optimization failed', { error: error.message });
+      this.log('warn', 'Performance optimization failed', {
+        error: error.message,
+      });
     }
   }
 
@@ -606,12 +689,12 @@ class MultiComputerAutomation {
       tasks: taskConfig.tasks,
       status: 'pending',
       createdAt: new Date(),
-      assignedComputer: null
+      assignedComputer: null,
     };
-    
+
     this.tasks.set(task.id, task);
     this.taskQueue.push(task);
-    
+
     this.log('info', 'Task scheduled', { taskId: task.id, name: task.name });
   }
 
@@ -623,13 +706,16 @@ class MultiComputerAutomation {
       this.taskQueue.unshift(task); // Put back in queue
       return;
     }
-    
+
     task.status = 'running';
     task.assignedComputer = availableComputer.host;
     task.startedAt = new Date();
-    
-    this.log('info', 'Executing task', { taskId: task.id, computer: availableComputer.host });
-    
+
+    this.log('info', 'Executing task', {
+      taskId: task.id,
+      computer: availableComputer.host,
+    });
+
     // Execute task on computer
     try {
       await this.executeTaskOnComputer(task, availableComputer);
@@ -637,15 +723,20 @@ class MultiComputerAutomation {
       task.status = 'failed';
       task.error = error.message;
       task.completedAt = new Date();
-      this.log('error', 'Task execution failed', { taskId: task.id, error: error.message });
+      this.log('error', 'Task execution failed', {
+        taskId: task.id,
+        error: error.message,
+      });
     }
   }
 
   findAvailableComputer() {
     for (const [ip, computer] of this.computers) {
-      const activeTasks = Array.from(this.tasks.values())
-        .filter(task => task.assignedComputer === computer.host && task.status === 'running');
-      
+      const activeTasks = Array.from(this.tasks.values()).filter(
+        (task) =>
+          task.assignedComputer === computer.host && task.status === 'running',
+      );
+
       if (activeTasks.length < computer.maxConcurrentTasks) {
         return computer;
       }
@@ -659,12 +750,15 @@ class MultiComputerAutomation {
     for (const taskName of task.tasks) {
       try {
         execSync(`npm run ${taskName}`, { stdio: 'pipe' });
-        this.log('info', 'Task step completed', { taskId: task.id, step: taskName });
+        this.log('info', 'Task step completed', {
+          taskId: task.id,
+          step: taskName,
+        });
       } catch (error) {
         throw new Error(`Task step failed: ${taskName} - ${error.message}`);
       }
     }
-    
+
     task.status = 'completed';
     task.completedAt = new Date();
     this.log('info', 'Task completed successfully', { taskId: task.id });
@@ -685,7 +779,10 @@ class MultiComputerAutomation {
       task.status = 'failed';
       task.error = data.error;
       task.completedAt = new Date();
-      this.log('error', 'Task failed', { taskId: data.taskId, error: data.error });
+      this.log('error', 'Task failed', {
+        taskId: data.taskId,
+        error: data.error,
+      });
     }
   }
 
@@ -693,23 +790,26 @@ class MultiComputerAutomation {
     const computer = this.computers.get(data.host);
     if (computer) {
       Object.assign(computer, data.status);
-      this.log('debug', 'Computer status updated', { host: data.host, status: data.status });
+      this.log('debug', 'Computer status updated', {
+        host: data.host,
+        status: data.status,
+      });
     }
   }
 
   async stop() {
     this.log('info', 'Stopping Multi-Computer Cursor Automation System...');
-    
+
     this.isRunning = false;
-    
+
     if (this.wss) {
       this.wss.close();
     }
-    
+
     if (this.server) {
       this.server.close();
     }
-    
+
     this.log('info', 'Multi-Computer Cursor Automation System stopped');
   }
 }
@@ -726,41 +826,47 @@ class AIAgent {
     if (this.isRunning) {
       return;
     }
-    
+
     this.isRunning = true;
     this.controller.log('info', 'AI agent started', { name: this.config.name });
-    
+
     try {
       for (const command of this.config.commands) {
         await this.executeCommand(command);
       }
-      
+
       if (this.config.autoFix) {
         await this.autoFix();
       }
     } catch (error) {
-      this.controller.log('error', 'AI agent failed', { name: this.config.name, error: error.message });
+      this.controller.log('error', 'AI agent failed', {
+        name: this.config.name,
+        error: error.message,
+      });
     } finally {
       this.isRunning = false;
     }
   }
 
   async executeCommand(command) {
-    this.controller.log('info', 'Executing command', { agent: this.config.name, command });
-    
+    this.controller.log('info', 'Executing command', {
+      agent: this.config.name,
+      command,
+    });
+
     return new Promise((resolve, reject) => {
       exec(command, (error, stdout, stderr) => {
         if (error) {
-          this.controller.log('error', 'Command failed', { 
-            agent: this.config.name, 
-            command, 
-            error: error.message 
+          this.controller.log('error', 'Command failed', {
+            agent: this.config.name,
+            command,
+            error: error.message,
           });
           reject(error);
         } else {
-          this.controller.log('info', 'Command completed', { 
-            agent: this.config.name, 
-            command 
+          this.controller.log('info', 'Command completed', {
+            agent: this.config.name,
+            command,
           });
           resolve(stdout);
         }
@@ -769,8 +875,10 @@ class AIAgent {
   }
 
   async autoFix() {
-    this.controller.log('info', 'Running auto-fix', { agent: this.config.name });
-    
+    this.controller.log('info', 'Running auto-fix', {
+      agent: this.config.name,
+    });
+
     // Implement auto-fix logic based on agent type
     switch (this.config.type) {
       case 'analysis':
@@ -783,7 +891,9 @@ class AIAgent {
         await this.fixBuildIssues();
         break;
       default:
-        this.controller.log('warn', 'Unknown agent type for auto-fix', { type: this.config.type });
+        this.controller.log('warn', 'Unknown agent type for auto-fix', {
+          type: this.config.type,
+        });
     }
   }
 
@@ -791,11 +901,13 @@ class AIAgent {
     try {
       execSync('npm run lint:fix', { stdio: 'pipe' });
       execSync('npm run typecheck', { stdio: 'pipe' });
-      this.controller.log('info', 'Analysis issues fixed', { agent: this.config.name });
+      this.controller.log('info', 'Analysis issues fixed', {
+        agent: this.config.name,
+      });
     } catch (error) {
-      this.controller.log('error', 'Failed to fix analysis issues', { 
-        agent: this.config.name, 
-        error: error.message 
+      this.controller.log('error', 'Failed to fix analysis issues', {
+        agent: this.config.name,
+        error: error.message,
       });
     }
   }
@@ -804,11 +916,13 @@ class AIAgent {
     try {
       execSync('npm run optimize', { stdio: 'pipe' });
       execSync('npm run bundle:optimize', { stdio: 'pipe' });
-      this.controller.log('info', 'Optimization issues fixed', { agent: this.config.name });
+      this.controller.log('info', 'Optimization issues fixed', {
+        agent: this.config.name,
+      });
     } catch (error) {
-      this.controller.log('error', 'Failed to fix optimization issues', { 
-        agent: this.config.name, 
-        error: error.message 
+      this.controller.log('error', 'Failed to fix optimization issues', {
+        agent: this.config.name,
+        error: error.message,
       });
     }
   }
@@ -818,11 +932,13 @@ class AIAgent {
       execSync('npm run clean', { stdio: 'pipe' });
       execSync('npm install', { stdio: 'pipe' });
       execSync('npm run build', { stdio: 'pipe' });
-      this.controller.log('info', 'Build issues fixed', { agent: this.config.name });
+      this.controller.log('info', 'Build issues fixed', {
+        agent: this.config.name,
+      });
     } catch (error) {
-      this.controller.log('error', 'Failed to fix build issues', { 
-        agent: this.config.name, 
-        error: error.message 
+      this.controller.log('error', 'Failed to fix build issues', {
+        agent: this.config.name,
+        error: error.message,
       });
     }
   }
@@ -831,23 +947,23 @@ class AIAgent {
 // Main execution
 if (require.main === module) {
   const automation = new MultiComputerAutomation();
-  
+
   process.on('SIGINT', async () => {
     console.log('\nShutting down...');
     await automation.stop();
     process.exit(0);
   });
-  
+
   process.on('SIGTERM', async () => {
     console.log('\nShutting down...');
     await automation.stop();
     process.exit(0);
   });
-  
-  automation.start().catch(error => {
+
+  automation.start().catch((error) => {
     console.error('Failed to start automation:', error);
     process.exit(1);
   });
 }
 
-module.exports = MultiComputerAutomation; 
+module.exports = MultiComputerAutomation;

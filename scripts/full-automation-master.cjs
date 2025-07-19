@@ -16,12 +16,12 @@ class FullAutomationMaster {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
-    
+
     const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
-    
+
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
 
@@ -35,35 +35,39 @@ class FullAutomationMaster {
   async runCommand(command, options = {}) {
     try {
       this.log(`Running command: ${command}`);
-      const result = execSync(command, { 
-        cwd: this.projectRoot, 
+      const result = execSync(command, {
+        cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options 
+        ...options,
       });
       this.log(`Command completed successfully: ${command}`);
       return { success: true, output: result };
     } catch (error) {
       this.log(`Command failed: ${command} - ${error.message}`, 'ERROR');
-      return { success: false, error: error.message, output: error.stdout || error.stderr };
+      return {
+        success: false,
+        error: error.message,
+        output: error.stdout || error.stderr,
+      };
     }
   }
 
   fixAllCorruptedFiles() {
     this.log('Step 1: Fixing all corrupted files...');
-    
+
     // Fix package.json merge conflicts
     const packageJsonPath = path.join(this.projectRoot, 'package.json');
     if (fs.existsSync(packageJsonPath)) {
       let content = fs.readFileSync(packageJsonPath, 'utf8');
       const originalContent = content;
-      
+
       content = content
         .replace(/<<<<<<< HEAD\n/g, '')
         .replace(/=======\n/g, '')
         .replace(/>>>>>>> [a-f0-9]+\n/g, '')
         .replace(/>>>>>>> [a-f0-9]+/g, '');
-      
+
       if (content !== originalContent) {
         fs.writeFileSync(packageJsonPath, content);
         this.log('Fixed package.json merge conflicts');
@@ -77,24 +81,26 @@ class FullAutomationMaster {
         try {
           let content = fs.readFileSync(filePath, 'utf8');
           const originalContent = content;
-          
+
           // If file is all on one line and very long, it's corrupted
           if (content.split('\n').length === 1 && content.length > 200) {
             this.log(`Fixing corrupted file: ${filePath}`);
-            
+
             // Extract imports
             const importMatches = content.match(/import[^;]+;/g) || [];
             const imports = importMatches.join('\n');
-            
+
             // Extract function body
-            const functionMatch = content.match(/export\s+default\s+.*?function\s+handler\s*\([^)]*\)\s*\{([\s\S]*)\}/);
-            
+            const functionMatch = content.match(
+              /export\s+default\s+.*?function\s+handler\s*\([^)]*\)\s*\{([\s\S]*)\}/,
+            );
+
             if (functionMatch) {
               const functionBody = functionMatch[1];
-              
+
               // Reconstruct with proper formatting
               content = `${imports}\n\nexport default async function handler(req, res) {\n${functionBody}\n}`;
-              
+
               // Basic formatting
               content = content
                 .replace(/\s+/g, ' ')
@@ -103,12 +109,12 @@ class FullAutomationMaster {
                 .replace(/;\s*/g, ';\n  ')
                 .replace(/\n\s*\n/g, '\n')
                 .replace(/\n\s*$/g, '\n');
-              
+
               fs.writeFileSync(filePath, content);
               return true;
             }
           }
-          
+
           return false;
         } catch (error) {
           this.log(`Error fixing file ${filePath}: ${error.message}`, 'ERROR');
@@ -119,11 +125,11 @@ class FullAutomationMaster {
       const processDirectory = (dir) => {
         const items = fs.readdirSync(dir);
         let fixedCount = 0;
-        
+
         for (const item of items) {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
-          
+
           if (stat.isDirectory()) {
             fixedCount += processDirectory(fullPath);
           } else if (item.endsWith('.ts') || item.endsWith('.js')) {
@@ -132,7 +138,7 @@ class FullAutomationMaster {
             }
           }
         }
-        
+
         return fixedCount;
       };
 
@@ -143,14 +149,14 @@ class FullAutomationMaster {
 
   async installDependencies() {
     this.log('Step 2: Installing dependencies...');
-    
+
     const result = await this.runCommand('npm install --legacy-peer-deps');
     return result.success;
   }
 
   async fixNextConfig() {
     this.log('Step 3: Fixing Next.js configuration...');
-    
+
     const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
@@ -160,7 +166,7 @@ class FullAutomationMaster {
     try {
       let content = fs.readFileSync(nextConfigPath, 'utf8');
       const originalContent = content;
-      
+
       // Add Node.js 22 compatibility workarounds
       const compatibilityCode = `
 // Node.js 22 compatibility workarounds
@@ -178,16 +184,16 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
       if (!content.includes('NODE_OPTIONS')) {
         content = compatibilityCode + content;
       }
-      
+
       // Remove problematic experimental features
       content = content.replace(/experimental:\s*{[^}]*}/g, 'experimental: {}');
-      
+
       if (content !== originalContent) {
         fs.writeFileSync(nextConfigPath, content);
         this.log('Fixed Next.js configuration');
         return true;
       }
-      
+
       return false;
     } catch (error) {
       this.log(`Error fixing Next.js config: ${error.message}`, 'ERROR');
@@ -197,22 +203,22 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
 
   async buildProject() {
     this.log('Step 4: Building project...');
-    
+
     const result = await this.runCommand('npm run build');
     return result.success;
   }
 
   async startServer() {
     this.log('Step 5: Starting development server...');
-    
+
     return new Promise((resolve) => {
       const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         cwd: this.projectRoot,
         stdio: 'pipe',
         env: {
           ...process.env,
-          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096'
-        }
+          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+        },
       });
 
       let output = '';
@@ -221,7 +227,7 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
       server.stdout.on('data', (data) => {
         output += data.toString();
         this.log(`Server output: ${data.toString().trim()}`);
-        
+
         if (output.includes('Ready') && !resolved) {
           resolved = true;
           this.log('Development server started successfully');
@@ -232,8 +238,13 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
       server.stderr.on('data', (data) => {
         const error = data.toString();
         this.log(`Server error: ${error}`, 'ERROR');
-        
-        if (error.includes('TypeError: The "to" argument must be of type string') && !resolved) {
+
+        if (
+          error.includes(
+            'TypeError: The "to" argument must be of type string',
+          ) &&
+          !resolved
+        ) {
           resolved = true;
           this.log('Node.js 22 compatibility issue detected', 'ERROR');
           resolve({ success: false, error: 'Node.js 22 compatibility issue' });
@@ -261,10 +272,10 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
 
   async healthCheck() {
     this.log('Step 6: Performing health check...');
-    
+
     // Wait for server to be ready
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 10000));
+
     try {
       const response = await fetch('http://localhost:3001/api/health');
       if (response.ok) {
@@ -283,48 +294,47 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
 
   async runFullAutomation() {
     this.log('Starting full automation master...');
-    
+
     try {
       // Step 1: Fix all corrupted files
       this.fixAllCorruptedFiles();
-      
+
       // Step 2: Install dependencies
       const depsInstalled = await this.installDependencies();
       if (!depsInstalled) {
         this.log('Failed to install dependencies', 'ERROR');
         return false;
       }
-      
+
       // Step 3: Fix Next.js configuration
       await this.fixNextConfig();
-      
+
       // Step 4: Build project
       const buildSuccess = await this.buildProject();
       if (!buildSuccess) {
         this.log('Build failed, but continuing...', 'WARN');
       }
-      
+
       // Step 5: Start server
       const serverResult = await this.startServer();
       if (!serverResult.success) {
         this.log('Server failed to start', 'ERROR');
         return false;
       }
-      
+
       // Step 6: Health check
       const healthOk = await this.healthCheck();
       if (!healthOk) {
         this.log('Health check failed', 'WARN');
       }
-      
+
       const endTime = Date.now();
       const duration = (endTime - this.startTime) / 1000;
-      
+
       this.log(`Full automation completed in ${duration}s`);
       this.log('App should now be running at http://localhost:3001');
-      
+
       return true;
-      
     } catch (error) {
       this.log(`Full automation failed: ${error.message}`, 'ERROR');
       return false;
@@ -335,14 +345,15 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
 // Run if this script is executed directly
 if (require.main === module) {
   const automation = new FullAutomationMaster();
-  automation.runFullAutomation()
-    .then(success => {
+  automation
+    .runFullAutomation()
+    .then((success) => {
       if (success) {
         console.log('\n🎉 SUCCESS: App is now running!');
         console.log('🌐 Open http://localhost:3001 in your browser');
         console.log('📊 Health check: http://localhost:3001/api/health');
         console.log('\nPress Ctrl+C to stop the server');
-        
+
         // Keep the process running
         process.on('SIGINT', () => {
           console.log('\n🛑 Stopping server...');
@@ -353,10 +364,10 @@ if (require.main === module) {
         process.exit(1);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Automation failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = FullAutomationMaster; 
+module.exports = FullAutomationMaster;

@@ -84,7 +84,6 @@ jobs:
       #   if: always() # Ensure this runs even if Trivy fails the build
       #   with:
       #     sarif_file: 'trivy-django-results.sarif'
-
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3
         # Ensure kubectl version is compatible if different from frontend CD

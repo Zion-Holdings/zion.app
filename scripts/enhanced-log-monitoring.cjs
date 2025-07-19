@@ -20,7 +20,7 @@ const { _EventEmitter } = require('events');
 class EnhancedLogMonitor extends EventEmitter {
   constructor(config = {}) {
     super();
-    
+
     this.config = {
       logDir: path.join(__dirname, '..', 'logs'),
       alertThresholds: {
@@ -59,7 +59,7 @@ class EnhancedLogMonitor extends EventEmitter {
     this.alertHistory = [];
     this.isMonitoring = false;
     this.watchers = new Map();
-    
+
     this.initializeMonitoring();
   }
 
@@ -70,7 +70,7 @@ class EnhancedLogMonitor extends EventEmitter {
       this.startRealTimeMonitoring();
       this.startPeriodicHealthChecks();
       this.setupGracefulShutdown();
-      
+
       this.log('Enhanced log monitoring system initialized', 'info');
       this.emit('initialized');
     } catch (_error) {
@@ -86,7 +86,7 @@ class EnhancedLogMonitor extends EventEmitter {
 
     // Create subdirectories for different log types
     const subdirs = ['errors', 'performance', 'security', 'aggregated'];
-    subdirs.forEach(dir => {
+    subdirs.forEach((dir) => {
       const dirPath = path.join(this.config.logDir, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -96,11 +96,18 @@ class EnhancedLogMonitor extends EventEmitter {
 
   async loadHistoricalData() {
     try {
-      const metricsFile = path.join(this.config.logDir, 'aggregated', 'metrics.json');
+      const metricsFile = path.join(
+        this.config.logDir,
+        'aggregated',
+        'metrics.json',
+      );
       if (fs.existsSync(metricsFile)) {
         const data = JSON.parse(fs.readFileSync(metricsFile, 'utf8'));
         this.metrics = { ...this.metrics, ...data };
-        this.log(`Loaded historical data: ${this.metrics.errors.length} errors, ${this.metrics.warnings.length} warnings`, 'info');
+        this.log(
+          `Loaded historical data: ${this.metrics.errors.length} errors, ${this.metrics.warnings.length} warnings`,
+          'info',
+        );
       }
     } catch (_error) {
       this.log(`Failed to load historical data: ${error.message}`, 'warn');
@@ -111,32 +118,32 @@ class EnhancedLogMonitor extends EventEmitter {
     if (!this.config.monitoring.realTime) return;
 
     this.isMonitoring = true;
-    
+
     // Monitor all log files in the logs directory
     this.watchLogFiles();
-    
+
     // Monitor application logs from Next.js, API routes, etc.
     this.setupApplicationLogMonitoring();
-    
+
     // Monitor system metrics
     this.startSystemMetricsCollection();
-    
+
     this.log('Real-time monitoring started', 'info');
   }
 
   watchLogFiles() {
     const logExtensions = ['.log', '.json'];
-    
+
     const watchDirectory = (dirPath) => {
       if (!fs.existsSync(dirPath)) return;
-      
-      fs.readdirSync(dirPath).forEach(file => {
+
+      fs.readdirSync(dirPath).forEach((file) => {
         const filePath = path.join(dirPath, file);
         const stat = fs.statSync(filePath);
-        
+
         if (stat.isDirectory()) {
           watchDirectory(filePath);
-        } else if (logExtensions.some(ext => file.endsWith(ext))) {
+        } else if (logExtensions.some((ext) => file.endsWith(ext))) {
           this.watchLogFile(filePath);
         }
       });
@@ -156,7 +163,10 @@ class EnhancedLogMonitor extends EventEmitter {
       });
 
       this.watchers.set(filePath, watcher);
-      this.log(`Watching log file: ${path.relative(this.config.logDir, filePath)}`, 'debug');
+      this.log(
+        `Watching log file: ${path.relative(this.config.logDir, filePath)}`,
+        'debug',
+      );
     } catch (_error) {
       this.log(`Failed to watch file ${filePath}: ${error.message}`, 'warn');
     }
@@ -165,11 +175,11 @@ class EnhancedLogMonitor extends EventEmitter {
   async processLogFileChanges(filePath) {
     try {
       const content = fs.readFileSync(filePath, 'utf8');
-      const lines = content.split('\n').filter(line => line.trim());
-      
+      const lines = content.split('\n').filter((line) => line.trim());
+
       // Process only new lines (simple implementation)
       const newLines = lines.slice(-10); // Process last 10 lines
-      
+
       for (const line of newLines) {
         await this.processLogEntry(line, filePath);
       }
@@ -181,7 +191,7 @@ class EnhancedLogMonitor extends EventEmitter {
   async processLogEntry(logLine, filePath) {
     try {
       let entry;
-      
+
       // Try to parse as JSON first
       try {
         entry = JSON.parse(logLine);
@@ -199,13 +209,12 @@ class EnhancedLogMonitor extends EventEmitter {
 
       // Classify and process the entry
       await this.classifyAndProcessEntry(entry);
-      
+
       // Check for alert conditions
       await this.checkAlertConditions(entry);
-      
+
       // Emit event for real-time consumers
       this.emit('logEntry', entry);
-      
     } catch (_error) {
       this.log(`Error processing log entry: ${error.message}`, 'error');
     }
@@ -214,13 +223,13 @@ class EnhancedLogMonitor extends EventEmitter {
   parseTextLogEntry(logLine) {
     // Basic text log parsing with common patterns
     const timestamp = new Date().toISOString();
-    
+
     // Detect log level
     let level = 'info';
     if (logLine.match(/\b(error|ERROR|err)\b/i)) level = 'error';
     else if (logLine.match(/\b(warn|WARNING|warning)\b/i)) level = 'warn';
     else if (logLine.match(/\b(debug|DEBUG)\b/i)) level = 'debug';
-    
+
     return {
       timestamp,
       level,
@@ -231,12 +240,12 @@ class EnhancedLogMonitor extends EventEmitter {
 
   async classifyAndProcessEntry(entry) {
     const { level, _message } = entry;
-    
+
     // Store in appropriate metrics array
     if (level === 'error') {
       this.metrics.errors.push(entry);
       this.metrics.system.consecutiveErrors++;
-      
+
       // Check for critical error patterns
       if (this.isCriticalError(entry)) {
         await this.handleCriticalError(entry);
@@ -276,16 +285,16 @@ class EnhancedLogMonitor extends EventEmitter {
       /data.*corruption/i,
     ];
 
-    return criticalPatterns.some(pattern => pattern.test(entry.message));
+    return criticalPatterns.some((pattern) => pattern.test(entry.message));
   }
 
   async handleCriticalError(entry) {
     this.log(`Critical error detected: ${entry.message}`, 'error');
-    
+
     // Add to critical error tracking
     entry.critical = true;
     entry.alertSent = false;
-    
+
     // Immediate alert
     await this.sendAlert({
       type: 'critical_error',
@@ -299,7 +308,9 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   isPerformanceEntry(entry) {
-    return /performance|timing|duration|latency|response.*time/i.test(entry.message);
+    return /performance|timing|duration|latency|response.*time/i.test(
+      entry.message,
+    );
   }
 
   trackPerformanceMetric(entry) {
@@ -312,20 +323,21 @@ class EnhancedLogMonitor extends EventEmitter {
     };
 
     this.metrics.performance.push(metric);
-    
+
     // Update system averages
     this.updatePerformanceAverages();
   }
 
   parsePerformanceData(message) {
     const patterns = {
-      responseTime: /response.*time[:\s]+(\d+(?:\.\d+)?)\s*(ms|milliseconds|s|seconds)/i,
+      responseTime:
+        /response.*time[:\s]+(\d+(?:\.\d+)?)\s*(ms|milliseconds|s|seconds)/i,
       memory: /memory[:\s]+(\d+(?:\.\d+)?)\s*(mb|gb|bytes?)/i,
       cpu: /cpu[:\s]+(\d+(?:\.\d+)?)\s*%?/i,
     };
 
     const result = {};
-    
+
     for (const [key, pattern] of Object.entries(patterns)) {
       const match = message.match(pattern);
       if (match) {
@@ -345,18 +357,19 @@ class EnhancedLogMonitor extends EventEmitter {
 
     // Calculate average response time
     const responseTimes = recentMetrics
-      .map(m => m.parsed?.responseTime?.value)
-      .filter(v => v !== undefined);
-    
+      .map((m) => m.parsed?.responseTime?.value)
+      .filter((v) => v !== undefined);
+
     if (responseTimes.length > 0) {
-      this.metrics.system.averageResponseTime = 
+      this.metrics.system.averageResponseTime =
         responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length;
     }
 
     // Calculate error rate
     const recentErrors = this.metrics.errors.slice(-100);
     const recentTotal = Math.max(recentMetrics.length, recentErrors.length);
-    this.metrics.system.errorRate = recentTotal > 0 ? recentErrors.length / recentTotal : 0;
+    this.metrics.system.errorRate =
+      recentTotal > 0 ? recentErrors.length / recentTotal : 0;
   }
 
   isSecurityEvent(entry) {
@@ -370,22 +383,26 @@ class EnhancedLogMonitor extends EventEmitter {
       /csrf.*detected/i,
     ];
 
-    return securityPatterns.some(pattern => pattern.test(entry.message));
+    return securityPatterns.some((pattern) => pattern.test(entry.message));
   }
 
   async handleSecurityEvent(entry) {
     this.log(`Security event detected: ${entry.message}`, 'warn');
-    
+
     // Log to security log
-    const securityLogPath = path.join(this.config.logDir, 'security', 'events.log');
+    const securityLogPath = path.join(
+      this.config.logDir,
+      'security',
+      'events.log',
+    );
     const securityEntry = JSON.stringify({
       ...entry,
       securityEvent: true,
       handled: new Date().toISOString(),
     });
-    
+
     fs.appendFileSync(securityLogPath, securityEntry + '\n');
-    
+
     // Send security alert
     await this.sendAlert({
       type: 'security_event',
@@ -397,7 +414,7 @@ class EnhancedLogMonitor extends EventEmitter {
 
   async checkAlertConditions(entry) {
     const { _alertThresholds } = this.config;
-    
+
     // Check error rate threshold
     if (this.metrics.system.errorRate > alertThresholds.errorRate) {
       await this.sendAlert({
@@ -411,7 +428,9 @@ class EnhancedLogMonitor extends EventEmitter {
     }
 
     // Check consecutive critical errors
-    if (this.metrics.system.consecutiveErrors >= alertThresholds.criticalErrors) {
+    if (
+      this.metrics.system.consecutiveErrors >= alertThresholds.criticalErrors
+    ) {
       await this.sendAlert({
         type: 'consecutive_errors',
         severity: 'high',
@@ -423,7 +442,10 @@ class EnhancedLogMonitor extends EventEmitter {
     }
 
     // Check performance threshold
-    if (this.metrics.system.averageResponseTime > alertThresholds.performanceThreshold) {
+    if (
+      this.metrics.system.averageResponseTime >
+      alertThresholds.performanceThreshold
+    ) {
       await this.sendAlert({
         type: 'performance_degradation',
         severity: 'medium',
@@ -437,33 +459,39 @@ class EnhancedLogMonitor extends EventEmitter {
 
   async sendAlert(alert) {
     const _alertKey = `${alert.type}_${alert.timestamp}`;
-    
+
     // Prevent duplicate alerts
-    if (this.alertHistory.some(a => a.type === alert.type && 
-        Date.now() - new Date(a.timestamp).getTime() < 300000)) { // 5 minutes
+    if (
+      this.alertHistory.some(
+        (a) =>
+          a.type === alert.type &&
+          Date.now() - new Date(a.timestamp).getTime() < 300000,
+      )
+    ) {
+      // 5 minutes
       return;
     }
 
     this.alertHistory.push(alert);
-    
+
     // Send to configured channels
     const { _alertChannels } = this.config;
-    
+
     if (alertChannels.email) {
       await this.sendEmailAlert(alert);
     }
-    
+
     if (alertChannels.discord) {
       await this.sendDiscordAlert(alert);
     }
-    
+
     if (alertChannels.slack) {
       await this.sendSlackAlert(alert);
     }
-    
+
     // Log the alert
     this.log(`Alert sent: ${alert.type} (${alert.severity})`, 'info');
-    
+
     // Store alert for history
     const alertLogPath = path.join(this.config.logDir, 'alerts.log');
     fs.appendFileSync(alertLogPath, JSON.stringify(alert) + '\n');
@@ -486,13 +514,14 @@ class EnhancedLogMonitor extends EventEmitter {
 
   async attemptSelfHealing(entry) {
     const healingStrategies = {
-      'database_connection_failed': () => this.restartDatabaseConnection(),
-      'memory_leak_detected': () => this.triggerGarbageCollection(),
-      'rate_limit_exceeded': () => this.implementBackoff(),
+      database_connection_failed: () => this.restartDatabaseConnection(),
+      memory_leak_detected: () => this.triggerGarbageCollection(),
+      rate_limit_exceeded: () => this.implementBackoff(),
     };
 
-    const strategy = Object.keys(healingStrategies).find(key => 
-      entry.message.toLowerCase().includes(key.replace(/_/g, ' ')));
+    const strategy = Object.keys(healingStrategies).find((key) =>
+      entry.message.toLowerCase().includes(key.replace(/_/g, ' ')),
+    );
 
     if (strategy) {
       this.log(`Attempting self-healing strategy: ${strategy}`, 'info');
@@ -542,15 +571,18 @@ class EnhancedLogMonitor extends EventEmitter {
     };
 
     this.metrics.system.lastHealthCheck = healthData.timestamp;
-    
+
     // Store health data
     const healthLogPath = path.join(this.config.logDir, 'health-checks.log');
     fs.appendFileSync(healthLogPath, JSON.stringify(healthData) + '\n');
-    
+
     // Emit health check event
     this.emit('healthCheck', healthData);
-    
-    this.log(`Health check completed - Errors: ${healthData.totalErrors}, Error Rate: ${(healthData.errorRate * 100).toFixed(2)}%`, 'debug');
+
+    this.log(
+      `Health check completed - Errors: ${healthData.totalErrors}, Error Rate: ${(healthData.errorRate * 100).toFixed(2)}%`,
+      'debug',
+    );
   }
 
   setupApplicationLogMonitoring() {
@@ -569,36 +601,47 @@ class EnhancedLogMonitor extends EventEmitter {
         cpu: process.cpuUsage(),
         uptime: process.uptime(),
       };
-      
+
       this.trackPerformanceMetric({
         timestamp: metrics.timestamp,
         source: 'system',
         message: `System metrics: Memory RSS=${metrics.memory.rss}, CPU=${JSON.stringify(metrics.cpu)}`,
         parsed: {
           memory: { value: metrics.memory.rss, unit: 'bytes' },
-          cpu: { value: metrics.cpu.user + metrics.cpu.system, unit: 'microseconds' },
+          cpu: {
+            value: metrics.cpu.user + metrics.cpu.system,
+            unit: 'microseconds',
+          },
         },
       });
     }, 30000); // Every 30 seconds
   }
 
   cleanupOldEntries() {
-    const retentionTime = this.config.monitoring.retentionDays * 24 * 60 * 60 * 1000;
+    const retentionTime =
+      this.config.monitoring.retentionDays * 24 * 60 * 60 * 1000;
     const cutoff = Date.now() - retentionTime;
-    
-    this.metrics.errors = this.metrics.errors.filter(entry => 
-      new Date(entry.timestamp).getTime() > cutoff);
-    
-    this.metrics.warnings = this.metrics.warnings.filter(entry => 
-      new Date(entry.timestamp).getTime() > cutoff);
-    
-    this.metrics.performance = this.metrics.performance.filter(entry => 
-      new Date(entry.timestamp).getTime() > cutoff);
+
+    this.metrics.errors = this.metrics.errors.filter(
+      (entry) => new Date(entry.timestamp).getTime() > cutoff,
+    );
+
+    this.metrics.warnings = this.metrics.warnings.filter(
+      (entry) => new Date(entry.timestamp).getTime() > cutoff,
+    );
+
+    this.metrics.performance = this.metrics.performance.filter(
+      (entry) => new Date(entry.timestamp).getTime() > cutoff,
+    );
   }
 
   async saveMetrics() {
     try {
-      const metricsFile = path.join(this.config.logDir, 'aggregated', 'metrics.json');
+      const metricsFile = path.join(
+        this.config.logDir,
+        'aggregated',
+        'metrics.json',
+      );
       fs.writeFileSync(metricsFile, JSON.stringify(this.metrics, null, 2));
       this.log('Metrics saved successfully', 'debug');
     } catch (_error) {
@@ -610,16 +653,16 @@ class EnhancedLogMonitor extends EventEmitter {
     const shutdown = async () => {
       this.log('Shutting down enhanced log monitor...', 'info');
       this.isMonitoring = false;
-      
+
       // Close all file watchers
       for (const watcher of this.watchers.values()) {
         watcher.close();
       }
       this.watchers.clear();
-      
+
       // Save final metrics
       await this.saveMetrics();
-      
+
       this.log('Enhanced log monitor shut down gracefully', 'info');
       process.exit(0);
     };
@@ -635,7 +678,7 @@ class EnhancedLogMonitor extends EventEmitter {
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
-    
+
     if (level === 'error') {
       console.error(logEntry);
     } else if (level === 'warn') {
@@ -643,7 +686,7 @@ class EnhancedLogMonitor extends EventEmitter {
     } else {
       // console.warn(logEntry);
     }
-    
+
     // Also write to monitor's own log file
     const monitorLogPath = path.join(this.config.logDir, 'monitor.log');
     fs.appendFileSync(monitorLogPath, logEntry + '\n');
@@ -670,16 +713,17 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   getAlertHistory(hours = 24) {
-    const cutoff = Date.now() - (hours * 60 * 60 * 1000);
-    return this.alertHistory.filter(alert => 
-      new Date(alert.timestamp).getTime() > cutoff);
+    const cutoff = Date.now() - hours * 60 * 60 * 1000;
+    return this.alertHistory.filter(
+      (alert) => new Date(alert.timestamp).getTime() > cutoff,
+    );
   }
 }
 
 // CLI usage
 if (require.main === module) {
   const monitor = new EnhancedLogMonitor();
-  
+
   monitor.on('initialized', () => {
     console.warn('🚀 Enhanced log monitoring system is running');
     console.warn('📊 Access metrics at: http://localhost:3001/metrics');
@@ -693,8 +737,10 @@ if (require.main === module) {
   });
 
   monitor.on('healthCheck', (data) => {
-    console.warn(`💗 Health check: ${data.totalErrors} errors, ${(data.errorRate * 100).toFixed(1)}% error rate`);
+    console.warn(
+      `💗 Health check: ${data.totalErrors} errors, ${(data.errorRate * 100).toFixed(1)}% error rate`,
+    );
   });
 }
 
-module.exports = { EnhancedLogMonitor }; 
+module.exports = { EnhancedLogMonitor };

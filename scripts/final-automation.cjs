@@ -16,11 +16,11 @@ class FinalAutomation {
   async runCommand(command, options = {}) {
     try {
       this.log(`Running: ${command}`);
-      const result = execSync(command, { 
-        cwd: this.projectRoot, 
+      const result = execSync(command, {
+        cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options 
+        ...options,
       });
       return { success: true, output: result };
     } catch (error) {
@@ -30,9 +30,9 @@ class FinalAutomation {
 
   createMinimalWorkingApp() {
     this.log('Creating minimal working app...');
-    
+
     // Create a very simple Next.js app that should work with Node.js 22
-    
+
     // Create minimal _app.tsx
     const appContent = `import type { AppProps } from 'next/app';
 
@@ -40,8 +40,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', '_app.tsx'), appContent);
-    
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', '_app.tsx'),
+      appContent,
+    );
+
     // Create minimal index.tsx
     const indexContent = `export default function Home() {
   return (
@@ -88,8 +91,11 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', 'index.tsx'), indexContent);
-    
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', 'index.tsx'),
+      indexContent,
+    );
+
     // Create minimal API
     const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
@@ -108,49 +114,56 @@ export default function App({ Component, pageProps }: AppProps) {
 }`;
 
     fs.writeFileSync(path.join(apiDir, 'health.js'), healthContent);
-    
+
     this.log('Created minimal working app');
   }
 
   async tryDifferentPorts() {
     this.log('Trying different ports...');
-    
+
     const ports = [3003, 3004, 3005, 3006, 3007];
-    
+
     for (const port of ports) {
       this.log(`Trying port ${port}...`);
-      
-      const result = await this.runCommand(`npm run dev -- --port ${port}`, { timeout: 10000 });
-      
+
+      const result = await this.runCommand(`npm run dev -- --port ${port}`, {
+        timeout: 10000,
+      });
+
       if (result.success) {
         this.log(`Successfully started on port ${port}`);
         return port;
       }
     }
-    
+
     return null;
   }
 
   async startWithNodeOptions() {
     this.log('Starting with Node.js options...');
-    
+
     return new Promise((resolve) => {
-      const server = spawn('node', [
-        '--no-deprecation',
-        '--max-old-space-size=4096',
-        '--experimental-fetch',
-        'node_modules/.bin/next',
-        'dev',
-        '--port',
-        '3003'
-      ], {
-        cwd: this.projectRoot,
-        stdio: 'inherit',
-        env: {
-          ...process.env,
-          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096 --experimental-fetch'
-        }
-      });
+      const server = spawn(
+        'node',
+        [
+          '--no-deprecation',
+          '--max-old-space-size=4096',
+          '--experimental-fetch',
+          'node_modules/.bin/next',
+          'dev',
+          '--port',
+          '3003',
+        ],
+        {
+          cwd: this.projectRoot,
+          stdio: 'inherit',
+          env: {
+            ...process.env,
+            NODE_OPTIONS:
+              '--no-deprecation --max-old-space-size=4096 --experimental-fetch',
+          },
+        },
+      );
 
       let resolved = false;
 
@@ -183,19 +196,19 @@ export default function App({ Component, pageProps }: AppProps) {
 
   async runFinalAutomation() {
     this.log('Starting final automation...');
-    
+
     try {
       // Step 1: Create minimal working app
       this.createMinimalWorkingApp();
-      
+
       // Step 2: Try to start server with Node.js options
       const serverResult = await this.startWithNodeOptions();
-      
+
       if (serverResult.success) {
         this.log('🎉 SUCCESS: App is running!');
         this.log('🌐 Open http://localhost:3003 in your browser');
         this.log('📊 Health check: http://localhost:3003/api/health');
-        
+
         // Keep the process running
         process.on('SIGINT', () => {
           this.log('Shutting down...');
@@ -204,14 +217,13 @@ export default function App({ Component, pageProps }: AppProps) {
           }
           process.exit(0);
         });
-        
+
         return true;
       } else {
         this.log('❌ Failed to start server');
         this.log('💡 Try running: npm run dev -- --port 3003');
         return false;
       }
-      
     } catch (error) {
       this.log(`Error: ${error.message}`);
       return false;
@@ -222,16 +234,17 @@ export default function App({ Component, pageProps }: AppProps) {
 // Run if this script is executed directly
 if (require.main === module) {
   const automation = new FinalAutomation();
-  automation.runFinalAutomation()
-    .then(success => {
+  automation
+    .runFinalAutomation()
+    .then((success) => {
       if (!success) {
         process.exit(1);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Automation failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = FinalAutomation; 
+module.exports = FinalAutomation;

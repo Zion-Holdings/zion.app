@@ -12,28 +12,31 @@ try {
   const packageJsonPath = 'package.json';
   if (fs.existsSync(packageJsonPath)) {
     let content = fs.readFileSync(packageJsonPath, 'utf8');
-    
+
     // Remove Git merge conflict markers
-    content = content.replace(/<<<<<<< HEAD[\s\S]*?=======[\s\S]*?>>>>>>> [^\n]*/g, '');
+    content = content.replace(
+      /<<<<<<< HEAD[\s\S]*?=======[\s\S]*?>>>>>>> [^\n]*/g,
+      '',
+    );
     content = content.replace(/<<<<<<< HEAD[\s\S]*?>>>>>>> [^\n]*/g, '');
-    
+
     // Remove problematic scripts that cause connection errors
     const packageJson = JSON.parse(content);
-    
+
     // Remove problematic scripts
     const cleanScripts = {
-      "dev": "node scripts/simple-dev-server.cjs",
-      "build": "next build",
-      "start": "node simple-server.js",
-      "dev:next": "next dev --port 3001",
-      "lint": "next lint",
-      "test": "jest --passWithNoTests",
-      "maintain": "node scripts/zion-app-maintainer.cjs",
-      "automate": "node scripts/complete-zion-automation.cjs",
-      "health": "curl -s http://localhost:3001/api/health",
-      "status": "node scripts/zion-app-maintainer.cjs"
+      dev: 'node scripts/simple-dev-server.cjs',
+      build: 'next build',
+      start: 'node simple-server.js',
+      'dev:next': 'next dev --port 3001',
+      lint: 'next lint',
+      test: 'jest --passWithNoTests',
+      maintain: 'node scripts/zion-app-maintainer.cjs',
+      automate: 'node scripts/complete-zion-automation.cjs',
+      health: 'curl -s http://localhost:3001/api/health',
+      status: 'node scripts/zion-app-maintainer.cjs',
     };
-    
+
     packageJson.scripts = cleanScripts;
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
     console.log('✅ Fixed package.json');
@@ -49,10 +52,10 @@ const problematicScripts = [
   'scripts/cursor-ai-delegator.cjs',
   'scripts/multi-computer-ai-coordinator.cjs',
   'scripts/automation-coordinator.cjs',
-  'scripts/analyze-bundle.js'
+  'scripts/analyze-bundle.js',
 ];
 
-problematicScripts.forEach(script => {
+problematicScripts.forEach((script) => {
   if (fs.existsSync(script)) {
     try {
       fs.unlinkSync(script);
@@ -70,10 +73,10 @@ const problematicDirs = [
   'automation-data',
   'cursor-data',
   '.next',
-  'node_modules/.cache'
+  'node_modules/.cache',
 ];
 
-problematicDirs.forEach(dir => {
+problematicDirs.forEach((dir) => {
   if (fs.existsSync(dir)) {
     try {
       execSync(`rm -rf ${dir}`, { stdio: 'inherit' });
@@ -276,20 +279,25 @@ const finalStatus = {
     'Created simple working app structure',
     'Created health API endpoint',
     'Created simple dev server',
-    'Created simple HTML interface'
+    'Created simple HTML interface',
   ],
   appStatus: 'OPERATIONAL',
   healthEndpoint: 'http://localhost:3001/api/health',
-  mainEndpoint: 'http://localhost:3001'
+  mainEndpoint: 'http://localhost:3001',
 };
 
 // Ensure automation directory exists
 if (!fs.existsSync('automation')) {
   fs.mkdirSync('automation', { recursive: true });
 }
-fs.writeFileSync('automation/final-status.json', JSON.stringify(finalStatus, null, 2));
+fs.writeFileSync(
+  'automation/final-status.json',
+  JSON.stringify(finalStatus, null, 2),
+);
 console.log('✅ Generated final status report');
 
 console.log('\n🎉 Final Comprehensive Fix Complete!');
-console.log('🚀 The app should now be running smoothly on http://localhost:3001');
-console.log('📊 Health check: http://localhost:3001/api/health'); 
+console.log(
+  '🚀 The app should now be running smoothly on http://localhost:3001',
+);
+console.log('📊 Health check: http://localhost:3001/api/health');

@@ -18,7 +18,7 @@ class NetlifyBuildMonitor {
     this.isMonitoring = false;
     this.buildStartTime = null;
     this.maxBuildTime = 30 * 60 * 1000; // 30 minutes
-    
+
     this.logFile = 'logs/build-monitor.log';
     this.ensureLogsDirectory();
   }
@@ -26,7 +26,7 @@ class NetlifyBuildMonitor {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
@@ -41,17 +41,20 @@ class NetlifyBuildMonitor {
   async startMonitoring() {
     this.log('Starting Netlify Build Monitor...');
     this.isMonitoring = true;
-    
+
     // Monitor for build triggers
     this.monitorBuildTriggers();
-    
+
     // Monitor existing build processes
     this.monitorExistingBuilds();
-    
+
     // Start periodic health checks
-    setInterval(() => {
-      this.performHealthCheck();
-    }, 5 * 60 * 1000); // Every 5 minutes
+    setInterval(
+      () => {
+        this.performHealthCheck();
+      },
+      5 * 60 * 1000,
+    ); // Every 5 minutes
   }
 
   monitorBuildTriggers() {
@@ -60,13 +63,13 @@ class NetlifyBuildMonitor {
       'package.json',
       'netlify.toml',
       'next.config.js',
-      'tsconfig.json'
+      'tsconfig.json',
     ];
-    
-    watchFiles.forEach(file => {
+
+    watchFiles.forEach((file) => {
       if (fs.existsSync(file)) {
         let lastHash = this.getFileHash(file);
-        
+
         setInterval(() => {
           const currentHash = this.getFileHash(file);
           if (currentHash !== lastHash) {
@@ -91,11 +94,14 @@ class NetlifyBuildMonitor {
   monitorExistingBuilds() {
     // Check if there's already a build running
     this.log('Checking for existing builds...');
-    
+
     try {
       // Check for build processes
-      const processes = execSync('ps aux | grep -E "(next|npm|node)" | grep -v grep', { encoding: 'utf8' });
-      
+      const processes = execSync(
+        'ps aux | grep -E "(next|npm|node)" | grep -v grep',
+        { encoding: 'utf8' },
+      );
+
       if (processes.includes('build') || processes.includes('next build')) {
         this.log('Build process detected, starting monitoring...');
         this.monitorForBuild();
@@ -114,10 +120,10 @@ class NetlifyBuildMonitor {
     this.log('Starting build monitoring...');
     this.buildStartTime = Date.now();
     this.buildLog = [];
-    
+
     // Monitor build output
     this.monitorBuildOutput();
-    
+
     // Set up build timeout
     setTimeout(() => {
       if (this.currentBuild) {
@@ -133,25 +139,24 @@ class NetlifyBuildMonitor {
       'build.log',
       '.next/build-manifest.json',
       'out',
-      '.next/static'
+      '.next/static',
     ];
-    
+
     setInterval(() => {
       if (!this.currentBuild) return;
-      
+
       // Check for build completion
       if (fs.existsSync('.next/build-manifest.json')) {
         this.log('Build completed successfully');
         this.handleBuildSuccess();
         return;
       }
-      
+
       // Check for build errors
       this.checkForBuildErrors();
-      
+
       // Check build progress
       this.checkBuildProgress();
-      
     }, 5000); // Check every 5 seconds
   }
 
@@ -160,22 +165,22 @@ class NetlifyBuildMonitor {
       'build.log',
       'error.log',
       'lint.log',
-      'eslint-report.json'
+      'eslint-report.json',
     ];
-    
+
     for (const file of errorFiles) {
       if (fs.existsSync(file)) {
         const content = fs.readFileSync(file, 'utf8');
-        
+
         // Check for critical errors
         const criticalErrors = [
           /JavaScript heap out of memory/,
           /Build failed/,
           /Failed to compile/,
           /Module not found/,
-          /Cannot find module/
+          /Cannot find module/,
         ];
-        
+
         for (const errorPattern of criticalErrors) {
           if (errorPattern.test(content)) {
             this.log(`Critical build error detected in ${file}`);
@@ -190,12 +195,12 @@ class NetlifyBuildMonitor {
   checkBuildProgress() {
     // Check if build is making progress
     const buildDirs = ['.next', 'out'];
-    
+
     for (const dir of buildDirs) {
       if (fs.existsSync(dir)) {
         const stats = fs.statSync(dir);
         const lastModified = stats.mtime.getTime();
-        
+
         // If no changes in last 5 minutes, might be stuck
         if (Date.now() - lastModified > 5 * 60 * 1000) {
           this.log(`Build appears stuck - no changes in ${dir} for 5 minutes`);
@@ -208,21 +213,21 @@ class NetlifyBuildMonitor {
 
   handleBuildError(file, content) {
     this.log(`Handling build error from ${file}`);
-    
+
     // Analyze the error and determine appropriate fixes
     const issues = this.analyzeBuildError(content);
-    
+
     if (issues.length > 0) {
       this.log(`Triggering self-healing for issues: ${issues.join(', ')}`);
       this.healing.triggerSelfHealing(issues);
     }
-    
+
     this.currentBuild = null;
   }
 
   handleBuildTimeout() {
     this.log('Build timeout reached');
-    
+
     // Kill any hanging build processes
     try {
       execSync('pkill -f "next build"', { stdio: 'pipe' });
@@ -230,64 +235,64 @@ class NetlifyBuildMonitor {
     } catch (error) {
       // Process might not exist
     }
-    
+
     // Trigger timeout-related fixes
     this.healing.triggerSelfHealing(['timeout']);
-    
+
     this.currentBuild = null;
   }
 
   handleBuildStuck() {
     this.log('Build appears to be stuck');
-    
+
     // Trigger stuck build fixes
     this.healing.triggerSelfHealing(['timeout', 'build']);
-    
+
     this.currentBuild = null;
   }
 
   handleBuildSuccess() {
     this.log('Build completed successfully');
-    
+
     // Record successful build
     this.recordBuildSuccess();
-    
+
     this.currentBuild = null;
   }
 
   analyzeBuildError(content) {
     const issues = [];
-    
+
     // Memory issues
     if (/JavaScript heap out of memory|ENOMEM/.test(content)) {
       issues.push('memory');
     }
-    
+
     // Timeout issues
     if (/timeout|ETIMEDOUT/.test(content)) {
       issues.push('timeout');
     }
-    
+
     // Dependency issues
     if (/Cannot find module|Module not found/.test(content)) {
       issues.push('dependency');
     }
-    
+
     // TypeScript issues
     if (/Type.*is not assignable|TS\d+/.test(content)) {
       issues.push('typescript');
     }
-    
+
     // Linting issues
     if (/ESLint|linting/.test(content)) {
       issues.push('linting');
     }
-    
+
     // General build issues
     if (/Build failed|Failed to compile/.test(content)) {
       issues.push('build');
     }
-    
+
     return issues;
   }
 
@@ -296,36 +301,39 @@ class NetlifyBuildMonitor {
       timestamp: new Date().toISOString(),
       duration: Date.now() - this.buildStartTime,
       status: 'success',
-      log: this.buildLog
+      log: this.buildLog,
     };
-    
+
     // Save build record
     const buildHistoryFile = 'logs/build-history.json';
     let buildHistory = [];
-    
+
     if (fs.existsSync(buildHistoryFile)) {
       buildHistory = JSON.parse(fs.readFileSync(buildHistoryFile, 'utf8'));
     }
-    
+
     buildHistory.push(buildRecord);
-    
+
     // Keep only last 50 builds
     if (buildHistory.length > 50) {
       buildHistory = buildHistory.slice(-50);
     }
-    
+
     fs.writeFileSync(buildHistoryFile, JSON.stringify(buildHistory, null, 2));
   }
 
   async performHealthCheck() {
     if (!this.isMonitoring) return;
-    
+
     this.log('Performing build health check...');
-    
+
     // Check for orphaned build processes
     try {
-      const processes = execSync('ps aux | grep -E "(next|npm|node)" | grep -v grep', { encoding: 'utf8' });
-      
+      const processes = execSync(
+        'ps aux | grep -E "(next|npm|node)" | grep -v grep',
+        { encoding: 'utf8' },
+      );
+
       if (processes.includes('build') && !this.currentBuild) {
         this.log('Orphaned build process detected, cleaning up...');
         execSync('pkill -f "next build"', { stdio: 'pipe' });
@@ -334,10 +342,10 @@ class NetlifyBuildMonitor {
     } catch (error) {
       // No processes found
     }
-    
+
     // Check disk space
     this.checkDiskSpace();
-    
+
     // Check for stuck builds
     this.checkForStuckBuilds();
   }
@@ -346,11 +354,11 @@ class NetlifyBuildMonitor {
     try {
       const df = execSync('df .', { encoding: 'utf8' });
       const lines = df.split('\n');
-      
+
       if (lines.length > 1) {
         const parts = lines[1].split(/\s+/);
         const usedPercent = parseInt(parts[4].replace('%', ''));
-        
+
         if (usedPercent > 90) {
           this.log('Disk space critical, triggering cleanup...');
           this.healing.triggerSelfHealing(['disk']);
@@ -364,12 +372,12 @@ class NetlifyBuildMonitor {
   checkForStuckBuilds() {
     // Check for build artifacts that haven't been updated recently
     const buildDirs = ['.next', 'out', 'dist'];
-    
+
     for (const dir of buildDirs) {
       if (fs.existsSync(dir)) {
         const stats = fs.statSync(dir);
         const lastModified = stats.mtime.getTime();
-        
+
         // If build directory hasn't been updated in 10 minutes
         if (Date.now() - lastModified > 10 * 60 * 1000) {
           this.log(`Stuck build detected in ${dir}`);
@@ -391,7 +399,9 @@ class NetlifyBuildMonitor {
       isMonitoring: this.isMonitoring,
       currentBuild: this.currentBuild,
       buildStartTime: this.buildStartTime,
-      buildDuration: this.buildStartTime ? Date.now() - this.buildStartTime : null
+      buildDuration: this.buildStartTime
+        ? Date.now() - this.buildStartTime
+        : null,
     };
   }
 }
@@ -399,26 +409,26 @@ class NetlifyBuildMonitor {
 // CLI interface
 if (require.main === module) {
   const monitor = new NetlifyBuildMonitor();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       monitor.startMonitoring();
       break;
-    
+
     case 'stop':
       monitor.stopMonitoring();
       break;
-    
+
     case 'status':
       console.log(JSON.stringify(monitor.getStatus(), null, 2));
       break;
-    
+
     case 'monitor':
       monitor.monitorForBuild();
       break;
-    
+
     default:
       console.log(`
 Netlify Build Monitor
@@ -439,4 +449,4 @@ Examples:
   }
 }
 
-module.exports = NetlifyBuildMonitor; 
+module.exports = NetlifyBuildMonitor;

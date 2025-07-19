@@ -16,16 +16,16 @@ class SimpleWorkingApp {
 
   async createSimpleWorkingApp() {
     this.log('🚀 Creating Simple Working App...');
-    
+
     try {
       await this.cleanEverything();
       await this.createMinimalStructure();
       await this.startSimpleServer();
-      
+
       this.log('📊 Simple Working App Summary:');
       this.log(`✅ Fixes applied: ${this.fixes.length}`);
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
-      
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+
       this.log('🎉 Simple Working App completed!');
       return true;
     } catch (error) {
@@ -36,19 +36,19 @@ class SimpleWorkingApp {
 
   async cleanEverything() {
     this.log('🧹 Cleaning everything...');
-    
+
     try {
       // Kill all processes
       execSync('pkill -f "next" || true', { stdio: 'ignore' });
       execSync('pkill -f "node.*scripts" || true', { stdio: 'ignore' });
-      
+
       // Clean all build artifacts
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf node_modules/.cache', { stdio: 'ignore' });
       execSync('rm -rf .swc', { stdio: 'ignore' });
       execSync('rm -rf dist', { stdio: 'ignore' });
       execSync('rm -rf out', { stdio: 'ignore' });
-      
+
       this.fixes.push('Cleaned all artifacts and processes');
       this.log('✅ Everything cleaned');
     } catch (error) {
@@ -58,7 +58,7 @@ class SimpleWorkingApp {
 
   async createMinimalStructure() {
     this.log('🔧 Creating minimal structure...');
-    
+
     try {
       // Create a simple HTML server
       const serverContent = `const express = require('express');
@@ -137,10 +137,10 @@ app.listen(PORT, () => {
   console.log(\`🚀 Zion App running on http://localhost:\${PORT}\`);
   console.log('✅ Simple working app started');
 });`;
-      
+
       fs.writeFileSync('simple-server.js', serverContent);
       this.fixes.push('Created simple server');
-      
+
       // Install express if not present
       try {
         execSync('npm install express', { stdio: 'inherit' });
@@ -148,45 +148,59 @@ app.listen(PORT, () => {
       } catch (error) {
         this.log('⚠️ Express already installed or failed to install', 'WARN');
       }
-      
+
       this.log('✅ Minimal structure created');
     } catch (error) {
-      this.log(`❌ Error creating minimal structure: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Error creating minimal structure: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
 
   async startSimpleServer() {
     this.log('🚀 Starting simple server...');
-    
+
     try {
       // Start the server
       const serverProcess = spawn('node', ['simple-server.js'], {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
-      
+
       serverProcess.stdout.on('data', (data) => {
         this.log(`SERVER: ${data.toString().trim()}`);
       });
-      
+
       serverProcess.stderr.on('data', (data) => {
         this.log(`SERVER ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 5000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Simple server started and responding');
           this.log('✅ Simple server started and responding');
@@ -194,7 +208,7 @@ app.listen(PORT, () => {
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return serverProcess;
     } catch (error) {
       this.log(`❌ Error starting simple server: ${error.message}`, 'ERROR');
@@ -206,10 +220,10 @@ app.listen(PORT, () => {
 // Run if called directly
 if (require.main === module) {
   const app = new SimpleWorkingApp();
-  app.createSimpleWorkingApp().catch(error => {
+  app.createSimpleWorkingApp().catch((error) => {
     console.error('Simple working app failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = SimpleWorkingApp; 
+module.exports = SimpleWorkingApp;

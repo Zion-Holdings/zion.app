@@ -21,4 +21,3 @@ try {
   console.error('Failed to create media kit archive:', err);
   process.exit(1);
 }
-

@@ -11,13 +11,13 @@ class PagesSyntaxFixer {
 
   async fixPagesDirectory() {
     console.log('🔧 Fixing pages directory syntax errors...');
-    
+
     try {
       const pagesDir = 'pages';
       const files = this.getAllFiles(pagesDir);
-      
+
       console.log(`📁 Found ${files.length} files in pages directory`);
-      
+
       for (const file of files) {
         try {
           await this.fixPageFile(file);
@@ -25,9 +25,8 @@ class PagesSyntaxFixer {
           this.errors.push({ file, error: error.message });
         }
       }
-      
+
       this.generateReport();
-      
     } catch (error) {
       console.error('❌ Pages fix failed:', error);
     }
@@ -36,20 +35,27 @@ class PagesSyntaxFixer {
   getAllFiles(dir) {
     const files = [];
     const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-    
+
     function walkDir(currentDir) {
       try {
         const items = fs.readdirSync(currentDir);
-        
+
         for (const item of items) {
           const fullPath = path.join(currentDir, item);
-          
+
           try {
             const stat = fs.statSync(fullPath);
-            
-            if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+
+            if (
+              stat.isDirectory() &&
+              !item.startsWith('.') &&
+              item !== 'node_modules'
+            ) {
               walkDir(fullPath);
-            } else if (stat.isFile() && extensions.some(ext => item.endsWith(ext))) {
+            } else if (
+              stat.isFile() &&
+              extensions.some((ext) => item.endsWith(ext))
+            ) {
               files.push(fullPath);
             }
           } catch (error) {
@@ -60,7 +66,7 @@ class PagesSyntaxFixer {
         // Skip directories that can't be accessed
       }
     }
-    
+
     walkDir(dir);
     return files;
   }
@@ -69,16 +75,15 @@ class PagesSyntaxFixer {
     try {
       const content = fs.readFileSync(filePath, 'utf8');
       const originalContent = content;
-      
+
       // Fix common page syntax errors
       let fixedContent = this.fixPageErrors(content, filePath);
-      
+
       if (fixedContent !== originalContent) {
         fs.writeFileSync(filePath, fixedContent, 'utf8');
         this.fixedFiles.push(filePath);
         console.log(`✅ Fixed: ${filePath}`);
       }
-      
     } catch (error) {
       console.error(`❌ Error fixing ${filePath}:`, error.message);
       throw error;
@@ -88,20 +93,20 @@ class PagesSyntaxFixer {
   fixPageErrors(content, filePath) {
     let fixed = content;
     const fileName = path.basename(filePath, path.extname(filePath));
-    
+
     // Fix unterminated string constants
     fixed = fixed.replace(/';$/gm, ';');
     fixed = fixed.replace(/";$/gm, ';');
-    
+
     // Fix unterminated template literals
     fixed = fixed.replace(/`([^`]*)$/gm, '`$1`');
-    
+
     // Fix unexpected tokens
     fixed = fixed.replace(/^\s*}\s*$/gm, '');
     fixed = fixed.replace(/^\s*{\s*$/gm, '');
     fixed = fixed.replace(/^\s*;\s*$/gm, '');
     fixed = fixed.replace(/^\s*:\s*$/gm, '');
-    
+
     // Fix specific page patterns
     if (fileName === '403' || fileName === '404' || fileName === '500') {
       fixed = this.createErrorPage(fileName);
@@ -127,7 +132,7 @@ class PagesSyntaxFixer {
       // Create a generic page component
       fixed = this.createGenericPage(fileName);
     }
-    
+
     return fixed;
   }
 
@@ -377,9 +382,9 @@ export default Performance;
   createGenericPage(pageName) {
     const componentName = pageName
       .split(/[-_]/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join('');
-    
+
     return `import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -409,14 +414,14 @@ export default ${componentName};
     console.log('===========================');
     console.log(`Files fixed: ${this.fixedFiles.length}`);
     console.log(`Errors encountered: ${this.errors.length}`);
-    
+
     if (this.fixedFiles.length > 0) {
       console.log('\n✅ Fixed files:');
-      this.fixedFiles.forEach(file => {
+      this.fixedFiles.forEach((file) => {
         console.log(`  - ${file}`);
       });
     }
-    
+
     if (this.errors.length > 0) {
       console.log('\n❌ Errors:');
       this.errors.forEach(({ file, error }) => {
@@ -432,4 +437,4 @@ if (require.main === module) {
   fixer.fixPagesDirectory();
 }
 
-module.exports = PagesSyntaxFixer; 
+module.exports = PagesSyntaxFixer;

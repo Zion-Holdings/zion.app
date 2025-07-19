@@ -10,7 +10,7 @@ async function main() {
   }
   await monitor.readLogs();
   const criticals = monitor.errors.filter(
-    e => e.level === 'critical' || monitor.containsCriticalKeyword(e.message)
+    (e) => e.level === 'critical' || monitor.containsCriticalKeyword(e.message),
   );
   if (criticals.length > 0) {
     const alertMsg = `[ALERT] [${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`;
@@ -23,7 +23,7 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch(err => {
+  main().catch((err) => {
     console.error('Failed to setup log alerts:', err);
     process.exit(1);
   });

@@ -35,7 +35,7 @@ function fixFile(filePath) {
 
 const files = walk(path.join(process.cwd(), 'src'));
 let count = 0;
-files.forEach(f => {
+files.forEach((f) => {
   if (fixFile(f)) count++;
 });
 

@@ -13,7 +13,7 @@ function loadEnvFile(envPath) {
   if (fs.existsSync(envPath)) {
     const envContent = fs.readFileSync(envPath, 'utf8');
     const lines = envContent.split('\n');
-    
+
     for (const line of lines) {
       const trimmed = line.trim();
       if (trimmed && !trimmed.startsWith('#')) {
@@ -32,33 +32,26 @@ function loadEnvFile(envPath) {
 loadEnvFile('.env.local');
 
 const requiredEnvVars = {
-  critical: [
-    'NEXT_PUBLIC_SUPABASE_URL',
-    'NEXT_PUBLIC_SUPABASE_ANON_KEY'
-  ],
+  critical: ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'],
   authentication: [
-    'AUTH0_SECRET', 
+    'AUTH0_SECRET',
     'AUTH0_BASE_URL',
     'AUTH0_ISSUER_BASE_URL',
     'AUTH0_CLIENT_ID',
-    'AUTH0_CLIENT_SECRET'
+    'AUTH0_CLIENT_SECRET',
   ],
-  recommended: [
-    'NEXT_PUBLIC_SENTRY_DSN',
-    'SENTRY_ORG',
-    'SENTRY_PROJECT'
-  ]
+  recommended: ['NEXT_PUBLIC_SENTRY_DSN', 'SENTRY_ORG', 'SENTRY_PROJECT'],
 };
 
 function validateEnvironment() {
   // console.warn('🔍 Validating Production Environment Variables\n');
-  
+
   let hasErrors = false;
   let warnings = 0;
-  
+
   // Check critical variables
   // console.warn('🔴 CRITICAL (Required for basic functionality):');
-  requiredEnvVars.critical.forEach(envVar => {
+  requiredEnvVars.critical.forEach((envVar) => {
     if (!process.env[envVar]) {
       // console.error(`  ❌ ${envVar} - MISSING (CRITICAL)`);
       hasErrors = true;
@@ -66,10 +59,10 @@ function validateEnvironment() {
       // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
-  
+
   // Check authentication variables
   // console.warn('\n🟡 AUTHENTICATION (Required for user login):');
-  requiredEnvVars.authentication.forEach(envVar => {
+  requiredEnvVars.authentication.forEach((envVar) => {
     if (!process.env[envVar]) {
       // console.error(`  ❌ ${envVar} - MISSING (AUTH REQUIRED)`);
       hasErrors = true;
@@ -77,10 +70,10 @@ function validateEnvironment() {
       // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
-  
+
   // Check recommended variables
   // console.warn('\n🟢 RECOMMENDED (For optimal production experience):');
-  requiredEnvVars.recommended.forEach(envVar => {
+  requiredEnvVars.recommended.forEach((envVar) => {
     if (!process.env[envVar]) {
       // console.warn(`  ⚠️ ${envVar} - Missing (Recommended)`);
       warnings++;
@@ -88,7 +81,7 @@ function validateEnvironment() {
       // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
-  
+
   // console.warn('\n' + '='.repeat(50));
   if (hasErrors) {
     // console.error('🚫 ENVIRONMENT VALIDATION FAILED');

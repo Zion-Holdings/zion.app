@@ -2,9 +2,9 @@ name: Auto Report Errors to Codex
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types: [opened, synchronize, reopened]
 
 jobs:
   report-errors:

@@ -15,51 +15,52 @@ const CONFIG = {
   cursorApiUrl: process.env.CURSOR_API_URL || 'https://api.cursor.sh',
   cursorApiKey: process.env.CURSOR_API_KEY,
   cursorWorkspaceId: process.env.CURSOR_WORKSPACE_ID,
-  
+
   // Chat categories
   chatCategories: {
     build: {
       title: 'Build Issues',
-      description: 'Issues related to build process, dependencies, and compilation'
+      description:
+        'Issues related to build process, dependencies, and compilation',
     },
     lint: {
       title: 'Code Quality',
-      description: 'ESLint, Prettier, and code style issues'
+      description: 'ESLint, Prettier, and code style issues',
     },
     typescript: {
       title: 'Type Safety',
-      description: 'TypeScript errors and type definition issues'
+      description: 'TypeScript errors and type definition issues',
     },
     runtime: {
       title: 'Runtime Errors',
-      description: 'JavaScript runtime errors and exceptions'
+      description: 'JavaScript runtime errors and exceptions',
     },
     performance: {
       title: 'Performance',
-      description: 'Performance bottlenecks and optimization opportunities'
+      description: 'Performance bottlenecks and optimization opportunities',
     },
     security: {
       title: 'Security',
-      description: 'Security vulnerabilities and best practices'
+      description: 'Security vulnerabilities and best practices',
     },
     accessibility: {
       title: 'Accessibility',
-      description: 'Accessibility issues and WCAG compliance'
+      description: 'Accessibility issues and WCAG compliance',
     },
     testing: {
       title: 'Testing',
-      description: 'Test failures and testing improvements'
+      description: 'Test failures and testing improvements',
     },
     deployment: {
       title: 'Deployment',
-      description: 'Deployment issues and CI/CD improvements'
+      description: 'Deployment issues and CI/CD improvements',
     },
     userExperience: {
       title: 'User Experience',
-      description: 'UX improvements and user interface issues'
-    }
+      description: 'UX improvements and user interface issues',
+    },
   },
-  
+
   // Information gathering
   infoSources: [
     'package.json',
@@ -75,8 +76,8 @@ const CONFIG = {
     'components/',
     'utils/',
     'hooks/',
-    'context/'
-  ]
+    'context/',
+  ],
 };
 
 class CursorChatTrigger {
@@ -88,7 +89,7 @@ class CursorChatTrigger {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
@@ -102,7 +103,7 @@ class CursorChatTrigger {
 
   async triggerComprehensiveChat(category = 'general', specificIssue = null) {
     this.log(`Triggering comprehensive Cursor chat for category: ${category}`);
-    
+
     try {
       // Gather comprehensive information
       const projectInfo = await this.gatherProjectInformation();
@@ -110,7 +111,7 @@ class CursorChatTrigger {
       const performanceData = await this.gatherPerformanceData();
       const securityData = await this.gatherSecurityData();
       const accessibilityData = await this.gatherAccessibilityData();
-      
+
       // Generate detailed prompt
       const prompt = this.generateComprehensivePrompt({
         category,
@@ -119,15 +120,14 @@ class CursorChatTrigger {
         currentIssues,
         performanceData,
         securityData,
-        accessibilityData
+        accessibilityData,
       });
-      
+
       // Send to Cursor
       const response = await this.sendCursorChat(prompt);
-      
+
       this.log(`Cursor chat triggered successfully for ${category}`);
       return response;
-      
     } catch (error) {
       this.log(`Failed to trigger Cursor chat: ${error.message}`, 'ERROR');
       throw error;
@@ -141,9 +141,9 @@ class CursorChatTrigger {
       scripts: [],
       configs: {},
       fileStructure: {},
-      recentChanges: []
+      recentChanges: [],
     };
-    
+
     try {
       // Package.json information
       if (fs.existsSync('package.json')) {
@@ -153,19 +153,19 @@ class CursorChatTrigger {
           version: packageJson.version,
           dependencies: Object.keys(packageJson.dependencies || {}),
           devDependencies: Object.keys(packageJson.devDependencies || {}),
-          scripts: Object.keys(packageJson.scripts || {})
+          scripts: Object.keys(packageJson.scripts || {}),
         };
       }
-      
+
       // Configuration files
       const configFiles = [
         'next.config.js',
         'tsconfig.json',
         'tailwind.config.js',
         '.eslintrc.js',
-        'jest.config.js'
+        'jest.config.js',
       ];
-      
+
       for (const configFile of configFiles) {
         if (fs.existsSync(configFile)) {
           try {
@@ -176,17 +176,19 @@ class CursorChatTrigger {
           }
         }
       }
-      
+
       // File structure
       info.fileStructure = this.getFileStructure();
-      
+
       // Recent changes
       info.recentChanges = this.getRecentChanges();
-      
     } catch (error) {
-      this.log(`Error gathering project information: ${error.message}`, 'ERROR');
+      this.log(
+        `Error gathering project information: ${error.message}`,
+        'ERROR',
+      );
     }
-    
+
     return info;
   }
 
@@ -196,15 +198,15 @@ class CursorChatTrigger {
       lint: [],
       typescript: [],
       runtime: [],
-      tests: []
+      tests: [],
     };
-    
+
     try {
       // Build issues
       try {
-        const buildOutput = execSync('npm run build 2>&1', { 
+        const buildOutput = execSync('npm run build 2>&1', {
           encoding: 'utf8',
-          timeout: 300000 
+          timeout: 300000,
         });
         if (buildOutput.includes('error') || buildOutput.includes('Error')) {
           issues.build.push(buildOutput);
@@ -212,12 +214,12 @@ class CursorChatTrigger {
       } catch (error) {
         issues.build.push(error.stdout || error.stderr || error.message);
       }
-      
+
       // Lint issues
       try {
-        const lintOutput = execSync('npm run lint 2>&1', { 
+        const lintOutput = execSync('npm run lint 2>&1', {
           encoding: 'utf8',
-          timeout: 120000 
+          timeout: 120000,
         });
         if (lintOutput.includes('error') || lintOutput.includes('Error')) {
           issues.lint.push(lintOutput);
@@ -225,12 +227,12 @@ class CursorChatTrigger {
       } catch (error) {
         issues.lint.push(error.stdout || error.stderr || error.message);
       }
-      
+
       // TypeScript issues
       try {
-        const typeOutput = execSync('npm run typecheck 2>&1', { 
+        const typeOutput = execSync('npm run typecheck 2>&1', {
           encoding: 'utf8',
-          timeout: 120000 
+          timeout: 120000,
         });
         if (typeOutput.includes('error') || typeOutput.includes('Error')) {
           issues.typescript.push(typeOutput);
@@ -238,12 +240,12 @@ class CursorChatTrigger {
       } catch (error) {
         issues.typescript.push(error.stdout || error.stderr || error.message);
       }
-      
+
       // Test issues
       try {
-        const testOutput = execSync('npm test 2>&1', { 
+        const testOutput = execSync('npm test 2>&1', {
           encoding: 'utf8',
-          timeout: 300000 
+          timeout: 300000,
         });
         if (testOutput.includes('FAIL') || testOutput.includes('error')) {
           issues.tests.push(testOutput);
@@ -251,11 +253,10 @@ class CursorChatTrigger {
       } catch (error) {
         issues.tests.push(error.stdout || error.stderr || error.message);
       }
-      
     } catch (error) {
       this.log(`Error gathering current issues: ${error.message}`, 'ERROR');
     }
-    
+
     return issues;
   }
 
@@ -264,47 +265,49 @@ class CursorChatTrigger {
       bundleSize: null,
       buildTime: null,
       memoryUsage: null,
-      lighthouse: null
+      lighthouse: null,
     };
-    
+
     try {
       // Bundle analysis
       try {
-        const bundleOutput = execSync('npm run bundle:analyze 2>&1', { 
+        const bundleOutput = execSync('npm run bundle:analyze 2>&1', {
           encoding: 'utf8',
-          timeout: 120000 
+          timeout: 120000,
         });
         performance.bundleSize = bundleOutput;
       } catch (error) {
         performance.bundleSize = 'Bundle analysis failed';
       }
-      
+
       // Build time
       const startTime = Date.now();
       try {
-        execSync('npm run build', { 
+        execSync('npm run build', {
           stdio: 'pipe',
-          timeout: 300000 
+          timeout: 300000,
         });
         performance.buildTime = Date.now() - startTime;
       } catch (error) {
         performance.buildTime = 'Build failed';
       }
-      
+
       // Memory usage
       try {
-        const memoryOutput = execSync('node -e "console.log(process.memoryUsage())"', { 
-          encoding: 'utf8' 
-        });
+        const memoryOutput = execSync(
+          'node -e "console.log(process.memoryUsage())"',
+          {
+            encoding: 'utf8',
+          },
+        );
         performance.memoryUsage = memoryOutput;
       } catch (error) {
         performance.memoryUsage = 'Memory check failed';
       }
-      
     } catch (error) {
       this.log(`Error gathering performance data: ${error.message}`, 'ERROR');
     }
-    
+
     return performance;
   }
 
@@ -312,47 +315,41 @@ class CursorChatTrigger {
     const security = {
       vulnerabilities: [],
       audit: null,
-      dependencies: []
+      dependencies: [],
     };
-    
+
     try {
       // NPM audit
       try {
-        const auditOutput = execSync('npm audit --json 2>&1', { 
+        const auditOutput = execSync('npm audit --json 2>&1', {
           encoding: 'utf8',
-          timeout: 60000 
+          timeout: 60000,
         });
         security.audit = auditOutput;
       } catch (error) {
         security.audit = 'Audit failed';
       }
-      
+
       // Check for known vulnerable dependencies
-      const vulnerableDeps = [
-        'lodash',
-        'moment',
-        'jquery',
-        'express'
-      ];
-      
+      const vulnerableDeps = ['lodash', 'moment', 'jquery', 'express'];
+
       if (fs.existsSync('package.json')) {
         const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
         const allDeps = {
           ...packageJson.dependencies,
-          ...packageJson.devDependencies
+          ...packageJson.devDependencies,
         };
-        
+
         for (const dep of vulnerableDeps) {
           if (allDeps[dep]) {
             security.dependencies.push(`${dep}: ${allDeps[dep]}`);
           }
         }
       }
-      
     } catch (error) {
       this.log(`Error gathering security data: ${error.message}`, 'ERROR');
     }
-    
+
     return security;
   }
 
@@ -360,50 +357,55 @@ class CursorChatTrigger {
     const accessibility = {
       axeResults: null,
       wcagIssues: [],
-      ariaIssues: []
+      ariaIssues: [],
     };
-    
+
     try {
       // Run accessibility tests if available
       try {
-        const axeOutput = execSync('npm run test:axe 2>&1', { 
+        const axeOutput = execSync('npm run test:axe 2>&1', {
           encoding: 'utf8',
-          timeout: 120000 
+          timeout: 120000,
         });
         accessibility.axeResults = axeOutput;
       } catch (error) {
         accessibility.axeResults = 'Accessibility tests not available';
       }
-      
+
       // Check for common accessibility issues in code
       const srcFiles = this.findFiles('src/**/*.{js,jsx,ts,tsx}');
-      for (const file of srcFiles.slice(0, 10)) { // Check first 10 files
+      for (const file of srcFiles.slice(0, 10)) {
+        // Check first 10 files
         const content = fs.readFileSync(file, 'utf8');
-        
+
         // Check for missing alt attributes
         if (content.includes('<img') && !content.includes('alt=')) {
-          accessibility.wcagIssues.push(`${file}: Missing alt attribute on img`);
+          accessibility.wcagIssues.push(
+            `${file}: Missing alt attribute on img`,
+          );
         }
-        
+
         // Check for missing ARIA labels
-        if (content.includes('aria-label') && !content.includes('aria-label=')) {
+        if (
+          content.includes('aria-label') &&
+          !content.includes('aria-label=')
+        ) {
           accessibility.ariaIssues.push(`${file}: Incomplete ARIA label`);
         }
       }
-      
     } catch (error) {
       this.log(`Error gathering accessibility data: ${error.message}`, 'ERROR');
     }
-    
+
     return accessibility;
   }
 
   getFileStructure() {
     const structure = {};
-    
+
     try {
       const dirs = ['src', 'pages', 'components', 'utils', 'hooks', 'context'];
-      
+
       for (const dir of dirs) {
         if (fs.existsSync(dir)) {
           structure[dir] = this.getDirectoryStructure(dir, 2); // 2 levels deep
@@ -412,24 +414,29 @@ class CursorChatTrigger {
     } catch (error) {
       this.log(`Error getting file structure: ${error.message}`, 'ERROR');
     }
-    
+
     return structure;
   }
 
   getDirectoryStructure(dir, maxDepth, currentDepth = 0) {
     if (currentDepth >= maxDepth) return '...';
-    
+
     const structure = {};
-    
+
     try {
       const items = fs.readdirSync(dir);
-      
-      for (const item of items.slice(0, 10)) { // Limit to 10 items
+
+      for (const item of items.slice(0, 10)) {
+        // Limit to 10 items
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory()) {
-          structure[item] = this.getDirectoryStructure(fullPath, maxDepth, currentDepth + 1);
+          structure[item] = this.getDirectoryStructure(
+            fullPath,
+            maxDepth,
+            currentDepth + 1,
+          );
         } else {
           structure[item] = 'file';
         }
@@ -437,33 +444,36 @@ class CursorChatTrigger {
     } catch (error) {
       structure.error = error.message;
     }
-    
+
     return structure;
   }
 
   getRecentChanges() {
     const changes = [];
-    
+
     try {
       const gitLog = execSync('git log --oneline -10', { encoding: 'utf8' });
-      changes.push(...gitLog.split('\n').filter(line => line.trim()));
+      changes.push(...gitLog.split('\n').filter((line) => line.trim()));
     } catch (error) {
       changes.push('Git log unavailable');
     }
-    
+
     return changes;
   }
 
   findFiles(pattern) {
     const files = [];
-    
+
     try {
       const glob = require('glob');
       files.push(...glob.sync(pattern));
     } catch (error) {
-      this.log(`Error finding files with pattern ${pattern}: ${error.message}`, 'ERROR');
+      this.log(
+        `Error finding files with pattern ${pattern}: ${error.message}`,
+        'ERROR',
+      );
     }
-    
+
     return files;
   }
 
@@ -475,11 +485,12 @@ class CursorChatTrigger {
       currentIssues,
       performanceData,
       securityData,
-      accessibilityData
+      accessibilityData,
     } = data;
-    
-    const categoryInfo = CONFIG.chatCategories[category] || CONFIG.chatCategories.build;
-    
+
+    const categoryInfo =
+      CONFIG.chatCategories[category] || CONFIG.chatCategories.build;
+
     return `# ${categoryInfo.title} - Comprehensive Analysis and Improvement
 
 ## Project Overview
@@ -547,10 +558,10 @@ Please provide specific, actionable recommendations with code examples where app
         context: {
           timestamp: new Date().toISOString(),
           system: 'cursor-chat-trigger',
-          category: 'comprehensive-improvement'
-        }
+          category: 'comprehensive-improvement',
+        },
       });
-      
+
       const options = {
         hostname: new URL(CONFIG.cursorApiUrl).hostname,
         port: 443,
@@ -559,17 +570,17 @@ Please provide specific, actionable recommendations with code examples where app
         headers: {
           'Content-Type': 'application/json',
           'Content-Length': Buffer.byteLength(postData),
-          'Authorization': `Bearer ${CONFIG.cursorApiKey}`
-        }
+          Authorization: `Bearer ${CONFIG.cursorApiKey}`,
+        },
       };
 
       const req = https.request(options, (res) => {
         let data = '';
-        
+
         res.on('data', (chunk) => {
           data += chunk;
         });
-        
+
         res.on('end', () => {
           if (res.statusCode === 200) {
             resolve(JSON.parse(data));
@@ -590,7 +601,7 @@ Please provide specific, actionable recommendations with code examples where app
 
   async triggerSpecificChat(issue) {
     this.log(`Triggering specific Cursor chat for issue: ${issue.type}`);
-    
+
     const prompt = `# Specific Issue Resolution
 
 ## Issue Details
@@ -608,7 +619,7 @@ Please provide a specific solution for this issue. Include:
 4. **Testing**: How to verify the fix works
 
 Please provide specific code examples and step-by-step instructions.`;
-    
+
     try {
       const response = await this.sendCursorChat(prompt);
       this.log(`Specific chat triggered successfully for ${issue.type}`);
@@ -623,33 +634,39 @@ Please provide specific code examples and step-by-step instructions.`;
 // CLI interface
 if (require.main === module) {
   const trigger = new CursorChatTrigger();
-  
+
   const command = process.argv[2];
   const category = process.argv[3] || 'general';
   const specificIssue = process.argv[4];
-  
+
   switch (command) {
     case 'comprehensive':
-      trigger.triggerComprehensiveChat(category, specificIssue).then(() => {
-        console.log('Comprehensive chat triggered successfully');
-        process.exit(0);
-      }).catch(error => {
-        console.error('Failed to trigger comprehensive chat:', error.message);
-        process.exit(1);
-      });
+      trigger
+        .triggerComprehensiveChat(category, specificIssue)
+        .then(() => {
+          console.log('Comprehensive chat triggered successfully');
+          process.exit(0);
+        })
+        .catch((error) => {
+          console.error('Failed to trigger comprehensive chat:', error.message);
+          process.exit(1);
+        });
       break;
     case 'specific':
       if (!specificIssue) {
         console.error('Specific issue required for specific chat');
         process.exit(1);
       }
-      trigger.triggerSpecificChat({ type: category, pattern: specificIssue }).then(() => {
-        console.log('Specific chat triggered successfully');
-        process.exit(0);
-      }).catch(error => {
-        console.error('Failed to trigger specific chat:', error.message);
-        process.exit(1);
-      });
+      trigger
+        .triggerSpecificChat({ type: category, pattern: specificIssue })
+        .then(() => {
+          console.log('Specific chat triggered successfully');
+          process.exit(0);
+        })
+        .catch((error) => {
+          console.error('Failed to trigger specific chat:', error.message);
+          process.exit(1);
+        });
       break;
     default:
       console.log(`
@@ -674,4 +691,4 @@ Environment Variables:
   }
 }
 
-module.exports = CursorChatTrigger; 
+module.exports = CursorChatTrigger;

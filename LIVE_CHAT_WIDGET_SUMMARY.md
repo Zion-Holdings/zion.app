@@ -1,10 +1,12 @@
 # Live Chat Widget for Quick Support
 
 ## ✅ Overview
+
 - Added a live chat widget to give users immediate help inside the marketplace.
 - The widget loads on every page so assistance is always one click away.
 
 ## 🚀 Implementation Details
+
 1. **Intercom Chat Integration**
    - `IntercomChat.tsx` injects the Intercom script using `NEXT_PUBLIC_INTERCOM_APP_ID`.
    - It is rendered in `pages/_app.tsx`, making the chat button globally available.
@@ -17,5 +19,6 @@
    - Saves chat history per room to local storage so conversations persist between visits.
 
 ## 🛠 Usage
+
 - Set `NEXT_PUBLIC_INTERCOM_APP_ID` in your environment variables.
 - Visit the marketplace and click the chat icon at the bottom-right to start chatting with support.

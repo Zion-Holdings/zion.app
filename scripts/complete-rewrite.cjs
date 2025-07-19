@@ -8,29 +8,31 @@ console.log('🔧 Complete rewrite of corrupted files...');
 
 // Find all TypeScript and JavaScript files
 const files = glob.sync('src/**/*.{ts,tsx,js,jsx}', {
-  ignore: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**']
+  ignore: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**'],
 });
 
 let fixedFiles = 0;
 let totalIssues = 0;
 
-files.forEach(file => {
+files.forEach((file) => {
   try {
     let content = fs.readFileSync(file, 'utf8');
     let originalContent = content;
     let fileIssues = 0;
 
     // Check if file is corrupted (has unterminated strings, unexpected tokens, etc.)
-    if (content.includes('Unterminated string constant') || 
-        content.includes('Unexpected token') ||
-        content.includes('export defaultault') ||
-        content.startsWith('}') || 
-        content.startsWith(';') || 
-        content.startsWith('/') ||
-        content.length < 100 ||
-        content.includes('Parsing error')) {
+    if (
+      content.includes('Unterminated string constant') ||
+      content.includes('Unexpected token') ||
+      content.includes('export defaultault') ||
+      content.startsWith('}') ||
+      content.startsWith(';') ||
+      content.startsWith('/') ||
+      content.length < 100 ||
+      content.includes('Parsing error')
+    ) {
       fileIssues++;
-      
+
       // Create appropriate content based on file type and location
       if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
         const componentName = path.basename(file, path.extname(file));
@@ -47,7 +49,7 @@ export default function ${componentName}() {
       } else if (file.endsWith('.ts') || file.endsWith('.js')) {
         const moduleName = path.basename(file, path.extname(file));
         const dir = path.dirname(file);
-        
+
         // Handle different types of files based on directory
         if (dir.includes('types')) {
           content = `// Type definitions for ${moduleName}
@@ -97,4 +99,4 @@ export const ${moduleName} = {
   }
 });
 
-console.log(`\n🎉 Rewrote ${fixedFiles} corrupted files`); 
+console.log(`\n🎉 Rewrote ${fixedFiles} corrupted files`);

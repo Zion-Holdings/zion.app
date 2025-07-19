@@ -109,12 +109,14 @@ cp .env.ai-delegation .env
 ### Starting the System
 
 #### Master Computer
+
 ```bash
 # Start as master node
 npm run ai-delegate:master
 ```
 
 #### Worker Computers
+
 ```bash
 # Start as worker node
 npm run ai-delegate:worker
@@ -178,31 +180,37 @@ npm run multi-coordinator:test
 The system supports the following task types:
 
 ### Code Analysis
+
 - Analyzes code quality and structure
 - Identifies potential improvements
 - Detects code smells and anti-patterns
 
 ### Performance Optimization
+
 - Identifies performance bottlenecks
 - Suggests optimization strategies
 - Focuses on Core Web Vitals
 
 ### Security Audit
+
 - Identifies security vulnerabilities
 - Reviews authentication and authorization
 - Checks for common security issues
 
 ### Bug Fix
+
 - Analyzes reported issues
 - Identifies root causes
 - Provides fixes with explanations
 
 ### Feature Implementation
+
 - Designs feature architecture
 - Implements features
 - Includes proper error handling
 
 ### Refactoring
+
 - Improves code structure
 - Reduces complexity
 - Enhances maintainability
@@ -379,4 +387,4 @@ npm run ai-delegate:start
 
 ---
 
-**Note**: This system is designed to work with Cursor AI and requires proper API credentials. Make sure to follow Cursor's terms of service and usage guidelines. 
+**Note**: This system is designed to work with Cursor AI and requires proper API credentials. Make sure to follow Cursor's terms of service and usage guidelines.

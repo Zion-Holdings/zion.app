@@ -3,6 +3,7 @@
 ## Quick Diagnosis
 
 ### System Status Check
+
 ```bash
 # Check overall system status
 npm run netlify:status
@@ -16,6 +17,7 @@ node scripts/netlify-healing-daemon.cjs status
 ```
 
 ### Health Check
+
 ```bash
 # Perform comprehensive health check
 npm run self-heal:health
@@ -30,11 +32,13 @@ npm run build:monitor:watch
 ### 1. System Won't Start
 
 #### Symptoms
+
 - Daemon fails to start
 - Error messages about missing dependencies
 - Permission denied errors
 
 #### Diagnosis
+
 ```bash
 # Check if daemon is already running
 ps aux | grep netlify-healing-daemon
@@ -52,6 +56,7 @@ npm --version
 #### Solutions
 
 **Permission Issues**
+
 ```bash
 # Fix file permissions
 chmod +x scripts/netlify-*.cjs
@@ -62,6 +67,7 @@ sudo chown -R $(whoami):$(whoami) .
 ```
 
 **Missing Dependencies**
+
 ```bash
 # Install missing dependencies
 npm install
@@ -75,6 +81,7 @@ npm install
 ```
 
 **Node.js Version Issues**
+
 ```bash
 # Check required version
 node --version  # Should be 18+
@@ -91,11 +98,13 @@ sudo apt-get install -y nodejs
 ### 2. Build Still Failing
 
 #### Symptoms
+
 - Build failures persist after healing
 - Error messages in build logs
 - Timeout issues continue
 
 #### Diagnosis
+
 ```bash
 # Check build logs
 tail -f build.log
@@ -111,6 +120,7 @@ npm run logs:scan
 #### Solutions
 
 **Memory Issues**
+
 ```bash
 # Increase memory allocation
 export NODE_OPTIONS="--max-old-space-size=8192"
@@ -123,6 +133,7 @@ npm run clean:cache
 ```
 
 **Timeout Issues**
+
 ```bash
 # Increase build timeout
 echo 'command_timeout = "45m"' >> netlify.toml
@@ -135,6 +146,7 @@ echo 'NEXT_BUILD_WORKERS = "4"' >> netlify.toml
 ```
 
 **Dependency Issues**
+
 ```bash
 # Clean dependencies
 npm run clean:deps
@@ -149,11 +161,13 @@ npm install --legacy-peer-deps
 ### 3. Performance Issues
 
 #### Symptoms
+
 - Slow build times
 - High memory usage
 - System unresponsiveness
 
 #### Diagnosis
+
 ```bash
 # Check resource usage
 npm run monitor:resources
@@ -168,6 +182,7 @@ npm run bundle:analyze
 #### Solutions
 
 **Memory Optimization**
+
 ```bash
 # Optimize memory usage
 npm run optimize:memory
@@ -180,6 +195,7 @@ npm run optimize:bundle
 ```
 
 **Build Optimization**
+
 ```bash
 # Enable build caching
 echo 'NEXT_PRIVATE_BUILD_CACHE = "true"' >> netlify.toml
@@ -194,11 +210,13 @@ echo 'NEXT_DISABLE_CSS_INLINE = "true"' >> netlify.toml
 ### 4. Logging Issues
 
 #### Symptoms
+
 - No logs generated
 - Incomplete log information
 - Log file permission errors
 
 #### Diagnosis
+
 ```bash
 # Check log directory
 ls -la logs/
@@ -216,6 +234,7 @@ npm run logs:rotate
 #### Solutions
 
 **Permission Issues**
+
 ```bash
 # Create logs directory
 mkdir -p logs
@@ -229,6 +248,7 @@ chown -R $(whoami):$(whoami) logs/
 ```
 
 **Disk Space Issues**
+
 ```bash
 # Clean old logs
 npm run logs:purge
@@ -243,11 +263,13 @@ npm run clean:disk
 ### 5. Daemon Issues
 
 #### Symptoms
+
 - Daemon not running
 - Daemon crashes frequently
 - Process management issues
 
 #### Diagnosis
+
 ```bash
 # Check daemon process
 ps aux | grep netlify-healing-daemon
@@ -262,6 +284,7 @@ cat logs/healing-daemon.pid
 #### Solutions
 
 **Daemon Not Starting**
+
 ```bash
 # Kill existing processes
 pkill -f netlify-healing-daemon
@@ -274,6 +297,7 @@ node scripts/netlify-healing-daemon.cjs start
 ```
 
 **Daemon Crashes**
+
 ```bash
 # Check for errors
 tail -f logs/healing-daemon.log
@@ -288,11 +312,13 @@ npm run monitor:resources
 ### 6. Configuration Issues
 
 #### Symptoms
+
 - Environment variables not recognized
 - Configuration files not found
 - Settings not applied
 
 #### Diagnosis
+
 ```bash
 # Check environment variables
 env | grep -E "(SELF_HEALING|AUTO_FIX|BUILD_MONITOR)"
@@ -308,6 +334,7 @@ npm run env:validate
 #### Solutions
 
 **Environment Variables**
+
 ```bash
 # Set environment variables
 export ENABLE_SELF_HEALING=true
@@ -321,6 +348,7 @@ echo 'BUILD_MONITORING=true' >> .env.local
 ```
 
 **Configuration Files**
+
 ```bash
 # Recreate netlify.toml
 npm run auto-fix:all
@@ -337,6 +365,7 @@ node -c scripts/netlify-*.cjs
 ### 1. Debug Mode
 
 #### Enable Debug Logging
+
 ```bash
 # Enable debug mode
 DEBUG=self-healing:* npm run netlify:heal
@@ -349,6 +378,7 @@ DEBUG=build-monitor:* npm run build:monitor:start
 ```
 
 #### Debug Configuration
+
 ```javascript
 // Add to scripts for debug mode
 const debug = require('debug')('self-healing:main');
@@ -361,6 +391,7 @@ debug('Environment:', process.env);
 ### 2. Performance Profiling
 
 #### Memory Profiling
+
 ```bash
 # Enable memory profiling
 NODE_OPTIONS="--inspect --max-old-space-size=8192" npm run netlify:heal
@@ -370,6 +401,7 @@ NODE_OPTIONS="--inspect --max-old-space-size=8192" npm run netlify:heal
 ```
 
 #### CPU Profiling
+
 ```bash
 # Enable CPU profiling
 NODE_OPTIONS="--prof" npm run netlify:heal
@@ -381,6 +413,7 @@ node --prof-process isolate-*.log > profile.txt
 ### 3. Network Issues
 
 #### Diagnosis
+
 ```bash
 # Check network connectivity
 curl -I https://api.netlify.com
@@ -393,6 +426,7 @@ sudo ufw status
 ```
 
 #### Solutions
+
 ```bash
 # Use offline mode
 export NPM_FLAGS="--prefer-offline --legacy-peer-deps"
@@ -408,6 +442,7 @@ npm config set registry https://registry.npmjs.org/
 ### 4. Security Issues
 
 #### Diagnosis
+
 ```bash
 # Check for vulnerabilities
 npm audit
@@ -420,6 +455,7 @@ grep -r "password\|secret\|key" logs/
 ```
 
 #### Solutions
+
 ```bash
 # Fix vulnerabilities
 npm audit fix
@@ -506,14 +542,14 @@ const alerts = {
     threshold: 3,
     window: '1h',
     action: 'restart-daemon',
-    notification: 'slack'
+    notification: 'slack',
   },
   memoryUsage: {
     threshold: 0.9,
     window: '5m',
     action: 'clean-cache',
-    notification: 'email'
-  }
+    notification: 'email',
+  },
 };
 ```
 
@@ -564,9 +600,10 @@ npm run logs:export
 ### 4. Contact Information
 
 When seeking help, include:
+
 - System status output
 - Relevant log files
 - Environment information
 - Steps to reproduce
 - Expected vs actual behavior
-- Error messages and stack traces 
+- Error messages and stack traces

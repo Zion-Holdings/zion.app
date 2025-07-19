@@ -7,6 +7,7 @@ The project monitoring system has been significantly improved to provide better 
 ## Key Improvements
 
 ### 1. Fixed Build Issues ✅
+
 - **Search Component Type Error**: Fixed `SearchResult` interface to include all result types (`blog`, `product`, `talent`, etc.)
 - **Price Property Mismatch**: Converted `null` to `undefined` for consistent typing
 - **Missing Imports**: Resolved TypeScript import issues in components
@@ -15,26 +16,31 @@ The project monitoring system has been significantly improved to provide better 
 ### 2. Enhanced Watchdog System 🔧
 
 #### Improved Resource Monitoring
+
 - **Conservative Thresholds**: Raised memory threshold to 95% and CPU threshold to 95%
 - **Reduced CPU Checks**: Lowered sustained CPU checks from 10 to 3 for faster response
 - **Smart Logging**: Only logs resource usage when concerning (>85%)
 - **Development Mode**: Automatically uses more relaxed thresholds in development
 
 #### Prevented Multiple Instances
+
 - **PID File Management**: Ensures only one watchdog instance runs at a time
 - **Graceful Shutdown**: Proper cleanup on SIGINT/SIGTERM signals
 - **Stale Process Detection**: Automatically removes stale PID files
 
 #### Rate Limiting & Cooldowns
+
 - **5-Minute Cooldown**: Prevents rapid successive self-heal attempts
 - **Command Timeout**: 10-minute timeout for self-heal commands
 - **Better Error Handling**: Improved logging and error recovery
 
 #### Optional Discord Integration
+
 - **Webhook Configuration**: Only sends alerts when `DISCORD_WEBHOOK_URL` is configured
 - **No More Warning Spam**: Eliminated repeated "webhook not configured" warnings
 
 ### 3. Log Management 📋
+
 - **Log Clearing Script**: `scripts/clear-logs.js` to reset monitoring state
 - **Better Log Rotation**: Prevents log files from growing indefinitely
 - **Structured Logging**: More informative log messages with timestamps
@@ -87,7 +93,7 @@ WATCHDOG_COOLDOWN=300000
 The watchdog system now supports environment-based configuration:
 
 - **Memory Threshold**: Percentage of memory usage before triggering alerts
-- **CPU Threshold**: Percentage of CPU usage before triggering alerts  
+- **CPU Threshold**: Percentage of CPU usage before triggering alerts
 - **Check Intervals**: How often to monitor system resources
 - **Cooldown Periods**: Minimum time between self-heal attempts
 - **Log Patterns**: Custom regex patterns for log monitoring
@@ -95,6 +101,7 @@ The watchdog system now supports environment-based configuration:
 ## Development Mode
 
 When `NODE_ENV=development` or `WATCHDOG_DEV_MODE=true`:
+
 - Memory threshold: 98% (more conservative)
 - CPU threshold: 98% (more conservative)
 - Sustained checks: 5 (requires more consistent high usage)
@@ -114,6 +121,7 @@ The monitoring system creates these log files in the `logs/` directory:
 ## Troubleshooting
 
 ### Watchdog Won't Start
+
 ```bash
 # Clear any stale processes and logs
 npm run watchdog:clear
@@ -126,6 +134,7 @@ npm run watchdog:start
 ```
 
 ### High Resource Usage Alerts
+
 ```bash
 # Check current resource usage
 npm run monitor:resources
@@ -138,6 +147,7 @@ npm run logs:clear
 ```
 
 ### Build Failures
+
 ```bash
 # Run build with full error output
 npm run build
@@ -170,4 +180,4 @@ npm run deps:clean && npm run build
 - [ ] Database connection monitoring
 - [ ] API endpoint health checks
 - [ ] Kubernetes deployment health monitoring
-- [ ] Automated performance regression detection 
+- [ ] Automated performance regression detection

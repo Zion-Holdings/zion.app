@@ -26,17 +26,16 @@ class PostBuildLintHealing {
 
   async run() {
     this.log('Starting post-build lint healing...');
-    
+
     try {
       // Check if build was successful
       if (!this.isBuildSuccessful()) {
         this.log('Build was not successful, skipping post-build healing');
         return;
       }
-      
+
       // Run healing iterations
       await this.runHealingIterations();
-      
     } catch (error) {
       this.log(`Post-build healing failed: ${error.message}`, 'ERROR');
     }
@@ -45,46 +44,48 @@ class PostBuildLintHealing {
   isBuildSuccessful() {
     // Check for build artifacts
     const buildDirs = ['.next', 'out', 'dist'];
-    const hasBuildArtifacts = buildDirs.some(dir => fs.existsSync(dir));
-    
+    const hasBuildArtifacts = buildDirs.some((dir) => fs.existsSync(dir));
+
     // Check for build logs
     const buildLogs = ['build.log', 'error.log'];
-    const hasErrors = buildLogs.some(log => {
+    const hasErrors = buildLogs.some((log) => {
       if (fs.existsSync(log)) {
         const content = fs.readFileSync(log, 'utf8');
         return content.includes('error') || content.includes('failed');
       }
       return false;
     });
-    
+
     return hasBuildArtifacts && !hasErrors;
   }
 
   async runHealingIterations() {
     this.log('Running healing iterations...');
-    
+
     for (let i = 0; i < this.maxIterations; i++) {
       this.currentIteration = i + 1;
-      this.log(`Healing iteration ${this.currentIteration}/${this.maxIterations}`);
-      
+      this.log(
+        `Healing iteration ${this.currentIteration}/${this.maxIterations}`,
+      );
+
       // Check for lint issues
       const issues = await this.checkForLintIssues();
-      
+
       if (issues.length === 0) {
         this.log('No lint issues found, healing complete');
         break;
       }
-      
+
       this.log(`Found ${issues.length} lint issues, applying fixes...`);
-      
+
       // Apply fixes
       const success = await this.applyFixes(issues);
-      
+
       if (!success) {
         this.log('Failed to apply fixes, stopping iterations');
         break;
       }
-      
+
       // Wait before next iteration
       await this.sleep(5000);
     }
@@ -94,20 +95,21 @@ class PostBuildLintHealing {
     try {
       const lintOutput = execSync('npm run lint', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       // No issues found
       return [];
     } catch (error) {
       // Parse lint output for issues
       if (error.stdout) {
         const lines = error.stdout.split('\n');
-        return lines.filter(line => 
-          line.includes('error') || line.includes('warning')
-        ).map(line => line.trim()).filter(Boolean);
+        return lines
+          .filter((line) => line.includes('error') || line.includes('warning'))
+          .map((line) => line.trim())
+          .filter(Boolean);
       }
-      
+
       return [];
     }
   }
@@ -117,29 +119,30 @@ class PostBuildLintHealing {
       // Try auto-fix first
       this.log('Attempting auto-fix...');
       execSync('npm run lint:fix', { stdio: 'inherit' });
-      
+
       // Check if issues were resolved
       const remainingIssues = await this.checkForLintIssues();
-      
+
       if (remainingIssues.length === 0) {
         this.log('Auto-fix resolved all issues');
         return true;
       }
-      
+
       if (remainingIssues.length < issues.length) {
-        this.log(`Auto-fix reduced issues from ${issues.length} to ${remainingIssues.length}`);
-        
+        this.log(
+          `Auto-fix reduced issues from ${issues.length} to ${remainingIssues.length}`,
+        );
+
         // Try additional fixes for remaining issues
         await this.applyAdditionalFixes(remainingIssues);
         return true;
       }
-      
+
       // Auto-fix didn't help, try manual fixes
       this.log('Auto-fix did not resolve issues, trying manual fixes...');
       await this.applyManualFixes(issues);
-      
+
       return true;
-      
     } catch (error) {
       this.log(`Fix application failed: ${error.message}`, 'ERROR');
       return false;
@@ -148,7 +151,7 @@ class PostBuildLintHealing {
 
   async applyAdditionalFixes(issues) {
     this.log('Applying additional fixes...');
-    
+
     for (const issue of issues) {
       if (issue.includes('no-unused-vars')) {
         await this.fixUnusedVariables(issue);
@@ -162,10 +165,10 @@ class PostBuildLintHealing {
 
   async applyManualFixes(issues) {
     this.log('Applying manual fixes...');
-    
+
     // Create a more lenient ESLint config
     await this.createLenientConfig();
-    
+
     // Run lint fix with lenient config
     execSync('npx eslint --fix .', { stdio: 'inherit' });
   }
@@ -178,20 +181,25 @@ class PostBuildLintHealing {
         const content = fs.readFileSync(filePath, 'utf8');
         const lines = content.split('\n');
         const lineIndex = parseInt(line) - 1;
-        
+
         // Add underscore prefix to unused variables
         const lineContent = lines[lineIndex];
-        const updatedLine = lineContent.replace(/\b(\w+)\b/g, (match, varName) => {
-          if (varName.startsWith('_')) return match;
-          return `_${varName}`;
-        });
-        
+        const updatedLine = lineContent.replace(
+          /\b(\w+)\b/g,
+          (match, varName) => {
+            if (varName.startsWith('_')) return match;
+            return `_${varName}`;
+          },
+        );
+
         lines[lineIndex] = updatedLine;
         fs.writeFileSync(filePath, lines.join('\n'));
-        
+
         this.log(`Fixed unused variable in ${filePath}:${line}`);
       } catch (error) {
-        this.log(`Failed to fix unused variable in ${filePath}: ${error.message}`);
+        this.log(
+          `Failed to fix unused variable in ${filePath}: ${error.message}`,
+        );
       }
     }
   }
@@ -202,11 +210,16 @@ class PostBuildLintHealing {
       const [, filePath] = match;
       try {
         let content = fs.readFileSync(filePath, 'utf8');
-        content = content.replace(/console\.(log|warn|error|info)\(/g, '// console.$1(');
+        content = content.replace(
+          /console\.(log|warn|error|info)\(/g,
+          '// console.$1(',
+        );
         fs.writeFileSync(filePath, content);
         this.log(`Commented console statements in ${filePath}`);
       } catch (error) {
-        this.log(`Failed to fix console statements in ${filePath}: ${error.message}`);
+        this.log(
+          `Failed to fix console statements in ${filePath}: ${error.message}`,
+        );
       }
     }
   }
@@ -217,12 +230,19 @@ class PostBuildLintHealing {
       const [, filePath] = match;
       try {
         let content = fs.readFileSync(filePath, 'utf8');
-        content = content.replace(/\blet\s+(\w+)\s*=\s*([^;]+);/g, (match, varName, value) => {
-          if (!value.includes('=') && !value.includes('++') && !value.includes('--')) {
-            return `const ${varName} = ${value};`;
-          }
-          return match;
-        });
+        content = content.replace(
+          /\blet\s+(\w+)\s*=\s*([^;]+);/g,
+          (match, varName, value) => {
+            if (
+              !value.includes('=') &&
+              !value.includes('++') &&
+              !value.includes('--')
+            ) {
+              return `const ${varName} = ${value};`;
+            }
+            return match;
+          },
+        );
         fs.writeFileSync(filePath, content);
         this.log(`Fixed const issues in ${filePath}`);
       } catch (error) {
@@ -241,16 +261,19 @@ class PostBuildLintHealing {
         'prefer-const': 'off',
         'no-var': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/ban-ts-comment': 'off'
-      }
+        '@typescript-eslint/ban-ts-comment': 'off',
+      },
     };
-    
-    fs.writeFileSync('.eslintrc.lenient.json', JSON.stringify(lenientConfig, null, 2));
+
+    fs.writeFileSync(
+      '.eslintrc.lenient.json',
+      JSON.stringify(lenientConfig, null, 2),
+    );
     this.log('Created lenient ESLint config');
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
 
@@ -260,9 +283,9 @@ module.exports = PostBuildLintHealing;
 // Run if this script is executed directly
 if (require.main === module) {
   const postBuildHealing = new PostBuildLintHealing();
-  
-  postBuildHealing.run().catch(error => {
+
+  postBuildHealing.run().catch((error) => {
     console.error('Post-build healing failed:', error.message);
     process.exit(1);
   });
-} 
+}

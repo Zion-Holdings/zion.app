@@ -36,7 +36,7 @@ jobs:
           # Mimic Netlify's production environment as much as possible for consistent sourcemaps
           # These are illustrative; actual values might need to match netlify.toml production context
           NODE_ENV: production
-          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_TELEMETRY_DISABLED: '1'
           # Add other critical NEXT_PUBLIC_ vars if they affect sourcemap generation or IDs
         run: npm run build # This uses the standard build, not the full optimized-build.cjs
 
@@ -55,9 +55,9 @@ jobs:
           # version: ${{ github.sha }} # Explicitly set version, defaults to github.sha
           set_commits: auto # Automatically associate commits with the release
           # deploy: # Optional: if you want to mark the release as deployed in Sentry
-            # env: production
-            # started_at: ${{ steps.start_time.outputs.time }} # Requires a step to output current time
-            # name: "Netlify Production Deployment"
+          # env: production
+          # started_at: ${{ steps.start_time.outputs.time }} # Requires a step to output current time
+          # name: "Netlify Production Deployment"
 
       # Consider adding a step here to notify a channel (e.g., Slack) about the new Sentry release.
       # Additional post-deployment steps (not directly Netlify deployment) can go here.

@@ -16,4 +16,4 @@ const build = spawn('npx', ['next', 'build', '--no-lint'], {
   shell: true,
 });
 
-build.on('exit', code => process.exit(code));
+build.on('exit', (code) => process.exit(code));

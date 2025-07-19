@@ -17,4 +17,3 @@ The project uses a combination of **React Query**, **Redux Toolkit**, and the **
 3. **Is the data simple and global but not worth the overhead of Redux?** React Context works well.
 
 When in doubt, start with React Query for data from the server, use Context for trivial global state, and reach for Redux Toolkit only when the state management needs outgrow the simpler solutions.
-

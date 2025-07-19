@@ -6,41 +6,46 @@ const Tracing = require('@sentry/tracing');
 let tracer;
 try {
   // Check if we're in a CI/build environment where native modules might not be available
-  const isCI = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && process.env.NETLIFY === 'true';
+  const isCI =
+    process.env.CI === 'true' ||
+    (process.env.NODE_ENV === 'production' && process.env.NETLIFY === 'true');
   const skipDatadog = process.env.SKIP_DATADOG === 'true' || isCI;
-  
+
   if (skipDatadog) {
     console.warn('🚫 Datadog tracing disabled for CI/build environment');
     // Provide a mock tracer for CI environments
     tracer = {
       init: () => tracer,
       scope: () => ({
-        active: () => null
+        active: () => null,
       }),
-      trace: (name, fn) => fn ? fn() : Promise.resolve(),
+      trace: (name, fn) => (fn ? fn() : Promise.resolve()),
       _setUser: () => {},
       _addTags: () => {},
       // Add other commonly used methods as no-ops
       wrap: (name, fn) => fn,
-      plugin: () => tracer
+      plugin: () => tracer,
     };
   } else {
     tracer = require('dd-trace').init();
     // console.log('✅ Datadog tracing initialized');
   }
 } catch (_error) {
-  console.warn('⚠️ Failed to initialize dd-trace, using mock implementation:', error.message);
+  console.warn(
+    '⚠️ Failed to initialize dd-trace, using mock implementation:',
+    error.message,
+  );
   // Fallback mock tracer
   tracer = {
     init: () => tracer,
     scope: () => ({
-      active: () => null
+      active: () => null,
     }),
-    trace: (name, fn) => fn ? fn() : Promise.resolve(),
+    trace: (name, fn) => (fn ? fn() : Promise.resolve()),
     _setUser: () => {},
     _addTags: () => {},
     wrap: (name, fn) => fn,
-    plugin: () => tracer
+    plugin: () => tracer,
   };
 }
 
@@ -71,7 +76,9 @@ const app = express();
 // Ensure server log directory exists
 const logDir = path.join(__dirname, 'logs');
 fs.mkdirSync(logDir, { recursive: true });
-const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { flags: 'a' });
+const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), {
+  flags: 'a',
+});
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -94,20 +101,36 @@ app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
 // Use Helmet to apply various security headers with strict CSP
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "https://js.stripe.com", "https://*.launchdarkly.com", "https://www.googletagmanager.com", "https://widget.intercom.io", "https://*.googleapis.com", "https://*.gstatic.com"],
-      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-      fontSrc: ["'self'", "https://fonts.gstatic.com"],
-      imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'", "https://*.supabase.co", "https://*.stripe.com", "https://*.sentry.io"],
-      objectSrc: ["'none'"],
-      baseUri: ["'self'"],
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          'https://js.stripe.com',
+          'https://*.launchdarkly.com',
+          'https://www.googletagmanager.com',
+          'https://widget.intercom.io',
+          'https://*.googleapis.com',
+          'https://*.gstatic.com',
+        ],
+        styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        imgSrc: ["'self'", 'data:', 'https:'],
+        connectSrc: [
+          "'self'",
+          'https://*.supabase.co',
+          'https://*.stripe.com',
+          'https://*.sentry.io',
+        ],
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+      },
     },
-  },
-}));
+  }),
+);
 
 // Enable CORS for allowed origins
 app.use(cors({ origin: allowedOrigins }));
@@ -131,14 +154,14 @@ app.get('/healthz', (req, res) => {
       timestamp: new Date().toISOString(),
       // Add any other relevant info, like service name or version from package.json
       service: process.env.npm_package_name,
-      version: process.env.npm_package_version
+      version: process.env.npm_package_version,
     });
   } catch (_error) {
     // If any checks fail, respond with a 503 status
     res.status(503).json({
       status: 'DOWN',
       error: error.message,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   }
 });
@@ -163,7 +186,9 @@ app.post('/api/codex/suggest-fix', (req, res) => {
     // We need at least some context, filePath is preferred for targeted fixes.
     // Route could be a fallback if we want to analyze a general page issue,
     // but the current codex-pipeline.yaml is more file-focused with ESLint.
-    return res.status(400).json({ error: 'Bad Request: filePath or route is required.' });
+    return res
+      .status(400)
+      .json({ error: 'Bad Request: filePath or route is required.' });
   }
 
   // Basic sanitization/validation for filePath if needed (e.g., prevent directory traversal)
@@ -194,17 +219,30 @@ app.post('/api/codex/suggest-fix', (req, res) => {
   // Log the action with more details
   // console.log(`Executing Codex command: ${command} with context - File: ${filePath || 'N/A'}, Route: ${route || 'N/A'}, ErrorLog: ${errorLog ? 'Provided' : 'N/A'}`);
 
-  exec(command, { env: envVars }, (error, stdout, stderr) => { // Pass envVars here
+  exec(command, { env: envVars }, (error, stdout, stderr) => {
+    // Pass envVars here
     if (error) {
       console.error(`Codex execution error: ${error.message}`);
-      logAndAlert(`Codex execution failed. File: ${filePath || route || 'N/A'}. Error: ${error.message}`);
-      return res.status(500).json({ error: 'Codex fix process failed to start or execute.', details: error.message });
+      logAndAlert(
+        `Codex execution failed. File: ${filePath || route || 'N/A'}. Error: ${error.message}`,
+      );
+      return res
+        .status(500)
+        .json({
+          error: 'Codex fix process failed to start or execute.',
+          details: error.message,
+        });
     }
     if (stderr) {
       console.warn(`Codex execution stderr: ${stderr}`);
     }
     // console.log(`Codex execution stdout: ${stdout}`);
-    res.status(200).json({ message: 'Codex fix process triggered successfully.', output: stdout });
+    res
+      .status(200)
+      .json({
+        message: 'Codex fix process triggered successfully.',
+        output: stdout,
+      });
   });
 });
 
@@ -229,7 +267,7 @@ app.use((err, req, res, next) => {
   console.error(error);
   logAndAlert(err.stack || err.message);
   if (err.status === 404 || err.status === 403) {
-    Sentry.withScope(scope => {
+    Sentry.withScope((scope) => {
       if (req.user) {
         scope.setUser({ id: req.user.id, email: req.user.email });
       }
@@ -243,7 +281,10 @@ app.use((err, req, res, next) => {
 
 // Global unhandled error logging
 process.on('unhandledRejection', (reason) => {
-  const message = reason instanceof Error ? reason.stack || reason.message : JSON.stringify(reason);
+  const message =
+    reason instanceof Error
+      ? reason.stack || reason.message
+      : JSON.stringify(reason);
   console.error('Unhandled Rejection:', message);
   logAndAlert(`Unhandled Rejection: ${message}`);
   logBug({

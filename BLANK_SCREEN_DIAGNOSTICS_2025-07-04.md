@@ -4,4 +4,7 @@
 4. Rebuild: npm run build && npm run start
 
 ✅ App should now load within 3 seconds max!
+
+```
+
 ```

@@ -20,10 +20,10 @@ class MasterAutomation {
       'ai-improvement-data/improvements',
       'temp',
       'src/pages',
-      'pages/api'
+      'pages/api',
     ];
-    
-    dirs.forEach(dir => {
+
+    dirs.forEach((dir) => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
@@ -39,48 +39,48 @@ class MasterAutomation {
 
   async runMasterAutomation() {
     this.log('🚀 Starting Master Automation...');
-    
+
     await this.fixAllCriticalIssues();
     await this.createStableApp();
     await this.setupAutomationSystem();
     await this.startApp();
-    
+
     this.log('📊 Master Automation Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);
     this.log(`❌ Issues encountered: ${this.issues.length}`);
-    
+
     if (this.fixes.length > 0) {
       this.log('Applied fixes:');
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
     }
-    
+
     if (this.issues.length > 0) {
       this.log('Issues encountered:');
-      this.issues.forEach(issue => this.log(`  - ${issue}`, 'ERROR'));
+      this.issues.forEach((issue) => this.log(`  - ${issue}`, 'ERROR'));
     }
-    
+
     this.log('🎉 Master Automation completed!');
   }
 
   async fixAllCriticalIssues() {
     this.log('🔧 Fixing all critical issues...');
-    
+
     try {
       // Fix package.json completely
       await this.fixPackageJson();
-      
+
       // Fix Next.js configuration
       await this.fixNextConfig();
-      
+
       // Fix missing files and dependencies
       await this.fixMissingFiles();
-      
+
       // Fix script issues
       await this.fixScriptIssues();
-      
+
       // Clean everything
       await this.cleanAllArtifacts();
-      
+
       this.log('✅ All critical issues fixed');
     } catch (error) {
       this.log(`❌ Error fixing critical issues: ${error.message}`, 'ERROR');
@@ -90,23 +90,23 @@ class MasterAutomation {
 
   async fixPackageJson() {
     this.log('🔧 Fixing package.json...');
-    
+
     try {
       const packagePath = 'package.json';
       let content = fs.readFileSync(packagePath, 'utf8');
-      
+
       // Remove any merge conflict markers
       content = content.replace(/<<<<<<< HEAD\n/g, '');
       content = content.replace(/=======\n/g, '');
       content = content.replace(/>>>>>>> [^\n]*\n/g, '');
-      
+
       // Parse and validate JSON
       const packageJson = JSON.parse(content);
-      
+
       // Add missing dependencies
       if (!packageJson.dependencies) packageJson.dependencies = {};
       if (!packageJson.devDependencies) packageJson.devDependencies = {};
-      
+
       // Add required dependencies
       packageJson.dependencies['@opentelemetry/context-async-hooks'] = '^2.0.1';
       packageJson.dependencies['@opentelemetry/core'] = '^2.0.1';
@@ -115,18 +115,18 @@ class MasterAutomation {
       packageJson.dependencies['@types/react'] = '^19.0.0';
       packageJson.dependencies['@types/react-dom'] = '^19.0.0';
       packageJson.dependencies['next'] = '^15.4.1';
-      
+
       // Add simple scripts
       packageJson.scripts = {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "test": "jest",
-        "auto:fix": "node scripts/master-automation.cjs",
-        "auto:start": "node scripts/master-automation.cjs start"
+        dev: 'next dev',
+        build: 'next build',
+        start: 'next start',
+        lint: 'next lint',
+        test: 'jest',
+        'auto:fix': 'node scripts/master-automation.cjs',
+        'auto:start': 'node scripts/master-automation.cjs start',
       };
-      
+
       fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
       this.fixes.push('Fixed package.json completely');
       this.log('✅ Package.json fixed');
@@ -138,7 +138,7 @@ class MasterAutomation {
 
   async fixNextConfig() {
     this.log('🔧 Fixing next.config.js...');
-    
+
     try {
       const nextConfig = `/** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -172,7 +172,7 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', nextConfig);
       this.fixes.push('Fixed next.config.js');
       this.log('✅ Next.config.js fixed');
@@ -184,14 +184,14 @@ module.exports = nextConfig;`;
 
   async fixMissingFiles() {
     this.log('🔧 Creating missing files...');
-    
+
     try {
       // Create simple pages structure
       const pagesDir = 'pages';
       if (!fs.existsSync(pagesDir)) {
         fs.mkdirSync(pagesDir, { recursive: true });
       }
-      
+
       // Create a simple index page
       const indexContent = `export default function Home() {
   return (
@@ -203,18 +203,18 @@ module.exports = nextConfig;`;
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('pages/index.js', indexContent);
       this.fixes.push('Created simple index page');
-      
+
       // Create a simple _app.js
       const appContent = `export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }`;
-      
+
       fs.writeFileSync('pages/_app.js', appContent);
       this.fixes.push('Created _app.js');
-      
+
       // Create a simple health API
       const healthContent = `export default function handler(req, res) {
   res.status(200).json({ 
@@ -224,10 +224,10 @@ module.exports = nextConfig;`;
     automation: 'Master automation system active'
   });
 }`;
-      
+
       fs.writeFileSync('pages/api/health.js', healthContent);
       this.fixes.push('Created health API');
-      
+
       // Create missing Profile page
       const profileContent = `import React from 'react';
 
@@ -239,10 +239,10 @@ export default function Profile() {
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('src/pages/Profile.tsx', profileContent);
       this.fixes.push('Created missing Profile page');
-      
+
       // Create missing Signup page
       const signupContent = `import React from 'react';
 
@@ -254,10 +254,10 @@ export default function Signup() {
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('src/pages/Signup.tsx', signupContent);
       this.fixes.push('Created missing Signup page');
-      
+
       this.log('✅ Missing files created');
     } catch (error) {
       this.log(`❌ Error creating missing files: ${error.message}`, 'ERROR');
@@ -267,7 +267,7 @@ export default function Signup() {
 
   async fixScriptIssues() {
     this.log('🔧 Fixing script issues...');
-    
+
     try {
       // Remove scripts/package.json if it exists
       const scriptsPackagePath = 'scripts/package.json';
@@ -275,7 +275,7 @@ export default function Signup() {
         fs.unlinkSync(scriptsPackagePath);
         this.fixes.push('Removed scripts/package.json');
       }
-      
+
       // Fix analyze-bundle script
       const analyzeBundleContent = `#!/usr/bin/env node
 
@@ -304,10 +304,10 @@ if (require.main === module) {
 }
 
 module.exports = BundleAnalyzer;`;
-      
+
       fs.writeFileSync('scripts/analyze-bundle.cjs', analyzeBundleContent);
       this.fixes.push('Fixed analyze-bundle script');
-      
+
       this.log('✅ Script issues fixed');
     } catch (error) {
       this.log(`❌ Error fixing script issues: ${error.message}`, 'ERROR');
@@ -317,20 +317,20 @@ module.exports = BundleAnalyzer;`;
 
   async cleanAllArtifacts() {
     this.log('🧹 Cleaning all artifacts...');
-    
+
     try {
       // Clean build artifacts
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf node_modules/.cache', { stdio: 'ignore' });
       execSync('rm -rf .swc', { stdio: 'ignore' });
       execSync('rm -rf dist', { stdio: 'ignore' });
-      
+
       // Remove duplicate files
       if (fs.existsSync('pages/_app.tsx')) {
         fs.unlinkSync('pages/_app.tsx');
         this.fixes.push('Removed duplicate _app.tsx');
       }
-      
+
       this.fixes.push('Cleaned all build artifacts');
       this.log('✅ All artifacts cleaned');
     } catch (error) {
@@ -341,12 +341,12 @@ module.exports = BundleAnalyzer;`;
 
   async createStableApp() {
     this.log('🔧 Creating stable app structure...');
-    
+
     try {
       // Install dependencies
       execSync('npm install', { stdio: 'inherit' });
       this.fixes.push('Installed all dependencies');
-      
+
       // Create a simple tsconfig.json if it doesn't exist
       if (!fs.existsSync('tsconfig.json')) {
         const tsconfigContent = `{
@@ -373,11 +373,11 @@ module.exports = BundleAnalyzer;`;
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }`;
-        
+
         fs.writeFileSync('tsconfig.json', tsconfigContent);
         this.fixes.push('Created tsconfig.json');
       }
-      
+
       this.log('✅ Stable app structure created');
     } catch (error) {
       this.log(`❌ Error creating stable app: ${error.message}`, 'ERROR');
@@ -387,7 +387,7 @@ module.exports = BundleAnalyzer;`;
 
   async setupAutomationSystem() {
     this.log('🔧 Setting up automation system...');
-    
+
     try {
       // Create automation monitoring script
       const monitorContent = `#!/usr/bin/env node
@@ -421,10 +421,10 @@ if (require.main === module) {
 }
 
 module.exports = AutomationMonitor;`;
-      
+
       fs.writeFileSync('scripts/automation-monitor.cjs', monitorContent);
       this.fixes.push('Created automation monitor');
-      
+
       this.log('✅ Automation system setup complete');
     } catch (error) {
       this.log(`❌ Error setting up automation: ${error.message}`, 'ERROR');
@@ -434,38 +434,49 @@ module.exports = AutomationMonitor;`;
 
   async startApp() {
     this.log('🚀 Starting the app...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next dev" || true', { stdio: 'ignore' });
-      
+
       // Start dev server
       const devProcess = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
-      
+
       devProcess.stdout.on('data', (data) => {
         this.log(`DEV: ${data.toString().trim()}`);
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 30000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 30000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Development server started and responding');
           this.log('✅ Development server started and responding');
@@ -473,7 +484,7 @@ module.exports = AutomationMonitor;`;
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return devProcess;
     } catch (error) {
       this.log(`❌ Error starting app: ${error.message}`, 'ERROR');
@@ -486,10 +497,10 @@ module.exports = AutomationMonitor;`;
 // Run if called directly
 if (require.main === module) {
   const automation = new MasterAutomation();
-  automation.runMasterAutomation().catch(error => {
+  automation.runMasterAutomation().catch((error) => {
     console.error('Master automation failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = MasterAutomation; 
+module.exports = MasterAutomation;

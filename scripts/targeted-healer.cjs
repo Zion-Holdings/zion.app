@@ -32,21 +32,21 @@ class TargetedHealer {
 
   async run() {
     this.log('Starting targeted self-healing system...');
-    
+
     try {
       // Step 1: Apply targeted fixes
       await this.applyTargetedFixes();
-      
+
       // Step 2: Run build
       const buildResult = await this.runBuild();
-      
+
       if (buildResult.success) {
         this.log('Build successful after targeted healing!');
         await this.commitAndDeploy();
       } else {
         this.log('Build still failed, attempting ESLint fixes...');
         await this.applyESLintFixes();
-        
+
         // Retry build
         const retryResult = await this.runBuild();
         if (retryResult.success) {
@@ -57,7 +57,6 @@ class TargetedHealer {
           this.log('Build output:', retryResult.output);
         }
       }
-      
     } catch (error) {
       this.log(`Targeted healing system failed: ${error.message}`, 'ERROR');
       throw error;
@@ -66,11 +65,11 @@ class TargetedHealer {
 
   async applyTargetedFixes() {
     this.log('Applying targeted fixes...');
-    
+
     const fixes = [
       this.fixSpecificUnusedVariables(),
       this.fixSpecificConsoleLogs(),
-      this.fixSpecificImportIssues()
+      this.fixSpecificImportIssues(),
     ];
 
     for (const fix of fixes) {
@@ -88,13 +87,13 @@ class TargetedHealer {
 
   async fixSpecificUnusedVariables() {
     this.log('Fixing specific unused variables...');
-    
+
     // Only fix specific known unused variables
     const specificFiles = [
       'src/pages/JobDetails.tsx',
-      'src/pages/SavedTalentsPage.tsx'
+      'src/pages/SavedTalentsPage.tsx',
     ];
-    
+
     let fixed = false;
 
     for (const file of specificFiles) {
@@ -107,7 +106,11 @@ class TargetedHealer {
           for (let i = 0; i < lines.length; i++) {
             const line = lines[i];
             // Only fix specific unused variable patterns
-            if (line.includes('const _budget') || line.includes('const _talentId') || line.includes('const _talent')) {
+            if (
+              line.includes('const _budget') ||
+              line.includes('const _talentId') ||
+              line.includes('const _talent')
+            ) {
               const newLine = line.replace(/const _(\w+)/, 'const $1');
               if (newLine !== line) {
                 lines[i] = newLine;
@@ -132,13 +135,13 @@ class TargetedHealer {
 
   async fixSpecificConsoleLogs() {
     this.log('Fixing specific console.log statements...');
-    
+
     // Only fix console.logs in specific files
     const specificFiles = [
       'src/pages/JobDetails.tsx',
-      'src/pages/SavedTalentsPage.tsx'
+      'src/pages/SavedTalentsPage.tsx',
     ];
-    
+
     let fixed = false;
 
     for (const file of specificFiles) {
@@ -150,7 +153,11 @@ class TargetedHealer {
 
           for (let i = 0; i < lines.length; i++) {
             const line = lines[i];
-            if (line.includes('console.log(') && !file.includes('.test.') && !file.includes('.spec.')) {
+            if (
+              line.includes('console.log(') &&
+              !file.includes('.test.') &&
+              !file.includes('.spec.')
+            ) {
               lines[i] = `// ${line}`;
               modified = true;
             }
@@ -172,27 +179,30 @@ class TargetedHealer {
 
   async fixSpecificImportIssues() {
     this.log('Checking for specific import issues...');
-    
+
     // Check if specific missing imports exist
     const missingImports = [
       'src/pages/JobDetails.tsx',
-      'src/pages/SavedTalentsPage.tsx'
+      'src/pages/SavedTalentsPage.tsx',
     ];
-    
+
     let fixed = false;
 
     for (const file of missingImports) {
       if (fs.existsSync(file)) {
         try {
           const content = fs.readFileSync(file, 'utf8');
-          
+
           // Check for missing imports and add them
-          if (content.includes('useRouter') && !content.includes("import { useRouter } from 'next/router'")) {
+          if (
+            content.includes('useRouter') &&
+            !content.includes("import { useRouter } from 'next/router'")
+          ) {
             const newContent = content.replace(
               /import React.*from 'react'/,
-              `import React from 'react';\nimport { useRouter } from 'next/router'`
+              `import React from 'react';\nimport { useRouter } from 'next/router'`,
             );
-            
+
             if (newContent !== content) {
               fs.writeFileSync(file, newContent);
               this.log(`Fixed missing import in ${file}`);
@@ -200,7 +210,10 @@ class TargetedHealer {
             }
           }
         } catch (error) {
-          this.log(`Error fixing imports in ${file}: ${error.message}`, 'ERROR');
+          this.log(
+            `Error fixing imports in ${file}: ${error.message}`,
+            'ERROR',
+          );
         }
       }
     }
@@ -210,7 +223,7 @@ class TargetedHealer {
 
   async applyESLintFixes() {
     this.log('Applying ESLint auto-fixes...');
-    
+
     try {
       execSync('npm run lint:fix', { stdio: 'inherit' });
       this.log('Applied ESLint auto-fixes');
@@ -224,11 +237,11 @@ class TargetedHealer {
 
   async runBuild() {
     this.log('Running build...');
-    
+
     return new Promise((resolve) => {
       const buildProcess = spawn('npm', ['run', 'build'], {
         stdio: ['pipe', 'pipe', 'pipe'],
-        timeout: 300000 // 5 minutes
+        timeout: 300000, // 5 minutes
       });
 
       let output = '';
@@ -246,7 +259,7 @@ class TargetedHealer {
 
       buildProcess.on('close', (code) => {
         const fullOutput = output + errorOutput;
-        
+
         if (code === 0) {
           this.log('Build completed successfully');
           resolve({ success: true, output: fullOutput });
@@ -267,11 +280,11 @@ class TargetedHealer {
     if (this.fixesApplied.length > 0) {
       try {
         const commitMessage = `Targeted heal: Applied ${this.fixesApplied.length} fixes`;
-        
+
         execSync('git add .', { stdio: 'inherit' });
         execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
         execSync('git push', { stdio: 'inherit' });
-        
+
         this.log('Changes committed and pushed successfully');
         this.log('Netlify build will be triggered automatically');
         return true;
@@ -287,11 +300,11 @@ class TargetedHealer {
 // Run the targeted healer
 if (require.main === module) {
   const healer = new TargetedHealer();
-  
-  healer.run().catch(error => {
+
+  healer.run().catch((error) => {
     console.error('Targeted healer failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = TargetedHealer; 
+module.exports = TargetedHealer;

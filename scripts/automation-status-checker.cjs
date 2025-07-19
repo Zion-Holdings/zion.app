@@ -17,7 +17,7 @@ class AutomationStatusChecker {
       'dependency-manager.cjs',
       'build-optimizer.cjs',
       'test-automation.cjs',
-      'ultimate-automation-master.cjs'
+      'ultimate-automation-master.cjs',
     ];
   }
 
@@ -27,14 +27,16 @@ class AutomationStatusChecker {
       success: '\x1b[32m',
       error: '\x1b[31m',
       warning: '\x1b[33m',
-      reset: '\x1b[0m'
+      reset: '\x1b[0m',
     };
     console.log(`${colors[type]}${message}${colors.reset}`);
   }
 
   checkProcessStatus(processName) {
     try {
-      const result = execSync(`ps aux | grep "${processName}" | grep -v grep`, { encoding: 'utf8' });
+      const result = execSync(`ps aux | grep "${processName}" | grep -v grep`, {
+        encoding: 'utf8',
+      });
       return result.trim().split('\n').length;
     } catch (error) {
       return 0;
@@ -52,21 +54,34 @@ class AutomationStatusChecker {
       const count = this.checkProcessStatus(process);
       const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
       const instances = count > 0 ? ` (${count} instances)` : '';
-      
-      this.log(`${status} ${process}${instances}`, count > 0 ? 'success' : 'error');
+
+      this.log(
+        `${status} ${process}${instances}`,
+        count > 0 ? 'success' : 'error',
+      );
       totalRunning += count;
     }
 
     console.log('\n📊 SUMMARY');
     console.log('==========');
     this.log(`Total Processes: ${totalProcesses}`, 'info');
-    this.log(`Running Instances: ${totalRunning}`, totalRunning > 0 ? 'success' : 'error');
-    this.log(`Coverage: ${Math.round((totalRunning / totalProcesses) * 100)}%`, totalRunning > 0 ? 'success' : 'error');
+    this.log(
+      `Running Instances: ${totalRunning}`,
+      totalRunning > 0 ? 'success' : 'error',
+    );
+    this.log(
+      `Coverage: ${Math.round((totalRunning / totalProcesses) * 100)}%`,
+      totalRunning > 0 ? 'success' : 'error',
+    );
 
     // Check automation reports
     this.checkAutomationReports();
 
-    return { totalProcesses, totalRunning, coverage: Math.round((totalRunning / totalProcesses) * 100) };
+    return {
+      totalProcesses,
+      totalRunning,
+      coverage: Math.round((totalRunning / totalProcesses) * 100),
+    };
   }
 
   checkAutomationReports() {
@@ -77,14 +92,16 @@ class AutomationStatusChecker {
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
-      'automation/performance-report.json'
+      'automation/performance-report.json',
     ];
 
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
           const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-          const timestamp = new Date(data.timestamp || Date.now()).toLocaleString();
+          const timestamp = new Date(
+            data.timestamp || Date.now(),
+          ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');
         } else {
           this.log(`❌ ${file} - Not found`, 'error');
@@ -97,7 +114,7 @@ class AutomationStatusChecker {
 
   async startContinuousMonitoring() {
     console.log('\n🔄 Starting continuous monitoring...\n');
-    
+
     setInterval(async () => {
       console.clear();
       await this.checkAllProcesses();
@@ -112,4 +129,4 @@ if (process.argv.includes('--continuous')) {
   checker.startContinuousMonitoring();
 } else {
   checker.checkAllProcesses();
-} 
+}

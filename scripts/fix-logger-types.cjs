@@ -1,5 +1,4 @@
 #!/usr/bin/env node
- 
 
 /**
  * Fix TypeScript errors in production logger calls
@@ -19,19 +18,21 @@ class LoggerTypeFixer {
     this.patterns = [
       // Pattern 1: log function with direct variable/string as second parameter
       {
-        regex: /(log(?:Info|Warn|Error|Debug))\(['"`]([^'"`]+)['"`],\s*([^{][^,)]+)\)/g,
-        replacement: '$1(\'$2\', { data: $3 })'
+        regex:
+          /(log(?:Info|Warn|Error|Debug))\(['"`]([^'"`]+)['"`],\s*([^{][^,)]+)\)/g,
+        replacement: "$1('$2', { data: $3 })",
       },
       // Pattern 2: logError with error as second parameter (not in object)
       {
         regex: /(logError)\(['"`]([^'"`]+)['"`],\s*(error|err|e)\s*\)/g,
-        replacement: '$1(\'$2\', { error: $3 })'
+        replacement: "$1('$2', { error: $3 })",
       },
       // Pattern 3: log functions with other variables as second parameter
       {
-        regex: /(log(?:Info|Warn|Error|Debug))\(['"`]([^'"`]+)['"`],\s*([a-zA-Z_][a-zA-Z0-9_.]*)\s*\)/g,
-        replacement: '$1(\'$2\', { data: $3 })'
-      }
+        regex:
+          /(log(?:Info|Warn|Error|Debug))\(['"`]([^'"`]+)['"`],\s*([a-zA-Z_][a-zA-Z0-9_.]*)\s*\)/g,
+        replacement: "$1('$2', { data: $3 })",
+      },
     ];
   }
 
@@ -39,22 +40,19 @@ class LoggerTypeFixer {
    * Get all TypeScript/JavaScript files that import productionLogger
    */
   getFilesToProcess() {
-    const patterns = [
-      'src/**/*.{ts,tsx,js,jsx}',
-      'pages/**/*.{ts,tsx,js,jsx}',
-    ];
+    const patterns = ['src/**/*.{ts,tsx,js,jsx}', 'pages/**/*.{ts,tsx,js,jsx}'];
 
     let allFiles = [];
-    patterns.forEach(pattern => {
-      const files = glob.sync(pattern, { 
+    patterns.forEach((pattern) => {
+      const files = glob.sync(pattern, {
         cwd: PROJECT_ROOT,
-        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**']
+        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**'],
       });
       allFiles = allFiles.concat(files);
     });
 
     // Filter to only files that import productionLogger
-    return [...new Set(allFiles)].filter(file => {
+    return [...new Set(allFiles)].filter((file) => {
       try {
         const content = fs.readFileSync(path.join(PROJECT_ROOT, file), 'utf8');
         return content.includes('productionLogger');
@@ -78,7 +76,7 @@ class LoggerTypeFixer {
       for (const pattern of this.patterns) {
         const originalContent = content;
         content = content.replace(pattern.regex, pattern.replacement);
-        
+
         if (content !== originalContent) {
           hasChanges = true;
           const matches = originalContent.match(pattern.regex);
@@ -96,7 +94,7 @@ class LoggerTypeFixer {
         this.fixedFiles++;
         return {
           fixed: true,
-          changesCount
+          changesCount,
         };
       }
 
@@ -114,19 +112,31 @@ class LoggerTypeFixer {
     // Fix logInfo with email addresses
     content = content.replace(
       /logInfo\(['"`]([^'"`]+)['"`],\s*credentials\.email\)/g,
-      'logInfo(\'$1\', { email: credentials.email })'
+      "logInfo('$1', { email: credentials.email })",
     );
 
     // Fix logInfo with eventId
     content = content.replace(
       /logInfo\(['"`]([^'"`]+)['"`],\s*eventId\)/g,
-      'logInfo(\'$1\', { eventId })'
+      "logInfo('$1', { eventId })",
     );
 
     // Fix logWarn and logError with common variable names
-    const commonVars = ['error', 'err', 'e', 'result', 'data', 'response', 'user', 'id'];
-    commonVars.forEach(varName => {
-      const regex = new RegExp(`(log(?:Info|Warn|Error|Debug))\\(['"\`]([^'"\`]+)['"\`],\\s*${varName}\\s*\\)`, 'g');
+    const commonVars = [
+      'error',
+      'err',
+      'e',
+      'result',
+      'data',
+      'response',
+      'user',
+      'id',
+    ];
+    commonVars.forEach((varName) => {
+      const regex = new RegExp(
+        `(log(?:Info|Warn|Error|Debug))\\(['"\`]([^'"\`]+)['"\`],\\s*${varName}\\s*\\)`,
+        'g',
+      );
       content = content.replace(regex, `$1('$2', { ${varName} })`);
     });
 
@@ -138,16 +148,20 @@ class LoggerTypeFixer {
    */
   async processAllFiles() {
     console.warn('🔧 Fixing TypeScript errors in logger calls...');
-    
+
     const files = this.getFilesToProcess();
-    console.warn(`📋 Found ${files.length} files with productionLogger imports`);
+    console.warn(
+      `📋 Found ${files.length} files with productionLogger imports`,
+    );
 
     const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        console.warn(`✅ Fixed ${filePath} (${result.changesCount || 1} changes)`);
+        console.warn(
+          `✅ Fixed ${filePath} (${result.changesCount || 1} changes)`,
+        );
         results.push({ file: filePath, ...result });
       }
     }
@@ -175,7 +189,9 @@ class LoggerTypeFixer {
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file: _file, _error: _error }) => {
-        console.warn(`   ${_file}: ${_error && _error.message ? _error.message : String(_error)}`);
+        console.warn(
+          `   ${_file}: ${_error && _error.message ? _error.message : String(_error)}`,
+        );
       });
     }
   }

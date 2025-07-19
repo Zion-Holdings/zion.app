@@ -49,7 +49,6 @@ jobs:
           echo "$pr_body_fix_content" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-
       - name: Create New Branch
         run: |
           branch_name="hotfix/ai-suggested-${{ inputs.error_id }}"
@@ -84,7 +83,7 @@ jobs:
           branch: ${{ env.BRANCH_NAME }}
           base: main # Or your default branch
           delete-branch: true
-          title: "AI Suggested Hotfix for Error ${{ inputs.error_id }}: ${{ inputs.error_message }}"
+          title: 'AI Suggested Hotfix for Error ${{ inputs.error_id }}: ${{ inputs.error_message }}'
           body: |
             This PR was automatically generated based on an AI suggestion for an error with ID: **${{ inputs.error_id }}**.
 

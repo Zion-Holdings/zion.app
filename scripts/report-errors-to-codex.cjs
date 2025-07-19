@@ -11,19 +11,23 @@ const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results');
 
 function findLatestReport() {
   if (!fs.existsSync(RESULTS_DIR)) return null;
-  const files = fs.readdirSync(RESULTS_DIR)
-    .filter(f => f.startsWith('jest-results-') && f.endsWith('.json'))
-    .map(f => ({ file: f, time: fs.statSync(path.join(RESULTS_DIR, f)).mtimeMs }))
+  const files = fs
+    .readdirSync(RESULTS_DIR)
+    .filter((f) => f.startsWith('jest-results-') && f.endsWith('.json'))
+    .map((f) => ({
+      file: f,
+      time: fs.statSync(path.join(RESULTS_DIR, f)).mtimeMs,
+    }))
     .sort((a, b) => b.time - a.time);
   return files[0] ? path.join(RESULTS_DIR, files[0].file) : null;
 }
 
 function summarizeFailures(data) {
-  const failedSuites = data.testResults.filter(tr => tr.numFailingTests > 0);
-  const lines = failedSuites.flatMap(suite =>
+  const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0);
+  const lines = failedSuites.flatMap((suite) =>
     suite.assertionResults
-      .filter(ar => ar.status === 'failed')
-      .map(ar => `• ${ar.fullName}\n  at ${suite.name}`)
+      .filter((ar) => ar.status === 'failed')
+      .map((ar) => `• ${ar.fullName}\n  at ${suite.name}`),
   );
   return lines.join('\n');
 }
@@ -48,7 +52,7 @@ async function main() {
     '',
     '```',
     summary,
-    '```'
+    '```',
   ];
 
   const token = process.env.GITHUB_TOKEN;
@@ -66,7 +70,7 @@ async function main() {
       repo,
       title: issueTitle,
       body: bodyLines.join('\n'),
-      labels: ['autofix']
+      labels: ['autofix'],
     });
     console.warn('📨 Created issue for Codex autofix');
   } catch (_err) {

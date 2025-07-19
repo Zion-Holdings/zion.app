@@ -1,358 +1,399 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Communication Interface</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            padding: 2rem;
-            width: 90%;
-            max-width: 600px;
-        }
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        width: 90%;
+        max-width: 600px;
+      }
 
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
 
-        .header h1 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+      .header h1 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
 
-        .status {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
+      .status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
 
-        .status-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-        }
+      .status-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+      }
 
-        .status-indicator.online {
-            background: #4CAF50;
-            animation: pulse 2s infinite;
-        }
+      .status-indicator.online {
+        background: #4caf50;
+        animation: pulse 2s infinite;
+      }
 
-        .status-indicator.offline {
-            background: #f44336;
-        }
+      .status-indicator.offline {
+        background: #f44336;
+      }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+      @keyframes pulse {
+        0% {
+          opacity: 1;
         }
-
-        .chat-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        50% {
+          opacity: 0.5;
         }
-
-        .input-group {
-            display: flex;
-            gap: 0.5rem;
+        100% {
+          opacity: 1;
         }
+      }
 
-        input[type="text"] {
-            flex: 1;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
+      .chat-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
 
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+      .input-group {
+        display: flex;
+        gap: 0.5rem;
+      }
 
-        button {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+      input[type='text'] {
+        flex: 1;
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
 
-        button:hover {
-            transform: translateY(-2px);
-        }
+      input[type='text']:focus {
+        outline: none;
+        border-color: #667eea;
+      }
 
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
+      button {
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-        .quick-actions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
+      button:hover {
+        transform: translateY(-2px);
+      }
 
-        .quick-btn {
-            padding: 0.75rem;
-            background: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
 
-        .quick-btn:hover {
-            background: #e0e0e0;
-            transform: translateY(-1px);
-        }
+      .quick-actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
 
-        .logs {
-            margin-top: 2rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1rem;
-            max-height: 300px;
-            overflow-y: auto;
-        }
+      .quick-btn {
+        padding: 0.75rem;
+        background: #f5f5f5;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.9rem;
+      }
 
-        .log-entry {
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-            padding: 0.25rem;
-            border-radius: 4px;
-        }
+      .quick-btn:hover {
+        background: #e0e0e0;
+        transform: translateY(-1px);
+      }
 
-        .log-info { color: #2196F3; }
-        .log-success { color: #4CAF50; }
-        .log-warning { color: #FF9800; }
-        .log-error { color: #f44336; }
+      .logs {
+        margin-top: 2rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 1rem;
+        max-height: 300px;
+        overflow-y: auto;
+      }
 
-        .system-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
+      .log-entry {
+        font-family: 'Monaco', 'Menlo', monospace;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        padding: 0.25rem;
+        border-radius: 4px;
+      }
 
-        .info-item {
-            text-align: center;
-        }
+      .log-info {
+        color: #2196f3;
+      }
+      .log-success {
+        color: #4caf50;
+      }
+      .log-warning {
+        color: #ff9800;
+      }
+      .log-error {
+        color: #f44336;
+      }
 
-        .info-label {
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
+      .system-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
 
-        .info-value {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #333;
-        }
+      .info-item {
+        text-align: center;
+      }
+
+      .info-label {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.25rem;
+      }
+
+      .info-value {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>🤖 AI Communication Interface</h1>
-            <div class="status">
-                <div class="status-indicator" id="statusIndicator"></div>
-                <span id="statusText">Checking connection...</span>
-            </div>
+      <div class="header">
+        <h1>🤖 AI Communication Interface</h1>
+        <div class="status">
+          <div class="status-indicator" id="statusIndicator"></div>
+          <span id="statusText">Checking connection...</span>
         </div>
+      </div>
 
-        <form class="chat-form" id="chatForm">
-            <div class="input-group">
-                <input type="text" id="messageInput" placeholder="Type your message to the AI assistant..." required>
-                <button type="submit" id="sendBtn">Send</button>
-            </div>
-        </form>
-
-        <div class="quick-actions">
-            <button class="quick-btn" onclick="sendQuickMessage('build')">🔨 Build Project</button>
-            <button class="quick-btn" onclick="sendQuickMessage('status')">📊 Check Status</button>
-            <button class="quick-btn" onclick="sendQuickMessage('deploy')">🚀 Deploy</button>
-            <button class="quick-btn" onclick="sendQuickMessage('test')">🧪 Run Tests</button>
-            <button class="quick-btn" onclick="sendQuickMessage('optimize')">⚡ Optimize</button>
-            <button class="quick-btn" onclick="sendQuickMessage('help')">❓ Help</button>
+      <form class="chat-form" id="chatForm">
+        <div class="input-group">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Type your message to the AI assistant..."
+            required
+          />
+          <button type="submit" id="sendBtn">Send</button>
         </div>
+      </form>
 
-        <div class="system-info" id="systemInfo">
-            <div class="info-item">
-                <div class="info-label">Computer ID</div>
-                <div class="info-value" id="computerId">-</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Uptime</div>
-                <div class="info-value" id="uptime">-</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Connected</div>
-                <div class="info-value" id="connected">-</div>
-            </div>
-        </div>
+      <div class="quick-actions">
+        <button class="quick-btn" onclick="sendQuickMessage('build')">
+          🔨 Build Project
+        </button>
+        <button class="quick-btn" onclick="sendQuickMessage('status')">
+          📊 Check Status
+        </button>
+        <button class="quick-btn" onclick="sendQuickMessage('deploy')">
+          🚀 Deploy
+        </button>
+        <button class="quick-btn" onclick="sendQuickMessage('test')">
+          🧪 Run Tests
+        </button>
+        <button class="quick-btn" onclick="sendQuickMessage('optimize')">
+          ⚡ Optimize
+        </button>
+        <button class="quick-btn" onclick="sendQuickMessage('help')">
+          ❓ Help
+        </button>
+      </div>
 
-        <div class="logs" id="logs">
-            <div class="log-entry log-info">System initialized...</div>
+      <div class="system-info" id="systemInfo">
+        <div class="info-item">
+          <div class="info-label">Computer ID</div>
+          <div class="info-value" id="computerId">-</div>
         </div>
+        <div class="info-item">
+          <div class="info-label">Uptime</div>
+          <div class="info-value" id="uptime">-</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Connected</div>
+          <div class="info-value" id="connected">-</div>
+        </div>
+      </div>
+
+      <div class="logs" id="logs">
+        <div class="log-entry log-info">System initialized...</div>
+      </div>
     </div>
 
     <script>
-        const API_BASE = 'http://localhost:3005';
-        let statusCheckInterval;
+      const API_BASE = 'http://localhost:3005';
+      let statusCheckInterval;
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            checkStatus();
-            statusCheckInterval = setInterval(checkStatus, 5000);
-        });
+      // Initialize
+      document.addEventListener('DOMContentLoaded', function () {
+        checkStatus();
+        statusCheckInterval = setInterval(checkStatus, 5000);
+      });
 
-        // Check system status
-        async function checkStatus() {
-            try {
-                const response = await fetch(`${API_BASE}/status`);
-                const data = await response.json();
-                
-                updateStatus(data.status === 'running');
-                updateSystemInfo(data);
-                addLog('System status checked', 'info');
-            } catch (error) {
-                updateStatus(false);
-                addLog('Connection failed: ' + error.message, 'error');
-            }
+      // Check system status
+      async function checkStatus() {
+        try {
+          const response = await fetch(`${API_BASE}/status`);
+          const data = await response.json();
+
+          updateStatus(data.status === 'running');
+          updateSystemInfo(data);
+          addLog('System status checked', 'info');
+        } catch (error) {
+          updateStatus(false);
+          addLog('Connection failed: ' + error.message, 'error');
         }
+      }
 
-        // Update status indicator
-        function updateStatus(isOnline) {
-            const indicator = document.getElementById('statusIndicator');
-            const statusText = document.getElementById('statusText');
-            
-            if (isOnline) {
-                indicator.className = 'status-indicator online';
-                statusText.textContent = 'Connected';
-            } else {
-                indicator.className = 'status-indicator offline';
-                statusText.textContent = 'Disconnected';
-            }
+      // Update status indicator
+      function updateStatus(isOnline) {
+        const indicator = document.getElementById('statusIndicator');
+        const statusText = document.getElementById('statusText');
+
+        if (isOnline) {
+          indicator.className = 'status-indicator online';
+          statusText.textContent = 'Connected';
+        } else {
+          indicator.className = 'status-indicator offline';
+          statusText.textContent = 'Disconnected';
         }
+      }
 
-        // Update system information
-        function updateSystemInfo(data) {
-            document.getElementById('computerId').textContent = data.computerId || '-';
-            document.getElementById('uptime').textContent = formatUptime(data.uptime || 0);
-            document.getElementById('connected').textContent = data.connected ? 'Yes' : 'No';
+      // Update system information
+      function updateSystemInfo(data) {
+        document.getElementById('computerId').textContent =
+          data.computerId || '-';
+        document.getElementById('uptime').textContent = formatUptime(
+          data.uptime || 0,
+        );
+        document.getElementById('connected').textContent = data.connected
+          ? 'Yes'
+          : 'No';
+      }
+
+      // Format uptime
+      function formatUptime(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        return `${hours}h ${minutes}m`;
+      }
+
+      // Send message
+      async function sendMessage(message) {
+        try {
+          const response = await fetch(`${API_BASE}/chat`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message }),
+          });
+
+          const data = await response.json();
+
+          if (data.status === 'sent') {
+            addLog(`Message sent: ${message}`, 'success');
+          } else {
+            addLog(`Failed to send message: ${data.error}`, 'error');
+          }
+        } catch (error) {
+          addLog('Failed to send message: ' + error.message, 'error');
         }
+      }
 
-        // Format uptime
-        function formatUptime(seconds) {
-            const hours = Math.floor(seconds / 3600);
-            const minutes = Math.floor((seconds % 3600) / 60);
-            return `${hours}h ${minutes}m`;
-        }
+      // Send quick message
+      function sendQuickMessage(type) {
+        const messages = {
+          build: 'Please help build the project and fix any issues',
+          status: 'What is the current status of the project?',
+          deploy: 'Please help deploy the project to production',
+          test: 'Please run all tests and report any issues',
+          optimize: 'Please analyze and optimize the codebase',
+          help: 'What can you help me with?',
+        };
 
-        // Send message
-        async function sendMessage(message) {
-            try {
-                const response = await fetch(`${API_BASE}/chat`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ message })
-                });
-                
-                const data = await response.json();
-                
-                if (data.status === 'sent') {
-                    addLog(`Message sent: ${message}`, 'success');
-                } else {
-                    addLog(`Failed to send message: ${data.error}`, 'error');
-                }
-            } catch (error) {
-                addLog('Failed to send message: ' + error.message, 'error');
-            }
-        }
+        const message = messages[type] || type;
+        sendMessage(message);
+      }
 
-        // Send quick message
-        function sendQuickMessage(type) {
-            const messages = {
-                'build': 'Please help build the project and fix any issues',
-                'status': 'What is the current status of the project?',
-                'deploy': 'Please help deploy the project to production',
-                'test': 'Please run all tests and report any issues',
-                'optimize': 'Please analyze and optimize the codebase',
-                'help': 'What can you help me with?'
-            };
-            
-            const message = messages[type] || type;
+      // Add log entry
+      function addLog(message, type = 'info') {
+        const logs = document.getElementById('logs');
+        const entry = document.createElement('div');
+        entry.className = `log-entry log-${type}`;
+        entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        logs.appendChild(entry);
+        logs.scrollTop = logs.scrollHeight;
+      }
+
+      // Handle form submission
+      document
+        .getElementById('chatForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+          const input = document.getElementById('messageInput');
+          const message = input.value.trim();
+
+          if (message) {
             sendMessage(message);
-        }
-
-        // Add log entry
-        function addLog(message, type = 'info') {
-            const logs = document.getElementById('logs');
-            const entry = document.createElement('div');
-            entry.className = `log-entry log-${type}`;
-            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
-            logs.appendChild(entry);
-            logs.scrollTop = logs.scrollHeight;
-        }
-
-        // Handle form submission
-        document.getElementById('chatForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const input = document.getElementById('messageInput');
-            const message = input.value.trim();
-            
-            if (message) {
-                sendMessage(message);
-                input.value = '';
-            }
+            input.value = '';
+          }
         });
 
-        // Handle Enter key
-        document.getElementById('messageInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                document.getElementById('sendBtn').click();
-            }
+      // Handle Enter key
+      document
+        .getElementById('messageInput')
+        .addEventListener('keypress', function (e) {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            document.getElementById('sendBtn').click();
+          }
         });
     </script>
-</body>
-</html> 
+  </body>
+</html>

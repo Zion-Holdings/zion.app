@@ -2,7 +2,7 @@
 
 /**
  * Large Chunk Analyzer - Phase 2 Advanced Optimization
- * 
+ *
  * Analyzes specific large chunks and provides targeted optimization strategies
  */
 
@@ -36,7 +36,7 @@ function analyzeChunkContent(filename) {
     p2p: /libp2p|orbitdb|helia|ipfs|blockstore|datastore/i,
     vendors: /node_modules/i,
     common: /common/i,
-    pages: /pages/i
+    pages: /pages/i,
   };
 
   for (const [category, pattern] of Object.entries(patterns)) {
@@ -55,81 +55,81 @@ function getOptimizationStrategy(category, _size) {
       actions: [
         'Consider splitting React Router into separate chunk',
         'Use React.lazy for heavy components',
-        'Optimize Redux store structure'
-      ]
+        'Optimize Redux store structure',
+      ],
     },
     ui: {
-      priority: 'high', 
+      priority: 'high',
       actions: [
         'Implement component-level code splitting',
         'Use dynamic imports for UI libraries',
-        'Consider lighter UI alternatives'
-      ]
+        'Consider lighter UI alternatives',
+      ],
     },
     utils: {
       priority: 'high',
       actions: [
         'Replace heavy utility libraries with lighter alternatives',
         'Use tree shaking to eliminate unused functions',
-        'Consider native browser APIs'
-      ]
+        'Consider native browser APIs',
+      ],
     },
     crypto: {
       priority: 'low',
       actions: [
         'Load crypto libraries only when needed',
         'Use Web Crypto API where possible',
-        'Consider worker threads for heavy crypto operations'
-      ]
+        'Consider worker threads for heavy crypto operations',
+      ],
     },
     charts: {
       priority: 'high',
       actions: [
         'Load chart libraries dynamically',
         'Use lighter charting alternatives',
-        'Implement chart lazy loading'
-      ]
+        'Implement chart lazy loading',
+      ],
     },
     editor: {
       priority: 'high',
       actions: [
         'Load editors only on specific pages',
         'Use dynamic imports for syntax highlighting',
-        'Consider CDN loading for editors'
-      ]
+        'Consider CDN loading for editors',
+      ],
     },
     p2p: {
       priority: 'critical',
       actions: [
         'These should already be externalized!',
         'Verify dynamic import implementation',
-        'Ensure p2p libraries are async-only'
-      ]
+        'Ensure p2p libraries are async-only',
+      ],
     },
     vendors: {
       priority: 'medium',
       actions: [
         'Review vendor bundling strategy',
         'Split by usage frequency',
-        'Optimize cache groups'
-      ]
+        'Optimize cache groups',
+      ],
     },
     common: {
       priority: 'low',
       actions: [
         'Review common chunk size',
         'Ensure proper code sharing',
-        'Consider minChunks threshold'
-      ]
+        'Consider minChunks threshold',
+      ],
     },
     unknown: {
       priority: 'medium',
       actions: [
         'Investigate chunk contents manually',
         'Consider splitting unknown large chunks',
-        'Review bundling strategy'
-      ]
-    }
+        'Review bundling strategy',
+      ],
+    },
   };
 
   return strategies[category] || strategies.unknown;
@@ -141,28 +141,28 @@ function analyzeLargeChunks() {
     largeChunks: [],
     totalAnalyzed: 0,
     totalSize: 0,
-    recommendations: []
+    recommendations: [],
   };
 
   // Analyze static chunks
   const staticPath = path.join(buildStatsPath, 'static', 'chunks');
   if (fs.existsSync(staticPath)) {
     const chunks = fs.readdirSync(staticPath);
-    
-    chunks.forEach(chunk => {
+
+    chunks.forEach((chunk) => {
       if (!chunk.endsWith('.js')) return;
-      
+
       const chunkPath = path.join(staticPath, chunk);
       const stats = fs.statSync(chunkPath);
       const _size = stats.size;
-      
+
       results.totalAnalyzed++;
       results.totalSize += _size;
-      
+
       if (_size > TARGET_SIZE) {
         const category = analyzeChunkContent(chunk);
         const strategy = getOptimizationStrategy(category, _size);
-        
+
         results.largeChunks.push({
           name: chunk,
           size: _size,
@@ -170,7 +170,7 @@ function analyzeLargeChunks() {
           overTarget: _size - TARGET_SIZE,
           overTargetFormatted: formatBytes(_size - TARGET_SIZE),
           category,
-          strategy
+          strategy,
         });
       }
     });
@@ -182,7 +182,7 @@ function analyzeLargeChunks() {
 // Generate detailed report
 function generateDetailedReport() {
   const analysis = analyzeLargeChunks();
-  
+
   // console.warn(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
   // console.warn(`===============================`);
   // console.warn(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
@@ -200,18 +200,23 @@ function generateDetailedReport() {
 
   // console.warn(`🔍 LARGE CHUNKS BREAKDOWN:`);
   // console.warn(`=========================`);
-  
+
   analysis.largeChunks.forEach((chunk, _index) => {
-    const _urgency = chunk.strategy.priority === 'critical' ? '🚨' : 
-                   chunk.strategy.priority === 'high' ? '⚠️' : 
-                   chunk.strategy.priority === 'medium' ? '📊' : '📝';
-    
+    const _urgency =
+      chunk.strategy.priority === 'critical'
+        ? '🚨'
+        : chunk.strategy.priority === 'high'
+          ? '⚠️'
+          : chunk.strategy.priority === 'medium'
+            ? '📊'
+            : '📝';
+
     // console.warn(`${_index + 1}. ${_urgency} ${chunk.name}`);
     // console.warn(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
     // console.warn(`   Category: ${chunk.category}`);
     // console.warn(`   Priority: ${chunk.strategy.priority}`);
-    
-    chunk.strategy.actions.forEach(_action => {
+
+    chunk.strategy.actions.forEach((_action) => {
       // console.warn(`   • ${_action}`);
     });
     // console.warn();
@@ -219,12 +224,12 @@ function generateDetailedReport() {
 
   // Generate category-based recommendations
   const categoryStats = {};
-  analysis.largeChunks.forEach(chunk => {
+  analysis.largeChunks.forEach((chunk) => {
     if (!categoryStats[chunk.category]) {
       categoryStats[chunk.category] = {
         count: 0,
         totalSize: 0,
-        chunks: []
+        chunks: [],
       };
     }
     categoryStats[chunk.category].count++;
@@ -234,13 +239,13 @@ function generateDetailedReport() {
 
   // console.warn(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
   // console.warn(`======================================`);
-  
+
   Object.entries(categoryStats)
-    .sort(([,a], [,b]) => b.totalSize - a.totalSize)
+    .sort(([, a], [, b]) => b.totalSize - a.totalSize)
     .forEach(([category, stats]) => {
       // console.warn(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
       // console.warn(`   Chunks: ${stats.chunks.join(', ')}`);
-      
+
       const _strategy = getOptimizationStrategy(category, stats.totalSize);
       // console.warn(`   Priority: ${_strategy.priority}`);
       // console.warn(`   Actions:`);
@@ -253,10 +258,14 @@ function generateDetailedReport() {
   // Implementation guidance
   // console.warn(`🚀 IMPLEMENTATION GUIDANCE:`);
   // console.warn(`==========================`);
-  
-  const criticalChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'critical');
-  const highPriorityChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'high');
-  
+
+  const criticalChunks = analysis.largeChunks.filter(
+    (c) => c.strategy.priority === 'critical',
+  );
+  const highPriorityChunks = analysis.largeChunks.filter(
+    (c) => c.strategy.priority === 'high',
+  );
+
   if (criticalChunks.length > 0) {
     // console.warn(`🚨 CRITICAL ISSUES (Fix Immediately):`);
     // criticalChunks.forEach(chunk => {
@@ -288,7 +297,7 @@ function generateDetailedReport() {
 function saveAnalysis(analysis) {
   const reportPath = path.join(process.cwd(), 'large-chunk-analysis.json');
   const timestamp = new Date().toISOString();
-  
+
   const report = {
     timestamp,
     targetSize: TARGET_SIZE,
@@ -297,17 +306,17 @@ function saveAnalysis(analysis) {
       totalChunks: analysis.totalAnalyzed,
       largeChunks: analysis.largeChunks.length,
       totalSize: analysis.totalSize,
-      totalSizeFormatted: formatBytes(analysis.totalSize)
+      totalSizeFormatted: formatBytes(analysis.totalSize),
     },
     largeChunks: analysis.largeChunks,
-    recommendations: analysis.largeChunks.map(chunk => ({
+    recommendations: analysis.largeChunks.map((chunk) => ({
       chunk: chunk.name,
       category: chunk.category,
       priority: chunk.strategy.priority,
-      actions: chunk.strategy.actions
-    }))
+      actions: chunk.strategy.actions,
+    })),
   };
-  
+
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   // console.warn(`📄 Detailed analysis saved to: ${reportPath}`);
 }
@@ -321,13 +330,13 @@ try {
 
   const { success, analysis } = generateDetailedReport();
   saveAnalysis(analysis);
-  
+
   if (success) {
     // console.warn('\n🎉 Chunk optimization target achieved!');
   } else {
     // console.warn('\n⚡ Continue chunk optimization efforts.');
   }
-  
+
   process.exit(success ? 0 : 1);
 } catch (_error) {
   // console.error('❌ Error during large chunk analysis:', _error.message);

@@ -2,7 +2,7 @@
 
 /**
  * Zion App - Continuous Automation Daemon
- * 
+ *
  * Runs the automated improvement system continuously in the background
  * with automatic restart capabilities and 24/7 operation
  */
@@ -24,36 +24,36 @@ const CONFIG = {
     RESTART_WINDOW: 60000, // 1 minute
     HEALTH_CHECK_INTERVAL: 30000, // 30 seconds
   },
-  
+
   // Services to manage
   SERVICES: [
     {
       name: 'ai-delegation-master',
       command: 'npm run ai-delegate:master',
       port: 3002,
-      healthCheck: 'http://localhost:3002/api/nodes/status'
+      healthCheck: 'http://localhost:3002/api/nodes/status',
     },
     {
       name: 'automated-improvement-pipeline',
       command: 'node scripts/automated-improvement-pipeline.cjs',
       port: 3006,
-      healthCheck: 'http://localhost:3006/api/status'
+      healthCheck: 'http://localhost:3006/api/status',
     },
     {
       name: 'cursor-ai-delegator',
       command: 'node scripts/cursor-ai-delegator.cjs',
       port: 3005,
-      healthCheck: 'http://localhost:3005/api/status'
-    }
+      healthCheck: 'http://localhost:3005/api/status',
+    },
   ],
-  
+
   // Monitoring
   MONITORING: {
     ENABLED: true,
     METRICS_FILE: 'logs/automation-metrics.json',
     ALERT_EMAIL: process.env.ALERT_EMAIL,
-    SLACK_WEBHOOK: process.env.SLACK_WEBHOOK
-  }
+    SLACK_WEBHOOK: process.env.SLACK_WEBHOOK,
+  },
 };
 
 class ContinuousAutomationDaemon {
@@ -65,11 +65,11 @@ class ContinuousAutomationDaemon {
     this.metrics = {
       startTime: Date.now(),
       totalRestarts: 0,
-      services: {}
+      services: {},
     };
-    
+
     // Initialize service tracking
-    CONFIG.SERVICES.forEach(service => {
+    CONFIG.SERVICES.forEach((service) => {
       this.restartCounts.set(service.name, 0);
       this.lastRestarts.set(service.name, []);
       this.metrics.services[service.name] = {
@@ -77,7 +77,7 @@ class ContinuousAutomationDaemon {
         restartCount: 0,
         lastStart: null,
         lastRestart: null,
-        uptime: 0
+        uptime: 0,
       };
     });
   }
@@ -87,35 +87,35 @@ class ContinuousAutomationDaemon {
    */
   async start() {
     console.log('🚀 Starting Zion Automation Daemon...');
-    
+
     // Create log directory
     const logDir = path.dirname(CONFIG.DAEMON.LOG_FILE);
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
-    
+
     // Write PID file
     fs.writeFileSync(CONFIG.DAEMON.PID_FILE, process.pid.toString());
-    
+
     this.isRunning = true;
-    
+
     // Start all services
     await this.startAllServices();
-    
+
     // Start monitoring
     this.startMonitoring();
-    
+
     // Start health checks
     this.startHealthChecks();
-    
+
     // Start metrics collection
     this.startMetricsCollection();
-    
+
     console.log('✅ Zion Automation Daemon started successfully');
     console.log(`📊 PID: ${process.pid}`);
     console.log(`📝 Logs: ${CONFIG.DAEMON.LOG_FILE}`);
     console.log(`📈 Metrics: ${CONFIG.MONITORING.METRICS_FILE}`);
-    
+
     // Log startup
     this.log('DAEMON_STARTED', 'Zion Automation Daemon started successfully');
   }
@@ -125,11 +125,11 @@ class ContinuousAutomationDaemon {
    */
   async startAllServices() {
     console.log('🔧 Starting all automation services...');
-    
+
     for (const serviceConfig of CONFIG.SERVICES) {
       await this.startService(serviceConfig);
     }
-    
+
     console.log('✅ All services started');
   }
 
@@ -139,66 +139,76 @@ class ContinuousAutomationDaemon {
   async startService(serviceConfig) {
     try {
       console.log(`🚀 Starting service: ${serviceConfig.name}`);
-      
+
       // Check if service is already running
       if (this.services.has(serviceConfig.name)) {
         console.log(`⚠️  Service ${serviceConfig.name} is already running`);
         return;
       }
-      
+
       // Start the service
       const service = spawn('bash', ['-c', serviceConfig.command], {
         stdio: ['pipe', 'pipe', 'pipe'],
-        detached: false
+        detached: false,
       });
-      
+
       // Track the service
       this.services.set(serviceConfig.name, {
         process: service,
         config: serviceConfig,
         startTime: Date.now(),
-        status: 'starting'
+        status: 'starting',
       });
-      
+
       // Update metrics
       this.metrics.services[serviceConfig.name].startCount++;
       this.metrics.services[serviceConfig.name].lastStart = Date.now();
-      
+
       // Handle service output
       service.stdout.on('data', (data) => {
         this.logService(serviceConfig.name, 'STDOUT', data.toString());
       });
-      
+
       service.stderr.on('data', (data) => {
         this.logService(serviceConfig.name, 'STDERR', data.toString());
       });
-      
+
       // Handle service exit
       service.on('exit', (code, signal) => {
         this.handleServiceExit(serviceConfig.name, code, signal);
       });
-      
+
       // Handle service error
       service.on('error', (error) => {
         this.handleServiceError(serviceConfig.name, error);
       });
-      
+
       // Wait a moment for service to start
       await this.sleep(2000);
-      
+
       // Check if service started successfully
       if (service.exitCode === null) {
         this.services.get(serviceConfig.name).status = 'running';
         console.log(`✅ Service ${serviceConfig.name} started successfully`);
-        this.log('SERVICE_STARTED', `Service ${serviceConfig.name} started successfully`);
+        this.log(
+          'SERVICE_STARTED',
+          `Service ${serviceConfig.name} started successfully`,
+        );
       } else {
-        throw new Error(`Service failed to start with exit code ${service.exitCode}`);
+        throw new Error(
+          `Service failed to start with exit code ${service.exitCode}`,
+        );
       }
-      
     } catch (error) {
-      console.error(`❌ Failed to start service ${serviceConfig.name}:`, error.message);
-      this.log('SERVICE_START_FAILED', `Failed to start service ${serviceConfig.name}: ${error.message}`);
-      
+      console.error(
+        `❌ Failed to start service ${serviceConfig.name}:`,
+        error.message,
+      );
+      this.log(
+        'SERVICE_START_FAILED',
+        `Failed to start service ${serviceConfig.name}: ${error.message}`,
+      );
+
       // Schedule restart
       this.scheduleServiceRestart(serviceConfig.name);
     }
@@ -208,22 +218,28 @@ class ContinuousAutomationDaemon {
    * Handle service exit
    */
   handleServiceExit(serviceName, code, signal) {
-    console.log(`🔄 Service ${serviceName} exited with code ${code} and signal ${signal}`);
-    this.log('SERVICE_EXIT', `Service ${serviceName} exited with code ${code} and signal ${signal}`);
-    
+    console.log(
+      `🔄 Service ${serviceName} exited with code ${code} and signal ${signal}`,
+    );
+    this.log(
+      'SERVICE_EXIT',
+      `Service ${serviceName} exited with code ${code} and signal ${signal}`,
+    );
+
     const service = this.services.get(serviceName);
     if (service) {
       service.status = 'exited';
       service.exitCode = code;
       service.exitSignal = signal;
       service.exitTime = Date.now();
-      
+
       // Update metrics
-      this.metrics.services[serviceName].uptime += Date.now() - service.startTime;
-      
+      this.metrics.services[serviceName].uptime +=
+        Date.now() - service.startTime;
+
       // Remove from active services
       this.services.delete(serviceName);
-      
+
       // Schedule restart if daemon is still running
       if (this.isRunning) {
         this.scheduleServiceRestart(serviceName);
@@ -237,7 +253,7 @@ class ContinuousAutomationDaemon {
   handleServiceError(serviceName, error) {
     console.error(`❌ Service ${serviceName} error:`, error.message);
     this.log('SERVICE_ERROR', `Service ${serviceName} error: ${error.message}`);
-    
+
     // Schedule restart
     this.scheduleServiceRestart(serviceName);
   }
@@ -246,41 +262,50 @@ class ContinuousAutomationDaemon {
    * Schedule service restart
    */
   scheduleServiceRestart(serviceName) {
-    const serviceConfig = CONFIG.SERVICES.find(s => s.name === serviceName);
+    const serviceConfig = CONFIG.SERVICES.find((s) => s.name === serviceName);
     if (!serviceConfig) return;
-    
+
     // Check restart limits
     const restartCount = this.restartCounts.get(serviceName) || 0;
     const lastRestarts = this.lastRestarts.get(serviceName) || [];
     const now = Date.now();
-    
+
     // Remove old restarts outside the window
-    const recentRestarts = lastRestarts.filter(time => now - time < CONFIG.DAEMON.RESTART_WINDOW);
+    const recentRestarts = lastRestarts.filter(
+      (time) => now - time < CONFIG.DAEMON.RESTART_WINDOW,
+    );
     this.lastRestarts.set(serviceName, recentRestarts);
-    
+
     if (recentRestarts.length >= CONFIG.DAEMON.MAX_RESTARTS) {
-      console.error(`❌ Service ${serviceName} exceeded restart limit. Stopping restarts.`);
-      this.log('SERVICE_RESTART_LIMIT', `Service ${serviceName} exceeded restart limit`);
-      this.sendAlert(`Service ${serviceName} exceeded restart limit and will not be restarted`);
+      console.error(
+        `❌ Service ${serviceName} exceeded restart limit. Stopping restarts.`,
+      );
+      this.log(
+        'SERVICE_RESTART_LIMIT',
+        `Service ${serviceName} exceeded restart limit`,
+      );
+      this.sendAlert(
+        `Service ${serviceName} exceeded restart limit and will not be restarted`,
+      );
       return;
     }
-    
+
     // Schedule restart
     setTimeout(async () => {
       if (this.isRunning) {
         console.log(`🔄 Restarting service: ${serviceName}`);
         this.log('SERVICE_RESTART', `Restarting service ${serviceName}`);
-        
+
         // Update restart tracking
         this.restartCounts.set(serviceName, restartCount + 1);
         recentRestarts.push(now);
         this.lastRestarts.set(serviceName, recentRestarts);
-        
+
         // Update metrics
         this.metrics.services[serviceName].restartCount++;
         this.metrics.services[serviceName].lastRestart = now;
         this.metrics.totalRestarts++;
-        
+
         // Restart the service
         await this.startService(serviceConfig);
       }
@@ -292,13 +317,13 @@ class ContinuousAutomationDaemon {
    */
   startMonitoring() {
     if (!CONFIG.MONITORING.ENABLED) return;
-    
+
     console.log('📊 Starting monitoring...');
-    
+
     setInterval(() => {
       this.collectMetrics();
     }, 60000); // Every minute
-    
+
     setInterval(() => {
       this.saveMetrics();
     }, 300000); // Every 5 minutes
@@ -309,7 +334,7 @@ class ContinuousAutomationDaemon {
    */
   startHealthChecks() {
     console.log('💚 Starting health checks...');
-    
+
     setInterval(async () => {
       for (const serviceConfig of CONFIG.SERVICES) {
         await this.checkServiceHealth(serviceConfig);
@@ -324,9 +349,9 @@ class ContinuousAutomationDaemon {
     try {
       const response = await fetch(serviceConfig.healthCheck, {
         method: 'GET',
-        timeout: 5000
+        timeout: 5000,
       });
-      
+
       if (response.ok) {
         const service = this.services.get(serviceConfig.name);
         if (service && service.status === 'running') {
@@ -334,18 +359,23 @@ class ContinuousAutomationDaemon {
           return;
         }
       }
-      
+
       // Service is unhealthy, restart it
       console.warn(`⚠️  Service ${serviceConfig.name} health check failed`);
-      this.log('SERVICE_UNHEALTHY', `Service ${serviceConfig.name} health check failed`);
-      
+      this.log(
+        'SERVICE_UNHEALTHY',
+        `Service ${serviceConfig.name} health check failed`,
+      );
+
       const service = this.services.get(serviceConfig.name);
       if (service) {
         service.process.kill('SIGTERM');
       }
-      
     } catch (error) {
-      console.warn(`⚠️  Health check failed for ${serviceConfig.name}:`, error.message);
+      console.warn(
+        `⚠️  Health check failed for ${serviceConfig.name}:`,
+        error.message,
+      );
     }
   }
 
@@ -354,7 +384,7 @@ class ContinuousAutomationDaemon {
    */
   startMetricsCollection() {
     console.log('📈 Starting metrics collection...');
-    
+
     setInterval(() => {
       this.updateServiceMetrics();
     }, 10000); // Every 10 seconds
@@ -382,16 +412,16 @@ class ContinuousAutomationDaemon {
         uptime: Date.now() - this.metrics.startTime,
         isRunning: this.isRunning,
         activeServices: this.services.size,
-        totalServices: CONFIG.SERVICES.length
+        totalServices: CONFIG.SERVICES.length,
       },
       services: this.metrics.services,
       system: {
         memory: process.memoryUsage(),
         cpu: os.loadavg(),
-        uptime: os.uptime()
-      }
+        uptime: os.uptime(),
+      },
     };
-    
+
     this.metrics = { ...this.metrics, ...metrics };
   }
 
@@ -404,8 +434,11 @@ class ContinuousAutomationDaemon {
       if (!fs.existsSync(metricsDir)) {
         fs.mkdirSync(metricsDir, { recursive: true });
       }
-      
-      fs.writeFileSync(CONFIG.MONITORING.METRICS_FILE, JSON.stringify(this.metrics, null, 2));
+
+      fs.writeFileSync(
+        CONFIG.MONITORING.METRICS_FILE,
+        JSON.stringify(this.metrics, null, 2),
+      );
     } catch (error) {
       console.error('❌ Failed to save metrics:', error.message);
     }
@@ -416,12 +449,12 @@ class ContinuousAutomationDaemon {
    */
   sendAlert(message) {
     console.log(`🚨 ALERT: ${message}`);
-    
+
     // Send to Slack if configured
     if (CONFIG.MONITORING.SLACK_WEBHOOK) {
       this.sendSlackAlert(message);
     }
-    
+
     // Send email if configured
     if (CONFIG.MONITORING.ALERT_EMAIL) {
       this.sendEmailAlert(message);
@@ -439,8 +472,8 @@ class ContinuousAutomationDaemon {
         body: JSON.stringify({
           text: `🚨 Zion Automation Alert: ${message}`,
           username: 'Zion Automation Daemon',
-          icon_emoji: ':robot_face:'
-        })
+          icon_emoji: ':robot_face:',
+        }),
       });
     } catch (error) {
       console.error('❌ Failed to send Slack alert:', error.message);
@@ -452,7 +485,9 @@ class ContinuousAutomationDaemon {
    */
   async sendEmailAlert(message) {
     // Implementation would use a mail service
-    console.log(`📧 Email alert would be sent to ${CONFIG.MONITORING.ALERT_EMAIL}: ${message}`);
+    console.log(
+      `📧 Email alert would be sent to ${CONFIG.MONITORING.ALERT_EMAIL}: ${message}`,
+    );
   }
 
   /**
@@ -461,7 +496,7 @@ class ContinuousAutomationDaemon {
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}\n`;
-    
+
     try {
       fs.appendFileSync(CONFIG.DAEMON.LOG_FILE, logEntry);
     } catch (error) {
@@ -475,13 +510,16 @@ class ContinuousAutomationDaemon {
   logService(serviceName, level, message) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
-    
+
     // Write to service-specific log
     const serviceLogFile = `logs/${serviceName}.log`;
     try {
       fs.appendFileSync(serviceLogFile, logEntry + '\n');
     } catch (error) {
-      console.error(`❌ Failed to write to service log ${serviceLogFile}:`, error.message);
+      console.error(
+        `❌ Failed to write to service log ${serviceLogFile}:`,
+        error.message,
+      );
     }
   }
 
@@ -489,7 +527,7 @@ class ContinuousAutomationDaemon {
    * Sleep utility
    */
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   /**
@@ -497,22 +535,25 @@ class ContinuousAutomationDaemon {
    */
   async stop() {
     console.log('⏹️  Stopping Zion Automation Daemon...');
-    
+
     this.isRunning = false;
-    
+
     // Stop all services
     for (const [serviceName, service] of this.services) {
       console.log(`🛑 Stopping service: ${serviceName}`);
       try {
         service.process.kill('SIGTERM');
       } catch (error) {
-        console.error(`❌ Error stopping service ${serviceName}:`, error.message);
+        console.error(
+          `❌ Error stopping service ${serviceName}:`,
+          error.message,
+        );
       }
     }
-    
+
     // Wait for services to stop
     await this.sleep(5000);
-    
+
     // Force kill any remaining processes
     for (const [serviceName, service] of this.services) {
       try {
@@ -521,17 +562,17 @@ class ContinuousAutomationDaemon {
         // Process already stopped
       }
     }
-    
+
     // Remove PID file
     try {
       fs.unlinkSync(CONFIG.DAEMON.PID_FILE);
     } catch (error) {
       // PID file doesn't exist
     }
-    
+
     // Save final metrics
     this.saveMetrics();
-    
+
     console.log('✅ Zion Automation Daemon stopped');
     this.log('DAEMON_STOPPED', 'Zion Automation Daemon stopped');
   }
@@ -548,9 +589,9 @@ class ContinuousAutomationDaemon {
         name,
         status: service.status,
         uptime: Date.now() - service.startTime,
-        restartCount: this.restartCounts.get(name) || 0
+        restartCount: this.restartCounts.get(name) || 0,
       })),
-      metrics: this.metrics
+      metrics: this.metrics,
     };
   }
 }
@@ -558,7 +599,7 @@ class ContinuousAutomationDaemon {
 // CLI handling
 if (require.main === module) {
   const daemon = new ContinuousAutomationDaemon();
-  
+
   // Handle process signals
   process.on('SIGINT', async () => {
     console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -573,10 +614,10 @@ if (require.main === module) {
   });
 
   // Start the daemon
-  daemon.start().catch(error => {
+  daemon.start().catch((error) => {
     console.error('❌ Failed to start automation daemon:', error);
     process.exit(1);
   });
 }
 
-module.exports = ContinuousAutomationDaemon; 
+module.exports = ContinuousAutomationDaemon;

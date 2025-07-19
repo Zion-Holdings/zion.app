@@ -87,35 +87,43 @@ NEXT_PUBLIC_VAPID_PUBLIC_KEY=your_vapid_public_key_here
 ## Common Issues and Solutions
 
 ### 1. "Something went wrong" on all pages
+
 **Cause**: Missing essential environment variables (Supabase URL/Key, Sentry DSN)
 **Solution**: Ensure all essential variables are set in your deployment platform
 
 ### 2. Supabase errors
+
 **Cause**: Invalid or placeholder Supabase credentials
 **Solution**: Use real Supabase project credentials from your dashboard
 
 ### 3. Wallet connection failures
+
 **Cause**: Invalid REOWN_PROJECT_ID
 **Solution**: Get a valid project ID from WalletConnect dashboard
 
 ### 4. Error tracking not working
+
 **Cause**: Missing or invalid Sentry configuration
 **Solution**: Set up Sentry project and configure DSN and auth token
 
 ## Deployment Platform Setup
 
 ### Netlify
+
 1. Go to Site Settings → Environment Variables
 2. Add each variable with its value
 3. Rebuild and deploy
 
 ### Vercel
+
 1. Go to Project Settings → Environment Variables
 2. Add variables for Production environment
 3. Redeploy the project
 
 ### Manual Verification
+
 After setting variables, check your deployment logs for:
+
 - "Essential environment variables validated successfully"
 - No "placeholder value" warnings
 - Successful Sentry initialization
@@ -126,4 +134,4 @@ After setting variables, check your deployment logs for:
 - Use different values for staging/production
 - Rotate secrets regularly
 - Use service role keys only on server-side
-- Store auth tokens securely in deployment platform 
+- Store auth tokens securely in deployment platform

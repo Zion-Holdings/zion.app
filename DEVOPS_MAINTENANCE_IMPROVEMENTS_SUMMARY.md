@@ -1,9 +1,11 @@
 # 🛠️ DevOps & Maintenance Improvements Summary
 
 ## Overview
+
 This summary highlights key enhancements that strengthen the project's operational reliability and routine maintenance. Automated audits, watchdog monitoring, and structured workflows keep the codebase healthy and secure.
 
 ## 🔄 Automated Maintenance Workflows
+
 - **Hourly Checks** (`.github/workflows/hourly-check.yml`)
   - Runs security audits and Lighthouse performance checks every hour
   - Uploads audit reports for review
@@ -15,6 +17,7 @@ This summary highlights key enhancements that strengthen the project's operation
   - Integrates Python `pip-audit` for backend packages
 
 ## 🛡️ Watchdog Self‑Healing
+
 - **Script**: `scripts/watchdog.js`
   - Monitors performance and security logs
   - Triggers a self‑heal command (`git pull && npm install && npm run build && pm2 restart all`) when repeated issues are detected
@@ -25,6 +28,7 @@ This summary highlights key enhancements that strengthen the project's operation
   - Logs are stored under `logs/` for easy inspection
 
 ## 🔍 Maintenance Utilities
+
 - **Audit Script** (`scripts/maintenance/audit.sh`)
   - Runs `npm install` followed by `npm audit` to create `maintenance-audit.json`
 - **Formatting Script** (`scripts/maintenance/format.sh`)
@@ -33,10 +37,12 @@ This summary highlights key enhancements that strengthen the project's operation
   - Creates placeholder tests for files with less than 80% coverage
 
 ## ✅ Benefits
+
 - Continuous security and dependency checks
 - Automatic formatting keeps code style consistent
 - Self‑healing reduces downtime by recovering from recurring errors
 - Centralized logs and artifacts simplify troubleshooting
 
 ---
-*Generated on $(date -I)*
+
+_Generated on $(date -I)_

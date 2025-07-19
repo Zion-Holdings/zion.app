@@ -2,7 +2,7 @@
 
 /**
  * Development Environment Checker
- * 
+ *
  * This script helps developers verify their local environment setup
  */
 
@@ -21,7 +21,7 @@ function checkEnvironment() {
   // Check Node.js version
   const nodeVersion = process.version;
   console.warn(`📦 Node.js Version: ${nodeVersion}`);
-  
+
   const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
   if (majorVersion < 18) {
     errors.push('Node.js version should be 18 or higher');
@@ -32,13 +32,17 @@ function checkEnvironment() {
   // Check for package.json
   if (fs.existsSync('package.json')) {
     console.warn('📋 Package.json: ✅ Found');
-    
+
     // Check if node_modules exists
     if (fs.existsSync('node_modules')) {
       console.warn('📁 Node modules: ✅ Installed');
     } else {
-      errors.push('node_modules not found - run `./setup.sh npm` to install dependencies');
-      warnings.push('For limited functionality without internet, run `./offline-dev.sh`');
+      errors.push(
+        'node_modules not found - run `./setup.sh npm` to install dependencies',
+      );
+      warnings.push(
+        'For limited functionality without internet, run `./offline-dev.sh`',
+      );
     }
   } else {
     errors.push('package.json not found');
@@ -47,25 +51,27 @@ function checkEnvironment() {
   // Check for environment files
   console.warn('\n🌍 Environment Configuration:');
   console.warn('=============================');
-  
+
   const envFiles = ['.env.local', '.env', '.env.development'];
   let hasEnvFile = false;
-  
-  envFiles.forEach(file => {
+
+  envFiles.forEach((file) => {
     if (fs.existsSync(file)) {
       console.warn(`   ✅ ${file} found`);
       hasEnvFile = true;
     }
   });
-  
+
   if (!hasEnvFile) {
-    warnings.push('No environment file found - create .env.local for development');
+    warnings.push(
+      'No environment file found - create .env.local for development',
+    );
   }
 
   // Check Next.js config
   console.warn('\n⚙️  Configuration Files:');
   console.warn('=======================');
-  
+
   // Check package.json type field to determine correct config file
   let packageType = 'commonjs'; // default
   try {
@@ -95,7 +101,10 @@ function checkEnvironment() {
   }
 
   // Check Tailwind
-  if (fs.existsSync('tailwind.config.js') || fs.existsSync('tailwind.config.ts')) {
+  if (
+    fs.existsSync('tailwind.config.js') ||
+    fs.existsSync('tailwind.config.ts')
+  ) {
     console.warn('   ✅ Tailwind config found');
   } else {
     warnings.push('Tailwind config not found');
@@ -104,13 +113,13 @@ function checkEnvironment() {
   // Check for common development scripts
   console.warn('\n🔧 Development Scripts:');
   console.warn('======================');
-  
+
   try {
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     const scripts = packageJson.scripts || {};
-    
+
     const requiredScripts = ['dev', 'build', 'start'];
-    requiredScripts.forEach(script => {
+    requiredScripts.forEach((script) => {
       if (scripts[script]) {
         console.warn(`   ✅ ${script} script available`);
       } else {
@@ -124,9 +133,11 @@ function checkEnvironment() {
   // Summary
   console.warn('\n📊 Environment Status:');
   console.warn('=====================');
-  
+
   if (errors.length === 0 && warnings.length === 0) {
-    console.warn('🎉 Perfect! Your development environment is fully configured.');
+    console.warn(
+      '🎉 Perfect! Your development environment is fully configured.',
+    );
     console.warn('\nYou can now run:');
     console.warn('• npm run dev - Start development server');
     console.warn('• npm run build - Build for production');
@@ -134,15 +145,15 @@ function checkEnvironment() {
   } else {
     if (errors.length > 0) {
       console.warn('\n❌ Critical Issues:');
-      errors.forEach(error => console.warn(`   • ${error}`));
+      errors.forEach((error) => console.warn(`   • ${error}`));
       allGood = false;
     }
-    
+
     if (warnings.length > 0) {
       console.warn('\n⚠️  Warnings:');
-      warnings.forEach(warning => console.warn(`   • ${warning}`));
+      warnings.forEach((warning) => console.warn(`   • ${warning}`));
     }
-    
+
     if (!allGood) {
       console.warn('\n🔧 Please fix the critical issues before continuing.');
     } else {
@@ -155,7 +166,7 @@ function checkEnvironment() {
   console.warn('npm install          # Install dependencies');
   console.warn('npm run build        # Test production build');
   console.warn('npm run dev          # Start development server');
-  
+
   return allGood;
 }
 
@@ -163,4 +174,4 @@ if (require.main === module) {
   checkEnvironment();
 }
 
-module.exports = { checkEnvironment }; 
+module.exports = { checkEnvironment };

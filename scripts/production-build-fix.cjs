@@ -16,16 +16,16 @@ class ProductionBuildFix {
 
   async runProductionBuild() {
     this.log('🚀 Starting Production Build Fix...');
-    
+
     try {
       await this.createProductionConfig();
       await this.buildProduction();
       await this.startProductionServer();
-      
+
       this.log('📊 Production Build Fix Summary:');
       this.log(`✅ Fixes applied: ${this.fixes.length}`);
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
-      
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+
       this.log('🎉 Production Build Fix completed!');
       return true;
     } catch (error) {
@@ -36,7 +36,7 @@ class ProductionBuildFix {
 
   async createProductionConfig() {
     this.log('🔧 Creating production config...');
-    
+
     try {
       // Create a production next.config.js
       const nextConfig = `/** @type {import('next').NextConfig} */
@@ -62,29 +62,32 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', nextConfig);
       this.fixes.push('Created production next.config.js');
-      
+
       this.log('✅ Production config created');
     } catch (error) {
-      this.log(`❌ Error creating production config: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Error creating production config: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
 
   async buildProduction() {
     this.log('🔧 Building production...');
-    
+
     try {
       // Clean everything first
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf out', { stdio: 'ignore' });
-      
+
       // Build the app
       execSync('npm run build', { stdio: 'inherit' });
       this.fixes.push('Created production build');
-      
+
       this.log('✅ Production build created');
     } catch (error) {
       this.log(`❌ Error building production: ${error.message}`, 'ERROR');
@@ -94,7 +97,7 @@ module.exports = nextConfig;`;
 
   async startProductionServer() {
     this.log('🚀 Starting production server...');
-    
+
     try {
       // Start a simple HTTP server to serve the static files
       const serverContent = `const express = require('express');
@@ -126,10 +129,10 @@ app.listen(PORT, () => {
   console.log(\`🚀 Zion App running on http://localhost:\${PORT}\`);
   console.log('✅ Production build server started');
 });`;
-      
+
       fs.writeFileSync('server.js', serverContent);
       this.fixes.push('Created production server');
-      
+
       // Install express if not present
       try {
         execSync('npm install express', { stdio: 'inherit' });
@@ -137,34 +140,45 @@ app.listen(PORT, () => {
       } catch (error) {
         this.log('⚠️ Express already installed or failed to install', 'WARN');
       }
-      
+
       // Start the server
       const serverProcess = spawn('node', ['server.js'], {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
-      
+
       serverProcess.stdout.on('data', (data) => {
         this.log(`SERVER: ${data.toString().trim()}`);
       });
-      
+
       serverProcess.stderr.on('data', (data) => {
         this.log(`SERVER ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 10000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Production server started and responding');
           this.log('✅ Production server started and responding');
@@ -172,10 +186,13 @@ app.listen(PORT, () => {
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return serverProcess;
     } catch (error) {
-      this.log(`❌ Error starting production server: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Error starting production server: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
@@ -184,10 +201,10 @@ app.listen(PORT, () => {
 // Run if called directly
 if (require.main === module) {
   const fix = new ProductionBuildFix();
-  fix.runProductionBuild().catch(error => {
+  fix.runProductionBuild().catch((error) => {
     console.error('Production build fix failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = ProductionBuildFix; 
+module.exports = ProductionBuildFix;

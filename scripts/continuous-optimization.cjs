@@ -11,7 +11,13 @@ class ContinuousOptimizer {
   }
 
   log(msg, type = 'info') {
-    const colors = { info: '\x1b[36m', success: '\x1b[32m', error: '\x1b[31m', warning: '\x1b[33m', reset: '\x1b[0m' };
+    const colors = {
+      info: '\x1b[36m',
+      success: '\x1b[32m',
+      error: '\x1b[31m',
+      warning: '\x1b[33m',
+      reset: '\x1b[0m',
+    };
     const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
@@ -42,9 +48,12 @@ class ContinuousOptimizer {
       timestamp: new Date().toISOString(),
       runtime,
       cycles: this.cycles,
-      optimizations: this.optimizations
+      optimizations: this.optimizations,
     };
-    fs.writeFileSync('automation/optimization-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'automation/optimization-report.json',
+      JSON.stringify(report, null, 2),
+    );
   }
 
   async runCycle() {
@@ -56,11 +65,14 @@ class ContinuousOptimizer {
   async start() {
     this.log('🚀 Starting Continuous Optimizer...', 'success');
     await this.runCycle();
-    setInterval(async () => {
-      await this.runCycle();
-    }, 10 * 60 * 1000);
+    setInterval(
+      async () => {
+        await this.runCycle();
+      },
+      10 * 60 * 1000,
+    );
   }
 }
 
 const optimizer = new ContinuousOptimizer();
-optimizer.start().catch(console.error); 
+optimizer.start().catch(console.error);

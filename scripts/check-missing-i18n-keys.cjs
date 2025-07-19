@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 const localesDir = path.join(__dirname, '..', 'src', 'i18n', 'locales');
-const localeFiles = fs.readdirSync(localesDir).filter(f => f.endsWith('.json'));
+const localeFiles = fs
+  .readdirSync(localesDir)
+  .filter((f) => f.endsWith('.json'));
 
 function flatten(obj, prefix = '') {
   const res = {};
@@ -27,12 +29,12 @@ for (const _file of localeFiles) {
   const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   const keys = Object.keys(flatten(data));
   localeKeys[file] = new Set(keys);
-  keys.forEach(k => allKeys.add(k));
+  keys.forEach((k) => allKeys.add(k));
 }
 
 let missing = false;
 for (const [file, keys] of Object.entries(localeKeys)) {
-  const missingKeys = [...allKeys].filter(k => !keys.has(k));
+  const missingKeys = [...allKeys].filter((k) => !keys.has(k));
   if (missingKeys.length) {
     missing = true;
   }

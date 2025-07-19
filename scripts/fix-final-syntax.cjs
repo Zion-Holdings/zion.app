@@ -13,9 +13,9 @@ const PROJECT_ROOT = process.cwd();
 // Files that need specific fixes based on build output
 const filesToFix = [
   'src/components/profile/TalentOnboardingForm.tsx',
-  'src/components/talent/TalentGrid.tsx', 
+  'src/components/talent/TalentGrid.tsx',
   'src/components/ui/quick-actions.tsx',
-  'src/context/AnalyticsContext.tsx'
+  'src/context/AnalyticsContext.tsx',
 ];
 
 function fixFile(filePath) {
@@ -25,7 +25,8 @@ function fixFile(filePath) {
     let changed = false;
 
     // Pattern 1: import { ... import { logXXX } from '@/utils/productionLogger';
-    const pattern1 = /import\s*{\s*\n\s*import\s*{\s*([^}]+)\s*}\s*from\s*['"]@\/utils\/productionLogger['"];\s*\n\s*/g;
+    const pattern1 =
+      /import\s*{\s*\n\s*import\s*{\s*([^}]+)\s*}\s*from\s*['"]@\/utils\/productionLogger['"];\s*\n\s*/g;
     if (pattern1.test(content)) {
       content = content.replace(pattern1, (match, logImports) => {
         return `import { ${logImports.trim()} } from '@/utils/productionLogger';\nimport {\n  `;
@@ -34,7 +35,8 @@ function fixFile(filePath) {
     }
 
     // Pattern 2: export type/interface ... import { logXXX } from '@/utils/productionLogger';
-    const pattern2 = /(export\s+(?:type|interface)\s+\w+\s*=?\s*)\n\s*import\s*{\s*([^}]+)\s*}\s*from\s*['"]@\/utils\/productionLogger['"];\s*\n\s*/g;
+    const pattern2 =
+      /(export\s+(?:type|interface)\s+\w+\s*=?\s*)\n\s*import\s*{\s*([^}]+)\s*}\s*from\s*['"]@\/utils\/productionLogger['"];\s*\n\s*/g;
     if (pattern2.test(content)) {
       content = content.replace(pattern2, (match, exportDecl, logImports) => {
         return `import { ${logImports.trim()} } from '@/utils/productionLogger';\n\n${exportDecl}\n  `;
@@ -64,4 +66,4 @@ for (const file of filesToFix) {
 }
 
 // console.warn(`\n✅ Fixed ${_fixedCount} files`);
-// console.warn('🎉 Final syntax fixes complete!'); 
+// console.warn('🎉 Final syntax fixes complete!');

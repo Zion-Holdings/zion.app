@@ -17,7 +17,7 @@ class WatchpackFixer {
 
   async fixWatchpackIssue() {
     this.log('🔧 Fixing watchpack issue...');
-    
+
     try {
       // Create a minimal next.config.js that avoids watchpack issues
       const minimalConfig = `/** @type {import('next').NextConfig} */
@@ -56,28 +56,30 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', minimalConfig);
-      this.fixes.push('Created minimal next.config.js to avoid watchpack issues');
-      
+      this.fixes.push(
+        'Created minimal next.config.js to avoid watchpack issues',
+      );
+
       // Clean all build artifacts
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf node_modules/.cache', { stdio: 'ignore' });
       this.fixes.push('Cleaned all build artifacts');
-      
+
       // Create a simple health check API
       const healthApiContent = `export default function handler(req, res) {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
 }`;
-      
+
       const apiDir = 'pages/api';
       if (!fs.existsSync(apiDir)) {
         fs.mkdirSync(apiDir, { recursive: true });
       }
-      
+
       fs.writeFileSync('pages/api/health.js', healthApiContent);
       this.fixes.push('Created health check API');
-      
+
       // Create a simple index page
       const indexPageContent = `export default function Home() {
   return (
@@ -87,10 +89,10 @@ module.exports = nextConfig;`;
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('pages/index.js', indexPageContent);
       this.fixes.push('Created simple index page');
-      
+
       this.log('✅ Watchpack issue fixed');
       return true;
     } catch (error) {
@@ -101,35 +103,45 @@ module.exports = nextConfig;`;
 
   async startDevServer() {
     this.log('🚀 Starting development server with watchpack fix...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next dev" || true', { stdio: 'ignore' });
-      
+
       // Start dev server without turbo to avoid watchpack issues
-      const devProcess = spawn('npm', ['run', 'dev:legacy', '--', '--port', '3001'], {
-        stdio: 'pipe',
-        detached: false
-      });
-      
+      const devProcess = spawn(
+        'npm',
+        ['run', 'dev:legacy', '--', '--port', '3001'],
+        {
+          stdio: 'pipe',
+          detached: false,
+        },
+      );
+
       devProcess.stdout.on('data', (data) => {
         this.log(`DEV: ${data.toString().trim()}`);
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 20000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 20000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
         } else {
           this.fixes.push('Development server started successfully');
           this.log('✅ Development server started and responding');
@@ -137,7 +149,7 @@ module.exports = nextConfig;`;
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return devProcess;
     } catch (error) {
       this.log(`❌ Error starting dev server: ${error.message}`, 'ERROR');
@@ -147,15 +159,15 @@ module.exports = nextConfig;`;
 
   async run() {
     this.log('🚀 Starting Watchpack Fix...');
-    
+
     const fixed = await this.fixWatchpackIssue();
     if (fixed) {
       const devProcess = await this.startDevServer();
-      
+
       this.log('📊 Watchpack Fix Summary:');
       this.log(`✅ Fixes applied: ${this.fixes.length}`);
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
-      
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+
       this.log('🎉 Watchpack Fix completed!');
       return devProcess;
     } else {
@@ -168,10 +180,10 @@ module.exports = nextConfig;`;
 // Run if called directly
 if (require.main === module) {
   const fixer = new WatchpackFixer();
-  fixer.run().catch(error => {
+  fixer.run().catch((error) => {
     console.error('Watchpack fix failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = WatchpackFixer; 
+module.exports = WatchpackFixer;

@@ -3,6 +3,7 @@
 ## Overview
 
 This application uses **Supabase** for all authentication functionality, including:
+
 - User registration and login
 - Password reset and email verification
 - Social authentication (Google, Facebook, Twitter)
@@ -55,6 +56,7 @@ INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
 ### 3. Configure Authentication Providers
 
 #### Email Authentication (Default)
+
 1. Go to **Authentication** → **Settings**
 2. Ensure "Enable email confirmations" is configured as needed. This is the standard Supabase setting for requiring email verification.
 3. Set up email templates if desired.
@@ -65,21 +67,23 @@ To facilitate testing and development, the application includes logic to **autom
 
 For this feature to work, the following environment variables must be correctly set in your development, staging, **beta**, or QA environments:
 
--   `NEXT_PUBLIC_APP_ENV`: This variable must be set to `development`, `staging`, or `beta`. If it's unset or set to `production` (or any other value), auto-verification will be skipped.
-    ```bash
-    # Example for .env.local or Netlify UI for beta testing
-    NEXT_PUBLIC_APP_ENV=beta
-    ```
+- `NEXT_PUBLIC_APP_ENV`: This variable must be set to `development`, `staging`, or `beta`. If it's unset or set to `production` (or any other value), auto-verification will be skipped.
 
--   `SUPABASE_SERVICE_ROLE_KEY`: This key is **required** for the backend to perform the administrative action of marking an email as confirmed. Ensure this key is provided and has the necessary permissions in your Supabase project to update user attributes.
-    ```bash
-    # Example for .env.local or Netlify UI for staging
-    SUPABASE_SERVICE_ROLE_KEY=your_actual_supabase_service_role_key
-    ```
+  ```bash
+  # Example for .env.local or Netlify UI for beta testing
+  NEXT_PUBLIC_APP_ENV=beta
+  ```
+
+- `SUPABASE_SERVICE_ROLE_KEY`: This key is **required** for the backend to perform the administrative action of marking an email as confirmed. Ensure this key is provided and has the necessary permissions in your Supabase project to update user attributes.
+  ```bash
+  # Example for .env.local or Netlify UI for staging
+  SUPABASE_SERVICE_ROLE_KEY=your_actual_supabase_service_role_key
+  ```
 
 If `NEXT_PUBLIC_APP_ENV` is correctly set but `SUPABASE_SERVICE_ROLE_KEY` is missing or invalid, the auto-verification will be skipped, and the system will fall back to requiring manual email verification. Refer to the server logs for `/api/auth/register` for more details if auto-verification is not working as expected.
 
 #### Social Authentication (Optional)
+
 1. Go to **Authentication** → **Providers** in your Supabase project dashboard.
 2. Enable and configure providers such as Google, Facebook, GitHub, Microsoft, etc.
    - You will typically need to provide the **Client ID** and **Client Secret** obtained from the respective OAuth provider's developer console.
@@ -135,6 +139,7 @@ CREATE POLICY "Users can insert own profile" ON profiles
 3. Add the following variables with your actual values:
 
 #### Required Variables:
+
 ```
 NEXT_PUBLIC_SUPABASE_URL = https://your-project-id.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY = your_actual_anon_key
@@ -143,6 +148,7 @@ INTERNAL_AUTH_SERVICE_URL = https://your-auth-service.com
 ```
 
 #### Optional Variables:
+
 ```
 NEXT_PUBLIC_SENTRY_DSN = your_sentry_dsn
 NEXT_PUBLIC_REOWN_PROJECT_ID = your_reown_project_id
@@ -199,27 +205,30 @@ npm run dev
 ## Authentication Flow
 
 ### 1. User Registration
+
 ```typescript
 const { data, error } = await supabase.auth.signUp({
   email: 'user@example.com',
   password: 'password123',
   options: {
     data: {
-      display_name: 'User Name'
-    }
-  }
+      display_name: 'User Name',
+    },
+  },
 });
 ```
 
 ### 2. User Login
+
 ```typescript
 const { data, error } = await supabase.auth.signInWithPassword({
   email: 'user@example.com',
-  password: 'password123'
+  password: 'password123',
 });
 ```
 
 ### 3. Session Management
+
 ```typescript
 // Listen for auth state changes
 supabase.auth.onAuthStateChange((event, session) => {
@@ -238,24 +247,29 @@ supabase.auth.onAuthStateChange((event, session) => {
 ### Common Issues
 
 #### 1. "Supabase not configured" Warning
+
 - **Cause**: Environment variables not set correctly
 - **Solution**: Verify `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are set with actual values
 
 #### 2. Authentication Fails Silently
+
 - **Cause**: Invalid Supabase credentials or network issues
 - **Solution**: Check browser console for errors and verify credentials
 
 #### 3. Profile Not Found After Login
+
 - **Cause**: Database schema not set up or RLS policies missing
 - **Solution**: Run database migrations and verify policies
 
 #### 4. Redirect Issues After Login
+
 - **Cause**: Incorrect redirect URLs in auth providers
 - **Solution**: Add your domain to allowed redirect URLs in Supabase
 
 ### Debug Steps
 
 1. **Check Environment Configuration**:
+
    ```bash
    # In browser console or server logs
    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
@@ -263,6 +277,7 @@ supabase.auth.onAuthStateChange((event, session) => {
    ```
 
 2. **Verify Supabase Connection**:
+
    ```typescript
    const { data, error } = await supabase.auth.getSession();
    console.log('Current session:', data.session);
@@ -277,16 +292,19 @@ supabase.auth.onAuthStateChange((event, session) => {
 ## Security Best Practices
 
 ### 1. Environment Variables
-- ✅ **NEXT_PUBLIC_*** variables are safe to expose (URLs, public keys)
+
+- ✅ **NEXT*PUBLIC*\*** variables are safe to expose (URLs, public keys)
 - ❌ **Never expose** service role keys or auth tokens publicly
 - ✅ Use Netlify's encrypted environment variables for secrets
 
 ### 2. Database Security
+
 - ✅ Enable Row Level Security (RLS) on all tables
 - ✅ Create restrictive policies for data access
 - ✅ Validate user permissions on sensitive operations
 
 ### 3. Authentication
+
 - ✅ Use strong password requirements
 - ✅ Enable email verification for new accounts
 - ✅ Implement proper session management
@@ -301,4 +319,4 @@ supabase.auth.onAuthStateChange((event, session) => {
 
 ---
 
-**⚠️ Important**: Always test authentication functionality after any configuration changes. Keep your Supabase credentials secure and never commit them to version control. 
+**⚠️ Important**: Always test authentication functionality after any configuration changes. Keep your Supabase credentials secure and never commit them to version control.

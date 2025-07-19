@@ -14,7 +14,7 @@ process.env.NEXT_PRIVATE_SKIP_SIZE_WARN = '1';
 const child = spawn('npx', ['next', 'dev', '--port', '3001'], {
   stdio: 'inherit',
   env: process.env,
-  cwd: process.cwd()
+  cwd: process.cwd(),
 });
 
 child.on('error', (error) => {
@@ -36,4 +36,4 @@ process.on('SIGINT', () => {
 process.on('SIGTERM', () => {
   console.log('\n🛑 Shutting down dev server...');
   child.kill('SIGTERM');
-}); 
+});

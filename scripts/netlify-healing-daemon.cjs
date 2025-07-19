@@ -21,7 +21,7 @@ class NetlifyHealingDaemon {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
@@ -62,11 +62,15 @@ class NetlifyHealingDaemon {
 
   async startSelfHealing() {
     this.log('Starting self-healing system...');
-    
-    const selfHealing = spawn('node', ['scripts/netlify-self-healing.cjs', 'start'], {
-      stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
-    });
+
+    const selfHealing = spawn(
+      'node',
+      ['scripts/netlify-self-healing.cjs', 'start'],
+      {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        detached: false,
+      },
+    );
 
     selfHealing.stdout.on('data', (data) => {
       this.log(`Self-healing: ${data.toString().trim()}`);
@@ -89,11 +93,15 @@ class NetlifyHealingDaemon {
 
   async startBuildMonitor() {
     this.log('Starting build monitor...');
-    
-    const buildMonitor = spawn('node', ['scripts/netlify-build-monitor.cjs', 'start'], {
-      stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
-    });
+
+    const buildMonitor = spawn(
+      'node',
+      ['scripts/netlify-build-monitor.cjs', 'start'],
+      {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        detached: false,
+      },
+    );
 
     buildMonitor.stdout.on('data', (data) => {
       this.log(`Build monitor: ${data.toString().trim()}`);
@@ -116,16 +124,19 @@ class NetlifyHealingDaemon {
 
   startHealthChecks() {
     this.log('Starting periodic health checks...');
-    
+
     // Check every 10 minutes
-    setInterval(() => {
-      this.performHealthCheck();
-    }, 10 * 60 * 1000);
+    setInterval(
+      () => {
+        this.performHealthCheck();
+      },
+      10 * 60 * 1000,
+    );
   }
 
   async performHealthCheck() {
     this.log('Performing daemon health check...');
-    
+
     // Check if processes are still running
     for (const [name, process] of this.processes.entries()) {
       if (process.killed) {
@@ -143,7 +154,7 @@ class NetlifyHealingDaemon {
 
   async restartProcess(name) {
     this.log(`Restarting process: ${name}`);
-    
+
     const process = this.processes.get(name);
     if (process) {
       process.kill();
@@ -163,14 +174,14 @@ class NetlifyHealingDaemon {
   checkSystemResources() {
     try {
       const { execSync } = require('child_process');
-      
+
       // Check memory usage
       const memory = execSync('free -m', { encoding: 'utf8' });
       const memoryLines = memory.split('\n');
       if (memoryLines.length > 1) {
         const memInfo = memoryLines[1].split(/\s+/);
         const usedPercent = (parseInt(memInfo[2]) / parseInt(memInfo[1])) * 100;
-        
+
         if (usedPercent > 90) {
           this.log('High memory usage detected, triggering cleanup...');
           this.triggerCleanup();
@@ -183,7 +194,7 @@ class NetlifyHealingDaemon {
       if (diskLines.length > 1) {
         const diskInfo = diskLines[1].split(/\s+/);
         const usedPercent = parseInt(diskInfo[4].replace('%', ''));
-        
+
         if (usedPercent > 90) {
           this.log('Low disk space detected, triggering cleanup...');
           this.triggerCleanup();
@@ -196,23 +207,21 @@ class NetlifyHealingDaemon {
 
   checkForBuildIssues() {
     // Check for recent build failures
-    const buildLogs = [
-      'build.log',
-      'error.log',
-      'lint.log'
-    ];
+    const buildLogs = ['build.log', 'error.log', 'lint.log'];
 
     for (const logFile of buildLogs) {
       if (fs.existsSync(logFile)) {
         const stats = fs.statSync(logFile);
         const lastModified = stats.mtime.getTime();
-        
+
         // If log was modified in the last 5 minutes, check for issues
         if (Date.now() - lastModified < 5 * 60 * 1000) {
           const content = fs.readFileSync(logFile, 'utf8');
-          
+
           if (content.includes('Build failed') || content.includes('Error:')) {
-            this.log(`Build issues detected in ${logFile}, triggering auto-fix...`);
+            this.log(
+              `Build issues detected in ${logFile}, triggering auto-fix...`,
+            );
             this.triggerAutoFix();
             break;
           }
@@ -223,10 +232,10 @@ class NetlifyHealingDaemon {
 
   async triggerCleanup() {
     this.log('Triggering system cleanup...');
-    
+
     const cleanup = spawn('node', ['scripts/netlify-auto-fix.cjs', 'all'], {
       stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
+      detached: false,
     });
 
     cleanup.stdout.on('data', (data) => {
@@ -244,10 +253,10 @@ class NetlifyHealingDaemon {
 
   async triggerAutoFix() {
     this.log('Triggering auto-fix...');
-    
+
     const autoFix = spawn('node', ['scripts/netlify-auto-fix.cjs', 'all'], {
       stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
+      detached: false,
     });
 
     autoFix.stdout.on('data', (data) => {
@@ -267,18 +276,18 @@ class NetlifyHealingDaemon {
     const shutdown = () => {
       this.log('Shutting down daemon gracefully...');
       this.isRunning = false;
-      
+
       // Kill all child processes
       for (const [name, process] of this.processes.entries()) {
         this.log(`Stopping ${name}...`);
         process.kill();
       }
-      
+
       // Remove PID file
       if (fs.existsSync(this.pidFile)) {
         fs.unlinkSync(this.pidFile);
       }
-      
+
       this.log('Daemon shutdown complete');
       process.exit(0);
     };
@@ -317,13 +326,13 @@ class NetlifyHealingDaemon {
     const status = {
       isRunning: this.isRunning,
       processes: {},
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
 
     for (const [name, process] of this.processes.entries()) {
       status.processes[name] = {
         pid: process.pid,
-        killed: process.killed
+        killed: process.killed,
       };
     }
 
@@ -333,8 +342,10 @@ class NetlifyHealingDaemon {
   static isRunning() {
     try {
       if (fs.existsSync('logs/healing-daemon.pid')) {
-        const pid = parseInt(fs.readFileSync('logs/healing-daemon.pid', 'utf8'));
-        
+        const pid = parseInt(
+          fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+        );
+
         // Check if process is still running
         try {
           process.kill(pid, 0);
@@ -354,9 +365,9 @@ class NetlifyHealingDaemon {
 // CLI interface
 if (require.main === module) {
   const daemon = new NetlifyHealingDaemon();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       if (NetlifyHealingDaemon.isRunning()) {
@@ -365,23 +376,25 @@ if (require.main === module) {
       }
       daemon.start();
       break;
-    
+
     case 'stop':
       if (!NetlifyHealingDaemon.isRunning()) {
         console.log('Daemon is not running');
         process.exit(1);
       }
-      
+
       // Send SIGTERM to daemon process
       try {
-        const pid = parseInt(fs.readFileSync('logs/healing-daemon.pid', 'utf8'));
+        const pid = parseInt(
+          fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+        );
         process.kill(pid, 'SIGTERM');
         console.log('Stop signal sent to daemon');
       } catch (error) {
         console.log('Failed to stop daemon:', error.message);
       }
       break;
-    
+
     case 'status':
       if (NetlifyHealingDaemon.isRunning()) {
         console.log('Daemon is running');
@@ -390,14 +403,16 @@ if (require.main === module) {
         console.log('Daemon is not running');
       }
       break;
-    
+
     case 'restart':
       if (NetlifyHealingDaemon.isRunning()) {
         // Stop first
         try {
-          const pid = parseInt(fs.readFileSync('logs/healing-daemon.pid', 'utf8'));
+          const pid = parseInt(
+            fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+          );
           process.kill(pid, 'SIGTERM');
-          
+
           // Wait a bit then start
           setTimeout(() => {
             daemon.start();
@@ -409,7 +424,7 @@ if (require.main === module) {
         daemon.start();
       }
       break;
-    
+
     default:
       console.log(`
 Netlify Healing Daemon
@@ -431,4 +446,4 @@ Examples:
   }
 }
 
-module.exports = NetlifyHealingDaemon; 
+module.exports = NetlifyHealingDaemon;

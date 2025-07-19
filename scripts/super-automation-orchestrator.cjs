@@ -12,7 +12,7 @@ class SuperAutomationOrchestrator {
       totalImprovements: 0,
       totalErrors: 0,
       cycles: 0,
-      uptime: 0
+      uptime: 0,
     };
     this.isRunning = false;
     this.autoRestartEnabled = true;
@@ -25,7 +25,7 @@ class SuperAutomationOrchestrator {
       success: '\x1b[32m',
       error: '\x1b[31m',
       warning: '\x1b[33m',
-      reset: '\x1b[0m'
+      reset: '\x1b[0m',
     };
     console.log(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
   }
@@ -34,7 +34,7 @@ class SuperAutomationOrchestrator {
     try {
       const process = spawn(command, args, {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
 
       process.stdout.on('data', (data) => {
@@ -46,9 +46,12 @@ class SuperAutomationOrchestrator {
       });
 
       process.on('close', (code) => {
-        this.log(`[${name}] Process exited with code ${code}`, code === 0 ? 'success' : 'error');
+        this.log(
+          `[${name}] Process exited with code ${code}`,
+          code === 0 ? 'success' : 'error',
+        );
         this.processes.delete(name);
-        
+
         // Auto-restart critical processes
         if (this.isRunning && this.autoRestartEnabled) {
           setTimeout(() => {
@@ -73,31 +76,66 @@ class SuperAutomationOrchestrator {
 
     // Start all automation processes
     const processes = [
-      { name: 'ai-improver', command: 'node', args: ['scripts/ai-app-improver.cjs'] },
-      { name: 'optimizer', command: 'node', args: ['scripts/continuous-optimization.cjs'] },
-      { name: 'monitor', command: 'node', args: ['scripts/automation-monitor.cjs'] },
-      { name: 'error-fixer', command: 'node', args: ['scripts/ai-error-fixer.cjs'] },
-      { name: 'performance', command: 'node', args: ['scripts/performance-optimizer.cjs'] },
-      { name: 'security', command: 'node', args: ['scripts/security-scanner.cjs'] },
-      { name: 'quality', command: 'node', args: ['scripts/code-quality-enhancer.cjs'] },
-      { name: 'dependency', command: 'node', args: ['scripts/dependency-manager.cjs'] },
+      {
+        name: 'ai-improver',
+        command: 'node',
+        args: ['scripts/ai-app-improver.cjs'],
+      },
+      {
+        name: 'optimizer',
+        command: 'node',
+        args: ['scripts/continuous-optimization.cjs'],
+      },
+      {
+        name: 'monitor',
+        command: 'node',
+        args: ['scripts/automation-monitor.cjs'],
+      },
+      {
+        name: 'error-fixer',
+        command: 'node',
+        args: ['scripts/ai-error-fixer.cjs'],
+      },
+      {
+        name: 'performance',
+        command: 'node',
+        args: ['scripts/performance-optimizer.cjs'],
+      },
+      {
+        name: 'security',
+        command: 'node',
+        args: ['scripts/security-scanner.cjs'],
+      },
+      {
+        name: 'quality',
+        command: 'node',
+        args: ['scripts/code-quality-enhancer.cjs'],
+      },
+      {
+        name: 'dependency',
+        command: 'node',
+        args: ['scripts/dependency-manager.cjs'],
+      },
       { name: 'build', command: 'node', args: ['scripts/build-optimizer.cjs'] },
-      { name: 'test', command: 'node', args: ['scripts/test-automation.cjs'] }
+      { name: 'test', command: 'node', args: ['scripts/test-automation.cjs'] },
     ];
 
     for (const proc of processes) {
       await this.startProcess(proc.name, proc.command, proc.args);
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Stagger starts
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Stagger starts
     }
 
-    this.log(`🎯 All automation processes started (${this.processes.size} active)`, 'success');
+    this.log(
+      `🎯 All automation processes started (${this.processes.size} active)`,
+      'success',
+    );
   }
 
   async monitorHealth() {
     setInterval(() => {
       this.stats.cycles++;
       this.stats.uptime = Date.now() - this.stats.startTime;
-      
+
       // Check process health
       for (const [name, process] of this.processes) {
         if (process.killed) {
@@ -108,7 +146,7 @@ class SuperAutomationOrchestrator {
 
       // Generate health report
       this.generateHealthReport();
-      
+
       // Auto-commit improvements
       this.autoCommitImprovements();
     }, 30000); // Every 30 seconds
@@ -117,15 +155,21 @@ class SuperAutomationOrchestrator {
   async restartProcess(name) {
     const processMap = {
       'ai-improver': { command: 'node', args: ['scripts/ai-app-improver.cjs'] },
-      'optimizer': { command: 'node', args: ['scripts/continuous-optimization.cjs'] },
-      'monitor': { command: 'node', args: ['scripts/automation-monitor.cjs'] },
+      optimizer: {
+        command: 'node',
+        args: ['scripts/continuous-optimization.cjs'],
+      },
+      monitor: { command: 'node', args: ['scripts/automation-monitor.cjs'] },
       'error-fixer': { command: 'node', args: ['scripts/ai-error-fixer.cjs'] },
-      'performance': { command: 'node', args: ['scripts/performance-optimizer.cjs'] },
-      'security': { command: 'node', args: ['scripts/security-scanner.cjs'] },
-      'quality': { command: 'node', args: ['scripts/code-quality-enhancer.cjs'] },
-      'dependency': { command: 'node', args: ['scripts/dependency-manager.cjs'] },
-      'build': { command: 'node', args: ['scripts/build-optimizer.cjs'] },
-      'test': { command: 'node', args: ['scripts/test-automation.cjs'] }
+      performance: {
+        command: 'node',
+        args: ['scripts/performance-optimizer.cjs'],
+      },
+      security: { command: 'node', args: ['scripts/security-scanner.cjs'] },
+      quality: { command: 'node', args: ['scripts/code-quality-enhancer.cjs'] },
+      dependency: { command: 'node', args: ['scripts/dependency-manager.cjs'] },
+      build: { command: 'node', args: ['scripts/build-optimizer.cjs'] },
+      test: { command: 'node', args: ['scripts/test-automation.cjs'] },
     };
 
     const config = processMap[name];
@@ -139,7 +183,9 @@ class SuperAutomationOrchestrator {
       const status = execSync('git status --porcelain', { encoding: 'utf8' });
       if (status.trim()) {
         execSync('git add .');
-        execSync(`git commit -m "🤖 Auto-improvement #${this.stats.cycles} - ${new Date().toISOString()}"`);
+        execSync(
+          `git commit -m "🤖 Auto-improvement #${this.stats.cycles} - ${new Date().toISOString()}"`,
+        );
         execSync('git push');
         this.stats.totalImprovements++;
         this.log('✅ Auto-committed improvements', 'success');
@@ -157,10 +203,13 @@ class SuperAutomationOrchestrator {
       cycles: this.stats.cycles,
       totalImprovements: this.stats.totalImprovements,
       totalErrors: this.stats.totalErrors,
-      status: 'healthy'
+      status: 'healthy',
     };
 
-    fs.writeFileSync('automation/super-health-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'automation/super-health-report.json',
+      JSON.stringify(report, null, 2),
+    );
   }
 
   async stop() {
@@ -179,7 +228,7 @@ class SuperAutomationOrchestrator {
   async start() {
     await this.startAllAutomation();
     this.monitorHealth();
-    
+
     this.log('🎉 Super Automation Orchestrator is now running!', 'success');
     this.log('📊 Monitoring 10 automation processes', 'info');
     this.log('🔄 Auto-restart enabled for all processes', 'info');
@@ -201,4 +250,4 @@ process.on('SIGTERM', async () => {
   process.exit(0);
 });
 
-orchestrator.start().catch(console.error); 
+orchestrator.start().catch(console.error);

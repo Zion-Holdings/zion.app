@@ -7,7 +7,11 @@
       "tasks": [
         { "name": "lint", "command": "npm run lint:fix", "autoFix": true },
         { "name": "format", "command": "npm run format", "autoFix": true },
-        { "name": "typecheck", "command": "npm run typecheck", "autoFix": false }
+        {
+          "name": "typecheck",
+          "command": "npm run typecheck",
+          "autoFix": false
+        }
       ]
     },
     {
@@ -17,7 +21,11 @@
       "tasks": [
         { "name": "analyze", "command": "npm run analyze", "autoFix": false },
         { "name": "optimize", "command": "npm run optimize", "autoFix": true },
-        { "name": "bundle-analyze", "command": "npm run bundle:analyze", "autoFix": false }
+        {
+          "name": "bundle-analyze",
+          "command": "npm run bundle:analyze",
+          "autoFix": false
+        }
       ]
     },
     {
@@ -26,7 +34,11 @@
       "interval": 900000,
       "tasks": [
         { "name": "test", "command": "npm run test", "autoFix": false },
-        { "name": "test-coverage", "command": "npm run test:coverage", "autoFix": false },
+        {
+          "name": "test-coverage",
+          "command": "npm run test:coverage",
+          "autoFix": false
+        },
         { "name": "e2e-test", "command": "npm run test:e2e", "autoFix": false }
       ]
     },
@@ -36,8 +48,16 @@
       "interval": 1200000,
       "tasks": [
         { "name": "build", "command": "npm run build", "autoFix": true },
-        { "name": "build-analyze", "command": "npm run build:analyze", "autoFix": false },
-        { "name": "bundle-optimize", "command": "npm run bundle:optimize", "autoFix": true }
+        {
+          "name": "build-analyze",
+          "command": "npm run build:analyze",
+          "autoFix": false
+        },
+        {
+          "name": "bundle-optimize",
+          "command": "npm run bundle:optimize",
+          "autoFix": true
+        }
       ]
     }
   ],
@@ -56,4 +76,4 @@
     "computers": ["localhost"],
     "taskDistribution": "round-robin"
   }
-} 
+}

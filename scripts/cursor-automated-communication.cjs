@@ -9,1247 +9,1324 @@ const os = require('os');
 const crypto = require('crypto');
 
 class CursorAutomatedCommunication {
-    constructor() {
-        this.computerId = this.generateComputerId();
-        this.isConnected = false;
-        this.reconnectAttempts = 0;
-        this.maxReconnectAttempts = 15;
-        this.reconnectDelay = 3000;
-        this.heartbeatInterval = 20000; // 20 seconds
-        this.statusCheckInterval = 45000; // 45 seconds
-        this.lastActivity = Date.now();
-        this.activityTimeout = 180000; // 3 minutes
-        this.cursorProcesses = new Set();
-        this.activeProjects = new Map();
-        this.improvementQueue = [];
-        this.syncInterval = 60000; // 1 minute
-        
-        // Enhanced configuration
-        this.config = {
-            serverUrl: process.env.CURSOR_SERVER_URL || 'https://api.cursor.sh',
-            apiKey: process.env.CURSOR_API_KEY || '',
-            localPort: process.env.LOCAL_PORT || 3008,
-            masterPort: process.env.MASTER_PORT || 3009,
-            coordinationPort: process.env.COORDINATION_PORT || 3010,
-            enableHeartbeat: true,
-            enableAutoReconnect: true,
-            enableActivityMonitoring: true,
-            enableFileWatching: true,
-            enableBuildMonitoring: true,
-            enableCursorIntegration: true,
-            enableMultiComputerSync: true,
-            enableContinuousImprovement: true,
-            enableAutoCommit: true,
-            enablePerformanceMonitoring: true,
-            enableErrorTracking: true,
-            enableCodeAnalysis: true
-        };
-        
-        this.logger = this.createLogger();
-        this.setupEventHandlers();
-        this.initializeDataStructures();
+  constructor() {
+    this.computerId = this.generateComputerId();
+    this.isConnected = false;
+    this.reconnectAttempts = 0;
+    this.maxReconnectAttempts = 15;
+    this.reconnectDelay = 3000;
+    this.heartbeatInterval = 20000; // 20 seconds
+    this.statusCheckInterval = 45000; // 45 seconds
+    this.lastActivity = Date.now();
+    this.activityTimeout = 180000; // 3 minutes
+    this.cursorProcesses = new Set();
+    this.activeProjects = new Map();
+    this.improvementQueue = [];
+    this.syncInterval = 60000; // 1 minute
+
+    // Enhanced configuration
+    this.config = {
+      serverUrl: process.env.CURSOR_SERVER_URL || 'https://api.cursor.sh',
+      apiKey: process.env.CURSOR_API_KEY || '',
+      localPort: process.env.LOCAL_PORT || 3008,
+      masterPort: process.env.MASTER_PORT || 3009,
+      coordinationPort: process.env.COORDINATION_PORT || 3010,
+      enableHeartbeat: true,
+      enableAutoReconnect: true,
+      enableActivityMonitoring: true,
+      enableFileWatching: true,
+      enableBuildMonitoring: true,
+      enableCursorIntegration: true,
+      enableMultiComputerSync: true,
+      enableContinuousImprovement: true,
+      enableAutoCommit: true,
+      enablePerformanceMonitoring: true,
+      enableErrorTracking: true,
+      enableCodeAnalysis: true,
+    };
+
+    this.logger = this.createLogger();
+    this.setupEventHandlers();
+    this.initializeDataStructures();
+  }
+
+  generateComputerId() {
+    const hostname = os.hostname();
+    const platform = os.platform();
+    const arch = os.arch();
+    const timestamp = Date.now();
+    const random = Math.random().toString(36).substr(2, 9);
+    return `${hostname}_${platform}_${arch}_${timestamp}_${random}`;
+  }
+
+  createLogger() {
+    const logDir = path.join(process.cwd(), 'logs');
+    if (!fs.existsSync(logDir)) {
+      fs.mkdirSync(logDir, { recursive: true });
     }
 
-    generateComputerId() {
-        const hostname = os.hostname();
-        const platform = os.platform();
-        const arch = os.arch();
-        const timestamp = Date.now();
-        const random = Math.random().toString(36).substr(2, 9);
-        return `${hostname}_${platform}_${arch}_${timestamp}_${random}`;
+    const logFile = path.join(logDir, 'cursor-automated-communication.log');
+
+    return {
+      info: (message) => {
+        const timestamp = new Date().toISOString();
+        const logMessage = `[${timestamp}] [INFO] [${this.computerId}] ${message}`;
+        console.log(logMessage);
+        fs.appendFileSync(logFile, logMessage + '\n');
+      },
+      error: (message) => {
+        const timestamp = new Date().toISOString();
+        const logMessage = `[${timestamp}] [ERROR] [${this.computerId}] ${message}`;
+        console.error(logMessage);
+        fs.appendFileSync(logFile, logMessage + '\n');
+      },
+      warn: (message) => {
+        const timestamp = new Date().toISOString();
+        const logMessage = `[${timestamp}] [WARN] [${this.computerId}] ${message}`;
+        console.warn(logMessage);
+        fs.appendFileSync(logFile, logMessage + '\n');
+      },
+      debug: (message) => {
+        const timestamp = new Date().toISOString();
+        const logMessage = `[${timestamp}] [DEBUG] [${this.computerId}] ${message}`;
+        console.log(logMessage);
+        fs.appendFileSync(logFile, logMessage + '\n');
+      },
+    };
+  }
+
+  initializeDataStructures() {
+    this.dataDir = path.join(process.cwd(), 'data', 'cursor-communication');
+    if (!fs.existsSync(this.dataDir)) {
+      fs.mkdirSync(this.dataDir, { recursive: true });
     }
 
-    createLogger() {
-        const logDir = path.join(process.cwd(), 'logs');
-        if (!fs.existsSync(logDir)) {
-            fs.mkdirSync(logDir, { recursive: true });
+    // Initialize data files
+    this.dataFiles = {
+      projects: path.join(this.dataDir, 'projects.json'),
+      improvements: path.join(this.dataDir, 'improvements.json'),
+      errors: path.join(this.dataDir, 'errors.json'),
+      performance: path.join(this.dataDir, 'performance.json'),
+      sync: path.join(this.dataDir, 'sync.json'),
+    };
+
+    // Load existing data
+    Object.entries(this.dataFiles).forEach(([key, filePath]) => {
+      if (fs.existsSync(filePath)) {
+        try {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          this[key] = data;
+        } catch (error) {
+          this[key] = {};
+          this.logger.warn(`Failed to load ${key} data: ${error.message}`);
+        }
+      } else {
+        this[key] = {};
+      }
+    });
+  }
+
+  setupEventHandlers() {
+    process.on('SIGINT', () => this.cleanup());
+    process.on('SIGTERM', () => this.cleanup());
+    process.on('uncaughtException', (error) => {
+      this.logger.error(`Uncaught Exception: ${error.message}`);
+      this.trackError(error);
+      this.reconnect();
+    });
+    process.on('unhandledRejection', (reason, promise) => {
+      this.logger.error(
+        `Unhandled Rejection at: ${promise}, reason: ${reason}`,
+      );
+      this.trackError(reason);
+      this.reconnect();
+    });
+  }
+
+  async start() {
+    this.logger.info('🚀 Starting Cursor Automated Communication System...');
+
+    try {
+      await this.initializeConnection();
+      this.startHeartbeat();
+      this.startActivityMonitoring();
+      this.startFileWatching();
+      this.startBuildMonitoring();
+      this.startCursorIntegration();
+      this.startMultiComputerSync();
+      this.startContinuousImprovement();
+      this.startPerformanceMonitoring();
+      this.startErrorTracking();
+      this.startCodeAnalysis();
+      this.startLocalServer();
+      this.startCoordinationServer();
+
+      this.logger.info(
+        '✅ Cursor Automated Communication System started successfully',
+      );
+      this.logger.info(
+        '🔄 System will maintain continuous communication with all Cursor installations',
+      );
+    } catch (error) {
+      this.logger.error(`Failed to start system: ${error.message}`);
+      this.reconnect();
+    }
+  }
+
+  async initializeConnection() {
+    this.logger.info('🔌 Initializing Cursor AI connection...');
+
+    if (!this.config.apiKey) {
+      this.logger.warn('⚠️ No API key configured. Using local mode only.');
+      return;
+    }
+
+    try {
+      await this.connectToCursorServer();
+      this.isConnected = true;
+      this.reconnectAttempts = 0;
+      this.logger.info('✅ Connected to Cursor AI server');
+
+      await this.sendStatusUpdate();
+      await this.syncWithOtherComputers();
+    } catch (error) {
+      this.logger.error(`Connection failed: ${error.message}`);
+      this.isConnected = false;
+      throw error;
+    }
+  }
+
+  async connectToCursorServer() {
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: new URL(this.config.serverUrl).hostname,
+        port: 443,
+        path: '/api/v1/cursor/connect',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.config.apiKey}`,
+          'User-Agent': 'CursorAutomatedCommunication/2.0',
+          'X-Computer-ID': this.computerId,
+          'X-Cursor-Version': this.getCursorVersion(),
+        },
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => {
+          if (res.statusCode === 200) {
+            resolve(JSON.parse(data));
+          } else {
+            reject(new Error(`Server responded with ${res.statusCode}`));
+          }
+        });
+      });
+
+      req.on('error', reject);
+      req.write(
+        JSON.stringify({
+          computerId: this.computerId,
+          hostname: os.hostname(),
+          platform: os.platform(),
+          arch: os.arch(),
+          uptime: process.uptime(),
+          timestamp: Date.now(),
+          cursorProcesses: this.getCursorProcesses(),
+          activeProjects: this.getActiveProjects(),
+          capabilities: this.getCapabilities(),
+        }),
+      );
+      req.end();
+    });
+  }
+
+  getCursorVersion() {
+    try {
+      // Try to get Cursor version from common locations
+      const possiblePaths = [
+        '/Applications/Cursor.app/Contents/Info.plist',
+        `${os.homedir()}/Applications/Cursor.app/Contents/Info.plist`,
+      ];
+
+      for (const plistPath of possiblePaths) {
+        if (fs.existsSync(plistPath)) {
+          const content = fs.readFileSync(plistPath, 'utf8');
+          const versionMatch = content.match(
+            /CFBundleShortVersionString.*?<string>(.*?)<\/string>/,
+          );
+          if (versionMatch) {
+            return versionMatch[1];
+          }
+        }
+      }
+
+      return 'unknown';
+    } catch (error) {
+      return 'unknown';
+    }
+  }
+
+  getCursorProcesses() {
+    return new Promise((resolve) => {
+      const command = os.platform() === 'win32' ? 'tasklist' : 'ps aux';
+      exec(command, (error, stdout) => {
+        if (error) {
+          resolve([]);
+          return;
         }
 
-        const logFile = path.join(logDir, 'cursor-automated-communication.log');
-        
-        return {
-            info: (message) => {
-                const timestamp = new Date().toISOString();
-                const logMessage = `[${timestamp}] [INFO] [${this.computerId}] ${message}`;
-                console.log(logMessage);
-                fs.appendFileSync(logFile, logMessage + '\n');
-            },
-            error: (message) => {
-                const timestamp = new Date().toISOString();
-                const logMessage = `[${timestamp}] [ERROR] [${this.computerId}] ${message}`;
-                console.error(logMessage);
-                fs.appendFileSync(logFile, logMessage + '\n');
-            },
-            warn: (message) => {
-                const timestamp = new Date().toISOString();
-                const logMessage = `[${timestamp}] [WARN] [${this.computerId}] ${message}`;
-                console.warn(logMessage);
-                fs.appendFileSync(logFile, logMessage + '\n');
-            },
-            debug: (message) => {
-                const timestamp = new Date().toISOString();
-                const logMessage = `[${timestamp}] [DEBUG] [${this.computerId}] ${message}`;
-                console.log(logMessage);
-                fs.appendFileSync(logFile, logMessage + '\n');
-            }
-        };
-    }
+        const lines = stdout.split('\n');
+        const cursorProcesses = lines.filter(
+          (line) =>
+            line.toLowerCase().includes('cursor') &&
+            !line.toLowerCase().includes('grep'),
+        );
 
-    initializeDataStructures() {
-        this.dataDir = path.join(process.cwd(), 'data', 'cursor-communication');
-        if (!fs.existsSync(this.dataDir)) {
-            fs.mkdirSync(this.dataDir, { recursive: true });
-        }
+        resolve(cursorProcesses);
+      });
+    });
+  }
 
-        // Initialize data files
-        this.dataFiles = {
-            projects: path.join(this.dataDir, 'projects.json'),
-            improvements: path.join(this.dataDir, 'improvements.json'),
-            errors: path.join(this.dataDir, 'errors.json'),
-            performance: path.join(this.dataDir, 'performance.json'),
-            sync: path.join(this.dataDir, 'sync.json')
-        };
+  getActiveProjects() {
+    const projects = [];
 
-        // Load existing data
-        Object.entries(this.dataFiles).forEach(([key, filePath]) => {
-            if (fs.existsSync(filePath)) {
-                try {
-                    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-                    this[key] = data;
-                } catch (error) {
-                    this[key] = {};
-                    this.logger.warn(`Failed to load ${key} data: ${error.message}`);
-                }
+    // Scan for common project indicators
+    const projectIndicators = [
+      'package.json',
+      'Cargo.toml',
+      'requirements.txt',
+      'pom.xml',
+      'build.gradle',
+      'Makefile',
+      'CMakeLists.txt',
+      '.git',
+    ];
+
+    const scanDirectory = (dir, depth = 0) => {
+      if (depth > 3) return; // Limit depth
+
+      try {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+
+          if (stat.isDirectory() && !item.startsWith('.')) {
+            // Check if this is a project directory
+            const hasProjectFile = projectIndicators.some((indicator) =>
+              fs.existsSync(path.join(fullPath, indicator)),
+            );
+
+            if (hasProjectFile) {
+              projects.push({
+                path: fullPath,
+                type: this.detectProjectType(fullPath),
+                lastModified: stat.mtime,
+                size: this.getDirectorySize(fullPath),
+              });
             } else {
-                this[key] = {};
+              scanDirectory(fullPath, depth + 1);
             }
-        });
-    }
-
-    setupEventHandlers() {
-        process.on('SIGINT', () => this.cleanup());
-        process.on('SIGTERM', () => this.cleanup());
-        process.on('uncaughtException', (error) => {
-            this.logger.error(`Uncaught Exception: ${error.message}`);
-            this.trackError(error);
-            this.reconnect();
-        });
-        process.on('unhandledRejection', (reason, promise) => {
-            this.logger.error(`Unhandled Rejection at: ${promise}, reason: ${reason}`);
-            this.trackError(reason);
-            this.reconnect();
-        });
-    }
-
-    async start() {
-        this.logger.info('🚀 Starting Cursor Automated Communication System...');
-        
-        try {
-            await this.initializeConnection();
-            this.startHeartbeat();
-            this.startActivityMonitoring();
-            this.startFileWatching();
-            this.startBuildMonitoring();
-            this.startCursorIntegration();
-            this.startMultiComputerSync();
-            this.startContinuousImprovement();
-            this.startPerformanceMonitoring();
-            this.startErrorTracking();
-            this.startCodeAnalysis();
-            this.startLocalServer();
-            this.startCoordinationServer();
-            
-            this.logger.info('✅ Cursor Automated Communication System started successfully');
-            this.logger.info('🔄 System will maintain continuous communication with all Cursor installations');
-            
-        } catch (error) {
-            this.logger.error(`Failed to start system: ${error.message}`);
-            this.reconnect();
+          }
         }
+      } catch (error) {
+        // Ignore permission errors
+      }
+    };
+
+    // Scan common development directories
+    const scanPaths = [
+      os.homedir(),
+      path.join(os.homedir(), 'Documents'),
+      path.join(os.homedir(), 'Desktop'),
+      path.join(os.homedir(), 'Projects'),
+      path.join(os.homedir(), 'workspace'),
+    ];
+
+    scanPaths.forEach((scanPath) => {
+      if (fs.existsSync(scanPath)) {
+        scanDirectory(scanPath);
+      }
+    });
+
+    return projects;
+  }
+
+  detectProjectType(projectPath) {
+    const indicators = {
+      node: ['package.json'],
+      rust: ['Cargo.toml'],
+      python: ['requirements.txt', 'setup.py', 'pyproject.toml'],
+      java: ['pom.xml', 'build.gradle'],
+      'c++': ['CMakeLists.txt', 'Makefile'],
+      go: ['go.mod'],
+      php: ['composer.json'],
+      ruby: ['Gemfile'],
+      dotnet: ['*.csproj', '*.vbproj'],
+    };
+
+    for (const [type, files] of Object.entries(indicators)) {
+      for (const file of files) {
+        if (file.includes('*')) {
+          const pattern = file.replace('*', '');
+          const items = fs.readdirSync(projectPath);
+          if (items.some((item) => item.includes(pattern))) {
+            return type;
+          }
+        } else if (fs.existsSync(path.join(projectPath, file))) {
+          return type;
+        }
+      }
     }
 
-    async initializeConnection() {
-        this.logger.info('🔌 Initializing Cursor AI connection...');
-        
-        if (!this.config.apiKey) {
-            this.logger.warn('⚠️ No API key configured. Using local mode only.');
-            return;
-        }
+    return 'unknown';
+  }
 
-        try {
-            await this.connectToCursorServer();
-            this.isConnected = true;
-            this.reconnectAttempts = 0;
-            this.logger.info('✅ Connected to Cursor AI server');
-            
-            await this.sendStatusUpdate();
-            await this.syncWithOtherComputers();
-            
-        } catch (error) {
-            this.logger.error(`Connection failed: ${error.message}`);
-            this.isConnected = false;
-            throw error;
+  getDirectorySize(dirPath) {
+    let size = 0;
+    try {
+      const items = fs.readdirSync(dirPath);
+      for (const item of items) {
+        const fullPath = path.join(dirPath, item);
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+          size += this.getDirectorySize(fullPath);
+        } else {
+          size += stat.size;
         }
+      }
+    } catch (error) {
+      // Ignore permission errors
     }
+    return size;
+  }
 
-    async connectToCursorServer() {
-        return new Promise((resolve, reject) => {
-            const options = {
-                hostname: new URL(this.config.serverUrl).hostname,
-                port: 443,
-                path: '/api/v1/cursor/connect',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.config.apiKey}`,
-                    'User-Agent': 'CursorAutomatedCommunication/2.0',
-                    'X-Computer-ID': this.computerId,
-                    'X-Cursor-Version': this.getCursorVersion()
-                }
-            };
+  getCapabilities() {
+    return {
+      automatedImprovement: true,
+      multiComputerSync: true,
+      continuousIntegration: true,
+      performanceMonitoring: true,
+      errorTracking: true,
+      codeAnalysis: true,
+      autoCommit: true,
+      buildOptimization: true,
+      dependencyManagement: true,
+      securityScanning: true,
+    };
+  }
 
-            const req = https.request(options, (res) => {
-                let data = '';
-                res.on('data', (chunk) => data += chunk);
-                res.on('end', () => {
-                    if (res.statusCode === 200) {
-                        resolve(JSON.parse(data));
-                    } else {
-                        reject(new Error(`Server responded with ${res.statusCode}`));
-                    }
-                });
-            });
+  startHeartbeat() {
+    if (!this.config.enableHeartbeat) return;
 
-            req.on('error', reject);
-            req.write(JSON.stringify({
-                computerId: this.computerId,
-                hostname: os.hostname(),
-                platform: os.platform(),
-                arch: os.arch(),
-                uptime: process.uptime(),
-                timestamp: Date.now(),
-                cursorProcesses: this.getCursorProcesses(),
-                activeProjects: this.getActiveProjects(),
-                capabilities: this.getCapabilities()
-            }));
-            req.end();
+    setInterval(async () => {
+      try {
+        await this.sendHeartbeat();
+      } catch (error) {
+        this.logger.error(`Heartbeat failed: ${error.message}`);
+        this.reconnect();
+      }
+    }, this.heartbeatInterval);
+
+    this.logger.info('💓 Heartbeat monitoring started');
+  }
+
+  async sendHeartbeat() {
+    if (!this.isConnected) return;
+
+    const heartbeat = {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      cpu: process.cpuUsage(),
+      activeConnections: this.getActiveConnections(),
+      cursorProcesses: await this.getCursorProcesses(),
+      activeProjects: this.getActiveProjects(),
+      improvementQueue: this.improvementQueue.length,
+      lastActivity: this.lastActivity,
+    };
+
+    await this.sendToCursorServer('/api/v1/cursor/heartbeat', heartbeat);
+  }
+
+  startActivityMonitoring() {
+    if (!this.config.enableActivityMonitoring) return;
+
+    setInterval(() => {
+      const now = Date.now();
+      const timeSinceLastActivity = now - this.lastActivity;
+
+      if (timeSinceLastActivity > this.activityTimeout) {
+        this.logger.warn('⚠️ No activity detected, sending keepalive');
+        this.sendKeepalive();
+      }
+    }, this.statusCheckInterval);
+
+    this.logger.info('👁️ Activity monitoring started');
+  }
+
+  startFileWatching() {
+    if (!this.config.enableFileWatching) return;
+
+    const watchPaths = [
+      'src',
+      'pages',
+      'components',
+      'utils',
+      'scripts',
+      'public',
+      'styles',
+      'tests',
+    ];
+
+    watchPaths.forEach((dir) => {
+      if (fs.existsSync(dir)) {
+        fs.watch(dir, { recursive: true }, (eventType, filename) => {
+          this.logger.info(`📁 File change detected: ${eventType} ${filename}`);
+          this.handleFileChange(eventType, filename);
         });
+      }
+    });
+
+    this.logger.info('📁 File watching started');
+  }
+
+  handleFileChange(eventType, filename) {
+    this.updateActivity();
+
+    // Add to improvement queue
+    this.improvementQueue.push({
+      type: 'file_change',
+      eventType,
+      filename,
+      timestamp: Date.now(),
+      computerId: this.computerId,
+    });
+
+    // Send notification
+    this.sendFileChangeNotification(eventType, filename);
+
+    // Trigger immediate analysis for important files
+    if (this.isImportantFile(filename)) {
+      this.triggerImmediateAnalysis(filename);
+    }
+  }
+
+  isImportantFile(filename) {
+    const importantExtensions = [
+      '.js',
+      '.ts',
+      '.jsx',
+      '.tsx',
+      '.json',
+      '.md',
+      '.yml',
+      '.yaml',
+    ];
+    const importantFiles = ['package.json', 'README.md', 'Dockerfile', '.env'];
+
+    return (
+      importantExtensions.some((ext) => filename.endsWith(ext)) ||
+      importantFiles.includes(filename)
+    );
+  }
+
+  async triggerImmediateAnalysis(filename) {
+    try {
+      const filePath = path.join(process.cwd(), filename);
+      if (fs.existsSync(filePath)) {
+        const content = fs.readFileSync(filePath, 'utf8');
+        const analysis = await this.analyzeFile(filename, content);
+
+        this.logger.info(`🔍 Immediate analysis completed for ${filename}`);
+        this.addImprovement(analysis);
+      }
+    } catch (error) {
+      this.logger.error(
+        `Immediate analysis failed for ${filename}: ${error.message}`,
+      );
+    }
+  }
+
+  async analyzeFile(filename, content) {
+    return {
+      type: 'file_analysis',
+      filename,
+      size: content.length,
+      lines: content.split('\n').length,
+      hasErrors: this.detectErrors(content),
+      suggestions: this.generateSuggestions(filename, content),
+      timestamp: Date.now(),
+      computerId: this.computerId,
+    };
+  }
+
+  detectErrors(content) {
+    const errors = [];
+
+    // Basic error detection
+    if (
+      content.includes('console.error') ||
+      content.includes('throw new Error')
+    ) {
+      errors.push('Contains error handling');
     }
 
-    getCursorVersion() {
-        try {
-            // Try to get Cursor version from common locations
-            const possiblePaths = [
-                '/Applications/Cursor.app/Contents/Info.plist',
-                `${os.homedir()}/Applications/Cursor.app/Contents/Info.plist`
-            ];
-            
-            for (const plistPath of possiblePaths) {
-                if (fs.existsSync(plistPath)) {
-                    const content = fs.readFileSync(plistPath, 'utf8');
-                    const versionMatch = content.match(/CFBundleShortVersionString.*?<string>(.*?)<\/string>/);
-                    if (versionMatch) {
-                        return versionMatch[1];
-                    }
-                }
-            }
-            
-            return 'unknown';
-        } catch (error) {
-            return 'unknown';
+    if (content.includes('TODO') || content.includes('FIXME')) {
+      errors.push('Contains TODO/FIXME comments');
+    }
+
+    if (content.includes('debugger')) {
+      errors.push('Contains debugger statements');
+    }
+
+    return errors;
+  }
+
+  generateSuggestions(filename, content) {
+    const suggestions = [];
+
+    // Performance suggestions
+    if (content.includes('forEach') && content.includes('map')) {
+      suggestions.push(
+        'Consider using map instead of forEach for transformations',
+      );
+    }
+
+    // Security suggestions
+    if (content.includes('eval(') || content.includes('innerHTML')) {
+      suggestions.push('Security: Avoid eval() and innerHTML for user input');
+    }
+
+    // Code quality suggestions
+    if (content.split('\n').length > 500) {
+      suggestions.push(
+        'Consider breaking down large file into smaller modules',
+      );
+    }
+
+    return suggestions;
+  }
+
+  startBuildMonitoring() {
+    if (!this.config.enableBuildMonitoring) return;
+
+    const packageJsonPath = path.join(process.cwd(), 'package.json');
+    if (fs.existsSync(packageJsonPath)) {
+      fs.watch(packageJsonPath, (eventType) => {
+        if (eventType === 'change') {
+          this.logger.info(
+            '📦 Package.json changed, checking for build requirements',
+          );
+          this.checkBuildRequirements();
         }
+      });
     }
 
-    getCursorProcesses() {
-        return new Promise((resolve) => {
-            const command = os.platform() === 'win32' ? 'tasklist' : 'ps aux';
-            exec(command, (error, stdout) => {
-                if (error) {
-                    resolve([]);
-                    return;
-                }
-                
-                const lines = stdout.split('\n');
-                const cursorProcesses = lines.filter(line => 
-                    line.toLowerCase().includes('cursor') && 
-                    !line.toLowerCase().includes('grep')
-                );
-                
-                resolve(cursorProcesses);
-            });
-        });
+    this.logger.info('🔨 Build monitoring started');
+  }
+
+  startCursorIntegration() {
+    if (!this.config.enableCursorIntegration) return;
+
+    // Monitor Cursor processes
+    setInterval(async () => {
+      const processes = await this.getCursorProcesses();
+      this.cursorProcesses = new Set(processes);
+
+      if (processes.length > 0) {
+        this.logger.debug(`🖥️ Found ${processes.length} Cursor processes`);
+      }
+    }, 30000);
+
+    this.logger.info('🖥️ Cursor integration started');
+  }
+
+  startMultiComputerSync() {
+    if (!this.config.enableMultiComputerSync) return;
+
+    setInterval(async () => {
+      try {
+        await this.syncWithOtherComputers();
+      } catch (error) {
+        this.logger.error(`Multi-computer sync failed: ${error.message}`);
+      }
+    }, this.syncInterval);
+
+    this.logger.info('🔄 Multi-computer synchronization started');
+  }
+
+  async syncWithOtherComputers() {
+    const syncData = {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+      improvements: this.improvementQueue,
+      activeProjects: this.getActiveProjects(),
+      errors: this.errors || [],
+      performance: this.performance || {},
+    };
+
+    await this.sendToCursorServer('/api/v1/cursor/sync', syncData);
+  }
+
+  startContinuousImprovement() {
+    if (!this.config.enableContinuousImprovement) return;
+
+    setInterval(() => {
+      this.processImprovementQueue();
+    }, 30000); // Every 30 seconds
+
+    this.logger.info('🚀 Continuous improvement system started');
+  }
+
+  async processImprovementQueue() {
+    if (this.improvementQueue.length === 0) return;
+
+    const improvements = this.improvementQueue.splice(0, 5); // Process 5 at a time
+
+    for (const improvement of improvements) {
+      try {
+        await this.processImprovement(improvement);
+      } catch (error) {
+        this.logger.error(`Failed to process improvement: ${error.message}`);
+        // Re-add to queue
+        this.improvementQueue.unshift(improvement);
+      }
+    }
+  }
+
+  async processImprovement(improvement) {
+    this.logger.info(`🔧 Processing improvement: ${improvement.type}`);
+
+    switch (improvement.type) {
+      case 'file_change':
+        await this.handleFileImprovement(improvement);
+        break;
+      case 'file_analysis':
+        await this.handleAnalysisImprovement(improvement);
+        break;
+      case 'error_detection':
+        await this.handleErrorImprovement(improvement);
+        break;
+      case 'performance_issue':
+        await this.handlePerformanceImprovement(improvement);
+        break;
+      default:
+        this.logger.warn(`Unknown improvement type: ${improvement.type}`);
+    }
+  }
+
+  async handleFileImprovement(improvement) {
+    // Implement file-specific improvements
+    this.logger.info(
+      `📝 Handling file improvement for ${improvement.filename}`,
+    );
+  }
+
+  async handleAnalysisImprovement(improvement) {
+    // Implement analysis-based improvements
+    this.logger.info(
+      `🔍 Handling analysis improvement for ${improvement.filename}`,
+    );
+  }
+
+  async handleErrorImprovement(improvement) {
+    // Implement error-based improvements
+    this.logger.info(`❌ Handling error improvement: ${improvement.error}`);
+  }
+
+  async handlePerformanceImprovement(improvement) {
+    // Implement performance-based improvements
+    this.logger.info(
+      `⚡ Handling performance improvement: ${improvement.issue}`,
+    );
+  }
+
+  startPerformanceMonitoring() {
+    if (!this.config.enablePerformanceMonitoring) return;
+
+    setInterval(() => {
+      const performance = {
+        timestamp: Date.now(),
+        memory: process.memoryUsage(),
+        cpu: process.cpuUsage(),
+        uptime: process.uptime(),
+        activeConnections: this.getActiveConnections(),
+      };
+
+      this.performance = performance;
+      this.saveData('performance');
+
+      // Check for performance issues
+      this.checkPerformanceIssues(performance);
+    }, 60000); // Every minute
+
+    this.logger.info('📊 Performance monitoring started');
+  }
+
+  checkPerformanceIssues(performance) {
+    const issues = [];
+
+    // Memory usage check
+    if (performance.memory.heapUsed > 100 * 1024 * 1024) {
+      // 100MB
+      issues.push('High memory usage detected');
     }
 
-    getActiveProjects() {
-        const projects = [];
-        
-        // Scan for common project indicators
-        const projectIndicators = [
-            'package.json',
-            'Cargo.toml',
-            'requirements.txt',
-            'pom.xml',
-            'build.gradle',
-            'Makefile',
-            'CMakeLists.txt',
-            '.git'
-        ];
-        
-        const scanDirectory = (dir, depth = 0) => {
-            if (depth > 3) return; // Limit depth
-            
+    // CPU usage check
+    if (performance.cpu.user > 1000000) {
+      // 1 second of CPU time
+      issues.push('High CPU usage detected');
+    }
+
+    if (issues.length > 0) {
+      this.addImprovement({
+        type: 'performance_issue',
+        issues,
+        performance,
+        timestamp: Date.now(),
+        computerId: this.computerId,
+      });
+    }
+  }
+
+  startErrorTracking() {
+    if (!this.config.enableErrorTracking) return;
+
+    this.logger.info('🚨 Error tracking started');
+  }
+
+  trackError(error) {
+    const errorData = {
+      type: 'error',
+      message: error.message,
+      stack: error.stack,
+      timestamp: Date.now(),
+      computerId: this.computerId,
+    };
+
+    if (!this.errors) this.errors = [];
+    this.errors.push(errorData);
+    this.saveData('errors');
+
+    // Send to server
+    this.sendToCursorServer('/api/v1/cursor/error', errorData).catch((err) => {
+      this.logger.error(`Failed to send error: ${err.message}`);
+    });
+  }
+
+  startCodeAnalysis() {
+    if (!this.config.enableCodeAnalysis) return;
+
+    setInterval(() => {
+      this.analyzeCodebase();
+    }, 300000); // Every 5 minutes
+
+    this.logger.info('🔍 Code analysis started');
+  }
+
+  async analyzeCodebase() {
+    try {
+      const analysis = {
+        timestamp: Date.now(),
+        computerId: this.computerId,
+        files: this.countFiles(),
+        lines: this.countLines(),
+        issues: await this.findCodeIssues(),
+        suggestions: await this.generateCodeSuggestions(),
+      };
+
+      this.addImprovement({
+        type: 'codebase_analysis',
+        analysis,
+        timestamp: Date.now(),
+        computerId: this.computerId,
+      });
+    } catch (error) {
+      this.logger.error(`Code analysis failed: ${error.message}`);
+    }
+  }
+
+  countFiles() {
+    let count = 0;
+    const countFilesRecursive = (dir) => {
+      try {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+
+          if (
+            stat.isDirectory() &&
+            !item.startsWith('.') &&
+            !item.includes('node_modules')
+          ) {
+            countFilesRecursive(fullPath);
+          } else if (stat.isFile()) {
+            count++;
+          }
+        }
+      } catch (error) {
+        // Ignore permission errors
+      }
+    };
+
+    countFilesRecursive(process.cwd());
+    return count;
+  }
+
+  countLines() {
+    let lines = 0;
+    const countLinesRecursive = (dir) => {
+      try {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+
+          if (
+            stat.isDirectory() &&
+            !item.startsWith('.') &&
+            !item.includes('node_modules')
+          ) {
+            countLinesRecursive(fullPath);
+          } else if (stat.isFile()) {
             try {
-                const items = fs.readdirSync(dir);
-                for (const item of items) {
-                    const fullPath = path.join(dir, item);
-                    const stat = fs.statSync(fullPath);
-                    
-                    if (stat.isDirectory() && !item.startsWith('.')) {
-                        // Check if this is a project directory
-                        const hasProjectFile = projectIndicators.some(indicator => 
-                            fs.existsSync(path.join(fullPath, indicator))
-                        );
-                        
-                        if (hasProjectFile) {
-                            projects.push({
-                                path: fullPath,
-                                type: this.detectProjectType(fullPath),
-                                lastModified: stat.mtime,
-                                size: this.getDirectorySize(fullPath)
-                            });
-                        } else {
-                            scanDirectory(fullPath, depth + 1);
-                        }
-                    }
-                }
+              const content = fs.readFileSync(fullPath, 'utf8');
+              lines += content.split('\n').length;
             } catch (error) {
-                // Ignore permission errors
+              // Ignore binary files
             }
-        };
-        
-        // Scan common development directories
-        const scanPaths = [
-            os.homedir(),
-            path.join(os.homedir(), 'Documents'),
-            path.join(os.homedir(), 'Desktop'),
-            path.join(os.homedir(), 'Projects'),
-            path.join(os.homedir(), 'workspace')
-        ];
-        
-        scanPaths.forEach(scanPath => {
-            if (fs.existsSync(scanPath)) {
-                scanDirectory(scanPath);
-            }
-        });
-        
-        return projects;
-    }
-
-    detectProjectType(projectPath) {
-        const indicators = {
-            'node': ['package.json'],
-            'rust': ['Cargo.toml'],
-            'python': ['requirements.txt', 'setup.py', 'pyproject.toml'],
-            'java': ['pom.xml', 'build.gradle'],
-            'c++': ['CMakeLists.txt', 'Makefile'],
-            'go': ['go.mod'],
-            'php': ['composer.json'],
-            'ruby': ['Gemfile'],
-            'dotnet': ['*.csproj', '*.vbproj']
-        };
-        
-        for (const [type, files] of Object.entries(indicators)) {
-            for (const file of files) {
-                if (file.includes('*')) {
-                    const pattern = file.replace('*', '');
-                    const items = fs.readdirSync(projectPath);
-                    if (items.some(item => item.includes(pattern))) {
-                        return type;
-                    }
-                } else if (fs.existsSync(path.join(projectPath, file))) {
-                    return type;
-                }
-            }
+          }
         }
-        
-        return 'unknown';
-    }
+      } catch (error) {
+        // Ignore permission errors
+      }
+    };
 
-    getDirectorySize(dirPath) {
-        let size = 0;
-        try {
-            const items = fs.readdirSync(dirPath);
-            for (const item of items) {
-                const fullPath = path.join(dirPath, item);
-                const stat = fs.statSync(fullPath);
-                if (stat.isDirectory()) {
-                    size += this.getDirectorySize(fullPath);
-                } else {
-                    size += stat.size;
-                }
-            }
-        } catch (error) {
-            // Ignore permission errors
+    countLinesRecursive(process.cwd());
+    return lines;
+  }
+
+  async findCodeIssues() {
+    const issues = [];
+
+    // Basic code quality checks
+    const codeFiles = this.findCodeFiles();
+
+    for (const file of codeFiles.slice(0, 10)) {
+      // Limit to 10 files
+      try {
+        const content = fs.readFileSync(file, 'utf8');
+
+        // Check for common issues
+        if (content.includes('console.log(')) {
+          issues.push(`${file}: Contains console.log statements`);
         }
-        return size;
-    }
 
-    getCapabilities() {
-        return {
-            automatedImprovement: true,
-            multiComputerSync: true,
-            continuousIntegration: true,
-            performanceMonitoring: true,
-            errorTracking: true,
-            codeAnalysis: true,
-            autoCommit: true,
-            buildOptimization: true,
-            dependencyManagement: true,
-            securityScanning: true
-        };
-    }
-
-    startHeartbeat() {
-        if (!this.config.enableHeartbeat) return;
-        
-        setInterval(async () => {
-            try {
-                await this.sendHeartbeat();
-            } catch (error) {
-                this.logger.error(`Heartbeat failed: ${error.message}`);
-                this.reconnect();
-            }
-        }, this.heartbeatInterval);
-        
-        this.logger.info('💓 Heartbeat monitoring started');
-    }
-
-    async sendHeartbeat() {
-        if (!this.isConnected) return;
-        
-        const heartbeat = {
-            computerId: this.computerId,
-            timestamp: Date.now(),
-            uptime: process.uptime(),
-            memory: process.memoryUsage(),
-            cpu: process.cpuUsage(),
-            activeConnections: this.getActiveConnections(),
-            cursorProcesses: await this.getCursorProcesses(),
-            activeProjects: this.getActiveProjects(),
-            improvementQueue: this.improvementQueue.length,
-            lastActivity: this.lastActivity
-        };
-
-        await this.sendToCursorServer('/api/v1/cursor/heartbeat', heartbeat);
-    }
-
-    startActivityMonitoring() {
-        if (!this.config.enableActivityMonitoring) return;
-        
-        setInterval(() => {
-            const now = Date.now();
-            const timeSinceLastActivity = now - this.lastActivity;
-            
-            if (timeSinceLastActivity > this.activityTimeout) {
-                this.logger.warn('⚠️ No activity detected, sending keepalive');
-                this.sendKeepalive();
-            }
-        }, this.statusCheckInterval);
-        
-        this.logger.info('👁️ Activity monitoring started');
-    }
-
-    startFileWatching() {
-        if (!this.config.enableFileWatching) return;
-        
-        const watchPaths = [
-            'src',
-            'pages',
-            'components',
-            'utils',
-            'scripts',
-            'public',
-            'styles',
-            'tests'
-        ];
-        
-        watchPaths.forEach(dir => {
-            if (fs.existsSync(dir)) {
-                fs.watch(dir, { recursive: true }, (eventType, filename) => {
-                    this.logger.info(`📁 File change detected: ${eventType} ${filename}`);
-                    this.handleFileChange(eventType, filename);
-                });
-            }
-        });
-        
-        this.logger.info('📁 File watching started');
-    }
-
-    handleFileChange(eventType, filename) {
-        this.updateActivity();
-        
-        // Add to improvement queue
-        this.improvementQueue.push({
-            type: 'file_change',
-            eventType,
-            filename,
-            timestamp: Date.now(),
-            computerId: this.computerId
-        });
-        
-        // Send notification
-        this.sendFileChangeNotification(eventType, filename);
-        
-        // Trigger immediate analysis for important files
-        if (this.isImportantFile(filename)) {
-            this.triggerImmediateAnalysis(filename);
-        }
-    }
-
-    isImportantFile(filename) {
-        const importantExtensions = ['.js', '.ts', '.jsx', '.tsx', '.json', '.md', '.yml', '.yaml'];
-        const importantFiles = ['package.json', 'README.md', 'Dockerfile', '.env'];
-        
-        return importantExtensions.some(ext => filename.endsWith(ext)) ||
-               importantFiles.includes(filename);
-    }
-
-    async triggerImmediateAnalysis(filename) {
-        try {
-            const filePath = path.join(process.cwd(), filename);
-            if (fs.existsSync(filePath)) {
-                const content = fs.readFileSync(filePath, 'utf8');
-                const analysis = await this.analyzeFile(filename, content);
-                
-                this.logger.info(`🔍 Immediate analysis completed for ${filename}`);
-                this.addImprovement(analysis);
-            }
-        } catch (error) {
-            this.logger.error(`Immediate analysis failed for ${filename}: ${error.message}`);
-        }
-    }
-
-    async analyzeFile(filename, content) {
-        return {
-            type: 'file_analysis',
-            filename,
-            size: content.length,
-            lines: content.split('\n').length,
-            hasErrors: this.detectErrors(content),
-            suggestions: this.generateSuggestions(filename, content),
-            timestamp: Date.now(),
-            computerId: this.computerId
-        };
-    }
-
-    detectErrors(content) {
-        const errors = [];
-        
-        // Basic error detection
-        if (content.includes('console.error') || content.includes('throw new Error')) {
-            errors.push('Contains error handling');
-        }
-        
         if (content.includes('TODO') || content.includes('FIXME')) {
-            errors.push('Contains TODO/FIXME comments');
+          issues.push(`${file}: Contains TODO/FIXME comments`);
         }
-        
+
         if (content.includes('debugger')) {
-            errors.push('Contains debugger statements');
+          issues.push(`${file}: Contains debugger statements`);
         }
-        
-        return errors;
+      } catch (error) {
+        // Ignore errors
+      }
     }
 
-    generateSuggestions(filename, content) {
-        const suggestions = [];
-        
-        // Performance suggestions
-        if (content.includes('forEach') && content.includes('map')) {
-            suggestions.push('Consider using map instead of forEach for transformations');
+    return issues;
+  }
+
+  findCodeFiles() {
+    const codeFiles = [];
+    const extensions = [
+      '.js',
+      '.ts',
+      '.jsx',
+      '.tsx',
+      '.py',
+      '.java',
+      '.cpp',
+      '.c',
+      '.go',
+      '.rs',
+    ];
+
+    const findFilesRecursive = (dir) => {
+      try {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+
+          if (
+            stat.isDirectory() &&
+            !item.startsWith('.') &&
+            !item.includes('node_modules')
+          ) {
+            findFilesRecursive(fullPath);
+          } else if (
+            stat.isFile() &&
+            extensions.some((ext) => item.endsWith(ext))
+          ) {
+            codeFiles.push(fullPath);
+          }
         }
-        
-        // Security suggestions
-        if (content.includes('eval(') || content.includes('innerHTML')) {
-            suggestions.push('Security: Avoid eval() and innerHTML for user input');
-        }
-        
-        // Code quality suggestions
-        if (content.split('\n').length > 500) {
-            suggestions.push('Consider breaking down large file into smaller modules');
-        }
-        
-        return suggestions;
-    }
+      } catch (error) {
+        // Ignore permission errors
+      }
+    };
 
-    startBuildMonitoring() {
-        if (!this.config.enableBuildMonitoring) return;
-        
-        const packageJsonPath = path.join(process.cwd(), 'package.json');
-        if (fs.existsSync(packageJsonPath)) {
-            fs.watch(packageJsonPath, (eventType) => {
-                if (eventType === 'change') {
-                    this.logger.info('📦 Package.json changed, checking for build requirements');
-                    this.checkBuildRequirements();
-                }
-            });
-        }
-        
-        this.logger.info('🔨 Build monitoring started');
-    }
+    findFilesRecursive(process.cwd());
+    return codeFiles;
+  }
 
-    startCursorIntegration() {
-        if (!this.config.enableCursorIntegration) return;
-        
-        // Monitor Cursor processes
-        setInterval(async () => {
-            const processes = await this.getCursorProcesses();
-            this.cursorProcesses = new Set(processes);
-            
-            if (processes.length > 0) {
-                this.logger.debug(`🖥️ Found ${processes.length} Cursor processes`);
-            }
-        }, 30000);
-        
-        this.logger.info('🖥️ Cursor integration started');
-    }
+  async generateCodeSuggestions() {
+    return [
+      'Consider adding TypeScript for better type safety',
+      'Implement automated testing for critical functions',
+      'Add error boundaries for React components',
+      'Consider using a linter for code consistency',
+      'Implement automated code formatting',
+    ];
+  }
 
-    startMultiComputerSync() {
-        if (!this.config.enableMultiComputerSync) return;
-        
-        setInterval(async () => {
-            try {
-                await this.syncWithOtherComputers();
-            } catch (error) {
-                this.logger.error(`Multi-computer sync failed: ${error.message}`);
-            }
-        }, this.syncInterval);
-        
-        this.logger.info('🔄 Multi-computer synchronization started');
-    }
+  startLocalServer() {
+    const server = http.createServer((req, res) => {
+      this.handleLocalRequest(req, res);
+    });
 
-    async syncWithOtherComputers() {
-        const syncData = {
-            computerId: this.computerId,
-            timestamp: Date.now(),
-            improvements: this.improvementQueue,
-            activeProjects: this.getActiveProjects(),
-            errors: this.errors || [],
-            performance: this.performance || {}
-        };
-        
-        await this.sendToCursorServer('/api/v1/cursor/sync', syncData);
-    }
+    server.listen(this.config.localPort, () => {
+      this.logger.info(
+        `🌐 Local server started on port ${this.config.localPort}`,
+      );
+    });
 
-    startContinuousImprovement() {
-        if (!this.config.enableContinuousImprovement) return;
-        
-        setInterval(() => {
-            this.processImprovementQueue();
-        }, 30000); // Every 30 seconds
-        
-        this.logger.info('🚀 Continuous improvement system started');
-    }
+    server.on('error', (error) => {
+      this.logger.error(`Local server error: ${error.message}`);
+    });
+  }
 
-    async processImprovementQueue() {
-        if (this.improvementQueue.length === 0) return;
-        
-        const improvements = this.improvementQueue.splice(0, 5); // Process 5 at a time
-        
-        for (const improvement of improvements) {
-            try {
-                await this.processImprovement(improvement);
-            } catch (error) {
-                this.logger.error(`Failed to process improvement: ${error.message}`);
-                // Re-add to queue
-                this.improvementQueue.unshift(improvement);
-            }
-        }
-    }
+  startCoordinationServer() {
+    const server = http.createServer((req, res) => {
+      this.handleCoordinationRequest(req, res);
+    });
 
-    async processImprovement(improvement) {
-        this.logger.info(`🔧 Processing improvement: ${improvement.type}`);
-        
-        switch (improvement.type) {
-            case 'file_change':
-                await this.handleFileImprovement(improvement);
-                break;
-            case 'file_analysis':
-                await this.handleAnalysisImprovement(improvement);
-                break;
-            case 'error_detection':
-                await this.handleErrorImprovement(improvement);
-                break;
-            case 'performance_issue':
-                await this.handlePerformanceImprovement(improvement);
-                break;
-            default:
-                this.logger.warn(`Unknown improvement type: ${improvement.type}`);
-        }
-    }
+    server.listen(this.config.coordinationPort, () => {
+      this.logger.info(
+        `🤝 Coordination server started on port ${this.config.coordinationPort}`,
+      );
+    });
 
-    async handleFileImprovement(improvement) {
-        // Implement file-specific improvements
-        this.logger.info(`📝 Handling file improvement for ${improvement.filename}`);
-    }
+    server.on('error', (error) => {
+      this.logger.error(`Coordination server error: ${error.message}`);
+    });
+  }
 
-    async handleAnalysisImprovement(improvement) {
-        // Implement analysis-based improvements
-        this.logger.info(`🔍 Handling analysis improvement for ${improvement.filename}`);
-    }
+  handleLocalRequest(req, res) {
+    const { method, url } = req;
 
-    async handleErrorImprovement(improvement) {
-        // Implement error-based improvements
-        this.logger.info(`❌ Handling error improvement: ${improvement.error}`);
-    }
+    this.logger.info(`📨 Local request: ${method} ${url}`);
+    this.updateActivity();
 
-    async handlePerformanceImprovement(improvement) {
-        // Implement performance-based improvements
-        this.logger.info(`⚡ Handling performance improvement: ${improvement.issue}`);
-    }
-
-    startPerformanceMonitoring() {
-        if (!this.config.enablePerformanceMonitoring) return;
-        
-        setInterval(() => {
-            const performance = {
-                timestamp: Date.now(),
-                memory: process.memoryUsage(),
-                cpu: process.cpuUsage(),
-                uptime: process.uptime(),
-                activeConnections: this.getActiveConnections()
-            };
-            
-            this.performance = performance;
-            this.saveData('performance');
-            
-            // Check for performance issues
-            this.checkPerformanceIssues(performance);
-        }, 60000); // Every minute
-        
-        this.logger.info('📊 Performance monitoring started');
-    }
-
-    checkPerformanceIssues(performance) {
-        const issues = [];
-        
-        // Memory usage check
-        if (performance.memory.heapUsed > 100 * 1024 * 1024) { // 100MB
-            issues.push('High memory usage detected');
-        }
-        
-        // CPU usage check
-        if (performance.cpu.user > 1000000) { // 1 second of CPU time
-            issues.push('High CPU usage detected');
-        }
-        
-        if (issues.length > 0) {
-            this.addImprovement({
-                type: 'performance_issue',
-                issues,
-                performance,
-                timestamp: Date.now(),
-                computerId: this.computerId
-            });
-        }
-    }
-
-    startErrorTracking() {
-        if (!this.config.enableErrorTracking) return;
-        
-        this.logger.info('🚨 Error tracking started');
-    }
-
-    trackError(error) {
-        const errorData = {
-            type: 'error',
-            message: error.message,
-            stack: error.stack,
-            timestamp: Date.now(),
-            computerId: this.computerId
-        };
-        
-        if (!this.errors) this.errors = [];
-        this.errors.push(errorData);
-        this.saveData('errors');
-        
-        // Send to server
-        this.sendToCursorServer('/api/v1/cursor/error', errorData).catch(err => {
-            this.logger.error(`Failed to send error: ${err.message}`);
-        });
-    }
-
-    startCodeAnalysis() {
-        if (!this.config.enableCodeAnalysis) return;
-        
-        setInterval(() => {
-            this.analyzeCodebase();
-        }, 300000); // Every 5 minutes
-        
-        this.logger.info('🔍 Code analysis started');
-    }
-
-    async analyzeCodebase() {
+    if (method === 'GET' && url === '/status') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(
+        JSON.stringify({
+          status: 'running',
+          computerId: this.computerId,
+          connected: this.isConnected,
+          uptime: process.uptime(),
+          timestamp: Date.now(),
+          cursorProcesses: Array.from(this.cursorProcesses),
+          activeProjects: this.getActiveProjects().length,
+          improvementQueue: this.improvementQueue.length,
+        }),
+      );
+    } else if (method === 'POST' && url === '/chat') {
+      let body = '';
+      req.on('data', (chunk) => (body += chunk));
+      req.on('end', () => {
         try {
-            const analysis = {
-                timestamp: Date.now(),
-                computerId: this.computerId,
-                files: this.countFiles(),
-                lines: this.countLines(),
-                issues: await this.findCodeIssues(),
-                suggestions: await this.generateCodeSuggestions()
-            };
-            
-            this.addImprovement({
-                type: 'codebase_analysis',
-                analysis,
-                timestamp: Date.now(),
-                computerId: this.computerId
-            });
-            
+          const { message } = JSON.parse(body);
+          this.triggerCursorChat(message);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'sent' }));
         } catch (error) {
-            this.logger.error(`Code analysis failed: ${error.message}`);
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: error.message }));
         }
-    }
-
-    countFiles() {
-        let count = 0;
-        const countFilesRecursive = (dir) => {
-            try {
-                const items = fs.readdirSync(dir);
-                for (const item of items) {
-                    const fullPath = path.join(dir, item);
-                    const stat = fs.statSync(fullPath);
-                    
-                    if (stat.isDirectory() && !item.startsWith('.') && !item.includes('node_modules')) {
-                        countFilesRecursive(fullPath);
-                    } else if (stat.isFile()) {
-                        count++;
-                    }
-                }
-            } catch (error) {
-                // Ignore permission errors
-            }
-        };
-        
-        countFilesRecursive(process.cwd());
-        return count;
-    }
-
-    countLines() {
-        let lines = 0;
-        const countLinesRecursive = (dir) => {
-            try {
-                const items = fs.readdirSync(dir);
-                for (const item of items) {
-                    const fullPath = path.join(dir, item);
-                    const stat = fs.statSync(fullPath);
-                    
-                    if (stat.isDirectory() && !item.startsWith('.') && !item.includes('node_modules')) {
-                        countLinesRecursive(fullPath);
-                    } else if (stat.isFile()) {
-                        try {
-                            const content = fs.readFileSync(fullPath, 'utf8');
-                            lines += content.split('\n').length;
-                        } catch (error) {
-                            // Ignore binary files
-                        }
-                    }
-                }
-            } catch (error) {
-                // Ignore permission errors
-            }
-        };
-        
-        countLinesRecursive(process.cwd());
-        return lines;
-    }
-
-    async findCodeIssues() {
-        const issues = [];
-        
-        // Basic code quality checks
-        const codeFiles = this.findCodeFiles();
-        
-        for (const file of codeFiles.slice(0, 10)) { // Limit to 10 files
-            try {
-                const content = fs.readFileSync(file, 'utf8');
-                
-                // Check for common issues
-                if (content.includes('console.log(')) {
-                    issues.push(`${file}: Contains console.log statements`);
-                }
-                
-                if (content.includes('TODO') || content.includes('FIXME')) {
-                    issues.push(`${file}: Contains TODO/FIXME comments`);
-                }
-                
-                if (content.includes('debugger')) {
-                    issues.push(`${file}: Contains debugger statements`);
-                }
-                
-            } catch (error) {
-                // Ignore errors
-            }
-        }
-        
-        return issues;
-    }
-
-    findCodeFiles() {
-        const codeFiles = [];
-        const extensions = ['.js', '.ts', '.jsx', '.tsx', '.py', '.java', '.cpp', '.c', '.go', '.rs'];
-        
-        const findFilesRecursive = (dir) => {
-            try {
-                const items = fs.readdirSync(dir);
-                for (const item of items) {
-                    const fullPath = path.join(dir, item);
-                    const stat = fs.statSync(fullPath);
-                    
-                    if (stat.isDirectory() && !item.startsWith('.') && !item.includes('node_modules')) {
-                        findFilesRecursive(fullPath);
-                    } else if (stat.isFile() && extensions.some(ext => item.endsWith(ext))) {
-                        codeFiles.push(fullPath);
-                    }
-                }
-            } catch (error) {
-                // Ignore permission errors
-            }
-        };
-        
-        findFilesRecursive(process.cwd());
-        return codeFiles;
-    }
-
-    async generateCodeSuggestions() {
-        return [
-            'Consider adding TypeScript for better type safety',
-            'Implement automated testing for critical functions',
-            'Add error boundaries for React components',
-            'Consider using a linter for code consistency',
-            'Implement automated code formatting'
-        ];
-    }
-
-    startLocalServer() {
-        const server = http.createServer((req, res) => {
-            this.handleLocalRequest(req, res);
-        });
-
-        server.listen(this.config.localPort, () => {
-            this.logger.info(`🌐 Local server started on port ${this.config.localPort}`);
-        });
-
-        server.on('error', (error) => {
-            this.logger.error(`Local server error: ${error.message}`);
-        });
-    }
-
-    startCoordinationServer() {
-        const server = http.createServer((req, res) => {
-            this.handleCoordinationRequest(req, res);
-        });
-
-        server.listen(this.config.coordinationPort, () => {
-            this.logger.info(`🤝 Coordination server started on port ${this.config.coordinationPort}`);
-        });
-
-        server.on('error', (error) => {
-            this.logger.error(`Coordination server error: ${error.message}`);
-        });
-    }
-
-    handleLocalRequest(req, res) {
-        const { method, url } = req;
-        
-        this.logger.info(`📨 Local request: ${method} ${url}`);
-        this.updateActivity();
-        
-        if (method === 'GET' && url === '/status') {
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({
-                status: 'running',
-                computerId: this.computerId,
-                connected: this.isConnected,
-                uptime: process.uptime(),
-                timestamp: Date.now(),
-                cursorProcesses: Array.from(this.cursorProcesses),
-                activeProjects: this.getActiveProjects().length,
-                improvementQueue: this.improvementQueue.length
-            }));
-        } else if (method === 'POST' && url === '/chat') {
-            let body = '';
-            req.on('data', chunk => body += chunk);
-            req.on('end', () => {
-                try {
-                    const { message } = JSON.parse(body);
-                    this.triggerCursorChat(message);
-                    res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ status: 'sent' }));
-                } catch (error) {
-                    res.writeHead(400, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: error.message }));
-                }
-            });
-        } else if (method === 'GET' && url === '/improvements') {
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify(this.improvementQueue));
-        } else if (method === 'POST' && url === '/improvement') {
-            let body = '';
-            req.on('data', chunk => body += chunk);
-            req.on('end', () => {
-                try {
-                    const improvement = JSON.parse(body);
-                    this.addImprovement(improvement);
-                    res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ status: 'added' }));
-                } catch (error) {
-                    res.writeHead(400, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: error.message }));
-                }
-            });
-        } else {
-            res.writeHead(404);
-            res.end('Not Found');
-        }
-    }
-
-    handleCoordinationRequest(req, res) {
-        const { method, url } = req;
-        
-        this.logger.info(`🤝 Coordination request: ${method} ${url}`);
-        
-        if (method === 'GET' && url === '/sync') {
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({
-                computerId: this.computerId,
-                improvements: this.improvementQueue,
-                activeProjects: this.getActiveProjects(),
-                timestamp: Date.now()
-            }));
-        } else if (method === 'POST' && url === '/sync') {
-            let body = '';
-            req.on('data', chunk => body += chunk);
-            req.on('end', () => {
-                try {
-                    const syncData = JSON.parse(body);
-                    this.mergeSyncData(syncData);
-                    res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ status: 'synced' }));
-                } catch (error) {
-                    res.writeHead(400, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: error.message }));
-                }
-            });
-        } else {
-            res.writeHead(404);
-            res.end('Not Found');
-        }
-    }
-
-    mergeSyncData(syncData) {
-        // Merge improvements from other computers
-        if (syncData.improvements) {
-            this.improvementQueue.push(...syncData.improvements);
-        }
-        
-        // Merge active projects
-        if (syncData.activeProjects) {
-            // Implementation depends on your needs
-        }
-        
-        this.logger.info(`🔄 Synced data from ${syncData.computerId}`);
-    }
-
-    async triggerCursorChat(message) {
-        this.logger.info(`💬 Triggering Cursor chat: ${message}`);
-        
+      });
+    } else if (method === 'GET' && url === '/improvements') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(this.improvementQueue));
+    } else if (method === 'POST' && url === '/improvement') {
+      let body = '';
+      req.on('data', (chunk) => (body += chunk));
+      req.on('end', () => {
         try {
-            await this.sendToCursorServer('/api/v1/cursor/chat', {
-                computerId: this.computerId,
-                message: message,
-                timestamp: Date.now(),
-                context: this.getCurrentContext()
-            });
-            
-            this.logger.info('✅ Chat request sent successfully');
+          const improvement = JSON.parse(body);
+          this.addImprovement(improvement);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'added' }));
         } catch (error) {
-            this.logger.error(`Chat request failed: ${error.message}`);
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: error.message }));
         }
+      });
+    } else {
+      res.writeHead(404);
+      res.end('Not Found');
     }
+  }
 
-    async sendToCursorServer(endpoint, data) {
-        if (!this.config.apiKey) return;
-        
-        return new Promise((resolve, reject) => {
-            const options = {
-                hostname: new URL(this.config.serverUrl).hostname,
-                port: 443,
-                path: endpoint,
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.config.apiKey}`,
-                    'User-Agent': 'CursorAutomatedCommunication/2.0',
-                    'X-Computer-ID': this.computerId
-                }
-            };
+  handleCoordinationRequest(req, res) {
+    const { method, url } = req;
 
-            const req = https.request(options, (res) => {
-                let responseData = '';
-                res.on('data', (chunk) => responseData += chunk);
-                res.on('end', () => {
-                    if (res.statusCode >= 200 && res.statusCode < 300) {
-                        resolve(JSON.parse(responseData));
-                    } else {
-                        reject(new Error(`Server responded with ${res.statusCode}`));
-                    }
-                });
-            });
+    this.logger.info(`🤝 Coordination request: ${method} ${url}`);
 
-            req.on('error', reject);
-            req.write(JSON.stringify(data));
-            req.end();
-        });
-    }
-
-    async sendStatusUpdate() {
-        const status = {
-            computerId: this.computerId,
-            status: 'active',
-            timestamp: Date.now(),
-            uptime: process.uptime(),
-            memory: process.memoryUsage(),
-            platform: os.platform(),
-            hostname: os.hostname(),
-            cursorProcesses: Array.from(this.cursorProcesses),
-            activeProjects: this.getActiveProjects().length
-        };
-
-        await this.sendToCursorServer('/api/v1/cursor/status', status);
-    }
-
-    sendFileChangeNotification(eventType, filename) {
-        this.sendToCursorServer('/api/v1/cursor/file-change', {
-            computerId: this.computerId,
-            eventType,
-            filename,
-            timestamp: Date.now()
-        }).catch(error => {
-            this.logger.error(`File change notification failed: ${error.message}`);
-        });
-    }
-
-    checkBuildRequirements() {
-        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-        const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
-        
-        if (hasBuildScript) {
-            this.logger.info('🔨 Build script detected, notifying Cursor AI');
-            this.sendToCursorServer('/api/v1/cursor/build-required', {
-                computerId: this.computerId,
-                timestamp: Date.now(),
-                packageJson: packageJson
-            }).catch(error => {
-                this.logger.error(`Build notification failed: ${error.message}`);
-            });
-        }
-    }
-
-    sendKeepalive() {
-        this.sendToCursorServer('/api/v1/cursor/keepalive', {
-            computerId: this.computerId,
-            timestamp: Date.now()
-        }).catch(error => {
-            this.logger.error(`Keepalive failed: ${error.message}`);
-        });
-    }
-
-    updateActivity() {
-        this.lastActivity = Date.now();
-    }
-
-    getActiveConnections() {
-        return 1;
-    }
-
-    getCurrentContext() {
-        return {
-            workingDirectory: process.cwd(),
-            nodeVersion: process.version,
-            platform: os.platform(),
-            uptime: process.uptime(),
-            memoryUsage: process.memoryUsage(),
-            cursorProcesses: Array.from(this.cursorProcesses),
-            activeProjects: this.getActiveProjects()
-        };
-    }
-
-    addImprovement(improvement) {
-        this.improvementQueue.push(improvement);
-        this.saveData('improvements');
-        
-        // Keep queue size manageable
-        if (this.improvementQueue.length > 100) {
-            this.improvementQueue = this.improvementQueue.slice(-50);
-        }
-    }
-
-    saveData(type) {
+    if (method === 'GET' && url === '/sync') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(
+        JSON.stringify({
+          computerId: this.computerId,
+          improvements: this.improvementQueue,
+          activeProjects: this.getActiveProjects(),
+          timestamp: Date.now(),
+        }),
+      );
+    } else if (method === 'POST' && url === '/sync') {
+      let body = '';
+      req.on('data', (chunk) => (body += chunk));
+      req.on('end', () => {
         try {
-            const filePath = this.dataFiles[type];
-            if (filePath && this[type]) {
-                fs.writeFileSync(filePath, JSON.stringify(this[type], null, 2));
-            }
+          const syncData = JSON.parse(body);
+          this.mergeSyncData(syncData);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'synced' }));
         } catch (error) {
-            this.logger.error(`Failed to save ${type} data: ${error.message}`);
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: error.message }));
         }
+      });
+    } else {
+      res.writeHead(404);
+      res.end('Not Found');
+    }
+  }
+
+  mergeSyncData(syncData) {
+    // Merge improvements from other computers
+    if (syncData.improvements) {
+      this.improvementQueue.push(...syncData.improvements);
     }
 
-    async reconnect() {
-        if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-            this.logger.error('❌ Max reconnection attempts reached');
-            return;
-        }
-
-        this.reconnectAttempts++;
-        this.logger.info(`🔄 Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts}`);
-        
-        setTimeout(async () => {
-            try {
-                await this.initializeConnection();
-            } catch (error) {
-                this.logger.error(`Reconnection failed: ${error.message}`);
-                this.reconnect();
-            }
-        }, this.reconnectDelay);
+    // Merge active projects
+    if (syncData.activeProjects) {
+      // Implementation depends on your needs
     }
 
-    cleanup() {
-        this.logger.info('🧹 Cleaning up Cursor Automated Communication System...');
-        
-        // Save all data
-        Object.keys(this.dataFiles).forEach(type => {
-            this.saveData(type);
+    this.logger.info(`🔄 Synced data from ${syncData.computerId}`);
+  }
+
+  async triggerCursorChat(message) {
+    this.logger.info(`💬 Triggering Cursor chat: ${message}`);
+
+    try {
+      await this.sendToCursorServer('/api/v1/cursor/chat', {
+        computerId: this.computerId,
+        message: message,
+        timestamp: Date.now(),
+        context: this.getCurrentContext(),
+      });
+
+      this.logger.info('✅ Chat request sent successfully');
+    } catch (error) {
+      this.logger.error(`Chat request failed: ${error.message}`);
+    }
+  }
+
+  async sendToCursorServer(endpoint, data) {
+    if (!this.config.apiKey) return;
+
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: new URL(this.config.serverUrl).hostname,
+        port: 443,
+        path: endpoint,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.config.apiKey}`,
+          'User-Agent': 'CursorAutomatedCommunication/2.0',
+          'X-Computer-ID': this.computerId,
+        },
+      };
+
+      const req = https.request(options, (res) => {
+        let responseData = '';
+        res.on('data', (chunk) => (responseData += chunk));
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve(JSON.parse(responseData));
+          } else {
+            reject(new Error(`Server responded with ${res.statusCode}`));
+          }
         });
-        
-        // Send final status
-        this.sendToCursorServer('/api/v1/cursor/disconnect', {
-            computerId: this.computerId,
-            timestamp: Date.now()
-        }).catch(() => {
-            // Ignore errors during cleanup
-        });
-        
-        this.logger.info('✅ Cleanup completed');
-        process.exit(0);
+      });
+
+      req.on('error', reject);
+      req.write(JSON.stringify(data));
+      req.end();
+    });
+  }
+
+  async sendStatusUpdate() {
+    const status = {
+      computerId: this.computerId,
+      status: 'active',
+      timestamp: Date.now(),
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      platform: os.platform(),
+      hostname: os.hostname(),
+      cursorProcesses: Array.from(this.cursorProcesses),
+      activeProjects: this.getActiveProjects().length,
+    };
+
+    await this.sendToCursorServer('/api/v1/cursor/status', status);
+  }
+
+  sendFileChangeNotification(eventType, filename) {
+    this.sendToCursorServer('/api/v1/cursor/file-change', {
+      computerId: this.computerId,
+      eventType,
+      filename,
+      timestamp: Date.now(),
+    }).catch((error) => {
+      this.logger.error(`File change notification failed: ${error.message}`);
+    });
+  }
+
+  checkBuildRequirements() {
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
+
+    if (hasBuildScript) {
+      this.logger.info('🔨 Build script detected, notifying Cursor AI');
+      this.sendToCursorServer('/api/v1/cursor/build-required', {
+        computerId: this.computerId,
+        timestamp: Date.now(),
+        packageJson: packageJson,
+      }).catch((error) => {
+        this.logger.error(`Build notification failed: ${error.message}`);
+      });
     }
+  }
+
+  sendKeepalive() {
+    this.sendToCursorServer('/api/v1/cursor/keepalive', {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+    }).catch((error) => {
+      this.logger.error(`Keepalive failed: ${error.message}`);
+    });
+  }
+
+  updateActivity() {
+    this.lastActivity = Date.now();
+  }
+
+  getActiveConnections() {
+    return 1;
+  }
+
+  getCurrentContext() {
+    return {
+      workingDirectory: process.cwd(),
+      nodeVersion: process.version,
+      platform: os.platform(),
+      uptime: process.uptime(),
+      memoryUsage: process.memoryUsage(),
+      cursorProcesses: Array.from(this.cursorProcesses),
+      activeProjects: this.getActiveProjects(),
+    };
+  }
+
+  addImprovement(improvement) {
+    this.improvementQueue.push(improvement);
+    this.saveData('improvements');
+
+    // Keep queue size manageable
+    if (this.improvementQueue.length > 100) {
+      this.improvementQueue = this.improvementQueue.slice(-50);
+    }
+  }
+
+  saveData(type) {
+    try {
+      const filePath = this.dataFiles[type];
+      if (filePath && this[type]) {
+        fs.writeFileSync(filePath, JSON.stringify(this[type], null, 2));
+      }
+    } catch (error) {
+      this.logger.error(`Failed to save ${type} data: ${error.message}`);
+    }
+  }
+
+  async reconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      this.logger.error('❌ Max reconnection attempts reached');
+      return;
+    }
+
+    this.reconnectAttempts++;
+    this.logger.info(
+      `🔄 Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts}`,
+    );
+
+    setTimeout(async () => {
+      try {
+        await this.initializeConnection();
+      } catch (error) {
+        this.logger.error(`Reconnection failed: ${error.message}`);
+        this.reconnect();
+      }
+    }, this.reconnectDelay);
+  }
+
+  cleanup() {
+    this.logger.info('🧹 Cleaning up Cursor Automated Communication System...');
+
+    // Save all data
+    Object.keys(this.dataFiles).forEach((type) => {
+      this.saveData(type);
+    });
+
+    // Send final status
+    this.sendToCursorServer('/api/v1/cursor/disconnect', {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+    }).catch(() => {
+      // Ignore errors during cleanup
+    });
+
+    this.logger.info('✅ Cleanup completed');
+    process.exit(0);
+  }
 }
 
 // Start the system
 const communication = new CursorAutomatedCommunication();
-communication.start().catch(error => {
-    console.error('Failed to start Cursor Automated Communication System:', error);
-    process.exit(1);
-}); 
+communication.start().catch((error) => {
+  console.error(
+    'Failed to start Cursor Automated Communication System:',
+    error,
+  );
+  process.exit(1);
+});

@@ -5,6 +5,7 @@ This folder contains a five-part email sequence designed to introduce investors 
 ---
 
 ## Email 1 — 🔍 Intro
+
 **Subject:** The AI Protocol That Replaces Platforms
 
 Hi [Investor Name],
@@ -16,6 +17,7 @@ I’d love to share how Zion can help reshape work as we know it.
 ---
 
 ## Email 2 — 📈 Vision
+
 **Subject:** Decentralizing Work, Globally
 
 Since day one, our vision has been a worldwide network where talent and projects meet in a fully tokenized workflow. Zion’s governance model gives each contributor a stake in the ecosystem while our token unlocks premium tools and voting rights in the Zion DAO.
@@ -25,6 +27,7 @@ We’re rolling out regional hubs across North America, Europe, Asia, and LATAM 
 ---
 
 ## Email 3 — 📊 Numbers
+
 **Subject:** Zion Traction Update: 12K Users, 27 Countries
 
 - **12,000+ active users** building on Zion OS
@@ -36,6 +39,7 @@ We’re seeing steady demand from creators and businesses who want to own their 
 ---
 
 ## Email 4 — 📅 Invite
+
 **Subject:** You're Invited: Zion Global Demo Day
 
 Join us for Demo Day on [Date] to see Zion OS v2 in action. We’ll showcase marketplace templates, live token rewards, and our on‑chain governance dashboard.
@@ -49,6 +53,7 @@ We’d be thrilled to have you there.
 ---
 
 ## Email 5 — 🤝 Funding
+
 **Subject:** We’re raising $5M to launch Zion Protocol V2
 
 We’re opening a $5M Series A to accelerate global deployment of Zion Protocol V2. Funds will expand engineering, seed our token economy, and support multiverse integrations. We plan to issue a SAFE with token warrants, giving investors exposure to both equity and the Zion token.
@@ -59,4 +64,3 @@ Looking forward to collaborating,
 
 [Your Name]
 Zion Tech Group
-

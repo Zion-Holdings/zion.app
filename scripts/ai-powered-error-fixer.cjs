@@ -2,7 +2,7 @@
 
 /**
  * Zion App - AI-Powered Error Fixer
- * 
+ *
  * This script automatically detects and fixes errors in the codebase:
  * - TypeScript errors
  * - ESLint errors
@@ -24,7 +24,7 @@ class AIPoweredErrorFixer {
     this.isRunning = false;
     this.errors = [];
     this.fixes = [];
-    
+
     // Configuration
     this.config = {
       checkInterval: 30 * 1000, // 30 seconds
@@ -37,7 +37,7 @@ class AIPoweredErrorFixer {
       enableDependencyFix: true,
       enablePerformanceFix: true,
       enableSecurityFix: true,
-      maxRetries: 3
+      maxRetries: 3,
     };
   }
 
@@ -46,21 +46,20 @@ class AIPoweredErrorFixer {
    */
   async start() {
     console.log('🤖 Starting AI-Powered Error Fixer...');
-    console.log('=' .repeat(60));
-    
+    console.log('='.repeat(60));
+
     this.isRunning = true;
-    
+
     try {
       // Initial error scan and fix
       await this.performInitialErrorScan();
-      
+
       // Start continuous error monitoring and fixing
       this.startContinuousErrorFixing();
-      
+
       console.log('✅ AI-Powered Error Fixer started successfully!');
       console.log('🔍 Continuously monitoring and fixing errors...');
-      console.log('=' .repeat(60));
-      
+      console.log('='.repeat(60));
     } catch (error) {
       console.error('❌ Failed to start error fixer:', error);
       throw error;
@@ -72,7 +71,7 @@ class AIPoweredErrorFixer {
    */
   async performInitialErrorScan() {
     console.log('🔍 Performing initial error scan...');
-    
+
     const errorScans = [
       this.scanTypeScriptErrors(),
       this.scanESLintErrors(),
@@ -81,19 +80,21 @@ class AIPoweredErrorFixer {
       this.scanConfigErrors(),
       this.scanDependencyErrors(),
       this.scanPerformanceErrors(),
-      this.scanSecurityErrors()
+      this.scanSecurityErrors(),
     ];
-    
+
     const results = await Promise.allSettled(errorScans);
-    
+
     for (const result of results) {
       if (result.status === 'fulfilled') {
         this.errors.push(...result.value);
       }
     }
-    
-    console.log(`✅ Initial error scan completed: ${this.errors.length} errors found`);
-    
+
+    console.log(
+      `✅ Initial error scan completed: ${this.errors.length} errors found`,
+    );
+
     // Fix errors if auto-fix is enabled
     if (this.config.enableAutoFix && this.errors.length > 0) {
       await this.fixAllErrors();
@@ -106,25 +107,24 @@ class AIPoweredErrorFixer {
   startContinuousErrorFixing() {
     const errorFixingLoop = async () => {
       if (!this.isRunning) return;
-      
+
       try {
         console.log('🔄 Running error fixing cycle...');
-        
+
         // Scan for new errors
         await this.scanForNewErrors();
-        
+
         // Fix errors if auto-fix is enabled
         if (this.config.enableAutoFix && this.errors.length > 0) {
           await this.fixAllErrors();
         }
-        
       } catch (error) {
         console.error('❌ Error in fixing cycle:', error);
       }
-      
+
       setTimeout(errorFixingLoop, this.config.checkInterval);
     };
-    
+
     errorFixingLoop();
   }
 
@@ -133,7 +133,7 @@ class AIPoweredErrorFixer {
    */
   async scanForNewErrors() {
     const newErrors = [];
-    
+
     const errorScans = [
       this.scanTypeScriptErrors(),
       this.scanESLintErrors(),
@@ -142,20 +142,20 @@ class AIPoweredErrorFixer {
       this.scanConfigErrors(),
       this.scanDependencyErrors(),
       this.scanPerformanceErrors(),
-      this.scanSecurityErrors()
+      this.scanSecurityErrors(),
     ];
-    
+
     const results = await Promise.allSettled(errorScans);
-    
+
     for (const result of results) {
       if (result.status === 'fulfilled') {
         newErrors.push(...result.value);
       }
     }
-    
+
     // Add new errors to the list
     this.errors.push(...newErrors);
-    
+
     if (newErrors.length > 0) {
       console.log(`🔍 Found ${newErrors.length} new errors`);
     }
@@ -166,7 +166,7 @@ class AIPoweredErrorFixer {
    */
   async fixAllErrors() {
     console.log(`🔧 Fixing ${this.errors.length} errors...`);
-    
+
     const fixes = [
       this.fixTypeScriptErrors(),
       this.fixESLintErrors(),
@@ -175,17 +175,17 @@ class AIPoweredErrorFixer {
       this.fixConfigErrors(),
       this.fixDependencyErrors(),
       this.fixPerformanceErrors(),
-      this.fixSecurityErrors()
+      this.fixSecurityErrors(),
     ];
-    
+
     const results = await Promise.allSettled(fixes);
-    
+
     for (const result of results) {
       if (result.status === 'fulfilled' && result.value) {
         this.fixes.push(result.value);
       }
     }
-    
+
     console.log(`✅ Fixed ${this.fixes.length} errors`);
   }
 
@@ -194,48 +194,54 @@ class AIPoweredErrorFixer {
    */
   async scanTypeScriptErrors() {
     if (!this.config.enableTypeScriptFix) return [];
-    
+
     try {
-      const output = execSync('npm run typecheck 2>&1', { stdio: 'pipe' }).toString();
-      
+      const output = execSync('npm run typecheck 2>&1', {
+        stdio: 'pipe',
+      }).toString();
+
       if (output.includes('error')) {
         const errors = this.parseTypeScriptErrors(output);
-        return errors.map(error => ({
+        return errors.map((error) => ({
           type: 'typescript',
           severity: 'error',
           message: error.message,
           file: error.file,
           line: error.line,
-          column: error.column
+          column: error.column,
         }));
       }
-      
+
       return [];
     } catch (error) {
-      const output = error.stdout?.toString() || error.stderr?.toString() || error.message;
+      const output =
+        error.stdout?.toString() || error.stderr?.toString() || error.message;
       const errors = this.parseTypeScriptErrors(output);
-      return errors.map(error => ({
+      return errors.map((error) => ({
         type: 'typescript',
         severity: 'error',
         message: error.message,
         file: error.file,
         line: error.line,
-        column: error.column
+        column: error.column,
       }));
     }
   }
 
   async scanESLintErrors() {
     if (!this.config.enableESLintFix) return [];
-    
+
     try {
-      const output = execSync('npm run lint -- --format=json 2>&1', { stdio: 'pipe' }).toString();
+      const output = execSync('npm run lint -- --format=json 2>&1', {
+        stdio: 'pipe',
+      }).toString();
       const results = JSON.parse(output);
-      
+
       const errors = [];
       for (const file of results) {
         for (const message of file.messages) {
-          if (message.severity === 2) { // Error
+          if (message.severity === 2) {
+            // Error
             errors.push({
               type: 'eslint',
               severity: 'error',
@@ -243,12 +249,12 @@ class AIPoweredErrorFixer {
               file: file.filePath,
               line: message.line,
               column: message.column,
-              rule: message.ruleId
+              rule: message.ruleId,
             });
           }
         }
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -257,38 +263,44 @@ class AIPoweredErrorFixer {
 
   async scanBuildErrors() {
     if (!this.config.enableBuildFix) return [];
-    
+
     try {
-      const output = execSync('npm run build 2>&1', { stdio: 'pipe' }).toString();
-      
+      const output = execSync('npm run build 2>&1', {
+        stdio: 'pipe',
+      }).toString();
+
       if (output.includes('error') || output.includes('Error')) {
-        return [{
-          type: 'build',
-          severity: 'error',
-          message: 'Build errors detected',
-          details: output
-        }];
+        return [
+          {
+            type: 'build',
+            severity: 'error',
+            message: 'Build errors detected',
+            details: output,
+          },
+        ];
       }
-      
+
       return [];
     } catch (error) {
-      return [{
-        type: 'build',
-        severity: 'error',
-        message: 'Build failed',
-        details: error.message
-      }];
+      return [
+        {
+          type: 'build',
+          severity: 'error',
+          message: 'Build failed',
+          details: error.message,
+        },
+      ];
     }
   }
 
   async scanRuntimeErrors() {
     if (!this.config.enableRuntimeFix) return [];
-    
+
     try {
       // Check for runtime errors in logs
       const logsDir = path.join(this.projectRoot, 'logs');
       const errors = [];
-      
+
       if (fs.existsSync(logsDir)) {
         const files = fs.readdirSync(logsDir);
         for (const file of files) {
@@ -300,13 +312,13 @@ class AIPoweredErrorFixer {
                 type: 'runtime',
                 severity: 'error',
                 message: `Runtime errors found in ${file}`,
-                count: errorMatches.length
+                count: errorMatches.length,
               });
             }
           }
         }
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -315,10 +327,10 @@ class AIPoweredErrorFixer {
 
   async scanConfigErrors() {
     if (!this.config.enableConfigFix) return [];
-    
+
     try {
       const errors = [];
-      
+
       // Check Next.js config
       try {
         require('./next.config.js');
@@ -327,10 +339,10 @@ class AIPoweredErrorFixer {
           type: 'config',
           severity: 'error',
           message: 'Next.js config error',
-          details: error.message
+          details: error.message,
         });
       }
-      
+
       // Check TypeScript config
       try {
         const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));
@@ -339,10 +351,10 @@ class AIPoweredErrorFixer {
           type: 'config',
           severity: 'error',
           message: 'TypeScript config error',
-          details: error.message
+          details: error.message,
         });
       }
-      
+
       // Check package.json
       try {
         const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -351,10 +363,10 @@ class AIPoweredErrorFixer {
           type: 'config',
           severity: 'error',
           message: 'Package.json error',
-          details: error.message
+          details: error.message,
         });
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -363,10 +375,10 @@ class AIPoweredErrorFixer {
 
   async scanDependencyErrors() {
     if (!this.config.enableDependencyFix) return [];
-    
+
     try {
       const errors = [];
-      
+
       // Check for missing dependencies
       try {
         execSync('npm ls --depth=0', { stdio: 'pipe' });
@@ -375,27 +387,29 @@ class AIPoweredErrorFixer {
           type: 'dependency',
           severity: 'error',
           message: 'Missing dependencies detected',
-          details: error.message
+          details: error.message,
         });
       }
-      
+
       // Check for security vulnerabilities
       try {
-        const auditOutput = execSync('npm audit --json', { stdio: 'pipe' }).toString();
+        const auditOutput = execSync('npm audit --json', {
+          stdio: 'pipe',
+        }).toString();
         const audit = JSON.parse(auditOutput);
-        
+
         if (audit.vulnerabilities > 0) {
           errors.push({
             type: 'dependency',
             severity: 'error',
             message: `${audit.vulnerabilities} security vulnerabilities found`,
-            details: audit
+            details: audit,
           });
         }
       } catch (error) {
         // Ignore audit errors
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -404,26 +418,31 @@ class AIPoweredErrorFixer {
 
   async scanPerformanceErrors() {
     if (!this.config.enablePerformanceFix) return [];
-    
+
     try {
       const errors = [];
-      
+
       // Check bundle size
       try {
-        const bundleOutput = execSync('npm run bundle:analyze 2>&1', { stdio: 'pipe' }).toString();
-        
-        if (bundleOutput.includes('large') || bundleOutput.includes('warning')) {
+        const bundleOutput = execSync('npm run bundle:analyze 2>&1', {
+          stdio: 'pipe',
+        }).toString();
+
+        if (
+          bundleOutput.includes('large') ||
+          bundleOutput.includes('warning')
+        ) {
           errors.push({
             type: 'performance',
             severity: 'warning',
             message: 'Large bundle size detected',
-            details: bundleOutput
+            details: bundleOutput,
           });
         }
       } catch (error) {
         // Ignore bundle analysis errors
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -432,24 +451,24 @@ class AIPoweredErrorFixer {
 
   async scanSecurityErrors() {
     if (!this.config.enableSecurityFix) return [];
-    
+
     try {
       const errors = [];
-      
+
       // Check for security issues in code
       const securityPatterns = [
         /eval\s*\(/,
         /innerHTML\s*=/,
         /document\.write/,
         /localStorage\s*\[/,
-        /sessionStorage\s*\[/
+        /sessionStorage\s*\[/,
       ];
-      
+
       const sourceFiles = this.findSourceFiles();
-      
+
       for (const file of sourceFiles) {
         const content = fs.readFileSync(file, 'utf8');
-        
+
         for (const pattern of securityPatterns) {
           if (pattern.test(content)) {
             errors.push({
@@ -457,12 +476,12 @@ class AIPoweredErrorFixer {
               severity: 'warning',
               message: 'Potential security issue detected',
               file: file,
-              pattern: pattern.source
+              pattern: pattern.source,
             });
           }
         }
       }
-      
+
       return errors;
     } catch (error) {
       return [];
@@ -476,12 +495,12 @@ class AIPoweredErrorFixer {
     try {
       // Auto-fix TypeScript errors
       execSync('npm run typecheck -- --noEmit', { stdio: 'pipe' });
-      
+
       return {
         type: 'typescript_fix',
         action: 'completed',
         details: 'TypeScript errors checked and fixed',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -492,12 +511,12 @@ class AIPoweredErrorFixer {
     try {
       // Auto-fix ESLint errors
       execSync('npm run lint -- --fix', { stdio: 'pipe' });
-      
+
       return {
         type: 'eslint_fix',
         action: 'completed',
         details: 'ESLint errors auto-fixed',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -508,12 +527,12 @@ class AIPoweredErrorFixer {
     try {
       // Try to fix build errors
       execSync('npm run build', { stdio: 'pipe' });
-      
+
       return {
         type: 'build_fix',
         action: 'completed',
         details: 'Build errors resolved',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -532,12 +551,12 @@ class AIPoweredErrorFixer {
           }
         }
       }
-      
+
       return {
         type: 'runtime_fix',
         action: 'completed',
         details: 'Runtime errors cleared',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -548,12 +567,12 @@ class AIPoweredErrorFixer {
     try {
       // Validate and fix configurations
       this.validateConfigurations();
-      
+
       return {
         type: 'config_fix',
         action: 'completed',
         details: 'Configuration errors fixed',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -565,12 +584,12 @@ class AIPoweredErrorFixer {
       // Fix dependency issues
       execSync('npm install', { stdio: 'pipe' });
       execSync('npm audit --fix', { stdio: 'pipe' });
-      
+
       return {
         type: 'dependency_fix',
         action: 'completed',
         details: 'Dependency errors fixed',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -581,12 +600,12 @@ class AIPoweredErrorFixer {
     try {
       // Optimize performance
       execSync('npm run bundle:optimize', { stdio: 'pipe' });
-      
+
       return {
         type: 'performance_fix',
         action: 'completed',
         details: 'Performance issues optimized',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -597,12 +616,12 @@ class AIPoweredErrorFixer {
     try {
       // Fix security issues
       execSync('npm audit --fix', { stdio: 'pipe' });
-      
+
       return {
         type: 'security_fix',
         action: 'completed',
         details: 'Security issues fixed',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
     } catch (error) {
       return null;
@@ -615,39 +634,45 @@ class AIPoweredErrorFixer {
   parseTypeScriptErrors(output) {
     const errors = [];
     const lines = output.split('\n');
-    
+
     for (const line of lines) {
       if (line.includes('error TS')) {
-        const match = line.match(/(.+):(\d+):(\d+)\s*-\s*error\s*TS\d+:\s*(.+)/);
+        const match = line.match(
+          /(.+):(\d+):(\d+)\s*-\s*error\s*TS\d+:\s*(.+)/,
+        );
         if (match) {
           errors.push({
             file: match[1],
             line: parseInt(match[2]),
             column: parseInt(match[3]),
-            message: match[4]
+            message: match[4],
           });
         }
       }
     }
-    
+
     return errors;
   }
 
   findSourceFiles() {
     const files = [];
     const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-    
+
     const walkDir = (dir) => {
       try {
         const items = fs.readdirSync(dir);
-        
+
         for (const item of items) {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
-          
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+
+          if (
+            stat.isDirectory() &&
+            !item.startsWith('.') &&
+            item !== 'node_modules'
+          ) {
             walkDir(fullPath);
-          } else if (extensions.some(ext => item.endsWith(ext))) {
+          } else if (extensions.some((ext) => item.endsWith(ext))) {
             files.push(fullPath);
           }
         }
@@ -655,7 +680,7 @@ class AIPoweredErrorFixer {
         // Ignore errors for inaccessible directories
       }
     };
-    
+
     walkDir(this.projectRoot);
     return files;
   }
@@ -667,14 +692,14 @@ class AIPoweredErrorFixer {
     } catch (error) {
       console.warn('⚠️ Next.js config validation failed:', error.message);
     }
-    
+
     // Validate TypeScript config
     try {
       JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));
     } catch (error) {
       console.warn('⚠️ TypeScript config validation failed:', error.message);
     }
-    
+
     // Validate package.json
     try {
       JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -701,7 +726,7 @@ class AIPoweredErrorFixer {
       errors: this.errors.length,
       fixes: this.fixes.length,
       config: this.config,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
   }
 }
@@ -712,23 +737,23 @@ module.exports = AIPoweredErrorFixer;
 // Start the error fixer if this file is executed directly
 if (require.main === module) {
   const errorFixer = new AIPoweredErrorFixer();
-  
+
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
     console.log('\n🛑 Received SIGINT, shutting down gracefully...');
     errorFixer.stop();
     process.exit(0);
   });
-  
+
   process.on('SIGTERM', async () => {
     console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
     errorFixer.stop();
     process.exit(0);
   });
-  
+
   // Start the error fixer
-  errorFixer.start().catch(error => {
+  errorFixer.start().catch((error) => {
     console.error('❌ Failed to start error fixer:', error);
     process.exit(1);
   });
-} 
+}

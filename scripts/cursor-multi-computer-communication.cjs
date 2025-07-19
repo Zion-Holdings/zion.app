@@ -2,7 +2,7 @@
 
 /**
  * Cursor Multi-Computer Communication System
- * 
+ *
  * This script enables continuous communication with Cursor IDE instances
  * across multiple computers for automated app improvement and real-time collaboration.
  */
@@ -25,9 +25,9 @@ class CursorMultiComputerCommunication {
       masterPort: process.env.CURSOR_MASTER_PORT || 3004,
       computerId: process.env.COMPUTER_ID || this.generateComputerId(),
       projectPath: process.cwd(),
-      logFile: 'logs/cursor-communication.log'
+      logFile: 'logs/cursor-communication.log',
     };
-    
+
     this.activeConnections = new Map();
     this.chatHistory = [];
     this.isMaster = false;
@@ -49,41 +49,45 @@ class CursorMultiComputerCommunication {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] [${this.config.computerId}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
   }
 
   async initializeCursorCommunication() {
     this.log('🚀 Initializing Cursor Multi-Computer Communication System...');
-    
+
     try {
       // Check if Cursor is installed and running
       await this.checkCursorInstallation();
-      
+
       // Initialize API connection
       await this.initializeCursorAPI();
-      
+
       // Start local communication server
       await this.startLocalServer();
-      
+
       // Connect to master node or become master
       await this.establishMasterConnection();
-      
+
       // Start continuous monitoring
       this.startContinuousMonitoring();
-      
-      this.log('✅ Cursor Multi-Computer Communication System initialized successfully');
-      
+
+      this.log(
+        '✅ Cursor Multi-Computer Communication System initialized successfully',
+      );
     } catch (error) {
-      this.log(`❌ Failed to initialize Cursor communication: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Failed to initialize Cursor communication: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
 
   async checkCursorInstallation() {
     this.log('🔍 Checking Cursor installation...');
-    
+
     try {
       let cursorPath;
       switch (os.platform()) {
@@ -91,7 +95,10 @@ class CursorMultiComputerCommunication {
           cursorPath = '/Applications/Cursor.app/Contents/MacOS/Cursor';
           break;
         case 'win32':
-          cursorPath = 'C:\\Users\\' + os.userInfo().username + '\\AppData\\Local\\Programs\\Cursor\\Cursor.exe';
+          cursorPath =
+            'C:\\Users\\' +
+            os.userInfo().username +
+            '\\AppData\\Local\\Programs\\Cursor\\Cursor.exe';
           break;
         case 'linux':
           cursorPath = '/usr/bin/cursor';
@@ -99,40 +106,49 @@ class CursorMultiComputerCommunication {
         default:
           throw new Error(`Unsupported platform: ${os.platform()}`);
       }
-      
+
       if (!fs.existsSync(cursorPath)) {
         throw new Error(`Cursor not found at: ${cursorPath}`);
       }
-      
+
       this.log(`✅ Cursor found at: ${cursorPath}`);
-      
     } catch (error) {
-      this.log(`❌ Cursor installation check failed: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Cursor installation check failed: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
 
   async initializeCursorAPI() {
     this.log('🔌 Initializing Cursor API connection...');
-    
+
     if (!this.config.cursorApiKey) {
-      this.log('⚠️ Cursor API key not configured. Some features may be limited.');
+      this.log(
+        '⚠️ Cursor API key not configured. Some features may be limited.',
+      );
       return;
     }
-    
+
     try {
       // Test API connection
-      const testResponse = await this.makeCursorAPIRequest('GET', '/workspaces');
+      const testResponse = await this.makeCursorAPIRequest(
+        'GET',
+        '/workspaces',
+      );
       this.log('✅ Cursor API connection established');
-      
+
       // Store workspace information
       if (testResponse.workspaces) {
         this.config.workspaces = testResponse.workspaces;
         this.log(`📁 Found ${testResponse.workspaces.length} workspaces`);
       }
-      
     } catch (error) {
-      this.log(`❌ Cursor API initialization failed: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Cursor API initialization failed: ${error.message}`,
+        'ERROR',
+      );
       // Don't throw error, continue with limited functionality
     }
   }
@@ -145,23 +161,25 @@ class CursorMultiComputerCommunication {
         path: endpoint,
         method: method,
         headers: {
-          'Authorization': `Bearer ${this.config.cursorApiKey}`,
+          Authorization: `Bearer ${this.config.cursorApiKey}`,
           'Content-Type': 'application/json',
-          'User-Agent': 'Cursor-Multi-Computer-Communication/1.0'
-        }
+          'User-Agent': 'Cursor-Multi-Computer-Communication/1.0',
+        },
       };
-      
+
       if (data) {
-        options.headers['Content-Length'] = Buffer.byteLength(JSON.stringify(data));
+        options.headers['Content-Length'] = Buffer.byteLength(
+          JSON.stringify(data),
+        );
       }
-      
+
       const req = https.request(options, (res) => {
         let responseData = '';
-        
+
         res.on('data', (chunk) => {
           responseData += chunk;
         });
-        
+
         res.on('end', () => {
           try {
             const parsed = JSON.parse(responseData);
@@ -171,32 +189,34 @@ class CursorMultiComputerCommunication {
           }
         });
       });
-      
+
       req.on('error', (error) => {
         reject(error);
       });
-      
+
       if (data) {
         req.write(JSON.stringify(data));
       }
-      
+
       req.end();
     });
   }
 
   async startLocalServer() {
-    this.log(`🌐 Starting local communication server on port ${this.config.localPort}...`);
-    
+    this.log(
+      `🌐 Starting local communication server on port ${this.config.localPort}...`,
+    );
+
     return new Promise((resolve, reject) => {
       this.localServer = http.createServer((req, res) => {
         this.handleLocalRequest(req, res);
       });
-      
+
       this.localServer.listen(this.config.localPort, () => {
         this.log(`✅ Local server started on port ${this.config.localPort}`);
         resolve();
       });
-      
+
       this.localServer.on('error', (error) => {
         this.log(`❌ Local server error: ${error.message}`, 'ERROR');
         reject(error);
@@ -206,21 +226,20 @@ class CursorMultiComputerCommunication {
 
   handleLocalRequest(req, res) {
     const { method, url } = req;
-    
+
     this.log(`📨 Local request: ${method} ${url}`);
-    
+
     let body = '';
     req.on('data', (chunk) => {
       body += chunk;
     });
-    
+
     req.on('end', async () => {
       try {
         const response = await this.processLocalRequest(method, url, body);
-        
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(response));
-        
       } catch (error) {
         this.log(`❌ Local request error: ${error.message}`, 'ERROR');
         res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -232,28 +251,28 @@ class CursorMultiComputerCommunication {
   async processLocalRequest(method, url, body) {
     const parsedUrl = new URL(url, `http://localhost:${this.config.localPort}`);
     const path = parsedUrl.pathname;
-    
+
     switch (path) {
       case '/status':
         return this.getStatus();
-        
+
       case '/chat':
         if (method === 'POST') {
           const chatData = JSON.parse(body);
           return await this.triggerCursorChat(chatData);
         }
         break;
-        
+
       case '/fix':
         if (method === 'POST') {
           const fixData = JSON.parse(body);
           return await this.applyCursorFix(fixData);
         }
         break;
-        
+
       case '/monitor':
         return this.getMonitoringData();
-        
+
       default:
         throw new Error(`Unknown endpoint: ${path}`);
     }
@@ -261,11 +280,11 @@ class CursorMultiComputerCommunication {
 
   async establishMasterConnection() {
     this.log('🔗 Establishing master node connection...');
-    
+
     try {
       // Try to connect to existing master
       const masterConnection = await this.connectToMaster();
-      
+
       if (masterConnection) {
         this.log('✅ Connected to existing master node');
         this.isMaster = false;
@@ -276,7 +295,6 @@ class CursorMultiComputerCommunication {
         await this.startMasterNode();
         this.isMaster = true;
       }
-      
     } catch (error) {
       this.log(`❌ Master connection failed: ${error.message}`, 'ERROR');
       // Continue as standalone node
@@ -286,31 +304,33 @@ class CursorMultiComputerCommunication {
   async connectToMaster() {
     return new Promise((resolve) => {
       const ws = new WebSocket(`ws://localhost:${this.config.masterPort}`);
-      
+
       ws.on('open', () => {
         this.log('🔗 Connected to master node');
-        ws.send(JSON.stringify({
-          type: 'register',
-          computerId: this.config.computerId,
-          capabilities: this.getCapabilities()
-        }));
+        ws.send(
+          JSON.stringify({
+            type: 'register',
+            computerId: this.config.computerId,
+            capabilities: this.getCapabilities(),
+          }),
+        );
         resolve(ws);
       });
-      
+
       ws.on('message', (data) => {
         this.handleMasterMessage(JSON.parse(data));
       });
-      
+
       ws.on('error', (error) => {
         this.log(`❌ Master connection error: ${error.message}`, 'ERROR');
         resolve(null);
       });
-      
+
       ws.on('close', () => {
         this.log('🔌 Disconnected from master node');
         this.masterConnection = null;
       });
-      
+
       // Timeout after 5 seconds
       setTimeout(() => {
         if (!ws.readyState === WebSocket.OPEN) {
@@ -322,19 +342,21 @@ class CursorMultiComputerCommunication {
 
   async startMasterNode() {
     this.log(`👑 Starting master node on port ${this.config.masterPort}...`);
-    
+
     return new Promise((resolve, reject) => {
-      this.masterServer = new WebSocket.Server({ port: this.config.masterPort });
-      
+      this.masterServer = new WebSocket.Server({
+        port: this.config.masterPort,
+      });
+
       this.masterServer.on('connection', (ws) => {
         this.handleWorkerConnection(ws);
       });
-      
+
       this.masterServer.on('listening', () => {
         this.log(`✅ Master node started on port ${this.config.masterPort}`);
         resolve();
       });
-      
+
       this.masterServer.on('error', (error) => {
         this.log(`❌ Master node error: ${error.message}`, 'ERROR');
         reject(error);
@@ -344,7 +366,7 @@ class CursorMultiComputerCommunication {
 
   handleWorkerConnection(ws) {
     this.log('🔗 New worker node connected');
-    
+
     ws.on('message', (data) => {
       try {
         const message = JSON.parse(data);
@@ -353,7 +375,7 @@ class CursorMultiComputerCommunication {
         this.log(`❌ Invalid worker message: ${error.message}`, 'ERROR');
       }
     });
-    
+
     ws.on('close', () => {
       this.log('🔌 Worker node disconnected');
       // Remove from worker nodes
@@ -368,29 +390,29 @@ class CursorMultiComputerCommunication {
 
   handleWorkerMessage(ws, message) {
     this.log(`📨 Worker message: ${message.type}`);
-    
+
     switch (message.type) {
       case 'register':
         this.workerNodes.set(message.computerId, {
           ws,
           capabilities: message.capabilities,
-          connectedAt: new Date()
+          connectedAt: new Date(),
         });
         this.log(`✅ Worker registered: ${message.computerId}`);
         break;
-        
+
       case 'chat_request':
         this.broadcastChatRequest(message);
         break;
-        
+
       case 'fix_request':
         this.broadcastFixRequest(message);
         break;
-        
+
       case 'status_update':
         this.broadcastStatusUpdate(message);
         break;
-        
+
       default:
         this.log(`⚠️ Unknown worker message type: ${message.type}`);
     }
@@ -398,20 +420,20 @@ class CursorMultiComputerCommunication {
 
   handleMasterMessage(message) {
     this.log(`📨 Master message: ${message.type}`);
-    
+
     switch (message.type) {
       case 'chat_request':
         this.handleChatRequest(message);
         break;
-        
+
       case 'fix_request':
         this.handleFixRequest(message);
         break;
-        
+
       case 'status_request':
         this.sendStatusToMaster();
         break;
-        
+
       default:
         this.log(`⚠️ Unknown master message type: ${message.type}`);
     }
@@ -419,33 +441,34 @@ class CursorMultiComputerCommunication {
 
   async triggerCursorChat(chatData) {
     this.log(`💬 Triggering Cursor chat: ${chatData.category}`);
-    
+
     try {
       if (this.isMaster) {
         // Broadcast to all worker nodes
         this.broadcastChatRequest(chatData);
       } else if (this.masterConnection) {
         // Send to master
-        this.masterConnection.send(JSON.stringify({
-          type: 'chat_request',
-          ...chatData
-        }));
+        this.masterConnection.send(
+          JSON.stringify({
+            type: 'chat_request',
+            ...chatData,
+          }),
+        );
       }
-      
+
       // Also trigger locally
       const localResponse = await this.executeLocalCursorChat(chatData);
-      
+
       return {
         success: true,
         localResponse,
-        broadcasted: this.isMaster || this.masterConnection
+        broadcasted: this.isMaster || this.masterConnection,
       };
-      
     } catch (error) {
       this.log(`❌ Chat trigger failed: ${error.message}`, 'ERROR');
       return {
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
@@ -453,51 +476,52 @@ class CursorMultiComputerCommunication {
   async executeLocalCursorChat(chatData) {
     // This would integrate with Cursor's local API or use AppleScript/automation
     this.log(`💬 Executing local Cursor chat: ${chatData.prompt}`);
-    
+
     // For now, we'll simulate the chat execution
     return {
       chatId: `chat_${Date.now()}`,
       status: 'executed',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
   }
 
   async applyCursorFix(fixData) {
     this.log(`🔧 Applying Cursor fix: ${fixData.type}`);
-    
+
     try {
       if (this.isMaster) {
         // Broadcast to all worker nodes
         this.broadcastFixRequest(fixData);
       } else if (this.masterConnection) {
         // Send to master
-        this.masterConnection.send(JSON.stringify({
-          type: 'fix_request',
-          ...fixData
-        }));
+        this.masterConnection.send(
+          JSON.stringify({
+            type: 'fix_request',
+            ...fixData,
+          }),
+        );
       }
-      
+
       // Also apply locally
       const localResult = await this.executeLocalCursorFix(fixData);
-      
+
       return {
         success: true,
         localResult,
-        broadcasted: this.isMaster || this.masterConnection
+        broadcasted: this.isMaster || this.masterConnection,
       };
-      
     } catch (error) {
       this.log(`❌ Fix application failed: ${error.message}`, 'ERROR');
       return {
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
 
   async executeLocalCursorFix(fixData) {
     this.log(`🔧 Executing local Cursor fix: ${fixData.type}`);
-    
+
     try {
       switch (fixData.type) {
         case 'lint':
@@ -515,13 +539,12 @@ class CursorMultiComputerCommunication {
         default:
           throw new Error(`Unknown fix type: ${fixData.type}`);
       }
-      
+
       return {
         fixId: `fix_${Date.now()}`,
         status: 'applied',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
-      
     } catch (error) {
       this.log(`❌ Local fix execution failed: ${error.message}`, 'ERROR');
       throw error;
@@ -529,42 +552,52 @@ class CursorMultiComputerCommunication {
   }
 
   broadcastChatRequest(chatData) {
-    this.log(`📡 Broadcasting chat request to ${this.workerNodes.size} worker nodes`);
-    
+    this.log(
+      `📡 Broadcasting chat request to ${this.workerNodes.size} worker nodes`,
+    );
+
     const message = JSON.stringify({
       type: 'chat_request',
-      ...chatData
+      ...chatData,
     });
-    
+
     for (const [computerId, worker] of this.workerNodes.entries()) {
       try {
         worker.ws.send(message);
       } catch (error) {
-        this.log(`❌ Failed to send to worker ${computerId}: ${error.message}`, 'ERROR');
+        this.log(
+          `❌ Failed to send to worker ${computerId}: ${error.message}`,
+          'ERROR',
+        );
       }
     }
   }
 
   broadcastFixRequest(fixData) {
-    this.log(`📡 Broadcasting fix request to ${this.workerNodes.size} worker nodes`);
-    
+    this.log(
+      `📡 Broadcasting fix request to ${this.workerNodes.size} worker nodes`,
+    );
+
     const message = JSON.stringify({
       type: 'fix_request',
-      ...fixData
+      ...fixData,
     });
-    
+
     for (const [computerId, worker] of this.workerNodes.entries()) {
       try {
         worker.ws.send(message);
       } catch (error) {
-        this.log(`❌ Failed to send to worker ${computerId}: ${error.message}`, 'ERROR');
+        this.log(
+          `❌ Failed to send to worker ${computerId}: ${error.message}`,
+          'ERROR',
+        );
       }
     }
   }
 
   startContinuousMonitoring() {
     this.log('🔍 Starting continuous monitoring...');
-    
+
     // Monitor for issues every 30 seconds
     setInterval(async () => {
       try {
@@ -575,7 +608,7 @@ class CursorMultiComputerCommunication {
         this.log(`❌ Monitoring cycle failed: ${error.message}`, 'ERROR');
       }
     }, 30000);
-    
+
     this.log('✅ Continuous monitoring started');
   }
 
@@ -583,20 +616,21 @@ class CursorMultiComputerCommunication {
     try {
       // Check if Cursor is still running
       const cursorRunning = await this.checkCursorRunning();
-      
+
       // Check if local server is responding
       const serverHealthy = await this.checkLocalServerHealth();
-      
+
       // Check if master connection is active
-      const masterConnected = this.isMaster || (this.masterConnection && this.masterConnection.readyState === 1);
-      
+      const masterConnected =
+        this.isMaster ||
+        (this.masterConnection && this.masterConnection.readyState === 1);
+
       this.healthStatus = {
         cursorRunning,
         serverHealthy,
         masterConnected,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
-      
     } catch (error) {
       this.log(`❌ Health check failed: ${error.message}`, 'ERROR');
     }
@@ -618,18 +652,21 @@ class CursorMultiComputerCommunication {
 
   async checkLocalServerHealth() {
     return new Promise((resolve) => {
-      const req = http.request(`http://localhost:${this.config.localPort}/status`, (res) => {
-        resolve(res.statusCode === 200);
-      });
-      
+      const req = http.request(
+        `http://localhost:${this.config.localPort}/status`,
+        (res) => {
+          resolve(res.statusCode === 200);
+        },
+      );
+
       req.on('error', () => {
         resolve(false);
       });
-      
+
       req.setTimeout(5000, () => {
         resolve(false);
       });
-      
+
       req.end();
     });
   }
@@ -643,10 +680,10 @@ class CursorMultiComputerCommunication {
         await this.triggerCursorChat({
           category: 'build',
           prompt: `Build error detected: ${error.message}. Please help fix this build issue.`,
-          priority: 'high'
+          priority: 'high',
         });
       }
-      
+
       // Check for lint issues
       try {
         execSync('npm run lint', { stdio: 'pipe', timeout: 30000 });
@@ -654,10 +691,9 @@ class CursorMultiComputerCommunication {
         await this.triggerCursorChat({
           category: 'lint',
           prompt: `Linting error detected: ${error.message}. Please help fix these code quality issues.`,
-          priority: 'medium'
+          priority: 'medium',
         });
       }
-      
     } catch (error) {
       this.log(`❌ Issue check failed: ${error.message}`, 'ERROR');
     }
@@ -669,14 +705,16 @@ class CursorMultiComputerCommunication {
       isMaster: this.isMaster,
       workerCount: this.workerNodes.size,
       healthStatus: this.healthStatus,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
-    
+
     if (this.masterConnection) {
-      this.masterConnection.send(JSON.stringify({
-        type: 'status_update',
-        ...status
-      }));
+      this.masterConnection.send(
+        JSON.stringify({
+          type: 'status_update',
+          ...status,
+        }),
+      );
     }
   }
 
@@ -687,7 +725,7 @@ class CursorMultiComputerCommunication {
       workerCount: this.workerNodes.size,
       healthStatus: this.healthStatus,
       uptime: process.uptime(),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
   }
 
@@ -696,7 +734,7 @@ class CursorMultiComputerCommunication {
       chatHistory: this.chatHistory.slice(-10), // Last 10 chats
       activeConnections: this.activeConnections.size,
       workerNodes: Array.from(this.workerNodes.keys()),
-      healthStatus: this.healthStatus
+      healthStatus: this.healthStatus,
     };
   }
 
@@ -707,34 +745,33 @@ class CursorMultiComputerCommunication {
       cursorInstalled: true,
       canExecuteCommands: true,
       canApplyFixes: true,
-      canTriggerChats: true
+      canTriggerChats: true,
     };
   }
 
   async shutdown() {
     this.log('🛑 Shutting down Cursor Multi-Computer Communication System...');
-    
+
     try {
       // Close all connections
       if (this.masterConnection) {
         this.masterConnection.close();
       }
-      
+
       if (this.masterServer) {
         this.masterServer.close();
       }
-      
+
       if (this.localServer) {
         this.localServer.close();
       }
-      
+
       // Close all worker connections
       for (const [computerId, worker] of this.workerNodes.entries()) {
         worker.ws.close();
       }
-      
+
       this.log('✅ Shutdown completed');
-      
     } catch (error) {
       this.log(`❌ Shutdown error: ${error.message}`, 'ERROR');
     }
@@ -747,22 +784,25 @@ module.exports = CursorMultiComputerCommunication;
 // Main execution
 if (require.main === module) {
   const communication = new CursorMultiComputerCommunication();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
-      communication.initializeCursorCommunication()
+      communication
+        .initializeCursorCommunication()
         .then(() => {
-          console.log('🚀 Cursor Multi-Computer Communication System is running');
-          
+          console.log(
+            '🚀 Cursor Multi-Computer Communication System is running',
+          );
+
           // Keep the process alive
           process.on('SIGINT', async () => {
             console.log('\n🛑 Received SIGINT, shutting down...');
             await communication.shutdown();
             process.exit(0);
           });
-          
+
           process.on('SIGTERM', async () => {
             console.log('\n🛑 Received SIGTERM, shutting down...');
             await communication.shutdown();
@@ -774,28 +814,28 @@ if (require.main === module) {
           process.exit(1);
         });
       break;
-      
+
     case 'status':
       communication.getStatus().then(console.log);
       break;
-      
+
     case 'chat':
       const chatData = {
         category: process.argv[3] || 'general',
         prompt: process.argv[4] || 'Please help improve this application',
-        priority: process.argv[5] || 'medium'
+        priority: process.argv[5] || 'medium',
       };
       communication.triggerCursorChat(chatData).then(console.log);
       break;
-      
+
     case 'fix':
       const fixData = {
         type: process.argv[3] || 'lint',
-        file: process.argv[4] || null
+        file: process.argv[4] || null,
       };
       communication.applyCursorFix(fixData).then(console.log);
       break;
-      
+
     default:
       console.log(`
 Usage: node cursor-multi-computer-communication.cjs <command> [args]
@@ -812,4 +852,4 @@ Examples:
   node cursor-multi-computer-communication.cjs fix lint
       `);
   }
-} 
+}

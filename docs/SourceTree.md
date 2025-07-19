@@ -63,11 +63,12 @@ This document maps the main modules of the Zion OS codebase into a conceptual so
 ```
 
 ### Features
+
 - Collapsible tree view
 - Copy/clone path buttons
 - Auto-deploy templates from each folder node
 
 **Developer Access Only**
+
 - Git-connected
 - Role-based commit permissions
-

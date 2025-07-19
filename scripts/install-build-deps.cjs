@@ -10,16 +10,16 @@ const buildDeps = [
   '@types/react',
   '@types/react-dom',
   '@swc/core',
-  '@swc/helpers'
+  '@swc/helpers',
 ];
 
 try {
   console.warn('Installing:', buildDeps.join(', '));
   execSync(`npm install ${buildDeps.join(' ')} --save-dev --legacy-peer-deps`, {
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
   console.warn('✅ Build dependencies installed successfully');
 } catch (_error) {
   console.error('❌ Failed to install build dependencies:', _error.message);
   process.exit(1);
-} 
+}

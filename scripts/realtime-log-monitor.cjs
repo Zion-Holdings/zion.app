@@ -1,7 +1,4 @@
 #!/usr/bin/env node
- 
- 
- 
 
 /**
  * Real-time Log Monitor
@@ -17,7 +14,7 @@ const CONFIG = {
   logsDir: path.join(__dirname, '..', 'logs'),
   monitorInterval: 2000, // 2 seconds
   alertThresholds: {
-    errorRate: 0.10, // 10% error rate
+    errorRate: 0.1, // 10% error rate
     criticalErrors: 3,
     responseTime: 5000, // 5 seconds
     memoryUsage: 1024 * 1024 * 1024, // 1GB
@@ -38,7 +35,7 @@ class RealtimeLogMonitor {
       alerts: [],
       healthScore: 100,
     };
-    
+
     this.watchers = new Map();
     this.isRunning = false;
     this.dashboardInterval = null;
@@ -49,7 +46,7 @@ class RealtimeLogMonitor {
    */
   async start() {
     // console.warn('🚀 Starting Real-time Log Monitor...\n');
-    
+
     // Ensure logs directory exists
     if (!fs.existsSync(CONFIG.logsDir)) {
       fs.mkdirSync(CONFIG.logsDir, { recursive: true });
@@ -60,7 +57,7 @@ class RealtimeLogMonitor {
     this.setupFileWatchers();
     this.startDashboard();
     this.setupGracefulShutdown();
-    
+
     // console.warn('📊 Real-time monitoring active. Press Ctrl+C to stop.\n');
   }
 
@@ -75,14 +72,16 @@ class RealtimeLogMonitor {
           this.watchLogFile(path.join(CONFIG.logsDir, filename));
         }
       });
-      
+
       this.watchers.set('directory', watcher);
-      
+
       // Watch existing log files
       const files = fs.readdirSync(CONFIG.logsDir);
-      files.filter(f => f.endsWith('.log')).forEach(file => {
-        this.watchLogFile(path.join(CONFIG.logsDir, file));
-      });
+      files
+        .filter((f) => f.endsWith('.log'))
+        .forEach((file) => {
+          this.watchLogFile(path.join(CONFIG.logsDir, file));
+        });
     }
   }
 
@@ -91,7 +90,7 @@ class RealtimeLogMonitor {
    */
   watchLogFile(filePath) {
     if (this.watchers.has(filePath)) return; // Already watching
-    
+
     let _lastSize = 0;
     try {
       _lastSize = fs.statSync(filePath).size;
@@ -99,11 +98,15 @@ class RealtimeLogMonitor {
       return; // File doesn't exist
     }
 
-    const watcher = fs.watchFile(filePath, { interval: CONFIG.monitorInterval }, (curr, prev) => {
-      if (curr.size > prev.size) {
-        this.processNewLogData(filePath, prev.size, curr.size);
-      }
-    });
+    const watcher = fs.watchFile(
+      filePath,
+      { interval: CONFIG.monitorInterval },
+      (curr, prev) => {
+        if (curr.size > prev.size) {
+          this.processNewLogData(filePath, prev.size, curr.size);
+        }
+      },
+    );
 
     this.watchers.set(filePath, watcher);
     // console.warn(`👁️  Watching: ${path.basename(filePath)}`);
@@ -118,12 +121,13 @@ class RealtimeLogMonitor {
       const buffer = Buffer.alloc(newSize - oldSize);
       fs.readSync(fd, buffer, 0, buffer.length, oldSize);
       fs.closeSync(fd);
-      
+
       const newData = buffer.toString();
-      const lines = newData.split('\n').filter(line => line.trim());
-      
-      lines.forEach(line => this.processLogLine(line, path.basename(filePath)));
-      
+      const lines = newData.split('\n').filter((line) => line.trim());
+
+      lines.forEach((line) =>
+        this.processLogLine(line, path.basename(filePath)),
+      );
     } catch (_error) {
       // console.error(`Error reading ${filePath}:`, error.message);
     }
@@ -148,7 +152,7 @@ class RealtimeLogMonitor {
    */
   processStructuredEntry(entry, filename) {
     this.stats.totalEntries++;
-    
+
     const logEntry = {
       timestamp: entry.timestamp || new Date().toISOString(),
       level: entry.level || 'info',
@@ -169,7 +173,7 @@ class RealtimeLogMonitor {
    */
   processPlainTextEntry(line, filename) {
     this.stats.totalEntries++;
-    
+
     const logEntry = {
       timestamp: new Date().toISOString(),
       level: this.detectLogLevel(line),
@@ -190,35 +194,57 @@ class RealtimeLogMonitor {
    */
   detectLogLevel(text) {
     const upperText = text.toUpperCase();
-    
+
     // Success indicators
     const successIndicators = [
-      '✅', '✓', 'SUCCESS', 'COMPLETE', 'FIXED', 'RESOLVED', 'WORKING',
-      'BUILT', 'DEPLOYED', 'HEALTHY', 'READY', 'ACTIVE', 'OPERATIONAL'
+      '✅',
+      '✓',
+      'SUCCESS',
+      'COMPLETE',
+      'FIXED',
+      'RESOLVED',
+      'WORKING',
+      'BUILT',
+      'DEPLOYED',
+      'HEALTHY',
+      'READY',
+      'ACTIVE',
+      'OPERATIONAL',
     ];
-    
-    if (successIndicators.some(indicator => upperText.includes(indicator))) {
+
+    if (successIndicators.some((indicator) => upperText.includes(indicator))) {
       return 'info';
     }
-    
+
     // Critical errors
-    if (upperText.includes('CRITICAL') || upperText.includes('FATAL') || 
-        upperText.includes('CRASH') || upperText.includes('EXCEPTION')) {
+    if (
+      upperText.includes('CRITICAL') ||
+      upperText.includes('FATAL') ||
+      upperText.includes('CRASH') ||
+      upperText.includes('EXCEPTION')
+    ) {
       return 'critical';
     }
-    
+
     // Errors
-    if (upperText.match(/^ERROR:/) || upperText.includes('FAILED') || 
-        upperText.includes('TIMEOUT') || upperText.includes('PERMISSION DENIED')) {
+    if (
+      upperText.match(/^ERROR:/) ||
+      upperText.includes('FAILED') ||
+      upperText.includes('TIMEOUT') ||
+      upperText.includes('PERMISSION DENIED')
+    ) {
       return 'error';
     }
-    
+
     // Warnings
-    if (upperText.includes('WARN') || upperText.includes('DEPRECATED') || 
-        upperText.includes('SLOW')) {
+    if (
+      upperText.includes('WARN') ||
+      upperText.includes('DEPRECATED') ||
+      upperText.includes('SLOW')
+    ) {
       return 'warn';
     }
-    
+
     return 'info';
   }
 
@@ -237,7 +263,7 @@ class RealtimeLogMonitor {
         this.stats.warnings++;
         break;
     }
-    
+
     this.stats.lastUpdate = new Date();
   }
 
@@ -247,7 +273,10 @@ class RealtimeLogMonitor {
   addToRecentEntries(entry) {
     this.stats.recentEntries.unshift(entry);
     if (this.stats.recentEntries.length > CONFIG.maxLogLines) {
-      this.stats.recentEntries = this.stats.recentEntries.slice(0, CONFIG.maxLogLines);
+      this.stats.recentEntries = this.stats.recentEntries.slice(
+        0,
+        CONFIG.maxLogLines,
+      );
     }
   }
 
@@ -256,30 +285,54 @@ class RealtimeLogMonitor {
    */
   checkAlerts(entry) {
     const now = new Date();
-    
+
     // Critical error alert
     if (entry.level === 'critical') {
-      this.addAlert('CRITICAL', `Critical error detected: ${entry.message}`, now);
+      this.addAlert(
+        'CRITICAL',
+        `Critical error detected: ${entry.message}`,
+        now,
+      );
     }
-    
+
     // Error rate alert
     const recentEntries = this.stats.recentEntries.slice(0, 100);
-    const errorCount = recentEntries.filter(e => e.level === 'error' || e.level === 'critical').length;
+    const errorCount = recentEntries.filter(
+      (e) => e.level === 'error' || e.level === 'critical',
+    ).length;
     const errorRate = errorCount / Math.max(recentEntries.length, 1);
-    
+
     if (errorRate > CONFIG.alertThresholds.errorRate) {
-      this.addAlert('HIGH', `High error rate: ${(errorRate * 100).toFixed(1)}%`, now);
+      this.addAlert(
+        'HIGH',
+        `High error rate: ${(errorRate * 100).toFixed(1)}%`,
+        now,
+      );
     }
-    
+
     // Performance alerts
-    if (entry.metadata && entry.metadata.duration && 
-        entry.metadata.duration > CONFIG.alertThresholds.responseTime) {
-      this.addAlert('MEDIUM', `Slow response: ${entry.metadata.duration}ms`, now);
+    if (
+      entry.metadata &&
+      entry.metadata.duration &&
+      entry.metadata.duration > CONFIG.alertThresholds.responseTime
+    ) {
+      this.addAlert(
+        'MEDIUM',
+        `Slow response: ${entry.metadata.duration}ms`,
+        now,
+      );
     }
-    
-    if (entry.metadata && entry.metadata.memoryUsage && 
-        entry.metadata.memoryUsage > CONFIG.alertThresholds.memoryUsage) {
-      this.addAlert('MEDIUM', `High memory usage: ${(entry.metadata.memoryUsage / 1024 / 1024).toFixed(1)}MB`, now);
+
+    if (
+      entry.metadata &&
+      entry.metadata.memoryUsage &&
+      entry.metadata.memoryUsage > CONFIG.alertThresholds.memoryUsage
+    ) {
+      this.addAlert(
+        'MEDIUM',
+        `High memory usage: ${(entry.metadata.memoryUsage / 1024 / 1024).toFixed(1)}MB`,
+        now,
+      );
     }
   }
 
@@ -289,12 +342,12 @@ class RealtimeLogMonitor {
   addAlert(severity, message, timestamp) {
     const alert = { severity, message, timestamp };
     this.stats.alerts.unshift(alert);
-    
+
     // Keep only recent alerts
     if (this.stats.alerts.length > 10) {
       this.stats.alerts = this.stats.alerts.slice(0, 10);
     }
-    
+
     // Console alert for critical issues
     if (severity === 'CRITICAL') {
       // console.warn(`\n🚨 ${severity}: ${message}\n`);
@@ -306,20 +359,23 @@ class RealtimeLogMonitor {
    */
   updateHealthScore() {
     let score = 100;
-    
+
     const recentCount = Math.min(this.stats.recentEntries.length, 100);
-    const criticalCount = this.stats.recentEntries.slice(0, recentCount)
-      .filter(e => e.level === 'critical').length;
-    const errorCount = this.stats.recentEntries.slice(0, recentCount)
-      .filter(e => e.level === 'error').length;
-    const warningCount = this.stats.recentEntries.slice(0, recentCount)
-      .filter(e => e.level === 'warn').length;
-    
+    const criticalCount = this.stats.recentEntries
+      .slice(0, recentCount)
+      .filter((e) => e.level === 'critical').length;
+    const errorCount = this.stats.recentEntries
+      .slice(0, recentCount)
+      .filter((e) => e.level === 'error').length;
+    const warningCount = this.stats.recentEntries
+      .slice(0, recentCount)
+      .filter((e) => e.level === 'warn').length;
+
     // Deduct points for issues
     score -= criticalCount * 20; // 20 points per critical
-    score -= errorCount * 10;    // 10 points per error
-    score -= warningCount * 5;   // 5 points per warning
-    
+    score -= errorCount * 10; // 10 points per error
+    score -= warningCount * 5; // 5 points per warning
+
     this.stats.healthScore = Math.max(0, score);
   }
 
@@ -338,47 +394,55 @@ class RealtimeLogMonitor {
   renderDashboard() {
     // Clear screen
     // process.stdout.write('\x1Bc');
-    
+
     const now = new Date();
     const _uptime = Math.floor((now - this.startTime) / 1000);
-    
+
     // console.warn('═'.repeat(80));
     // console.warn('🔥 ZION APP - REAL-TIME LOG MONITOR');
     // console.warn('═'.repeat(80));
     // console.warn(`📊 Health Score: ${this.getHealthIndicator()} ${this.stats.healthScore}/100`);
     // console.warn(`⏰ Uptime: ${_uptime}s | Last Update: ${this.stats.lastUpdate.toLocaleTimeString()}`);
     // console.warn(`📈 Total Entries: ${this.stats.totalEntries} | Errors: ${this.stats.errors} | Warnings: ${this.stats.warnings} | Critical: ${this.stats.critical}`);
-    
+
     // Recent alerts
     if (this.stats.alerts.length > 0) {
       // console.warn('\n🚨 RECENT ALERTS:');
       // console.warn('─'.repeat(50));
-      this.stats.alerts.slice(0, 5).forEach(alert => {
-        const _icon = alert.severity === 'CRITICAL' ? '🔴' : alert.severity === 'HIGH' ? '🟠' : '🟡';
+      this.stats.alerts.slice(0, 5).forEach((alert) => {
+        const _icon =
+          alert.severity === 'CRITICAL'
+            ? '🔴'
+            : alert.severity === 'HIGH'
+              ? '🟠'
+              : '🟡';
         // console.warn(`${_icon} [${alert.timestamp.toLocaleTimeString()}] ${alert.message}`);
       });
     }
-    
+
     // Recent log entries
     // console.warn('\n📝 RECENT LOG ENTRIES:');
     // console.warn('─'.repeat(50));
-    this.stats.recentEntries.slice(0, 10).forEach(entry => {
+    this.stats.recentEntries.slice(0, 10).forEach((entry) => {
       const _icon = this.getLevelIcon(entry.level);
       const _time = new Date(entry.timestamp).toLocaleTimeString();
-      const _message = entry.message.length > 60 ? entry.message.substring(0, 60) + '...' : entry.message;
+      const _message =
+        entry.message.length > 60
+          ? entry.message.substring(0, 60) + '...'
+          : entry.message;
       // console.warn(`${_icon} [${_time}] [${entry.category}] ${_message}`);
     });
-    
+
     // Performance metrics
     // console.warn('\n⚡ PERFORMANCE METRICS:');
     // console.warn('─'.repeat(50));
     const recentEntries = this.stats.recentEntries.slice(0, 100);
     const _avgMemory = this.calculateAverageMemory(recentEntries);
     const _avgDuration = this.calculateAverageDuration(recentEntries);
-    
+
     // console.warn(`📊 Avg Memory: ${_avgMemory}MB | Avg Response: ${_avgDuration}ms`);
     // console.warn(`📊 Error Rate: ${this.calculateErrorRate(recentEntries)}%`);
-    
+
     // console.warn('\n═'.repeat(80));
     // console.warn('Press Ctrl+C to stop monitoring');
   }
@@ -411,10 +475,15 @@ class RealtimeLogMonitor {
    * Calculate average memory usage
    */
   calculateAverageMemory(entries) {
-    const memoryEntries = entries.filter(e => e.metadata && e.metadata.memoryUsage);
+    const memoryEntries = entries.filter(
+      (e) => e.metadata && e.metadata.memoryUsage,
+    );
     if (memoryEntries.length === 0) return 0;
-    
-    const total = memoryEntries.reduce((sum, e) => sum + e.metadata.memoryUsage, 0);
+
+    const total = memoryEntries.reduce(
+      (sum, e) => sum + e.metadata.memoryUsage,
+      0,
+    );
     return (total / memoryEntries.length / 1024 / 1024).toFixed(1);
   }
 
@@ -422,10 +491,15 @@ class RealtimeLogMonitor {
    * Calculate average duration
    */
   calculateAverageDuration(entries) {
-    const durationEntries = entries.filter(e => e.metadata && e.metadata.duration);
+    const durationEntries = entries.filter(
+      (e) => e.metadata && e.metadata.duration,
+    );
     if (durationEntries.length === 0) return 0;
-    
-    const total = durationEntries.reduce((sum, e) => sum + e.metadata.duration, 0);
+
+    const total = durationEntries.reduce(
+      (sum, e) => sum + e.metadata.duration,
+      0,
+    );
     return (total / durationEntries.length).toFixed(1);
   }
 
@@ -434,8 +508,10 @@ class RealtimeLogMonitor {
    */
   calculateErrorRate(entries) {
     if (entries.length === 0) return 0;
-    
-    const errorCount = entries.filter(e => e.level === 'error' || e.level === 'critical').length;
+
+    const errorCount = entries.filter(
+      (e) => e.level === 'error' || e.level === 'critical',
+    ).length;
     return ((errorCount / entries.length) * 100).toFixed(1);
   }
 
@@ -444,13 +520,13 @@ class RealtimeLogMonitor {
    */
   setupGracefulShutdown() {
     this.startTime = new Date();
-    
+
     process.on('SIGINT', () => {
       // console.warn('\n\n🛑 Stopping monitor...');
       this.stop();
       process.exit(0);
     });
-    
+
     process.on('SIGTERM', () => {
       // console.warn('\n\n🛑 Stopping monitor...');
       this.stop();
@@ -463,12 +539,12 @@ class RealtimeLogMonitor {
    */
   stop() {
     this.isRunning = false;
-    
+
     // Stop dashboard
     if (this.dashboardInterval) {
       clearInterval(this.dashboardInterval);
     }
-    
+
     // Stop file watchers
     this.watchers.forEach((watcher, filePath) => {
       if (filePath === 'directory') {
@@ -477,9 +553,9 @@ class RealtimeLogMonitor {
         fs.unwatchFile(filePath);
       }
     });
-    
+
     this.watchers.clear();
-    
+
     // Final summary
     // console.warn('\n📊 MONITORING SUMMARY');
     // console.warn('─'.repeat(30));
@@ -500,10 +576,10 @@ async function main() {
 
 // Run if called directly
 if (require.main === module) {
-  main().catch(_error => {
+  main().catch((_error) => {
     // console.error('❌ Monitor failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = { RealtimeLogMonitor }; 
+module.exports = { RealtimeLogMonitor };

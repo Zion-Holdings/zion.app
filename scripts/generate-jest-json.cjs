@@ -21,8 +21,10 @@ const path = require('path');
       outputFile,
       runInBand: true,
     },
-    [path.resolve(__dirname, '..')]
+    [path.resolve(__dirname, '..')],
   );
 
-  console.warn(`Jest tests completed. Success: ${results.success}. Report written to ${outputFile}`);
-})(); 
+  console.warn(
+    `Jest tests completed. Success: ${results.success}. Report written to ${outputFile}`,
+  );
+})();

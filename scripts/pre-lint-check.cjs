@@ -13,7 +13,7 @@ if (!fs.existsSync(eslintPath)) {
 }
 
 const args = process.argv.slice(2);
-const result = spawnSync('npx', ['eslint', ...args.length ? args : ['.']], {
-  stdio: 'inherit'
+const result = spawnSync('npx', ['eslint', ...(args.length ? args : ['.'])], {
+  stdio: 'inherit',
 });
 process.exit(result.status);

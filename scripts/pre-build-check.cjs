@@ -1,5 +1,4 @@
 #!/usr/bin/env node
- 
 
 // Load environment variables from .env files if the dotenv package is available
 let _dotenvAvailable = true;
@@ -9,7 +8,9 @@ try {
   require('dotenv').config({ path: '.env' }); // for any base defaults
 } catch (_err) {
   _dotenvAvailable = false;
-  console.warn('⚠️  Optional dependency "dotenv" not found. Skipping env file loading.');
+  console.warn(
+    '⚠️  Optional dependency "dotenv" not found. Skipping env file loading.',
+  );
 }
 
 /**
@@ -31,9 +32,9 @@ function checkDependencies() {
     'react-dom',
     'react-router-dom',
     'lucide-react',
-    '@tanstack/react-query'
+    '@tanstack/react-query',
   ];
-  const missing = required.filter(dep => {
+  const missing = required.filter((dep) => {
     try {
       require.resolve(dep);
       return false;
@@ -73,7 +74,7 @@ if (!result.isValid) {
 
   // console.warn('2. 📝 Click "Edit variables" and add these required variables:\n');
 
-  result.errors.forEach(_error => {
+  result.errors.forEach((_error) => {
     // console.warn(`   ✏️  ${error.variable}`);
     // console.warn(`       Description: ${error.description}`);
     // console.warn(`       Current: ${error.current}\n`);

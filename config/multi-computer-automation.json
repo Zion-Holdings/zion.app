@@ -5,7 +5,13 @@
       "host": "localhost",
       "port": 3001,
       "cursorPath": "/Applications/Cursor.app/Contents/MacOS/Cursor",
-      "capabilities": ["linting", "testing", "building", "deployment", "ai-assistance"],
+      "capabilities": [
+        "linting",
+        "testing",
+        "building",
+        "deployment",
+        "ai-assistance"
+      ],
       "maxConcurrentTasks": 3,
       "os": "darwin"
     }
@@ -22,7 +28,11 @@
       "name": "performance-optimizer",
       "type": "optimization",
       "priority": "medium",
-      "commands": ["npm run analyze", "npm run optimize", "npm run bundle:analyze"],
+      "commands": [
+        "npm run analyze",
+        "npm run optimize",
+        "npm run bundle:analyze"
+      ],
       "autoFix": true
     },
     {
@@ -67,4 +77,4 @@
       "tasks": ["performance-check", "optimize-bundle", "analyze-metrics"]
     }
   ]
-} 
+}

@@ -10,6 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     message: 'API endpoint working',
     endpoint: 'reviews/[productId]',
     method: req.method,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 }

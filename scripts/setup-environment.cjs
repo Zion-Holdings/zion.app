@@ -118,15 +118,15 @@ EXAMPLE_API_URL=https://jsonplaceholder.typicode.com
 
 function createEnvFiles() {
   const rootDir = path.resolve(__dirname, '..');
-  
+
   // Create .env.example
   fs.writeFileSync(path.join(rootDir, '.env.example'), envExample);
   console.warn('✅ Created .env.example');
-  
+
   // Create .env.local.example
   fs.writeFileSync(path.join(rootDir, '.env.local.example'), envLocal);
   console.warn('✅ Created .env.local.example');
-  
+
   // Check if .env.local exists
   const envLocalPath = path.join(rootDir, '.env.local');
   if (!fs.existsSync(envLocalPath)) {
@@ -135,7 +135,7 @@ function createEnvFiles() {
   } else {
     console.warn('ℹ️  .env.local already exists, skipping');
   }
-  
+
   console.warn('\n📋 Next Steps:');
   console.warn('1. Edit .env.local with your actual environment values');
   console.warn('2. For Supabase: Visit https://supabase.com/dashboard');
@@ -147,4 +147,4 @@ if (require.main === module) {
   createEnvFiles();
 }
 
-module.exports = { createEnvFiles }; 
+module.exports = { createEnvFiles };

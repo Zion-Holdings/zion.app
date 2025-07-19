@@ -16,7 +16,7 @@ class FinalAppFix {
 
   async fixWatchpackIssue() {
     this.log('🔧 Applying final watchpack fix...');
-    
+
     try {
       // Create a completely minimal next.config.js
       const minimalConfig = `/** @type {import('next').NextConfig} */
@@ -56,22 +56,22 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', minimalConfig);
       this.fixes.push('Created minimal next.config.js');
-      
+
       // Clean everything
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf node_modules/.cache', { stdio: 'ignore' });
       execSync('rm -rf .swc', { stdio: 'ignore' });
       this.fixes.push('Cleaned all build artifacts');
-      
+
       // Create a simple pages structure
       const pagesDir = 'pages';
       if (!fs.existsSync(pagesDir)) {
         fs.mkdirSync(pagesDir, { recursive: true });
       }
-      
+
       // Create a simple index page
       const indexContent = `export default function Home() {
   return (
@@ -82,16 +82,16 @@ module.exports = nextConfig;`;
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('pages/index.js', indexContent);
       this.fixes.push('Created simple index page');
-      
+
       // Create a simple health API
       const apiDir = 'pages/api';
       if (!fs.existsSync(apiDir)) {
         fs.mkdirSync(apiDir, { recursive: true });
       }
-      
+
       const healthContent = `export default function handler(req, res) {
   res.status(200).json({ 
     status: 'ok', 
@@ -99,18 +99,18 @@ module.exports = nextConfig;`;
     message: 'Zion App is running successfully!'
   });
 }`;
-      
+
       fs.writeFileSync('pages/api/health.js', healthContent);
       this.fixes.push('Created health API');
-      
+
       // Create a simple _app.js
       const appContent = `export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }`;
-      
+
       fs.writeFileSync('pages/_app.js', appContent);
       this.fixes.push('Created _app.js');
-      
+
       this.log('✅ Watchpack fix applied');
       return true;
     } catch (error) {
@@ -121,38 +121,49 @@ module.exports = nextConfig;`;
 
   async startDevServer() {
     this.log('🚀 Starting development server...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next dev" || true', { stdio: 'ignore' });
-      
+
       // Start dev server with minimal configuration
       const devProcess = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
-      
+
       devProcess.stdout.on('data', (data) => {
         this.log(`DEV: ${data.toString().trim()}`);
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 25000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 25000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Development server started and responding');
           this.log('✅ Development server started and responding');
@@ -160,7 +171,7 @@ module.exports = nextConfig;`;
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return devProcess;
     } catch (error) {
       this.log(`❌ Error starting dev server: ${error.message}`, 'ERROR');
@@ -170,18 +181,18 @@ module.exports = nextConfig;`;
 
   async run() {
     this.log('🚀 Starting Final App Fix...');
-    
+
     const fixed = await this.fixWatchpackIssue();
     if (fixed) {
       const devProcess = await this.startDevServer();
-      
+
       this.log('📊 Final App Fix Summary:');
       this.log(`✅ Fixes applied: ${this.fixes.length}`);
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
-      
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+
       this.log('🎉 Final App Fix completed!');
       this.log('🌐 Try accessing: http://localhost:3001');
-      
+
       return devProcess;
     } else {
       this.log('❌ Final app fix failed', 'ERROR');
@@ -193,10 +204,10 @@ module.exports = nextConfig;`;
 // Run if called directly
 if (require.main === module) {
   const fixer = new FinalAppFix();
-  fixer.run().catch(error => {
+  fixer.run().catch((error) => {
     console.error('Final app fix failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = FinalAppFix; 
+module.exports = FinalAppFix;

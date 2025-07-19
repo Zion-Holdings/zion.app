@@ -7,10 +7,10 @@ const requiredDependencies = [
   'react-dom',
   'react-router-dom',
   'lucide-react',
-  '@tanstack/react-query'
+  '@tanstack/react-query',
 ];
 
-const missing = requiredDependencies.filter(dep => {
+const missing = requiredDependencies.filter((dep) => {
   try {
     require.resolve(dep);
     return false;
@@ -31,7 +31,9 @@ if (missing.length > 0) {
     console.error('Failed to launch offline mode:', err.message);
   }
 
-  console.error('Please run "./setup.sh npm" once internet access is available.');
+  console.error(
+    'Please run "./setup.sh npm" once internet access is available.',
+  );
   process.exit(0);
 } else {
   console.warn('\u2705 All required dependencies found.');

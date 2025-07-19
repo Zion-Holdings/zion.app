@@ -7,7 +7,10 @@ const { execSync } = require('child_process');
 // Find all JavaScript and TypeScript files
 const findFiles = () => {
   try {
-    const output = execSync('find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules', { encoding: 'utf8' });
+    const output = execSync(
+      'find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules',
+      { encoding: 'utf8' },
+    );
     return output.trim().split('\n').filter(Boolean);
   } catch (error) {
     console.error('Error finding files:', error.message);
@@ -22,7 +25,8 @@ const fixUnusedErr = (filePath) => {
     let modified = false;
 
     // Pattern 1: catch (_err) { ... console.error(..., err) ... }
-    const pattern1 = /catch\s*\(\s*_err\s*\)\s*\{([^}]*?console\.error[^}]*?err[^}]*?)\}/gs;
+    const pattern1 =
+      /catch\s*\(\s*_err\s*\)\s*\{([^}]*?console\.error[^}]*?err[^}]*?)\}/gs;
     if (pattern1.test(content)) {
       content = content.replace(pattern1, (match, catchBody) => {
         const fixedBody = catchBody.replace(/err/g, '');
@@ -32,10 +36,14 @@ const fixUnusedErr = (filePath) => {
     }
 
     // Pattern 2: catch (_err) { ... res.json({ error: err.message }) ... }
-    const pattern2 = /catch\s*\(\s*_err\s*\)\s*\{([^}]*?err\.message[^}]*?)\}/gs;
+    const pattern2 =
+      /catch\s*\(\s*_err\s*\)\s*\{([^}]*?err\.message[^}]*?)\}/gs;
     if (pattern2.test(content)) {
       content = content.replace(pattern2, (match, catchBody) => {
-        const fixedBody = catchBody.replace(/err\.message/g, "'Error occurred'");
+        const fixedBody = catchBody.replace(
+          /err\.message/g,
+          "'Error occurred'",
+        );
         return `catch {${fixedBody}}`;
       });
       modified = true;
@@ -66,11 +74,11 @@ const fixUnusedErr = (filePath) => {
 // Main execution
 const main = () => {
   console.log('🔧 Fixing unused _err variables...');
-  
+
   const files = findFiles();
   let fixedCount = 0;
 
-  files.forEach(file => {
+  files.forEach((file) => {
     if (fixUnusedErr(file)) {
       fixedCount++;
     }
@@ -83,4 +91,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { fixUnusedErr }; 
+module.exports = { fixUnusedErr };

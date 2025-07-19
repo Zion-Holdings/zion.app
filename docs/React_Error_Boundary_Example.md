@@ -19,9 +19,16 @@ function Fallback({ error, resetErrorBoundary }: FallbackProps) {
   );
 }
 
-export default function GlobalErrorBoundary({ children }: { children: React.ReactNode }) {
+export default function GlobalErrorBoundary({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <ErrorBoundary FallbackComponent={Fallback} onReset={() => window.location.reload()}>
+    <ErrorBoundary
+      FallbackComponent={Fallback}
+      onReset={() => window.location.reload()}
+    >
       {children}
     </ErrorBoundary>
   );
@@ -38,7 +45,7 @@ import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <GlobalErrorBoundary>
     <App />
-  </GlobalErrorBoundary>
+  </GlobalErrorBoundary>,
 );
 ```
 

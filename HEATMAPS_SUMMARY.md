@@ -1,11 +1,13 @@
 # Heatmap Tracking with Hotjar & FullStory
 
 ## ✅ Overview
+
 - Adds in-depth heatmap analytics to better understand how users interact with Zion.app.
 - Integrates both **Hotjar** (for click and scroll heatmaps) and **FullStory** (for session playback and event analysis).
 - Tracking scripts load only after users grant analytics consent, keeping the platform compliant with GDPR/CCPA.
 
 ## 🚀 Implementation Details
+
 1. **Environment Variables**
    - `NEXT_PUBLIC_HOTJAR_ID` – your Hotjar site ID.
    - `NEXT_PUBLIC_HOTJAR_SV` – Hotjar snippet version.
@@ -18,6 +20,7 @@
    - Import `HeatmapTracking` in `pages/_app.tsx` so tracking is available across all pages.
 
 ## 🛠 Setup Steps
+
 1. Sign up for accounts on [Hotjar](https://www.hotjar.com/) and [FullStory](https://www.fullstory.com/).
 2. Add the environment variables above to your `.env.local` file.
 3. Deploy the application with these variables set.

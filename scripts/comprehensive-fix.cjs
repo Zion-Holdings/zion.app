@@ -16,12 +16,12 @@ class ComprehensiveFix {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
-    
+
     const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
-    
+
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
 
@@ -35,23 +35,27 @@ class ComprehensiveFix {
   async runCommand(command, options = {}) {
     try {
       this.log(`Running command: ${command}`);
-      const result = execSync(command, { 
-        cwd: this.projectRoot, 
+      const result = execSync(command, {
+        cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options 
+        ...options,
       });
       this.log(`Command completed successfully: ${command}`);
       return { success: true, output: result };
     } catch (error) {
       this.log(`Command failed: ${command} - ${error.message}`, 'ERROR');
-      return { success: false, error: error.message, output: error.stdout || error.stderr };
+      return {
+        success: false,
+        error: error.message,
+        output: error.stdout || error.stderr,
+      };
     }
   }
 
   fixNextConfig() {
     this.log('Fixing Next.js configuration...');
-    
+
     const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
@@ -61,7 +65,7 @@ class ComprehensiveFix {
     try {
       let content = fs.readFileSync(nextConfigPath, 'utf8');
       const originalContent = content;
-      
+
       // Remove problematic options
       content = content
         .replace(/swcMinify:\s*true,?/g, '')
@@ -69,7 +73,7 @@ class ComprehensiveFix {
         .replace(/experimental:\s*{[^}]*}/g, 'experimental: {}')
         .replace(/serverComponentsExternalPackages:\s*\[[^\]]*\]/g, '')
         .replace(/serverExternalPackages:\s*\[[^\]]*\]/g, '');
-      
+
       // Add Node.js 22 compatibility
       const compatibilityCode = `
 // Node.js 22 compatibility workarounds
@@ -86,13 +90,13 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
       if (!content.includes('NODE_OPTIONS')) {
         content = compatibilityCode + content;
       }
-      
+
       if (content !== originalContent) {
         fs.writeFileSync(nextConfigPath, content);
         this.log('Fixed Next.js configuration');
         return true;
       }
-      
+
       return false;
     } catch (error) {
       this.log(`Error fixing Next.js config: ${error.message}`, 'ERROR');
@@ -102,7 +106,7 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
 
   fixDuplicateFiles() {
     this.log('Fixing duplicate files...');
-    
+
     const pagesDir = path.join(this.projectRoot, 'pages');
     if (!fs.existsSync(pagesDir)) {
       this.log('Pages directory not found', 'ERROR');
@@ -112,15 +116,15 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
     const duplicates = [
       { ts: '_app.tsx', js: '_app.js' },
       { ts: '_document.tsx', js: '_document.js' },
-      { ts: 'index.tsx', js: 'index.js' }
+      { ts: 'index.tsx', js: 'index.js' },
     ];
 
     let fixedCount = 0;
-    
+
     for (const duplicate of duplicates) {
       const tsPath = path.join(pagesDir, duplicate.ts);
       const jsPath = path.join(pagesDir, duplicate.js);
-      
+
       if (fs.existsSync(tsPath) && fs.existsSync(jsPath)) {
         // Keep the TypeScript version, remove the JavaScript version
         fs.unlinkSync(jsPath);
@@ -128,14 +132,14 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
         fixedCount++;
       }
     }
-    
+
     this.log(`Fixed ${fixedCount} duplicate files`);
     return fixedCount > 0;
   }
 
   createMinimalPages() {
     this.log('Creating minimal pages structure...');
-    
+
     const pagesDir = path.join(this.projectRoot, 'pages');
     if (!fs.existsSync(pagesDir)) {
       fs.mkdirSync(pagesDir, { recursive: true });
@@ -203,29 +207,29 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   async installDependencies() {
     this.log('Installing dependencies...');
-    
+
     const result = await this.runCommand('npm install --legacy-peer-deps');
     return result.success;
   }
 
   async buildProject() {
     this.log('Building project...');
-    
+
     const result = await this.runCommand('npm run build');
     return result.success;
   }
 
   async startServer() {
     this.log('Starting development server...');
-    
+
     return new Promise((resolve) => {
       const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         cwd: this.projectRoot,
         stdio: 'pipe',
         env: {
           ...process.env,
-          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096'
-        }
+          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+        },
       });
 
       let output = '';
@@ -234,7 +238,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       server.stdout.on('data', (data) => {
         output += data.toString();
         this.log(`Server output: ${data.toString().trim()}`);
-        
+
         if (output.includes('Ready') && !resolved) {
           resolved = true;
           this.log('Development server started successfully');
@@ -245,8 +249,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       server.stderr.on('data', (data) => {
         const error = data.toString();
         this.log(`Server error: ${error}`, 'ERROR');
-        
-        if (error.includes('TypeError: The "to" argument must be of type string') && !resolved) {
+
+        if (
+          error.includes(
+            'TypeError: The "to" argument must be of type string',
+          ) &&
+          !resolved
+        ) {
           resolved = true;
           this.log('Node.js 22 compatibility issue detected', 'ERROR');
           resolve({ success: false, error: 'Node.js 22 compatibility issue' });
@@ -274,42 +283,41 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   async runComprehensiveFix() {
     this.log('Starting comprehensive fix...');
-    
+
     try {
       // Step 1: Fix Next.js configuration
       this.fixNextConfig();
-      
+
       // Step 2: Fix duplicate files
       this.fixDuplicateFiles();
-      
+
       // Step 3: Create minimal pages structure
       this.createMinimalPages();
-      
+
       // Step 4: Install dependencies
       const depsInstalled = await this.installDependencies();
       if (!depsInstalled) {
         this.log('Failed to install dependencies', 'ERROR');
         return false;
       }
-      
+
       // Step 5: Build project
       const buildSuccess = await this.buildProject();
       if (!buildSuccess) {
         this.log('Build failed, but continuing...', 'WARN');
       }
-      
+
       // Step 6: Start server
       const serverResult = await this.startServer();
       if (!serverResult.success) {
         this.log('Server failed to start', 'ERROR');
         return false;
       }
-      
+
       this.log('Comprehensive fix completed successfully');
       this.log('App should now be running at http://localhost:3001');
-      
+
       return true;
-      
     } catch (error) {
       this.log(`Comprehensive fix failed: ${error.message}`, 'ERROR');
       return false;
@@ -320,28 +328,31 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 // Run if this script is executed directly
 if (require.main === module) {
   const fixer = new ComprehensiveFix();
-  fixer.runComprehensiveFix()
-    .then(success => {
+  fixer
+    .runComprehensiveFix()
+    .then((success) => {
       if (success) {
         console.log('\n🎉 SUCCESS: App is now running!');
         console.log('🌐 Open http://localhost:3001 in your browser');
         console.log('📊 Health check: http://localhost:3001/api/health');
         console.log('\nPress Ctrl+C to stop the server');
-        
+
         // Keep the process running
         process.on('SIGINT', () => {
           console.log('\n🛑 Stopping server...');
           process.exit(0);
         });
       } else {
-        console.log('\n❌ FAILED: Comprehensive fix did not complete successfully');
+        console.log(
+          '\n❌ FAILED: Comprehensive fix did not complete successfully',
+        );
         process.exit(1);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Fix failed:', error);
       process.exit(1);
     });
 }
 
-module.exports = ComprehensiveFix; 
+module.exports = ComprehensiveFix;

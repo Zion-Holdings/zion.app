@@ -17,21 +17,22 @@ const CONFIG = {
   pipelineInterval: 300000, // 5 minutes
   maxPipelineRuns: 100, // Maximum runs before restart
   commitInterval: 600000, // 10 minutes
-  
+
   // Git settings
   gitBranch: 'main',
   gitUserName: process.env.GIT_AUTHOR_NAME || 'Continuous Improvement Bot',
-  gitUserEmail: process.env.GIT_AUTHOR_EMAIL || 'continuous-improvement@zion.app',
-  
+  gitUserEmail:
+    process.env.GIT_AUTHOR_EMAIL || 'continuous-improvement@zion.app',
+
   // Logging
   logFile: 'logs/continuous-improvement.log',
   pipelineLogFile: 'logs/pipeline-execution.log',
-  
+
   // Thresholds
   minIssuesForChat: 3, // Minimum issues before triggering Cursor chat
   maxIssuesPerRun: 20, // Maximum issues to process per run
   improvementThreshold: 0.8, // 80% improvement required to continue
-  
+
   // Categories for improvement
   improvementCategories: [
     'build',
@@ -43,8 +44,8 @@ const CONFIG = {
     'accessibility',
     'testing',
     'deployment',
-    'userExperience'
-  ]
+    'userExperience',
+  ],
 };
 
 class ContinuousImprovementPipeline {
@@ -55,10 +56,10 @@ class ContinuousImprovementPipeline {
     this.lastCommitTime = null;
     this.improvementHistory = [];
     this.cursorChatsTriggered = 0;
-    
+
     this.selfHealingSystem = new AdvancedSelfHealingSystem();
     this.cursorChatTrigger = new CursorChatTrigger();
-    
+
     this.ensureLogDirectory();
     this.log('Continuous Improvement Pipeline initialized');
   }
@@ -66,7 +67,7 @@ class ContinuousImprovementPipeline {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
-    
+
     console.log(logEntry);
     fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
   }
@@ -74,7 +75,7 @@ class ContinuousImprovementPipeline {
   logPipeline(message) {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] PIPELINE: ${message}`;
-    
+
     fs.appendFileSync(CONFIG.pipelineLogFile, logEntry + '\n');
   }
 
@@ -93,13 +94,13 @@ class ContinuousImprovementPipeline {
 
     this.isRunning = true;
     this.log('Starting Continuous Improvement Pipeline...');
-    
+
     // Start the self-healing system
     await this.selfHealingSystem.start();
-    
+
     // Start the continuous improvement loop
     this.startImprovementLoop();
-    
+
     // Start the auto-commit system
     this.startAutoCommitSystem();
   }
@@ -107,37 +108,36 @@ class ContinuousImprovementPipeline {
   async stop() {
     this.isRunning = false;
     this.log('Stopping Continuous Improvement Pipeline...');
-    
+
     await this.selfHealingSystem.stop();
   }
 
   startImprovementLoop() {
     const runPipeline = async () => {
       if (!this.isRunning) return;
-      
+
       try {
         this.pipelineRuns++;
         this.logPipeline(`Starting pipeline run ${this.pipelineRuns}`);
-        
+
         await this.runImprovementCycle();
-        
+
         // Check if we should restart the pipeline
         if (this.pipelineRuns >= CONFIG.maxPipelineRuns) {
           this.log('Maximum pipeline runs reached, restarting...');
           this.pipelineRuns = 0;
           await this.restartPipeline();
         }
-        
       } catch (error) {
         this.log(`Error in improvement loop: ${error.message}`, 'ERROR');
       }
-      
+
       // Schedule next run
       if (this.isRunning) {
         setTimeout(runPipeline, CONFIG.pipelineInterval);
       }
     };
-    
+
     // Start the first run
     runPipeline();
   }
@@ -145,7 +145,7 @@ class ContinuousImprovementPipeline {
   startAutoCommitSystem() {
     setInterval(async () => {
       if (!this.isRunning) return;
-      
+
       try {
         await this.autoCommitImprovements();
       } catch (error) {
@@ -156,14 +156,14 @@ class ContinuousImprovementPipeline {
 
   async runImprovementCycle() {
     this.logPipeline('Running improvement cycle...');
-    
+
     const cycleStart = Date.now();
     const improvements = [];
-    
+
     // Phase 1: Detect Issues
     const issues = await this.detectAllIssues();
     this.logPipeline(`Detected ${issues.length} issues`);
-    
+
     // Phase 2: Apply Fixes
     for (const issue of issues.slice(0, CONFIG.maxIssuesPerRun)) {
       try {
@@ -172,15 +172,18 @@ class ContinuousImprovementPipeline {
           improvements.push(improvement);
         }
       } catch (error) {
-        this.log(`Failed to apply improvement for ${issue.type}: ${error.message}`, 'ERROR');
+        this.log(
+          `Failed to apply improvement for ${issue.type}: ${error.message}`,
+          'ERROR',
+        );
       }
     }
-    
+
     // Phase 3: Trigger Cursor Chats
     if (issues.length >= CONFIG.minIssuesForChat) {
       await this.triggerImprovementChats(issues, improvements);
     }
-    
+
     // Phase 4: Measure Improvement
     const improvementScore = await this.measureImprovement(improvements);
     this.improvementHistory.push({
@@ -188,13 +191,15 @@ class ContinuousImprovementPipeline {
       issues: issues.length,
       improvements: improvements.length,
       score: improvementScore,
-      duration: Date.now() - cycleStart
+      duration: Date.now() - cycleStart,
     });
-    
+
     this.totalImprovements += improvements.length;
-    
-    this.logPipeline(`Cycle completed: ${improvements.length} improvements, score: ${improvementScore}`);
-    
+
+    this.logPipeline(
+      `Cycle completed: ${improvements.length} improvements, score: ${improvementScore}`,
+    );
+
     // Phase 5: Commit if significant improvements
     if (improvements.length > 0) {
       await this.commitImprovements(improvements);
@@ -203,162 +208,171 @@ class ContinuousImprovementPipeline {
 
   async detectAllIssues() {
     const issues = [];
-    
+
     try {
       // Build issues
       const buildIssues = await this.selfHealingSystem.checkBuildIssues();
       issues.push(...buildIssues);
-      
+
       // Lint issues
       const lintIssues = await this.selfHealingSystem.checkLintIssues();
       issues.push(...lintIssues);
-      
+
       // Type issues
       const typeIssues = await this.selfHealingSystem.checkTypeIssues();
       issues.push(...typeIssues);
-      
+
       // Runtime issues
       const runtimeIssues = await this.selfHealingSystem.checkRuntimeIssues();
       issues.push(...runtimeIssues);
-      
+
       // Performance issues
       const performanceIssues = await this.detectPerformanceIssues();
       issues.push(...performanceIssues);
-      
+
       // Security issues
       const securityIssues = await this.detectSecurityIssues();
       issues.push(...securityIssues);
-      
+
       // Accessibility issues
       const accessibilityIssues = await this.detectAccessibilityIssues();
       issues.push(...accessibilityIssues);
-      
     } catch (error) {
       this.log(`Error detecting issues: ${error.message}`, 'ERROR');
     }
-    
+
     return issues;
   }
 
   async detectPerformanceIssues() {
     const issues = [];
-    
+
     try {
       // Check bundle size
       const bundleSize = await this.getBundleSize();
-      if (bundleSize > 1000000) { // 1MB threshold
+      if (bundleSize > 1000000) {
+        // 1MB threshold
         issues.push({
           type: 'performance',
           pattern: 'Large bundle size',
           severity: 'medium',
           cursorPrompt: 'Optimize bundle size and reduce JavaScript payload',
-          output: `Bundle size: ${bundleSize} bytes`
+          output: `Bundle size: ${bundleSize} bytes`,
         });
       }
-      
+
       // Check build time
       const buildTime = await this.getBuildTime();
-      if (buildTime > 120000) { // 2 minutes threshold
+      if (buildTime > 120000) {
+        // 2 minutes threshold
         issues.push({
           type: 'performance',
           pattern: 'Slow build time',
           severity: 'medium',
           cursorPrompt: 'Optimize build process and reduce build time',
-          output: `Build time: ${buildTime}ms`
+          output: `Build time: ${buildTime}ms`,
         });
       }
-      
     } catch (error) {
       this.log(`Error detecting performance issues: ${error.message}`, 'ERROR');
     }
-    
+
     return issues;
   }
 
   async detectSecurityIssues() {
     const issues = [];
-    
+
     try {
       // Run security audit
-      const auditOutput = execSync('npm audit --json 2>&1', { 
+      const auditOutput = execSync('npm audit --json 2>&1', {
         encoding: 'utf8',
-        timeout: 60000 
+        timeout: 60000,
       });
-      
+
       const audit = JSON.parse(auditOutput);
-      if (audit.vulnerabilities && Object.keys(audit.vulnerabilities).length > 0) {
+      if (
+        audit.vulnerabilities &&
+        Object.keys(audit.vulnerabilities).length > 0
+      ) {
         issues.push({
           type: 'security',
           pattern: 'Security vulnerabilities',
           severity: 'high',
           cursorPrompt: 'Fix security vulnerabilities in dependencies',
-          output: auditOutput
+          output: auditOutput,
         });
       }
-      
     } catch (error) {
       // Audit failed, but that's not necessarily a security issue
       this.log(`Security audit failed: ${error.message}`, 'WARN');
     }
-    
+
     return issues;
   }
 
   async detectAccessibilityIssues() {
     const issues = [];
-    
+
     try {
       // Check for common accessibility issues in code
       const srcFiles = this.findFiles('src/**/*.{js,jsx,ts,tsx}');
       let missingAltCount = 0;
       let missingAriaCount = 0;
-      
-      for (const file of srcFiles.slice(0, 20)) { // Check first 20 files
+
+      for (const file of srcFiles.slice(0, 20)) {
+        // Check first 20 files
         const content = fs.readFileSync(file, 'utf8');
-        
+
         if (content.includes('<img') && !content.includes('alt=')) {
           missingAltCount++;
         }
-        
-        if (content.includes('aria-label') && !content.includes('aria-label=')) {
+
+        if (
+          content.includes('aria-label') &&
+          !content.includes('aria-label=')
+        ) {
           missingAriaCount++;
         }
       }
-      
+
       if (missingAltCount > 5) {
         issues.push({
           type: 'accessibility',
           pattern: 'Missing alt attributes',
           severity: 'medium',
-          cursorPrompt: 'Add alt attributes to all img elements for accessibility',
-          output: `Found ${missingAltCount} images without alt attributes`
+          cursorPrompt:
+            'Add alt attributes to all img elements for accessibility',
+          output: `Found ${missingAltCount} images without alt attributes`,
         });
       }
-      
+
       if (missingAriaCount > 3) {
         issues.push({
           type: 'accessibility',
           pattern: 'Missing ARIA labels',
           severity: 'medium',
           cursorPrompt: 'Add proper ARIA labels to interactive elements',
-          output: `Found ${missingAriaCount} elements with incomplete ARIA labels`
+          output: `Found ${missingAriaCount} elements with incomplete ARIA labels`,
         });
       }
-      
     } catch (error) {
-      this.log(`Error detecting accessibility issues: ${error.message}`, 'ERROR');
+      this.log(
+        `Error detecting accessibility issues: ${error.message}`,
+        'ERROR',
+      );
     }
-    
+
     return issues;
   }
 
   async getBundleSize() {
     try {
-      const bundleOutput = execSync('npm run bundle:analyze 2>&1', { 
+      const bundleOutput = execSync('npm run bundle:analyze 2>&1', {
         encoding: 'utf8',
-        timeout: 120000 
+        timeout: 120000,
       });
-      
+
       // Extract bundle size from output
       const match = bundleOutput.match(/Total Size: (\d+) bytes/);
       return match ? parseInt(match[1]) : 0;
@@ -370,9 +384,9 @@ class ContinuousImprovementPipeline {
   async getBuildTime() {
     const startTime = Date.now();
     try {
-      execSync('npm run build', { 
+      execSync('npm run build', {
         stdio: 'pipe',
-        timeout: 300000 
+        timeout: 300000,
       });
       return Date.now() - startTime;
     } catch (error) {
@@ -392,38 +406,39 @@ class ContinuousImprovementPipeline {
   }
 
   async applyImprovement(issue) {
-    this.logPipeline(`Applying improvement for ${issue.type}: ${issue.pattern}`);
-    
+    this.logPipeline(
+      `Applying improvement for ${issue.type}: ${issue.pattern}`,
+    );
+
     try {
       // Apply the fix
       await this.selfHealingSystem.applyFix(issue);
-      
+
       // Verify the fix
       const isFixed = await this.verifyFix(issue);
-      
+
       if (isFixed) {
         return {
           issue: issue,
           timestamp: new Date().toISOString(),
           success: true,
-          verification: 'passed'
+          verification: 'passed',
         };
       } else {
         return {
           issue: issue,
           timestamp: new Date().toISOString(),
           success: false,
-          verification: 'failed'
+          verification: 'failed',
         };
       }
-      
     } catch (error) {
       this.log(`Failed to apply improvement: ${error.message}`, 'ERROR');
       return {
         issue: issue,
         timestamp: new Date().toISOString(),
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
@@ -434,16 +449,16 @@ class ContinuousImprovementPipeline {
       switch (issue.type) {
         case 'build':
           const buildIssues = await this.selfHealingSystem.checkBuildIssues();
-          return !buildIssues.some(i => i.pattern === issue.pattern);
-          
+          return !buildIssues.some((i) => i.pattern === issue.pattern);
+
         case 'lint':
           const lintIssues = await this.selfHealingSystem.checkLintIssues();
-          return !lintIssues.some(i => i.pattern === issue.pattern);
-          
+          return !lintIssues.some((i) => i.pattern === issue.pattern);
+
         case 'typescript':
           const typeIssues = await this.selfHealingSystem.checkTypeIssues();
-          return !typeIssues.some(i => i.pattern === issue.pattern);
-          
+          return !typeIssues.some((i) => i.pattern === issue.pattern);
+
         default:
           return true; // Assume fixed for other types
       }
@@ -455,7 +470,7 @@ class ContinuousImprovementPipeline {
 
   async triggerImprovementChats(issues, improvements) {
     this.logPipeline('Triggering improvement chats...');
-    
+
     try {
       // Group issues by category
       const issuesByCategory = {};
@@ -465,20 +480,26 @@ class ContinuousImprovementPipeline {
         }
         issuesByCategory[issue.type].push(issue);
       }
-      
+
       // Trigger chats for each category with significant issues
-      for (const [category, categoryIssues] of Object.entries(issuesByCategory)) {
-        if (categoryIssues.length >= 2) { // At least 2 issues per category
+      for (const [category, categoryIssues] of Object.entries(
+        issuesByCategory,
+      )) {
+        if (categoryIssues.length >= 2) {
+          // At least 2 issues per category
           try {
             await this.cursorChatTrigger.triggerComprehensiveChat(category);
             this.cursorChatsTriggered++;
             this.logPipeline(`Triggered chat for ${category} category`);
           } catch (error) {
-            this.log(`Failed to trigger chat for ${category}: ${error.message}`, 'ERROR');
+            this.log(
+              `Failed to trigger chat for ${category}: ${error.message}`,
+              'ERROR',
+            );
           }
         }
       }
-      
+
       // Trigger overall improvement chat
       if (issues.length >= 5) {
         try {
@@ -489,7 +510,6 @@ class ContinuousImprovementPipeline {
           this.log(`Failed to trigger overall chat: ${error.message}`, 'ERROR');
         }
       }
-      
     } catch (error) {
       this.log(`Error triggering improvement chats: ${error.message}`, 'ERROR');
     }
@@ -497,8 +517,10 @@ class ContinuousImprovementPipeline {
 
   async measureImprovement(improvements) {
     if (improvements.length === 0) return 0;
-    
-    const successfulImprovements = improvements.filter(imp => imp.success).length;
+
+    const successfulImprovements = improvements.filter(
+      (imp) => imp.success,
+    ).length;
     return successfulImprovements / improvements.length;
   }
 
@@ -506,29 +528,30 @@ class ContinuousImprovementPipeline {
     try {
       // Check if there are changes to commit
       const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      
+
       if (status.trim()) {
         this.logPipeline('Committing improvements...');
-        
+
         // Stage all changes
         execSync('git add .', { stdio: 'inherit' });
-        
+
         // Create commit message
-        const commitMessage = this.generateImprovementCommitMessage(improvements);
-        
+        const commitMessage =
+          this.generateImprovementCommitMessage(improvements);
+
         // Commit changes
-        execSync(`git commit -m "${commitMessage}"`, { 
+        execSync(`git commit -m "${commitMessage}"`, {
           stdio: 'inherit',
           env: {
             ...process.env,
             GIT_AUTHOR_NAME: CONFIG.gitUserName,
-            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail
-          }
+            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail,
+          },
         });
-        
+
         // Push to main branch
         execSync(`git push origin ${CONFIG.gitBranch}`, { stdio: 'inherit' });
-        
+
         this.lastCommitTime = new Date();
         this.logPipeline('Improvements committed and pushed successfully');
       }
@@ -539,11 +562,11 @@ class ContinuousImprovementPipeline {
 
   generateImprovementCommitMessage(improvements) {
     const timestamp = new Date().toISOString();
-    const successfulCount = improvements.filter(imp => imp.success).length;
+    const successfulCount = improvements.filter((imp) => imp.success).length;
     const totalCount = improvements.length;
-    
-    const categories = [...new Set(improvements.map(imp => imp.issue.type))];
-    
+
+    const categories = [...new Set(improvements.map((imp) => imp.issue.type))];
+
     return `🚀 Continuous Improvement: ${successfulCount}/${totalCount} improvements applied
 
 - Categories: ${categories.join(', ')}
@@ -558,13 +581,13 @@ Automated by Continuous Improvement Pipeline`;
     try {
       // Check if there are any uncommitted changes
       const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      
+
       if (status.trim()) {
         this.logPipeline('Auto-committing accumulated improvements...');
-        
+
         // Stage all changes
         execSync('git add .', { stdio: 'inherit' });
-        
+
         // Create auto-commit message
         const commitMessage = `🤖 Auto-commit: Continuous improvements
 
@@ -574,20 +597,20 @@ Automated by Continuous Improvement Pipeline`;
 - Cursor Chats: ${this.cursorChatsTriggered}
 
 Automated by Continuous Improvement Pipeline`;
-        
+
         // Commit changes
-        execSync(`git commit -m "${commitMessage}"`, { 
+        execSync(`git commit -m "${commitMessage}"`, {
           stdio: 'inherit',
           env: {
             ...process.env,
             GIT_AUTHOR_NAME: CONFIG.gitUserName,
-            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail
-          }
+            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail,
+          },
         });
-        
+
         // Push to main branch
         execSync(`git push origin ${CONFIG.gitBranch}`, { stdio: 'inherit' });
-        
+
         this.lastCommitTime = new Date();
         this.logPipeline('Auto-commit completed successfully');
       }
@@ -598,17 +621,17 @@ Automated by Continuous Improvement Pipeline`;
 
   async restartPipeline() {
     this.log('Restarting pipeline...');
-    
+
     try {
       // Stop current pipeline
       await this.stop();
-      
+
       // Wait a moment
-      await new Promise(resolve => setTimeout(resolve, 5000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+
       // Start pipeline again
       await this.start();
-      
+
       this.log('Pipeline restarted successfully');
     } catch (error) {
       this.log(`Failed to restart pipeline: ${error.message}`, 'ERROR');
@@ -617,7 +640,7 @@ Automated by Continuous Improvement Pipeline`;
 
   async getStatus() {
     const selfHealingStatus = await this.selfHealingSystem.getStatus();
-    
+
     return {
       isRunning: this.isRunning,
       pipelineRuns: this.pipelineRuns,
@@ -625,7 +648,7 @@ Automated by Continuous Improvement Pipeline`;
       cursorChatsTriggered: this.cursorChatsTriggered,
       lastCommitTime: this.lastCommitTime,
       improvementHistory: this.improvementHistory.slice(-10), // Last 10 entries
-      selfHealingStatus: selfHealingStatus
+      selfHealingStatus: selfHealingStatus,
     };
   }
 
@@ -634,36 +657,45 @@ Automated by Continuous Improvement Pipeline`;
       timestamp: new Date().toISOString(),
       status: await this.getStatus(),
       improvementHistory: this.improvementHistory,
-      recommendations: this.generateRecommendations()
+      recommendations: this.generateRecommendations(),
     };
-    
+
     const reportPath = 'logs/continuous-improvement-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log(`Report generated: ${reportPath}`);
     return report;
   }
 
   generateRecommendations() {
     const recommendations = [];
-    
+
     if (this.improvementHistory.length > 0) {
-      const recentScores = this.improvementHistory.slice(-5).map(h => h.score);
-      const avgScore = recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
-      
+      const recentScores = this.improvementHistory
+        .slice(-5)
+        .map((h) => h.score);
+      const avgScore =
+        recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
+
       if (avgScore < CONFIG.improvementThreshold) {
-        recommendations.push('Consider adjusting improvement strategies - success rate is below threshold');
+        recommendations.push(
+          'Consider adjusting improvement strategies - success rate is below threshold',
+        );
       }
     }
-    
+
     if (this.cursorChatsTriggered > 20) {
-      recommendations.push('High number of Cursor chats triggered - consider implementing more automated fixes');
+      recommendations.push(
+        'High number of Cursor chats triggered - consider implementing more automated fixes',
+      );
     }
-    
+
     if (this.totalImprovements > 100) {
-      recommendations.push('Significant improvements applied - consider reviewing and optimizing the pipeline');
+      recommendations.push(
+        'Significant improvements applied - consider reviewing and optimizing the pipeline',
+      );
     }
-    
+
     return recommendations;
   }
 }
@@ -671,9 +703,9 @@ Automated by Continuous Improvement Pipeline`;
 // CLI interface
 if (require.main === module) {
   const pipeline = new ContinuousImprovementPipeline();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       pipeline.start();
@@ -682,13 +714,13 @@ if (require.main === module) {
       pipeline.stop();
       break;
     case 'status':
-      pipeline.getStatus().then(status => {
+      pipeline.getStatus().then((status) => {
         console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
     case 'report':
-      pipeline.generateReport().then(report => {
+      pipeline.generateReport().then((report) => {
         console.log(JSON.stringify(report, null, 2));
         process.exit(0);
       });
@@ -723,4 +755,4 @@ Environment Variables:
   }
 }
 
-module.exports = ContinuousImprovementPipeline; 
+module.exports = ContinuousImprovementPipeline;

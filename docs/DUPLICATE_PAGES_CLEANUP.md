@@ -12,10 +12,12 @@ The Next.js application was experiencing duplicate page warnings because both co
 ## Root Cause
 
 The repository contained both:
+
 1. **Source files**: TypeScript/React files (`.tsx`, `.ts`)
 2. **Compiled artifacts**: JavaScript files (`.js`) and TypeScript declarations (`.d.ts`)
 
 This happened because:
+
 - TypeScript files were being compiled to JavaScript during development
 - Both source and compiled files were being committed to the repository
 - Next.js treats both as valid page routes, causing duplication
@@ -25,6 +27,7 @@ This happened because:
 ### 1. Automated Cleanup Script
 
 Created `scripts/cleanup-duplicate-pages.js` that:
+
 - Scans the `pages/` directory for duplicate files
 - Identifies cases where both `.tsx`/`.ts` and `.js` versions exist
 - Removes the compiled `.js` and `.d.ts` files, keeping only source files
@@ -33,12 +36,14 @@ Created `scripts/cleanup-duplicate-pages.js` that:
 ### 2. Files Removed
 
 **Total files removed**: 335 files
+
 - 166 JavaScript files (`.js`)
 - 169 TypeScript declaration files (`.d.ts`)
 
 ### 3. Remaining Clean Structure
 
 After cleanup:
+
 - **148** TypeScript React files (`.tsx`) - UI pages and components
 - **34** TypeScript files (`.ts`) - API routes and utilities
 - **0** JavaScript files (`.js`)
@@ -60,6 +65,7 @@ pages/**/*.d.ts
 ### 2. Build Process
 
 TypeScript files are now properly:
+
 - Compiled at build time by Next.js
 - Not committed as compiled artifacts
 - Only source files tracked in version control
@@ -90,4 +96,4 @@ node scripts/cleanup-duplicate-pages.js --delete
 - **Production**: `npm run build` compiles TypeScript to optimized JavaScript
 - **No functional changes**: All pages work identically, just cleaner structure
 
-This cleanup resolves the duplicate page warnings while maintaining full application functionality. 
+This cleanup resolves the duplicate page warnings while maintaining full application functionality.

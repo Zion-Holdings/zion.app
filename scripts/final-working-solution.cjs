@@ -16,14 +16,14 @@ class FinalWorkingSolution {
 
   async createWorkingApp() {
     this.log('🚀 Creating final working solution...');
-    
+
     try {
       // Create a production build instead of dev server
       await this.createProductionBuild();
-      
+
       // Start production server
       await this.startProductionServer();
-      
+
       this.log('✅ Final working solution completed!');
       return true;
     } catch (error) {
@@ -34,12 +34,12 @@ class FinalWorkingSolution {
 
   async createProductionBuild() {
     this.log('🔧 Creating production build...');
-    
+
     try {
       // Clean everything first
       execSync('rm -rf .next', { stdio: 'ignore' });
       execSync('rm -rf out', { stdio: 'ignore' });
-      
+
       // Create a minimal next.config.js for production
       const nextConfig = `/** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -64,14 +64,14 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', nextConfig);
       this.fixes.push('Created production next.config.js');
-      
+
       // Build the app
       execSync('npm run build', { stdio: 'inherit' });
       this.fixes.push('Created production build');
-      
+
       this.log('✅ Production build created');
     } catch (error) {
       this.log(`❌ Error creating production build: ${error.message}`, 'ERROR');
@@ -81,38 +81,53 @@ module.exports = nextConfig;`;
 
   async startProductionServer() {
     this.log('🚀 Starting production server...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next" || true', { stdio: 'ignore' });
-      
+
       // Start production server
-      const serverProcess = spawn('npm', ['run', 'start', '--', '--port', '3001'], {
-        stdio: 'pipe',
-        detached: false
-      });
-      
+      const serverProcess = spawn(
+        'npm',
+        ['run', 'start', '--', '--port', '3001'],
+        {
+          stdio: 'pipe',
+          detached: false,
+        },
+      );
+
       serverProcess.stdout.on('data', (data) => {
         this.log(`SERVER: ${data.toString().trim()}`);
       });
-      
+
       serverProcess.stderr.on('data', (data) => {
         this.log(`SERVER ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 15000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 15000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Production server started and responding');
           this.log('✅ Production server started and responding');
@@ -120,30 +135,33 @@ module.exports = nextConfig;`;
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return serverProcess;
     } catch (error) {
-      this.log(`❌ Error starting production server: ${error.message}`, 'ERROR');
+      this.log(
+        `❌ Error starting production server: ${error.message}`,
+        'ERROR',
+      );
       throw error;
     }
   }
 
   async run() {
     this.log('🚀 Starting Final Working Solution...');
-    
+
     const success = await this.createWorkingApp();
-    
+
     this.log('📊 Final Working Solution Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);
-    this.fixes.forEach(fix => this.log(`  - ${fix}`));
-    
+    this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+
     if (success) {
       this.log('🎉 Final Working Solution completed successfully!');
       this.log('🌐 Try accessing: http://localhost:3001');
     } else {
       this.log('❌ Final Working Solution failed', 'ERROR');
     }
-    
+
     return success;
   }
 }
@@ -151,10 +169,10 @@ module.exports = nextConfig;`;
 // Run if called directly
 if (require.main === module) {
   const solution = new FinalWorkingSolution();
-  solution.run().catch(error => {
+  solution.run().catch((error) => {
     console.error('Final working solution failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = FinalWorkingSolution; 
+module.exports = FinalWorkingSolution;

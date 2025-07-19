@@ -19,33 +19,33 @@ class ComprehensiveAutomation {
 
   async runComprehensiveAutomation() {
     this.log('🚀 Starting Comprehensive Automation...');
-    
+
     await this.fixAllSyntaxErrors();
     await this.createMinimalWorkingApp();
     await this.startWorkingApp();
-    
+
     this.log('📊 Comprehensive Automation Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);
     this.log(`❌ Issues encountered: ${this.issues.length}`);
-    
+
     if (this.fixes.length > 0) {
       this.log('Applied fixes:');
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
     }
-    
+
     this.log('🎉 Comprehensive Automation completed!');
   }
 
   async fixAllSyntaxErrors() {
     this.log('🔧 Fixing all syntax errors...');
-    
+
     try {
       // Fix dynamic route files
       await this.fixDynamicRoutes();
-      
+
       // Fix other syntax errors
       await this.fixGeneralSyntaxErrors();
-      
+
       this.log('✅ All syntax errors fixed');
     } catch (error) {
       this.log(`❌ Error fixing syntax errors: ${error.message}`, 'ERROR');
@@ -55,17 +55,17 @@ class ComprehensiveAutomation {
 
   async fixDynamicRoutes() {
     this.log('🔧 Fixing dynamic route files...');
-    
+
     try {
       const dynamicRoutes = [
         'pages/blog/[slug].tsx',
         'pages/careers/[id].tsx',
         'pages/case-studies/[slug].tsx',
         'pages/category/[slug].tsx',
-        'pages/checkout/[id].tsx'
+        'pages/checkout/[id].tsx',
       ];
-      
-      dynamicRoutes.forEach(route => {
+
+      dynamicRoutes.forEach((route) => {
         if (fs.existsSync(route)) {
           const content = `import React from 'react';
 import { useRouter } from 'next/router';
@@ -82,12 +82,12 @@ export default function DynamicPage() {
     </div>
   );
 }`;
-          
+
           fs.writeFileSync(route, content);
           this.fixes.push(`Fixed ${route}`);
         }
       });
-      
+
       this.log('✅ Dynamic routes fixed');
     } catch (error) {
       this.log(`❌ Error fixing dynamic routes: ${error.message}`, 'ERROR');
@@ -97,12 +97,12 @@ export default function DynamicPage() {
 
   async fixGeneralSyntaxErrors() {
     this.log('🔧 Fixing general syntax errors...');
-    
+
     try {
       // Find and fix all TypeScript/JavaScript files with syntax errors
       const files = this.findFilesWithSyntaxErrors();
-      
-      files.forEach(file => {
+
+      files.forEach((file) => {
         try {
           const content = fs.readFileSync(file, 'utf8');
           const fixedContent = this.fixSyntaxErrors(content, file);
@@ -112,7 +112,7 @@ export default function DynamicPage() {
           this.log(`⚠️ Could not fix ${file}: ${error.message}`, 'WARN');
         }
       });
-      
+
       this.log('✅ General syntax errors fixed');
     } catch (error) {
       this.log(`❌ Error fixing general syntax: ${error.message}`, 'ERROR');
@@ -123,21 +123,28 @@ export default function DynamicPage() {
   findFilesWithSyntaxErrors() {
     const files = [];
     const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-    
+
     const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
-      items.forEach(item => {
+      items.forEach((item) => {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
-        
-        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+
+        if (
+          stat.isDirectory() &&
+          !item.startsWith('.') &&
+          item !== 'node_modules'
+        ) {
           walkDir(fullPath);
-        } else if (stat.isFile() && extensions.some(ext => item.endsWith(ext))) {
+        } else if (
+          stat.isFile() &&
+          extensions.some((ext) => item.endsWith(ext))
+        ) {
           files.push(fullPath);
         }
       });
     };
-    
+
     walkDir('.');
     return files;
   }
@@ -145,25 +152,31 @@ export default function DynamicPage() {
   fixSyntaxErrors(content, filename) {
     // Fix common syntax errors
     let fixed = content;
-    
+
     // Fix function names with brackets
-    fixed = fixed.replace(/export default function \[([^\]]+)\]\(/g, 'export default function DynamicPage(');
-    
+    fixed = fixed.replace(
+      /export default function \[([^\]]+)\]\(/g,
+      'export default function DynamicPage(',
+    );
+
     // Fix unterminated strings
     fixed = fixed.replace(/(['"])([^'"]*?)(?:\n|$)/g, '$1$2$1');
-    
+
     // Fix missing semicolons
-    fixed = fixed.replace(/([^;])\n(import|export|const|let|var|function)/g, '$1;\n$2');
-    
+    fixed = fixed.replace(
+      /([^;])\n(import|export|const|let|var|function)/g,
+      '$1;\n$2',
+    );
+
     // Fix malformed imports
     fixed = fixed.replace(/import\s+([^;]+?)(?:\n|$)/g, 'import $1;');
-    
+
     return fixed;
   }
 
   async createMinimalWorkingApp() {
     this.log('🔧 Creating minimal working app...');
-    
+
     try {
       // Create a minimal next.config.js
       const nextConfig = `/** @type {import('next').NextConfig} */
@@ -186,13 +199,13 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-      
+
       fs.writeFileSync('next.config.js', nextConfig);
       this.fixes.push('Created minimal next.config.js');
-      
+
       // Create a simple working structure
       await this.createSimpleStructure();
-      
+
       this.log('✅ Minimal working app created');
     } catch (error) {
       this.log(`❌ Error creating minimal app: ${error.message}`, 'ERROR');
@@ -202,7 +215,7 @@ module.exports = nextConfig;`;
 
   async createSimpleStructure() {
     this.log('🔧 Creating simple structure...');
-    
+
     try {
       // Create a simple index page
       const indexContent = `export default function Home() {
@@ -216,18 +229,18 @@ module.exports = nextConfig;`;
     </div>
   );
 }`;
-      
+
       fs.writeFileSync('pages/index.js', indexContent);
       this.fixes.push('Created simple index page');
-      
+
       // Create a simple _app.js
       const appContent = `export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }`;
-      
+
       fs.writeFileSync('pages/_app.js', appContent);
       this.fixes.push('Created _app.js');
-      
+
       // Create a simple health API
       const healthContent = `export default function handler(req, res) {
   res.status(200).json({ 
@@ -238,10 +251,10 @@ module.exports = nextConfig;`;
     build: 'Working'
   });
 }`;
-      
+
       fs.writeFileSync('pages/api/health.js', healthContent);
       this.fixes.push('Created health API');
-      
+
       this.log('✅ Simple structure created');
     } catch (error) {
       this.log(`❌ Error creating simple structure: ${error.message}`, 'ERROR');
@@ -251,41 +264,52 @@ module.exports = nextConfig;`;
 
   async startWorkingApp() {
     this.log('🚀 Starting working app...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next" || true', { stdio: 'ignore' });
-      
+
       // Clean build artifacts
       execSync('rm -rf .next', { stdio: 'ignore' });
-      
+
       // Start dev server
       const devProcess = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
         stdio: 'pipe',
-        detached: false
+        detached: false,
       });
-      
+
       devProcess.stdout.on('data', (data) => {
         this.log(`DEV: ${data.toString().trim()}`);
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 25000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 25000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
-        
+
         if (response.includes('Server not responding')) {
-          this.log('⚠️ Server started but not responding to health check', 'WARN');
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
           // Try the index page
-          const indexResponse = execSync('curl -s http://localhost:3001/ || echo "Index page not responding"', { encoding: 'utf8' });
-          this.log(`Index page response: ${indexResponse.substring(0, 100)}...`);
+          const indexResponse = execSync(
+            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            { encoding: 'utf8' },
+          );
+          this.log(
+            `Index page response: ${indexResponse.substring(0, 100)}...`,
+          );
         } else {
           this.fixes.push('Working app started and responding');
           this.log('✅ Working app started and responding');
@@ -293,7 +317,7 @@ module.exports = nextConfig;`;
       } catch (error) {
         this.log('⚠️ Server test failed, but continuing...', 'WARN');
       }
-      
+
       return devProcess;
     } catch (error) {
       this.log(`❌ Error starting working app: ${error.message}`, 'ERROR');
@@ -306,10 +330,10 @@ module.exports = nextConfig;`;
 // Run if called directly
 if (require.main === module) {
   const automation = new ComprehensiveAutomation();
-  automation.runComprehensiveAutomation().catch(error => {
+  automation.runComprehensiveAutomation().catch((error) => {
     console.error('Comprehensive automation failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = ComprehensiveAutomation; 
+module.exports = ComprehensiveAutomation;

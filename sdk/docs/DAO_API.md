@@ -8,10 +8,10 @@ _Detailed function definitions, parameters, and return types will be specified h
 
 **Examples:**
 
-*   `createProposal(proposalDetails)`
-*   `getProposal(proposalId)`
-*   `listProposals(statusFilter, pagination)`
-*   `voteOnProposal(proposalId, voteOption, stakeAmount)`
-*   `getVotingPower(userId)`
-*   `getTreasuryBalance()`
-*   `listTreasuryTransactions(pagination)`
+- `createProposal(proposalDetails)`
+- `getProposal(proposalId)`
+- `listProposals(statusFilter, pagination)`
+- `voteOnProposal(proposalId, voteOption, stakeAmount)`
+- `getVotingPower(userId)`
+- `getTreasuryBalance()`
+- `listTreasuryTransactions(pagination)`

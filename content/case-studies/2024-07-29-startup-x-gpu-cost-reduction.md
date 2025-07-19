@@ -1,17 +1,18 @@
 ---
 {
-  "title": "Startup X Cuts GPU Costs by 35% with Zion Cloud Rental",
-  "excerpt": "How a fast-growing AI company saved over a third on compute spending.",
-  "company": "Startup X",
-  "companyLogo": "/logos/zion-logo.png",
-  "avatar": "/images/blog-placeholder.svg",
-  "quote": "Zion's Cloud GPU Rental gave us the computing muscle we needed at just the right price.",
-  "author": "Alex Brown",
-  "role": "Co-Founder & CTO",
-  "featuredImage": "/images/blog-placeholder.svg",
-  "publishedDate": "Jul 29, 2024"
+  'title': 'Startup X Cuts GPU Costs by 35% with Zion Cloud Rental',
+  'excerpt': 'How a fast-growing AI company saved over a third on compute spending.',
+  'company': 'Startup X',
+  'companyLogo': '/logos/zion-logo.png',
+  'avatar': '/images/blog-placeholder.svg',
+  'quote': "Zion's Cloud GPU Rental gave us the computing muscle we needed at just the right price.",
+  'author': 'Alex Brown',
+  'role': 'Co-Founder & CTO',
+  'featuredImage': '/images/blog-placeholder.svg',
+  'publishedDate': 'Jul 29, 2024',
 }
 ---
+
 Startup X is a machine learning company building real-time analytics. They needed flexible GPU power to train complex models. Their on-premise infrastructure was small and cloud options were expensive. Zion's Cloud GPU Rental promised an efficient alternative without long contracts.
 
 Before using Zion, Startup X's monthly GPU expenses averaged $15,000, forcing them to limit training cycles. Their team estimated that 40% of GPU time was idle due to the inflexibility of reserved instances. The startup required a pay-as-you-go option that scaled with demand.

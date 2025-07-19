@@ -21,7 +21,7 @@ class ContinuousLintHealing {
     this.healingCooldown = 60000; // 1 minute cooldown
     this.watchedFiles = new Set();
     this.issueCount = 0;
-    
+
     // Configuration
     this.config = {
       watchPatterns: [
@@ -30,7 +30,7 @@ class ContinuousLintHealing {
         'components/**/*.{js,jsx,ts,tsx}',
         'utils/**/*.{js,jsx,ts,tsx}',
         'hooks/**/*.{js,jsx,ts,tsx}',
-        'context/**/*.{js,jsx,ts,tsx}'
+        'context/**/*.{js,jsx,ts,tsx}',
       ],
       ignorePatterns: [
         'node_modules/**',
@@ -38,10 +38,10 @@ class ContinuousLintHealing {
         'dist/**',
         'out/**',
         'coverage/**',
-        '*.log'
+        '*.log',
       ],
       checkInterval: 30000, // Check every 30 seconds
-      maxIssuesBeforeHealing: 5
+      maxIssuesBeforeHealing: 5,
     };
   }
 
@@ -52,22 +52,21 @@ class ContinuousLintHealing {
 
   async start() {
     this.log('Starting Continuous Lint Healing Monitor...');
-    
+
     try {
       // Start file watcher
       this.startFileWatcher();
-      
+
       // Start periodic checks
       this.startPeriodicChecks();
-      
+
       // Start the self-healing system
       this.selfHealingSystem.startMonitoring();
-      
+
       this.log('Continuous Lint Healing Monitor started successfully');
-      
+
       // Keep the process running
       this.keepAlive();
-      
     } catch (error) {
       this.log(`Failed to start monitor: ${error.message}`, 'ERROR');
       process.exit(1);
@@ -76,31 +75,35 @@ class ContinuousLintHealing {
 
   startFileWatcher() {
     this.log('Starting file watcher...');
-    
+
     const watcher = chokidar.watch(this.config.watchPatterns, {
       ignored: this.config.ignorePatterns,
       persistent: true,
-      ignoreInitial: true
+      ignoreInitial: true,
     });
-    
+
     watcher.on('add', (filePath) => this.handleFileChange(filePath, 'add'));
-    watcher.on('change', (filePath) => this.handleFileChange(filePath, 'change'));
-    watcher.on('unlink', (filePath) => this.handleFileChange(filePath, 'unlink'));
-    
+    watcher.on('change', (filePath) =>
+      this.handleFileChange(filePath, 'change'),
+    );
+    watcher.on('unlink', (filePath) =>
+      this.handleFileChange(filePath, 'unlink'),
+    );
+
     watcher.on('ready', () => {
       this.log('File watcher ready');
     });
-    
+
     watcher.on('error', (error) => {
       this.log(`File watcher error: ${error.message}`, 'ERROR');
     });
-    
+
     this.watcher = watcher;
   }
 
   startPeriodicChecks() {
     this.log('Starting periodic lint checks...');
-    
+
     setInterval(async () => {
       await this.performPeriodicCheck();
     }, this.config.checkInterval);
@@ -108,10 +111,10 @@ class ContinuousLintHealing {
 
   async handleFileChange(filePath, event) {
     this.log(`File ${event}: ${filePath}`);
-    
+
     // Add to watched files set
     this.watchedFiles.add(filePath);
-    
+
     // Check for lint issues after a short delay
     setTimeout(async () => {
       await this.checkForIssuesAndHeal();
@@ -120,14 +123,14 @@ class ContinuousLintHealing {
 
   async performPeriodicCheck() {
     this.log('Performing periodic lint check...');
-    
+
     try {
       const issues = await this.checkForLintIssues();
-      
+
       if (issues.length > 0) {
         this.log(`Found ${issues.length} lint issues in periodic check`);
         this.issueCount += issues.length;
-        
+
         if (this.issueCount >= this.config.maxIssuesBeforeHealing) {
           await this.triggerHealing(issues);
           this.issueCount = 0; // Reset counter
@@ -136,7 +139,6 @@ class ContinuousLintHealing {
         this.log('No lint issues found in periodic check');
         this.issueCount = 0; // Reset counter
       }
-      
     } catch (error) {
       this.log(`Periodic check failed: ${error.message}`, 'ERROR');
     }
@@ -145,12 +147,11 @@ class ContinuousLintHealing {
   async checkForIssuesAndHeal() {
     try {
       const issues = await this.checkForLintIssues();
-      
+
       if (issues.length > 0) {
         this.log(`Found ${issues.length} lint issues, triggering healing...`);
         await this.triggerHealing(issues);
       }
-      
     } catch (error) {
       this.log(`Issue check failed: ${error.message}`, 'ERROR');
     }
@@ -160,20 +161,21 @@ class ContinuousLintHealing {
     try {
       const lintOutput = execSync('npm run lint', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       // No issues found
       return [];
     } catch (error) {
       // Parse lint output for issues
       if (error.stdout) {
         const lines = error.stdout.split('\n');
-        return lines.filter(line => 
-          line.includes('error') || line.includes('warning')
-        ).map(line => line.trim()).filter(Boolean);
+        return lines
+          .filter((line) => line.includes('error') || line.includes('warning'))
+          .map((line) => line.trim())
+          .filter(Boolean);
       }
-      
+
       return [];
     }
   }
@@ -185,33 +187,34 @@ class ContinuousLintHealing {
       this.log('Healing on cooldown, skipping...');
       return;
     }
-    
+
     if (this.isRunning) {
       this.log('Healing already in progress, skipping...');
       return;
     }
-    
+
     this.isRunning = true;
     this.lastHealingTime = now;
-    
+
     try {
       this.log(`Triggering healing for ${issues.length} issues...`);
-      
+
       // Trigger the self-healing system
       await this.selfHealingSystem.triggerManualFix();
-      
+
       // Wait for healing to complete
       await this.sleep(10000);
-      
+
       // Check if issues were resolved
       const remainingIssues = await this.checkForLintIssues();
-      
+
       if (remainingIssues.length === 0) {
         this.log('Healing resolved all issues');
       } else {
-        this.log(`Healing reduced issues from ${issues.length} to ${remainingIssues.length}`);
+        this.log(
+          `Healing reduced issues from ${issues.length} to ${remainingIssues.length}`,
+        );
       }
-      
     } catch (error) {
       this.log(`Healing failed: ${error.message}`, 'ERROR');
     } finally {
@@ -228,7 +231,7 @@ class ContinuousLintHealing {
       }
       process.exit(0);
     });
-    
+
     process.on('SIGTERM', () => {
       this.log('Shutting down Continuous Lint Healing Monitor...');
       if (this.watcher) {
@@ -236,7 +239,7 @@ class ContinuousLintHealing {
       }
       process.exit(0);
     });
-    
+
     // Keep alive with periodic heartbeat
     setInterval(() => {
       this.log('Continuous Lint Healing Monitor heartbeat');
@@ -244,7 +247,7 @@ class ContinuousLintHealing {
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
 
@@ -254,9 +257,9 @@ module.exports = ContinuousLintHealing;
 // Run if this script is executed directly
 if (require.main === module) {
   const continuousHealing = new ContinuousLintHealing();
-  
-  continuousHealing.start().catch(error => {
+
+  continuousHealing.start().catch((error) => {
     console.error('Continuous healing failed:', error.message);
     process.exit(1);
   });
-} 
+}

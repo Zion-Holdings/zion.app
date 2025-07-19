@@ -10,6 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     message: 'API endpoint working',
     endpoint: 'feedback',
     method: req.method,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 }

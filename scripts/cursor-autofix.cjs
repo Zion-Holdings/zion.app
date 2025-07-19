@@ -26,9 +26,12 @@ if (!apiKey || !projectId) {
 }
 
 async function getIssues() {
-  const res = await fetchModule(`${API}/projects/${projectId}/issues?status=open`, {
-    headers: { Authorization: `Bearer ${apiKey}` },
-  });
+  const res = await fetchModule(
+    `${API}/projects/${projectId}/issues?status=open`,
+    {
+      headers: { Authorization: `Bearer ${apiKey}` },
+    },
+  );
   return res.ok ? res.json() : [];
 }
 
@@ -83,4 +86,7 @@ async function run() {
   }
 }
 
-run().catch(e => { console.error(e); process.exit(1); }); 
+run().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

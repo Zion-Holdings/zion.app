@@ -2,7 +2,7 @@
 
 /**
  * Complete Production Deployment - Final Steps
- * 
+ *
  * Guides through the remaining 5% to achieve 100% production readiness
  */
 
@@ -19,7 +19,9 @@ class ProductionDeploymentCompleter {
   }
 
   printWelcome() {
-    console.warn('🎯 CURRENT STATUS: 95% Complete → Target: 100% Production Ready');
+    console.warn(
+      '🎯 CURRENT STATUS: 95% Complete → Target: 100% Production Ready',
+    );
     console.warn('⏱️  ESTIMATED TIME: 15 minutes');
     console.warn('🎉 GOAL: Complete enterprise production deployment\n');
   }
@@ -27,11 +29,13 @@ class ProductionDeploymentCompleter {
   printEnvironmentSetup() {
     console.warn('📋 STEP 1: ENVIRONMENT CONFIGURATION (5 minutes)');
     console.warn('================================================\n');
-    
+
     console.warn('🔧 REQUIRED: Configure Supabase Environment Variables');
     console.warn('');
     console.warn('📍 WHERE TO SET:');
-    console.warn('  • Netlify Dashboard → Site Settings → Environment Variables');
+    console.warn(
+      '  • Netlify Dashboard → Site Settings → Environment Variables',
+    );
     console.warn('  • OR: Local .env.production file (for testing)');
     console.warn('');
     console.warn('🔑 VARIABLES TO ADD:');
@@ -54,9 +58,11 @@ class ProductionDeploymentCompleter {
   printNetlifyDeployment() {
     console.warn('🌐 STEP 2: NETLIFY DEPLOYMENT UPDATE (3 minutes)');
     console.warn('==============================================\n');
-    
+
     console.warn('📍 NETLIFY CONFIGURATION:');
-    console.warn('  1. Go to: https://app.netlify.com/sites/ziontechgroup/settings/deploys');
+    console.warn(
+      '  1. Go to: https://app.netlify.com/sites/ziontechgroup/settings/deploys',
+    );
     console.warn('  2. Add environment variables from Step 1');
     console.warn('  3. Trigger new deployment');
     console.warn('');
@@ -69,27 +75,33 @@ class ProductionDeploymentCompleter {
   async validateCurrentDeployment() {
     console.warn('🔍 STEP 3: CURRENT DEPLOYMENT VALIDATION (2 minutes)');
     console.warn('===============================================\n');
-    
+
     console.warn('Checking current production status...\n');
-    
+
     const endpoints = [
       { name: 'Main App', path: '/', expected: 200 },
       { name: 'API Health', path: '/api/health', expected: 200 },
-      { name: 'Bundle Size', path: '/_next/static/chunks/pages/_app.js', expected: 200 }
+      {
+        name: 'Bundle Size',
+        path: '/_next/static/chunks/pages/_app.js',
+        expected: 200,
+      },
     ];
 
     for (const endpoint of endpoints) {
       const result = await this.checkEndpoint(endpoint.path);
       const status = result.success ? '✅' : '❌';
       const responseTime = result.responseTime;
-      
-      console.warn(`  ${status} ${endpoint.name}: ${result.status} (${responseTime}ms)`);
-      
+
+      console.warn(
+        `  ${status} ${endpoint.name}: ${result.status} (${responseTime}ms)`,
+      );
+
       if (endpoint.name === 'Bundle Size' && result.success) {
         console.warn(`    📦 Optimized bundle serving correctly`);
       }
     }
-    
+
     console.warn('');
   }
 
@@ -97,28 +109,30 @@ class ProductionDeploymentCompleter {
     return new Promise((resolve) => {
       const startTime = Date.now();
       const url = `${this.baseUrl}${path}`;
-      
-      https.get(url, (res) => {
-        const responseTime = Date.now() - startTime;
-        resolve({
-          status: res.statusCode,
-          responseTime,
-          success: res.statusCode >= 200 && res.statusCode < 400
+
+      https
+        .get(url, (res) => {
+          const responseTime = Date.now() - startTime;
+          resolve({
+            status: res.statusCode,
+            responseTime,
+            success: res.statusCode >= 200 && res.statusCode < 400,
+          });
+        })
+        .on('error', () => {
+          resolve({
+            status: 0,
+            responseTime: Date.now() - startTime,
+            success: false,
+          });
         });
-      }).on('error', () => {
-        resolve({
-          status: 0,
-          responseTime: Date.now() - startTime,
-          success: false
-        });
-      });
     });
   }
 
   printValidationCommands() {
     console.warn('✅ STEP 4: VALIDATION & VERIFICATION (3 minutes)');
     console.warn('===============================================\n');
-    
+
     console.warn('🔧 RUN THESE COMMANDS AFTER ENV SETUP:');
     console.warn('');
     console.warn('# 1. Validate environment configuration');
@@ -138,7 +152,7 @@ class ProductionDeploymentCompleter {
   printSuccessMetrics() {
     console.warn('🎉 STEP 5: SUCCESS CONFIRMATION (2 minutes)');
     console.warn('==========================================\n');
-    
+
     console.warn('🎯 SUCCESS CRITERIA - ALL MUST BE ✅:');
     console.warn('');
     console.warn('✅ Build System: Complete (96.7% bundle reduction achieved)');
@@ -160,7 +174,7 @@ class ProductionDeploymentCompleter {
   printQuickStart() {
     console.warn('⚡ QUICK START OPTION');
     console.warn('====================\n');
-    
+
     console.warn('🚀 FASTEST PATH TO 100% (5 minutes):');
     console.warn('');
     console.warn('1. Create Supabase project: https://supabase.com/dashboard');
@@ -176,9 +190,11 @@ class ProductionDeploymentCompleter {
   printNextSteps() {
     console.warn('🔮 IMMEDIATE NEXT STEPS AFTER 100%');
     console.warn('=================================\n');
-    
+
     console.warn('📈 PHASE 4 OPTIONS (Choose one):');
-    console.warn('  1. 🔍 Real User Monitoring - Track actual user performance');
+    console.warn(
+      '  1. 🔍 Real User Monitoring - Track actual user performance',
+    );
     console.warn('  2. 🎨 UI/UX Enhancements - Improve user experience');
     console.warn('  3. 📱 Progressive Web App - Mobile app features');
     console.warn('  4. 🚀 Advanced Features - Custom business logic');
@@ -195,12 +211,12 @@ class ProductionDeploymentCompleter {
     this.printSuccessMetrics();
     this.printQuickStart();
     this.printNextSteps();
-    
-    console.warn('=' .repeat(60));
+
+    console.warn('='.repeat(60));
     console.warn('🎯 STATUS: READY FOR FINAL 5% → 100% COMPLETION!');
     console.warn('⏱️  TIME NEEDED: 15 minutes');
     console.warn('🚀 OUTCOME: Enterprise Production Ready!');
-    console.warn('=' .repeat(60));
+    console.warn('='.repeat(60));
   }
 }
 

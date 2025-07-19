@@ -10,7 +10,13 @@ class CodeQualityEnhancer {
   }
 
   log(msg, type = 'info') {
-    const colors = { info: '\x1b[36m', success: '\x1b[32m', error: '\x1b[31m', warning: '\x1b[33m', reset: '\x1b[0m' };
+    const colors = {
+      info: '\x1b[36m',
+      success: '\x1b[32m',
+      error: '\x1b[31m',
+      warning: '\x1b[33m',
+      reset: '\x1b[0m',
+    };
     const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
@@ -37,9 +43,12 @@ class CodeQualityEnhancer {
     const report = {
       timestamp: new Date().toISOString(),
       runtime,
-      enhancements: this.enhancements
+      enhancements: this.enhancements,
     };
-    fs.writeFileSync('automation/code-quality-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'automation/code-quality-report.json',
+      JSON.stringify(report, null, 2),
+    );
   }
 
   async runCycle() {
@@ -50,11 +59,14 @@ class CodeQualityEnhancer {
   async start() {
     this.log('🚀 Starting Code Quality Enhancer...', 'success');
     await this.runCycle();
-    setInterval(async () => {
-      await this.runCycle();
-    }, 10 * 60 * 1000);
+    setInterval(
+      async () => {
+        await this.runCycle();
+      },
+      10 * 60 * 1000,
+    );
   }
 }
 
 const enhancer = new CodeQualityEnhancer();
-enhancer.start().catch(console.error); 
+enhancer.start().catch(console.error);

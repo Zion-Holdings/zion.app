@@ -16,7 +16,7 @@ class WatchpackFixer {
 
   async fixWatchpackIssue() {
     this.log('🔧 Fixing watchpack issue...');
-    
+
     try {
       // Check if .next directory exists and clean it
       if (fs.existsSync('.next')) {
@@ -34,13 +34,13 @@ class WatchpackFixer {
 
       // Fix Next.js configuration
       await this.fixNextConfig();
-      
+
       // Update package.json dev script
       await this.fixDevScript();
-      
+
       // Install missing dependencies
       await this.installMissingDeps();
-      
+
       this.log('✅ Watchpack issue fixes applied');
       return true;
     } catch (error) {
@@ -52,11 +52,11 @@ class WatchpackFixer {
 
   async fixNextConfig() {
     this.log('🔧 Fixing Next.js configuration...');
-    
+
     const nextConfigPath = 'next.config.js';
     if (fs.existsSync(nextConfigPath)) {
       let content = fs.readFileSync(nextConfigPath, 'utf8');
-      
+
       // Add webpack configuration to fix watchpack
       const webpackFix = `
 const nextConfig = {
@@ -93,17 +93,17 @@ const nextConfig = {
   },
 };
       `;
-      
+
       // Replace or add the configuration
       if (content.includes('module.exports')) {
         content = content.replace(
           /module\.exports\s*=\s*{[\s\S]*?};?/,
-          webpackFix + '\n\nmodule.exports = nextConfig;'
+          webpackFix + '\n\nmodule.exports = nextConfig;',
         );
       } else {
         content = webpackFix + '\n\nmodule.exports = nextConfig;';
       }
-      
+
       fs.writeFileSync(nextConfigPath, content);
       this.fixes.push('Fixed Next.js configuration');
     }
@@ -111,16 +111,19 @@ const nextConfig = {
 
   async fixDevScript() {
     this.log('🔧 Fixing dev script...');
-    
+
     try {
       const packagePath = 'package.json';
       const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-      
+
       // Update dev script with better options
-      packageJson.scripts.dev = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev";
-      packageJson.scripts['dev:stable'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo";
-      packageJson.scripts['dev:legacy'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo";
-      
+      packageJson.scripts.dev =
+        "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev";
+      packageJson.scripts['dev:stable'] =
+        "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo";
+      packageJson.scripts['dev:legacy'] =
+        "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo";
+
       fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
       this.fixes.push('Fixed dev script');
     } catch (error) {
@@ -131,16 +134,15 @@ const nextConfig = {
 
   async installMissingDeps() {
     this.log('📦 Installing missing dependencies...');
-    
+
     try {
       // Install chokidar for better file watching
       execSync('npm install chokidar --save-dev', { stdio: 'inherit' });
       this.fixes.push('Installed chokidar');
-      
+
       // Install glob for file pattern matching
       execSync('npm install glob --save-dev', { stdio: 'inherit' });
       this.fixes.push('Installed glob');
-      
     } catch (error) {
       this.log(`❌ Error installing dependencies: ${error.message}`);
       this.issues.push(error.message);
@@ -149,21 +151,25 @@ const nextConfig = {
 
   async testDevServer() {
     this.log('🧪 Testing development server...');
-    
+
     return new Promise((resolve) => {
-      const devProcess = require('child_process').spawn('npm', ['run', 'dev:stable', '--', '--port', '3001'], {
-        stdio: 'pipe',
-        shell: true
-      });
-      
+      const devProcess = require('child_process').spawn(
+        'npm',
+        ['run', 'dev:stable', '--', '--port', '3001'],
+        {
+          stdio: 'pipe',
+          shell: true,
+        },
+      );
+
       let output = '';
       let timeout;
-      
+
       const cleanup = () => {
         clearTimeout(timeout);
         devProcess.kill();
       };
-      
+
       devProcess.stdout.on('data', (data) => {
         output += data.toString();
         if (output.includes('Ready') || output.includes('Local:')) {
@@ -172,7 +178,7 @@ const nextConfig = {
           resolve(true);
         }
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         output += data.toString();
         if (output.includes('Error') || output.includes('Failed')) {
@@ -181,7 +187,7 @@ const nextConfig = {
           resolve(false);
         }
       });
-      
+
       // Timeout after 30 seconds
       timeout = setTimeout(() => {
         this.log('⏰ Timeout testing dev server');
@@ -193,26 +199,26 @@ const nextConfig = {
 
   async runFullFix() {
     this.log('🚀 Starting watchpack fix process...');
-    
+
     const steps = [
       { name: 'Fix watchpack issue', fn: () => this.fixWatchpackIssue() },
-      { name: 'Test dev server', fn: () => this.testDevServer() }
+      { name: 'Test dev server', fn: () => this.testDevServer() },
     ];
-    
+
     for (const step of steps) {
       this.log(`\n📋 Step: ${step.name}`);
       const result = await step.fn();
-      
+
       if (!result) {
         this.log(`❌ Step failed: ${step.name}`);
         this.issues.push(step.name);
       }
     }
-    
+
     this.log('\n📊 Fix Summary:');
     this.log(`✅ Applied: ${this.fixes.length} fixes`);
     this.log(`❌ Issues: ${this.issues.length} remaining`);
-    
+
     return this.issues.length === 0;
   }
 }
@@ -220,9 +226,9 @@ const nextConfig = {
 // CLI interface
 if (require.main === module) {
   const fixer = new WatchpackFixer();
-  fixer.runFullFix().then(success => {
+  fixer.runFullFix().then((success) => {
     process.exit(success ? 0 : 1);
   });
 }
 
-module.exports = { WatchpackFixer }; 
+module.exports = { WatchpackFixer };

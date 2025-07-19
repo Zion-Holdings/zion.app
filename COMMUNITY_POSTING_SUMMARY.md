@@ -1,11 +1,13 @@
 # Community Posting Feature
 
 ## ✅ Overview
+
 - Authenticated users can create new posts in any forum category.
 - Discussions support threaded replies and voting on posts or replies.
 - Members may follow categories to get updates.
 
 ## 🚀 Key Components
+
 1. **CreatePostButton** (`src/components/community/CreatePostButton.tsx`)
    - Redirects guests to login with a return path.
    - Opens the post creation dialog for authenticated users.
@@ -20,9 +22,10 @@
    - Requires login before following a category.
 
 ## 🛠 Usage
+
 - Navigate to `/community` and pick a category.
 - Click **Create Post** to share a topic (login required).
 - Open a post to reply or vote on answers.
 - Use the **Follow** button on a category page to bookmark discussions.
 
-*Generated on $(date -I)*
+_Generated on $(date -I)_

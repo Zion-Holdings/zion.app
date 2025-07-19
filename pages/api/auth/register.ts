@@ -10,6 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     message: 'API endpoint working',
     endpoint: 'auth/register',
     method: req.method,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 }

@@ -22,16 +22,16 @@ interface HealthResponse {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<HealthResponse>
+  res: NextApiResponse<HealthResponse>,
 ) {
   const startTime = Date.now();
-  
+
   try {
     // Basic health checks
     const checks = {
       database: true, // Assume database is working
-      api: true,      // API is responding
-      build: true     // Build is successful
+      api: true, // API is responding
+      build: true, // Build is successful
     };
 
     // Memory usage
@@ -39,7 +39,7 @@ export default async function handler(
     const memory = {
       used: Math.round(memUsage.heapUsed / 1024 / 1024),
       total: Math.round(memUsage.heapTotal / 1024 / 1024),
-      percentage: Math.round((memUsage.heapUsed / memUsage.heapTotal) * 100)
+      percentage: Math.round((memUsage.heapUsed / memUsage.heapTotal) * 100),
     };
 
     // Uptime
@@ -54,7 +54,7 @@ export default async function handler(
       version: process.env.npm_package_version || '1.0.0',
       uptime,
       memory,
-      checks
+      checks,
     };
 
     res.status(200).json(response);
@@ -70,13 +70,13 @@ export default async function handler(
       memory: {
         used: 0,
         total: 0,
-        percentage: 0
+        percentage: 0,
       },
       checks: {
         database: false,
         api: false,
-        build: false
-      }
+        build: false,
+      },
     };
 
     res.status(500).json(response);

@@ -15,7 +15,7 @@ class SimpleStart {
 
   createMinimalApp() {
     this.log('Creating minimal app structure...');
-    
+
     // Create minimal _app.tsx
     const appContent = `import type { AppProps } from 'next/app';
 
@@ -23,7 +23,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', '_app.tsx'), appContent);
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', '_app.tsx'),
+      appContent,
+    );
     this.log('Created _app.tsx');
 
     // Create minimal index.tsx
@@ -45,7 +48,10 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 }`;
 
-    fs.writeFileSync(path.join(this.projectRoot, 'pages', 'index.tsx'), indexContent);
+    fs.writeFileSync(
+      path.join(this.projectRoot, 'pages', 'index.tsx'),
+      indexContent,
+    );
     this.log('Created index.tsx');
 
     // Create minimal API
@@ -69,14 +75,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   startServer() {
     this.log('Starting development server...');
-    
+
     const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
       cwd: this.projectRoot,
       stdio: 'inherit',
       env: {
         ...process.env,
-        NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096'
-      }
+        NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+      },
     });
 
     server.on('error', (error) => {
@@ -103,7 +109,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   run() {
     this.log('Starting simple app automation...');
-    
+
     try {
       this.createMinimalApp();
       this.startServer();
@@ -120,4 +126,4 @@ if (require.main === module) {
   app.run();
 }
 
-module.exports = SimpleStart; 
+module.exports = SimpleStart;

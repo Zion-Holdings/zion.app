@@ -19,7 +19,9 @@ class BuildValidator {
     this.checks.push({
       name: 'Build Directory',
       status: exists ? 'pass' : 'fail',
-      details: exists ? 'Build directory exists' : 'No build found - run npm run build'
+      details: exists
+        ? 'Build directory exists'
+        : 'No build found - run npm run build',
     });
   }
 
@@ -28,8 +30,8 @@ class BuildValidator {
     const exists = fs.existsSync(staticPath);
     this.checks.push({
       name: 'Static Assets',
-      status: exists ? 'pass' : 'fail', 
-      details: exists ? 'Static assets generated' : 'Static assets missing'
+      status: exists ? 'pass' : 'fail',
+      details: exists ? 'Static assets generated' : 'Static assets missing',
     });
   }
 
@@ -39,7 +41,7 @@ class BuildValidator {
     this.checks.push({
       name: 'Server Build',
       status: exists ? 'pass' : 'fail',
-      details: exists ? 'Server build complete' : 'Server build missing'
+      details: exists ? 'Server build complete' : 'Server build missing',
     });
   }
 
@@ -49,7 +51,7 @@ class BuildValidator {
     this.checks.push({
       name: 'Build Manifest',
       status: exists ? 'pass' : 'fail',
-      details: exists ? 'Build manifest present' : 'Build manifest missing'
+      details: exists ? 'Build manifest present' : 'Build manifest missing',
     });
   }
 
@@ -58,8 +60,8 @@ class BuildValidator {
     this.validateStaticFiles();
     this.validateServerFiles();
     this.validateManifest();
-    
-    const allPassed = this.checks.every(check => check.status === 'pass');
+
+    const allPassed = this.checks.every((check) => check.status === 'pass');
     return allPassed;
   }
 }

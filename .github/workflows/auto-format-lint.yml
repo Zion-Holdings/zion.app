@@ -35,14 +35,14 @@ jobs:
         env:
           # The script configures git user itself.
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The script uses git commands directly.
-                                                    # It needs git to be authenticated.
-                                                    # The checkout action usually sets up http context for GITHUB_TOKEN.
-                                                    # If pushing over SSH, SSH keys would be needed.
-                                                    # For HTTPS pushes with GITHUB_TOKEN:
-          GIT_AUTHOR_NAME: "GitHub Actions Bot"
-          GIT_AUTHOR_EMAIL: "actions-bot@users.noreply.github.com" # Standard GH Actions bot email
-          GIT_COMMITTER_NAME: "GitHub Actions Bot"
-          GIT_COMMITTER_EMAIL: "actions-bot@users.noreply.github.com"
+          # It needs git to be authenticated.
+          # The checkout action usually sets up http context for GITHUB_TOKEN.
+          # If pushing over SSH, SSH keys would be needed.
+          # For HTTPS pushes with GITHUB_TOKEN:
+          GIT_AUTHOR_NAME: 'GitHub Actions Bot'
+          GIT_AUTHOR_EMAIL: 'actions-bot@users.noreply.github.com' # Standard GH Actions bot email
+          GIT_COMMITTER_NAME: 'GitHub Actions Bot'
+          GIT_COMMITTER_EMAIL: 'actions-bot@users.noreply.github.com'
           # The script itself has GIT_USER_NAME and GIT_USER_EMAIL,
           # ensure they are either overridden by env or the script is modified
           # to use these standard GitHub Actions bot credentials.

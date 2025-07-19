@@ -10,7 +10,13 @@ class BuildOptimizer {
   }
 
   log(msg, type = 'info') {
-    const colors = { info: '\x1b[36m', success: '\x1b[32m', error: '\x1b[31m', warning: '\x1b[33m', reset: '\x1b[0m' };
+    const colors = {
+      info: '\x1b[36m',
+      success: '\x1b[32m',
+      error: '\x1b[31m',
+      warning: '\x1b[33m',
+      reset: '\x1b[0m',
+    };
     const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
@@ -26,10 +32,10 @@ class BuildOptimizer {
 
   async optimizeBuild() {
     this.log('🔨 Optimizing build...', 'info');
-    
+
     // Clean build
     await this.runCommand('rm -rf .next');
-    
+
     // Run build with optimizations
     const build = await this.runCommand('npm run build');
     if (build.success) {
@@ -45,9 +51,12 @@ class BuildOptimizer {
     const report = {
       timestamp: new Date().toISOString(),
       runtime,
-      optimizations: this.optimizations
+      optimizations: this.optimizations,
     };
-    fs.writeFileSync('automation/build-report.json', JSON.stringify(report, null, 2));
+    fs.writeFileSync(
+      'automation/build-report.json',
+      JSON.stringify(report, null, 2),
+    );
   }
 
   async runCycle() {
@@ -58,11 +67,14 @@ class BuildOptimizer {
   async start() {
     this.log('🚀 Starting Build Optimizer...', 'success');
     await this.runCycle();
-    setInterval(async () => {
-      await this.runCycle();
-    }, 15 * 60 * 1000); // Every 15 minutes
+    setInterval(
+      async () => {
+        await this.runCycle();
+      },
+      15 * 60 * 1000,
+    ); // Every 15 minutes
   }
 }
 
 const optimizer = new BuildOptimizer();
-optimizer.start().catch(console.error); 
+optimizer.start().catch(console.error);

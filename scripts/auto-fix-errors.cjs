@@ -33,30 +33,30 @@ class AutoFixSystem {
 
   async fixTypeScriptErrors() {
     this.log('Fixing TypeScript errors...');
-    
+
     try {
       // Run TypeScript compiler to get errors
-      const tscOutput = execSync('npx tsc --noEmit --pretty false', { 
+      const tscOutput = execSync('npx tsc --noEmit --pretty false', {
         encoding: 'utf8',
-        stdio: ['pipe', 'pipe', 'pipe']
+        stdio: ['pipe', 'pipe', 'pipe'],
       });
-      
+
       const errors = this.parseTypeScriptErrors(tscOutput);
-      
+
       for (const error of errors) {
         await this.fixTypeScriptError(error);
       }
-      
+
       this.log(`Fixed ${errors.length} TypeScript errors`);
     } catch (error) {
       // TSC will exit with error code if there are errors, which is expected
       const tscOutput = error.stdout || error.stderr || '';
       const errors = this.parseTypeScriptErrors(tscOutput);
-      
+
       for (const error of errors) {
         await this.fixTypeScriptError(error);
       }
-      
+
       this.log(`Fixed ${errors.length} TypeScript errors`);
     }
   }
@@ -64,7 +64,7 @@ class AutoFixSystem {
   parseTypeScriptErrors(output) {
     const errors = [];
     const lines = output.split('\n');
-    
+
     for (const line of lines) {
       const match = line.match(/([^(]+)\((\d+),(\d+)\): error TS\d+: (.+)/);
       if (match) {
@@ -73,11 +73,11 @@ class AutoFixSystem {
           line: parseInt(match[2]),
           column: parseInt(match[3]),
           message: match[4],
-          fullLine: line
+          fullLine: line,
         });
       }
     }
-    
+
     return errors;
   }
 
@@ -89,16 +89,22 @@ class AutoFixSystem {
 
       const content = fs.readFileSync(error.file, 'utf8');
       const lines = content.split('\n');
-      
+
       if (error.message.includes('Cannot find module')) {
         await this.fixMissingImport(error, lines);
       } else if (error.message.includes('has no exported member')) {
         await this.fixMissingExport(error, lines);
-      } else if (error.message.includes('Property') && error.message.includes('does not exist')) {
+      } else if (
+        error.message.includes('Property') &&
+        error.message.includes('does not exist')
+      ) {
         await this.fixPropertyError(error, lines);
       } else if (error.message.includes('Object is possibly')) {
         await this.fixNullCheck(error, lines);
-      } else if (error.message.includes('Type') && error.message.includes('is not assignable')) {
+      } else if (
+        error.message.includes('Type') &&
+        error.message.includes('is not assignable')
+      ) {
         await this.fixTypeAssignment(error, lines);
       }
     } catch (fixError) {
@@ -110,7 +116,7 @@ class AutoFixSystem {
     const match = error.message.match(/Cannot find module ['"]([^'"]+)['"]/);
     if (match) {
       const moduleName = match[1];
-      
+
       // Try to install the package
       try {
         execSync(`npm install ${moduleName}`, { stdio: 'pipe' });
@@ -132,19 +138,22 @@ class AutoFixSystem {
       `src/${moduleName}`,
       `components/${moduleName}`,
       `utils/${moduleName}`,
-      `lib/${moduleName}`
+      `lib/${moduleName}`,
     ];
 
     for (const possiblePath of possiblePaths) {
       const extensions = ['.ts', '.tsx', '.js', '.jsx'];
       for (const ext of extensions) {
-        const fullPath = path.resolve(path.dirname(error.file), possiblePath + ext);
+        const fullPath = path.resolve(
+          path.dirname(error.file),
+          possiblePath + ext,
+        );
         if (fs.existsSync(fullPath)) {
           // Fix the import statement
           const importLine = lines[error.line - 1];
           const newImportLine = importLine.replace(
             /from ['"][^'"]*['"]/,
-            `from '${possiblePath}${ext}'`
+            `from '${possiblePath}${ext}'`,
           );
           lines[error.line - 1] = newImportLine;
           fs.writeFileSync(error.file, lines.join('\n'));
@@ -157,20 +166,22 @@ class AutoFixSystem {
   }
 
   async fixMissingExport(error, lines) {
-    const match = error.message.match(/Module ['"]([^'"]+)['"] has no exported member ['"]([^'"]+)['"]/);
+    const match = error.message.match(
+      /Module ['"]([^'"]+)['"] has no exported member ['"]([^'"]+)['"]/,
+    );
     if (match) {
       const [, modulePath, exportName] = match;
       const moduleFile = this.resolveModulePath(modulePath);
-      
+
       if (moduleFile && fs.existsSync(moduleFile)) {
         const moduleContent = fs.readFileSync(moduleFile, 'utf8');
         const moduleLines = moduleContent.split('\n');
-        
+
         // Check if the export exists
-        const hasExport = moduleLines.some(line => 
-          line.includes(`export`) && line.includes(exportName)
+        const hasExport = moduleLines.some(
+          (line) => line.includes(`export`) && line.includes(exportName),
         );
-        
+
         if (!hasExport) {
           // Add the missing export
           moduleLines.push(`export { ${exportName} };`);
@@ -183,10 +194,12 @@ class AutoFixSystem {
   }
 
   async fixPropertyError(error, lines) {
-    const match = error.message.match(/Property ['"]([^'"]+)['"] does not exist on type ['"]([^'"]+)['"]/);
+    const match = error.message.match(
+      /Property ['"]([^'"]+)['"] does not exist on type ['"]([^'"]+)['"]/,
+    );
     if (match) {
       const [, propertyName, typeName] = match;
-      
+
       // Try to add the missing property to the type definition
       const typeFile = this.findTypeDefinition(typeName);
       if (typeFile) {
@@ -222,7 +235,7 @@ class AutoFixSystem {
   resolveModulePath(modulePath) {
     const extensions = ['.ts', '.tsx', '.js', '.jsx'];
     const basePaths = ['src', 'pages', 'components', 'utils', 'lib'];
-    
+
     for (const basePath of basePaths) {
       for (const ext of extensions) {
         const fullPath = path.join(process.cwd(), basePath, modulePath + ext);
@@ -239,7 +252,10 @@ class AutoFixSystem {
     const typeFiles = glob.sync('**/*.d.ts', { cwd: process.cwd() });
     for (const typeFile of typeFiles) {
       const content = fs.readFileSync(typeFile, 'utf8');
-      if (content.includes(`interface ${typeName}`) || content.includes(`type ${typeName}`)) {
+      if (
+        content.includes(`interface ${typeName}`) ||
+        content.includes(`type ${typeName}`)
+      ) {
         return typeFile;
       }
     }
@@ -249,13 +265,15 @@ class AutoFixSystem {
   async addPropertyToType(typeFile, propertyName) {
     const content = fs.readFileSync(typeFile, 'utf8');
     const lines = content.split('\n');
-    
+
     for (let i = 0; i < lines.length; i++) {
       if (lines[i].includes('interface') || lines[i].includes('type')) {
         // Add property after the interface/type declaration
         lines.splice(i + 1, 0, `  ${propertyName}?: any;`);
         fs.writeFileSync(typeFile, lines.join('\n'));
-        this.log(`Added property ${propertyName} to type definition in ${typeFile}`);
+        this.log(
+          `Added property ${propertyName} to type definition in ${typeFile}`,
+        );
         this.fixesApplied.push(`Added property: ${propertyName}`);
         break;
       }
@@ -264,7 +282,7 @@ class AutoFixSystem {
 
   async fixESLintErrors() {
     this.log('Fixing ESLint errors...');
-    
+
     try {
       // Run ESLint with auto-fix
       execSync('npm run lint:fix', { stdio: 'inherit' });
@@ -277,10 +295,13 @@ class AutoFixSystem {
 
   async fixImportOrder() {
     this.log('Fixing import order...');
-    
+
     try {
       // Run import sorting
-      execSync('npx eslint --fix --rule "import/order: error" src/**/*.{ts,tsx}', { stdio: 'pipe' });
+      execSync(
+        'npx eslint --fix --rule "import/order: error" src/**/*.{ts,tsx}',
+        { stdio: 'pipe' },
+      );
       this.log('Import order fixed');
       this.fixesApplied.push('Import order');
     } catch (error) {
@@ -290,10 +311,13 @@ class AutoFixSystem {
 
   async fixUnusedImports() {
     this.log('Removing unused imports...');
-    
+
     try {
       // Run unused import removal
-      execSync('npx eslint --fix --rule "unused-imports/no-unused-imports: error" src/**/*.{ts,tsx}', { stdio: 'pipe' });
+      execSync(
+        'npx eslint --fix --rule "unused-imports/no-unused-imports: error" src/**/*.{ts,tsx}',
+        { stdio: 'pipe' },
+      );
       this.log('Unused imports removed');
       this.fixesApplied.push('Unused imports');
     } catch (error) {
@@ -303,9 +327,11 @@ class AutoFixSystem {
 
   async fixPrettierFormatting() {
     this.log('Fixing code formatting...');
-    
+
     try {
-      execSync('npx prettier --write "src/**/*.{ts,tsx,js,jsx}"', { stdio: 'inherit' });
+      execSync('npx prettier --write "src/**/*.{ts,tsx,js,jsx}"', {
+        stdio: 'inherit',
+      });
       this.log('Code formatting fixed');
       this.fixesApplied.push('Code formatting');
     } catch (error) {
@@ -315,33 +341,40 @@ class AutoFixSystem {
 
   async installMissingDependencies() {
     this.log('Checking for missing dependencies...');
-    
+
     try {
       // Check package.json for missing dependencies
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
-      
+      const allDeps = {
+        ...packageJson.dependencies,
+        ...packageJson.devDependencies,
+      };
+
       // Check if all imports have corresponding dependencies
       const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
       const missingDeps = new Set();
-      
+
       for (const file of tsFiles) {
         const content = fs.readFileSync(file, 'utf8');
         const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
-        
+
         if (importMatches) {
           for (const match of importMatches) {
             const moduleMatch = match.match(/from ['"]([^'"]+)['"]/);
             if (moduleMatch) {
               const moduleName = moduleMatch[1];
-              if (!moduleName.startsWith('.') && !moduleName.startsWith('@/') && !allDeps[moduleName]) {
+              if (
+                !moduleName.startsWith('.') &&
+                !moduleName.startsWith('@/') &&
+                !allDeps[moduleName]
+              ) {
                 missingDeps.add(moduleName);
               }
             }
           }
         }
       }
-      
+
       if (missingDeps.size > 0) {
         const depsArray = Array.from(missingDeps);
         execSync(`npm install ${depsArray.join(' ')}`, { stdio: 'inherit' });
@@ -356,12 +389,12 @@ class AutoFixSystem {
   async commitAndPush() {
     if (this.fixesApplied.length > 0) {
       try {
-        const commitMessage = `Auto-fix: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;
-        
+        const commitMessage = `Auto-fix: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map((fix) => `- ${fix}`).join('\n')}`;
+
         execSync('git add .', { stdio: 'inherit' });
         execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
         execSync('git push', { stdio: 'inherit' });
-        
+
         this.log('Changes committed and pushed successfully');
         return true;
       } catch (error) {
@@ -374,7 +407,7 @@ class AutoFixSystem {
 
   async run() {
     this.log('Starting auto-fix system...');
-    
+
     try {
       // Run all fix operations
       await this.fixTypeScriptErrors();
@@ -383,18 +416,19 @@ class AutoFixSystem {
       await this.fixUnusedImports();
       await this.fixPrettierFormatting();
       await this.installMissingDependencies();
-      
+
       // Commit and push changes
       const committed = await this.commitAndPush();
-      
+
       if (committed) {
-        this.log('Auto-fix completed successfully. New build will be triggered.');
+        this.log(
+          'Auto-fix completed successfully. New build will be triggered.',
+        );
       } else {
         this.log('Auto-fix completed but no changes were committed.');
       }
-      
+
       this.log(`Total fixes applied: ${this.fixesApplied.length}`);
-      
     } catch (error) {
       this.log(`Auto-fix system failed: ${error.message}`, 'ERROR');
       throw error;
@@ -405,10 +439,10 @@ class AutoFixSystem {
 // Run the auto-fix system
 if (require.main === module) {
   const autoFix = new AutoFixSystem();
-  autoFix.run().catch(error => {
+  autoFix.run().catch((error) => {
     console.error('Auto-fix system failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = AutoFixSystem; 
+module.exports = AutoFixSystem;

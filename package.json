@@ -28,7 +28,13 @@
     "cursor:chat": "node scripts/cursor-multi-computer-communication.cjs chat",
     "cursor:fix": "node scripts/cursor-multi-computer-communication.cjs fix",
     "cursor:monitor": "node scripts/cursor-controller.cjs monitor",
-    "cursor:auto-fix": "node scripts/cursor-controller.cjs auto-fix"
+    "cursor:auto-fix": "node scripts/cursor-controller.cjs auto-fix",
+    "chat:start": "node scripts/automated-chat-reconnection.cjs start",
+    "chat:stop": "node scripts/automated-chat-reconnection.cjs stop",
+    "chat:status": "node scripts/automated-chat-reconnection.cjs status",
+    "chat:install": "node scripts/automated-chat-reconnection.cjs install",
+    "chat:web": "open http://localhost:3009",
+    "analyze": "ANALYZE=true npm run build"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -86,6 +92,7 @@
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.4",
     "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
     "typescript": "5.8.3",
     "vitest": "^3.2.4"
   }

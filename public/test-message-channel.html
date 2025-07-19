@@ -1,140 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Channel Error Test</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .test-section {
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .success { background-color: #d4edda; border-color: #c3e6cb; }
-        .error { background-color: #f8d7da; border-color: #f5c6cb; }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #console-output {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-family: monospace;
-            white-space: pre-wrap;
-            max-height: 300px;
-            overflow-y: auto;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .test-section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+      }
+      .error {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #console-output {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 300px;
+        overflow-y: auto;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Message Channel Error Suppression Test</h1>
-    
+
     <div class="test-section">
-        <h3>Test 1: Extension Message Channel Error</h3>
-        <p>This test simulates the error you're experiencing with browser extension message channels.</p>
-        <button onclick="testExtensionError()">Test Extension Error</button>
+      <h3>Test 1: Extension Message Channel Error</h3>
+      <p>
+        This test simulates the error you're experiencing with browser extension
+        message channels.
+      </p>
+      <button onclick="testExtensionError()">Test Extension Error</button>
     </div>
-    
+
     <div class="test-section">
-        <h3>Test 2: Service Worker Message Channel Error</h3>
-        <p>This test simulates service worker message channel errors.</p>
-        <button onclick="testServiceWorkerError()">Test Service Worker Error</button>
+      <h3>Test 2: Service Worker Message Channel Error</h3>
+      <p>This test simulates service worker message channel errors.</p>
+      <button onclick="testServiceWorkerError()">
+        Test Service Worker Error
+      </button>
     </div>
-    
+
     <div class="test-section">
-        <h3>Test 3: Regular Error (Should Show)</h3>
-        <p>This test should show a regular error to confirm the suppression is working correctly.</p>
-        <button onclick="testRegularError()">Test Regular Error</button>
+      <h3>Test 3: Regular Error (Should Show)</h3>
+      <p>
+        This test should show a regular error to confirm the suppression is
+        working correctly.
+      </p>
+      <button onclick="testRegularError()">Test Regular Error</button>
     </div>
-    
+
     <div class="test-section">
-        <h3>Console Output</h3>
-        <div id="console-output"></div>
+      <h3>Console Output</h3>
+      <div id="console-output"></div>
     </div>
 
     <script>
-        // Capture console output
-        const originalConsoleError = console.error;
-        const originalConsoleWarn = console.warn;
-        const consoleOutput = document.getElementById('console-output');
-        
-        function logToOutput(message, type = 'log') {
-            const timestamp = new Date().toLocaleTimeString();
-            consoleOutput.textContent += `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
-            consoleOutput.scrollTop = consoleOutput.scrollHeight;
-        }
-        
-        console.error = function(...args) {
-            const message = args.join(' ');
-            logToOutput(message, 'error');
-            originalConsoleError.apply(console, args);
-        };
-        
-        console.warn = function(...args) {
-            const message = args.join(' ');
-            logToOutput(message, 'warn');
-            originalConsoleWarn.apply(console, args);
-        };
-        
-        // Test functions
-        function testExtensionError() {
-            logToOutput('Testing extension message channel error...', 'info');
-            
-            // Simulate the exact error you're experiencing
-            const error = new Error('A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received');
-            console.error(error);
-            
-            // Also test other extension-related errors
-            console.error('Extension context invalidated');
-            console.error('Could not establish connection. Receiving end does not exist.');
-        }
-        
-        function testServiceWorkerError() {
-            logToOutput('Testing service worker message channel error...', 'info');
-            
-            console.error('Service worker message channel closed');
-            console.error('postMessage failed: Message channel closed');
-            console.error('SYNC_FAILED: Background sync failed');
-        }
-        
-        function testRegularError() {
-            logToOutput('Testing regular error (should show)...', 'info');
-            
-            console.error('This is a regular error that should be visible');
-            console.warn('This is a regular warning that should be visible');
-        }
-        
-        // Clear console output
-        function clearOutput() {
-            consoleOutput.textContent = '';
-        }
-        
-        // Add clear button
-        document.addEventListener('DOMContentLoaded', () => {
-            const clearButton = document.createElement('button');
-            clearButton.textContent = 'Clear Output';
-            clearButton.onclick = clearOutput;
-            clearButton.style.backgroundColor = '#6c757d';
-            document.querySelector('.test-section:last-child').appendChild(clearButton);
-        });
+      // Capture console output
+      const originalConsoleError = console.error;
+      const originalConsoleWarn = console.warn;
+      const consoleOutput = document.getElementById('console-output');
+
+      function logToOutput(message, type = 'log') {
+        const timestamp = new Date().toLocaleTimeString();
+        consoleOutput.textContent += `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+      }
+
+      console.error = function (...args) {
+        const message = args.join(' ');
+        logToOutput(message, 'error');
+        originalConsoleError.apply(console, args);
+      };
+
+      console.warn = function (...args) {
+        const message = args.join(' ');
+        logToOutput(message, 'warn');
+        originalConsoleWarn.apply(console, args);
+      };
+
+      // Test functions
+      function testExtensionError() {
+        logToOutput('Testing extension message channel error...', 'info');
+
+        // Simulate the exact error you're experiencing
+        const error = new Error(
+          'A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received',
+        );
+        console.error(error);
+
+        // Also test other extension-related errors
+        console.error('Extension context invalidated');
+        console.error(
+          'Could not establish connection. Receiving end does not exist.',
+        );
+      }
+
+      function testServiceWorkerError() {
+        logToOutput('Testing service worker message channel error...', 'info');
+
+        console.error('Service worker message channel closed');
+        console.error('postMessage failed: Message channel closed');
+        console.error('SYNC_FAILED: Background sync failed');
+      }
+
+      function testRegularError() {
+        logToOutput('Testing regular error (should show)...', 'info');
+
+        console.error('This is a regular error that should be visible');
+        console.warn('This is a regular warning that should be visible');
+      }
+
+      // Clear console output
+      function clearOutput() {
+        consoleOutput.textContent = '';
+      }
+
+      // Add clear button
+      document.addEventListener('DOMContentLoaded', () => {
+        const clearButton = document.createElement('button');
+        clearButton.textContent = 'Clear Output';
+        clearButton.onclick = clearOutput;
+        clearButton.style.backgroundColor = '#6c757d';
+        document
+          .querySelector('.test-section:last-child')
+          .appendChild(clearButton);
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>

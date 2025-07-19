@@ -8,24 +8,29 @@ console.log('🔧 Final syntax fix - Rewriting corrupted files...');
 
 // Find all TypeScript and JavaScript files
 const files = glob.sync('src/**/*.{ts,tsx,js,jsx}', {
-  ignore: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**']
+  ignore: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**'],
 });
 
 let fixedFiles = 0;
 let totalIssues = 0;
 
-files.forEach(file => {
+files.forEach((file) => {
   try {
     let content = fs.readFileSync(file, 'utf8');
     let originalContent = content;
     let fileIssues = 0;
 
     // Check if file is severely corrupted
-    if (content.startsWith('}') || content.startsWith(';') || content.startsWith('/') || 
-        content.includes('export defaultault') || content.includes('Unexpected token') ||
-        content.length < 50) {
+    if (
+      content.startsWith('}') ||
+      content.startsWith(';') ||
+      content.startsWith('/') ||
+      content.includes('export defaultault') ||
+      content.includes('Unexpected token') ||
+      content.length < 50
+    ) {
       fileIssues++;
-      
+
       // Create a basic component structure
       if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
         const componentName = path.basename(file, path.extname(file));
@@ -49,10 +54,13 @@ export const ${moduleName} = {
     }
 
     // Fix remaining unterminated strings
-    content = content.replace(/import\s+([^;]+)\s+from\s+['"`]([^'"`]*)$/g, (match, importContent, modulePath) => {
-      fileIssues++;
-      return `import ${importContent} from '${modulePath}';`;
-    });
+    content = content.replace(
+      /import\s+([^;]+)\s+from\s+['"`]([^'"`]*)$/g,
+      (match, importContent, modulePath) => {
+        fileIssues++;
+        return `import ${importContent} from '${modulePath}';`;
+      },
+    );
 
     // Fix malformed export statements
     content = content.replace(/export defaultault/g, 'export default');
@@ -70,4 +78,6 @@ export const ${moduleName} = {
   }
 });
 
-console.log(`\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`); 
+console.log(
+  `\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`,
+);

@@ -1,341 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cursor Automated Communication</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            width: 400px;
-            min-height: 500px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
+      body {
+        width: 400px;
+        min-height: 500px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
 
-        .container {
-            padding: 1rem;
-        }
+      .container {
+        padding: 1rem;
+      }
 
-        .header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+      .header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
 
-        .header h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+      .header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
 
-        .header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+      .header p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
 
-        .status-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+      .status-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-        .status-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
+      .status-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
 
-        .status-item:last-child {
-            margin-bottom: 0;
-        }
+      .status-item:last-child {
+        margin-bottom: 0;
+      }
 
-        .status-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+      .status-label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
 
-        .status-value {
-            font-weight: bold;
-        }
+      .status-value {
+        font-weight: bold;
+      }
 
-        .status-indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-        }
+      .status-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+      }
 
-        .status-indicator.online {
-            background: #4CAF50;
-            animation: pulse 2s infinite;
-        }
+      .status-indicator.online {
+        background: #4caf50;
+        animation: pulse 2s infinite;
+      }
 
-        .status-indicator.offline {
-            background: #f44336;
-        }
+      .status-indicator.offline {
+        background: #f44336;
+      }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+      @keyframes pulse {
+        0% {
+          opacity: 1;
         }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
-        .toggle-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+      .toggle-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-        .toggle-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
+      .toggle-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
 
-        .toggle-label {
-            font-size: 0.9rem;
-        }
+      .toggle-label {
+        font-size: 0.9rem;
+      }
 
-        .toggle-switch {
-            position: relative;
-            width: 50px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+      .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-        .toggle-switch.active {
-            background: #4CAF50;
-        }
+      .toggle-switch.active {
+        background: #4caf50;
+      }
 
-        .toggle-switch::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
+      .toggle-switch::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.3s;
+      }
 
-        .toggle-switch.active::after {
-            transform: translateX(26px);
-        }
+      .toggle-switch.active::after {
+        transform: translateX(26px);
+      }
 
-        .actions-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+      .actions-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-        .action-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-bottom: 0.5rem;
-        }
+      .action-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-bottom: 0.5rem;
+      }
 
-        .action-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
+      .action-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
 
-        .action-btn:last-child {
-            margin-bottom: 0;
-        }
+      .action-btn:last-child {
+        margin-bottom: 0;
+      }
 
-        .stats-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+      .stats-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-        }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
 
-        .stat-item {
-            text-align: center;
-            padding: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-        }
+      .stat-item {
+        text-align: center;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+      }
 
-        .stat-value {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
+      .stat-value {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
 
-        .stat-label {
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
+      .stat-label {
+        font-size: 0.8rem;
+        opacity: 0.9;
+      }
 
-        .improvements-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            max-height: 150px;
-            overflow-y: auto;
-        }
+      .improvements-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        max-height: 150px;
+        overflow-y: auto;
+      }
 
-        .improvement-item {
-            padding: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-        }
+      .improvement-item {
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+      }
 
-        .improvement-item:last-child {
-            margin-bottom: 0;
-        }
+      .improvement-item:last-child {
+        margin-bottom: 0;
+      }
 
-        .improvement-type {
-            font-weight: bold;
-            color: #FFD700;
-        }
+      .improvement-type {
+        font-weight: bold;
+        color: #ffd700;
+      }
 
-        .improvement-time {
-            opacity: 0.7;
-            font-size: 0.7rem;
-        }
+      .improvement-time {
+        opacity: 0.7;
+        font-size: 0.7rem;
+      }
 
-        .footer {
-            text-align: center;
-            font-size: 0.8rem;
-            opacity: 0.7;
-            margin-top: 1rem;
-        }
+      .footer {
+        text-align: center;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        margin-top: 1rem;
+      }
 
-        .loading {
-            text-align: center;
-            padding: 2rem;
-        }
+      .loading {
+        text-align: center;
+        padding: 2rem;
+      }
 
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+      }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>🤖 Cursor Automated</h1>
-            <p>Continuous app improvement</p>
-        </div>
+      <div class="header">
+        <h1>🤖 Cursor Automated</h1>
+        <p>Continuous app improvement</p>
+      </div>
 
-        <div class="status-section">
-            <div class="status-item">
-                <span class="status-label">Status</span>
-                <div class="status-indicator" id="statusIndicator"></div>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Connection</span>
-                <span class="status-value" id="connectionStatus">Checking...</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Computer ID</span>
-                <span class="status-value" id="computerId">-</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Active Tabs</span>
-                <span class="status-value" id="activeTabs">-</span>
-            </div>
+      <div class="status-section">
+        <div class="status-item">
+          <span class="status-label">Status</span>
+          <div class="status-indicator" id="statusIndicator"></div>
         </div>
+        <div class="status-item">
+          <span class="status-label">Connection</span>
+          <span class="status-value" id="connectionStatus">Checking...</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Computer ID</span>
+          <span class="status-value" id="computerId">-</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Active Tabs</span>
+          <span class="status-value" id="activeTabs">-</span>
+        </div>
+      </div>
 
-        <div class="toggle-section">
-            <div class="toggle-item">
-                <span class="toggle-label">Automated Communication</span>
-                <div class="toggle-switch" id="automationToggle"></div>
-            </div>
-            <div class="toggle-item">
-                <span class="toggle-label">File Monitoring</span>
-                <div class="toggle-switch" id="fileMonitoringToggle"></div>
-            </div>
-            <div class="toggle-item">
-                <span class="toggle-label">Performance Tracking</span>
-                <div class="toggle-switch" id="performanceToggle"></div>
-            </div>
+      <div class="toggle-section">
+        <div class="toggle-item">
+          <span class="toggle-label">Automated Communication</span>
+          <div class="toggle-switch" id="automationToggle"></div>
         </div>
+        <div class="toggle-item">
+          <span class="toggle-label">File Monitoring</span>
+          <div class="toggle-switch" id="fileMonitoringToggle"></div>
+        </div>
+        <div class="toggle-item">
+          <span class="toggle-label">Performance Tracking</span>
+          <div class="toggle-switch" id="performanceToggle"></div>
+        </div>
+      </div>
 
-        <div class="actions-section">
-            <button class="action-btn" onclick="sendImprovement()">📤 Send Improvement</button>
-            <button class="action-btn" onclick="syncComputers()">🔄 Sync Computers</button>
-            <button class="action-btn" onclick="openWebInterface()">🌐 Open Interface</button>
-            <button class="action-btn" onclick="clearImprovements()">🗑️ Clear Improvements</button>
-        </div>
+      <div class="actions-section">
+        <button class="action-btn" onclick="sendImprovement()">
+          📤 Send Improvement
+        </button>
+        <button class="action-btn" onclick="syncComputers()">
+          🔄 Sync Computers
+        </button>
+        <button class="action-btn" onclick="openWebInterface()">
+          🌐 Open Interface
+        </button>
+        <button class="action-btn" onclick="clearImprovements()">
+          🗑️ Clear Improvements
+        </button>
+      </div>
 
-        <div class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value" id="improvementsCount">0</div>
-                    <div class="stat-label">Improvements</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="fileChangesCount">0</div>
-                    <div class="stat-label">File Changes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="lastSyncTime">-</div>
-                    <div class="stat-label">Last Sync</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="performanceScore">-</div>
-                    <div class="stat-label">Performance</div>
-                </div>
-            </div>
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value" id="improvementsCount">0</div>
+            <div class="stat-label">Improvements</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="fileChangesCount">0</div>
+            <div class="stat-label">File Changes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="lastSyncTime">-</div>
+            <div class="stat-label">Last Sync</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="performanceScore">-</div>
+            <div class="stat-label">Performance</div>
+          </div>
         </div>
+      </div>
 
-        <div class="improvements-section">
-            <h3 style="margin-bottom: 0.5rem; font-size: 0.9rem;">Recent Improvements</h3>
-            <div id="improvementsList">
-                <div class="improvement-item">
-                    <div class="improvement-type">System Initialized</div>
-                    <div class="improvement-time">Just now</div>
-                </div>
-            </div>
+      <div class="improvements-section">
+        <h3 style="margin-bottom: 0.5rem; font-size: 0.9rem">
+          Recent Improvements
+        </h3>
+        <div id="improvementsList">
+          <div class="improvement-item">
+            <div class="improvement-type">System Initialized</div>
+            <div class="improvement-time">Just now</div>
+          </div>
         </div>
+      </div>
 
-        <div class="footer">
-            Cursor Automated Communication v2.0
-        </div>
+      <div class="footer">Cursor Automated Communication v2.0</div>
     </div>
 
     <script src="popup.js"></script>
-</body>
-</html> 
+  </body>
+</html>

@@ -19,10 +19,10 @@ class AutomatedAppFixer {
       'ai-improvement-data',
       'ai-improvement-data/analysis',
       'ai-improvement-data/improvements',
-      'temp'
+      'temp',
     ];
-    
-    dirs.forEach(dir => {
+
+    dirs.forEach((dir) => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
@@ -33,26 +33,26 @@ class AutomatedAppFixer {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
-    
+
     // Write to log file
     fs.appendFileSync('logs/automation.log', logMessage + '\n');
   }
 
   async fixPackageJsonMergeConflict() {
     this.log('🔧 Fixing package.json merge conflict...');
-    
+
     try {
       const packagePath = 'package.json';
       let content = fs.readFileSync(packagePath, 'utf8');
-      
+
       // Remove merge conflict markers
       content = content.replace(/<<<<<<< HEAD\n/g, '');
       content = content.replace(/=======\n/g, '');
       content = content.replace(/>>>>>>> [^\n]*\n/g, '');
-      
+
       // Validate JSON
       JSON.parse(content);
-      
+
       fs.writeFileSync(packagePath, content);
       this.fixes.push('Fixed package.json merge conflict');
       this.log('✅ Package.json merge conflict fixed');
@@ -64,7 +64,7 @@ class AutomatedAppFixer {
 
   async fixWatchpackIssue() {
     this.log('🔧 Fixing watchpack issue...');
-    
+
     try {
       // Clean .next directory
       if (fs.existsSync('.next')) {
@@ -132,7 +132,7 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;`;
-        
+
         fs.writeFileSync(nextConfigPath, nextConfig);
         this.fixes.push('Updated next.config.js for watchpack fix');
       }
@@ -146,29 +146,31 @@ module.exports = nextConfig;`;
 
   async fixSyntaxErrors() {
     this.log('🔧 Fixing syntax errors...');
-    
+
     const patterns = [
       'pages/**/*.{ts,tsx,js,jsx}',
       'src/**/*.{ts,tsx,js,jsx}',
       'components/**/*.{ts,tsx,js,jsx}',
-      'api/**/*.{ts,tsx,js,jsx}'
+      'api/**/*.{ts,tsx,js,jsx}',
     ];
-    
+
     let totalFiles = 0;
     let fixedFiles = 0;
-    
+
     for (const pattern of patterns) {
       const files = this.findFiles(pattern);
       totalFiles += files.length;
-      
+
       for (const file of files) {
         if (await this.fixFileSyntax(file)) {
           fixedFiles++;
         }
       }
     }
-    
-    this.fixes.push(`Fixed ${fixedFiles}/${totalFiles} files with syntax errors`);
+
+    this.fixes.push(
+      `Fixed ${fixedFiles}/${totalFiles} files with syntax errors`,
+    );
     this.log(`✅ Fixed ${fixedFiles}/${totalFiles} files with syntax errors`);
   }
 
@@ -181,24 +183,24 @@ module.exports = nextConfig;`;
     try {
       let content = fs.readFileSync(filePath, 'utf8');
       let originalContent = content;
-      
+
       // Fix common syntax issues
       content = this.fixCommonSyntaxIssues(content);
-      
+
       // Fix specific file issues
       if (filePath.includes('server-polyfill')) {
         content = this.fixServerPolyfill(content);
       }
-      
+
       if (filePath.includes('analyze-bundle.js')) {
         content = this.fixAnalyzeBundle(content);
       }
-      
+
       if (content !== originalContent) {
         fs.writeFileSync(filePath, content);
         return true;
       }
-      
+
       return false;
     } catch (error) {
       this.log(`❌ Error fixing ${filePath}: ${error.message}`, 'ERROR');
@@ -210,16 +212,16 @@ module.exports = nextConfig;`;
     // Fix unterminated string constants
     content = content.replace(/"[^"]*$/gm, '""');
     content = content.replace(/'[^']*$/gm, "''");
-    
+
     // Fix malformed imports
     content = content.replace(/import\s+[^;]*$/gm, '');
-    
+
     // Fix missing semicolons
     content = content.replace(/([^;])\n/g, '$1;\n');
-    
+
     // Fix malformed function declarations
     content = content.replace(/function\s+[^{]*$/gm, 'function() {}');
-    
+
     return content;
   }
 
@@ -312,26 +314,26 @@ module.exports = BundleAnalyzer;`;
 
   async fixTestIssues() {
     this.log('🔧 Fixing test issues...');
-    
+
     try {
       // Fix missing test files
       const testFiles = [
         { path: 'src/pages/Profile.tsx', content: this.createProfilePage() },
-        { path: 'src/pages/Signup.tsx', content: this.createSignupPage() }
+        { path: 'src/pages/Signup.tsx', content: this.createSignupPage() },
       ];
-      
+
       for (const testFile of testFiles) {
         const dir = path.dirname(testFile.path);
         if (!fs.existsSync(dir)) {
           fs.mkdirSync(dir, { recursive: true });
         }
-        
+
         if (!fs.existsSync(testFile.path)) {
           fs.writeFileSync(testFile.path, testFile.content);
           this.fixes.push(`Created missing file: ${testFile.path}`);
         }
       }
-      
+
       this.log('✅ Test issues fixed');
     } catch (error) {
       this.log(`❌ Error fixing test issues: ${error.message}`, 'ERROR');
@@ -367,17 +369,22 @@ export default function Signup() {
 
   async fixScriptIssues() {
     this.log('🔧 Fixing script issues...');
-    
+
     try {
       // Fix scripts/package.json if it exists
       const scriptsPackagePath = 'scripts/package.json';
       if (fs.existsSync(scriptsPackagePath)) {
-        const scriptsPackage = JSON.parse(fs.readFileSync(scriptsPackagePath, 'utf8'));
+        const scriptsPackage = JSON.parse(
+          fs.readFileSync(scriptsPackagePath, 'utf8'),
+        );
         delete scriptsPackage.type; // Remove "type": "module" to fix __filename issue
-        fs.writeFileSync(scriptsPackagePath, JSON.stringify(scriptsPackage, null, 2));
+        fs.writeFileSync(
+          scriptsPackagePath,
+          JSON.stringify(scriptsPackage, null, 2),
+        );
         this.fixes.push('Fixed scripts/package.json module type');
       }
-      
+
       this.log('✅ Script issues fixed');
     } catch (error) {
       this.log(`❌ Error fixing script issues: ${error.message}`, 'ERROR');
@@ -387,39 +394,46 @@ export default function Signup() {
 
   async startDevServer() {
     this.log('🚀 Starting development server...');
-    
+
     try {
       // Kill any existing processes
       execSync('pkill -f "next dev" || true', { stdio: 'ignore' });
-      
+
       // Start dev server with fixed configuration
-      const devProcess = spawn('npm', ['run', 'dev:stable', '--', '--port', '3001'], {
-        stdio: 'pipe',
-        detached: false
-      });
-      
+      const devProcess = spawn(
+        'npm',
+        ['run', 'dev:stable', '--', '--port', '3001'],
+        {
+          stdio: 'pipe',
+          detached: false,
+        },
+      );
+
       devProcess.stdout.on('data', (data) => {
         this.log(`DEV: ${data.toString().trim()}`);
       });
-      
+
       devProcess.stderr.on('data', (data) => {
         this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
       });
-      
+
       // Wait for server to start
-      await new Promise(resolve => setTimeout(resolve, 10000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+
       // Test if server is responding
       try {
-        const response = execSync('curl -s http://localhost:3001/api/health || echo "Server not responding"', { encoding: 'utf8' });
+        const response = execSync(
+          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
         this.log(`Server test response: ${response.trim()}`);
       } catch (error) {
         this.log('Server test failed, but continuing...', 'WARN');
       }
-      
+
       this.fixes.push('Started development server');
       this.log('✅ Development server started');
-      
+
       return devProcess;
     } catch (error) {
       this.log(`❌ Error starting dev server: ${error.message}`, 'ERROR');
@@ -430,31 +444,31 @@ export default function Signup() {
 
   async runAllFixes() {
     this.log('🚀 Starting comprehensive app automation...');
-    
+
     await this.fixPackageJsonMergeConflict();
     await this.fixWatchpackIssue();
     await this.fixSyntaxErrors();
     await this.fixTestIssues();
     await this.fixScriptIssues();
-    
+
     const devProcess = await this.startDevServer();
-    
+
     this.log('📊 Automation Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);
     this.log(`❌ Issues encountered: ${this.issues.length}`);
-    
+
     if (this.fixes.length > 0) {
       this.log('Applied fixes:');
-      this.fixes.forEach(fix => this.log(`  - ${fix}`));
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
     }
-    
+
     if (this.issues.length > 0) {
       this.log('Issues encountered:');
-      this.issues.forEach(issue => this.log(`  - ${issue}`, 'ERROR'));
+      this.issues.forEach((issue) => this.log(`  - ${issue}`, 'ERROR'));
     }
-    
+
     this.log('🎉 Automation completed!');
-    
+
     return { fixes: this.fixes, issues: this.issues, devProcess };
   }
 }
@@ -462,10 +476,10 @@ export default function Signup() {
 // Run if called directly
 if (require.main === module) {
   const fixer = new AutomatedAppFixer();
-  fixer.runAllFixes().catch(error => {
+  fixer.runAllFixes().catch((error) => {
     console.error('Automation failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = AutomatedAppFixer; 
+module.exports = AutomatedAppFixer;

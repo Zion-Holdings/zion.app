@@ -4,7 +4,7 @@
  * environments by exiting early when Jest/Vitest are not installed.
  */
 function check(deps) {
-  return deps.filter(dep => {
+  return deps.filter((dep) => {
     try {
       require.resolve(dep);
       return false;
@@ -27,5 +27,3 @@ if (missing.length === deps.length) {
 const runner = missing.includes('jest') ? 'vitest' : 'jest';
 console.warn(`\u2705 Running tests with ${runner}...`);
 spawnSync(runner, { stdio: 'inherit' });
-
-

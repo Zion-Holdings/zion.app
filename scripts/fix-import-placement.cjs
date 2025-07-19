@@ -21,16 +21,13 @@ class ImportFixer {
    * Get all TypeScript/JavaScript files
    */
   getFilesToProcess() {
-    const patterns = [
-      'src/**/*.{ts,tsx,js,jsx}',
-      'pages/**/*.{ts,tsx,js,jsx}',
-    ];
+    const patterns = ['src/**/*.{ts,tsx,js,jsx}', 'pages/**/*.{ts,tsx,js,jsx}'];
 
     let allFiles = [];
-    patterns.forEach(pattern => {
-      const files = glob.sync(pattern, { 
+    patterns.forEach((pattern) => {
+      const files = glob.sync(pattern, {
         cwd: PROJECT_ROOT,
-        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**']
+        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**'],
       });
       allFiles = allFiles.concat(files);
     });
@@ -45,7 +42,7 @@ class ImportFixer {
     try {
       const fullPath = path.join(PROJECT_ROOT, filePath);
       const content = fs.readFileSync(fullPath, 'utf8');
-      
+
       // Look for misplaced imports (imports after export statements)
       const lines = content.split('\n');
       const importLines = [];
@@ -55,15 +52,22 @@ class ImportFixer {
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        
+
         // Check if we're entering an export function/component
-        if (line.match(/^export\s+(default\s+)?function|^export\s+(default\s+)?(class|const)/)) {
+        if (
+          line.match(
+            /^export\s+(default\s+)?function|^export\s+(default\s+)?(class|const)/,
+          )
+        ) {
           _hasExportFunction = true;
           inExportFunction = true;
         }
 
         // Look for misplaced imports after export functions
-        if (inExportFunction && line.match(/^import\s+.*from\s+['"]@\/utils\/productionLogger['"]/)) {
+        if (
+          inExportFunction &&
+          line.match(/^import\s+.*from\s+['"]@\/utils\/productionLogger['"]/)
+        ) {
           // This is a misplaced import - collect it
           importLines.push(line);
           continue; // Skip adding to otherLines
@@ -75,14 +79,14 @@ class ImportFixer {
       if (importLines.length > 0) {
         // We found misplaced imports, need to fix the file
         const fixedContent = this.reconstructFile(otherLines, importLines);
-        
+
         if (fixedContent !== content) {
           fs.writeFileSync(fullPath, fixedContent, 'utf8');
           this.fixedFiles++;
           return {
             fixed: true,
             importsFixed: importLines.length,
-            imports: importLines
+            imports: importLines,
           };
         }
       }
@@ -105,11 +109,15 @@ class ImportFixer {
     // Find where to insert the imports (after existing imports)
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
-      
+
       if (line.match(/^import\s+/)) {
         foundFirstImport = true;
         insertIndex = i + 1;
-      } else if (foundFirstImport && !line.trim().startsWith('import') && line.trim() !== '') {
+      } else if (
+        foundFirstImport &&
+        !line.trim().startsWith('import') &&
+        line.trim() !== ''
+      ) {
         // We've passed all the imports
         break;
       }
@@ -124,7 +132,7 @@ class ImportFixer {
     for (let i = 0; i < lines.length; i++) {
       if (i === insertIndex && misplacedImports.length > 0) {
         // Insert the misplaced imports here
-        misplacedImports.forEach(imp => result.push(imp));
+        misplacedImports.forEach((imp) => result.push(imp));
       }
       result.push(lines[i]);
     }
@@ -143,7 +151,7 @@ class ImportFixer {
    */
   async processAllFiles() {
     // console.warn('🔧 Fixing misplaced import statements...');
-    
+
     const files = this.getFilesToProcess();
     // console.warn(`📋 Found ${files.length} files to check`);
 
@@ -198,10 +206,10 @@ class ImportFixer {
 // CLI interface
 if (require.main === module) {
   const fixer = new ImportFixer();
-  fixer.processAllFiles().catch(_error => {
+  fixer.processAllFiles().catch((_error) => {
     // console.error('💥 Fatal error:', _error);
     process.exit(1);
   });
 }
 
-module.exports = ImportFixer; 
+module.exports = ImportFixer;

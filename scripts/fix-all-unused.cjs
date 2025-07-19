@@ -7,7 +7,10 @@ const { execSync } = require('child_process');
 // Find all JavaScript and TypeScript files
 const findFiles = () => {
   try {
-    const output = execSync('find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules', { encoding: 'utf8' });
+    const output = execSync(
+      'find . -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | grep -v node_modules',
+      { encoding: 'utf8' },
+    );
     return output.trim().split('\n').filter(Boolean);
   } catch (error) {
     console.error('Error finding files:', error.message);
@@ -49,7 +52,8 @@ const fixUnusedVariables = (filePath) => {
         // Check if the variable is actually used in the file
         const usagePattern = new RegExp(`\\b${varName}\\b`, 'g');
         const matches = content.match(usagePattern);
-        if (matches && matches.length <= 1) { // Only the declaration
+        if (matches && matches.length <= 1) {
+          // Only the declaration
           return `const ${varName} = undefined; // Unused`;
         }
         return match;
@@ -95,11 +99,11 @@ const fixUnusedVariables = (filePath) => {
 // Main execution
 const main = () => {
   console.log('🔧 Fixing all unused variables...');
-  
+
   const files = findFiles();
   let fixedCount = 0;
 
-  files.forEach(file => {
+  files.forEach((file) => {
     if (fixUnusedVariables(file)) {
       fixedCount++;
     }
@@ -112,4 +116,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { fixUnusedVariables }; 
+module.exports = { fixUnusedVariables };

@@ -52,6 +52,7 @@ The Cursor Automated Communication System enables seamless communication between
 ### Manual Installation
 
 1. **Make scripts executable**:
+
    ```bash
    chmod +x scripts/cursor-automated-communication.cjs
    chmod +x scripts/serve-interface.js
@@ -59,6 +60,7 @@ The Cursor Automated Communication System enables seamless communication between
    ```
 
 2. **Create necessary directories**:
+
    ```bash
    mkdir -p logs
    mkdir -p data/cursor-communication
@@ -66,6 +68,7 @@ The Cursor Automated Communication System enables seamless communication between
    ```
 
 3. **Configure the system**:
+
    ```bash
    ./scripts/configure-cursor-communication.sh
    ```
@@ -126,14 +129,7 @@ The system uses `config/cursor-automated-communication.json` for configuration:
     "styles",
     "tests"
   ],
-  "excludePaths": [
-    "node_modules",
-    ".git",
-    "dist",
-    "build",
-    "coverage",
-    "logs"
-  ]
+  "excludePaths": ["node_modules", ".git", "dist", "build", "coverage", "logs"]
 }
 ```
 
@@ -174,6 +170,7 @@ node scripts/serve-interface.js
 ### Web Interface
 
 Access the web interface at:
+
 - **Main Interface**: http://localhost:3007
 - **Communication API**: http://localhost:3008
 - **Coordination API**: http://localhost:3010
@@ -213,6 +210,7 @@ curl http://IP_ADDRESS:3010/sync
 ### Automatic Sync
 
 The system automatically syncs with other computers every 30 seconds, sharing:
+
 - Improvement suggestions
 - File changes
 - Performance metrics
@@ -223,6 +221,7 @@ The system automatically syncs with other computers every 30 seconds, sharing:
 ### Performance Metrics
 
 The system tracks:
+
 - Memory usage
 - CPU usage
 - Active tabs
@@ -233,6 +232,7 @@ The system tracks:
 ### Real-time Dashboards
 
 Access real-time analytics at:
+
 - **Performance Dashboard**: http://localhost:3007/#analytics
 - **Improvement Queue**: http://localhost:3008/improvements
 - **System Logs**: http://localhost:3007/#logs
@@ -240,6 +240,7 @@ Access real-time analytics at:
 ### Log Files
 
 Logs are stored in:
+
 - `logs/cursor-automated-communication.log` - Main system logs
 - `logs/web-interface.log` - Web interface logs
 - `data/cursor-communication/` - Persistent data
@@ -275,6 +276,7 @@ Logs are stored in:
 ### Improvement Queue
 
 Improvements are queued and processed automatically:
+
 - Maximum 100 improvements in queue
 - Processed every 30 seconds
 - Prioritized by impact and urgency
@@ -285,19 +287,21 @@ Improvements are queued and processed automatically:
 ### Common Issues
 
 1. **Connection Failed**
+
    ```bash
    # Check if local server is running
    curl http://localhost:3008/status
-   
+
    # Restart the system
    ./scripts/start-cursor-automated.sh restart
    ```
 
 2. **Port Already in Use**
+
    ```bash
    # Find process using the port
    lsof -i :3008
-   
+
    # Kill the process
    kill -9 PID
    ```
@@ -308,10 +312,11 @@ Improvements are queued and processed automatically:
    - Check browser console for errors
 
 4. **Sync Issues**
+
    ```bash
    # Check coordination server
    curl http://localhost:3010/sync
-   
+
    # Manual sync
    ./scripts/start-cursor-automated.sh restart
    ```
@@ -489,4 +494,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Version**: 2.0.0  
 **Last Updated**: July 2024  
-**Maintainer**: Cursor Automated Communication Team 
+**Maintainer**: Cursor Automated Communication Team

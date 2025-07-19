@@ -23,4 +23,3 @@ The monitoring stack now provides richer visibility into runtime errors. Datadog
 
 - 📈 Faster debugging with linked traces
 - 🎥 Replay user sessions to reproduce issues
-

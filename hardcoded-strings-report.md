@@ -16,10 +16,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### .storybook/main.ts
 
 **Hardcoded strings found:**
+
 - "@storybook/addon-essentials"
 - "@storybook/addon-a11y"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -27,12 +29,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/contact.js
 
 **Hardcoded strings found:**
+
 - "All fields are required"
 - "Failed to send message"
 - "Method Not Allowed"
 - "New contact message:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -40,11 +44,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/create-checkout-session.js
 
 **Hardcoded strings found:**
+
 - "Refusing to use live Stripe key on non-production domain"
 - "Create checkout session error:"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -52,12 +58,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/create-payment-intent.js
 
 **Hardcoded strings found:**
+
 - "Invalid amount"
 - "Refusing to use live Stripe key on non-production domain"
 - "Create payment intent error:"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -65,10 +73,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/feedback.js
 
 **Hardcoded strings found:**
+
 - "Failed to save feedback"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -76,10 +86,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/newsletter/subscribe.js
 
 **Hardcoded strings found:**
+
 - "Subscription failed"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -87,10 +99,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/nft/mint.js
 
 **Hardcoded strings found:**
+
 - "Invalid chain selected"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -98,10 +112,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/onsite-request.js
 
 **Hardcoded strings found:**
+
 - "Missing required fields"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -109,11 +125,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/quotes.js
 
 **Hardcoded strings found:**
+
 - "Missing required fields"
 - "Quote submission failed"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -121,10 +139,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/service-request.js
 
 **Hardcoded strings found:**
+
 - "Missing required fields"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -132,12 +152,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/stripe-webhook.js
 
 **Hardcoded strings found:**
+
 - "Failed to update order"
 - "Method Not Allowed"
 - "Webhook Error: ${err.message}"
 - "checkout.session.completed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -145,10 +167,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/subscribe.js
 
 **Hardcoded strings found:**
+
 - "Subscription failed"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -156,10 +180,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### api/wallet.js
 
 **Hardcoded strings found:**
+
 - "Failed to fetch wallet"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -167,10 +193,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/add_to_cart.cy.ts
 
 **Hardcoded strings found:**
+
 - "add to cart"
 - "/cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -178,9 +206,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/ai_matcher_home_card.cy.ts
 
 **Hardcoded strings found:**
+
 - "AI Matcher home card"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -188,9 +218,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/auth-integration.cy.ts
 
 **Hardcoded strings found:**
+
 - "register and login flow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -198,10 +230,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/black_screen_spec.cy.ts
 
 **Hardcoded strings found:**
+
 - "Zion App Load Test"
 - "Should load without black screen or major rendering failure"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -209,9 +243,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/blank_render.cy.ts
 
 **Hardcoded strings found:**
+
 - "Blank render detection"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -219,9 +255,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/blog.cy.ts
 
 **Hardcoded strings found:**
+
 - "Latest Articles"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -229,9 +267,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/browse_talent_detail.cy.ts
 
 **Hardcoded strings found:**
+
 - "View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -239,9 +279,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/buy_now_login_redirect.cy.ts
 
 **Hardcoded strings found:**
+
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -249,12 +291,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/cart_badge.cy.ts
 
 **Hardcoded strings found:**
+
 - "Cart"
 - "cart badge"
 - "Add to Cart"
 - "/cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -262,12 +306,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/cart_page.cy.ts
 
 **Hardcoded strings found:**
+
 - "cart page loads"
 - "shows cart heading"
 - "/cart"
 - "Your Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -275,9 +321,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/checkout_flow_spec.cy.ts
 
 **Hardcoded strings found:**
+
 - "Checkout Flow with Mocked Stripe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -285,9 +333,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/checkout_payment.cy.ts
 
 **Hardcoded strings found:**
+
 - "test checkout purchase"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -295,11 +345,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/checkout_test_route_spec.cy.ts
 
 **Hardcoded strings found:**
+
 - "Checkout Test Route"
 - "Test Product Checkout"
 - "should redirect to order confirmation page on successful payment"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -307,10 +359,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/community-auth.cy.ts
 
 **Hardcoded strings found:**
+
 - "community create post auth redirect"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -318,9 +372,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/community-category.cy.ts
 
 **Hardcoded strings found:**
+
 - "Getting Hired"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -328,6 +384,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/criticalPaths.cy.ts
 
 **Hardcoded strings found:**
+
 - "Rack Mount"
 - "This post was created by Cypress during an automated test."
 - "Critical user journeys"
@@ -337,6 +394,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Creates a community post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -344,6 +402,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/error_handling.cy.ts
 
 **Hardcoded strings found:**
+
 - "Error Handling"
 - "should load the main page (e.g., Home) without the global error boundary being visible"
 - "should display global error fallback for a render error and allow retry"
@@ -352,6 +411,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/test-error-mount"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -359,14 +419,16 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/footer_newsletter.cy.ts
 
 **Hardcoded strings found:**
+
 - "Subscribe"
 - "Successfully subscribed to newsletter!"
 - "Internal Server Error"
 - "s check for the data.error message if provided.
-    cy.contains("
+  cy.contains("
 - "Footer Newsletter Form"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -374,6 +436,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/forgot-password.cy.ts
 
 **Hardcoded strings found:**
+
 - "Send Reset Link"
 - "An internal server error occurred. Please try again later."
 - "Failed to send reset link. Please try again."
@@ -383,6 +446,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "An internal server error occurred..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -390,10 +454,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/full_checkout_flow.cy.ts
 
 **Hardcoded strings found:**
+
 - "buy now full checkout"
 - "Pay"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -401,11 +467,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/home_error_boundary.cy.ts
 
 **Hardcoded strings found:**
+
 - "home page error handling"
 - "shows fallback banner when server-side props fail"
 - "/?forceError=1"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -413,10 +481,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/home_page_health.cy.ts
 
 **Hardcoded strings found:**
+
 - "Home Page Health"
 - "should load the home page without runtime errors and display content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -424,9 +494,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/loader_overlay.cy.ts
 
 **Hardcoded strings found:**
+
 - "/about"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -434,6 +506,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login-page-renders-and-attempts-auth.cy.ts
 
 **Hardcoded strings found:**
+
 - "some error"
 - "Enter password"
 - "Welcome back"
@@ -441,6 +514,7 @@ These files contain hardcoded strings and don't use the translation system:
 - ", { message: result.error });"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -448,6 +522,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login.cy.ts
 
 **Hardcoded strings found:**
+
 - "Invalid credentials"
 - "Enter password"
 - "login flow"
@@ -457,6 +532,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -464,11 +540,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login_api.cy.ts
 
 **Hardcoded strings found:**
+
 - "Invalid credentials"
 - "returns error on 401"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -476,12 +554,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login_contains_signin.cy.ts
 
 **Hardcoded strings found:**
+
 - "login page contains Sign In"
 - "shows Sign In text"
 - "/login"
 - "Sign In"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -489,11 +569,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login_marketplace.cy.ts
 
 **Hardcoded strings found:**
+
 - "login to reach marketplace"
 - "allows user to login and redirect to marketplace"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -501,9 +583,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/login_nav.cy.ts
 
 **Hardcoded strings found:**
+
 - "login link navigation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -511,11 +595,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/logout.cy.ts
 
 **Hardcoded strings found:**
+
 - "logout flow"
 - "logs out and shows login link"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -523,9 +609,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/marketplace-loads.cy.ts
 
 **Hardcoded strings found:**
+
 - "Marketplace Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -533,9 +621,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/marketplace-view.cy.ts
 
 **Hardcoded strings found:**
+
 - "List view"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -543,9 +633,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/marketplace_dropdown.cy.ts
 
 **Hardcoded strings found:**
+
 - "Marketplace dropdown navigation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -553,9 +645,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/marketplace_overview.cy.ts
 
 **Hardcoded strings found:**
+
 - "Marketplace Overview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -563,9 +657,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/navigation_links.cy.ts
 
 **Hardcoded strings found:**
+
 - "Main navigation links"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -573,9 +669,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/oauth_google.cy.ts
 
 **Hardcoded strings found:**
+
 - "google oauth callback"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -583,9 +681,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/orders.cy.ts
 
 **Hardcoded strings found:**
+
 - "loads orders and shows download link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -593,9 +693,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/quote-request.cy.ts
 
 **Hardcoded strings found:**
+
 - "cannot continue without selecting a service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -603,10 +705,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/register-auto-login.cy.ts
 
 **Hardcoded strings found:**
+
 - "register auto login redirect"
 - "creates account and goes to dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -614,6 +718,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/register.cy.ts
 
 **Hardcoded strings found:**
+
 - "User registered successfully"
 - "register flow"
 - "can register a new user"
@@ -621,6 +726,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/register"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -628,11 +734,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/request-service.cy.ts
 
 **Hardcoded strings found:**
+
 - "Your name"
 - "Phone"
 - "John Doe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -640,10 +748,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/reset-password.cy.ts
 
 **Hardcoded strings found:**
+
 - "New password"
 - "Confirm password"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -651,9 +761,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/responsive_layout_spec.cy.js
 
 **Hardcoded strings found:**
+
 - "Should render layout correctly"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -661,9 +773,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/return_home_404.cy.ts
 
 **Hardcoded strings found:**
+
 - "404 Return Home link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -671,10 +785,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/search-suggestions.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search Suggestions Navigation"
 - "should maintain search state when navigating back"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -682,9 +798,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/search_autocomplete.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search autocomplete navigation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -692,12 +810,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/search_bar_interactive.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search..."
 - "Search Bar Interaction"
 - "Home Page"
 - "should show search suggestions when typing on home page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -705,10 +825,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/search_functionality.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search Functionality"
 - "Mod"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -716,10 +838,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/search_product.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search"
 - "Product Search"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -727,10 +851,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/searchbar_mobile_responsiveness.cy.ts
 
 **Hardcoded strings found:**
+
 - "Search Bar Mobile Responsiveness"
 - "should not have horizontal scroll on mobile and search input should be visible"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -738,10 +864,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/services_page.cy.ts
 
 **Hardcoded strings found:**
+
 - "Services page"
 - "/services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -749,10 +877,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/signup-auto-login.cy.ts
 
 **Hardcoded strings found:**
+
 - "Signup and Auto-Login Flow"
 - "should register a new user, auto-login, and redirect to marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -760,10 +890,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/signup.cy.ts
 
 **Hardcoded strings found:**
+
 - "sign up flow"
 - "registers new user"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -771,12 +903,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/signup_login_checkout.cy.ts
 
 **Hardcoded strings found:**
+
 - "signup to checkout flow"
 - "registers, logs in, adds to cart and completes checkout"
 - "/auth/register"
 - "Pay"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -784,6 +918,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/social-login.cy.ts
 
 **Hardcoded strings found:**
+
 - "Sign in with Google"
 - "Sign in with Facebook"
 - "social login buttons redirect through NextAuth"
@@ -792,6 +927,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "facebook button triggers NextAuth sign-in"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -799,11 +935,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/talent-profile.cy.ts
 
 **Hardcoded strings found:**
+
 - "Talent Profile Page"
 - "Alexandra Chen"
 - "directly navigates to a talent profile page and checks the heading"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -811,9 +949,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/talent-view.cy.ts
 
 **Hardcoded strings found:**
+
 - "View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -821,10 +961,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/unauthenticated-root-redirect.cy.ts
 
 **Hardcoded strings found:**
+
 - "Unauthenticated Root Access"
 - "should allow unauthenticated users to view the home page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -832,9 +974,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/e2e/wallet.cy.ts
 
 **Hardcoded strings found:**
+
 - "wallet dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -842,9 +986,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### cypress/support/e2e.ts
 
 **Hardcoded strings found:**
+
 - "WebSocket closed without opened"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -852,6 +998,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### extension/background.js
 
 **Hardcoded strings found:**
+
 - "OpenAI request failed"
 - "OpenAI request error"
 - "Unauthorized sender"
@@ -869,6 +1016,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Error contacting model"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -876,6 +1024,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### extension/popup.js
 
 **Hardcoded strings found:**
+
 - "Request timeout"
 - "Failed to contact background script"
 - "Post job"
@@ -885,6 +1034,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "resume-search"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -892,9 +1042,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### extractFailingCode.js
 
 **Hardcoded strings found:**
+
 - "No error found in ESLint report."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -902,9 +1054,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### fix-router-imports.js
 
 **Hardcoded strings found:**
+
 - "Found ${files.length} files to fix"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -912,11 +1066,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### instrumentation.ts
 
 **Hardcoded strings found:**
+
 - "ResizeObserver"
 - "Non-Error promise rejection captured"
 - "Loading chunk"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -924,12 +1080,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### monitoring/src/alerter.ts
 
 **Hardcoded strings found:**
+
 - "Unknown error"
 - "marketplace-next-app"
 - "(This should only apply to non-K8s services)."
 - "Failed to restart (PM2) service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -937,11 +1095,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### monitoring/src/index.ts
 
 **Hardcoded strings found:**
+
 - "Error during initial monitoring run:"
 - "Unknown error"
 - "Error during scheduled monitoring run:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -949,11 +1109,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### monitoring/src/latencyTester.ts
 
 **Hardcoded strings found:**
+
 - "Unknown error"
 - "Custom Server Health"
 - "NonExistent Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -961,10 +1123,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### monitoring/src/monitor.ts
 
 **Hardcoded strings found:**
+
 - "Custom Server Health"
 - "No responses measured or all responses were errors before latency could be determined."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -972,11 +1136,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### netlify/functions/healthCheckCron.ts
 
 **Hardcoded strings found:**
+
 - "Health check successful for ${healthEndpoint}: Status ${response.status}, Duration ${duration}ms"
 - "Health check latency exceeded for ${healthEndpoint}: ${duration}ms"
 - "Error during health check for ${healthEndpoint}: ${error instanceof Error ? error.message : String(error)}. Duration: ${duration}ms. Stack: ${error instanceof Error ? error.stack?.substring(0, 100) : String(error)}...(truncated)"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -984,10 +1150,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### netlify/functions/sentryCheck.ts
 
 **Hardcoded strings found:**
+
 - "Sentry DSN not configured"
 - "Sentry DSN is configured"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -995,9 +1163,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### netlify/functions/sentryDsnCheckCron.ts
 
 **Hardcoded strings found:**
+
 - "Error hitting DSN check route"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1005,10 +1175,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### next-env.d.ts
 
 **Hardcoded strings found:**
+
 - "next/image-types/global"
 - "next/navigation-types/compat/navigation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1016,9 +1188,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/403.tsx
 
 **Hardcoded strings found:**
+
 - "Access Denied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1026,6 +1200,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/500.tsx
 
 **Hardcoded strings found:**
+
 - "Return to Home"
 - "Server Error"
 - "next/link"
@@ -1033,18 +1208,21 @@ These files contain hardcoded strings and don't use the translation system:
 - "An unexpected error occurred."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### pages/_app.tsx
+### pages/\_app.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Service initialization failed"
 - "Poppins Fallback"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1052,10 +1230,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/activity-log.tsx
 
 **Hardcoded strings found:**
+
 - "User Activity Log"
 - "Clear Log"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1063,6 +1243,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/admin/pitch-generator.tsx
 
 **Hardcoded strings found:**
+
 - "Loading user information..."
 - "Access Denied"
 - "Go to Admin Dashboard"
@@ -1098,6 +1279,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Regenerate"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1105,6 +1287,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/[...nextauth].ts
 
 **Hardcoded strings found:**
+
 - "WalletConnectProvider: Error looking up user by wallet address:"
 - "WalletConnectProvider: Supabase signUp error:"
 - "User already registered"
@@ -1117,6 +1300,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Credentials missing"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1124,10 +1308,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/confirm.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "/error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1135,6 +1321,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/forgot.ts
 
 **Hardcoded strings found:**
+
 - "Auth0 configuration missing"
 - "Method not allowed"
 - "Invalid input"
@@ -1145,6 +1332,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Password reset ticket created successfully for:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1152,6 +1340,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/health.ts
 
 **Hardcoded strings found:**
+
 - "Auth service not configured"
 - "Authentication service configuration incomplete"
 - "Supabase health check failed with status"
@@ -1159,6 +1348,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "NEXT_PUBLIC_SUPABASE_ANON_KEY"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1166,6 +1356,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/register.ts
 
 **Hardcoded strings found:**
+
 - "Password must be at least 8 characters long"
 - "Authentication service not configured"
 - "Supabase signup error:"
@@ -1179,6 +1370,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1186,10 +1378,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/auth/resend-verification-email.ts
 
 **Hardcoded strings found:**
+
 - "Auth provider not configured"
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1197,6 +1391,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/blog/[slug].ts
 
 **Hardcoded strings found:**
+
 - "Slug is required"
 - "Post not found"
 - "Internal Server Error: Failed to fetch blog post"
@@ -1204,6 +1399,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1211,10 +1407,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/blog/index.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1222,6 +1420,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/categories/[slug]/items.ts
 
 **Hardcoded strings found:**
+
 - "Database query timeout"
 - "Prisma disconnect error:"
 - "Allow"
@@ -1230,6 +1429,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Category with slug"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1237,6 +1437,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/categories.ts
 
 **Hardcoded strings found:**
+
 - "Database query timeout"
 - "Allow"
 - "Method ${req.method} Not Allowed"
@@ -1244,6 +1445,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "No categories data available"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1251,12 +1453,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/checkout/session.ts
 
 **Hardcoded strings found:**
+
 - "Missing cart"
 - "Checkout session error:"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1264,6 +1468,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/checkout-session.ts
 
 **Hardcoded strings found:**
+
 - "Mock checkout session created for development"
 - "Checkout session creation error:"
 - "StripeCardError"
@@ -1278,6 +1483,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Using dummy Stripe key - returning mock checkout session"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1285,6 +1491,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/create-payment-intent.ts
 
 **Hardcoded strings found:**
+
 - "Invalid amount"
 - "Refusing to use live Stripe key on non-production domain"
 - "Create payment intent error:"
@@ -1292,6 +1499,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1299,6 +1507,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/dev/dashboard.ts
 
 **Hardcoded strings found:**
+
 - "Unauthorized"
 - "Dashboard metrics error:"
 - "Allow"
@@ -1306,6 +1515,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "X-Dashboard-Status"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1313,11 +1523,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/equipment.ts
 
 **Hardcoded strings found:**
+
 - "Request timeout after 5 seconds"
 - "Internal Server Error: Failed to fetch equipment"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1325,11 +1537,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/extension-health.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "Extension health check error:"
 - "Internal server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1337,6 +1551,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/favorites.ts
 
 **Hardcoded strings found:**
+
 - "Supabase not configured"
 - "Missing userId"
 - "Error fetching favorites:"
@@ -1350,6 +1565,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1357,6 +1573,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/feedback.ts
 
 **Hardcoded strings found:**
+
 - "Invalid feedback data"
 - "Error saving feedback:"
 - "Failed to save feedback"
@@ -1365,6 +1582,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1372,6 +1590,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/health/environment.ts
 
 **Hardcoded strings found:**
+
 - "Supabase configuration missing"
 - "Supabase credentials are placeholder values"
 - "Allow"
@@ -1381,6 +1600,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Sentry DSN appears to be a placeholder value"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1388,10 +1608,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/health/index.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1399,11 +1621,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/hello.ts
 
 **Hardcoded strings found:**
+
 - "Hello world"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1411,6 +1635,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/image/[...params].ts
 
 **Hardcoded strings found:**
+
 - "Invalid image path"
 - "Forbidden path"
 - "Image not found"
@@ -1420,6 +1645,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Internal server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1427,6 +1653,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/jobs.ts
 
 **Hardcoded strings found:**
+
 - "Senior React Developer"
 - "DevOps Engineer"
 - "Bearer"
@@ -1434,6 +1661,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Computing jobs with filters: ${filterParams}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1441,6 +1669,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/kb-chat.ts
 
 **Hardcoded strings found:**
+
 - "Messages array is required"
 - "No user message found"
 - "Internal server error"
@@ -1451,6 +1680,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "m here to help with questions about Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1458,6 +1688,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/logs.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "Invalid log entry format"
 - "Error processing logs:"
@@ -1465,6 +1696,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Failed to process log entries"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1472,11 +1704,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/categories.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} not allowed"
 - "Content-Type"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1484,6 +1718,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/equipment.ts
 
 **Hardcoded strings found:**
+
 - "High-performance GPU for AI workloads and machine learning training"
 - "In Stock"
 - "Limited Stock"
@@ -1498,6 +1733,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} not allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1505,10 +1741,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/overview.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} not allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1516,12 +1754,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/product/[productId].ts
 
 **Hardcoded strings found:**
+
 - "Error fetching product ${productId}:"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 - "Internal server error while fetching product details."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1529,10 +1769,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/products.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1540,11 +1782,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/marketplace/talent.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} not allowed"
 - "Returning ${mappedProfiles.length} talent profiles (page ${page}, limit ${limit})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1552,6 +1796,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/newsletter.ts
 
 **Hardcoded strings found:**
+
 - "Newsletter integration error:"
 - "Subscription failed"
 - "Newsletter subscription error:"
@@ -1559,6 +1804,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1566,11 +1812,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/points/redeem.ts
 
 **Hardcoded strings found:**
+
 - "Invalid request"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1578,10 +1826,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/products/index.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1589,11 +1839,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/push/send.ts
 
 **Hardcoded strings found:**
+
 - "Push send failed"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1601,12 +1853,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/push/subscribe.ts
 
 **Hardcoded strings found:**
+
 - "Failed to save push subscription"
 - "Failed to save subscription"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1614,6 +1868,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/resend-verification-email.ts
 
 **Hardcoded strings found:**
+
 - "Supabase configuration missing"
 - "Internal server error"
 - "Unknown error"
@@ -1621,6 +1876,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1628,6 +1884,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/reviews/[productId].ts
 
 **Hardcoded strings found:**
+
 - "Supabase not configured"
 - "Error fetching reviews:"
 - "Failed to fetch reviews"
@@ -1637,6 +1894,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1644,6 +1902,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/reviews/index.ts
 
 **Hardcoded strings found:**
+
 - "Supabase not configured"
 - "Error fetching reviews:"
 - "Failed to fetch reviews"
@@ -1653,6 +1912,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1660,12 +1920,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/search/suggest.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 - "DevOps"
 - "Hardware & Equipment"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1673,6 +1935,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/search.ts
 
 **Hardcoded strings found:**
+
 - "Search query failed:"
 - "${profile.professional_title} - ${profile.bio ||"
 - "Allow"
@@ -1680,6 +1943,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Performing search for:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1687,10 +1951,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/services.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1698,10 +1964,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/status.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1709,12 +1977,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/stripe/webhook.ts
 
 **Hardcoded strings found:**
+
 - "Failed to update order"
 - "Allow"
 - "Method Not Allowed"
 - "Webhook Error: ${err.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1722,12 +1992,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/talent/[id].ts
 
 **Hardcoded strings found:**
+
 - "Invalid id"
 - "Talent not found"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1735,6 +2007,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/api/talent.ts
 
 **Hardcoded strings found:**
+
 - "An internal server error occurred while fetching talent profiles"
 - "Jane Smith"
 - "Full Stack Developer"
@@ -1748,6 +2021,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1755,6 +2029,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/auth/error.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication Error - Zion Tech Marketplace"
 - "Authentication Error"
 - "Try Again"
@@ -1765,6 +2040,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1772,6 +2048,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/auth/login.tsx
 
 **Hardcoded strings found:**
+
 - "This should only take a moment"
 - "Already Logged In"
 - "Redirecting to your dashboard..."
@@ -1818,6 +2095,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Sign in"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1825,6 +2103,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/auth/register.tsx
 
 **Hardcoded strings found:**
+
 - "Create Account - Zion Tech Marketplace"
 - "Create your account"
 - "Or continue with"
@@ -1840,6 +2119,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "GitHub signup button clicked - href may be incorrect if NextAuth is not used."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1847,10 +2127,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/auth/verify-email.tsx
 
 **Hardcoded strings found:**
+
 - "Go to Login"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1858,10 +2140,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/blog/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Article not found"
 - "BlogPosting"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1869,9 +2153,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/cart/index.tsx
 
 **Hardcoded strings found:**
+
 - "@/context/CartContext"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1879,10 +2165,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/checkout/[id].tsx
 
 **Hardcoded strings found:**
+
 - "Loading checkout..."
 - "@/pages/CheckoutPage"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1890,10 +2178,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/checkout/index.tsx
 
 **Hardcoded strings found:**
+
 - "Loading checkout..."
 - "@/pages/Checkout"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1901,6 +2191,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/checkout-test/index.tsx
 
 **Hardcoded strings found:**
+
 - "Test Product Checkout"
 - "Dummy Product"
 - "This is a test checkout flow using Stripe test mode. No real charges will be made."
@@ -1913,6 +2204,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Arial, sans-serif"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1920,6 +2212,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/checkout-test/mock.tsx
 
 **Hardcoded strings found:**
+
 - "Mock Checkout Complete!"
 - "Configure real Stripe test keys in environment variables"
 - "Continue Shopping"
@@ -1929,6 +2222,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1936,6 +2230,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/community/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Create New Post"
 - "Login required"
 - "Loading..."
@@ -1944,6 +2239,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1951,9 +2247,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/constitution.tsx
 
 **Hardcoded strings found:**
+
 - "Constitution"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1961,10 +2259,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/dashboard/ai-core/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 - "@/pages/AICoreDashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1972,11 +2272,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/dashboard/index.tsx
 
 **Hardcoded strings found:**
+
 - "Loading dashboard..."
 - "Failed to load Dashboard component:"
 - "@/pages/Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -1984,6 +2286,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/deploy/genesis.tsx
 
 **Hardcoded strings found:**
+
 - "Zion OS Instance Deployment"
 - "Instance Configuration"
 - "Instance Name"
@@ -2005,6 +2308,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/book-store (Zion hardcover print + linkable chapters)"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2012,6 +2316,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/dev/dashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Loading dashboard..."
 - "Dashboard Error"
 - "Retry"
@@ -2037,6 +2342,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Bytes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2044,9 +2350,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/equipment/[id].tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2054,9 +2362,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/equipment/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2064,6 +2374,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/error.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication Error - Zion Tech Marketplace"
 - "Authentication Error"
 - "There was an issue with your authentication request"
@@ -2077,6 +2388,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2084,6 +2396,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/forgot-password.tsx
 
 **Hardcoded strings found:**
+
 - "Forgot Password"
 - "Login"
 - "next/link"
@@ -2094,6 +2407,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2101,6 +2415,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/governance/[proposalId].tsx
 
 **Hardcoded strings found:**
+
 - "Loading proposal details..."
 - "Cast Your Vote"
 - "Connect Wallet to Participate"
@@ -2116,6 +2431,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "CANCELED"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2123,6 +2439,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/governance/create.tsx
 
 **Hardcoded strings found:**
+
 - "Create New Proposal"
 - "Title"
 - "Summary"
@@ -2136,6 +2453,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Submit Proposal"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2143,6 +2461,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/governance/index.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Governance"
 - "My Votes"
 - "Create Proposal"
@@ -2159,6 +2478,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/governance/create"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2166,6 +2486,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/governance/my-votes.tsx
 
 **Hardcoded strings found:**
+
 - "My Voting History"
 - "Please connect your wallet to see your voting history."
 - "Back to Proposals"
@@ -2180,6 +2501,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "t voted on any proposals yet with the connected wallet, or your votes are associated with a platform login that isn"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2187,10 +2509,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/governance/zgp-library.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Governance Proposal Library"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2198,11 +2522,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/index.tsx
 
 **Hardcoded strings found:**
+
 - "Throw Test Error"
 - "Button error test:"
 - "Failed to load home page."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2210,10 +2536,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/kids.tsx
 
 **Hardcoded strings found:**
+
 - "Loading storybook..."
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2221,6 +2549,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/login.tsx
 
 **Hardcoded strings found:**
+
 - "Redirecting to Login - Zion Tech Marketplace"
 - "Redirecting to login..."
 - "/auth/login${queryString}"
@@ -2228,6 +2557,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2235,9 +2565,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/marketplace/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2245,6 +2577,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/marketplace/listing/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Home"
 - "Marketplace"
 - "Add to Cart"
@@ -2254,6 +2587,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "${listing.title} has been added to your cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2261,9 +2595,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/messages.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2271,6 +2607,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/offline.tsx
 
 **Hardcoded strings found:**
+
 - "You're Offline - Zion Tech Marketplace"
 - "Go to Homepage"
 - "Available Offline Features"
@@ -2289,6 +2626,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Try Again"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2296,12 +2634,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/order-success.tsx
 
 **Hardcoded strings found:**
+
 - "Thank you for your purchase!"
 - "View Orders"
 - "next/link"
 - "Failed to load session"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2309,9 +2649,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/orders/[orderId].tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2319,9 +2661,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/orders/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2329,6 +2673,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/payment-flow-test/index.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Flow Smoke Test"
 - "Add Test Product"
 - "Add to Cart"
@@ -2344,6 +2689,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Not logged in"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2351,9 +2697,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/philosophy.tsx
 
 **Hardcoded strings found:**
+
 - "Philosophy"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2361,6 +2709,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/private.tsx
 
 **Hardcoded strings found:**
+
 - "Private Profile - Zion Tech Marketplace"
 - "Private User Profile"
 - "This page is only accessible to authenticated users"
@@ -2378,6 +2727,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2385,6 +2735,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/product/[id].tsx
 
 **Hardcoded strings found:**
+
 - "Product Not Found"
 - "Go back to homepage"
 - "Home"
@@ -2395,6 +2746,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Product description"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2402,9 +2754,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/products/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2412,10 +2766,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/profile.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 - "@/pages/Profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2423,10 +2779,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/project-room/[projectId].tsx
 
 **Hardcoded strings found:**
+
 - "Project Room"
 - "next/router"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2434,9 +2792,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/register.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2444,10 +2804,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/request-quote/index.tsx
 
 **Hardcoded strings found:**
+
 - "Loading quote wizard..."
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2455,12 +2817,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/resources/docs.tsx
 
 **Hardcoded strings found:**
+
 - "Getting Started"
 - "Learn the basics of using Zion's platform and services."
 - "Integration Guide"
 - "Zion Tech Marketplace Quick Start"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2468,6 +2832,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/search/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Filters"
 - "Relevance"
 - "Newest"
@@ -2482,6 +2847,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "sort-select"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2489,6 +2855,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/search.tsx
 
 **Hardcoded strings found:**
+
 - "Content Type"
 - "Category"
 - "All Categories"
@@ -2514,6 +2881,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "(${activeFiltersCount})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2521,6 +2889,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/sentry-test.tsx
 
 **Hardcoded strings found:**
+
 - "Sentry Integration Test Page"
 - "Throw Client-Side Error"
 - "Sentry Client Test Error - Button Clicked!"
@@ -2528,6 +2897,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Arial, sans-serif"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2535,9 +2905,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/services/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2545,10 +2917,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/services/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 - "@/pages/ServicesPage"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2556,9 +2930,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/static-props-example.tsx
 
 **Hardcoded strings found:**
+
 - "Static Props Example"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2566,6 +2942,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/talent/[id].tsx
 
 **Hardcoded strings found:**
+
 - "Error"
 - "Failed to load talent profile."
 - "Hire"
@@ -2574,6 +2951,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "profile-name"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2581,9 +2959,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/talent/index.tsx
 
 **Hardcoded strings found:**
+
 - "next/dynamic"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2591,6 +2971,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/verify-status.tsx
 
 **Hardcoded strings found:**
+
 - "Verification Status"
 - "Check Verification Status"
 - "Try Login"
@@ -2602,6 +2983,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2609,10 +2991,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages/video-call/[roomId].tsx
 
 **Hardcoded strings found:**
+
 - "Video Call"
 - "next/router"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2620,10 +3004,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages_backup/500.tsx
 
 **Hardcoded strings found:**
+
 - "Retry"
 - "react-error-boundary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2631,10 +3017,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages_backup/SearchPage.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "{searchQuery}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2642,9 +3030,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### pages_backup/[slug].tsx
 
 **Hardcoded strings found:**
+
 - "Page not found"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2652,11 +3042,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### plugins/wallet-connector/cypress/e2e/specs/components/WalletProvider.spec.tsx
 
 **Hardcoded strings found:**
+
 - "Error: Wallet context not found"
 - "Connect"
 - "WalletProvider"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2664,11 +3056,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### public/service-worker.js
 
 **Hardcoded strings found:**
+
 - "Background sync replay failed"
 - "Zion Notification"
 - "New message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2676,6 +3070,7 @@ These files contain hardcoded strings and don't use the translation system:
 ### public/sw.js
 
 **Hardcoded strings found:**
+
 - "Offline"
 - "📡 Background fetch failed for:"
 - "Content-Type"
@@ -2685,6 +3080,7 @@ These files contain hardcoded strings and don't use the translation system:
 - "Zion Notification"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2692,9 +3088,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### remote/dao/test-env.js
 
 **Hardcoded strings found:**
+
 - "Synced proposals and votes over satellite link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2702,12 +3100,14 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/analyze-bundle.js
 
 **Hardcoded strings found:**
+
 - "Large Dependencies Detected"
 - "Bundle Optimization Suggestions"
 - "Review if all features are needed"
 - "Replace large dependencies with smaller alternatives"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2715,10 +3115,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/auto-lint-fix.js
 
 **Hardcoded strings found:**
+
 - ").filter(line => line.trim() !=="
 - "ESLint auto-fix script finished."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2726,9 +3128,11 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/check-coverage-threshold.js
 
 **Hardcoded strings found:**
+
 - "Error checking coverage threshold:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2736,11 +3140,13 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/check-performance-logs.ts
 
 **Hardcoded strings found:**
+
 - "gh pr create --title"
 - "No log entries found"
 - "Average response time: ${avg.toFixed(2)}ms"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2748,10 +3154,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/check_coverage_and_notify.js
 
 **Hardcoded strings found:**
+
 - "Failed to create GitHub issue:"
 - "gh issue create --title"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2759,10 +3167,12 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/cleanup-duplicate-pages.js
 
 **Hardcoded strings found:**
+
 - "📋 Found ${toDelete.length} files to delete:\n"
 - "❌ Failed to delete: ${errorCount} files"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2770,34 +3180,37 @@ These files contain hardcoded strings and don't use the translation system:
 ### scripts/codex-bug-fix.js
 
 **Hardcoded strings found:**
+
 - "Missing GITHUB_TOKEN environment variable"
 - "Missing ISSUE_NUMBER environment variable"
 - "Missing ISSUE_TITLE environment variable"
 - "t let it stop the script.
-    // The main error (e.g., patch apply failure) is more critical.
+  // The main error (e.g., patch apply failure) is more critical.
   }
-}
+  }
 
 function extractFilePaths(text) {
-  if (!text) return [];
-  const stricterRegex = /([\w.-]+\/)*[\w.-]+\.\w+/g;
-  const paths = text.match(stricterRegex);
-  return paths ? [...new Set(paths)] : [];
+if (!text) return [];
+const stricterRegex = /([\w.-]+\/)\*[\w.-]+\.\w+/g;
+const paths = text.match(stricterRegex);
+return paths ? [...new Set(paths)] : [];
 }
 
 async function fetchFileContent(octokitInstance, owner, repo, filePath) {
-  try {
-    const response = await octokitInstance.rest.repos.getContent({
-      owner,
-      repo,
-      path: filePath,
-    });
-    if (response.data.type ==="
+try {
+const response = await octokitInstance.rest.repos.getContent({
+owner,
+repo,
+path: filePath,
+});
+if (response.data.type ==="
+
 - "Unhandled error in main execution"
 - "Unhandled error in main execution (and failed to comment on issue)"
 - "Error fetching file ${filePath}: ${error.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2805,11 +3218,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/codexWebhookServer.js
 
 **Hardcoded strings found:**
+
 - "❌ Execution error: ${error.message}"
 - "Fix failed"
 - "Fix triggered successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2817,9 +3232,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/debug-login.js
 
 **Hardcoded strings found:**
+
 - "\n✅ Debug test completed successfully!"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2827,16 +3244,18 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/deploy-optimization.cjs
 
 **Hardcoded strings found:**
+
 - "Consider code splitting"
 - "Address warnings"
 - "Several warnings were detected during optimization."
 - "Setup production monitoring"
 - "Environment variables configured"
 - "Security"
-- "\n⚠️  WARNINGS:"
+- "\n⚠️ WARNINGS:"
 - "• ${warning}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2844,9 +3263,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/deploy-zion-ipfs.js
 
 **Hardcoded strings found:**
+
 - "Failed to add files to Helia."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2854,9 +3275,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/fix-api-types.js
 
 **Hardcoded strings found:**
+
 - "❌ Error processing ${filePath}:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2864,10 +3287,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/generate-ai-blog-post.js
 
 **Hardcoded strings found:**
+
 - "Use <h1> for the title and <h2> for section headings. Include at least two internal links to relevant service pages such as /services or /it-onsite-services."
 - "Blog post saved to ${filePath}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2875,9 +3300,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/index-elasticsearch.js
 
 **Hardcoded strings found:**
+
 - "Indexing error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2885,10 +3312,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/link-checker/index.js
 
 **Hardcoded strings found:**
+
 - "Server responded with ${error.response.status}"
 - "Found ${brokenExternal} broken external link(s) (4xx/5xx status)."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2896,9 +3325,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/maintenance/generate-tests.js
 
 **Hardcoded strings found:**
+
 - "Created placeholder test:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2906,9 +3337,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/monitor-backlinks.js
 
 **Hardcoded strings found:**
+
 - "Toxic backlinks: ${toxic.length}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2916,9 +3349,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/perf/monitor.js
 
 **Hardcoded strings found:**
+
 - "Monitor error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2926,6 +3361,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/setup-auth0.js
 
 **Hardcoded strings found:**
+
 - "Please enter a valid Auth0 Client ID (32+ characters)"
 - "Please enter a valid Auth0 Client Secret (64+ characters)"
 - "No .env.local file found"
@@ -2935,6 +3371,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Setup cancelled by user"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2942,10 +3379,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/switch-netlify-site.js
 
 **Hardcoded strings found:**
+
 - "Missing Netlify environment variables"
 - "Failed to rollback new site assignment:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2953,10 +3392,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/test-api-performance.js
 
 **Hardcoded strings found:**
+
 - "Request timeout"
 - "Failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2964,10 +3405,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/test-login-trace.js
 
 **Hardcoded strings found:**
+
 - "Should fail with missing credentials message"
 - "❌ No test cases configured. Please check your environment variables."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2975,10 +3418,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/test-root-path.js
 
 **Hardcoded strings found:**
+
 - "Request timeout"
 - "No title"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2986,9 +3431,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/update-icon-imports.js
 
 **Hardcoded strings found:**
+
 - "❌ Error processing ${filePath}:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -2996,14 +3443,16 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/validate-environment.ts
 
 **Hardcoded strings found:**
+
 - "NEXT_PUBLIC_SENTRY_DSN appears to be a placeholder value"
 - "NEXT_PUBLIC_REOWN_PROJECT_ID appears to be a placeholder value"
 - "❌ ERRORS (must be fixed):"
 - "• ${error}"
-- "⚠️  WARNINGS:"
+- "⚠️ WARNINGS:"
 - "• ${warning}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3011,10 +3460,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/verify-production.js
 
 **Hardcoded strings found:**
+
 - "next/head"
 - "• ${result.route}: ${result.error} (${result.type})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3022,12 +3473,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/verify-staging.js
 
 **Hardcoded strings found:**
+
 - "/auth/login"
 - "/about"
 - "\nErrors:"
 - "• ${error.route}: ${error.error}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3035,6 +3488,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/watchdog.js
 
 **Hardcoded strings found:**
+
 - "Failed to ensure single instance"
 - "Failed to send Discord alert"
 - "Self-heal command timed out after 10 minutes"
@@ -3050,6 +3504,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "3 consecutive security patches"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3057,6 +3512,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### scripts/watchdog.test.js
 
 **Hardcoded strings found:**
+
 - "Test Discord Alert"
 - "Test error case"
 - "Network Error"
@@ -3065,6 +3521,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Test self-heal trigger"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3072,6 +3529,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### sdk/js/auth/index.js
 
 **Hardcoded strings found:**
+
 - "Error fetching CSRF token:"
 - "Login failed with status:"
 - "Login succeeded but session data could not be retrieved."
@@ -3083,6 +3541,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Test User"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3090,11 +3549,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### sdk/js/marketplace/index.js
 
 **Hardcoded strings found:**
+
 - "Failed to list jobs"
 - "Failed to list talent"
 - "Failed to submit quote request. Status: ${response.status}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3102,6 +3563,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### sentry.ts
 
 **Hardcoded strings found:**
+
 - "ResizeObserver"
 - "Non-Error promise rejection"
 - "Loading chunk"
@@ -3109,6 +3571,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Sentry DSN not configured for production - error monitoring disabled"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3116,6 +3579,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/app.js
 
 **Hardcoded strings found:**
+
 - "Codex fix process failed to start or execute."
 - "Codex fix process triggered successfully."
 - "Codex execution error: ${error.message}"
@@ -3123,6 +3587,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "}: ${error.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3130,11 +3595,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/controllers/authController.js
 
 **Hardcoded strings found:**
+
 - "Account inactive"
 - "Incorrect password"
 - "Missing required fields"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3142,9 +3609,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/controllers/syncController.js
 
 **Hardcoded strings found:**
+
 - "Invalid merkle root"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3152,11 +3621,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/routes/alerts.js
 
 **Hardcoded strings found:**
+
 - "Missing required fields: ip_address, route, reason"
 - "Slack alert sent successfully"
 - "Failed to send Slack alert"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3164,6 +3635,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/routes/stripe.js
 
 **Hardcoded strings found:**
+
 - "Subscription not found in Stripe"
 - "User not found"
 - "Internal Server Error: Stripe SDK not initialized."
@@ -3176,6 +3648,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error processing customer.subscription.deleted: ${err.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3183,10 +3656,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### server/stubServer.js
 
 **Hardcoded strings found:**
+
 - "Hello world"
 - "/hello"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3194,9 +3669,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/api/favorites.ts
 
 **Hardcoded strings found:**
+
 - "Failed to toggle favorite"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3204,9 +3681,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/api/recommendations.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch recommendations"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3214,9 +3693,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/api/wallet.js
 
 **Hardcoded strings found:**
+
 - "Failed to fetch wallet"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3224,6 +3705,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AIListingGenerator.tsx
 
 **Hardcoded strings found:**
+
 - "Title"
 - "Category"
 - "Generate Optimized Content"
@@ -3243,6 +3725,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Content Applied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3250,10 +3733,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AIMatchingResults.tsx
 
 **Hardcoded strings found:**
+
 - "No matches found"
 - "Your search:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3261,6 +3746,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AIMatchmaker.tsx
 
 **Hardcoded strings found:**
+
 - "Describe what you&apos;re looking for and our AI will find the best matches"
 - "Find Matches"
 - "Error during AI matching:"
@@ -3270,6 +3756,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "We couldn"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3277,12 +3764,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AnalyticsConsentBanner.tsx
 
 **Hardcoded strings found:**
+
 - "Learn more"
 - "Decline"
 - "Accept"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3290,6 +3779,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ApiErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Try Again"
 - "Reload Page"
 - "Offline"
@@ -3298,6 +3788,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "An unexpected error occurred while loading the page."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3305,11 +3796,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AuthButtons.tsx
 
 **Hardcoded strings found:**
+
 - "Sign in with Google"
 - "Sign in with GitHub"
 - "Sign in with Facebook"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3317,6 +3810,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/AuthGuard.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Authentication Required"
 - "Please log in to access this feature."
@@ -3325,6 +3819,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3332,9 +3827,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/BackToTopButton.tsx
 
 **Hardcoded strings found:**
+
 - "Back to top"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3342,11 +3839,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/BlogSection.tsx
 
 **Hardcoded strings found:**
+
 - "Stay updated with trends in AI technology, marketplace strategies, and IT services"
 - "View All Articles"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3354,9 +3853,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/BreadcrumbJsonLd.tsx
 
 **Hardcoded strings found:**
+
 - "BreadcrumbList"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3364,10 +3865,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/CategoryCard.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "mb-4 p-3 bg-background rounded-full"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3375,6 +3878,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/CategoryListingPage.tsx
 
 **Hardcoded strings found:**
+
 - "No listings found"
 - "Try adjusting your filters or search query"
 - "Clear all filters"
@@ -3383,6 +3887,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Filter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3390,6 +3895,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ChatAssistant/ChatAssistant.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Confirm Message"
 - "Cancel"
@@ -3398,6 +3904,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Escape"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3405,9 +3912,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ChatAssistant/ChatInput.tsx
 
 **Hardcoded strings found:**
+
 - "Enter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3415,10 +3924,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ChatAssistantTrigger.tsx
 
 **Hardcoded strings found:**
+
 - "Open chat assistant"
 - "Error in AI chat:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3426,6 +3937,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ChatWidget.tsx
 
 **Hardcoded strings found:**
+
 - "Chat"
 - "Send"
 - "Close chat widget"
@@ -3434,6 +3946,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3441,6 +3954,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/CommunityDiscussion.tsx
 
 **Hardcoded strings found:**
+
 - "Community Discussion"
 - "Cancel"
 - "Post"
@@ -3454,6 +3968,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "New Post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3461,6 +3976,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ComparisonSection.tsx
 
 **Hardcoded strings found:**
+
 - "Compare & Save"
 - "Service"
 - "Traditional Providers"
@@ -3470,6 +3986,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Server Hosting"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3477,10 +3994,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ConnectWalletButton.tsx
 
 **Hardcoded strings found:**
+
 - "Disconnect Wallet"
 - "Connect Wallet"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3488,6 +4007,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ContactPublisherModal.tsx
 
 **Hardcoded strings found:**
+
 - "Contact Publisher"
 - "Cancel"
 - "Send message"
@@ -3496,6 +4016,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3503,6 +4024,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ContactSection.tsx
 
 **Hardcoded strings found:**
+
 - "Get In Touch"
 - "Request Commercial Proposal"
 - "Send Us a Message"
@@ -3523,6 +4045,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3530,6 +4053,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/DynamicListingPage.tsx
 
 **Hardcoded strings found:**
+
 - "Filters"
 - "Categories"
 - "Brand"
@@ -3561,6 +4085,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "List view"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3568,6 +4093,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/EnhancedNewsletterForm.tsx
 
 **Hardcoded strings found:**
+
 - "Stay Updated"
 - "Get exclusive offers, trending AI news, and early access to best deals"
 - "Thank you for subscribing!"
@@ -3578,6 +4104,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Subscribe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3585,11 +4112,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/EquipmentErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 - "Try Again"
 - "Equipment page error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3597,11 +4126,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 - "Go Home"
 - "ErrorBoundary caught an error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3609,9 +4140,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ErrorGuard.tsx
 
 **Hardcoded strings found:**
+
 - "react-error-boundary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3619,10 +4152,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ErrorOverlay.tsx
 
 **Hardcoded strings found:**
+
 - "Dismiss"
 - "An unexpected error occurred"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3630,10 +4165,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FaqSection.tsx
 
 **Hardcoded strings found:**
+
 - "Find answers to common questions about AI product listings, IT equipment rentals, and datacenter maintenance services"
 - "Common Questions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3641,11 +4178,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FavoriteButton.tsx
 
 **Hardcoded strings found:**
+
 - "Login required"
 - "Save to favorites"
 - "Added to wishlist"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3653,6 +4192,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FeaturedListingsSection.tsx
 
 **Hardcoded strings found:**
+
 - "Featured Listings"
 - "View All Listings"
 - "next/link"
@@ -3660,6 +4200,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Powerful GPUs, Anytime, Anywhere"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3667,6 +4208,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FeaturesGuideSection.tsx
 
 **Hardcoded strings found:**
+
 - "Your Complete Guide to Zion"
 - "How to Use"
 - "Explore Full Marketplace"
@@ -3693,6 +4235,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Visit our comprehensive knowledge base"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3700,12 +4243,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FloatingCTA.tsx
 
 **Hardcoded strings found:**
+
 - "Register today to access all features!"
 - "Register Now"
 - "Close"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3713,6 +4258,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/Footer.tsx
 
 **Hardcoded strings found:**
+
 - "Marketplace"
 - "Services"
 - "Talent"
@@ -3742,6 +4288,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3749,6 +4296,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/FooterNewsletter.tsx
 
 **Hardcoded strings found:**
+
 - "Successfully subscribed to newsletter!"
 - "Subscription failed. Please try again."
 - "Newsletter subscription error:"
@@ -3756,6 +4304,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Subscribe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3763,6 +4312,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/GlobalErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Error Details"
 - "Status Page"
 - "Contact Support"
@@ -3776,13 +4326,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "A background request encountered an issue (Not Found). If you see this after a successful action, the action likely completed."
 - "A network error occurred. Please check your internet connection and try again."
 - "s a background issue
-        autoHideDuration: 5000,
-      });
-    } catch (e) {
-      logError(e, { context:"
+  autoHideDuration: 5000,
+  });
+  } catch (e) {
+  logError(e, { context:"
 - "Detailed error info:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3790,6 +4341,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/GlobalErrorHandler.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Global Error Handler:"
 - "useGlobalErrorHandler must be used within a GlobalErrorHandler"
@@ -3812,6 +4364,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Success"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3819,6 +4372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/GlobalServiceSection.tsx
 
 **Hardcoded strings found:**
+
 - "Global IT Services"
 - "Our 24x7x365 global IT service offering provides enterprise-grade solutions for businesses of all sizes"
 - "Servers"
@@ -3831,6 +4385,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "global-services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3838,9 +4393,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/HowItWorksVideo.tsx
 
 **Hardcoded strings found:**
+
 - "How Zion Marketplace Works"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3848,9 +4405,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/HydrationErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "[HydrationErrorBoundary] Hydration mismatch detected, forcing client-side render"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3858,10 +4417,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/InstallPrompt.tsx
 
 **Hardcoded strings found:**
+
 - "Install"
 - "Dismiss install prompt"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3869,9 +4430,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/JsonLd.tsx
 
 **Hardcoded strings found:**
+
 - "next/head"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3879,10 +4442,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ListingCard.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "/profile/${profileId}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3890,10 +4455,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ListingScoreCard.tsx
 
 **Hardcoded strings found:**
+
 - "No Image"
 - "Request Quote"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3901,6 +4468,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/MarketplaceErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong in the marketplace"
 - "Retry"
 - "Reload Page"
@@ -3910,6 +4478,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "MarketplaceErrorBoundary caught an error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3917,9 +4486,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/MarketplaceLayout.tsx
 
 **Hardcoded strings found:**
+
 - "flex min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3927,9 +4498,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/MarketplaceSidebar.jsx
 
 **Hardcoded strings found:**
+
 - "Toggle marketplace sidebar"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3937,9 +4510,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/NavLink.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3947,10 +4522,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/NewsletterForm.tsx
 
 **Hardcoded strings found:**
+
 - "Thank you for subscribing!"
 - "Subscribe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3958,10 +4535,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/NewsletterSection.tsx
 
 **Hardcoded strings found:**
+
 - "Stay Informed"
 - "Subscribe to our newsletter for the latest updates on Zion's services, Google trending tech news, and marketplace opportunities."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3969,9 +4548,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/NotificationCenter.tsx
 
 **Hardcoded strings found:**
+
 - "Open notifications"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3979,10 +4560,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/OfflineIndicator.tsx
 
 **Hardcoded strings found:**
+
 - "back online"
 - "Connection restored"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -3990,11 +4573,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/OfflineToast.tsx
 
 **Hardcoded strings found:**
+
 - "Offline"
 - "You are offline. Changes will sync when you are back online."
 - "Back online. Syncing queued actions..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4002,6 +4587,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/PageErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Configuration Required"
 - "Technical Details"
 - "Try Again"
@@ -4023,6 +4609,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Resetting error boundary for ${pageName ||"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4030,6 +4617,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/PerformanceDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Performance Dashboard"
 - "Build Size"
 - "Total build output"
@@ -4049,6 +4637,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Bundle analysis available with: npm run build:analyze"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4056,9 +4645,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/PrivateRoute.tsx
 
 **Hardcoded strings found:**
+
 - "/auth/login?returnTo=${returnTo}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4066,6 +4657,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductActions.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Contact Publisher"
 - "Failed to add to cart:"
@@ -4075,6 +4667,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4082,6 +4675,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductCard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Product information unavailable."
 - "No Image"
@@ -4106,6 +4700,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Buy Now"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4113,6 +4708,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductListingCard.tsx
 
 **Hardcoded strings found:**
+
 - "Featured"
 - "Loading..."
 - "Buy Now"
@@ -4132,6 +4728,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4139,6 +4736,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductReviews.tsx
 
 **Hardcoded strings found:**
+
 - "Product Reviews"
 - "Loading reviews..."
 - "Write a Review"
@@ -4152,6 +4750,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4159,6 +4758,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductSubmissionForm.tsx
 
 **Hardcoded strings found:**
+
 - "Manual Creation"
 - "Product Title"
 - "Create a compelling title that describes your product"
@@ -4188,6 +4788,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Publish Product"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4195,8 +4796,9 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProductionErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Environment configuration"
-- "NEXT_PUBLIC_"
+- "NEXT*PUBLIC*"
 - "ChunkLoadError"
 - "Loading chunk"
 - "ProductionErrorBoundary caught an error:"
@@ -4210,6 +4812,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Reload Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4217,9 +4820,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ProtectedRoute.tsx
 
 **Hardcoded strings found:**
+
 - "/auth/login?returnTo=${returnTo}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4227,10 +4832,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/PwaInstallButton.tsx
 
 **Hardcoded strings found:**
+
 - "PWA install error:"
 - "Installation not available"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4238,12 +4845,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/AutoFillModal.tsx
 
 **Hardcoded strings found:**
+
 - "Describe your project"
 - "Cancel"
 - "Brief project description"
 - "Continue"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4251,6 +4860,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/BudgetStep.tsx
 
 **Hardcoded strings found:**
+
 - "Fixed Budget"
 - "Pay per hour of work"
 - "Budget Range"
@@ -4259,6 +4869,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Maximum budget"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4266,6 +4877,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/ProjectDetailsStep.tsx
 
 **Hardcoded strings found:**
+
 - "Tell us about your project"
 - "Project Name"
 - "Project Description"
@@ -4279,6 +4891,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your phone number"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4286,6 +4899,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/ServiceTypeStep.tsx
 
 **Hardcoded strings found:**
+
 - "Services"
 - "Talent"
 - "Equipment"
@@ -4298,6 +4912,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Sample listing description"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4305,6 +4920,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/StepProgress.tsx
 
 **Hardcoded strings found:**
+
 - "Service"
 - "Details"
 - "Timeline"
@@ -4312,6 +4928,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Summary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4319,6 +4936,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/SummaryStep.tsx
 
 **Hardcoded strings found:**
+
 - "Review Your Request"
 - "Service Information"
 - "Service Type"
@@ -4343,6 +4961,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "You"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4350,6 +4969,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm/TimelineStep.tsx
 
 **Hardcoded strings found:**
+
 - "Fixed Dates"
 - "Flexible Timeline"
 - "Start Date"
@@ -4357,6 +4977,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "End Date"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4364,6 +4985,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/QuoteRequestForm.tsx
 
 **Hardcoded strings found:**
+
 - "Request a Quote"
 - "Tell us about your project and we'll create a customized quote for you"
 - "Back"
@@ -4380,6 +5002,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4387,6 +5010,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/RewardsWidget.tsx
 
 **Hardcoded strings found:**
+
 - "Rewards"
 - "Your Rewards"
 - "Gold"
@@ -4396,6 +5020,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Buy any service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4403,6 +5028,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/RootErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 - "Retry"
 - "Loading..."
@@ -4410,6 +5036,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "UI Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4417,9 +5044,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/RouteChangeHandler.tsx
 
 **Hardcoded strings found:**
+
 - "Route change error occurred"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4427,10 +5056,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/SEO.tsx
 
 **Hardcoded strings found:**
+
 - "next/head"
 - "Zion - The Future of Tech & AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4438,12 +5069,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/SearchBar.tsx
 
 **Hardcoded strings found:**
+
 - "Search..."
 - "Clear search"
 - "Failed to fetch suggestions"
 - "search-bar"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4451,9 +5084,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ServiceCard.tsx
 
 **Hardcoded strings found:**
+
 - "Request Quote"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4461,6 +5096,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ServiceQuoteModal.tsx
 
 **Hardcoded strings found:**
+
 - "Request Service Quote"
 - "Selected Service"
 - "Project Description"
@@ -4484,6 +5120,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4491,6 +5128,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ServicesList.tsx
 
 **Hardcoded strings found:**
+
 - "Failed to load services."
 - "Retry"
 - "Failed to fetch services: ${res.status}"
@@ -4499,6 +5137,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "services-list"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4506,6 +5145,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/SitemapPage.tsx
 
 **Hardcoded strings found:**
+
 - "Public Pages"
 - "Talent Pages"
 - "Requires talent or creator account"
@@ -4521,6 +5161,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/content/about"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4528,10 +5169,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/SkipLink.tsx
 
 **Hardcoded strings found:**
+
 - "Skip to content"
 - "Skip to main content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4539,6 +5182,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/SupportChatbot.tsx
 
 **Hardcoded strings found:**
+
 - "Help Bot"
 - "Open help chat"
 - "Close help bot"
@@ -4547,6 +5191,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "m experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4554,10 +5199,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/TestimonialCarousel.tsx
 
 **Hardcoded strings found:**
+
 - "What Our Users Say"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4565,6 +5212,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ToastContainer.tsx
 
 **Hardcoded strings found:**
+
 - "Clear"
 - "Toast Manager Debug"
 - "Clear All"
@@ -4573,6 +5221,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "fixed top-4 left-4 z-[102] p-3 bg-background border border-border rounded-lg shadow-lg text-xs space-y-2 max-w-sm"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4580,6 +5229,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/TrustedBySection.tsx
 
 **Hardcoded strings found:**
+
 - "Trusted By Industry Leaders"
 - "Join the growing network of companies relying on Zion's marketplace"
 - "American Express"
@@ -4619,6 +5269,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "max-h-10 max-w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter invert"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4626,9 +5277,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/VerifiedBadge.tsx
 
 **Hardcoded strings found:**
+
 - "Verified talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4636,10 +5289,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/VideoCall/VideoCallRoom.tsx
 
 **Hardcoded strings found:**
+
 - "Video Call"
 - "Close"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4647,6 +5302,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/WaitlistSection.tsx
 
 **Hardcoded strings found:**
+
 - "Register Now"
 - "Full Name"
 - "Your Role"
@@ -4660,6 +5316,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Complete Registration"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4667,10 +5324,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/WhitepaperPreviewPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Distribution Chart"
 - "Cannot read property"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4678,6 +5337,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/WhitepaperSectionEditor.tsx
 
 **Hardcoded strings found:**
+
 - "Undo"
 - "Redo"
 - "Hide Suggestions"
@@ -4686,6 +5346,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Get AI Suggestions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4693,6 +5354,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/AdminLayout.tsx
 
 **Hardcoded strings found:**
+
 - "Back Office"
 - "next/link"
 - "Services"
@@ -4702,6 +5364,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Zion Brain"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4709,6 +5372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/ActionButtons.tsx
 
 **Hardcoded strings found:**
+
 - "Ignore"
 - "View Details"
 - "View details"
@@ -4720,6 +5384,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Ban user"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4727,11 +5392,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/EmptyFraudState.tsx
 
 **Hardcoded strings found:**
+
 - "Clear Filters"
 - "Try adjusting your filters"
 - "You don"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4739,6 +5406,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/FraudFilters.tsx
 
 **Hardcoded strings found:**
+
 - "All Statuses"
 - "Pending"
 - "Reviewed"
@@ -4761,6 +5429,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Content Type"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4768,6 +5437,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/FraudFlagsTable.tsx
 
 **Hardcoded strings found:**
+
 - "Severity"
 - "User"
 - "Content"
@@ -4779,6 +5449,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not analyzed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4786,6 +5457,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/FraudStatsCards.tsx
 
 **Hardcoded strings found:**
+
 - "Total Flags"
 - "Pending Review"
 - "Suspicious"
@@ -4793,6 +5465,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Actions Taken"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4800,11 +5473,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/fraud-detection/FraudTabContent.tsx
 
 **Hardcoded strings found:**
+
 - "Pending Review Flags"
 - "Dangerous Flags"
 - "Actioned Flags"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4812,6 +5487,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/moderation/FlaggedListingsTable.tsx
 
 **Hardcoded strings found:**
+
 - "No flagged listings"
 - "Type"
 - "Status"
@@ -4820,6 +5496,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Reject"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4827,6 +5504,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/performance-dashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Performance Dashboard"
 - "Monitor bundle size, performance metrics, and optimization opportunities"
 - "Performance Score"
@@ -4843,12 +5521,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Real-time performance tracking is helping optimize your application"
 - "Consider more aggressive code splitting"
 - "PerformanceObserver"
-- "/_next/static/"
+- "/\_next/static/"
 - "w-4 h-4 mr-2 ${isLoading ?"
 - "Excellent"
 - "Good"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4856,12 +5535,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/pitch-generator/DataSync.tsx
 
 **Hardcoded strings found:**
+
 - "Year-over-Year Growth"
 - "Global Reach"
 - "Marketplace Conversion Funnel"
 - "Next: Generate Pitch Deck"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4869,6 +5550,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/pitch-generator/InputFields.tsx
 
 **Hardcoded strings found:**
+
 - "Company Mission"
 - "Current Funding Stage"
 - "Vision/Goals"
@@ -4881,6 +5563,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Photo preview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4888,6 +5571,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/pitch-generator/SlideEditor.tsx
 
 **Hardcoded strings found:**
+
 - "Add Slide (AI)"
 - "Previous"
 - "Next"
@@ -4898,6 +5582,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "slide-editor p-4 bg-gray-100 rounded-lg"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4905,6 +5590,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/quotes/QuoteStatusCards.tsx
 
 **Hardcoded strings found:**
+
 - "In Review"
 - "Quotes being evaluated"
 - "Responded"
@@ -4915,6 +5601,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Finalized or declined quotes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4922,6 +5609,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/quotes/QuotesFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Status"
 - "All Statuses"
 - "New"
@@ -4940,6 +5628,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Archive Status"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4947,6 +5636,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/quotes/QuotesTable.tsx
 
 **Hardcoded strings found:**
+
 - "Talent"
 - "Requester"
 - "Project"
@@ -4968,6 +5658,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not specified"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -4975,6 +5666,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/reviews/ReviewsModerationTable.tsx
 
 **Hardcoded strings found:**
+
 - "No reviews to moderate"
 - "All reviews have been processed. Check back later for new submissions."
 - "Reviewer"
@@ -5001,6 +5693,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Would not work again"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5008,6 +5701,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/whitelabel/TenantsList.tsx
 
 **Hardcoded strings found:**
+
 - "Brand"
 - "Subdomain"
 - "Custom Domain"
@@ -5028,6 +5722,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Inactive"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5035,6 +5730,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/whitelabel/WhitelabelRequestForm.tsx
 
 **Hardcoded strings found:**
+
 - "Create White-Label Instance"
 - "Create a customized version of the platform for your client or partner."
 - "Brand Name"
@@ -5062,6 +5758,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error creating tenant"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5069,6 +5766,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/zion-brain/ZionBrainDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Brain"
 - "Prompt Router"
 - "Reflex Engine"
@@ -5086,6 +5784,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Visualization Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5093,6 +5792,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/admin/zion-gpt/ModelManager.tsx
 
 **Hardcoded strings found:**
+
 - "ZionGPT Models"
 - "Manage fine-tuned AI models for different platform features"
 - "Version"
@@ -5116,6 +5816,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Training failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5123,6 +5824,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/advanced/DynamicComponentLoader.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Try Again"
 - "Loading chart..."
@@ -5135,6 +5837,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Please check your internet connection"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5142,6 +5845,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ai-enhancement/AIEnhancementButton.tsx
 
 **Hardcoded strings found:**
+
 - "Apply"
 - "Cancel"
 - "Not enough content"
@@ -5149,6 +5853,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Content applied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5156,6 +5861,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ai-enhancement/AIEnhancementPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Content to enhance"
 - "Generate Enhanced Content"
 - "Generated content"
@@ -5167,6 +5873,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Focus on leadership skills"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5174,12 +5881,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/AnalyticsChart.tsx
 
 **Hardcoded strings found:**
+
 - "Line"
 - "Bar"
 - "Time Range"
 - "Chart Type"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5187,12 +5896,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/AnalyticsContainer.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Analytics Dashboard"
 - "Track user behavior, page views, and conversion rates"
 - "Track user behavior, page views, and conversion rates to improve your platform performance"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5200,6 +5911,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/AnalyticsSummary.tsx
 
 **Hardcoded strings found:**
+
 - "Total Page Views"
 - "Unique Visitors"
 - "Conversion Rate"
@@ -5208,6 +5920,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Never"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5215,11 +5928,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/ConversionAnalysisChart.tsx
 
 **Hardcoded strings found:**
+
 - "Conversion Analysis"
 - "Track different conversion types"
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5227,9 +5942,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/ExportPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Download analytics data for further analysis"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5237,11 +5954,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/FeatureUsageChart.tsx
 
 **Hardcoded strings found:**
+
 - "Feature Usage"
 - "How often key features are used"
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5249,10 +5968,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/PageViewsChart.tsx
 
 **Hardcoded strings found:**
+
 - "Page Views Trend"
 - "Daily page view statistics"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5260,6 +5981,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/PageViewsTable.tsx
 
 **Hardcoded strings found:**
+
 - "Top Pages"
 - "Most viewed pages on your platform"
 - "Last 24h"
@@ -5271,6 +5993,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Time Range"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5278,6 +6001,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/analytics/UserBehaviorStats.tsx
 
 **Hardcoded strings found:**
+
 - "Form Submissions"
 - "Conversions"
 - "User Behavior Over Time"
@@ -5287,6 +6011,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Goal completions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5294,6 +6019,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/AuthConfigurationError.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication Service Unavailable"
 - "Setup Guide"
 - "Check Again"
@@ -5312,6 +6038,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5319,12 +6046,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/AuthModal.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication Required"
 - "Please log in or sign up to continue with your purchase."
 - "Sign Up"
 - "Login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5332,6 +6061,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/RegisterForm.tsx
 
 **Hardcoded strings found:**
+
 - "Create account"
 - "Password"
 - "Confirm Password"
@@ -5344,6 +6074,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5351,6 +6082,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/SignupForm.tsx
 
 **Hardcoded strings found:**
+
 - "Full Name"
 - "Password"
 - "Password Strength"
@@ -5372,6 +6104,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create Account"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5379,6 +6112,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/UserProfile.tsx
 
 **Hardcoded strings found:**
+
 - "Not Signed In"
 - "Sign In"
 - "User Profile"
@@ -5388,6 +6122,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unverified"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5395,11 +6130,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/LoginCard.tsx
 
 **Hardcoded strings found:**
+
 - "Welcome back"
 - "Create account"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5407,11 +6144,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/LoginContent.tsx
 
 **Hardcoded strings found:**
+
 - "Join the Zion Community"
 - "Connect with thousands of AI professionals, discover new opportunities, and showcase your services to a global audience."
 - "./LoginCard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5419,10 +6158,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/LoginErrorFallback.tsx
 
 **Hardcoded strings found:**
+
 - "Login Error"
 - "Sorry, the login form could not be displayed due to an error."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5430,6 +6171,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/LoginForm.tsx
 
 **Hardcoded strings found:**
+
 - "Password"
 - "Check status"
 - "Create account"
@@ -5442,6 +6184,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Resend / Verify e-mail"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5449,12 +6192,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/SocialLogin.tsx
 
 **Hardcoded strings found:**
+
 - "Or continue with"
 - "Sign in with Google"
 - "Sign in with Facebook"
 - "Sign in with Twitter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5462,6 +6207,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/auth/login/Web3Login.tsx
 
 **Hardcoded strings found:**
+
 - "Web3 Login Unavailable"
 - "Sign in with Web3"
 - "Failed to connect wallet. Please try again."
@@ -5469,6 +6215,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Please install MetaMask or another compatible wallet."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5476,11 +6223,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/blog/CommentsSection.tsx
 
 **Hardcoded strings found:**
+
 - "Post Comment"
 - "Your name"
 - "Add a comment..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5488,6 +6237,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/blog/SocialShareButtons.tsx
 
 **Hardcoded strings found:**
+
 - "LinkedIn"
 - "Copy Link"
 - "Failed to copy link"
@@ -5496,6 +6246,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Link copied to clipboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5503,11 +6254,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/cart/CartDrawer.tsx
 
 **Hardcoded strings found:**
+
 - "Cart"
 - "next/link"
 - "/cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5515,6 +6268,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/cart/GuestCheckoutModal.tsx
 
 **Hardcoded strings found:**
+
 - "Guest Checkout"
 - "Shipping Address"
 - "Cancel"
@@ -5524,6 +6278,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "guest-address"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5531,9 +6286,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/checkout/CardForm.tsx
 
 **Hardcoded strings found:**
+
 - "Failed to create payment"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5541,6 +6298,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/checkout/CheckoutButton.jsx
 
 **Hardcoded strings found:**
+
 - "Stripe not loaded"
 - "Failed to create session"
 - "Stripe redirect error:"
@@ -5548,6 +6306,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Pay with Stripe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5555,6 +6314,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/CreatePostButton.tsx
 
 **Hardcoded strings found:**
+
 - "Create New Post"
 - "Please log in to use this feature"
 - "create-new-post-button"
@@ -5563,6 +6323,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/auth/login?returnTo=${returnTo}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5570,10 +6331,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/EmptyState.tsx
 
 **Hardcoded strings found:**
+
 - "Login required"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5581,9 +6344,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/ForumCategories.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5591,12 +6356,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/NewPostDialog.tsx
 
 **Hardcoded strings found:**
+
 - "Create New Post"
 - "Post created"
 - "Your post has been published successfully"
 - "Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5604,10 +6371,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/PostCard.tsx
 
 **Hardcoded strings found:**
+
 - "Featured"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5615,6 +6384,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/PostForm.tsx
 
 **Hardcoded strings found:**
+
 - "Title"
 - "Content"
 - "Category"
@@ -5627,6 +6397,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create Post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5634,10 +6405,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/ReplyCard.tsx
 
 **Hardcoded strings found:**
+
 - "Answer"
 - "Mark as Answer"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5645,11 +6418,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/community/ReplyForm.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Submitting..."
 - "Post Reply"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5657,11 +6432,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/ContractBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Contract Details"
 - "Preview"
 - "Smart Contract Builder"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5669,6 +6446,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/SmartContractBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Contract Details"
 - "Preview"
 - "Failed to deploy smart contract"
@@ -5676,6 +6454,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Deploy to Blockchain"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5683,6 +6462,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/blockchain/SmartContractDeployment.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Smart Contract Deployment"
 - "Deploy to blockchain"
@@ -5699,6 +6479,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Deploy Contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5706,6 +6487,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/components/AdditionalClausesFields.tsx
 
 **Hardcoded strings found:**
+
 - "Additional Clauses"
 - "Select additional clauses to include in your contract"
 - "Protect sensitive information"
@@ -5715,6 +6497,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Define how changes to the contract are handled"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5722,6 +6505,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/components/ContractForm.tsx
 
 **Hardcoded strings found:**
+
 - "Contract Builder"
 - "Reset Form"
 - "Start date is required"
@@ -5732,6 +6516,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Generate Contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5739,6 +6524,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/components/ContractPreview.tsx
 
 **Hardcoded strings found:**
+
 - "Contract Preview"
 - "Ready to Sign"
 - "Pending Review"
@@ -5750,6 +6536,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5757,12 +6544,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/components/PaymentTermsFields.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Terms"
 - "Fixed Price"
 - "Payment Amount"
 - "Select payment terms"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5770,6 +6559,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/components/ProjectDetailsFields.tsx
 
 **Hardcoded strings found:**
+
 - "Project Name"
 - "Scope Summary"
 - "Be specific about what is included and any limitations"
@@ -5777,6 +6567,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Pick a date"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5784,6 +6575,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/page/ContractBuilderContent.tsx
 
 **Hardcoded strings found:**
+
 - "Alex Chen"
 - "Full Stack Developer"
 - "Website Redesign"
@@ -5792,6 +6584,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "TechStart Inc"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5799,10 +6592,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/page/ContractHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Smart Contract Builder"
 - "Create New Contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5810,11 +6605,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/page/ContractTypeCards.tsx
 
 **Hardcoded strings found:**
+
 - "Create Standard Contract"
 - "Blockchain Powered"
 - "Create Smart Contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5822,6 +6619,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/page/RecentContractsTable.tsx
 
 **Hardcoded strings found:**
+
 - "Contract Title"
 - "Client"
 - "Talent"
@@ -5833,6 +6631,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5840,12 +6639,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/templates/TemplateList.tsx
 
 **Hardcoded strings found:**
+
 - "Please log in to use this feature"
 - "Cancel"
 - "Delete"
 - "/auth/login?returnTo=${encodeURIComponent(currentPath)}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5853,10 +6654,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/templates/TemplateSaveForm.tsx
 
 **Hardcoded strings found:**
+
 - "Cancel"
 - "Title is required"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5864,9 +6667,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/contracts/utils/contractUtils.ts
 
 **Hardcoded strings found:**
+
 - "Failed to generate contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5874,6 +6679,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/creator/CreatorSidebar.tsx
 
 **Hardcoded strings found:**
+
 - "Home"
 - "Messages"
 - "Notifications"
@@ -5888,6 +6694,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/settings"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5895,9 +6702,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/dashboard/LegalTemplates.tsx
 
 **Hardcoded strings found:**
+
 - "Download"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5905,6 +6714,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiDocsLayout.tsx
 
 **Hardcoded strings found:**
+
 - "Main"
 - "next/link"
 - "Getting Started"
@@ -5913,6 +6723,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/developers/docs/errors"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5920,6 +6731,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiDocumentation.tsx
 
 **Hardcoded strings found:**
+
 - "Jobs"
 - "Talent"
 - "Quotes"
@@ -5956,6 +6768,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Python"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5963,6 +6776,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiKeysManager.tsx
 
 **Hardcoded strings found:**
+
 - "Key Name"
 - "Scopes"
 - "Cancel"
@@ -5981,6 +6795,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Never"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -5988,6 +6803,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiLogs.tsx
 
 **Hardcoded strings found:**
+
 - "Success"
 - "Client Error"
 - "Server Error"
@@ -6004,6 +6820,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Next"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6011,9 +6828,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiLogsChart.tsx
 
 **Hardcoded strings found:**
+
 - "Logs per Day"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6021,6 +6840,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/ApiPlayground.tsx
 
 **Hardcoded strings found:**
+
 - "Request failed"
 - "Failed to fetch"
 - "Unknown error occurred"
@@ -6028,6 +6848,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6035,9 +6856,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/CodeBlock.tsx
 
 **Hardcoded strings found:**
+
 - "Copy code"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6045,6 +6868,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/developers/WebhooksManager.tsx
 
 **Hardcoded strings found:**
+
 - "Webhooks"
 - "Add Webhook"
 - "Create Webhook"
@@ -6077,6 +6901,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "No response body"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6084,6 +6909,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/DisputeDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Dispute Resolution Center"
 - "Open Disputes"
 - "Awaiting review"
@@ -6093,6 +6919,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Successfully concluded"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6100,6 +6927,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/DisputeDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Loading dispute details..."
 - "Dispute not found"
 - "Back to Disputes"
@@ -6162,6 +6990,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6169,6 +6998,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/DisputeForm.tsx
 
 **Hardcoded strings found:**
+
 - "Report an Issue"
 - "Reason for dispute"
 - "Describe the issue in detail"
@@ -6184,6 +7014,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Dispute"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6191,12 +7022,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/DisputeStatusBadge.tsx
 
 **Hardcoded strings found:**
+
 - "Under Dispute"
 - "This dispute is under review by our team"
 - "This dispute has been resolved"
 - "This dispute has been closed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6204,6 +7037,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/DisputesList.tsx
 
 **Hardcoded strings found:**
+
 - "Project"
 - "Parties"
 - "Created"
@@ -6224,6 +7058,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/dashboard/disputes/${dispute.id}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6231,12 +7066,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/disputes/RaiseDisputeButton.tsx
 
 **Hardcoded strings found:**
+
 - "Raise Dispute"
 - "Raise a Dispute"
 - "Please provide details about the issue you're experiencing with this project."
 - "/dashboard/disputes/${disputeId}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6244,11 +7081,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseCTA.tsx
 
 **Hardcoded strings found:**
+
 - "Contact Sales"
 - "Personalized walkthrough of the platform"
 - "Custom pricing based on your team size"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6256,6 +7095,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseFeatures.tsx
 
 **Hardcoded strings found:**
+
 - "Built for Enterprise Needs"
 - "Our enterprise solutions offer powerful tools designed for large teams and complex hiring needs"
 - "Private Hiring Portal"
@@ -6265,6 +7105,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Global Access"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6272,6 +7113,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseHero.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise"
 - "Talent Solutions"
 - "Download Brochure"
@@ -6279,6 +7121,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enterprise Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6286,6 +7129,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterprisePricingTable.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise Plans"
 - "Plan Features"
 - "Most Popular"
@@ -6295,6 +7139,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Get Started"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6302,6 +7147,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseStickyNav.tsx
 
 **Hardcoded strings found:**
+
 - "Features"
 - "Pricing"
 - "Testimonials"
@@ -6310,6 +7156,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6317,6 +7164,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseTestimonials.tsx
 
 **Hardcoded strings found:**
+
 - "Trusted by Leading Companies"
 - "See how enterprise teams are transforming their hiring process"
 - "Sarah Johnson"
@@ -6325,6 +7173,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Elena Rodriguez"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6332,10 +7181,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/EnterpriseTrustBadges.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise-Grade Security & Compliance"
 - "We maintain the highest standards of data protection and compliance"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6343,10 +7194,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/AdminDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Role Assignment"
 - "Team Activity"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6354,6 +7207,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/AdminHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise Admin Dashboard"
 - "Settings"
 - "Subscription Plan"
@@ -6367,6 +7221,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "loading..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6374,6 +7229,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/RoleManagement.tsx
 
 **Hardcoded strings found:**
+
 - "Role Permissions"
 - "Role"
 - "View Candidates"
@@ -6399,6 +7255,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Read-only access to candidates"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6406,6 +7263,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/TeamActivity.tsx
 
 **Hardcoded strings found:**
+
 - "Recent Team Activity"
 - "User"
 - "Activity"
@@ -6418,6 +7276,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Filter by date"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6425,6 +7284,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/TeamManagement.tsx
 
 **Hardcoded strings found:**
+
 - "Role"
 - "Admin"
 - "Recruiter"
@@ -6441,6 +7301,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Invitation resent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6448,6 +7309,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/admin/UsageStats.tsx
 
 **Hardcoded strings found:**
+
 - "Job Postings"
 - "Monthly job posting limit"
 - "Save Changes"
@@ -6456,6 +7318,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Contact Us"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6463,12 +7326,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/BillingDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Subscription"
 - "Payment Methods"
 - "Invoice History"
 - "Usage Overview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6476,6 +7341,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/BillingHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Billing & Invoices"
 - "Contact Billing Support"
 - "Analytics"
@@ -6484,6 +7350,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/dashboard/client/analytics"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6491,6 +7358,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/CurrentSubscription.tsx
 
 **Hardcoded strings found:**
+
 - "Current Subscription"
 - "Active"
 - "Your subscription details and plan information"
@@ -6504,6 +7372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Cancel Subscription"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6511,6 +7380,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/InvoiceHistory.tsx
 
 **Hardcoded strings found:**
+
 - "Paid"
 - "Pending"
 - "Overdue"
@@ -6530,6 +7400,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Downloading invoice ${invoiceId} as PDF."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6537,11 +7408,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/PaymentMethods.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Methods"
 - "Manage your payment methods for automatic billing"
 - "Add Payment Method"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6549,6 +7422,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/billing/UsageOverview.tsx
 
 **Hardcoded strings found:**
+
 - "Usage Overview"
 - "Track your team's resource usage across the platform"
 - "Current Period"
@@ -6557,6 +7431,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Messages Sent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6564,6 +7439,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/QuickActions.tsx
 
 **Hardcoded strings found:**
+
 - "Quick Actions"
 - "Fast access to common tasks"
 - "Post New Job"
@@ -6575,6 +7451,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Set up candidate interviews"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6582,6 +7459,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/RecentActivity.tsx
 
 **Hardcoded strings found:**
+
 - "Job"
 - "Candidate"
 - "Interview"
@@ -6591,6 +7469,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View All Activity"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6598,12 +7477,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/SharedInbox.tsx
 
 **Hardcoded strings found:**
+
 - "Shared Inbox"
 - "Team messages and notifications"
 - "No new messages"
 - "View All Messages"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6611,6 +7492,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/TalentPool.tsx
 
 **Hardcoded strings found:**
+
 - "Available"
 - "Interviewing"
 - "Hired"
@@ -6621,6 +7503,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6628,6 +7511,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/TeamStats.tsx
 
 **Hardcoded strings found:**
+
 - "Performance metrics for your team"
 - "Team capacity"
 - "Job postings"
@@ -6636,6 +7520,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View Full Analytics"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6643,6 +7528,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/enterprise/workspace/WorkspaceHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Active Job Listings"
 - "Candidate Applications"
 - "Interviews Scheduled"
@@ -6650,6 +7536,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Workspace settings"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6657,6 +7544,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/errors/GlobalErrorBoundary.tsx
 
 **Hardcoded strings found:**
+
 - "Oops! Something went wrong"
 - "Try Again"
 - "Go Home"
@@ -6675,6 +7563,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "withErrorBoundary(${Component.displayName || Component.name})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6682,10 +7571,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/AgendaTimeline.tsx
 
 **Hardcoded strings found:**
+
 - "Agenda"
 - "py-12 bg-background text-foreground"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6693,9 +7584,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/ExpoGPTPrompt.tsx
 
 **Hardcoded strings found:**
+
 - "py-12 bg-background text-center"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6703,6 +7596,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/ExpoHero.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Global Expo"
 - "Showcasing Multiverse Innovation"
 - "Hybrid Virtual Summit"
@@ -6711,6 +7605,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6718,10 +7613,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/ExportsSection.tsx
 
 **Hardcoded strings found:**
+
 - "Send Summary"
 - "Claimable NFT ticket & proof-of-attendance"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6729,11 +7626,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/InteractiveMap.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Multiverse Map"
 - "World map"
 - "py-12 bg-background text-foreground"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6741,11 +7640,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/KeynotesSection.tsx
 
 **Hardcoded strings found:**
+
 - "Keynotes"
 - "Founder Keynote"
 - "Nations Panel"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6753,11 +7654,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/LivestreamSection.tsx
 
 **Hardcoded strings found:**
+
 - "Livestream"
 - "Watch the Replay"
 - "Zion Expo Livestream"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6765,10 +7668,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/MultiverseLaunchesSection.tsx
 
 **Hardcoded strings found:**
+
 - "New Multiverse Launches"
 - "Open Source Protocol Update"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6776,6 +7681,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/expo/PartnerBoothsSection.tsx
 
 **Hardcoded strings found:**
+
 - "Partner Booths"
 - "Interactive showcase"
 - "Top Universities"
@@ -6784,6 +7690,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "py-12 bg-background text-foreground"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6791,6 +7698,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/feedback/FeedbackWidget.tsx
 
 **Hardcoded strings found:**
+
 - "Feedback"
 - "Your Feedback"
 - "Thank you for your feedback!"
@@ -6801,6 +7709,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Screenshot preview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6808,12 +7717,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/forms/ValidatedFormField.tsx
 
 **Hardcoded strings found:**
+
 - "Show password"
 - "Hide password"
 - "Password must contain at least 8 characters with uppercase, lowercase, number, and special character"
 - "Please enter a valid phone number"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6821,12 +7732,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/gallery/ProductGallery.tsx
 
 **Hardcoded strings found:**
+
 - "Images"
 - "Video"
 - "Video preview"
 - "Zoomed view"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6834,10 +7747,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/gamification/MyBadgesPreview.tsx
 
 **Hardcoded strings found:**
+
 - "My Badges"
 - "Complete your profile for more rewards!"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6845,9 +7760,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/gamification/UserLeaderboard.tsx
 
 **Hardcoded strings found:**
+
 - "Leaderboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6855,9 +7772,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/gamification/UserProgress.tsx
 
 **Hardcoded strings found:**
+
 - "Progress"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6865,12 +7784,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/governance/ProposalCard.tsx
 
 **Hardcoded strings found:**
+
 - "View Details & Vote"
 - "next/link"
 - "EXECUTED"
 - "CANCELED"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6878,6 +7799,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/header/AvatarMenu.tsx
 
 **Hardcoded strings found:**
+
 - "Profile"
 - "Orders"
 - "Logout"
@@ -6886,6 +7808,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6893,10 +7816,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/header/Logo.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Logo"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6904,6 +7829,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/header/MainNavigation.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "Home"
 - "Find Talent"
@@ -6917,6 +7843,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Register"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6924,6 +7851,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/header/MobileBottomNav.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "Browse"
 - "/cart"
@@ -6931,6 +7859,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-t border-primary/20"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6938,6 +7867,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/header/UserProfileDropdown.tsx
 
 **Hardcoded strings found:**
+
 - "Profile"
 - "Orders"
 - "Settings"
@@ -6950,6 +7880,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/settings"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6957,6 +7888,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/hiring-tracker/CandidateCard.tsx
 
 **Hardcoded strings found:**
+
 - "Hire Candidate"
 - "Message"
 - "View Resume"
@@ -6976,6 +7908,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add notes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -6983,6 +7916,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/hiring-tracker/HireConfirmationModal.tsx
 
 **Hardcoded strings found:**
+
 - "Confirm Hire"
 - "Project Name"
 - "Project Description"
@@ -7001,6 +7935,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unavailable"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7008,6 +7943,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/hiring-tracker/HiringAnalytics.tsx
 
 **Hardcoded strings found:**
+
 - "Loading analytics data..."
 - "No data available"
 - "You need applications to generate analytics"
@@ -7021,6 +7957,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Hired"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7028,6 +7965,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/hiring-tracker/KanbanBoard.tsx
 
 **Hardcoded strings found:**
+
 - "No applications yet"
 - "Applied"
 - "New applications"
@@ -7043,6 +7981,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to update status"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7050,9 +7989,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/hiring-tracker/KanbanColumn.tsx
 
 **Hardcoded strings found:**
+
 - "Drag candidates here"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7060,6 +8001,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/home/FeatureHighlights.tsx
 
 **Hardcoded strings found:**
+
 - "Tailored Solutions for Everyone"
 - "For Talent Seekers"
 - "For Talent & Service Providers"
@@ -7067,6 +8009,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Customizable workflow and approval processes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7074,6 +8017,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/home/InteractiveFeatures.tsx
 
 **Hardcoded strings found:**
+
 - "Key Features"
 - "Hover or click a card to learn more about what Zion offers"
 - "Learn more"
@@ -7088,6 +8032,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Access cutting-edge technology with flexible options to buy, rent or lease the gear you need."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7095,9 +8040,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/icons/index.tsx
 
 **Hardcoded strings found:**
+
 - "Icon"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7105,6 +8052,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/IntegrationCards.tsx
 
 **Hardcoded strings found:**
+
 - "Connected"
 - "Pending"
 - "Not Connected"
@@ -7119,6 +8067,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Connect Teams"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7126,6 +8075,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/IntegrationConnectionModal.tsx
 
 **Hardcoded strings found:**
+
 - "Sync Settings"
 - "Sync job details"
 - "Sync applicant data"
@@ -7140,6 +8090,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Never"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7147,6 +8098,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/IntegrationsHub.tsx
 
 **Hardcoded strings found:**
+
 - "Integrations Hub"
 - "Connect your platform with the tools and services you use every day"
 - "Connect New Integration"
@@ -7167,6 +8119,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Synchronization Log"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7174,6 +8127,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/IntegrationsSyncLog.tsx
 
 **Hardcoded strings found:**
+
 - "Success"
 - "Error"
 - "Warning"
@@ -7185,6 +8139,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Details"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7192,6 +8147,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/WebhookManager.tsx
 
 **Hardcoded strings found:**
+
 - "Create Webhook"
 - "Webhook Name"
 - "Add"
@@ -7215,6 +8171,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Never triggered"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7222,6 +8179,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/integrations/ZapierIntegration.tsx
 
 **Hardcoded strings found:**
+
 - "Active"
 - "Popular Zaps"
 - "Create Slack notifications for new jobs"
@@ -7232,6 +8190,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Contract Signed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7239,6 +8198,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/interviews/InterviewCard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Pending"
 - "Live Now"
@@ -7268,6 +8228,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Join Meeting"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7275,6 +8236,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/interviews/InterviewRequestForm.tsx
 
 **Hardcoded strings found:**
+
 - "Interview Title"
 - "Date"
 - "Pick a date"
@@ -7302,6 +8264,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Schedule Interview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7309,12 +8272,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/interviews/InterviewResponseForm.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Cancel"
 - "Client"
 - "Confirm Interview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7322,6 +8287,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/interviews/UpcomingInterviewsCard.tsx
 
 **Hardcoded strings found:**
+
 - "Upcoming Interviews"
 - "No upcoming interviews scheduled"
 - "Schedule Interview"
@@ -7332,6 +8298,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Interview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7339,6 +8306,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/ApplicationScoreCard.tsx
 
 **Hardcoded strings found:**
+
 - "Resume Match Score"
 - "Match Score"
 - "Summary"
@@ -7351,6 +8319,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Score Resume"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7358,6 +8327,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/ApplyToJobForm.tsx
 
 **Hardcoded strings found:**
+
 - "Cover Letter"
 - "Loading your resumes..."
 - "No resume"
@@ -7376,6 +8346,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7383,10 +8354,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/EmptyMatchesCard.tsx
 
 **Hardcoded strings found:**
+
 - "No talent matches yet"
 - "Find AI Matches"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7394,10 +8367,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/JobCard.tsx
 
 **Hardcoded strings found:**
+
 - "Apply Now"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7405,6 +8380,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/JobMatchCard.tsx
 
 **Hardcoded strings found:**
+
 - "Available"
 - "Invite"
 - "View Details"
@@ -7413,6 +8389,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Independent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7420,12 +8397,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/JobMatchesCard.tsx
 
 **Hardcoded strings found:**
+
 - "Applied"
 - "Declined"
 - "Apply Now"
 - "Decline"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7433,6 +8412,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/JobsList.tsx
 
 **Hardcoded strings found:**
+
 - "Post Your First Job"
 - "View Details"
 - "next/link"
@@ -7442,6 +8422,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/jobs/${job.id}/edit"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7449,6 +8430,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/MyApplications.tsx
 
 **Hardcoded strings found:**
+
 - "New"
 - "Viewed"
 - "Shortlisted"
@@ -7463,6 +8445,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unknown Job"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7470,12 +8453,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/NoJobsCard.tsx
 
 **Hardcoded strings found:**
+
 - "No job suggestions available yet. Complete your profile to get AI-matched jobs."
 - "Update Profile"
 - "next/link"
 - "/profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7483,11 +8468,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/SuggestedJobs.tsx
 
 **Hardcoded strings found:**
+
 - "New Job Matches"
 - "Previously Viewed"
 - "Applied Jobs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7495,6 +8482,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/SuggestedTalents.tsx
 
 **Hardcoded strings found:**
+
 - "Error"
 - "View talent profile:"
 - "View Profile"
@@ -7503,6 +8491,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7510,6 +8499,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationActions.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Status"
 - "Shortlist"
@@ -7520,6 +8510,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7527,6 +8518,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationCard.tsx
 
 **Hardcoded strings found:**
+
 - "Prepare for Interview"
 - "View Interview Details"
 - "View Offer"
@@ -7543,6 +8535,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Show More"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7550,6 +8543,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationProgress.tsx
 
 **Hardcoded strings found:**
+
 - "Submitted"
 - "Viewed"
 - "Shortlisted"
@@ -7557,6 +8551,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Decision"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7564,6 +8559,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationRow.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "View"
 - "No resume"
@@ -7571,6 +8567,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7578,6 +8575,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationsTable.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Candidate"
 - "Applied"
@@ -7590,6 +8588,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Applicant"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7597,6 +8596,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ApplicationsTracker.tsx
 
 **Hardcoded strings found:**
+
 - "All"
 - "Submitted"
 - "Viewed"
@@ -7606,6 +8606,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not Selected"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7613,12 +8614,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/EmptyState.tsx
 
 **Hardcoded strings found:**
+
 - "No Applications Yet"
 - "You haven't submitted any applications yet. Browse available jobs to get started!"
 - "Browse Jobs"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7626,9 +8629,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ErrorState.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7636,9 +8641,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ScoreBadge.tsx
 
 **Hardcoded strings found:**
+
 - "Not scored"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7646,9 +8653,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/ScoreDialog.tsx
 
 **Hardcoded strings found:**
+
 - "Application Match Score"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7656,6 +8665,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/applications/StatusBadge.tsx
 
 **Hardcoded strings found:**
+
 - "Submitted"
 - "Viewed"
 - "Shortlisted"
@@ -7664,6 +8674,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not Selected"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7671,6 +8682,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/job-posting/BasicInfoFields.tsx
 
 **Hardcoded strings found:**
+
 - "Job Title"
 - "Company"
 - "Job Category"
@@ -7684,6 +8696,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Other"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7691,9 +8704,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/job-posting/DateFields.tsx
 
 **Hardcoded strings found:**
+
 - "Pick a date"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7701,6 +8716,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/job-posting/DescriptionFields.tsx
 
 **Hardcoded strings found:**
+
 - "Job Description"
 - "Enter a detailed description of the job role"
 - "List the main responsibilities of this job"
@@ -7708,6 +8724,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Provide instructions on how to apply for this job"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7715,6 +8732,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/job-posting/JobPostingForm.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Post a Job"
 - "Fill in the details below to create a job posting."
@@ -7726,6 +8744,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Post Job"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7733,12 +8752,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/jobs/job-posting/useJobForm.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to post a job"
 - "Error in job form submission:"
 - "Failed to process form"
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7746,6 +8767,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/listing/AIListingForm.tsx
 
 **Hardcoded strings found:**
+
 - "Title"
 - "Category"
 - "Generate Optimized Content"
@@ -7754,6 +8776,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Please provide at least a title and category."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7761,6 +8784,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/listing/AIListingGenerator.tsx
 
 **Hardcoded strings found:**
+
 - "Error generating content:"
 - "Failed to generate content. Please try again."
 - "Content Generated"
@@ -7769,6 +8793,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Content Applied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7776,6 +8801,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/listing/GeneratedContentDisplay.tsx
 
 **Hardcoded strings found:**
+
 - "Generated Content"
 - "Description"
 - "Tags"
@@ -7783,6 +8809,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Apply to My Listing"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7790,12 +8817,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/loyalty/PointsBadge.tsx
 
 **Hardcoded strings found:**
+
 - "Point Breakdown"
 - "Click to view full rewards program"
 - "Zion Rewards Program"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7803,6 +8832,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/ConversationDetailView.tsx
 
 **Hardcoded strings found:**
+
 - "No Conversation Selected"
 - "Send"
 - "Enter"
@@ -7811,6 +8841,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Context"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7818,11 +8849,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/ConversationsList.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Conversations"
 - "No conversations yet"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7830,12 +8863,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/FraudDetectionMiddleware.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Error analyzing message:"
 - "Message Flagged"
 - "Message Blocked"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7843,9 +8878,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/MessageBubble.tsx
 
 **Hardcoded strings found:**
+
 - "Attachment"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7853,6 +8890,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/MessageTalentModal.tsx
 
 **Hardcoded strings found:**
+
 - "Message"
 - "Cancel"
 - "Message required"
@@ -7863,6 +8901,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7870,6 +8909,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/job-application/ApplyForm.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Message"
 - "Resume"
@@ -7877,8 +8917,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submitting..."
 - "Failed to submit application"
 - "s a link to my proposal: ${proposalLink}`;
-      }
-      
+  }
       // Add info about attached resume if available
       if (selectedResume) {
         fullMessage += `\n\nI"
@@ -7891,6 +8930,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7898,9 +8938,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/job-application/ApplyToJobModal.tsx
 
 **Hardcoded strings found:**
+
 - "Complete your application for this position"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7908,9 +8950,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/job-application/MessageTab.tsx
 
 **Hardcoded strings found:**
+
 - "Application Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7918,12 +8962,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/job-application/ResumeTab.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Please select a resume to continue"
 - "Submitting..."
 - "Submit Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7931,9 +8977,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/job-application/types.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7941,9 +8989,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/resume-selector/ResumePreviewCard.tsx
 
 **Hardcoded strings found:**
+
 - "Download Resume"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7951,6 +9001,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/resume-selector/ResumeSelector.tsx
 
 **Hardcoded strings found:**
+
 - "Attach Resume"
 - "Use most recent AI Resume"
 - "Upload a custom resume (PDF)"
@@ -7967,6 +9018,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/dashboard/talent/portfolio"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7974,9 +9026,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/resume-selector/SelectResumeSection.tsx
 
 **Hardcoded strings found:**
+
 - "No saved resumes found."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7984,10 +9038,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/messaging/resume-selector/UploadSection.tsx
 
 **Hardcoded strings found:**
+
 - "Browse Files"
 - "Drag & drop your PDF or click to browse"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -7995,6 +9051,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/AppFeatures.tsx
 
 **Hardcoded strings found:**
+
 - "Powerful Features"
 - "Everything you love about Zion, now in your pocket. Our mobile app brings all the powerful features you need to succeed."
 - "Resume Builder"
@@ -8002,6 +9059,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Real-time Notifications"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8009,6 +9067,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/AppScreenshots.tsx
 
 **Hardcoded strings found:**
+
 - "Scroll left"
 - "Scroll right"
 - "Dashboard screen"
@@ -8018,6 +9077,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Profile screen"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8025,12 +9085,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/AppStoreBanner.tsx
 
 **Hardcoded strings found:**
+
 - "Zion AI Marketplace"
 - "Get the full experience on our app"
 - "View"
 - "Dismiss banner"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8038,6 +9100,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/AppStoreButtons.tsx
 
 **Hardcoded strings found:**
+
 - "Download on the"
 - "App Store"
 - "Google Play"
@@ -8045,6 +9108,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Get it on Google Play"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8052,12 +9116,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/AppTestimonials.tsx
 
 **Hardcoded strings found:**
+
 - "What Our Users Say"
 - "Sarah Williams"
 - "As a recruiter, this app has saved me countless hours. The talent quality is exceptional and the mobile interface is intuitive."
 - "Michael Chen"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8065,6 +9131,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/CommunityTrust.tsx
 
 **Hardcoded strings found:**
+
 - "Trusted by the"
 - "Tech Community"
 - "Join thousands of professionals who are already using the Zion mobile app to connect, hire, and work"
@@ -8075,6 +9142,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Matches Made"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8082,6 +9150,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/DownloadSection.tsx
 
 **Hardcoded strings found:**
+
 - "Get The App Today"
 - "Download the Zion app now and take your tech career or hiring needs to the next level. Available on iOS and Android."
 - "Scan to download"
@@ -8089,6 +9158,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Google Play button clicked"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8096,11 +9166,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/MobileAppHero.tsx
 
 **Hardcoded strings found:**
+
 - "Zion"
 - "Open App"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8108,6 +9180,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/MobileEmailCapture.tsx
 
 **Hardcoded strings found:**
+
 - "Get Early Access to New Features"
 - "Subscribe to our mobile app updates and be the first to try new features before they're released to the public."
 - "We respect your privacy and will never share your information."
@@ -8115,6 +9188,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Subscribe"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8122,6 +9196,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/MobileFeatureShowcase.tsx
 
 **Hardcoded strings found:**
+
 - "Everything You Need On The Go"
 - "The Zion mobile app brings the power of our AI marketplace to your pocket with these key features"
 - "Track Milestones"
@@ -8130,6 +9205,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Login quickly and securely with Face ID or Touch ID on supported devices."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8137,6 +9213,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/MobileLaunchHero.tsx
 
 **Hardcoded strings found:**
+
 - "The Power of"
 - "Zion"
 - "In Your Pocket"
@@ -8145,6 +9222,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8152,11 +9230,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/QrCodeDownload.tsx
 
 **Hardcoded strings found:**
+
 - "Download"
 - "Zion"
 - "Scan to download"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8164,6 +9244,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/SmartAppBanner.tsx
 
 **Hardcoded strings found:**
+
 - "Show banner"
 - "Get our app for the best experience"
 - "View"
@@ -8173,6 +9254,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/download"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8180,12 +9262,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/admin/ChangelogManager.tsx
 
 **Hardcoded strings found:**
+
 - "Version History"
 - "Add"
 - "No changelog entries yet"
 - "What"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8193,12 +9277,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/admin/ExportPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Installation Analytics"
 - "Enable Analytics"
 - "Analytics tracking enabled"
 - "Install"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8206,6 +9292,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/admin/MetadataForm.tsx
 
 **Hardcoded strings found:**
+
 - "App Metadata"
 - "App Title"
 - "Short Description"
@@ -8220,6 +9307,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8227,10 +9315,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/admin/MetadataManager.tsx
 
 **Hardcoded strings found:**
+
 - "Failed to save metadata"
 - "Save Metadata"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8238,12 +9328,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/mobile-app/admin/ScreenshotManager.tsx
 
 **Hardcoded strings found:**
+
 - "Select Files"
 - "App screenshot"
 - "Please select valid image files"
 - "Android"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8251,6 +9343,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/navigation/Navigation.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "Home"
 - "Marketplace"
@@ -8271,6 +9364,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8278,6 +9372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/notifications/NotificationFilter.tsx
 
 **Hardcoded strings found:**
+
 - "All"
 - "Unread"
 - "Onboarding"
@@ -8285,6 +9380,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Orders"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8292,9 +9388,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/notifications/NotificationFooter.tsx
 
 **Hardcoded strings found:**
+
 - "View all notifications"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8302,11 +9400,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/notifications/NotificationHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Notifications"
 - "Mark all as read"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8314,6 +9414,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/notifications/NotificationItem.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "New"
 - "Mark as read"
@@ -8324,6 +9425,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Just now"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8331,12 +9433,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/notifications/NotificationList.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Try Again"
 - "No Notifications"
 - "You"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8344,6 +9448,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/AdvancedOnboardingSteps.tsx
 
 **Hardcoded strings found:**
+
 - "Discover Advanced Features"
 - "Explore AI tools"
 - "Connect Slack integration"
@@ -8351,6 +9456,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Join"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8358,11 +9464,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/CategorySelection.tsx
 
 **Hardcoded strings found:**
+
 - "Preferred Categories"
 - "Select categories you want to see more of"
 - "Finish"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8370,6 +9478,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/ClientOnboardingSteps.tsx
 
 **Hardcoded strings found:**
+
 - "Get Started With Hiring"
 - "Post your first job"
 - "Send invitation to talent"
@@ -8377,6 +9486,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Check Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8384,11 +9494,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/GuidedTour.tsx
 
 **Hardcoded strings found:**
+
 - "Skip"
 - "Next"
 - "Finish"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8396,10 +9508,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/InterestSelection.tsx
 
 **Hardcoded strings found:**
+
 - "Choose topics you're interested in"
 - "Continue"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8407,10 +9521,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/OnboardingTracker.tsx
 
 **Hardcoded strings found:**
+
 - "Complete Your Profile"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8418,6 +9534,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/OnboardingWizard.tsx
 
 **Hardcoded strings found:**
+
 - "Post your first job"
 - "Describe the talent you need for your project"
 - "Post a Job"
@@ -8440,6 +9557,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Let"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8447,6 +9565,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/ProfileSetup.tsx
 
 **Hardcoded strings found:**
+
 - "Help others get to know you better"
 - "Full Name"
 - "Professional Headline"
@@ -8460,6 +9579,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "User"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8467,6 +9587,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/TalentOnboardingSteps.tsx
 
 **Hardcoded strings found:**
+
 - "Complete your profile"
 - "Add your top skills"
 - "Set your availability"
@@ -8474,6 +9595,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View Matches"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8481,11 +9603,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/onboarding/UserTypeSelection.tsx
 
 **Hardcoded strings found:**
+
 - "Choose your role"
 - "This helps us personalize your experience"
 - "I want to discover and hire talent or services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8493,9 +9617,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/orders/OrderTimeline.tsx
 
 **Hardcoded strings found:**
+
 - "No tracking info yet."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8503,6 +9629,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/partners/PartnerDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Total Referrals"
 - "Conversion Rate"
 - "Of clicks that convert to sign-ups"
@@ -8517,6 +9644,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Start sharing your referral links to earn rewards"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8524,6 +9652,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/partners/PartnerLeaderboard.tsx
 
 **Hardcoded strings found:**
+
 - "Top Partners"
 - "This month's top-performing partners"
 - "Elite"
@@ -8544,6 +9673,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Co-marketing opportunities"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8551,6 +9681,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/partners/PartnerReferralLinks.tsx
 
 **Hardcoded strings found:**
+
 - "Your Referral Link"
 - "Share this link with your audience to earn rewards"
 - "Copy"
@@ -8573,6 +9704,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Campaign Link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8580,6 +9712,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/partners/PartnerRegistrationForm.tsx
 
 **Hardcoded strings found:**
+
 - "Partner Registration"
 - "Register to become a Zion AI partner and start earning rewards"
 - "Name / Brand"
@@ -8609,6 +9742,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8616,6 +9750,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/partners/PartnerResources.tsx
 
 **Hardcoded strings found:**
+
 - "Marketing Resources"
 - "Promotion Guidelines"
 - "Best practices for promoting the Zion AI Marketplace"
@@ -8639,6 +9774,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Visit Link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8646,10 +9782,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/pricing/ClientBudgetRecommender.tsx
 
 **Hardcoded strings found:**
+
 - "Get Budget Recommendation"
 - "Error generating budget suggestion:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8657,10 +9795,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/pricing/PricingSuggestionBox.tsx
 
 **Hardcoded strings found:**
+
 - "Apply Suggestion"
 - "Apply this suggestion to your pricing field"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8668,9 +9808,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/pricing/TalentRateRecommender.tsx
 
 **Hardcoded strings found:**
+
 - "Error generating rate suggestion:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8678,12 +9820,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/AvatarUpload.tsx
 
 **Hardcoded strings found:**
+
 - "Upload Avatar"
 - "Image upload feature is currently unavailable."
 - "Avatar preview"
 - "next-cloudinary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8691,10 +9835,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/BackToDirectoryButton.tsx
 
 **Hardcoded strings found:**
+
 - "Back to Talent Directory"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8702,6 +9848,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ContactPublisherModal.tsx
 
 **Hardcoded strings found:**
+
 - "Contact Publisher"
 - "Subject"
 - "Message"
@@ -8710,6 +9857,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8717,6 +9865,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/HireNowCTA.tsx
 
 **Hardcoded strings found:**
+
 - "Profile Completeness"
 - "Request to Hire"
 - "Schedule Interview"
@@ -8725,6 +9874,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Professional"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8732,6 +9882,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileAvailability.tsx
 
 **Hardcoded strings found:**
+
 - "Availability"
 - "Weekly Availability"
 - "Available Now"
@@ -8739,6 +9890,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Currently Unavailable"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8746,6 +9898,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileContact.tsx
 
 **Hardcoded strings found:**
+
 - "Contact"
 - "Subject"
 - "Message Sent"
@@ -8754,6 +9907,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Send Message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8761,11 +9915,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileErrorState.tsx
 
 **Hardcoded strings found:**
+
 - "Back to Talent Directory"
 - "next/link"
 - "Something went wrong"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8773,10 +9929,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileExperience.tsx
 
 **Hardcoded strings found:**
+
 - "Experience"
 - "Present"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8784,11 +9942,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileForm.tsx
 
 **Hardcoded strings found:**
+
 - "Name"
 - "Bio"
 - "Save"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8796,10 +9956,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileHero.tsx
 
 **Hardcoded strings found:**
+
 - "Service Provider"
 - "Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8807,9 +9969,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileLoadingState.tsx
 
 **Hardcoded strings found:**
+
 - "Loading profile..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8817,10 +9981,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileRatings.tsx
 
 **Hardcoded strings found:**
+
 - "Positive"
 - "Critical"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8828,9 +9994,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ProfileSkills.tsx
 
 **Hardcoded strings found:**
+
 - "Skills"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8838,11 +10006,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/SaveTalentButton.tsx
 
 **Hardcoded strings found:**
+
 - "h-4 w-4 ${isSaved ?"
 - "Saved"
 - "Save"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8850,6 +10020,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/ServiceProviderRegistrationForm.tsx
 
 **Hardcoded strings found:**
+
 - "Service Profile Created!"
 - "Your service provider profile has been successfully created and published."
 - "Create Your Service Provider Profile"
@@ -8906,6 +10077,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create Service Profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8913,6 +10085,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/TalentCard.tsx
 
 **Hardcoded strings found:**
+
 - "Rate not specified"
 - "Hire"
 - "View"
@@ -8923,6 +10096,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Save"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8930,12 +10104,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/TalentOnboardingForm.tsx
 
 **Hardcoded strings found:**
+
 - "Error uploading CV:"
 - "Failed to upload CV"
 - "Professional title is required"
 - "Project title is required"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8943,12 +10119,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/TalentProfile.tsx
 
 **Hardcoded strings found:**
+
 - "Reviews & Ratings"
 - "Hire Now"
 - "Message"
 - "${profile.professional_title} with ${profile.years_experience} years of experience"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -8956,6 +10134,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/TalentRegistrationForm.tsx
 
 **Hardcoded strings found:**
+
 - "Your profile has been enhanced with AI. You're now more discoverable to recruiters and companies!"
 - "We've added a professional summary and categorized your skills to help you stand out."
 - "Create Your Talent Profile"
@@ -9010,6 +10189,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create Profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9017,11 +10197,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/hire-request/HireRequestForm.tsx
 
 **Hardcoded strings found:**
+
 - "Cancel"
 - "Submitting..."
 - "Submit Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9029,10 +10211,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/hire-request/PersonalInfoFields.tsx
 
 **Hardcoded strings found:**
+
 - "Your Name"
 - "Enter your full name"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9040,9 +10224,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/hire-request/ProjectDetailsField.tsx
 
 **Hardcoded strings found:**
+
 - "Project Overview"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9050,12 +10236,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/hire-request/TimelineField.tsx
 
 **Hardcoded strings found:**
+
 - "Project Timeline"
 - "Select estimated timeline"
 - "Less than 1 week"
 - "Ongoing"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9063,10 +10251,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/hire-request/useHireRequestForm.ts
 
 **Hardcoded strings found:**
+
 - "Maximum budget must be greater than or equal to minimum budget"
 - "Error submitting hire request:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9074,11 +10264,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/talent-card/TalentCardAvailability.tsx
 
 **Hardcoded strings found:**
+
 - "Full-time"
 - "Part-time"
 - "Project"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9086,9 +10278,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/talent-card/TalentCardBadges.tsx
 
 **Hardcoded strings found:**
+
 - "Featured"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9096,10 +10290,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/talent-card/TalentCardFooter.tsx
 
 **Hardcoded strings found:**
+
 - "Hire"
 - "View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9107,9 +10303,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/talent-card/TalentCardHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Verified Expert"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9117,6 +10315,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/profile/talent-card/TalentCardSaveButton.tsx
 
 **Hardcoded strings found:**
+
 - "Save to favorites"
 - "Authentication required"
 - "/auth/login?returnTo=${returnTo}"
@@ -9124,6 +10323,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "${profileName} has been added to your favorites"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9131,6 +10331,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/ActiveProjectsCard.tsx
 
 **Hardcoded strings found:**
+
 - "Your ongoing work"
 - "Find Opportunities"
 - "View Project"
@@ -9139,6 +10340,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "In Progress"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9146,9 +10348,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/ProjectOfferBanner.tsx
 
 **Hardcoded strings found:**
+
 - "View Offer"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9156,10 +10360,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/AIMilestoneGenerator.tsx
 
 **Hardcoded strings found:**
+
 - "Generate Milestones"
 - "Add Selected to Project"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9167,6 +10373,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/AddMilestoneForm.tsx
 
 **Hardcoded strings found:**
+
 - "Title"
 - "Pick a date"
 - "Cancel"
@@ -9176,6 +10383,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add Milestone"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9183,6 +10391,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/MilestoneActivities.tsx
 
 **Hardcoded strings found:**
+
 - "No activity found for this project"
 - "Project Activity"
 - "Error fetching milestone activities:"
@@ -9192,6 +10401,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "} alt={activity.created_by_profile?.display_name ||"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9199,11 +10409,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/MilestoneCard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Reject"
 - "Approve"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9211,9 +10423,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/MilestoneSuggestions.tsx
 
 **Hardcoded strings found:**
+
 - "These milestones will be added to your contract"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9221,6 +10435,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/MilestonesList.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Add Milestone"
 - "Create New Milestone"
@@ -9228,6 +10443,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create First Milestone"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9235,6 +10451,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/PaymentSummary.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Summary"
 - "Total Payment"
 - "Payment Terms"
@@ -9242,6 +10459,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not specified"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9249,9 +10467,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/ProjectHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Back"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9259,6 +10479,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/ProjectMilestonesContent.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Milestones"
 - "Milestones"
 - "Activity"
@@ -9268,6 +10489,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Untitled Project"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9275,9 +10497,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/components/MilestoneActivities.tsx
 
 **Hardcoded strings found:**
+
 - "Activity will be shown here"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9285,9 +10509,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/components/MilestoneCreator.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9295,11 +10521,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/components/MilestoneManager.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Error approving milestone:"
 - "Error rejecting milestone:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9307,12 +10535,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/milestones/components/ProjectActions.tsx
 
 **Hardcoded strings found:**
+
 - "View Active Dispute"
 - "Add Milestone"
 - "next/link"
 - "/dashboard/disputes/${disputeId}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9320,6 +10550,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/projects/reviews/ProjectReviewSection.tsx
 
 **Hardcoded strings found:**
+
 - "Reviews"
 - "Reviews are visible once the project is completed and both parties submit feedback"
 - "Share your experience"
@@ -9331,6 +10562,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "After the project is marked as completed, both parties will be able to leave reviews"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9338,11 +10570,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/prompts/PromptCard.tsx
 
 **Hardcoded strings found:**
+
 - "Copy prompt"
 - "p-4 border rounded-md bg-background flex flex-col justify-between"
 - "Copied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9350,6 +10584,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quote/QuoteWizard.tsx
 
 **Hardcoded strings found:**
+
 - "Retry"
 - "Continue"
 - "Back"
@@ -9366,6 +10601,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "success-step"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9373,9 +10609,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/EmptyStateCard.tsx
 
 **Hardcoded strings found:**
+
 - "You haven"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9383,9 +10621,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/ExportToCSV.tsx
 
 **Hardcoded strings found:**
+
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9393,6 +10633,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/QuoteDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Requester Information"
 - "Project Timeline"
 - "Project Details"
@@ -9401,6 +10642,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not specified"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9408,10 +10650,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/QuoteRequestCard.tsx
 
 **Hardcoded strings found:**
+
 - "View Details"
 - "Mark Responded"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9419,6 +10663,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/QuoteStatusBadge.tsx
 
 **Hardcoded strings found:**
+
 - "New"
 - "In Review"
 - "Accepted"
@@ -9427,6 +10672,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Archived"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9434,6 +10680,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/quotes/RequestsHeader.tsx
 
 **Hardcoded strings found:**
+
 - "All Statuses"
 - "New"
 - "In Review"
@@ -9444,6 +10691,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Archived Only"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9451,9 +10699,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referral/ReferralMiddleware.tsx
 
 **Hardcoded strings found:**
+
 - "Error tracking referral"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9461,6 +10711,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/ReferralGuide.tsx
 
 **Hardcoded strings found:**
+
 - "How Referrals Work"
 - "Follow these steps to earn rewards through referrals"
 - "Share your referral link"
@@ -9472,6 +10723,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Rewards are issued based on the type of user who completes onboarding"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9479,11 +10731,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/ReferralLeaderboard.tsx
 
 **Hardcoded strings found:**
+
 - "Leaderboard"
 - "Top referrers this month"
 - "Jordan Lee"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9491,6 +10745,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/ReferralLink.tsx
 
 **Hardcoded strings found:**
+
 - "Your Referral Link"
 - "Share this link with others to earn rewards when they join and complete onboarding"
 - "Copy"
@@ -9501,6 +10756,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Copy referral link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9508,6 +10764,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/ReferralStats.tsx
 
 **Hardcoded strings found:**
+
 - "Total Referrals"
 - "People you"
 - "Completed"
@@ -9517,6 +10774,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Total Rewards"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9524,6 +10782,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/ReferralTable.tsx
 
 **Hardcoded strings found:**
+
 - "Pending"
 - "Completed"
 - "Expired"
@@ -9536,6 +10795,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Issued"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9543,12 +10803,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/referrals/RewardsCard.tsx
 
 **Hardcoded strings found:**
+
 - "Your Rewards"
 - "No rewards yet"
 - "Refer users to earn rewards once they complete onboarding"
 - "Visibility Boost"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9556,10 +10818,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/reviews/LeaveReviewModal.tsx
 
 **Hardcoded strings found:**
+
 - "Your feedback helps build a trustworthy community. It will be visible after moderation."
 - "Edit Your Review"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9567,6 +10831,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/reviews/ReviewCard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Communication"
 - "Quality"
@@ -9583,6 +10848,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Report"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9590,6 +10856,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/reviews/ReviewForm.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Your Review"
 - "Additional Ratings (Optional)"
@@ -9606,6 +10873,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Review"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9613,11 +10881,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/reviews/ReviewsList.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "No Reviews Yet"
 - "Once reviews are submitted and approved, they will appear here."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9625,6 +10895,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/ActiveFiltersBar.tsx
 
 **Hardcoded strings found:**
+
 - "Active filters:"
 - "Clear all"
 - "Type"
@@ -9636,6 +10907,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Price: Low to High"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9643,6 +10915,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/AdvancedSearchResults.tsx
 
 **Hardcoded strings found:**
+
 - "Content Type"
 - "Category"
 - "All Categories"
@@ -9668,6 +10941,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "(${activeFiltersCount})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9675,11 +10949,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/AutocompleteSuggestions.test.tsx
 
 **Hardcoded strings found:**
+
 - "Apple"
 - "AutocompleteSuggestions"
 - "Test Apple Case"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9687,10 +10963,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/AutocompleteSuggestions.tsx
 
 **Hardcoded strings found:**
+
 - "absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown"
 - "search-suggestions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9698,6 +10976,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/EnhancedSearchInput.test.tsx
 
 **Hardcoded strings found:**
+
 - "Search..."
 - "Clear search"
 - "EnhancedSearchInput"
@@ -9716,6 +10995,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "TestValue"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9723,12 +11003,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/MarketplaceSearch.tsx
 
 **Hardcoded strings found:**
+
 - "Marketplace search"
 - "ArrowDown"
 - "Enter"
 - "marketplace-search-input"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9736,6 +11018,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/search/SearchResultsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Content Type"
 - "Category"
 - "All Categories"
@@ -9761,6 +11044,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "(${activeFiltersCount})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9768,11 +11052,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/seo/AdvancedSEO.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Tech Marketplace"
 - "Article"
 - "Product"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9780,6 +11066,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/CountrySelector.tsx
 
 **Hardcoded strings found:**
+
 - "Popular Countries"
 - "All Countries"
 - "Select a country"
@@ -9788,6 +11075,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Select Country for IT Onsite Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9795,6 +11083,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/CountryServiceCard.tsx
 
 **Hardcoded strings found:**
+
 - "Popular"
 - "Service available in major cities"
 - "Hardware & network support"
@@ -9809,6 +11098,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9816,6 +11106,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/GeneratedDescriptionDisplay.tsx
 
 **Hardcoded strings found:**
+
 - "Generated Description"
 - "Done"
 - "Edit"
@@ -9824,6 +11115,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your edited description has been saved."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9831,12 +11123,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/ITServicePricingTable.tsx
 
 **Hardcoded strings found:**
+
 - "Country"
 - "Price Per Incident"
 - "No countries match your search"
 - "Search by country..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9844,6 +11138,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/OnsiteQuoteModal.tsx
 
 **Hardcoded strings found:**
+
 - "Request a Quote"
 - "Your Name"
 - "Phone"
@@ -9854,6 +11149,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9861,12 +11157,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/CountryTabs.tsx
 
 **Hardcoded strings found:**
+
 - "Featured Countries"
 - "All Countries"
 - "Browse our most popular service destinations"
 - "Search by country..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9874,11 +11172,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/EnterpriseCallToAction.tsx
 
 **Hardcoded strings found:**
+
 - "Get Custom Enterprise Quote"
 - "Need volume pricing or custom SLAs? Contact our enterprise sales team."
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9886,6 +11186,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/PageHero.tsx
 
 **Hardcoded strings found:**
+
 - "Global IT Onsite Services"
 - "Professional IT onsite support services with transparent pricing across 190+ countries worldwide"
 - "Global Coverage"
@@ -9895,6 +11196,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Clear per-incident pricing includes transportation and first hour onsite"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9902,9 +11204,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/ServiceDetailsSection.tsx
 
 **Hardcoded strings found:**
+
 - "Select a Country for Details"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9912,6 +11216,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/ServiceIncludes.tsx
 
 **Hardcoded strings found:**
+
 - "What's Included in Every Service"
 - "Transportation to Site"
 - "First Hour of Service"
@@ -9920,6 +11225,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Network Connectivity"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9927,6 +11233,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PageSections/ServiceProcessSteps.tsx
 
 **Hardcoded strings found:**
+
 - "How Our IT Onsite Service Works"
 - "Select Country"
 - "Choose the country where you need onsite IT support services."
@@ -9935,6 +11242,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Service Delivery"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9942,11 +11250,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/PaymentSection.tsx
 
 **Hardcoded strings found:**
+
 - "Selected Country"
 - "Price includes transportation and first hour onsite. Additional hours billed separately."
 - "Processing your request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9954,6 +11264,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/ServiceDescriptionForm.tsx
 
 **Hardcoded strings found:**
+
 - "Provide basic details about your service and let AI create a professional description"
 - "Service Title"
 - "Key Features"
@@ -9968,6 +11279,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Generation Failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9975,6 +11287,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/ServiceDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Service Instructions"
 - "What's Included"
 - "Transportation to your site"
@@ -9989,6 +11302,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Local timezone"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -9996,10 +11310,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/services/ServiceLandingTemplate.tsx
 
 **Hardcoded strings found:**
+
 - "next/image"
 - "bg-background text-white"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10007,6 +11323,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/settings/FraudDetectionSettings.tsx
 
 **Hardcoded strings found:**
+
 - "Message Content Scanning"
 - "Scan message content for potentially harmful or abusive material"
 - "Activity Monitoring"
@@ -10022,6 +11339,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Save Preferences"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10029,12 +11347,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/skeletons/FilterSidebarSkeleton.tsx
 
 **Hardcoded strings found:**
+
 - "Filters"
 - "Category"
 - "Price Range"
 - "Minimum Rating"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10042,11 +11362,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/AgendaSection.tsx
 
 **Hardcoded strings found:**
+
 - "Agenda"
 - "Featured Speaker: Founder"
 - "py-12 bg-background text-foreground"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10054,11 +11376,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/LivestreamSection.tsx
 
 **Hardcoded strings found:**
+
 - "Livestream"
 - "Watch the Replay"
 - "Zion Summit Livestream"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10066,12 +11390,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/PartnersSection.tsx
 
 **Hardcoded strings found:**
+
 - "Partners"
 - "Become a Sponsor"
 - "next/link"
 - "py-12 bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10079,6 +11405,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/RegistrationForm.tsx
 
 **Hardcoded strings found:**
+
 - "Register"
 - "Name"
 - "Role"
@@ -10088,6 +11415,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Sign Up"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10095,6 +11423,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/SpeakersSection.tsx
 
 **Hardcoded strings found:**
+
 - "Speakers"
 - "Twitter"
 - "LinkedIn"
@@ -10102,6 +11431,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Alex Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10109,10 +11439,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/summit/SummitHero.tsx
 
 **Hardcoded strings found:**
+
 - "June 20, 2025 • Virtual &amp; New York City"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10120,6 +11452,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/ChatBotPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Chat with Live Agent"
 - "Send message"
 - "t process your request. Please try again."
@@ -10130,6 +11463,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Support request submitted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10137,10 +11471,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/ChatMessage.tsx
 
 **Hardcoded strings found:**
+
 - "User avatar"
 - "Zion Support"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10148,11 +11484,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/HelpArticleList.tsx
 
 **Hardcoded strings found:**
+
 - "Category not found"
 - "No articles found"
 - "Try adjusting your search query or browse another category."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10160,6 +11498,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/HelpArticleView.tsx
 
 **Hardcoded strings found:**
+
 - "Article not found"
 - "Yes"
 - "We're sorry this article wasn't helpful. Please contact our support team for further assistance."
@@ -10168,6 +11507,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "re sorry this article wasn"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10175,9 +11515,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/HelpCategoryList.tsx
 
 **Hardcoded strings found:**
+
 - "Try adjusting your search query or browse all categories."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10185,6 +11527,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/HelpCenter.tsx
 
 **Hardcoded strings found:**
+
 - "Help Center"
 - "Articles"
 - "Contact Us"
@@ -10198,6 +11541,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your feedback or suggestion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10205,12 +11549,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/SupportWidget.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Support"
 - "Open support"
 - "Help center"
 - "Close support"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10218,6 +11564,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/support/help-content.tsx
 
 **Hardcoded strings found:**
+
 - "ll have access to the marketplace and can start browsing or listing services based on your account type."
 - "Learn the basics of using the Zion AI Marketplace"
 - "create-account"
@@ -10249,6 +11596,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Tips for preventing disputes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10256,6 +11604,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/ActiveFilters.tsx
 
 **Hardcoded strings found:**
+
 - "Active filters:"
 - "Clear All"
 - "Full-time"
@@ -10263,6 +11612,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Project-based"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10270,11 +11620,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/FilterSidebar.tsx
 
 **Hardcoded strings found:**
+
 - "Filters"
 - "Clear All"
 - "Apply Filters"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10282,11 +11634,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/MobileFilterBar.tsx
 
 **Hardcoded strings found:**
+
 - "Search by name or skill"
 - "mobile-talent-search"
 - "mobile-talent-search-help"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10294,9 +11648,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/SortDropdown.tsx
 
 **Hardcoded strings found:**
+
 - "Sort by"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10304,11 +11660,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/TalentCard.tsx
 
 **Hardcoded strings found:**
+
 - "Rate not specified"
 - "Hire"
 - "View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10316,12 +11674,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/TalentDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Skills"
 - "Contact"
 - "Portfolio"
 - "Hire"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10329,9 +11689,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/TalentGrid.tsx
 
 **Hardcoded strings found:**
+
 - "Clear Filters"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10339,10 +11701,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/TalentPlaceholder.tsx
 
 **Hardcoded strings found:**
+
 - "Talent Directory Coming Soon"
 - "Join as Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10350,12 +11714,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/TalentProfileSkeleton.tsx
 
 **Hardcoded strings found:**
+
 - "talent-profile-skeleton"
 - "Skills"
 - "Contact"
 - "Portfolio"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10363,12 +11729,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/AvailabilityFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Availability"
 - "Full-time"
 - "Part-time"
 - "Project-based"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10376,10 +11744,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/ExperienceFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Years of Experience"
 - "Experience range"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10387,6 +11757,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/RegionFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Region"
 - "North America"
 - "Europe"
@@ -10395,6 +11766,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Australia"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10402,10 +11774,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/SearchFilter.tsx
 
 **Hardcoded strings found:**
+
 - "talent-search"
 - "talent-search-help"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10413,9 +11787,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/SkillsFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Skills"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10423,6 +11799,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/talent/filters/SortFilter.tsx
 
 **Hardcoded strings found:**
+
 - "Sort by"
 - "Relevance"
 - "Highest Rating"
@@ -10431,6 +11808,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Price: High to Low"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10438,10 +11816,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/testing/ErrorTriggerComponent.tsx
 
 **Hardcoded strings found:**
+
 - "Test error triggered on mount"
 - "Test error triggered on render"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10449,6 +11829,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/transactions/PaymentButton.tsx
 
 **Hardcoded strings found:**
+
 - "Purchase"
 - "create-checkout"
 - "Payment error:"
@@ -10459,6 +11840,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Payment error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10466,6 +11848,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/transactions/TransactionHistory.tsx
 
 **Hardcoded strings found:**
+
 - "In Escrow"
 - "Pending"
 - "Released"
@@ -10494,6 +11877,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Cancelled:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10501,9 +11885,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/EmptyState.tsx
 
 **Hardcoded strings found:**
+
 - "Try Again"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10511,9 +11897,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/ImageWithRetry.tsx
 
 **Hardcoded strings found:**
+
 - "Retry"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10521,10 +11909,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/alert-dialog.tsx
 
 **Hardcoded strings found:**
+
 - "AlertDialogHeader"
 - "AlertDialogFooter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10532,11 +11922,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/alert.tsx
 
 **Hardcoded strings found:**
+
 - "Alert"
 - "AlertTitle"
 - "AlertDescription"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10544,6 +11936,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/breadcrumb.tsx
 
 **Hardcoded strings found:**
+
 - "BreadcrumbLink"
 - "Breadcrumb"
 - "BreadcrumbList"
@@ -10551,6 +11944,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "BreadcrumbElipssis"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10558,14 +11952,16 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/bundle-analyzer.tsx
 
 **Hardcoded strings found:**
+
 - "Bundle Analyzer"
 - "Cache Hit Rate"
 - "Failed to collect bundle info:"
-- "/_next/static/"
+- "/\_next/static/"
 - "bg-background/80 backdrop-blur-sm"
 - "bg-background/95 backdrop-blur-sm border shadow-lg"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10573,9 +11969,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/button.tsx
 
 **Hardcoded strings found:**
+
 - "Button"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10583,9 +11981,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/calendar.tsx
 
 **Hardcoded strings found:**
+
 - "Calendar"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10593,6 +11993,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/card.tsx
 
 **Hardcoded strings found:**
+
 - "Card"
 - "CardHeader"
 - "CardTitle"
@@ -10601,6 +12002,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "CardFooter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10608,6 +12010,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/carousel.tsx
 
 **Hardcoded strings found:**
+
 - "Previous slide"
 - "Next slide"
 - "ArrowLeft"
@@ -10617,6 +12020,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "CarouselNext"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10624,11 +12028,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/chart.tsx
 
 **Hardcoded strings found:**
+
 - "Chart"
 - "ChartTooltip"
 - "ChartLegend"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10636,9 +12042,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/clickable-badge.tsx
 
 **Hardcoded strings found:**
+
 - "ml-1 rounded-full p-0.5 hover:bg-background/20"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10646,9 +12054,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/command.tsx
 
 **Hardcoded strings found:**
+
 - "CommandShortcut"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10656,9 +12066,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/context-menu.tsx
 
 **Hardcoded strings found:**
+
 - "ContextMenuShortcut"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10666,11 +12078,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/dialog.tsx
 
 **Hardcoded strings found:**
+
 - "Close"
 - "DialogHeader"
 - "DialogFooter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10678,12 +12092,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/drawer.tsx
 
 **Hardcoded strings found:**
+
 - "Drawer"
 - "DrawerContent"
 - "DrawerHeader"
 - "DrawerFooter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10691,9 +12107,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/dropdown-menu.tsx
 
 **Hardcoded strings found:**
+
 - "DropdownMenuShortcut"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10701,9 +12119,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/empty-state.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10711,6 +12131,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/enhanced-loading-states.tsx
 
 **Hardcoded strings found:**
+
 - "Error Details (Development)"
 - "Offline"
 - "Loading..."
@@ -10721,6 +12142,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Something went wrong"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10728,12 +12150,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/form.tsx
 
 **Hardcoded strings found:**
+
 - "FormMessage"
 - "FormLabel"
 - "FormControl"
 - "FormDescription"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10741,12 +12165,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/input-otp.tsx
 
 **Hardcoded strings found:**
+
 - "InputOTPGroup"
 - "z-10 ring-2 ring-ring ring-offset-background"
 - "InputOTPSlot"
 - "InputOTPSeparator"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10754,9 +12180,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/input.tsx
 
 **Hardcoded strings found:**
+
 - "Input"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10764,9 +12192,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/markdown.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10774,9 +12204,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/menubar.tsx
 
 **Hardcoded strings found:**
+
 - "MenubarShortcut"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10784,6 +12216,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/optimized-image.tsx
 
 **Hardcoded strings found:**
+
 - "Failed to load image"
 - "Gallery"
 - "backdrop-blur-sm bg-gray-200/50"
@@ -10791,6 +12224,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Slow image loading:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10798,6 +12232,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/pagination.tsx
 
 **Hardcoded strings found:**
+
 - "Previous"
 - "Next"
 - "More pages"
@@ -10812,6 +12247,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "PaginationEllipsis"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10819,12 +12255,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/performance-monitor.tsx
 
 **Hardcoded strings found:**
+
 - "Performance Monitor"
 - "Load Time"
 - "bg-background/80 backdrop-blur-sm"
 - "bg-background/95 backdrop-blur-sm border shadow-lg"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10832,6 +12270,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/quick-actions.tsx
 
 **Hardcoded strings found:**
+
 - "Quick Actions"
 - "Test error for Sentry integration - this is intentional!"
 - "Enable Performance Monitor"
@@ -10849,6 +12288,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background/95 backdrop-blur-sm border shadow-lg max-h-96 overflow-y-auto"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10856,9 +12296,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/radio-group.tsx
 
 **Hardcoded strings found:**
+
 - "aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10866,11 +12308,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sheet.tsx
 
 **Hardcoded strings found:**
+
 - "Close"
 - "SheetHeader"
 - "SheetFooter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10878,9 +12322,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/Sidebar.tsx
 
 **Hardcoded strings found:**
+
 - "flex flex-col h-screen bg-background border-r border-border shrink-0 w-64 overflow-y-auto transition-all duration-200"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10888,9 +12334,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/SidebarMenuButton.tsx
 
 **Hardcoded strings found:**
+
 - "SidebarMenuButton"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10898,9 +12346,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/SidebarTrigger.tsx
 
 **Hardcoded strings found:**
+
 - "Toggle Sidebar"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10908,6 +12358,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/sidebar-content.tsx
 
 **Hardcoded strings found:**
+
 - "h-8 w-full bg-background shadow-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
 - "SidebarInput"
 - "SidebarHeader"
@@ -10917,6 +12368,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "SidebarBasicGroup"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10924,9 +12376,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/sidebar-context.tsx
 
 **Hardcoded strings found:**
+
 - "SidebarProvider"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10934,9 +12388,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/sidebar-group.tsx
 
 **Hardcoded strings found:**
+
 - "SidebarGroup"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10944,12 +12400,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/sidebar-main.tsx
 
 **Hardcoded strings found:**
+
 - "Toggle Sidebar"
 - "Sidebar"
 - "SidebarRail"
 - "SidebarInset"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10957,10 +12415,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sidebar/sidebar-trigger.tsx
 
 **Hardcoded strings found:**
+
 - "Toggle Sidebar"
 - "SidebarTrigger"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10968,9 +12428,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/skeleton.tsx
 
 **Hardcoded strings found:**
+
 - "Skeleton"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10978,9 +12440,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/sonner.tsx
 
 **Hardcoded strings found:**
+
 - "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10988,9 +12452,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/spinner.tsx
 
 **Hardcoded strings found:**
+
 - "Spinner"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -10998,9 +12464,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/switch.tsx
 
 **Hardcoded strings found:**
+
 - "ArrowLeft"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11008,6 +12476,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/table.tsx
 
 **Hardcoded strings found:**
+
 - "Table"
 - "TableHeader"
 - "TableBody"
@@ -11018,6 +12487,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "TableCaption"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11025,9 +12495,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/tabs.tsx
 
 **Hardcoded strings found:**
+
 - "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11035,9 +12507,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/ui/textarea.tsx
 
 **Hardcoded strings found:**
+
 - "Textarea"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11045,6 +12519,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/video/VideoCallRoom.tsx
 
 **Hardcoded strings found:**
+
 - "Video Call"
 - "Host"
 - "Share the meeting link to invite others"
@@ -11059,6 +12534,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Disable audio only"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11066,6 +12542,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/wallet/OnChainExport.tsx
 
 **Hardcoded strings found:**
+
 - "Connect Wallet"
 - "Could not connect to wallet"
 - "Wallet not detected"
@@ -11074,6 +12551,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Connection failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11081,6 +12559,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/wallet/RedeemTokensCard.tsx
 
 **Hardcoded strings found:**
+
 - "Exchange your ZION$ for rewards and perks"
 - "View Available Rewards"
 - "Available Rewards"
@@ -11091,6 +12570,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Get $5 credit to use on any paid service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11098,10 +12578,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/wallet/TokenDisplay.tsx
 
 **Hardcoded strings found:**
+
 - "Your current token balance"
 - "View Wallet"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11109,6 +12591,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/components/wallet/TransactionHistory.tsx
 
 **Hardcoded strings found:**
+
 - "Transaction History"
 - "Loading transactions..."
 - "Your recent ZION$ activity"
@@ -11120,6 +12603,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Feature purchase"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11127,9 +12611,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/config/env.ts
 
 **Hardcoded strings found:**
+
 - "Warning: NEXT_PUBLIC_REOWN_PROJECT_ID is not set or is a placeholder. Using fallback."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11137,6 +12623,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/config/sitemap.ts
 
 **Hardcoded strings found:**
+
 - "Home"
 - "About Us"
 - "Contact"
@@ -11171,6 +12658,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Reviews Moderation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11178,9 +12666,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/AnalyticsContext.tsx
 
 **Hardcoded strings found:**
+
 - "Error logging analytics event:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11188,9 +12678,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/CartContext.tsx
 
 **Hardcoded strings found:**
+
 - "useCart must be used within a CartProvider"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11198,12 +12690,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/CommunityContext.tsx
 
 **Hardcoded strings found:**
+
 - "Best practices for AI model fine-tuning"
 - "How to build an effective AI talent profile?"
 - "Looking for feedback on my automated testing approach"
 - "Feature request: Team collaboration tools"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11211,9 +12705,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/ErrorContext.tsx
 
 **Hardcoded strings found:**
+
 - "useError must be used within ErrorProvider"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11221,11 +12717,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/FavoritesContext.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Toggle favorite failed"
 - "Login required to save favorites"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11233,9 +12731,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/FeedbackContext.tsx
 
 **Hardcoded strings found:**
+
 - "useFeedback must be used within FeedbackProvider"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11243,12 +12743,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/RequestQuoteWizard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Failed to submit quote"
 - "Services"
 - "Error submitting quote"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11256,6 +12758,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/WalletContext.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable."
 - "WalletContext: CRITICAL error creating appKitInstance with valid Project ID:"
@@ -11265,6 +12768,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "WalletContext: Error disconnecting wallet:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11272,6 +12776,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/auth/AuthProvider.tsx
 
 **Hardcoded strings found:**
+
 - "AuthProvider: Supabase authentication failed"
 - "Authentication failed. Please try again."
 - "invalid login credentials"
@@ -11293,6 +12798,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Password Reset Failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11300,6 +12806,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/auth/useAuthEventHandlers.tsx
 
 **Hardcoded strings found:**
+
 - "Welcome back!"
 - "You"
 - "Complete your profile"
@@ -11307,6 +12814,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "You have been successfully logged out"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11314,9 +12822,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/notifications/types.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11324,12 +12834,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/context/notifications/useNotificationOperations.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching notifications:"
 - "Error marking notification as read:"
 - "Error marking all notifications as read:"
 - "Error dismissing notification:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11337,12 +12849,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/blog-posts.ts
 
 **Hardcoded strings found:**
+
 - "Editorial Team"
 - "Staff Writer"
 - "Automated Model Optimization"
 - "How SMBs Can Leverage AI Marketplaces to Scale Fast"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11350,6 +12864,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/careersJobs.ts
 
 **Hardcoded strings found:**
+
 - "ai-research-engineer"
 - "AI Research Engineer"
 - "Full Stack Developer"
@@ -11360,6 +12875,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Talent Acquisition Specialist"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11367,11 +12883,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/case-studies.ts
 
 **Hardcoded strings found:**
+
 - "Zion"
 - "Streamlined Data Ingestion"
 - "Head of Data"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11379,6 +12897,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/equipmentData.ts
 
 **Hardcoded strings found:**
+
 - "Performance Analytics"
 - "Dell PowerEdge R750 Server"
 - "Cisco Catalyst 9300 48-Port Switch"
@@ -11394,6 +12913,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Locking Side Panels"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11401,6 +12921,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/features.ts
 
 **Hardcoded strings found:**
+
 - "Talent Directory"
 - "Services Marketplace"
 - "/services"
@@ -11412,6 +12933,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Help & Resources"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11419,10 +12941,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/initialMarketplaceProducts.ts
 
 **Hardcoded strings found:**
+
 - "Enterprise AI Analytics Platform"
 - "Advanced Data Science Development Suite"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11430,11 +12954,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/jobsData.ts
 
 **Hardcoded strings found:**
+
 - "React Developer Needed"
 - "Seeking a React developer for a 3 month contract building dashboards."
 - "Part-time DevOps Engineer"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11442,6 +12968,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/listingData.ts
 
 **Hardcoded strings found:**
+
 - "Machine Learning"
 - "Custom Machine Learning Model Development"
 - "AI-Powered Business Intelligence Dashboard"
@@ -11452,6 +12979,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enterprise AI solutions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11459,9 +12987,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/marketplaceData.ts
 
 **Hardcoded strings found:**
+
 - "Custom Machine Learning Model Development"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11469,6 +12999,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/mockProfiles.ts
 
 **Hardcoded strings found:**
+
 - "@/types/profile"
 - "Enterprise AI Integration Services"
 - "Healthcare AI Platform"
@@ -11480,6 +13011,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Senior AI Engineer & Machine Learning Expert"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11487,6 +13019,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/mockTalents.ts
 
 **Hardcoded strings found:**
+
 - "Alexandra Chen"
 - "Senior AI Engineer & Machine Learning Expert"
 - "Michael Reynolds"
@@ -11508,6 +13041,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "SaaS Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11515,6 +13049,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/newProductsData.ts
 
 **Hardcoded strings found:**
+
 - "Data Visualization Dashboard"
 - "Smart Home IoT Control Hub"
 - "Automated Code Review Service"
@@ -11524,6 +13059,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Customer Support Chatbot Platform"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11531,6 +13067,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/newServicesData.ts
 
 **Hardcoded strings found:**
+
 - "Full-stack Web App Development"
 - "Cloud Cost Optimization"
 - "Business Process Automation"
@@ -11539,6 +13076,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Advanced Threat Monitoring"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11546,6 +13084,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/onsiteServicePricing.ts
 
 **Hardcoded strings found:**
+
 - "Ghana"
 - "Gibraltar"
 - "Greece"
@@ -11554,6 +13093,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Marshall Islands"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11561,11 +13101,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/projectsData.ts
 
 **Hardcoded strings found:**
+
 - "AI Dashboard Development"
 - "Alexandra Chen"
 - "Senior AI Engineer"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11573,6 +13115,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/proposalTemplates.ts
 
 **Hardcoded strings found:**
+
 - "Amend Constitution"
 - "Adjust Tokenomics"
 - "Update Voting Rules"
@@ -11586,6 +13129,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Upgrade Governance Engine"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11593,11 +13137,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/roadmap.ts
 
 **Hardcoded strings found:**
+
 - "ai-search"
 - "AI-Powered Search"
 - "Improve marketplace search relevancy using machine learning."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11605,12 +13151,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/sampleServices.ts
 
 **Hardcoded strings found:**
+
 - "Cloud Migration"
 - "Data Scientist"
 - "Workstation"
 - "Server Rack"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11618,6 +13166,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/servicesData.ts
 
 **Hardcoded strings found:**
+
 - "Cybersecurity Assessment & Protection"
 - "DevOps Automation Setup"
 - "Enterprise SaaS Deployment"
@@ -11625,6 +13174,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Blockchain Integration Consulting"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11632,6 +13182,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/sortOptions.ts
 
 **Hardcoded strings found:**
+
 - "Relevance"
 - "Highest Rating"
 - "Most Experienced"
@@ -11639,6 +13190,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Price: High to Low"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11646,6 +13198,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/talentData.ts
 
 **Hardcoded strings found:**
+
 - "Alexandra Chen"
 - "Senior AI Engineer & Machine Learning Expert"
 - "Michael Reynolds"
@@ -11714,6 +13267,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Open Source Library Docs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11721,12 +13275,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/data/tutorials.ts
 
 **Hardcoded strings found:**
+
 - "Setting Up a Private GPT Model"
 - "Alex Rivera"
 - "Zion Team"
 - "Uploading a Product to the Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11734,6 +13290,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/auth/useEmailAuth.ts
 
 **Hardcoded strings found:**
+
 - "An unexpected error occurred"
 - "Login error:"
 - "Signup error:"
@@ -11744,6 +13301,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Password reset failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11751,9 +13309,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/auth/useLogout.ts
 
 **Hardcoded strings found:**
+
 - "Error during logout:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11761,6 +13321,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/auth/useProfileManagement.ts
 
 **Hardcoded strings found:**
+
 - "User ID is required"
 - "Profile update error:"
 - "An unexpected error occurred"
@@ -11769,6 +13330,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your profile has been updated successfully."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11776,6 +13338,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/auth/useSocialAuth.ts
 
 **Hardcoded strings found:**
+
 - "Google login error:"
 - "An unexpected error occurred"
 - "GitHub login error:"
@@ -11787,6 +13350,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Twitter login failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11794,11 +13358,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/messaging/useConversations.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching conversations:"
 - "Error creating conversation:"
 - "Failed to create conversation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11806,6 +13372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/messaging/useMessages.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Error fetching messages:"
 - "Conversation not found"
@@ -11814,6 +13381,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error marking messages as read:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11821,10 +13389,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/messaging/useMessagingRealtime.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Someone"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11832,11 +13402,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useCreateMilestone.ts
 
 **Hardcoded strings found:**
+
 - "Error creating milestone:"
 - "Failed to create milestone:"
 - "Milestone created successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11844,11 +13416,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useDeleteMilestone.ts
 
 **Hardcoded strings found:**
+
 - "Error deleting milestone:"
 - "Failed to delete milestone:"
 - "Milestone deleted successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11856,10 +13430,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useLoadMilestones.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching milestones:"
 - "Failed to fetch milestones"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11867,9 +13443,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useRecordActivity.ts
 
 **Hardcoded strings found:**
+
 - "Error recording activity:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11877,6 +13455,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useUpdateMilestone.ts
 
 **Hardcoded strings found:**
+
 - "Milestone not found"
 - "Error updating milestone status:"
 - "Failed to update status:"
@@ -11888,6 +13467,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Milestone updated successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11895,12 +13475,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/milestones/useUploadDeliverable.ts
 
 **Hardcoded strings found:**
+
 - "Milestone not found"
 - "Error uploading deliverable:"
 - "Failed to upload deliverable:"
 - "Deliverable added successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11908,6 +13490,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useCertifications.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to add certifications"
 - "Could not add certification"
 - "You must be logged in to update certifications"
@@ -11921,6 +13504,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Certification deleted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11928,6 +13512,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useEducation.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to add education"
 - "Could not add education"
 - "You must be logged in to update education"
@@ -11941,6 +13526,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Education deleted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11948,10 +13534,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useFetchResume.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to access resumes"
 - "Error fetching resume:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11959,6 +13547,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useResumeActions.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to create a resume"
 - "Could not create resume"
 - "You must be logged in to update a resume"
@@ -11972,6 +13561,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your selected resume is now marked as active"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11979,10 +13569,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useResumeList.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to access resumes"
 - "Error fetching resumes:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -11990,11 +13582,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useResumeUtils.ts
 
 **Hardcoded strings found:**
+
 - "Error: ${errorMessage}"
 - "Error"
 - "${errorMessage}: ${e.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12002,6 +13596,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useSkills.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to add skills"
 - "Could not add skill"
 - "You must be logged in to delete skills"
@@ -12011,6 +13606,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Skill deleted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12018,6 +13614,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/resume/useWorkExperience.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to update work experience"
 - "Could not add work experience"
 - "Could not update work experience"
@@ -12030,6 +13627,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Work experience deleted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12037,12 +13635,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/talent/useSavedTalents.ts
 
 **Hardcoded strings found:**
+
 - "Error toggling saved talent:"
 - "Authentication required"
 - "/auth/login?returnTo=${returnTo}"
 - "Added to favorites"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12050,9 +13650,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/talent/useTalentData.ts
 
 **Hardcoded strings found:**
+
 - "talent-profiles"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12060,9 +13662,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAIContentEnhancer.ts
 
 **Hardcoded strings found:**
+
 - "Failed to enhance content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12070,9 +13674,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAISearch.ts
 
 **Hardcoded strings found:**
+
 - "Project"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12080,6 +13686,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAdminQuotes.ts
 
 **Hardcoded strings found:**
+
 - "Status updated"
 - "The quote request status has been updated"
 - "Error"
@@ -12092,6 +13699,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to delete quote:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12099,6 +13707,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useApiErrorHandling.ts
 
 **Hardcoded strings found:**
+
 - "An unexpected error occurred"
 - "Network error – please retry"
 - "Request timed out - please try again"
@@ -12110,6 +13719,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Retry Failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12117,10 +13727,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useApiKeys.ts
 
 **Hardcoded strings found:**
+
 - "Authentication required"
 - "An unknown error occurred"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12128,9 +13740,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAuth.ts
 
 **Hardcoded strings found:**
+
 - "Not available"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12138,6 +13752,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAuthGuard.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication Error"
 - "Auth guard session error:"
 - "Auth guard error:"
@@ -12145,6 +13760,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12152,6 +13768,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useAuthOperations.ts
 
 **Hardcoded strings found:**
+
 - "Failed to sign in."
 - "Error during signup"
 - "Failed to complete signup rewards"
@@ -12178,6 +13795,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Web3 login failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12185,9 +13803,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useCompanyWorkspace.ts
 
 **Hardcoded strings found:**
+
 - "Acme Corporation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12195,9 +13815,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useContractTemplates.ts
 
 **Hardcoded strings found:**
+
 - "User not authenticated"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12205,9 +13827,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useDisputeCheck.ts
 
 **Hardcoded strings found:**
+
 - "Error checking dispute status:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12215,6 +13839,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useDisputes.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching disputes:"
 - "Failed to fetch disputes"
 - "Error fetching dispute:"
@@ -12237,6 +13862,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Message sent successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12244,10 +13870,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useFavorites.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch favorites"
 - "Failed to toggle favorite"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12255,10 +13883,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useFraudPreventionSignup.ts
 
 **Hardcoded strings found:**
+
 - "Error getting IP:"
 - "Signup blocked"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12266,12 +13896,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useHireRequest.ts
 
 **Hardcoded strings found:**
+
 - "Error submitting hire request:"
 - "Request Submitted"
 - "Your request to hire ${requestData.talent.full_name} has been sent successfully."
 - "Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12279,9 +13911,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useInfiniteScroll.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12289,6 +13923,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useInterviews.ts
 
 **Hardcoded strings found:**
+
 - "Interview Confirmed"
 - "Interview Declined"
 - "Interview Rescheduled"
@@ -12306,6 +13941,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Your interview request has been declined"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12313,6 +13949,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useJobApplications.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching applications:"
 - "Failed to fetch applications"
 - "You must be logged in to apply for jobs"
@@ -12327,6 +13964,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Application status updated to ${status}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12334,9 +13972,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useJobDetails.ts
 
 **Hardcoded strings found:**
+
 - "Error loading job details:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12344,6 +13984,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useJobMatches.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching job matches:"
 - "Error triggering AI matching:"
 - "Error"
@@ -12351,6 +13992,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Could not process talent matching. Please try again later."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12358,6 +14000,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useJobSuggestions.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching job matches:"
 - "Error updating job match status:"
 - "Error"
@@ -12367,6 +14010,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to update job status"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12374,6 +14018,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useJobs.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching jobs:"
 - "Failed to fetch jobs. Please try again."
 - "Failed to fetch jobs"
@@ -12385,6 +14030,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Job deleted successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12392,9 +14038,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useMarketplace.ts
 
 **Hardcoded strings found:**
+
 - "Marketplace Error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12402,6 +14050,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useMarketplaceSearch.ts
 
 **Hardcoded strings found:**
+
 - "Web App"
 - "Script"
 - "Website"
@@ -12416,6 +14065,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Within 1 Month"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12423,10 +14073,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useMilestoneGenerator.ts
 
 **Hardcoded strings found:**
+
 - "Error generating milestones:"
 - "Failed to generate milestones"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12434,10 +14086,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useOnboardingStatus.tsx
 
 **Hardcoded strings found:**
+
 - "Error fetching onboarding status:"
 - "Error in onboarding status hook:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12445,9 +14099,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useOrder.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch order"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12455,9 +14111,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useOrders.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch orders"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12465,6 +14123,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/usePortfolio.ts
 
 **Hardcoded strings found:**
+
 - "You must be logged in to add a portfolio project"
 - "Error adding portfolio project:"
 - "You must be logged in to update a portfolio project"
@@ -12483,6 +14142,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Could not delete project: ${e.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12490,9 +14150,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/usePricingSuggestionAnalytics.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching pricing suggestion analytics:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12500,6 +14162,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useProjects.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching project:"
 - "Failed to fetch project details"
 - "Error updating project status:"
@@ -12507,6 +14170,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Project status updated to ${status}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12514,9 +14178,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useQuoteWizard.ts
 
 **Hardcoded strings found:**
+
 - "Failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12524,9 +14190,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useRecommendations.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch recommendations"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12534,6 +14202,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useReferrals.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching referral code:"
 - "Error in fetchReferralCode:"
 - "Error fetching referrals:"
@@ -12549,6 +14218,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Cannot share"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12556,9 +14226,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useResumeEnhancer.ts
 
 **Hardcoded strings found:**
+
 - "Failed to enhance content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12566,6 +14238,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useReviews.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching reviews:"
 - "Error fetching user reviews:"
 - "Error submitting review:"
@@ -12586,6 +14259,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to report review"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12593,6 +14267,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useSmartContracts.ts
 
 **Hardcoded strings found:**
+
 - "Failed to generate Solidity contract"
 - "Error generating Solidity contract:"
 - "Failed to generate smart contract"
@@ -12602,6 +14277,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Smart contract deployed successfully!"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12609,12 +14285,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useTalentProfile.ts
 
 **Hardcoded strings found:**
+
 - "No profile ID provided"
 - "Profile not found"
 - "Error fetching profile:"
 - "Failed to load profile data"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12622,11 +14300,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useTalentProfileEnhancer.ts
 
 **Hardcoded strings found:**
+
 - "talent-profile-enhancer"
 - "No enhanced profile data received"
 - "Failed to enhance profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12634,6 +14314,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useTalentQuotes.ts
 
 **Hardcoded strings found:**
+
 - "Status updated"
 - "Quote marked as viewed"
 - "Quote marked as responded"
@@ -12644,6 +14325,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Quote unarchived"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12651,9 +14333,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useTokenBalance.ts
 
 **Hardcoded strings found:**
+
 - "function balanceOf(address owner) view returns (uint256)"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12661,9 +14345,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useUser.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch user"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12671,10 +14357,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useWallet.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching wallet:"
 - "Error fetching transactions:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12682,6 +14370,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useWebhooks.ts
 
 **Hardcoded strings found:**
+
 - "Authentication required"
 - "Failed to fetch webhooks"
 - "Error fetching webhooks:"
@@ -12709,6 +14398,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error testing webhook"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12716,9 +14406,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/hooks/useWhitelabelTenant.ts
 
 **Hardcoded strings found:**
+
 - "Failed to load tenant configuration"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12726,10 +14418,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/integrations/mailchimp/MailchimpService.ts
 
 **Hardcoded strings found:**
+
 - "Mailchimp list ID missing"
 - "Mailchimp error: ${res.status} ${text}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12737,10 +14431,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/integrations/salesforce/SalesforceService.ts
 
 **Hardcoded strings found:**
+
 - "Salesforce access token missing"
 - "Salesforce error: ${res.status} ${text}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12748,10 +14444,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/integrations/supabase/client.ts
 
 **Hardcoded strings found:**
+
 - "Fetch failed"
 - "X-Client-Info"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12759,12 +14457,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/integrations/supabase/types.ts
 
 **Hardcoded strings found:**
+
 - "Views"
 - "Tables"
 - "Enums"
 - "CompositeTypes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12772,9 +14472,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/integrations/teams/TeamsService.ts
 
 **Hardcoded strings found:**
+
 - "Teams error: ${res.status} ${message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12782,10 +14484,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/layout/AppLayout.tsx
 
 **Hardcoded strings found:**
+
 - "Main content"
 - "flex flex-col min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12793,9 +14497,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/legal/PrivacyPolicy.jsx
 
 **Hardcoded strings found:**
+
 - "Privacy Policy"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12803,6 +14509,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/legal/termsContent.ts
 
 **Hardcoded strings found:**
+
 - "When you create an account you must provide accurate information and keep your login credentials confidential. You are responsible for all activity under your account."
 - "If you have questions about these Terms, please contact us at"
 - "Introduction"
@@ -12813,6 +14520,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "<p>If you have questions about these Terms, please contact us at <a href="
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12820,6 +14528,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/ai-matchmaking.ts
 
 **Hardcoded strings found:**
+
 - "Error in matchmaking:"
 - "Senior AI Engineer"
 - "Experienced AI engineer with expertise in machine learning and computer vision"
@@ -12828,6 +14537,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "High-performance GPU server for AI model training and inference"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12835,9 +14545,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/analytics.ts
 
 **Hardcoded strings found:**
+
 - "Error logging analytics event to Supabase"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12845,9 +14557,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/axios.ts
 
 **Hardcoded strings found:**
+
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12855,6 +14569,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/database.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Unknown error"
 - "Database query timeout after ${timeoutMs}ms"
@@ -12862,6 +14577,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Database connection successful"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12869,9 +14585,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/email.ts
 
 **Hardcoded strings found:**
+
 - "SendGrid error response:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12879,9 +14597,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/investor-matching.ts
 
 **Hardcoded strings found:**
+
 - "Hi ${investorName},\n\n${startup} here. ${summary}\n\nI believe our vision aligns with your investment focus. Looking forward to the opportunity to connect.\n\nBest regards,\n${startup} Team"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12889,6 +14609,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/lib/serverCache.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Cache CLEAR error:"
 - "Cache GET error for ${key}:"
@@ -12898,6 +14619,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Cache CLEARED: all categories"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12905,9 +14627,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/middleware/cors.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12915,11 +14639,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/MobileApp.tsx
 
 **Hardcoded strings found:**
+
 - "CartContextTester: OK"
 - "CartContextTester: useCart() FAILED!"
 - "CartContextTester: useCart() successful"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12927,9 +14653,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/browse/BrowseCards.tsx
 
 **Hardcoded strings found:**
+
 - "View Details"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12937,6 +14665,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/browse/BrowseFilters.tsx
 
 **Hardcoded strings found:**
+
 - "Filter"
 - "Job Type"
 - "Full Time"
@@ -12974,6 +14703,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Jobs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12981,6 +14711,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/common/BottomNavigation.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "Home"
 - "Marketplace"
@@ -12989,6 +14720,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/mobile/profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -12996,12 +14728,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/common/MobileHeader.tsx
 
 **Hardcoded strings found:**
+
 - "Back"
 - "Notifications"
 - "Settings"
 - "sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13009,6 +14743,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/dashboard/ClientDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Post a New Job"
 - "View all"
 - "Website Redesign"
@@ -13029,6 +14764,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13036,6 +14772,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/dashboard/TalentDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "New Job Matches"
 - "View all"
 - "Senior React Developer"
@@ -13062,6 +14799,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13069,6 +14807,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/messaging/MobileChatView.tsx
 
 **Hardcoded strings found:**
+
 - "Go back"
 - "Start audio call"
 - "Start video call"
@@ -13083,6 +14822,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "sticky bottom-0 bg-background border-t border-border p-2"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13090,12 +14830,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/messaging/MobileConversationList.tsx
 
 **Hardcoded strings found:**
+
 - "All"
 - "Unread"
 - "Interviews"
 - "Search messages..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13103,6 +14845,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/onboarding/LanguageThemeSelector.tsx
 
 **Hardcoded strings found:**
+
 - "Select your language"
 - "Choose your preferred language"
 - "Select your preferred appearance"
@@ -13110,6 +14853,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Dark"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13117,12 +14861,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/onboarding/RolePicker.tsx
 
 **Hardcoded strings found:**
+
 - "Choose how you want to use our platform"
 - "I'm offering services"
 - "Find work and showcase your skills"
 - "Post jobs and find talented professionals"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13130,6 +14876,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/onboarding/SignUpForm.tsx
 
 **Hardcoded strings found:**
+
 - "Continue with Google"
 - "Continue with Facebook"
 - "Full name"
@@ -13150,6 +14897,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13157,6 +14905,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/projects/MobileProjectView.tsx
 
 **Hardcoded strings found:**
+
 - "Progress"
 - "Start Date"
 - "End Date"
@@ -13172,6 +14921,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not set"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13179,6 +14929,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/components/resume/MobileResumeBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Basics"
 - "Experience"
 - "Education"
@@ -13221,6 +14972,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "address-level2"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13228,6 +14980,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileBrowse.tsx
 
 **Hardcoded strings found:**
+
 - "Jobs"
 - "Senior React Developer"
 - "Creative Studios"
@@ -13240,6 +14993,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Browse Jobs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13247,10 +15001,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileHome.tsx
 
 **Hardcoded strings found:**
+
 - "Client Dashboard"
 - "Talent Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13258,6 +15014,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileJobPost.tsx
 
 **Hardcoded strings found:**
+
 - "Back"
 - "Job Details"
 - "Job Title"
@@ -13320,6 +15077,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13327,9 +15085,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileMessages.tsx
 
 **Hardcoded strings found:**
+
 - "Messages"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13337,6 +15097,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileOnboarding.tsx
 
 **Hardcoded strings found:**
+
 - "Welcome to Zion"
 - "Let's set up your experience"
 - "Continue"
@@ -13345,6 +15106,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create your account to get started"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13352,12 +15114,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileProjects.tsx
 
 **Hardcoded strings found:**
+
 - "Project Details"
 - "Website Redesign"
 - "Homepage Development"
 - "Product Pages"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13365,9 +15129,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mobile/pages/MobileResumeBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Resume Builder"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13375,6 +15141,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/mocks/handlers.ts
 
 **Hardcoded strings found:**
+
 - "Internal Server Error"
 - "Unhandled mock scenario"
 - "servererror@example.com"
@@ -13383,6 +15150,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Product 3 Missing Date"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13390,9 +15158,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/offworld/orbitdb.ts
 
 **Hardcoded strings found:**
+
 - "Error initializing OrbitDB:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13400,11 +15170,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AICoreDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "ZionGPT Core"
 - "Trigger Training"
 - "Training error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13412,6 +15184,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AIMatcher.tsx
 
 **Hardcoded strings found:**
+
 - "All Categories"
 - "Services"
 - "Talent"
@@ -13420,6 +15193,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "You"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13427,6 +15201,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AITalentMatchingPage.tsx
 
 **Hardcoded strings found:**
+
 - "Precise Candidate Matching"
 - "Streamlined Hiring Workflow"
 - "Automated screening and ranking saves your team valuable time."
@@ -13436,6 +15211,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Find Your AI Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13443,6 +15219,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/About.tsx
 
 **Hardcoded strings found:**
+
 - "About Zion"
 - "Our Mission"
 - "Our Vision"
@@ -13460,6 +15237,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13467,6 +15245,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Account.tsx
 
 **Hardcoded strings found:**
+
 - "My Account"
 - "Profile"
 - "Orders"
@@ -13480,6 +15259,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13487,6 +15267,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AccountSettings.tsx
 
 **Hardcoded strings found:**
+
 - "Account Settings"
 - "Profile Settings"
 - "Manage your personal information and privacy"
@@ -13518,6 +15299,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enable backup first to use this feature"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13525,6 +15307,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Achievements.tsx
 
 **Hardcoded strings found:**
+
 - "Profile Complete"
 - "Complete your user profile"
 - "First Purchase"
@@ -13533,6 +15316,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Refer a new user to Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13540,6 +15324,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AdditionalTalentsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Digital Marketing Specialist"
 - "AI Researcher"
 - "Scrum Master"
@@ -13551,6 +15336,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Computer Vision Engineer"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13558,9 +15344,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AdminDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Admin Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13568,12 +15356,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AdminPerformancePage.tsx
 
 **Hardcoded strings found:**
+
 - "Loading metrics..."
 - "Access Denied"
 - "Go to Admin Dashboard"
 - "@/pages/dev/dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13581,6 +15371,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/AllCategoriesPage.tsx
 
 **Hardcoded strings found:**
+
 - "All Categories"
 - "Services"
 - "/services"
@@ -13590,6 +15381,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Discover cutting-edge solutions and tech breakthroughs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13597,9 +15389,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Analytics.tsx
 
 **Hardcoded strings found:**
+
 - "Error fetching feature usage:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13607,6 +15401,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiDocsHub.tsx
 
 **Hardcoded strings found:**
+
 - "Go to Developer Portal"
 - "next/link"
 - "Getting Started"
@@ -13614,6 +15409,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Sample Code"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13621,6 +15417,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiErrorCodes.tsx
 
 **Hardcoded strings found:**
+
 - "Error Format"
 - "Most errors include:"
 - "Common Error Codes"
@@ -13642,6 +15439,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13649,6 +15447,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiGettingStarted.tsx
 
 **Hardcoded strings found:**
+
 - "Getting Started"
 - "Overview"
 - "Authentication"
@@ -13661,6 +15460,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13668,6 +15468,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiReference.tsx
 
 **Hardcoded strings found:**
+
 - "Try It"
 - "Request"
 - "Parameters"
@@ -13689,6 +15490,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Yes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13696,6 +15498,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiSampleCode.tsx
 
 **Hardcoded strings found:**
+
 - "Sample Code"
 - "Authentication"
 - "Security Warning"
@@ -13716,6 +15519,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "We need a skilled backend developer..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13723,6 +15527,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApiWebhooks.tsx
 
 **Hardcoded strings found:**
+
 - "Webhooks"
 - "Event Type"
 - "Description"
@@ -13751,6 +15556,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Webhook received"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13758,12 +15564,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ApplicationStatusTracker.tsx
 
 **Hardcoded strings found:**
+
 - "Application Status Tracker"
 - "Track where you stand in the hiring process"
 - "Your Applications"
 - "Application Status Tracker | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13771,6 +15579,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Blog.tsx
 
 **Hardcoded strings found:**
+
 - "Blog"
 - "Expert perspectives on artificial intelligence, tech innovation, and digital transformation"
 - "Featured Article"
@@ -13786,6 +15595,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "All Categories"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13793,6 +15603,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/BlogPost.tsx
 
 **Hardcoded strings found:**
+
 - "Loading article..."
 - "Retry"
 - "Back to Blog"
@@ -13814,6 +15625,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13821,6 +15633,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/BookBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Zion OS: Building the Civilization Protocol"
 - "Intro – Founder's Story"
 - "Early vision and motivations"
@@ -13849,6 +15662,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Auto-layout hardcover edition."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13856,6 +15670,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CareerJobDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Job Description"
 - "Apply for this role"
 - "Name"
@@ -13865,6 +15680,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit Application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13872,6 +15688,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Careers.tsx
 
 **Hardcoded strings found:**
+
 - "Join Our Team"
 - "Help us build the future of AI and technology"
 - "Open Positions"
@@ -13891,6 +15708,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Salary packages that recognize your value, plus equity options to share in our success."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13898,11 +15716,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CaseStudies.tsx
 
 **Hardcoded strings found:**
+
 - "Case Studies"
 - "Learn how organizations use Zion to achieve their goals"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13910,6 +15730,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CaseStudy.tsx
 
 **Hardcoded strings found:**
+
 - "Home"
 - "Case Studies"
 - "Back to Case Studies"
@@ -13917,6 +15738,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13924,12 +15746,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Categories.tsx
 
 **Hardcoded strings found:**
+
 - "Browse Categories"
 - "Please try again later."
 - "No categories yet"
 - "Explore ${category.name.toLowerCase()} in our marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13937,6 +15761,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CategoryDetail.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 - "Category load error:"
 - "Failed to load category"
@@ -13962,6 +15787,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Category | Zion Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13969,6 +15795,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CategoryPage.tsx
 
 **Hardcoded strings found:**
+
 - "Category Error"
 - "Try Again"
 - "Back to Marketplace"
@@ -13982,6 +15809,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "AbortError"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -13989,11 +15817,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Checkout.tsx
 
 **Hardcoded strings found:**
+
 - "Home"
 - "Checkout"
 - "Continue Shopping"
 - "Order Summary"
-- "Address *"
+- "Address \*"
 - "Enter your full name"
 - "Enter your address"
 - "Enter your city"
@@ -14008,6 +15837,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Continue to Payment ($${total.toFixed(2)})"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14015,6 +15845,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CheckoutPage.tsx
 
 **Hardcoded strings found:**
+
 - "Checkout"
 - "Continue shopping"
 - "Order Summary"
@@ -14028,6 +15859,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14035,6 +15867,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CheckoutSuccess.tsx
 
 **Hardcoded strings found:**
+
 - "Loading order..."
 - "Thank you for your purchase!"
 - "View Orders"
@@ -14043,6 +15876,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "payment-success-message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14050,6 +15884,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ClientDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "My Jobs"
 - "Manage your job postings and talent applications"
 - "Hiring Pipeline"
@@ -14064,6 +15899,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14071,6 +15907,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CommunityPage.tsx
 
 **Hardcoded strings found:**
+
 - "Community Forum"
 - "Join the conversation, ask questions, and share your knowledge"
 - "Categories"
@@ -14080,6 +15917,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/auth/login?returnTo=${returnTo}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14087,6 +15925,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CommunityProfilePage.tsx
 
 **Hardcoded strings found:**
+
 - "User not found"
 - "Back to Community"
 - "Forum"
@@ -14107,6 +15946,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "community, forum, profile, user profile, ${user.name}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14114,9 +15954,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CompanyWorkspace.tsx
 
 **Hardcoded strings found:**
+
 - "Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14124,6 +15966,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Congress.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Planetary Congress"
 - "Chamber of Nations"
 - "Instance"
@@ -14143,6 +15986,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Cross-instance governance"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14150,6 +15994,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Contact.tsx
 
 **Hardcoded strings found:**
+
 - "Contact Us"
 - "Get in Touch"
 - "Your Name"
@@ -14180,6 +16025,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14187,6 +16033,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ContentGenerator.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Content Generator"
 - "Content Settings"
@@ -14208,6 +16055,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to send test newsletter. Please try again."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14215,9 +16063,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ContractBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Smart Contract Builder | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14225,6 +16075,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CreatePostPage.tsx
 
 **Hardcoded strings found:**
+
 - "Forum"
 - "Create Post"
 - "Create New Post"
@@ -14238,6 +16089,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "community, forum, discussion, create post, new thread"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14245,9 +16097,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CreateServiceProfile.tsx
 
 **Hardcoded strings found:**
+
 - "Create Your Service Provider Profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14255,9 +16109,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CreateTalentProfile.tsx
 
 **Hardcoded strings found:**
+
 - "Join Our Talent Network"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14265,6 +16121,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/CreatorDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Creator Dashboard"
 - "Analytics"
 - "Views"
@@ -14272,6 +16129,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create new content, monitor your analytics, or manage your account using the sidebar menu."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14279,6 +16137,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Dashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Loading dashboard..."
 - "Redirecting to login..."
@@ -14316,6 +16175,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "dashboard-header"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14323,6 +16183,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/DevNet.tsx
 
 **Hardcoded strings found:**
+
 - "DevNet Sandbox"
 - "Token Faucet"
 - "Proposal Sandbox"
@@ -14331,6 +16192,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/governance/create"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14338,11 +16200,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/DeveloperPortal.tsx
 
 **Hardcoded strings found:**
+
 - "Developer Portal"
 - "Webhooks"
 - "Logs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14350,6 +16214,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/DocsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Docs"
 - "next/link"
 - "Introduction"
@@ -14359,6 +16224,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Legal + Manifestos"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14366,6 +16232,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EditPostPage.tsx
 
 **Hardcoded strings found:**
+
 - "Post not found"
 - "Back to Community"
 - "Permission Denied"
@@ -14384,6 +16251,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "community, forum, discussion, edit post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14391,10 +16259,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EnterpriseAdmin.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise Admin - Zion AI Marketplace"
 - "min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14402,10 +16272,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EnterpriseBilling.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise Billing - Zion AI Marketplace"
 - "min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14413,10 +16285,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EnterprisePlans.tsx
 
 **Hardcoded strings found:**
+
 - "Enterprise Plans - Zion AI Marketplace"
 - "min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14424,6 +16298,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EquipmentDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Loading equipment details..."
 - "Go Back"
 - "Browse Equipment"
@@ -14452,6 +16327,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14459,6 +16335,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EquipmentPage.test.tsx
 
 **Hardcoded strings found:**
+
 - "Network Error"
 - "Something went wrong on the server"
 - "Raw error object in fetchEquipment:"
@@ -14468,6 +16345,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14475,6 +16353,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EquipmentPage.tsx
 
 **Hardcoded strings found:**
+
 - "Avg Price"
 - "Avg Rating"
 - "In Stock"
@@ -14503,6 +16382,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Networking"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14510,6 +16390,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/EquipmentRecommendations.tsx
 
 **Hardcoded strings found:**
+
 - "Authentication required"
 - "Please sign in to get personalized AI picks."
 - "Sign In"
@@ -14517,6 +16398,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/auth/login?returnTo=/equipment/recommendations"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14524,11 +16406,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ExpoPage.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Global Expo"
 - "Virtual summit showcasing multiverse innovation"
 - "bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14536,10 +16420,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Favorites.tsx
 
 **Hardcoded strings found:**
+
 - "Favorites"
 - "No favorites added."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14547,9 +16433,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Featured.tsx
 
 **Hardcoded strings found:**
+
 - "Featured Listings"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14557,11 +16445,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/FeedbackAnalytics.tsx
 
 **Hardcoded strings found:**
+
 - "Feedback Overview"
 - "Recent Feedback"
 - "No feedback submitted yet."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14569,6 +16459,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ForgotPassword.jsx
 
 **Hardcoded strings found:**
+
 - "Forgot Password"
 - "Send Reset Link"
 - "Login"
@@ -14577,6 +16468,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14584,11 +16476,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ForgotPassword.tsx
 
 **Hardcoded strings found:**
+
 - "Request failed"
 - "Failed to send reset link"
 - "Submit"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14596,6 +16490,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ForumCategoryPage.tsx
 
 **Hardcoded strings found:**
+
 - "Forum"
 - "Clear Search"
 - "Create Post"
@@ -14604,6 +16499,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14611,6 +16507,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ForumPostPage.tsx
 
 **Hardcoded strings found:**
+
 - "Post not found"
 - "Back to Community"
 - "Forum"
@@ -14648,6 +16545,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14655,6 +16553,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/FoundationPage.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Foundation"
 - "Registry & Legal Structure"
 - "Cayman Foundation"
@@ -14665,6 +16564,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Public trust portal for the Zion protocol"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14672,6 +16572,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/FounderBackupVault.tsx
 
 **Hardcoded strings found:**
+
 - "Founder Backup Vault"
 - "Download Encrypted ZIP"
 - "Simulate Recovery"
@@ -14686,6 +16587,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "zion_backup.pdf"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14693,11 +16595,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/FounderBot.tsx
 
 **Hardcoded strings found:**
+
 - "Ask the Founder"
 - "Open Founder Chat"
 - "Founder bot error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14705,6 +16609,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/FounderCoursePage.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Founder Course"
 - "Summarize This Module"
 - "Take Quiz"
@@ -14721,6 +16626,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Module 5 — \uD83D\uDDFC Legal & Launch"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14728,6 +16634,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Fundraising.tsx
 
 **Hardcoded strings found:**
+
 - "Fundraising Toolkit"
 - "Funding Stage"
 - "Seed / Strategic Angels"
@@ -14746,6 +16653,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Fundraising toolkit"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14753,12 +16661,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/GPTLibraryPage.tsx
 
 **Hardcoded strings found:**
+
 - "ZionGPT Prompt Library"
 - "Tap a prompt to copy or send it directly to ZionGPT."
 - "Add Your Own"
 - "Enter your prompt"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14766,6 +16676,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/GlobalMap.tsx
 
 **Hardcoded strings found:**
+
 - "Global Instances"
 - "Top Regions by Talent"
 - "Live Feed"
@@ -14776,6 +16687,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14783,6 +16695,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Grants.tsx
 
 **Hardcoded strings found:**
+
 - "Grant Application"
 - "Project Name"
 - "Team Info"
@@ -14798,6 +16711,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Draft"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14805,6 +16719,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/GreenIT.tsx
 
 **Hardcoded strings found:**
+
 - "Green IT Solutions"
 - "Sustainable technology solutions that reduce environmental impact without compromising performance"
 - "Sustainable IT for a Better Future"
@@ -14819,6 +16734,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14826,6 +16742,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Help.tsx
 
 **Hardcoded strings found:**
+
 - "Help Center"
 - "Loading..."
 - "Try Again"
@@ -14835,6 +16752,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Search our knowledge base"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14842,9 +16760,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/HelpCenterPage.tsx
 
 **Hardcoded strings found:**
+
 - "Help Center | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14852,6 +16772,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/HiringTracker.tsx
 
 **Hardcoded strings found:**
+
 - "Hiring Pipeline"
 - "Track and manage your candidates through the hiring process"
 - "Kanban Board"
@@ -14859,6 +16780,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Hiring Tracker | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14866,12 +16788,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ITOnsiteServicesPage.tsx
 
 **Hardcoded strings found:**
+
 - "Full IT Onsite Services Pricing"
 - "Payment Successful"
 - "Your IT onsite service request has been received. Our team will contact you shortly."
 - "/it-onsite-services/${slugify(country.country)}?service=standard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14879,6 +16803,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ITSupportPage.tsx
 
 **Hardcoded strings found:**
+
 - "IT Support Services"
 - "Certified Professionals"
 - "Multi-Channel Support"
@@ -14886,6 +16811,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Get IT Support"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14893,6 +16819,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/InternationalProposals.tsx
 
 **Hardcoded strings found:**
+
 - "International Proposals"
 - "Title"
 - "Institution"
@@ -14904,6 +16831,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Transparency for global outreach"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14911,6 +16839,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Interviews.tsx
 
 **Hardcoded strings found:**
+
 - "Interviews"
 - "Schedule and manage your video interviews"
 - "Past"
@@ -14920,6 +16849,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Interviews | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14927,6 +16857,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/InvestorMatch.tsx
 
 **Hardcoded strings found:**
+
 - "Investor Matchmaker"
 - "Startup Name"
 - "Industry"
@@ -14939,6 +16870,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Searching..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14946,6 +16878,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/JobDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Job Not Found"
 - "View All Jobs"
 - "Job Description"
@@ -14963,6 +16896,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Flexible"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14970,6 +16904,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ListingDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Listing Not Found"
 - "Back to Marketplace"
 - "No image available"
@@ -14990,6 +16925,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Request Quote"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -14997,10 +16933,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Login.tsx
 
 **Hardcoded strings found:**
+
 - "Checking login status…"
 - "react-error-boundary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15008,11 +16946,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MarketplaceLanding.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Marketplace"
 - "/checkout/${p.id}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15020,12 +16960,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MessagingInbox.tsx
 
 **Hardcoded strings found:**
+
 - "Messages"
 - "Start Call"
 - "Failed to load messages. Please try again."
 - "Please select a conversation first"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15033,9 +16975,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MobileAppPage.tsx
 
 **Hardcoded strings found:**
+
 - "Zion AI Marketplace App"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15043,9 +16987,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MobileLaunchPage.tsx
 
 **Hardcoded strings found:**
+
 - "Get the Zion App - AI Marketplace in Your Pocket"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15053,6 +16999,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MoreTalentsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Backend Developer"
 - "Cloud Architect"
 - "Data Engineer"
@@ -15063,6 +17010,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Product Manager"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15070,6 +17018,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/MyAccount.tsx
 
 **Hardcoded strings found:**
+
 - "My Account"
 - "Profile"
 - "Orders"
@@ -15083,6 +17032,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15090,6 +17040,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/NationBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Create a Digital Nation"
 - "Nation Name"
 - "Flag"
@@ -15103,6 +17054,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Select governance"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15110,12 +17062,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/NationDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Population metrics"
 - "Talent vs. Client ratio"
 - "Nation currency details"
 - "Editable roadmap"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15123,12 +17077,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/NationProfilePage.tsx
 
 **Hardcoded strings found:**
+
 - "This is a public profile for the nation."
 - "View Dashboard"
 - "next/link"
 - "/nations/${slug}/dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15136,6 +17092,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/NewPost.jsx
 
 **Hardcoded strings found:**
+
 - "New Post"
 - "Preview"
 - "Loading..."
@@ -15146,6 +17103,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15153,9 +17111,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/NewServicesPage.tsx
 
 **Hardcoded strings found:**
+
 - "New Services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15163,6 +17123,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Notifications.tsx
 
 **Hardcoded strings found:**
+
 - "Message"
 - "Quote Request"
 - "Booking"
@@ -15185,6 +17146,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Notifications | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15192,10 +17154,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OAuthCallback.jsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Failed to decode token"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15203,11 +17167,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OAuthCallback.tsx
 
 **Hardcoded strings found:**
+
 - "OAuth Error:"
 - "Authentication token not found. Please try logging in again."
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15215,11 +17181,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OffworldLab.tsx
 
 **Hardcoded strings found:**
+
 - "Offworld Lab"
 - "Cast Offline Vote"
 - "Sync to Satellite"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15227,6 +17195,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Onboarding.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Welcome to Zion"
 - "Complete your profile to get started"
@@ -15242,6 +17211,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15249,6 +17219,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OpenAppRedirect.tsx
 
 **Hardcoded strings found:**
+
 - "If nothing happens, download the app first."
 - "App Not Installed"
 - "We're redirecting you to download the Zion app."
@@ -15260,6 +17231,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Redirecting to the Zion AI Marketplace mobile app"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15267,11 +17239,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OrderConfirmation.tsx
 
 **Hardcoded strings found:**
+
 - "Thank you for your order!"
 - "View Orders"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15279,6 +17253,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OrderDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Shipping Address"
 - "Tracking"
 - "Download PDF Invoice"
@@ -15291,6 +17266,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Order summary copied to clipboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15298,6 +17274,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Orders.tsx
 
 **Hardcoded strings found:**
+
 - "In Escrow"
 - "Released"
 - "Disputed"
@@ -15311,6 +17288,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "You haven"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15318,6 +17296,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/OrgChart.tsx
 
 **Hardcoded strings found:**
+
 - "Organization Chart"
 - "All Roles"
 - "All Zones"
@@ -15331,6 +17310,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Meet the Zion team and DAO delegates"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15338,6 +17318,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PartnerIntegration.tsx
 
 **Hardcoded strings found:**
+
 - "Application received"
 - "Institution Name"
 - "Entity Type"
@@ -15360,6 +17341,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15367,6 +17349,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Payments.tsx
 
 **Hardcoded strings found:**
+
 - "Transaction History"
 - "Payment Settings"
 - "Manage Payment Methods"
@@ -15376,6 +17359,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Push notifications"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15383,6 +17367,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Philosophy.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Philosophy"
 - "Foundational Beliefs"
 - "Talent is sovereign"
@@ -15399,6 +17384,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Sign with Wallet"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15406,6 +17392,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PodcastHost.tsx
 
 **Hardcoded strings found:**
+
 - "Podcast Host"
 - "Invitee Name"
 - "Invitee Bio"
@@ -15415,6 +17402,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Generate Script"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15422,6 +17410,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Points.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Rewards Program"
 - "Join Now to Start Earning"
 - "Multiple ways to accumulate rewards"
@@ -15447,6 +17436,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15454,6 +17444,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PortfolioBuilder.tsx
 
 **Hardcoded strings found:**
+
 - "Resume & Portfolio Builder"
 - "Resume"
 - "Portfolio"
@@ -15461,6 +17452,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create and customize your resume and portfolio to showcase your skills and experience."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15468,11 +17460,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PostJob.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Post a Job"
 - "Post a Job | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15480,6 +17474,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProductPage.tsx
 
 **Hardcoded strings found:**
+
 - "Loading product details..."
 - "Product not found"
 - "Error fetching product"
@@ -15489,6 +17484,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15496,12 +17492,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProductsAdminPage.tsx
 
 **Hardcoded strings found:**
+
 - "Name"
 - "Category"
 - "Status"
 - "Approve"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15509,6 +17507,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Profile.tsx
 
 **Hardcoded strings found:**
+
 - "Account"
 - "Profile"
 - "Orders"
@@ -15517,6 +17516,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15524,6 +17524,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProfileDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Loading profile..."
 - "Profile not found."
 - "About Me"
@@ -15544,6 +17545,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Present"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15551,6 +17553,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProfilePage.tsx
 
 **Hardcoded strings found:**
+
 - "User Profile"
 - "Name"
 - "Bio"
@@ -15558,10 +17561,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Enter your name"
 - "Tell us a bit about yourself..."
 - "s not submitting yet
-            style={{
-              padding:"
+  style={{
+  padding:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15569,6 +17573,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProjectDetails.tsx
 
 **Hardcoded strings found:**
+
 - "Offer Sent"
 - "Offer Accepted"
 - "Changes Requested"
@@ -15626,6 +17631,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Client"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15633,10 +17639,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProjectMilestones.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Milestones | Zion AI Marketplace"
 - "Manage project payment milestones and deliverables"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15644,6 +17652,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ProjectRoom.tsx
 
 **Hardcoded strings found:**
+
 - "End Call"
 - "Chat"
 - "Files"
@@ -15667,6 +17676,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Collaborate on your project"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15674,12 +17684,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Projects.tsx
 
 **Hardcoded strings found:**
+
 - "View Details"
 - "next/link"
 - "Project"
 - "Project details"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15687,6 +17699,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PublicTalentProfilePage.tsx
 
 **Hardcoded strings found:**
+
 - "Failed to load profile."
 - "Skills"
 - "About Me"
@@ -15704,6 +17717,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View the profile of this talented individual."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15711,6 +17725,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/PublishProduct.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Publish on Zion"
 - "Publish Your Product"
@@ -15718,6 +17733,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "publish product, sell online, digital marketplace, AI tools, tech services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15725,9 +17741,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/RecommendationsPage.jsx
 
 **Hardcoded strings found:**
+
 - "Failed to fetch recommendations"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15735,6 +17753,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Referrals.tsx
 
 **Hardcoded strings found:**
+
 - "Referral Program"
 - "Invite others to Zion AI Marketplace and earn rewards"
 - "Share Referral Link"
@@ -15743,6 +17762,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Authentication required"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15750,6 +17770,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/RequestService.tsx
 
 **Hardcoded strings found:**
+
 - "Your name"
 - "Phone"
 - "Describe your request"
@@ -15761,6 +17782,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Submit"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15768,6 +17790,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ResetPassword.jsx
 
 **Hardcoded strings found:**
+
 - "Reset Your Password"
 - "Enter new password"
 - "Confirm new password"
@@ -15775,6 +17798,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Reset Password"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15782,6 +17806,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ResetPassword.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "New password"
 - "Confirm password"
@@ -15790,6 +17815,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Reset Password"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15797,10 +17823,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Rewards.tsx
 
 **Hardcoded strings found:**
+
 - "Rewards"
 - "Swag Pack"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15808,6 +17836,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Roadmap.tsx
 
 **Hardcoded strings found:**
+
 - "Product Roadmap"
 - "Details"
 - "Suggest a Feature"
@@ -15819,6 +17848,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "min-h-screen bg-background py-24"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15826,6 +17856,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/RoadmapFeature.tsx
 
 **Hardcoded strings found:**
+
 - "Feature not found"
 - "Back to Roadmap"
 - "next/link"
@@ -15835,6 +17866,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Following"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15842,6 +17874,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/RoadmapSuggest.tsx
 
 **Hardcoded strings found:**
+
 - "Suggest a Feature"
 - "Submit"
 - "Community Queue"
@@ -15857,6 +17890,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "min-h-screen bg-background py-24"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15864,9 +17898,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/RootPage.tsx
 
 **Hardcoded strings found:**
+
 - "Dashboard - Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15874,6 +17910,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/SavedTalentsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Error fetching talent profile"
 - "Error toggling saved talent"
 - "/auth/login?returnTo=${encodeURIComponent(router.asPath)}"
@@ -15884,6 +17921,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Browse Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15891,10 +17929,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/SearchPage.tsx
 
 **Hardcoded strings found:**
+
 - "Search failed:"
 - "search-${routeKey}-${router.asPath}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15902,6 +17942,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/SearchResultsPage.tsx
 
 **Hardcoded strings found:**
+
 - "All Types"
 - "Services"
 - "Talent"
@@ -15912,6 +17953,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Next"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15919,11 +17961,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ServiceDescriptionGenerator.tsx
 
 **Hardcoded strings found:**
+
 - "Loading..."
 - "Service Description Generator"
 - "Create professional service descriptions with the help of AI. Just provide basic details about your service."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15931,9 +17975,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ServiceOnboarding.tsx
 
 **Hardcoded strings found:**
+
 - "Join Our Service Provider Network"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15941,6 +17987,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ServicesPage.tsx
 
 **Hardcoded strings found:**
+
 - "Avg Price"
 - "Avg Rating"
 - "Total Services"
@@ -15963,6 +18010,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - ").getTime() - new Date(a.createdAt ||"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15970,6 +18018,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Signup.spec.tsx
 
 **Hardcoded strings found:**
+
 - "Home Page"
 - "Dashboard Page"
 - "Login Page"
@@ -15977,7 +18026,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Passwords do not match"
 - "Internal Server Error"
 - "s root error area
-    expect(screen.getByText("
+  expect(screen.getByText("
 - "next/router"
 - "Signup Page"
 - "/dashboard"
@@ -15990,6 +18039,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "should show generic error toast for 500 server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -15997,6 +18047,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Signup.tsx
 
 **Hardcoded strings found:**
+
 - "Partner Application"
 - "Join the Zion AI Partner Program and start earning rewards"
 - "Full Name"
@@ -16016,7 +18067,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Signup error details:"
 - "Signup failed. Please try again."
 - "s password-related
-          if (errorMsg.toLowerCase().includes("
+  if (errorMsg.toLowerCase().includes("
 - "success-alert"
 - "error-alert"
 - "Create Account"
@@ -16028,6 +18079,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16035,12 +18087,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/SimpleSignup.tsx
 
 **Hardcoded strings found:**
+
 - "Password"
 - "Signup error:"
 - "Signup failed"
 - "Sign Up"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16048,9 +18102,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Sitemap.tsx
 
 **Hardcoded strings found:**
+
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16058,6 +18114,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/StartupOS.tsx
 
 **Hardcoded strings found:**
+
 - "Dashboard Home"
 - "My Profile"
 - "Cap Table"
@@ -16065,6 +18122,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Founder Dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16072,6 +18130,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Status.tsx
 
 **Hardcoded strings found:**
+
 - "Real-time monitoring of Zion platform services"
 - "Live Status Dashboard"
 - "Loading detailed status information..."
@@ -16092,6 +18151,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16099,11 +18159,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/SummitPage.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Global Summit"
 - "Join us for the Zion Global Launch Summit"
 - "bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16111,6 +18173,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Talent Dashboard"
 - "Find opportunities matched to your skills and experience"
 - "Profile Settings"
@@ -16135,6 +18198,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "User"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16142,11 +18206,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentDetail.tsx
 
 **Hardcoded strings found:**
+
 - "Talent not found"
 - "Contact"
 - "talent-loading"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16154,6 +18220,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentDirectory.tsx
 
 **Hardcoded strings found:**
+
 - "No talent profiles are currently available."
 - "Be the first to list a talent"
 - "Add Talent"
@@ -16165,6 +18232,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/create-talent-profile"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16172,9 +18240,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentOnboarding.tsx
 
 **Hardcoded strings found:**
+
 - "Join Our Talent Network"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16182,6 +18252,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentProfilePage.tsx
 
 **Hardcoded strings found:**
+
 - "Hire Now"
 - "Message"
 - "Error loading profile"
@@ -16189,6 +18260,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login?returnTo=${encodeURIComponent("
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16196,6 +18268,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TalentsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Avg Monthly"
 - "Avg Rating"
 - "Avg Experience"
@@ -16219,6 +18292,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Recommended"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16226,9 +18300,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Terms.tsx
 
 **Hardcoded strings found:**
+
 - "Terms of Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16236,6 +18312,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TimeOS.tsx
 
 **Hardcoded strings found:**
+
 - "Governance Calendar"
 - "Proposal cooldowns"
 - "Cross-instance sync schedules"
@@ -16249,6 +18326,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Auto-invite function for DAO votes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16256,6 +18334,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TokenIntegrations.tsx
 
 **Hardcoded strings found:**
+
 - "LayerZero Cross-Chain Bridge"
 - "Estimate Fee"
 - "DePIN Rewards"
@@ -16272,6 +18351,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Bridge Now"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16279,6 +18359,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/TokenSimulator.tsx
 
 **Hardcoded strings found:**
+
 - "Scenario"
 - "Token Velocity"
 - "Run Analysis"
@@ -16293,6 +18374,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Supply"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16300,10 +18382,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Tutorial.tsx
 
 **Hardcoded strings found:**
+
 - "Back to Tutorials"
 - "next/link"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16311,12 +18395,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Tutorials.tsx
 
 **Hardcoded strings found:**
+
 - "Tutorials"
 - "Learn how to use Zion with these in-depth tutorials"
 - "next/link"
 - "Step-by-step guides to help you build with Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16324,6 +18410,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/UNBridge.tsx
 
 **Hardcoded strings found:**
+
 - "Global Outreach Proposal"
 - "Workforce Dev"
 - "Education"
@@ -16338,6 +18425,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Draft proposals for global institutions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16345,6 +18433,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/UpdatePassword.tsx
 
 **Hardcoded strings found:**
+
 - "Update your password"
 - "Request new reset link"
 - "Password updated"
@@ -16368,6 +18457,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Update Password"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16375,11 +18465,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/VerifyIdentity.tsx
 
 **Hardcoded strings found:**
+
 - "Verify Identity"
 - "Full Legal Name"
 - "Submit"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16387,6 +18479,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/VideoCall.tsx
 
 **Hardcoded strings found:**
+
 - "Join Video Call"
 - "You"
 - "Call ended"
@@ -16394,6 +18487,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Join Call"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16401,11 +18495,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/WalletDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Wallet"
 - "Transaction History"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16413,6 +18509,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/WhitepaperGeneratorPage.tsx
 
 **Hardcoded strings found:**
+
 - "Whitepaper Configuration"
 - "Share"
 - "Token Distribution"
@@ -16460,6 +18557,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Show"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16467,6 +18565,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/WhitepaperViewPage.tsx
 
 **Hardcoded strings found:**
+
 - "Loading whitepaper..."
 - "Back to Home"
 - "Access Denied"
@@ -16478,6 +18577,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "An unexpected error occurred."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16485,6 +18585,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/Wishlist.tsx
 
 **Hardcoded strings found:**
+
 - "Wishlist"
 - "Loading..."
 - "} added"
@@ -16492,6 +18593,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16499,6 +18601,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/WorkFuturesSimulator.tsx
 
 **Hardcoded strings found:**
+
 - "ZionGPT Work Futures Simulator"
 - "Preferences"
 - "Scenario Lens"
@@ -16521,6 +18624,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Simulation failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16528,6 +18632,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ZionBook.tsx
 
 **Hardcoded strings found:**
+
 - "Zion OS Book"
 - "Chapter 1 – The Why"
 - "Origin story"
@@ -16548,6 +18653,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16555,6 +18661,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/ZionHireAI.tsx
 
 **Hardcoded strings found:**
+
 - "Get Started"
 - "Powerful AI Hiring Tools"
 - "Job Description Generator"
@@ -16592,6 +18699,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "py-16 bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16599,12 +18707,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/academy/Storybook.tsx
 
 **Hardcoded strings found:**
+
 - "The Day the Protocol Woke Up"
 - "Download PDF"
 - "Download ePub"
 - "Audio Narration Script"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16612,10 +18722,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/AppMetadataManager.tsx
 
 **Hardcoded strings found:**
+
 - "App Metadata Manager"
 - "Manage app store metadata for the Zion mobile application"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16623,6 +18735,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/FraudDetection.tsx
 
 **Hardcoded strings found:**
+
 - "All Flags"
 - "Pending Review"
 - "Dangerous"
@@ -16633,6 +18746,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to update flag"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16640,10 +18754,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/IntegrationsPage.tsx
 
 **Hardcoded strings found:**
+
 - "Integrations - Zion AI Marketplace"
 - "min-h-screen bg-background"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16651,12 +18767,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/KycDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "KYC Dashboard"
 - "Verification Queue"
 - "Approve"
 - "Reject"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16664,6 +18782,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/ListingModeration.tsx
 
 **Hardcoded strings found:**
+
 - "Listing Moderation"
 - "Error"
 - "Failed to load moderation logs"
@@ -16672,6 +18791,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Moderate product and service listings"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16679,6 +18799,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/PartnerManager.tsx
 
 **Hardcoded strings found:**
+
 - "Pending"
 - "Approved"
 - "Rejected"
@@ -16734,6 +18855,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Over"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16741,11 +18863,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/QuoteManager.tsx
 
 **Hardcoded strings found:**
+
 - "Quote Request Manager"
 - "Active Quotes"
 - "Archived Quotes"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16753,6 +18877,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/ReviewsModeration.tsx
 
 **Hardcoded strings found:**
+
 - "Review Moderation"
 - "Manage, approve, or reject reviews"
 - "Review and moderate user-submitted reviews before they go live"
@@ -16765,6 +18890,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Moderate and manage reviews in the Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16772,6 +18898,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/SupportRequests.tsx
 
 **Hardcoded strings found:**
+
 - "New Support Case"
 - "In Progress"
 - "Resolved"
@@ -16804,6 +18931,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Search by ID, user or issue..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16811,6 +18939,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/TenantOnboarding.tsx
 
 **Hardcoded strings found:**
+
 - "Tenant Onboarding"
 - "Create a new white-label instance of Zion Hire AI for a company."
 - "New Tenant Setup"
@@ -16847,6 +18976,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create Tenant"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16854,6 +18984,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/TokenManager.tsx
 
 **Hardcoded strings found:**
+
 - "Token Manager"
 - "Issue or Revoke Tokens"
 - "Transaction History"
@@ -16867,6 +18998,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Revoke"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16874,6 +19006,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/WhitelabelManager.tsx
 
 **Hardcoded strings found:**
+
 - "Create New"
 - "Record Type"
 - "Name"
@@ -16886,6 +19019,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Create and manage white-label instances of the Zion AI Marketplace platform."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16893,11 +19027,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/admin/ZionBrain.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Brain - Admin"
 - "Manage prompt routing and reflex rules"
 - "min-h-screen bg-background p-6"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16905,6 +19041,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/auth/verify-email.tsx
 
 **Hardcoded strings found:**
+
 - "Go to Login"
 - "Verification page error"
 - "An unexpected error occurred during verification."
@@ -16913,6 +19050,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Arial, sans-serif"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16920,10 +19058,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/community/Category.jsx
 
 **Hardcoded strings found:**
+
 - "Load more"
 - "Request failed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16931,9 +19071,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/community/NationDetailPage.tsx
 
 **Hardcoded strings found:**
+
 - "Nation Detail Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16941,10 +19083,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/dashboard/DisputeDetailPage.tsx
 
 **Hardcoded strings found:**
+
 - "Dispute Details | Zion AI Marketplace"
 - "View and manage dispute details"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16952,9 +19096,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/dashboard/DisputesPage.tsx
 
 **Hardcoded strings found:**
+
 - "Dispute Resolution Center | Zion AI Marketplace"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16962,6 +19108,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/dashboard/MetricsDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Zion Metrics"
 - "Real-time protocol KPIs"
 - "Marketplace"
@@ -16971,6 +19118,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Internal View"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16978,9 +19126,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/dashboard/RequestsPanel.tsx
 
 **Hardcoded strings found:**
+
 - "Archived"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16988,9 +19138,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/deploy/GenesisDeployPage.tsx
 
 **Hardcoded strings found:**
+
 - "Genesis Deploy Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -16998,6 +19150,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/AIPoweredContent.tsx
 
 **Hardcoded strings found:**
+
 - "Improve search rankings with keyword optimized text."
 - "Create multilingual content to reach a global audience."
 - "Can I edit the generated text?"
@@ -17007,6 +19160,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17014,6 +19168,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/AdminDashboard.tsx
 
 **Hardcoded strings found:**
+
 - "Admin Dashboard"
 - "Who can access the dashboard?"
 - "View Dashboard"
@@ -17022,6 +19177,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17029,6 +19185,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/Ecommerce.tsx
 
 **Hardcoded strings found:**
+
 - "Start Shopping"
 - "Screenshot of marketplace interface"
 - "next/link"
@@ -17037,6 +19194,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Publish Product"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17044,6 +19202,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/InstantMessaging.tsx
 
 **Hardcoded strings found:**
+
 - "Instant Messaging"
 - "Real-time notifications keep everyone updated."
 - "Share files and links directly within the conversation."
@@ -17055,6 +19214,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17062,12 +19222,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/Integrations.tsx
 
 **Hardcoded strings found:**
+
 - "Learn More"
 - "Screenshot showing integrations"
 - "next/link"
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17075,6 +19237,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/Internationalization.tsx
 
 **Hardcoded strings found:**
+
 - "Internationalization"
 - "Our interface and search support multiple languages so you can collaborate without barriers."
 - "Yes, community contributions help us continually add new languages."
@@ -17084,6 +19247,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17091,6 +19255,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/Search.tsx
 
 **Hardcoded strings found:**
+
 - "Advanced Search"
 - "Save favorite searches and get notified of new matches."
 - "Sort by rating, price, or recency to surface the best options."
@@ -17102,6 +19267,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/search"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17109,6 +19275,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/features/TalentMarketplace.tsx
 
 **Hardcoded strings found:**
+
 - "Talent Marketplace"
 - "Browse Talent"
 - "Screenshot of talent directory"
@@ -17116,6 +19283,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "bg-background text-white py-12"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17123,9 +19291,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/governance/index.tsx
 
 **Hardcoded strings found:**
+
 - "Governance Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17133,6 +19303,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/launch/index.tsx
 
 **Hardcoded strings found:**
+
 - "Launch Operations Toolkit"
 - "General"
 - "Web3 Focused"
@@ -17184,6 +19355,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Zion_Sample_Kit.pdf"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17191,9 +19363,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/marketplace/OrderConfirmationPage.tsx
 
 **Hardcoded strings found:**
+
 - "Order Confirmation Page"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17201,6 +19375,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/payment-canceled.tsx
 
 **Hardcoded strings found:**
+
 - "Payment Canceled"
 - "Your payment process was canceled. No charges have been made to your account."
 - "Try Again"
@@ -17208,6 +19383,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17215,6 +19391,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/pages/talent/[id].tsx
 
 **Hardcoded strings found:**
+
 - "Skills"
 - "Social Links"
 - "Profile not found"
@@ -17222,6 +19399,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "profile-name"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17229,10 +19407,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/routes/AuthRoutes.tsx
 
 **Hardcoded strings found:**
+
 - "next/navigation"
 - "/register"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17240,6 +19420,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/routes/config.tsx
 
 **Hardcoded strings found:**
+
 - "Test Error Render - Zion"
 - "Test Error Mount - Zion"
 - "Not Found - Zion"
@@ -17280,6 +19461,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "International Proposals - Zion"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17287,9 +19469,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/scripts/run-update-icons.ts
 
 **Hardcoded strings found:**
+
 - "Error executing script: ${error}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17297,6 +19481,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/apiClient.ts
 
 **Hardcoded strings found:**
+
 - "Failed to logout after 401"
 - "Validation error"
 - "Authentication required"
@@ -17306,6 +19491,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17313,10 +19499,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/apiHelper.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Unexpected error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17324,11 +19512,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/auth.ts
 
 **Hardcoded strings found:**
+
 - "Register error:"
 - "Forgot password error:"
 - "Reset password error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17336,11 +19526,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/authService.ts
 
 **Hardcoded strings found:**
+
 - "t toast.
-    // For example, you might want to ensure the error object has a specific structure
-    // if it doesn"
+  // For example, you might want to ensure the error object has a specific structure
+  // if it doesn"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17348,10 +19540,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/escrowService.ts
 
 **Hardcoded strings found:**
+
 - "Escrow released successfully"
 - "Dispute initiated successfully"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17359,10 +19553,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/feedbackService.ts
 
 **Hardcoded strings found:**
+
 - "Failed to submit feedback"
 - "Error ${res.status}: Failed to submit feedback"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17370,9 +19566,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/fraud/analyzeContent.ts
 
 **Hardcoded strings found:**
+
 - "Suspicious punctuation pattern"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17380,10 +19578,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/fraud/flagContent.ts
 
 **Hardcoded strings found:**
+
 - "Error flagging content:"
 - "Unknown error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17391,9 +19591,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/fraud/signupCheck.ts
 
 **Hardcoded strings found:**
+
 - "Error checking signup patterns:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17401,6 +19603,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/marketplace.ts
 
 **Hardcoded strings found:**
+
 - "Marketplace request interceptor error:"
 - "Alex Chen"
 - "Senior AI Engineer"
@@ -17414,6 +19617,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unnamed Product"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17421,9 +19625,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/messages.ts
 
 **Hardcoded strings found:**
+
 - "Unknown error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17431,6 +19637,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/pricingSuggestionService.ts
 
 **Hardcoded strings found:**
+
 - "Error generating budget suggestion:"
 - "Error generating rate suggestion:"
 - "Error tracking pricing suggestion:"
@@ -17439,6 +19646,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "High"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17446,12 +19654,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/productService.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching product ${productId}: ${response.status} ${response.statusText}"
 - "An error occurred in fetchProductById:"
 - "Sample Product"
 - "This is a sample product for build time"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17459,10 +19669,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/shippoService.ts
 
 **Hardcoded strings found:**
+
 - "Shippo create shipment error:"
 - "Content-Type"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17470,11 +19682,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/services/signupApi.ts
 
 **Hardcoded strings found:**
+
 - "Signup error:"
 - "Signup failed"
 - "Network error – please retry."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17482,6 +19696,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/api.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "Invalid input"
 - "Please check your request data and try again"
@@ -17496,6 +19711,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Something went wrong. Please try again later"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17503,9 +19719,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/auth.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17513,9 +19731,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/common.ts
 
 **Hardcoded strings found:**
+
 - "DELETE"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17523,9 +19743,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/disputes.ts
 
 **Hardcoded strings found:**
+
 - "Quality of Deliverable"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17533,9 +19755,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/messaging.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17543,9 +19767,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/next-stubs.d.ts
 
 **Hardcoded strings found:**
-- "next/*"
+
+- "next/\*"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17553,10 +19779,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/next.d.ts
 
 **Hardcoded strings found:**
+
 - "next/router"
 - "next/head"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17564,10 +19792,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/next.ts
 
 **Hardcoded strings found:**
+
 - "next/router"
 - "next/head"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17575,9 +19805,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/types/reown-appkit.d.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17585,10 +19817,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/accessibility.ts
 
 **Hardcoded strings found:**
+
 - "Tab"
 - "Image missing alt attribute"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17596,11 +19830,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/apiErrorHandler.ts
 
 **Hardcoded strings found:**
+
 - "Network Error"
 - "Unexpected error – please try again later."
 - "Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17608,11 +19844,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/bundleMonitor.ts
 
 **Hardcoded strings found:**
-- "/_next/static/"
+
+- "/\_next/static/"
 - "Slow bundle chunk loading:"
 - "Bundle chunks are loading slowly. Check network conditions and consider CDN."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17620,9 +19858,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/config.ts
 
 **Hardcoded strings found:**
+
 - "NEXT_PUBLIC_SUPABASE_ANON_KEY"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17630,6 +19870,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/consoleErrorToast.ts
 
 **Hardcoded strings found:**
+
 - "React"
 - "Uncaught"
 - "TypeError"
@@ -17638,6 +19879,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unexpected Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17645,9 +19887,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/customErrorReporter.ts
 
 **Hardcoded strings found:**
+
 - "webhook-warning-shown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17655,9 +19899,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/developmentLogger.ts
 
 **Hardcoded strings found:**
+
 - "[INFO] ${message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17665,9 +19911,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/devtools.ts
 
 **Hardcoded strings found:**
+
 - "Zero height – may be broken"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17675,11 +19923,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/dynamicImports.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "@/pages/talent-dashboard"
 - "@/pages/creator-dashboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17687,6 +19937,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/enhancedErrorHandlers.ts
 
 **Hardcoded strings found:**
+
 - "Authentication required - please log in"
 - "Access denied - insufficient permissions"
 - "Requested resource not found"
@@ -17704,9 +19955,10 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Access denied"
 - "Server error"
 - "Network error – please retry"
-- "/_next/"
+- "/\_next/"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17714,6 +19966,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/environmentConfig.ts
 
 **Hardcoded strings found:**
+
 - "Production Environment Configuration Errors:\n"
 - "Supabase is not configured - using placeholder values"
 - "LogRocket is not configured"
@@ -17721,6 +19974,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "⚠️ Production Environment Warnings:\n"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17728,10 +19982,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/equipmentAutoFeedAlgorithm.ts
 
 **Hardcoded strings found:**
+
 - "Power & Cooling"
 - "In Stock"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17739,10 +19995,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/fetchMarketplaceData.ts
 
 **Hardcoded strings found:**
+
 - "Invalid response format: expected array"
 - "Error fetching marketplace data:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17750,10 +20008,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/formatDate.ts
 
 **Hardcoded strings found:**
+
 - "Today"
 - "Yesterday"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17761,6 +20021,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateBookPdf.ts
 
 **Hardcoded strings found:**
+
 - "Decentralized commerce layers\nTrustless onboarding"
 - "Chapter 2 – ZionGPT + The AI State"
 - "Chapter 3 – The Tokenized Workforce"
@@ -17775,6 +20036,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Times"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17782,10 +20044,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateRandomBlogPost.ts
 
 **Hardcoded strings found:**
+
 - "Auto Bot"
 - "Content Automation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17793,6 +20057,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateRandomEquipment.ts
 
 **Hardcoded strings found:**
+
 - "Liquid Cooling"
 - "In Stock"
 - "Edge AI Camera Kit"
@@ -17804,6 +20069,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Unknown"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17811,11 +20077,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateRandomListing.ts
 
 **Hardcoded strings found:**
+
 - "Servers"
 - "Professional Suite"
 - "Enterprise Package"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17823,12 +20091,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateRandomTalentListing.ts
 
 **Hardcoded strings found:**
+
 - "Logan Taylor"
 - "Python"
 - "Policy"
 - "Risk Assessment"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17836,9 +20106,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/generateStorybookEpub.ts
 
 **Hardcoded strings found:**
+
 - "The Day the Protocol Woke Up"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17846,10 +20118,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/getStripe.ts
 
 **Hardcoded strings found:**
+
 - "Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load."
 - "Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17857,9 +20131,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/globalAppErrors.ts
 
 **Hardcoded strings found:**
+
 - "Global error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17867,8 +20143,9 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/globalFetchInterceptor.ts
 
 **Hardcoded strings found:**
+
 - "Network error – please retry"
-- "/_next/"
+- "/\_next/"
 - "s an auth error (401/403) and the user is on a public page, don"
 - "/login"
 - "Unauthorized"
@@ -17881,6 +20158,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Network Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17888,6 +20166,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/globalToastManager.ts
 
 **Hardcoded strings found:**
+
 - "Failed to log toast error:"
 - "Authentication Required"
 - "Enhanced Global Error Handler:"
@@ -17904,6 +20183,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17911,10 +20191,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/imageOptimization.tsx
 
 **Hardcoded strings found:**
+
 - "Image not available"
-- "/_next/image"
+- "/\_next/image"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17922,20 +20204,22 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/logError.ts
 
 **Hardcoded strings found:**
+
 - "Unknown error: non-Error object thrown"
 - "Unknown error: non-Error object thrown. Could not serialize error object."
 - "Unknown error"
 - "s stack or name if they exist (though less likely for non-Errors)
-      errorToSend.stack = (error as any)?.stack || errorToSend.stack;
-      errorToSend.name = (error as any)?.name || errorToSend.name;
-    } catch {
-      // ignore if properties can"
+  errorToSend.stack = (error as any)?.stack || errorToSend.stack;
+  errorToSend.name = (error as any)?.name || errorToSend.name;
+  } catch {
+  // ignore if properties can"
 - "Failed to report error to Sentry:"
 - "Error sending logError to backend:"
 - "Failed to prepare or send error to custom backend:"
 - "Failed to log error to LogRocket:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17943,9 +20227,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/logger.ts
 
 **Hardcoded strings found:**
+
 - "Failed to report error to monitoring service:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17953,6 +20239,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/notificationUtils.ts
 
 **Hardcoded strings found:**
+
 - "Complete your profile"
 - "Add your skills"
 - "Set your availability"
@@ -17972,6 +20259,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View Order"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17979,10 +20267,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/notifications/createHireRequestNotifications.ts
 
 **Hardcoded strings found:**
+
 - "New Hire Request for Talent"
 - "Review Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -17990,9 +20280,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/notifications/createNotification.ts
 
 **Hardcoded strings found:**
+
 - "Error creating notification"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18000,6 +20292,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/notifications/createOnboardingNotification.ts
 
 **Hardcoded strings found:**
+
 - "Complete your profile"
 - "Add your skills"
 - "Set your availability"
@@ -18013,6 +20306,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Find Talent"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18020,11 +20314,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/notifications/createTestNotification.ts
 
 **Hardcoded strings found:**
+
 - "New Message Received"
 - "View Messages"
 - "View Order"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18032,6 +20328,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/passwordStrength.ts
 
 **Hardcoded strings found:**
+
 - "Very weak"
 - "Weak"
 - "Fair"
@@ -18039,6 +20336,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Strong"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18046,9 +20344,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/pdf/sections/basicInfoSection.ts
 
 **Hardcoded strings found:**
+
 - "Resume"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18056,9 +20356,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/pdf/sections/skillsSection.ts
 
 **Hardcoded strings found:**
+
 - "Other"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18066,6 +20368,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/performance.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 - "Failed to load component"
 - "PerformanceObserver"
@@ -18074,6 +20377,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Long task detected: ${entry.duration}ms"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18081,6 +20385,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/performanceOptimizer.ts
 
 **Hardcoded strings found:**
+
 - "Failed to initialize performance monitoring"
 - "Failed to apply performance optimizations"
 - "PerformanceObserver"
@@ -18095,6 +20400,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Bundle Size"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18102,9 +20408,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/prismaConnect.ts
 
 **Hardcoded strings found:**
+
 - "Database connection timed out"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18112,11 +20420,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/productionErrorMonitoring.ts
 
 **Hardcoded strings found:**
+
 - "ProductionErrorMonitor"
 - "ProductionErrorMonitor captured error:"
 - "Failed to send error to webhook:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18124,9 +20434,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/productionLogger.ts
 
 **Hardcoded strings found:**
+
 - "Performance Metrics Summary"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18134,11 +20446,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/productionOptimizations.ts
 
 **Hardcoded strings found:**
+
 - "Production Error:"
 - "Service Worker registered:"
 - "Poor LCP detected: ${entry.startTime}ms"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18146,10 +20460,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/pushSubscription.ts
 
 **Hardcoded strings found:**
+
 - "Push subscription failed"
 - "PushManager"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18157,10 +20473,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/recommendationEngine.ts
 
 **Hardcoded strings found:**
+
 - "equipment recommendation error"
 - "feature recommendation error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18168,10 +20486,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/referralUtils.ts
 
 **Hardcoded strings found:**
+
 - "Error formatting date:"
 - "Error tracking referral:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18179,9 +20499,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/retry.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18189,9 +20511,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/routeUtils.ts
 
 **Hardcoded strings found:**
+
 - "Home"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18199,6 +20523,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/routerErrorHandler.ts
 
 **Hardcoded strings found:**
+
 - "Router error occurred:"
 - "Router push error:"
 - "Router replace error:"
@@ -18206,6 +20531,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Route change error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18213,9 +20539,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/searchUtils.ts
 
 **Hardcoded strings found:**
+
 - "recent-${search}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18223,6 +20551,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/servicesAutoFeedAlgorithm.ts
 
 **Hardcoded strings found:**
+
 - "Mobile Development"
 - "Automation"
 - "Available"
@@ -18230,6 +20559,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Other"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18237,9 +20567,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/setupAnalyticsTables.ts
 
 **Hardcoded strings found:**
+
 - "Error creating analytics tables:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18247,10 +20579,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/setupSupabaseTables.ts
 
 **Hardcoded strings found:**
+
 - "Error creating profiles table:"
 - "Error setting up profiles table:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18258,10 +20592,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/suggestFix.ts
 
 **Hardcoded strings found:**
+
 - "Provide a concise suggestion to resolve or work around this error: ${error.message}"
 - "Something went wrong while generating a fix suggestion. Please try again later."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18269,10 +20605,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/supabase/middleware.ts
 
 **Hardcoded strings found:**
+
 - "Middleware: Error during authentication check:"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18280,12 +20618,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/talentAutoFeedAlgorithm.ts
 
 **Hardcoded strings found:**
+
 - "Senior AI Engineer"
 - "Full-Stack Developer"
 - "Consulting firm"
 - "Technology"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18293,9 +20633,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/tokenRewards.ts
 
 **Hardcoded strings found:**
+
 - "Error ${res.status}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18303,10 +20645,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/validateEnv.ts
 
 **Hardcoded strings found:**
+
 - "NEXT_PUBLIC_REOWN_PROJECT_ID"
 - "NEXT_PUBLIC_SUPABASE_ANON_KEY"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18314,9 +20658,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/withAsyncErrorGuard.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18324,11 +20670,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/withErrorHandling.ts
 
 **Hardcoded strings found:**
+
 - "An error occurred while loading the page"
 - "Unexpected error handling state"
 - "Environment configuration error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18336,10 +20684,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/withErrorLogging.ts
 
 **Hardcoded strings found:**
+
 - "Internal server error"
 - "./logError"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18347,9 +20697,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### src/utils/zion-gpt.ts
 
 **Hardcoded strings found:**
+
 - "No model data returned"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18357,6 +20709,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### stories/TalentProfilePage.stories.tsx
 
 **Hardcoded strings found:**
+
 - "Sample Talent"
 - "Software Engineer"
 - "React"
@@ -18364,16 +20717,19 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Pages/TalentProfilePage"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### supabase/functions/_shared/shippo.ts
+### supabase/functions/\_shared/shippo.ts
 
 **Hardcoded strings found:**
+
 - "Shippo create shipment failed: ${msg}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18381,9 +20737,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/ai-chat/index.ts
 
 **Hardcoded strings found:**
+
 - "Error in ai-chat function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18391,10 +20749,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/ai-content-enhancer/index.ts
 
 **Hardcoded strings found:**
+
 - "Either content or context is required"
 - "Error in ai-content-enhancer function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18402,11 +20762,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/ai-listing-generator/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required fields: title and category are required"
 - "Error in AI listing generator:"
 - "Failed to generate optimized listing content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18414,10 +20776,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/ai-search/index.ts
 
 **Hardcoded strings found:**
+
 - "Query is required"
 - "ai-search error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18425,6 +20789,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/analyze-content-fraud/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required environment variables"
 - "Invalid request body"
 - "No content provided for analysis"
@@ -18437,6 +20802,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Analysis completed successfully:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18444,6 +20810,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/api-key-manager/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing authorization header"
 - "Unauthorized"
 - "Invalid action"
@@ -18452,6 +20819,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Authorization"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18459,6 +20827,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/check-training-status/index.ts
 
 **Hardcoded strings found:**
+
 - "Either modelId or jobId is required"
 - "Fine-tuning job not found"
 - "Unknown error occurred during training"
@@ -18466,6 +20835,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error in check-training-status function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18473,9 +20843,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/checkout_sessions/index.ts
 
 **Hardcoded strings found:**
+
 - ")}/cancel"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18483,11 +20855,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/create-checkout/index.ts
 
 **Hardcoded strings found:**
+
 - "Invalid payment amount"
 - "User not authenticated"
 - "Checkout error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18495,6 +20869,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/create-shared-whitepaper/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Insert failed"
 - "DB error: Insert failed"
 - "DB error: ${error.message}"
@@ -18505,6 +20880,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "NoDataToken"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18512,11 +20888,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/create-shared-whitepaper/index.ts
 
 **Hardcoded strings found:**
+
 - "Error saving shared whitepaper:"
 - "Failed to create shared whitepaper, no data returned after insert."
 - "Error in create-shared-whitepaper function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18524,11 +20902,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/cron-daily-retention/index.ts
 
 **Hardcoded strings found:**
+
 - "Unauthorized"
 - "Daily retention process executed"
 - "Error in cron-daily-retention:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18536,10 +20916,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/cron-monthly-leaderboard/index.ts
 
 **Hardcoded strings found:**
+
 - "Method Not Allowed"
 - "Unauthorized"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18547,9 +20929,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/escrow-service/index.ts
 
 **Hardcoded strings found:**
+
 - "escrow-service error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18557,9 +20941,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/founder-bot/index.ts
 
 **Hardcoded strings found:**
+
 - "Error in ai-chat function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18567,6 +20953,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-content/index.ts
 
 **Hardcoded strings found:**
+
 - "Supabase credentials are not set in environment variables"
 - "Error saving blog post:"
 - "Error in generate-content function:"
@@ -18577,6 +20964,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "View Post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18584,10 +20972,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-contract/index.ts
 
 **Hardcoded strings found:**
+
 - "Failed to generate contract"
 - "Error generating contract:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18595,11 +20985,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-milestones/index.ts
 
 **Hardcoded strings found:**
+
 - "Failed to generate milestones"
 - "Failed to parse AI response"
 - "Error generating milestones:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18607,6 +20999,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-seo-content/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing contentType or userPrompt"
 - "Missing contentType or userPrompt in request body"
 - "You are an expert SEO content writer and copywriter."
@@ -18615,6 +21008,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "}. The tone should be informative and engaging."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18622,12 +21016,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-service-description/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required field: title"
 - "Error in generate-service-description:"
 - "Failed to generate service description"
 - "Not specified"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18635,10 +21031,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-smart-contract/index.ts
 
 **Hardcoded strings found:**
+
 - "Failed to generate smart contract"
 - "Error generating smart contract:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18646,6 +21044,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-whitepaper/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Missing required core parameters"
 - "Missing distribution information"
 - "zion-gpt error: GPT failed"
@@ -18656,6 +21055,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "generate-whitepaper: handles missing distribution information"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18663,12 +21063,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/generate-whitepaper/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required core parameters"
 - "Missing distribution information: provide either distributionData or distributionBreakdown text."
 - "Error invoking zion-gpt:"
 - "Error in generate-whitepaper function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18676,6 +21078,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/get-shared-whitepaper/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Shared whitepaper not found."
 - "Row not found"
 - "Some other DB error"
@@ -18686,6 +21089,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "get-shared-whitepaper: handles other Supabase errors"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18693,12 +21097,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/get-shared-whitepaper/index.ts
 
 **Hardcoded strings found:**
+
 - "Not Found"
 - "Shared whitepaper not found."
 - "Error in get-shared-whitepaper function:"
 - "Failed to fetch shared whitepaper: ${error.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18706,12 +21112,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/get-whitepaper-section-suggestions/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Missing required parameters"
 - "zion-gpt error: GPT suggestions failed"
 - "zion-gpt error: ${gptError.message}"
 - "get-section-suggestions: successful suggestion generation"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18719,10 +21127,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/get-whitepaper-section-suggestions/index.ts
 
 **Hardcoded strings found:**
+
 - "Error invoking zion-gpt for section suggestions:"
 - "Error in get-whitepaper-section-suggestions function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18730,10 +21140,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/get_feature_usage_stats/index.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching feature usage data:"
 - "Error:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18741,10 +21153,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/job-talent-matcher/ai-matcher.ts
 
 **Hardcoded strings found:**
+
 - "Error in normalizeSkillsWithAI:"
 - "Error in findBestMatches:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18752,12 +21166,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/job-talent-matcher/index.ts
 
 **Hardcoded strings found:**
+
 - "Job ID is required"
 - "No talent profiles found"
 - "Job matching completed"
 - "Error in job-talent-matcher:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18765,10 +21181,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/job-talent-matcher/job-matching.ts
 
 **Hardcoded strings found:**
+
 - "Error in processJobMatching:"
 - "New Job Match"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18776,9 +21194,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/mailchimp-sync-new-users/index.ts
 
 **Hardcoded strings found:**
+
 - "mailchimp-sync-new-users error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18786,6 +21206,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/manage-transaction/index.ts
 
 **Hardcoded strings found:**
+
 - "User not authenticated"
 - "Transaction ID is required"
 - "Transaction not found"
@@ -18797,6 +21218,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Invalid action"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18804,11 +21226,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/moderate-listing/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required fields"
 - "Error moderating listing:"
 - "Listing flagged for review"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18816,11 +21240,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/notify-legal-team/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Missing required parameters"
 - "notify-legal-team: successful notification logging with all params"
 - "notify-legal-team: successful logging with optional params missing"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18828,11 +21254,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/notify-legal-team/index.ts
 
 **Hardcoded strings found:**
+
 - "Error in notify-legal-team function:"
 - "has been submitted for legal review. You can view it here: ${sharableLink}. Submitted by: ${submittedBy ||"
 - "Failed to update whitepaper status: ${updateError.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18840,11 +21268,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/notify-milestone-deadlines/index.ts
 
 **Hardcoded strings found:**
+
 - "Error processing milestone deadlines:"
 - "Milestone"
 - "Milestone Due Soon"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18852,9 +21282,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/onsite-service-request/index.ts
 
 **Hardcoded strings found:**
+
 - "New Onsite Service Request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18862,6 +21294,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/process-hire-request/index.ts
 
 **Hardcoded strings found:**
+
 - "You've Received a New Project Request"
 - "Project Details"
 - "Please log in to your Zion AI Marketplace account to respond to this request."
@@ -18875,6 +21308,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Failed to process hire request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18882,11 +21316,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/process-quote/index.ts
 
 **Hardcoded strings found:**
+
 - "OpenAI error:"
 - "Error in process-quote function:"
 - "Custom Service"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18894,9 +21330,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/process-retention-emails/index.ts
 
 **Hardcoded strings found:**
+
 - "Internal server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18904,6 +21342,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/process-scheduled-jobs/index.ts
 
 **Hardcoded strings found:**
+
 - "Continue your onboarding process"
 - "Error processing resume scoring:"
 - "Application Scored"
@@ -18911,6 +21350,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Newsletter Draft Ready"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18918,11 +21358,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/process-scheduled-reminders/index.ts
 
 **Hardcoded strings found:**
+
 - "Failed to fetch pending jobs"
 - "Failed to update job status:"
 - "Internal server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18930,6 +21372,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/profile-summary-generator/index.ts
 
 **Hardcoded strings found:**
+
 - "Bio must be at least 20 characters long"
 - "Failed to generate profile content"
 - "Error parsing OpenAI response:"
@@ -18937,6 +21380,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error in profile-summary-generator function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18944,10 +21388,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/resume-enhancer/index.ts
 
 **Hardcoded strings found:**
+
 - "Content is required"
 - "Error in resume-enhancer function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18955,6 +21401,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/resume-scorer/index.ts
 
 **Hardcoded strings found:**
+
 - "Application ID is required"
 - "Application not found"
 - "Error fetching resume:"
@@ -18963,6 +21410,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error in resume-scorer function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18970,9 +21418,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/send-interview-reminder/index.ts
 
 **Hardcoded strings found:**
+
 - "Please be ready on time!"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18980,9 +21430,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/send-leaderboard-email/index.ts
 
 **Hardcoded strings found:**
+
 - "Monthly Leaderboard"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -18990,9 +21442,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/send-newsletter/index.ts
 
 **Hardcoded strings found:**
+
 - "Error in send-newsletter function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19000,6 +21454,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/send-onboarding-reminder/index.ts
 
 **Hardcoded strings found:**
+
 - "Your next step is to"
 - "Continue my setup"
 - "The Zion AI Marketplace Team"
@@ -19011,6 +21466,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Complete your next step"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19018,6 +21474,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/send-retention-email/index.ts
 
 **Hardcoded strings found:**
+
 - "Welcome to Zion AI Marketplace!"
 - "Here's what to do next to get started:"
 - "Add your skills and expertise"
@@ -19056,6 +21513,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Tips to find the perfect talent for"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19063,6 +21521,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/service-profile-enhancer/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required service provider data"
 - "Failed to generate enhanced profile content"
 - "Error parsing AI response:"
@@ -19072,6 +21531,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Current Services: ${providerData.services.join("
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19079,6 +21539,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/set-shared-whitepaper-public-status/index.test.ts
 
 **Hardcoded strings found:**
+
 - "Missing required parameters"
 - "Update did not return data."
 - "Public status updated."
@@ -19091,6 +21552,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "set-public-status: handles other Supabase errors"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19098,11 +21560,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/set-shared-whitepaper-public-status/index.ts
 
 **Hardcoded strings found:**
+
 - "Failed to update, no data returned."
 - "Public status updated successfully."
 - "Error in set-shared-whitepaper-public-status function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19110,6 +21574,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/stripe-webhook/index.ts
 
 **Hardcoded strings found:**
+
 - "Error creating shipment"
 - "Error creating order notification:"
 - "Webhook Error: ${err.message}"
@@ -19117,6 +21582,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Not found"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19124,6 +21590,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/talent-profile-enhancer/index.ts
 
 **Hardcoded strings found:**
+
 - "Bio must be at least 20 characters long"
 - "Failed to generate profile content"
 - "Error parsing OpenAI response:"
@@ -19131,6 +21598,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Error in talent-profile-enhancer function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19138,6 +21606,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/tenant-detector/index.ts
 
 **Hardcoded strings found:**
+
 - "Required environment variables are not set"
 - "No hostname or subdomain provided"
 - "Database error:"
@@ -19146,6 +21615,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "No hostname"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19153,10 +21623,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/token-manager/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing parameters"
 - "Invalid action"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19164,11 +21636,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/track-email-event/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing required parameters"
 - "Invalid event type"
 - "Error processing event"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19176,6 +21650,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/track-referral/index.ts
 
 **Hardcoded strings found:**
+
 - "Error finding referral code:"
 - "Invalid referral code"
 - "User already has a referral"
@@ -19185,6 +21660,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Internal server error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19192,10 +21668,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/translate-content/index.ts
 
 **Hardcoded strings found:**
+
 - "Content is required"
 - "Error in translate-content function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19203,6 +21681,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/webhook-manager/index.ts
 
 **Hardcoded strings found:**
+
 - "Missing authorization header"
 - "Unauthorized"
 - "Invalid action"
@@ -19234,6 +21713,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Test Milestone"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19241,17 +21721,20 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### supabase/functions/zion-gpt/index.ts
 
 **Hardcoded strings found:**
+
 - "Prompt is required"
 - "Error in zion-gpt function:"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### temp_essential_pages/_error.tsx
+### temp_essential_pages/\_error.tsx
 
 **Hardcoded strings found:**
+
 - "Go to Home Page"
 - "Debug Info:"
 - "Go Back"
@@ -19264,6 +21747,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "An unexpected error occurred in the application."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19271,6 +21755,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/about.tsx
 
 **Hardcoded strings found:**
+
 - "About Zion"
 - "Our Mission"
 - "Our Vision"
@@ -19287,6 +21772,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "/contact"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19294,6 +21780,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/auth/login.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "Development authentication successful"
 - "Invalid credentials"
@@ -19306,6 +21793,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "🔧 LOGIN TRACE: Supabase authentication successful"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19313,9 +21801,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/auth/logout.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19323,6 +21813,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/auth/register.ts
 
 **Hardcoded strings found:**
+
 - "already registered"
 - "Password is too weak"
 - "Registration successful"
@@ -19330,6 +21821,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19337,10 +21829,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/auth/resend-verification-email.ts
 
 **Hardcoded strings found:**
+
 - "Auth provider not configured"
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19348,10 +21842,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/blog.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19359,6 +21855,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/categories/[slug]/items.ts
 
 **Hardcoded strings found:**
+
 - "Invalid slug"
 - "Category not found"
 - "Internal server error"
@@ -19366,6 +21863,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19373,11 +21871,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/categories.ts
 
 **Hardcoded strings found:**
+
 - "Internal Server Error: Failed to fetch categories"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19385,12 +21885,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/checkout/session.ts
 
 **Hardcoded strings found:**
+
 - "Missing cart"
 - "Checkout session error:"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19398,11 +21900,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/checkout-session.ts
 
 **Hardcoded strings found:**
+
 - "Checkout session error:"
 - "Allow"
 - "Method Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19410,12 +21914,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/equipment/recommendations.ts
 
 **Hardcoded strings found:**
+
 - "User ID is required for recommendations"
 - "Internal Server Error: Failed to fetch recommendations"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19423,6 +21929,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/equipment.ts
 
 **Hardcoded strings found:**
+
 - "Performance Analytics"
 - "Request timeout after 5 seconds"
 - "Internal Server Error: Failed to fetch equipment"
@@ -19440,6 +21947,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19447,6 +21955,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/feedback.ts
 
 **Hardcoded strings found:**
+
 - "Invalid input data"
 - "Error saving feedback:"
 - "Failed to save feedback"
@@ -19455,6 +21964,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19462,10 +21972,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/generate-quiz.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19473,11 +21985,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/health.ts
 
 **Hardcoded strings found:**
+
 - "Failed to retrieve health information:"
 - "@/utils/withErrorLogging"
 - "Failed to retrieve health information."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19485,6 +21999,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/log-error.ts
 
 **Hardcoded strings found:**
+
 - "Invalid error report: Missing body, message, or stack."
 - "Error report received, analysis initiated."
 - "dbRecordId is not defined in exec callback"
@@ -19493,6 +22008,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Received error report request"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19500,10 +22016,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/marketplace/index.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19511,12 +22029,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/marketplace/overview.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching marketplace overview:"
 - "Failed to fetch marketplace overview"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19524,11 +22044,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/marketplace/product/[productId].ts
 
 **Hardcoded strings found:**
+
 - "Internal server error while fetching product details."
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19536,11 +22058,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/marketplace/products.ts
 
 **Hardcoded strings found:**
+
 - "An unexpected error occurred."
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19548,12 +22072,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/newsletter.ts
 
 **Hardcoded strings found:**
+
 - "Newsletter subscription error:"
 - "Subscription failed"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19561,11 +22087,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/podcast/generate.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 - "Intro (0:00): Welcome to the Zion Podcast. Today we chat with ${invitee}.\n"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19573,12 +22101,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/points/increment.ts
 
 **Hardcoded strings found:**
+
 - "fetch profile error:"
 - "Failed to fetch user"
 - "Internal server error"
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19586,12 +22116,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/search/suggest.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching search suggestions:"
 - "Failed to fetch suggestions"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19599,10 +22131,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/search.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19610,10 +22144,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/sentry-dsn-check.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19621,10 +22157,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/services.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19632,12 +22170,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/stripe/webhook.ts
 
 **Hardcoded strings found:**
+
 - "Failed to update order"
 - "Allow"
 - "Method Not Allowed"
 - "Webhook Error: ${err.message}"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19645,10 +22185,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/summarize.ts
 
 **Hardcoded strings found:**
+
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19656,12 +22198,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/talent/index.ts
 
 **Hardcoded strings found:**
+
 - "Error fetching talent profiles:"
 - "Failed to fetch talent profiles"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19669,11 +22213,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/track-referral.ts
 
 **Hardcoded strings found:**
+
 - "Error calling track-referral function:"
 - "Internal server error"
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19681,10 +22227,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/users/[id].ts
 
 **Hardcoded strings found:**
+
 - "User not found"
 - "Allow"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19692,10 +22240,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/users/data.ts
 
 **Hardcoded strings found:**
+
 - "Method not allowed"
 - "Not found"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19703,9 +22253,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/users/me.ts
 
 **Hardcoded strings found:**
+
 - "DELETE"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19713,11 +22265,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/api/zion-gpt/train.ts
 
 **Hardcoded strings found:**
+
 - "Training error:"
 - "Allow"
 - "Method ${req.method} Not Allowed"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19725,10 +22279,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### temp_essential_pages/index.tsx
 
 **Hardcoded strings found:**
+
 - "Throw Test Error"
 - "Failed to load home page."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19736,11 +22292,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### test-server.js
 
 **Hardcoded strings found:**
+
 - "/error"
 - "Internal Server Error simulation."
 - "/random-error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19748,6 +22306,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/404-fallback.test.tsx
 
 **Hardcoded strings found:**
+
 - "Header"
 - "Footer"
 - "Go Back"
@@ -19770,6 +22329,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "provides comprehensive error recovery options"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19777,6 +22337,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/Accessibility.test.tsx
 
 **Hardcoded strings found:**
+
 - "Click me"
 - "Test Card"
 - "Content"
@@ -19831,6 +22392,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "RadioGroup"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19838,9 +22400,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/BlogSearch.test.tsx
 
 **Hardcoded strings found:**
+
 - "Search articles..."
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19848,12 +22412,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CartPersistence.test.tsx
 
 **Hardcoded strings found:**
+
 - "Login Page"
 - "/cart"
 - "/login"
 - "cart persistence"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19861,10 +22427,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CategoryCard.test.tsx
 
 **Hardcoded strings found:**
+
 - "Test Category"
 - "Crème Brûlée"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19872,10 +22440,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CategoryDetail.test.tsx
 
 **Hardcoded strings found:**
+
 - "Services"
 - "/category/services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19883,9 +22453,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CategoryListingPageLoading.test.tsx
 
 **Hardcoded strings found:**
+
 - "spinner disappears after loading"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19893,9 +22465,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CheckoutPageSnapshot.test.tsx
 
 **Hardcoded strings found:**
+
 - "Checkout page renders header"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19903,10 +22477,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/CommunityCategory.test.tsx
 
 **Hardcoded strings found:**
+
 - "Sample post"
 - "Content"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19914,10 +22490,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ContactPublisherModal.test.tsx
 
 **Hardcoded strings found:**
+
 - "Bad"
 - "successful send closes modal and shows toast"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19925,9 +22503,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/DynamicListingPage.test.tsx
 
 **Hardcoded strings found:**
+
 - "Buy Now"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19935,10 +22515,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/EquipmentDetail.test.tsx
 
 **Hardcoded strings found:**
+
 - "EquipmentDetail page"
 - "displays equipment info"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19946,10 +22528,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/EquipmentRecommendations.test.tsx
 
 **Hardcoded strings found:**
+
 - "Desc"
 - "/auth/login?returnTo=/equipment&reco=1"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19957,9 +22541,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ExploreNavigation.test.tsx
 
 **Hardcoded strings found:**
+
 - "/services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19967,10 +22553,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/HeroSection.test.tsx
 
 **Hardcoded strings found:**
+
 - "HeroSection"
 - "clicking Sign Up navigates to /signup"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19978,11 +22566,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/Login.test.tsx
 
 **Hardcoded strings found:**
+
 - "Invalid credentials"
 - "LoginForm"
 - "shows server error on 401 response"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -19990,6 +22580,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/LoginForm.test.tsx
 
 **Hardcoded strings found:**
+
 - "Invalid credentials"
 - "@/services/authService"
 - "LoginForm"
@@ -19997,6 +22588,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "invalid credentials show error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20004,9 +22596,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/LoginFormFetch.test.tsx
 
 **Hardcoded strings found:**
+
 - "LoginForm fetch"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20014,11 +22608,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/LoginPage.test.tsx
 
 **Hardcoded strings found:**
+
 - "Login Page Rendering with Unavailable Wallet"
 - "/login"
 - "Login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20026,10 +22622,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/MarketplaceCard.test.tsx
 
 **Hardcoded strings found:**
+
 - "MarketplaceCard Buy Now"
 - "navigates to login when unauthenticated"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20037,9 +22635,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/MarketplaceViewToggle.test.tsx
 
 **Hardcoded strings found:**
+
 - "toggling view updates container class"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20047,6 +22647,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/NavLink.test.tsx
 
 **Hardcoded strings found:**
+
 - "Dash"
 - "next/link"
 - "next/router"
@@ -20056,6 +22657,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "does not add active classes when pathname differs"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20063,10 +22665,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/Navbar.test.tsx
 
 **Hardcoded strings found:**
+
 - "renders single navbar on ServicesPage"
 - "renders single navbar on SearchPage"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20074,9 +22678,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/NewPostRoute.test.tsx
 
 **Hardcoded strings found:**
+
 - "/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20084,10 +22690,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/NotificationCenter.test.tsx
 
 **Hardcoded strings found:**
+
 - "Open notifications"
 - "opening dropdown does not show error toast"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20095,9 +22703,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/PrismaForumPosts.test.ts
 
 **Hardcoded strings found:**
+
 - "First post"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20105,11 +22715,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ProductActions.test.tsx
 
 **Hardcoded strings found:**
+
 - "Added!"
 - "Add to Cart"
 - "ProductActions"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20117,11 +22729,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/QuoteWizard.test.tsx
 
 **Hardcoded strings found:**
+
 - "loads services and advances to step 2"
 - "shows error and allows retry"
 - "recovers after a transient error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20129,9 +22743,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RecommendationsPageSnapshot.test.tsx
 
 **Hardcoded strings found:**
+
 - "RecommendationsPage renders header"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20139,9 +22755,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RegisterApi.jest.test.ts
 
 **Hardcoded strings found:**
+
 - "successful registration returns 201 with token and user"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20149,10 +22767,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RegisterApi.test.ts
 
 **Hardcoded strings found:**
+
 - "User already registered"
 - "returns 201 on success"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20160,11 +22780,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RegisterRoute.test.tsx
 
 **Hardcoded strings found:**
+
 - "First name"
 - "register route shows signup form"
 - "/register"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20172,6 +22794,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RegistrationForm.test.tsx
 
 **Hardcoded strings found:**
+
 - "Bad"
 - "John Doe"
 - "RegistrationForm"
@@ -20179,6 +22802,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "shows error toast on server 400"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20186,9 +22810,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RequestQuotePage.test.tsx
 
 **Hardcoded strings found:**
+
 - "renders quote wizard without runtime errors"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20196,9 +22822,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RequestQuoteSnapshot.test.tsx
 
 **Hardcoded strings found:**
+
 - "RequestQuote page renders header"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20206,10 +22834,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RewardsWidget.test.tsx
 
 **Hardcoded strings found:**
+
 - "RewardsWidget"
 - "shows login modal when not authenticated"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20217,12 +22847,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/RootErrorBoundary.test.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 - "Reload"
 - "react-error-boundary"
 - "shows fallback and logs error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20230,9 +22862,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/SearchAPI.test.ts
 
 **Hardcoded strings found:**
+
 - "applies minimum rating filter"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20240,9 +22874,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ServiceSlugRoute.test.ts
 
 **Hardcoded strings found:**
+
 - "../pages/services/[slug]"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20250,10 +22886,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ServiceTypeStep.test.tsx
 
 **Hardcoded strings found:**
+
 - "Services"
 - "hides skeleton once services load"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20261,12 +22899,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ServicesNavigation.test.tsx
 
 **Hardcoded strings found:**
+
 - "Services"
 - "Services navigation links"
 - "MainNavigation Services link navigates to /services"
 - "Explore Services button navigates to /services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20274,10 +22914,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ServicesPage.test.tsx
 
 **Hardcoded strings found:**
+
 - "Test Service"
 - "shows error and allows retry"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20285,6 +22927,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/Signup.test.tsx
 
 **Hardcoded strings found:**
+
 - "Success"
 - "John Doe"
 - "next/router"
@@ -20300,6 +22943,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "clears error message when form is resubmitted"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20307,12 +22951,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/SkipLink.test.tsx
 
 **Hardcoded strings found:**
+
 - "Main"
 - "Content"
 - "SkipLink accessibility"
 - "AppLayout includes SkipLink"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20320,11 +22966,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/TalentProfilePage.test.tsx
 
 **Hardcoded strings found:**
+
 - "TalentProfilePage"
 - "fetches and displays profile name"
 - "profile-name"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20332,10 +22980,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/ViewModeContext.test.tsx
 
 **Hardcoded strings found:**
+
 - "List view"
 - "toggle state updates and class applied"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20343,29 +22993,35 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/WalletPage.test.tsx
 
 **Hardcoded strings found:**
+
 - "WalletPage"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### tests/__mocks__/@sentry/nextjs.js
+### tests/**mocks**/@sentry/nextjs.js
 
 **Hardcoded strings found:**
+
 - "BrowserTracing"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### tests/__mocks__/next-cloudinary.js
+### tests/**mocks**/next-cloudinary.js
 
 **Hardcoded strings found:**
+
 - "Upload"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20373,6 +23029,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/accessibility-issue-17.test.tsx
 
 **Hardcoded strings found:**
+
 - "Button Text"
 - "Search"
 - "User profile"
@@ -20384,6 +23041,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Icon Accessibility Patterns"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20391,6 +23049,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/apiClient.msw.test.ts
 
 **Hardcoded strings found:**
+
 - "Unexpected error – please try again later."
 - "Unauthorized"
 - "Server err"
@@ -20401,6 +23060,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "VALIDATION_ERROR"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20408,11 +23068,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/apiClient.test.ts
 
 **Hardcoded strings found:**
+
 - "Unexpected error – please try again later."
 - "Bad"
 - "handles other errors"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20420,6 +23082,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/apiErrorHandler.test.ts
 
 **Hardcoded strings found:**
+
 - "Network Error"
 - "Unexpected error – please try again later."
 - "Server err"
@@ -20427,6 +23090,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "handles validation error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20434,6 +23098,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/auth0-signup-fix.test.js
 
 **Hardcoded strings found:**
+
 - "Auth service not configured"
 - "Authentication service not configured"
 - "Connection error to authentication service"
@@ -20454,6 +23119,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "error messages guide user to correct configuration"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20461,12 +23127,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/authController.test.ts
 
 **Hardcoded strings found:**
+
 - "loginUser controller"
 - "returns token and user on success"
 - "calls next with 401 on bad credentials"
 - "calls next with 403 on inactive account"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20474,11 +23142,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/authService.test.ts
 
 **Hardcoded strings found:**
+
 - "Server error. Please try again later."
 - "loginUser service"
 - "returns data on success"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20486,6 +23156,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/cart-localization.test.tsx
 
 **Hardcoded strings found:**
+
 - "Tu carrito está vacío"
 - "Ilustración de carrito de compras vacío"
 - "El carrito está vacío"
@@ -20494,6 +23165,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Alt text changes when language is switched"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20501,9 +23173,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/cartSlice.test.ts
 
 **Hardcoded strings found:**
+
 - "clears cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20511,9 +23185,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/devtools.test.ts
 
 **Hardcoded strings found:**
+
 - "adds outlines in development"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20521,10 +23197,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/login-error-banner.spec.ts
 
 **Hardcoded strings found:**
+
 - "shows error banner on failed login"
 - "Unauthorized"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20532,10 +23210,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/login-error-toast.spec.ts
 
 **Hardcoded strings found:**
+
 - "shows toast on failed login"
 - "Unauthorized"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20543,10 +23223,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/login.spec.ts
 
 **Hardcoded strings found:**
+
 - "shows toast on failed login"
 - "Unauthorized"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20554,10 +23236,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/logout.spec.ts
 
 **Hardcoded strings found:**
+
 - "user can logout via avatar menu"
 - "/auth/login"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20565,9 +23249,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/public-marketplace.spec.ts
 
 **Hardcoded strings found:**
+
 - "Add to Cart"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20575,9 +23261,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/searchbar.mobile.spec.ts
 
 **Hardcoded strings found:**
+
 - "/search"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20585,10 +23273,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/searchbar.position.spec.ts
 
 **Hardcoded strings found:**
+
 - "search suggestions appear below the nav"
 - "/search"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20596,10 +23286,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/sentry-api.spec.ts
 
 **Hardcoded strings found:**
+
 - "Sentry event not found within 30 seconds"
 - "Sentry test error endpoint sends error to Sentry"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20607,6 +23299,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/e2e/user-flow.spec.ts
 
 **Hardcoded strings found:**
+
 - "Test User"
 - "Address"
 - "Testville"
@@ -20617,6 +23310,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Country"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20624,12 +23318,14 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/forgot-password.test.tsx
 
 **Hardcoded strings found:**
+
 - "Server error"
 - "next/link"
 - "ForgotPasswordPage fetch failure"
 - "shows alert and logs error on 500"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20637,6 +23333,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/hello.pact.js
 
 **Hardcoded strings found:**
+
 - "Hello world"
 - "HelloService contract"
 - "GET /hello"
@@ -20645,6 +23342,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "returns hello message"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20652,9 +23350,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/hello.provider.test.js
 
 **Hardcoded strings found:**
+
 - "HelloService"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20662,6 +23362,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/login-redirect-fix.test.tsx
 
 **Hardcoded strings found:**
+
 - "Please login to continue"
 - "Navigation failed"
 - "next/router"
@@ -20700,6 +23401,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Mobile Support"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20707,6 +23409,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/page-crashes-fix.test.tsx
 
 **Hardcoded strings found:**
+
 - "Test Page Content"
 - "Test error for error boundary"
 - "Auth0 environment variables are not configured"
@@ -20729,6 +23432,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 - "Environment configuration fix"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20736,10 +23440,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/pages/index.test.tsx
 
 **Hardcoded strings found:**
+
 - "Something went wrong"
 - "ErrorBoundary integration"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20747,10 +23453,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/quoteWizard.pact.js
 
 **Hardcoded strings found:**
+
 - "services exist"
 - "returns a list of services"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20758,11 +23466,13 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/slugify.test.ts
 
 **Hardcoded strings found:**
+
 - "Crème Brûlée"
 - "Multi Word Title"
-- "Multiple   Words"
+- "Multiple Words"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20770,9 +23480,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/storybook/Pagination.visual.test.ts
 
 **Hardcoded strings found:**
+
 - "Pagination five page view"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20780,9 +23492,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/supabaseSafeFetch.test.ts
 
 **Hardcoded strings found:**
+
 - "Network error"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20790,9 +23504,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/usePostsByCategory.test.tsx
 
 **Hardcoded strings found:**
+
 - "Test"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20800,9 +23516,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### tests/visual-regression.test.ts
 
 **Hardcoded strings found:**
+
 - "Homepage visual regression"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20810,9 +23528,11 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 ### types/next/index.d.ts
 
 **Hardcoded strings found:**
+
 - "Promise"
 
 **Action needed:**
+
 1. Add `import { useTranslation } from 'react-i18next';`
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
@@ -20824,6 +23544,7 @@ These files use translations but still have some hardcoded strings:
 ### pages/404.tsx
 
 **Remaining hardcoded strings:**
+
 - "Go Back"
 - "Explore Our Marketplace"
 - "Browse Marketplace"
@@ -20839,11 +23560,13 @@ These files use translations but still have some hardcoded strings:
 ### src/components/BenefitsSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "react-i18next"
 
 ### src/components/CategoriesSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "categories.services"
 - "Briefcase"
@@ -20862,6 +23585,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/HeroSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "home.hero_title"
 - "home.hero_subtitle"
@@ -20870,6 +23594,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/HowItWorksSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "react-i18next"
 - "home.how_it_works_title"
 - "home.how_it_works_subtitle"
@@ -20877,12 +23602,14 @@ These files use translations but still have some hardcoded strings:
 ### src/components/LanguageSwitcher.tsx
 
 **Remaining hardcoded strings:**
+
 - "Enter"
 - "ArrowDown"
 
 ### src/components/NotFound.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "react-i18next"
 - "errors.page_not_found"
@@ -20893,6 +23620,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/QuoteFormSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "quote_form.submit_another"
 - "quote_form.labels.additional_details"
 - "quote_form.submit"
@@ -20900,6 +23628,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/SocialShareSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "Share Zion with Your Network"
 - "Help others discover the future of AI & tech marketplace"
 - "The link has been copied to your clipboard"
@@ -20912,11 +23641,13 @@ These files use translations but still have some hardcoded strings:
 ### src/components/cart/MiniCartPreview.tsx
 
 **Remaining hardcoded strings:**
+
 - "cart.subtotal"
 
 ### src/components/header/Header.tsx
 
 **Remaining hardcoded strings:**
+
 - "Login"
 - "Sign up"
 - "next/link"
@@ -20930,11 +23661,13 @@ These files use translations but still have some hardcoded strings:
 ### src/components/header/LanguageSelector.tsx
 
 **Remaining hardcoded strings:**
+
 - "LanguageSelector: Error changing language:"
 
 ### src/components/header/MobileMenu.tsx
 
 **Remaining hardcoded strings:**
+
 - "Menu"
 - "Close menu"
 - "next/link"
@@ -20943,6 +23676,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/home/AllFeaturesSection.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "home.all_features_title"
 - "Explore All Features"
@@ -20950,6 +23684,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/home/FeatureCTAs.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "/services"
 - "home.features_heading"
@@ -20958,6 +23693,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/home/ITServiceRequestHero.tsx
 
 **Remaining hardcoded strings:**
+
 - "Zion logo"
 - "Full name"
 - "Company name"
@@ -20973,6 +23709,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/home/QuickAccess.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "home.tool_ai_matcher"
 - "home.tool_ai_matcher_desc"
@@ -20996,6 +23733,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/jobs/TranslatableJobForm.tsx
 
 **Remaining hardcoded strings:**
+
 - "Error translating ${field}:"
 - "translation.unknown_error"
 - "translation.translation_success"
@@ -21004,6 +23742,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/marketplace/EmptyState.tsx
 
 **Remaining hardcoded strings:**
+
 - "If this issue continues, please contact our support team."
 - "next/link"
 - "Login to Add Product"
@@ -21024,6 +23763,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/navigation/ResponsiveNavigation.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "Home"
 - "Marketplace"
@@ -21044,6 +23784,7 @@ These files use translations but still have some hardcoded strings:
 ### src/components/search/EnhancedSearchInput.tsx
 
 **Remaining hardcoded strings:**
+
 - "Search..."
 - "Clear search"
 - "Failed to fetch suggestions"
@@ -21053,6 +23794,7 @@ These files use translations but still have some hardcoded strings:
 ### src/context/LanguageContext.tsx
 
 **Remaining hardcoded strings:**
+
 - "Promise"
 - "LanguageContext: Error setting initial language in i18n"
 - "LanguageContext: Error changing language:"
@@ -21062,6 +23804,7 @@ These files use translations but still have some hardcoded strings:
 ### src/hooks/useTranslationService.ts
 
 **Remaining hardcoded strings:**
+
 - "Translation error:"
 - "Translation service error:"
 - "Unknown translation error"
@@ -21069,6 +23812,7 @@ These files use translations but still have some hardcoded strings:
 ### src/layout/AppHeader.tsx
 
 **Remaining hardcoded strings:**
+
 - "Main navigation"
 - "next/link"
 - "auth.login"
@@ -21082,6 +23826,7 @@ These files use translations but still have some hardcoded strings:
 ### src/layout/MainNavigation.tsx
 
 **Remaining hardcoded strings:**
+
 - "Toggle navigation"
 - "Main navigation"
 - "Wishlist"
@@ -21098,6 +23843,7 @@ These files use translations but still have some hardcoded strings:
 ### src/layout/PrimaryNav.tsx
 
 **Remaining hardcoded strings:**
+
 - "Primary"
 - "next/link"
 - "Search navigation failed"
@@ -21112,6 +23858,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/Cart.tsx
 
 **Remaining hardcoded strings:**
+
 - "Browse Equipment"
 - "All transactions are encrypted and secure"
 - "Fast Shipping"
@@ -21133,6 +23880,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/Home.tsx
 
 **Remaining hardcoded strings:**
+
 - "Zion Tech Marketplace - Discover Innovative Tech Solutions"
 - "min-h-screen bg-background"
 - "home-greeting"
@@ -21140,6 +23888,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/LandingPage.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "home.tool_ai_matcher"
 - "home.tool_ai_matcher_desc"
@@ -21162,6 +23911,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/Marketplace.tsx
 
 **Remaining hardcoded strings:**
+
 - "Avg Price"
 - "Avg Rating"
 - "Categories"
@@ -21188,6 +23938,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/MarketplacePage.tsx
 
 **Remaining hardcoded strings:**
+
 - "Avg Price"
 - "Avg Rating"
 - "Available"
@@ -21214,6 +23965,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/NotFound.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "errors.page_not_found"
 - "errors.return_home"
@@ -21221,6 +23973,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/Partners.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "Partner login auth health check failed"
 - "PartnersPage rendering Unauthenticated View"
@@ -21235,6 +23988,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/TranslationManager.tsx
 
 **Remaining hardcoded strings:**
+
 - "General"
 - "Admin"
 - "Error translating key ${key}:"
@@ -21249,6 +24003,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/Unauthorized.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/link"
 - "errors.access_denied"
 - "errors.no_permission"
@@ -21259,6 +24014,7 @@ These files use translations but still have some hardcoded strings:
 ### src/pages/payment-success.tsx
 
 **Remaining hardcoded strings:**
+
 - "errors.payment_success_title"
 - "errors.payment_success_message"
 - "/dashboard"
@@ -21268,6 +24024,7 @@ These files use translations but still have some hardcoded strings:
 ### tests/accessibility-comprehensive.test.tsx
 
 **Remaining hardcoded strings:**
+
 - "next/router"
 - "Test User"
 - "@/context/CartContext"
@@ -21291,6 +24048,7 @@ These files use translations but still have some hardcoded strings:
 ### tests/responsive-320px.test.tsx
 
 **Remaining hardcoded strings:**
+
 - "Test content"
 - "This is a very long text that should wrap properly on narrow screens without causing horizontal overflow issues"
 - "Twitter"
@@ -21333,8 +24091,8 @@ Here are all unique hardcoded strings found that should be translated:
 6. "${loginRoute}?locale=${locale}" → `t('loginroutelocalelocale')`
 7. "${productTitle} has been added to your cart" → `t('producttitle_has_been_added_to')`
 8. "${profile.professional_title} - ${profile.bio ||" → `t('profileprofessionaltitle_profi')`
-9. "${profile.professional_title} with ${profile.years_experience || 0} years experience" → `t('profileprofessionaltitle_with_')`
-10. "${profile.professional_title} with ${profile.years_experience} years of experience" → `t('profileprofessionaltitle_with_')`
+9. "${profile.professional*title} with ${profile.years_experience || 0} years experience" → `t('profileprofessionaltitle_with*')`
+10. "${profile.professional*title} with ${profile.years_experience} years of experience" → `t('profileprofessionaltitle_with*')`
 11. "${profileData.full_name} | Talent Profile" → `t('profiledatafullname_talent_pro')`
 12. "${profileData.full_name} | Zion AI Marketplace" → `t('profiledatafullname_zion_ai_ma')`
 13. "${profileName} has been added to your favorites" → `t('profilename_has_been_added_to_')`
@@ -21350,9 +24108,9 @@ Here are all unique hardcoded strings found that should be translated:
 23. "./LoginCard" → `t('logincard')`
 24. "./logError" → `t('logerror')`
 25. "/?forceError=1" → `t('forceerror1')`
-26. "/_next/" → `t('next')`
-27. "/_next/image" → `t('nextimage')`
-28. "/_next/static/" → `t('nextstatic')`
+26. "/\_next/" → `t('next')`
+27. "/\_next/image" → `t('nextimage')`
+28. "/\_next/static/" → `t('nextstatic')`
 29. "/about" → `t('about')`
 30. "/admin/services" → `t('adminservices')`
 31. "/auth/login" → `t('authlogin')`
@@ -21561,7 +24319,7 @@ Here are all unique hardcoded strings found that should be translated:
 234. "Additional Ratings (Optional)" → `t('additional_ratings_optional')`
 235. "Additional Resources" → `t('additional_resources')`
 236. "Address" → `t('address')`
-237. "Address *" → `t('address_')`
+237. "Address \*" → `t('address_')`
 238. "Address warnings" → `t('address_warnings')`
 239. "Adjust Tokenomics" → `t('adjust_tokenomics')`
 240. "Adjust your rate if needed to be more competitive" → `t('adjust_your_rate_if_needed_to_')`
@@ -23374,7 +26132,7 @@ Here are all unique hardcoded strings found that should be translated:
 2047. "Failed to update, no data returned." → `t('failed_to_update_no_data_retur')`
 2048. "Failed to upload CV" → `t('failed_to_upload_cv')`
 2049. "Failed to upload deliverable:" → `t('failed_to_upload_deliverable')`
-2050. "Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory." → `t('failed_to_use_watchdoglogpath_')`
+2050. "Failed to use WATCHDOG*LOG_PATH at ${envPath}. Falling back to local logs directory." → `t('failed_to_use_watchdoglogpath*')`
 2051. "Fair" → `t('fair')`
 2052. "Fair launch. Include a placeholder" → `t('fair_launch_include_a_placehol')`
 2053. "Fast Shipping" → `t('fast_shipping')`
@@ -24374,7 +27132,7 @@ Here are all unique hardcoded strings found that should be translated:
 3047. "Multi-Cloud Compliance Automation" → `t('multicloud_compliance_automati')`
 3048. "Multi-language Support" → `t('multilanguage_support')`
 3049. "Multimodal Representation Learning" → `t('multimodal_representation_lear')`
-3050. "Multiple   Words" → `t('multiple_words')`
+3050. "Multiple Words" → `t('multiple_words')`
 3051. "Multiple ways to accumulate rewards" → `t('multiple_ways_to_accumulate_re')`
 3052. "Multiverse config" → `t('multiverse_config')`
 3053. "Multiverse map" → `t('multiverse_map')`
@@ -24389,7 +27147,7 @@ Here are all unique hardcoded strings found that should be translated:
 3062. "My Votes" → `t('my_votes')`
 3063. "My Voting History" → `t('my_voting_history')`
 3064. "NETWORK_ERROR" → `t('networkerror')`
-3065. "NEXT_PUBLIC_" → `t('nextpublic')`
+3065. "NEXT*PUBLIC*" → `t('nextpublic')`
 3066. "NEXT_PUBLIC_REOWN_PROJECT_ID" → `t('nextpublicreownprojectid')`
 3067. "NEXT_PUBLIC_REOWN_PROJECT_ID appears to be a placeholder value" → `t('nextpublicreownprojectid_appea')`
 3068. "NEXT_PUBLIC_SENTRY_DSN appears to be a placeholder value" → `t('nextpublicsentrydsn_appears_to')`
@@ -26849,7 +29607,7 @@ Here are all unique hardcoded strings found that should be translated:
 5522. "[HydrationErrorBoundary] Hydration mismatch detected, forcing client-side render" → `t('hydrationerrorboundary_hydrati')`
 5523. "[INFO] ${message}" → `t('info_message')`
 5524. "\nErrors:" → `t('nerrors')`
-5525. "\n⚠️  WARNINGS:" → `t('n_warnings')`
+5525. "\n⚠️ WARNINGS:" → `t('n_warnings')`
 5526. "\n✅ Debug test completed successfully!" → `t('n_debug_test_completed_success')`
 5527. "a request for hello message" → `t('a_request_for_hello_message')`
 5528. "absolute -top-8 -left-8 w-72 h-72 bg-zion-purple/20 rounded-full filter blur-3xl" → `t('absolute_top8_left8_w72_h72_bg')`
@@ -27078,7 +29836,7 @@ Here are all unique hardcoded strings found that should be translated:
 5751. "nav.cart" → `t('navcart')`
 5752. "navigates to login when unauthenticated" → `t('navigates_to_login_when_unauth')`
 5753. "next-cloudinary" → `t('nextcloudinary')`
-5754. "next/*" → `t('next')`
+5754. "next/\*" → `t('next')`
 5755. "next/dynamic" → `t('nextdynamic')`
 5756. "next/head" → `t('nexthead')`
 5757. "next/image" → `t('nextimage')`
@@ -27137,31 +29895,32 @@ Here are all unique hardcoded strings found that should be translated:
 5810. "returns hello message" → `t('returns_hello_message')`
 5811. "returns token and user on success" → `t('returns_token_and_user_on_succ')`
 5812. "s a background issue
-        autoHideDuration: 5000,
+      autoHideDuration: 5000,
       });
-    } catch (e) {
+      } catch (e) {
       logError(e, { context:" → `t('s_a_background_issue_autohided')`
 5813. "s a link to my proposal: ${proposalLink}`;
       }
-      
+
       // Add info about attached resume if available
       if (selectedResume) {
-        fullMessage += `\n\nI" → `t('s_a_link_to_my_proposal_propos')`
+      fullMessage += `\n\nI" → `t('s_a_link_to_my_proposal_propos')`
+
 5814. "s an auth error (401/403) and the user is on a public page, don" → `t('s_an_auth_error_401403_and_the')`
 5815. "s check for the data.error message if provided.
-    cy.contains(" → `t('s_check_for_the_dataerror_mess')`
+      cy.contains(" → `t('s_check_for_the_dataerror_mess')`
 5816. "s main authentication, or this feature might require wallet-based vote fetching in the future if platform login is separate." → `t('s_main_authentication_or_this_')`
 5817. "s not submitting yet
-            style={{
-              padding:" → `t('s_not_submitting_yet_style_pad')`
+      style={{
+      padding:" → `t('s_not_submitting_yet_style_pad')`
 5818. "s password-related
-          if (errorMsg.toLowerCase().includes(" → `t('s_passwordrelated_if_errormsgt')`
+      if (errorMsg.toLowerCase().includes(" → `t('s_passwordrelated_if_errormsgt')`
 5819. "s root error area
-    expect(screen.getByText(" → `t('s_root_error_area_expectscreen')`
+      expect(screen.getByText(" → `t('s_root_error_area_expectscreen')`
 5820. "s stack or name if they exist (though less likely for non-Errors)
       errorToSend.stack = (error as any)?.stack || errorToSend.stack;
       errorToSend.name = (error as any)?.name || errorToSend.name;
-    } catch {
+      } catch {
       // ignore if properties can" → `t('s_stack_or_name_if_they_exist_')`
 5821. "search suggestions appear below the nav" → `t('search_suggestions_appear_belo')`
 5822. "search-${routeKey}-${router.asPath}" → `t('searchroutekeyrouteraspath')`
@@ -27252,104 +30011,27 @@ Here are all unique hardcoded strings found that should be translated:
 5907. "t had a chance to ${nextAction ||" → `t('t_had_a_chance_to_nextaction_')`
 5908. "t have permission to cancel this interview" → `t('t_have_permission_to_cancel_th')`
 5909. "t let it stop the script.
-    // The main error (e.g., patch apply failure) is more critical.
-  }
-}
+      // The main error (e.g., patch apply failure) is more critical.
+      }
+      }
 
 function extractFilePaths(text) {
-  if (!text) return [];
-  const stricterRegex = /([\w.-]+\/)*[\w.-]+\.\w+/g;
-  const paths = text.match(stricterRegex);
-  return paths ? [...new Set(paths)] : [];
+if (!text) return [];
+const stricterRegex = /([\w.-]+\/)\*[\w.-]+\.\w+/g;
+const paths = text.match(stricterRegex);
+return paths ? [...new Set(paths)] : [];
 }
 
 async function fetchFileContent(octokitInstance, owner, repo, filePath) {
-  try {
-    const response = await octokitInstance.rest.repos.getContent({
-      owner,
-      repo,
-      path: filePath,
-    });
-    if (response.data.type ===" → `t('t_let_it_stop_the_script_the_m')`
-5910. "t load the equipment details. Please try again." → `t('t_load_the_equipment_details_p')`
-5911. "t process your request. Please try again." → `t('t_process_your_request_please_')`
-5912. "t toast.
-    // For example, you might want to ensure the error object has a specific structure
-    // if it doesn" → `t('t_toast_for_example_you_might_')`
-5913. "t voted on any proposals yet with the connected wallet, or your votes are associated with a platform login that isn" → `t('t_voted_on_any_proposals_yet_w')`
-5914. "talent-loading" → `t('talentloading')`
-5915. "talent-profile" → `t('talentprofile')`
-5916. "talent-profile-enhancer" → `t('talentprofileenhancer')`
-5917. "talent-profile-skeleton" → `t('talentprofileskeleton')`
-5918. "talent-profiles" → `t('talentprofiles')`
-5919. "talent-search" → `t('talentsearch')`
-5920. "talent-search-help" → `t('talentsearchhelp')`
-5921. "test checkout purchase" → `t('test_checkout_purchase')`
-5922. "test-auth-token-next" → `t('testauthtokennext')`
-5923. "test-error-id" → `t('testerrorid')`
-5924. "toggle state updates and class applied" → `t('toggle_state_updates_and_class')`
-5925. "toggling view updates container class" → `t('toggling_view_updates_containe')`
-5926. "translation.edit" → `t('translationedit')`
-5927. "translation.saved" → `t('translationsaved')`
-5928. "translation.search_placeholder" → `t('translationsearchplaceholder')`
-5929. "translation.translation_success" → `t('translationtranslationsuccess')`
-5930. "translation.unknown_error" → `t('translationunknownerror')`
-5931. "updated milestone details" → `t('updated_milestone_details')`
-5932. "useCart must be used within a CartProvider" → `t('usecart_must_be_used_within_a_')`
-5933. "useError must be used within ErrorProvider" → `t('useerror_must_be_used_within_e')`
-5934. "useFeedback must be used within FeedbackProvider" → `t('usefeedback_must_be_used_withi')`
-5935. "useGlobalErrorHandler must be used within a GlobalErrorHandler" → `t('useglobalerrorhandler_must_be_')`
-5936. "user can logout via avatar menu" → `t('user_can_logout_via_avatar_men')`
-5937. "user can signup, login, checkout and read blog" → `t('user_can_signup_login_checkout')`
-5938. "valid credentials navigates to dashboard" → `t('valid_credentials_navigates_to')`
-5939. "ve received your message and will get back to you soon." → `t('ve_received_your_message_and_w')`
-5940. "visiting /register shows register form and sign-in link works" → `t('visiting_register_shows_regist')`
-5941. "w-4 h-4 mr-2 ${isLoading ?" → `t('w4_h4_mr2_isloading_')`
-5942. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ?" → `t('wfull_roundedmd_bgzionbluedark')`
-5943. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ?" → `t('wfull_roundedmd_bgzionbluedark')`
-5944. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ?" → `t('wfull_roundedmd_bgzionbluedark')`
-5945. "wallet dashboard" → `t('wallet_dashboard')`
-5946. "wallet-address" → `t('walletaddress')`
-5947. "webhook-warning-shown" → `t('webhookwarningshown')`
-5948. "withErrorBoundary(${Component.displayName || Component.name})" → `t('witherrorboundarycomponentdisp')`
-5949. "z-10 ring-2 ring-ring ring-offset-background" → `t('z10_ring2_ringring_ringoffsetb')`
-5950. "zion-gpt error: ${gptError.message}" → `t('ziongpt_error_gpterrormessage')`
-5951. "zion-gpt error: GPT failed" → `t('ziongpt_error_gpt_failed')`
-5952. "zion-gpt error: GPT suggestions failed" → `t('ziongpt_error_gpt_suggestions_')`
-5953. "zion_backup.pdf" → `t('zionbackuppdf')`
-5954. "zion_backup.zip" → `t('zionbackupzip')`
-5955. "{ profile: TalentProfile }" → `t('_profile_talentprofile_')`
-5956. "{searchQuery}" → `t('searchquery')`
-5957. "{searchTerm}" → `t('searchterm')`
-5958. "} added" → `t('_added')`
-5959. "} alt={activity.created_by_profile?.display_name ||" → `t('_altactivitycreatedbyprofiledi')`
-5960. "} successfully." → `t('_successfully')`
-5961. "}. The tone should be informative and engaging." → `t('_the_tone_should_be_informativ')`
-5962. "}: ${error.message}" → `t('_errormessage')`
-5963. "• ${error.route}: ${error.error}" → `t('_errorroute_errorerror')`
-5964. "• ${error}" → `t('_error')`
-5965. "• ${result.route}: ${result.error} (${result.type})" → `t('_resultroute_resulterror_resul')`
-5966. "• ${warning}" → `t('_warning')`
-5967. "⚠️  WARNINGS:" → `t('_warnings')`
-5968. "⚠️ Development Environment Warnings:\n" → `t('_development_environment_warni')`
-5969. "⚠️ Production Environment Warnings:\n" → `t('_production_environment_warnin')`
-5970. "✅ Checkout session created successfully! In production, you would be redirected to Stripe." → `t('_checkout_session_created_succ')`
-5971. "✅ Payment intent created successfully!" → `t('_payment_intent_created_succes')`
-5972. "❌ Checkout test failed. Check console for details." → `t('_checkout_test_failed_check_co')`
-5973. "❌ ERRORS (must be fixed):" → `t('_errors_must_be_fixed')`
-5974. "❌ Error processing ${filePath}:" → `t('_error_processing_filepath')`
-5975. "❌ Execution error: ${error.message}" → `t('_execution_error_errormessage')`
-5976. "❌ Failed to delete: ${errorCount} files" → `t('_failed_to_delete_errorcount_f')`
-5977. "❌ Font loading error: ${(event as any).fontface.family}" → `t('_font_loading_error_event_as_a')`
-5978. "❌ No test cases configured. Please check your environment variables." → `t('_no_test_cases_configured_plea')`
-5979. "📋 Found ${toDelete.length} files to delete:\n" → `t('_found_todeletelength_files_to')`
-5980. "📡 Background fetch failed for:" → `t('_background_fetch_failed_for')`
-5981. "🔄 Background sync triggered:" → `t('_background_sync_triggered')`
-5982. "🔍 SearchPage component rendered with:" → `t('_searchpage_component_rendered')`
-5983. "🔤 Font loading started: ${(event as any).fontface.family}" → `t('_font_loading_started_event_as')`
-5984. "🔧 LOGIN TRACE: Available dev users:" → `t('_login_trace_available_dev_use')`
-5985. "🔧 LOGIN TRACE: Development user authenticated successfully" → `t('_login_trace_development_user_')`
-5986. "🔧 LOGIN TRACE: Supabase authentication successful" → `t('_login_trace_supabase_authenti')`
+try {
+const response = await octokitInstance.rest.repos.getContent({
+owner,
+repo,
+path: filePath,
+});
+if (response.data.type ===" → `t('t_let_it_stop_the_script_the_m')` 5910. "t load the equipment details. Please try again." → `t('t_load_the_equipment_details_p')` 5911. "t process your request. Please try again." → `t('t_process_your_request_please_')` 5912. "t toast.
+// For example, you might want to ensure the error object has a specific structure
+// if it doesn" → `t('t_toast_for_example_you_might_')` 5913. "t voted on any proposals yet with the connected wallet, or your votes are associated with a platform login that isn" → `t('t_voted_on_any_proposals_yet_w')` 5914. "talent-loading" → `t('talentloading')` 5915. "talent-profile" → `t('talentprofile')` 5916. "talent-profile-enhancer" → `t('talentprofileenhancer')` 5917. "talent-profile-skeleton" → `t('talentprofileskeleton')` 5918. "talent-profiles" → `t('talentprofiles')` 5919. "talent-search" → `t('talentsearch')` 5920. "talent-search-help" → `t('talentsearchhelp')` 5921. "test checkout purchase" → `t('test_checkout_purchase')` 5922. "test-auth-token-next" → `t('testauthtokennext')` 5923. "test-error-id" → `t('testerrorid')` 5924. "toggle state updates and class applied" → `t('toggle_state_updates_and_class')` 5925. "toggling view updates container class" → `t('toggling_view_updates_containe')` 5926. "translation.edit" → `t('translationedit')` 5927. "translation.saved" → `t('translationsaved')` 5928. "translation.search*placeholder" → `t('translationsearchplaceholder')` 5929. "translation.translation_success" → `t('translationtranslationsuccess')` 5930. "translation.unknown_error" → `t('translationunknownerror')` 5931. "updated milestone details" → `t('updated_milestone_details')` 5932. "useCart must be used within a CartProvider" → `t('usecart_must_be_used_within_a*')`5933. "useError must be used within ErrorProvider" →`t('useerror*must_be_used_within_e')`5934. "useFeedback must be used within FeedbackProvider" →`t('usefeedback_must_be_used_withi')`5935. "useGlobalErrorHandler must be used within a GlobalErrorHandler" →`t('useglobalerrorhandler_must_be*')`5936. "user can logout via avatar menu" →`t('user*can_logout_via_avatar_men')`5937. "user can signup, login, checkout and read blog" →`t('user_can_signup_login_checkout')`5938. "valid credentials navigates to dashboard" →`t('valid_credentials_navigates_to')`5939. "ve received your message and will get back to you soon." →`t('ve_received_your_message_and_w')`5940. "visiting /register shows register form and sign-in link works" →`t('visiting_register_shows_regist')`5941. "w-4 h-4 mr-2 ${isLoading ?" →`t('w4_h4_mr2_isloading*')`5942. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ?" →`t('wfull*roundedmd_bgzionbluedark')`5943. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ?" →`t('wfull_roundedmd_bgzionbluedark')`5944. "w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ?" →`t('wfull_roundedmd_bgzionbluedark')`5945. "wallet dashboard" →`t('wallet_dashboard')`5946. "wallet-address" →`t('walletaddress')`5947. "webhook-warning-shown" →`t('webhookwarningshown')`5948. "withErrorBoundary(${Component.displayName || Component.name})" →`t('witherrorboundarycomponentdisp')`5949. "z-10 ring-2 ring-ring ring-offset-background" →`t('z10_ring2_ringring_ringoffsetb')`5950. "zion-gpt error: ${gptError.message}" →`t('ziongpt_error_gpterrormessage')`5951. "zion-gpt error: GPT failed" →`t('ziongpt_error_gpt_failed')`5952. "zion-gpt error: GPT suggestions failed" →`t('ziongpt_error_gpt_suggestions*')`5953. "zion_backup.pdf" →`t('zionbackuppdf')`5954. "zion_backup.zip" →`t('zionbackupzip')`5955. "{ profile: TalentProfile }" →`t('_profile_talentprofile_')`5956. "{searchQuery}" →`t('searchquery')`5957. "{searchTerm}" →`t('searchterm')`5958. "} added" →`t('_added')`5959. "} alt={activity.created_by_profile?.display_name ||" →`t('\_altactivitycreatedbyprofiledi')`5960. "} successfully." →`t('\_successfully')`5961. "}. The tone should be informative and engaging." →`t('\_the_tone_should_be_informativ')`5962. "}: ${error.message}" →`t('\_errormessage')`5963. "• ${error.route}: ${error.error}" →`t('\_errorroute_errorerror')`5964. "• ${error}" →`t('\_error')`5965. "• ${result.route}: ${result.error} (${result.type})" →`t('\_resultroute_resulterror_resul')`5966. "• ${warning}" →`t('\_warning')`5967. "⚠️  WARNINGS:" →`t('\_warnings')`5968. "⚠️ Development Environment Warnings:\n" →`t('\_development_environment_warni')`5969. "⚠️ Production Environment Warnings:\n" →`t('\_production_environment_warnin')`5970. "✅ Checkout session created successfully! In production, you would be redirected to Stripe." →`t('\_checkout_session_created_succ')`5971. "✅ Payment intent created successfully!" →`t('\_payment_intent_created_succes')`5972. "❌ Checkout test failed. Check console for details." →`t('\_checkout_test_failed_check_co')`5973. "❌ ERRORS (must be fixed):" →`t('\_errors_must_be_fixed')`5974. "❌ Error processing ${filePath}:" →`t('\_error_processing_filepath')`5975. "❌ Execution error: ${error.message}" →`t('\_execution_error_errormessage')`5976. "❌ Failed to delete: ${errorCount} files" →`t('\_failed_to_delete_errorcount_f')`5977. "❌ Font loading error: ${(event as any).fontface.family}" →`t('\_font_loading_error_event_as_a')`5978. "❌ No test cases configured. Please check your environment variables." →`t('\_no_test_cases_configured_plea')`5979. "📋 Found ${toDelete.length} files to delete:\n" →`t('\_found_todeletelength_files_to')`5980. "📡 Background fetch failed for:" →`t('\_background_fetch_failed_for')`5981. "🔄 Background sync triggered:" →`t('\_background_sync_triggered')`5982. "🔍 SearchPage component rendered with:" →`t('\_searchpage_component_rendered')`5983. "🔤 Font loading started: ${(event as any).fontface.family}" →`t('\_font_loading_started_event_as')`5984. "🔧 LOGIN TRACE: Available dev users:" →`t('\_login_trace_available_dev_use')`5985. "🔧 LOGIN TRACE: Development user authenticated successfully" →`t('\_login_trace_development_user_')`5986. "🔧 LOGIN TRACE: Supabase authentication successful" →`t('\_login_trace_supabase_authenti')`
 
 ## Next Steps
 
@@ -27357,4 +30039,3 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 2. **Update components** to use the translation system
 3. **Test** all languages to ensure proper display
 4. **Review** with native speakers for quality
-

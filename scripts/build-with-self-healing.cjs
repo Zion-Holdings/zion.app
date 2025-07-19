@@ -26,28 +26,31 @@ class BuildWithSelfHealing {
 
   async runBuild() {
     this.log('Starting build with self-healing lint system...');
-    
+
     try {
       // Initial build
       await this.executeBuild();
-      
+
       // Check for lint issues after build
       const hasLintIssues = await this.checkForLintIssues();
-      
+
       if (hasLintIssues) {
-        this.log('Lint issues detected after build, triggering self-healing...');
+        this.log(
+          'Lint issues detected after build, triggering self-healing...',
+        );
         await this.triggerSelfHealing();
       } else {
         this.log('Build completed successfully with no lint issues');
       }
-      
     } catch (error) {
       this.log(`Build failed: ${error.message}`, 'ERROR');
-      
+
       // Try to fix issues and retry
       if (this.currentRetry < this.maxRetries) {
         this.currentRetry++;
-        this.log(`Retrying build (attempt ${this.currentRetry}/${this.maxRetries})`);
+        this.log(
+          `Retrying build (attempt ${this.currentRetry}/${this.maxRetries})`,
+        );
         await this.retryBuild();
       } else {
         this.log('Max retries reached, build failed');
@@ -58,20 +61,20 @@ class BuildWithSelfHealing {
 
   async executeBuild() {
     this.log('Executing build...');
-    
+
     // Use the existing build command
     const buildCommand = process.env.BUILD_COMMAND || 'npm run build';
-    
+
     return new Promise((resolve, reject) => {
       const build = spawn(buildCommand, [], {
         stdio: 'inherit',
         shell: true,
         env: {
           ...process.env,
-          NODE_OPTIONS: '--max-old-space-size=8192'
-        }
+          NODE_OPTIONS: '--max-old-space-size=8192',
+        },
       });
-      
+
       build.on('close', (code) => {
         if (code === 0) {
           this.log('Build completed successfully');
@@ -80,7 +83,7 @@ class BuildWithSelfHealing {
           reject(new Error(`Build failed with exit code ${code}`));
         }
       });
-      
+
       build.on('error', (error) => {
         reject(error);
       });
@@ -89,45 +92,45 @@ class BuildWithSelfHealing {
 
   async checkForLintIssues() {
     this.log('Checking for lint issues...');
-    
+
     try {
       const lintOutput = execSync('npm run lint', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       // If we get here, no issues were found
       return false;
     } catch (error) {
       // Lint command failed, which means there are issues
       if (error.stdout) {
-        const issues = error.stdout.split('\n').filter(line => 
-          line.includes('error') || line.includes('warning')
-        );
-        
+        const issues = error.stdout
+          .split('\n')
+          .filter((line) => line.includes('error') || line.includes('warning'));
+
         if (issues.length > 0) {
           this.log(`Found ${issues.length} lint issues`);
           return true;
         }
       }
-      
+
       return false;
     }
   }
 
   async triggerSelfHealing() {
     this.log('Triggering self-healing system...');
-    
+
     try {
       // Trigger the self-healing system
       await this.selfHealingSystem.triggerManualFix();
-      
+
       // Wait a bit for fixes to be applied
       await this.sleep(5000);
-      
+
       // Check if issues were resolved
       const stillHasIssues = await this.checkForLintIssues();
-      
+
       if (!stillHasIssues) {
         this.log('Self-healing resolved all lint issues');
         return true;
@@ -135,7 +138,6 @@ class BuildWithSelfHealing {
         this.log('Self-healing could not resolve all issues');
         return false;
       }
-      
     } catch (error) {
       this.log(`Self-healing failed: ${error.message}`, 'ERROR');
       return false;
@@ -144,24 +146,23 @@ class BuildWithSelfHealing {
 
   async retryBuild() {
     this.log('Retrying build after self-healing...');
-    
+
     try {
       // Wait a bit before retrying
       await this.sleep(10000);
-      
+
       // Try the build again
       await this.executeBuild();
-      
+
       // Check for issues again
       const hasIssues = await this.checkForLintIssues();
-      
+
       if (!hasIssues) {
         this.log('Retry build completed successfully');
       } else {
         this.log('Retry build still has issues');
         throw new Error('Lint issues persist after retry');
       }
-      
     } catch (error) {
       this.log(`Retry build failed: ${error.message}`, 'ERROR');
       throw error;
@@ -169,7 +170,7 @@ class BuildWithSelfHealing {
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
 
@@ -179,9 +180,9 @@ module.exports = BuildWithSelfHealing;
 // Run if this script is executed directly
 if (require.main === module) {
   const buildSystem = new BuildWithSelfHealing();
-  
-  buildSystem.runBuild().catch(error => {
+
+  buildSystem.runBuild().catch((error) => {
     console.error('Build system failed:', error.message);
     process.exit(1);
   });
-} 
+}

@@ -32,21 +32,21 @@ class SimpleHealer {
 
   async run() {
     this.log('Starting simple self-healing system...');
-    
+
     try {
       // Step 1: Apply common fixes
       await this.applyCommonFixes();
-      
+
       // Step 2: Run build
       const buildResult = await this.runBuild();
-      
+
       if (buildResult.success) {
         this.log('Build successful after healing!');
         await this.commitAndDeploy();
       } else {
         this.log('Build still failed, attempting additional fixes...');
         await this.applyAdvancedFixes();
-        
+
         // Retry build
         const retryResult = await this.runBuild();
         if (retryResult.success) {
@@ -57,7 +57,6 @@ class SimpleHealer {
           this.log('Build output:', retryResult.output);
         }
       }
-      
     } catch (error) {
       this.log(`Self-healing system failed: ${error.message}`, 'ERROR');
       throw error;
@@ -66,13 +65,13 @@ class SimpleHealer {
 
   async applyCommonFixes() {
     this.log('Applying common fixes...');
-    
+
     const fixes = [
       this.fixUnusedVariables(),
       this.fixConsoleLogs(),
       this.fixMissingImports(),
       this.fixSyntaxIssues(),
-      this.fixTypeIssues()
+      this.fixTypeIssues(),
     ];
 
     for (const fix of fixes) {
@@ -134,7 +133,11 @@ class SimpleHealer {
 
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (line.includes('console.log(') && !file.includes('.test.') && !file.includes('.spec.')) {
+          if (
+            line.includes('console.log(') &&
+            !file.includes('.test.') &&
+            !file.includes('.spec.')
+          ) {
             lines[i] = `// ${line}`;
             modified = true;
           }
@@ -185,7 +188,7 @@ class SimpleHealer {
 
         // Fix common syntax issues
         newContent = newContent.replace(/([^;])\n/g, '$1;\n');
-        
+
         // Fix missing brackets
         const openBraces = (newContent.match(/\{/g) || []).length;
         const closeBraces = (newContent.match(/\}/g) || []).length;
@@ -218,7 +221,10 @@ class SimpleHealer {
 
         // Fix common type issues
         newContent = newContent.replace(/: any/g, ': unknown');
-        newContent = newContent.replace(/const (\w+) =/g, 'const $1: unknown =');
+        newContent = newContent.replace(
+          /const (\w+) =/g,
+          'const $1: unknown =',
+        );
 
         if (newContent !== content) {
           fs.writeFileSync(file, newContent);
@@ -235,11 +241,11 @@ class SimpleHealer {
 
   async applyAdvancedFixes() {
     this.log('Applying advanced fixes...');
-    
+
     const fixes = [
       this.fixBuildConfig(),
       this.fixPackageJson(),
-      this.fixTsConfig()
+      this.fixTsConfig(),
     ];
 
     for (const fix of fixes) {
@@ -257,17 +263,20 @@ class SimpleHealer {
 
   async fixBuildConfig() {
     this.log('Fixing build configuration...');
-    
+
     if (fs.existsSync('next.config.js')) {
       try {
         const content = fs.readFileSync('next.config.js', 'utf8');
         let newContent = content;
 
         if (!newContent.includes('experimental')) {
-          newContent = newContent.replace(/module\.exports\s*=\s*{/, `module.exports = {
+          newContent = newContent.replace(
+            /module\.exports\s*=\s*{/,
+            `module.exports = {
   experimental: {
     optimizeCss: true,
-  },`);
+  },`,
+          );
         }
 
         if (newContent !== content) {
@@ -279,13 +288,13 @@ class SimpleHealer {
         this.log(`Error fixing build config: ${error.message}`, 'ERROR');
       }
     }
-    
+
     return false;
   }
 
   async fixPackageJson() {
     this.log('Fixing package.json...');
-    
+
     try {
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
       let modified = false;
@@ -308,13 +317,13 @@ class SimpleHealer {
     } catch (error) {
       this.log(`Error fixing package.json: ${error.message}`, 'ERROR');
     }
-    
+
     return false;
   }
 
   async fixTsConfig() {
     this.log('Fixing tsconfig.json...');
-    
+
     if (fs.existsSync('tsconfig.json')) {
       try {
         const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));
@@ -339,7 +348,7 @@ class SimpleHealer {
         this.log(`Error fixing tsconfig.json: ${error.message}`, 'ERROR');
       }
     }
-    
+
     return false;
   }
 
@@ -347,27 +356,27 @@ class SimpleHealer {
     const files = [];
     const srcDir = 'src';
     const pagesDir = 'pages';
-    
+
     if (fs.existsSync(srcDir)) {
       this.findFilesRecursive(srcDir, '.ts', files);
       this.findFilesRecursive(srcDir, '.tsx', files);
     }
-    
+
     if (fs.existsSync(pagesDir)) {
       this.findFilesRecursive(pagesDir, '.ts', files);
       this.findFilesRecursive(pagesDir, '.tsx', files);
     }
-    
+
     return files;
   }
 
   findFilesRecursive(dir, ext, files) {
     const items = fs.readdirSync(dir);
-    
+
     for (const item of items) {
       const fullPath = path.join(dir, item);
       const stat = fs.statSync(fullPath);
-      
+
       if (stat.isDirectory()) {
         this.findFilesRecursive(fullPath, ext, files);
       } else if (item.endsWith(ext)) {
@@ -378,11 +387,11 @@ class SimpleHealer {
 
   async runBuild() {
     this.log('Running build...');
-    
+
     return new Promise((resolve) => {
       const buildProcess = spawn('npm', ['run', 'build'], {
         stdio: ['pipe', 'pipe', 'pipe'],
-        timeout: 300000 // 5 minutes
+        timeout: 300000, // 5 minutes
       });
 
       let output = '';
@@ -400,7 +409,7 @@ class SimpleHealer {
 
       buildProcess.on('close', (code) => {
         const fullOutput = output + errorOutput;
-        
+
         if (code === 0) {
           this.log('Build completed successfully');
           resolve({ success: true, output: fullOutput });
@@ -421,11 +430,11 @@ class SimpleHealer {
     if (this.fixesApplied.length > 0) {
       try {
         const commitMessage = `Self-heal: Applied ${this.fixesApplied.length} fixes`;
-        
+
         execSync('git add .', { stdio: 'inherit' });
         execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
         execSync('git push', { stdio: 'inherit' });
-        
+
         this.log('Changes committed and pushed successfully');
         this.log('Netlify build will be triggered automatically');
         return true;
@@ -441,11 +450,11 @@ class SimpleHealer {
 // Run the simple healer
 if (require.main === module) {
   const healer = new SimpleHealer();
-  
-  healer.run().catch(error => {
+
+  healer.run().catch((error) => {
     console.error('Simple healer failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = SimpleHealer; 
+module.exports = SimpleHealer;

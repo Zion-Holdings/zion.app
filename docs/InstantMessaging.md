@@ -6,17 +6,20 @@ the related order or service identifier so participants only receive messages fo
 their transaction.
 
 Install dependencies:
+
 ```bash
 npm install socket.io socket.io-client
 ```
 
 Minimal API route:
+
 ```ts
 // pages/api/socket.ts
 // Generic handler creating a Socket.IO server
 ```
 
 ## Django Channel Layer
+
 Add the following configuration to `settings.py` on the Django side:
 
 ```python
