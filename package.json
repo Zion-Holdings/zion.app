@@ -13,7 +13,13 @@
     "automate": "node scripts/complete-zion-automation.cjs",
     "health": "curl -s http://localhost:3001/api/health",
     "status": "node scripts/zion-app-maintainer.cjs",
-    "continuous": "node scripts/continuous-development.cjs"
+    "continuous": "node scripts/continuous-development.cjs",
+    "cursor:start": "node scripts/cursor-multi-computer-communication.cjs start",
+    "cursor:status": "node scripts/cursor-multi-computer-communication.cjs status",
+    "cursor:chat": "node scripts/cursor-multi-computer-communication.cjs chat",
+    "cursor:fix": "node scripts/cursor-multi-computer-communication.cjs fix",
+    "cursor:monitor": "node scripts/cursor-controller.cjs monitor",
+    "cursor:auto-fix": "node scripts/cursor-controller.cjs auto-fix"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
