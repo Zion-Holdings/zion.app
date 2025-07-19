@@ -3,7 +3,7 @@ export const signupCheck = {
   // Placeholder implementation
   init: () => {
     console.log('signupCheck initialized');
-  }
+  },
 };
 
 export default signupCheck;

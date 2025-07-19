@@ -3,7 +3,7 @@ export const string = {
   // Placeholder implementation
   init: () => {
     console.log('string initialized');
-  }
+  },
 };
 
 export default string;

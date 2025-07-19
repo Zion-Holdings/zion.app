@@ -37,14 +37,14 @@ export class WebSocketReconnectionManager extends EventEmitter {
 
   constructor(config: Partial<ReconnectionConfig> = {}) {
     super();
-    
+
     this.config = {
       maxAttempts: 10,
       baseDelay: 1000,
       maxDelay: 5000,
       jitter: true,
       backoffMultiplier: 2,
-      ...config
+      ...config,
     };
 
     this.connectionHealth = {
@@ -52,7 +52,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       latency: 0,
       lastPing: 0,
       failedPings: 0,
-      connectionQuality: 'disconnected'
+      connectionQuality: 'disconnected',
     };
   }
 
@@ -62,7 +62,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
   private calculateDelay(attempt: number): number {
     const delay = Math.min(
       this.config.baseDelay * Math.pow(this.config.backoffMultiplier, attempt),
-      this.config.maxDelay
+      this.config.maxDelay,
     );
 
     if (this.config.jitter) {
@@ -88,7 +88,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       this.emit('reconnection_failed', {
         type: 'failure',
         error: 'Max reconnection attempts reached',
-        timestamp: Date.now()
+        timestamp: Date.now(),
       });
       return;
     }
@@ -99,13 +99,15 @@ export class WebSocketReconnectionManager extends EventEmitter {
 
     const delay = this.calculateDelay(this.reconnectAttempts - 1);
 
-    console.log(`🔄 Starting reconnection attempt ${this.reconnectAttempts}/${this.config.maxAttempts} in ${delay}ms`);
+    console.log(
+      `🔄 Starting reconnection attempt ${this.reconnectAttempts}/${this.config.maxAttempts} in ${delay}ms`,
+    );
 
     this.emit('reconnection_attempt', {
       type: 'attempt',
       attempt: this.reconnectAttempts,
       delay,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
 
     setTimeout(() => {
@@ -118,7 +120,9 @@ export class WebSocketReconnectionManager extends EventEmitter {
         }
       } catch (error) {
         console.error('❌ Reconnection error:', error);
-        this.handleReconnectionFailure(error instanceof Error ? error.message : 'Unknown error');
+        this.handleReconnectionFailure(
+          error instanceof Error ? error.message : 'Unknown error',
+        );
       }
     }, delay);
   }
@@ -136,7 +140,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
     this.emit('reconnection_success', {
       type: 'success',
       attempt: this.reconnectAttempts,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
   }
 
@@ -151,7 +155,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       type: 'failure',
       attempt: this.reconnectAttempts,
       error,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
 
     // Continue reconnection if we haven't reached max attempts
@@ -196,13 +200,13 @@ export class WebSocketReconnectionManager extends EventEmitter {
         latency: 0,
         lastPing: Date.now(),
         failedPings: this.connectionHealth.failedPings + 1,
-        connectionQuality: 'disconnected'
+        connectionQuality: 'disconnected',
       });
       return;
     }
 
     const startTime = Date.now();
-    
+
     try {
       socket.emit('ping', (response: any) => {
         const latency = Date.now() - startTime;
@@ -211,7 +215,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
           latency,
           lastPing: Date.now(),
           failedPings: 0,
-          connectionQuality: this.calculateConnectionQuality(latency)
+          connectionQuality: this.calculateConnectionQuality(latency),
         });
       });
     } catch (error) {
@@ -220,7 +224,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
         latency: 0,
         lastPing: Date.now(),
         failedPings: this.connectionHealth.failedPings + 1,
-        connectionQuality: 'disconnected'
+        connectionQuality: 'disconnected',
       });
     }
   }
@@ -244,7 +248,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
     this.emit('health_check', {
       type: 'health_check',
       health: this.connectionHealth,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
 
     // If health degraded significantly, emit warning
@@ -253,7 +257,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
         previous: previousHealth.connectionQuality,
         current: health.connectionQuality,
         health: this.connectionHealth,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       });
     }
 
@@ -262,7 +266,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       console.warn('⚠️ Too many failed pings, triggering reconnection');
       this.emit('health_degraded', {
         health: this.connectionHealth,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       });
     }
   }
@@ -270,7 +274,9 @@ export class WebSocketReconnectionManager extends EventEmitter {
   /**
    * Calculate connection quality based on latency
    */
-  private calculateConnectionQuality(latency: number): ConnectionHealth['connectionQuality'] {
+  private calculateConnectionQuality(
+    latency: number,
+  ): ConnectionHealth['connectionQuality'] {
     if (latency === 0) return 'disconnected';
     if (latency <= 50) return 'excellent';
     if (latency <= 150) return 'good';
@@ -289,7 +295,9 @@ export class WebSocketReconnectionManager extends EventEmitter {
    */
   public getAverageLatency(): number {
     if (this.pingHistory.length === 0) return 0;
-    return this.pingHistory.reduce((a, b) => a + b, 0) / this.pingHistory.length;
+    return (
+      this.pingHistory.reduce((a, b) => a + b, 0) / this.pingHistory.length
+    );
   }
 
   /**
@@ -306,7 +314,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       latency: 0,
       lastPing: 0,
       failedPings: 0,
-      connectionQuality: 'disconnected'
+      connectionQuality: 'disconnected',
     };
   }
 
@@ -321,7 +329,7 @@ export class WebSocketReconnectionManager extends EventEmitter {
       lastReconnectAttempt: this.lastReconnectAttempt,
       connectionHealth: this.connectionHealth,
       averageLatency: this.getAverageLatency(),
-      pingHistory: [...this.pingHistory]
+      pingHistory: [...this.pingHistory],
     };
   }
 
@@ -337,20 +345,24 @@ export class WebSocketReconnectionManager extends EventEmitter {
    */
   public static getNetworkQuality(): 'excellent' | 'good' | 'poor' | 'unknown' {
     if (typeof navigator === 'undefined') return 'unknown';
-    
+
     // Check if we have connection info
     if ('connection' in navigator) {
       const connection = (navigator as any).connection;
       if (connection.effectiveType) {
         switch (connection.effectiveType) {
-          case '4g': return 'excellent';
-          case '3g': return 'good';
-          case '2g': return 'poor';
-          default: return 'unknown';
+          case '4g':
+            return 'excellent';
+          case '3g':
+            return 'good';
+          case '2g':
+            return 'poor';
+          default:
+            return 'unknown';
         }
       }
     }
-    
+
     return 'unknown';
   }
 }
@@ -361,7 +373,9 @@ let globalReconnectionManager: WebSocketReconnectionManager | null = null;
 /**
  * Get or create global reconnection manager
  */
-export function getGlobalReconnectionManager(config?: Partial<ReconnectionConfig>): WebSocketReconnectionManager {
+export function getGlobalReconnectionManager(
+  config?: Partial<ReconnectionConfig>,
+): WebSocketReconnectionManager {
   if (!globalReconnectionManager) {
     globalReconnectionManager = new WebSocketReconnectionManager(config);
   }
@@ -376,4 +390,4 @@ export function resetGlobalReconnectionManager(): void {
     globalReconnectionManager.reset();
     globalReconnectionManager = null;
   }
-} 
+}

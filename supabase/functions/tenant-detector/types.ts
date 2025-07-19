@@ -1,4 +1,3 @@
-
 export interface TenantInfo {
   id: string;
   brand_name: string;
@@ -14,7 +13,6 @@ export interface TenantInfo {
   };
   is_active: boolean;
 }
-;
 export interface TenantResponse {
   tenant: TenantInfo | null;
   error?: string;

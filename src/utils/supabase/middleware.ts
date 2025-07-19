@@ -3,7 +3,7 @@ export const middleware = {
   // Placeholder implementation
   init: () => {
     console.log('middleware initialized');
-  }
+  },
 };
 
 export default middleware;

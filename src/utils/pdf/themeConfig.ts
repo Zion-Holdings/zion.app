@@ -3,7 +3,7 @@ export const themeConfig = {
   // Placeholder implementation
   init: () => {
     console.log('themeConfig initialized');
-  }
+  },
 };
 
 export default themeConfig;

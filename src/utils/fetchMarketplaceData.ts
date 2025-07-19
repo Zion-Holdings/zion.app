@@ -3,7 +3,7 @@ export const fetchMarketplaceData = {
   // Placeholder implementation
   init: () => {
     console.log('fetchMarketplaceData initialized');
-  }
+  },
 };
 
 export default fetchMarketplaceData;

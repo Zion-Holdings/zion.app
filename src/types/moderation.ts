@@ -3,7 +3,7 @@ export const moderation = {
   // Placeholder implementation
   init: () => {
     console.log('moderation initialized');
-  }
+  },
 };
 
 export default moderation;

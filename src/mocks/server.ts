@@ -3,7 +3,7 @@ export const server = {
   // Placeholder implementation
   init: () => {
     console.log('server initialized');
-  }
+  },
 };
 
 export default server;

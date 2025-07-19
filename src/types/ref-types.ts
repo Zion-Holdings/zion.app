@@ -3,7 +3,7 @@ export const reftypes = {
   // Placeholder implementation
   init: () => {
     console.log('reftypes initialized');
-  }
+  },
 };
 
 export default reftypes;

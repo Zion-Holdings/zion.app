@@ -1,4 +1,3 @@
- ;
 const vi = {
   fn: jest.fn,
   mock: jest.mock,

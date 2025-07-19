@@ -3,7 +3,7 @@ export const publicRoutes = {
   // Placeholder implementation
   init: () => {
     console.log('publicRoutes initialized');
-  }
+  },
 };
 
 export default publicRoutes;

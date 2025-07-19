@@ -3,7 +3,7 @@ export const referrals = {
   // Placeholder implementation
   init: () => {
     console.log('referrals initialized');
-  }
+  },
 };
 
 export default referrals;

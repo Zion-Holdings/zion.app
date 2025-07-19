@@ -3,7 +3,7 @@ export const disputes = {
   // Placeholder implementation
   init: () => {
     console.log('disputes initialized');
-  }
+  },
 };
 
 export default disputes;

@@ -2,57 +2,25 @@
   "compilerOptions": {
     "target": "ES2024",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2024",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.Iterable"
-    ],
+    "lib": ["ES2024", "DOM", "DOM.Iterable", "WebWorker", "WebWorker.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "importHelpers": false,
     "noEmitHelpers": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/pages/*": [
-        "./src/pages/*",
-        "./pages/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/api/*": [
-        "./src/api/*"
-      ],
-      "@/types/*": [
-        "./src/types/*",
-        "./types/*"
-      ],
-      "@/utils/*": [
-        "./src/utils/*"
-      ],
-      "@/hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@/context/*": [
-        "./src/context/*"
-      ],
-      "@/services/*": [
-        "./src/services/*"
-      ],
-      "react-router-dom": [
-        "./src/stubs/react-router-dom.tsx"
-      ],
-      "next-cloudinary": [
-        "./types/next-cloudinary.d.ts"
-      ],
-      "types/*": [
-        "./types/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/types/*": ["./src/types/*", "./types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/context/*": ["./src/context/*"],
+      "@/services/*": ["./src/services/*"],
+      "react-router-dom": ["./src/stubs/react-router-dom.tsx"],
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"],
+      "types/*": ["./types/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -69,13 +37,8 @@
     "noImplicitReturns": true,
     "allowJs": true,
     "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["node"],
     "jsx": "preserve",
     "allowImportingTsExtensions": true,
     "noEmit": true,

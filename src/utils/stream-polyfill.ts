@@ -3,7 +3,7 @@ export const streampolyfill = {
   // Placeholder implementation
   init: () => {
     console.log('streampolyfill initialized');
-  }
+  },
 };
 
 export default streampolyfill;

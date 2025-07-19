@@ -3,7 +3,7 @@ export const community = {
   // Placeholder implementation
   init: () => {
     console.log('community initialized');
-  }
+  },
 };
 
 export default community;

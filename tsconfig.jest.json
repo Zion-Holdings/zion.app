@@ -32,7 +32,8 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [ // Broad include for tests, can be refined by Jest's testMatch
+  "include": [
+    // Broad include for tests, can be refined by Jest's testMatch
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.js",

@@ -3,7 +3,7 @@ export const advancedLogCollector = {
   // Placeholder implementation
   init: () => {
     console.log('advancedLogCollector initialized');
-  }
+  },
 };
 
 export default advancedLogCollector;

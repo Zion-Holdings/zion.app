@@ -3,7 +3,7 @@ export const apihelpers = {
   // Placeholder implementation
   init: () => {
     console.log('apihelpers initialized');
-  }
+  },
 };
 
 export default apihelpers;

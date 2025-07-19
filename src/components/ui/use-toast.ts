@@ -3,7 +3,7 @@ export const usetoast = {
   // Placeholder implementation
   init: () => {
     console.log('usetoast initialized');
-  }
+  },
 };
 
 export default usetoast;

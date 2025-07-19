@@ -3,7 +3,7 @@ export const ziongpt = {
   // Placeholder implementation
   init: () => {
     console.log('ziongpt initialized');
-  }
+  },
 };
 
 export default ziongpt;

@@ -4,7 +4,6 @@
 
 // Simplified logger functions - using proper structured logging
 function logInfo(message, ...args) {
-   
   // console.log(`[INFO] ${message}`, ...args);
 }
 
@@ -17,11 +16,23 @@ function isPlaceholderValue(value) {
   if (!value) return true;
 
   const placeholderPatterns = [
-    'placeholder', 'your_', 'example', 'test_key', 'change_me',
-    'replace_with', 'insert_', 'add_your', 'enter_your',
-    'your-tenant.us.auth0.com', 'your_auth0_', 'auth0_client_id_here',
-    'auth0_client_secret_here', 'auth0_secret_here', 'dummy',
-    'https_dummy', 'https_example'
+    'placeholder',
+    'your_',
+    'example',
+    'test_key',
+    'change_me',
+    'replace_with',
+    'insert_',
+    'add_your',
+    'enter_your',
+    'your-tenant.us.auth0.com',
+    'your_auth0_',
+    'auth0_client_id_here',
+    'auth0_client_secret_here',
+    'auth0_secret_here',
+    'dummy',
+    'https_dummy',
+    'https_example',
   ];
 
   const lowerValue = value.toLowerCase();
@@ -34,7 +45,7 @@ function isPlaceholderValue(value) {
     return false; // Real JWT token
   }
 
-  return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
+  return placeholderPatterns.some((pattern) => lowerValue.includes(pattern));
 }
 
 // Simplified getEnvironmentConfig function
@@ -43,14 +54,23 @@ function getEnvironmentConfig() {
   const isDevelopment = nodeEnv === 'development';
   const isProduction = nodeEnv === 'production';
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
+  const supabaseUrl =
+    process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    'https://gnwtggeptzkqnduuthto.supabase.co';
+  const supabaseAnonKey =
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
 
   const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
-  const supabaseConfigured = !!supabaseUrl && !!supabaseAnonKey && !urlIsPlaceholder && !anonKeyIsPlaceholder;
+  const supabaseConfigured =
+    !!supabaseUrl &&
+    !!supabaseAnonKey &&
+    !urlIsPlaceholder &&
+    !anonKeyIsPlaceholder;
 
-  const sentryDsn = process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN;
+  const sentryDsn =
+    process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN;
   const sentryConfigured = !isPlaceholderValue(sentryDsn);
 
   const reownProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
@@ -66,7 +86,7 @@ function getEnvironmentConfig() {
     supabase: {
       isConfigured: supabaseConfigured,
       url: supabaseUrl, // For logging purposes
-      anonKey: supabaseAnonKey // For logging purposes
+      anonKey: supabaseAnonKey, // For logging purposes
     },
     sentry: { isConfigured: sentryConfigured },
     reown: { isConfigured: reownConfigured },
@@ -75,8 +95,8 @@ function getEnvironmentConfig() {
     app: {
       isDevelopment,
       isProduction,
-      environment: nodeEnv
-    }
+      environment: nodeEnv,
+    },
   };
 }
 
@@ -92,19 +112,29 @@ function validateProductionEnvironment() {
   // logInfo('Supabase URL placeholder:', isPlaceholderValue(config.supabase.url));
   // logInfo('Supabase Key placeholder:', isPlaceholderValue(config.supabase.anonKey));
 
-
   if (!config.app.isProduction) {
     const warnings = [];
-    if (!config.supabase.isConfigured) warnings.push('Supabase is not configured - using placeholder values');
-    if (!config.sentry.isConfigured) warnings.push('Sentry is not configured - error monitoring disabled');
-    if (!config.reown.isConfigured) warnings.push('Reown wallet is not configured - wallet features disabled');
-    if (!config.datadog.enabled) warnings.push('Datadog logging is not configured');
+    if (!config.supabase.isConfigured)
+      warnings.push('Supabase is not configured - using placeholder values');
+    if (!config.sentry.isConfigured)
+      warnings.push('Sentry is not configured - error monitoring disabled');
+    if (!config.reown.isConfigured)
+      warnings.push(
+        'Reown wallet is not configured - wallet features disabled',
+      );
+    if (!config.datadog.enabled)
+      warnings.push('Datadog logging is not configured');
     if (!config.logRocket.enabled) warnings.push('LogRocket is not configured');
 
     if (warnings.length > 0) {
-      logWarn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+      logWarn(
+        '⚠️ Development Environment Warnings:\n' +
+          warnings.map((w) => `  • ${w}`).join('\n'),
+      );
     } else {
-      logInfo('✅ Development environment configuration looks good (based on available fallbacks).');
+      logInfo(
+        '✅ Development environment configuration looks good (based on available fallbacks).',
+      );
     }
     return;
   }
@@ -113,10 +143,14 @@ function validateProductionEnvironment() {
   const warnings = [];
 
   if (!config.supabase.isConfigured) {
-    errors.push('Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
+    errors.push(
+      'Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)',
+    );
   }
   if (!config.sentry.isConfigured) {
-    warnings.push('NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled');
+    warnings.push(
+      'NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled',
+    );
   }
   if (!config.datadog.enabled) {
     warnings.push('Datadog logging not configured - advanced logging disabled');
@@ -126,7 +160,9 @@ function validateProductionEnvironment() {
   }
 
   if (errors.length > 0) {
-    const errorMessage = 'Production Environment Configuration Errors:\n' + errors.map(e => `  • ${e}`).join('\n');
+    const errorMessage =
+      'Production Environment Configuration Errors:\n' +
+      errors.map((e) => `  • ${e}`).join('\n');
     // Mimicking the original script's throw
     const error = new Error(errorMessage);
     logWarn('⚠️ Environment validation warning:'); // As per original script's catch block
@@ -134,11 +170,15 @@ function validateProductionEnvironment() {
     // Not actually throwing to prevent script halt, just logging
     // throw error;
   } else {
-     logInfo('✅ Production environment configuration has no critical errors.');
+    logInfo('✅ Production environment configuration has no critical errors.');
   }
 
-  if (warnings.length > 0 && errors.length === 0) { // only show warnings if no critical errors
-    logWarn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+  if (warnings.length > 0 && errors.length === 0) {
+    // only show warnings if no critical errors
+    logWarn(
+      '⚠️ Production Environment Warnings:\n' +
+        warnings.map((w) => `  • ${w}`).join('\n'),
+    );
   }
 }
 
@@ -147,8 +187,9 @@ try {
   validateProductionEnvironment();
   // The original script has a success message here, but validateProductionEnvironment already logs sufficiently.
   // For consistency with the original script's output structure:
-  if (process.env.NODE_ENV !== 'production') { // Assuming default to dev if not set
-     // logInfo('✅ Environment configuration looks good.'); // This might be redundant
+  if (process.env.NODE_ENV !== 'production') {
+    // Assuming default to dev if not set
+    // logInfo('✅ Environment configuration looks good.'); // This might be redundant
   }
 } catch (_err) {
   // This catch is if validateProductionEnvironment itself throws an unhandled error,

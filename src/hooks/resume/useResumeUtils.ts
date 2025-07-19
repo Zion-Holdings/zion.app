@@ -3,7 +3,7 @@ export const useResumeUtils = {
   // Placeholder implementation
   init: () => {
     console.log('useResumeUtils initialized');
-  }
+  },
 };
 
 export default useResumeUtils;

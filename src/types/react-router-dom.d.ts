@@ -3,7 +3,7 @@ export const reactrouterdomd = {
   // Placeholder implementation
   init: () => {
     console.log('reactrouterdomd initialized');
-  }
+  },
 };
 
 export default reactrouterdomd;

@@ -3,7 +3,7 @@ export const resume = {
   // Placeholder implementation
   init: () => {
     console.log('resume initialized');
-  }
+  },
 };
 
 export default resume;

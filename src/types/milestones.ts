@@ -3,7 +3,7 @@ export const milestones = {
   // Placeholder implementation
   init: () => {
     console.log('milestones initialized');
-  }
+  },
 };
 
 export default milestones;

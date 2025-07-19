@@ -3,7 +3,7 @@ export const generateTraceId = {
   // Placeholder implementation
   init: () => {
     console.log('generateTraceId initialized');
-  }
+  },
 };
 
 export default generateTraceId;

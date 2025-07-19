@@ -3,7 +3,7 @@ export const jestd = {
   // Placeholder implementation
   init: () => {
     console.log('jestd initialized');
-  }
+  },
 };
 
 export default jestd;

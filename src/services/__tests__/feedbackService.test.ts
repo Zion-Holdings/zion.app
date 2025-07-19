@@ -3,7 +3,7 @@ export const feedbackServicetest = {
   // Placeholder implementation
   init: () => {
     console.log('feedbackServicetest initialized');
-  }
+  },
 };
 
 export default feedbackServicetest;

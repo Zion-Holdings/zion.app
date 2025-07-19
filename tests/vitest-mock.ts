@@ -8,7 +8,6 @@ export const vi = {
     // @ts-expect-error: dynamic global property assignment - TypeScript doesn't allow dynamic global object key assignment'    global[key] = value;
   },
 };
-;
 export const describe = (global as any).describe;
 export const it = (global as any).it;
 export const test = (global as any).test;

@@ -3,7 +3,7 @@ export const importmetaenvd = {
   // Placeholder implementation
   init: () => {
     console.log('importmetaenvd initialized');
-  }
+  },
 };
 
 export default importmetaenvd;

@@ -3,7 +3,7 @@ export const eventspolyfill = {
   // Placeholder implementation
   init: () => {
     console.log('eventspolyfill initialized');
-  }
+  },
 };
 
 export default eventspolyfill;

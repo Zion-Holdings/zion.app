@@ -4,4 +4,3 @@ export function mockFetch(response: any, status = 200) {
     json: () => Promise.resolve(response),
   });
 }
-

@@ -1,4 +1,3 @@
- 
 interface Buffer {
   // Buffer interface for Node.js compatibility
   readonly length: number;
@@ -23,4 +22,6 @@ declare namespace NodeJS {
 
 declare const process: NodeJS.Process;
 
-declare const Buffer: typeof globalThis extends { Buffer: infer B } ? B : unknown;
+declare const Buffer: typeof globalThis extends { Buffer: infer B }
+  ? B
+  : unknown;

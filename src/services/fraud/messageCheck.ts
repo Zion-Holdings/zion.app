@@ -3,7 +3,7 @@ export const messageCheck = {
   // Placeholder implementation
   init: () => {
     console.log('messageCheck initialized');
-  }
+  },
 };
 
 export default messageCheck;
