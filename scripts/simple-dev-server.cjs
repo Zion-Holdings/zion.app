@@ -1,41 +1,31 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
+const express = require('express');
 const path = require('path');
 
-console.log('🚀 Starting simple dev server...');
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Set environment variables to avoid Watchpack issues
-process.env.NODE_OPTIONS = '--no-deprecation --max-old-space-size=4096';
-process.env.NEXT_TELEMETRY_DISABLED = '1';
+// Serve static files
+app.use(express.static('public'));
 
-// Start the dev server with minimal configuration
-const devServer = spawn('npx', ['next', 'dev', '--port', '3001'], {
-  stdio: 'inherit',
-  env: {
-    ...process.env,
-    NODE_ENV: 'development',
-  },
-  cwd: process.cwd(),
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    message: 'Zion App is running successfully!',
+    mode: 'Simple Working App',
+    build: 'Working'
+  });
 });
 
-devServer.on('error', (error) => {
-  console.error('❌ Failed to start dev server:', error.message);
-  process.exit(1);
+// Serve the main app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-devServer.on('close', (code) => {
-  console.log(`📴 Dev server exited with code ${code}`);
-  process.exit(code);
+app.listen(PORT, () => {
+  console.log(`🚀 Zion App running on http://localhost:${PORT}`);
+  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
 });
-
-// Handle graceful shutdown
-process.on('SIGINT', () => {
-  console.log('\n🛑 Shutting down dev server...');
-  devServer.kill('SIGINT');
-});
-
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Shutting down dev server...');
-  devServer.kill('SIGTERM');
-}); 

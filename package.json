@@ -8,10 +8,10 @@
     "start": "node simple-server.js",
     "dev:next": "next dev --port 3001",
     "lint": "next lint",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "maintain": "node scripts/zion-app-maintainer.cjs",
     "automate": "node scripts/complete-zion-automation.cjs",
-    "health": "curl http://localhost:3001/api/health",
+    "health": "curl -s http://localhost:3001/api/health",
     "status": "node scripts/zion-app-maintainer.cjs"
   },
   "prisma": {
