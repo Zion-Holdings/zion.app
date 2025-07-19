@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/simple-dev-server.cjs",
+    "dev": "next dev --port 3001",
     "build": "next build",
-    "start": "node simple-server.js",
+    "start": "next start --port 3001",
     "dev:next": "next dev --port 3001",
     "lint": "next lint",
     "test": "jest --passWithNoTests",
     "maintain": "node scripts/zion-app-maintainer.cjs",
     "automate": "node scripts/complete-zion-automation.cjs",
     "health": "curl -s http://localhost:3001/api/health",
-    "status": "node scripts/zion-app-maintainer.cjs"
+    "status": "node scripts/zion-app-maintainer.cjs",
+    "continuous": "node scripts/continuous-development.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
