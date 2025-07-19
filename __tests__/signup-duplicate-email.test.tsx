@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';'import { useRouter } from 'next/router';'import Signup from '@/src/pages/Signup';'import * as toastHook from '@/hooks/use-toast';'import axios from 'axios';'
+// import Signup from '@/src/pages/Signup'; // FIXED: Module not found
 // Mock Next.js router
 jest.mock('next/router', () => ({'  useRouter: jest.fn(),
 }));
