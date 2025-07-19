@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node simple-server.js",
+    "dev": "node scripts/simple-dev-server.cjs",
     "build": "next build",
-    "start": "node simple-server.js",
+    "start": "node scripts/simple-dev-server.cjs",
+    "dev:next": "next dev --port 3001",
     "lint": "next lint",
     "test": "jest",
     "maintain": "node scripts/zion-app-maintainer.cjs",
