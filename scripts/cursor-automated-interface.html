@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Automated Communication Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .status-indicator.online {
+            background: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.offline {
+            background: #f44336;
+        }
+
+        .status-indicator.warning {
+            background: #FF9800;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .metric:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .chat-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        .chat-section h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        input[type="text"], textarea {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-btn {
+            padding: 0.75rem;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .quick-btn:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .improvements-panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+
+        .improvements-panel h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .improvement-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .improvement-item {
+            padding: 0.75rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: #f9f9f9;
+        }
+
+        .improvement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .improvement-type {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .improvement-description {
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .logs-panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+
+        .logs-panel h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .logs {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .log-entry {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            padding: 0.25rem;
+            border-radius: 4px;
+        }
+
+        .log-info { color: #2196F3; }
+        .log-success { color: #4CAF50; }
+        .log-warning { color: #FF9800; }
+        .log-error { color: #f44336; }
+
+        .computers-panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+
+        .computers-panel h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .computer-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .computer-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: #f9f9f9;
+        }
+
+        .computer-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .computer-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF50;
+        }
+
+        .computer-info {
+            flex: 1;
+        }
+
+        .computer-name {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .computer-details {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tab:hover {
+            background: #f5f5f5;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Cursor Automated Communication</h1>
+            <p>Continuous app improvement across all connected computers</p>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <h3>
+                    <div class="status-indicator" id="mainStatusIndicator"></div>
+                    System Status
+                </h3>
+                <div class="metric">
+                    <span class="metric-label">Connection</span>
+                    <span class="metric-value" id="connectionStatus">Checking...</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Computer ID</span>
+                    <span class="metric-value" id="computerId">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Uptime</span>
+                    <span class="metric-value" id="uptime">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Cursor Processes</span>
+                    <span class="metric-value" id="cursorProcesses">-</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>📊 Performance</h3>
+                <div class="metric">
+                    <span class="metric-label">Memory Usage</span>
+                    <span class="metric-value" id="memoryUsage">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">CPU Usage</span>
+                    <span class="metric-value" id="cpuUsage">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Active Projects</span>
+                    <span class="metric-value" id="activeProjects">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Improvement Queue</span>
+                    <span class="metric-value" id="improvementQueue">-</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>🔄 Multi-Computer Sync</h3>
+                <div class="metric">
+                    <span class="metric-label">Connected Computers</span>
+                    <span class="metric-value" id="connectedComputers">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Sync Status</span>
+                    <span class="metric-value" id="syncStatus">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Last Sync</span>
+                    <span class="metric-value" id="lastSync">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Total Improvements</span>
+                    <span class="metric-value" id="totalImprovements">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="chat-section">
+                <div class="tabs">
+                    <div class="tab active" onclick="switchTab('chat')">💬 Chat</div>
+                    <div class="tab" onclick="switchTab('automation')">🤖 Automation</div>
+                    <div class="tab" onclick="switchTab('analytics')">📈 Analytics</div>
+                </div>
+
+                <div class="tab-content active" id="chat-tab">
+                    <h2>AI Communication</h2>
+                    <form class="chat-form" id="chatForm">
+                        <textarea id="messageInput" placeholder="Describe what you want to improve or ask the AI assistant..." required></textarea>
+                        <div class="input-group">
+                            <button type="submit" id="sendBtn">Send Message</button>
+                            <button type="button" onclick="clearChat()">Clear</button>
+                        </div>
+                    </form>
+
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="sendQuickMessage('build')">🔨 Build Project</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('optimize')">⚡ Optimize Code</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('test')">🧪 Run Tests</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('deploy')">🚀 Deploy</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('analyze')">🔍 Analyze Code</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('fix')">🔧 Fix Issues</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('security')">🔒 Security Scan</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('performance')">📊 Performance Check</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="automation-tab">
+                    <h2>Automated Improvements</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="autoImprovements">0</div>
+                            <div class="stat-label">Auto Improvements</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="autoProgress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="filesProcessed">0</div>
+                            <div class="stat-label">Files Processed</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="filesProgress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="errorsFixed">0</div>
+                            <div class="stat-label">Errors Fixed</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="errorsProgress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="performanceGain">0%</div>
+                            <div class="stat-label">Performance Gain</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="perfProgress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="startAutomation('continuous')">🔄 Start Continuous</button>
+                        <button class="quick-btn" onclick="startAutomation('batch')">📦 Batch Process</button>
+                        <button class="quick-btn" onclick="startAutomation('monitor')">👁️ Monitor Mode</button>
+                        <button class="quick-btn" onclick="stopAutomation()">⏹️ Stop</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="analytics-tab">
+                    <h2>Analytics & Insights</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="codeQuality">85%</div>
+                            <div class="stat-label">Code Quality</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="testCoverage">78%</div>
+                            <div class="stat-label">Test Coverage</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="securityScore">92%</div>
+                            <div class="stat-label">Security Score</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="maintainability">88%</div>
+                            <div class="stat-label">Maintainability</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="generateReport()">📊 Generate Report</button>
+                        <button class="quick-btn" onclick="exportData()">📤 Export Data</button>
+                        <button class="quick-btn" onclick="compareVersions()">📈 Compare</button>
+                        <button class="quick-btn" onclick="optimizeMetrics()">🎯 Optimize</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="improvements-panel">
+                    <h3>🔄 Recent Improvements</h3>
+                    <div class="improvement-list" id="improvementList">
+                        <div class="improvement-item">
+                            <div class="improvement-type">File Analysis</div>
+                            <div class="improvement-description">Analyzing src/components/Button.tsx</div>
+                        </div>
+                        <div class="improvement-item">
+                            <div class="improvement-type">Performance</div>
+                            <div class="improvement-description">Optimizing bundle size</div>
+                        </div>
+                        <div class="improvement-item">
+                            <div class="improvement-type">Security</div>
+                            <div class="improvement-description">Scanning for vulnerabilities</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="computers-panel">
+                    <h3>🖥️ Connected Computers</h3>
+                    <div class="computer-list" id="computerList">
+                        <div class="computer-item">
+                            <div class="computer-status"></div>
+                            <div class="computer-info">
+                                <div class="computer-name">MacBook-Pro.local</div>
+                                <div class="computer-details">macOS • 2 projects</div>
+                            </div>
+                        </div>
+                        <div class="computer-item">
+                            <div class="computer-status"></div>
+                            <div class="computer-info">
+                                <div class="computer-name">Dev-Workstation</div>
+                                <div class="computer-details">Linux • 5 projects</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logs-panel">
+                    <h3>📝 System Logs</h3>
+                    <div class="logs" id="logs">
+                        <div class="log-entry log-info">System initialized...</div>
+                        <div class="log-entry log-success">Connected to AI server</div>
+                        <div class="log-entry log-info">Monitoring file changes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3008';
+        const COORDINATION_BASE = 'http://localhost:3010';
+        let statusCheckInterval;
+        let syncInterval;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            checkStatus();
+            statusCheckInterval = setInterval(checkStatus, 5000);
+            syncInterval = setInterval(syncWithOtherComputers, 10000);
+        });
+
+        // Check system status
+        async function checkStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/status`);
+                const data = await response.json();
+                
+                updateStatus(data.status === 'running');
+                updateSystemInfo(data);
+                addLog('System status checked', 'info');
+            } catch (error) {
+                updateStatus(false);
+                addLog('Connection failed: ' + error.message, 'error');
+            }
+        }
+
+        // Update status indicator
+        function updateStatus(isOnline) {
+            const indicator = document.getElementById('mainStatusIndicator');
+            const statusText = document.getElementById('connectionStatus');
+            
+            if (isOnline) {
+                indicator.className = 'status-indicator online';
+                statusText.textContent = 'Connected';
+            } else {
+                indicator.className = 'status-indicator offline';
+                statusText.textContent = 'Disconnected';
+            }
+        }
+
+        // Update system information
+        function updateSystemInfo(data) {
+            document.getElementById('computerId').textContent = data.computerId || '-';
+            document.getElementById('uptime').textContent = formatUptime(data.uptime || 0);
+            document.getElementById('cursorProcesses').textContent = data.cursorProcesses?.length || 0;
+            document.getElementById('activeProjects').textContent = data.activeProjects || 0;
+            document.getElementById('improvementQueue').textContent = data.improvementQueue || 0;
+            
+            // Update performance metrics
+            if (data.memory) {
+                const memoryMB = Math.round(data.memory.heapUsed / 1024 / 1024);
+                document.getElementById('memoryUsage').textContent = `${memoryMB} MB`;
+            }
+            
+            if (data.cpu) {
+                const cpuPercent = Math.round((data.cpu.user + data.cpu.system) / 1000);
+                document.getElementById('cpuUsage').textContent = `${cpuPercent}%`;
+            }
+        }
+
+        // Format uptime
+        function formatUptime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            return `${hours}h ${minutes}m`;
+        }
+
+        // Send message
+        async function sendMessage(message) {
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'sent') {
+                    addLog(`Message sent: ${message.substring(0, 50)}...`, 'success');
+                } else {
+                    addLog(`Failed to send message: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                addLog('Failed to send message: ' + error.message, 'error');
+            }
+        }
+
+        // Send quick message
+        function sendQuickMessage(type) {
+            const messages = {
+                'build': 'Please help build the project and fix any issues',
+                'optimize': 'Please analyze and optimize the codebase for better performance',
+                'test': 'Please run all tests and report any issues',
+                'deploy': 'Please help deploy the project to production',
+                'analyze': 'Please perform a comprehensive code analysis',
+                'fix': 'Please identify and fix any issues in the codebase',
+                'security': 'Please perform a security scan and fix vulnerabilities',
+                'performance': 'Please analyze performance bottlenecks and optimize'
+            };
+            
+            const message = messages[type] || type;
+            sendMessage(message);
+        }
+
+        // Switch tabs
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Automation functions
+        function startAutomation(type) {
+            const automationMessages = {
+                'continuous': 'Start continuous automated improvement mode',
+                'batch': 'Start batch processing of all files',
+                'monitor': 'Start monitoring mode for real-time improvements'
+            };
+            
+            const message = automationMessages[type] || type;
+            sendMessage(message);
+            addLog(`Started ${type} automation`, 'info');
+        }
+
+        function stopAutomation() {
+            sendMessage('Stop all automated processes');
+            addLog('Stopped automation', 'warning');
+        }
+
+        // Analytics functions
+        function generateReport() {
+            sendMessage('Generate a comprehensive analytics report');
+            addLog('Generating analytics report', 'info');
+        }
+
+        function exportData() {
+            sendMessage('Export all analytics and improvement data');
+            addLog('Exporting data', 'info');
+        }
+
+        function compareVersions() {
+            sendMessage('Compare current version with previous versions');
+            addLog('Comparing versions', 'info');
+        }
+
+        function optimizeMetrics() {
+            sendMessage('Optimize all performance and quality metrics');
+            addLog('Optimizing metrics', 'info');
+        }
+
+        // Sync with other computers
+        async function syncWithOtherComputers() {
+            try {
+                const response = await fetch(`${COORDINATION_BASE}/sync`);
+                const data = await response.json();
+                
+                updateConnectedComputers(data);
+                updateSyncStatus(data);
+                
+            } catch (error) {
+                addLog('Sync failed: ' + error.message, 'error');
+            }
+        }
+
+        function updateConnectedComputers(data) {
+            // Update connected computers count
+            document.getElementById('connectedComputers').textContent = data.connectedComputers || 1;
+            document.getElementById('totalImprovements').textContent = data.totalImprovements || 0;
+        }
+
+        function updateSyncStatus(data) {
+            document.getElementById('syncStatus').textContent = 'Synced';
+            document.getElementById('lastSync').textContent = new Date().toLocaleTimeString();
+        }
+
+        // Clear chat
+        function clearChat() {
+            document.getElementById('messageInput').value = '';
+        }
+
+        // Add log entry
+        function addLog(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logs.appendChild(entry);
+            logs.scrollTop = logs.scrollHeight;
+            
+            // Keep only last 50 log entries
+            while (logs.children.length > 50) {
+                logs.removeChild(logs.firstChild);
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('chatForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                sendMessage(message);
+                input.value = '';
+            }
+        });
+
+        // Handle Enter key
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                document.getElementById('sendBtn').click();
+            }
+        });
+
+        // Simulate real-time updates
+        setInterval(() => {
+            // Update improvement queue
+            const queueCount = Math.floor(Math.random() * 10);
+            document.getElementById('improvementQueue').textContent = queueCount;
+            
+            // Update automation stats
+            if (Math.random() > 0.7) {
+                const autoCount = parseInt(document.getElementById('autoImprovements').textContent) + 1;
+                document.getElementById('autoImprovements').textContent = autoCount;
+                document.getElementById('autoProgress').style.width = `${Math.min(autoCount * 2, 100)}%`;
+            }
+            
+            // Update files processed
+            if (Math.random() > 0.8) {
+                const filesCount = parseInt(document.getElementById('filesProcessed').textContent) + 1;
+                document.getElementById('filesProcessed').textContent = filesCount;
+                document.getElementById('filesProgress').style.width = `${Math.min(filesCount * 5, 100)}%`;
+            }
+            
+            // Update errors fixed
+            if (Math.random() > 0.9) {
+                const errorsCount = parseInt(document.getElementById('errorsFixed').textContent) + 1;
+                document.getElementById('errorsFixed').textContent = errorsCount;
+                document.getElementById('errorsProgress').style.width = `${Math.min(errorsCount * 10, 100)}%`;
+            }
+            
+        }, 3000);
+    </script>
+</body>
+</html> 
