@@ -1,6 +1,6 @@
 [build]
-  # Use self-healing build command
-  command = "npm run netlify:heal && npm run build:netlify:prepare"
+  # Use standard Next.js build command
+  command = "npm run build"
   # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
   # because no exported directory exists. Explicitly publish the `.next`
   # directory so the plugin can run correctly.
