@@ -1,2 +1,9 @@
-// useScrollToTop.ts - placeholder;
-export const placeholder = 'placeholder';'
+// useScrollToTop.ts - Module under construction
+export const useScrollToTop = {
+  // Placeholder implementation
+  init: () => {
+    console.log('useScrollToTop initialized');
+  }
+};
+
+export default useScrollToTop;

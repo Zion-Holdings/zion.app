@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function switch() {
+import React from 'react';
+
+export default function Switch() {
   return (
     <div>
-      <h1>switch</h1>
-      <p>Component placeholder</p>
+      <h1>Switch</h1>
+      <p>This component is under construction.</p>
     </div>
   );
 }

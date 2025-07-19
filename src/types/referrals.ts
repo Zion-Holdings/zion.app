@@ -1,2 +1,9 @@
-// referrals.ts - placeholder;
-export const placeholder = 'placeholder';'
+// referrals.ts - Module under construction
+export const referrals = {
+  // Placeholder implementation
+  init: () => {
+    console.log('referrals initialized');
+  }
+};
+
+export default referrals;

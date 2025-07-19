@@ -1,8 +1,10 @@
-import React from 'react';';
+import React from 'react';
+
 export default function Signup() {
   return (
-    <div style={{ padding: '20px' }}>'      <h1>Signup Page</h1>
-      <p>Signup page content</p>
+    <div>
+      <h1>Signup</h1>
+      <p>This component is under construction.</p>
     </div>
   );
 }

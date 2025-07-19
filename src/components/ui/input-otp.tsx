@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function input-otp() {
+import React from 'react';
+
+export default function inputotp() {
   return (
     <div>
       <h1>input-otp</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

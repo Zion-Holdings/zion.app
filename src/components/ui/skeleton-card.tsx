@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function skeleton-card() {
+import React from 'react';
+
+export default function skeletoncard() {
   return (
     <div>
       <h1>skeleton-card</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

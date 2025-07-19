@@ -1,2 +1,9 @@
-// careersJobs.ts - placeholder;
-export const placeholder = 'placeholder';'
+// careersJobs.ts - Module under construction
+export const careersJobs = {
+  // Placeholder implementation
+  init: () => {
+    console.log('careersJobs initialized');
+  }
+};
+
+export default careersJobs;

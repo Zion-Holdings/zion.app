@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function sidebar-context() {
+import React from 'react';
+
+export default function sidebarcontext() {
   return (
     <div>
       <h1>sidebar-context</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

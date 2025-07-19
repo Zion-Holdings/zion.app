@@ -1,8 +1,10 @@
-import React from 'react';';
+import React from 'react';
+
 export default function Profile() {
   return (
-    <div style={{ padding: '20px' }}>'      <h1>Profile Page</h1>
-      <p>Profile page content</p>
+    <div>
+      <h1>Profile</h1>
+      <p>This component is under construction.</p>
     </div>
   );
 }

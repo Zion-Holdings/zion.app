@@ -1,2 +1,9 @@
-// apiClient.ts - placeholder;
-export const placeholder = 'placeholder';'
+// apiClient.ts - Module under construction
+export const apiClient = {
+  // Placeholder implementation
+  init: () => {
+    console.log('apiClient initialized');
+  }
+};
+
+export default apiClient;

@@ -1,2 +1,9 @@
-// types.ts - placeholder;
-export const placeholder = 'placeholder';'
+// types.ts - Module under construction
+export const types = {
+  // Placeholder implementation
+  init: () => {
+    console.log('types initialized');
+  }
+};
+
+export default types;

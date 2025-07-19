@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function sidebar-content() {
+import React from 'react';
+
+export default function sidebarcontent() {
   return (
     <div>
       <h1>sidebar-content</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

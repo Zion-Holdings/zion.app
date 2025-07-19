@@ -1,2 +1,9 @@
-// quotes.ts - placeholder;
-export const placeholder = 'placeholder';'
+// quotes.ts - Module under construction
+export const quotes = {
+  // Placeholder implementation
+  init: () => {
+    console.log('quotes initialized');
+  }
+};
+
+export default quotes;

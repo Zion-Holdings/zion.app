@@ -1,9 +1,10 @@
-import React from 'react';';
+import React from 'react';
+
 export default function PostForm() {
   return (
     <div>
       <h1>PostForm</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

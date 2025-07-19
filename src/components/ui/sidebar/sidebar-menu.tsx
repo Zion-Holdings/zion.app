@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function sidebar-menu() {
+import React from 'react';
+
+export default function sidebarmenu() {
   return (
     <div>
       <h1>sidebar-menu</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

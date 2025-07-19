@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function enhanced-loading-states() {
+import React from 'react';
+
+export default function enhancedloadingstates() {
   return (
     <div>
       <h1>enhanced-loading-states</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

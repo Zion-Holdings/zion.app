@@ -1,2 +1,9 @@
-// TermsOfService.d.ts - placeholder;
-export const placeholder = 'placeholder';'
+// TermsOfService.d.ts - Module under construction
+export const TermsOfServiced = {
+  // Placeholder implementation
+  init: () => {
+    console.log('TermsOfServiced initialized');
+  }
+};
+
+export default TermsOfServiced;

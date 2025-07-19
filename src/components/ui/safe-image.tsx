@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function safe-image() {
+import React from 'react';
+
+export default function safeimage() {
   return (
     <div>
       <h1>safe-image</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

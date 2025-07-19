@@ -1,9 +1,10 @@
-import React from 'react';';
-export default function AvatarMenu.test() {
+import React from 'react';
+
+export default function AvatarMenutest() {
   return (
     <div>
       <h1>AvatarMenu.test</h1>
-      <p>Component placeholder</p>
+      <p>This component is under construction.</p>
     </div>
   );
 }

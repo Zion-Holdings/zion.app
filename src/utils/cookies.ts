@@ -1,2 +1,9 @@
-// cookies.ts - placeholder;
-export const placeholder = 'placeholder';'
+// cookies.ts - Module under construction
+export const cookies = {
+  // Placeholder implementation
+  init: () => {
+    console.log('cookies initialized');
+  }
+};
+
+export default cookies;
