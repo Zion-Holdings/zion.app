@@ -34,6 +34,8 @@
     "chat:status": "node scripts/automated-chat-reconnection.cjs status",
     "chat:install": "node scripts/automated-chat-reconnection.cjs install",
     "chat:web": "open http://localhost:3009",
+    "chat:monitor": "node scripts/chat-reconnection-monitor.js start",
+    "chat:report": "node scripts/chat-reconnection-monitor.js report",
     "analyze": "ANALYZE=true npm run build"
   },
   "prisma": {

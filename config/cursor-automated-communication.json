@@ -1,0 +1,47 @@
+{
+  "computerId": "Miami2.local_miami2_1753011966",
+  "serverUrl": "https://api.cursor.sh",
+  "localPort": 3008,
+  "masterPort": 3009,
+  "coordinationPort": 3010,
+  "enableHeartbeat": true,
+  "enableAutoReconnect": true,
+  "enableActivityMonitoring": true,
+  "enableFileWatching": true,
+  "enableBuildMonitoring": true,
+  "enableCursorIntegration": true,
+  "enableMultiComputerSync": true,
+  "enableContinuousImprovement": true,
+  "enableAutoCommit": true,
+  "enablePerformanceMonitoring": true,
+  "enableErrorTracking": true,
+  "enableCodeAnalysis": true,
+  "watchPaths": [
+    "src",
+    "pages",
+    "components",
+    "utils",
+    "scripts",
+    "public",
+    "styles",
+    "tests"
+  ],
+  "excludePaths": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    "coverage",
+    "logs"
+  ],
+  "improvementTypes": [
+    "file_change",
+    "file_analysis",
+    "error_detection",
+    "performance_issue",
+    "security_scan",
+    "code_quality",
+    "test_coverage",
+    "build_optimization"
+  ]
+}
