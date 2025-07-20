@@ -36,6 +36,8 @@
     "chat:web": "open http://localhost:3009",
     "chat:monitor": "node scripts/chat-reconnection-monitor.js start",
     "chat:report": "node scripts/chat-reconnection-monitor.js report",
+    "chat:optimize": "node scripts/chat-reconnection-optimizer.js optimize",
+    "chat:cleanup": "node scripts/chat-reconnection-optimizer.js cleanup",
     "analyze": "ANALYZE=true npm run build"
   },
   "prisma": {

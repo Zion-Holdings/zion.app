@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-interface UseWebSocketOptions {
+type WebSocketOptions = {
   url: string;
   onMessage?: (data: any) => void;
   onOpen?: () => void;
@@ -8,7 +8,7 @@ interface UseWebSocketOptions {
   onError?: (error: Event) => void;
   reconnectInterval?: number;
   maxReconnectAttempts?: number;
-}
+};
 
 export function useWebSocket({
   url,
@@ -18,7 +18,7 @@ export function useWebSocket({
   onError,
   reconnectInterval = 3000,
   maxReconnectAttempts = 5
-}: UseWebSocketOptions) {
+}: WebSocketOptions) {
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
@@ -50,7 +50,6 @@ export function useWebSocket({
         setIsConnected(false);
         onClose?.();
         
-        // Attempt to reconnect
         if (reconnectAttemptsRef.current < maxReconnectAttempts) {
           reconnectAttemptsRef.current++;
           reconnectTimeoutRef.current = setTimeout(connect, reconnectInterval);
@@ -78,7 +77,7 @@ export function useWebSocket({
     }
     
     setIsConnected(false);
-    reconnectAttemptsRef.current = maxReconnectAttempts; // Prevent reconnection
+    reconnectAttemptsRef.current = maxReconnectAttempts;
   }, [maxReconnectAttempts]);
 
   const sendMessage = useCallback((data: any) => {
