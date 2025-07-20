@@ -26,14 +26,7 @@
     "styles",
     "tests"
   ],
-  "excludePaths": [
-    "node_modules",
-    ".git",
-    "dist",
-    "build",
-    "coverage",
-    "logs"
-  ],
+  "excludePaths": ["node_modules", ".git", "dist", "build", "coverage", "logs"],
   "improvementTypes": [
     "file_change",
     "file_analysis",
