@@ -1,57 +1,57 @@
 {
-  "name": "optimization-automation",
+  "name": "netlify-build-automation",
   "version": "1.0.0",
-  "description": "Slack and Cursor agents optimization automation system",
-  "main": "index.js",
-  "bin": {
-    "optimization-automation": "./index.js"
-  },
+  "description": "Automated Netlify build monitoring and error fixing system",
+  "main": "netlify-build-automation.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "health": "curl http://localhost:3001/health",
-    "status": "curl http://localhost:3001/slack-status",
-    "logs": "tail -f ../logs/automation.log",
-    "test-slack": "node tests/test-slack-connection.js",
-    "test-cursor": "node tests/test-cursor-connection.js",
-    "test-monitoring": "node tests/test-performance-monitoring.js",
-    "diagnose": "node tests/system-diagnostic.js"
-  },
-  "dependencies": {
-    "@slack/bolt": "^3.17.1",
-    "@slack/web-api": "^7.0.4",
-    "axios": "^1.6.0",
-    "express": "^4.18.2",
-    "dotenv": "^16.3.1",
-    "cors": "^2.8.5",
-    "helmet": "^7.1.0",
-    "compression": "^1.7.4",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.3",
-    "eslint": "^8.50.0",
-    "prettier": "^3.0.3"
+    "start": "next start --port 3002",
+    "stop": "node netlify-build-automation.js stop",
+    "cycle": "node netlify-build-automation.js cycle",
+    "check": "node netlify-build-automation.js check",
+    "report": "node netlify-build-automation.js report",
+    "status": "node netlify-build-automation.js status",
+    "monitor": "node netlify-monitor.js start",
+    "fix": "node netlify-error-fixer.js fix",
+    "fix-all": "node netlify-error-fixer.js fix all",
+    "prebuild": "node netlify-error-fixer.js fix dependency-error typescript-error eslint-error",
+    "postbuild": "node netlify-monitor.js check",
+    "setup": "npm install && node setup-automation.js",
+    "test": "node test-automation.js",
+    "logs": "tail -f netlify-automation.log",
+    "clean": "rm -f *.log *.json && echo 'Cleaned automation logs and status files'",
+    "dev": "next dev --port 3002"
   },
   "keywords": [
-    "slack",
-    "cursor",
+    "netlify",
+    "build",
     "automation",
-    "performance",
-    "optimization",
-    "ai-agents",
-    "monitoring"
+    "monitoring",
+    "error-fixing",
+    "ci-cd"
   ],
-  "author": "Optimization Team",
+  "author": "Zion App Team",
   "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "ora": "^7.0.1",
+    "table": "^6.8.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  },
   "engines": {
-    "node": ">=18.0.0"
-  }
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/bolt.new.zion.app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/bolt.new.zion.app/issues"
+  },
+  "homepage": "https://github.com/your-org/bolt.new.zion.app#readme"
 }

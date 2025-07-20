@@ -1,41 +1,41 @@
 {
-  "timestamp": "2025-07-20T12:49:33.041Z",
+  "timestamp": "2025-07-20T22:19:35.762Z",
   "status": "NEEDS_ATTENTION",
   "summary": {
-    "improvements": 4,
-    "issues": 5,
+    "improvements": 3,
+    "issues": 6,
     "totalChecks": 9
   },
   "improvements": [
-    "Server status: Running",
     "Simple server file: Present",
     "Package.json: Valid",
     "Cleaned 2 artifacts"
   ],
   "issues": [
-    "Health check failed: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+    "Server not running",
+    "Health check failed: Command failed: curl -s http://localhost:3001/api/health",
     "Dependency check failed: Unexpected non-whitespace character after JSON at position 233 (line 10 column 1)",
     "Large project size",
-    "8 large files",
+    "9 large files",
     "Large node_modules"
   ],
   "logs": [
-    "[2025-07-20T12:49:25.666Z] [INFO] 🚀 Starting Zion App Maintenance...",
-    "[2025-07-20T12:49:25.671Z] [INFO] 🔍 Checking current app status...",
-    "[2025-07-20T12:49:25.707Z] [INFO] ✅ Simple server is running",
-    "[2025-07-20T12:49:25.708Z] [INFO] ✅ Simple server file exists",
-    "[2025-07-20T12:49:25.708Z] [INFO] ✅ Package.json is valid",
-    "[2025-07-20T12:49:25.708Z] [INFO] 🏥 Performing health check...",
-    "[2025-07-20T12:49:25.733Z] [ERROR] ❌ Health check failed: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
-    "[2025-07-20T12:49:25.734Z] [INFO] 🧹 Cleaning up artifacts...",
-    "[2025-07-20T12:49:25.906Z] [INFO] ✅ Cleaned 2 artifacts",
-    "[2025-07-20T12:49:25.907Z] [INFO] 📦 Checking dependencies...",
-    "[2025-07-20T12:49:30.529Z] [ERROR] ❌ Error checking dependencies: Unexpected non-whitespace character after JSON at position 233 (line 10 column 1)",
-    "[2025-07-20T12:49:30.530Z] [INFO] ⚡ Optimizing performance...",
-    "[2025-07-20T12:49:32.292Z] [INFO] 📁 Total project size: 868 MB",
-    "[2025-07-20T12:49:32.292Z] [WARN] ⚠️ Large project size detected",
-    "[2025-07-20T12:49:32.292Z] [WARN] ⚠️ Found 8 large files",
-    "[2025-07-20T12:49:33.040Z] [WARN] ⚠️ Large node_modules detected",
-    "[2025-07-20T12:49:33.041Z] [INFO] 📋 Generating maintenance report..."
+    "[2025-07-20T22:19:24.135Z] [INFO] 🚀 Starting Zion App Maintenance...",
+    "[2025-07-20T22:19:24.141Z] [INFO] 🔍 Checking current app status...",
+    "[2025-07-20T22:19:24.171Z] [WARN] ⚠️ Simple server is not running",
+    "[2025-07-20T22:19:24.171Z] [INFO] ✅ Simple server file exists",
+    "[2025-07-20T22:19:24.172Z] [INFO] ✅ Package.json is valid",
+    "[2025-07-20T22:19:24.172Z] [INFO] 🏥 Performing health check...",
+    "[2025-07-20T22:19:24.195Z] [ERROR] ❌ Health check failed: Command failed: curl -s http://localhost:3001/api/health",
+    "[2025-07-20T22:19:24.195Z] [INFO] 🧹 Cleaning up artifacts...",
+    "[2025-07-20T22:19:24.351Z] [INFO] ✅ Cleaned 2 artifacts",
+    "[2025-07-20T22:19:24.352Z] [INFO] 📦 Checking dependencies...",
+    "[2025-07-20T22:19:32.578Z] [ERROR] ❌ Error checking dependencies: Unexpected non-whitespace character after JSON at position 233 (line 10 column 1)",
+    "[2025-07-20T22:19:32.578Z] [INFO] ⚡ Optimizing performance...",
+    "[2025-07-20T22:19:34.797Z] [INFO] 📁 Total project size: 915 MB",
+    "[2025-07-20T22:19:34.798Z] [WARN] ⚠️ Large project size detected",
+    "[2025-07-20T22:19:34.798Z] [WARN] ⚠️ Found 9 large files",
+    "[2025-07-20T22:19:35.762Z] [WARN] ⚠️ Large node_modules detected",
+    "[2025-07-20T22:19:35.762Z] [INFO] 📋 Generating maintenance report..."
   ]
 }
