@@ -10,7 +10,7 @@
 - Server status: Running
 - Simple server file: Present
 - Package.json: Valid
-- Cleaned 1 artifacts
+- Cleaned 2 artifacts
 
 ## ⚠️ Issues
 

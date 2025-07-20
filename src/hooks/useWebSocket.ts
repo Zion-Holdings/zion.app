@@ -31,10 +31,15 @@ export function useWebSocket(options: any) {
       ws.onclose = () => {
         setIsConnected(false);
         options.onClose?.();
-        
-        if (reconnectAttemptsRef.current < (options.maxReconnectAttempts || 5)) {
+
+        if (
+          reconnectAttemptsRef.current < (options.maxReconnectAttempts || 5)
+        ) {
           reconnectAttemptsRef.current++;
-          reconnectTimeoutRef.current = setTimeout(connect, options.reconnectInterval || 3000);
+          reconnectTimeoutRef.current = setTimeout(
+            connect,
+            options.reconnectInterval || 3000,
+          );
         }
       };
 
@@ -52,25 +57,30 @@ export function useWebSocket(options: any) {
       clearTimeout(reconnectTimeoutRef.current);
       reconnectTimeoutRef.current = null;
     }
-    
+
     if (wsRef.current) {
       wsRef.current.close();
       wsRef.current = null;
     }
-    
+
     setIsConnected(false);
     reconnectAttemptsRef.current = options.maxReconnectAttempts || 5;
   }, [options.maxReconnectAttempts]);
 
-  const sendMessage = useCallback((data: any) => {
-    if (wsRef.current && isConnected) {
-      wsRef.current.send(typeof data === 'string' ? data : JSON.stringify(data));
-    }
-  }, [isConnected]);
+  const sendMessage = useCallback(
+    (data: any) => {
+      if (wsRef.current && isConnected) {
+        wsRef.current.send(
+          typeof data === 'string' ? data : JSON.stringify(data),
+        );
+      }
+    },
+    [isConnected],
+  );
 
   useEffect(() => {
     connect();
-    
+
     return () => {
       disconnect();
     };
@@ -81,6 +91,6 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect
+    connect,
   };
 }
