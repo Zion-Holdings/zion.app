@@ -75,16 +75,16 @@ create_cron_jobs() {
 
 # Zion App Automation Jobs - Runs every 30 minutes
 # Generated on $(date)
-*/30 * * * * cd "$PROJECT_PATH" && npm run maintain >> "$PROJECT_PATH/logs/cron-maintain.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm run automate >> "$PROJECT_PATH/logs/cron-automate.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm run typecheck >> "$PROJECT_PATH/logs/cron-typecheck.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm run lint:fix >> "$PROJECT_PATH/logs/cron-lint.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm run format >> "$PROJECT_PATH/logs/cron-format.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm audit --audit-level moderate >> "$PROJECT_PATH/logs/cron-audit.log" 2>&1
-*/30 * * * * cd "$PROJECT_PATH" && npm run build >> "$PROJECT_PATH/logs/cron-build.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run maintain >> "$PROJECT_PATH/logs/cron-maintain.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run automate >> "$PROJECT_PATH/logs/cron-automate.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run typecheck >> "$PROJECT_PATH/logs/cron-typecheck.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run lint:fix >> "$PROJECT_PATH/logs/cron-lint.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run format >> "$PROJECT_PATH/logs/cron-format.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm audit --audit-level moderate >> "$PROJECT_PATH/logs/cron-audit.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/npm run build >> "$PROJECT_PATH/logs/cron-build.log" 2>&1
 
 # Master automation scheduler - Runs every 30 minutes
-*/30 * * * * cd "$PROJECT_PATH" && node scripts/master-automation-scheduler.cjs >> "$PROJECT_PATH/logs/cron-master-scheduler.log" 2>&1
+*/30 * * * * cd "$PROJECT_PATH" && /usr/local/bin/node scripts/master-automation-scheduler.cjs >> "$PROJECT_PATH/logs/cron-master-scheduler.log" 2>&1
 
 # Health check - Runs every 5 minutes
 */5 * * * * cd "$PROJECT_PATH" && curl -s http://localhost:3001/api/health >> "$PROJECT_PATH/logs/cron-health.log" 2>&1 || echo "Health check failed at \$(date)" >> "$PROJECT_PATH/logs/cron-health.log"
