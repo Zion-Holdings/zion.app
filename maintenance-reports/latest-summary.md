@@ -9,7 +9,7 @@
 - Server status: Running
 - Simple server file: Present
 - Package.json: Valid
-- Cleaned 2 artifacts
+- Cleaned 1 artifacts
 
 ## ⚠️ Issues
 - Health check failed: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
