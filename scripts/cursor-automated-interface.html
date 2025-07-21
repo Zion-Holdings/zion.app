@@ -1034,6 +1034,83 @@
             `${Math.min(errorsCount * 10, 100)}%`;
         }
       }, 3000);
+
+      // --- Chat Tab Management Automation ---
+      let chatTabs = {};
+      let activeChatTab = null;
+
+      // WebSocket connection for chat events
+      let websocket = null;
+      function connectWebSocket() {
+        websocket = new WebSocket('ws://localhost:3009');
+        websocket.onmessage = function (event) {
+          const data = JSON.parse(event.data);
+          if (data.type === 'chat_trigger') {
+            openChatTab(data.chatId, data.message, data.category);
+          } else if (data.type === 'chat_close') {
+            closeChatTab(data.chatId);
+          }
+        };
+      }
+      connectWebSocket();
+
+      function openChatTab(chatId, message, category) {
+        if (!chatTabs[chatId]) {
+          // Create new tab element
+          const tabBar = document.querySelector('.tabs');
+          const tab = document.createElement('div');
+          tab.className = 'tab';
+          tab.textContent = `💬 ${category || 'Chat'}: ${message.substring(0, 12)}...`;
+          tab.onclick = () => switchToChatTab(chatId);
+          tab.dataset.chatId = chatId;
+          tabBar.appendChild(tab);
+
+          // Create chat content
+          const chatContent = document.createElement('div');
+          chatContent.className = 'tab-content';
+          chatContent.id = `chat-tab-${chatId}`;
+          chatContent.innerHTML = `<h2>Chat: ${category || 'General'}</h2><div class='chat-messages' id='chat-messages-${chatId}'></div>`;
+          document.querySelector('.main-content').appendChild(chatContent);
+
+          chatTabs[chatId] = { tab, chatContent };
+        }
+        switchToChatTab(chatId);
+      }
+
+      function switchToChatTab(chatId) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach((content) => {
+          content.classList.remove('active');
+        });
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab').forEach((tab) => {
+          tab.classList.remove('active');
+        });
+        // Show selected tab content
+        if (chatTabs[chatId]) {
+          chatTabs[chatId].chatContent.classList.add('active');
+          chatTabs[chatId].tab.classList.add('active');
+          activeChatTab = chatId;
+        }
+      }
+
+      function closeChatTab(chatId) {
+        if (chatTabs[chatId]) {
+          chatTabs[chatId].tab.remove();
+          chatTabs[chatId].chatContent.remove();
+          delete chatTabs[chatId];
+          // Switch to another tab if any
+          const remainingIds = Object.keys(chatTabs);
+          if (remainingIds.length > 0) {
+            switchToChatTab(remainingIds[0]);
+          } else {
+            // Fallback to main chat tab
+            document.getElementById('chat-tab').classList.add('active');
+            document.querySelector('.tab').classList.add('active');
+            activeChatTab = null;
+          }
+        }
+      }
     </script>
   </body>
 </html>

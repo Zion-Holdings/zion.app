@@ -752,6 +752,7 @@ class AutomatedChatReconnection {
     // Store chat request
     const chatRequest = {
       id: crypto.randomUUID(),
+      chatId: crypto.randomUUID(), // Add unique chatId for tab management
       ...chatData,
       timestamp: Date.now(),
       computerId: this.computerId,
@@ -767,6 +768,24 @@ class AutomatedChatReconnection {
     await this.sendToCursor(chatRequest);
 
     return chatRequest;
+  }
+
+  // Emit chat_close event when a job is completed
+  closeChat(chatId) {
+    this.broadcastChatMessage({
+      type: 'chat_close',
+      chatId,
+      timestamp: Date.now(),
+      computerId: this.computerId,
+    });
+  }
+
+  // Example: Call closeChat when a job is completed (pseudo-hook)
+  // In real logic, hook this into job/task completion
+  onJobCompleted(job) {
+    if (job.chatId) {
+      this.closeChat(job.chatId);
+    }
   }
 
   async sendToCursor(chatRequest) {
