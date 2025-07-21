@@ -457,9 +457,26 @@ async function main() {
       break;
 
     case 'status':
-      const stats = automation.getStats();
-      console.log('📊 Cursor Chat Automation Status:');
-      console.log(JSON.stringify(stats, null, 2));
+      try {
+        const statusData = await fs.readFile(automation.config.statusFile, 'utf8');
+        const status = JSON.parse(statusData);
+        console.log('📊 Cursor Chat Automation Status:');
+        console.log(JSON.stringify(status, null, 2));
+      } catch (error) {
+        console.log('📊 Cursor Chat Automation Status:');
+        console.log(JSON.stringify({
+          totalConnections: 0,
+          successfulReconnections: 0,
+          failedReconnections: 0,
+          totalUptime: 0,
+          lastDisconnect: null,
+          messagesSent: 0,
+          messagesReceived: 0,
+          uptime: "0s",
+          isConnected: false,
+          reconnectAttempts: 0
+        }, null, 2));
+      }
       break;
 
     case 'logs':
