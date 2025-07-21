@@ -53,7 +53,11 @@
     "netlify:setup": "cd automation && npm run setup",
     "netlify:test": "cd automation && npm test",
     "netlify:logs": "cd automation && npm run logs",
-    "netlify:clean": "cd automation && npm run clean"
+    "netlify:clean": "cd automation && npm run clean",
+    "cursor-chat:start": "node scripts/cursor-chat-automation.js start",
+    "cursor-chat:stop": "node scripts/cursor-chat-automation.js stop",
+    "cursor-chat:status": "node scripts/cursor-chat-automation.js status",
+    "cursor-chat:logs": "node scripts/cursor-chat-automation.js logs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
