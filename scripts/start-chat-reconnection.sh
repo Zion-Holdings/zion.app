@@ -147,6 +147,31 @@ install_dependencies() {
     fi
 }
 
+# Start the auto-improvement engine
+start_auto_improvement() {
+    AUTO_IMPROVEMENT_SCRIPT="$SCRIPT_DIR/auto-improvement-engine.js"
+    AUTO_IMPROVEMENT_LOG="$PROJECT_DIR/logs/auto-improvement-engine.log"
+    AUTO_IMPROVEMENT_PID_FILE="$PROJECT_DIR/logs/auto-improvement-engine.pid"
+    if [ -f "$AUTO_IMPROVEMENT_PID_FILE" ]; then
+        PID=$(cat "$AUTO_IMPROVEMENT_PID_FILE")
+        if ps -p "$PID" > /dev/null 2>&1; then
+            log_warn "Auto-improvement engine already running with PID: $PID"
+            return
+        else
+            rm -f "$AUTO_IMPROVEMENT_PID_FILE"
+        fi
+    fi
+    if [ -f "$AUTO_IMPROVEMENT_SCRIPT" ]; then
+        log "🚀 Starting Auto-Improvement Engine..."
+        nohup node "$AUTO_IMPROVEMENT_SCRIPT" > "$AUTO_IMPROVEMENT_LOG" 2>&1 &
+        echo $! > "$AUTO_IMPROVEMENT_PID_FILE"
+        log "✅ Auto-Improvement Engine started with PID: $(cat $AUTO_IMPROVEMENT_PID_FILE)"
+        log "📊 Log file: $AUTO_IMPROVEMENT_LOG"
+    else
+        log_warn "Auto-Improvement Engine script not found: $AUTO_IMPROVEMENT_SCRIPT"
+    fi
+}
+
 # Start the system
 start_system() {
     log "🚀 Starting Automated Chat Reconnection System..."
@@ -175,6 +200,8 @@ start_system() {
         rm -f "$PID_FILE"
         exit 1
     fi
+    # Start auto-improvement engine
+    start_auto_improvement
 }
 
 # Show status
