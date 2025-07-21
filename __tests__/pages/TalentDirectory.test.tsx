@@ -4,21 +4,39 @@ import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import TalentDirectory from '@/src/pages/TalentDirectory';
 
 // Mock child components and hooks
-jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: (_props: any) => <div data-testid="filter-sidebar">Filter Sidebar</div> }));
+jest.mock('@/components/talent/FilterSidebar', () => ({
+  FilterSidebar: (_props: any) => (
+    <div data-testid="filter-sidebar">Filter Sidebar</div>
+  ),
+}));
 jest.mock('@/components/talent/TalentResults', () => ({
   TalentResults: (props: any) => (
     <div data-testid="talent-results">
       {props.talents.map((talent: any) => (
-        <div key={talent.id} data-testid="talent-profile-card">{talent.name}</div>
+        <div key={talent.id} data-testid="talent-profile-card">
+          {talent.name}
+        </div>
       ))}
-      {props.totalCount === 0 && !props.isLoading && <div>No results based on filters</div>}
+      {props.totalCount === 0 && !props.isLoading && (
+        <div>No results based on filters</div>
+      )}
     </div>
-  )
+  ),
 }));
-jest.mock('@/components/talent/TalentSkeleton', () => ({ TalentSkeleton: () => <div data-testid="talent-skeleton">Loading...</div> }));
-jest.mock('@/components/talent/ErrorBanner', () => ({ ErrorBanner: (props: any) => <div data-testid="error-banner">{props.msg}</div> }));
+jest.mock('@/components/talent/TalentSkeleton', () => ({
+  TalentSkeleton: () => <div data-testid="talent-skeleton">Loading...</div>,
+}));
+jest.mock('@/components/talent/ErrorBanner', () => ({
+  ErrorBanner: (props: any) => (
+    <div data-testid="error-banner">{props.msg}</div>
+  ),
+}));
 jest.mock('@/components/GlobalErrorBoundary', () => {
-  const MockGlobalErrorBoundary = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+  const MockGlobalErrorBoundary = ({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) => <>{children}</>;
   MockGlobalErrorBoundary.displayName = 'MockGlobalErrorBoundary';
   return { GlobalErrorBoundary: MockGlobalErrorBoundary };
 });
@@ -31,7 +49,7 @@ global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
     json: () => Promise.resolve({ talents: [], total: 0 }),
-  })
+  }),
 ) as jest.Mock;
 
 describe('TalentDirectory Page', () => {
@@ -42,7 +60,7 @@ describe('TalentDirectory Page', () => {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ talents: [], total: 0 }),
-      })
+      }),
     );
   });
 
@@ -50,12 +68,17 @@ describe('TalentDirectory Page', () => {
     render(
       <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouterProvider>
+      </MemoryRouterProvider>,
     );
     await waitFor(() => {
-      expect(screen.getByText(/AI & Tech Talent Directory/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/AI & Tech Talent Directory/i),
+      ).toBeInTheDocument();
     });
-    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/api/talent'), expect.any(Object));
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.stringContaining('/api/talent'),
+      expect.any(Object),
+    );
   });
 
   it('displays talent profiles when API returns data', async () => {
@@ -67,13 +90,13 @@ describe('TalentDirectory Page', () => {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ talents: mockTalents, total: 2 }),
-      })
+      }),
     );
 
     render(
       <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouterProvider>
+      </MemoryRouterProvider>,
     );
 
     await waitFor(() => {
@@ -88,16 +111,18 @@ describe('TalentDirectory Page', () => {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ talents: [], total: 0 }),
-      })
+      }),
     );
     render(
       <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouterProvider>
+      </MemoryRouterProvider>,
     );
 
     await waitFor(() => {
-      expect(screen.getByText(/Talent Directory Currently Empty/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Talent Directory Currently Empty/i),
+      ).toBeInTheDocument();
     });
   });
 
@@ -107,17 +132,19 @@ describe('TalentDirectory Page', () => {
         ok: false,
         statusText: 'Server Error',
         json: () => Promise.resolve({ message: 'Failed to fetch talent' }),
-      })
+      }),
     );
 
     render(
       <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouterProvider>
+      </MemoryRouterProvider>,
     );
 
     await waitFor(() => {
-      expect(screen.getByTestId('error-banner')).toHaveTextContent('Unable to load talent profiles.');
+      expect(screen.getByTestId('error-banner')).toHaveTextContent(
+        'Unable to load talent profiles.',
+      );
     });
   });
 });

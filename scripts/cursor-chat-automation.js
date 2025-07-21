@@ -65,11 +65,9 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async connect() {
+    console.log('DEBUG: Entered connect() method');
     return new Promise((resolve, reject) => {
-      console.log(
-        `🔗 Connecting to Cursor chat server: ${this.config.socketUrl}`,
-      );
-
+      console.log(`DEBUG: Attempting to connect to ${this.config.socketUrl}`);
       this.socket = io(this.config.socketUrl, {
         transports: ['websocket', 'polling'],
         timeout: 10000,
@@ -81,6 +79,7 @@ class CursorChatAutomation extends EventEmitter {
       });
 
       this.socket.on('connect', () => {
+        console.log('DEBUG: Socket.IO connect event fired');
         this.reconnectAttempts = 0;
         this.stats.totalConnections++;
         this.lastHeartbeat = Date.now();
@@ -182,11 +181,13 @@ class CursorChatAutomation extends EventEmitter {
       });
 
       this.socket.on('connect_error', (error) => {
-        console.log(`❌ Connection error: ${error.message}`);
-        this.log(`Connection error: ${error.message}`);
-
+        console.error('DEBUG: Socket.IO connect_error event:', error);
         this.emit('connect_error', error);
         reject(error);
+      });
+
+      this.socket.on('error', (error) => {
+        console.error('DEBUG: Socket.IO error event:', error);
       });
 
       // Set connection timeout

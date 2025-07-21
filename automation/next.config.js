@@ -1,8 +1,7 @@
-
 module.exports = {
   experimental: {
     esmExternals: false,
-    optimizeCss: true
+    optimizeCss: true,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -22,23 +21,23 @@ module.exports = {
         path: false,
       };
     }
-    
+
     // Handle polyfills
     config.resolve.alias = {
       ...config.resolve.alias,
       'react-native$': 'react-native-web',
     };
-    
+
     return config;
   },
   images: {
     domains: ['localhost'],
-    unoptimized: true
+    unoptimized: true,
   },
   typescript: {
-    ignoreBuildErrors: false
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: false
-  }
-}
+    ignoreDuringBuilds: false,
+  },
+};

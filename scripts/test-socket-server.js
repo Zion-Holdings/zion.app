@@ -29,6 +29,10 @@ const activeConnections = new Map();
 io.on('connection', (socket) => {
   console.log(`✅ Client connected: ${socket.id}`);
 
+  socket.on('error', (err) => {
+    console.error(`❌ Socket error for ${socket.id}:`, err);
+  });
+
   // Store connection info
   activeConnections.set(socket.id, {
     id: socket.id,
