@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2025-07-21T15:00:00.882Z",
-  "totalCycles": 2,
+  "lastUpdated": "2025-07-21T23:00:01.089Z",
+  "totalCycles": 1,
   "totalSuccess": 0,
-  "totalErrors": 16,
+  "totalErrors": 8,
   "successRate": "0.00",
-  "lastRun": "2025-07-21T15:00:00.848Z",
-  "nextRun": "2025-07-21T15:00:00.918Z",
+  "lastRun": "2025-07-21T23:00:00.919Z",
+  "nextRun": "2025-07-21T23:30:00.919Z",
   "isRunning": true
 }

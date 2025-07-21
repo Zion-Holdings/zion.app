@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-21T14:59:57.217Z",
+  "timestamp": "2025-07-21T16:29:56.687Z",
   "cycle": 50,
   "automations": [
     {
@@ -13,7 +13,7 @@
     {
       "name": "Complete Zion Automation",
       "success": false,
-      "duration": 4,
+      "duration": 5,
       "output": "",
       "error": "Command failed: npm run automate\n/bin/sh: npm: command not found\n",
       "command": "npm run automate"
@@ -71,6 +71,6 @@
     "total": 8,
     "successful": 0,
     "failed": 8,
-    "duration": 33
+    "duration": 37
   }
 }
