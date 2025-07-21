@@ -5,12 +5,14 @@ A comprehensive automation system that monitors Netlify builds, detects errors, 
 ## 🚀 Features
 
 ### 🔍 Build Monitoring
+
 - **Real-time monitoring** of Netlify builds
 - **Automatic error detection** with detailed analysis
 - **Build history tracking** with performance metrics
 - **Event-driven architecture** for immediate response
 
 ### 🛠️ Automatic Error Fixing
+
 - **Memory errors**: Optimize Node.js memory allocation
 - **Build timeouts**: Increase build timeout and optimize build process
 - **Dependency errors**: Clear cache and reinstall dependencies
@@ -21,6 +23,7 @@ A comprehensive automation system that monitors Netlify builds, detects errors, 
 - **Environment errors**: Set up required environment variables
 
 ### 📊 Reporting & Analytics
+
 - **Real-time status reports** with detailed metrics
 - **Build success/failure tracking**
 - **Fix success rate monitoring**
@@ -28,6 +31,7 @@ A comprehensive automation system that monitors Netlify builds, detects errors, 
 - **Error pattern analysis**
 
 ### 🔄 Automated Workflow
+
 - **Pre-build checks** to prevent issues
 - **Automatic commit and push** of fixes
 - **New build triggering** after fixes
@@ -109,16 +113,16 @@ npm run netlify:test             # Run system tests
 
 ### Error Types and Fixes
 
-| Error Type | Description | Automatic Fix |
-|------------|-------------|---------------|
-| `build-timeout` | Build exceeds timeout limit | Increase timeout, optimize build |
-| `memory-error` | JavaScript heap out of memory | Increase memory allocation |
-| `dependency-error` | Package installation fails | Clear cache, reinstall |
-| `typescript-error` | TypeScript compilation errors | Auto-fix type issues |
-| `eslint-error` | ESLint rule violations | Apply automatic fixes |
-| `nextjs-error` | Next.js build errors | Clear cache, optimize config |
-| `port-conflict` | Port already in use | Kill processes, change port |
-| `environment-error` | Missing environment variables | Set up required vars |
+| Error Type          | Description                   | Automatic Fix                    |
+| ------------------- | ----------------------------- | -------------------------------- |
+| `build-timeout`     | Build exceeds timeout limit   | Increase timeout, optimize build |
+| `memory-error`      | JavaScript heap out of memory | Increase memory allocation       |
+| `dependency-error`  | Package installation fails    | Clear cache, reinstall           |
+| `typescript-error`  | TypeScript compilation errors | Auto-fix type issues             |
+| `eslint-error`      | ESLint rule violations        | Apply automatic fixes            |
+| `nextjs-error`      | Next.js build errors          | Clear cache, optimize config     |
+| `port-conflict`     | Port already in use           | Kill processes, change port      |
+| `environment-error` | Missing environment variables | Set up required vars             |
 
 ## 📊 Monitoring Dashboard
 
@@ -230,12 +234,14 @@ node automation/netlify-build-automation.js check
 The system includes several performance optimizations:
 
 ### Build Optimizations
+
 - **Memory allocation**: Increased to 4GB for large builds
 - **Build timeout**: Extended to 30 minutes
 - **Cache optimization**: Automatic cache clearing and rebuilding
 - **Dependency optimization**: Smart package management
 
 ### Monitoring Optimizations
+
 - **Efficient polling**: Configurable check intervals
 - **Event-driven**: Immediate response to build events
 - **Retry logic**: Smart retry with exponential backoff
@@ -244,11 +250,13 @@ The system includes several performance optimizations:
 ## 🔒 Security
 
 ### Environment Variables
+
 - **Secure storage**: Environment variables for sensitive data
 - **No hardcoding**: All credentials stored in environment
 - **Access control**: Limited API access with specific permissions
 
 ### Error Handling
+
 - **Graceful failures**: System continues running on errors
 - **Error logging**: Comprehensive error tracking
 - **Rollback capability**: Automatic rollback on failed fixes
@@ -258,16 +266,19 @@ The system includes several performance optimizations:
 ### Common Issues
 
 1. **Port Conflict (EADDRINUSE)**
+
    ```bash
    npm run netlify:fix port-conflict
    ```
 
 2. **Memory Errors**
+
    ```bash
    npm run netlify:fix memory-error
    ```
 
 3. **Build Timeouts**
+
    ```bash
    npm run netlify:fix build-timeout
    ```
@@ -406,6 +417,7 @@ MIT License - see LICENSE file for details.
 ## 📞 Contact
 
 For support or questions:
+
 - Create an issue in the repository
 - Check the troubleshooting section
-- Review the logs and reports 
+- Review the logs and reports

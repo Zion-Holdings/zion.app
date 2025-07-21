@@ -19,7 +19,8 @@
     "test": "node test-automation.js",
     "logs": "tail -f netlify-automation.log",
     "clean": "rm -f *.log *.json && echo 'Cleaned automation logs and status files'",
-    "dev": "next dev --port 3002"
+    "dev": "next dev --port 3002",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" next build"
   },
   "keywords": [
     "netlify",

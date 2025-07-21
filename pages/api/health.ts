@@ -6,6 +6,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     environment: process.env.NODE_ENV,
-    port: process.env.PORT || 3002
+    port: process.env.PORT || 3002,
   });
 }
