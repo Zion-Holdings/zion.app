@@ -9,5 +9,5 @@ module.exports = {
     if (Math.random() < 0.3) return null;
     const action = actions[Math.floor(Math.random() * actions.length)];
     return { action, details: { reason: 'Randomly selected for demo' } };
-  }
-}; 
+  },
+};

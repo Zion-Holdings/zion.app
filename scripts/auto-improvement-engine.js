@@ -32,7 +32,14 @@ async function runImprovementCycle(trigger) {
   if (!validation.success) {
     rollbackResult = await Rollback.revert(actionResult);
   }
-  const entry = { timestamp, trigger, analysis, actionResult, validation, rollbackResult };
+  const entry = {
+    timestamp,
+    trigger,
+    analysis,
+    actionResult,
+    validation,
+    rollbackResult,
+  };
   logImprovement(entry);
   return entry;
 }
@@ -51,7 +58,9 @@ app.post('/api/auto-improvement/trigger', async (req, res) => {
 });
 
 app.listen(3011, () => {
-  console.log('🛠️  Auto-Improvement Engine API running on http://localhost:3011');
+  console.log(
+    '🛠️  Auto-Improvement Engine API running on http://localhost:3011',
+  );
 });
 
 // CLI
@@ -64,4 +73,4 @@ if (require.main === module) {
   } else {
     console.log('Usage: node auto-improvement-engine.js [trigger|history]');
   }
-} 
+}

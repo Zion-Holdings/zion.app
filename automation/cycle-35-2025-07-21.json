@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-07-21T09:29:57.790Z",
+  "timestamp": "2025-07-21T12:59:57.714Z",
   "cycle": 35,
   "automations": [
     {
       "name": "Zion App Maintainer",
       "success": false,
-      "duration": 5,
+      "duration": 4,
       "output": "",
       "error": "Command failed: npm run maintain\n/bin/sh: npm: command not found\n",
       "command": "npm run maintain"
@@ -21,7 +21,7 @@
     {
       "name": "TypeScript Check",
       "success": false,
-      "duration": 5,
+      "duration": 4,
       "output": "",
       "error": "Command failed: npm run typecheck\n/bin/sh: npm: command not found\n",
       "command": "npm run typecheck"
@@ -71,6 +71,6 @@
     "total": 8,
     "successful": 0,
     "failed": 8,
-    "duration": 35
+    "duration": 32
   }
 }

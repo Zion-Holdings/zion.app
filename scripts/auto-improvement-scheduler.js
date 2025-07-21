@@ -12,12 +12,15 @@ class Scheduler extends EventEmitter {
       this.emit('trigger', 'cron');
     });
     // Randomized interval (5-15 minutes)
-    setInterval(() => {
-      if (Math.random() > 0.5) {
-        this.emit('trigger', 'random');
-      }
-    }, 1000 * 60 * (5 + Math.random() * 10));
+    setInterval(
+      () => {
+        if (Math.random() > 0.5) {
+          this.emit('trigger', 'random');
+        }
+      },
+      1000 * 60 * (5 + Math.random() * 10),
+    );
   }
 }
 
-module.exports = new Scheduler(); 
+module.exports = new Scheduler();
