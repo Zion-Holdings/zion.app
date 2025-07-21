@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-07-21T12:59:58.978Z",
+  "timestamp": "2025-07-21T13:59:58.587Z",
   "cycle": 24,
   "automations": [
     {
       "name": "Zion App Maintainer",
       "success": false,
-      "duration": 5,
+      "duration": 6,
       "output": "",
       "error": "Command failed: npm run maintain\n/bin/sh: npm: command not found\n",
       "command": "npm run maintain"
@@ -21,7 +21,7 @@
     {
       "name": "TypeScript Check",
       "success": false,
-      "duration": 4,
+      "duration": 5,
       "output": "",
       "error": "Command failed: npm run typecheck\n/bin/sh: npm: command not found\n",
       "command": "npm run typecheck"
@@ -29,7 +29,7 @@
     {
       "name": "Linting Fix",
       "success": false,
-      "duration": 4,
+      "duration": 6,
       "output": "",
       "error": "Command failed: npm run lint:fix\n/bin/sh: npm: command not found\n",
       "command": "npm run lint:fix"
@@ -37,7 +37,7 @@
     {
       "name": "Code Formatting",
       "success": false,
-      "duration": 4,
+      "duration": 5,
       "output": "",
       "error": "Command failed: npm run format\n/bin/sh: npm: command not found\n",
       "command": "npm run format"
@@ -71,6 +71,6 @@
     "total": 8,
     "successful": 0,
     "failed": 8,
-    "duration": 33
+    "duration": 39
   }
 }
