@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Improvement Dashboard</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f9f9f9; }
+    h1 { color: #2a7ae2; }
+    #history { margin-top: 2em; }
+    .entry { background: #fff; margin-bottom: 1em; padding: 1em; border-radius: 8px; box-shadow: 0 1px 4px #0001; }
+    button { background: #2a7ae2; color: #fff; border: none; padding: 0.5em 1em; border-radius: 4px; cursor: pointer; }
+    button:active { background: #185a9d; }
+  </style>
+</head>
+<body>
+  <h1>Automatic Intermittent Improvement Dashboard</h1>
+  <button onclick="triggerImprovement()">Trigger Improvement Now</button>
+  <div id="status"></div>
+  <div id="history"></div>
+  <script>
+    async function fetchHistory() {
+      const res = await fetch('/api/auto-improvement/history');
+      const data = await res.json();
+      const historyDiv = document.getElementById('history');
+      historyDiv.innerHTML = '<h2>Recent Improvements</h2>' + data.reverse().map(e => `
+        <div class="entry">
+          <b>${e.timestamp}</b><br>
+          <b>Trigger:</b> ${e.trigger}<br>
+          <b>Action:</b> ${e.analysis?.action || '-'}<br>
+          <b>Status:</b> ${e.actionResult?.status || '-'}<br>
+          <b>Validation:</b> ${e.validation?.success ? '✅' : '❌'}<br>
+          <b>Rollback:</b> ${e.rollbackResult ? '🔄' : '-'}
+        </div>
+      `).join('');
+    }
+    async function triggerImprovement() {
+      document.getElementById('status').innerText = 'Triggering...';
+      await fetch('/api/auto-improvement/trigger', { method: 'POST' });
+      document.getElementById('status').innerText = 'Improvement triggered!';
+      fetchHistory();
+    }
+    fetchHistory();
+    setInterval(fetchHistory, 10000);
+  </script>
+</body>
+</html> 
