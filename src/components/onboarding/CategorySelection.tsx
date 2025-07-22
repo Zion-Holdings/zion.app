@@ -5,5 +5,5 @@ export default function CategorySelection() {
       <h1>CategorySelection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

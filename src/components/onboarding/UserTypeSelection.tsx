@@ -5,5 +5,5 @@ export default function UserTypeSelection() {
       <h1>UserTypeSelection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

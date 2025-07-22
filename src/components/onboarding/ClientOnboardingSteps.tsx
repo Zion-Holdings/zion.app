@@ -5,5 +5,5 @@ export default function ClientOnboardingSteps() {
       <h1>ClientOnboardingSteps</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

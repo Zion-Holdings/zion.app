@@ -5,5 +5,5 @@ export default function ProfileLoadingState() {
       <h1>ProfileLoadingState</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

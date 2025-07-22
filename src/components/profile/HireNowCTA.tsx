@@ -5,5 +5,5 @@ export default function HireNowCTA() {
       <h1>HireNowCTA</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

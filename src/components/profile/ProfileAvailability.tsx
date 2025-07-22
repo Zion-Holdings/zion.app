@@ -5,5 +5,5 @@ export default function ProfileAvailability() {
       <h1>ProfileAvailability</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

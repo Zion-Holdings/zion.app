@@ -5,5 +5,5 @@ export default function ProfileErrorState() {
       <h1>ProfileErrorState</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

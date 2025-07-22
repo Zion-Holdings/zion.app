@@ -5,5 +5,5 @@ export default function TalentRateRecommender() {
       <h1>TalentRateRecommender</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function InterestSelection() {
       <h1>InterestSelection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

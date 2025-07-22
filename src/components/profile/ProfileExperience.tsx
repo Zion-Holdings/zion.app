@@ -5,5 +5,5 @@ export default function ProfileExperience() {
       <h1>ProfileExperience</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function BackToDirectoryButton() {
       <h1>BackToDirectoryButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

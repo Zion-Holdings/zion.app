@@ -5,5 +5,5 @@ export default function ProfileForm() {
       <h1>ProfileForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

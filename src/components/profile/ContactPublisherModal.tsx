@@ -5,5 +5,5 @@ export default function ContactPublisherModal() {
       <h1>ContactPublisherModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

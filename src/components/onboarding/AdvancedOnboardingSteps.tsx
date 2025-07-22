@@ -5,5 +5,5 @@ export default function AdvancedOnboardingSteps() {
       <h1>AdvancedOnboardingSteps</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

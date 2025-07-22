@@ -5,5 +5,5 @@ export default function OnboardingWizard() {
       <h1>OnboardingWizard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

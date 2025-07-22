@@ -5,5 +5,5 @@ export default function ClientBudgetRecommender() {
       <h1>ClientBudgetRecommender</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

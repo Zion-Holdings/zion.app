@@ -5,5 +5,5 @@ export default function PartnerLeaderboard() {
       <h1>PartnerLeaderboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

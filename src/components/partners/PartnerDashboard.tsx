@@ -5,5 +5,5 @@ export default function PartnerDashboard() {
       <h1>PartnerDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

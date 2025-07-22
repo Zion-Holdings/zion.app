@@ -5,5 +5,5 @@ export default function OrderTimeline() {
       <h1>OrderTimeline</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

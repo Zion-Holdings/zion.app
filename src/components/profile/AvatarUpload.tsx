@@ -5,5 +5,5 @@ export default function AvatarUpload() {
       <h1>AvatarUpload</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
