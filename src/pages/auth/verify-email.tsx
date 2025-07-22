@@ -6,4 +6,4 @@ export default function verify-email() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

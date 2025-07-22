@@ -6,4 +6,4 @@ export default function InstantMessaging() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

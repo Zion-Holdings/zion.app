@@ -6,4 +6,4 @@ export default function payment-success() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
