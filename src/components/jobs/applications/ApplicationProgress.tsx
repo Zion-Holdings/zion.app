@@ -6,4 +6,4 @@ export default function ApplicationProgress() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
