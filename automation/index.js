@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports */
 
-require('dotenv').config();';
-const OptimizationSlackBot = require('./slack/slack-bot');'const PerformanceMonitor = require('./performance/monitor');'const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');'const express = require('express');'const path = require('path');'
+require('dotenv').config();
+const OptimizationSlackBot = require('./slack/slack-bot');
+const PerformanceMonitor = require('./performance/monitor');
+const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');
+const express = require('express');
+const path = require('path');
 class OptimizationAutomation {
   constructor() {
     this.slackBot = new OptimizationSlackBot();
@@ -22,7 +26,9 @@ class OptimizationAutomation {
     
     // CORS and basic middleware
     this.app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');'      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');'      next();
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+      next();
     });
 
     // Request logging
@@ -35,7 +41,8 @@ class OptimizationAutomation {
 
   setupAPIRoutes() {
     // Enhanced automation endpoints
-    this.app.get('/api/automation/status', async (req, res) => {'      try {
+    this.app.get('/api/automation/status', async (req, res) => {
+      try {
         const status = this.enhancedAutomation.getStatus();
         res.json(status);
       } catch (error) {
@@ -44,7 +51,8 @@ class OptimizationAutomation {
       }
     });
 
-    this.app.post('/api/automation/trigger', async (req, res) => {'      try {
+    this.app.post('/api/automation/trigger', async (req, res) => {
+      try {
         const { taskType, data } = req.body;
         
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual automation trigger: ${taskType}\n`);
@@ -66,7 +74,8 @@ class OptimizationAutomation {
       }
     });
 
-    this.app.get('/api/automation/report', async (req, res) => {'      try {
+    this.app.get('/api/automation/report', async (req, res) => {
+      try {
         const report = this.enhancedAutomation.generateReport();
         res.json(report);
       } catch (error) {
@@ -76,18 +85,23 @@ class OptimizationAutomation {
     });
 
     // Slack webhook endpoints
-    this.app.post('/api/slack/events', async (req, res) => {'      try {
+    this.app.post('/api/slack/events', async (req, res) => {
+      try {
         const { type, challenge, event } = req.body;
         
-        if (type === 'url_verification') {'          return res.send(challenge);
+        if (type === 'url_verification') {
+          return res.send(challenge);
         }
         
-        if (type === 'event_callback' && event) {'          await this.handleSlackEvent(event);
+        if (type === 'event_callback' && event) {
+          await this.handleSlackEvent(event);
         }
         
-        res.status(200).send('OK');'      } catch (error) {
+        res.status(200).send('OK');
+      } catch (error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
-        res.status(500).send('Error processing event');'      }
+        res.status(500).send('Error processing event');
+      }
     });
 
     // Manual optimization trigger
