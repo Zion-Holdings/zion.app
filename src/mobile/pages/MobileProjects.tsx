@@ -6,4 +6,4 @@ export default function MobileProjects() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

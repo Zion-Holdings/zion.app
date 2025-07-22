@@ -6,4 +6,4 @@ export default function Account() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

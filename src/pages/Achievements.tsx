@@ -6,4 +6,4 @@ export default function Achievements() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
