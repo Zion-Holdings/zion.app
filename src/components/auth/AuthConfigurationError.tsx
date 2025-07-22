@@ -6,4 +6,4 @@ export default function AuthConfigurationError() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
