@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function WalletDashboard() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function WalletDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
