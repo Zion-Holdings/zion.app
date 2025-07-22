@@ -1,22 +1,9 @@
  M .auto_commit_status
- M scripts/security-monitoring-automation.cjs
- M src/components/video/VideoCallRoom.tsx
- M src/components/wallet/OnChainExport.tsx
- M src/components/wallet/RedeemTokensCard.tsx
- M src/components/wallet/TokenDisplay.tsx
- M src/components/wallet/TransactionHistory.tsx
- M src/context/AnalyticsContext.tsx
- M src/context/CartContext.tsx
- M src/context/CommunityContext.tsx
- M src/context/ErrorContext.tsx
- M src/context/FavoritesContext.tsx
- M src/context/FeedbackContext.tsx
- M src/context/GlobalLoaderContext.tsx
- M src/context/LanguageContext.tsx
- M src/context/MessagingContext.tsx
- M src/context/RequestQuoteWizard.tsx
- M src/context/SnackbarContext.tsx
- M src/context/ThemeContext.tsx
- M src/context/ViewModeContext.tsx
- M src/context/WalletContext.tsx
-?? scripts/ai-powered-feature-discovery.cjs
+ M src/context/WhitelabelContext.tsx
+ M src/context/auth/AuthContext.tsx
+ M src/context/auth/AuthProvider.tsx
+ M src/context/auth/useAuthEventHandlers.tsx
+ M src/context/auth/useAuthState.tsx
+ M src/context/notifications/NotificationContext.tsx
+?? automation/core/TaskScheduler.js
+?? start-autonomous-automation.sh
