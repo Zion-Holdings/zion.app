@@ -5,5 +5,5 @@ export default function UNBridge() {
       <h1>UNBridge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

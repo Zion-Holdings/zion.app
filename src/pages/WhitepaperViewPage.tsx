@@ -5,5 +5,5 @@ export default function WhitepaperViewPage() {
       <h1>WhitepaperViewPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

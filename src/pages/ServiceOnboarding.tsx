@@ -5,5 +5,5 @@ export default function ServiceOnboarding() {
       <h1>ServiceOnboarding</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function UpdatePassword() {
       <h1>UpdatePassword</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function TokenIntegrations() {
       <h1>TokenIntegrations</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

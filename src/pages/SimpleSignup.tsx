@@ -5,5 +5,5 @@ export default function SimpleSignup() {
       <h1>SimpleSignup</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

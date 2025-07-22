@@ -5,5 +5,5 @@ export default function TimeOS() {
       <h1>TimeOS</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

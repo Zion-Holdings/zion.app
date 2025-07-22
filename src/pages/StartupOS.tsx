@@ -5,5 +5,5 @@ export default function StartupOS() {
       <h1>StartupOS</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

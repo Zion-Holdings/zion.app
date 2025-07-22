@@ -5,5 +5,5 @@ export default function Unauthorized() {
       <h1>Unauthorized</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

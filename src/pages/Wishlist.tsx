@@ -5,5 +5,5 @@ export default function Wishlist() {
       <h1>Wishlist</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function TalentOnboarding() {
       <h1>TalentOnboarding</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

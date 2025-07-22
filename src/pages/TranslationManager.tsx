@@ -5,5 +5,5 @@ export default function TranslationManager() {
       <h1>TranslationManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

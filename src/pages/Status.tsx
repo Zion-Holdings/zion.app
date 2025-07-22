@@ -5,5 +5,5 @@ export default function Status() {
       <h1>Status</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

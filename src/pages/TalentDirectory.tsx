@@ -5,5 +5,5 @@ export default function TalentDirectory() {
       <h1>TalentDirectory</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

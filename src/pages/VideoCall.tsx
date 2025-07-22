@@ -5,5 +5,5 @@ export default function VideoCall() {
       <h1>VideoCall</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

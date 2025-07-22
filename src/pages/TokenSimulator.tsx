@@ -5,5 +5,5 @@ export default function TokenSimulator() {
       <h1>TokenSimulator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

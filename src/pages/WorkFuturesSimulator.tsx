@@ -5,5 +5,5 @@ export default function WorkFuturesSimulator() {
       <h1>WorkFuturesSimulator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

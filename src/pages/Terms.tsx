@@ -5,5 +5,5 @@ export default function Terms() {
       <h1>Terms</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

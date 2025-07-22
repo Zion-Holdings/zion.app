@@ -5,5 +5,5 @@ export default function Signup.spec() {
       <h1>Signup.spec</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

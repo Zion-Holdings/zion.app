@@ -5,5 +5,5 @@ export default function WalletDashboard() {
       <h1>WalletDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

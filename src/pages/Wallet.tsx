@@ -5,5 +5,5 @@ export default function Wallet() {
       <h1>Wallet</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Sitemap() {
       <h1>Sitemap</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function WhitepaperGeneratorPage() {
       <h1>WhitepaperGeneratorPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Tutorial() {
       <h1>Tutorial</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
