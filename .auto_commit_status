@@ -1,3 +1,5 @@
  M .auto_commit_status
- M automation/core/TaskScheduler.js
-?? automation/improvement-dashboard.html
+ M automation/core/NotificationManager.js
+ M src/utils/dynamicImports.tsx
+?? INFINITE_IMPROVEMENT_LOOP_README.md
+?? automation/start-infinite-improvement.sh

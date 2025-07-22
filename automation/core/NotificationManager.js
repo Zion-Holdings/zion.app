@@ -1,496 +1,395 @@
-const { EventEmitter } = require('events');
-const https = require('https');
-const http = require('http');
+const EventEmitter = require('events');
+const axios = require('axios');
 
 class NotificationManager extends EventEmitter {
   constructor(config = {}) {
     super();
-    
     this.config = {
-      // Notification channels
-      channels: {
-        slack: {
-          enabled: false,
-          webhookUrl: process.env.SLACK_WEBHOOK_URL,
-          channel: process.env.SLACK_CHANNEL || '#automation',
-          username: 'Automation Bot',
-          icon: ':robot_face:'
-        },
-        email: {
-          enabled: false,
-          smtp: {
-            host: process.env.SMTP_HOST,
-            port: process.env.SMTP_PORT || 587,
-            secure: process.env.SMTP_SECURE === 'true',
-            auth: {
-              user: process.env.SMTP_USER,
-              pass: process.env.SMTP_PASS
-            }
-          },
-          from: process.env.EMAIL_FROM,
-          to: process.env.EMAIL_TO
-        },
-        webhook: {
-          enabled: false,
-          url: process.env.WEBHOOK_URL,
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
+      slack: {
+        webhookUrl: process.env.SLACK_WEBHOOK_URL,
+        channel: process.env.SLACK_CHANNEL || '#automation',
+        username: 'Automation Bot',
+        iconEmoji: ':robot_face:',
+        enabled: true
+      },
+      email: {
+        enabled: false,
+        smtp: {
+          host: process.env.SMTP_HOST,
+          port: process.env.SMTP_PORT,
+          secure: true,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
           }
         },
-        console: {
-          enabled: true
-        }
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_TO?.split(',') || []
       },
-      
-      // Notification levels
-      levels: {
-        debug: 0,
-        info: 1,
-        warning: 2,
-        error: 3,
-        critical: 4
+      webhooks: {
+        enabled: false,
+        urls: process.env.WEBHOOK_URLS?.split(',') || []
       },
-      
-      // Filtering
-      minLevel: 'info',
-      includeSystemInfo: true,
-      
-      // Rate limiting
-      rateLimit: {
-        enabled: true,
-        maxPerHour: 10,
-        maxPerDay: 100
+      rateLimiting: {
+        maxNotificationsPerMinute: 10,
+        maxNotificationsPerHour: 50,
+        cooldownPeriod: 5 * 60 * 1000 // 5 minutes for critical errors
       },
-      
+      priorities: {
+        critical: ['error', 'security', 'system_down'],
+        high: ['warning', 'performance', 'dependency'],
+        medium: ['info', 'success', 'update'],
+        low: ['debug', 'trace']
+      },
       ...config
     };
     
-    // Rate limiting state
-    this.notificationCounts = {
-      hourly: new Map(),
-      daily: new Map()
+    this.notificationHistory = [];
+    this.rateLimitCounters = {
+      minute: { count: 0, resetTime: Date.now() + 60000 },
+      hour: { count: 0, resetTime: Date.now() + 3600000 }
     };
-    
-    // Initialize channels
-    this.initializeChannels();
+    this.cooldownTimers = new Map();
   }
 
-  initializeChannels() {
-    // Validate and initialize each channel
-    for (const [channelName, channelConfig] of Object.entries(this.config.channels)) {
-      if (channelConfig.enabled) {
-        this.validateChannel(channelName, channelConfig);
-      }
-    }
-  }
+  // Send notification with priority and rate limiting
+  async sendNotification(message, options = {}) {
+    const {
+      priority = 'medium',
+      category = 'info',
+      taskName = 'unknown',
+      data = {},
+      force = false
+    } = options;
 
-  validateChannel(channelName, config) {
-    switch (channelName) {
-      case 'slack':
-        if (!config.webhookUrl) {
-          console.warn('⚠️ Slack webhook URL not configured, disabling Slack notifications');
-          config.enabled = false;
-        }
-        break;
-        
-      case 'email':
-        if (!config.smtp.host || !config.smtp.auth.user || !config.smtp.auth.pass) {
-          console.warn('⚠️ Email SMTP configuration incomplete, disabling email notifications');
-          config.enabled = false;
-        }
-        break;
-        
-      case 'webhook':
-        if (!config.url) {
-          console.warn('⚠️ Webhook URL not configured, disabling webhook notifications');
-          config.enabled = false;
-        }
-        break;
-    }
-  }
-
-  async notify(level, title, message, data = {}) {
-    // Check minimum level
-    if (this.config.levels[level] < this.config.levels[this.config.minLevel]) {
-      return;
-    }
-    
-    // Check rate limiting
-    if (this.config.rateLimit.enabled && !this.checkRateLimit(level)) {
-      console.warn('⚠️ Rate limit exceeded, notification suppressed');
-      return;
-    }
-    
-    // Create notification object
     const notification = {
-      level,
-      title,
+      id: this.generateNotificationId(),
+      timestamp: Date.now(),
       message,
+      priority,
+      category,
+      taskName,
       data,
-      timestamp: new Date().toISOString(),
-      systemInfo: this.config.includeSystemInfo ? this.getSystemInfo() : null
+      sent: false
     };
-    
-    // Send to all enabled channels
-    const promises = [];
-    
-    for (const [channelName, channelConfig] of Object.entries(this.config.channels)) {
-      if (channelConfig.enabled) {
-        promises.push(this.sendToChannel(channelName, notification));
+
+    // Check rate limiting
+    if (!force && !this.checkRateLimit()) {
+      console.log('⚠️ Rate limit exceeded, notification queued:', notification.id);
+      this.emit('rateLimited', notification);
+      return false;
+    }
+
+    // Check cooldown for critical errors
+    if (priority === 'critical' && !force) {
+      const cooldownKey = `${category}-${taskName}`;
+      if (this.cooldownTimers.has(cooldownKey)) {
+        console.log('⏳ Cooldown active for critical notification:', cooldownKey);
+        return false;
       }
     }
-    
-    // Wait for all notifications to be sent
+
     try {
-      await Promise.allSettled(promises);
+      const promises = [];
+
+      // Send to Slack
+      if (this.config.slack.enabled && this.config.slack.webhookUrl) {
+        promises.push(this.sendSlackNotification(notification));
+      }
+
+      // Send email
+      if (this.config.email.enabled) {
+        promises.push(this.sendEmailNotification(notification));
+      }
+
+      // Send webhooks
+      if (this.config.webhooks.enabled && this.config.webhooks.urls.length > 0) {
+        promises.push(this.sendWebhookNotifications(notification));
+      }
+
+      const results = await Promise.allSettled(promises);
+      const successCount = results.filter(r => r.status === 'fulfilled').length;
+
+      notification.sent = successCount > 0;
+      notification.results = results;
+
+      // Set cooldown for critical notifications
+      if (priority === 'critical') {
+        const cooldownKey = `${category}-${taskName}`;
+        this.cooldownTimers.set(cooldownKey, Date.now());
+        setTimeout(() => {
+          this.cooldownTimers.delete(cooldownKey);
+        }, this.config.rateLimiting.cooldownPeriod);
+      }
+
+      // Update rate limit counters
+      this.updateRateLimitCounters();
+
+      // Store in history
+      this.notificationHistory.push(notification);
+      if (this.notificationHistory.length > 1000) {
+        this.notificationHistory = this.notificationHistory.slice(-1000);
+      }
+
       this.emit('notificationSent', notification);
+      console.log(`📢 Notification sent (${priority}): ${message.substring(0, 100)}...`);
+
+      return notification.sent;
+
     } catch (error) {
-      console.error('❌ Error sending notifications:', error);
-      this.emit('notificationError', error);
+      console.error('❌ Failed to send notification:', error);
+      notification.error = error.message;
+      this.emit('notificationFailed', { notification, error });
+      return false;
     }
   }
 
-  async sendToChannel(channelName, notification) {
-    try {
-      switch (channelName) {
-        case 'slack':
-          await this.sendToSlack(notification);
-          break;
-        case 'email':
-          await this.sendToEmail(notification);
-          break;
-        case 'webhook':
-          await this.sendToWebhook(notification);
-          break;
-        case 'console':
-          this.sendToConsole(notification);
-          break;
-      }
-    } catch (error) {
-      console.error(`❌ Failed to send notification to ${channelName}:`, error);
-      throw error;
-    }
-  }
-
-  async sendToSlack(notification) {
-    const config = this.config.channels.slack;
+  // Send Slack notification
+  async sendSlackNotification(notification) {
+    const { message, priority, category, taskName, data } = notification;
+    
+    const color = this.getPriorityColor(priority);
+    const emoji = this.getCategoryEmoji(category);
     
     const payload = {
-      channel: config.channel,
-      username: config.username,
-      icon_emoji: config.icon,
+      channel: this.config.slack.channel,
+      username: this.config.slack.username,
+      icon_emoji: this.config.slack.iconEmoji,
       attachments: [{
-        color: this.getSlackColor(notification.level),
-        title: notification.title,
-        text: notification.message,
-        fields: this.formatSlackFields(notification),
-        footer: 'Automation System',
+        color,
+        title: `${emoji} ${category.toUpperCase()}: ${taskName}`,
+        text: message,
+        fields: this.formatSlackFields(data),
+        footer: `Priority: ${priority} | ${new Date().toISOString()}`,
         ts: Math.floor(Date.now() / 1000)
       }]
     };
+
+    const response = await axios.post(this.config.slack.webhookUrl, payload, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    return response.status === 200;
+  }
+
+  // Send email notification
+  async sendEmailNotification(notification) {
+    // This would integrate with a proper email service like nodemailer
+    // For now, we'll just log the email notification
+    console.log('📧 Email notification would be sent:', {
+      to: this.config.email.to,
+      subject: `[${notification.priority.toUpperCase()}] ${notification.category}: ${notification.taskName}`,
+      body: notification.message
+    });
     
-    await this.makeHttpRequest(config.webhookUrl, 'POST', payload);
+    return true; // Simulated success
   }
 
-  getSlackColor(level) {
+  // Send webhook notifications
+  async sendWebhookNotifications(notification) {
+    const promises = this.config.webhooks.urls.map(async (url) => {
+      try {
+        const payload = {
+          ...notification,
+          timestamp: new Date(notification.timestamp).toISOString()
+        };
+
+        const response = await axios.post(url, payload, {
+          timeout: 10000,
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        return response.status >= 200 && response.status < 300;
+      } catch (error) {
+        console.error(`❌ Webhook failed for ${url}:`, error.message);
+        return false;
+      }
+    });
+
+    const results = await Promise.allSettled(promises);
+    return results.filter(r => r.status === 'fulfilled' && r.value).length;
+  }
+
+  // Check rate limiting
+  checkRateLimit() {
+    const now = Date.now();
+    
+    // Reset counters if needed
+    if (now > this.rateLimitCounters.minute.resetTime) {
+      this.rateLimitCounters.minute = { count: 0, resetTime: now + 60000 };
+    }
+    if (now > this.rateLimitCounters.hour.resetTime) {
+      this.rateLimitCounters.hour = { count: 0, resetTime: now + 3600000 };
+    }
+
+    // Check limits
+    if (this.rateLimitCounters.minute.count >= this.config.rateLimiting.maxNotificationsPerMinute) {
+      return false;
+    }
+    if (this.rateLimitCounters.hour.count >= this.config.rateLimiting.maxNotificationsPerHour) {
+      return false;
+    }
+
+    return true;
+  }
+
+  // Update rate limit counters
+  updateRateLimitCounters() {
+    this.rateLimitCounters.minute.count++;
+    this.rateLimitCounters.hour.count++;
+  }
+
+  // Generate unique notification ID
+  generateNotificationId() {
+    return `notif_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  }
+
+  // Get priority color for Slack
+  getPriorityColor(priority) {
     const colors = {
-      debug: '#36a64f',
-      info: '#36a64f',
-      warning: '#ffaa00',
-      error: '#ff0000',
-      critical: '#8b0000'
+      critical: '#ff0000', // Red
+      high: '#ffa500',     // Orange
+      medium: '#ffff00',   // Yellow
+      low: '#00ff00'       // Green
     };
-    return colors[level] || colors.info;
+    return colors[priority] || colors.medium;
   }
 
-  formatSlackFields(notification) {
+  // Get category emoji
+  getCategoryEmoji(category) {
+    const emojis = {
+      error: '❌',
+      warning: '⚠️',
+      success: '✅',
+      info: 'ℹ️',
+      security: '🔒',
+      performance: '⚡',
+      dependency: '📦',
+      system_down: '🚨',
+      update: '🔄',
+      debug: '🐛',
+      trace: '🔍'
+    };
+    return emojis[category] || '📢';
+  }
+
+  // Format Slack fields
+  formatSlackFields(data) {
     const fields = [];
     
-    if (notification.data) {
-      for (const [key, value] of Object.entries(notification.data)) {
+    Object.entries(data).forEach(([key, value]) => {
+      if (value !== null && value !== undefined) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
           value: typeof value === 'object' ? JSON.stringify(value) : String(value),
           short: true
         });
       }
-    }
-    
-    if (notification.systemInfo) {
-      fields.push({
-        title: 'System Info',
-        value: `Load: ${notification.systemInfo.load.toFixed(2)}, Memory: ${notification.systemInfo.memory.toFixed(2)}`,
-        short: true
-      });
-    }
-    
+    });
+
     return fields;
   }
 
-  async sendToEmail(notification) {
-    const config = this.config.channels.email;
-    
-    // This is a simplified email implementation
-    // In production, you'd use a proper email library like nodemailer
-    const emailContent = this.formatEmailContent(notification);
-    
-    console.log('📧 Email notification (simulated):', emailContent);
-    
-    // For now, just log the email content
-    // In production, implement actual SMTP sending
-  }
-
-  formatEmailContent(notification) {
-    return `
-Subject: [${notification.level.toUpperCase()}] ${notification.title}
-
-${notification.message}
-
-Details:
-${Object.entries(notification.data).map(([k, v]) => `${k}: ${v}`).join('\n')}
-
-Timestamp: ${notification.timestamp}
-System Info: ${notification.systemInfo ? JSON.stringify(notification.systemInfo) : 'N/A'}
-
----
-Sent by Automation System
-    `.trim();
-  }
-
-  async sendToWebhook(notification) {
-    const config = this.config.channels.webhook;
-    
-    await this.makeHttpRequest(
-      config.url,
-      config.method,
-      notification,
-      config.headers
-    );
-  }
-
-  sendToConsole(notification) {
-    const emoji = this.getConsoleEmoji(notification.level);
-    const color = this.getConsoleColor(notification.level);
-    
-    console.log(`${emoji} [${notification.level.toUpperCase()}] ${notification.title}`);
-    console.log(`   ${notification.message}`);
-    
-    if (notification.data && Object.keys(notification.data).length > 0) {
-      console.log(`   Data:`, notification.data);
-    }
-    
-    if (notification.systemInfo) {
-      console.log(`   System: Load ${notification.systemInfo.load.toFixed(2)}, Memory ${notification.systemInfo.memory.toFixed(2)}`);
-    }
-  }
-
-  getConsoleEmoji(level) {
-    const emojis = {
-      debug: '🔍',
-      info: 'ℹ️',
-      warning: '⚠️',
-      error: '❌',
-      critical: '🚨'
-    };
-    return emojis[level] || emojis.info;
-  }
-
-  getConsoleColor(level) {
-    const colors = {
-      debug: '\x1b[36m', // Cyan
-      info: '\x1b[32m',  // Green
-      warning: '\x1b[33m', // Yellow
-      error: '\x1b[31m',   // Red
-      critical: '\x1b[35m' // Magenta
-    };
-    return colors[level] || colors.info;
-  }
-
-  async makeHttpRequest(url, method, data, headers = {}) {
-    return new Promise((resolve, reject) => {
-      const urlObj = new URL(url);
-      const options = {
-        hostname: urlObj.hostname,
-        port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
-        path: urlObj.pathname + urlObj.search,
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-          ...headers
-        }
-      };
-      
-      const request = (urlObj.protocol === 'https:' ? https : http).request(options, (response) => {
-        let responseData = '';
-        
-        response.on('data', (chunk) => {
-          responseData += chunk;
-        });
-        
-        response.on('end', () => {
-          if (response.statusCode >= 200 && response.statusCode < 300) {
-            resolve(responseData);
-          } else {
-            reject(new Error(`HTTP ${response.statusCode}: ${responseData}`));
-          }
-        });
-      });
-      
-      request.on('error', (error) => {
-        reject(error);
-      });
-      
-      if (data) {
-        request.write(JSON.stringify(data));
-      }
-      
-      request.end();
+  // Convenience methods for common notification types
+  async notifyError(message, taskName, data = {}) {
+    return this.sendNotification(message, {
+      priority: 'critical',
+      category: 'error',
+      taskName,
+      data
     });
   }
 
-  checkRateLimit(level) {
+  async notifyWarning(message, taskName, data = {}) {
+    return this.sendNotification(message, {
+      priority: 'high',
+      category: 'warning',
+      taskName,
+      data
+    });
+  }
+
+  async notifySuccess(message, taskName, data = {}) {
+    return this.sendNotification(message, {
+      priority: 'medium',
+      category: 'success',
+      taskName,
+      data
+    });
+  }
+
+  async notifyInfo(message, taskName, data = {}) {
+    return this.sendNotification(message, {
+      priority: 'medium',
+      category: 'info',
+      taskName,
+      data
+    });
+  }
+
+  async notifySecurity(message, taskName, data = {}) {
+    return this.sendNotification(message, {
+      priority: 'critical',
+      category: 'security',
+      taskName,
+      data
+    });
+  }
+
+  // Get notification statistics
+  getNotificationStats() {
     const now = Date.now();
-    const hourKey = Math.floor(now / (60 * 60 * 1000));
-    const dayKey = Math.floor(now / (24 * 60 * 60 * 1000));
-    
-    // Clean old entries
-    this.cleanupRateLimitCounts();
-    
-    // Check hourly limit
-    const hourlyCount = this.notificationCounts.hourly.get(hourKey) || 0;
-    if (hourlyCount >= this.config.rateLimit.maxPerHour) {
-      return false;
-    }
-    
-    // Check daily limit
-    const dailyCount = this.notificationCounts.daily.get(dayKey) || 0;
-    if (dailyCount >= this.config.rateLimit.maxPerDay) {
-      return false;
-    }
-    
-    // Update counts
-    this.notificationCounts.hourly.set(hourKey, hourlyCount + 1);
-    this.notificationCounts.daily.set(dayKey, dailyCount + 1);
-    
-    return true;
-  }
+    const last24h = now - (24 * 60 * 60 * 1000);
+    const lastHour = now - (60 * 60 * 1000);
 
-  cleanupRateLimitCounts() {
-    const now = Date.now();
-    const currentHour = Math.floor(now / (60 * 60 * 1000));
-    const currentDay = Math.floor(now / (24 * 60 * 60 * 1000));
-    
-    // Remove old hourly entries
-    for (const [key] of this.notificationCounts.hourly) {
-      if (key < currentHour) {
-        this.notificationCounts.hourly.delete(key);
+    const recentNotifications = this.notificationHistory.filter(n => n.timestamp > last24h);
+    const hourlyNotifications = this.notificationHistory.filter(n => n.timestamp > lastHour);
+
+    const stats = {
+      total: this.notificationHistory.length,
+      last24h: recentNotifications.length,
+      lastHour: hourlyNotifications.length,
+      byPriority: {},
+      byCategory: {},
+      successRate: 0,
+      rateLimitStatus: {
+        minute: this.rateLimitCounters.minute,
+        hour: this.rateLimitCounters.hour
       }
-    }
-    
-    // Remove old daily entries
-    for (const [key] of this.notificationCounts.daily) {
-      if (key < currentDay) {
-        this.notificationCounts.daily.delete(key);
-      }
-    }
-  }
-
-  getSystemInfo() {
-    const usage = process.memoryUsage();
-    const cpuUsage = process.cpuUsage();
-    
-    return {
-      load: (cpuUsage.user + cpuUsage.system) / 1000000,
-      memory: usage.heapUsed / usage.heapTotal,
-      uptime: process.uptime(),
-      pid: process.pid,
-      version: process.version
     };
-  }
 
-  // Convenience methods for different notification levels
-  async debug(title, message, data = {}) {
-    return this.notify('debug', title, message, data);
-  }
+    // Calculate success rate
+    if (this.notificationHistory.length > 0) {
+      const successCount = this.notificationHistory.filter(n => n.sent).length;
+      stats.successRate = (successCount / this.notificationHistory.length * 100).toFixed(1) + '%';
+    }
 
-  async info(title, message, data = {}) {
-    return this.notify('info', title, message, data);
-  }
-
-  async warning(title, message, data = {}) {
-    return this.notify('warning', title, message, data);
-  }
-
-  async error(title, message, data = {}) {
-    return this.notify('error', title, message, data);
-  }
-
-  async critical(title, message, data = {}) {
-    return this.notify('critical', title, message, data);
-  }
-
-  // Specialized notification methods
-  async taskStarted(taskName, data = {}) {
-    return this.info('Task Started', `Task "${taskName}" has started`, {
-      task: taskName,
-      ...data
+    // Count by priority and category
+    this.notificationHistory.forEach(notification => {
+      stats.byPriority[notification.priority] = (stats.byPriority[notification.priority] || 0) + 1;
+      stats.byCategory[notification.category] = (stats.byCategory[notification.category] || 0) + 1;
     });
+
+    return stats;
   }
 
-  async taskCompleted(taskName, duration, data = {}) {
-    return this.info('Task Completed', `Task "${taskName}" completed successfully`, {
-      task: taskName,
-      duration: `${duration}ms`,
-      ...data
-    });
+  // Clear notification history
+  clearHistory() {
+    this.notificationHistory = [];
+    console.log('🗑️ Notification history cleared');
+    this.emit('historyCleared');
   }
 
-  async taskFailed(taskName, error, data = {}) {
-    return this.error('Task Failed', `Task "${taskName}" failed`, {
-      task: taskName,
-      error: error.message,
-      ...data
-    });
-  }
-
-  async systemHealth(health, data = {}) {
-    const level = health.isHealthy ? 'info' : 'warning';
-    return this.notify(level, 'System Health', `System health check: ${health.isHealthy ? 'Healthy' : 'Issues detected'}`, {
-      health,
-      ...data
-    });
-  }
-
-  async securityAlert(issues, data = {}) {
-    return this.critical('Security Alert', `Found ${issues.length} security issues`, {
-      issues,
-      ...data
-    });
-  }
-
-  async performanceAlert(metrics, data = {}) {
-    return this.warning('Performance Alert', 'Performance degradation detected', {
-      metrics,
-      ...data
-    });
-  }
-
-  getStatus() {
-    return {
-      channels: Object.fromEntries(
-        Object.entries(this.config.channels).map(([name, config]) => [
-          name,
-          { enabled: config.enabled }
-        ])
-      ),
-      rateLimit: {
-        enabled: this.config.rateLimit.enabled,
-        hourlyCount: Array.from(this.notificationCounts.hourly.values()).reduce((sum, count) => sum + count, 0),
-        dailyCount: Array.from(this.notificationCounts.daily.values()).reduce((sum, count) => sum + count, 0)
-      },
-      minLevel: this.config.minLevel
-    };
+  // Get recent notifications
+  getRecentNotifications(limit = 50) {
+    return this.notificationHistory
+      .slice(-limit)
+      .reverse()
+      .map(n => ({
+        ...n,
+        timestamp: new Date(n.timestamp).toISOString()
+      }));
   }
 }
 
