@@ -6,4 +6,4 @@ export default function safeDynamicImport() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
