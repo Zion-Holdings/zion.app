@@ -6,4 +6,4 @@ export default function quick-actions() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

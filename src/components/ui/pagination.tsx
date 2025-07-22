@@ -6,4 +6,4 @@ export default function pagination() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
