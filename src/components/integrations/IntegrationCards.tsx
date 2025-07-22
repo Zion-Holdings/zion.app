@@ -6,4 +6,4 @@ export default function IntegrationCards() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

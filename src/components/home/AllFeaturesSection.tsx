@@ -6,4 +6,4 @@ export default function AllFeaturesSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
