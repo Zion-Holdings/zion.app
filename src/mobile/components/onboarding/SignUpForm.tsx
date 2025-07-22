@@ -5,5 +5,5 @@ export default function SignUpForm() {
       <h1>SignUpForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

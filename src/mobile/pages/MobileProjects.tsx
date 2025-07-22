@@ -5,5 +5,5 @@ export default function MobileProjects() {
       <h1>MobileProjects</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MobileResumeBuilder() {
       <h1>MobileResumeBuilder</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

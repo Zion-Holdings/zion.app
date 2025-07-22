@@ -5,5 +5,5 @@ export default function MobileConversationList() {
       <h1>MobileConversationList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

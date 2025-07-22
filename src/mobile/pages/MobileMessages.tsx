@@ -5,5 +5,5 @@ export default function MobileMessages() {
       <h1>MobileMessages</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

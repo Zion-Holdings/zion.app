@@ -5,5 +5,5 @@ export default function index() {
       <h1>index</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

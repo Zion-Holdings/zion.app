@@ -5,5 +5,5 @@ export default function BrowseFilters() {
       <h1>BrowseFilters</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

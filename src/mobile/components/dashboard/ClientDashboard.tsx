@@ -5,5 +5,5 @@ export default function ClientDashboard() {
       <h1>ClientDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function BottomNavigation() {
       <h1>BottomNavigation</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

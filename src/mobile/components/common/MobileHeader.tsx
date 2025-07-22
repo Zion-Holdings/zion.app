@@ -5,5 +5,5 @@ export default function MobileHeader() {
       <h1>MobileHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

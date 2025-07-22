@@ -5,5 +5,5 @@ export default function RolePicker() {
       <h1>RolePicker</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

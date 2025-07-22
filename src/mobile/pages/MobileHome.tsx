@@ -5,5 +5,5 @@ export default function MobileHome() {
       <h1>MobileHome</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

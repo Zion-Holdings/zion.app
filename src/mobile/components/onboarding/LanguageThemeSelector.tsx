@@ -5,5 +5,5 @@ export default function LanguageThemeSelector() {
       <h1>LanguageThemeSelector</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

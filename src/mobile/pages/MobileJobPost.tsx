@@ -5,5 +5,5 @@ export default function MobileJobPost() {
       <h1>MobileJobPost</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

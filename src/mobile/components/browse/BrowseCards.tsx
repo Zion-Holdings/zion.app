@@ -5,5 +5,5 @@ export default function BrowseCards() {
       <h1>BrowseCards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

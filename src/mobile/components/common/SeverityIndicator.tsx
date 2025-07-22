@@ -5,5 +5,5 @@ export default function SeverityIndicator() {
       <h1>SeverityIndicator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
