@@ -6,4 +6,4 @@ export default function RouteSEO.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
