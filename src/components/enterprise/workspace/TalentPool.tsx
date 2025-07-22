@@ -6,4 +6,4 @@ export default function TalentPool() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

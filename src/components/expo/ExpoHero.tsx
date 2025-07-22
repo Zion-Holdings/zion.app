@@ -6,4 +6,4 @@ export default function ExpoHero() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
