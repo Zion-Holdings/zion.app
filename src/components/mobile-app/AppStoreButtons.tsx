@@ -5,5 +5,5 @@ export default function AppStoreButtons() {
       <h1>AppStoreButtons</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

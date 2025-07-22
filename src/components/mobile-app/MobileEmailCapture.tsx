@@ -5,5 +5,5 @@ export default function MobileEmailCapture() {
       <h1>MobileEmailCapture</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

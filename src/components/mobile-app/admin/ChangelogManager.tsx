@@ -5,5 +5,5 @@ export default function ChangelogManager() {
       <h1>ChangelogManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

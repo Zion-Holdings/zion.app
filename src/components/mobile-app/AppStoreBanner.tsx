@@ -5,5 +5,5 @@ export default function AppStoreBanner() {
       <h1>AppStoreBanner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

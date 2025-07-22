@@ -5,5 +5,5 @@ export default function QrCodeDownload() {
       <h1>QrCodeDownload</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

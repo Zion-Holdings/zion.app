@@ -5,5 +5,5 @@ export default function ExportPanel() {
       <h1>ExportPanel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

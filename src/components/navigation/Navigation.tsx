@@ -5,5 +5,5 @@ export default function Navigation() {
       <h1>Navigation</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

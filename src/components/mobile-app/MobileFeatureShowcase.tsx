@@ -5,5 +5,5 @@ export default function MobileFeatureShowcase() {
       <h1>MobileFeatureShowcase</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

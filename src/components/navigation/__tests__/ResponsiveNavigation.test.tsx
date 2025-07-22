@@ -5,5 +5,5 @@ export default function ResponsiveNavigation.test() {
       <h1>ResponsiveNavigation.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

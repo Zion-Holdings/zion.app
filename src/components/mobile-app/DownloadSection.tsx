@@ -5,5 +5,5 @@ export default function DownloadSection() {
       <h1>DownloadSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

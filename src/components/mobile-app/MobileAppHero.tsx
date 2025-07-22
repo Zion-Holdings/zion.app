@@ -5,5 +5,5 @@ export default function MobileAppHero() {
       <h1>MobileAppHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

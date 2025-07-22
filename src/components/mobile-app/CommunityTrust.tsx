@@ -5,5 +5,5 @@ export default function CommunityTrust() {
       <h1>CommunityTrust</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

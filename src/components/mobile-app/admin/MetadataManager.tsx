@@ -5,5 +5,5 @@ export default function MetadataManager() {
       <h1>MetadataManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

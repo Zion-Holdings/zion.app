@@ -5,5 +5,5 @@ export default function ResponsiveNavigation() {
       <h1>ResponsiveNavigation</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MetadataForm() {
       <h1>MetadataForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MobileLaunchHero() {
       <h1>MobileLaunchHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

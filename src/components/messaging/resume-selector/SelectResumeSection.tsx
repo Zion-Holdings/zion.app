@@ -5,5 +5,5 @@ export default function SelectResumeSection() {
       <h1>SelectResumeSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function NotificationFilter() {
       <h1>NotificationFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

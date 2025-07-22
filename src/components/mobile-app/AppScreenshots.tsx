@@ -5,5 +5,5 @@ export default function AppScreenshots() {
       <h1>AppScreenshots</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
