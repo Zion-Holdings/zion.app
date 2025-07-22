@@ -6,4 +6,4 @@ export default function ServiceQuoteModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
