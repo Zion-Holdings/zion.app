@@ -6,4 +6,4 @@ export default function Header() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
