@@ -6,4 +6,4 @@ export default function LoginForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

@@ -6,4 +6,4 @@ export default function CartDrawer() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
