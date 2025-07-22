@@ -6,4 +6,4 @@ export default function MobileLaunchHero() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
