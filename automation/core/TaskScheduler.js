@@ -35,6 +35,7 @@ class TaskScheduler extends EventEmitter {
     this.runningTasks = new Set();
     this.taskQueue = [];
     this.performanceMetrics = {};
+    this.performanceHistory = [];
     
     // Scheduling state
     this.isRunning = false;
