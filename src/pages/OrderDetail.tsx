@@ -6,4 +6,4 @@ export default function OrderDetail() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
