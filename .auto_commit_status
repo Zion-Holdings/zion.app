@@ -1,8 +1,7 @@
  M .auto_commit_status
- M automation/package.json
- M src/layout/AppHeader.tsx
- M src/layout/AppLayout.tsx
- M src/layout/AuthLayout.tsx
- M src/layout/MainNavigation.tsx
-?? .pid
-?? AUTONOMOUS_AUTOMATION_DEPLOYMENT_COMPLETE.md
+ M scripts/ux-enhancement-automation.cjs
+ M src/layout/PrimaryNav.tsx
+ M src/layout/__tests__/PrimaryNav.test.tsx
+ M src/legal/PrivacyPolicy.jsx
+ M src/legal/TermsOfService.jsx
+ M src/lib/dnd-stub.tsx
