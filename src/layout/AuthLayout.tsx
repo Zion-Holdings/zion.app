@@ -6,4 +6,4 @@ export default function AuthLayout() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
