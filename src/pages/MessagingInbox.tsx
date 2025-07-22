@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function MessagingInbox() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function MessagingInbox() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
