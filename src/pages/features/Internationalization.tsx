@@ -6,4 +6,4 @@ export default function Internationalization() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
