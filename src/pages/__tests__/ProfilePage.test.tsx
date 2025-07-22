@@ -6,4 +6,4 @@ export default function ProfilePage.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

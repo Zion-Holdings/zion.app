@@ -6,4 +6,4 @@ export default function Storybook() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
