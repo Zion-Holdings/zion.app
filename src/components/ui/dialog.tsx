@@ -6,4 +6,4 @@ export default function dialog() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
