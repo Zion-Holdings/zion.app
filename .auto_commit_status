@@ -1,3 +1,2 @@
  M .auto_commit_status
- M package.json
-?? scripts/ai-tools-integration.cjs
+?? automation/tasks/AIEnhancer.js
