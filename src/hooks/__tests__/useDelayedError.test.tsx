@@ -5,5 +5,5 @@ export default function useDelayedError.test() {
       <h1>useDelayedError.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function useQuoteWizard.test() {
       <h1>useQuoteWizard.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

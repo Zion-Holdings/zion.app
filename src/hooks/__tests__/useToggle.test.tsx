@@ -5,5 +5,5 @@ export default function useToggle.test() {
       <h1>useToggle.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

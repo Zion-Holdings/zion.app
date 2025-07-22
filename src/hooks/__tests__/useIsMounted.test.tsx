@@ -5,5 +5,5 @@ export default function useIsMounted.test() {
       <h1>useIsMounted.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
