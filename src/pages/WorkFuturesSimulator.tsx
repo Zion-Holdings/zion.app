@@ -6,4 +6,4 @@ export default function WorkFuturesSimulator() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

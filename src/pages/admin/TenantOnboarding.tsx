@@ -6,4 +6,4 @@ export default function TenantOnboarding() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
