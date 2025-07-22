@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function WorkspaceHeader() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function WorkspaceHeader() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
