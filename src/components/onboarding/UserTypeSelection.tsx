@@ -6,4 +6,4 @@ export default function UserTypeSelection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

@@ -6,4 +6,4 @@ export default function Footer() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

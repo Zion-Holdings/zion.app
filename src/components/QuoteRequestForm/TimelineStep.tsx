@@ -6,4 +6,4 @@ export default function TimelineStep() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

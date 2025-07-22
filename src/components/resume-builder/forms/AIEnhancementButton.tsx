@@ -6,4 +6,4 @@ export default function AIEnhancementButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

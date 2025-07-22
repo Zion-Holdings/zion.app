@@ -6,4 +6,4 @@ export default function SkillItem() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

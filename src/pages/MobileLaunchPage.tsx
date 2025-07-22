@@ -6,4 +6,4 @@ export default function MobileLaunchPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

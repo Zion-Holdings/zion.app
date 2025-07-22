@@ -8,7 +8,7 @@ export function useWebSocketReconnection(options: any = {}) {
       if (attemptCount >= (options.maxAttempts || 5)) {
         setIsReconnecting(false)'
         return'
-      setIsReconnecting(true);
+      setIsReconnecting(true)'
       setAttemptCount((prev) => prev + 1);
 
       const delay =
@@ -35,4 +35,4 @@ export function useWebSocketReconnection(options: any = {}) {
     isReconnecting,
     attemptCount,
     attemptReconnection,
-    resetReconnection,}''''''''''''';
+    resetReconnection,}''''''''''''''';

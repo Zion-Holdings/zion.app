@@ -6,4 +6,4 @@ export default function ModelManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

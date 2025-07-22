@@ -6,4 +6,4 @@ export default function ScreenshotManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

@@ -6,4 +6,4 @@ export default function WhitepaperGeneratorPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

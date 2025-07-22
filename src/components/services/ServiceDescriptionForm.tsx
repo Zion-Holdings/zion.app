@@ -6,4 +6,4 @@ export default function ServiceDescriptionForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

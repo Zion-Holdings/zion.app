@@ -6,4 +6,4 @@ export default function PartnerDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

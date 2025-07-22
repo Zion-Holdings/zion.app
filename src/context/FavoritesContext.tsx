@@ -6,4 +6,4 @@ export default function FavoritesContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

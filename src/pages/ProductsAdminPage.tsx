@@ -6,4 +6,4 @@ export default function ProductsAdminPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

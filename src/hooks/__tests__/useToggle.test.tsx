@@ -6,4 +6,4 @@ export default function useToggle.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

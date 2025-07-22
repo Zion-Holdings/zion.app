@@ -6,4 +6,4 @@ export default function Grants() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

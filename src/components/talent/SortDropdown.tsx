@@ -6,4 +6,4 @@ export default function SortDropdown() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

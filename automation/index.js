@@ -105,7 +105,8 @@ class OptimizationAutomation {
     });
 
     // Manual optimization trigger
-    this.app.post('/api/optimization/trigger', async (req, res) => {'      try {
+    this.app.post('/api/optimization/trigger', async (req, res) => {
+      try {
         const { target, reason, alert: _alert } = req.body;
         
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);

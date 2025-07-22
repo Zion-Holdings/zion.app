@@ -6,4 +6,4 @@ export default function react-router-dom() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

@@ -6,4 +6,4 @@ export default function ProductListingCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

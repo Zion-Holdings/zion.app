@@ -6,4 +6,4 @@ export default function ExportPanel() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

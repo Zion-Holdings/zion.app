@@ -6,4 +6,4 @@ export default function RedeemTokensCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

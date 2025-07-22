@@ -13,10 +13,15 @@
  * - Security scanning and fixes
  * - Code quality enhancement
  */
-;
-const fs = require('fs');'const path = require('path');'const { execSync, spawn } = require('child_process');'const https = require('https');'const http = require('http');'
-// Import AI modules;
-const AIOptimizer = require('./ai-optimizer');'const CursorIntegration = require('./cursor-integration');'
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const https = require('https');
+const http = require('http');
+
+// Import AI modules
+const AIOptimizer = require('./ai-optimizer');
+const CursorIntegration = require('./cursor-integration');
 class EnhancedAutomation {
   constructor() {
     this.config = {
@@ -27,11 +32,15 @@ class EnhancedAutomation {
           workspaceId: process.env.CURSOR_WORKSPACE_ID
         },
         openai: {
-          enabled: process.env.OPENAI_ENABLED === 'true','          apiKey: process.env.OPENAI_API_KEY,
-          model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview''        },
+          enabled: process.env.OPENAI_ENABLED === 'true',
+          apiKey: process.env.OPENAI_API_KEY,
+          model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview'
+        },
         claude: {
-          enabled: process.env.CLAUDE_ENABLED === 'true','          apiKey: process.env.CLAUDE_API_KEY,
-          model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229''        },
+          enabled: process.env.CLAUDE_ENABLED === 'true',
+          apiKey: process.env.CLAUDE_API_KEY,
+          model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229'
+        },
         local: {
           enabled: process.env.LOCAL_AI_ENABLED === 'true','          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434','          model: process.env.LOCAL_AI_MODEL || 'codellama:7b''        }
       },

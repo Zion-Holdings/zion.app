@@ -6,4 +6,4 @@ export default function drawer() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

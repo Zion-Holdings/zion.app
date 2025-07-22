@@ -6,4 +6,4 @@ export default function TalentRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

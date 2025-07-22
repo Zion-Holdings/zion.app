@@ -6,4 +6,4 @@ export default function [id]() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

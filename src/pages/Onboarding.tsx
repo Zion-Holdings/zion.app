@@ -6,4 +6,4 @@ export default function Onboarding() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

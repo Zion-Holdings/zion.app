@@ -6,4 +6,4 @@ export default function TokenManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

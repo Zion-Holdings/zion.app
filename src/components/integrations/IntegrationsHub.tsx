@@ -6,4 +6,4 @@ export default function IntegrationsHub() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

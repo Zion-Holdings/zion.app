@@ -6,4 +6,4 @@ export default function SelectResumeSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

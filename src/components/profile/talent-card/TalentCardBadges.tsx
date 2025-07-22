@@ -6,4 +6,4 @@ export default function TalentCardBadges() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

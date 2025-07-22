@@ -6,4 +6,4 @@ export default function Home() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';

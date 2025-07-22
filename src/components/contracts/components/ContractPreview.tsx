@@ -6,4 +6,4 @@ export default function ContractPreview() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''
+}''''''''''''''';
