@@ -6,4 +6,4 @@ export default function FeaturedListingsSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

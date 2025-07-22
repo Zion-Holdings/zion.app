@@ -6,4 +6,4 @@ export default function HowItWorksSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
