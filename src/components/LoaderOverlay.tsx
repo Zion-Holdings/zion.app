@@ -6,4 +6,4 @@ export default function LoaderOverlay() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

@@ -6,4 +6,4 @@ export default function ErrorResetOnRouteChange() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
