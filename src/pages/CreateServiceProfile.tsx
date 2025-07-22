@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function CreateServiceProfile() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function CreateServiceProfile() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
