@@ -6,4 +6,4 @@ export default function ApiDocsLayout() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
