@@ -6,4 +6,4 @@ export default function TemplateManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
