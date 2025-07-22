@@ -6,4 +6,4 @@ export default function CommunityRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
