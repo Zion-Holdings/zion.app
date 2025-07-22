@@ -12,48 +12,67 @@
  * Provides a unified interface for managing the entire automation system.
  */
 
-const { EventEmitter } = require('events');
+const EventEmitter = require('events');
 const path = require('path');
-const fs = require('fs').promises;
+const fs = require('fs');
 
-// Import core components
+// Core components
 const AutonomousAutomationManager = require('./AutonomousAutomationManager');
 const TaskScheduler = require('./TaskScheduler');
 const NotificationManager = require('./NotificationManager');
+const AnomalyDetector = require('./AnomalyDetector');
+const ReportGenerator = require('./ReportGenerator');
+const DashboardServer = require('../dashboard/DashboardServer');
+
+// Automation tasks
+const DependencyUpdater = require('../tasks/DependencyUpdater');
+const SecurityScanner = require('../tasks/SecurityScanner');
+const CodeQualityEnforcer = require('../tasks/CodeQualityEnforcer');
+const StaleCleaner = require('../tasks/StaleCleaner');
 
 class IntelligentAutomationOrchestrator extends EventEmitter {
   constructor(config = {}) {
     super();
-    
     this.config = {
-      // System configuration
-      port: process.env.AUTOMATION_PORT || 3001,
-      logLevel: process.env.LOG_LEVEL || 'info',
-      enableDashboard: process.env.ENABLE_DASHBOARD !== 'false',
-      enableAPI: process.env.ENABLE_API !== 'false',
-      
-      // Task configuration
-      tasksDirectory: path.join(__dirname, '..', 'tasks'),
-      autoLoadTasks: true,
-      defaultTaskConfig: {
+      autonomous: {
         enabled: true,
-        priority: 'normal',
-        retryAttempts: 3,
-        timeout: 300000 // 5 minutes
+        selfHealing: true,
+        learning: true,
+        adaptiveScheduling: true
       },
-      
-      // Monitoring configuration
-      healthCheckInterval: 60000, // 1 minute
-      performanceTracking: true,
-      anomalyDetection: true,
-      
-      // Notification configuration
-      notifications: {
+      monitoring: {
         enabled: true,
-        channels: ['console', 'slack', 'webhook'],
-        levels: ['warning', 'error', 'critical']
+        interval: 60000, // 1 minute
+        healthCheckInterval: 300000 // 5 minutes
       },
-      
+      reporting: {
+        enabled: true,
+        daily: true,
+        weekly: true,
+        monthly: false
+      },
+      dashboard: {
+        enabled: true,
+        port: 3001
+      },
+      tasks: {
+        dependencyUpdater: {
+          enabled: true,
+          interval: 24 * 60 * 60 * 1000 // 24 hours
+        },
+        securityScanner: {
+          enabled: true,
+          interval: 6 * 60 * 60 * 1000 // 6 hours
+        },
+        codeQualityEnforcer: {
+          enabled: true,
+          interval: 2 * 60 * 60 * 1000 // 2 hours
+        },
+        staleCleaner: {
+          enabled: true,
+          interval: 12 * 60 * 60 * 1000 // 12 hours
+        }
+      },
       ...config
     };
     
@@ -61,220 +80,397 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.automationManager = null;
     this.taskScheduler = null;
     this.notificationManager = null;
+    this.anomalyDetector = null;
+    this.reportGenerator = null;
+    this.dashboard = null;
     
-    // State management
+    // State
     this.isRunning = false;
-    this.tasks = new Map();
-    this.systemHealth = {
-      status: 'unknown',
-      lastCheck: null,
-      issues: []
-    };
+    this.startTime = null;
+    this.healthStatus = 'healthy';
+    this.monitoringInterval = null;
+    this.healthCheckInterval = null;
     
-    // Performance tracking
-    this.performanceMetrics = {
-      uptime: 0,
-      totalTasks: 0,
-      successfulTasks: 0,
-      failedTasks: 0,
-      averageResponseTime: 0
-    };
-    
-    // Initialize components
-    this.initializeComponents();
+    // Event handlers
+    this.setupEventHandlers();
   }
 
-  async initializeComponents() {
-    console.log('🔧 Initializing Intelligent Automation Orchestrator...');
+  async initialize() {
+    console.log('🚀 Initializing Intelligent Automation Orchestrator...');
     
     try {
-      // Initialize notification manager first
-      this.notificationManager = new NotificationManager(this.config.notifications);
+      // Initialize core components
+      await this.initializeComponents();
       
-      // Initialize task scheduler
-      this.taskScheduler = new TaskScheduler({
-        maxConcurrentTasks: 5,
-        adaptiveScheduling: true,
-        trackPerformance: this.config.performanceTracking
-      });
+      // Register automation tasks
+      await this.registerTasks();
       
-      // Initialize autonomous automation manager
-      this.automationManager = new AutonomousAutomationManager({
-        autoRestart: true,
-        maxRestartAttempts: 3,
-        healthCheckInterval: this.config.healthCheckInterval
-      });
-      
-      // Set up event listeners
-      this.setupEventListeners();
-      
-      // Load tasks if enabled
-      if (this.config.autoLoadTasks) {
-        await this.loadTasks();
+      // Setup monitoring
+      if (this.config.monitoring.enabled) {
+        this.setupMonitoring();
       }
       
-      console.log('✅ Intelligent Automation Orchestrator initialized');
+      // Start dashboard
+      if (this.config.dashboard.enabled) {
+        await this.startDashboard();
+      }
+      
+      // Setup reporting
+      if (this.config.reporting.enabled) {
+        this.setupReporting();
+      }
+      
+      console.log('✅ Intelligent Automation Orchestrator initialized successfully');
+      this.emit('initialized');
       
     } catch (error) {
       console.error('❌ Failed to initialize orchestrator:', error);
+      this.emit('initializationFailed', error);
       throw error;
     }
   }
 
-  setupEventListeners() {
-    // Task scheduler events
-    this.taskScheduler.on('taskSuccess', (data) => {
-      this.handleTaskSuccess(data);
+  async initializeComponents() {
+    // Initialize notification manager first (needed by other components)
+    this.notificationManager = new NotificationManager();
+    
+    // Initialize anomaly detector
+    this.anomalyDetector = new AnomalyDetector();
+    
+    // Initialize task scheduler
+    this.taskScheduler = new TaskScheduler();
+    
+    // Initialize automation manager
+    this.automationManager = new AutonomousAutomationManager({
+      enableSelfHealing: this.config.autonomous.selfHealing,
+      enableLearning: this.config.autonomous.learning,
+      notificationManager: this.notificationManager,
+      anomalyDetector: this.anomalyDetector,
+      taskScheduler: this.taskScheduler
     });
     
-    this.taskScheduler.on('taskFailure', (data) => {
-      this.handleTaskFailure(data);
+    // Initialize report generator
+    this.reportGenerator = new ReportGenerator({
+      notificationManager: this.notificationManager
     });
     
-    this.taskScheduler.on('taskDisabled', (data) => {
-      this.handleTaskDisabled(data);
+    // Initialize dashboard
+    this.dashboard = new DashboardServer({
+      port: this.config.dashboard.port
     });
     
-    // Automation manager events
-    this.automationManager.on('started', () => {
-      this.notificationManager.info('System Started', 'Autonomous automation system started successfully');
+    // Connect components
+    this.connectComponents();
+  }
+
+  connectComponents() {
+    // Connect automation manager events
+    this.automationManager.on('taskCompleted', (data) => {
+      this.taskScheduler.recordTaskExecution(data.taskName, data.success, data.duration);
+      this.anomalyDetector.recordMetric('taskDuration', data.duration, Date.now(), {
+        taskName: data.taskName,
+        success: data.success
+      });
+      
+      if (!data.success) {
+        this.anomalyDetector.recordFailure(data.taskName, data.error);
+      }
+      
+      this.broadcastUpdate('taskCompleted', data);
     });
     
-    this.automationManager.on('stopped', () => {
-      this.notificationManager.info('System Stopped', 'Autonomous automation system stopped');
+    this.automationManager.on('taskFailed', (data) => {
+      this.notificationManager.notifyError(
+        `Task ${data.taskName} failed: ${data.error}`,
+        data.taskName,
+        { error: data.error, duration: data.duration }
+      );
+      
+      this.broadcastUpdate('taskFailed', data);
     });
     
-    this.automationManager.on('error', (error) => {
-      this.notificationManager.error('System Error', 'Automation system encountered an error', { error: error.message });
+    // Connect task scheduler events
+    this.taskScheduler.on('intervalUpdated', (data) => {
+      this.notificationManager.notifyInfo(
+        `Task ${data.taskName} interval updated: ${data.change}`,
+        'scheduler',
+        data
+      );
+      
+      this.broadcastUpdate('intervalUpdated', data);
     });
     
-    // Health monitoring
-    this.automationManager.on('healthIssue', (health) => {
-      this.handleHealthIssue(health);
+    // Connect anomaly detector events
+    this.anomalyDetector.on('anomalyDetected', (anomaly) => {
+      this.notificationManager.notifyWarning(
+        `Anomaly detected in ${anomaly.metricName || anomaly.patternName}: ${anomaly.anomalyType}`,
+        'anomalyDetector',
+        anomaly
+      );
+      
+      this.broadcastUpdate('anomalyDetected', anomaly);
+    });
+    
+    // Connect report generator events
+    this.reportGenerator.on('reportGenerated', (report) => {
+      this.notificationManager.notifySuccess(
+        `${report.type} report generated successfully`,
+        'reportGenerator',
+        { reportId: report.id, type: report.type }
+      );
+      
+      this.broadcastUpdate('reportGenerated', report);
     });
   }
 
-  async loadTasks() {
-    console.log('📦 Loading automation tasks...');
+  async registerTasks() {
+    console.log('📋 Registering automation tasks...');
     
+    const tasks = [];
+    
+    // Register enabled tasks
+    if (this.config.tasks.dependencyUpdater.enabled) {
+      tasks.push({
+        name: 'dependencyUpdater',
+        task: new DependencyUpdater(),
+        config: this.config.tasks.dependencyUpdater
+      });
+    }
+    
+    if (this.config.tasks.securityScanner.enabled) {
+      tasks.push({
+        name: 'securityScanner',
+        task: new SecurityScanner(),
+        config: this.config.tasks.securityScanner
+      });
+    }
+    
+    if (this.config.tasks.codeQualityEnforcer.enabled) {
+      tasks.push({
+        name: 'codeQualityEnforcer',
+        task: new CodeQualityEnforcer(),
+        config: this.config.tasks.codeQualityEnforcer
+      });
+    }
+    
+    if (this.config.tasks.staleCleaner.enabled) {
+      tasks.push({
+        name: 'staleCleaner',
+        task: new StaleCleaner(),
+        config: this.config.tasks.staleCleaner
+      });
+    }
+    
+    // Register tasks with automation manager
+    for (const { name, task, config } of tasks) {
+      await this.automationManager.registerTask(name, task, config);
+      console.log(`✅ Registered task: ${name}`);
+    }
+    
+    console.log(`📋 Registered ${tasks.length} automation tasks`);
+  }
+
+  setupMonitoring() {
+    console.log('📊 Setting up monitoring...');
+    
+    // System monitoring interval
+    this.monitoringInterval = setInterval(async () => {
+      await this.performSystemMonitoring();
+    }, this.config.monitoring.interval);
+    
+    // Health check interval
+    this.healthCheckInterval = setInterval(async () => {
+      await this.performHealthCheck();
+    }, this.config.monitoring.healthCheckInterval);
+  }
+
+  async performSystemMonitoring() {
     try {
-      const taskFiles = await this.getTaskFiles();
+      // Update system metrics
+      const metrics = await this.getSystemMetrics();
       
-      for (const taskFile of taskFiles) {
-        await this.loadTask(taskFile);
-      }
+      // Record metrics in anomaly detector
+      this.anomalyDetector.recordMetric('cpuLoad', metrics.cpu, Date.now());
+      this.anomalyDetector.recordMetric('memoryUsage', metrics.memory, Date.now());
       
-      console.log(`✅ Loaded ${this.tasks.size} automation tasks`);
+      // Update task scheduler with system metrics
+      this.taskScheduler.updateSystemMetrics({
+        cpuLoad: metrics.cpu,
+        memoryUsage: metrics.memory
+      });
+      
+      // Broadcast metrics update
+      this.broadcastUpdate('metricsUpdated', metrics);
       
     } catch (error) {
-      console.error('❌ Failed to load tasks:', error);
-      throw error;
+      console.error('❌ System monitoring failed:', error.message);
+      this.anomalyDetector.recordActivity('monitoring_failure', { error: error.message });
     }
   }
 
-  async getTaskFiles() {
+  async performHealthCheck() {
     try {
-      const files = await fs.readdir(this.config.tasksDirectory);
-      return files.filter(file => file.endsWith('.js') && file !== 'README.md');
+      const healthScore = this.anomalyDetector.getHealthScore();
+      const previousStatus = this.healthStatus;
+      
+      // Update health status
+      if (healthScore >= 90) {
+        this.healthStatus = 'healthy';
+      } else if (healthScore >= 70) {
+        this.healthStatus = 'warning';
+      } else {
+        this.healthStatus = 'critical';
+      }
+      
+      // Notify if status changed
+      if (previousStatus !== this.healthStatus) {
+        this.notificationManager.notifyWarning(
+          `System health status changed from ${previousStatus} to ${this.healthStatus} (score: ${healthScore})`,
+          'healthMonitor',
+          { previousStatus, currentStatus: this.healthStatus, healthScore }
+        );
+      }
+      
+      // Broadcast health update
+      this.broadcastUpdate('healthUpdated', {
+        status: this.healthStatus,
+        score: healthScore,
+        timestamp: new Date().toISOString()
+      });
+      
     } catch (error) {
-      console.warn('⚠️ Tasks directory not found, creating...');
-      await fs.mkdir(this.config.tasksDirectory, { recursive: true });
-      return [];
+      console.error('❌ Health check failed:', error.message);
     }
   }
 
-  async loadTask(taskFile) {
-    try {
-      const taskPath = path.join(this.config.tasksDirectory, taskFile);
-      const TaskClass = require(taskPath);
+  setupReporting() {
+    console.log('📊 Setting up automated reporting...');
+    
+    // Schedule daily reports
+    if (this.config.reporting.daily) {
+      this.scheduleReport('daily');
+    }
+    
+    // Schedule weekly reports
+    if (this.config.reporting.weekly) {
+      this.scheduleReport('weekly');
+    }
+    
+    // Schedule monthly reports
+    if (this.config.reporting.monthly) {
+      this.scheduleReport('monthly');
+    }
+  }
+
+  scheduleReport(type) {
+    const schedules = {
+      daily: '0 9 * * *',    // 9 AM daily
+      weekly: '0 10 * * 1',  // 10 AM Monday
+      monthly: '0 11 1 * *'  // 11 AM 1st of month
+    };
+    
+    const cron = require('node-cron');
+    const schedule = schedules[type];
+    
+    if (schedule) {
+      cron.schedule(schedule, async () => {
+        try {
+          await this.generateReport(type);
+        } catch (error) {
+          console.error(`❌ Failed to generate ${type} report:`, error.message);
+        }
+      });
       
-      if (TaskClass && typeof TaskClass === 'function') {
-        const taskName = path.basename(taskFile, '.js');
-        const task = new TaskClass(this.config.defaultTaskConfig);
-        
-        this.tasks.set(taskName, task);
-        
-        // Register with task scheduler
-        this.taskScheduler.registerTask(taskName, task, {
-          interval: task.config.schedule || 300000, // 5 minutes default
-          priority: task.config.priority || 'normal',
-          enabled: task.config.enabled !== false,
-          maxRetries: task.config.maxRetries || 3
-        });
-        
-        console.log(`📦 Loaded task: ${taskName}`);
-      }
+      console.log(`📅 Scheduled ${type} reports`);
+    }
+  }
+
+  async startDashboard() {
+    try {
+      // Set components in dashboard
+      this.dashboard.setComponents(
+        this.automationManager,
+        this.taskScheduler,
+        this.notificationManager,
+        this.anomalyDetector,
+        this.reportGenerator
+      );
+      
+      // Start dashboard server
+      await this.dashboard.start();
+      
+      console.log(`🌐 Dashboard started at http://localhost:${this.config.dashboard.port}`);
+      
     } catch (error) {
-      console.error(`❌ Failed to load task ${taskFile}:`, error.message);
+      console.error('❌ Failed to start dashboard:', error.message);
     }
   }
 
   async start() {
     if (this.isRunning) {
-      console.warn('⚠️ Orchestrator is already running');
+      console.log('⚠️ Orchestrator is already running');
       return;
     }
     
     console.log('🚀 Starting Intelligent Automation Orchestrator...');
     
     try {
-      // Start core components
+      await this.initialize();
+      
+      // Start automation manager
       await this.automationManager.start();
-      await this.taskScheduler.start();
-      
-      // Start performance tracking
-      if (this.config.performanceTracking) {
-        this.startPerformanceTracking();
-      }
-      
-      // Start health monitoring
-      this.startHealthMonitoring();
-      
-      // Start anomaly detection
-      if (this.config.anomalyDetection) {
-        this.startAnomalyDetection();
-      }
       
       this.isRunning = true;
-      this.performanceMetrics.uptime = Date.now();
-      
-      // Send startup notification
-      await this.notificationManager.info(
-        'Orchestrator Started',
-        'Intelligent Automation Orchestrator is now running',
-        { tasks: this.tasks.size, components: ['automationManager', 'taskScheduler', 'notificationManager'] }
-      );
+      this.startTime = new Date().toISOString();
       
       console.log('✅ Intelligent Automation Orchestrator started successfully');
       this.emit('started');
       
+      // Send startup notification
+      await this.notificationManager.notifySuccess(
+        'Intelligent Automation Orchestrator started successfully',
+        'orchestrator',
+        {
+          startTime: this.startTime,
+          components: Object.keys(this.config.tasks).filter(key => this.config.tasks[key].enabled)
+        }
+      );
+      
     } catch (error) {
       console.error('❌ Failed to start orchestrator:', error);
-      await this.notificationManager.error('Startup Failed', 'Failed to start automation orchestrator', { error: error.message });
+      this.emit('startFailed', error);
       throw error;
     }
   }
 
   async stop() {
     if (!this.isRunning) {
-      console.warn('⚠️ Orchestrator is not running');
+      console.log('⚠️ Orchestrator is not running');
       return;
     }
     
     console.log('🛑 Stopping Intelligent Automation Orchestrator...');
     
     try {
-      // Stop core components
-      await this.automationManager.stop();
-      await this.taskScheduler.stop();
+      // Stop monitoring intervals
+      if (this.monitoringInterval) {
+        clearInterval(this.monitoringInterval);
+      }
+      if (this.healthCheckInterval) {
+        clearInterval(this.healthCheckInterval);
+      }
+      
+      // Stop automation manager
+      if (this.automationManager) {
+        await this.automationManager.stop();
+      }
+      
+      // Stop dashboard
+      if (this.dashboard) {
+        await this.dashboard.stop();
+      }
       
       this.isRunning = false;
-      
-      // Send shutdown notification
-      await this.notificationManager.info(
-        'Orchestrator Stopped',
-        'Intelligent Automation Orchestrator has been stopped'
-      );
       
       console.log('✅ Intelligent Automation Orchestrator stopped');
       this.emit('stopped');
@@ -285,347 +481,101 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     }
   }
 
-  handleTaskSuccess(data) {
-    this.performanceMetrics.totalTasks++;
-    this.performanceMetrics.successfulTasks++;
-    
-    // Update average response time
-    const currentAvg = this.performanceMetrics.averageResponseTime;
-    const totalTasks = this.performanceMetrics.totalTasks;
-    this.performanceMetrics.averageResponseTime = 
-      (currentAvg * (totalTasks - 1) + data.executionTime) / totalTasks;
-    
-    // Send notification for high-priority tasks
-    if (data.priority === 'critical' || data.executionTime > 60000) {
-      this.notificationManager.info(
-        'Task Completed',
-        `Task "${data.taskName}" completed successfully`,
-        { executionTime: data.executionTime, result: data.result }
-      );
-    }
-  }
-
-  handleTaskFailure(data) {
-    this.performanceMetrics.totalTasks++;
-    this.performanceMetrics.failedTasks++;
-    
-    // Send notification for failures
-    this.notificationManager.error(
-      'Task Failed',
-      `Task "${data.taskName}" failed`,
-      { executionTime: data.executionTime, error: data.error.message }
-    );
-  }
-
-  handleTaskDisabled(data) {
-    this.notificationManager.warning(
-      'Task Disabled',
-      `Task "${data.taskName}" has been disabled due to repeated failures`,
-      { error: data.error.message }
-    );
-  }
-
-  handleHealthIssue(health) {
-    this.systemHealth.status = 'unhealthy';
-    this.systemHealth.lastCheck = new Date();
-    this.systemHealth.issues.push({
-      timestamp: new Date().toISOString(),
-      health: health
-    });
-    
-    // Keep only recent issues
-    if (this.systemHealth.issues.length > 10) {
-      this.systemHealth.issues = this.systemHealth.issues.slice(-10);
+  async generateReport(type) {
+    if (!this.reportGenerator) {
+      throw new Error('Report generator not available');
     }
     
-    this.notificationManager.warning(
-      'System Health Issue',
-      'System health check detected issues',
-      { health: health }
-    );
+    const data = {
+      tasks: this.automationManager.getTasksStatus(),
+      anomalies: this.anomalyDetector.getRecentAnomalies(50),
+      notifications: this.notificationManager.getRecentNotifications(50),
+      systemMetrics: await this.getSystemMetrics(),
+      performance: this.taskScheduler.getSchedulingStats()
+    };
+    
+    return await this.reportGenerator.generateReport(type, data);
   }
 
-  startPerformanceTracking() {
-    setInterval(() => {
-      this.updatePerformanceMetrics();
-    }, 60000); // Every minute
-  }
-
-  updatePerformanceMetrics() {
-    const now = Date.now();
-    this.performanceMetrics.uptime = now - this.performanceMetrics.uptime;
+  async getSystemMetrics() {
+    const os = require('os');
     
-    // Get task scheduler metrics
-    const schedulerStatus = this.taskScheduler.getSchedulerStatus();
-    
-    // Update metrics
-    this.performanceMetrics = {
-      ...this.performanceMetrics,
-      runningTasks: schedulerStatus.runningTasks,
-      queuedTasks: schedulerStatus.queuedTasks,
-      systemLoad: schedulerStatus.systemLoad,
-      memoryUsage: schedulerStatus.memoryUsage
+    return {
+      cpu: Math.round((1 - os.loadavg()[0] / os.cpus().length) * 100),
+      memory: Math.round((1 - os.freemem() / os.totalmem()) * 100),
+      uptime: process.uptime(),
+      platform: os.platform(),
+      arch: os.arch()
     };
   }
 
-  startHealthMonitoring() {
-    setInterval(async () => {
-      await this.performHealthCheck();
-    }, this.config.healthCheckInterval);
-  }
-
-  async performHealthCheck() {
-    try {
-      const health = {
-        timestamp: new Date().toISOString(),
-        orchestrator: this.isRunning,
-        automationManager: this.automationManager.isRunning,
-        taskScheduler: this.taskScheduler.isRunning,
-        notificationManager: true, // Always running if we get here
-        tasks: this.tasks.size,
-        runningTasks: this.taskScheduler.getSchedulerStatus().runningTasks,
-        systemLoad: this.getSystemLoad(),
-        memoryUsage: this.getMemoryUsage()
-      };
-      
-      // Determine overall health
-      const isHealthy = 
-        health.orchestrator &&
-        health.automationManager &&
-        health.taskScheduler &&
-        health.systemLoad < 0.9 &&
-        health.memoryUsage < 0.95;
-      
-      health.isHealthy = isHealthy;
-      
-      if (isHealthy) {
-        this.systemHealth.status = 'healthy';
-        this.systemHealth.lastCheck = new Date();
-      } else {
-        this.handleHealthIssue(health);
-      }
-      
-      this.emit('healthCheck', health);
-      
-    } catch (error) {
-      console.error('❌ Health check failed:', error);
-      this.handleHealthIssue({ error: error.message });
-    }
-  }
-
-  startAnomalyDetection() {
-    setInterval(() => {
-      this.detectAnomalies();
-    }, 300000); // Every 5 minutes
-  }
-
-  detectAnomalies() {
-    const schedulerStatus = this.taskScheduler.getSchedulerStatus();
-    
-    // Check for unusual patterns
-    const anomalies = [];
-    
-    // High failure rate
-    const failureRate = this.performanceMetrics.failedTasks / Math.max(this.performanceMetrics.totalTasks, 1);
-    if (failureRate > 0.3) {
-      anomalies.push({
-        type: 'high_failure_rate',
-        value: failureRate,
-        threshold: 0.3,
-        message: 'Task failure rate is unusually high'
-      });
+  broadcastUpdate(type, data) {
+    // Broadcast to dashboard if available
+    if (this.dashboard) {
+      this.dashboard.broadcastUpdate(type, data);
     }
     
-    // High system load
-    if (schedulerStatus.systemLoad > 0.9) {
-      anomalies.push({
-        type: 'high_system_load',
-        value: schedulerStatus.systemLoad,
-        threshold: 0.9,
-        message: 'System load is unusually high'
-      });
-    }
+    // Emit event for other listeners
+    this.emit(type, data);
+  }
+
+  setupEventHandlers() {
+    // Handle process signals
+    process.on('SIGINT', async () => {
+      console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+      await this.stop();
+      process.exit(0);
+    });
     
-    // High memory usage
-    if (schedulerStatus.memoryUsage > 0.95) {
-      anomalies.push({
-        type: 'high_memory_usage',
-        value: schedulerStatus.memoryUsage,
-        threshold: 0.95,
-        message: 'Memory usage is unusually high'
-      });
-    }
+    process.on('SIGTERM', async () => {
+      console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+      await this.stop();
+      process.exit(0);
+    });
     
-    // Send notifications for anomalies
-    for (const anomaly of anomalies) {
-      this.notificationManager.warning(
-        'Anomaly Detected',
-        anomaly.message,
-        { anomaly: anomaly }
+    // Handle uncaught exceptions
+    process.on('uncaughtException', async (error) => {
+      console.error('❌ Uncaught exception:', error);
+      await this.notificationManager.notifyError(
+        `Uncaught exception: ${error.message}`,
+        'orchestrator',
+        { error: error.stack }
       );
-    }
-  }
-
-  getSystemLoad() {
-    const usage = process.cpuUsage();
-    return (usage.user + usage.system) / 1000000;
-  }
-
-  getMemoryUsage() {
-    const usage = process.memoryUsage();
-    return usage.heapUsed / usage.heapTotal;
-  }
-
-  // Task management methods
-  async addTask(taskName, taskClass, config = {}) {
-    try {
-      const task = new taskClass({ ...this.config.defaultTaskConfig, ...config });
-      this.tasks.set(taskName, task);
-      
-      this.taskScheduler.registerTask(taskName, task, config);
-      
-      await this.notificationManager.info(
-        'Task Added',
-        `New task "${taskName}" has been added to the system`,
-        { taskName, config }
+      await this.stop();
+      process.exit(1);
+    });
+    
+    process.on('unhandledRejection', async (reason, promise) => {
+      console.error('❌ Unhandled rejection:', reason);
+      await this.notificationManager.notifyError(
+        `Unhandled rejection: ${reason}`,
+        'orchestrator',
+        { reason: reason.toString() }
       );
-      
-      return true;
-    } catch (error) {
-      console.error(`❌ Failed to add task ${taskName}:`, error);
-      return false;
-    }
+    });
   }
 
-  async removeTask(taskName) {
-    try {
-      this.tasks.delete(taskName);
-      this.taskScheduler.disableTask(taskName);
-      
-      await this.notificationManager.info(
-        'Task Removed',
-        `Task "${taskName}" has been removed from the system`,
-        { taskName }
-      );
-      
-      return true;
-    } catch (error) {
-      console.error(`❌ Failed to remove task ${taskName}:`, error);
-      return false;
-    }
-  }
-
-  async enableTask(taskName) {
-    try {
-      this.taskScheduler.enableTask(taskName);
-      
-      await this.notificationManager.info(
-        'Task Enabled',
-        `Task "${taskName}" has been enabled`,
-        { taskName }
-      );
-      
-      return true;
-    } catch (error) {
-      console.error(`❌ Failed to enable task ${taskName}:`, error);
-      return false;
-    }
-  }
-
-  async disableTask(taskName) {
-    try {
-      this.taskScheduler.disableTask(taskName);
-      
-      await this.notificationManager.info(
-        'Task Disabled',
-        `Task "${taskName}" has been disabled`,
-        { taskName }
-      );
-      
-      return true;
-    } catch (error) {
-      console.error(`❌ Failed to disable task ${taskName}:`, error);
-      return false;
-    }
-  }
-
-  // Status and reporting methods
   getStatus() {
     return {
       isRunning: this.isRunning,
-      uptime: this.performanceMetrics.uptime,
-      tasks: {
-        total: this.tasks.size,
-        status: this.taskScheduler.getAllTaskStatus()
-      },
-      performance: this.performanceMetrics,
-      health: this.systemHealth,
+      startTime: this.startTime,
+      healthStatus: this.healthStatus,
+      uptime: this.startTime ? Date.now() - new Date(this.startTime).getTime() : 0,
       components: {
-        automationManager: this.automationManager?.getStatus(),
-        taskScheduler: this.taskScheduler?.getSchedulerStatus(),
-        notificationManager: this.notificationManager?.getStatus()
+        automationManager: !!this.automationManager,
+        taskScheduler: !!this.taskScheduler,
+        notificationManager: !!this.notificationManager,
+        anomalyDetector: !!this.anomalyDetector,
+        reportGenerator: !!this.reportGenerator,
+        dashboard: !!this.dashboard
+      },
+      config: {
+        autonomous: this.config.autonomous,
+        monitoring: this.config.monitoring,
+        reporting: this.config.reporting,
+        dashboard: this.config.dashboard
       }
     };
-  }
-
-  async generateReport() {
-    const status = this.getStatus();
-    const report = {
-      timestamp: new Date().toISOString(),
-      summary: {
-        totalTasks: status.tasks.total,
-        successfulTasks: status.performance.successfulTasks,
-        failedTasks: status.performance.failedTasks,
-        successRate: status.performance.totalTasks > 0 
-          ? (status.performance.successfulTasks / status.performance.totalTasks * 100).toFixed(2) + '%'
-          : '0%',
-        averageResponseTime: status.performance.averageResponseTime.toFixed(2) + 'ms',
-        uptime: Math.floor(status.uptime / 1000) + 's'
-      },
-      details: status
-    };
-    
-    // Save report
-    const reportPath = path.join(process.cwd(), 'reports', `orchestrator-report-${Date.now()}.json`);
-    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
-    return report;
-  }
-
-  // Emergency methods
-  async emergencyStop() {
-    console.log('🚨 Emergency stop initiated...');
-    
-    try {
-      await this.notificationManager.critical(
-        'Emergency Stop',
-        'Emergency stop has been initiated for the automation system'
-      );
-      
-      await this.stop();
-      
-      console.log('✅ Emergency stop completed');
-      
-    } catch (error) {
-      console.error('❌ Emergency stop failed:', error);
-      throw error;
-    }
-  }
-
-  async restart() {
-    console.log('🔄 Restarting orchestrator...');
-    
-    try {
-      await this.stop();
-      await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
-      await this.start();
-      
-      console.log('✅ Orchestrator restarted successfully');
-      
-    } catch (error) {
-      console.error('❌ Restart failed:', error);
-      throw error;
-    }
   }
 }
 

@@ -1,4 +1,4 @@
  M .auto_commit_status
- M src/utils/safeDynamicImport.tsx
-?? automation/dashboard/
-?? automation/env.example
+ M automation/core/IntelligentAutomationOrchestrator.js
+ M src/utils/supabase/client.ts
+ M src/utils/websocketReconnectionManager.ts
