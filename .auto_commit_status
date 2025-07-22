@@ -1,4 +1,4 @@
  M .auto_commit_status
- M automation/README.md
- M src/utils/safe-component-loader.tsx
-?? automation/core/ReportGenerator.js
+ M src/utils/safeDynamicImport.tsx
+?? automation/dashboard/
+?? automation/env.example
