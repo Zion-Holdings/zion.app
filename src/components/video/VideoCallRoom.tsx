@@ -6,4 +6,4 @@ export default function VideoCallRoom() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

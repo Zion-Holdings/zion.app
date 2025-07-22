@@ -6,4 +6,4 @@ export default function tabs() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
