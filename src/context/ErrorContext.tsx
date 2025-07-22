@@ -6,4 +6,4 @@ export default function ErrorContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
