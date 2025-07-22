@@ -6,4 +6,4 @@ export default function UserLeaderboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
