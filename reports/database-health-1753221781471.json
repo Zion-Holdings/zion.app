@@ -1,0 +1,78 @@
+{
+  "timestamp": 1753221781437,
+  "stats": {
+    "totalChecks": 1,
+    "successfulChecks": 1,
+    "failedChecks": 0,
+    "optimizationsApplied": 0,
+    "lastCheck": 1753221781437
+  },
+  "recentChecks": [
+    {
+      "id": "check_1753221777852",
+      "startTime": 1753221777852,
+      "status": "completed",
+      "endTime": 1753221781039,
+      "results": {
+        "performance": {
+          "status": "healthy",
+          "metrics": {
+            "size": 0,
+            "slowQueries": 0,
+            "fragmentation": 0
+          }
+        },
+        "integrity": {
+          "status": "healthy",
+          "issues": []
+        },
+        "space": {
+          "status": "healthy",
+          "metrics": {
+            "size": 0,
+            "available": "560Gi"
+          }
+        },
+        "connections": {
+          "status": "healthy",
+          "connections": 1
+        },
+        "issues": 0,
+        "optimizations": 0
+      }
+    }
+  ],
+  "results": {
+    "performance": {
+      "status": "healthy",
+      "metrics": {
+        "size": 0,
+        "slowQueries": 0,
+        "fragmentation": 0
+      }
+    },
+    "integrity": {
+      "status": "healthy",
+      "issues": []
+    },
+    "space": {
+      "status": "healthy",
+      "metrics": {
+        "size": 0,
+        "available": "560Gi"
+      }
+    },
+    "connections": {
+      "status": "healthy",
+      "connections": 1
+    }
+  },
+  "issues": [],
+  "optimizations": [],
+  "summary": {
+    "databaseType": "sqlite",
+    "totalIssues": 0,
+    "optimizationsApplied": 0,
+    "healthScore": 100
+  }
+}
