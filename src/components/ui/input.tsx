@@ -5,5 +5,5 @@ export default function input() {
       <h1>input</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

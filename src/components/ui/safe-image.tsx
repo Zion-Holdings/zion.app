@@ -5,5 +5,5 @@ export default function safe-image() {
       <h1>safe-image</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

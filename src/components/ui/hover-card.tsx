@@ -5,5 +5,5 @@ export default function hover-card() {
       <h1>hover-card</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

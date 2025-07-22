@@ -5,5 +5,5 @@ export default function radio-group() {
       <h1>radio-group</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

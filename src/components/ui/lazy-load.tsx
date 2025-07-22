@@ -5,5 +5,5 @@ export default function lazy-load() {
       <h1>lazy-load</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function form() {
       <h1>form</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function optimized-image() {
       <h1>optimized-image</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

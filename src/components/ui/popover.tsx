@@ -5,5 +5,5 @@ export default function popover() {
       <h1>popover</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

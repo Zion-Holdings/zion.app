@@ -5,5 +5,5 @@ export default function select() {
       <h1>select</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

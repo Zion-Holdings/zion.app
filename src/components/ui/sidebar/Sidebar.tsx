@@ -5,5 +5,5 @@ export default function Sidebar() {
       <h1>Sidebar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

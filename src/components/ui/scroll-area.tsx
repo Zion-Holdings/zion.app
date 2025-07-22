@@ -5,5 +5,5 @@ export default function scroll-area() {
       <h1>scroll-area</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

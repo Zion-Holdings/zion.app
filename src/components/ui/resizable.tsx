@@ -5,5 +5,5 @@ export default function resizable() {
       <h1>resizable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

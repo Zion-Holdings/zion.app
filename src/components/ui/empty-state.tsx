@@ -5,5 +5,5 @@ export default function empty-state() {
       <h1>empty-state</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

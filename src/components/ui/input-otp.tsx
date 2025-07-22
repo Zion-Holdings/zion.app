@@ -5,5 +5,5 @@ export default function input-otp() {
       <h1>input-otp</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

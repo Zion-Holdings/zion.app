@@ -5,5 +5,5 @@ export default function enhanced-loading-states() {
       <h1>enhanced-loading-states</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

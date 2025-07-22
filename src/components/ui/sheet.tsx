@@ -5,5 +5,5 @@ export default function sheet() {
       <h1>sheet</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

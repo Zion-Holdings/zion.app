@@ -5,5 +5,5 @@ export default function progress() {
       <h1>progress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

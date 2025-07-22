@@ -5,5 +5,5 @@ export default function pagination() {
       <h1>pagination</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

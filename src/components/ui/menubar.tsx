@@ -5,5 +5,5 @@ export default function menubar() {
       <h1>menubar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

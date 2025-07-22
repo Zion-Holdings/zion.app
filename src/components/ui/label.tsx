@@ -5,5 +5,5 @@ export default function label() {
       <h1>label</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
