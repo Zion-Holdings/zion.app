@@ -5,5 +5,5 @@ export default function ReferralTable() {
       <h1>ReferralTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

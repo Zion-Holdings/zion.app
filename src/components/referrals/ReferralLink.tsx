@@ -5,5 +5,5 @@ export default function ReferralLink() {
       <h1>ReferralLink</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function EmptyStateCard() {
       <h1>EmptyStateCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MilestoneCard() {
       <h1>MilestoneCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

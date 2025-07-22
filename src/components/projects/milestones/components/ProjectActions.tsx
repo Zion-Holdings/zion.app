@@ -5,5 +5,5 @@ export default function ProjectActions() {
       <h1>ProjectActions</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

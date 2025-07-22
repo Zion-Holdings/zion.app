@@ -5,5 +5,5 @@ export default function ProjectMilestonesContent() {
       <h1>ProjectMilestonesContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

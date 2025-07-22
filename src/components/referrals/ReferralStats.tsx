@@ -5,5 +5,5 @@ export default function ReferralStats() {
       <h1>ReferralStats</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ProjectHeader() {
       <h1>ProjectHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

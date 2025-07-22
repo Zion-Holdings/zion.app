@@ -5,5 +5,5 @@ export default function QuoteRequestCard() {
       <h1>QuoteRequestCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

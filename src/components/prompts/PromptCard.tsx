@@ -5,5 +5,5 @@ export default function PromptCard() {
       <h1>PromptCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

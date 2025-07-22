@@ -5,5 +5,5 @@ export default function RewardsCard() {
       <h1>RewardsCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

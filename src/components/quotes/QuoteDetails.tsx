@@ -5,5 +5,5 @@ export default function QuoteDetails() {
       <h1>QuoteDetails</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

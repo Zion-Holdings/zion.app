@@ -5,5 +5,5 @@ export default function MilestoneActivities() {
       <h1>MilestoneActivities</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function QuoteWizard() {
       <h1>QuoteWizard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function PdfExportButton() {
       <h1>PdfExportButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

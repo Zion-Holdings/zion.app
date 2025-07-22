@@ -5,5 +5,5 @@ export default function ReferralGuide() {
       <h1>ReferralGuide</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

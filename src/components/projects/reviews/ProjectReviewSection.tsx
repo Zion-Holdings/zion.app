@@ -5,5 +5,5 @@ export default function ProjectReviewSection() {
       <h1>ProjectReviewSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

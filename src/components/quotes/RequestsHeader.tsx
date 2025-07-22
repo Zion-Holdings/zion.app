@@ -5,5 +5,5 @@ export default function RequestsHeader() {
       <h1>RequestsHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
