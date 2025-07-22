@@ -5,5 +5,5 @@ export default function EnterpriseBilling() {
       <h1>EnterpriseBilling</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

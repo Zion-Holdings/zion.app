@@ -5,5 +5,5 @@ export default function CaseStudies() {
       <h1>CaseStudies</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

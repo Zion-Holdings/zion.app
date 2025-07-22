@@ -5,5 +5,5 @@ export default function EnterpriseAdmin() {
       <h1>EnterpriseAdmin</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Constitution() {
       <h1>Constitution</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

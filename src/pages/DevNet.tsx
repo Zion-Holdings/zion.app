@@ -5,5 +5,5 @@ export default function DevNet() {
       <h1>DevNet</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

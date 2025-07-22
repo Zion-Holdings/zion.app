@@ -5,5 +5,5 @@ export default function CheckoutPage() {
       <h1>CheckoutPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

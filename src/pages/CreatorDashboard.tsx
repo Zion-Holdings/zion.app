@@ -5,5 +5,5 @@ export default function CreatorDashboard() {
       <h1>CreatorDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

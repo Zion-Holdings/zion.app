@@ -5,5 +5,5 @@ export default function CommunityProfilePage() {
       <h1>CommunityProfilePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Congress() {
       <h1>Congress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function CompanyWorkspace() {
       <h1>CompanyWorkspace</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function EquipmentPage.test() {
       <h1>EquipmentPage.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

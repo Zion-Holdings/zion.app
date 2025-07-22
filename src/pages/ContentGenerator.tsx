@@ -5,5 +5,5 @@ export default function ContentGenerator() {
       <h1>ContentGenerator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function CreatePostPage() {
       <h1>CreatePostPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

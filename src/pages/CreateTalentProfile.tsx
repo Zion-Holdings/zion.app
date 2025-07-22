@@ -5,5 +5,5 @@ export default function CreateTalentProfile() {
       <h1>CreateTalentProfile</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function DeveloperPortal() {
       <h1>DeveloperPortal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
