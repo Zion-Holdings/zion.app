@@ -6,4 +6,4 @@ export default function useQuoteWizard.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
