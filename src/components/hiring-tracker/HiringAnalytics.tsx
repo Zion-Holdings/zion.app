@@ -5,5 +5,5 @@ export default function HiringAnalytics() {
       <h1>HiringAnalytics</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

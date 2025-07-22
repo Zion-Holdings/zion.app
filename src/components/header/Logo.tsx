@@ -5,5 +5,5 @@ export default function Logo() {
       <h1>Logo</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

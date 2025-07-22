@@ -5,5 +5,5 @@ export default function ITServiceRequestHero() {
       <h1>ITServiceRequestHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

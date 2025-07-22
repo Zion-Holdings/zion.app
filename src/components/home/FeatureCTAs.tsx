@@ -5,5 +5,5 @@ export default function FeatureCTAs() {
       <h1>FeatureCTAs</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

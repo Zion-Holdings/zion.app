@@ -5,5 +5,5 @@ export default function IntegrationsSyncLog() {
       <h1>IntegrationsSyncLog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

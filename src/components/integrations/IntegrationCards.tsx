@@ -5,5 +5,5 @@ export default function IntegrationCards() {
       <h1>IntegrationCards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

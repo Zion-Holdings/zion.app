@@ -5,5 +5,5 @@ export default function IntegrationConnectionModal() {
       <h1>IntegrationConnectionModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

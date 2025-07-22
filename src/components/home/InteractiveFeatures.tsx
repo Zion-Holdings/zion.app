@@ -5,5 +5,5 @@ export default function InteractiveFeatures() {
       <h1>InteractiveFeatures</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function CandidateCard() {
       <h1>CandidateCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ProductVideoSection() {
       <h1>ProductVideoSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

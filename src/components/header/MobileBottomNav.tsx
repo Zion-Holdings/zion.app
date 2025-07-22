@@ -5,5 +5,5 @@ export default function MobileBottomNav() {
       <h1>MobileBottomNav</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

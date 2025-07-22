@@ -5,5 +5,5 @@ export default function HireConfirmationModal() {
       <h1>HireConfirmationModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

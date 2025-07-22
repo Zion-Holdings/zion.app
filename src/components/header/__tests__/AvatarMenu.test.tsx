@@ -5,5 +5,5 @@ export default function AvatarMenu.test() {
       <h1>AvatarMenu.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function FeatureHighlights() {
       <h1>FeatureHighlights</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

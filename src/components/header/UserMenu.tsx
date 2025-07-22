@@ -5,5 +5,5 @@ export default function UserMenu() {
       <h1>UserMenu</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

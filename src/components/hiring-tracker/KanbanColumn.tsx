@@ -5,5 +5,5 @@ export default function KanbanColumn() {
       <h1>KanbanColumn</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

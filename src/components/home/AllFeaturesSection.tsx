@@ -5,5 +5,5 @@ export default function AllFeaturesSection() {
       <h1>AllFeaturesSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

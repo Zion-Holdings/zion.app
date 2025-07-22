@@ -5,5 +5,5 @@ export default function KanbanBoard() {
       <h1>KanbanBoard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

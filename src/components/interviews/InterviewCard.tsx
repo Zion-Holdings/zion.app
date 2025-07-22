@@ -5,5 +5,5 @@ export default function InterviewCard() {
       <h1>InterviewCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

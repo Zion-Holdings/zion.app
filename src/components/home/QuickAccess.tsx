@@ -5,5 +5,5 @@ export default function QuickAccess() {
       <h1>QuickAccess</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

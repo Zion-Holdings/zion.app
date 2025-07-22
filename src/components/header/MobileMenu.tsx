@@ -5,5 +5,5 @@ export default function MobileMenu() {
       <h1>MobileMenu</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

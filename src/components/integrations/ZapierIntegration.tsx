@@ -5,5 +5,5 @@ export default function ZapierIntegration() {
       <h1>ZapierIntegration</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function UserProfileDropdown() {
       <h1>UserProfileDropdown</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
