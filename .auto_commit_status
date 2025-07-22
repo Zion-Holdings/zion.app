@@ -1,22 +1,22 @@
  M .auto_commit_status
- M src/components/resume-builder/forms/AIEnhancementButton.tsx
- M src/components/resume-builder/forms/CertificationsForm.tsx
- M src/components/resume-builder/forms/EducationForm.tsx
- M src/components/resume-builder/forms/RateOptimizationSection.tsx
- M src/components/resume-builder/forms/SkillsForm.tsx
- M src/components/resume-builder/forms/WorkExperienceForm.tsx
- M src/components/resume-builder/forms/WorkExperienceItemForm.tsx
- M src/components/resume-builder/forms/basic-info/BasicInfoForm.tsx
- M src/components/resume-builder/forms/basic-info/ContactFields.tsx
- M src/components/resume-builder/forms/basic-info/PersonalInfoFields.tsx
- M src/components/resume-builder/forms/certifications/CertificationFormFields.tsx
- M src/components/resume-builder/forms/certifications/CertificationsForm.tsx
- M src/components/resume-builder/forms/certifications/CertificationsList.tsx
- M src/components/resume-builder/forms/education/EducationForm.tsx
- M src/components/resume-builder/forms/education/EducationFormFields.tsx
- M src/components/resume-builder/forms/education/EducationItem.tsx
- M src/components/resume-builder/forms/education/EducationList.tsx
- M src/components/resume-builder/forms/skills/AddSkillForm.tsx
- M src/components/resume-builder/forms/skills/BulkAddSkills.tsx
- M src/components/resume-builder/forms/skills/SkillCategory.tsx
-?? scripts/autonomous-automation-daemon.cjs
+ M src/components/resume-builder/forms/skills/SkillItem.tsx
+ M src/components/resume-builder/forms/skills/SkillsForm.tsx
+ M src/components/resume-builder/forms/skills/SkillsList.tsx
+ M src/components/resume-builder/portfolio/PortfolioBuilder.tsx
+ M src/components/resume-builder/portfolio/ProjectCard.tsx
+ M src/components/resume-builder/portfolio/ProjectForm.tsx
+ M src/components/resume-builder/preview/CertificationsSection.tsx
+ M src/components/resume-builder/preview/EducationSection.tsx
+ M src/components/resume-builder/preview/PreviewHeader.tsx
+ M src/components/resume-builder/preview/ResumeBasicInfo.tsx
+ M src/components/resume-builder/preview/SkillsSection.tsx
+ M src/components/resume-builder/preview/WorkExperienceSection.tsx
+ M src/components/resume-builder/wizard/CreateResumeForm.tsx
+ M src/components/resume-builder/wizard/EmptyResumeState.tsx
+ M src/components/resume-builder/wizard/NavigationButtons.tsx
+ M src/components/resume-builder/wizard/ResumeProgress.tsx
+ M src/components/resume-builder/wizard/ResumeStepContent.tsx
+ M src/components/resume-builder/wizard/ResumeSteps.tsx
+ M src/components/resume-builder/wizard/ResumeVersionSelector.tsx
+ M src/components/resume-builder/wizard/ResumeWizard.tsx
+?? automation/tasks/SecurityScanner.js
