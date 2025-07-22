@@ -1,7 +1,4 @@
  M .auto_commit_status
- M AUTONOMOUS_AUTOMATION_SYSTEM.md
- M src/hooks/useAdvancedOnboardingStatus.tsx
- M src/hooks/useAuthGuard.tsx
+ M scripts/master-automation-orchestrator.cjs
  M start-autonomous-automation.sh
-?? automation/core/NotificationManager.js
-?? scripts/autonomous-startup.cjs
+?? AUTONOMOUS_SYSTEM_README.md

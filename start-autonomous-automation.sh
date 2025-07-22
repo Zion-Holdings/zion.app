@@ -270,7 +270,7 @@ check_all_status() {
     local running_count=0
     local stopped_count=0
     
-    for agent_name in "${!AGENTS[@]}"; do
+    for agent_name in "${AGENT_NAMES[@]}"; do
         if check_agent_status "$agent_name"; then
             ((running_count++))
         else
@@ -289,7 +289,7 @@ check_all_status() {
 stop_agent() {
     local agent_name=$1
     local pid_file="$PID_DIR/${agent_name}.pid"
-    local description=${DESCRIPTIONS[$agent_name]}
+    local description=$(get_agent_description "$agent_name")
     
     if [ -f "$pid_file" ]; then
         local pid=$(cat "$pid_file")
@@ -325,7 +325,7 @@ stop_all_agents() {
     print_status $PURPLE "🛑 Stopping Autonomous Automation System..."
     
     # Stop agents in reverse order (dependencies first)
-    local agents_reverse=($(printf '%s\n' "${!AGENTS[@]}" | tac))
+    local agents_reverse=($(printf '%s\n' "${AGENT_NAMES[@]}" | tac))
     
     for agent_name in "${agents_reverse[@]}"; do
         stop_agent "$agent_name"
@@ -367,9 +367,10 @@ show_system_info() {
     echo "npm Version: $(npm --version)"
     echo
     echo "Available Agents:"
-    for agent_name in "${!AGENTS[@]}"; do
-        local port=${PORTS[$agent_name]}
-        echo "  - $agent_name (Port: $port): ${DESCRIPTIONS[$agent_name]}"
+    for agent_name in "${AGENT_NAMES[@]}"; do
+        local port=$(get_agent_port "$agent_name")
+        local description=$(get_agent_description "$agent_name")
+        echo "  - $agent_name (Port: $port): $description"
     done
     echo
 }
@@ -390,8 +391,9 @@ show_help() {
     echo "  help               Show this help message"
     echo
     echo "Agents:"
-    for agent_name in "${!AGENTS[@]}"; do
-        echo "  $agent_name - ${DESCRIPTIONS[$agent_name]}"
+    for agent_name in "${AGENT_NAMES[@]}"; do
+        local description=$(get_agent_description "$agent_name")
+        echo "  $agent_name - $description"
     done
     echo
     echo "Examples:"
@@ -430,7 +432,7 @@ main() {
             ;;
         logs)
             if [ -n "$agent" ]; then
-                if [ -n "${AGENTS[$agent]}" ]; then
+                if [ -n "$(get_agent_script "$agent")" ]; then
                     show_logs "$agent"
                 else
                     print_status $RED "❌ Unknown agent: $agent"
@@ -457,7 +459,7 @@ main() {
 }
 
 # Handle script interruption
-trap 'print_status $YELLOW "Interrupted. Use '$0 stop' to stop all agents."; exit 1' INT TERM
+trap 'print_status $YELLOW "Interrupted. Use $0 stop to stop all agents."; exit 1' INT TERM
 
 # Run main function with all arguments
 main "$@" 

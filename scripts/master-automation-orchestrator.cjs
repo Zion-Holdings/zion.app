@@ -1,577 +1,795 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
-const chalk = require('chalk');
+/**
+ * Master Automation Orchestrator
+ * 
+ * Coordinates and manages all independent automation systems,
+ * providing unified control, monitoring, and intelligent scheduling.
+ */
 
-class MasterAutomationOrchestrator {
+const fs = require('fs').promises;
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const EventEmitter = require('events');
+const https = require('https');
+const http = require('http');
+
+class MasterAutomationOrchestrator extends EventEmitter {
   constructor() {
-    this.automations = {
-      aiCodeReview: {
-        name: 'AI Code Review',
-        script: 'ai-code-review-automation.cjs',
-        status: 'stopped',
-        process: null,
-        config: {
+    super();
+    
+    this.config = {
+      // Automation systems
+      systems: {
+        aiCodeReview: {
+          name: 'AI Code Review',
+          script: 'scripts/ai-code-review-automation.cjs',
           enabled: true,
-          autoStart: true,
-          interval: 5 * 60 * 1000 // 5 minutes
+          priority: 'high',
+          schedule: {
+            startDelay: 0,
+            interval: 10 * 60 * 1000, // 10 minutes
+            maxConcurrent: 1
+          }
+        },
+        aiDiscovery: {
+          name: 'AI Discovery',
+          script: 'scripts/ai-discovery-automation.cjs',
+          enabled: true,
+          priority: 'medium',
+          schedule: {
+            startDelay: 30 * 1000, // 30 seconds
+            interval: 30 * 60 * 1000, // 30 minutes
+            maxConcurrent: 1
+          }
+        },
+        performanceOptimization: {
+          name: 'Performance Optimization',
+          script: 'scripts/performance-optimization-automation.cjs',
+          enabled: true,
+          priority: 'high',
+          schedule: {
+            startDelay: 60 * 1000, // 1 minute
+            interval: 15 * 60 * 1000, // 15 minutes
+            maxConcurrent: 1
+          }
+        },
+        securityMonitoring: {
+          name: 'Security Monitoring',
+          script: 'scripts/security-monitoring-automation.cjs',
+          enabled: true,
+          priority: 'critical',
+          schedule: {
+            startDelay: 15 * 1000, // 15 seconds
+            interval: 5 * 60 * 1000, // 5 minutes
+            maxConcurrent: 1
+          }
+        },
+        uxEnhancement: {
+          name: 'UX Enhancement',
+          script: 'scripts/ux-enhancement-automation.cjs',
+          enabled: true,
+          priority: 'medium',
+          schedule: {
+            startDelay: 45 * 1000, // 45 seconds
+            interval: 20 * 60 * 1000, // 20 minutes
+            maxConcurrent: 1
+          }
+        },
+        databaseHealth: {
+          name: 'Database Health',
+          script: 'scripts/database-health-automation.cjs',
+          enabled: true,
+          priority: 'high',
+          schedule: {
+            startDelay: 90 * 1000, // 1.5 minutes
+            interval: 25 * 60 * 1000, // 25 minutes
+            maxConcurrent: 1
+          }
         }
       },
-      performanceOptimization: {
-        name: 'Performance Optimization',
-        script: 'performance-optimization-automation.cjs',
-        status: 'stopped',
-        process: null,
-        config: {
-          enabled: true,
-          autoStart: true,
-          interval: 10 * 60 * 1000 // 10 minutes
-        }
+      
+      // Orchestration settings
+      orchestration: {
+        maxConcurrentSystems: 3,
+        healthCheckInterval: 30 * 1000, // 30 seconds
+        restartOnFailure: true,
+        maxRestartAttempts: 3,
+        gracefulShutdown: true,
+        loadBalancing: true
       },
-      securityMonitoring: {
-        name: 'Security Monitoring',
-        script: 'security-monitoring-automation.cjs',
-        status: 'stopped',
-        process: null,
-        config: {
-          enabled: true,
-          autoStart: true,
-          interval: 15 * 60 * 1000 // 15 minutes
-        }
+      
+      // Communication settings
+      communication: {
+        webhookUrl: process.env.WEBHOOK_URL,
+        slackChannel: process.env.SLACK_CHANNEL,
+        emailNotifications: process.env.EMAIL_NOTIFICATIONS === 'true',
+        notificationLevel: 'warning' // debug, info, warning, error, critical
       },
-      uxEnhancement: {
-        name: 'UX Enhancement',
-        script: 'ux-enhancement-automation.cjs',
-        status: 'stopped',
-        process: null,
-        config: {
-          enabled: true,
-          autoStart: true,
-          interval: 20 * 60 * 1000 // 20 minutes
-        }
-      },
-      databaseHealth: {
-        name: 'Database Health',
-        script: 'database-health-automation.cjs',
-        status: 'stopped',
-        process: null,
-        config: {
-          enabled: true,
-          autoStart: true,
-          interval: 30 * 60 * 1000 // 30 minutes
-        }
+      
+      // Paths
+      paths: {
+        projectRoot: process.cwd(),
+        logs: path.join(process.cwd(), 'logs'),
+        reports: path.join(process.cwd(), 'reports'),
+        config: path.join(process.cwd(), 'config'),
+        temp: path.join(process.cwd(), 'temp')
       }
     };
     
     this.isRunning = false;
-    this.startTime = null;
-    this.logs = [];
-    this.config = {
-      logRetention: 1000, // Keep last 1000 log entries
-      healthCheckInterval: 60 * 1000, // 1 minute
-      autoRestart: true,
-      maxRestartAttempts: 3
+    this.activeSystems = new Map();
+    this.systemStatus = new Map();
+    this.systemProcesses = new Map();
+    this.restartAttempts = new Map();
+    this.systemMetrics = new Map();
+    this.stats = {
+      totalSystems: 0,
+      activeSystems: 0,
+      failedSystems: 0,
+      totalRestarts: 0,
+      lastOrchestration: null
     };
+    
+    this.initializeDirectories();
+    this.initializeSystems();
+  }
+
+  async initializeDirectories() {
+    const dirs = [
+      this.config.paths.logs,
+      this.config.paths.reports,
+      this.config.paths.config,
+      this.config.paths.temp
+    ];
+
+    for (const dir of dirs) {
+      try {
+        await fs.mkdir(dir, { recursive: true });
+      } catch (error) {
+        this.log('warn', `Failed to create directory ${dir}: ${error.message}`);
+      }
+    }
+  }
+
+  initializeSystems() {
+    for (const [systemId, systemConfig] of Object.entries(this.config.systems)) {
+      if (systemConfig.enabled) {
+        this.systemStatus.set(systemId, {
+          status: 'stopped',
+          lastStart: null,
+          lastStop: null,
+          uptime: 0,
+          restarts: 0,
+          errors: [],
+          metrics: {}
+        });
+        
+        this.restartAttempts.set(systemId, 0);
+        this.systemMetrics.set(systemId, []);
+        
+        this.stats.totalSystems++;
+      }
+    }
   }
 
   async start() {
-    console.log(chalk.blue('🎯 Master Automation Orchestrator Starting...'));
-    this.isRunning = true;
-    this.startTime = new Date();
-    
-    // Start all enabled automations
-    for (const [key, automation] of Object.entries(this.automations)) {
-      if (automation.config.enabled && automation.config.autoStart) {
-        await this.startAutomation(key);
-      }
+    if (this.isRunning) {
+      this.log('warn', 'Master Automation Orchestrator is already running');
+      return;
     }
-    
+
+    this.log('info', '🚀 Starting Master Automation Orchestrator...');
+    this.isRunning = true;
+
     // Start health monitoring
     this.startHealthMonitoring();
-    
-    // Start dashboard
-    this.startDashboard();
-    
-    console.log(chalk.green('✅ Master Automation Orchestrator started successfully'));
-    this.log('Master orchestrator started', 'info');
+
+    // Start all enabled systems
+    await this.startAllSystems();
+
+    // Start load balancing
+    if (this.config.orchestration.loadBalancing) {
+      this.startLoadBalancing();
+    }
+
+    this.log('info', '✅ Master Automation Orchestrator started successfully');
+    this.emit('started');
   }
 
   async stop() {
-    console.log(chalk.yellow('🛑 Stopping Master Automation Orchestrator...'));
-    this.isRunning = false;
-    
-    // Stop all automations
-    for (const [key, automation] of Object.entries(this.automations)) {
-      if (automation.status === 'running') {
-        await this.stopAutomation(key);
-      }
-    }
-    
-    console.log(chalk.green('✅ Master Automation Orchestrator stopped'));
-    this.log('Master orchestrator stopped', 'info');
-  }
-
-  async startAutomation(key) {
-    const automation = this.automations[key];
-    
-    if (automation.status === 'running') {
-      console.log(chalk.yellow(`⚠️  ${automation.name} is already running`));
+    if (!this.isRunning) {
+      this.log('warn', 'Master Automation Orchestrator is not running');
       return;
     }
-    
-    try {
-      console.log(chalk.blue(`🚀 Starting ${automation.name}...`));
-      
-      const scriptPath = path.join(__dirname, automation.script);
-      
-      if (!fs.existsSync(scriptPath)) {
-        throw new Error(`Script not found: ${scriptPath}`);
+
+    this.log('info', '🛑 Stopping Master Automation Orchestrator...');
+    this.isRunning = false;
+
+    // Stop health monitoring
+    if (this.healthTimer) {
+      clearInterval(this.healthTimer);
+    }
+
+    // Stop load balancing
+    if (this.loadBalancingTimer) {
+      clearInterval(this.loadBalancingTimer);
+    }
+
+    // Stop all systems gracefully
+    await this.stopAllSystems();
+
+    this.log('info', '✅ Master Automation Orchestrator stopped');
+    this.emit('stopped');
+  }
+
+  async startAllSystems() {
+    const systemEntries = Object.entries(this.config.systems)
+      .filter(([, config]) => config.enabled)
+      .sort((a, b) => {
+        const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+        return priorityOrder[a[1].priority] - priorityOrder[b[1].priority];
+      });
+
+    for (const [systemId, systemConfig] of systemEntries) {
+      try {
+        // Start system with delay
+        setTimeout(async () => {
+          await this.startSystem(systemId);
+        }, systemConfig.schedule.startDelay);
+      } catch (error) {
+        this.log('error', `Failed to schedule system ${systemId}: ${error.message}`);
       }
+    }
+  }
+
+  async startSystem(systemId) {
+    const systemConfig = this.config.systems[systemId];
+    if (!systemConfig || !systemConfig.enabled) {
+      return;
+    }
+
+    if (this.activeSystems.has(systemId)) {
+      this.log('warn', `System ${systemId} is already running`);
+      return;
+    }
+
+    if (this.getActiveSystemCount() >= this.config.orchestration.maxConcurrentSystems) {
+      this.log('warn', `Maximum concurrent systems reached. Queuing ${systemId}`);
+      this.queueSystem(systemId);
+      return;
+    }
+
+    try {
+      this.log('info', `🚀 Starting system: ${systemConfig.name}`);
       
-      automation.process = spawn('node', [scriptPath, 'start'], {
+      // Start the system process
+      const process = spawn('node', [systemConfig.script, 'start'], {
         stdio: ['pipe', 'pipe', 'pipe'],
         detached: false
       });
-      
-      automation.status = 'running';
-      automation.startTime = new Date();
-      automation.restartAttempts = 0;
-      
+
+      // Store process reference
+      this.systemProcesses.set(systemId, process);
+      this.activeSystems.set(systemId, {
+        process,
+        startTime: Date.now(),
+        config: systemConfig
+      });
+
+      // Update status
+      const status = this.systemStatus.get(systemId);
+      status.status = 'running';
+      status.lastStart = Date.now();
+      status.restarts++;
+
+      this.stats.activeSystems++;
+
       // Handle process events
-      automation.process.stdout.on('data', (data) => {
-        const output = data.toString().trim();
-        this.log(`${automation.name}: ${output}`, 'info');
+      process.stdout.on('data', (data) => {
+        this.log('info', `[${systemId}] ${data.toString().trim()}`);
       });
-      
-      automation.process.stderr.on('data', (data) => {
-        const error = data.toString().trim();
-        this.log(`${automation.name} Error: ${error}`, 'error');
+
+      process.stderr.on('data', (data) => {
+        this.log('error', `[${systemId}] ${data.toString().trim()}`);
       });
-      
-      automation.process.on('close', (code) => {
-        this.log(`${automation.name} process exited with code ${code}`, 'warn');
-        automation.status = 'stopped';
-        automation.process = null;
-        
-        // Auto-restart if enabled
-        if (this.config.autoRestart && automation.restartAttempts < this.config.maxRestartAttempts) {
-          automation.restartAttempts++;
-          setTimeout(() => {
-            if (this.isRunning) {
-              this.startAutomation(key);
-            }
-          }, 5000); // Wait 5 seconds before restart
-        }
+
+      process.on('close', (code) => {
+        this.handleSystemExit(systemId, code);
       });
-      
-      automation.process.on('error', (error) => {
-        this.log(`${automation.name} process error: ${error.message}`, 'error');
-        automation.status = 'error';
+
+      process.on('error', (error) => {
+        this.handleSystemError(systemId, error);
       });
-      
-      console.log(chalk.green(`✅ ${automation.name} started successfully`));
-      this.log(`${automation.name} started`, 'info');
-      
+
+      this.log('info', `✅ System ${systemConfig.name} started successfully`);
+      this.emit('systemStarted', { systemId, systemConfig });
+
     } catch (error) {
-      console.error(chalk.red(`❌ Failed to start ${automation.name}:`), error.message);
-      automation.status = 'error';
-      this.log(`Failed to start ${automation.name}: ${error.message}`, 'error');
+      this.log('error', `Failed to start system ${systemId}: ${error.message}`);
+      this.handleSystemError(systemId, error);
     }
   }
 
-  async stopAutomation(key) {
-    const automation = this.automations[key];
+  async stopSystem(systemId) {
+    const activeSystem = this.activeSystems.get(systemId);
+    if (!activeSystem) {
+      this.log('warn', `System ${systemId} is not running`);
+      return;
+    }
+
+    try {
+      this.log('info', `🛑 Stopping system: ${systemId}`);
+      
+      const process = activeSystem.process;
+      
+      if (this.config.orchestration.gracefulShutdown) {
+        // Try graceful shutdown first
+        process.kill('SIGTERM');
+        
+        // Wait for graceful shutdown
+        setTimeout(() => {
+          if (process.killed === false) {
+            process.kill('SIGKILL');
+          }
+        }, 5000);
+      } else {
+        process.kill('SIGKILL');
+      }
+
+      // Update status
+      const status = this.systemStatus.get(systemId);
+      status.status = 'stopped';
+      status.lastStop = Date.now();
+      status.uptime += Date.now() - activeSystem.startTime;
+
+      this.activeSystems.delete(systemId);
+      this.systemProcesses.delete(systemId);
+      this.stats.activeSystems--;
+
+      this.log('info', `✅ System ${systemId} stopped`);
+      this.emit('systemStopped', { systemId });
+
+    } catch (error) {
+      this.log('error', `Failed to stop system ${systemId}: ${error.message}`);
+    }
+  }
+
+  async stopAllSystems() {
+    const systemIds = Array.from(this.activeSystems.keys());
     
-    if (automation.status !== 'running' || !automation.process) {
-      console.log(chalk.yellow(`⚠️  ${automation.name} is not running`));
+    for (const systemId of systemIds) {
+      await this.stopSystem(systemId);
+    }
+  }
+
+  handleSystemExit(systemId, code) {
+    const systemConfig = this.config.systems[systemId];
+    const status = this.systemStatus.get(systemId);
+    
+    this.log('info', `System ${systemId} exited with code ${code}`);
+    
+    // Update status
+    status.status = 'stopped';
+    status.lastStop = Date.now();
+    
+    if (code !== 0) {
+      status.errors.push({
+        timestamp: Date.now(),
+        type: 'exit',
+        code,
+        message: `System exited with code ${code}`
+      });
+      
+      this.stats.failedSystems++;
+      
+      // Attempt restart if enabled
+      if (this.config.orchestration.restartOnFailure) {
+        this.attemptRestart(systemId);
+      }
+    }
+    
+    this.activeSystems.delete(systemId);
+    this.systemProcesses.delete(systemId);
+    this.stats.activeSystems--;
+    
+    this.emit('systemExited', { systemId, code });
+  }
+
+  handleSystemError(systemId, error) {
+    const status = this.systemStatus.get(systemId);
+    
+    this.log('error', `System ${systemId} error: ${error.message}`);
+    
+    // Update status
+    status.errors.push({
+      timestamp: Date.now(),
+      type: 'error',
+      message: error.message
+    });
+    
+    this.stats.failedSystems++;
+    
+    // Attempt restart if enabled
+    if (this.config.orchestration.restartOnFailure) {
+      this.attemptRestart(systemId);
+    }
+    
+    this.emit('systemError', { systemId, error });
+  }
+
+  async attemptRestart(systemId) {
+    const restartAttempts = this.restartAttempts.get(systemId) || 0;
+    const maxAttempts = this.config.orchestration.maxRestartAttempts;
+    
+    if (restartAttempts >= maxAttempts) {
+      this.log('error', `System ${systemId} exceeded maximum restart attempts (${maxAttempts})`);
+      this.sendNotification('critical', `System ${systemId} failed to restart after ${maxAttempts} attempts`);
       return;
     }
     
-    try {
-      console.log(chalk.yellow(`🛑 Stopping ${automation.name}...`));
-      
-      automation.process.kill('SIGTERM');
-      
-      // Wait for graceful shutdown
-      setTimeout(() => {
-        if (automation.process && automation.status === 'running') {
-          automation.process.kill('SIGKILL');
-        }
-      }, 5000);
-      
-      automation.status = 'stopping';
-      this.log(`${automation.name} stopping`, 'info');
-      
-    } catch (error) {
-      console.error(chalk.red(`❌ Failed to stop ${automation.name}:`), error.message);
-      this.log(`Failed to stop ${automation.name}: ${error.message}`, 'error');
-    }
-  }
-
-  async restartAutomation(key) {
-    const automation = this.automations[key];
+    this.restartAttempts.set(systemId, restartAttempts + 1);
+    this.stats.totalRestarts++;
     
-    console.log(chalk.blue(`🔄 Restarting ${automation.name}...`));
+    this.log('info', `Attempting to restart system ${systemId} (attempt ${restartAttempts + 1}/${maxAttempts})`);
     
-    if (automation.status === 'running') {
-      await this.stopAutomation(key);
-      
-      // Wait for process to stop
-      await new Promise(resolve => setTimeout(resolve, 2000));
-    }
-    
-    await this.startAutomation(key);
+    // Wait before restart
+    setTimeout(async () => {
+      await this.startSystem(systemId);
+    }, 5000 * (restartAttempts + 1)); // Exponential backoff
   }
 
   startHealthMonitoring() {
-    this.healthInterval = setInterval(() => {
+    this.healthTimer = setInterval(async () => {
       if (this.isRunning) {
-        this.performHealthCheck();
+        await this.checkSystemHealth();
       }
-    }, this.config.healthCheckInterval);
+    }, this.config.orchestration.healthCheckInterval);
   }
 
-  async performHealthCheck() {
-    const healthStatus = {
-      timestamp: new Date().toISOString(),
-      automations: {},
-      overall: 'healthy'
-    };
-    
-    let unhealthyCount = 0;
-    
-    for (const [key, automation] of Object.entries(this.automations)) {
-      const status = {
-        status: automation.status,
-        uptime: automation.startTime ? Date.now() - automation.startTime.getTime() : 0,
-        restartAttempts: automation.restartAttempts || 0,
-        healthy: automation.status === 'running'
-      };
-      
-      healthStatus.automations[key] = status;
-      
-      if (!status.healthy) {
-        unhealthyCount++;
+  async checkSystemHealth() {
+    for (const [systemId, activeSystem] of this.activeSystems) {
+      try {
+        const health = await this.getSystemHealth(systemId);
+        this.systemMetrics.get(systemId).push({
+          timestamp: Date.now(),
+          health
+        });
+        
+        // Keep only recent metrics
+        const metrics = this.systemMetrics.get(systemId);
+        if (metrics.length > 100) {
+          metrics.splice(0, metrics.length - 100);
+        }
+        
+        // Check for health issues
+        if (health.status === 'unhealthy') {
+          this.log('warn', `System ${systemId} health check failed`);
+          this.sendNotification('warning', `System ${systemId} is unhealthy`);
+        }
+        
+      } catch (error) {
+        this.log('error', `Health check failed for system ${systemId}: ${error.message}`);
       }
     }
-    
-    if (unhealthyCount > 0) {
-      healthStatus.overall = unhealthyCount === Object.keys(this.automations).length ? 'critical' : 'warning';
-    }
-    
-    // Log health status
-    if (healthStatus.overall !== 'healthy') {
-      this.log(`Health check: ${healthStatus.overall} (${unhealthyCount} unhealthy automations)`, 'warn');
-    }
-    
-    // Save health status
-    await this.saveHealthStatus(healthStatus);
   }
 
-  async saveHealthStatus(status) {
-    const statusPath = path.join(__dirname, '..', 'logs', 'master-automation-health.json');
-    fs.mkdirSync(path.dirname(statusPath), { recursive: true });
-    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
-  }
-
-  startDashboard() {
-    const dashboardPort = 3010;
+  async getSystemHealth(systemId) {
+    const activeSystem = this.activeSystems.get(systemId);
+    if (!activeSystem) {
+      return { status: 'stopped', uptime: 0, memory: 0, cpu: 0 };
+    }
+    
+    const process = activeSystem.process;
+    const uptime = Date.now() - activeSystem.startTime;
     
     try {
-      const dashboard = spawn('node', ['-e', `
-        const http = require('http');
-        const fs = require('fs');
-        const path = require('path');
-        
-        const server = http.createServer((req, res) => {
-          res.writeHead(200, { 'Content-Type': 'text/html' });
-          
-          const statusPath = path.join(__dirname, '..', 'logs', 'master-automation-health.json');
-          let status = { overall: 'unknown', automations: {} };
-          
-          if (fs.existsSync(statusPath)) {
-            status = JSON.parse(fs.readFileSync(statusPath, 'utf8'));
-          }
-          
-          const html = \`
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <title>Master Automation Dashboard</title>
-              <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
-                .healthy { background-color: #d4edda; color: #155724; }
-                .warning { background-color: #fff3cd; color: #856404; }
-                .critical { background-color: #f8d7da; color: #721c24; }
-                .automation { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-                .running { border-left: 5px solid #28a745; }
-                .stopped { border-left: 5px solid #dc3545; }
-                .error { border-left: 5px solid #ffc107; }
-              </style>
-            </head>
-            <body>
-              <h1>🎯 Master Automation Dashboard</h1>
-              <div class="status \${status.overall}">
-                <h2>Overall Status: \${status.overall.toUpperCase()}</h2>
-                <p>Last Updated: \${status.timestamp}</p>
-              </div>
-              
-              <h3>Automation Status</h3>
-              \${Object.entries(status.automations).map(([key, auto]) => \`
-                <div class="automation \${auto.status}">
-                  <h4>\${key}</h4>
-                  <p>Status: \${auto.status}</p>
-                  <p>Uptime: \${Math.floor(auto.uptime / 1000 / 60)} minutes</p>
-                  <p>Restart Attempts: \${auto.restartAttempts}</p>
-                </div>
-              \`).join('')}
-              
-              <script>
-                setTimeout(() => location.reload(), 30000);
-              </script>
-            </body>
-            </html>
-          \`;
-          
-          res.end(html);
-        });
-        
-        server.listen(${dashboardPort}, () => {
-          console.log('Dashboard running on http://localhost:${dashboardPort}');
-        });
-      `], { stdio: 'pipe' });
+      // Get process memory usage
+      const memoryUsage = process.memoryUsage ? process.memoryUsage() : { heapUsed: 0 };
+      const memoryMB = Math.round(memoryUsage.heapUsed / 1024 / 1024);
       
-      this.dashboardProcess = dashboard;
-      console.log(chalk.blue(`📊 Dashboard started at http://localhost:${dashboardPort}`));
+      // Get CPU usage (simplified)
+      const cpuUsage = process.cpuUsage ? process.cpuUsage() : { user: 0, system: 0 };
       
+      return {
+        status: process.killed ? 'stopped' : 'healthy',
+        uptime,
+        memory: memoryMB,
+        cpu: cpuUsage
+      };
     } catch (error) {
-      console.error(chalk.red('❌ Failed to start dashboard:'), error.message);
-    }
-  }
-
-  log(message, level = 'info') {
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      level,
-      message
-    };
-    
-    this.logs.push(logEntry);
-    
-    // Keep only recent logs
-    if (this.logs.length > this.config.logRetention) {
-      this.logs = this.logs.slice(-this.config.logRetention);
-    }
-    
-    // Save logs to file
-    this.saveLogs();
-  }
-
-  saveLogs() {
-    const logsPath = path.join(__dirname, '..', 'logs', 'master-automation-logs.json');
-    fs.mkdirSync(path.dirname(logsPath), { recursive: true });
-    fs.writeFileSync(logsPath, JSON.stringify(this.logs, null, 2));
-  }
-
-  getStatus() {
-    const status = {
-      isRunning: this.isRunning,
-      startTime: this.startTime,
-      automations: {},
-      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
-    
-    for (const [key, automation] of Object.entries(this.automations)) {
-      status.automations[key] = {
-        name: automation.name,
-        status: automation.status,
-        enabled: automation.config.enabled,
-        autoStart: automation.config.autoStart,
-        uptime: automation.startTime ? Date.now() - automation.startTime.getTime() : 0,
-        restartAttempts: automation.restartAttempts || 0
+      return {
+        status: 'unknown',
+        uptime,
+        memory: 0,
+        cpu: 0,
+        error: error.message
       };
     }
-    
-    return status;
   }
 
-  async generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      summary: {
-        totalAutomations: Object.keys(this.automations).length,
-        runningAutomations: Object.values(this.automations).filter(a => a.status === 'running').length,
-        stoppedAutomations: Object.values(this.automations).filter(a => a.status === 'stopped').length,
-        errorAutomations: Object.values(this.automations).filter(a => a.status === 'error').length
-      },
-      automations: this.automations,
-      logs: this.logs.slice(-100), // Last 100 log entries
-      health: await this.getHealthStatus()
+  startLoadBalancing() {
+    this.loadBalancingTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performLoadBalancing();
+      }
+    }, 60 * 1000); // Every minute
+  }
+
+  async performLoadBalancing() {
+    const systemLoads = await this.getSystemLoads();
+    const totalLoad = systemLoads.reduce((sum, load) => sum + load.load, 0);
+    const averageLoad = totalLoad / systemLoads.length;
+    
+    // Check for overloaded systems
+    for (const systemLoad of systemLoads) {
+      if (systemLoad.load > averageLoad * 1.5) {
+        this.log('warn', `System ${systemLoad.systemId} is overloaded (${systemLoad.load} vs avg ${averageLoad})`);
+        
+        // Consider redistributing load or restarting system
+        if (systemLoad.load > averageLoad * 2) {
+          this.log('info', `Restarting overloaded system ${systemLoad.systemId}`);
+          await this.stopSystem(systemLoad.systemId);
+          setTimeout(() => this.startSystem(systemLoad.systemId), 5000);
+        }
+      }
+    }
+  }
+
+  async getSystemLoads() {
+    const loads = [];
+    
+    for (const [systemId, activeSystem] of this.activeSystems) {
+      try {
+        const health = await this.getSystemHealth(systemId);
+        const load = health.memory + health.cpu.user / 1000000; // Simplified load calculation
+        loads.push({ systemId, load });
+      } catch (error) {
+        this.log('warn', `Failed to get load for system ${systemId}: ${error.message}`);
+      }
+    }
+    
+    return loads;
+  }
+
+  getActiveSystemCount() {
+    return this.activeSystems.size;
+  }
+
+  queueSystem(systemId) {
+    // Simple queue implementation
+    if (!this.systemQueue) {
+      this.systemQueue = [];
+    }
+    
+    if (!this.systemQueue.includes(systemId)) {
+      this.systemQueue.push(systemId);
+      this.log('info', `System ${systemId} queued for start`);
+    }
+  }
+
+  async processQueue() {
+    if (!this.systemQueue || this.systemQueue.length === 0) {
+      return;
+    }
+    
+    while (this.systemQueue.length > 0 && 
+           this.getActiveSystemCount() < this.config.orchestration.maxConcurrentSystems) {
+      const systemId = this.systemQueue.shift();
+      await this.startSystem(systemId);
+    }
+  }
+
+  async sendNotification(level, message) {
+    const notificationLevels = ['debug', 'info', 'warning', 'error', 'critical'];
+    const configLevel = notificationLevels.indexOf(this.config.communication.notificationLevel);
+    const messageLevel = notificationLevels.indexOf(level);
+    
+    if (messageLevel < configLevel) {
+      return; // Don't send notification
+    }
+    
+    const notification = {
+      timestamp: Date.now(),
+      level,
+      message,
+      orchestrator: 'Master Automation Orchestrator'
     };
     
-    const reportPath = path.join(__dirname, '..', 'logs', 'master-automation-report.json');
-    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    // Send webhook notification
+    if (this.config.communication.webhookUrl) {
+      try {
+        await this.sendWebhook(notification);
+      } catch (error) {
+        this.log('error', `Failed to send webhook notification: ${error.message}`);
+      }
+    }
     
+    // Send Slack notification
+    if (this.config.communication.slackChannel) {
+      try {
+        await this.sendSlackNotification(notification);
+      } catch (error) {
+        this.log('error', `Failed to send Slack notification: ${error.message}`);
+      }
+    }
+    
+    // Send email notification
+    if (this.config.communication.emailNotifications) {
+      try {
+        await this.sendEmailNotification(notification);
+      } catch (error) {
+        this.log('error', `Failed to send email notification: ${error.message}`);
+      }
+    }
+  }
+
+  async sendWebhook(notification) {
+    return new Promise((resolve, reject) => {
+      const data = JSON.stringify(notification);
+      const url = new URL(this.config.communication.webhookUrl);
+      
+      const options = {
+        hostname: url.hostname,
+        port: url.port || 443,
+        path: url.pathname,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': data.length
+        }
+      };
+      
+      const req = https.request(options, (res) => {
+        resolve();
+      });
+      
+      req.on('error', reject);
+      req.write(data);
+      req.end();
+    });
+  }
+
+  async sendSlackNotification(notification) {
+    // Implementation for Slack notification
+    this.log('info', `Slack notification: ${notification.message}`);
+  }
+
+  async sendEmailNotification(notification) {
+    // Implementation for email notification
+    this.log('info', `Email notification: ${notification.message}`);
+  }
+
+  async generateOrchestrationReport() {
+    const report = {
+      timestamp: Date.now(),
+      stats: this.stats,
+      systemStatus: Object.fromEntries(this.systemStatus),
+      activeSystems: Array.from(this.activeSystems.keys()),
+      systemMetrics: Object.fromEntries(this.systemMetrics),
+      summary: {
+        totalSystems: this.stats.totalSystems,
+        activeSystems: this.stats.activeSystems,
+        successRate: ((this.stats.totalSystems - this.stats.failedSystems) / this.stats.totalSystems * 100).toFixed(2),
+        averageUptime: this.calculateAverageUptime(),
+        topIssues: this.getTopIssues()
+      }
+    };
+
+    const reportPath = path.join(this.config.paths.reports, `orchestration-report-${Date.now()}.json`);
+    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
+    
+    this.log('info', `Generated orchestration report: ${reportPath}`);
     return report;
   }
 
-  async getHealthStatus() {
-    const healthPath = path.join(__dirname, '..', 'logs', 'master-automation-health.json');
+  calculateAverageUptime() {
+    const uptimes = Array.from(this.systemStatus.values())
+      .map(status => status.uptime)
+      .filter(uptime => uptime > 0);
     
-    if (fs.existsSync(healthPath)) {
-      return JSON.parse(fs.readFileSync(healthPath, 'utf8'));
-    }
+    if (uptimes.length === 0) return 0;
     
-    return { overall: 'unknown', automations: {} };
+    const totalUptime = uptimes.reduce((sum, uptime) => sum + uptime, 0);
+    return Math.round(totalUptime / uptimes.length / 1000); // Convert to seconds
   }
 
-  enableAutomation(key) {
-    if (this.automations[key]) {
-      this.automations[key].config.enabled = true;
-      console.log(chalk.green(`✅ ${this.automations[key].name} enabled`));
-      this.log(`${this.automations[key].name} enabled`, 'info');
-    } else {
-      console.error(chalk.red(`❌ Automation '${key}' not found`));
-    }
-  }
-
-  disableAutomation(key) {
-    if (this.automations[key]) {
-      this.automations[key].config.enabled = false;
-      console.log(chalk.yellow(`⚠️  ${this.automations[key].name} disabled`));
-      this.log(`${this.automations[key].name} disabled`, 'info');
-      
-      // Stop if running
-      if (this.automations[key].status === 'running') {
-        this.stopAutomation(key);
+  getTopIssues() {
+    const issues = [];
+    
+    for (const [systemId, status] of this.systemStatus) {
+      if (status.errors.length > 0) {
+        issues.push({
+          systemId,
+          errorCount: status.errors.length,
+          lastError: status.errors[status.errors.length - 1]
+        });
       }
-    } else {
-      console.error(chalk.red(`❌ Automation '${key}' not found`));
     }
+    
+    return issues
+      .sort((a, b) => b.errorCount - a.errorCount)
+      .slice(0, 5);
   }
 
-  listAutomations() {
-    console.log(chalk.blue('\n📋 Available Automations:'));
-    console.log(chalk.blue('='.repeat(50)));
+  log(level, message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level.toUpperCase()}] [ORCHESTRATOR] ${message}`;
     
-    for (const [key, automation] of Object.entries(this.automations)) {
-      const status = automation.status === 'running' ? 
-        chalk.green('🟢 RUNNING') : 
-        automation.status === 'stopped' ? 
-        chalk.red('🔴 STOPPED') : 
-        chalk.yellow('🟡 ERROR');
+    console.log(logMessage);
+    
+    // Save to log file
+    const logPath = path.join(this.config.paths.logs, 'master-orchestrator.log');
+    fs.appendFile(logPath, logMessage + '\n').catch(() => {});
+  }
+
+  getStatus() {
+    return {
+      isRunning: this.isRunning,
+      stats: this.stats,
+      activeSystems: Array.from(this.activeSystems.keys()),
+      systemStatus: Object.fromEntries(this.systemStatus),
+      lastOrchestration: this.stats.lastOrchestration
+    };
+  }
+
+  async listSystems() {
+    const systems = [];
+    
+    for (const [systemId, systemConfig] of Object.entries(this.config.systems)) {
+      const status = this.systemStatus.get(systemId);
+      const isActive = this.activeSystems.has(systemId);
       
-      console.log(`${chalk.cyan(key)}: ${automation.name} - ${status}`);
-      console.log(`  Enabled: ${automation.config.enabled ? chalk.green('Yes') : chalk.red('No')}`);
-      console.log(`  Auto-start: ${automation.config.autoStart ? chalk.green('Yes') : chalk.red('No')}`);
-      
-      if (automation.startTime) {
-        const uptime = Math.floor((Date.now() - automation.startTime.getTime()) / 1000 / 60);
-        console.log(`  Uptime: ${uptime} minutes`);
-      }
-      
-      console.log('');
+      systems.push({
+        id: systemId,
+        name: systemConfig.name,
+        enabled: systemConfig.enabled,
+        priority: systemConfig.priority,
+        status: status ? status.status : 'unknown',
+        isActive,
+        uptime: status ? status.uptime : 0,
+        restarts: status ? status.restarts : 0,
+        errors: status ? status.errors.length : 0
+      });
     }
+    
+    return systems;
   }
 }
 
 // CLI Interface
-if (require.main === module) {
+async function main() {
   const orchestrator = new MasterAutomationOrchestrator();
   const command = process.argv[2];
-  const automationKey = process.argv[3];
-  
+
   switch (command) {
     case 'start':
-      orchestrator.start();
+      await orchestrator.start();
       break;
     case 'stop':
-      orchestrator.stop();
+      await orchestrator.stop();
       break;
     case 'status':
       console.log(JSON.stringify(orchestrator.getStatus(), null, 2));
       break;
     case 'list':
-      orchestrator.listAutomations();
-      break;
-    case 'start-automation':
-      if (automationKey) {
-        orchestrator.startAutomation(automationKey);
-      } else {
-        console.error(chalk.red('❌ Please specify automation key'));
-      }
-      break;
-    case 'stop-automation':
-      if (automationKey) {
-        orchestrator.stopAutomation(automationKey);
-      } else {
-        console.error(chalk.red('❌ Please specify automation key'));
-      }
-      break;
-    case 'restart-automation':
-      if (automationKey) {
-        orchestrator.restartAutomation(automationKey);
-      } else {
-        console.error(chalk.red('❌ Please specify automation key'));
-      }
-      break;
-    case 'enable':
-      if (automationKey) {
-        orchestrator.enableAutomation(automationKey);
-      } else {
-        console.error(chalk.red('❌ Please specify automation key'));
-      }
-      break;
-    case 'disable':
-      if (automationKey) {
-        orchestrator.disableAutomation(automationKey);
-      } else {
-        console.error(chalk.red('❌ Please specify automation key'));
-      }
+      const systems = await orchestrator.listSystems();
+      console.log(JSON.stringify(systems, null, 2));
       break;
     case 'report':
-      orchestrator.generateReport().then(report => {
-        console.log(chalk.green('📊 Report generated successfully'));
-        console.log(JSON.stringify(report.summary, null, 2));
-      });
+      await orchestrator.generateOrchestrationReport();
       break;
     default:
-      console.log(`
-🎯 Master Automation Orchestrator
-
-Usage:
-  node master-automation-orchestrator.cjs [command] [automation-key]
-
-Commands:
-  start                    - Start all automations
-  stop                     - Stop all automations
-  status                   - Show current status
-  list                     - List all automations
-  start-automation <key>   - Start specific automation
-  stop-automation <key>    - Stop specific automation
-  restart-automation <key> - Restart specific automation
-  enable <key>             - Enable automation
-  disable <key>            - Disable automation
-  report                   - Generate status report
-
-Automation Keys:
-  aiCodeReview             - AI Code Review Automation
-  performanceOptimization  - Performance Optimization Automation
-  securityMonitoring       - Security Monitoring Automation
-  uxEnhancement           - UX Enhancement Automation
-  databaseHealth          - Database Health Automation
-
-Examples:
-  node master-automation-orchestrator.cjs start
-  node master-automation-orchestrator.cjs list
-  node master-automation-orchestrator.cjs start-automation aiCodeReview
-  node master-automation-orchestrator.cjs status
-      `);
+      console.log('Usage: node master-automation-orchestrator.cjs [start|stop|status|list|report]');
+      break;
   }
+}
+
+if (require.main === module) {
+  main().catch(error => {
+    console.error('Master Automation Orchestrator failed:', error.message);
+    process.exit(1);
+  });
 }
 
 module.exports = MasterAutomationOrchestrator; 
