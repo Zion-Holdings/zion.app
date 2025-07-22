@@ -6,4 +6,4 @@ export default function LoginContent() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
