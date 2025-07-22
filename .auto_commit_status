@@ -1,5 +1,8 @@
  M .auto_commit_status
-?? reports/database-health-1753221113858.json
-?? reports/database-health-1753221113887.json
-?? reports/database-health-1753221115704.json
-?? reports/database-health-1753221115724.json
+ M package.json
+?? COMPUTER_AI_ENHANCEMENT_README.md
+?? reports/database-health-1753221180972.json
+?? reports/database-health-1753221180979.json
+?? reports/database-health-1753221182834.json
+?? reports/database-health-1753221182849.json
+?? scripts/computer-ai-orchestrator.cjs

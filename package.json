@@ -79,7 +79,13 @@
     "infinite:iterate": "node scripts/infinite-improvement-loop.cjs iterate",
     "ai-tools:status": "node scripts/ai-tools-integration.cjs status",
     "ai-tools:capabilities": "node scripts/ai-tools-integration.cjs capabilities",
-    "ai-tools:test": "node scripts/ai-tools-integration.cjs test"
+    "ai-tools:test": "node scripts/ai-tools-integration.cjs test",
+    "computer:enhance": "node scripts/ai-powered-computer-enhancement.cjs start",
+    "computer:stop": "node scripts/ai-powered-computer-enhancement.cjs stop",
+    "computer:status": "node scripts/ai-powered-computer-enhancement.cjs status",
+    "orchestrator:start": "node scripts/computer-ai-orchestrator.cjs start",
+    "orchestrator:stop": "node scripts/computer-ai-orchestrator.cjs stop",
+    "orchestrator:status": "node scripts/computer-ai-orchestrator.cjs status"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
