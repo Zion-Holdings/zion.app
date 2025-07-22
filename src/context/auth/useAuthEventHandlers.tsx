@@ -5,5 +5,5 @@ export default function useAuthEventHandlers() {
       <h1>useAuthEventHandlers</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

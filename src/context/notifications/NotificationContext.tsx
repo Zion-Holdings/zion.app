@@ -5,5 +5,5 @@ export default function NotificationContext() {
       <h1>NotificationContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
