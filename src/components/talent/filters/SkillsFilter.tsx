@@ -6,4 +6,4 @@ export default function SkillsFilter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

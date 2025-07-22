@@ -6,4 +6,4 @@ export default function HireConfirmationModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

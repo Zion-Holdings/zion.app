@@ -6,4 +6,4 @@ export default function TalentCardHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

@@ -6,4 +6,4 @@ export default function ChatInput() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

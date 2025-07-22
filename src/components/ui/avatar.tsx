@@ -6,4 +6,4 @@ export default function avatar() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

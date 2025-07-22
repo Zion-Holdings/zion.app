@@ -6,4 +6,4 @@ export default function ResponsiveNavigation() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

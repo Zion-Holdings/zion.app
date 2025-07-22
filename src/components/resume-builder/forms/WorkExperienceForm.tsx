@@ -6,4 +6,4 @@ export default function WorkExperienceForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

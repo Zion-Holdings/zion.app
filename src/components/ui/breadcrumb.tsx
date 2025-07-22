@@ -6,4 +6,4 @@ export default function breadcrumb() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

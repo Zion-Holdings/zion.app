@@ -6,4 +6,4 @@ export default function AuthProvider() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

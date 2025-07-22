@@ -6,4 +6,4 @@ export default function PreviewResume() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

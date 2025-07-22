@@ -6,4 +6,4 @@ export default function PreviewHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

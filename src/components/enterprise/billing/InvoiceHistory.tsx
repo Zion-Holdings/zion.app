@@ -6,4 +6,4 @@ export default function InvoiceHistory() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

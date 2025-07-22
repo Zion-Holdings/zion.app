@@ -6,4 +6,4 @@ export default function TokenIntegrations() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

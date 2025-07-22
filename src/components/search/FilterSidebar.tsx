@@ -6,4 +6,4 @@ export default function FilterSidebar() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

@@ -6,4 +6,4 @@ export default function GuestCheckoutModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

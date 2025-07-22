@@ -6,4 +6,4 @@ export default function InstallPrompt() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

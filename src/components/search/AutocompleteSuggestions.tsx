@@ -6,4 +6,4 @@ export default function AutocompleteSuggestions() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

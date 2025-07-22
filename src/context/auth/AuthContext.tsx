@@ -6,4 +6,4 @@ export default function AuthContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

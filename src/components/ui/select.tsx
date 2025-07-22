@@ -6,4 +6,4 @@ export default function select() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

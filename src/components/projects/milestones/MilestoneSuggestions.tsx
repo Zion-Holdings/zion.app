@@ -6,4 +6,4 @@ export default function MilestoneSuggestions() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

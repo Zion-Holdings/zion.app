@@ -6,4 +6,4 @@ export default function HelpArticleList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

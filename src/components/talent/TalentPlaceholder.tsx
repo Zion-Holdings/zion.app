@@ -6,4 +6,4 @@ export default function TalentPlaceholder() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

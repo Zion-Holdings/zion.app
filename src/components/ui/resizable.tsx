@@ -6,4 +6,4 @@ export default function resizable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

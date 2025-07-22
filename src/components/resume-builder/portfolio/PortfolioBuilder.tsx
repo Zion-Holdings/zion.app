@@ -6,4 +6,4 @@ export default function PortfolioBuilder() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

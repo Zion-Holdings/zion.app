@@ -6,4 +6,4 @@ export default function dynamicImports() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

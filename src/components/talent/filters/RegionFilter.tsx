@@ -6,4 +6,4 @@ export default function RegionFilter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

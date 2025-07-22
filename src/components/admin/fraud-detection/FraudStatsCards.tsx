@@ -6,4 +6,4 @@ export default function FraudStatsCards() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

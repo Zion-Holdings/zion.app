@@ -6,4 +6,4 @@ export default function FounderBackupVault() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

@@ -6,4 +6,4 @@ export default function MessagingInbox() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

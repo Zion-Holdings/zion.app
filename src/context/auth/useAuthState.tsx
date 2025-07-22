@@ -6,4 +6,4 @@ export default function useAuthState() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';

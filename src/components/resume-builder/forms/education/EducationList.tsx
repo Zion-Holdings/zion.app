@@ -6,4 +6,4 @@ export default function EducationList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''
+}''''''''';
