@@ -5,5 +5,5 @@ export default function ApiDocumentation() {
       <h1>ApiDocumentation</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

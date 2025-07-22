@@ -5,5 +5,5 @@ export default function DisputeForm() {
       <h1>DisputeForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

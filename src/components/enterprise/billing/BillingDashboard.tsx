@@ -5,5 +5,5 @@ export default function BillingDashboard() {
       <h1>BillingDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

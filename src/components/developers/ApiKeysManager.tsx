@@ -5,5 +5,5 @@ export default function ApiKeysManager() {
       <h1>ApiKeysManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

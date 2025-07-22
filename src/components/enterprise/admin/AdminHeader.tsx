@@ -5,5 +5,5 @@ export default function AdminHeader() {
       <h1>AdminHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

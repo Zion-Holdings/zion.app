@@ -5,5 +5,5 @@ export default function EnterpriseTrustBadges() {
       <h1>EnterpriseTrustBadges</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

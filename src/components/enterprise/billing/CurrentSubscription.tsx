@@ -5,5 +5,5 @@ export default function CurrentSubscription() {
       <h1>CurrentSubscription</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

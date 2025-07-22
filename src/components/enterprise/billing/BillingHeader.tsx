@@ -5,5 +5,5 @@ export default function BillingHeader() {
       <h1>BillingHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

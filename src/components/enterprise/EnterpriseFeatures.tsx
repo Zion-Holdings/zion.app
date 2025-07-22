@@ -5,5 +5,5 @@ export default function EnterpriseFeatures() {
       <h1>EnterpriseFeatures</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

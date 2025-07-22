@@ -5,5 +5,5 @@ export default function ApiLogs() {
       <h1>ApiLogs</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

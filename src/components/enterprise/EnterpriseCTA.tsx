@@ -5,5 +5,5 @@ export default function EnterpriseCTA() {
       <h1>EnterpriseCTA</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

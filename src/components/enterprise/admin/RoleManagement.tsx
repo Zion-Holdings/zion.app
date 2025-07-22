@@ -5,5 +5,5 @@ export default function RoleManagement() {
       <h1>RoleManagement</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

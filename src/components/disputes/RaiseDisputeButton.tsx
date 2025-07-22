@@ -5,5 +5,5 @@ export default function RaiseDisputeButton() {
       <h1>RaiseDisputeButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

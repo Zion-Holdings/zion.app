@@ -5,5 +5,5 @@ export default function EnterpriseStickyNav() {
       <h1>EnterpriseStickyNav</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ApiPlayground() {
       <h1>ApiPlayground</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

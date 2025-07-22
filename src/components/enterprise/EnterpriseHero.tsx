@@ -5,5 +5,5 @@ export default function EnterpriseHero() {
       <h1>EnterpriseHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

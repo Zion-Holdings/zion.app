@@ -5,5 +5,5 @@ export default function ApiDocsLayout() {
       <h1>ApiDocsLayout</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

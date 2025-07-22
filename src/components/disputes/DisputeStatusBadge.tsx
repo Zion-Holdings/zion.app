@@ -5,5 +5,5 @@ export default function DisputeStatusBadge() {
       <h1>DisputeStatusBadge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

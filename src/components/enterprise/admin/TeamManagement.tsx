@@ -5,5 +5,5 @@ export default function TeamManagement() {
       <h1>TeamManagement</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

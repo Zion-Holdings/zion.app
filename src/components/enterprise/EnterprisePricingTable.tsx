@@ -5,5 +5,5 @@ export default function EnterprisePricingTable() {
       <h1>EnterprisePricingTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
