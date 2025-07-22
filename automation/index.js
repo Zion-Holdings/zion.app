@@ -180,28 +180,43 @@ class OptimizationAutomation {
   }
 
   setupHealthChecks() {
-    this.app.get('/health', (req, res) => {'      res.json({
-        status: 'healthy','        uptime: process.uptime(),
+    this.app.get('/health', (req, res) => {
+      res.json({
+        status: 'healthy',
+        uptime: process.uptime(),
         timestamp: new Date().toISOString(),
         components: {
-          slackBot: 'running','          performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped','          enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped','          express: 'running''        }
+          slackBot: 'running',
+          performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
+          enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
+          express: 'running'
+        }
       });
     });
 
-    this.app.get('/version', (req, res) => {'      const packageJson = require('../package.json');'      res.json({
+    this.app.get('/version', (req, res) => {
+      const packageJson = require('../package.json');
+      res.json({
         name: packageJson.name,
         version: packageJson.version,
-        automation: 'v2.0.0','        enhanced: true
+        automation: 'v2.0.0',
+        enhanced: true
       });
     });
   }
 
   async handleSlackEvent(event) {
     switch (event.type) {
-      case 'performance_alert':'        await this.slackBot.app.client.emit('performance_alert', { event });'        break;
-      case 'optimization_complete':'        await this.slackBot.app.client.emit('optimization_complete', { event });'        break;
-      case 'automation_trigger':'        // Handle automation triggers from Slack
-        if (event.text && event.text.includes('/automation')) {'          const taskType = this.parseSlackAutomationCommand(event.text);
+      case 'performance_alert':
+        await this.slackBot.app.client.emit('performance_alert', { event });
+        break;
+      case 'optimization_complete':
+        await this.slackBot.app.client.emit('optimization_complete', { event });
+        break;
+      case 'automation_trigger':
+        // Handle automation triggers from Slack
+        if (event.text && event.text.includes('/automation')) {
+          const taskType = this.parseSlackAutomationCommand(event.text);
           if (taskType) {
             this.enhancedAutomation.queueTask(taskType);
           }
@@ -214,7 +229,13 @@ class OptimizationAutomation {
 
   parseSlackAutomationCommand(text) {
     const commands = {
-      '/automation quick': 'quickScan','      '/automation deep': 'deepAnalysis','      '/automation full': 'fullAudit','      '/automation performance': 'performanceCheck','      '/automation security': 'securityScan','      '/automation dependencies': 'dependencyCheck''    };
+      '/automation quick': 'quickScan',
+      '/automation deep': 'deepAnalysis',
+      '/automation full': 'fullAudit',
+      '/automation performance': 'performanceCheck',
+      '/automation security': 'securityScan',
+      '/automation dependencies': 'dependencyCheck'
+    };
 
     for (const [command, taskType] of Object.entries(commands)) {
       if (text.includes(command)) {
@@ -293,7 +314,10 @@ class OptimizationAutomation {
       }
     };
     
-    process.on('SIGINT', () => shutdown('SIGINT'));'    process.on('SIGTERM', () => shutdown('SIGTERM'));'    process.on('SIGQUIT', () => shutdown('SIGQUIT'));'  }
+    process.on('SIGINT', () => shutdown('SIGINT'));
+    process.on('SIGTERM', () => shutdown('SIGTERM'));
+    process.on('SIGQUIT', () => shutdown('SIGQUIT'));
+  }
 
   async stop() {
     process.stdout.write(`[${new Date().toISOString()}] 🛑 Stopping Enhanced Optimization Automation System...\n`);

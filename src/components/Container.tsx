@@ -6,4 +6,4 @@ export default function Container() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
