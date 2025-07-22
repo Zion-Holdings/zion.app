@@ -6,4 +6,4 @@ export default function PostForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

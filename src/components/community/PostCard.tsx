@@ -6,4 +6,4 @@ export default function PostCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

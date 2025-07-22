@@ -6,4 +6,4 @@ export default function ReputationDisplay() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

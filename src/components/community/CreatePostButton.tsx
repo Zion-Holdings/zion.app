@@ -6,4 +6,4 @@ export default function CreatePostButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

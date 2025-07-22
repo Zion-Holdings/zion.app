@@ -6,4 +6,4 @@ export default function ContractForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
