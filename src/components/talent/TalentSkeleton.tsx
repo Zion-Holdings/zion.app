@@ -6,4 +6,4 @@ export default function TalentSkeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
