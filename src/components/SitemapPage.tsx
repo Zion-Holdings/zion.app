@@ -6,4 +6,4 @@ export default function SitemapPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

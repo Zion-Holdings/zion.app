@@ -361,10 +361,12 @@ class OptimizationAutomation {
       },
       slackBot: {
         isRunning: this.slackBot.isRunning,
-        status: 'running''      },
+        status: 'running'
+      },
       server: {
         port: this.port,
-        status: 'running''      },
+        status: 'running'
+      },
       timestamp: new Date().toISOString()
     };
   }

@@ -6,4 +6,4 @@ export default function SimpleLoading() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

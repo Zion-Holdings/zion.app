@@ -6,4 +6,4 @@ export default function SkipLink() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

@@ -6,4 +6,4 @@ export default function ScrollToTop() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

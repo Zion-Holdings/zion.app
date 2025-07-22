@@ -6,4 +6,4 @@ export default function ThemeProvider() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
