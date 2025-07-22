@@ -6,4 +6,4 @@ export default function SocialShareSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

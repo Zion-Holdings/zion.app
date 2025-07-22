@@ -6,4 +6,4 @@ export default function SearchFilter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

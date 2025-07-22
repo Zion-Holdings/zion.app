@@ -6,4 +6,4 @@ export default function LoginCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

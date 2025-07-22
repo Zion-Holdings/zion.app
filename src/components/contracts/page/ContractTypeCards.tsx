@@ -6,4 +6,4 @@ export default function ContractTypeCards() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

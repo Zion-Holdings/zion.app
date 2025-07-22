@@ -6,4 +6,4 @@ export default function ProjectActions() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

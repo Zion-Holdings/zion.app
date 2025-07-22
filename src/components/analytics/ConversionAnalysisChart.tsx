@@ -6,4 +6,4 @@ export default function ConversionAnalysisChart() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

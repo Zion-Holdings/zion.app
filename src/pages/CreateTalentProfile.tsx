@@ -6,4 +6,4 @@ export default function CreateTalentProfile() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

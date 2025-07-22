@@ -6,4 +6,4 @@ export default function CertificationsList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

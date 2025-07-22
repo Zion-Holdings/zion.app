@@ -6,4 +6,4 @@ export default function InterviewCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

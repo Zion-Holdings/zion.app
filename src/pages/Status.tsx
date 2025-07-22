@@ -6,4 +6,4 @@ export default function Status() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

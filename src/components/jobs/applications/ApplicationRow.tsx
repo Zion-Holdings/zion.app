@@ -6,4 +6,4 @@ export default function ApplicationRow() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

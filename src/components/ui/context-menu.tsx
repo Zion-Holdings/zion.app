@@ -6,4 +6,4 @@ export default function context-menu() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

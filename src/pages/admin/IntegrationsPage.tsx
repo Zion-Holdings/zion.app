@@ -6,4 +6,4 @@ export default function IntegrationsPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

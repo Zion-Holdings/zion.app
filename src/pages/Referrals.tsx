@@ -6,4 +6,4 @@ export default function Referrals() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

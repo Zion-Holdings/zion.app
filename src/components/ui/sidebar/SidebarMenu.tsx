@@ -6,4 +6,4 @@ export default function SidebarMenu() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

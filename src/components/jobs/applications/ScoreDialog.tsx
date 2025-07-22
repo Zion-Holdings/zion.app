@@ -6,4 +6,4 @@ export default function ScoreDialog() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

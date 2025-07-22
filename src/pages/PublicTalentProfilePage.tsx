@@ -6,4 +6,4 @@ export default function PublicTalentProfilePage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

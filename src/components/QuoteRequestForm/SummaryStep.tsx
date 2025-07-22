@@ -6,4 +6,4 @@ export default function SummaryStep() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

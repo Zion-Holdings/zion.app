@@ -6,4 +6,4 @@ export default function ActiveFilters() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

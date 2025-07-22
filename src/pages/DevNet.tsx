@@ -6,4 +6,4 @@ export default function DevNet() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

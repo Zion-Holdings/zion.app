@@ -6,4 +6,4 @@ export default function MessageTalentModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

@@ -6,4 +6,4 @@ export default function AuthRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

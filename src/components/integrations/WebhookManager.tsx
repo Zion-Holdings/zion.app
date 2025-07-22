@@ -6,4 +6,4 @@ export default function WebhookManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

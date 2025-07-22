@@ -6,4 +6,4 @@ export default function ProfileBadge() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

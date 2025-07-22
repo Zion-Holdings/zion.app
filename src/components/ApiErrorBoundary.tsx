@@ -6,4 +6,4 @@ export default function ApiErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

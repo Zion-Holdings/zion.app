@@ -6,4 +6,4 @@ export default function ThemeContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

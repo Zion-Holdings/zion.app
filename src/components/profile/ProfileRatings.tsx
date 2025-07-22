@@ -6,4 +6,4 @@ export default function ProfileRatings() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

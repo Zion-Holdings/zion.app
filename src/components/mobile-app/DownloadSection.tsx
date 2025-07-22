@@ -6,4 +6,4 @@ export default function DownloadSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

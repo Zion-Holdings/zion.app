@@ -6,4 +6,4 @@ export default function WhitepaperSectionEditor() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

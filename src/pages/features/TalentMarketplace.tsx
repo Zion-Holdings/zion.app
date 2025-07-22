@@ -6,4 +6,4 @@ export default function TalentMarketplace() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

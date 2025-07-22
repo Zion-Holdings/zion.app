@@ -6,4 +6,4 @@ export default function MetricsDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';

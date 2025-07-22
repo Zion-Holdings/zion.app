@@ -6,4 +6,4 @@ export default function MobileBrowse() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''
+}''''';
