@@ -1,404 +1,395 @@
-# Zion App - Infinite Improvement Loop System
+# Intelligent Automation System
 
-🚀 **AI-Powered Continuous Optimization System**
+A comprehensive, autonomous automation system that provides intelligent task scheduling, self-healing capabilities, anomaly detection, and real-time monitoring for development workflows.
 
-A sophisticated automation system that creates a perpetual improvement cycle using the best AI tools available to continuously enhance your codebase.
+## 🚀 Features
 
-## 🌟 Features
+### Core Capabilities
+- **Autonomous Operation**: Runs independently with minimal human intervention
+- **Self-Healing**: Automatically detects and recovers from failures
+- **Adaptive Scheduling**: Adjusts task frequency based on system conditions
+- **Anomaly Detection**: Identifies unusual patterns in performance and errors
+- **Real-time Monitoring**: Web dashboard with live status and controls
+- **Intelligent Reporting**: Automated daily/weekly reports with recommendations
 
-### 🤖 Multi-AI Integration
-- **Cursor AI**: Real-time code analysis and suggestions
-- **OpenAI GPT-4**: Complex problem solving and architectural decisions
-- **Claude**: Code review and optimization
-- **Local AI Models**: Real-time analysis with privacy
-- **GitHub Copilot**: Code generation and completion
-- **Custom AI Agents**: Specialized task automation
+### Automation Tasks
+- **Dependency Updater**: Automatically updates npm packages and creates PRs
+- **Security Scanner**: Scans for vulnerabilities and security issues
+- **Code Quality Enforcer**: Runs linting, formatting, and tests
+- **Stale Cleaner**: Removes old branches and pull requests
 
-### 🔄 Infinite Improvement Loop
-- **Continuous Analysis**: Real-time codebase monitoring
-- **Intelligent Prioritization**: AI-driven improvement suggestions
-- **Automated Implementation**: Self-applying optimizations
-- **Learning System**: Improves over time based on results
-- **Performance Tracking**: Metrics and impact measurement
+### Communication & Control
+- **Slack Integration**: Real-time notifications and ChatOps commands
+- **Web Dashboard**: Real-time status, logs, and manual controls
+- **Email Notifications**: Configurable email alerts
+- **API Endpoints**: RESTful API for external integration
 
-### 📊 Specialized AI Agents
-- **Performance Agent**: Optimizes speed, bundle size, and resource usage
-- **Security Agent**: Identifies and fixes security vulnerabilities
-- **Code Quality Agent**: Improves structure, readability, and maintainability
-- **Accessibility Agent**: Ensures WCAG compliance
-- **SEO Agent**: Optimizes for search engines
-- **Test Coverage Agent**: Improves test coverage and quality
+## 📋 Requirements
 
-### 🎯 Improvement Areas
-- Performance optimization
-- Security hardening
-- Code quality enhancement
-- Accessibility compliance
-- SEO optimization
-- Test coverage improvement
-- Bundle size reduction
-- Load time optimization
-
-## 🚀 Quick Start
-
-### Prerequisites
 - Node.js 16+ 
-- npm 8+
-- AI API keys (optional but recommended)
+- Git
+- GitHub CLI (for PR management)
+- Slack webhook URL (optional)
 
-### Installation
+## 🛠️ Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/zion-app/bolt.new.zion.app.git
-   cd bolt.new.zion.app
+   git clone <repository-url>
+   cd <repository-name>
    ```
 
-2. **Set up environment variables**
+2. **Install dependencies**
    ```bash
-   cp .env.example .env
-   # Edit .env with your AI API keys
+   npm install
    ```
 
-3. **Start the infinite improvement loop**
+3. **Set up environment variables**
    ```bash
-   cd automation
-   ./start-infinite-improvement.sh start
+   # Required for Slack notifications
+   export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+   export SLACK_CHANNEL="#automation"
+   
+   # Optional dashboard configuration
+   export DASHBOARD_PORT=3001
+   export DASHBOARD_USERNAME=admin
+   export DASHBOARD_PASSWORD=secret
    ```
 
-4. **Access the dashboard**
+4. **Configure GitHub CLI** (for PR management)
+   ```bash
+   gh auth login
    ```
-   http://localhost:3002
-   ```
 
-## 🔧 Configuration
+## 🚀 Quick Start
 
-### Environment Variables
-
+### Start the automation system
 ```bash
-# AI Configuration
-CURSOR_API_KEY=your_cursor_api_key
-OPENAI_API_KEY=your_openai_api_key
-CLAUDE_API_KEY=your_claude_api_key
-COPILOT_API_KEY=your_copilot_api_key
-
-# System Configuration
-IMPROVEMENT_PORT=3002
-LOG_LEVEL=info
-NODE_ENV=production
-
-# AI Provider Toggles
-CURSOR_AI_ENABLED=true
-OPENAI_ENABLED=true
-CLAUDE_ENABLED=true
-LOCAL_AI_ENABLED=true
-COPILOT_ENABLED=true
-CUSTOM_AGENTS_ENABLED=true
+node automation/index.js
 ```
 
-### Thresholds Configuration
+### Start with custom configuration
+```bash
+node automation/index.js --config custom-config.json
+```
 
-The system uses configurable thresholds for different metrics:
+### Run in dry-run mode
+```bash
+node automation/index.js --dry-run
+```
 
-```javascript
-THRESHOLDS: {
-  PERFORMANCE_SCORE: 85,
-  SECURITY_SCORE: 90,
-  CODE_QUALITY_SCORE: 80,
-  ACCESSIBILITY_SCORE: 85,
-  SEO_SCORE: 80,
-  TEST_COVERAGE: 80,
-  BUNDLE_SIZE: 500,
-  LOAD_TIME: 3000,
-}
+### Disable dashboard
+```bash
+node automation/index.js --no-dashboard
 ```
 
 ## 📊 Dashboard
 
-The system provides a comprehensive web dashboard at `http://localhost:3002` with:
-
-- **Real-time Status**: System health and running state
-- **Live Metrics**: Performance, security, and quality scores
-- **Improvement Queue**: Pending optimizations
-- **AI Agents Status**: Individual agent health
-- **History**: Recent improvements and their impact
-- **Charts**: Trend analysis and progress tracking
-
-## 🔄 How It Works
-
-### 1. Continuous Analysis
-The system continuously monitors your codebase using multiple AI agents:
-
-```javascript
-// Every 2 minutes - Quick scan
-// Every 15 minutes - Deep analysis  
-// Every hour - Full audit
-// Every 45 minutes - Security scan
-// Every 10 minutes - Performance check
+Once started, access the web dashboard at:
+```
+http://localhost:3001
 ```
 
-### 2. Intelligent Detection
-AI agents identify improvement opportunities:
+The dashboard provides:
+- Real-time system status
+- Task execution history
+- Performance metrics
+- Anomaly alerts
+- Manual task controls
+- Configuration management
 
-- **Performance Issues**: Slow load times, large bundles
-- **Security Vulnerabilities**: Outdated dependencies, code issues
-- **Quality Problems**: Linting errors, complexity issues
-- **Accessibility Gaps**: WCAG compliance issues
-- **SEO Opportunities**: Meta tags, structured data
+## ⚙️ Configuration
 
-### 3. Prioritized Queue
-Improvements are queued by priority:
+The system uses `automation/config.json` for configuration. Key sections:
 
-- **Critical**: Security vulnerabilities
-- **High**: Performance issues
-- **Medium**: Code quality, accessibility
-- **Low**: SEO optimizations
-
-### 4. Automated Implementation
-The system automatically implements improvements:
-
-```javascript
-// Example improvement implementation
-async implementPerformanceImprovement(data) {
-  // Analyze current performance
-  const analysis = await this.analyzePerformance();
-  
-  // Generate optimization suggestions
-  const suggestions = await this.aiProviders.get('openai').suggest(analysis);
-  
-  // Apply improvements
-  await this.applyOptimizations(suggestions);
-  
-  // Verify improvements
-  const newAnalysis = await this.analyzePerformance();
-  
-  return { success: true, improvement: newAnalysis.score - analysis.score };
-}
-```
-
-### 5. Learning & Adaptation
-The system learns from results and improves over time:
-
-- **Pattern Recognition**: Identifies successful improvement strategies
-- **Adaptive Thresholds**: Adjusts targets based on project capabilities
-- **AI Model Updates**: Refines AI prompts and strategies
-
-## 🤖 AI Agents
-
-### Performance Agent
-- **Bundle Analysis**: Identifies large dependencies and unused code
-- **Load Time Optimization**: Analyzes and optimizes rendering paths
-- **Resource Usage**: Monitors memory and CPU usage
-- **Code Splitting**: Suggests optimal chunking strategies
-
-### Security Agent
-- **Dependency Scanning**: Checks for vulnerabilities in packages
-- **Code Analysis**: Identifies security anti-patterns
-- **Environment Audit**: Checks for exposed secrets
-- **Compliance**: Ensures security best practices
-
-### Code Quality Agent
-- **Linting**: Runs comprehensive code quality checks
-- **Complexity Analysis**: Identifies overly complex functions
-- **Duplication Detection**: Finds code that can be refactored
-- **Coverage Analysis**: Monitors test coverage
-
-### Accessibility Agent
-- **WCAG Compliance**: Checks accessibility standards
-- **Semantic HTML**: Analyzes proper HTML structure
-- **Keyboard Navigation**: Tests keyboard accessibility
-- **Color Contrast**: Validates color accessibility
-
-### SEO Agent
-- **Meta Tag Analysis**: Checks for proper SEO meta tags
-- **Structured Data**: Validates JSON-LD and microdata
-- **Performance Impact**: Ensures optimizations don't hurt SEO
-- **Content Analysis**: Reviews content for SEO best practices
-
-### Test Coverage Agent
-- **Coverage Monitoring**: Tracks test coverage metrics
-- **Test Quality**: Analyzes test effectiveness
-- **Test Types**: Ensures proper mix of unit/integration/e2e tests
-- **Gap Analysis**: Identifies untested code paths
-
-## 📈 Metrics & Monitoring
-
-### Key Metrics Tracked
-- **Performance Score**: Lighthouse scores, load times
-- **Security Score**: Vulnerability count, security compliance
-- **Code Quality Score**: Linting errors, complexity metrics
-- **Accessibility Score**: WCAG compliance percentage
-- **SEO Score**: Meta tag completeness, structured data
-- **Test Coverage**: Line, branch, and function coverage
-
-### Impact Measurement
-Each improvement is tracked for its impact:
-
-```javascript
+### Autonomous Settings
+```json
 {
-  type: 'performance',
-  before: { score: 75, loadTime: 3500 },
-  after: { score: 85, loadTime: 2800 },
-  improvement: { score: +10, loadTime: -700 },
-  timestamp: '2024-01-15T10:30:00Z'
+  "autonomous": {
+    "enabled": true,
+    "selfHealing": true,
+    "learning": true,
+    "adaptiveScheduling": true
+  }
 }
 ```
 
-## 🛠️ API Endpoints
-
-### System Control
-- `GET /api/status` - Get system status
-- `POST /api/start` - Start the improvement loop
-- `POST /api/stop` - Stop the improvement loop
-- `POST /api/pause` - Pause the improvement loop
-
-### Data Access
-- `GET /api/history` - Get improvement history
-- `GET /api/metrics` - Get current metrics
-- `GET /api/queue` - Get improvement queue
-
-### Manual Triggers
-- `POST /api/trigger-improvement` - Manually trigger improvement
-- `POST /api/run-analysis` - Run immediate analysis
-
-## 🔧 Management Commands
-
-### Using the Startup Script
-
-```bash
-# Start the system
-./start-infinite-improvement.sh start
-
-# Check status
-./start-infinite-improvement.sh status
-
-# View logs
-./start-infinite-improvement.sh logs
-
-# Stop the system
-./start-infinite-improvement.sh stop
-
-# Restart the system
-./start-infinite-improvement.sh restart
-
-# Show help
-./start-infinite-improvement.sh help
+### Task Configuration
+```json
+{
+  "tasks": {
+    "dependencyUpdater": {
+      "enabled": true,
+      "interval": 86400000,
+      "dryRun": false,
+      "autoCreatePR": true
+    }
+  }
+}
 ```
 
-### Using npm Scripts
-
-```bash
-# Start in development mode
-npm run dev
-
-# Start in production mode
-npm start
-
-# Run tests
-npm test
-
-# Lint code
-npm run lint
+### Notification Settings
+```json
+{
+  "notifications": {
+    "slack": {
+      "enabled": true,
+      "channel": "#automation"
+    }
+  }
+}
 ```
 
-## 🔍 Troubleshooting
+## 🔧 Automation Tasks
+
+### Dependency Updater
+Automatically checks for outdated npm packages and creates pull requests.
+
+**Features:**
+- Skips major updates for critical packages
+- Tests updates before creating PRs
+- Configurable update limits
+- Self-healing for network issues
+
+**Configuration:**
+```json
+{
+  "dependencyUpdater": {
+    "enabled": true,
+    "interval": 86400000,
+    "dryRun": false,
+    "autoCreatePR": true,
+    "skipMajorUpdates": true,
+    "maxUpdates": 5
+  }
+}
+```
+
+### Security Scanner
+Scans for security vulnerabilities and code patterns.
+
+**Features:**
+- npm audit integration
+- Secret detection
+- Code pattern analysis
+- Auto-fix for low-severity issues
+
+**Configuration:**
+```json
+{
+  "securityScanner": {
+    "enabled": true,
+    "interval": 21600000,
+    "autoFix": true,
+    "alertThreshold": "high",
+    "scanPatterns": true,
+    "scanSecrets": true
+  }
+}
+```
+
+### Code Quality Enforcer
+Enforces code quality standards through linting and formatting.
+
+**Features:**
+- ESLint integration
+- Prettier formatting
+- TypeScript checking
+- Auto-fix capabilities
+- PR creation for violations
+
+**Configuration:**
+```json
+{
+  "codeQualityEnforcer": {
+    "enabled": true,
+    "interval": 7200000,
+    "autoFix": true,
+    "createPR": true,
+    "tools": ["eslint", "prettier", "typescript"]
+  }
+}
+```
+
+### Stale Cleaner
+Removes old branches and pull requests.
+
+**Features:**
+- Configurable age thresholds
+- Protected branch support
+- Unmerged commit detection
+- Dry-run mode
+
+**Configuration:**
+```json
+{
+  "staleCleaner": {
+    "enabled": true,
+    "interval": 43200000,
+    "staleBranchDays": 30,
+    "stalePRDays": 14,
+    "dryRun": false,
+    "autoDelete": false
+  }
+}
+```
+
+## 📈 Monitoring & Analytics
+
+### Anomaly Detection
+The system automatically detects:
+- High CPU/memory usage
+- Increased error rates
+- Unusual task durations
+- Pattern violations
+
+### Adaptive Scheduling
+Task frequencies are automatically adjusted based on:
+- System load
+- Error rates
+- Success rates
+- Task performance
+
+### Health Scoring
+Real-time health score (0-100) based on:
+- Task success rates
+- System performance
+- Anomaly frequency
+- Error rates
+
+## 📊 Reporting
+
+### Automated Reports
+- **Daily Reports**: Summary of daily activities
+- **Weekly Reports**: Trends and recommendations
+- **Monthly Reports**: Long-term analysis
+
+### Report Content
+- Executive summary
+- Task performance metrics
+- Anomaly analysis
+- System health status
+- Recommendations
+
+## 🔌 API Reference
+
+### REST Endpoints
+
+#### System Status
+```http
+GET /api/status
+```
+
+#### Task Management
+```http
+GET /api/tasks
+POST /api/tasks/:taskName/run
+POST /api/tasks/:taskName/pause
+POST /api/tasks/:taskName/resume
+```
+
+#### Scheduling
+```http
+GET /api/scheduling
+POST /api/scheduling/recalculate
+```
+
+#### Anomalies
+```http
+GET /api/anomalies
+```
+
+#### Reports
+```http
+GET /api/reports
+POST /api/reports/generate
+```
+
+#### System Controls
+```http
+POST /api/system/restart
+POST /api/system/shutdown
+```
+
+## 🚨 Troubleshooting
 
 ### Common Issues
 
-1. **System won't start**
-   ```bash
-   # Check Node.js version
-   node --version  # Should be 16+
-   
-   # Check dependencies
-   npm install
-   
-   # Check logs
-   tail -f logs/infinite-improvement.log
-   ```
+**Task failures**
+- Check logs in dashboard
+- Verify task configuration
+- Ensure required tools are installed
 
-2. **AI agents not working**
-   ```bash
-   # Verify API keys
-   echo $CURSOR_API_KEY
-   echo $OPENAI_API_KEY
-   
-   # Check AI configuration
-   ./start-infinite-improvement.sh status
-   ```
+**Slack notifications not working**
+- Verify SLACK_WEBHOOK_URL is set
+- Check webhook URL is valid
+- Ensure channel exists
 
-3. **Dashboard not accessible**
-   ```bash
-   # Check if port is in use
-   lsof -i :3002
-   
-   # Check if system is running
-   ps aux | grep infinite-improvement
-   ```
+**Dashboard not accessible**
+- Check port configuration
+- Verify firewall settings
+- Check for port conflicts
 
-### Log Files
-- **Main Log**: `logs/infinite-improvement.log`
-- **AI Agent Logs**: `automation/logs/`
-- **Error Logs**: `logs/errors.log`
+**GitHub PR creation fails**
+- Verify GitHub CLI is authenticated
+- Check repository permissions
+- Ensure branch protection rules allow automation
 
-## 🚀 Advanced Configuration
+### Logs
+- System logs are available in the dashboard
+- Task-specific logs are shown in task details
+- Error logs include stack traces and context
 
-### Custom AI Agents
-You can add custom AI agents by extending the base agent class:
+### Self-Healing
+The system automatically attempts to recover from:
+- Network connectivity issues
+- Git configuration problems
+- Permission errors
+- Resource constraints
 
-```javascript
-class CustomAgent extends BaseAgent {
-  constructor() {
-    super('Custom Agent', 'Custom functionality');
-  }
-  
-  async analyze(data) {
-    // Custom analysis logic
-    return { score: 85, suggestions: [] };
-  }
-}
-```
+## 🔒 Security
 
-### Custom Improvement Types
-Add new improvement types by implementing the improvement interface:
+### Authentication
+- Optional basic auth for dashboard
+- Environment variable configuration
+- Secure credential management
 
-```javascript
-async implementCustomImprovement(data) {
-  // Custom improvement logic
-  return { success: true, improvements: [] };
-}
-```
+### Permissions
+- Minimal required permissions
+- Principle of least privilege
+- Audit trail for all actions
 
-### Custom Metrics
-Extend the metrics system with custom measurements:
-
-```javascript
-async analyzeCustomMetric() {
-  // Custom metric analysis
-  return { score: 90, details: {} };
-}
-```
+### Data Protection
+- No sensitive data logging
+- Secure configuration storage
+- Encrypted communication
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+### Adding New Tasks
+1. Create task class extending `AutomationTask`
+2. Implement required methods
+3. Add to task registry
+4. Update configuration schema
+
+### Extending Components
+1. Follow existing patterns
+2. Add comprehensive error handling
+3. Include self-healing capabilities
+4. Add monitoring and metrics
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+This project is licensed under the MIT License.
 
 ## 🆘 Support
 
-- **Issues**: [GitHub Issues](https://github.com/zion-app/bolt.new.zion.app/issues)
-- **Documentation**: [Wiki](https://github.com/zion-app/bolt.new.zion.app/wiki)
-- **Discussions**: [GitHub Discussions](https://github.com/zion-app/bolt.new.zion.app/discussions)
+For issues and questions:
+1. Check the troubleshooting section
+2. Review logs and error messages
+3. Check configuration settings
+4. Open an issue with detailed information
 
 ---
 
-**Built with ❤️ by the Zion App Team**
-
-*Empowering developers with AI-driven continuous improvement*
+**Built with ❤️ for autonomous development workflows**
