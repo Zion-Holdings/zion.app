@@ -5,5 +5,5 @@ export default function safeDynamicImport() {
       <h1>safeDynamicImport</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
