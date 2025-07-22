@@ -6,4 +6,4 @@ export default function OrderConfirmation() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
