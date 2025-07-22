@@ -1,9 +1,4 @@
-// env.ts - Module under construction
+// env module placeholder
 export const env = {
-  // Placeholder implementation
-  init: () => {
-    console.log('env initialized');
-  },
+  // TODO: Implement env functionality
 };
-
-export default env;

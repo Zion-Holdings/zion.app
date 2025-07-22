@@ -1,9 +1,4 @@
-// escrowService.ts - Module under construction
+// escrowService module placeholder
 export const escrowService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('escrowService initialized');
-  },
+  // TODO: Implement escrowService functionality
 };
-
-export default escrowService;

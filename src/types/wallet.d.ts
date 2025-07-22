@@ -1,9 +1,4 @@
-// wallet.d.ts - Module under construction
-export const walletd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('walletd initialized');
-  },
+// wallet.d module placeholder
+export const wallet.d = {
+  // TODO: Implement wallet.d functionality
 };
-
-export default walletd;

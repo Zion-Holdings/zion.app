@@ -1,9 +1,4 @@
-// useNavigationGestures.ts - Module under construction
+// useNavigationGestures module placeholder
 export const useNavigationGestures = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useNavigationGestures initialized');
-  },
+  // TODO: Implement useNavigationGestures functionality
 };
-
-export default useNavigationGestures;

@@ -1,9 +1,4 @@
-// sidebar.types.ts - Module under construction
-export const sidebartypes = {
-  // Placeholder implementation
-  init: () => {
-    console.log('sidebartypes initialized');
-  },
+// sidebar.types module placeholder
+export const sidebar.types = {
+  // TODO: Implement sidebar.types functionality
 };
-
-export default sidebartypes;

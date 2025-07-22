@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function clickablebadge() {
+export default function clickable-badge() {
   return (
     <div>
       <h1>clickable-badge</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

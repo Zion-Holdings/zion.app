@@ -1,9 +1,4 @@
-// constants.ts - Module under construction
+// constants module placeholder
 export const constants = {
-  // Placeholder implementation
-  init: () => {
-    console.log('constants initialized');
-  },
+  // TODO: Implement constants functionality
 };
-
-export default constants;

@@ -1,9 +1,4 @@
-// common.ts - Module under construction
+// common module placeholder
 export const common = {
-  // Placeholder implementation
-  init: () => {
-    console.log('common initialized');
-  },
+  // TODO: Implement common functionality
 };
-
-export default common;

@@ -1,9 +1,4 @@
-// useFirestoreFavorites.ts - Module under construction
+// useFirestoreFavorites module placeholder
 export const useFirestoreFavorites = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useFirestoreFavorites initialized');
-  },
+  // TODO: Implement useFirestoreFavorites functionality
 };
-
-export default useFirestoreFavorites;

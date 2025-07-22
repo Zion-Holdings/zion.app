@@ -4,7 +4,7 @@ export default function OnboardingWizard() {
   return (
     <div>
       <h1>OnboardingWizard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

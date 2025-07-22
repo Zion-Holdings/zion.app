@@ -1,9 +1,4 @@
-// orbitdb.ts - Module under construction
+// orbitdb module placeholder
 export const orbitdb = {
-  // Placeholder implementation
-  init: () => {
-    console.log('orbitdb initialized');
-  },
+  // TODO: Implement orbitdb functionality
 };
-
-export default orbitdb;

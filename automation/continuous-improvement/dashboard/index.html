@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zion App - AI Automation Dashboard</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zion App - AI Automation Dashboard</title>
+        <style>
       * {
         margin: 0;
         padding: 0;
@@ -241,128 +241,117 @@
           grid-template-columns: 1fr;
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>🤖 Zion App AI Automation</h1>
-        <p>Continuous Improvement Dashboard</p>
-      </div>
-
-      <div style="text-align: center; margin-bottom: 20px">
-        <button id="refreshBtn" class="refresh-btn" onclick="refreshData()">
-          🔄 Refresh Data
-        </button>
-      </div>
-
-      <div id="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Loading automation data...</p>
-      </div>
-
-      <div id="dashboard" class="dashboard-grid" style="display: none">
-        <!-- System Status -->
-        <div class="card">
-          <h3>
-            <span class="status-indicator" id="systemStatus"></span>
-            System Status
-          </h3>
-          <div class="metric">
-            <span class="metric-label">Status</span>
-            <span class="metric-value" id="statusText">Loading...</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Uptime</span>
-            <span class="metric-value" id="uptime">Loading...</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Current Task</span>
-            <span class="metric-value" id="currentTask">None</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Queue Length</span>
-            <span class="metric-value" id="queueLength">0</span>
-          </div>
-        </div>
-
-        <!-- AI Providers -->
-        <div class="card">
-          <h3>🤖 AI Providers</h3>
-          <div id="aiProviders" class="ai-providers">
-            <div class="ai-provider">Loading...</div>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Active Providers</span>
-            <span class="metric-value" id="activeProviders">0</span>
-          </div>
-        </div>
-
-        <!-- Performance Metrics -->
-        <div class="card">
-          <h3>⚡ Performance</h3>
-          <div class="metric">
-            <span class="metric-label">Memory Usage</span>
-            <span class="metric-value" id="memoryUsage">Loading...</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">CPU Usage</span>
-            <span class="metric-value" id="cpuUsage">Loading...</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Performance History</span>
-            <span class="metric-value" id="performanceHistory">0</span>
-          </div>
-        </div>
-
-        <!-- Improvements -->
-        <div class="card">
-          <h3>🔧 Improvements</h3>
-          <div class="metric">
-            <span class="metric-label">Total Improvements</span>
-            <span class="metric-value" id="totalImprovements">0</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Recent Improvements</span>
-            <span class="metric-value" id="recentImprovements">0</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Success Rate</span>
-            <span class="metric-value" id="successRate">0%</span>
-          </div>
-        </div>
-
-        <!-- Errors -->
-        <div class="card">
-          <h3>⚠️ Errors</h3>
-          <div class="metric">
-            <span class="metric-label">Total Errors</span>
-            <span class="metric-value" id="totalErrors">0</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Recent Errors</span>
-            <span class="metric-value" id="recentErrors">0</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Error Rate</span>
-            <span class="metric-value" id="errorRate">0%</span>
-          </div>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="card" style="grid-column: 1 / -1">
-          <h3>📊 Recent Activity</h3>
-          <div id="recentActivity" class="recent-activity">
-            <div class="activity-item">
-              <div class="activity-time">Loading...</div>
-              <div class="activity-message">Loading activity data...</div>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 Zion App AI Automation</h1>
+                <p>Continuous Improvement Dashboard</p>
             </div>
-          </div>
+            <div style="text-align: center; margin-bottom: 20px">
+                <button id="refreshBtn" class="refresh-btn" onclick="refreshData()">🔄 Refresh Data</button>
+            </div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading automation data...</p>
+            </div>
+            <div id="dashboard" class="dashboard-grid" style="display: none">
+                <!-- System Status -->
+                <div class="card">
+                    <h3>
+                        <span class="status-indicator" id="systemStatus"></span>
+                        System Status
+                    </h3>
+                    <div class="metric">
+                        <span class="metric-label">Status</span>
+                        <span class="metric-value" id="statusText">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Uptime</span>
+                        <span class="metric-value" id="uptime">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Current Task</span>
+                        <span class="metric-value" id="currentTask">None</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Queue Length</span>
+                        <span class="metric-value" id="queueLength">0</span>
+                    </div>
+                </div>
+                <!-- AI Providers -->
+                <div class="card">
+                    <h3>🤖 AI Providers</h3>
+                    <div id="aiProviders" class="ai-providers">
+                        <div class="ai-provider">Loading...</div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Active Providers</span>
+                        <span class="metric-value" id="activeProviders">0</span>
+                    </div>
+                </div>
+                <!-- Performance Metrics -->
+                <div class="card">
+                    <h3>⚡ Performance</h3>
+                    <div class="metric">
+                        <span class="metric-label">Memory Usage</span>
+                        <span class="metric-value" id="memoryUsage">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">CPU Usage</span>
+                        <span class="metric-value" id="cpuUsage">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Performance History</span>
+                        <span class="metric-value" id="performanceHistory">0</span>
+                    </div>
+                </div>
+                <!-- Improvements -->
+                <div class="card">
+                    <h3>🔧 Improvements</h3>
+                    <div class="metric">
+                        <span class="metric-label">Total Improvements</span>
+                        <span class="metric-value" id="totalImprovements">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Recent Improvements</span>
+                        <span class="metric-value" id="recentImprovements">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value" id="successRate">0%</span>
+                    </div>
+                </div>
+                <!-- Errors -->
+                <div class="card">
+                    <h3>⚠️ Errors</h3>
+                    <div class="metric">
+                        <span class="metric-label">Total Errors</span>
+                        <span class="metric-value" id="totalErrors">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Recent Errors</span>
+                        <span class="metric-value" id="recentErrors">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Error Rate</span>
+                        <span class="metric-value" id="errorRate">0%</span>
+                    </div>
+                </div>
+                <!-- Recent Activity -->
+                <div class="card" style="grid-column: 1 / -1">
+                    <h3>📊 Recent Activity</h3>
+                    <div id="recentActivity" class="recent-activity">
+                        <div class="activity-item">
+                            <div class="activity-time">Loading...</div>
+                            <div class="activity-message">Loading activity data...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <script>
+        <script>
       let refreshInterval;
 
       // Initialize dashboard
@@ -603,6 +592,6 @@
           clearInterval(refreshInterval);
         }
       });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

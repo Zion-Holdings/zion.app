@@ -4,7 +4,7 @@ export default function LivestreamSection() {
   return (
     <div>
       <h1>LivestreamSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

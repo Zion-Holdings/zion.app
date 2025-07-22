@@ -1,9 +1,4 @@
-// middleware.ts - Module under construction
+// middleware module placeholder
 export const middleware = {
-  // Placeholder implementation
-  init: () => {
-    console.log('middleware initialized');
-  },
+  // TODO: Implement middleware functionality
 };
-
-export default middleware;

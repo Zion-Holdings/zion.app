@@ -4,7 +4,7 @@ export default function AppStoreBanner() {
   return (
     <div>
       <h1>AppStoreBanner</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

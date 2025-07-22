@@ -1,9 +1,4 @@
-// signupCheck.ts - Module under construction
+// signupCheck module placeholder
 export const signupCheck = {
-  // Placeholder implementation
-  init: () => {
-    console.log('signupCheck initialized');
-  },
+  // TODO: Implement signupCheck functionality
 };
-
-export default signupCheck;

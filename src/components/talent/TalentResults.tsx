@@ -4,7 +4,7 @@ export default function TalentResults() {
   return (
     <div>
       <h1>TalentResults</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

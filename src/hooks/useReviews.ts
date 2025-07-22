@@ -1,9 +1,4 @@
-// useReviews.ts - Module under construction
+// useReviews module placeholder
 export const useReviews = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useReviews initialized');
-  },
+  // TODO: Implement useReviews functionality
 };
-
-export default useReviews;

@@ -1,9 +1,4 @@
-// useMilestones.ts - Module under construction
+// useMilestones module placeholder
 export const useMilestones = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useMilestones initialized');
-  },
+  // TODO: Implement useMilestones functionality
 };
-
-export default useMilestones;

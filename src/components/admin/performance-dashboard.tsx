@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function performancedashboard() {
+export default function performance-dashboard() {
   return (
     <div>
       <h1>performance-dashboard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

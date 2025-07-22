@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function sidebargroup() {
+export default function sidebar-group() {
   return (
     <div>
       <h1>sidebar-group</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

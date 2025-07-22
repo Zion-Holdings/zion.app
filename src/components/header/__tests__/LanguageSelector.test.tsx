@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function LanguageSelectortest() {
+export default function LanguageSelector.test() {
   return (
     <div>
       <h1>LanguageSelector.test</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

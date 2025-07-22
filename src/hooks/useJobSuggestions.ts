@@ -1,9 +1,4 @@
-// useJobSuggestions.ts - Module under construction
+// useJobSuggestions module placeholder
 export const useJobSuggestions = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useJobSuggestions initialized');
-  },
+  // TODO: Implement useJobSuggestions functionality
 };
-
-export default useJobSuggestions;

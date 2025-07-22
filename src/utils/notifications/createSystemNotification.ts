@@ -1,9 +1,4 @@
-// createSystemNotification.ts - Module under construction
+// createSystemNotification module placeholder
 export const createSystemNotification = {
-  // Placeholder implementation
-  init: () => {
-    console.log('createSystemNotification initialized');
-  },
+  // TODO: Implement createSystemNotification functionality
 };
-
-export default createSystemNotification;

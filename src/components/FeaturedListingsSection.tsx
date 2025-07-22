@@ -4,7 +4,7 @@ export default function FeaturedListingsSection() {
   return (
     <div>
       <h1>FeaturedListingsSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

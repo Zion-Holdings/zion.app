@@ -1,9 +1,4 @@
-// consoleLogCapture.ts - Module under construction
+// consoleLogCapture module placeholder
 export const consoleLogCapture = {
-  // Placeholder implementation
-  init: () => {
-    console.log('consoleLogCapture initialized');
-  },
+  // TODO: Implement consoleLogCapture functionality
 };
-
-export default consoleLogCapture;

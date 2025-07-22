@@ -4,7 +4,7 @@ export default function TranslatableJobForm() {
   return (
     <div>
       <h1>TranslatableJobForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

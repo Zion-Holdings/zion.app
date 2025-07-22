@@ -1,9 +1,4 @@
-// errorReportingDashboard.ts - Module under construction
+// errorReportingDashboard module placeholder
 export const errorReportingDashboard = {
-  // Placeholder implementation
-  init: () => {
-    console.log('errorReportingDashboard initialized');
-  },
+  // TODO: Implement errorReportingDashboard functionality
 };
-
-export default errorReportingDashboard;

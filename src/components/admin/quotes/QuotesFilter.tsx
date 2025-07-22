@@ -4,7 +4,7 @@ export default function QuotesFilter() {
   return (
     <div>
       <h1>QuotesFilter</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

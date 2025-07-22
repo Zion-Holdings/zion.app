@@ -1,9 +1,4 @@
-// client.d.ts - Module under construction
-export const clientd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('clientd initialized');
-  },
+// client.d module placeholder
+export const client.d = {
+  // TODO: Implement client.d functionality
 };
-
-export default clientd;

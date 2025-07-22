@@ -4,7 +4,7 @@ export default function ExportsSection() {
   return (
     <div>
       <h1>ExportsSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

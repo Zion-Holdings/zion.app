@@ -1,9 +1,4 @@
-// notificationUtils.ts - Module under construction
+// notificationUtils module placeholder
 export const notificationUtils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('notificationUtils initialized');
-  },
+  // TODO: Implement notificationUtils functionality
 };
-
-export default notificationUtils;

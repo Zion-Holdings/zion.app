@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cursor Automated Communication Interface</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cursor Automated Communication Interface</title>
+        <style>
       * {
         margin: 0;
         padding: 0;
@@ -452,308 +452,233 @@
           padding: 1rem;
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>🤖 Cursor Automated Communication</h1>
-        <p>Continuous app improvement across all connected computers</p>
-      </div>
-
-      <div class="status-grid">
-        <div class="status-card">
-          <h3>
-            <div class="status-indicator" id="mainStatusIndicator"></div>
-            System Status
-          </h3>
-          <div class="metric">
-            <span class="metric-label">Connection</span>
-            <span class="metric-value" id="connectionStatus">Checking...</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Computer ID</span>
-            <span class="metric-value" id="computerId">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Uptime</span>
-            <span class="metric-value" id="uptime">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Cursor Processes</span>
-            <span class="metric-value" id="cursorProcesses">-</span>
-          </div>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 Cursor Automated Communication</h1>
+                <p>Continuous app improvement across all connected computers</p>
+            </div>
+            <div class="status-grid">
+                <div class="status-card">
+                    <h3>
+                        <div class="status-indicator" id="mainStatusIndicator"></div>
+                        System Status
+                    </h3>
+                    <div class="metric">
+                        <span class="metric-label">Connection</span>
+                        <span class="metric-value" id="connectionStatus">Checking...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Computer ID</span>
+                        <span class="metric-value" id="computerId">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Uptime</span>
+                        <span class="metric-value" id="uptime">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Cursor Processes</span>
+                        <span class="metric-value" id="cursorProcesses">-</span>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <h3>📊 Performance</h3>
+                    <div class="metric">
+                        <span class="metric-label">Memory Usage</span>
+                        <span class="metric-value" id="memoryUsage">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">CPU Usage</span>
+                        <span class="metric-value" id="cpuUsage">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Active Projects</span>
+                        <span class="metric-value" id="activeProjects">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Improvement Queue</span>
+                        <span class="metric-value" id="improvementQueue">-</span>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <h3>🔄 Multi-Computer Sync</h3>
+                    <div class="metric">
+                        <span class="metric-label">Connected Computers</span>
+                        <span class="metric-value" id="connectedComputers">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Sync Status</span>
+                        <span class="metric-value" id="syncStatus">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Last Sync</span>
+                        <span class="metric-value" id="lastSync">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Total Improvements</span>
+                        <span class="metric-value" id="totalImprovements">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="chat-section">
+                    <div class="tabs">
+                        <div class="tab active" onclick="switchTab('chat')">💬 Chat</div>
+                        <div class="tab" onclick="switchTab('automation')">🤖 Automation</div>
+                        <div class="tab" onclick="switchTab('analytics')">📈 Analytics</div>
+                    </div>
+                    <div class="tab-content active" id="chat-tab">
+                        <h2>AI Communication</h2>
+                        <form class="chat-form" id="chatForm">
+                            <textarea id="messageInput"
+                                      placeholder="Describe what you want to improve or ask the AI assistant..."
+                                      required></textarea>
+                            <div class="input-group">
+                                <button type="submit" id="sendBtn">Send Message</button>
+                                <button type="button" onclick="clearChat()">Clear</button>
+                            </div>
+                        </form>
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="sendQuickMessage('build')">🔨 Build Project</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('optimize')">⚡ Optimize Code</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('test')">🧪 Run Tests</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('deploy')">🚀 Deploy</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('analyze')">🔍 Analyze Code</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('fix')">🔧 Fix Issues</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('security')">🔒 Security Scan</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('performance')">📊 Performance Check</button>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="automation-tab">
+                        <h2>Automated Improvements</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="autoImprovements">0</div>
+                                <div class="stat-label">Auto Improvements</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="autoProgress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="filesProcessed">0</div>
+                                <div class="stat-label">Files Processed</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="filesProgress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="errorsFixed">0</div>
+                                <div class="stat-label">Errors Fixed</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="errorsProgress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="performanceGain">0%</div>
+                                <div class="stat-label">Performance Gain</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="perfProgress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="startAutomation('continuous')">🔄 Start Continuous</button>
+                            <button class="quick-btn" onclick="startAutomation('batch')">📦 Batch Process</button>
+                            <button class="quick-btn" onclick="startAutomation('monitor')">👁️ Monitor Mode</button>
+                            <button class="quick-btn" onclick="stopAutomation()">⏹️ Stop</button>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="analytics-tab">
+                        <h2>Analytics & Insights</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="codeQuality">85%</div>
+                                <div class="stat-label">Code Quality</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="testCoverage">78%</div>
+                                <div class="stat-label">Test Coverage</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="securityScore">92%</div>
+                                <div class="stat-label">Security Score</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="maintainability">88%</div>
+                                <div class="stat-label">Maintainability</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="generateReport()">📊 Generate Report</button>
+                            <button class="quick-btn" onclick="exportData()">📤 Export Data</button>
+                            <button class="quick-btn" onclick="compareVersions()">📈 Compare</button>
+                            <button class="quick-btn" onclick="optimizeMetrics()">🎯 Optimize</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="improvements-panel">
+                        <h3>🔄 Recent Improvements</h3>
+                        <div class="improvement-list" id="improvementList">
+                            <div class="improvement-item">
+                                <div class="improvement-type">File Analysis</div>
+                                <div class="improvement-description">Analyzing src/components/Button.tsx</div>
+                            </div>
+                            <div class="improvement-item">
+                                <div class="improvement-type">Performance</div>
+                                <div class="improvement-description">Optimizing bundle size</div>
+                            </div>
+                            <div class="improvement-item">
+                                <div class="improvement-type">Security</div>
+                                <div class="improvement-description">Scanning for vulnerabilities</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="computers-panel">
+                        <h3>🖥️ Connected Computers</h3>
+                        <div class="computer-list" id="computerList">
+                            <div class="computer-item">
+                                <div class="computer-status"></div>
+                                <div class="computer-info">
+                                    <div class="computer-name">MacBook-Pro.local</div>
+                                    <div class="computer-details">macOS • 2 projects</div>
+                                </div>
+                            </div>
+                            <div class="computer-item">
+                                <div class="computer-status"></div>
+                                <div class="computer-info">
+                                    <div class="computer-name">Dev-Workstation</div>
+                                    <div class="computer-details">Linux • 5 projects</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logs-panel">
+                        <h3>📝 System Logs</h3>
+                        <div class="logs" id="logs">
+                            <div class="log-entry log-info">System initialized...</div>
+                            <div class="log-entry log-success">Connected to AI server</div>
+                            <div class="log-entry log-info">Monitoring file changes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="status-card">
-          <h3>📊 Performance</h3>
-          <div class="metric">
-            <span class="metric-label">Memory Usage</span>
-            <span class="metric-value" id="memoryUsage">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">CPU Usage</span>
-            <span class="metric-value" id="cpuUsage">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Active Projects</span>
-            <span class="metric-value" id="activeProjects">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Improvement Queue</span>
-            <span class="metric-value" id="improvementQueue">-</span>
-          </div>
-        </div>
-
-        <div class="status-card">
-          <h3>🔄 Multi-Computer Sync</h3>
-          <div class="metric">
-            <span class="metric-label">Connected Computers</span>
-            <span class="metric-value" id="connectedComputers">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Sync Status</span>
-            <span class="metric-value" id="syncStatus">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Last Sync</span>
-            <span class="metric-value" id="lastSync">-</span>
-          </div>
-          <div class="metric">
-            <span class="metric-label">Total Improvements</span>
-            <span class="metric-value" id="totalImprovements">-</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="main-content">
-        <div class="chat-section">
-          <div class="tabs">
-            <div class="tab active" onclick="switchTab('chat')">💬 Chat</div>
-            <div class="tab" onclick="switchTab('automation')">
-              🤖 Automation
-            </div>
-            <div class="tab" onclick="switchTab('analytics')">📈 Analytics</div>
-          </div>
-
-          <div class="tab-content active" id="chat-tab">
-            <h2>AI Communication</h2>
-            <form class="chat-form" id="chatForm">
-              <textarea
-                id="messageInput"
-                placeholder="Describe what you want to improve or ask the AI assistant..."
-                required
-              ></textarea>
-              <div class="input-group">
-                <button type="submit" id="sendBtn">Send Message</button>
-                <button type="button" onclick="clearChat()">Clear</button>
-              </div>
-            </form>
-
-            <div class="quick-actions">
-              <button class="quick-btn" onclick="sendQuickMessage('build')">
-                🔨 Build Project
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('optimize')">
-                ⚡ Optimize Code
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('test')">
-                🧪 Run Tests
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('deploy')">
-                🚀 Deploy
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('analyze')">
-                🔍 Analyze Code
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('fix')">
-                🔧 Fix Issues
-              </button>
-              <button class="quick-btn" onclick="sendQuickMessage('security')">
-                🔒 Security Scan
-              </button>
-              <button
-                class="quick-btn"
-                onclick="sendQuickMessage('performance')"
-              >
-                📊 Performance Check
-              </button>
-            </div>
-          </div>
-
-          <div class="tab-content" id="automation-tab">
-            <h2>Automated Improvements</h2>
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-value" id="autoImprovements">0</div>
-                <div class="stat-label">Auto Improvements</div>
-                <div class="progress-bar">
-                  <div
-                    class="progress-fill"
-                    id="autoProgress"
-                    style="width: 0%"
-                  ></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="filesProcessed">0</div>
-                <div class="stat-label">Files Processed</div>
-                <div class="progress-bar">
-                  <div
-                    class="progress-fill"
-                    id="filesProgress"
-                    style="width: 0%"
-                  ></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="errorsFixed">0</div>
-                <div class="stat-label">Errors Fixed</div>
-                <div class="progress-bar">
-                  <div
-                    class="progress-fill"
-                    id="errorsProgress"
-                    style="width: 0%"
-                  ></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="performanceGain">0%</div>
-                <div class="stat-label">Performance Gain</div>
-                <div class="progress-bar">
-                  <div
-                    class="progress-fill"
-                    id="perfProgress"
-                    style="width: 0%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="quick-actions">
-              <button class="quick-btn" onclick="startAutomation('continuous')">
-                🔄 Start Continuous
-              </button>
-              <button class="quick-btn" onclick="startAutomation('batch')">
-                📦 Batch Process
-              </button>
-              <button class="quick-btn" onclick="startAutomation('monitor')">
-                👁️ Monitor Mode
-              </button>
-              <button class="quick-btn" onclick="stopAutomation()">
-                ⏹️ Stop
-              </button>
-            </div>
-          </div>
-
-          <div class="tab-content" id="analytics-tab">
-            <h2>Analytics & Insights</h2>
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-value" id="codeQuality">85%</div>
-                <div class="stat-label">Code Quality</div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 85%"></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="testCoverage">78%</div>
-                <div class="stat-label">Test Coverage</div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 78%"></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="securityScore">92%</div>
-                <div class="stat-label">Security Score</div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 92%"></div>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="maintainability">88%</div>
-                <div class="stat-label">Maintainability</div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 88%"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="quick-actions">
-              <button class="quick-btn" onclick="generateReport()">
-                📊 Generate Report
-              </button>
-              <button class="quick-btn" onclick="exportData()">
-                📤 Export Data
-              </button>
-              <button class="quick-btn" onclick="compareVersions()">
-                📈 Compare
-              </button>
-              <button class="quick-btn" onclick="optimizeMetrics()">
-                🎯 Optimize
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="sidebar">
-          <div class="improvements-panel">
-            <h3>🔄 Recent Improvements</h3>
-            <div class="improvement-list" id="improvementList">
-              <div class="improvement-item">
-                <div class="improvement-type">File Analysis</div>
-                <div class="improvement-description">
-                  Analyzing src/components/Button.tsx
-                </div>
-              </div>
-              <div class="improvement-item">
-                <div class="improvement-type">Performance</div>
-                <div class="improvement-description">
-                  Optimizing bundle size
-                </div>
-              </div>
-              <div class="improvement-item">
-                <div class="improvement-type">Security</div>
-                <div class="improvement-description">
-                  Scanning for vulnerabilities
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="computers-panel">
-            <h3>🖥️ Connected Computers</h3>
-            <div class="computer-list" id="computerList">
-              <div class="computer-item">
-                <div class="computer-status"></div>
-                <div class="computer-info">
-                  <div class="computer-name">MacBook-Pro.local</div>
-                  <div class="computer-details">macOS • 2 projects</div>
-                </div>
-              </div>
-              <div class="computer-item">
-                <div class="computer-status"></div>
-                <div class="computer-info">
-                  <div class="computer-name">Dev-Workstation</div>
-                  <div class="computer-details">Linux • 5 projects</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="logs-panel">
-            <h3>📝 System Logs</h3>
-            <div class="logs" id="logs">
-              <div class="log-entry log-info">System initialized...</div>
-              <div class="log-entry log-success">Connected to AI server</div>
-              <div class="log-entry log-info">Monitoring file changes</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
+        <script>
       const API_BASE = 'http://localhost:3008';
       const COORDINATION_BASE = 'http://localhost:3010';
       let statusCheckInterval;
@@ -1111,6 +1036,6 @@
           }
         }
       }
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

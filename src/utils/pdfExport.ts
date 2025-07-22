@@ -1,9 +1,4 @@
-// pdfExport.ts - Module under construction
+// pdfExport module placeholder
 export const pdfExport = {
-  // Placeholder implementation
-  init: () => {
-    console.log('pdfExport initialized');
-  },
+  // TODO: Implement pdfExport functionality
 };
-
-export default pdfExport;

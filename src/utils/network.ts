@@ -1,9 +1,4 @@
-// network.ts - Module under construction
+// network module placeholder
 export const network = {
-  // Placeholder implementation
-  init: () => {
-    console.log('network initialized');
-  },
+  // TODO: Implement network functionality
 };
-
-export default network;

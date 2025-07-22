@@ -4,7 +4,7 @@ export default function SignUpForm() {
   return (
     <div>
       <h1>SignUpForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

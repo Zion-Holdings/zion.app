@@ -4,7 +4,7 @@ export default function AIEnhancementPanel() {
   return (
     <div>
       <h1>AIEnhancementPanel</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

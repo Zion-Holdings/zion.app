@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Communication Interface</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Communication Interface</title>
+        <style>
       * {
         margin: 0;
         padding: 0;
@@ -200,72 +200,53 @@
         font-weight: bold;
         color: #333;
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>🤖 AI Communication Interface</h1>
-        <div class="status">
-          <div class="status-indicator" id="statusIndicator"></div>
-          <span id="statusText">Checking connection...</span>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 AI Communication Interface</h1>
+                <div class="status">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span id="statusText">Checking connection...</span>
+                </div>
+            </div>
+            <form class="chat-form" id="chatForm">
+                <div class="input-group">
+                    <input type="text"
+                           id="messageInput"
+                           placeholder="Type your message to the AI assistant..."
+                           required />
+                    <button type="submit" id="sendBtn">Send</button>
+                </div>
+            </form>
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="sendQuickMessage('build')">🔨 Build Project</button>
+                <button class="quick-btn" onclick="sendQuickMessage('status')">📊 Check Status</button>
+                <button class="quick-btn" onclick="sendQuickMessage('deploy')">🚀 Deploy</button>
+                <button class="quick-btn" onclick="sendQuickMessage('test')">🧪 Run Tests</button>
+                <button class="quick-btn" onclick="sendQuickMessage('optimize')">⚡ Optimize</button>
+                <button class="quick-btn" onclick="sendQuickMessage('help')">❓ Help</button>
+            </div>
+            <div class="system-info" id="systemInfo">
+                <div class="info-item">
+                    <div class="info-label">Computer ID</div>
+                    <div class="info-value" id="computerId">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Uptime</div>
+                    <div class="info-value" id="uptime">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Connected</div>
+                    <div class="info-value" id="connected">-</div>
+                </div>
+            </div>
+            <div class="logs" id="logs">
+                <div class="log-entry log-info">System initialized...</div>
+            </div>
         </div>
-      </div>
-
-      <form class="chat-form" id="chatForm">
-        <div class="input-group">
-          <input
-            type="text"
-            id="messageInput"
-            placeholder="Type your message to the AI assistant..."
-            required
-          />
-          <button type="submit" id="sendBtn">Send</button>
-        </div>
-      </form>
-
-      <div class="quick-actions">
-        <button class="quick-btn" onclick="sendQuickMessage('build')">
-          🔨 Build Project
-        </button>
-        <button class="quick-btn" onclick="sendQuickMessage('status')">
-          📊 Check Status
-        </button>
-        <button class="quick-btn" onclick="sendQuickMessage('deploy')">
-          🚀 Deploy
-        </button>
-        <button class="quick-btn" onclick="sendQuickMessage('test')">
-          🧪 Run Tests
-        </button>
-        <button class="quick-btn" onclick="sendQuickMessage('optimize')">
-          ⚡ Optimize
-        </button>
-        <button class="quick-btn" onclick="sendQuickMessage('help')">
-          ❓ Help
-        </button>
-      </div>
-
-      <div class="system-info" id="systemInfo">
-        <div class="info-item">
-          <div class="info-label">Computer ID</div>
-          <div class="info-value" id="computerId">-</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">Uptime</div>
-          <div class="info-value" id="uptime">-</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">Connected</div>
-          <div class="info-value" id="connected">-</div>
-        </div>
-      </div>
-
-      <div class="logs" id="logs">
-        <div class="log-entry log-info">System initialized...</div>
-      </div>
-    </div>
-
-    <script>
+        <script>
       const API_BASE = 'http://localhost:3005';
       let statusCheckInterval;
 
@@ -394,6 +375,6 @@
             document.getElementById('sendBtn').click();
           }
         });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

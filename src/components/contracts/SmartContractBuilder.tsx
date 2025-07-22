@@ -4,7 +4,7 @@ export default function SmartContractBuilder() {
   return (
     <div>
       <h1>SmartContractBuilder</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

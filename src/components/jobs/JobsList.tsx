@@ -4,7 +4,7 @@ export default function JobsList() {
   return (
     <div>
       <h1>JobsList</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

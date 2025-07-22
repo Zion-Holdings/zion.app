@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function AutocompleteSuggestionstest() {
+export default function AutocompleteSuggestions.test() {
   return (
     <div>
       <h1>AutocompleteSuggestions.test</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

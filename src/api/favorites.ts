@@ -1,9 +1,4 @@
-// favorites.ts - Module under construction
+// favorites module placeholder
 export const favorites = {
-  // Placeholder implementation
-  init: () => {
-    console.log('favorites initialized');
-  },
+  // TODO: Implement favorites functionality
 };
-
-export default favorites;

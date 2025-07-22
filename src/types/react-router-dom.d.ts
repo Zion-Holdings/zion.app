@@ -1,9 +1,4 @@
-// react-router-dom.d.ts - Module under construction
-export const reactrouterdomd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('reactrouterdomd initialized');
-  },
+// react-router-dom.d module placeholder
+export const react-router-dom.d = {
+  // TODO: Implement react-router-dom.d functionality
 };
-
-export default reactrouterdomd;

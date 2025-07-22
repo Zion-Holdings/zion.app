@@ -4,7 +4,7 @@ export default function ProfileBadge() {
   return (
     <div>
       <h1>ProfileBadge</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

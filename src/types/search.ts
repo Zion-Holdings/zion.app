@@ -1,9 +1,4 @@
-// search.ts - Module under construction
+// search module placeholder
 export const search = {
-  // Placeholder implementation
-  init: () => {
-    console.log('search initialized');
-  },
+  // TODO: Implement search functionality
 };
-
-export default search;

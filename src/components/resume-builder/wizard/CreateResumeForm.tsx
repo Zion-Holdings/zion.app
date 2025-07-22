@@ -4,7 +4,7 @@ export default function CreateResumeForm() {
   return (
     <div>
       <h1>CreateResumeForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

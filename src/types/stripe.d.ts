@@ -1,9 +1,4 @@
-// stripe.d.ts - Module under construction
-export const striped = {
-  // Placeholder implementation
-  init: () => {
-    console.log('striped initialized');
-  },
+// stripe.d module placeholder
+export const stripe.d = {
+  // TODO: Implement stripe.d functionality
 };
-
-export default striped;

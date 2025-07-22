@@ -1,9 +1,4 @@
-// SalesforceService.ts - Module under construction
+// SalesforceService module placeholder
 export const SalesforceService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('SalesforceService initialized');
-  },
+  // TODO: Implement SalesforceService functionality
 };
-
-export default SalesforceService;

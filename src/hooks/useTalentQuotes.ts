@@ -1,9 +1,4 @@
-// useTalentQuotes.ts - Module under construction
+// useTalentQuotes module placeholder
 export const useTalentQuotes = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useTalentQuotes initialized');
-  },
+  // TODO: Implement useTalentQuotes functionality
 };
-
-export default useTalentQuotes;

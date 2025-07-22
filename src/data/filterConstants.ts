@@ -1,9 +1,4 @@
-// filterConstants.ts - Module under construction
+// filterConstants module placeholder
 export const filterConstants = {
-  // Placeholder implementation
-  init: () => {
-    console.log('filterConstants initialized');
-  },
+  // TODO: Implement filterConstants functionality
 };
-
-export default filterConstants;

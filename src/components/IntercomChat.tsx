@@ -4,7 +4,7 @@ export default function IntercomChat() {
   return (
     <div>
       <h1>IntercomChat</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

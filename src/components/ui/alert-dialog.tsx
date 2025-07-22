@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function alertdialog() {
+export default function alert-dialog() {
   return (
     <div>
       <h1>alert-dialog</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,9 +1,4 @@
-// categories.ts - Module under construction
+// categories module placeholder
 export const categories = {
-  // Placeholder implementation
-  init: () => {
-    console.log('categories initialized');
-  },
+  // TODO: Implement categories functionality
 };
-
-export default categories;

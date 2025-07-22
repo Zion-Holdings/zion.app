@@ -1,9 +1,4 @@
-// index.ts - Module under construction
+// index module placeholder
 export const index = {
-  // Placeholder implementation
-  init: () => {
-    console.log('index initialized');
-  },
+  // TODO: Implement index functionality
 };
-
-export default index;

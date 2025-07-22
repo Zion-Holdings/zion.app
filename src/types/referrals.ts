@@ -1,9 +1,4 @@
-// referrals.ts - Module under construction
+// referrals module placeholder
 export const referrals = {
-  // Placeholder implementation
-  init: () => {
-    console.log('referrals initialized');
-  },
+  // TODO: Implement referrals functionality
 };
-
-export default referrals;

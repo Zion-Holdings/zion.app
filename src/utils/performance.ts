@@ -1,9 +1,4 @@
-// performance.ts - Module under construction
+// performance module placeholder
 export const performance = {
-  // Placeholder implementation
-  init: () => {
-    console.log('performance initialized');
-  },
+  // TODO: Implement performance functionality
 };
-
-export default performance;

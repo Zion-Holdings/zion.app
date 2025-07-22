@@ -1,9 +1,4 @@
-// useApiErrorHandling.ts - Module under construction
+// useApiErrorHandling module placeholder
 export const useApiErrorHandling = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useApiErrorHandling initialized');
-  },
+  // TODO: Implement useApiErrorHandling functionality
 };
-
-export default useApiErrorHandling;

@@ -4,7 +4,7 @@ export default function MobileLaunchHero() {
   return (
     <div>
       <h1>MobileLaunchHero</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

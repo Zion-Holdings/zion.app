@@ -1,9 +1,4 @@
-// react-dom.d.ts - Module under construction
-export const reactdomd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('reactdomd initialized');
-  },
+// react-dom.d module placeholder
+export const react-dom.d = {
+  // TODO: Implement react-dom.d functionality
 };
-
-export default reactdomd;

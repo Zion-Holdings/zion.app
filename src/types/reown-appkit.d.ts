@@ -1,9 +1,4 @@
-// reown-appkit.d.ts - Module under construction
-export const reownappkitd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('reownappkitd initialized');
-  },
+// reown-appkit.d module placeholder
+export const reown-appkit.d = {
+  // TODO: Implement reown-appkit.d functionality
 };
-
-export default reownappkitd;

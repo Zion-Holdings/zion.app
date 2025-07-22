@@ -1,9 +1,4 @@
-// sampleServices.ts - Module under construction
+// sampleServices module placeholder
 export const sampleServices = {
-  // Placeholder implementation
-  init: () => {
-    console.log('sampleServices initialized');
-  },
+  // TODO: Implement sampleServices functionality
 };
-
-export default sampleServices;

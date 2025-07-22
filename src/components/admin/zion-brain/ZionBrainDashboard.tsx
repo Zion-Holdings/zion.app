@@ -4,7 +4,7 @@ export default function ZionBrainDashboard() {
   return (
     <div>
       <h1>ZionBrainDashboard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -4,7 +4,7 @@ export default function LoginModal() {
   return (
     <div>
       <h1>LoginModal</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

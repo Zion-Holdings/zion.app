@@ -4,7 +4,7 @@ export default function AuthButtons() {
   return (
     <div>
       <h1>AuthButtons</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

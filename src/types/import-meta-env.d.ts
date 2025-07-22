@@ -1,9 +1,4 @@
-// import-meta-env.d.ts - Module under construction
-export const importmetaenvd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('importmetaenvd initialized');
-  },
+// import-meta-env.d module placeholder
+export const import-meta-env.d = {
+  // TODO: Implement import-meta-env.d functionality
 };
-
-export default importmetaenvd;

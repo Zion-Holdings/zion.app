@@ -1,9 +1,4 @@
-// flagContent.ts - Module under construction
+// flagContent module placeholder
 export const flagContent = {
-  // Placeholder implementation
-  init: () => {
-    console.log('flagContent initialized');
-  },
+  // TODO: Implement flagContent functionality
 };
-
-export default flagContent;

@@ -1,9 +1,4 @@
-// globalErrorHandler.ts - Module under construction
+// globalErrorHandler module placeholder
 export const globalErrorHandler = {
-  // Placeholder implementation
-  init: () => {
-    console.log('globalErrorHandler initialized');
-  },
+  // TODO: Implement globalErrorHandler functionality
 };
-
-export default globalErrorHandler;

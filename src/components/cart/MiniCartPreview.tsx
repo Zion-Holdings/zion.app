@@ -4,7 +4,7 @@ export default function MiniCartPreview() {
   return (
     <div>
       <h1>MiniCartPreview</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

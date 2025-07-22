@@ -1,9 +1,4 @@
-// reviews.ts - Module under construction
+// reviews module placeholder
 export const reviews = {
-  // Placeholder implementation
-  init: () => {
-    console.log('reviews initialized');
-  },
+  // TODO: Implement reviews functionality
 };
-
-export default reviews;

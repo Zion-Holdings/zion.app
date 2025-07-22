@@ -4,7 +4,7 @@ export default function AdminDashboard() {
   return (
     <div>
       <h1>AdminDashboard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

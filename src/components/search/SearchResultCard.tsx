@@ -4,7 +4,7 @@ export default function SearchResultCard() {
   return (
     <div>
       <h1>SearchResultCard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

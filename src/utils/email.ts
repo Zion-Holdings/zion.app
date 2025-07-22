@@ -1,9 +1,4 @@
-// email.ts - Module under construction
+// email module placeholder
 export const email = {
-  // Placeholder implementation
-  init: () => {
-    console.log('email initialized');
-  },
+  // TODO: Implement email functionality
 };
-
-export default email;

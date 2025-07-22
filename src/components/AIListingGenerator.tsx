@@ -4,7 +4,7 @@ export default function AIListingGenerator() {
   return (
     <div>
       <h1>AIListingGenerator</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

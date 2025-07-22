@@ -4,7 +4,7 @@ export default function GuidedTour() {
   return (
     <div>
       <h1>GuidedTour</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

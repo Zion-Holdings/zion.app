@@ -4,7 +4,7 @@ export default function ForgotPassword() {
   return (
     <div>
       <h1>ForgotPassword</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

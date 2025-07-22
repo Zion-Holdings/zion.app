@@ -4,7 +4,7 @@ export default function sheet() {
   return (
     <div>
       <h1>sheet</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

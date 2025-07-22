@@ -1,9 +1,4 @@
-// withErrorLogging.ts - Module under construction
+// withErrorLogging module placeholder
 export const withErrorLogging = {
-  // Placeholder implementation
-  init: () => {
-    console.log('withErrorLogging initialized');
-  },
+  // TODO: Implement withErrorLogging functionality
 };
-
-export default withErrorLogging;

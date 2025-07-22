@@ -39,6 +39,4 @@ export function useWebSocketReconnection(options: any = {}) {
     isReconnecting,
     attemptCount,
     attemptReconnection,
-    resetReconnection,
-  };
-}
+    resetReconnection,}';

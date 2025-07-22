@@ -4,7 +4,7 @@ export default function RecentContractsTable() {
   return (
     <div>
       <h1>RecentContractsTable</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,9 +1,4 @@
-// accessibility.ts - Module under construction
+// accessibility module placeholder
 export const accessibility = {
-  // Placeholder implementation
-  init: () => {
-    console.log('accessibility initialized');
-  },
+  // TODO: Implement accessibility functionality
 };
-
-export default accessibility;

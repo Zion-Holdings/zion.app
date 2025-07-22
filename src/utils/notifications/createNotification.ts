@@ -1,9 +1,4 @@
-// createNotification.ts - Module under construction
+// createNotification module placeholder
 export const createNotification = {
-  // Placeholder implementation
-  init: () => {
-    console.log('createNotification initialized');
-  },
+  // TODO: Implement createNotification functionality
 };
-
-export default createNotification;

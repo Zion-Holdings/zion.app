@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function severityindicator() {
+export default function severity-indicator() {
   return (
     <div>
       <h1>severity-indicator</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

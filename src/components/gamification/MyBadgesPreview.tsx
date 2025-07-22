@@ -4,7 +4,7 @@ export default function MyBadgesPreview() {
   return (
     <div>
       <h1>MyBadgesPreview</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

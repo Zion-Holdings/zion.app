@@ -4,7 +4,7 @@ export default function ApiErrorBoundary() {
   return (
     <div>
       <h1>ApiErrorBoundary</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

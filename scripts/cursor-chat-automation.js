@@ -476,7 +476,9 @@ class CursorChatAutomation extends EventEmitter {
   async markTodoDone(todo, result) {
     const idx = this.todoQueue.findIndex((t) => t.raw === todo.raw);
     if (idx !== -1) {
-      const doneLine = todo.raw.replace('- [ ]', '- [x]') + ` (done: ${new Date().toISOString()})\nResult: ${result}`;
+      const doneLine =
+        todo.raw.replace('- [ ]', '- [x]') +
+        ` (done: ${new Date().toISOString()})\nResult: ${result}`;
       this.todoQueue[idx].raw = doneLine;
       this.todoQueue[idx].done = true;
       await this.saveTodoQueue();
@@ -565,24 +567,33 @@ async function main() {
 
     case 'status':
       try {
-        const statusData = await fs.readFile(automation.config.statusFile, 'utf8');
+        const statusData = await fs.readFile(
+          automation.config.statusFile,
+          'utf8',
+        );
         const status = JSON.parse(statusData);
         console.log('📊 Cursor Chat Automation Status:');
         console.log(JSON.stringify(status, null, 2));
       } catch (error) {
         console.log('📊 Cursor Chat Automation Status:');
-        console.log(JSON.stringify({
-          totalConnections: 0,
-          successfulReconnections: 0,
-          failedReconnections: 0,
-          totalUptime: 0,
-          lastDisconnect: null,
-          messagesSent: 0,
-          messagesReceived: 0,
-          uptime: "0s",
-          isConnected: false,
-          reconnectAttempts: 0
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              totalConnections: 0,
+              successfulReconnections: 0,
+              failedReconnections: 0,
+              totalUptime: 0,
+              lastDisconnect: null,
+              messagesSent: 0,
+              messagesReceived: 0,
+              uptime: '0s',
+              isConnected: false,
+              reconnectAttempts: 0,
+            },
+            null,
+            2,
+          ),
+        );
       }
       break;
 

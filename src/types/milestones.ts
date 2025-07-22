@@ -1,9 +1,4 @@
-// milestones.ts - Module under construction
+// milestones module placeholder
 export const milestones = {
-  // Placeholder implementation
-  init: () => {
-    console.log('milestones initialized');
-  },
+  // TODO: Implement milestones functionality
 };
-
-export default milestones;

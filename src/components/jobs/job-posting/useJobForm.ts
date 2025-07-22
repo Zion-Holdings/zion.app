@@ -1,9 +1,4 @@
-// useJobForm.ts - Module under construction
+// useJobForm module placeholder
 export const useJobForm = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useJobForm initialized');
-  },
+  // TODO: Implement useJobForm functionality
 };
-
-export default useJobForm;

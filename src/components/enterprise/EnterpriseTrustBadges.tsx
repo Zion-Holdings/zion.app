@@ -4,7 +4,7 @@ export default function EnterpriseTrustBadges() {
   return (
     <div>
       <h1>EnterpriseTrustBadges</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

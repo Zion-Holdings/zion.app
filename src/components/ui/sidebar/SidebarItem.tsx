@@ -4,7 +4,7 @@ export default function SidebarItem() {
   return (
     <div>
       <h1>SidebarItem</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

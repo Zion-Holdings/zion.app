@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function lazyload() {
+export default function lazy-load() {
   return (
     <div>
       <h1>lazy-load</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

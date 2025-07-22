@@ -42,7 +42,8 @@ function processLine(line) {
 function ensureTodoQueue() {
   let todos = [];
   if (fs.existsSync(TODO_FILE)) {
-    todos = fs.readFileSync(TODO_FILE, 'utf8')
+    todos = fs
+      .readFileSync(TODO_FILE, 'utf8')
       .split('\n')
       .filter(Boolean)
       .map((line) => ({
@@ -55,7 +56,8 @@ function ensureTodoQueue() {
   if (pending.length < 10) {
     const needed = 10 - pending.length;
     for (let i = 0; i < needed; i++) {
-      const task = GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
+      const task =
+        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
       const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + '\n');
       console.log('Auto-added TODO:', todo);
@@ -68,7 +70,8 @@ function watchForCompletions() {
   setInterval(() => {
     let todos = [];
     if (fs.existsSync(TODO_FILE)) {
-      todos = fs.readFileSync(TODO_FILE, 'utf8')
+      todos = fs
+        .readFileSync(TODO_FILE, 'utf8')
         .split('\n')
         .filter(Boolean)
         .map((line) => ({
@@ -80,7 +83,8 @@ function watchForCompletions() {
     const doneCount = todos.filter((t) => t.done).length;
     if (doneCount > lastDoneCount) {
       // A step was completed, add a new one
-      const task = GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
+      const task =
+        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
       const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + '\n');
       console.log('Auto-added TODO after completion:', todo);
@@ -118,4 +122,4 @@ function tailLog() {
 tailLog();
 ensureTodoQueue();
 watchForCompletions();
-console.log('Cursor Chat Improvement Organizer started. Watching for TODOs...'); 
+console.log('Cursor Chat Improvement Organizer started. Watching for TODOs...');

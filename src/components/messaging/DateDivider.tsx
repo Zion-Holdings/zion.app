@@ -4,7 +4,7 @@ export default function DateDivider() {
   return (
     <div>
       <h1>DateDivider</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

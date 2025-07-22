@@ -1,9 +1,4 @@
-// withErrorHandling.ts - Module under construction
+// withErrorHandling module placeholder
 export const withErrorHandling = {
-  // Placeholder implementation
-  init: () => {
-    console.log('withErrorHandling initialized');
-  },
+  // TODO: Implement withErrorHandling functionality
 };
-
-export default withErrorHandling;

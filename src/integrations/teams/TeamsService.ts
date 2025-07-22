@@ -1,9 +1,4 @@
-// TeamsService.ts - Module under construction
+// TeamsService module placeholder
 export const TeamsService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('TeamsService initialized');
-  },
+  // TODO: Implement TeamsService functionality
 };
-
-export default TeamsService;

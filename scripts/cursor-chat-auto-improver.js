@@ -8,7 +8,8 @@ const CHECK_INTERVAL = 30000; // 30 seconds
 
 function readTodos() {
   if (!fs.existsSync(TODO_FILE)) return [];
-  return fs.readFileSync(TODO_FILE, 'utf8')
+  return fs
+    .readFileSync(TODO_FILE, 'utf8')
     .split('\n')
     .filter(Boolean)
     .map((line) => ({
@@ -19,15 +20,14 @@ function readTodos() {
 }
 
 function writeTodos(todos) {
-  fs.writeFileSync(
-    TODO_FILE,
-    todos.map((t) => t.raw).join('\n') + '\n'
-  );
+  fs.writeFileSync(TODO_FILE, todos.map((t) => t.raw).join('\n') + '\n');
 }
 
 function markTodoDone(todos, idx, result) {
   const todo = todos[idx];
-  const doneLine = todo.raw.replace('- [ ]', '- [x]') + ` (done: ${new Date().toISOString()})\nResult: ${result}`;
+  const doneLine =
+    todo.raw.replace('- [ ]', '- [x]') +
+    ` (done: ${new Date().toISOString()})\nResult: ${result}`;
   todos[idx].raw = doneLine;
 }
 
@@ -61,4 +61,4 @@ async function loop() {
 }
 
 loop();
-console.log('Cursor Chat Auto-Improver started.'); 
+console.log('Cursor Chat Auto-Improver started.');

@@ -4,7 +4,7 @@ export default function MobileAppHero() {
   return (
     <div>
       <h1>MobileAppHero</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

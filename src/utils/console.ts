@@ -1,9 +1,4 @@
-// console.ts - Module under construction
+// console module placeholder
 export const console = {
-  // Placeholder implementation
-  init: () => {
-    console.log('console initialized');
-  },
+  // TODO: Implement console functionality
 };
-
-export default console;

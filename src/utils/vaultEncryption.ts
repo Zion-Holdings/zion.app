@@ -1,9 +1,4 @@
-// vaultEncryption.ts - Module under construction
+// vaultEncryption module placeholder
 export const vaultEncryption = {
-  // Placeholder implementation
-  init: () => {
-    console.log('vaultEncryption initialized');
-  },
+  // TODO: Implement vaultEncryption functionality
 };
-
-export default vaultEncryption;

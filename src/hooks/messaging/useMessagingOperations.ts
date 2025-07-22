@@ -1,9 +1,4 @@
-// useMessagingOperations.ts - Module under construction
+// useMessagingOperations module placeholder
 export const useMessagingOperations = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useMessagingOperations initialized');
-  },
+  // TODO: Implement useMessagingOperations functionality
 };
-
-export default useMessagingOperations;

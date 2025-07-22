@@ -4,7 +4,7 @@ export default function VideoCallRoom() {
   return (
     <div>
       <h1>VideoCallRoom</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

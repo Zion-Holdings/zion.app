@@ -1,9 +1,4 @@
-// zion-gpt.ts - Module under construction
-export const ziongpt = {
-  // Placeholder implementation
-  init: () => {
-    console.log('ziongpt initialized');
-  },
+// zion-gpt module placeholder
+export const zion-gpt = {
+  // TODO: Implement zion-gpt functionality
 };
-
-export default ziongpt;

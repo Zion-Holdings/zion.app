@@ -1,9 +1,4 @@
-// useIsMounted.ts - Module under construction
+// useIsMounted module placeholder
 export const useIsMounted = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useIsMounted initialized');
-  },
+  // TODO: Implement useIsMounted functionality
 };
-
-export default useIsMounted;

@@ -1,9 +1,4 @@
-// prompts.ts - Module under construction
+// prompts module placeholder
 export const prompts = {
-  // Placeholder implementation
-  init: () => {
-    console.log('prompts initialized');
-  },
+  // TODO: Implement prompts functionality
 };
-
-export default prompts;

@@ -4,7 +4,7 @@ export default function FeatureHighlights() {
   return (
     <div>
       <h1>FeatureHighlights</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

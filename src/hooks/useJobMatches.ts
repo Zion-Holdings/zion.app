@@ -1,9 +1,4 @@
-// useJobMatches.ts - Module under construction
+// useJobMatches module placeholder
 export const useJobMatches = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useJobMatches initialized');
-  },
+  // TODO: Implement useJobMatches functionality
 };
-
-export default useJobMatches;

@@ -1,9 +1,4 @@
-// globals.d.ts - Module under construction
-export const globalsd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('globalsd initialized');
-  },
+// globals.d module placeholder
+export const globals.d = {
+  // TODO: Implement globals.d functionality
 };
-
-export default globalsd;

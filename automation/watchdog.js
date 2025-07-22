@@ -14,7 +14,9 @@ let cursorChatActive = false;
 
 function isPortInUse(port) {
   try {
-    const output = execSync(`lsof -i :${port} | grep LISTEN || true`).toString();
+    const output = execSync(
+      `lsof -i :${port} | grep LISTEN || true`,
+    ).toString();
     return output.trim().length > 0;
   } catch {
     return false;
@@ -32,7 +34,9 @@ function killPort(port) {
 
 function isProcessRunning(cmd) {
   try {
-    const output = execSync(`ps aux | grep '${cmd}' | grep -v grep || true`).toString();
+    const output = execSync(
+      `ps aux | grep '${cmd}' | grep -v grep || true`,
+    ).toString();
     return output.trim().length > 0;
   } catch {
     return false;
@@ -41,7 +45,12 @@ function isProcessRunning(cmd) {
 
 function startProcess(cmd, cwd = process.cwd(), onExit) {
   console.log(`[Watchdog] Starting: ${cmd}`);
-  const proc = spawn(cmd, { shell: true, cwd, stdio: 'ignore', detached: true });
+  const proc = spawn(cmd, {
+    shell: true,
+    cwd,
+    stdio: 'ignore',
+    detached: true,
+  });
   if (onExit) {
     proc.on('exit', onExit);
   }
@@ -51,17 +60,25 @@ function startProcess(cmd, cwd = process.cwd(), onExit) {
 function startCursorChat() {
   if (cursorChatActive) return;
   cursorChatActive = true;
-  cursorChatProcess = startProcess(CURSOR_CHAT_CMD, path.join(__dirname, '..'), () => {
-    console.log('[Watchdog] Cursor chat process exited. Starting new session...');
-    cursorChatActive = false;
-    setTimeout(startCursorChat, 1000); // Start new chat after 1s
-  });
+  cursorChatProcess = startProcess(
+    CURSOR_CHAT_CMD,
+    path.join(__dirname, '..'),
+    () => {
+      console.log(
+        '[Watchdog] Cursor chat process exited. Starting new session...',
+      );
+      cursorChatActive = false;
+      setTimeout(startCursorChat, 1000); // Start new chat after 1s
+    },
+  );
   console.log('[Watchdog] Cursor chat session started.');
 }
 
 function killAllCursorChats() {
   try {
-    execSync(`ps aux | grep 'cursor-multi-computer-communication.cjs chat' | grep -v grep | awk '{print $2}' | xargs kill -9 || true`);
+    execSync(
+      `ps aux | grep 'cursor-multi-computer-communication.cjs chat' | grep -v grep | awk '{print $2}' | xargs kill -9 || true`,
+    );
     console.log('[Watchdog] Killed all completed Cursor chat processes.');
   } catch (e) {
     // Ignore
@@ -95,5 +112,7 @@ function watchdogLoop() {
   }, CHECK_INTERVAL);
 }
 
-console.log('[Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...');
-watchdogLoop(); 
+console.log(
+  '[Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...',
+);
+watchdogLoop();

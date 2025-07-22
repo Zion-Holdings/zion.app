@@ -1,9 +1,4 @@
-// integrations.ts - Module under construction
+// integrations module placeholder
 export const integrations = {
-  // Placeholder implementation
-  init: () => {
-    console.log('integrations initialized');
-  },
+  // TODO: Implement integrations functionality
 };
-
-export default integrations;

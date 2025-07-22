@@ -1,9 +1,4 @@
-// formatters.ts - Module under construction
+// formatters module placeholder
 export const formatters = {
-  // Placeholder implementation
-  init: () => {
-    console.log('formatters initialized');
-  },
+  // TODO: Implement formatters functionality
 };
-
-export default formatters;

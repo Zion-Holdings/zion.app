@@ -4,7 +4,7 @@ export default function ErrorResetOnRouteChange() {
   return (
     <div>
       <h1>ErrorResetOnRouteChange</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

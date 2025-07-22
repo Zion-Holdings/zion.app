@@ -4,7 +4,7 @@ export default function CommunityPage() {
   return (
     <div>
       <h1>CommunityPage</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

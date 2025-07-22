@@ -1,9 +1,4 @@
-// logger.ts - Module under construction
+// logger module placeholder
 export const logger = {
-  // Placeholder implementation
-  init: () => {
-    console.log('logger initialized');
-  },
+  // TODO: Implement logger functionality
 };
-
-export default logger;

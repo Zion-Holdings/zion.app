@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function aspectratio() {
+export default function aspect-ratio() {
   return (
     <div>
       <h1>aspect-ratio</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,9 +1,4 @@
-// features.ts - Module under construction
+// features module placeholder
 export const features = {
-  // Placeholder implementation
-  init: () => {
-    console.log('features initialized');
-  },
+  // TODO: Implement features functionality
 };
-
-export default features;

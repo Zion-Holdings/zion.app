@@ -1,9 +1,4 @@
-// analyzeContent.ts - Module under construction
+// analyzeContent module placeholder
 export const analyzeContent = {
-  // Placeholder implementation
-  init: () => {
-    console.log('analyzeContent initialized');
-  },
+  // TODO: Implement analyzeContent functionality
 };
-
-export default analyzeContent;

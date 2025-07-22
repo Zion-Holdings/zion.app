@@ -1,9 +1,4 @@
-// schema.ts - Module under construction
+// schema module placeholder
 export const schema = {
-  // Placeholder implementation
-  init: () => {
-    console.log('schema initialized');
-  },
+  // TODO: Implement schema functionality
 };
-
-export default schema;

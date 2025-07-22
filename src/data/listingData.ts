@@ -1,9 +1,4 @@
-// listingData.ts - Module under construction
+// listingData module placeholder
 export const listingData = {
-  // Placeholder implementation
-  init: () => {
-    console.log('listingData initialized');
-  },
+  // TODO: Implement listingData functionality
 };
-
-export default listingData;

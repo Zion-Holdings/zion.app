@@ -4,7 +4,7 @@ export default function AgendaSection() {
   return (
     <div>
       <h1>AgendaSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

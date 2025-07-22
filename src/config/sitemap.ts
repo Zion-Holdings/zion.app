@@ -1,9 +1,4 @@
-// sitemap.ts - Module under construction
+// sitemap module placeholder
 export const sitemap = {
-  // Placeholder implementation
-  init: () => {
-    console.log('sitemap initialized');
-  },
+  // TODO: Implement sitemap functionality
 };
-
-export default sitemap;

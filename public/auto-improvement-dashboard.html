@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Auto-Improvement Dashboard</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Auto-Improvement Dashboard</title>
+        <style>
       body {
         font-family: sans-serif;
         margin: 2em;
@@ -33,14 +33,14 @@
       button:active {
         background: #185a9d;
       }
-    </style>
-  </head>
-  <body>
-    <h1>Automatic Intermittent Improvement Dashboard</h1>
-    <button onclick="triggerImprovement()">Trigger Improvement Now</button>
-    <div id="status"></div>
-    <div id="history"></div>
-    <script>
+        </style>
+    </head>
+    <body>
+        <h1>Automatic Intermittent Improvement Dashboard</h1>
+        <button onclick="triggerImprovement()">Trigger Improvement Now</button>
+        <div id="status"></div>
+        <div id="history"></div>
+        <script>
       async function fetchHistory() {
         const res = await fetch('/api/auto-improvement/history');
         const data = await res.json();
@@ -71,6 +71,6 @@
       }
       fetchHistory();
       setInterval(fetchHistory, 10000);
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

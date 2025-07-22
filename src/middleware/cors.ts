@@ -1,9 +1,4 @@
-// cors.ts - Module under construction
+// cors module placeholder
 export const cors = {
-  // Placeholder implementation
-  init: () => {
-    console.log('cors initialized');
-  },
+  // TODO: Implement cors functionality
 };
-
-export default cors;

@@ -1,9 +1,4 @@
-// analyzeEmail.ts - Module under construction
+// analyzeEmail module placeholder
 export const analyzeEmail = {
-  // Placeholder implementation
-  init: () => {
-    console.log('analyzeEmail initialized');
-  },
+  // TODO: Implement analyzeEmail functionality
 };
-
-export default analyzeEmail;

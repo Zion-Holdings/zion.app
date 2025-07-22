@@ -1,9 +1,4 @@
-// monitorContent.ts - Module under construction
+// monitorContent module placeholder
 export const monitorContent = {
-  // Placeholder implementation
-  init: () => {
-    console.log('monitorContent initialized');
-  },
+  // TODO: Implement monitorContent functionality
 };
-
-export default monitorContent;

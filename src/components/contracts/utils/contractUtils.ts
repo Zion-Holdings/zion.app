@@ -1,9 +1,4 @@
-// contractUtils.ts - Module under construction
+// contractUtils module placeholder
 export const contractUtils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('contractUtils initialized');
-  },
+  // TODO: Implement contractUtils functionality
 };
-
-export default contractUtils;

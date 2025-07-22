@@ -1,9 +1,4 @@
-// server.ts - Module under construction
+// server module placeholder
 export const server = {
-  // Placeholder implementation
-  init: () => {
-    console.log('server initialized');
-  },
+  // TODO: Implement server functionality
 };
-
-export default server;

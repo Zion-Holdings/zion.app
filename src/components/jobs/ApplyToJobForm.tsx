@@ -4,7 +4,7 @@ export default function ApplyToJobForm() {
   return (
     <div>
       <h1>ApplyToJobForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

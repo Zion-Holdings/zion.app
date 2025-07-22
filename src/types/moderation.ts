@@ -1,9 +1,4 @@
-// moderation.ts - Module under construction
+// moderation module placeholder
 export const moderation = {
-  // Placeholder implementation
-  init: () => {
-    console.log('moderation initialized');
-  },
+  // TODO: Implement moderation functionality
 };
-
-export default moderation;

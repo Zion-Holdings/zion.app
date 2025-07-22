@@ -1,9 +1,4 @@
-// publicRoutes.ts - Module under construction
+// publicRoutes module placeholder
 export const publicRoutes = {
-  // Placeholder implementation
-  init: () => {
-    console.log('publicRoutes initialized');
-  },
+  // TODO: Implement publicRoutes functionality
 };
-
-export default publicRoutes;

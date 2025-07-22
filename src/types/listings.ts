@@ -1,9 +1,4 @@
-// listings.ts - Module under construction
+// listings module placeholder
 export const listings = {
-  // Placeholder implementation
-  init: () => {
-    console.log('listings initialized');
-  },
+  // TODO: Implement listings functionality
 };
-
-export default listings;

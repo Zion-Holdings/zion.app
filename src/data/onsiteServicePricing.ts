@@ -1,9 +1,4 @@
-// onsiteServicePricing.ts - Module under construction
+// onsiteServicePricing module placeholder
 export const onsiteServicePricing = {
-  // Placeholder implementation
-  init: () => {
-    console.log('onsiteServicePricing initialized');
-  },
+  // TODO: Implement onsiteServicePricing functionality
 };
-
-export default onsiteServicePricing;

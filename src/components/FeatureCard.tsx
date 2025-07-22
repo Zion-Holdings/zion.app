@@ -4,7 +4,7 @@ export default function FeatureCard() {
   return (
     <div>
       <h1>FeatureCard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

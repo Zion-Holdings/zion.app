@@ -4,7 +4,7 @@ export default function NewPost() {
   return (
     <div>
       <h1>NewPost</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

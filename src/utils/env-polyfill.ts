@@ -1,9 +1,4 @@
-// env-polyfill.ts - Module under construction
-export const envpolyfill = {
-  // Placeholder implementation
-  init: () => {
-    console.log('envpolyfill initialized');
-  },
+// env-polyfill module placeholder
+export const env-polyfill = {
+  // TODO: Implement env-polyfill functionality
 };
-
-export default envpolyfill;

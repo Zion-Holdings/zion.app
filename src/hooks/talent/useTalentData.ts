@@ -1,9 +1,4 @@
-// useTalentData.ts - Module under construction
+// useTalentData module placeholder
 export const useTalentData = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useTalentData initialized');
-  },
+  // TODO: Implement useTalentData functionality
 };
-
-export default useTalentData;

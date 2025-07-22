@@ -1,9 +1,4 @@
-// useDelayedError.ts - Module under construction
+// useDelayedError module placeholder
 export const useDelayedError = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useDelayedError initialized');
-  },
+  // TODO: Implement useDelayedError functionality
 };
-
-export default useDelayedError;

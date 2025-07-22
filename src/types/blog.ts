@@ -1,9 +1,4 @@
-// blog.ts - Module under construction
+// blog module placeholder
 export const blog = {
-  // Placeholder implementation
-  init: () => {
-    console.log('blog initialized');
-  },
+  // TODO: Implement blog functionality
 };
-
-export default blog;

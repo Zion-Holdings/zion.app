@@ -1,9 +1,4 @@
-// MailchimpService.ts - Module under construction
+// MailchimpService module placeholder
 export const MailchimpService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('MailchimpService initialized');
-  },
+  // TODO: Implement MailchimpService functionality
 };
-
-export default MailchimpService;

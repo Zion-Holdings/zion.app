@@ -4,7 +4,7 @@ export default function ExportToCSV() {
   return (
     <div>
       <h1>ExportToCSV</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

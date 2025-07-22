@@ -1,9 +1,4 @@
-// product.ts - Module under construction
+// product module placeholder
 export const product = {
-  // Placeholder implementation
-  init: () => {
-    console.log('product initialized');
-  },
+  // TODO: Implement product functionality
 };
-
-export default product;

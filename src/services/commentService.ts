@@ -1,9 +1,4 @@
-// commentService.ts - Module under construction
+// commentService module placeholder
 export const commentService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('commentService initialized');
-  },
+  // TODO: Implement commentService functionality
 };
-
-export default commentService;

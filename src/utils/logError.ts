@@ -1,9 +1,4 @@
-// logError.ts - Module under construction
+// logError module placeholder
 export const logError = {
-  // Placeholder implementation
-  init: () => {
-    console.log('logError initialized');
-  },
+  // TODO: Implement logError functionality
 };
-
-export default logError;

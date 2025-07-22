@@ -1,9 +1,4 @@
-// globalToastManager.ts - Module under construction
+// globalToastManager module placeholder
 export const globalToastManager = {
-  // Placeholder implementation
-  init: () => {
-    console.log('globalToastManager initialized');
-  },
+  // TODO: Implement globalToastManager functionality
 };
-
-export default globalToastManager;

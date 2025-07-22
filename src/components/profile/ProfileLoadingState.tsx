@@ -4,7 +4,7 @@ export default function ProfileLoadingState() {
   return (
     <div>
       <h1>ProfileLoadingState</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

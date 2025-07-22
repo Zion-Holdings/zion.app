@@ -4,7 +4,7 @@ export default function ScreenshotManager() {
   return (
     <div>
       <h1>ScreenshotManager</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

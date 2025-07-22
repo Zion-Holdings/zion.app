@@ -1,9 +1,4 @@
-// environmentConfig.ts - Module under construction
+// environmentConfig module placeholder
 export const environmentConfig = {
-  // Placeholder implementation
-  init: () => {
-    console.log('environmentConfig initialized');
-  },
+  // TODO: Implement environmentConfig functionality
 };
-
-export default environmentConfig;

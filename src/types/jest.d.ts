@@ -1,9 +1,4 @@
-// jest.d.ts - Module under construction
-export const jestd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('jestd initialized');
-  },
+// jest.d module placeholder
+export const jest.d = {
+  // TODO: Implement jest.d functionality
 };
-
-export default jestd;

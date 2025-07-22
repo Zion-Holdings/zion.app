@@ -1,9 +1,4 @@
-// useSkeletonTimeout.ts - Module under construction
+// useSkeletonTimeout module placeholder
 export const useSkeletonTimeout = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useSkeletonTimeout initialized');
-  },
+  // TODO: Implement useSkeletonTimeout functionality
 };
-
-export default useSkeletonTimeout;

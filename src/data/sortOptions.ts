@@ -1,9 +1,4 @@
-// sortOptions.ts - Module under construction
+// sortOptions module placeholder
 export const sortOptions = {
-  // Placeholder implementation
-  init: () => {
-    console.log('sortOptions initialized');
-  },
+  // TODO: Implement sortOptions functionality
 };
-
-export default sortOptions;

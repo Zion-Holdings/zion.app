@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🤖 Automated Chat Reconnection System</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🤖 Automated Chat Reconnection System</title>
+        <style>
       * {
         margin: 0;
         padding: 0;
@@ -356,129 +356,94 @@
           font-size: 2rem;
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>🤖 Automated Chat Reconnection System</h1>
-        <p>
-          Monitor and control chat connections across all computers with Cursor
-        </p>
-      </div>
-
-      <div class="status-bar">
-        <div class="status-item">
-          <div class="status-indicator" id="systemStatus"></div>
-          <span id="systemStatusText">Checking system status...</span>
-        </div>
-        <div class="status-item">
-          <span>🖥️ Computers Online: <strong id="onlineCount">-</strong></span>
-        </div>
-        <div class="status-item">
-          <span>💬 Active Chats: <strong id="activeChats">-</strong></span>
-        </div>
-        <div class="status-item">
-          <span>⏱️ Uptime: <strong id="uptime">-</strong></span>
-        </div>
-      </div>
-
-      <div class="main-content">
-        <div class="panel">
-          <h2>🖥️ Connected Computers</h2>
-          <div class="computer-grid" id="computerGrid">
-            <div class="loading">Loading computers...</div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h2>📊 System Statistics</h2>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <div class="stat-value" id="totalComputers">-</div>
-              <div class="stat-label">Total Computers</div>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 Automated Chat Reconnection System</h1>
+                <p>Monitor and control chat connections across all computers with Cursor</p>
             </div>
-            <div class="stat-item">
-              <div class="stat-value" id="onlineComputers">-</div>
-              <div class="stat-label">Online</div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-indicator" id="systemStatus"></div>
+                    <span id="systemStatusText">Checking system status...</span>
+                </div>
+                <div class="status-item">
+                    <span>🖥️ Computers Online: <strong id="onlineCount">-</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>💬 Active Chats: <strong id="activeChats">-</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>⏱️ Uptime: <strong id="uptime">-</strong></span>
+                </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-value" id="chatMessages">-</div>
-              <div class="stat-label">Chat Messages</div>
+            <div class="main-content">
+                <div class="panel">
+                    <h2>🖥️ Connected Computers</h2>
+                    <div class="computer-grid" id="computerGrid">
+                        <div class="loading">Loading computers...</div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h2>📊 System Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalComputers">-</div>
+                            <div class="stat-label">Total Computers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="onlineComputers">-</div>
+                            <div class="stat-label">Online</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="chatMessages">-</div>
+                            <div class="stat-label">Chat Messages</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="reconnections">-</div>
+                            <div class="stat-label">Reconnections</div>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="quick-btn"
+                                onclick="triggerChat('build', 'Please analyze the current build process')">
+                            🔨 Build Analysis
+                        </button>
+                        <button class="quick-btn"
+                                onclick="triggerChat('lint', 'Check for code quality issues')">🧹 Code Quality</button>
+                        <button class="quick-btn"
+                                onclick="triggerChat('test', 'Run comprehensive tests')">🧪 Run Tests</button>
+                        <button class="quick-btn"
+                                onclick="triggerChat('deploy', 'Prepare for deployment')">🚀 Deploy</button>
+                        <button class="quick-btn"
+                                onclick="triggerChat('optimize', 'Optimize performance')">⚡ Optimize</button>
+                        <button class="quick-btn" onclick="triggerChat('security', 'Security audit')">🔒 Security</button>
+                    </div>
+                </div>
+                <div class="panel chat-section">
+                    <h2>💬 Live Chat</h2>
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <span>System Chat</span>
+                            <span id="chatStatus">Connected</span>
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message system">System initialized. Ready to chat with all connected computers.</div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text"
+                                   id="messageInput"
+                                   placeholder="Type your message..."
+                                   onkeypress="handleKeyPress(event)" />
+                            <button onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-value" id="reconnections">-</div>
-              <div class="stat-label">Reconnections</div>
-            </div>
-          </div>
-
-          <div class="quick-actions">
-            <button
-              class="quick-btn"
-              onclick="triggerChat('build', 'Please analyze the current build process')"
-            >
-              🔨 Build Analysis
-            </button>
-            <button
-              class="quick-btn"
-              onclick="triggerChat('lint', 'Check for code quality issues')"
-            >
-              🧹 Code Quality
-            </button>
-            <button
-              class="quick-btn"
-              onclick="triggerChat('test', 'Run comprehensive tests')"
-            >
-              🧪 Run Tests
-            </button>
-            <button
-              class="quick-btn"
-              onclick="triggerChat('deploy', 'Prepare for deployment')"
-            >
-              🚀 Deploy
-            </button>
-            <button
-              class="quick-btn"
-              onclick="triggerChat('optimize', 'Optimize performance')"
-            >
-              ⚡ Optimize
-            </button>
-            <button
-              class="quick-btn"
-              onclick="triggerChat('security', 'Security audit')"
-            >
-              🔒 Security
-            </button>
-          </div>
         </div>
-
-        <div class="panel chat-section">
-          <h2>💬 Live Chat</h2>
-          <div class="chat-container">
-            <div class="chat-header">
-              <span>System Chat</span>
-              <span id="chatStatus">Connected</span>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-              <div class="message system">
-                System initialized. Ready to chat with all connected computers.
-              </div>
-            </div>
-            <div class="chat-input">
-              <input
-                type="text"
-                id="messageInput"
-                placeholder="Type your message..."
-                onkeypress="handleKeyPress(event)"
-              />
-              <button onclick="sendMessage()">Send</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
+        <script>
       // Configuration
       const CONFIG = {
         API_BASE: 'http://localhost:3009',
@@ -775,6 +740,6 @@
           websocket.close();
         }
       });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

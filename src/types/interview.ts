@@ -1,9 +1,4 @@
-// interview.ts - Module under construction
+// interview module placeholder
 export const interview = {
-  // Placeholder implementation
-  init: () => {
-    console.log('interview initialized');
-  },
+  // TODO: Implement interview functionality
 };
-
-export default interview;

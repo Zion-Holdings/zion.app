@@ -1,9 +1,4 @@
-// apiErrorHandler.ts - Module under construction
+// apiErrorHandler module placeholder
 export const apiErrorHandler = {
-  // Placeholder implementation
-  init: () => {
-    console.log('apiErrorHandler initialized');
-  },
+  // TODO: Implement apiErrorHandler functionality
 };
-
-export default apiErrorHandler;

@@ -4,7 +4,7 @@ export default function RegisterForm() {
   return (
     <div>
       <h1>RegisterForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

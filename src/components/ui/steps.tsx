@@ -4,7 +4,7 @@ export default function steps() {
   return (
     <div>
       <h1>steps</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

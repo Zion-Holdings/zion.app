@@ -4,7 +4,7 @@ export default function FraudFlagsTable() {
   return (
     <div>
       <h1>FraudFlagsTable</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

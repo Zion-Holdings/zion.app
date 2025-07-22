@@ -4,7 +4,7 @@ export default function EducationList() {
   return (
     <div>
       <h1>EducationList</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

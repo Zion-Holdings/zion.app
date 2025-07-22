@@ -1,9 +1,4 @@
-// resume.ts - Module under construction
+// resume module placeholder
 export const resume = {
-  // Placeholder implementation
-  init: () => {
-    console.log('resume initialized');
-  },
+  // TODO: Implement resume functionality
 };
-
-export default resume;

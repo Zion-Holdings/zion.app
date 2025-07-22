@@ -1,9 +1,4 @@
-// types.ts - Module under construction
+// types module placeholder
 export const types = {
-  // Placeholder implementation
-  init: () => {
-    console.log('types initialized');
-  },
+  // TODO: Implement types functionality
 };
-
-export default types;

@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Zion Debug Log Viewer</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Zion Debug Log Viewer</title>
+        <style>
       body {
         font-family: sans-serif;
         padding: 20px;
@@ -29,20 +29,19 @@
       .error {
         color: red;
       }
-    </style>
-  </head>
-  <body>
-    <h1>Zion App Offline Debug Logs</h1>
-    <input
-      type="text"
-      id="filter-input"
-      placeholder="Filter logs by keyword..."
-      style="padding: 0.5rem; margin-bottom: 1rem; width: 100%"
-      oninput="renderLogs(this.value.toLowerCase())"
-    />
-    <div id="log-output"></div>
-
-    <script>
+        </style>
+    </head>
+    <body>
+        <h1>Zion App Offline Debug Logs</h1>
+        <input type="text"
+               id="filter-input"
+               placeholder="Filter logs by keyword..."
+               style="padding: 0.5rem;
+                      margin-bottom: 1rem;
+                      width: 100%"
+               oninput="renderLogs(this.value.toLowerCase())" />
+        <div id="log-output"></div>
+        <script>
       const logs = JSON.parse(localStorage.getItem('zion-logs') || '[]');
       const container = document.getElementById('log-output');
 
@@ -71,6 +70,6 @@
       } else {
         renderLogs();
       }
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

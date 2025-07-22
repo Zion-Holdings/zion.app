@@ -4,7 +4,7 @@ export default function ReplyForm() {
   return (
     <div>
       <h1>ReplyForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function verifyemail() {
+export default function verify-email() {
   return (
     <div>
       <h1>verify-email</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

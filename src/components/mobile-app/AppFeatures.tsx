@@ -4,7 +4,7 @@ export default function AppFeatures() {
   return (
     <div>
       <h1>AppFeatures</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

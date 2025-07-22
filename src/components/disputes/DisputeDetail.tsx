@@ -4,7 +4,7 @@ export default function DisputeDetail() {
   return (
     <div>
       <h1>DisputeDetail</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

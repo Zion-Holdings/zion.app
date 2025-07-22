@@ -4,7 +4,7 @@ export default function LeaveReviewModal() {
   return (
     <div>
       <h1>LeaveReviewModal</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -541,3 +541,51 @@ System Status: Running
 - Dependency Management
 - Build Optimization
 - Testing Automation
+
+## Accessibility Automation
+
+This project automatically fixes accessibility and template issues on every commit and push:
+
+- **Pre-commit & Pre-push hooks**: Run ESLint (with accessibility autofix) and djlint (for Django/HTML templates) before every commit and push.
+- **NPM scripts**:
+  - `npm run lint:accessibility` — Runs ESLint autofix for JS/TS/TSX/JSX files
+  - `npm run lint:templates` — Runs djlint autofix and lint for all HTML/Django templates
+
+### How it works
+- On every commit and push, the codebase is automatically checked and fixed for accessibility and template issues.
+- If issues are found, the commit or push will be blocked until they are fixed.
+
+### Manual usage
+You can also run the scripts manually:
+
+```sh
+npm run lint:accessibility
+npm run lint:templates
+```
+
+## Automated Accessibility Fix Script
+
+You can run all accessibility and template fixes independently with:
+
+```sh
+./scripts/auto-fix-accessibility.sh
+```
+
+This script will:
+- Run ESLint autofix for accessibility issues
+- Run djlint autofix for Django/HTML templates
+- Auto-commit and push changes if any are made
+
+### Scheduling (Cron Example)
+To run this script every day at midnight, add this to your crontab:
+
+```
+0 0 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && ./scripts/auto-fix-accessibility.sh
+```
+
+### CI/CD Integration Example (GitHub Actions)
+Add a workflow step:
+```yaml
+- name: Auto-fix accessibility
+  run: ./scripts/auto-fix-accessibility.sh
+```

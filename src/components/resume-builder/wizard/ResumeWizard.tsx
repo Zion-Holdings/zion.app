@@ -4,7 +4,7 @@ export default function ResumeWizard() {
   return (
     <div>
       <h1>ResumeWizard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

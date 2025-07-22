@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function navigationmenu() {
+export default function navigation-menu() {
   return (
     <div>
       <h1>navigation-menu</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

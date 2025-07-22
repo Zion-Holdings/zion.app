@@ -1,9 +1,4 @@
-// useWishlist.ts - Module under construction
+// useWishlist module placeholder
 export const useWishlist = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useWishlist initialized');
-  },
+  // TODO: Implement useWishlist functionality
 };
-
-export default useWishlist;

@@ -1,9 +1,4 @@
-// ai-matchmaking.ts - Module under construction
-export const aimatchmaking = {
-  // Placeholder implementation
-  init: () => {
-    console.log('aimatchmaking initialized');
-  },
+// ai-matchmaking module placeholder
+export const ai-matchmaking = {
+  // TODO: Implement ai-matchmaking functionality
 };
-
-export default aimatchmaking;

@@ -1,9 +1,4 @@
-// useResumeProgress.ts - Module under construction
+// useResumeProgress module placeholder
 export const useResumeProgress = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useResumeProgress initialized');
-  },
+  // TODO: Implement useResumeProgress functionality
 };
-
-export default useResumeProgress;

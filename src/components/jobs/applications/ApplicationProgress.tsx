@@ -4,7 +4,7 @@ export default function ApplicationProgress() {
   return (
     <div>
       <h1>ApplicationProgress</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

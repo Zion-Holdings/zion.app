@@ -1,9 +1,4 @@
-// messageCheck.ts - Module under construction
+// messageCheck module placeholder
 export const messageCheck = {
-  // Placeholder implementation
-  init: () => {
-    console.log('messageCheck initialized');
-  },
+  // TODO: Implement messageCheck functionality
 };
-
-export default messageCheck;

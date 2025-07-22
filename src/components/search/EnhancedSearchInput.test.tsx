@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function EnhancedSearchInputtest() {
+export default function EnhancedSearchInput.test() {
   return (
     <div>
       <h1>EnhancedSearchInput.test</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

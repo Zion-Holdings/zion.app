@@ -1,9 +1,4 @@
-// useCompanyWorkspace.ts - Module under construction
+// useCompanyWorkspace module placeholder
 export const useCompanyWorkspace = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useCompanyWorkspace initialized');
-  },
+  // TODO: Implement useCompanyWorkspace functionality
 };
-
-export default useCompanyWorkspace;

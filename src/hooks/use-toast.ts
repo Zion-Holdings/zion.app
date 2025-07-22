@@ -1,9 +1,4 @@
-// use-toast.ts - Module under construction
-export const usetoast = {
-  // Placeholder implementation
-  init: () => {
-    console.log('usetoast initialized');
-  },
+// use-toast module placeholder
+export const use-toast = {
+  // TODO: Implement use-toast functionality
 };
-
-export default usetoast;

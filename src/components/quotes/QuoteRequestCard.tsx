@@ -4,7 +4,7 @@ export default function QuoteRequestCard() {
   return (
     <div>
       <h1>QuoteRequestCard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

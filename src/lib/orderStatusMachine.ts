@@ -1,9 +1,4 @@
-// orderStatusMachine.ts - Module under construction
+// orderStatusMachine module placeholder
 export const orderStatusMachine = {
-  // Placeholder implementation
-  init: () => {
-    console.log('orderStatusMachine initialized');
-  },
+  // TODO: Implement orderStatusMachine functionality
 };
-
-export default orderStatusMachine;

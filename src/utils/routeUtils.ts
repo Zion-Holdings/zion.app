@@ -1,9 +1,4 @@
-// routeUtils.ts - Module under construction
+// routeUtils module placeholder
 export const routeUtils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('routeUtils initialized');
-  },
+  // TODO: Implement routeUtils functionality
 };
-
-export default routeUtils;

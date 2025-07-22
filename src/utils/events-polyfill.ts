@@ -1,9 +1,4 @@
-// events-polyfill.ts - Module under construction
-export const eventspolyfill = {
-  // Placeholder implementation
-  init: () => {
-    console.log('eventspolyfill initialized');
-  },
+// events-polyfill module placeholder
+export const events-polyfill = {
+  // TODO: Implement events-polyfill functionality
 };
-
-export default eventspolyfill;

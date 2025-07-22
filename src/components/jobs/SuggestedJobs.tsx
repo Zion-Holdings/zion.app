@@ -4,7 +4,7 @@ export default function SuggestedJobs() {
   return (
     <div>
       <h1>SuggestedJobs</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

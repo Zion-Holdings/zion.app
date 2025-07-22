@@ -1,9 +1,4 @@
-// shippo.ts - Module under construction
+// shippo module placeholder
 export const shippo = {
-  // Placeholder implementation
-  init: () => {
-    console.log('shippo initialized');
-  },
+  // TODO: Implement shippo functionality
 };
-
-export default shippo;

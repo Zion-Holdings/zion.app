@@ -1,9 +1,4 @@
-// investor-matching.ts - Module under construction
-export const investormatching = {
-  // Placeholder implementation
-  init: () => {
-    console.log('investormatching initialized');
-  },
+// investor-matching module placeholder
+export const investor-matching = {
+  // TODO: Implement investor-matching functionality
 };
-
-export default investormatching;

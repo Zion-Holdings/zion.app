@@ -1,9 +1,4 @@
-// delayDao.ts - Module under construction
+// delayDao module placeholder
 export const delayDao = {
-  // Placeholder implementation
-  init: () => {
-    console.log('delayDao initialized');
-  },
+  // TODO: Implement delayDao functionality
 };
-
-export default delayDao;

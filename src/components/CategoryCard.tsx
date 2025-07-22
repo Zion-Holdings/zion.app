@@ -4,7 +4,7 @@ export default function CategoryCard() {
   return (
     <div>
       <h1>CategoryCard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

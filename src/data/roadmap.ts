@@ -1,9 +1,4 @@
-// roadmap.ts - Module under construction
+// roadmap module placeholder
 export const roadmap = {
-  // Placeholder implementation
-  init: () => {
-    console.log('roadmap initialized');
-  },
+  // TODO: Implement roadmap functionality
 };
-
-export default roadmap;

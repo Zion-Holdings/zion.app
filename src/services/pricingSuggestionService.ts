@@ -1,9 +1,4 @@
-// pricingSuggestionService.ts - Module under construction
+// pricingSuggestionService module placeholder
 export const pricingSuggestionService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('pricingSuggestionService initialized');
-  },
+  // TODO: Implement pricingSuggestionService functionality
 };
-
-export default pricingSuggestionService;

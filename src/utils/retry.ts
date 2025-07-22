@@ -1,9 +1,4 @@
-// retry.ts - Module under construction
+// retry module placeholder
 export const retry = {
-  // Placeholder implementation
-  init: () => {
-    console.log('retry initialized');
-  },
+  // TODO: Implement retry functionality
 };
-
-export default retry;

@@ -1,9 +1,4 @@
-// useCurrency.ts - Module under construction
+// useCurrency module placeholder
 export const useCurrency = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useCurrency initialized');
-  },
+  // TODO: Implement useCurrency functionality
 };
-
-export default useCurrency;

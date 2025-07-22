@@ -1,9 +1,4 @@
-// useRouterReady.ts - Module under construction
+// useRouterReady module placeholder
 export const useRouterReady = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useRouterReady initialized');
-  },
+  // TODO: Implement useRouterReady functionality
 };
-
-export default useRouterReady;

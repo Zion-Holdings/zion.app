@@ -1,9 +1,4 @@
-// tokens.ts - Module under construction
+// tokens module placeholder
 export const tokens = {
-  // Placeholder implementation
-  init: () => {
-    console.log('tokens initialized');
-  },
+  // TODO: Implement tokens functionality
 };
-
-export default tokens;

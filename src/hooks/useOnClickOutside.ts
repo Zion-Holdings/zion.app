@@ -1,9 +1,4 @@
-// useOnClickOutside.ts - Module under construction
+// useOnClickOutside module placeholder
 export const useOnClickOutside = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useOnClickOutside initialized');
-  },
+  // TODO: Implement useOnClickOutside functionality
 };
-
-export default useOnClickOutside;

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function emptystate() {
+export default function empty-state() {
   return (
     <div>
       <h1>empty-state</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

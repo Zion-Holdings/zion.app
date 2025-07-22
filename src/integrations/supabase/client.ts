@@ -1,9 +1,4 @@
-// client.ts - Module under construction
+// client module placeholder
 export const client = {
-  // Placeholder implementation
-  init: () => {
-    console.log('client initialized');
-  },
+  // TODO: Implement client functionality
 };
-
-export default client;

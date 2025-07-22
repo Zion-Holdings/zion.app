@@ -1,9 +1,4 @@
-// globalAppErrors.ts - Module under construction
+// globalAppErrors module placeholder
 export const globalAppErrors = {
-  // Placeholder implementation
-  init: () => {
-    console.log('globalAppErrors initialized');
-  },
+  // TODO: Implement globalAppErrors functionality
 };
-
-export default globalAppErrors;

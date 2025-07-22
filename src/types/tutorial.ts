@@ -1,9 +1,4 @@
-// tutorial.ts - Module under construction
+// tutorial module placeholder
 export const tutorial = {
-  // Placeholder implementation
-  init: () => {
-    console.log('tutorial initialized');
-  },
+  // TODO: Implement tutorial functionality
 };
-
-export default tutorial;

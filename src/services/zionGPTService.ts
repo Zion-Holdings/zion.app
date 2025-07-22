@@ -1,9 +1,4 @@
-// zionGPTService.ts - Module under construction
+// zionGPTService module placeholder
 export const zionGPTService = {
-  // Placeholder implementation
-  init: () => {
-    console.log('zionGPTService initialized');
-  },
+  // TODO: Implement zionGPTService functionality
 };
-
-export default zionGPTService;

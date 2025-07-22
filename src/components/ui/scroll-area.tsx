@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function scrollarea() {
+export default function scroll-area() {
   return (
     <div>
       <h1>scroll-area</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

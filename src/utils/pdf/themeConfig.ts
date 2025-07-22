@@ -1,9 +1,4 @@
-// themeConfig.ts - Module under construction
+// themeConfig module placeholder
 export const themeConfig = {
-  // Placeholder implementation
-  init: () => {
-    console.log('themeConfig initialized');
-  },
+  // TODO: Implement themeConfig functionality
 };
-
-export default themeConfig;

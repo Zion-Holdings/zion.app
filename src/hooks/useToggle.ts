@@ -1,9 +1,4 @@
-// useToggle.ts - Module under construction
+// useToggle module placeholder
 export const useToggle = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useToggle initialized');
-  },
+  // TODO: Implement useToggle functionality
 };
-
-export default useToggle;

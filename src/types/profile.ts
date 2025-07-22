@@ -1,9 +1,4 @@
-// profile.ts - Module under construction
+// profile module placeholder
 export const profile = {
-  // Placeholder implementation
-  init: () => {
-    console.log('profile initialized');
-  },
+  // TODO: Implement profile functionality
 };
-
-export default profile;

@@ -1,9 +1,4 @@
-// useConversationState.ts - Module under construction
+// useConversationState module placeholder
 export const useConversationState = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useConversationState initialized');
-  },
+  // TODO: Implement useConversationState functionality
 };
-
-export default useConversationState;

@@ -1,9 +1,4 @@
-// contracts.ts - Module under construction
+// contracts module placeholder
 export const contracts = {
-  // Placeholder implementation
-  init: () => {
-    console.log('contracts initialized');
-  },
+  // TODO: Implement contracts functionality
 };
-
-export default contracts;

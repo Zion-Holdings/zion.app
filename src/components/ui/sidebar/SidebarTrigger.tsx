@@ -4,7 +4,7 @@ export default function SidebarTrigger() {
   return (
     <div>
       <h1>SidebarTrigger</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,9 +1,4 @@
-// socket.io.d.ts - Module under construction
-export const socketiod = {
-  // Placeholder implementation
-  init: () => {
-    console.log('socketiod initialized');
-  },
+// socket.io.d module placeholder
+export const socket.io.d = {
+  // TODO: Implement socket.io.d functionality
 };
-
-export default socketiod;

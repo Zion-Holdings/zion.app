@@ -4,7 +4,7 @@ export default function ListingGridSkeleton() {
   return (
     <div>
       <h1>ListingGridSkeleton</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

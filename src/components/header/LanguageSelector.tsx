@@ -4,7 +4,7 @@ export default function LanguageSelector() {
   return (
     <div>
       <h1>LanguageSelector</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

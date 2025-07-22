@@ -4,7 +4,7 @@ export default function BackToDirectoryButton() {
   return (
     <div>
       <h1>BackToDirectoryButton</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

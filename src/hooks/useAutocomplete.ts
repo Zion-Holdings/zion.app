@@ -1,9 +1,4 @@
-// useAutocomplete.ts - Module under construction
+// useAutocomplete module placeholder
 export const useAutocomplete = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useAutocomplete initialized');
-  },
+  // TODO: Implement useAutocomplete functionality
 };
-
-export default useAutocomplete;

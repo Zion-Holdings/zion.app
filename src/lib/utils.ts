@@ -1,9 +1,4 @@
-// utils.ts - Module under construction
+// utils module placeholder
 export const utils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('utils initialized');
-  },
+  // TODO: Implement utils functionality
 };
-
-export default utils;

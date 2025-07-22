@@ -1,9 +1,4 @@
-// serviceWorkerRegistration.ts - Module under construction
+// serviceWorkerRegistration module placeholder
 export const serviceWorkerRegistration = {
-  // Placeholder implementation
-  init: () => {
-    console.log('serviceWorkerRegistration initialized');
-  },
+  // TODO: Implement serviceWorkerRegistration functionality
 };
-
-export default serviceWorkerRegistration;

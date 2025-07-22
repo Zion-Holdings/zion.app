@@ -4,7 +4,7 @@ export default function MilestoneCreator() {
   return (
     <div>
       <h1>MilestoneCreator</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

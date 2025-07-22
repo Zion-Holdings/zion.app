@@ -1,9 +1,4 @@
-// passwordStrength.ts - Module under construction
+// passwordStrength module placeholder
 export const passwordStrength = {
-  // Placeholder implementation
-  init: () => {
-    console.log('passwordStrength initialized');
-  },
+  // TODO: Implement passwordStrength functionality
 };
-
-export default passwordStrength;

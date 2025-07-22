@@ -1,9 +1,4 @@
-// points.ts - Module under construction
+// points module placeholder
 export const points = {
-  // Placeholder implementation
-  init: () => {
-    console.log('points initialized');
-  },
+  // TODO: Implement points functionality
 };
-
-export default points;

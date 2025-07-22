@@ -1,9 +1,4 @@
-// useEmailAuth.ts - Module under construction
+// useEmailAuth module placeholder
 export const useEmailAuth = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useEmailAuth initialized');
-  },
+  // TODO: Implement useEmailAuth functionality
 };
-
-export default useEmailAuth;

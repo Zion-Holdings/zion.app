@@ -1,9 +1,4 @@
-// globalFetchInterceptor.ts - Module under construction
+// globalFetchInterceptor module placeholder
 export const globalFetchInterceptor = {
-  // Placeholder implementation
-  init: () => {
-    console.log('globalFetchInterceptor initialized');
-  },
+  // TODO: Implement globalFetchInterceptor functionality
 };
-
-export default globalFetchInterceptor;

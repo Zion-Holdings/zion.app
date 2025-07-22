@@ -1,9 +1,4 @@
-// badgeConfig.ts - Module under construction
+// badgeConfig module placeholder
 export const badgeConfig = {
-  // Placeholder implementation
-  init: () => {
-    console.log('badgeConfig initialized');
-  },
+  // TODO: Implement badgeConfig functionality
 };
-
-export default badgeConfig;

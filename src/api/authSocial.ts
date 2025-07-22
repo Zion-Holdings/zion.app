@@ -1,9 +1,4 @@
-// authSocial.ts - Module under construction
+// authSocial module placeholder
 export const authSocial = {
-  // Placeholder implementation
-  init: () => {
-    console.log('authSocial initialized');
-  },
+  // TODO: Implement authSocial functionality
 };
-
-export default authSocial;

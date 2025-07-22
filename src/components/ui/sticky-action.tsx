@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function stickyaction() {
+export default function sticky-action() {
   return (
     <div>
       <h1>sticky-action</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

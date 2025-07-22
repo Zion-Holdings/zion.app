@@ -1,9 +1,4 @@
-// pwa.d.ts - Module under construction
-export const pwad = {
-  // Placeholder implementation
-  init: () => {
-    console.log('pwad initialized');
-  },
+// pwa.d module placeholder
+export const pwa.d = {
+  // TODO: Implement pwa.d functionality
 };
-
-export default pwad;

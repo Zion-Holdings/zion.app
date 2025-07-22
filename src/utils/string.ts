@@ -1,9 +1,4 @@
-// string.ts - Module under construction
+// string module placeholder
 export const string = {
-  // Placeholder implementation
-  init: () => {
-    console.log('string initialized');
-  },
+  // TODO: Implement string functionality
 };
-
-export default string;

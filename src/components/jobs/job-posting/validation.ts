@@ -1,9 +1,4 @@
-// validation.ts - Module under construction
+// validation module placeholder
 export const validation = {
-  // Placeholder implementation
-  init: () => {
-    console.log('validation initialized');
-  },
+  // TODO: Implement validation functionality
 };
-
-export default validation;

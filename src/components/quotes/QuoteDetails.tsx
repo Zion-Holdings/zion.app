@@ -4,7 +4,7 @@ export default function QuoteDetails() {
   return (
     <div>
       <h1>QuoteDetails</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

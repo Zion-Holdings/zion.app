@@ -4,7 +4,7 @@ export default function ScoreDialog() {
   return (
     <div>
       <h1>ScoreDialog</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,9 +1,4 @@
-// developmentLogger.ts - Module under construction
+// developmentLogger module placeholder
 export const developmentLogger = {
-  // Placeholder implementation
-  init: () => {
-    console.log('developmentLogger initialized');
-  },
+  // TODO: Implement developmentLogger functionality
 };
-
-export default developmentLogger;

@@ -1,9 +1,4 @@
-// useResumeUtils.ts - Module under construction
+// useResumeUtils module placeholder
 export const useResumeUtils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useResumeUtils initialized');
-  },
+  // TODO: Implement useResumeUtils functionality
 };
-
-export default useResumeUtils;

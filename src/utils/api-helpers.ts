@@ -1,9 +1,4 @@
-// api-helpers.ts - Module under construction
-export const apihelpers = {
-  // Placeholder implementation
-  init: () => {
-    console.log('apihelpers initialized');
-  },
+// api-helpers module placeholder
+export const api-helpers = {
+  // TODO: Implement api-helpers functionality
 };
-
-export default apihelpers;

@@ -4,7 +4,7 @@ export default function Roadmap() {
   return (
     <div>
       <h1>Roadmap</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

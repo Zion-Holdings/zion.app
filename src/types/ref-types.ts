@@ -1,9 +1,4 @@
-// ref-types.ts - Module under construction
-export const reftypes = {
-  // Placeholder implementation
-  init: () => {
-    console.log('reftypes initialized');
-  },
+// ref-types module placeholder
+export const ref-types = {
+  // TODO: Implement ref-types functionality
 };
-
-export default reftypes;

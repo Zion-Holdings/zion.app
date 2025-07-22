@@ -4,7 +4,7 @@ export default function TalentOnboardingForm() {
   return (
     <div>
       <h1>TalentOnboardingForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

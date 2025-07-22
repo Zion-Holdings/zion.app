@@ -1,9 +1,4 @@
-// PrivacyPolicy.d.ts - Module under construction
-export const PrivacyPolicyd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('PrivacyPolicyd initialized');
-  },
+// PrivacyPolicy.d module placeholder
+export const PrivacyPolicy.d = {
+  // TODO: Implement PrivacyPolicy.d functionality
 };
-
-export default PrivacyPolicyd;

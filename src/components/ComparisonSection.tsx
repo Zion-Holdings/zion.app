@@ -4,7 +4,7 @@ export default function ComparisonSection() {
   return (
     <div>
       <h1>ComparisonSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

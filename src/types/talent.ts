@@ -1,9 +1,4 @@
-// talent.ts - Module under construction
+// talent module placeholder
 export const talent = {
-  // Placeholder implementation
-  init: () => {
-    console.log('talent initialized');
-  },
+  // TODO: Implement talent functionality
 };
-
-export default talent;

@@ -1,9 +1,4 @@
-// useSavedTalents.ts - Module under construction
+// useSavedTalents module placeholder
 export const useSavedTalents = {
-  // Placeholder implementation
-  init: () => {
-    console.warn('useSavedTalents initialized');
-  },
+  // TODO: Implement useSavedTalents functionality
 };
-
-export default useSavedTalents;

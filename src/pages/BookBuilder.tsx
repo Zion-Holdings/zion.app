@@ -4,7 +4,7 @@ export default function BookBuilder() {
   return (
     <div>
       <h1>BookBuilder</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -4,7 +4,7 @@ export default function GeneratedDescriptionDisplay() {
   return (
     <div>
       <h1>GeneratedDescriptionDisplay</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

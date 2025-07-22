@@ -4,7 +4,7 @@ export default function SocialLogin() {
   return (
     <div>
       <h1>SocialLogin</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

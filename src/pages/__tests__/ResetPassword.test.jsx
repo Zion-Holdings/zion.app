@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function ResetPasswordtest() {
+export default function ResetPassword.test() {
   return (
     <div>
       <h1>ResetPassword.test</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

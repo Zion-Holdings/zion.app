@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function helpcontent() {
+export default function help-content() {
   return (
     <div>
       <h1>help-content</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

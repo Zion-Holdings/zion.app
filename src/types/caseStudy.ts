@@ -1,9 +1,4 @@
-// caseStudy.ts - Module under construction
+// caseStudy module placeholder
 export const caseStudy = {
-  // Placeholder implementation
-  init: () => {
-    console.log('caseStudy initialized');
-  },
+  // TODO: Implement caseStudy functionality
 };
-
-export default caseStudy;

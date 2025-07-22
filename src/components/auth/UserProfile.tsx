@@ -4,7 +4,7 @@ export default function UserProfile() {
   return (
     <div>
       <h1>UserProfile</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

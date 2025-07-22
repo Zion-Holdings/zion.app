@@ -4,7 +4,7 @@ export default function CertificationsForm() {
   return (
     <div>
       <h1>CertificationsForm</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

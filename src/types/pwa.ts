@@ -1,9 +1,4 @@
-// pwa.ts - Module under construction
+// pwa module placeholder
 export const pwa = {
-  // Placeholder implementation
-  init: () => {
-    console.log('pwa initialized');
-  },
+  // TODO: Implement pwa functionality
 };
-
-export default pwa;

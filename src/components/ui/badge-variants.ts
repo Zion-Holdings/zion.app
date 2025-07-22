@@ -1,9 +1,4 @@
-// badge-variants.ts - Module under construction
-export const badgevariants = {
-  // Placeholder implementation
-  init: () => {
-    console.log('badgevariants initialized');
-  },
+// badge-variants module placeholder
+export const badge-variants = {
+  // TODO: Implement badge-variants functionality
 };
-
-export default badgevariants;

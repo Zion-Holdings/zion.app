@@ -4,7 +4,7 @@ export default function FraudDetectionMiddleware() {
   return (
     <div>
       <h1>FraudDetectionMiddleware</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

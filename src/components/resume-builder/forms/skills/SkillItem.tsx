@@ -4,7 +4,7 @@ export default function SkillItem() {
   return (
     <div>
       <h1>SkillItem</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

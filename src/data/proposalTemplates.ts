@@ -1,9 +1,4 @@
-// proposalTemplates.ts - Module under construction
+// proposalTemplates module placeholder
 export const proposalTemplates = {
-  // Placeholder implementation
-  init: () => {
-    console.log('proposalTemplates initialized');
-  },
+  // TODO: Implement proposalTemplates functionality
 };
-
-export default proposalTemplates;

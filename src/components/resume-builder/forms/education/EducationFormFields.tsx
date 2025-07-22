@@ -4,7 +4,7 @@ export default function EducationFormFields() {
   return (
     <div>
       <h1>EducationFormFields</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

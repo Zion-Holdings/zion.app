@@ -1,9 +1,4 @@
-// getStripe.ts - Module under construction
+// getStripe module placeholder
 export const getStripe = {
-  // Placeholder implementation
-  init: () => {
-    console.log('getStripe initialized');
-  },
+  // TODO: Implement getStripe functionality
 };
-
-export default getStripe;

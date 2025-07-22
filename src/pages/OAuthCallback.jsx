@@ -4,7 +4,7 @@ export default function OAuthCallback() {
   return (
     <div>
       <h1>OAuthCallback</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

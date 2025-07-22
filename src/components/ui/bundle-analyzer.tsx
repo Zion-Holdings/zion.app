@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function bundleanalyzer() {
+export default function bundle-analyzer() {
   return (
     <div>
       <h1>bundle-analyzer</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

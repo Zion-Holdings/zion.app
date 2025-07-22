@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cursor Automated Communication</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cursor Automated Communication</title>
+        <style>
       * {
         margin: 0;
         padding: 0;
@@ -261,100 +261,83 @@
           transform: rotate(360deg);
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>🤖 Cursor Automated</h1>
-        <p>Continuous app improvement</p>
-      </div>
-
-      <div class="status-section">
-        <div class="status-item">
-          <span class="status-label">Status</span>
-          <div class="status-indicator" id="statusIndicator"></div>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🤖 Cursor Automated</h1>
+                <p>Continuous app improvement</p>
+            </div>
+            <div class="status-section">
+                <div class="status-item">
+                    <span class="status-label">Status</span>
+                    <div class="status-indicator" id="statusIndicator"></div>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Connection</span>
+                    <span class="status-value" id="connectionStatus">Checking...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Computer ID</span>
+                    <span class="status-value" id="computerId">-</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Active Tabs</span>
+                    <span class="status-value" id="activeTabs">-</span>
+                </div>
+            </div>
+            <div class="toggle-section">
+                <div class="toggle-item">
+                    <span class="toggle-label">Automated Communication</span>
+                    <div class="toggle-switch" id="automationToggle"></div>
+                </div>
+                <div class="toggle-item">
+                    <span class="toggle-label">File Monitoring</span>
+                    <div class="toggle-switch" id="fileMonitoringToggle"></div>
+                </div>
+                <div class="toggle-item">
+                    <span class="toggle-label">Performance Tracking</span>
+                    <div class="toggle-switch" id="performanceToggle"></div>
+                </div>
+            </div>
+            <div class="actions-section">
+                <button class="action-btn" onclick="sendImprovement()">📤 Send Improvement</button>
+                <button class="action-btn" onclick="syncComputers()">🔄 Sync Computers</button>
+                <button class="action-btn" onclick="openWebInterface()">🌐 Open Interface</button>
+                <button class="action-btn" onclick="clearImprovements()">🗑️ Clear Improvements</button>
+            </div>
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="improvementsCount">0</div>
+                        <div class="stat-label">Improvements</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="fileChangesCount">0</div>
+                        <div class="stat-label">File Changes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="lastSyncTime">-</div>
+                        <div class="stat-label">Last Sync</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="performanceScore">-</div>
+                        <div class="stat-label">Performance</div>
+                    </div>
+                </div>
+            </div>
+            <div class="improvements-section">
+                <h3 style="margin-bottom: 0.5rem; font-size: 0.9rem">Recent Improvements</h3>
+                <div id="improvementsList">
+                    <div class="improvement-item">
+                        <div class="improvement-type">System Initialized</div>
+                        <div class="improvement-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">Cursor Automated Communication v2.0</div>
         </div>
-        <div class="status-item">
-          <span class="status-label">Connection</span>
-          <span class="status-value" id="connectionStatus">Checking...</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Computer ID</span>
-          <span class="status-value" id="computerId">-</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Active Tabs</span>
-          <span class="status-value" id="activeTabs">-</span>
-        </div>
-      </div>
-
-      <div class="toggle-section">
-        <div class="toggle-item">
-          <span class="toggle-label">Automated Communication</span>
-          <div class="toggle-switch" id="automationToggle"></div>
-        </div>
-        <div class="toggle-item">
-          <span class="toggle-label">File Monitoring</span>
-          <div class="toggle-switch" id="fileMonitoringToggle"></div>
-        </div>
-        <div class="toggle-item">
-          <span class="toggle-label">Performance Tracking</span>
-          <div class="toggle-switch" id="performanceToggle"></div>
-        </div>
-      </div>
-
-      <div class="actions-section">
-        <button class="action-btn" onclick="sendImprovement()">
-          📤 Send Improvement
-        </button>
-        <button class="action-btn" onclick="syncComputers()">
-          🔄 Sync Computers
-        </button>
-        <button class="action-btn" onclick="openWebInterface()">
-          🌐 Open Interface
-        </button>
-        <button class="action-btn" onclick="clearImprovements()">
-          🗑️ Clear Improvements
-        </button>
-      </div>
-
-      <div class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-value" id="improvementsCount">0</div>
-            <div class="stat-label">Improvements</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="fileChangesCount">0</div>
-            <div class="stat-label">File Changes</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="lastSyncTime">-</div>
-            <div class="stat-label">Last Sync</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="performanceScore">-</div>
-            <div class="stat-label">Performance</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="improvements-section">
-        <h3 style="margin-bottom: 0.5rem; font-size: 0.9rem">
-          Recent Improvements
-        </h3>
-        <div id="improvementsList">
-          <div class="improvement-item">
-            <div class="improvement-type">System Initialized</div>
-            <div class="improvement-time">Just now</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">Cursor Automated Communication v2.0</div>
-    </div>
-
-    <script src="popup.js"></script>
-  </body>
+        <script src="popup.js"></script>
+    </body>
 </html>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function togglegroup() {
+export default function toggle-group() {
   return (
     <div>
       <h1>toggle-group</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

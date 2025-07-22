@@ -4,7 +4,7 @@ export default function TalentDirectoryHeader() {
   return (
     <div>
       <h1>TalentDirectoryHeader</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

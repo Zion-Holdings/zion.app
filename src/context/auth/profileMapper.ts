@@ -1,9 +1,4 @@
-// profileMapper.ts - Module under construction
+// profileMapper module placeholder
 export const profileMapper = {
-  // Placeholder implementation
-  init: () => {
-    console.log('profileMapper initialized');
-  },
+  // TODO: Implement profileMapper functionality
 };
-
-export default profileMapper;

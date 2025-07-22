@@ -1,9 +1,4 @@
-// createHireRequestNotifications.ts - Module under construction
+// createHireRequestNotifications module placeholder
 export const createHireRequestNotifications = {
-  // Placeholder implementation
-  init: () => {
-    console.log('createHireRequestNotifications initialized');
-  },
+  // TODO: Implement createHireRequestNotifications functionality
 };
-
-export default createHireRequestNotifications;

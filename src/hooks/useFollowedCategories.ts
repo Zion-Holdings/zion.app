@@ -1,9 +1,4 @@
-// useFollowedCategories.ts - Module under construction
+// useFollowedCategories module placeholder
 export const useFollowedCategories = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useFollowedCategories initialized');
-  },
+  // TODO: Implement useFollowedCategories functionality
 };
-
-export default useFollowedCategories;

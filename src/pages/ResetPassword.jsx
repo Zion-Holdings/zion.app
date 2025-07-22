@@ -4,7 +4,7 @@ export default function ResetPassword() {
   return (
     <div>
       <h1>ResetPassword</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

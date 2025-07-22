@@ -1,9 +1,4 @@
-// disputes.ts - Module under construction
+// disputes module placeholder
 export const disputes = {
-  // Placeholder implementation
-  init: () => {
-    console.log('disputes initialized');
-  },
+  // TODO: Implement disputes functionality
 };
-
-export default disputes;

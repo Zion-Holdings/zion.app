@@ -1,9 +1,4 @@
-// org.ts - Module under construction
+// org module placeholder
 export const org = {
-  // Placeholder implementation
-  init: () => {
-    console.log('org initialized');
-  },
+  // TODO: Implement org functionality
 };
-
-export default org;

@@ -1,9 +1,4 @@
-// slugify.ts - Module under construction
+// slugify module placeholder
 export const slugify = {
-  // Placeholder implementation
-  init: () => {
-    console.warn('slugify initialized');
-  },
+  // TODO: Implement slugify functionality
 };
-
-export default slugify;

@@ -1,9 +1,4 @@
-// cookies.ts - Module under construction
+// cookies module placeholder
 export const cookies = {
-  // Placeholder implementation
-  init: () => {
-    console.log('cookies initialized');
-  },
+  // TODO: Implement cookies functionality
 };
-
-export default cookies;

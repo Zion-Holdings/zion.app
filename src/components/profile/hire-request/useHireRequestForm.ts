@@ -1,9 +1,4 @@
-// useHireRequestForm.ts - Module under construction
+// useHireRequestForm module placeholder
 export const useHireRequestForm = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useHireRequestForm initialized');
-  },
+  // TODO: Implement useHireRequestForm functionality
 };
-
-export default useHireRequestForm;

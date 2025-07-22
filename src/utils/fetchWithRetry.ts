@@ -1,9 +1,4 @@
-// fetchWithRetry.ts - Module under construction
+// fetchWithRetry module placeholder
 export const fetchWithRetry = {
-  // Placeholder implementation
-  init: () => {
-    console.log('fetchWithRetry initialized');
-  },
+  // TODO: Implement fetchWithRetry functionality
 };
-
-export default fetchWithRetry;

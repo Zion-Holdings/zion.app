@@ -1,9 +1,4 @@
-// filters.ts - Module under construction
+// filters module placeholder
 export const filters = {
-  // Placeholder implementation
-  init: () => {
-    console.log('filters initialized');
-  },
+  // TODO: Implement filters functionality
 };
-
-export default filters;

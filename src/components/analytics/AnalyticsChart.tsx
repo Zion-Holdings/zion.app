@@ -4,7 +4,7 @@ export default function AnalyticsChart() {
   return (
     <div>
       <h1>AnalyticsChart</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

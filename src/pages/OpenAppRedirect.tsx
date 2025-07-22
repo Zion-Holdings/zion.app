@@ -4,7 +4,7 @@ export default function OpenAppRedirect() {
   return (
     <div>
       <h1>OpenAppRedirect</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

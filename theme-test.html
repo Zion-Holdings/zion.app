@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dark Mode Toggle Test - Fixed</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dark Mode Toggle Test - Fixed</title>
+        <style>
       /* Root CSS variables - Light theme default */
       :root {
         --background: hsl(0 0% 100%);
@@ -111,48 +111,48 @@
         opacity: 1;
         transform: translateY(0);
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>✅ Dark Mode Toggle - Now Fixed!</h1>
-
-      <div class="card">
-        <h2>The Problem Was:</h2>
-        <p class="demo-text">
-          The CSS selectors were using <code>[data-theme='dark']</code> without
-          specifying the root element. This meant the CSS variables weren't
-          being applied to the <code>:root</code> where Tailwind expected them.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>The Solution:</h2>
-        <p class="demo-text">
-          Changed the selectors to <code>:root[data-theme='dark']</code> and
-          added <code>:root.dark</code>
-          to ensure compatibility with both the data-theme attribute and
-          Tailwind's class-based dark mode.
-        </p>
-      </div>
-
-      <button class="button" onclick="toggleTheme()">
-        🌓 Toggle Dark Mode
-      </button>
-
-      <div id="toast" class="success-message">
-        <span id="toast-message">Theme changed!</span>
-      </div>
-
-      <div class="status">
-        <p>Current theme: <span id="current-theme">light</span></p>
-        <p>HTML classes: <span id="html-classes">-</span></p>
-        <p>Data-theme attribute: <span id="data-theme">-</span></p>
-        <p>Background color: <span id="bg-color">-</span></p>
-      </div>
-    </div>
-
-    <script>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>✅ Dark Mode Toggle - Now Fixed!</h1>
+            <div class="card">
+                <h2>The Problem Was:</h2>
+                <p class="demo-text">
+                    The CSS selectors were using <code>[data-theme='dark']</code> without
+                    specifying the root element. This meant the CSS variables weren't
+                    being applied to the <code>:root</code> where Tailwind expected them.
+                </p>
+            </div>
+            <div class="card">
+                <h2>The Solution:</h2>
+                <p class="demo-text">
+                    Changed the selectors to <code>:root[data-theme='dark']</code> and
+                    added <code>:root.dark</code>
+                    to ensure compatibility with both the data-theme attribute and
+                    Tailwind's class-based dark mode.
+                </p>
+            </div>
+            <button class="button" onclick="toggleTheme()">🌓 Toggle Dark Mode</button>
+            <div id="toast" class="success-message">
+                <span id="toast-message">Theme changed!</span>
+            </div>
+            <div class="status">
+                <p>
+                    Current theme: <span id="current-theme">light</span>
+                </p>
+                <p>
+                    HTML classes: <span id="html-classes">-</span>
+                </p>
+                <p>
+                    Data-theme attribute: <span id="data-theme">-</span>
+                </p>
+                <p>
+                    Background color: <span id="bg-color">-</span>
+                </p>
+            </div>
+        </div>
+        <script>
       function updateStatus() {
         const html = document.documentElement;
         const isDark =
@@ -209,6 +209,6 @@
       document.documentElement.classList.add('light');
       document.documentElement.setAttribute('data-theme', 'light');
       updateStatus();
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

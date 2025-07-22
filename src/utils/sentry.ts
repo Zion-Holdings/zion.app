@@ -1,9 +1,4 @@
-// sentry.ts - Module under construction
+// sentry module placeholder
 export const sentry = {
-  // Placeholder implementation
-  init: () => {
-    console.log('sentry initialized');
-  },
+  // TODO: Implement sentry functionality
 };
-
-export default sentry;

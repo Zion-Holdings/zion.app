@@ -1,9 +1,4 @@
-// fraud.ts - Module under construction
+// fraud module placeholder
 export const fraud = {
-  // Placeholder implementation
-  init: () => {
-    console.log('fraud initialized');
-  },
+  // TODO: Implement fraud functionality
 };
-
-export default fraud;

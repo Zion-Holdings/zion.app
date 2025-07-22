@@ -4,7 +4,7 @@ export default function ApplicationScoreCard() {
   return (
     <div>
       <h1>ApplicationScoreCard</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

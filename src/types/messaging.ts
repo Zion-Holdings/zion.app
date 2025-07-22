@@ -1,9 +1,4 @@
-// messaging.ts - Module under construction
+// messaging module placeholder
 export const messaging = {
-  // Placeholder implementation
-  init: () => {
-    console.log('messaging initialized');
-  },
+  // TODO: Implement messaging functionality
 };
-
-export default messaging;

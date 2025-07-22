@@ -4,7 +4,7 @@ export default function ReferralTable() {
   return (
     <div>
       <h1>ReferralTable</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

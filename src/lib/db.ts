@@ -1,9 +1,4 @@
-// db.ts - Module under construction
+// db module placeholder
 export const db = {
-  // Placeholder implementation
-  init: () => {
-    console.log('db initialized');
-  },
+  // TODO: Implement db functionality
 };
-
-export default db;

@@ -5,8 +5,14 @@ const fs = require('fs');
 const path = require('path');
 
 const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-watchdog.log');
-const SOCKET_SERVER_CMD = ['node', [path.resolve(__dirname, 'test-socket-server.js')]];
-const AUTOMATION_CMD = ['node', [path.resolve(__dirname, 'cursor-chat-automation.js'), 'start']];
+const SOCKET_SERVER_CMD = [
+  'node',
+  [path.resolve(__dirname, 'test-socket-server.js')],
+];
+const AUTOMATION_CMD = [
+  'node',
+  [path.resolve(__dirname, 'cursor-chat-automation.js'), 'start'],
+];
 const CHECK_INTERVAL = 10000; // 10 seconds
 
 let socketServerProc = null;
@@ -42,7 +48,9 @@ function startAutomation() {
 
 function isProcessRunning(name) {
   try {
-    const out = require('child_process').execSync(`pgrep -fl ${name} | grep -v grep`).toString();
+    const out = require('child_process')
+      .execSync(`pgrep -fl ${name} | grep -v grep`)
+      .toString();
     return out.includes(name);
   } catch {
     return false;
@@ -68,4 +76,4 @@ log('Cursor Chat Watchdog started.');
 startSocketServer();
 startAutomation();
 
-setInterval(checkAndRestart, CHECK_INTERVAL); 
+setInterval(checkAndRestart, CHECK_INTERVAL);

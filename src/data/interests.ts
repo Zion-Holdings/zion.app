@@ -1,9 +1,4 @@
-// interests.ts - Module under construction
+// interests module placeholder
 export const interests = {
-  // Placeholder implementation
-  init: () => {
-    console.log('interests initialized');
-  },
+  // TODO: Implement interests functionality
 };
-
-export default interests;

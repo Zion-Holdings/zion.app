@@ -18,7 +18,7 @@ class AutomationManager {
   async runCommand(command, description) {
     return new Promise((resolve, reject) => {
       this.log(`🔄 Running: ${description}`);
-      
+
       exec(command, { cwd: process.cwd() }, (error, stdout, stderr) => {
         if (error) {
           this.log(`❌ Error in ${description}: ${error.message}`, 'ERROR');
@@ -33,17 +33,20 @@ class AutomationManager {
 
   async status() {
     this.log('📊 Checking automation status...');
-    
+
     // Check if automation processes are running
     const { exec } = require('child_process');
-    exec('ps aux | grep -E "(automation|netlify|master-automation)" | grep -v grep', (error, stdout) => {
-      if (stdout.trim()) {
-        this.log('🟢 Automation processes are running:');
-        console.log(stdout);
-      } else {
-        this.log('🔴 No automation processes are running');
-      }
-    });
+    exec(
+      'ps aux | grep -E "(automation|netlify|master-automation)" | grep -v grep',
+      (error, stdout) => {
+        if (stdout.trim()) {
+          this.log('🟢 Automation processes are running:');
+          console.log(stdout);
+        } else {
+          this.log('🔴 No automation processes are running');
+        }
+      },
+    );
 
     // Check cron jobs
     exec('crontab -l', (error, stdout) => {
@@ -65,14 +68,17 @@ class AutomationManager {
 
   async start() {
     this.log('🚀 Starting automation system...');
-    
+
     try {
       // Start the main automation scheduler
-      await this.runCommand('npm run master-automation', 'Master automation scheduler');
-      
+      await this.runCommand(
+        'npm run master-automation',
+        'Master automation scheduler',
+      );
+
       // Set up cron jobs
       await this.runCommand('npm run setup-cron', 'Cron job setup');
-      
+
       this.log('✅ Automation system started successfully');
     } catch (error) {
       this.log('❌ Failed to start automation system', 'ERROR');
@@ -81,14 +87,17 @@ class AutomationManager {
 
   async stop() {
     this.log('🛑 Stopping automation system...');
-    
+
     try {
       // Kill automation processes
-      await this.runCommand('pkill -f "master-automation"', 'Kill automation processes');
-      
+      await this.runCommand(
+        'pkill -f "master-automation"',
+        'Kill automation processes',
+      );
+
       // Remove cron jobs
       await this.runCommand('npm run remove-cron', 'Remove cron jobs');
-      
+
       this.log('✅ Automation system stopped successfully');
     } catch (error) {
       this.log('❌ Failed to stop automation system', 'ERROR');
@@ -97,14 +106,20 @@ class AutomationManager {
 
   async clean() {
     this.log('🧹 Cleaning automation files...');
-    
+
     try {
       // Clean automation logs
-      await this.runCommand('cd automation && npm run clean', 'Clean automation logs');
-      
+      await this.runCommand(
+        'cd automation && npm run clean',
+        'Clean automation logs',
+      );
+
       // Clean main logs
-      await this.runCommand('rm -f logs/cron-*.log logs/automation-*.log', 'Clean main logs');
-      
+      await this.runCommand(
+        'rm -f logs/cron-*.log logs/automation-*.log',
+        'Clean main logs',
+      );
+
       this.log('✅ Automation files cleaned successfully');
     } catch (error) {
       this.log('❌ Failed to clean automation files', 'ERROR');
@@ -113,12 +128,12 @@ class AutomationManager {
 
   async restart() {
     this.log('🔄 Restarting automation system...');
-    
+
     try {
       await this.stop();
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait 2 seconds
       await this.start();
-      
+
       this.log('✅ Automation system restarted successfully');
     } catch (error) {
       this.log('❌ Failed to restart automation system', 'ERROR');
@@ -178,4 +193,4 @@ if (require.main === module) {
   main().catch(console.error);
 }
 
-module.exports = AutomationManager; 
+module.exports = AutomationManager;

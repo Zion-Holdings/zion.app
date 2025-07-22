@@ -1,9 +1,4 @@
-// usePoints.ts - Module under construction
+// usePoints module placeholder
 export const usePoints = {
-  // Placeholder implementation
-  init: () => {
-    console.log('usePoints initialized');
-  },
+  // TODO: Implement usePoints functionality
 };
-
-export default usePoints;

@@ -4,7 +4,7 @@ export default function ServiceIncludes() {
   return (
     <div>
       <h1>ServiceIncludes</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

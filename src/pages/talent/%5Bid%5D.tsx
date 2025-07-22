@@ -1,0 +1,10 @@
+import React from 'react';
+
+export default function %5Bid%5D() {
+  return (
+    <div>
+      <h1>%5Bid%5D</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}';

@@ -1,9 +1,4 @@
-// fontConfig.ts - Module under construction
+// fontConfig module placeholder
 export const fontConfig = {
-  // Placeholder implementation
-  init: () => {
-    console.log('fontConfig initialized');
-  },
+  // TODO: Implement fontConfig functionality
 };
-
-export default fontConfig;

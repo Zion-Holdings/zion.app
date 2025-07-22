@@ -1,9 +1,4 @@
-// generateTraceId.ts - Module under construction
+// generateTraceId module placeholder
 export const generateTraceId = {
-  // Placeholder implementation
-  init: () => {
-    console.log('generateTraceId initialized');
-  },
+  // TODO: Implement generateTraceId functionality
 };
-
-export default generateTraceId;

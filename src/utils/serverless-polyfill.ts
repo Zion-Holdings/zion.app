@@ -1,9 +1,4 @@
-// serverless-polyfill.ts - Module under construction
-export const serverlesspolyfill = {
-  // Placeholder implementation
-  init: () => {
-    console.log('serverlesspolyfill initialized');
-  },
+// serverless-polyfill module placeholder
+export const serverless-polyfill = {
+  // TODO: Implement serverless-polyfill functionality
 };
-
-export default serverlesspolyfill;

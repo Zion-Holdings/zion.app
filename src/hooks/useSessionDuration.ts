@@ -1,9 +1,4 @@
-// useSessionDuration.ts - Module under construction
+// useSessionDuration module placeholder
 export const useSessionDuration = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useSessionDuration initialized');
-  },
+  // TODO: Implement useSessionDuration functionality
 };
-
-export default useSessionDuration;

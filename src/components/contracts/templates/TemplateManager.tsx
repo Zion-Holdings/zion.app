@@ -4,7 +4,7 @@ export default function TemplateManager() {
   return (
     <div>
       <h1>TemplateManager</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

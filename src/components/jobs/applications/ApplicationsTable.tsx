@@ -4,7 +4,7 @@ export default function ApplicationsTable() {
   return (
     <div>
       <h1>ApplicationsTable</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

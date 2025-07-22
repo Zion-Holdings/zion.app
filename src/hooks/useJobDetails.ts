@@ -1,9 +1,4 @@
-// useJobDetails.ts - Module under construction
+// useJobDetails module placeholder
 export const useJobDetails = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useJobDetails initialized');
-  },
+  // TODO: Implement useJobDetails functionality
 };
-
-export default useJobDetails;

@@ -1,9 +1,4 @@
-// fraudDetection.ts - Module under construction
+// fraudDetection module placeholder
 export const fraudDetection = {
-  // Placeholder implementation
-  init: () => {
-    console.log('fraudDetection initialized');
-  },
+  // TODO: Implement fraudDetection functionality
 };
-
-export default fraudDetection;

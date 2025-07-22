@@ -1,9 +1,4 @@
-// customErrorReporter.ts - Module under construction
+// customErrorReporter module placeholder
 export const customErrorReporter = {
-  // Placeholder implementation
-  init: () => {
-    console.log('customErrorReporter initialized');
-  },
+  // TODO: Implement customErrorReporter functionality
 };
-
-export default customErrorReporter;

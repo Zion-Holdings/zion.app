@@ -1,9 +1,4 @@
-// useWallet.ts - Module under construction
+// useWallet module placeholder
 export const useWallet = {
-  // Placeholder implementation
-  init: () => {
-    console.warn('useWallet initialized');
-  },
+  // TODO: Implement useWallet functionality
 };
-
-export default useWallet;

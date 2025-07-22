@@ -1,9 +1,4 @@
-// formatDate.ts - Module under construction
+// formatDate module placeholder
 export const formatDate = {
-  // Placeholder implementation
-  init: () => {
-    console.log('formatDate initialized');
-  },
+  // TODO: Implement formatDate functionality
 };
-
-export default formatDate;

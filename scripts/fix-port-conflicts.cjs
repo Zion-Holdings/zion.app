@@ -9,14 +9,14 @@ const PORT_MAPPING = {
   3001: 3004, // Reserve 3001 for health checks, use 3004 for other services
   3003: 3005, // Move automation from 3003 to 3005
   3004: 3006, // Move other services to 3006
-  3005: 3007  // Move remaining services to 3007
+  3005: 3007, // Move remaining services to 3007
 };
 
 function updatePortsInFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let updated = false;
-    
+
     for (const [oldPort, newPort] of Object.entries(PORT_MAPPING)) {
       const oldRegex = new RegExp(`:${oldPort}`, 'g');
       if (oldRegex.test(content)) {
@@ -25,7 +25,7 @@ function updatePortsInFile(filePath) {
         console.log(`  Updated port ${oldPort} -> ${newPort}`);
       }
     }
-    
+
     if (updated) {
       fs.writeFileSync(filePath, content);
       return true;
@@ -39,23 +39,23 @@ function updatePortsInFile(filePath) {
 
 function fixPortConflicts() {
   console.log('🔧 Fixing port conflicts in automation scripts...');
-  
+
   const scriptsDir = path.join(__dirname);
-  const files = fs.readdirSync(scriptsDir).filter(file => 
-    file.endsWith('.cjs') || file.endsWith('.js')
-  );
-  
+  const files = fs
+    .readdirSync(scriptsDir)
+    .filter((file) => file.endsWith('.cjs') || file.endsWith('.js'));
+
   let updatedFiles = 0;
-  
+
   for (const file of files) {
     const filePath = path.join(scriptsDir, file);
     console.log(`\n📁 Processing: ${file}`);
-    
+
     if (updatePortsInFile(filePath)) {
       updatedFiles++;
     }
   }
-  
+
   console.log(`\n✅ Updated ${updatedFiles} files to fix port conflicts`);
   console.log('\n📋 New port mapping:');
   console.log('  Main App: 3002');
@@ -68,4 +68,4 @@ if (require.main === module) {
   fixPortConflicts();
 }
 
-module.exports = { fixPortConflicts, PORT_MAPPING }; 
+module.exports = { fixPortConflicts, PORT_MAPPING };

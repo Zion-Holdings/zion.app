@@ -1,9 +1,4 @@
-// useSitemap.ts - Module under construction
+// useSitemap module placeholder
 export const useSitemap = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useSitemap initialized');
-  },
+  // TODO: Implement useSitemap functionality
 };
-
-export default useSitemap;

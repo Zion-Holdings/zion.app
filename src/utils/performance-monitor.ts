@@ -1,9 +1,4 @@
-// performance-monitor.ts - Module under construction
-export const performancemonitor = {
-  // Placeholder implementation
-  init: () => {
-    console.log('performancemonitor initialized');
-  },
+// performance-monitor module placeholder
+export const performance-monitor = {
+  // TODO: Implement performance-monitor functionality
 };
-
-export default performancemonitor;

@@ -1,9 +1,4 @@
-// useFeatureUsage.ts - Module under construction
+// useFeatureUsage module placeholder
 export const useFeatureUsage = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useFeatureUsage initialized');
-  },
+  // TODO: Implement useFeatureUsage functionality
 };
-
-export default useFeatureUsage;

@@ -4,7 +4,7 @@ export default function BillingHeader() {
   return (
     <div>
       <h1>BillingHeader</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

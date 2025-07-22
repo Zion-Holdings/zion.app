@@ -1,9 +1,4 @@
-// dynamicComponents.ts - Module under construction
+// dynamicComponents module placeholder
 export const dynamicComponents = {
-  // Placeholder implementation
-  init: () => {
-    console.log('dynamicComponents initialized');
-  },
+  // TODO: Implement dynamicComponents functionality
 };
-
-export default dynamicComponents;

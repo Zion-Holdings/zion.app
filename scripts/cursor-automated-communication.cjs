@@ -202,7 +202,8 @@ class CursorAutomatedCommunication {
       if (this.improvementQueue.length < 10) {
         const needed = 10 - this.improvementQueue.length;
         for (let i = 0; i < needed; i++) {
-          const task = GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
+          const task =
+            GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
           const improvement = {
             id: `auto-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
             type: 'auto_next_step',
@@ -212,7 +213,9 @@ class CursorAutomatedCommunication {
             priority: 'medium',
           };
           this.improvementQueue.push(improvement);
-          this.logger.info(`📝 Auto-added next step to improvement queue: ${task}`);
+          this.logger.info(
+            `📝 Auto-added next step to improvement queue: ${task}`,
+          );
         }
         this.saveData('improvements');
       }

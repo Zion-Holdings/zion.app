@@ -1,9 +1,4 @@
-// partners.ts - Module under construction
+// partners module placeholder
 export const partners = {
-  // Placeholder implementation
-  init: () => {
-    console.log('partners initialized');
-  },
+  // TODO: Implement partners functionality
 };
-
-export default partners;

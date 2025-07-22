@@ -4,7 +4,7 @@ export default function ProfileErrorState() {
   return (
     <div>
       <h1>ProfileErrorState</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

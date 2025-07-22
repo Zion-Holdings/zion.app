@@ -1,9 +1,4 @@
-// shoplocket.d.ts - Module under construction
-export const shoplocketd = {
-  // Placeholder implementation
-  init: () => {
-    console.log('shoplocketd initialized');
-  },
+// shoplocket.d module placeholder
+export const shoplocket.d = {
+  // TODO: Implement shoplocket.d functionality
 };
-
-export default shoplocketd;

@@ -1,9 +1,4 @@
-// termsContent.ts - Module under construction
+// termsContent module placeholder
 export const termsContent = {
-  // Placeholder implementation
-  init: () => {
-    console.log('termsContent initialized');
-  },
+  // TODO: Implement termsContent functionality
 };
-
-export default termsContent;

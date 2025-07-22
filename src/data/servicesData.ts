@@ -1,9 +1,4 @@
-// servicesData.ts - Module under construction
+// servicesData module placeholder
 export const servicesData = {
-  // Placeholder implementation
-  init: () => {
-    console.log('servicesData initialized');
-  },
+  // TODO: Implement servicesData functionality
 };
-
-export default servicesData;

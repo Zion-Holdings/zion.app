@@ -1,9 +1,4 @@
-// fetchMarketplaceData.ts - Module under construction
+// fetchMarketplaceData module placeholder
 export const fetchMarketplaceData = {
-  // Placeholder implementation
-  init: () => {
-    console.log('fetchMarketplaceData initialized');
-  },
+  // TODO: Implement fetchMarketplaceData functionality
 };
-
-export default fetchMarketplaceData;

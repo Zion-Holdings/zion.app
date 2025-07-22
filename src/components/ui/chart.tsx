@@ -4,7 +4,7 @@ export default function chart() {
   return (
     <div>
       <h1>chart</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function sidebartrigger() {
+export default function sidebar-trigger() {
   return (
     <div>
       <h1>sidebar-trigger</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

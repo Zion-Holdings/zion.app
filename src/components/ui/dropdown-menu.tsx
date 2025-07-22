@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function dropdownmenu() {
+export default function dropdown-menu() {
   return (
     <div>
       <h1>dropdown-menu</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

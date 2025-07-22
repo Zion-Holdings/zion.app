@@ -4,7 +4,7 @@ export default function ProjectReviewSection() {
   return (
     <div>
       <h1>ProjectReviewSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

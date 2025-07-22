@@ -4,7 +4,7 @@ export default function PreviewResume() {
   return (
     <div>
       <h1>PreviewResume</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

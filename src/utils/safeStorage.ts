@@ -1,9 +1,4 @@
-// safeStorage.ts - Module under construction
+// safeStorage module placeholder
 export const safeStorage = {
-  // Placeholder implementation
-  init: () => {
-    console.log('safeStorage initialized');
-  },
+  // TODO: Implement safeStorage functionality
 };
-
-export default safeStorage;

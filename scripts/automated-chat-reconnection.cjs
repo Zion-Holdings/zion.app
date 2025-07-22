@@ -147,19 +147,27 @@ class AutomatedChatReconnection {
   // --- FULLY AUTOMATED DELEGATION TO CURSOR ---
   // This system will now perpetually trigger improvements, delegate all actions to Cursor, and never require manual intervention.
   startFullyAutomatedDelegation() {
-    this.logger.info('🤖 FULLY AUTOMATED: Delegating all app improvement to Cursor. No manual action required.');
+    this.logger.info(
+      '🤖 FULLY AUTOMATED: Delegating all app improvement to Cursor. No manual action required.',
+    );
     // Perpetual improvement loop
-    setInterval(async () => {
-      // Randomly pick a category for continuous improvement
-      const category = CONFIG.CHAT_CATEGORIES[Math.floor(Math.random() * CONFIG.CHAT_CATEGORIES.length)];
-      const message = `Continuous improvement: Please analyze and improve the app for ${category}`;
-      await this.triggerChat({
-        category,
-        message,
-        priority: 'high',
-        automated: true,
-      });
-    }, 5 * 60 * 1000); // Every 5 minutes
+    setInterval(
+      async () => {
+        // Randomly pick a category for continuous improvement
+        const category =
+          CONFIG.CHAT_CATEGORIES[
+            Math.floor(Math.random() * CONFIG.CHAT_CATEGORIES.length)
+          ];
+        const message = `Continuous improvement: Please analyze and improve the app for ${category}`;
+        await this.triggerChat({
+          category,
+          message,
+          priority: 'high',
+          automated: true,
+        });
+      },
+      5 * 60 * 1000,
+    ); // Every 5 minutes
   }
 
   async start() {
@@ -172,9 +180,13 @@ class AutomatedChatReconnection {
       await this.establishMasterConnection();
       await this.startAutomaticChatTriggering();
       this.startFullyAutomatedDelegation(); // <--- Enable perpetual, independent automation
-      this.logger.info('✅ Automated Chat Reconnection System started successfully');
+      this.logger.info(
+        '✅ Automated Chat Reconnection System started successfully',
+      );
       this.logger.info(`🖥️ Computer ID: ${this.computerId}`);
-      this.logger.info(`🔍 Discovered ${this.discoveredComputers.size} computers`);
+      this.logger.info(
+        `🔍 Discovered ${this.discoveredComputers.size} computers`,
+      );
       this.logger.info(`💬 Chat server running on port ${CONFIG.CHAT_PORT}`);
       fs.writeFileSync(CONFIG.PID_FILE, process.pid.toString());
     } catch (error) {

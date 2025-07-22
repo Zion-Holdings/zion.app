@@ -1,9 +1,4 @@
-// icons.ts - Module under construction
+// icons module placeholder
 export const icons = {
-  // Placeholder implementation
-  init: () => {
-    console.log('icons initialized');
-  },
+  // TODO: Implement icons functionality
 };
-
-export default icons;

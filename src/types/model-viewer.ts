@@ -1,9 +1,4 @@
-// model-viewer.ts - Module under construction
-export const modelviewer = {
-  // Placeholder implementation
-  init: () => {
-    console.log('modelviewer initialized');
-  },
+// model-viewer module placeholder
+export const model-viewer = {
+  // TODO: Implement model-viewer functionality
 };
-
-export default modelviewer;

@@ -1,9 +1,4 @@
-// useJobApplications.ts - Module under construction
+// useJobApplications module placeholder
 export const useJobApplications = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useJobApplications initialized');
-  },
+  // TODO: Implement useJobApplications functionality
 };
-
-export default useJobApplications;

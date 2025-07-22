@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Message Channel Error Test</title>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Message Channel Error Test</title>
+        <style>
       body {
         font-family: Arial, sans-serif;
         max-width: 800px;
@@ -48,43 +48,36 @@
         max-height: 300px;
         overflow-y: auto;
       }
-    </style>
-  </head>
-  <body>
-    <h1>Message Channel Error Suppression Test</h1>
-
-    <div class="test-section">
-      <h3>Test 1: Extension Message Channel Error</h3>
-      <p>
-        This test simulates the error you're experiencing with browser extension
-        message channels.
-      </p>
-      <button onclick="testExtensionError()">Test Extension Error</button>
-    </div>
-
-    <div class="test-section">
-      <h3>Test 2: Service Worker Message Channel Error</h3>
-      <p>This test simulates service worker message channel errors.</p>
-      <button onclick="testServiceWorkerError()">
-        Test Service Worker Error
-      </button>
-    </div>
-
-    <div class="test-section">
-      <h3>Test 3: Regular Error (Should Show)</h3>
-      <p>
-        This test should show a regular error to confirm the suppression is
-        working correctly.
-      </p>
-      <button onclick="testRegularError()">Test Regular Error</button>
-    </div>
-
-    <div class="test-section">
-      <h3>Console Output</h3>
-      <div id="console-output"></div>
-    </div>
-
-    <script>
+        </style>
+    </head>
+    <body>
+        <h1>Message Channel Error Suppression Test</h1>
+        <div class="test-section">
+            <h3>Test 1: Extension Message Channel Error</h3>
+            <p>
+                This test simulates the error you're experiencing with browser extension
+                message channels.
+            </p>
+            <button onclick="testExtensionError()">Test Extension Error</button>
+        </div>
+        <div class="test-section">
+            <h3>Test 2: Service Worker Message Channel Error</h3>
+            <p>This test simulates service worker message channel errors.</p>
+            <button onclick="testServiceWorkerError()">Test Service Worker Error</button>
+        </div>
+        <div class="test-section">
+            <h3>Test 3: Regular Error (Should Show)</h3>
+            <p>
+                This test should show a regular error to confirm the suppression is
+                working correctly.
+            </p>
+            <button onclick="testRegularError()">Test Regular Error</button>
+        </div>
+        <div class="test-section">
+            <h3>Console Output</h3>
+            <div id="console-output"></div>
+        </div>
+        <script>
       // Capture console output
       const originalConsoleError = console.error;
       const originalConsoleWarn = console.warn;
@@ -155,6 +148,6 @@
           .querySelector('.test-section:last-child')
           .appendChild(clearButton);
       });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

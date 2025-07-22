@@ -4,7 +4,7 @@ export default function PartnerManager() {
   return (
     <div>
       <h1>PartnerManager</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

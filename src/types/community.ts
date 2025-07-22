@@ -1,9 +1,4 @@
-// community.ts - Module under construction
+// community module placeholder
 export const community = {
-  // Placeholder implementation
-  init: () => {
-    console.log('community initialized');
-  },
+  // TODO: Implement community functionality
 };
-
-export default community;

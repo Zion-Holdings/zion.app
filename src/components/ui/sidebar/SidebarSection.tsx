@@ -4,7 +4,7 @@ export default function SidebarSection() {
   return (
     <div>
       <h1>SidebarSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

@@ -4,7 +4,7 @@ export default function PaymentButton() {
   return (
     <div>
       <h1>PaymentButton</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

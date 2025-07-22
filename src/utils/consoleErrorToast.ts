@@ -1,9 +1,4 @@
-// consoleErrorToast.ts - Module under construction
+// consoleErrorToast module placeholder
 export const consoleErrorToast = {
-  // Placeholder implementation
-  init: () => {
-    console.log('consoleErrorToast initialized');
-  },
+  // TODO: Implement consoleErrorToast functionality
 };
-
-export default consoleErrorToast;

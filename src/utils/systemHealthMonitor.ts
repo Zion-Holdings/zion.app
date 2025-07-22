@@ -1,9 +1,4 @@
-// systemHealthMonitor.ts - Module under construction
+// systemHealthMonitor module placeholder
 export const systemHealthMonitor = {
-  // Placeholder implementation
-  init: () => {
-    console.log('systemHealthMonitor initialized');
-  },
+  // TODO: Implement systemHealthMonitor functionality
 };
-
-export default systemHealthMonitor;

@@ -1,9 +1,4 @@
-// useTalentProfile.ts - Module under construction
+// useTalentProfile module placeholder
 export const useTalentProfile = {
-  // Placeholder implementation
-  init: () => {
-    console.log('useTalentProfile initialized');
-  },
+  // TODO: Implement useTalentProfile functionality
 };
-
-export default useTalentProfile;

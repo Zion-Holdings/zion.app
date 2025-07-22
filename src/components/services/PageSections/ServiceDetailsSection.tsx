@@ -4,7 +4,7 @@ export default function ServiceDetailsSection() {
   return (
     <div>
       <h1>ServiceDetailsSection</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

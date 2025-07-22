@@ -1,9 +1,4 @@
-// logDashboard.ts - Module under construction
+// logDashboard module placeholder
 export const logDashboard = {
-  // Placeholder implementation
-  init: () => {
-    console.log('logDashboard initialized');
-  },
+  // TODO: Implement logDashboard functionality
 };
-
-export default logDashboard;

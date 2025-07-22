@@ -1,9 +1,4 @@
-// themeToggleMessages.ts - Module under construction
+// themeToggleMessages module placeholder
 export const themeToggleMessages = {
-  // Placeholder implementation
-  init: () => {
-    console.log('themeToggleMessages initialized');
-  },
+  // TODO: Implement themeToggleMessages functionality
 };
-
-export default themeToggleMessages;

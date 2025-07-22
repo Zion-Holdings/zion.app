@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function safeimage() {
+export default function safe-image() {
   return (
     <div>
       <h1>safe-image</h1>
-      <p>This component is under construction.</p>
+      <p>Component placeholder</p>
     </div>
   );
-}
+}';

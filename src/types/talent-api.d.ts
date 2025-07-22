@@ -1,9 +1,4 @@
-// talent-api.d.ts - Module under construction
-export const talentapid = {
-  // Placeholder implementation
-  init: () => {
-    console.log('talentapid initialized');
-  },
+// talent-api.d module placeholder
+export const talent-api.d = {
+  // TODO: Implement talent-api.d functionality
 };
-
-export default talentapid;

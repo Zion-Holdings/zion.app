@@ -1,9 +1,4 @@
-// themeUtils.ts - Module under construction
+// themeUtils module placeholder
 export const themeUtils = {
-  // Placeholder implementation
-  init: () => {
-    console.log('themeUtils initialized');
-  },
+  // TODO: Implement themeUtils functionality
 };
-
-export default themeUtils;
