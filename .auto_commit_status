@@ -1,5 +1,4 @@
  M .auto_commit_status
- M automation/core/NotificationManager.js
- M src/utils/dynamicImports.tsx
-?? INFINITE_IMPROVEMENT_LOOP_README.md
-?? automation/start-infinite-improvement.sh
+ M automation/tasks/StaleCleaner.js
+ M src/utils/imageOptimization.tsx
+?? automation/core/AnomalyDetector.js
