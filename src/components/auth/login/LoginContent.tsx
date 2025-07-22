@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function LoginContent() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function LoginContent() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''

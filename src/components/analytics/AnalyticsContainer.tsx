@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function AnalyticsContainer() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function AnalyticsContainer() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
