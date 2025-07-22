@@ -6,4 +6,4 @@ export default function ITServicePricingTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
