@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react''
 export function useWebSocket(options: any) {
   const [isConnected, setIsConnected] = useState(false)'
   const [error, setError] = useState<string | null>(null)'
-  const wsRef = useRef<WebSocket | null>(null);
+  const wsRef = useRef<WebSocket | null>(null)'
   const reconnectAttemptsRef = useRef(0);
   const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -53,8 +53,7 @@ export function useWebSocket(options: any) {
   const disconnect = useCallback(() => {
     if (reconnectTimeoutRef.current) {
       clearTimeout(reconnectTimeoutRef.current)'
-      reconnectTimeoutRef.current = null;
-
+      reconnectTimeoutRef.current = null'
     if (wsRef.current) {
       wsRef.current.close();
       wsRef.current = null;
@@ -76,7 +75,7 @@ export function useWebSocket(options: any) {
   useEffect(() => {
     connect()'
     return () => {
-      disconnect();
+      disconnect()'
     };
   }, [connect, disconnect]);
 
@@ -85,4 +84,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''''''';
+    connect,}''''''''
