@@ -6,4 +6,4 @@ export default function JsonLd() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

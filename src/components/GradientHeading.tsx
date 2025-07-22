@@ -6,4 +6,4 @@ export default function GradientHeading() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

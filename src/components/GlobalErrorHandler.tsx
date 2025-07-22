@@ -6,4 +6,4 @@ export default function GlobalErrorHandler() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

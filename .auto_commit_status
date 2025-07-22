@@ -1,28 +1,28 @@
  M .auto_commit_status
- M automation/index.js
- M src/components/ChatAssistant/ChatInput.tsx
- M src/components/ChatAssistant/ChatMessage.tsx
- M src/components/ChatAssistant/__tests__/ChatAssistant.test.tsx
- M src/components/ChatAssistantTrigger.tsx
- M src/components/ChatWidget.tsx
- M src/components/CommunityDiscussion.tsx
- M src/components/ComparisonSection.tsx
- M src/components/ConnectWalletButton.tsx
- M src/components/ContactPublisherModal.tsx
- M src/components/ContactSection.tsx
- M src/components/Container.tsx
- M src/components/DynamicListingPage.tsx
- M src/components/EmailVerificationBanner.tsx
- M src/components/EnhancedNewsletterForm.tsx
- M src/components/EnvironmentCheck.tsx
- M src/components/EquipmentErrorBoundary.tsx
- M src/components/ErrorBoundary.tsx
- M src/components/ErrorGuard.tsx
- M src/components/ErrorOverlay.tsx
- M src/components/ErrorResetOnRouteChange.tsx
- M src/components/FaqSection.tsx
- M src/components/FavoriteButton.tsx
- M src/components/FeatureCard.tsx
- M src/components/FeaturedListingsSection.tsx
-?? automation/enhanced-automation-system.js
-?? scripts/ai-code-review-automation.cjs
+ M src/components/FeaturesGuideSection.tsx
+ M src/components/FloatingCTA.tsx
+ M src/components/Footer.tsx
+ M src/components/FooterNewsletter.tsx
+ M src/components/GlobalErrorBoundary.tsx
+ M src/components/GlobalErrorHandler.tsx
+ M src/components/GlobalServiceSection.tsx
+ M src/components/GradientHeading.tsx
+ M src/components/Header.tsx
+ M src/components/HeroSection.tsx
+ M src/components/HowItWorksSection.tsx
+ M src/components/HowItWorksVideo.tsx
+ M src/components/HydrationErrorBoundary.tsx
+ M src/components/InstallPrompt.tsx
+ M src/components/IntercomChat.tsx
+ M src/components/JsonLd.tsx
+ M src/components/LanguageDetectionPopup.tsx
+ M src/components/LanguageSwitcher.tsx
+ M src/components/ListingCard.tsx
+ M src/components/ListingScoreCard.tsx
+ M src/components/LoaderOverlay.tsx
+ M src/components/MarketplaceErrorBoundary.tsx
+ M src/components/MarketplaceLayout.tsx
+ M src/components/MarketplaceSidebar.jsx
+ M src/components/ModeToggle.tsx
+ M src/components/NavLink.tsx
+?? automation/automation-dashboard.html

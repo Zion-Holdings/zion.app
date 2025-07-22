@@ -6,4 +6,4 @@ export default function ModeToggle() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

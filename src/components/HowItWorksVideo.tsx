@@ -6,4 +6,4 @@ export default function HowItWorksVideo() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
