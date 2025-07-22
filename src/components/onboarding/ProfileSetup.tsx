@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function ProfileSetup() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function ProfileSetup() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
