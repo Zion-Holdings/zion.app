@@ -34,8 +34,8 @@ async function mainLoop() {
       }
     }
     log(`Waiting ${WAIT_MINUTES} minutes before next run...`);
-    await new Promise(res => setTimeout(res, WAIT_MINUTES * 60 * 1000));
+    await new Promise((res) => setTimeout(res, WAIT_MINUTES * 60 * 1000));
   }
 }
 
-mainLoop(); 
+mainLoop();

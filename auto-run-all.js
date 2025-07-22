@@ -52,29 +52,38 @@ function startOrRestartFile(filePath) {
     try {
       fs.chmodSync(absPath, 0o755);
     } catch (e) {
-      console.warn(`[auto-run-all] Could not chmod +x for ${filePath}:`, e.message);
+      console.warn(
+        `[auto-run-all] Could not chmod +x for ${filePath}:`,
+        e.message,
+      );
     }
   }
-  pm2.start({
-    name: procName,
-    script: absPath,
-    interpreter,
-    watch: false,
-    autorestart: true,
-  }, (err) => {
-    if (err) {
-      // If already exists, restart
-      pm2.restart(procName, (restartErr) => {
-        if (restartErr) {
-          console.error(`[auto-run-all] Failed to start/restart ${filePath}:`, restartErr.message);
-        } else {
-          console.log(`[auto-run-all] Restarted: ${filePath}`);
-        }
-      });
-    } else {
-      console.log(`[auto-run-all] Started: ${filePath}`);
-    }
-  });
+  pm2.start(
+    {
+      name: procName,
+      script: absPath,
+      interpreter,
+      watch: false,
+      autorestart: true,
+    },
+    (err) => {
+      if (err) {
+        // If already exists, restart
+        pm2.restart(procName, (restartErr) => {
+          if (restartErr) {
+            console.error(
+              `[auto-run-all] Failed to start/restart ${filePath}:`,
+              restartErr.message,
+            );
+          } else {
+            console.log(`[auto-run-all] Restarted: ${filePath}`);
+          }
+        });
+      } else {
+        console.log(`[auto-run-all] Started: ${filePath}`);
+      }
+    },
+  );
 }
 
 // Stop a file's process in PM2
@@ -83,7 +92,10 @@ function stopFile(filePath) {
   const relPath = path.relative(__dirname, absPath);
   const procName = getProcessName(relPath);
   pm2.delete(procName, (err) => {
-    if (err && !String(err.message).includes('process or namespace not found')) {
+    if (
+      err &&
+      !String(err.message).includes('process or namespace not found')
+    ) {
       console.error(`[auto-run-all] Failed to stop ${filePath}:`, err.message);
     } else {
       console.log(`[auto-run-all] Stopped: ${filePath}`);
@@ -110,10 +122,13 @@ pm2.connect((err) => {
   });
 
   // Watch for changes in all directories
-  const watcher = chokidar.watch(WATCH_DIRS.map(dir => path.join(dir, FILE_GLOB)), {
-    ignoreInitial: true,
-    awaitWriteFinish: true,
-  });
+  const watcher = chokidar.watch(
+    WATCH_DIRS.map((dir) => path.join(dir, FILE_GLOB)),
+    {
+      ignoreInitial: true,
+      awaitWriteFinish: true,
+    },
+  );
 
   watcher
     .on('add', startOrRestartFile)
@@ -123,9 +138,11 @@ pm2.connect((err) => {
       console.error('[auto-run-all] Watcher error:', error);
     });
 
-  console.log(`[auto-run-all] Watching directories for .ts, .tsx, .js, .sh, .py files...`);
-  WATCH_DIRS.forEach(dir => console.log(`[auto-run-all]  - ${dir}`));
+  console.log(
+    `[auto-run-all] Watching directories for .ts, .tsx, .js, .sh, .py files...`,
+  );
+  WATCH_DIRS.forEach((dir) => console.log(`[auto-run-all]  - ${dir}`));
 });
 
 // === END OF SCRIPT ===
-// To add more directories or file types, edit WATCH_DIRS or FILE_TYPES above. 
+// To add more directories or file types, edit WATCH_DIRS or FILE_TYPES above.

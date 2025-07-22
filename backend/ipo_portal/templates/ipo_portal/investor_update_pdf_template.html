@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Investor Update: {{ update.title }}</title>
-        <style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Investor Update: {{ update.title }}</title>
+    <style>
       @page {
         size: A4;
         margin: 1.5cm;
@@ -95,67 +95,67 @@
         margin-top: 30px;
         font-size: 0.9em;
       }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <div class="company-logo">[Your Company Logo Here] - Confidential</div>
-            <h1>Investor Update</h1>
-        </div>
-        <div class="update-meta">
-            <h2>{{ update.title }}</h2>
-            <p>
-                <strong>Publication Date:</strong> {{ update.publication_date|date:"F j,
-                Y" }}
-            </p>
-            {% if update.author %}
-                <p>
-                    <strong>Author:</strong> {{
-                    update.author.get_full_name|default:update.author.username }}
-                </p>
-            {% endif %}
-        </div>
-        <div class="summary">
-            <h3>Summary</h3>
-            {{ update.summary|linebreaksbr }} {# Use linebreaksbr for text from
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="company-logo">[Your Company Logo Here] - Confidential</div>
+      <h1>Investor Update</h1>
+    </div>
+    <div class="update-meta">
+      <h2>{{ update.title }}</h2>
+      <p>
+        <strong>Publication Date:</strong> {{ update.publication_date|date:"F j,
+        Y" }}
+      </p>
+      {% if update.author %}
+      <p>
+        <strong>Author:</strong> {{
+        update.author.get_full_name|default:update.author.username }}
+      </p>
+      {% endif %}
+    </div>
+    <div class="summary">
+      <h3>Summary</h3>
+      {{ update.summary|linebreaksbr }} {# Use linebreaksbr for text from
       TextField #}
-        </div>
-        {% if update.kpis_snapshot %}
-            <div class="kpis-snapshot">
-                <h3>KPI Snapshot</h3>
-                {% if update.kpis_snapshot|is_dict %}
-                    {# Check if it's a dict to try table
+    </div>
+    {% if update.kpis_snapshot %}
+    <div class="kpis-snapshot">
+      <h3>KPI Snapshot</h3>
+      {% if update.kpis_snapshot|is_dict %} {# Check if it's a dict to try table
       formatting #}
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Metric</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for key, value in update.kpis_snapshot.items %}
-                                <tr>
-                                    <td>{{ key|capfirst }}</td>
-                                    <td>{{ value }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                {% else %}
-                    <pre>{{ update.kpis_snapshot }}</pre>
-                    {# Fallback for non-dict JSON or simple string #}
-                {% endif %}
-            </div>
-        {% endif %}
-        <div class="confidential">CONFIDENTIAL - FOR INTERNAL AND AUTHORIZED INVESTOR USE ONLY</div>
-        <div class="footer">
-            Page <span class="page-number"></span> of <span class="page-count"></span>
-            {# WeasyPrint automatically handles page numbers if CSS is set up, e.g.
-using content: counter(page) #} {# For simplicity, this template uses
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key, value in update.kpis_snapshot.items %}
+          <tr>
+            <td>{{ key|capfirst }}</td>
+            <td>{{ value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <pre>{{ update.kpis_snapshot }}</pre>
+      {# Fallback for non-dict JSON or simple string #} {% endif %}
+    </div>
+    {% endif %}
+    <div class="confidential">
+      CONFIDENTIAL - FOR INTERNAL AND AUTHORIZED INVESTOR USE ONLY
+    </div>
+    <div class="footer">
+      Page <span class="page-number"></span> of <span class="page-count"></span>
+      {# WeasyPrint automatically handles page numbers if CSS is set up, e.g.
+      using content: counter(page) #} {# For simplicity, this template uses
       basic placeholders that might not auto-fill without more CSS #}
-        </div>
-    </body>
+    </div>
+  </body>
 </html>
 {# Custom filter (not used here, but example if needed in Django template
 rendering before WeasyPrint) #} {# {% filter is_dict kpi_data %} def

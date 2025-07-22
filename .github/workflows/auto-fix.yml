@@ -38,4 +38,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: auto-fix codebase"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

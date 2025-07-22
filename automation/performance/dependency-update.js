@@ -10,4 +10,4 @@ try {
   console.log('Dependency update complete.');
 } catch (err) {
   console.error('Error updating dependencies:', err);
-} 
+}

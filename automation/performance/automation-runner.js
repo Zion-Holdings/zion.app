@@ -19,16 +19,18 @@ function runScript(script) {
     ext === '.js'
       ? `node ${script}`
       : ext === '.py'
-      ? `python3 ${script}`
-      : null;
+        ? `python3 ${script}`
+        : null;
   if (!cmd) return;
   const logFile = path.join(LOG_DIR, `${script.replace(/\..+$/, '')}.log`);
   const out = fs.createWriteStream(logFile, { flags: 'a' });
   const proc = exec(cmd, { cwd: __dirname });
   proc.stdout.pipe(out);
   proc.stderr.pipe(out);
-  proc.on('exit', code => {
-    out.write(`\n[${new Date().toISOString()}] Script ${script} exited with code ${code}\n`);
+  proc.on('exit', (code) => {
+    out.write(
+      `\n[${new Date().toISOString()}] Script ${script} exited with code ${code}\n`,
+    );
     out.end();
   });
 }
@@ -43,4 +45,6 @@ runAll();
 // Schedule to run every hour
 setInterval(runAll, 60 * 60 * 1000);
 
-console.log('Performance automation runner started. Logs in automation/performance/logs/'); 
+console.log(
+  'Performance automation runner started. Logs in automation/performance/logs/',
+);

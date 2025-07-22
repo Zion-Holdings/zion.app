@@ -12,30 +12,35 @@ This directory contains scripts to automatically scan for and fix common perform
 ## Usage
 
 ### Frontend Performance Fix
+
 ```sh
 cd automation/performance
 node frontend-fix.js
 ```
 
 ### Backend Performance Fix
+
 ```sh
 cd automation/performance
 python3 backend-fix.py
 ```
 
 ### Frontend Dependency Update
+
 ```sh
 cd automation/performance
 node dependency-update.js
 ```
 
 ### Backend Dependency Update
+
 ```sh
 cd automation/performance
 python3 dependency-update.py
 ```
 
 ## Notes
+
 - These scripts are designed to be run independently and can be integrated into CI/CD pipelines.
 - The fix scripts currently output suggestions and are scaffolds for further automation.
-- Always review changes before deploying to production. 
+- Always review changes before deploying to production.
