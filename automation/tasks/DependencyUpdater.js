@@ -1,4 +1,4 @@
-const AutomationTask = require('../continuous-improvement/AutomationTask');
+const AutomationTask = require('../core/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
 const path = require('path');
