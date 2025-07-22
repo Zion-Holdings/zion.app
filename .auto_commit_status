@@ -1,6 +1,9 @@
  M .auto_commit_status
- M automation/README.md
-?? reports/database-health-1753221315114.json
-?? reports/database-health-1753221315151.json
-?? reports/database-health-1753221317053.json
-?? reports/database-health-1753221317075.json
+ M automation/package.json
+ M automation/tasks/StaleCleaner.js
+?? automation/test-system.js
+?? reports/database-health-1753221382395.json
+?? reports/database-health-1753221382460.json
+?? reports/database-health-1753221384240.json
+?? reports/database-health-1753221384254.json
+?? scripts/ai-tool-discovery-engine.cjs

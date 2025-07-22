@@ -115,8 +115,8 @@ class StaleCleaner extends AutomationTask {
         })
         .filter(branch => {
           // Filter out protected branches
-          return !this.config.protectedBranches.some(protected => 
-            branch.name.includes(protected)
+          return !this.config.protectedBranches.some(protectedBranch => 
+            branch.name.includes(protectedBranch)
           );
         })
         .filter(branch => branch.daysOld > this.config.staleBranchDays)
