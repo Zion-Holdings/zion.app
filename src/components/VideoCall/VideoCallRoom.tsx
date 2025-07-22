@@ -5,5 +5,5 @@ export default function VideoCallRoom() {
       <h1>VideoCallRoom</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function SearchBar() {
       <h1>SearchBar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

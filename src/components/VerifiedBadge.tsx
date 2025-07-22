@@ -5,5 +5,5 @@ export default function VerifiedBadge() {
       <h1>VerifiedBadge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

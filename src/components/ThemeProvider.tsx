@@ -5,5 +5,5 @@ export default function ThemeProvider() {
       <h1>ThemeProvider</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

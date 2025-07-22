@@ -5,5 +5,5 @@ export default function RatingStars() {
       <h1>RatingStars</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

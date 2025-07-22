@@ -5,5 +5,5 @@ export default function ScrollToTop() {
       <h1>ScrollToTop</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

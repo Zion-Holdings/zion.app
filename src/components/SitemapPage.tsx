@@ -5,5 +5,5 @@ export default function SitemapPage() {
       <h1>SitemapPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

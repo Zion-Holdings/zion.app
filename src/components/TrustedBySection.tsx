@@ -5,5 +5,5 @@ export default function TrustedBySection() {
       <h1>TrustedBySection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

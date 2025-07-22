@@ -5,5 +5,5 @@ export default function YoutubeEmbed() {
       <h1>YoutubeEmbed</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

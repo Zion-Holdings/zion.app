@@ -5,5 +5,5 @@ export default function ToastProvider() {
       <h1>ToastProvider</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

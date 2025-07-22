@@ -5,5 +5,5 @@ export default function ToastContainer() {
       <h1>ToastContainer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

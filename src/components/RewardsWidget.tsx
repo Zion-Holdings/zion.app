@@ -5,5 +5,5 @@ export default function RewardsWidget() {
       <h1>RewardsWidget</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function SEO() {
       <h1>SEO</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

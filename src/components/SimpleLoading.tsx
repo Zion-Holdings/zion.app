@@ -5,5 +5,5 @@ export default function SimpleLoading() {
       <h1>SimpleLoading</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

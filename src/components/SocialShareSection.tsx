@@ -5,5 +5,5 @@ export default function SocialShareSection() {
       <h1>SocialShareSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function SimpleErrorBoundary() {
       <h1>SimpleErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function TestimonialCarousel() {
       <h1>TestimonialCarousel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

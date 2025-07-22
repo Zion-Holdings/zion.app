@@ -5,5 +5,5 @@ export default function SkipLink() {
       <h1>SkipLink</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

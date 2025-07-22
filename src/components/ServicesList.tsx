@@ -5,5 +5,5 @@ export default function ServicesList() {
       <h1>ServicesList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

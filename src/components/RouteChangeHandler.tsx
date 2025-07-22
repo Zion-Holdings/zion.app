@@ -5,5 +5,5 @@ export default function RouteChangeHandler() {
       <h1>RouteChangeHandler</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

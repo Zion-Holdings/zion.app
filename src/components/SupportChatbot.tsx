@@ -5,5 +5,5 @@ export default function SupportChatbot() {
       <h1>SupportChatbot</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

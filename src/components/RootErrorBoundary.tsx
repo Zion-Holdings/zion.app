@@ -5,5 +5,5 @@ export default function RootErrorBoundary() {
       <h1>RootErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

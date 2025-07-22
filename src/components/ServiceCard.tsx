@@ -5,5 +5,5 @@ export default function ServiceCard() {
       <h1>ServiceCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
