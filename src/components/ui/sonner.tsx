@@ -5,5 +5,5 @@ export default function sonner() {
       <h1>sonner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

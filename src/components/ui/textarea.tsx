@@ -5,5 +5,5 @@ export default function textarea() {
       <h1>textarea</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

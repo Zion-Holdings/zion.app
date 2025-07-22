@@ -5,5 +5,5 @@ export default function toggle-group() {
       <h1>toggle-group</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

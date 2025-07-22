@@ -5,5 +5,5 @@ export default function steps() {
       <h1>steps</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

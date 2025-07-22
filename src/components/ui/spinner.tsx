@@ -5,5 +5,5 @@ export default function spinner() {
       <h1>spinner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

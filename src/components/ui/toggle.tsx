@@ -5,5 +5,5 @@ export default function toggle() {
       <h1>toggle</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

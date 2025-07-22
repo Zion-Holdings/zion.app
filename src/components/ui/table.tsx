@@ -5,5 +5,5 @@ export default function table() {
       <h1>table</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

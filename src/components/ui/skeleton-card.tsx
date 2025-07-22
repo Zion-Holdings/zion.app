@@ -5,5 +5,5 @@ export default function skeleton-card() {
       <h1>skeleton-card</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

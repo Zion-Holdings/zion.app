@@ -5,5 +5,5 @@ export default function SidebarTrigger() {
       <h1>SidebarTrigger</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

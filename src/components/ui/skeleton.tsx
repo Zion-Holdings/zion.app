@@ -5,5 +5,5 @@ export default function skeleton() {
       <h1>skeleton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

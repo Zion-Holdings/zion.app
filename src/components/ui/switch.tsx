@@ -5,5 +5,5 @@ export default function switch() {
       <h1>switch</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

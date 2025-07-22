@@ -5,5 +5,5 @@ export default function sticky-action() {
       <h1>sticky-action</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

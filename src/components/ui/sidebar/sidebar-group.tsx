@@ -5,5 +5,5 @@ export default function sidebar-group() {
       <h1>sidebar-group</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

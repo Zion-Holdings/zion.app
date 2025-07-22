@@ -5,5 +5,5 @@ export default function sidebar-menu() {
       <h1>sidebar-menu</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

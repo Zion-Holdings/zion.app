@@ -5,5 +5,5 @@ export default function tabs() {
       <h1>tabs</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

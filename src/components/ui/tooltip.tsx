@@ -5,5 +5,5 @@ export default function tooltip() {
       <h1>tooltip</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
