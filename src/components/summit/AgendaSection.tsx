@@ -6,4 +6,4 @@ export default function AgendaSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
