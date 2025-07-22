@@ -1,7 +1,16 @@
  M .auto_commit_status
- M scripts/ux-enhancement-automation.cjs
- M src/layout/PrimaryNav.tsx
- M src/layout/__tests__/PrimaryNav.test.tsx
- M src/legal/PrivacyPolicy.jsx
- M src/legal/TermsOfService.jsx
- M src/lib/dnd-stub.tsx
+ M automation/README.md
+ M src/mobile/MobileApp.tsx
+ M src/mobile/components/browse/BrowseCards.tsx
+ M src/mobile/components/browse/BrowseFilters.tsx
+ M src/mobile/components/common/BottomNavigation.tsx
+ M src/mobile/components/common/MobileHeader.tsx
+ M src/mobile/components/common/SeverityIndicator.tsx
+ M src/mobile/components/dashboard/ClientDashboard.tsx
+ M src/mobile/components/dashboard/TalentDashboard.tsx
+ M src/mobile/components/messaging/MobileChatView.tsx
+ M src/mobile/components/messaging/MobileConversationList.tsx
+ M src/mobile/components/onboarding/LanguageThemeSelector.tsx
+ M src/mobile/components/onboarding/RolePicker.tsx
+ M src/mobile/components/onboarding/SignUpForm.tsx
+ M src/mobile/components/projects/MobileProjectView.tsx
