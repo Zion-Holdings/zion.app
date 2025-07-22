@@ -1,1 +1,3 @@
  M .auto_commit_status
+ M package.json
+?? scripts/auto-fix-daemon.js
