@@ -6,4 +6,4 @@ export default function PromptCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
