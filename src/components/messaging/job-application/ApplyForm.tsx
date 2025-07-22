@@ -6,4 +6,4 @@ export default function ApplyForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

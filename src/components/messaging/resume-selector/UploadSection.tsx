@@ -6,4 +6,4 @@ export default function UploadSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
