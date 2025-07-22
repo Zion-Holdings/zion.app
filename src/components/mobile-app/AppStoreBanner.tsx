@@ -6,4 +6,4 @@ export default function AppStoreBanner() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
