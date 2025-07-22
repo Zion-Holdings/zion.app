@@ -6,4 +6,4 @@ export default function BudgetStep() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

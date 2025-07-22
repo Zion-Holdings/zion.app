@@ -6,4 +6,4 @@ export default function ServiceCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
