@@ -6,4 +6,4 @@ export default function BasicInfoFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
