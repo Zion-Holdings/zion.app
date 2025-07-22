@@ -37,8 +37,7 @@ const CHAT_SESSIONS = [
     color: '🟢',
     socketUrl: 'http://localhost:3006',
   },
-];
-
+]
 class LiveReconnectionDemo {
   constructor() {
     this.sessions = new Map();
@@ -159,9 +158,9 @@ class LiveReconnectionDemo {
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
         ? '✅ Connected'
-        : '❌ Disconnected';
-      const attempts = session.reconnectionAttempts || 0;
-      const quality = session.connectionQuality || 'unknown';
+        : '❌ Disconnected'
+const attempts = session.reconnectionAttempts || 0
+const quality = session.connectionQuality || 'unknown';
 
       console.log(`${session.color} ${sessionName}:`);
       console.log(`   Status: ${status}`);
@@ -197,9 +196,8 @@ class LiveReconnectionDemo {
         reconnectionAttempts: 5,
         reconnectionDelay: 1000,
         reconnectionDelayMax: 5000,
-      });
-
-      const session = {
+      })
+const session = {
         name: sessionConfig.name,
         roomId: sessionConfig.roomId,
         color: sessionConfig.color,

@@ -5,8 +5,8 @@
  * Comprehensive check for SWC dependencies, punycode issues, and overall project health
  */
 
-const { _spawn } = require('child_process');
-const fs = require('fs');
+const { _spawn } = require('child_process')
+const fs = require('fs')
 const path = require('path');
 
 process.stdout.write('\ud83d\udd0d Dependency Health Check\n');
@@ -34,8 +34,8 @@ async function checkSWCDependencies() {
         );
 
         // Check for version conflicts
-        const coreMatches = output.match(/@swc\/core@(\d+\.\d+\.\d+)/g);
-        const helperMatches = output.match(/@swc\/helpers@(\d+\.\d+\.\d+)/g);
+        const coreMatches = output.match(/@swc\/core@(\d+\.\d+\.\d+)/g)
+const helperMatches = output.match(/@swc\/helpers@(\d+\.\d+\.\d+)/g);
 
         if (coreMatches && helperMatches) {
           process.stdout.write(
@@ -174,8 +174,8 @@ async function testBuildWithWarnings() {
       } else {
         process.stdout.write(`   \u274c Build failed with exit code ${code}\n`);
         if (errorOutput) {
-          process.stdout.write('   \ud83d\udcdd Error summary:\n');
-          const errorLines = errorOutput.split('\n').slice(0, 5);
+          process.stdout.write('   \ud83d\udcdd Error summary:\n')
+const errorLines = errorOutput.split('\n').slice(0, 5);
           errorLines.forEach((line) => {
             if (line.trim()) process.stdout.write(`      ${line.trim()}\n`);
           });
@@ -194,10 +194,9 @@ function checkPackageScripts() {
   process.stdout.write('\n\ud83d\udccb Package Scripts Check:\n');
 
   try {
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-    const scripts = packageJson.scripts || {};
-
-    const requiredScripts = [
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const scripts = packageJson.scripts || {}
+const requiredScripts = [
       'build',
       'deps:check',
       'deps:update',
@@ -234,10 +233,9 @@ function checkPackageScripts() {
  */
 function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
   process.stdout.write('\n\ud83d\udcca Health Report Summary:\n');
-  process.stdout.write('='.repeat(50) + '\n');
-
-  const status = swcCheck && buildCheck ? 'HEALTHY' : 'NEEDS ATTENTION';
-  const emoji = status === 'HEALTHY' ? '🟢' : '🟡';
+  process.stdout.write('='.repeat(50) + '\n')
+const status = swcCheck && buildCheck ? 'HEALTHY' : 'NEEDS ATTENTION'
+const emoji = status === 'HEALTHY' ? '🟢' : '🟡';
 
   process.stdout.write(`${emoji} Overall Status: ${status}\n`);
   process.stdout.write(
@@ -279,12 +277,11 @@ function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
  * Main health check function
  */
 async function runHealthCheck() {
-  process.stdout.write('Starting comprehensive dependency health check...\n');
-
-  const swcCheck = await checkSWCDependencies();
-  const punycodeCheck = await checkPunycodeDependencies();
-  checkPackageScripts();
-  const buildCheck = await testBuildWithWarnings();
+  process.stdout.write('Starting comprehensive dependency health check...\n')
+const swcCheck = await checkSWCDependencies()
+const punycodeCheck = await checkPunycodeDependencies();
+  checkPackageScripts()
+const buildCheck = await testBuildWithWarnings();
 
   generateHealthReport(swcCheck, punycodeCheck, buildCheck);
 

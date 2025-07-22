@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const crypto = require('crypto');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const crypto = require('crypto')
 class AppAutomation {
   constructor() {
     this.projectRoot = process.cwd();
@@ -14,8 +13,8 @@ class AppAutomation {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
 
     // Ensure logs directory exists
@@ -36,8 +35,8 @@ class AppAutomation {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running command: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running command: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -56,9 +55,8 @@ class AppAutomation {
   }
 
   fixCorruptedApiFiles() {
-    this.log('Starting API file corruption fix...');
-
-    const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    this.log('Starting API file corruption fix...')
+const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       this.log('API directory not found, skipping...');
       return;
@@ -66,8 +64,8 @@ class AppAutomation {
 
     const fixFile = (filePath) => {
       try {
-        let content = fs.readFileSync(filePath, 'utf8');
-        const originalContent = content;
+        let content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
         // Fix common corruption patterns
         content = content
@@ -131,15 +129,14 @@ class AppAutomation {
         this.log(`Error fixing file ${filePath}: ${error.message}`, 'ERROR');
         return false;
       }
-    };
-
-    const processDirectory = (dir) => {
+    }
+const processDirectory = (dir) => {
       const items = fs.readdirSync(dir);
       let fixedCount = 0;
 
       for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           fixedCount += processDirectory(fullPath);
@@ -151,25 +148,23 @@ class AppAutomation {
       }
 
       return fixedCount;
-    };
-
-    const fixedCount = processDirectory(apiDir);
+    }
+const fixedCount = processDirectory(apiDir);
     this.log(`Fixed ${fixedCount} corrupted API files`);
     return fixedCount;
   }
 
   fixPackageJson() {
-    this.log('Checking and fixing package.json...');
-
-    const packageJsonPath = path.join(this.projectRoot, 'package.json');
+    this.log('Checking and fixing package.json...')
+const packageJsonPath = path.join(this.projectRoot, 'package.json');
     if (!fs.existsSync(packageJsonPath)) {
       this.log('package.json not found', 'ERROR');
       return false;
     }
 
     try {
-      let content = fs.readFileSync(packageJsonPath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(packageJsonPath, 'utf8')
+const originalContent = content;
 
       // Remove Git merge conflict markers
       content = content
@@ -192,21 +187,19 @@ class AppAutomation {
   }
 
   async installDependencies() {
-    this.log('Installing dependencies...');
-
-    const result = await this.runCommand('npm install --legacy-peer-deps');
+    this.log('Installing dependencies...')
+const result = await this.runCommand('npm install --legacy-peer-deps');
     if (!result.success) {
-      this.log('Failed to install dependencies, trying npm install...', 'WARN');
-      const fallbackResult = await this.runCommand('npm install');
+      this.log('Failed to install dependencies, trying npm install...', 'WARN')
+const fallbackResult = await this.runCommand('npm install');
       return fallbackResult.success;
     }
     return result.success;
   }
 
   async runLinting() {
-    this.log('Running linting...');
-
-    const result = await this.runCommand('npm run lint -- --fix');
+    this.log('Running linting...')
+const result = await this.runCommand('npm run lint -- --fix');
     if (!result.success) {
       this.log('Linting failed, but continuing...', 'WARN');
     }
@@ -214,9 +207,8 @@ class AppAutomation {
   }
 
   async runTypeCheck() {
-    this.log('Running type check...');
-
-    const result = await this.runCommand('npm run typecheck');
+    this.log('Running type check...')
+const result = await this.runCommand('npm run typecheck');
     if (!result.success) {
       this.log('Type check failed, but continuing...', 'WARN');
     }
@@ -224,9 +216,8 @@ class AppAutomation {
   }
 
   async runTests() {
-    this.log('Running tests...');
-
-    const result = await this.runCommand('npm test -- --passWithNoTests');
+    this.log('Running tests...')
+const result = await this.runCommand('npm test -- --passWithNoTests');
     if (!result.success) {
       this.log('Tests failed, but continuing...', 'WARN');
     }
@@ -234,9 +225,8 @@ class AppAutomation {
   }
 
   async buildProject() {
-    this.log('Building project...');
-
-    const result = await this.runCommand('npm run build');
+    this.log('Building project...')
+const result = await this.runCommand('npm run build');
     return result.success;
   }
 
@@ -318,9 +308,8 @@ class AppAutomation {
   }
 
   async optimizePerformance() {
-    this.log('Running performance optimizations...');
-
-    const optimizations = [
+    this.log('Running performance optimizations...')
+const optimizations = [
       'npm run optimize',
       'npm run bundle:analyze',
       'npm run perf:audit',
@@ -335,10 +324,9 @@ class AppAutomation {
   }
 
   async generateReport() {
-    const endTime = Date.now();
-    const duration = (endTime - this.startTime) / 1000;
-
-    const report = {
+    const endTime = Date.now()
+const duration = (endTime - this.startTime) / 1000
+const report = {
       timestamp: new Date().toISOString(),
       duration: `${duration}s`,
       status: 'completed',
@@ -353,9 +341,8 @@ class AppAutomation {
         server: this.serverStarted || false,
         healthCheck: this.healthCheckPassed || false,
       },
-    };
-
-    const reportPath = path.join(
+    }
+const reportPath = path.join(
       this.projectRoot,
       'logs',
       'automation-report.json',
@@ -406,8 +393,8 @@ class AppAutomation {
       this.log('Automation completed successfully!');
       return report;
     } catch (error) {
-      this.log(`Automation failed: ${error.message}`, 'ERROR');
-      const report = await this.generateReport();
+      this.log(`Automation failed: ${error.message}`, 'ERROR')
+const report = await this.generateReport();
       return report;
     }
   }

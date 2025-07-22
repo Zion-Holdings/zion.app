@@ -6,9 +6,11 @@
  * This script starts the comprehensive AI-powered automation system
  * that continuously monitors and improves the application using multiple AI tools.
  */
-;
-const path = require('path');'const fs = require('fs');'const { spawn } = require('child_process');'
-// Import the enhanced automation system;
+
+const path = require('path')
+const fs = require('fs')
+const { spawn } = require('child_process');'
+// Import the enhanced automation system
 const EnhancedAutomation = require('./enhanced-automation');'
 class AutomationStartup {
   constructor() {
@@ -26,7 +28,7 @@ class AutomationStartup {
    * Start the automation system
    */
   async start() {
-    console.log('🚀 Starting Zion App Enhanced Automation System...');'    console.log('=' .repeat(60));'    
+    console.log('🚀 Starting Zion App Enhanced Automation System...');    console.log('=' .repeat(60));'    
     try {
       // Validate environment
       await this.validateEnvironment();
@@ -55,7 +57,7 @@ class AutomationStartup {
       this.isRunning = true;
       this.startTime = new Date();
       
-      console.log('✅ Enhanced Automation System started successfully!');'      console.log('📊 Dashboard: http://localhost:' + this.config.port + '/dashboard');'      console.log('🔗 Health Check: http://localhost:' + this.config.port + '/health');'      console.log('📈 Monitoring: ' + (this.config.enableMonitoring ? 'Enabled' : 'Disabled'));'      console.log('🤖 Slack Integration: ' + (this.config.enableSlack ? 'Enabled' : 'Disabled'));'      console.log('=' .repeat(60));'      
+      console.log('✅ Enhanced Automation System started successfully!');      console.log('📊 Dashboard: http://localhost:' + this.config.port + '/dashboard');      console.log('🔗 Health Check: http://localhost:' + this.config.port + '/health');      console.log('📈 Monitoring: ' + (this.config.enableMonitoring ? 'Enabled' : 'Disabled'));'      console.log('🤖 Slack Integration: ' + (this.config.enableSlack ? 'Enabled' : 'Disabled'));'      console.log('=' .repeat(60));'      
       // Log initial status
       this.logStatus();
       
@@ -63,7 +65,7 @@ class AutomationStartup {
       this.startStatusUpdates();
       
     } catch (error) {
-      console.error('❌ Failed to start automation system:', error);'      process.exit(1);
+      console.error('❌ Failed to start automation system:', error);      process.exit(1);
     }
   }
 
@@ -71,17 +73,16 @@ class AutomationStartup {
    * Validate environment configuration
    */
   async validateEnvironment() {
-    console.log('🔍 Validating environment configuration...');'    
-    const requiredEnvVars = [
-      'CURSOR_API_KEY','      'CURSOR_WORKSPACE_ID''    ];
-    
-    const optionalEnvVars = [
+    console.log('🔍 Validating environment configuration...')
+const requiredEnvVars = [
+      'CURSOR_API_KEY','      'CURSOR_WORKSPACE_ID''    ]
+const optionalEnvVars = [
       'OPENAI_API_KEY','      'CLAUDE_API_KEY','      'LOCAL_AI_ENDPOINT','      'SLACK_BOT_TOKEN','      'SLACK_SIGNING_SECRET''    ];
     
     // Check required environment variables
     const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     if (missing.length > 0) {
-      console.warn('⚠️ Missing required environment variables:', missing.join(', '));'      console.warn('Some features may be limited without proper configuration');'    }
+      console.warn('⚠️ Missing required environment variables:', missing.join(', '));'      console.warn('Some features may be limited without proper configuration');    }
     
     // Check optional environment variables
     const available = optionalEnvVars.filter(varName => process.env[varName]);
@@ -98,25 +99,25 @@ class AutomationStartup {
       }
     }
     
-    console.log('✅ Environment validation completed');'  }
+    console.log('✅ Environment validation completed');  }
 
   /**
    * Initialize the automation system
    */
   async initializeAutomation() {
-    console.log('🔧 Initializing enhanced automation system...');'    
+    console.log('🔧 Initializing enhanced automation system...');    
     this.automation = new EnhancedAutomation();
     
     // Start the automation
     await this.automation.start();
     
-    console.log('✅ Automation system initialized');'  }
+    console.log('✅ Automation system initialized');  }
 
   /**
    * Start monitoring system
    */
   async startMonitoring() {
-    console.log('📡 Starting monitoring system...');'    
+    console.log('📡 Starting monitoring system...');    
     // Start performance monitoring
     const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {'      stdio: 'pipe','      detached: false
     });
@@ -130,13 +131,13 @@ class AutomationStartup {
     monitorProcess.on('close', (code) => {'      console.log(`📡 Monitor process exited with code ${code}`);
     });
     
-    console.log('✅ Monitoring system started');'  }
+    console.log('✅ Monitoring system started');  }
 
   /**
    * Start dashboard
    */
   async startDashboard() {
-    console.log('📊 Starting dashboard...');'    
+    console.log('📊 Starting dashboard...');    
     // Create simple dashboard server
     const express = require('express');'    const app = express();
     
@@ -172,20 +173,20 @@ class AutomationStartup {
       console.log(`📊 Dashboard running on port ${this.config.port}`);
     });
     
-    console.log('✅ Dashboard started');'  }
+    console.log('✅ Dashboard started');  }
 
   /**
    * Start Slack integration
    */
   async startSlackIntegration() {
-    console.log('🤖 Starting Slack integration...');'    
+    console.log('🤖 Starting Slack integration...');    
     try {
       const SlackBot = require('../slack/slack-bot');'      const slackBot = new SlackBot();
       
       await slackBot.start();
       
-      console.log('✅ Slack integration started');'    } catch (error) {
-      console.warn('⚠️ Slack integration failed:', error.message);'    }
+      console.log('✅ Slack integration started');    } catch (error) {
+      console.warn('⚠️ Slack integration failed:', error.message);    }
   }
 
   /**
@@ -201,7 +202,7 @@ class AutomationStartup {
         await this.automation.stop();
       }
       
-      console.log('✅ Shutdown completed');'      process.exit(0);
+      console.log('✅ Shutdown completed');      process.exit(0);
     };
     
     process.on('SIGINT', () => shutdown('SIGINT'));'    process.on('SIGTERM', () => shutdown('SIGTERM'));'    process.on('SIGQUIT', () => shutdown('SIGQUIT'));'  }
@@ -221,7 +222,7 @@ class AutomationStartup {
     
     console.log('📊 Initial Status:', JSON.stringify(status, null, 2));'    
     // Save status to file
-    const statusPath = path.join(__dirname, '..', 'logs', 'automation-status.json');'    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
+    const statusPath = path.join(__dirname, '..', 'logs', 'automation-status.json');    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
   /**
@@ -239,7 +240,7 @@ class AutomationStartup {
    * Generate comprehensive report
    */
   async generateReport() {
-    console.log('📋 Generating comprehensive report...');'    
+    console.log('📋 Generating comprehensive report...');    
     if (!this.automation) {
       throw new Error('Automation system not initialized');'    }
     
@@ -257,14 +258,14 @@ class AutomationStartup {
    * Stop the automation system
    */
   async stop() {
-    console.log('🛑 Stopping automation system...');'    
+    console.log('🛑 Stopping automation system...');    
     this.isRunning = false;
     
     if (this.automation) {
       await this.automation.stop();
     }
     
-    console.log('✅ Automation system stopped');'  }
+    console.log('✅ Automation system stopped');  }
 }
 
 // Main execution
@@ -313,14 +314,14 @@ Examples:
   if (args.includes('--report') || args.includes('-r')) {'    startup.start().then(() => {
       return startup.generateReport();
     }).then((report) => {
-      console.log('📋 Report Summary:');'      console.log(`- Total Tasks: ${report.summary.totalTasks}`);
+      console.log('📋 Report Summary:');      console.log(`- Total Tasks: ${report.summary.totalTasks}`);
       console.log(`- Successful: ${report.summary.successfulTasks}`);
       console.log(`- Failed: ${report.summary.failedTasks}`);
       console.log(`- Improvements: ${report.summary.totalImprovements}`);
       console.log(`- Errors: ${report.summary.totalErrors}`);
       process.exit(0);
     }).catch((error) => {
-      console.error('❌ Error generating report:', error);'      process.exit(1);
+      console.error('❌ Error generating report:', error);      process.exit(1);
     });
   }
   
@@ -328,21 +329,21 @@ Examples:
       const status = startup.automation.getStatus();
       console.log('📊 Current Status:', JSON.stringify(status, null, 2));'      process.exit(0);
     }).catch((error) => {
-      console.error('❌ Error getting status:', error);'      process.exit(1);
+      console.error('❌ Error getting status:', error);      process.exit(1);
     });
   }
   
   if (args.includes('--stop')) {'    // Implementation for stopping would require process management
-    console.log('🛑 Stop command received. Use Ctrl+C to stop the running process.');'    process.exit(0);
+    console.log('🛑 Stop command received. Use Ctrl+C to stop the running process.');    process.exit(0);
   }
   
   if (args.includes('--restart')) {'    // Implementation for restarting would require process management
-    console.log('🔄 Restart command received. Please stop and start manually.');'    process.exit(0);
+    console.log('🔄 Restart command received. Please stop and start manually.');    process.exit(0);
   }
   
   // Default: start the automation system
   startup.start().catch((error) => {
-    console.error('❌ Failed to start automation system:', error);'    process.exit(1);
+    console.error('❌ Failed to start automation system:', error);    process.exit(1);
   });
 }
 

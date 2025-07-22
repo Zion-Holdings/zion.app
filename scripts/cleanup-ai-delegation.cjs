@@ -6,8 +6,8 @@
  * Cleans up the AI-driven continuous improvement system
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync, spawn } = require('child_process');
 
 // Configuration
@@ -39,8 +39,7 @@ const CONFIG = {
 
   // Ports to check
   PORTS: [3001, 3002, 3003, 3004, 3005],
-};
-
+}
 class AIDelegationCleanup {
   constructor() {
     this.cleanupLog = [];
@@ -137,8 +136,8 @@ class AIDelegationCleanup {
           } else {
             // Remove all files in directory
             for (const file of files) {
-              const filePath = path.join(dirPath, file);
-              const stat = fs.statSync(filePath);
+              const filePath = path.join(dirPath, file)
+const stat = fs.statSync(filePath);
 
               if (stat.isDirectory()) {
                 fs.rmSync(filePath, { recursive: true, force: true });
@@ -199,9 +198,8 @@ class AIDelegationCleanup {
    * Clean up temporary files
    */
   async cleanupTempFiles() {
-    const tempPatterns = ['*.tmp', '*.log.tmp', '*.pid', '*.lock'];
-
-    const tempDirs = ['logs', 'ai-improvement-data', 'cursor-ai-data'];
+    const tempPatterns = ['*.tmp', '*.log.tmp', '*.pid', '*.lock']
+const tempDirs = ['logs', 'ai-improvement-data', 'cursor-ai-data'];
 
     for (const dir of tempDirs) {
       const dirPath = path.join(process.cwd(), dir);
@@ -281,12 +279,10 @@ class AIDelegationCleanup {
    * Generate cleanup report
    */
   async generateCleanupReport() {
-    console.log('📊 Generating cleanup report...');
-
-    const endTime = Date.now();
-    const duration = endTime - this.startTime;
-
-    const report = {
+    console.log('📊 Generating cleanup report...')
+const endTime = Date.now()
+const duration = endTime - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       duration: duration,
       summary: {
@@ -323,9 +319,8 @@ class AIDelegationCleanup {
         arch: process.arch,
         memory: Math.round(require('os').totalmem() / (1024 * 1024 * 1024)),
       },
-    };
-
-    const reportPath = path.join(process.cwd(), 'logs', 'cleanup-report.json');
+    }
+const reportPath = path.join(process.cwd(), 'logs', 'cleanup-report.json');
 
     // Ensure logs directory exists
     const logsDir = path.dirname(reportPath);
@@ -382,9 +377,8 @@ class AIDelegationCleanup {
       timestamp: new Date().toISOString(),
     };
 
-    this.cleanupLog.push(result);
-
-    const statusIcon = {
+    this.cleanupLog.push(result)
+const statusIcon = {
       PASS: '✅',
       FAIL: '❌',
       WARN: '⚠️',

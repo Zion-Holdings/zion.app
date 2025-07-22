@@ -11,13 +11,12 @@
  *   CURSOR_PROJECT_ID – project identifier
  *   GITHUB_TOKEN     – permission to push
  */
-const { _execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const fetchModule = require('node-fetch');
-
-const API = 'https://api.cursor.sh/v1';
-const apiKey = process.env.CURSOR_API_KEY;
+const { _execSync } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const fetchModule = require('node-fetch')
+const API = 'https://api.cursor.sh/v1'
+const apiKey = process.env.CURSOR_API_KEY
 const projectId = process.env.CURSOR_PROJECT_ID;
 
 if (!apiKey || !projectId) {
@@ -62,8 +61,8 @@ async function run() {
 
   for (const issue of issues) {
     try {
-      console.warn('Requesting patch for issue', issue.id);
-      const { diff, message } = await requestPatch(issue.id);
+      console.warn('Requesting patch for issue', issue.id)
+const { diff, message } = await requestPatch(issue.id);
       if (!diff) {
         console.warn('No diff returned for', issue.id);
         continue;

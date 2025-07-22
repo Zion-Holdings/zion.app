@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports */
 
-require('dotenv').config();
-const OptimizationSlackBot = require('./slack/slack-bot');
-const PerformanceMonitor = require('./performance/monitor');
-const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');
-const express = require('express');
-const path = require('path');
+require('dotenv').config()
+const OptimizationSlackBot = require('./slack/slack-bot')
+const PerformanceMonitor = require('./performance/monitor')
+const EnhancedAutomation = require('./continuous-improvement/enhanced-automation')
+const express = require('express')
+const path = require('path')
 class OptimizationAutomation {
   constructor() {
     this.slackBot = new OptimizationSlackBot();
@@ -109,9 +109,8 @@ class OptimizationAutomation {
       try {
         const { target, reason, alert: _alert } = req.body;
         
-        process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
-        
-        const result = await this.slackBot.triggerOptimization(target);
+        process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`)
+const result = await this.slackBot.triggerOptimization(target);
         
         res.json({
           success: true,
@@ -154,8 +153,8 @@ class OptimizationAutomation {
     // Performance history endpoint
     this.app.get('/api/performance/history', async (req, res) => {
       try {
-        const hours = parseInt(req.query.hours) || 24;
-        const history = await this.performanceMonitor.getHistory(hours);
+        const hours = parseInt(req.query.hours) || 24
+const history = await this.performanceMonitor.getHistory(hours);
         res.json(history);
       } catch (error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance history error: ${error.message}\n`);
@@ -266,9 +265,8 @@ class OptimizationAutomation {
       // Start Express server for API endpoints
       this.server = this.app.listen(this.port, () => {
         process.stdout.write(`[${new Date().toISOString()}] ⚡ Enhanced Optimization API server running on port ${this.port}\n`);
-      });
-      
-      const timestamp = new Date().toISOString();
+      })
+const timestamp = new Date().toISOString();
       process.stdout.write(`[${timestamp}] ✅ Enhanced Optimization Automation System started successfully!\n`);
       process.stdout.write(`[${timestamp}] 📊 Dashboard: http://localhost:${this.port}/dashboard\n`);
       process.stdout.write(`[${timestamp}] 🔗 Health Check: http://localhost:${this.port}/health\n`);

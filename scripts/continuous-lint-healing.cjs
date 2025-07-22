@@ -5,14 +5,12 @@
  * Continuously monitors for lint issues and automatically triggers healing
  */
 
-const { execSync, spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
-
+const { execSync, spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const chokidar = require('chokidar')
 // Import the self-healing system
-const SelfHealingLintSystem = require('./self-healing-lint-system.cjs');
-
+const SelfHealingLintSystem = require('./self-healing-lint-system.cjs')
 class ContinuousLintHealing {
   constructor() {
     this.selfHealingSystem = new SelfHealingLintSystem();
@@ -74,9 +72,8 @@ class ContinuousLintHealing {
   }
 
   startFileWatcher() {
-    this.log('Starting file watcher...');
-
-    const watcher = chokidar.watch(this.config.watchPatterns, {
+    this.log('Starting file watcher...')
+const watcher = chokidar.watch(this.config.watchPatterns, {
       ignored: this.config.ignorePatterns,
       persistent: true,
       ignoreInitial: true,

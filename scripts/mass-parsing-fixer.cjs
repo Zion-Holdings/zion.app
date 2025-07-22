@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync } = require('child_process');
 
 console.log('🔧 Starting mass parsing error fixer...');
 
 // Function to recursively find all TypeScript/JavaScript files
 function findSourceFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
-  const files = [];
-  
-  function traverse(currentDir) {
+  const files = []
+function traverse(currentDir) {
     const items = fs.readdirSync(currentDir);
     
     for (const item of items) {
-      const fullPath = path.join(currentDir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(currentDir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         // Skip node_modules, .git, and other common directories
@@ -133,7 +132,7 @@ function fixParsingErrors(content, filePath) {
   // Fix 13: Fix malformed try blocks
   const malformedTry = /try\s*\{\s*try\s*\{\s*try\s*\{\s*try\s*\{\s*try/g;
   if (malformedTry.test(fixed)) {
-    fixed = fixed.replace(malformedTry, 'try {');
+    fixed = fixed.replace(malformedTry, 'try {);
     changes++;
   }
   
@@ -215,8 +214,8 @@ function hasParsingErrors(filePath) {
 
 // Main execution
 try {
-  const sourceDir = path.join(process.cwd(), 'src');
-  const files = findSourceFiles(sourceDir);
+  const sourceDir = path.join(process.cwd(), 'src')
+const files = findSourceFiles(sourceDir);
   
   console.log(`📁 Found ${files.length} source files to check`);
   
@@ -225,8 +224,8 @@ try {
   
   for (const filePath of files) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
-      const { content: fixedContent, changes } = fixParsingErrors(content, filePath);
+      const content = fs.readFileSync(filePath, 'utf8')
+const { content: fixedContent, changes } = fixParsingErrors(content, filePath);
       
       if (changes > 0) {
         fs.writeFileSync(filePath, fixedContent, 'utf8');

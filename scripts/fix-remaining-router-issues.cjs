@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const { _execSync } = require('child_process');
 
-console.warn('🔧 Fixing remaining React Router issues...\n');
-
+console.warn('🔧 Fixing remaining React Router issues...\n')
 const fixes = [
   // Fix files with useLocation
   {
@@ -157,8 +156,8 @@ try {
 }
 
 try {
-  const buildLog = fs.readFileSync('build-test-2.log', 'utf8');
-  const errorLines = buildLog.split('\n').filter(line => 
+  const buildLog = fs.readFileSync('build-test-2.log', 'utf8')
+const errorLines = buildLog.split('\n').filter(line => 
     line.includes('Type error') || 
     line.includes('Cannot find name') ||
     line.includes('Error:')

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Frontend Performance Fix Automation Script
 // Scans for anti-patterns and applies fixes or suggestions
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // TODO: Implement scanning for:

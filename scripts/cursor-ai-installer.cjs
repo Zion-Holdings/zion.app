@@ -7,10 +7,10 @@
  * with Cursor installed for distributed continuous improvement.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const os = require('os');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const os = require('os')
 const crypto = require('crypto');
 
 // Configuration
@@ -100,8 +100,7 @@ const INSTALL_CONFIG = {
     communicationPort: 3002,
     heartbeatInterval: 30000,
   },
-};
-
+}
 class CursorAIInstaller {
   constructor() {
     this.installedAssistants = new Map();
@@ -139,15 +138,13 @@ class CursorAIInstaller {
   async installOnRemoteComputers(computerList) {
     console.log(
       `Installing AI assistants on ${computerList.length} remote computers...`,
-    );
-
-    const results = [];
+    )
+const results = [];
 
     for (const computer of computerList) {
       try {
-        console.log(`Installing on ${computer.hostname} (${computer.ip})...`);
-
-        const result = await this.installOnRemoteComputer(computer);
+        console.log(`Installing on ${computer.hostname} (${computer.ip})...`)
+const result = await this.installOnRemoteComputer(computer);
         results.push({ computer, success: true, result });
 
         console.log(`✅ Installed on ${computer.hostname}`);
@@ -165,8 +162,8 @@ class CursorAIInstaller {
 
   async installOnRemoteComputer(computer) {
     // Create installation script
-    const installScript = this.generateInstallScript();
-    const scriptPath = `/tmp/cursor_ai_install_${Date.now()}.sh`;
+    const installScript = this.generateInstallScript()
+const scriptPath = `/tmp/cursor_ai_install_${Date.now()}.sh`;
 
     try {
       // Upload installation script
@@ -278,8 +275,8 @@ echo "Installation completed successfully!"
       fs.mkdirSync(configDir, { recursive: true });
     }
 
-    const configPath = path.join(configDir, `${assistant.name}.json`);
-    const config = {
+    const configPath = path.join(configDir, `${assistant.name}.json`)
+const config = {
       name: assistant.name,
       description: assistant.description,
       config: assistant.config,
@@ -291,9 +288,8 @@ echo "Installation completed successfully!"
   }
 
   async configureCursor() {
-    console.log('Configuring Cursor...');
-
-    const configDir = path.join(os.homedir(), '.cursor', 'config');
+    console.log('Configuring Cursor...')
+const configDir = path.join(os.homedir(), '.cursor', 'config');
 
     // Ensure config directory exists
     if (!fs.existsSync(configDir)) {
@@ -301,8 +297,8 @@ echo "Installation completed successfully!"
     }
 
     // Create main configuration
-    const mainConfigPath = path.join(configDir, 'cursor-config.json');
-    const mainConfig = {
+    const mainConfigPath = path.join(configDir, 'cursor-config.json')
+const mainConfig = {
       ...INSTALL_CONFIG.cursorConfig,
       aiAssistants: Array.from(this.installedAssistants.keys()),
       networkConfig: INSTALL_CONFIG.networkConfig,
@@ -312,8 +308,8 @@ echo "Installation completed successfully!"
     fs.writeFileSync(mainConfigPath, JSON.stringify(mainConfig, null, 2));
 
     // Create AI service configuration
-    const aiServiceConfigPath = path.join(configDir, 'ai-service.json');
-    const aiServiceConfig = {
+    const aiServiceConfigPath = path.join(configDir, 'ai-service.json')
+const aiServiceConfig = {
       enabled: true,
       assistants: Array.from(this.installedAssistants.values()).map(
         (assistant) => ({
@@ -436,10 +432,9 @@ echo "Installation completed successfully!"
   }
 
   async discoverComputers() {
-    console.log('Discovering computers with Cursor installed...');
-
-    const networkRange = this.getNetworkRange();
-    const discoveredComputers = [];
+    console.log('Discovering computers with Cursor installed...')
+const networkRange = this.getNetworkRange()
+const discoveredComputers = [];
 
     for (const ip of networkRange) {
       try {
@@ -458,8 +453,8 @@ echo "Installation completed successfully!"
   }
 
   getNetworkRange() {
-    const interfaces = os.networkInterfaces();
-    const ips = [];
+    const interfaces = os.networkInterfaces()
+const ips = [];
 
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
@@ -504,10 +499,10 @@ echo "Installation completed successfully!"
 
   async getComputerInfo(ip) {
     try {
-      const hostname = await this.executeRemoteCommand(ip, 'hostname');
-      const osInfo = await this.executeRemoteCommand(ip, 'uname -a');
-      const cpuInfo = await this.executeRemoteCommand(ip, 'nproc');
-      const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
+      const hostname = await this.executeRemoteCommand(ip, 'hostname')
+const osInfo = await this.executeRemoteCommand(ip, 'uname -a')
+const cpuInfo = await this.executeRemoteCommand(ip, 'nproc')
+const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
 
       return {
         ip,
@@ -530,9 +525,8 @@ echo "Installation completed successfully!"
   }
 
   async verifyInstallation() {
-    console.log('Verifying installation...');
-
-    const verificationResults = [];
+    console.log('Verifying installation...')
+const verificationResults = [];
 
     for (const [name, assistant] of this.installedAssistants) {
       try {
@@ -592,9 +586,8 @@ echo "Installation completed successfully!"
         networkDiscovery: 'active',
         continuousImprovement: 'enabled',
       },
-    };
-
-    const reportPath = path.join(
+    }
+const reportPath = path.join(
       process.cwd(),
       'logs',
       'cursor-ai-installation-report.json',
@@ -616,10 +609,9 @@ echo "Installation completed successfully!"
 
 // CLI interface
 if (require.main === module) {
-  const installer = new CursorAIInstaller();
-
-  const args = process.argv.slice(2);
-  const command = args[0];
+  const installer = new CursorAIInstaller()
+const args = process.argv.slice(2)
+const command = args[0];
 
   async function main() {
     try {
@@ -638,8 +630,8 @@ if (require.main === module) {
         case 'install-remote':
           const computerList = args
             .slice(1)
-            .map((ip) => ({ ip, hostname: ip }));
-          const results =
+            .map((ip) => ({ ip, hostname: ip }))
+const results =
             await installer.installOnRemoteComputers(computerList);
           console.log(
             `Installation completed: ${results.filter((r) => r.success).length}/${results.length} successful`,

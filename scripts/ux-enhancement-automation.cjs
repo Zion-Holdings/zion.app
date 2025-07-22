@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const chalk = require('chalk')
 class UXEnhancementAutomation {
   constructor() {
     this.config = {
@@ -69,10 +68,9 @@ class UXEnhancementAutomation {
 
   async analyzeUX() {
     try {
-      console.log(chalk.cyan('🎨 Analyzing user experience...'));
-      
-      const uxMetrics = await this.gatherUXMetrics();
-      const analysis = this.analyzeUXMetrics(uxMetrics);
+      console.log(chalk.cyan('🎨 Analyzing user experience...'))
+const uxMetrics = await this.gatherUXMetrics()
+const analysis = this.analyzeUXMetrics(uxMetrics);
       
       if (analysis.needsEnhancement) {
         console.log(chalk.yellow('⚠️  UX improvements needed. Starting enhancements...'));
@@ -113,10 +111,9 @@ class UXEnhancementAutomation {
   }
 
   async measureAccessibility() {
-    console.log(chalk.blue('  ♿ Measuring accessibility...'));
-    
-    const accessibilityIssues = [];
-    const sourceDirs = ['src', 'pages', 'components'];
+    console.log(chalk.blue('  ♿ Measuring accessibility...'))
+const accessibilityIssues = []
+const sourceDirs = ['src', 'pages', 'components'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -144,13 +141,12 @@ class UXEnhancementAutomation {
   }
 
   walkDirectory(dirPath, files) {
-    if (!fs.existsSync(dirPath)) return;
-    
-    const items = fs.readdirSync(dirPath);
+    if (!fs.existsSync(dirPath)) return
+const items = fs.readdirSync(dirPath);
     
     for (const item of items) {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.walkDirectory(fullPath, files);
@@ -166,8 +162,8 @@ class UXEnhancementAutomation {
   }
 
   scanFileForAccessibility(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Accessibility patterns to check
     const accessibilityPatterns = [
@@ -239,9 +235,8 @@ class UXEnhancementAutomation {
         bundleSize: Math.random() * 500 + 200, // 200-700KB
         imageOptimization: Math.random() * 20 + 80, // 80-100%
         caching: Math.random() * 15 + 85 // 85-100%
-      };
-      
-      const score = Math.max(0, 100 - 
+      }
+const score = Math.max(0, 100 - 
         (metrics.loadTime > 2000 ? 20 : 0) -
         (metrics.bundleSize > 500 ? 15 : 0) -
         (metrics.imageOptimization < 90 ? 10 : 0) -
@@ -290,10 +285,9 @@ class UXEnhancementAutomation {
   }
 
   async measureSEO() {
-    console.log(chalk.blue('  🔍 Measuring SEO...'));
-    
-    const seoIssues = [];
-    const pages = this.getAllPages();
+    console.log(chalk.blue('  🔍 Measuring SEO...'))
+const seoIssues = []
+const pages = this.getAllPages();
     
     for (const page of pages) {
       const issues = this.scanPageForSEO(page);
@@ -310,8 +304,8 @@ class UXEnhancementAutomation {
   }
 
   getAllPages() {
-    const pages = [];
-    const pagesDir = path.join(process.cwd(), 'pages');
+    const pages = []
+const pagesDir = path.join(process.cwd(), 'pages');
     
     if (fs.existsSync(pagesDir)) {
       this.walkDirectory(pagesDir, pages);
@@ -321,8 +315,8 @@ class UXEnhancementAutomation {
   }
 
   scanPageForSEO(pagePath) {
-    const issues = [];
-    const content = fs.readFileSync(pagePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(pagePath, 'utf8');
     
     // SEO patterns to check
     const seoPatterns = [
@@ -372,10 +366,9 @@ class UXEnhancementAutomation {
   }
 
   async measureMobileOptimization() {
-    console.log(chalk.blue('  📱 Measuring mobile optimization...'));
-    
-    const mobileIssues = [];
-    const sourceDirs = ['src', 'pages', 'components'];
+    console.log(chalk.blue('  📱 Measuring mobile optimization...'))
+const mobileIssues = []
+const sourceDirs = ['src', 'pages', 'components'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -397,8 +390,8 @@ class UXEnhancementAutomation {
   }
 
   scanFileForMobileOptimization(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Mobile optimization patterns
     const mobilePatterns = [
@@ -442,10 +435,9 @@ class UXEnhancementAutomation {
   }
 
   async measureBestPractices() {
-    console.log(chalk.blue('  ✅ Measuring best practices...'));
-    
-    const bestPracticeIssues = [];
-    const sourceDirs = ['src', 'pages', 'components'];
+    console.log(chalk.blue('  ✅ Measuring best practices...'))
+const bestPracticeIssues = []
+const sourceDirs = ['src', 'pages', 'components'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -467,8 +459,8 @@ class UXEnhancementAutomation {
   }
 
   scanFileForBestPractices(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Best practices patterns
     const bestPracticePatterns = [
@@ -509,10 +501,9 @@ class UXEnhancementAutomation {
   }
 
   async analyzeUserInterface() {
-    console.log(chalk.blue('  🎨 Analyzing user interface...'));
-    
-    const uiIssues = [];
-    const sourceDirs = ['src', 'pages', 'components'];
+    console.log(chalk.blue('  🎨 Analyzing user interface...'))
+const uiIssues = []
+const sourceDirs = ['src', 'pages', 'components'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -531,8 +522,8 @@ class UXEnhancementAutomation {
   }
 
   scanFileForUIIssues(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // UI improvement patterns
     const uiPatterns = [
@@ -568,10 +559,9 @@ class UXEnhancementAutomation {
   }
 
   async analyzeNavigation() {
-    console.log(chalk.blue('  🧭 Analyzing navigation...'));
-    
-    const navigationIssues = [];
-    const pages = this.getAllPages();
+    console.log(chalk.blue('  🧭 Analyzing navigation...'))
+const navigationIssues = []
+const pages = this.getAllPages();
     
     for (const page of pages) {
       const issues = this.scanPageForNavigationIssues(page);
@@ -585,8 +575,8 @@ class UXEnhancementAutomation {
   }
 
   scanPageForNavigationIssues(pagePath) {
-    const issues = [];
-    const content = fs.readFileSync(pagePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(pagePath, 'utf8');
     
     // Navigation patterns
     const navigationPatterns = [
@@ -621,10 +611,9 @@ class UXEnhancementAutomation {
   }
 
   async analyzeForms() {
-    console.log(chalk.blue('  📝 Analyzing forms...'));
-    
-    const formIssues = [];
-    const sourceDirs = ['src', 'pages', 'components'];
+    console.log(chalk.blue('  📝 Analyzing forms...'))
+const formIssues = []
+const sourceDirs = ['src', 'pages', 'components'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -643,8 +632,8 @@ class UXEnhancementAutomation {
   }
 
   scanFileForFormIssues(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Form improvement patterns
     const formPatterns = [
@@ -844,8 +833,8 @@ class UXEnhancementAutomation {
   async applyBestPracticeFix(issue) {
     try {
       if (issue.file && issue.description.includes('console.log')) {
-        const content = fs.readFileSync(issue.file, 'utf8');
-        const fixedContent = content.replace(/console\.log\([^)]*\);?/g, '');
+        const content = fs.readFileSync(issue.file, 'utf8')
+const fixedContent = content.replace(/console\.log\([^)]*\);?/g, '');
         fs.writeFileSync(issue.file, fixedContent);
         console.log(chalk.green(`    ✅ Removed console.log statements from ${issue.file}`));
       }
@@ -863,9 +852,8 @@ class UXEnhancementAutomation {
         uxTrend: this.calculateUXTrend()
       },
       history: this.uxHistory.slice(-10) // Last 10 analyses
-    };
-    
-    const reportPath = path.join(__dirname, '..', 'logs', 'ux-enhancement-report.json');
+    }
+const reportPath = path.join(__dirname, '..', 'logs', 'ux-enhancement-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
@@ -877,8 +865,8 @@ class UXEnhancementAutomation {
       return 'insufficient-data';
     }
     
-    const recent = this.uxHistory.slice(-3);
-    const improvements = recent.filter(entry => entry.enhancementsApplied > 0).length;
+    const recent = this.uxHistory.slice(-3)
+const improvements = recent.filter(entry => entry.enhancementsApplied > 0).length;
     
     if (improvements > recent.length / 2) {
       return 'improving';
@@ -901,8 +889,8 @@ class UXEnhancementAutomation {
 
 // CLI Interface
 if (require.main === module) {
-  const automation = new UXEnhancementAutomation();
-  const command = process.argv[2];
+  const automation = new UXEnhancementAutomation()
+const command = process.argv[2];
   
   switch (command) {
     case 'start':

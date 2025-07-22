@@ -5,10 +5,10 @@
  * Automatically detects and fixes common issues after builds
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const https = require('https');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
 const http = require('http');
 
 // Configuration
@@ -83,8 +83,7 @@ const CONFIG = {
     'https://zion-app.netlify.app/api/health',
     'https://zion-app.netlify.app/api/auth/health',
   ],
-};
-
+}
 class SelfHealingSystem {
   constructor() {
     this.isRunning = false;
@@ -103,8 +102,8 @@ class SelfHealingSystem {
   }
 
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
 
     // Console output
     console.log(logEntry.trim());
@@ -171,8 +170,8 @@ class SelfHealingSystem {
 
   async checkEndpoint(url) {
     return new Promise((resolve) => {
-      const protocol = url.startsWith('https:') ? https : http;
-      const req = protocol.get(url, { timeout: 10000 }, (res) => {
+      const protocol = url.startsWith('https:') ? https : http
+const req = protocol.get(url, { timeout: 10000 }, (res) => {
         resolve(res.statusCode >= 200 && res.statusCode < 500);
       });
 
@@ -189,8 +188,8 @@ class SelfHealingSystem {
 
     try {
       // Check if there's a recent build failure
-      const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH);
-      const recentErrors = this.extractRecentErrors(buildLog);
+      const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH)
+const recentErrors = this.extractRecentErrors(buildLog);
 
       if (recentErrors.length > 0) {
         this.log(`Found ${recentErrors.length} recent build errors`, 'error');
@@ -205,11 +204,10 @@ class SelfHealingSystem {
     this.log('Analyzing logs for patterns...');
 
     try {
-      const errorLog = this.readLogFile(CONFIG.ERROR_LOG_PATH);
-      const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH);
-
-      const allLogs = errorLog + '\n' + buildLog;
-      const detectedIssues = this.detectIssues(allLogs);
+      const errorLog = this.readLogFile(CONFIG.ERROR_LOG_PATH)
+const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH)
+const allLogs = errorLog + '\n' + buildLog
+const detectedIssues = this.detectIssues(allLogs);
 
       for (const issue of detectedIssues) {
         await this.triggerHealing(issue.type, issue.data);
@@ -414,8 +412,8 @@ class SelfHealingSystem {
       const clientPath = path.join(
         process.cwd(),
         'src/utils/supabase/client.ts',
-      );
-      const serverPath = path.join(
+      )
+const serverPath = path.join(
         process.cwd(),
         'src/utils/supabase/server.ts',
       );
@@ -470,8 +468,8 @@ class SelfHealingSystem {
         this.log('Created basic environment file');
       } else {
         // Verify environment file
-        const content = fs.readFileSync(envPath, 'utf8');
-        const fixedContent = this.fixEnvironmentContent(content);
+        const content = fs.readFileSync(envPath, 'utf8')
+const fixedContent = this.fixEnvironmentContent(content);
         fs.writeFileSync(envPath, fixedContent);
         this.log('Environment file verified and fixed');
       }
@@ -521,8 +519,8 @@ NODE_ENV=production
     this.log(`Restoring critical file: ${filePath}`);
 
     try {
-      const fullPath = path.join(process.cwd(), filePath);
-      const backupPath = `${fullPath}.backup`;
+      const fullPath = path.join(process.cwd(), filePath)
+const backupPath = `${fullPath}.backup`;
 
       if (fs.existsSync(backupPath)) {
         fs.copyFileSync(backupPath, fullPath);
@@ -655,9 +653,9 @@ module.exports = nextConfig`;
   }
 
   extractRecentErrors(logContent) {
-    const lines = logContent.split('\n');
-    const recentErrors = [];
-    const oneHourAgo = Date.now() - 60 * 60 * 1000;
+    const lines = logContent.split('\n')
+const recentErrors = []
+const oneHourAgo = Date.now() - 60 * 60 * 1000;
 
     for (const line of lines) {
       if (

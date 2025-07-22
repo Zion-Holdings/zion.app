@@ -5,10 +5,9 @@
  * Only fixes specific known issues without breaking the code
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class TargetedHealer {
   constructor() {
     this.logFile = 'logs/targeted-healer.log';
@@ -24,8 +23,8 @@ class TargetedHealer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -64,9 +63,8 @@ class TargetedHealer {
   }
 
   async applyTargetedFixes() {
-    this.log('Applying targeted fixes...');
-
-    const fixes = [
+    this.log('Applying targeted fixes...')
+const fixes = [
       this.fixSpecificUnusedVariables(),
       this.fixSpecificConsoleLogs(),
       this.fixSpecificImportIssues(),
@@ -99,8 +97,8 @@ class TargetedHealer {
     for (const file of specificFiles) {
       if (fs.existsSync(file)) {
         try {
-          const content = fs.readFileSync(file, 'utf8');
-          const lines = content.split('\n');
+          const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
           let modified = false;
 
           for (let i = 0; i < lines.length; i++) {
@@ -147,8 +145,8 @@ class TargetedHealer {
     for (const file of specificFiles) {
       if (fs.existsSync(file)) {
         try {
-          const content = fs.readFileSync(file, 'utf8');
-          const lines = content.split('\n');
+          const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
           let modified = false;
 
           for (let i = 0; i < lines.length; i++) {

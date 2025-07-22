@@ -9,11 +9,11 @@ class SystemDiagnostic {
       dependencies: {},
       connections: {},
       files: {},
-      overall: 'unknown''    };
+      overall: 'unknown'    };
   }
 
   async run() {
-    console.warn('🔧 Running System Diagnostic...\n');'    
+    console.warn('🔧 Running System Diagnostic...\n');    
     try {
       await this.checkEnvironment();
       await this.checkDependencies();
@@ -25,16 +25,15 @@ class SystemDiagnostic {
       
       return this.results;
     } catch (error) {
-      console.error('❌ Diagnostic failed:', error);'      this.results.overall = 'failed';'      return this.results;
+      console.error('❌ Diagnostic failed:', error);      this.results.overall = 'failed';'      return this.results;
     }
   }
 
   async checkEnvironment() {
-    console.warn('🌍 Checking Environment Variables...');'    
-    const requiredVars = [
-      'SLACK_BOT_TOKEN','      'SLACK_WEBHOOK_URL','      'SLACK_CHANNEL''    ];
-    
-    const optionalVars = [
+    console.warn('🌍 Checking Environment Variables...')
+const requiredVars = [
+      'SLACK_BOT_TOKEN','      'SLACK_WEBHOOK_URL','      'SLACK_CHANNEL''    ]
+const optionalVars = [
       'CURSOR_API_KEY','      'OPTIMIZATION_THRESHOLD','      'PERFORMANCE_CHECK_INTERVAL''    ];
     
     for (const varName of requiredVars) {
@@ -53,11 +52,11 @@ class SystemDiagnostic {
       };
     }
     
-    console.warn('✅ Environment check complete\n');'  }
+    console.warn('✅ Environment check complete\n');  }
 
   async checkDependencies() {
-    console.warn('📦 Checking Dependencies...');'    
-    const dependencies = [
+    console.warn('📦 Checking Dependencies...')
+const dependencies = [
       '@slack/bolt','      '@slack/web-api','      'axios','      'express','      'dotenv''    ];
     
     for (const dep of dependencies) {
@@ -69,14 +68,13 @@ class SystemDiagnostic {
       }
     }
     
-    console.warn('✅ Dependencies check complete\n');'  }
+    console.warn('✅ Dependencies check complete\n');  }
 
   async checkFiles() {
-    console.warn('📁 Checking Required Files...');'    
-    const requiredFiles = [
-      'automation/index.js','      'automation/slack/slack-bot.js','      'automation/performance/monitor.js','      '.cursor/rules/optimization/performance-optimization-agent.mdc','      '.cursor/rules/automation/slack-cursor-integration-agent.mdc''    ];
-    
-    const optionalFiles = [
+    console.warn('📁 Checking Required Files...')
+const requiredFiles = [
+      'automation/index.js','      'automation/slack/slack-bot.js','      'automation/performance/monitor.js','      '.cursor/rules/optimization/performance-optimization-agent.mdc','      '.cursor/rules/automation/slack-cursor-integration-agent.mdc''    ]
+const optionalFiles = [
       '.env','      'automation/.env.example','      'automation/package.json''    ];
     
     for (const file of requiredFiles) {
@@ -99,10 +97,10 @@ class SystemDiagnostic {
       }
     }
     
-    console.warn('✅ Files check complete\n');'  }
+    console.warn('✅ Files check complete\n');  }
 
   async checkConnections() {
-    console.warn('🔗 Checking Connections...');'    
+    console.warn('🔗 Checking Connections...');    
     // Test Slack webhook
     if (process.env.SLACK_WEBHOOK_URL) {
       try {
@@ -137,11 +135,11 @@ class SystemDiagnostic {
         status: 'not_running','        error: 'Automation server not running' '      };
     }
     
-    console.warn('✅ Connections check complete\n');'  }
+    console.warn('✅ Connections check complete\n');  }
 
   async testSlackWebhook() {
     const payload = {
-      text: '🔧 System diagnostic test - please ignore','      username: 'System Diagnostic','      icon_emoji: ':gear:''    };
+      text: '🔧 System diagnostic test - please ignore','      username: 'System Diagnostic','      icon_emoji: ':gear:'    };
     
     await axios.post(process.env.SLACK_WEBHOOK_URL, payload, {
       timeout: 5000
@@ -167,25 +165,25 @@ class SystemDiagnostic {
     
     // Check required environment variables
     for (const [_key, config] of Object.entries(this.results.environment)) {
-      if (config.required && config.status === 'missing') {'        score -= 20;
+      if (config.required && config.status === 'missing') {        score -= 20;
       }
     }
     
     // Check required files
     for (const [_key, config] of Object.entries(this.results.files)) {
-      if (config.required && config.status === 'missing') {'        score -= 15;
+      if (config.required && config.status === 'missing') {        score -= 15;
       }
     }
     
     // Check dependencies
     for (const [_key, config] of Object.entries(this.results.dependencies)) {
-      if (config.status === 'missing') {'        score -= 10;
+      if (config.status === 'missing') {        score -= 10;
       }
     }
     
     // Check connections
     for (const [_key, config] of Object.entries(this.results.connections)) {
-      if (config.status === 'failed') {'        score -= 5;
+      if (config.status === 'failed') {        score -= 5;
       }
     }
     
@@ -199,35 +197,35 @@ class SystemDiagnostic {
   }
 
   printResults() {
-    console.warn('📊 Diagnostic Results');'    console.warn('==========================================\n');'    
+    console.warn('📊 Diagnostic Results');    console.warn('==========================================\n');    
     // Overall status
     const statusEmoji = {
-      excellent: '🟢','      good: '🟡','      fair: '🟠','      poor: '🔴','      failed: '❌''    };
+      excellent: '🟢','      good: '🟡','      fair: '🟠','      poor: '🔴','      failed: '❌'    };
     
     console.warn(`Overall Status: ${statusEmoji[this.results.overall]} ${this.results.overall.toUpperCase()} (${this.results.score}/100)`);
-    console.warn('');'    
+    console.warn('');    
     // Environment Variables
-    console.warn('🌍 Environment Variables:');'    for (const [key, config] of Object.entries(this.results.environment)) {
+    console.warn('🌍 Environment Variables:');    for (const [key, config] of Object.entries(this.results.environment)) {
       const status = config.status === 'configured' ? '✅' : '                    config.status === 'missing' ? '❌' : '⚠️';'      const required = config.required ? '(required)' : '(optional)';'      console.warn(`  ${status} ${key} ${required}: ${config.status}`);
     }
-    console.warn('');'    
+    console.warn('');    
     // Dependencies
-    console.warn('📦 Dependencies:');'    for (const [key, config] of Object.entries(this.results.dependencies)) {
+    console.warn('📦 Dependencies:');    for (const [key, config] of Object.entries(this.results.dependencies)) {
       const status = config.status === 'installed' ? '✅' : '❌';'      console.warn(`  ${status} ${key}: ${config.status}`);
     }
-    console.warn('');'    
+    console.warn('');    
     // Files
-    console.warn('📁 Required Files:');'    for (const [key, config] of Object.entries(this.results.files)) {
+    console.warn('📁 Required Files:');    for (const [key, config] of Object.entries(this.results.files)) {
       if (config.required) {
         const status = config.status === 'exists' ? '✅' : '❌';'        console.warn(`  ${status} ${key}: ${config.status}`);
       }
     }
-    console.warn('');'    
+    console.warn('');    
     // Connections
-    console.warn('🔗 Connections:');'    for (const [key, config] of Object.entries(this.results.connections)) {
+    console.warn('🔗 Connections:');    for (const [key, config] of Object.entries(this.results.connections)) {
       const status = config.status === 'connected' ? '✅' : '                    config.status === 'not_configured' ? '⚠️' : '❌';'      console.warn(`  ${status} ${key}: ${config.status}`);
     }
-    console.warn('');'    
+    console.warn('');    
     // Recommendations
     this.printRecommendations();
   }
@@ -237,32 +235,32 @@ class SystemDiagnostic {
     
     // Check for missing required environment variables
     for (const [key, config] of Object.entries(this.results.environment)) {
-      if (config.required && config.status === 'missing') {'        issues.push(`Configure ${key} in your .env file`);
+      if (config.required && config.status === 'missing') {        issues.push(`Configure ${key} in your .env file`);
       }
     }
     
     // Check for missing dependencies
     for (const [key, config] of Object.entries(this.results.dependencies)) {
-      if (config.status === 'missing') {'        issues.push(`Install missing dependency: npm install ${key}`);
+      if (config.status === 'missing') {        issues.push(`Install missing dependency: npm install ${key}`);
       }
     }
     
     // Check for missing files
     for (const [key, config] of Object.entries(this.results.files)) {
-      if (config.required && config.status === 'missing') {'        issues.push(`Create missing file: ${key}`);
+      if (config.required && config.status === 'missing') {        issues.push(`Create missing file: ${key}`);
       }
     }
     
     if (issues.length > 0) {
-      console.warn('🛠️ Recommendations:');'      issues.forEach((issue, index) => {
+      console.warn('🛠️ Recommendations:');      issues.forEach((issue, index) => {
         console.warn(`  ${index + 1}. ${issue}`);
       });
-      console.warn('');'    }
+      console.warn('');    }
     
-    console.warn('🚀 Next Steps:');'    if (this.results.overall === 'excellent') {'      console.warn('  • System is ready! Start with: npm run automation:start');'    } else if (this.results.overall === 'good') {'      console.warn('  • Address minor issues above, then start the system');'    } else {
-      console.warn('  • Fix critical issues above before starting');'      console.warn('  • Run setup script: ./automation/scripts/setup.sh');'      console.warn('  • Configure environment variables in .env file');'    }
+    console.warn('🚀 Next Steps:');    if (this.results.overall === 'excellent') {      console.warn('  • System is ready! Start with: npm run automation:start');    } else if (this.results.overall === 'good') {      console.warn('  • Address minor issues above, then start the system');    } else {
+      console.warn('  • Fix critical issues above before starting');      console.warn('  • Run setup script: ./automation/scripts/setup.sh');      console.warn('  • Configure environment variables in .env file');    }
     
-    console.warn('  • View documentation: automation/README.md');'    console.warn('  • Test connections: npm run automation:test-slack');'  }
+    console.warn('  • View documentation: automation/README.md');    console.warn('  • Test connections: npm run automation:test-slack');  }
 
   async saveResults() {
     const reportPath = path.join(process.cwd(), 'logs', 'diagnostic-report.json');'    await fs.writeFile(reportPath, JSON.stringify(this.results, null, 2));
@@ -276,9 +274,9 @@ if (require.main === module) {
   diagnostic.run()
     .then(async (results) => {
       await diagnostic.saveResults();
-      process.exit(results.overall === 'failed' ? 1 : 0);'    })
+      process.exit(results.overall === 'failed' ? 1 : 0);    })
     .catch(error => {
-      console.error('❌ Diagnostic failed:', error);'      process.exit(1);
+      console.error('❌ Diagnostic failed:', error);      process.exit(1);
     });
 }
 

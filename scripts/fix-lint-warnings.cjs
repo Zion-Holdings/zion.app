@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { _execSync } = require('child_process');
 
 // Function to fix unused variables by prefixing with underscore
@@ -85,8 +85,8 @@ function processDirectory(dirPath) {
   const files = fs.readdirSync(dirPath);
 
   for (const file of files) {
-    const filePath = path.join(dirPath, file);
-    const stat = fs.statSync(filePath);
+    const filePath = path.join(dirPath, file)
+const stat = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
       // Skip node_modules and other directories

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class PerformanceOptimizer {
   constructor() {
     this.optimizations = 0;
@@ -11,8 +10,8 @@ class PerformanceOptimizer {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString();
-    const colors = {
+    const timestamp = new Date().toISOString()
+const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
@@ -32,9 +31,8 @@ class PerformanceOptimizer {
   }
 
   async optimizeImages() {
-    this.log('🖼️ Optimizing images...', 'info');
-
-    const imageDirs = ['public/images', 'public/logos'];
+    this.log('🖼️ Optimizing images...', 'info')
+const imageDirs = ['public/images', 'public/logos'];
     for (const dir of imageDirs) {
       if (fs.existsSync(dir)) {
         const files = fs
@@ -118,8 +116,8 @@ class PerformanceOptimizer {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime;
-    const report = {
+    const runtime = Date.now() - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       runtime: runtime,
       optimizations: this.optimizations,

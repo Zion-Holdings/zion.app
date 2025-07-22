@@ -6,9 +6,9 @@
  * Tests the AI-driven continuous improvement system
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 const axios = require('axios');
 
 // Configuration
@@ -54,8 +54,7 @@ const CONFIG = {
       },
     },
   ],
-};
-
+}
 class AIDelegationTest {
   constructor() {
     this.testResults = [];
@@ -150,9 +149,8 @@ class AIDelegationTest {
    * Test service availability
    */
   async testServiceAvailability() {
-    console.log('🌐 Testing service availability...');
-
-    const services = [
+    console.log('🌐 Testing service availability...')
+const services = [
       {
         name: 'AI Improvement System',
         url: `${CONFIG.ENDPOINTS.AI_IMPROVEMENT}/health`,
@@ -201,12 +199,12 @@ class AIDelegationTest {
     // Test Cursor API connection
     if (process.env.CURSOR_API_KEY) {
       try {
-        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs');
-        const aiSystem = new AIContinuousImprovementSystem();
+        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs')
+const aiSystem = new AIContinuousImprovementSystem();
 
         // Test API call
-        const testPrompt = 'Test connection';
-        const response = await aiSystem.callCursorAPI(testPrompt);
+        const testPrompt = 'Test connection'
+const response = await aiSystem.callCursorAPI(testPrompt);
 
         if (response) {
           this.logTest('PASS', 'Cursor API connection successful');
@@ -222,16 +220,15 @@ class AIDelegationTest {
 
     // Test AI suggestion generation
     try {
-      const CursorAIDelegator = require('./cursor-ai-delegator.cjs');
-      const delegator = new CursorAIDelegator();
+      const CursorAIDelegator = require('./cursor-ai-delegator.cjs')
+const delegator = new CursorAIDelegator();
 
       // Test prompt building
       const testTask = {
         type: 'code_analysis',
         data: { files: ['test.tsx'] },
-      };
-
-      const prompt = delegator.buildTaskPrompt(testTask);
+      }
+const prompt = delegator.buildTaskPrompt(testTask);
 
       if (prompt && prompt.includes('code_analysis')) {
         this.logTest('PASS', 'AI prompt building works correctly');
@@ -253,8 +250,8 @@ class AIDelegationTest {
 
     // Test task submission
     try {
-      const testTask = CONFIG.TEST_TASKS[0];
-      const response = await axios.post(
+      const testTask = CONFIG.TEST_TASKS[0]
+const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         testTask,
         {
@@ -264,9 +261,8 @@ class AIDelegationTest {
       );
 
       if (response.status === 200 && response.data.taskId) {
-        this.logTest('PASS', 'Task submission successful');
-
-        const taskId = response.data.taskId;
+        this.logTest('PASS', 'Task submission successful')
+const taskId = response.data.taskId;
 
         // Test task status checking
         await this.testTaskStatus(taskId);
@@ -365,9 +361,8 @@ class AIDelegationTest {
       const invalidTask = {
         type: 'invalid_type',
         data: {},
-      };
-
-      const response = await axios.post(
+      }
+const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         invalidTask,
         {
@@ -407,12 +402,10 @@ class AIDelegationTest {
    * Generate test report
    */
   async generateTestReport() {
-    console.log('📊 Generating test report...');
-
-    const endTime = Date.now();
-    const duration = endTime - this.startTime;
-
-    const report = {
+    console.log('📊 Generating test report...')
+const endTime = Date.now()
+const duration = endTime - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       duration: duration,
       summary: {
@@ -435,9 +428,8 @@ class AIDelegationTest {
         masterNode: process.env.MASTER_NODE === 'true',
         nodeId: process.env.NODE_ID || 'unknown',
       },
-    };
-
-    const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
+    }
+const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Print summary
@@ -477,9 +469,8 @@ class AIDelegationTest {
       timestamp: new Date().toISOString(),
     };
 
-    this.testResults.push(result);
-
-    const statusIcon = {
+    this.testResults.push(result)
+const statusIcon = {
       PASS: '✅',
       FAIL: '❌',
       WARN: '⚠️',

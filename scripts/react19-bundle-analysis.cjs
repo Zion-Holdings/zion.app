@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
 // React 19 Bundle Analysis Tool
-const fs = require('fs');
+const fs = require('fs')
 const _path = require('path');
 
-// console.warn('🚀 React 19 Bundle Analysis Starting...\n');
-
+// console.warn('🚀 React 19 Bundle Analysis Starting...\n')
 const bundleAnalysis = {
   // Analyze React 19 specific optimizations
   analyzeReact19Features() {
-    // console.warn('📊 React 19 Feature Analysis:');
-
-    const features = [
+    // console.warn('📊 React 19 Feature Analysis:')
+const features = [
       { name: 'Concurrent Features', enabled: true, impact: 'High' },
       { name: 'Automatic Batching', enabled: true, impact: 'Medium' },
       { name: 'Suspense Improvements', enabled: true, impact: 'High' },
@@ -29,9 +27,8 @@ const bundleAnalysis = {
 
   // Analyze bundle size improvements with React 19
   analyzeBundleSize() {
-    // console.warn('📦 Bundle Size Analysis:');
-
-    const _buildPath = '.next';
+    // console.warn('📦 Bundle Size Analysis:')
+const _buildPath = '.next';
     if (fs.existsSync(_buildPath)) {
       const _stats = this.getBundleStats(_buildPath);
       // console.warn(`  📄 Total JS Bundle: ${_stats.totalJS} KB`);
@@ -56,9 +53,8 @@ const bundleAnalysis = {
 
   // Check for React 19 optimization opportunities
   checkOptimizations() {
-    // console.warn('🔍 React 19 Optimization Opportunities:');
-
-    const opportunities = [
+    // console.warn('🔍 React 19 Optimization Opportunities:')
+const opportunities = [
       {
         area: 'Component Memoization',
         current: 'Basic memo usage',
@@ -115,9 +111,8 @@ const bundleAnalysis = {
         'Optimize component memoization with React 19 patterns',
         'Consider concurrent features for data fetching',
       ],
-    };
-
-    const reportPath = 'react19-analysis-report.json';
+    }
+const reportPath = 'react19-analysis-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     // console.warn(`📋 Detailed report saved to: ${reportPath}`);
   },

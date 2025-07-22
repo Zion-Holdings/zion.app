@@ -7,14 +7,13 @@
  * across multiple computers for automated app improvement and real-time collaboration.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const os = require('os');
-const https = require('https');
-const http = require('http');
-const WebSocket = require('ws');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const os = require('os')
+const https = require('https')
+const http = require('http')
+const WebSocket = require('ws')
 class CursorMultiComputerCommunication {
   constructor() {
     this.config = {
@@ -47,8 +46,8 @@ class CursorMultiComputerCommunication {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [${this.config.computerId}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] [${this.config.computerId}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
@@ -249,8 +248,8 @@ class CursorMultiComputerCommunication {
   }
 
   async processLocalRequest(method, url, body) {
-    const parsedUrl = new URL(url, `http://localhost:${this.config.localPort}`);
-    const path = parsedUrl.pathname;
+    const parsedUrl = new URL(url, `http://localhost:${this.config.localPort}`)
+const path = parsedUrl.pathname;
 
     switch (path) {
       case '/status':
@@ -554,9 +553,8 @@ class CursorMultiComputerCommunication {
   broadcastChatRequest(chatData) {
     this.log(
       `📡 Broadcasting chat request to ${this.workerNodes.size} worker nodes`,
-    );
-
-    const message = JSON.stringify({
+    )
+const message = JSON.stringify({
       type: 'chat_request',
       ...chatData,
     });
@@ -576,9 +574,8 @@ class CursorMultiComputerCommunication {
   broadcastFixRequest(fixData) {
     this.log(
       `📡 Broadcasting fix request to ${this.workerNodes.size} worker nodes`,
-    );
-
-    const message = JSON.stringify({
+    )
+const message = JSON.stringify({
       type: 'fix_request',
       ...fixData,
     });
@@ -783,9 +780,8 @@ module.exports = CursorMultiComputerCommunication;
 
 // Main execution
 if (require.main === module) {
-  const communication = new CursorMultiComputerCommunication();
-
-  const command = process.argv[2];
+  const communication = new CursorMultiComputerCommunication()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

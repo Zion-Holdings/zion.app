@@ -1,5 +1,5 @@
 #!/usr/bin/env node;
-import _process from 'process';';
+import _process from 'process';'
 const {
   NETLIFY_AUTH_TOKEN: token,
   NETLIFY_PRIMARY_DOMAIN: domain,
@@ -8,17 +8,17 @@ const {
 } = _process.env;
 
 if (!token || !domain || !greenId || !blueId) {
-  console.error('Missing Netlify environment variables');'  _process.exit(1);
+  console.error('Missing Netlify environment variables');  _process.exit(1);
 }
-;
+
 const headers = {
   'Content-Type': 'application/json','  Authorization: `Bearer ${token}`,
 };
 
 async function siteHasDomain(siteId) {
   const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains`, { headers });
-  if (!res.ok) throw new Error(`Failed to fetch domains for ${siteId}: ${res.statusText}`);
-  const domains = await res.json();
+  if (!res.ok) throw new Error(`Failed to fetch domains for ${siteId}: ${res.statusText}`)
+const domains = await res.json();
   return domains.some((d) => d.name === domain);
 }
 
@@ -45,9 +45,9 @@ async function removeDomain(siteId) {
 }
 ;
 export async function switchNetlifySite() {
-  const greenActive = await siteHasDomain(greenId);
-  const newSite = greenActive ? blueId : greenId;
-  const oldSite = greenActive ? greenId : blueId;
+  const greenActive = await siteHasDomain(greenId)
+const newSite = greenActive ? blueId : greenId
+const oldSite = greenActive ? greenId : blueId;
 
   console.warn(`Switching ${domain} from ${oldSite} to ${newSite}`);
 
@@ -55,12 +55,12 @@ export async function switchNetlifySite() {
   try {
     assigned = await assignDomain(newSite);
     await removeDomain(oldSite);
-    console.warn('DNS switch complete');'  } catch {
+    console.warn('DNS switch complete');  } catch {
     if (assigned) {
       try {
         await removeDomain(newSite);
-        console.warn('Rolled back domain assignment to new site');'      } catch (_rollbackErr) {
-        console.error('Failed to rollback new site assignment:', rollbackErr);'      }
+        console.warn('Rolled back domain assignment to new site');      } catch (_rollbackErr) {
+        console.error('Failed to rollback new site assignment:', rollbackErr);      }
     }
     throw err;
   }

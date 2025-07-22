@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const https = require('https');
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
-const os = require('os');
-
+const http = require('http')
+const https = require('https')
+const fs = require('fs')
+const path = require('path')
+const { spawn } = require('child_process')
+const os = require('os')
 class PersistentAICommunication {
   constructor() {
     this.computerId = `${os.hostname()}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -128,9 +127,8 @@ class PersistentAICommunication {
           Authorization: `Bearer ${this.config.apiKey}`,
           'User-Agent': 'PersistentAICommunication/1.0',
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -173,9 +171,8 @@ class PersistentAICommunication {
   }
 
   async sendHeartbeat() {
-    if (!this.isConnected) return;
-
-    const heartbeat = {
+    if (!this.isConnected) return
+const heartbeat = {
       computerId: this.computerId,
       timestamp: Date.now(),
       uptime: process.uptime(),
@@ -191,8 +188,8 @@ class PersistentAICommunication {
     if (!this.config.enableActivityMonitoring) return;
 
     setInterval(() => {
-      const now = Date.now();
-      const timeSinceLastActivity = now - this.lastActivity;
+      const now = Date.now()
+const timeSinceLastActivity = now - this.lastActivity;
 
       if (timeSinceLastActivity > this.activityTimeout) {
         this.logger.warn('⚠️ No activity detected, sending keepalive');
@@ -204,9 +201,8 @@ class PersistentAICommunication {
   }
 
   startFileWatching() {
-    if (!this.config.enableFileWatching) return;
-
-    const watchPaths = ['src', 'pages', 'components', 'utils', 'scripts'];
+    if (!this.config.enableFileWatching) return
+const watchPaths = ['src', 'pages', 'components', 'utils', 'scripts'];
 
     watchPaths.forEach((dir) => {
       if (fs.existsSync(dir)) {
@@ -324,9 +320,8 @@ class PersistentAICommunication {
           Authorization: `Bearer ${this.config.apiKey}`,
           'User-Agent': 'PersistentAICommunication/1.0',
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let responseData = '';
         res.on('data', (chunk) => (responseData += chunk));
         res.on('end', () => {
@@ -371,8 +366,8 @@ class PersistentAICommunication {
 
   checkBuildRequirements() {
     // Check if build is needed
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-    const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
 
     if (hasBuildScript) {
       this.logger.info('🔨 Build script detected, notifying AI');

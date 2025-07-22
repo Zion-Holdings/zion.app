@@ -10,7 +10,7 @@
  * - Testing reconnection scenarios
  */
 
-const WebSocket = require('ws');
+const WebSocket = require('ws')
 const http = require('http');
 
 // Configuration
@@ -24,8 +24,7 @@ const CONFIG = {
     'System health check',
     'Performance test message',
   ],
-};
-
+}
 class ChatReconnectionTester {
   constructor() {
     this.connections = [];
@@ -234,10 +233,9 @@ class ChatReconnectionTester {
   }
 
   async testMultiComputerSimulation() {
-    console.log('\n🖥️ Testing Multi-Computer Simulation...');
-
-    const computers = [];
-    const computerCount = 5;
+    console.log('\n🖥️ Testing Multi-Computer Simulation...')
+const computers = []
+const computerCount = 5;
 
     try {
       // Create multiple simulated computers
@@ -309,8 +307,8 @@ class ChatReconnectionTester {
 
   async makeHttpRequest(path, method = 'GET', body = null) {
     return new Promise((resolve, reject) => {
-      const url = new URL(path, CONFIG.CHAT_SERVER);
-      const options = {
+      const url = new URL(path, CONFIG.CHAT_SERVER)
+const options = {
         hostname: url.hostname,
         port: url.port,
         path: url.pathname,
@@ -318,9 +316,8 @@ class ChatReconnectionTester {
         headers: {
           'Content-Type': 'application/json',
         },
-      };
-
-      const req = http.request(options, (res) => {
+      }
+const req = http.request(options, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -376,16 +373,14 @@ class ChatReconnectionTester {
 
   printTestResults() {
     console.log('\n📊 Test Results Summary');
-    console.log('========================');
-
-    const allTests = [
+    console.log('========================')
+const allTests = [
       ...this.testResults.httpTests,
       ...this.testResults.websocketTests,
       ...this.testResults.reconnectionTests,
-    ];
-
-    const passed = allTests.filter((test) => test.success).length;
-    const total = allTests.length;
+    ]
+const passed = allTests.filter((test) => test.success).length
+const total = allTests.length;
 
     console.log(`✅ Passed: ${passed}/${total}`);
     console.log(`❌ Failed: ${total - passed}/${total}`);

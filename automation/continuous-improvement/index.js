@@ -7,9 +7,13 @@
  * by analyzing code quality, performance, security, and user experience.
  * It integrates with Cursor AI to suggest and implement improvements.
  */
-;
-const fs = require('fs');'const path = require('path');'const { execSync, spawn } = require('child_process');'const https = require('https');'const http = require('http');'
-// Configuration;
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
+const http = require('http');'
+// Configuration
 const CONFIG = {
   // Monitoring intervals (in milliseconds)
   INTERVALS: {
@@ -40,8 +44,7 @@ const CONFIG = {
     LIGHTHOUSE_URL: process.env.LIGHTHOUSE_URL || 'http://localhost:3000','    ERROR_TRACKING_URL: process.env.ERROR_TRACKING_URL,
     ANALYTICS_URL: process.env.ANALYTICS_URL,
   }
-};
-
+}
 class ContinuousImprovementSystem {
   constructor() {
     this.isRunning = false;
@@ -54,29 +57,27 @@ class ContinuousImprovementSystem {
    * Initialize the continuous improvement system
    */
   async initialize() {
-    console.log('🚀 Initializing Zion App Continuous Improvement System...');'    
+    console.log('🚀 Initializing Zion App Continuous Improvement System...');    
     // Validate configuration
-    this.validateConfig();
-    
-    // Setup monitoring
+    this.validateConfig()
+// Setup monitoring
     await this.setupMonitoring();
     
     // Start the improvement loop
     this.startImprovementLoop();
     
-    console.log('✅ Continuous Improvement System initialized successfully');'  }
+    console.log('✅ Continuous Improvement System initialized successfully');  }
 
   /**
    * Validate system configuration
    */
   validateConfig() {
     const requiredEnvVars = [
-      'CURSOR_API_KEY','      'CURSOR_WORKSPACE_ID''    ];
-
-    const missing = requiredEnvVars.filter(varName => !process.env[varName]);
+      'CURSOR_API_KEY','      'CURSOR_WORKSPACE_ID''    ]
+const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     
     if (missing.length > 0) {
-      console.warn(`⚠️  Missing environment variables: ${missing.join(', ')}`);'      console.warn('Some features may be limited without proper configuration');'    }
+      console.warn(`⚠️  Missing environment variables: ${missing.join(', ')}`);'      console.warn('Some features may be limited without proper configuration');    }
   }
 
   /**
@@ -118,12 +119,10 @@ class ContinuousImprovementSystem {
    * Start the main improvement loop
    */
   startImprovementLoop() {
-    this.isRunning = true;
-    
-    const loop = () => {
-      if (!this.isRunning) return;
-
-      const now = Date.now();
+    this.isRunning = true
+const loop = () => {
+      if (!this.isRunning) return
+const now = Date.now();
       
       // Check each monitor
       for (const [name, monitor] of this.monitors) {
@@ -149,7 +148,7 @@ class ContinuousImprovementSystem {
    * Monitor code quality and trigger improvements
    */
   async monitorCodeQuality() {
-    console.log('🔍 Monitoring code quality...');'    
+    console.log('🔍 Monitoring code quality...');    
     try {
       // Run linting
       const lintResults = await this.runLinting();
@@ -180,14 +179,14 @@ class ContinuousImprovementSystem {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring code quality:', error);'    }
+      console.error('❌ Error monitoring code quality:', error);    }
   }
 
   /**
    * Monitor performance and trigger improvements
    */
   async monitorPerformance() {
-    console.log('⚡ Monitoring performance...');'    
+    console.log('⚡ Monitoring performance...');    
     try {
       // Run Lighthouse audit
       const lighthouseResults = await this.runLighthouseAudit();
@@ -215,14 +214,14 @@ class ContinuousImprovementSystem {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring performance:', error);'    }
+      console.error('❌ Error monitoring performance:', error);    }
   }
 
   /**
    * Monitor security and trigger improvements
    */
   async monitorSecurity() {
-    console.log('🔒 Monitoring security...');'    
+    console.log('🔒 Monitoring security...');    
     try {
       // Run security audit
       const securityAudit = await this.runSecurityAudit();
@@ -248,14 +247,14 @@ class ContinuousImprovementSystem {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring security:', error);'    }
+      console.error('❌ Error monitoring security:', error);    }
   }
 
   /**
    * Monitor user experience and trigger improvements
    */
   async monitorUserExperience() {
-    console.log('👥 Monitoring user experience...');'    
+    console.log('👥 Monitoring user experience...');    
     try {
       // Check error rates
       const errorRates = await this.checkErrorRates();
@@ -286,14 +285,14 @@ class ContinuousImprovementSystem {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring user experience:', error);'    }
+      console.error('❌ Error monitoring user experience:', error);    }
   }
 
   /**
    * Monitor dependencies and trigger improvements
    */
   async monitorDependencies() {
-    console.log('📦 Monitoring dependencies...');'    
+    console.log('📦 Monitoring dependencies...');    
     try {
       // Check for outdated packages
       const outdatedPackages = await this.checkOutdatedPackages();
@@ -319,7 +318,7 @@ class ContinuousImprovementSystem {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring dependencies:', error);'    }
+      console.error('❌ Error monitoring dependencies:', error);    }
   }
 
   /**
@@ -328,8 +327,8 @@ class ContinuousImprovementSystem {
   async queueImprovement(type, improvement) {
     const improvementId = `${type}_${Date.now()}`;
     
-    // Check if we've recently processed this type of improvement'    const lastImprovement = this.lastImprovements.get(type);
-    const timeSinceLastImprovement = lastImprovement ? Date.now() - lastImprovement : Infinity;
+    // Check if we've recently processed this type of improvement'    const lastImprovement = this.lastImprovements.get(type)
+const timeSinceLastImprovement = lastImprovement ? Date.now() - lastImprovement : Infinity;
     
     // Prevent spam by limiting improvement frequency
     if (timeSinceLastImprovement < 300000) { // 5 minutes
@@ -350,9 +349,8 @@ class ContinuousImprovementSystem {
    * Process the improvement queue
    */
   async processImprovementQueue() {
-    if (this.improvementQueue.length === 0) return;
-
-    const improvement = this.improvementQueue.shift();
+    if (this.improvementQueue.length === 0) return
+const improvement = this.improvementQueue.shift();
     
     try {
       console.log(`🔄 Processing improvement: ${improvement.id}`);
@@ -370,7 +368,7 @@ class ContinuousImprovementSystem {
     } catch (error) {
       console.error(`❌ Error processing improvement ${improvement.id}:`, error);
       
-      // Re-queue for retry if it's not a critical error'      if (improvement.severity !== 'critical') {'        this.improvementQueue.push(improvement);
+      // Re-queue for retry if it's not a critical error'      if (improvement.severity !== 'critical') {        this.improvementQueue.push(improvement);
       }
     }
   }
@@ -379,9 +377,8 @@ class ContinuousImprovementSystem {
    * Generate improvement suggestions using Cursor AI
    */
   async generateImprovementSuggestions(improvement) {
-    console.log(`🤖 Generating suggestions for ${improvement.type} improvement...`);
-    
-    const prompt = this.buildImprovementPrompt(improvement);
+    console.log(`🤖 Generating suggestions for ${improvement.type} improvement...`)
+const prompt = this.buildImprovementPrompt(improvement);
     
     try {
       // Call Cursor AI API
@@ -389,7 +386,7 @@ class ContinuousImprovementSystem {
       
       return this.parseCursorResponse(response);
     } catch (error) {
-      console.error('❌ Error generating suggestions:', error);'      return [];
+      console.error('❌ Error generating suggestions:', error);      return [];
     }
   }
 
@@ -436,16 +433,14 @@ Provide your response in JSON format with the following structure:
         prompt,
         workspace_id: CONFIG.CURSOR.WORKSPACE_ID,
         model: 'gpt-4','        temperature: 0.3
-      });
-
-      const options = {
+      })
+const options = {
         hostname: new URL(CONFIG.CURSOR.API_ENDPOINT).hostname,
         port: 443,
         path: '/api/chat','        method: 'POST','        headers: {
           'Content-Type': 'application/json','          'Authorization': `Bearer ${CONFIG.CURSOR.API_KEY}`,'          'Content-Length': data.length'        }
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let responseData = '';'        
         res.on('data', (chunk) => {'          responseData += chunk;
         });
@@ -459,7 +454,7 @@ Provide your response in JSON format with the following structure:
         });
       });
 
-      req.on('error', reject);'      req.write(data);
+      req.on('error', reject);      req.write(data);
       req.end();
     });
   }
@@ -470,13 +465,13 @@ Provide your response in JSON format with the following structure:
   parseCursorResponse(response) {
     try {
       if (response.choices && response.choices[0] && response.choices[0].message) {
-        const content = response.choices[0].message.content;
-        const parsed = JSON.parse(content);
+        const content = response.choices[0].message.content
+const parsed = JSON.parse(content);
         return parsed.improvements || [];
       }
       return [];
     } catch (error) {
-      console.error('❌ Error parsing Cursor response:', error);'      return [];
+      console.error('❌ Error parsing Cursor response:', error);      return [];
     }
   }
 
@@ -522,13 +517,13 @@ Provide your response in JSON format with the following structure:
       return;
     }
 
-    let content = fs.readFileSync(suggestion.file, 'utf8');'    
+    let content = fs.readFileSync(suggestion.file, 'utf8');    
     for (const change of suggestion.changes) {
       switch (change.action) {
         case 'add':'          content += '\n' + change.content;'          break;
         case 'modify':'          content = content.replace(change.target, change.content);
           break;
-        case 'remove':'          content = content.replace(change.target, '');'          break;
+        case 'remove':'          content = content.replace(change.target, '');          break;
         case 'replace':'          content = content.replace(change.target, change.content);
           break;
       }
@@ -543,7 +538,7 @@ Provide your response in JSON format with the following structure:
    */
   async applyDependencyUpdate(suggestion) {
     for (const change of suggestion.changes) {
-      if (change.action === 'add' || change.action === 'modify') {'        try {
+      if (change.action === 'add' || change.action === 'modify') {        try {
           execSync(`npm install ${change.content}`, { stdio: 'inherit' });'          console.log(`✅ Installed/updated dependency: ${change.content}`);
         } catch (error) {
           console.error(`❌ Error installing dependency: ${change.content}`, error);
@@ -574,8 +569,8 @@ Provide your response in JSON format with the following structure:
       execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });'      
       // Push to main branch
       execSync('git push origin main', { stdio: 'inherit' });'      
-      console.log('✅ Changes committed and pushed successfully');'    } catch (error) {
-      console.error('❌ Error committing/pushing changes:', error);'    }
+      console.log('✅ Changes committed and pushed successfully');    } catch (error) {
+      console.error('❌ Error committing/pushing changes:', error);    }
   }
 
   // Monitoring helper methods
@@ -583,8 +578,8 @@ Provide your response in JSON format with the following structure:
     try {
       const result = execSync('npm run lint', { encoding: 'utf8' });'      return { errors: 0, warnings: 0 };
     } catch (error) {
-      const output = error.stdout || error.stderr || '';'      const errors = (output.match(/error/g) || []).length;
-      const warnings = (output.match(/warning/g) || []).length;
+      const output = error.stdout || error.stderr || '';'      const errors = (output.match(/error/g) || []).length
+const warnings = (output.match(/warning/g) || []).length;
       return { errors, warnings };
     }
   }
@@ -701,7 +696,7 @@ Provide your response in JSON format with the following structure:
    * Stop the continuous improvement system
    */
   stop() {
-    console.log('🛑 Stopping Continuous Improvement System...');'    this.isRunning = false;
+    console.log('🛑 Stopping Continuous Improvement System...');    this.isRunning = false;
   }
 }
 
@@ -713,16 +708,16 @@ if (require.main === module) {
   const system = new ContinuousImprovementSystem();
   
   // Handle graceful shutdown
-  process.on('SIGINT', () => {'    console.log('\n🛑 Received SIGINT, shutting down gracefully...');'    system.stop();
+  process.on('SIGINT', () => {'    console.log('\n🛑 Received SIGINT, shutting down gracefully...');    system.stop();
     process.exit(0);
   });
 
-  process.on('SIGTERM', () => {'    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');'    system.stop();
+  process.on('SIGTERM', () => {'    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');    system.stop();
     process.exit(0);
   });
 
   // Start the system
   system.initialize().catch(error => {
-    console.error('❌ Failed to initialize Continuous Improvement System:', error);'    process.exit(1);
+    console.error('❌ Failed to initialize Continuous Improvement System:', error);    process.exit(1);
   });
 } 

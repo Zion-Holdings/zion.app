@@ -4,14 +4,14 @@
  * Production Verification Script
  * Tests key routes to ensure no global rendering failures
  */
-;
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';';
+
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';'
 const ROUTES_TO_TEST = [
   '/','  '/about','  '/marketplace', '  '/services','  '/contact','  '/login','  '/signup''];
-;
+
 const ERROR_PATTERNS = [
   'Something went wrong','  'Error: supabaseUrl is required','  'Sentry DSN is missing','  'ChunkLoadError','  'Uncaught','  'TypeError','  'ReferenceError','  'Error boundary','  'has-error''];
-;
+
 const SUCCESS_PATTERNS = [
   'next/head','  '__NEXT_DATA__','  'react','  '<div id="__next"','  '<main','  '<body''];
 
@@ -28,7 +28,7 @@ async function testRoute(route) {
         route,
         success: false,
         error: `HTTP ${response.status}: ${response.statusText}`,
-        type: 'http_error''      };
+        type: 'http_error'      };
     }
 
     const html = await response.text();
@@ -42,7 +42,7 @@ async function testRoute(route) {
       return {
         route,
         success: false,
-        error: `Found error patterns: ${foundErrors.join(', ')}`,'        type: 'rendering_error''      };
+        error: `Found error patterns: ${foundErrors.join(', ')}`,'        type: 'rendering_error'      };
     }
 
     // Check for success patterns (at least 2 should be present)
@@ -54,7 +54,7 @@ async function testRoute(route) {
       return {
         route,
         success: false,
-        error: `Page appears incomplete. Found patterns: ${foundSuccess.join(', ')}`,'        type: 'structure_error''      };
+        error: `Page appears incomplete. Found patterns: ${foundSuccess.join(', ')}`,'        type: 'structure_error'      };
     }
 
     // Check HTML size (should be substantial for a real page)
@@ -63,7 +63,7 @@ async function testRoute(route) {
         route,
         success: false,
         error: `Page too small (${html.length} chars), might be an error page`,
-        type: 'size_error''      };
+        type: 'size_error'      };
     }
 
     return {
@@ -75,7 +75,7 @@ async function testRoute(route) {
     return {
       route,
       success: false,
-      error: 'Error occurred','      type: 'network_error''    };
+      error: 'Error occurred','      type: 'network_error'    };
   }
 }
 

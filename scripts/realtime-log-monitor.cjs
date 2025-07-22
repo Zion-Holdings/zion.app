@@ -5,8 +5,8 @@
  * Provides live monitoring of logs with real-time alerts and health scoring
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const _spawn = require('child_process');
 
 // Configuration
@@ -21,8 +21,7 @@ const CONFIG = {
   },
   maxLogLines: 1000,
   dashboardRefreshRate: 1000, // 1 second
-};
-
+}
 class RealtimeLogMonitor {
   constructor() {
     this.stats = {
@@ -117,13 +116,12 @@ class RealtimeLogMonitor {
    */
   processNewLogData(filePath, oldSize, newSize) {
     try {
-      const fd = fs.openSync(filePath, 'r');
-      const buffer = Buffer.alloc(newSize - oldSize);
+      const fd = fs.openSync(filePath, 'r')
+const buffer = Buffer.alloc(newSize - oldSize);
       fs.readSync(fd, buffer, 0, buffer.length, oldSize);
-      fs.closeSync(fd);
-
-      const newData = buffer.toString();
-      const lines = newData.split('\n').filter((line) => line.trim());
+      fs.closeSync(fd)
+const newData = buffer.toString()
+const lines = newData.split('\n').filter((line) => line.trim());
 
       lines.forEach((line) =>
         this.processLogLine(line, path.basename(filePath)),
@@ -151,9 +149,8 @@ class RealtimeLogMonitor {
    * Process structured log entry
    */
   processStructuredEntry(entry, filename) {
-    this.stats.totalEntries++;
-
-    const logEntry = {
+    this.stats.totalEntries++
+const logEntry = {
       timestamp: entry.timestamp || new Date().toISOString(),
       level: entry.level || 'info',
       message: entry.message || '',
@@ -172,9 +169,8 @@ class RealtimeLogMonitor {
    * Process plain text log entry
    */
   processPlainTextEntry(line, filename) {
-    this.stats.totalEntries++;
-
-    const logEntry = {
+    this.stats.totalEntries++
+const logEntry = {
       timestamp: new Date().toISOString(),
       level: this.detectLogLevel(line),
       message: line,
@@ -296,11 +292,11 @@ class RealtimeLogMonitor {
     }
 
     // Error rate alert
-    const recentEntries = this.stats.recentEntries.slice(0, 100);
-    const errorCount = recentEntries.filter(
+    const recentEntries = this.stats.recentEntries.slice(0, 100)
+const errorCount = recentEntries.filter(
       (e) => e.level === 'error' || e.level === 'critical',
-    ).length;
-    const errorRate = errorCount / Math.max(recentEntries.length, 1);
+    ).length
+const errorRate = errorCount / Math.max(recentEntries.length, 1);
 
     if (errorRate > CONFIG.alertThresholds.errorRate) {
       this.addAlert(
@@ -358,16 +354,15 @@ class RealtimeLogMonitor {
    * Update health score
    */
   updateHealthScore() {
-    let score = 100;
-
-    const recentCount = Math.min(this.stats.recentEntries.length, 100);
-    const criticalCount = this.stats.recentEntries
+    let score = 100
+const recentCount = Math.min(this.stats.recentEntries.length, 100)
+const criticalCount = this.stats.recentEntries
       .slice(0, recentCount)
-      .filter((e) => e.level === 'critical').length;
-    const errorCount = this.stats.recentEntries
+      .filter((e) => e.level === 'critical').length
+const errorCount = this.stats.recentEntries
       .slice(0, recentCount)
-      .filter((e) => e.level === 'error').length;
-    const warningCount = this.stats.recentEntries
+      .filter((e) => e.level === 'error').length
+const warningCount = this.stats.recentEntries
       .slice(0, recentCount)
       .filter((e) => e.level === 'warn').length;
 
@@ -393,10 +388,9 @@ class RealtimeLogMonitor {
    */
   renderDashboard() {
     // Clear screen
-    // process.stdout.write('\x1Bc');
-
-    const now = new Date();
-    const _uptime = Math.floor((now - this.startTime) / 1000);
+    // process.stdout.write('\x1Bc')
+const now = new Date()
+const _uptime = Math.floor((now - this.startTime) / 1000);
 
     // console.warn('═'.repeat(80));
     // console.warn('🔥 ZION APP - REAL-TIME LOG MONITOR');
@@ -424,9 +418,9 @@ class RealtimeLogMonitor {
     // console.warn('\n📝 RECENT LOG ENTRIES:');
     // console.warn('─'.repeat(50));
     this.stats.recentEntries.slice(0, 10).forEach((entry) => {
-      const _icon = this.getLevelIcon(entry.level);
-      const _time = new Date(entry.timestamp).toLocaleTimeString();
-      const _message =
+      const _icon = this.getLevelIcon(entry.level)
+const _time = new Date(entry.timestamp).toLocaleTimeString()
+const _message =
         entry.message.length > 60
           ? entry.message.substring(0, 60) + '...'
           : entry.message;
@@ -435,10 +429,10 @@ class RealtimeLogMonitor {
 
     // Performance metrics
     // console.warn('\n⚡ PERFORMANCE METRICS:');
-    // console.warn('─'.repeat(50));
-    const recentEntries = this.stats.recentEntries.slice(0, 100);
-    const _avgMemory = this.calculateAverageMemory(recentEntries);
-    const _avgDuration = this.calculateAverageDuration(recentEntries);
+    // console.warn('─'.repeat(50))
+const recentEntries = this.stats.recentEntries.slice(0, 100)
+const _avgMemory = this.calculateAverageMemory(recentEntries)
+const _avgDuration = this.calculateAverageDuration(recentEntries);
 
     // console.warn(`📊 Avg Memory: ${_avgMemory}MB | Avg Response: ${_avgDuration}ms`);
     // console.warn(`📊 Error Rate: ${this.calculateErrorRate(recentEntries)}%`);
@@ -478,9 +472,8 @@ class RealtimeLogMonitor {
     const memoryEntries = entries.filter(
       (e) => e.metadata && e.metadata.memoryUsage,
     );
-    if (memoryEntries.length === 0) return 0;
-
-    const total = memoryEntries.reduce(
+    if (memoryEntries.length === 0) return 0
+const total = memoryEntries.reduce(
       (sum, e) => sum + e.metadata.memoryUsage,
       0,
     );
@@ -494,9 +487,8 @@ class RealtimeLogMonitor {
     const durationEntries = entries.filter(
       (e) => e.metadata && e.metadata.duration,
     );
-    if (durationEntries.length === 0) return 0;
-
-    const total = durationEntries.reduce(
+    if (durationEntries.length === 0) return 0
+const total = durationEntries.reduce(
       (sum, e) => sum + e.metadata.duration,
       0,
     );
@@ -507,9 +499,8 @@ class RealtimeLogMonitor {
    * Calculate error rate
    */
   calculateErrorRate(entries) {
-    if (entries.length === 0) return 0;
-
-    const errorCount = entries.filter(
+    if (entries.length === 0) return 0
+const errorCount = entries.filter(
       (e) => e.level === 'error' || e.level === 'critical',
     ).length;
     return ((errorCount / entries.length) * 100).toFixed(1);

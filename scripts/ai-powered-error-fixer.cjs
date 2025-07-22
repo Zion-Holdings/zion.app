@@ -14,10 +14,9 @@
  * - Security errors
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class AIPoweredErrorFixer {
   constructor() {
     this.projectRoot = process.cwd();
@@ -70,9 +69,8 @@ class AIPoweredErrorFixer {
    * Perform initial error scan
    */
   async performInitialErrorScan() {
-    console.log('🔍 Performing initial error scan...');
-
-    const errorScans = [
+    console.log('🔍 Performing initial error scan...')
+const errorScans = [
       this.scanTypeScriptErrors(),
       this.scanESLintErrors(),
       this.scanBuildErrors(),
@@ -81,9 +79,8 @@ class AIPoweredErrorFixer {
       this.scanDependencyErrors(),
       this.scanPerformanceErrors(),
       this.scanSecurityErrors(),
-    ];
-
-    const results = await Promise.allSettled(errorScans);
+    ]
+const results = await Promise.allSettled(errorScans);
 
     for (const result of results) {
       if (result.status === 'fulfilled') {
@@ -132,9 +129,8 @@ class AIPoweredErrorFixer {
    * Scan for new errors
    */
   async scanForNewErrors() {
-    const newErrors = [];
-
-    const errorScans = [
+    const newErrors = []
+const errorScans = [
       this.scanTypeScriptErrors(),
       this.scanESLintErrors(),
       this.scanBuildErrors(),
@@ -143,9 +139,8 @@ class AIPoweredErrorFixer {
       this.scanDependencyErrors(),
       this.scanPerformanceErrors(),
       this.scanSecurityErrors(),
-    ];
-
-    const results = await Promise.allSettled(errorScans);
+    ]
+const results = await Promise.allSettled(errorScans);
 
     for (const result of results) {
       if (result.status === 'fulfilled') {
@@ -165,9 +160,8 @@ class AIPoweredErrorFixer {
    * Fix all errors
    */
   async fixAllErrors() {
-    console.log(`🔧 Fixing ${this.errors.length} errors...`);
-
-    const fixes = [
+    console.log(`🔧 Fixing ${this.errors.length} errors...`)
+const fixes = [
       this.fixTypeScriptErrors(),
       this.fixESLintErrors(),
       this.fixBuildErrors(),
@@ -176,9 +170,8 @@ class AIPoweredErrorFixer {
       this.fixDependencyErrors(),
       this.fixPerformanceErrors(),
       this.fixSecurityErrors(),
-    ];
-
-    const results = await Promise.allSettled(fixes);
+    ]
+const results = await Promise.allSettled(fixes);
 
     for (const result of results) {
       if (result.status === 'fulfilled' && result.value) {
@@ -215,8 +208,8 @@ class AIPoweredErrorFixer {
       return [];
     } catch (error) {
       const output =
-        error.stdout?.toString() || error.stderr?.toString() || error.message;
-      const errors = this.parseTypeScriptErrors(output);
+        error.stdout?.toString() || error.stderr?.toString() || error.message
+const errors = this.parseTypeScriptErrors(output);
       return errors.map((error) => ({
         type: 'typescript',
         severity: 'error',
@@ -234,10 +227,9 @@ class AIPoweredErrorFixer {
     try {
       const output = execSync('npm run lint -- --format=json 2>&1', {
         stdio: 'pipe',
-      }).toString();
-      const results = JSON.parse(output);
-
-      const errors = [];
+      }).toString()
+const results = JSON.parse(output)
+const errors = [];
       for (const file of results) {
         for (const message of file.messages) {
           if (message.severity === 2) {
@@ -298,15 +290,15 @@ class AIPoweredErrorFixer {
 
     try {
       // Check for runtime errors in logs
-      const logsDir = path.join(this.projectRoot, 'logs');
-      const errors = [];
+      const logsDir = path.join(this.projectRoot, 'logs')
+const errors = [];
 
       if (fs.existsSync(logsDir)) {
         const files = fs.readdirSync(logsDir);
         for (const file of files) {
           if (file.endsWith('.log')) {
-            const content = fs.readFileSync(path.join(logsDir, file), 'utf8');
-            const errorMatches = content.match(/error|Error|ERROR/g);
+            const content = fs.readFileSync(path.join(logsDir, file), 'utf8')
+const errorMatches = content.match(/error|Error|ERROR/g);
             if (errorMatches) {
               errors.push({
                 type: 'runtime',
@@ -395,8 +387,8 @@ class AIPoweredErrorFixer {
       try {
         const auditOutput = execSync('npm audit --json', {
           stdio: 'pipe',
-        }).toString();
-        const audit = JSON.parse(auditOutput);
+        }).toString()
+const audit = JSON.parse(auditOutput);
 
         if (audit.vulnerabilities > 0) {
           errors.push({
@@ -462,9 +454,8 @@ class AIPoweredErrorFixer {
         /document\.write/,
         /localStorage\s*\[/,
         /sessionStorage\s*\[/,
-      ];
-
-      const sourceFiles = this.findSourceFiles();
+      ]
+const sourceFiles = this.findSourceFiles();
 
       for (const file of sourceFiles) {
         const content = fs.readFileSync(file, 'utf8');
@@ -632,8 +623,8 @@ class AIPoweredErrorFixer {
    * Helper methods
    */
   parseTypeScriptErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
+    const errors = []
+const lines = output.split('\n');
 
     for (const line of lines) {
       if (line.includes('error TS')) {
@@ -655,16 +646,15 @@ class AIPoweredErrorFixer {
   }
 
   findSourceFiles() {
-    const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-
-    const walkDir = (dir) => {
+    const files = []
+const extensions = ['.ts', '.tsx', '.js', '.jsx']
+const walkDir = (dir) => {
       try {
         const items = fs.readdirSync(dir);
 
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (
             stat.isDirectory() &&

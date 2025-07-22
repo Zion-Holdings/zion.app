@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync } = require('child_process');
 
 console.log('🔧 Ultimate Final Fix - Addressing All Remaining Issues...');
@@ -26,7 +26,7 @@ try {
 }
 
 // 2. Clean up problematic directories
-console.log('\n2. Cleaning up problematic directories...');
+console.log('\n2. Cleaning up problematic directories...')
 const problematicDirs = [
   'ai-improvement-data',
   'automation-data',
@@ -47,7 +47,7 @@ problematicDirs.forEach((dir) => {
 });
 
 // 3. Fix Next.js configuration
-console.log('\n3. Fixing Next.js configuration...');
+console.log('\n3. Fixing Next.js configuration...')
 const nextConfig = `module.exports = {
   reactStrictMode: true,
   swcMinify: false,
@@ -159,10 +159,9 @@ console.log('✅ Created health API endpoint');
 // 7. Create a simple dev server script
 const devServerContent = `#!/usr/bin/env node
 
-const express = require('express');
-const path = require('path');
-
-const app = express();
+const express = require('express')
+const path = require('path')
+const app = express()
 const PORT = process.env.PORT || 3001;
 
 // Serve static files
@@ -251,7 +250,7 @@ fs.writeFileSync('public/index.html', htmlContent);
 console.log('✅ Created simple HTML file');
 
 // 9. Final status report
-console.log('\n9. Generating final status report...');
+console.log('\n9. Generating final status report...')
 const finalStatus = {
   timestamp: new Date().toISOString(),
   status: 'SUCCESS',

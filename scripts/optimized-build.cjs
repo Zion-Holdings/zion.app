@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const { execSync, spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const { execSync, spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 const {
   runPreDeployChecks,
   analyzeAndReport,
@@ -136,8 +136,8 @@ try {
 
 async function _main() {
   try {
-    // console.warn("\n🔍 Running Pre-Deployment Checks...");
-    const preCheckResults = await runPreDeployChecks();
+    // console.warn("\n🔍 Running Pre-Deployment Checks...")
+const preCheckResults = await runPreDeployChecks();
     if (
       preCheckResults.warnings.some(
         (w) =>
@@ -183,8 +183,8 @@ async function _main() {
     });
 
     _buildProcess.on('close', (code) => {
-      const endTime = Date.now();
-      const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
+      const endTime = Date.now()
+const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
 
       if (code === 0) {
         // console.warn("\n✅ Enhanced build completed successfully!");
@@ -205,11 +205,10 @@ async function _main() {
         }
 
         // Post-build verification
-        // console.warn("\n🔍 Verifying build output...");
-
-        const _nextDir = path.join(process.cwd(), '.next');
-        const _serverDir = path.join(_nextDir, 'server');
-        const _staticDir = path.join(_nextDir, 'static');
+        // console.warn("\n🔍 Verifying build output...")
+const _nextDir = path.join(process.cwd(), '.next')
+const _serverDir = path.join(_nextDir, 'server')
+const _staticDir = path.join(_nextDir, 'static');
 
         // console.warn(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
         // console.warn(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
@@ -241,8 +240,8 @@ async function _main() {
           if (fs.existsSync(_buildManifest)) {
             const manifest = JSON.parse(
               fs.readFileSync(_buildManifest, 'utf8'),
-            );
-            const _pageCount = Object.keys(manifest.pages || {}).length;
+            )
+const _pageCount = Object.keys(manifest.pages || {}).length;
             // console.warn(`- Total pages in manifest: ${_pageCount}`);
           }
         } catch (_manifestError) {
@@ -326,8 +325,8 @@ async function runBuildWorkflow() {
 
 async function executeBuildSequence() {
   try {
-    // console.warn("\n🔍 Running Pre-Deployment Checks...");
-    const preCheckResults = await runPreDeployChecks();
+    // console.warn("\n🔍 Running Pre-Deployment Checks...")
+const preCheckResults = await runPreDeployChecks();
     if (
       preCheckResults.warnings.some(
         (w) =>
@@ -347,8 +346,8 @@ async function executeBuildSequence() {
   }
 
   try {
-    // console.warn("\n🔍 Pre-build validation...");
-    const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
+    // console.warn("\n🔍 Pre-build validation...")
+const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
     if (fs.existsSync(_nextConfigPath)) {
       // console.warn("✅ next.config.js found");
     } else {
@@ -369,8 +368,8 @@ async function executeBuildSequence() {
 
     _buildProcess.on('close', async (code) => {
       // Made this handler async
-      const endTime = Date.now();
-      const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
+      const endTime = Date.now()
+const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
 
       if (code === 0) {
         // console.warn("\n✅ Enhanced build completed successfully!");
@@ -389,10 +388,10 @@ async function executeBuildSequence() {
           }
         }
 
-        // console.warn("\n🔍 Verifying build output...");
-        const _nextDir = path.join(process.cwd(), '.next');
-        const _serverDir = path.join(_nextDir, 'server');
-        const _staticDir = path.join(_nextDir, 'static');
+        // console.warn("\n🔍 Verifying build output...")
+const _nextDir = path.join(process.cwd(), '.next')
+const _serverDir = path.join(_nextDir, 'server')
+const _staticDir = path.join(_nextDir, 'static');
         // console.warn(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
         // console.warn(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
         // console.warn(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
@@ -404,8 +403,8 @@ async function executeBuildSequence() {
 
         // Apply Netlify self fix
         try {
-          // console.warn("\n🔧 Applying Netlify self reference fix...");
-          const netlifyFix = require('./netlify-self-fix.cjs');
+          // console.warn("\n🔧 Applying Netlify self reference fix...")
+const netlifyFix = require('./netlify-self-fix.cjs');
           netlifyFix.main();
           // console.warn("✅ Netlify self fix applied successfully.");
         } catch (_fixError) {

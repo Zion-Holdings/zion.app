@@ -6,10 +6,9 @@
  * Uses pattern matching and AI-like logic to fix complex syntax errors
  */
 
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const chalk = require('chalk')
 class AISyntaxFixer {
   constructor() {
     this.fixesApplied = 0;
@@ -146,10 +145,9 @@ class AISyntaxFixer {
   }
 
   async fixAllFiles() {
-    this.log('🔧 Starting AI-powered syntax fixing...', 'info');
-    
-    const srcDir = path.join(process.cwd(), 'src');
-    const files = this.getAllFiles(srcDir);
+    this.log('🔧 Starting AI-powered syntax fixing...', 'info')
+const srcDir = path.join(process.cwd(), 'src')
+const files = this.getAllFiles(srcDir);
     
     let filesFixed = 0;
     
@@ -164,13 +162,12 @@ class AISyntaxFixer {
   }
 
   getAllFiles(dir) {
-    const files = [];
-    
-    const walkDir = (currentDir) => {
+    const files = []
+const walkDir = (currentDir) => {
       const items = fs.readdirSync(currentDir);
       for (const item of items) {
-        const fullPath = path.join(currentDir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(currentDir, item)
+const stat = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
           walkDir(fullPath);

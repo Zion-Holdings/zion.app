@@ -1,18 +1,18 @@
  
 // Linter workaround: define unused variables to satisfy no-undef errors
-// These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.;
-const _PERF_ERROR_REGEX = undefined;
-const _perfErrorStreak = undefined; // Unused undefined;
-const _SECURITY_PATCH_REGEX = undefined;
-const _securityPatchStreak = undefined; // Unused undefined;
+// These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
+const _PERF_ERROR_REGEX = undefined
+const _perfErrorStreak = undefined; // Unused undefined
+const _SECURITY_PATCH_REGEX = undefined
+const _securityPatchStreak = undefined; // Unused undefined
 const _HEAL_COMMAND = undefined;
- ;
+ 
 const _reason = undefined;
- ;
+ 
 const _done = undefined;
- ;
+ 
 const os = require('os-utils'); // This will be the mocked version due to jest.mock'const { _exec } = require('child_process'); // This will be the mocked version'const axios = require('axios'); // This will be the mocked version'
-// Import functions and state helpers from the refactored watchdog.js;
+// Import functions and state helpers from the refactored watchdog.js
 const {
   monitorSystemResources,
   sendDiscordAlert,
@@ -25,15 +25,15 @@ const {
   _getConstantsForTests
 } = require('./watchdog');'
 // Mock external dependencies
-jest.mock('os-utils');'jest.mock('child_process');'jest.mock('axios');'
+jest.mock('os-utils');jest.mock('child_process');jest.mock('axios');
 // Mock functions from watchdog.js that are called by other watchdog.js functions
 // We achieve this by requiring the module and then spying/mocking its exported methods.
 // For functions like triggerSelfHeal being called by monitorSystemResources,
 // we need to mock `triggerSelfHeal` within the module's own scope.'
-// These are the actual mock function implementations that tests will spy on/assert against.;
-const mockTriggerSelfHealImpl = jest.fn();
-const mockSendDiscordAlertImpl = jest.fn();
-const mockAppendToSelfHealLogImpl = jest.fn();
+// These are the actual mock function implementations that tests will spy on/assert against.
+const mockTriggerSelfHealImpl = jest.fn()
+const mockSendDiscordAlertImpl = jest.fn()
+const mockAppendToSelfHealLogImpl = jest.fn()
 const mockLogErrorImpl = jest.fn();
 
 // No top-level jest.mock('./watchdog', ...) anymore. Spies will be set up per-suite.'
@@ -49,11 +49,11 @@ describe('Watchdog Script Tests', () => {'  let _consoleLogSpy, _consoleWarnSpy,
 
     // Clear specific external mocks
     axios.post.mockClear();
-    exec.mockClear();
-    const os = require('os-utils'); // Get the mock from __mocks__'    os.memUsage.mockClear();
+    exec.mockClear()
+const os = require('os-utils'); // Get the mock from __mocks__'    os.memUsage.mockClear();
     os.cpuUsage.mockClear();
 
-    actualWatchdogModule = jest.requireActual('./watchdog');'    actualWatchdogModule._resetStateForTests();
+    actualWatchdogModule = jest.requireActual('./watchdog');    actualWatchdogModule._resetStateForTests();
 
     jest.useFakeTimers();
     _consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});'    _consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});'    _consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});'
@@ -189,7 +189,7 @@ describe('Watchdog Script Tests', () => {'  let _consoleLogSpy, _consoleWarnSpy,
   describe('triggerSelfHeal (actual implementation)', () => {'    let _actualTriggerSelfHeal, _actual_getStateForTests, _actual_setStateForTests, _actual_getConstantsForTests, localConstants;
 
     beforeEach(() => {
-        const actualWatchdogModule = jest.requireActual('./watchdog');'        _actualTriggerSelfHeal = actualWatchdogModule.triggerSelfHeal;
+        const actualWatchdogModule = jest.requireActual('./watchdog');        _actualTriggerSelfHeal = actualWatchdogModule.triggerSelfHeal;
         _actual_getStateForTests = actualWatchdogModule._getStateForTests;
         _actual_setStateForTests = actualWatchdogModule._setStateForTests;
         _actual_getConstantsForTests = actualWatchdogModule._getConstantsForTests;

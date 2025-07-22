@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class SimpleWorkingApp {
   constructor() {
     this.fixes = [];
@@ -61,10 +60,9 @@ class SimpleWorkingApp {
 
     try {
       // Create a simple HTML server
-      const serverContent = `const express = require('express');
-const path = require('path');
-
-const app = express();
+      const serverContent = `const express = require('express')
+const path = require('path')
+const app = express()
 const PORT = 3001;
 
 // Health check endpoint

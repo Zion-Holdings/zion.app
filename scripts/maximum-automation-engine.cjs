@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
 class MaximumAutomationEngine {
   constructor() {
     this.processes = new Map();
@@ -21,8 +20,8 @@ class MaximumAutomationEngine {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString();
-    const colors = {
+    const timestamp = new Date().toISOString()
+const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
@@ -192,9 +191,8 @@ class MaximumAutomationEngine {
         command: 'node',
         args: ['scripts/ultimate-automation-master.cjs'],
       },
-    };
-
-    const config = processMap[name];
+    }
+const config = processMap[name];
     if (config) {
       await this.startProcess(name, config.command, config.args);
     }

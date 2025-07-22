@@ -7,8 +7,8 @@
  * by performing various maintenance tasks and optimizations.
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const http = require('http');
 
 // Configuration
@@ -19,8 +19,7 @@ const CONFIG = {
   MAX_LOG_AGE: 7 * 24 * 60 * 60 * 1000, // 7 days
   OPTIMIZATION_INTERVAL: 300000, // 5 minutes
   CLEANUP_INTERVAL: 3600000, // 1 hour
-};
-
+}
 class ChatReconnectionOptimizer {
   constructor() {
     this.optimizations = [];
@@ -79,9 +78,8 @@ class ChatReconnectionOptimizer {
   }
 
   async performOptimization() {
-    console.log('🔧 Performing system optimization...');
-
-    const optimizations = [
+    console.log('🔧 Performing system optimization...')
+const optimizations = [
       this.optimizeLogFiles,
       this.optimizeMemoryUsage,
       this.optimizeNetworkConnections,
@@ -105,9 +103,8 @@ class ChatReconnectionOptimizer {
   }
 
   async optimizeLogFiles() {
-    console.log('📋 Optimizing log files...');
-
-    const logFiles = [
+    console.log('📋 Optimizing log files...')
+const logFiles = [
       'logs/chat-reconnection.log',
       'logs/chat-reconnection.err',
       'logs/chat-reconnection.out',
@@ -115,9 +112,9 @@ class ChatReconnectionOptimizer {
 
     for (const logFile of logFiles) {
       if (fs.existsSync(logFile)) {
-        const stats = fs.statSync(logFile);
-        const size = stats.size;
-        const age = Date.now() - stats.mtime.getTime();
+        const stats = fs.statSync(logFile)
+const size = stats.size
+const age = Date.now() - stats.mtime.getTime();
 
         // Rotate if too large
         if (size > CONFIG.MAX_LOG_SIZE) {
@@ -135,15 +132,15 @@ class ChatReconnectionOptimizer {
   }
 
   async rotateLogFile(logFile) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const backupFile = `${logFile}.${timestamp}`;
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+const backupFile = `${logFile}.${timestamp}`;
 
     // Read current log
     const content = fs.readFileSync(logFile, 'utf8');
 
     // Keep only last 1000 lines
-    const lines = content.split('\n');
-    const recentLines = lines.slice(-1000).join('\n');
+    const lines = content.split('\n')
+const recentLines = lines.slice(-1000).join('\n');
 
     // Write backup
     fs.writeFileSync(backupFile, content);
@@ -162,8 +159,8 @@ class ChatReconnectionOptimizer {
     }
 
     // Check memory usage
-    const memUsage = process.memoryUsage();
-    const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
+    const memUsage = process.memoryUsage()
+const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
 
     if (heapUsedMB > 100) {
       console.log(`⚠️ High memory usage: ${heapUsedMB}MB`);
@@ -220,8 +217,8 @@ class ChatReconnectionOptimizer {
     // Check response times
     const startTime = Date.now();
     try {
-      await this.makeRequest('/status');
-      const responseTime = Date.now() - startTime;
+      await this.makeRequest('/status')
+const responseTime = Date.now() - startTime;
 
       if (responseTime > 1000) {
         console.log(`⚠️ Slow response time: ${responseTime}ms`);
@@ -239,9 +236,8 @@ class ChatReconnectionOptimizer {
   }
 
   async performCleanup() {
-    console.log('🧹 Performing system cleanup...');
-
-    const cleanupTasks = [
+    console.log('🧹 Performing system cleanup...')
+const cleanupTasks = [
       this.cleanupOldLogs,
       this.cleanupTempFiles,
       this.cleanupOptimizationHistory,
@@ -261,20 +257,19 @@ class ChatReconnectionOptimizer {
   }
 
   async cleanupOldLogs() {
-    console.log('🗑️ Cleaning up old logs...');
-
-    const logDir = CONFIG.LOG_DIR;
+    console.log('🗑️ Cleaning up old logs...')
+const logDir = CONFIG.LOG_DIR;
     if (!fs.existsSync(logDir)) {
       return;
     }
 
-    const files = fs.readdirSync(logDir);
-    const now = Date.now();
+    const files = fs.readdirSync(logDir)
+const now = Date.now();
 
     for (const file of files) {
-      const filePath = path.join(logDir, file);
-      const stats = fs.statSync(filePath);
-      const age = now - stats.mtime.getTime();
+      const filePath = path.join(logDir, file)
+const stats = fs.statSync(filePath)
+const age = now - stats.mtime.getTime();
 
       // Remove files older than 30 days
       if (age > 30 * 24 * 60 * 60 * 1000) {
@@ -285,9 +280,8 @@ class ChatReconnectionOptimizer {
   }
 
   async cleanupTempFiles() {
-    console.log('🗑️ Cleaning up temp files...');
-
-    const tempFiles = ['temp/', 'tmp/', '*.tmp', '*.temp'];
+    console.log('🗑️ Cleaning up temp files...')
+const tempFiles = ['temp/', 'tmp/', '*.tmp', '*.temp'];
 
     for (const pattern of tempFiles) {
       // This is a simplified cleanup - in production you'd use glob patterns
@@ -306,9 +300,8 @@ class ChatReconnectionOptimizer {
   }
 
   async cleanupPidFiles() {
-    console.log('🗑️ Cleaning up PID files...');
-
-    const pidFiles = ['logs/chat-reconnection.pid', 'logs/*.pid'];
+    console.log('🗑️ Cleaning up PID files...')
+const pidFiles = ['logs/chat-reconnection.pid', 'logs/*.pid'];
 
     for (const pidFile of pidFiles) {
       if (fs.existsSync(pidFile)) {
@@ -356,9 +349,8 @@ class ChatReconnectionOptimizer {
 
   async makeRequest(path, method = 'GET', body = null) {
     return new Promise((resolve, reject) => {
-      const url = new URL(path, CONFIG.CHAT_SERVER);
-
-      const options = {
+      const url = new URL(path, CONFIG.CHAT_SERVER)
+const options = {
         hostname: url.hostname,
         port: url.port,
         path: url.pathname,
@@ -366,9 +358,8 @@ class ChatReconnectionOptimizer {
         headers: {
           'Content-Type': 'application/json',
         },
-      };
-
-      const req = http.request(options, (res) => {
+      }
+const req = http.request(options, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -439,8 +430,8 @@ async function main() {
   const optimizer = new ChatReconnectionOptimizer();
 
   // Handle command line arguments
-  const args = process.argv.slice(2);
-  const command = args[0];
+  const args = process.argv.slice(2)
+const command = args[0];
 
   switch (command) {
     case 'start':

@@ -1,6 +1,5 @@
-const EventEmitter = require('events');
-const cron = require('node-cron');
-
+const EventEmitter = require('events')
+const cron = require('node-cron')
 class Scheduler extends EventEmitter {
   constructor() {
     super();

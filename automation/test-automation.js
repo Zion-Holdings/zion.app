@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-const NetlifyBuildMonitor = require('./netlify-monitor');
-const NetlifyErrorFixer = require('./netlify-error-fixer');
-const NetlifyBuildAutomation = require('./netlify-build-automation');
-const fs = require('fs');
-const path = require('path');
-
+const NetlifyBuildMonitor = require('./netlify-monitor')
+const NetlifyErrorFixer = require('./netlify-error-fixer')
+const NetlifyBuildAutomation = require('./netlify-build-automation')
+const fs = require('fs')
+const path = require('path')
 class AutomationTester {
   constructor() {
     this.testResults = [];
@@ -159,9 +158,8 @@ class AutomationTester {
 
     try {
       // Test environment variables
-      const requiredEnvVars = ['NETLIFY_SITE_ID', 'NETLIFY_TOKEN'];
-
-      const missingVars = requiredEnvVars.filter(
+      const requiredEnvVars = ['NETLIFY_SITE_ID', 'NETLIFY_TOKEN']
+const missingVars = requiredEnvVars.filter(
         (varName) => !process.env[varName],
       );
 
@@ -175,9 +173,8 @@ class AutomationTester {
       }
 
       // Test configuration files
-      const requiredFiles = ['netlify.toml', 'package.json', 'next.config.js'];
-
-      const missingFiles = requiredFiles.filter((file) => !fs.existsSync(file));
+      const requiredFiles = ['netlify.toml', 'package.json', 'next.config.js']
+const missingFiles = requiredFiles.filter((file) => !fs.existsSync(file));
 
       if (missingFiles.length > 0) {
         this.addTestResult(
@@ -209,9 +206,8 @@ class AutomationTester {
         state: 'error',
         error_message: 'Build failed due to memory constraints',
         logs: 'Error: JavaScript heap out of memory',
-      };
-
-      const errors = monitor.analyzeBuildError(mockBuild);
+      }
+const errors = monitor.analyzeBuildError(mockBuild);
 
       if (!Array.isArray(errors)) {
         throw new Error('Error analysis should return an array');
@@ -271,8 +267,8 @@ class AutomationTester {
     this.log('Testing file operations...');
 
     try {
-      const testFile = path.join(__dirname, 'test-file.json');
-      const testData = { test: true, timestamp: new Date().toISOString() };
+      const testFile = path.join(__dirname, 'test-file.json')
+const testData = { test: true, timestamp: new Date().toISOString() };
 
       // Test file writing
       fs.writeFileSync(testFile, JSON.stringify(testData, null, 2));
@@ -303,16 +299,14 @@ class AutomationTester {
       passed,
       message,
       timestamp: new Date().toISOString(),
-    });
-
-    const status = passed ? 'PASS' : 'FAIL';
+    })
+const status = passed ? 'PASS' : 'FAIL';
     this.log(`${status}: ${testName} - ${message}`, passed ? 'info' : 'error');
   }
 
   async generateTestReport() {
-    this.log('Generating test report...');
-
-    const report = {
+    this.log('Generating test report...')
+const report = {
       timestamp: new Date().toISOString(),
       summary: {
         total: this.testResults.length,
@@ -359,9 +353,8 @@ class AutomationTester {
 
 // CLI interface
 if (require.main === module) {
-  const tester = new AutomationTester();
-
-  const command = process.argv[2];
+  const tester = new AutomationTester()
+const command = process.argv[2];
 
   switch (command) {
     case 'test':

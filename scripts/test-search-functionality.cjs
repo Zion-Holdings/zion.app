@@ -14,8 +14,8 @@ async function testSearchAPI() {
   console.warn('1. Testing Search API...');
 
   try {
-    const response = await fetch('http://localhost:3000/api/search?query=AI');
-    const data = await response.json();
+    const response = await fetch('http://localhost:3000/api/search?query=AI')
+const data = await response.json();
 
     if (response.ok && data.results) {
       console.warn('   ✅ Search API responds correctly');
@@ -38,8 +38,8 @@ async function testSuggestionsAPI() {
   try {
     const response = await fetch(
       'http://localhost:3000/api/search/suggest?q=GPU',
-    );
-    const data = await response.json();
+    )
+const data = await response.json();
 
     if (response.ok && Array.isArray(data)) {
       console.warn('   ✅ Suggestions API responds correctly');

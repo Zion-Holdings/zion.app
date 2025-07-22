@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const glob = require('glob');
 
 console.log('🔧 Aggressive syntax fix - Final pass...');

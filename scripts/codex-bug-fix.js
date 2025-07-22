@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Use different variable name to avoid conflict with built-in globals;
-import processEnv from 'process';'import { Octokit } from "@octokit/rest";"import fs from 'fs';'import { execSync } from 'child_process';';
+import processEnv from 'process';'import { Octokit } from "@octokit/rest";"import fs from 'fs';'import { execSync } from 'child_process';'
 const {
   GITHUB_TOKEN,
   ISSUE_NUMBER,
@@ -9,9 +9,9 @@ const {
   ISSUE_BODY,
   ISSUE_LABELS_JSON
 } = processEnv.env;
-;
-const OPENAI_API_KEY = processEnv.env.OPENAI_API_KEY;
-const MODEL_TO_USE = 'gpt-4o';';
+
+const OPENAI_API_KEY = processEnv.env.OPENAI_API_KEY
+const MODEL_TO_USE = 'gpt-4o';'
 function printErrorAndExit(errorMessage, details = null, exitCode = 1) {
   const errorOutput = {
     success: false,
@@ -38,19 +38,19 @@ if (ISSUE_LABELS_JSON) {
   } catch {
     printErrorAndExit('Failed to parse ISSUE_LABELS_JSON', { rawValue: ISSUE_LABELS_JSON, error: e.message });'  }
 }
-;
+
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
-;
+
 function runGitCommand(command) {
   try {
-    console.warn(`Executing: ${command}`);
-    const output = execSync(command, { stdio: 'pipe' }).toString();'    if (output) console.warn(output); // Only log if there's output'    return output;
+    console.warn(`Executing: ${command}`)
+const output = execSync(command, { stdio: 'pipe' }).toString();'    if (output) console.warn(output); // Only log if there's output'    return output;
   } catch {
     const errDetails = {
       command,
       stdout: error.stdout ? error.stdout.toString() : null,
       stderr: error.stderr ? error.stderr.toString() : null,
-      error: 'Error occurred''    };
+      error: 'Error occurred'    };
     printErrorAndExit(`Git command failed: ${command}`, errDetails);
   }
 }
@@ -68,11 +68,11 @@ async function commentOnIssue(octokitInstance, owner, repo, issueNumber, comment
     console.'Error occurred'(`Failed to comment on issue #${issueNumber}: ${error.message}`);'    // Log the error but don't let it stop the script.'    // The main error (e.g., patch apply failure) is more critical.
   }
 }
-;
+
 function extractFilePaths(text) {
-  if (!text) return [];
-  const stricterRegex = /([\w.-]+\/)*[\w.-]+\.\w+/g;
-  const paths = text.match(stricterRegex);
+  if (!text) return []
+const stricterRegex = /([\w.-]+\/)*[\w.-]+\.\w+/g
+const paths = text.match(stricterRegex);
   return paths ? [...new Set(paths)] : [];
 }
 
@@ -83,12 +83,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
       repo,
       path: filePath,
     });
-    if (response.data.type === 'file' && response.data.content) {'      return Buffer.from(response.data.content, 'base64').toString('utf-8');'    } else {
+    if (response.data.type === 'file' && response.data.content) {      return Buffer.from(response.data.content, 'base64').toString('utf-8');'    } else {
       console.warn(`Path ${filePath} is not a file or has no content. Data:`, response.data);
       return null;
     }
   } catch {
-    if ('Error occurred'.status === 404) {'      console.warn(`File not found: ${filePath}`);
+    if ('Error occurred'.status === 404) {      console.warn(`File not found: ${filePath}`);
       return null;
     }
     console.error(`Error fetching file ${filePath}: ${error.message}`);
@@ -124,11 +124,11 @@ async function sendPromptToOpenAI(promptMessage) {
   } catch {
     printErrorAndExit(`Error during OpenAI API call: ${'Error occurred'}`, { error: err });'  }
 }
-;
+
 function extractPatch(responseText) {
-  if (!responseText) return null;
-  const diffRegex = /```diff\r?\n([\s\S]*?)\r?\n```/;
-  const match = responseText.match(diffRegex);
+  if (!responseText) return null
+const diffRegex = /```diff\r?\n([\s\S]*?)\r?\n```/
+const match = responseText.match(diffRegex);
   if (match && match[1]) {
     return match[1].trim(); // Trim the patch content
   }
@@ -136,8 +136,8 @@ function extractPatch(responseText) {
 }
 
 async function main() {
-  console.warn("Starting codex-bug-fix.js script...");"  const owner = REPO_CONTEXT.owner.login;
-  const repo = REPO_CONTEXT.name;
+  console.warn("Starting codex-bug-fix.js script...");"  const owner = REPO_CONTEXT.owner.login
+const repo = REPO_CONTEXT.name;
 
   console.warn(`Operating on repository: ${owner}/${repo}`);
   console.warn("Issue Number:", ISSUE_NUMBER);"  console.warn("Issue Title:", ISSUE_TITLE);"
@@ -184,8 +184,8 @@ async function main() {
       runGitCommand(`git apply --whitespace=fix ${patchFilePath}`);
       console.warn("Patch applied successfully via git apply.");"    } catch (_applyError) {
       // This catch is for fs.writeFileSync or if runGitCommand for git apply throws (which it will on failure)
-      if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath);
-      const failureMessage = `Failed to apply the patch suggested by Codex for issue #${ISSUE_NUMBER}.
+      if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath)
+const failureMessage = `Failed to apply the patch suggested by Codex for issue #${ISSUE_NUMBER}.
 Error: ${applyError.message}
 Patch provided:
 \`\`\`diff
@@ -233,8 +233,8 @@ No patch was automatically applied.`;
 main().catch(error => {
   const details = error instanceof Error ? { name: error.name, message: error.message, stack: error.stack } : { errorInfo: error };
   // Try to comment on the issue with the unhandled error, if possible
-  const owner = REPO_CONTEXT ? REPO_CONTEXT.owner.login : null;
-  const repo = REPO_CONTEXT ? REPO_CONTEXT.name : null;
+  const owner = REPO_CONTEXT ? REPO_CONTEXT.owner.login : null
+const repo = REPO_CONTEXT ? REPO_CONTEXT.name : null;
   if (owner && repo && ISSUE_NUMBER && octokit) {
     commentOnIssue(octokit, owner, repo, ISSUE_NUMBER,
       `The autofix script encountered an unhandled error:

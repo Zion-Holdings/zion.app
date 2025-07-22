@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 console.log('🔧 Fixing final syntax errors...');
@@ -32,8 +32,8 @@ import { ShoppingCart } from 'lucide-react';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {
-  const router = useRouter();
-  const { user } = useAuth();
+  const router = useRouter()
+const { user } = useAuth();
 
   useEffect(() => {
     const err = new Error('404 - Page Not Found');
@@ -71,8 +71,8 @@ import { captureException } from '@/utils/sentry';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom500() {
-  const router = useRouter();
-  const { user } = useAuth();
+  const router = useRouter()
+const { user } = useAuth();
 
   useEffect(() => {
     const err = new Error('500 - Internal Server Error');

@@ -47,8 +47,7 @@ const requiredEnvVars = {
     'SENTRY_ORG',
     'SENTRY_PROJECT'
   ]
-};
-
+}
 function validateEnvironment() {
   
   let hasErrors = false;
@@ -130,8 +129,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.sentry.io *.google.com *.googleapis.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: blob: *.cloudinary.com; connect-src 'self' *.supabase.co *.sentry.io *.stripe.com;"
   }
-];
-
+]
 module.exports = { securityHeaders };
 `;
 
@@ -149,9 +147,8 @@ module.exports = { securityHeaders };
  * Comprehensive health monitoring for production deployment
  */
 
-const https = require('https');
-const fs = require('fs');
-
+const https = require('https')
+const fs = require('fs')
 class ProductionMonitor {
   constructor() {
     this.baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://ziontechgroup.netlify.app';
@@ -165,8 +162,8 @@ class ProductionMonitor {
 
   async checkEndpoint(endpoint) {
     return new Promise((resolve) => {
-      const url = \`\${this.baseUrl}\${endpoint}\`;
-      const startTime = Date.now();
+      const url = \`\${this.baseUrl}\${endpoint}\`
+const startTime = Date.now();
       
       https.get(url, (res) => {
         const responseTime = Date.now() - startTime;
@@ -197,9 +194,8 @@ class ProductionMonitor {
         // does not report a failure when no user is logged in
         result.success = true;
       }
-      results.push({ ...check, ...result });
-      
-      const emoji = result.success ? '✅' : '❌';
+      results.push({ ...check, ...result })
+const emoji = result.success ? '✅' : '❌';
     }
     
     const allHealthy = results.every(r => r.success);
@@ -284,9 +280,8 @@ export default productionOptimizations;
  * Validates production build integrity and readiness
  */
 
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 class BuildValidator {
   constructor() {
     this.buildPath = '.next';
@@ -303,8 +298,8 @@ class BuildValidator {
   }
 
   validateStaticFiles() {
-    const staticPath = path.join(this.buildPath, 'static');
-    const exists = fs.existsSync(staticPath);
+    const staticPath = path.join(this.buildPath, 'static')
+const exists = fs.existsSync(staticPath);
     this.checks.push({
       name: 'Static Assets',
       status: exists ? 'pass' : 'fail', 
@@ -313,8 +308,8 @@ class BuildValidator {
   }
 
   validateServerFiles() {
-    const serverPath = path.join(this.buildPath, 'server');
-    const exists = fs.existsSync(serverPath);
+    const serverPath = path.join(this.buildPath, 'server')
+const exists = fs.existsSync(serverPath);
     this.checks.push({
       name: 'Server Build',
       status: exists ? 'pass' : 'fail',
@@ -323,8 +318,8 @@ class BuildValidator {
   }
 
   validateManifest() {
-    const manifestPath = path.join(this.buildPath, 'build-manifest.json');
-    const exists = fs.existsSync(manifestPath);
+    const manifestPath = path.join(this.buildPath, 'build-manifest.json')
+const exists = fs.existsSync(manifestPath);
     this.checks.push({
       name: 'Build Manifest',
       status: exists ? 'pass' : 'fail',
@@ -337,17 +332,16 @@ class BuildValidator {
     this.validateBuildExists();
     this.validateStaticFiles();
     this.validateServerFiles();
-    this.validateManifest();
-    
-    const allPassed = this.checks.every(check => check.status === 'pass');
+    this.validateManifest()
+const allPassed = this.checks.every(check => check.status === 'pass');
     
     return allPassed;
   }
 }
 
 if (require.main === module) {
-  const validator = new BuildValidator();
-  const isValid = validator.run();
+  const validator = new BuildValidator()
+const isValid = validator.run();
   process.exit(isValid ? 0 : 1);
 }
 

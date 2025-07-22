@@ -80,8 +80,8 @@ async function testReconnectionScenario(scenario) {
 
       off(event, callback) {
         if (this.eventListeners.has(event)) {
-          const listeners = this.eventListeners.get(event);
-          const index = listeners.indexOf(callback);
+          const listeners = this.eventListeners.get(event)
+const index = listeners.indexOf(callback);
           if (index > -1) {
             listeners.splice(index, 1);
           }
@@ -303,9 +303,8 @@ async function testReconnectionScenario(scenario) {
 }
 
 async function runAllTests() {
-  console.log('🚀 Starting comprehensive reconnection tests...\n');
-
-  const results = [];
+  console.log('🚀 Starting comprehensive reconnection tests...\n')
+const results = [];
 
   for (const scenario of TEST_SCENARIOS) {
     try {
@@ -340,10 +339,9 @@ async function runAllTests() {
       console.log(`   Quality: ${result.connectionQuality}`);
       console.log(`   Latency: ${result.averageLatency}ms`);
     }
-  });
-
-  const successfulTests = results.filter((r) => !r.error).length;
-  const totalTests = results.length;
+  })
+const successfulTests = results.filter((r) => !r.error).length
+const totalTests = results.length;
 
   console.log(
     `\n🎯 Overall Results: ${successfulTests}/${totalTests} tests passed`,

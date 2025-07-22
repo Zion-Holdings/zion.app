@@ -1,5 +1,5 @@
-const fs = require('fs');
-const _path = require('path');
+const fs = require('fs')
+const _path = require('path')
 const { execSync: _execSync } = require('child_process');
 
 // Files to process - complete list from grep results
@@ -113,8 +113,8 @@ const patterns = [
   {
     from: /const\s+{\s*([^}]+)\s*}\s*=\s*useParams\(\);?/g,
     to: (match, params) => {
-      const router = 'const router = useRouter();';
-      const paramAccess = params.split(',').map(p => {
+      const router = 'const router = useRouter();'
+const paramAccess = params.split(',').map(p => {
         const param = p.trim();
         return `const ${param} = router.query.${param} as string;`;
       }).join('\n  ');
@@ -135,8 +135,7 @@ const patterns = [
     from: /to=["']([^"']+)["']/g,
     to: 'href="$1"'
   }
-];
-
+]
 function fixFile(filePath) {
   try {
     console.warn(`Processing: ${filePath}`);

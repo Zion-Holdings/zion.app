@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class AdvancedFileFixer {
   constructor() {
     this.projectRoot = process.cwd();
@@ -12,11 +11,10 @@ class AdvancedFileFixer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
-
-    const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage)
+const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -33,16 +31,16 @@ class AdvancedFileFixer {
 
   fixApiFile(filePath) {
     try {
-      let content = fs.readFileSync(filePath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
       // Check if the file is all on one line (corrupted)
       if (content.split('\n').length === 1 && content.length > 200) {
         this.log(`Fixing corrupted file: ${filePath}`);
 
         // Extract imports
-        const importMatches = content.match(/import[^;]+;/g) || [];
-        const imports = importMatches.join('\n');
+        const importMatches = content.match(/import[^;]+;/g) || []
+const imports = importMatches.join('\n');
 
         // Extract the main function
         const functionMatch = content.match(
@@ -78,9 +76,8 @@ class AdvancedFileFixer {
   }
 
   createBackupApiFiles() {
-    this.log('Creating backup API files...');
-
-    const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    this.log('Creating backup API files...')
+const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       this.log('API directory not found');
       return;
@@ -95,9 +92,9 @@ class AdvancedFileFixer {
       const items = fs.readdirSync(dir);
 
       for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const backupFullPath = path.join(backupPath, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const backupFullPath = path.join(backupPath, item)
+const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           if (!fs.existsSync(backupFullPath)) {
@@ -115,10 +112,9 @@ class AdvancedFileFixer {
   }
 
   restoreApiFiles() {
-    this.log('Restoring API files from backup...');
-
-    const apiDir = path.join(this.projectRoot, 'pages', 'api');
-    const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
+    this.log('Restoring API files from backup...')
+const apiDir = path.join(this.projectRoot, 'pages', 'api')
+const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
 
     if (!fs.existsSync(backupDir)) {
       this.log('No backup found', 'ERROR');
@@ -129,9 +125,9 @@ class AdvancedFileFixer {
       const items = fs.readdirSync(dir);
 
       for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const restoreFullPath = path.join(restorePath, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const restoreFullPath = path.join(restorePath, item)
+const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           if (!fs.existsSync(restoreFullPath)) {
@@ -150,9 +146,8 @@ class AdvancedFileFixer {
   }
 
   createCleanApiFiles() {
-    this.log('Creating clean API files...');
-
-    const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    this.log('Creating clean API files...')
+const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       fs.mkdirSync(apiDir, { recursive: true });
     }
@@ -213,9 +208,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error('Login error:', error);
     return res.status(500).json({ error: 'Internal server error' });
   }
-}`;
-
-    const authDir = path.join(apiDir, 'auth');
+}`
+const authDir = path.join(apiDir, 'auth');
     if (!fs.existsSync(authDir)) {
       fs.mkdirSync(authDir, { recursive: true });
     }
@@ -239,8 +233,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           let fixedCount = 0;
 
           for (const item of items) {
-            const fullPath = path.join(dir, item);
-            const stat = fs.statSync(fullPath);
+            const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
             if (stat.isDirectory()) {
               fixedCount += processDirectory(fullPath);
@@ -252,9 +246,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           }
 
           return fixedCount;
-        };
-
-        const fixedCount = processDirectory(apiDir);
+        }
+const fixedCount = processDirectory(apiDir);
         this.log(`Fixed ${fixedCount} API files`);
 
         if (fixedCount === 0) {

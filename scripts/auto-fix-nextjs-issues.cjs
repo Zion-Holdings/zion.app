@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NextJSIssueFixer {
   constructor() {
     this.fixes = [];
@@ -15,9 +14,8 @@ class NextJSIssueFixer {
   }
 
   async findAndFixSyntaxErrors() {
-    this.log('🔍 Scanning for syntax errors...');
-
-    const patterns = [
+    this.log('🔍 Scanning for syntax errors...')
+const patterns = [
       'pages/**/*.{ts,tsx,js,jsx}',
       'src/**/*.{ts,tsx,js,jsx}',
       'components/**/*.{ts,tsx,js,jsx}',
@@ -125,9 +123,8 @@ class NextJSIssueFixer {
   }
 
   async fixSpecificFiles() {
-    this.log('🔧 Fixing specific problematic files...');
-
-    const specificFixes = [
+    this.log('🔧 Fixing specific problematic files...')
+const specificFixes = [
       {
         file: 'pages/api/dev/dashboard.ts',
         fixes: [
@@ -242,9 +239,8 @@ class NextJSIssueFixer {
   }
 
   async runFullFix() {
-    this.log('🚀 Starting Next.js issue fix process...');
-
-    const steps = [
+    this.log('🚀 Starting Next.js issue fix process...')
+const steps = [
       { name: 'Fix specific files', fn: () => this.fixSpecificFiles() },
       {
         name: 'Find and fix syntax errors',
@@ -256,8 +252,8 @@ class NextJSIssueFixer {
     ];
 
     for (const step of steps) {
-      this.log(`\n📋 Step: ${step.name}`);
-      const result = await step.fn();
+      this.log(`\n📋 Step: ${step.name}`)
+const result = await step.fn();
 
       if (!result) {
         this.log(`❌ Step failed: ${step.name}`);

@@ -5,11 +5,10 @@
  * Automatically fixes common TypeScript, ESLint, and build errors
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const glob = require('glob');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const glob = require('glob')
 class AutoFixSystem {
   constructor() {
     this.fixesApplied = [];
@@ -25,8 +24,8 @@ class AutoFixSystem {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -39,9 +38,8 @@ class AutoFixSystem {
       const tscOutput = execSync('npx tsc --noEmit --pretty false', {
         encoding: 'utf8',
         stdio: ['pipe', 'pipe', 'pipe'],
-      });
-
-      const errors = this.parseTypeScriptErrors(tscOutput);
+      })
+const errors = this.parseTypeScriptErrors(tscOutput);
 
       for (const error of errors) {
         await this.fixTypeScriptError(error);
@@ -50,8 +48,8 @@ class AutoFixSystem {
       this.log(`Fixed ${errors.length} TypeScript errors`);
     } catch (error) {
       // TSC will exit with error code if there are errors, which is expected
-      const tscOutput = error.stdout || error.stderr || '';
-      const errors = this.parseTypeScriptErrors(tscOutput);
+      const tscOutput = error.stdout || error.stderr || ''
+const errors = this.parseTypeScriptErrors(tscOutput);
 
       for (const error of errors) {
         await this.fixTypeScriptError(error);
@@ -62,8 +60,8 @@ class AutoFixSystem {
   }
 
   parseTypeScriptErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
+    const errors = []
+const lines = output.split('\n');
 
     for (const line of lines) {
       const match = line.match(/([^(]+)\((\d+),(\d+)\): error TS\d+: (.+)/);
@@ -87,8 +85,8 @@ class AutoFixSystem {
         return;
       }
 
-      const content = fs.readFileSync(error.file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(error.file, 'utf8')
+const lines = content.split('\n');
 
       if (error.message.includes('Cannot find module')) {
         await this.fixMissingImport(error, lines);
@@ -150,8 +148,8 @@ class AutoFixSystem {
         );
         if (fs.existsSync(fullPath)) {
           // Fix the import statement
-          const importLine = lines[error.line - 1];
-          const newImportLine = importLine.replace(
+          const importLine = lines[error.line - 1]
+const newImportLine = importLine.replace(
             /from ['"][^'"]*['"]/,
             `from '${possiblePath}${ext}'`,
           );
@@ -170,12 +168,12 @@ class AutoFixSystem {
       /Module ['"]([^'"]+)['"] has no exported member ['"]([^'"]+)['"]/,
     );
     if (match) {
-      const [, modulePath, exportName] = match;
-      const moduleFile = this.resolveModulePath(modulePath);
+      const [, modulePath, exportName] = match
+const moduleFile = this.resolveModulePath(modulePath);
 
       if (moduleFile && fs.existsSync(moduleFile)) {
-        const moduleContent = fs.readFileSync(moduleFile, 'utf8');
-        const moduleLines = moduleContent.split('\n');
+        const moduleContent = fs.readFileSync(moduleFile, 'utf8')
+const moduleLines = moduleContent.split('\n');
 
         // Check if the export exists
         const hasExport = moduleLines.some(
@@ -233,8 +231,8 @@ class AutoFixSystem {
   }
 
   resolveModulePath(modulePath) {
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-    const basePaths = ['src', 'pages', 'components', 'utils', 'lib'];
+    const extensions = ['.ts', '.tsx', '.js', '.jsx']
+const basePaths = ['src', 'pages', 'components', 'utils', 'lib'];
 
     for (const basePath of basePaths) {
       for (const ext of extensions) {
@@ -263,8 +261,8 @@ class AutoFixSystem {
   }
 
   async addPropertyToType(typeFile, propertyName) {
-    const content = fs.readFileSync(typeFile, 'utf8');
-    const lines = content.split('\n');
+    const content = fs.readFileSync(typeFile, 'utf8')
+const lines = content.split('\n');
 
     for (let i = 0; i < lines.length; i++) {
       if (lines[i].includes('interface') || lines[i].includes('type')) {
@@ -344,19 +342,19 @@ class AutoFixSystem {
 
     try {
       // Check package.json for missing dependencies
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const allDeps = {
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies,
       };
 
       // Check if all imports have corresponding dependencies
-      const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-      const missingDeps = new Set();
+      const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() })
+const missingDeps = new Set();
 
       for (const file of tsFiles) {
-        const content = fs.readFileSync(file, 'utf8');
-        const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
+        const content = fs.readFileSync(file, 'utf8')
+const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
 
         if (importMatches) {
           for (const match of importMatches) {

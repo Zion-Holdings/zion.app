@@ -10,22 +10,22 @@
  * 
  * Measures response times and validates caching behavior
  */
-;
-const https = require('http');'const { performance: _performance } = require('perf_hooks');';
-const _BASE_URL = 'http://localhost:3000';'const TIMEOUT_THRESHOLD = 5000; // 5 seconds (much less than 30s mentioned in issue);
+
+const https = require('http');'const { performance: _performance } = require('perf_hooks')
+const _BASE_URL = 'http://localhost:3000';'const TIMEOUT_THRESHOLD = 5000; // 5 seconds (much less than 30s mentioned in issue)
 const MAX_ACCEPTABLE_TIME = 2000; // 2 seconds for cached responses
 
-// Test endpoints that were timing out;
+// Test endpoints that were timing out
 const TEST_ENDPOINTS = [
   {
     name: 'Categories API','    path: '/api/categories','    expectedCached: true,
-    method: 'GET''  },
+    method: 'GET'  },
   {
     name: 'Blog API (all posts)','    path: '/api/blog','    expectedCached: true,
-    method: 'GET''  },
+    method: 'GET'  },
   {
     name: 'Blog API (search)','    path: '/api/blog?query=AI','    expectedCached: true,
-    method: 'GET''  },
+    method: 'GET'  },
   {
     name: 'Jobs API','    path: '/api/jobs','    expectedCached: true,
     method: 'GET','    headers: {
@@ -33,20 +33,19 @@ const TEST_ENDPOINTS = [
   },
   {
     name: 'Search API','    path: '/api/search?query=GPU','    expectedCached: true,
-    method: 'GET''  },
+    method: 'GET'  },
   {
     name: 'Search Suggestions','    path: '/api/search/suggest?q=AI','    expectedCached: true,
-    method: 'GET''  }
+    method: 'GET'  }
 ];
 
 /**
  * Make HTTP request with timeout
- */;
+ */
 function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
   return new Promise((resolve, reject) => {
-    const startTime = _performance.now();
-    
-    const options = {
+    const startTime = _performance.now()
+const options = {
       hostname: 'localhost','      port: 3000,
       path: endpoint.path,
       method: endpoint.method,
@@ -54,15 +53,14 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
         'Content-Type': 'application/json','        ...(endpoint.headers || {})
       },
       timeout: timeoutMs
-    };
-
-    const req = https.request(options, (res) => {
+    }
+const req = https.request(options, (res) => {
       let data = '';'      
       res.on('data', (chunk) => {'        data += chunk;
       });
       
-      res.on('end', () => {'        const endTime = _performance.now();
-        const responseTime = endTime - startTime;
+      res.on('end', () => {'        const endTime = _performance.now()
+const responseTime = endTime - startTime;
         
         try {
           const parsedData = JSON.parse(data);
@@ -109,9 +107,8 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
  */
 async function testEndpoint(endpoint) {
   // console.warn(`\n🧪 Testing: ${endpoint.name}`);
-  // console.warn(`   URL: ${endpoint.path}`);
-  
-  const results = {
+  // console.warn(`   URL: ${endpoint.path}`)
+const results = {
     name: endpoint.name,
     path: endpoint.path,
     tests: []
@@ -119,9 +116,8 @@ async function testEndpoint(endpoint) {
 
   // Test 1: Cold request (no cache)
   try {
-    // console.warn('   ⏱️  Cold request (no cache)...');'    const coldResult = await makeRequest(endpoint);
-    
-    const coldTest = {
+    // console.warn('   ⏱️  Cold request (no cache)...');'    const coldResult = await makeRequest(endpoint)
+const coldTest = {
       type: 'cold','      success: coldResult.statusCode >= 200 && coldResult.statusCode < 300,
       responseTime: coldResult.responseTime,
       statusCode: coldResult.statusCode,
@@ -134,7 +130,7 @@ async function testEndpoint(endpoint) {
       // console.warn(`   ✅ Cold: ${Math.round(coldTest.responseTime)}ms (${coldResult.statusCode})`);
       
       // Check if response has data
-      if (coldResult.data && typeof coldResult.data === 'object') {'        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
+      if (coldResult.data && typeof coldResult.data === 'object') {        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
                           coldResult.data.results ? coldResult.data.results.length :
                           Object.keys(coldResult.data).length;
         // console.warn(`   📊 Data: ${_dataLength} items, ${coldResult.size} bytes`);
@@ -146,9 +142,8 @@ async function testEndpoint(endpoint) {
     // Test 2: Warm request (should be cached)
     // console.warn('   🔄 Warm request (should be cached)...');'    await new Promise(resolve => setTimeout(resolve, 100)); // Small delay
     
-    const warmResult = await makeRequest(endpoint);
-    
-    const warmTest = {
+    const warmResult = await makeRequest(endpoint)
+const warmTest = {
       type: 'warm','      success: warmResult.statusCode >= 200 && warmResult.statusCode < 300,
       responseTime: warmResult.responseTime,
       statusCode: warmResult.statusCode,
@@ -181,11 +176,10 @@ async function testEndpoint(endpoint) {
  * Run all performance tests
  */
 async function runPerformanceTests() {
-  // console.warn('🚀 API Performance Test Suite');'  // console.warn('================================');'  // console.warn(`Testing against: ${BASE_URL}`);
+  // console.warn('🚀 API Performance Test Suite');  // console.warn('================================');  // console.warn(`Testing against: ${BASE_URL}`);
   // console.warn(`Timeout threshold: ${TIMEOUT_THRESHOLD}ms`);
-  // console.warn(`Max acceptable cached response: ${MAX_ACCEPTABLE_TIME}ms`);
-  
-  const allResults = [];
+  // console.warn(`Max acceptable cached response: ${MAX_ACCEPTABLE_TIME}ms`)
+const allResults = [];
   
   for (const endpoint of TEST_ENDPOINTS) {
     const result = await testEndpoint(endpoint);
@@ -196,7 +190,7 @@ async function runPerformanceTests() {
   }
   
   // Summary
-  // console.warn('\n📊 PERFORMANCE SUMMARY');'  // console.warn('=====================');'  
+  // console.warn('\n📊 PERFORMANCE SUMMARY');  // console.warn('=====================');  
   let totalTests = 0;
   let passedTests = 0;
   let timeoutIssues = 0;
@@ -216,24 +210,24 @@ async function runPerformanceTests() {
         if (test.responseTime > TIMEOUT_THRESHOLD) {
           timeoutIssues++;
           // console.warn(`    ⚠️  SLOW: Exceeds ${TIMEOUT_THRESHOLD}ms threshold`);
-        } else if (test.type === 'warm' && test.responseTime > MAX_ACCEPTABLE_TIME) {'          cacheIssues++;
+        } else if (test.type === 'warm' && test.responseTime > MAX_ACCEPTABLE_TIME) {          cacheIssues++;
           // console.warn(`    ⚠️  CACHE: Warm request should be faster`);
         }
       } else {
-        // console.warn(`  ❌ ${test.type}: ${test.error || 'Failed'}`);'      }
+        // console.warn(`  ❌ ${test.type}: ${test.error || 'Failed'}`);      }
     });
   });
   
-  // console.warn('\n OVERALL RESULTS');'  // console.warn('==================');'  // console.warn(`Tests passed: ${passedTests}/${totalTests}`);
+  // console.warn('\n OVERALL RESULTS');  // console.warn('==================');  // console.warn(`Tests passed: ${passedTests}/${totalTests}`);
   // console.warn(`Success rate: ${Math.round((passedTests / totalTests) * 100)}%`);
   
   if (timeoutIssues === 0) {
-    // console.warn('✅ No timeout issues detected');'  } else {
+    // console.warn('✅ No timeout issues detected');  } else {
     // console.warn(`❌ ${timeoutIssues} timeout issues detected`);
   }
   
   if (cacheIssues === 0) {
-    // console.warn('✅ Caching appears to be working effectively');'  } else {
+    // console.warn('✅ Caching appears to be working effectively');  } else {
     // console.warn(`⚠️  ${cacheIssues} cache performance issues detected`);
   }
   
@@ -241,8 +235,8 @@ async function runPerformanceTests() {
   const success = timeoutIssues === 0 && (passedTests / totalTests) >= 0.8;
   
   if (success) {
-    // console.warn('\n🎉 API PERFORMANCE: GOOD');'    // console.warn('The timeout issues from issue #16 appear to be resolved!');'  } else {
-    // console.warn('\n❌ API PERFORMANCE: NEEDS ATTENTION');'    // console.warn('Some endpoints are still experiencing performance issues.');'  }
+    // console.warn('\n🎉 API PERFORMANCE: GOOD');    // console.warn('The timeout issues from issue #16 appear to be resolved!');  } else {
+    // console.warn('\n❌ API PERFORMANCE: NEEDS ATTENTION');    // console.warn('Some endpoints are still experiencing performance issues.');  }
   
   return {
     success,
@@ -267,13 +261,13 @@ async function checkServer() {
 
 // Main execution
 async function main() {
-  // console.warn('Checking if development server is running...');'  
-  const serverRunning = await checkServer();
+  // console.warn('Checking if development server is running...')
+const serverRunning = await checkServer();
   if (!serverRunning) {
-    // console.warn('❌ Development server is not running or not responding');'    // console.warn('Please start the server with: npm run dev');'    process.exit(1);
+    // console.warn('❌ Development server is not running or not responding');    // console.warn('Please start the server with: npm run dev');    process.exit(1);
   }
   
-  // console.warn('✅ Server is running\n');'  
+  // console.warn('✅ Server is running\n');  
   try {
     const results = await runPerformanceTests();
     process.exit(results.success ? 0 : 1);

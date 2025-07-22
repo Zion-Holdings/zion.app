@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const { execSync } = require('child_process')
 class AutomationMasterController {
   constructor() {
     this.processes = [
@@ -58,9 +57,9 @@ class AutomationMasterController {
     console.log('========================\n');
 
     for (const process of this.processes) {
-      const count = this.checkProcess(process);
-      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
-      const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcess(process)
+const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
+const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -71,9 +70,9 @@ class AutomationMasterController {
 
     // Master Statistics
     console.log('\n📊 MASTER STATISTICS:');
-    console.log('=====================');
-    const runtime = Date.now() - this.startTime;
-    const uptime = Math.round(runtime / 1000);
+    console.log('=====================')
+const runtime = Date.now() - this.startTime
+const uptime = Math.round(runtime / 1000);
 
     this.log(`Total Processes: ${totalProcesses}`, 'info');
     this.log(
@@ -88,9 +87,8 @@ class AutomationMasterController {
 
     // Master Reports Status
     console.log('\n📈 MASTER REPORTS:');
-    console.log('==================');
-
-    const reportFiles = [
+    console.log('==================')
+const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -103,8 +101,8 @@ class AutomationMasterController {
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-          const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');
@@ -118,18 +116,16 @@ class AutomationMasterController {
 
     // Master System Health
     console.log('\n🏥 MASTER SYSTEM HEALTH:');
-    console.log('========================');
-
-    const healthStatus =
+    console.log('========================')
+const healthStatus =
       totalRunning >= totalProcesses * 0.8
         ? 'EXCELLENT'
         : totalRunning >= totalProcesses * 0.6
           ? 'GOOD'
           : totalRunning >= totalProcesses * 0.4
             ? 'FAIR'
-            : 'POOR';
-
-    const healthColor =
+            : 'POOR'
+const healthColor =
       healthStatus === 'EXCELLENT'
         ? 'success'
         : healthStatus === 'GOOD'
@@ -146,9 +142,8 @@ class AutomationMasterController {
 
     // Master Performance Metrics
     console.log('\n⚡ MASTER PERFORMANCE METRICS:');
-    console.log('==============================');
-
-    const memoryUsage = process.memoryUsage();
+    console.log('==============================')
+const memoryUsage = process.memoryUsage();
     this.log(
       `Memory Usage: ${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
       'info',

@@ -12,9 +12,8 @@ if (newContent !== content) {
   }
 
   async fixParsingErrors() {
-    this.log('Fixing parsing errors...');
-    
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing parsing errors...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -45,15 +44,15 @@ if (newContent !== content) {
     newContent = newContent.replace(/([^;])\n/g, '$1;\n');
     
     // Fix missing brackets
-    const openBraces = (newContent.match(/\{/g) || []).length;
-    const closeBraces = (newContent.match(/\}/g) || []).length;
+    const openBraces = (newContent.match(/\{/g) || []).length
+const closeBraces = (newContent.match(/\}/g) || []).length;
     if (openBraces > closeBraces) {
       newContent += '\n}'.repeat(openBraces - closeBraces);
     }
 
     // Fix missing parentheses
-    const openParens = (newContent.match(/\(/g) || []).length;
-    const closeParens = (newContent.match(/\)/g) || []).length;
+    const openParens = (newContent.match(/\(/g) || []).length
+const closeParens = (newContent.match(/\)/g) || []).length;
     if (openParens > closeParens) {
       newContent += ')'.repeat(openParens - closeParens);
     }
@@ -74,9 +73,8 @@ if (newContent !== content) {
   }
 
   async fixSyntaxErrors() {
-    this.log('Fixing syntax errors...');
-    
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing syntax errors...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -102,9 +100,8 @@ if (newContent !== content) {
   }
 
   async fixTypeErrors() {
-    this.log('Fixing type errors...');
-    
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing type errors...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -130,9 +127,8 @@ if (newContent !== content) {
   }
 
   async fixImportErrors() {
-    this.log('Fixing import errors...');
-    
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing import errors...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -164,14 +160,14 @@ if (newContent !== content) {
   }
 
   async fixUnusedVariables() {
-    this.log('Fixing unused variables...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing unused variables...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -180,8 +176,8 @@ if (newContent !== content) {
           if (line.includes('const ') && line.includes('=') && !line.includes('_')) {
             const varMatch = line.match(/const\s+(\w+)/);
             if (varMatch) {
-              const varName = varMatch[1];
-              const restOfFile = content.substring(content.indexOf(line) + line.length);
+              const varName = varMatch[1]
+const restOfFile = content.substring(content.indexOf(line) + line.length);
               if (!restOfFile.includes(varName)) {
                 lines[i] = line.replace(`const ${varName}`, `const _${varName}`);
                 modified = true;
@@ -204,14 +200,14 @@ if (newContent !== content) {
   }
 
   async fixConsoleLogs() {
-    this.log('Fixing console.log statements...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing console.log statements...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -299,9 +295,8 @@ if (newContent !== content) {
   }
 
   async analyzeAndFixSpecificErrors(buildOutput) {
-    this.log('Analyzing specific build errors...');
-    
-    const errors = this.parseBuildErrors(buildOutput);
+    this.log('Analyzing specific build errors...')
+const errors = this.parseBuildErrors(buildOutput);
     
     for (const error of errors) {
       await this.fixSpecificError(error);
@@ -309,8 +304,8 @@ if (newContent !== content) {
   }
 
   parseBuildErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
+    const errors = []
+const lines = output.split('\n');
     
     for (const line of lines) {
       const match = line.match(/([^(]+)\((\d+),(\d+)\): error (.+)/);
@@ -333,12 +328,12 @@ if (newContent !== content) {
         return;
       }
 
-      const content = fs.readFileSync(error.file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(error.file, 'utf8')
+const lines = content.split('\n');
       
       if (error.line <= lines.length) {
-        const lineIndex = error.line - 1;
-        const line = lines[lineIndex];
+        const lineIndex = error.line - 1
+const line = lines[lineIndex];
         
         // Fix specific error types
         if (error.message.includes('Property assignment expected')) {
@@ -380,9 +375,9 @@ if (newContent !== content) {
   }
 
   findTsFiles() {
-    const files = [];
-    const srcDir = 'src';
-    const pagesDir = 'pages';
+    const files = []
+const srcDir = 'src'
+const pagesDir = 'pages';
     
     if (fs.existsSync(srcDir)) {
       this.findFilesRecursive(srcDir, '.ts', files);
@@ -401,8 +396,8 @@ if (newContent !== content) {
     const items = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.findFilesRecursive(fullPath, ext, files);
@@ -474,9 +469,8 @@ if (newContent !== content) {
   }
 
   async generateFinalReport() {
-    this.log('Generating final report...');
-    
-    const report = {
+    this.log('Generating final report...')
+const report = {
       timestamp: new Date().toISOString(),
       attempts: this.currentRetry,
       fixesApplied: this.fixesApplied,

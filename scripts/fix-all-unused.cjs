@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync } = require('child_process');
 
 // Find all JavaScript and TypeScript files
@@ -50,8 +50,8 @@ const fixUnusedVariables = (filePath) => {
     if (pattern4.test(content)) {
       content = content.replace(pattern4, (match, varName) => {
         // Check if the variable is actually used in the file
-        const usagePattern = new RegExp(`\\b${varName}\\b`, 'g');
-        const matches = content.match(usagePattern);
+        const usagePattern = new RegExp(`\\b${varName}\\b`, 'g')
+const matches = content.match(usagePattern);
         if (matches && matches.length <= 1) {
           // Only the declaration
           return `const ${varName} = undefined; // Unused`;
@@ -65,8 +65,8 @@ const fixUnusedVariables = (filePath) => {
     const pattern5 = /let\s+(_[a-zA-Z][a-zA-Z0-9]*)\s*=/g;
     if (pattern5.test(content)) {
       content = content.replace(pattern5, (match, varName) => {
-        const usagePattern = new RegExp(`\\b${varName}\\b`, 'g');
-        const matches = content.match(usagePattern);
+        const usagePattern = new RegExp(`\\b${varName}\\b`, 'g')
+const matches = content.match(usagePattern);
         if (matches && matches.length <= 1) {
           return `let ${varName} = undefined; // Unused`;
         }
@@ -98,9 +98,8 @@ const fixUnusedVariables = (filePath) => {
 
 // Main execution
 const main = () => {
-  console.log('🔧 Fixing all unused variables...');
-
-  const files = findFiles();
+  console.log('🔧 Fixing all unused variables...')
+const files = findFiles();
   let fixedCount = 0;
 
   files.forEach((file) => {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 console.warn('📊 Bundle Analysis Report');
@@ -38,9 +38,9 @@ try {
   if (fs.existsSync(staticBuildPath)) {
     const chunksPath = path.join(staticBuildPath, 'chunks');
     if (fs.existsSync(chunksPath)) {
-      const chunks = fs.readdirSync(chunksPath);
-      const jsChunks = chunks.filter((f) => f.endsWith('.js'));
-      const cssChunks = chunks.filter((f) => f.endsWith('.css'));
+      const chunks = fs.readdirSync(chunksPath)
+const jsChunks = chunks.filter((f) => f.endsWith('.js'))
+const cssChunks = chunks.filter((f) => f.endsWith('.css'));
 
       console.warn('📦 Static Assets Analysis:');
       console.warn(`- JavaScript chunks: ${jsChunks.length}`);

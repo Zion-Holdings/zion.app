@@ -7,11 +7,10 @@
  * Provides easy access to all automation features and monitoring capabilities.
  */
 
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const readline = require('readline');
-
+const fs = require('fs').promises
+const path = require('path')
+const { spawn, execSync } = require('child_process')
+const readline = require('readline')
 class AutomationManager {
   constructor() {
     this.config = {
@@ -29,8 +28,8 @@ class AutomationManager {
    * Main CLI interface
    */
   async run() {
-    const args = process.argv.slice(2);
-    const command = args[0];
+    const args = process.argv.slice(2)
+const command = args[0];
 
     console.log('🤖 Zion App - Unified Automation Manager\n');
 
@@ -168,8 +167,8 @@ class AutomationManager {
 
       if (isRunning) {
         // Get system status from API
-        const response = await fetch(`http://localhost:${this.config.port}/api/status`);
-        const data = await response.json();
+        const response = await fetch(`http://localhost:${this.config.port}/api/status`)
+const data = await response.json();
 
         console.log('\n📈 System Metrics:');
         console.log(`  Total Tasks: ${data.system.totalTasks}`);
@@ -179,8 +178,8 @@ class AutomationManager {
         console.log(`  Active Tasks: ${data.currentTasks.length}`);
 
         if (data.system.uptime) {
-          const hours = Math.floor(data.system.uptime / 3600000);
-          const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
+          const hours = Math.floor(data.system.uptime / 3600000)
+const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
           console.log(`  Uptime: ${hours}h ${minutes}m`);
         }
 
@@ -193,14 +192,14 @@ class AutomationManager {
           });
         }
 
-        console.log('\n📋 Recent Activity:');
-        const recentTasks = [...data.completedTasks, ...data.failedTasks]
+        console.log('\n📋 Recent Activity:')
+const recentTasks = [...data.completedTasks, ...data.failedTasks]
           .sort((a, b) => b.completedAt - a.completedAt)
           .slice(0, 5);
 
         recentTasks.forEach(task => {
-          const status = task.status === 'completed' ? '✅' : '❌';
-          const time = new Date(task.completedAt).toLocaleTimeString();
+          const status = task.status === 'completed' ? '✅' : '❌'
+const time = new Date(task.completedAt).toLocaleTimeString();
           console.log(`  ${status} ${task.type} - ${time}`);
         });
 
@@ -223,8 +222,8 @@ class AutomationManager {
       const logFile = path.join(this.config.logsDir, 'automation.log');
       
       if (await this.fileExists(logFile)) {
-        const logs = await fs.readFile(logFile, 'utf8');
-        const lines = logs.split('\n').filter(line => line.trim());
+        const logs = await fs.readFile(logFile, 'utf8')
+const lines = logs.split('\n').filter(line => line.trim());
         
         // Show last 50 lines
         const recentLogs = lines.slice(-50);
@@ -248,9 +247,8 @@ class AutomationManager {
    * Open the dashboard
    */
   async openDashboard() {
-    console.log('🌐 Opening Automation Dashboard...\n');
-
-    const dashboardUrl = `http://localhost:${this.config.port}`;
+    console.log('🌐 Opening Automation Dashboard...\n')
+const dashboardUrl = `http://localhost:${this.config.port}`;
     
     try {
       // Check if system is running

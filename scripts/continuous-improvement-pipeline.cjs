@@ -5,10 +5,10 @@
  * Orchestrates the entire self-healing system with automatic commits and pushes to main branch
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const AdvancedSelfHealingSystem = require('./advanced-self-healing-system.cjs');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const AdvancedSelfHealingSystem = require('./advanced-self-healing-system.cjs')
 const CursorChatTrigger = require('./cursor-chat-trigger.cjs');
 
 // Configuration
@@ -46,8 +46,7 @@ const CONFIG = {
     'deployment',
     'userExperience',
   ],
-};
-
+}
 class ContinuousImprovementPipeline {
   constructor() {
     this.isRunning = false;
@@ -65,16 +64,16 @@ class ContinuousImprovementPipeline {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
   }
 
   logPipeline(message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] PIPELINE: ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] PIPELINE: ${message}`;
 
     fs.appendFileSync(CONFIG.pipelineLogFile, logEntry + '\n');
   }
@@ -155,10 +154,9 @@ class ContinuousImprovementPipeline {
   }
 
   async runImprovementCycle() {
-    this.logPipeline('Running improvement cycle...');
-
-    const cycleStart = Date.now();
-    const improvements = [];
+    this.logPipeline('Running improvement cycle...')
+const cycleStart = Date.now()
+const improvements = [];
 
     // Phase 1: Detect Issues
     const issues = await this.detectAllIssues();
@@ -288,9 +286,8 @@ class ContinuousImprovementPipeline {
       const auditOutput = execSync('npm audit --json 2>&1', {
         encoding: 'utf8',
         timeout: 60000,
-      });
-
-      const audit = JSON.parse(auditOutput);
+      })
+const audit = JSON.parse(auditOutput);
       if (
         audit.vulnerabilities &&
         Object.keys(audit.vulnerabilities).length > 0
@@ -516,9 +513,8 @@ class ContinuousImprovementPipeline {
   }
 
   async measureImprovement(improvements) {
-    if (improvements.length === 0) return 0;
-
-    const successfulImprovements = improvements.filter(
+    if (improvements.length === 0) return 0
+const successfulImprovements = improvements.filter(
       (imp) => imp.success,
     ).length;
     return successfulImprovements / improvements.length;
@@ -561,11 +557,10 @@ class ContinuousImprovementPipeline {
   }
 
   generateImprovementCommitMessage(improvements) {
-    const timestamp = new Date().toISOString();
-    const successfulCount = improvements.filter((imp) => imp.success).length;
-    const totalCount = improvements.length;
-
-    const categories = [...new Set(improvements.map((imp) => imp.issue.type))];
+    const timestamp = new Date().toISOString()
+const successfulCount = improvements.filter((imp) => imp.success).length
+const totalCount = improvements.length
+const categories = [...new Set(improvements.map((imp) => imp.issue.type))];
 
     return `🚀 Continuous Improvement: ${successfulCount}/${totalCount} improvements applied
 
@@ -658,9 +653,8 @@ Automated by Continuous Improvement Pipeline`;
       status: await this.getStatus(),
       improvementHistory: this.improvementHistory,
       recommendations: this.generateRecommendations(),
-    };
-
-    const reportPath = 'logs/continuous-improvement-report.json';
+    }
+const reportPath = 'logs/continuous-improvement-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     this.log(`Report generated: ${reportPath}`);
@@ -673,8 +667,8 @@ Automated by Continuous Improvement Pipeline`;
     if (this.improvementHistory.length > 0) {
       const recentScores = this.improvementHistory
         .slice(-5)
-        .map((h) => h.score);
-      const avgScore =
+        .map((h) => h.score)
+const avgScore =
         recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
 
       if (avgScore < CONFIG.improvementThreshold) {
@@ -702,9 +696,8 @@ Automated by Continuous Improvement Pipeline`;
 
 // CLI interface
 if (require.main === module) {
-  const pipeline = new ContinuousImprovementPipeline();
-
-  const command = process.argv[2];
+  const pipeline = new ContinuousImprovementPipeline()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

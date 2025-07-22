@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const chalk = require('chalk')
 class SecurityMonitoringAutomation {
   constructor() {
     this.config = {
@@ -65,17 +64,15 @@ class SecurityMonitoringAutomation {
 
   async performSecurityScan() {
     try {
-      console.log(chalk.cyan('🔍 Performing security scan...'));
-      
-      const scanResults = {
+      console.log(chalk.cyan('🔍 Performing security scan...'))
+const scanResults = {
         dependencies: await this.scanDependencies(),
         code: await this.scanCode(),
         environment: await this.scanEnvironment(),
         secrets: await this.scanSecrets(),
         ssl: await this.scanSSL()
-      };
-      
-      const analysis = this.analyzeSecurityResults(scanResults);
+      }
+const analysis = this.analyzeSecurityResults(scanResults);
       
       if (analysis.criticalIssues > 0) {
         console.log(chalk.red(`🚨 CRITICAL: ${analysis.criticalIssues} critical security issues found!`));
@@ -108,10 +105,9 @@ class SecurityMonitoringAutomation {
     
     try {
       // Run npm audit
-      const auditOutput = execSync('npm audit --json', { encoding: 'utf8' });
-      const auditData = JSON.parse(auditOutput);
-      
-      const vulnerabilities = {
+      const auditOutput = execSync('npm audit --json', { encoding: 'utf8' })
+const auditData = JSON.parse(auditOutput)
+const vulnerabilities = {
         critical: 0,
         high: 0,
         medium: 0,
@@ -135,9 +131,9 @@ class SecurityMonitoringAutomation {
       }
       
       // Check for outdated packages
-      const outdatedOutput = execSync('npm outdated --json', { encoding: 'utf8' });
-      const outdatedData = JSON.parse(outdatedOutput);
-      const outdatedPackages = Object.keys(outdatedData);
+      const outdatedOutput = execSync('npm outdated --json', { encoding: 'utf8' })
+const outdatedData = JSON.parse(outdatedOutput)
+const outdatedPackages = Object.keys(outdatedData);
       
       return {
         vulnerabilities,
@@ -156,10 +152,9 @@ class SecurityMonitoringAutomation {
   }
 
   async scanCode() {
-    console.log(chalk.blue('  🔍 Scanning code for security issues...'));
-    
-    const securityIssues = [];
-    const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'api'];
+    console.log(chalk.blue('  🔍 Scanning code for security issues...'))
+const securityIssues = []
+const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'api'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -185,13 +180,12 @@ class SecurityMonitoringAutomation {
   }
 
   walkDirectory(dirPath, files) {
-    if (!fs.existsSync(dirPath)) return;
-    
-    const items = fs.readdirSync(dirPath);
+    if (!fs.existsSync(dirPath)) return
+const items = fs.readdirSync(dirPath);
     
     for (const item of items) {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.walkDirectory(fullPath, files);
@@ -219,8 +213,8 @@ class SecurityMonitoringAutomation {
   }
 
   scanFileForSecurityIssues(filePath) {
-    const issues = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const issues = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Security patterns to check
     const securityPatterns = [
@@ -291,17 +285,16 @@ class SecurityMonitoringAutomation {
   }
 
   async scanEnvironment() {
-    console.log(chalk.blue('  🌍 Scanning environment configuration...'));
-    
-    const envIssues = [];
+    console.log(chalk.blue('  🌍 Scanning environment configuration...'))
+const envIssues = [];
     
     // Check for .env files
     const envFiles = ['.env', '.env.local', '.env.production', '.env.development'];
     
     for (const envFile of envFiles) {
       if (fs.existsSync(envFile)) {
-        const content = fs.readFileSync(envFile, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(envFile, 'utf8')
+const lines = content.split('\n');
         
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i].trim();
@@ -368,10 +361,9 @@ class SecurityMonitoringAutomation {
   }
 
   async scanSecrets() {
-    console.log(chalk.blue('  🔐 Scanning for exposed secrets...'));
-    
-    const secretsFound = [];
-    const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'api'];
+    console.log(chalk.blue('  🔐 Scanning for exposed secrets...'))
+const secretsFound = []
+const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'api'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -390,8 +382,8 @@ class SecurityMonitoringAutomation {
   }
 
   scanFileForSecrets(filePath) {
-    const secrets = [];
-    const content = fs.readFileSync(filePath, 'utf8');
+    const secrets = []
+const content = fs.readFileSync(filePath, 'utf8');
     
     // Common secret patterns
     const secretPatterns = [
@@ -583,8 +575,8 @@ class SecurityMonitoringAutomation {
     if (!issue.file || !issue.fix) return;
     
     try {
-      const content = fs.readFileSync(issue.file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(issue.file, 'utf8')
+const lines = content.split('\n');
       
       // Apply the fix based on the issue type
       if (issue.description.includes('eval()')) {
@@ -633,9 +625,8 @@ class SecurityMonitoringAutomation {
         securityTrend: this.calculateSecurityTrend()
       },
       history: this.securityHistory.slice(-10) // Last 10 scans
-    };
-    
-    const reportPath = path.join(__dirname, '..', 'logs', 'security-monitoring-report.json');
+    }
+const reportPath = path.join(__dirname, '..', 'logs', 'security-monitoring-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
@@ -647,8 +638,8 @@ class SecurityMonitoringAutomation {
       return 'insufficient-data';
     }
     
-    const recent = this.securityHistory.slice(-3);
-    const criticalIssues = recent.filter(entry => entry.analysis.criticalIssues > 0).length;
+    const recent = this.securityHistory.slice(-3)
+const criticalIssues = recent.filter(entry => entry.analysis.criticalIssues > 0).length;
     
     if (criticalIssues > 0) {
       return 'critical';
@@ -671,8 +662,8 @@ class SecurityMonitoringAutomation {
 
 // CLI Interface
 if (require.main === module) {
-  const automation = new SecurityMonitoringAutomation();
-  const command = process.argv[2];
+  const automation = new SecurityMonitoringAutomation()
+const command = process.argv[2];
   
   switch (command) {
     case 'start':

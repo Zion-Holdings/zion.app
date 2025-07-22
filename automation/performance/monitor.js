@@ -1,8 +1,7 @@
-const fs = require('fs').promises;
-const path = require('path');
-const axios = require('axios');
-const { performance } = require('perf_hooks');
-
+const fs = require('fs').promises
+const path = require('path')
+const axios = require('axios')
+const { performance } = require('perf_hooks')
 class PerformanceMonitor {
   constructor() {
     this.isMonitoring = false;

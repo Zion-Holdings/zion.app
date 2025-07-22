@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { App } = require('@slack/bolt');
-const axios = require('axios');
-const fs = require('fs').promises;
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
-
-const execAsync = promisify(exec);
-
+const { App } = require('@slack/bolt')
+const axios = require('axios')
+const fs = require('fs').promises
+const path = require('path')
+const { exec } = require('child_process')
+const { promisify } = require('util')
+const execAsync = promisify(exec)
 class OptimizationSlackBot {
   constructor() {
     this.app = new App({
@@ -26,11 +24,10 @@ class OptimizationSlackBot {
   setupCommands() {
     // Main optimization command
     this.app.command('/optimize', async ({ command, ack, respond, client }) => {
-      await ack();
-      
-      const args = command.text.split(' ');
-      const target = args[0] || 'all';
-      const options = args.slice(1);
+      await ack()
+const args = command.text.split(' ')
+const target = args[0] || 'all'
+const options = args.slice(1);
 
       try {
         await respond({

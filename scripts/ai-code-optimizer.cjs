@@ -12,10 +12,9 @@
  * - Documentation improvements
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class AICodeOptimizer {
   constructor() {
     this.projectRoot = process.cwd();
@@ -62,17 +61,15 @@ class AICodeOptimizer {
    * Perform initial code analysis
    */
   async performInitialAnalysis() {
-    console.log('🔍 Performing initial code analysis...');
-
-    const analysis = [
+    console.log('🔍 Performing initial code analysis...')
+const analysis = [
       this.analyzeCodeQuality(),
       this.analyzePerformance(),
       this.analyzeSecurity(),
       this.analyzeDocumentation(),
       this.analyzeBestPractices(),
-    ];
-
-    const results = await Promise.allSettled(analysis);
+    ]
+const results = await Promise.allSettled(analysis);
 
     for (const result of results) {
       if (result.status === 'fulfilled') {
@@ -95,8 +92,8 @@ class AICodeOptimizer {
       // Run ESLint analysis
       const lintOutput = execSync('npm run lint -- --format=json', {
         stdio: 'pipe',
-      }).toString();
-      const lintResults = JSON.parse(lintOutput);
+      }).toString()
+const lintResults = JSON.parse(lintOutput);
 
       let qualityIssues = [];
 
@@ -180,8 +177,8 @@ class AICodeOptimizer {
       // Run security audit
       const auditOutput = execSync('npm audit --json', {
         stdio: 'pipe',
-      }).toString();
-      const auditResults = JSON.parse(auditOutput);
+      }).toString()
+const auditResults = JSON.parse(auditOutput);
 
       // Analyze code for security issues
       const codeSecurityIssues = this.analyzeCodeSecurity();
@@ -314,9 +311,8 @@ class AICodeOptimizer {
       this.optimizePerformance(),
       this.optimizeSecurity(),
       this.optimizeDocumentation(),
-    ];
-
-    const results = await Promise.allSettled(optimizations);
+    ]
+const results = await Promise.allSettled(optimizations);
 
     for (const result of results) {
       if (result.status === 'fulfilled' && result.value) {

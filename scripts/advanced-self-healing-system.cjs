@@ -6,11 +6,11 @@
  * and continuously improves the app with automatic commits and pushes to the main branch
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const crypto = require('crypto');
-const https = require('https');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const crypto = require('crypto')
+const https = require('https')
 const http = require('http');
 
 // Configuration
@@ -141,8 +141,7 @@ const CONFIG = {
     'src/utils/supabase/server.ts',
     'middleware.ts',
   ],
-};
-
+}
 class AdvancedSelfHealingSystem {
   constructor() {
     this.isRunning = false;
@@ -158,8 +157,8 @@ class AdvancedSelfHealingSystem {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
 
@@ -173,8 +172,8 @@ class AdvancedSelfHealingSystem {
   }
 
   logCursorChat(message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] CURSOR_CHAT: ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] CURSOR_CHAT: ${message}`;
 
     fs.appendFileSync(CONFIG.cursorChatLogFile, logEntry + '\n');
   }
@@ -396,8 +395,8 @@ class AdvancedSelfHealingSystem {
 
     for (const logFile of logFiles) {
       if (fs.existsSync(logFile)) {
-        const logContent = fs.readFileSync(logFile, 'utf8');
-        const recentLines = logContent.split('\n').slice(-100); // Last 100 lines
+        const logContent = fs.readFileSync(logFile, 'utf8')
+const recentLines = logContent.split('\n').slice(-100); // Last 100 lines
 
         for (const line of recentLines) {
           for (const [pattern, config] of Object.entries(
@@ -533,9 +532,8 @@ class AdvancedSelfHealingSystem {
         this.log('Applying permission fix...');
         await this.fixPermissions();
       },
-    };
-
-    const fixStrategy = fixStrategies[issue.type];
+    }
+const fixStrategy = fixStrategies[issue.type];
     if (fixStrategy) {
       await fixStrategy();
     }
@@ -593,8 +591,8 @@ class AdvancedSelfHealingSystem {
     this.log('Fixing Supabase issues...');
 
     // Check Supabase configuration
-    const supabaseClientPath = 'src/utils/supabase/client.ts';
-    const supabaseServerPath = 'src/utils/supabase/server.ts';
+    const supabaseClientPath = 'src/utils/supabase/client.ts'
+const supabaseServerPath = 'src/utils/supabase/server.ts';
 
     if (fs.existsSync(supabaseClientPath)) {
       const content = fs.readFileSync(supabaseClientPath, 'utf8');
@@ -735,9 +733,8 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
 
   async sendCursorChat(chatData) {
     return new Promise((resolve, reject) => {
-      const postData = JSON.stringify(chatData);
-
-      const options = {
+      const postData = JSON.stringify(chatData)
+const options = {
         hostname: new URL(CONFIG.cursorApiUrl).hostname,
         port: 443,
         path: '/api/chat',
@@ -747,9 +744,8 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
           'Content-Length': Buffer.byteLength(postData),
           Authorization: `Bearer ${CONFIG.cursorApiKey}`,
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let data = '';
 
         res.on('data', (chunk) => {
@@ -775,16 +771,14 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
   }
 
   async performHealthCheck() {
-    this.log('Performing health check...');
-
-    const healthChecks = [
+    this.log('Performing health check...')
+const healthChecks = [
       this.checkBuildHealth(),
       this.checkLintHealth(),
       this.checkTypeHealth(),
       this.checkRuntimeHealth(),
-    ];
-
-    const results = await Promise.allSettled(healthChecks);
+    ]
+const results = await Promise.allSettled(healthChecks);
 
     let healthy = true;
     for (const result of results) {
@@ -890,9 +884,9 @@ Context: This is an automated fix request from the Advanced Self-Healing System.
   }
 
   generateCommitMessage() {
-    const timestamp = new Date().toISOString();
-    const fixCount = this.fixesApplied.length;
-    const chatCount = this.cursorChatsTriggered.length;
+    const timestamp = new Date().toISOString()
+const fixCount = this.fixesApplied.length
+const chatCount = this.cursorChatsTriggered.length;
 
     return `🤖 Auto-fix: ${fixCount} issues resolved, ${chatCount} Cursor chats triggered
 
@@ -924,9 +918,8 @@ Automated by Advanced Self-Healing System`;
       buildHistory: this.buildHistory.slice(-10), // Last 10 builds
       errorHistory: this.errorHistory.slice(-10), // Last 10 errors
       recommendations: this.generateRecommendations(),
-    };
-
-    const reportPath = 'logs/advanced-self-healing-report.json';
+    }
+const reportPath = 'logs/advanced-self-healing-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     this.log(`Report generated: ${reportPath}`);
@@ -958,9 +951,8 @@ Automated by Advanced Self-Healing System`;
 
 // CLI interface
 if (require.main === module) {
-  const system = new AdvancedSelfHealingSystem();
-
-  const command = process.argv[2];
+  const system = new AdvancedSelfHealingSystem()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

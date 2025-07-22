@@ -5,7 +5,7 @@
  * Temporary fix for app loading issues
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const { _execSync } = require('child_process');
 
 // Replace console.log with console.warn for allowed console methods
@@ -50,9 +50,8 @@ function checkAppStatus() {
 
   // Test if the main app file exists and is readable
   try {
-    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
-
-    const loadingFixMarkers = [
+    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8')
+const loadingFixMarkers = [
       'Force initializing after timeout',
       'Force completing app initialization due to timeout',
       'Force initialization completion',
@@ -73,9 +72,8 @@ function checkAppStatus() {
 
 // Create a minimal app component for emergency use
 function createMinimalApp() {
-  console.warn('🔧 Creating minimal emergency app component...');
-
-  const minimalAppContent = `import React from 'react';
+  console.warn('🔧 Creating minimal emergency app component...')
+const minimalAppContent = `import React from 'react';
 import type { AppProps } from 'next/app';
 import '../src/index.css';
 
@@ -143,9 +141,8 @@ export default MyApp;
 // Run diagnostics
 function runDiagnostics() {
   console.warn('\n🔍 RUNNING APP DIAGNOSTICS');
-  console.warn('==========================');
-
-  const checks = [
+  console.warn('==========================')
+const checks = [
     {
       name: 'App file exists',
       check: () => fs.existsSync('pages/_app.tsx'),

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync } = require('child_process');
 
 // Find all JavaScript and TypeScript files
@@ -104,9 +104,8 @@ const fixRemainingIssues = (filePath) => {
 
 // Main execution
 const main = () => {
-  console.log('🔧 Fixing remaining lint issues...');
-
-  const files = findFiles();
+  console.log('🔧 Fixing remaining lint issues...')
+const files = findFiles();
   let fixedCount = 0;
 
   files.forEach((file) => {

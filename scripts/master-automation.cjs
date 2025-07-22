@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class MasterAutomation {
   constructor() {
     this.fixes = [];
@@ -31,8 +30,8 @@ class MasterAutomation {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync('logs/master-automation.log', logMessage + '\n');
   }
@@ -169,8 +168,7 @@ const nextConfig = {
   },
   // Minimal environment
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', nextConfig);
@@ -279,11 +277,9 @@ export default function Signup() {
       // Fix analyze-bundle script
       const analyzeBundleContent = `#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-
-const _currentFilename = path.basename(__filename);
-
+const fs = require('fs')
+const path = require('path')
+const _currentFilename = path.basename(__filename)
 class BundleAnalyzer {
   constructor() {
     this.analysis = {};
@@ -392,17 +388,16 @@ module.exports = BundleAnalyzer;`;
       // Create automation monitoring script
       const monitorContent = `#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 class AutomationMonitor {
   constructor() {
     this.logFile = 'logs/automation.log';
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    const logMessage = \`[\${timestamp}] \${message}\`;
+    const timestamp = new Date().toISOString()
+const logMessage = \`[\${timestamp}] \${message}\`;
     console.log(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\\n');
   }

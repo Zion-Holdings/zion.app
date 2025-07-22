@@ -6,11 +6,10 @@
  * Triggers new builds after fixes are applied
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const glob = require('glob');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const glob = require('glob')
 class SelfHealingSystem {
   constructor() {
     this.logFile = 'logs/self-healing.log';
@@ -29,8 +28,8 @@ class SelfHealingSystem {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -72,9 +71,8 @@ class SelfHealingSystem {
   }
 
   async analyzeCodebase() {
-    this.log('Analyzing codebase for potential issues...');
-
-    const analysis = {
+    this.log('Analyzing codebase for potential issues...')
+const analysis = {
       syntaxErrors: await this.findSyntaxErrors(),
       typeErrors: await this.findTypeErrors(),
       lintErrors: await this.findLintErrors(),
@@ -119,12 +117,12 @@ class SelfHealingSystem {
   }
 
   async findMissingImports() {
-    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-    const missingImports = [];
+    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() })
+const missingImports = [];
 
     for (const file of tsFiles) {
-      const content = fs.readFileSync(file, 'utf8');
-      const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
+      const content = fs.readFileSync(file, 'utf8')
+const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
 
       if (importMatches) {
         for (const match of importMatches) {
@@ -148,12 +146,12 @@ class SelfHealingSystem {
   }
 
   async findUnusedVariables() {
-    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-    const unusedVars = [];
+    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() })
+const unusedVars = [];
 
     for (const file of tsFiles) {
-      const content = fs.readFileSync(file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
@@ -165,8 +163,8 @@ class SelfHealingSystem {
           // Check for unused variables (prefixed with _)
           const varMatch = line.match(/const\s+_(\w+)/);
           if (varMatch) {
-            const varName = varMatch[1];
-            const restOfFile = content.substring(
+            const varName = varMatch[1]
+const restOfFile = content.substring(
               content.indexOf(line) + line.length,
             );
             if (!restOfFile.includes(varName)) {
@@ -181,12 +179,12 @@ class SelfHealingSystem {
   }
 
   async findConsoleLogs() {
-    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-    const consoleLogs = [];
+    const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() })
+const consoleLogs = [];
 
     for (const file of tsFiles) {
-      const content = fs.readFileSync(file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
@@ -205,18 +203,17 @@ class SelfHealingSystem {
 
   async findMissingDependencies() {
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const allDeps = {
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies,
-      };
-
-      const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() });
-      const missingDeps = new Set();
+      }
+const tsFiles = glob.sync('src/**/*.{ts,tsx}', { cwd: process.cwd() })
+const missingDeps = new Set();
 
       for (const file of tsFiles) {
-        const content = fs.readFileSync(file, 'utf8');
-        const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
+        const content = fs.readFileSync(file, 'utf8')
+const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
 
         if (importMatches) {
           for (const match of importMatches) {
@@ -243,8 +240,8 @@ class SelfHealingSystem {
   }
 
   parseTypeScriptErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
+    const errors = []
+const lines = output.split('\n');
 
     for (const line of lines) {
       const match = line.match(/([^(]+)\((\d+),(\d+)\): error TS\d+: (.+)/);
@@ -263,8 +260,8 @@ class SelfHealingSystem {
   }
 
   parseLintErrors(output) {
-    const errors = [];
-    const lines = output.split('\n');
+    const errors = []
+const lines = output.split('\n');
 
     for (const line of lines) {
       const match = line.match(/([^(]+)\((\d+),(\d+)\): (.+)/);
@@ -283,9 +280,8 @@ class SelfHealingSystem {
   }
 
   async applyFixes() {
-    this.log('Applying automatic fixes...');
-
-    const fixes = [
+    this.log('Applying automatic fixes...')
+const fixes = [
       this.fixSyntaxErrors(),
       this.fixTypeErrors(),
       this.fixLintErrors(),
@@ -296,9 +292,8 @@ class SelfHealingSystem {
       this.fixImportIssues(),
       this.fixNullChecks(),
       this.fixTypeAssignments(),
-    ];
-
-    const results = await Promise.allSettled(fixes);
+    ]
+const results = await Promise.allSettled(fixes);
 
     results.forEach((result, index) => {
       if (result.status === 'fulfilled' && result.value) {
@@ -321,8 +316,8 @@ class SelfHealingSystem {
       newContent = newContent.replace(/([^;])\n/g, '$1;\n');
 
       // Fix missing brackets
-      const openBraces = (newContent.match(/\{/g) || []).length;
-      const closeBraces = (newContent.match(/\}/g) || []).length;
+      const openBraces = (newContent.match(/\{/g) || []).length
+const closeBraces = (newContent.match(/\}/g) || []).length;
       if (openBraces > closeBraces) {
         newContent += '\n}'.repeat(openBraces - closeBraces);
         modified = true;
@@ -401,12 +396,12 @@ class SelfHealingSystem {
     const unusedVars = await this.findUnusedVariables();
 
     for (const unused of unusedVars) {
-      const content = fs.readFileSync(unused.file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(unused.file, 'utf8')
+const lines = content.split('\n');
 
       // Remove unused variable declaration
-      const line = lines[unused.line - 1];
-      const newLine = line.replace(/const\s+_\w+\s*=\s*[^;]+;?/, '');
+      const line = lines[unused.line - 1]
+const newLine = line.replace(/const\s+_\w+\s*=\s*[^;]+;?/, '');
       lines[unused.line - 1] = newLine;
 
       fs.writeFileSync(unused.file, lines.join('\n'));
@@ -422,8 +417,8 @@ class SelfHealingSystem {
     const consoleLogs = await this.findConsoleLogs();
 
     for (const log of consoleLogs) {
-      const content = fs.readFileSync(log.file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(log.file, 'utf8')
+const lines = content.split('\n');
 
       // Comment out console.log statements
       const line = lines[log.line - 1];
@@ -465,8 +460,8 @@ class SelfHealingSystem {
       newContent = newContent.replace(
         /from ['"]\.\.?\/[^'"]*['"]/g,
         (match) => {
-          const importPath = match.match(/from ['"]([^'"]+)['"]/)[1];
-          const resolvedPath = this.resolveImportPath(file, importPath);
+          const importPath = match.match(/from ['"]([^'"]+)['"]/)[1]
+const resolvedPath = this.resolveImportPath(file, importPath);
           return `from '${resolvedPath}'`;
         },
       );
@@ -528,8 +523,8 @@ class SelfHealingSystem {
 
   resolveImportPath(file, importPath) {
     // Simple import path resolution
-    const dir = path.dirname(file);
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    const dir = path.dirname(file)
+const extensions = ['.ts', '.tsx', '.js', '.jsx'];
 
     for (const ext of extensions) {
       const fullPath = path.resolve(dir, importPath + ext);
@@ -542,16 +537,14 @@ class SelfHealingSystem {
   }
 
   async applyAdvancedFixes() {
-    this.log('Applying advanced fixes...');
-
-    const advancedFixes = [
+    this.log('Applying advanced fixes...')
+const advancedFixes = [
       this.fixBuildConfiguration(),
       this.fixEnvironmentIssues(),
       this.fixPackageJsonIssues(),
       this.fixTsConfigIssues(),
-    ];
-
-    const results = await Promise.allSettled(advancedFixes);
+    ]
+const results = await Promise.allSettled(advancedFixes);
 
     results.forEach((result, index) => {
       if (result.status === 'fulfilled' && result.value) {
@@ -747,9 +740,8 @@ NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
   }
 
   async generateErrorReport(buildOutput) {
-    this.log('Generating error report...');
-
-    const report = {
+    this.log('Generating error report...')
+const report = {
       timestamp: new Date().toISOString(),
       fixesApplied: this.fixesApplied,
       buildHistory: this.buildHistory,

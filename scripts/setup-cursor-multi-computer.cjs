@@ -7,11 +7,10 @@
  * and configures the necessary environment variables and connections.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const os = require('os');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const os = require('os')
 class CursorMultiComputerSetup {
   constructor() {
     this.config = {
@@ -62,9 +61,8 @@ class CursorMultiComputerSetup {
   }
 
   async createDirectories() {
-    console.log('📁 Creating necessary directories...');
-
-    const directories = [
+    console.log('📁 Creating necessary directories...')
+const directories = [
       this.config.logsDir,
       path.join(this.config.cursorConfigDir, 'rules'),
       path.join(this.config.cursorConfigDir, 'rules', 'automation'),
@@ -82,9 +80,8 @@ class CursorMultiComputerSetup {
   }
 
   async configureEnvironment() {
-    console.log('⚙️ Configuring environment variables...');
-
-    const envPath = this.config.envFile;
+    console.log('⚙️ Configuring environment variables...')
+const envPath = this.config.envFile;
     let envContent = '';
 
     // Read existing .env.local if it exists
@@ -126,9 +123,8 @@ class CursorMultiComputerSetup {
   }
 
   async setupCursorConfig() {
-    console.log('🔧 Setting up Cursor configuration...');
-
-    const cursorRulesDir = path.join(
+    console.log('🔧 Setting up Cursor configuration...')
+const cursorRulesDir = path.join(
       this.config.cursorConfigDir,
       'rules',
       'automation',
@@ -288,9 +284,8 @@ This rule set enables automated communication and collaboration between multiple
   }
 
   async createStartupScripts() {
-    console.log('📜 Creating startup scripts...');
-
-    const scripts = [
+    console.log('📜 Creating startup scripts...')
+const scripts = [
       {
         name: 'start-cursor-communication.sh',
         content: this.generateStartupScript(),
@@ -604,9 +599,8 @@ Add custom automation rules to \`.cursor/rules/automation/\`:
 - Implement caching for repeated requests
 - Monitor resource usage
 - Scale based on computer count
-`;
-
-    const instructionsPath = 'CURSOR_MULTI_COMPUTER_SETUP.md';
+`
+const instructionsPath = 'CURSOR_MULTI_COMPUTER_SETUP.md';
     fs.writeFileSync(instructionsPath, instructions);
     console.log(`✅ Created setup instructions: ${instructionsPath}`);
   }
@@ -614,9 +608,8 @@ Add custom automation rules to \`.cursor/rules/automation/\`:
 
 // Main execution
 if (require.main === module) {
-  const setup = new CursorMultiComputerSetup();
-
-  const command = process.argv[2];
+  const setup = new CursorMultiComputerSetup()
+const command = process.argv[2];
 
   switch (command) {
     case 'setup':

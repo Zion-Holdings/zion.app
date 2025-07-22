@@ -5,14 +5,14 @@
  * Checks various performance metrics and improvements
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 process.stdout.write('\ud83d\udd0d Performance Audit Report\n');
 process.stdout.write('===========================\n');
 
 // Check if .env.local exists
-const envLocalPath = path.join(process.cwd(), '.env.local');
+const envLocalPath = path.join(process.cwd(), '.env.local')
 const hasEnvLocal = fs.existsSync(envLocalPath);
 
 process.stdout.write('\ud83d\udccb Environment Configuration:\n');
@@ -46,9 +46,8 @@ process.stdout.write('\ud83d\udce6 Build Optimizations:\n');
 // Check Next.js config optimizations
 const nextConfigPath = path.join(process.cwd(), 'next.config.js');
 if (fs.existsSync(nextConfigPath)) {
-  const nextConfig = fs.readFileSync(nextConfigPath, 'utf8');
-
-  const optimizations = [
+  const nextConfig = fs.readFileSync(nextConfigPath, 'utf8')
+const optimizations = [
     {
       name: 'Bundle Analysis',
       check: nextConfig.includes('withBundleAnalyzer'),
@@ -77,9 +76,8 @@ process.stdout.write('\n\ud83c\udfaf App Initialization Optimizations:\n');
 // Check _app.tsx optimizations
 const appPath = path.join(process.cwd(), 'pages/_app.tsx');
 if (fs.existsSync(appPath)) {
-  const appContent = fs.readFileSync(appPath, 'utf8');
-
-  const appOptimizations = [
+  const appContent = fs.readFileSync(appPath, 'utf8')
+const appOptimizations = [
     {
       name: 'Deferred Initialization',
       check: appContent.includes('setTimeout'),
@@ -105,9 +103,8 @@ process.stdout.write('\n\ud83d\udee1\ufe0f Error Handling & Monitoring:\n');
 // Check Sentry configuration
 const sentryPath = path.join(process.cwd(), 'sentry.ts');
 if (fs.existsSync(sentryPath)) {
-  const sentryContent = fs.readFileSync(sentryPath, 'utf8');
-
-  const sentryOptimizations = [
+  const sentryContent = fs.readFileSync(sentryPath, 'utf8')
+const sentryOptimizations = [
     {
       name: 'Invalid DSN Detection',
       check: sentryContent.includes('isInvalidDsn'),
@@ -138,9 +135,8 @@ const supabasePath = path.join(
   'src/integrations/supabase/client.ts',
 );
 if (fs.existsSync(supabasePath)) {
-  const supabaseContent = fs.readFileSync(supabasePath, 'utf8');
-
-  const supabaseOptimizations = [
+  const supabaseContent = fs.readFileSync(supabasePath, 'utf8')
+const supabaseOptimizations = [
     { name: 'PKCE Flow', check: supabaseContent.includes("flowType: 'pkce'") },
     {
       name: 'Real Credential Detection',

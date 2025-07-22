@@ -5,13 +5,11 @@
  * Automatically runs after each build to fix lint issues and trigger new builds if needed
  */
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { execSync } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 // Import the self-healing system
-const SelfHealingLintSystem = require('./self-healing-lint-system.cjs');
-
+const SelfHealingLintSystem = require('./self-healing-lint-system.cjs')
 class PostBuildLintHealing {
   constructor() {
     this.selfHealingSystem = new SelfHealingLintSystem();
@@ -43,12 +41,12 @@ class PostBuildLintHealing {
 
   isBuildSuccessful() {
     // Check for build artifacts
-    const buildDirs = ['.next', 'out', 'dist'];
-    const hasBuildArtifacts = buildDirs.some((dir) => fs.existsSync(dir));
+    const buildDirs = ['.next', 'out', 'dist']
+const hasBuildArtifacts = buildDirs.some((dir) => fs.existsSync(dir));
 
     // Check for build logs
-    const buildLogs = ['build.log', 'error.log'];
-    const hasErrors = buildLogs.some((log) => {
+    const buildLogs = ['build.log', 'error.log']
+const hasErrors = buildLogs.some((log) => {
       if (fs.existsSync(log)) {
         const content = fs.readFileSync(log, 'utf8');
         return content.includes('error') || content.includes('failed');
@@ -178,13 +176,13 @@ class PostBuildLintHealing {
     if (match) {
       const [, filePath, line] = match;
       try {
-        const content = fs.readFileSync(filePath, 'utf8');
-        const lines = content.split('\n');
-        const lineIndex = parseInt(line) - 1;
+        const content = fs.readFileSync(filePath, 'utf8')
+const lines = content.split('\n')
+const lineIndex = parseInt(line) - 1;
 
         // Add underscore prefix to unused variables
-        const lineContent = lines[lineIndex];
-        const updatedLine = lineContent.replace(
+        const lineContent = lines[lineIndex]
+const updatedLine = lineContent.replace(
           /\b(\w+)\b/g,
           (match, varName) => {
             if (varName.startsWith('_')) return match;

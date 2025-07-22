@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Configuration
-const LOCALES_DIR = path.join(__dirname, '../src/i18n/locales');
-const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt', 'ar'];
+const LOCALES_DIR = path.join(__dirname, '../src/i18n/locales')
+const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt', 'ar']
 const OUTPUT_FILE = path.join(__dirname, '../i18n-audit-report.md');
 
 // Colors for console output
@@ -18,8 +18,7 @@ const colors = {
   cyan: '\x1b[36m',
   white: '\x1b[37m',
   reset: '\x1b[0m',
-};
-
+}
 function log(message, color = 'white') {
   process.stdout.write(`${colors[color]}${message}${colors.reset}\n`);
 }
@@ -100,8 +99,8 @@ function isMissingTranslation(
 
 // Generate audit report
 function generateAuditReport(translations) {
-  const allKeys = getAllKeys(translations);
-  const report = {
+  const allKeys = getAllKeys(translations)
+const report = {
     summary: {},
     missing: {},
     coverage: {},
@@ -121,8 +120,8 @@ function generateAuditReport(translations) {
   // Analyze each key
   for (const key of allKeys) {
     for (const lang of SUPPORTED_LANGUAGES) {
-      const flattened = flattenObject(translations[lang] || {});
-      const value = flattened[key];
+      const flattened = flattenObject(translations[lang] || {})
+const value = flattened[key];
 
       if (isMissingTranslation(value, key, 'en', lang, translations)) {
         report.missing[lang].push({
@@ -196,8 +195,8 @@ function generateMarkdownReport(report) {
           ? '✅ Complete'
           : percentage >= 80
             ? '⚠️ Almost Complete'
-            : '❌ Needs Work';
-      const translated = report.coverage[lang].translated;
+            : '❌ Needs Work'
+const translated = report.coverage[lang].translated;
       markdown += `| ${lang.toUpperCase()} | ${percentage}% | ${translated} | ${missing} | ${status} |\n`;
     },
   );
@@ -260,15 +259,13 @@ function generateMarkdownReport(report) {
 
 // Main function
 function main() {
-  log('🔍 Starting i18n audit...', 'cyan');
-
-  const translations = loadTranslations();
+  log('🔍 Starting i18n audit...', 'cyan')
+const translations = loadTranslations();
   log(
     `📁 Loaded translations for: ${Object.keys(translations).join(', ')}`,
     'blue',
-  );
-
-  const report = generateAuditReport(translations);
+  )
+const report = generateAuditReport(translations);
   log(`📊 Analyzed ${report.summary.totalKeys} translation keys`, 'blue');
 
   // Console output

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NetlifyErrorFixer {
   constructor() {
     this.fixStrategies = {
@@ -371,14 +370,13 @@ NEXT_SHARP_PATH=./node_modules/sharp
   }
 
   findFiles(extensions) {
-    const files = [];
-    const exts = extensions.split(',');
-
-    function walkDir(dir) {
+    const files = []
+const exts = extensions.split(',')
+function walkDir(dir) {
       const items = fs.readdirSync(dir);
       items.forEach((item) => {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
         if (
           stat.isDirectory() &&
@@ -397,9 +395,8 @@ NEXT_SHARP_PATH=./node_modules/sharp
   }
 
   async fixError(errorType, errorDetails = {}) {
-    this.log(`Attempting to fix error type: ${errorType}`);
-
-    const fixStrategy = this.fixStrategies[errorType];
+    this.log(`Attempting to fix error type: ${errorType}`)
+const fixStrategy = this.fixStrategies[errorType];
     if (!fixStrategy) {
       this.log(`No fix strategy found for error type: ${errorType}`, 'error');
       return false;
@@ -409,9 +406,8 @@ NEXT_SHARP_PATH=./node_modules/sharp
   }
 
   async applyAllFixes() {
-    this.log('Applying all available fixes...');
-
-    const results = {};
+    this.log('Applying all available fixes...')
+const results = {};
 
     for (const [errorType, fixStrategy] of Object.entries(this.fixStrategies)) {
       try {
@@ -428,10 +424,9 @@ NEXT_SHARP_PATH=./node_modules/sharp
 
 // CLI interface
 if (require.main === module) {
-  const fixer = new NetlifyErrorFixer();
-
-  const command = process.argv[2];
-  const errorType = process.argv[3];
+  const fixer = new NetlifyErrorFixer()
+const command = process.argv[2]
+const errorType = process.argv[3];
 
   switch (command) {
     case 'fix':

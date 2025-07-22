@@ -5,13 +5,12 @@
  * Prepares the Zion App for production deployment with all optimizations
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { _execSync } = require('child_process');
 
 // Comment out all console.log statements (lines 11, 35, 47, 65, 69, 72, 79, 82, 87, 97, 102, 111, 137, 144, 146, 157, 162, 180, 249, 250, 251, 252, 253, 256, 258, 262, 263, 264, 265, 266, 269)
-// console.warn('🚀 Starting deployment optimization...\n');
-
+// console.warn('🚀 Starting deployment optimization...\n')
 class DeploymentOptimizer {
   constructor() {
     this.projectRoot = process.cwd();
@@ -52,9 +51,8 @@ class DeploymentOptimizer {
     const requiredEnvVars = [
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    ];
-
-    const missingEnvVars = requiredEnvVars.filter(
+    ]
+const missingEnvVars = requiredEnvVars.filter(
       (envVar) => !process.env[envVar],
     );
 
@@ -124,8 +122,8 @@ class DeploymentOptimizer {
         const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'));
 
         // Calculate total bundle size
-        let totalSize = 0;
-        const chunks = [];
+        let totalSize = 0
+const chunks = [];
 
         Object.entries(manifest.pages).forEach(([page, files]) => {
           files.forEach((file) => {
@@ -166,9 +164,8 @@ class DeploymentOptimizer {
   }
 
   async generateOptimizationReport() {
-    // console.warn('\n📄 Generating optimization report...');
-
-    const report = {
+    // console.warn('\n📄 Generating optimization report...')
+const report = {
       timestamp: new Date().toISOString(),
       version: this.getPackageVersion(),
       environment: 'production',
@@ -288,10 +285,10 @@ class DeploymentOptimizer {
   }
 
   formatBytes(bytes) {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    if (bytes === 0) return '0 Bytes'
+const k = 1024
+const sizes = ['Bytes', 'KB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
 

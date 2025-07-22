@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync: _execSync } = require('child_process');
 
 // Colors for terminal output
@@ -14,17 +14,16 @@ const colors = {
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
   cyan: '\x1b[36m',
-};
-
+}
 function colorize(text, color) {
   return `${colors[color]}${text}${colors.reset}`;
 }
 
 function formatBytes(bytes) {
-  if (bytes === 0) return '0 B';
-  const k = 1024;
-  const sizes = ['B', 'kB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  if (bytes === 0) return '0 B'
+const k = 1024
+const sizes = ['B', 'kB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
@@ -62,14 +61,13 @@ function analyzeBuildOutput() {
 
 function analyzeStaticFiles(staticDir) {
   console.warn(colorize('📦 Static Assets Analysis', 'blue'));
-  console.warn(colorize('-------------------------', 'blue'));
-
-  const jsDir = path.join(staticDir, 'chunks');
-  const cssDir = path.join(staticDir, 'css');
+  console.warn(colorize('-------------------------', 'blue'))
+const jsDir = path.join(staticDir, 'chunks')
+const cssDir = path.join(staticDir, 'css');
 
   if (fs.existsSync(jsDir)) {
-    const jsFiles = getAllFiles(jsDir, '.js');
-    const totalJSSize = jsFiles.reduce((total, file) => {
+    const jsFiles = getAllFiles(jsDir, '.js')
+const totalJSSize = jsFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
 
@@ -95,8 +93,8 @@ function analyzeStaticFiles(staticDir) {
   }
 
   if (fs.existsSync(cssDir)) {
-    const cssFiles = getAllFiles(cssDir, '.css');
-    const totalCSSSize = cssFiles.reduce((total, file) => {
+    const cssFiles = getAllFiles(cssDir, '.css')
+const totalCSSSize = cssFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
 
@@ -109,14 +107,12 @@ function analyzeStaticFiles(staticDir) {
 
 function analyzeServerFiles(serverDir) {
   console.warn(colorize('\n🖥️  Server Files Analysis', 'blue'));
-  console.warn(colorize('-------------------------', 'blue'));
-
-  const pagesDir = path.join(serverDir, 'pages');
+  console.warn(colorize('-------------------------', 'blue'))
+const pagesDir = path.join(serverDir, 'pages');
   if (fs.existsSync(pagesDir)) {
     const pageFiles = getAllFiles(pagesDir, '.js');
-    console.warn(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'));
-
-    const totalServerSize = pageFiles.reduce((total, file) => {
+    console.warn(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'))
+const totalServerSize = pageFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
     console.warn(
@@ -129,12 +125,12 @@ function analyzeServerFiles(serverDir) {
 }
 
 function getAllFiles(dir, ext) {
-  let files = [];
-  const items = fs.readdirSync(dir);
+  let files = []
+const items = fs.readdirSync(dir);
 
   for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+    const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
     if (stat.isDirectory()) {
       files = files.concat(getAllFiles(fullPath, ext));
@@ -148,9 +144,8 @@ function getAllFiles(dir, ext) {
 
 function provideRecommendations() {
   console.warn(colorize('\n💡 Performance Recommendations', 'bright'));
-  console.warn(colorize('================================', 'cyan'));
-
-  const recommendations = [
+  console.warn(colorize('================================', 'cyan'))
+const recommendations = [
     '🚀 Consider implementing dynamic imports for large components',
     '📦 Use webpack-bundle-analyzer for detailed bundle analysis',
     '🖼️  Optimize images using next/image with proper sizing',

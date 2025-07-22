@@ -5,9 +5,8 @@
  * Helps configure required environment variables
  */
 
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 const envExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
@@ -75,8 +74,7 @@ REDIS_URL=your_redis_url_here
 # External APIs
 OPENAI_API_KEY=your_openai_api_key_here
 EXAMPLE_API_URL=https://api.example.com
-`;
-
+`
 const envLocal = `# Local Development Environment
 # Copy this file to .env.local and update with your actual values
 
@@ -114,8 +112,7 @@ NEXT_PUBLIC_ENABLE_PAYMENTS=false
 
 # Development APIs
 EXAMPLE_API_URL=https://jsonplaceholder.typicode.com
-`;
-
+`
 function createEnvFiles() {
   const rootDir = path.resolve(__dirname, '..');
 

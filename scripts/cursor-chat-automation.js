@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-const io = require('socket.io-client');
-const { EventEmitter } = require('events');
-const fs = require('fs').promises;
+const io = require('socket.io-client')
+const { EventEmitter } = require('events')
+const fs = require('fs').promises
 const path = require('path');
 
 console.log('🤖 Cursor Chat Automation System\n');
-console.log('Maintaining constant contact with Cursor chats...\n');
-
-const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md');
+console.log('Maintaining constant contact with Cursor chats...\n')
+const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md')
 const CHECK_TODO_INTERVAL = 10000; // 10 seconds
 
 class CursorChatAutomation extends EventEmitter {
@@ -298,12 +297,10 @@ class CursorChatAutomation extends EventEmitter {
       'Keeping the connection alive and ready for any Cursor-related tasks.',
       'Automation system is running smoothly - all systems operational.',
       'Maintaining persistent connectivity with Cursor chat infrastructure.',
-    ];
-
-    const randomResponse =
-      responses[Math.floor(Math.random() * responses.length)];
-
-    const message = {
+    ]
+const randomResponse =
+      responses[Math.floor(Math.random() * responses.length)]
+const message = {
       roomId: 'cursor-chat',
       message: randomResponse,
       sender: 'cursor-automation',
@@ -360,8 +357,8 @@ class CursorChatAutomation extends EventEmitter {
 
   async loadStats() {
     try {
-      const statusData = await fs.readFile(this.config.statusFile, 'utf8');
-      const status = JSON.parse(statusData);
+      const statusData = await fs.readFile(this.config.statusFile, 'utf8')
+const status = JSON.parse(statusData);
       this.stats = { ...this.stats, ...status.stats };
       console.log('📊 Loaded previous statistics');
     } catch (error) {
@@ -379,8 +376,8 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async log(message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] ${message}\n`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] ${message}\n`;
 
     try {
       await fs.appendFile(this.config.logFile, logEntry);
@@ -390,11 +387,11 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   getUptime() {
-    if (!this.connectionStartTime) return '0s';
-    const uptime = Math.floor((Date.now() - this.connectionStartTime) / 1000);
-    const hours = Math.floor(uptime / 3600);
-    const minutes = Math.floor((uptime % 3600) / 60);
-    const seconds = uptime % 60;
+    if (!this.connectionStartTime) return '0s'
+const uptime = Math.floor((Date.now() - this.connectionStartTime) / 1000)
+const hours = Math.floor(uptime / 3600)
+const minutes = Math.floor((uptime % 3600) / 60)
+const seconds = uptime % 60;
 
     if (hours > 0) {
       return `${hours}h ${minutes}m ${seconds}s`;
@@ -488,8 +485,8 @@ class CursorChatAutomation extends EventEmitter {
   startAutonomousChatLoop() {
     setInterval(async () => {
       if (!this.isRunning || !this.socket || !this.socket.connected) return;
-      await this.loadTodoQueue();
-      const nextTodo = this.getNextTodo();
+      await this.loadTodoQueue()
+const nextTodo = this.getNextTodo();
       if (!nextTodo) {
         this.log('No pending TODOs in queue. Waiting...');
         return;
@@ -540,8 +537,8 @@ class CursorChatAutomation extends EventEmitter {
 
 // CLI interface
 async function main() {
-  const command = process.argv[2];
-  const automation = new CursorChatAutomation();
+  const command = process.argv[2]
+const automation = new CursorChatAutomation();
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
@@ -570,8 +567,8 @@ async function main() {
         const statusData = await fs.readFile(
           automation.config.statusFile,
           'utf8',
-        );
-        const status = JSON.parse(statusData);
+        )
+const status = JSON.parse(statusData);
         console.log('📊 Cursor Chat Automation Status:');
         console.log(JSON.stringify(status, null, 2));
       } catch (error) {

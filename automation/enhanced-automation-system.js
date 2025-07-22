@@ -8,19 +8,17 @@
  * and AI-powered decision making.
  */
 
-const fs = require('fs').promises;
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const EventEmitter = require('events');
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
-
+const fs = require('fs').promises
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const EventEmitter = require('events')
+const express = require('express')
+const http = require('http')
+const socketIo = require('socket.io')
 // Import existing automation modules
-const AIOptimizer = require('./continuous-improvement/ai-optimizer');
-const CursorIntegration = require('./continuous-improvement/cursor-integration');
-const PerformanceMonitor = require('./performance/monitor');
-
+const AIOptimizer = require('./continuous-improvement/ai-optimizer')
+const CursorIntegration = require('./continuous-improvement/cursor-integration')
+const PerformanceMonitor = require('./performance/monitor')
 class EnhancedAutomationSystem extends EventEmitter {
   constructor() {
     super();
@@ -199,8 +197,8 @@ class EnhancedAutomationSystem extends EventEmitter {
     // Task management
     this.app.post('/api/tasks', async (req, res) => {
       try {
-        const { type, priority = 'normal', data = {} } = req.body;
-        const taskId = await this.queueTask(type, priority, data);
+        const { type, priority = 'normal', data = {} } = req.body
+const taskId = await this.queueTask(type, priority, data);
         res.json({ success: true, taskId });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
@@ -306,9 +304,8 @@ class EnhancedAutomationSystem extends EventEmitter {
           if (error) reject(error);
           else resolve();
         });
-      });
-      
-      // Setup WebSocket after server is running
+      })
+// Setup WebSocket after server is running
       this.setupWebSocket();
       
       this.isRunning = true;
@@ -505,9 +502,8 @@ class EnhancedAutomationSystem extends EventEmitter {
    * Queue a new task
    */
   async queueTask(type, priority = 'normal', data = {}) {
-    const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    
-    const task = {
+    const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+const task = {
       id: taskId,
       type,
       priority,
@@ -521,8 +517,8 @@ class EnhancedAutomationSystem extends EventEmitter {
     };
     
     // Add to queue based on priority
-    const priorityOrder = { critical: 0, high: 1, normal: 2, low: 3 };
-    const insertIndex = this.taskQueue.findIndex(t => 
+    const priorityOrder = { critical: 0, high: 1, normal: 2, low: 3 }
+const insertIndex = this.taskQueue.findIndex(t => 
       priorityOrder[t.priority] > priorityOrder[priority]
     );
     
@@ -704,8 +700,8 @@ class EnhancedAutomationSystem extends EventEmitter {
     
     // NPM audit
     try {
-      const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
-      const audit = JSON.parse(auditResult);
+      const auditResult = execSync('npm audit --json', { encoding: 'utf8' })
+const audit = JSON.parse(auditResult);
       results.vulnerabilities = audit.vulnerabilities || [];
     } catch (error) {
       results.error = error.message;
@@ -765,8 +761,8 @@ class EnhancedAutomationSystem extends EventEmitter {
     try {
       const tempFiles = await fs.readdir(this.config.paths.temp);
       for (const file of tempFiles) {
-        const filePath = path.join(this.config.paths.temp, file);
-        const stats = await fs.stat(filePath);
+        const filePath = path.join(this.config.paths.temp, file)
+const stats = await fs.stat(filePath);
         
         // Remove files older than 24 hours
         if (Date.now() - stats.mtime.getTime() > 24 * 60 * 60 * 1000) {
@@ -822,8 +818,8 @@ class EnhancedAutomationSystem extends EventEmitter {
    * Log message with timestamp and level
    */
   log(level, message) {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     
     console.log(logMessage);
     

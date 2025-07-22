@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const glob = require('glob');
 
 console.log('🔧 Fixing all remaining unterminated string literals...');
@@ -25,14 +25,14 @@ files.forEach((file) => {
       /import React from 'react''/g,
       "import React from 'react'",
     );
-    content = content.replace(/import\s+([^;]+);'/g, (match, importContent) => {
+    content = content.replace(/import\s+([^;]+);/g, (match, importContent) => {
       fileIssues++;
       return `import ${importContent};`;
     });
 
     // Fix unterminated string literals in type imports
     content = content.replace(
-      /import type\s+([^;]+);'/g,
+      /import type\s+([^;]+);/g,
       (match, importContent) => {
         fileIssues++;
         return `import type ${importContent};`;
@@ -50,7 +50,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in interface declarations
     content = content.replace(
-      /interface\s+([^;]+);'/g,
+      /interface\s+([^;]+);/g,
       (match, interfaceContent) => {
         fileIssues++;
         return `interface ${interfaceContent};`;
@@ -58,55 +58,55 @@ files.forEach((file) => {
     );
 
     // Fix unterminated string literals in const declarations
-    content = content.replace(/const\s+([^;]+);'/g, (match, constContent) => {
+    content = content.replace(/const\s+([^;]+);/g, (match, constContent) => {
       fileIssues++;
       return `const ${constContent};`;
     });
 
     // Fix unterminated string literals in let declarations
-    content = content.replace(/let\s+([^;]+);'/g, (match, letContent) => {
+    content = content.replace(/let\s+([^;]+);/g, (match, letContent) => {
       fileIssues++;
       return `let ${letContent};`;
     });
 
     // Fix unterminated string literals in var declarations
-    content = content.replace(/var\s+([^;]+);'/g, (match, varContent) => {
+    content = content.replace(/var\s+([^;]+);/g, (match, varContent) => {
       fileIssues++;
       return `var ${varContent};`;
     });
 
     // Fix unterminated string literals in function declarations
-    content = content.replace(/function\s+([^;]+);'/g, (match, funcContent) => {
+    content = content.replace(/function\s+([^;]+);/g, (match, funcContent) => {
       fileIssues++;
       return `function ${funcContent};`;
     });
 
     // Fix unterminated string literals in type declarations
-    content = content.replace(/type\s+([^;]+);'/g, (match, typeContent) => {
+    content = content.replace(/type\s+([^;]+);/g, (match, typeContent) => {
       fileIssues++;
       return `type ${typeContent};`;
     });
 
     // Fix unterminated string literals in enum declarations
-    content = content.replace(/enum\s+([^;]+);'/g, (match, enumContent) => {
+    content = content.replace(/enum\s+([^;]+);/g, (match, enumContent) => {
       fileIssues++;
       return `enum ${enumContent};`;
     });
 
     // Fix unterminated string literals in class declarations
-    content = content.replace(/class\s+([^;]+);'/g, (match, classContent) => {
+    content = content.replace(/class\s+([^;]+);/g, (match, classContent) => {
       fileIssues++;
       return `class ${classContent};`;
     });
 
     // Fix unterminated string literals in export statements
-    content = content.replace(/export\s+([^;]+);'/g, (match, exportContent) => {
+    content = content.replace(/export\s+([^;]+);/g, (match, exportContent) => {
       fileIssues++;
       return `export ${exportContent};`;
     });
 
     // Fix unterminated string literals in return statements
-    content = content.replace(/return\s+([^;]+);'/g, (match, returnContent) => {
+    content = content.replace(/return\s+([^;]+);/g, (match, returnContent) => {
       fileIssues++;
       return `return ${returnContent};`;
     });
@@ -182,7 +182,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements
     content = content.replace(
-      /export default ([^;]+);'/g,
+      /export default ([^;]+);/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -191,7 +191,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements (alternative)
     content = content.replace(
-      /export default ([^;]+);''''/g,
+      /export default ([^;]+);'''/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -200,7 +200,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements (another alternative)
     content = content.replace(
-      /export default ([^;]+);''''''/g,
+      /export default ([^;]+);'''''/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -209,7 +209,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements (yet another alternative)
     content = content.replace(
-      /export default ([^;]+);''''''''/g,
+      /export default ([^;]+);'''''''/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -218,7 +218,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements (final alternative)
     content = content.replace(
-      /export default ([^;]+);'''''''''/g,
+      /export default ([^;]+);''''''''/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -227,7 +227,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in malformed export statements (multiple quotes)
     content = content.replace(
-      /export default ([^;]+);'+/g,
+      /export default ([^;]+);+/g,
       (match, exportContent) => {
         fileIssues++;
         return `export default ${exportContent};`;
@@ -235,56 +235,56 @@ files.forEach((file) => {
     );
 
     // Fix unterminated string literals in malformed return statements (multiple quotes)
-    content = content.replace(/return ([^;]+);'+/g, (match, returnContent) => {
+    content = content.replace(/return ([^;]+);+/g, (match, returnContent) => {
       fileIssues++;
       return `return ${returnContent};`;
     });
 
     // Fix unterminated string literals in malformed const declarations (multiple quotes)
-    content = content.replace(/const ([^;]+);'+/g, (match, constContent) => {
+    content = content.replace(/const ([^;]+);+/g, (match, constContent) => {
       fileIssues++;
       return `const ${constContent};`;
     });
 
     // Fix unterminated string literals in malformed let declarations (multiple quotes)
-    content = content.replace(/let ([^;]+);'+/g, (match, letContent) => {
+    content = content.replace(/let ([^;]+);+/g, (match, letContent) => {
       fileIssues++;
       return `let ${letContent};`;
     });
 
     // Fix unterminated string literals in malformed var declarations (multiple quotes)
-    content = content.replace(/var ([^;]+);'+/g, (match, varContent) => {
+    content = content.replace(/var ([^;]+);+/g, (match, varContent) => {
       fileIssues++;
       return `var ${varContent};`;
     });
 
     // Fix unterminated string literals in malformed function declarations (multiple quotes)
-    content = content.replace(/function ([^;]+);'+/g, (match, funcContent) => {
+    content = content.replace(/function ([^;]+);+/g, (match, funcContent) => {
       fileIssues++;
       return `function ${funcContent};`;
     });
 
     // Fix unterminated string literals in malformed type declarations (multiple quotes)
-    content = content.replace(/type ([^;]+);'+/g, (match, typeContent) => {
+    content = content.replace(/type ([^;]+);+/g, (match, typeContent) => {
       fileIssues++;
       return `type ${typeContent};`;
     });
 
     // Fix unterminated string literals in malformed enum declarations (multiple quotes)
-    content = content.replace(/enum ([^;]+);'+/g, (match, enumContent) => {
+    content = content.replace(/enum ([^;]+);+/g, (match, enumContent) => {
       fileIssues++;
       return `enum ${enumContent};`;
     });
 
     // Fix unterminated string literals in malformed class declarations (multiple quotes)
-    content = content.replace(/class ([^;]+);'+/g, (match, classContent) => {
+    content = content.replace(/class ([^;]+);+/g, (match, classContent) => {
       fileIssues++;
       return `class ${classContent};`;
     });
 
     // Fix unterminated string literals in malformed interface declarations (multiple quotes)
     content = content.replace(
-      /interface ([^;]+);'+/g,
+      /interface ([^;]+);+/g,
       (match, interfaceContent) => {
         fileIssues++;
         return `interface ${interfaceContent};`;
@@ -292,13 +292,13 @@ files.forEach((file) => {
     );
 
     // Fix unterminated string literals in malformed import statements (multiple quotes)
-    content = content.replace(/import ([^;]+);'+/g, (match, importContent) => {
+    content = content.replace(/import ([^;]+);+/g, (match, importContent) => {
       fileIssues++;
       return `import ${importContent};`;
     });
 
     // Fix unterminated string literals in malformed export statements (multiple quotes)
-    content = content.replace(/export ([^;]+);'+/g, (match, exportContent) => {
+    content = content.replace(/export ([^;]+);+/g, (match, exportContent) => {
       fileIssues++;
       return `export ${exportContent};`;
     });

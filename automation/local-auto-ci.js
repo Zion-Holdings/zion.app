@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
-const { execSync, spawnSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
-const LOG_FILE = path.join(__dirname, '../logs/local-auto-ci.log');
-const AUTO_FIX_SCRIPT = path.join(__dirname, '../scripts/auto-fix-errors.cjs');
+const { execSync, spawnSync } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const LOG_FILE = path.join(__dirname, '../logs/local-auto-ci.log')
+const AUTO_FIX_SCRIPT = path.join(__dirname, '../scripts/auto-fix-errors.cjs')
 const TEST_COMMAND = 'npm test'; // Change if your main test command is different
-const WAIT_MINUTES = 10;
-
+const WAIT_MINUTES = 10
 function log(message) {
-  const timestamp = new Date().toISOString();
-  const logMessage = `[${timestamp}] ${message}`;
+  const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] ${message}`;
   console.log(logMessage);
   fs.appendFileSync(LOG_FILE, logMessage + '\n');
 }

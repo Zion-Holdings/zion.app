@@ -12,13 +12,13 @@
  * - Automatically fix issues and improve the app
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn, exec } = require('child_process');
-const os = require('os');
-const crypto = require('crypto');
-const http = require('http');
-const https = require('https');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn, exec } = require('child_process')
+const os = require('os')
+const crypto = require('crypto')
+const http = require('http')
+const https = require('https')
 const WebSocket = require('ws');
 
 // Configuration
@@ -53,8 +53,7 @@ const CONFIG = {
   // Logging
   LOG_LEVEL: process.env.LOG_LEVEL || 'info',
   LOG_FILE: 'multi-computer-automation.log',
-};
-
+}
 class MultiComputerAutomation {
   constructor() {
     this.computers = new Map();
@@ -84,8 +83,8 @@ class MultiComputerAutomation {
     this.log = (level, message, data = {}) => {
       const currentLevel = logLevels[CONFIG.LOG_LEVEL] || 2;
       if (logLevels[level] <= currentLevel) {
-        const timestamp = new Date().toISOString();
-        const logEntry = {
+        const timestamp = new Date().toISOString()
+const logEntry = {
           timestamp,
           level,
           message,
@@ -292,8 +291,8 @@ class MultiComputerAutomation {
   }
 
   getNetworkRange() {
-    const interfaces = os.networkInterfaces();
-    const networkRange = [];
+    const interfaces = os.networkInterfaces()
+const networkRange = [];
 
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
@@ -339,9 +338,8 @@ class MultiComputerAutomation {
 
   makeHTTPRequest(url) {
     return new Promise((resolve, reject) => {
-      const protocol = url.startsWith('https:') ? https : http;
-
-      const req = protocol.get(url, (res) => {
+      const protocol = url.startsWith('https:') ? https : http
+const req = protocol.get(url, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -378,9 +376,8 @@ class MultiComputerAutomation {
   }
 
   async initializeAIAgents() {
-    this.log('info', 'Initializing AI agents...');
-
-    const config = JSON.parse(
+    this.log('info', 'Initializing AI agents...')
+const config = JSON.parse(
       fs.readFileSync(
         path.join(process.cwd(), 'config', 'multi-computer-automation.json'),
         'utf8',
@@ -544,8 +541,8 @@ class MultiComputerAutomation {
   }
 
   monitorSystemResources() {
-    const cpuUsage = process.cpuUsage();
-    const memoryUsage = process.memoryUsage();
+    const cpuUsage = process.cpuUsage()
+const memoryUsage = process.memoryUsage();
 
     this.log('debug', 'System resources', {
       cpu: cpuUsage,
@@ -557,11 +554,11 @@ class MultiComputerAutomation {
   monitorTaskProgress() {
     const activeTasks = Array.from(this.tasks.values()).filter(
       (task) => task.status === 'running',
-    );
-    const completedTasks = Array.from(this.tasks.values()).filter(
+    )
+const completedTasks = Array.from(this.tasks.values()).filter(
       (task) => task.status === 'completed',
-    );
-    const failedTasks = Array.from(this.tasks.values()).filter(
+    )
+const failedTasks = Array.from(this.tasks.values()).filter(
       (task) => task.status === 'failed',
     );
 

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class FinalAutomation {
   constructor() {
     this.projectRoot = process.cwd();
@@ -15,8 +14,8 @@ class FinalAutomation {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -119,14 +118,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   async tryDifferentPorts() {
-    this.log('Trying different ports...');
-
-    const ports = [3003, 3004, 3005, 3006, 3007];
+    this.log('Trying different ports...')
+const ports = [3003, 3004, 3005, 3006, 3007];
 
     for (const port of ports) {
-      this.log(`Trying port ${port}...`);
-
-      const result = await this.runCommand(`npm run dev -- --port ${port}`, {
+      this.log(`Trying port ${port}...`)
+const result = await this.runCommand(`npm run dev -- --port ${port}`, {
         timeout: 10000,
       });
 

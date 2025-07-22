@@ -1,15 +1,15 @@
 #!/usr/bin/env node;
-import { readFile } from 'fs/promises';'import _fetch from 'node-fetch';'// Renamed 'fetch' to '_fetch' to avoid no-redeclare error';
+import { readFile } from 'fs/promises';'import _fetch from 'node-fetch';'// Renamed 'fetch' to '_fetch' to avoid no-redeclare error'
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
-  console.error('Missing OPENAI_API_KEY environment variable');'  process.exit(1);
+  console.error('Missing OPENAI_API_KEY environment variable');  process.exit(1);
 }
 
 async function loadFeedback() {
   try {
     const data = await readFile('data/feedback.json', 'utf8');'    return JSON.parse(data);
   } catch {
-    console.error('Failed to read feedback.json:', e.message);'    return [];
+    console.error('Failed to read feedback.json:', e.message);    return [];
   }
 }
 
@@ -33,10 +33,10 @@ async function generateIdeas(feedback) {
 async function run() {
   const feedback = await loadFeedback();
   if (feedback.length === 0) {
-    console.warn('No feedback data found.');'    return;
+    console.warn('No feedback data found.');    return;
   }
   const ideas = await generateIdeas(feedback);
-  console.warn('Suggested Features:\n' + ideas);'}
+  console.warn('Suggested Features:\n' + ideas);}
 
 run().catch(err => {
   console.error(error);

@@ -13,15 +13,14 @@
  * - Security scanning and fixes
  * - Code quality enhancement
  */
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const https = require('https');
-const http = require('http');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
+const http = require('http')
 // Import AI modules
-const AIOptimizer = require('./ai-optimizer');
-const CursorIntegration = require('./cursor-integration');
+const AIOptimizer = require('./ai-optimizer')
+const CursorIntegration = require('./cursor-integration')
 class EnhancedAutomation {
   constructor() {
     this.config = {
@@ -160,8 +159,8 @@ class EnhancedAutomation {
    * Initialize AI components
    */
   async initializeAIComponents() {
-    console.log('🔧 Initializing AI components...');
-    const initPromises = [];
+    console.log('🔧 Initializing AI components...')
+const initPromises = [];
     
     // Initialize Cursor integration
     if (this.config.ai.cursor.enabled && this.config.ai.cursor.apiKey) {
@@ -354,8 +353,8 @@ class EnhancedAutomation {
    * Perform quick scan
    */
   async performQuickScan() {
-    console.log('🔍 Performing quick scan...');
-    const results = {
+    console.log('🔍 Performing quick scan...')
+const results = {
       buildStatus: await this.checkBuildStatus(),
       errorLogs: await this.getRecentErrors(),
       performanceMetrics: await this.getBasicPerformanceMetrics(),
@@ -376,8 +375,8 @@ class EnhancedAutomation {
    * Perform deep analysis
    */
   async performDeepAnalysis() {
-    console.log('🔬 Performing deep analysis...');
-    const results = {
+    console.log('🔬 Performing deep analysis...')
+const results = {
       codeQuality: await this.analyzeCodeQuality(),
       performance: await this.analyzePerformance(),
       security: await this.analyzeSecurity(),
@@ -399,8 +398,8 @@ class EnhancedAutomation {
    * Perform full audit
    */
   async performFullAudit() {
-    console.log('📋 Performing full audit...');
-    const results = {
+    console.log('📋 Performing full audit...')
+const results = {
       comprehensive: await this.collectComprehensiveData(),
       historical: await this.getHistoricalData(),
       comparative: await this.getComparativeData(),
@@ -420,8 +419,8 @@ class EnhancedAutomation {
    * Perform performance check
    */
   async performPerformanceCheck() {
-    console.log('⚡ Performing performance check...');
-    const results = {
+    console.log('⚡ Performing performance check...')
+const results = {
       lighthouse: await this.runLighthouseAudit(),
       bundleSize: await this.analyzeBundleSize(),
       buildTime: await this.measureBuildTime(),
@@ -443,8 +442,8 @@ class EnhancedAutomation {
    * Perform security scan
    */
   async performSecurityScan() {
-    console.log('🔒 Performing security scan...');
-    const results = {
+    console.log('🔒 Performing security scan...')
+const results = {
       vulnerabilities: await this.checkVulnerabilities(),
       outdatedPackages: await this.checkOutdatedPackages(),
       securityHeaders: await this.checkSecurityHeaders(),
@@ -466,8 +465,8 @@ class EnhancedAutomation {
    * Perform dependency check
    */
   async performDependencyCheck() {
-    console.log('📦 Performing dependency check...');
-    const results = {
+    console.log('📦 Performing dependency check...')
+const results = {
       outdated: await this.checkOutdatedPackages(),
       vulnerabilities: await this.checkVulnerabilities(),
       unused: await this.findUnusedDependencies(),
@@ -635,8 +634,8 @@ class EnhancedAutomation {
   async checkBuildStatus() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: 'pipe' });
-      const buildTime = Date.now() - startTime;
+      execSync('npm run build', { stdio: 'pipe' })
+const buildTime = Date.now() - startTime;
       
       return {
         status: 'success',
@@ -656,13 +655,12 @@ class EnhancedAutomation {
     try {
       const logFiles = fs.readdirSync(this.config.paths.logs)
         .filter(file => file.endsWith('.log'))
-        .slice(-5);
-      
-      const errors = [];
+        .slice(-5)
+const errors = [];
       
       for (const file of logFiles) {
-        const content = fs.readFileSync(path.join(this.config.paths.logs, file), 'utf8');
-        const errorLines = content.split('\n')
+        const content = fs.readFileSync(path.join(this.config.paths.logs, file), 'utf8')
+const errorLines = content.split('\n')
           .filter(line => line.toLowerCase().includes('error') || line.toLowerCase().includes('exception'))
           .slice(-10);
         errors.push(...errorLines);
@@ -685,8 +683,8 @@ class EnhancedAutomation {
 
   async checkDependencyStatus() {
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const outdated = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const outdated = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
       
       return {
         totalDependencies: Object.keys(packageJson.dependencies || {}).length,
@@ -701,8 +699,8 @@ class EnhancedAutomation {
 
   async analyzeCodeQuality() {
     try {
-      const lintResults = execSync('npm run lint -- --format json', { stdio: 'pipe' }).toString();
-      const testResults = execSync('npm run test -- --json --outputFile=test-results.json', { stdio: 'pipe' }).toString();
+      const lintResults = execSync('npm run lint -- --format json', { stdio: 'pipe' }).toString()
+const testResults = execSync('npm run test -- --json --outputFile=test-results.json', { stdio: 'pipe' }).toString();
       
       return {
         lint: JSON.parse(lintResults),
@@ -922,8 +920,8 @@ class EnhancedAutomation {
 
   parseBundleAnalysis(output) {
     try {
-      const lines = output.split('\n');
-      const bundleInfo = {};
+      const lines = output.split('\n')
+const bundleInfo = {};
       
       for (const line of lines) {
         if (line.includes('Bundle size:')) {
@@ -1051,9 +1049,8 @@ class EnhancedAutomation {
   }
 
   calculateAverageMemory() {
-    if (this.performanceHistory.length === 0) return 0;
-    
-    const totalMemory = this.performanceHistory.reduce((sum, entry) => {
+    if (this.performanceHistory.length === 0) return 0
+const totalMemory = this.performanceHistory.reduce((sum, entry) => {
       return sum + entry.memory.heapUsed;
     }, 0);
     
@@ -1061,9 +1058,8 @@ class EnhancedAutomation {
   }
 
   calculateAverageCPU() {
-    if (this.performanceHistory.length === 0) return 0;
-    
-    const totalCPU = this.performanceHistory.reduce((sum, entry) => {
+    if (this.performanceHistory.length === 0) return 0
+const totalCPU = this.performanceHistory.reduce((sum, entry) => {
       return sum + entry.cpu.user + entry.cpu.system;
     }, 0);
     

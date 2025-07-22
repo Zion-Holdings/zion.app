@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
 import fs from 'fs';'import path from 'path';'import { fileURLToPath as _fileURLToPath } from 'url';'
-console.warn('🔧 Fixing API TypeScript errors...');'
-// Common patterns to fix;
+console.warn('🔧 Fixing API TypeScript errors...');
+// Common patterns to fix
 const fixes = [
   // Fix req.query destructuring
   {
@@ -21,20 +21,20 @@ const fixes = [
   // Fix req.headers access
   {
     pattern: /req\.headers\[([^\]]+)\]/g,
-    replacement: '(req.headers as Record<string, string | string[] | undefined>)[$1]''  },
+    replacement: '(req.headers as Record<string, string | string[] | undefined>)[$1]'  },
   // Fix req.connection access
   {
     pattern: /req\.connection/g,
-    replacement: '(req as any).connection''  }
+    replacement: '(req as any).connection'  }
 ];
 
-// Function to process a file;
+// Function to process a file
 function processFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');'    let modified = false;
+    let content = fs.readFileSync(filePath, 'utf8');    let modified = false;
 
     fixes.forEach(fix => {
-      if (typeof fix.replacement === 'function') {'        const newContent = content.replace(fix.pattern, fix.replacement);
+      if (typeof fix.replacement === 'function') {        const newContent = content.replace(fix.pattern, fix.replacement);
         if (newContent !== content) {
           content = newContent;
           modified = true;
@@ -59,7 +59,7 @@ function processFile(filePath) {
   }
 }
 
-// Function to recursively find API files;
+// Function to recursively find API files
 function findApiFiles(dir) {
   const files = [];
   
@@ -67,8 +67,8 @@ function findApiFiles(dir) {
     const items = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...findApiFiles(fullPath));
@@ -81,7 +81,7 @@ function findApiFiles(dir) {
   return files;
 }
 
-// Main execution;
+// Main execution
 const apiDirs = [
   path.join(process.cwd(), 'pages/api'),'  path.join(process.cwd(), 'temp_essential_pages/api'),'  path.join(process.cwd(), 'api')'];
 ;
@@ -89,8 +89,8 @@ let totalFixed = 0;
 
 apiDirs.forEach(apiDir => {
   if (fs.existsSync(apiDir)) {
-    console.warn(`\n🔍 Processing ${apiDir}...`);
-    const apiFiles = findApiFiles(apiDir);
+    console.warn(`\n🔍 Processing ${apiDir}...`)
+const apiFiles = findApiFiles(apiDir);
     
     apiFiles.forEach(file => {
       if (processFile(file)) {
@@ -102,7 +102,7 @@ apiDirs.forEach(apiDir => {
 
 console.warn(`\n🎯 Summary: Fixed ${totalFixed} API files`);
 
-// Also create a types import helper;
+// Also create a types import helper
 const helperContent = `// Auto-generated API type helpers;
 import type { NextApiRequest, NextApiResponse } from 'next';';
 export function safeQueryParam<T = string>(query: NextApiRequest['query'], key: string): T | undefined {'  const value = (query as Record<string, unknown>)[key];
@@ -118,5 +118,5 @@ export function safeHeader(headers: NextApiRequest['headers'], key: string): str
 }
 `;
 
-fs.writeFileSync(path.join(process.cwd(), 'src/utils/api-helpers.ts'), helperContent);'console.warn('✅ Created API helper utilities');';
+fs.writeFileSync(path.join(process.cwd(), 'src/utils/api-helpers.ts'), helperContent);'console.warn('✅ Created API helper utilities');;
 export default {}; 

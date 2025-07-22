@@ -3,15 +3,13 @@
  * Summarise latest Jest JSON report and send to Cursor API for automated fixing.
  * Requires env vars: CURSOR_API_KEY, CURSOR_PROJECT_ID
  */
-const fs = require('fs');
-const path = require('path');
-const _fetch = require('node-fetch');
-
-const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results');
-
+const fs = require('fs')
+const path = require('path')
+const _fetch = require('node-fetch')
+const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results')
 function findLatestReport() {
-  if (!fs.existsSync(RESULTS_DIR)) return null;
-  const files = fs
+  if (!fs.existsSync(RESULTS_DIR)) return null
+const files = fs
     .readdirSync(RESULTS_DIR)
     .filter((f) => f.startsWith('jest-results-') && f.endsWith('.json'))
     .map((f) => ({ f, time: fs.statSync(path.join(RESULTS_DIR, f)).mtimeMs }))
@@ -26,8 +24,8 @@ async function main() {
     process.exit(1);
   }
 
-  const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-  const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0);
+  const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'))
+const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0);
   if (failedSuites.length === 0) {
     console.warn('✅ No failing tests — nothing to report.');
     return;
@@ -37,16 +35,14 @@ async function main() {
     return suite.assertionResults
       .filter((ar) => ar.status === 'failed')
       .map((ar) => `• ${ar.fullName}\n  at ${suite.name}`);
-  });
-
-  const payload = {
+  })
+const payload = {
     projectId: process.env.CURSOR_PROJECT_ID,
     message:
       `Automated test run detected ${data.numFailedTests} failing tests.\n` +
       summaryLines.join('\n'),
-  };
-
-  const apiKey = process.env.CURSOR_API_KEY;
+  }
+const apiKey = process.env.CURSOR_API_KEY;
   if (!apiKey) {
     console.warn('CURSOR_API_KEY not set; printing payload instead:');
     console.warn(payload.message);

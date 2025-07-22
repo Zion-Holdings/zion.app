@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class UltimateFix {
   constructor() {
     this.projectRoot = process.cwd();
@@ -15,8 +14,8 @@ class UltimateFix {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -36,8 +35,8 @@ class UltimateFix {
     if (fs.existsSync(apiDir)) {
       const fixApiFile = (filePath) => {
         try {
-          let content = fs.readFileSync(filePath, 'utf8');
-          const originalContent = content;
+          let content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
           // Fix common syntax issues
           content = content
@@ -73,15 +72,14 @@ class UltimateFix {
           this.log(`Error fixing ${filePath}: ${error.message}`);
           return false;
         }
-      };
-
-      const processDirectory = (dir) => {
+      }
+const processDirectory = (dir) => {
         const items = fs.readdirSync(dir);
         let fixedCount = 0;
 
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (stat.isDirectory()) {
             fixedCount += processDirectory(fullPath);
@@ -93,9 +91,8 @@ class UltimateFix {
         }
 
         return fixedCount;
-      };
-
-      const fixedCount = processDirectory(apiDir);
+      }
+const fixedCount = processDirectory(apiDir);
       this.log(`Fixed syntax in ${fixedCount} API files`);
     }
   }

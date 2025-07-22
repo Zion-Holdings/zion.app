@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const { spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const { spawn } = require('child_process')
 class WatchpackFixer {
   constructor() {
     this.fixes = [];
@@ -53,8 +52,7 @@ const nextConfig = {
   },
   // Minimal environment setup
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', minimalConfig);
@@ -70,9 +68,8 @@ module.exports = nextConfig;`;
       // Create a simple health check API
       const healthApiContent = `export default function handler(req, res) {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
-}`;
-
-      const apiDir = 'pages/api';
+}`
+const apiDir = 'pages/api';
       if (!fs.existsSync(apiDir)) {
         fs.mkdirSync(apiDir, { recursive: true });
       }
@@ -158,9 +155,8 @@ module.exports = nextConfig;`;
   }
 
   async run() {
-    this.log('🚀 Starting Watchpack Fix...');
-
-    const fixed = await this.fixWatchpackIssue();
+    this.log('🚀 Starting Watchpack Fix...')
+const fixed = await this.fixWatchpackIssue();
     if (fixed) {
       const devProcess = await this.startDevServer();
 

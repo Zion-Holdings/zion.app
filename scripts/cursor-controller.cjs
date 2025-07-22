@@ -7,11 +7,10 @@
  * across multiple computers for automated app improvement tasks.
  */
 
-const { execSync, spawn } = require('child_process');
-const os = require('os');
-const fs = require('fs');
-const path = require('path');
-
+const { execSync, spawn } = require('child_process')
+const os = require('os')
+const fs = require('fs')
+const path = require('path')
 class CursorController {
   constructor() {
     this.platform = os.platform();
@@ -43,9 +42,8 @@ class CursorController {
           ? `open -a Cursor "${projectPath}"`
           : `"${this.cursorPath}" "${projectPath}"`;
 
-      execSync(command);
-
-      const instanceId = this.generateInstanceId();
+      execSync(command)
+const instanceId = this.generateInstanceId();
       this.activeInstances.set(instanceId, {
         path: projectPath,
         startedAt: new Date(),
@@ -230,9 +228,8 @@ class CursorController {
 
   async autoFixIssues() {
     try {
-      console.log('🔧 Starting automatic issue fixing...');
-
-      const fixes = [
+      console.log('🔧 Starting automatic issue fixing...')
+const fixes = [
         { type: 'lint', description: 'Fixing linting issues' },
         { type: 'format', description: 'Formatting code' },
         { type: 'typecheck', description: 'Checking types' },
@@ -335,10 +332,9 @@ module.exports = CursorController;
 
 // Main execution
 if (require.main === module) {
-  const controller = new CursorController();
-
-  const command = process.argv[2];
-  const args = process.argv.slice(3);
+  const controller = new CursorController()
+const command = process.argv[2]
+const args = process.argv.slice(3);
 
   switch (command) {
     case 'open':

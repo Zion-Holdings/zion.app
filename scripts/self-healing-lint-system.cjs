@@ -5,9 +5,9 @@
  * Automatically fixes lint errors and warnings after each build and triggers a new build
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 const crypto = require('crypto');
 
 // Configuration
@@ -35,8 +35,7 @@ const CONFIG = {
     memory: /JavaScript heap out of memory|ENOMEM/,
     timeout: /timeout|ETIMEDOUT/,
   },
-};
-
+}
 class SelfHealingLintSystem {
   constructor() {
     this.buildHistory = [];
@@ -55,8 +54,8 @@ class SelfHealingLintSystem {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
 
@@ -192,9 +191,8 @@ class SelfHealingLintSystem {
           break;
         }
 
-        this.log(`Trying strategy: ${strategy}`);
-
-        const success = await this.applyLintStrategy(strategy, issues);
+        this.log(`Trying strategy: ${strategy}`)
+const success = await this.applyLintStrategy(strategy, issues);
         if (success) {
           this.log(`Strategy ${strategy} succeeded`);
           break;
@@ -267,9 +265,8 @@ class SelfHealingLintSystem {
       execSync('npx eslint --fix .', {
         stdio: 'inherit',
         timeout: CONFIG.lintTimeout,
-      });
-
-      const finalIssues = await this.checkForLintIssues();
+      })
+const finalIssues = await this.checkForLintIssues();
       if (finalIssues.length < remainingIssues.length) {
         this.log(
           `Auto-fix reduced issues from ${remainingIssues.length} to ${finalIssues.length}`,
@@ -422,13 +419,13 @@ class SelfHealingLintSystem {
     if (match) {
       const [, filePath, line, column] = match;
       try {
-        const content = fs.readFileSync(filePath, 'utf8');
-        const lines = content.split('\n');
-        const lineIndex = parseInt(line) - 1;
+        const content = fs.readFileSync(filePath, 'utf8')
+const lines = content.split('\n')
+const lineIndex = parseInt(line) - 1;
 
         // Add underscore prefix to unused variables
-        const lineContent = lines[lineIndex];
-        const updatedLine = lineContent.replace(
+        const lineContent = lines[lineIndex]
+const updatedLine = lineContent.replace(
           /\b(\w+)\b/g,
           (match, varName) => {
             if (varName.startsWith('_')) return match;
@@ -614,9 +611,8 @@ class SelfHealingLintSystem {
         execSync(`git checkout -B ${CONFIG.gitBranch}`);
 
         // Add and commit changes
-        execSync('git add .');
-
-        const commitMessage = `fix: auto-fix lint issues\n\nFixed ${this.fixedIssues.size} lint issues using strategies: ${Array.from(this.fixedIssues).join(', ')}`;
+        execSync('git add .')
+const commitMessage = `fix: auto-fix lint issues\n\nFixed ${this.fixedIssues.size} lint issues using strategies: ${Array.from(this.fixedIssues).join(', ')}`;
         fs.writeFileSync('.gitcommitmessage', commitMessage);
         execSync('git commit -F .gitcommitmessage');
         fs.unlinkSync('.gitcommitmessage');
@@ -635,8 +631,8 @@ class SelfHealingLintSystem {
 
   // Public method to manually trigger the system
   async triggerManualFix() {
-    this.log('Manual trigger received');
-    const issues = await this.checkForLintIssues();
+    this.log('Manual trigger received')
+const issues = await this.checkForLintIssues();
     if (issues.length > 0) {
       await this.triggerLintFixes(issues);
     }

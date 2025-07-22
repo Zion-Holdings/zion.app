@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Function to recursively find all .tsx and .test.tsx files
@@ -6,8 +6,8 @@ function findTestFiles(dir, files = []) {
   const items = fs.readdirSync(dir);
 
   for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+    const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
     if (stat.isDirectory()) {
       findTestFiles(fullPath, files);
@@ -30,8 +30,8 @@ function fixImportPaths(filePath) {
     let modified = false;
 
     // Fix import statements that import from @/pages/ to @/src/pages/
-    const importRegex = /from\s+['"]@\/pages\/([^'"]+)['"]/g;
-    const newContent = content.replace(importRegex, (match, pageName) => {
+    const importRegex = /from\s+['"]@\/pages\/([^'"]+)['"]/g
+const newContent = content.replace(importRegex, (match, pageName) => {
       modified = true;
       return `from '@/src/pages/${pageName}'`;
     });
@@ -50,8 +50,7 @@ function fixImportPaths(filePath) {
 }
 
 // Main execution
-console.warn('Fixing import paths in test files...');
-
+console.warn('Fixing import paths in test files...')
 const testDirs = [
   path.join(__dirname, '..', '__tests__'),
   path.join(__dirname, '..', 'tests'),

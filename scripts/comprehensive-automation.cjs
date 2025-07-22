@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class ComprehensiveAutomation {
   constructor() {
     this.fixes = [];
@@ -12,8 +11,8 @@ class ComprehensiveAutomation {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
   }
 
@@ -71,8 +70,8 @@ class ComprehensiveAutomation {
 import { useRouter } from 'next/router';
 
 export default function DynamicPage() {
-  const router = useRouter();
-  const { ${route.includes('[slug]') ? 'slug' : 'id'} } = router.query;
+  const router = useRouter()
+const { ${route.includes('[slug]') ? 'slug' : 'id'} } = router.query;
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
@@ -104,8 +103,8 @@ export default function DynamicPage() {
 
       files.forEach((file) => {
         try {
-          const content = fs.readFileSync(file, 'utf8');
-          const fixedContent = this.fixSyntaxErrors(content, file);
+          const content = fs.readFileSync(file, 'utf8')
+const fixedContent = this.fixSyntaxErrors(content, file);
           fs.writeFileSync(file, fixedContent);
           this.fixes.push(`Fixed syntax in ${file}`);
         } catch (error) {
@@ -121,14 +120,13 @@ export default function DynamicPage() {
   }
 
   findFilesWithSyntaxErrors() {
-    const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-
-    const walkDir = (dir) => {
+    const files = []
+const extensions = ['.ts', '.tsx', '.js', '.jsx']
+const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
       items.forEach((item) => {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
         if (
           stat.isDirectory() &&
@@ -196,8 +194,7 @@ const nextConfig = {
   },
   // Minimal environment
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', nextConfig);

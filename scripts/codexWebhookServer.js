@@ -1,9 +1,11 @@
-const express = require('express');'const { _exec } = require('child_process');'const app = express();
+const express = require('express')
+const { _exec } = require('child_process')
+const app = express()
 const port = 3001;
 
 app.use(express.json());
 
-app.post('/webhook/trigger-fix', (req, res) => {'  console.warn('🔁 Webhook received! Starting Codex fix pipeline...');'
+app.post('/webhook/trigger-fix', (req, res) => {'  console.warn('🔁 Webhook received! Starting Codex fix pipeline...');
   exec('openai-operator run ./codex-pipeline.yaml', (error, stdout, stderr) => {'    if (error) {
       console.error(`❌ Execution error: ${error.message}`);
       return res.status(500).send('Fix failed');'    }

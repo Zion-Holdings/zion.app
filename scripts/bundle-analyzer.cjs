@@ -6,7 +6,7 @@
  * Analyzes bundle sizes and identifies optimization opportunities
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 console.warn('🔍 BUNDLE ANALYSIS REPORT');
@@ -23,15 +23,14 @@ if (!fs.existsSync(buildStatsPath)) {
 const staticPath = path.join(buildStatsPath, 'static', 'chunks');
 if (fs.existsSync(staticPath)) {
   console.warn('📦 LARGE STATIC CHUNKS (>500KB):');
-  console.warn('================================');
-
-  const chunks = fs.readdirSync(staticPath);
-  const largeChunks = [];
+  console.warn('================================')
+const chunks = fs.readdirSync(staticPath)
+const largeChunks = [];
 
   chunks.forEach((chunk) => {
-    const chunkPath = path.join(staticPath, chunk);
-    const stats = fs.statSync(chunkPath);
-    const sizeKB = Math.round(stats.size / 1024);
+    const chunkPath = path.join(staticPath, chunk)
+const stats = fs.statSync(chunkPath)
+const sizeKB = Math.round(stats.size / 1024);
 
     if (sizeKB > 500) {
       largeChunks.push({ name: chunk, size: sizeKB });
@@ -51,15 +50,14 @@ if (fs.existsSync(staticPath)) {
 const pagesPath = path.join(buildStatsPath, 'static', 'chunks', 'pages');
 if (fs.existsSync(pagesPath)) {
   console.warn('📱 LARGE PAGE CHUNKS (>400KB):');
-  console.warn('==============================');
-
-  const pages = fs.readdirSync(pagesPath);
-  const largePages = [];
+  console.warn('==============================')
+const pages = fs.readdirSync(pagesPath)
+const largePages = [];
 
   pages.forEach((page) => {
-    const pagePath = path.join(pagesPath, page);
-    const stats = fs.statSync(pagePath);
-    const sizeKB = Math.round(stats.size / 1024);
+    const pagePath = path.join(pagesPath, page)
+const stats = fs.statSync(pagePath)
+const sizeKB = Math.round(stats.size / 1024);
 
     if (sizeKB > 400) {
       largePages.push({ name: page, size: sizeKB });

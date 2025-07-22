@@ -7,8 +7,8 @@
  * automated chat reconnection system performance and health.
  */
 
-const http = require('http');
-const fs = require('fs');
+const http = require('http')
+const fs = require('fs')
 const path = require('path');
 
 // Configuration
@@ -22,8 +22,7 @@ const CONFIG = {
     cpu_percent: 5,
     error_rate: 0.1,
   },
-};
-
+}
 class ChatReconnectionMonitor {
   constructor() {
     this.metrics = {
@@ -102,8 +101,8 @@ class ChatReconnectionMonitor {
 
     try {
       // Check system status
-      const status = await this.getSystemStatus();
-      const responseTime = Date.now() - startTime;
+      const status = await this.getSystemStatus()
+const responseTime = Date.now() - startTime;
 
       // Update performance metrics
       this.metrics.performance.responseTimes.push(responseTime);
@@ -133,9 +132,8 @@ class ChatReconnectionMonitor {
 
   async getSystemStatus() {
     return new Promise((resolve, reject) => {
-      const url = new URL('/status', CONFIG.CHAT_SERVER);
-
-      const req = http.request(url, (res) => {
+      const url = new URL('/status', CONFIG.CHAT_SERVER)
+const req = http.request(url, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -269,17 +267,16 @@ class ChatReconnectionMonitor {
       HIGH: '\x1b[33m', // Yellow
       MEDIUM: '\x1b[35m', // Magenta
       LOW: '\x1b[36m', // Cyan
-    };
-
-    const color = severityColors[alert.severity] || '\x1b[0m';
-    const reset = '\x1b[0m';
+    }
+const color = severityColors[alert.severity] || '\x1b[0m'
+const reset = '\x1b[0m';
 
     console.log(`${color}🚨 [${alert.severity}] ${alert.message}${reset}`);
   }
 
   displayStatus(status, responseTime) {
-    const uptimeMinutes = Math.floor(status.uptime / 60);
-    const uptimeHours = Math.floor(uptimeMinutes / 60);
+    const uptimeMinutes = Math.floor(status.uptime / 60)
+const uptimeHours = Math.floor(uptimeMinutes / 60);
 
     console.log(
       `📊 Status Check #${this.metrics.checks} - ${new Date().toLocaleTimeString()}`,
@@ -298,8 +295,8 @@ class ChatReconnectionMonitor {
   }
 
   collectPerformanceMetrics() {
-    const memUsage = process.memoryUsage();
-    const cpuUsage = process.cpuUsage();
+    const memUsage = process.memoryUsage()
+const cpuUsage = process.cpuUsage();
 
     this.metrics.performance.memoryUsage.push({
       timestamp: Date.now(),
@@ -336,8 +333,8 @@ class ChatReconnectionMonitor {
         return;
       }
 
-      const logContent = fs.readFileSync(CONFIG.LOG_FILE, 'utf8');
-      const lines = logContent.split('\n').filter((line) => line.trim());
+      const logContent = fs.readFileSync(CONFIG.LOG_FILE, 'utf8')
+const lines = logContent.split('\n').filter((line) => line.trim());
 
       // Get last 100 lines
       const recentLines = lines.slice(-100);
@@ -345,13 +342,11 @@ class ChatReconnectionMonitor {
       // Analyze for patterns
       const errorCount = recentLines.filter(
         (line) => line.includes('ERROR') || line.includes('❌'),
-      ).length;
-
-      const chatCount = recentLines.filter((line) =>
+      ).length
+const chatCount = recentLines.filter((line) =>
         line.includes('💬 Triggering chat'),
-      ).length;
-
-      const cursorCount = recentLines.filter((line) =>
+      ).length
+const cursorCount = recentLines.filter((line) =>
         line.includes('✅ Cursor is running'),
       ).length;
 
@@ -406,9 +401,9 @@ class ChatReconnectionMonitor {
   }
 
   displayReport() {
-    const report = this.generateReport();
-    const uptimeMinutes = Math.floor(report.uptime / 60000);
-    const uptimeHours = Math.floor(uptimeMinutes / 60);
+    const report = this.generateReport()
+const uptimeMinutes = Math.floor(report.uptime / 60000)
+const uptimeHours = Math.floor(uptimeMinutes / 60);
 
     console.log('');
     console.log('📊 Chat Reconnection System Monitor Report');
@@ -432,8 +427,8 @@ async function main() {
   const monitor = new ChatReconnectionMonitor();
 
   // Handle command line arguments
-  const args = process.argv.slice(2);
-  const command = args[0];
+  const args = process.argv.slice(2)
+const command = args[0];
 
   switch (command) {
     case 'start':

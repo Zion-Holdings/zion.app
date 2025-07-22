@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class AutomationSetup {
   constructor() {
     this.config = {
@@ -52,8 +51,8 @@ class AutomationSetup {
     this.log('Checking prerequisites...');
 
     // Check Node.js version
-    const nodeVersion = process.version;
-    const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
+    const nodeVersion = process.version
+const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
 
     if (majorVersion < 18) {
       throw new Error(`Node.js 18+ required, found ${nodeVersion}`);
@@ -77,9 +76,8 @@ class AutomationSetup {
   }
 
   async createEnvironmentFile() {
-    this.log('Creating environment configuration...');
-
-    const envContent = `# Netlify Build Automation Configuration
+    this.log('Creating environment configuration...')
+const envContent = `# Netlify Build Automation Configuration
 # Required - Netlify API credentials
 NETLIFY_SITE_ID=${process.env.NETLIFY_SITE_ID || 'your-netlify-site-id'}
 NETLIFY_TOKEN=${process.env.NETLIFY_TOKEN || 'your-netlify-token'}
@@ -109,9 +107,8 @@ LOG_FILE=netlify-automation.log
   }
 
   async createNetlifyConfig() {
-    this.log('Creating Netlify configuration...');
-
-    const netlifyConfig = `[build]
+    this.log('Creating Netlify configuration...')
+const netlifyConfig = `[build]
   command = "npm run build"
   publish = ".next"
   functions = "netlify/functions"
@@ -152,9 +149,8 @@ LOG_FILE=netlify-automation.log
   }
 
   async createAutomationConfig() {
-    this.log('Creating automation configuration...');
-
-    const automationConfig = {
+    this.log('Creating automation configuration...')
+const automationConfig = {
       version: '1.0.0',
       enabled: true,
       monitoring: {
@@ -252,10 +248,9 @@ LOG_FILE=netlify-automation.log
     this.log('Adding automation scripts to main package.json...');
 
     try {
-      const mainPackagePath = path.join(__dirname, '..', 'package.json');
-      const mainPackage = JSON.parse(fs.readFileSync(mainPackagePath, 'utf8'));
-
-      const automationScripts = {
+      const mainPackagePath = path.join(__dirname, '..', 'package.json')
+const mainPackage = JSON.parse(fs.readFileSync(mainPackagePath, 'utf8'))
+const automationScripts = {
         'automation:start': 'cd automation && npm start',
         'automation:stop': 'cd automation && npm run stop',
         'automation:cycle': 'cd automation && npm run cycle',
@@ -288,9 +283,8 @@ LOG_FILE=netlify-automation.log
 
 // CLI interface
 if (require.main === module) {
-  const setup = new AutomationSetup();
-
-  const command = process.argv[2];
+  const setup = new AutomationSetup()
+const command = process.argv[2];
 
   switch (command) {
     case 'setup':

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class UltimateAppAutomation {
   constructor() {
     this.issues = [];
@@ -30,8 +29,8 @@ class UltimateAppAutomation {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync('logs/automation.log', logMessage + '\n');
   }
@@ -151,8 +150,7 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', nextConfig);
@@ -225,12 +223,10 @@ export default function Signup() {
       // Fix analyze-bundle.js
       const analyzeBundleContent = `#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
-const _currentFilename = path.basename(__filename);
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const _currentFilename = path.basename(__filename)
 class BundleAnalyzer {
   constructor() {
     this.analysis = {};

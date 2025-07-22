@@ -3,7 +3,7 @@
  * Simple cache cleanup utility
  * Removes common build and temp directories to reclaim space.
  */;
-import { rmSync } from 'fs';'import { join } from 'path';';
+import { rmSync } from 'fs';'import { join } from 'path';'
 const paths = [
   '.next','  'node_modules/.cache','  'coverage','  'logs/perf/hourly.log','  'logs/security/hourly-fix.log','  'test-results','  'temp_file','];
 

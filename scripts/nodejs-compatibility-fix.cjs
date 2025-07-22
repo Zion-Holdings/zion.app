@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NodeJSCompatibilityFix {
   constructor() {
     this.projectRoot = process.cwd();
@@ -12,11 +11,10 @@ class NodeJSCompatibilityFix {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
-
-    const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage)
+const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -33,8 +31,8 @@ class NodeJSCompatibilityFix {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running command: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running command: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -54,9 +52,8 @@ class NodeJSCompatibilityFix {
 
   checkNodeVersion() {
     const nodeVersion = process.version;
-    this.log(`Current Node.js version: ${nodeVersion}`);
-
-    const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
+    this.log(`Current Node.js version: ${nodeVersion}`)
+const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
     return majorVersion;
   }
 
@@ -95,9 +92,8 @@ class NodeJSCompatibilityFix {
   }
 
   async installCompatibleNodeVersion() {
-    this.log('Installing compatible Node.js version...');
-
-    const compatibleVersions = ['18.19.0', '20.11.0', '18.20.0', '20.12.0'];
+    this.log('Installing compatible Node.js version...')
+const compatibleVersions = ['18.19.0', '20.11.0', '18.20.0', '20.12.0'];
 
     for (const version of compatibleVersions) {
       try {
@@ -119,17 +115,16 @@ class NodeJSCompatibilityFix {
   }
 
   async fixNextConfig() {
-    this.log('Fixing Next.js configuration for Node.js compatibility...');
-
-    const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+    this.log('Fixing Next.js configuration for Node.js compatibility...')
+const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
       return false;
     }
 
     try {
-      let content = fs.readFileSync(nextConfigPath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(nextConfigPath, 'utf8')
+const originalContent = content;
 
       // Add Node.js 22 compatibility workarounds
       const compatibilityCode = `
@@ -166,17 +161,16 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   async updatePackageScripts() {
-    this.log('Updating package.json scripts for Node.js compatibility...');
-
-    const packageJsonPath = path.join(this.projectRoot, 'package.json');
+    this.log('Updating package.json scripts for Node.js compatibility...')
+const packageJsonPath = path.join(this.projectRoot, 'package.json');
     if (!fs.existsSync(packageJsonPath)) {
       this.log('package.json not found', 'ERROR');
       return false;
     }
 
     try {
-      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-      const originalScripts = JSON.stringify(packageJson.scripts);
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
+const originalScripts = JSON.stringify(packageJson.scripts);
 
       // Add Node.js compatibility scripts
       packageJson.scripts = {
@@ -189,9 +183,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
           'NODE_OPTIONS="--no-deprecation --max-old-space-size=4096" next build',
         'start:compatible':
           'NODE_OPTIONS="--no-deprecation --max-old-space-size=4096" next start',
-      };
-
-      const newScripts = JSON.stringify(packageJson.scripts);
+      }
+const newScripts = JSON.stringify(packageJson.scripts);
 
       if (newScripts !== originalScripts) {
         fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
@@ -207,9 +200,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   async createCompatibilityScript() {
-    this.log('Creating Node.js compatibility script...');
-
-    const scriptContent = `#!/bin/bash
+    this.log('Creating Node.js compatibility script...')
+const scriptContent = `#!/bin/bash
 
 # Node.js Compatibility Script
 # This script ensures the app runs with compatible Node.js settings
@@ -223,9 +215,8 @@ echo "Using Node.js version: $NODE_VERSION"
 # Start the development server
 echo "Starting development server with compatibility settings..."
 npm run dev -- --port 3001
-`;
-
-    const scriptPath = path.join(this.projectRoot, 'start-compatible.sh');
+`
+const scriptPath = path.join(this.projectRoot, 'start-compatible.sh');
     fs.writeFileSync(scriptPath, scriptContent);
     execSync(`chmod +x ${scriptPath}`);
 
@@ -257,9 +248,8 @@ npm run dev -- --port 3001
   }
 
   async runFullFix() {
-    this.log('Starting Node.js compatibility fix...');
-
-    const nodeVersion = this.checkNodeVersion();
+    this.log('Starting Node.js compatibility fix...')
+const nodeVersion = this.checkNodeVersion();
 
     if (nodeVersion >= 22) {
       this.log('Node.js 22+ detected, applying compatibility fixes...');

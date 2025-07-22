@@ -5,23 +5,23 @@
  * Tests the enhanced login API with verbose logging
  * 🔐 SECURITY: Uses environment variables, no hardcoded credentials
  */
-;
+
 const BASE_URL = '_http://localhost:3000';'
-// 🔐 SECURITY: Generate test cases from environment variables;
+// 🔐 SECURITY: Generate test cases from environment variables
 const getTestCases = () => {
   // Only run in development mode
-  if (process.env.NODE_ENV !== 'development') {'    process.stdout.write('❌ This script only runs in development mode for security\n');'    return [];
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return [];
   }
 
   const testCases = [];
 
   // Get development credentials from environment
-  const devUser1Email = process.env.DEV_USER_1_EMAIL;
-  const devUser1Password = process.env.DEV_USER_1_PASSWORD;
-  const devUser2Email = process.env.DEV_USER_2_EMAIL;
-  const devUser2Password = process.env.DEV_USER_2_PASSWORD;
-  const devUser3Email = process.env.DEV_USER_3_EMAIL;
-  const devUser3Password = process.env.DEV_USER_3_PASSWORD;
+  const devUser1Email = process.env.DEV_USER_1_EMAIL
+const devUser1Password = process.env.DEV_USER_1_PASSWORD
+const devUser2Email = process.env.DEV_USER_2_EMAIL
+const devUser2Password = process.env.DEV_USER_2_PASSWORD
+const devUser3Email = process.env.DEV_USER_3_EMAIL
+const devUser3Password = process.env.DEV_USER_3_PASSWORD;
 
   // Add configured users to test cases
   if (devUser1Email && devUser1Password) {
@@ -29,13 +29,13 @@ const getTestCases = () => {
       name: 'Valid Login - Dev User 1','      email: devUser1Email,
       password: devUser1Password,
       expectedStatus: 200,
-      description: 'Should succeed with configured development user 1''    });
+      description: 'Should succeed with configured development user 1'    });
 
     // Test wrong password for same user
     testCases.push({
       name: 'Invalid Password - Dev User 1','      email: devUser1Email,
       password: 'wrongpassword','      expectedStatus: 401,
-      description: 'Should fail with incorrect password''    });
+      description: 'Should fail with incorrect password'    });
   }
 
   if (devUser2Email && devUser2Password) {
@@ -43,7 +43,7 @@ const getTestCases = () => {
       name: 'Valid Login - Dev User 2','      email: devUser2Email,
       password: devUser2Password,
       expectedStatus: 200,
-      description: 'Should succeed with configured development user 2''    });
+      description: 'Should succeed with configured development user 2'    });
   }
 
   if (devUser3Email && devUser3Password) {
@@ -51,19 +51,19 @@ const getTestCases = () => {
       name: 'Email Verification Test - Dev User 3','      email: devUser3Email,
       password: devUser3Password,
       expectedStatus: 403, // Assuming user 3 is set up for email verification testing
-      description: 'Should fail with email verification required (if configured)''    });
+      description: 'Should fail with email verification required (if configured)'    });
   }
 
   // Add fallback test cases if no environment users are configured
   if (testCases.length === 0) {
-    process.stdout.write('⚠️  No development users configured in environment variables\n');'    process.stdout.write('💡 Using fallback test cases with generic credentials\n');'    
+    process.stdout.write('⚠️  No development users configured in environment variables\n');    process.stdout.write('💡 Using fallback test cases with generic credentials\n');    
     testCases.push(
       {
         name: 'Fallback User Test','        email: 'dev@example.com','        password: 'dev123','        expectedStatus: 200,
-        description: 'Should succeed with fallback development user''      },
+        description: 'Should succeed with fallback development user'      },
       {
         name: 'Fallback Invalid Test','        email: 'dev@example.com','        password: 'wrongpassword','        expectedStatus: 401,
-        description: 'Should fail with incorrect password''      }
+        description: 'Should fail with incorrect password'      }
     );
   }
 
@@ -71,10 +71,10 @@ const getTestCases = () => {
   testCases.push(
     {
       name: 'User Not Found','      email: 'nonexistent@example.com','      password: 'anypassword','      expectedStatus: 401,
-      description: 'Should fail with user not found message''    },
+      description: 'Should fail with user not found message'    },
     {
       name: 'Missing Credentials','      email: '','      password: '','      expectedStatus: 400,
-      description: 'Should fail with missing credentials message''    }
+      description: 'Should fail with missing credentials message'    }
   );
 
   return testCases;
@@ -86,9 +86,8 @@ async function makeLoginRequest(email, password) {
       method: 'POST','      headers: {
         'Content-Type': 'application/json','      },
       body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json().catch(() => ({}));
+    })
+const data = await response.json().catch(() => ({}));
     
     return {
       status: response.status,
@@ -106,9 +105,8 @@ async function makeLoginRequest(email, password) {
 async function runTest(testCase) {
   process.stdout.write(`\n🧪 Running: ${testCase.name}\n`);
   process.stdout.write(`📝 Description: ${testCase.description}\n`);
-  process.stdout.write(`📧 Email: ${testCase.email || 'empty'}\n`);'  process.stdout.write(`🔑 Password: ${testCase.password ? '[SET]' : 'empty'}\n`);'  process.stdout.write(`🎯 Expected Status: ${testCase.expectedStatus}\n`);
-
-  const result = await makeLoginRequest(testCase.email, testCase.password);
+  process.stdout.write(`📧 Email: ${testCase.email || 'empty'}\n`);  process.stdout.write(`🔑 Password: ${testCase.password ? '[SET]' : 'empty'}\n`);  process.stdout.write(`🎯 Expected Status: ${testCase.expectedStatus}\n`)
+const result = await makeLoginRequest(testCase.email, testCase.password);
 
   process.stdout.write(`📊 Actual Status: ${result.status}\n`);
   
@@ -134,17 +132,17 @@ async function runTest(testCase) {
 }
 
 async function runAllTests() {
-  process.stdout.write('🔐 SECURITY: Login Tracing Test Suite\n');'  process.stdout.write('=====================================\n\n');'
+  process.stdout.write('🔐 SECURITY: Login Tracing Test Suite\n');  process.stdout.write('=====================================\n\n');
   // Security check
-  if (process.env.NODE_ENV !== 'development') {'    process.stdout.write('❌ This script only runs in development mode for security\n');'    return;
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return;
   }
 
-  process.stdout.write('🔒 Environment Security Check:\n');'  process.stdout.write(`📋 NODE_ENV: ${process.env.NODE_ENV}\n`);
-  process.stdout.write(`📋 Development mode: ${process.env.NODE_ENV === 'development'}\n`);'
-  const testCases = getTestCases();
+  process.stdout.write('🔒 Environment Security Check:\n');  process.stdout.write(`📋 NODE_ENV: ${process.env.NODE_ENV}\n`);
+  process.stdout.write(`📋 Development mode: ${process.env.NODE_ENV === 'development'}\n`)
+const testCases = getTestCases();
 
   if (testCases.length === 0) {
-    process.stdout.write('❌ No test cases configured. Please check your environment variables.\n');'    return;
+    process.stdout.write('❌ No test cases configured. Please check your environment variables.\n');    return;
   }
 
   process.stdout.write(`\n📊 Running ${testCases.length} test cases...\n\n`);
@@ -161,15 +159,15 @@ async function runAllTests() {
     }
   }
 
-  process.stdout.write('\n🏁 Test Results:\n');'  process.stdout.write(`✅ Passed: ${passed}\n`);
+  process.stdout.write('\n🏁 Test Results:\n');  process.stdout.write(`✅ Passed: ${passed}\n`);
   process.stdout.write(`❌ Failed: ${failed}\n`);
   process.stdout.write(`📊 Total: ${testCases.length}\n`);
 
   if (failed === 0) {
-    process.stdout.write('\n🎉 All tests passed! Login functionality is working correctly.\n');'  } else {
-    process.stdout.write('\n⚠️  Some tests failed. Please check the server logs and configuration.\n');'  }
+    process.stdout.write('\n🎉 All tests passed! Login functionality is working correctly.\n');  } else {
+    process.stdout.write('\n⚠️  Some tests failed. Please check the server logs and configuration.\n');  }
 
-  process.stdout.write('\n💡 Tips:\n');'  process.stdout.write('- Make sure your .env.local file has DEV_USER_* variables configured\n');'  process.stdout.write('- Check that your development server is running on http://localhost:3000\n');'  process.stdout.write('- Look at the server console for detailed login traces\n');'  process.stdout.write('- Verify your Supabase configuration if using production authentication\n');'}
+  process.stdout.write('\n💡 Tips:\n');  process.stdout.write('- Make sure your .env.local file has DEV_USER_* variables configured\n');  process.stdout.write('- Check that your development server is running on http://localhost:3000\n');  process.stdout.write('- Look at the server console for detailed login traces\n');  process.stdout.write('- Verify your Supabase configuration if using production authentication\n');}
 
 if (require.main === module) {
   runAllTests().catch(console.error);

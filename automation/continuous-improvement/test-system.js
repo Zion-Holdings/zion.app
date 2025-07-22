@@ -5,9 +5,11 @@
  * 
  * Tests the system components without requiring real API keys
  */
-;
-const fs = require('fs');'const path = require('path');'const winston = require('winston');'
-// Configure logging;
+
+const fs = require('fs')
+const path = require('path')
+const winston = require('winston');'
+// Configure logging
 const logger = winston.createLogger({
   level: 'info','  format: winston.format.combine(
     winston.format.timestamp(),
@@ -22,8 +24,7 @@ const logger = winston.createLogger({
       )
     })
   ]
-});
-
+})
 class TestSystem {
   constructor() {
     this.testResults = {
@@ -37,7 +38,7 @@ class TestSystem {
    * Run all tests
    */
   async runAllTests() {
-    console.log('🧪 Running Zion App Continuous Improvement System Tests');'    console.log('========================================================');'    console.log('');'
+    console.log('🧪 Running Zion App Continuous Improvement System Tests');    console.log('========================================================');    console.log('');
     try {
       await this.testFileStructure();
       await this.testDependencies();
@@ -50,7 +51,7 @@ class TestSystem {
       
       this.displayResults();
     } catch (error) {
-      logger.error('Test suite failed:', error);'      process.exit(1);
+      logger.error('Test suite failed:', error);      process.exit(1);
     }
   }
 
@@ -58,11 +59,10 @@ class TestSystem {
    * Test file structure
    */
   async testFileStructure() {
-    console.log('📁 Testing file structure...');'    
-    const requiredFiles = [
-      'index.js','      'monitor.js','      'improve.js','      'cursor-integration.js','      'start.js','      'package.json','      'README.md','      '.env''    ];
-
-    const requiredDirs = [
+    console.log('📁 Testing file structure...')
+const requiredFiles = [
+      'index.js','      'monitor.js','      'improve.js','      'cursor-integration.js','      'start.js','      'package.json','      'README.md','      '.env''    ]
+const requiredDirs = [
       'logs','      'backups','      'scripts''    ];
 
     for (const file of requiredFiles) {
@@ -86,7 +86,7 @@ class TestSystem {
    * Test dependencies
    */
   async testDependencies() {
-    console.log('📦 Testing dependencies...');'    
+    console.log('📦 Testing dependencies...');    
     try {
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));'      
       // Check required dependencies
@@ -118,9 +118,9 @@ class TestSystem {
    * Test configuration
    */
   async testConfiguration() {
-    console.log('⚙️  Testing configuration...');'    
+    console.log('⚙️  Testing configuration...');    
     try {
-      const envContent = fs.readFileSync('.env', 'utf8');'      
+      const envContent = fs.readFileSync('.env', 'utf8');      
       // Check for required environment variables
       const requiredVars = ['CURSOR_API_KEY', 'CURSOR_WORKSPACE_ID'];'      for (const varName of requiredVars) {
         if (envContent.includes(varName)) {
@@ -141,24 +141,24 @@ class TestSystem {
    * Test monitoring system
    */
   async testMonitoring() {
-    console.log('🔍 Testing monitoring system...');'    
+    console.log('🔍 Testing monitoring system...');    
     try {
       // Test monitor module loading
       const Monitor = require('./monitor');'      const monitor = new Monitor();
       
-      if (monitor && typeof monitor.start === 'function') {'        this.pass('Monitor module loads successfully');'      } else {
-        this.fail('Monitor module failed to load');'      }
+      if (monitor && typeof monitor.start === 'function') {        this.pass('Monitor module loads successfully');      } else {
+        this.fail('Monitor module failed to load');      }
 
       // Test metrics collection
       const metrics = monitor.getMetrics();
-      if (metrics && typeof metrics === 'object') {'        this.pass('Metrics collection works');'      } else {
-        this.fail('Metrics collection failed');'      }
+      if (metrics && typeof metrics === 'object') {        this.pass('Metrics collection works');      } else {
+        this.fail('Metrics collection failed');      }
 
       // Test alerts
       const alerts = monitor.getAlerts();
       if (Array.isArray(alerts)) {
-        this.pass('Alert system works');'      } else {
-        this.fail('Alert system failed');'      }
+        this.pass('Alert system works');      } else {
+        this.fail('Alert system failed');      }
     } catch (error) {
       this.fail(`Monitor test failed: ${error.message}`);
     }
@@ -168,32 +168,32 @@ class TestSystem {
    * Test improvement engine
    */
   async testImprovementEngine() {
-    console.log('🔧 Testing improvement engine...');'    
+    console.log('🔧 Testing improvement engine...');    
     try {
       // Test improver module loading
       const Improver = require('./improve');'      const improver = new Improver();
       
-      if (improver && typeof improver.processImprovements === 'function') {'        this.pass('Improver module loads successfully');'      } else {
-        this.fail('Improver module failed to load');'      }
+      if (improver && typeof improver.processImprovements === 'function') {        this.pass('Improver module loads successfully');      } else {
+        this.fail('Improver module failed to load');      }
 
       // Test stats collection
       const stats = improver.getStats();
-      if (stats && typeof stats === 'object') {'        this.pass('Stats collection works');'      } else {
-        this.fail('Stats collection failed');'      }
+      if (stats && typeof stats === 'object') {        this.pass('Stats collection works');      } else {
+        this.fail('Stats collection failed');      }
 
       // Test suggestion validation
       const testSuggestion = {
         type: 'code_change','        description: 'Test improvement','        changes: [
           {
-            action: 'add','            file: 'test-file.js','            content: 'console.log("test");''          }
+            action: 'add','            file: 'test-file.js','            content: 'console.log("test");'          }
         ]
       };
 
       if (improver.validateSuggestion) {
         const isValid = improver.validateSuggestion(testSuggestion);
         if (isValid) {
-          this.pass('Suggestion validation works');'        } else {
-          this.fail('Suggestion validation failed');'        }
+          this.pass('Suggestion validation works');        } else {
+          this.fail('Suggestion validation failed');        }
       }
     } catch (error) {
       this.fail(`Improver test failed: ${error.message}`);
@@ -204,22 +204,21 @@ class TestSystem {
    * Test Cursor integration
    */
   async testCursorIntegration() {
-    console.log('🤖 Testing Cursor integration...');'    
+    console.log('🤖 Testing Cursor integration...');    
     try {
       // Test cursor integration module loading
       const CursorIntegration = require('./cursor-integration');'      const cursor = new CursorIntegration();
       
-      if (cursor && typeof cursor.generateSuggestions === 'function') {'        this.pass('Cursor integration module loads successfully');'      } else {
-        this.fail('Cursor integration module failed to load');'      }
+      if (cursor && typeof cursor.generateSuggestions === 'function') {        this.pass('Cursor integration module loads successfully');      } else {
+        this.fail('Cursor integration module failed to load');      }
 
       // Test prompt building
       const testData = {
         type: 'codeQuality','        severity: 'medium','        data: { lintErrors: 5 }
-      };
-
-      const prompt = cursor.buildPrompt(testData);
-      if (prompt && prompt.includes('codeQuality')) {'        this.pass('Prompt building works');'      } else {
-        this.fail('Prompt building failed');'      }
+      }
+const prompt = cursor.buildPrompt(testData);
+      if (prompt && prompt.includes('codeQuality')) {'        this.pass('Prompt building works');      } else {
+        this.fail('Prompt building failed');      }
 
       // Test response parsing (with mock data)
       const mockResponse = {
@@ -228,17 +227,16 @@ class TestSystem {
             content: JSON.stringify({
               improvements: [{
                 type: 'code_change','                description: 'Test improvement','                changes: [{
-                  action: 'add','                  file: 'test-file.js','                  content: 'console.log("test");''                }]
+                  action: 'add','                  file: 'test-file.js','                  content: 'console.log("test");'                }]
               }]
             })
           }
         }]
-      };
-
-      const suggestions = cursor.parseResponse(mockResponse);
+      }
+const suggestions = cursor.parseResponse(mockResponse);
       if (Array.isArray(suggestions) && suggestions.length > 0) {
-        this.pass('Response parsing works');'      } else {
-        this.fail('Response parsing failed');'      }
+        this.pass('Response parsing works');      } else {
+        this.fail('Response parsing failed');      }
     } catch (error) {
       this.fail(`Cursor integration test failed: ${error.message}`);
     }
@@ -248,13 +246,12 @@ class TestSystem {
    * Test safety features
    */
   async testSafetyFeatures() {
-    console.log('🔒 Testing safety features...');'    
+    console.log('🔒 Testing safety features...');    
     try {
       // Test backup creation
       const testFile = 'test-backup-file.txt';'      const testContent = 'test content';'      
-      fs.writeFileSync(testFile, testContent);
-      
-      const Improver = require('./improve');'      const improver = new Improver();
+      fs.writeFileSync(testFile, testContent)
+const Improver = require('./improve');'      const improver = new Improver();
       
       if (improver.createBackup) {
         const backupPath = await improver.createBackup({
@@ -262,11 +259,11 @@ class TestSystem {
         });
         
         if (fs.existsSync(backupPath)) {
-          this.pass('Backup creation works');'          
+          this.pass('Backup creation works');          
           // Cleanup
           fs.rmSync(backupPath, { recursive: true, force: true });
         } else {
-          this.fail('Backup creation failed');'        }
+          this.fail('Backup creation failed');        }
       }
       
       // Cleanup test file
@@ -282,18 +279,19 @@ class TestSystem {
    * Test logging
    */
   async testLogging() {
-    console.log('📝 Testing logging system...');'    
+    console.log('📝 Testing logging system...');    
     try {
       // Test log directory creation
-      if (!fs.existsSync('logs')) {'        fs.mkdirSync('logs', { recursive: true });'      }
+      if (!fs.existsSync('logs')) {'        fs.mkdirSync('logs', { recursive: true });      }
 
       // Test log file writing
-      logger.info('Test log message', { test: true });'      
+      logger.info('Test log message', { test: true });      
       // Check for any log files created
-      const logFiles = fs.readdirSync('logs');'      const hasLogFiles = logFiles.some(file => file.includes('.log'));'      
+      const logFiles = fs.readdirSync('logs')
+const hasLogFiles = logFiles.some(file => file.includes('.log'));'      
       if (hasLogFiles) {
-        this.pass('Logging system works');'      } else {
-        this.fail('Logging system failed');'      }
+        this.pass('Logging system works');      } else {
+        this.fail('Logging system failed');      }
     } catch (error) {
       this.fail(`Logging test failed: ${error.message}`);
     }
@@ -328,14 +326,14 @@ class TestSystem {
    * Display test results
    */
   displayResults() {
-    console.log('');'    console.log('📊 Test Results Summary');'    console.log('=======================');'    console.log(`Total Tests: ${this.testResults.total}`);
+    console.log('');    console.log('📊 Test Results Summary');    console.log('=======================');    console.log(`Total Tests: ${this.testResults.total}`);
     console.log(`Passed: ${this.testResults.passed}`);
     console.log(`Failed: ${this.testResults.failed}`);
     console.log(`Success Rate: ${((this.testResults.passed / this.testResults.total) * 100).toFixed(1)}%`);
-    console.log('');'
+    console.log('');
     if (this.testResults.failed === 0) {
-      console.log('🎉 All tests passed! The system is ready to use.');'      console.log('');'      console.log('Next steps:');'      console.log('1. Configure your Cursor AI API keys in .env');'      console.log('2. Start the system: npm start');'      console.log('3. Monitor status: npm run status');'    } else {
-      console.log('⚠️  Some tests failed. Please fix the issues before using the system.');'      process.exit(1);
+      console.log('🎉 All tests passed! The system is ready to use.');      console.log('');      console.log('Next steps:');      console.log('1. Configure your Cursor AI API keys in .env');      console.log('2. Start the system: npm start');      console.log('3. Monitor status: npm run status');    } else {
+      console.log('⚠️  Some tests failed. Please fix the issues before using the system.');      process.exit(1);
     }
   }
 }
@@ -344,7 +342,7 @@ class TestSystem {
 if (require.main === module) {
   const testSystem = new TestSystem();
   testSystem.runAllTests().catch(error => {
-    console.error('Test suite failed:', error);'    process.exit(1);
+    console.error('Test suite failed:', error);    process.exit(1);
   });
 }
 

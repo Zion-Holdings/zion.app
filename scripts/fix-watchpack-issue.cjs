@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class WatchpackFixer {
   constructor() {
     this.issues = [];
@@ -51,9 +50,8 @@ class WatchpackFixer {
   }
 
   async fixNextConfig() {
-    this.log('🔧 Fixing Next.js configuration...');
-
-    const nextConfigPath = 'next.config.js';
+    this.log('🔧 Fixing Next.js configuration...')
+const nextConfigPath = 'next.config.js';
     if (fs.existsSync(nextConfigPath)) {
       let content = fs.readFileSync(nextConfigPath, 'utf8');
 
@@ -113,8 +111,8 @@ const nextConfig = {
     this.log('🔧 Fixing dev script...');
 
     try {
-      const packagePath = 'package.json';
-      const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+      const packagePath = 'package.json'
+const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 
       // Update dev script with better options
       packageJson.scripts.dev =
@@ -163,9 +161,8 @@ const nextConfig = {
       );
 
       let output = '';
-      let timeout;
-
-      const cleanup = () => {
+      let timeout
+const cleanup = () => {
         clearTimeout(timeout);
         devProcess.kill();
       };
@@ -198,16 +195,15 @@ const nextConfig = {
   }
 
   async runFullFix() {
-    this.log('🚀 Starting watchpack fix process...');
-
-    const steps = [
+    this.log('🚀 Starting watchpack fix process...')
+const steps = [
       { name: 'Fix watchpack issue', fn: () => this.fixWatchpackIssue() },
       { name: 'Test dev server', fn: () => this.testDevServer() },
     ];
 
     for (const step of steps) {
-      this.log(`\n📋 Step: ${step.name}`);
-      const result = await step.fn();
+      this.log(`\n📋 Step: ${step.name}`)
+const result = await step.fn();
 
       if (!result) {
         this.log(`❌ Step failed: ${step.name}`);

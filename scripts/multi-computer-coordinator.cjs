@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const express = require('express');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const express = require('express')
 class MultiComputerCoordinator {
   constructor() {
     this.app = express();
@@ -62,8 +61,8 @@ class MultiComputerCoordinator {
 
     // Node status update
     this.app.post('/api/nodes/:nodeId/status', (req, res) => {
-      const { nodeId } = req.params;
-      const { status, currentTask, load } = req.body;
+      const { nodeId } = req.params
+const { status, currentTask, load } = req.body;
 
       this.updateNodeStatus(nodeId, status, currentTask, load);
       res.json({ success: true });
@@ -71,8 +70,8 @@ class MultiComputerCoordinator {
 
     // Task completion
     this.app.post('/api/tasks/:taskId/complete', (req, res) => {
-      const { taskId } = req.params;
-      const { result, error } = req.body;
+      const { taskId } = req.params
+const { result, error } = req.body;
 
       this.completeTask(taskId, result, error);
       res.json({ success: true });
@@ -187,9 +186,8 @@ class MultiComputerCoordinator {
   }
 
   submitTask(task, priority = 'normal', targetNode = null) {
-    const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-
-    const taskObj = {
+    const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+const taskObj = {
       id: taskId,
       task,
       priority,
@@ -254,8 +252,8 @@ class MultiComputerCoordinator {
         return; // No available nodes
       }
 
-      const task = this.taskQueue.shift();
-      const selectedNode = this.selectBestNode(availableNodes, task);
+      const task = this.taskQueue.shift()
+const selectedNode = this.selectBestNode(availableNodes, task);
 
       if (selectedNode) {
         await this.assignTaskToNode(task, selectedNode);
@@ -321,10 +319,9 @@ class MultiComputerCoordinator {
   startNodeHealthChecker() {
     // Check node health every 30 seconds
     setInterval(() => {
-      if (!this.isRunning) return;
-
-      const now = new Date();
-      const timeout = 60 * 1000; // 60 seconds
+      if (!this.isRunning) return
+const now = new Date()
+const timeout = 60 * 1000; // 60 seconds
 
       for (const [nodeId, node] of this.nodes) {
         if (now - node.lastSeen > timeout) {
@@ -373,9 +370,9 @@ class MultiComputerCoordinator {
     console.log('📊 Distributing workload...');
 
     // Analyze current workload
-    const totalNodes = this.nodes.size;
-    const activeTasks = this.currentTasks.size;
-    const queuedTasks = this.taskQueue.length;
+    const totalNodes = this.nodes.size
+const activeTasks = this.currentTasks.size
+const queuedTasks = this.taskQueue.length;
 
     console.log(
       `Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`,
@@ -400,9 +397,8 @@ class MultiComputerCoordinator {
 
 // CLI interface
 if (require.main === module) {
-  const coordinator = new MultiComputerCoordinator();
-
-  const command = process.argv[2];
+  const coordinator = new MultiComputerCoordinator()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

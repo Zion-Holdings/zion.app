@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-const NetlifyBuildMonitor = require('./netlify-monitor');
-const NetlifyErrorFixer = require('./netlify-error-fixer');
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const NetlifyBuildMonitor = require('./netlify-monitor')
+const NetlifyErrorFixer = require('./netlify-error-fixer')
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NetlifyBuildAutomation {
   constructor() {
     this.monitor = new NetlifyBuildMonitor();
@@ -31,8 +30,8 @@ class NetlifyBuildAutomation {
   }
 
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
@@ -187,8 +186,8 @@ class NetlifyBuildAutomation {
 
   async triggerNewBuild() {
     try {
-      this.log('Triggering new build...');
-      const build = await this.monitor.triggerBuild();
+      this.log('Triggering new build...')
+const build = await this.monitor.triggerBuild();
 
       if (build) {
         this.log(`New build triggered: ${build.id}`);
@@ -204,18 +203,16 @@ class NetlifyBuildAutomation {
   }
 
   async runPreBuildChecks() {
-    this.log('Running pre-build checks...');
-
-    const checks = [
+    this.log('Running pre-build checks...')
+const checks = [
       this.checkDependencies(),
       this.checkTypeScript(),
       this.checkESLint(),
       this.checkNextJS(),
       this.checkEnvironment(),
-    ];
-
-    const results = await Promise.allSettled(checks);
-    const issues = results.filter(
+    ]
+const results = await Promise.allSettled(checks)
+const issues = results.filter(
       (result) => result.status === 'rejected' || result.value === false,
     );
 
@@ -277,9 +274,8 @@ class NetlifyBuildAutomation {
     const requiredVars = [
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    ];
-
-    const missing = requiredVars.filter((varName) => !process.env[varName]);
+    ]
+const missing = requiredVars.filter((varName) => !process.env[varName]);
 
     if (missing.length > 0) {
       this.log(`Missing environment variables: ${missing.join(', ')}`, 'warn');
@@ -358,9 +354,8 @@ class NetlifyBuildAutomation {
 
 // CLI interface
 if (require.main === module) {
-  const automation = new NetlifyBuildAutomation();
-
-  const command = process.argv[2];
+  const automation = new NetlifyBuildAutomation()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

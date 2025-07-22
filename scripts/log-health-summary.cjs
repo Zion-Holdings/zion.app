@@ -12,13 +12,11 @@ process.stdout.on('error', (err) => {
  * Provides a comprehensive overview of project health and logging infrastructure
  */
 
-const fs = require('fs');
-const path = require('path');
-const { _exec } = require('child_process');
-const { _promisify } = require('util');
-
-const execAsync = promisify(exec);
-
+const fs = require('fs')
+const path = require('path')
+const { _exec } = require('child_process')
+const { _promisify } = require('util')
+const execAsync = promisify(exec)
 class LogHealthSummary {
   constructor() {
     this.results = {
@@ -63,8 +61,8 @@ class LogHealthSummary {
     try {
       // Check if .next exists and is recent
       if (fs.existsSync('.next')) {
-        const stats = fs.statSync('.next');
-        const ageHours = (Date.now() - stats.mtime) / (1000 * 60 * 60);
+        const stats = fs.statSync('.next')
+const ageHours = (Date.now() - stats.mtime) / (1000 * 60 * 60);
 
         this.results.build.status = ageHours < 24 ? 'recent' : 'stale';
         this.results.build.lastBuilt = stats.mtime;
@@ -101,8 +99,8 @@ class LogHealthSummary {
         'test-results.json',
       );
       if (fs.existsSync(playwrightResults)) {
-        const stats = fs.statSync(playwrightResults);
-        const ageHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
+        const stats = fs.statSync(playwrightResults)
+const ageHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
 
         if (ageHours > 24) {
           // console.warn(`  ℹ️  Playwright results are stale (${ageHours.toFixed(1)}h old), ignoring`);
@@ -203,8 +201,8 @@ class LogHealthSummary {
       try {
         const { stdout: outdatedOutput } = await execAsync(
           'npm outdated --json 2>/dev/null || echo "{}"',
-        );
-        const outdatedData = JSON.parse(outdatedOutput || '{}');
+        )
+const outdatedData = JSON.parse(outdatedOutput || '{}');
         this.results.dependencies.outdated = Object.keys(outdatedData).length;
       } catch (_outdatedError) {
         this.results.dependencies.outdated = 0;
@@ -236,8 +234,8 @@ class LogHealthSummary {
         const startTime = Date.now();
         await execAsync(
           'curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || echo "000"',
-        );
-        const responseTime = Date.now() - startTime;
+        )
+const responseTime = Date.now() - startTime;
         this.results.performance.serverResponseTime = responseTime;
       } catch (_error) {
         this.results.performance.serverResponseTime = null;
@@ -375,10 +373,9 @@ class LogHealthSummary {
 }
 
 async function main() {
-  // console.warn('🚀 Project Health Summary Generator\n');
-
-  const healthChecker = new LogHealthSummary();
-  const results = await healthChecker.generateSummary();
+  // console.warn('🚀 Project Health Summary Generator\n')
+const healthChecker = new LogHealthSummary()
+const results = await healthChecker.generateSummary();
 
   // Exit with appropriate code
   if (results.overall.score >= 70) {

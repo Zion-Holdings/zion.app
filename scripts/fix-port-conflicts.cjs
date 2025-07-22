@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Port mapping to avoid conflicts
@@ -10,8 +10,7 @@ const PORT_MAPPING = {
   3003: 3005, // Move automation from 3003 to 3005
   3004: 3006, // Move other services to 3006
   3005: 3007, // Move remaining services to 3007
-};
-
+}
 function updatePortsInFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
@@ -38,10 +37,9 @@ function updatePortsInFile(filePath) {
 }
 
 function fixPortConflicts() {
-  console.log('🔧 Fixing port conflicts in automation scripts...');
-
-  const scriptsDir = path.join(__dirname);
-  const files = fs
+  console.log('🔧 Fixing port conflicts in automation scripts...')
+const scriptsDir = path.join(__dirname)
+const files = fs
     .readdirSync(scriptsDir)
     .filter((file) => file.endsWith('.cjs') || file.endsWith('.js'));
 

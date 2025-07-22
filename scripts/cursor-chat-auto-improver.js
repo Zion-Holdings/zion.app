@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-
-const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md');
+const fs = require('fs')
+const path = require('path')
+const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md')
 const CHECK_INTERVAL = 30000; // 30 seconds
 
 function readTodos() {
@@ -24,16 +23,16 @@ function writeTodos(todos) {
 }
 
 function markTodoDone(todos, idx, result) {
-  const todo = todos[idx];
-  const doneLine =
+  const todo = todos[idx]
+const doneLine =
     todo.raw.replace('- [ ]', '- [x]') +
     ` (done: ${new Date().toISOString()})\nResult: ${result}`;
   todos[idx].raw = doneLine;
 }
 
 async function processNextTodo() {
-  const todos = readTodos();
-  const idx = todos.findIndex((t) => !t.done);
+  const todos = readTodos()
+const idx = todos.findIndex((t) => !t.done);
   if (idx === -1) {
     console.log('No uncompleted TODOs found. Waiting...');
     return;
@@ -42,8 +41,8 @@ async function processNextTodo() {
   console.log(`Processing TODO: ${todo.content}`);
   // Here, you would implement the actual improvement logic (AI/code automation)
   // For now, just simulate completion
-  await new Promise((res) => setTimeout(res, 5000));
-  const result = 'Simulated improvement complete.';
+  await new Promise((res) => setTimeout(res, 5000))
+const result = 'Simulated improvement complete.';
   markTodoDone(todos, idx, result);
   writeTodos(todos);
   console.log(`Marked TODO as done: ${todo.content}`);

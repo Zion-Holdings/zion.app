@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 class AutomationManager {
   constructor() {
     this.logsDir = path.join(__dirname, '..', 'logs');
@@ -163,8 +162,8 @@ Examples:
 }
 
 async function main() {
-  const manager = new AutomationManager();
-  const command = process.argv[2] || 'help';
+  const manager = new AutomationManager()
+const command = process.argv[2] || 'help';
 
   switch (command) {
     case 'status':

@@ -12,21 +12,21 @@
 import { Tail } from 'tail';'import path from 'path';'import { exec } from 'child_process';'import fs from 'fs';'import os from 'os-utils';'import axios from 'axios';'import { pathToFileURL, fileURLToPath } from 'url';'
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
- ;
+ 
 const _HEAL_COMMAND = undefined;
  ;
 let _perfErrorStreak = 0;
  ;
 let _securityPatchStreak = 0;
- ;
+ 
 const _PERF_ERROR_REGEX = undefined;
- ;
+ 
 const _SECURITY_PATCH_REGEX = undefined;
 
-// Rename custom __dirname to _dirname to avoid no-redeclare error;
+// Rename custom __dirname to _dirname to avoid no-redeclare error
 const _dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// --- Discord Configuration ---;
+// --- Discord Configuration ---
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 // --- Global Error Logging Function ---
@@ -35,7 +35,7 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
  * Optionally includes details from an error object.
  * @param {string} message - The primary error message.
  * @param {Error|null} [errorObject=null] - Optional error object to log its message and stack.
- */;
+ */
 function logErrorToProduction(message, errorObject = null) {
   const timestamp = new Date().toISOString();
   console.error(`[${timestamp}] WATCHDOG ERROR: ${message}`);
@@ -67,7 +67,7 @@ async function sendDiscordAlert(alertMessage) {
     console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
   } catch {
-    let 'Error occurred'Message = `Failed to send alert to Discord.`;'    if ('Error occurred'.code === 'ECONNABORTED') {'        'Error occurred'Message += ` Request timed out.`;'    } else if (error.response) {
+    let 'Error occurred'Message = `Failed to send alert to Discord.`;'    if ('Error occurred'.code === 'ECONNABORTED') {        'Error occurred'Message += ` Request timed out.`;'    } else if (error.response) {
       errorMessage += ` Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}`;
     } else if (error.request) {
       errorMessage += ` No response received.`;
@@ -103,7 +103,7 @@ process.on('uncaughtException', (error) => {'  logErrorToProduction('Uncaught Ex
  */
 // Determine the base path for logs. If WATCHDOG_LOG_PATH is provided but
 // cannot be created/written (e.g., due to permissions or non-existent mount),
-// fall back to a `logs` directory within the current working directory.;
+// fall back to a `logs` directory within the current working directory.
 function determineBaseLogPath() {
   const envPath = process.env.WATCHDOG_LOG_PATH;
   if (envPath) {
@@ -124,7 +124,7 @@ function determineBaseLogPath() {
     logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
-  const fallback = path.resolve(_dirname, '../logs');'  try {
+  const fallback = path.resolve(_dirname, '../logs');  try {
     fs.mkdirSync(fallback, { recursive: true });
     fs.accessSync(fallback, fs.constants.W_OK);
     return fallback;
@@ -142,13 +142,13 @@ function determineBaseLogPath() {
 
   return cwdPath;
 }
-;
+
 const BASE_LOG_PATH = determineBaseLogPath();
-/** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */;
-const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');'/** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */;
-const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, 'security', 'hourly-fix.log');'/** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */;
-const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');'
-// Ensure log directories and files exist to avoid Tail initialization errors;
+/** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
+const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');/** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
+const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, 'security', 'hourly-fix.log');/** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
+const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');
+// Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
   try {
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -161,11 +161,11 @@ function ensureFileExists(filePath) {
 
 [PERF_LOG_FILE, SECURITY_LOG_FILE, SELF_HEAL_LOG_FILE].forEach(ensureFileExists);
 
-// --- Configuration: Error Patterns and Healing Actions ---;
-const _CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3006/api/codex/suggest-fix'; // Assuming server runs on 3001';
+// --- Configuration: Error Patterns and Healing Actions ---
+const _CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3006/api/codex/suggest-fix'; // Assuming server runs on 3001'
 const HEAL_ACTION_TYPES = {
   GENERAL_RESTART: 'GENERAL_RESTART','  CODEX_FIX_FILE: 'CODEX_FIX_FILE','  RESTART_SERVICE: 'RESTART_SERVICE','  CHECK_DB_HEALTH: 'CHECK_DB_HEALTH','};
-;
+
 const _ERROR_PATTERNS_CONFIG = [
   {
     name: 'DatabaseConnectionError','    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
@@ -206,7 +206,7 @@ const _ERROR_PATTERNS_CONFIG = [
   }
 ];
 
-// Endpoint for triggering the Codex AI fix pipeline;
+// Endpoint for triggering the Codex AI fix pipeline
 const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3006/api/codex/suggest-fix';'
 // --- State Variables ---;
 let _errorStreaks = undefined; // Unused {}; // Stores streaks for each error pattern config name
@@ -215,23 +215,23 @@ let isHealing = false;
 /** @type {number} highCpuUsageCount - Counter for consecutive high CPU usage detections. */;
 let highCpuUsageCount = 0;
 
-// --- System Monitoring Configuration ---;
-const MEMORY_THRESHOLD = 0.95; // 95% memory usage (more conservative);
-const CPU_THRESHOLD = 0.95;    // 95% CPU usage (more conservative);
-const CPU_SUSTAINED_CHECKS = 3; // 3 consecutive checks instead of 10;
+// --- System Monitoring Configuration ---
+const MEMORY_THRESHOLD = 0.95; // 95% memory usage (more conservative)
+const CPU_THRESHOLD = 0.95;    // 95% CPU usage (more conservative)
+const CPU_SUSTAINED_CHECKS = 3; // 3 consecutive checks instead of 10
 const SYSTEM_CHECK_INTERVAL = 30000; // 30 seconds instead of 60 (more frequent but conservative thresholds)
 
-// --- Cooldown and Rate Limiting ---;
+// --- Cooldown and Rate Limiting ---
 const SELF_HEAL_COOLDOWN = 5 * 60 * 1000; // 5 minutes cooldown between self-heal attempts;
 let lastSelfHealTime = 0;
 
-// --- Process Management ---;
-const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');'
+// --- Process Management ---
+const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');
 // --- Helper Functions ---
 
 /**
  * Ensures only one instance of watchdog runs at a time
- */;
+ */
 function ensureSingleInstance() {
   try {
     if (fs.existsSync(WATCHDOG_PID_FILE)) {
@@ -243,7 +243,7 @@ function ensureSingleInstance() {
       } catch {
         // Process not found, remove stale PID file
         fs.unlinkSync(WATCHDOG_PID_FILE);
-        console.warn('Removed stale PID file.');'      }
+        console.warn('Removed stale PID file.');      }
     }
     
     // Write current PID
@@ -258,10 +258,10 @@ function ensureSingleInstance() {
         // Ignore cleanup 'Error occurred'ors'      }
     });
     
-    process.on('SIGINT', () => {'      console.warn('\nReceived SIGINT. Shutting down watchdog gracefully...');'      process.exit(0);
+    process.on('SIGINT', () => {'      console.warn('\nReceived SIGINT. Shutting down watchdog gracefully...');      process.exit(0);
     });
     
-    process.on('SIGTERM', () => {'      console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');'      process.exit(0);
+    process.on('SIGTERM', () => {'      console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');      process.exit(0);
     });
   } catch {
     logErrorToProduction('Failed to ensure single instance', 'Error occurred');'  }
@@ -271,10 +271,10 @@ function ensureSingleInstance() {
  * Safely appends a message to the self-heal log file (SELF_HEAL_LOG_FILE).
  * Includes error handling in case the file write fails, logging the error to console.
  * @param {string} message - The message to append.
- */;
+ */
 function appendToSelfHealLog(message) {
   // Do not write to physical log file during test runs to avoid polluting it.
-  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === 'test') {'    return;
+  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === 'test') {    return;
   }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
@@ -292,8 +292,8 @@ async function triggerCodexFix(reason) {
   }
 
   try {
-    await axios.post(CODEX_TRIGGER_URL, { reason, timestamp: new Date().toISOString() }, { timeout: 10000 });
-    const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
+    await axios.post(CODEX_TRIGGER_URL, { reason, timestamp: new Date().toISOString() }, { timeout: 10000 })
+const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
     console.warn(successMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
   } catch {
@@ -301,7 +301,7 @@ async function triggerCodexFix(reason) {
   }
 }
 
-// console.warn('Watchdog script started. Monitoring log files...');'appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
+// console.warn('Watchdog script started. Monitoring log files...');appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
 /**
  * Triggers the self-healing process.
@@ -313,7 +313,7 @@ async function triggerCodexFix(reason) {
  * - Resets both perfErrorStreak and securityPatchStreak.
  * - Releases the cooldown by setting `isHealing` back to false.
  * @param {string} reason - The reason why the self-heal action is being triggered.
- */;
+ */
 function triggerSelfHeal(reason) {
   const currentTime = Date.now();
   
@@ -327,18 +327,17 @@ function triggerSelfHeal(reason) {
 
   // Check cooldown period
   if (currentTime - lastSelfHealTime < SELF_HEAL_COOLDOWN) {
-    const remainingCooldown = Math.ceil((SELF_HEAL_COOLDOWN - (currentTime - lastSelfHealTime)) / 1000);
-    const message = `Self-heal cooldown active. ${remainingCooldown}s remaining. Skipping trigger for: ${reason}`;
+    const remainingCooldown = Math.ceil((SELF_HEAL_COOLDOWN - (currentTime - lastSelfHealTime)) / 1000)
+const message = `Self-heal cooldown active. ${remainingCooldown}s remaining. Skipping trigger for: ${reason}`;
     console.warn(message);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
     return;
   }
 
   isHealing = true; // Activate cooldown
-  lastSelfHealTime = currentTime;
-  
-  const timestamp = new Date().toISOString();
-  const logMessage = `Triggering self-heal due to: ${reason}`;
+  lastSelfHealTime = currentTime
+const timestamp = new Date().toISOString()
+const logMessage = `Triggering self-heal due to: ${reason}`;
   console.warn(logMessage);
   appendToSelfHealLog(`[${timestamp}] ${logMessage}\n`);
 
@@ -358,7 +357,7 @@ function triggerSelfHeal(reason) {
     const executionTimestamp = new Date().toISOString();
     
     if (error) {
-      if (error.killed && error.signal === 'SIGTERM') {'        logErrorToProduction('Self-heal command timed out after 10 minutes');'        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
+      if (error.killed && error.signal === 'SIGTERM') {        logErrorToProduction('Self-heal command timed out after 10 minutes');'        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
       } else {
         logErrorToProduction(`Self-heal command error: ${error.message}`, error);
         appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
@@ -399,7 +398,7 @@ function triggerSelfHeal(reason) {
 /**
  * Monitors system memory and CPU usage.
  * Triggers self-healing if thresholds are breached consistently.
- */;
+ */
 function monitorSystemResources() {
   if (isHealing) {
     // Don't check resources if a healing process is already underway'    return;
@@ -428,8 +427,8 @@ function monitorSystemResources() {
     }
     
     if (cpuUsagePercent > CPU_THRESHOLD) {
-      highCpuUsageCount++;
-      const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}% (Threshold: ${CPU_THRESHOLD * 100}%). Count: ${highCpuUsageCount}/${CPU_SUSTAINED_CHECKS}`;
+      highCpuUsageCount++
+const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}% (Threshold: ${CPU_THRESHOLD * 100}%). Count: ${highCpuUsageCount}/${CPU_SUSTAINED_CHECKS}`;
       console.warn(message);
       appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
       
@@ -452,10 +451,10 @@ function monitorSystemResources() {
 }
 
 
-// --- Main script execution / initialization logic ---;
+// --- Main script execution / initialization logic ---
 function startMonitoring() {
   // This function should only be called when running the script directly, not during tests.
-  if (process.env.NODE_ENV === 'test') {'    // This check provides an additional layer of safety, though the primary guard
+  if (process.env.NODE_ENV === 'test') {    // This check provides an additional layer of safety, though the primary guard
     // is in the `if (require.main === module ...)` block below.
     console.warn('Test environment detected, skipping startMonitoring() content.');'    return;
   }
@@ -486,7 +485,7 @@ function startMonitoring() {
           if (_perfErrorStreak >= 3) {
             triggerSelfHeal('3 consecutive performance errors');'          }
         } else if (_perfErrorStreak > 0) {
-          // console.warn('Performance log normal. Resetting streak.');'          _perfErrorStreak = 0;
+          // console.warn('Performance log normal. Resetting streak.');          _perfErrorStreak = 0;
         }
       });
       perfTail.on('error', function(error) {'        logErrorToProduction(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
@@ -513,7 +512,7 @@ function startMonitoring() {
           if (_securityPatchStreak >= 3) {
             triggerSelfHeal('3 consecutive security patches');'          }
         } else if (_securityPatchStreak > 0) {
-          // console.warn('Security log normal. Resetting streak.');'          _securityPatchStreak = 0;
+          // console.warn('Security log normal. Resetting streak.');          _securityPatchStreak = 0;
         }
       });
       securityTail.on('error', function(error) {'        logErrorToProduction(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);

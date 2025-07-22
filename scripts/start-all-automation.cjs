@@ -19,10 +19,9 @@
  * - Testing Automation
  */
 
-const { spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 class AllAutomationStarter {
   constructor() {
     this.projectRoot = process.cwd();
@@ -324,9 +323,9 @@ class AllAutomationStarter {
           ? '🟢'
           : processInfo.status === 'restarting'
             ? '🟡'
-            : '🔴';
-      const uptime = this.formatUptime(new Date() - processInfo.startTime);
-      const restarts = processInfo.restartCount;
+            : '🔴'
+const uptime = this.formatUptime(new Date() - processInfo.startTime)
+const restarts = processInfo.restartCount;
 
       console.log(
         `${statusIcon} ${name.padEnd(30)} ${processInfo.status.padEnd(12)} ${uptime.padEnd(10)} ${restarts} restarts`,
@@ -341,9 +340,9 @@ class AllAutomationStarter {
    * Format uptime
    */
   formatUptime(ms) {
-    const seconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
+    const seconds = Math.floor(ms / 1000)
+const minutes = Math.floor(seconds / 60)
+const hours = Math.floor(minutes / 60);
 
     if (hours > 0) {
       return `${hours}h ${minutes % 60}m`;

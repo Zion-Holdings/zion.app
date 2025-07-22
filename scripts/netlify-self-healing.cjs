@@ -5,9 +5,9 @@
  * Automatically detects and fixes common build issues
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 const crypto = require('crypto');
 
 // Configuration
@@ -41,8 +41,7 @@ const CONFIG = {
     disk: ['clean-disk', 'increase-disk', 'optimize-size'],
     nodeVersion: ['update-node', 'fix-node-version', 'use-nvm'],
   },
-};
-
+}
 class NetlifySelfHealing {
   constructor() {
     this.buildHistory = [];
@@ -59,8 +58,8 @@ class NetlifySelfHealing {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
 
@@ -149,8 +148,8 @@ class NetlifySelfHealing {
 
     for (const file of problematicFiles) {
       if (fs.existsSync(file)) {
-        const content = fs.readFileSync(file, 'utf8');
-        const fileIssues = this.analyzeFileForIssues(content);
+        const content = fs.readFileSync(file, 'utf8')
+const fileIssues = this.analyzeFileForIssues(content);
         issues.push(...fileIssues);
       }
     }
@@ -192,9 +191,8 @@ class NetlifySelfHealing {
         'react-scripts', // Can cause conflicts with Next.js
         'webpack', // Should use Next.js webpack
         'babel-loader', // Should use Next.js babel
-      ];
-
-      const allDeps = {
+      ]
+const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies,
       };
@@ -435,9 +433,8 @@ class NetlifySelfHealing {
   }
 
   async cleanCache() {
-    this.log('Cleaning cache...');
-
-    const cacheDirs = ['.next', 'node_modules/.cache', '.cache', 'dist', 'out'];
+    this.log('Cleaning cache...')
+const cacheDirs = ['.next', 'node_modules/.cache', '.cache', 'dist', 'out'];
 
     for (const dir of cacheDirs) {
       if (fs.existsSync(dir)) {
@@ -650,9 +647,8 @@ class NetlifySelfHealing {
 
   // Build-related fixes
   async cleanBuild() {
-    this.log('Cleaning build artifacts...');
-
-    const buildDirs = ['.next', 'out', 'dist', 'build'];
+    this.log('Cleaning build artifacts...')
+const buildDirs = ['.next', 'out', 'dist', 'build'];
 
     for (const dir of buildDirs) {
       if (fs.existsSync(dir)) {
@@ -859,9 +855,8 @@ class NetlifySelfHealing {
 
 // CLI interface
 if (require.main === module) {
-  const healing = new NetlifySelfHealing();
-
-  const command = process.argv[2];
+  const healing = new NetlifySelfHealing()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

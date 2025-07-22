@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
-const { execSync, spawn } = require('child_process');
-const path = require('path');
-
-const PORT = 3002;
-const DEV_CMD = 'npm run dev';
-const AUTOMATION_CMD = 'npm run netlify:start';
-const CURSOR_CHAT_CMD = 'npm run cursor:chat';
+const { execSync, spawn } = require('child_process')
+const path = require('path')
+const PORT = 3002
+const DEV_CMD = 'npm run dev'
+const AUTOMATION_CMD = 'npm run netlify:start'
+const CURSOR_CHAT_CMD = 'npm run cursor:chat'
 const CHECK_INTERVAL = 10000; // 10 seconds
 
 let cursorChatProcess = null;
-let cursorChatActive = false;
-
+let cursorChatActive = false
 function isPortInUse(port) {
   try {
     const output = execSync(
@@ -44,8 +42,8 @@ function isProcessRunning(cmd) {
 }
 
 function startProcess(cmd, cwd = process.cwd(), onExit) {
-  console.log(`[Watchdog] Starting: ${cmd}`);
-  const proc = spawn(cmd, {
+  console.log(`[Watchdog] Starting: ${cmd}`)
+const proc = spawn(cmd, {
     shell: true,
     cwd,
     stdio: 'ignore',

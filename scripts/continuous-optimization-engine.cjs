@@ -14,10 +14,9 @@
  * - Generating reports
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class ContinuousOptimizationEngine {
   constructor() {
     this.projectRoot = process.cwd();
@@ -93,9 +92,8 @@ class ContinuousOptimizationEngine {
    * Perform initial optimization
    */
   async performInitialOptimization() {
-    console.log('🔧 Performing initial optimization...');
-
-    const optimizations = [
+    console.log('🔧 Performing initial optimization...')
+const optimizations = [
       this.optimizePerformance(),
       this.optimizeSecurity(),
       this.optimizeBundle(),
@@ -103,9 +101,8 @@ class ContinuousOptimizationEngine {
       this.optimizeDependencies(),
       this.optimizeImages(),
       this.runTests(),
-    ];
-
-    const results = await Promise.allSettled(optimizations);
+    ]
+const results = await Promise.allSettled(optimizations);
 
     for (const result of results) {
       if (result.status === 'fulfilled' && result.value) {
@@ -123,14 +120,13 @@ class ContinuousOptimizationEngine {
    * Start performance optimization loop
    */
   startPerformanceOptimization() {
-    if (!this.config.enablePerformanceMonitoring) return;
-
-    const performanceLoop = async () => {
+    if (!this.config.enablePerformanceMonitoring) return
+const performanceLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('⚡ Running performance optimization...');
-        const optimization = await this.optimizePerformance();
+        console.log('⚡ Running performance optimization...')
+const optimization = await this.optimizePerformance();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -150,14 +146,13 @@ class ContinuousOptimizationEngine {
    * Start security optimization loop
    */
   startSecurityOptimization() {
-    if (!this.config.enableSecurityScanning) return;
-
-    const securityLoop = async () => {
+    if (!this.config.enableSecurityScanning) return
+const securityLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🔒 Running security optimization...');
-        const optimization = await this.optimizeSecurity();
+        console.log('🔒 Running security optimization...')
+const optimization = await this.optimizeSecurity();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -177,14 +172,13 @@ class ContinuousOptimizationEngine {
    * Start bundle optimization loop
    */
   startBundleOptimization() {
-    if (!this.config.enableBundleOptimization) return;
-
-    const bundleLoop = async () => {
+    if (!this.config.enableBundleOptimization) return
+const bundleLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('📦 Running bundle optimization...');
-        const optimization = await this.optimizeBundle();
+        console.log('📦 Running bundle optimization...')
+const optimization = await this.optimizeBundle();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -204,14 +198,13 @@ class ContinuousOptimizationEngine {
    * Start code quality optimization loop
    */
   startCodeQualityOptimization() {
-    if (!this.config.enableCodeQualityOptimization) return;
-
-    const qualityLoop = async () => {
+    if (!this.config.enableCodeQualityOptimization) return
+const qualityLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🎯 Running code quality optimization...');
-        const optimization = await this.optimizeCodeQuality();
+        console.log('🎯 Running code quality optimization...')
+const optimization = await this.optimizeCodeQuality();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -231,14 +224,13 @@ class ContinuousOptimizationEngine {
    * Start dependency optimization loop
    */
   startDependencyOptimization() {
-    if (!this.config.enableDependencyManagement) return;
-
-    const dependencyLoop = async () => {
+    if (!this.config.enableDependencyManagement) return
+const dependencyLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('📦 Running dependency optimization...');
-        const optimization = await this.optimizeDependencies();
+        console.log('📦 Running dependency optimization...')
+const optimization = await this.optimizeDependencies();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -258,14 +250,13 @@ class ContinuousOptimizationEngine {
    * Start image optimization loop
    */
   startImageOptimization() {
-    if (!this.config.enableImageOptimization) return;
-
-    const imageLoop = async () => {
+    if (!this.config.enableImageOptimization) return
+const imageLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🖼️ Running image optimization...');
-        const optimization = await this.optimizeImages();
+        console.log('🖼️ Running image optimization...')
+const optimization = await this.optimizeImages();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -285,14 +276,13 @@ class ContinuousOptimizationEngine {
    * Start test automation loop
    */
   startTestAutomation() {
-    if (!this.config.enableTestAutomation) return;
-
-    const testLoop = async () => {
+    if (!this.config.enableTestAutomation) return
+const testLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🧪 Running test automation...');
-        const optimization = await this.runTests();
+        console.log('🧪 Running test automation...')
+const optimization = await this.runTests();
 
         if (optimization) {
           this.optimizations.push(optimization);
@@ -385,9 +375,8 @@ class ContinuousOptimizationEngine {
       execSync('npm run bundle:analyze', { stdio: 'pipe' });
 
       // Optimize bundle size
-      execSync('npm run bundle:optimize', { stdio: 'pipe' });
-
-      const bundleMetrics = this.getBundleMetrics();
+      execSync('npm run bundle:optimize', { stdio: 'pipe' })
+const bundleMetrics = this.getBundleMetrics();
 
       return {
         type: 'bundle_optimization',
@@ -431,8 +420,8 @@ class ContinuousOptimizationEngine {
       // Check for outdated dependencies
       const outdatedOutput = execSync('npm outdated --json', {
         stdio: 'pipe',
-      }).toString();
-      const outdated = JSON.parse(outdatedOutput || '{}');
+      }).toString()
+const outdated = JSON.parse(outdatedOutput || '{}');
 
       if (Object.keys(outdated).length > 0) {
         // Update dependencies
@@ -549,16 +538,15 @@ class ContinuousOptimizationEngine {
   }
 
   findImageFiles() {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp'];
-    const files = [];
-
-    const walkDir = (dir) => {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp']
+const files = []
+const walkDir = (dir) => {
       try {
         const items = fs.readdirSync(dir);
 
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (stat.isDirectory()) {
             walkDir(fullPath);
@@ -571,9 +559,8 @@ class ContinuousOptimizationEngine {
       } catch (error) {
         // Ignore errors for inaccessible directories
       }
-    };
-
-    const publicDir = path.join(this.projectRoot, 'public');
+    }
+const publicDir = path.join(this.projectRoot, 'public');
     if (fs.existsSync(publicDir)) {
       walkDir(publicDir);
     }

@@ -5,12 +5,11 @@
  * Monitors application health and triggers self-healing when needed
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const https = require('https');
-const http = require('http');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const https = require('https')
+const http = require('http')
 class HealthMonitor {
   constructor() {
     this.metrics = {
@@ -85,10 +84,9 @@ class HealthMonitor {
 
   async checkEndpoint(url) {
     return new Promise((resolve, reject) => {
-      const startTime = Date.now();
-      const protocol = url.startsWith('https:') ? https : http;
-
-      const req = protocol.get(
+      const startTime = Date.now()
+const protocol = url.startsWith('https:') ? https : http
+const req = protocol.get(
         url,
         {
           timeout: 10000,
@@ -126,8 +124,8 @@ class HealthMonitor {
 
       // Check CPU usage (simplified)
       const startUsage = process.cpuUsage();
-      await new Promise((resolve) => setTimeout(resolve, 100));
-      const endUsage = process.cpuUsage(startUsage);
+      await new Promise((resolve) => setTimeout(resolve, 100))
+const endUsage = process.cpuUsage(startUsage);
       this.metrics.cpuUsage = (endUsage.user + endUsage.system) / 1000000; // Convert to seconds
     } catch (error) {
       console.error('Error checking system resources:', error.message);

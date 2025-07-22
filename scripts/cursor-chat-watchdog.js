@@ -1,23 +1,21 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
-const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-watchdog.log');
+const { spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-watchdog.log')
 const SOCKET_SERVER_CMD = [
   'node',
   [path.resolve(__dirname, 'test-socket-server.js')],
-];
+]
 const AUTOMATION_CMD = [
   'node',
   [path.resolve(__dirname, 'cursor-chat-automation.js'), 'start'],
-];
+]
 const CHECK_INTERVAL = 10000; // 10 seconds
 
 let socketServerProc = null;
-let automationProc = null;
-
+let automationProc = null
 function log(msg) {
   const line = `[${new Date().toISOString()}] ${msg}\n`;
   fs.appendFileSync(LOG_FILE, line);

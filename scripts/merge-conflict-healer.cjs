@@ -12,9 +12,8 @@ if (newContent !== content) {
   }
 
   async fixParsingErrors() {
-    this.log('Fixing parsing errors...');
-    
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing parsing errors...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -45,15 +44,15 @@ if (newContent !== content) {
     newContent = newContent.replace(/([^;])\n/g, '$1;\n');
     
     // Fix missing brackets
-    const openBraces = (newContent.match(/\{/g) || []).length;
-    const closeBraces = (newContent.match(/\}/g) || []).length;
+    const openBraces = (newContent.match(/\{/g) || []).length
+const closeBraces = (newContent.match(/\}/g) || []).length;
     if (openBraces > closeBraces) {
       newContent += '\n}'.repeat(openBraces - closeBraces);
     }
 
     // Fix missing parentheses
-    const openParens = (newContent.match(/\(/g) || []).length;
-    const closeParens = (newContent.match(/\)/g) || []).length;
+    const openParens = (newContent.match(/\(/g) || []).length
+const closeParens = (newContent.match(/\)/g) || []).length;
     if (openParens > closeParens) {
       newContent += ')'.repeat(openParens - closeParens);
     }
@@ -68,9 +67,8 @@ if (newContent !== content) {
   }
 
   async fixRemainingIssues() {
-    this.log('Fixing remaining issues...');
-    
-    const fixes = [
+    this.log('Fixing remaining issues...')
+const fixes = [
       this.fixUnusedVariables(),
       this.fixConsoleLogs(),
       this.fixMissingImports()
@@ -90,14 +88,14 @@ if (newContent !== content) {
   }
 
   async fixUnusedVariables() {
-    this.log('Fixing unused variables...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing unused variables...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -106,8 +104,8 @@ if (newContent !== content) {
           if (line.includes('const ') && line.includes('=') && !line.includes('_')) {
             const varMatch = line.match(/const\s+(\w+)/);
             if (varMatch) {
-              const varName = varMatch[1];
-              const restOfFile = content.substring(content.indexOf(line) + line.length);
+              const varName = varMatch[1]
+const restOfFile = content.substring(content.indexOf(line) + line.length);
               if (!restOfFile.includes(varName)) {
                 lines[i] = line.replace(`const ${varName}`, `const _${varName}`);
                 modified = true;
@@ -130,14 +128,14 @@ if (newContent !== content) {
   }
 
   async fixConsoleLogs() {
-    this.log('Fixing console.log statements...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing console.log statements...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -169,9 +167,8 @@ if (newContent !== content) {
       "import React from 'react';",
       "import { useRouter } from 'next/router';",
       "import { useState, useEffect } from 'react';"
-    ];
-    
-    const tsFiles = this.findTsFiles();
+    ]
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -203,9 +200,9 @@ if (newContent !== content) {
   }
 
   findTsFiles() {
-    const files = [];
-    const srcDir = 'src';
-    const pagesDir = 'pages';
+    const files = []
+const srcDir = 'src'
+const pagesDir = 'pages';
     
     if (fs.existsSync(srcDir)) {
       this.findFilesRecursive(srcDir, '.ts', files);
@@ -224,8 +221,8 @@ if (newContent !== content) {
     const items = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.findFilesRecursive(fullPath, ext, files);

@@ -7,11 +7,10 @@
  * and improves the overall app quality using AI assistance.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const chalk = require('chalk')
 class AutomatedAppImprover {
   constructor() {
     this.fixesApplied = 0;
@@ -21,8 +20,8 @@ class AutomatedAppImprover {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString();
-    const colors = {
+    const timestamp = new Date().toISOString()
+const colors = {
       info: chalk.blue,
       success: chalk.green,
       warning: chalk.yellow,
@@ -57,9 +56,8 @@ class AutomatedAppImprover {
   }
 
   async fixSyntaxErrors() {
-    this.log('🔧 Fixing syntax errors...', 'info');
-    
-    const patterns = [
+    this.log('🔧 Fixing syntax errors...', 'info')
+const patterns = [
       // Fix unterminated string literals
       {
         pattern: /import\s+.*from\s+['"]([^'"]*)\s*$/gm,
@@ -90,9 +88,8 @@ class AutomatedAppImprover {
         pattern: /<(\w+);\s*>/g,
         replacement: '<$1>'
       }
-    ];
-
-    const filesToFix = this.getFilesWithErrors();
+    ]
+const filesToFix = this.getFilesWithErrors();
     
     for (const file of filesToFix) {
       try {
@@ -172,9 +169,8 @@ class AutomatedAppImprover {
   async generateReport() {
     const duration = Date.now() - this.startTime;
     
-    this.log('📊 Generating improvement report...', 'info');
-    
-    const report = {
+    this.log('📊 Generating improvement report...', 'info')
+const report = {
       timestamp: new Date().toISOString(),
       duration: `${duration}ms`,
       fixesApplied: this.fixesApplied,
@@ -197,14 +193,13 @@ class AutomatedAppImprover {
   }
 
   getFilesWithErrors() {
-    const srcDir = path.join(process.cwd(), 'src');
-    const files = [];
-    
-    const walkDir = (dir) => {
+    const srcDir = path.join(process.cwd(), 'src')
+const files = []
+const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
       for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
           walkDir(fullPath);

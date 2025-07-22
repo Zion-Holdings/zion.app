@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class FullAutomationMaster {
   constructor() {
     this.projectRoot = process.cwd();
@@ -13,11 +12,10 @@ class FullAutomationMaster {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
-
-    const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage)
+const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -34,8 +32,8 @@ class FullAutomationMaster {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running command: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running command: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -59,8 +57,8 @@ class FullAutomationMaster {
     // Fix package.json merge conflicts
     const packageJsonPath = path.join(this.projectRoot, 'package.json');
     if (fs.existsSync(packageJsonPath)) {
-      let content = fs.readFileSync(packageJsonPath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(packageJsonPath, 'utf8')
+const originalContent = content;
 
       content = content
         .replace(/<<<<<<< HEAD\n/g, '')
@@ -79,16 +77,16 @@ class FullAutomationMaster {
     if (fs.existsSync(apiDir)) {
       const fixFile = (filePath) => {
         try {
-          let content = fs.readFileSync(filePath, 'utf8');
-          const originalContent = content;
+          let content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
           // If file is all on one line and very long, it's corrupted
           if (content.split('\n').length === 1 && content.length > 200) {
             this.log(`Fixing corrupted file: ${filePath}`);
 
             // Extract imports
-            const importMatches = content.match(/import[^;]+;/g) || [];
-            const imports = importMatches.join('\n');
+            const importMatches = content.match(/import[^;]+;/g) || []
+const imports = importMatches.join('\n');
 
             // Extract function body
             const functionMatch = content.match(
@@ -120,15 +118,14 @@ class FullAutomationMaster {
           this.log(`Error fixing file ${filePath}: ${error.message}`, 'ERROR');
           return false;
         }
-      };
-
-      const processDirectory = (dir) => {
+      }
+const processDirectory = (dir) => {
         const items = fs.readdirSync(dir);
         let fixedCount = 0;
 
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (stat.isDirectory()) {
             fixedCount += processDirectory(fullPath);
@@ -140,32 +137,29 @@ class FullAutomationMaster {
         }
 
         return fixedCount;
-      };
-
-      const fixedCount = processDirectory(apiDir);
+      }
+const fixedCount = processDirectory(apiDir);
       this.log(`Fixed ${fixedCount} corrupted API files`);
     }
   }
 
   async installDependencies() {
-    this.log('Step 2: Installing dependencies...');
-
-    const result = await this.runCommand('npm install --legacy-peer-deps');
+    this.log('Step 2: Installing dependencies...')
+const result = await this.runCommand('npm install --legacy-peer-deps');
     return result.success;
   }
 
   async fixNextConfig() {
-    this.log('Step 3: Fixing Next.js configuration...');
-
-    const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+    this.log('Step 3: Fixing Next.js configuration...')
+const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
       return false;
     }
 
     try {
-      let content = fs.readFileSync(nextConfigPath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(nextConfigPath, 'utf8')
+const originalContent = content;
 
       // Add Node.js 22 compatibility workarounds
       const compatibilityCode = `
@@ -202,9 +196,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   async buildProject() {
-    this.log('Step 4: Building project...');
-
-    const result = await this.runCommand('npm run build');
+    this.log('Step 4: Building project...')
+const result = await this.runCommand('npm run build');
     return result.success;
   }
 
@@ -328,8 +321,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
         this.log('Health check failed', 'WARN');
       }
 
-      const endTime = Date.now();
-      const duration = (endTime - this.startTime) / 1000;
+      const endTime = Date.now()
+const duration = (endTime - this.startTime) / 1000;
 
       this.log(`Full automation completed in ${duration}s`);
       this.log('App should now be running at http://localhost:3006');

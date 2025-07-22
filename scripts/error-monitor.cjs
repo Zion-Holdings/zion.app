@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Configuration
@@ -27,8 +27,7 @@ const CONFIG = {
     memoryUsage: 512 * 1024 * 1024, // 512MB
     errorRate: 0.05, // 5%
   },
-};
-
+}
 class ErrorMonitor {
   constructor() {
     this.errors = [];
@@ -68,8 +67,8 @@ class ErrorMonitor {
       let logFiles = [];
       for (const dir of dirs) {
         try {
-          const files = fs.readdirSync(dir);
-          const found = files
+          const files = fs.readdirSync(dir)
+const found = files
             .filter((f) => f.endsWith('.log'))
             .map((f) => path.join(dir, f));
           logFiles = logFiles.concat(found);
@@ -81,9 +80,9 @@ class ErrorMonitor {
       // console.warn(`📋 Found ${logFiles.length} log files`);
 
       for (const filePath of logFiles) {
-        const file = path.basename(filePath);
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const lines = content.split('\n').filter((line) => line.trim());
+        const file = path.basename(filePath)
+const content = fs.readFileSync(filePath, 'utf-8')
+const lines = content.split('\n').filter((line) => line.trim());
 
         for (const line of lines) {
           try {
@@ -162,9 +161,8 @@ class ErrorMonitor {
    * Process plain text log entries (fallback)
    */
   processPlainTextLog(line, filename) {
-    this.summary.totalEntries++;
-
-    const entry = {
+    this.summary.totalEntries++
+const entry = {
       message: line,
       timestamp: new Date().toISOString(),
       source: filename,
@@ -299,8 +297,8 @@ class ErrorMonitor {
     // Only flag as error if it matches error patterns and doesn't contain success context
     const hasErrorPattern = errorPatterns.some((pattern) =>
       pattern.test(upperText),
-    );
-    const hasSuccessContext =
+    )
+const hasSuccessContext =
       upperText.includes('FIX') ||
       upperText.includes('RESOLV') ||
       upperText.includes('SUCCESS') ||
@@ -670,9 +668,8 @@ class ErrorMonitor {
       performance: this.analyzePerformance(),
       recommendations: this.generateRecommendations(),
       healthScore: this.calculateHealthScore(),
-    };
-
-    const reportPath = path.join(
+    }
+const reportPath = path.join(
       CONFIG.logsDir,
       filename || 'error-report.json',
     );
@@ -683,9 +680,8 @@ class ErrorMonitor {
 
 // Main execution
 async function main() {
-  // console.warn('🚀 Starting Error Monitor...\n');
-
-  const monitor = new ErrorMonitor();
+  // console.warn('🚀 Starting Error Monitor...\n')
+const monitor = new ErrorMonitor();
 
   if (!monitor.init()) {
     process.exit(1);

@@ -1,10 +1,10 @@
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Simple recursive file walker to avoid glob dependency
 function walk(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  const files = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+const files = [];
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {

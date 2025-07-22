@@ -5,12 +5,11 @@
  * Analyzes the Next.js build output and provides performance insights
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 console.warn('📊 Build Performance Report');
-console.warn('==========================\n');
-
+console.warn('==========================\n')
 function analyzeBuildStats() {
   const buildDir = path.join(process.cwd(), '.next');
 
@@ -24,25 +23,25 @@ function analyzeBuildStats() {
   // Check for build manifest
   const manifestPath = path.join(buildDir, 'build-manifest.json');
   if (fs.existsSync(manifestPath)) {
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-    const entryFiles = Object.keys(manifest.pages);
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
+const entryFiles = Object.keys(manifest.pages);
     console.warn(`   📄 Total pages: ${entryFiles.length}`);
   }
 
   // Check server pages
   const serverDir = path.join(buildDir, 'server', 'pages');
   if (fs.existsSync(serverDir)) {
-    const serverPages = fs.readdirSync(serverDir, { recursive: true });
-    const pageCount = serverPages.filter((file) => file.endsWith('.js')).length;
+    const serverPages = fs.readdirSync(serverDir, { recursive: true })
+const pageCount = serverPages.filter((file) => file.endsWith('.js')).length;
     console.warn(`   🖥️  Server pages: ${pageCount}`);
   }
 
   // Check static pages
   const staticDir = path.join(buildDir, 'static');
   if (fs.existsSync(staticDir)) {
-    const staticFiles = fs.readdirSync(staticDir, { recursive: true });
-    const jsFiles = staticFiles.filter((file) => file.endsWith('.js'));
-    const cssFiles = staticFiles.filter((file) => file.endsWith('.css'));
+    const staticFiles = fs.readdirSync(staticDir, { recursive: true })
+const jsFiles = staticFiles.filter((file) => file.endsWith('.js'))
+const cssFiles = staticFiles.filter((file) => file.endsWith('.css'));
     console.warn(`   📦 Static JS files: ${jsFiles.length}`);
     console.warn(`   🎨 CSS files: ${cssFiles.length}`);
   }
@@ -53,9 +52,8 @@ function analyzeBuildStats() {
 }
 
 function getDirSize(dirPath) {
-  let totalSize = 0;
-
-  function calculateSize(currentPath) {
+  let totalSize = 0
+function calculateSize(currentPath) {
     const stats = fs.statSync(currentPath);
     if (stats.isFile()) {
       totalSize += stats.size;
@@ -77,10 +75,10 @@ function getDirSize(dirPath) {
 }
 
 function formatBytes(bytes) {
-  if (bytes === 0) return '0 Bytes';
-  const k = 1024;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  if (bytes === 0) return '0 Bytes'
+const k = 1024
+const sizes = ['Bytes', 'KB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
@@ -102,9 +100,8 @@ function provideOptimizationSuggestions() {
 
 function checkBuildHealth() {
   console.warn('\n🏥 Build Health Check:');
-  console.warn('======================');
-
-  const checks = [
+  console.warn('======================')
+const checks = [
     { name: 'Build directory exists', check: () => fs.existsSync('.next') },
     {
       name: 'Static files generated',

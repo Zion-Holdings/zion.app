@@ -11,10 +11,10 @@
  * - Monitor and report on distributed work
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const os = require('os');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const os = require('os')
 const crypto = require('crypto');
 
 // Configuration
@@ -39,8 +39,7 @@ const CONFIG = {
   // Logging
   LOG_LEVEL: process.env.LOG_LEVEL || 'info',
   LOG_FILE: 'distributed-ai.log',
-};
-
+}
 class DistributedAIController {
   constructor() {
     this.computers = new Map();
@@ -68,8 +67,8 @@ class DistributedAIController {
     this.log = (level, message, data = {}) => {
       const currentLevel = logLevels[CONFIG.LOG_LEVEL] || 2;
       if (logLevels[level] <= currentLevel) {
-        const timestamp = new Date().toISOString();
-        const logEntry = {
+        const timestamp = new Date().toISOString()
+const logEntry = {
           timestamp,
           level,
           message,
@@ -215,8 +214,8 @@ class DistributedAIController {
   }
 
   getNetworkRange() {
-    const interfaces = os.networkInterfaces();
-    const ips = [];
+    const interfaces = os.networkInterfaces()
+const ips = [];
 
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
@@ -262,10 +261,10 @@ class DistributedAIController {
 
   async getComputerInfo(ip) {
     try {
-      const hostname = await this.executeRemoteCommand(ip, 'hostname');
-      const osInfo = await this.executeRemoteCommand(ip, 'uname -a');
-      const cpuInfo = await this.executeRemoteCommand(ip, 'nproc');
-      const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
+      const hostname = await this.executeRemoteCommand(ip, 'hostname')
+const osInfo = await this.executeRemoteCommand(ip, 'uname -a')
+const cpuInfo = await this.executeRemoteCommand(ip, 'nproc')
+const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
 
       return {
         ip,
@@ -452,9 +451,8 @@ class DistributedAIController {
   }
 
   async processTaskQueue() {
-    if (this.taskQueue.length === 0) return;
-
-    const availableComputers = Array.from(this.computers.values()).filter(
+    if (this.taskQueue.length === 0) return
+const availableComputers = Array.from(this.computers.values()).filter(
       (computer) => computer.status === 'online' && computer.currentTasks < 2,
     );
 
@@ -531,8 +529,8 @@ class DistributedAIController {
   }
 
   async executeTaskOnComputer(task, computer) {
-    const taskScript = this.generateTaskScript(task);
-    const remotePath = `/tmp/task_${task.id}.sh`;
+    const taskScript = this.generateTaskScript(task)
+const remotePath = `/tmp/task_${task.id}.sh`;
 
     try {
       // Upload task script
@@ -557,8 +555,8 @@ class DistributedAIController {
   }
 
   generateTaskScript(task) {
-    const commands = task.commands || [];
-    const script = `#!/bin/bash
+    const commands = task.commands || []
+const script = `#!/bin/bash
 set -e
 
 # Task ID: ${task.id}
@@ -626,8 +624,8 @@ echo "Task ${task.id} completed at $(date)"
   }
 
   async rebalanceLoad() {
-    const computers = Array.from(this.computers.values());
-    const avgLoad =
+    const computers = Array.from(this.computers.values())
+const avgLoad =
       computers.reduce((sum, c) => sum + c.currentTasks, 0) / computers.length;
 
     for (const computer of computers) {
@@ -855,9 +853,8 @@ echo "Task ${task.id} completed at $(date)"
       (t) => t.status === 'completed' && t.duration,
     );
 
-    if (completedTasks.length === 0) return 0;
-
-    const totalDuration = completedTasks.reduce(
+    if (completedTasks.length === 0) return 0
+const totalDuration = completedTasks.reduce(
       (sum, t) => sum + t.duration,
       0,
     );
@@ -866,9 +863,8 @@ echo "Task ${task.id} completed at $(date)"
 
   calculateTaskSuccessRate() {
     const totalTasks = this.tasks.size;
-    if (totalTasks === 0) return 1;
-
-    const completedTasks = Array.from(this.tasks.values()).filter(
+    if (totalTasks === 0) return 1
+const completedTasks = Array.from(this.tasks.values()).filter(
       (t) => t.status === 'completed',
     ).length;
 
@@ -877,9 +873,8 @@ echo "Task ${task.id} completed at $(date)"
 
   calculateComputerUtilization() {
     const computers = Array.from(this.computers.values());
-    if (computers.length === 0) return 0;
-
-    const totalUtilization = computers.reduce(
+    if (computers.length === 0) return 0
+const totalUtilization = computers.reduce(
       (sum, c) => sum + c.currentTasks,
       0,
     );
@@ -1204,9 +1199,8 @@ class AIAgent {
   }
 
   async analyzeResults(task) {
-    if (!this.isRunning) return;
-
-    const analysis = {
+    if (!this.isRunning) return
+const analysis = {
       timestamp: Date.now(),
       taskId: task.id,
       taskType: task.type,

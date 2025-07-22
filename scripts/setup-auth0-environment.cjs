@@ -5,10 +5,9 @@
  * Helps configure required environment variables for Auth0 authentication
  */
 
-const fs = require('fs');
-const path = require('path');
-const _crypto = require('crypto');
-
+const fs = require('fs')
+const path = require('path')
+const _crypto = require('crypto')
 const auth0EnvExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
@@ -67,8 +66,7 @@ NEXT_PUBLIC_ENABLE_PAYMENTS=true
 # External APIs
 OPENAI_API_KEY=your_openai_api_key_here
 EXAMPLE_API_URL=https://api.example.com
-`;
-
+`
 const auth0EnvLocal = `# Local Development Environment for Auth0
 # Copy this file to .env.local and update with your actual values
 
@@ -106,15 +104,14 @@ NEXT_PUBLIC_ENABLE_PAYMENTS=false
 
 # Development APIs
 EXAMPLE_API_URL=https://jsonplaceholder.typicode.com
-`;
-
+`
 function generateAuth0Secret() {
   return _crypto.randomBytes(32).toString('hex');
 }
 
 function createEnvFiles() {
-  const envExamplePath = path.join(process.cwd(), '.env.example');
-  const envLocalPath = path.join(process.cwd(), '.env.local');
+  const envExamplePath = path.join(process.cwd(), '.env.example')
+const envLocalPath = path.join(process.cwd(), '.env.local');
 
   console.warn('🔧 Creating Auth0 environment configuration files...\n');
 
@@ -184,14 +181,13 @@ function checkDependencies() {
   const packageJsonPath = path.join(process.cwd(), 'package.json');
 
   if (fs.existsSync(packageJsonPath)) {
-    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
-    const dependencies = {
+    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
+const dependencies = {
       ...packageJson.dependencies,
       ...packageJson.devDependencies,
-    };
-
-    const hasAuth0 = '@auth0/nextjs-auth0' in dependencies;
-    const hasSupabase = '@supabase/supabase-js' in dependencies;
+    }
+const hasAuth0 = '@auth0/nextjs-auth0' in dependencies
+const hasSupabase = '@supabase/supabase-js' in dependencies;
 
     console.warn('\n🔍 Dependency Check:');
 

@@ -17,7 +17,7 @@ try {
     },
   );
 }
-const _fs = require('fs');
+const _fs = require('fs')
 const _path = require('path');
 let _dotenv;
 try {
@@ -41,8 +41,8 @@ if (!_fs.existsSync(envPath)) {
 }
 
 // Check if we're in development mode or Netlify build
-const isDevelopment = process.env.NODE_ENV === 'development';
-const isNetlifyBuild = process.env.NETLIFY === 'true';
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isNetlifyBuild = process.env.NETLIFY === 'true'
 const isLocalDev = !isNetlifyBuild && isDevelopment;
 
 // Define required environment variables and their validation rules
@@ -136,9 +136,8 @@ const RECOMMENDED_VARS = {
  * Check if a value appears to be a placeholder
  */
 function isPlaceholder(value) {
-  if (!value || typeof value !== 'string') return true;
-
-  const placeholderPatterns = [
+  if (!value || typeof value !== 'string') return true
+const placeholderPatterns = [
     /your_.*_here/i,
     /placeholder/i,
     /example/i,
@@ -160,9 +159,9 @@ function isPlaceholder(value) {
 function validateEnvironment() {
   // Remove all console.log/info/debug, keep only warn/error
   // Prefix unused variables with underscore (e.g., _path, _err, _value)
-  const _errors = [];
-  const _warnings = [];
-  const _suggestions = [];
+  const _errors = []
+const _warnings = []
+const _suggestions = [];
 
   // Check required variables
   for (const [varName, config] of Object.entries(REQUIRED_VARS)) {
@@ -319,9 +318,8 @@ Get these from: https://manage.auth0.com/dashboard/
 After setting up, you can verify by visiting:
 - https://your-site.netlify.app/api/health/environment
 - Check the signup functionality at /signup
-`;
-
-  const guidePath = _path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
+`
+const guidePath = _path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
   _fs.writeFileSync(guidePath, guide.trim());
   console.error(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
 }

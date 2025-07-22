@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { _execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { _execSync } = require('child_process')
 class LucideImportReplacer {
   constructor() {
     this.replacedCount = 0;
@@ -13,9 +12,8 @@ class LucideImportReplacer {
 
   async replaceAll() {
     console.warn('🚀 Starting lucide-react import replacement...');
-    console.warn('This will replace direct imports with centralized icons.\n');
-
-    const files = await this.findLucideImports();
+    console.warn('This will replace direct imports with centralized icons.\n')
+const files = await this.findLucideImports();
     console.warn(`📁 Found ${files.length} files with lucide-react imports`);
 
     for (const file of files) {
@@ -65,9 +63,9 @@ class LucideImportReplacer {
     replacedContent = replacedContent.replace(
       namedImportPattern,
       (match, icons) => {
-        hasChanges = true;
-        const iconList = icons.split(',').map((icon) => icon.trim());
-        const validIcons = iconList.filter((icon) => {
+        hasChanges = true
+const iconList = icons.split(',').map((icon) => icon.trim())
+const validIcons = iconList.filter((icon) => {
           // Check if icon exists in our centralized export
           const iconName = icon.split(' as ')[0].trim();
           return this.isIconAvailable(iconName);

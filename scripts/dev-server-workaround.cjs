@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
+const { spawn } = require('child_process')
 const path = require('path');
 
 console.log('🚀 Starting Next.js dev server with workaround...');

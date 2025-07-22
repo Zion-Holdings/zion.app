@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const https = require('https');
-const http = require('http');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
+const http = require('http')
 class NetlifyBuildMonitor {
   constructor() {
     this.config = {
@@ -32,8 +31,8 @@ class NetlifyBuildMonitor {
   }
 
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
@@ -133,8 +132,8 @@ class NetlifyBuildMonitor {
 
   async triggerBuild() {
     try {
-      this.log('Triggering new Netlify build...');
-      const build = await this.makeNetlifyRequest(
+      this.log('Triggering new Netlify build...')
+const build = await this.makeNetlifyRequest(
         `/sites/${this.config.netlifySiteId}/builds`,
         'POST',
         {
@@ -428,9 +427,8 @@ module.exports = {
   }
 
   async checkBuilds() {
-    this.log('Checking Netlify builds...');
-
-    const builds = await this.getSiteBuilds();
+    this.log('Checking Netlify builds...')
+const builds = await this.getSiteBuilds();
     if (!builds || builds.length === 0) {
       this.log('No builds found');
       return;
@@ -465,10 +463,9 @@ module.exports = {
 
     // Check for errors
     if (latestBuild.state === 'error') {
-      this.log('Build failed, analyzing errors...');
-
-      const buildDetails = await this.getBuildDetails(latestBuild.id);
-      const errors = this.analyzeBuildError(buildDetails || latestBuild);
+      this.log('Build failed, analyzing errors...')
+const buildDetails = await this.getBuildDetails(latestBuild.id)
+const errors = this.analyzeBuildError(buildDetails || latestBuild);
 
       this.status.errors.push({
         buildId: latestBuild.id,
@@ -549,9 +546,8 @@ module.exports = {
 
 // CLI interface
 if (require.main === module) {
-  const monitor = new NetlifyBuildMonitor();
-
-  const command = process.argv[2];
+  const monitor = new NetlifyBuildMonitor()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

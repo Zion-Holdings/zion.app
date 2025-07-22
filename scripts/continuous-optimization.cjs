@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-
+const { execSync } = require('child_process')
+const fs = require('fs')
 class ContinuousOptimizer {
   constructor() {
     this.cycles = 0;
@@ -17,8 +16,8 @@ class ContinuousOptimizer {
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
-    };
-    const timestamp = new Date().toISOString();
+    }
+const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
 
@@ -43,8 +42,8 @@ class ContinuousOptimizer {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime;
-    const report = {
+    const runtime = Date.now() - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       runtime,
       cycles: this.cycles,

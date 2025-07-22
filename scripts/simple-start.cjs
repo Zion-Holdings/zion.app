@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { spawn } = require('child_process')
 class SimpleStart {
   constructor() {
     this.projectRoot = process.cwd();
@@ -74,9 +73,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   startServer() {
-    this.log('Starting development server...');
-
-    const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
+    this.log('Starting development server...')
+const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
       cwd: this.projectRoot,
       stdio: 'inherit',
       env: {

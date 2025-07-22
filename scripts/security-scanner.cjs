@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const { execSync } = require('child_process')
 class SecurityScanner {
   constructor() {
     this.vulnerabilities = 0;
@@ -10,8 +9,8 @@ class SecurityScanner {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString();
-    const colors = {
+    const timestamp = new Date().toISOString()
+const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
@@ -31,8 +30,8 @@ class SecurityScanner {
   }
 
   async scanDependencies() {
-    this.log('🔒 Scanning dependencies for vulnerabilities...', 'info');
-    const auditResult = await this.runCommand('npm audit --json');
+    this.log('🔒 Scanning dependencies for vulnerabilities...', 'info')
+const auditResult = await this.runCommand('npm audit --json');
     if (auditResult.success) {
       const audit = JSON.parse(auditResult.output);
       if (audit.metadata && audit.metadata.vulnerabilities) {
@@ -50,8 +49,8 @@ class SecurityScanner {
   }
 
   async scanSecrets() {
-    this.log('🔑 Scanning for secrets in code...', 'info');
-    const secretsResult = await this.runCommand(
+    this.log('🔑 Scanning for secrets in code...', 'info')
+const secretsResult = await this.runCommand(
       'grep -r "password\|secret\|key" --include="*.js" --include="*.ts" --include="*.tsx" src/ 2>/dev/null | grep -v "//" | head -5 || true',
     );
     if (secretsResult.success && secretsResult.output.trim()) {
@@ -73,8 +72,8 @@ class SecurityScanner {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime;
-    const report = {
+    const runtime = Date.now() - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       runtime: runtime,
       vulnerabilities: this.vulnerabilities,

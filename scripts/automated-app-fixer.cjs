@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const chokidar = require('chokidar');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const chokidar = require('chokidar')
 class AutomatedAppFixer {
   constructor() {
     this.issues = [];
@@ -30,8 +29,8 @@ class AutomatedAppFixer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
 
     // Write to log file
@@ -129,8 +128,7 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-};
-
+}
 module.exports = nextConfig;`;
 
         fs.writeFileSync(nextConfigPath, nextConfig);
@@ -145,9 +143,8 @@ module.exports = nextConfig;`;
   }
 
   async fixSyntaxErrors() {
-    this.log('🔧 Fixing syntax errors...');
-
-    const patterns = [
+    this.log('🔧 Fixing syntax errors...')
+const patterns = [
       'pages/**/*.{ts,tsx,js,jsx}',
       'src/**/*.{ts,tsx,js,jsx}',
       'components/**/*.{ts,tsx,js,jsx}',
@@ -283,12 +280,10 @@ export {};`;
   fixAnalyzeBundle(content) {
     return `#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
-const _currentFilename = path.basename(__filename);
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const _currentFilename = path.basename(__filename)
 class BundleAnalyzer {
   constructor() {
     this.analysis = {};
@@ -449,9 +444,8 @@ export default function Signup() {
     await this.fixWatchpackIssue();
     await this.fixSyntaxErrors();
     await this.fixTestIssues();
-    await this.fixScriptIssues();
-
-    const devProcess = await this.startDevServer();
+    await this.fixScriptIssues()
+const devProcess = await this.startDevServer();
 
     this.log('📊 Automation Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);

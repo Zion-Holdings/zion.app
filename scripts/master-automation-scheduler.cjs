@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 class MasterAutomationScheduler {
   constructor() {
     this.automations = [];
@@ -115,9 +114,8 @@ class MasterAutomationScheduler {
   async runAllAutomations() {
     this.log('🔄 Starting automation cycle...');
     this.lastRun = new Date();
-    this.runCount++;
-
-    const results = {
+    this.runCount++
+const results = {
       timestamp: this.lastRun.toISOString(),
       cycle: this.runCount,
       automations: [],
@@ -127,9 +125,8 @@ class MasterAutomationScheduler {
         failed: 0,
         duration: 0,
       },
-    };
-
-    const startTime = Date.now();
+    }
+const startTime = Date.now();
 
     for (const automation of this.automations) {
       try {
@@ -147,8 +144,8 @@ class MasterAutomationScheduler {
         }
       } catch (error) {
         this.errorCount++;
-        results.summary.failed++;
-        const result = {
+        results.summary.failed++
+const result = {
           name: automation.name,
           success: false,
           error: error.message,
@@ -178,10 +175,9 @@ class MasterAutomationScheduler {
     const startTime = Date.now();
 
     try {
-      this.log(`🔧 Running: ${automation.name}`);
-
-      const { stdout, stderr } = await this.execCommand(automation.command);
-      const duration = Date.now() - startTime;
+      this.log(`🔧 Running: ${automation.name}`)
+const { stdout, stderr } = await this.execCommand(automation.command)
+const duration = Date.now() - startTime;
 
       // Consider it successful if no error was thrown, even if there are warnings
       const success = !stderr || !stderr.includes('error');
@@ -253,8 +249,8 @@ class MasterAutomationScheduler {
     this.log('🏥 Starting health monitoring...');
 
     setInterval(() => {
-      const now = new Date();
-      const status = {
+      const now = new Date()
+const status = {
         timestamp: now.toISOString(),
         isRunning: this.isRunning,
         lastRun: this.lastRun?.toISOString(),

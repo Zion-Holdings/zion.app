@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const _path = require('path');
 
 // Files to fix
@@ -10,8 +10,7 @@ const filesToFix = [
   'src/components/enterprise/billing/BillingHeader.tsx',
   'src/components/interviews/UpcomingInterviewsCard.tsx',
   'src/components/jobs/JobsList.tsx'
-];
-
+]
 function fixReactRouterImports() {
   filesToFix.forEach(filePath => {
     try {

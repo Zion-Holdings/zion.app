@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-const express = require('express');
-const { createServer } = require('http');
-const { Server } = require('socket.io');
+const express = require('express')
+const { createServer } = require('http')
+const { Server } = require('socket.io')
 const cors = require('cors');
 
-console.log('🚀 Starting Test Socket Server...');
-
-const app = express();
-const server = createServer(app);
+console.log('🚀 Starting Test Socket Server...')
+const app = express()
+const server = createServer(app)
 const io = new Server(server, {
   cors: {
     origin: [
@@ -45,9 +44,8 @@ io.on('connection', (socket) => {
   // Handle room joining
   socket.on('join-room', (roomId, callback) => {
     try {
-      socket.join(roomId);
-
-      const connection = activeConnections.get(socket.id);
+      socket.join(roomId)
+const connection = activeConnections.get(socket.id);
       if (connection) {
         connection.rooms.add(roomId);
         connection.lastActivity = Date.now();
@@ -70,9 +68,8 @@ io.on('connection', (socket) => {
   // Handle room leaving
   socket.on('leave-room', (roomId, callback) => {
     try {
-      socket.leave(roomId);
-
-      const connection = activeConnections.get(socket.id);
+      socket.leave(roomId)
+const connection = activeConnections.get(socket.id);
       if (connection) {
         connection.rooms.delete(roomId);
         connection.lastActivity = Date.now();
@@ -95,9 +92,8 @@ io.on('connection', (socket) => {
   // Handle chat messages
   socket.on('send-message', (data, callback) => {
     try {
-      const { roomId, message, sender, type = 'text', metadata } = data;
-
-      const messageData = {
+      const { roomId, message, sender, type = 'text', metadata } = data
+const messageData = {
         id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         roomId,
         message,
@@ -170,9 +166,8 @@ io.on('connection', (socket) => {
   socket.on('reconnect', (attemptNumber) => {
     console.log(
       `🔄 Client reconnected: ${socket.id}, attempt: ${attemptNumber}`,
-    );
-
-    const connection = activeConnections.get(socket.id);
+    )
+const connection = activeConnections.get(socket.id);
     if (connection) {
       connection.reconnectAttempts = attemptNumber;
       connection.lastActivity = Date.now();
@@ -183,9 +178,8 @@ io.on('connection', (socket) => {
   socket.on('reconnect_attempt', (attemptNumber) => {
     console.log(
       `🔄 Reconnection attempt ${attemptNumber} for client: ${socket.id}`,
-    );
-
-    const connection = activeConnections.get(socket.id);
+    )
+const connection = activeConnections.get(socket.id);
     if (connection) {
       connection.reconnectAttempts = attemptNumber;
     }
@@ -193,9 +187,8 @@ io.on('connection', (socket) => {
 
   // Handle disconnection
   socket.on('disconnect', (reason) => {
-    console.log(`🔌 Client disconnected: ${socket.id}, reason: ${reason}`);
-
-    const connection = activeConnections.get(socket.id);
+    console.log(`🔌 Client disconnected: ${socket.id}, reason: ${reason}`)
+const connection = activeConnections.get(socket.id);
     if (connection) {
       // Notify all rooms that user is offline
       connection.rooms.forEach((roomId) => {
@@ -228,8 +221,7 @@ app.get('/api/socket', (req, res) => {
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString(),
   });
-});
-
+})
 const PORT = process.env.PORT || 3001;
 
 server.listen(PORT, () => {

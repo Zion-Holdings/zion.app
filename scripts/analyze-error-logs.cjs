@@ -4,18 +4,16 @@
  * Use --dedupe to remove duplicate lines and --summary to
  * write a summary file to logs/summary/.
  */
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 const args = process.argv.slice(2);
 // Allow passing one or more files or directories. Default to "logs" directory
-const inputPaths = args.filter((a) => !a.startsWith('--'));
-const DEFAULT_DIR = 'logs';
+const inputPaths = args.filter((a) => !a.startsWith('--'))
+const DEFAULT_DIR = 'logs'
 const TARGET_PATHS = inputPaths.length ? inputPaths : [DEFAULT_DIR];
 // Load translation keys to filter false positives for "missingKey" log entries
 const localesDir = path.join(__dirname, '..', 'src', 'i18n', 'locales');
-let allLocaleKeys = null;
-
+let allLocaleKeys = null
 function loadLocaleKeys() {
   if (allLocaleKeys) return allLocaleKeys;
   allLocaleKeys = new Set();
@@ -85,11 +83,10 @@ const PATTERNS = [
 // actionable for developers and simply add noise to the log output.
 const SKIP_PATTERNS = [
   /CreatePlatformSocket\(\).*Address family not supported by protocol/i,
-];
-const LEVELS = ['debug', 'info', 'warn', 'error'];
-const DEDUPE = args.includes('--dedupe');
-const SUMMARY = args.includes('--summary');
-
+]
+const LEVELS = ['debug', 'info', 'warn', 'error']
+const DEDUPE = args.includes('--dedupe')
+const SUMMARY = args.includes('--summary')
 function parseLine(line) {
   line = line.trim();
   if (!line) return null;
@@ -120,11 +117,11 @@ function parseLine(line) {
 
 function checkFile(filePath) {
   if (!fs.existsSync(filePath))
-    return { issues: [], counts: {}, missingKeys: [] };
-  const lines = fs.readFileSync(filePath, 'utf8').split('\n');
-  const issues = [];
-  const missingKeys = [];
-  const counts = Object.fromEntries(LEVELS.map((l) => [l, 0]));
+    return { issues: [], counts: {}, missingKeys: [] }
+const lines = fs.readFileSync(filePath, 'utf8').split('\n')
+const issues = []
+const missingKeys = []
+const counts = Object.fromEntries(LEVELS.map((l) => [l, 0]));
 
   for (const line of lines) {
     const parsed = parseLine(line);
@@ -157,12 +154,12 @@ function checkFile(filePath) {
 }
 
 function main() {
-  const files = [];
-  const LOG_EXT_REGEX = /\.(log|txt)$/i;
+  const files = []
+const LOG_EXT_REGEX = /\.(log|txt)$/i;
 
   TARGET_PATHS.forEach((p) => {
-    if (!fs.existsSync(p)) return;
-    const stat = fs.statSync(p);
+    if (!fs.existsSync(p)) return
+const stat = fs.statSync(p);
     if (stat.isDirectory()) {
       const dirFiles = fs
         .readdirSync(p)
@@ -179,22 +176,22 @@ function main() {
     return;
   }
 
-  const summaryLines = [];
-  const allMissingKeys = new Set();
+  const summaryLines = []
+const allMissingKeys = new Set();
   let overallIssues = false;
   for (const file of files) {
-    const { issues, counts, missingKeys } = checkFile(file);
-    const displayName = path.relative(process.cwd(), file);
-    const issueLines = issues;
-    const countsLine = `Levels: ${LEVELS.map((l) => `${l}:${counts[l] || 0}`).join(', ')}`;
+    const { issues, counts, missingKeys } = checkFile(file)
+const displayName = path.relative(process.cwd(), file)
+const issueLines = issues
+const countsLine = `Levels: ${LEVELS.map((l) => `${l}:${counts[l] || 0}`).join(', ')}`;
 
     summaryLines.push(`\n--- ${displayName} ---`, countsLine);
     console.warn(`\n--- ${displayName} ---`);
     console.warn(countsLine);
 
     if (issueLines.length) {
-      overallIssues = true;
-      const header = `=== Issues found in ${displayName} ===`;
+      overallIssues = true
+const header = `=== Issues found in ${displayName} ===`;
       summaryLines.push(header, ...issueLines);
       console.warn(header);
       issueLines.forEach((line) => console.warn(line));
@@ -212,8 +209,8 @@ function main() {
   }
 
   // Provide helpful suggestions based on detected issues
-  const allText = summaryLines.join('\n');
-  const hints = [];
+  const allText = summaryLines.join('\n')
+const hints = [];
   if (/Module not found|Can't resolve|Cannot find module/i.test(allText)) {
     hints.push(
       'Missing dependencies detected. Run "./setup.sh npm" to reinstall packages.',
@@ -284,8 +281,8 @@ function main() {
 
   if (SUMMARY) {
     const summaryDir = path.join(DEFAULT_DIR, 'summary');
-    fs.mkdirSync(summaryDir, { recursive: true });
-    const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
+    fs.mkdirSync(summaryDir, { recursive: true })
+const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
     fs.writeFileSync(summaryFile, summaryLines.join('\n') + '\n');
     if (allMissingKeys.size) {
       const keysFile = path.join(summaryDir, `missing-keys-${Date.now()}.log`);

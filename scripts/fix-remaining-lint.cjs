@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Function to fix specific remaining lint errors
@@ -92,9 +92,9 @@ function processSpecificFiles() {
   for (const file of filesToFix) {
     if (fs.existsSync(file)) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const originalContent = content;
-        const fixed = fixRemainingErrors(content, file);
+        const content = fs.readFileSync(file, 'utf8')
+const originalContent = content
+const fixed = fixRemainingErrors(content, file);
 
         if (fixed !== originalContent) {
           fs.writeFileSync(file, fixed, 'utf8');
@@ -111,6 +111,6 @@ function processSpecificFiles() {
 }
 
 // Main execution
-console.log('Fixing remaining lint errors...');
+console.log('Fixing remaining lint errors...')
 const fixedCount = processSpecificFiles();
 console.log(`\nCompleted! Fixed ${fixedCount} files.`);

@@ -6,7 +6,7 @@
  * Tracks bundle size improvements and validates optimization targets
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Comment out all console.log statements (lines 11, 12, 29, 107, 108, 116, 117, 118, 119, 120, 123, 127, 129, 134, 135, 136, 137, 138, 139, 143, 144, 150, 152, 154, 155, 159, 160, 165, 166, 167, 170, 171, 174, 175, 176, 177, 178, 182, 183, 184, 185, 186, 189, 190, 191, 192, 193, 201, 202, 204, 205, 231)
@@ -18,8 +18,7 @@ const TARGETS = {
   mainBundle: 1000000, // 1MB target (down from 4.97MB)
   maxChunkSize: 244000, // 244KB max chunk size
   totalBundleReduction: 0.5, // 50% total reduction target
-};
-
+}
 const BASELINE = {
   mainBundle: 4978000, // 4.97MB baseline
   totalBundleSize: 8000000, // ~8MB estimated total
@@ -34,17 +33,17 @@ if (!fs.existsSync(buildStatsPath)) {
 
 // Calculate improvements
 function calculateImprovement(baseline, current) {
-  const reduction = baseline - current;
-  const percentage = (reduction / baseline) * 100;
+  const reduction = baseline - current
+const percentage = (reduction / baseline) * 100;
   return { reduction, percentage };
 }
 
 // Format bytes to human readable
 function _formatBytes(bytes) {
-  if (bytes === 0) return '0 Bytes';
-  const k = 1024;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  if (bytes === 0) return '0 Bytes'
+const k = 1024
+const sizes = ['Bytes', 'KB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
@@ -63,9 +62,9 @@ function analyzeBundles() {
     const chunks = fs.readdirSync(staticPath);
 
     chunks.forEach((chunk) => {
-      const chunkPath = path.join(staticPath, chunk);
-      const stats = fs.statSync(chunkPath);
-      const size = stats.size;
+      const chunkPath = path.join(staticPath, chunk)
+const stats = fs.statSync(chunkPath)
+const size = stats.size;
 
       results.totalSize += size;
       results.chunkCount++;
@@ -82,9 +81,9 @@ function analyzeBundles() {
     const pages = fs.readdirSync(pagesPath);
 
     pages.forEach((page) => {
-      const pagePath = path.join(pagesPath, page);
-      const stats = fs.statSync(pagePath);
-      const size = stats.size;
+      const pagePath = path.join(pagesPath, page)
+const stats = fs.statSync(pagePath)
+const size = stats.size;
 
       results.totalSize += size;
       results.chunkCount++;
@@ -111,9 +110,9 @@ function generateReport() {
 
   // Main bundle analysis
   if (analysis.mainBundle) {
-    const current = analysis.mainBundle.size;
-    const target = TARGETS.mainBundle;
-    const _improvement = calculateImprovement(BASELINE.mainBundle, current);
+    const current = analysis.mainBundle.size
+const target = TARGETS.mainBundle
+const _improvement = calculateImprovement(BASELINE.mainBundle, current);
 
     // console.warn(`📦 Main Bundle (_app):`);
     // console.warn(`   Current: ${formatBytes(current)}`);
@@ -124,8 +123,8 @@ function generateReport() {
     if (current <= target) {
       // console.warn(`   ✅ TARGET ACHIEVED!`);
     } else {
-      const remaining = current - target;
-      const _remainingPercent = ((remaining / current) * 100).toFixed(1);
+      const remaining = current - target
+const _remainingPercent = ((remaining / current) * 100).toFixed(1);
       // console.warn(`   ⚠️  Still ${formatBytes(remaining)} (${remainingPercent}%) over target`);
     }
     // console.warn();
@@ -162,9 +161,8 @@ function generateReport() {
 
   // Optimization suggestions
   // console.warn('🎯 OPTIMIZATION PROGRESS:');
-  // console.warn('=========================');
-
-  const _mainBundleProgress = analysis.mainBundle
+  // console.warn('=========================')
+const _mainBundleProgress = analysis.mainBundle
     ? ((BASELINE.mainBundle - analysis.mainBundle.size) /
         (BASELINE.mainBundle - TARGETS.mainBundle)) *
       100
@@ -202,10 +200,10 @@ function generateReport() {
 
   // Success criteria
   const isMainBundleOptimized =
-    analysis.mainBundle && analysis.mainBundle.size <= TARGETS.mainBundle;
-  const isTotalSizeGood =
-    totalImprovement.percentage >= TARGETS.totalBundleReduction * 100;
-  const areChunksOptimized = analysis.largeChunks.length <= 2;
+    analysis.mainBundle && analysis.mainBundle.size <= TARGETS.mainBundle
+const isTotalSizeGood =
+    totalImprovement.percentage >= TARGETS.totalBundleReduction * 100
+const areChunksOptimized = analysis.largeChunks.length <= 2;
 
   if (isMainBundleOptimized && isTotalSizeGood && areChunksOptimized) {
     // console.warn('🎉 PHASE 2 OPTIMIZATION COMPLETE!');
@@ -229,10 +227,9 @@ function saveResults(results) {
   const reportPath = path.join(
     process.cwd(),
     'bundle-optimization-results.json',
-  );
-  const timestamp = new Date().toISOString();
-
-  const report = {
+  )
+const timestamp = new Date().toISOString()
+const report = {
     timestamp,
     phase: 'Phase 2',
     results,

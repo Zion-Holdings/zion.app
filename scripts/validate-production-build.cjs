@@ -5,9 +5,8 @@
  * Validates production build integrity and readiness
  */
 
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 class BuildValidator {
   constructor() {
     this.buildPath = '.next';
@@ -26,8 +25,8 @@ class BuildValidator {
   }
 
   validateStaticFiles() {
-    const staticPath = path.join(this.buildPath, 'static');
-    const exists = fs.existsSync(staticPath);
+    const staticPath = path.join(this.buildPath, 'static')
+const exists = fs.existsSync(staticPath);
     this.checks.push({
       name: 'Static Assets',
       status: exists ? 'pass' : 'fail',
@@ -36,8 +35,8 @@ class BuildValidator {
   }
 
   validateServerFiles() {
-    const serverPath = path.join(this.buildPath, 'server');
-    const exists = fs.existsSync(serverPath);
+    const serverPath = path.join(this.buildPath, 'server')
+const exists = fs.existsSync(serverPath);
     this.checks.push({
       name: 'Server Build',
       status: exists ? 'pass' : 'fail',
@@ -46,8 +45,8 @@ class BuildValidator {
   }
 
   validateManifest() {
-    const manifestPath = path.join(this.buildPath, 'build-manifest.json');
-    const exists = fs.existsSync(manifestPath);
+    const manifestPath = path.join(this.buildPath, 'build-manifest.json')
+const exists = fs.existsSync(manifestPath);
     this.checks.push({
       name: 'Build Manifest',
       status: exists ? 'pass' : 'fail',
@@ -59,16 +58,15 @@ class BuildValidator {
     this.validateBuildExists();
     this.validateStaticFiles();
     this.validateServerFiles();
-    this.validateManifest();
-
-    const allPassed = this.checks.every((check) => check.status === 'pass');
+    this.validateManifest()
+const allPassed = this.checks.every((check) => check.status === 'pass');
     return allPassed;
   }
 }
 
 if (require.main === module) {
-  const validator = new BuildValidator();
-  const isValid = validator.run();
+  const validator = new BuildValidator()
+const isValid = validator.run();
   process.exit(isValid ? 0 : 1);
 }
 

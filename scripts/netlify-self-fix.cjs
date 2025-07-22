@@ -3,7 +3,7 @@
 // Netlify Self Fix - Patches vendors.js to fix "self is not defined" in serverless environment
 // This script runs after Next.js build to patch the generated vendor bundle
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // Fallback glob implementation if glob package not available
@@ -13,12 +13,11 @@ function globSync(pattern) {
     return glob.sync(pattern);
   } catch {
     // Simple fallback implementation
-    const dir = path.dirname(pattern);
-    const filename = path.basename(pattern);
+    const dir = path.dirname(pattern)
+const filename = path.basename(pattern);
 
-    if (!fs.existsSync(dir)) return [];
-
-    const files = fs.readdirSync(dir);
+    if (!fs.existsSync(dir)) return []
+const files = fs.readdirSync(dir);
     return files
       .filter((file) =>
         filename.includes('*')
@@ -29,15 +28,13 @@ function globSync(pattern) {
   }
 }
 
-// console.warn('🔧 Fixing Netlify "self is not defined" issue...');
-
+// console.warn('🔧 Fixing Netlify "self is not defined" issue...')
 function patchVendorsFile() {
   try {
     // Find all vendors files in .next/server directory
-    const serverDir = path.join(process.cwd(), '.next', 'server');
-    const vendorsPattern = path.join(serverDir, 'vendors*.js');
-
-    const vendorFiles = globSync(vendorsPattern);
+    const serverDir = path.join(process.cwd(), '.next', 'server')
+const vendorsPattern = path.join(serverDir, 'vendors*.js')
+const vendorFiles = globSync(vendorsPattern);
 
     if (vendorFiles.length === 0) {
       // console.warn('📁 No vendors.js file found to patch');
@@ -145,9 +142,8 @@ function createGlobalPolyfill() {
       '.next',
       'server',
       'self-polyfill.js',
-    );
-
-    const polyfillContent = `// Global self polyfill for Netlify serverless
+    )
+const polyfillContent = `// Global self polyfill for Netlify serverless
 if (typeof global !== 'undefined' && typeof global.self === 'undefined') {
   global.self = global;
 }

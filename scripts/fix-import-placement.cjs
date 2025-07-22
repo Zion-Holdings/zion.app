@@ -5,12 +5,10 @@
  * The console replacement script sometimes places imports in wrong locations
  */
 
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-
-const PROJECT_ROOT = process.cwd();
-
+const fs = require('fs')
+const path = require('path')
+const glob = require('glob')
+const PROJECT_ROOT = process.cwd()
 class ImportFixer {
   constructor() {
     this.fixedFiles = 0;
@@ -40,13 +38,13 @@ class ImportFixer {
    */
   fixFile(filePath) {
     try {
-      const fullPath = path.join(PROJECT_ROOT, filePath);
-      const content = fs.readFileSync(fullPath, 'utf8');
+      const fullPath = path.join(PROJECT_ROOT, filePath)
+const content = fs.readFileSync(fullPath, 'utf8');
 
       // Look for misplaced imports (imports after export statements)
-      const lines = content.split('\n');
-      const importLines = [];
-      const otherLines = [];
+      const lines = content.split('\n')
+const importLines = []
+const otherLines = [];
       let inExportFunction = false;
       let _hasExportFunction = false;
 
@@ -150,12 +148,10 @@ class ImportFixer {
    * Process all files
    */
   async processAllFiles() {
-    // console.warn('🔧 Fixing misplaced import statements...');
-
-    const files = this.getFilesToProcess();
-    // console.warn(`📋 Found ${files.length} files to check`);
-
-    const results = [];
+    // console.warn('🔧 Fixing misplaced import statements...')
+const files = this.getFilesToProcess();
+    // console.warn(`📋 Found ${files.length} files to check`)
+const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);

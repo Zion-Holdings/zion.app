@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class AutomationStatusChecker {
   constructor() {
     this.processes = [
@@ -51,9 +50,9 @@ class AutomationStatusChecker {
     let totalProcesses = this.processes.length;
 
     for (const process of this.processes) {
-      const count = this.checkProcessStatus(process);
-      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
-      const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcessStatus(process)
+const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
+const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -86,9 +85,8 @@ class AutomationStatusChecker {
 
   checkAutomationReports() {
     console.log('\n📈 AUTOMATION REPORTS');
-    console.log('====================');
-
-    const reportFiles = [
+    console.log('====================')
+const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -98,8 +96,8 @@ class AutomationStatusChecker {
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-          const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');

@@ -5,11 +5,10 @@
  * Monitors build processes and triggers self-healing when needed
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const NetlifySelfHealing = require('./netlify-self-healing.cjs');
-
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
+const NetlifySelfHealing = require('./netlify-self-healing.cjs')
 class NetlifyBuildMonitor {
   constructor() {
     this.healing = new NetlifySelfHealing();
@@ -24,8 +23,8 @@ class NetlifyBuildMonitor {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
@@ -198,8 +197,8 @@ class NetlifyBuildMonitor {
 
     for (const dir of buildDirs) {
       if (fs.existsSync(dir)) {
-        const stats = fs.statSync(dir);
-        const lastModified = stats.mtime.getTime();
+        const stats = fs.statSync(dir)
+const lastModified = stats.mtime.getTime();
 
         // If no changes in last 5 minutes, might be stuck
         if (Date.now() - lastModified > 5 * 60 * 1000) {
@@ -352,12 +351,12 @@ class NetlifyBuildMonitor {
 
   checkDiskSpace() {
     try {
-      const df = execSync('df .', { encoding: 'utf8' });
-      const lines = df.split('\n');
+      const df = execSync('df .', { encoding: 'utf8' })
+const lines = df.split('\n');
 
       if (lines.length > 1) {
-        const parts = lines[1].split(/\s+/);
-        const usedPercent = parseInt(parts[4].replace('%', ''));
+        const parts = lines[1].split(/\s+/)
+const usedPercent = parseInt(parts[4].replace('%', ''));
 
         if (usedPercent > 90) {
           this.log('Disk space critical, triggering cleanup...');
@@ -375,8 +374,8 @@ class NetlifyBuildMonitor {
 
     for (const dir of buildDirs) {
       if (fs.existsSync(dir)) {
-        const stats = fs.statSync(dir);
-        const lastModified = stats.mtime.getTime();
+        const stats = fs.statSync(dir)
+const lastModified = stats.mtime.getTime();
 
         // If build directory hasn't been updated in 10 minutes
         if (Date.now() - lastModified > 10 * 60 * 1000) {
@@ -408,9 +407,8 @@ class NetlifyBuildMonitor {
 
 // CLI interface
 if (require.main === module) {
-  const monitor = new NetlifyBuildMonitor();
-
-  const command = process.argv[2];
+  const monitor = new NetlifyBuildMonitor()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

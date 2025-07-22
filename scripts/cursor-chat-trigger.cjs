@@ -5,9 +5,9 @@
  * Triggers new Cursor chats with detailed information for continuous app improvement
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 const https = require('https');
 
 // Configuration
@@ -78,8 +78,7 @@ const CONFIG = {
     'hooks/',
     'context/',
   ],
-};
-
+}
 class CursorChatTrigger {
   constructor() {
     this.logFile = 'logs/cursor-chat-triggers.log';
@@ -87,8 +86,8 @@ class CursorChatTrigger {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
@@ -106,11 +105,11 @@ class CursorChatTrigger {
 
     try {
       // Gather comprehensive information
-      const projectInfo = await this.gatherProjectInformation();
-      const currentIssues = await this.gatherCurrentIssues();
-      const performanceData = await this.gatherPerformanceData();
-      const securityData = await this.gatherSecurityData();
-      const accessibilityData = await this.gatherAccessibilityData();
+      const projectInfo = await this.gatherProjectInformation()
+const currentIssues = await this.gatherCurrentIssues()
+const performanceData = await this.gatherPerformanceData()
+const securityData = await this.gatherSecurityData()
+const accessibilityData = await this.gatherAccessibilityData();
 
       // Generate detailed prompt
       const prompt = this.generateComprehensivePrompt({
@@ -334,8 +333,8 @@ class CursorChatTrigger {
       const vulnerableDeps = ['lodash', 'moment', 'jquery', 'express'];
 
       if (fs.existsSync('package.json')) {
-        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-        const allDeps = {
+        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const allDeps = {
           ...packageJson.dependencies,
           ...packageJson.devDependencies,
         };
@@ -419,17 +418,16 @@ class CursorChatTrigger {
   }
 
   getDirectoryStructure(dir, maxDepth, currentDepth = 0) {
-    if (currentDepth >= maxDepth) return '...';
-
-    const structure = {};
+    if (currentDepth >= maxDepth) return '...'
+const structure = {};
 
     try {
       const items = fs.readdirSync(dir);
 
       for (const item of items.slice(0, 10)) {
         // Limit to 10 items
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           structure[item] = this.getDirectoryStructure(
@@ -486,9 +484,8 @@ class CursorChatTrigger {
       performanceData,
       securityData,
       accessibilityData,
-    } = data;
-
-    const categoryInfo =
+    } = data
+const categoryInfo =
       CONFIG.chatCategories[category] || CONFIG.chatCategories.build;
 
     return `# ${categoryInfo.title} - Comprehensive Analysis and Improvement
@@ -560,9 +557,8 @@ Please provide specific, actionable recommendations with code examples where app
           system: 'cursor-chat-trigger',
           category: 'comprehensive-improvement',
         },
-      });
-
-      const options = {
+      })
+const options = {
         hostname: new URL(CONFIG.cursorApiUrl).hostname,
         port: 443,
         path: '/api/chat',
@@ -572,9 +568,8 @@ Please provide specific, actionable recommendations with code examples where app
           'Content-Length': Buffer.byteLength(postData),
           Authorization: `Bearer ${CONFIG.cursorApiKey}`,
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let data = '';
 
         res.on('data', (chunk) => {
@@ -600,9 +595,8 @@ Please provide specific, actionable recommendations with code examples where app
   }
 
   async triggerSpecificChat(issue) {
-    this.log(`Triggering specific Cursor chat for issue: ${issue.type}`);
-
-    const prompt = `# Specific Issue Resolution
+    this.log(`Triggering specific Cursor chat for issue: ${issue.type}`)
+const prompt = `# Specific Issue Resolution
 
 ## Issue Details
 - **Type**: ${issue.type}
@@ -633,11 +627,10 @@ Please provide specific code examples and step-by-step instructions.`;
 
 // CLI interface
 if (require.main === module) {
-  const trigger = new CursorChatTrigger();
-
-  const command = process.argv[2];
-  const category = process.argv[3] || 'general';
-  const specificIssue = process.argv[4];
+  const trigger = new CursorChatTrigger()
+const command = process.argv[2]
+const category = process.argv[3] || 'general'
+const specificIssue = process.argv[4];
 
   switch (command) {
     case 'comprehensive':

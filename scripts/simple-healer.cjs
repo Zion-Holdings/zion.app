@@ -5,10 +5,9 @@
  * Focuses on the most common build and code issues
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class SimpleHealer {
   constructor() {
     this.logFile = 'logs/simple-healer.log';
@@ -24,8 +23,8 @@ class SimpleHealer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -64,9 +63,8 @@ class SimpleHealer {
   }
 
   async applyCommonFixes() {
-    this.log('Applying common fixes...');
-
-    const fixes = [
+    this.log('Applying common fixes...')
+const fixes = [
       this.fixUnusedVariables(),
       this.fixConsoleLogs(),
       this.fixMissingImports(),
@@ -88,14 +86,14 @@ class SimpleHealer {
   }
 
   async fixUnusedVariables() {
-    this.log('Fixing unused variables...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing unused variables...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -121,14 +119,14 @@ class SimpleHealer {
   }
 
   async fixConsoleLogs() {
-    this.log('Fixing console.log statements...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing console.log statements...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -177,8 +175,8 @@ class SimpleHealer {
   }
 
   async fixSyntaxIssues() {
-    this.log('Fixing syntax issues...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing syntax issues...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -190,8 +188,8 @@ class SimpleHealer {
         newContent = newContent.replace(/([^;])\n/g, '$1;\n');
 
         // Fix missing brackets
-        const openBraces = (newContent.match(/\{/g) || []).length;
-        const closeBraces = (newContent.match(/\}/g) || []).length;
+        const openBraces = (newContent.match(/\{/g) || []).length
+const closeBraces = (newContent.match(/\}/g) || []).length;
         if (openBraces > closeBraces) {
           newContent += '\n}'.repeat(openBraces - closeBraces);
         }
@@ -210,8 +208,8 @@ class SimpleHealer {
   }
 
   async fixTypeIssues() {
-    this.log('Fixing type issues...');
-    const tsFiles = this.findTsFiles();
+    this.log('Fixing type issues...')
+const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -240,9 +238,8 @@ class SimpleHealer {
   }
 
   async applyAdvancedFixes() {
-    this.log('Applying advanced fixes...');
-
-    const fixes = [
+    this.log('Applying advanced fixes...')
+const fixes = [
       this.fixBuildConfig(),
       this.fixPackageJson(),
       this.fixTsConfig(),
@@ -353,9 +350,9 @@ class SimpleHealer {
   }
 
   findTsFiles() {
-    const files = [];
-    const srcDir = 'src';
-    const pagesDir = 'pages';
+    const files = []
+const srcDir = 'src'
+const pagesDir = 'pages';
 
     if (fs.existsSync(srcDir)) {
       this.findFilesRecursive(srcDir, '.ts', files);
@@ -374,8 +371,8 @@ class SimpleHealer {
     const items = fs.readdirSync(dir);
 
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
       if (stat.isDirectory()) {
         this.findFilesRecursive(fullPath, ext, files);

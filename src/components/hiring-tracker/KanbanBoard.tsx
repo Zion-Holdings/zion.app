@@ -6,4 +6,4 @@ export default function KanbanBoard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

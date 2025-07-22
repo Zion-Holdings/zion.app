@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { execSync } = require('child_process');
 
 // Find all JavaScript and TypeScript files
@@ -73,9 +73,8 @@ const fixUnusedError = (filePath) => {
 
 // Main execution
 const main = () => {
-  console.log('🔧 Fixing unused _error variables...');
-
-  const files = findFiles();
+  console.log('🔧 Fixing unused _error variables...')
+const files = findFiles();
   let fixedCount = 0;
 
   files.forEach((file) => {

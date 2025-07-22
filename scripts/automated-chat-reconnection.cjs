@@ -13,14 +13,14 @@
  * - Automatic startup and service management
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn, exec } = require('child_process');
-const os = require('os');
-const crypto = require('crypto');
-const http = require('http');
-const https = require('https');
-const WebSocket = require('ws');
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn, exec } = require('child_process')
+const os = require('os')
+const crypto = require('crypto')
+const http = require('http')
+const https = require('https')
+const WebSocket = require('ws')
 const dgram = require('dgram');
 
 // Configuration
@@ -74,8 +74,7 @@ const CONFIG = {
     'feature',
     'refactor',
   ],
-};
-
+}
 class AutomatedChatReconnection {
   constructor() {
     this.computerId = this.generateComputerId();
@@ -105,9 +104,9 @@ class AutomatedChatReconnection {
   }
 
   generateComputerId() {
-    const hostname = os.hostname();
-    const timestamp = Date.now();
-    const random = Math.random().toString(36).substr(2, 9);
+    const hostname = os.hostname()
+const timestamp = Date.now()
+const random = Math.random().toString(36).substr(2, 9);
     return `${hostname}_${timestamp}_${random}`;
   }
 
@@ -126,8 +125,8 @@ class AutomatedChatReconnection {
   }
 
   log(level, message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [${this.computerId}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] [${this.computerId}] ${message}`;
 
     console.log(logEntry);
 
@@ -157,8 +156,8 @@ class AutomatedChatReconnection {
         const category =
           CONFIG.CHAT_CATEGORIES[
             Math.floor(Math.random() * CONFIG.CHAT_CATEGORIES.length)
-          ];
-        const message = `Continuous improvement: Please analyze and improve the app for ${category}`;
+          ]
+const message = `Continuous improvement: Please analyze and improve the app for ${category}`;
         await this.triggerChat({
           category,
           message,
@@ -196,10 +195,9 @@ class AutomatedChatReconnection {
   }
 
   async detectCursorInstallation() {
-    this.logger.info('🔍 Detecting Cursor installation...');
-
-    const platform = os.platform();
-    const paths = CONFIG.CURSOR_PATHS[platform] || [];
+    this.logger.info('🔍 Detecting Cursor installation...')
+const platform = os.platform()
+const paths = CONFIG.CURSOR_PATHS[platform] || [];
 
     for (const cursorPath of paths) {
       const expandedPath = cursorPath.replace(
@@ -719,8 +717,8 @@ class AutomatedChatReconnection {
     const category =
       CONFIG.CHAT_CATEGORIES[
         Math.floor(Math.random() * CONFIG.CHAT_CATEGORIES.length)
-      ];
-    const message = `System health check: Please analyze the current state and suggest improvements for ${category}`;
+      ]
+const message = `System health check: Please analyze the current state and suggest improvements for ${category}`;
 
     await this.triggerChat({
       category,
@@ -910,9 +908,8 @@ node scripts/automated-chat-reconnection.cjs
     <key>StandardErrorPath</key>
     <string>${path.resolve('logs/chat-reconnection.err')}</string>
 </dict>
-</plist>`;
-
-    const plistPath = path.join(
+</plist>`
+const plistPath = path.join(
       os.homedir(),
       'Library/LaunchAgents/com.cursor.chat-reconnection.plist',
     );

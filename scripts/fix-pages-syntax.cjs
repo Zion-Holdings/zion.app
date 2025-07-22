@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-
+const fs = require('fs')
+const path = require('path')
 class PagesSyntaxFixer {
   constructor() {
     this.fixedFiles = [];
@@ -13,8 +12,8 @@ class PagesSyntaxFixer {
     console.log('🔧 Fixing pages directory syntax errors...');
 
     try {
-      const pagesDir = 'pages';
-      const files = this.getAllFiles(pagesDir);
+      const pagesDir = 'pages'
+const files = this.getAllFiles(pagesDir);
 
       console.log(`📁 Found ${files.length} files in pages directory`);
 
@@ -33,10 +32,9 @@ class PagesSyntaxFixer {
   }
 
   getAllFiles(dir) {
-    const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-
-    function walkDir(currentDir) {
+    const files = []
+const extensions = ['.ts', '.tsx', '.js', '.jsx']
+function walkDir(currentDir) {
       try {
         const items = fs.readdirSync(currentDir);
 
@@ -73,8 +71,8 @@ class PagesSyntaxFixer {
 
   async fixPageFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
-      const originalContent = content;
+      const content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
       // Fix common page syntax errors
       let fixedContent = this.fixPageErrors(content, filePath);
@@ -91,8 +89,8 @@ class PagesSyntaxFixer {
   }
 
   fixPageErrors(content, filePath) {
-    let fixed = content;
-    const fileName = path.basename(filePath, path.extname(filePath));
+    let fixed = content
+const fileName = path.basename(filePath, path.extname(filePath));
 
     // Fix unterminated string constants
     fixed = fixed.replace(/';$/gm, ';');
@@ -139,8 +137,7 @@ class PagesSyntaxFixer {
   createErrorPage(errorCode) {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const Error${errorCode}: NextPage = () => {
   return (
     <>
@@ -207,8 +204,7 @@ export default function Document() {
   createProductsListPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const ProductsList: NextPage = () => {
   return (
     <>
@@ -232,8 +228,7 @@ export default ProductsList;
   createAboutPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const About: NextPage = () => {
   return (
     <>
@@ -257,8 +252,7 @@ export default About;
   createAccountPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const Account: NextPage = () => {
   return (
     <>
@@ -282,8 +276,7 @@ export default Account;
   createActivityLogPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const ActivityLog: NextPage = () => {
   return (
     <>
@@ -307,8 +300,7 @@ export default ActivityLog;
   createAdminPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const Admin: NextPage = () => {
   return (
     <>
@@ -332,8 +324,7 @@ export default Admin;
   createLogsPage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const Logs: NextPage = () => {
   return (
     <>
@@ -357,8 +348,7 @@ export default Logs;
   createPerformancePage() {
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const Performance: NextPage = () => {
   return (
     <>
@@ -387,8 +377,7 @@ export default Performance;
 
     return `import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-
+import Head from 'next/head'
 const ${componentName}: NextPage = () => {
   return (
     <>

@@ -28,8 +28,7 @@ const CHAT_SESSIONS = [
     color: '🟢',
     socketUrl: 'http://localhost:3006',
   },
-];
-
+]
 class RealisticReconnectionDemo {
   constructor() {
     this.sessions = new Map();
@@ -55,9 +54,8 @@ class RealisticReconnectionDemo {
   }
 
   async establishConnections() {
-    console.log('📡 Establishing connections to all chat sessions...\n');
-
-    const connectionPromises = CHAT_SESSIONS.map((session) =>
+    console.log('📡 Establishing connections to all chat sessions...\n')
+const connectionPromises = CHAT_SESSIONS.map((session) =>
       this.createSession(session),
     );
     await Promise.all(connectionPromises);
@@ -94,10 +92,10 @@ class RealisticReconnectionDemo {
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
         ? '✅ Connected'
-        : '❌ Disconnected';
-      const attempts = session.reconnectionAttempts || 0;
-      const quality = session.connectionQuality || 'unknown';
-      const latency = session.lastLatency || 'N/A';
+        : '❌ Disconnected'
+const attempts = session.reconnectionAttempts || 0
+const quality = session.connectionQuality || 'unknown'
+const latency = session.lastLatency || 'N/A';
 
       console.log(`${session.color} ${sessionName}:`);
       console.log(`   Status: ${status}`);
@@ -157,10 +155,10 @@ class RealisticReconnectionDemo {
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
         ? '✅ Connected'
-        : '❌ Disconnected';
-      const attempts = session.reconnectionAttempts || 0;
-      const messages = session.messageCount || 0;
-      const quality = session.connectionQuality || 'unknown';
+        : '❌ Disconnected'
+const attempts = session.reconnectionAttempts || 0
+const messages = session.messageCount || 0
+const quality = session.connectionQuality || 'unknown';
 
       console.log(`${session.color} ${sessionName}:`);
       console.log(`   Final status: ${status}`);
@@ -206,9 +204,8 @@ class RealisticReconnectionDemo {
         reconnectionAttempts: 10,
         reconnectionDelay: 1000,
         reconnectionDelayMax: 5000,
-      });
-
-      const session = {
+      })
+const session = {
         name: sessionConfig.name,
         roomId: sessionConfig.roomId,
         color: sessionConfig.color,
@@ -291,11 +288,11 @@ class RealisticReconnectionDemo {
   }
 
   getUptime() {
-    const now = Date.now();
-    const startTime = Math.min(
+    const now = Date.now()
+const startTime = Math.min(
       ...Array.from(this.sessions.values()).map((s) => s.connectedAt),
-    );
-    const uptime = Math.floor((now - startTime) / 1000);
+    )
+const uptime = Math.floor((now - startTime) / 1000);
     return `${uptime}s`;
   }
 

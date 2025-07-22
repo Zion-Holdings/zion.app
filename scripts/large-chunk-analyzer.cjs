@@ -6,21 +6,20 @@
  * Analyzes specific large chunks and provides targeted optimization strategies
  */
 
-const fs = require('fs');
+const fs = require('fs')
 const path = require('path');
 
 // console.warn('🔍 LARGE CHUNK ANALYZER');
-// console.warn('=======================\n');
-
+// console.warn('=======================\n')
 const TARGET_SIZE = 244000; // 244KB target
 const buildStatsPath = path.join(process.cwd(), '.next');
 
 // Format bytes
 function formatBytes(bytes) {
-  if (bytes === 0) return '0 Bytes';
-  const k = 1024;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  if (bytes === 0) return '0 Bytes'
+const k = 1024
+const sizes = ['Bytes', 'KB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
@@ -150,18 +149,17 @@ function analyzeLargeChunks() {
     const chunks = fs.readdirSync(staticPath);
 
     chunks.forEach((chunk) => {
-      if (!chunk.endsWith('.js')) return;
-
-      const chunkPath = path.join(staticPath, chunk);
-      const stats = fs.statSync(chunkPath);
-      const _size = stats.size;
+      if (!chunk.endsWith('.js')) return
+const chunkPath = path.join(staticPath, chunk)
+const stats = fs.statSync(chunkPath)
+const _size = stats.size;
 
       results.totalAnalyzed++;
       results.totalSize += _size;
 
       if (_size > TARGET_SIZE) {
-        const category = analyzeChunkContent(chunk);
-        const strategy = getOptimizationStrategy(category, _size);
+        const category = analyzeChunkContent(chunk)
+const strategy = getOptimizationStrategy(category, _size);
 
         results.largeChunks.push({
           name: chunk,
@@ -244,9 +242,8 @@ function generateDetailedReport() {
     .sort(([, a], [, b]) => b.totalSize - a.totalSize)
     .forEach(([category, stats]) => {
       // console.warn(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
-      // console.warn(`   Chunks: ${stats.chunks.join(', ')}`);
-
-      const _strategy = getOptimizationStrategy(category, stats.totalSize);
+      // console.warn(`   Chunks: ${stats.chunks.join(', ')}`)
+const _strategy = getOptimizationStrategy(category, stats.totalSize);
       // console.warn(`   Priority: ${_strategy.priority}`);
       // console.warn(`   Actions:`);
       // _strategy.actions.forEach(action => {
@@ -257,12 +254,11 @@ function generateDetailedReport() {
 
   // Implementation guidance
   // console.warn(`🚀 IMPLEMENTATION GUIDANCE:`);
-  // console.warn(`==========================`);
-
-  const criticalChunks = analysis.largeChunks.filter(
+  // console.warn(`==========================`)
+const criticalChunks = analysis.largeChunks.filter(
     (c) => c.strategy.priority === 'critical',
-  );
-  const highPriorityChunks = analysis.largeChunks.filter(
+  )
+const highPriorityChunks = analysis.largeChunks.filter(
     (c) => c.strategy.priority === 'high',
   );
 
@@ -295,10 +291,9 @@ function generateDetailedReport() {
 
 // Save detailed analysis
 function saveAnalysis(analysis) {
-  const reportPath = path.join(process.cwd(), 'large-chunk-analysis.json');
-  const timestamp = new Date().toISOString();
-
-  const report = {
+  const reportPath = path.join(process.cwd(), 'large-chunk-analysis.json')
+const timestamp = new Date().toISOString()
+const report = {
     timestamp,
     targetSize: TARGET_SIZE,
     targetSizeFormatted: formatBytes(TARGET_SIZE),

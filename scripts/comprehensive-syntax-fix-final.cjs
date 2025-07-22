@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class ComprehensiveSyntaxFixer {
   constructor() {
     this.fixedFiles = [];
@@ -41,10 +40,9 @@ class ComprehensiveSyntaxFixer {
   }
 
   getAllFiles() {
-    const files = [];
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-
-    function walkDir(dir) {
+    const files = []
+const extensions = ['.ts', '.tsx', '.js', '.jsx']
+function walkDir(dir) {
       try {
         const items = fs.readdirSync(dir);
 
@@ -82,8 +80,8 @@ class ComprehensiveSyntaxFixer {
 
   async fixFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
-      const originalContent = content;
+      const content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
 
       // Fix common syntax errors
       let fixedContent = this.fixCommonErrors(content);
@@ -178,8 +176,8 @@ class ComprehensiveSyntaxFixer {
   }
 
   async createMinimalWorkingVersion(filePath, content) {
-    const ext = path.extname(filePath);
-    const fileName = path.basename(filePath, ext);
+    const ext = path.extname(filePath)
+const fileName = path.basename(filePath, ext);
 
     // Create minimal working versions based on file type
     if (ext === '.tsx' || ext === '.jsx') {

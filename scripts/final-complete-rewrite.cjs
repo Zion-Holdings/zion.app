@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const glob = require('glob');
 
 console.log('🔧 Final complete rewrite of all corrupted files...');
@@ -49,8 +49,8 @@ export default function ${componentName}() {
   );
 }`;
       } else if (file.endsWith('.ts') || file.endsWith('.js')) {
-        const moduleName = path.basename(file, path.extname(file));
-        const dir = path.dirname(file);
+        const moduleName = path.basename(file, path.extname(file))
+const dir = path.dirname(file);
 
         // Handle different types of files based on directory
         if (dir.includes('types')) {

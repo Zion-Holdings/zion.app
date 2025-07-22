@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-
+const { execSync } = require('child_process')
+const fs = require('fs')
 class AIErrorFixer {
   constructor() {
     this.fixes = 0;
@@ -16,8 +15,8 @@ class AIErrorFixer {
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
-    };
-    const timestamp = new Date().toISOString();
+    }
+const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
 
@@ -31,8 +30,8 @@ class AIErrorFixer {
   }
 
   async detectAndFix() {
-    this.log('🔍 Detecting errors...', 'info');
-    const lint = await this.runCommand(
+    this.log('🔍 Detecting errors...', 'info')
+const lint = await this.runCommand(
       'npx eslint src/ --ext .js,.jsx,.ts,.tsx',
     );
     if (lint.output && lint.output.includes('error')) {
@@ -46,8 +45,8 @@ class AIErrorFixer {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime;
-    const report = {
+    const runtime = Date.now() - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       runtime,
       fixes: this.fixes,

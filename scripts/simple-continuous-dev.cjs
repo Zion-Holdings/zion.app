@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 class SimpleContinuousDev {
   constructor() {
     this.fixes = [];
@@ -216,8 +215,8 @@ class SimpleContinuousDev {
         await this.execCommand('git add .');
 
         // Create commit with timestamp
-        const timestamp = new Date().toISOString();
-        const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
+        const timestamp = new Date().toISOString()
+const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
 
         await this.execCommand(`git commit -m "${commitMessage}"`);
 

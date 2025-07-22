@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class FinalAppFix {
   constructor() {
     this.fixes = [];
@@ -53,8 +52,7 @@ const nextConfig = {
   staticPageGenerationTimeout: 0,
   // Minimal environment
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', minimalConfig);
@@ -180,9 +178,8 @@ module.exports = nextConfig;`;
   }
 
   async run() {
-    this.log('🚀 Starting Final App Fix...');
-
-    const fixed = await this.fixWatchpackIssue();
+    this.log('🚀 Starting Final App Fix...')
+const fixed = await this.fixWatchpackIssue();
     if (fixed) {
       const devProcess = await this.startDevServer();
 

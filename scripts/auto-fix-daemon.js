@@ -1,8 +1,7 @@
-const { execSync, spawn } = require('child_process');
-const chokidar = require('chokidar');
-const path = require('path');
-const fs = require('fs');
-
+const { execSync, spawn } = require('child_process')
+const chokidar = require('chokidar')
+const path = require('path')
+const fs = require('fs')
 const FIXER_COMMANDS = [
   'node scripts/mass-parsing-fixer.cjs',
   'node scripts/fix-specific-syntax-errors.cjs',
@@ -14,16 +13,13 @@ const FIXER_COMMANDS = [
   'node scripts/automated-app-improver.cjs',
   'node scripts/automated-app-fixer.cjs',
   './scripts/auto-fix-accessibility.sh',
-];
-
+]
 const WATCH_PATHS = [
   'src',
   'pages',
-];
-
+]
 const INTERVAL_MINUTES = 5;
-let running = false;
-
+let running = false
 function runFixers() {
   if (running) return;
   running = true;

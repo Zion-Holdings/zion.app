@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { _execSync } = require('child_process');
 
 // Comment out all console.log statements, only allow warn and error
@@ -45,8 +45,8 @@ class BundleOptimizer {
 
         files.forEach((file) => {
           if (file.endsWith('.js')) {
-            const filePath = path.join(chunksDir, file);
-            const stats = fs.statSync(filePath);
+            const filePath = path.join(chunksDir, file)
+const stats = fs.statSync(filePath);
 
             this.chunks.push({
               name: file,
@@ -64,8 +64,8 @@ class BundleOptimizer {
         const cssFiles = fs.readdirSync(cssDir);
         cssFiles.forEach((file) => {
           if (file.endsWith('.css')) {
-            const filePath = path.join(cssDir, file);
-            const stats = fs.statSync(filePath);
+            const filePath = path.join(cssDir, file)
+const stats = fs.statSync(filePath);
 
             this.chunks.push({
               name: file,
@@ -141,8 +141,8 @@ class BundleOptimizer {
     });
 
     // Vendor chunk analysis
-    const vendorChunks = this.chunks.filter((chunk) => chunk.type === 'vendor');
-    const vendorSize = vendorChunks.reduce((sum, chunk) => sum + chunk.size, 0);
+    const vendorChunks = this.chunks.filter((chunk) => chunk.type === 'vendor')
+const vendorSize = vendorChunks.reduce((sum, chunk) => sum + chunk.size, 0);
 
     if (vendorSize > 2 * 1024 * 1024) {
       // 2MB
@@ -160,8 +160,8 @@ class BundleOptimizer {
     }
 
     // CSS optimization
-    const cssChunks = this.chunks.filter((chunk) => chunk.type === 'css');
-    const cssSize = cssChunks.reduce((sum, chunk) => sum + chunk.size, 0);
+    const cssChunks = this.chunks.filter((chunk) => chunk.type === 'css')
+const cssSize = cssChunks.reduce((sum, chunk) => sum + chunk.size, 0);
 
     if (cssSize > 100 * 1024) {
       // 100KB
@@ -245,10 +245,10 @@ class BundleOptimizer {
   }
 
   formatSize(bytes) {
-    if (bytes === 0) return '0 B';
-    const k = 1024;
-    const sizes = ['B', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    if (bytes === 0) return '0 B'
+const k = 1024
+const sizes = ['B', 'KB', 'MB', 'GB']
+const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
 }

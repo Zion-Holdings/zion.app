@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class AppImprovementOrchestrator {
   constructor() {
     this.isRunning = false;
@@ -171,8 +170,8 @@ class AppImprovementOrchestrator {
 
     for (const system of this.automationSystems) {
       try {
-        const response = await fetch(`http://localhost:${system.port}/health`);
-        const health = await response.json();
+        const response = await fetch(`http://localhost:${system.port}/health`)
+const health = await response.json();
 
         if (health.status === 'healthy') {
           console.log(`✅ ${system.name} is healthy`);
@@ -359,9 +358,8 @@ class AppImprovementOrchestrator {
 
 // CLI interface
 if (require.main === module) {
-  const orchestrator = new AppImprovementOrchestrator();
-
-  const command = process.argv[2];
+  const orchestrator = new AppImprovementOrchestrator()
+const command = process.argv[2];
 
   switch (command) {
     case 'start':

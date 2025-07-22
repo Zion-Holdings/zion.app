@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-
-const PORT = 3007;
-
+const http = require('http')
+const fs = require('fs')
+const path = require('path')
+const PORT = 3007
 const server = http.createServer((req, res) => {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');

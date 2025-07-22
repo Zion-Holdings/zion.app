@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const chalk = require('chalk')
 class AICodeReviewAutomation {
   constructor() {
     this.config = {
@@ -61,10 +60,9 @@ class AICodeReviewAutomation {
 
   async performCodeReview() {
     try {
-      console.log(chalk.cyan('🔍 Performing AI Code Review...'));
-      
-      const files = this.getModifiedFiles();
-      const reviewResults = [];
+      console.log(chalk.cyan('🔍 Performing AI Code Review...'))
+const files = this.getModifiedFiles()
+const reviewResults = [];
       
       for (const file of files) {
         if (this.shouldReviewFile(file)) {
@@ -104,8 +102,8 @@ class AICodeReviewAutomation {
   }
 
   getAllSourceFiles() {
-    const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'hooks'];
-    const files = [];
+    const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils', 'hooks']
+const files = [];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
@@ -120,8 +118,8 @@ class AICodeReviewAutomation {
     const items = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.walkDirectory(fullPath, files);
@@ -132,8 +130,8 @@ class AICodeReviewAutomation {
   }
 
   isSourceFile(filePath) {
-    const sourceExtensions = ['.js', '.jsx', '.ts', '.tsx', '.cjs', '.mjs'];
-    const ext = path.extname(filePath);
+    const sourceExtensions = ['.js', '.jsx', '.ts', '.tsx', '.cjs', '.mjs']
+const ext = path.extname(filePath);
     return sourceExtensions.includes(ext);
   }
 
@@ -156,8 +154,8 @@ class AICodeReviewAutomation {
 
   async reviewFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
-      const analysis = await this.analyzeCode(content, filePath);
+      const content = fs.readFileSync(filePath, 'utf8')
+const analysis = await this.analyzeCode(content, filePath);
       
       return {
         file: filePath,
@@ -211,9 +209,9 @@ class AICodeReviewAutomation {
 
   calculateMaintainability(content) {
     // Simple maintainability index calculation
-    const lines = content.split('\n').length;
-    const functions = (content.match(/function\s+\w+|const\s+\w+\s*=\s*\(|=>\s*{/g) || []).length;
-    const comments = (content.match(/\/\/.*|\/\*[\s\S]*?\*\//g) || []).length;
+    const lines = content.split('\n').length
+const functions = (content.match(/function\s+\w+|const\s+\w+\s*=\s*\(|=>\s*{/g) || []).length
+const comments = (content.match(/\/\/.*|\/\*[\s\S]*?\*\//g) || []).length;
     
     // Higher score = more maintainable
     let maintainability = 100;
@@ -231,9 +229,8 @@ class AICodeReviewAutomation {
       { pattern: /localStorage\.setItem/, severity: 'low', description: 'Sensitive data in localStorage' },
       { pattern: /password.*=.*['"`]/, severity: 'high', description: 'Hardcoded password detected' },
       { pattern: /api_key.*=.*['"`]/, severity: 'high', description: 'Hardcoded API key detected' }
-    ];
-    
-    const issues = [];
+    ]
+const issues = [];
     for (const { pattern, severity, description } of securityPatterns) {
       const matches = content.match(pattern);
       if (matches) {
@@ -254,9 +251,8 @@ class AICodeReviewAutomation {
       { pattern: /for\s*\(.*in\s*/, description: 'Consider using for...of instead of for...in' },
       { pattern: /setTimeout\(.*0\)/, description: 'Consider using requestAnimationFrame' },
       { pattern: /\.innerHTML\s*=/, description: 'Consider using textContent for better performance' }
-    ];
-    
-    const issues = [];
+    ]
+const issues = [];
     for (const { pattern, description } of performancePatterns) {
       const matches = content.match(pattern);
       if (matches) {
@@ -276,9 +272,8 @@ class AICodeReviewAutomation {
       { pattern: /if\s*\([^)]{100,}\)/, description: 'Complex conditional expression' },
       { pattern: /console\.log/, description: 'Console.log statements in production code' },
       { pattern: /TODO|FIXME|HACK/, description: 'TODO/FIXME/HACK comments found' }
-    ];
-    
-    const smells = [];
+    ]
+const smells = [];
     for (const { pattern, description } of codeSmells) {
       const matches = content.match(pattern);
       if (matches) {
@@ -293,8 +288,8 @@ class AICodeReviewAutomation {
   }
 
   estimateTestCoverage(filePath) {
-    const testFile = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
-    const testFileExists = fs.existsSync(testFile);
+    const testFile = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1')
+const testFileExists = fs.existsSync(testFile);
     
     if (testFileExists) {
       return 85; // Assume good coverage if test file exists
@@ -376,9 +371,8 @@ class AICodeReviewAutomation {
         )
       },
       details: reviewResults
-    };
-    
-    const reportPath = path.join(__dirname, '..', 'logs', 'ai-code-review-report.json');
+    }
+const reportPath = path.join(__dirname, '..', 'logs', 'ai-code-review-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
@@ -415,8 +409,8 @@ class AICodeReviewAutomation {
 
 // CLI Interface
 if (require.main === module) {
-  const automation = new AICodeReviewAutomation();
-  const command = process.argv[2];
+  const automation = new AICodeReviewAutomation()
+const command = process.argv[2];
   
   switch (command) {
     case 'start':

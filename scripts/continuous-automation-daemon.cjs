@@ -7,9 +7,9 @@
  * with automatic restart capabilities and 24/7 operation
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
 const os = require('os');
 
 // Configuration
@@ -54,8 +54,7 @@ const CONFIG = {
     ALERT_EMAIL: process.env.ALERT_EMAIL,
     SLACK_WEBHOOK: process.env.SLACK_WEBHOOK,
   },
-};
-
+}
 class ContinuousAutomationDaemon {
   constructor() {
     this.isRunning = false;
@@ -224,9 +223,8 @@ class ContinuousAutomationDaemon {
     this.log(
       'SERVICE_EXIT',
       `Service ${serviceName} exited with code ${code} and signal ${signal}`,
-    );
-
-    const service = this.services.get(serviceName);
+    )
+const service = this.services.get(serviceName);
     if (service) {
       service.status = 'exited';
       service.exitCode = code;
@@ -266,9 +264,9 @@ class ContinuousAutomationDaemon {
     if (!serviceConfig) return;
 
     // Check restart limits
-    const restartCount = this.restartCounts.get(serviceName) || 0;
-    const lastRestarts = this.lastRestarts.get(serviceName) || [];
-    const now = Date.now();
+    const restartCount = this.restartCounts.get(serviceName) || 0
+const lastRestarts = this.lastRestarts.get(serviceName) || []
+const now = Date.now();
 
     // Remove old restarts outside the window
     const recentRestarts = lastRestarts.filter(
@@ -365,9 +363,8 @@ class ContinuousAutomationDaemon {
       this.log(
         'SERVICE_UNHEALTHY',
         `Service ${serviceConfig.name} health check failed`,
-      );
-
-      const service = this.services.get(serviceConfig.name);
+      )
+const service = this.services.get(serviceConfig.name);
       if (service) {
         service.process.kill('SIGTERM');
       }
@@ -494,8 +491,8 @@ class ContinuousAutomationDaemon {
    * Log message
    */
   log(level, message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}\n`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}\n`;
 
     try {
       fs.appendFileSync(CONFIG.DAEMON.LOG_FILE, logEntry);
@@ -508,8 +505,8 @@ class ContinuousAutomationDaemon {
    * Log service message
    */
   logService(serviceName, level, message) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
 
     // Write to service-specific log
     const serviceLogFile = `logs/${serviceName}.log`;

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class ProductionBuildFix {
   constructor() {
     this.fixes = [];
@@ -59,8 +58,7 @@ const nextConfig = {
   trailingSlash: true,
   // Minimal environment
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', nextConfig);
@@ -100,10 +98,9 @@ module.exports = nextConfig;`;
 
     try {
       // Start a simple HTTP server to serve the static files
-      const serverContent = `const express = require('express');
-const path = require('path');
-
-const app = express();
+      const serverContent = `const express = require('express')
+const path = require('path')
+const app = express()
 const PORT = 3001;
 
 // Serve static files from out directory

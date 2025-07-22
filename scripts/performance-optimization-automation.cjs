@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-const chalk = require('chalk');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const chalk = require('chalk')
 class PerformanceOptimizationAutomation {
   constructor() {
     this.config = {
@@ -59,10 +58,9 @@ class PerformanceOptimizationAutomation {
 
   async analyzePerformance() {
     try {
-      console.log(chalk.cyan('📊 Analyzing application performance...'));
-      
-      const metrics = await this.gatherPerformanceMetrics();
-      const analysis = this.analyzeMetrics(metrics);
+      console.log(chalk.cyan('📊 Analyzing application performance...'))
+const metrics = await this.gatherPerformanceMetrics()
+const analysis = this.analyzeMetrics(metrics);
       
       if (analysis.needsOptimization) {
         console.log(chalk.yellow('⚠️  Performance issues detected. Starting optimization...'));
@@ -102,9 +100,8 @@ class PerformanceOptimizationAutomation {
   async measureBundleSize() {
     try {
       // Build the application to measure bundle size
-      execSync('npm run build', { stdio: 'pipe' });
-      
-      const buildDir = path.join(process.cwd(), '.next');
+      execSync('npm run build', { stdio: 'pipe' })
+const buildDir = path.join(process.cwd(), '.next');
       if (!fs.existsSync(buildDir)) {
         return 0;
       }
@@ -124,8 +121,8 @@ class PerformanceOptimizationAutomation {
       const items = fs.readdirSync(dirPath);
       
       for (const item of items) {
-        const fullPath = path.join(dirPath, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
           totalSize += this.calculateDirectorySize(fullPath);
@@ -151,8 +148,8 @@ class PerformanceOptimizationAutomation {
       
       // Measure load time using curl
       const startTime = Date.now();
-      execSync('curl -s http://localhost:3002 > /dev/null', { stdio: 'pipe' });
-      const loadTime = Date.now() - startTime;
+      execSync('curl -s http://localhost:3002 > /dev/null', { stdio: 'pipe' })
+const loadTime = Date.now() - startTime;
       
       // Kill the server
       server.kill();
@@ -177,10 +174,9 @@ class PerformanceOptimizationAutomation {
   async measureCpuUsage() {
     try {
       const startUsage = process.cpuUsage();
-      await new Promise(resolve => setTimeout(resolve, 100));
-      const endUsage = process.cpuUsage(startUsage);
-      
-      const cpuPercent = (endUsage.user + endUsage.system) / 1000000; // Convert to percentage
+      await new Promise(resolve => setTimeout(resolve, 100))
+const endUsage = process.cpuUsage(startUsage)
+const cpuPercent = (endUsage.user + endUsage.system) / 1000000; // Convert to percentage
       return Math.min(100, cpuPercent);
     } catch (error) {
       console.warn(chalk.yellow('⚠️  Could not measure CPU usage:'), error.message);
@@ -189,10 +185,9 @@ class PerformanceOptimizationAutomation {
   }
 
   async analyzeImageSizes() {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
-    const largeImages = [];
-    
-    const publicDir = path.join(process.cwd(), 'public');
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']
+const largeImages = []
+const publicDir = path.join(process.cwd(), 'public');
     if (fs.existsSync(publicDir)) {
       this.findLargeImages(publicDir, largeImages, imageExtensions);
     }
@@ -201,13 +196,12 @@ class PerformanceOptimizationAutomation {
   }
 
   findLargeImages(dirPath, largeImages, extensions, maxSize = 500 * 1024) {
-    if (!fs.existsSync(dirPath)) return;
-    
-    const items = fs.readdirSync(dirPath);
+    if (!fs.existsSync(dirPath)) return
+const items = fs.readdirSync(dirPath);
     
     for (const item of items) {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.findLargeImages(fullPath, largeImages, extensions, maxSize);
@@ -225,9 +219,9 @@ class PerformanceOptimizationAutomation {
 
   async findUnusedDependencies() {
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-      const dependencies = Object.keys(packageJson.dependencies || {});
-      const unused = [];
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const dependencies = Object.keys(packageJson.dependencies || {})
+const unused = [];
       
       for (const dep of dependencies) {
         if (!this.isDependencyUsed(dep)) {
@@ -255,13 +249,12 @@ class PerformanceOptimizationAutomation {
   }
 
   searchForImport(dirPath, dependency) {
-    if (!fs.existsSync(dirPath)) return false;
-    
-    const items = fs.readdirSync(dirPath);
+    if (!fs.existsSync(dirPath)) return false
+const items = fs.readdirSync(dirPath);
     
     for (const item of items) {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         if (this.searchForImport(fullPath, dependency)) {
@@ -284,14 +277,14 @@ class PerformanceOptimizationAutomation {
   }
 
   async findDuplicateCode() {
-    const duplicates = [];
-    const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils'];
+    const duplicates = []
+const sourceDirs = ['src', 'pages', 'components', 'lib', 'utils'];
     
     for (const dir of sourceDirs) {
       if (fs.existsSync(dir)) {
-        const files = this.getAllSourceFiles(dir);
-        const codeBlocks = this.extractCodeBlocks(files);
-        const duplicateBlocks = this.findDuplicateBlocks(codeBlocks);
+        const files = this.getAllSourceFiles(dir)
+const codeBlocks = this.extractCodeBlocks(files)
+const duplicateBlocks = this.findDuplicateBlocks(codeBlocks);
         duplicates.push(...duplicateBlocks);
       }
     }
@@ -306,13 +299,12 @@ class PerformanceOptimizationAutomation {
   }
 
   walkDirectory(dirPath, files) {
-    if (!fs.existsSync(dirPath)) return;
-    
-    const items = fs.readdirSync(dirPath);
+    if (!fs.existsSync(dirPath)) return
+const items = fs.readdirSync(dirPath);
     
     for (const item of items) {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         this.walkDirectory(fullPath, files);
@@ -326,8 +318,8 @@ class PerformanceOptimizationAutomation {
     const blocks = [];
     
     for (const file of files) {
-      const content = fs.readFileSync(file, 'utf8');
-      const lines = content.split('\n');
+      const content = fs.readFileSync(file, 'utf8')
+const lines = content.split('\n');
       
       for (let i = 0; i < lines.length - 2; i++) {
         const block = lines.slice(i, i + 3).join('\n').trim();
@@ -345,8 +337,8 @@ class PerformanceOptimizationAutomation {
   }
 
   findDuplicateBlocks(blocks) {
-    const duplicates = [];
-    const seen = new Map();
+    const duplicates = []
+const seen = new Map();
     
     for (const block of blocks) {
       const hash = this.hashCode(block.content);
@@ -590,9 +582,8 @@ class PerformanceOptimizationAutomation {
         performanceTrend: this.calculatePerformanceTrend()
       },
       history: this.performanceHistory.slice(-10) // Last 10 entries
-    };
-    
-    const reportPath = path.join(__dirname, '..', 'logs', 'performance-optimization-report.json');
+    }
+const reportPath = path.join(__dirname, '..', 'logs', 'performance-optimization-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
@@ -604,8 +595,8 @@ class PerformanceOptimizationAutomation {
       return 'insufficient-data';
     }
     
-    const recent = this.performanceHistory.slice(-3);
-    const improvements = recent.filter(entry => entry.optimizationsApplied > 0).length;
+    const recent = this.performanceHistory.slice(-3)
+const improvements = recent.filter(entry => entry.optimizationsApplied > 0).length;
     
     if (improvements > recent.length / 2) {
       return 'improving';
@@ -628,8 +619,8 @@ class PerformanceOptimizationAutomation {
 
 // CLI Interface
 if (require.main === module) {
-  const automation = new PerformanceOptimizationAutomation();
-  const command = process.argv[2];
+  const automation = new PerformanceOptimizationAutomation()
+const command = process.argv[2];
   
   switch (command) {
     case 'start':

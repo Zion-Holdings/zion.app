@@ -33,8 +33,8 @@ function checkDependencies() {
     'react-router-dom',
     'lucide-react',
     '@tanstack/react-query',
-  ];
-  const missing = required.filter((dep) => {
+  ]
+const missing = required.filter((dep) => {
     try {
       require.resolve(dep);
       return false;

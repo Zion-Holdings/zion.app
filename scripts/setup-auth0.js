@@ -15,8 +15,8 @@ NODE_ENV=development
 async function promptForAuth0Config() {
   logSection('AUTH0 CONFIGURATION SETUP');'  
   logInfo('You need to set up an Auth0 account and application first.');'  logInfo('Visit: https://manage.auth0.com/');'  logInfo('Create a "Regular Web Application" and get your credentials.');'  
-  console.warn('\n');'  
-  const config = {};
+  console.warn('\n')
+const config = {};
   
   // Auth0 Domain
   while (true) {
@@ -59,9 +59,8 @@ async function testConfiguration() {
   // Re-read the env file
   require('dotenv').config({ path: '.env.local' });'  
   const requiredVars = [
-    'AUTH0_SECRET','    'AUTH0_BASE_URL','    'AUTH0_ISSUER_BASE_URL', '    'AUTH0_CLIENT_ID','    'AUTH0_CLIENT_SECRET''  ];
-  
-  const missing = requiredVars.filter(varName => !process.env[varName]);
+    'AUTH0_SECRET','    'AUTH0_BASE_URL','    'AUTH0_ISSUER_BASE_URL', '    'AUTH0_CLIENT_ID','    'AUTH0_CLIENT_SECRET''  ]
+const missing = requiredVars.filter(varName => !process.env[varName]);
   
   if (missing.length > 0) {
     logErrorToProduction(`Missing environment variables: ${missing.join(', ')}`);'    return false;
@@ -72,9 +71,8 @@ async function testConfiguration() {
   try {
     const fetch = require('node-fetch');'    const wellKnownUrl = `${process.env.AUTH0_ISSUER_BASE_URL}/.well-known/openid_configuration`;
     
-    console.warn(`Testing: ${wellKnownUrl}`);
-    
-    const response = await fetch(wellKnownUrl);
+    console.warn(`Testing: ${wellKnownUrl}`)
+const response = await fetch(wellKnownUrl);
     
     if (response.ok) {
       const data = await response.json();
@@ -91,13 +89,13 @@ async function testConfiguration() {
 
 async function displayNextSteps() {
   logSection('NEXT STEPS');'  
-  console.warn('');'  logStep(1, 'Configure Auth0 Application Settings');'  logInfo('In your Auth0 Dashboard → Applications → Settings, add:');'  console.warn('');'  console.warn('  Allowed Callback URLs:', 'yellow');'  console.warn('    http://localhost:3000/api/auth/callback');'  console.warn('    https://yourdomain.com/api/auth/callback');'  console.warn('');'  console.warn('  Allowed Logout URLs:', 'yellow');'  console.warn('    http://localhost:3000');'  console.warn('    https://yourdomain.com');'  console.warn('');'  console.warn('  Allowed Web Origins:', 'yellow');'  console.warn('    http://localhost:3000');'  console.warn('    https://yourdomain.com');'  
-  logStep(2, 'Grant Management API Permissions');'  logInfo('In Auth0 Dashboard → Applications → APIs → Machine to Machine:');'  console.warn('  • Authorize your app for "Auth0 Management API"');'  console.warn('  • Grant scopes: create:users, read:users, update:users');'  
-  logStep(3, 'Restart Your Application');'  console.warn('  npm run dev', 'cyan');'  console.warn('  # or', 'white');'  console.warn('  yarn dev', 'cyan');'  
-  logStep(4, 'Test the Signup Flow');'  console.warn('  1. Visit: http://localhost:3000/signup', 'cyan');'  console.warn('  2. Fill out the form with test data', 'cyan');'  console.warn('  3. Verify no error messages appear', 'cyan');'  console.warn('  4. Check email for verification link', 'cyan');'  
-  logStep(5, 'Verify Health Check');'  console.warn('  Visit: http://localhost:3000/api/auth/health', 'cyan');'  console.warn('  Should return: {"status": "ok", ...}', 'cyan');'  
-  console.warn('');'  logSuccess('Setup complete! Follow the steps above to finish the configuration.');'  
-  console.warn('');'  logInfo('For detailed instructions, see: AUTH0_SETUP_GUIDE_ISSUE_1.md');'  logInfo('For troubleshooting, check the Auth0 Dashboard → Monitoring → Logs');'}
+  console.warn('');  logStep(1, 'Configure Auth0 Application Settings');'  logInfo('In your Auth0 Dashboard → Applications → Settings, add:');'  console.warn('');  console.warn('  Allowed Callback URLs:', 'yellow');  console.warn('    http://localhost:3000/api/auth/callback');  console.warn('    https://yourdomain.com/api/auth/callback');  console.warn('');  console.warn('  Allowed Logout URLs:', 'yellow');  console.warn('    http://localhost:3000');  console.warn('    https://yourdomain.com');  console.warn('');  console.warn('  Allowed Web Origins:', 'yellow');  console.warn('    http://localhost:3000');  console.warn('    https://yourdomain.com');  
+  logStep(2, 'Grant Management API Permissions');'  logInfo('In Auth0 Dashboard → Applications → APIs → Machine to Machine:');'  console.warn('  • Authorize your app for "Auth0 Management API"');  console.warn('  • Grant scopes: create:users, read:users, update:users');  
+  logStep(3, 'Restart Your Application');'  console.warn('  npm run dev', 'cyan');  console.warn('  # or', 'white');  console.warn('  yarn dev', 'cyan');  
+  logStep(4, 'Test the Signup Flow');'  console.warn('  1. Visit: http://localhost:3000/signup', 'cyan');  console.warn('  2. Fill out the form with test data', 'cyan');  console.warn('  3. Verify no error messages appear', 'cyan');  console.warn('  4. Check email for verification link', 'cyan');  
+  logStep(5, 'Verify Health Check');'  console.warn('  Visit: http://localhost:3000/api/auth/health', 'cyan');  console.warn('  Should return: {"status": "ok", ...}', 'cyan');  
+  console.warn('');  logSuccess('Setup complete! Follow the steps above to finish the configuration.');'  
+  console.warn('');  logInfo('For detailed instructions, see: AUTH0_SETUP_GUIDE_ISSUE_1.md');'  logInfo('For troubleshooting, check the Auth0 Dashboard → Monitoring → Logs');'}
 
 async function main() {
   console.clear();
@@ -144,7 +142,7 @@ async function main() {
 }
 
 // Handle script termination
-process.on('SIGINT', () => {'  console.warn('\n');'  logInfo('Setup cancelled by user');'  rl.close();
+process.on('SIGINT', () => {'  console.warn('\n');  logInfo('Setup cancelled by user');'  rl.close();
   process.exit(0);
 });
 

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
 class SuperAutomationOrchestrator {
   constructor() {
     this.processes = new Map();
@@ -19,8 +18,8 @@ class SuperAutomationOrchestrator {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString();
-    const colors = {
+    const timestamp = new Date().toISOString()
+const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
@@ -170,9 +169,8 @@ class SuperAutomationOrchestrator {
       dependency: { command: 'node', args: ['scripts/dependency-manager.cjs'] },
       build: { command: 'node', args: ['scripts/build-optimizer.cjs'] },
       test: { command: 'node', args: ['scripts/test-automation.cjs'] },
-    };
-
-    const config = processMap[name];
+    }
+const config = processMap[name];
     if (config) {
       await this.startProcess(name, config.command, config.args);
     }

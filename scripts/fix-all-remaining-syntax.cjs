@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const glob = require('glob');
 
 console.log('🔧 Fixing all remaining syntax errors...');
@@ -22,7 +22,7 @@ files.forEach((file) => {
 
     // Fix unterminated string literals in import statements
     content = content.replace(
-      /import\s+([^;]+);';/g,
+      /import\s+([^;]+);;/g,
       (match, importContent) => {
         fileIssues++;
         return `import ${importContent};`;

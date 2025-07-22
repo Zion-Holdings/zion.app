@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const readline = require('readline');
-
-const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-automation.log');
-const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md');
-const KEYWORDS = ['improve', 'fix', 'bug', 'feature', 'todo', 'next step'];
-
+const fs = require('fs')
+const path = require('path')
+const readline = require('readline')
+const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-automation.log')
+const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md')
+const KEYWORDS = ['improve', 'fix', 'bug', 'feature', 'todo', 'next step']
 const GENERIC_TASKS = [
   'Analyze code quality',
   'Check for security issues',
@@ -24,8 +22,7 @@ const GENERIC_TASKS = [
   'Automate repetitive tasks',
   'Review CI/CD pipeline',
   'Optimize images',
-];
-
+]
 function appendTodo(line) {
   const todo = `- [ ] ${new Date().toISOString()} | ${line.trim()}`;
   fs.appendFileSync(TODO_FILE, todo + '\n');
@@ -57,8 +54,8 @@ function ensureTodoQueue() {
     const needed = 10 - pending.length;
     for (let i = 0; i < needed; i++) {
       const task =
-        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
-      const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
+        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)]
+const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + '\n');
       console.log('Auto-added TODO:', todo);
     }
@@ -84,8 +81,8 @@ function watchForCompletions() {
     if (doneCount > lastDoneCount) {
       // A step was completed, add a new one
       const task =
-        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
-      const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
+        GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)]
+const todo = `- [ ] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + '\n');
       console.log('Auto-added TODO after completion:', todo);
     }
@@ -101,8 +98,8 @@ function tailLog() {
   const stream = fs.createReadStream(LOG_FILE, {
     encoding: 'utf8',
     start: fileSize,
-  });
-  const rl = readline.createInterface({ input: stream });
+  })
+const rl = readline.createInterface({ input: stream });
   rl.on('line', processLine);
   fs.watchFile(LOG_FILE, { interval: 1000 }, () => {
     const newSize = fs.statSync(LOG_FILE).size;
@@ -111,8 +108,8 @@ function tailLog() {
         encoding: 'utf8',
         start: fileSize,
         end: newSize,
-      });
-      const diffRl = readline.createInterface({ input: diffStream });
+      })
+const diffRl = readline.createInterface({ input: diffStream });
       diffRl.on('line', processLine);
       fileSize = newSize;
     }

@@ -6,23 +6,21 @@
  * This script helps developers verify their local environment setup
  */
 
-const fs = require('fs');
-const _path = require('path');
-const _error = 'error';
-
+const fs = require('fs')
+const _path = require('path')
+const _error = 'error'
 function checkEnvironment() {
   console.warn('🔍 Checking Development Environment');
   console.warn('==================================\n');
 
-  let allGood = true;
-  const warnings = [];
-  const errors = [];
+  let allGood = true
+const warnings = []
+const errors = [];
 
   // Check Node.js version
   const nodeVersion = process.version;
-  console.warn(`📦 Node.js Version: ${nodeVersion}`);
-
-  const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
+  console.warn(`📦 Node.js Version: ${nodeVersion}`)
+const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
   if (majorVersion < 18) {
     errors.push('Node.js version should be 18 or higher');
   } else {
@@ -50,9 +48,8 @@ function checkEnvironment() {
 
   // Check for environment files
   console.warn('\n🌍 Environment Configuration:');
-  console.warn('=============================');
-
-  const envFiles = ['.env.local', '.env', '.env.development'];
+  console.warn('=============================')
+const envFiles = ['.env.local', '.env', '.env.development'];
   let hasEnvFile = false;
 
   envFiles.forEach((file) => {
@@ -115,10 +112,9 @@ function checkEnvironment() {
   console.warn('======================');
 
   try {
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-    const scripts = packageJson.scripts || {};
-
-    const requiredScripts = ['dev', 'build', 'start'];
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const scripts = packageJson.scripts || {}
+const requiredScripts = ['dev', 'build', 'start'];
     requiredScripts.forEach((script) => {
       if (scripts[script]) {
         console.warn(`   ✅ ${script} script available`);

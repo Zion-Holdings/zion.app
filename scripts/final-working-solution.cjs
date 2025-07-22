@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class FinalWorkingSolution {
   constructor() {
     this.fixes = [];
@@ -61,8 +60,7 @@ const nextConfig = {
   trailingSlash: true,
   // Minimal environment
   env: {},
-};
-
+}
 module.exports = nextConfig;`;
 
       fs.writeFileSync('next.config.js', nextConfig);
@@ -147,9 +145,8 @@ module.exports = nextConfig;`;
   }
 
   async run() {
-    this.log('🚀 Starting Final Working Solution...');
-
-    const success = await this.createWorkingApp();
+    this.log('🚀 Starting Final Working Solution...')
+const success = await this.createWorkingApp();
 
     this.log('📊 Final Working Solution Summary:');
     this.log(`✅ Fixes applied: ${this.fixes.length}`);

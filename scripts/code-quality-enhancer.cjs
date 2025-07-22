@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-
+const { execSync } = require('child_process')
+const fs = require('fs')
 class CodeQualityEnhancer {
   constructor() {
     this.enhancements = 0;
@@ -16,8 +15,8 @@ class CodeQualityEnhancer {
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
-    };
-    const timestamp = new Date().toISOString();
+    }
+const timestamp = new Date().toISOString();
     console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
 
@@ -39,8 +38,8 @@ class CodeQualityEnhancer {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime;
-    const report = {
+    const runtime = Date.now() - this.startTime
+const report = {
       timestamp: new Date().toISOString(),
       runtime,
       enhancements: this.enhancements,

@@ -5,11 +5,10 @@
  * Monitors build processes and triggers healing on failures
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const chokidar = require('chokidar');
-
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
+const chokidar = require('chokidar')
 class BuildMonitor {
   constructor() {
     this.isMonitoring = false;
@@ -55,9 +54,8 @@ class BuildMonitor {
       'src/**/*.ts',
       'pages/**/*.tsx',
       'pages/**/*.ts',
-    ];
-
-    const watcher = chokidar.watch(buildFiles, {
+    ]
+const watcher = chokidar.watch(buildFiles, {
       ignored: /node_modules|\.git|\.next/,
       persistent: true,
     });
@@ -109,9 +107,8 @@ class BuildMonitor {
 
   async runBuildCheck() {
     return new Promise((resolve, reject) => {
-      console.log('Running build check...');
-
-      const buildProcess = spawn('npm', ['run', 'build'], {
+      console.log('Running build check...')
+const buildProcess = spawn('npm', ['run', 'build'], {
         stdio: ['pipe', 'pipe', 'pipe'],
         cwd: process.cwd(),
       });
@@ -165,9 +162,8 @@ class BuildMonitor {
   }
 
   analyzeBuildFailure(buildResult) {
-    console.log('Analyzing build failure...');
-
-    const errorPatterns = {
+    console.log('Analyzing build failure...')
+const errorPatterns = {
       'Module not found': 'dependency',
       'Cannot resolve module': 'import',
       'TypeScript error': 'typescript',
@@ -176,10 +172,9 @@ class BuildMonitor {
       'Wallet connection': 'wallet',
       'Supabase connection': 'database',
       'Environment variable': 'env',
-    };
-
-    const errorText = buildResult.errorOutput.toLowerCase();
-    const detectedIssues = [];
+    }
+const errorText = buildResult.errorOutput.toLowerCase()
+const detectedIssues = [];
 
     for (const [pattern, issueType] of Object.entries(errorPatterns)) {
       if (errorText.includes(pattern.toLowerCase())) {
@@ -239,8 +234,8 @@ class BuildMonitor {
         return;
       }
 
-      const logContent = fs.readFileSync(this.buildLogPath, 'utf8');
-      const lines = logContent.split('\n');
+      const logContent = fs.readFileSync(this.buildLogPath, 'utf8')
+const lines = logContent.split('\n');
 
       // Look for recent errors
       const recentErrors = lines
@@ -285,15 +280,15 @@ class BuildMonitor {
   }
 
   logBuildOutput(output) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [BUILD] ${output}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [BUILD] ${output}`;
 
     fs.appendFileSync(this.buildLogPath, logEntry);
   }
 
   logBuildError(error) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [BUILD_ERROR] ${error}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [BUILD_ERROR] ${error}`;
 
     fs.appendFileSync(this.errorLogPath, logEntry);
   }
@@ -303,11 +298,11 @@ class BuildMonitor {
   }
 
   getBuildStats() {
-    const totalBuilds = this.buildHistory.length;
-    const successfulBuilds = this.buildHistory.filter(
+    const totalBuilds = this.buildHistory.length
+const successfulBuilds = this.buildHistory.filter(
       (build) => build.success,
-    ).length;
-    const failedBuilds = totalBuilds - successfulBuilds;
+    ).length
+const failedBuilds = totalBuilds - successfulBuilds;
 
     return {
       totalBuilds,

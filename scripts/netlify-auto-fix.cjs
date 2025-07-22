@@ -5,10 +5,9 @@
  * Automatically applies fixes for common Netlify build issues
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class NetlifyAutoFix {
   constructor() {
     this.fixesApplied = [];
@@ -17,8 +16,8 @@ class NetlifyAutoFix {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
@@ -32,9 +31,8 @@ class NetlifyAutoFix {
   }
 
   async applyAllFixes() {
-    this.log('Starting comprehensive auto-fix process...');
-
-    const fixes = [
+    this.log('Starting comprehensive auto-fix process...')
+const fixes = [
       'fixNetlifyConfig',
       'fixPackageJson',
       'fixNextConfig',
@@ -60,9 +58,8 @@ class NetlifyAutoFix {
   }
 
   async fixNetlifyConfig() {
-    this.log('Fixing Netlify configuration...');
-
-    const netlifyConfig = `[build]
+    this.log('Fixing Netlify configuration...')
+const netlifyConfig = `[build]
   command = "npm run build:netlify:prepare"
   publish = ".next"
   command_timeout = "30m"
@@ -205,9 +202,8 @@ class NetlifyAutoFix {
   }
 
   async fixNextConfig() {
-    this.log('Fixing Next.js configuration...');
-
-    const nextConfig = `/** @type {import('next').NextConfig} */
+    this.log('Fixing Next.js configuration...')
+const nextConfig = `/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Disable telemetry
   telemetry: false,
@@ -317,8 +313,7 @@ const nextConfig = {
   // images: {
   //   unoptimized: true,
   // },
-};
-
+}
 module.exports = nextConfig;`;
 
     fs.writeFileSync('next.config.js', nextConfig);
@@ -327,9 +322,8 @@ module.exports = nextConfig;`;
   }
 
   async fixTypeScript() {
-    this.log('Fixing TypeScript configuration...');
-
-    const tsConfig = {
+    this.log('Fixing TypeScript configuration...')
+const tsConfig = {
       compilerOptions: {
         target: 'ES2020',
         lib: ['dom', 'dom.iterable', 'es6'],
@@ -366,9 +360,8 @@ module.exports = nextConfig;`;
   }
 
   async fixLinting() {
-    this.log('Fixing ESLint configuration...');
-
-    const eslintConfig = `module.exports = {
+    this.log('Fixing ESLint configuration...')
+const eslintConfig = `module.exports = {
   extends: [
     'next/core-web-vitals',
     'next/typescript',
@@ -446,8 +439,7 @@ try {
       'scripts/optimized-build.cjs': `#!/usr/bin/env node
 const { execSync } = require('child_process');
 
-console.log('Starting optimized build...');
-
+console.log('Starting optimized build...')
 const buildCommand = process.env.NODE_ENV === 'production' 
   ? 'NODE_OPTIONS=\\"--max-old-space-size=6144\\" npx next build --no-lint'
   : 'npx next build --no-lint';
@@ -545,9 +537,8 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
   }
 
   async cleanCache() {
-    this.log('Cleaning cache...');
-
-    const cacheDirs = [
+    this.log('Cleaning cache...')
+const cacheDirs = [
       '.next',
       'node_modules/.cache',
       '.cache',
@@ -599,9 +590,8 @@ NEXT_DISABLE_SOURCE_MAPS=true`;
 
 // CLI interface
 if (require.main === module) {
-  const autoFix = new NetlifyAutoFix();
-
-  const command = process.argv[2];
+  const autoFix = new NetlifyAutoFix()
+const command = process.argv[2];
 
   switch (command) {
     case 'all':

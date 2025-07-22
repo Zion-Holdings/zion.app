@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class ZionAppMaintainer {
   constructor() {
     this.maintenanceLog = [];
@@ -99,8 +98,8 @@ class ZionAppMaintainer {
     try {
       const response = execSync('curl -s http://localhost:3006/api/health', {
         encoding: 'utf8',
-      });
-      const healthData = JSON.parse(response);
+      })
+const healthData = JSON.parse(response);
 
       this.log(`✅ Health check passed: ${healthData.message}`);
       this.improvements.push(`Health check: ${healthData.status}`);
@@ -109,8 +108,8 @@ class ZionAppMaintainer {
       const startTime = Date.now();
       execSync('curl -s http://localhost:3006/api/health > /dev/null', {
         stdio: 'ignore',
-      });
-      const responseTime = Date.now() - startTime;
+      })
+const responseTime = Date.now() - startTime;
 
       if (responseTime < 100) {
         this.log(`✅ Response time: ${responseTime}ms (Excellent)`);
@@ -163,10 +162,9 @@ class ZionAppMaintainer {
       // Check for outdated packages
       const outdated = execSync('npm outdated --json || echo "{}"', {
         encoding: 'utf8',
-      });
-      const outdatedData = JSON.parse(outdated);
-
-      const outdatedCount = Object.keys(outdatedData).length;
+      })
+const outdatedData = JSON.parse(outdated)
+const outdatedCount = Object.keys(outdatedData).length;
       if (outdatedCount > 0) {
         this.log(`⚠️ Found ${outdatedCount} outdated packages`, 'WARN');
         this.issues.push(`${outdatedCount} outdated packages`);
@@ -183,8 +181,8 @@ class ZionAppMaintainer {
       // Check for vulnerabilities
       const audit = execSync('npm audit --json || echo "{}"', {
         encoding: 'utf8',
-      });
-      const auditData = JSON.parse(audit);
+      })
+const auditData = JSON.parse(audit);
 
       if (auditData.vulnerabilities) {
         const vulnCount = Object.keys(auditData.vulnerabilities).length;
@@ -245,13 +243,12 @@ class ZionAppMaintainer {
 
   getFileSizes() {
     const largeFiles = [];
-    let totalSize = 0;
-
-    const walkDir = (dir) => {
+    let totalSize = 0
+const walkDir = (dir) => {
       const files = fs.readdirSync(dir);
       for (const file of files) {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        const filePath = path.join(dir, file)
+const stat = fs.statSync(filePath);
 
         if (stat.isDirectory()) {
           walkDir(filePath);
@@ -285,9 +282,8 @@ class ZionAppMaintainer {
   }
 
   async generateMaintenanceReport() {
-    this.log('📋 Generating maintenance report...');
-
-    const report = {
+    this.log('📋 Generating maintenance report...')
+const report = {
       timestamp: new Date().toISOString(),
       status: this.issues.length === 0 ? 'HEALTHY' : 'NEEDS_ATTENTION',
       summary: {
@@ -313,8 +309,8 @@ class ZionAppMaintainer {
     this.log(`✅ Maintenance report saved: ${reportPath}`);
 
     // Create summary file
-    const summaryPath = 'maintenance-reports/latest-summary.md';
-    const summary = `# Zion App Maintenance Summary
+    const summaryPath = 'maintenance-reports/latest-summary.md'
+const summary = `# Zion App Maintenance Summary
 
 **Date**: ${new Date().toLocaleDateString()}
 **Status**: ${report.status}

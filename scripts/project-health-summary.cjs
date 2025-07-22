@@ -5,12 +5,10 @@
  * Shows the comprehensive improvements made to the Zion App Clone
  */
 
-const fs = require('fs');
-const path = require('path');
-const { _execSync } = require('child_process');
-
-const PROJECT_ROOT = process.cwd();
-
+const fs = require('fs')
+const path = require('path')
+const { _execSync } = require('child_process')
+const PROJECT_ROOT = process.cwd()
 class ProjectHealthSummary {
   constructor() {
     this.summary = {
@@ -30,8 +28,8 @@ class ProjectHealthSummary {
       const response = execSync(
         'curl -s -o /dev/null -w "%{http_code}" http://localhost:3006 2>/dev/null || echo "000"',
         { encoding: 'utf8' },
-      );
-      const isRunning = response.trim() !== '000';
+      )
+const isRunning = response.trim() !== '000';
 
       this.summary.improvements.push({
         category: '🚀 Development Server',
@@ -59,8 +57,8 @@ class ProjectHealthSummary {
   analyzeConsoleReplacement() {
     const loggerFiles = this.countFilesWithPattern(
       "from '@/utils/productionLogger'",
-    );
-    const remainingConsole = this.countFilesWithPattern('console\\.log\\(');
+    )
+const remainingConsole = this.countFilesWithPattern('console\\.log\\(');
 
     this.summary.improvements.push({
       category: '📝 Console Statement Cleanup',
@@ -87,9 +85,8 @@ class ProjectHealthSummary {
       'src/utils/performanceOptimizer.ts',
       'src/types/common.ts',
       'scripts/replace-console-statements.cjs',
-    ];
-
-    const existingFiles = optimizationFiles.filter((file) =>
+    ]
+const existingFiles = optimizationFiles.filter((file) =>
       fs.existsSync(path.join(PROJECT_ROOT, file)),
     );
 
@@ -153,9 +150,9 @@ class ProjectHealthSummary {
     try {
       const lintOutput = execSync('npm run lint 2>&1 || true', {
         encoding: 'utf8',
-      });
-      const errorCount = (lintOutput.match(/error/g) || []).length;
-      const warningCount = (lintOutput.match(/warning/g) || []).length;
+      })
+const errorCount = (lintOutput.match(/error/g) || []).length
+const warningCount = (lintOutput.match(/warning/g) || []).length;
 
       this.summary.improvements.push({
         category: '🔍 Code Quality',
@@ -209,8 +206,8 @@ class ProjectHealthSummary {
       const content = fs.readFileSync(
         path.join(PROJECT_ROOT, 'src/types/common.ts'),
         'utf8',
-      );
-      const interfaceCount = (content.match(/export interface/g) || []).length;
+      )
+const interfaceCount = (content.match(/export interface/g) || []).length;
 
       this.summary.improvements.push({
         category: '🎯 TypeScript Type Safety',
@@ -294,11 +291,11 @@ class ProjectHealthSummary {
     // console.warn(`📅 Generated: ${new Date().toLocaleString()}\n`);
 
     // Overall Status
-    const totalImprovements = this.summary.improvements.length;
-    const completedImprovements = this.summary.improvements.filter((i) =>
+    const totalImprovements = this.summary.improvements.length
+const completedImprovements = this.summary.improvements.filter((i) =>
       i.status.includes('✅'),
-    ).length;
-    const completionRate = Math.round(
+    ).length
+const completionRate = Math.round(
       (completedImprovements / totalImprovements) * 100,
     );
 

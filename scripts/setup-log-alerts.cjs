@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { ErrorMonitor, CONFIG } = require('./error-monitor.cjs');
 
 async function main() {
@@ -8,13 +8,13 @@ async function main() {
   if (!monitor.init()) {
     process.exit(1);
   }
-  await monitor.readLogs();
-  const criticals = monitor.errors.filter(
+  await monitor.readLogs()
+const criticals = monitor.errors.filter(
     (e) => e.level === 'critical' || monitor.containsCriticalKeyword(e.message),
   );
   if (criticals.length > 0) {
-    const alertMsg = `[ALERT] [${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`;
-    const alertFile = path.join(CONFIG.logsDir, 'alerts.log');
+    const alertMsg = `[ALERT] [${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`
+const alertFile = path.join(CONFIG.logsDir, 'alerts.log');
     fs.appendFileSync(alertFile, alertMsg);
     console.warn(alertMsg.trim());
   } else {

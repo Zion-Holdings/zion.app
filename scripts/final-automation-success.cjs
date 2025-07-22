@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
 class FinalAutomationSuccess {
   constructor() {
     this.projectRoot = process.cwd();
@@ -15,8 +14,8 @@ class FinalAutomationSuccess {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -51,9 +50,8 @@ class FinalAutomationSuccess {
   }
 
   createSuccessPage() {
-    this.log('Creating success page...');
-
-    const successContent = `export default function Success() {
+    this.log('Creating success page...')
+const successContent = `export default function Success() {
   return (
     <div style={{ 
       padding: '2rem', 

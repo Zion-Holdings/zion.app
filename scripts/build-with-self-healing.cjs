@@ -5,13 +5,11 @@
  * Integrates the self-healing lint system with the build process
  */
 
-const { execSync, spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-
+const { execSync, spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 // Import the self-healing system
-const SelfHealingLintSystem = require('./self-healing-lint-system.cjs');
-
+const SelfHealingLintSystem = require('./self-healing-lint-system.cjs')
 class BuildWithSelfHealing {
   constructor() {
     this.selfHealingSystem = new SelfHealingLintSystem();

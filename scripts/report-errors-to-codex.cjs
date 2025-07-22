@@ -3,15 +3,13 @@
  * Summarize failing Jest tests and open a GitHub issue labeled 'autofix'
  * so Codex can attempt a fix via the codex-fix workflow.
  */
-const fs = require('fs');
-const path = require('path');
-const { _Octokit } = require('@octokit/rest');
-
-const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results');
-
+const fs = require('fs')
+const path = require('path')
+const { _Octokit } = require('@octokit/rest')
+const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results')
 function findLatestReport() {
-  if (!fs.existsSync(RESULTS_DIR)) return null;
-  const files = fs
+  if (!fs.existsSync(RESULTS_DIR)) return null
+const files = fs
     .readdirSync(RESULTS_DIR)
     .filter((f) => f.startsWith('jest-results-') && f.endsWith('.json'))
     .map((f) => ({
@@ -23,8 +21,8 @@ function findLatestReport() {
 }
 
 function summarizeFailures(data) {
-  const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0);
-  const lines = failedSuites.flatMap((suite) =>
+  const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0)
+const lines = failedSuites.flatMap((suite) =>
     suite.assertionResults
       .filter((ar) => ar.status === 'failed')
       .map((ar) => `• ${ar.fullName}\n  at ${suite.name}`),
@@ -45,24 +43,23 @@ async function main() {
     return;
   }
 
-  const summary = summarizeFailures(data);
-  const issueTitle = `Automated test failures detected (${new Date().toISOString().split('T')[0]})`;
-  const bodyLines = [
+  const summary = summarizeFailures(data)
+const issueTitle = `Automated test failures detected (${new Date().toISOString().split('T')[0]})`
+const bodyLines = [
     `Automated test run detected **${data.numFailedTests}** failing tests.`,
     '',
     '```',
     summary,
     '```',
-  ];
-
-  const token = process.env.GITHUB_TOKEN;
-  const repoSlug = process.env.GITHUB_REPOSITORY;
+  ]
+const token = process.env.GITHUB_TOKEN
+const repoSlug = process.env.GITHUB_REPOSITORY;
   if (!token || !repoSlug) {
     console.error('GITHUB_TOKEN or GITHUB_REPOSITORY env vars missing.');
     process.exit(1);
   }
-  const [owner, repo] = repoSlug.split('/');
-  const octokit = new Octokit({ auth: token });
+  const [owner, repo] = repoSlug.split('/')
+const octokit = new Octokit({ auth: token });
 
   try {
     await octokit.rest.issues.create({

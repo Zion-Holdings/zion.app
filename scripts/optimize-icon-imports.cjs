@@ -9,13 +9,13 @@
  * Expected bundle size reduction: 60-80% from lucide-react
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 const { _execSync } = require('child_process');
 
 // Configuration
-const SRC_DIR = path.join(process.cwd(), 'src');
-const ICONS_FILE = path.join(SRC_DIR, 'components', 'ui', 'icons.ts');
+const SRC_DIR = path.join(process.cwd(), 'src')
+const ICONS_FILE = path.join(SRC_DIR, 'components', 'ui', 'icons.ts')
 const EXCLUDED_DIRS = [
   'node_modules',
   '.next',
@@ -23,7 +23,7 @@ const EXCLUDED_DIRS = [
   'build',
   '__tests__',
   'test-results',
-];
+]
 const FILE_EXTENSIONS = ['.tsx', '.ts', '.jsx', '.js'];
 
 // Icons available in the centralized file
@@ -168,8 +168,7 @@ const AVAILABLE_ICONS = [
   'Sun',
   'Moon',
   'Monitor',
-];
-
+]
 function shouldExcludeDir(dirName) {
   return EXCLUDED_DIRS.includes(dirName) || dirName.startsWith('.');
 }
@@ -182,8 +181,8 @@ function findFiles(dir, files = []) {
   const items = fs.readdirSync(dir);
 
   for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+    const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
     if (stat.isDirectory() && !shouldExcludeDir(item)) {
       findFiles(fullPath, files);
@@ -202,8 +201,8 @@ function optimizeFile(filePath) {
 
     // Pattern 1: Replace direct lucide-react imports with centralized imports
     const directImportPattern =
-      /import\s*{([^}]+)}\s*from\s*['"]lucide-react['"];?/g;
-    const directMatches = content.match(directImportPattern);
+      /import\s*{([^}]+)}\s*from\s*['"]lucide-react['"];?/g
+const directMatches = content.match(directImportPattern);
 
     if (directMatches) {
       let allIcons = new Set();
@@ -225,8 +224,8 @@ function optimizeFile(filePath) {
 
       if (allIcons.size > 0) {
         // Replace direct imports with centralized import
-        const iconList = Array.from(allIcons).join(', ');
-        const newImport = `import { ${iconList} } from '@/components/ui/icons';`;
+        const iconList = Array.from(allIcons).join(', ')
+const newImport = `import { ${iconList} } from '@/components/ui/icons';`;
 
         // Remove old imports and add new one
         content = content.replace(directImportPattern, '');
@@ -293,8 +292,8 @@ function main() {
   // Process each file
   for (const file of files) {
     try {
-      const relativePath = path.relative(process.cwd(), file);
-      const wasOptimized = optimizeFile(file);
+      const relativePath = path.relative(process.cwd(), file)
+const wasOptimized = optimizeFile(file);
 
       if (wasOptimized) {
         console.warn(`✅ Optimized: ${relativePath}`);

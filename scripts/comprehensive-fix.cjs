@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const { spawn } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const { spawn } = require('child_process')
 class ComprehensiveFix {
   constructor() {
     this.projectRoot = process.cwd();
@@ -13,11 +12,10 @@ class ComprehensiveFix {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
-
-    const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage)
+const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -34,8 +32,8 @@ class ComprehensiveFix {
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running command: ${command}`);
-      const result = execSync(command, {
+      this.log(`Running command: ${command}`)
+const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -54,17 +52,16 @@ class ComprehensiveFix {
   }
 
   fixNextConfig() {
-    this.log('Fixing Next.js configuration...');
-
-    const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+    this.log('Fixing Next.js configuration...')
+const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
       return false;
     }
 
     try {
-      let content = fs.readFileSync(nextConfigPath, 'utf8');
-      const originalContent = content;
+      let content = fs.readFileSync(nextConfigPath, 'utf8')
+const originalContent = content;
 
       // Remove problematic options
       content = content
@@ -105,9 +102,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   fixDuplicateFiles() {
-    this.log('Fixing duplicate files...');
-
-    const pagesDir = path.join(this.projectRoot, 'pages');
+    this.log('Fixing duplicate files...')
+const pagesDir = path.join(this.projectRoot, 'pages');
     if (!fs.existsSync(pagesDir)) {
       this.log('Pages directory not found', 'ERROR');
       return false;
@@ -122,8 +118,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
     let fixedCount = 0;
 
     for (const duplicate of duplicates) {
-      const tsPath = path.join(pagesDir, duplicate.ts);
-      const jsPath = path.join(pagesDir, duplicate.js);
+      const tsPath = path.join(pagesDir, duplicate.ts)
+const jsPath = path.join(pagesDir, duplicate.js);
 
       if (fs.existsSync(tsPath) && fs.existsSync(jsPath)) {
         // Keep the TypeScript version, remove the JavaScript version
@@ -138,9 +134,8 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   createMinimalPages() {
-    this.log('Creating minimal pages structure...');
-
-    const pagesDir = path.join(this.projectRoot, 'pages');
+    this.log('Creating minimal pages structure...')
+const pagesDir = path.join(this.projectRoot, 'pages');
     if (!fs.existsSync(pagesDir)) {
       fs.mkdirSync(pagesDir, { recursive: true });
     }
@@ -206,16 +201,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   async installDependencies() {
-    this.log('Installing dependencies...');
-
-    const result = await this.runCommand('npm install --legacy-peer-deps');
+    this.log('Installing dependencies...')
+const result = await this.runCommand('npm install --legacy-peer-deps');
     return result.success;
   }
 
   async buildProject() {
-    this.log('Building project...');
-
-    const result = await this.runCommand('npm run build');
+    this.log('Building project...')
+const result = await this.runCommand('npm run build');
     return result.success;
   }
 

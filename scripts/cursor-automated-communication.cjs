@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const https = require('https');
-const fs = require('fs');
-const path = require('path');
-const { spawn, exec } = require('child_process');
-const os = require('os');
-const crypto = require('crypto');
-
+const http = require('http')
+const https = require('https')
+const fs = require('fs')
+const path = require('path')
+const { spawn, exec } = require('child_process')
+const os = require('os')
+const crypto = require('crypto')
 class CursorAutomatedCommunication {
   constructor() {
     this.computerId = this.generateComputerId();
@@ -51,11 +50,11 @@ class CursorAutomatedCommunication {
   }
 
   generateComputerId() {
-    const hostname = os.hostname();
-    const platform = os.platform();
-    const arch = os.arch();
-    const timestamp = Date.now();
-    const random = Math.random().toString(36).substr(2, 9);
+    const hostname = os.hostname()
+const platform = os.platform()
+const arch = os.arch()
+const timestamp = Date.now()
+const random = Math.random().toString(36).substr(2, 9);
     return `${hostname}_${platform}_${arch}_${timestamp}_${random}`;
   }
 
@@ -69,26 +68,26 @@ class CursorAutomatedCommunication {
 
     return {
       info: (message) => {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] [INFO] [${this.computerId}] ${message}`;
+        const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [INFO] [${this.computerId}] ${message}`;
         console.log(logMessage);
         fs.appendFileSync(logFile, logMessage + '\n');
       },
       error: (message) => {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] [ERROR] [${this.computerId}] ${message}`;
+        const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [ERROR] [${this.computerId}] ${message}`;
         console.error(logMessage);
         fs.appendFileSync(logFile, logMessage + '\n');
       },
       warn: (message) => {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] [WARN] [${this.computerId}] ${message}`;
+        const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [WARN] [${this.computerId}] ${message}`;
         console.warn(logMessage);
         fs.appendFileSync(logFile, logMessage + '\n');
       },
       debug: (message) => {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] [DEBUG] [${this.computerId}] ${message}`;
+        const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [DEBUG] [${this.computerId}] ${message}`;
         console.log(logMessage);
         fs.appendFileSync(logFile, logMessage + '\n');
       },
@@ -203,8 +202,8 @@ class CursorAutomatedCommunication {
         const needed = 10 - this.improvementQueue.length;
         for (let i = 0; i < needed; i++) {
           const task =
-            GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
-          const improvement = {
+            GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)]
+const improvement = {
             id: `auto-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
             type: 'auto_next_step',
             description: task,
@@ -259,9 +258,8 @@ class CursorAutomatedCommunication {
           'X-Computer-ID': this.computerId,
           'X-Cursor-Version': this.getCursorVersion(),
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
@@ -301,8 +299,8 @@ class CursorAutomatedCommunication {
 
       for (const plistPath of possiblePaths) {
         if (fs.existsSync(plistPath)) {
-          const content = fs.readFileSync(plistPath, 'utf8');
-          const versionMatch = content.match(
+          const content = fs.readFileSync(plistPath, 'utf8')
+const versionMatch = content.match(
             /CFBundleShortVersionString.*?<string>(.*?)<\/string>/,
           );
           if (versionMatch) {
@@ -326,8 +324,8 @@ class CursorAutomatedCommunication {
           return;
         }
 
-        const lines = stdout.split('\n');
-        const cursorProcesses = lines.filter(
+        const lines = stdout.split('\n')
+const cursorProcesses = lines.filter(
           (line) =>
             line.toLowerCase().includes('cursor') &&
             !line.toLowerCase().includes('grep'),
@@ -351,16 +349,15 @@ class CursorAutomatedCommunication {
       'Makefile',
       'CMakeLists.txt',
       '.git',
-    ];
-
-    const scanDirectory = (dir, depth = 0) => {
+    ]
+const scanDirectory = (dir, depth = 0) => {
       if (depth > 3) return; // Limit depth
 
       try {
         const items = fs.readdirSync(dir);
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (stat.isDirectory() && !item.startsWith('.')) {
             // Check if this is a project directory
@@ -419,8 +416,8 @@ class CursorAutomatedCommunication {
     for (const [type, files] of Object.entries(indicators)) {
       for (const file of files) {
         if (file.includes('*')) {
-          const pattern = file.replace('*', '');
-          const items = fs.readdirSync(projectPath);
+          const pattern = file.replace('*', '')
+const items = fs.readdirSync(projectPath);
           if (items.some((item) => item.includes(pattern))) {
             return type;
           }
@@ -438,8 +435,8 @@ class CursorAutomatedCommunication {
     try {
       const items = fs.readdirSync(dirPath);
       for (const item of items) {
-        const fullPath = path.join(dirPath, item);
-        const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dirPath, item)
+const stat = fs.statSync(fullPath);
         if (stat.isDirectory()) {
           size += this.getDirectorySize(fullPath);
         } else {
@@ -483,9 +480,8 @@ class CursorAutomatedCommunication {
   }
 
   async sendHeartbeat() {
-    if (!this.isConnected) return;
-
-    const heartbeat = {
+    if (!this.isConnected) return
+const heartbeat = {
       computerId: this.computerId,
       timestamp: Date.now(),
       uptime: process.uptime(),
@@ -505,8 +501,8 @@ class CursorAutomatedCommunication {
     if (!this.config.enableActivityMonitoring) return;
 
     setInterval(() => {
-      const now = Date.now();
-      const timeSinceLastActivity = now - this.lastActivity;
+      const now = Date.now()
+const timeSinceLastActivity = now - this.lastActivity;
 
       if (timeSinceLastActivity > this.activityTimeout) {
         this.logger.warn('⚠️ No activity detected, sending keepalive');
@@ -518,9 +514,8 @@ class CursorAutomatedCommunication {
   }
 
   startFileWatching() {
-    if (!this.config.enableFileWatching) return;
-
-    const watchPaths = [
+    if (!this.config.enableFileWatching) return
+const watchPaths = [
       'src',
       'pages',
       'components',
@@ -574,8 +569,8 @@ class CursorAutomatedCommunication {
       '.md',
       '.yml',
       '.yaml',
-    ];
-    const importantFiles = ['package.json', 'README.md', 'Dockerfile', '.env'];
+    ]
+const importantFiles = ['package.json', 'README.md', 'Dockerfile', '.env'];
 
     return (
       importantExtensions.some((ext) => filename.endsWith(ext)) ||
@@ -587,8 +582,8 @@ class CursorAutomatedCommunication {
     try {
       const filePath = path.join(process.cwd(), filename);
       if (fs.existsSync(filePath)) {
-        const content = fs.readFileSync(filePath, 'utf8');
-        const analysis = await this.analyzeFile(filename, content);
+        const content = fs.readFileSync(filePath, 'utf8')
+const analysis = await this.analyzeFile(filename, content);
 
         this.logger.info(`🔍 Immediate analysis completed for ${filename}`);
         this.addImprovement(analysis);
@@ -661,9 +656,8 @@ class CursorAutomatedCommunication {
   }
 
   startBuildMonitoring() {
-    if (!this.config.enableBuildMonitoring) return;
-
-    const packageJsonPath = path.join(process.cwd(), 'package.json');
+    if (!this.config.enableBuildMonitoring) return
+const packageJsonPath = path.join(process.cwd(), 'package.json');
     if (fs.existsSync(packageJsonPath)) {
       fs.watch(packageJsonPath, (eventType) => {
         if (eventType === 'change') {
@@ -732,9 +726,8 @@ class CursorAutomatedCommunication {
   }
 
   async processImprovementQueue() {
-    if (this.improvementQueue.length === 0) return;
-
-    const improvements = this.improvementQueue.splice(0, 5); // Process 5 at a time
+    if (this.improvementQueue.length === 0) return
+const improvements = this.improvementQueue.splice(0, 5); // Process 5 at a time
 
     for (const improvement of improvements) {
       try {
@@ -900,13 +893,13 @@ class CursorAutomatedCommunication {
   }
 
   countFiles() {
-    let count = 0;
-    const countFilesRecursive = (dir) => {
+    let count = 0
+const countFilesRecursive = (dir) => {
       try {
         const items = fs.readdirSync(dir);
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (
             stat.isDirectory() &&
@@ -928,13 +921,13 @@ class CursorAutomatedCommunication {
   }
 
   countLines() {
-    let lines = 0;
-    const countLinesRecursive = (dir) => {
+    let lines = 0
+const countLinesRecursive = (dir) => {
       try {
         const items = fs.readdirSync(dir);
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (
             stat.isDirectory() &&
@@ -992,8 +985,8 @@ class CursorAutomatedCommunication {
   }
 
   findCodeFiles() {
-    const codeFiles = [];
-    const extensions = [
+    const codeFiles = []
+const extensions = [
       '.js',
       '.ts',
       '.jsx',
@@ -1004,14 +997,13 @@ class CursorAutomatedCommunication {
       '.c',
       '.go',
       '.rs',
-    ];
-
-    const findFilesRecursive = (dir) => {
+    ]
+const findFilesRecursive = (dir) => {
       try {
         const items = fs.readdirSync(dir);
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
 
           if (
             stat.isDirectory() &&
@@ -1215,9 +1207,8 @@ class CursorAutomatedCommunication {
           'User-Agent': 'CursorAutomatedCommunication/2.0',
           'X-Computer-ID': this.computerId,
         },
-      };
-
-      const req = https.request(options, (res) => {
+      }
+const req = https.request(options, (res) => {
         let responseData = '';
         res.on('data', (chunk) => (responseData += chunk));
         res.on('end', () => {
@@ -1263,8 +1254,8 @@ class CursorAutomatedCommunication {
   }
 
   checkBuildRequirements() {
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-    const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
 
     if (hasBuildScript) {
       this.logger.info('🔨 Build script detected, notifying Cursor AI');

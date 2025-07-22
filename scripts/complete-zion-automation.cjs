@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-
+const fs = require('fs')
+const path = require('path')
+const { exec } = require('child_process')
 class ZionAutomation {
   constructor() {
     this.fixes = [];
@@ -83,8 +82,8 @@ class ZionAutomation {
           // Fix malformed function names
           const paramMatch = fileName.match(/\[([^\]]+)\]/);
           if (paramMatch) {
-            const paramName = paramMatch[1];
-            const componentName =
+            const paramName = paramMatch[1]
+const componentName =
               paramName.charAt(0).toUpperCase() + paramName.slice(1) + 'Page';
 
             content = content.replace(
@@ -135,9 +134,8 @@ class ZionAutomation {
         'https://git.new/pathToRegexpError',
         'Missing parameter name',
         'path-to-regexp',
-      ];
-
-      const filesToCheck = [
+      ]
+const filesToCheck = [
         'next.config.js',
         'package.json',
         'scripts/simple-dev-server.cjs',
@@ -303,9 +301,8 @@ class ZionAutomation {
   }
 
   async generateReport() {
-    this.log('📊 Generating automation report...');
-
-    const report = {
+    this.log('📊 Generating automation report...')
+const report = {
       timestamp: new Date().toISOString(),
       fixes: this.fixes,
       issues: this.issues,
