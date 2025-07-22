@@ -6,4 +6,4 @@ export default function About() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

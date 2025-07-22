@@ -6,4 +6,4 @@ export default function MarketplaceErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

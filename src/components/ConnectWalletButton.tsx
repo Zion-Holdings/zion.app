@@ -6,4 +6,4 @@ export default function ConnectWalletButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

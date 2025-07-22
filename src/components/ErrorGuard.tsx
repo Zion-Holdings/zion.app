@@ -6,4 +6,4 @@ export default function ErrorGuard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

@@ -6,4 +6,4 @@ export default function ForumCategoryPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

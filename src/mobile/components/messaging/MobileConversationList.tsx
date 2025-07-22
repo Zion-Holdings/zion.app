@@ -6,4 +6,4 @@ export default function MobileConversationList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

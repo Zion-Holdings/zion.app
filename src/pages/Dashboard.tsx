@@ -6,4 +6,4 @@ export default function Dashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

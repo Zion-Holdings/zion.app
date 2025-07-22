@@ -6,4 +6,4 @@ export default function CandidateCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

@@ -6,4 +6,4 @@ export default function BetaBanner() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

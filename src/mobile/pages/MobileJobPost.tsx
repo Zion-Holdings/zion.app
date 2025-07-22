@@ -6,4 +6,4 @@ export default function MobileJobPost() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

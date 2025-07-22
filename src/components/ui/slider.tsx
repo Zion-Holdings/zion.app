@@ -6,4 +6,4 @@ export default function slider() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

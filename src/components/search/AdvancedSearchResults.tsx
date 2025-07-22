@@ -6,4 +6,4 @@ export default function AdvancedSearchResults() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

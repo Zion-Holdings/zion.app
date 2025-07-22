@@ -6,4 +6,4 @@ export default function ChatMessage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

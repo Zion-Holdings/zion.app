@@ -6,4 +6,4 @@ export default function PublishProduct() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

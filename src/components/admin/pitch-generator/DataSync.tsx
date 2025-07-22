@@ -6,4 +6,4 @@ export default function DataSync() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

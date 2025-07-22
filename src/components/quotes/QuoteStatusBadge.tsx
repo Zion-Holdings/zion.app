@@ -6,4 +6,4 @@ export default function QuoteStatusBadge() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

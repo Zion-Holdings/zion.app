@@ -6,4 +6,4 @@ export default function ResponsiveNavigation.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

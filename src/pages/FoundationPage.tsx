@@ -6,4 +6,4 @@ export default function FoundationPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

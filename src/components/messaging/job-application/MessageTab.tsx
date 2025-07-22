@@ -6,4 +6,4 @@ export default function MessageTab() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

@@ -6,7 +6,7 @@ export function useWebSocketReconnection(options: any = {}) {
   const attemptReconnection = useCallback(
     (callback: () => void) => {
       if (attemptCount >= (options.maxAttempts || 5)) {
-        setIsReconnecting(false);
+        setIsReconnecting(false)'
         return;
 
       setIsReconnecting(true);
@@ -36,4 +36,4 @@ export function useWebSocketReconnection(options: any = {}) {
     isReconnecting,
     attemptCount,
     attemptReconnection,
-    resetReconnection,}''''''''';
+    resetReconnection,}''''''''''';

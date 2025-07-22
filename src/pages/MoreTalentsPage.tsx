@@ -6,4 +6,4 @@ export default function MoreTalentsPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

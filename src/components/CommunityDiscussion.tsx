@@ -6,4 +6,4 @@ export default function CommunityDiscussion() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

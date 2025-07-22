@@ -6,4 +6,4 @@ export default function Fundraising() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

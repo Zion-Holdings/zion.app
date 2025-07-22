@@ -6,4 +6,4 @@ export default function CountryTabs() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

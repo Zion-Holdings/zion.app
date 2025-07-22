@@ -6,4 +6,4 @@ export default function LeaveReviewModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

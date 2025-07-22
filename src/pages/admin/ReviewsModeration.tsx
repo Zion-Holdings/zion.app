@@ -6,4 +6,4 @@ export default function ReviewsModeration() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

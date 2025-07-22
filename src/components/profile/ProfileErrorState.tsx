@@ -6,4 +6,4 @@ export default function ProfileErrorState() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

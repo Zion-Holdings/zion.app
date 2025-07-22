@@ -6,4 +6,4 @@ export default function ErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

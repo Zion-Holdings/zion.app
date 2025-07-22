@@ -6,4 +6,4 @@ export default function AIEnhancementDialog() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

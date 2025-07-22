@@ -6,4 +6,4 @@ export default function SmartContractDeployment() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

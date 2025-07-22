@@ -6,4 +6,4 @@ export default function HelpArticleView() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

@@ -6,4 +6,4 @@ export default function ApplicationsTracker() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

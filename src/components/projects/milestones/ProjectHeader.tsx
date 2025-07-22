@@ -6,4 +6,4 @@ export default function ProjectHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

@@ -6,4 +6,4 @@ export default function EnhancedNewsletterForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';

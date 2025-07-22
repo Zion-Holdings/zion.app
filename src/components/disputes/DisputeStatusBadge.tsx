@@ -6,4 +6,4 @@ export default function DisputeStatusBadge() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''
+}''''''''''';
