@@ -6,4 +6,4 @@ export default function RewardsCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
