@@ -6,4 +6,4 @@ export default function ServiceOnboarding() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

@@ -6,4 +6,4 @@ export default function ResetPassword() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
