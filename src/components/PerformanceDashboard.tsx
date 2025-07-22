@@ -6,4 +6,4 @@ export default function PerformanceDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

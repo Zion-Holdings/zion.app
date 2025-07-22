@@ -6,4 +6,4 @@ export default function NotificationCenter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
