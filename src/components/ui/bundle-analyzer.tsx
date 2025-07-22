@@ -5,5 +5,5 @@ export default function bundle-analyzer() {
       <h1>bundle-analyzer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function carousel() {
       <h1>carousel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function aspect-ratio() {
       <h1>aspect-ratio</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

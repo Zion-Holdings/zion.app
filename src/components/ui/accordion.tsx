@@ -5,5 +5,5 @@ export default function accordion() {
       <h1>accordion</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

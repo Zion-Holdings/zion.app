@@ -5,5 +5,5 @@ export default function dropdown-menu() {
       <h1>dropdown-menu</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

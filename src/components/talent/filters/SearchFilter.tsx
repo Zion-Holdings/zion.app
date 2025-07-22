@@ -5,5 +5,5 @@ export default function SearchFilter() {
       <h1>SearchFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

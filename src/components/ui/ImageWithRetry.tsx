@@ -5,5 +5,5 @@ export default function ImageWithRetry() {
       <h1>ImageWithRetry</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function command() {
       <h1>command</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

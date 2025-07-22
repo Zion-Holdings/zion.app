@@ -5,5 +5,5 @@ export default function chart() {
       <h1>chart</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

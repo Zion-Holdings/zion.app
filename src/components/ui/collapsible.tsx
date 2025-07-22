@@ -5,5 +5,5 @@ export default function collapsible() {
       <h1>collapsible</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

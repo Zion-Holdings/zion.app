@@ -5,5 +5,5 @@ export default function SkillsFilter() {
       <h1>SkillsFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

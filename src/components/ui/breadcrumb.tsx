@@ -5,5 +5,5 @@ export default function breadcrumb() {
       <h1>breadcrumb</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

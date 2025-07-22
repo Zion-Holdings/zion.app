@@ -5,5 +5,5 @@ export default function SortFilter() {
       <h1>SortFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

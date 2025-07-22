@@ -5,5 +5,5 @@ export default function alert-dialog() {
       <h1>alert-dialog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function clickable-badge() {
       <h1>clickable-badge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

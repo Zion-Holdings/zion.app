@@ -5,5 +5,5 @@ export default function alert() {
       <h1>alert</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

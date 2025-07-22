@@ -5,5 +5,5 @@ export default function drawer() {
       <h1>drawer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

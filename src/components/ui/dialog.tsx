@@ -5,5 +5,5 @@ export default function dialog() {
       <h1>dialog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

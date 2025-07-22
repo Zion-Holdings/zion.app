@@ -5,5 +5,5 @@ export default function avatar() {
       <h1>avatar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

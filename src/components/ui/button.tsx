@@ -5,5 +5,5 @@ export default function button() {
       <h1>button</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ErrorTriggerComponent() {
       <h1>ErrorTriggerComponent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

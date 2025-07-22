@@ -5,5 +5,5 @@ export default function badge() {
       <h1>badge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

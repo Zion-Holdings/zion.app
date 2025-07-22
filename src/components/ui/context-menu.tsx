@@ -5,5 +5,5 @@ export default function context-menu() {
       <h1>context-menu</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

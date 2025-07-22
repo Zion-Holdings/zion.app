@@ -5,5 +5,5 @@ export default function calendar() {
       <h1>calendar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
