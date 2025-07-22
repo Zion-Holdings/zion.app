@@ -1,2 +1,3 @@
  M .auto_commit_status
- M src/utils/imageOptimization.tsx
+ M src/utils/safe-component-loader.tsx
+ M src/utils/safeDynamicImport.tsx
