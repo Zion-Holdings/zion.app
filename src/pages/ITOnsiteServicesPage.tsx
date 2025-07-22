@@ -5,5 +5,5 @@ export default function ITOnsiteServicesPage() {
       <h1>ITOnsiteServicesPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

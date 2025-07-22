@@ -5,5 +5,5 @@ export default function Interviews() {
       <h1>Interviews</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

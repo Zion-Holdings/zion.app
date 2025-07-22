@@ -5,5 +5,5 @@ export default function FoundationPage() {
       <h1>FoundationPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

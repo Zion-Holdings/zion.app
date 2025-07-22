@@ -5,5 +5,5 @@ export default function ForgotPassword() {
       <h1>ForgotPassword</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

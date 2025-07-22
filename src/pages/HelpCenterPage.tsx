@@ -5,5 +5,5 @@ export default function HelpCenterPage() {
       <h1>HelpCenterPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function GPTLibraryPage() {
       <h1>GPTLibraryPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function JobDetails() {
       <h1>JobDetails</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

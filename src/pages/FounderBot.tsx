@@ -5,5 +5,5 @@ export default function FounderBot() {
       <h1>FounderBot</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

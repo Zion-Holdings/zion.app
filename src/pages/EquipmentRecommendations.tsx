@@ -5,5 +5,5 @@ export default function EquipmentRecommendations() {
       <h1>EquipmentRecommendations</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

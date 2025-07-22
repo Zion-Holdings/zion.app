@@ -5,5 +5,5 @@ export default function Featured() {
       <h1>Featured</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

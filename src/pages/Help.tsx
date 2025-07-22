@@ -5,5 +5,5 @@ export default function Help() {
       <h1>Help</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

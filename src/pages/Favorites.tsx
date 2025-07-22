@@ -5,5 +5,5 @@ export default function Favorites() {
       <h1>Favorites</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

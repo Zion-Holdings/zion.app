@@ -5,5 +5,5 @@ export default function InternationalProposals() {
       <h1>InternationalProposals</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

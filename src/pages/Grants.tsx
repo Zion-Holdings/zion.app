@@ -5,5 +5,5 @@ export default function Grants() {
       <h1>Grants</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

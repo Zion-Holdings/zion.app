@@ -5,5 +5,5 @@ export default function InnovationPage() {
       <h1>InnovationPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

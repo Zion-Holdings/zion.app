@@ -5,5 +5,5 @@ export default function GlobalMap() {
       <h1>GlobalMap</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

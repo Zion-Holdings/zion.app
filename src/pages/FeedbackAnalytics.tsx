@@ -5,5 +5,5 @@ export default function FeedbackAnalytics() {
       <h1>FeedbackAnalytics</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

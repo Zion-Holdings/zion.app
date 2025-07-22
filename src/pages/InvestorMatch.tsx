@@ -5,5 +5,5 @@ export default function InvestorMatch() {
       <h1>InvestorMatch</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

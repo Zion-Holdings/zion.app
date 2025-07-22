@@ -5,5 +5,5 @@ export default function ITSupportPage() {
       <h1>ITSupportPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

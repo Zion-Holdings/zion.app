@@ -5,5 +5,5 @@ export default function ForumPostPage() {
       <h1>ForumPostPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

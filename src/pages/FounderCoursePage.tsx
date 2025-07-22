@@ -5,5 +5,5 @@ export default function FounderCoursePage() {
       <h1>FounderCoursePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

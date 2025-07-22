@@ -5,5 +5,5 @@ export default function ExpoPage() {
       <h1>ExpoPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

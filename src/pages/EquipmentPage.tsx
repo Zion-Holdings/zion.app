@@ -5,5 +5,5 @@ export default function EquipmentPage() {
       <h1>EquipmentPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

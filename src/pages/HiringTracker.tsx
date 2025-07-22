@@ -5,5 +5,5 @@ export default function HiringTracker() {
       <h1>HiringTracker</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

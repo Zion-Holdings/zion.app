@@ -5,5 +5,5 @@ export default function FounderBackupVault() {
       <h1>FounderBackupVault</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

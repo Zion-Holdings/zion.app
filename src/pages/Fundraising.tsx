@@ -5,5 +5,5 @@ export default function Fundraising() {
       <h1>Fundraising</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
