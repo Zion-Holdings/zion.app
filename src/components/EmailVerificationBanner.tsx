@@ -6,4 +6,4 @@ export default function EmailVerificationBanner() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
