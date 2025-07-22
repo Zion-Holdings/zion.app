@@ -6,4 +6,4 @@ export default function AnalyticsConsentBanner.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
