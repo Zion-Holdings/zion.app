@@ -5,5 +5,5 @@ export default function TemplateList() {
       <h1>TemplateList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

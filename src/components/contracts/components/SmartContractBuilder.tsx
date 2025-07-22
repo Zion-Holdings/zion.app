@@ -5,5 +5,5 @@ export default function SmartContractBuilder() {
       <h1>SmartContractBuilder</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

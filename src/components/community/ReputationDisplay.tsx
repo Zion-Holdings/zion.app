@@ -5,5 +5,5 @@ export default function ReputationDisplay() {
       <h1>ReputationDisplay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Empty() {
       <h1>Empty</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

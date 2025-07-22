@@ -5,5 +5,5 @@ export default function NewPostDialog() {
       <h1>NewPostDialog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

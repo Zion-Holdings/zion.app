@@ -5,5 +5,5 @@ export default function ReplyCard() {
       <h1>ReplyCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

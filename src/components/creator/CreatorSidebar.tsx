@@ -5,5 +5,5 @@ export default function CreatorSidebar() {
       <h1>CreatorSidebar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

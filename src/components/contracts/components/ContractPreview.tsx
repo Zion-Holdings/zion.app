@@ -5,5 +5,5 @@ export default function ContractPreview() {
       <h1>ContractPreview</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

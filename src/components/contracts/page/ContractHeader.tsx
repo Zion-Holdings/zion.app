@@ -5,5 +5,5 @@ export default function ContractHeader() {
       <h1>ContractHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

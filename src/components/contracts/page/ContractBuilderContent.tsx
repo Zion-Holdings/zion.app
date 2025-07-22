@@ -5,5 +5,5 @@ export default function ContractBuilderContent() {
       <h1>ContractBuilderContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ContractTypeCards() {
       <h1>ContractTypeCards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ReplyForm() {
       <h1>ReplyForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

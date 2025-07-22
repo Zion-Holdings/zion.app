@@ -5,5 +5,5 @@ export default function AdditionalClausesFields() {
       <h1>AdditionalClausesFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

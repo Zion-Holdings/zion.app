@@ -5,5 +5,5 @@ export default function TemplateManager() {
       <h1>TemplateManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

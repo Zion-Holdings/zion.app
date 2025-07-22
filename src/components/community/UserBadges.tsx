@@ -5,5 +5,5 @@ export default function UserBadges() {
       <h1>UserBadges</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

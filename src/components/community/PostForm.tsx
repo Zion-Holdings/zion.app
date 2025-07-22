@@ -5,5 +5,5 @@ export default function PostForm() {
       <h1>PostForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

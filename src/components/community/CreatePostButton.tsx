@@ -5,5 +5,5 @@ export default function CreatePostButton() {
       <h1>CreatePostButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
