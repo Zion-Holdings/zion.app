@@ -1,9 +1,1 @@
  M .auto_commit_status
- M src/routes/ErrorRoutes.tsx
- M src/routes/GovernanceRoutes.tsx
- M src/routes/MarketplaceRoutes.tsx
- M src/routes/MobileAppRoutes.tsx
- M src/routes/PublicRoutes.tsx
- M src/routes/TalentRoutes.tsx
- M src/routes/config.tsx
- M src/routes/index.tsx
