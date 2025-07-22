@@ -6,4 +6,4 @@ export default function RoleManagement() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

@@ -6,4 +6,4 @@ export default function RecentActivity() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

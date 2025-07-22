@@ -6,4 +6,4 @@ export default function EnterpriseTestimonials() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
