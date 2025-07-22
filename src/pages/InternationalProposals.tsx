@@ -6,4 +6,4 @@ export default function InternationalProposals() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

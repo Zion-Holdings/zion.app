@@ -6,4 +6,4 @@ export default function HelpCenterPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

@@ -6,4 +6,4 @@ export default function InvestorMatch() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
