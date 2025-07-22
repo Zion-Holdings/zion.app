@@ -6,4 +6,4 @@ export default function NotificationItem() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
