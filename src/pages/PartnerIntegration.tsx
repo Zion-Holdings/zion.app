@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function PartnerIntegration() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function PartnerIntegration() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
