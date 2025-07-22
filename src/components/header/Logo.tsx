@@ -6,4 +6,4 @@ export default function Logo() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
