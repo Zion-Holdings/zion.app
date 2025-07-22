@@ -5,5 +5,5 @@ export default function ProductGallery() {
       <h1>ProductGallery</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

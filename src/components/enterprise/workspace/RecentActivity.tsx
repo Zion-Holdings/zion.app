@@ -5,5 +5,5 @@ export default function RecentActivity() {
       <h1>RecentActivity</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

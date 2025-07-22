@@ -5,5 +5,5 @@ export default function PaymentMethods() {
       <h1>PaymentMethods</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

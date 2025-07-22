@@ -5,5 +5,5 @@ export default function UserProgress() {
       <h1>UserProgress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

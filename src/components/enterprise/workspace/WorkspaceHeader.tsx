@@ -5,5 +5,5 @@ export default function WorkspaceHeader() {
       <h1>WorkspaceHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

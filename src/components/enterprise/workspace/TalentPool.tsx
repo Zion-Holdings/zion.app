@@ -5,5 +5,5 @@ export default function TalentPool() {
       <h1>TalentPool</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

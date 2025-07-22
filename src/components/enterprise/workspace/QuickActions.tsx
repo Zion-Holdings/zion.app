@@ -5,5 +5,5 @@ export default function QuickActions() {
       <h1>QuickActions</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

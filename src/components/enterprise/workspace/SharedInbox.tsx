@@ -5,5 +5,5 @@ export default function SharedInbox() {
       <h1>SharedInbox</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

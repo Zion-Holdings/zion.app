@@ -5,5 +5,5 @@ export default function ExpoHero() {
       <h1>ExpoHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

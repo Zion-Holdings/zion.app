@@ -5,5 +5,5 @@ export default function CompanyDashboard() {
       <h1>CompanyDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AgendaTimeline() {
       <h1>AgendaTimeline</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function FeedbackWidget() {
       <h1>FeedbackWidget</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

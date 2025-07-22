@@ -5,5 +5,5 @@ export default function MultiverseLaunchesSection() {
       <h1>MultiverseLaunchesSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

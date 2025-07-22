@@ -5,5 +5,5 @@ export default function InvoiceHistory() {
       <h1>InvoiceHistory</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

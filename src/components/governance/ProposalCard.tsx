@@ -5,5 +5,5 @@ export default function ProposalCard() {
       <h1>ProposalCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

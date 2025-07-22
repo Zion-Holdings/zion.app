@@ -5,5 +5,5 @@ export default function AchievementBadges() {
       <h1>AchievementBadges</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

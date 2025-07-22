@@ -5,5 +5,5 @@ export default function KeynotesSection() {
       <h1>KeynotesSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

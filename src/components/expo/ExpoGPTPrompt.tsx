@@ -5,5 +5,5 @@ export default function ExpoGPTPrompt() {
       <h1>ExpoGPTPrompt</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

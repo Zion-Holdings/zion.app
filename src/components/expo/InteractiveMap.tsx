@@ -5,5 +5,5 @@ export default function InteractiveMap() {
       <h1>InteractiveMap</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

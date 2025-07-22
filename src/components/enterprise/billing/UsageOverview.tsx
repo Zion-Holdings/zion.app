@@ -5,5 +5,5 @@ export default function UsageOverview() {
       <h1>UsageOverview</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

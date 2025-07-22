@@ -5,5 +5,5 @@ export default function BadgeEarned() {
       <h1>BadgeEarned</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

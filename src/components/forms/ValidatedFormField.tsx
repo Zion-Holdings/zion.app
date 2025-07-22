@@ -5,5 +5,5 @@ export default function ValidatedFormField() {
       <h1>ValidatedFormField</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
