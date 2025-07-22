@@ -5,5 +5,5 @@ export default function MobileFilterDrawer() {
       <h1>MobileFilterDrawer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function FilterSidebar() {
       <h1>FilterSidebar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

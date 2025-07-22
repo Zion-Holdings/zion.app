@@ -5,5 +5,5 @@ export default function help-content() {
       <h1>help-content</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

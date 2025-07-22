@@ -5,5 +5,5 @@ export default function ErrorBanner() {
       <h1>ErrorBanner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

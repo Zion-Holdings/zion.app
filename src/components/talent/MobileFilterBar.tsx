@@ -5,5 +5,5 @@ export default function MobileFilterBar() {
       <h1>MobileFilterBar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function TalentPlaceholder() {
       <h1>TalentPlaceholder</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

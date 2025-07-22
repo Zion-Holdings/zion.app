@@ -5,5 +5,5 @@ export default function TalentGrid() {
       <h1>TalentGrid</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

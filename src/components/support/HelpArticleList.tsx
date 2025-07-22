@@ -5,5 +5,5 @@ export default function HelpArticleList() {
       <h1>HelpArticleList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

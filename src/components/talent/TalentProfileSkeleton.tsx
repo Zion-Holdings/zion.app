@@ -5,5 +5,5 @@ export default function TalentProfileSkeleton() {
       <h1>TalentProfileSkeleton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

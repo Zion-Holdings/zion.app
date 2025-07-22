@@ -5,5 +5,5 @@ export default function ResultsHeader() {
       <h1>ResultsHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

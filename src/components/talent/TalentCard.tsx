@@ -5,5 +5,5 @@ export default function TalentCard() {
       <h1>TalentCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ChatBotPanel() {
       <h1>ChatBotPanel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

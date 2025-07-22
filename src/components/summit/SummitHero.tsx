@@ -5,5 +5,5 @@ export default function SummitHero() {
       <h1>SummitHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function RegionFilter() {
       <h1>RegionFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

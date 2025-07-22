@@ -5,5 +5,5 @@ export default function TalentDetails() {
       <h1>TalentDetails</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

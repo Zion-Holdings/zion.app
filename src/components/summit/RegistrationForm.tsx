@@ -5,5 +5,5 @@ export default function RegistrationForm() {
       <h1>RegistrationForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

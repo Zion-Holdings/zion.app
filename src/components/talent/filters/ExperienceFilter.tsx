@@ -5,5 +5,5 @@ export default function ExperienceFilter() {
       <h1>ExperienceFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

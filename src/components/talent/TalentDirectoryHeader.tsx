@@ -5,5 +5,5 @@ export default function TalentDirectoryHeader() {
       <h1>TalentDirectoryHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

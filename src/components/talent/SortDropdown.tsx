@@ -5,5 +5,5 @@ export default function SortDropdown() {
       <h1>SortDropdown</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

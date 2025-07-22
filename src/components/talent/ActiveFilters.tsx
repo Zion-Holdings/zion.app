@@ -5,5 +5,5 @@ export default function ActiveFilters() {
       <h1>ActiveFilters</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

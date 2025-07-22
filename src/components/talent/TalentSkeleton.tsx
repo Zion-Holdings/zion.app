@@ -5,5 +5,5 @@ export default function TalentSkeleton() {
       <h1>TalentSkeleton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
