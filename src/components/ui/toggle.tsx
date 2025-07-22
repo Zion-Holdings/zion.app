@@ -6,4 +6,4 @@ export default function toggle() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
