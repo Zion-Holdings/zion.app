@@ -6,4 +6,4 @@ export default function sidebar-main() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
