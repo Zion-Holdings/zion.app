@@ -1,5 +1,2 @@
  M .auto_commit_status
- M automation/core/TaskScheduler.js
- M src/stories/TalentProfilePage.stories.tsx
- M src/stubs/react-router-dom.tsx
-?? automation/infinite-improvement-loop.js
+?? automation/ai-improvement-agents.js
