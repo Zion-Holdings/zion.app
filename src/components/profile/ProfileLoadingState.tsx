@@ -6,4 +6,4 @@ export default function ProfileLoadingState() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

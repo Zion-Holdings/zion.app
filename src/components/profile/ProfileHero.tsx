@@ -6,4 +6,4 @@ export default function ProfileHero() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

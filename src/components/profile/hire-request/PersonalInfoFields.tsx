@@ -6,4 +6,4 @@ export default function PersonalInfoFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
