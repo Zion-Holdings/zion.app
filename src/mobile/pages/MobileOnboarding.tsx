@@ -6,4 +6,4 @@ export default function MobileOnboarding() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
