@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function CertificationsList() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function CertificationsList() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''

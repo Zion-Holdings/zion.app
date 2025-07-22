@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function ReferralStats() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function ReferralStats() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''

@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function RateOptimizationSection() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function RateOptimizationSection() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
