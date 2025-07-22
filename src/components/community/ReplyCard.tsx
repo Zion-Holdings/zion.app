@@ -6,4 +6,4 @@ export default function ReplyCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

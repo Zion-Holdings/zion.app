@@ -6,4 +6,4 @@ export default function ApiWebhooks() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

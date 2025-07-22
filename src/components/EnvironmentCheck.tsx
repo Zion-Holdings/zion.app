@@ -6,4 +6,4 @@ export default function EnvironmentCheck() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

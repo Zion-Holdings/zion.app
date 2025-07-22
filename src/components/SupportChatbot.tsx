@@ -6,4 +6,4 @@ export default function SupportChatbot() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

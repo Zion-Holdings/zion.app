@@ -6,4 +6,4 @@ export default function accordion() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

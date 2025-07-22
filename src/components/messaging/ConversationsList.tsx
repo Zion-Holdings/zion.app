@@ -6,4 +6,4 @@ export default function ConversationsList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

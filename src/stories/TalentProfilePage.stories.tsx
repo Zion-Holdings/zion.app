@@ -6,4 +6,4 @@ export default function TalentProfilePage.stories() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

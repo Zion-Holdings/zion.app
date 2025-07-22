@@ -6,4 +6,4 @@ export default function ProjectForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

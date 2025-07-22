@@ -6,4 +6,4 @@ export default function PartnerBoothsSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

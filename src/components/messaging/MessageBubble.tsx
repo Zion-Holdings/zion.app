@@ -6,4 +6,4 @@ export default function MessageBubble() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

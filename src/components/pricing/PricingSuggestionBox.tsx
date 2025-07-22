@@ -6,4 +6,4 @@ export default function PricingSuggestionBox() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

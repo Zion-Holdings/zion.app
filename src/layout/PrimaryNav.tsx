@@ -6,4 +6,4 @@ export default function PrimaryNav() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

@@ -6,4 +6,4 @@ export default function AIEnhancementPanel() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

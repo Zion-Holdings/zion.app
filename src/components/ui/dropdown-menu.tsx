@@ -6,4 +6,4 @@ export default function dropdown-menu() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

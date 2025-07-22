@@ -6,4 +6,4 @@ export default function ApiPlayground() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

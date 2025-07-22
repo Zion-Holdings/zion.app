@@ -6,4 +6,4 @@ export default function FraudTabContent() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

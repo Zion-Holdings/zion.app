@@ -6,4 +6,4 @@ export default function WhitelabelContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

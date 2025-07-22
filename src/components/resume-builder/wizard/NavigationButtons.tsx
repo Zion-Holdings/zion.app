@@ -6,4 +6,4 @@ export default function NavigationButtons() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

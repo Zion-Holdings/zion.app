@@ -6,4 +6,4 @@ export default function Wallet() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

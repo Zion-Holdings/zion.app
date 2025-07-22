@@ -6,4 +6,4 @@ export default function BulkAddSkills() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

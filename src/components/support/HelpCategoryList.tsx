@@ -6,4 +6,4 @@ export default function HelpCategoryList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

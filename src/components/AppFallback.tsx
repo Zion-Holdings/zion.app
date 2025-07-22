@@ -6,4 +6,4 @@ export default function AppFallback() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

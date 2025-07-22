@@ -6,4 +6,4 @@ export default function ApplicationScoreCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

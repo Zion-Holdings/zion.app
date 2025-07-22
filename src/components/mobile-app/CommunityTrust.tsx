@@ -6,4 +6,4 @@ export default function CommunityTrust() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

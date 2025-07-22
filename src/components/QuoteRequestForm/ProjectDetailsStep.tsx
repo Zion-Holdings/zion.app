@@ -6,4 +6,4 @@ export default function ProjectDetailsStep() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

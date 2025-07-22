@@ -6,4 +6,4 @@ export default function BrowseFilters() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

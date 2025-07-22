@@ -6,4 +6,4 @@ export default function WalletContextWrapper() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

@@ -6,4 +6,4 @@ export default function UpdatePassword() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

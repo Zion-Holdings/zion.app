@@ -6,4 +6,4 @@ export default function MilestonesList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

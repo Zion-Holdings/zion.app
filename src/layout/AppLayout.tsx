@@ -6,4 +6,4 @@ export default function AppLayout() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

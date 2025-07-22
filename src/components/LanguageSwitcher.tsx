@@ -6,4 +6,4 @@ export default function LanguageSwitcher() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

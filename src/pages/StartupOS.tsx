@@ -6,4 +6,4 @@ export default function StartupOS() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

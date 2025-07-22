@@ -6,4 +6,4 @@ export default function TeamActivity() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

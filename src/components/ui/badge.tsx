@@ -6,4 +6,4 @@ export default function badge() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

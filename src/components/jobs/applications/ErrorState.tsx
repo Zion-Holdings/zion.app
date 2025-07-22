@@ -6,4 +6,4 @@ export default function ErrorState() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';

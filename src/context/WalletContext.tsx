@@ -6,4 +6,4 @@ export default function WalletContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''
+}''''''''''''''''';
