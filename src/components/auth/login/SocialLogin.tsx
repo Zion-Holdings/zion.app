@@ -6,4 +6,4 @@ export default function SocialLogin() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
