@@ -6,4 +6,4 @@ export default function ApplyToJobModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

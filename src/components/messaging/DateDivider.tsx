@@ -6,4 +6,4 @@ export default function DateDivider() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
