@@ -5,5 +5,5 @@ export default function ZionHireAI() {
       <h1>ZionHireAI</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

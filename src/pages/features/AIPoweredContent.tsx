@@ -5,5 +5,5 @@ export default function AIPoweredContent() {
       <h1>AIPoweredContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

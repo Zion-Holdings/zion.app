@@ -5,5 +5,5 @@ export default function InstantMessaging() {
       <h1>InstantMessaging</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

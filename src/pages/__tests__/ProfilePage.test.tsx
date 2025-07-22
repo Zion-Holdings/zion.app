@@ -5,5 +5,5 @@ export default function ProfilePage.test() {
       <h1>ProfilePage.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

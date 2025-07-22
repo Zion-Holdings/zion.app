@@ -5,5 +5,5 @@ export default function NationDetailPage() {
       <h1>NationDetailPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

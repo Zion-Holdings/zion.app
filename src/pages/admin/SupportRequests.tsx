@@ -5,5 +5,5 @@ export default function SupportRequests() {
       <h1>SupportRequests</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

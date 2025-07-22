@@ -5,5 +5,5 @@ export default function verify-email() {
       <h1>verify-email</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

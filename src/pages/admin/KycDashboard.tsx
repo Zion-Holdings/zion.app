@@ -5,5 +5,5 @@ export default function KycDashboard() {
       <h1>KycDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

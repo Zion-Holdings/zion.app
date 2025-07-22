@@ -5,5 +5,5 @@ export default function ZionBrain() {
       <h1>ZionBrain</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

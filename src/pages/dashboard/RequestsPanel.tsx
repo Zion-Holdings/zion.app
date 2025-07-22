@@ -5,5 +5,5 @@ export default function RequestsPanel() {
       <h1>RequestsPanel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

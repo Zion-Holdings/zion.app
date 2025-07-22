@@ -5,5 +5,5 @@ export default function Ecommerce() {
       <h1>Ecommerce</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

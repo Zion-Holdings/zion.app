@@ -5,5 +5,5 @@ export default function AICorePage() {
       <h1>AICorePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

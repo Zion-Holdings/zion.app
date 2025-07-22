@@ -5,5 +5,5 @@ export default function GenesisDeployPage() {
       <h1>GenesisDeployPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

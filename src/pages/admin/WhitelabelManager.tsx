@@ -5,5 +5,5 @@ export default function WhitelabelManager() {
       <h1>WhitelabelManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ListingModeration() {
       <h1>ListingModeration</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

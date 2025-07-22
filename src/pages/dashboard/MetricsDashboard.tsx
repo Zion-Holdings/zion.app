@@ -5,5 +5,5 @@ export default function MetricsDashboard() {
       <h1>MetricsDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

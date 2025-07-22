@@ -5,5 +5,5 @@ export default function ZionBook() {
       <h1>ZionBook</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

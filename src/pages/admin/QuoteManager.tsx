@@ -5,5 +5,5 @@ export default function QuoteManager() {
       <h1>QuoteManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

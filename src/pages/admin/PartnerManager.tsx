@@ -5,5 +5,5 @@ export default function PartnerManager() {
       <h1>PartnerManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

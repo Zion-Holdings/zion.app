@@ -5,5 +5,5 @@ export default function TokenManager() {
       <h1>TokenManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

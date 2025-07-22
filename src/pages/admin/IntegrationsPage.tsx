@@ -5,5 +5,5 @@ export default function IntegrationsPage() {
       <h1>IntegrationsPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

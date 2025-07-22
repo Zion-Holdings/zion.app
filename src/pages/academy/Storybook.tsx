@@ -5,5 +5,5 @@ export default function Storybook() {
       <h1>Storybook</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

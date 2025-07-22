@@ -5,5 +5,5 @@ export default function DisputeDetailPage() {
       <h1>DisputeDetailPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
