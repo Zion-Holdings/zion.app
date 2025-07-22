@@ -5,5 +5,5 @@ export default function PageViewsTable() {
       <h1>PageViewsTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

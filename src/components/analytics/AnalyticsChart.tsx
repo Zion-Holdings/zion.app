@@ -5,5 +5,5 @@ export default function AnalyticsChart() {
       <h1>AnalyticsChart</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function LoginModal() {
       <h1>LoginModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

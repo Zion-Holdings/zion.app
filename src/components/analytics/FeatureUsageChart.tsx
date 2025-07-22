@@ -5,5 +5,5 @@ export default function FeatureUsageChart() {
       <h1>FeatureUsageChart</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

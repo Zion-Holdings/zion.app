@@ -5,5 +5,5 @@ export default function LoginForm.test() {
       <h1>LoginForm.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

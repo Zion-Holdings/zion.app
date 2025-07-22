@@ -5,5 +5,5 @@ export default function CardForm() {
       <h1>CardForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

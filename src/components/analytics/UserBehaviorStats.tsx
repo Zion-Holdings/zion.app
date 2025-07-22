@@ -5,5 +5,5 @@ export default function UserBehaviorStats() {
       <h1>UserBehaviorStats</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

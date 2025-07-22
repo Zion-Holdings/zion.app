@@ -5,5 +5,5 @@ export default function AnalyticsContainer() {
       <h1>AnalyticsContainer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

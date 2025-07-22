@@ -5,5 +5,5 @@ export default function CartDrawer() {
       <h1>CartDrawer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function LoginForm() {
       <h1>LoginForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

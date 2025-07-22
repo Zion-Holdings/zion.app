@@ -5,5 +5,5 @@ export default function SocialShareButtons() {
       <h1>SocialShareButtons</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MiniCartPreview() {
       <h1>MiniCartPreview</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

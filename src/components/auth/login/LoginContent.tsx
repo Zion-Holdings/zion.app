@@ -5,5 +5,5 @@ export default function LoginContent() {
       <h1>LoginContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

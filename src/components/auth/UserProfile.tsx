@@ -5,5 +5,5 @@ export default function UserProfile() {
       <h1>UserProfile</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

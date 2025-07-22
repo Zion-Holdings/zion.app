@@ -5,5 +5,5 @@ export default function CartItem() {
       <h1>CartItem</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

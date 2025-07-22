@@ -5,5 +5,5 @@ export default function SocialLogin() {
       <h1>SocialLogin</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

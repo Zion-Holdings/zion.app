@@ -5,5 +5,5 @@ export default function Web3Login() {
       <h1>Web3Login</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AuthorBio() {
       <h1>AuthorBio</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function LoginCard() {
       <h1>LoginCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

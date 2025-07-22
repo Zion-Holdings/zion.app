@@ -5,5 +5,5 @@ export default function ConversionAnalysisChart() {
       <h1>ConversionAnalysisChart</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
