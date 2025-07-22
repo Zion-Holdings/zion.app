@@ -6,4 +6,4 @@ export default function enhanced-loading-states() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
