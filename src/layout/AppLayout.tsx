@@ -5,5 +5,5 @@ export default function AppLayout() {
       <h1>AppLayout</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

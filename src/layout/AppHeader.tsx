@@ -5,5 +5,5 @@ export default function AppHeader() {
       <h1>AppHeader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

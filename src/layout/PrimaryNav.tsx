@@ -5,5 +5,5 @@ export default function PrimaryNav() {
       <h1>PrimaryNav</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

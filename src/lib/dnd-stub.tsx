@@ -5,5 +5,5 @@ export default function dnd-stub() {
       <h1>dnd-stub</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

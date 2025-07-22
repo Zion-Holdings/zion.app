@@ -5,5 +5,5 @@ export default function TermsOfService() {
       <h1>TermsOfService</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

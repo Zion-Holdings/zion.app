@@ -5,5 +5,5 @@ export default function AuthLayout() {
       <h1>AuthLayout</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
