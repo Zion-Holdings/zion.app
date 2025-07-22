@@ -6,4 +6,4 @@ export default function RequestService() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
