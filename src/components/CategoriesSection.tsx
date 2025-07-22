@@ -5,5 +5,5 @@ export default function CategoriesSection() {
       <h1>CategoriesSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function CategoryCard() {
       <h1>CategoryCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ChatAssistantTrigger() {
       <h1>ChatAssistantTrigger</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

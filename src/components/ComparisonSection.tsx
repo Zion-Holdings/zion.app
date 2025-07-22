@@ -5,5 +5,5 @@ export default function ComparisonSection() {
       <h1>ComparisonSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

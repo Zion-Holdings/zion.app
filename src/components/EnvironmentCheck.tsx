@@ -5,5 +5,5 @@ export default function EnvironmentCheck() {
       <h1>EnvironmentCheck</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

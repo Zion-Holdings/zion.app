@@ -5,5 +5,5 @@ export default function EquipmentErrorBoundary() {
       <h1>EquipmentErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

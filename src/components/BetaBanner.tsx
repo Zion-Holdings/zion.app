@@ -5,5 +5,5 @@ export default function BetaBanner() {
       <h1>BetaBanner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

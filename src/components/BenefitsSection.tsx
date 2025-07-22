@@ -5,5 +5,5 @@ export default function BenefitsSection() {
       <h1>BenefitsSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

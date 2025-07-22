@@ -5,5 +5,5 @@ export default function BreadcrumbJsonLd() {
       <h1>BreadcrumbJsonLd</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

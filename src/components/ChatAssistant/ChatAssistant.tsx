@@ -5,5 +5,5 @@ export default function ChatAssistant() {
       <h1>ChatAssistant</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

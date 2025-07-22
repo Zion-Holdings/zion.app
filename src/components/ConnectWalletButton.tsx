@@ -5,5 +5,5 @@ export default function ConnectWalletButton() {
       <h1>ConnectWalletButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

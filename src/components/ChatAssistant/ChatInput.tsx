@@ -5,5 +5,5 @@ export default function ChatInput() {
       <h1>ChatInput</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ChatWidget() {
       <h1>ChatWidget</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

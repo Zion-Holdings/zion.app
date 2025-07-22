@@ -5,5 +5,5 @@ export default function DynamicListingPage() {
       <h1>DynamicListingPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

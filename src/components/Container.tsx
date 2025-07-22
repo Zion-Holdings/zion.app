@@ -5,5 +5,5 @@ export default function Container() {
       <h1>Container</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function BackToTopButton() {
       <h1>BackToTopButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

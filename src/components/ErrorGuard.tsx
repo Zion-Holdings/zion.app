@@ -5,5 +5,5 @@ export default function ErrorGuard() {
       <h1>ErrorGuard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

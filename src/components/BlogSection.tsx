@@ -5,5 +5,5 @@ export default function BlogSection() {
       <h1>BlogSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
