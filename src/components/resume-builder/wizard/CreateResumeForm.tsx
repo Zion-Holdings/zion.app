@@ -5,5 +5,5 @@ export default function CreateResumeForm() {
       <h1>CreateResumeForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

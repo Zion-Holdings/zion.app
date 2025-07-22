@@ -5,5 +5,5 @@ export default function PortfolioBuilder() {
       <h1>PortfolioBuilder</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

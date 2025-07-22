@@ -5,5 +5,5 @@ export default function WorkExperienceSection() {
       <h1>WorkExperienceSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

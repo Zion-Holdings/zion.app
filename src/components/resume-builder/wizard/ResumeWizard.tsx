@@ -5,5 +5,5 @@ export default function ResumeWizard() {
       <h1>ResumeWizard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

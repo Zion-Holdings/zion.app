@@ -5,5 +5,5 @@ export default function ReviewsList() {
       <h1>ReviewsList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

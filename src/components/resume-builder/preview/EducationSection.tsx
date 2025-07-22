@@ -5,5 +5,5 @@ export default function EducationSection() {
       <h1>EducationSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

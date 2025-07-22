@@ -5,5 +5,5 @@ export default function ReviewForm() {
       <h1>ReviewForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

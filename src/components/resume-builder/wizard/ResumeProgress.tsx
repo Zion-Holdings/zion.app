@@ -5,5 +5,5 @@ export default function ResumeProgress() {
       <h1>ResumeProgress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

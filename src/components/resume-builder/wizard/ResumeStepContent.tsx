@@ -5,5 +5,5 @@ export default function ResumeStepContent() {
       <h1>ResumeStepContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

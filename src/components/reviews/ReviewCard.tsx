@@ -5,5 +5,5 @@ export default function ReviewCard() {
       <h1>ReviewCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

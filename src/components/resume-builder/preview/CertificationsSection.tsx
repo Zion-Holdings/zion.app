@@ -5,5 +5,5 @@ export default function CertificationsSection() {
       <h1>CertificationsSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

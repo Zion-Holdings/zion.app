@@ -5,5 +5,5 @@ export default function EmptyResumeState() {
       <h1>EmptyResumeState</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

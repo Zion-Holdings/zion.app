@@ -5,5 +5,5 @@ export default function LeaveReviewModal() {
       <h1>LeaveReviewModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

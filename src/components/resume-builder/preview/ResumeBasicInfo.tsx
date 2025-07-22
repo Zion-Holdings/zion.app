@@ -5,5 +5,5 @@ export default function ResumeBasicInfo() {
       <h1>ResumeBasicInfo</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

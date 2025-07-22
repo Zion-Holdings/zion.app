@@ -5,5 +5,5 @@ export default function ProjectCard() {
       <h1>ProjectCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

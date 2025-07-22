@@ -5,5 +5,5 @@ export default function SkillsSection() {
       <h1>SkillsSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

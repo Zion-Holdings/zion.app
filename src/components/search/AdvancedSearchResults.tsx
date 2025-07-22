@@ -5,5 +5,5 @@ export default function AdvancedSearchResults() {
       <h1>AdvancedSearchResults</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
