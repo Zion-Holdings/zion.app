@@ -5,5 +5,5 @@ export default function LanguageDetectionPopup() {
       <h1>LanguageDetectionPopup</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

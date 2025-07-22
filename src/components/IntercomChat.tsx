@@ -5,5 +5,5 @@ export default function IntercomChat() {
       <h1>IntercomChat</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

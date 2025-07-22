@@ -5,5 +5,5 @@ export default function ListingScoreCard() {
       <h1>ListingScoreCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

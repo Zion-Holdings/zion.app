@@ -5,5 +5,5 @@ export default function GlobalErrorHandler() {
       <h1>GlobalErrorHandler</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

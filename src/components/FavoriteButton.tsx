@@ -5,5 +5,5 @@ export default function FavoriteButton() {
       <h1>FavoriteButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

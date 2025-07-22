@@ -5,5 +5,5 @@ export default function HowItWorksSection() {
       <h1>HowItWorksSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

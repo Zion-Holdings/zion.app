@@ -5,5 +5,5 @@ export default function FeaturedListingsSection() {
       <h1>FeaturedListingsSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

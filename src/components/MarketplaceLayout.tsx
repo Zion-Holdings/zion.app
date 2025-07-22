@@ -5,5 +5,5 @@ export default function MarketplaceLayout() {
       <h1>MarketplaceLayout</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

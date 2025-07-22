@@ -5,5 +5,5 @@ export default function MarketplaceSidebar() {
       <h1>MarketplaceSidebar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

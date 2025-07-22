@@ -5,5 +5,5 @@ export default function LoaderOverlay() {
       <h1>LoaderOverlay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

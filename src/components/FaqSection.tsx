@@ -5,5 +5,5 @@ export default function FaqSection() {
       <h1>FaqSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

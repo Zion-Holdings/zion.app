@@ -5,5 +5,5 @@ export default function JsonLd() {
       <h1>JsonLd</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

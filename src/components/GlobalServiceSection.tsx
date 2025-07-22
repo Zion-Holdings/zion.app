@@ -5,5 +5,5 @@ export default function GlobalServiceSection() {
       <h1>GlobalServiceSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

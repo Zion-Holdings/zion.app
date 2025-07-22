@@ -5,5 +5,5 @@ export default function MarketplaceErrorBoundary() {
       <h1>MarketplaceErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

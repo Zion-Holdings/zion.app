@@ -5,5 +5,5 @@ export default function Footer() {
       <h1>Footer</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function HydrationErrorBoundary() {
       <h1>HydrationErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

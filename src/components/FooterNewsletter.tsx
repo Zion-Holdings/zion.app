@@ -5,5 +5,5 @@ export default function FooterNewsletter() {
       <h1>FooterNewsletter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function HeroSection() {
       <h1>HeroSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

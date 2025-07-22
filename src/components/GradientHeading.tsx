@@ -5,5 +5,5 @@ export default function GradientHeading() {
       <h1>GradientHeading</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

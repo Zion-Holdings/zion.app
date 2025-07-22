@@ -5,5 +5,5 @@ export default function ErrorResetOnRouteChange() {
       <h1>ErrorResetOnRouteChange</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

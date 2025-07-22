@@ -5,5 +5,5 @@ export default function FeaturesGuideSection() {
       <h1>FeaturesGuideSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ErrorOverlay() {
       <h1>ErrorOverlay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

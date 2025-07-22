@@ -5,5 +5,5 @@ export default function LanguageSwitcher() {
       <h1>LanguageSwitcher</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

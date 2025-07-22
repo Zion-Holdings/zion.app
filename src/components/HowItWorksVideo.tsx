@@ -5,5 +5,5 @@ export default function HowItWorksVideo() {
       <h1>HowItWorksVideo</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

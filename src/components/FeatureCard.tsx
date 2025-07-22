@@ -5,5 +5,5 @@ export default function FeatureCard() {
       <h1>FeatureCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
