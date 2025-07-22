@@ -5,5 +5,5 @@ export default function NextSeo() {
       <h1>NextSeo</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function PageTransition() {
       <h1>PageTransition</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

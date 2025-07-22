@@ -5,5 +5,5 @@ export default function PasswordStrengthMeter() {
       <h1>PasswordStrengthMeter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

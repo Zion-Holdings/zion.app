@@ -5,5 +5,5 @@ export default function NotFound() {
       <h1>NotFound</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function PwaInstallButton() {
       <h1>PwaInstallButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

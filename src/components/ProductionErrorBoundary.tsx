@@ -5,5 +5,5 @@ export default function ProductionErrorBoundary() {
       <h1>ProductionErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

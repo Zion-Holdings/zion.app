@@ -5,5 +5,5 @@ export default function NotificationCenter() {
       <h1>NotificationCenter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

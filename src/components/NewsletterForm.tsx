@@ -5,5 +5,5 @@ export default function NewsletterForm() {
       <h1>NewsletterForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function NavLink() {
       <h1>NavLink</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

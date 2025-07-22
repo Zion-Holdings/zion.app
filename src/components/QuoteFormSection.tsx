@@ -5,5 +5,5 @@ export default function QuoteFormSection() {
       <h1>QuoteFormSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

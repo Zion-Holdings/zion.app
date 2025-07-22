@@ -5,5 +5,5 @@ export default function SummaryStep() {
       <h1>SummaryStep</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

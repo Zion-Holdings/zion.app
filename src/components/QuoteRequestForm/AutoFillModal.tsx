@@ -5,5 +5,5 @@ export default function AutoFillModal() {
       <h1>AutoFillModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

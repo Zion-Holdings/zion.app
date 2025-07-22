@@ -5,5 +5,5 @@ export default function NotificationBell() {
       <h1>NotificationBell</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

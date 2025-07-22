@@ -5,5 +5,5 @@ export default function TimelineStep() {
       <h1>TimelineStep</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

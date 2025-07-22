@@ -5,5 +5,5 @@ export default function ServiceTypeStep() {
       <h1>ServiceTypeStep</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function OfflineIndicator() {
       <h1>OfflineIndicator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

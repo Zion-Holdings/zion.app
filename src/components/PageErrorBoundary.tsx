@@ -5,5 +5,5 @@ export default function PageErrorBoundary() {
       <h1>PageErrorBoundary</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ProductSubmissionForm() {
       <h1>ProductSubmissionForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

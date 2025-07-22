@@ -5,5 +5,5 @@ export default function ModeToggle() {
       <h1>ModeToggle</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

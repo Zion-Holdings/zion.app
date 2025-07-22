@@ -5,5 +5,5 @@ export default function StepProgress() {
       <h1>StepProgress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

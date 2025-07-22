@@ -5,5 +5,5 @@ export default function ProjectDetailsStep() {
       <h1>ProjectDetailsStep</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

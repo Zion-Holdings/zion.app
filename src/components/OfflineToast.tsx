@@ -5,5 +5,5 @@ export default function OfflineToast() {
       <h1>OfflineToast</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

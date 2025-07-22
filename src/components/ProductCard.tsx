@@ -5,5 +5,5 @@ export default function ProductCard() {
       <h1>ProductCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
