@@ -6,4 +6,4 @@ export default function JobMatches() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
