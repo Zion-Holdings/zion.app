@@ -6,4 +6,4 @@ export default function TalentCardSaveButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
