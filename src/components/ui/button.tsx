@@ -6,4 +6,4 @@ export default function button() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

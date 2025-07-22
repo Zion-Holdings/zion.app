@@ -6,4 +6,4 @@ export default function card() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

@@ -6,4 +6,4 @@ export default function PriceFilter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
