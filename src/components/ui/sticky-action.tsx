@@ -6,4 +6,4 @@ export default function sticky-action() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

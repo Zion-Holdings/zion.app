@@ -6,4 +6,4 @@ export default function ProjectCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

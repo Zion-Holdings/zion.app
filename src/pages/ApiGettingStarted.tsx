@@ -6,4 +6,4 @@ export default function ApiGettingStarted() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

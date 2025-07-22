@@ -6,4 +6,4 @@ export default function ScoreBadge() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

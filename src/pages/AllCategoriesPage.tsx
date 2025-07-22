@@ -6,4 +6,4 @@ export default function AllCategoriesPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

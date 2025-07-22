@@ -6,4 +6,4 @@ export default function EnterpriseStickyNav() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

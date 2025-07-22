@@ -6,4 +6,4 @@ export default function VideoCall() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

@@ -6,4 +6,4 @@ export default function ConversationItem() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

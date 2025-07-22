@@ -6,4 +6,4 @@ export default function TalentGrid() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

@@ -6,4 +6,4 @@ export default function NewPostDialog() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

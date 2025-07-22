@@ -6,4 +6,4 @@ export default function MobileAppHero() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

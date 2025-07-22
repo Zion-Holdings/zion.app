@@ -6,4 +6,4 @@ export default function ApiDocsHub() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

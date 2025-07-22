@@ -6,4 +6,4 @@ export default function EditPostPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

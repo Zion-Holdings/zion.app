@@ -6,4 +6,4 @@ export default function lazy-load() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

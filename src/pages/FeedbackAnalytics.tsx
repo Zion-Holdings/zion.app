@@ -6,4 +6,4 @@ export default function FeedbackAnalytics() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

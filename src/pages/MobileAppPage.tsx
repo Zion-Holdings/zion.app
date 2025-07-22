@@ -6,4 +6,4 @@ export default function MobileAppPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

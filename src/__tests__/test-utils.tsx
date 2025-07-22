@@ -6,4 +6,4 @@ export default function test-utils() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''''

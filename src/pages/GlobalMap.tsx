@@ -6,4 +6,4 @@ export default function GlobalMap() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

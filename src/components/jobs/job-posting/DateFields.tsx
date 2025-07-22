@@ -6,4 +6,4 @@ export default function DateFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

@@ -6,4 +6,4 @@ export default function safe-component-loader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

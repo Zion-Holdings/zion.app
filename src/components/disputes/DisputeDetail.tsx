@@ -6,4 +6,4 @@ export default function DisputeDetail() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

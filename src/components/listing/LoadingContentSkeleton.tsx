@@ -6,4 +6,4 @@ export default function LoadingContentSkeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

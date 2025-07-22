@@ -6,4 +6,4 @@ export default function progress() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

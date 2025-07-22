@@ -6,4 +6,4 @@ export default function EnterpriseRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

@@ -6,4 +6,4 @@ export default function SuggestedJobs() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

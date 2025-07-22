@@ -6,4 +6,4 @@ export default function LoginModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

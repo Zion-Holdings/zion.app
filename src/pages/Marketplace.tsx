@@ -6,4 +6,4 @@ export default function Marketplace() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

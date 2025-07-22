@@ -6,4 +6,4 @@ export default function BillingDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

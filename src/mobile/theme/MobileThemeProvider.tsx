@@ -6,4 +6,4 @@ export default function MobileThemeProvider() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

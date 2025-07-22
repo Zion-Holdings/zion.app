@@ -6,4 +6,4 @@ export default function ChatAssistant.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

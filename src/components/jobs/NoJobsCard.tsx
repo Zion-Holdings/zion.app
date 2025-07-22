@@ -6,4 +6,4 @@ export default function NoJobsCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

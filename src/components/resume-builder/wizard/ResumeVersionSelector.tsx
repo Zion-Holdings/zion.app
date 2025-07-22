@@ -6,4 +6,4 @@ export default function ResumeVersionSelector() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

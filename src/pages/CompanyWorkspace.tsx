@@ -6,4 +6,4 @@ export default function CompanyWorkspace() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

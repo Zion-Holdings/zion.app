@@ -6,4 +6,4 @@ export default function JobDetailsSkeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

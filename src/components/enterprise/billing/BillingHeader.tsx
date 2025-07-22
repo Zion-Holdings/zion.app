@@ -6,4 +6,4 @@ export default function BillingHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

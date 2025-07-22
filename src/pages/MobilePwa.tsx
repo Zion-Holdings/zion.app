@@ -6,4 +6,4 @@ export default function MobilePwa() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';

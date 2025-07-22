@@ -6,4 +6,4 @@ export default function LanguageContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''
+}''''''';
