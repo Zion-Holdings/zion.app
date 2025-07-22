@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function ChatAssistant.test() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function ChatAssistant.test() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
