@@ -50,7 +50,20 @@
     "master:stop": "node scripts/master-automation-orchestrator.cjs stop",
     "master:status": "node scripts/master-automation-orchestrator.cjs status",
     "master:list": "node scripts/master-automation-orchestrator.cjs list",
-    "master:report": "node scripts/master-automation-orchestrator.cjs report"
+    "master:report": "node scripts/master-automation-orchestrator.cjs report",
+    "autonomous:start": "node scripts/autonomous-system-manager.cjs start",
+    "autonomous:stop": "node scripts/autonomous-system-manager.cjs stop",
+    "autonomous:status": "node scripts/autonomous-system-manager.cjs status",
+    "autonomous:restart": "node scripts/autonomous-system-manager.cjs restart",
+    "discovery:start": "node scripts/ai-powered-feature-discovery.cjs start",
+    "discovery:stop": "node scripts/ai-powered-feature-discovery.cjs stop",
+    "discovery:status": "node scripts/ai-powered-feature-discovery.cjs status",
+    "discovery:discover": "node scripts/ai-powered-feature-discovery.cjs discover",
+    "discovery:analyze": "node scripts/ai-powered-feature-discovery.cjs analyze",
+    "discovery:implement": "node scripts/ai-powered-feature-discovery.cjs implement",
+    "daemon:start": "node scripts/autonomous-automation-daemon.cjs start",
+    "daemon:stop": "node scripts/autonomous-automation-daemon.cjs stop",
+    "daemon:status": "node scripts/autonomous-automation-daemon.cjs status"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
