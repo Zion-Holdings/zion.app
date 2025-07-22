@@ -18,7 +18,8 @@ const https = require('https')
 class CursorIntegration {
   constructor() {
     this.config = {
-      apiEndpoint: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh','      apiKey: process.env.CURSOR_API_KEY,
+      apiEndpoint: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh',
+      apiKey: process.env.CURSOR_API_KEY,
       workspaceId: process.env.CURSOR_WORKSPACE_ID,
       projectPath: process.cwd(),
       maxRetries: 3,
