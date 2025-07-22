@@ -6,4 +6,4 @@ export default function ResultsHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

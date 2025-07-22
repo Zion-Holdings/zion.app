@@ -6,4 +6,4 @@ export default function help-content() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
