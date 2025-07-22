@@ -9,7 +9,6 @@ export function useWebSocketReconnection(options: any = {}) {
       if (attemptCount >= (options.maxAttempts || 5)) {
         setIsReconnecting(false);
         return;
-      }
 
       setIsReconnecting(true);
       setAttemptCount((prev) => prev + 1);
@@ -29,7 +28,7 @@ export function useWebSocketReconnection(options: any = {}) {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
-    }
+
     setIsReconnecting(false);
     setAttemptCount(0);
   }, []);
@@ -38,4 +37,4 @@ export function useWebSocketReconnection(options: any = {}) {
     isReconnecting,
     attemptCount,
     attemptReconnection,
-    resetReconnection,}''';';
+    resetReconnection,}''';;

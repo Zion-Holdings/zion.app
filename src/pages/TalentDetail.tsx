@@ -6,4 +6,4 @@ export default function TalentDetail() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

@@ -6,4 +6,4 @@ export default function LanguageSelector.test() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

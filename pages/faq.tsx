@@ -1,5 +1,5 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react;
+import Head from 'next/head;
 
 export default function faq() {
   return (
@@ -19,4 +19,3 @@ export default function faq() {
       </div>
     </>
   );
-}

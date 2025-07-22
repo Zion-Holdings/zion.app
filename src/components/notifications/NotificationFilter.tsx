@@ -6,4 +6,4 @@ export default function NotificationFilter() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

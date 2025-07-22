@@ -6,4 +6,4 @@ export default function AppMetadataManager() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

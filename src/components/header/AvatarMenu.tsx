@@ -6,4 +6,4 @@ export default function AvatarMenu() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

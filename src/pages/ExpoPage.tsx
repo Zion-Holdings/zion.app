@@ -6,4 +6,4 @@ export default function ExpoPage() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

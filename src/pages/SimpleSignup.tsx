@@ -6,4 +6,4 @@ export default function SimpleSignup() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

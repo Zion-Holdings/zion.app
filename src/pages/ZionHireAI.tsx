@@ -6,4 +6,4 @@ export default function ZionHireAI() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

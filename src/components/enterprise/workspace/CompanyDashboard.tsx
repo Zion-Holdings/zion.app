@@ -6,4 +6,4 @@ export default function CompanyDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

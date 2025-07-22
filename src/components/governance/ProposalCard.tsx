@@ -6,4 +6,4 @@ export default function ProposalCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

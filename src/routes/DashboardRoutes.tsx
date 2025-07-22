@@ -6,4 +6,4 @@ export default function DashboardRoutes() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

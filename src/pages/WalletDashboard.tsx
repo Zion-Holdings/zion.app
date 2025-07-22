@@ -6,4 +6,4 @@ export default function WalletDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

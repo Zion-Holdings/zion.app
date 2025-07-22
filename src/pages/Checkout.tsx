@@ -6,4 +6,4 @@ export default function Checkout() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

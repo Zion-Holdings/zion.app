@@ -6,4 +6,4 @@ export default function ITSupportPage() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

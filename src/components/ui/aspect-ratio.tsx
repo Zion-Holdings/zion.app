@@ -6,4 +6,4 @@ export default function aspect-ratio() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

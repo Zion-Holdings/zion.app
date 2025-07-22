@@ -6,4 +6,3 @@ export default function handler(req, res) {
     mode: 'Simple Working App',
     build: 'Working',
   });
-}

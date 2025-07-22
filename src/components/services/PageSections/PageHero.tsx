@@ -6,4 +6,4 @@ export default function PageHero() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

@@ -6,4 +6,4 @@ export default function ContentRoutes() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

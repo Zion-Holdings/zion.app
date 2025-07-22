@@ -6,4 +6,4 @@ export default function ContactPublisherModal() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

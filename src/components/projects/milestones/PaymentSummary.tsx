@@ -6,4 +6,4 @@ export default function PaymentSummary() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

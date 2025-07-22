@@ -6,4 +6,4 @@ export default function TransactionHistory() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

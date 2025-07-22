@@ -6,4 +6,4 @@ export default function GlobalErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

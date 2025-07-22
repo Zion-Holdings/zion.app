@@ -6,4 +6,4 @@ export default function InteractiveMap() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

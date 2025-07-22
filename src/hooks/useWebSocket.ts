@@ -24,7 +24,7 @@ export function useWebSocket(options: any) {
           options.onMessage?.(data);
         } catch {
           options.onMessage?.(event.data);
-        }
+
       };
 
       ws.onclose = () => {
@@ -39,7 +39,7 @@ export function useWebSocket(options: any) {
             connect,
             options.reconnectInterval || 3000,
           );
-        }
+
       };
 
       ws.onerror = (event) => {
@@ -48,19 +48,17 @@ export function useWebSocket(options: any) {
       };
     } catch (err) {
       setError('Failed to create WebSocket connection')'
-    }
+
   }, [options]);
 
   const disconnect = useCallback(() => {
     if (reconnectTimeoutRef.current) {
       clearTimeout(reconnectTimeoutRef.current);
       reconnectTimeoutRef.current = null;
-    }
 
     if (wsRef.current) {
       wsRef.current.close();
       wsRef.current = null;
-    }
 
     setIsConnected(false);
     reconnectAttemptsRef.current = options.maxReconnectAttempts || 5;
@@ -72,7 +70,7 @@ export function useWebSocket(options: any) {
         wsRef.current.send(
           typeof data === 'string' ? data : JSON.stringify(data),
         )'
-      }
+
     },
     [isConnected],
   );
@@ -90,4 +88,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''';';
+    connect,}''';;

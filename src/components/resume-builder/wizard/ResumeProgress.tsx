@@ -6,4 +6,4 @@ export default function ResumeProgress() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

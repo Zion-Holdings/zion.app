@@ -6,4 +6,4 @@ export default function PostJob() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

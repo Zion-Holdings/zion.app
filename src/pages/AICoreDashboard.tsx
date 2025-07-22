@@ -6,4 +6,4 @@ export default function AICoreDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

@@ -1,5 +1,5 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react;
+import Head from 'next/head;
 
 export default function privacy() {
   return (
@@ -19,4 +19,3 @@ export default function privacy() {
       </div>
     </>
   );
-}

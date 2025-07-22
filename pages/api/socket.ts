@@ -1,5 +1,5 @@
-import { Server as SocketIOServer } from 'socket.io';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { Server as SocketIOServer } from 'socket.io;
+import { NextApiRequest, NextApiResponse } from 'next;
 
 // Store active connections
 const activeConnections = new Map<string, any>();
@@ -25,7 +25,6 @@ const RECONNECTION_CONFIG = {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET' && req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
-  }
 
   // Initialize Socket.IO server if not already done
   if (!io) {
@@ -73,8 +72,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           if (connection) {
             connection.rooms.add(roomId);
             connection.lastActivity = Date.now();
-          }
 
+`
           console.log(`👥 Client ${socket.id} joined room: ${roomId}`);
 
           // Notify others in the room
@@ -87,7 +86,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         } catch (error) {
           console.error('Error joining room:', error);
           if (callback) callback({ success: false, error: error.message });
-        }
+
       });
 
       // Handle room leaving
@@ -98,8 +97,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           if (connection) {
             connection.rooms.delete(roomId);
             connection.lastActivity = Date.now();
-          }
 
+`
           console.log(`👋 Client ${socket.id} left room: ${roomId}`);
 
           // Notify others in the room
@@ -112,7 +111,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         } catch (error) {
           console.error('Error leaving room:', error);
           if (callback) callback({ success: false, error: error.message });
-        }
+
       });
 
       // Handle chat messages
@@ -123,7 +122,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             roomId: string;
             message: string;
             sender: string;
-            type?: 'text' | 'image' | 'file';
+            type?: 'text' | 'image' | 'file;
             metadata?: any;
           },
           callback,
@@ -135,9 +134,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             const connection = activeConnections.get(socket.id);
             if (connection) {
               connection.lastActivity = Date.now();
-            }
 
-            const messageData = {
+            const messageData = {`
               id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
               roomId,
               message,
@@ -155,13 +153,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             if (callback)
               callback({ success: true, messageId: messageData.id });
 
-            console.log(
+            console.log(`
               `💬 Message sent in room ${roomId}: ${message.substring(0, 50)}...`,
             );
           } catch (error) {
             console.error('Error sending message:', error);
             if (callback) callback({ success: false, error: error.message });
-          }
+
         },
       );
 
@@ -202,12 +200,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         const connection = activeConnections.get(socket.id);
         if (connection) {
           connection.lastActivity = Date.now();
-        }
+
         if (callback) callback({ timestamp: Date.now() });
       });
 
       // Handle disconnection
-      socket.on('disconnect', (reason) => {
+      socket.on('disconnect', (reason) => {`
         console.log(`🔌 Client disconnected: ${socket.id}, reason: ${reason}`);
 
         const connection = activeConnections.get(socket.id);
@@ -223,12 +221,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
           // Remove from active connections
           activeConnections.delete(socket.id);
-        }
+
       });
 
       // Handle reconnection
       socket.on('reconnect', (attemptNumber: number) => {
-        console.log(
+        console.log(`
           `🔄 Client reconnected: ${socket.id}, attempt: ${attemptNumber}`,
         );
 
@@ -236,28 +234,28 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         if (connection) {
           connection.reconnectAttempts = attemptNumber;
           connection.lastActivity = Date.now();
-        }
+
       });
 
       // Handle reconnection attempts
       socket.on('reconnect_attempt', (attemptNumber: number) => {
-        console.log(
+        console.log(`
           `🔄 Reconnection attempt ${attemptNumber} for client: ${socket.id}`,
         );
 
         const connection = activeConnections.get(socket.id);
         if (connection) {
           connection.reconnectAttempts = attemptNumber;
-        }
+
       });
 
       // Handle reconnection errors
-      socket.on('reconnect_error', (error: any) => {
+      socket.on('reconnect_error', (error: any) => {`
         console.error(`❌ Reconnection error for client ${socket.id}:`, error);
       });
 
       // Handle reconnection failures
-      socket.on('reconnect_failed', () => {
+      socket.on('reconnect_failed', () => {`
         console.error(`❌ Reconnection failed for client: ${socket.id}`);
 
         const connection = activeConnections.get(socket.id);
@@ -272,7 +270,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
           // Remove from active connections
           activeConnections.delete(socket.id);
-        }
+
       });
     });
 
@@ -282,14 +280,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const timeout = 5 * 60 * 1000; // 5 minutes
 
       for (const [socketId, connection] of activeConnections.entries()) {
-        if (now - connection.lastActivity > timeout) {
+        if (now - connection.lastActivity > timeout) {`
           console.log(`🧹 Cleaning up inactive connection: ${socketId}`);
           connection.socket.disconnect(true);
           activeConnections.delete(socketId);
-        }
-      }
+
+
     }, 60000); // Check every minute
-  }
 
   // Return connection info
   res.status(200).json({
@@ -298,7 +295,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString(),
   });
-}
 
 // Export for use in other parts of the application
 export { io, activeConnections };
+`

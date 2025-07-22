@@ -6,4 +6,4 @@ export default function AdminDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

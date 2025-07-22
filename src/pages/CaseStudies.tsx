@@ -6,4 +6,4 @@ export default function CaseStudies() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

@@ -6,4 +6,4 @@ export default function InnovationPage() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

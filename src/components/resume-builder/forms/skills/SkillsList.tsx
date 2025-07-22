@@ -6,4 +6,4 @@ export default function SkillsList() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;

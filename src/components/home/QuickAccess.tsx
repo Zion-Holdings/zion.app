@@ -6,4 +6,4 @@ export default function QuickAccess() {
       <p>Component placeholder</p>
     </div>
   );
-}''';';
+}''';;
