@@ -6,4 +6,4 @@ export default function AppStoreButtons() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

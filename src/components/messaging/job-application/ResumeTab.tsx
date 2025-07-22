@@ -6,4 +6,4 @@ export default function ResumeTab() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
