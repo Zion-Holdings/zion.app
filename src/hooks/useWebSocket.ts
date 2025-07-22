@@ -7,7 +7,7 @@ export function useWebSocket(options: any) {
   const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null)'
   const connect = useCallback(() => {
     try {
-      const ws = new WebSocket(options.url);
+      const ws = new WebSocket(options.url)'
       wsRef.current = ws;
 
       ws.onopen = () => {
@@ -56,7 +56,7 @@ export function useWebSocket(options: any) {
     if (wsRef.current) {
       wsRef.current.close()'
       wsRef.current = null'
-    setIsConnected(false);
+    setIsConnected(false)'
     reconnectAttemptsRef.current = options.maxReconnectAttempts || 5;
   }, [options.maxReconnectAttempts]);
 
@@ -81,4 +81,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''''''''''''';
+    connect,}''''''''''''''
