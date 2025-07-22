@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function ProductGallery() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function ProductGallery() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''

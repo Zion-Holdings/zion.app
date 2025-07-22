@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function MobileMenu() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function MobileMenu() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
