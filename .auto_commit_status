@@ -1,8 +1,6 @@
  M .auto_commit_status
- M package.json
-?? COMPUTER_AI_ENHANCEMENT_README.md
-?? reports/database-health-1753221180972.json
-?? reports/database-health-1753221180979.json
-?? reports/database-health-1753221182834.json
-?? reports/database-health-1753221182849.json
-?? scripts/computer-ai-orchestrator.cjs
+ M COMPUTER_AI_ENHANCEMENT_README.md
+?? reports/database-health-1753221248071.json
+?? reports/database-health-1753221248079.json
+?? reports/database-health-1753221249930.json
+?? reports/database-health-1753221249955.json
