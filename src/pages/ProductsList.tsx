@@ -6,4 +6,4 @@ export default function ProductsList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
