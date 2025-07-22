@@ -154,8 +154,8 @@ load_environment() {
 start_agent() {
     local agent_name=$1
     local script_path=$2
-    local port=${PORTS[$agent_name]}
-    local description=${DESCRIPTIONS[$agent_name]}
+    local port=$(get_agent_port "$agent_name")
+    local description=$(get_agent_description "$agent_name")
     
     local pid_file="$PID_DIR/${agent_name}.pid"
     local log_file="$LOG_DIR/${agent_name}.log"

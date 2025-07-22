@@ -1,4 +1,4 @@
  M .auto_commit_status
- M scripts/master-automation-orchestrator.cjs
+ M src/hooks/useOnboardingStatus.tsx
  M start-autonomous-automation.sh
-?? AUTONOMOUS_SYSTEM_README.md
+?? automation/core/IntelligentAutomationOrchestrator.js
