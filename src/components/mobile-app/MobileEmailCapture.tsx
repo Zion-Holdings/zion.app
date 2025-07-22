@@ -6,4 +6,4 @@ export default function MobileEmailCapture() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

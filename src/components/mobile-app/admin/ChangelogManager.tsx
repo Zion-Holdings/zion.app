@@ -6,4 +6,4 @@ export default function ChangelogManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

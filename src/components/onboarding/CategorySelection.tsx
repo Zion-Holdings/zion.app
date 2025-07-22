@@ -6,4 +6,4 @@ export default function CategorySelection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

@@ -6,4 +6,4 @@ export default function Navigation() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
