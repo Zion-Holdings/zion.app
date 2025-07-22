@@ -9,6 +9,9 @@ const AUTOMATION_CMD = 'npm run netlify:start';
 const CURSOR_CHAT_CMD = 'npm run cursor:chat';
 const CHECK_INTERVAL = 10000; // 10 seconds
 
+let cursorChatProcess = null;
+let cursorChatActive = false;
+
 function isPortInUse(port) {
   try {
     const output = execSync(`lsof -i :${port} | grep LISTEN || true`).toString();
@@ -36,9 +39,33 @@ function isProcessRunning(cmd) {
   }
 }
 
-function startProcess(cmd, cwd = process.cwd()) {
+function startProcess(cmd, cwd = process.cwd(), onExit) {
   console.log(`[Watchdog] Starting: ${cmd}`);
-  return spawn(cmd, { shell: true, cwd, stdio: 'ignore', detached: true });
+  const proc = spawn(cmd, { shell: true, cwd, stdio: 'ignore', detached: true });
+  if (onExit) {
+    proc.on('exit', onExit);
+  }
+  return proc;
+}
+
+function startCursorChat() {
+  if (cursorChatActive) return;
+  cursorChatActive = true;
+  cursorChatProcess = startProcess(CURSOR_CHAT_CMD, path.join(__dirname, '..'), () => {
+    console.log('[Watchdog] Cursor chat process exited. Starting new session...');
+    cursorChatActive = false;
+    setTimeout(startCursorChat, 1000); // Start new chat after 1s
+  });
+  console.log('[Watchdog] Cursor chat session started.');
+}
+
+function killAllCursorChats() {
+  try {
+    execSync(`ps aux | grep 'cursor-multi-computer-communication.cjs chat' | grep -v grep | awk '{print $2}' | xargs kill -9 || true`);
+    console.log('[Watchdog] Killed all completed Cursor chat processes.');
+  } catch (e) {
+    // Ignore
+  }
 }
 
 function watchdogLoop() {
@@ -58,12 +85,15 @@ function watchdogLoop() {
       startProcess(AUTOMATION_CMD, path.join(__dirname, '..'));
     }
 
-    // Ensure Cursor chat is running
-    if (!isProcessRunning('cursor-multi-computer-communication.cjs chat')) {
-      startProcess(CURSOR_CHAT_CMD, path.join(__dirname, '..'));
+    // Kill any completed Cursor chat processes
+    killAllCursorChats();
+
+    // Ensure Cursor chat is running and always create a new one if the previous is done
+    if (!cursorChatActive) {
+      startCursorChat();
     }
   }, CHECK_INTERVAL);
 }
 
-console.log('[Watchdog] Starting watchdog for dev server, automation, and Cursor chat...');
+console.log('[Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...');
 watchdogLoop(); 

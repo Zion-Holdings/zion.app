@@ -8,6 +8,9 @@ const path = require('path');
 console.log('🤖 Cursor Chat Automation System\n');
 console.log('Maintaining constant contact with Cursor chats...\n');
 
+const TODO_FILE = path.resolve(__dirname, '../logs/cursor-chat-todos.md');
+const CHECK_TODO_INTERVAL = 10000; // 10 seconds
+
 class CursorChatAutomation extends EventEmitter {
   constructor(config = {}) {
     super();
@@ -40,6 +43,9 @@ class CursorChatAutomation extends EventEmitter {
     this.reconnectTimer = null;
     this.heartbeatTimer = null;
     this.statusTimer = null;
+    this.activeChat = null;
+    this.todoQueue = [];
+    this.completedChats = new Set();
   }
 
   async start() {
@@ -53,12 +59,18 @@ class CursorChatAutomation extends EventEmitter {
     // Load previous stats
     await this.loadStats();
 
+    // Load TODO queue
+    await this.loadTodoQueue();
+
     // Establish initial connection
     await this.connect();
 
     // Start monitoring timers
     this.startHeartbeat();
     this.startStatusMonitoring();
+
+    // Start autonomous chat workflow
+    this.startAutonomousChatLoop();
 
     console.log('✅ Cursor Chat Automation started successfully');
     this.log('Automation started');
@@ -426,6 +438,101 @@ class CursorChatAutomation extends EventEmitter {
     this.log('Automation stopped');
 
     console.log('✅ Cursor Chat Automation stopped');
+  }
+
+  async loadTodoQueue() {
+    try {
+      if (await fs.stat(TODO_FILE)) {
+        const lines = (await fs.readFile(TODO_FILE, 'utf8'))
+          .split('\n')
+          .filter(Boolean)
+          .map((line) => ({
+            raw: line,
+            done: line.startsWith('- [x]'),
+            content: line.replace(/^- \[[ x]\] /, ''),
+          }));
+        this.todoQueue = lines;
+      }
+    } catch (e) {
+      this.todoQueue = [];
+    }
+  }
+
+  async saveTodoQueue() {
+    try {
+      await fs.writeFile(
+        TODO_FILE,
+        this.todoQueue.map((t) => t.raw).join('\n') + '\n',
+      );
+    } catch (e) {
+      // Ignore
+    }
+  }
+
+  getNextTodo() {
+    return this.todoQueue.find((t) => !t.done);
+  }
+
+  async markTodoDone(todo, result) {
+    const idx = this.todoQueue.findIndex((t) => t.raw === todo.raw);
+    if (idx !== -1) {
+      const doneLine = todo.raw.replace('- [ ]', '- [x]') + ` (done: ${new Date().toISOString()})\nResult: ${result}`;
+      this.todoQueue[idx].raw = doneLine;
+      this.todoQueue[idx].done = true;
+      await this.saveTodoQueue();
+    }
+  }
+
+  startAutonomousChatLoop() {
+    setInterval(async () => {
+      if (!this.isRunning || !this.socket || !this.socket.connected) return;
+      await this.loadTodoQueue();
+      const nextTodo = this.getNextTodo();
+      if (!nextTodo) {
+        this.log('No pending TODOs in queue. Waiting...');
+        return;
+      }
+      // If no active chat, open a new one
+      if (!this.activeChat || this.completedChats.has(this.activeChat.id)) {
+        // Open new chat
+        const chatId = `chat-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`;
+        this.activeChat = { id: chatId, todo: nextTodo };
+        this.log(`🟢 Opening new chat for TODO: ${nextTodo.content}`);
+        this.sendMessage({
+          roomId: 'cursor-chat',
+          message: `🔔 New improvement step: ${nextTodo.content}\n(Chat ID: ${chatId})`,
+          sender: 'cursor-automation',
+          type: 'text',
+          metadata: {
+            type: 'improvement_step',
+            todo: nextTodo.content,
+            chatId,
+            timestamp: Date.now(),
+          },
+        });
+      } else {
+        // Check if chat is completed (simulate by checking if TODO is marked done)
+        if (nextTodo.done) {
+          this.log(`✅ Chat completed for TODO: ${nextTodo.content}`);
+          this.completedChats.add(this.activeChat.id);
+          // Close chat (send closing message)
+          this.sendMessage({
+            roomId: 'cursor-chat',
+            message: `✅ Improvement step completed: ${nextTodo.content}\n(Chat ID: ${this.activeChat.id})`,
+            sender: 'cursor-automation',
+            type: 'text',
+            metadata: {
+              type: 'improvement_step_completed',
+              todo: nextTodo.content,
+              chatId: this.activeChat.id,
+              timestamp: Date.now(),
+            },
+          });
+          await this.markTodoDone(nextTodo, 'Completed by automation');
+          this.activeChat = null;
+        }
+      }
+    }, CHECK_TODO_INTERVAL);
   }
 }
 
