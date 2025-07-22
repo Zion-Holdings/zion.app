@@ -6,4 +6,4 @@ export default function VerifyIdentity() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

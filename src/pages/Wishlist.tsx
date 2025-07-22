@@ -6,4 +6,4 @@ export default function Wishlist() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
