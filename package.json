@@ -57,7 +57,13 @@
     "cursor-chat:start": "node scripts/cursor-chat-automation.js start",
     "cursor-chat:stop": "node scripts/cursor-chat-automation.js stop",
     "cursor-chat:status": "node scripts/cursor-chat-automation.js status",
-    "cursor-chat:logs": "node scripts/cursor-chat-automation.js logs"
+    "cursor-chat:logs": "node scripts/cursor-chat-automation.js logs",
+    "auto:status": "node scripts/automation-manager.cjs status",
+    "auto:start": "node scripts/automation-manager.cjs start",
+    "auto:stop": "node scripts/automation-manager.cjs stop",
+    "auto:restart": "node scripts/automation-manager.cjs restart",
+    "auto:clean": "node scripts/automation-manager.cjs clean",
+    "auto:fix-ports": "node scripts/fix-port-conflicts.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
