@@ -6,4 +6,4 @@ export default function RecentContractsTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
