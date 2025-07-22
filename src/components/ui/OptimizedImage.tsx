@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function OptimizedImage() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function OptimizedImage() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
