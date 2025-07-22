@@ -6,4 +6,4 @@ export default function Analytics() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
