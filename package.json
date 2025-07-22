@@ -72,7 +72,14 @@
     "discovery:implement": "node scripts/ai-powered-feature-discovery.cjs implement",
     "daemon:start": "node scripts/autonomous-automation-daemon.cjs start",
     "daemon:stop": "node scripts/autonomous-automation-daemon.cjs stop",
-    "daemon:status": "node scripts/autonomous-automation-daemon.cjs status"
+    "daemon:status": "node scripts/autonomous-automation-daemon.cjs status",
+    "infinite:start": "node scripts/infinite-improvement-loop.cjs start",
+    "infinite:stop": "node scripts/infinite-improvement-loop.cjs stop",
+    "infinite:status": "node scripts/infinite-improvement-loop.cjs status",
+    "infinite:iterate": "node scripts/infinite-improvement-loop.cjs iterate",
+    "ai-tools:status": "node scripts/ai-tools-integration.cjs status",
+    "ai-tools:capabilities": "node scripts/ai-tools-integration.cjs capabilities",
+    "ai-tools:test": "node scripts/ai-tools-integration.cjs test"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
