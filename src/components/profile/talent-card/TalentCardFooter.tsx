@@ -5,5 +5,5 @@ export default function TalentCardFooter() {
       <h1>TalentCardFooter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

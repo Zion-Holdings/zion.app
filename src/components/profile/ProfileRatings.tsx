@@ -5,5 +5,5 @@ export default function ProfileRatings() {
       <h1>ProfileRatings</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

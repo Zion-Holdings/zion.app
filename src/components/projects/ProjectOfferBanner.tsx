@@ -5,5 +5,5 @@ export default function ProjectOfferBanner() {
       <h1>ProjectOfferBanner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

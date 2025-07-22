@@ -5,5 +5,5 @@ export default function AddMilestoneForm() {
       <h1>AddMilestoneForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

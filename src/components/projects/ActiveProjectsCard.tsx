@@ -5,5 +5,5 @@ export default function ActiveProjectsCard() {
       <h1>ActiveProjectsCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

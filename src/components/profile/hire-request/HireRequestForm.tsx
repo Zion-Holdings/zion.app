@@ -5,5 +5,5 @@ export default function HireRequestForm() {
       <h1>HireRequestForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

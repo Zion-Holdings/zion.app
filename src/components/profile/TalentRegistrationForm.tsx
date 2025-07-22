@@ -5,5 +5,5 @@ export default function TalentRegistrationForm() {
       <h1>TalentRegistrationForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

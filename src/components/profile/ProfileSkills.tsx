@@ -5,5 +5,5 @@ export default function ProfileSkills() {
       <h1>ProfileSkills</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

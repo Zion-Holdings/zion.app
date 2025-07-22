@@ -5,5 +5,5 @@ export default function AIMilestoneGenerator() {
       <h1>AIMilestoneGenerator</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

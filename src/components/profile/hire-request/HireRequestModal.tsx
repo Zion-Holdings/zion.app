@@ -5,5 +5,5 @@ export default function HireRequestModal() {
       <h1>HireRequestModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

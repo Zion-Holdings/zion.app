@@ -5,5 +5,5 @@ export default function SaveTalentButton() {
       <h1>SaveTalentButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

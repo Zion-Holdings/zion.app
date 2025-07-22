@@ -5,5 +5,5 @@ export default function TalentCardAvatar() {
       <h1>TalentCardAvatar</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

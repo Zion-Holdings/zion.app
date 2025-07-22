@@ -5,5 +5,5 @@ export default function ProjectDetailsField() {
       <h1>ProjectDetailsField</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

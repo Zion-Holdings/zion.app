@@ -5,5 +5,5 @@ export default function BudgetFields() {
       <h1>BudgetFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
