@@ -5,5 +5,5 @@ export default function SeverityDisplay() {
       <h1>SeverityDisplay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

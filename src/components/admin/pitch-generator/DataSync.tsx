@@ -5,5 +5,5 @@ export default function DataSync() {
       <h1>DataSync</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

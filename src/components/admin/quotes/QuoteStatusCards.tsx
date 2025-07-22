@@ -5,5 +5,5 @@ export default function QuoteStatusCards() {
       <h1>QuoteStatusCards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

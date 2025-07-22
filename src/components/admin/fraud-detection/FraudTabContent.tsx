@@ -5,5 +5,5 @@ export default function FraudTabContent() {
       <h1>FraudTabContent</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

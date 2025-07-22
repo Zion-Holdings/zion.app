@@ -5,5 +5,5 @@ export default function ModelManager() {
       <h1>ModelManager</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

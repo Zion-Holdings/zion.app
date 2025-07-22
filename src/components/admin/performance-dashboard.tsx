@@ -5,5 +5,5 @@ export default function performance-dashboard() {
       <h1>performance-dashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

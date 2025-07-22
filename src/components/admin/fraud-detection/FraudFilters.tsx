@@ -5,5 +5,5 @@ export default function FraudFilters() {
       <h1>FraudFilters</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

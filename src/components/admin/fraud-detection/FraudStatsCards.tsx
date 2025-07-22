@@ -5,5 +5,5 @@ export default function FraudStatsCards() {
       <h1>FraudStatsCards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

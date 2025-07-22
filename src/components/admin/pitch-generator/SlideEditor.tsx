@@ -5,5 +5,5 @@ export default function SlideEditor() {
       <h1>SlideEditor</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

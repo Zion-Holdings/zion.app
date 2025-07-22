@@ -5,5 +5,5 @@ export default function RouteSEO.test() {
       <h1>RouteSEO.test</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

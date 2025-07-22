@@ -5,5 +5,5 @@ export default function DynamicComponentLoader() {
       <h1>DynamicComponentLoader</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

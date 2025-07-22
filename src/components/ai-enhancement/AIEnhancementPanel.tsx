@@ -5,5 +5,5 @@ export default function AIEnhancementPanel() {
       <h1>AIEnhancementPanel</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

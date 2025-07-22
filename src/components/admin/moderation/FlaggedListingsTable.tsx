@@ -5,5 +5,5 @@ export default function FlaggedListingsTable() {
       <h1>FlaggedListingsTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

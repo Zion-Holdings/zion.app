@@ -5,5 +5,5 @@ export default function EmptyFraudState() {
       <h1>EmptyFraudState</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

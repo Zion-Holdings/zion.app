@@ -5,5 +5,5 @@ export default function ReviewsModerationTable() {
       <h1>ReviewsModerationTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

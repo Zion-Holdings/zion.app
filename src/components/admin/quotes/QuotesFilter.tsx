@@ -5,5 +5,5 @@ export default function QuotesFilter() {
       <h1>QuotesFilter</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

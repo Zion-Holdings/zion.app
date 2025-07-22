@@ -5,5 +5,5 @@ export default function QuotesTable() {
       <h1>QuotesTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

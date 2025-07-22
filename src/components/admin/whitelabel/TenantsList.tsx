@@ -5,5 +5,5 @@ export default function TenantsList() {
       <h1>TenantsList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function FraudFlagsTable() {
       <h1>FraudFlagsTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

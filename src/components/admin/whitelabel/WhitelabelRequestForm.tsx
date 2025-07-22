@@ -5,5 +5,5 @@ export default function WhitelabelRequestForm() {
       <h1>WhitelabelRequestForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

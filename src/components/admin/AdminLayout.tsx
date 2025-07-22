@@ -5,5 +5,5 @@ export default function AdminLayout() {
       <h1>AdminLayout</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

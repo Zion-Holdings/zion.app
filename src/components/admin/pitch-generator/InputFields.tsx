@@ -5,5 +5,5 @@ export default function InputFields() {
       <h1>InputFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ActionButtons() {
       <h1>ActionButtons</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

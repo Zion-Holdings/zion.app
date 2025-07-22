@@ -5,5 +5,5 @@ export default function AIEnhancementDialog() {
       <h1>AIEnhancementDialog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
