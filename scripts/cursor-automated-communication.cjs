@@ -167,10 +167,56 @@ class CursorAutomatedCommunication {
       this.logger.info(
         '🔄 System will maintain continuous communication with all Cursor installations',
       );
+
+      // --- Always keep 10 next steps in the improvement queue ---
+      this.ensureImprovementQueueLoop();
     } catch (error) {
       this.logger.error(`Failed to start system: ${error.message}`);
       this.reconnect();
     }
+  }
+
+  /**
+   * Ensures there are always at least 10 next steps in the improvement queue.
+   * If the queue drops below 10, auto-generates generic improvement tasks.
+   */
+  ensureImprovementQueueLoop() {
+    const GENERIC_TASKS = [
+      'Analyze code quality',
+      'Check for security issues',
+      'Optimize performance',
+      'Update dependencies',
+      'Improve accessibility',
+      'Enhance test coverage',
+      'Refactor large files',
+      'Review runtime errors',
+      'Audit bundle size',
+      'Review user experience',
+      'Check for deprecated APIs',
+      'Improve documentation',
+      'Automate repetitive tasks',
+      'Review CI/CD pipeline',
+      'Optimize images',
+    ];
+    setInterval(() => {
+      if (this.improvementQueue.length < 10) {
+        const needed = 10 - this.improvementQueue.length;
+        for (let i = 0; i < needed; i++) {
+          const task = GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)];
+          const improvement = {
+            id: `auto-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
+            type: 'auto_next_step',
+            description: task,
+            createdAt: Date.now(),
+            status: 'pending',
+            priority: 'medium',
+          };
+          this.improvementQueue.push(improvement);
+          this.logger.info(`📝 Auto-added next step to improvement queue: ${task}`);
+        }
+        this.saveData('improvements');
+      }
+    }, 10000); // Check every 10 seconds
   }
 
   async initializeConnection() {

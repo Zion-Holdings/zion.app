@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 const { execSync, spawn } = require('child_process');
-const fs = require('fs');
 const path = require('path');
 
 const PORT = 3002;
 const DEV_CMD = 'npm run dev';
 const AUTOMATION_CMD = 'npm run netlify:start';
+const CURSOR_CHAT_CMD = 'npm run cursor:chat';
 const CHECK_INTERVAL = 10000; // 10 seconds
 
 function isPortInUse(port) {
@@ -57,8 +57,13 @@ function watchdogLoop() {
     if (!isProcessRunning('netlify-build-automation.js')) {
       startProcess(AUTOMATION_CMD, path.join(__dirname, '..'));
     }
+
+    // Ensure Cursor chat is running
+    if (!isProcessRunning('cursor-multi-computer-communication.cjs chat')) {
+      startProcess(CURSOR_CHAT_CMD, path.join(__dirname, '..'));
+    }
   }, CHECK_INTERVAL);
 }
 
-console.log('[Watchdog] Starting watchdog for dev server and automation...');
+console.log('[Watchdog] Starting watchdog for dev server, automation, and Cursor chat...');
 watchdogLoop(); 
