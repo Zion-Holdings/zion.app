@@ -6,4 +6,4 @@ export default function LoginErrorFallback() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

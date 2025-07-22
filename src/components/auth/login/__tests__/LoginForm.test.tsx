@@ -6,4 +6,4 @@ export default function LoginForm.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
