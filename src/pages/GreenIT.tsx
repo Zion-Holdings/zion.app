@@ -6,4 +6,4 @@ export default function GreenIT() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
