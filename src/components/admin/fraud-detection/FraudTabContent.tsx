@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function FraudTabContent() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function FraudTabContent() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

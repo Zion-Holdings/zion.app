@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function TalentCardFooter() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function TalentCardFooter() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

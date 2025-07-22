@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function BudgetFields() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function BudgetFields() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

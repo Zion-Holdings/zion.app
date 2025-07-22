@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function dnd-stub() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function dnd-stub() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

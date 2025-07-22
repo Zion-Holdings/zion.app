@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ServiceQuoteModal() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ServiceQuoteModal() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

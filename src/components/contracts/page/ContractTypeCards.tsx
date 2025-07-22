@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ContractTypeCards() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ContractTypeCards() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

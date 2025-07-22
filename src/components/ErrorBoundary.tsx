@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ErrorBoundary() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

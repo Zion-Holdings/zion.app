@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function FeatureCard() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function FeatureCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function InternationalProposals() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function InternationalProposals() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

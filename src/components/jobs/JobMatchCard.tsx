@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function JobMatchCard() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function JobMatchCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

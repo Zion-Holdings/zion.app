@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function AdminDashboard() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function AdminDashboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

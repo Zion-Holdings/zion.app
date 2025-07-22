@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export function ServiceProcessSteps() {
   return (
     <div>
@@ -7,4 +7,4 @@ export function ServiceProcessSteps() {
     </div>
   );
 }
-''
+''';';

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function FooterNewsletter() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function FooterNewsletter() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

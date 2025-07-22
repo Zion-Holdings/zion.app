@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ITSupportPage() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ITSupportPage() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

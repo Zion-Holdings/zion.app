@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ProductsList() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ProductsList() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

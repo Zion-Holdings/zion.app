@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function CaseStudy() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function CaseStudy() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

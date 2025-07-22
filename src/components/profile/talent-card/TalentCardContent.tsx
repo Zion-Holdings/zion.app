@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function TalentCardContent() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function TalentCardContent() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

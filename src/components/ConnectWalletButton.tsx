@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ConnectWalletButton() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ConnectWalletButton() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

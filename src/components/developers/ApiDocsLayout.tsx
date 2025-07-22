@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ApiDocsLayout() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ApiDocsLayout() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

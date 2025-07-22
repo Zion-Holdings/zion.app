@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function PostCard() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function PostCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

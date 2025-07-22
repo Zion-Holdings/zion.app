@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ReferralTable() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ReferralTable() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

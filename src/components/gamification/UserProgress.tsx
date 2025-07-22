@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function UserProgress() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function UserProgress() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

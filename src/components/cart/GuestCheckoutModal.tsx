@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function GuestCheckoutModal() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function GuestCheckoutModal() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

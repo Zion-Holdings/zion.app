@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function Fundraising() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function Fundraising() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

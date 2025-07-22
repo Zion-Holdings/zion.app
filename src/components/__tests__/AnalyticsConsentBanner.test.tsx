@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function AnalyticsConsentBanner.test() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function AnalyticsConsentBanner.test() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

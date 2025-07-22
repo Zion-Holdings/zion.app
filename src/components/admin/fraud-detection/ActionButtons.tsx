@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ActionButtons() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ActionButtons() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

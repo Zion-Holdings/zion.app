@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function MilestoneSuggestions() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function MilestoneSuggestions() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

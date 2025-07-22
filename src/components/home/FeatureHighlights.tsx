@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function FeatureHighlights() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function FeatureHighlights() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

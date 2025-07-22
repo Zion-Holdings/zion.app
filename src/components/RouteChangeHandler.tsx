@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function RouteChangeHandler() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function RouteChangeHandler() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

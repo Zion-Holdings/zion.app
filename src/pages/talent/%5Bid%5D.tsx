@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function %5Bid%5D() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function %5Bid%5D() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

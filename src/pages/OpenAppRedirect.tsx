@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function OpenAppRedirect() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function OpenAppRedirect() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ResumeTab() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ResumeTab() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';

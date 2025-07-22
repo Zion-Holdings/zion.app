@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ExportPanel() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ExportPanel() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';;

@@ -1,4 +1,4 @@
-import React from 'react''
+import React from 'react'
 export default function ZionHireAI() {
   return (
     <div>
@@ -6,4 +6,4 @@ export default function ZionHireAI() {
       <p>Component placeholder</p>
     </div>
   );
-}''
+}''';';
