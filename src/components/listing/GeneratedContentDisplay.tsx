@@ -5,5 +5,5 @@ export default function GeneratedContentDisplay() {
       <h1>GeneratedContentDisplay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

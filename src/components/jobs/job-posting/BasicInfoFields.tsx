@@ -5,5 +5,5 @@ export default function BasicInfoFields() {
       <h1>BasicInfoFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

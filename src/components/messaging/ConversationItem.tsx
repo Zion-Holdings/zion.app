@@ -5,5 +5,5 @@ export default function ConversationItem() {
       <h1>ConversationItem</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

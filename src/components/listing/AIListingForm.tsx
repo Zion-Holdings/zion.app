@@ -5,5 +5,5 @@ export default function AIListingForm() {
       <h1>AIListingForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

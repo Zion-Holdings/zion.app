@@ -5,5 +5,5 @@ export default function JobPostingForm() {
       <h1>JobPostingForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

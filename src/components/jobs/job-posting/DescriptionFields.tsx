@@ -5,5 +5,5 @@ export default function DescriptionFields() {
       <h1>DescriptionFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

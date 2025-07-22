@@ -5,5 +5,5 @@ export default function LoadingContentSkeleton() {
       <h1>LoadingContentSkeleton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

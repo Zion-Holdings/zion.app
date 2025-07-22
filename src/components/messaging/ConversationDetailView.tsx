@@ -5,5 +5,5 @@ export default function ConversationDetailView() {
       <h1>ConversationDetailView</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

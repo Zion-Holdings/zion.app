@@ -5,5 +5,5 @@ export default function MessageTalentModal() {
       <h1>MessageTalentModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

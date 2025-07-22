@@ -5,5 +5,5 @@ export default function ResumePreviewCard() {
       <h1>ResumePreviewCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

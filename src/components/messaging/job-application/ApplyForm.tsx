@@ -5,5 +5,5 @@ export default function ApplyForm() {
       <h1>ApplyForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

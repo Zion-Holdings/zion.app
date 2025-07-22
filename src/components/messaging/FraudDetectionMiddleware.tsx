@@ -5,5 +5,5 @@ export default function FraudDetectionMiddleware() {
       <h1>FraudDetectionMiddleware</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ResumeTab() {
       <h1>ResumeTab</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

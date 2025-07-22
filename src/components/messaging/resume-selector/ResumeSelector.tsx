@@ -5,5 +5,5 @@ export default function ResumeSelector() {
       <h1>ResumeSelector</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

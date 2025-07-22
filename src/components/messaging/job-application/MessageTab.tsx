@@ -5,5 +5,5 @@ export default function MessageTab() {
       <h1>MessageTab</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

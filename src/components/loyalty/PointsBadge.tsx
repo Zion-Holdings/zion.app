@@ -5,5 +5,5 @@ export default function PointsBadge() {
       <h1>PointsBadge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

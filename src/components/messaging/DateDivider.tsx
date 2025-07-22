@@ -5,5 +5,5 @@ export default function DateDivider() {
       <h1>DateDivider</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
