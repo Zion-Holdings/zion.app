@@ -6,4 +6,4 @@ export default function useOnboardingStatus() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
