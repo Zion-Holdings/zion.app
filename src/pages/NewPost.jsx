@@ -6,4 +6,4 @@ export default function NewPost() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

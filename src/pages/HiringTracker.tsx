@@ -6,4 +6,4 @@ export default function HiringTracker() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

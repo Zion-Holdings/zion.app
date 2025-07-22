@@ -6,4 +6,4 @@ export default function ListingDetail() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
