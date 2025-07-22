@@ -5,5 +5,5 @@ export default function ErrorState() {
       <h1>ErrorState</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

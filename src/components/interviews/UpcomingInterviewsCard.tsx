@@ -5,5 +5,5 @@ export default function UpcomingInterviewsCard() {
       <h1>UpcomingInterviewsCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

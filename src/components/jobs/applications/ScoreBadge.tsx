@@ -5,5 +5,5 @@ export default function ScoreBadge() {
       <h1>ScoreBadge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

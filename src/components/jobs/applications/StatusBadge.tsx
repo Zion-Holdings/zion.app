@@ -5,5 +5,5 @@ export default function StatusBadge() {
       <h1>StatusBadge</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ApplicationActions() {
       <h1>ApplicationActions</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function InterviewRequestForm() {
       <h1>InterviewRequestForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ApplicationProgress() {
       <h1>ApplicationProgress</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

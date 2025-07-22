@@ -5,5 +5,5 @@ export default function ScoreDialog() {
       <h1>ScoreDialog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

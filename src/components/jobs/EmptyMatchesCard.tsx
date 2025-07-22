@@ -5,5 +5,5 @@ export default function EmptyMatchesCard() {
       <h1>EmptyMatchesCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

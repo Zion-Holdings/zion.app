@@ -5,5 +5,5 @@ export default function ApplicationRow() {
       <h1>ApplicationRow</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function TranslatableJobForm() {
       <h1>TranslatableJobForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

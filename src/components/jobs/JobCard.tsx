@@ -5,5 +5,5 @@ export default function JobCard() {
       <h1>JobCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

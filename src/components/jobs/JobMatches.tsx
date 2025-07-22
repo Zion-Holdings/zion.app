@@ -5,5 +5,5 @@ export default function JobMatches() {
       <h1>JobMatches</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

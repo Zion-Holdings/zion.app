@@ -5,5 +5,5 @@ export default function ApplicationCard() {
       <h1>ApplicationCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

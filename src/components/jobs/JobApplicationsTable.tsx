@@ -5,5 +5,5 @@ export default function JobApplicationsTable() {
       <h1>JobApplicationsTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

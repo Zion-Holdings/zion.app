@@ -5,5 +5,5 @@ export default function ApplicationsTracker() {
       <h1>ApplicationsTracker</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

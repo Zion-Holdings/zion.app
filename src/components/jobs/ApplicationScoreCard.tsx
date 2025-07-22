@@ -5,5 +5,5 @@ export default function ApplicationScoreCard() {
       <h1>ApplicationScoreCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

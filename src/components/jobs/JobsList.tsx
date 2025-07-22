@@ -5,5 +5,5 @@ export default function JobsList() {
       <h1>JobsList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
