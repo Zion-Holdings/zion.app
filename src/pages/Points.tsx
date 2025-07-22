@@ -6,4 +6,4 @@ export default function Points() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

@@ -6,4 +6,4 @@ export default function NationProfilePage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

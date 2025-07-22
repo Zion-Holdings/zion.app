@@ -6,4 +6,4 @@ export default function PartnerIntegration() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
