@@ -5,5 +5,5 @@ export default function PostJob() {
       <h1>PostJob</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

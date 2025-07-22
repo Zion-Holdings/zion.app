@@ -5,5 +5,5 @@ export default function PublicTalentProfilePage() {
       <h1>PublicTalentProfilePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

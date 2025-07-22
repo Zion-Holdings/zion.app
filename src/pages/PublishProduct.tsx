@@ -5,5 +5,5 @@ export default function PublishProduct() {
       <h1>PublishProduct</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

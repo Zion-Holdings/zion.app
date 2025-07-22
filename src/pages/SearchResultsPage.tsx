@@ -5,5 +5,5 @@ export default function SearchResultsPage() {
       <h1>SearchResultsPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

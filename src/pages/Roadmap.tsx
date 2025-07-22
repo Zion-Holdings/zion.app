@@ -5,5 +5,5 @@ export default function Roadmap() {
       <h1>Roadmap</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

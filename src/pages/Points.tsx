@@ -5,5 +5,5 @@ export default function Points() {
       <h1>Points</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

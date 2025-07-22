@@ -5,5 +5,5 @@ export default function ProjectRoom() {
       <h1>ProjectRoom</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

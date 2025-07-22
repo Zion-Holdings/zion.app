@@ -5,5 +5,5 @@ export default function SavedTalentsPage() {
       <h1>SavedTalentsPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

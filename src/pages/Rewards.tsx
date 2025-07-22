@@ -5,5 +5,5 @@ export default function Rewards() {
       <h1>Rewards</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

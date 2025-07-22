@@ -5,5 +5,5 @@ export default function RecommendationsPage() {
       <h1>RecommendationsPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

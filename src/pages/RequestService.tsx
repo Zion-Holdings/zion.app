@@ -5,5 +5,5 @@ export default function RequestService() {
       <h1>RequestService</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

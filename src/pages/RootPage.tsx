@@ -5,5 +5,5 @@ export default function RootPage() {
       <h1>RootPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ProductsAdminPage() {
       <h1>ProductsAdminPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

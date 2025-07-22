@@ -5,5 +5,5 @@ export default function ProductsList() {
       <h1>ProductsList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

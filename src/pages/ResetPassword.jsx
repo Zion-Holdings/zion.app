@@ -5,5 +5,5 @@ export default function ResetPassword() {
       <h1>ResetPassword</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
