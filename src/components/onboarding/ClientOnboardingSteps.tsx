@@ -6,4 +6,4 @@ export default function ClientOnboardingSteps() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
