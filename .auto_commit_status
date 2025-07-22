@@ -1,2 +1,3 @@
  M .auto_commit_status
- M automation/ai-improvement-agents.js
+ M automation/core/TaskScheduler.js
+?? automation/improvement-dashboard.html
