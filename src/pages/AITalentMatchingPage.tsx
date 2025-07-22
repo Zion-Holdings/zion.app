@@ -6,4 +6,4 @@ export default function AITalentMatchingPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
