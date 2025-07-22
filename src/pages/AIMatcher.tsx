@@ -5,5 +5,5 @@ export default function AIMatcher() {
       <h1>AIMatcher</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

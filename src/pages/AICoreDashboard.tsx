@@ -5,5 +5,5 @@ export default function AICoreDashboard() {
       <h1>AICoreDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

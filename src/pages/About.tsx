@@ -5,5 +5,5 @@ export default function About() {
       <h1>About</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

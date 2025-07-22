@@ -5,5 +5,5 @@ export default function Careers() {
       <h1>Careers</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

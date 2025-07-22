@@ -5,5 +5,5 @@ export default function AITalentMatchingPage() {
       <h1>AITalentMatchingPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

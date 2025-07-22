@@ -5,5 +5,5 @@ export default function ApiWebhooks() {
       <h1>ApiWebhooks</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

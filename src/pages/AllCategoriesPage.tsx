@@ -5,5 +5,5 @@ export default function AllCategoriesPage() {
       <h1>AllCategoriesPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

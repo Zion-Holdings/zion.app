@@ -5,5 +5,5 @@ export default function AccountSettings() {
       <h1>AccountSettings</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

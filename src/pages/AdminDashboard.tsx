@@ -5,5 +5,5 @@ export default function AdminDashboard() {
       <h1>AdminDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

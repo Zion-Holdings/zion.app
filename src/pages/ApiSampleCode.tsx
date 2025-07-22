@@ -5,5 +5,5 @@ export default function ApiSampleCode() {
       <h1>ApiSampleCode</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

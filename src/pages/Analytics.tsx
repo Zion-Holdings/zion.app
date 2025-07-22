@@ -5,5 +5,5 @@ export default function Analytics() {
       <h1>Analytics</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

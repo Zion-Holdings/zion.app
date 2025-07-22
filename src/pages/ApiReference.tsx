@@ -5,5 +5,5 @@ export default function ApiReference() {
       <h1>ApiReference</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

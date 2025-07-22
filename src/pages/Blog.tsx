@@ -5,5 +5,5 @@ export default function Blog() {
       <h1>Blog</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

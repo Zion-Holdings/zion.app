@@ -5,5 +5,5 @@ export default function ApiErrorCodes() {
       <h1>ApiErrorCodes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

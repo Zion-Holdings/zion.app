@@ -5,5 +5,5 @@ export default function MobileThemeProvider() {
       <h1>MobileThemeProvider</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function ApiGettingStarted() {
       <h1>ApiGettingStarted</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AdminPerformancePage() {
       <h1>AdminPerformancePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
