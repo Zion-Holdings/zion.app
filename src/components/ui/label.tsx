@@ -6,4 +6,4 @@ export default function label() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
