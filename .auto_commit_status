@@ -1,3 +1,2 @@
  M .auto_commit_status
- M src/hooks/useAdvancedOnboardingStatus.tsx
- M src/hooks/useAuthGuard.tsx
+ M src/hooks/useOnboardingStatus.tsx
