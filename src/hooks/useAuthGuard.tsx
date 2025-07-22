@@ -5,5 +5,5 @@ export default function useAuthGuard() {
       <h1>useAuthGuard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function useAdvancedOnboardingStatus() {
       <h1>useAdvancedOnboardingStatus</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
