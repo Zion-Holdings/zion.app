@@ -6,4 +6,4 @@ export default function DeployRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

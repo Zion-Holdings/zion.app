@@ -6,4 +6,4 @@ export default function FeatureUsageChart() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

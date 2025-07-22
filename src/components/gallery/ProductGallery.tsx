@@ -6,4 +6,4 @@ export default function ProductGallery() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

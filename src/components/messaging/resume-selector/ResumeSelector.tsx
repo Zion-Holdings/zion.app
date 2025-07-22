@@ -6,4 +6,4 @@ export default function ResumeSelector() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

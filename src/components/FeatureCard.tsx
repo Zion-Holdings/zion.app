@@ -6,4 +6,4 @@ export default function FeatureCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

@@ -6,4 +6,4 @@ export default function AdminRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

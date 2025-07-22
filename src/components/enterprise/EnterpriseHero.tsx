@@ -6,4 +6,4 @@ export default function EnterpriseHero() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

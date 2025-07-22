@@ -6,4 +6,4 @@ export default function TalentRateRecommender() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

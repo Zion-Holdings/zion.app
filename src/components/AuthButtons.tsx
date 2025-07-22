@@ -6,4 +6,4 @@ export default function AuthButtons() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''''

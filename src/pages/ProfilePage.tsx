@@ -6,4 +6,4 @@ export default function ProfilePage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

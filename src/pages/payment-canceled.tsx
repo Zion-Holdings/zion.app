@@ -6,4 +6,4 @@ export default function payment-canceled() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

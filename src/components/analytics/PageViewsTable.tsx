@@ -6,4 +6,4 @@ export default function PageViewsTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

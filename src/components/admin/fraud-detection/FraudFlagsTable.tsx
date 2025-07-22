@@ -6,4 +6,4 @@ export default function FraudFlagsTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

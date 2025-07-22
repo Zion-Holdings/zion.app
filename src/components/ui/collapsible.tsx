@@ -6,4 +6,4 @@ export default function collapsible() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

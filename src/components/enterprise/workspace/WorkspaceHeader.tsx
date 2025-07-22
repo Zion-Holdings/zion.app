@@ -6,4 +6,4 @@ export default function WorkspaceHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

@@ -6,4 +6,4 @@ export default function ApiReference() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

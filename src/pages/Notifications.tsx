@@ -6,4 +6,4 @@ export default function Notifications() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

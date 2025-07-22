@@ -6,4 +6,4 @@ export default function ZionBrainDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

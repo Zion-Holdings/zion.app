@@ -6,4 +6,4 @@ export default function CreateServiceProfile() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

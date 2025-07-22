@@ -6,4 +6,4 @@ export default function ContentGenerator() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

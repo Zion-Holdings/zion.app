@@ -6,4 +6,4 @@ export default function ProfileExperience() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

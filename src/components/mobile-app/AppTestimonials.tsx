@@ -6,4 +6,4 @@ export default function AppTestimonials() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

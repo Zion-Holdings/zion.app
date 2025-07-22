@@ -6,4 +6,4 @@ export default function FavoriteButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

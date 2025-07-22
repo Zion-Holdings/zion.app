@@ -6,4 +6,4 @@ export default function AIMatchingResults() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''''

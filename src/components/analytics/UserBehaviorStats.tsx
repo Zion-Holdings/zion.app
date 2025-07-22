@@ -6,4 +6,4 @@ export default function UserBehaviorStats() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

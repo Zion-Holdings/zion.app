@@ -6,4 +6,4 @@ export default function HeroSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

@@ -6,4 +6,4 @@ export default function MarketplaceRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

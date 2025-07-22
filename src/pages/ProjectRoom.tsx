@@ -6,4 +6,4 @@ export default function ProjectRoom() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

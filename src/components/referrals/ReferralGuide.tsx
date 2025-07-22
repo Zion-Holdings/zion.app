@@ -6,4 +6,4 @@ export default function ReferralGuide() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

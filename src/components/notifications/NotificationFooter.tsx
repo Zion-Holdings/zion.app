@@ -6,4 +6,4 @@ export default function NotificationFooter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

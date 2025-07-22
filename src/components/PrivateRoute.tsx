@@ -6,4 +6,4 @@ export default function PrivateRoute() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

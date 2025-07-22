@@ -6,4 +6,4 @@ export default function PaymentSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

@@ -6,4 +6,4 @@ export default function EnterpriseAdmin() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';

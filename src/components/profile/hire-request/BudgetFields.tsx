@@ -6,4 +6,4 @@ export default function BudgetFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''
+}''''''''''''';
