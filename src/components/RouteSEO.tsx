@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function RouteSEO() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function RouteSEO() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''
