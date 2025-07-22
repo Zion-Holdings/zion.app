@@ -6,4 +6,4 @@ export default function ProfileAvailability() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
