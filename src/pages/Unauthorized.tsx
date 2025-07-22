@@ -6,4 +6,4 @@ export default function Unauthorized() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
