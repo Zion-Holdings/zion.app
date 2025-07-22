@@ -6,4 +6,4 @@ export default function SearchTabs() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

@@ -6,4 +6,4 @@ export default function ListingGridSkeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
