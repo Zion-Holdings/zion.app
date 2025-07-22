@@ -6,4 +6,4 @@ export default function AICorePage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

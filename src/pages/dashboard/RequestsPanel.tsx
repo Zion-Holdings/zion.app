@@ -6,4 +6,4 @@ export default function RequestsPanel() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
