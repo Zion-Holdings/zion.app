@@ -6,4 +6,4 @@ export default function SummitPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
