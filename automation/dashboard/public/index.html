@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zion App - Automation Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .status-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .status-card h3 {
+            margin: 0 0 15px 0;
+            color: #fff;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-online { background: #4CAF50; }
+        .status-offline { background: #f44336; }
+        .status-error { background: #ff9800; }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .refresh-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .refresh-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Zion App Automation Dashboard</h1>
+            <p>Real-time monitoring of all automation systems</p>
+        </div>
+        
+        <button class="refresh-btn" onclick="refreshStatus()">🔄 Refresh Status</button>
+        
+        <div class="status-grid" id="statusGrid">
+            <!-- Status cards will be populated by JavaScript -->
+        </div>
+        
+        <div class="metrics" id="metricsGrid">
+            <!-- Metrics will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const automationServices = [
+            'automation-manager',
+            'enhanced-automation',
+            'infinite-improvement',
+            'autonomous-system',
+            'ai-agents',
+            'netlify-monitor',
+            'netlify-build',
+            'netlify-error-fixer',
+            'watchdog',
+            'autonomous-daemon',
+            'continuous-improvement',
+            'ai-optimizer',
+            'continuous-monitor'
+        ];
+
+        async function refreshStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error('Error fetching status:', error);
+                updateDashboardWithError();
+            }
+        }
+
+        function updateDashboard(data) {
+            const statusGrid = document.getElementById('statusGrid');
+            const metricsGrid = document.getElementById('metricsGrid');
+            
+            // Clear existing content
+            statusGrid.innerHTML = '';
+            metricsGrid.innerHTML = '';
+            
+            // Add status cards
+            automationServices.forEach(service => {
+                const status = data.processes?.[service] || 'unknown';
+                const statusCard = createStatusCard(service, status);
+                statusGrid.appendChild(statusCard);
+            });
+            
+            // Add metrics
+            if (data.metrics) {
+                Object.entries(data.metrics).forEach(([key, value]) => {
+                    const metric = createMetric(key, value);
+                    metricsGrid.appendChild(metric);
+                });
+            }
+        }
+
+        function updateDashboardWithError() {
+            const statusGrid = document.getElementById('statusGrid');
+            statusGrid.innerHTML = '<div class="status-card"><h3>⚠️ Connection Error</h3><p>Unable to connect to automation services</p></div>';
+        }
+
+        function createStatusCard(service, status) {
+            const card = document.createElement('div');
+            card.className = 'status-card';
+            
+            const statusClass = status === 'online' ? 'status-online' : 
+                              status === 'error' ? 'status-error' : 'status-offline';
+            
+            card.innerHTML = `
+                <h3>${service}</h3>
+                <div>
+                    <span class="status-indicator ${statusClass}"></span>
+                    <span>${status}</span>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function createMetric(label, value) {
+            const metric = document.createElement('div');
+            metric.className = 'metric';
+            
+            metric.innerHTML = `
+                <div class="metric-value">${value}</div>
+                <div class="metric-label">${label}</div>
+            `;
+            
+            return metric;
+        }
+
+        // Initial load
+        refreshStatus();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(refreshStatus, 30000);
+    </script>
+</body>
+</html> 

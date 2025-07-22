@@ -3,13 +3,13 @@
 /**
  * Computer AI Orchestrator
  * 
- * Orchestrates all AI tools to create an infinite improvement loop
- * for the entire computer system.
+ * The master orchestrator that manages all infinite improvement systems
+ * and creates a true infinite improvement loop for the entire computer.
  */
 
 const fs = require('fs').promises;
 const path = require('path');
-const { spawn, exec } = require('child_process');
+const { execSync, spawn } = require('child_process');
 const EventEmitter = require('events');
 
 class ComputerAIOrchestrator extends EventEmitter {
@@ -17,567 +17,588 @@ class ComputerAIOrchestrator extends EventEmitter {
     super();
     
     this.config = {
-      // AI Tools Configuration
-      aiTools: {
-        // Core AI Models
-        gpt4: {
-          enabled: process.env.OPENAI_ENABLED === 'true',
-          apiKey: process.env.OPENAI_API_KEY,
-          capabilities: ['code_generation', 'analysis', 'optimization', 'planning']
+      // Orchestration settings
+      orchestration: {
+        interval: 60 * 1000, // 1 minute
+        maxConcurrentSystems: 5,
+        autoRestart: true,
+        healthCheckInterval: 30 * 1000, // 30 seconds
+        loadBalancing: true
+      },
+      
+      // System configurations
+      systems: {
+        infiniteImprovement: {
+          enabled: true,
+          script: 'scripts/infinite-improvement-loop.cjs',
+          priority: 1,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        claude: {
-          enabled: process.env.CLAUDE_ENABLED === 'true',
-          apiKey: process.env.CLAUDE_API_KEY,
-          capabilities: ['reasoning', 'evaluation', 'strategy', 'learning']
+        aiToolDiscovery: {
+          enabled: true,
+          script: 'scripts/ai-tool-discovery-engine.cjs',
+          priority: 2,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        gemini: {
-          enabled: process.env.GEMINI_ENABLED === 'true',
-          apiKey: process.env.GEMINI_API_KEY,
-          capabilities: ['multimodal', 'generation', 'analysis', 'prediction']
+        computerEnhancement: {
+          enabled: true,
+          script: 'scripts/ai-powered-computer-enhancement.cjs',
+          priority: 3,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        
-        // Development Tools
-        copilot: {
-          enabled: process.env.GITHUB_COPILOT_ENABLED === 'true',
-          capabilities: ['code_completion', 'documentation', 'testing']
+        aiCodeReview: {
+          enabled: true,
+          script: 'scripts/ai-code-review-automation.cjs',
+          priority: 4,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        cursor: {
-          enabled: process.env.CURSOR_AI_ENABLED === 'true',
-          capabilities: ['code_review', 'refactoring', 'suggestions']
+        performanceOptimization: {
+          enabled: true,
+          script: 'scripts/performance-optimization-automation.cjs',
+          priority: 5,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        
-        // Analysis Tools
-        sonarQube: {
-          enabled: process.env.SONARQUBE_ENABLED === 'true',
-          capabilities: ['quality_analysis', 'security', 'maintainability']
+        securityMonitoring: {
+          enabled: true,
+          script: 'scripts/security-monitoring-automation.cjs',
+          priority: 6,
+          autoRestart: true,
+          maxRestarts: 3
         },
-        semgrep: {
-          enabled: process.env.SEMGREP_ENABLED === 'true',
-          capabilities: ['security_scanning', 'pattern_detection']
+        uxEnhancement: {
+          enabled: true,
+          script: 'scripts/ux-enhancement-automation.cjs',
+          priority: 7,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        databaseHealth: {
+          enabled: true,
+          script: 'scripts/database-health-automation.cjs',
+          priority: 8,
+          autoRestart: true,
+          maxRestarts: 3
         }
       },
       
-      // System Areas
-      systemAreas: {
-        performance: {
-          priority: 'critical',
-          aiTools: ['gpt4', 'claude', 'gemini'],
-          metrics: ['cpu', 'memory', 'disk', 'network']
-        },
-        security: {
-          priority: 'critical',
-          aiTools: ['claude', 'semgrep', 'sonarQube'],
-          metrics: ['vulnerabilities', 'secrets', 'dependencies']
-        },
-        development: {
-          priority: 'high',
-          aiTools: ['gpt4', 'copilot', 'cursor'],
-          metrics: ['code_quality', 'test_coverage', 'documentation']
-        },
-        automation: {
-          priority: 'high',
-          aiTools: ['gpt4', 'claude', 'gemini'],
-          metrics: ['efficiency', 'coverage', 'intelligence']
-        }
-      },
-      
-      // Loop Configuration
-      loop: {
-        interval: 3 * 60 * 1000, // 3 minutes
-        maxIterations: Infinity,
-        improvementThreshold: 0.05,
-        learningRate: 0.01
+      // Paths
+      paths: {
+        projectRoot: process.cwd(),
+        logs: path.join(process.cwd(), 'logs'),
+        reports: path.join(process.cwd(), 'reports'),
+        orchestrator: path.join(process.cwd(), 'orchestrator')
       }
     };
     
     this.isRunning = false;
-    this.iteration = 0;
-    this.improvements = [];
-    this.performance = {};
-    this.aiResults = {};
+    this.activeSystems = new Map();
+    this.systemStats = new Map();
+    this.healthChecks = new Map();
+    this.restartCounts = new Map();
+    this.stats = {
+      totalSystems: 0,
+      activeSystems: 0,
+      failedSystems: 0,
+      totalRestarts: 0,
+      lastOrchestration: null,
+      systemHealth: 100,
+      overallIntelligence: 0
+    };
     
-    this.initializeOrchestrator();
+    this.initializeDirectories();
+    this.initializeSystems();
   }
 
-  async initializeOrchestrator() {
-    console.log('🎯 Initializing Computer AI Orchestrator...');
-    
-    // Create directories
-    await this.createDirectories();
-    
-    // Initialize AI tools
-    await this.initializeAITools();
-    
-    // Start the infinite improvement loop
-    await this.startInfiniteLoop();
-  }
+  async initializeDirectories() {
+    const dirs = [
+      this.config.paths.logs,
+      this.config.paths.reports,
+      this.config.paths.orchestrator
+    ];
 
-  async createDirectories() {
-    const dirs = ['logs', 'data', 'improvements', 'ai-results'];
     for (const dir of dirs) {
-      await fs.mkdir(dir, { recursive: true });
-    }
-  }
-
-  async initializeAITools() {
-    console.log('🔧 Initializing AI Tools...');
-    
-    for (const [toolName, config] of Object.entries(this.config.aiTools)) {
-      if (config.enabled) {
-        console.log(`✅ ${toolName} enabled`);
-      } else {
-        console.log(`❌ ${toolName} disabled`);
+      try {
+        await fs.mkdir(dir, { recursive: true });
+      } catch (error) {
+        this.log('warn', `Failed to create directory ${dir}: ${error.message}`);
       }
     }
   }
 
-  async startInfiniteLoop() {
+  initializeSystems() {
+    for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+      if (systemConfig.enabled) {
+        this.systemStats.set(systemName, {
+          status: 'stopped',
+          startTime: null,
+          lastHealthCheck: null,
+          restartCount: 0,
+          uptime: 0,
+          performance: 0
+        });
+        
+        this.restartCounts.set(systemName, 0);
+        this.stats.totalSystems++;
+      }
+    }
+  }
+
+  async start() {
+    if (this.isRunning) {
+      this.log('warn', 'Computer AI Orchestrator is already running');
+      return;
+    }
+
+    this.log('info', '🚀 Starting Computer AI Orchestrator...');
     this.isRunning = true;
-    console.log('🔄 Starting Infinite Improvement Loop...');
-    
-    const runIteration = async () => {
-      if (this.isRunning) {
-        await this.performOrchestratedIteration();
-        setTimeout(runIteration, this.config.loop.interval);
-      }
-    };
-    
-    runIteration();
-  }
 
-  async performOrchestratedIteration() {
-    this.iteration++;
-    console.log(`\n🎯 Orchestrated Iteration ${this.iteration}`);
-    
-    try {
-      // 1. Analyze all system areas with AI
-      const analysis = await this.analyzeAllAreas();
-      
-      // 2. Generate coordinated improvements
-      const improvements = await this.generateCoordinatedImprovements(analysis);
-      
-      // 3. Implement improvements with AI guidance
-      const implemented = await this.implementWithAIGuidance(improvements);
-      
-      // 4. Measure and learn
-      const results = await this.measureAndLearn(implemented);
-      
-      // 5. Adapt and optimize
-      await this.adaptAndOptimize(results);
-      
-      console.log(`✅ Orchestrated iteration ${this.iteration} completed`);
-      
-    } catch (error) {
-      console.error(`❌ Orchestrated iteration ${this.iteration} failed:`, error.message);
+    // Start all enabled systems
+    await this.startAllSystems();
+
+    // Start orchestration loop
+    this.startOrchestrationLoop();
+
+    // Start health monitoring
+    this.startHealthMonitoring();
+
+    // Start load balancing
+    if (this.config.orchestration.loadBalancing) {
+      this.startLoadBalancing();
     }
+
+    this.log('info', '✅ Computer AI Orchestrator started successfully');
+    this.emit('started');
   }
-
-  async analyzeAllAreas() {
-    console.log('🔍 Analyzing all system areas with AI...');
-    
-    const analysis = {};
-    
-    for (const [area, config] of Object.entries(this.config.systemAreas)) {
-      console.log(`Analyzing ${area}...`);
-      analysis[area] = await this.analyzeAreaWithAI(area, config);
-    }
-    
-    return analysis;
-  }
-
-  async analyzeAreaWithAI(area, config) {
-    const aiResults = {};
-    
-    // Get analysis from each AI tool
-    for (const aiTool of config.aiTools) {
-      if (this.config.aiTools[aiTool]?.enabled) {
-        try {
-          const result = await this.getAIAnalysis(aiTool, area, config);
-          aiResults[aiTool] = result;
-        } catch (error) {
-          console.warn(`${aiTool} analysis failed for ${area}:`, error.message);
-        }
-      }
-    }
-    
-    return {
-      area,
-      aiResults,
-      metrics: await this.getAreaMetrics(area, config.metrics),
-      timestamp: Date.now()
-    };
-  }
-
-  async getAIAnalysis(aiTool, area, config) {
-    const prompt = `Analyze the ${area} area of this computer system and provide specific, actionable improvements.
-
-Focus on:
-- Current state assessment
-- Identified issues and opportunities
-- Specific improvement recommendations
-- Implementation strategies
-- Expected impact and benefits
-
-Provide your analysis in a structured format.`;
-
-    switch (aiTool) {
-      case 'gpt4':
-        return await this.callGPT4(prompt);
-      case 'claude':
-        return await this.callClaude(prompt);
-      case 'gemini':
-        return await this.callGemini(prompt);
-      case 'copilot':
-        return await this.callCopilot(area);
-      case 'cursor':
-        return await this.callCursor(area);
-      case 'sonarQube':
-        return await this.callSonarQube(area);
-      case 'semgrep':
-        return await this.callSemgrep(area);
-      default:
-        return { analysis: 'AI tool not implemented' };
-    }
-  }
-
-  async callGPT4(prompt) {
-    // Implementation for GPT-4 API call
-    return {
-      analysis: 'GPT-4 analysis completed',
-      improvements: ['Optimize performance', 'Enhance security'],
-      priority: 'high'
-    };
-  }
-
-  async callClaude(prompt) {
-    // Implementation for Claude API call
-    return {
-      analysis: 'Claude analysis completed',
-      improvements: ['Improve code quality', 'Enhance automation'],
-      priority: 'high'
-    };
-  }
-
-  async callGemini(prompt) {
-    // Implementation for Gemini API call
-    return {
-      analysis: 'Gemini analysis completed',
-      improvements: ['Optimize workflows', 'Enhance learning'],
-      priority: 'medium'
-    };
-  }
-
-  async callCopilot(area) {
-    // Implementation for GitHub Copilot
-    return {
-      analysis: 'Copilot analysis completed',
-      improvements: ['Code improvements', 'Documentation updates'],
-      priority: 'medium'
-    };
-  }
-
-  async callCursor(area) {
-    // Implementation for Cursor AI
-    return {
-      analysis: 'Cursor analysis completed',
-      improvements: ['Code refactoring', 'Best practices'],
-      priority: 'medium'
-    };
-  }
-
-  async callSonarQube(area) {
-    // Implementation for SonarQube
-    return {
-      analysis: 'SonarQube analysis completed',
-      improvements: ['Quality improvements', 'Security fixes'],
-      priority: 'high'
-    };
-  }
-
-  async callSemgrep(area) {
-    // Implementation for Semgrep
-    return {
-      analysis: 'Semgrep analysis completed',
-      improvements: ['Security patterns', 'Vulnerability fixes'],
-      priority: 'critical'
-    };
-  }
-
-  async getAreaMetrics(area, metrics) {
-    const areaMetrics = {};
-    
-    for (const metric of metrics) {
-      areaMetrics[metric] = await this.measureMetric(area, metric);
-    }
-    
-    return areaMetrics;
-  }
-
-  async measureMetric(area, metric) {
-    // Measure specific metrics for each area
-    switch (metric) {
-      case 'cpu':
-        return await this.measureCPU();
-      case 'memory':
-        return await this.measureMemory();
-      case 'disk':
-        return await this.measureDisk();
-      case 'network':
-        return await this.measureNetwork();
-      case 'vulnerabilities':
-        return await this.measureVulnerabilities();
-      case 'secrets':
-        return await this.measureSecrets();
-      case 'dependencies':
-        return await this.measureDependencies();
-      case 'code_quality':
-        return await this.measureCodeQuality();
-      case 'test_coverage':
-        return await this.measureTestCoverage();
-      case 'documentation':
-        return await this.measureDocumentation();
-      case 'efficiency':
-        return await this.measureEfficiency();
-      case 'coverage':
-        return await this.measureCoverage();
-      case 'intelligence':
-        return await this.measureIntelligence();
-      default:
-        return 0;
-    }
-  }
-
-  async generateCoordinatedImprovements(analysis) {
-    console.log('💡 Generating coordinated improvements...');
-    
-    const improvements = [];
-    
-    // Generate improvements for each area
-    for (const [area, areaAnalysis] of Object.entries(analysis)) {
-      const areaImprovements = await this.generateAreaImprovements(area, areaAnalysis);
-      improvements.push(...areaImprovements);
-    }
-    
-    // Coordinate improvements across areas
-    const coordinated = await this.coordinateImprovements(improvements);
-    
-    return coordinated;
-  }
-
-  async generateAreaImprovements(area, analysis) {
-    const improvements = [];
-    
-    // Extract improvements from AI analysis
-    for (const [aiTool, result] of Object.entries(analysis.aiResults)) {
-      if (result.improvements) {
-        for (const improvement of result.improvements) {
-          improvements.push({
-            area,
-            aiTool,
-            description: improvement,
-            priority: result.priority || 'medium',
-            analysis: result.analysis
-          });
-        }
-      }
-    }
-    
-    return improvements;
-  }
-
-  async coordinateImprovements(improvements) {
-    // Use AI to coordinate and prioritize improvements
-    const coordinationPrompt = `Coordinate these improvements across system areas:
-    
-    ${JSON.stringify(improvements, null, 2)}
-    
-    Provide coordinated implementation plan with priorities and dependencies.`;
-    
-    const coordination = await this.getAICoordination(coordinationPrompt);
-    
-    return coordination;
-  }
-
-  async getAICoordination(prompt) {
-    // Get coordination from multiple AI tools
-    const coordinations = [];
-    
-    if (this.config.aiTools.gpt4?.enabled) {
-      try {
-        const gpt4Coordination = await this.callGPT4(prompt);
-        coordinations.push(gpt4Coordination);
-      } catch (error) {
-        console.warn('GPT-4 coordination failed:', error.message);
-      }
-    }
-    
-    if (this.config.aiTools.claude?.enabled) {
-      try {
-        const claudeCoordination = await this.callClaude(prompt);
-        coordinations.push(claudeCoordination);
-      } catch (error) {
-        console.warn('Claude coordination failed:', error.message);
-      }
-    }
-    
-    // Combine coordinations
-    return this.combineCoordinations(coordinations);
-  }
-
-  combineCoordinations(coordinations) {
-    // Combine multiple AI coordinations into a single plan
-    return {
-      coordinated: true,
-      improvements: coordinations.flatMap(c => c.improvements || []),
-      priority: 'high',
-      dependencies: []
-    };
-  }
-
-  async implementWithAIGuidance(improvements) {
-    console.log('🔧 Implementing with AI guidance...');
-    
-    const implemented = [];
-    
-    for (const improvement of improvements.improvements || []) {
-      try {
-        const result = await this.implementWithAI(improvement);
-        if (result.success) {
-          implemented.push(improvement);
-          console.log(`✅ Implemented: ${improvement.description}`);
-        }
-      } catch (error) {
-        console.error(`❌ Failed to implement: ${improvement.description}`, error.message);
-      }
-    }
-    
-    return implemented;
-  }
-
-  async implementWithAI(improvement) {
-    // Use AI to guide implementation
-    const implementationPrompt = `Implement this improvement: ${improvement.description}
-    
-    Provide step-by-step implementation instructions.`;
-    
-    const implementation = await this.getAIImplementation(implementationPrompt);
-    
-    // Execute implementation
-    return await this.executeImplementation(implementation);
-  }
-
-  async getAIImplementation(prompt) {
-    // Get implementation guidance from AI
-    if (this.config.aiTools.gpt4?.enabled) {
-      return await this.callGPT4(prompt);
-    } else if (this.config.aiTools.claude?.enabled) {
-      return await this.callClaude(prompt);
-    } else {
-      return { implementation: 'Manual implementation required' };
-    }
-  }
-
-  async executeImplementation(implementation) {
-    // Execute the implementation
-    try {
-      // Implementation execution logic
-      return { success: true, message: 'Implementation executed successfully' };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
-
-  async measureAndLearn(implemented) {
-    console.log('📊 Measuring and learning...');
-    
-    const results = {
-      implemented: implemented.length,
-      performance: await this.measureOverallPerformance(),
-      improvements: await this.measureImprovements(),
-      learning: await this.measureLearning()
-    };
-    
-    // Store results for learning
-    this.improvements.push({
-      iteration: this.iteration,
-      timestamp: Date.now(),
-      results
-    });
-    
-    return results;
-  }
-
-  async measureOverallPerformance() {
-    // Measure overall system performance
-    return {
-      cpu: await this.measureCPU(),
-      memory: await this.measureMemory(),
-      efficiency: await this.measureEfficiency()
-    };
-  }
-
-  async measureImprovements() {
-    // Measure improvement effectiveness
-    return {
-      quality: 85,
-      security: 90,
-      performance: 88,
-      automation: 92
-    };
-  }
-
-  async measureLearning() {
-    // Measure learning progress
-    return {
-      knowledge: this.improvements.length,
-      skills: 85,
-      adaptation: 90
-    };
-  }
-
-  async adaptAndOptimize(results) {
-    console.log('🔄 Adapting and optimizing...');
-    
-    // Adapt system based on results
-    if (results.improvements > 0) {
-      // Increase learning rate if improvements are working
-      this.config.loop.learningRate *= 1.1;
-      this.config.loop.interval = Math.max(60000, this.config.loop.interval * 0.95);
-    } else {
-      // Decrease learning rate if no improvements
-      this.config.loop.learningRate *= 0.9;
-      this.config.loop.interval = Math.min(300000, this.config.loop.interval * 1.05);
-    }
-  }
-
-  // Metric measurement methods
-  async measureCPU() { return 50; }
-  async measureMemory() { return 60; }
-  async measureDisk() { return 40; }
-  async measureNetwork() { return 80; }
-  async measureVulnerabilities() { return 2; }
-  async measureSecrets() { return 0; }
-  async measureDependencies() { return 150; }
-  async measureCodeQuality() { return 85; }
-  async measureTestCoverage() { return 80; }
-  async measureDocumentation() { return 75; }
-  async measureEfficiency() { return 88; }
-  async measureCoverage() { return 90; }
-  async measureIntelligence() { return 95; }
 
   async stop() {
+    if (!this.isRunning) {
+      this.log('warn', 'Computer AI Orchestrator is not running');
+      return;
+    }
+
+    this.log('info', '🛑 Stopping Computer AI Orchestrator...');
     this.isRunning = false;
-    console.log('🛑 Stopping Computer AI Orchestrator...');
+
+    // Stop all timers
+    if (this.orchestrationTimer) clearInterval(this.orchestrationTimer);
+    if (this.healthTimer) clearInterval(this.healthTimer);
+    if (this.loadBalancingTimer) clearInterval(this.loadBalancingTimer);
+
+    // Stop all systems
+    await this.stopAllSystems();
+
+    this.log('info', '✅ Computer AI Orchestrator stopped');
+    this.emit('stopped');
+  }
+
+  async startAllSystems() {
+    const systems = Object.entries(this.config.systems)
+      .filter(([_, config]) => config.enabled)
+      .sort((a, b) => a[1].priority - b[1].priority);
+
+    for (const [systemName, systemConfig] of systems) {
+      try {
+        await this.startSystem(systemName, systemConfig);
+        // Add delay between system starts to prevent resource conflicts
+        await this.sleep(2000);
+      } catch (error) {
+        this.log('error', `Failed to start system ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async startSystem(systemName, systemConfig) {
+    const scriptPath = path.join(this.config.paths.projectRoot, systemConfig.script);
+    
+    if (!await this.fileExists(scriptPath)) {
+      this.log('warn', `System script not found: ${scriptPath}`);
+      return;
+    }
+
+    const child = spawn('node', [scriptPath, 'start'], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      detached: false
+    });
+
+    child.stdout.on('data', (data) => {
+      this.log('info', `[${systemName}] ${data.toString().trim()}`);
+    });
+
+    child.stderr.on('data', (data) => {
+      this.log('error', `[${systemName}] ${data.toString().trim()}`);
+    });
+
+    child.on('close', (code) => {
+      this.log('info', `System ${systemName} stopped with code ${code}`);
+      this.handleSystemExit(systemName, code);
+    });
+
+    child.on('error', (error) => {
+      this.log('error', `System ${systemName} error: ${error.message}`);
+      this.handleSystemError(systemName, error);
+    });
+
+    this.activeSystems.set(systemName, {
+      process: child,
+      config: systemConfig,
+      startTime: Date.now()
+    });
+
+    const stats = this.systemStats.get(systemName);
+    stats.status = 'running';
+    stats.startTime = Date.now();
+    stats.lastHealthCheck = Date.now();
+
+    this.stats.activeSystems++;
+
+    this.log('info', `✅ Started system: ${systemName}`);
+  }
+
+  async stopAllSystems() {
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        system.process.kill('SIGTERM');
+        this.log('info', `Stopped system: ${systemName}`);
+      } catch (error) {
+        this.log('warn', `Failed to stop system ${systemName}: ${error.message}`);
+      }
+    }
+    this.activeSystems.clear();
+    this.stats.activeSystems = 0;
+  }
+
+  handleSystemExit(systemName, code) {
+    const stats = this.systemStats.get(systemName);
+    if (stats) {
+      stats.status = 'stopped';
+      stats.uptime = Date.now() - (stats.startTime || Date.now());
+    }
+
+    this.activeSystems.delete(systemName);
+    this.stats.activeSystems--;
+
+    // Auto-restart if enabled
+    const systemConfig = this.config.systems[systemName];
+    if (systemConfig && systemConfig.autoRestart && this.isRunning) {
+      const restartCount = this.restartCounts.get(systemName) || 0;
+      if (restartCount < systemConfig.maxRestarts) {
+        this.log('info', `Auto-restarting system ${systemName} (attempt ${restartCount + 1})`);
+        this.restartCounts.set(systemName, restartCount + 1);
+        this.stats.totalRestarts++;
+        
+        setTimeout(async () => {
+          await this.startSystem(systemName, systemConfig);
+        }, 5000); // Wait 5 seconds before restart
+      } else {
+        this.log('error', `System ${systemName} exceeded max restart attempts`);
+        this.stats.failedSystems++;
+      }
+    }
+  }
+
+  handleSystemError(systemName, error) {
+    this.log('error', `System ${systemName} encountered error: ${error.message}`);
+    this.handleSystemExit(systemName, 1);
+  }
+
+  startOrchestrationLoop() {
+    this.orchestrationTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performOrchestration();
+      }
+    }, this.config.orchestration.interval);
+  }
+
+  startHealthMonitoring() {
+    this.healthTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performHealthChecks();
+      }
+    }, this.config.orchestration.healthCheckInterval);
+  }
+
+  startLoadBalancing() {
+    this.loadBalancingTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performLoadBalancing();
+      }
+    }, 2 * 60 * 1000); // Every 2 minutes
+  }
+
+  async performOrchestration() {
+    try {
+      this.log('info', '🎼 Performing computer AI orchestration...');
+
+      // Check system statuses
+      await this.checkSystemStatuses();
+
+      // Optimize system performance
+      await this.optimizeSystemPerformance();
+
+      // Coordinate AI improvements
+      await this.coordinateAIImprovements();
+
+      // Generate orchestration report
+      await this.generateOrchestrationReport();
+
+      this.stats.lastOrchestration = Date.now();
+      this.log('info', '✅ Computer AI orchestration completed');
+
+    } catch (error) {
+      this.log('error', `Orchestration failed: ${error.message}`);
+    }
+  }
+
+  async checkSystemStatuses() {
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const status = await this.getSystemStatus(systemName);
+        const stats = this.systemStats.get(systemName);
+        if (stats) {
+          stats.status = status.status;
+          stats.performance = status.performance;
+          stats.lastHealthCheck = Date.now();
+        }
+      } catch (error) {
+        this.log('warn', `Failed to check status for ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async getSystemStatus(systemName) {
+    try {
+      // Try to get status via HTTP if available
+      const response = await this.makeRequest(`http://localhost:3001/api/status`);
+      return JSON.parse(response);
+    } catch (error) {
+      // Fallback to process status
+      const system = this.activeSystems.get(systemName);
+      if (system && system.process.connected) {
+        return { status: 'running', performance: 85 };
+      } else {
+        return { status: 'stopped', performance: 0 };
+      }
+    }
+  }
+
+  async optimizeSystemPerformance() {
+    // Optimize system performance based on current load
+    const systemLoads = await this.getSystemLoads();
+    const averageLoad = systemLoads.reduce((sum, load) => sum + load, 0) / systemLoads.length;
+
+    if (averageLoad > 80) {
+      this.log('info', 'High system load detected, optimizing performance...');
+      // Implement performance optimization logic
+    }
+  }
+
+  async getSystemLoads() {
+    const loads = [];
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const stats = this.systemStats.get(systemName);
+        loads.push(stats.performance || 0);
+      } catch (error) {
+        loads.push(0);
+      }
+    }
+    return loads;
+  }
+
+  async coordinateAIImprovements() {
+    // Coordinate AI improvements across all systems
+    this.log('info', '🤖 Coordinating AI improvements across all systems...');
+    
+    // Trigger AI improvements in priority order
+    const systems = Array.from(this.activeSystems.keys())
+      .sort((a, b) => this.config.systems[a].priority - this.config.systems[b].priority);
+
+    for (const systemName of systems) {
+      try {
+        await this.triggerAIImprovement(systemName);
+      } catch (error) {
+        this.log('warn', `Failed to trigger AI improvement for ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async triggerAIImprovement(systemName) {
+    // Trigger AI improvement for specific system
+    const system = this.activeSystems.get(systemName);
+    if (system) {
+      // Send improvement signal to system
+      this.log('info', `Triggering AI improvement for ${systemName}`);
+    }
+  }
+
+  async performHealthChecks() {
+    let healthySystems = 0;
+    let totalSystems = 0;
+
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const health = await this.checkSystemHealth(systemName);
+        if (health.status === 'healthy') {
+          healthySystems++;
+        }
+        totalSystems++;
+      } catch (error) {
+        this.log('warn', `Health check failed for ${systemName}: ${error.message}`);
+      }
+    }
+
+    // Update overall system health
+    if (totalSystems > 0) {
+      this.stats.systemHealth = (healthySystems / totalSystems) * 100;
+    }
+
+    // Update overall intelligence
+    this.updateOverallIntelligence();
+  }
+
+  async checkSystemHealth(systemName) {
+    try {
+      const system = this.activeSystems.get(systemName);
+      if (system && system.process.connected) {
+        return { status: 'healthy', details: 'System is running normally' };
+      } else {
+        return { status: 'unhealthy', details: 'System is not responding' };
+      }
+    } catch (error) {
+      return { status: 'error', details: error.message };
+    }
+  }
+
+  updateOverallIntelligence() {
+    // Calculate overall intelligence based on system performance and health
+    let intelligence = 0;
+    let totalWeight = 0;
+
+    for (const [systemName, stats] of this.systemStats) {
+      if (stats.status === 'running') {
+        const weight = this.config.systems[systemName]?.priority || 1;
+        intelligence += (stats.performance || 0) * weight;
+        totalWeight += weight;
+      }
+    }
+
+    if (totalWeight > 0) {
+      this.stats.overallIntelligence = intelligence / totalWeight;
+    }
+  }
+
+  async performLoadBalancing() {
+    if (!this.config.orchestration.loadBalancing) return;
+
+    this.log('info', '⚖️ Performing load balancing...');
+
+    const systemLoads = await this.getSystemLoads();
+    const averageLoad = systemLoads.reduce((sum, load) => sum + load, 0) / systemLoads.length;
+
+    // If average load is too high, redistribute tasks
+    if (averageLoad > 85) {
+      this.log('info', 'High load detected, redistributing tasks...');
+      await this.redistributeTasks();
+    }
+  }
+
+  async redistributeTasks() {
+    // Implement task redistribution logic
+    this.log('info', 'Redistributing tasks across systems...');
+  }
+
+  async generateOrchestrationReport() {
+    const report = {
+      timestamp: Date.now(),
+      stats: this.stats,
+      systems: Object.fromEntries(this.systemStats),
+      activeSystems: Array.from(this.activeSystems.keys()),
+      summary: {
+        totalSystems: this.stats.totalSystems,
+        activeSystems: this.stats.activeSystems,
+        systemHealth: this.stats.systemHealth,
+        overallIntelligence: this.stats.overallIntelligence,
+        totalRestarts: this.stats.totalRestarts
+      }
+    };
+
+    const reportPath = path.join(this.config.paths.reports, `orchestration-${Date.now()}.json`);
+    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
+    
+    this.log('info', `Generated orchestration report: ${reportPath}`);
+    return report;
+  }
+
+  async makeRequest(url) {
+    return new Promise((resolve, reject) => {
+      const http = require('http');
+      const req = http.get(url, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(data));
+      });
+      req.on('error', reject);
+      req.setTimeout(5000, () => req.destroy());
+    });
+  }
+
+  async fileExists(filePath) {
+    try {
+      await fs.access(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  log(level, message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level.toUpperCase()}] [ORCHESTRATOR] ${message}`;
+    
+    console.log(logMessage);
+    
+    // Save to log file
+    const logPath = path.join(this.config.paths.logs, 'orchestrator.log');
+    fs.appendFile(logPath, logMessage + '\n').catch(() => {});
   }
 
   getStatus() {
     return {
       isRunning: this.isRunning,
-      iteration: this.iteration,
-      improvements: this.improvements.length,
-      aiTools: Object.keys(this.config.aiTools).filter(tool => this.config.aiTools[tool].enabled),
-      performance: this.performance
+      stats: this.stats,
+      activeSystems: this.activeSystems.size,
+      systemHealth: this.stats.systemHealth,
+      overallIntelligence: this.stats.overallIntelligence,
+      lastOrchestration: this.stats.lastOrchestration
     };
+  }
+
+  async listSystems() {
+    const systems = [];
+    
+    for (const [systemName, stats] of this.systemStats) {
+      const system = this.activeSystems.get(systemName);
+      systems.push({
+        name: systemName,
+        status: stats.status,
+        priority: this.config.systems[systemName]?.priority || 0,
+        uptime: stats.uptime,
+        performance: stats.performance,
+        restartCount: this.restartCounts.get(systemName) || 0,
+        isActive: !!system
+      });
+    }
+    
+    return systems.sort((a, b) => a.priority - b.priority);
   }
 }
 
@@ -588,7 +609,7 @@ async function main() {
 
   switch (command) {
     case 'start':
-      // System is already started in constructor
+      await orchestrator.start();
       break;
     case 'stop':
       await orchestrator.stop();
@@ -596,28 +617,17 @@ async function main() {
     case 'status':
       console.log(JSON.stringify(orchestrator.getStatus(), null, 2));
       break;
+    case 'list':
+      const systems = await orchestrator.listSystems();
+      console.log(JSON.stringify(systems, null, 2));
+      break;
+    case 'restart':
+      await orchestrator.stop();
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      await orchestrator.start();
+      break;
     default:
-      console.log(`
-🎯 Computer AI Orchestrator
-
-Usage:
-  node computer-ai-orchestrator.cjs [command]
-
-Commands:
-  start   - Start the orchestrator (auto-starts)
-  stop    - Stop the orchestrator
-  status  - Show orchestrator status
-
-Features:
-  - Infinite improvement loop
-  - Multi-AI tool coordination
-  - System-wide optimization
-  - Continuous learning
-  - Adaptive behavior
-
-The orchestrator automatically starts and coordinates all AI tools
-to create an infinite improvement loop for your computer.
-      `);
+      console.log('Usage: node computer-ai-orchestrator.cjs [start|stop|status|list|restart]');
       break;
   }
 }
