@@ -5,5 +5,5 @@ export default function RateOptimizationSection() {
       <h1>RateOptimizationSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

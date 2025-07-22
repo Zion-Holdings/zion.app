@@ -5,5 +5,5 @@ export default function WorkExperienceItemForm() {
       <h1>WorkExperienceItemForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

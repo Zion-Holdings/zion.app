@@ -5,5 +5,5 @@ export default function CertificationsList() {
       <h1>CertificationsList</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

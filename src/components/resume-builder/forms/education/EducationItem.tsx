@@ -5,5 +5,5 @@ export default function EducationItem() {
       <h1>EducationItem</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function SkillItem() {
       <h1>SkillItem</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

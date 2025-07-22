@@ -5,5 +5,5 @@ export default function AddSkillForm() {
       <h1>AddSkillForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AIEnhancementButton() {
       <h1>AIEnhancementButton</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

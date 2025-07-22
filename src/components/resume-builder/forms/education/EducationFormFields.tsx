@@ -5,5 +5,5 @@ export default function EducationFormFields() {
       <h1>EducationFormFields</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

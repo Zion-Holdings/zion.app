@@ -5,5 +5,5 @@ export default function BulkAddSkills() {
       <h1>BulkAddSkills</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
