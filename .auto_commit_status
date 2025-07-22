@@ -1,9 +1,6 @@
  M .auto_commit_status
- M src/context/WhitelabelContext.tsx
- M src/context/auth/AuthContext.tsx
- M src/context/auth/AuthProvider.tsx
- M src/context/auth/useAuthEventHandlers.tsx
- M src/context/auth/useAuthState.tsx
- M src/context/notifications/NotificationContext.tsx
-?? automation/core/TaskScheduler.js
-?? start-autonomous-automation.sh
+ M src/hooks/__tests__/useDelayedError.test.tsx
+ M src/hooks/__tests__/useIsMounted.test.tsx
+ M src/hooks/__tests__/useQuoteWizard.test.tsx
+ M src/hooks/__tests__/useToggle.test.tsx
+?? scripts/autonomous-system-manager.cjs
