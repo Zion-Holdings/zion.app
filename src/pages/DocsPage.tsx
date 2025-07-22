@@ -6,4 +6,4 @@ export default function DocsPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
