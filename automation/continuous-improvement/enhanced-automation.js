@@ -42,7 +42,10 @@ class EnhancedAutomation {
           model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229'
         },
         local: {
-          enabled: process.env.LOCAL_AI_ENABLED === 'true','          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434','          model: process.env.LOCAL_AI_MODEL || 'codellama:7b''        }
+          enabled: process.env.LOCAL_AI_ENABLED === 'true',
+          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434',
+          model: process.env.LOCAL_AI_MODEL || 'codellama:7b'
+        }
       },
       
       // Automation intervals
@@ -78,7 +81,10 @@ class EnhancedAutomation {
       // Project paths
       paths: {
         projectRoot: process.cwd(),
-        logs: path.join(process.cwd(), 'logs'),'        reports: path.join(process.cwd(), 'reports'),'        temp: path.join(process.cwd(), 'temp')'      }
+        logs: path.join(process.cwd(), 'logs'),
+        reports: path.join(process.cwd(), 'reports'),
+        temp: path.join(process.cwd(), 'temp')
+      }
     };
     
     // Initialize components

@@ -130,7 +130,8 @@ class OptimizationAutomation {
     });
 
     // Performance status endpoint
-    this.app.get('/api/performance/status', async (req, res) => {'      try {
+    this.app.get('/api/performance/status', async (req, res) => {
+      try {
         const status = await this.slackBot.getPerformanceStatus();
         res.json(status);
       } catch (error) {
@@ -140,7 +141,8 @@ class OptimizationAutomation {
     });
 
     // Performance metrics endpoint
-    this.app.get('/api/performance/metrics', async (req, res) => {'      try {
+    this.app.get('/api/performance/metrics', async (req, res) => {
+      try {
         const metrics = await this.performanceMonitor.getMetrics();
         res.json(metrics);
       } catch (error) {
@@ -150,7 +152,8 @@ class OptimizationAutomation {
     });
 
     // Performance history endpoint
-    this.app.get('/api/performance/history', async (req, res) => {'      try {
+    this.app.get('/api/performance/history', async (req, res) => {
+      try {
         const hours = parseInt(req.query.hours) || 24;
         const history = await this.performanceMonitor.getHistory(hours);
         res.json(history);
@@ -161,10 +164,16 @@ class OptimizationAutomation {
     });
 
     // Dashboard routes
-    this.app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, 'continuous-improvement', 'dashboard', 'index.html'));'    });
+    this.app.get('/dashboard', (req, res) => {
+      res.sendFile(path.join(__dirname, 'continuous-improvement', 'dashboard', 'index.html'));
+    });
 
-    this.app.get('/slack-status', (req, res) => {'      res.json({
-        slackBot: 'running','        performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped','        enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped','        uptime: process.uptime(),
+    this.app.get('/slack-status', (req, res) => {
+      res.json({
+        slackBot: 'running',
+        performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
+        enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
+        uptime: process.uptime(),
         timestamp: new Date().toISOString()
       });
     });
