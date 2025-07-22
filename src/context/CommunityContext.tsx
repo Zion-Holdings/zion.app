@@ -6,4 +6,4 @@ export default function CommunityContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

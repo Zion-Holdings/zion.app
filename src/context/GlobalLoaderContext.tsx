@@ -6,4 +6,4 @@ export default function GlobalLoaderContext() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
