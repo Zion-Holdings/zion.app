@@ -6,4 +6,4 @@ export default function HireNowCTA() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
