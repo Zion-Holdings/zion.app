@@ -6,4 +6,4 @@ export default function EquipmentErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
