@@ -23,44 +23,54 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Agent configurations
-declare -A AGENTS=(
-    ["main"]="scripts/autonomous-automation-system.js"
-    ["code-review"]="scripts/ai-code-review-automation.cjs"
-    ["performance"]="scripts/performance-optimization-automation.cjs"
-    ["security"]="scripts/security-monitoring-automation.cjs"
-    ["deployment"]="scripts/deployment-automation.cjs"
-    ["monitoring"]="scripts/monitoring-automation.cjs"
-    ["optimization"]="scripts/optimization-automation.cjs"
-    ["testing"]="scripts/testing-automation.cjs"
-    ["documentation"]="scripts/documentation-automation.cjs"
-)
+# Agent configurations (using functions for compatibility)
+get_agent_script() {
+    case $1 in
+        "main") echo "scripts/autonomous-automation-system.js" ;;
+        "code-review") echo "scripts/ai-code-review-automation.cjs" ;;
+        "performance") echo "scripts/performance-optimization-automation.cjs" ;;
+        "security") echo "scripts/security-monitoring-automation.cjs" ;;
+        "deployment") echo "scripts/deployment-automation.cjs" ;;
+        "monitoring") echo "scripts/monitoring-automation.cjs" ;;
+        "optimization") echo "scripts/optimization-automation.cjs" ;;
+        "testing") echo "scripts/testing-automation.cjs" ;;
+        "documentation") echo "scripts/documentation-automation.cjs" ;;
+        *) echo "" ;;
+    esac
+}
 
-# Agent ports
-declare -A PORTS=(
-    ["main"]="3001"
-    ["code-review"]="3002"
-    ["performance"]="3003"
-    ["security"]="3004"
-    ["deployment"]="3005"
-    ["monitoring"]="3006"
-    ["optimization"]="3007"
-    ["testing"]="3008"
-    ["documentation"]="3009"
-)
+get_agent_port() {
+    case $1 in
+        "main") echo "3001" ;;
+        "code-review") echo "3002" ;;
+        "performance") echo "3003" ;;
+        "security") echo "3004" ;;
+        "deployment") echo "3005" ;;
+        "monitoring") echo "3006" ;;
+        "optimization") echo "3007" ;;
+        "testing") echo "3008" ;;
+        "documentation") echo "3009" ;;
+        *) echo "" ;;
+    esac
+}
 
-# Agent descriptions
-declare -A DESCRIPTIONS=(
-    ["main"]="Main Autonomous Automation System"
-    ["code-review"]="AI Code Review Agent"
-    ["performance"]="Performance Optimization Agent"
-    ["security"]="Security Monitoring Agent"
-    ["deployment"]="Deployment Automation Agent"
-    ["monitoring"]="System Monitoring Agent"
-    ["optimization"]="Continuous Optimization Agent"
-    ["testing"]="Automated Testing Agent"
-    ["documentation"]="Documentation Generation Agent"
-)
+get_agent_description() {
+    case $1 in
+        "main") echo "Main Autonomous Automation System" ;;
+        "code-review") echo "AI Code Review Agent" ;;
+        "performance") echo "Performance Optimization Agent" ;;
+        "security") echo "Security Monitoring Agent" ;;
+        "deployment") echo "Deployment Automation Agent" ;;
+        "monitoring") echo "System Monitoring Agent" ;;
+        "optimization") echo "Continuous Optimization Agent" ;;
+        "testing") echo "Automated Testing Agent" ;;
+        "documentation") echo "Documentation Generation Agent" ;;
+        *) echo "Unknown Agent" ;;
+    esac
+}
+
+# Agent names array
+AGENT_NAMES=("main" "code-review" "performance" "security" "deployment" "monitoring" "optimization" "testing" "documentation")
 
 # Function to print colored output
 print_status() {
@@ -203,7 +213,8 @@ start_all_agents() {
     local failed_count=0
     
     # Start main system first
-    if start_agent "main" "${AGENTS[main]}"; then
+    local main_script=$(get_agent_script "main")
+    if start_agent "main" "$main_script"; then
         ((started_count++))
         sleep 3  # Give main system time to initialize
     else
@@ -211,9 +222,10 @@ start_all_agents() {
     fi
     
     # Start other agents
-    for agent_name in "${!AGENTS[@]}"; do
+    for agent_name in "${AGENT_NAMES[@]}"; do
         if [ "$agent_name" != "main" ]; then
-            if start_agent "$agent_name" "${AGENTS[$agent_name]}"; then
+            local script_path=$(get_agent_script "$agent_name")
+            if start_agent "$agent_name" "$script_path"; then
                 ((started_count++))
                 sleep 1  # Small delay between starts
             else
@@ -233,7 +245,7 @@ start_all_agents() {
 check_agent_status() {
     local agent_name=$1
     local pid_file="$PID_DIR/${agent_name}.pid"
-    local description=${DESCRIPTIONS[$agent_name]}
+    local description=$(get_agent_description "$agent_name")
     
     if [ -f "$pid_file" ]; then
         local pid=$(cat "$pid_file")
