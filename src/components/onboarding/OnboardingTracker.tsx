@@ -6,4 +6,4 @@ export default function OnboardingTracker() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

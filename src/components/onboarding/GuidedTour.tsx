@@ -6,4 +6,4 @@ export default function GuidedTour() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

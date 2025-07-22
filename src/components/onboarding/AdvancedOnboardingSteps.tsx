@@ -6,4 +6,4 @@ export default function AdvancedOnboardingSteps() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
