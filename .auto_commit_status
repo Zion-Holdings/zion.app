@@ -1,6 +1,8 @@
  M .auto_commit_status
- M scripts/security-monitoring-automation.cjs
- M src/hooks/useTheme.tsx
- M src/hooks/useWebSocket.ts
- M start-autonomous-automation.sh
-?? automation/start-autonomous-system.js
+ M automation/package.json
+ M src/layout/AppHeader.tsx
+ M src/layout/AppLayout.tsx
+ M src/layout/AuthLayout.tsx
+ M src/layout/MainNavigation.tsx
+?? .pid
+?? AUTONOMOUS_AUTOMATION_DEPLOYMENT_COMPLETE.md
