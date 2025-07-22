@@ -6,4 +6,4 @@ export default function AccountSettings() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
