@@ -6,4 +6,4 @@ export default function PaymentButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
