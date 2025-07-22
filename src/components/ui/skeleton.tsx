@@ -6,4 +6,4 @@ export default function skeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

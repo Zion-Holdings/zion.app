@@ -6,4 +6,4 @@ export default function steps() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

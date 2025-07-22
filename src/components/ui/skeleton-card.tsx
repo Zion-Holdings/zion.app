@@ -6,4 +6,4 @@ export default function skeleton-card() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
