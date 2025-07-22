@@ -6,4 +6,4 @@ export default function RegisterForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

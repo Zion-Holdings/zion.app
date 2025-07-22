@@ -6,4 +6,4 @@ export default function AuthModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

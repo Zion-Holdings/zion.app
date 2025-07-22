@@ -6,4 +6,4 @@ export default function AnalyticsChart() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
