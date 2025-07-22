@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react''
 export default function safe-component-loader() {
   return (
     <div>
@@ -7,4 +6,4 @@ export default function safe-component-loader() {
       <p>Component placeholder</p>
     </div>
   );
-}';
+}''

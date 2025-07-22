@@ -1,1 +1,5 @@
  M .auto_commit_status
+ M src/utils/safe-component-loader.tsx
+ M src/utils/safeDynamicImport.tsx
+ M src/utils/supabase/client.ts
+ M src/utils/websocketReconnectionManager.ts

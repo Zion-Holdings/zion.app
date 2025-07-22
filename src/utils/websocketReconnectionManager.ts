@@ -1,5 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
-
+import { useState, useRef, useCallback } from 'react''
 export function useWebSocketReconnection(options: any = {}) {
   const [isReconnecting, setIsReconnecting] = useState(false);
   const [attemptCount, setAttemptCount] = useState(0);
@@ -39,4 +38,4 @@ export function useWebSocketReconnection(options: any = {}) {
     isReconnecting,
     attemptCount,
     attemptReconnection,
-    resetReconnection,}';
+    resetReconnection,}''
