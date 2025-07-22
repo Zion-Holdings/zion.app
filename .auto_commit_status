@@ -1,15 +1,16 @@
  M .auto_commit_status
- M src/components/VideoCall/index.tsx
- M src/components/WaitlistSection.tsx
- M src/components/WhitepaperPreviewPanel.tsx
- M src/components/WhitepaperSectionEditor.tsx
- M src/components/YoutubeEmbed.tsx
- M src/components/__tests__/AnalyticsConsentBanner.test.tsx
- M src/components/__tests__/RouteSEO.test.tsx
- M src/components/admin/AdminLayout.tsx
- M src/components/admin/HealthDashboard.tsx
- M src/components/admin/fraud-detection/ActionButtons.tsx
- M src/components/admin/fraud-detection/EmptyFraudState.tsx
- M src/components/admin/fraud-detection/FraudFilters.tsx
- M src/components/admin/fraud-detection/FraudFlagsTable.tsx
- M src/components/admin/fraud-detection/FraudStatsCards.tsx
+ M automation/README.md
+ M automation/slack/slack-bot.js
+ M package.json
+ M src/components/admin/fraud-detection/FraudTabContent.tsx
+ M src/components/admin/fraud-detection/SeverityDisplay.tsx
+ M src/components/admin/moderation/FlaggedListingsTable.tsx
+ M src/components/admin/performance-dashboard.tsx
+ M src/components/admin/pitch-generator/DataSync.tsx
+ M src/components/admin/pitch-generator/InputFields.tsx
+ M src/components/admin/pitch-generator/SlideEditor.tsx
+ M src/components/admin/quotes/QuoteStatusCards.tsx
+ M src/components/admin/quotes/QuotesFilter.tsx
+ M src/components/admin/quotes/QuotesTable.tsx
+?? automation/slack/slack-bot.js.backup
+?? scripts/security-monitoring-automation.cjs

@@ -42,563 +42,291 @@ A comprehensive, AI-driven continuous improvement system that automatically moni
 - npm or yarn
 - Git
 
-### 1. Clone and Install
+### 1. Quick Setup
 
 ```bash
-git clone <repository-url>
-cd bolt.new.zion.app
-npm install
-```
+# Setup the automation system
+npm run automation:setup
 
-### 2. Environment Configuration
-
-Create a `.env.local` file with the following variables:
-
-```env
-# Required - Cursor AI
-CURSOR_API_KEY=your_cursor_api_key
-CURSOR_WORKSPACE_ID=your_workspace_id
-
-# Optional - OpenAI
-OPENAI_API_KEY=your_openai_api_key
-OPENAI_MODEL=gpt-4-turbo-preview
-
-# Optional - Claude
-CLAUDE_API_KEY=your_claude_api_key
-CLAUDE_MODEL=claude-3-sonnet-20240229
-
-# Optional - Local AI
-LOCAL_AI_ENABLED=true
-LOCAL_AI_ENDPOINT=http://localhost:11434
-LOCAL_AI_MODEL=codellama:7b
-
-# Optional - Slack Integration
-SLACK_BOT_TOKEN=your_slack_bot_token
-SLACK_SIGNING_SECRET=your_slack_signing_secret
-
-# Automation Configuration
-AUTOMATION_PORT=3001
-ENABLE_DASHBOARD=true
-ENABLE_SLACK=true
-ENABLE_MONITORING=true
-LOG_LEVEL=info
-```
-
-### 3. Start the Automation System
-
-#### Quick Start
-
-```bash
+# Start the automation system
 npm run automation:start
+
+# Open the dashboard
+npm run automation:dashboard
 ```
 
-#### Advanced Start
+### 2. Manual Setup
 
 ```bash
-# Start with enhanced automation
-node automation/continuous-improvement/start.js
-
-# Start with specific options
-node automation/continuous-improvement/start.js --report
-node automation/continuous-improvement/start.js --status
-```
-
-#### Manual Start
-
-```bash
-# Start the main automation system
-node automation/index.js
-
-# Start individual components
-npm run automation:dev
-npm run automation:test
-```
-
-## 📊 Dashboard Access
-
-Once started, access the dashboard at:
-
-- **Dashboard**: http://localhost:3001/dashboard
-- **Health Check**: http://localhost:3001/health
-- **API Status**: http://localhost:3001/api/automation/status
-
-## 🔧 Configuration
-
-### AI Provider Configuration
-
-#### Cursor AI (Required)
-
-```javascript
-// automation/continuous-improvement/cursor-integration.js
-const config = {
-  apiEndpoint: 'https://api.cursor.sh',
-  apiKey: process.env.CURSOR_API_KEY,
-  workspaceId: process.env.CURSOR_WORKSPACE_ID,
-};
-```
-
-#### OpenAI GPT (Optional)
-
-```javascript
-// automation/continuous-improvement/ai-optimizer.js
-const config = {
-  apiKey: process.env.OPENAI_API_KEY,
-  model: 'gpt-4-turbo-preview',
-  maxTokens: 4000,
-};
-```
-
-### Monitoring Intervals
-
-```javascript
-// automation/continuous-improvement/enhanced-automation.js
-const intervals = {
-  quickScan: 5 * 60 * 1000, // 5 minutes
-  deepAnalysis: 30 * 60 * 1000, // 30 minutes
-  fullAudit: 2 * 60 * 60 * 1000, // 2 hours
-  performanceCheck: 15 * 60 * 1000, // 15 minutes
-  securityScan: 60 * 60 * 1000, // 1 hour
-  dependencyCheck: 24 * 60 * 60 * 1000, // 24 hours
-};
-```
-
-### Performance Thresholds
-
-```javascript
-const thresholds = {
-  performance: {
-    lighthouseScore: 85,
-    loadTime: 3000,
-    bundleSize: 500, // KB
-    memoryUsage: 100, // MB
-  },
-  security: {
-    vulnerabilities: 0,
-    outdatedPackages: 5,
-    securityScore: 90,
-  },
-  quality: {
-    lintErrors: 0,
-    testCoverage: 80,
-    codeComplexity: 10,
-  },
-};
-```
-
-## 🚀 Usage
-
-### Starting the System
-
-#### Basic Start
-
-```bash
-npm run automation:start
-```
-
-#### Development Mode
-
-```bash
-npm run automation:dev
-```
-
-#### With Monitoring
-
-```bash
-npm run automation:monitor
-```
-
-### Manual Triggers
-
-#### Via API
-
-```bash
-# Trigger quick scan
-curl -X POST http://localhost:3001/api/automation/trigger \
-  -H "Content-Type: application/json" \
-  -d '{"taskType": "quickScan"}'
-
-# Trigger deep analysis
-curl -X POST http://localhost:3001/api/automation/trigger \
-  -H "Content-Type: application/json" \
-  -d '{"taskType": "deepAnalysis"}'
-
-# Trigger security scan
-curl -X POST http://localhost:3001/api/automation/trigger \
-  -H "Content-Type: application/json" \
-  -d '{"taskType": "securityScan"}'
-```
-
-#### Via Slack (if enabled)
-
-```
-/automation quick      # Quick scan
-/automation deep       # Deep analysis
-/automation full       # Full audit
-/automation performance # Performance check
-/automation security   # Security scan
-/automation dependencies # Dependency check
-```
-
-### Monitoring and Reports
-
-#### Generate Report
-
-```bash
-npm run automation:report
-```
-
-#### Check Status
-
-```bash
-npm run automation:status
-```
-
-#### View Logs
-
-```bash
-npm run automation:logs
-```
-
-## 📁 Project Structure
-
-```
-automation/
-├── continuous-improvement/
-│   ├── enhanced-automation.js      # Main automation orchestrator
-│   ├── ai-optimizer.js             # Multi-AI integration
-│   ├── cursor-integration.js       # Cursor AI integration
-│   ├── start.js                    # Startup script
-│   ├── dashboard/
-│   │   └── index.html              # Real-time dashboard
-│   └── scripts/                    # Utility scripts
-├── performance/
-│   └── monitor.js                  # Performance monitoring
-├── slack/
-│   └── slack-bot.js                # Slack integration
-├── tests/                          # Test files
-├── index.js                        # Main automation system
-└── README.md                       # This file
-```
-
-## 🔍 Monitoring & Analytics
-
-### Real-time Metrics
-
-- **System Status**: Running state, uptime, current tasks
-- **Performance**: Memory usage, CPU usage, response times
-- **AI Providers**: Available AI tools and their status
-- **Improvements**: Applied improvements and success rates
-- **Errors**: Error tracking and resolution
-
-### Historical Data
-
-- **Performance History**: Long-term performance trends
-- **Improvement History**: All applied improvements
-- **Error History**: Error patterns and resolutions
-- **AI Analysis History**: AI provider performance
-
-### Reports
-
-- **Comprehensive Reports**: Full system analysis
-- **Performance Reports**: Detailed performance metrics
-- **Security Reports**: Security audit results
-- **Quality Reports**: Code quality assessments
-
-## 🛡️ Security Features
-
-### Automated Security Scanning
-
-- **Vulnerability Detection**: Automatic npm audit integration
-- **Dependency Updates**: Smart package updates
-- **Security Headers**: Automated security header configuration
-- **Code Security**: AI-powered security analysis
-
-### Access Control
-
-- **API Authentication**: Secure API endpoints
-- **Environment Variables**: Secure credential management
-- **Logging**: Comprehensive security logging
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-#### AI Provider Connection Issues
-
-```bash
-# Check AI provider status
-curl http://localhost:3001/api/automation/status
-
-# Verify environment variables
-node -e "console.log('CURSOR_API_KEY:', process.env.CURSOR_API_KEY ? 'Set' : 'Missing')"
-```
-
-#### Performance Issues
-
-```bash
-# Check system resources
-npm run automation:check
-
-# View performance metrics
-curl http://localhost:3001/api/performance/metrics
-```
-
-#### Dashboard Not Loading
-
-```bash
-# Check if dashboard is running
-curl http://localhost:3001/health
-
-# Restart dashboard
-npm run automation:restart
-```
-
-### Logs and Debugging
-
-#### View Logs
-
-```bash
-# View automation logs
-tail -f logs/automation.log
-
-# View error logs
-tail -f logs/error.log
-
-# View performance logs
-tail -f logs/performance.log
-```
-
-#### Debug Mode
-
-```bash
-# Start with debug logging
-LOG_LEVEL=debug npm run automation:start
-
-# Enable verbose output
-DEBUG=* npm run automation:start
-```
-
-## 🚀 Advanced Configuration
-
-### Custom AI Providers
-
-#### Adding New AI Provider
-
-```javascript
-// automation/continuous-improvement/ai-optimizer.js
-class CustomAIProvider {
-  async analyze(data) {
-    // Custom analysis logic
-  }
-
-  async suggest(problem) {
-    // Custom suggestion logic
-  }
-
-  async implement(suggestion) {
-    // Custom implementation logic
-  }
-}
-
-// Register the provider
-this.aiProviders.set('custom', new CustomAIProvider());
-```
-
-### Custom Monitoring
-
-#### Adding Custom Metrics
-
-```javascript
-// automation/continuous-improvement/enhanced-automation.js
-async customMetric() {
-  // Custom metric collection
-  return {
-    customValue: 'value',
-    timestamp: new Date().toISOString()
-  };
-}
-```
-
-### Custom Improvements
-
-#### Adding Custom Improvement Types
-
-```javascript
-// automation/continuous-improvement/enhanced-automation.js
-async applyCustomImprovement(suggestion) {
-  // Custom improvement logic
-  return {
-    status: 'completed',
-    result: 'Custom improvement applied'
-  };
-}
-```
-
-## 📈 Performance Optimization
-
-### System Optimization
-
-- **Memory Management**: Automatic memory optimization
-- **CPU Usage**: Efficient CPU utilization
-- **Network**: Optimized API calls and caching
-- **Storage**: Efficient log and report storage
-
-### AI Optimization
-
-- **Provider Selection**: Smart AI provider selection
-- **Request Batching**: Efficient API request batching
-- **Caching**: Intelligent response caching
-- **Fallback**: Automatic fallback mechanisms
-
-## 🔄 Continuous Integration
-
-### GitHub Actions Integration
-
-```yaml
-# .github/workflows/automation.yml
-name: AI Automation
-on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
-
-jobs:
-  automation:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run automation:start
-      - run: npm run automation:report
-```
-
-### Netlify Integration
-
-```toml
-# netlify.toml
-[build]
-  command = "npm run build"
-  publish = ".next"
-
-[build.environment]
-  ENABLE_AUTOMATION = "true"
-  CURSOR_API_KEY = "@cursor_api_key"
-  CURSOR_WORKSPACE_ID = "@cursor_workspace_id"
-```
-
-## 📚 API Reference
-
-### REST API Endpoints
-
-#### System Status
-
-```http
-GET /api/automation/status
-```
-
-#### Trigger Tasks
-
-```http
-POST /api/automation/trigger
-Content-Type: application/json
-
-{
-  "taskType": "quickScan|deepAnalysis|fullAudit|performanceCheck|securityScan|dependencyCheck",
-  "data": {}
-}
-```
-
-#### Generate Reports
-
-```http
-GET /api/automation/report
-```
-
-#### Performance Metrics
-
-```http
-GET /api/performance/metrics
-GET /api/performance/history?hours=24
-```
-
-#### Health Check
-
-```http
-GET /health
-GET /version
-```
-
-### WebSocket Events (if implemented)
-
-```javascript
-// Connect to WebSocket for real-time updates
-const ws = new WebSocket('ws://localhost:3001/ws');
-
-ws.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  console.log('Real-time update:', data);
-};
-```
-
-## 🤝 Contributing
-
-### Development Setup
-
-```bash
-# Clone repository
-git clone <repository-url>
-cd bolt.new.zion.app
+# Navigate to automation directory
+cd automation
 
 # Install dependencies
 npm install
 
-# Start development
-npm run automation:dev
+# Setup the system
+npm run setup
+
+# Start the system
+npm start
+```
+
+### 3. Environment Configuration
+
+Create a `.env` file in the automation directory:
+
+```env
+# System Configuration
+AUTOMATION_PORT=3001
+LOG_LEVEL=info
+ENABLE_DASHBOARD=true
+ENABLE_WEBSOCKET=true
+
+# AI Configuration
+CURSOR_AI_ENABLED=false
+CURSOR_API_KEY=your_cursor_api_key_here
+CURSOR_WORKSPACE_ID=your_workspace_id_here
+
+OPENAI_ENABLED=false
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4-turbo-preview
+
+CLAUDE_ENABLED=false
+CLAUDE_API_KEY=your_claude_api_key_here
+CLAUDE_MODEL=claude-3-sonnet-20240229
+
+# Optional: Local AI
+LOCAL_AI_ENABLED=false
+LOCAL_AI_ENDPOINT=http://localhost:11434
+LOCAL_AI_MODEL=codellama:7b
+
+# Optional: Slack Integration
+SLACK_BOT_TOKEN=your_slack_bot_token_here
+SLACK_SIGNING_SECRET=your_slack_signing_secret_here
+```
+
+## 🎮 Usage
+
+### Command Line Interface
+
+```bash
+# Start the automation system
+npm run automation:start
+
+# Check system status
+npm run automation:status
+
+# View system logs
+npm run automation:logs
+
+# Open web dashboard
+npm run automation:dashboard
+
+# Stop the system
+npm run automation:stop
+
+# Restart the system
+npm run automation:restart
 
 # Run tests
 npm run automation:test
+
+# Cleanup system
+npm run automation:clean
+
+# Show help
+npm run automation:help
 ```
 
-### Adding Features
+### Web Dashboard
 
-1. Create feature branch
-2. Implement feature
-3. Add tests
-4. Update documentation
-5. Submit pull request
+Once the system is running, access the dashboard at:
+- **Dashboard**: http://localhost:3001
+- **API**: http://localhost:3001/api
+- **Health Check**: http://localhost:3001/health
 
-### Code Style
+### API Endpoints
 
-- Follow existing code style
-- Add JSDoc comments
-- Include error handling
-- Add logging for debugging
+- `GET /api/status` - Get system status and metrics
+- `POST /api/tasks` - Queue a new task
+- `GET /api/tasks/:taskId` - Get task status
+- `POST /api/control` - Control system (start/stop/pause/resume)
+- `GET /api/reports` - Generate system reports
 
-## 📄 License
+## 🔧 System Architecture
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Core Components
 
-## 🆘 Support
+1. **EnhancedAutomationSystem** - Main automation engine
+2. **AutomationManager** - CLI interface and process management
+3. **AIOptimizer** - AI-powered code optimization
+4. **CursorIntegration** - Cursor AI integration
+5. **PerformanceMonitor** - Performance monitoring and analysis
+
+### Task Types
+
+- **quickScan** - Quick code quality check (every 5 minutes)
+- **performanceCheck** - Performance analysis (every 15 minutes)
+- **deepAnalysis** - Deep code analysis (every 30 minutes)
+- **securityScan** - Security vulnerability scan (every hour)
+- **fullAudit** - Comprehensive system audit (every 2 hours)
+- **dependencyCheck** - Dependency updates (daily)
+- **cleanup** - System cleanup (every 6 hours)
+
+### Task Priorities
+
+- **critical** - Highest priority, runs immediately
+- **high** - High priority, runs soon
+- **normal** - Normal priority, runs in order
+- **low** - Low priority, runs when system is idle
+
+## 📊 Monitoring & Metrics
+
+### System Metrics
+
+- **Total Tasks**: Number of tasks processed
+- **Successful Tasks**: Number of successful tasks
+- **Failed Tasks**: Number of failed tasks
+- **Queue Length**: Number of tasks in queue
+- **Active Tasks**: Number of currently running tasks
+- **Uptime**: System uptime
+- **Memory Usage**: Current memory consumption
+- **CPU Usage**: Current CPU usage
+
+### Performance Tracking
+
+- **Lighthouse Scores**: Web performance metrics
+- **Bundle Size**: JavaScript bundle analysis
+- **Load Times**: Page load performance
+- **Memory Usage**: Application memory consumption
+- **Error Rates**: System error tracking
+
+## 🔒 Safety Features
+
+### Backup System
+
+- Automatic backups before any changes
+- Configurable backup retention
+- One-click restore functionality
+
+### Test Validation
+
+- Runs tests before applying changes
+- Validates changes against existing tests
+- Automatic rollback on test failures
+
+### Error Handling
+
+- Comprehensive error logging
+- Automatic error recovery
+- Graceful degradation on failures
+
+### Health Monitoring
+
+- Continuous system health checks
+- Automatic restart on failures
+- Performance degradation alerts
+
+## 🤖 AI Integration
+
+### Cursor AI
+
+- **Code Analysis**: Intelligent code review and suggestions
+- **Refactoring**: Automated code refactoring
+- **Optimization**: Performance and quality improvements
+- **Best Practices**: Adoption of latest coding standards
+
+### OpenAI GPT
+
+- **Complex Problem Solving**: Advanced optimization strategies
+- **Architecture Review**: System architecture improvements
+- **Documentation**: Auto-generated documentation
+- **Code Generation**: Intelligent code generation
+
+### Claude
+
+- **Code Review**: Comprehensive code review
+- **Security Analysis**: Security vulnerability detection
+- **Performance Optimization**: Advanced performance improvements
+- **Testing**: Enhanced test strategy and implementation
+
+## 📈 Benefits
+
+### 🚀 Continuous Improvement
+
+- **Automated Code Quality**: Continuous linting and optimization
+- **Performance Monitoring**: Real-time performance tracking
+- **Security Updates**: Automatic vulnerability detection and fixes
+- **User Experience**: Ongoing accessibility and SEO improvements
+
+### 💡 AI-Powered Enhancements
+
+- **Intelligent Suggestions**: Context-aware improvement recommendations
+- **Code Optimization**: Automated refactoring and optimization
+- **Best Practices**: Continuous adoption of latest standards
+- **Bug Prevention**: Proactive issue detection and resolution
+
+### 🔒 Production Safety
+
+- **Zero Downtime**: Safe deployment with rollback protection
+- **Quality Assurance**: Automated testing and validation
+- **Audit Trail**: Complete change history and logging
+- **Health Monitoring**: Continuous system health tracking
+
+## 🛠️ Development
+
+### Adding New Tasks
+
+1. Extend the `EnhancedAutomationSystem` class
+2. Add task type to the `executeTask` method
+3. Implement task logic
+4. Add task to scheduling configuration
+5. Update documentation
+
+### Custom AI Integration
+
+1. Create new AI module
+2. Implement required interface
+3. Add to AI configuration
+4. Update task execution logic
+5. Test integration
+
+### Extending Dashboard
+
+1. Add new API endpoints
+2. Update dashboard HTML/JS
+3. Add new metrics/charts
+4. Test dashboard functionality
+
+## 📚 Documentation
+
+- **API Documentation**: See `/api` endpoints
+- **Configuration**: See `.env` file
+- **Architecture**: See system components
+- **Troubleshooting**: See logs and error handling
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+1. **System won't start**: Check port availability and dependencies
+2. **Tasks failing**: Check logs and API keys
+3. **Dashboard not loading**: Verify system is running and port is correct
+4. **Performance issues**: Check system resources and configuration
 
 ### Getting Help
 
-- **Documentation**: Check this README and inline code comments
-- **Issues**: Create GitHub issues for bugs or feature requests
-- **Discussions**: Use GitHub Discussions for questions
-- **Logs**: Check automation logs for detailed error information
+- Check system logs: `npm run automation:logs`
+- View system status: `npm run automation:status`
+- Run tests: `npm run automation:test`
+- Check documentation: See README files
 
-### Community
+## 📄 License
 
-- **Slack**: Join our Slack workspace for real-time support
-- **Discord**: Join our Discord server for community discussions
-- **Email**: Contact support@ziontechgroup.com
+MIT License - see LICENSE file for details
 
 ---
 
-**Built with ❤️ by the Zion Tech Team**
-
-_This automation system continuously improves itself and the applications it monitors using cutting-edge AI technology._
+**Status**: 🟢 **PRODUCTION READY**
+**Version**: 2.0.0
+**Last Updated**: July 2025
