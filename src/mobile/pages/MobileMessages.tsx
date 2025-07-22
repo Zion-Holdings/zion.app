@@ -6,4 +6,4 @@ export default function MobileMessages() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
