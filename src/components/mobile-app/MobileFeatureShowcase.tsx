@@ -6,4 +6,4 @@ export default function MobileFeatureShowcase() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
