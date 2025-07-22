@@ -6,4 +6,4 @@ export default function QuickReplyButton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
