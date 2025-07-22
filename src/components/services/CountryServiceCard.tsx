@@ -6,4 +6,4 @@ export default function CountryServiceCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

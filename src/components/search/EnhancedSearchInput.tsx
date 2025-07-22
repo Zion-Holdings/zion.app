@@ -6,4 +6,4 @@ export default function EnhancedSearchInput() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
