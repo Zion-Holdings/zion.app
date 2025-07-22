@@ -5,5 +5,5 @@ export default function dynamicImports() {
       <h1>dynamicImports</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
