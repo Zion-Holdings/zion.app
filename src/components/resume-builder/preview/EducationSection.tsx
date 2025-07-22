@@ -6,4 +6,4 @@ export default function EducationSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
