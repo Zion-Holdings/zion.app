@@ -6,4 +6,4 @@ export default function CommunityPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
