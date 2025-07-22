@@ -6,4 +6,4 @@ export default function alert-dialog() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''

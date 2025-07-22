@@ -6,4 +6,4 @@ export default function empty-state() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
