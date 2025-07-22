@@ -5,5 +5,5 @@ export default function TokenDisplay() {
       <h1>TokenDisplay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

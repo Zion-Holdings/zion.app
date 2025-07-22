@@ -5,5 +5,5 @@ export default function RequestQuoteWizard() {
       <h1>RequestQuoteWizard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

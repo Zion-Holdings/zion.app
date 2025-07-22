@@ -5,5 +5,5 @@ export default function ThemeContext() {
       <h1>ThemeContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

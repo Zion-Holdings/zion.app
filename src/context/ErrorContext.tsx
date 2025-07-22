@@ -5,5 +5,5 @@ export default function ErrorContext() {
       <h1>ErrorContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function LanguageContext() {
       <h1>LanguageContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

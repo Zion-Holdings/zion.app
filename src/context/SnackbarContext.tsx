@@ -5,5 +5,5 @@ export default function SnackbarContext() {
       <h1>SnackbarContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

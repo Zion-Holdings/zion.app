@@ -5,5 +5,5 @@ export default function AnalyticsContext() {
       <h1>AnalyticsContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

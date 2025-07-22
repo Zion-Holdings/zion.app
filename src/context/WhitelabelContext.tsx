@@ -5,5 +5,5 @@ export default function WhitelabelContext() {
       <h1>WhitelabelContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

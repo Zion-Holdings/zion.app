@@ -5,5 +5,5 @@ export default function ViewModeContext() {
       <h1>ViewModeContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

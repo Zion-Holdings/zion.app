@@ -5,5 +5,5 @@ export default function WalletContext() {
       <h1>WalletContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

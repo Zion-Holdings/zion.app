@@ -5,5 +5,5 @@ export default function FeedbackContext() {
       <h1>FeedbackContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

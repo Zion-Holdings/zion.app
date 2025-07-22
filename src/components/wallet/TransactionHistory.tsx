@@ -5,5 +5,5 @@ export default function TransactionHistory() {
       <h1>TransactionHistory</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

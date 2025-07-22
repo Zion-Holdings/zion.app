@@ -5,5 +5,5 @@ export default function CartContext() {
       <h1>CartContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

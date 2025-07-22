@@ -5,5 +5,5 @@ export default function AuthContext() {
       <h1>AuthContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

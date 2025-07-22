@@ -5,5 +5,5 @@ export default function CommunityContext() {
       <h1>CommunityContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

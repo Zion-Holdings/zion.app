@@ -5,5 +5,5 @@ export default function GlobalLoaderContext() {
       <h1>GlobalLoaderContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

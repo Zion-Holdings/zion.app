@@ -5,5 +5,5 @@ export default function FavoritesContext() {
       <h1>FavoritesContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

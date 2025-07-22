@@ -5,5 +5,5 @@ export default function OnChainExport() {
       <h1>OnChainExport</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MessagingContext() {
       <h1>MessagingContext</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

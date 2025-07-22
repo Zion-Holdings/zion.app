@@ -5,5 +5,5 @@ export default function RedeemTokensCard() {
       <h1>RedeemTokensCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

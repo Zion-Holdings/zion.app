@@ -5,5 +5,5 @@ export default function AuthProvider() {
       <h1>AuthProvider</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
