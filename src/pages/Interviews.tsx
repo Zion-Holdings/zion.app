@@ -6,4 +6,4 @@ export default function Interviews() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
