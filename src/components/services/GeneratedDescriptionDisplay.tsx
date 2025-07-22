@@ -5,5 +5,5 @@ export default function GeneratedDescriptionDisplay() {
       <h1>GeneratedDescriptionDisplay</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

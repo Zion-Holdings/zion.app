@@ -5,5 +5,5 @@ export default function AgendaSection() {
       <h1>AgendaSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function MarketplaceSearch() {
       <h1>MarketplaceSearch</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

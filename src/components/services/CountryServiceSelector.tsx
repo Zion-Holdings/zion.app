@@ -5,5 +5,5 @@ export default function CountryServiceSelector() {
       <h1>CountryServiceSelector</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function LivestreamSection() {
       <h1>LivestreamSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

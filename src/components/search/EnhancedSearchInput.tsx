@@ -5,5 +5,5 @@ export default function EnhancedSearchInput() {
       <h1>EnhancedSearchInput</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

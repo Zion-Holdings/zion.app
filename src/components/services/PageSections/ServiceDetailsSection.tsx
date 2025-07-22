@@ -5,5 +5,5 @@ export default function ServiceDetailsSection() {
       <h1>ServiceDetailsSection</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

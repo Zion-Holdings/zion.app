@@ -5,5 +5,5 @@ export default function FraudDetectionSettings() {
       <h1>FraudDetectionSettings</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

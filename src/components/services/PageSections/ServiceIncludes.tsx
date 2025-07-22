@@ -5,5 +5,5 @@ export default function ServiceIncludes() {
       <h1>ServiceIncludes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

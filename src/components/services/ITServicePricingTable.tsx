@@ -5,5 +5,5 @@ export default function ITServicePricingTable() {
       <h1>ITServicePricingTable</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

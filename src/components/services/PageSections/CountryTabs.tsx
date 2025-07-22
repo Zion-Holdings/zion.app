@@ -5,5 +5,5 @@ export default function CountryTabs() {
       <h1>CountryTabs</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

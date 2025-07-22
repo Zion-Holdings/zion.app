@@ -5,5 +5,5 @@ export default function CountrySelector() {
       <h1>CountrySelector</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

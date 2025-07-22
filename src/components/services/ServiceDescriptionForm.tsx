@@ -5,5 +5,5 @@ export default function ServiceDescriptionForm() {
       <h1>ServiceDescriptionForm</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

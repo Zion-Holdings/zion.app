@@ -5,5 +5,5 @@ export default function SearchResultCard() {
       <h1>SearchResultCard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AutocompleteSuggestions() {
       <h1>AutocompleteSuggestions</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

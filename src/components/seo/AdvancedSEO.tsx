@@ -5,5 +5,5 @@ export default function AdvancedSEO() {
       <h1>AdvancedSEO</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

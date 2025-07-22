@@ -5,5 +5,5 @@ export default function PageHero() {
       <h1>PageHero</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

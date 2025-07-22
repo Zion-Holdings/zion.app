@@ -5,5 +5,5 @@ export default function OnsiteQuoteModal() {
       <h1>OnsiteQuoteModal</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
