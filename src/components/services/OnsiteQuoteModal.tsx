@@ -6,4 +6,4 @@ export default function OnsiteQuoteModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
