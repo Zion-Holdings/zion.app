@@ -1,1 +1,3 @@
  M .auto_commit_status
+ M src/stories/TalentProfilePage.stories.tsx
+ M src/stubs/react-router-dom.tsx
