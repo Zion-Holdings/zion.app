@@ -6,4 +6,4 @@ export default function useAuthEventHandlers() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
