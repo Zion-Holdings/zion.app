@@ -8,8 +8,7 @@ export function useWebSocket(options: any) {
   const connect = useCallback(() => {
     try {
       const ws = new WebSocket(options.url)'
-      wsRef.current = ws;
-
+      wsRef.current = ws'
       ws.onopen = () => {
         setIsConnected(true);
         setError(null);
@@ -57,7 +56,7 @@ export function useWebSocket(options: any) {
       wsRef.current.close()'
       wsRef.current = null'
     setIsConnected(false)'
-    reconnectAttemptsRef.current = options.maxReconnectAttempts || 5;
+    reconnectAttemptsRef.current = options.maxReconnectAttempts || 5'
   }, [options.maxReconnectAttempts]);
 
   const sendMessage = useCallback(
@@ -81,4 +80,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''''''''''''''';
+    connect,}''''''''''''''''

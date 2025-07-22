@@ -1,1008 +1,760 @@
 #!/usr/bin/env node
 
 /**
- * Autonomous Security Monitoring Agent
+ * Security Monitoring Automation System
  * 
- * Independently monitors application security, scans for vulnerabilities,
- * and applies security fixes using AI-powered analysis and autonomous decision making.
+ * Autonomous system that continuously monitors security vulnerabilities,
+ * performs security audits, and implements security improvements.
  */
 
 const fs = require('fs').promises;
 const path = require('path');
 const { execSync, spawn } = require('child_process');
 const EventEmitter = require('events');
-const crypto = require('crypto');
+const https = require('https');
+const http = require('http');
 
-class SecurityMonitoringAgent extends EventEmitter {
+class SecurityMonitoringAutomation extends EventEmitter {
   constructor() {
     super();
     
     this.config = {
-      name: 'Security Monitoring Agent',
-      version: '1.0.0',
-      
       // Security thresholds
       thresholds: {
-        vulnerabilityCount: 0, // Zero tolerance for vulnerabilities
-        securityScore: 90, // Minimum security score
-        outdatedDependencies: 5, // Maximum outdated dependencies
-        exposedSecrets: 0, // Zero tolerance for exposed secrets
-        weakPasswords: 0, // Zero tolerance for weak passwords
-        insecureConfigs: 0 // Zero tolerance for insecure configurations
+        vulnerabilitySeverity: {
+          critical: 9.0,
+          high: 7.0,
+          medium: 4.0,
+          low: 0.0
+        },
+        scanInterval: 5 * 60 * 1000, // 5 minutes
+        maxVulnerabilities: 10,
+        maxHighSeverity: 3
       },
       
-      // Scanning configuration
-      scanning: {
-        interval: 60000, // 1 minute
-        scanTypes: ['dependencies', 'code', 'secrets', 'config', 'network'],
-        maxScanDuration: 300000, // 5 minutes
-        excludePatterns: [
-          'node_modules/**',
-          '.git/**',
-          'dist/**',
-          'build/**',
-          'coverage/**',
-          '*.min.js',
-          '*.bundle.js'
-        ]
+      // Security tools
+      tools: {
+        npmAudit: true,
+        snyk: process.env.SNYK_TOKEN ? true : false,
+        sonarqube: process.env.SONARQUBE_URL ? true : false,
+        owaspZap: true,
+        dependencyCheck: true
       },
       
-      // Fix configuration
-      fixes: {
-        autoApply: true,
-        requireApproval: false,
-        backupChanges: true,
-        rollbackOnFailure: true,
-        maxFixesPerRun: 10
+      // Monitoring settings
+      monitoring: {
+        continuous: true,
+        realTimeAlerts: true,
+        autoFix: false, // Set to true for automatic fixes
+        backupBeforeFix: true,
+        whitelist: [] // Whitelist known false positives
       },
       
-      // AI configuration
-      ai: {
-        enabled: true,
-        providers: ['cursor', 'openai', 'claude'],
-        confidenceThreshold: 0.9, // High confidence for security fixes
-        maxSuggestions: 5
+      // Paths
+      paths: {
+        projectRoot: process.cwd(),
+        logs: path.join(process.cwd(), 'logs'),
+        reports: path.join(process.cwd(), 'reports'),
+        backups: path.join(process.cwd(), 'backups'),
+        security: path.join(process.cwd(), 'security')
       }
     };
     
-    this.state = {
-      isRunning: false,
-      lastScan: null,
+    this.isRunning = false;
+    this.currentScan = null;
+    this.scanHistory = [];
+    this.vulnerabilities = new Map();
+    this.securityMetrics = [];
+    this.stats = {
+      totalScans: 0,
+      successfulScans: 0,
+      failedScans: 0,
       vulnerabilitiesFound: 0,
-      fixesApplied: 0,
-      securityScore: 100,
-      currentThreats: [],
-      scanHistory: []
+      vulnerabilitiesFixed: 0,
+      lastScan: null
     };
     
-    this.scanningInterval = null;
+    this.initializeDirectories();
+  }
+
+  async initializeDirectories() {
+    const dirs = [
+      this.config.paths.logs,
+      this.config.paths.reports,
+      this.config.paths.backups,
+      this.config.paths.security
+    ];
+
+    for (const dir of dirs) {
+      try {
+        await fs.mkdir(dir, { recursive: true });
+      } catch (error) {
+        this.log('warn', `Failed to create directory ${dir}: ${error.message}`);
+      }
+    }
   }
 
   async start() {
-    if (this.state.isRunning) {
-      console.log('⚠️ Security agent is already running');
+    if (this.isRunning) {
+      this.log('warn', 'Security Monitoring Automation is already running');
       return;
     }
-    
-    console.log('🚀 Starting Security Monitoring Agent...');
-    this.state.isRunning = true;
-    
-    // Start continuous scanning
-    this.startScanning();
-    
-    // Initial security audit
-    await this.performInitialAudit();
-    
-    console.log('✅ Security Monitoring Agent started');
+
+    this.log('info', '🚀 Starting Security Monitoring Automation...');
+    this.isRunning = true;
+
+    // Start continuous monitoring
+    this.startContinuousMonitoring();
+
+    // Start periodic deep scan
+    this.startPeriodicScan();
+
+    this.log('info', '✅ Security Monitoring Automation started successfully');
     this.emit('started');
   }
 
   async stop() {
-    if (!this.state.isRunning) {
-      console.log('⚠️ Security agent is not running');
+    if (!this.isRunning) {
+      this.log('warn', 'Security Monitoring Automation is not running');
       return;
     }
-    
-    console.log('🛑 Stopping Security Monitoring Agent...');
-    this.state.isRunning = false;
-    
-    if (this.scanningInterval) {
-      clearInterval(this.scanningInterval);
+
+    this.log('info', '🛑 Stopping Security Monitoring Automation...');
+    this.isRunning = false;
+
+    if (this.monitoringTimer) {
+      clearInterval(this.monitoringTimer);
     }
-    
-    console.log('✅ Security Monitoring Agent stopped');
+
+    if (this.scanTimer) {
+      clearInterval(this.scanTimer);
+    }
+
+    this.log('info', '✅ Security Monitoring Automation stopped');
     this.emit('stopped');
   }
 
-  startScanning() {
-    this.scanningInterval = setInterval(async () => {
-      if (this.state.isRunning) {
-        await this.performSecurityScan();
+  startContinuousMonitoring() {
+    this.monitoringTimer = setInterval(async () => {
+      if (this.isRunning && !this.currentScan) {
+        await this.performQuickScan();
       }
-    }, this.config.scanning.interval);
+    }, this.config.thresholds.scanInterval);
   }
 
-  async performInitialAudit() {
-    console.log('🔍 Performing initial security audit...');
-    
-    try {
-      // Run comprehensive security scan
-      const scan = await this.runComprehensiveScan();
-      
-      // Generate security report
-      const report = await this.generateSecurityReport(scan);
-      
-      // Apply critical fixes
-      if (report.criticalIssues.length > 0) {
-        await this.applyCriticalFixes(report.criticalIssues);
+  startPeriodicScan() {
+    // Perform deep scan every hour
+    this.scanTimer = setInterval(async () => {
+      if (this.isRunning && !this.currentScan) {
+        await this.performDeepScan();
       }
-      
-      console.log('✅ Initial security audit completed');
-      
-    } catch (error) {
-      console.error('❌ Initial security audit failed:', error.message);
-    }
+    }, 60 * 60 * 1000);
   }
 
-  async performSecurityScan() {
-    console.log('🔍 Performing security scan...');
-    
-    const scan = {
-      timestamp: Date.now(),
-      vulnerabilities: [],
-      threats: [],
-      fixes: [],
-      score: 100
-    };
-    
+  async performQuickScan() {
     try {
-      // Scan dependencies
-      const dependencyScan = await this.scanDependencies();
-      scan.vulnerabilities.push(...dependencyScan.vulnerabilities);
-      
-      // Scan code
-      const codeScan = await this.scanCode();
-      scan.vulnerabilities.push(...codeScan.vulnerabilities);
-      
-      // Scan for secrets
-      const secretScan = await this.scanForSecrets();
-      scan.vulnerabilities.push(...secretScan.vulnerabilities);
-      
-      // Scan configuration
-      const configScan = await this.scanConfiguration();
-      scan.vulnerabilities.push(...configScan.vulnerabilities);
-      
-      // Scan network
-      const networkScan = await this.scanNetwork();
-      scan.threats.push(...networkScan.threats);
-      
-      // Calculate security score
-      scan.score = this.calculateSecurityScore(scan);
-      
-      // Generate fixes
-      scan.fixes = await this.generateSecurityFixes(scan);
-      
-      // Update state
-      this.state.lastScan = scan;
-      this.state.vulnerabilitiesFound = scan.vulnerabilities.length;
-      this.state.securityScore = scan.score;
-      this.state.currentThreats = scan.threats;
-      this.state.scanHistory.push(scan);
-      
-      // Keep only last 50 scans
-      if (this.state.scanHistory.length > 50) {
-        this.state.scanHistory = this.state.scanHistory.slice(-50);
-      }
-      
-      // Apply fixes if enabled
-      if (this.config.fixes.autoApply && scan.fixes.length > 0) {
-        await this.applySecurityFixes(scan.fixes);
-      }
-      
-      console.log(`✅ Security scan completed: ${scan.vulnerabilities.length} vulnerabilities, score: ${scan.score}`);
-      
-    } catch (error) {
-      console.error('❌ Security scan failed:', error.message);
-    }
-  }
+      this.currentScan = {
+        id: `scan_${Date.now()}`,
+        type: 'quick',
+        startTime: Date.now(),
+        status: 'running'
+      };
 
-  async scanDependencies() {
-    const scan = {
-      vulnerabilities: [],
-      outdated: [],
-      recommendations: []
-    };
-    
-    try {
+      this.log('info', '🔍 Starting quick security scan...');
+
       // Run npm audit
-      const auditOutput = execSync('npm audit --json', { encoding: 'utf8' });
-      const auditData = JSON.parse(auditOutput);
+      const npmVulnerabilities = await this.runNpmAudit();
       
-      // Process vulnerabilities
-      for (const [severity, vulns] of Object.entries(auditData.metadata.vulnerabilities)) {
+      // Run dependency check
+      const dependencyVulnerabilities = await this.runDependencyCheck();
+      
+      // Combine vulnerabilities
+      const allVulnerabilities = [...npmVulnerabilities, ...dependencyVulnerabilities];
+      
+      // Analyze and prioritize
+      const prioritizedVulnerabilities = this.prioritizeVulnerabilities(allVulnerabilities);
+      
+      // Check thresholds
+      const criticalIssues = this.checkSecurityThresholds(prioritizedVulnerabilities);
+      
+      // Auto-fix if enabled
+      if (this.config.monitoring.autoFix && criticalIssues.length > 0) {
+        await this.autoFixVulnerabilities(criticalIssues);
+      }
+
+      this.currentScan.status = 'completed';
+      this.currentScan.endTime = Date.now();
+      this.currentScan.results = {
+        vulnerabilitiesFound: allVulnerabilities.length,
+        criticalIssues: criticalIssues.length,
+        fixedIssues: 0
+      };
+
+      this.scanHistory.push(this.currentScan);
+      this.stats.totalScans++;
+      this.stats.successfulScans++;
+      this.stats.vulnerabilitiesFound += allVulnerabilities.length;
+      this.stats.lastScan = Date.now();
+
+      this.log('info', `✅ Quick scan completed: ${allVulnerabilities.length} vulnerabilities, ${criticalIssues.length} critical`);
+      this.emit('scanCompleted', this.currentScan);
+
+    } catch (error) {
+      this.log('error', `Quick scan failed: ${error.message}`);
+      this.stats.failedScans++;
+      this.emit('scanFailed', error);
+    } finally {
+      this.currentScan = null;
+    }
+  }
+
+  async performDeepScan() {
+    try {
+      this.currentScan = {
+        id: `scan_${Date.now()}`,
+        type: 'deep',
+        startTime: Date.now(),
+        status: 'running'
+      };
+
+      this.log('info', '🔍 Starting deep security scan...');
+
+      // Run all security tools
+      const results = await Promise.allSettled([
+        this.runNpmAudit(),
+        this.runDependencyCheck(),
+        this.runSnykScan(),
+        this.runSonarQubeScan(),
+        this.runOwaspZapScan()
+      ]);
+
+      // Combine all results
+      const allVulnerabilities = results
+        .filter(result => result.status === 'fulfilled')
+        .flatMap(result => result.value);
+
+      // Remove duplicates and whitelist
+      const uniqueVulnerabilities = this.deduplicateVulnerabilities(allVulnerabilities);
+      const filteredVulnerabilities = this.filterWhitelisted(uniqueVulnerabilities);
+      
+      // Prioritize vulnerabilities
+      const prioritizedVulnerabilities = this.prioritizeVulnerabilities(filteredVulnerabilities);
+      
+      // Check thresholds
+      const criticalIssues = this.checkSecurityThresholds(prioritizedVulnerabilities);
+      
+      // Generate detailed report
+      await this.generateSecurityReport(prioritizedVulnerabilities);
+
+      this.currentScan.status = 'completed';
+      this.currentScan.endTime = Date.now();
+      this.currentScan.results = {
+        vulnerabilitiesFound: filteredVulnerabilities.length,
+        criticalIssues: criticalIssues.length,
+        toolsUsed: results.filter(r => r.status === 'fulfilled').length
+      };
+
+      this.scanHistory.push(this.currentScan);
+      this.stats.totalScans++;
+      this.stats.successfulScans++;
+      this.stats.vulnerabilitiesFound += filteredVulnerabilities.length;
+      this.stats.lastScan = Date.now();
+
+      this.log('info', `✅ Deep scan completed: ${filteredVulnerabilities.length} vulnerabilities, ${criticalIssues.length} critical`);
+      this.emit('scanCompleted', this.currentScan);
+
+    } catch (error) {
+      this.log('error', `Deep scan failed: ${error.message}`);
+      this.stats.failedScans++;
+      this.emit('scanFailed', error);
+    } finally {
+      this.currentScan = null;
+    }
+  }
+
+  async runNpmAudit() {
+    if (!this.config.tools.npmAudit) {
+      return [];
+    }
+
+    try {
+      const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
+      const audit = JSON.parse(auditResult);
+      
+      const vulnerabilities = [];
+      
+      for (const [packageName, vulns] of Object.entries(audit.vulnerabilities || {})) {
         for (const vuln of vulns) {
-          scan.vulnerabilities.push({
-            type: 'dependency',
-            severity: severity,
-            package: vuln.name,
-            version: vuln.version,
+          vulnerabilities.push({
+            id: vuln.id,
+            package: packageName,
+            severity: vuln.severity,
+            title: vuln.title,
             description: vuln.description,
-            recommendation: vuln.recommendation
+            cwe: vuln.cwe,
+            cvss: vuln.cvss,
+            source: 'npm-audit',
+            timestamp: Date.now()
           });
         }
       }
       
-      // Check for outdated dependencies
-      const outdatedOutput = execSync('npm outdated --json', { encoding: 'utf8' });
-      const outdatedData = JSON.parse(outdatedOutput);
-      
-      for (const [package, info] of Object.entries(outdatedData)) {
-        scan.outdated.push({
-          package,
-          current: info.current,
-          wanted: info.wanted,
-          latest: info.latest
-        });
-      }
-      
-      // Generate recommendations
-      if (scan.vulnerabilities.length > 0) {
-        scan.recommendations.push({
-          type: 'dependency_update',
-          priority: 'high',
-          message: `Update ${scan.vulnerabilities.length} vulnerable dependencies`,
-          action: 'update_dependencies'
-        });
-      }
-      
-      if (scan.outdated.length > this.config.thresholds.outdatedDependencies) {
-        scan.recommendations.push({
-          type: 'dependency_maintenance',
-          priority: 'medium',
-          message: `Update ${scan.outdated.length} outdated dependencies`,
-          action: 'update_outdated'
-        });
-      }
-      
+      return vulnerabilities;
     } catch (error) {
-      console.warn('⚠️ Dependency scan failed:', error.message);
+      this.log('warn', `NPM audit failed: ${error.message}`);
+      return [];
     }
-    
-    return scan;
   }
 
-  async scanCode() {
-    const scan = {
-      vulnerabilities: [],
-      issues: [],
-      recommendations: []
-    };
-    
+  async runDependencyCheck() {
+    if (!this.config.tools.dependencyCheck) {
+      return [];
+    }
+
     try {
-      // Get files to scan
-      const files = await this.getFilesToScan();
+      // Run OWASP Dependency Check
+      execSync('npx dependency-check --scan . --format JSON --out .', { stdio: 'pipe' });
       
-      for (const file of files) {
-        try {
-          const content = await fs.readFile(file, 'utf8');
-          const issues = this.detectSecurityIssues(content, file);
-          scan.issues.push(...issues);
-          
-          // Convert issues to vulnerabilities
-          for (const issue of issues) {
-            if (issue.severity === 'high' || issue.severity === 'critical') {
-              scan.vulnerabilities.push({
-                type: 'code',
-                severity: issue.severity,
-                file: file,
-                line: issue.line,
-                description: issue.message,
-                recommendation: issue.recommendation
-              });
-            }
-          }
-        } catch (error) {
-          console.warn(`⚠️ Failed to scan ${file}:`, error.message);
+      const reportPath = path.join(this.config.paths.projectRoot, 'dependency-check-report.json');
+      const report = JSON.parse(await fs.readFile(reportPath, 'utf8'));
+      
+      const vulnerabilities = [];
+      
+      for (const vuln of report.dependencies || []) {
+        for (const vulnerability of vuln.vulnerabilities || []) {
+          vulnerabilities.push({
+            id: vulnerability.name,
+            package: vuln.fileName,
+            severity: this.mapCvssToSeverity(vulnerability.cvssScore),
+            title: vulnerability.name,
+            description: vulnerability.description,
+            cwe: vulnerability.cwe,
+            cvss: vulnerability.cvssScore,
+            source: 'dependency-check',
+            timestamp: Date.now()
+          });
         }
       }
       
-      // Generate recommendations
-      if (scan.vulnerabilities.length > 0) {
-        scan.recommendations.push({
-          type: 'code_security',
-          priority: 'high',
-          message: `Fix ${scan.vulnerabilities.length} security issues in code`,
-          action: 'fix_code_security'
+      return vulnerabilities;
+    } catch (error) {
+      this.log('warn', `Dependency check failed: ${error.message}`);
+      return [];
+    }
+  }
+
+  async runSnykScan() {
+    if (!this.config.tools.snyk) {
+      return [];
+    }
+
+    try {
+      const snykResult = execSync('npx snyk test --json', { encoding: 'utf8' });
+      const snyk = JSON.parse(snykResult);
+      
+      const vulnerabilities = [];
+      
+      for (const vuln of snyk.vulnerabilities || []) {
+        vulnerabilities.push({
+          id: vuln.id,
+          package: vuln.packageName,
+          severity: vuln.severity,
+          title: vuln.title,
+          description: vuln.description,
+          cwe: vuln.identifiers?.CWE,
+          cvss: vuln.cvssScore,
+          source: 'snyk',
+          timestamp: Date.now()
         });
       }
       
+      return vulnerabilities;
     } catch (error) {
-      console.warn('⚠️ Code scan failed:', error.message);
+      this.log('warn', `Snyk scan failed: ${error.message}`);
+      return [];
     }
-    
-    return scan;
   }
 
-  async getFilesToScan() {
-    const files = [];
-    const projectRoot = process.cwd();
+  async runSonarQubeScan() {
+    if (!this.config.tools.sonarqube) {
+      return [];
+    }
+
+    try {
+      // Run SonarQube scanner
+      execSync('npx sonarqube-scanner', { stdio: 'pipe' });
+      
+      // Parse SonarQube results (simplified)
+      return [];
+    } catch (error) {
+      this.log('warn', `SonarQube scan failed: ${error.message}`);
+      return [];
+    }
+  }
+
+  async runOwaspZapScan() {
+    if (!this.config.tools.owaspZap) {
+      return [];
+    }
+
+    try {
+      // Run OWASP ZAP scan (simplified)
+      return [];
+    } catch (error) {
+      this.log('warn', `OWASP ZAP scan failed: ${error.message}`);
+      return [];
+    }
+  }
+
+  prioritizeVulnerabilities(vulnerabilities) {
+    return vulnerabilities
+      .map(vuln => ({
+        ...vuln,
+        priority: this.calculatePriority(vuln)
+      }))
+      .sort((a, b) => b.priority - a.priority);
+  }
+
+  calculatePriority(vulnerability) {
+    let priority = 0;
     
-    async function scanDirectory(dir) {
+    // Base priority from CVSS score
+    if (vulnerability.cvss) {
+      priority += vulnerability.cvss;
+    }
+    
+    // Severity multiplier
+    const severityMultipliers = {
+      critical: 2.0,
+      high: 1.5,
+      medium: 1.0,
+      low: 0.5
+    };
+    
+    priority *= severityMultipliers[vulnerability.severity] || 1.0;
+    
+    // Source reliability
+    const sourceReliability = {
+      'npm-audit': 1.0,
+      'snyk': 1.2,
+      'dependency-check': 1.0,
+      'sonarqube': 0.8,
+      'owasp-zap': 1.1
+    };
+    
+    priority *= sourceReliability[vulnerability.source] || 1.0;
+    
+    return priority;
+  }
+
+  checkSecurityThresholds(vulnerabilities) {
+    const criticalIssues = [];
+    
+    // Check total vulnerabilities
+    if (vulnerabilities.length > this.config.thresholds.maxVulnerabilities) {
+      criticalIssues.push({
+        type: 'too-many-vulnerabilities',
+        count: vulnerabilities.length,
+        threshold: this.config.thresholds.maxVulnerabilities,
+        message: `Too many vulnerabilities found: ${vulnerabilities.length}`
+      });
+    }
+    
+    // Check high severity vulnerabilities
+    const highSeverity = vulnerabilities.filter(v => 
+      v.severity === 'high' || v.severity === 'critical'
+    );
+    
+    if (highSeverity.length > this.config.thresholds.maxHighSeverity) {
+      criticalIssues.push({
+        type: 'too-many-high-severity',
+        count: highSeverity.length,
+        threshold: this.config.thresholds.maxHighSeverity,
+        message: `Too many high severity vulnerabilities: ${highSeverity.length}`
+      });
+    }
+    
+    // Check critical vulnerabilities
+    const criticalVulns = vulnerabilities.filter(v => v.severity === 'critical');
+    if (criticalVulns.length > 0) {
+      criticalIssues.push({
+        type: 'critical-vulnerabilities',
+        count: criticalVulns.length,
+        vulnerabilities: criticalVulns,
+        message: `Critical vulnerabilities found: ${criticalVulns.length}`
+      });
+    }
+    
+    return criticalIssues;
+  }
+
+  async autoFixVulnerabilities(criticalIssues) {
+    this.log('info', `🔧 Auto-fixing ${criticalIssues.length} critical security issues...`);
+    
+    let fixedCount = 0;
+    
+    for (const issue of criticalIssues) {
       try {
-        const entries = await fs.readdir(dir, { withFileTypes: true });
+        if (issue.type === 'critical-vulnerabilities') {
+          for (const vuln of issue.vulnerabilities) {
+            const fixed = await this.fixVulnerability(vuln);
+            if (fixed) {
+              fixedCount++;
+            }
+          }
+        }
+      } catch (error) {
+        this.log('error', `Failed to fix issue ${issue.type}: ${error.message}`);
+      }
+    }
+    
+    this.stats.vulnerabilitiesFixed += fixedCount;
+    this.log('info', `✅ Auto-fixed ${fixedCount} vulnerabilities`);
+  }
+
+  async fixVulnerability(vulnerability) {
+    try {
+      // Create backup if enabled
+      if (this.config.monitoring.backupBeforeFix) {
+        await this.createBackup();
+      }
+      
+      switch (vulnerability.source) {
+        case 'npm-audit':
+          return await this.fixNpmVulnerability(vulnerability);
+        case 'snyk':
+          return await this.fixSnykVulnerability(vulnerability);
+        default:
+          this.log('warn', `No fix available for ${vulnerability.source} vulnerability`);
+          return false;
+      }
+    } catch (error) {
+      this.log('error', `Failed to fix vulnerability ${vulnerability.id}: ${error.message}`);
+      return false;
+    }
+  }
+
+  async fixNpmVulnerability(vulnerability) {
+    try {
+      // Run npm audit fix
+      execSync('npm audit fix', { stdio: 'pipe' });
+      
+      // For high severity, try force fix
+      if (vulnerability.severity === 'high' || vulnerability.severity === 'critical') {
+        execSync('npm audit fix --force', { stdio: 'pipe' });
+      }
+      
+      return true;
+    } catch (error) {
+      this.log('warn', `Failed to fix NPM vulnerability: ${error.message}`);
+      return false;
+    }
+  }
+
+  async fixSnykVulnerability(vulnerability) {
+    try {
+      // Run Snyk fix
+      execSync(`npx snyk fix --package-manager=npm`, { stdio: 'pipe' });
+      return true;
+    } catch (error) {
+      this.log('warn', `Failed to fix Snyk vulnerability: ${error.message}`);
+      return false;
+    }
+  }
+
+  deduplicateVulnerabilities(vulnerabilities) {
+    const seen = new Set();
+    return vulnerabilities.filter(vuln => {
+      const key = `${vuln.id}-${vuln.package}-${vuln.source}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  }
+
+  filterWhitelisted(vulnerabilities) {
+    return vulnerabilities.filter(vuln => 
+      !this.config.monitoring.whitelist.some(whitelisted => 
+        whitelisted.id === vuln.id || 
+        whitelisted.package === vuln.package
+      )
+    );
+  }
+
+  mapCvssToSeverity(cvssScore) {
+    if (cvssScore >= 9.0) return 'critical';
+    if (cvssScore >= 7.0) return 'high';
+    if (cvssScore >= 4.0) return 'medium';
+    return 'low';
+  }
+
+  async createBackup() {
+    const backupPath = path.join(this.config.paths.backups, `security-backup-${Date.now()}`);
+    await fs.mkdir(backupPath, { recursive: true });
+    
+    // Backup package files
+    const filesToBackup = ['package.json', 'package-lock.json', 'yarn.lock'];
+    
+    for (const file of filesToBackup) {
+      try {
+        const sourcePath = path.join(this.config.paths.projectRoot, file);
+        const destPath = path.join(backupPath, file);
         
-        for (const entry of entries) {
-          const fullPath = path.join(dir, entry.name);
-          const relativePath = path.relative(projectRoot, fullPath);
-          
-          if (entry.isDirectory()) {
-            // Check if directory should be excluded
-            const shouldExclude = this.config.scanning.excludePatterns.some(pattern => {
-              const regex = new RegExp(pattern.replace(/\*\*/g, '.*'));
-              return regex.test(relativePath);
-            });
-            
-            if (!shouldExclude) {
-              await scanDirectory.call(this, fullPath);
-            }
-          } else if (entry.isFile()) {
-            // Include security-relevant files
-            const ext = path.extname(entry.name);
-            if (['.js', '.jsx', '.ts', '.tsx', '.py', '.java', '.php', '.rb', '.go', '.rs'].includes(ext)) {
-              files.push(relativePath);
-            }
-          }
+        if (await this.fileExists(sourcePath)) {
+          await this.copyFile(sourcePath, destPath);
         }
       } catch (error) {
-        console.warn(`⚠️ Could not scan directory ${dir}:`, error.message);
-      }
-    }
-    
-    await scanDirectory.call(this, projectRoot);
-    return files;
-  }
-
-  detectSecurityIssues(content, filePath) {
-    const issues = [];
-    
-    // Security vulnerability patterns
-    const patterns = [
-      {
-        pattern: /eval\s*\(/g,
-        message: 'Use of eval() is dangerous and can lead to code injection',
-        severity: 'critical',
-        recommendation: 'Replace with safer alternatives like JSON.parse() or Function constructor'
-      },
-      {
-        pattern: /innerHTML\s*=\s*[^;]+/g,
-        message: 'Direct innerHTML assignment may cause XSS attacks',
-        severity: 'high',
-        recommendation: 'Use textContent or sanitize input before assignment'
-      },
-      {
-        pattern: /password\s*=\s*['"][^'"]+['"]/g,
-        message: 'Hardcoded password detected',
-        severity: 'critical',
-        recommendation: 'Use environment variables or secure credential management'
-      },
-      {
-        pattern: /api_key\s*=\s*['"][^'"]+['"]/g,
-        message: 'Hardcoded API key detected',
-        severity: 'critical',
-        recommendation: 'Use environment variables or secure key management'
-      },
-      {
-        pattern: /console\.log\s*\([^)]*password[^)]*\)/gi,
-        message: 'Password logging detected',
-        severity: 'high',
-        recommendation: 'Remove password logging from production code'
-      },
-      {
-        pattern: /localStorage\.setItem\s*\([^,]+,\s*[^)]*password[^)]*\)/gi,
-        message: 'Password stored in localStorage',
-        severity: 'high',
-        recommendation: 'Use secure storage methods or avoid storing sensitive data'
-      },
-      {
-        pattern: /sql\s*=\s*['"][^'"]*\$\{[^}]+\}[^'"]*['"]/g,
-        message: 'Potential SQL injection vulnerability',
-        severity: 'critical',
-        recommendation: 'Use parameterized queries or prepared statements'
-      },
-      {
-        pattern: /document\.write\s*\([^)]+\)/g,
-        message: 'Use of document.write may cause XSS',
-        severity: 'medium',
-        recommendation: 'Use safer DOM manipulation methods'
-      }
-    ];
-    
-    const lines = content.split('\n');
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      for (const pattern of patterns) {
-        if (pattern.pattern.test(line)) {
-          issues.push({
-            type: 'security',
-            severity: pattern.severity,
-            message: pattern.message,
-            line: i + 1,
-            file: filePath,
-            recommendation: pattern.recommendation
-          });
-        }
-      }
-    }
-    
-    return issues;
-  }
-
-  async scanForSecrets() {
-    const scan = {
-      vulnerabilities: [],
-      secrets: [],
-      recommendations: []
-    };
-    
-    try {
-      // Get files to scan
-      const files = await this.getFilesToScan();
-      
-      for (const file of files) {
-        try {
-          const content = await fs.readFile(file, 'utf8');
-          const secrets = this.detectSecrets(content, file);
-          scan.secrets.push(...secrets);
-          
-          // Convert secrets to vulnerabilities
-          for (const secret of secrets) {
-            scan.vulnerabilities.push({
-              type: 'secret',
-              severity: 'critical',
-              file: file,
-              line: secret.line,
-              description: `Exposed ${secret.type}: ${secret.value.substring(0, 10)}...`,
-              recommendation: 'Remove or encrypt the secret'
-            });
-          }
-        } catch (error) {
-          console.warn(`⚠️ Failed to scan ${file} for secrets:`, error.message);
-        }
-      }
-      
-      // Generate recommendations
-      if (scan.secrets.length > 0) {
-        scan.recommendations.push({
-          type: 'secret_management',
-          priority: 'critical',
-          message: `Remove ${scan.secrets.length} exposed secrets`,
-          action: 'remove_secrets'
-        });
-      }
-      
-    } catch (error) {
-      console.warn('⚠️ Secret scan failed:', error.message);
-    }
-    
-    return scan;
-  }
-
-  detectSecrets(content, filePath) {
-    const secrets = [];
-    
-    // Secret patterns
-    const patterns = [
-      {
-        pattern: /(?:password|passwd|pwd)\s*[:=]\s*['"][^'"]{8,}['"]/gi,
-        type: 'password'
-      },
-      {
-        pattern: /(?:api_key|apikey|api-key)\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-        type: 'api_key'
-      },
-      {
-        pattern: /(?:secret|token|key)\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-        type: 'secret'
-      },
-      {
-        pattern: /(?:private_key|privatekey)\s*[:=]\s*['"][^'"]{50,}['"]/gi,
-        type: 'private_key'
-      },
-      {
-        pattern: /(?:aws_access_key|aws_secret_key)\s*[:=]\s*['"][^'"]{10,}['"]/gi,
-        type: 'aws_credential'
-      }
-    ];
-    
-    const lines = content.split('\n');
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      for (const pattern of patterns) {
-        const matches = line.match(pattern.pattern);
-        if (matches) {
-          for (const match of matches) {
-            secrets.push({
-              type: pattern.type,
-              value: match,
-              line: i + 1,
-              file: filePath
-            });
-          }
-        }
-      }
-    }
-    
-    return secrets;
-  }
-
-  async scanConfiguration() {
-    const scan = {
-      vulnerabilities: [],
-      issues: [],
-      recommendations: []
-    };
-    
-    try {
-      // Scan common configuration files
-      const configFiles = [
-        'package.json',
-        '.env',
-        '.env.local',
-        '.env.production',
-        'docker-compose.yml',
-        'Dockerfile',
-        'nginx.conf',
-        'webpack.config.js',
-        'next.config.js'
-      ];
-      
-      for (const configFile of configFiles) {
-        try {
-          await fs.access(configFile);
-          const content = await fs.readFile(configFile, 'utf8');
-          const issues = this.detectConfigIssues(content, configFile);
-          scan.issues.push(...issues);
-          
-          // Convert issues to vulnerabilities
-          for (const issue of issues) {
-            if (issue.severity === 'high' || issue.severity === 'critical') {
-              scan.vulnerabilities.push({
-                type: 'configuration',
-                severity: issue.severity,
-                file: configFile,
-                line: issue.line,
-                description: issue.message,
-                recommendation: issue.recommendation
-              });
-            }
-          }
-        } catch (error) {
-          // File doesn't exist, skip
-        }
-      }
-      
-      // Generate recommendations
-      if (scan.vulnerabilities.length > 0) {
-        scan.recommendations.push({
-          type: 'config_security',
-          priority: 'high',
-          message: `Fix ${scan.vulnerabilities.length} configuration security issues`,
-          action: 'fix_config_security'
-        });
-      }
-      
-    } catch (error) {
-      console.warn('⚠️ Configuration scan failed:', error.message);
-    }
-    
-    return scan;
-  }
-
-  detectConfigIssues(content, filePath) {
-    const issues = [];
-    
-    // Configuration security patterns
-    const patterns = [
-      {
-        pattern: /"debug":\s*true/g,
-        message: 'Debug mode enabled in production configuration',
-        severity: 'high',
-        recommendation: 'Disable debug mode in production'
-      },
-      {
-        pattern: /"dev":\s*true/g,
-        message: 'Development mode enabled in production configuration',
-        severity: 'high',
-        recommendation: 'Disable development mode in production'
-      },
-      {
-        pattern: /NODE_ENV\s*=\s*development/g,
-        message: 'Development environment in production configuration',
-        severity: 'high',
-        recommendation: 'Set NODE_ENV to production'
-      },
-      {
-        pattern: /cors:\s*{\s*origin:\s*"\*"/g,
-        message: 'CORS configured to allow all origins',
-        severity: 'medium',
-        recommendation: 'Restrict CORS to specific domains'
-      }
-    ];
-    
-    const lines = content.split('\n');
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      for (const pattern of patterns) {
-        if (pattern.pattern.test(line)) {
-          issues.push({
-            type: 'configuration',
-            severity: pattern.severity,
-            message: pattern.message,
-            line: i + 1,
-            file: filePath,
-            recommendation: pattern.recommendation
-          });
-        }
-      }
-    }
-    
-    return issues;
-  }
-
-  async scanNetwork() {
-    const scan = {
-      threats: [],
-      vulnerabilities: [],
-      recommendations: []
-    };
-    
-    try {
-      // Check for open ports
-      const openPorts = await this.checkOpenPorts();
-      for (const port of openPorts) {
-        scan.threats.push({
-          type: 'open_port',
-          severity: 'medium',
-          port: port,
-          description: `Port ${port} is open and potentially vulnerable`,
-          recommendation: 'Close unnecessary ports or secure them'
-        });
-      }
-      
-      // Check for SSL/TLS issues
-      const sslIssues = await this.checkSSLIssues();
-      scan.vulnerabilities.push(...sslIssues);
-      
-      // Generate recommendations
-      if (scan.threats.length > 0) {
-        scan.recommendations.push({
-          type: 'network_security',
-          priority: 'medium',
-          message: `Secure ${scan.threats.length} network vulnerabilities`,
-          action: 'secure_network'
-        });
-      }
-      
-    } catch (error) {
-      console.warn('⚠️ Network scan failed:', error.message);
-    }
-    
-    return scan;
-  }
-
-  async checkOpenPorts() {
-    // Simplified port checking
-    const commonPorts = [21, 22, 23, 25, 53, 80, 110, 143, 443, 993, 995];
-    const openPorts = [];
-    
-    // This is a simplified implementation
-    // In a real system, you would use proper network scanning tools
-    
-    return openPorts;
-  }
-
-  async checkSSLIssues() {
-    const issues = [];
-    
-    // This is a simplified implementation
-    // In a real system, you would check SSL certificates and configurations
-    
-    return issues;
-  }
-
-  calculateSecurityScore(scan) {
-    let score = 100;
-    
-    // Deduct points for vulnerabilities
-    for (const vuln of scan.vulnerabilities) {
-      switch (vuln.severity) {
-        case 'critical':
-          score -= 20;
-          break;
-        case 'high':
-          score -= 10;
-          break;
-        case 'medium':
-          score -= 5;
-          break;
-        case 'low':
-          score -= 2;
-          break;
-      }
-    }
-    
-    // Deduct points for threats
-    for (const threat of scan.threats) {
-      switch (threat.severity) {
-        case 'critical':
-          score -= 15;
-          break;
-        case 'high':
-          score -= 8;
-          break;
-        case 'medium':
-          score -= 4;
-          break;
-        case 'low':
-          score -= 1;
-          break;
-      }
-    }
-    
-    return Math.max(0, Math.min(100, score));
-  }
-
-  async generateSecurityFixes(scan) {
-    const fixes = [];
-    
-    try {
-      // Generate fixes for vulnerabilities
-      for (const vuln of scan.vulnerabilities) {
-        const fix = await this.generateFix(vuln);
-        if (fix) {
-          fixes.push(fix);
-        }
-      }
-      
-      // Limit fixes per run
-      fixes.splice(0, this.config.fixes.maxFixesPerRun);
-      
-    } catch (error) {
-      console.error('❌ Failed to generate security fixes:', error.message);
-    }
-    
-    return fixes;
-  }
-
-  async generateFix(vulnerability) {
-    try {
-      // Use AI to generate specific fix
-      const aiFix = await this.generateAIFix(vulnerability);
-      
-      return {
-        id: `fix_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-        type: vulnerability.type,
-        severity: vulnerability.severity,
-        description: vulnerability.description,
-        file: vulnerability.file,
-        line: vulnerability.line,
-        aiSuggestion: aiFix,
-        timestamp: Date.now()
-      };
-      
-    } catch (error) {
-      console.warn('⚠️ Failed to generate fix:', error.message);
-      return null;
-    }
-  }
-
-  async generateAIFix(vulnerability) {
-    if (!this.config.ai.enabled) {
-      return null;
-    }
-    
-    try {
-      // This is a simplified implementation
-      // In a real system, you would integrate with actual AI APIs
-      
-      const prompt = `
-Generate a security fix for this vulnerability:
-
-Type: ${vulnerability.type}
-Severity: ${vulnerability.severity}
-Description: ${vulnerability.description}
-File: ${vulnerability.file}
-Line: ${vulnerability.line}
-Recommendation: ${vulnerability.recommendation}
-
-Provide a specific code fix or configuration change to resolve this security issue.
-      `;
-      
-      // Simulate AI response
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      return {
-        code: '// AI-generated security fix would go here',
-        confidence: 0.95,
-        explanation: 'AI suggests this fix based on security best practices'
-      };
-      
-    } catch (error) {
-      console.warn('⚠️ AI fix generation failed:', error.message);
-      return null;
-    }
-  }
-
-  async applySecurityFixes(fixes) {
-    if (!this.config.fixes.autoApply) return;
-    
-    console.log(`🔧 Applying ${fixes.length} security fixes...`);
-    
-    for (const fix of fixes) {
-      try {
-        await this.applyFix(fix);
-      } catch (error) {
-        console.warn(`⚠️ Failed to apply fix ${fix.id}:`, error.message);
-        
-        // Rollback if enabled
-        if (this.config.fixes.rollbackOnFailure) {
-          await this.rollbackFix(fix);
-        }
+        this.log('warn', `Failed to backup ${file}: ${error.message}`);
       }
     }
   }
 
-  async applyFix(fix) {
-    console.log(`🔧 Applying security fix: ${fix.description}`);
-    
-    // Create backup if enabled
-    if (this.config.fixes.backupChanges) {
-      await this.createBackup(fix);
-    }
-    
-    // Apply the fix based on type
-    switch (fix.type) {
-      case 'dependency':
-        await this.fixDependency(fix);
-        break;
-      case 'code':
-        await this.fixCode(fix);
-        break;
-      case 'secret':
-        await this.fixSecret(fix);
-        break;
-      case 'configuration':
-        await this.fixConfiguration(fix);
-        break;
-      default:
-        console.log(`⚠️ Unknown fix type: ${fix.type}`);
-    }
-    
-    // Update state
-    this.state.fixesApplied++;
-    
-    console.log(`✅ Security fix applied: ${fix.description}`);
-  }
-
-  async fixDependency(fix) {
-    // Implement dependency fix
-    console.log('📦 Fixing dependency vulnerability...');
-    
-    // This would include:
-    // - Updating vulnerable packages
-    // - Pinning versions
-    // - Removing unused dependencies
-  }
-
-  async fixCode(fix) {
-    // Implement code fix
-    console.log('🔧 Fixing code vulnerability...');
-    
-    // This would include:
-    // - Replacing dangerous functions
-    // - Adding input validation
-    // - Implementing secure patterns
-  }
-
-  async fixSecret(fix) {
-    // Implement secret fix
-    console.log('🔐 Fixing exposed secret...');
-    
-    // This would include:
-    // - Removing hardcoded secrets
-    // - Using environment variables
-    // - Implementing secure storage
-  }
-
-  async fixConfiguration(fix) {
-    // Implement configuration fix
-    console.log('⚙️ Fixing configuration vulnerability...');
-    
-    // This would include:
-    // - Updating security settings
-    // - Enabling security headers
-    // - Configuring secure defaults
-  }
-
-  async createBackup(fix) {
-    // Create backup of affected files
-    console.log('💾 Creating backup...');
-  }
-
-  async rollbackFix(fix) {
-    // Rollback fix if it fails
-    console.log('🔄 Rolling back fix...');
-  }
-
-  async applyCriticalFixes(issues) {
-    console.log(`🚨 Applying ${issues.length} critical security fixes...`);
-    
-    for (const issue of issues) {
-      try {
-        const fix = await this.generateFix(issue);
-        if (fix) {
-          await this.applyFix(fix);
-        }
-      } catch (error) {
-        console.error(`❌ Failed to apply critical fix:`, error.message);
-      }
-    }
-  }
-
-  async generateSecurityReport(scan) {
+  async generateSecurityReport(vulnerabilities) {
     const report = {
       timestamp: Date.now(),
+      stats: this.stats,
+      recentScans: this.scanHistory.slice(-10),
+      vulnerabilities: vulnerabilities,
       summary: {
-        vulnerabilities: scan.vulnerabilities.length,
-        threats: scan.threats.length,
-        score: scan.score,
-        criticalIssues: scan.vulnerabilities.filter(v => v.severity === 'critical').length
-      },
-      vulnerabilities: scan.vulnerabilities,
-      threats: scan.threats,
-      recommendations: scan.recommendations,
-      fixes: scan.fixes
+        totalVulnerabilities: vulnerabilities.length,
+        bySeverity: this.groupBySeverity(vulnerabilities),
+        bySource: this.groupBySource(vulnerabilities),
+        topVulnerabilities: vulnerabilities.slice(0, 10),
+        recommendations: this.generateRecommendations(vulnerabilities)
+      }
     };
+
+    const reportPath = path.join(this.config.paths.reports, `security-report-${Date.now()}.json`);
+    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     
+    this.log('info', `Generated security report: ${reportPath}`);
     return report;
+  }
+
+  groupBySeverity(vulnerabilities) {
+    const groups = { critical: 0, high: 0, medium: 0, low: 0 };
+    
+    for (const vuln of vulnerabilities) {
+      groups[vuln.severity] = (groups[vuln.severity] || 0) + 1;
+    }
+    
+    return groups;
+  }
+
+  groupBySource(vulnerabilities) {
+    const groups = {};
+    
+    for (const vuln of vulnerabilities) {
+      groups[vuln.source] = (groups[vuln.source] || 0) + 1;
+    }
+    
+    return groups;
+  }
+
+  generateRecommendations(vulnerabilities) {
+    const recommendations = [];
+    
+    // High severity recommendations
+    const highSeverity = vulnerabilities.filter(v => v.severity === 'high' || v.severity === 'critical');
+    if (highSeverity.length > 0) {
+      recommendations.push({
+        priority: 'critical',
+        action: 'Fix high severity vulnerabilities immediately',
+        count: highSeverity.length,
+        vulnerabilities: highSeverity.slice(0, 5)
+      });
+    }
+    
+    // Update recommendations
+    const outdated = vulnerabilities.filter(v => v.source === 'npm-audit');
+    if (outdated.length > 0) {
+      recommendations.push({
+        priority: 'high',
+        action: 'Update outdated dependencies',
+        count: outdated.length
+      });
+    }
+    
+    // Security best practices
+    recommendations.push({
+      priority: 'medium',
+      action: 'Implement security headers and CSP',
+      description: 'Add security headers to prevent common attacks'
+    });
+    
+    return recommendations;
+  }
+
+  async fileExists(filePath) {
+    try {
+      await fs.access(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  async copyFile(source, dest) {
+    const content = await fs.readFile(source);
+    await fs.writeFile(dest, content);
+  }
+
+  log(level, message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level.toUpperCase()}] [SECURITY] ${message}`;
+    
+    console.log(logMessage);
+    
+    // Save to log file
+    const logPath = path.join(this.config.paths.logs, 'security-monitoring.log');
+    fs.appendFile(logPath, logMessage + '\n').catch(() => {});
   }
 
   getStatus() {
     return {
-      isRunning: this.state.isRunning,
-      lastScan: this.state.lastScan,
-      vulnerabilitiesFound: this.state.vulnerabilitiesFound,
-      fixesApplied: this.state.fixesApplied,
-      securityScore: this.state.securityScore,
-      currentThreats: this.state.currentThreats
+      isRunning: this.isRunning,
+      currentScan: this.currentScan,
+      stats: this.stats,
+      recentVulnerabilities: Array.from(this.vulnerabilities.values()).slice(-10),
+      lastScan: this.stats.lastScan
     };
   }
 }
 
-// Export the agent
-module.exports = SecurityMonitoringAgent;
-
-// Run the agent if this file is executed directly
-if (require.main === module) {
-  const agent = new SecurityMonitoringAgent();
-  
+// CLI Interface
+async function main() {
+  const automation = new SecurityMonitoringAutomation();
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
-      agent.start();
+      await automation.start();
       break;
     case 'stop':
-      agent.stop();
+      await automation.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(agent.getStatus(), null, 2));
+      console.log(JSON.stringify(automation.getStatus(), null, 2));
       break;
     case 'scan':
-      agent.performSecurityScan();
+      await automation.performQuickScan();
+      break;
+    case 'deep':
+      await automation.performDeepScan();
       break;
     default:
-      console.log('Usage: node security-monitoring-automation.cjs [start|stop|status|scan]');
+      console.log('Usage: node security-monitoring-automation.cjs [start|stop|status|scan|deep]');
       break;
   }
-} 
+}
+
+if (require.main === module) {
+  main().catch(error => {
+    console.error('Security Monitoring Automation failed:', error.message);
+    process.exit(1);
+  });
+}
+
+module.exports = SecurityMonitoringAutomation; 

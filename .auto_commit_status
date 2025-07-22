@@ -1,4 +1,6 @@
  M .auto_commit_status
- M src/hooks/useOnboardingStatus.tsx
+ M scripts/security-monitoring-automation.cjs
+ M src/hooks/useTheme.tsx
+ M src/hooks/useWebSocket.ts
  M start-autonomous-automation.sh
-?? automation/core/IntelligentAutomationOrchestrator.js
+?? automation/start-autonomous-system.js

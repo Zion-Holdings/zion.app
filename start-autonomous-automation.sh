@@ -9,7 +9,7 @@ set -e
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(pwd)"
 LOG_DIR="$PROJECT_ROOT/logs"
 PID_DIR="$PROJECT_ROOT/temp"
 CONFIG_FILE="$PROJECT_ROOT/.env.automation"
