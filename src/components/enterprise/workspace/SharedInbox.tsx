@@ -6,4 +6,4 @@ export default function SharedInbox() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
