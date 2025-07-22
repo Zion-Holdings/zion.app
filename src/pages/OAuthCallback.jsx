@@ -5,5 +5,5 @@ export default function OAuthCallback() {
       <h1>OAuthCallback</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

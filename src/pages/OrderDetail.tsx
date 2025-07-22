@@ -5,5 +5,5 @@ export default function OrderDetail() {
       <h1>OrderDetail</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

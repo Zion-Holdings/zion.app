@@ -5,5 +5,5 @@ export default function NewServicesPage() {
       <h1>NewServicesPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

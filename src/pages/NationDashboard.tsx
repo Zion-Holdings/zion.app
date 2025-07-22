@@ -5,5 +5,5 @@ export default function NationDashboard() {
       <h1>NationDashboard</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

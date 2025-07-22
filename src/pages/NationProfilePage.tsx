@@ -5,5 +5,5 @@ export default function NationProfilePage() {
       <h1>NationProfilePage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

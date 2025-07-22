@@ -5,5 +5,5 @@ export default function OpenAppRedirect() {
       <h1>OpenAppRedirect</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

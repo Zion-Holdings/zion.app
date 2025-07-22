@@ -5,5 +5,5 @@ export default function MoreTalentsPage() {
       <h1>MoreTalentsPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

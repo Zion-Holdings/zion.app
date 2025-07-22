@@ -5,5 +5,5 @@ export default function MobilePwa() {
       <h1>MobilePwa</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function OrgChart() {
       <h1>OrgChart</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

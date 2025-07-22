@@ -5,5 +5,5 @@ export default function PartnerIntegration() {
       <h1>PartnerIntegration</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

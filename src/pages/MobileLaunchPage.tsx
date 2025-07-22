@@ -5,5 +5,5 @@ export default function MobileLaunchPage() {
       <h1>MobileLaunchPage</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

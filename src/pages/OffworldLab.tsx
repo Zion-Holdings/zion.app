@@ -5,5 +5,5 @@ export default function OffworldLab() {
       <h1>OffworldLab</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

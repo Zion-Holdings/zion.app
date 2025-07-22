@@ -5,5 +5,5 @@ export default function Notifications() {
       <h1>Notifications</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

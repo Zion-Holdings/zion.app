@@ -5,5 +5,5 @@ export default function Philosophy() {
       <h1>Philosophy</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

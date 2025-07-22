@@ -5,5 +5,5 @@ export default function NationBuilder() {
       <h1>NationBuilder</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

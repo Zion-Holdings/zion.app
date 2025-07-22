@@ -5,5 +5,5 @@ export default function OrderConfirmation() {
       <h1>OrderConfirmation</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

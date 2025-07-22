@@ -5,5 +5,5 @@ export default function Partners() {
       <h1>Partners</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

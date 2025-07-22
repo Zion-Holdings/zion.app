@@ -5,5 +5,5 @@ export default function ListingDetail() {
       <h1>ListingDetail</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function Orders() {
       <h1>Orders</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

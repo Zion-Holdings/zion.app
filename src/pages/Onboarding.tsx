@@ -5,5 +5,5 @@ export default function Onboarding() {
       <h1>Onboarding</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

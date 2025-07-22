@@ -5,5 +5,5 @@ export default function MessagingInbox() {
       <h1>MessagingInbox</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

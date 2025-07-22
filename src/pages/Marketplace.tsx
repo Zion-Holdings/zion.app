@@ -5,5 +5,5 @@ export default function Marketplace() {
       <h1>Marketplace</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
