@@ -6,4 +6,4 @@ export default function command() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

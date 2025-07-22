@@ -6,4 +6,4 @@ export default function checkbox() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

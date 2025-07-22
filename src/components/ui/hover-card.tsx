@@ -6,4 +6,4 @@ export default function hover-card() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

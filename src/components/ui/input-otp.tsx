@@ -6,4 +6,4 @@ export default function input-otp() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
