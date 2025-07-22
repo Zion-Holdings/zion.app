@@ -6,4 +6,4 @@ export default function TeamManagement() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
