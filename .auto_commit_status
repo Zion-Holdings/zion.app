@@ -1,3 +1,12 @@
  M .auto_commit_status
- M src/hooks/useTheme.tsx
- M src/hooks/useWebSocket.ts
+ M src/layout/AppHeader.tsx
+ M src/layout/AppLayout.tsx
+ M src/layout/AuthLayout.tsx
+ M src/layout/MainNavigation.tsx
+ M src/layout/PrimaryNav.tsx
+ M src/layout/__tests__/PrimaryNav.test.tsx
+ M src/legal/PrivacyPolicy.jsx
+ M src/legal/TermsOfService.jsx
+ M src/lib/dnd-stub.tsx
+ M src/mobile/MobileApp.tsx
+ M src/mobile/components/browse/BrowseCards.tsx
