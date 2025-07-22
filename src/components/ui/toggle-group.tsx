@@ -6,4 +6,4 @@ export default function toggle-group() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

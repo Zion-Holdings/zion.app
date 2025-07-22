@@ -6,4 +6,4 @@ export default function TokenDisplay() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

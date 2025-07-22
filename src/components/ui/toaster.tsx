@@ -6,4 +6,4 @@ export default function toaster() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
