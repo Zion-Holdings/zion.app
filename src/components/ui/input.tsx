@@ -6,4 +6,4 @@ export default function input() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

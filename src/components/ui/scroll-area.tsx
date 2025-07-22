@@ -6,4 +6,4 @@ export default function scroll-area() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
