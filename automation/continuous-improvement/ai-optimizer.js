@@ -14,7 +14,7 @@ const fs = require('fs')
 const path = require('path')
 const { execSync, spawn } = require('child_process')
 const https = require('https')
-const http = require('http');'
+const http = require('http');
 // AI Configuration
 const AI_CONFIG = {
   // Cursor AI Integration

@@ -10,7 +10,7 @@ const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
 const axios = require('axios')
-const winston = require('winston');'
+const winston = require('winston');
 // Configure logging
 const logger = winston.createLogger({
   level: 'info','  format: winston.format.combine(

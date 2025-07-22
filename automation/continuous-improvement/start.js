@@ -9,9 +9,9 @@
 
 const path = require('path')
 const fs = require('fs')
-const { spawn } = require('child_process');'
+const { spawn } = require('child_process');
 // Import the enhanced automation system
-const EnhancedAutomation = require('./enhanced-automation');'
+const EnhancedAutomation = require('./enhanced-automation');
 class AutomationStartup {
   constructor() {
     this.automation = null;

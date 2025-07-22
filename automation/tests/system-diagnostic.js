@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports */
 
-require('dotenv').config();'const axios = require('axios');'const fs = require('fs').promises;'const path = require('path');'
+require('dotenv').config();
+const axios = require('axios');
+const fs = require('fs').promises;
+const path = require('path');
 class SystemDiagnostic {
   constructor() {
     this.results = {

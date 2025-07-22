@@ -6,4 +6,4 @@ export default function NotificationHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
