@@ -6,4 +6,4 @@ export default function AdminLayout() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
