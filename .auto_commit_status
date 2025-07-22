@@ -1,2 +1,4 @@
  M .auto_commit_status
- M automation/package.json
+ M automation/README.md
+ M src/utils/safe-component-loader.tsx
+?? automation/core/ReportGenerator.js
