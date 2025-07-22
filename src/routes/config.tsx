@@ -5,5 +5,5 @@ export default function config() {
       <h1>config</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

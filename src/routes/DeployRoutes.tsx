@@ -5,5 +5,5 @@ export default function DeployRoutes() {
       <h1>DeployRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

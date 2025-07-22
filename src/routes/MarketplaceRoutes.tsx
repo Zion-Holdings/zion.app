@@ -5,5 +5,5 @@ export default function MarketplaceRoutes() {
       <h1>MarketplaceRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

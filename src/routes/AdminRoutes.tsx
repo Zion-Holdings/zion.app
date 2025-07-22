@@ -5,5 +5,5 @@ export default function AdminRoutes() {
       <h1>AdminRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

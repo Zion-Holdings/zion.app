@@ -5,5 +5,5 @@ export default function ErrorRoutes() {
       <h1>ErrorRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

@@ -5,5 +5,5 @@ export default function AuthRoutes() {
       <h1>AuthRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

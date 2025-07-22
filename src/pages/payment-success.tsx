@@ -5,5 +5,5 @@ export default function payment-success() {
       <h1>payment-success</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

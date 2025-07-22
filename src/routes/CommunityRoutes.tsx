@@ -5,5 +5,5 @@ export default function CommunityRoutes() {
       <h1>CommunityRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

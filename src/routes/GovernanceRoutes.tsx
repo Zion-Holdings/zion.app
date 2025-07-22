@@ -5,5 +5,5 @@ export default function GovernanceRoutes() {
       <h1>GovernanceRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

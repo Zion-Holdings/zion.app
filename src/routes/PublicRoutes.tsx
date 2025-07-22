@@ -5,5 +5,5 @@ export default function PublicRoutes() {
       <h1>PublicRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

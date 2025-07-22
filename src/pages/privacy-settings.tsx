@@ -5,5 +5,5 @@ export default function privacy-settings() {
       <h1>privacy-settings</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

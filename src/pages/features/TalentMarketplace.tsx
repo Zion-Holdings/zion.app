@@ -5,5 +5,5 @@ export default function TalentMarketplace() {
       <h1>TalentMarketplace</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

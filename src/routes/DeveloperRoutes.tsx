@@ -5,5 +5,5 @@ export default function DeveloperRoutes() {
       <h1>DeveloperRoutes</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
