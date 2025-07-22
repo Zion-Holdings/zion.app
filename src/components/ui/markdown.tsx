@@ -6,4 +6,4 @@ export default function markdown() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
