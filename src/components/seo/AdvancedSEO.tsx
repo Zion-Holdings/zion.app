@@ -6,4 +6,4 @@ export default function AdvancedSEO() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''

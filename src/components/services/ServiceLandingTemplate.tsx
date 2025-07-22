@@ -6,4 +6,4 @@ export default function ServiceLandingTemplate() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
