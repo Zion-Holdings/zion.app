@@ -6,4 +6,4 @@ export default function WhitepaperViewPage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
