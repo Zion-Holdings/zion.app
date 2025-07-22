@@ -6,4 +6,4 @@ export default function Tutorial() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
