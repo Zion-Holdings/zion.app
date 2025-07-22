@@ -6,4 +6,4 @@ export default function BlogPost() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
