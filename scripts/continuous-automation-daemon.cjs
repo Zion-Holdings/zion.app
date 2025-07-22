@@ -31,7 +31,7 @@ const CONFIG = {
       name: 'ai-delegation-master',
       command: 'npm run ai-delegate:master',
       port: 3002,
-      healthCheck: 'http://localhost:3002/api/nodes/status',
+      healthCheck: 'http://localhost:3007/api/nodes/status',
     },
     {
       name: 'automated-improvement-pipeline',
@@ -43,7 +43,7 @@ const CONFIG = {
       name: 'cursor-ai-delegator',
       command: 'node scripts/cursor-ai-delegator.cjs',
       port: 3005,
-      healthCheck: 'http://localhost:3005/api/status',
+      healthCheck: 'http://localhost:3007/api/status',
     },
   ],
 

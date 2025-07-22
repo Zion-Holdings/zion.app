@@ -33,7 +33,7 @@ try {
       test: 'jest --passWithNoTests',
       maintain: 'node scripts/zion-app-maintainer.cjs',
       automate: 'node scripts/complete-zion-automation.cjs',
-      health: 'curl -s http://localhost:3001/api/health',
+      health: 'curl -s http://localhost:3006/api/health',
       status: 'node scripts/zion-app-maintainer.cjs',
     };
 
@@ -282,8 +282,8 @@ const finalStatus = {
     'Created simple HTML interface',
   ],
   appStatus: 'OPERATIONAL',
-  healthEndpoint: 'http://localhost:3001/api/health',
-  mainEndpoint: 'http://localhost:3001',
+  healthEndpoint: 'http://localhost:3006/api/health',
+  mainEndpoint: 'http://localhost:3006',
 };
 
 // Ensure automation directory exists
@@ -298,6 +298,6 @@ console.log('✅ Generated final status report');
 
 console.log('\n🎉 Final Comprehensive Fix Complete!');
 console.log(
-  '🚀 The app should now be running smoothly on http://localhost:3001',
+  '🚀 The app should now be running smoothly on http://localhost:3006',
 );
-console.log('📊 Health check: http://localhost:3001/api/health');
+console.log('📊 Health check: http://localhost:3006/api/health');

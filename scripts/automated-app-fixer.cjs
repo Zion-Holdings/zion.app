@@ -423,7 +423,7 @@ export default function Signup() {
       // Test if server is responding
       try {
         const response = execSync(
-          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          'curl -s http://localhost:3006/api/health || echo "Server not responding"',
           { encoding: 'utf8' },
         );
         this.log(`Server test response: ${response.trim()}`);

@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`🌐 Web interface available at: http://localhost:${PORT}`);
   console.log(`📱 Open your browser and navigate to the URL above`);
-  console.log(`🔗 AI Communication API: http://localhost:3005`);
+  console.log(`🔗 AI Communication API: http://localhost:3007`);
 });
 
 server.on('error', (error) => {

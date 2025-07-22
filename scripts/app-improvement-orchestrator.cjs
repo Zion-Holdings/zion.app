@@ -190,7 +190,7 @@ class AppImprovementOrchestrator {
 
     try {
       // Trigger comprehensive automation
-      const response = await fetch('http://localhost:3001/improve', {
+      const response = await fetch('http://localhost:3006/improve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ target: 'general', priority: 'high' }),
@@ -211,7 +211,7 @@ class AppImprovementOrchestrator {
 
     try {
       // Trigger AI improvements
-      const response = await fetch('http://localhost:3002/improve', {
+      const response = await fetch('http://localhost:3007/improve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ target: 'code-quality', priority: 'high' }),
@@ -240,7 +240,7 @@ class AppImprovementOrchestrator {
       ];
 
       for (const task of tasks) {
-        const response = await fetch('http://localhost:3005/api/tasks/submit', {
+        const response = await fetch('http://localhost:3007/api/tasks/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ task, priority: 'normal' }),
@@ -262,7 +262,7 @@ class AppImprovementOrchestrator {
 
     try {
       // Distribute tasks across multiple computers
-      const response = await fetch('http://localhost:3003/api/tasks/submit', {
+      const response = await fetch('http://localhost:3007/api/tasks/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

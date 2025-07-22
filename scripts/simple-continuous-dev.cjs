@@ -41,7 +41,7 @@ class SimpleContinuousDev {
     setInterval(async () => {
       try {
         // Check if the app is running by trying to access the health endpoint
-        const response = await fetch('http://localhost:3001/api/health');
+        const response = await fetch('http://localhost:3006/api/health');
         if (response.ok) {
           const data = await response.json();
           this.log(`💚 Health check passed: ${data.message}`);
@@ -65,7 +65,7 @@ class SimpleContinuousDev {
     try {
       // Kill any existing processes on port 3001
       await this.execCommand(
-        'lsof -ti:3001 | xargs kill -9 2>/dev/null || true',
+        'lsof -ti:3006 | xargs kill -9 2>/dev/null || true',
       );
 
       // Start the development server

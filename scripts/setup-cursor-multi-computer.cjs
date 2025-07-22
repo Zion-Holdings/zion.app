@@ -351,7 +351,7 @@ echo "🔌 Starting Cursor communication system..."
 npm run cursor:start
 
 echo "✅ Cursor Multi-Computer Communication started successfully!"
-echo "📊 Status: http://localhost:3002/status"
+echo "📊 Status: http://localhost:3007/status"
 echo "💬 Chat: npm run cursor:chat <category> <prompt>"
 echo "🔧 Fix: npm run cursor:fix <type>"
 `;
@@ -394,7 +394,7 @@ echo 🔌 Starting Cursor communication system...
 npm run cursor:start
 
 echo ✅ Cursor Multi-Computer Communication started successfully!
-echo 📊 Status: http://localhost:3002/status
+echo 📊 Status: http://localhost:3007/status
 echo 💬 Chat: npm run cursor:chat ^<category^> ^<prompt^>
 echo 🔧 Fix: npm run cursor:fix ^<type^>
 pause
@@ -471,7 +471,7 @@ npm run cursor:start
 ### 3. Verification
 \`\`\`bash
 # Check status
-curl http://localhost:3002/status
+curl http://localhost:3007/status
 
 # Test chat functionality
 npm run cursor:chat build "Test chat functionality"

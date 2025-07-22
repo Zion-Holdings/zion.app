@@ -459,7 +459,7 @@ module.exports = AutomationMonitor;`;
       // Test if server is responding
       try {
         const response = execSync(
-          'curl -s http://localhost:3001/api/health || echo "Server not responding"',
+          'curl -s http://localhost:3006/api/health || echo "Server not responding"',
           { encoding: 'utf8' },
         );
         this.log(`Server test response: ${response.trim()}`);
@@ -471,7 +471,7 @@ module.exports = AutomationMonitor;`;
           );
           // Try the index page
           const indexResponse = execSync(
-            'curl -s http://localhost:3001/ || echo "Index page not responding"',
+            'curl -s http://localhost:3006/ || echo "Index page not responding"',
             { encoding: 'utf8' },
           );
           this.log(

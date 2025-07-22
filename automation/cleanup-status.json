@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-07-19T00:37:16.016Z",
-  "status": "CLEANED",
-  "message": "Problematic scripts and directories removed",
-  "simpleServer": "RUNNING",
-  "healthCheck": "http://localhost:3001/api/health"
-}

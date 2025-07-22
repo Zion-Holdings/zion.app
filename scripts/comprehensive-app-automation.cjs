@@ -302,7 +302,7 @@ class AppAutomation {
     this.log('Performing health check...');
 
     try {
-      const response = await fetch('http://localhost:3001/api/health');
+      const response = await fetch('http://localhost:3006/api/health');
       if (response.ok) {
         const data = await response.json();
         this.log(`Health check passed: ${JSON.stringify(data)}`);

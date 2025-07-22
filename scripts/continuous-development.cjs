@@ -117,7 +117,7 @@ class ContinuousDevelopment {
 
     this.healthCheckInterval = setInterval(async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/health');
+        const response = await fetch('http://localhost:3006/api/health');
         if (response.ok) {
           const data = await response.json();
           this.log(`💚 Health check passed: ${data.message}`);

@@ -277,7 +277,7 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
     await new Promise((resolve) => setTimeout(resolve, 10000));
 
     try {
-      const response = await fetch('http://localhost:3001/api/health');
+      const response = await fetch('http://localhost:3006/api/health');
       if (response.ok) {
         const data = await response.json();
         this.log(`Health check passed: ${JSON.stringify(data)}`);
@@ -332,7 +332,7 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
       const duration = (endTime - this.startTime) / 1000;
 
       this.log(`Full automation completed in ${duration}s`);
-      this.log('App should now be running at http://localhost:3001');
+      this.log('App should now be running at http://localhost:3006');
 
       return true;
     } catch (error) {
@@ -350,8 +350,8 @@ if (require.main === module) {
     .then((success) => {
       if (success) {
         console.log('\n🎉 SUCCESS: App is now running!');
-        console.log('🌐 Open http://localhost:3001 in your browser');
-        console.log('📊 Health check: http://localhost:3001/api/health');
+        console.log('🌐 Open http://localhost:3006 in your browser');
+        console.log('📊 Health check: http://localhost:3006/api/health');
         console.log('\nPress Ctrl+C to stop the server');
 
         // Keep the process running

@@ -39,8 +39,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <div style={{ marginTop: '2rem', padding: '1rem', backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
         <h3>Next Steps:</h3>
         <ul>
-          <li>🌐 Open <a href="http://localhost:3001">http://localhost:3001</a></li>
-          <li>📊 Check health: <a href="http://localhost:3001/api/health">/api/health</a></li>
+          <li>🌐 Open <a href="http://localhost:3006">http://localhost:3006</a></li>
+          <li>📊 Check health: <a href="http://localhost:3006/api/health">/api/health</a></li>
           <li>🔧 Continue development</li>
         </ul>
       </div>

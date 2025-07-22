@@ -28,7 +28,7 @@ class ProjectHealthSummary {
     try {
       // Check if port 3001 is accessible (dev server running)
       const response = execSync(
-        'curl -s -o /dev/null -w "%{http_code}" http://localhost:3001 2>/dev/null || echo "000"',
+        'curl -s -o /dev/null -w "%{http_code}" http://localhost:3006 2>/dev/null || echo "000"',
         { encoding: 'utf8' },
       );
       const isRunning = response.trim() !== '000';
@@ -37,7 +37,7 @@ class ProjectHealthSummary {
         category: '🚀 Development Server',
         status: isRunning ? '✅ Running' : '⚠️  Not Running',
         description: isRunning
-          ? 'Development server successfully running on localhost:3001'
+          ? 'Development server successfully running on localhost:3006'
           : 'Development server can be started with: npm run dev',
         impact: 'High',
       });

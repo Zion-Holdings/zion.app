@@ -84,7 +84,7 @@ class ZionAppMaintainer {
   async isServerRunning() {
     try {
       const response = execSync(
-        'curl -s http://localhost:3001/api/health || echo "not running"',
+        'curl -s http://localhost:3006/api/health || echo "not running"',
         { encoding: 'utf8' },
       );
       return !response.includes('not running');
@@ -97,7 +97,7 @@ class ZionAppMaintainer {
     this.log('🏥 Performing health check...');
 
     try {
-      const response = execSync('curl -s http://localhost:3001/api/health', {
+      const response = execSync('curl -s http://localhost:3006/api/health', {
         encoding: 'utf8',
       });
       const healthData = JSON.parse(response);
@@ -107,7 +107,7 @@ class ZionAppMaintainer {
 
       // Check response time
       const startTime = Date.now();
-      execSync('curl -s http://localhost:3001/api/health > /dev/null', {
+      execSync('curl -s http://localhost:3006/api/health > /dev/null', {
         stdio: 'ignore',
       });
       const responseTime = Date.now() - startTime;

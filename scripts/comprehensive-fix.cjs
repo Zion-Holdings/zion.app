@@ -315,7 +315,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       }
 
       this.log('Comprehensive fix completed successfully');
-      this.log('App should now be running at http://localhost:3001');
+      this.log('App should now be running at http://localhost:3006');
 
       return true;
     } catch (error) {
@@ -333,8 +333,8 @@ if (require.main === module) {
     .then((success) => {
       if (success) {
         console.log('\n🎉 SUCCESS: App is now running!');
-        console.log('🌐 Open http://localhost:3001 in your browser');
-        console.log('📊 Health check: http://localhost:3001/api/health');
+        console.log('🌐 Open http://localhost:3006 in your browser');
+        console.log('📊 Health check: http://localhost:3006/api/health');
         console.log('\nPress Ctrl+C to stop the server');
 
         // Keep the process running

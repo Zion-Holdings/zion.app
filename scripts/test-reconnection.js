@@ -110,17 +110,17 @@ const TEST_SCENARIOS = [
   {
     name: 'General Chat Widget',
     roomId: 'general-chat',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
   {
     name: 'AI Assistant Chat',
     roomId: 'ai-assistant',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
   {
     name: 'Support Chatbot',
     roomId: 'support-chat',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
 ];
 

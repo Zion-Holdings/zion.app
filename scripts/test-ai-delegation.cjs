@@ -15,9 +15,9 @@ const axios = require('axios');
 const CONFIG = {
   // Test endpoints
   ENDPOINTS: {
-    AI_IMPROVEMENT: 'http://localhost:3001',
-    CURSOR_DELEGATOR: 'http://localhost:3005',
-    MULTI_COORDINATOR: 'http://localhost:3002',
+    AI_IMPROVEMENT: 'http://localhost:3006',
+    CURSOR_DELEGATOR: 'http://localhost:3007',
+    MULTI_COORDINATOR: 'http://localhost:3007',
   },
 
   // Test timeouts

@@ -13,7 +13,7 @@ class CursorChatAutomation extends EventEmitter {
     super();
 
     this.config = {
-      socketUrl: 'http://localhost:3001',
+      socketUrl: 'http://localhost:3006',
       reconnectInterval: 5000,
       heartbeatInterval: 30000,
       maxReconnectAttempts: 10,

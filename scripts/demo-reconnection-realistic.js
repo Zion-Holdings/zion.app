@@ -14,19 +14,19 @@ const CHAT_SESSIONS = [
     name: 'General Chat Widget',
     roomId: 'general-chat',
     color: '🔵',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
   {
     name: 'AI Assistant Chat',
     roomId: 'ai-assistant',
     color: '🟣',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
   {
     name: 'Support Chatbot',
     roomId: 'support-chat',
     color: '🟢',
-    socketUrl: 'http://localhost:3001',
+    socketUrl: 'http://localhost:3006',
   },
 ];
 

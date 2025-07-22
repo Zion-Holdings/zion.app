@@ -83,7 +83,7 @@ const statusData = {
   status: 'CLEANED',
   message: 'Problematic scripts and directories removed',
   simpleServer: 'RUNNING',
-  healthCheck: 'http://localhost:3001/api/health',
+  healthCheck: 'http://localhost:3006/api/health',
 };
 
 fs.writeFileSync(
@@ -97,6 +97,6 @@ console.log(
 );
 console.log('📊 Current status:');
 console.log('   - Simple server: Running on port 3001');
-console.log('   - Health check: http://localhost:3001/api/health');
+console.log('   - Health check: http://localhost:3006/api/health');
 console.log('   - Problematic scripts: Removed');
 console.log('   - Connection errors: Resolved');

@@ -726,7 +726,7 @@ if (require.main === module) {
 
   monitor.on('initialized', () => {
     console.warn('🚀 Enhanced log monitoring system is running');
-    console.warn('📊 Access metrics at: http://localhost:3001/metrics');
+    console.warn('📊 Access metrics at: http://localhost:3006/metrics');
     console.warn('🔍 Real-time monitoring active');
   });
 

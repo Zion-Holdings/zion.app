@@ -121,7 +121,7 @@ class FinalAutomationSuccess {
             <div>• <code>npm run dev -- --port 3001</code> - Start development server</div>
             <div>• <code>npm run build</code> - Build for production</div>
             <div>• <code>npm run start</code> - Start production server</div>
-            <div>• <code>curl http://localhost:3001/api/health</code> - Health check</div>
+            <div>• <code>curl http://localhost:3006/api/health</code> - Health check</div>
           </div>
         </div>
 
@@ -201,9 +201,9 @@ class FinalAutomationSuccess {
         if (!resolved) {
           resolved = true;
           this.log('✅ Server started successfully!');
-          this.log('🌐 Open http://localhost:3001 in your browser');
-          this.log('🎉 Success page: http://localhost:3001/success');
-          this.log('📊 Health check: http://localhost:3001/api/health');
+          this.log('🌐 Open http://localhost:3006 in your browser');
+          this.log('🎉 Success page: http://localhost:3006/success');
+          this.log('📊 Health check: http://localhost:3006/api/health');
           resolve({ success: true, server });
         }
       }, 10000);

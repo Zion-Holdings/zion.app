@@ -254,8 +254,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
       if (serverResult.success) {
         this.log('🎉 SUCCESS: App is running!');
-        this.log('🌐 Open http://localhost:3003 in your browser');
-        this.log('📊 Health check: http://localhost:3003/api/health');
+        this.log('🌐 Open http://localhost:3007 in your browser');
+        this.log('📊 Health check: http://localhost:3007/api/health');
 
         // Keep the process running
         process.on('SIGINT', () => {
