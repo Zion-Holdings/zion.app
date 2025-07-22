@@ -6,4 +6,4 @@ export default function Featured() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

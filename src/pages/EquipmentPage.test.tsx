@@ -6,4 +6,4 @@ export default function EquipmentPage.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
