@@ -6,4 +6,4 @@ export default function CategoriesSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''';
+}''''''
