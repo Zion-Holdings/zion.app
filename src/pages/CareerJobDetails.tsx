@@ -6,4 +6,4 @@ export default function CareerJobDetails() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
