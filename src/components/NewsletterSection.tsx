@@ -6,4 +6,4 @@ export default function NewsletterSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''

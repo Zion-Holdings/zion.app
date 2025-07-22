@@ -6,4 +6,4 @@ export default function ListingScoreCard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
