@@ -1,4 +1,2 @@
  M .auto_commit_status
- M automation/tasks/StaleCleaner.js
- M src/utils/imageOptimization.tsx
-?? automation/core/AnomalyDetector.js
+ M automation/package.json

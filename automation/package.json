@@ -1,63 +1,73 @@
 {
-  "name": "zion-autonomous-automation",
-  "version": "2.0.0",
-  "description": "Intelligent autonomous automation system for Zion App",
-  "main": "start-autonomous-system.js",
+  "name": "zion-infinite-improvement-loop",
+  "version": "1.0.0",
+  "description": "AI-Powered Infinite Improvement Loop System for Zion App",
+  "main": "infinite-improvement-loop.js",
   "scripts": {
-    "start": "node start-autonomous-system.js start",
-    "stop": "node start-autonomous-system.js stop",
-    "restart": "node start-autonomous-system.js restart",
-    "status": "node start-autonomous-system.js status",
-    "report": "node start-autonomous-system.js report",
-    "emergency-stop": "node start-autonomous-system.js emergency-stop",
-    "test": "node test-automation.js test",
-    "setup": "npm install && npm run test",
-    "dev": "nodemon start-autonomous-system.js start",
-    "logs": "tail -f logs/automation.log",
-    "dashboard": "open http://localhost:3001/dashboard"
+    "start": "node infinite-improvement-loop.js",
+    "dev": "nodemon infinite-improvement-loop.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "build": "echo 'No build step required'",
+    "deploy": "echo 'Deployment script placeholder'"
   },
-  "keywords": [
-    "automation",
-    "autonomous",
-    "intelligent",
-    "self-healing",
-    "monitoring",
-    "optimization",
-    "ai",
-    "machine-learning"
-  ],
-  "author": "Zion App Team",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "socket.io": "^4.7.2",
-    "winston": "^3.10.0",
-    "axios": "^1.5.0",
     "node-cron": "^3.0.2",
+    "axios": "^1.5.0",
+    "winston": "^3.10.0",
     "dotenv": "^16.3.1",
     "fs-extra": "^11.1.1",
+    "glob": "^10.3.3",
     "chalk": "^4.1.2",
     "ora": "^7.0.1",
-    "cli-table3": "^0.6.3",
-    "moment": "^2.29.4",
-    "lodash": "^4.17.21"
+    "cli-progress": "^3.12.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.10",
+    "openai": "^4.11.1",
+    "anthropic": "^0.7.7",
+    "node-fetch": "^3.3.2",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.3.6",
+    "lighthouse": "^11.3.0",
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^5.0.5"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
-    "jest": "^29.6.4",
-    "eslint": "^8.48.0",
-    "prettier": "^3.0.3"
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=16.0.0",
     "npm": ">=8.0.0"
   },
+  "keywords": [
+    "ai",
+    "automation",
+    "improvement",
+    "optimization",
+    "continuous-improvement",
+    "cursor-ai",
+    "openai",
+    "claude",
+    "performance",
+    "security",
+    "code-quality"
+  ],
+  "author": "Zion App Team",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zion-app/automation.git"
+    "url": "https://github.com/zion-app/bolt.new.zion.app.git"
   },
   "bugs": {
-    "url": "https://github.com/zion-app/automation/issues"
+    "url": "https://github.com/zion-app/bolt.new.zion.app/issues"
   },
-  "homepage": "https://github.com/zion-app/automation#readme"
+  "homepage": "https://github.com/zion-app/bolt.new.zion.app#readme"
 }
