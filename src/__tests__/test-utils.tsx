@@ -5,5 +5,5 @@ export default function test-utils() {
       <h1>test-utils</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

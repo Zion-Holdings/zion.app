@@ -5,5 +5,5 @@ export default function AnalyticsConsentBanner() {
       <h1>AnalyticsConsentBanner</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

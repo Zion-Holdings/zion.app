@@ -1,26 +1,11 @@
  M .auto_commit_status
- M .github/workflows/auto-fix.yml
- M auto-run-all.js
- M automation/continuous-improvement/dashboard/index.html
- M automation/local-auto-ci.js
- M automation/performance/README.md
- M automation/performance/automation-runner.js
- M automation/performance/dependency-update.js
- M automation/performance/frontend-fix.js
- M backend/authentication/templates/emails/password_reset.html
- M backend/ipo_portal/templates/ipo_portal/2fa_already_enabled.html
- M backend/ipo_portal/templates/ipo_portal/2fa_confirmed.html
- M backend/ipo_portal/templates/ipo_portal/base_portal.html
- M backend/ipo_portal/templates/ipo_portal/dashboard.html
- M backend/ipo_portal/templates/ipo_portal/data_room.html
- M backend/ipo_portal/templates/ipo_portal/deal_room.html
- M backend/ipo_portal/templates/ipo_portal/investor_update_confirm_delete.html
- M backend/ipo_portal/templates/ipo_portal/investor_update_form.html
- M backend/ipo_portal/templates/ipo_portal/investor_update_pdf_template.html
- M backend/ipo_portal/templates/ipo_portal/investor_updates.html
- M backend/ipo_portal/templates/ipo_portal/otp_entry.html
- M backend/ipo_portal/templates/ipo_portal/send_update_email_form.html
- M backend/ipo_portal/templates/ipo_portal/setup_2fa.html
- M backend/public_api/templates/developer_portal.html
- M package.json
-?? auto-fix-watcher.js
+ M bundle-stats.html
+ M src/App.tsx
+ M src/__tests__/test-utils.tsx
+ M src/components/AIListingGenerator.tsx
+ M src/components/AIMatchingResults.tsx
+ M src/components/AIMatchmaker.tsx
+ M src/components/AnalyticsConsentBanner.tsx
+ M src/components/ApiErrorBoundary.tsx
+ M src/components/AppFallback.tsx
+ M src/components/AuthButtons.tsx

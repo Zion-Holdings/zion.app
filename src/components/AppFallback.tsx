@@ -5,5 +5,5 @@ export default function AppFallback() {
       <h1>AppFallback</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

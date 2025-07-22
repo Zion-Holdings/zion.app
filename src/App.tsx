@@ -5,5 +5,5 @@ export default function App() {
       <h1>App</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

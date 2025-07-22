@@ -5,5 +5,5 @@ export default function AIMatchingResults() {
       <h1>AIMatchingResults</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''
