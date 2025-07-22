@@ -6,4 +6,4 @@ export default function SpeakersSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
