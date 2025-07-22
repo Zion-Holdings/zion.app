@@ -6,4 +6,4 @@ export default function PdfExportButton() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

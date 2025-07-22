@@ -6,4 +6,4 @@ export default function ComparisonSection() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

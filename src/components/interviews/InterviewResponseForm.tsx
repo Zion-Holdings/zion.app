@@ -6,4 +6,4 @@ export default function InterviewResponseForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

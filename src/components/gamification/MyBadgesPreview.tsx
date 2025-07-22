@@ -6,4 +6,4 @@ export default function MyBadgesPreview() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

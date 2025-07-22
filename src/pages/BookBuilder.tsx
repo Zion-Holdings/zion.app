@@ -6,4 +6,4 @@ export default function BookBuilder() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function PartnerRegistrationForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

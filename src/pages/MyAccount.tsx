@@ -6,4 +6,4 @@ export default function MyAccount() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

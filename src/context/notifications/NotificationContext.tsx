@@ -6,4 +6,4 @@ export default function NotificationContext() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

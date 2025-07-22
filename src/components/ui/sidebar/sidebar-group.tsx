@@ -6,4 +6,4 @@ export default function sidebar-group() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

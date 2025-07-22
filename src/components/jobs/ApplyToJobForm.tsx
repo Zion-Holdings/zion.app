@@ -6,4 +6,4 @@ export default function ApplyToJobForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

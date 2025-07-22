@@ -6,4 +6,4 @@ export default function Faq() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function KanbanColumn() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

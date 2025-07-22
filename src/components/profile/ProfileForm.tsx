@@ -6,4 +6,4 @@ export default function ProfileForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

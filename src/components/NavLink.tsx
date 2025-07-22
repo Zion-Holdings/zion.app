@@ -6,4 +6,4 @@ export default function NavLink() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

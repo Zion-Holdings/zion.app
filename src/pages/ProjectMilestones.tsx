@@ -6,4 +6,4 @@ export default function ProjectMilestones() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

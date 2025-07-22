@@ -6,4 +6,4 @@ export default function MobileAppRoutes() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

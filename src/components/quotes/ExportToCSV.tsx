@@ -6,4 +6,4 @@ export default function ExportToCSV() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

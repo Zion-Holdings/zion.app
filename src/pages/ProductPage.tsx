@@ -6,4 +6,4 @@ export default function ProductPage() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

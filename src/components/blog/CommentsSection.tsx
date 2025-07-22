@@ -6,4 +6,4 @@ export default function CommentsSection() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

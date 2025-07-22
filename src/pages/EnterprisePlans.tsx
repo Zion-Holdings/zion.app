@@ -6,4 +6,4 @@ export default function EnterprisePlans() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

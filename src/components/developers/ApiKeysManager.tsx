@@ -6,4 +6,4 @@ export default function ApiKeysManager() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

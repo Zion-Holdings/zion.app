@@ -6,4 +6,4 @@ export default function EnterpriseCallToAction() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function WhitepaperPreviewPanel() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function EmptyMatchesCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function RatingStars() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

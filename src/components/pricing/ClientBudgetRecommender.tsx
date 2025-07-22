@@ -6,4 +6,4 @@ export default function ClientBudgetRecommender() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

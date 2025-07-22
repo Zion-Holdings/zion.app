@@ -6,4 +6,4 @@ export default function ReferralLeaderboard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

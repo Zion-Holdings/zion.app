@@ -6,4 +6,4 @@ export default function AppHeader() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

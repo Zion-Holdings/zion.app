@@ -6,4 +6,4 @@ export default function HireRequestForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

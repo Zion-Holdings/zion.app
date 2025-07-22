@@ -6,4 +6,4 @@ export default function CartContext() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

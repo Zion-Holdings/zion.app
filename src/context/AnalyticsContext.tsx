@@ -6,4 +6,4 @@ export default function AnalyticsContext() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

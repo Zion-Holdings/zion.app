@@ -6,4 +6,4 @@ export default function sheet() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

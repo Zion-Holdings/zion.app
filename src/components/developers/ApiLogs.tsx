@@ -6,4 +6,4 @@ export default function ApiLogs() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

@@ -6,4 +6,4 @@ export default function MilestoneActivities() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

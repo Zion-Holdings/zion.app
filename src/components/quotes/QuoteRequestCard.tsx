@@ -6,4 +6,4 @@ export default function QuoteRequestCard() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

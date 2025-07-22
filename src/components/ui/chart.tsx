@@ -6,4 +6,4 @@ export default function chart() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

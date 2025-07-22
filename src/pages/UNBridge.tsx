@@ -6,4 +6,4 @@ export default function UNBridge() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

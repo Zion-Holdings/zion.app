@@ -6,4 +6,4 @@ export default function CardForm() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

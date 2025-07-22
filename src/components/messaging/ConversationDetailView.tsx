@@ -6,4 +6,4 @@ export default function ConversationDetailView() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';

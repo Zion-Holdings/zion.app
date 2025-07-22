@@ -88,4 +88,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''';;
+    connect,}''';

@@ -6,4 +6,4 @@ export default function Signup.spec() {
       <p>Component placeholder</p>
     </div>
   );
-}''';;
+}''';
