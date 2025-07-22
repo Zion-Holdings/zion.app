@@ -6,4 +6,4 @@ export default function index() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''';
+}''''''''
