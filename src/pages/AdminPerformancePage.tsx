@@ -6,4 +6,4 @@ export default function AdminPerformancePage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
