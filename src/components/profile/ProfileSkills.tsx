@@ -6,4 +6,4 @@ export default function ProfileSkills() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''

@@ -6,4 +6,4 @@ export default function ServiceProviderRegistrationForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''';
+}''''''''''''''
