@@ -37,10 +37,10 @@ class CursorIntegration {
   async initialize() {
     console.log('🔗 Initializing Cursor AI Integration...');    
     if (!this.config.apiKey) {
-      throw new Error('CURSOR_API_KEY environment variable is required');'    }
+      throw new Error('CURSOR_API_KEY environment variable is required');    }
     
     if (!this.config.workspaceId) {
-      throw new Error('CURSOR_WORKSPACE_ID environment variable is required');'    }
+      throw new Error('CURSOR_WORKSPACE_ID environment variable is required');    }
     
     // Test connection
     await this.testConnection();
@@ -54,7 +54,7 @@ class CursorIntegration {
   async testConnection() {
     try {
       const response = await this.callCursorAPI({
-        action: 'ping','        workspaceId: this.config.workspaceId
+        action: 'ping',        workspaceId: this.config.workspaceId
       });
       
       console.log('🔗 Cursor API connection successful');      return true;
@@ -67,7 +67,7 @@ class CursorIntegration {
    * Analyze code quality
    */
   async analyzeCodeQuality(files = null) {
-    console.log('🔍 Analyzing code quality with Cursor AI...')
+    console.log('🔍 Analyzing code quality with Cursor AI...');
 const targetFiles = files || await this.getTargetFiles()
 const analysisData = await this.collectCodeQualityData(targetFiles)
 const prompt = this.buildCodeQualityPrompt(analysisData)
@@ -88,7 +88,7 @@ const analysis = this.parseCodeQualityResponse(response);
    * Analyze performance
    */
   async analyzePerformance() {
-    console.log('⚡ Analyzing performance with Cursor AI...')
+    console.log('⚡ Analyzing performance with Cursor AI...');
 const performanceData = await this.collectPerformanceData()
 const prompt = this.buildPerformancePrompt(performanceData)
 const response = await this.callCursorAPI(prompt)
@@ -108,7 +108,7 @@ const analysis = this.parsePerformanceResponse(response);
    * Analyze security
    */
   async analyzeSecurity() {
-    console.log('🔒 Analyzing security with Cursor AI...')
+    console.log('🔒 Analyzing security with Cursor AI...');
 const securityData = await this.collectSecurityData()
 const prompt = this.buildSecurityPrompt(securityData)
 const response = await this.callCursorAPI(prompt)

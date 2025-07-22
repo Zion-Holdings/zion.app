@@ -1,0 +1,706 @@
+#!/usr/bin/env node
+
+/**
+ * Autonomous Automation Manager
+ * 
+ * A self-managing automation system that can:
+ * - Run independently without human intervention
+ * - Self-heal from failures
+ * - Dynamically adjust scheduling based on system state
+ * - Learn from patterns and optimize performance
+ * - Coordinate multiple automation tasks intelligently
+ */
+
+const fs = require('fs').promises;
+const path = require('path');
+const { EventEmitter } = require('events');
+const { execSync, spawn } = require('child_process');
+
+class AutonomousAutomationManager extends EventEmitter {
+  constructor(config = {}) {
+    super();
+    
+    this.config = {
+      // Core settings
+      autoRestart: true,
+      maxRestartAttempts: 5,
+      restartDelay: 30000, // 30 seconds
+      healthCheckInterval: 60000, // 1 minute
+      
+      // Dynamic scheduling
+      adaptiveScheduling: true,
+      loadThreshold: 0.8, // 80% CPU usage
+      memoryThreshold: 0.9, // 90% memory usage
+      
+      // Learning and optimization
+      enableLearning: true,
+      performanceHistory: [],
+      maxHistorySize: 1000,
+      
+      // Task management
+      maxConcurrentTasks: 3,
+      taskTimeout: 300000, // 5 minutes
+      
+      // Notification settings
+      enableNotifications: true,
+      notificationChannels: ['console', 'file'],
+      
+      ...config
+    };
+    
+    // State management
+    this.isRunning = false;
+    this.tasks = new Map();
+    this.taskQueue = [];
+    this.runningTasks = new Set();
+    this.failedTasks = new Map();
+    this.performanceMetrics = {
+      totalTasks: 0,
+      successfulTasks: 0,
+      failedTasks: 0,
+      averageExecutionTime: 0,
+      systemLoad: 0,
+      memoryUsage: 0
+    };
+    
+    // Intervals and timers
+    this.healthCheckTimer = null;
+    this.performanceTrackingTimer = null;
+    this.learningTimer = null;
+    
+    // Initialize components
+    this.initializeComponents();
+  }
+
+  async initializeComponents() {
+    try {
+      // Create necessary directories
+      await this.ensureDirectories();
+      
+      // Load existing tasks
+      await this.loadTasks();
+      
+      // Initialize performance tracking
+      this.initializePerformanceTracking();
+      
+      // Start health monitoring
+      this.startHealthMonitoring();
+      
+      console.log('✅ Autonomous Automation Manager initialized');
+    } catch (error) {
+      console.error('❌ Failed to initialize components:', error);
+      throw error;
+    }
+  }
+
+  async ensureDirectories() {
+    const dirs = ['logs', 'reports', 'temp', 'data'];
+    for (const dir of dirs) {
+      const dirPath = path.join(process.cwd(), dir);
+      try {
+        await fs.access(dirPath);
+      } catch {
+        await fs.mkdir(dirPath, { recursive: true });
+      }
+    }
+  }
+
+  async loadTasks() {
+    try {
+      const tasksDir = path.join(__dirname, '..', 'tasks');
+      const files = await fs.readdir(tasksDir);
+      
+      for (const file of files) {
+        if (file.endsWith('.js') && file !== 'README.md') {
+          const taskPath = path.join(tasksDir, file);
+          const TaskClass = require(taskPath);
+          
+          if (TaskClass && typeof TaskClass === 'function') {
+            const taskName = path.basename(file, '.js');
+            const task = new TaskClass();
+            this.tasks.set(taskName, task);
+            console.log(`📦 Loaded task: ${taskName}`);
+          }
+        }
+      }
+    } catch (error) {
+      console.warn('⚠️ No tasks directory found or error loading tasks:', error.message);
+    }
+  }
+
+  async start() {
+    if (this.isRunning) {
+      console.warn('⚠️ Manager is already running');
+      return;
+    }
+
+    console.log('🚀 Starting Autonomous Automation Manager...');
+    
+    try {
+      this.isRunning = true;
+      
+      // Start all components
+      await this.startTaskScheduler();
+      await this.startPerformanceTracking();
+      await this.startLearningSystem();
+      
+      // Emit start event
+      this.emit('started');
+      
+      console.log('✅ Autonomous Automation Manager started successfully');
+      
+      // Start the main loop
+      this.mainLoop();
+      
+    } catch (error) {
+      console.error('❌ Failed to start manager:', error);
+      this.isRunning = false;
+      throw error;
+    }
+  }
+
+  async stop() {
+    console.log('🛑 Stopping Autonomous Automation Manager...');
+    
+    this.isRunning = false;
+    
+    // Clear all timers
+    if (this.healthCheckTimer) clearInterval(this.healthCheckTimer);
+    if (this.performanceTrackingTimer) clearInterval(this.performanceTrackingTimer);
+    if (this.learningTimer) clearInterval(this.learningTimer);
+    
+    // Stop all running tasks
+    for (const task of this.runningTasks) {
+      try {
+        await this.stopTask(task);
+      } catch (error) {
+        console.warn(`⚠️ Error stopping task ${task}:`, error.message);
+      }
+    }
+    
+    this.emit('stopped');
+    console.log('✅ Autonomous Automation Manager stopped');
+  }
+
+  async mainLoop() {
+    while (this.isRunning) {
+      try {
+        // Process task queue
+        await this.processTaskQueue();
+        
+        // Check system health
+        await this.checkSystemHealth();
+        
+        // Update performance metrics
+        await this.updatePerformanceMetrics();
+        
+        // Adaptive scheduling adjustments
+        if (this.config.adaptiveScheduling) {
+          await this.adjustScheduling();
+        }
+        
+        // Wait before next iteration
+        await this.sleep(1000); // 1 second
+        
+      } catch (error) {
+        console.error('❌ Error in main loop:', error);
+        await this.handleError(error);
+      }
+    }
+  }
+
+  async processTaskQueue() {
+    // Check if we can run more tasks
+    if (this.runningTasks.size >= this.config.maxConcurrentTasks) {
+      return;
+    }
+
+    // Get next task from queue
+    const task = this.taskQueue.shift();
+    if (!task) return;
+
+    // Check if task should run based on current conditions
+    if (!this.shouldRunTask(task)) {
+      // Re-queue with delay
+      setTimeout(() => {
+        this.taskQueue.unshift(task);
+      }, 5000);
+      return;
+    }
+
+    // Execute task
+    await this.executeTask(task);
+  }
+
+  shouldRunTask(task) {
+    // Check system load
+    if (this.performanceMetrics.systemLoad > this.config.loadThreshold) {
+      return false;
+    }
+
+    // Check memory usage
+    if (this.performanceMetrics.memoryUsage > this.config.memoryThreshold) {
+      return false;
+    }
+
+    // Check if task has failed too many times
+    const failures = this.failedTasks.get(task.name) || 0;
+    if (failures > 3) {
+      return false;
+    }
+
+    return true;
+  }
+
+  async executeTask(task) {
+    const startTime = Date.now();
+    this.runningTasks.add(task.name);
+    
+    try {
+      console.log(`🚀 Executing task: ${task.name}`);
+      
+      // Set timeout for task execution
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Task timeout')), this.config.taskTimeout);
+      });
+      
+      // Execute task with timeout
+      const result = await Promise.race([
+        task.run(),
+        timeoutPromise
+      ]);
+      
+      // Record success
+      const executionTime = Date.now() - startTime;
+      this.recordTaskSuccess(task.name, executionTime, result);
+      
+      console.log(`✅ Task completed: ${task.name} (${executionTime}ms)`);
+      
+    } catch (error) {
+      // Record failure
+      const executionTime = Date.now() - startTime;
+      this.recordTaskFailure(task.name, executionTime, error);
+      
+      console.error(`❌ Task failed: ${task.name}`, error.message);
+      
+      // Attempt self-healing
+      await this.attemptSelfHealing(task, error);
+      
+    } finally {
+      this.runningTasks.delete(task.name);
+    }
+  }
+
+  async attemptSelfHealing(task, error) {
+    console.log(`🔧 Attempting self-healing for task: ${task.name}`);
+    
+    try {
+      // Check if task has a self-healing method
+      if (typeof task.selfHeal === 'function') {
+        await task.selfHeal(error);
+        console.log(`✅ Self-healing successful for: ${task.name}`);
+        return;
+      }
+      
+      // Generic self-healing strategies
+      await this.genericSelfHealing(task, error);
+      
+    } catch (healingError) {
+      console.error(`❌ Self-healing failed for ${task.name}:`, healingError.message);
+      
+      // If self-healing fails, consider restarting the manager
+      if (this.config.autoRestart) {
+        await this.considerRestart();
+      }
+    }
+  }
+
+  async genericSelfHealing(task, error) {
+    // Strategy 1: Wait and retry
+    if (error.message.includes('timeout') || error.message.includes('connection')) {
+      console.log(`⏳ Waiting before retry for: ${task.name}`);
+      await this.sleep(10000); // 10 seconds
+      this.taskQueue.unshift(task);
+      return;
+    }
+    
+    // Strategy 2: Clear cache/temp files
+    if (error.message.includes('cache') || error.message.includes('temp')) {
+      console.log(`🧹 Clearing cache for: ${task.name}`);
+      await this.clearTaskCache(task);
+      this.taskQueue.unshift(task);
+      return;
+    }
+    
+    // Strategy 3: Restart task with different parameters
+    console.log(`🔄 Restarting task with modified parameters: ${task.name}`);
+    const modifiedTask = this.modifyTaskParameters(task, error);
+    this.taskQueue.unshift(modifiedTask);
+  }
+
+  async clearTaskCache(task) {
+    try {
+      const tempDir = path.join(process.cwd(), 'temp');
+      const files = await fs.readdir(tempDir);
+      
+      for (const file of files) {
+        if (file.includes(task.name)) {
+          await fs.unlink(path.join(tempDir, file));
+        }
+      }
+    } catch (error) {
+      console.warn('⚠️ Error clearing cache:', error.message);
+    }
+  }
+
+  modifyTaskParameters(task, error) {
+    // Create a modified version of the task with different parameters
+    const modifiedTask = { ...task };
+    
+    // Add retry count
+    modifiedTask.retryCount = (task.retryCount || 0) + 1;
+    
+    // Modify timeout for retries
+    if (modifiedTask.retryCount > 1) {
+      modifiedTask.timeout = (task.timeout || this.config.taskTimeout) * 1.5;
+    }
+    
+    return modifiedTask;
+  }
+
+  async considerRestart() {
+    const restartCount = this.restartCount || 0;
+    
+    if (restartCount >= this.config.maxRestartAttempts) {
+      console.error('❌ Max restart attempts reached. Manual intervention required.');
+      this.emit('maxRestartsReached');
+      return;
+    }
+    
+    console.log(`🔄 Restarting manager (attempt ${restartCount + 1}/${this.config.maxRestartAttempts})`);
+    
+    this.restartCount = restartCount + 1;
+    
+    // Stop current instance
+    await this.stop();
+    
+    // Wait before restart
+    await this.sleep(this.config.restartDelay);
+    
+    // Restart
+    await this.start();
+  }
+
+  startHealthMonitoring() {
+    this.healthCheckTimer = setInterval(async () => {
+      try {
+        await this.checkSystemHealth();
+      } catch (error) {
+        console.error('❌ Health check failed:', error);
+      }
+    }, this.config.healthCheckInterval);
+  }
+
+  async checkSystemHealth() {
+    const health = {
+      timestamp: new Date().toISOString(),
+      managerRunning: this.isRunning,
+      activeTasks: this.runningTasks.size,
+      queuedTasks: this.taskQueue.length,
+      systemLoad: await this.getSystemLoad(),
+      memoryUsage: await this.getMemoryUsage(),
+      diskSpace: await this.getDiskSpace(),
+      networkConnectivity: await this.checkNetworkConnectivity()
+    };
+    
+    // Check if system is healthy
+    const isHealthy = this.evaluateHealth(health);
+    
+    if (!isHealthy) {
+      console.warn('⚠️ System health issues detected:', health);
+      this.emit('healthIssue', health);
+      
+      // Take corrective action
+      await this.takeCorrectiveAction(health);
+    }
+    
+    return health;
+  }
+
+  async getSystemLoad() {
+    try {
+      // This is a simplified version - in production, you'd use a proper system monitoring library
+      const load = process.cpuUsage();
+      return (load.user + load.system) / 1000000; // Convert to seconds
+    } catch (error) {
+      return 0;
+    }
+  }
+
+  async getMemoryUsage() {
+    const usage = process.memoryUsage();
+    return usage.heapUsed / usage.heapTotal;
+  }
+
+  async getDiskSpace() {
+    try {
+      const stats = await fs.stat(process.cwd());
+      return stats.size;
+    } catch (error) {
+      return 0;
+    }
+  }
+
+  async checkNetworkConnectivity() {
+    try {
+      // Simple ping test
+      execSync('ping -c 1 8.8.8.8', { stdio: 'ignore' });
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  evaluateHealth(health) {
+    // Define health thresholds
+    const thresholds = {
+      systemLoad: 0.9,
+      memoryUsage: 0.95,
+      activeTasks: 10
+    };
+    
+    return (
+      health.systemLoad < thresholds.systemLoad &&
+      health.memoryUsage < thresholds.memoryUsage &&
+      health.activeTasks < thresholds.activeTasks &&
+      health.networkConnectivity
+    );
+  }
+
+  async takeCorrectiveAction(health) {
+    if (health.systemLoad > 0.9) {
+      console.log('🔧 High system load detected, pausing task execution');
+      this.pauseTaskExecution();
+    }
+    
+    if (health.memoryUsage > 0.95) {
+      console.log('🔧 High memory usage detected, clearing cache');
+      await this.clearSystemCache();
+    }
+    
+    if (!health.networkConnectivity) {
+      console.log('🔧 Network connectivity issues, retrying tasks later');
+      this.pauseTaskExecution();
+    }
+  }
+
+  pauseTaskExecution() {
+    // Implement task execution pausing
+    console.log('⏸️ Task execution paused due to health issues');
+  }
+
+  async clearSystemCache() {
+    try {
+      const tempDir = path.join(process.cwd(), 'temp');
+      const files = await fs.readdir(tempDir);
+      
+      for (const file of files) {
+        await fs.unlink(path.join(tempDir, file));
+      }
+      
+      console.log('🧹 System cache cleared');
+    } catch (error) {
+      console.warn('⚠️ Error clearing system cache:', error.message);
+    }
+  }
+
+  initializePerformanceTracking() {
+    this.performanceTrackingTimer = setInterval(async () => {
+      await this.updatePerformanceMetrics();
+    }, 30000); // Every 30 seconds
+  }
+
+  async updatePerformanceMetrics() {
+    this.performanceMetrics.systemLoad = await this.getSystemLoad();
+    this.performanceMetrics.memoryUsage = await this.getMemoryUsage();
+    
+    // Store in history for learning
+    if (this.config.enableLearning) {
+      this.performanceHistory.push({
+        timestamp: new Date().toISOString(),
+        ...this.performanceMetrics
+      });
+      
+      // Keep history size manageable
+      if (this.performanceHistory.length > this.config.maxHistorySize) {
+        this.performanceHistory = this.performanceHistory.slice(-this.config.maxHistorySize);
+      }
+    }
+  }
+
+  startLearningSystem() {
+    if (!this.config.enableLearning) return;
+    
+    this.learningTimer = setInterval(async () => {
+      await this.learnFromPerformance();
+    }, 300000); // Every 5 minutes
+  }
+
+  async learnFromPerformance() {
+    if (this.performanceHistory.length < 10) return;
+    
+    // Analyze patterns and adjust configuration
+    const recentHistory = this.performanceHistory.slice(-10);
+    const avgLoad = recentHistory.reduce((sum, h) => sum + h.systemLoad, 0) / recentHistory.length;
+    const avgMemory = recentHistory.reduce((sum, h) => sum + h.memoryUsage, 0) / recentHistory.length;
+    
+    // Adjust thresholds based on performance
+    if (avgLoad < 0.5) {
+      this.config.loadThreshold = Math.min(0.9, this.config.loadThreshold + 0.05);
+      console.log('📈 Increasing load threshold due to good performance');
+    } else if (avgLoad > 0.8) {
+      this.config.loadThreshold = Math.max(0.6, this.config.loadThreshold - 0.05);
+      console.log('📉 Decreasing load threshold due to high load');
+    }
+    
+    if (avgMemory < 0.7) {
+      this.config.memoryThreshold = Math.min(0.95, this.config.memoryThreshold + 0.05);
+      console.log('📈 Increasing memory threshold due to good performance');
+    } else if (avgMemory > 0.9) {
+      this.config.memoryThreshold = Math.max(0.7, this.config.memoryThreshold - 0.05);
+      console.log('📉 Decreasing memory threshold due to high memory usage');
+    }
+  }
+
+  recordTaskSuccess(taskName, executionTime, result) {
+    this.performanceMetrics.totalTasks++;
+    this.performanceMetrics.successfulTasks++;
+    
+    // Update average execution time
+    const currentAvg = this.performanceMetrics.averageExecutionTime;
+    const totalTasks = this.performanceMetrics.totalTasks;
+    this.performanceMetrics.averageExecutionTime = 
+      (currentAvg * (totalTasks - 1) + executionTime) / totalTasks;
+    
+    // Clear failure count
+    this.failedTasks.delete(taskName);
+    
+    this.emit('taskSuccess', { taskName, executionTime, result });
+  }
+
+  recordTaskFailure(taskName, executionTime, error) {
+    this.performanceMetrics.totalTasks++;
+    this.performanceMetrics.failedTasks++;
+    
+    // Increment failure count
+    const failures = this.failedTasks.get(taskName) || 0;
+    this.failedTasks.set(taskName, failures + 1);
+    
+    this.emit('taskFailure', { taskName, executionTime, error });
+  }
+
+  async handleError(error) {
+    console.error('❌ Manager error:', error);
+    
+    // Log error
+    await this.logError(error);
+    
+    // Emit error event
+    this.emit('error', error);
+    
+    // Take corrective action based on error type
+    if (error.code === 'ENOMEM') {
+      await this.handleMemoryError();
+    } else if (error.code === 'ENOSPC') {
+      await this.handleDiskSpaceError();
+    }
+  }
+
+  async logError(error) {
+    try {
+      const logEntry = {
+        timestamp: new Date().toISOString(),
+        error: error.message,
+        stack: error.stack,
+        code: error.code
+      };
+      
+      const logFile = path.join(process.cwd(), 'logs', 'manager-errors.jsonl');
+      await fs.appendFile(logFile, JSON.stringify(logEntry) + '\n');
+    } catch (logError) {
+      console.error('❌ Failed to log error:', logError);
+    }
+  }
+
+  async handleMemoryError() {
+    console.log('🔧 Handling memory error');
+    await this.clearSystemCache();
+    
+    // Force garbage collection if available
+    if (global.gc) {
+      global.gc();
+    }
+  }
+
+  async handleDiskSpaceError() {
+    console.log('🔧 Handling disk space error');
+    await this.clearSystemCache();
+    
+    // Clear old logs
+    await this.clearOldLogs();
+  }
+
+  async clearOldLogs() {
+    try {
+      const logsDir = path.join(process.cwd(), 'logs');
+      const files = await fs.readdir(logsDir);
+      
+      // Keep only recent log files (last 7 days)
+      const cutoff = Date.now() - (7 * 24 * 60 * 60 * 1000);
+      
+      for (const file of files) {
+        const filePath = path.join(logsDir, file);
+        const stats = await fs.stat(filePath);
+        
+        if (stats.mtime.getTime() < cutoff) {
+          await fs.unlink(filePath);
+        }
+      }
+    } catch (error) {
+      console.warn('⚠️ Error clearing old logs:', error.message);
+    }
+  }
+
+  async sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  getStatus() {
+    return {
+      isRunning: this.isRunning,
+      tasks: {
+        total: this.tasks.size,
+        running: this.runningTasks.size,
+        queued: this.taskQueue.length,
+        failed: this.failedTasks.size
+      },
+      performance: this.performanceMetrics,
+      config: this.config
+    };
+  }
+
+  async generateReport() {
+    const status = this.getStatus();
+    const health = await this.checkSystemHealth();
+    
+    return {
+      timestamp: new Date().toISOString(),
+      status,
+      health,
+      uptime: process.uptime(),
+      version: '1.0.0'
+    };
+  }
+}
+
+module.exports = AutonomousAutomationManager; 
