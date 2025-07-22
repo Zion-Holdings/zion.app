@@ -6,4 +6,4 @@ export default function ContactFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
