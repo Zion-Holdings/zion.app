@@ -6,4 +6,4 @@ export default function ApplicationActions() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''';
+}''''''''''''
