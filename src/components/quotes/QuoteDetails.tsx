@@ -6,4 +6,4 @@ export default function QuoteDetails() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

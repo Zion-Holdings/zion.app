@@ -6,4 +6,4 @@ export default function ProjectReviewSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''

@@ -6,4 +6,4 @@ export default function ReferralTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
