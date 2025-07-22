@@ -254,11 +254,13 @@ class OptimizationAutomation {
       await this.enhancedAutomation.start();
       
       // Start performance monitoring
-      if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {'        await this.performanceMonitor.start();
+      if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {
+        await this.performanceMonitor.start();
       }
       
       // Start Slack bot
-      if (process.env.ENABLE_SLACK_COMMANDS === 'true') {'        await this.slackBot.start();
+      if (process.env.ENABLE_SLACK_COMMANDS === 'true') {
+        await this.slackBot.start();
       }
       
       // Start Express server for API endpoints
