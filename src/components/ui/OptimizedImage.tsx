@@ -6,4 +6,4 @@ export default function OptimizedImage() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''

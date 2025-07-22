@@ -6,4 +6,4 @@ export default function AvailabilityFilter() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''';
+}''''''''''
