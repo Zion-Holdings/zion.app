@@ -1,1 +1,3 @@
  M .auto_commit_status
+ M src/hooks/useTheme.tsx
+ M src/hooks/useWebSocket.ts

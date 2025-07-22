@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-
+import { useState, useEffect, useRef, useCallback } from 'react''
 export function useWebSocket(options: any) {
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -44,11 +43,11 @@ export function useWebSocket(options: any) {
       };
 
       ws.onerror = (event) => {
-        setError('WebSocket error occurred');
+        setError('WebSocket error occurred')'
         options.onError?.(event);
       };
     } catch (err) {
-      setError('Failed to create WebSocket connection');
+      setError('Failed to create WebSocket connection')'
     }
   }, [options]);
 
@@ -72,7 +71,7 @@ export function useWebSocket(options: any) {
       if (wsRef.current && isConnected) {
         wsRef.current.send(
           typeof data === 'string' ? data : JSON.stringify(data),
-        );
+        )'
       }
     },
     [isConnected],
@@ -91,4 +90,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}';
+    connect,}''
