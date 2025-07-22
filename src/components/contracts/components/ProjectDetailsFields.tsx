@@ -6,4 +6,4 @@ export default function ProjectDetailsFields() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''';
+}''''''''''''''''
