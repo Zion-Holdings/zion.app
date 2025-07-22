@@ -5,5 +5,5 @@ export default function useTheme() {
       <h1>useTheme</h1>
       <p>Component placeholder</p>
     </div>
-  );
-}''';
+  )'
+}''''

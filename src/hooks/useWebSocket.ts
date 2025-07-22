@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react''
 export function useWebSocket(options: any) {
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(false)'
   const [error, setError] = useState<string | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
   const reconnectAttemptsRef = useRef(0);
@@ -44,13 +44,12 @@ export function useWebSocket(options: any) {
 
       ws.onerror = (event) => {
         setError('WebSocket error occurred')'
-        options.onError?.(event);
+        options.onError?.(event)'
       };
     } catch (err) {
       setError('Failed to create WebSocket connection')'
 
-  }, [options]);
-
+  }, [options])'
   const disconnect = useCallback(() => {
     if (reconnectTimeoutRef.current) {
       clearTimeout(reconnectTimeoutRef.current);
@@ -73,8 +72,7 @@ export function useWebSocket(options: any) {
 
     },
     [isConnected],
-  );
-
+  )'
   useEffect(() => {
     connect();
 
@@ -88,4 +86,4 @@ export function useWebSocket(options: any) {
     error,
     sendMessage,
     disconnect,
-    connect,}''';
+    connect,}''''
