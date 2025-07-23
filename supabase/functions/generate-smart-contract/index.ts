@@ -1,17 +1,17 @@
 
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";"import "https://deno.land/x/xhr@0.1.0/mod.ts";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";"import "https://deno.land/x/xhr@0.1.0/mod.ts";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*','  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type','};'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  Access-Control-Allow-Origin': *',Access-Control-Allow-Headers': authorization, x-client-info, apikey, content-type',};
 
 serve(async (req) => {
   // Handle CORS preflight requests
-  if (req.method === 'OPTIONS') {'    return new Response(null, { headers: corsHeaders });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (req.method === OPTIONS') {'    return new Response(null, { headers: corsHeaders });
   }
 
   try {
     // Get the OpenAI API key from environment variables
-    const apiKey = Deno.env.get('OPENAI_API_KEY');'    if (!apiKey) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      throw new Error('OPENAI_API_KEY is not set');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const apiKey = Deno.env.get('OPENAI_API_KEY');    if (!apiKey) {
+      throw new Error('OPENAI_API_KEY is not set');    }
 
     // Parse request body
     const {
@@ -23,7 +23,7 @@ serve(async (req) => {
       endDate,
       paymentTerms,
       paymentAmount,
-      additionalClauses,
+      additionalClauses
     } = await req.json();
 
     // Create the smart contract prompt for OpenAI
@@ -33,7 +33,7 @@ serve(async (req) => {
     Project Name: ${projectName}
     Project Scope: ${scopeSummary}
     Start Date: ${new Date(startDate).toLocaleDateString()}
-    ${endDate ? `End Date: ${new Date(endDate).toLocaleDateString()}` : 'End Date: To be determined based on project completion'}'    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ${endDate ? `End Date: ${new Date(endDate).toLocaleDateString()}` : End Date: To be determined based on project completion'}    
     Payment Terms: ${paymentTerms}
     Payment Amount: ${paymentAmount}
     
@@ -51,7 +51,7 @@ serve(async (req) => {
       prompt += `
       
       Please also include the following additional clauses as on-chain functionality where possible:
-      ${additionalClauses.includes('nda') ? '- Confidentiality flag that can be verified on-chain' : ''}'      ${additionalClauses.includes('ip') ? '- Intellectual Property transfer receipts' : ''}'      ${additionalClauses.includes('termination') ? '- Termination conditions with automatic refund features' : ''}'      ${additionalClauses.includes('revisions') ? '- Revision tracking mechanism' : ''}'      `;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      ${additionalClauses.includes('nda') ? - Confidentiality flag that can be verified on-chain' : }      ${additionalClauses.includes('ip') ? - Intellectual Property transfer receipts' : }      ${additionalClauses.includes('termination') ? - Termination conditions with automatic refund features' : }      ${additionalClauses.includes('revisions') ? - Revision tracking mechanism' : }      `;
     }
     
     prompt += `
@@ -60,24 +60,24 @@ serve(async (req) => {
     `;
 
     // Call OpenAI API
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: 'POST','      headers: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        'Content-Type': 'application/json','        'Authorization': `Bearer ${apiKey}`,'      },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: POST',      headers: {
+        Content-Type': application/json',Authorization': `Bearer ${apiKey}`,      },
       body: JSON.stringify({
-        model: 'gpt-4o','        messages: ['''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        model: gpt-4o',        messages: [
           {
-            role: 'system','            content: 'You are a blockchain expert who specializes in writing secure and efficient Solidity smart contracts. Provide well-commented, production-ready Solidity code.','          },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            role: system',            content: You are a blockchain expert who specializes in writing secure and efficient Solidity smart contracts. Provide well-commented, production-ready Solidity code.',          },
           {
-            role: 'user','            content: prompt,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          },
+            role: user',            content: prompt
+          }
         ],
-        temperature: 0.7,
-      }),
+        temperature: 0.7
+      })
     });
 
     const data = await response.json();
     
     if (!response.ok) {
-      throw new Error(data.error?.message || 'Failed to generate smart contract');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      throw new Error(data.error?.message || Failed to generate smart contract');    }
 
     const solidityCode = data.choices[0].message.content.trim();
     
@@ -85,15 +85,15 @@ serve(async (req) => {
       success: true, 
       solidityCode 
     }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      headers: { ...corsHeaders, Content-Type': application/json' },    });
   } catch {
-    console.('Error generating smart contract:', );'    return new Response('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.('Error generating smart contract:', );    return new Response(
       JSON.stringify({ 
         success: false, 
-        : .message || 'Failed to generate smart contract' '      }),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        : .message || Failed to generate smart contract''      }),
       { 
         status: 500, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        headers: { ...corsHeaders, Content-Type': application/json' },      }
     );
   }
 });

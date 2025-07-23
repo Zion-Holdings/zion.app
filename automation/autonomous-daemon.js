@@ -26,13 +26,13 @@ class AutonomousDaemon extends EventEmitter {
     
     // Configuration
     this.config = {
-      scriptPath: path.join(__dirname, 'infinite-improvement-loop.js'),
-      logPath: path.join(__dirname, 'logs', 'daemon.log'),
-      pidPath: path.join(__dirname, '.daemon.pid'),
+      scriptPath: path.join(__dirname, infinite-improvement-loop.js'),
+      logPath: path.join(__dirname, logs', daemon.log'),
+      pidPath: path.join(__dirname, .daemon.pid'),
       port: process.env.IMPROVEMENT_PORT || 3002,
       autoRestart: true,
       healthCheck: true,
-      logLevel: process.env.LOG_LEVEL || 'info'
+      logLevel: process.env.LOG_LEVEL || info
     };
     
     // Bind methods
@@ -92,7 +92,7 @@ class AutonomousDaemon extends EventEmitter {
    */
   async isAlreadyRunning() {
     try {
-      const pid = await fs.readFile(this.config.pidPath, 'utf8');
+      const pid = await fs.readFile(this.config.pidPath, utf8');
       const isRunning = await this.isProcessRunning(parseInt(pid));
       
       if (!isRunning) {
@@ -163,16 +163,16 @@ class AutonomousDaemon extends EventEmitter {
     console.log('🔄 Starting infinite improvement loop process...');
     
     // Create log stream
-    const logStream = fs.createWriteStream(this.config.logPath, { flags: 'a' });
+    const logStream = fs.createWriteStream(this.config.logPath, { flags: a' });
     
     // Start the process
     this.process = spawn('node', [this.config.scriptPath], {
-      stdio: ['pipe', 'pipe', 'pipe'],
+      stdio: ['pipe', pipe', pipe'],
       detached: false,
       env: {
         ...process.env,
-        NODE_ENV: 'production',
-        DAEMON_MODE: 'true'
+        NODE_ENV: production',
+        DAEMON_MODE: true
       }
     });
     
@@ -259,10 +259,10 @@ class AutonomousDaemon extends EventEmitter {
       // Try to connect to the dashboard
       const http = require('http');
       const req = http.request({
-        hostname: 'localhost',
+        hostname: localhost',
         port: this.config.port,
-        path: '/api/status',
-        method: 'GET',
+        path: /api/status',
+        method: GET',
         timeout: 5000
       }, (res) => {
         resolve(res.statusCode === 200);
@@ -381,7 +381,7 @@ class AutonomousDaemon extends EventEmitter {
    */
   async getStatus() {
     try {
-      const pid = await fs.readFile(this.config.pidPath, 'utf8');
+      const pid = await fs.readFile(this.config.pidPath, utf8');
       const isRunning = await this.isProcessRunning(parseInt(pid));
       
       return {
@@ -407,26 +407,26 @@ if (require.main === module) {
   const daemon = new AutonomousDaemon();
   
   // Parse command line arguments
-  const command = process.argv[2] || 'start';
+  const command = process.argv[2] || start';
   
   switch (command) {
-    case 'start':
+    case start':
       daemon.start();
       break;
-    case 'stop':
+    case stop':
       daemon.stop();
       break;
-    case 'restart':
+    case restart':
       daemon.restart();
       break;
-    case 'status':
+    case status':
       daemon.getStatus().then(status => {
         console.log('Status:', status);
         process.exit(0);
       });
       break;
     default:
-      console.log('Usage: node autonomous-daemon.js [start|stop|restart|status]');
+      console.log('Usage: node autonomous-daemon.js [start|stop|restart|status]);
       process.exit(1);
   }
 } 

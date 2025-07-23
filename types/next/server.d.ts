@@ -1,4 +1,4 @@
-declare module 'next/server' {'  export ;class NextResponse {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+declare module next/server' {'  export ;class NextResponse {
     constructor(init?: unknown);
     static json(body: unknown, init?: unknown): NextResponse;
     static redirect(url: string | URL, init?: unknown): NextResponse;

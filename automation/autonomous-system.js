@@ -13,10 +13,10 @@ class AutonomousAutomationSystem extends EventEmitter {
     
     this.config = {
       baseDir: process.cwd(),
-      logDir: 'logs/automation',
-      statusFile: 'logs/automation/status.json',
-      aiEndpoint: 'https://api.openai.com/v1/chat/completions',
-      webSearchEndpoint: 'https://api.duckduckgo.com/',
+      logDir: logs/automation',
+      statusFile: logs/automation/status.json',
+      aiEndpoint: https://api.openai.com/v1/chat/completions',
+      webSearchEndpoint: https://api.duckduckgo.com/',
       checkInterval: 30000, // 30 seconds
       maxConcurrentTasks: 5,
       ...config
@@ -73,17 +73,17 @@ class AutonomousAutomationSystem extends EventEmitter {
 
     // Performance events
     this.modules.performanceMonitor.on('performance-degradation', (metrics) => {
-      this.queueTask('optimize-performance', { metrics, priority: 'high' });
+      this.queueTask('optimize-performance', { metrics, priority: high' });
     });
 
     // Security events
     this.modules.securityScanner.on('vulnerability-found', (vuln) => {
-      this.queueTask('fix-security', { vulnerability: vuln, priority: 'critical' });
+      this.queueTask('fix-security', { vulnerability: vuln, priority: critical' });
     });
 
     // Test events
     this.modules.testRunner.on('test-failure', (failure) => {
-      this.queueTask('fix-test', { failure, priority: 'medium' });
+      this.queueTask('fix-test', { failure, priority: medium' });
     });
   }
 
@@ -133,27 +133,27 @@ class AutonomousAutomationSystem extends EventEmitter {
   startScheduledTasks() {
     // Code analysis every 5 minutes
     cron.schedule('*/5 * * * *', () => {
-      this.queueTask('analyze-code', { priority: 'low' });
+      this.queueTask('analyze-code', { priority: low' });
     });
 
     // Performance monitoring every 10 minutes
     cron.schedule('*/10 * * * *', () => {
-      this.queueTask('monitor-performance', { priority: 'medium' });
+      this.queueTask('monitor-performance', { priority: medium' });
     });
 
     // Security scan every hour
     cron.schedule('0 * * * *', () => {
-      this.queueTask('security-scan', { priority: 'high' });
+      this.queueTask('security-scan', { priority: high' });
     });
 
     // Dependency updates daily at 2 AM
     cron.schedule('0 2 * * *', () => {
-      this.queueTask('update-dependencies', { priority: 'medium' });
+      this.queueTask('update-dependencies', { priority: medium' });
     });
 
     // Full system health check every 6 hours
     cron.schedule('0 */6 * * *', () => {
-      this.queueTask('health-check', { priority: 'low' });
+      this.queueTask('health-check', { priority: low' });
     });
   }
 
@@ -169,8 +169,8 @@ class AutonomousAutomationSystem extends EventEmitter {
       id: this.generateTaskId(),
       type,
       data,
-      priority: data.priority || 'medium',
-      status: 'queued',
+      priority: data.priority || medium',
+      status: queued',
       createdAt: Date.now(),
       attempts: 0,
       maxAttempts: 3
@@ -194,16 +194,16 @@ class AutonomousAutomationSystem extends EventEmitter {
 
     const task = this.taskQueue.shift();
     this.activeTasks++;
-    task.status = 'running';
+    task.status = running';
     task.startedAt = Date.now();
 
     try {
       await this.executeTask(task);
-      task.status = 'completed';
+      task.status = completed';
       this.stats.completedTasks++;
       this.log(`Task completed: ${task.type} (${task.id})`);
     } catch (error) {
-      task.status = 'failed';
+      task.status = failed';
       task.error = error.message;
       task.attempts++;
       this.stats.failedTasks++;
@@ -225,37 +225,37 @@ class AutonomousAutomationSystem extends EventEmitter {
 
   async executeTask(task) {
     switch (task.type) {
-      case 'analyze-code':
+      case analyze-code':
         return await this.modules.codeAnalysis.analyze();
       
-      case 'monitor-performance':
+      case monitor-performance':
         return await this.modules.performanceMonitor.check();
       
-      case 'security-scan':
+      case security-scan':
         return await this.modules.securityScanner.scan();
       
-      case 'update-dependencies':
+      case update-dependencies':
         return await this.modules.dependencyManager.update();
       
-      case 'fix-issue':
+      case fix-issue':
         return await this.modules.codeAnalysis.fixIssue(task.data.issue);
       
-      case 'optimize-performance':
+      case optimize-performance':
         return await this.modules.performanceMonitor.optimize(task.data.metrics);
       
-      case 'fix-security':
+      case fix-security':
         return await this.modules.securityScanner.fix(task.data.vulnerability);
       
-      case 'fix-test':
+      case fix-test':
         return await this.modules.testRunner.fix(task.data.failure);
       
-      case 'health-check':
+      case health-check':
         return await this.performHealthCheck();
       
-      case 'ai-suggest':
+      case ai-suggest':
         return await this.modules.aiAssistant.suggest(task.data);
       
-      case 'web-search':
+      case web-search':
         return await this.modules.webSearcher.search(task.data.query);
       
       default:
@@ -280,7 +280,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       try {
         health.modules[name] = await module.getHealth();
       } catch (error) {
-        health.modules[name] = { status: 'error', error: error.message };
+        health.modules[name] = { status: error', error: error.message };
       }
     }
 
@@ -299,12 +299,12 @@ class AutonomousAutomationSystem extends EventEmitter {
     
     // Alert if any critical issues
     const criticalIssues = Object.entries(health.modules)
-      .filter(([name, status]) => status.status === 'error')
+      .filter(([name, status]) => status.status === error')
       .map(([name]) => name);
 
     if (criticalIssues.length > 0) {
       this.emit('health-alert', {
-        type: 'critical',
+        type: critical',
         modules: criticalIssues,
         timestamp: Date.now()
       });
@@ -324,7 +324,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     const logEntry = `[${timestamp}] ${message}\n`;
     
     try {
-      await fs.appendFile(path.join(this.config.logDir, 'system.log'), logEntry);
+      await fs.appendFile(path.join(this.config.logDir, system.log'), logEntry);
     } catch (error) {
       console.error('Failed to write to log file:', error.message);
     }
@@ -379,7 +379,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       modules: Object.fromEntries(
         Object.entries(this.modules).map(([name, module]) => [
           name,
-          module.getStatus ? module.getStatus() : { status: 'unknown' }
+          module.getStatus ? module.getStatus() : { status: unknown' }
         ])
       )
     };
@@ -406,7 +406,7 @@ class CodeAnalysisModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -433,7 +433,7 @@ class PerformanceMonitorModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -460,7 +460,7 @@ class SecurityScannerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -483,7 +483,7 @@ class DependencyManagerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -506,7 +506,7 @@ class TestRunnerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -525,7 +525,7 @@ class DeploymentManagerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -548,7 +548,7 @@ class AIAssistantModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {
@@ -571,7 +571,7 @@ class WebSearchModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: 'healthy' };
+    return { status: healthy' };
   }
 
   async stop() {

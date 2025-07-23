@@ -1,15 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import type { NextApiRequest, NextApiResponse } from next';
 
-export ;default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET' && req.method !== 'POST') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    return res.status(405).json({ error: 'Method not allowed' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== GET' && req.method !== POST') {
+    res.status(405).end();
+    return;
   }
-
-  // Mock API response
-  res.status(200).json({
-    message: 'API endpoint working','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    endpoint: 'auth/forgot','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    method: req.method,
-    timestamp: new Date().toISOString(),
-  });
+  // TODO: Implement forgot password logic here
+  res.status(200).json({ message: Forgot endpoint placeholder' });
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const io = require('socket.io-client');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const io = require('socket.io-client');
 
 // Simple reconnection manager for testing
 class TestReconnectionManager {
@@ -13,7 +13,7 @@ class TestReconnectionManager {
       jitter: true,
       healthCheckInterval: 5000,
       pingTimeout: 3000,
-      ...config,
+      ...config
     };
 
     this.reconnectAttempts = 0;
@@ -21,7 +21,7 @@ class TestReconnectionManager {
       latency: 0,
       lastPing: 0,
       failedPings: 0,
-      connectionQuality: 'disconnected','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      connectionQuality: disconnected
     };
     this.pingHistory = [];
     this.eventListeners = new Map();
@@ -52,27 +52,27 @@ const index = listeners.indexOf(callback);
 
   handleReconnectionAttempt() {
     this.reconnectAttempts++;
-    this.emit('reconnection_attempt', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      type: 'attempt','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.emit('reconnection_attempt', {
+      type: attempt',
       attempt: this.reconnectAttempts,
-      timestamp: Date.now(),
+      timestamp: Date.now()
     });
   }
 
   handleReconnectionSuccess() {
-    this.emit('reconnection_success', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      type: 'success','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.emit('reconnection_success', {
+      type: success',
       attempt: this.reconnectAttempts,
-      timestamp: Date.now(),
+      timestamp: Date.now()
     });
   }
 
   handleReconnectionFailure(error) {
-    this.emit('reconnection_failure', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      type: 'failure','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.emit('reconnection_failure', {
+      type: failure',
       attempt: this.reconnectAttempts,
       error,
-      timestamp: Date.now(),
+      timestamp: Date.now()
     });
   }
 
@@ -92,7 +92,7 @@ const index = listeners.indexOf(callback);
   }
 }
 
-console.log('🧪 Testing Automatic Reconnection System...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+console.log('🧪 Testing Automatic Reconnection System...\n');
 
 // Test configuration
 const TEST_CONFIG = {
@@ -102,26 +102,26 @@ const TEST_CONFIG = {
   backoffMultiplier: 2,
   jitter: true,
   healthCheckInterval: 5000,
-  pingTimeout: 3000,
+  pingTimeout: 3000
 };
 
 // Test scenarios
 const TEST_SCENARIOS = [
   {
-    name: 'General Chat Widget','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    roomId: 'general-chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: General Chat Widget',
+    roomId: general-chat',
+    socketUrl: http://localhost:3006
   },
   {
-    name: 'AI Assistant Chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    roomId: 'ai-assistant','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: AI Assistant Chat',
+    roomId: ai-assistant',
+    socketUrl: http://localhost:3006
   },
   {
-    name: 'Support Chatbot','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    roomId: 'support-chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  },
+    name: Support Chatbot',
+    roomId: support-chat',
+    socketUrl: http://localhost:3006
+  }
 ];
 
 async function testReconnectionScenario(scenario) {
@@ -140,34 +140,34 @@ async function testReconnectionScenario(scenario) {
 
     // Create socket connection
     const socket = io(scenario.socketUrl, {
-      transports: ['websocket', 'polling'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      transports: ['websocket', polling'],
       timeout: 5000,
       reconnection: true,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
-      reconnectionDelayMax: 5000,
+      reconnectionDelayMax: 5000
     });
 
     // Track connection events
-    socket.on('connect', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('connect', () => {
       connectionAttempts++;
       console.log(
         `✅ Connected to ${scenario.name} (attempt ${connectionAttempts})`,
       );
 
       // Join room
-      socket.emit('join-room', scenario.roomId, (response) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      socket.emit('join-room', scenario.roomId, (response) => {
         if (response && response.success) {
           console.log(`🎯 Joined room: ${scenario.roomId}`);
 
           // Send test message
           socket.emit(
-            'send-message','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            send-message',
             {
               roomId: scenario.roomId,
               message: `Test message from ${scenario.name} - ${new Date().toISOString()}`,
-              sender: 'test-user','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-              type: 'text','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+              sender: test-user',
+              type: text
             },
             (response) => {
               if (response && response.success) {
@@ -179,11 +179,11 @@ async function testReconnectionScenario(scenario) {
       });
     });
 
-    socket.on('disconnect', (reason) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('disconnect', (reason) => {
       console.log(`🔌 Disconnected from ${scenario.name}: ${reason}`);
     });
 
-    socket.on('reconnect', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('reconnect', (attemptNumber) => {
       reconnectionAttempts++;
       successfulReconnections++;
       console.log(
@@ -192,7 +192,7 @@ async function testReconnectionScenario(scenario) {
       reconnectionManager.handleReconnectionSuccess();
     });
 
-    socket.on('reconnect_attempt', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('reconnect_attempt', (attemptNumber) => {
       reconnectionAttempts++;
       console.log(
         `🔄 Reconnection attempt ${attemptNumber} for ${scenario.name}`,
@@ -200,38 +200,38 @@ async function testReconnectionScenario(scenario) {
       reconnectionManager.handleReconnectionAttempt();
     });
 
-    socket.on('reconnect_error', (error) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('reconnect_error', (error) => {
       console.log(
         `❌ Reconnection error for ${scenario.name}: ${error.message}`,
       );
       reconnectionManager.handleReconnectionFailure(error.message);
     });
 
-    socket.on('reconnect_failed', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.on('reconnect_failed', () => {
       console.log(`❌ Reconnection failed for ${scenario.name}`);
-      reconnectionManager.handleReconnectionFailure('Max attempts reached');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      reconnectionManager.handleReconnectionFailure('Max attempts reached');
     });
 
     // Listen to reconnection manager events
-    reconnectionManager.on('reconnection_attempt', (event) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    reconnectionManager.on('reconnection_attempt', (event) => {
       console.log(
         `📊 Reconnection manager: Attempt ${event.attempt} for ${scenario.name}`,
       );
     });
 
-    reconnectionManager.on('reconnection_success', (event) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    reconnectionManager.on('reconnection_success', (event) => {
       console.log(
         `✅ Reconnection manager: Success for ${scenario.name} after ${event.attempt} attempts`,
       );
     });
 
-    reconnectionManager.on('reconnection_failure', (event) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    reconnectionManager.on('reconnection_failure', (event) => {
       console.log(
         `❌ Reconnection manager: Failure for ${scenario.name} - ${event.error}`,
       );
     });
 
-    reconnectionManager.on('health_check', (event) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    reconnectionManager.on('health_check', (event) => {
       console.log(
         `💓 Health check for ${scenario.name}: ${event.health.connectionQuality} (${event.health.latency}ms)`,
       );
@@ -270,7 +270,7 @@ async function testReconnectionScenario(scenario) {
             successfulReconnections,
             connectionQuality:
               reconnectionManager.getConnectionHealth().connectionQuality,
-            averageLatency: reconnectionManager.getAverageLatency(),
+            averageLatency: reconnectionManager.getAverageLatency()
           });
         }
       }, 15000); // Wait 15 seconds for reconnection attempts
@@ -279,7 +279,7 @@ async function testReconnectionScenario(scenario) {
 }
 
 async function runAllTests() {
-  console.log('🚀 Starting comprehensive reconnection tests...\n')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('🚀 Starting comprehensive reconnection tests...\n')
 const results = [];
 
   for (const scenario of TEST_SCENARIOS) {
@@ -290,7 +290,7 @@ const results = [];
       console.error(`❌ Test failed for ${scenario.name}:`, error.message);
       results.push({
         name: scenario.name,
-        error: error.message,
+        error: error.message
       });
     }
 
@@ -299,8 +299,8 @@ const results = [];
   }
 
   // Print summary
-  console.log('\n📋 Test Summary:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  console.log('================');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('\n📋 Test Summary:');
+  console.log('================');
 
   results.forEach((result) => {
     if (result.error) {
@@ -325,28 +325,28 @@ const totalTests = results.length;
 
   if (successfulTests === totalTests) {
     console.log(
-      '🎉 All reconnection tests passed! The automatic reconnection system is working correctly.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      🎉 All reconnection tests passed! The automatic reconnection system is working correctly.',
     );
   } else {
-    console.log('⚠️  Some tests failed. Please check the implementation.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('⚠️  Some tests failed. Please check the implementation.');
   }
 
   process.exit(successfulTests === totalTests ? 0 : 1);
 }
 
 // Handle graceful shutdown
-process.on('SIGINT', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  console.log('\n🛑 Test interrupted by user');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+process.on('SIGINT', () => {
+  console.log('\n🛑 Test interrupted by user');
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  console.log('\n🛑 Test terminated');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Test terminated');
   process.exit(0);
 });
 
 // Run tests
 runAllTests().catch((error) => {
-  console.error('❌ Test suite failed:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.error('❌ Test suite failed:', error);
   process.exit(1);
 });

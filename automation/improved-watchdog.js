@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { spawn, exec } = require('child_process');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const fs = require('fs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { spawn, exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 class ImprovedWatchdog {
   constructor() {
@@ -11,7 +11,7 @@ class ImprovedWatchdog {
       checkInterval: 30000, // 30 seconds
       maxRestarts: 5,
       restartDelay: 5000, // 5 seconds
-      logFile: path.join(__dirname, 'watchdog.log')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      logFile: path.join(__dirname, watchdog.log')
     };
     
     this.isRunning = false;
@@ -19,9 +19,9 @@ class ImprovedWatchdog {
   }
 
   async initialize() {
-    console.log('🐕 Initializing Improved Watchdog System...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🐕 Initializing Improved Watchdog System...');
     
-    // Create log directory if it doesn't exist'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // Create log directory if it doesn't exist
     const logDir = path.dirname(this.config.logFile);
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
@@ -30,15 +30,15 @@ class ImprovedWatchdog {
     // Load existing processes
     await this.loadExistingProcesses();
     
-    console.log('✅ Improved Watchdog System initialized');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('✅ Improved Watchdog System initialized');
   }
 
   async loadExistingProcesses() {
-    const pidFile = path.join(__dirname, '.watchdog.pid');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const pidFile = path.join(__dirname, .watchdog.pid');
     
     if (fs.existsSync(pidFile)) {
       try {
-        const data = JSON.parse(fs.readFileSync(pidFile, 'utf8'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const data = JSON.parse(fs.readFileSync(pidFile, utf8'));
         for (const [name, info] of Object.entries(data)) {
           if (this.isProcessRunning(info.pid)) {
             this.processes.set(name, {
@@ -50,7 +50,7 @@ class ImprovedWatchdog {
           }
         }
       } catch (error) {
-        console.warn('⚠️  Failed to load existing processes:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.warn('⚠️  Failed to load existing processes:', error.message);
       }
     }
   }
@@ -76,32 +76,32 @@ class ImprovedWatchdog {
       startTime: Date.now(),
       restarts: 0,
       lastCheck: Date.now(),
-      status: 'starting''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      status: starting
     };
 
     try {
       const child = spawn(command, args, {
         cwd: __dirname,
-        stdio: ['pipe', 'pipe', 'pipe'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        stdio: ['pipe', pipe', pipe'],
         env: { ...process.env, ...options.env },
         ...options
       });
 
       processInfo.pid = child.pid;
-      processInfo.status = 'running';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      processInfo.status = running';
       processInfo.child = child;
 
-      child.stdout.on('data', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      child.stdout.on('data', (data) => {
         this.log(`${name} [STDOUT]: ${data.toString().trim()}`);
       });
 
-      child.stderr.on('data', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      child.stderr.on('data', (data) => {
         this.log(`${name} [STDERR]: ${data.toString().trim()}`);
       });
 
-      child.on('close', (code) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      child.on('close', (code) => {
         this.log(`${name} process exited with code ${code}`);
-        processInfo.status = 'stopped';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        processInfo.status = stopped';
         processInfo.child = null;
         
         if (code !== 0 && processInfo.restarts < this.config.maxRestarts) {
@@ -109,9 +109,9 @@ class ImprovedWatchdog {
         }
       });
 
-      child.on('error', (error) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      child.on('error', (error) => {
         this.log(`${name} process error: ${error.message}`);
-        processInfo.status = 'error';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        processInfo.status = error';
         processInfo.child = null;
         
         if (processInfo.restarts < this.config.maxRestarts) {
@@ -151,7 +151,7 @@ class ImprovedWatchdog {
     
     // Stop the current process
     if (processInfo.child) {
-      processInfo.child.kill('SIGTERM');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      processInfo.child.kill('SIGTERM');
     }
     
     // Wait a bit then restart
@@ -167,7 +167,7 @@ class ImprovedWatchdog {
     console.log(`🛑 Stopping ${name}...`);
     
     if (processInfo.child) {
-      processInfo.child.kill('SIGTERM');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      processInfo.child.kill('SIGTERM');
     }
     
     this.processes.delete(name);
@@ -179,9 +179,9 @@ class ImprovedWatchdog {
     for (const [name, processInfo] of this.processes) {
       const isRunning = this.isProcessRunning(processInfo.pid);
       
-      if (!isRunning && processInfo.status === 'running') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (!isRunning && processInfo.status === running') {
         this.log(`⚠️  Process ${name} (PID: ${processInfo.pid}) is not responding`);
-        processInfo.status = 'stopped';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        processInfo.status = stopped';
         
         if (processInfo.restarts < this.config.maxRestarts) {
           this.scheduleRestart(name);
@@ -193,7 +193,7 @@ class ImprovedWatchdog {
   }
 
   saveProcessInfo() {
-    const pidFile = path.join(__dirname, '.watchdog.pid');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const pidFile = path.join(__dirname, .watchdog.pid');
     const data = {};
     
     for (const [name, processInfo] of this.processes) {
@@ -215,7 +215,7 @@ class ImprovedWatchdog {
     console.log(logMessage);
     
     // Append to log file
-    fs.appendFileSync(this.config.logFile, logMessage + '\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    fs.appendFileSync(this.config.logFile, logMessage + \n');
   }
 
   getStatus() {
@@ -234,7 +234,7 @@ class ImprovedWatchdog {
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️  Watchdog is already running');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('⚠️  Watchdog is already running');
       return;
     }
 
@@ -246,7 +246,7 @@ class ImprovedWatchdog {
       this.checkProcesses();
     }, this.config.checkInterval);
 
-    console.log('🐕 Improved Watchdog System started');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🐕 Improved Watchdog System started');
     console.log(`📊 Check interval: ${this.config.checkInterval}ms`);
     console.log(`📝 Log file: ${this.config.logFile}`);
   }
@@ -263,7 +263,7 @@ class ImprovedWatchdog {
     }
 
     this.isRunning = false;
-    console.log('🛑 Improved Watchdog System stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🛑 Improved Watchdog System stopped');
   }
 }
 
@@ -272,21 +272,21 @@ if (require.main === module) {
   const watchdog = new ImprovedWatchdog();
   
   // Handle graceful shutdown
-  process.on('SIGINT', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  process.on('SIGINT', () => {
+    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
     watchdog.stop();
     process.exit(0);
   });
 
-  process.on('SIGTERM', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  process.on('SIGTERM', () => {
+    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
     watchdog.stop();
     process.exit(0);
   });
 
   // Start the watchdog
   watchdog.start().catch(error => {
-    console.error('❌ Failed to start Improved Watchdog:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.error('❌ Failed to start Improved Watchdog:', error);
     process.exit(1);
   });
 }

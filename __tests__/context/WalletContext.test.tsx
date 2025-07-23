@@ -1,8 +1,8 @@
-import React from 'react';'import { render, screen, act, fireEvent } from '@testing-library/react';'import '@testing-library/jest-dom';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import React from react';import { render, screen, act, fireEvent } from @testing-library/react';import @testing-library/jest-dom';
 // --- START OF MOCK SETUP ---
 
 // Define valid mock Ethereum addresses;
-const MOCK_ADDRESS_1 = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266';'const MOCK_ADDRESS_2 = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';'const MOCK_ADDRESS_3 = '0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const MOCK_ADDRESS_1 = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266';const MOCK_ADDRESS_2 = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8';const MOCK_ADDRESS_3 = 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC';
 // Advanced type for mock AppKit to ensure Jest mock properties are available
 type MockableAppKit = {
   open: jest.Mock;
@@ -26,7 +26,6 @@ type TestMockAppKitInstance = Partial<MockableAppKit> & {
     _associatedMockEip1193Provider?: any;
 };
 
-
 // Helper function to create a new mock AppKit object for each test.;
 const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitInstance => {
   const subscriptionCallbacksStorage: (((provider?: any) => void) | ((provider?: any) => Promise<void>))[] = [];
@@ -38,23 +37,23 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
     request: jest.fn(async (args: { method: string; params?: any[] }) => {
       // console.log(`AssociatedMockProvider received request: ${args.method}`, args.params);
       switch (args.method) {
-        case 'eth_chainId': {'          const chainId = selfReferentialMock.getChainId?.() as (number | string | null | undefined);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          return chainId != null ? `0x${Number(chainId).toString(16)}` : '0x1';'        }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        case 'net_version': {'           const netVersion = selfReferentialMock.getChainId?.() as (number | string | null | undefined);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-           return netVersion != null ? Number(netVersion).toString() : '1';'        }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        case 'eth_requestAccounts':'        case 'eth_accounts': {'          const addr = selfReferentialMock.getAddress?.();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        case eth_chainId': {'          const chainId = selfReferentialMock.getChainId?.() as (number | string | null | undefined);
+          return chainId != null ? `0x${Number(chainId).toString(16)}` : 0x1';        }
+        case net_version': {'           const netVersion = selfReferentialMock.getChainId?.() as (number | string | null | undefined);
+           return netVersion != null ? Number(netVersion).toString() : 1';        }
+        case eth_requestAccounts':'        case eth_accounts': {'          const addr = selfReferentialMock.getAddress?.();
           return addr ? [addr] : [];
         }
-        case 'eth_blockNumber':'            return Promise.resolve('0x1');'        case 'eth_estimateGas':'            return Promise.resolve('0x5208');'        case 'eth_gasPrice':'            return Promise.resolve('0x4a817c800');'        default:'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        case eth_blockNumber':'            return Promise.resolve('0x1');        case eth_estimateGas':'            return Promise.resolve('0x5208');        case eth_gasPrice':'            return Promise.resolve('0x4a817c800');        default:
           // console.warn(`Unhandled method in associatedMockEip1193Provider: ${args.method}`);
           return Promise.resolve(undefined);
       }
     }),
     on: jest.fn(),
-    removeListener: jest.fn(),
+    removeListener: jest.fn()
   };
 
-  const baseMockPart: Omit<MockableAppKit, 'getWalletProvider'> = {'    open: jest.fn().mockResolvedValue(undefined) as jest.Mock,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const baseMockPart: Omit<MockableAppKit, getWalletProvider'> = {'    open: jest.fn().mockResolvedValue(undefined) as jest.Mock,
     close: jest.fn().mockResolvedValue(undefined) as jest.Mock,
     disconnect: jest.fn().mockResolvedValue(undefined) as jest.Mock,
     getState: jest.fn().mockReturnValue({ isConnected: false }) as jest.Mock,
@@ -68,14 +67,14 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
       });
     }) as jest.Mock,
     on: jest.fn((event: string, callback: (() => void) | (() => Promise<void>)) => {
-      if (event === 'providerChanged') {'        onProviderChangedCallbacksStorage.push(callback);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (event === providerChanged') {'        onProviderChangedCallbacksStorage.push(callback);
       }
     }) as jest.Mock,
     off: jest.fn((event: string, callback: (...args: unknown[]) => void) => {
-      if (event === 'providerChanged') {'        const index = onProviderChangedCallbacksStorage.indexOf(callback as () => void);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (event === providerChanged') {'        const index = onProviderChangedCallbacksStorage.indexOf(callback as () => void);
         if (index > -1) onProviderChangedCallbacksStorage.splice(index, 1);
       }
-    }) as jest.Mock,
+    }) as jest.Mock
   };
 
   selfReferentialMock = {
@@ -94,27 +93,23 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
     },
     _clearSubscriptionCallbacks: () => { subscriptionCallbacksStorage.length = 0; },
     _clearOnProviderChangedCallbacks: () => { onProviderChangedCallbacksStorage.length = 0; },
-    _associatedMockEip1193Provider: associatedMockEip1193Provider,
+    _associatedMockEip1193Provider: associatedMockEip1193Provider
   };
   return selfReferentialMock;
 };
 
 type TestMockAppKit = ReturnType<typeof makeMockAppKit>;
-;
 const mockUseAppKit = jest.fn();
 const mockCreateAppKit = jest.fn();
-;
 const initialMockAppKitInstance = makeMockAppKit();
 mockCreateAppKit.mockReturnValue(initialMockAppKitInstance);
 
-jest.mock('@reown/appkit/react', () => ({'  createAppKit: mockCreateAppKit,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  useAppKit: mockUseAppKit,
+jest.mock('@reown/appkit/react', () => ({'  createAppKit: mockCreateAppKit,
+  useAppKit: mockUseAppKit
 }));
 
-jest.mock('@/config/env', () => ({'  getAppKitProjectId: () => 'test_project_id_from_mock','}));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-;
-import { WalletProvider, useWallet, WalletContextType } from '../../src/context/WalletContext';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+jest.mock('@/config/env', () => ({'  getAppKitProjectId: () => test_project_id_from_mock',}));
+import { WalletProvider, useWallet, WalletContextType } from ../../src/context/WalletContext';;
 const WalletConsumer: React.FC<{ onUpdate: (wallet: WalletContextType) => void }> = ({ onUpdate }) => {
   const wallet = useWallet();
   React.useEffect(() => {
@@ -125,11 +120,11 @@ const WalletConsumer: React.FC<{ onUpdate: (wallet: WalletContextType) => void }
     <div>
       <button onClick={() => wallet.connectWallet()}>Connect</button>
       <button onClick={() => wallet.disconnectWallet()}>Disconnect</button>
-      <div data-testid="address">{wallet.address}</div>"      <div data-testid="displayAddress">{wallet.displayAddress}</div>"      <div data-testid="chainId">{wallet.chainId?.toString()}</div>"      <div data-testid="isConnected">{String(wallet.isConnected)}</div>"      <div data-testid="appKitAvailable">{String(!!wallet.appKit)}</div>"    </div>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      <div data-testid="address">{wallet.address}</div>"      <div data-testid="displayAddress">{wallet.displayAddress}</div>"      <div data-testid="chainId">{wallet.chainId?.toString()}</div>"      <div data-testid="isConnected">{String(wallet.isConnected)}</div>"      <div data-testid="appKitAvailable">{String(!!wallet.appKit)}</div>"    </div>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   );
 };
 
-describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
   const onUpdateMock = jest.fn((wallet) => {
     currentWalletState = wallet;
   });
@@ -150,23 +145,23 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
     mockCreateAppKit.mockReturnValue(activeCreateAppKitMock);
   });
 
-  test('initial state is correct', () => {'    render('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('initial state is correct', () => {'    render(
       <WalletProvider>
         <WalletConsumer onUpdate={onUpdateMock} />
       </WalletProvider>
     );
-    expect(screen.getByTestId('address').textContent).toBe('');'    expect(screen.getByTestId('displayAddress').textContent).toBe('');'    expect(screen.getByTestId('chainId').textContent).toBe('');'    expect(screen.getByTestId('isConnected').textContent).toBe('false');'    expect(screen.getByTestId('appKitAvailable').textContent).toBe(String(!!activeCreateAppKitMock));'    expect(currentWalletState.provider).toBeNull();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('address').textContent).toBe('');    expect(screen.getByTestId('displayAddress').textContent).toBe('');    expect(screen.getByTestId('chainId').textContent).toBe('');    expect(screen.getByTestId('isConnected').textContent).toBe('false');    expect(screen.getByTestId('appKitAvailable').textContent).toBe(String(!!activeCreateAppKitMock));    expect(currentWalletState.provider).toBeNull();
     expect(currentWalletState.signer).toBeNull();
   });
 
-  test('connectWallet calls appKit.open and subscribes via subscribeProvider', async () => {'    render('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('connectWallet calls appKit.open and subscribes via subscribeProvider', async () => {'    render(
       <WalletProvider>
         <WalletConsumer onUpdate={onUpdateMock} />
       </WalletProvider>
     );
 
     await act(async () => {
-      fireEvent.click(screen.getByText('Connect'));'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      fireEvent.click(screen.getByText('Connect'));    });
 
     expect(activeUseAppKitMock.open).toHaveBeenCalledTimes(1);
     expect(activeUseAppKitMock.subscribeProvider).toHaveBeenCalled();
@@ -178,9 +173,9 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
 
-    expect(screen.getByTestId('isConnected').textContent).toBe('true');'    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);'    expect(screen.getByTestId('displayAddress').textContent).toBe('0xf39F...2266');'    expect(screen.getByTestId('chainId').textContent).toBe('1');'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('isConnected').textContent).toBe('true');    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);    expect(screen.getByTestId('displayAddress').textContent).toBe('0xf39F...2266');    expect(screen.getByTestId('chainId').textContent).toBe('1');  });
 
-  test('handles accountsChanged event via subscribeProvider', async () => {'    render('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('handles accountsChanged event via subscribeProvider', async () => {'    render(
       <WalletProvider>
         <WalletConsumer onUpdate={onUpdateMock} />
       </WalletProvider>
@@ -192,14 +187,14 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       (activeUseAppKitMock.getChainId as jest.Mock).mockReturnValue(1);
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
-    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);
     await act(async () => {
       (activeUseAppKitMock.getAddress as jest.Mock).mockReturnValue(MOCK_ADDRESS_2);
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
-    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_2);'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_2);  });
 
-  test('handles chainChanged event via subscribeProvider', async () => {'     render('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('handles chainChanged event via subscribeProvider', async () => {'     render(
       <WalletProvider>
         <WalletConsumer onUpdate={onUpdateMock} />
       </WalletProvider>
@@ -211,14 +206,14 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       (activeUseAppKitMock.getChainId as jest.Mock).mockReturnValue(1);
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
-    expect(screen.getByTestId('chainId').textContent).toBe('1');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('chainId').textContent).toBe('1');
     await act(async () => {
       (activeUseAppKitMock.getChainId as jest.Mock).mockReturnValue(5);
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
-    expect(screen.getByTestId('chainId').textContent).toBe('5');'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('chainId').textContent).toBe('5');  });
 
-  test('disconnectWallet calls appKit.disconnect and resets state', async () => {'    (activeCreateAppKitMock.getState as jest.Mock).mockReturnValue({ isConnected: true });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('disconnectWallet calls appKit.disconnect and resets state', async () => {'    (activeCreateAppKitMock.getState as jest.Mock).mockReturnValue({ isConnected: true });
 
     render(
       <WalletProvider>
@@ -232,9 +227,9 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       (activeUseAppKitMock.getChainId as jest.Mock).mockReturnValue(1);
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
-    expect(screen.getByTestId('isConnected').textContent).toBe('true');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('isConnected').textContent).toBe('true');
     await act(async () => {
-      fireEvent.click(screen.getByText('Disconnect'));'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      fireEvent.click(screen.getByText('Disconnect'));    });
 
     expect(activeCreateAppKitMock.disconnect).toHaveBeenCalledTimes(1);
 
@@ -247,9 +242,9 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       await activeUseAppKitMock._triggerSubscriptionCallback();
     });
 
-    expect(screen.getByTestId('isConnected').textContent).toBe('false');'    expect(screen.getByTestId('address').textContent).toBe('');'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('isConnected').textContent).toBe('false');    expect(screen.getByTestId('address').textContent).toBe('');  });
 
-  test('connects and updates wallet state when appKit is available and subscribeProvider is present', async () => {'    // mockCreateAppKit is activeCreateAppKitMock via beforeEach'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('connects and updates wallet state when appKit is available and subscribeProvider is present', async () => {'    // mockCreateAppKit is activeCreateAppKitMock via beforeEach
     // makeMockAppKit by default includes a jest.fn() for subscribeProvider
 
     render(
@@ -261,17 +256,16 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
     // Allow initial effects to run (AppKit initialization, isWalletSystemAvailable set)
     await act(async () => {
       // No specific action needed here, just waiting for effects
-      // console.log('Initial currentWalletState:', currentWalletState?.isWalletSystemAvailable);'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      // console.log('Initial currentWalletState:', currentWalletState?.isWalletSystemAvailable);    });
 
     // Verify wallet system is available after initial setup
     expect(currentWalletState.isWalletSystemAvailable).toBe(true);
     // Also check AppKit instance on WalletContext (via currentWalletState.appKit)
     expect(currentWalletState.appKit).toBe(activeCreateAppKitMock);
 
-
     // Simulate user clicking connect
     await act(async () => {
-      fireEvent.click(screen.getByText('Connect'));'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      fireEvent.click(screen.getByText('Connect'));    });
 
     // Assert that appKit.open was called (connectWallet uses appKitRef.current which is activeCreateAppKitMock)
     expect(activeCreateAppKitMock.open).toHaveBeenCalledTimes(1);
@@ -291,9 +285,9 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
     });
 
     // Assertions
-    expect(screen.getByTestId('isConnected').textContent).toBe('true');'    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);'    expect(screen.getByTestId('chainId').textContent).toBe('1');'    expect(activeCreateAppKitMock.subscribeProvider).toHaveBeenCalled();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('isConnected').textContent).toBe('true');    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);    expect(screen.getByTestId('chainId').textContent).toBe('1');    expect(activeCreateAppKitMock.subscribeProvider).toHaveBeenCalled();
 
-    // Check that provider and signer are set in the context's state'    expect(currentWalletState.provider).not.toBeNull();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // Check that provider and signer are set in the context's state'    expect(currentWalletState.provider).not.toBeNull();
     expect(currentWalletState.signer).not.toBeNull();
 
     // Additional check: Ensure the provider in context has a functioning getNetwork (ethers v6)
@@ -309,11 +303,11 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
     }
   });
 
-  test('uses on/off for event handling if subscribeProvider is not available', async () => {'    const localActiveUseAppKitMock = makeMockAppKit({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        subscribeProvider: undefined as any,
+  test('uses on/off for event handling if subscribeProvider is not available', async () => {'    const localActiveUseAppKitMock = makeMockAppKit({
+        subscribeProvider: undefined as any
     });
      (localActiveUseAppKitMock.on as jest.Mock).mockImplementation((event, callback) => {
-        if (event === 'providerChanged') {'            (localActiveUseAppKitMock as any)._onProviderChangedCallbackSpecific = callback;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        if (event === providerChanged') {'            (localActiveUseAppKitMock as any)._onProviderChangedCallbackSpecific = callback;
         }
     });
 
@@ -328,7 +322,7 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       </WalletProvider>
     );
 
-    expect(localActiveUseAppKitMock.on).toHaveBeenCalledWith('providerChanged', expect.any(Function));''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(localActiveUseAppKitMock.on).toHaveBeenCalledWith('providerChanged', expect.any(Function));
     await act(async () => {
       (localActiveUseAppKitMock.getState as jest.Mock).mockReturnValue({ isConnected: true });
       (localActiveUseAppKitMock.getAddress as jest.Mock).mockReturnValue(MOCK_ADDRESS_3);
@@ -341,16 +335,16 @@ describe('WalletProvider', () => {'  let _currentWalletState: WalletContextType;
       }
     });
 
-    expect(screen.getByTestId('isConnected').textContent).toBe('true');'    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_3);'    expect(screen.getByTestId('chainId').textContent).toBe('42');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByTestId('isConnected').textContent).toBe('true');    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_3);    expect(screen.getByTestId('chainId').textContent).toBe('42');
     const { _unmount } = render(
         <WalletProvider>
             <WalletConsumer onUpdate={jest.fn()} />
         </WalletProvider>
     );
     unmount();
-    expect(localActiveUseAppKitMock.off).toHaveBeenCalledWith('providerChanged', expect.any(Function));'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(localActiveUseAppKitMock.off).toHaveBeenCalledWith('providerChanged', expect.any(Function));  });
 
-  test('renders without AppKit instance and does not throw', () => {'    mockUseAppKit.mockReturnValue(undefined as any);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  test('renders without AppKit instance and does not throw', () => {'    mockUseAppKit.mockReturnValue(undefined as any);
     mockCreateAppKit.mockReturnValue(undefined as any);
 
     expect(() => {

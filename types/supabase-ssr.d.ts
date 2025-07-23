@@ -1,1 +1,1 @@
-declare module '@supabase/ssr';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+declare module @supabase/ssr';

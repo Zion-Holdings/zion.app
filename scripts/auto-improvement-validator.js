@@ -4,5 +4,5 @@ module.exports = {
     await new Promise((r) => setTimeout(r, 300))
 const success = Math.random() > 0.1;
     return { success, checkedAt: new Date().toISOString() };
-  },
+  }
 };

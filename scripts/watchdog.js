@@ -9,14 +9,12 @@
  * For production, run this script using a process manager like PM2 (e.g., pm2 start scripts/watchdog.js --name my-watchdog)
  */
 ;
-import { Tail } from 'tail';'import path from 'path';'import { exec } from 'child_process';'import fs from 'fs';'import os from 'os-utils';'import axios from 'axios';'import { pathToFileURL, fileURLToPath } from 'url';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { Tail } from tail';import path from path';import { exec } from child_process';import fs from fs';import os from os-utils';import axios from axios';import { pathToFileURL, fileURLToPath } from url';
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
  
 const _HEAL_COMMAND = undefined;
- ;
 let _perfErrorStreak = 0;
- ;
 let _securityPatchStreak = 0;
  
 const _PERF_ERROR_REGEX = undefined;
@@ -54,20 +52,20 @@ function logErrorToProduction(message, errorObject = null) {
  */
 async function sendDiscordAlert(alertMessage) {
   if (!DISCORD_WEBHOOK_URL) {
-    const logMsg = 'Discord Webhook URL not configured (DISCORD_WEBHOOK_URL environment variable is not set). Skipping alert.';'    console.warn(logMsg);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const logMsg = Discord Webhook URL not configured (DISCORD_WEBHOOK_URL environment variable is not set). Skipping alert.';    console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${logMsg}\n`);
     return;
   }
 
   try {
     const payload = { content: alertMessage };
-    // It's important to set a timeout for the HTTP request'    // to prevent the watchdog from hanging indefinitely.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // It's important to set a timeout for the HTTP request'    // to prevent the watchdog from hanging indefinitely.
     await axios.post(DISCORD_WEBHOOK_URL, payload, { timeout: 10000 }); // 10 seconds timeout
     const logMsg = `Successfully sent alert to Discord.`; // Message itself can be long, so not logging it here.
     console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
   } catch {
-    let 'Error occurred'Message = `Failed to send alert to Discord.`;'    if ('Error occurred'.code === 'ECONNABORTED') {        'Error occurred'Message += ` Request timed out.`;'    } else if (error.response) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    let Error occurred'Message = `Failed to send alert to Discord.`;    if ('Error occurred'.code === ECONNABORTED') {        Error occurred'Message += ` Request timed out.`;    } else if (error.response) {
       errorMessage += ` Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}`;
     } else if (error.request) {
       errorMessage += ` No response received.`;
@@ -84,7 +82,7 @@ async function sendDiscordAlert(alertMessage) {
  * Handles unhandled promise rejections.
  * Logs the error details using the logError function.
  */
-process.on('unhandledRejection', (reason, promise) => {'  logErrorToProduction('Unhandled Rejection. Promise: ' + promise + ' Reason: ' + (reason instanceof Error ? reason.message : reason), reason instanceof Error ? reason : null);'});'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+process.on('unhandledRejection', (reason, promise) => {'  logErrorToProduction('Unhandled Rejection. Promise:  + promise +  Reason:  + (reason instanceof Error ? reason.message : reason), reason instanceof Error ? reason : null);});
 
 /**
  * Handles uncaught exceptions.
@@ -92,7 +90,7 @@ process.on('unhandledRejection', (reason, promise) => {'  logErrorToProduction('
  * Note: After an uncaught exception, the application might be in an unstable state.
  * Depending on the severity, a process manager (like PM2) might be configured to restart it.
  */
-process.on('uncaughtException', (error) => {'  logErrorToProduction('Uncaught Exception.', error);'  // process.exit(1); // Optionally exit. For a watchdog, continuous monitoring is often preferred if possible.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+process.on('uncaughtException', (error) => {'  logErrorToProduction('Uncaught Exception.', error);  // process.exit(1); // Optionally exit. For a watchdog, continuous monitoring is often preferred if possible.
 });
 
 // --- Configuration: File Paths ---
@@ -116,7 +114,7 @@ function determineBaseLogPath() {
     }
   }
 
-  const cwdPath = path.resolve(process.cwd(), 'logs');'  try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const cwdPath = path.resolve(process.cwd(), logs');  try {
     fs.mkdirSync(cwdPath, { recursive: true });
     fs.accessSync(cwdPath, fs.constants.W_OK);
     return cwdPath;
@@ -124,7 +122,7 @@ function determineBaseLogPath() {
     logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
-  const fallback = path.resolve(_dirname, '../logs');  try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const fallback = path.resolve(_dirname, ../logs');  try {
     fs.mkdirSync(fallback, { recursive: true });
     fs.accessSync(fallback, fs.constants.W_OK);
     return fallback;
@@ -132,7 +130,7 @@ function determineBaseLogPath() {
     logErrorToProduction(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
-  const tmpPath = '/tmp/watchdog-logs';'  try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const tmpPath = /tmp/watchdog-logs';  try {
     fs.mkdirSync(tmpPath, { recursive: true });
     fs.accessSync(tmpPath, fs.constants.W_OK);
     return tmpPath;
@@ -145,15 +143,15 @@ function determineBaseLogPath() {
 
 const BASE_LOG_PATH = determineBaseLogPath();
 /** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
-const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');/** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, 'security', 'hourly-fix.log');/** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const PERF_LOG_FILE = path.join(BASE_LOG_PATH, perf', hourly.log');/** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
+const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, security', hourly-fix.log');/** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
+const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, self-heal.log');
 // Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
   try {
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
     if (!fs.existsSync(filePath)) {
-      fs.closeSync(fs.openSync(filePath, 'a'));'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      fs.closeSync(fs.openSync(filePath, a'));    }
   } catch {
     logErrorToProduction(`Failed to create log file: ${filePath}`, err);
   }
@@ -162,44 +160,44 @@ function ensureFileExists(filePath) {
 [PERF_LOG_FILE, SECURITY_LOG_FILE, SELF_HEAL_LOG_FILE].forEach(ensureFileExists);
 
 // --- Configuration: Error Patterns and Healing Actions ---
-const _CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3006/api/codex/suggest-fix'; // Assuming server runs on 3001''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const _CODEX_API_URL = process.env.CODEX_API_URL || http://localhost:3006/api/codex/suggest-fix'; // Assuming server runs on 3001
 const HEAL_ACTION_TYPES = {
-  GENERAL_RESTART: 'GENERAL_RESTART','  CODEX_FIX_FILE: 'CODEX_FIX_FILE','  RESTART_SERVICE: 'RESTART_SERVICE','  CHECK_DB_HEALTH: 'CHECK_DB_HEALTH','};'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  GENERAL_RESTART: GENERAL_RESTART',  CODEX_FIX_FILE: CODEX_FIX_FILE',  RESTART_SERVICE: RESTART_SERVICE',  CHECK_DB_HEALTH: CHECK_DB_HEALTH',};
 
 const _ERROR_PATTERNS_CONFIG = [
   {
-    name: 'DatabaseConnectionError','    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    logFile: 'perf', // 'perf' or 'security' or 'generic''    actionType: HEAL_ACTION_TYPES.CHECK_DB_HEALTH,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: DatabaseConnectionError',    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
+    logFile: perf', // perf' or security' or generic''    actionType: HEAL_ACTION_TYPES.CHECK_DB_HEALTH,
     priority: 1,
     maxStreak: 2,
     extractContext: (logLine) => ({ details: logLine.match(/Error: connect ECONNREFUSED (.*?):5432/i)?.[0] })
   },
   {
-    name: 'NextJSComponentRenderError','    regex: /TypeError: Cannot read properties of undefined \(reading '.*?'\) at .*? (\/.*?\.js:\d+:\d+)/i,'    logFile: 'perf','    actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: NextJSComponentRenderError',    regex: /TypeError: Cannot read properties of undefined \(reading .*?'\) at .*? (\/.*?\.js:\d+:\d+)/i,    logFile: perf',    actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,
     priority: 2,
     maxStreak: 3,
     _extractContext: (logLine) => {
-      const match = logLine.match(/TypeError: Cannot read properties of undefined \(reading '.*?'\) at .*? (\/.*?\.js:\d+:\d+)/i);'      return {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        filePathPattern: match ? match[1].replace(/.*\/src\//, 'src/') : null, // Attempt to get relative path'        errorDetails: match ? match[0] : logLine'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const match = logLine.match(/TypeError: Cannot read properties of undefined \(reading .*?'\) at .*? (\/.*?\.js:\d+:\d+)/i);      return {
+        filePathPattern: match ? match[1].replace(/.*\/src\//, src/') : null, // Attempt to get relative path'        errorDetails: match ? match[0] : logLine
       };
     }
   },
   {
-    name: 'AuthServiceFailure','    regex: /AuthServiceError: Token validation failed/i,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    logFile: 'perf','    actionType: HEAL_ACTION_TYPES.RESTART_SERVICE,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    serviceName: 'auth-service', // Example service name, needs to map to actual pm2 name or script'    priority: 1,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: AuthServiceFailure',    regex: /AuthServiceError: Token validation failed/i,
+    logFile: perf',    actionType: HEAL_ACTION_TYPES.RESTART_SERVICE,
+    serviceName: auth-service', // Example service name, needs to map to actual pm2 name or script'    priority: 1,
     maxStreak: 2,
     extractContext: (logLine) => ({ details: logLine })
   },
   {
-    name: 'GenericPerformanceError', // Fallback for general errors'    regex: /error/i,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    logFile: 'perf','    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: GenericPerformanceError', // Fallback for general errors'    regex: /error/i,
+    logFile: perf',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART,
     priority: 10, // Lower priority
     maxStreak: 3,
     extractContext: (logLine) => ({ details: logLine })
   },
   {
-    name: 'SecurityPatchNotification','    regex: /security patch applied/i, // More specific than just "patch""    logFile: 'security','    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART, // Or a more specific action if applicable'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name: SecurityPatchNotification',    regex: /security patch applied/i, // More specific than just "patch""    logFile: security',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART, // Or a more specific action if applicable
     priority: 1,
     maxStreak: 1, // Apply immediately
     extractContext: (logLine) => ({ details: logLine })
@@ -207,7 +205,7 @@ const _ERROR_PATTERNS_CONFIG = [
 ];
 
 // Endpoint for triggering the Codex AI fix pipeline
-const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3006/api/codex/suggest-fix';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || http://localhost:3006/api/codex/suggest-fix';
 // --- State Variables ---;
 let _errorStreaks = undefined; // Unused {}; // Stores streaks for each error pattern config name
 /** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */;
@@ -226,7 +224,7 @@ const SELF_HEAL_COOLDOWN = 5 * 60 * 1000; // 5 minutes cooldown between self-hea
 let lastSelfHealTime = 0;
 
 // --- Process Management ---
-const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, watchdog.pid');
 // --- Helper Functions ---
 
 /**
@@ -235,7 +233,7 @@ const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');'''''''''''''
 function ensureSingleInstance() {
   try {
     if (fs.existsSync(WATCHDOG_PID_FILE)) {
-      const existingPid = parseInt(fs.readFileSync(WATCHDOG_PID_FILE, 'utf8').trim());'      try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const existingPid = parseInt(fs.readFileSync(WATCHDOG_PID_FILE, utf8').trim());      try {
         // Check if process is still running
         process.kill(existingPid, 0);
         console.warn(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
@@ -243,28 +241,28 @@ function ensureSingleInstance() {
       } catch {
         // Process not found, remove stale PID file
         fs.unlinkSync(WATCHDOG_PID_FILE);
-        console.warn('Removed stale PID file.');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.warn('Removed stale PID file.');      }
     }
     
     // Write current PID
     fs.writeFileSync(WATCHDOG_PID_FILE, process.pid.toString());
     
     // Clean up PID file on exit
-    process.on('exit', () => {'      try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    process.on('exit', () => {'      try {
         if (fs.existsSync(WATCHDOG_PID_FILE)) {
           fs.unlinkSync(WATCHDOG_PID_FILE);
         }
       } catch {
-        // Ignore cleanup 'Error occurred'ors'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        // Ignore cleanup Error occurred'ors'      }
     });
     
-    process.on('SIGINT', () => {'      console.warn('\nReceived SIGINT. Shutting down watchdog gracefully...');      process.exit(0);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    process.on('SIGINT', () => {'      console.warn('\nReceived SIGINT. Shutting down watchdog gracefully...');      process.exit(0);
     });
     
-    process.on('SIGTERM', () => {'      console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');      process.exit(0);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    process.on('SIGTERM', () => {'      console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');      process.exit(0);
     });
   } catch {
-    logErrorToProduction('Failed to ensure single instance', 'Error occurred');'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logErrorToProduction('Failed to ensure single instance', Error occurred');  }
 }
 
 /**
@@ -274,7 +272,7 @@ function ensureSingleInstance() {
  */
 function appendToSelfHealLog(message) {
   // Do not write to physical log file during test runs to avoid polluting it.
-  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === 'test') {    return;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === test') {    return;
   }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
@@ -286,7 +284,7 @@ function appendToSelfHealLog(message) {
 // Trigger the Codex AI fix pipeline via HTTP request
 async function triggerCodexFix(reason) {
   if (!CODEX_TRIGGER_URL) {
-    const warnMsg = 'CODEX_TRIGGER_URL not set. Skipping Codex fix trigger.';'    console.warn(warnMsg);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const warnMsg = CODEX_TRIGGER_URL not set. Skipping Codex fix trigger.';    console.warn(warnMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${warnMsg}\n`);
     return;
   }
@@ -297,11 +295,11 @@ const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
     console.warn(successMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
   } catch {
-    logErrorToProduction('Failed to trigger Codex fix', 'Error occurred');'    appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: Failed to trigger Codex fix: ${err.message}\n`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logErrorToProduction('Failed to trigger Codex fix', Error occurred');    appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: Failed to trigger Codex fix: ${err.message}\n`);
   }
 }
 
-// console.warn('Watchdog script started. Monitoring log files...');appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// console.warn('Watchdog script started. Monitoring log files...');appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
 /**
  * Triggers the self-healing process.
@@ -345,7 +343,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
   if (DISCORD_WEBHOOK_URL) {
     const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build).\n**Command:** \`\`\`${_HEAL_COMMAND}\`\`\``;
     sendDiscordAlert(discordAlertMessage).catch(err => {
-      logErrorToProduction('Failed to send Discord alert', err);'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      logErrorToProduction('Failed to send Discord alert', err);    });
   }
 
   const healCmdLog = `Executing self-heal command: ${_HEAL_COMMAND}`;
@@ -357,7 +355,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
     const executionTimestamp = new Date().toISOString();
     
     if (error) {
-      if (error.killed && error.signal === 'SIGTERM') {        logErrorToProduction('Self-heal command timed out after 10 minutes');'        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (error.killed && error.signal === SIGTERM') {        logErrorToProduction('Self-heal command timed out after 10 minutes');        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
       } else {
         logErrorToProduction(`Self-heal command error: ${error.message}`, error);
         appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
@@ -374,7 +372,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
       appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stdout: ${stdout}\n`);
     }
 
-    const completionMessage = error ? 'Self-heal action completed with errors. Resetting streaks.' : 'Self-heal action completed successfully. Resetting streaks.';'    console.warn(completionMessage);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const completionMessage = error ? Self-heal action completed with errors. Resetting streaks.' : Self-heal action completed successfully. Resetting streaks.';    console.warn(completionMessage);
     appendToSelfHealLog(`[${executionTimestamp}] ${completionMessage}\n`);
 
     // Trigger Codex automation for additional healing steps
@@ -389,7 +387,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
   });
 
   // Handle process errors
-  childProcess.on('error', (err) => {'    logErrorToProduction('Failed to start self-heal command', err);'    appendToSelfHealLog(`[${new Date().toISOString()}] Failed to start self-heal command: ${err.message}\n`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  childProcess.on('error', (err) => {'    logErrorToProduction('Failed to start self-heal command', err);    appendToSelfHealLog(`[${new Date().toISOString()}] Failed to start self-heal command: ${err.message}\n`);
     isHealing = false;
   });
 }
@@ -401,14 +399,14 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
  */
 function monitorSystemResources() {
   if (isHealing) {
-    // Don't check resources if a healing process is already underway'    return;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // Don't check resources if a healing process is already underway'    return;
   }
 
   // Check Memory Usage
   os.memUsage(memUsagePercent => {
     const currentMemoryUsage = 1 - memUsagePercent.freeMemPercentage; // os-utils provides freeMemPercentage
     
-    // Only log memory usage if it's concerning (above 85%)'    if (currentMemoryUsage > 0.85) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // Only log memory usage if it's concerning (above 85%)    if (currentMemoryUsage > 0.85) {
       console.warn(`Current memory usage: ${(currentMemoryUsage * 100).toFixed(2)}%`);
     }
     
@@ -422,7 +420,7 @@ function monitorSystemResources() {
 
   // Check CPU Usage
   os.cpuUsage(cpuUsagePercent => {
-    // Only log CPU usage if it's concerning (above 85%)'    if (cpuUsagePercent > 0.85) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // Only log CPU usage if it's concerning (above 85%)    if (cpuUsagePercent > 0.85) {
       console.warn(`Current CPU usage: ${(cpuUsagePercent * 100).toFixed(2)}%`);
     }
     
@@ -450,13 +448,12 @@ const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}%
   });
 }
 
-
 // --- Main script execution / initialization logic ---
 function startMonitoring() {
   // This function should only be called when running the script directly, not during tests.
-  if (process.env.NODE_ENV === 'test') {    // This check provides an additional layer of safety, though the primary guard'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (process.env.NODE_ENV === test') {    // This check provides an additional layer of safety, though the primary guard
     // is in the `if (require.main === module ...)` block below.
-    console.warn('Test environment detected, skipping startMonitoring() content.');'    return;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.warn('Test environment detected, skipping startMonitoring() content.');    return;
   }
 
   // Ensure only one instance runs
@@ -473,22 +470,22 @@ function startMonitoring() {
   //   - CPU Sustained Checks: ${CPU_SUSTAINED_CHECKS}
   //   - System Check Interval: ${SYSTEM_CHECK_INTERVAL / 1000}s
   //   - Self-Heal Cooldown: ${SELF_HEAL_COOLDOWN / 1000}s
-  //   - Discord Alerts: ${DISCORD_WEBHOOK_URL ? 'Enabled' : 'Disabled'}'  // `);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  //   - Discord Alerts: ${DISCORD_WEBHOOK_URL ? Enabled' : Disabled'}  // `);
 
   // Initialize Tailing Logic for Performance Log File
   if (fs.existsSync(PERF_LOG_FILE)) {
     try {
       const perfTail = new Tail(PERF_LOG_FILE);
-      perfTail.on('line', function(data) {'        if (_PERF_ERROR_REGEX.test(data)) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      perfTail.on('line', function(data) {'        if (_PERF_ERROR_REGEX.test(data)) {
           _perfErrorStreak++;
           // console.warn(`Performance error detected. Streak: ${_perfErrorStreak}`);
           if (_perfErrorStreak >= 3) {
-            triggerSelfHeal('3 consecutive performance errors');'          }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            triggerSelfHeal('3 consecutive performance errors');          }
         } else if (_perfErrorStreak > 0) {
-          // console.warn('Performance log normal. Resetting streak.');          _perfErrorStreak = 0;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          // console.warn('Performance log normal. Resetting streak.');          _perfErrorStreak = 0;
         }
       });
-      perfTail.on('error', function(error) {'        logErrorToProduction(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      perfTail.on('error', function(error) {'        logErrorToProduction(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
       });
       perfTail.watch();
@@ -498,7 +495,7 @@ function startMonitoring() {
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
     }
   } else {
-    const missingPerfLogMsg = `Performance log file not found: ${PERF_LOG_FILE}. Skipping tailing for this file. Ensure 'scripts/perf/monitor.js' is running via a process manager (e.g., PM2).`;'    console.warn(missingPerfLogMsg);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const missingPerfLogMsg = `Performance log file not found: ${PERF_LOG_FILE}. Skipping tailing for this file. Ensure scripts/perf/monitor.js' is running via a process manager (e.g., PM2).`;    console.warn(missingPerfLogMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${missingPerfLogMsg}\n`);
   }
 
@@ -506,16 +503,16 @@ function startMonitoring() {
   if (fs.existsSync(SECURITY_LOG_FILE)) {
     try {
       const securityTail = new Tail(SECURITY_LOG_FILE);
-      securityTail.on('line', function(data) {'        if (_SECURITY_PATCH_REGEX.test(data)) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      securityTail.on('line', function(data) {'        if (_SECURITY_PATCH_REGEX.test(data)) {
           _securityPatchStreak++;
           // console.warn(`Security patch detected. Streak: ${_securityPatchStreak}`);
           if (_securityPatchStreak >= 3) {
-            triggerSelfHeal('3 consecutive security patches');'          }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            triggerSelfHeal('3 consecutive security patches');          }
         } else if (_securityPatchStreak > 0) {
-          // console.warn('Security log normal. Resetting streak.');          _securityPatchStreak = 0;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          // console.warn('Security log normal. Resetting streak.');          _securityPatchStreak = 0;
         }
       });
-      securityTail.on('error', function(error) {'        logErrorToProduction(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      securityTail.on('error', function(error) {'        logErrorToProduction(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
       });
       securityTail.watch();
@@ -525,7 +522,7 @@ function startMonitoring() {
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
     }
   } else {
-    const missingSecLogMsg = `Security log file not found: ${SECURITY_LOG_FILE}. Skipping tailing for this file. Ensure 'scripts/hourly_audit.sh' is running via cron.`;'    console.warn(missingSecLogMsg);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const missingSecLogMsg = `Security log file not found: ${SECURITY_LOG_FILE}. Skipping tailing for this file. Ensure scripts/hourly_audit.sh' is running via cron.`;    console.warn(missingSecLogMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${missingSecLogMsg}\n`);
   }
 
@@ -540,7 +537,7 @@ function startMonitoring() {
 
 // This part runs when the script is executed directly
 // and not when imported as a module (e.g., for testing)
-if (process.env.NODE_ENV !== 'test' && import.meta.url === pathToFileURL(process.argv[1]).href) {'  startMonitoring();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+if (process.env.NODE_ENV !== test' && import.meta.url === pathToFileURL(process.argv[1]).href) {'  startMonitoring();
 }
 
 // --- Exports for Testing ---
@@ -551,26 +548,22 @@ export ;{
   appendToSelfHealLog,
   triggerCodexFix,
   triggerSelfHeal,
-  monitorSystemResources,
+  monitorSystemResources
 };
-;
 export ;const _getStateForTests = undefined; // Unused () => ({
   _perfErrorStreak,
   _securityPatchStreak,
   isHealing,
-  highCpuUsageCount,
+  highCpuUsageCount
 });
-;
 export ;const _setStateForTests = undefined; // Unused (newState) => {
-  if (Object.prototype.hasOwnProperty.call(newState, '_perfErrorStreak')) _perfErrorStreak = newState._perfErrorStreak;'  if (Object.prototype.hasOwnProperty.call(newState, '_securityPatchStreak')) _securityPatchStreak = newState._securityPatchStreak;'  if (Object.prototype.hasOwnProperty.call(newState, 'isHealing')) isHealing = newState.isHealing;'  if (Object.prototype.hasOwnProperty.call(newState, 'highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;'};'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-;
+  if (Object.prototype.hasOwnProperty.call(newState, _perfErrorStreak')) _perfErrorStreak = newState._perfErrorStreak;  if (Object.prototype.hasOwnProperty.call(newState, _securityPatchStreak')) _securityPatchStreak = newState._securityPatchStreak;  if (Object.prototype.hasOwnProperty.call(newState, isHealing')) isHealing = newState.isHealing;  if (Object.prototype.hasOwnProperty.call(newState, highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;};
 export ;const _resetStateForTests = undefined; // Unused () => {
   _perfErrorStreak = 0;
   _securityPatchStreak = 0;
   isHealing = false;
   highCpuUsageCount = 0;
 };
-;
 export ;const _getConstantsForTests = undefined; // Unused () => ({
   BASE_LOG_PATH,
   PERF_LOG_FILE,
@@ -584,5 +577,5 @@ export ;const _getConstantsForTests = undefined; // Unused () => ({
   CPU_SUSTAINED_CHECKS,
   SYSTEM_CHECK_INTERVAL,
   DISCORD_WEBHOOK_URL,
-  CODEX_TRIGGER_URL,
+  CODEX_TRIGGER_URL
 });

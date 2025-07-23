@@ -1,8 +1,8 @@
-import { createClient } from '@supabase/supabase-js';'import type { NextApiRequest, NextApiResponse } from 'next';'import * as Sentry from '@sentry/nextjs';'import { withErrorLogging } from '@/utils/withErrorLogging';'import { ENV_CONFIG } from '@/utils/environmentConfig';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { createClient } from @supabase/supabase-js';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';import { ENV_CONFIG } from @/utils/environmentConfig';
 // 🔐 _SECURITY: Development users from environment variables;
 const getDevUsers = () => {
   // Only load development users in development mode
-  if (process.env.NODE_ENV !== 'development') {'    return [];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (process.env.NODE_ENV !== development') {'    return [];
   }
 
   const devUsers = [];
@@ -17,29 +17,29 @@ const getDevUsers = () => {
 
   if (devUser1Email && devUser1Password) {
     devUsers.push({ 
-      id: 'dev-user-1', '      email: devUser1Email, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      id: dev-user-1',       email: devUser1Email, 
       password: devUser1Password,
-      name: 'Development User 1''    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      name: Development User 1''    });
   }
 
   if (devUser2Email && devUser2Password) {
     devUsers.push({ 
-      id: 'dev-user-2', '      email: devUser2Email, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      id: dev-user-2',       email: devUser2Email, 
       password: devUser2Password,
-      name: 'Development User 2''    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      name: Development User 2''    });
   }
 
   if (devUser3Email && devUser3Password) {
     devUsers.push({ 
-      id: 'dev-user-3', '      email: devUser3Email, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      id: dev-user-3',       email: devUser3Email, 
       password: devUser3Password,
-      name: 'Development User 3''    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      name: Development User 3''    });
   }
 
   // Fallback to basic test users if no env vars are set
   if (devUsers.length === 0) {
     devUsers.push(
-      { id: 'dev-user-1', email: 'dev@example.com', password: 'dev123', name: 'Dev User' },'      { id: 'dev-user-2', email: 'test@example.com', password: 'test123', name: 'Test User' }'    );'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      { id: dev-user-1', email: dev@example.com', password: dev123', name: Dev User' },      { id: dev-user-2', email: test@example.com', password: test123', name: Test User' }    );
   }
 
   return devUsers;
@@ -50,17 +50,17 @@ async function handler(
   res: NextApiResponse
 ) {
   // 🔧 Enable verbose logging (only in development)
-  const isDevelopment = process.env.NODE_ENV === 'development';'  '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  if (req.method !== 'POST') {'    return res.status(405).json({ error: 'Method not allowed' });'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const isDevelopment = process.env.NODE_ENV === development';  
+  if (req.method !== POST') {'    return res.status(405).json({ error: Method not allowed' });  }
 
-  const { email, password } = req['body'] as { email?: unknown, password?: unknown };''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const { email, password } = req['body'] as { email?: unknown, password?: unknown };
   if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required' });'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    return res.status(400).json({ error: Email and password are required' });  }
 
   // Check if Supabase is configured
   if (!ENV_CONFIG.supabase.isConfigured) {
     if (isDevelopment) {
-      console.warn('🔧 LOGIN TRACE: Supabase not configured - using development authentication');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.warn('🔧 LOGIN TRACE: Supabase not configured - using development authentication');    }
     
     // 🔐 SECURITY: Use environment-based development authentication
     const devUsers = getDevUsers();
@@ -68,7 +68,7 @@ async function handler(
     
     if (user) {
       if (isDevelopment) {
-        console.warn('🔧 LOGIN TRACE: Development user authenticated successfully');'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.warn('🔧 LOGIN TRACE: Development user authenticated successfully');      }
       return res.status(200).json({
         user: {
           id: user.id,
@@ -77,11 +77,11 @@ async function handler(
           email_verified: true,
           created_at: new Date().toISOString()
         },
-        message: 'Development authentication successful''      });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        message: Development authentication successful''      });
     } else {
       if (isDevelopment) {
-        console.warn('🔧 LOGIN TRACE: Development authentication failed');'        console.warn('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      return res.status(401).json({ error: 'Invalid credentials' });'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.warn('🔧 LOGIN TRACE: Development authentication failed');        console.warn('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));      }
+      return res.status(401).json({ error: Invalid credentials' });    }
   }
 
   try {
@@ -92,20 +92,20 @@ async function handler(
     );
 
     if (isDevelopment) {
-      console.warn('🔧 LOGIN TRACE: Attempting Supabase authentication');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.warn('🔧 LOGIN TRACE: Attempting Supabase authentication');    }
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
-      password,
+      password
     });
 
     if (error) {
       if (isDevelopment) {
-        console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);      }
       
       if (ENV_CONFIG.sentry.isConfigured) {
         Sentry.captureException(error, {
-          tags: { context: 'login_api' },'          extra: { email }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          tags: { context: login_api' },          extra: { email }
         });
       }
       
@@ -114,30 +114,30 @@ async function handler(
 
     if (!data.user) {
       if (isDevelopment) {
-        console.error('🔧 LOGIN TRACE: No user data returned from Supabase');'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      return res.status(401).json({ error: 'Authentication failed' });'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.error('🔧 LOGIN TRACE: No user data returned from Supabase');      }
+      return res.status(401).json({ error: Authentication failed' });    }
 
     if (isDevelopment) {
-      console.warn('🔧 LOGIN TRACE: Supabase authentication successful');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.warn('🔧 LOGIN TRACE: Supabase authentication successful');    }
     
     return res.status(200).json({
       user: data.user,
       session: data.session,
-      message: 'Authentication successful''    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      message: Authentication successful''    });
 
   } catch {
     if (isDevelopment) {
-      console.('🔧 LOGIN TRACE: Unexpected  during authentication:', );'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.('🔧 LOGIN TRACE: Unexpected  during authentication:', );    }
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {
-        tags: { context: 'login_api_unexpected' },'        extra: { email }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        tags: { context: login_api_unexpected' },        extra: { email }
       });
     }
     let details: string | undefined = undefined;
-    if (ENV_CONFIG.app.isDevelopment && error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {'      details = (error as { message: string }).message;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    if (ENV_CONFIG.app.isDevelopment && error && typeof error === object' && message' in error && typeof (error as { message?: unknown }).message === string') {'      details = (error as { message: string }).message;
     }
     return res.status(500).json({ 
-      error: 'Internal server error','      details'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      error: Internal server error',      details
     });
   }
 }

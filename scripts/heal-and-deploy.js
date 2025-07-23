@@ -5,13 +5,13 @@
  * Comprehensive system that fixes issues and triggers deployment
  */
 
-const fs = require('fs')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const { execSync, spawn } = require('child_process')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const AutoFixSystem = require('./auto-fix-errors')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const AutoFixSystem = require('./auto-fix-errors')
 class HealAndDeploy {
   constructor() {
-    this.logFile = 'logs/heal-and-deploy.log';'    this.ensureLogDirectory();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.logFile = logs/heal-and-deploy.log';    this.ensureLogDirectory();
     this.fixesApplied = [];
     this.deploymentStatus = null;
   }
@@ -23,13 +23,13 @@ class HealAndDeploy {
     }
   }
 
-  log(message, level = 'INFO') {'    const timestamp = new Date().toISOString()'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  log(message, level = INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
-    fs.appendFileSync(this.logFile, logMessage + '\n');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    fs.appendFileSync(this.logFile, logMessage + \n');  }
 
   async run() {
-    this.log('Starting heal and deploy process...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Starting heal and deploy process...');    
     try {
       // Step 1: Pre-deployment health check
       await this.preDeploymentCheck();
@@ -52,14 +52,14 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
       // Step 7: Post-deployment verification
       await this.postDeploymentVerification();
       
-      this.log('Heal and deploy process completed successfully');      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Heal and deploy process completed successfully');      
     } catch (error) {
-      this.log(`Heal and deploy process failed: ${error.message}`, 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log(`Heal and deploy process failed: ${error.message}`, ERROR');      throw error;
     }
   }
 
   async preDeploymentCheck() {
-    this.log('Running pre-deployment health check...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Running pre-deployment health check...')
 const checks = [
       this.checkEnvironmentVariables(),
       this.checkDependencies(),
@@ -69,14 +69,14 @@ const checks = [
 const results = await Promise.allSettled(checks);
     
     results.forEach((result, index) => {
-      if (result.status === 'rejected') {        this.log(`Pre-deployment check ${index + 1} failed: ${result.reason}`, 'ERROR');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (result.status === rejected') {        this.log(`Pre-deployment check ${index + 1} failed: ${result.reason}`, ERROR');      }
     });
   }
 
   async checkEnvironmentVariables() {
-    this.log('Checking environment variables...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Checking environment variables...')
 const requiredEnvVars = [
-      'NEXT_PUBLIC_SUPABASE_URL','      'NEXT_PUBLIC_SUPABASE_ANON_KEY','      'NEXT_PUBLIC_REOWN_PROJECT_ID''    ]'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      NEXT_PUBLIC_SUPABASE_URL',NEXT_PUBLIC_SUPABASE_ANON_KEY',NEXT_PUBLIC_REOWN_PROJECT_ID''    ]
 const missingVars = [];
     
     for (const envVar of requiredEnvVars) {
@@ -86,64 +86,64 @@ const missingVars = [];
     }
 
     if (missingVars.length > 0) {
-      this.log(`Missing environment variables: ${missingVars.join(', ')}`, 'WARN');'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log(`Missing environment variables: ${missingVars.join(', )}`, WARN');      
       // Create or update .env.local with placeholders
       const envContent = `# Auto-generated environment file
-NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || 'your_supabase_url_here'}'NEXT_PUBLIC_SUPABASE_ANON_KEY=${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'your_supabase_anon_key_here'}'NEXT_PUBLIC_REOWN_PROJECT_ID=${process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || 'your_reown_project_id_here'}'`;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      fs.writeFileSync('.env.local', envContent);      this.log('Created .env.local file with available values');    } else {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log('All required environment variables are set');    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || your_supabase_url_here'}NEXT_PUBLIC_SUPABASE_ANON_KEY=${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || your_supabase_anon_key_here'}NEXT_PUBLIC_REOWN_PROJECT_ID=${process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || your_reown_project_id_here'}`;
+      fs.writeFileSync('.env.local', envContent);      this.log('Created .env.local file with available values');    } else {
+      this.log('All required environment variables are set');    }
   }
 
   async checkDependencies() {
-    this.log('Checking dependencies...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Checking dependencies...');    
     try {
       // Check for outdated packages
-      const outdatedOutput = execSync('npm outdated --json', { encoding: 'utf8', stdio: 'pipe' });'      const outdated = JSON.parse(outdatedOutput);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const outdatedOutput = execSync('npm outdated --json', { encoding: utf8', stdio: pipe' });      const outdated = JSON.parse(outdatedOutput);
       
       if (Object.keys(outdated).length > 0) {
-        this.log('Outdated dependencies found', 'WARN');        this.log(`Outdated packages: ${Object.keys(outdated).join(', ')}`);'      } else {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        this.log('All dependencies are up to date');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Outdated dependencies found', WARN');        this.log(`Outdated packages: ${Object.keys(outdated).join(', )}`);      } else {
+        this.log('All dependencies are up to date');      }
     } catch (error) {
       // npm outdated exits with code 1 when there are outdated packages
-      this.log('Dependencies check completed');    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Dependencies check completed');    }
   }
 
   async checkConfiguration() {
-    this.log('Checking configuration files...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Checking configuration files...');    
     // Check tsconfig.json
-    if (fs.existsSync('tsconfig.json')) {'      try {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));'        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    if (fs.existsSync('tsconfig.json')) {'      try {
+        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', utf8'));        
         if (!tsConfig.compilerOptions) {
-          this.log('tsconfig.json missing compilerOptions', 'WARN');        }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          this.log('tsconfig.json missing compilerOptions', WARN');        }
         
         if (!tsConfig.compilerOptions.strict) {
-          this.log('TypeScript strict mode is disabled', 'WARN');        }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          this.log('TypeScript strict mode is disabled', WARN');        }
       } catch (error) {
-        this.log('Invalid tsconfig.json', 'ERROR');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Invalid tsconfig.json', ERROR');      }
     }
     
     // Check package.json
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));      
       if (!packageJson.scripts || !packageJson.scripts.build) {
-        this.log('Missing build script in package.json', 'ERROR');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Missing build script in package.json', ERROR');      }
     } catch (error) {
-      this.log('Invalid package.json', 'ERROR');    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Invalid package.json', ERROR');    }
   }
 
   async checkGitStatus() {
-    this.log('Checking git status...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Checking git status...');    
     try {
-      const status = execSync('git status --porcelain', { encoding: 'utf8' });'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const status = execSync('git status --porcelain', { encoding: utf8' });      
       if (status.trim()) {
-        this.log('Uncommitted changes detected', 'WARN');        this.log('Changes:', status);      } else {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        this.log('Working directory is clean');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Uncommitted changes detected', WARN');        this.log('Changes:', status);      } else {
+        this.log('Working directory is clean');      }
     } catch (error) {
-      this.log('Git status check failed', 'ERROR');    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Git status check failed', ERROR');    }
   }
 
   async applyAutoFixes() {
-    this.log('Applying auto-fixes...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Applying auto-fixes...');    
     try {
       const autoFix = new AutoFixSystem();
       await autoFix.run();
@@ -152,13 +152,13 @@ NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || 'your_supabas
         this.fixesApplied.push(...autoFix.fixesApplied);
       }
       
-      this.log('Auto-fixes applied successfully');    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log(`Auto-fix failed: ${error.message}`, 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Auto-fixes applied successfully');    } catch (error) {
+      this.log(`Auto-fix failed: ${error.message}`, ERROR');      throw error;
     }
   }
 
   async runQualityChecks() {
-    this.log('Running quality checks...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Running quality checks...')
 const checks = [
       this.runLinting(),
       this.runTypeCheck(),
@@ -168,75 +168,75 @@ const results = await Promise.allSettled(checks);
     
     let hasFailures = false;
     results.forEach((result, index) => {
-      if (result.status === 'rejected' || result.value === false) {        this.log(`Quality check ${index + 1} failed`, 'ERROR');        hasFailures = true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      if (result.status === rejected' || result.value === false) {        this.log(`Quality check ${index + 1} failed`, ERROR');        hasFailures = true;
       }
     });
 
     if (hasFailures) {
-      throw new Error('Quality checks failed');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      throw new Error('Quality checks failed');    }
   }
 
   async runLinting() {
     try {
-      this.log('Running ESLint...');      execSync('npm run lint:fix', { stdio: 'inherit' });'      this.log('ESLint passed');      return true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Running ESLint...');      execSync('npm run lint:fix', { stdio: inherit' });      this.log('ESLint passed');      return true;
     } catch (error) {
-      this.log('ESLint failed', 'ERROR');      return false;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('ESLint failed', ERROR');      return false;
     }
   }
 
   async runTypeCheck() {
     try {
-      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: 'inherit' });'      this.log('TypeScript type check passed');      return true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: inherit' });      this.log('TypeScript type check passed');      return true;
     } catch (error) {
-      this.log('TypeScript type check failed', 'ERROR');      return false;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('TypeScript type check failed', ERROR');      return false;
     }
   }
 
   async runSecurityAudit() {
     try {
-      this.log('Running security audit...');      execSync('npm audit --audit-level=moderate', { stdio: 'inherit' });'      this.log('Security audit passed');      return true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Running security audit...');      execSync('npm audit --audit-level=moderate', { stdio: inherit' });      this.log('Security audit passed');      return true;
     } catch (error) {
-      this.log('Security audit failed', 'ERROR');      return false;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Security audit failed', ERROR');      return false;
     }
   }
 
   async buildApplication() {
-    this.log('Building application...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Building application...');    
     return new Promise((resolve, reject) => {
-      const buildProcess = spawn('npm', ['run', 'build'], {'        stdio: ['pipe', 'pipe', 'pipe'],'        timeout: 300000 // 5 minutes'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const buildProcess = spawn('npm', ['run', build'], {'        stdio: ['pipe', pipe', pipe'],        timeout: 300000 // 5 minutes
       });
 
-      let output = '';'      let errorOutput = '';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      buildProcess.stdout.on('data', (data) => {'        output += data.toString();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      let output = ;      let errorOutput = ;
+      buildProcess.stdout.on('data', (data) => {'        output += data.toString();
         process.stdout.write(data);
       });
 
-      buildProcess.stderr.on('data', (data) => {'        errorOutput += data.toString();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      buildProcess.stderr.on('data', (data) => {'        errorOutput += data.toString();
         process.stderr.write(data);
       });
 
-      buildProcess.on('close', (code) => {'        if (code === 0) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          this.log('Build completed successfully');          resolve();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      buildProcess.on('close', (code) => {'        if (code === 0) {
+          this.log('Build completed successfully');          resolve();
         } else {
-          this.log(`Build failed with code ${code}`, 'ERROR');          reject(new Error(`Build failed: ${errorOutput}`));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          this.log(`Build failed with code ${code}`, ERROR');          reject(new Error(`Build failed: ${errorOutput}`));
         }
       });
 
-      buildProcess.on('error', (error) => {'        this.log(`Build process error: ${error.message}`, 'ERROR');        reject(error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      buildProcess.on('error', (error) => {'        this.log(`Build process error: ${error.message}`, ERROR');        reject(error);
       });
     });
   }
 
   async runTests() {
-    this.log('Running tests...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Running tests...');    
     try {
-      execSync('npm test', { stdio: 'inherit' });'      this.log('Tests passed');    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log('Tests failed', 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      execSync('npm test', { stdio: inherit' });      this.log('Tests passed');    } catch (error) {
+      this.log('Tests failed', ERROR');      throw error;
     }
   }
 
   async deploy() {
-    this.log('Starting deployment...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Starting deployment...');    
     try {
       // Commit changes if any fixes were applied
       if (this.fixesApplied.length > 0) {
@@ -246,17 +246,17 @@ const results = await Promise.allSettled(checks);
       // Trigger deployment
       await this.triggerDeployment();
       
-      this.log('Deployment initiated successfully');    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log(`Deployment failed: ${error.message}`, 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Deployment initiated successfully');    } catch (error) {
+      this.log(`Deployment failed: ${error.message}`, ERROR');      throw error;
     }
   }
 
   async commitChanges() {
     try {
-      const commitMessage = `Auto-heal: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      execSync('git add .', { stdio: 'inherit' });'      execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });'      execSync('git push', { stdio: 'inherit' });'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log('Changes committed and pushed successfully');    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      this.log(`Failed to commit changes: ${error.message}`, 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const commitMessage = `Auto-heal: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;      
+      execSync('git add .', { stdio: inherit' });      execSync(`git commit -m "${commitMessage}"`, { stdio: inherit' });      execSync('git push', { stdio: inherit' });      
+      this.log('Changes committed and pushed successfully');    } catch (error) {
+      this.log(`Failed to commit changes: ${error.message}`, ERROR');      throw error;
     }
   }
 
@@ -264,27 +264,27 @@ const results = await Promise.allSettled(checks);
     try {
       // Try Netlify CLI first
       try {
-        execSync('netlify --version', { stdio: 'pipe' });'        execSync('netlify deploy --prod', { stdio: 'inherit' });'        this.log('Deployment triggered via Netlify CLI');        this.deploymentStatus = 'netlify-cli';'      } catch (netlifyError) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        execSync('netlify --version', { stdio: pipe' });        execSync('netlify deploy --prod', { stdio: inherit' });        this.log('Deployment triggered via Netlify CLI');        this.deploymentStatus = netlify-cli';      } catch (netlifyError) {
         // Fallback to git push for Netlify auto-deploy
-        this.log('Netlify CLI not available, using git push for auto-deploy');        execSync('git push', { stdio: 'inherit' });'        this.log('Git push completed, Netlify auto-deploy should trigger');        this.deploymentStatus = 'git-push';'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Netlify CLI not available, using git push for auto-deploy');        execSync('git push', { stdio: inherit' });        this.log('Git push completed, Netlify auto-deploy should trigger');        this.deploymentStatus = git-push';      }
     } catch (error) {
-      this.log(`Failed to trigger deployment: ${error.message}`, 'ERROR');      throw error;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log(`Failed to trigger deployment: ${error.message}`, ERROR');      throw error;
     }
   }
 
   async postDeploymentVerification() {
-    this.log('Running post-deployment verification...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.log('Running post-deployment verification...');    
     // Wait a bit for deployment to start
     await new Promise(resolve => setTimeout(resolve, 10000));
     
     try {
       // Check if the site is accessible
-      const response = await fetch('https://ziontechgroup.netlify.app/api/health');'      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const response = await fetch('https://ziontechgroup.netlify.app/api/health');      
       if (response.ok) {
-        this.log('Post-deployment verification passed');      } else {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        this.log('Post-deployment verification failed', 'WARN');      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('Post-deployment verification passed');      } else {
+        this.log('Post-deployment verification failed', WARN');      }
     } catch (error) {
-      this.log('Post-deployment verification failed', 'WARN');    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.log('Post-deployment verification failed', WARN');    }
   }
 
   getDeploymentStatus() {
@@ -301,7 +301,7 @@ if (require.main === module) {
   const healer = new HealAndDeploy();
   
   healer.run().catch(error => {
-    console.error('Heal and deploy failed:', error);    process.exit(1);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.error('Heal and deploy failed:', error);    process.exit(1);
   });
 }
 

@@ -7,7 +7,7 @@ class SyntaxErrorFixer {
     this.errors = [];
   }
 
-  log(message, level = 'info') {
+  log(message, level = info') {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -26,12 +26,12 @@ class SyntaxErrorFixer {
       
       this.log(`Syntax error fixing completed. Fixed ${this.fixedFiles.length} files.`);
       if (this.errors.length > 0) {
-        this.log(`Encountered ${this.errors.length} errors during fixing.`, 'warn');
-        this.errors.forEach(error => this.log(`Error: ${error}`, 'error'));
+        this.log(`Encountered ${this.errors.length} errors during fixing.`, warn');
+        this.errors.forEach(error => this.log(`Error: ${error}`, error'));
       }
       
     } catch (error) {
-      this.log(`Failed to fix syntax errors: ${error.message}`, 'error');
+      this.log(`Failed to fix syntax errors: ${error.message}`, error');
       throw error;
     }
   }
@@ -54,7 +54,7 @@ class SyntaxErrorFixer {
       }
     } catch (error) {
       // Skip directories that can't be read
-      this.log(`Skipping directory ${dir}: ${error.message}`, 'warn');
+      this.log(`Skipping directory ${dir}: ${error.message}`, warn');
     }
     
     return files;
@@ -62,28 +62,28 @@ class SyntaxErrorFixer {
 
   shouldProcessFile(filePath) {
     const ext = path.extname(filePath).toLowerCase();
-    return ['.js', '.ts', '.jsx', '.tsx'].includes(ext) && 
+    return ['.js', .ts', .jsx', .tsx'].includes(ext) && 
            !filePath.includes('node_modules') &&
            !filePath.includes('.git');
   }
 
   async fixFile(filePath) {
     try {
-      let content = await fs.readFile(filePath, 'utf8');
+      let content = await fs.readFile(filePath, utf8');
       let originalContent = content;
       let needsFix = false;
 
       // Fix the specific syntax error pattern we found
-      if (content.includes("'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")) {
+      if (content.includes("")) {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         needsFix = true;
-        content = content.replace(/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/g, '');
+        content = content.replace(//g, );
       }
 
       // Fix other common syntax errors
       content = this.fixCommonSyntaxErrors(content);
 
       if (needsFix || content !== originalContent) {
-        await fs.writeFile(filePath, content, 'utf8');
+        await fs.writeFile(filePath, content, utf8');
         this.fixedFiles.push(filePath);
         this.log(`Fixed syntax errors in: ${filePath}`);
       }
@@ -94,29 +94,29 @@ class SyntaxErrorFixer {
   }
 
   fixCommonSyntaxErrors(content) {
-    // Fix export syntax errors
-    content = content.replace(/export\s*;default/g, 'export default');
+    // Fix export ;syntax errors
+    content = content.replace(/export\s*;default/g, export ;default');
     
     // Fix import syntax errors
-    content = content.replace(/import\s*;default/g, 'import default');
+    content = content.replace(/import\s*;default/g, import default');
     
     // Fix semicolon issues
-    content = content.replace(/;\s*;/g, ';');
+    content = content.replace(/;\s*;/g, ;);
     
     // Fix quote issues
-    content = content.replace(/'\s*'/g, "''");
-    content = content.replace(/"\s*"/g, '""');
+    content = content.replace(/'\s*'/g, "''");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    content = content.replace(/"\s*"/g, ""');
     
     // Fix bracket issues
-    content = content.replace(/\(\s*\)/g, '()');
-    content = content.replace(/\[\s*\]/g, '[]');
-    content = content.replace(/\{\s*\}/g, '{}');
+    content = content.replace(/\(\s*\)/g, ());
+    content = content.replace(/\[\s*\]/g, []);
+    content = content.replace(/\{\s*\}/g, {});
     
     // Fix trailing commas
-    content = content.replace(/,(\s*[}\]])/g, '$1');
+    content = content.replace(/,(\s*[}\]])/g, $1');
     
     // Fix multiple newlines
-    content = content.replace(/\n\s*\n\s*\n/g, '\n\n');
+    content = content.replace(/\n\s*\n\s*\n/g, \n\n');
     
     return content;
   }
@@ -133,7 +133,7 @@ class SyntaxErrorFixer {
           this.log(`✅ ${file} - Syntax valid`);
         }
       } catch (error) {
-        this.log(`❌ ${file} - Still has syntax errors: ${error.message}`, 'error');
+        this.log(`❌ ${file} - Still has syntax errors: ${error.message}`, error');
       }
     }
   }

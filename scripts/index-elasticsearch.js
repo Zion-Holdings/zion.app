@@ -1,8 +1,8 @@
-import { Client } from '@elastic/elasticsearch';'import { NEW_PRODUCTS } from '../src/data/newProductsData.js';'import { NEW_SERVICES } from '../src/data/newServicesData.js';'import { MOCK_TALENTS } from '../src/data/mockTalents.js';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { Client } from @elastic/elasticsearch';import { NEW_PRODUCTS } from ../src/data/newProductsData.js';import { NEW_SERVICES } from ../src/data/newServicesData.js';import { MOCK_TALENTS } from ../src/data/mockTalents.js';
 const { ELASTIC_CLOUD_ID, ELASTIC_API_KEY } = process.env;
 
 if (!ELASTIC_CLOUD_ID || !ELASTIC_API_KEY) {
-  console.error('Missing ELASTIC_CLOUD_ID or ELASTIC_API_KEY');  process.exit(1);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.error('Missing ELASTIC_CLOUD_ID or ELASTIC_API_KEY');  process.exit(1);
 }
 
 const client = new Client({
@@ -13,27 +13,27 @@ const client = new Client({
 async function run() {
   const docs = [];
   for (const p of NEW_PRODUCTS) {
-    docs.push({ id: `product-${p.id}`, title: p.title, description: p.description, type: 'product' });  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    docs.push({ id: `product-${p.id}`, title: p.title, description: p.description, type: product' });  }
   for (const s of NEW_SERVICES) {
-    docs.push({ id: `service-${s.id}`, title: s.title, description: s.description, type: 'service' });  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    docs.push({ id: `service-${s.id}`, title: s.title, description: s.description, type: service' });  }
   for (const t of MOCK_TALENTS) {
-    docs.push({ id: `talent-${t.id}`, title: t.name, description: t.title, type: 'talent' });  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    docs.push({ id: `talent-${t.id}`, title: t.name, description: t.title, type: talent' });  }
 
   await client.indices.create({
-    index: 'listings','    mappings: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    index: listings',    mappings: {
       properties: {
-        title: { type: 'text' },'        description: { type: 'text' },'        type: { type: 'keyword' },'        suggest: { type: 'completion' }'      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        title: { type: text' },        description: { type: text' },        type: { type: keyword' },        suggest: { type: completion' }      }
     }
   }, { ignore: [400] })
 const body = docs.flatMap(doc => [
-    { index: { _index: 'listings', _id: doc.id } },'    { ...doc, suggest: { input: [doc.title] } }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    { index: { _index: listings', _id: doc.id } },    { ...doc, suggest: { input: [doc.title] } }
   ])
 const resp = await client.bulk({ refresh: true, body });
   if (resp.errors) {
-    console.error('Some documents failed to index');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.error('Some documents failed to index');  }
   console.warn(`Indexed ${docs.length} documents`);
 }
 
 run().catch(err => {
-  console.error('Indexing error', err);  process.exit(1);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.error('Indexing error', err);  process.exit(1);
 });

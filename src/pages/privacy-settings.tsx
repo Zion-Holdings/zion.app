@@ -1,9 +1,7 @@
-import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-export ;default function privacy-settings() {
+import React from react';
+
+export default function PrivacySettings() {
   return (
-    <div>
-      <h1>privacy-settings</h1>
-      <p>Component placeholder</p>
-    </div>
-  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    <div>Privacy Settings</div>
+  );
+}

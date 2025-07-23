@@ -1,9 +1,7 @@
-import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-export ;default function ApiGettingStarted() {
+import React from react';
+
+export default function ApiGettingStarted() {
   return (
-    <div>
-      <h1>ApiGettingStarted</h1>
-      <p>Component placeholder</p>
-    </div>
-  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    <div>API Getting Started</div>
+  );
+}

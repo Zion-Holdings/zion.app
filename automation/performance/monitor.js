@@ -1,7 +1,7 @@
-const fs = require('fs').promises'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const axios = require('axios')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const { performance } = require('perf_hooks')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs').promises
+const path = require('path')
+const axios = require('axios')
+const { performance } = require('perf_hooks')
 class PerformanceMonitor {
   constructor() {
     this.isMonitoring = false;
@@ -12,12 +12,12 @@ class PerformanceMonitor {
 
   async start() {
     if (this.isMonitoring) {
-      console.warn('Performance monitor already running');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.warn('Performance monitor already running');
       return;
     }
 
     this.isMonitoring = true;
-    console.log('📊 Performance monitor started');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('📊 Performance monitor started');
 
     // Start monitoring loop
     this.interval = setInterval(() => {
@@ -31,7 +31,7 @@ class PerformanceMonitor {
       this.interval = null;
     }
     this.isMonitoring = false;
-    console.log('🛑 Performance monitor stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🛑 Performance monitor stopped');
   }
 
   async collectMetrics() {
@@ -51,9 +51,9 @@ class PerformanceMonitor {
         this.history = this.history.slice(-1000);
       }
 
-      console.log('📈 Metrics collected:', metrics);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('📈 Metrics collected:', metrics);
     } catch (error) {
-      console.error('Error collecting metrics:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.error('Error collecting metrics:', error);
     }
   }
 

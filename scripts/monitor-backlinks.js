@@ -1,20 +1,20 @@
 #!/usr/bin/env node;
-import fs from 'fs';'import path from 'path';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import fs from fs';import path from path';
 const {
   BACKLINK_API_URL: apiUrl,
   BACKLINK_API_KEY: apiKey
 } = process.env;
 
 if (!apiUrl || !apiKey) {
-  console.error('Missing BACKLINK_API_URL or BACKLINK_API_KEY');  process.exit(1);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.error('Missing BACKLINK_API_URL or BACKLINK_API_KEY');  process.exit(1);
 }
 
-const DATA_DIR = path.join(process.cwd(), 'seo');'const DATA_FILE = path.join(DATA_DIR, 'backlinks.json')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const REPORT_FILE = path.join(DATA_DIR, 'backlink-report.json');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const DATA_DIR = path.join(process.cwd(), seo');const DATA_FILE = path.join(DATA_DIR, backlinks.json')
+const REPORT_FILE = path.join(DATA_DIR, backlink-report.json');
 async function fetchBacklinks() {
   const res = await fetch(apiUrl, {
     headers: {
-      'Authorization': `Bearer ${apiKey}`,'      'Accept': 'application/json''    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      Authorization': `Bearer ${apiKey}`,Accept': application/json''    }
   });
   if (!res.ok) throw new Error(`Backlink API error: ${res.status} ${res.statusText}`);
   return res.json();
@@ -22,7 +22,7 @@ async function fetchBacklinks() {
 
 function loadBacklinks(file) {
   if (fs.existsSync(file)) {
-    return JSON.parse(fs.readFileSync(file, 'utf8'));'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    return JSON.parse(fs.readFileSync(file, utf8'));  }
   return [];
 }
 
@@ -46,7 +46,7 @@ const lost = [];
 }
 
 function findToxicLinks(links) {
-  return links.filter(l => typeof l.spamScore === 'number' && l.spamScore >= 50);}'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  return links.filter(l => typeof l.spamScore === number' && l.spamScore >= 50);}
 
 async function main() {
   const latest = await fetchBacklinks()

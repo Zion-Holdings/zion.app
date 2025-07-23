@@ -5,8 +5,8 @@ export ;const vi = {
   clearAllMocks: jest.clearAllMocks.bind(jest),
   restoreAllMocks: jest.restoreAllMocks.bind(jest),
   stubGlobal: (key: string, _value: unknown) => {
-    // @ts-expect-error: dynamic global property assignment - TypeScript doesn't allow dynamic global object key assignment'    global[key] = value;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  },
+    // @ts-expect-error: dynamic global property assignment - TypeScript doesn't allow dynamic global object key assignment'    global[key] = value;
+  }
 };
 export ;const describe = (global as any).describe;
 export ;const it = (global as any).it;

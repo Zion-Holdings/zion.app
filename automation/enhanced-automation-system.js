@@ -8,14 +8,14 @@ const crypto = require('crypto');
 class EnhancedAutomationSystem {
     constructor() {
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, 'logs', 'enhanced-automation.log');
+        this.logFile = path.join(__dirname, logs', enhanced-automation.log');
         this.ensureLogDirectory();
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, 'config.json');
+        const configPath = path.join(__dirname, config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            return JSON.parse(fs.readFileSync(configPath, utf8'));
         }
         return {
             autonomousMode: true,
@@ -23,7 +23,7 @@ class EnhancedAutomationSystem {
             autoCommitEnabled: true,
             autoPushEnabled: true,
             maxRetries: 3,
-            logLevel: 'info'
+            logLevel: info
         };
     }
 
@@ -34,7 +34,7 @@ class EnhancedAutomationSystem {
         }
     }
 
-    log(message, level = 'info') {
+    log(message, level = info') {
         const timestamp = new Date().toISOString();
         const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
         
@@ -45,25 +45,25 @@ class EnhancedAutomationSystem {
     async runCommand(command, options = {}) {
         return new Promise((resolve, reject) => {
             const child = spawn(command, options.args || [], {
-                stdio: 'pipe',
+                stdio: pipe',
                 shell: true,
                 ...options
             });
 
-            let stdout = '';
-            let stderr = '';
+            let stdout = ;
+            let stderr = ;
 
             child.stdout.on('data', (data) => {
                 stdout += data.toString();
                 if (options.logOutput !== false) {
-                    this.log(data.toString().trim(), 'debug');
+                    this.log(data.toString().trim(), debug');
                 }
             });
 
             child.stderr.on('data', (data) => {
                 stderr += data.toString();
                 if (options.logOutput !== false) {
-                    this.log(data.toString().trim(), 'warn');
+                    this.log(data.toString().trim(), warn');
                 }
             });
 
@@ -97,7 +97,7 @@ class EnhancedAutomationSystem {
             this.log('✅ Pre-commit checks completed successfully');
             return true;
         } catch (error) {
-            this.log(`❌ Pre-commit failed: ${error.message}`, 'error');
+            this.log(`❌ Pre-commit failed: ${error.message}`, error');
             return false;
         }
     }
@@ -118,7 +118,7 @@ class EnhancedAutomationSystem {
             this.log('✅ Pre-push checks completed successfully');
             return true;
         } catch (error) {
-            this.log(`❌ Pre-push failed: ${error.message}`, 'error');
+            this.log(`❌ Pre-push failed: ${error.message}`, error');
             return false;
         }
     }
@@ -139,7 +139,7 @@ class EnhancedAutomationSystem {
             this.log('✅ Post-commit improvements completed');
             return true;
         } catch (error) {
-            this.log(`❌ Post-commit improvements failed: ${error.message}`, 'error');
+            this.log(`❌ Post-commit improvements failed: ${error.message}`, error');
             return false;
         }
     }
@@ -151,13 +151,13 @@ class EnhancedAutomationSystem {
         const conventionalCommitRegex = /^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?: .+/;
         
         if (!conventionalCommitRegex.test(message)) {
-            this.log('⚠️  Commit message does not follow conventional format', 'warn');
+            this.log('⚠️  Commit message does not follow conventional format', warn');
             return false;
         }
         
         // Check message length
         if (message.length > 72) {
-            this.log('⚠️  Commit message is too long', 'warn');
+            this.log('⚠️  Commit message is too long', warn');
             return false;
         }
         
@@ -181,17 +181,17 @@ class EnhancedAutomationSystem {
         
         // Add emoji based on commit type
         const emojiMap = {
-            feat: '✨',
-            fix: '🐛',
-            docs: '📚',
-            style: '🎨',
-            refactor: '♻️',
-            test: '🧪',
-            chore: '🔧',
-            perf: '⚡',
-            ci: '👷',
-            build: '📦',
-            revert: '⏪'
+            feat: ✨',
+            fix: 🐛',
+            docs: 📚',
+            style: 🎨',
+            refactor: ♻️',
+            test: 🧪',
+            chore: 🔧',
+            perf: ⚡',
+            ci: 👷',
+            build: 📦',
+            revert: ⏪
         };
         
         const typeMatch = message.match(/^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)/);
@@ -216,12 +216,12 @@ class EnhancedAutomationSystem {
             stats: await this.getCommitStats()
         };
         
-        const metadataFile = path.join(__dirname, 'data', 'commit-metadata.json');
+        const metadataFile = path.join(__dirname, data', commit-metadata.json');
         this.ensureDirectory(path.dirname(metadataFile));
         
         let existingMetadata = [];
         if (fs.existsSync(metadataFile)) {
-            existingMetadata = JSON.parse(fs.readFileSync(metadataFile, 'utf8'));
+            existingMetadata = JSON.parse(fs.readFileSync(metadataFile, utf8'));
         }
         
         existingMetadata.push(metadata);
@@ -234,13 +234,13 @@ class EnhancedAutomationSystem {
     async updateCommitMetadata(hash, message) {
         this.log('📊 Updating commit metadata...');
         
-        const metadataFile = path.join(__dirname, 'data', 'commit-metadata.json');
+        const metadataFile = path.join(__dirname, data', commit-metadata.json');
         if (!fs.existsSync(metadataFile)) {
-            this.log('⚠️  No existing metadata found', 'warn');
+            this.log('⚠️  No existing metadata found', warn');
             return;
         }
         
-        const metadata = JSON.parse(fs.readFileSync(metadataFile, 'utf8'));
+        const metadata = JSON.parse(fs.readFileSync(metadataFile, utf8'));
         const commitIndex = metadata.findIndex(c => c.hash === hash);
         
         if (commitIndex !== -1) {
@@ -265,7 +265,7 @@ class EnhancedAutomationSystem {
             security: await this.getSecurityMetrics()
         };
         
-        const reportFile = path.join(__dirname, 'reports', `commit-${hash.substring(0, 8)}.json`);
+        const reportFile = path.join(__dirname, reports', `commit-${hash.substring(0, 8)}.json`);
         this.ensureDirectory(path.dirname(reportFile));
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
         
@@ -292,7 +292,7 @@ class EnhancedAutomationSystem {
             this.log('✅ Deployment preparation completed');
             return true;
         } catch (error) {
-            this.log(`❌ Deployment preparation failed: ${error.message}`, 'error');
+            this.log(`❌ Deployment preparation failed: ${error.message}`, error');
             return false;
         }
     }
@@ -313,7 +313,7 @@ class EnhancedAutomationSystem {
             this.log('✅ Documentation updated');
             return true;
         } catch (error) {
-            this.log(`❌ Documentation update failed: ${error.message}`, 'error');
+            this.log(`❌ Documentation update failed: ${error.message}`, error');
             return false;
         }
     }
@@ -332,7 +332,7 @@ class EnhancedAutomationSystem {
             systemHealth: await this.getSystemHealth()
         };
         
-        const statusFile = path.join(__dirname, '.autonomous-status.json');
+        const statusFile = path.join(__dirname, .autonomous-status.json');
         fs.writeFileSync(statusFile, JSON.stringify(status, null, 2));
         
         this.log('✅ Automation status updated');
@@ -345,7 +345,7 @@ class EnhancedAutomationSystem {
             const result = await this.runCommand('git branch --show-current', { logOutput: false });
             return result.stdout.trim();
         } catch (error) {
-            return 'unknown';
+            return unknown';
         }
     }
 
@@ -354,7 +354,7 @@ class EnhancedAutomationSystem {
             const result = await this.runCommand('git rev-parse HEAD', { logOutput: false });
             return result.stdout.trim();
         } catch (error) {
-            return 'unknown';
+            return unknown';
         }
     }
 
@@ -363,7 +363,7 @@ class EnhancedAutomationSystem {
             const result = await this.runCommand('git config user.name', { logOutput: false });
             return result.stdout.trim();
         } catch (error) {
-            return 'unknown';
+            return unknown';
         }
     }
 
@@ -381,7 +381,7 @@ class EnhancedAutomationSystem {
             const result = await this.runCommand('git diff --stat HEAD~1', { logOutput: false });
             return result.stdout.trim();
         } catch (error) {
-            return '';
+            return ;
         }
     }
 
@@ -453,7 +453,7 @@ class EnhancedAutomationSystem {
     }
 
     async getSystemHealth() {
-        return 'healthy';
+        return healthy';
     }
 
     async generateApiDocs() {
@@ -490,48 +490,48 @@ async function main() {
 
     try {
         switch (command) {
-            case 'pre-commit':
+            case pre-commit':
                 await system.preCommit();
                 break;
-            case 'pre-push':
+            case pre-push':
                 await system.prePush();
                 break;
-            case 'post-commit-improvements':
+            case post-commit-improvements':
                 await system.postCommitImprovements();
                 break;
-            case 'validate-commit-message':
+            case validate-commit-message':
                 const isValid = await system.validateCommitMessage(args[0]);
                 process.exit(isValid ? 0 : 1);
                 break;
-            case 'enhance-commit-message':
+            case enhance-commit-message':
                 const enhanced = await system.enhanceCommitMessage(args[0]);
                 console.log(enhanced);
                 break;
-            case 'generate-commit-metadata':
+            case generate-commit-metadata':
                 await system.generateCommitMetadata(args[0]);
                 break;
-            case 'update-commit-metadata':
+            case update-commit-metadata':
                 await system.updateCommitMetadata(args[0], args[1]);
                 break;
-            case 'generate-commit-report':
+            case generate-commit-report':
                 await system.generateCommitReport(args[0]);
                 break;
-            case 'prepare-deployment':
+            case prepare-deployment':
                 await system.prepareDeployment();
                 break;
-            case 'update-docs':
+            case update-docs':
                 await system.updateDocs();
                 break;
-            case 'update-status':
+            case update-status':
                 await system.updateStatus();
                 break;
             default:
-                console.log('Usage: node enhanced-automation-system.js <command> [args...]');
+                console.log('Usage: node enhanced-automation-system.js <command> [args...]);
                 console.log('Commands: pre-commit, pre-push, post-commit-improvements, validate-commit-message, enhance-commit-message, generate-commit-metadata, update-commit-metadata, generate-commit-report, prepare-deployment, update-docs, update-status');
                 process.exit(1);
         }
     } catch (error) {
-        system.log(`❌ Command failed: ${error.message}`, 'error');
+        system.log(`❌ Command failed: ${error.message}`, error');
         process.exit(1);
     }
 }

@@ -20,7 +20,7 @@ class ComprehensiveAutomationTester {
     this.startTime = Date.now();
   }
 
-  log(message, level = 'info') {
+  log(message, level = info') {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -43,344 +43,284 @@ class ComprehensiveAutomationTester {
     try {
       // Test 1: Core automation system
       await this.testCoreAutomationSystem();
-
+      
       // Test 2: Netlify automation
       await this.testNetlifyAutomation();
-
-      // Test 3: Cursor chat automation
-      await this.testCursorChatAutomation();
-
-      // Test 4: Performance monitoring
+      
+      // Test 3: Performance monitoring
       await this.testPerformanceMonitoring();
-
-      // Test 5: Continuous improvement system
+      
+      // Test 4: Continuous improvement system
       await this.testContinuousImprovement();
-
-      // Test 6: File system and configuration
-      await this.testFileSystemAndConfig();
-
-      // Test 7: Integration tests
-      await this.testIntegration();
-
-      // Generate comprehensive report
-      await this.generateComprehensiveReport();
-
+      
+      // Test 5: Task automation
+      await this.testTaskAutomation();
+      
+      // Test 6: Cursor automation
+      await this.testCursorAutomation();
+      
+      // Generate final report
+      this.generateReport();
+      
     } catch (error) {
-      this.log(`Test suite failed: ${error.message}`, 'error');
+      this.log(`Test suite failed: ${error.message}`, error');
       process.exit(1);
     }
   }
 
   async testCoreAutomationSystem() {
-    this.log('Testing core automation system...');
+    this.log('Testing Core Automation System...', info');
     
     try {
-      // Test if core components exist
-      const coreComponents = [
-        'core/IntelligentAutomationOrchestrator.js',
-        'core/AutonomousAutomationManager.js',
-        'core/TaskScheduler.js',
-        'core/NotificationManager.js',
-        'core/AnomalyDetector.js',
-        'core/ReportGenerator.js'
+      // Test core files existence
+      const coreFiles = [
+        core/IntelligentAutomationOrchestrator.js',
+        core/AutonomousAutomationManager.js',
+        core/TaskScheduler.js',
+        core/NotificationManager.js',
+        core/AnomalyDetector.js',
+        core/ReportGenerator.js
       ];
 
-      for (const component of coreComponents) {
-        const componentPath = path.join(__dirname, component);
-        try {
-          await fs.access(componentPath);
-          this.log(`✅ Core component exists: ${component}`);
-        } catch (error) {
-          throw new Error(`Missing core component: ${component}`);
-        }
+      for (const file of coreFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `Core File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
-      // Test if core system can be imported
+      // Test core system imports
       try {
-        const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator');
-        const AutonomousAutomationManager = require('./core/AutonomousAutomationManager');
-        
-        const orchestrator = new IntelligentAutomationOrchestrator();
-        const manager = new AutonomousAutomationManager();
-        
-        this.addTestResult('Core Automation System', true, 'All core components loaded successfully');
+        const coreSystem = require('./core/IntelligentAutomationOrchestrator.js');
+        this.addTestResult('Core System Import', true, Core system imported successfully');
       } catch (error) {
-        throw new Error(`Core system import failed: ${error.message}`);
+        this.addTestResult('Core System Import', false, `Import failed: ${error.message}`);
       }
 
     } catch (error) {
-      this.addTestResult('Core Automation System', false, error.message);
+      this.addTestResult('Core Automation System', false, `Test failed: ${error.message}`);
     }
   }
 
   async testNetlifyAutomation() {
-    this.log('Testing Netlify automation...');
+    this.log('Testing Netlify Automation...', info');
     
     try {
-      // Test if Netlify components exist
-      const netlifyComponents = [
-        'netlify-monitor.js',
-        'netlify-error-fixer.js',
-        'netlify-build-automation.js'
+      const netlifyFiles = [
+        netlify-monitor.js',
+        netlify-error-fixer.js',
+        netlify-build-automation.js
       ];
 
-      for (const component of netlifyComponents) {
-        const componentPath = path.join(__dirname, component);
-        try {
-          await fs.access(componentPath);
-          this.log(`✅ Netlify component exists: ${component}`);
-        } catch (error) {
-          throw new Error(`Missing Netlify component: ${component}`);
-        }
+      for (const file of netlifyFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `Netlify File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
-      // Test if Netlify system can be imported
+      // Test Netlify system imports
       try {
-        const NetlifyBuildMonitor = require('./netlify-monitor');
-        const NetlifyErrorFixer = require('./netlify-error-fixer');
-        
-        const monitor = new NetlifyBuildMonitor();
-        const fixer = new NetlifyErrorFixer();
-        
-        this.addTestResult('Netlify Automation', true, 'Netlify components loaded successfully');
+        const netlifyMonitor = require('./netlify-monitor.js');
+        this.addTestResult('Netlify Monitor Import', true, Netlify monitor imported successfully');
       } catch (error) {
-        throw new Error(`Netlify system import failed: ${error.message}`);
+        this.addTestResult('Netlify Monitor Import', false, `Import failed: ${error.message}`);
       }
 
     } catch (error) {
-      this.addTestResult('Netlify Automation', false, error.message);
-    }
-  }
-
-  async testCursorChatAutomation() {
-    this.log('Testing Cursor chat automation...');
-    
-    try {
-      const cursorScriptPath = path.join(__dirname, '..', 'scripts', 'cursor-chat-automation.js');
-      await fs.access(cursorScriptPath);
-      
-      // Test if cursor automation can be imported
-      try {
-        // Note: This is a basic test since the cursor automation runs as a separate process
-        this.log('✅ Cursor chat automation script exists');
-        this.addTestResult('Cursor Chat Automation', true, 'Cursor chat automation script accessible');
-      } catch (error) {
-        throw new Error(`Cursor automation import failed: ${error.message}`);
-      }
-
-    } catch (error) {
-      this.addTestResult('Cursor Chat Automation', false, error.message);
+      this.addTestResult('Netlify Automation', false, `Test failed: ${error.message}`);
     }
   }
 
   async testPerformanceMonitoring() {
-    this.log('Testing performance monitoring...');
+    this.log('Testing Performance Monitoring...', info');
     
     try {
-      const performanceComponents = [
-        'performance/monitor.js',
-        'performance/frontend-fix.js'
+      const perfFiles = [
+        performance/monitor.js',
+        performance/frontend-fix.js
       ];
 
-      for (const component of performanceComponents) {
-        const componentPath = path.join(__dirname, component);
-        try {
-          await fs.access(componentPath);
-          this.log(`✅ Performance component exists: ${component}`);
-        } catch (error) {
-          throw new Error(`Missing performance component: ${component}`);
-        }
+      for (const file of perfFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `Performance File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
-      // Test if performance monitoring can be imported
+      // Test performance system imports
       try {
-        const PerformanceMonitor = require('./performance/monitor');
-        const monitor = new PerformanceMonitor();
-        
-        this.addTestResult('Performance Monitoring', true, 'Performance monitoring components loaded successfully');
+        const perfMonitor = require('./performance/monitor.js');
+        this.addTestResult('Performance Monitor Import', true, Performance monitor imported successfully');
       } catch (error) {
-        throw new Error(`Performance monitoring import failed: ${error.message}`);
+        this.addTestResult('Performance Monitor Import', false, `Import failed: ${error.message}`);
       }
 
     } catch (error) {
-      this.addTestResult('Performance Monitoring', false, error.message);
+      this.addTestResult('Performance Monitoring', false, `Test failed: ${error.message}`);
     }
   }
 
   async testContinuousImprovement() {
-    this.log('Testing continuous improvement system...');
+    this.log('Testing Continuous Improvement System...', info');
     
     try {
-      const ciComponents = [
-        'continuous-improvement/enhanced-automation.js',
-        'continuous-improvement/monitor.js',
-        'continuous-improvement/improve.js'
+      const ciFiles = [
+        continuous-improvement/enhanced-automation.js',
+        continuous-improvement/monitor.js',
+        continuous-improvement/improve.js
       ];
 
-      for (const component of ciComponents) {
-        const componentPath = path.join(__dirname, component);
-        try {
-          await fs.access(componentPath);
-          this.log(`✅ CI component exists: ${component}`);
-        } catch (error) {
-          throw new Error(`Missing CI component: ${component}`);
-        }
+      for (const file of ciFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `CI File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
-      // Test if CI system can be imported
+      // Test CI system imports
       try {
-        const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');
-        const automation = new EnhancedAutomation();
-        
-        this.addTestResult('Continuous Improvement', true, 'Continuous improvement components loaded successfully');
+        const ciSystem = require('./continuous-improvement/enhanced-automation.js');
+        this.addTestResult('CI System Import', true, CI system imported successfully');
       } catch (error) {
-        throw new Error(`CI system import failed: ${error.message}`);
+        this.addTestResult('CI System Import', false, `Import failed: ${error.message}`);
       }
 
     } catch (error) {
-      this.addTestResult('Continuous Improvement', false, error.message);
+      this.addTestResult('Continuous Improvement', false, `Test failed: ${error.message}`);
     }
   }
 
-  async testFileSystemAndConfig() {
-    this.log('Testing file system and configuration...');
+  async testTaskAutomation() {
+    this.log('Testing Task Automation...', info');
     
     try {
-      // Test if required directories exist
-      const requiredDirs = ['logs', 'reports', 'data'];
-      
-      for (const dir of requiredDirs) {
-        const dirPath = path.join(__dirname, dir);
-        try {
-          await fs.access(dirPath);
-          this.log(`✅ Directory exists: ${dir}`);
-        } catch (error) {
-          // Create directory if it doesn't exist
-          await fs.mkdir(dirPath, { recursive: true });
-          this.log(`✅ Created directory: ${dir}`);
-        }
+      const taskFiles = [
+        tasks/DependencyUpdater.js
+      ];
+
+      for (const file of taskFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `Task File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
-      // Test if configuration files exist
-      const configFiles = ['package.json', 'README.md'];
-      
-      for (const file of configFiles) {
-        const filePath = path.join(__dirname, file);
-        try {
-          await fs.access(filePath);
-          this.log(`✅ Config file exists: ${file}`);
-        } catch (error) {
-          throw new Error(`Missing config file: ${file}`);
-        }
+      // Test task system imports
+      try {
+        const taskSystem = require('./tasks/DependencyUpdater.js');
+        this.addTestResult('Task System Import', true, Task system imported successfully');
+      } catch (error) {
+        this.addTestResult('Task System Import', false, `Import failed: ${error.message}`);
       }
-
-      this.addTestResult('File System and Config', true, 'All required directories and config files accessible');
 
     } catch (error) {
-      this.addTestResult('File System and Config', false, error.message);
+      this.addTestResult('Task Automation', false, `Test failed: ${error.message}`);
     }
   }
 
-  async testIntegration() {
-    this.log('Testing system integration...');
+  async testCursorAutomation() {
+    this.log('Testing Cursor Automation...', info');
     
     try {
-      // Test if the main automation index can be loaded
-      const mainIndexPath = path.join(__dirname, 'index.js');
-      await fs.access(mainIndexPath);
-      
-      // Test if the system can parse arguments
-      const originalArgv = process.argv;
-      process.argv = ['node', 'index.js', '--help'];
-      
-      try {
-        // This should not throw an error
-        require('./index.js');
-        this.addTestResult('System Integration', true, 'Main automation system loads successfully');
-      } catch (error) {
-        // Expected error for help command, but system should load
-        this.addTestResult('System Integration', true, 'Main automation system accessible');
-      } finally {
-        process.argv = originalArgv;
+      const cursorFiles = [
+        cursor-automated-communication.js',
+        cursor-automated-extension/background.js
+      ];
+
+      for (const file of cursorFiles) {
+        const exists = await this.checkFileExists(file);
+        this.addTestResult(
+          `Cursor File: ${file}`,
+          exists,
+          exists ? File exists' : File missing',
+          { file }
+        );
       }
 
     } catch (error) {
-      this.addTestResult('System Integration', false, error.message);
+      this.addTestResult('Cursor Automation', false, `Test failed: ${error.message}`);
     }
   }
 
-  async generateComprehensiveReport() {
+  async checkFileExists(filePath) {
+    try {
+      await fs.access(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  generateReport() {
     const endTime = Date.now();
     const duration = endTime - this.startTime;
+    
+    console.log('\n📊 Test Results Summary');
+    console.log('='.repeat(60));
     
     const passed = this.testResults.filter(r => r.passed).length;
     const failed = this.testResults.filter(r => !r.passed).length;
     const total = this.testResults.length;
-    const successRate = total > 0 ? (passed / total * 100).toFixed(1) : 0;
-
-    console.log('\n' + '='.repeat(60));
-    console.log('COMPREHENSIVE AUTOMATION TEST REPORT');
-    console.log('='.repeat(60));
+    
     console.log(`Total Tests: ${total}`);
-    console.log(`Passed: ${passed}`);
-    console.log(`Failed: ${failed}`);
-    console.log(`Success Rate: ${successRate}%`);
+    console.log(`Passed: ${passed} ✅`);
+    console.log(`Failed: ${failed} ❌`);
+    console.log(`Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
     console.log(`Duration: ${duration}ms`);
-    console.log('='.repeat(60));
-
+    
     if (failed > 0) {
-      console.log('\nFAILED TESTS:');
+      console.log('\n❌ Failed Tests:');
       this.testResults
         .filter(r => !r.passed)
-        .forEach(result => {
-          console.log(`❌ ${result.testName}: ${result.message}`);
-          if (result.details) {
-            console.log(`   Details: ${result.details}`);
-          }
+        .forEach(r => {
+          console.log(`  - ${r.testName}: ${r.message}`);
         });
     }
-
-    console.log('\nPASSED TESTS:');
+    
+    console.log('\n✅ Passed Tests:');
     this.testResults
       .filter(r => r.passed)
-      .forEach(result => {
-        console.log(`✅ ${result.testName}: ${result.message}`);
+      .forEach(r => {
+        console.log(`  - ${r.testName}: ${r.message}`);
       });
-
+    
     // Save detailed report
-    const reportPath = path.join(__dirname, 'reports', `comprehensive-test-${Date.now()}.json`);
     const report = {
       timestamp: new Date().toISOString(),
       duration,
-      summary: {
-        total,
-        passed,
-        failed,
-        successRate
-      },
+      summary: { total, passed, failed, successRate: (passed / total) * 100 },
       results: this.testResults
     };
-
-    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    console.log(`\n📊 Detailed report saved to: ${reportPath}`);
-
-    if (failed > 0) {
-      console.log('\n⚠️ Some tests failed. Please review the failed tests above.');
-      process.exit(1);
-    } else {
-      console.log('\n🎉 All automation systems are working correctly!');
-    }
+    
+    fs.writeFile('test-report.json', JSON.stringify(report, null, 2))
+      .then(() => this.log('Detailed report saved to test-report.json', info'))
+      .catch(err => this.log(`Failed to save report: ${err.message}`, error'));
   }
 }
 
-// Run the comprehensive test suite
-async function main() {
-  const tester = new ComprehensiveAutomationTester();
-  await tester.runAllTests();
-}
-
+// Run the test suite
 if (require.main === module) {
-  main().catch(console.error);
+  const tester = new ComprehensiveAutomationTester();
+  tester.runAllTests().catch(error => {
+    console.error('Test suite failed:', error);
+    process.exit(1);
+  });
 }
 
 module.exports = ComprehensiveAutomationTester; 

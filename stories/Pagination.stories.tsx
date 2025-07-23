@@ -1,15 +1,14 @@
-import React, { useState } from 'react';'import type { Meta, StoryObj } from '@storybook/react';'import {;  Pagination,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import React, { useState } from react';import type { Meta, StoryObj } from @storybook/react';import {;  Pagination,
   PaginationContent,
   PaginationItem,
   PaginationButton,
   PaginationPrevious,
-  PaginationNext,
-} from '../src/components/ui/pagination';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  PaginationNext
+} from ../src/components/ui/pagination';;
 const meta: Meta<typeof Pagination> = {
-  title: 'Components/Pagination','  component: Pagination,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  title: Components/Pagination',  component: Pagination
 };
 export ;default meta;
-;
 const Example = ({ total }: { _total: number }) => {
   const [current, setCurrent] = useState(1);
   return (
@@ -49,15 +48,12 @@ const Example = ({ total }: { _total: number }) => {
     </Pagination>
   );
 };
-;
 export ;const OnePage: StoryObj<typeof Pagination> = {
-  render: () => <Example total={1} />,
+  render: () => <Example total={1} />
 };
-;
 export ;const FivePages: StoryObj<typeof Pagination> = {
-  render: () => <Example total={5} />,
+  render: () => <Example total={5} />
 };
-;
 export ;const TenPages: StoryObj<typeof Pagination> = {
-  render: () => <Example total={10} />,
+  render: () => <Example total={10} />
 };

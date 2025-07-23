@@ -1,5 +1,35 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Simple post-commit hook
-echo "✅ Post-commit hook completed"
+echo "🚀 Autonomous Post-commit System Starting..."
+
+# Set environment variables for autonomous operation
+export AUTONOMOUS_MODE=true
+export HUSKY_AUTOMATION=true
+export POST_COMMIT_MODE=true
+
+# Get commit information
+COMMIT_HASH=$(git rev-parse HEAD)
+COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+BRANCH_NAME=$(git branch --show-current)
+
+echo "📝 Commit: $COMMIT_HASH"
+echo "💬 Message: $COMMIT_MESSAGE"
+echo "🌿 Branch: $BRANCH_NAME"
+
+# Run autonomous post-commit actions
+echo "🤖 Running autonomous post-commit actions..."
+
+# 1. Update commit metadata
+echo "📊 Updating commit metadata..."
+node automation/enhanced-automation-system.js update-commit-metadata "$COMMIT_HASH" "$COMMIT_MESSAGE" || {
+    echo "⚠️  Failed to update commit metadata"
+}
+
+# 2. Trigger autonomous improvements
+echo "🔄 Triggering autonomous improvements..."
+node automation/enhanced-automation-system.js post-commit || {
+    echo "⚠️  Autonomous improvements failed, but continuing..."
+}
+
+echo "✅ Post-commit actions completed successfully!"

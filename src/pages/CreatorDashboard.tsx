@@ -1,9 +1,7 @@
-import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-export ;default function CreatorDashboard() {
+import React from react';
+
+export default function CreatorDashboard() {
   return (
-    <div>
-      <h1>CreatorDashboard</h1>
-      <p>Component placeholder</p>
-    </div>
-  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    <div>Creator Dashboard</div>
+  );
+}

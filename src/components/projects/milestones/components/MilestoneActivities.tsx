@@ -1,9 +1,9 @@
-import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import React from react';
 export ;default function MilestoneActivities() {
   return (
     <div>
       <h1>MilestoneActivities</h1>
       <p>Component placeholder</p>
     </div>
-  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  )
+};

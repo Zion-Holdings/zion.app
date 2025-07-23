@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';'import { ThemeProvider } from '@/components/ThemeProvider';'import { ModeToggle } from '@/components/ModeToggle';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { render, fireEvent } from @testing-library/react';import { ThemeProvider } from @/components/ThemeProvider';import { ModeToggle } from @/components/ModeToggle';
 beforeEach(() => {
   localStorage.clear();
   window.matchMedia = window.matchMedia || jest.fn().mockImplementation(query => ({
@@ -9,16 +9,16 @@ beforeEach(() => {
     removeListener: jest.fn(),
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
+    dispatchEvent: jest.fn()
   }));
 });
 
-test('stores selected theme in localStorage', () => {'  render('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+test('stores selected theme in localStorage', () => {'  render(
     <ThemeProvider>
       <ModeToggle />
     </ThemeProvider>
   );
 
-  const button = document.querySelector('button')!;'  fireEvent.click(button);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const button = document.querySelector('button')!;  fireEvent.click(button);
 
-  expect(localStorage.getItem('theme')).toBe('dark');'});'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  expect(localStorage.getItem('theme')).toBe('dark');});

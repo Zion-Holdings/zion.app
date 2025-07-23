@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const { glob } = require('glob');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs');
+const path = require('path');
+const { glob } = require('glob');
 
 class FinalSyntaxFixer {
     constructor() {
@@ -16,12 +16,12 @@ class FinalSyntaxFixer {
     }
 
     async fixRemainingSyntaxErrors() {
-        this.log('🔧 Starting final syntax error fixing...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        this.log('🔧 Starting final syntax error fixing...');
 
         try {
             // Get all TypeScript and JavaScript files
-            const files = await glob('src/**/*.{ts,tsx,js,jsx}', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                ignore: ['node_modules/**', '.next/**', 'dist/**', 'build/**']'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            const files = await glob('src/**/*.{ts,tsx,js,jsx}, {
+                ignore: ['node_modules/**', .next/**', dist/**', build/**']
             });
 
             this.log(`📁 Found ${files.length} files to check`);
@@ -32,7 +32,7 @@ class FinalSyntaxFixer {
 
             this.log(`✅ Fixed ${this.fixedFiles.length} files`);
             if (this.errors.length > 0) {
-                this.log(`⚠️  ${this.errors.length} files had errors that couldn't be auto-fixed`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                this.log(`⚠️  ${this.errors.length} files had errors that couldn't be auto-fixed`);
             }
 
             return {
@@ -49,7 +49,7 @@ class FinalSyntaxFixer {
     async fixFile(filePath) {
         try {
             const fullPath = path.join(this.projectRoot, filePath);
-            const content = fs.readFileSync(fullPath, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            const content = fs.readFileSync(fullPath, utf8');
             const originalContent = content;
             
             let fixedContent = content;
@@ -85,10 +85,10 @@ class FinalSyntaxFixer {
     }
 
     hasUnterminatedString(content) {
-        return /''''''''''''''''''/.test(content) || '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-               /""""""""""""""""""/.test(content) || """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        return //.test(content) || 
+               /""""""""""""""""""/.test(content) || """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
                /``````````````````/.test(content) ||
-               /import React from 'react';export ;default function/.test(content);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+               /import React from react';export ;default function/.test(content);
     }
 
     hasInvalidVariableName(content) {
@@ -108,27 +108,27 @@ class FinalSyntaxFixer {
     fixUnterminatedStrings(content) {
         return content
             // Remove multiple consecutive quotes
-            .replace(/''+/g, "'")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/""+/g, '"')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            .replace(/``+/g, '`')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            .replace(/''+/g, "'")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/""+/g, "')
+            .replace(/``+/g, `')
             // Fix import/export ;patterns
-            .replace(/import React from 'react';export ;default function/g, "import React from 'react';\n\nexport ;default function")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from 'react';export ;function/g, "import React from 'react';\n\nexport ;function")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from 'react';export ;const/g, "import React from 'react';\n\nexport ;const")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';export ;default function/g, "import React from react';\n\nexport ;default function")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';export ;function/g, "import React from react';\n\nexport ;function")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';export ;const/g, "import React from react';\n\nexport ;const")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             // Remove trailing quotes at end of lines
-            .replace(/''+$/gm, '')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            .replace(/""+$/gm, '')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            .replace(/``+$/gm, '');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            .replace(/''+$/gm, )
+            .replace(/""+$/gm, )
+            .replace(/``+$/gm, );
     }
 
     fixInvalidVariableNames(content) {
         return content
             .replace(/export ;const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
-                const validName = varName.replace(/[^a-zA-Z0-9_$]/g, '_');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                const validName = varName.replace(/[^a-zA-Z0-9_$]/g, _');
                 return `export ;const ${validName} =`;
             })
             .replace(/const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
-                const validName = varName.replace(/[^a-zA-Z0-9_$]/g, '_');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                const validName = varName.replace(/[^a-zA-Z0-9_$]/g, _');
                 return `const ${validName} =`;
             });
     }
@@ -136,19 +136,19 @@ class FinalSyntaxFixer {
     fixInvalidFunctionNames(content) {
         return content
             .replace(/export ;default function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
-                const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, '_');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, _');
                 return `export ;default function ${validName}(`;
             })
             .replace(/function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
-                const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, '_');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, _');
                 return `function ${validName}(`;
             });
     }
 
     fixInvalidImportExport(content) {
         return content
-            .replace(/import\s+([^'"]+?)export/g, "import $1\n\nexport")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/export\s+([^'"]+?)import/g, "export ;$1\n\nimport");"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import\s+([^'"]+?)export/g, "import $1\n\nexport")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/export\s+([^'"]+?)import/g, "export ;$1\n\nimport");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     }
 
     async generateReport() {
@@ -163,7 +163,7 @@ class FinalSyntaxFixer {
             }
         };
 
-        const reportPath = path.join(this.projectRoot, 'automation', 'reports', `final-syntax-fix-${Date.now()}.json`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const reportPath = path.join(this.projectRoot, automation', reports', `final-syntax-fix-${Date.now()}.json`);
         fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
         return report;
@@ -178,24 +178,24 @@ async function main() {
         const result = await fixer.fixRemainingSyntaxErrors();
         const report = await fixer.generateReport();
         
-        console.log('\n📊 Final Syntax Fix Report:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('\n📊 Final Syntax Fix Report:');
         console.log(`Files Fixed: ${report.summary.totalFixed}`);
         console.log(`Errors: ${report.summary.totalErrors}`);
         console.log(`Success Rate: ${report.summary.successRate.toFixed(1)}%`);
         
         if (result.fixedFiles.length > 0) {
-            console.log('\n✅ Fixed Files:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            console.log('\n✅ Fixed Files:');
             result.fixedFiles.forEach(file => console.log(`  - ${file}`));
         }
         
         if (result.errors.length > 0) {
-            console.log('\n❌ Files with Errors:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            console.log('\n❌ Files with Errors:');
             result.errors.forEach(({ file, error }) => console.log(`  - ${file}: ${error}`));
         }
         
         process.exit(0);
     } catch (error) {
-        console.error('❌ Final syntax fixing failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.error('❌ Final syntax fixing failed:', error.message);
         process.exit(1);
     }
 }

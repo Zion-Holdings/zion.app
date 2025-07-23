@@ -4,19 +4,19 @@ const nextConfig = {
   experimental: {},
   // Ignore all errors
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true
   },
   // Disable image optimization
   images: {
-    unoptimized: true,
+    unoptimized: true
   },
-  // Remove output: 'export' to allow API routes
+  // Remove output: export' to allow API routes
   trailingSlash: true,
   // Minimal environment
-  env: {},
+  env: {}
 };
 
 module.exports = nextConfig;

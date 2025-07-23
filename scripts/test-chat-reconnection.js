@@ -10,20 +10,20 @@
  * - Testing reconnection scenarios
  */
 
-const WebSocket = require('ws')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const http = require('http');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const WebSocket = require('ws')
+const http = require('http');
 
 // Configuration
 const CONFIG = {
-  CHAT_SERVER: 'http://localhost:3009','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  WEBSOCKET_URL: 'ws://localhost:3009','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  CHAT_SERVER: http://localhost:3009',
+  WEBSOCKET_URL: ws://localhost:3009',
   TEST_MESSAGES: [
-    'Hello from test computer!','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    'Testing chat functionality','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    'Checking reconnection capabilities','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    'System health check','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    'Performance test message','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  ],
+    Hello from test computer!',
+    Testing chat functionality',
+    Checking reconnection capabilities',
+    System health check',
+    Performance test message
+  ]
 }
 class ChatReconnectionTester {
   constructor() {
@@ -32,12 +32,12 @@ class ChatReconnectionTester {
     this.testResults = {
       httpTests: [],
       websocketTests: [],
-      reconnectionTests: [],
+      reconnectionTests: []
     };
   }
 
   async runAllTests() {
-    console.log('🧪 Starting Chat Reconnection System Tests...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🧪 Starting Chat Reconnection System Tests...\n');
 
     try {
       await this.testHttpEndpoints();
@@ -47,89 +47,89 @@ class ChatReconnectionTester {
 
       this.printTestResults();
     } catch (error) {
-      console.error('❌ Test failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.error('❌ Test failed:', error.message);
     }
   }
 
   async testHttpEndpoints() {
-    console.log('📡 Testing HTTP Endpoints...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('📡 Testing HTTP Endpoints...');
 
     // Test status endpoint
     try {
-      const status = await this.makeHttpRequest('/status');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const status = await this.makeHttpRequest('/status');
       this.testResults.httpTests.push({
-        test: 'Status Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Status Endpoint',
         success: true,
-        data: status,
+        data: status
       });
-      console.log('✅ Status endpoint working');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ Status endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
-        test: 'Status Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Status Endpoint',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Status endpoint failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Status endpoint failed:', error.message);
     }
 
     // Test computers endpoint
     try {
-      const computers = await this.makeHttpRequest('/computers');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const computers = await this.makeHttpRequest('/computers');
       this.testResults.httpTests.push({
-        test: 'Computers Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Computers Endpoint',
         success: true,
-        data: computers,
+        data: computers
       });
-      console.log('✅ Computers endpoint working');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ Computers endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
-        test: 'Computers Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Computers Endpoint',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Computers endpoint failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Computers endpoint failed:', error.message);
     }
 
     // Test chat endpoint
     try {
-      const chatResponse = await this.makeHttpRequest('/chat', 'POST', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        message: 'Test message from HTTP','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        category: 'test','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const chatResponse = await this.makeHttpRequest('/chat', POST', {
+        message: Test message from HTTP',
+        category: test
       });
       this.testResults.httpTests.push({
-        test: 'Chat Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Chat Endpoint',
         success: true,
-        data: chatResponse,
+        data: chatResponse
       });
-      console.log('✅ Chat endpoint working');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ Chat endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
-        test: 'Chat Endpoint','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Chat Endpoint',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Chat endpoint failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Chat endpoint failed:', error.message);
     }
   }
 
   async testWebSocketConnections() {
-    console.log('\n🔌 Testing WebSocket Connections...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('\n🔌 Testing WebSocket Connections...');
 
     // Test single connection
     try {
-      const ws = await this.createWebSocketConnection('test-computer-1');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const ws = await this.createWebSocketConnection('test-computer-1');
       this.testResults.websocketTests.push({
-        test: 'Single WebSocket Connection','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        success: true,
+        test: Single WebSocket Connection',
+        success: true
       });
-      console.log('✅ Single WebSocket connection working');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ Single WebSocket connection working');
 
       // Send test message
       ws.send(
         JSON.stringify({
-          type: 'chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          message: 'Test message from WebSocket','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          room: 'test','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          type: chat',
+          message: Test message from WebSocket',
+          room: test
         }),
       );
 
@@ -138,11 +138,11 @@ class ChatReconnectionTester {
       }, 1000);
     } catch (error) {
       this.testResults.websocketTests.push({
-        test: 'Single WebSocket Connection','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Single WebSocket Connection',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Single WebSocket connection failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Single WebSocket connection failed:', error.message);
     }
 
     // Test multiple connections
@@ -156,9 +156,9 @@ class ChatReconnectionTester {
       }
 
       this.testResults.websocketTests.push({
-        test: 'Multiple WebSocket Connections','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Multiple WebSocket Connections',
         success: true,
-        count: connections.length,
+        count: connections.length
       });
       console.log(
         `✅ Multiple WebSocket connections working (${connections.length} connections)`,
@@ -168,9 +168,9 @@ class ChatReconnectionTester {
       connections.forEach((ws, index) => {
         ws.send(
           JSON.stringify({
-            type: 'chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            type: chat',
             message: `Message from computer ${index + 1}`,
-            room: 'test','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            room: test
           }),
         );
       });
@@ -180,60 +180,60 @@ class ChatReconnectionTester {
       }, 2000);
     } catch (error) {
       this.testResults.websocketTests.push({
-        test: 'Multiple WebSocket Connections','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Multiple WebSocket Connections',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Multiple WebSocket connections failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Multiple WebSocket connections failed:', error.message);
     }
   }
 
   async testReconnectionScenarios() {
-    console.log('\n🔄 Testing Reconnection Scenarios...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('\n🔄 Testing Reconnection Scenarios...');
 
     try {
       // Create connection
-      const ws = await this.createWebSocketConnection('reconnection-test');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const ws = await this.createWebSocketConnection('reconnection-test');
 
       // Simulate connection loss
-      console.log('🔌 Simulating connection loss...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('🔌 Simulating connection loss...');
       ws.close();
 
       // Wait and try to reconnect
       setTimeout(async () => {
         try {
           const newWs =
-            await this.createWebSocketConnection('reconnection-test');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            await this.createWebSocketConnection('reconnection-test');
           this.testResults.reconnectionTests.push({
-            test: 'Reconnection After Loss','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            success: true,
+            test: Reconnection After Loss',
+            success: true
           });
-          console.log('✅ Reconnection after loss working');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          console.log('✅ Reconnection after loss working');
 
           setTimeout(() => {
             newWs.close();
           }, 1000);
         } catch (error) {
           this.testResults.reconnectionTests.push({
-            test: 'Reconnection After Loss','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            test: Reconnection After Loss',
             success: false,
-            error: error.message,
+            error: error.message
           });
-          console.log('❌ Reconnection after loss failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          console.log('❌ Reconnection after loss failed:', error.message);
         }
       }, 2000);
     } catch (error) {
       this.testResults.reconnectionTests.push({
-        test: 'Reconnection After Loss','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Reconnection After Loss',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Reconnection test failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Reconnection test failed:', error.message);
     }
   }
 
   async testMultiComputerSimulation() {
-    console.log('\n🖥️ Testing Multi-Computer Simulation...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('\n🖥️ Testing Multi-Computer Simulation...')
 const computers = []
 const computerCount = 5;
 
@@ -243,8 +243,8 @@ const computerCount = 5;
         const computer = {
           id: `simulated-computer-${i + 1}`,
           name: `Computer ${i + 1}`,
-          platform: i % 2 === 0 ? 'darwin' : 'win32','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          connection: null,
+          platform: i % 2 === 0 ? darwin' : win32',
+          connection: null
         };
 
         computer.connection = await this.createWebSocketConnection(computer.id);
@@ -253,21 +253,21 @@ const computerCount = 5;
         // Send registration message
         computer.connection.send(
           JSON.stringify({
-            type: 'register','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            type: register',
             computerId: computer.id,
             capabilities: {
               platform: computer.platform,
-              arch: 'x64','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-              nodeVersion: process.version,
-            },
+              arch: x64',
+              nodeVersion: process.version
+            }
           }),
         );
       }
 
       this.testResults.websocketTests.push({
-        test: 'Multi-Computer Simulation','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Multi-Computer Simulation',
         success: true,
-        computerCount: computers.length,
+        computerCount: computers.length
       });
       console.log(
         `✅ Multi-computer simulation working (${computers.length} computers)`,
@@ -278,9 +278,9 @@ const computerCount = 5;
         setTimeout(() => {
           computer.connection.send(
             JSON.stringify({
-              type: 'chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+              type: chat',
               message: `Hello from ${computer.name}!`,
-              room: 'general','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+              room: general
             }),
           );
         }, index * 500);
@@ -293,19 +293,19 @@ const computerCount = 5;
             computer.connection.close();
           }
         });
-        console.log('🧹 Cleaned up simulated computers');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('🧹 Cleaned up simulated computers');
       }, 5000);
     } catch (error) {
       this.testResults.websocketTests.push({
-        test: 'Multi-Computer Simulation','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        test: Multi-Computer Simulation',
         success: false,
-        error: error.message,
+        error: error.message
       });
-      console.log('❌ Multi-computer simulation failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Multi-computer simulation failed:', error.message);
     }
   }
 
-  async makeHttpRequest(path, method = 'GET', body = null) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  async makeHttpRequest(path, method = GET', body = null) {
     return new Promise((resolve, reject) => {
       const url = new URL(path, CONFIG.CHAT_SERVER)
 const options = {
@@ -314,13 +314,13 @@ const options = {
         path: url.pathname,
         method: method,
         headers: {
-          'Content-Type': 'application/json','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        },
+          Content-Type': application/json
+        }
       }
 const req = http.request(options, (res) => {
-        let data = '';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        res.on('data', (chunk) => (data += chunk));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        res.on('end', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        let data = ;
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => {
           try {
             resolve(JSON.parse(data));
           } catch (error) {
@@ -329,7 +329,7 @@ const req = http.request(options, (res) => {
         });
       });
 
-      req.on('error', reject);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      req.on('error', reject);
 
       if (body) {
         req.write(JSON.stringify(body));
@@ -342,24 +342,24 @@ const req = http.request(options, (res) => {
     return new Promise((resolve, reject) => {
       const ws = new WebSocket(CONFIG.WEBSOCKET_URL);
 
-      ws.on('open', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      ws.on('open', () => {
         resolve(ws);
       });
 
-      ws.on('message', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      ws.on('message', (data) => {
         try {
           const message = JSON.parse(data);
           this.handleWebSocketMessage(message, computerId);
         } catch (error) {
-          console.error('Failed to parse WebSocket message:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          console.error('Failed to parse WebSocket message:', error);
         }
       });
 
-      ws.on('error', reject);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      ws.on('error', reject);
 
       // Timeout after 5 seconds
       setTimeout(() => {
-        reject(new Error('WebSocket connection timeout'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        reject(new Error('WebSocket connection timeout'));
       }, 5000);
     });
   }
@@ -367,17 +367,17 @@ const req = http.request(options, (res) => {
   handleWebSocketMessage(message, computerId) {
     this.messageCount++;
     console.log(
-      `📨 [${computerId}] Received: ${message.type} - ${message.message || 'No message'}`,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      `📨 [${computerId}] Received: ${message.type} - ${message.message || No message'}`,
     );
   }
 
   printTestResults() {
-    console.log('\n📊 Test Results Summary');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    console.log('========================')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('\n📊 Test Results Summary');
+    console.log('========================')
 const allTests = [
       ...this.testResults.httpTests,
       ...this.testResults.websocketTests,
-      ...this.testResults.reconnectionTests,
+      ...this.testResults.reconnectionTests
     ]
 const passed = allTests.filter((test) => test.success).length
 const total = allTests.length;
@@ -386,9 +386,9 @@ const total = allTests.length;
     console.log(`❌ Failed: ${total - passed}/${total}`);
     console.log(`📈 Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
 
-    console.log('\n📋 Detailed Results:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('\n📋 Detailed Results:');
     allTests.forEach((test) => {
-      const status = test.success ? '✅' : '❌';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const status = test.success ? ✅' : ❌';
       console.log(`${status} ${test.test}`);
       if (!test.success && test.error) {
         console.log(`   Error: ${test.error}`);
@@ -396,7 +396,7 @@ const total = allTests.length;
     });
 
     console.log(`\n💬 Total Messages Received: ${this.messageCount}`);
-    console.log('🎉 Test completed!');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🎉 Test completed!');
   }
 }
 

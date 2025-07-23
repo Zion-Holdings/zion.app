@@ -1,27 +1,26 @@
-import { PrismaClient } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import * as Sentry from '@sentry/nextjs';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';;
 const prisma = new PrismaClient();
-;
 export ;default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const category = String(req.query.category || '').toLowerCase().trim();''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const category = String(req.query.category || ).toLowerCase().trim();
   try {
     const [totalProducts, totalCategories, featuredProducts] = await Promise.all([
       prisma.product.count(),
       prisma.product.groupBy({
-        by: ['category'],'        _count: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-          category: true,
-        },
+        by: ['category'],        _count: {
+          category: true
+        }
       }),
       prisma.product.findMany({
         where: category ? { category } : {},
         take: 6,
         orderBy: {
-          createdAt: 'desc','        },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          createdAt: desc',        },
         select: {
           id: true,
           name: true,
@@ -29,9 +28,9 @@ export ;default async function handler(
           price: true,
           currency: true,
           category: true,
-          images: true,
-        },
-      }),
+          images: true
+        }
+      })
     ]);
 
     return res.status(200).json({
@@ -40,12 +39,12 @@ export ;default async function handler(
       featuredProducts,
       categories: totalCategories.map(cat => ({
         name: cat.category,
-        count: cat._count.category,
-      })),
+        count: cat._count.category
+      }))
     });
   } catch {
     Sentry.captureException();
-    console.('Error fetching marketplace overview:', );'    return res.status(500).json({ : 'Failed to fetch marketplace overview' });'  } finally {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.('Error fetching marketplace overview:', );    return res.status(500).json({ : Failed to fetch marketplace overview' });  } finally {
     await prisma.$disconnect();
   }
 } 

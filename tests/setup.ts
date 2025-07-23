@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-import { cleanup } from '@testing-library/react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-import { vi, afterEach } from 'vitest';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import @testing-library/jest-dom';
+import { cleanup } from @testing-library/react';
+import { vi, afterEach } from vitest';
 
 // Mock ResizeObserver
 global.ResizeObserver = class ResizeObserver {
@@ -28,7 +28,7 @@ afterEach(() => {
 // Jest-compatibility shim ------------------------------------------------------
 // -----------------------------------------------------------------------------
 // A lot of legacy test files still call `jest.fn()`, `jest.mock()` etc.  Rather
-// than refactor them all at once we map those calls to Vitest's equivalent'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// than refactor them all at once we map those calls to Vitest's equivalent
 // (`vi`).  The shim only runs in the test environment and has no effect on
 // production bundles.
 
@@ -47,6 +47,6 @@ afterEach(() => {
   restoreAllMocks: vi.restoreAllMocks.bind(vi),
   clearAllMocks: vi.clearAllMocks.bind(vi),
   // Snapshot placeholder (no-op) – Vitest has its own snapshot system.
-  // We expose it so imports compile even if we don't use it.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  _SnapshotSerializer: () => {},
+  // We expose it so imports compile even if we don't use it.
+  _SnapshotSerializer: () => {}
 };

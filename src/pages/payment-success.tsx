@@ -1,9 +1,7 @@
-import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-export ;default function payment-success() {
+import React from react';
+
+export default function PaymentSuccess() {
   return (
-    <div>
-      <h1>payment-success</h1>
-      <p>Component placeholder</p>
-    </div>
-  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    <div>Payment Success</div>
+  );
+}

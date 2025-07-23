@@ -6,28 +6,34 @@
  * Dedicated monitoring system that collects metrics and triggers improvements
  */
 
-const fs = require('fs')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const { execSync } = require('child_process')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const axios = require('axios')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const cron = require('node-cron')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const winston = require('winston');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+const axios = require('axios');
+const cron = require('node-cron');
+const winston = require('winston');
+// Import autonomous commit and push system
+const AutonomousCommitPush = require('../autonomous-commit-push.js');
 // Configure logging
 const logger = winston.createLogger({
-  level: 'info','  format: winston.format.combine('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  level: info',
+  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: 'zion-monitor' },'  transports: ['''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    new winston.transports.File({ filename: 'logs/monitor-error.log', level: 'error' }),'    new winston.transports.File({ filename: 'logs/monitor-combined.log' }),'    new winston.transports.Console({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  defaultMeta: { service: zion-monitor' },
+  transports: [
+    new winston.transports.File({ filename: logs/monitor-error.log', level: error' }),
+    new winston.transports.File({ filename: logs/monitor-combined.log' }),
+    new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.simple()
       )
     })
   ]
-})
+});
 class ZionMonitor {
   constructor() {
     this.metrics = new Map();
@@ -39,7 +45,7 @@ class ZionMonitor {
    * Start monitoring
    */
   start() {
-    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true;
 
     // Schedule monitoring tasks
     this.scheduleTasks();
@@ -47,34 +53,40 @@ class ZionMonitor {
     // Start real-time monitoring
     this.startRealTimeMonitoring();
     
-    logger.info('✅ Monitoring started successfully');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('✅ Monitoring started successfully');  }
 
   /**
    * Schedule periodic monitoring tasks
    */
   scheduleTasks() {
     // Code quality monitoring - every 30 minutes
-    cron.schedule('*/30 * * * *', () => {'      this.monitorCodeQuality();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('*/30 * * * *', () => {
+      this.monitorCodeQuality();
     });
 
     // Performance monitoring - every 15 minutes
-    cron.schedule('*/15 * * * *', () => {'      this.monitorPerformance();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('*/15 * * * *', () => {
+      this.monitorPerformance();
     });
 
     // Security monitoring - every hour
-    cron.schedule('0 * * * *', () => {'      this.monitorSecurity();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('0 * * * *', () => {
+      this.monitorSecurity();
     });
 
     // User experience monitoring - every 45 minutes
-    cron.schedule('*/45 * * * *', () => {'      this.monitorUserExperience();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('*/45 * * * *', () => {
+      this.monitorUserExperience();
     });
 
     // Dependencies monitoring - daily at 2 AM
-    cron.schedule('0 2 * * *', () => {'      this.monitorDependencies();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('0 2 * * *', () => {
+      this.monitorDependencies();
     });
 
     // System health check - every 5 minutes
-    cron.schedule('*/5 * * * *', () => {'      this.checkSystemHealth();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    cron.schedule('*/5 * * * *', () => {
+      this.checkSystemHealth();
     });
   }
 
@@ -96,11 +108,12 @@ class ZionMonitor {
    * Monitor code quality
    */
   async monitorCodeQuality() {
-    logger.info('🔍 Monitoring code quality...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🔍 Monitoring code quality...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'codeQuality','        lintErrors: 0,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: codeQuality',
+        lintErrors: 0,
         lintWarnings: 0,
         testCoverage: 0,
         bundleSize: 0,
@@ -109,53 +122,66 @@ class ZionMonitor {
 
       // Run ESLint
       try {
-        const lintResult = execSync('npm run lint', { encoding: 'utf8' });'        const errorMatches = lintResult.match(/error/g)'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const warningMatches = lintResult.match(/warning/g);
+        const lintResult = execSync('npm run lint', { encoding: utf8' });
+        const errorMatches = lintResult.match(/error/g)
+        const warningMatches = lintResult.match(/warning/g);
         metrics.lintErrors = errorMatches ? errorMatches.length : 0;
         metrics.lintWarnings = warningMatches ? warningMatches.length : 0;
       } catch (error) {
-        const output = error.stdout || error.stderr || '';'        const errorMatches = output.match(/error/g)'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const warningMatches = output.match(/warning/g);
+        const output = error.stdout || error.stderr || ;
+        const errorMatches = output.match(/error/g)
+        const warningMatches = output.match(/warning/g);
         metrics.lintErrors = errorMatches ? errorMatches.length : 0;
         metrics.lintWarnings = warningMatches ? warningMatches.length : 0;
       }
 
       // Run test coverage
       try {
-        const coverageResult = execSync('npm run test:coverage', { encoding: 'utf8' });'        const coverageMatch = coverageResult.match(/(\d+)%/);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const coverageResult = execSync('npm run test:coverage', { encoding: utf8' });
+        const coverageMatch = coverageResult.match(/(\d+)%/);
         metrics.testCoverage = coverageMatch ? parseInt(coverageMatch[1]) : 0;
       } catch (error) {
-        logger.warn('Failed to get test coverage:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Failed to get test coverage:', error.message);
+      }
 
       // Analyze bundle size
       try {
-        const buildResult = execSync('npm run build', { encoding: 'utf8' });'        // Parse bundle size from build output'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const buildResult = execSync('npm run build', { encoding: utf8' });
+        // Parse bundle size from build output
         const sizeMatch = buildResult.match(/Bundle Size: (\d+\.?\d*) KB/);
         metrics.bundleSize = sizeMatch ? parseFloat(sizeMatch[1]) : 0;
       } catch (error) {
-        logger.warn('Failed to analyze bundle size:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Failed to analyze bundle size:', error.message);
+      }
 
       // Calculate code complexity
       metrics.complexity = this.calculateCodeComplexity();
 
-      this.metrics.set('codeQuality', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for issues
-      if (metrics.lintErrors > 0 || metrics.testCoverage < 70) {
-        this.createAlert('codeQuality', 'Code quality issues detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-      logger.info('Code quality metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error monitoring code quality:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('codeQuality', metrics);
+      try {
+        // Check for issues
+        if (metrics.lintErrors > 0 || metrics.testCoverage < 70) {
+          this.createAlert('codeQuality', Code quality issues detected', metrics);
+        }
+        logger.info('Code quality metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error monitoring code quality:', error);
+      }
+    } catch (error) {
+      logger.error('Error in monitorCodeQuality:', error);
+    }
   }
 
   /**
    * Monitor performance
    */
   async monitorPerformance() {
-    logger.info('⚡ Monitoring performance...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('⚡ Monitoring performance...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'performance','        lighthouseScore: 0,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: performance',
+        lighthouseScore: 0,
         loadTime: 0,
         apiResponseTime: 0,
         memoryUsage: 0,
@@ -164,79 +190,103 @@ const warningMatches = output.match(/warning/g);
 
       // Run Lighthouse audit
       try {
-        const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });'        const data = JSON.parse(lighthouseResult);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: utf8' });
+        const data = JSON.parse(lighthouseResult);
         metrics.lighthouseScore = Math.round(data.lhr.categories.performance.score * 100);
-        metrics.loadTime = data.lhr.audits['first-contentful-paint'].numericValue;'      } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        logger.warn('Failed to run Lighthouse audit:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        metrics.loadTime = data.lhr.audits['first-contentful-paint'].numericValue;
+      } catch (error) {
+        logger.warn('Failed to run Lighthouse audit:', error.message);
+      }
 
       // Monitor API response times
       try {
         const startTime = Date.now();
-        await axios.get('http://localhost:3000/api/health');        metrics.apiResponseTime = Date.now() - startTime;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        await axios.get('http://localhost:3000/api/health');
+        metrics.apiResponseTime = Date.now() - startTime;
       } catch (error) {
-        logger.warn('Failed to check API response time:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Failed to check API response time:', error.message);
+      }
 
       // Monitor system resources
       const memUsage = process.memoryUsage();
       metrics.memoryUsage = Math.round(memUsage.heapUsed / 1024 / 1024); // MB
 
-      this.metrics.set('performance', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for performance issues
-      if (metrics.lighthouseScore < 80 || metrics.apiResponseTime > 1000) {
-        this.createAlert('performance', 'Performance issues detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('performance', metrics);
+      try {
+        // Check for performance issues
+        if (metrics.lighthouseScore < 80 || metrics.apiResponseTime > 1000) {
+          this.createAlert('performance', Performance issues detected', metrics);
+        }
 
-      logger.info('Performance metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error monitoring performance:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.info('Performance metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error monitoring performance:', error);
+      }
+    } catch (error) {
+      logger.error('Error in monitorPerformance:', error);
+    }
   }
 
   /**
    * Monitor security
    */
   async monitorSecurity() {
-    logger.info('🔒 Monitoring security...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🔒 Monitoring security...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'security','        vulnerabilities: 0,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: security',
+        vulnerabilities: 0,
         outdatedPackages: 0,
         securityScore: 100
       };
 
       // Run security audit
       try {
-        const auditResult = execSync('npm audit --json', { encoding: 'utf8' });'        const data = JSON.parse(auditResult);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const auditResult = execSync('npm audit --json', { encoding: utf8' });
+        const data = JSON.parse(auditResult);
         metrics.vulnerabilities = Object.keys(data.vulnerabilities || {}).length;
       } catch (error) {
-        logger.warn('Failed to run security audit:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Failed to run security audit:', error.message);
+      }
 
       // Check for outdated packages
       try {
-        const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });'        const data = JSON.parse(outdatedResult);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const outdatedResult = execSync('npm outdated --json', { encoding: utf8' });
+        const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
       } catch (error) {
-        logger.warn('Failed to check outdated packages:', error.message);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Failed to check outdated packages:', error.message);
+      }
 
       // Calculate security score
       metrics.securityScore = Math.max(0, 100 - (metrics.vulnerabilities * 10) - (metrics.outdatedPackages * 2));
 
-      this.metrics.set('security', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for security issues
-      if (metrics.vulnerabilities > 0 || metrics.securityScore < 80) {
-        this.createAlert('security', 'Security issues detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-      logger.info('Security metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error monitoring security:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('security', metrics);
+      try {
+        // Check for security issues
+        if (metrics.vulnerabilities > 0 || metrics.securityScore < 80) {
+          this.createAlert('security', Security issues detected', metrics);
+        }
+        logger.info('Security metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error monitoring security:', error);
+      }
+    } catch (error) {
+      logger.error('Error in monitorSecurity:', error);
+    }
   }
 
   /**
    * Monitor user experience
    */
   async monitorUserExperience() {
-    logger.info('👥 Monitoring user experience...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('👥 Monitoring user experience...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'userExperience','        errorRate: 0,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: userExperience',
+        errorRate: 0,
         userSatisfaction: 0,
         accessibilityScore: 100,
         conversionRate: 0
@@ -254,31 +304,39 @@ const warningMatches = output.match(/warning/g);
       // Simulate conversion rate (in real app, this would come from analytics)
       metrics.conversionRate = Math.random() * 0.3 + 0.1; // 10-40%
 
-      this.metrics.set('userExperience', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for UX issues
-      if (metrics.errorRate > 0.01 || metrics.userSatisfaction < 0.7) {
-        this.createAlert('userExperience', 'User experience issues detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-      logger.info('User experience metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error monitoring user experience:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('userExperience', metrics);
+      try {
+        // Check for UX issues
+        if (metrics.errorRate > 0.01 || metrics.userSatisfaction < 0.7) {
+          this.createAlert('userExperience', User experience issues detected', metrics);
+        }
+        logger.info('User experience metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error monitoring user experience:', error);
+      }
+    } catch (error) {
+      logger.error('Error in monitorUserExperience:', error);
+    }
   }
 
   /**
    * Monitor dependencies
    */
   async monitorDependencies() {
-    logger.info('📦 Monitoring dependencies...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('📦 Monitoring dependencies...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'dependencies','        totalPackages: 0,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: dependencies',
+        totalPackages: 0,
         outdatedPackages: 0,
         vulnerablePackages: 0,
         unusedPackages: 0
       };
 
       // Count total packages
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));'      const allDeps = {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
+      const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies
       };
@@ -286,7 +344,8 @@ const warningMatches = output.match(/warning/g);
 
       // Check outdated packages
       try {
-        const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });'        const data = JSON.parse(outdatedResult);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const outdatedResult = execSync('npm outdated --json', { encoding: utf8' });
+        const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
       } catch (error) {
         // No outdated packages
@@ -294,7 +353,8 @@ const warningMatches = output.match(/warning/g);
 
       // Check vulnerable packages
       try {
-        const auditResult = execSync('npm audit --json', { encoding: 'utf8' });'        const data = JSON.parse(auditResult);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        const auditResult = execSync('npm audit --json', { encoding: utf8' });
+        const data = JSON.parse(auditResult);
         metrics.vulnerablePackages = Object.keys(data.vulnerabilities || {}).length;
       } catch (error) {
         // No vulnerabilities
@@ -303,37 +363,50 @@ const warningMatches = output.match(/warning/g);
       // Find unused packages (simplified)
       metrics.unusedPackages = this.findUnusedPackages();
 
-      this.metrics.set('dependencies', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for dependency issues
-      if (metrics.outdatedPackages > 5 || metrics.vulnerablePackages > 0) {
-        this.createAlert('dependencies', 'Dependency issues detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-      logger.info('Dependency metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error monitoring dependencies:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('dependencies', metrics);
+      try {
+        // Check for dependency issues
+        if (metrics.outdatedPackages > 5 || metrics.vulnerablePackages > 0) {
+          this.createAlert('dependencies', Dependency issues detected', metrics);
+        }
+        logger.info('Dependency metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error monitoring dependencies:', error);
+      }
+    } catch (error) {
+      logger.error('Error in monitorDependencies:', error);
+    }
   }
 
   /**
    * Check system health
    */
   async checkSystemHealth() {
-    logger.info('🏥 Checking system health...');    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🏥 Checking system health...');
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'systemHealth','        uptime: process.uptime(),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        type: systemHealth',
+        uptime: process.uptime(),
         memoryUsage: process.memoryUsage(),
         cpuUsage: process.cpuUsage(),
         activeConnections: 0
       };
 
-      this.metrics.set('systemHealth', metrics);      '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      // Check for system issues
-      const memUsage = process.memoryUsage();
-      if (memUsage.heapUsed / memUsage.heapTotal > 0.9) {
-        this.createAlert('systemHealth', 'High memory usage detected', metrics);      }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-      logger.debug('System health metrics collected', metrics);    } catch (error) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-      logger.error('Error checking system health:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.metrics.set('systemHealth', metrics);
+      try {
+        // Check for system issues
+        const memUsage = process.memoryUsage();
+        if (memUsage.heapUsed / memUsage.heapTotal > 0.9) {
+          this.createAlert('systemHealth', High memory usage detected', metrics);
+        }
+        logger.debug('System health metrics collected', metrics);
+      } catch (error) {
+        logger.error('Error checking system health:', error);
+      }
+    } catch (error) {
+      logger.error('Error in checkSystemHealth:', error);
+    }
   }
 
   /**
@@ -341,12 +414,18 @@ const warningMatches = output.match(/warning/g);
    */
   watchFileChanges() {
     const watchPaths = [
-      'src/','      'pages/','      'components/','      'utils/','      'styles/''    ];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      src/',
+      pages/',
+      components/',
+      utils/',
+      styles/
+    ];
 
     watchPaths.forEach(watchPath => {
       if (fs.existsSync(watchPath)) {
         fs.watch(watchPath, { recursive: true }, (eventType, filename) => {
-          if (filename && !filename.includes('node_modules') && !filename.includes('.git')) {'            logger.info(`File change detected: ${eventType} ${filename}`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          if (filename && !filename.includes('node_modules') && !filename.includes('.git')) {
+            logger.info(`File change detected: ${eventType} ${filename}`);
             this.onFileChange(eventType, filename);
           }
         });
@@ -359,7 +438,8 @@ const warningMatches = output.match(/warning/g);
    */
   onFileChange(eventType, filename) {
     // Trigger immediate code quality check for changed files
-    if (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js')) {'      setTimeout(() => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    if (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js')) {
+      setTimeout(() => {
         this.monitorCodeQuality();
       }, 5000); // Wait 5 seconds for file to be saved
     }
@@ -370,19 +450,19 @@ const warningMatches = output.match(/warning/g);
    */
   monitorBuildProcess() {
     // This would integrate with your CI/CD pipeline
-    logger.info('🔨 Build process monitoring enabled');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🔨 Build process monitoring enabled');  }
 
   /**
    * Monitor deployment
    */
   monitorDeployment() {
     // This would check deployment status
-    logger.info('🚀 Deployment monitoring enabled');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🚀 Deployment monitoring enabled');  }
 
   /**
    * Create an alert
    */
-  createAlert(type, message, data) {
+  async createAlert(type, message, data) {
     const alert = {
       id: `${type}_${Date.now()}`,
       type,
@@ -390,13 +470,28 @@ const warningMatches = output.match(/warning/g);
       data,
       timestamp: new Date().toISOString(),
       severity: this.calculateSeverity(type, data),
-      status: 'open'    };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      status: open
+    };
 
     this.alerts.push(alert);
     logger.warn(`Alert created: ${message}`, alert);
     
     // Trigger improvement system
-    this.triggerImprovement(alert);
+    await this.triggerImprovement(alert);
+
+    // After improvement, automatically commit and push changes
+    try {
+      logger.info('Attempting automatic commit and push after improvement...');
+      const autoCommitPush = new AutonomousCommitPush();
+      const result = await autoCommitPush.autonomousCommitAndPush();
+      if (result.success) {
+        logger.info('Automatic commit and push completed successfully.');
+      } else {
+        logger.error('Automatic commit and push failed:', result.error || result.message);
+      }
+    } catch (err) {
+      logger.error('Error during automatic commit and push:', err);
+    }
   }
 
   /**
@@ -404,8 +499,17 @@ const warningMatches = output.match(/warning/g);
    */
   calculateSeverity(type, data) {
     switch (type) {
-      case 'security':'        return data.vulnerabilities > 0 ? 'critical' : 'medium';'      case 'performance':'        return data.lighthouseScore < 60 ? 'high' : 'medium';'      case 'codeQuality':'        return data.lintErrors > 10 ? 'high' : 'medium';'      case 'userExperience':'        return data.errorRate > 0.05 ? 'high' : 'medium';'      default:'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        return 'medium';'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      case security':
+        return data.vulnerabilities > 0 ? critical' : medium';
+      case performance':
+        return data.lighthouseScore < 60 ? high' : medium';
+      case codeQuality':
+        return data.lintErrors > 10 ? high' : medium';
+      case userExperience':
+        return data.errorRate > 0.05 ? high' : medium';
+      default:
+        return medium';
+    }
   }
 
   /**
@@ -414,7 +518,8 @@ const warningMatches = output.match(/warning/g);
   async triggerImprovement(alert) {
     try {
       // Send alert to improvement system
-      const improvementSystem = require('./index');'      const system = new improvementSystem();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const improvementSystem = require('./index');
+      const system = new improvementSystem();
       
       await system.queueImprovement(alert.type, {
         type: alert.type,
@@ -425,7 +530,7 @@ const warningMatches = output.match(/warning/g);
       
       logger.info(`Improvement triggered for alert: ${alert.id}`);
     } catch (error) {
-      logger.error('Error triggering improvement:', error);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      logger.error('Error triggering improvement:', error);    }
   }
 
   /**
@@ -436,17 +541,18 @@ const warningMatches = output.match(/warning/g);
     let complexity = 0;
     
     try {
-      const srcFiles = this.findFiles('src/', ['.ts', '.tsx', '.js', '.jsx']);      srcFiles.forEach(file => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        const content = fs.readFileSync(file, 'utf8');        // Count cyclomatic complexity indicators'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const srcFiles = this.findFiles('src/', ['.ts', .tsx', .js', .jsx']);
+      srcFiles.forEach(file => {
+        const content = fs.readFileSync(file, utf8');        // Count cyclomatic complexity indicators
         const ifStatements = (content.match(/if\s*\(/g) || []).length
-const forLoops = (content.match(/for\s*\(/g) || []).length
-const whileLoops = (content.match(/while\s*\(/g) || []).length
-const switchStatements = (content.match(/switch\s*\(/g) || []).length;
+        const forLoops = (content.match(/for\s*\(/g) || []).length
+        const whileLoops = (content.match(/while\s*\(/g) || []).length
+        const switchStatements = (content.match(/switch\s*\(/g) || []).length;
         
         complexity += ifStatements + forLoops + whileLoops + switchStatements;
       });
     } catch (error) {
-      logger.warn('Error calculating code complexity:', error.message);    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      logger.warn('Error calculating code complexity:', error.message);    }
     
     return complexity;
   }
@@ -485,11 +591,11 @@ const switchStatements = (content.match(/switch\s*\(/g) || []).length;
     const files = [];
     
     if (!fs.existsSync(dir)) return files
-const items = fs.readdirSync(dir);
+    const items = fs.readdirSync(dir);
     
     items.forEach(item => {
       const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+      const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...this.findFiles(fullPath, extensions));
@@ -519,7 +625,7 @@ const stat = fs.statSync(fullPath);
    * Stop monitoring
    */
   stop() {
-    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;
   }
 }
 
@@ -531,11 +637,15 @@ if (require.main === module) {
   const monitor = new ZionMonitor();
   
   // Handle graceful shutdown
-  process.on('SIGINT', () => {'    console.log('\n🛑 Received SIGINT, shutting down gracefully...');    monitor.stop();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  process.on('SIGINT', () => {
+    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    monitor.stop();
     process.exit(0);
   });
 
-  process.on('SIGTERM', () => {'    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');    monitor.stop();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  process.on('SIGTERM', () => {
+    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    monitor.stop();
     process.exit(0);
   });
 

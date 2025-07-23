@@ -19,9 +19,9 @@ class AutomationManager {
     const isInAutomationDir = currentDir.endsWith('automation');
     
     this.config = {
-      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, 'automation'),
-      scriptsDir: isInAutomationDir ? path.join(currentDir, '..', 'scripts') : path.join(currentDir, 'scripts'),
-      logsDir: isInAutomationDir ? path.join(currentDir, '..', 'logs') : path.join(currentDir, 'logs'),
+      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, automation'),
+      scriptsDir: isInAutomationDir ? path.join(currentDir, ..', scripts') : path.join(currentDir, scripts'),
+      logsDir: isInAutomationDir ? path.join(currentDir, ..', logs') : path.join(currentDir, logs'),
       port: process.env.AUTOMATION_PORT || 3001
     };
     
@@ -39,34 +39,34 @@ class AutomationManager {
     console.log('🤖 Zion App - Unified Automation Manager\n');
 
     switch (command) {
-      case 'start':
+      case start':
         await this.startSystem();
         break;
-      case 'stop':
+      case stop':
         await this.stopSystem();
         break;
-      case 'restart':
+      case restart':
         await this.restartSystem();
         break;
-      case 'status':
+      case status':
         await this.showStatus();
         break;
-      case 'logs':
+      case logs':
         await this.showLogs();
         break;
-      case 'dashboard':
+      case dashboard':
         await this.openDashboard();
         break;
-      case 'test':
+      case test':
         await this.runTests();
         break;
-      case 'setup':
+      case setup':
         await this.setupSystem();
         break;
-      case 'clean':
+      case clean':
         await this.cleanup();
         break;
-      case 'help':
+      case help':
         this.showHelp();
         break;
       default:
@@ -90,9 +90,9 @@ class AutomationManager {
 
       // Start the enhanced automation system
       const automationProcess = spawn('node', [
-        path.join(this.config.automationDir, 'autonomous-system.js')
+        path.join(this.config.automationDir, autonomous-system.js')
       ], {
-        stdio: 'pipe',
+        stdio: pipe',
         detached: false
       });
 
@@ -168,7 +168,7 @@ class AutomationManager {
     try {
       // Check if system is running
       const isRunning = await this.isSystemRunning();
-      console.log(`System Status: ${isRunning ? '🟢 Running' : '🔴 Stopped'}`);
+      console.log(`System Status: ${isRunning ? 🟢 Running' : 🔴 Stopped'}`);
 
       if (isRunning) {
         // Get system status from API
@@ -203,7 +203,7 @@ class AutomationManager {
           .slice(0, 5);
 
         recentTasks.forEach(task => {
-          const status = task.status === 'completed' ? '✅' : '❌';
+          const status = task.status === completed' ? ✅' : ❌';
           const time = new Date(task.completedAt).toLocaleTimeString();
           console.log(`  ${status} ${task.type} - ${time}`);
         });
@@ -224,10 +224,10 @@ class AutomationManager {
     console.log('📝 Zion App Automation System Logs\n');
 
     try {
-      const logFile = path.join(this.config.logsDir, 'automation.log');
+      const logFile = path.join(this.config.logsDir, automation.log');
       
       if (await this.fileExists(logFile)) {
-        const logs = await fs.readFile(logFile, 'utf8')
+        const logs = await fs.readFile(logFile, utf8')
         const lines = logs.split('\n').filter(line => line.trim());
         
         // Show last 50 lines
@@ -268,14 +268,14 @@ class AutomationManager {
       let command;
 
       switch (platform()) {
-        case 'darwin':
-          command = 'open';
+        case darwin':
+          command = open';
           break;
-        case 'win32':
-          command = 'start';
+        case win32':
+          command = start';
           break;
         default:
-          command = 'xdg-open';
+          command = xdg-open';
       }
 
       execSync(`${command} ${dashboardUrl}`);
@@ -296,7 +296,7 @@ class AutomationManager {
     try {
       // Run test suite
       const testProcess = spawn('npm', ['test'], {
-        stdio: 'inherit',
+        stdio: inherit',
         cwd: this.config.automationDir
       });
 
@@ -324,10 +324,10 @@ class AutomationManager {
       // Create required directories
       const dirs = [
         this.config.logsDir,
-        path.join(this.config.automationDir, 'logs'),
-        path.join(this.config.automationDir, 'reports'),
-        path.join(this.config.automationDir, 'temp'),
-        path.join(this.config.automationDir, 'backups')
+        path.join(this.config.automationDir, logs'),
+        path.join(this.config.automationDir, reports'),
+        path.join(this.config.automationDir, temp'),
+        path.join(this.config.automationDir, backups')
       ];
 
       for (const dir of dirs) {
@@ -338,12 +338,12 @@ class AutomationManager {
       // Install dependencies
       console.log('\n📦 Installing dependencies...');
       execSync('npm install', { 
-        stdio: 'inherit', 
+        stdio: inherit', 
         cwd: this.config.automationDir 
       });
 
       // Create environment file if it doesn't exist
-      const envFile = path.join(this.config.automationDir, '.env');
+      const envFile = path.join(this.config.automationDir, .env');
       if (!(await this.fileExists(envFile))) {
         const envTemplate = `# Zion App Automation System Configuration
 
@@ -411,7 +411,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
       }
 
       // Clean temporary files
-      const tempDir = path.join(this.config.automationDir, 'temp');
+      const tempDir = path.join(this.config.automationDir, temp');
       if (await this.fileExists(tempDir)) {
         const tempFiles = await fs.readdir(tempDir);
         for (const file of tempFiles) {
@@ -501,7 +501,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
   async killRemainingProcesses() {
     try {
       // Kill processes on the automation port
-      execSync(`lsof -ti:${this.config.port} | xargs kill -9`, { stdio: 'ignore' });
+      execSync(`lsof -ti:${this.config.port} | xargs kill -9`, { stdio: ignore' });
     } catch {
       // Ignore errors if no processes found
     }

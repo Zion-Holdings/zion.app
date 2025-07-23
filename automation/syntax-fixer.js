@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const { execSync } = require('child_process');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 
 class SyntaxFixer {
   constructor() {
@@ -12,7 +12,7 @@ class SyntaxFixer {
   }
 
   async fixAllSyntaxErrors() {
-    console.log('🔧 Starting comprehensive syntax fix...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🔧 Starting comprehensive syntax fix...');
     
     try {
       // Fix unterminated strings
@@ -31,21 +31,21 @@ class SyntaxFixer {
       return this.fixedFiles.length;
       
     } catch (error) {
-      console.error('❌ Syntax fix failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.error('❌ Syntax fix failed:', error.message);
       return 0;
     }
   }
 
   async fixUnterminatedStrings() {
-    const files = await this.findFiles(['.tsx', '.ts', '.js', '.jsx']);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const files = await this.findFiles(['.tsx', .ts', .js', .jsx']);
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix unterminated strings
-        const stringRegex = /(['"])([^'"]*?)(?=\n|$)/g;"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        const stringRegex = /(['"])([^'"]*?)(?=\n|$)/g;""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         content = content.replace(stringRegex, (match, quote, text) => {
           if (!text.endsWith(quote)) {
             modified = true;
@@ -65,24 +65,24 @@ class SyntaxFixer {
   }
 
   async fixImportExportIssues() {
-    const files = await this.findFiles(['.tsx', '.ts', '.js', '.jsx']);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const files = await this.findFiles(['.tsx', .ts', .js', .jsx']);
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix missing semicolons after imports
-        content = content.replace(/import\s+.*?from\s+['"][^'"]+['"](?!;)/g, (match) => {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        content = content.replace(/import\s+.*?from\s+['"][^'"]+['"](?!;)/g, (match) => {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
           modified = true;
-          return match + ';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          return match + ;;
         });
         
         // Fix missing semicolons after exports
         content = content.replace(/export\s+.*?(?!;)/g, (match) => {
-          if (!match.endsWith(';') && !match.endsWith('}')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          if (!match.endsWith(';) && !match.endsWith('})) {
             modified = true;
-            return match + ';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            return match + ;;
           }
           return match;
         });
@@ -98,11 +98,11 @@ class SyntaxFixer {
   }
 
   async fixJSXSyntax() {
-    const files = await this.findFiles(['.tsx', '.jsx']);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const files = await this.findFiles(['.tsx', .jsx']);
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix unclosed JSX tags
@@ -122,11 +122,11 @@ class SyntaxFixer {
   }
 
   async fixTypeScriptIssues() {
-    const files = await this.findFiles(['.ts', '.tsx']);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const files = await this.findFiles(['.ts', .tsx']);
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix type annotations
@@ -156,17 +156,17 @@ class SyntaxFixer {
           try {
             const stat = fs.statSync(fullPath);
             
-            if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            if (stat.isDirectory() && !item.startsWith('.') && item !== node_modules') {
               walkDir(fullPath);
             } else if (stat.isFile() && extensions.includes(path.extname(fullPath))) {
               files.push(fullPath);
             }
           } catch (error) {
-            // Skip files that can't be accessed'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            // Skip files that can't be accessed
           }
         }
       } catch (error) {
-        // Skip directories that can't be accessed'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        // Skip directories that can't be accessed
       }
     };
     
@@ -184,17 +184,17 @@ if (require.main === module) {
     while (true) {
       try {
         await fixer.fixAllSyntaxErrors();
-        console.log('💤 Waiting 30 seconds before next syntax check...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('💤 Waiting 30 seconds before next syntax check...');
         await new Promise(resolve => setTimeout(resolve, 30000));
       } catch (error) {
-        console.error('❌ Syntax fixer error:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.error('❌ Syntax fixer error:', error.message);
         await new Promise(resolve => setTimeout(resolve, 10000));
       }
     }
   };
   
   runFixer().catch(error => {
-    console.error('❌ Fatal error in syntax fixer:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.error('❌ Fatal error in syntax fixer:', error);
     process.exit(1);
   });
 }

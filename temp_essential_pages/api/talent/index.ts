@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import * as Sentry from '@sentry/nextjs';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';;
 const prisma = new PrismaClient();
 
 interface _TalentFilters {
@@ -19,7 +19,7 @@ interface WhereClause {
     hasSome: string[];
   };
   OR?: Array<{
-    name?: { contains: string; mode: 'insensitive' };'    headline?: { contains: string; mode: 'insensitive' };'    bio?: { contains: string; mode: 'insensitive' };'  }>;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    name?: { contains: string; mode: insensitive' };    headline?: { contains: string; mode: insensitive' };    bio?: { contains: string; mode: insensitive' };  }>;
 }
 ;
 export ;default async function handler(
@@ -49,13 +49,13 @@ export ;default async function handler(
     
     if (filters.skills && filters.skills.length > 0) {
       where.skills = {
-        hasSome: filters.skills,
+        hasSome: filters.skills
       };
     }
     
     if (filters.search) {
       where.OR = [
-        { name: { contains: filters.search, mode: 'insensitive' } },'        { headline: { contains: filters.search, mode: 'insensitive' } },'        { bio: { contains: filters.search, mode: 'insensitive' } },'      ];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        { name: { contains: filters.search, mode: insensitive' } },        { headline: { contains: filters.search, mode: insensitive' } },        { bio: { contains: filters.search, mode: insensitive' } },      ];
     }
 
     const [profiles, totalCount] = await Promise.all([
@@ -64,7 +64,7 @@ export ;default async function handler(
         skip,
         take: limit,
         orderBy: {
-          createdAt: 'desc','        },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          createdAt: desc',        },
         select: {
           id: true,
           name: true,
@@ -77,10 +77,10 @@ export ;default async function handler(
           rating: true,
           completedProjects: true,
           isAvailable: true,
-          createdAt: true,
-        },
+          createdAt: true
+        }
       }),
-      prisma.talentProfile.count({ where }),
+      prisma.talentProfile.count({ where })
     ]);
 
     return res.status(200).json({
@@ -88,11 +88,11 @@ export ;default async function handler(
       totalCount,
       page,
       limit,
-      hasMore: skip + limit < totalCount,
+      hasMore: skip + limit < totalCount
     });
   } catch (error) {
     Sentry.captureException(error);
-    console.error('Error fetching talent profiles:', error);'    return res.status(500).json({ error: 'Failed to fetch talent profiles' });'  } finally {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.error('Error fetching talent profiles:', error);    return res.status(500).json({ error: Failed to fetch talent profiles' });  } finally {
     await prisma.$disconnect();
   }
 }

@@ -4,5 +4,5 @@ module.exports = {
   talentMoves: new Map(),
   resolutions: new Map(),
   leaderboard: new Map(),
-  lastUpdated: Date.now(),
+  lastUpdated: Date.now()
 };

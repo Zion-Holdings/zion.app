@@ -1,4 +1,4 @@
-import https from 'https';'import logger from './logger';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import https from https';import logger from ./logger';
 interface LatencyResult {
   url: string;
   responseTime: number;
@@ -8,7 +8,7 @@ interface LatencyResult {
 
 class LatencyTester {
   private endpoints = [
-    'https://api.github.com','    'https://jsonplaceholder.typicode.com','    'https://httpbin.org/status/200''  ];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    https://api.github.com',https://jsonplaceholder.typicode.com',https://httpbin.org/status/200''  ];
 
   async testEndpoint(url: string): Promise<LatencyResult> {
     const startTime = Date.now();
@@ -26,7 +26,7 @@ class LatencyTester {
         });
       });
 
-      request.on('error', (error) => {'        const endTime = Date.now();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      request.on('error', (error) => {'        const endTime = Date.now();
         const responseTime = endTime - startTime;
         
         resolve({
@@ -46,18 +46,18 @@ class LatencyTester {
           url,
           responseTime,
           success: false,
-          error: 'Timeout after 10 seconds''        });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          error: Timeout after 10 seconds''        });
       });
     });
   }
 
   async runLatencyTests(): Promise<LatencyResult[]> {
-    logger.info('Starting latency tests for monitoring endpoints');'    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('Starting latency tests for monitoring endpoints');    
     const results = await Promise.all(
       this.endpoints.map(endpoint => this.testEndpoint(endpoint))
     );
 
-    logger.info('Latency Test Results:', {'      results: results.map(r => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.info('Latency Test Results:', {'      results: results.map(r => ({
         url: r.url,
         responseTime: r.responseTime,
         success: r.success,
@@ -68,12 +68,12 @@ class LatencyTester {
     // Log any failed tests as warnings
     results.forEach(result => {
       if (!result.success) {
-        logger.warn('Latency test failed', {'          url: result.url,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.warn('Latency test failed', {'          url: result.url,
           responseTime: result.responseTime,
           error: result.error
         });
       } else {
-        logger.info('Latency test successful', {'          url: result.url,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        logger.info('Latency test successful', {'          url: result.url,
           responseTime: result.responseTime
         });
       }
@@ -90,8 +90,8 @@ async function main() {
   try {
     await tester.runLatencyTests();
   } catch (error) {
-    logger.error('Failed to run latency tests:', error);'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    logger.error('Failed to run latency tests:', error);  }
 }
 
 if (require.main === module) {
-  main().catch(error => logger.error('Latency test execution failed:', error));'}'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  main().catch(error => logger.error('Latency test execution failed:', error));}

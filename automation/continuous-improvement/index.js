@@ -36,14 +36,14 @@ const CONFIG = {
   
   // Cursor AI integration
   CURSOR: {
-    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh',
+    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || https://api.cursor.sh',
     API_KEY: process.env.CURSOR_API_KEY,
     WORKSPACE_ID: process.env.CURSOR_WORKSPACE_ID
   },
   
   // Monitoring endpoints
   MONITORING: {
-    LIGHTHOUSE_URL: process.env.LIGHTHOUSE_URL || 'http://localhost:3000',
+    LIGHTHOUSE_URL: process.env.LIGHTHOUSE_URL || http://localhost:3000',
     ERROR_TRACKING_URL: process.env.ERROR_TRACKING_URL,
     ANALYTICS_URL: process.env.ANALYTICS_URL
   }
@@ -80,14 +80,14 @@ class ContinuousImprovementSystem {
    */
   validateConfig() {
     const requiredEnvVars = [
-      'CURSOR_API_KEY',
-      'CURSOR_WORKSPACE_ID'
+      CURSOR_API_KEY',
+      CURSOR_WORKSPACE_ID
     ];
     
     const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     
     if (missing.length > 0) {
-      console.warn(`⚠️  Missing environment variables: ${missing.join(', ')}`);
+      console.warn(`⚠️  Missing environment variables: ${missing.join(', )}`);
       console.warn('Some features may be limited without proper configuration');
     }
   }
@@ -185,8 +185,8 @@ class ContinuousImprovementSystem {
       
       if (needsImprovement) {
         await this.queueImprovement('codeQuality', {
-          type: 'codeQuality',
-          severity: 'medium',
+          type: codeQuality',
+          severity: medium',
           data: {
             lintErrors: lintResults.errors,
             coverage: coverageResults.coverage,
@@ -222,8 +222,8 @@ class ContinuousImprovementSystem {
       
       if (needsImprovement) {
         await this.queueImprovement('performance', {
-          type: 'performance',
-          severity: 'high',
+          type: performance',
+          severity: high',
           data: {
             lighthouseScore: lighthouseResults.performance,
             webVitals,
@@ -257,8 +257,8 @@ class ContinuousImprovementSystem {
       
       if (needsImprovement) {
         await this.queueImprovement('security', {
-          type: 'security',
-          severity: 'critical',
+          type: security',
+          severity: critical',
           data: {
             securityIssues: securityAudit.issues,
             vulnerabilities: vulnerabilities.count,
@@ -294,8 +294,8 @@ class ContinuousImprovementSystem {
       
       if (needsImprovement) {
         await this.queueImprovement('userExperience', {
-          type: 'userExperience',
-          severity: 'medium',
+          type: userExperience',
+          severity: medium',
           data: {
             accessibility,
             seo,
@@ -329,8 +329,8 @@ class ContinuousImprovementSystem {
       
       if (needsImprovement) {
         await this.queueImprovement('dependencies', {
-          type: 'dependencies',
-          severity: 'low',
+          type: dependencies',
+          severity: low',
           data: {
             outdated,
             vulnerabilities
@@ -350,7 +350,7 @@ class ContinuousImprovementSystem {
   async queueImprovement(type, improvement) {
     improvement.id = Date.now().toString();
     improvement.timestamp = new Date().toISOString();
-    improvement.status = 'queued';
+    improvement.status = queued';
     
     this.improvementQueue.push(improvement);
     console.log(`📋 Queued improvement: ${type} (${improvement.severity})`);
@@ -366,36 +366,36 @@ class ContinuousImprovementSystem {
     console.log(`🔄 Processing improvement: ${improvement.type}`);
 
     try {
-      improvement.status = 'processing';
+      improvement.status = processing';
       
       // Implement the improvement based on type
       switch (improvement.type) {
-        case 'codeQuality':
+        case codeQuality':
           await this.implementCodeQualityImprovement(improvement);
           break;
-        case 'performance':
+        case performance':
           await this.implementPerformanceImprovement(improvement);
           break;
-        case 'security':
+        case security':
           await this.implementSecurityImprovement(improvement);
           break;
-        case 'userExperience':
+        case userExperience':
           await this.implementUserExperienceImprovement(improvement);
           break;
-        case 'dependencies':
+        case dependencies':
           await this.implementDependenciesImprovement(improvement);
           break;
         default:
           console.warn(`⚠️  Unknown improvement type: ${improvement.type}`);
       }
       
-      improvement.status = 'completed';
+      improvement.status = completed';
       improvement.completedAt = new Date().toISOString();
       
       console.log(`✅ Improvement completed: ${improvement.type}`);
       
     } catch (error) {
-      improvement.status = 'failed';
+      improvement.status = failed';
       improvement.error = error.message;
       console.error(`❌ Improvement failed: ${improvement.type}`, error);
     }

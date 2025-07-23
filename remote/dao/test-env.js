@@ -1,17 +1,17 @@
 #!/usr/bin/env node;
-import { DelayTolerantDAO } from '../../src/offworld/delayDao';'import { initOrbit } from '../../src/offworld/orbitdb';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { DelayTolerantDAO } from ../../src/offworld/delayDao';import { initOrbit } from ../../src/offworld/orbitdb';
 async function main() {
-  await initOrbit('./remote-dao-db');'  const dao = new DelayTolerantDAO();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  await initOrbit('./remote-dao-db');  const dao = new DelayTolerantDAO();
 
   const proposal = await dao.submitProposal(
-    'Deploy comms beacon to geosync orbit''  );'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  // console.log('Queued proposal:', proposal.id);''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    Deploy comms beacon to geosync orbit''  );
+  // console.log('Queued proposal:', proposal.id);
   await dao.submitVote({
     proposalId: proposal.id,
-    voter: 'groundstation1','    support: true,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    voter: groundstation1',    support: true
   });
   await dao.connect();
-  // console.log('Synced proposals and votes over satellite link');'}'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  // console.log('Synced proposals and votes over satellite link');}
 
 main().catch((err) => {
   console.error(error);

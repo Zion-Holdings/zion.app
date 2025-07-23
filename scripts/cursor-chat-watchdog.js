@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const fs = require('fs')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-const LOG_FILE = path.resolve(__dirname, '../logs/cursor-chat-watchdog.log')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { spawn } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const LOG_FILE = path.resolve(__dirname, ../logs/cursor-chat-watchdog.log')
 const SOCKET_SERVER_CMD = [
-  'node','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  [path.resolve(__dirname, 'test-socket-server.js')],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  node',
+  [path.resolve(__dirname, test-socket-server.js')]
 ]
 const AUTOMATION_CMD = [
-  'node','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  [path.resolve(__dirname, 'cursor-chat-automation.js'), 'start'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  node',
+  [path.resolve(__dirname, cursor-chat-automation.js'), start']
 ]
 const CHECK_INTERVAL = 10000; // 10 seconds
 
@@ -24,29 +24,29 @@ function log(msg) {
 
 function startSocketServer() {
   if (socketServerProc) return;
-  log('Starting test socket server...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  log('Starting test socket server...');
   socketServerProc = spawn(SOCKET_SERVER_CMD[0], SOCKET_SERVER_CMD[1], {
     detached: true,
-    stdio: 'ignore','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    env: { ...process.env, PORT: '3001' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    stdio: ignore',
+    env: { ...process.env, PORT: 3001' }
   });
   socketServerProc.unref();
 }
 
 function startAutomation() {
   if (automationProc) return;
-  log('Starting cursor chat automation...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  log('Starting cursor chat automation...');
   automationProc = spawn(AUTOMATION_CMD[0], AUTOMATION_CMD[1], {
     detached: true,
-    stdio: 'ignore','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    env: { ...process.env, CURSOR_CHAT_SOCKET_URL: 'http://localhost:3001' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    stdio: ignore',
+    env: { ...process.env, CURSOR_CHAT_SOCKET_URL: http://localhost:3001' }
   });
   automationProc.unref();
 }
 
 function isProcessRunning(name) {
   try {
-    const out = require('child_process')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const out = require('child_process')
       .execSync(`pgrep -fl ${name} | grep -v grep`)
       .toString();
     return out.includes(name);
@@ -57,20 +57,20 @@ function isProcessRunning(name) {
 
 function checkAndRestart() {
   // Check socket server
-  if (!isProcessRunning('test-socket-server.js')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    log('Test socket server not running. Restarting...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (!isProcessRunning('test-socket-server.js')) {
+    log('Test socket server not running. Restarting...');
     startSocketServer();
     socketServerProc = null;
   }
   // Check automation
-  if (!isProcessRunning('cursor-chat-automation.js')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    log('Cursor chat automation not running. Restarting...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  if (!isProcessRunning('cursor-chat-automation.js')) {
+    log('Cursor chat automation not running. Restarting...');
     startAutomation();
     automationProc = null;
   }
 }
 
-log('Cursor Chat Watchdog started.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+log('Cursor Chat Watchdog started.');
 startSocketServer();
 startAutomation();
 

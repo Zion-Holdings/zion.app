@@ -1,7 +1,7 @@
 module.exports = {
   experimental: {
     esmExternals: false,
-    optimizeCss: true,
+    optimizeCss: true
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -18,26 +18,26 @@ module.exports = {
         https: false,
         assert: false,
         os: false,
-        path: false,
+        path: false
       };
     }
 
     // Handle polyfills
     config.resolve.alias = {
       ...config.resolve.alias,
-      'react-native$': 'react-native-web','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      react-native$': react-native-web
     };
 
     return config;
   },
   images: {
-    domains: ['localhost'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    unoptimized: true,
+    domains: ['localhost'],
+    unoptimized: true
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: false
   },
   eslint: {
-    ignoreDuringBuilds: false,
-  },
+    ignoreDuringBuilds: false
+  }
 };

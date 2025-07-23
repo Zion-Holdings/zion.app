@@ -1,11 +1,11 @@
-// import Profile from '@/src/pages/Profile'; // FIXED: Module not found'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-test('saves updated profile', async () => {'  const mockUser = { id: '1', name: 'Jane', bio: '', avatarUrl: '', points: 0 };'  global.fetch = vi.fn().mockResolvedValue({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    json: () => Promise.resolve({ ...mockUser, name: 'New' }),'  }) as any;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// import Profile from @/src/pages/Profile'; // FIXED: Module not found
+test('saves updated profile', async () => {'  const mockUser = { id: 1', name: Jane', bio: , avatarUrl: , points: 0 };  global.fetch = vi.fn().mockResolvedValue({
+    json: () => Promise.resolve({ ...mockUser, name: New' }),  }) as any;
 
   render(<Profile user={mockUser} orders={[]} />);
-  fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'New' } });'  fireEvent.click(screen.getByText('Save'));''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  fireEvent.change(screen.getByLabelText('Name'), { target: { value: New' } });  fireEvent.click(screen.getByText('Save'));
   await waitFor(() =>
     expect(global.fetch).toHaveBeenLastCalledWith(
-      '/api/users/1','      expect.objectContaining({ method: 'PATCH' })'    )'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      /api/users/1',      expect.objectContaining({ method: PATCH' })    )
   );
 });
