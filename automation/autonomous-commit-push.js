@@ -14,7 +14,7 @@ class AutonomousCommitPush {
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, config.json');
+        const configPath = path.join(__dirname, 'config.json');
         if (fs.existsSync(configPath)) {
             return JSON.parse(fs.readFileSync(configPath, utf8'));
         }
