@@ -1,6 +1,35 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
-# Simple commit message validation
-# Allow any commit message for now
-echo "✅ Commit message validation passed"
+echo "🚀 Autonomous Commit Message System Starting..."
+
+# Set environment variables for autonomous operation
+export AUTONOMOUS_MODE=true
+export HUSKY_AUTOMATION=true
+export AUTO_FIX_ENABLED=true
+
+# Get the commit message file
+COMMIT_MSG_FILE=$1
+
+# Run commit message validation and enhancement
+echo "📝 Validating and enhancing commit message..."
+
+# 1. Validate commit message format
+echo "🔍 Validating commit message format..."
+node automation/enhanced-automation-system.js validate-commit-message "$COMMIT_MSG_FILE" || {
+    echo "❌ Commit message validation failed"
+    exit 1
+}
+
+# 2. Enhance commit message
+echo "✨ Enhancing commit message..."
+node automation/enhanced-automation-system.js enhance-commit-message "$COMMIT_MSG_FILE" || {
+    echo "⚠️  Commit message enhancement failed, but continuing..."
+}
+
+# 3. Generate commit metadata
+echo "📊 Generating commit metadata..."
+node automation/enhanced-automation-system.js generate-commit-metadata "$COMMIT_MSG_FILE" || {
+    echo "⚠️  Metadata generation failed, but continuing..."
+}
+
+echo "✅ Commit message processing completed successfully!"
