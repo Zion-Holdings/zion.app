@@ -8,8 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/autonomous-startup.sh</string>
-        <string>monitor</string>
+        <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/start-autonomous.sh</string>
     </array>
     
     <key>RunAtLoad</key>
@@ -36,7 +35,7 @@
         <key>AUTO_RESTART</key>
         <string>true</string>
         <key>IMPROVEMENT_PORT</key>
-        <string>3002</string>
+        <string>3003</string>
     </dict>
     
     <key>ProcessType</key>
