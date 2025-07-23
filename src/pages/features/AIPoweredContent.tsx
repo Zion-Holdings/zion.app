@@ -6,4 +6,4 @@ export default function AIPoweredContent() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

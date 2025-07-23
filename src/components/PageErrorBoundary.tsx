@@ -6,4 +6,4 @@ export default function PageErrorBoundary() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

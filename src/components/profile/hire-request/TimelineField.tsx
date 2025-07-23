@@ -6,4 +6,4 @@ export default function TimelineField() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function GovernanceRoutes() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

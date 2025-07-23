@@ -6,4 +6,4 @@ export default function InterestSelection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

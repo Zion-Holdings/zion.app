@@ -6,4 +6,4 @@ export default function ProtectedRoute() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

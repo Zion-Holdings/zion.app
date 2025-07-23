@@ -6,4 +6,4 @@ export default function FlaggedListingsTable() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

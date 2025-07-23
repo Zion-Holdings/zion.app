@@ -6,4 +6,4 @@ export default function ContactSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

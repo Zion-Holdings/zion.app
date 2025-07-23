@@ -6,4 +6,4 @@ export default function useIsMounted.test() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

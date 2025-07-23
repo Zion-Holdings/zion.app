@@ -6,4 +6,4 @@ export default function PrivacyPolicy() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

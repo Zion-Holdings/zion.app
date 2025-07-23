@@ -6,4 +6,4 @@ export default function ReviewsList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function TranslationManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

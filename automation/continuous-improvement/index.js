@@ -37,7 +37,7 @@ const CONFIG = {
   CURSOR: {
     API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh',
     API_KEY: process.env.CURSOR_API_KEY,
-    WORKSPACE_ID: process.env.CURSOR_WORKSPACE_ID,
+    WORKSPACE_ID: process.env.CURSOR_WORKSPACE_ID
   },
   
   // Monitoring endpoints

@@ -6,4 +6,4 @@ export default function FeatureHighlights() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

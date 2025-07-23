@@ -6,4 +6,4 @@ export default function Ecommerce() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

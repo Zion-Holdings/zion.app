@@ -6,4 +6,4 @@ export default function Rewards() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

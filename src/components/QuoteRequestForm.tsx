@@ -6,4 +6,4 @@ export default function QuoteRequestForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

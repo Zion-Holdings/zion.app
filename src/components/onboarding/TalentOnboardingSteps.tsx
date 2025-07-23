@@ -6,4 +6,4 @@ export default function TalentOnboardingSteps() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function alert() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

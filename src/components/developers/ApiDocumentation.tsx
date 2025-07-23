@@ -6,4 +6,4 @@ export default function ApiDocumentation() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

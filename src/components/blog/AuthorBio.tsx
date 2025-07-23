@@ -6,4 +6,4 @@ export default function AuthorBio() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function ContractHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

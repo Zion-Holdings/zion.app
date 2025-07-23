@@ -6,4 +6,4 @@ export default function AvatarUpload() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

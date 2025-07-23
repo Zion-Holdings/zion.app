@@ -6,4 +6,4 @@ export default function severity-indicator() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

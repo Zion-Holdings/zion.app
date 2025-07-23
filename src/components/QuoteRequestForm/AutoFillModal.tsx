@@ -6,4 +6,4 @@ export default function AutoFillModal() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

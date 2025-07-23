@@ -6,4 +6,4 @@ export default function BadgeEarned() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function MarketplaceSidebar() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function radio-group() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

@@ -6,4 +6,4 @@ export default function BasicInfoForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

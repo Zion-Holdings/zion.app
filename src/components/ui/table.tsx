@@ -6,4 +6,4 @@ export default function table() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

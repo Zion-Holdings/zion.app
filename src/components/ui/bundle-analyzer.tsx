@@ -6,4 +6,4 @@ export default function bundle-analyzer() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

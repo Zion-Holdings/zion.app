@@ -6,4 +6,4 @@ export default function SkillsForm() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

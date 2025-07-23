@@ -6,4 +6,4 @@ export default function ClientDashboard() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

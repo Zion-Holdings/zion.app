@@ -6,4 +6,4 @@ export default function MetadataManager() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

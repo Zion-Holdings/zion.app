@@ -6,4 +6,4 @@ export default function DisputesList() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

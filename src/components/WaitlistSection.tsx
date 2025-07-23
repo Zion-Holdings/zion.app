@@ -6,4 +6,4 @@ export default function WaitlistSection() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

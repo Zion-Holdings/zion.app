@@ -6,4 +6,4 @@ export default function FilterSidebarSkeleton() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

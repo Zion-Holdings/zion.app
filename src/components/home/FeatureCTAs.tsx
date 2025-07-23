@@ -6,4 +6,4 @@ export default function FeatureCTAs() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

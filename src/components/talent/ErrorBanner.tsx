@@ -6,4 +6,4 @@ export default function ErrorBanner() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

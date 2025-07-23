@@ -6,4 +6,4 @@ export default function QrCodeDownload() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';

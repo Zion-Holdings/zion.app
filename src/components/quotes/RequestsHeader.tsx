@@ -6,4 +6,4 @@ export default function RequestsHeader() {
       <p>Component placeholder</p>
     </div>
   )'
-}''''''''''''''''';
+}';
