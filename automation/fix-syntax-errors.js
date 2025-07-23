@@ -68,7 +68,7 @@ class SyntaxErrorFixer {
   fixTrailingQuotes(content) {
     // Remove trailing single quotes (any number of them)
     return content.replace(/;+$/gm, ';')
-                  .replace(/'+$/gm, ')
+                  .replace(/'+$/gm, '')
                   .replace(/;+$/gm, ';');
   }
 
