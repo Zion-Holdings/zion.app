@@ -70,7 +70,7 @@ class AutonomousCommitPush {
             const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
             return staged.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting staged files: ${error.message}`, error');
+            this.log(`Error getting staged files: ${error.message}`, 'error');
             return [];
         }
     }
@@ -84,7 +84,7 @@ class AutonomousCommitPush {
             this.log(`Staged ${files.length} files`);
             return true;
         } catch (error) {
-            this.log(`Error staging files: ${error.message}`, error');
+            this.log(`Error staging files: ${error.message}`, 'error');
             return false;
         }
     }
@@ -145,7 +145,7 @@ class AutonomousCommitPush {
             this.log(`Committed: ${message}`);
             return true;
         } catch (error) {
-            this.log(`Error committing: ${error.message}`, error');
+            this.log(`Error committing: ${error.message}`, 'error');
             return false;
         }
     }
@@ -156,7 +156,7 @@ class AutonomousCommitPush {
             this.log(`Pushed to ${this.config.branch}`);
             return true;
         } catch (error) {
-            this.log(`Error pushing: ${error.message}`, error');
+            this.log(`Error pushing: ${error.message}`, 'error');
             return false;
         }
     }
@@ -217,7 +217,7 @@ class AutonomousCommitPush {
             };
 
         } catch (error) {
-            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, error');
+            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, 'error');
             return { success: false, error: error.message };
         }
     }
