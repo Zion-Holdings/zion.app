@@ -27,7 +27,7 @@ class EnhancedAutomation {
       // AI Configuration
       ai: {
         cursor: {
-          enabled: process.env.CURSOR_AI_ENABLED === true',
+          enabled: process.env.CURSOR_AI_ENABLED === 'true',
           apiKey: process.env.CURSOR_API_KEY,
           workspaceId: process.env.CURSOR_WORKSPACE_ID
         },
