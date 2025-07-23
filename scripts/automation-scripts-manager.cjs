@@ -175,6 +175,9 @@ class AutomationScriptsManager extends EventEmitter {
     this.stats.totalScripts = discoveredScripts.size;
     this.stats.lastDiscovery = new Date();
     
+    // Save to persistent storage
+    await this.savePersistentData();
+    
     this.log(`✅ Discovered ${discoveredScripts.size} automation scripts`);
     this.emit('scriptsDiscovered', discoveredScripts);
     
