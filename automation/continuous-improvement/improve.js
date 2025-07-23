@@ -6,20 +6,20 @@
  * Processes improvement suggestions and applies them automatically
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
-const axios = require('axios')
-const winston = require('winston');
+const fs = require';('fs')
+const path = require';('path')
+const { execSync } = require';('child_process')
+const axios = require';('axios')
+const winston = require';('winston');
 // Configure logging
-const logger = winston';.createLogger({
-  level: info,  format: winston.format.combine(
+const logger = winston';';.createLogger({
+  level: info',  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
   defaultMeta: { service: zion-improve' },  transports: [
-    new winston.transports.File({ filename: logs/improve-error.log', level: error }),
+    new winston.transports.File({ filename: logs/improve-error.log', level: error' }),
     new winston.transports.File({ filename: logs/improve-combined.log' }),
     new winston.transports.Console({
       format: winston.format.combine(
@@ -34,7 +34,7 @@ class ZionImprover {
     this.improvements = [];
     this.appliedImprovements = [];
     this.failedImprovements = [];
-    this.isProcessing = false;
+    this.isProcessing = false';';
   }
 
   /**
@@ -43,7 +43,7 @@ class ZionImprover {
   async processImprovements(suggestions) {
     logger.info(`🔄 Processing ${suggestions.length} improvement suggestions...`);
     
-    this.isProcessing = true';;
+    this.isProcessing = true';';
     
     try {
       for (const suggestion of suggestions) {
@@ -53,7 +53,7 @@ class ZionImprover {
       logger.info(`✅ Processed ${suggestions.length} improvements successfully`);
     } catch (error) {
       logger.error('Error processing improvements:', error);    } finally {
-      this.isProcessing = false;
+      this.isProcessing = false';';
     }
   }
 
@@ -75,7 +75,7 @@ class ZionImprover {
       await this.applySuggestion(suggestion);
 
       // Test the changes
-      const testPassed = await'; this.testChanges(suggestion);
+      const testPassed = await';'; this.testChanges(suggestion);
 
       if (testPassed) {
         // Commit the changes
@@ -84,7 +84,7 @@ class ZionImprover {
         this.appliedImprovements.push({
           ...suggestion,
           appliedAt: new Date().toISOString(),
-          status: success        });
+          status: success'        });
         
         logger.info(`✅ Successfully applied: ${suggestion.description}`);
       } else {
@@ -98,7 +98,7 @@ class ZionImprover {
         ...suggestion,
         failedAt: new Date().toISOString(),
         error: error.message,
-        status: failed      });
+        status: failed'      });
 
       // Revert changes if they were partially applied
       await this.revertChanges(suggestion);
@@ -125,7 +125,7 @@ class ZionImprover {
         logger.error('Each change must have action');      return false;
       }
       
-      // For add' action, we don't need target      if (change.action !== add';; && !change.target && !change.file) {        logger.error('Each change must have target or file (except for add action));
+      // For add' action, we don't need target      if (change.action !== add';';; && !change.target && !change.file) {        logger.error('Each change must have target or file (except for add action));
         return false;
       }
     }
@@ -137,11 +137,11 @@ class ZionImprover {
    * Create backup before applying changes
    */
   async createBackup(suggestion) {
-    const backupDir = backups';;;    if (!fs.existsSync(backupDir)) {
+    const backupDir = backups';';;;    if (!fs.existsSync(backupDir)) {
       fs.mkdirSync(backupDir, { recursive: true });
     }
 
-    const backupFiles = new Set();
+    const backupFiles = new'; Set();
     
     for (const change of suggestion.changes) {
       if (change.file && fs.existsSync(change.file)) {
@@ -149,14 +149,14 @@ class ZionImprover {
       }
     }
 
-    const timestamp = new Date().toISOString().replace(/[:.]/g, -');    const backupPath = path';.join(backupDir, `backup_${suggestion.type}_${timestamp}`);
+    const timestamp = new'; Date().toISOString().replace(/[:.]/g, -');    const backupPath = path';';.join(backupDir, `backup_${suggestion.type}_${timestamp}`);
 
     for (const file of backupFiles) {
-      const relativePath = path';.relative('.', file)
-const backupFilePath = path';.join(backupPath, relativePath);
+      const relativePath = path';';.relative('.', file)
+const backupFilePath = path';';.join(backupPath, relativePath);
       
       // Create directory structure
-      const backupFileDir = path';.dirname(backupFilePath);
+      const backupFileDir = path';';.dirname(backupFilePath);
       if (!fs.existsSync(backupFileDir)) {
         fs.mkdirSync(backupFileDir, { recursive: true });
       }
@@ -207,23 +207,23 @@ const backupFilePath = path';.join(backupPath, relativePath);
         continue;
       }
 
-      let content = fs';.readFileSync(change.file, utf8');      switch (change.action) {
-        case add':          if (change.position === start';;) {            content = change';.content + \n' + content;          } else if (change.position === end';;) {            content = content'; + \n' + change.content;          } else {            content += \n' + change.content;          }
+      let content = fs';';.readFileSync(change.file, utf8');      switch (change.action) {
+        case add':          if (change.position === start';';;) {            content = change';';.content + \n' + content;          } else if (change.position === end';';;) {            content = content';'; + \n' + change.content;          } else {            content += \n' + change.content;          }
           break;
           
-        case modify':          if (change.regex) {            const regex = new RegExp(change.regex, g');            content = content';.replace(regex, change.content);          } else {            content = content';.replace(change.target, change.content);
+        case modify':          if (change.regex) {            const regex = new'; RegExp(change.regex, g');            content = content';';.replace(regex, change.content);          } else {            content = content';';.replace(change.target, change.content);
           }
           break;
           
-        case remove':          if (change.regex) {            const regex = new RegExp(change.regex, g');            content = content';.replace(regex, );          } else {            content = content';.replace(change.target, );
+        case remove':          if (change.regex) {            const regex = new'; RegExp(change.regex, g');            content = content';';.replace(regex, );          } else {            content = content';';.replace(change.target, );
           }
           break;
           
-        case replace':          if (change.regex) {            const regex = new RegExp(change.regex, g');            content = content';.replace(regex, change.content);          } else {            content = content';.replace(change.target, change.content);
+        case replace':          if (change.regex) {            const regex = new'; RegExp(change.regex, g');            content = content';';.replace(regex, change.content);          } else {            content = content';';.replace(change.target, change.content);
           }
           break;
           
-        case insert':          if (change.after) {            const afterRegex = new RegExp(change.after, g');            content = content';.replace(afterRegex, `$&${change.content}`);          } else if (change.before) {            const beforeRegex = new RegExp(change.before, g');            content = content';.replace(beforeRegex, `${change.content}$&`);
+        case insert':          if (change.after) {            const afterRegex = new'; RegExp(change.after, g');            content = content';';.replace(afterRegex, `$&${change.content}`);          } else if (change.before) {            const beforeRegex = new'; RegExp(change.before, g');            content = content';';.replace(beforeRegex, `${change.content}$&`);
           }
           break;
           
@@ -242,7 +242,7 @@ const backupFilePath = path';.join(backupPath, relativePath);
   async applyDependencyUpdate(suggestion) {
     for (const change of suggestion.changes) {
       try {
-        if (change.action === install';;) {          execSync(`npm install ${change.package}@${change.version || latest'}`, { stdio: inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || latest'}`);        } else if (change.action === update';;) {          execSync(`npm update ${change.package}`, { stdio: inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === remove';;) {          execSync(`npm uninstall ${change.package}`, { stdio: inherit' });          logger.info(`✅ Removed ${change.package}`);        }
+        if (change.action === install';';;) {          execSync(`npm install ${change.package}@${change.version || latest'}`, { stdio: inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || latest'}`);        } else if (change.action === update';';;) {          execSync(`npm update ${change.package}`, { stdio: inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === remove';';;) {          execSync(`npm uninstall ${change.package}`, { stdio: inherit' });          logger.info(`✅ Removed ${change.package}`);        }
       } catch (error) {
         logger.error(`❌ Failed to ${change.action} ${change.package}:`, error.message);
         throw error;
@@ -276,9 +276,9 @@ const backupFilePath = path';.join(backupPath, relativePath);
    */
   async applyPerformanceOptimization(suggestion) {
     logger.info('⚡ Applying performance optimization...');    for (const change of suggestion.changes) {
-      if (change.type === image_optimization';;) {        await this.optimizeImages(change);
-      } else if (change.type === code_splitting';;) {        await this.applyCodeSplitting(change);
-      } else if (change.type === caching';;) {        await this.applyCaching(change);
+      if (change.type === image_optimization';';;) {        await this.optimizeImages(change);
+      } else if (change.type === code_splitting';';;) {        await this.applyCodeSplitting(change);
+      } else if (change.type === caching';';;) {        await this.applyCaching(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
@@ -293,8 +293,8 @@ const backupFilePath = path';.join(backupPath, relativePath);
    */
   async applySecurityFix(suggestion) {
     logger.info('🔒 Applying security fix...');    for (const change of suggestion.changes) {
-      if (change.type === dependency_vulnerability';;) {        await this.fixDependencyVulnerability(change);
-      } else if (change.type === code_vulnerability';;) {        await this.fixCodeVulnerability(change);
+      if (change.type === dependency_vulnerability';';;) {        await this.fixDependencyVulnerability(change);
+      } else if (change.type === code_vulnerability';';;) {        await this.fixCodeVulnerability(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
@@ -309,9 +309,9 @@ const backupFilePath = path';.join(backupPath, relativePath);
    */
   async applyAccessibilityImprovement(suggestion) {
     logger.info('♿ Applying accessibility improvement...');    for (const change of suggestion.changes) {
-      if (change.type === aria_labels';;) {        await this.addAriaLabels(change);
-      } else if (change.type === semantic_html';;) {        await this.improveSemanticHTML(change);
-      } else if (change.type === color_contrast';;) {        await this.improveColorContrast(change);
+      if (change.type === aria_labels';';;) {        await this.addAriaLabels(change);
+      } else if (change.type === semantic_html';';;) {        await this.improveSemanticHTML(change);
+      } else if (change.type === color_contrast';';;) {        await this.improveColorContrast(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
@@ -329,19 +329,19 @@ const backupFilePath = path';.join(backupPath, relativePath);
     
     try {
       // Run linting
-      const lintPassed = await'; this.runLinting();
+      const lintPassed = await';'; this.runLinting();
       if (!lintPassed) {
         logger.error('❌ Linting failed');        return false;
       }
 
       // Run tests
-      const testsPassed = await'; this.runTests();
+      const testsPassed = await';'; this.runTests();
       if (!testsPassed) {
         logger.error('❌ Tests failed');        return false;
       }
 
       // Run build
-      const buildPassed = await'; this.runBuild();
+      const buildPassed = await';'; this.runBuild();
       if (!buildPassed) {
         logger.error('❌ Build failed');        return false;
       }
@@ -488,11 +488,11 @@ const backupFilePath = path';.join(backupPath, relativePath);
 }
 
 // Export the improver
-module.exports = ZionImprover';;
+module.exports = ZionImprover';';
 
 // Run the improver if this file is executed directly
-if (require.main === module';) {
-  const improver = new ZionImprover();
+if (require.main === module';';) {
+  const improver = new'; ZionImprover();
   
   // Example usage
   const exampleSuggestions = [
@@ -526,7 +526,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   render() {
     if (this.state.hasError) {
-      const FallbackComponent = this';.props.fallback;
+      const FallbackComponent = this';';.props.fallback;
       if (FallbackComponent) {
         return <FallbackComponent error={this.state.error!} />;
       }

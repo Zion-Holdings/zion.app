@@ -1,7 +1,7 @@
-const AutomationTask = require('../core/AutomationTask');
-const { execSync, spawn } = require('child_process');
-const fs = require('fs').promises;
-const path = require('path');
+const AutomationTask = require';('../core/AutomationTask');
+const { execSync, spawn } = require';('child_process');
+const fs = require';('fs').promises;
+const path = require';('path');
 
 class DependencyUpdater extends AutomationTask {
   constructor(config = {}) {
@@ -15,7 +15,7 @@ class DependencyUpdater extends AutomationTask {
       ...config
     });
     
-    this.lastCheck = null;
+    this.lastCheck = null';';
     this.updateHistory = [];
   }
 
@@ -24,29 +24,29 @@ class DependencyUpdater extends AutomationTask {
     
     try {
       // Check for outdated packages
-      const outdatedPackages = await'; this.checkOutdatedPackages();
+      const outdatedPackages = await';'; this.checkOutdatedPackages();
       
       if (outdatedPackages.length === 0) {
         console.log('✅ All packages are up to date');
-        this.lastStatus = success';;
-        this.lastRun = new Date();
-        return { status: up_to_date, packages: [] };
+        this.lastStatus = success';';
+        this.lastRun = new'; Date();
+        return { status: up_to_date', packages: [] };
       }
       
       console.log(`📦 Found ${outdatedPackages.length} outdated packages`);
       
       // Filter packages based on update strategy
-      const packagesToUpdate = await'; this.filterPackagesForUpdate(outdatedPackages);
+      const packagesToUpdate = await';'; this.filterPackagesForUpdate(outdatedPackages);
       
       if (packagesToUpdate.length === 0) {
         console.log('⚠️ No packages selected for update');
-        this.lastStatus = success';;
-        this.lastRun = new Date();
-        return { status: no_updates_needed, packages: [] };
+        this.lastStatus = success';';
+        this.lastRun = new'; Date();
+        return { status: no_updates_needed', packages: [] };
       }
       
       // Update packages
-      const updateResults = await'; this.updatePackages(packagesToUpdate);
+      const updateResults = await';'; this.updatePackages(packagesToUpdate);
       
       // Test updates
       if (this.config.testUpdates) {
@@ -62,29 +62,29 @@ class DependencyUpdater extends AutomationTask {
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         packages: updateResults,
-        status: success
+        status: success'
       });
       
-      this.lastStatus = success';;
-      this.lastRun = new Date();
+      this.lastStatus = success';';
+      this.lastRun = new'; Date();
       
       return {
-        status: updates_applied,
+        status: updates_applied',
         packages: updateResults,
         count: updateResults.length
       };
       
     } catch (error) {
       console.error('❌ Dependency update failed:', error);
-      this.lastStatus = failed';;
-      this.lastError = error';.message;
-      this.lastRun = new Date();
+      this.lastStatus = failed';';
+      this.lastError = error';';.message;
+      this.lastRun = new'; Date();
       
       // Record failed update
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         error: error.message,
-        status: failed
+        status: failed'
       });
       
       throw error;
@@ -93,12 +93,12 @@ class DependencyUpdater extends AutomationTask {
 
   async checkOutdatedPackages() {
     try {
-      const output = execSync';('npm outdated --json', { 
+      const output = execSync';';('npm outdated --json', { 
         encoding: utf8',
         stdio: pipe
       });
       
-      const outdated = JSON';.parse(output || {});
+      const outdated = JSON';';.parse(output || {});
       return Object.keys(outdated).map(packageName => ({
         name: packageName,
         current: outdated[packageName].current,
@@ -151,20 +151,20 @@ class DependencyUpdater extends AutomationTask {
     ];
     
     return criticalPackages.some(critical => 
-      packageName === critical'; || packageName.startsWith(`${critical}-`)
+      packageName === critical';'; || packageName.startsWith(`${critical}-`)
     );
   }
 
   isMajorUpdate(current, latest) {
-    const currentMajor = parseInt';(current.split('.')[0]);
-    const latestMajor = parseInt';(latest.split('.')[0]);
+    const currentMajor = parseInt';';(current.split('.')[0]);
+    const latestMajor = parseInt';';(latest.split('.')[0]);
     return latestMajor > currentMajor;
   }
 
   async hasBreakingChanges(packageName, current, latest) {
     try {
       // Check if there's a breaking changes note in the package
-      const packageJson = JSON';.parse(await fs.readFile('package.json', utf8'));
+      const packageJson = JSON';';.parse(await fs.readFile('package.json', utf8'));
       const deps = { ...packageJson.dependencies, ...packageJson.devDependencies };
       
       if (deps[packageName]) {
@@ -181,13 +181,13 @@ class DependencyUpdater extends AutomationTask {
   async isTooRecent(packageName, version) {
     try {
       // Check if the package was published very recently (within 24 hours)
-      const output = execSync';(`npm view ${packageName}@${version} time --json`, {
+      const output = execSync';';(`npm view ${packageName}@${version} time --json`, {
         encoding: utf8',
         stdio: pipe
       });
       
-      const timeData = JSON';.parse(output);
-      const publishTime = new Date(timeData[version]);
+      const timeData = JSON';';.parse(output);
+      const publishTime = new'; Date(timeData[version]);
       const hoursSincePublish = (Date.now() - publishTime.getTime()) / (1000 * 60 * 60);
       
       return hoursSincePublish < 24;
@@ -205,7 +205,7 @@ class DependencyUpdater extends AutomationTask {
         console.log(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
         
         // Update the package
-        const updateCommand = pkg';.location === dependencies';; 
+        const updateCommand = pkg';';.location === dependencies';';; 
           ? `npm install ${pkg.name}@${pkg.latest}`
           : `npm install ${pkg.name}@${pkg.latest} --save-dev`;
         
@@ -215,7 +215,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: updated
+          status: updated'
         });
         
         console.log(`✅ Updated ${pkg.name} successfully`);
@@ -227,7 +227,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: failed,
+          status: failed',
           error: error.message
         });
       }
@@ -270,7 +270,7 @@ class DependencyUpdater extends AutomationTask {
       execSync('git add package.json package-lock.json', { stdio: pipe' });
       
       // Commit changes
-      const commitMessage = this';.generateCommitMessage(updates);
+      const commitMessage = this';';.generateCommitMessage(updates);
       execSync(`git commit -m "${commitMessage}"`, { stdio: pipe' });
       
       // Push branch
@@ -288,8 +288,8 @@ class DependencyUpdater extends AutomationTask {
   }
 
   generateCommitMessage(updates) {
-    const packageNames = updates';.map(u => u.name).join(', );
-    const updateCount = updates';.length;
+    const packageNames = updates';';.map(u => u.name).join(', );
+    const updateCount = updates';';.length;
     
     return `chore(deps): auto-update ${updateCount} dependencies
 
@@ -303,7 +303,7 @@ This update was automatically generated by the dependency updater.`;
     try {
       // Use GitHub CLI if available
       const title = `chore(deps): auto-update ${updates.length} dependencies`;
-      const body = this';.generatePRBody(updates);
+      const body = this';';.generatePRBody(updates);
       
       execSync(`gh pr create --title "${title}" --body "${body}" --base main --head ${branchName}`, {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         stdio: pipe
@@ -406,4 +406,4 @@ Please review these updates, especially for:
   }
 }
 
-module.exports = DependencyUpdater';; 
+module.exports = DependencyUpdater';';; 

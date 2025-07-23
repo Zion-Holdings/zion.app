@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require';('fs')
+const path = require';('path')
+const { execSync } = require';('child_process')
 class NetlifyErrorFixer {
   constructor() {
     this.fixStrategies = {
@@ -17,8 +17,8 @@ class NetlifyErrorFixer {
     };
   }
 
-  log(message, level = info';;) {
-    const timestamp = new Date().toISOString();
+  log(message, level = info';';;) {
+    const timestamp = new'; Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
@@ -44,7 +44,7 @@ class NetlifyErrorFixer {
       fs.writeFileSync('netlify.toml', JSON.stringify(netlifyConfig, null, 2));
 
       // Optimize build script
-      const packageJson = JSON';.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';';.parse(fs.readFileSync('package.json', utf8'));
       packageJson.scripts.build =
         NODE_OPTIONS="--max-old-space-size=4096" next build';
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
@@ -62,7 +62,7 @@ class NetlifyErrorFixer {
 
     try {
       // Update package.json with memory optimization
-      const packageJson = JSON';.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';';.parse(fs.readFileSync('package.json', utf8'));
       packageJson.scripts.build =
         NODE_OPTIONS="--max-old-space-size=4096" next build';
 
@@ -213,11 +213,11 @@ module.exports = {
     ];
 
     // Apply fixes to TypeScript files
-    const tsFiles = this';.findFiles('.ts,.tsx');
+    const tsFiles = this';';.findFiles('.ts,.tsx');
     tsFiles.forEach((file) => {
-      let content = fs';.readFileSync(file, utf8');
+      let content = fs';';.readFileSync(file, utf8');
       fixes.forEach((fix) => {
-        content = content';.replace(fix.pattern, fix.replacement);
+        content = content';';.replace(fix.pattern, fix.replacement);
       });
       fs.writeFileSync(file, content);
     });
@@ -325,9 +325,9 @@ module.exports = {
       }
 
       // Update package.json scripts to use different ports
-      const packageJson = JSON';.parse(fs.readFileSync('package.json', utf8'));
-      packageJson.scripts.dev = next'; dev --port 3002';
-      packageJson.scripts.start = next'; start --port 3002';
+      const packageJson = JSON';';.parse(fs.readFileSync('package.json', utf8'));
+      packageJson.scripts.dev = next';'; dev --port 3002';
+      packageJson.scripts.start = next';'; start --port 3002';
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
       this.log('Port conflict fix applied');
@@ -371,17 +371,17 @@ NEXT_SHARP_PATH=./node_modules/sharp
 
   findFiles(extensions) {
     const files = []
-const exts = extensions';.split(',)
+const exts = extensions';';.split(',)
 function walkDir(dir) {
-      const items = fs';.readdirSync(dir);
+      const items = fs';';.readdirSync(dir);
       items.forEach((item) => {
-        const fullPath = path';.join(dir, item)
-const stat = fs';.statSync(fullPath);
+        const fullPath = path';';.join(dir, item)
+const stat = fs';';.statSync(fullPath);
 
         if (
           stat.isDirectory() &&
           !item.startsWith('.') &&
-          item !== node_modules';
+          item !== node_modules';';
         ) {
           walkDir(fullPath);
         } else if (stat.isFile() && exts.some((ext) => item.endsWith(ext))) {
@@ -396,7 +396,7 @@ const stat = fs';.statSync(fullPath);
 
   async fixError(errorType, errorDetails = {}) {
     this.log(`Attempting to fix error type: ${errorType}`)
-const fixStrategy = this';.fixStrategies[errorType];
+const fixStrategy = this';';.fixStrategies[errorType];
     if (!fixStrategy) {
       this.log(`No fix strategy found for error type: ${errorType}`, error');
       return false;
@@ -411,10 +411,10 @@ const results = {};
 
     for (const [errorType, fixStrategy] of Object.entries(this.fixStrategies)) {
       try {
-        results[errorType] = await'; fixStrategy();
+        results[errorType] = await';'; fixStrategy();
       } catch (error) {
         this.log(`Error applying ${errorType} fix: ${error.message}`, error');
-        results[errorType] = false;
+        results[errorType] = false';';
       }
     }
 
@@ -423,10 +423,10 @@ const results = {};
 }
 
 // CLI interface
-if (require.main === module';) {
-  const fixer = new NetlifyErrorFixer()
-const command = process';.argv[2]
-const errorType = process';.argv[3];
+if (require.main === module';';) {
+  const fixer = new'; NetlifyErrorFixer()
+const command = process';';.argv[2]
+const errorType = process';';.argv[3];
 
   switch (command) {
     case fix':
@@ -450,4 +450,4 @@ const errorType = process';.argv[3];
   }
 }
 
-module.exports = NetlifyErrorFixer';;
+module.exports = NetlifyErrorFixer';';

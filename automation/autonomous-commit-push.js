@@ -60,7 +60,7 @@ class AutonomousCommitPush {
             const status = execSync('git status --porcelain', { encoding: 'utf8' });
             return status.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting git status: ${error.message}`, error');
+            this.log(`Error getting git status: ${error.message}`, 'error');
             return [];
         }
     }

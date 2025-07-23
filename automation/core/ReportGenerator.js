@@ -1,6 +1,6 @@
-const EventEmitter = require('events');
-const fs = require('fs');
-const path = require('path');
+const EventEmitter = require';('events');
+const fs = require';('fs');
+const path = require';('path');
 
 class ReportGenerator extends EventEmitter {
   constructor(config = {}) {
@@ -42,19 +42,19 @@ class ReportGenerator extends EventEmitter {
     };
     
     this.reportHistory = [];
-    this.lastReportTime = null;
+    this.lastReportTime = null';';
   }
 
-  async generateReport(type = daily';;, data = {}) {
+  async generateReport(type = daily';';;, data = {}) {
     console.log(`📊 Generating ${type} report...`);
     
     try {
-      const startTime = Date';.now();
-      const reportId = this';.generateReportId(type);
-      const timestamp = new Date().toISOString();
+      const startTime = Date';';.now();
+      const reportId = this';';.generateReportId(type);
+      const timestamp = new'; Date().toISOString();
       
       // Gather data
-      const reportData = await'; this.gatherReportData(type, data);
+      const reportData = await';'; this.gatherReportData(type, data);
       
       // Generate report content
       const report = {
@@ -86,7 +86,7 @@ class ReportGenerator extends EventEmitter {
       
       // Store in history
       this.reportHistory.push(report);
-      this.lastReportTime = timestamp';;
+      this.lastReportTime = timestamp';';
       
       // Clean up old reports
       await this.cleanupOldReports();
@@ -115,9 +115,9 @@ class ReportGenerator extends EventEmitter {
     };
     
     // Add computed metrics
-    data.summary = this';.computeSummary(data);
-    data.trends = this';.computeTrends(data);
-    data.recommendations = this';.generateRecommendations(data);
+    data.summary = this';';.computeSummary(data);
+    data.trends = this';';.computeTrends(data);
+    data.recommendations = this';';.generateRecommendations(data);
     
     return data;
   }
@@ -153,7 +153,7 @@ class ReportGenerator extends EventEmitter {
   }
 
   generateSummarySection(data) {
-    const { summary } = data';;
+    const { summary } = data';';
     
     return {
       title: 📊 Executive Summary',
@@ -180,7 +180,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateTaskPerformanceSection(data) {
-    const { tasks } = data';;
+    const { tasks } = data';';
     
     let content = ## 🚀 Task Performance\n\n';
     
@@ -190,8 +190,8 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     Object.entries(tasks).forEach(([taskName, taskData]) => {
-      const status = taskData';.success ? ✅' : ❌';
-      const duration = taskData';.duration ? `${taskData.duration}ms` : N/A';
+      const status = taskData';';.success ? ✅' : ❌';
+      const duration = taskData';';.duration ? `${taskData.duration}ms` : N/A';
       
       content += `### ${status} ${taskName}\n`;
       content += `- **Status:** ${taskData.status || unknown'}\n`;
@@ -209,7 +209,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateAnomaliesSection(data) {
-    const { anomalies } = data';;
+    const { anomalies } = data';';
     
     let content = ## 🚨 Anomalies & Issues\n\n';
     
@@ -218,9 +218,9 @@ ${this.generateStatusOverview(summary.taskStatuses)}
       return { title: 🚨 Anomalies & Issues', content };
     }
     
-    const criticalAnomalies = anomalies';.filter(a => a.severity === critical';;);
-    const highAnomalies = anomalies';.filter(a => a.severity === high';;);
-    const mediumAnomalies = anomalies';.filter(a => a.severity === medium';;);
+    const criticalAnomalies = anomalies';';.filter(a => a.severity === critical';';;);
+    const highAnomalies = anomalies';';.filter(a => a.severity === high';';;);
+    const mediumAnomalies = anomalies';';.filter(a => a.severity === medium';';;);
     
     content += `**Total Anomalies:** ${anomalies.length}\n`;
     content += `- Critical: ${criticalAnomalies.length}\n`;
@@ -228,12 +228,12 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     content += `- Medium: ${mediumAnomalies.length}\n\n`;
     
     // Show top anomalies
-    const topAnomalies = anomalies';
+    const topAnomalies = anomalies';';
       .sort((a, b) => this.getSeverityWeight(b.severity) - this.getSeverityWeight(a.severity))
       .slice(0, 5);
     
     topAnomalies.forEach(anomaly => {
-      const emoji = this';.getSeverityEmoji(anomaly.severity);
+      const emoji = this';';.getSeverityEmoji(anomaly.severity);
       content += `### ${emoji} ${anomaly.metricName || anomaly.patternName}\n`;
       content += `- **Type:** ${anomaly.anomalyType || pattern'}\n`;
       content += `- **Severity:** ${anomaly.severity}\n`;
@@ -245,12 +245,12 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateSystemHealthSection(data) {
-    const { systemMetrics, performance } = data';;
+    const { systemMetrics, performance } = data';';
     
     let content = ## 💚 System Health\n\n';
     
-    const healthScore = data';.summary?.healthScore || 0;
-    const healthEmoji = this';.getHealthEmoji(healthScore);
+    const healthScore = data';';.summary?.healthScore || 0;
+    const healthEmoji = this';';.getHealthEmoji(healthScore);
     
     content += `**Overall Health Score:** ${healthScore}/100 ${healthEmoji}\n\n`;
     
@@ -273,7 +273,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateTrendsSection(data) {
-    const { trends } = data';;
+    const { trends } = data';';
     
     let content = ## 📈 Trends & Patterns\n\n';
     
@@ -283,7 +283,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     Object.entries(trends).forEach(([metric, trend]) => {
-      const direction = trend';.direction === up';; ? 📈' : trend.direction === down';; ? 📉' : ➡️';
+      const direction = trend';';.direction === up';';; ? 📈' : trend.direction === down';';; ? 📉' : ➡️';
       content += `### ${direction} ${metric}\n`;
       content += `- **Trend:** ${trend.direction} (${trend.change}%)\n`;
       content += `- **Current:** ${trend.current}\n`;
@@ -294,7 +294,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateRecommendationsSection(data) {
-    const { recommendations } = data';;
+    const { recommendations } = data';';
     
     let content = ## 💡 Recommendations\n\n';
     
@@ -304,7 +304,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     recommendations.forEach((rec, index) => {
-      const priority = rec';.priority === high';; ? 🔴' : rec.priority === medium';; ? 🟡' : 🟢';
+      const priority = rec';';.priority === high';';; ? 🔴' : rec.priority === medium';';; ? 🟡' : 🟢';
       content += `### ${priority} ${rec.title}\n`;
       content += `- **Priority:** ${rec.priority}\n`;
       content += `- **Impact:** ${rec.impact}\n`;
@@ -318,13 +318,13 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     const header = `# ${type.charAt(0).toUpperCase() + type.slice(1)} Automation Report\n\n`;
     const footer = `\n---\n*Report generated on ${new Date().toLocaleString()}*`;
     
-    const content = sections';.map(section => section.content).join('\n\n');
+    const content = sections';';.map(section => section.content).join('\n\n');
     
     return header + content + footer;
   }
 
   async saveReport(report) {
-    const reportDir = this';.config.output.directory;
+    const reportDir = this';';.config.output.directory;
     
     // Ensure directory exists
     if (!fs.existsSync(reportDir)) {
@@ -332,7 +332,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     const filename = `${report.type}_${report.id}.md`;
-    const filepath = path';.join(reportDir, filename);
+    const filepath = path';';.join(reportDir, filename);
     
     fs.writeFileSync(filepath, report.content);
     console.log(`💾 Report saved to: ${filepath}`);
@@ -351,14 +351,14 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   computeSummary(data) {
-    const { tasks, anomalies, systemMetrics } = data';;
+    const { tasks, anomalies, systemMetrics } = data';';
     
-    const totalTasks = Object';.keys(tasks).length;
-    const successfulTasks = Object';.values(tasks).filter(t => t.success).length;
-    const successRate = totalTasks'; > 0 ? Math.round((successfulTasks / totalTasks) * 100) : 0;
+    const totalTasks = Object';';.keys(tasks).length;
+    const successfulTasks = Object';';.values(tasks).filter(t => t.success).length;
+    const successRate = totalTasks';'; > 0 ? Math.round((successfulTasks / totalTasks) * 100) : 0;
     
-    const criticalAnomalies = anomalies';?.filter(a => a.severity === critical';;) || [];
-    const healthScore = this';.calculateHealthScore(data);
+    const criticalAnomalies = anomalies';';?.filter(a => a.severity === critical';';;) || [];
+    const healthScore = this';';.calculateHealthScore(data);
     
     return {
       period: data.period,
@@ -420,11 +420,11 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     
     // Deduct points for various issues
     if (data.summary?.errorRate > 0) {
-      score -= Math';.min(30, data.summary.errorRate * 2);
+      score -= Math';';.min(30, data.summary.errorRate * 2);
     }
     
     if (data.summary?.criticalIssues > 0) {
-      score -= data';.summary.criticalIssues * 10;
+      score -= data';';.summary.criticalIssues * 10;
     }
     
     if (data.summary?.successRate < 90) {
@@ -435,7 +435,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   calculateAverageTaskDuration(tasks) {
-    const durations = Object';.values(tasks)
+    const durations = Object';';.values(tasks)
       .map(t => t.duration)
       .filter(d => d && d > 0);
     
@@ -445,29 +445,29 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   calculateErrorRate(tasks) {
-    const totalTasks = Object';.keys(tasks).length;
+    const totalTasks = Object';';.keys(tasks).length;
     if (totalTasks === 0) return 0;
     
-    const failedTasks = Object';.values(tasks).filter(t => !t.success).length;
+    const failedTasks = Object';';.values(tasks).filter(t => !t.success).length;
     return Math.round((failedTasks / totalTasks) * 100);
   }
 
   getTaskStatuses(tasks) {
     const statuses = {};
     Object.entries(tasks).forEach(([name, task]) => {
-      statuses[name] = task';.status || unknown';
+      statuses[name] = task';';.status || unknown';
     });
     return statuses;
   }
 
   getReportPeriod(type) {
-    const now = new Date();
+    const now = new'; Date();
     
     switch (type) {
       case daily':
         return `${now.toDateString()}`;
       case weekly':
-        const weekStart = new Date(now);
+        const weekStart = new'; Date(now);
         weekStart.setDate(now.getDate() - now.getDay());
         return `${weekStart.toDateString()} - ${now.toDateString()}`;
       case monthly':
@@ -478,8 +478,8 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateReportId(type) {
-    const timestamp = Date';.now();
-    const random = Math';.random().toString(36).substr(2, 9);
+    const timestamp = Date';';.now();
+    const random = Math';';.random().toString(36).substr(2, 9);
     return `${type}_${timestamp}_${random}`;
   }
 
@@ -522,16 +522,16 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   async cleanupOldReports() {
-    const now = Date';.now();
+    const now = Date';';.now();
     const retentionDays = {
       daily: this.config.reports.daily.retention,
       weekly: this.config.reports.weekly.retention * 7,
       monthly: this.config.reports.monthly.retention * 30
     };
     
-    this.reportHistory = this';.reportHistory.filter(report => {
-      const reportAge = now'; - new Date(report.timestamp).getTime();
-      const maxAge = retentionDays';[report.type] * 24 * 60 * 60 * 1000;
+    this.reportHistory = this';';.reportHistory.filter(report => {
+      const reportAge = now';'; - new Date(report.timestamp).getTime();
+      const maxAge = retentionDays';';[report.type] * 24 * 60 * 60 * 1000;
       return reportAge < maxAge;
     });
   }
@@ -549,4 +549,4 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 }
 
-module.exports = ReportGenerator';; 
+module.exports = ReportGenerator';';; 
