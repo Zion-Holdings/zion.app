@@ -9,13 +9,13 @@ if (
   (global as Record<string, unknown>).self = global;
 }
 
-import ./src/utils/server-polyfill';
+import './src/utils/server-polyfill';
 
 // Temporarily disabled Sentry to fix build issues
 export const onRequestError = null;
 
 export async function register() {
-  if (process.env.NODE_ENV === development') {
+  if (process.env.NODE_ENV === 'development') {
     console.warn('instrumentation.ts: register() called - Sentry disabled');
   }
   // Sentry initialization temporarily disabled
