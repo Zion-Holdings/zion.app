@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Fix misplaced import statements

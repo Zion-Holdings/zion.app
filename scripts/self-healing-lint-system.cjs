@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Self-Healing Lint System

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Enhanced Log Monitoring System for Zion.App

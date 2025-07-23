@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * Pre-test dependency check. Allows running tests gracefully in offline
  * environments by exiting early when Jest/Vitest are not installed.

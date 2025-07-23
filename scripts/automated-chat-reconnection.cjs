@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Automated Chat Reconnection System for Cursor

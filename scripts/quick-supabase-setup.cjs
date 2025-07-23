@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Quick Supabase Setup - Get to 100% Production Ready Fast

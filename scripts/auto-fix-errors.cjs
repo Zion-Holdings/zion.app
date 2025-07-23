@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Auto-Fix Common Build Errors

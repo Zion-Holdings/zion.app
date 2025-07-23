@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - AI-Powered Syntax Fixer

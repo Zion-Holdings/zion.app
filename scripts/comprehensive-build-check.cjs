@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 // Comprehensive build monitoring and error suppression
 // Handles webpack runtime warnings while preserving critical error detection

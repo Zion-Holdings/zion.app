@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Distributed AI Controller for Multi-Computer Cursor Management

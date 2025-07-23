@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Fix TypeScript errors in production logger calls

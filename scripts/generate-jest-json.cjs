@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * Run Jest programmatically and emit a timestamped JSON result file in test-results/.
  */

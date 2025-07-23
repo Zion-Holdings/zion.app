@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Build with Self-Healing Lint System

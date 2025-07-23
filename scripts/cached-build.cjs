@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // Simple wrapper to run next build with caching enabled
 
 const { spawn } = require('child_process');

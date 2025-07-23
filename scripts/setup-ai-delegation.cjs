@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - AI Delegation Setup Script

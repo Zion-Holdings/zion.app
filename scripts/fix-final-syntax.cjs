@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Final syntax fix for import placement issues

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Purge old log files from the logs directory.

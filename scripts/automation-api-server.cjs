@@ -21,8 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-#!/usr/bin/env node
-
 /**
  * Automation API Server
  * 

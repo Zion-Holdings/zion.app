@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Minify JS and CSS files in the public folder.

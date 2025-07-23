@@ -31,7 +31,6 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-#!/usr/bin/env node
 
 // Load environment variables from .env files if the dotenv package is available
 let _dotenvAvailable = true;

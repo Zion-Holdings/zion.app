@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Performance and Health Check Script

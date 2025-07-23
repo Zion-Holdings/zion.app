@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*
  * Simple log rotation utility.
  * Rotates .log files if they exceed a configured size.

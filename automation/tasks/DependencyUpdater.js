@@ -1,4 +1,3 @@
-
 const AutomationTask = require('../core/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -7,8 +6,8 @@ const path = require('path');
 class DependencyUpdater extends AutomationTask {
   constructor(config = {}) {
     super({
-      name: DependencyUpdater',
-      schedule: 0 2 * * *', // Daily at 2 AM
+      name: 'DependencyUpdater',
+      schedule: '0 2 * * *', // Daily at 2 AM
       enabled: true,
       autoCreatePR: true,
       testUpdates: true,
@@ -29,9 +28,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (outdatedPackages.length === 0) {
         console.log('✅ All packages are up to date');
-        this.lastStatus = success';
+        this.lastStatus = 'success';
         this.lastRun = new Date();
-        return { status: up_to_date', packages: [] };
+        return { status: 'up_to_date', packages: [] };
       }
       
       console.log(`📦 Found ${outdatedPackages.length} outdated packages`);
@@ -41,9 +40,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (packagesToUpdate.length === 0) {
         console.log('⚠️ No packages selected for update');
-        this.lastStatus = success';
+        this.lastStatus = 'success';
         this.lastRun = new Date();
-        return { status: no_updates_needed', packages: [] };
+        return { status: 'no_updates_needed', packages: [] };
       }
       
       // Update packages
@@ -63,21 +62,21 @@ class DependencyUpdater extends AutomationTask {
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         packages: updateResults,
-        status: success
+        status: 'success'
       });
       
-      this.lastStatus = success';
+      this.lastStatus = 'success';
       this.lastRun = new Date();
       
       return {
-        status: updates_applied',
+        status: 'updates_applied',
         packages: updateResults,
         count: updateResults.length
       };
       
     } catch (error) {
       console.error('❌ Dependency update failed:', error);
-      this.lastStatus = failed';
+      this.lastStatus = 'failed';
       this.lastError = error.message;
       this.lastRun = new Date();
       
@@ -85,7 +84,7 @@ class DependencyUpdater extends AutomationTask {
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         error: error.message,
-        status: failed
+        status: 'failed'
       });
       
       throw error;
@@ -95,11 +94,11 @@ class DependencyUpdater extends AutomationTask {
   async checkOutdatedPackages() {
     try {
       const output = execSync('npm outdated --json', { 
-        encoding: utf8',
-        stdio: pipe
+        encoding: 'utf8',
+        stdio: 'pipe'
       });
       
-      const outdated = JSON.parse(output || {});
+      const outdated = JSON.parse(output || '{}');
       return Object.keys(outdated).map(packageName => ({
         name: packageName,
         current: outdated[packageName].current,
@@ -143,8 +142,8 @@ class DependencyUpdater extends AutomationTask {
 
   isCriticalPackage(packageName) {
     const criticalPackages = [
-      react', react-dom', next', typescript', node',
-      express', prisma', supabase', stripe
+      'react', 'react-dom', 'next', 'typescript', 'node',
+      'express', 'prisma', 'supabase', 'stripe'
     ];
     
     return criticalPackages.some(critical => 
@@ -161,7 +160,7 @@ class DependencyUpdater extends AutomationTask {
   async hasBreakingChanges(packageName, current, latest) {
     try {
       // Check if there's a breaking changes note in the package
-      const packageJson = JSON.parse(await fs.readFile('package.json', utf8'));
+      const packageJson = JSON.parse(await fs.readFile('package.json', 'utf8'));
       const deps = { ...packageJson.dependencies, ...packageJson.devDependencies };
       
       // This is a simplified check - in a real implementation, you'd check the package's changelog
@@ -175,8 +174,8 @@ class DependencyUpdater extends AutomationTask {
     try {
       // Check if the package was published very recently (within 24 hours)
       const output = execSync(`npm view ${packageName}@${version} time --json`, {
-        encoding: utf8',
-        stdio: pipe
+        encoding: 'utf8',
+        stdio: 'pipe'
       });
       
       const timeData = JSON.parse(output);
@@ -197,17 +196,17 @@ class DependencyUpdater extends AutomationTask {
         console.log(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
         
         // Update the package
-        const updateCommand = pkg.location === dependencies' ? 
+        const updateCommand = pkg.location === 'dependencies' ? 
           `npm install ${pkg.name}@${pkg.latest}`
           : `npm install ${pkg.name}@${pkg.latest} --save-dev`;
         
-        execSync(updateCommand, { stdio: pipe' });
+        execSync(updateCommand, { stdio: 'pipe' });
         
         results.push({
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: updated
+          status: 'updated'
         });
         
         console.log(`✅ Successfully updated ${pkg.name}`);
@@ -219,7 +218,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: failed',
+          status: 'failed',
           error: error.message
         });
       }
@@ -233,15 +232,15 @@ class DependencyUpdater extends AutomationTask {
       console.log('🧪 Testing updates...');
       
       // Run tests
-      execSync('npm test', { stdio: pipe' });
+      execSync('npm test', { stdio: 'pipe' });
       console.log('✅ Tests passed');
       
       // Run build
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       console.log('✅ Build successful');
       
       // Run lint
-      execSync('npm run lint', { stdio: pipe' });
+      execSync('npm run lint', { stdio: 'pipe' });
       console.log('✅ Lint passed');
       
     } catch (error) {
@@ -259,17 +258,17 @@ class DependencyUpdater extends AutomationTask {
       
       // Create a new branch
       const branchName = `deps/auto-update-${Date.now()}`;
-      execSync(`git checkout -b ${branchName}`, { stdio: pipe' });
+      execSync(`git checkout -b ${branchName}`, { stdio: 'pipe' });
       
       // Stage changes
-      execSync('git add package.json package-lock.json', { stdio: pipe' });
+      execSync('git add package.json package-lock.json', { stdio: 'pipe' });
       
       // Commit changes
       const commitMessage = this.generateCommitMessage(updates);
-      execSync(`git commit -m "${commitMessage}"`, { stdio: pipe' });
+      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
       
       // Push branch
-      execSync(`git push origin ${branchName}`, { stdio: pipe' });
+      execSync(`git push origin ${branchName}`, { stdio: 'pipe' });
       
       // Create PR using GitHub CLI or API
       await this.createGitHubPR(branchName, updates);
@@ -283,7 +282,7 @@ class DependencyUpdater extends AutomationTask {
   }
 
   generateCommitMessage(updates) {
-    const packageNames = updates.map(u => u.name).join(', );
+    const packageNames = updates.map(u => u.name).join(', ');
     const updateCount = updates.length;
     
     return `chore(deps): auto-update ${updateCount} dependencies
@@ -301,7 +300,7 @@ This is an automated update by the dependency updater.`;
       const body = this.generatePRBody(updates);
       
       execSync(`gh pr create --title "${title}" --body "${body}" --base main --head ${branchName}`, {
-        stdio: pipe
+        stdio: 'pipe'
       });
     } catch (error) {
       console.warn('GitHub CLI not available, skipping PR creation');
@@ -333,24 +332,24 @@ This update was automatically generated by the dependency updater.`;
   setupGit() {
     try {
       // Check git user configuration
-      execSync('git config user.name', { stdio: pipe' });
-      execSync('git config user.email', { stdio: pipe' });
+      execSync('git config user.name', { stdio: 'pipe' });
+      execSync('git config user.email', { stdio: 'pipe' });
     } catch (error) {
       console.log('⚠️ Git configuration missing, setting up...');
-      execSync('git config user.name "Dependency Updater Bot"', { stdio: pipe' });
-      execSync('git config user.email "bot@zion.app"', { stdio: pipe' });
+      execSync('git config user.name "Dependency Updater Bot"', { stdio: 'pipe' });
+      execSync('git config user.email "bot@zion.app"', { stdio: 'pipe' });
     }
   }
 
   async cleanup() {
     try {
       // Reset to clean state
-      execSync('git reset --hard HEAD', { stdio: pipe' });
-      execSync('git clean -fd', { stdio: pipe' });
+      execSync('git reset --hard HEAD', { stdio: 'pipe' });
+      execSync('git clean -fd', { stdio: 'pipe' });
       
       // Switch back to main branch
-      execSync('git checkout main', { stdio: pipe' });
-      execSync('git pull origin main', { stdio: pipe' });
+      execSync('git checkout main', { stdio: 'pipe' });
+      execSync('git pull origin main', { stdio: 'pipe' });
       
     } catch (error) {
       console.error('Error during cleanup:', error.message);

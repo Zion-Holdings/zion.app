@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Enhanced Log Collector for Zion.App

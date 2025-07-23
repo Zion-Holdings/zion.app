@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Real-time Log Monitor

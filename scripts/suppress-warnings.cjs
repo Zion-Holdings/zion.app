@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Suppress Node.js Deprecation Warnings Script

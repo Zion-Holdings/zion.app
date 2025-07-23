@@ -63,6 +63,9 @@ class AutomationStarter {
       // Start cursor automation
       await this.startCursorAutomation();
       
+      // Start Cursor integration system
+      await this.startCursorIntegrationSystem();
+      
       // Start task automation
       await this.startTaskAutomation();
       
@@ -185,6 +188,27 @@ class AutomationStarter {
     }
   }
 
+  async startCursorIntegrationSystem() {
+    console.log('🔗 Starting Cursor Integration System...');
+    
+    try {
+      const CursorIntegrationSystem = require('./cursor-integration-system.js');
+      const cursorIntegrationSystem = new CursorIntegrationSystem({
+        enableChatAutomation: true,
+        enableChatMonitor: true,
+        enableTodoQueue: true,
+        autoProcessChats: true
+      });
+      
+      await cursorIntegrationSystem.initialize();
+      this.runningSystems.set('cursorIntegrationSystem', cursorIntegrationSystem);
+      console.log('✅ Cursor Integration System started');
+      
+    } catch (error) {
+      console.error('❌ Failed to start Cursor Integration System:', error.message);
+    }
+  }
+
   async startTaskAutomation() {
     logger.info('📋 Starting Task Automation...');
     
@@ -212,7 +236,7 @@ class AutomationStarter {
     
     this.runningSystems.forEach((system, name) => {
       const status = system.getStatus ? system.getStatus() : { isRunning: true };
-      logger.info(`  - ${name}: ${status.isRunning ? ✅ Running' : ❌ Stopped'}`);
+      console.log(`  - ${name}: ${status.isRunning ? '✅ Running' : '❌ Stopped'}`);
     });
     
     logger.info('\n🎯 Automation Dashboard: http://localhost:3001');

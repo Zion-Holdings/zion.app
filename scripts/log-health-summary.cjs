@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 // Handle piping errors gracefully (e.g., when output is piped to `head`)
 process.stdout.on('error', (err) => {
