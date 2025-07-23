@@ -1,4 +1,4 @@
-import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import talentHandler from @/pages/api/talent/index';import { TALENT_PROFILES } from @/data/talentData';import type { TalentProfile as _TalentProfile } from @/types/talent';
+import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import talentHandler from @/pages/api/talent/index';import { TALENT_PROFILES } from @/data/talentData';import type { TalentProfile as _TalentProfile } from @/types/talent';
 describe('/api/talent', () => {'  it('should return 200 and all talent profiles for GET requests', () => {'    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
       method: GET',    });
 

@@ -1,5 +1,5 @@
 // pages/api/sentry-test-error-api.ts;
-import type { NextApiRequest, NextApiResponse } from 'next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';
+import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';
 async function handler(
   _req: NextApiRequest,
   res: NextApiResponse

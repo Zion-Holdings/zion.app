@@ -70,7 +70,7 @@ Deno.test("get-shared-whitepaper: handles missing ID", async () => {"    const r
     assertEquals(res.status, 400);
     assertStringIncludes(json.error, "Missing whitepaper ID.");"});"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Deno.test("get-shared-whitepaper: handles not found error from Supabase", async () => {"    mockSingle_GetShared.resolves({ data: null, error: { code: PGRST116', message: 'Row not found' } });    const req = new Request("http://localhost/get-shared-whitepaper", {"        method: "POST", body: JSON.stringify({ id: "not-found-id" }), headers: { "Content-Type": "application/json" },"    });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Deno.test("get-shared-whitepaper: handles not found error from Supabase", async () => {"    mockSingle_GetShared.resolves({ data: null, error: { code: PGRST116', message: Row not found' } });    const req = new Request("http://localhost/get-shared-whitepaper", {"        method: "POST", body: JSON.stringify({ id: "not-found-id" }), headers: { "Content-Type": "application/json" },"    });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     const res = await getSharedWhitepaperHandler(req);
     const json = await res.json();
     assertEquals(res.status, 404);

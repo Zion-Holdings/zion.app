@@ -7,7 +7,7 @@ class DependencyUpdater extends AutomationTask {
   constructor(config = {}) {
     super({
       name: DependencyUpdater,
-      schedule: '0 2 * * *', // Daily at 2 AM
+      schedule: 0 2 * * *', // Daily at 2 AM
       enabled: true,
       autoCreatePR: true,
       testUpdates: true,

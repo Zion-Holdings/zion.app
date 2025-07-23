@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from next';
 // Simple logout endpoint to clear authToken cookie and invalidate session;
 default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
+  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
   }
 
   // Expire the authToken cookie

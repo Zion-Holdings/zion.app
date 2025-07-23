@@ -14,7 +14,7 @@ function findTsFiles(dir, files = []) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== '.next') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== node_modules' && item !== .next') {
       findTsFiles(fullPath, files);
     } else if (item.endsWith('.ts') || item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -27,7 +27,7 @@ function findTsFiles(dir, files = []) {
 // Function to fix syntax errors in a file
 function fixSyntaxErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, utf8');
     let modified = false;
     
     // Fix missing quotes in import statements
@@ -40,19 +40,19 @@ function fixSyntaxErrors(filePath) {
     }
     
     // Fix missing quotes in method checks
-    const methodRegex = /req\.method\s*!==\s*([A-Z]+)'/g;
+    const methodRegex = /req\.method\s*!==\s*([A-Z]+)/g;
     if (methodRegex.test(content)) {
       content = content.replace(methodRegex, (match, method) => {
-        return match.replace(`${method}'`, `'${method}'`);
+        return match.replace(`${method}`, `'${method}`);
       });
       modified = true;
     }
     
     // Fix missing quotes in string literals
-    const stringRegex = /message:\s*([A-Za-z\s]+)'/g;
+    const stringRegex = /message:\s*([A-Za-z\s]+)/g;
     if (stringRegex.test(content)) {
       content = content.replace(stringRegex, (match, message) => {
-        return match.replace(`${message}'`, `'${message}'`);
+        return match.replace(`${message}`, `'${message}`);
       });
       modified = true;
     }
@@ -60,7 +60,7 @@ function fixSyntaxErrors(filePath) {
     // Fix missing quotes in typeof checks
     const typeofRegex = /typeof\s+global\s*!==\s*undefined'/g;
     if (typeofRegex.test(content)) {
-      content = content.replace(typeofRegex, "typeof global !== 'undefined'");
+      content = content.replace(typeofRegex, "typeof global !== undefined'");
       modified = true;
     }
     
@@ -74,7 +74,7 @@ function fixSyntaxErrors(filePath) {
     }
     
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, utf8');
       console.log(`✅ Fixed: ${filePath}`);
       return true;
     }
@@ -103,7 +103,7 @@ try {
   // Run TypeScript check to verify fixes
   console.log('\n🔍 Running TypeScript check...');
   try {
-    execSync('npx tsc --noEmit', { stdio: 'inherit' });
+    execSync('npx tsc --noEmit', { stdio: inherit' });
     console.log('✅ TypeScript check passed!');
   } catch (error) {
     console.log('⚠️  TypeScript check still has issues, but syntax errors should be fixed.');

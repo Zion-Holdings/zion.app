@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';import { MARKETPLACE_LISTINGS } from @/data/listingData';import { SERVICES } from @/data/servicesData';import { TALENT_PROFILES } from @/data/talentData';import type { SearchResult, SearchResponse } from @/types/search';
+import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';import { MARKETPLACE_LISTINGS } from @/data/listingData';import { SERVICES } from @/data/servicesData';import { TALENT_PROFILES } from @/data/talentData';import type { SearchResult, SearchResponse } from @/types/search';
 interface SearchResult {
   id: string;
   type: product' | service' | talent' | equipment' | category';  title: string;
@@ -74,7 +74,7 @@ function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
-  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const q = String((req.query.query ?? req.query.q) ?? )    .toLowerCase()

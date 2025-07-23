@@ -1,4 +1,4 @@
-import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import handler from @/pages/api/status';
+import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import handler from @/pages/api/status';
 describe('/api/status API Endpoint', () => {'  it('returns service status list', async () => {'    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({ method: GET' });
     await handler(req, res);
 

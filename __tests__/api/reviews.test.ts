@@ -1,4 +1,4 @@
-import { createMocks, RequestMethod } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import reviewsHandler from @/pages/api/reviews'; // Handler for POST /api/reviews'import productReviewsHandler from @/pages/api/reviews/[productId]; // Handler for GET /api/reviews/[productId]import { PrismaClient } from @prisma/client';import { supabase } from @/integrations/supabase/client';
+import { createMocks, RequestMethod } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import reviewsHandler from @/pages/api/reviews'; // Handler for POST /api/reviews'import productReviewsHandler from @/pages/api/reviews/[productId]; // Handler for GET /api/reviews/[productId]import { PrismaClient } from @prisma/client';import { supabase } from @/integrations/supabase/client';
 // Mock Prisma Client
 jest.mock('@prisma/client', () => {'  const mockPrismaClient = {
     productReview: {

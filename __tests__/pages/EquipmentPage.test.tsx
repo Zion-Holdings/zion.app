@@ -61,7 +61,7 @@ describe('EquipmentPage', () => {'  beforeEach(() => {
     });
   });
 
-  it('handles 500 error gracefully and shows toast', async () => {'    const error = { response: { status: 500, headers: {} }, message: 'Server error' };    (apiClient.get as jest.Mock).mockRejectedValue(error);
+  it('handles 500 error gracefully and shows toast', async () => {'    const error = { response: { status: 500, headers: {} }, message: Server error' };    (apiClient.get as jest.Mock).mockRejectedValue(error);
 
     renderWithProviders(<EquipmentPage />);
 

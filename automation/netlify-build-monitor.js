@@ -27,14 +27,14 @@ class NetlifyBuildMonitor {
       try {
         const status = await this.getBuildStatus(buildId);
         
-        if (status === 'ready') {
+        if (status === ready') {
           console.log('✅ Build completed successfully!');
           return true;
-        } else if (status === 'error') {
+        } else if (status === error') {
           console.log('❌ Build failed, analyzing errors...');
           await this.analyzeAndFixErrors();
           return false;
-        } else if (status === 'building') {
+        } else if (status === building') {
           console.log('⏳ Build in progress...');
           await this.sleep(this.config.checkInterval);
         }
@@ -54,12 +54,12 @@ class NetlifyBuildMonitor {
   // Get build status from Netlify API
   async getBuildStatus(buildId) {
     try {
-      const result = execSync(`netlify api getSiteBuild --data='{"build_id":"${buildId}"}'`, { encoding: 'utf8' });
+      const result = execSync(`netlify api getSiteBuild --data='{"build_id":"${buildId}"}`, { encoding: utf8' });
       const build = JSON.parse(result);
       return build.state;
     } catch (error) {
       console.error('Error getting build status:', error.message);
-      return 'unknown';
+      return unknown';
     }
   }
 
@@ -72,27 +72,27 @@ class NetlifyBuildMonitor {
       {
         pattern: /Unterminated string constant/,
         fix: this.fixStringConstants.bind(this),
-        description: 'Fix unterminated string constants'
+        description: Fix unterminated string constants
       },
       {
         pattern: /Unexpected token.*Expected a string literal/,
         fix: this.fixImportStatements.bind(this),
-        description: 'Fix import statement syntax'
+        description: Fix import statement syntax
       },
       {
         pattern: /Type.*is not assignable to type/,
         fix: this.fixTypeErrors.bind(this),
-        description: 'Fix TypeScript type errors'
+        description: Fix TypeScript type errors
       },
       {
         pattern: /Module not found/,
         fix: this.fixModuleErrors.bind(this),
-        description: 'Fix module import errors'
+        description: Fix module import errors
       },
       {
         pattern: /Cannot find module/,
         fix: this.fixMissingDependencies.bind(this),
-        description: 'Install missing dependencies'
+        description: Install missing dependencies
       }
     ];
 
@@ -113,15 +113,15 @@ class NetlifyBuildMonitor {
     
     for (const file of tsFiles) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix missing quotes in various contexts
         const patterns = [
-          { regex: /from\s+next';/g, replacement: "from 'next';" },
-          { regex: /req\.method\s*!==\s*([A-Z]+)'/g, replacement: (match, method) => match.replace(`${method}'`, `'${method}'`) },
-          { regex: /message:\s*([A-Za-z\s]+)'/g, replacement: (match, message) => match.replace(`${message}'`, `'${message}'`) },
-          { regex: /typeof\s+global\s*!==\s*undefined'/g, replacement: "typeof global !== 'undefined'" },
+          { regex: /from\s+next';/g, replacement: "from next';" },
+          { regex: /req\.method\s*!==\s*([A-Z]+)/g, replacement: (match, method) => match.replace(`${method}`, `'${method}`) },
+          { regex: /message:\s*([A-Za-z\s]+)/g, replacement: (match, message) => match.replace(`${message}`, `'${message}`) },
+          { regex: /typeof\s+global\s*!==\s*undefined'/g, replacement: "typeof global !== undefined'" },
           { regex: /typeof\s*\([^)]+\)\.self\s*===\s*undefined/g, replacement: (match) => match.replace('undefined', "'undefined'") }
         ];
         
@@ -133,7 +133,7 @@ class NetlifyBuildMonitor {
         }
         
         if (modified) {
-          fs.writeFileSync(file, content, 'utf8');
+          fs.writeFileSync(file, content, utf8');
           fixedCount++;
           this.fixes.push(`Fixed string constants in ${file}`);
         }
@@ -154,7 +154,7 @@ class NetlifyBuildMonitor {
     
     for (const file of tsFiles) {
       try {
-        let content = fs.readFileSync(file, 'utf8');
+        let content = fs.readFileSync(file, utf8');
         let modified = false;
         
         // Fix various import patterns
@@ -162,7 +162,7 @@ class NetlifyBuildMonitor {
           { regex: /import\s+(?:type\s+)?\{[^}]+\}\s+from\s+next';/g, replacement: (match) => match.replace("next';", "'next';") },
           { regex: /import\s+([^}]+)\s+from\s+([^;]+);/g, replacement: (match, imports, module) => {
             if (!module.includes("'") && !module.includes('"')) {
-              return match.replace(module, `'${module.trim()}'`);
+              return match.replace(module, `'${module.trim()}`);
             }
             return match;
           }}
@@ -176,7 +176,7 @@ class NetlifyBuildMonitor {
         }
         
         if (modified) {
-          fs.writeFileSync(file, content, 'utf8');
+          fs.writeFileSync(file, content, utf8');
           fixedCount++;
           this.fixes.push(`Fixed imports in ${file}`);
         }
@@ -195,8 +195,8 @@ class NetlifyBuildMonitor {
     try {
       // Run TypeScript compiler to get detailed error information
       const result = execSync('npx tsc --noEmit --pretty false', { 
-        encoding: 'utf8', 
-        stdio: ['pipe', 'pipe', 'pipe'] 
+        encoding: utf8', 
+        stdio: ['pipe', pipe', pipe'] 
       });
       
       // Parse TypeScript errors and apply fixes
@@ -220,7 +220,7 @@ class NetlifyBuildMonitor {
     
     try {
       // Check for missing dependencies
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
       const missingDeps = [];
       
       // Check if all dependencies are installed
@@ -233,9 +233,9 @@ class NetlifyBuildMonitor {
       }
       
       if (missingDeps.length > 0) {
-        console.log(`Installing missing dependencies: ${missingDeps.join(', ')}`);
-        execSync(`npm install ${missingDeps.join(' ')}`, { stdio: 'inherit' });
-        this.fixes.push(`Installed missing dependencies: ${missingDeps.join(', ')}`);
+        console.log(`Installing missing dependencies: ${missingDeps.join(', )}`);
+        execSync(`npm install ${missingDeps.join(' )}`, { stdio: inherit' });
+        this.fixes.push(`Installed missing dependencies: ${missingDeps.join(', )}`);
       }
     } catch (error) {
       console.error('Error fixing module errors:', error.message);
@@ -249,8 +249,8 @@ class NetlifyBuildMonitor {
     try {
       // Reinstall dependencies
       console.log('Reinstalling dependencies...');
-      execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
-      execSync('npm install', { stdio: 'inherit' });
+      execSync('rm -rf node_modules package-lock.json', { stdio: inherit' });
+      execSync('npm install', { stdio: inherit' });
       this.fixes.push('Reinstalled all dependencies');
     } catch (error) {
       console.error('Error reinstalling dependencies:', error.message);
@@ -266,7 +266,7 @@ class NetlifyBuildMonitor {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
         
-        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== '.next') {
+        if (stat.isDirectory() && !item.startsWith('.') && item !== node_modules' && item !== .next') {
           this.findTsFiles(fullPath, files);
         } else if (item.endsWith('.ts') || item.endsWith('.tsx')) {
           files.push(fullPath);
@@ -285,9 +285,9 @@ class NetlifyBuildMonitor {
     
     try {
       // Commit and push changes
-      execSync('git add .', { stdio: 'inherit' });
-      execSync('git commit -m "Auto-fix: Build errors resolved"', { stdio: 'inherit' });
-      execSync('git push origin main', { stdio: 'inherit' });
+      execSync('git add .', { stdio: inherit' });
+      execSync('git commit -m "Auto-fix: Build errors resolved"', { stdio: inherit' });
+      execSync('git push origin main', { stdio: inherit' });
       
       console.log('✅ Changes pushed, new build triggered');
       return true;

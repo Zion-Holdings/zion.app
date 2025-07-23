@@ -96,7 +96,7 @@ describe('WhitepaperGeneratorPage', () => {'  beforeEach(() => {
 
     test('displays error message on generate-whitepaper failure', async () => {'      mockSupabaseInvoke.mockResolvedValueOnce({
         data: null,
-        error: { message: 'Generation failed' },      });
+        error: { message: Generation failed' },      });
       render(<WhitepaperGeneratorPage />);
       fireEvent.click(screen.getByRole('button', { name: /Generate Whitepaper Draft/i }));      await waitFor(() => expect(screen.getByText(/Supabase function error: Generation failed/i)).toBeInTheDocument());
     });

@@ -1,4 +1,4 @@
-import { createMocks, RequestMethod } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import handler from @/pages/api/newsletter';import { mailchimpService } from @/integrations/mailchimp';
+import { createMocks, RequestMethod } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import handler from @/pages/api/newsletter';import { mailchimpService } from @/integrations/mailchimp';
 jest.mock('@/integrations/mailchimp', () => ({'  mailchimpService: { addSubscriber: jest.fn() }
 }));
 jest.mock('@/lib/email', () => ({'  sendEmailWithSendGrid: jest.fn().mockResolvedValue(undefined)

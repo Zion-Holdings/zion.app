@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';import { BLOG_POSTS } from @/data/blog-posts';import type { BlogPost } from @/types/blog';;
+import type { NextApiRequest, NextApiResponse } from next';import { BLOG_POSTS } from @/data/blog-posts';import type { BlogPost } from @/types/blog';;
 default function handler(
   req: NextApiRequest,
   res: NextApiResponse<BlogPost[] | { error: string }>
 ) {
-  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   try {

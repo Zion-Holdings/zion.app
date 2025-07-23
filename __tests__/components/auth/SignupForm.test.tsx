@@ -60,7 +60,7 @@ describe('SignupForm', () => {'  const fillOutForm = async () => {
   test('should handle successful registration with auto-login and redirect', async () => {'    // Mock successful registration
     (axios.post as jest.Mock).mockResolvedValueOnce({
       status: 201,
-      data: { message: 'Registration successful' },    });
+      data: { message: Registration successful' },    });
 
     // Mock successful sign-in
     signIn.mockResolvedValueOnce({ ok: true });
@@ -109,7 +109,7 @@ describe('SignupForm', () => {'  const fillOutForm = async () => {
 
   test('should handle network errors gracefully', async () => {'    // Mock network error
     (axios.post as jest.Mock).mockRejectedValueOnce({
-      message: 'Network Error',    });
+      message: Network Error',    });
 
     renderWithProviders(<SignupForm />);
     

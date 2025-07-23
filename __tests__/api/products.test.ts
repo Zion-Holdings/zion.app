@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from node-mocks-http';import productHandler from @/pages/api/products/index';import { PrismaClient } from @prisma/client';
+import { NextApiRequest, NextApiResponse } from next';import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from node-mocks-http';import productHandler from @/pages/api/products/index';import { PrismaClient } from @prisma/client';
 // Mock Prisma Client
 jest.mock('@prisma/client', () => {'  const mPrismaClient = {
     product: {

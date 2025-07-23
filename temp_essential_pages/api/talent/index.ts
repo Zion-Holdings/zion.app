@@ -1,4 +1,4 @@
-import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from 'next';import * as Sentry from @sentry/nextjs';;
+import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';;
 const prisma = new PrismaClient();
 
 interface _TalentFilters {

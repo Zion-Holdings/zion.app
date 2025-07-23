@@ -1,4 +1,4 @@
-import { exec } from child_process';import crypto from crypto';import path from path';import { PrismaClient, ErrorAnalysisStatus } from @prisma/client';import { captureException } from ../../src/utils/sentry'; // Adjusted path'import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from ../../src/utils/withErrorLogging';;
+import { exec } from child_process';import crypto from crypto';import path from path';import { PrismaClient, ErrorAnalysisStatus } from @prisma/client';import { captureException } from ../../src/utils/sentry'; // Adjusted path'import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from ../../src/utils/withErrorLogging';;
 const prisma = new PrismaClient();
 const CODEX_SCRIPT_PATH = path.resolve(process.cwd(), scripts/codex-bug-fix.js');
 interface ErrorDetails {
@@ -50,7 +50,7 @@ function formulateCodexPrompt(errorDetails: ErrorDetails, signature: string): st
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    res.status(405).end('Method Not Allowed');    return;
+  if (req.method !== POST') {'    res.setHeader('Allow', POST');    res.status(405).end('Method Not Allowed');    return;
   }
 
   const errorDetails = req['body'] as ErrorDetails; // Type assertion for req.body

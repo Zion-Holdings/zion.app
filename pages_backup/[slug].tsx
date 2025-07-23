@@ -1,4 +1,4 @@
-import fs from fs';import path from path';import React from react';import type { GetStaticPaths, GetStaticProps } from 'next';import ReactMarkdown from react-markdown';import { NextSeo } from @/components/NextSeo';
+import fs from fs';import path from path';import React from react';import type { GetStaticPaths, GetStaticProps } from next';import ReactMarkdown from react-markdown';import { NextSeo } from @/components/NextSeo';
 interface PageMeta {
   title?: string;
   description?: string;

@@ -8,6 +8,6 @@ const handler = async () => {
   return {
     statusCode: 200,
     body: JSON.stringify({ 
-      message: 'Sentry DSN is configured',      dsn: dsn.substring(0, 20) + ...' // Show partial DSN for verification'    })
+      message: Sentry DSN is configured',      dsn: dsn.substring(0, 20) + ...' // Show partial DSN for verification'    })
   };
 };
