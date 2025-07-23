@@ -9,7 +9,7 @@ class AutonomousCommitPush {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, logs', autonomous-commit-push.log');
+        this.logFile = path.join(__dirname, 'logs', 'autonomous-commit-push.log');
         this.ensureLogDirectory();
     }
 
