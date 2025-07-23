@@ -1,4 +1,4 @@
 // pwa module placeholder
-export ;const pwa = {
+const pwa = {
   // TODO: Implement pwa functionality
 };

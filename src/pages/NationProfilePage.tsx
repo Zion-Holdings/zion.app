@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NationProfilePage() {
+default function NationProfilePage() {
   return (
     <div>
       <h1>NationProfilePage</h1>

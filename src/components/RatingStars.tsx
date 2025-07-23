@@ -1,5 +1,5 @@
 import React from react';
-export ;default function RatingStars() {
+default function RatingStars() {
   return (
     <div>
       <h1>RatingStars</h1>

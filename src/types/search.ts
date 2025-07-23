@@ -1,4 +1,4 @@
 // search module placeholder
-export ;const search = {
+const search = {
   // TODO: Implement search functionality
 };

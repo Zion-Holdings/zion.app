@@ -1,4 +1,4 @@
 // notificationUtils module placeholder
-export ;const notificationUtils = {
+const notificationUtils = {
   // TODO: Implement notificationUtils functionality
 };

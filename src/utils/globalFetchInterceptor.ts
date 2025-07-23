@@ -1,4 +1,4 @@
 // globalFetchInterceptor module placeholder
-export ;const globalFetchInterceptor = {
+const globalFetchInterceptor = {
   // TODO: Implement globalFetchInterceptor functionality
 };

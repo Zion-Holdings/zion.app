@@ -1,4 +1,4 @@
 // createOnboardingNotification module placeholder
-export ;const createOnboardingNotification = {
+const createOnboardingNotification = {
   // TODO: Implement createOnboardingNotification functionality
 };

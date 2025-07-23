@@ -1,4 +1,4 @@
 // generateTraceId module placeholder
-export ;const generateTraceId = {
+const generateTraceId = {
   // TODO: Implement generateTraceId functionality
 };

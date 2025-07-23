@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PriceFilter() {
+default function PriceFilter() {
   return (
     <div>
       <h1>PriceFilter</h1>

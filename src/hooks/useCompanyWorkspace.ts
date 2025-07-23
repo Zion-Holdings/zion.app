@@ -1,4 +1,4 @@
 // useCompanyWorkspace module placeholder
-export ;const useCompanyWorkspace = {
+const useCompanyWorkspace = {
   // TODO: Implement useCompanyWorkspace functionality
 };

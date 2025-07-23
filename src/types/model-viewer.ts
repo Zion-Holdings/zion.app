@@ -1,4 +1,4 @@
 // model-viewer module placeholder
-export ;const model-viewer = {
+const model-viewer = {
   // TODO: Implement model-viewer functionality
 };

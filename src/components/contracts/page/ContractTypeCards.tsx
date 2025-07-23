@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ContractTypeCards() {
+default function ContractTypeCards() {
   return (
     <div>
       <h1>ContractTypeCards</h1>

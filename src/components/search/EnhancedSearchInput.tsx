@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnhancedSearchInput() {
+default function EnhancedSearchInput() {
   return (
     <div>
       <h1>EnhancedSearchInput</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function Points() {
+default function Points() {
   return (
     <div>
       <h1>Points</h1>

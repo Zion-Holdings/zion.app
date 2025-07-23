@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NotificationItem() {
+default function NotificationItem() {
   return (
     <div>
       <h1>NotificationItem</h1>

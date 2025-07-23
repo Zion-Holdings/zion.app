@@ -1,4 +1,4 @@
 // database module placeholder
-export ;const database = {
+const database = {
   // TODO: Implement database functionality
 };

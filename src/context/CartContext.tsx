@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CartContext() {
+default function CartContext() {
   return (
     <div>
       <h1>CartContext</h1>

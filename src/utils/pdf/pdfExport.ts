@@ -1,4 +1,4 @@
 // pdfExport module placeholder
-export ;const pdfExport = {
+const pdfExport = {
   // TODO: Implement pdfExport functionality
 };

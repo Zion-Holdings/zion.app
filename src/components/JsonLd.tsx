@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JsonLd() {
+default function JsonLd() {
   return (
     <div>
       <h1>JsonLd</h1>

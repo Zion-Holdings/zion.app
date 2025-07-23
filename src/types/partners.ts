@@ -1,4 +1,4 @@
 // partners module placeholder
-export ;const partners = {
+const partners = {
   // TODO: Implement partners functionality
 };

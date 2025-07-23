@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DateFields() {
+default function DateFields() {
   return (
     <div>
       <h1>DateFields</h1>

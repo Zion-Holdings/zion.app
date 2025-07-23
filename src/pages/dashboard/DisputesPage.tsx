@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DisputesPage() {
+default function DisputesPage() {
   return (
     <div>
       <h1>DisputesPage</h1>

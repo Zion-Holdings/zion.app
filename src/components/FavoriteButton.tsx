@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FavoriteButton() {
+default function FavoriteButton() {
   return (
     <div>
       <h1>FavoriteButton</h1>

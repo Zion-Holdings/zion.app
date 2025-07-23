@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EducationSection() {
+default function EducationSection() {
   return (
     <div>
       <h1>EducationSection</h1>

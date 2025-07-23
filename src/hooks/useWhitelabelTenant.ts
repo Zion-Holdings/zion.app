@@ -1,4 +1,4 @@
 // useWhitelabelTenant module placeholder
-export ;const useWhitelabelTenant = {
+const useWhitelabelTenant = {
   // TODO: Implement useWhitelabelTenant functionality
 };

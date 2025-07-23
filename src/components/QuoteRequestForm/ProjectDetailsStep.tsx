@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProjectDetailsStep() {
+default function ProjectDetailsStep() {
   return (
     <div>
       <h1>ProjectDetailsStep</h1>

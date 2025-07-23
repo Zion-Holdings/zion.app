@@ -1,4 +1,4 @@
 // formatDate module placeholder
-export ;const formatDate = {
+const formatDate = {
   // TODO: Implement formatDate functionality
 };

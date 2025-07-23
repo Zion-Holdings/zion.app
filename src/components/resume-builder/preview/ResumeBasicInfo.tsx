@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ResumeBasicInfo() {
+default function ResumeBasicInfo() {
   return (
     <div>
       <h1>ResumeBasicInfo</h1>

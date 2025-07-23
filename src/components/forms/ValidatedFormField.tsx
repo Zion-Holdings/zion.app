@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ValidatedFormField() {
+default function ValidatedFormField() {
   return (
     <div>
       <h1>ValidatedFormField</h1>

@@ -1,4 +1,4 @@
 // useResumeEnhancer module placeholder
-export ;const useResumeEnhancer = {
+const useResumeEnhancer = {
   // TODO: Implement useResumeEnhancer functionality
 };

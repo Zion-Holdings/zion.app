@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MarketplaceSearch() {
+default function MarketplaceSearch() {
   return (
     <div>
       <h1>MarketplaceSearch</h1>

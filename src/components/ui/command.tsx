@@ -1,5 +1,5 @@
 import React from react';
-export ;default function command() {
+default function command() {
   return (
     <div>
       <h1>command</h1>

@@ -1,4 +1,4 @@
 // useMessages module placeholder
-export ;const useMessages = {
+const useMessages = {
   // TODO: Implement useMessages functionality
 };

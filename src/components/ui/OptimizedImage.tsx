@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OptimizedImage() {
+default function OptimizedImage() {
   return (
     <div>
       <h1>OptimizedImage</h1>

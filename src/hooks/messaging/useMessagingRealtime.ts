@@ -1,4 +1,4 @@
 // useMessagingRealtime module placeholder
-export ;const useMessagingRealtime = {
+const useMessagingRealtime = {
   // TODO: Implement useMessagingRealtime functionality
 };

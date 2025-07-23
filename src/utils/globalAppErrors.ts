@@ -1,4 +1,4 @@
 // globalAppErrors module placeholder
-export ;const globalAppErrors = {
+const globalAppErrors = {
   // TODO: Implement globalAppErrors functionality
 };

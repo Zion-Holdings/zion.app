@@ -1,4 +1,4 @@
 // withErrorLogging module placeholder
-export ;const withErrorLogging = {
+const withErrorLogging = {
   // TODO: Implement withErrorLogging functionality
 };

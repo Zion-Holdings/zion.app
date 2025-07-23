@@ -1,5 +1,5 @@
 import React from react';
-export ;default function RouteSEO() {
+default function RouteSEO() {
   return (
     <div>
       <h1>RouteSEO</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CategorySelection() {
+default function CategorySelection() {
   return (
     <div>
       <h1>CategorySelection</h1>

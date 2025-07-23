@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileLaunchHero() {
+default function MobileLaunchHero() {
   return (
     <div>
       <h1>MobileLaunchHero</h1>

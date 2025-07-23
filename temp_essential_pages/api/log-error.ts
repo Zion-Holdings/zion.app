@@ -190,4 +190,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

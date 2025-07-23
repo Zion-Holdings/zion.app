@@ -1,4 +1,4 @@
 // SalesforceService module placeholder
-export ;const SalesforceService = {
+const SalesforceService = {
   // TODO: Implement SalesforceService functionality
 };

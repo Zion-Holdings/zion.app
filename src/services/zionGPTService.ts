@@ -1,4 +1,4 @@
 // zionGPTService module placeholder
-export ;const zionGPTService = {
+const zionGPTService = {
   // TODO: Implement zionGPTService functionality
 };

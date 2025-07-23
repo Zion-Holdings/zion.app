@@ -235,7 +235,7 @@ async function getTalentDetails(talentId) {
   return response.json();
 }
 ;
-export ;{
+{
   listProducts,
   getProductDetails,
   submitQuoteRequest,

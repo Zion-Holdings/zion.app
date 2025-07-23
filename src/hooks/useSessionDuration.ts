@@ -1,4 +1,4 @@
 // useSessionDuration module placeholder
-export ;const useSessionDuration = {
+const useSessionDuration = {
   // TODO: Implement useSessionDuration functionality
 };

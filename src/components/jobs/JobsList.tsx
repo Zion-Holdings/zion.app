@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JobsList() {
+default function JobsList() {
   return (
     <div>
       <h1>JobsList</h1>

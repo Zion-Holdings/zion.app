@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ConnectWalletButton() {
+default function ConnectWalletButton() {
   return (
     <div>
       <h1>ConnectWalletButton</h1>

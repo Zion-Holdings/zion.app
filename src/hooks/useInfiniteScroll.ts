@@ -1,4 +1,4 @@
 // useInfiniteScroll module placeholder
-export ;const useInfiniteScroll = {
+const useInfiniteScroll = {
   // TODO: Implement useInfiniteScroll functionality
 };

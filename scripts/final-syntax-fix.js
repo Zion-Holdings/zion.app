@@ -88,17 +88,17 @@ class FinalSyntaxFixer {
         return //.test(content) || 
                /""""""""""""""""""/.test(content) || """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
                /``````````````````/.test(content) ||
-               /import React from react';export ;default function/.test(content);
+               /import React from react';default function/.test(content);
     }
 
     hasInvalidVariableName(content) {
-        return /export ;const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/.test(content) ||
+        return /const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/.test(content) ||
                /const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/.test(content);
     }
 
     hasInvalidFunctionName(content) {
         return /function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/.test(content) ||
-               /export ;default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/.test(content);
+               /default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/.test(content);
     }
 
     hasInvalidImportExport(content) {
@@ -111,10 +111,10 @@ class FinalSyntaxFixer {
             .replace(/''+/g, "'")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             .replace(/""+/g, "')
             .replace(/``+/g, `')
-            // Fix import/export ;patterns
-            .replace(/import React from react';export ;default function/g, "import React from react';\n\nexport ;default function")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;function/g, "import React from react';\n\nexport ;function")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;const/g, "import React from react';\n\nexport ;const")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            // Fix import/patterns
+            .replace(/import React from react';default function/g, "import React from react';\n\ndefault function")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';function/g, "import React from react';\n\nfunction")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';const/g, "import React from react';\n\nconst")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             // Remove trailing quotes at end of lines
             .replace(/''+$/gm, )
             .replace(/""+$/gm, )
@@ -123,9 +123,9 @@ class FinalSyntaxFixer {
 
     fixInvalidVariableNames(content) {
         return content
-            .replace(/export ;const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
+            .replace(/const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
                 const validName = varName.replace(/[^a-zA-Z0-9_$]/g, _');
-                return `export ;const ${validName} =`;
+                return `const ${validName} =`;
             })
             .replace(/const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
                 const validName = varName.replace(/[^a-zA-Z0-9_$]/g, _');
@@ -135,9 +135,9 @@ class FinalSyntaxFixer {
 
     fixInvalidFunctionNames(content) {
         return content
-            .replace(/export ;default function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
+            .replace(/default function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
                 const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, _');
-                return `export ;default function ${validName}(`;
+                return `default function ${validName}(`;
             })
             .replace(/function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
                 const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, _');
@@ -148,7 +148,7 @@ class FinalSyntaxFixer {
     fixInvalidImportExport(content) {
         return content
             .replace(/import\s+([^'"]+?)export/g, "import $1\n\nexport")""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/export\s+([^'"]+?)import/g, "export ;$1\n\nimport");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/export\s+([^'"]+?)import/g, "$1\n\nimport");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     }
 
     async generateReport() {

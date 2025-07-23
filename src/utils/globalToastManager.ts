@@ -1,4 +1,4 @@
 // globalToastManager module placeholder
-export ;const globalToastManager = {
+const globalToastManager = {
   // TODO: Implement globalToastManager functionality
 };

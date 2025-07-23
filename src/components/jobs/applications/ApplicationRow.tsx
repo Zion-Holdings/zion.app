@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApplicationRow() {
+default function ApplicationRow() {
   return (
     <div>
       <h1>ApplicationRow</h1>

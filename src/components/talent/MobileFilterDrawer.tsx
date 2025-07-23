@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileFilterDrawer() {
+default function MobileFilterDrawer() {
   return (
     <div>
       <h1>MobileFilterDrawer</h1>

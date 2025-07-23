@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JobMatches() {
+default function JobMatches() {
   return (
     <div>
       <h1>JobMatches</h1>

@@ -23,4 +23,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     .status(200)
     .json({ message: Verification email resent successfully' });}
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

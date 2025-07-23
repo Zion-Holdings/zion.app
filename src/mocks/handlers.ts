@@ -1,4 +1,4 @@
 // handlers module placeholder
-export ;const handlers = {
+const handlers = {
   // TODO: Implement handlers functionality
 };

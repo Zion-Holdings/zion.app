@@ -1,5 +1,5 @@
 import { Server as SocketIOServer } from socket.io;;
-import { NextApiRequest, NextApiResponse } from next;;
+import { NextApiRequest, NextApiResponse } from 'next';;
 
 // Store active connections
 const activeConnections = new Map<string, any>();
@@ -22,7 +22,7 @@ const RECONNECTION_CONFIG = {
   timeout: 20000
 };
 
-export ;default function handler(req: NextApiRequest, res: NextApiResponse) {
+default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== GET' && req.method !== POST') {
     return res.status(405).json({ error: Method not allowed' });
 
@@ -296,6 +296,6 @@ export ;default function handler(req: NextApiRequest, res: NextApiResponse) {
   });````
 `````
 // Export for use in other parts of the application``````
-export ;{ io, activeConnections };```````
+{ io, activeConnections };```````
 ````````
 }

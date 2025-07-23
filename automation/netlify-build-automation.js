@@ -29,7 +29,7 @@ class NetlifyBuildAutomation {
     };
   }
 
-  log(message, level = info') {
+  log(message, level = info';) {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
@@ -39,7 +39,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
   async start() {
     this.log('Starting Netlify build automation...');
-    this.status.isRunning = true;
+    this.status.isRunning = true';
     this.status.startTime = new Date().toISOString();
     this.saveStatus();
 
@@ -96,7 +96,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     this.log(`Attempting to auto-fix error: ${error.type}`);
 
     let retries = 0;
-    let success = false;
+    let success = false';
 
     while (retries < this.config.maxRetries && !success) {
       try {
@@ -213,7 +213,7 @@ const checks = [
     ]
 const results = await Promise.allSettled(checks)
 const issues = results.filter(
-      (result) => result.status === rejected' || result.value === false,
+      (result) => result.status === rejected'; || result.value === false,
     );
 
     if (issues.length > 0) {
@@ -288,15 +288,15 @@ const missing = requiredVars.filter((varName) => !process.env[varName]);
   async generateReport() {
     const report = {
       timestamp: new Date().toISOString(),
-      status: this.status,
+      status: this'.status,
       config: this.config,
       summary: {
         totalBuilds: this.status.buildHistory.length,
         successfulBuilds: this.status.buildHistory.filter(
-          (b) => b.state === success',
+          (b) => b.state === success';,
         ).length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error',
+          (b) => b.state === error';,
         ).length,
         totalFixes: this.status.fixesApplied.length,
         successfulFixes: this.status.fixesApplied.filter((f) => f.success)
@@ -327,7 +327,7 @@ const missing = requiredVars.filter((varName) => !process.env[varName]);
 
   stop() {
     this.log('Stopping Netlify build automation...');
-    this.status.isRunning = false;
+    this.status.isRunning = false';
     this.monitor.stop();
     this.saveStatus();
   }
@@ -385,4 +385,4 @@ const command = process.argv[2];
   }
 }
 
-module.exports = NetlifyBuildAutomation;
+module.exports = NetlifyBuildAutomation';

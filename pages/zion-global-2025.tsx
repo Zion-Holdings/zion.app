@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function zionglobal2025() {
+default function zionglobal2025() {
   return (
     <>
       <Head>

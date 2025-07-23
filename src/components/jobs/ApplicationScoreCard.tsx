@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApplicationScoreCard() {
+default function ApplicationScoreCard() {
   return (
     <div>
       <h1>ApplicationScoreCard</h1>

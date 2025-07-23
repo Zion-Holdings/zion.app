@@ -1,4 +1,4 @@
 // useApiErrorHandling module placeholder
-export ;const useApiErrorHandling = {
+const useApiErrorHandling = {
   // TODO: Implement useApiErrorHandling functionality
 };

@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function offline() {
+default function offline() {
   return (
     <>
       <Head>

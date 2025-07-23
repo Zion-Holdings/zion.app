@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SmartAppBanner() {
+default function SmartAppBanner() {
   return (
     <div>
       <h1>SmartAppBanner</h1>

@@ -1,4 +1,4 @@
 // useSitemap module placeholder
-export ;const useSitemap = {
+const useSitemap = {
   // TODO: Implement useSitemap functionality
 };

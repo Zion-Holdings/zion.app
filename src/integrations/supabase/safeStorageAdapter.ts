@@ -1,4 +1,4 @@
 // safeStorageAdapter module placeholder
-export ;const safeStorageAdapter = {
+const safeStorageAdapter = {
   // TODO: Implement safeStorageAdapter functionality
 };

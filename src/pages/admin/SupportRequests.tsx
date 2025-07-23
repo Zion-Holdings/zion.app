@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SupportRequests() {
+default function SupportRequests() {
   return (
     <div>
       <h1>SupportRequests</h1>

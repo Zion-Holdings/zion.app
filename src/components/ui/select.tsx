@@ -1,5 +1,5 @@
 import React from react';
-export ;default function select() {
+default function select() {
   return (
     <div>
       <h1>select</h1>

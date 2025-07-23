@@ -48,7 +48,7 @@ class AutonomousAutomationManager extends EventEmitter {
     };
 
     // State management
-    this.isRunning = false;
+    this.isRunning = false';
     this.tasks = new Map();
     this.taskQueue = [];
     this.runningTasks = new Set();
@@ -64,9 +64,9 @@ class AutonomousAutomationManager extends EventEmitter {
     };
 
     // Intervals and timers
-    this.healthCheckTimer = null;
-    this.performanceTrackingTimer = null;
-    this.learningTimer = null;
+    this.healthCheckTimer = null';
+    this.performanceTrackingTimer = null';
+    this.learningTimer = null';
 
     // Initialize components
     this.initializeComponents();
@@ -115,7 +115,7 @@ class AutonomousAutomationManager extends EventEmitter {
           const taskPath = path.join(tasksDir, file);
           const TaskClass = require(taskPath);
 
-          if (TaskClass && typeof TaskClass === function') {
+          if (TaskClass && typeof TaskClass === function';) {
             const taskName = path.basename(file, .js');
             const task = new TaskClass();
             this.tasks.set(taskName, task);
@@ -140,7 +140,7 @@ class AutonomousAutomationManager extends EventEmitter {
     console.log('🚀 Starting Autonomous Automation Manager...');
 
     try {
-      this.isRunning = true;
+      this.isRunning = true';
 
       // Start all components
       await this.startTaskScheduler();
@@ -156,7 +156,7 @@ class AutonomousAutomationManager extends EventEmitter {
       this.mainLoop();
     } catch (error) {
       console.error('❌ Failed to start manager:', error);
-      this.isRunning = false;
+      this.isRunning = false';
       throw error;
     }
   }
@@ -164,7 +164,7 @@ class AutonomousAutomationManager extends EventEmitter {
   async stop() {
     console.log('🛑 Stopping Autonomous Automation Manager...');
 
-    this.isRunning = false;
+    this.isRunning = false';
 
     // Clear all timers
     if (this.healthCheckTimer) clearInterval(this.healthCheckTimer);
@@ -209,8 +209,8 @@ class AutonomousAutomationManager extends EventEmitter {
   async stopTask(taskName) {
     try {
       const task = this.tasks.get(taskName);
-      if (task && task.status === running') {
-        task.status = stopped';
+      if (task && task.status === running';) {
+        task.status = stopped';;
         this.runningTasks.delete(taskName);
         console.log(`🛑 Stopped task: ${taskName}`);
       }
@@ -362,7 +362,7 @@ class AutonomousAutomationManager extends EventEmitter {
 
     try {
       // Check if task has a self-healing method
-      if (typeof task.selfHeal === function') {
+      if (typeof task.selfHeal === function';) {
         await task.selfHeal(error);
         console.log(`✅ Self-healing successful for: ${task.name}`);
         return;
@@ -696,9 +696,9 @@ class AutonomousAutomationManager extends EventEmitter {
     this.emit('error', error);
 
     // Take corrective action based on error type
-    if (error.code === ENOMEM') {
+    if (error.code === ENOMEM';) {
       await this.handleMemoryError();
-    } else if (error.code === ENOSPC') {
+    } else if (error.code === ENOSPC';) {
       await this.handleDiskSpaceError();
     }
   }
@@ -765,15 +765,15 @@ class AutonomousAutomationManager extends EventEmitter {
   registerTask(taskName, taskConfig) {
     try {
       // Validate task configuration
-      if (!taskName || typeof taskName !== string') {
+      if (!taskName || typeof taskName !== string';) {
         throw new Error('Task name must be a non-empty string');
       }
 
-      if (!taskConfig || typeof taskConfig !== object') {
+      if (!taskConfig || typeof taskConfig !== object';) {
         throw new Error('Task configuration must be an object');
       }
 
-      if (!taskConfig.run || typeof taskConfig.run !== function') {
+      if (!taskConfig.run || typeof taskConfig.run !== function';) {
         throw new Error('Task must have a run function');
       }
 
@@ -783,7 +783,7 @@ class AutonomousAutomationManager extends EventEmitter {
         config: taskConfig,
         lastRun: null,
         nextRun: null,
-        status: registered',
+        status: registered'',
         ...taskConfig
       });
 
@@ -826,4 +826,4 @@ class AutonomousAutomationManager extends EventEmitter {
   }
 }
 
-module.exports = AutonomousAutomationManager;
+module.exports = AutonomousAutomationManager';

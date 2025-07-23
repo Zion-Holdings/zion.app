@@ -49,4 +49,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.or('Error saving feedback:', );    return res.status(500).json({ or: Failed to save feedback' });  }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

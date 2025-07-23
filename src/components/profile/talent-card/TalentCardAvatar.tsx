@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TalentCardAvatar() {
+default function TalentCardAvatar() {
   return (
     <div>
       <h1>TalentCardAvatar</h1>

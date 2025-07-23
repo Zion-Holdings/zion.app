@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BrowseCards() {
+default function BrowseCards() {
   return (
     <div>
       <h1>BrowseCards</h1>

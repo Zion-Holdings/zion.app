@@ -1,5 +1,5 @@
 import React from react';
-export ;default function menubar() {
+default function menubar() {
   return (
     <div>
       <h1>menubar</h1>

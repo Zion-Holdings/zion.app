@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SeverityIndicator() {
+default function SeverityIndicator() {
   return (
     <div>
       <h1>SeverityIndicator</h1>

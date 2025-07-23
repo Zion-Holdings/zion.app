@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MilestoneActivities() {
+default function MilestoneActivities() {
   return (
     <div>
       <h1>MilestoneActivities</h1>

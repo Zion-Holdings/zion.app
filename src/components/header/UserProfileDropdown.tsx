@@ -1,5 +1,5 @@
 import React from react';
-export ;default function UserProfileDropdown() {
+default function UserProfileDropdown() {
   return (
     <div>
       <h1>UserProfileDropdown</h1>

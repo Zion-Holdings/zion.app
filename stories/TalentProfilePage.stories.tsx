@@ -4,8 +4,8 @@ const sampleTalent = {
 const meta: Meta<typeof TalentProfilePage> = {
   title: Pages/TalentProfilePage',  component: TalentProfilePage
 };
-export ;default meta;
-export ;const _Default: StoryObj<typeof TalentProfilePage> = {
+default meta;
+const _Default: StoryObj<typeof TalentProfilePage> = {
   render: () => {
     // Mock fetch to return the sample talent data
     window.fetch = () =>

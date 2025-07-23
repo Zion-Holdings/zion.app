@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProjectHeader() {
+default function ProjectHeader() {
   return (
     <div>
       <h1>ProjectHeader</h1>

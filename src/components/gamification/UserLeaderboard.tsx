@@ -1,5 +1,5 @@
 import React from react';
-export ;default function UserLeaderboard() {
+default function UserLeaderboard() {
   return (
     <div>
       <h1>UserLeaderboard</h1>

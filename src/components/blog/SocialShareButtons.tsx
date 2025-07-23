@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SocialShareButtons() {
+default function SocialShareButtons() {
   return (
     <div>
       <h1>SocialShareButtons</h1>

@@ -1,4 +1,4 @@
 // usePageViewTracking module placeholder
-export ;const usePageViewTracking = {
+const usePageViewTracking = {
   // TODO: Implement usePageViewTracking functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProductActions() {
+default function ProductActions() {
   return (
     <div>
       <h1>ProductActions</h1>

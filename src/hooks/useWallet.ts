@@ -1,4 +1,4 @@
 // useWallet module placeholder
-export ;const useWallet = {
+const useWallet = {
   // TODO: Implement useWallet functionality
 };

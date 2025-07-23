@@ -18,7 +18,7 @@ class SyntaxFixer {
       // Fix unterminated strings
       await this.fixUnterminatedStrings();
       
-      // Fix import/export ;issues
+      // Fix import/issues
       await this.fixImportExportIssues();
       
       // Fix JSX syntax

@@ -1,4 +1,4 @@
 // serviceWorkerRegistration module placeholder
-export ;const serviceWorkerRegistration = {
+const serviceWorkerRegistration = {
   // TODO: Implement serviceWorkerRegistration functionality
 };

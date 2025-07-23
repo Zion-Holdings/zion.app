@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProfileContact() {
+default function ProfileContact() {
   return (
     <div>
       <h1>ProfileContact</h1>

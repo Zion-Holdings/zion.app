@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AgendaSection() {
+default function AgendaSection() {
   return (
     <div>
       <h1>AgendaSection</h1>

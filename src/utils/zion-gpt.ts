@@ -1,4 +1,4 @@
 // zion-gpt module placeholder
-export ;const zion-gpt = {
+const zion-gpt = {
   // TODO: Implement zion-gpt functionality
 };

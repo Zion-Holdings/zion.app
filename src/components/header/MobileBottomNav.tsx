@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileBottomNav() {
+default function MobileBottomNav() {
   return (
     <div>
       <h1>MobileBottomNav</h1>

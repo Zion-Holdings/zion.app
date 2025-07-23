@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ActionButtons() {
+default function ActionButtons() {
   return (
     <div>
       <h1>ActionButtons</h1>

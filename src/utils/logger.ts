@@ -1,4 +1,4 @@
 // logger module placeholder
-export ;const logger = {
+const logger = {
   // TODO: Implement logger functionality
 };

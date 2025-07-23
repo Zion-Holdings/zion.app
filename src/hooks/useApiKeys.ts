@@ -1,4 +1,4 @@
 // useApiKeys module placeholder
-export ;const useApiKeys = {
+const useApiKeys = {
   // TODO: Implement useApiKeys functionality
 };

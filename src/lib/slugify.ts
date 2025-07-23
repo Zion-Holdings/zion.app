@@ -1,4 +1,4 @@
 // slugify module placeholder
-export ;const slugify = {
+const slugify = {
   // TODO: Implement slugify functionality
 };

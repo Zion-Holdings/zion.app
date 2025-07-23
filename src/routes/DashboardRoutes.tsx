@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DashboardRoutes() {
+default function DashboardRoutes() {
   return (
     <div>
       <h1>DashboardRoutes</h1>

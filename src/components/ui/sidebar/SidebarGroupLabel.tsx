@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SidebarGroupLabel() {
+default function SidebarGroupLabel() {
   return (
     <div>
       <h1>SidebarGroupLabel</h1>

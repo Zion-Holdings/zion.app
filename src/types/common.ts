@@ -1,4 +1,4 @@
 // common module placeholder
-export ;const common = {
+const common = {
   // TODO: Implement common functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WalletContext() {
+default function WalletContext() {
   return (
     <div>
       <h1>WalletContext</h1>

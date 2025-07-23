@@ -1,4 +1,4 @@
 // utils module placeholder
-export ;const utils = {
+const utils = {
   // TODO: Implement utils functionality
 };

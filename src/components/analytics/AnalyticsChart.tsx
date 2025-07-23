@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AnalyticsChart() {
+default function AnalyticsChart() {
   return (
     <div>
       <h1>AnalyticsChart</h1>

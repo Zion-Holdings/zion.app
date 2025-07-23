@@ -1,4 +1,4 @@
 // logIssue module placeholder
-export ;const logIssue = {
+const logIssue = {
   // TODO: Implement logIssue functionality
 };

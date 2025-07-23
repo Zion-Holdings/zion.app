@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NewsletterForm() {
+default function NewsletterForm() {
   return (
     <div>
       <h1>NewsletterForm</h1>

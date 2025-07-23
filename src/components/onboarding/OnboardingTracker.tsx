@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OnboardingTracker() {
+default function OnboardingTracker() {
   return (
     <div>
       <h1>OnboardingTracker</h1>

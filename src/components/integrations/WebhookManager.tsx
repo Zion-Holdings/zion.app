@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WebhookManager() {
+default function WebhookManager() {
   return (
     <div>
       <h1>WebhookManager</h1>

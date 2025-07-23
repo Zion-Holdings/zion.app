@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AgendaTimeline() {
+default function AgendaTimeline() {
   return (
     <div>
       <h1>AgendaTimeline</h1>

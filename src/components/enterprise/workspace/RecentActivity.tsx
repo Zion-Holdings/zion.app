@@ -1,5 +1,5 @@
 import React from react';
-export ;default function RecentActivity() {
+default function RecentActivity() {
   return (
     <div>
       <h1>RecentActivity</h1>

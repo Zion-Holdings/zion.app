@@ -1,4 +1,4 @@
 // formatters module placeholder
-export ;const formatters = {
+const formatters = {
   // TODO: Implement formatters functionality
 };

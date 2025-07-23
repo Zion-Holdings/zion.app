@@ -188,7 +188,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
   async setupNewFile(filePath) {
     try {
       const content = fs.readFileSync(filePath, utf8');      
-      // Add basic React component structure if it's a TSX file'      if (filePath.endsWith('.tsx') && !content.includes('export ;default')) {'        const componentName = path.basename(filePath, .tsx')
+      // Add basic React component structure if it's a TSX file'      if (filePath.endsWith('.tsx') && !content.includes('default')) {'        const componentName = path.basename(filePath, .tsx')
 const newContent = `import React from react';
 interface ${componentName}Props {
   // Add props here
@@ -201,7 +201,7 @@ const ${componentName}: React.FC<${componentName}Props> = () => {
     </div>
   );
 };
-export ;default ${componentName};
+default ${componentName};
 `;
         fs.writeFileSync(filePath, newContent);
         this.log(`Set up new component file: ${filePath}`);

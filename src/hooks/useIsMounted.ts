@@ -1,4 +1,4 @@
 // useIsMounted module placeholder
-export ;const useIsMounted = {
+const useIsMounted = {
   // TODO: Implement useIsMounted functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CommunityDiscussion() {
+default function CommunityDiscussion() {
   return (
     <div>
       <h1>CommunityDiscussion</h1>

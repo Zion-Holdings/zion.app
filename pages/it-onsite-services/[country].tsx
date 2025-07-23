@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function country() {
+default function country() {
   return (
     <>
       <Head>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdminLayout() {
+default function AdminLayout() {
   return (
     <div>
       <h1>AdminLayout</h1>

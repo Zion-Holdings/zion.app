@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApplicationsTracker() {
+default function ApplicationsTracker() {
   return (
     <div>
       <h1>ApplicationsTracker</h1>

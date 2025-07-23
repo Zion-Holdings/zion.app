@@ -1,4 +1,4 @@
 // logAnalyzer module placeholder
-export ;const logAnalyzer = {
+const logAnalyzer = {
   // TODO: Implement logAnalyzer functionality
 };

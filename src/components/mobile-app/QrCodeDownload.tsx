@@ -1,5 +1,5 @@
 import React from react';
-export ;default function QrCodeDownload() {
+default function QrCodeDownload() {
   return (
     <div>
       <h1>QrCodeDownload</h1>

@@ -1,4 +1,4 @@
 // jobPostingService module placeholder
-export ;const jobPostingService = {
+const jobPostingService = {
   // TODO: Implement jobPostingService functionality
 };

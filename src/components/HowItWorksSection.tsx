@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HowItWorksSection() {
+default function HowItWorksSection() {
   return (
     <div>
       <h1>HowItWorksSection</h1>

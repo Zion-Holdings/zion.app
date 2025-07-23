@@ -61,7 +61,7 @@ jest.mock('firebase/app', () => ({'  initializeApp: jest.fn(),
 }));
 
 jest.mock('firebase/firestore', () => {'  // Mock collection function to be available on the db instance (for v8 style)
-  // and as a top-level export ;(for v9 style).
+  // and as a top-level (for v9 style).
   const mockCollection = jest.fn((firestoreInstanceOrPath: unknown, pathIfV8?: string) => {
     const actualPath = typeof firestoreInstanceOrPath === string' ? firestoreInstanceOrPath : pathIfV8;    return {
       path: actualPath,
@@ -205,7 +205,7 @@ import axios from axios';(axios as unknown as Record<string, unknown>).create = 
  
 jest.mock('vitest', () => {'  const jestFn = (...args: unknown[]) => jest.fn(...(args as []));
   return {
-    // Named export ;expected in `import { vi } from vitest';` statements'    vi: {;      fn: jestFn,
+    // Named expected in `import { vi } from vitest';` statements'    vi: {;      fn: jestFn,
       spyOn: jest.spyOn.bind(jest),
       mock: jest.mock.bind(jest),
       clearAllMocks: jest.clearAllMocks,
@@ -219,7 +219,7 @@ jest.mock('vitest', () => {'  const jestFn = (...args: unknown[]) => jest.fn(...
       mockRejectedValue: <T = unknown>(value: T) => jest.fn().mockRejectedValue(value)
     },
 
-    // Re-export ;common testing globals so that `import { expect, test } from vitest';`'    // continues to work inside the Jest environment.;    describe: global.describe,
+    // Re-common testing globals so that `import { expect, test } from vitest';`'    // continues to work inside the Jest environment.;    describe: global.describe,
     it: global.it,
     test: global.test,
     expect: expect, // Use expect from jest-dom/jest instead of global.expect

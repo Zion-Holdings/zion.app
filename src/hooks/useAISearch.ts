@@ -1,4 +1,4 @@
 // useAISearch module placeholder
-export ;const useAISearch = {
+const useAISearch = {
   // TODO: Implement useAISearch functionality
 };

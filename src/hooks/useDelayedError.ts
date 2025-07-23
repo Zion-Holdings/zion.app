@@ -1,4 +1,4 @@
 // useDelayedError module placeholder
-export ;const useDelayedError = {
+const useDelayedError = {
   // TODO: Implement useDelayedError functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiSampleCode() {
+default function ApiSampleCode() {
   return (
     <div>
       <h1>ApiSampleCode</h1>

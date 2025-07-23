@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AIEnhancementPanel() {
+default function AIEnhancementPanel() {
   return (
     <div>
       <h1>AIEnhancementPanel</h1>

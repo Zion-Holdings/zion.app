@@ -1,5 +1,5 @@
 import React from react';
-export ;default function switch() {
+default function switch() {
   return (
     <div>
       <h1>switch</h1>

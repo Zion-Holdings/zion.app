@@ -7,7 +7,7 @@ interface SearchSuggestion {
   type: product' | talent' | service' | category';  category?: string;
 }
 ;
-export ;default async function handler(
+default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchSuggestion[] | { error: string }>
 ) {

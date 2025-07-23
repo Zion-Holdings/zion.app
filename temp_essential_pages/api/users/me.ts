@@ -32,4 +32,4 @@ function handler(req: Req, res: JsonRes) {
   res.status(405).end();
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

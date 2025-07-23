@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CommunityProfilePage() {
+default function CommunityProfilePage() {
   return (
     <div>
       <h1>CommunityProfilePage</h1>

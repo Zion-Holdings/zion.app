@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ErrorTriggerComponent() {
+default function ErrorTriggerComponent() {
   return (
     <div>
       <h1>ErrorTriggerComponent</h1>

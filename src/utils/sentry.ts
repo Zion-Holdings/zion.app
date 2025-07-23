@@ -1,4 +1,4 @@
 // sentry module placeholder
-export ;const sentry = {
+const sentry = {
   // TODO: Implement sentry functionality
 };

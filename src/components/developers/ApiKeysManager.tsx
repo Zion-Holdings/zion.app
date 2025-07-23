@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiKeysManager() {
+default function ApiKeysManager() {
   return (
     <div>
       <h1>ApiKeysManager</h1>

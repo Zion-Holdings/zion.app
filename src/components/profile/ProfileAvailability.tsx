@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProfileAvailability() {
+default function ProfileAvailability() {
   return (
     <div>
       <h1>ProfileAvailability</h1>

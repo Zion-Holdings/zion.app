@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WhitepaperGeneratorPage() {
+default function WhitepaperGeneratorPage() {
   return (
     <div>
       <h1>WhitepaperGeneratorPage</h1>

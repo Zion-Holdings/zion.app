@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AIListingGenerator() {
+default function AIListingGenerator() {
   return (
     <div>
       <h1>AIListingGenerator</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function collapsible() {
+default function collapsible() {
   return (
     <div>
       <h1>collapsible</h1>

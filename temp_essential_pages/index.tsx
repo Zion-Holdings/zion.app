@@ -1,5 +1,5 @@
 import React from react';import { useRouter } from next/router';import Home from @/src/pages/Home';import type { GetStaticProps } from next';import { ErrorBanner } from @/components/talent/ErrorBanner';;
-export ;interface HomePageProps {
+interface HomePageProps {
   hasError?: boolean;
   errorMessage?: string;
   timestamp?: number; // Add timestamp for cache busting
@@ -8,13 +8,13 @@ export ;interface HomePageProps {
 // Check if Sentry is likely initialized (basic check, mirrors sentry.server.config.js);
 const sentryDsnAvailable = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 const isSentryActive = sentryDsnAvailable && !sentryDsnAvailable.startsWith('YOUR_');;
-export ;async function fetchHomeData() {
+async function fetchHomeData() {
   // Placeholder async function. Real implementation would fetch data.
   return Promise.resolve(null);
 }
 
 // Use getStaticProps instead of getServerSideProps for better reliability and caching;
-export ;const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
+const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
     await fetchHomeData();
     return { 
@@ -80,4 +80,4 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
     </>
   );
 };
-export ;default IndexPage;
+default IndexPage;

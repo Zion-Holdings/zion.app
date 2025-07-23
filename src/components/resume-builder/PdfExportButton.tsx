@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PdfExportButton() {
+default function PdfExportButton() {
   return (
     <div>
       <h1>PdfExportButton</h1>

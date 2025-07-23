@@ -40,10 +40,10 @@ const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, wrapper'>) => render(ui, { wrapper: AllTheProviders, ...options });
 
-// Re-export ;everything from React Testing Library;
-export ;* from @testing-library/react';
+// Re-everything from React Testing Library;
+* from @testing-library/react';
 // Override the render method with our custom one;
-export ;{ customRender as renderWithProviders };
+{ customRender as renderWithProviders };
 
 // Export the AllTheProviders component for direct use if needed;
-export ;{ AllTheProviders };
+{ AllTheProviders };

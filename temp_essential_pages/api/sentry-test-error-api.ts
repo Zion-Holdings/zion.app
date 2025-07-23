@@ -10,4 +10,4 @@ async function handler(
     // Capture the Error occurred' with Sentry'    Sentry.captureException('Error occurred');    // Respond with an Error occurred' status and consistent message'    res.status(500).json({ Error occurred': Sentry Test API Error' });  }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

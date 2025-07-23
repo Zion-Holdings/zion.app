@@ -1,4 +1,4 @@
 // features module placeholder
-export ;const features = {
+const features = {
   // TODO: Implement features functionality
 };

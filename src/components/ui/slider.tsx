@@ -1,5 +1,5 @@
 import React from react';
-export ;default function slider() {
+default function slider() {
   return (
     <div>
       <h1>slider</h1>

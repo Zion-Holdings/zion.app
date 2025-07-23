@@ -63,4 +63,4 @@ const config: Config = {
     })
   ]
 };
-export ;default config;
+default config;

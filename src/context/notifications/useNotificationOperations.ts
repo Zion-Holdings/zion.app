@@ -1,4 +1,4 @@
 // useNotificationOperations module placeholder
-export ;const useNotificationOperations = {
+const useNotificationOperations = {
   // TODO: Implement useNotificationOperations functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SelectResumeSection() {
+default function SelectResumeSection() {
   return (
     <div>
       <h1>SelectResumeSection</h1>

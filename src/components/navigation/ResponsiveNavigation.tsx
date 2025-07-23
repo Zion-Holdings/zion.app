@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ResponsiveNavigation() {
+default function ResponsiveNavigation() {
   return (
     <div>
       <h1>ResponsiveNavigation</h1>

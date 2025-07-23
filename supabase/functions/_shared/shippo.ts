@@ -1,9 +1,9 @@
-export ;interface ShippoCreateShipmentParams {
+interface ShippoCreateShipmentParams {
   address_to: unknown;
   parcels: unknown[];
 }
 ;
-export ;interface ShippoShipment {
+interface ShippoShipment {
   tracking_number: string;
   tracking_status?: { status: string };
   tracking_history?: { status: string; location?: string; status_details?: string; timestamp: string }[];
@@ -11,7 +11,7 @@ export ;interface ShippoShipment {
 ;
 const token = Deno.env.get('SHIPPO_TOKEN') || ;const FROM_ADDRESS = {
   name: Deno.env.get('SHIPPO_FROM_NAME') || Sender',  street1: Deno.env.get('SHIPPO_FROM_STREET') || ,  city: Deno.env.get('SHIPPO_FROM_CITY') || ,  state: Deno.env.get('SHIPPO_FROM_STATE') || ,  zip: Deno.env.get('SHIPPO_FROM_ZIP') || ,  country: Deno.env.get('SHIPPO_FROM_COUNTRY') || US''};
-export ;async function createShippoShipment(params: ShippoCreateShipmentParams): Promise<ShippoShipment> {
+async function createShippoShipment(params: ShippoCreateShipmentParams): Promise<ShippoShipment> {
   const res = await fetch('https://api.goshippo.com/shipments/', {'    method: POST',    headers: {
       Authorization: `ShippoToken ${token}`,
       Content-Type': application/json''    },

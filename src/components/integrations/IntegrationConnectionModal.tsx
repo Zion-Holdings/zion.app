@@ -1,5 +1,5 @@
 import React from react';
-export ;default function IntegrationConnectionModal() {
+default function IntegrationConnectionModal() {
   return (
     <div>
       <h1>IntegrationConnectionModal</h1>

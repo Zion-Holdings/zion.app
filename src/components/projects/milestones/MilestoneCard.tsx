@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MilestoneCard() {
+default function MilestoneCard() {
   return (
     <div>
       <h1>MilestoneCard</h1>

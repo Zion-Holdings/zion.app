@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ErrorGuard() {
+default function ErrorGuard() {
   return (
     <div>
       <h1>ErrorGuard</h1>

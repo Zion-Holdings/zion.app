@@ -17,4 +17,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   return res.status(200).json({ quiz });
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

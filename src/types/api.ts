@@ -1,4 +1,4 @@
 // api module placeholder
-export ;const api = {
+const api = {
   // TODO: Implement api functionality
 };

@@ -1,4 +1,4 @@
 // enhancedLogAnalytics module placeholder
-export ;const enhancedLogAnalytics = {
+const enhancedLogAnalytics = {
   // TODO: Implement enhancedLogAnalytics functionality
 };

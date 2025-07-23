@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ServiceLandingTemplate() {
+default function ServiceLandingTemplate() {
   return (
     <div>
       <h1>ServiceLandingTemplate</h1>

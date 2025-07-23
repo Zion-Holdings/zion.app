@@ -1,4 +1,4 @@
 // validation module placeholder
-export ;const validation = {
+const validation = {
   // TODO: Implement validation functionality
 };

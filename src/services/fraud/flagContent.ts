@@ -1,4 +1,4 @@
 // flagContent module placeholder
-export ;const flagContent = {
+const flagContent = {
   // TODO: Implement flagContent functionality
 };

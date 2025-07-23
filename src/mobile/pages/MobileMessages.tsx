@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileMessages() {
+default function MobileMessages() {
   return (
     <div>
       <h1>MobileMessages</h1>

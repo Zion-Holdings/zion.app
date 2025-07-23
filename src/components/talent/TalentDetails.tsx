@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TalentDetails() {
+default function TalentDetails() {
   return (
     <div>
       <h1>TalentDetails</h1>

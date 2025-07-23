@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ErrorRoutes() {
+default function ErrorRoutes() {
   return (
     <div>
       <h1>ErrorRoutes</h1>

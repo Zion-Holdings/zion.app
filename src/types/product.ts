@@ -1,4 +1,4 @@
 // product module placeholder
-export ;const product = {
+const product = {
   // TODO: Implement product functionality
 };

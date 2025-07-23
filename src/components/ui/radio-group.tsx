@@ -1,5 +1,5 @@
 import React from react';
-export ;default function radio-group() {
+default function radio-group() {
   return (
     <div>
       <h1>radio-group</h1>

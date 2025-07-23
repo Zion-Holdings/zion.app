@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ResetPassword() {
+default function ResetPassword() {
   return (
     <div>
       <h1>ResetPassword</h1>

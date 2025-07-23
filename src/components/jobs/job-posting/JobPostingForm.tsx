@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JobPostingForm() {
+default function JobPostingForm() {
   return (
     <div>
       <h1>JobPostingForm</h1>

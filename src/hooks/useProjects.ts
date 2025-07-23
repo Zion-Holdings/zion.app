@@ -1,4 +1,4 @@
 // useProjects module placeholder
-export ;const useProjects = {
+const useProjects = {
   // TODO: Implement useProjects functionality
 };

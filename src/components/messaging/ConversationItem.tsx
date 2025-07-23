@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ConversationItem() {
+default function ConversationItem() {
   return (
     <div>
       <h1>ConversationItem</h1>

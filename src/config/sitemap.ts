@@ -1,4 +1,4 @@
 // sitemap module placeholder
-export ;const sitemap = {
+const sitemap = {
   // TODO: Implement sitemap functionality
 };

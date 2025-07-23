@@ -1,4 +1,4 @@
 // filterConstants module placeholder
-export ;const filterConstants = {
+const filterConstants = {
   // TODO: Implement filterConstants functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileOnboarding() {
+default function MobileOnboarding() {
   return (
     <div>
       <h1>MobileOnboarding</h1>

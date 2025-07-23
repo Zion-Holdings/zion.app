@@ -1,4 +1,4 @@
 // createHireRequestNotifications module placeholder
-export ;const createHireRequestNotifications = {
+const createHireRequestNotifications = {
   // TODO: Implement createHireRequestNotifications functionality
 };

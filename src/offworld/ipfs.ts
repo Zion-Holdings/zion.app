@@ -1,4 +1,4 @@
 // ipfs module placeholder
-export ;const ipfs = {
+const ipfs = {
   // TODO: Implement ipfs functionality
 };

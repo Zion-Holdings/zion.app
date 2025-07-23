@@ -1,4 +1,4 @@
 // useFetchResume module placeholder
-export ;const useFetchResume = {
+const useFetchResume = {
   // TODO: Implement useFetchResume functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function tabs() {
+default function tabs() {
   return (
     <div>
       <h1>tabs</h1>

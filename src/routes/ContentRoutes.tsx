@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ContentRoutes() {
+default function ContentRoutes() {
   return (
     <div>
       <h1>ContentRoutes</h1>

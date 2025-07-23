@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PreviewHeader() {
+default function PreviewHeader() {
   return (
     <div>
       <h1>PreviewHeader</h1>

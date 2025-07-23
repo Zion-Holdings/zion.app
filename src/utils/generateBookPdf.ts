@@ -1,4 +1,4 @@
 // generateBookPdf module placeholder
-export ;const generateBookPdf = {
+const generateBookPdf = {
   // TODO: Implement generateBookPdf functionality
 };

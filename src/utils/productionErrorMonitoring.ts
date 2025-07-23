@@ -1,4 +1,4 @@
 // productionErrorMonitoring module placeholder
-export ;const productionErrorMonitoring = {
+const productionErrorMonitoring = {
   // TODO: Implement productionErrorMonitoring functionality
 };

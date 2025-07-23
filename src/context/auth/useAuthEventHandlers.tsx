@@ -1,5 +1,5 @@
 import React from react';
-export ;default function useAuthEventHandlers() {
+default function useAuthEventHandlers() {
   return (
     <div>
       <h1>useAuthEventHandlers</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ComparisonSection() {
+default function ComparisonSection() {
   return (
     <div>
       <h1>ComparisonSection</h1>

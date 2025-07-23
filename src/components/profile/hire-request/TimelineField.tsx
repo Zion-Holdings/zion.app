@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TimelineField() {
+default function TimelineField() {
   return (
     <div>
       <h1>TimelineField</h1>

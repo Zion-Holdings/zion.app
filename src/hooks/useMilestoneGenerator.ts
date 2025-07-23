@@ -1,4 +1,4 @@
 // useMilestoneGenerator module placeholder
-export ;const useMilestoneGenerator = {
+const useMilestoneGenerator = {
   // TODO: Implement useMilestoneGenerator functionality
 };

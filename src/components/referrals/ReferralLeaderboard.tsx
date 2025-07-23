@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReferralLeaderboard() {
+default function ReferralLeaderboard() {
   return (
     <div>
       <h1>ReferralLeaderboard</h1>

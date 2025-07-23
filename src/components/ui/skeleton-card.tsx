@@ -1,5 +1,5 @@
 import React from react';
-export ;default function skeleton-card() {
+default function skeleton-card() {
   return (
     <div>
       <h1>skeleton-card</h1>

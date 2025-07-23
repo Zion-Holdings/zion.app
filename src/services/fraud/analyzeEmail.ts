@@ -1,4 +1,4 @@
 // analyzeEmail module placeholder
-export ;const analyzeEmail = {
+const analyzeEmail = {
   // TODO: Implement analyzeEmail functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ResumeVersionSelector() {
+default function ResumeVersionSelector() {
   return (
     <div>
       <h1>ResumeVersionSelector</h1>

@@ -15,4 +15,4 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Allow', PATCH');  return res.status(405).end();
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

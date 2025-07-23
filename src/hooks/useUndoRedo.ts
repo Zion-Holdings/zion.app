@@ -1,4 +1,4 @@
 // useUndoRedo module placeholder
-export ;const useUndoRedo = {
+const useUndoRedo = {
   // TODO: Implement useUndoRedo functionality
 };

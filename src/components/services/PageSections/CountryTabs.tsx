@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CountryTabs() {
+default function CountryTabs() {
   return (
     <div>
       <h1>CountryTabs</h1>

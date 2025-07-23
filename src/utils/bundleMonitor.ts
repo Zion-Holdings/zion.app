@@ -1,4 +1,4 @@
 // bundleMonitor module placeholder
-export ;const bundleMonitor = {
+const bundleMonitor = {
   // TODO: Implement bundleMonitor functionality
 };

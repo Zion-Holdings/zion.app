@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SortDropdown() {
+default function SortDropdown() {
   return (
     <div>
       <h1>SortDropdown</h1>

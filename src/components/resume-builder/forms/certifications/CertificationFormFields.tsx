@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CertificationFormFields() {
+default function CertificationFormFields() {
   return (
     <div>
       <h1>CertificationFormFields</h1>

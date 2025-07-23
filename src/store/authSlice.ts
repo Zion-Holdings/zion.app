@@ -1,4 +1,4 @@
 // authSlice module placeholder
-export ;const authSlice = {
+const authSlice = {
   // TODO: Implement authSlice functionality
 };

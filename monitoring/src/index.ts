@@ -1,7 +1,7 @@
-import cron from node-cron';
-import logger from ./logger';
-import { runMonitoring } from ./monitor'; // Import the exported function
-import path from path';
+import * from module';
+import * from module';
+import * from module'; // Import the exported function
+import * from module';
 
 logger.info(`Cron job process starting. Current working directory: ${process.cwd()}`);
 logger.info(`Log files are expected at: ${path.join(__dirname, ..', logs', perf')}`);

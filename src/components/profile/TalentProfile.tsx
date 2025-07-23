@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TalentProfile() {
+default function TalentProfile() {
   return (
     <div>
       <h1>TalentProfile</h1>

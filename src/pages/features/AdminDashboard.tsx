@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdminDashboard() {
+default function AdminDashboard() {
   return (
     <div>
       <h1>AdminDashboard</h1>

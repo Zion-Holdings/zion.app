@@ -1,5 +1,5 @@
 import React from react';
-export ;default function toggle-group() {
+default function toggle-group() {
   return (
     <div>
       <h1>toggle-group</h1>

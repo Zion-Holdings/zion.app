@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PreviewResume() {
+default function PreviewResume() {
   return (
     <div>
       <h1>PreviewResume</h1>

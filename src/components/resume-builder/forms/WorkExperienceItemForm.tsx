@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WorkExperienceItemForm() {
+default function WorkExperienceItemForm() {
   return (
     <div>
       <h1>WorkExperienceItemForm</h1>

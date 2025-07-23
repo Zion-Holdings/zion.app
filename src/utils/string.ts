@@ -1,4 +1,4 @@
 // string module placeholder
-export ;const string = {
+const string = {
   // TODO: Implement string functionality
 };

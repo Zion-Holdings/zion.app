@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AnalyticsConsentBanner() {
+default function AnalyticsConsentBanner() {
   return (
     <div>
       <h1>AnalyticsConsentBanner</h1>

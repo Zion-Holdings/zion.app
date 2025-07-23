@@ -1,4 +1,4 @@
 // next.d module placeholder
-export ;const next.d = {
+const next.d = {
   // TODO: Implement next.d functionality
 };

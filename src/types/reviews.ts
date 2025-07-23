@@ -1,4 +1,4 @@
 // reviews module placeholder
-export ;const reviews = {
+const reviews = {
   // TODO: Implement reviews functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function useAuthState() {
+default function useAuthState() {
   return (
     <div>
       <h1>useAuthState</h1>

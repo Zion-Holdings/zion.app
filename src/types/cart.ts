@@ -1,4 +1,4 @@
 // cart module placeholder
-export ;const cart = {
+const cart = {
   // TODO: Implement cart functionality
 };

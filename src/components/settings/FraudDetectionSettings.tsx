@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FraudDetectionSettings() {
+default function FraudDetectionSettings() {
   return (
     <div>
       <h1>FraudDetectionSettings</h1>

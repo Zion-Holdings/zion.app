@@ -1,4 +1,4 @@
 // dateUtils module placeholder
-export ;const dateUtils = {
+const dateUtils = {
   // TODO: Implement dateUtils functionality
 };

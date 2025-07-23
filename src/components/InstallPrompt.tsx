@@ -1,5 +1,5 @@
 import React from react';
-export ;default function InstallPrompt() {
+default function InstallPrompt() {
   return (
     <div>
       <h1>InstallPrompt</h1>

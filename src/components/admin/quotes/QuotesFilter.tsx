@@ -1,5 +1,5 @@
 import React from react';
-export ;default function QuotesFilter() {
+default function QuotesFilter() {
   return (
     <div>
       <h1>QuotesFilter</h1>

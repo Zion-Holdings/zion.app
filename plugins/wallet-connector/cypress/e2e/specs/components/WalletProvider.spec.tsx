@@ -53,7 +53,7 @@ describe('WalletProvider', () => {'  let _mockAppKit: unknown;
 
     // Stubbing ES Module exports directly can be tricky.
     // Cypress typically requires this to be handled by the test runner's capabilities'    // or bundler configuration (e.g., webpack aliases or Babel plugins).
-    // A common pattern is to stub the module one level up if direct named export ;stubbing is hard.
+    // A common pattern is to stub the module one level up if direct named stubbing is hard.
     // For this example, we'll use cy.stub on the imported module object.'    cy.stub(AppKitReact, useAppKit').returns(mockAppKit);    cy.stub(AppKitReact, createAppKit').returns(mockAppKitInstance);  });
 
   it('should handle appKit without subscription methods gracefully', () => {'    mount(

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CreateResumeForm() {
+default function CreateResumeForm() {
   return (
     <div>
       <h1>CreateResumeForm</h1>

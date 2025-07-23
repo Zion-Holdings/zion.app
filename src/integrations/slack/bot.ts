@@ -1,4 +1,4 @@
 // bot module placeholder
-export ;const bot = {
+const bot = {
   // TODO: Implement bot functionality
 };

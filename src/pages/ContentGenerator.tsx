@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ContentGenerator() {
+default function ContentGenerator() {
   return (
     <div>
       <h1>ContentGenerator</h1>

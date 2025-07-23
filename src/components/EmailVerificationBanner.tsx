@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EmailVerificationBanner() {
+default function EmailVerificationBanner() {
   return (
     <div>
       <h1>EmailVerificationBanner</h1>

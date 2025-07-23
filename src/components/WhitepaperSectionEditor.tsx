@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WhitepaperSectionEditor() {
+default function WhitepaperSectionEditor() {
   return (
     <div>
       <h1>WhitepaperSectionEditor</h1>

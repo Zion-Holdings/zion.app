@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WhitepaperViewPage() {
+default function WhitepaperViewPage() {
   return (
     <div>
       <h1>WhitepaperViewPage</h1>

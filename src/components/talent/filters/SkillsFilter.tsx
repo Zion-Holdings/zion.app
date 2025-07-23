@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SkillsFilter() {
+default function SkillsFilter() {
   return (
     <div>
       <h1>SkillsFilter</h1>

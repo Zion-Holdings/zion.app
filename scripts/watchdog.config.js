@@ -3,7 +3,7 @@
  * @description Configuration file for the watchdog monitoring system
  */
 ;
-export ;const WATCHDOG_CONFIG = {
+const WATCHDOG_CONFIG = {
   // Resource monitoring thresholds
   MEMORY_THRESHOLD: parseFloat(process.env.WATCHDOG_MEMORY_THRESHOLD) || 0.95,
   CPU_THRESHOLD: parseFloat(process.env.WATCHDOG_CPU_THRESHOLD) || 0.95,

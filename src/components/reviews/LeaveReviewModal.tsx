@@ -1,5 +1,5 @@
 import React from react';
-export ;default function LeaveReviewModal() {
+default function LeaveReviewModal() {
   return (
     <div>
       <h1>LeaveReviewModal</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OrderConfirmationPage() {
+default function OrderConfirmationPage() {
   return (
     <div>
       <h1>OrderConfirmationPage</h1>

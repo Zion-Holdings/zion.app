@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NewPostDialog() {
+default function NewPostDialog() {
   return (
     <div>
       <h1>NewPostDialog</h1>

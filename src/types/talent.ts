@@ -1,4 +1,4 @@
 // talent module placeholder
-export ;const talent = {
+const talent = {
   // TODO: Implement talent functionality
 };

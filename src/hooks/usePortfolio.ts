@@ -1,4 +1,4 @@
 // usePortfolio module placeholder
-export ;const usePortfolio = {
+const usePortfolio = {
   // TODO: Implement usePortfolio functionality
 };

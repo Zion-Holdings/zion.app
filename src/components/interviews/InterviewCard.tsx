@@ -1,5 +1,5 @@
 import React from react';
-export ;default function InterviewCard() {
+default function InterviewCard() {
   return (
     <div>
       <h1>InterviewCard</h1>

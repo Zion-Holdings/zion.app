@@ -34,4 +34,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.or('unexpected increment or:', );    return res.status(500).json({ or: Internal server or' });  }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

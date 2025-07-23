@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FraudStatsCards() {
+default function FraudStatsCards() {
   return (
     <div>
       <h1>FraudStatsCards</h1>

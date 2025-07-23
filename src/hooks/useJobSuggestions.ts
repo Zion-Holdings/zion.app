@@ -1,4 +1,4 @@
 // useJobSuggestions module placeholder
-export ;const useJobSuggestions = {
+const useJobSuggestions = {
   // TODO: Implement useJobSuggestions functionality
 };

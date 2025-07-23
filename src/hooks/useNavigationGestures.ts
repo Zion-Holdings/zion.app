@@ -1,4 +1,4 @@
 // useNavigationGestures module placeholder
-export ;const useNavigationGestures = {
+const useNavigationGestures = {
   // TODO: Implement useNavigationGestures functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function resizable() {
+default function resizable() {
   return (
     <div>
       <h1>resizable</h1>

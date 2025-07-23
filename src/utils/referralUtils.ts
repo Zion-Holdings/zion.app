@@ -1,4 +1,4 @@
 // referralUtils module placeholder
-export ;const referralUtils = {
+const referralUtils = {
   // TODO: Implement referralUtils functionality
 };

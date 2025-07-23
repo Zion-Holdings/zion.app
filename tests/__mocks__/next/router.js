@@ -1,5 +1,5 @@
  ;
-export ;const useRouter = () => ({
+const useRouter = () => ({
   route: /',  pathname: ,  query: ,  asPath: ,  push: vi.fn(),
   events: {
     on: vi.fn(),

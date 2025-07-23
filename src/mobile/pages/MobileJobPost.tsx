@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileJobPost() {
+default function MobileJobPost() {
   return (
     <div>
       <h1>MobileJobPost</h1>

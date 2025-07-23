@@ -1,4 +1,4 @@
 // fraud module placeholder
-export ;const fraud = {
+const fraud = {
   // TODO: Implement fraud functionality
 };

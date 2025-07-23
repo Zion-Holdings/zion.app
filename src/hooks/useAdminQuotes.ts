@@ -1,4 +1,4 @@
 // useAdminQuotes module placeholder
-export ;const useAdminQuotes = {
+const useAdminQuotes = {
   // TODO: Implement useAdminQuotes functionality
 };

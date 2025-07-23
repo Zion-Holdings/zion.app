@@ -16,7 +16,7 @@ async function isServerRunning(url: string): Promise<boolean> {
   }
 }
 ;
-export ;async function getServerURL(): Promise<string | null> {
+async function getServerURL(): Promise<string | null> {
   if (cachedURL) return cachedURL;
   if (await isServerRunning(baseURL)) {
     cachedURL = baseURL;
@@ -26,7 +26,7 @@ export ;async function getServerURL(): Promise<string | null> {
   return cachedURL;
 }
 ;
-export ;async function skipIfNoServer(testInfo: unknown): Promise<string | null> {
+async function skipIfNoServer(testInfo: unknown): Promise<string | null> {
   const url = await getServerURL();
   if (!url) {
     testInfo.skip(`Server not running at ${baseURL} or ${fallbackURL}`);

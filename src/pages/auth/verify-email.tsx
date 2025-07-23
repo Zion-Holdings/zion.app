@@ -1,5 +1,5 @@
 import React from react';
-export ;default function verify-email() {
+default function verify-email() {
   return (
     <div>
       <h1>verify-email</h1>

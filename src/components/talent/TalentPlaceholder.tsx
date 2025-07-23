@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TalentPlaceholder() {
+default function TalentPlaceholder() {
   return (
     <div>
       <h1>TalentPlaceholder</h1>

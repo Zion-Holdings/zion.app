@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SaveTalentButton() {
+default function SaveTalentButton() {
   return (
     <div>
       <h1>SaveTalentButton</h1>

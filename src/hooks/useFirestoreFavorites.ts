@@ -1,4 +1,4 @@
 // useFirestoreFavorites module placeholder
-export ;const useFirestoreFavorites = {
+const useFirestoreFavorites = {
   // TODO: Implement useFirestoreFavorites functionality
 };

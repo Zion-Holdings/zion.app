@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApplicationProgress() {
+default function ApplicationProgress() {
   return (
     <div>
       <h1>ApplicationProgress</h1>

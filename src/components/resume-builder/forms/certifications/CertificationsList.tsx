@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CertificationsList() {
+default function CertificationsList() {
   return (
     <div>
       <h1>CertificationsList</h1>

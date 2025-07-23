@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EmptyFraudState() {
+default function EmptyFraudState() {
   return (
     <div>
       <h1>EmptyFraudState</h1>

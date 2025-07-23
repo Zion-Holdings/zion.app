@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ChatMessage() {
+default function ChatMessage() {
   return (
     <div>
       <h1>ChatMessage</h1>

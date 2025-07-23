@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BudgetStep() {
+default function BudgetStep() {
   return (
     <div>
       <h1>BudgetStep</h1>

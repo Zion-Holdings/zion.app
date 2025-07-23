@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ChatInput() {
+default function ChatInput() {
   return (
     <div>
       <h1>ChatInput</h1>

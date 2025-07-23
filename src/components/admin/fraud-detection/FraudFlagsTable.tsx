@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FraudFlagsTable() {
+default function FraudFlagsTable() {
   return (
     <div>
       <h1>FraudFlagsTable</h1>

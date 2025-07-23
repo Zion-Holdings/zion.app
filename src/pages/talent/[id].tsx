@@ -1,5 +1,5 @@
 import React from react';
-export ;default function [id]() {
+default function [id]() {
   return (
     <div>
       <h1>[id]</h1>

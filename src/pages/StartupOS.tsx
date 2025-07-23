@@ -1,5 +1,5 @@
 import React from react';
-export ;default function StartupOS() {
+default function StartupOS() {
   return (
     <div>
       <h1>StartupOS</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnterpriseTestimonials() {
+default function EnterpriseTestimonials() {
   return (
     <div>
       <h1>EnterpriseTestimonials</h1>

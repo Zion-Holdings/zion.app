@@ -1,4 +1,4 @@
 // useWishlist module placeholder
-export ;const useWishlist = {
+const useWishlist = {
   // TODO: Implement useWishlist functionality
 };

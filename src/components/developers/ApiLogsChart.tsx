@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiLogsChart() {
+default function ApiLogsChart() {
   return (
     <div>
       <h1>ApiLogsChart</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SupportWidget() {
+default function SupportWidget() {
   return (
     <div>
       <h1>SupportWidget</h1>

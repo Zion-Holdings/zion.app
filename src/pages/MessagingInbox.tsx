@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MessagingInbox() {
+default function MessagingInbox() {
   return (
     <div>
       <h1>MessagingInbox</h1>

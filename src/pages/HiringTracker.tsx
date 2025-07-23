@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HiringTracker() {
+default function HiringTracker() {
   return (
     <div>
       <h1>HiringTracker</h1>

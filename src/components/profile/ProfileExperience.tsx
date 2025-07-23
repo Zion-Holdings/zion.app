@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProfileExperience() {
+default function ProfileExperience() {
   return (
     <div>
       <h1>ProfileExperience</h1>

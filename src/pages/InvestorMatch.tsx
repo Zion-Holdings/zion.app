@@ -1,5 +1,5 @@
 import React from react';
-export ;default function InvestorMatch() {
+default function InvestorMatch() {
   return (
     <div>
       <h1>InvestorMatch</h1>

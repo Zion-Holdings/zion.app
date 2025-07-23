@@ -1,4 +1,4 @@
 // useRouterReady module placeholder
-export ;const useRouterReady = {
+const useRouterReady = {
   // TODO: Implement useRouterReady functionality
 };

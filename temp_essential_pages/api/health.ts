@@ -27,4 +27,4 @@ function handler(
   }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

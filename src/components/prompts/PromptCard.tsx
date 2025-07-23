@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PromptCard() {
+default function PromptCard() {
   return (
     <div>
       <h1>PromptCard</h1>

@@ -1,4 +1,4 @@
 // useResumeList module placeholder
-export ;const useResumeList = {
+const useResumeList = {
   // TODO: Implement useResumeList functionality
 };

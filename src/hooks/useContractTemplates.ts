@@ -1,4 +1,4 @@
 // useContractTemplates module placeholder
-export ;const useContractTemplates = {
+const useContractTemplates = {
   // TODO: Implement useContractTemplates functionality
 };

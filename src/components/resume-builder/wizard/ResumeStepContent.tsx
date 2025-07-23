@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ResumeStepContent() {
+default function ResumeStepContent() {
   return (
     <div>
       <h1>ResumeStepContent</h1>

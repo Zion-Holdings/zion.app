@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ExpoGPTPrompt() {
+default function ExpoGPTPrompt() {
   return (
     <div>
       <h1>ExpoGPTPrompt</h1>

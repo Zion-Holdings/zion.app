@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PostCardSkeleton() {
+default function PostCardSkeleton() {
   return (
     <div>
       <h1>PostCardSkeleton</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdminHeader() {
+default function AdminHeader() {
   return (
     <div>
       <h1>AdminHeader</h1>

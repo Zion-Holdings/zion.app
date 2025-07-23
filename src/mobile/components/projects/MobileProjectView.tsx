@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileProjectView() {
+default function MobileProjectView() {
   return (
     <div>
       <h1>MobileProjectView</h1>

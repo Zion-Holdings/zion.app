@@ -1,4 +1,4 @@
 // profile module placeholder
-export ;const profile = {
+const profile = {
   // TODO: Implement profile functionality
 };

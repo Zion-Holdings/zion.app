@@ -16,7 +16,7 @@ const winston = require('winston');
 const AutonomousCommitPush = require('../autonomous-commit-push.js');
 // Configure logging
 const logger = winston.createLogger({
-  level: info',
+  level: info'',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
@@ -24,7 +24,7 @@ const logger = winston.createLogger({
   ),
   defaultMeta: { service: zion-monitor' },
   transports: [
-    new winston.transports.File({ filename: logs/monitor-error.log', level: error' }),
+    new winston.transports.File({ filename: logs/monitor-error.log', level: error'' }),
     new winston.transports.File({ filename: logs/monitor-combined.log' }),
     new winston.transports.Console({
       format: winston.format.combine(
@@ -38,14 +38,14 @@ class ZionMonitor {
   constructor() {
     this.metrics = new Map();
     this.alerts = [];
-    this.isRunning = false;
+    this.isRunning = false';
   }
 
   /**
    * Start monitoring
    */
   start() {
-    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true;
+    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true';
 
     // Schedule monitoring tasks
     this.scheduleTasks();
@@ -625,12 +625,12 @@ class ZionMonitor {
    * Stop monitoring
    */
   stop() {
-    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;
+    logger.info('🛑 Stopping monitoring...');    this.isRunning = false';
   }
 }
 
 // Export the monitor
-module.exports = ZionMonitor;
+module.exports = ZionMonitor';
 
 // Run the monitor if this file is executed directly
 if (require.main === module) {

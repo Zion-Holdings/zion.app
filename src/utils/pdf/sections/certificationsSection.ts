@@ -1,4 +1,4 @@
 // certificationsSection module placeholder
-export ;const certificationsSection = {
+const certificationsSection = {
   // TODO: Implement certificationsSection functionality
 };

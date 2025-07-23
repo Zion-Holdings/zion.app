@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ChatAssistantTrigger() {
+default function ChatAssistantTrigger() {
   return (
     <div>
       <h1>ChatAssistantTrigger</h1>

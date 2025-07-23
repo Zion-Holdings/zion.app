@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TeamManagement() {
+default function TeamManagement() {
   return (
     <div>
       <h1>TeamManagement</h1>

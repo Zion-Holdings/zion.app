@@ -22,7 +22,7 @@ interface WhereClause {
     name?: { contains: string; mode: insensitive' };    headline?: { contains: string; mode: insensitive' };    bio?: { contains: string; mode: insensitive' };  }>;
 }
 ;
-export ;default async function handler(
+default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {

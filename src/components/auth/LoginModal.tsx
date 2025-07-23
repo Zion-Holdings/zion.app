@@ -1,5 +1,5 @@
 import React from react';
-export ;default function LoginModal() {
+default function LoginModal() {
   return (
     <div>
       <h1>LoginModal</h1>

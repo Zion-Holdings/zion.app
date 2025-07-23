@@ -1,5 +1,5 @@
 import React from react';
-export ;default function RecentContractsTable() {
+default function RecentContractsTable() {
   return (
     <div>
       <h1>RecentContractsTable</h1>

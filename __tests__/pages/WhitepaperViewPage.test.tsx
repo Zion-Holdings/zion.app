@@ -17,7 +17,7 @@ const mockUseAuth = jest.fn();
 jest.mock('@/pages/WhitepaperViewPage', () => {'  const ActualPageModule = jest.requireActual('@/pages/WhitepaperViewPage');  return {
     ...ActualPageModule, // Spread original exports
     __esModule: true, // This is important for modules with default exports
-    _default: (props: unknown) => { // Mock the default export ;(the page component)
+    _default: (props: unknown) => { // Mock the default (the page component)
       // Mock useAuth inline for this test file's scope'      ActualPageModule.useAuth = mockUseAuth;
       return <ActualPageModule.default {...props} />;
     }

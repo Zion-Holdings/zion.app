@@ -1,5 +1,5 @@
 import React from react';
-export ;default function Congress() {
+default function Congress() {
   return (
     <div>
       <h1>Congress</h1>

@@ -1,4 +1,4 @@
 // client.d module placeholder
-export ;const client.d = {
+const client.d = {
   // TODO: Implement client.d functionality
 };

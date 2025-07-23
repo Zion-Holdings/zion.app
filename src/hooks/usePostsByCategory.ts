@@ -1,4 +1,4 @@
 // usePostsByCategory module placeholder
-export ;const usePostsByCategory = {
+const usePostsByCategory = {
   // TODO: Implement usePostsByCategory functionality
 };

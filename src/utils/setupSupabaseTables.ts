@@ -1,4 +1,4 @@
 // setupSupabaseTables module placeholder
-export ;const setupSupabaseTables = {
+const setupSupabaseTables = {
   // TODO: Implement setupSupabaseTables functionality
 };

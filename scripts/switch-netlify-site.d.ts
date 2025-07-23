@@ -1,2 +1,2 @@
-declare module scripts/switch-netlify-site.js' {'  export ;function switchNetlifySite(): Promise<void>;
+declare module scripts/switch-netlify-site.js' {'  function switchNetlifySite(): Promise<void>;
 }

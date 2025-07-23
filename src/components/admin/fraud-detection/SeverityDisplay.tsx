@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SeverityDisplay() {
+default function SeverityDisplay() {
   return (
     <div>
       <h1>SeverityDisplay</h1>

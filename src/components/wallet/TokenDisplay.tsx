@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TokenDisplay() {
+default function TokenDisplay() {
   return (
     <div>
       <h1>TokenDisplay</h1>

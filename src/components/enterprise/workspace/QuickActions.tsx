@@ -1,5 +1,5 @@
 import React from react';
-export ;default function QuickActions() {
+default function QuickActions() {
   return (
     <div>
       <h1>QuickActions</h1>

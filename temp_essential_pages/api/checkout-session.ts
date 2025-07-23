@@ -10,7 +10,7 @@ function getStripeKey() {
   return live || test;
 }
 ;
-export ;default async function handler(req: NextApiRequest, res: NextApiResponse) {
+default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end('Method Not Allowed');  }
 
   const { cartItems = [], customer_email } = req['body'] || {};  if (!Array.isArray(cartItems) || cartItems.length === 0) {

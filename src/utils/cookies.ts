@@ -1,4 +1,4 @@
 // cookies module placeholder
-export ;const cookies = {
+const cookies = {
   // TODO: Implement cookies functionality
 };

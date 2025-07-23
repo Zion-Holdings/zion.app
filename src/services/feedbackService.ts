@@ -1,4 +1,4 @@
 // feedbackService module placeholder
-export ;const feedbackService = {
+const feedbackService = {
   // TODO: Implement feedbackService functionality
 };

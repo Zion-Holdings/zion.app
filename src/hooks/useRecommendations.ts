@@ -1,4 +1,4 @@
 // useRecommendations module placeholder
-export ;const useRecommendations = {
+const useRecommendations = {
   // TODO: Implement useRecommendations functionality
 };

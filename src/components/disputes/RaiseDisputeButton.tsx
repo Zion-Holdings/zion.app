@@ -1,5 +1,5 @@
 import React from react';
-export ;default function RaiseDisputeButton() {
+default function RaiseDisputeButton() {
   return (
     <div>
       <h1>RaiseDisputeButton</h1>

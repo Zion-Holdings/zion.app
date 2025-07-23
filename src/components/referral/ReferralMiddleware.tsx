@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReferralMiddleware() {
+default function ReferralMiddleware() {
   return (
     <div>
       <h1>ReferralMiddleware</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function alert() {
+default function alert() {
   return (
     <div>
       <h1>alert</h1>

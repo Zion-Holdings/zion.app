@@ -1,4 +1,4 @@
 // useQuoteWizard module placeholder
-export ;const useQuoteWizard = {
+const useQuoteWizard = {
   // TODO: Implement useQuoteWizard functionality
 };

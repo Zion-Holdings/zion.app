@@ -9,7 +9,7 @@ const supabaseUrl = Deno.env.get("SUPABASE_URL") || "";"const supabaseAnonKey = 
  * @param talents Array of talent profiles
  * @returns Array of matches with talent IDs, scores, and reasons
  */;
-export ;async function processJobMatching(job: JobData, talents: TalentProfile[]): Promise<MatchResult[]> {
+async function processJobMatching(job: JobData, talents: TalentProfile[]): Promise<MatchResult[]> {
   try {
     // Normalize job skills and generate embeddings via OpenAI
     const jobSkillsNormalized = await normalizeSkillsWithAI(job.skills);
@@ -36,7 +36,7 @@ export ;async function processJobMatching(job: JobData, talents: TalentProfile[]
  * @param jobId The ID of the job
  * @param matchedTalents Array of match results
  */;
-export ;async function storeMatchResults(jobId: string, matchedTalents: MatchResult[], jobTitle: string): Promise<void> {
+async function storeMatchResults(jobId: string, matchedTalents: MatchResult[], jobTitle: string): Promise<void> {
   const matchInsertPromises = matchedTalents.map(async (match) => {
     const { error: matchError } = await supabase
       .from("job_talent_matches")"      .insert({""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

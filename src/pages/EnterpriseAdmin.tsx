@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnterpriseAdmin() {
+default function EnterpriseAdmin() {
   return (
     <div>
       <h1>EnterpriseAdmin</h1>

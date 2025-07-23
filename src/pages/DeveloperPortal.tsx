@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DeveloperPortal() {
+default function DeveloperPortal() {
   return (
     <div>
       <h1>DeveloperPortal</h1>

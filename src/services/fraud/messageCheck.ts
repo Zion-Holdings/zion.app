@@ -1,4 +1,4 @@
 // messageCheck module placeholder
-export ;const messageCheck = {
+const messageCheck = {
   // TODO: Implement messageCheck functionality
 };

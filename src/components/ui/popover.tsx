@@ -1,5 +1,5 @@
 import React from react';
-export ;default function popover() {
+default function popover() {
   return (
     <div>
       <h1>popover</h1>

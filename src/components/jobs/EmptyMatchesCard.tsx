@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EmptyMatchesCard() {
+default function EmptyMatchesCard() {
   return (
     <div>
       <h1>EmptyMatchesCard</h1>

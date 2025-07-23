@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WorkspaceHeader() {
+default function WorkspaceHeader() {
   return (
     <div>
       <h1>WorkspaceHeader</h1>

@@ -1,4 +1,4 @@
 // useSmartContracts module placeholder
-export ;const useSmartContracts = {
+const useSmartContracts = {
   // TODO: Implement useSmartContracts functionality
 };

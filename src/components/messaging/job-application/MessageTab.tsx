@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MessageTab() {
+default function MessageTab() {
   return (
     <div>
       <h1>MessageTab</h1>

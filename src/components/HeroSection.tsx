@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HeroSection() {
+default function HeroSection() {
   return (
     <div>
       <h1>HeroSection</h1>

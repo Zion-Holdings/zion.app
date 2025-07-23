@@ -1,4 +1,4 @@
 // wishlistSlice module placeholder
-export ;const wishlistSlice = {
+const wishlistSlice = {
   // TODO: Implement wishlistSlice functionality
 };

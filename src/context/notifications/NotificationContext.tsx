@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NotificationContext() {
+default function NotificationContext() {
   return (
     <div>
       <h1>NotificationContext</h1>

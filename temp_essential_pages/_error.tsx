@@ -133,4 +133,4 @@ ErrorPage.getInitialProps = async (_context: NextPageContext) => {
     hasGetInitialPropsRun: true
   };
 };
-export ;default ErrorPage;
+default ErrorPage;

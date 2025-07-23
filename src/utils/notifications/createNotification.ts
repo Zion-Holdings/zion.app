@@ -1,4 +1,4 @@
 // createNotification module placeholder
-export ;const createNotification = {
+const createNotification = {
   // TODO: Implement createNotification functionality
 };

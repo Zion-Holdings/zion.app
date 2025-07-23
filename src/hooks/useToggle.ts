@@ -1,4 +1,4 @@
 // useToggle module placeholder
-export ;const useToggle = {
+const useToggle = {
   // TODO: Implement useToggle functionality
 };

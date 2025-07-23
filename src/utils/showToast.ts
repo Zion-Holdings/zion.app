@@ -1,4 +1,4 @@
 // showToast module placeholder
-export ;const showToast = {
+const showToast = {
   // TODO: Implement showToast functionality
 };

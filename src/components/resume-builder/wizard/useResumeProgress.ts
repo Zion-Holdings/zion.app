@@ -1,4 +1,4 @@
 // useResumeProgress module placeholder
-export ;const useResumeProgress = {
+const useResumeProgress = {
   // TODO: Implement useResumeProgress functionality
 };

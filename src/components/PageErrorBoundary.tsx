@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PageErrorBoundary() {
+default function PageErrorBoundary() {
   return (
     <div>
       <h1>PageErrorBoundary</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function clickable-badge() {
+default function clickable-badge() {
   return (
     <div>
       <h1>clickable-badge</h1>

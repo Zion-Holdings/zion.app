@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ActiveFilters() {
+default function ActiveFilters() {
   return (
     <div>
       <h1>ActiveFilters</h1>

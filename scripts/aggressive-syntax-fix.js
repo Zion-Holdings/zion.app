@@ -73,11 +73,10 @@ class AggressiveSyntaxFixer {
             /""""""""""""""""""/, // Multiple quotes"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             /``````````````````/, // Multiple quotes
             /import React from react';export/, // Missing newline
-            /export ;const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/, // Invalid variable name
+            /const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/, // Invalid variable name
             /function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/, // Invalid function name
-            /export ;default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/, // Invalid function name
-            /import.*export/, // Import followed by export
-            ;/export.*import/, // Export followed by import
+            /default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/, // Invalid function name
+            /import.*export/, // Import followed by /export.*import/, // Export followed by import
             /Unexpected token/, // Any unexpected token
             /Unterminated string constant/, // Unterminated strings
             /The keyword interface' is reserved/, // Interface keyword issues
@@ -102,7 +101,7 @@ class AggressiveSyntaxFixer {
         if (ext === .tsx' || ext === .jsx') {
             return `import React from react';
 
-export ;default function ${validFileName}() {
+default function ${validFileName}() {
   return (
     <div>
       <h1>${validFileName}</h1>
@@ -112,18 +111,18 @@ export ;default function ${validFileName}() {
 }`;
         } else if (ext === .ts') {
             return `// ${validFileName} module placeholder
-export ;const ${validFileName} = {
+const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
 }`
         } else if (ext === .js') {
             return `// ${validFileName} module placeholder
-export ;const ${validFileName} = {
+const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
 }`
         }
         
         return `// ${validFileName} placeholder
-export ;const ${validFileName} = {}`
+const ${validFileName} = {}`
     }
 
     async generateReport() {

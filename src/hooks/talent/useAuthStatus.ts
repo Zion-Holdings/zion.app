@@ -1,4 +1,4 @@
 // useAuthStatus module placeholder
-export ;const useAuthStatus = {
+const useAuthStatus = {
   // TODO: Implement useAuthStatus functionality
 };

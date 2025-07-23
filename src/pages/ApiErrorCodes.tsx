@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiErrorCodes() {
+default function ApiErrorCodes() {
   return (
     <div>
       <h1>ApiErrorCodes</h1>

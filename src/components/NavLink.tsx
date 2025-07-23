@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NavLink() {
+default function NavLink() {
   return (
     <div>
       <h1>NavLink</h1>

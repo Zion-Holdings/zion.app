@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProfileSkills() {
+default function ProfileSkills() {
   return (
     <div>
       <h1>ProfileSkills</h1>

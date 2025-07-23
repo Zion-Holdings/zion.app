@@ -1,5 +1,5 @@
 import React from react';
-export ;default function Blog() {
+default function Blog() {
   return (
     <div>
       <h1>Blog</h1>

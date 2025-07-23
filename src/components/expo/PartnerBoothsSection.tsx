@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PartnerBoothsSection() {
+default function PartnerBoothsSection() {
   return (
     <div>
       <h1>PartnerBoothsSection</h1>

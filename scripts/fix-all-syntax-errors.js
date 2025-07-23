@@ -92,7 +92,7 @@ const importBacktickPattern = /from\s+['"]([^'"]*?)['"]\s*`\s*$/gm;"  const impo
     fixed = fixed.replace(importBacktickPattern, "from $1';");"    changes += importBacktickMatches.length;"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
   
-  // Fix export ;statements with backticks
+  // Fix statements with backticks
   const exportBacktickPattern = /export\s+.*?`\s*$/gm
 const exportBacktickMatches = fixed.match(exportBacktickPattern);
   if (exportBacktickMatches) {

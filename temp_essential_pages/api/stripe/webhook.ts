@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from next';import Stripe from stripe';import { buffer } from micro';import fs from fs';import path from path';import { randomUUID } from crypto';;
 const useTest = process.env.STRIPE_TEST_MODE === true';;
-export ;const config = { api: { bodyParser: false } };
+const config = { api: { bodyParser: false } };
 const stripe = new Stripe(
   useTest ? process.env.STRIPE_TEST_SECRET_KEY ||  : process.env.STRIPE_SECRET_KEY || ,  {
     apiVersion: 2025-05-28.basil',  }
@@ -28,7 +28,7 @@ interface PointsEntry {
   created_at: string;
 }
 ;
-export ;default async function handler(req: NextApiRequest, res: NextApiResponse) {
+default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end('Method Not Allowed');  }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;  let event: StripeEvent;

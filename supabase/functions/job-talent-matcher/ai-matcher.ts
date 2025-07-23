@@ -19,7 +19,7 @@ interface JobDetails {
  * @param skills Array of skill strings to normalize
  * @returns Array of normalized skills
  */;
-export ;async function normalizeSkillsWithAI(skills: string[]): Promise<string[]> {
+async function normalizeSkillsWithAI(skills: string[]): Promise<string[]> {
   try {
     const skillsString = skills.join(", ");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     const response = await fetch("https://api.openai.com/v1/chat/completions", {"      method: "POST","      headers: {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""Content-Type": "application/json",""Authorization": `Bearer ${openAiApiKey}`"      },"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,7 +56,7 @@ export ;async function normalizeSkillsWithAI(skills: string[]): Promise<string[]
  * @param talents Array of talent profiles
  * @returns Array of matches with scores and reasons
  */;
-export ;async function findBestMatches(jobDetails: JobDetails, talents: TalentProfile[]): Promise<MatchResult[]> {
+async function findBestMatches(jobDetails: JobDetails, talents: TalentProfile[]): Promise<MatchResult[]> {
   try {
     // Convert job details to string format for AI prompt
     const jobDetailsText = `
@@ -127,7 +127,7 @@ export ;async function findBestMatches(jobDetails: JobDetails, talents: TalentPr
  * @param talents Array of talent profiles
  * @returns Array of matches with scores
  */;
-export ;function performBasicSkillMatching(jobDetails: JobDetails, talents: TalentProfile[]): MatchResult[] {
+function performBasicSkillMatching(jobDetails: JobDetails, talents: TalentProfile[]): MatchResult[] {
   const requiredSkills = jobDetails.skills.map((skill: string) => skill.toLowerCase());
   
   return talents.map(talent => {

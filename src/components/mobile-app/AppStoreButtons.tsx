@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AppStoreButtons() {
+default function AppStoreButtons() {
   return (
     <div>
       <h1>AppStoreButtons</h1>

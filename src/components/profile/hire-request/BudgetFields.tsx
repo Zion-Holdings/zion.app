@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BudgetFields() {
+default function BudgetFields() {
   return (
     <div>
       <h1>BudgetFields</h1>

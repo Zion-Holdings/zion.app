@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AuthorBio() {
+default function AuthorBio() {
   return (
     <div>
       <h1>AuthorBio</h1>

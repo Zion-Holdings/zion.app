@@ -20,4 +20,4 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({ questions, script });
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

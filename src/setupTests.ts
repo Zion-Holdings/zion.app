@@ -1,4 +1,4 @@
 // setupTests module placeholder
-export ;const setupTests = {
+const setupTests = {
   // TODO: Implement setupTests functionality
 };

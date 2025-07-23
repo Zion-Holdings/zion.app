@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CategoryCard() {
+default function CategoryCard() {
   return (
     <div>
       <h1>CategoryCard</h1>

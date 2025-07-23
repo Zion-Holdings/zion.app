@@ -1,4 +1,4 @@
 // proposalTemplates module placeholder
-export ;const proposalTemplates = {
+const proposalTemplates = {
   // TODO: Implement proposalTemplates functionality
 };

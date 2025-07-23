@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TimeOS() {
+default function TimeOS() {
   return (
     <div>
       <h1>TimeOS</h1>

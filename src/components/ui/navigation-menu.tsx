@@ -1,5 +1,5 @@
 import React from react';
-export ;default function navigation-menu() {
+default function navigation-menu() {
   return (
     <div>
       <h1>navigation-menu</h1>

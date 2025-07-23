@@ -1,4 +1,4 @@
 // useAutocomplete module placeholder
-export ;const useAutocomplete = {
+const useAutocomplete = {
   // TODO: Implement useAutocomplete functionality
 };

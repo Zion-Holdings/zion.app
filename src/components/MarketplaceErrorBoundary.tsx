@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MarketplaceErrorBoundary() {
+default function MarketplaceErrorBoundary() {
   return (
     <div>
       <h1>MarketplaceErrorBoundary</h1>

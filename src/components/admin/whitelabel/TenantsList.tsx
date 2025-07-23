@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TenantsList() {
+default function TenantsList() {
   return (
     <div>
       <h1>TenantsList</h1>

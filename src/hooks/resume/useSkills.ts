@@ -1,4 +1,4 @@
 // useSkills module placeholder
-export ;const useSkills = {
+const useSkills = {
   // TODO: Implement useSkills functionality
 };

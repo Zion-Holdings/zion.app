@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MarketplaceSidebar() {
+default function MarketplaceSidebar() {
   return (
     <div>
       <h1>MarketplaceSidebar</h1>

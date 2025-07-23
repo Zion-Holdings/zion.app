@@ -29,7 +29,7 @@ const StaticPage: React.FC<PageProps> = ({ content, meta }) => {
     </>
   );
 };
-export ;const _getStaticPaths: GetStaticPaths = async () => {
+const _getStaticPaths: GetStaticPaths = async () => {
   const dir = path.join(process.cwd(), content', pages');  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
   // List of slugs that have dedicated pages and should be excluded from [slug].tsx
   const reservedSlugs = ['about', careers', innovation', roadmap', privacy', terms', status'];
@@ -38,7 +38,7 @@ export ;const _getStaticPaths: GetStaticPaths = async () => {
 
   return { paths, _fallback: false };
 };
-export ;const getStaticProps: GetStaticProps<PageProps> = async ({ params }: { params?: { slug?: string } }) => {
+const getStaticProps: GetStaticProps<PageProps> = async ({ params }: { params?: { slug?: string } }) => {
   const slug = params?.slug as string;
   const filePath = path.join(process.cwd(), content', pages', `${slug}.md`);  if (!fs.existsSync(filePath)) {
     return { notFound: true };
@@ -46,4 +46,4 @@ export ;const getStaticProps: GetStaticProps<PageProps> = async ({ params }: { p
   const { meta, content } = parseMarkdown(filePath);
   return { props: { meta, content } };
 };
-export ;default StaticPage;
+default StaticPage;

@@ -1,4 +1,4 @@
 // getStripe module placeholder
-export ;const getStripe = {
+const getStripe = {
   // TODO: Implement getStripe functionality
 };

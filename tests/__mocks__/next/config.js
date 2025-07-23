@@ -1,5 +1,5 @@
  ;
-export ;default () => ({
+default () => ({
   publicRuntimeConfig: {
     NEXT_PUBLIC_SENTRY_DSN: test_sentry_dsn',    // Add other necessary publicRuntimeConfig variables here if they cause errors
   },

@@ -238,7 +238,7 @@ describe('Login Fix Integration Tests', () => {'  describe('Route Resolution', (
 });
 
 // Test helpers;
-export ;const testLoginRedirect = async (queryParams: Record<string, string> = {}) => {
+const testLoginRedirect = async (queryParams: Record<string, string> = {}) => {
   const mockRouter = {
     replace: jest.fn(),
     query: queryParams
@@ -256,8 +256,8 @@ export ;const testLoginRedirect = async (queryParams: Record<string, string> = {
 };
 
 // Export test utilities for other test files;
-export ;const LOGIN_ROUTES = {
+const LOGIN_ROUTES = {
   OLD_SUPABASE: /login',  NEW_AUTH0: /auth/login',  _API_AUTH0: /api/auth/login''};
-export ;const validateAuth0Route = (route: string) => {
+const validateAuth0Route = (route: string) => {
   return route === LOGIN_ROUTES.NEW_AUTH0;
 }; 

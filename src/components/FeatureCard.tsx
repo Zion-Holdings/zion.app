@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FeatureCard() {
+default function FeatureCard() {
   return (
     <div>
       <h1>FeatureCard</h1>

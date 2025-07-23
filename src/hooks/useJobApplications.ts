@@ -1,4 +1,4 @@
 // useJobApplications module placeholder
-export ;const useJobApplications = {
+const useJobApplications = {
   // TODO: Implement useJobApplications functionality
 };

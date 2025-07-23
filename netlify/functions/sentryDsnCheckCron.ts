@@ -1,5 +1,5 @@
 // scheduled function to check Sentry DSN via API;
-export ;const handler = async () => {
+const handler = async () => {
   const url = process.env.URL || ;  try {
     const res = await fetch(`${url}/api/sentry-dsn-check`);
     if (!res.ok) {

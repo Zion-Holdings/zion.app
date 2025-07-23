@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobilePwa() {
+default function MobilePwa() {
   return (
     <div>
       <h1>MobilePwa</h1>

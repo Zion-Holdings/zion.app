@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ScrollToTop() {
+default function ScrollToTop() {
   return (
     <div>
       <h1>ScrollToTop</h1>

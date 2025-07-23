@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CaseStudies() {
+default function CaseStudies() {
   return (
     <div>
       <h1>CaseStudies</h1>

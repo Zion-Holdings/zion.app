@@ -1,4 +1,4 @@
 // useResumeActions module placeholder
-export ;const useResumeActions = {
+const useResumeActions = {
   // TODO: Implement useResumeActions functionality
 };

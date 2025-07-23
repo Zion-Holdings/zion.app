@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FeedbackContext() {
+default function FeedbackContext() {
   return (
     <div>
       <h1>FeedbackContext</h1>

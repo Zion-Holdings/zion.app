@@ -1,5 +1,5 @@
 import React from react';
-export ;default function button() {
+default function button() {
   return (
     <div>
       <h1>button</h1>

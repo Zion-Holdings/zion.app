@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OAuthCallback() {
+default function OAuthCallback() {
   return (
     <div>
       <h1>OAuthCallback</h1>

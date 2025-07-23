@@ -1,4 +1,4 @@
 // prompts module placeholder
-export ;const prompts = {
+const prompts = {
   // TODO: Implement prompts functionality
 };

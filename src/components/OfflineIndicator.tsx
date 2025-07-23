@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OfflineIndicator() {
+default function OfflineIndicator() {
   return (
     <div>
       <h1>OfflineIndicator</h1>

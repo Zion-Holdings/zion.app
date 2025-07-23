@@ -1,4 +1,4 @@
 // routeUtils module placeholder
-export ;const routeUtils = {
+const routeUtils = {
   // TODO: Implement routeUtils functionality
 };

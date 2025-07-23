@@ -267,7 +267,7 @@ function onAuthStateChanged(callback) {
   };
 }
 ;
-export ;{
+{
   loginWithEmail,
   loginWithWallet,
   signupWithEmail,

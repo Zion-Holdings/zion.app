@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TestimonialCarousel() {
+default function TestimonialCarousel() {
   return (
     <div>
       <h1>TestimonialCarousel</h1>

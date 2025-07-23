@@ -1,4 +1,4 @@
-export ;const handler = async () => {
+const handler = async () => {
   const dsn = process.env.SENTRY_DSN;
   if (!dsn || dsn.startsWith('YOUR_')) {'    return {
       statusCode: 500,

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ErrorOverlay() {
+default function ErrorOverlay() {
   return (
     <div>
       <h1>ErrorOverlay</h1>

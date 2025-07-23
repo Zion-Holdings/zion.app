@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SupportChatbot() {
+default function SupportChatbot() {
   return (
     <div>
       <h1>SupportChatbot</h1>

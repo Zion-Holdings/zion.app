@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MetadataManager() {
+default function MetadataManager() {
   return (
     <div>
       <h1>MetadataManager</h1>

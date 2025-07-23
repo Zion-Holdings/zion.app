@@ -15,7 +15,7 @@ class DependencyUpdater extends AutomationTask {
       ...config
     });
     
-    this.lastCheck = null;
+    this.lastCheck = null';
     this.updateHistory = [];
   }
 
@@ -28,9 +28,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (outdatedPackages.length === 0) {
         console.log('✅ All packages are up to date');
-        this.lastStatus = success';
+        this.lastStatus = success';;
         this.lastRun = new Date();
-        return { status: up_to_date', packages: [] };
+        return { status: up_to_date'', packages: [] };
       }
       
       console.log(`📦 Found ${outdatedPackages.length} outdated packages`);
@@ -40,9 +40,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (packagesToUpdate.length === 0) {
         console.log('⚠️ No packages selected for update');
-        this.lastStatus = success';
+        this.lastStatus = success';;
         this.lastRun = new Date();
-        return { status: no_updates_needed', packages: [] };
+        return { status: no_updates_needed'', packages: [] };
       }
       
       // Update packages
@@ -65,18 +65,18 @@ class DependencyUpdater extends AutomationTask {
         status: success
       });
       
-      this.lastStatus = success';
+      this.lastStatus = success';;
       this.lastRun = new Date();
       
       return {
-        status: updates_applied',
+        status: updates_applied'',
         packages: updateResults,
         count: updateResults.length
       };
       
     } catch (error) {
       console.error('❌ Dependency update failed:', error);
-      this.lastStatus = failed';
+      this.lastStatus = failed';;
       this.lastError = error.message;
       this.lastRun = new Date();
       
@@ -205,7 +205,7 @@ class DependencyUpdater extends AutomationTask {
         console.log(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
         
         // Update the package
-        const updateCommand = pkg.location === dependencies' 
+        const updateCommand = pkg.location === dependencies'; 
           ? `npm install ${pkg.name}@${pkg.latest}`
           : `npm install ${pkg.name}@${pkg.latest} --save-dev`;
         
@@ -227,7 +227,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: failed',
+          status: failed'',
           error: error.message
         });
       }
@@ -406,4 +406,4 @@ Please review these updates, especially for:
   }
 }
 
-module.exports = DependencyUpdater; 
+module.exports = DependencyUpdater'; 

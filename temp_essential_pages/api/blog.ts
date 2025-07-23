@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from next';import { BLOG_POSTS } from @/data/blog-posts';import type { BlogPost } from @/types/blog';;
-export ;default function handler(
+default function handler(
   req: NextApiRequest,
   res: NextApiResponse<BlogPost[] | { error: string }>
 ) {

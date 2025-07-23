@@ -1,4 +1,4 @@
 // withErrorHandling module placeholder
-export ;const withErrorHandling = {
+const withErrorHandling = {
   // TODO: Implement withErrorHandling functionality
 };

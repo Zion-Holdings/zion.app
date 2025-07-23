@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CategoryPage() {
+default function CategoryPage() {
   return (
     <div>
       <h1>CategoryPage</h1>

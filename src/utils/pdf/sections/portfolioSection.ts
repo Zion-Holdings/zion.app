@@ -1,4 +1,4 @@
 // portfolioSection module placeholder
-export ;const portfolioSection = {
+const portfolioSection = {
   // TODO: Implement portfolioSection functionality
 };

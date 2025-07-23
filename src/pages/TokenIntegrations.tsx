@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TokenIntegrations() {
+default function TokenIntegrations() {
   return (
     <div>
       <h1>TokenIntegrations</h1>

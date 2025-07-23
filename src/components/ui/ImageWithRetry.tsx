@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ImageWithRetry() {
+default function ImageWithRetry() {
   return (
     <div>
       <h1>ImageWithRetry</h1>

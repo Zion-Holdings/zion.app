@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AppLayout() {
+default function AppLayout() {
   return (
     <div>
       <h1>AppLayout</h1>

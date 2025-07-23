@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WorkExperienceSection() {
+default function WorkExperienceSection() {
   return (
     <div>
       <h1>WorkExperienceSection</h1>

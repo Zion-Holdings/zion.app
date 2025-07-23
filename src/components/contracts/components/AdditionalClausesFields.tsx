@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdditionalClausesFields() {
+default function AdditionalClausesFields() {
   return (
     <div>
       <h1>AdditionalClausesFields</h1>

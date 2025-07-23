@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AvailabilityFilter() {
+default function AvailabilityFilter() {
   return (
     <div>
       <h1>AvailabilityFilter</h1>

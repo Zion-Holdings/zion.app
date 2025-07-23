@@ -1,4 +1,4 @@
 // fetchMarketplaceData module placeholder
-export ;const fetchMarketplaceData = {
+const fetchMarketplaceData = {
   // TODO: Implement fetchMarketplaceData functionality
 };

@@ -1,5 +1,5 @@
 import { defineConfig } from @playwright/test';;
-export ;default defineConfig({
+default defineConfig({
   testDir: tests/e2e',  use: {
     baseURL: http://localhost:3000',    // Ensures that the trace viewer assets are downloaded, useful for debugging.
     trace: on-first-retry',  },

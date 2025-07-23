@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TalentRoutes() {
+default function TalentRoutes() {
   return (
     <div>
       <h1>TalentRoutes</h1>

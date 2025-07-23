@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PerformanceDashboard() {
+default function PerformanceDashboard() {
   return (
     <div>
       <h1>PerformanceDashboard</h1>

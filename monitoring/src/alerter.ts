@@ -1,7 +1,7 @@
-import { exec } from child_process';
-import axios from axios';
-import logger from ./logger';
-import { EndpointTestResult } from ./latencyTester';
+import * from module';
+import * from module';
+import * from module';
+import * from module';
 
 const ALERT_THRESHOLD_MS = 500;
 const ALERT_WEBHOOK_URL = process.env.ALERT_WEBHOOK_URL;

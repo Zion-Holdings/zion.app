@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PwaInstallButton() {
+default function PwaInstallButton() {
   return (
     <div>
       <h1>PwaInstallButton</h1>

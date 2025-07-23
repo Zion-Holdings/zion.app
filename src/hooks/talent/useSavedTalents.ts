@@ -1,4 +1,4 @@
 // useSavedTalents module placeholder
-export ;const useSavedTalents = {
+const useSavedTalents = {
   // TODO: Implement useSavedTalents functionality
 };

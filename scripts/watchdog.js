@@ -542,7 +542,7 @@ if (process.env.NODE_ENV !== test' && import.meta.url === pathToFileURL(process.
 
 // --- Exports for Testing ---
 // This allows Jest to import and test these functions and states.;
-export ;{
+{
   logErrorToProduction,
   sendDiscordAlert,
   appendToSelfHealLog,
@@ -550,21 +550,21 @@ export ;{
   triggerSelfHeal,
   monitorSystemResources
 };
-export ;const _getStateForTests = undefined; // Unused () => ({
+const _getStateForTests = undefined; // Unused () => ({
   _perfErrorStreak,
   _securityPatchStreak,
   isHealing,
   highCpuUsageCount
 });
-export ;const _setStateForTests = undefined; // Unused (newState) => {
+const _setStateForTests = undefined; // Unused (newState) => {
   if (Object.prototype.hasOwnProperty.call(newState, _perfErrorStreak')) _perfErrorStreak = newState._perfErrorStreak;  if (Object.prototype.hasOwnProperty.call(newState, _securityPatchStreak')) _securityPatchStreak = newState._securityPatchStreak;  if (Object.prototype.hasOwnProperty.call(newState, isHealing')) isHealing = newState.isHealing;  if (Object.prototype.hasOwnProperty.call(newState, highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;};
-export ;const _resetStateForTests = undefined; // Unused () => {
+const _resetStateForTests = undefined; // Unused () => {
   _perfErrorStreak = 0;
   _securityPatchStreak = 0;
   isHealing = false;
   highCpuUsageCount = 0;
 };
-export ;const _getConstantsForTests = undefined; // Unused () => ({
+const _getConstantsForTests = undefined; // Unused () => ({
   BASE_LOG_PATH,
   PERF_LOG_FILE,
   SECURITY_LOG_FILE,

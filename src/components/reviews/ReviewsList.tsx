@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReviewsList() {
+default function ReviewsList() {
   return (
     <div>
       <h1>ReviewsList</h1>

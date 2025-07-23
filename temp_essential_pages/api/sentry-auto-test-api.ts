@@ -6,4 +6,4 @@ function handler() {
   throw new Error('Sentry Auto-Instrumentation Test API Error - This is a test!');  // The following lines will not be reached.
   // res.status(200).json({ message: This should not be reached.' });}
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function YoutubeEmbed() {
+default function YoutubeEmbed() {
   return (
     <div>
       <h1>YoutubeEmbed</h1>

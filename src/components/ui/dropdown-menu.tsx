@@ -1,5 +1,5 @@
 import React from react';
-export ;default function dropdown-menu() {
+default function dropdown-menu() {
   return (
     <div>
       <h1>dropdown-menu</h1>

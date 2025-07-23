@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileFeatureShowcase() {
+default function MobileFeatureShowcase() {
   return (
     <div>
       <h1>MobileFeatureShowcase</h1>

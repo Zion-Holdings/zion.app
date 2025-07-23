@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AccountSettings() {
+default function AccountSettings() {
   return (
     <div>
       <h1>AccountSettings</h1>

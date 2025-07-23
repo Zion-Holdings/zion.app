@@ -1,4 +1,4 @@
 // usePricingSuggestionAnalytics module placeholder
-export ;const usePricingSuggestionAnalytics = {
+const usePricingSuggestionAnalytics = {
   // TODO: Implement usePricingSuggestionAnalytics functionality
 };

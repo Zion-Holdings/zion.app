@@ -16,15 +16,15 @@ function fixCorruptedFiles(directory) {
           
           // Create a minimal working version based on file type
           if (file.name.endsWith('.tsx')) {'            content = `import React from react';;
-export ;default function ${file.name.replace('.tsx', )}() {'  return (
+default function ${file.name.replace('.tsx', )}() {'  return (
     <div>
       <h1>${file.name.replace('.tsx', )}</h1>      <p>Component placeholder</p>
     </div>
   );
 }`;
           } else if (file.name.endsWith('.ts')) {'            content = `// ${file.name} - placeholder;
-export ;const placeholder = placeholder';`;          } else if (file.name.endsWith('.jsx')) {'            content = `import React from react';;
-export ;default function ${file.name.replace('.jsx', )}() {'  return (
+const placeholder = placeholder';`;          } else if (file.name.endsWith('.jsx')) {'            content = `import React from react';;
+default function ${file.name.replace('.jsx', )}() {'  return (
     <div>
       <h1>${file.name.replace('.jsx', )}</h1>      <p>Component placeholder</p>
     </div>

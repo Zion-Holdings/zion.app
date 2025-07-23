@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ConversationsList() {
+default function ConversationsList() {
   return (
     <div>
       <h1>ConversationsList</h1>

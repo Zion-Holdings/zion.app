@@ -1,4 +1,4 @@
 // themeConfig module placeholder
-export ;const themeConfig = {
+const themeConfig = {
   // TODO: Implement themeConfig functionality
 };

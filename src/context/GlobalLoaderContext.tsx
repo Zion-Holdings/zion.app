@@ -1,5 +1,5 @@
 import React from react';
-export ;default function GlobalLoaderContext() {
+default function GlobalLoaderContext() {
   return (
     <div>
       <h1>GlobalLoaderContext</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProductGallery() {
+default function ProductGallery() {
   return (
     <div>
       <h1>ProductGallery</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FooterNewsletter() {
+default function FooterNewsletter() {
   return (
     <div>
       <h1>FooterNewsletter</h1>

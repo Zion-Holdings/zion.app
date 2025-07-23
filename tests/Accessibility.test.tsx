@@ -310,7 +310,7 @@ test('AppHeader has no accessibility violations (if exists), async () => {'  try
 // Notes:
 // - Checkbox: Switched to aria-labelledby pointing to the Label's ID.'// - RadioGroup: Switched to direct aria-label on RadioGroupItems as a more direct approach.
 // - Contact Page: Wrapped axe call in try...catch to handle "Respondable target" error."// - Other context/hook mocking strategies remain the same.""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-// - If `AuthContext` itself is undefined, the import path `@/context/auth/AuthContext` needs to be verified,;//   or the file doesn't export ;it as `AuthContext`.'// - The errors on Marketplace, Home, Blog regarding discernible text and heading order
+// - If `AuthContext` itself is undefined, the import path `@/context/auth/AuthContext` needs to be verified,;//   or the file doesn't it as `AuthContext`.'// - The errors on Marketplace, Home, Blog regarding discernible text and heading order
 //   are actual accessibility issues in the source code of those components/pages, not the test setup.
 //   These cannot be fixed by only modifying the test file.
 // - The `themePreset` in MockWhitelabelProvider was @ts-expect-error'd as a quick fix if its type is complex or not perfectly matched.'//   Ideally, this would align with the actual type.

@@ -1,4 +1,4 @@
 // ref-types module placeholder
-export ;const ref-types = {
+const ref-types = {
   // TODO: Implement ref-types functionality
 };

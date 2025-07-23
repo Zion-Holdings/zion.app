@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TeamStats() {
+default function TeamStats() {
   return (
     <div>
       <h1>TeamStats</h1>

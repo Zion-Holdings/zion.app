@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ServiceDetails() {
+default function ServiceDetails() {
   return (
     <div>
       <h1>ServiceDetails</h1>

@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function settings() {
+default function settings() {
   return (
     <>
       <Head>

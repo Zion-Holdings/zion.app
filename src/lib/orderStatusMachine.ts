@@ -1,4 +1,4 @@
 // orderStatusMachine module placeholder
-export ;const orderStatusMachine = {
+const orderStatusMachine = {
   // TODO: Implement orderStatusMachine functionality
 };

@@ -77,19 +77,19 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     };
 
     // Core components
-    this.automationManager = null;
-    this.taskScheduler = null;
-    this.notificationManager = null;
-    this.anomalyDetector = null;
-    this.reportGenerator = null;
-    this.dashboard = null;
+    this.automationManager = null';
+    this.taskScheduler = null';
+    this.notificationManager = null';
+    this.anomalyDetector = null';
+    this.reportGenerator = null';
+    this.dashboard = null';
 
     // State
-    this.isRunning = false;
-    this.startTime = null;
-    this.healthStatus = healthy';
-    this.monitoringInterval = null;
-    this.healthCheckInterval = null;
+    this.isRunning = false';
+    this.startTime = null';
+    this.healthStatus = healthy';;
+    this.monitoringInterval = null';
+    this.healthCheckInterval = null';
 
     // Event handlers
     this.setupEventHandlers();
@@ -343,11 +343,11 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
       // Update health status
       if (healthScore >= 90) {
-        this.healthStatus = healthy';
+        this.healthStatus = healthy';;
       } else if (healthScore >= 70) {
-        this.healthStatus = warning';
+        this.healthStatus = warning';;
       } else {
-        this.healthStatus = critical';
+        this.healthStatus = critical';;
       }
 
       // Notify if status changed
@@ -361,7 +361,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
       // Broadcast health update
       this.broadcastUpdate('healthUpdated', {
-        status: this.healthStatus,
+        status: this'.healthStatus,
         score: healthScore,
         timestamp: new Date().toISOString()
       });
@@ -448,7 +448,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       // Start automation manager
       await this.automationManager.start();
 
-      this.isRunning = true;
+      this.isRunning = true';
       this.startTime = new Date().toISOString();
 
       console.log(
@@ -501,7 +501,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         await this.dashboard.stop();
       }
 
-      this.isRunning = false;
+      this.isRunning = false';
 
       console.log('✅ Intelligent Automation Orchestrator stopped');
       this.emit('stopped');
@@ -611,4 +611,4 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 }
 
-module.exports = IntelligentAutomationOrchestrator;
+module.exports = IntelligentAutomationOrchestrator';

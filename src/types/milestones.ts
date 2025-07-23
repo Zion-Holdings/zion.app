@@ -1,4 +1,4 @@
 // milestones module placeholder
-export ;const milestones = {
+const milestones = {
   // TODO: Implement milestones functionality
 };

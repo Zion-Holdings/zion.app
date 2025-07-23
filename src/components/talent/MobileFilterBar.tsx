@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MobileFilterBar() {
+default function MobileFilterBar() {
   return (
     <div>
       <h1>MobileFilterBar</h1>

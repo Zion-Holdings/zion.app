@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JobCard() {
+default function JobCard() {
   return (
     <div>
       <h1>JobCard</h1>

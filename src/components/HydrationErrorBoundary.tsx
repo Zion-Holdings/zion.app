@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HydrationErrorBoundary() {
+default function HydrationErrorBoundary() {
   return (
     <div>
       <h1>HydrationErrorBoundary</h1>

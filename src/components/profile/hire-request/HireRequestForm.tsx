@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HireRequestForm() {
+default function HireRequestForm() {
   return (
     <div>
       <h1>HireRequestForm</h1>

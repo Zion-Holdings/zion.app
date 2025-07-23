@@ -1,4 +1,4 @@
 // logManagement module placeholder
-export ;const logManagement = {
+const logManagement = {
   // TODO: Implement logManagement functionality
 };

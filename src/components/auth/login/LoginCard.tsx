@@ -1,5 +1,5 @@
 import React from react';
-export ;default function LoginCard() {
+default function LoginCard() {
   return (
     <div>
       <h1>LoginCard</h1>

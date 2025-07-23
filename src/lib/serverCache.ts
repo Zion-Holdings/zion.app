@@ -1,4 +1,4 @@
 // serverCache module placeholder
-export ;const serverCache = {
+const serverCache = {
   // TODO: Implement serverCache functionality
 };

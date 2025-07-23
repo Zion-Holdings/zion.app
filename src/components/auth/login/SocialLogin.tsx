@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SocialLogin() {
+default function SocialLogin() {
   return (
     <div>
       <h1>SocialLogin</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ScreenshotManager() {
+default function ScreenshotManager() {
   return (
     <div>
       <h1>ScreenshotManager</h1>

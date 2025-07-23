@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function Page500() {
+default function Page500() {
   return (
     <>
       <Head>

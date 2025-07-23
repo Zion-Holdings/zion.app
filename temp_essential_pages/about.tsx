@@ -1,10 +1,10 @@
 import React from react';import Link from next/link';import type { GetServerSideProps } from next';import { SEO } from "@/components/SEO";"import { GradientHeading } from "@/components/GradientHeading";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-export ;const _getServerSideProps: GetServerSideProps = async () => {
+const _getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}
   };
 };
-export ;default function About() {
+default function About() {
   return (
     <>
       <SEO 

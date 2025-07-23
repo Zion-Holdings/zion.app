@@ -1,4 +1,4 @@
 // routerErrorHandler module placeholder
-export ;const routerErrorHandler = {
+const routerErrorHandler = {
   // TODO: Implement routerErrorHandler functionality
 };

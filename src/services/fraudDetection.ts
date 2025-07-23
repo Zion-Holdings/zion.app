@@ -1,4 +1,4 @@
 // fraudDetection module placeholder
-export ;const fraudDetection = {
+const fraudDetection = {
   // TODO: Implement fraudDetection functionality
 };

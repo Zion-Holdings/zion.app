@@ -1,5 +1,5 @@
 import React from react';
-export ;default function JobMatchCard() {
+default function JobMatchCard() {
   return (
     <div>
       <h1>JobMatchCard</h1>

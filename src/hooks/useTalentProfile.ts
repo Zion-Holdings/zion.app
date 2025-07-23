@@ -1,4 +1,4 @@
 // useTalentProfile module placeholder
-export ;const useTalentProfile = {
+const useTalentProfile = {
   // TODO: Implement useTalentProfile functionality
 };

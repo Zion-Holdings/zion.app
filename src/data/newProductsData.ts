@@ -1,4 +1,4 @@
 // newProductsData module placeholder
-export ;const newProductsData = {
+const newProductsData = {
   // TODO: Implement newProductsData functionality
 };

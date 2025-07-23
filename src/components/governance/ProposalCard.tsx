@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ProposalCard() {
+default function ProposalCard() {
   return (
     <div>
       <h1>ProposalCard</h1>

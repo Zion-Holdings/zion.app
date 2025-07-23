@@ -1,5 +1,5 @@
 import React from react';
-export ;default function dialog() {
+default function dialog() {
   return (
     <div>
       <h1>dialog</h1>

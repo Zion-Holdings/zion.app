@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ModeToggle() {
+default function ModeToggle() {
   return (
     <div>
       <h1>ModeToggle</h1>

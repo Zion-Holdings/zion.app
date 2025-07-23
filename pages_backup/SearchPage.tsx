@@ -33,4 +33,4 @@ const _SearchPage: NextPageWithLayout = () => {
 SearchPage.getLayout = function getLayout(page: React.ReactElement) {
   return <AppLayout>{page}</AppLayout>;
 };
-export ;default SearchPage;
+default SearchPage;

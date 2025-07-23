@@ -14,4 +14,4 @@ async function handler(
     console.error('Newsletter subscription error:', err);    return res.status(500).json({ error: Subscription failed' });  }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

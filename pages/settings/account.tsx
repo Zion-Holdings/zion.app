@@ -1,7 +1,7 @@
-import React from react;;
+import React from 'react';;
 import Head from next/head;;
 
-export ;default function account() {
+default function account() {
   return (
     <>
       <Head>

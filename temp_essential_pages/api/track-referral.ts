@@ -14,4 +14,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.error('Referral tracked:', referralData);    return res.status(500).json({ or: Internal server or' });  }
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

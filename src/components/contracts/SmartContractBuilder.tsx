@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SmartContractBuilder() {
+default function SmartContractBuilder() {
   return (
     <div>
       <h1>SmartContractBuilder</h1>

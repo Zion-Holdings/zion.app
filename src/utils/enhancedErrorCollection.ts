@@ -1,4 +1,4 @@
 // enhancedErrorCollection module placeholder
-export ;const enhancedErrorCollection = {
+const enhancedErrorCollection = {
   // TODO: Implement enhancedErrorCollection functionality
 };

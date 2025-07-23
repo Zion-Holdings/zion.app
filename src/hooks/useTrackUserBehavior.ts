@@ -1,4 +1,4 @@
 // useTrackUserBehavior module placeholder
-export ;const useTrackUserBehavior = {
+const useTrackUserBehavior = {
   // TODO: Implement useTrackUserBehavior functionality
 };

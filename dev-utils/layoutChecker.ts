@@ -21,4 +21,4 @@ window.addEventListener('load', () => {'  const broken: LayoutIssue[] = [];
     }
   });
   if (broken.length) logIssue('Layout issues detected', broken);});
-export ;{};
+{};

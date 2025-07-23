@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SidebarMenu() {
+default function SidebarMenu() {
   return (
     <div>
       <h1>SidebarMenu</h1>

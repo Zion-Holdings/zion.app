@@ -1,4 +1,4 @@
 // pushSubscription module placeholder
-export ;const pushSubscription = {
+const pushSubscription = {
   // TODO: Implement pushSubscription functionality
 };

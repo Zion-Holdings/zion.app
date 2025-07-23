@@ -17,7 +17,7 @@ const mockRecommendations: ProductListing[] = [
     reviewCount: 14,
     location: Global',    availability: 3-4 Weeks',    brand: Dell EMC',    specifications: ['All-Flash', 10TB Capacity', Unified Storage', Cloud Ready']  }
 ];
-export ;default async function handler(
+default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductListing[] | { error: string }>
 ) {

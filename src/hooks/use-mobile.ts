@@ -1,4 +1,4 @@
 // use-mobile module placeholder
-export ;const use-mobile = {
+const use-mobile = {
   // TODO: Implement use-mobile functionality
 };

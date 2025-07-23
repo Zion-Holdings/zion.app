@@ -4,7 +4,7 @@ const stripe = new Stripe(
   useTest ? process.env.STRIPE_TEST_SECRET_KEY ||  : process.env.STRIPE_SECRET_KEY || ,  {
     apiVersion: 2025-06-30.basil',  }
 );
-export ;default async function handler(req: NextApiRequest, res: NextApiResponse) {
+default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end('Method Not Allowed');  }
 
   const { cart = [] } = req['body'] || {};  if (!Array.isArray(cart) || cart.length === 0) {

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EmptyState() {
+default function EmptyState() {
   return (
     <div>
       <h1>EmptyState</h1>

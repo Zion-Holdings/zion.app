@@ -1,4 +1,4 @@
 // publicRoutes module placeholder
-export ;const publicRoutes = {
+const publicRoutes = {
   // TODO: Implement publicRoutes functionality
 };

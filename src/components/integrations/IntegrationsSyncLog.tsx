@@ -1,5 +1,5 @@
 import React from react';
-export ;default function IntegrationsSyncLog() {
+default function IntegrationsSyncLog() {
   return (
     <div>
       <h1>IntegrationsSyncLog</h1>

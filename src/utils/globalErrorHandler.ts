@@ -1,4 +1,4 @@
 // globalErrorHandler module placeholder
-export ;const globalErrorHandler = {
+const globalErrorHandler = {
   // TODO: Implement globalErrorHandler functionality
 };

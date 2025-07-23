@@ -1,4 +1,4 @@
 // walletService module placeholder
-export ;const walletService = {
+const walletService = {
   // TODO: Implement walletService functionality
 };

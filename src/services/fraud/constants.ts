@@ -1,4 +1,4 @@
 // constants module placeholder
-export ;const constants = {
+const constants = {
   // TODO: Implement constants functionality
 };

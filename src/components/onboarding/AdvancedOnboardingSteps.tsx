@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdvancedOnboardingSteps() {
+default function AdvancedOnboardingSteps() {
   return (
     <div>
       <h1>AdvancedOnboardingSteps</h1>

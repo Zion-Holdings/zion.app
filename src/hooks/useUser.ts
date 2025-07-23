@@ -1,4 +1,4 @@
 // useUser module placeholder
-export ;const useUser = {
+const useUser = {
   // TODO: Implement useUser functionality
 };

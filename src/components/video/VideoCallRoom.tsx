@@ -1,5 +1,5 @@
 import React from react';
-export ;default function VideoCallRoom() {
+default function VideoCallRoom() {
   return (
     <div>
       <h1>VideoCallRoom</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FounderBot() {
+default function FounderBot() {
   return (
     <div>
       <h1>FounderBot</h1>

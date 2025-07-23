@@ -44,7 +44,7 @@ async function removeDomain(siteId) {
   return res.status === 200;
 }
 ;
-export ;async function switchNetlifySite() {
+async function switchNetlifySite() {
   const greenActive = await siteHasDomain(greenId)
 const newSite = greenActive ? blueId : greenId
 const oldSite = greenActive ? greenId : blueId;

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AdvancedSEO() {
+default function AdvancedSEO() {
   return (
     <div>
       <h1>AdvancedSEO</h1>

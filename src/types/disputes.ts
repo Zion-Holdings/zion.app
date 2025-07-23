@@ -1,4 +1,4 @@
 // disputes module placeholder
-export ;const disputes = {
+const disputes = {
   // TODO: Implement disputes functionality
 };

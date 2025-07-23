@@ -1,4 +1,4 @@
 // useFraudPreventionSignup module placeholder
-export ;const useFraudPreventionSignup = {
+const useFraudPreventionSignup = {
   // TODO: Implement useFraudPreventionSignup functionality
 };

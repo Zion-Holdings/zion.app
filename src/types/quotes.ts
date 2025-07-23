@@ -1,4 +1,4 @@
 // quotes module placeholder
-export ;const quotes = {
+const quotes = {
   // TODO: Implement quotes functionality
 };

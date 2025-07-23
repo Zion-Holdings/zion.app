@@ -1,4 +1,4 @@
 // vaultEncryption module placeholder
-export ;const vaultEncryption = {
+const vaultEncryption = {
   // TODO: Implement vaultEncryption functionality
 };

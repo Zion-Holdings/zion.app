@@ -1,4 +1,4 @@
 // useWebhooks module placeholder
-export ;const useWebhooks = {
+const useWebhooks = {
   // TODO: Implement useWebhooks functionality
 };

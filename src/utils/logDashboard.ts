@@ -1,4 +1,4 @@
 // logDashboard module placeholder
-export ;const logDashboard = {
+const logDashboard = {
   // TODO: Implement logDashboard functionality
 };

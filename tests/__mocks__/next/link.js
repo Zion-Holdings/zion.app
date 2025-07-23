@@ -1,4 +1,4 @@
  
  ;
-import React from react';export ;default ({ children, ...props }) => {
+import React from react';default ({ children, ...props }) => {
   return React.createElement('a', props, children);};

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReferralStats() {
+default function ReferralStats() {
   return (
     <div>
       <h1>ReferralStats</h1>

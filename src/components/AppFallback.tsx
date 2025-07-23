@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AppFallback() {
+default function AppFallback() {
   return (
     <div>
       <h1>AppFallback</h1>

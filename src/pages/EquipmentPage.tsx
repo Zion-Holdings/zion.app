@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EquipmentPage() {
+default function EquipmentPage() {
   return (
     <div>
       <h1>EquipmentPage</h1>

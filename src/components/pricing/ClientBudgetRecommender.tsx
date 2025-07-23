@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ClientBudgetRecommender() {
+default function ClientBudgetRecommender() {
   return (
     <div>
       <h1>ClientBudgetRecommender</h1>

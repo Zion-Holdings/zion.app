@@ -1,4 +1,4 @@
 // points module placeholder
-export ;const points = {
+const points = {
   // TODO: Implement points functionality
 };

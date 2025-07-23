@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SkipLink() {
+default function SkipLink() {
   return (
     <div>
       <h1>SkipLink</h1>

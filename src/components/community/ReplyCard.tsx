@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReplyCard() {
+default function ReplyCard() {
   return (
     <div>
       <h1>ReplyCard</h1>

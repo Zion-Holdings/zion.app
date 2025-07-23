@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ZionHireAI() {
+default function ZionHireAI() {
   return (
     <div>
       <h1>ZionHireAI</h1>

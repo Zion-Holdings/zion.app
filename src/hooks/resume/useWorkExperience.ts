@@ -1,4 +1,4 @@
 // useWorkExperience module placeholder
-export ;const useWorkExperience = {
+const useWorkExperience = {
   // TODO: Implement useWorkExperience functionality
 };

@@ -1,4 +1,4 @@
 // memoization module placeholder
-export ;const memoization = {
+const memoization = {
   // TODO: Implement memoization functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiWebhooks() {
+default function ApiWebhooks() {
   return (
     <div>
       <h1>ApiWebhooks</h1>

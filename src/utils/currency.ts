@@ -1,4 +1,4 @@
 // currency module placeholder
-export ;const currency = {
+const currency = {
   // TODO: Implement currency functionality
 };

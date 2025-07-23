@@ -1,4 +1,4 @@
 // useTalentData module placeholder
-export ;const useTalentData = {
+const useTalentData = {
   // TODO: Implement useTalentData functionality
 };

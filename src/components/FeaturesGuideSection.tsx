@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FeaturesGuideSection() {
+default function FeaturesGuideSection() {
   return (
     <div>
       <h1>FeaturesGuideSection</h1>

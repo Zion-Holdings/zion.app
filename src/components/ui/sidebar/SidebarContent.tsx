@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SidebarContent() {
+default function SidebarContent() {
   return (
     <div>
       <h1>SidebarContent</h1>

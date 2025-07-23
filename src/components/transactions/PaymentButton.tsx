@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PaymentButton() {
+default function PaymentButton() {
   return (
     <div>
       <h1>PaymentButton</h1>

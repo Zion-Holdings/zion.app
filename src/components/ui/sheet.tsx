@@ -1,5 +1,5 @@
 import React from react';
-export ;default function sheet() {
+default function sheet() {
   return (
     <div>
       <h1>sheet</h1>

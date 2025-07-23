@@ -10,7 +10,7 @@ interface CategoryType {
   icon: string;
 }
 ;
-export ;default async function handler(
+default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<CategoryType[] | { error: string }>
 ) {

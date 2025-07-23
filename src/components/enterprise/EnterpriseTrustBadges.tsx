@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnterpriseTrustBadges() {
+default function EnterpriseTrustBadges() {
   return (
     <div>
       <h1>EnterpriseTrustBadges</h1>

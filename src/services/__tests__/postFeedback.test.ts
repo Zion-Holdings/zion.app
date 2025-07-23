@@ -1,4 +1,4 @@
 // postFeedback.test module placeholder
-export ;const postFeedback.test = {
+const postFeedback.test = {
   // TODO: Implement postFeedback.test functionality
 };

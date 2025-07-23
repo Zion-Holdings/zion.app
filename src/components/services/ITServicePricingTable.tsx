@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ITServicePricingTable() {
+default function ITServicePricingTable() {
   return (
     <div>
       <h1>ITServicePricingTable</h1>

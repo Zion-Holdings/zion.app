@@ -83,10 +83,10 @@ class ComprehensiveSyntaxFixer {
     isProblematicFile(content, filePath) {
         // Check for files with severe syntax issues
         const problematicPatterns = [
-            /import React from react';export ;default function/,
-            /export ;const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/,
+            /import React from react';default function/,
+            /const [^a-zA-Z_$][^a-zA-Z0-9_$]*? =/,
             /function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/,
-            /export ;default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/,
+            /default function [^a-zA-Z_$][^a-zA-Z0-9_$]*?\(/,
             //,
             /""""""""""""""""""/,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             /``````````````````/
@@ -106,7 +106,7 @@ class ComprehensiveSyntaxFixer {
         if (ext === .tsx' || ext === .jsx') {
             return `import React from react';
 
-export ;default function ${validFileName}() {
+default function ${validFileName}() {
   return (
     <div>
       <h1>${validFileName}</h1>
@@ -116,40 +116,40 @@ export ;default function ${validFileName}() {
 }`;
         } else if (ext === .ts') {
             return `// ${validFileName} module placeholder
-export ;const ${validFileName} = {
+const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
 }`
         } else if (ext === .js') {
             return `// ${validFileName} module placeholder
-export ;const ${validFileName} = {
+const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
 }`
         }
         
         return `// ${validFileName} placeholder
-export ;const ${validFileName} = {}`
+const ${validFileName} = {}`
     }
 
     fixImportExportPatterns(content) {
-        // Fix patterns like "import React from react';export ;default function""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        // Fix patterns like "import React from react';default function""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         return content
-            .replace(/import React from react';export ;default function/g, "import React from react';\n\nexport ;default function")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;function/g, "import React from react';\n\nexport ;function")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;const/g, "import React from react';\n\nexport ;const")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;{/g, "import React from react';\n\nexport ;{")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/import React from react';export ;default/g, "import React from react';\n\nexport ;default")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            // Fix other import/export ;patterns
+            .replace(/import React from react';default function/g, "import React from react';\n\ndefault function")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';function/g, "import React from react';\n\nfunction")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';const/g, "import React from react';\n\nconst")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';{/g, "import React from react';\n\n{")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/import React from react';default/g, "import React from react';\n\ndefault")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            // Fix other import/patterns
             .replace(/import\s+([^'"]+?)export/g, "import $1\n\nexport")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/export\s+([^'"]+?)import/g, "export ;$1\n\nimport");"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/export\s+([^'"]+?)import/g, "$1\n\nimport");"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     }
 
     fixFunctionDeclarations(content) {
         // Fix function declarations with invalid names
         return content
-            .replace(/export ;default function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
+            .replace(/default function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
                 // Convert invalid function names to valid ones
                 const validName = funcName.replace(/[^a-zA-Z0-9_$]/g, _');
-                return `export ;default function ${validName}(`;
+                return `default function ${validName}(`;
             })
             .replace(/function ([^a-zA-Z_$][^a-zA-Z0-9_$]*?)\(/g, (match, funcName) => {
                 // Convert invalid function names to valid ones
@@ -161,10 +161,10 @@ export ;const ${validFileName} = {}`
     fixVariableDeclarations(content) {
         // Fix variable declarations with invalid names
         return content
-            .replace(/export ;const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
+            .replace(/const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
                 // Convert invalid variable names to valid ones
                 const validName = varName.replace(/[^a-zA-Z0-9_$]/g, _');
-                return `export ;const ${validName} =`;
+                return `const ${validName} =`;
             })
             .replace(/const ([^a-zA-Z_$][^a-zA-Z0-9_$]*?) =/g, (match, varName) => {
                 // Convert invalid variable names to valid ones
@@ -199,7 +199,7 @@ export ;const ${validFileName} = {}`
             .replace(/``+/g, `')
             // Fix specific patterns
             .replace(/import\s+([^'"]+?)+/g, "import $1'")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            .replace(/export\s+([^'"]+?)+/g, "export ;$1'")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+            .replace(/export\s+([^'"]+?)+/g, "$1'")"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             // Remove trailing quotes at end of lines
             .replace(/''+$/gm, )
             .replace(/""+$/gm, )

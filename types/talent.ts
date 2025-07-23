@@ -1,4 +1,4 @@
-export ;interface TalentProfile {
+interface TalentProfile {
   id: string;
   name: string;
   slug: string;

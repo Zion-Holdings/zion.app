@@ -1,4 +1,4 @@
 // useCertifications module placeholder
-export ;const useCertifications = {
+const useCertifications = {
   // TODO: Implement useCertifications functionality
 };

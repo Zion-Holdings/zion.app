@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApplyToJobModal() {
+default function ApplyToJobModal() {
   return (
     <div>
       <h1>ApplyToJobModal</h1>

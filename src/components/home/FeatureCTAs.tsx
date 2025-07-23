@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FeatureCTAs() {
+default function FeatureCTAs() {
   return (
     <div>
       <h1>FeatureCTAs</h1>

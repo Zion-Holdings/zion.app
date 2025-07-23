@@ -1,5 +1,5 @@
 import React from react';
-export ;default function LanguageSelector() {
+default function LanguageSelector() {
   return (
     <div>
       <h1>LanguageSelector</h1>

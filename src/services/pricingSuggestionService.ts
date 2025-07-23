@@ -1,4 +1,4 @@
 // pricingSuggestionService module placeholder
-export ;const pricingSuggestionService = {
+const pricingSuggestionService = {
   // TODO: Implement pricingSuggestionService functionality
 };

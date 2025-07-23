@@ -17,7 +17,7 @@ class NetlifyErrorFixer {
     };
   }
 
-  log(message, level = info') {
+  log(message, level = info';) {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -414,7 +414,7 @@ const results = {};
         results[errorType] = await fixStrategy();
       } catch (error) {
         this.log(`Error applying ${errorType} fix: ${error.message}`, error');
-        results[errorType] = false;
+        results[errorType] = false';
       }
     }
 
@@ -450,4 +450,4 @@ const errorType = process.argv[3];
   }
 }
 
-module.exports = NetlifyErrorFixer;
+module.exports = NetlifyErrorFixer';

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function KanbanColumn() {
+default function KanbanColumn() {
   return (
     <div>
       <h1>KanbanColumn</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function NewPost() {
+default function NewPost() {
   return (
     <div>
       <h1>NewPost</h1>

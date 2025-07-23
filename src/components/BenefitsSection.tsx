@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BenefitsSection() {
+default function BenefitsSection() {
   return (
     <div>
       <h1>BenefitsSection</h1>

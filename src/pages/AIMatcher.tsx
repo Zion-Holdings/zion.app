@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AIMatcher() {
+default function AIMatcher() {
   return (
     <div>
       <h1>AIMatcher</h1>

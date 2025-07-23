@@ -1,4 +1,4 @@
 // useLocalStorage module placeholder
-export ;const useLocalStorage = {
+const useLocalStorage = {
   // TODO: Implement useLocalStorage functionality
 };

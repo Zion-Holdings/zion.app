@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FeaturedListingsSection() {
+default function FeaturedListingsSection() {
   return (
     <div>
       <h1>FeaturedListingsSection</h1>

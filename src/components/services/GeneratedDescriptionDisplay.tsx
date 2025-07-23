@@ -1,5 +1,5 @@
 import React from react';
-export ;default function GeneratedDescriptionDisplay() {
+default function GeneratedDescriptionDisplay() {
   return (
     <div>
       <h1>GeneratedDescriptionDisplay</h1>

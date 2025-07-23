@@ -1,5 +1,5 @@
 import React from react';
-export ;default function toast() {
+default function toast() {
   return (
     <div>
       <h1>toast</h1>

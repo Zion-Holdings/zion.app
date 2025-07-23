@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DynamicComponentLoader() {
+default function DynamicComponentLoader() {
   return (
     <div>
       <h1>DynamicComponentLoader</h1>

@@ -1,4 +1,4 @@
 // onsiteServicePricing module placeholder
-export ;const onsiteServicePricing = {
+const onsiteServicePricing = {
   // TODO: Implement onsiteServicePricing functionality
 };

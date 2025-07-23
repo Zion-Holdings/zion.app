@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HelpArticleView() {
+default function HelpArticleView() {
   return (
     <div>
       <h1>HelpArticleView</h1>

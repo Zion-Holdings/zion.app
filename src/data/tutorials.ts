@@ -1,4 +1,4 @@
 // tutorials module placeholder
-export ;const tutorials = {
+const tutorials = {
   // TODO: Implement tutorials functionality
 };

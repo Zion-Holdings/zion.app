@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnterpriseCTA() {
+default function EnterpriseCTA() {
   return (
     <div>
       <h1>EnterpriseCTA</h1>

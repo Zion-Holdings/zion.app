@@ -94,8 +94,8 @@ class SyntaxErrorFixer {
   }
 
   fixCommonSyntaxErrors(content) {
-    // Fix export ;syntax errors
-    content = content.replace(/export\s*;default/g, export ;default');
+    // Fix syntax errors
+    content = content.replace(/export\s*;default/g, default');
     
     // Fix import syntax errors
     content = content.replace(/import\s*;default/g, import default');

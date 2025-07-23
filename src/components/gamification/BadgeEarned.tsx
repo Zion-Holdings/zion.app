@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BadgeEarned() {
+default function BadgeEarned() {
   return (
     <div>
       <h1>BadgeEarned</h1>

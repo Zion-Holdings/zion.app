@@ -1,4 +1,4 @@
 // stream-polyfill module placeholder
-export ;const stream-polyfill = {
+const stream-polyfill = {
   // TODO: Implement stream-polyfill functionality
 };

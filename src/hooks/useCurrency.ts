@@ -1,4 +1,4 @@
 // useCurrency module placeholder
-export ;const useCurrency = {
+const useCurrency = {
   // TODO: Implement useCurrency functionality
 };

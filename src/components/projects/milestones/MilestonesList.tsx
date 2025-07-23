@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MilestonesList() {
+default function MilestonesList() {
   return (
     <div>
       <h1>MilestonesList</h1>

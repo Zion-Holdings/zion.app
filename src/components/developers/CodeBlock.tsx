@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CodeBlock() {
+default function CodeBlock() {
   return (
     <div>
       <h1>CodeBlock</h1>

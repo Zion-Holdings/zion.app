@@ -1,4 +1,4 @@
 // server module placeholder
-export ;const server = {
+const server = {
   // TODO: Implement server functionality
 };

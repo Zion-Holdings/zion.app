@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EducationItem() {
+default function EducationItem() {
   return (
     <div>
       <h1>EducationItem</h1>

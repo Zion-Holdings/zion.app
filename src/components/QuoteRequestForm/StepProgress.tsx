@@ -1,5 +1,5 @@
 import React from react';
-export ;default function StepProgress() {
+default function StepProgress() {
   return (
     <div>
       <h1>StepProgress</h1>

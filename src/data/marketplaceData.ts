@@ -1,4 +1,4 @@
 // marketplaceData module placeholder
-export ;const marketplaceData = {
+const marketplaceData = {
   // TODO: Implement marketplaceData functionality
 };

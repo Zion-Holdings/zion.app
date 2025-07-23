@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FlaggedListingsTable() {
+default function FlaggedListingsTable() {
   return (
     <div>
       <h1>FlaggedListingsTable</h1>

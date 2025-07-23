@@ -1,4 +1,4 @@
 // useInterviews module placeholder
-export ;const useInterviews = {
+const useInterviews = {
   // TODO: Implement useInterviews functionality
 };

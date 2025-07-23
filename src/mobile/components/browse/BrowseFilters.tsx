@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BrowseFilters() {
+default function BrowseFilters() {
   return (
     <div>
       <h1>BrowseFilters</h1>

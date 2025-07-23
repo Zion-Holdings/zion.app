@@ -1,5 +1,5 @@
 import React from react';
-export ;default function AIPoweredContent() {
+default function AIPoweredContent() {
   return (
     <div>
       <h1>AIPoweredContent</h1>

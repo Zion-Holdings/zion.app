@@ -1,5 +1,5 @@
 import React from react';
-export ;default function MilestoneCreator() {
+default function MilestoneCreator() {
   return (
     <div>
       <h1>MilestoneCreator</h1>

@@ -1,4 +1,4 @@
 // analyzeContent module placeholder
-export ;const analyzeContent = {
+const analyzeContent = {
   // TODO: Implement analyzeContent functionality
 };

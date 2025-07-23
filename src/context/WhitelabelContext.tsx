@@ -1,5 +1,5 @@
 import React from react';
-export ;default function WhitelabelContext() {
+default function WhitelabelContext() {
   return (
     <div>
       <h1>WhitelabelContext</h1>

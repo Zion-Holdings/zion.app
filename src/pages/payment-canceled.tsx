@@ -1,5 +1,5 @@
 import React from react';
-export ;default function payment-canceled() {
+default function payment-canceled() {
   return (
     <div>
       <h1>payment-canceled</h1>

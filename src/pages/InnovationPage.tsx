@@ -1,5 +1,5 @@
 import React from react';
-export ;default function InnovationPage() {
+default function InnovationPage() {
   return (
     <div>
       <h1>InnovationPage</h1>

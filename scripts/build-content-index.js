@@ -17,7 +17,7 @@ function build(dir) {
 }
 
 function writeTS(data, outPath, varName, typeImport, typeFile) {
-  const ts = `import { ${typeImport} } from @/types/${typeFile};\nexport ;const ${varName}: ${typeImport}[] = ${JSON.stringify(data, null, 2)};\n`;  fs.writeFileSync(outPath, ts);
+  const ts = `import { ${typeImport} } from @/types/${typeFile};\nconst ${varName}: ${typeImport}[] = ${JSON.stringify(data, null, 2)};\n`;  fs.writeFileSync(outPath, ts);
 }
 
 const blog = build(path.join(__dirname, ..', content', blog'));const caseStudies = build(path.join(__dirname, ..', content', case-studies'));const tutorials = build(path.join(__dirname, ..', content', tutorials'));const partners = build(path.join(__dirname, ..', content', partners'));

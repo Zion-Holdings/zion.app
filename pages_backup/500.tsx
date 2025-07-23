@@ -10,7 +10,7 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   );
 }
 ;
-export ;default function Custom500() {
+default function Custom500() {
   const { _user } = useAuth();
   const router = useRouter();
 

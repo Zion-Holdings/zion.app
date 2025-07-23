@@ -1,4 +1,4 @@
 // systemHealthMonitor module placeholder
-export ;const systemHealthMonitor = {
+const systemHealthMonitor = {
   // TODO: Implement systemHealthMonitor functionality
 };

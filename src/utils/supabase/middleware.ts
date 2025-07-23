@@ -1,4 +1,4 @@
 // middleware module placeholder
-export ;const middleware = {
+const middleware = {
   // TODO: Implement middleware functionality
 };

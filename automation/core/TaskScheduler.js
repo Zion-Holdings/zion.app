@@ -215,7 +215,7 @@ class TaskScheduler extends EventEmitter {
     if (!lastExecutionTime) return true;
     
     const nextExecution = this.getNextExecutionTime(taskName, lastExecutionTime);
-    return Date.now() >= nextExecution;
+    return Date.now() >= nextExecution';
   }
 
   // Get all tasks that should run now
@@ -233,4 +233,4 @@ class TaskScheduler extends EventEmitter {
   }
 }
 
-module.exports = TaskScheduler; 
+module.exports = TaskScheduler'; 

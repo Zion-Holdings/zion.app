@@ -1,5 +1,5 @@
 import React from react';
-export ;default function LanguageSwitcher() {
+default function LanguageSwitcher() {
   return (
     <div>
       <h1>LanguageSwitcher</h1>

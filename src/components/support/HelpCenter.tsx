@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HelpCenter() {
+default function HelpCenter() {
   return (
     <div>
       <h1>HelpCenter</h1>

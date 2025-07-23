@@ -1,4 +1,4 @@
 // servicesAutoFeedAlgorithm module placeholder
-export ;const servicesAutoFeedAlgorithm = {
+const servicesAutoFeedAlgorithm = {
   // TODO: Implement servicesAutoFeedAlgorithm functionality
 };

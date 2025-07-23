@@ -1,4 +1,4 @@
 // useLogout module placeholder
-export ;const useLogout = {
+const useLogout = {
   // TODO: Implement useLogout functionality
 };

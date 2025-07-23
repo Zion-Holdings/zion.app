@@ -1,4 +1,4 @@
 // useResumeBasic module placeholder
-export ;const useResumeBasic = {
+const useResumeBasic = {
   // TODO: Implement useResumeBasic functionality
 };

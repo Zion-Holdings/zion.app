@@ -1,4 +1,4 @@
 // authUtils module placeholder
-export ;const authUtils = {
+const authUtils = {
   // TODO: Implement authUtils functionality
 };

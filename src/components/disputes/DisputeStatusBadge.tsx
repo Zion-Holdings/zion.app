@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DisputeStatusBadge() {
+default function DisputeStatusBadge() {
   return (
     <div>
       <h1>DisputeStatusBadge</h1>

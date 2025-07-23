@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CartDrawer() {
+default function CartDrawer() {
   return (
     <div>
       <h1>CartDrawer</h1>

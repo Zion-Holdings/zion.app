@@ -1,5 +1,5 @@
 import React from react';
-export ;default function SuggestedTalents() {
+default function SuggestedTalents() {
   return (
     <div>
       <h1>SuggestedTalents</h1>

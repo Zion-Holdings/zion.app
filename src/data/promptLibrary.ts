@@ -1,4 +1,4 @@
 // promptLibrary module placeholder
-export ;const promptLibrary = {
+const promptLibrary = {
   // TODO: Implement promptLibrary functionality
 };

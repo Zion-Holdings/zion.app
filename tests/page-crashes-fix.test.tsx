@@ -89,14 +89,14 @@
 });
 
 // Export utilities for other tests;
-export ;const validateAuth0Config = (config: Record<string, string>) => {
+const validateAuth0Config = (config: Record<string, string>) => {
   const required = ['AUTH0_SECRET', AUTH0_BASE_URL', AUTH0_ISSUER_BASE_URL', AUTH0_CLIENT_ID', AUTH0_CLIENT_SECRET'];  return required.every(key => config[key] && config[key].length > 0);
 };
-export ;const isPlaceholderValue = (_value: string) => {
+const isPlaceholderValue = (_value: string) => {
   const placeholderPatterns = [
     placeholder',your_',dev-',here',generate',from Auth0''  ];
   
   return placeholderPatterns.some(pattern => value.includes(pattern));
 };
-export ;const AUTH0_DEVELOPMENT_CONFIG = {
+const AUTH0_DEVELOPMENT_CONFIG = {
   AUTH0_SECRET: a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456',  AUTH0_BASE_URL: http://localhost:3000',  AUTH0_ISSUER_BASE_URL: https://dev-zion.us.auth0.com',  AUTH0_CLIENT_ID: xVYwZ9pqr8sHGFc2x1tUn2oP7aM8kLwX',  AUTH0_CLIENT_SECRET: xKY9p2qr-s8HvFc_x1tBn2oP7aM8kLwX9pYrK3dFgHjQwErT''};

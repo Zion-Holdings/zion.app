@@ -1,4 +1,4 @@
 // productionOptimizations module placeholder
-export ;const productionOptimizations = {
+const productionOptimizations = {
   // TODO: Implement productionOptimizations functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function EnterpriseCallToAction() {
+default function EnterpriseCallToAction() {
   return (
     <div>
       <h1>EnterpriseCallToAction</h1>

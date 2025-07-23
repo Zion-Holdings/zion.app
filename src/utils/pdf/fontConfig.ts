@@ -1,4 +1,4 @@
 // fontConfig module placeholder
-export ;const fontConfig = {
+const fontConfig = {
   // TODO: Implement fontConfig functionality
 };

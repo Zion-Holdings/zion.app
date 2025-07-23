@@ -1,5 +1,5 @@
 import React from react';
-export ;default function KeynotesSection() {
+default function KeynotesSection() {
   return (
     <div>
       <h1>KeynotesSection</h1>

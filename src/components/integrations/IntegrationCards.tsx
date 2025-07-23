@@ -1,5 +1,5 @@
 import React from react';
-export ;default function IntegrationCards() {
+default function IntegrationCards() {
   return (
     <div>
       <h1>IntegrationCards</h1>

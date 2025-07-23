@@ -1,5 +1,5 @@
 import React from react';
-export ;default function useAuthGuard() {
+default function useAuthGuard() {
   return (
     <div>
       <h1>useAuthGuard</h1>

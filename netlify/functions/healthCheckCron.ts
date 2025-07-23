@@ -40,4 +40,4 @@ const handler: Handler = async (_event: HandlerEvent, _context: HandlerContext) 
     statusCode: 200, // The function itself completed
   };
 };
-export ;{ handler };
+{ handler };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ApiDocsLayout() {
+default function ApiDocsLayout() {
   return (
     <div>
       <h1>ApiDocsLayout</h1>

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CommunityContext() {
+default function CommunityContext() {
   return (
     <div>
       <h1>CommunityContext</h1>

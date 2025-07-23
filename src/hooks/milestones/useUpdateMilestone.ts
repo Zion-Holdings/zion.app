@@ -1,4 +1,4 @@
 // useUpdateMilestone module placeholder
-export ;const useUpdateMilestone = {
+const useUpdateMilestone = {
   // TODO: Implement useUpdateMilestone functionality
 };

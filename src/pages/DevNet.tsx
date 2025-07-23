@@ -1,5 +1,5 @@
 import React from react';
-export ;default function DevNet() {
+default function DevNet() {
   return (
     <div>
       <h1>DevNet</h1>

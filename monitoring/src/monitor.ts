@@ -1,11 +1,11 @@
-import { measureLatency, Endpoint, _EndpointTestResult } from ./latencyTester';import logger from ./logger';import { triggerAlerts } from ./alerter'; // Added this import
+import * from module'; // Added this import
 // Define endpoints (base URLs should come from environment variables);
 const endpoints: Endpoint[] = [
   // Django
   { name: Django Ping', baseURL: process.env.DJANGO_API_BASE_URL || http://localhost:8000', path: /api/ping/' },  { name: Django Governance Proposals', baseURL: process.env.DJANGO_API_BASE_URL || http://localhost:8000', path: /api/governance/proposals/' },  { name: Django Swagger', baseURL: process.env.DJANGO_API_BASE_URL || http://localhost:8000', path: /swagger/' },  // Next.js
   { name: Next.js Health', baseURL: process.env.NEXTJS_API_BASE_URL || http://localhost:3000', path: /api/health' },  { name: Next.js Marketplace Products', baseURL: process.env.NEXTJS_API_BASE_URL || http://localhost:3000', path: /api/marketplace/products' },  // Custom Server
   { name: Custom Server Health', baseURL: process.env.CUSTOM_SERVER_BASE_URL || http://localhost:3001', path: /healthz' },  { name: Custom Server Items', baseURL: process.env.CUSTOM_SERVER_BASE_URL || http://localhost:3001', path: /items' },];
-export ;async function runMonitoring() {
+async function runMonitoring() {
   logger.info('Starting API latency monitoring run...');
   const results = await measureLatency(endpoints);
 

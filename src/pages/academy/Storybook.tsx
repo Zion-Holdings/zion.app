@@ -1,5 +1,5 @@
 import React from react';
-export ;default function Storybook() {
+default function Storybook() {
   return (
     <div>
       <h1>Storybook</h1>

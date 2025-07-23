@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ListingModeration() {
+default function ListingModeration() {
   return (
     <div>
       <h1>ListingModeration</h1>

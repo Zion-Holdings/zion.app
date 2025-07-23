@@ -1,5 +1,5 @@
 import React from react';
-export ;default function FaqSection() {
+default function FaqSection() {
   return (
     <div>
       <h1>FaqSection</h1>

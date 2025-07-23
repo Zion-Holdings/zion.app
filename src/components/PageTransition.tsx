@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PageTransition() {
+default function PageTransition() {
   return (
     <div>
       <h1>PageTransition</h1>

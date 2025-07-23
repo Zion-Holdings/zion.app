@@ -1,5 +1,5 @@
 import React from react';
-export ;default function HealthDashboard() {
+default function HealthDashboard() {
   return (
     <div>
       <h1>HealthDashboard</h1>

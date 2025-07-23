@@ -1,5 +1,5 @@
 import React from react';
-export ;default function progress() {
+default function progress() {
   return (
     <div>
       <h1>progress</h1>

@@ -1,4 +1,4 @@
 // useRecordActivity module placeholder
-export ;const useRecordActivity = {
+const useRecordActivity = {
   // TODO: Implement useRecordActivity functionality
 };

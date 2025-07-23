@@ -98,19 +98,27 @@ export default [
   // Node.js specific files
   {
     files: [
-      **/*.cjs',
-      scripts/**/*.js',
-      api/**/*.js',
-      server/**/*.js',
-      backend/**/*.js',
-      token/**/*.js',
-      hardhat.config.js
+      **/*.config.js',
+      **/*.config.ts',
+      **/*.config.cjs',
+      **/*.config.mjs',
+      scripts/**/*.{js,ts},
+      automation/**/*.{js,ts}
     ],
     languageOptions: {
       sourceType: commonjs',
       globals: {
-        ...globals.node
+        ...globals.node,
+        process: readonly',
+        __dirname: readonly',
+        __filename: readonly',
+        module: readonly',
+        exports: readonly',
+        require: readonly
       }
+    },
+    rules: {
+      no-console': off
     }
   }
 ];

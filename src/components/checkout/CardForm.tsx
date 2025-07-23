@@ -1,5 +1,5 @@
 import React from react';
-export ;default function CardForm() {
+default function CardForm() {
   return (
     <div>
       <h1>CardForm</h1>

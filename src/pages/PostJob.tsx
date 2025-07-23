@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PostJob() {
+default function PostJob() {
   return (
     <div>
       <h1>PostJob</h1>

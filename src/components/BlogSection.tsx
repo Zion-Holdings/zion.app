@@ -1,5 +1,5 @@
 import React from react';
-export ;default function BlogSection() {
+default function BlogSection() {
   return (
     <div>
       <h1>BlogSection</h1>

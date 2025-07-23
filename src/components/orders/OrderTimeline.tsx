@@ -1,5 +1,5 @@
 import React from react';
-export ;default function OrderTimeline() {
+default function OrderTimeline() {
   return (
     <div>
       <h1>OrderTimeline</h1>

@@ -8,7 +8,7 @@ import React, { useState } from react';import type { Meta, StoryObj } from @stor
 const meta: Meta<typeof Pagination> = {
   title: Components/Pagination',  component: Pagination
 };
-export ;default meta;
+default meta;
 const Example = ({ total }: { _total: number }) => {
   const [current, setCurrent] = useState(1);
   return (
@@ -48,12 +48,12 @@ const Example = ({ total }: { _total: number }) => {
     </Pagination>
   );
 };
-export ;const OnePage: StoryObj<typeof Pagination> = {
+const OnePage: StoryObj<typeof Pagination> = {
   render: () => <Example total={1} />
 };
-export ;const FivePages: StoryObj<typeof Pagination> = {
+const FivePages: StoryObj<typeof Pagination> = {
   render: () => <Example total={5} />
 };
-export ;const TenPages: StoryObj<typeof Pagination> = {
+const TenPages: StoryObj<typeof Pagination> = {
   render: () => <Example total={10} />
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ForumPostPage() {
+default function ForumPostPage() {
   return (
     <div>
       <h1>ForumPostPage</h1>

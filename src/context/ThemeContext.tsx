@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ThemeContext() {
+default function ThemeContext() {
   return (
     <div>
       <h1>ThemeContext</h1>

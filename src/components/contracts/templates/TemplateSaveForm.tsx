@@ -1,5 +1,5 @@
 import React from react';
-export ;default function TemplateSaveForm() {
+default function TemplateSaveForm() {
   return (
     <div>
       <h1>TemplateSaveForm</h1>

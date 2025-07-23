@@ -1,5 +1,5 @@
 import React from react';
-export ;default function alert-dialog() {
+default function alert-dialog() {
   return (
     <div>
       <h1>alert-dialog</h1>

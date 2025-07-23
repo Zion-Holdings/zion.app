@@ -1,4 +1,4 @@
 // basicInfoSection module placeholder
-export ;const basicInfoSection = {
+const basicInfoSection = {
   // TODO: Implement basicInfoSection functionality
 };

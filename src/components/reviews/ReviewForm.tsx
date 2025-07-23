@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReviewForm() {
+default function ReviewForm() {
   return (
     <div>
       <h1>ReviewForm</h1>

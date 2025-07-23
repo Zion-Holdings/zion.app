@@ -1,4 +1,4 @@
 // listingData module placeholder
-export ;const listingData = {
+const listingData = {
   // TODO: Implement listingData functionality
 };

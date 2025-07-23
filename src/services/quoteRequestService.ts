@@ -1,4 +1,4 @@
 // quoteRequestService module placeholder
-export ;const quoteRequestService = {
+const quoteRequestService = {
   // TODO: Implement quoteRequestService functionality
 };

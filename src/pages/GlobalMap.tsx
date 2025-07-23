@@ -1,5 +1,5 @@
 import React from react';
-export ;default function GlobalMap() {
+default function GlobalMap() {
   return (
     <div>
       <h1>GlobalMap</h1>

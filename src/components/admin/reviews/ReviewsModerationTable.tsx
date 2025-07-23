@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ReviewsModerationTable() {
+default function ReviewsModerationTable() {
   return (
     <div>
       <h1>ReviewsModerationTable</h1>

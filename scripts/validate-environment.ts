@@ -232,4 +232,4 @@ if (isMainModule) {
   main();
 }
 ;
-export ;{ validateConfiguration, isPlaceholder }; 
+{ validateConfiguration, isPlaceholder }; 

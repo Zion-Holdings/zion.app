@@ -1,4 +1,4 @@
 // favorites module placeholder
-export ;const favorites = {
+const favorites = {
   // TODO: Implement favorites functionality
 };

@@ -1,5 +1,5 @@
 import React from react';
-export ;default function ServiceProviderRegistrationForm() {
+default function ServiceProviderRegistrationForm() {
   return (
     <div>
       <h1>ServiceProviderRegistrationForm</h1>

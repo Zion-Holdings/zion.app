@@ -10,4 +10,4 @@ async function handler(
   return res.status(result.statusCode).end();
 }
 ;
-export ;default withErrorLogging(handler);
+default withErrorLogging(handler);

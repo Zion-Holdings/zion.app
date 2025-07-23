@@ -1,4 +1,4 @@
 // useFilterTalents module placeholder
-export ;const useFilterTalents = {
+const useFilterTalents = {
   // TODO: Implement useFilterTalents functionality
 };

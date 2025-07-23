@@ -1,4 +1,4 @@
-import https from https';import logger from ./logger';
+import * from module';
 interface LatencyResult {
   url: string;
   responseTime: number;
@@ -83,7 +83,7 @@ class LatencyTester {
   }
 }
 ;
-export ;default LatencyTester;
+default LatencyTester;
 
 async function main() {
   const tester = new LatencyTester();

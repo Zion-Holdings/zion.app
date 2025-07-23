@@ -1,5 +1,5 @@
 import React from react';
-export ;default function PageHero() {
+default function PageHero() {
   return (
     <div>
       <h1>PageHero</h1>
