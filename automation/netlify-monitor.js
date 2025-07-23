@@ -12,7 +12,7 @@ class NetlifyBuildMonitor {
       netlifyToken: process.env.NETLIFY_TOKEN,
       checkInterval: 5 * 60 * 1000, // 5 minutes
       maxRetries: 3,
-      logFile: path.join(__dirname, netlify-monitor.log'),
+      logFile: path.join(__dirname, 'netlify-monitor.log'),
       statusFile: path.join(__dirname, netlify-status.json'),
       errorLogFile: path.join(__dirname, netlify-errors.json'),
       fixLogFile: path.join(__dirname, netlify-fixes.json')
