@@ -259,7 +259,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     this.improvementCycle = 0;
 
     // Start the server
-    const port = process.env.IMPROVEMENT_PORT || 3002;
+    const port = 3005;
     this.server.listen(port, () => {
       console.log(
         `📊 Infinite Improvement Dashboard running on http://localhost:${port}`,

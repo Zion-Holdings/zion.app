@@ -95,7 +95,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     this.totalImprovements = 0;
     this.successfulImprovements = 0;
     this.failedImprovements = 0;
-    this.port = process.env.IMPROVEMENT_PORT || 3003; // Different port to avoid conflicts
+    this.port = 3007; // Different port to avoid conflicts
     this.app = null;
     this.server = null;
     this.io = null;

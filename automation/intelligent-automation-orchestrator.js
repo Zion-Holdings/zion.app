@@ -26,7 +26,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.resourceManager = new ResourceManager();
     this.conflictResolver = new ConflictResolver();
     this.decisionEngine = new DecisionEngine();
-    this.port = process.env.ORCHESTRATOR_PORT || 3004;
+    this.port = 3006;
     this.app = null;
     this.server = null;
     this.io = null;

@@ -35,8 +35,8 @@ const CONFIG = {
   
   // Cursor AI integration
   CURSOR: {
-    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh',
-    API_KEY: process.env.CURSOR_API_KEY,
+    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh'
+    API_KEY: process.env.CURSOR_API_KEY
     WORKSPACE_ID: process.env.CURSOR_WORKSPACE_ID
   },
   
@@ -184,7 +184,10 @@ const now = Date.now();
         codeSmells.length > 0;
 
       if (needsImprovement) {
-        await this.queueImprovement('codeQuality', {'          type: 'codeQuality','          severity: 'medium','          data: {
+        await this.queueImprovement('codeQuality', {
+          type: 'codeQuality',
+          severity: 'medium',
+          data: {
             lintErrors: lintResults.errors,
             coverage: coverageResults.coverage,
             bundleSizeIncrease: bundleResults.sizeIncrease,
@@ -220,7 +223,10 @@ const now = Date.now();
         apiPerformance.avgResponseTime > 1000;
 
       if (needsImprovement) {
-        await this.queueImprovement('performance', {'          type: 'performance','          severity: 'high','          data: {
+        await this.queueImprovement('performance', {
+          type: 'performance',
+          severity: 'high',
+          data: {
             lighthouseScore: lighthouseResults.performance,
             webVitals,
             apiPerformance
@@ -253,7 +259,10 @@ const now = Date.now();
         suspiciousActivity.detected;
 
       if (needsImprovement) {
-        await this.queueImprovement('security', {'          type: 'security','          severity: 'critical','          data: {
+        await this.queueImprovement('security', {
+          type: 'security',
+          severity: 'critical',
+          data: {
             securityIssues: securityAudit.issues,
             vulnerabilities: vulnerabilities.count,
             suspiciousActivity: suspiciousActivity.detected
