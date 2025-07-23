@@ -9,7 +9,7 @@ class ComprehensiveAutomationTester {
     this.startTime = Date.now();
   }
 
-  log(message, level = info') {
+  log(message, level = 'info') {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -38,21 +38,21 @@ class ComprehensiveAutomationTester {
       await this.testCursorAutomation();
       this.generateReport();
     } catch (error) {
-      this.log(`Test suite failed: ${error.message}`, error');
+      this.log(`Test suite failed: ${error.message}`, 'error');
       process.exit(1);
     }
   }
 
   async testCoreAutomationSystem() {
-    this.log('Testing Core Automation System...', info');
+    this.log('Testing Core Automation System...', 'info');
     
     const coreFiles = [
-      core/IntelligentAutomationOrchestrator.js',
-      core/AutonomousAutomationManager.js',
-      core/TaskScheduler.js',
-      core/NotificationManager.js',
-      core/AnomalyDetector.js',
-      core/ReportGenerator.js
+      'core/IntelligentAutomationOrchestrator.js',
+      'core/AutonomousAutomationManager.js',
+      'core/TaskScheduler.js',
+      'core/NotificationManager.js',
+      'core/AnomalyDetector.js',
+      'core/ReportGenerator.js'
     ];
 
     for (const file of coreFiles) {
@@ -60,26 +60,26 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `Core File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
 
     try {
       const coreSystem = require('./core/IntelligentAutomationOrchestrator.js');
-      this.addTestResult('Core System Import', true, Core system imported successfully');
+      this.addTestResult('Core System Import', true, 'Core system imported successfully');
     } catch (error) {
       this.addTestResult('Core System Import', false, `Import failed: ${error.message}`);
     }
   }
 
   async testNetlifyAutomation() {
-    this.log('Testing Netlify Automation...', info');
+    this.log('Testing Netlify Automation...', 'info');
     
     const netlifyFiles = [
-      netlify-monitor.js',
-      netlify-error-fixer.js',
-      netlify-build-automation.js
+      'netlify-monitor.js',
+      'netlify-error-fixer.js',
+      'netlify-build-automation.js'
     ];
 
     for (const file of netlifyFiles) {
@@ -87,25 +87,25 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `Netlify File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
 
     try {
       const netlifyMonitor = require('./netlify-monitor.js');
-      this.addTestResult('Netlify Monitor Import', true, Netlify monitor imported successfully');
+      this.addTestResult('Netlify Monitor Import', true, 'Netlify monitor imported successfully');
     } catch (error) {
       this.addTestResult('Netlify Monitor Import', false, `Import failed: ${error.message}`);
     }
   }
 
   async testPerformanceMonitoring() {
-    this.log('Testing Performance Monitoring...', info');
+    this.log('Testing Performance Monitoring...', 'info');
     
     const perfFiles = [
-      performance/monitor.js',
-      performance/frontend-fix.js
+      'performance/monitor.js',
+      'performance/frontend-fix.js'
     ];
 
     for (const file of perfFiles) {
@@ -113,14 +113,14 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `Performance File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
 
     try {
       const perfMonitor = require('./performance/monitor.js');
-      this.addTestResult('Performance Monitor Import', true, Performance monitor imported successfully');
+      this.addTestResult('Performance Monitor Import', true, 'Performance monitor imported successfully');
     } catch (error) {
       this.addTestResult('Performance Monitor Import', false, `Import failed: ${error.message}`);
     }
