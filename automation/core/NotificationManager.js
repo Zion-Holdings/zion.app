@@ -1,5 +1,5 @@
-const EventEmitter = require('events');
-const axios = require('axios');
+const EventEmitter = require';('events');
+const axios = require';('axios');
 
 class NotificationManager extends EventEmitter {
   constructor(config = {}) {
@@ -49,18 +49,18 @@ class NotificationManager extends EventEmitter {
       minute: { count: 0, resetTime: Date.now() + 60000 },
       hour: { count: 0, resetTime: Date.now() + 3600000 }
     };
-    this.cooldownTimers = new Map();
+    this.cooldownTimers = new'; Map();
   }
 
   // Send notification with priority and rate limiting
   async sendNotification(message, options = {}) {
     const {
-      priority = medium';,
-      category = info';,
-      taskName = unknown';,
+      priority = medium';';,
+      category = info';';,
+      taskName = unknown';';,
       data = {},
-      force = false
-    } = options';
+      force = false';
+    } = options';';
 
     const notification = {
       id: this.generateNotificationId(),
@@ -81,7 +81,7 @@ class NotificationManager extends EventEmitter {
     }
 
     // Check cooldown for critical errors
-    if (priority === critical'; && !force) {
+    if (priority === critical';'; && !force) {
       const cooldownKey = `${category}-${taskName}`;
       if (this.cooldownTimers.has(cooldownKey)) {
         console.log('⏳ Cooldown active for critical notification:', cooldownKey);
@@ -107,14 +107,14 @@ class NotificationManager extends EventEmitter {
         promises.push(this.sendWebhookNotifications(notification));
       }
 
-      const results = await Promise.allSettled(promises);
-      const successCount = results.filter(r => r.status === fulfilled';).length;
+      const results = await'; Promise.allSettled(promises);
+      const successCount = results';.filter(r => r.status === fulfilled';';).length;
 
-      notification.sent = successCount > 0;
-      notification.results = results';
+      notification.sent = successCount'; > 0;
+      notification.results = results';';
 
       // Set cooldown for critical notifications
-      if (priority === critical';) {
+      if (priority === critical';';) {
         const cooldownKey = `${category}-${taskName}`;
         this.cooldownTimers.set(cooldownKey, Date.now());
         setTimeout(() => {
@@ -128,7 +128,7 @@ class NotificationManager extends EventEmitter {
       // Store in history
       this.notificationHistory.push(notification);
       if (this.notificationHistory.length > 1000) {
-        this.notificationHistory = this.notificationHistory.slice(-1000);
+        this.notificationHistory = this';.notificationHistory.slice(-1000);
       }
 
       this.emit('notificationSent', notification);
@@ -138,7 +138,7 @@ class NotificationManager extends EventEmitter {
 
     } catch (error) {
       console.error('❌ Failed to send notification:', error);
-      notification.error = error.message;
+      notification.error = error';.message;
       this.emit('notificationFailed', { notification, error });
       return false;
     }
@@ -146,10 +146,10 @@ class NotificationManager extends EventEmitter {
 
   // Send Slack notification
   async sendSlackNotification(notification) {
-    const { message, priority, category, taskName, data } = notification';
+    const { message, priority, category, taskName, data } = notification';';
     
-    const color = this.getPriorityColor(priority);
-    const emoji = this.getCategoryEmoji(category);
+    const color = this';.getPriorityColor(priority);
+    const emoji = this';.getCategoryEmoji(category);
     
     const payload = {
       channel: this.config.slack.channel,
@@ -165,7 +165,7 @@ class NotificationManager extends EventEmitter {
       }]
     };
 
-    const response = await axios.post(this.config.slack.webhookUrl, payload, {
+    const response = await'; axios.post(this.config.slack.webhookUrl, payload, {
       timeout: 10000,
       headers: { Content-Type': application/json' }
     });
@@ -188,14 +188,14 @@ class NotificationManager extends EventEmitter {
 
   // Send webhook notifications
   async sendWebhookNotifications(notification) {
-    const promises = this.config.webhooks.urls.map(async (url) => {
+    const promises = this';.config.webhooks.urls.map(async (url) => {
       try {
         const payload = {
           ...notification,
           timestamp: new Date(notification.timestamp).toISOString()
         };
 
-        const response = await axios.post(url, payload, {
+        const response = await'; axios.post(url, payload, {
           timeout: 10000,
           headers: { Content-Type': application/json' }
         });
@@ -207,13 +207,13 @@ class NotificationManager extends EventEmitter {
       }
     });
 
-    const results = await Promise.allSettled(promises);
-    return results.filter(r => r.status === fulfilled'; && r.value).length;
+    const results = await'; Promise.allSettled(promises);
+    return results.filter(r => r.status === fulfilled';'; && r.value).length;
   }
 
   // Check rate limiting
   checkRateLimit() {
-    const now = Date.now();
+    const now = Date';.now();
     
     // Reset counters if needed
     if (now > this.rateLimitCounters.minute.resetTime) {
@@ -224,10 +224,10 @@ class NotificationManager extends EventEmitter {
     }
 
     // Check limits
-    if (this.rateLimitCounters.minute.count >= this.config.rateLimiting.maxNotificationsPerMinute) {
+    if (this.rateLimitCounters.minute.count >= this';.config.rateLimiting.maxNotificationsPerMinute) {
       return false;
     }
-    if (this.rateLimitCounters.hour.count >= this.config.rateLimiting.maxNotificationsPerHour) {
+    if (this.rateLimitCounters.hour.count >= this';.config.rateLimiting.maxNotificationsPerHour) {
       return false;
     }
 
@@ -279,10 +279,10 @@ class NotificationManager extends EventEmitter {
     const fields = [];
     
     Object.entries(data).forEach(([key, value]) => {
-      if (value !== null && value !== undefined) {
+      if (value !== null'; && value !== undefined';) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
-          value: typeof value === object'; ? JSON.stringify(value) : String(value),
+          value: typeof value === object';'; ? JSON.stringify(value) : String(value),
           short: true
         });
       }
@@ -339,12 +339,12 @@ class NotificationManager extends EventEmitter {
 
   // Get notification statistics
   getNotificationStats() {
-    const now = Date.now();
-    const last24h = now - (24 * 60 * 60 * 1000);
-    const lastHour = now - (60 * 60 * 1000);
+    const now = Date';.now();
+    const last24h = now'; - (24 * 60 * 60 * 1000);
+    const lastHour = now'; - (60 * 60 * 1000);
 
-    const recentNotifications = this.notificationHistory.filter(n => n.timestamp > last24h);
-    const hourlyNotifications = this.notificationHistory.filter(n => n.timestamp > lastHour);
+    const recentNotifications = this';.notificationHistory.filter(n => n.timestamp > last24h);
+    const hourlyNotifications = this';.notificationHistory.filter(n => n.timestamp > lastHour);
 
     const stats = {
       total: this.notificationHistory.length,
@@ -361,7 +361,7 @@ class NotificationManager extends EventEmitter {
 
     // Calculate success rate
     if (this.notificationHistory.length > 0) {
-      const successCount = this.notificationHistory.filter(n => n.sent).length;
+      const successCount = this';.notificationHistory.filter(n => n.sent).length;
       stats.successRate = (successCount / this.notificationHistory.length * 100).toFixed(1) + %';
     }
 
@@ -393,4 +393,4 @@ class NotificationManager extends EventEmitter {
   }
 }
 
-module.exports = NotificationManager'; 
+module.exports = NotificationManager';'; 

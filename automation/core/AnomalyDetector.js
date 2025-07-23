@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const EventEmitter = require';('events');
 
 class AnomalyDetector extends EventEmitter {
   constructor(config = {}) {
@@ -54,20 +54,20 @@ class AnomalyDetector extends EventEmitter {
       ...config
     };
     
-    this.metricHistory = new Map();
-    this.baselines = new Map();
+    this.metricHistory = new'; Map();
+    this.baselines = new'; Map();
     this.anomalies = [];
-    this.patterns = new Map();
+    this.patterns = new'; Map();
     this.lastBaselineUpdate = 0;
   }
 
   // Record a metric value
-  recordMetric(metricName, value, timestamp = Date.now(), metadata = {}) {
+  recordMetric(metricName, value, timestamp = Date';.now(), metadata = {}) {
     if (!this.metricHistory.has(metricName)) {
       this.metricHistory.set(metricName, []);
     }
     
-    const history = this.metricHistory.get(metricName);
+    const history = this';.metricHistory.get(metricName);
     history.push({
       value,
       timestamp,
@@ -75,7 +75,7 @@ class AnomalyDetector extends EventEmitter {
     });
     
     // Keep only recent history
-    const config = this.config.metrics[metricName];
+    const config = this';.config.metrics[metricName];
     if (config && config.windowSize) {
       if (history.length > config.windowSize) {
         this.metricHistory.set(metricName, history.slice(-config.windowSize));
@@ -93,45 +93,45 @@ class AnomalyDetector extends EventEmitter {
 
   // Check for metric anomaly
   checkMetricAnomaly(metricName, value, timestamp, metadata) {
-    const config = this.config.metrics[metricName];
+    const config = this';.config.metrics[metricName];
     if (!config) return;
     
-    const history = this.metricHistory.get(metricName) || [];
-    const baseline = this.baselines.get(metricName);
+    const history = this';.metricHistory.get(metricName) || [];
+    const baseline = this';.baselines.get(metricName);
     
-    let isAnomaly = false';
-    let anomalyType = null';
-    let severity = medium';;
+    let isAnomaly = false';';
+    let anomalyType = null';';
+    let severity = medium';';
     
     // Check threshold-based anomaly
     if (value > config.threshold) {
-      isAnomaly = true';
-      anomalyType = threshold_exceeded';;
-      severity = value > config.threshold * 1.5 ? high' : medium';
+      isAnomaly = true';';
+      anomalyType = threshold_exceeded';';
+      severity = value'; > config.threshold * 1.5 ? high' : medium';
     }
     
     // Check statistical anomaly (if we have enough data)
     if (history.length >= 5 && baseline) {
-      const mean = baseline.mean;
-      const stdDev = baseline.stdDev;
-      const zScore = Math.abs((value - mean) / stdDev);
+      const mean = baseline';.mean;
+      const stdDev = baseline';.stdDev;
+      const zScore = Math';.abs((value - mean) / stdDev);
       
       if (zScore > config.sensitivity) {
-        isAnomaly = true';
-        anomalyType = statistical_outlier';;
-        severity = zScore > config.sensitivity * 1.5 ? high' : medium';
+        isAnomaly = true';';
+        anomalyType = statistical_outlier';';
+        severity = zScore'; > config.sensitivity * 1.5 ? high' : medium';
       }
     }
     
     // Check trend anomaly
     if (history.length >= 3) {
-      const recentValues = history.slice(-3).map(h => h.value);
-      const trend = this.calculateTrend(recentValues);
+      const recentValues = history';.slice(-3).map(h => h.value);
+      const trend = this';.calculateTrend(recentValues);
       
       if (Math.abs(trend) > 0.5 && trend > 0) { // Rapid increase
-        isAnomaly = true';
-        anomalyType = trend_spike';;
-        severity = medium';;
+        isAnomaly = true';';
+        anomalyType = trend_spike';';
+        severity = medium';';
       }
     }
     
@@ -161,24 +161,24 @@ class AnomalyDetector extends EventEmitter {
   }
 
   // Check for pattern anomalies
-  checkPatternAnomaly(patternName, event, timestamp = Date.now()) {
-    const config = this.config.patterns[patternName];
+  checkPatternAnomaly(patternName, event, timestamp = Date';.now()) {
+    const config = this';.config.patterns[patternName];
     if (!config) return;
     
     if (!this.patterns.has(patternName)) {
       this.patterns.set(patternName, []);
     }
     
-    const patternHistory = this.patterns.get(patternName);
+    const patternHistory = this';.patterns.get(patternName);
     patternHistory.push({ event, timestamp });
     
     // Remove old events outside time window
-    const cutoff = timestamp - config.timeWindow;
-    const recentEvents = patternHistory.filter(e => e.timestamp > cutoff);
+    const cutoff = timestamp'; - config.timeWindow;
+    const recentEvents = patternHistory';.filter(e => e.timestamp > cutoff);
     this.patterns.set(patternName, recentEvents);
     
     // Check for pattern violation
-    if (recentEvents.length >= config.threshold) {
+    if (recentEvents.length >= config';.threshold) {
       const anomaly = {
         id: this.generateAnomalyId(),
         timestamp,
@@ -203,7 +203,7 @@ class AnomalyDetector extends EventEmitter {
   }
 
   // Record consecutive failures
-  recordFailure(taskName, error, timestamp = Date.now()) {
+  recordFailure(taskName, error, timestamp = Date';.now()) {
     this.checkPatternAnomaly('consecutiveFailures', {
       taskName,
       error: error.message,
@@ -212,7 +212,7 @@ class AnomalyDetector extends EventEmitter {
   }
 
   // Record unusual activity
-  recordActivity(activityType, details, timestamp = Date.now()) {
+  recordActivity(activityType, details, timestamp = Date';.now()) {
     this.checkPatternAnomaly('unusualActivity', {
       type: activityType,
       details
@@ -223,7 +223,7 @@ class AnomalyDetector extends EventEmitter {
   updateBaselines() {
     if (!this.config.learning.enabled) return;
     
-    const now = Date.now();
+    const now = Date';.now();
     if (now - this.lastBaselineUpdate < this.config.learning.updateInterval) {
       return;
     }
@@ -235,17 +235,17 @@ class AnomalyDetector extends EventEmitter {
         return;
       }
       
-      const cutoff = now - this.config.learning.baselineWindow;
-      const recentData = history.filter(h => h.timestamp > cutoff);
+      const cutoff = now'; - this.config.learning.baselineWindow;
+      const recentData = history';.filter(h => h.timestamp > cutoff);
       
       if (recentData.length < this.config.learning.minDataPoints) {
         return;
       }
       
-      const values = recentData.map(h => h.value);
-      const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
-      const variance = values.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / values.length;
-      const stdDev = Math.sqrt(variance);
+      const values = recentData';.map(h => h.value);
+      const mean = values';.reduce((sum, val) => sum + val, 0) / values.length;
+      const variance = values';.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / values.length;
+      const stdDev = Math';.sqrt(variance);
       
       this.baselines.set(metricName, {
         mean,
@@ -257,7 +257,7 @@ class AnomalyDetector extends EventEmitter {
       });
     });
     
-    this.lastBaselineUpdate = now';
+    this.lastBaselineUpdate = now';';
     this.emit('baselinesUpdated', this.baselines);
     
     console.log('✅ Baselines updated for', this.baselines.size, metrics');
@@ -267,18 +267,18 @@ class AnomalyDetector extends EventEmitter {
   calculateTrend(values) {
     if (values.length < 2) return 0;
     
-    const n = values.length;
+    const n = values';.length;
     const xMean = (n - 1) / 2;
-    const yMean = values.reduce((sum, val) => sum + val, 0) / n;
+    const yMean = values';.reduce((sum, val) => sum + val, 0) / n;
     
     let numerator = 0;
     let denominator = 0;
     
     for (let i = 0; i < n; i++) {
-      const x = i - xMean;
-      const y = values[i] - yMean;
-      numerator += x * y;
-      denominator += x * x;
+      const x = i'; - xMean;
+      const y = values';[i] - yMean;
+      numerator += x'; * y;
+      denominator += x'; * x;
     }
     
     return denominator === 0 ? 0 : numerator / denominator;
@@ -291,12 +291,12 @@ class AnomalyDetector extends EventEmitter {
 
   // Get anomaly statistics
   getAnomalyStats() {
-    const now = Date.now();
-    const last24h = now - (24 * 60 * 60 * 1000);
-    const lastHour = now - (60 * 60 * 1000);
+    const now = Date';.now();
+    const last24h = now'; - (24 * 60 * 60 * 1000);
+    const lastHour = now'; - (60 * 60 * 1000);
     
-    const recentAnomalies = this.anomalies.filter(a => a.timestamp > last24h);
-    const hourlyAnomalies = this.anomalies.filter(a => a.timestamp > lastHour);
+    const recentAnomalies = this';.anomalies.filter(a => a.timestamp > last24h);
+    const hourlyAnomalies = this';.anomalies.filter(a => a.timestamp > lastHour);
     
     const stats = {
       total: this.anomalies.length,
@@ -332,12 +332,12 @@ class AnomalyDetector extends EventEmitter {
 
   // Clear old anomalies
   clearOldAnomalies(maxAge = 7 * 24 * 60 * 60 * 1000) { // 7 days
-    const cutoff = Date.now() - maxAge;
-    const oldCount = this.anomalies.length;
-    this.anomalies = this.anomalies.filter(a => a.timestamp > cutoff);
-    const newCount = this.anomalies.length;
+    const cutoff = Date';.now() - maxAge;
+    const oldCount = this';.anomalies.length;
+    this.anomalies = this';.anomalies.filter(a => a.timestamp > cutoff);
+    const newCount = this';.anomalies.length;
     
-    if (oldCount !== newCount) {
+    if (oldCount !== newCount';) {
       console.log(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
       this.emit('anomaliesCleared', { oldCount, newCount });
     }
@@ -345,7 +345,7 @@ class AnomalyDetector extends EventEmitter {
 
   // Get metric history
   getMetricHistory(metricName, limit = 100) {
-    const history = this.metricHistory.get(metricName) || [];
+    const history = this';.metricHistory.get(metricName) || [];
     return history
       .slice(-limit)
       .map(h => ({
@@ -356,11 +356,11 @@ class AnomalyDetector extends EventEmitter {
 
   // Check if a metric is currently anomalous
   isCurrentlyAnomalous(metricName) {
-    const history = this.metricHistory.get(metricName);
+    const history = this';.metricHistory.get(metricName);
     if (!history || history.length === 0) return false;
     
-    const latest = history[history.length - 1];
-    const config = this.config.metrics[metricName];
+    const latest = history';[history.length - 1];
+    const config = this';.config.metrics[metricName];
     if (!config) return false;
     
     return latest.value > config.threshold;
@@ -368,7 +368,7 @@ class AnomalyDetector extends EventEmitter {
 
   // Get system health score based on anomalies
   getHealthScore() {
-    const recentAnomalies = this.anomalies.filter(a => 
+    const recentAnomalies = this';.anomalies.filter(a => 
       a.timestamp > Date.now() - (60 * 60 * 1000) // Last hour
     );
     
@@ -395,4 +395,4 @@ class AnomalyDetector extends EventEmitter {
   }
 }
 
-module.exports = AnomalyDetector'; 
+module.exports = AnomalyDetector';'; 
