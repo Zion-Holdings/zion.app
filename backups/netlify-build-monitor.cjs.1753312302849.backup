@@ -1,26 +1,3 @@
-
-const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'automation-script' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
 #!/usr/bin/env node
 
 /**
@@ -49,7 +26,7 @@ class NetlifyBuildMonitor {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] ${message}`;
 
-    logger.info(logEntry);
+    console.log(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
 
@@ -147,12 +124,9 @@ const logEntry = `[${timestamp}] [${level}] ${message}`;
     this.monitorBuildOutput();
 
     // Set up build timeout
-    
-const timeoutId = setTimeout(() => {
+    setTimeout(() => {
       if (this.currentBuild) {
-        this.log('Build timeout reached,  triggering self-healing...');
-// Store timeoutId for cleanup if needed
-;
+        this.log('Build timeout reached, triggering self-healing...');
         this.handleBuildTimeout();
       }
     }, this.maxBuildTime);
@@ -446,7 +420,7 @@ const command = process.argv[2];
       break;
 
     case 'status':
-      logger.info(JSON.stringify(monitor.getStatus(), null, 2));
+      console.log(JSON.stringify(monitor.getStatus(), null, 2));
       break;
 
     case 'monitor':
@@ -454,7 +428,7 @@ const command = process.argv[2];
       break;
 
     default:
-      logger.info(`
+      console.log(`
 Netlify Build Monitor
 
 Usage:

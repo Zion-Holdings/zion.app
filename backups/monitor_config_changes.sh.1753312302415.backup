@@ -1,15 +1,4 @@
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting Script...');
-    
-    try {
-      #!/bin/bash
+#!/bin/bash
 
 # Configuration
 CONFIG_FILE="scripts/config_integrity_check.txt"
@@ -204,25 +193,3 @@ mv "$CHECKSUM_FILE_TMP" "$CHECKSUM_FILE"
 
 log_message "Configuration integrity monitor finished."
 exit 0
-    } catch (error) {
-      console.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    console.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;

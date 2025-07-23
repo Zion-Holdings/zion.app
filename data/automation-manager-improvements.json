@@ -194,5 +194,21 @@
       "Refactored to class structure"
     ],
     "timestamp": "2025-07-23T23:11:41.403Z"
+  },
+  {
+    "scriptPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/monitor-netlify-build.sh",
+    "scriptName": "monitor-netlify-build.sh",
+    "improvements": [
+      "Refactored to class structure"
+    ],
+    "timestamp": "2025-07-23T23:11:42.394Z"
+  },
+  {
+    "scriptPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/monitor_config_changes.sh",
+    "scriptName": "monitor_config_changes.sh",
+    "improvements": [
+      "Refactored to class structure"
+    ],
+    "timestamp": "2025-07-23T23:11:42.418Z"
   }
 ]

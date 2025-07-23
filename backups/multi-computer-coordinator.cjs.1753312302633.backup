@@ -1,26 +1,3 @@
-
-const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'automation-script' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -147,11 +124,11 @@ const { result, error } = req.body;
 
   async start() {
     if (this.isRunning) {
-      logger.info('Coordinator is already running');
+      console.log('Coordinator is already running');
       return;
     }
 
-    logger.info(
+    console.log(
       `🚀 Starting Multi-Computer Coordinator (${this.isMaster ? 'Master' : 'Worker'})...`,
     );
     this.isRunning = true;
@@ -164,7 +141,7 @@ const { result, error } = req.body;
 
     // Start Express server
     this.server = this.app.listen(this.port, () => {
-      logger.info(`⚡ Coordinator API running on port ${this.port}`);
+      console.log(`⚡ Coordinator API running on port ${this.port}`);
     });
 
     // If master, start discovery
@@ -174,7 +151,7 @@ const { result, error } = req.body;
   }
 
   stop() {
-    logger.info('🛑 Stopping Multi-Computer Coordinator...');
+    console.log('🛑 Stopping Multi-Computer Coordinator...');
     this.isRunning = false;
 
     if (this.server) {
@@ -195,7 +172,7 @@ const { result, error } = req.body;
     };
 
     this.nodes.set(nodeId, node);
-    logger.info(`📡 Node registered: ${nodeId} (${hostname}:${port})`);
+    console.log(`📡 Node registered: ${nodeId} (${hostname}:${port})`);
   }
 
   updateNodeStatus(nodeId, status, currentTask, load) {
@@ -232,7 +209,7 @@ const taskObj = {
       return priorityOrder[b.priority] - priorityOrder[a.priority];
     });
 
-    logger.info(`📝 Task submitted: ${taskId} (${priority})`);
+    console.log(`📝 Task submitted: ${taskId} (${priority})`);
     return taskId;
   }
 
@@ -256,7 +233,7 @@ const taskObj = {
         }
       }
 
-      logger.info(`✅ Task completed: ${taskId}`);
+      console.log(`✅ Task completed: ${taskId}`);
     }
   }
 
@@ -309,9 +286,9 @@ const selectedNode = this.selectBestNode(availableNodes, task);
       // Send task to node
       await this.sendTaskToNode(task, node);
 
-      logger.info(`📤 Task ${task.id} assigned to node ${node.id}`);
+      console.log(`📤 Task ${task.id} assigned to node ${node.id}`);
     } catch (error) {
-      logger.error(
+      console.error(
         `Failed to assign task ${task.id} to node ${node.id}:`,
         error,
       );
@@ -328,15 +305,12 @@ const selectedNode = this.selectBestNode(availableNodes, task);
   async sendTaskToNode(task, node) {
     // In a real implementation, this would send the task to the node
     // For now, we'll simulate this by executing the task locally
-    logger.info(`Sending task to node ${node.id}: ${task.task}`);
+    console.log(`Sending task to node ${node.id}: ${task.task}`);
 
     // Simulate task execution
-    
-const timeoutId = setTimeout(
+    setTimeout(
       () => {
-        this.completeTask(task.id,  { success: true, nodeId: node.id }, null);
-// Store timeoutId for cleanup if needed
-;
+        this.completeTask(task.id, { success: true, nodeId: node.id }, null);
       },
       Math.random() * 10000 + 5000,
     ); // Random delay between 5-15 seconds
@@ -351,7 +325,7 @@ const timeout = 60 * 1000; // 60 seconds
 
       for (const [nodeId, node] of this.nodes) {
         if (now - node.lastSeen > timeout) {
-          logger.info(`⚠️ Node ${nodeId} appears to be offline`);
+          console.log(`⚠️ Node ${nodeId} appears to be offline`);
           node.status = 'offline';
 
           // Reassign any tasks from offline nodes
@@ -371,7 +345,7 @@ const timeout = 60 * 1000; // 60 seconds
   }
 
   async startNodeDiscovery() {
-    logger.info('🔍 Starting node discovery...');
+    console.log('🔍 Starting node discovery...');
 
     // In a real implementation, this would discover nodes on the network
     // For now, we'll simulate by adding some local nodes
@@ -384,11 +358,8 @@ const timeout = 60 * 1000; // 60 seconds
     ]);
 
     // Simulate discovering other nodes
-    
-const timeoutId = setTimeout(() => {
-      this.registerNode('node-1',  '192.168.1.100', 3003, ['build', 'test']);
-// Store timeoutId for cleanup if needed
-;
+    setTimeout(() => {
+      this.registerNode('node-1', '192.168.1.100', 3003, ['build', 'test']);
       this.registerNode('node-2', '192.168.1.101', 3004, ['lint', 'optimize']);
     }, 5000);
   }
@@ -396,14 +367,14 @@ const timeoutId = setTimeout(() => {
   async distributeWorkload() {
     if (!this.isMaster) return;
 
-    logger.info('📊 Distributing workload...');
+    console.log('📊 Distributing workload...');
 
     // Analyze current workload
     const totalNodes = this.nodes.size
 const activeTasks = this.currentTasks.size
 const queuedTasks = this.taskQueue.length;
 
-    logger.info(
+    console.log(
       `Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`,
     );
 
@@ -437,13 +408,13 @@ const command = process.argv[2];
       coordinator.stop();
       break;
     case 'status':
-      logger.info(coordinator.isRunning ? 'Running' : 'Stopped');
+      console.log(coordinator.isRunning ? 'Running' : 'Stopped');
       break;
     case 'distribute':
       coordinator.distributeWorkload();
       break;
     default:
-      logger.info(
+      console.log(
         'Usage: node multi-computer-coordinator.cjs [start|stop|status|distribute]',
       );
   }
