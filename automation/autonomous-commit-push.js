@@ -34,7 +34,7 @@ class AutonomousCommitPush {
         }
     }
 
-    log(message, level = info') {
+    log(message, level = 'info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
