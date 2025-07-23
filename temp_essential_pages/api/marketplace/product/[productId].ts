@@ -1,4 +1,4 @@
-import { PrismaClient, type Product as ProductModel } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';;
+import { PrismaClient, type Product as ProductModel } from @prisma/client';import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';;
 const prisma = new PrismaClient();
 
 // Ensure this type is consistent with the one in products.ts
@@ -13,7 +13,7 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats | { error: string }>
 ) {
-  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const { _productId } = req.query as { productId: string | string[] };

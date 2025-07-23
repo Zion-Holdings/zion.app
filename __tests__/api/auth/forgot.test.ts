@@ -1,4 +1,4 @@
-import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import axios from axios';import forgotHandler from ../../../pages/api/auth/forgot';;jest.mock('axios')const mockedAxios = axios as jest.Mocked<typeof axios>
+import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import axios from axios';import forgotHandler from ../../../pages/api/auth/forgot';;jest.mock('axios')const mockedAxios = axios as jest.Mocked<typeof axios>
 
 describe('/api/auth/forgot API Endpoint', () => {'  const OLD_ENV = process.env
   beforeEach(() => {

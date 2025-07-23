@@ -81,7 +81,7 @@ describe('Login Redirect Fix - Issue #2', () => {'  const mockReplace = jest.fn(
     });
 
     it('should handle special characters in query parameters', async () => {'      mockRouter.query = {
-        returnTo: /search?q=AI & Machine Learning',        message: Please login to continue''      };
+        returnTo: /search?q=AI & Machine Learning',        message: 'Please login to continue''      };
       
       render(<LoginRedirect />);
       

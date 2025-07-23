@@ -99,7 +99,7 @@ describe('Integration Test: Signup and Authenticated Call', () => {'  beforeEach
     // 5. Mock the subsequent /api/users/me endpoint (or any protected route)
     const mockUserMeResponse = { id: user-123', email: test@example.com', _name: Test User' };    fetchMock.mockResponseOnce(async (request) => {
       if (request.url.endsWith('/api/users/me') && request.headers.get('Authorization') === Bearer test-jwt-token') {'        return Promise.resolve(JSON.stringify(mockUserMeResponse));
-      } else if (request.url.endsWith('/api/users/me')) {'        return Promise.resolve({ status: 401, body: JSON.stringify({ message: Unauthorized from mock' }) });      }
+      } else if (request.url.endsWith('/api/users/me')) {'        return Promise.resolve({ status: 401, body: JSON.stringify({ message: 'Unauthorized from mock' }) });      }
       return Promise.resolve({ status: 404, body: Not Found' });    });
 
     // 6. Simulate making the authenticated API call

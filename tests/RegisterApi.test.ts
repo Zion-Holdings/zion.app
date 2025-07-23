@@ -30,9 +30,9 @@ describe('register API', () => {'  it('returns 201 on success', async () => {'  
 
   it('returns 409 for duplicate email', async () => {'    mockSignUp.mockResolvedValue({
       data: { user: null },
-      error: { message: User already registered', status: 400 },    });
+      error: { message: 'User already registered', status: 400 },    });
     const req = mockReq({ name: John', email: a@b.c', password: Password123' });    const res = mockRes();
     await handler(req, res);
     expect(res.status).toHaveBeenCalledWith(409);
-    expect(res.json).toHaveBeenCalledWith({ message: User already registered' });  });
+    expect(res.json).toHaveBeenCalledWith({ message: 'User already registered' });  });
 });

@@ -1,5 +1,5 @@
 // pages/api/sentry-auto-test-api.ts
-// import type { NextApiResponse } from next'; // Removed unused import'import { withErrorLogging } from @/utils/withErrorLogging';;
+// import type { NextApiResponse } from 'next'; // Removed unused import'import { withErrorLogging } from @/utils/withErrorLogging';;
 function handler() {
   // This error should be automatically captured by Sentry's'  // auto-instrumentation for API routes.
   // auto-instrumentation for API routes.

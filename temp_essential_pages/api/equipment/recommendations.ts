@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import type { ProductListing } from @/types/listings';
+import type { NextApiRequest, NextApiResponse } from 'next';import type { ProductListing } from @/types/listings';
 // Mock personalized equipment recommendations;
 const mockRecommendations: ProductListing[] = [
   {
@@ -21,7 +21,7 @@ default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductListing[] | { error: string }>
 ) {
-  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   try {

@@ -1,5 +1,5 @@
 import categoriesApiHandler from @/pages/api/categories'; // Correctly import the default export'import { CATEGORIES } from @/data/categories';// Prisma is now mocked from @prisma/client directly in the jest.mock call;
-import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';import { PrismaClient } from @prisma/client';
+import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';import { PrismaClient } from @prisma/client';
 // Mock Prisma
 jest.mock('@prisma/client', () => {'  const mockPrismaClient = {
     category: {

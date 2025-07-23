@@ -1,4 +1,4 @@
-import React from react';import Link from next/link';import type { GetServerSideProps } from next';import { SEO } from "@/components/SEO";"import { GradientHeading } from "@/components/GradientHeading";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+import React from react';import Link from next/link';import type { GetServerSideProps } from 'next';import { SEO } from "@/components/SEO";"import { GradientHeading } from "@/components/GradientHeading";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const _getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}

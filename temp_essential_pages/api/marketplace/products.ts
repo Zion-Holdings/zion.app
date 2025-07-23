@@ -1,4 +1,4 @@
-import { PrismaClient, type Product as ProductModel, Prisma } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';import * as Sentry from @sentry/nextjs';
+import { PrismaClient, type Product as ProductModel, Prisma } from @prisma/client';import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';import * as Sentry from @sentry/nextjs';
 interface ProductStats {
   avg: number | null;
   count: number;
@@ -36,7 +36,7 @@ async function handler(
   // This check ensures the service is not attempting to run without proper configuration.
   if (!process.env.DATABASE_URL) {
     console.error("DATABASE_URL is not set or empty.");"    return res.status(503).json({ error: Service Unavailable: Database configuration is missing.' });  }
-  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   res.setHeader('Access-Control-Allow-Origin', *');

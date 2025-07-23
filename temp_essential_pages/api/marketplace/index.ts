@@ -1,11 +1,11 @@
-import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';import { MARKETPLACE_PRODUCTS } from @/data/marketplace-products';import type { MarketplaceProduct } from @/types/marketplace';;
+import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from 'next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';import { MARKETPLACE_PRODUCTS } from @/data/marketplace-products';import type { MarketplaceProduct } from @/types/marketplace';;
 const prisma = new PrismaClient();
 
 async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ products: unknown[] } | { error: string }>
 ) {
-  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const page = parseInt((req.query.page as string) || 1', 10);  const limit = parseInt((req.query.limit as string) || 20', 10);  const skip = (page - 1) * limit;

@@ -1,4 +1,4 @@
-import { createClient } from @supabase/supabase-js';import type { NextApiRequest, NextApiResponse } from next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';import { ENV_CONFIG } from @/utils/environmentConfig';
+import { createClient } from @supabase/supabase-js';import type { NextApiRequest, NextApiResponse } from 'next';import * as Sentry from @sentry/nextjs';import { withErrorLogging } from @/utils/withErrorLogging';import { ENV_CONFIG } from @/utils/environmentConfig';
 // 🔐 _SECURITY: Development users from environment variables;
 const getDevUsers = () => {
   // Only load development users in development mode
@@ -51,7 +51,7 @@ async function handler(
 ) {
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === development';  
-  if (req.method !== POST') {'    return res.status(405).json({ error: Method not allowed' });  }
+  if (req.method !== 'POST') {'    return res.status(405).json({ error: Method not allowed' });  }
 
   const { email, password } = req['body'] as { email?: unknown, password?: unknown };
   if (!email || !password) {
@@ -77,7 +77,7 @@ async function handler(
           email_verified: true,
           created_at: new Date().toISOString()
         },
-        message: Development authentication successful''      });
+        message: 'Development authentication successful''      });
     } else {
       if (isDevelopment) {
         console.warn('🔧 LOGIN TRACE: Development authentication failed');        console.warn('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));      }
@@ -123,7 +123,7 @@ async function handler(
     return res.status(200).json({
       user: data.user,
       session: data.session,
-      message: Authentication successful''    });
+      message: 'Authentication successful''    });
 
   } catch {
     if (isDevelopment) {

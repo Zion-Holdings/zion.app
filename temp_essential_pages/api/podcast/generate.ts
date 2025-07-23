@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';;
+import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';;
 function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const { invitee = Guest', topic = Zion' } = req['body'] || {};

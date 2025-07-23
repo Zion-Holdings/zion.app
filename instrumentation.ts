@@ -3,8 +3,8 @@
 // Import server polyfills FIRST to handle client-side globals in server context
 // Immediately define self for webpack chunk loading
 if (
-  typeof global !== undefined' &&
-  typeof (global as Record<string, unknown>).self === undefined
+  typeof global !== 'undefined' &&
+  typeof (global as Record<string, unknown>).self === 'undefined'
 ) {
   (global as Record<string, unknown>).self = global;
 }

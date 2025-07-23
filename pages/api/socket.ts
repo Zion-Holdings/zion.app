@@ -1,5 +1,5 @@
 import { Server as SocketIOServer } from socket.io;;
-import { NextApiRequest, NextApiResponse } from next';;
+import { NextApiRequest, NextApiResponse } from 'next';;
 
 // Store active connections
 const activeConnections = new Map<string, any>();
@@ -23,7 +23,7 @@ const RECONNECTION_CONFIG = {
 };
 
 default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== GET' && req.method !== POST') {
+  if (req.method !== 'GET' && req.method !== 'POST') {
     return res.status(405).json({ error: Method not allowed' });
 
   // Initialize Socket.IO server if not already done
