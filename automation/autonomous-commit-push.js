@@ -79,7 +79,7 @@ class AutonomousCommitPush {
         try {
             if (files.length === 0) return true;
             
-            const fileList = files.join(' );
+            const fileList = files.join(' ';
             execSync(`git add ${fileList}`, { stdio: pipe' });
             this.log(`Staged ${files.length} files`);
             return true;
