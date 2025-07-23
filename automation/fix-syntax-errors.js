@@ -13,22 +13,22 @@ class SyntaxErrorFixer {
     console.log('🔧 Fixing syntax errors in automation files...');
     
     const filesToFix = [
-      test-all-automations.js',
-      core/IntelligentAutomationOrchestrator.js',
-      core/AutonomousAutomationManager.js',
-      core/TaskScheduler.js',
-      core/NotificationManager.js',
-      core/AnomalyDetector.js',
-      core/ReportGenerator.js',
-      netlify-monitor.js',
-      netlify-error-fixer.js',
-      netlify-build-automation.js',
-      performance/monitor.js',
-      performance/frontend-fix.js',
-      continuous-improvement/enhanced-automation.js',
-      continuous-improvement/monitor.js',
-      continuous-improvement/improve.js',
-      tasks/DependencyUpdater.js
+      'test-all-automations.js',
+      'core/IntelligentAutomationOrchestrator.js',
+      'core/AutonomousAutomationManager.js',
+      'core/TaskScheduler.js',
+      'core/NotificationManager.js',
+      'core/AnomalyDetector.js',
+      'core/ReportGenerator.js',
+      'netlify-monitor.js',
+      'netlify-error-fixer.js',
+      'netlify-build-automation.js',
+      'performance/monitor.js',
+      'performance/frontend-fix.js',
+      'continuous-improvement/enhanced-automation.js',
+      'continuous-improvement/monitor.js',
+      'continuous-improvement/improve.js',
+      'tasks/DependencyUpdater.js'
     ];
 
     for (const file of filesToFix) {
@@ -44,7 +44,7 @@ class SyntaxErrorFixer {
 
   async fixFile(filePath) {
     try {
-      const content = await fs.readFile(filePath, utf8');
+      const content = await fs.readFile(filePath, 'utf8');
       let fixedContent = content;
 
       // Fix common syntax errors
@@ -54,7 +54,7 @@ class SyntaxErrorFixer {
       fixedContent = this.fixExtraSemicolons(fixedContent);
 
       if (fixedContent !== content) {
-        await fs.writeFile(filePath, fixedContent, utf8');
+        await fs.writeFile(filePath, fixedContent, 'utf8');
         this.fixedFiles.push(filePath);
         console.log(`✅ Fixed: ${filePath}`);
       } else {
@@ -67,9 +67,9 @@ class SyntaxErrorFixer {
 
   fixTrailingQuotes(content) {
     // Remove trailing single quotes (any number of them)
-    return content.replace(/;+$/gm, ;)
-                  .replace(/'+$/gm, )
-                  .replace(/;+$/gm, ;);
+    return content.replace(/;+$/gm, ';')
+                  .replace(/'+$/gm, ')
+                  .replace(/;+$/gm, ';');
   }
 
   fixUnclosedStrings(content) {
@@ -87,7 +87,7 @@ class SyntaxErrorFixer {
 
   fixExtraSemicolons(content) {
     // Remove extra semicolons followed by quotes
-    return content.replace(/;+'+$/gm, ;);
+    return content.replace(/;+'+$/gm, ';');
   }
 
   printReport() {
