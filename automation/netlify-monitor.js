@@ -13,9 +13,9 @@ class NetlifyBuildMonitor {
       checkInterval: 5 * 60 * 1000, // 5 minutes
       maxRetries: 3,
       logFile: path.join(__dirname, 'netlify-monitor.log'),
-      statusFile: path.join(__dirname, netlify-status.json'),
-      errorLogFile: path.join(__dirname, netlify-errors.json'),
-      fixLogFile: path.join(__dirname, netlify-fixes.json')
+      statusFile: path.join(__dirname, 'netlify-status.json'),
+      errorLogFile: path.join(__dirname, 'netlify-errors.json'),
+      fixLogFile: path.join(__dirname, 'netlify-fixes.json')
     };
 
     this.status = {
@@ -30,7 +30,7 @@ class NetlifyBuildMonitor {
     this.loadStatus();
   }
 
-  log(message, level = info';;) {
+  log(message, level = 'info') {
     const timestamp = new Date().toISOString()
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
