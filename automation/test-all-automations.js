@@ -47,12 +47,12 @@ class ComprehensiveAutomationTester {
     this.log('Testing Core Automation System...', 'info');
     
     const coreFiles = [
-      core/IntelligentAutomationOrchestrator.js',
-      core/AutonomousAutomationManager.js',
-      core/TaskScheduler.js',
-      core/NotificationManager.js',
-      core/AnomalyDetector.js',
-      core/ReportGenerator.js
+      'core/IntelligentAutomationOrchestrator.js',
+      'core/AutonomousAutomationManager.js',
+      'core/TaskScheduler.js',
+      'core/NotificationManager.js',
+      'core/AnomalyDetector.js',
+      'core/ReportGenerator.js'
     ];
 
     for (const file of coreFiles) {
@@ -77,9 +77,9 @@ class ComprehensiveAutomationTester {
     this.log('Testing Netlify Automation...', 'info');
     
     const netlifyFiles = [
-      netlify-monitor.js',
-      netlify-error-fixer.js',
-      netlify-build-automation.js
+      'netlify-monitor.js',
+      'netlify-error-fixer.js',
+      'netlify-build-automation.js'
     ];
 
     for (const file of netlifyFiles) {
@@ -104,8 +104,8 @@ class ComprehensiveAutomationTester {
     this.log('Testing Performance Monitoring...', 'info');
     
     const perfFiles = [
-      performance/monitor.js',
-      performance/frontend-fix.js
+      'performance/monitor.js',
+      'performance/frontend-fix.js'
     ];
 
     for (const file of perfFiles) {
@@ -130,9 +130,9 @@ class ComprehensiveAutomationTester {
     this.log('Testing Continuous Improvement System...', 'info');
     
     const ciFiles = [
-      continuous-improvement/enhanced-automation.js',
-      continuous-improvement/monitor.js',
-      continuous-improvement/improve.js
+      'continuous-improvement/enhanced-automation.js',
+      'continuous-improvement/monitor.js',
+      'continuous-improvement/improve.js'
     ];
 
     for (const file of ciFiles) {
@@ -157,7 +157,7 @@ class ComprehensiveAutomationTester {
     this.log('Testing Task Automation...', 'info');
     
     const taskFiles = [
-      tasks/DependencyUpdater.js
+      'tasks/DependencyUpdater.js'
     ];
 
     for (const file of taskFiles) {
@@ -182,8 +182,8 @@ class ComprehensiveAutomationTester {
     this.log('Testing Cursor Automation...', 'info');
     
     const cursorFiles = [
-      cursor-automated-communication.js',
-      cursor-automated-extension/background.js
+      'cursor-automated-communication.js',
+      'cursor-automated-extension/background.js'
     ];
 
     for (const file of cursorFiles) {
