@@ -111,8 +111,10 @@ class AutomationScriptsManager extends EventEmitter {
     this.discoveryInterval = null;
     this.improvementInterval = null;
     this.healthCheckInterval = null;
+    this.startTime = Date.now();
     
     this.initializeDirectories();
+    this.loadPersistentData();
   }
 
   async initializeDirectories() {
@@ -979,6 +981,71 @@ module.exports = ${className};
     };
     
     return report;
+  }
+
+  async loadPersistentData() {
+    try {
+      const dataFile = path.join(this.config.paths.data, 'automation-manager-state.json');
+      const statsFile = path.join(this.config.paths.data, 'automation-manager-stats.json');
+      const historyFile = path.join(this.config.paths.data, 'automation-manager-history.json');
+      const improvementsFile = path.join(this.config.paths.data, 'automation-manager-improvements.json');
+      
+      // Load scripts
+      if (await fs.access(dataFile).then(() => true).catch(() => false)) {
+        const data = JSON.parse(await fs.readFile(dataFile, 'utf8'));
+        this.scripts = new Map(Object.entries(data));
+        this.log(`Loaded ${this.scripts.size} scripts from persistent storage`);
+      }
+      
+      // Load stats
+      if (await fs.access(statsFile).then(() => true).catch(() => false)) {
+        const stats = JSON.parse(await fs.readFile(statsFile, 'utf8'));
+        this.stats = { ...this.stats, ...stats };
+        this.log(`Loaded stats from persistent storage`);
+      }
+      
+      // Load history
+      if (await fs.access(historyFile).then(() => true).catch(() => false)) {
+        this.scriptHistory = JSON.parse(await fs.readFile(historyFile, 'utf8'));
+        this.log(`Loaded ${this.scriptHistory.length} history entries from persistent storage`);
+      }
+      
+      // Load improvements
+      if (await fs.access(improvementsFile).then(() => true).catch(() => false)) {
+        this.improvements = JSON.parse(await fs.readFile(improvementsFile, 'utf8'));
+        this.log(`Loaded ${this.improvements.length} improvements from persistent storage`);
+      }
+      
+    } catch (error) {
+      this.log(`Warning: Could not load persistent data: ${error.message}`, 'warn');
+    }
+  }
+
+  async savePersistentData() {
+    try {
+      const dataFile = path.join(this.config.paths.data, 'automation-manager-state.json');
+      const statsFile = path.join(this.config.paths.data, 'automation-manager-stats.json');
+      const historyFile = path.join(this.config.paths.data, 'automation-manager-history.json');
+      const improvementsFile = path.join(this.config.paths.data, 'automation-manager-improvements.json');
+      
+      // Save scripts
+      const scriptsData = Object.fromEntries(this.scripts);
+      await fs.writeFile(dataFile, JSON.stringify(scriptsData, null, 2));
+      
+      // Save stats
+      await fs.writeFile(statsFile, JSON.stringify(this.stats, null, 2));
+      
+      // Save history (keep only last 1000 entries)
+      const recentHistory = this.scriptHistory.slice(-1000);
+      await fs.writeFile(historyFile, JSON.stringify(recentHistory, null, 2));
+      
+      // Save improvements (keep only last 500 entries)
+      const recentImprovements = this.improvements.slice(-500);
+      await fs.writeFile(improvementsFile, JSON.stringify(recentImprovements, null, 2));
+      
+    } catch (error) {
+      this.log(`Warning: Could not save persistent data: ${error.message}`, 'warn');
+    }
   }
 }
 
