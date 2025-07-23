@@ -21,7 +21,7 @@ class AutonomousCommitPush {
         return {
             maxCommitSize: 50,
             commitMessageTemplate: 'fix: {description}',
-            branch: main',
+            branch: 'main',
             autoPush: true,
             enableLogging: true
         };
