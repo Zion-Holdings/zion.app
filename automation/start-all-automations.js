@@ -189,7 +189,7 @@ class AutomationStarter {
     
     this.runningSystems.forEach((system, name) => {
       const status = system.getStatus ? system.getStatus() : { isRunning: true };
-      console.log(`  - ${name}: ${status.isRunning ? '✅ Running' : '❌ Stopped'}`);
+      console.log(`  - ${name}: ${status.isRunning ? ✅ Running' : ❌ Stopped'}`);
     });
     
     console.log('\n🎯 Automation Dashboard: http://localhost:3001');

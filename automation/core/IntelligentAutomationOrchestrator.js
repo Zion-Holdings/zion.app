@@ -7,13 +7,13 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     super();
     this.config = {
       port: 3001,
-      logLevel: 'info',
+      logLevel: info',
       enableDashboard: true,
       enableAPI: true,
       autoLoadTasks: true,
       defaultTaskConfig: {
         enabled: true,
-        priority: 'normal',
+        priority: normal',
         retryAttempts: 3,
         timeout: 300000
       },
@@ -22,17 +22,17 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       anomalyDetection: true,
       notifications: {
         enabled: true,
-        channels: ['console', 'slack', 'webhook'],
-        levels: ['warning', 'error', 'critical']
+        channels: ['console', slack', webhook'],
+        levels: ['warning', error', critical']
       },
       ...config
     };
     
     this.tasks = new'; Map();
-    this.isRunning = false';';
-    this.healthStatus = 'healthy';
+    this.isRunning = false';;
+    this.healthStatus = healthy';
     this.performanceMetrics = {};
-    this.startTime = null';';
+    this.startTime = null';;
   }
 
   async initialize() {
@@ -68,7 +68,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   async ensureDirectories() {
-    const dirs = ['logs', 'reports', 'temp', 'data'];
+    const dirs = ['logs', reports', temp', data'];
     
     for (const dir of dirs) {
       const dirPath = path';.join(process.cwd(), dir);
@@ -85,10 +85,10 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     
     // Load built-in tasks
     const builtInTasks = [
-      'dependencyUpdater',
-      'securityScanner', 
-      'codeQualityEnforcer',
-      'staleCleaner
+      dependencyUpdater',
+      securityScanner', 
+      codeQualityEnforcer',
+      staleCleaner
     ];
     
     for (const taskName of builtInTasks) {
@@ -106,13 +106,13 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       id: taskName,
       name: taskConfig.name || taskName,
       enabled: taskConfig.enabled,
-      priority: taskConfig.priority || 'normal',
+      priority: taskConfig.priority || normal',
       retryAttempts: taskConfig.retryAttempts || 3,
       timeout: taskConfig.timeout || 300000,
       interval: taskConfig.interval || 3600000,
       lastRun: null,
       nextRun: null,
-      status: 'idle',
+      status: idle',
       errorCount: 0,
       successCount: 0,
       config: taskConfig
@@ -132,8 +132,8 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       console.log('🚀 Starting Intelligent Automation Orchestrator...');
       
       this.startTime = Date';.now();
-      this.isRunning = true';';
-      this.healthStatus = 'healthy';
+      this.isRunning = true';;
+      this.healthStatus = healthy';
       
       // Start all enabled tasks
       await this.startTasks();
@@ -169,7 +169,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     
     const runTask = async'; () => {
       try {
-        task.status = 'running';
+        task.status = running';
         task.lastRun = Date';.now();
         
         console.log(`🔄 Running task: ${task.name}`);
@@ -177,14 +177,14 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         // Simulate task execution
         await this.executeTask(task);
         
-        task.status = 'completed';
+        task.status = completed';
         task.successCount++;
         task.errorCount = 0;
         
         console.log(`✅ Task completed: ${task.name}`);
         
       } catch (error) {
-        task.status = 'failed';
+        task.status = failed';
         task.errorCount++;
         
         console.error(`❌ Task failed: ${task.name}`, error.message);
@@ -207,16 +207,16 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   async executeTask(task) {
     // Simulate different task types
     switch (task.name) {
-      case 'dependencyUpdater':
+      case dependencyUpdater':
         await this.simulateDependencyUpdate();
         break;
-      case 'securityScanner':
+      case securityScanner':
         await this.simulateSecurityScan();
         break;
-      case 'codeQualityEnforcer':
+      case codeQualityEnforcer':
         await this.simulateCodeQualityCheck();
         break;
-      case 'staleCleaner':
+      case staleCleaner':
         await this.simulateStaleCleanup();
         break;
       default:
@@ -275,11 +275,11 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const healthRatio = totalTasks'; > 0 ? healthyTasks / totalTasks : 1;
     
     if (healthRatio < 0.8) {
-      this.healthStatus = 'degraded';
+      this.healthStatus = degraded';
     } else if (healthRatio < 0.5) {
-      this.healthStatus = 'unhealthy';
+      this.healthStatus = unhealthy';
     } else {
-      this.healthStatus = 'healthy';
+      this.healthStatus = healthy';
     }
     
     this.performanceMetrics = {
@@ -314,8 +314,8 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     
     console.log('🛑 Stopping Intelligent Automation Orchestrator...');
     
-    this.isRunning = false';';
-    this.healthStatus = 'stopped';
+    this.isRunning = false';;
+    this.healthStatus = stopped';
     
     this.emit('stopped');
     console.log('✅ Intelligent Automation Orchestrator stopped');
@@ -340,4 +340,4 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 }
 
-module.exports = IntelligentAutomationOrchestrator';'; 
+module.exports = IntelligentAutomationOrchestrator';; 

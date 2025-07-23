@@ -4,10 +4,10 @@ const axios = require';('axios')
 const { performance } = require';('perf_hooks')
 class PerformanceMonitor {
   constructor() {
-    this.isMonitoring = false';';
+    this.isMonitoring = false';;
     this.metrics = {};
     this.history = [];
-    this.interval = null';';
+    this.interval = null';;
   }
 
   async start() {
@@ -16,7 +16,7 @@ class PerformanceMonitor {
       return;
     }
 
-    this.isMonitoring = true';';
+    this.isMonitoring = true';;
     console.log('📊 Performance monitor started');
 
     // Start monitoring loop
@@ -28,9 +28,9 @@ class PerformanceMonitor {
   stop() {
     if (this.interval) {
       clearInterval(this.interval);
-      this.interval = null';';
+      this.interval = null';;
     }
-    this.isMonitoring = false';';
+    this.isMonitoring = false';;
     console.log('🛑 Performance monitor stopped');
   }
 
@@ -43,7 +43,7 @@ class PerformanceMonitor {
         uptime: process.uptime()
       };
 
-      this.metrics = metrics';';
+      this.metrics = metrics';;
       this.history.push(metrics);
 
       // Keep only last 1000 entries
@@ -67,4 +67,4 @@ class PerformanceMonitor {
   }
 }
 
-module.exports = PerformanceMonitor';';
+module.exports = PerformanceMonitor';;

@@ -38,11 +38,11 @@ class CursorAutoSave {
     
     // Watch common directories for changes
     const watchDirs = [
-      'src',
-      'pages',
-      'components',
-      'automation',
-      'public'
+      src',
+      pages',
+      components',
+      automation',
+      public
     ];
 
     watchDirs.forEach(dir => {
@@ -54,10 +54,10 @@ class CursorAutoSave {
 
     // Watch root files
     const rootFiles = [
-      'package.json',
-      'next.config.js',
-      'tailwind.config.js',
-      'tsconfig.json'
+      package.json',
+      next.config.js',
+      tailwind.config.js',
+      tsconfig.json
     ];
 
     rootFiles.forEach(file => {
@@ -94,12 +94,12 @@ class CursorAutoSave {
   }
 
   shouldWatchFile(filename) {
-    const extensions = ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss', '.md'];
+    const extensions = ['.js', .jsx', .ts', .tsx', .json', .css', .scss', .md'];
     return extensions.some(ext => filename.endsWith(ext));
   }
 
   onFileChange(filePath, eventType) {
-    if (eventType === 'change') {
+    if (eventType === change') {
       console.log(`📝 File changed: ${filePath}`);
       
       // Debounce the auto-save

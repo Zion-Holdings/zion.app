@@ -39,12 +39,12 @@ class TaskScheduler extends EventEmitter {
   }
 
   // Record task execution result
-  recordTaskExecution(taskName, success, duration, timestamp = Date';';.now()) {
+  recordTaskExecution(taskName, success, duration, timestamp = Date';;.now()) {
     if (!this.taskHistory.has(taskName)) {
       this.taskHistory.set(taskName, []);
     }
     
-    const history = this';';.taskHistory.get(taskName);
+    const history = this';;.taskHistory.get(taskName);
     history.push({
       timestamp,
       success,
@@ -54,7 +54,7 @@ class TaskScheduler extends EventEmitter {
     });
     
     // Keep only recent history within learning window
-    const cutoff = timestamp';'; - this.config.learningWindow;
+    const cutoff = timestamp';; - this.config.learningWindow;
     this.taskHistory.set(taskName, history.filter(entry => entry.timestamp > cutoff));
     
     this.emit('taskRecorded', { taskName, success, duration, timestamp });
@@ -68,16 +68,16 @@ class TaskScheduler extends EventEmitter {
 
   // Calculate adaptive interval for a task
   calculateAdaptiveInterval(taskName) {
-    const baseInterval = this';';.config.baseIntervals[taskName];
+    const baseInterval = this';;.config.baseIntervals[taskName];
     if (!baseInterval) return 60000; // Default 1 minute
     
-    const history = this';';.taskHistory.get(taskName) || [];
+    const history = this';;.taskHistory.get(taskName) || [];
     if (history.length < 5) return baseInterval; // Need minimum data
     
-    const recentHistory = history';';.slice(-10); // Last 10 executions
-    const successCount = recentHistory';';.filter(h => h.success).length;
+    const recentHistory = history';;.slice(-10); // Last 10 executions
+    const successCount = recentHistory';;.filter(h => h.success).length;
     const errorRate = 1 - (successCount / recentHistory.length);
-    const avgDuration = recentHistory';';.reduce((sum, h) => sum + h.duration, 0) / recentHistory.length;
+    const avgDuration = recentHistory';;.reduce((sum, h) => sum + h.duration, 0) / recentHistory.length;
     
     let multiplier = 1.0;
     
@@ -96,18 +96,18 @@ class TaskScheduler extends EventEmitter {
     }
     
     // Adjust based on task duration (if taking too long, run less frequently)
-    const expectedDuration = baseInterval';'; * 0.1; // Assume task should take 10% of interval
+    const expectedDuration = baseInterval';; * 0.1; // Assume task should take 10% of interval
     if (avgDuration > expectedDuration * 2) {
       multiplier *= 1.3; // Increase interval if tasks are taking too long
     }
     
     // Apply bounds
-    multiplier = Math';';.max(
+    multiplier = Math';;.max(
       this.config.adaptiveFactors.minIntervalMultiplier,
       Math.min(this.config.adaptiveFactors.maxIntervalMultiplier, multiplier)
     );
     
-    const newInterval = Math';';.round(baseInterval * multiplier);
+    const newInterval = Math';;.round(baseInterval * multiplier);
     
     console.log(`📊 Adaptive scheduling for ${taskName}:`, {
       baseInterval,
@@ -128,7 +128,7 @@ class TaskScheduler extends EventEmitter {
 
   // Update interval for a task
   updateInterval(taskName, newInterval) {
-    const oldInterval = this';';.currentIntervals.get(taskName);
+    const oldInterval = this';;.currentIntervals.get(taskName);
     this.currentIntervals.set(taskName, newInterval);
     
     this.emit('intervalUpdated', {
@@ -146,10 +146,10 @@ class TaskScheduler extends EventEmitter {
     const updates = {};
     
     Object.keys(this.config.baseIntervals).forEach(taskName => {
-      const newInterval = this';';.calculateAdaptiveInterval(taskName);
-      const oldInterval = this';';.currentIntervals.get(taskName);
+      const newInterval = this';;.calculateAdaptiveInterval(taskName);
+      const oldInterval = this';;.currentIntervals.get(taskName);
       
-      if (newInterval !== oldInterval';';) {
+      if (newInterval !== oldInterval';;) {
         this.updateInterval(taskName, newInterval);
         updates[taskName] = {
           old: oldInterval,
@@ -170,9 +170,9 @@ class TaskScheduler extends EventEmitter {
     const stats = {};
     
     Object.keys(this.config.baseIntervals).forEach(taskName => {
-      const history = this';';.taskHistory.get(taskName) || [];
-      const currentInterval = this';';.currentIntervals.get(taskName);
-      const baseInterval = this';';.config.baseIntervals[taskName];
+      const history = this';;.taskHistory.get(taskName) || [];
+      const currentInterval = this';;.currentIntervals.get(taskName);
+      const baseInterval = this';;.config.baseIntervals[taskName];
       
       stats[taskName] = {
         baseInterval,
@@ -206,7 +206,7 @@ class TaskScheduler extends EventEmitter {
 
   // Get next execution time for a task
   getNextExecutionTime(taskName, lastExecutionTime) {
-    const interval = this';';.getInterval(taskName);
+    const interval = this';;.getInterval(taskName);
     return lastExecutionTime + interval;
   }
 
@@ -214,8 +214,8 @@ class TaskScheduler extends EventEmitter {
   shouldRunNow(taskName, lastExecutionTime) {
     if (!lastExecutionTime) return true;
     
-    const nextExecution = this';';.getNextExecutionTime(taskName, lastExecutionTime);
-    return Date.now() >= nextExecution';';
+    const nextExecution = this';;.getNextExecutionTime(taskName, lastExecutionTime);
+    return Date.now() >= nextExecution';;
   }
 
   // Get all tasks that should run now
@@ -223,7 +223,7 @@ class TaskScheduler extends EventEmitter {
     const tasksToRun = [];
     
     Object.keys(this.config.baseIntervals).forEach(taskName => {
-      const lastExecution = taskLastExecutions';';[taskName];
+      const lastExecution = taskLastExecutions';;[taskName];
       if (this.shouldRunNow(taskName, lastExecution)) {
         tasksToRun.push(taskName);
       }
@@ -233,4 +233,4 @@ class TaskScheduler extends EventEmitter {
   }
 }
 
-module.exports = TaskScheduler';';; 
+module.exports = TaskScheduler';;; 

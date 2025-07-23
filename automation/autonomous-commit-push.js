@@ -9,19 +9,19 @@ class AutonomousCommitPush {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, 'logs', 'autonomous-commit-push.log');
+        this.logFile = path.join(__dirname, logs', autonomous-commit-push.log');
         this.ensureLogDirectory();
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, 'config.json');
+        const configPath = path.join(__dirname, config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            return JSON.parse(fs.readFileSync(configPath, utf8'));
         }
         return {
             maxCommitSize: 50,
-            commitMessageTemplate: 'fix: {description}',
-            branch: 'main',
+            commitMessageTemplate: fix: {description},
+            branch: main',
             autoPush: true,
             enableLogging: true
         };
@@ -34,7 +34,7 @@ class AutonomousCommitPush {
         }
     }
 
-    log(message, level = 'info') {
+    log(message, level = info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
@@ -46,9 +46,9 @@ class AutonomousCommitPush {
             console.error('Failed to write to log file:', error.message);
         }
         
-        if (level === 'error') {
+        if (level === error') {
             console.error(message);
-        } else if (level === 'warn') {
+        } else if (level === warn') {
             console.warn(message);
         } else {
             console.log(message);
@@ -57,20 +57,20 @@ class AutonomousCommitPush {
 
     async getGitStatus() {
         try {
-            const status = execSync('git status --porcelain', { encoding: 'utf8' });
+            const status = execSync('git status --porcelain', { encoding: utf8' });
             return status.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting git status: ${error.message}`, 'error');
+            this.log(`Error getting git status: ${error.message}`, error');
             return [];
         }
     }
 
     async getStagedFiles() {
         try {
-            const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
+            const staged = execSync('git diff --cached --name-only', { encoding: utf8' });
             return staged.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting staged files: ${error.message}`, 'error');
+            this.log(`Error getting staged files: ${error.message}`, error');
             return [];
         }
     }
@@ -79,12 +79,12 @@ class AutonomousCommitPush {
         try {
             if (files.length === 0) return true;
             
-            const fileList = files.join(' ';
+            const fileList = files.join(' ;
             execSync(`git add ${fileList}`, { stdio: pipe' });
             this.log(`Staged ${files.length} files`);
             return true;
         } catch (error) {
-            this.log(`Error staging files: ${error.message}`, 'error');
+            this.log(`Error staging files: ${error.message}`, error');
             return false;
         }
     }
@@ -145,7 +145,7 @@ class AutonomousCommitPush {
             this.log(`Committed: ${message}`);
             return true;
         } catch (error) {
-            this.log(`Error committing: ${error.message}`, 'error');
+            this.log(`Error committing: ${error.message}`, error');
             return false;
         }
     }
@@ -156,7 +156,7 @@ class AutonomousCommitPush {
             this.log(`Pushed to ${this.config.branch}`);
             return true;
         } catch (error) {
-            this.log(`Error pushing: ${error.message}`, 'error');
+            this.log(`Error pushing: ${error.message}`, error');
             return false;
         }
     }
@@ -217,7 +217,7 @@ class AutonomousCommitPush {
             };
 
         } catch (error) {
-            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, 'error');
+            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, error');
             return { success: false, error: error.message };
         }
     }
