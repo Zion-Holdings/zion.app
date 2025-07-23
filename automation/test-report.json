@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-07-23T22:36:17.132Z",
-  "duration": 128,
+  "timestamp": "2025-07-23T22:54:57.501Z",
+  "duration": 25,
   "summary": {
     "total": 22,
-    "passed": 16,
-    "failed": 6,
-    "successRate": 72.72727272727273
+    "passed": 18,
+    "failed": 4,
+    "successRate": 81.81818181818183
   },
   "results": [
     {
@@ -15,7 +15,7 @@
       "details": {
         "file": "core/IntelligentAutomationOrchestrator.js"
       },
-      "timestamp": "2025-07-23T22:36:17.017Z"
+      "timestamp": "2025-07-23T22:54:57.490Z"
     },
     {
       "testName": "Core File: core/AutonomousAutomationManager.js",
@@ -24,7 +24,7 @@
       "details": {
         "file": "core/AutonomousAutomationManager.js"
       },
-      "timestamp": "2025-07-23T22:36:17.018Z"
+      "timestamp": "2025-07-23T22:54:57.490Z"
     },
     {
       "testName": "Core File: core/TaskScheduler.js",
@@ -33,7 +33,7 @@
       "details": {
         "file": "core/TaskScheduler.js"
       },
-      "timestamp": "2025-07-23T22:36:17.018Z"
+      "timestamp": "2025-07-23T22:54:57.490Z"
     },
     {
       "testName": "Core File: core/NotificationManager.js",
@@ -42,7 +42,7 @@
       "details": {
         "file": "core/NotificationManager.js"
       },
-      "timestamp": "2025-07-23T22:36:17.018Z"
+      "timestamp": "2025-07-23T22:54:57.491Z"
     },
     {
       "testName": "Core File: core/AnomalyDetector.js",
@@ -51,7 +51,7 @@
       "details": {
         "file": "core/AnomalyDetector.js"
       },
-      "timestamp": "2025-07-23T22:36:17.018Z"
+      "timestamp": "2025-07-23T22:54:57.491Z"
     },
     {
       "testName": "Core File: core/ReportGenerator.js",
@@ -60,14 +60,14 @@
       "details": {
         "file": "core/ReportGenerator.js"
       },
-      "timestamp": "2025-07-23T22:36:17.018Z"
+      "timestamp": "2025-07-23T22:54:57.491Z"
     },
     {
       "testName": "Core System Import",
-      "passed": false,
-      "message": "Import failed: Invalid or unexpected token",
+      "passed": true,
+      "message": "Core system imported successfully",
       "details": null,
-      "timestamp": "2025-07-23T22:36:17.020Z"
+      "timestamp": "2025-07-23T22:54:57.492Z"
     },
     {
       "testName": "Netlify File: netlify-monitor.js",
@@ -76,7 +76,7 @@
       "details": {
         "file": "netlify-monitor.js"
       },
-      "timestamp": "2025-07-23T22:36:17.020Z"
+      "timestamp": "2025-07-23T22:54:57.493Z"
     },
     {
       "testName": "Netlify File: netlify-error-fixer.js",
@@ -85,7 +85,7 @@
       "details": {
         "file": "netlify-error-fixer.js"
       },
-      "timestamp": "2025-07-23T22:36:17.021Z"
+      "timestamp": "2025-07-23T22:54:57.493Z"
     },
     {
       "testName": "Netlify File: netlify-build-automation.js",
@@ -94,14 +94,14 @@
       "details": {
         "file": "netlify-build-automation.js"
       },
-      "timestamp": "2025-07-23T22:36:17.021Z"
+      "timestamp": "2025-07-23T22:54:57.493Z"
     },
     {
       "testName": "Netlify Monitor Import",
       "passed": false,
       "message": "Import failed: missing ) after argument list",
       "details": null,
-      "timestamp": "2025-07-23T22:36:17.022Z"
+      "timestamp": "2025-07-23T22:54:57.494Z"
     },
     {
       "testName": "Performance File: performance/monitor.js",
@@ -110,7 +110,7 @@
       "details": {
         "file": "performance/monitor.js"
       },
-      "timestamp": "2025-07-23T22:36:17.022Z"
+      "timestamp": "2025-07-23T22:54:57.494Z"
     },
     {
       "testName": "Performance File: performance/frontend-fix.js",
@@ -119,14 +119,14 @@
       "details": {
         "file": "performance/frontend-fix.js"
       },
-      "timestamp": "2025-07-23T22:36:17.022Z"
+      "timestamp": "2025-07-23T22:54:57.495Z"
     },
     {
       "testName": "Performance Monitor Import",
-      "passed": true,
-      "message": "Performance monitor imported successfully",
+      "passed": false,
+      "message": "Import failed: Invalid or unexpected token",
       "details": null,
-      "timestamp": "2025-07-23T22:36:17.125Z"
+      "timestamp": "2025-07-23T22:54:57.495Z"
     },
     {
       "testName": "CI File: continuous-improvement/enhanced-automation.js",
@@ -135,7 +135,7 @@
       "details": {
         "file": "continuous-improvement/enhanced-automation.js"
       },
-      "timestamp": "2025-07-23T22:36:17.127Z"
+      "timestamp": "2025-07-23T22:54:57.496Z"
     },
     {
       "testName": "CI File: continuous-improvement/monitor.js",
@@ -144,7 +144,7 @@
       "details": {
         "file": "continuous-improvement/monitor.js"
       },
-      "timestamp": "2025-07-23T22:36:17.127Z"
+      "timestamp": "2025-07-23T22:54:57.496Z"
     },
     {
       "testName": "CI File: continuous-improvement/improve.js",
@@ -153,14 +153,14 @@
       "details": {
         "file": "continuous-improvement/improve.js"
       },
-      "timestamp": "2025-07-23T22:36:17.127Z"
+      "timestamp": "2025-07-23T22:54:57.496Z"
     },
     {
       "testName": "CI System Import",
       "passed": false,
-      "message": "Import failed: Unexpected token ';'",
+      "message": "Import failed: Invalid or unexpected token",
       "details": null,
-      "timestamp": "2025-07-23T22:36:17.128Z"
+      "timestamp": "2025-07-23T22:54:57.497Z"
     },
     {
       "testName": "Task File: tasks/DependencyUpdater.js",
@@ -169,32 +169,32 @@
       "details": {
         "file": "tasks/DependencyUpdater.js"
       },
-      "timestamp": "2025-07-23T22:36:17.129Z"
+      "timestamp": "2025-07-23T22:54:57.498Z"
     },
     {
       "testName": "Task System Import",
       "passed": false,
       "message": "Import failed: Invalid or unexpected token",
       "details": null,
-      "timestamp": "2025-07-23T22:36:17.129Z"
+      "timestamp": "2025-07-23T22:54:57.498Z"
     },
     {
       "testName": "Cursor File: cursor-automated-communication.js",
-      "passed": false,
-      "message": "File missing",
+      "passed": true,
+      "message": "File exists",
       "details": {
         "file": "cursor-automated-communication.js"
       },
-      "timestamp": "2025-07-23T22:36:17.130Z"
+      "timestamp": "2025-07-23T22:54:57.499Z"
     },
     {
       "testName": "Cursor File: cursor-automated-extension/background.js",
-      "passed": false,
-      "message": "File missing",
+      "passed": true,
+      "message": "File exists",
       "details": {
         "file": "cursor-automated-extension/background.js"
       },
-      "timestamp": "2025-07-23T22:36:17.130Z"
+      "timestamp": "2025-07-23T22:54:57.499Z"
     }
   ]
 }
