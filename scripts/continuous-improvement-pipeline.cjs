@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -67,7 +90,7 @@ class ContinuousImprovementPipeline {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
     fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
   }
 
@@ -133,7 +156,10 @@ const logEntry = `[${timestamp}] PIPELINE: ${message}`;
 
       // Schedule next run
       if (this.isRunning) {
-        setTimeout(runPipeline, CONFIG.pipelineInterval);
+        
+const timeoutId = setTimeout(runPipeline,  CONFIG.pipelineInterval);
+// Store timeoutId for cleanup if needed
+;
       }
     };
 
@@ -622,7 +648,10 @@ Automated by Continuous Improvement Pipeline`;
       await this.stop();
 
       // Wait a moment
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  5000);
+// Store timeoutId for cleanup if needed
+);
 
       // Start pipeline again
       await this.start();
@@ -708,24 +737,24 @@ const command = process.argv[2];
       break;
     case 'status':
       pipeline.getStatus().then((status) => {
-        console.log(JSON.stringify(status, null, 2));
+        logger.info(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
     case 'report':
       pipeline.generateReport().then((report) => {
-        console.log(JSON.stringify(report, null, 2));
+        logger.info(JSON.stringify(report, null, 2));
         process.exit(0);
       });
       break;
     case 'run':
       pipeline.runImprovementCycle().then(() => {
-        console.log('Improvement cycle completed');
+        logger.info('Improvement cycle completed');
         process.exit(0);
       });
       break;
     default:
-      console.log(`
+      logger.info(`
 Continuous Improvement Pipeline
 
 Usage:
@@ -749,3 +778,18 @@ Environment Variables:
 }
 
 module.exports = ContinuousImprovementPipeline;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

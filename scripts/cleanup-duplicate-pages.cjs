@@ -1,13 +1,21 @@
-#!/usr/bin/env node
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-/**
- * Script to clean up duplicate pages in Next.js project
- * Removes compiled .js and .d.ts files where .tsx or .ts versions exist
- */
+
 
 // Use different variable names to avoid conflict with built-in globals
 const currentFilename = fileURLToPath(import.meta.url)
@@ -135,4 +143,26 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export { findDuplicates }; 
+export { findDuplicates };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

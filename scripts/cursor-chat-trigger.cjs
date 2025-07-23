@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -89,7 +112,7 @@ class CursorChatTrigger {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
 
@@ -294,7 +317,7 @@ const accessibilityData = await this.gatherAccessibilityData();
       // Memory usage
       try {
         const memoryOutput = execSync(
-          'node -e "console.log(process.memoryUsage())"',
+          'node -e "logger.info(process.memoryUsage())"',
           {
             encoding: 'utf8',
           },
@@ -637,32 +660,32 @@ const specificIssue = process.argv[4];
       trigger
         .triggerComprehensiveChat(category, specificIssue)
         .then(() => {
-          console.log('Comprehensive chat triggered successfully');
+          logger.info('Comprehensive chat triggered successfully');
           process.exit(0);
         })
         .catch((error) => {
-          console.error('Failed to trigger comprehensive chat:', error.message);
+          logger.error('Failed to trigger comprehensive chat:', error.message);
           process.exit(1);
         });
       break;
     case 'specific':
       if (!specificIssue) {
-        console.error('Specific issue required for specific chat');
+        logger.error('Specific issue required for specific chat');
         process.exit(1);
       }
       trigger
         .triggerSpecificChat({ type: category, pattern: specificIssue })
         .then(() => {
-          console.log('Specific chat triggered successfully');
+          logger.info('Specific chat triggered successfully');
           process.exit(0);
         })
         .catch((error) => {
-          console.error('Failed to trigger specific chat:', error.message);
+          logger.error('Failed to trigger specific chat:', error.message);
           process.exit(1);
         });
       break;
     default:
-      console.log(`
+      logger.info(`
 Cursor Chat Trigger
 
 Usage:
@@ -685,3 +708,18 @@ Environment Variables:
 }
 
 module.exports = CursorChatTrigger;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

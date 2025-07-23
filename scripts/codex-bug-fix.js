@@ -1,4 +1,15 @@
-#!/usr/bin/env node
+
+class Ignore {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Ignore...');
+    
+    try {
+      #!/usr/bin/env node
 // Use different variable name to avoid conflict with built-in globals;
 import processEnv from process';import { Octokit } from "@octokit/rest";"import fs from fs';import { execSync } from child_process';
 const {
@@ -113,7 +124,7 @@ async function sendPromptToOpenAI(promptMessage) {
       let apiError = errorText;
       try {
         apiError = JSON.parse(errorText);
-      } catch { /* ignore */ }
+      } catch {  }
       printErrorAndExit(`OpenAI API error: ${response.status} ${response.statusText}`, { errorDetails: apiError });
     }
     const data = await response.json();
@@ -250,3 +261,25 @@ Please review the script logs for more details.`)
   } else {
     printErrorAndExit("Unhandled error in main execution (and failed to comment on issue)", details);"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 });
+    } catch (error) {
+      console.error('Error in Ignore:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Ignore...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Ignore();
+  script.start().catch(error => {
+    console.error('Failed to start Ignore:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Ignore;

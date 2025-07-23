@@ -1,9 +1,42 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
 const path = require('path');
 
-console.log('🔧 Fixing final syntax errors...');
+logger.info('🔧 Fixing final syntax errors...');
 
 // List of files that need specific fixes
 const filesToFix = ['pages/404.tsx', 'pages/500.tsx'];
@@ -102,14 +135,36 @@ const { user } = useAuth();
         fs.writeFileSync(file, content, 'utf8');
         fixedFiles++;
         totalIssues += fileIssues;
-        console.log(`✅ Fixed ${fileIssues} issues in ${file}`);
+        logger.info(`✅ Fixed ${fileIssues} issues in ${file}`);
       }
     }
   } catch (error) {
-    console.error(`❌ Error processing ${file}:`, error.message);
+    logger.error(`❌ Error processing ${file}:`, error.message);
   }
 });
 
-console.log(
+logger.info(
   `\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`,
 );
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -105,10 +128,10 @@ class AutomatedImprovementPipeline {
    * Initialize the automated improvement pipeline
    */
   async initialize() {
-    console.log('🚀 Initializing Automated Improvement Pipeline...');
+    logger.info('🚀 Initializing Automated Improvement Pipeline...');
 
     if (!CONFIG.AUTOMATION.ENABLED) {
-      console.log(
+      logger.info(
         '⚠️  Automation is disabled. Set AUTO_IMPROVE_ENABLED=true to enable.',
       );
       return;
@@ -130,7 +153,7 @@ class AutomatedImprovementPipeline {
     // Start auto-fix system
     this.startAutoFixSystem();
 
-    console.log('✅ Automated Improvement Pipeline initialized successfully');
+    logger.info('✅ Automated Improvement Pipeline initialized successfully');
   }
 
   /**
@@ -138,13 +161,13 @@ class AutomatedImprovementPipeline {
    */
   validateConfig() {
     if (!CONFIG.AI.CURSOR_API_KEY) {
-      console.warn(
+      logger.warn(
         '⚠️  Cursor API key not configured. AI improvements will be limited.',
       );
     }
 
     if (!CONFIG.AI.CURSOR_WORKSPACE_ID) {
-      console.warn(
+      logger.warn(
         '⚠️  Cursor workspace ID not configured. AI improvements will be limited.',
       );
     }
@@ -154,7 +177,7 @@ class AutomatedImprovementPipeline {
    * Setup monitoring systems
    */
   async setupMonitoring() {
-    console.log('📊 Setting up monitoring systems...');
+    logger.info('📊 Setting up monitoring systems...');
 
     // Start performance monitoring
     if (CONFIG.AUTOMATION.CONTINUOUS_MONITORING) {
@@ -178,7 +201,7 @@ class AutomatedImprovementPipeline {
       setInterval(() => this.performAIAnalysis(), CONFIG.INTERVALS.AI_ANALYSIS);
     }
 
-    console.log('✅ Monitoring systems setup completed');
+    logger.info('✅ Monitoring systems setup completed');
   }
 
   /**
@@ -204,11 +227,14 @@ const improvementLoop = async () => {
           await this.commitAndPushChanges();
         }
       } catch (error) {
-        console.error('❌ Error in improvement loop:', error);
+        logger.error('❌ Error in improvement loop:', error);
       }
 
       // Schedule next iteration
-      setTimeout(improvementLoop, 30000); // Every 30 seconds
+      
+const timeoutId = setTimeout(improvementLoop,  30000);
+// Store timeoutId for cleanup if needed
+; // Every 30 seconds
     };
 
     improvementLoop();
@@ -218,7 +244,7 @@ const improvementLoop = async () => {
    * Monitor performance and trigger improvements
    */
   async monitorPerformance() {
-    console.log('⚡ Monitoring performance...');
+    logger.info('⚡ Monitoring performance...');
 
     try {
       // Run performance checks
@@ -234,7 +260,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring performance:', error);
+      logger.error('❌ Error monitoring performance:', error);
     }
   }
 
@@ -242,7 +268,7 @@ const improvementLoop = async () => {
    * Monitor code quality and trigger improvements
    */
   async monitorCodeQuality() {
-    console.log('🔍 Monitoring code quality...');
+    logger.info('🔍 Monitoring code quality...');
 
     try {
       // Run code quality checks
@@ -258,7 +284,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring code quality:', error);
+      logger.error('❌ Error monitoring code quality:', error);
     }
   }
 
@@ -266,7 +292,7 @@ const improvementLoop = async () => {
    * Monitor security and trigger improvements
    */
   async monitorSecurity() {
-    console.log('🔒 Monitoring security...');
+    logger.info('🔒 Monitoring security...');
 
     try {
       // Run security checks
@@ -282,7 +308,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring security:', error);
+      logger.error('❌ Error monitoring security:', error);
     }
   }
 
@@ -290,7 +316,7 @@ const improvementLoop = async () => {
    * Monitor user experience and trigger improvements
    */
   async monitorUserExperience() {
-    console.log('👥 Monitoring user experience...');
+    logger.info('👥 Monitoring user experience...');
 
     try {
       // Run UX checks
@@ -306,7 +332,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring user experience:', error);
+      logger.error('❌ Error monitoring user experience:', error);
     }
   }
 
@@ -314,7 +340,7 @@ const improvementLoop = async () => {
    * Monitor dependencies and trigger improvements
    */
   async monitorDependencies() {
-    console.log('📦 Monitoring dependencies...');
+    logger.info('📦 Monitoring dependencies...');
 
     try {
       // Run dependency checks
@@ -330,7 +356,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error monitoring dependencies:', error);
+      logger.error('❌ Error monitoring dependencies:', error);
     }
   }
 
@@ -338,7 +364,7 @@ const improvementLoop = async () => {
    * Perform AI analysis
    */
   async performAIAnalysis() {
-    console.log('🤖 Performing AI analysis...');
+    logger.info('🤖 Performing AI analysis...');
 
     try {
       // Analyze codebase
@@ -357,7 +383,7 @@ const improvementLoop = async () => {
         });
       }
     } catch (error) {
-      console.error('❌ Error performing AI analysis:', error);
+      logger.error('❌ Error performing AI analysis:', error);
     }
   }
 
@@ -378,7 +404,7 @@ const queuedImprovement = {
     this.improvementQueue.push(queuedImprovement);
     this.stats.totalImprovements++;
 
-    console.log(
+    logger.info(
       `📝 Queued improvement: ${improvementId} (${improvement.type})`,
     );
   }
@@ -408,7 +434,7 @@ const queuedImprovement = {
 
     for (const queuedImprovement of toProcess) {
       try {
-        console.log(`🔄 Processing improvement: ${queuedImprovement.id}`);
+        logger.info(`🔄 Processing improvement: ${queuedImprovement.id}`);
 
         queuedImprovement.status = 'processing';
         this.activeImprovements.set(queuedImprovement.id, queuedImprovement);
@@ -427,9 +453,9 @@ const queuedImprovement = {
         this.stats.successfulImprovements++;
         this.stats.lastImprovement = Date.now();
 
-        console.log(`✅ Completed improvement: ${queuedImprovement.id}`);
+        logger.info(`✅ Completed improvement: ${queuedImprovement.id}`);
       } catch (error) {
-        console.error(
+        logger.error(
           `❌ Error processing improvement ${queuedImprovement.id}:`,
           error,
         );
@@ -484,7 +510,7 @@ const queuedImprovement = {
    * Apply performance optimization
    */
   async applyPerformanceOptimization(data) {
-    console.log('⚡ Applying performance optimization...')
+    logger.info('⚡ Applying performance optimization...')
 const optimizations = [];
 
     // Bundle optimization
@@ -493,7 +519,7 @@ const optimizations = [];
         execSync('npm run bundle:optimize', { stdio: 'inherit' });
         optimizations.push('bundle_optimization');
       } catch (error) {
-        console.warn('⚠️  Bundle optimization failed:', error.message);
+        logger.warn('⚠️  Bundle optimization failed:', error.message);
       }
     }
 
@@ -503,7 +529,7 @@ const optimizations = [];
         execSync('npm run optimize:images', { stdio: 'inherit' });
         optimizations.push('image_optimization');
       } catch (error) {
-        console.warn('⚠️  Image optimization failed:', error.message);
+        logger.warn('⚠️  Image optimization failed:', error.message);
       }
     }
 
@@ -512,7 +538,7 @@ const optimizations = [];
       await this.optimizeCodeSplitting();
       optimizations.push('code_splitting');
     } catch (error) {
-      console.warn('⚠️  Code splitting optimization failed:', error.message);
+      logger.warn('⚠️  Code splitting optimization failed:', error.message);
     }
 
     return { optimizations, success: optimizations.length > 0 };
@@ -522,7 +548,7 @@ const optimizations = [];
    * Apply code quality improvement
    */
   async applyCodeQualityImprovement(data) {
-    console.log('🔍 Applying code quality improvement...')
+    logger.info('🔍 Applying code quality improvement...')
 const improvements = [];
 
     // Auto-fix lint errors
@@ -531,7 +557,7 @@ const improvements = [];
         execSync('npm run lint:fix', { stdio: 'inherit' });
         improvements.push('lint_fixes');
       } catch (error) {
-        console.warn('⚠️  Lint fixes failed:', error.message);
+        logger.warn('⚠️  Lint fixes failed:', error.message);
       }
     }
 
@@ -541,7 +567,7 @@ const improvements = [];
         await this.addMissingTests();
         improvements.push('test_coverage');
       } catch (error) {
-        console.warn('⚠️  Test addition failed:', error.message);
+        logger.warn('⚠️  Test addition failed:', error.message);
       }
     }
 
@@ -551,7 +577,7 @@ const improvements = [];
         await this.improveAccessibility();
         improvements.push('accessibility');
       } catch (error) {
-        console.warn('⚠️  Accessibility improvement failed:', error.message);
+        logger.warn('⚠️  Accessibility improvement failed:', error.message);
       }
     }
 
@@ -562,7 +588,7 @@ const improvements = [];
    * Apply security enhancement
    */
   async applySecurityEnhancement(data) {
-    console.log('🔒 Applying security enhancement...')
+    logger.info('🔒 Applying security enhancement...')
 const enhancements = [];
 
     // Update dependencies
@@ -570,7 +596,7 @@ const enhancements = [];
       execSync('npm audit fix', { stdio: 'inherit' });
       enhancements.push('dependency_security');
     } catch (error) {
-      console.warn('⚠️  Security dependency update failed:', error.message);
+      logger.warn('⚠️  Security dependency update failed:', error.message);
     }
 
     // Add security headers
@@ -578,7 +604,7 @@ const enhancements = [];
       await this.addSecurityHeaders();
       enhancements.push('security_headers');
     } catch (error) {
-      console.warn('⚠️  Security headers addition failed:', error.message);
+      logger.warn('⚠️  Security headers addition failed:', error.message);
     }
 
     // Input validation
@@ -586,7 +612,7 @@ const enhancements = [];
       await this.improveInputValidation();
       enhancements.push('input_validation');
     } catch (error) {
-      console.warn('⚠️  Input validation improvement failed:', error.message);
+      logger.warn('⚠️  Input validation improvement failed:', error.message);
     }
 
     return { enhancements, success: enhancements.length > 0 };
@@ -596,7 +622,7 @@ const enhancements = [];
    * Apply UX improvement
    */
   async applyUXImprovement(data) {
-    console.log('👥 Applying UX improvement...')
+    logger.info('👥 Applying UX improvement...')
 const improvements = [];
 
     // Improve error handling
@@ -604,7 +630,7 @@ const improvements = [];
       await this.improveErrorHandling();
       improvements.push('error_handling');
     } catch (error) {
-      console.warn('⚠️  Error handling improvement failed:', error.message);
+      logger.warn('⚠️  Error handling improvement failed:', error.message);
     }
 
     // Add loading states
@@ -612,7 +638,7 @@ const improvements = [];
       await this.addLoadingStates();
       improvements.push('loading_states');
     } catch (error) {
-      console.warn('⚠️  Loading states addition failed:', error.message);
+      logger.warn('⚠️  Loading states addition failed:', error.message);
     }
 
     // Improve responsive design
@@ -620,7 +646,7 @@ const improvements = [];
       await this.improveResponsiveDesign();
       improvements.push('responsive_design');
     } catch (error) {
-      console.warn('⚠️  Responsive design improvement failed:', error.message);
+      logger.warn('⚠️  Responsive design improvement failed:', error.message);
     }
 
     return { improvements, success: improvements.length > 0 };
@@ -630,7 +656,7 @@ const improvements = [];
    * Apply dependency update
    */
   async applyDependencyUpdate(data) {
-    console.log('📦 Applying dependency update...');
+    logger.info('📦 Applying dependency update...');
 
     try {
       // Check for outdated packages
@@ -652,7 +678,7 @@ const improvements = [];
    * Apply AI suggested improvement
    */
   async applyAISuggestedImprovement(data) {
-    console.log('🤖 Applying AI suggested improvement...');
+    logger.info('🤖 Applying AI suggested improvement...');
 
     try {
       // Generate AI suggestions using Cursor
@@ -673,21 +699,21 @@ const improvements = [];
   async applyPendingImprovements() {
     // This method would apply any pending improvements that require
     // manual intervention or complex processing
-    console.log('📋 Checking for pending improvements...');
+    logger.info('📋 Checking for pending improvements...');
   }
 
   /**
    * Perform optimizations
    */
   async performOptimizations() {
-    console.log('🔧 Performing optimizations...');
+    logger.info('🔧 Performing optimizations...');
 
     // Bundle optimization
     if (CONFIG.OPTIMIZATION.AUTO_OPTIMIZE_BUNDLE) {
       try {
         execSync('npm run bundle:optimize', { stdio: 'ignore' });
       } catch (error) {
-        console.warn('⚠️  Bundle optimization failed:', error.message);
+        logger.warn('⚠️  Bundle optimization failed:', error.message);
       }
     }
 
@@ -696,7 +722,7 @@ const improvements = [];
       try {
         execSync('npm prune', { stdio: 'ignore' });
       } catch (error) {
-        console.warn('⚠️  Dependency optimization failed:', error.message);
+        logger.warn('⚠️  Dependency optimization failed:', error.message);
       }
     }
   }
@@ -722,10 +748,10 @@ const improvements = [];
           execSync('git push origin main', { stdio: 'inherit' });
         }
 
-        console.log('✅ Changes committed and pushed automatically');
+        logger.info('✅ Changes committed and pushed automatically');
       }
     } catch (error) {
-      console.warn('⚠️  Auto commit/push failed:', error.message);
+      logger.warn('⚠️  Auto commit/push failed:', error.message);
     }
   }
 
@@ -733,7 +759,7 @@ const improvements = [];
    * Start automated deployment
    */
   startAutomatedDeployment() {
-    console.log('🚀 Starting automated deployment...');
+    logger.info('🚀 Starting automated deployment...');
 
     setInterval(async () => {
       try {
@@ -742,7 +768,7 @@ const improvements = [];
           await this.deploy();
         }
       } catch (error) {
-        console.error('❌ Automated deployment failed:', error);
+        logger.error('❌ Automated deployment failed:', error);
       }
     }, 300000); // Every 5 minutes
   }
@@ -751,13 +777,13 @@ const improvements = [];
    * Start auto-fix system for Next.js issues
    */
   startAutoFixSystem() {
-    console.log('🔧 Starting auto-fix system...');
+    logger.info('🔧 Starting auto-fix system...');
 
     setInterval(async () => {
       try {
         await this.runAutoFix();
       } catch (error) {
-        console.error('❌ Error in auto-fix system:', error);
+        logger.error('❌ Error in auto-fix system:', error);
       }
     }, this.autoFixInterval);
   }
@@ -771,7 +797,7 @@ const improvements = [];
       return; // Too soon to run again
     }
 
-    console.log('🔧 Running automated Next.js fixes...');
+    logger.info('🔧 Running automated Next.js fixes...');
 
     try {
       // Import and run the auto-fix system
@@ -780,7 +806,7 @@ const improvements = [];
 const result = await this.autoFixSystem.run();
 
       if (result.success) {
-        console.log('✅ Auto-fix completed successfully');
+        logger.info('✅ Auto-fix completed successfully');
         this.lastAutoFixTime = now;
 
         // Queue a restart if fixes were applied
@@ -793,10 +819,10 @@ const result = await this.autoFixSystem.run();
           });
         }
       } else {
-        console.log('⚠️ Auto-fix completed with some issues remaining');
+        logger.info('⚠️ Auto-fix completed with some issues remaining');
       }
     } catch (error) {
-      console.error('❌ Error running auto-fix:', error);
+      logger.error('❌ Error running auto-fix:', error);
     }
   }
 
@@ -823,7 +849,7 @@ const remoteCommit = execSync('git rev-parse origin/main', {
    * Deploy the application
    */
   async deploy() {
-    console.log('🚀 Deploying application...');
+    logger.info('🚀 Deploying application...');
 
     try {
       // Build the application
@@ -832,9 +858,9 @@ const remoteCommit = execSync('git rev-parse origin/main', {
       // Deploy to Netlify (or other platform)
       execSync('npm run deploy:netlify', { stdio: 'inherit' });
 
-      console.log('✅ Deployment completed successfully');
+      logger.info('✅ Deployment completed successfully');
     } catch (error) {
-      console.error('❌ Deployment failed:', error);
+      logger.error('❌ Deployment failed:', error);
 
       // Rollback if enabled
       if (CONFIG.AUTOMATION.AUTO_ROLLBACK_ON_FAILURE) {
@@ -847,16 +873,16 @@ const remoteCommit = execSync('git rev-parse origin/main', {
    * Rollback deployment
    */
   async rollback() {
-    console.log('🔄 Rolling back deployment...');
+    logger.info('🔄 Rolling back deployment...');
 
     try {
       // Revert to previous commit
       execSync('git reset --hard HEAD~1', { stdio: 'inherit' });
       execSync('git push --force origin main', { stdio: 'inherit' });
 
-      console.log('✅ Rollback completed');
+      logger.info('✅ Rollback completed');
     } catch (error) {
-      console.error('❌ Rollback failed:', error);
+      logger.error('❌ Rollback failed:', error);
     }
   }
 
@@ -970,7 +996,7 @@ const remoteCommit = execSync('git rev-parse origin/main', {
    * Stop the pipeline
    */
   stop() {
-    console.log('⏹️  Stopping Automated Improvement Pipeline...');
+    logger.info('⏹️  Stopping Automated Improvement Pipeline...');
     this.isRunning = false;
   }
 
@@ -995,20 +1021,20 @@ if (require.main === module) {
 
   // Handle process signals
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await pipeline.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await pipeline.stop();
     process.exit(0);
   });
 
   // Start the pipeline
   pipeline.initialize().catch((error) => {
-    console.error('❌ Failed to start automated improvement pipeline:', error);
+    logger.error('❌ Failed to start automated improvement pipeline:', error);
     process.exit(1);
   });
 }

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -28,7 +51,7 @@ class ContinuousHealer {
 
   log(message, level = INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
+    logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + \n');  }
 
   async startMonitoring() {
@@ -300,7 +323,7 @@ const newContent = content.replace(importRegex, );          fs.writeFileSync(fil
       
       for (const file of tsFiles) {
         const content = fs.readFileSync(file, utf8');        
-        if (content.includes('console.log(') && !file.includes('.test.') && !file.includes('.spec.')) {'          this.log(`Found console.log in production file: ${file}`, WARN');        }
+        if (content.includes('logger.info(') && !file.includes('.test.') && !file.includes('.spec.')) {'          this.log(`Found console.log in production file: ${file}`, WARN');        }
       }
     } catch (error) {
       this.log(`Error checking for common issues: ${error.message}`, ERROR');    }
@@ -350,7 +373,7 @@ if (require.main === module) {
   });
 
   healer.startMonitoring().catch(error => {
-    console.error('Continuous healer failed:', error);    process.exit(1);
+    logger.error('Continuous healer failed:', error);    process.exit(1);
   });
 }
 

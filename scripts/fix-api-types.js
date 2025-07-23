@@ -1,4 +1,15 @@
-#!/usr/bin/env node
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node
 ;
 import fs from fs';import path from path';import { fileURLToPath as _fileURLToPath } from url';
 console.warn('🔧 Fixing API TypeScript errors...');
@@ -118,4 +129,26 @@ function safeHeader(headers: NextApiRequest['headers'], key: string): string | s
 `;
 
 fs.writeFileSync(path.join(process.cwd(), src/utils/api-helpers.ts'), helperContent);console.warn('✅ Created API helper utilities');
-default {}; 
+default {};
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

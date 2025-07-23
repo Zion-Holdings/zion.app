@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -49,7 +72,7 @@ class CursorMultiComputerCommunication {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] [${this.config.computerId}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
   }
 
@@ -331,11 +354,14 @@ const path = parsedUrl.pathname;
       });
 
       // Timeout after 5 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         if (!ws.readyState === WebSocket.OPEN) {
           resolve(null);
         }
-      }, 5000);
+      },  5000);
+// Store timeoutId for cleanup if needed
+;
     });
   }
 
@@ -660,7 +686,10 @@ const message = JSON.stringify({
         resolve(false);
       });
 
-      req.setTimeout(5000, () => {
+      req.
+const timeoutId = setTimeout(5000,  ();
+// Store timeoutId for cleanup if needed
+ => {
         resolve(false);
       });
 
@@ -788,25 +817,25 @@ const command = process.argv[2];
       communication
         .initializeCursorCommunication()
         .then(() => {
-          console.log(
+          logger.info(
             '🚀 Cursor Multi-Computer Communication System is running',
           );
 
           // Keep the process alive
           process.on('SIGINT', async () => {
-            console.log('\n🛑 Received SIGINT, shutting down...');
+            logger.info('\n🛑 Received SIGINT, shutting down...');
             await communication.shutdown();
             process.exit(0);
           });
 
           process.on('SIGTERM', async () => {
-            console.log('\n🛑 Received SIGTERM, shutting down...');
+            logger.info('\n🛑 Received SIGTERM, shutting down...');
             await communication.shutdown();
             process.exit(0);
           });
         })
         .catch((error) => {
-          console.error(`❌ Failed to start: ${error.message}`);
+          logger.error(`❌ Failed to start: ${error.message}`);
           process.exit(1);
         });
       break;
@@ -833,7 +862,7 @@ const command = process.argv[2];
       break;
 
     default:
-      console.log(`
+      logger.info(`
 Usage: node cursor-multi-computer-communication.cjs <command> [args]
 
 Commands:

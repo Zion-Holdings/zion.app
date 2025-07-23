@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -14,7 +37,7 @@ class FullAutomationMaster {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage)
+    logger.info(logMessage)
 const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
@@ -253,10 +276,13 @@ const result = await this.runCommand('npm run build');
       });
 
       // Timeout after 60 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         if (!resolved) {
           resolved = true;
-          this.log('Server startup timeout', 'WARN');
+          this.log('Server startup timeout',  'WARN');
+// Store timeoutId for cleanup if needed
+;
           resolve({ success: false, error: 'Timeout' });
         }
       }, 60000);
@@ -267,7 +293,10 @@ const result = await this.runCommand('npm run build');
     this.log('Step 6: Performing health check...');
 
     // Wait for server to be ready
-    await new Promise((resolve) => setTimeout(resolve, 10000));
+    await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  10000);
+// Store timeoutId for cleanup if needed
+);
 
     try {
       const response = await fetch('http://localhost:3006/api/health');
@@ -342,23 +371,23 @@ if (require.main === module) {
     .runFullAutomation()
     .then((success) => {
       if (success) {
-        console.log('\n🎉 SUCCESS: App is now running!');
-        console.log('🌐 Open http://localhost:3006 in your browser');
-        console.log('📊 Health check: http://localhost:3006/api/health');
-        console.log('\nPress Ctrl+C to stop the server');
+        logger.info('\n🎉 SUCCESS: App is now running!');
+        logger.info('🌐 Open http://localhost:3006 in your browser');
+        logger.info('📊 Health check: http://localhost:3006/api/health');
+        logger.info('\nPress Ctrl+C to stop the server');
 
         // Keep the process running
         process.on('SIGINT', () => {
-          console.log('\n🛑 Stopping server...');
+          logger.info('\n🛑 Stopping server...');
           process.exit(0);
         });
       } else {
-        console.log('\n❌ FAILED: Automation did not complete successfully');
+        logger.info('\n❌ FAILED: Automation did not complete successfully');
         process.exit(1);
       }
     })
     .catch((error) => {
-      console.error('Automation failed:', error);
+      logger.error('Automation failed:', error);
       process.exit(1);
     });
 }

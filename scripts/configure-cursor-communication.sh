@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 echo "🔧 Configuring Cursor Automated Communication System..."
 echo ""
@@ -35,3 +46,25 @@ echo "📝 Configuration complete!"
 echo "   Server URL: $SERVER_URL"
 echo "   Local Port: $LOCAL_PORT"
 echo "   Coordination Port: $COORDINATION_PORT"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

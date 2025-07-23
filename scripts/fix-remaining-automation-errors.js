@@ -1,9 +1,20 @@
-#!/usr/bin/env node
+
+class Execnodec21encodingutf8 {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Execnodec21encodingutf8...');
+    
+    try {
+      #!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 Fixing remaining automation syntax errors...\n');
+logger.info('🔧 Fixing remaining automation syntax errors...\n');
 
 // Specific files that need manual fixes
 const specificFixes = [
@@ -151,7 +162,7 @@ const scriptFixes = [
     patterns: [
       {
         pattern: /const isDevMode = process\.env\.NODE_ENV === development';    console\.warn\('📋 Environment mode:', process\.env\.NODE_ENV \|\| undefined'\);    console\.warn\('📋 Development mode:', isDevMode\);/g,
-        replacement: "const isDevMode = process.env.NODE_ENV === development';\n    console.warn('📋 Environment mode:', process.env.NODE_ENV || undefined');\n    console.warn('📋 Development mode:', isDevMode);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        replacement: "const isDevMode = process.env.NODE_ENV === development';\n    logger.warn('📋 Environment mode:', process.env.NODE_ENV || undefined');\n    logger.warn('📋 Development mode:', isDevMode);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
     ]
   },
@@ -241,7 +252,7 @@ const scriptFixes = [
     patterns: [
       {
         pattern: /app\.post\('\/webhook\/trigger-fix', \(req, res\) => {'  console\.warn\('🔁 Webhook received! Starting Codex fix pipeline\.\.\.'\);/g,
-        replacement: "app.post('/webhook/trigger-fix', (req, res) => {\n  console.warn('🔁 Webhook received! Starting Codex fix pipeline...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        replacement: "app.post('/webhook/trigger-fix', (req, res) => {\n  logger.warn('🔁 Webhook received! Starting Codex fix pipeline...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
     ]
   },
@@ -268,7 +279,7 @@ const scriptFixes = [
 function fixFile(filePath, patterns) {
   try {
     if (!fs.existsSync(filePath)) {
-      console.log(`⚠️  File not found: ${filePath}`);
+      logger.info(`⚠️  File not found: ${filePath}`);
       return false;
     }
 
@@ -286,11 +297,11 @@ function fixFile(filePath, patterns) {
 
     if (content !== originalContent) {
       fs.writeFileSync(filePath, content, utf8');
-      console.log(`✅ Fixed: ${filePath}`);
+      logger.info(`✅ Fixed: ${filePath}`);
       return true;
     }
   } catch (error) {
-    console.error(`❌ Error fixing ${filePath}:`, error.message);
+    logger.error(`❌ Error fixing ${filePath}:`, error.message);
   }
   return false;
 }
@@ -298,24 +309,24 @@ function fixFile(filePath, patterns) {
 // Apply specific fixes
 let totalFixed = 0;
 
-console.log('🔧 Fixing automation files...');
+logger.info('🔧 Fixing automation files...');
 for (const fix of specificFixes) {
   if (fixFile(fix.file, fix.patterns)) {
     totalFixed++;
   }
 }
 
-console.log('\n🔧 Fixing script files...');
+logger.info('\n🔧 Fixing script files...');
 for (const fix of scriptFixes) {
   if (fixFile(fix.file, fix.patterns)) {
     totalFixed++;
   }
 }
 
-console.log(`\n✅ Fixed ${totalFixed} files`);
+logger.info(`\n✅ Fixed ${totalFixed} files`);
 
 // Check for remaining syntax errors
-console.log('\n🔍 Checking for remaining syntax errors...\n');
+logger.info('\n🔍 Checking for remaining syntax errors...\n');
 
 const { execSync } = require('child_process');
 
@@ -323,28 +334,50 @@ try {
   // Check automation directory
   const automationResult = execSync('find automation -name "*.js" -not -path "*/node_modules/*" -exec node -c {} \\; 2>&1', { encoding: utf8' });
   if (automationResult.trim()) {
-    console.log('⚠️  Remaining errors in automation:');
-    console.log(automationResult);
+    logger.info('⚠️  Remaining errors in automation:');
+    logger.info(automationResult);
   } else {
-    console.log('✅ No remaining syntax errors in automation files');
+    logger.info('✅ No remaining syntax errors in automation files');
   }
 } catch (error) {
-  console.log('⚠️  Remaining errors in automation:');
-  console.log(error.stdout || error.message);
+  logger.info('⚠️  Remaining errors in automation:');
+  logger.info(error.stdout || error.message);
 }
 
 try {
   // Check scripts directory
   const scriptsResult = execSync('find scripts -name "*.js" -exec node -c {} \\; 2>&1', { encoding: utf8' });
   if (scriptsResult.trim()) {
-    console.log('\n⚠️  Remaining errors in scripts:');
-    console.log(scriptsResult);
+    logger.info('\n⚠️  Remaining errors in scripts:');
+    logger.info(scriptsResult);
   } else {
-    console.log('\n✅ No remaining syntax errors in script files');
+    logger.info('\n✅ No remaining syntax errors in script files');
   }
 } catch (error) {
-  console.log('\n⚠️  Remaining errors in scripts:');
-  console.log(error.stdout || error.message);
+  logger.info('\n⚠️  Remaining errors in scripts:');
+  logger.info(error.stdout || error.message);
 }
 
-console.log('\n🚀 Automation system should now be ready to run!'); 
+logger.info('\n🚀 Automation system should now be ready to run!');
+    } catch (error) {
+      console.error('Error in Execnodec21encodingutf8:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Execnodec21encodingutf8...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Execnodec21encodingutf8();
+  script.start().catch(error => {
+    console.error('Failed to start Execnodec21encodingutf8:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Execnodec21encodingutf8;

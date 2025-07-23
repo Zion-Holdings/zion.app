@@ -1,10 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * Bundle Analysis Script for Zion App
- *
- * Analyzes bundle sizes and identifies optimization opportunities
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const path = require('path');
@@ -95,3 +102,39 @@ console.warn('✅ Analysis Complete!');
 console.warn(
   '💡 Run `npm run analyze` for detailed webpack-bundle-analyzer output',
 );
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

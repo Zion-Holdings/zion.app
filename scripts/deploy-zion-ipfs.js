@@ -1,4 +1,15 @@
-#!/usr/bin/env node;
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node;
 import fs from fs';import path from path';import { createHelia } from helia';import { unixfs } from @helia/unixfs';import { MemoryBlockstore } from blockstore-memory';import { MemoryDatastore } from datastore-memory';// Libp2p stack is needed for Helia to operate, even for local-only operations,
 // though it can be minimal if not connecting to the broader network.;
 import { createLibp2p } from libp2p';import { identify } from @libp2p/identify';import { tcp } from @libp2p/tcp'; // Or another transport if more appropriate'import { noise } from @chainsafe/libp2p-noise';import { yamux } from @chainsafe/libp2p-yamux';
@@ -100,3 +111,39 @@ const relativeEntryPath = path.join(relativePathBase, entry.name);
 deploy().catch(err => {
   console.error('Deployment failed:', err);  process.exit(1);
 });
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

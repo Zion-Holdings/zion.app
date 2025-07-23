@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 echo "🔍 Checking Cursor Automated Communication System status..."
 echo ""
 
@@ -40,3 +51,25 @@ echo "  ./scripts/start-cursor-automated.sh start   - Start system"
 echo "  ./scripts/start-cursor-automated.sh stop    - Stop system"
 echo "  ./scripts/start-cursor-automated.sh status  - Check status"
 echo "  ./scripts/start-cursor-automated.sh logs    - View logs"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

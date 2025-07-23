@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -9,13 +32,13 @@ class PagesSyntaxFixer {
   }
 
   async fixPagesDirectory() {
-    console.log('🔧 Fixing pages directory syntax errors...');
+    logger.info('🔧 Fixing pages directory syntax errors...');
 
     try {
       const pagesDir = 'pages'
 const files = this.getAllFiles(pagesDir);
 
-      console.log(`📁 Found ${files.length} files in pages directory`);
+      logger.info(`📁 Found ${files.length} files in pages directory`);
 
       for (const file of files) {
         try {
@@ -27,7 +50,7 @@ const files = this.getAllFiles(pagesDir);
 
       this.generateReport();
     } catch (error) {
-      console.error('❌ Pages fix failed:', error);
+      logger.error('❌ Pages fix failed:', error);
     }
   }
 
@@ -80,10 +103,10 @@ const originalContent = content;
       if (fixedContent !== originalContent) {
         fs.writeFileSync(filePath, fixedContent, 'utf8');
         this.fixedFiles.push(filePath);
-        console.log(`✅ Fixed: ${filePath}`);
+        logger.info(`✅ Fixed: ${filePath}`);
       }
     } catch (error) {
-      console.error(`❌ Error fixing ${filePath}:`, error.message);
+      logger.error(`❌ Error fixing ${filePath}:`, error.message);
       throw error;
     }
   }
@@ -399,22 +422,22 @@ export default ${componentName};
   }
 
   generateReport() {
-    console.log('\n📊 Pages Syntax Fix Report');
-    console.log('===========================');
-    console.log(`Files fixed: ${this.fixedFiles.length}`);
-    console.log(`Errors encountered: ${this.errors.length}`);
+    logger.info('\n📊 Pages Syntax Fix Report');
+    logger.info('===========================');
+    logger.info(`Files fixed: ${this.fixedFiles.length}`);
+    logger.info(`Errors encountered: ${this.errors.length}`);
 
     if (this.fixedFiles.length > 0) {
-      console.log('\n✅ Fixed files:');
+      logger.info('\n✅ Fixed files:');
       this.fixedFiles.forEach((file) => {
-        console.log(`  - ${file}`);
+        logger.info(`  - ${file}`);
       });
     }
 
     if (this.errors.length > 0) {
-      console.log('\n❌ Errors:');
+      logger.info('\n❌ Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`  - ${file}: ${error}`);
+        logger.info(`  - ${file}: ${error}`);
       });
     }
   }

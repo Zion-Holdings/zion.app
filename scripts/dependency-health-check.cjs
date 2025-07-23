@@ -1,9 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * Dependency Health Check Script
- * Comprehensive check for SWC dependencies, punycode issues, and overall project health
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const { _spawn } = require('child_process')
 const fs = require('fs')
@@ -11,9 +19,7 @@ const path = require('path');
 
 process.stdout.write('\ud83d\udd0d Dependency Health Check\n');
 
-/**
- * Check SWC dependencies
- */
+
 async function checkSWCDependencies() {
   process.stdout.write('\u2699\ufe0f  SWC Dependencies Check:\n');
 
@@ -66,9 +72,7 @@ const helperMatches = output.match(/@swc\/helpers@(\d+\.\d+\.\d+)/g);
   });
 }
 
-/**
- * Check punycode dependencies
- */
+
 async function checkPunycodeDependencies() {
   process.stdout.write('\n\ud83c\udf10 Punycode Dependencies Check:\n');
 
@@ -112,9 +116,7 @@ async function checkPunycodeDependencies() {
   });
 }
 
-/**
- * Test build with warning suppression
- */
+
 async function testBuildWithWarnings() {
   process.stdout.write(
     '\n\ud83c\udfd7\ufe0f  Build Test (with warning suppression):\n',
@@ -187,9 +189,7 @@ const errorLines = errorOutput.split('\n').slice(0, 5);
   });
 }
 
-/**
- * Check package.json scripts
- */
+
 function checkPackageScripts() {
   process.stdout.write('\n\ud83d\udccb Package Scripts Check:\n');
 
@@ -228,9 +228,7 @@ const requiredScripts = [
   }
 }
 
-/**
- * Generate health report
- */
+
 function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
   process.stdout.write('\n\ud83d\udcca Health Report Summary:\n');
   process.stdout.write('='.repeat(50) + '\n')
@@ -273,9 +271,7 @@ const emoji = status === 'HEALTHY' ? '🟢' : '🟡';
   }
 }
 
-/**
- * Main health check function
- */
+
 async function runHealthCheck() {
   process.stdout.write('Starting comprehensive dependency health check...\n')
 const swcCheck = await checkSWCDependencies()
@@ -290,3 +286,25 @@ const buildCheck = await testBuildWithWarnings();
 
 // Run the health check
 runHealthCheck().catch(console.error);
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

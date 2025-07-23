@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -76,7 +99,7 @@ const logEntry = {
           computer: os.hostname(),
         };
 
-        console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`, data);
+        logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`, data);
 
         // Write to log file
         fs.appendFileSync(CONFIG.LOG_FILE, JSON.stringify(logEntry) + '\n');
@@ -1267,20 +1290,20 @@ if (require.main === module) {
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\nShutting down...');
+    logger.info('\nShutting down...');
     await controller.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\nShutting down...');
+    logger.info('\nShutting down...');
     await controller.stop();
     process.exit(0);
   });
 
   // Start the controller
   controller.start().catch((error) => {
-    console.error('Failed to start controller:', error);
+    logger.error('Failed to start controller:', error);
     process.exit(1);
   });
 }

@@ -1,10 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * 🔧 Debug Login API
- * Simple test to identify the source of 500 errors
- * 🔐 SECURITY: No hardcoded credentials - uses environment variables
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 // Test the login functionality directly
 async function testLoginApi() {
@@ -86,4 +93,26 @@ if (require.main === module) {
   testLoginApi().catch(console.error);
 }
 
-module.exports = { testLoginApi }; 
+module.exports = { testLoginApi };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

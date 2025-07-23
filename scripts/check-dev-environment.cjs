@@ -1,10 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * Development Environment Checker
- *
- * This script helps developers verify their local environment setup
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const _path = require('path')
@@ -171,3 +178,25 @@ if (require.main === module) {
 }
 
 module.exports = { checkEnvironment };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

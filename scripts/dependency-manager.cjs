@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const { execSync } = require('child_process')
@@ -17,7 +40,7 @@ class DependencyManager {
       reset: '\x1b[0m',
     }
 const timestamp = new Date().toISOString();
-    console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
+    logger.info(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
 
   async runCommand(cmd) {

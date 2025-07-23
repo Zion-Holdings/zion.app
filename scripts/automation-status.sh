@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App Automation Status Script
 # This script shows the status of all automation jobs
@@ -83,3 +94,25 @@ echo "   Check cron jobs: crontab -l"
 echo "   Remove automation jobs: ./scripts/remove-cron-automation.sh"
 echo "   Start manual automation: ./scripts/start-master-automation.sh"
 echo "   View master scheduler logs: tail -f logs/master-automation-scheduler.log"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

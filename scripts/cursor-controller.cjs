@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -50,10 +73,10 @@ const instanceId = this.generateInstanceId();
         status: 'running',
       });
 
-      console.log(`✅ Cursor opened for project: ${projectPath}`);
+      logger.info(`✅ Cursor opened for project: ${projectPath}`);
       return instanceId;
     } catch (error) {
-      console.error(`❌ Failed to open Cursor: ${error.message}`);
+      logger.error(`❌ Failed to open Cursor: ${error.message}`);
       throw error;
     }
   }
@@ -70,9 +93,9 @@ const instanceId = this.generateInstanceId();
         execSync('wmctrl -a Cursor');
       }
 
-      console.log('✅ Cursor focused');
+      logger.info('✅ Cursor focused');
     } catch (error) {
-      console.error(`❌ Failed to focus Cursor: ${error.message}`);
+      logger.error(`❌ Failed to focus Cursor: ${error.message}`);
       throw error;
     }
   }
@@ -95,9 +118,9 @@ const instanceId = this.generateInstanceId();
         execSync(`xdotool key ${command}`);
       }
 
-      console.log(`✅ Executed Cursor command: ${command}`);
+      logger.info(`✅ Executed Cursor command: ${command}`);
     } catch (error) {
-      console.error(`❌ Failed to execute Cursor command: ${error.message}`);
+      logger.error(`❌ Failed to execute Cursor command: ${error.message}`);
       throw error;
     }
   }
@@ -123,9 +146,9 @@ const instanceId = this.generateInstanceId();
         execSync(`"${this.cursorPath}" "${filePath}"`);
       }
 
-      console.log(`✅ Opened file: ${filePath}`);
+      logger.info(`✅ Opened file: ${filePath}`);
     } catch (error) {
-      console.error(`❌ Failed to open file: ${error.message}`);
+      logger.error(`❌ Failed to open file: ${error.message}`);
       throw error;
     }
   }
@@ -140,9 +163,9 @@ const instanceId = this.generateInstanceId();
         execSync('xdotool key ctrl+s');
       }
 
-      console.log('✅ File saved');
+      logger.info('✅ File saved');
     } catch (error) {
-      console.error(`❌ Failed to save file: ${error.message}`);
+      logger.error(`❌ Failed to save file: ${error.message}`);
       throw error;
     }
   }
@@ -157,9 +180,9 @@ const instanceId = this.generateInstanceId();
         execSync('xdotool key ctrl+w');
       }
 
-      console.log('✅ File closed');
+      logger.info('✅ File closed');
     } catch (error) {
-      console.error(`❌ Failed to close file: ${error.message}`);
+      logger.error(`❌ Failed to close file: ${error.message}`);
       throw error;
     }
   }
@@ -182,19 +205,19 @@ const instanceId = this.generateInstanceId();
         execSync(`osascript -e '${appleScript}'`);
       } else {
         // For other platforms, we'll need to implement terminal opening
-        console.log(`Would run terminal command: ${command}`);
+        logger.info(`Would run terminal command: ${command}`);
       }
 
-      console.log(`✅ Executed terminal command: ${command}`);
+      logger.info(`✅ Executed terminal command: ${command}`);
     } catch (error) {
-      console.error(`❌ Failed to execute terminal command: ${error.message}`);
+      logger.error(`❌ Failed to execute terminal command: ${error.message}`);
       throw error;
     }
   }
 
   async applyCursorFix(fixType, filePath = null) {
     try {
-      console.log(`🔧 Applying ${fixType} fix...`);
+      logger.info(`🔧 Applying ${fixType} fix...`);
 
       switch (fixType) {
         case 'lint':
@@ -219,16 +242,16 @@ const instanceId = this.generateInstanceId();
           throw new Error(`Unknown fix type: ${fixType}`);
       }
 
-      console.log(`✅ Applied ${fixType} fix successfully`);
+      logger.info(`✅ Applied ${fixType} fix successfully`);
     } catch (error) {
-      console.error(`❌ Failed to apply ${fixType} fix: ${error.message}`);
+      logger.error(`❌ Failed to apply ${fixType} fix: ${error.message}`);
       throw error;
     }
   }
 
   async autoFixIssues() {
     try {
-      console.log('🔧 Starting automatic issue fixing...')
+      logger.info('🔧 Starting automatic issue fixing...')
 const fixes = [
         { type: 'lint', description: 'Fixing linting issues' },
         { type: 'format', description: 'Formatting code' },
@@ -240,23 +263,23 @@ const fixes = [
 
       for (const fix of fixes) {
         try {
-          console.log(`📝 ${fix.description}...`);
+          logger.info(`📝 ${fix.description}...`);
           await this.applyCursorFix(fix.type);
         } catch (error) {
-          console.warn(`⚠️ ${fix.description} failed: ${error.message}`);
+          logger.warn(`⚠️ ${fix.description} failed: ${error.message}`);
         }
       }
 
-      console.log('✅ Automatic issue fixing completed');
+      logger.info('✅ Automatic issue fixing completed');
     } catch (error) {
-      console.error(`❌ Automatic issue fixing failed: ${error.message}`);
+      logger.error(`❌ Automatic issue fixing failed: ${error.message}`);
       throw error;
     }
   }
 
   async monitorAndFix() {
     try {
-      console.log('🔍 Starting continuous monitoring and fixing...');
+      logger.info('🔍 Starting continuous monitoring and fixing...');
 
       // Monitor for common issues and fix them automatically
       setInterval(async () => {
@@ -265,7 +288,7 @@ const fixes = [
           try {
             execSync('npm run lint', { stdio: 'pipe' });
           } catch (error) {
-            console.log('🔧 Detected linting issues, fixing...');
+            logger.info('🔧 Detected linting issues, fixing...');
             await this.applyCursorFix('lint');
           }
 
@@ -273,7 +296,7 @@ const fixes = [
           try {
             execSync('npm run build', { stdio: 'pipe' });
           } catch (error) {
-            console.log('🔧 Detected build issues, fixing...');
+            logger.info('🔧 Detected build issues, fixing...');
             await this.applyCursorFix('build');
           }
 
@@ -281,17 +304,17 @@ const fixes = [
           try {
             execSync('npm run test', { stdio: 'pipe' });
           } catch (error) {
-            console.log('🔧 Detected test failures, investigating...');
+            logger.info('🔧 Detected test failures, investigating...');
             // Don't auto-fix tests, just log
           }
         } catch (error) {
-          console.error(`❌ Monitoring cycle failed: ${error.message}`);
+          logger.error(`❌ Monitoring cycle failed: ${error.message}`);
         }
       }, 30000); // Check every 30 seconds
 
-      console.log('✅ Continuous monitoring started');
+      logger.info('✅ Continuous monitoring started');
     } catch (error) {
-      console.error(`❌ Failed to start monitoring: ${error.message}`);
+      logger.error(`❌ Failed to start monitoring: ${error.message}`);
       throw error;
     }
   }
@@ -318,9 +341,9 @@ const fixes = [
         }
 
         this.activeInstances.delete(instanceId);
-        console.log(`✅ Closed Cursor instance: ${instanceId}`);
+        logger.info(`✅ Closed Cursor instance: ${instanceId}`);
       } catch (error) {
-        console.error(`❌ Failed to close Cursor instance: ${error.message}`);
+        logger.error(`❌ Failed to close Cursor instance: ${error.message}`);
         throw error;
       }
     }
@@ -365,10 +388,10 @@ const args = process.argv.slice(3);
       controller.closeFile().catch(console.error);
       break;
     case 'instances':
-      console.log(controller.getActiveInstances());
+      logger.info(controller.getActiveInstances());
       break;
     default:
-      console.log(`
+      logger.info(`
 Usage: node cursor-controller.cjs <command> [args]
 
 Commands:

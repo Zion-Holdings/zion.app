@@ -1,3 +1,36 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -21,7 +54,7 @@ function updatePortsInFile(filePath) {
       if (oldRegex.test(content)) {
         content = content.replace(oldRegex, `:${newPort}`);
         updated = true;
-        console.log(`  Updated port ${oldPort} -> ${newPort}`);
+        logger.info(`  Updated port ${oldPort} -> ${newPort}`);
       }
     }
 
@@ -31,13 +64,13 @@ function updatePortsInFile(filePath) {
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    logger.error(`Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
 function fixPortConflicts() {
-  console.log('🔧 Fixing port conflicts in automation scripts...')
+  logger.info('🔧 Fixing port conflicts in automation scripts...')
 const scriptsDir = path.join(__dirname)
 const files = fs
     .readdirSync(scriptsDir)
@@ -47,19 +80,19 @@ const files = fs
 
   for (const file of files) {
     const filePath = path.join(scriptsDir, file);
-    console.log(`\n📁 Processing: ${file}`);
+    logger.info(`\n📁 Processing: ${file}`);
 
     if (updatePortsInFile(filePath)) {
       updatedFiles++;
     }
   }
 
-  console.log(`\n✅ Updated ${updatedFiles} files to fix port conflicts`);
-  console.log('\n📋 New port mapping:');
-  console.log('  Main App: 3002');
-  console.log('  Automation: 3003');
-  console.log('  Health Checks: 3001');
-  console.log('  Other Services: 3004-3007');
+  logger.info(`\n✅ Updated ${updatedFiles} files to fix port conflicts`);
+  logger.info('\n📋 New port mapping:');
+  logger.info('  Main App: 3002');
+  logger.info('  Automation: 3003');
+  logger.info('  Health Checks: 3001');
+  logger.info('  Other Services: 3004-3007');
 }
 
 if (require.main === module) {
@@ -67,3 +100,25 @@ if (require.main === module) {
 }
 
 module.exports = { fixPortConflicts, PORT_MAPPING };
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

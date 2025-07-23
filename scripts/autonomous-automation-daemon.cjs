@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -145,7 +168,7 @@ class AutonomousAutomationDaemon extends EventEmitter {
       await this.startAutonomousOperation();
       
     } catch (error) {
-      console.error('Failed to initialize autonomous system:', error);
+      logger.error('Failed to initialize autonomous system:', error);
       process.exit(1);
     }
   }
@@ -162,7 +185,7 @@ class AutonomousAutomationDaemon extends EventEmitter {
       try {
         await fs.mkdir(dir, { recursive: true });
       } catch (error) {
-        console.warn(`Failed to create directory ${dir}:`, error.message);
+        logger.warn(`Failed to create directory ${dir}:`, error.message);
       }
     }
   }
@@ -310,10 +333,13 @@ class AutonomousAutomationDaemon extends EventEmitter {
   async getCPUUsage() {
     return new Promise((resolve) => {
       const startUsage = process.cpuUsage();
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         const endUsage = process.cpuUsage(startUsage);
         const cpuPercent = (endUsage.user + endUsage.system) / 1000000;
-        resolve(Math.min(100, cpuPercent));
+        resolve(Math.min(100,  cpuPercent);
+// Store timeoutId for cleanup if needed
+);
       }, 100);
     });
   }
@@ -605,11 +631,14 @@ class AutonomousAutomationDaemon extends EventEmitter {
     if (automation && automation.process) {
       try {
         automation.process.kill('SIGTERM');
-        setTimeout(() => {
+        
+const timeoutId = setTimeout(() => {
           if (automation.process) {
             automation.process.kill('SIGKILL');
           }
-        }, 5000);
+        },  5000);
+// Store timeoutId for cleanup if needed
+;
       } catch (error) {
         this.log('error', `Failed to stop automation ${name}: ${error.message}`);
       }
@@ -627,7 +656,10 @@ class AutonomousAutomationDaemon extends EventEmitter {
       }
 
       await this.stopAutomation(name);
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  2000);
+// Store timeoutId for cleanup if needed
+);
       await this.startAutomation(name, automation.script);
     }
   }
@@ -844,7 +876,7 @@ Please respond with a JSON object containing:
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [AUTONOMOUS-DAEMON] ${message}`;
     
-    console.log(logMessage);
+    logger.info(logMessage);
     
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'autonomous-daemon.log');
@@ -877,10 +909,10 @@ async function main() {
       await daemon.stopAutonomousOperation();
       break;
     case 'status':
-      console.log(JSON.stringify(daemon.getStatus(), null, 2));
+      logger.info(JSON.stringify(daemon.getStatus(), null, 2));
       break;
     default:
-      console.log(`
+      logger.info(`
 🤖 Autonomous Automation Daemon
 
 Usage:
@@ -910,7 +942,7 @@ Examples:
 
 if (require.main === module) {
   main().catch(error => {
-    console.error('Autonomous Automation Daemon failed:', error.message);
+    logger.error('Autonomous Automation Daemon failed:', error.message);
     process.exit(1);
   });
 }

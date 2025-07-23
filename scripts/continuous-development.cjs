@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const { spawn, exec } = require('child_process')
@@ -16,7 +39,7 @@ class ContinuousDevelopment {
 
   log(message, type = 'INFO') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${type}] ${message}`);
+    logger.info(`[${timestamp}] [${type}] ${message}`);
   }
 
   async start() {
@@ -102,9 +125,12 @@ class ContinuousDevelopment {
       });
 
       // Timeout after 30 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         if (!this.isRunning) {
-          this.log('⏰ Server startup timeout', 'WARN');
+          this.log('⏰ Server startup timeout',  'WARN');
+// Store timeoutId for cleanup if needed
+;
           resolve(); // Continue anyway
         }
       }, 30000);
@@ -328,14 +354,14 @@ const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   if (global.continuousDev) {
     await global.continuousDev.stop();
   }
 });
 
 process.on('SIGTERM', async () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   if (global.continuousDev) {
     await global.continuousDev.stop();
   }
@@ -346,6 +372,6 @@ const continuousDev = new ContinuousDevelopment();
 global.continuousDev = continuousDev;
 
 continuousDev.start().catch((error) => {
-  console.error('❌ Failed to start continuous development:', error);
+  logger.error('❌ Failed to start continuous development:', error);
   process.exit(1);
 });

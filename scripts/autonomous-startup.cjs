@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -67,7 +90,7 @@ class AutonomousStartup {
 
   async initializeStartup() {
     try {
-      console.log('🚀 Initializing Autonomous Startup System...');
+      logger.info('🚀 Initializing Autonomous Startup System...');
       
       // Set environment variables
       this.setEnvironmentVariables();
@@ -77,7 +100,7 @@ class AutonomousStartup {
       
       // Check if already running
       if (await this.isAlreadyRunning()) {
-        console.log('⚠️  Autonomous system is already running');
+        logger.info('⚠️  Autonomous system is already running');
         process.exit(0);
       }
       
@@ -90,10 +113,10 @@ class AutonomousStartup {
       // Set up signal handlers
       this.setupSignalHandlers();
       
-      console.log('✅ Autonomous Startup System initialized');
+      logger.info('✅ Autonomous Startup System initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize startup system:', error.message);
+      logger.error('❌ Failed to initialize startup system:', error.message);
       process.exit(1);
     }
   }
@@ -115,7 +138,7 @@ class AutonomousStartup {
       try {
         await fs.mkdir(dir, { recursive: true });
       } catch (error) {
-        console.warn(`Failed to create directory ${dir}: ${error.message}`);
+        logger.warn(`Failed to create directory ${dir}: ${error.message}`);
       }
     }
   }
@@ -145,9 +168,9 @@ class AutonomousStartup {
     try {
       const pid = process.pid;
       await fs.writeFile(this.config.startup.pidFile, pid.toString());
-      console.log(`📝 PID file created: ${pid}`);
+      logger.info(`📝 PID file created: ${pid}`);
     } catch (error) {
-      console.error(`Failed to create PID file: ${error.message}`);
+      logger.error(`Failed to create PID file: ${error.message}`);
       throw error;
     }
   }
@@ -167,26 +190,26 @@ class AutonomousStartup {
     
     // Handle uncaught exceptions
     process.on('uncaughtException', (error) => {
-      console.error('Uncaught Exception:', error);
+      logger.error('Uncaught Exception:', error);
       this.log('error', `Uncaught Exception: ${error.message}`);
       this.gracefulShutdown();
     });
     
     process.on('unhandledRejection', (reason, promise) => {
-      console.error('Unhandled Rejection:', reason);
+      logger.error('Unhandled Rejection:', reason);
       this.log('error', `Unhandled Rejection: ${reason}`);
     });
   }
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️  Autonomous startup is already running');
+      logger.info('⚠️  Autonomous startup is already running');
       return;
     }
 
     this.isRunning = true;
     this.startupTime = Date.now();
-    console.log('🚀 Starting Autonomous System...');
+    logger.info('🚀 Starting Autonomous System...');
 
     try {
       // Start critical components first
@@ -198,21 +221,21 @@ class AutonomousStartup {
       // Start remaining components
       await this.startRemainingComponents();
       
-      console.log('✅ Autonomous System started successfully');
+      logger.info('✅ Autonomous System started successfully');
       this.log('info', 'Autonomous System started successfully');
       
       // Keep the process alive
       this.keepAlive();
       
     } catch (error) {
-      console.error('❌ Failed to start autonomous system:', error.message);
+      logger.error('❌ Failed to start autonomous system:', error.message);
       this.log('error', `Failed to start autonomous system: ${error.message}`);
       await this.gracefulShutdown();
     }
   }
 
   async startCriticalComponents() {
-    console.log('🔧 Starting critical components...');
+    logger.info('🔧 Starting critical components...');
     
     const criticalComponents = Object.entries(this.config.components)
       .filter(([name, config]) => config.priority === 'critical')
@@ -224,7 +247,7 @@ class AutonomousStartup {
   }
 
   async startHighPriorityComponents() {
-    console.log('🔧 Starting high priority components...');
+    logger.info('🔧 Starting high priority components...');
     
     const highPriorityComponents = Object.entries(this.config.components)
       .filter(([name, config]) => config.priority === 'high')
@@ -236,7 +259,7 @@ class AutonomousStartup {
   }
 
   async startRemainingComponents() {
-    console.log('🔧 Starting remaining components...');
+    logger.info('🔧 Starting remaining components...');
     
     const remainingComponents = Object.entries(this.config.components)
       .filter(([name, config]) => config.priority !== 'critical' && config.priority !== 'high')
@@ -250,20 +273,20 @@ class AutonomousStartup {
   async startComponent(name) {
     const config = this.config.components[name];
     if (!config) {
-      console.error(`❌ Unknown component: ${name}`);
+      logger.error(`❌ Unknown component: ${name}`);
       return;
     }
 
     // Check dependencies
     for (const dependency of config.dependencies) {
       if (!this.processes.has(dependency)) {
-        console.warn(`⚠️  Dependency ${dependency} not running, skipping ${name}`);
+        logger.warn(`⚠️  Dependency ${dependency} not running, skipping ${name}`);
         return;
       }
     }
 
     try {
-      console.log(`🚀 Starting component: ${name}`);
+      logger.info(`🚀 Starting component: ${name}`);
 
       const scriptPath = path.join(__dirname, config.script);
       const process = spawn('node', [scriptPath, 'start'], {
@@ -283,18 +306,18 @@ class AutonomousStartup {
 
       process.stdout.on('data', (data) => {
         const output = data.toString().trim();
-        console.log(`${name}: ${output}`);
+        logger.info(`${name}: ${output}`);
         this.log('info', `${name}: ${output}`);
       });
 
       process.stderr.on('data', (data) => {
         const error = data.toString().trim();
-        console.error(`${name} Error: ${error}`);
+        logger.error(`${name} Error: ${error}`);
         this.log('error', `${name} Error: ${error}`);
       });
 
       process.on('close', (code) => {
-        console.warn(`⚠️  ${name} process exited with code ${code}`);
+        logger.warn(`⚠️  ${name} process exited with code ${code}`);
         this.log('warn', `${name} process exited with code ${code}`);
         
         const proc = this.processes.get(name);
@@ -306,16 +329,19 @@ class AutonomousStartup {
 
         // Auto-restart if required or enabled
         if (config.required || (config.autoRestart && proc.restartCount < this.config.startup.maxRetries)) {
-          setTimeout(() => {
+          
+const timeoutId = setTimeout(() => {
             if (this.isRunning) {
               this.restartComponent(name);
             }
-          }, this.config.startup.retryDelay);
+          },  this.config.startup.retryDelay);
+// Store timeoutId for cleanup if needed
+;
         }
       });
 
       process.on('error', (error) => {
-        console.error(`${name} process error: ${error.message}`);
+        logger.error(`${name} process error: ${error.message}`);
         this.log('error', `${name} process error: ${error.message}`);
         
         const proc = this.processes.get(name);
@@ -325,12 +351,15 @@ class AutonomousStartup {
       });
 
       // Mark as running after health check
-      setTimeout(async () => {
+      
+const timeoutId = setTimeout(async () => {
         await this.healthCheckComponent(name);
-      }, this.config.startup.healthCheckTimeout);
+      },  this.config.startup.healthCheckTimeout);
+// Store timeoutId for cleanup if needed
+;
 
     } catch (error) {
-      console.error(`❌ Failed to start component ${name}: ${error.message}`);
+      logger.error(`❌ Failed to start component ${name}: ${error.message}`);
       this.log('error', `Failed to start component ${name}: ${error.message}`);
     }
   }
@@ -345,11 +374,11 @@ class AutonomousStartup {
         proc.process.kill(0); // Send signal 0 to check if process exists
         proc.status = 'running';
         proc.lastHealthCheck = Date.now();
-        console.log(`✅ ${name} health check passed`);
+        logger.info(`✅ ${name} health check passed`);
         this.log('info', `${name} health check passed`);
       }
     } catch (error) {
-      console.warn(`⚠️  ${name} health check failed`);
+      logger.warn(`⚠️  ${name} health check failed`);
       this.log('warn', `${name} health check failed`);
       proc.status = 'unhealthy';
       
@@ -364,12 +393,15 @@ class AutonomousStartup {
     const proc = this.processes.get(name);
     if (proc) {
       proc.restartCount++;
-      console.log(`🔄 Restarting component: ${name} (attempt ${proc.restartCount})`);
+      logger.info(`🔄 Restarting component: ${name} (attempt ${proc.restartCount})`);
       this.log('info', `Restarting component: ${name} (attempt ${proc.restartCount})`);
     }
 
     await this.stopComponent(name);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  2000);
+// Store timeoutId for cleanup if needed
+);
     await this.startComponent(name);
   }
 
@@ -380,20 +412,23 @@ class AutonomousStartup {
     }
 
     try {
-      console.log(`🛑 Stopping component: ${name}`);
+      logger.info(`🛑 Stopping component: ${name}`);
       this.log('info', `Stopping component: ${name}`);
       
       proc.process.kill('SIGTERM');
 
       // Force kill after 5 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         if (proc.process) {
           proc.process.kill('SIGKILL');
         }
-      }, 5000);
+      },  5000);
+// Store timeoutId for cleanup if needed
+;
 
     } catch (error) {
-      console.error(`Failed to stop component ${name}: ${error.message}`);
+      logger.error(`Failed to stop component ${name}: ${error.message}`);
       this.log('error', `Failed to stop component ${name}: ${error.message}`);
     }
   }
@@ -402,7 +437,7 @@ class AutonomousStartup {
     for (const [name, proc] of this.processes) {
       // Check for stuck processes
       if (proc.status === 'starting' && Date.now() - proc.startTime > 60000) {
-        console.warn(`⚠️  Component ${name} is stuck in starting state`);
+        logger.warn(`⚠️  Component ${name} is stuck in starting state`);
         this.log('warn', `Component ${name} is stuck in starting state`);
         proc.status = 'stuck';
         
@@ -419,7 +454,7 @@ class AutonomousStartup {
   }
 
   async gracefulShutdown() {
-    console.log('🛑 Initiating graceful shutdown...');
+    logger.info('🛑 Initiating graceful shutdown...');
     this.log('info', 'Initiating graceful shutdown');
     
     this.isRunning = false;
@@ -430,16 +465,19 @@ class AutonomousStartup {
     }
 
     // Wait for processes to stop
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  10000);
+// Store timeoutId for cleanup if needed
+);
 
     // Remove PID file
     try {
       await fs.unlink(this.config.startup.pidFile);
     } catch (error) {
-      console.warn(`Failed to remove PID file: ${error.message}`);
+      logger.warn(`Failed to remove PID file: ${error.message}`);
     }
 
-    console.log('✅ Graceful shutdown completed');
+    logger.info('✅ Graceful shutdown completed');
     this.log('info', 'Graceful shutdown completed');
     process.exit(0);
   }
@@ -448,7 +486,7 @@ class AutonomousStartup {
     // Keep the process alive indefinitely
     setInterval(() => {
       const uptime = Date.now() - this.startupTime;
-      console.log(`🔄 Autonomous system running for ${Math.floor(uptime / 1000)} seconds`);
+      logger.info(`🔄 Autonomous system running for ${Math.floor(uptime / 1000)} seconds`);
     }, 60000); // Log every minute
   }
 
@@ -485,13 +523,13 @@ async function main() {
       await startup.start();
       break;
     case 'status':
-      console.log(JSON.stringify(startup.getStatus(), null, 2));
+      logger.info(JSON.stringify(startup.getStatus(), null, 2));
       break;
     case 'stop':
       await startup.gracefulShutdown();
       break;
     default:
-      console.log(`
+      logger.info(`
 🚀 Autonomous Startup System
 
 Usage:
@@ -526,7 +564,7 @@ The system will automatically:
 
 if (require.main === module) {
   main().catch(error => {
-    console.error('Autonomous Startup failed:', error.message);
+    logger.error('Autonomous Startup failed:', error.message);
     process.exit(1);
   });
 }

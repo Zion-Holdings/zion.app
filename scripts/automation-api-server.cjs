@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -191,7 +214,7 @@ class AutomationAPIServer {
 
     // Error handler
     this.app.use((error, req, res, next) => {
-      console.error('API Error:', error);
+      logger.error('API Error:', error);
       res.status(500).json({ error: 'Internal server error' });
     });
   }
@@ -245,13 +268,13 @@ class AutomationAPIServer {
       
       // Start the API server
       this.server = this.app.listen(this.port, () => {
-        console.log(`🚀 Automation API Server running on http://localhost:${this.port}`);
-        console.log(`📊 Dashboard available at http://localhost:${this.port}`);
+        logger.info(`🚀 Automation API Server running on http://localhost:${this.port}`);
+        logger.info(`📊 Dashboard available at http://localhost:${this.port}`);
         this.addLog(`API Server started on port ${this.port}`, 'info');
       });
       
     } catch (error) {
-      console.error('Failed to start API server:', error);
+      logger.error('Failed to start API server:', error);
       throw error;
     }
   }
@@ -267,10 +290,10 @@ class AutomationAPIServer {
       }
       
       this.addLog('API Server stopped', 'info');
-      console.log('🛑 Automation API Server stopped');
+      logger.info('🛑 Automation API Server stopped');
       
     } catch (error) {
-      console.error('Error stopping API server:', error);
+      logger.error('Error stopping API server:', error);
       throw error;
     }
   }
@@ -281,19 +304,19 @@ if (require.main === module) {
   const server = new AutomationAPIServer();
   
   server.start().catch(error => {
-    console.error('Failed to start server:', error);
+    logger.error('Failed to start server:', error);
     process.exit(1);
   });
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Shutting down API server...');
+    logger.info('\n🛑 Shutting down API server...');
     await server.stop();
     process.exit(0);
   });
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
+    logger.info('\n🛑 Received SIGTERM, shutting down...');
     await server.stop();
     process.exit(0);
   });

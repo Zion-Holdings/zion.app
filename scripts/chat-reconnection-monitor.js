@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -42,14 +65,14 @@ class ChatReconnectionMonitor {
   }
 
   async start() {
-    console.log('🔍 Starting Chat Reconnection System Monitor...');
-    console.log(
+    logger.info('🔍 Starting Chat Reconnection System Monitor...');
+    logger.info(
       📊 Monitoring interval:',
       CONFIG.MONITOR_INTERVAL / 1000,
       seconds',
     );
-    console.log('🎯 Alert thresholds:', CONFIG.ALERT_THRESHOLDS);
-    console.log('');
+    logger.info('🎯 Alert thresholds:', CONFIG.ALERT_THRESHOLDS);
+    logger.info('');
 
     this.isRunning = true;
 
@@ -69,14 +92,14 @@ class ChatReconnectionMonitor {
     // Start log monitoring
     this.logMonitor = this.monitorLogs();
 
-    console.log('✅ Monitor started successfully');
-    console.log('📈 Real-time metrics collection active');
-    console.log('🚨 Alert system enabled');
-    console.log('');
+    logger.info('✅ Monitor started successfully');
+    logger.info('📈 Real-time metrics collection active');
+    logger.info('🚨 Alert system enabled');
+    logger.info('');
   }
 
   async stop() {
-    console.log('🛑 Stopping Chat Reconnection System Monitor...');
+    logger.info('🛑 Stopping Chat Reconnection System Monitor...');
 
     this.isRunning = false;
 
@@ -92,7 +115,7 @@ class ChatReconnectionMonitor {
       clearInterval(this.logMonitor);
     }
 
-    console.log('✅ Monitor stopped');
+    logger.info('✅ Monitor stopped');
   }
 
   async performHealthCheck() {
@@ -120,7 +143,7 @@ const responseTime = Date.now() - startTime;
       this.displayStatus(status, responseTime);
     } catch (error) {
       this.metrics.errors++;
-      console.error('❌ Health check failed:', error.message);
+      logger.error('❌ Health check failed:', error.message);
 
       // Create alert
       this.createAlert('HEALTH_CHECK_FAILED', {
@@ -146,7 +169,10 @@ const req = http.request(url, (res) => {
       });
 
       req.on('error', reject);
-      req.setTimeout(5000, () => reject(new Error('Request timeout')));
+      req.
+const timeoutId = setTimeout(5000,  ();
+// Store timeoutId for cleanup if needed
+ => reject(new Error('Request timeout')));
       req.end();
     });
   }
@@ -271,27 +297,27 @@ const req = http.request(url, (res) => {
 const color = severityColors[alert.severity] || \x1b[0m
 const reset = \x1b[0m';
 
-    console.log(`${color}🚨 [${alert.severity}] ${alert.message}${reset}`);
+    logger.info(`${color}🚨 [${alert.severity}] ${alert.message}${reset}`);
   }
 
   displayStatus(status, responseTime) {
     const uptimeMinutes = Math.floor(status.uptime / 60)
 const uptimeHours = Math.floor(uptimeMinutes / 60);
 
-    console.log(
+    logger.info(
       `📊 Status Check #${this.metrics.checks} - ${new Date().toLocaleTimeString()}`,
     );
-    console.log(`   🖥️ Computer: ${status.computerId}`);
-    console.log(`   👑 Role: ${status.isMaster ? Master' : Worker'}`);
-    console.log(`   🔗 Connected: ${status.isConnected ? ✅' : ❌'}`);
-    console.log(`   🌐 Discovered: ${status.discoveredComputers} computers`);
-    console.log(`   🔌 Active: ${status.activeConnections} connections`);
-    console.log(`   ⏱️ Uptime: ${uptimeHours}h ${uptimeMinutes % 60}m`);
-    console.log(`   ⚡ Response: ${responseTime}ms`);
-    console.log(
+    logger.info(`   🖥️ Computer: ${status.computerId}`);
+    logger.info(`   👑 Role: ${status.isMaster ? Master' : Worker'}`);
+    logger.info(`   🔗 Connected: ${status.isConnected ? ✅' : ❌'}`);
+    logger.info(`   🌐 Discovered: ${status.discoveredComputers} computers`);
+    logger.info(`   🔌 Active: ${status.activeConnections} connections`);
+    logger.info(`   ⏱️ Uptime: ${uptimeHours}h ${uptimeMinutes % 60}m`);
+    logger.info(`   ⚡ Response: ${responseTime}ms`);
+    logger.info(
       `   📈 Errors: ${this.metrics.errors}/${this.metrics.checks} (${((this.metrics.errors / this.metrics.checks) * 100).toFixed(1)}%)`,
     );
-    console.log('');
+    logger.info('');
   }
 
   collectPerformanceMetrics() {
@@ -367,11 +393,11 @@ const cursorCount = recentLines.filter((line) =>
       }
 
       // Log analysis summary
-      console.log(
+      logger.info(
         `📋 Log Analysis: ${errorCount} errors, ${chatCount} chats, ${cursorCount} Cursor interactions`,
       );
     } catch (error) {
-      console.error('❌ Log analysis failed:', error.message);
+      logger.error('❌ Log analysis failed:', error.message);
     }
   }
 
@@ -405,4 +431,4 @@ const cursorCount = recentLines.filter((line) =>
 const uptimeMinutes = Math.floor(report.uptime / 60000)
 const uptimeHours = Math.floor(uptimeMinutes / 60);
 
-    console.log('');
+    logger.info('');

@@ -1,16 +1,16 @@
-#!/usr/bin/env node
-/**
- * Cursor Auto Fix Script (prototype).
- *
- * 1. Fetches unresolved Cursor issues for the repository.
- * 2. Requests an automated patch (simplified, depends on Cursor API).
- * 3. Applies the patch and commits + pushes it using GITHUB_TOKEN.
- *
- * Environment variables required in CI:
- *   CURSOR_API_KEY   – access token
- *   CURSOR_PROJECT_ID – project identifier
- *   GITHUB_TOKEN     – permission to push
- */
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
 const { _execSync } = require('child_process')
 const fs = require('fs')
 const path = require('path')
@@ -89,3 +89,39 @@ run().catch((e) => {
   console.error(e);
   process.exit(1);
 });
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

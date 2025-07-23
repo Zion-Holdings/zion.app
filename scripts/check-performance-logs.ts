@@ -1,4 +1,15 @@
-#!/usr/bin/env node;
+
+class IgnoreparsingErroroccurredorsforinvalidJSON {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting IgnoreparsingErroroccurredorsforinvalidJSON...');
+    
+    try {
+      #!/usr/bin/env node;
 import fs from fs';import path from path';import { execSync } from child_process';;
 const LOG_FILE: string = process.env.PERFORMANCE_LOG_FILE || path.join('logs', performance.log');const THRESHOLD_MS: number = parseInt(process.env.PERFORMANCE_THRESHOLD_MS || 500', 10);;
 function parseTimes(file: string): number[] {
@@ -10,7 +21,7 @@ function parseTimes(file: string): number[] {
       try {
         const obj = JSON.parse(trimmed);
         if (typeof obj.response_time_ms === number') return obj.response_time_ms as number;      } catch {
-        /* ignore parsing Error occurred'ors for invalid JSON */'      }
+        '      }
       const match = trimmed.match(/([0-9.]+)ms/);
       return match ? parseFloat(match[1]) : null;
     })
@@ -47,4 +58,25 @@ function main() {
 }
 
 main();
+    } catch (error) {
+      console.error('Error in IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+      throw error;
+    }
+  }
 
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping IgnoreparsingErroroccurredorsforinvalidJSON...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new IgnoreparsingErroroccurredorsforinvalidJSON();
+  script.start().catch(error => {
+    console.error('Failed to start IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = IgnoreparsingErroroccurredorsforinvalidJSON;

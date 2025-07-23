@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -470,7 +493,7 @@
           websocket = new WebSocket(CONFIG.WEBSOCKET_URL);
 
           websocket.onopen = function () {
-            console.log('WebSocket connected');
+            logger.info('WebSocket connected');
             updateChatStatus('Connected', 'online');
           };
 
@@ -480,18 +503,21 @@
           };
 
           websocket.onclose = function () {
-            console.log('WebSocket disconnected');
+            logger.info('WebSocket disconnected');
             updateChatStatus('Disconnected', 'offline');
             // Reconnect after 5 seconds
-            setTimeout(initializeWebSocket, 5000);
+            
+const timeoutId = setTimeout(initializeWebSocket,  5000);
+// Store timeoutId for cleanup if needed
+;
           };
 
           websocket.onerror = function (error) {
-            console.error('WebSocket error:', error);
+            logger.error('WebSocket error:', error);
             updateChatStatus('Error', 'offline');
           };
         } catch (error) {
-          console.error('Failed to initialize WebSocket:', error);
+          logger.error('Failed to initialize WebSocket:', error);
           updateChatStatus('Failed to connect', 'offline');
         }
       }
@@ -509,7 +535,7 @@
             updateComputerStatus(data);
             break;
           default:
-            console.log('Unknown message type:', data.type);
+            logger.info('Unknown message type:', data.type);
         }
       }
 
@@ -533,7 +559,7 @@
           const data = await response.json();
           updateSystemStatus(data);
         } catch (error) {
-          console.error('Failed to fetch system status:', error);
+          logger.error('Failed to fetch system status:', error);
           updateSystemStatus({ isConnected: false });
         }
       }
@@ -547,7 +573,7 @@
           updateComputerGrid();
           updateStatistics();
         } catch (error) {
-          console.error('Failed to fetch computers:', error);
+          logger.error('Failed to fetch computers:', error);
         }
       }
 

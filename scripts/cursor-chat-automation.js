@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const io = require('socket.io-client')
@@ -5,8 +28,8 @@ const { EventEmitter } = require('events')
 const fs = require('fs').promises
 const path = require('path');
 
-console.log('🤖 Cursor Chat Automation System\n');
-console.log('Maintaining constant contact with Cursor chats...\n')
+logger.info('🤖 Cursor Chat Automation System\n');
+logger.info('Maintaining constant contact with Cursor chats...\n')
 const TODO_FILE = path.resolve(__dirname, ../logs/cursor-chat-todos.md')
 const CHECK_TODO_INTERVAL = 10000; // 10 seconds
 
@@ -48,7 +71,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async start() {
-    console.log('🚀 Starting Cursor Chat Automation...');
+    logger.info('🚀 Starting Cursor Chat Automation...');
     this.isRunning = true;
     this.connectionStartTime = Date.now();
 
@@ -71,14 +94,14 @@ class CursorChatAutomation extends EventEmitter {
     // Start autonomous chat workflow
     this.startAutonomousChatLoop();
 
-    console.log('✅ Cursor Chat Automation started successfully');
+    logger.info('✅ Cursor Chat Automation started successfully');
     this.log('Automation started');
   }
 
   async connect() {
-    console.log('DEBUG: Entered connect() method');
+    logger.info('DEBUG: Entered connect() method');
     return new Promise((resolve, reject) => {
-      console.log(`DEBUG: Attempting to connect to ${this.config.socketUrl}`);
+      logger.info(`DEBUG: Attempting to connect to ${this.config.socketUrl}`);
       this.socket = io(this.config.socketUrl, {
         transports: ['websocket', polling'],
         timeout: 10000,
@@ -90,18 +113,18 @@ class CursorChatAutomation extends EventEmitter {
       });
 
       this.socket.on('connect', () => {
-        console.log('DEBUG: Socket.IO connect event fired');
+        logger.info('DEBUG: Socket.IO connect event fired');
         this.reconnectAttempts = 0;
         this.stats.totalConnections++;
         this.lastHeartbeat = Date.now();
 
-        console.log('✅ Connected to Cursor chat server');
+        logger.info('✅ Connected to Cursor chat server');
         this.log('Connected to chat server');
 
         // Join Cursor chat room
         this.socket.emit('join-room', cursor-chat', (response) => {
           if (response && response.success) {
-            console.log('🎯 Joined Cursor chat room');
+            logger.info('🎯 Joined Cursor chat room');
             this.log('Joined Cursor chat room');
           }
         });
@@ -115,7 +138,7 @@ class CursorChatAutomation extends EventEmitter {
 
       this.socket.on('disconnect', (reason) => {
         this.stats.lastDisconnect = Date.now();
-        console.log(`🔌 Disconnected from Cursor chat: ${reason}`);
+        logger.info(`🔌 Disconnected from Cursor chat: ${reason}`);
         this.log(`Disconnected: ${reason}`);
 
         this.emit('disconnected', reason);
@@ -126,7 +149,7 @@ class CursorChatAutomation extends EventEmitter {
 
       this.socket.on('reconnect', (attemptNumber) => {
         this.stats.successfulReconnections++;
-        console.log(
+        logger.info(
           `🔄 Reconnected to Cursor chat after ${attemptNumber} attempts`,
         );
         this.log(`Reconnected after ${attemptNumber} attempts`);
@@ -134,7 +157,7 @@ class CursorChatAutomation extends EventEmitter {
         // Rejoin room
         this.socket.emit('join-room', cursor-chat', (response) => {
           if (response && response.success) {
-            console.log('🎯 Rejoined Cursor chat room');
+            logger.info('🎯 Rejoined Cursor chat room');
             this.log('Rejoined Cursor chat room');
           }
         });
@@ -147,7 +170,7 @@ class CursorChatAutomation extends EventEmitter {
 
       this.socket.on('reconnect_attempt', (attemptNumber) => {
         this.reconnectAttempts = attemptNumber;
-        console.log(
+        logger.info(
           `🔄 Reconnection attempt ${attemptNumber}/${this.config.maxReconnectAttempts}`,
         );
         this.log(`Reconnection attempt ${attemptNumber}`);
@@ -156,7 +179,7 @@ class CursorChatAutomation extends EventEmitter {
       });
 
       this.socket.on('reconnect_error', (error) => {
-        console.log(`❌ Reconnection error: ${error.message}`);
+        logger.info(`❌ Reconnection error: ${error.message}`);
         this.log(`Reconnection error: ${error.message}`);
 
         this.emit('reconnect_error', error);
@@ -164,7 +187,7 @@ class CursorChatAutomation extends EventEmitter {
 
       this.socket.on('reconnect_failed', () => {
         this.stats.failedReconnections++;
-        console.log('❌ Reconnection failed - max attempts reached');
+        logger.info('❌ Reconnection failed - max attempts reached');
         this.log('Reconnection failed - max attempts reached');
 
         this.emit('reconnect_failed');
@@ -172,7 +195,7 @@ class CursorChatAutomation extends EventEmitter {
         // Restart connection after delay
         setTimeout(() => {
           if (this.isRunning) {
-            console.log('🔄 Restarting connection...');
+            logger.info('🔄 Restarting connection...');
             this.connect();
           }
         }, 30000);
@@ -180,7 +203,7 @@ class CursorChatAutomation extends EventEmitter {
 
       this.socket.on('new-message', (message) => {
         this.stats.messagesReceived++;
-        console.log(
+        logger.info(
           `💬 Received message: ${message.message.substring(0, 50)}...`,
         );
         this.log(`Received message from ${message.sender}`);
@@ -192,13 +215,13 @@ class CursorChatAutomation extends EventEmitter {
       });
 
       this.socket.on('connect_error', (error) => {
-        console.error('DEBUG: Socket.IO connect_error event:', error);
+        logger.error('DEBUG: Socket.IO connect_error event:', error);
         this.emit('connect_error', error);
         reject(error);
       });
 
       this.socket.on('error', (error) => {
-        console.error('DEBUG: Socket.IO error event:', error);
+        logger.error('DEBUG: Socket.IO error event:', error);
       });
 
       // Set connection timeout
@@ -217,7 +240,7 @@ class CursorChatAutomation extends EventEmitter {
 
     this.reconnectTimer = setTimeout(() => {
       if (this.isRunning && !this.socket.connected) {
-        console.log('🔄 Attempting manual reconnection...');
+        logger.info('🔄 Attempting manual reconnection...');
         this.connect();
       }
     }, this.config.reconnectInterval);
@@ -317,18 +340,18 @@ const message = {
 
   sendMessage(messageData) {
     if (!this.socket || !this.socket.connected) {
-      console.log('⚠️ Cannot send message - not connected');
+      logger.info('⚠️ Cannot send message - not connected');
       return;
     }
 
     this.socket.emit('send-message', messageData, (response) => {
       if (response && response.success) {
         this.stats.messagesSent++;
-        console.log(
+        logger.info(
           `✅ Message sent: ${messageData.message.substring(0, 30)}...`,
         );
       } else {
-        console.log('❌ Failed to send message');
+        logger.info('❌ Failed to send message');
       }
     });
   }
@@ -351,7 +374,7 @@ const message = {
       );
       this.log('Status updated');
     } catch (error) {
-      console.error('Failed to update status:', error);
+      logger.error('Failed to update status:', error);
     }
   }
 
@@ -360,9 +383,9 @@ const message = {
       const statusData = await fs.readFile(this.config.statusFile, utf8')
 const status = JSON.parse(statusData);
       this.stats = { ...this.stats, ...status.stats };
-      console.log('📊 Loaded previous statistics');
+      logger.info('📊 Loaded previous statistics');
     } catch (error) {
-      console.log('📊 Starting with fresh statistics');
+      logger.info('📊 Starting with fresh statistics');
     }
   }
 
@@ -382,7 +405,7 @@ const logEntry = `[${timestamp}] ${message}\n`;
     try {
       await fs.appendFile(this.config.logFile, logEntry);
     } catch (error) {
-      console.error('Failed to write to log file:', error);
+      logger.error('Failed to write to log file:', error);
     }
   }
 
@@ -412,7 +435,7 @@ const seconds = uptime % 60;
   }
 
   async stop() {
-    console.log('🛑 Stopping Cursor Chat Automation...');
+    logger.info('🛑 Stopping Cursor Chat Automation...');
     this.isRunning = false;
 
     if (this.reconnectTimer) {
@@ -434,7 +457,7 @@ const seconds = uptime % 60;
     await this.updateStatus();
     this.log('Automation stopped');
 
-    console.log('✅ Cursor Chat Automation stopped');
+    logger.info('✅ Cursor Chat Automation stopped');
   }
 
   async loadTodoQueue() {
@@ -542,13 +565,13 @@ const automation = new CursorChatAutomation();
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await automation.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await automation.stop();
     process.exit(0);
   });
@@ -569,11 +592,11 @@ const automation = new CursorChatAutomation();
           utf8',
         )
 const status = JSON.parse(statusData);
-        console.log('📊 Cursor Chat Automation Status:');
-        console.log(JSON.stringify(status, null, 2));
+        logger.info('📊 Cursor Chat Automation Status:');
+        logger.info(JSON.stringify(status, null, 2));
       } catch (error) {
-        console.log('📊 Cursor Chat Automation Status:');
-        console.log(
+        logger.info('📊 Cursor Chat Automation Status:');
+        logger.info(
           JSON.stringify(
             {
               totalConnections: 0,
@@ -597,30 +620,30 @@ const status = JSON.parse(statusData);
     case logs':
       try {
         const logs = await fs.readFile(automation.config.logFile, utf8');
-        console.log('📋 Recent logs:');
-        console.log(logs);
+        logger.info('📋 Recent logs:');
+        logger.info(logs);
       } catch (error) {
-        console.log('No logs found');
+        logger.info('No logs found');
       }
       break;
 
     default:
-      console.log(
+      logger.info(
         Usage: node scripts/cursor-chat-automation.js [start|stop|status|logs],
       );
-      console.log('');
-      console.log('Commands:');
-      console.log('  start   - Start the automation');
-      console.log('  stop    - Stop the automation');
-      console.log('  status  - Show current status');
-      console.log('  logs    - Show recent logs');
+      logger.info('');
+      logger.info('Commands:');
+      logger.info('  start   - Start the automation');
+      logger.info('  stop    - Stop the automation');
+      logger.info('  status  - Show current status');
+      logger.info('  logs    - Show recent logs');
       break;
   }
 }
 
 if (require.main === module) {
   main().catch((error) => {
-    console.error('❌ Error:', error);
+    logger.error('❌ Error:', error);
     process.exit(1);
   });
 }

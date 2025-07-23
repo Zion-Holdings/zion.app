@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -28,7 +51,7 @@ class AutomationStatusChecker {
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}${message}${colors.reset}`);
+    logger.info(`${colors[type]}${message}${colors.reset}`);
   }
 
   checkProcessStatus(processName) {
@@ -43,8 +66,8 @@ class AutomationStatusChecker {
   }
 
   async checkAllProcesses() {
-    console.log('\n🤖 AUTOMATION STATUS CHECKER');
-    console.log('================================\n');
+    logger.info('\n🤖 AUTOMATION STATUS CHECKER');
+    logger.info('================================\n');
 
     let totalRunning = 0;
     let totalProcesses = this.processes.length;
@@ -61,8 +84,8 @@ const instances = count > 0 ? ` (${count} instances)` : '';
       totalRunning += count;
     }
 
-    console.log('\n📊 SUMMARY');
-    console.log('==========');
+    logger.info('\n📊 SUMMARY');
+    logger.info('==========');
     this.log(`Total Processes: ${totalProcesses}`, 'info');
     this.log(
       `Running Instances: ${totalRunning}`,
@@ -84,8 +107,8 @@ const instances = count > 0 ? ` (${count} instances)` : '';
   }
 
   checkAutomationReports() {
-    console.log('\n📈 AUTOMATION REPORTS');
-    console.log('====================')
+    logger.info('\n📈 AUTOMATION REPORTS');
+    logger.info('====================')
 const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
@@ -111,7 +134,7 @@ const timestamp = new Date(
   }
 
   async startContinuousMonitoring() {
-    console.log('\n🔄 Starting continuous monitoring...\n');
+    logger.info('\n🔄 Starting continuous monitoring...\n');
 
     setInterval(async () => {
       console.clear();

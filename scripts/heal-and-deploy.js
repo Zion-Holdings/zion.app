@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -25,7 +48,7 @@ class HealAndDeploy {
 
   log(message, level = INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
+    logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + \n');  }
 
   async run() {
@@ -275,7 +298,10 @@ const results = await Promise.allSettled(checks);
   async postDeploymentVerification() {
     this.log('Running post-deployment verification...');    
     // Wait a bit for deployment to start
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  10000);
+// Store timeoutId for cleanup if needed
+);
     
     try {
       // Check if the site is accessible
@@ -301,8 +327,22 @@ if (require.main === module) {
   const healer = new HealAndDeploy();
   
   healer.run().catch(error => {
-    console.error('Heal and deploy failed:', error);    process.exit(1);
+    logger.error('Heal and deploy failed:', error);    process.exit(1);
   });
 }
 
 module.exports = HealAndDeploy; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

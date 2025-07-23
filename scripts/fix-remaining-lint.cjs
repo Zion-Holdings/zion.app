@@ -1,3 +1,36 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -11,22 +44,22 @@ function fixRemainingErrors(content, filePath) {
   fixed = fixed.replace(
     /catch\s*\(\s*_(\w+)\s*\)\s*{[\s\S]*?console\.log\s*\(\s*err\s*\)/g,
     (match, unusedVar) => {
-      return match.replace('console.log(err)', `console.log(${unusedVar})`);
+      return match.replace('logger.info(err)', `logger.info(${unusedVar})`);
     },
   );
 
   fixed = fixed.replace(
     /catch\s*\(\s*_(\w+)\s*\)\s*{[\s\S]*?console\.error\s*\(\s*err\s*\)/g,
     (match, unusedVar) => {
-      return match.replace('console.error(err)', `console.error(${unusedVar})`);
+      return match.replace('logger.error(err)', `logger.error(${unusedVar})`);
     },
   );
 
   // Fix undefined 'err' in error handling
-  fixed = fixed.replace(/console\.log\s*\(\s*err\s*\)/g, 'console.log(error)');
+  fixed = fixed.replace(/console\.log\s*\(\s*err\s*\)/g, 'logger.info(error)');
   fixed = fixed.replace(
     /console\.error\s*\(\s*err\s*\)/g,
-    'console.error(error)',
+    'logger.error(error)',
   );
 
   // Fix undefined 'withSentry' - remove usage
@@ -41,7 +74,7 @@ function fixRemainingErrors(content, filePath) {
     );
     fixed = fixed.replace(
       /console\.log\s*\(\s*email\s*\)/g,
-      'console.log(req.body.email)',
+      'logger.info(req.body.email)',
     );
   }
 
@@ -98,11 +131,11 @@ const fixed = fixRemainingErrors(content, file);
 
         if (fixed !== originalContent) {
           fs.writeFileSync(file, fixed, 'utf8');
-          console.log(`Fixed: ${file}`);
+          logger.info(`Fixed: ${file}`);
           fixedCount++;
         }
       } catch (error) {
-        console.error(`Error processing ${file}:`, error.message);
+        logger.error(`Error processing ${file}:`, error.message);
       }
     }
   }
@@ -111,6 +144,28 @@ const fixed = fixRemainingErrors(content, file);
 }
 
 // Main execution
-console.log('Fixing remaining lint errors...')
+logger.info('Fixing remaining lint errors...')
 const fixedCount = processSpecificFiles();
-console.log(`\nCompleted! Fixed ${fixedCount} files.`);
+logger.info(`\nCompleted! Fixed ${fixedCount} files.`);
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

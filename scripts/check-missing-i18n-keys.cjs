@@ -1,4 +1,15 @@
-#!/usr/bin/env node
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node
 // Quick script to detect missing translation keys across locales
 const fs = require('fs')
 const path = require('path')
@@ -41,3 +52,25 @@ for (const [file, keys] of Object.entries(localeKeys)) {
 if (!missing) {
   console.warn('✅ All translation keys are present across all locales');
 }
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
