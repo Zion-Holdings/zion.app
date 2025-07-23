@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const NetlifyBuildMonitor = require('./netlify-monitor')
@@ -12,7 +35,7 @@ class AutomationTester {
 
   log(message, level = info') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
   async runAllTests() {
@@ -329,21 +352,21 @@ const report = {
     );
 
     // Display summary
-    console.log('\n' + ='.repeat(50));
-    console.log('TEST SUMMARY');
-    console.log('='.repeat(50));
-    console.log(`Total Tests: ${report.summary.total}`);
-    console.log(`Passed: ${report.summary.passed}`);
-    console.log(`Failed: ${report.summary.failed}`);
-    console.log(`Success Rate: ${report.summary.successRate}`);
-    console.log('='.repeat(50));
+    logger.info('\n' + ='.repeat(50));
+    logger.info('TEST SUMMARY');
+    logger.info('='.repeat(50));
+    logger.info(`Total Tests: ${report.summary.total}`);
+    logger.info(`Passed: ${report.summary.passed}`);
+    logger.info(`Failed: ${report.summary.failed}`);
+    logger.info(`Success Rate: ${report.summary.successRate}`);
+    logger.info('='.repeat(50));
 
     // Display failed tests
     const failedTests = this.testResults.filter((r) => !r.passed);
     if (failedTests.length > 0) {
-      console.log('\nFAILED TESTS:');
+      logger.info('\nFAILED TESTS:');
       failedTests.forEach((test) => {
-        console.log(`- ${test.test}: ${test.message}`);
+        logger.info(`- ${test.test}: ${test.message}`);
       });
     }
 
@@ -364,11 +387,26 @@ const command = process.argv[2];
       const report = JSON.parse(
         fs.readFileSync(path.join(__dirname, test-report.json'), utf8'),
       );
-      console.log(JSON.stringify(report, null, 2));
+      logger.info(JSON.stringify(report, null, 2));
       break;
     default:
-      console.log('Usage: node test-automation.js [test|report]);
+      logger.info('Usage: node test-automation.js [test|report]);
   }
 }
 
 module.exports = AutomationTester;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const https = require('https');
@@ -34,7 +57,7 @@ class NetlifyBuildMonitor {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + '\n');
   }
 
@@ -375,10 +398,16 @@ module.exports = {
     while (this.status.isRunning) {
       try {
         await this.checkBuilds();
-        await new Promise((resolve) => setTimeout(resolve, this.config.checkInterval));
+        await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  this.config.checkInterval);
+// Store timeoutId for cleanup if needed
+);
       } catch (error) {
         this.log(`Monitoring error: ${error.message}`, 'error');
-        await new Promise((resolve) => setTimeout(resolve, 60000)); // Wait 1 minute on error
+        await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  60000);
+// Store timeoutId for cleanup if needed
+); // Wait 1 minute on error
       }
     }
   }
@@ -529,14 +558,14 @@ if (require.main === module) {
       break;
     case 'report':
       monitor.generateReport().then((report) => {
-        console.log(JSON.stringify(report, null, 2));
+        logger.info(JSON.stringify(report, null, 2));
       });
       break;
     case 'status':
-      console.log(JSON.stringify(monitor.status, null, 2));
+      logger.info(JSON.stringify(monitor.status, null, 2));
       break;
     default:
-      console.log('Usage: node netlify-monitor.js [start|check|report|status]');
+      logger.info('Usage: node netlify-monitor.js [start|check|report|status]');
   }
 }
 

@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App - Infinite Improvement Loop Startup Script
 # This script starts the infinite improvement loop system with all AI agents
@@ -362,4 +373,26 @@ main() {
 }
 
 # Run main function with all arguments
-main "$@" 
+main "$@"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

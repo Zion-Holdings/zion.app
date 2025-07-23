@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -20,9 +43,9 @@ class AutomationStarter {
   }
 
   async startAllSystems() {
-    console.log('🚀 Starting All Automation Systems');
-    console.log('='.repeat(50));
-    console.log('Initializing automation systems...\n');
+    logger.info('🚀 Starting All Automation Systems');
+    logger.info('='.repeat(50));
+    logger.info('Initializing automation systems...\n');
 
     try {
       // Start core automation orchestrator
@@ -43,20 +66,20 @@ class AutomationStarter {
       // Start task automation
       await this.startTaskAutomation();
       
-      console.log('\n✅ All automation systems started successfully!');
+      logger.info('\n✅ All automation systems started successfully!');
       this.printStatus();
       
       // Keep the process running
       this.keepAlive();
       
     } catch (error) {
-      console.error('❌ Failed to start automation systems:', error);
+      logger.error('❌ Failed to start automation systems:', error);
       process.exit(1);
     }
   }
 
   async startCoreOrchestrator() {
-    console.log('🔧 Starting Core Automation Orchestrator...');
+    logger.info('🔧 Starting Core Automation Orchestrator...');
     
     try {
       const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator.js');
@@ -88,15 +111,15 @@ class AutomationStarter {
       await orchestrator.start();
       
       this.runningSystems.set('coreOrchestrator', orchestrator);
-      console.log('✅ Core Automation Orchestrator started');
+      logger.info('✅ Core Automation Orchestrator started');
       
     } catch (error) {
-      console.error('❌ Failed to start Core Orchestrator:', error.message);
+      logger.error('❌ Failed to start Core Orchestrator:', error.message);
     }
   }
 
   async startNetlifyAutomation() {
-    console.log('🌐 Starting Netlify Automation...');
+    logger.info('🌐 Starting Netlify Automation...');
     
     try {
       const NetlifyMonitor = require('./netlify-monitor.js');
@@ -104,15 +127,15 @@ class AutomationStarter {
       
       netlifyMonitor.start();
       this.runningSystems.set('netlifyMonitor', netlifyMonitor);
-      console.log('✅ Netlify Automation started');
+      logger.info('✅ Netlify Automation started');
       
     } catch (error) {
-      console.error('❌ Failed to start Netlify Automation:', error.message);
+      logger.error('❌ Failed to start Netlify Automation:', error.message);
     }
   }
 
   async startPerformanceMonitoring() {
-    console.log('⚡ Starting Performance Monitoring...');
+    logger.info('⚡ Starting Performance Monitoring...');
     
     try {
       const PerformanceMonitor = require('./performance/monitor.js');
@@ -120,15 +143,15 @@ class AutomationStarter {
       
       performanceMonitor.start();
       this.runningSystems.set('performanceMonitor', performanceMonitor);
-      console.log('✅ Performance Monitoring started');
+      logger.info('✅ Performance Monitoring started');
       
     } catch (error) {
-      console.error('❌ Failed to start Performance Monitoring:', error.message);
+      logger.error('❌ Failed to start Performance Monitoring:', error.message);
     }
   }
 
   async startContinuousImprovement() {
-    console.log('🔄 Starting Continuous Improvement...');
+    logger.info('🔄 Starting Continuous Improvement...');
     
     try {
       const ContinuousImprovement = require('./continuous-improvement/enhanced-automation.js');
@@ -136,15 +159,15 @@ class AutomationStarter {
       
       continuousImprovement.start();
       this.runningSystems.set('continuousImprovement', continuousImprovement);
-      console.log('✅ Continuous Improvement started');
+      logger.info('✅ Continuous Improvement started');
       
     } catch (error) {
-      console.error('❌ Failed to start Continuous Improvement:', error.message);
+      logger.error('❌ Failed to start Continuous Improvement:', error.message);
     }
   }
 
   async startCursorAutomation() {
-    console.log('🤖 Starting Cursor Automation...');
+    logger.info('🤖 Starting Cursor Automation...');
     
     try {
       const CursorAutomation = require('./cursor-automated-communication.js');
@@ -155,15 +178,15 @@ class AutomationStarter {
       
       await cursorAutomation.start();
       this.runningSystems.set('cursorAutomation', cursorAutomation);
-      console.log('✅ Cursor Automation started');
+      logger.info('✅ Cursor Automation started');
       
     } catch (error) {
-      console.error('❌ Failed to start Cursor Automation:', error.message);
+      logger.error('❌ Failed to start Cursor Automation:', error.message);
     }
   }
 
   async startTaskAutomation() {
-    console.log('📋 Starting Task Automation...');
+    logger.info('📋 Starting Task Automation...');
     
     try {
       const TaskAutomation = require('./tasks/DependencyUpdater.js');
@@ -171,10 +194,10 @@ class AutomationStarter {
       
       taskAutomation.start();
       this.runningSystems.set('taskAutomation', taskAutomation);
-      console.log('✅ Task Automation started');
+      logger.info('✅ Task Automation started');
       
     } catch (error) {
-      console.error('❌ Failed to start Task Automation:', error.message);
+      logger.error('❌ Failed to start Task Automation:', error.message);
     }
   }
 
@@ -182,19 +205,19 @@ class AutomationStarter {
     const endTime = Date.now();
     const duration = endTime - this.startTime;
     
-    console.log('\n📊 Automation Systems Status');
-    console.log('='.repeat(50));
-    console.log(`Startup Duration: ${duration}ms`);
-    console.log(`Running Systems: ${this.runningSystems.size}`);
+    logger.info('\n📊 Automation Systems Status');
+    logger.info('='.repeat(50));
+    logger.info(`Startup Duration: ${duration}ms`);
+    logger.info(`Running Systems: ${this.runningSystems.size}`);
     
     this.runningSystems.forEach((system, name) => {
       const status = system.getStatus ? system.getStatus() : { isRunning: true };
-      console.log(`  - ${name}: ${status.isRunning ? '✅ Running' : '❌ Stopped'}`);
+      logger.info(`  - ${name}: ${status.isRunning ? '✅ Running' : '❌ Stopped'}`);
     });
     
-    console.log('\n🎯 Automation Dashboard: http://localhost:3001');
-    console.log('📝 Logs: Check individual system logs for details');
-    console.log('🛑 Press Ctrl+C to stop all systems');
+    logger.info('\n🎯 Automation Dashboard: http://localhost:3001');
+    logger.info('📝 Logs: Check individual system logs for details');
+    logger.info('🛑 Press Ctrl+C to stop all systems');
   }
 
   keepAlive() {
@@ -203,25 +226,25 @@ class AutomationStarter {
     
     // Handle graceful shutdown
     process.on('SIGINT', async () => {
-      console.log('\n🛑 Shutting down all automation systems...');
+      logger.info('\n🛑 Shutting down all automation systems...');
       
       for (const [name, system] of this.runningSystems) {
         try {
           if (system.stop) {
             await system.stop();
           }
-          console.log(`✅ Stopped ${name}`);
+          logger.info(`✅ Stopped ${name}`);
         } catch (error) {
-          console.error(`❌ Error stopping ${name}:`, error.message);
+          logger.error(`❌ Error stopping ${name}:`, error.message);
         }
       }
       
-      console.log('👋 All automation systems stopped');
+      logger.info('👋 All automation systems stopped');
       process.exit(0);
     });
 
     process.on('SIGTERM', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down...');
+      logger.info('\n🛑 Received SIGTERM, shutting down...');
       
       for (const [name, system] of this.runningSystems) {
         try {
@@ -229,7 +252,7 @@ class AutomationStarter {
             await system.stop();
           }
         } catch (error) {
-          console.error(`Error stopping ${name}:`, error.message);
+          logger.error(`Error stopping ${name}:`, error.message);
         }
       }
       
@@ -242,7 +265,7 @@ class AutomationStarter {
 if (require.main === module) {
   const starter = new AutomationStarter();
   starter.startAllSystems().catch(error => {
-    console.error('Failed to start automation systems:', error);
+    logger.error('Failed to start automation systems:', error);
     process.exit(1);
   });
 }

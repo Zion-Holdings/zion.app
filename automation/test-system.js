@@ -1,11 +1,39 @@
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
-/**
- * Test script for the Intelligent Automation System
- * 
- * This script tests all major components to ensure they work correctly
- * before running the full system.
- */
+
 
 const path = require('path');
 const fs = require('fs');
@@ -25,8 +53,8 @@ const CodeQualityEnforcer = require('./tasks/CodeQualityEnforcer');
 const StaleCleaner = require('./tasks/StaleCleaner');
 
 async function testComponents() {
-  console.log('🧪 Testing Intelligent Automation System Components...');
-  console.log('=' .repeat(60));
+  logger.info('🧪 Testing Intelligent Automation System Components...');
+  logger.info('=' .repeat(60));
   
   const results = {
     passed: 0,
@@ -36,7 +64,7 @@ async function testComponents() {
   
   try {
     // Test 1: Core Components Instantiation
-    console.log('\n1️⃣ Testing core components instantiation...');
+    logger.info('\n1️⃣ Testing core components instantiation...');
     
     const notificationManager = new NotificationManager();
     results.tests.push({ name: NotificationManager', status: PASS' });
@@ -64,10 +92,10 @@ async function testComponents() {
     results.tests.push({ name: ReportGenerator', status: PASS' });
     results.passed++;
     
-    console.log('✅ All core components instantiated successfully');
+    logger.info('✅ All core components instantiated successfully');
     
     // Test 2: Task Components
-    console.log('\n2️⃣ Testing automation tasks...');
+    logger.info('\n2️⃣ Testing automation tasks...');
     
     const dependencyUpdater = new DependencyUpdater({ dryRun: true });
     results.tests.push({ name: DependencyUpdater', status: PASS' });
@@ -85,10 +113,10 @@ async function testComponents() {
     results.tests.push({ name: StaleCleaner', status: PASS' });
     results.passed++;
     
-    console.log('✅ All automation tasks instantiated successfully');
+    logger.info('✅ All automation tasks instantiated successfully');
     
     // Test 3: Task Scheduler Functionality
-    console.log('\n3️⃣ Testing task scheduler...');
+    logger.info('\n3️⃣ Testing task scheduler...');
     
     taskScheduler.recordTaskExecution('testTask', true, 1000);
     const stats = taskScheduler.getSchedulingStats();
@@ -96,15 +124,15 @@ async function testComponents() {
     if (stats.tasks && Object.keys(stats.tasks).length > 0) {
       results.tests.push({ name: TaskScheduler Recording', status: PASS' });
       results.passed++;
-      console.log('✅ Task scheduler recording works');
+      logger.info('✅ Task scheduler recording works');
     } else {
       results.tests.push({ name: TaskScheduler Recording', status: FAIL' });
       results.failed++;
-      console.log('❌ Task scheduler recording failed');
+      logger.info('❌ Task scheduler recording failed');
     }
     
     // Test 4: Anomaly Detection
-    console.log('\n4️⃣ Testing anomaly detection...');
+    logger.info('\n4️⃣ Testing anomaly detection...');
     
     anomalyDetector.recordMetric('cpuLoad', 0.9, Date.now());
     anomalyDetector.recordMetric('memoryUsage', 0.95, Date.now());
@@ -113,15 +141,15 @@ async function testComponents() {
     if (anomalyStats.total >= 0) {
       results.tests.push({ name: Anomaly Detection', status: PASS' });
       results.passed++;
-      console.log('✅ Anomaly detection works');
+      logger.info('✅ Anomaly detection works');
     } else {
       results.tests.push({ name: Anomaly Detection', status: FAIL' });
       results.failed++;
-      console.log('❌ Anomaly detection failed');
+      logger.info('❌ Anomaly detection failed');
     }
     
     // Test 5: Notification System
-    console.log('\n5️⃣ Testing notification system...');
+    logger.info('\n5️⃣ Testing notification system...');
     
     try {
       await notificationManager.sendNotification(
@@ -130,15 +158,15 @@ async function testComponents() {
       );
       results.tests.push({ name: Notification System', status: PASS' });
       results.passed++;
-      console.log('✅ Notification system works');
+      logger.info('✅ Notification system works');
     } catch (error) {
       results.tests.push({ name: Notification System', status: FAIL' });
       results.failed++;
-      console.log('❌ Notification system failed:', error.message);
+      logger.info('❌ Notification system failed:', error.message);
     }
     
     // Test 6: Report Generation
-    console.log('\n6️⃣ Testing report generation...');
+    logger.info('\n6️⃣ Testing report generation...');
     
     try {
       const reportData = {
@@ -153,20 +181,20 @@ async function testComponents() {
       if (report && report.content) {
         results.tests.push({ name: Report Generation', status: PASS' });
         results.passed++;
-        console.log('✅ Report generation works');
+        logger.info('✅ Report generation works');
       } else {
         results.tests.push({ name: Report Generation', status: FAIL' });
         results.failed++;
-        console.log('❌ Report generation failed');
+        logger.info('❌ Report generation failed');
       }
     } catch (error) {
       results.tests.push({ name: Report Generation', status: FAIL' });
       results.failed++;
-      console.log('❌ Report generation failed:', error.message);
+      logger.info('❌ Report generation failed:', error.message);
     }
     
     // Test 7: Orchestrator Integration
-    console.log('\n7️⃣ Testing orchestrator integration...');
+    logger.info('\n7️⃣ Testing orchestrator integration...');
     
     try {
       const config = {
@@ -187,18 +215,18 @@ async function testComponents() {
       
       results.tests.push({ name: Orchestrator Integration', status: PASS' });
       results.passed++;
-      console.log('✅ Orchestrator integration works');
+      logger.info('✅ Orchestrator integration works');
       
       await orchestrator.stop();
       
     } catch (error) {
       results.tests.push({ name: Orchestrator Integration', status: FAIL' });
       results.failed++;
-      console.log('❌ Orchestrator integration failed:', error.message);
+      logger.info('❌ Orchestrator integration failed:', error.message);
     }
     
     // Test 8: Configuration Loading
-    console.log('\n8️⃣ Testing configuration loading...');
+    logger.info('\n8️⃣ Testing configuration loading...');
     
     const configPath = path.join(__dirname, config.json');
     if (fs.existsSync(configPath)) {
@@ -207,48 +235,48 @@ async function testComponents() {
         if (config.autonomous && config.tasks) {
           results.tests.push({ name: Configuration Loading', status: PASS' });
           results.passed++;
-          console.log('✅ Configuration loading works');
+          logger.info('✅ Configuration loading works');
         } else {
           results.tests.push({ name: Configuration Loading', status: FAIL' });
           results.failed++;
-          console.log('❌ Configuration loading failed - invalid structure');
+          logger.info('❌ Configuration loading failed - invalid structure');
         }
       } catch (error) {
         results.tests.push({ name: Configuration Loading', status: FAIL' });
         results.failed++;
-        console.log('❌ Configuration loading failed:', error.message);
+        logger.info('❌ Configuration loading failed:', error.message);
       }
     } else {
       results.tests.push({ name: Configuration Loading', status: FAIL' });
       results.failed++;
-      console.log('❌ Configuration file not found');
+      logger.info('❌ Configuration file not found');
     }
     
   } catch (error) {
-    console.error('❌ Test suite failed:', error);
+    logger.error('❌ Test suite failed:', error);
     results.failed++;
   }
   
   // Print results
-  console.log('\n' + =' .repeat(60));
-  console.log('📊 Test Results Summary');
-  console.log('=' .repeat(60));
+  logger.info('\n' + =' .repeat(60));
+  logger.info('📊 Test Results Summary');
+  logger.info('=' .repeat(60));
   
   results.tests.forEach(test => {
     const status = test.status === PASS' ? ✅' : ❌';
-    console.log(`${status} ${test.name}`);
+    logger.info(`${status} ${test.name}`);
   });
   
-  console.log('\n📈 Summary:');
-  console.log(`- Passed: ${results.passed}`);
-  console.log(`- Failed: ${results.failed}`);
-  console.log(`- Total: ${results.passed + results.failed}`);
+  logger.info('\n📈 Summary:');
+  logger.info(`- Passed: ${results.passed}`);
+  logger.info(`- Failed: ${results.failed}`);
+  logger.info(`- Total: ${results.passed + results.failed}`);
   
   if (results.failed === 0) {
-    console.log('\n🎉 All tests passed! The automation system is ready to use.');
+    logger.info('\n🎉 All tests passed! The automation system is ready to use.');
     process.exit(0);
   } else {
-    console.log('\n⚠️ Some tests failed. Please check the errors above.');
+    logger.info('\n⚠️ Some tests failed. Please check the errors above.');
     process.exit(1);
   }
 }
@@ -256,9 +284,44 @@ async function testComponents() {
 // Run tests if this is the main module
 if (require.main === module) {
   testComponents().catch(error => {
-    console.error('❌ Test suite failed:', error);
+    logger.error('❌ Test suite failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = { testComponents }; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

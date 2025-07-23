@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-07-23T05:40:16.803Z",
+  "duration": 36,
+  "summary": {
+    "total": 7,
+    "passed": 3,
+    "failed": 4,
+    "successRate": "42.9"
+  },
+  "results": [
+    {
+      "testName": "Core Automation System",
+      "passed": false,
+      "message": "Core system import failed: Unexpected string",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.787Z"
+    },
+    {
+      "testName": "Netlify Automation",
+      "passed": false,
+      "message": "Netlify system import failed: Unexpected string",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.789Z"
+    },
+    {
+      "testName": "Cursor Chat Automation",
+      "passed": true,
+      "message": "Cursor chat automation script accessible",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.790Z"
+    },
+    {
+      "testName": "Performance Monitoring",
+      "passed": false,
+      "message": "Performance monitoring import failed: Unexpected string",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.792Z"
+    },
+    {
+      "testName": "Continuous Improvement",
+      "passed": false,
+      "message": "CI system import failed: Unexpected string",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.794Z"
+    },
+    {
+      "testName": "File System and Config",
+      "passed": true,
+      "message": "All required directories and config files accessible",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.800Z"
+    },
+    {
+      "testName": "System Integration",
+      "passed": true,
+      "message": "Main automation system accessible",
+      "details": null,
+      "timestamp": "2025-07-23T05:40:16.801Z"
+    }
+  ]
+}

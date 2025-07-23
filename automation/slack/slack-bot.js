@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { App } = require('@slack/bolt')
 const axios = require('axios')
@@ -47,7 +70,7 @@ const options = args.slice(1);
         await this.triggerOptimization(target);
         
       } catch (error) {
-        console.error('Optimization command error:', error);
+        logger.error('Optimization command error:', error);
         await respond({
           response_type: ephemeral',
           text: `❌ Error: ${error.message}`
@@ -138,10 +161,13 @@ const options = args.slice(1);
   }
 
   async triggerOptimization(target) {
-    console.log(`Triggering optimization for: ${target}`);
+    logger.info(`Triggering optimization for: ${target}`);
     
     // Simulate optimization process
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
     
     return {
       success: true,
@@ -167,9 +193,9 @@ const options = args.slice(1);
     try {
       await this.app.start();
       this.isRunning = true;
-      console.log('⚡ Slack bot started');
+      logger.info('⚡ Slack bot started');
     } catch (error) {
-      console.error('Failed to start Slack bot:', error);
+      logger.error('Failed to start Slack bot:', error);
       throw error;
     }
   }
@@ -178,9 +204,9 @@ const options = args.slice(1);
     try {
       await this.app.stop();
       this.isRunning = false;
-      console.log('🛑 Slack bot stopped');
+      logger.info('🛑 Slack bot stopped');
     } catch (error) {
-      console.error('Failed to stop Slack bot:', error);
+      logger.error('Failed to stop Slack bot:', error);
       throw error;
     }
   }

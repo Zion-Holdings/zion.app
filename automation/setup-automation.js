@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -14,7 +37,7 @@ class AutomationSetup {
 
   log(message, level = info') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
   async setup() {
@@ -294,8 +317,23 @@ const command = process.argv[2];
       setup.addScriptsToMainPackage();
       break;
     default:
-      console.log('Usage: node setup-automation.js [setup|add-scripts]);
+      logger.info('Usage: node setup-automation.js [setup|add-scripts]);
   }
 }
 
 module.exports = AutomationSetup;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Sh {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Sh...');
+    
+    try {
+      #!/bin/bash
 
 set -e
 
@@ -128,3 +139,25 @@ echo -e "• ${GREEN}/report [timeframe]${NC} - Generate performance report"
 echo -e "• ${GREEN}/suggestions${NC} - Get optimization suggestions"
 echo ""
 echo -e "${YELLOW}⚠️ Don't forget to configure your Slack app and Cursor agent settings!${NC}"
+    } catch (error) {
+      console.error('Error in Sh:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Sh...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Sh();
+  script.start().catch(error => {
+    console.error('Failed to start Sh:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Sh;

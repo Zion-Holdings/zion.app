@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -18,7 +41,7 @@ class PerformanceChecker {
     }
 
     log(message) {
-        console.log(`[Performance Check] ${message}`);
+        logger.info(`[Performance Check] ${message}`);
     }
 
     async runPerformanceCheck() {
@@ -196,22 +219,22 @@ async function main() {
         const results = await checker.runPerformanceCheck();
         
         // Log summary
-        console.log('\n📊 Performance Check Summary:');
-        console.log(`Bundle Size: ${results.bundleSize?.totalSizeMB || N/A'} MB`);
-        console.log(`Build Time: ${results.buildTime?.buildTimeSeconds || N/A'} seconds`);
-        console.log(`Test Time: ${results.testPerformance?.testTimeSeconds || N/A'} seconds`);
-        console.log(`Memory Usage: ${results.memoryUsage?.rssMB || N/A'} MB`);
+        logger.info('\n📊 Performance Check Summary:');
+        logger.info(`Bundle Size: ${results.bundleSize?.totalSizeMB || N/A'} MB`);
+        logger.info(`Build Time: ${results.buildTime?.buildTimeSeconds || N/A'} seconds`);
+        logger.info(`Test Time: ${results.testPerformance?.testTimeSeconds || N/A'} seconds`);
+        logger.info(`Memory Usage: ${results.memoryUsage?.rssMB || N/A'} MB`);
         
         if (results.recommendations.length > 0) {
-            console.log('\n💡 Recommendations:');
+            logger.info('\n💡 Recommendations:');
             results.recommendations.forEach(rec => {
-                console.log(`- ${rec.message}`);
+                logger.info(`- ${rec.message}`);
             });
         }
         
         process.exit(0);
     } catch (error) {
-        console.error('❌ Performance check failed:', error.message);
+        logger.error('❌ Performance check failed:', error.message);
         process.exit(1);
     }
 }
@@ -221,3 +244,17 @@ if (require.main === module) {
 }
 
 module.exports = PerformanceChecker; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

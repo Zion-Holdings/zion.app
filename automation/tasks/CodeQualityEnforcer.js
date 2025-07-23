@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../continuous-improvement/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -21,7 +44,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async run() {
-    console.log('🎯 Starting code quality enforcement...');
+    logger.info('🎯 Starting code quality enforcement...');
     
     try {
       const results = {
@@ -64,7 +87,7 @@ class CodeQualityEnforcer extends AutomationTask {
       
       // Check if there are violations
       if (this.violations.length > 0) {
-        console.warn(`⚠️ Found ${this.violations.length} code quality violations`);
+        logger.warn(`⚠️ Found ${this.violations.length} code quality violations`);
         
         // Auto-fix if enabled
         if (this.config.autoFix) {
@@ -76,7 +99,7 @@ class CodeQualityEnforcer extends AutomationTask {
           await this.createQualityPR();
         }
       } else {
-        console.log('✅ No code quality violations found');
+        logger.info('✅ No code quality violations found');
       }
       
       // Generate report
@@ -88,7 +111,7 @@ class CodeQualityEnforcer extends AutomationTask {
       return results;
       
     } catch (error) {
-      console.error('❌ Code quality enforcement failed:', error);
+      logger.error('❌ Code quality enforcement failed:', error);
       this.lastStatus = failed';
       this.lastError = error.message;
       this.lastRun = new Date();
@@ -98,7 +121,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async runESLint() {
-    console.log('🔍 Running ESLint...');
+    logger.info('🔍 Running ESLint...');
     
     try {
       // Run ESLint with JSON output
@@ -137,7 +160,7 @@ class CodeQualityEnforcer extends AutomationTask {
         }
       }
       
-      console.log(`✅ ESLint: ${summary.totalErrors} errors, ${summary.totalWarnings} warnings`);
+      logger.info(`✅ ESLint: ${summary.totalErrors} errors, ${summary.totalWarnings} warnings`);
       return summary;
       
     } catch (error) {
@@ -154,7 +177,7 @@ class CodeQualityEnforcer extends AutomationTask {
       const results = JSON.parse(stdout);
       return this.processESLintResults(results);
     } catch (error) {
-      console.error('❌ Failed to parse ESLint output:', error);
+      logger.error('❌ Failed to parse ESLint output:', error);
       return { totalErrors: 0, totalWarnings: 0, violations: [] };
     }
   }
@@ -192,7 +215,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async runPrettier() {
-    console.log('💅 Running Prettier...');
+    logger.info('💅 Running Prettier...');
     
     try {
       // Check formatting
@@ -201,14 +224,14 @@ class CodeQualityEnforcer extends AutomationTask {
         stdio: pipe
       });
       
-      console.log('✅ Prettier: All files properly formatted');
+      logger.info('✅ Prettier: All files properly formatted');
       return { formatted: true, violations: [] };
       
     } catch (error) {
       if (error.status === 1) {
         // Prettier returns 1 when files need formatting
         const violations = this.parsePrettierError(error.stdout);
-        console.log(`⚠️ Prettier: ${violations.length} files need formatting`);
+        logger.info(`⚠️ Prettier: ${violations.length} files need formatting`);
         return { formatted: false, violations };
       }
       throw error;
@@ -233,7 +256,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async runTypeScriptCheck() {
-    console.log('📝 Running TypeScript check...');
+    logger.info('📝 Running TypeScript check...');
     
     try {
       const output = execSync('npx tsc --noEmit', {
@@ -241,13 +264,13 @@ class CodeQualityEnforcer extends AutomationTask {
         stdio: pipe
       });
       
-      console.log('✅ TypeScript: No type errors');
+      logger.info('✅ TypeScript: No type errors');
       return { hasErrors: false, errors: [] };
       
     } catch (error) {
       if (error.status === 1) {
         const errors = this.parseTypeScriptError(error.stdout);
-        console.log(`⚠️ TypeScript: ${errors.length} type errors`);
+        logger.info(`⚠️ TypeScript: ${errors.length} type errors`);
         return { hasErrors: true, errors };
       }
       throw error;
@@ -277,7 +300,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async runTests() {
-    console.log('🧪 Running tests...');
+    logger.info('🧪 Running tests...');
     
     try {
       const output = execSync('npm test', {
@@ -286,12 +309,12 @@ class CodeQualityEnforcer extends AutomationTask {
       });
       
       const results = this.parseTestResults(output);
-      console.log(`✅ Tests: ${results.passed} passed, ${results.failed} failed`);
+      logger.info(`✅ Tests: ${results.passed} passed, ${results.failed} failed`);
       return results;
       
     } catch (error) {
       const results = this.parseTestResults(error.stdout || );
-      console.log(`⚠️ Tests: ${results.passed} passed, ${results.failed} failed`);
+      logger.info(`⚠️ Tests: ${results.passed} passed, ${results.failed} failed`);
       return results;
     }
   }
@@ -314,7 +337,7 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async checkTestCoverage() {
-    console.log('📊 Checking test coverage...');
+    logger.info('📊 Checking test coverage...');
     
     try {
       const output = execSync('npm run test:coverage', {
@@ -323,11 +346,11 @@ class CodeQualityEnforcer extends AutomationTask {
       });
       
       const coverage = this.parseCoverageOutput(output);
-      console.log(`✅ Coverage: ${coverage.total}%`);
+      logger.info(`✅ Coverage: ${coverage.total}%`);
       return coverage;
       
     } catch (error) {
-      console.warn('⚠️ Could not check test coverage');
+      logger.warn('⚠️ Could not check test coverage');
       return { total: 0, lines: 0, functions: 0, branches: 0, statements: 0 };
     }
   }
@@ -398,40 +421,40 @@ class CodeQualityEnforcer extends AutomationTask {
   }
 
   async autoFixViolations() {
-    console.log('🔧 Auto-fixing violations...');
+    logger.info('🔧 Auto-fixing violations...');
     
     try {
       // Fix ESLint violations
       if (this.violations.some(v => v.tool === eslint' && v.fixable)) {
-        console.log('🔧 Fixing ESLint violations...');
+        logger.info('🔧 Fixing ESLint violations...');
         execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --fix', { stdio: pipe' });
       }
       
       // Fix Prettier violations
       if (this.violations.some(v => v.tool === prettier')) {
-        console.log('🔧 Fixing Prettier violations...');
+        logger.info('🔧 Fixing Prettier violations...');
         execSync('npx prettier --write "**/*.{js,jsx,ts,tsx,json,css,md}"', { stdio: pipe' });
       }
       
-      console.log('✅ Auto-fix completed');
+      logger.info('✅ Auto-fix completed');
       
       // Re-run checks to see what's left
       await this.run();
       
     } catch (error) {
-      console.error('❌ Auto-fix failed:', error);
+      logger.error('❌ Auto-fix failed:', error);
     }
   }
 
   async createQualityPR() {
-    console.log('🔀 Creating quality improvement PR...');
+    logger.info('🔀 Creating quality improvement PR...');
     
     try {
       // Check if there are changes to commit
       const status = execSync('git status --porcelain', { encoding: utf8' });
       
       if (!status.trim()) {
-        console.log('ℹ️ No changes to commit');
+        logger.info('ℹ️ No changes to commit');
         return;
       }
       
@@ -452,10 +475,10 @@ class CodeQualityEnforcer extends AutomationTask {
       // Create PR
       await this.createGitHubQualityPR(branchName);
       
-      console.log(`✅ Quality PR created: ${branchName}`);
+      logger.info(`✅ Quality PR created: ${branchName}`);
       
     } catch (error) {
-      console.error('❌ Failed to create quality PR:', error.message);
+      logger.error('❌ Failed to create quality PR:', error.message);
       throw error;
     }
   }
@@ -483,7 +506,7 @@ This commit was automatically generated by the Code Quality Enforcer.`;
       });
       
     } catch (error) {
-      console.warn('⚠️ GitHub CLI not available, PR creation skipped');
+      logger.warn('⚠️ GitHub CLI not available, PR creation skipped');
     }
   }
 
@@ -528,20 +551,20 @@ This PR was automatically generated by the Code Quality Enforcer.
     const reportPath = path.join(process.cwd(), reports', `quality-report-${Date.now()}.json`);
     
     await fs.writeFile(reportPath, JSON.stringify(results, null, 2));
-    console.log(`📄 Quality report saved to: ${reportPath}`);
+    logger.info(`📄 Quality report saved to: ${reportPath}`);
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for CodeQualityEnforcer...');
+    logger.info('🔧 Attempting self-healing for CodeQualityEnforcer...');
     
     if (error.message.includes('command not found')) {
-      console.log('📦 Installing missing dependencies...');
+      logger.info('📦 Installing missing dependencies...');
       await this.installMissingDependencies();
       return;
     }
     
     if (error.message.includes('permission') || error.message.includes('access')) {
-      console.log('🔐 Permission issue detected, checking file permissions...');
+      logger.info('🔐 Permission issue detected, checking file permissions...');
       await this.checkFilePermissions();
       return;
     }
@@ -553,9 +576,9 @@ This PR was automatically generated by the Code Quality Enforcer.
       execSync('npm install --save-dev eslint prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin', {
         stdio: pipe
       });
-      console.log('✅ Dependencies installed');
+      logger.info('✅ Dependencies installed');
     } catch (error) {
-      console.error('❌ Failed to install dependencies:', error.message);
+      logger.error('❌ Failed to install dependencies:', error.message);
     }
   }
 
@@ -564,7 +587,7 @@ This PR was automatically generated by the Code Quality Enforcer.
       const reportDir = path.join(process.cwd(), reports');
       await fs.access(reportDir, fs.constants.W_OK);
     } catch (error) {
-      console.log('⚠️ Reports directory not writable, creating...');
+      logger.info('⚠️ Reports directory not writable, creating...');
       await fs.mkdir(path.join(process.cwd(), reports'), { recursive: true });
     }
   }

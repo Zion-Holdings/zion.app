@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../core/AutomationTask');
 const { execSync } = require('child_process');
 const fs = require('fs');
@@ -19,7 +42,7 @@ class StaleCleaner extends AutomationTask {
   }
 
   async run() {
-    console.log('🧹 Starting stale branch and PR cleanup...');
+    logger.info('🧹 Starting stale branch and PR cleanup...');
     
     try {
       const startTime = Date.now();
@@ -34,11 +57,11 @@ class StaleCleaner extends AutomationTask {
       
       // Get stale branches
       const staleBranches = await this.getStaleBranches();
-      console.log(`📋 Found ${staleBranches.length} stale branches`);
+      logger.info(`📋 Found ${staleBranches.length} stale branches`);
       
       // Get stale PRs
       const stalePRs = await this.getStalePRs();
-      console.log(`📋 Found ${stalePRs.length} stale pull requests`);
+      logger.info(`📋 Found ${stalePRs.length} stale pull requests`);
       
       // Clean up branches
       const branchResults = await this.cleanupBranches(staleBranches);
@@ -67,7 +90,7 @@ class StaleCleaner extends AutomationTask {
         dryRun: this.config.dryRun
       };
       
-      console.log('✅ Stale cleanup completed:', summary);
+      logger.info('✅ Stale cleanup completed:', summary);
       
       return {
         success: true,
@@ -79,7 +102,7 @@ class StaleCleaner extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Stale cleanup failed:', error.message);
+      logger.error('❌ Stale cleanup failed:', error.message);
       this.lastStatus = error';
       this.lastError = error.message;
       
@@ -126,7 +149,7 @@ class StaleCleaner extends AutomationTask {
       return branches;
       
     } catch (error) {
-      console.error('Error getting stale branches:', error.message);
+      logger.error('Error getting stale branches:', error.message);
       return [];
     }
   }
@@ -155,7 +178,7 @@ class StaleCleaner extends AutomationTask {
       return prs;
       
     } catch (error) {
-      console.error('Error getting stale PRs:', error.message);
+      logger.error('Error getting stale PRs:', error.message);
       return [];
     }
   }
@@ -170,7 +193,7 @@ class StaleCleaner extends AutomationTask {
     for (const branch of staleBranches) {
       try {
         if (this.config.dryRun) {
-          console.log(`🔍 [DRY RUN] Would delete branch: ${branch.name} (${branch.daysOld} days old)`);
+          logger.info(`🔍 [DRY RUN] Would delete branch: ${branch.name} (${branch.daysOld} days old)`);
           results.skipped.push(branch);
           continue;
         }
@@ -179,7 +202,7 @@ class StaleCleaner extends AutomationTask {
         const hasUnmergedCommits = await this.hasUnmergedCommits(branch.name);
         
         if (hasUnmergedCommits && !this.config.autoDelete) {
-          console.log(`⚠️ Skipping ${branch.name} - has unmerged commits`);
+          logger.info(`⚠️ Skipping ${branch.name} - has unmerged commits`);
           results.skipped.push({ ...branch, reason: unmerged_commits' });
           continue;
         }
@@ -193,11 +216,11 @@ class StaleCleaner extends AutomationTask {
           });
         }
         
-        console.log(`🗑️ Deleted stale branch: ${branch.name} (${branch.daysOld} days old)`);
+        logger.info(`🗑️ Deleted stale branch: ${branch.name} (${branch.daysOld} days old)`);
         results.cleaned.push(branch);
         
       } catch (error) {
-        console.error(`❌ Failed to delete branch ${branch.name}:`, error.message);
+        logger.error(`❌ Failed to delete branch ${branch.name}:`, error.message);
         results.failed.push({ ...branch, error: error.message });
       }
     }
@@ -215,7 +238,7 @@ class StaleCleaner extends AutomationTask {
     for (const pr of stalePRs) {
       try {
         if (this.config.dryRun) {
-          console.log(`🔍 [DRY RUN] Would close PR: #${pr.number} - ${pr.title} (${pr.daysOld} days old)`);
+          logger.info(`🔍 [DRY RUN] Would close PR: #${pr.number} - ${pr.title} (${pr.daysOld} days old)`);
           results.skipped.push(pr);
           continue;
         }
@@ -226,11 +249,11 @@ class StaleCleaner extends AutomationTask {
           stdio: pipe
         });
         
-        console.log(`🗑️ Closed stale PR: #${pr.number} - ${pr.title} (${pr.daysOld} days old)`);
+        logger.info(`🗑️ Closed stale PR: #${pr.number} - ${pr.title} (${pr.daysOld} days old)`);
         results.cleaned.push(pr);
         
       } catch (error) {
-        console.error(`❌ Failed to close PR #${pr.number}:`, error.message);
+        logger.error(`❌ Failed to close PR #${pr.number}:`, error.message);
         results.failed.push({ ...pr, error: error.message });
       }
     }
@@ -262,7 +285,7 @@ class StaleCleaner extends AutomationTask {
         stdio: pipe
       });
     } catch (error) {
-      console.warn('⚠️ Failed to fetch latest from remote:', error.message);
+      logger.warn('⚠️ Failed to fetch latest from remote:', error.message);
     }
   }
 
@@ -279,21 +302,21 @@ class StaleCleaner extends AutomationTask {
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for StaleCleaner...');
+    logger.info('🔧 Attempting self-healing for StaleCleaner...');
     
     if (error.message.includes('permission') || error.message.includes('access')) {
-      console.log('🔐 Permission issue detected, checking git configuration...');
+      logger.info('🔐 Permission issue detected, checking git configuration...');
       await this.checkGitConfiguration();
       return;
     }
     
     if (error.message.includes('network') || error.message.includes('connection')) {
-      console.log('⏳ Network issue detected, will retry later...');
+      logger.info('⏳ Network issue detected, will retry later...');
       return;
     }
     
     if (error.message.includes('gh') || error.message.includes('GitHub CLI')) {
-      console.log('🔧 GitHub CLI issue detected, checking installation...');
+      logger.info('🔧 GitHub CLI issue detected, checking installation...');
       await this.checkGitHubCLI();
       return;
     }
@@ -305,24 +328,24 @@ class StaleCleaner extends AutomationTask {
       const userName = execSync('git config user.name', { encoding: utf8', stdio: pipe' }).trim();
       const userEmail = execSync('git config user.email', { encoding: utf8', stdio: pipe' }).trim();
       
-      console.log('✅ Git configuration:', { userName, userEmail });
+      logger.info('✅ Git configuration:', { userName, userEmail });
       
     } catch (error) {
-      console.error('❌ Git configuration issue:', error.message);
+      logger.error('❌ Git configuration issue:', error.message);
     }
   }
 
   async checkGitHubCLI() {
     try {
       const version = execSync('gh --version', { encoding: utf8', stdio: pipe' });
-      console.log('✅ GitHub CLI version:', version.trim());
+      logger.info('✅ GitHub CLI version:', version.trim());
       
       // Check authentication
       const authStatus = execSync('gh auth status', { encoding: utf8', stdio: pipe' });
-      console.log('✅ GitHub CLI auth status:', authStatus.trim());
+      logger.info('✅ GitHub CLI auth status:', authStatus.trim());
       
     } catch (error) {
-      console.error('❌ GitHub CLI issue:', error.message);
+      logger.error('❌ GitHub CLI issue:', error.message);
     }
   }
 

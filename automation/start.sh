@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App - Enhanced Automation System Startup Script
 
@@ -114,4 +125,26 @@ echo "  npm run automation:status    - Check system status"
 echo "  npm run automation:logs      - View system logs"
 echo "  npm run automation:stop      - Stop the system"
 echo "  npm run automation:restart   - Restart the system"
-echo "" 
+echo ""
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

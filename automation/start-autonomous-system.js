@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -25,7 +48,7 @@ class AutonomousAutomationSystem {
   }
 
   async initialize() {
-    console.log('🚀 Initializing Autonomous Automation System...');
+    logger.info('🚀 Initializing Autonomous Automation System...');
     
     try {
       // Create necessary directories
@@ -63,10 +86,10 @@ class AutonomousAutomationSystem {
       // Set up graceful shutdown
       this.setupGracefulShutdown();
       
-      console.log('✅ Autonomous Automation System initialized');
+      logger.info('✅ Autonomous Automation System initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize system:', error);
+      logger.error('❌ Failed to initialize system:', error);
       throw error;
     }
   }
@@ -86,67 +109,70 @@ class AutonomousAutomationSystem {
 
   async start() {
     if (this.isRunning) {
-      console.warn('⚠️ System is already running');
+      logger.warn('⚠️ System is already running');
       return;
     }
     
     try {
-      console.log('🚀 Starting Autonomous Automation System...');
+      logger.info('🚀 Starting Autonomous Automation System...');
       
       // Start the orchestrator
       await this.orchestrator.start();
       
       this.isRunning = true;
       
-      console.log('✅ Autonomous Automation System started successfully');
-      console.log('📊 System is now running autonomously');
-      console.log('🔍 Monitoring and self-healing are active');
-      console.log('📈 Performance optimization is enabled');
-      console.log('🔔 Notifications are configured');
+      logger.info('✅ Autonomous Automation System started successfully');
+      logger.info('📊 System is now running autonomously');
+      logger.info('🔍 Monitoring and self-healing are active');
+      logger.info('📈 Performance optimization is enabled');
+      logger.info('🔔 Notifications are configured');
       
       // Display initial status
       await this.displayStatus();
       
     } catch (error) {
-      console.error('❌ Failed to start system:', error);
+      logger.error('❌ Failed to start system:', error);
       throw error;
     }
   }
 
   async stop() {
     if (!this.isRunning) {
-      console.warn('⚠️ System is not running');
+      logger.warn('⚠️ System is not running');
       return;
     }
     
     try {
-      console.log('🛑 Stopping Autonomous Automation System...');
+      logger.info('🛑 Stopping Autonomous Automation System...');
       
       // Stop the orchestrator
       await this.orchestrator.stop();
       
       this.isRunning = false;
       
-      console.log('✅ Autonomous Automation System stopped');
+      logger.info('✅ Autonomous Automation System stopped');
       
     } catch (error) {
-      console.error('❌ Error stopping system:', error);
+      logger.error('❌ Error stopping system:', error);
       throw error;
     }
   }
 
   async restart() {
-    console.log('🔄 Restarting Autonomous Automation System...');
+    logger.info('🔄 Restarting Autonomous Automation System...');
     
     try {
       await this.stop();
-      await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  5000);
+// Store timeoutId for cleanup if needed
+); // Wait 5 seconds
       await this.start();
       
-      console.log('✅ System restarted successfully');
+      logger.info('✅ System restarted successfully');
       
     } catch (error) {
-      console.error('❌ Restart failed:', error);
+      logger.error('❌ Restart failed:', error);
       throw error;
     }
   }
@@ -156,54 +182,54 @@ class AutonomousAutomationSystem {
     
     const status = this.orchestrator.getStatus();
     
-    console.log('\n📊 System Status:');
-    console.log('================');
-    console.log(`Status: ${status.isRunning ? 🟢 Running' : 🔴 Stopped'}`);
-    console.log(`Uptime: ${Math.floor(status.uptime / 1000)} seconds`);
-    console.log(`Total Tasks: ${status.tasks.total}`);
-    console.log(`Successful Tasks: ${status.performance.successfulTasks}`);
-    console.log(`Failed Tasks: ${status.performance.failedTasks}`);
-    console.log(`Success Rate: ${status.performance.totalTasks > 0 
+    logger.info('\n📊 System Status:');
+    logger.info('================');
+    logger.info(`Status: ${status.isRunning ? 🟢 Running' : 🔴 Stopped'}`);
+    logger.info(`Uptime: ${Math.floor(status.uptime / 1000)} seconds`);
+    logger.info(`Total Tasks: ${status.tasks.total}`);
+    logger.info(`Successful Tasks: ${status.performance.successfulTasks}`);
+    logger.info(`Failed Tasks: ${status.performance.failedTasks}`);
+    logger.info(`Success Rate: ${status.performance.totalTasks > 0 
       ? (status.performance.successfulTasks / status.performance.totalTasks * 100).toFixed(2) + %
       : 0%'}`);
-    console.log(`Average Response Time: ${status.performance.averageResponseTime.toFixed(2)}ms`);
-    console.log(`System Health: ${status.health.status}`);
+    logger.info(`Average Response Time: ${status.performance.averageResponseTime.toFixed(2)}ms`);
+    logger.info(`System Health: ${status.health.status}`);
     
     if (status.tasks.status) {
-      console.log('\n📋 Task Status:');
-      console.log('==============');
+      logger.info('\n📋 Task Status:');
+      logger.info('==============');
       for (const [taskName, taskStatus] of Object.entries(status.tasks.status)) {
         const statusIcon = taskStatus.enabled ? 🟢' : 🔴';
         const runningIcon = taskStatus.isRunning ? ⚡' : ⏸️';
-        console.log(`${statusIcon} ${taskName}: ${runningIcon} ${taskStatus.successRate.toFixed(1)}% success`);
+        logger.info(`${statusIcon} ${taskName}: ${runningIcon} ${taskStatus.successRate.toFixed(1)}% success`);
       }
     }
     
-    console.log('\n🎯 System Features:');
-    console.log('==================');
-    console.log('🤖 Autonomous Operation: Enabled');
-    console.log('🔧 Self-Healing: Active');
-    console.log('📈 Performance Optimization: Active');
-    console.log('🔔 Multi-Channel Notifications: Configured');
-    console.log('📊 Real-Time Monitoring: Active');
-    console.log('🚨 Anomaly Detection: Active');
-    console.log('📋 Intelligent Task Scheduling: Active');
+    logger.info('\n🎯 System Features:');
+    logger.info('==================');
+    logger.info('🤖 Autonomous Operation: Enabled');
+    logger.info('🔧 Self-Healing: Active');
+    logger.info('📈 Performance Optimization: Active');
+    logger.info('🔔 Multi-Channel Notifications: Configured');
+    logger.info('📊 Real-Time Monitoring: Active');
+    logger.info('🚨 Anomaly Detection: Active');
+    logger.info('📋 Intelligent Task Scheduling: Active');
   }
 
   setupGracefulShutdown() {
     const shutdown = async (signal) => {
-      console.log(`\n🛑 Received ${signal}. Shutting down gracefully...`);
+      logger.info(`\n🛑 Received ${signal}. Shutting down gracefully...`);
       
       try {
         if (this.isRunning) {
           await this.stop();
         }
         
-        console.log('✅ Shutdown completed successfully');
+        logger.info('✅ Shutdown completed successfully');
         process.exit(0);
         
       } catch (error) {
-        console.error('❌ Error during shutdown:', error);
+        logger.error('❌ Error during shutdown:', error);
         process.exit(1);
       }
     };
@@ -215,30 +241,30 @@ class AutonomousAutomationSystem {
 
   async generateReport() {
     if (!this.orchestrator) {
-      console.error('❌ System not initialized');
+      logger.error('❌ System not initialized');
       return;
     }
     
     try {
-      console.log('📄 Generating system report...');
+      logger.info('📄 Generating system report...');
       
       const report = await this.orchestrator.generateReport();
       
-      console.log('✅ Report generated successfully');
-      console.log(`📊 Success Rate: ${report.summary.successRate}`);
-      console.log(`⏱️ Average Response Time: ${report.summary.averageResponseTime}`);
-      console.log(`🕐 Uptime: ${report.summary.uptime}`);
+      logger.info('✅ Report generated successfully');
+      logger.info(`📊 Success Rate: ${report.summary.successRate}`);
+      logger.info(`⏱️ Average Response Time: ${report.summary.averageResponseTime}`);
+      logger.info(`🕐 Uptime: ${report.summary.uptime}`);
       
       return report;
       
     } catch (error) {
-      console.error('❌ Failed to generate report:', error);
+      logger.error('❌ Failed to generate report:', error);
       throw error;
     }
   }
 
   async emergencyStop() {
-    console.log('🚨 Emergency stop initiated...');
+    logger.info('🚨 Emergency stop initiated...');
     
     try {
       if (this.orchestrator) {
@@ -246,10 +272,10 @@ class AutonomousAutomationSystem {
       }
       
       this.isRunning = false;
-      console.log('✅ Emergency stop completed');
+      logger.info('✅ Emergency stop completed');
       
     } catch (error) {
-      console.error('❌ Emergency stop failed:', error);
+      logger.error('❌ Emergency stop failed:', error);
       throw error;
     }
   }
@@ -289,34 +315,34 @@ async function main() {
         break;
         
       default:
-        console.log('🤖 Autonomous Automation System');
-        console.log('==============================');
-        console.log('');
-        console.log('Usage: node start-autonomous-system.js [command]);
-        console.log('');
-        console.log('Commands:');
-        console.log('  start           Start the autonomous automation system');
-        console.log('  stop            Stop the system gracefully');
-        console.log('  restart         Restart the system');
-        console.log('  status          Display system status');
-        console.log('  report          Generate system report');
-        console.log('  emergency-stop  Emergency stop (use with caution));
-        console.log('');
-        console.log('Features:');
-        console.log('  🤖 Autonomous operation with self-healing');
-        console.log('  📈 Dynamic performance optimization');
-        console.log('  🔔 Multi-channel notifications');
-        console.log('  📊 Real-time monitoring and reporting');
-        console.log('  🚨 Anomaly detection and alerting');
-        console.log('  📋 Intelligent task scheduling');
-        console.log('');
+        logger.info('🤖 Autonomous Automation System');
+        logger.info('==============================');
+        logger.info('');
+        logger.info('Usage: node start-autonomous-system.js [command]);
+        logger.info('');
+        logger.info('Commands:');
+        logger.info('  start           Start the autonomous automation system');
+        logger.info('  stop            Stop the system gracefully');
+        logger.info('  restart         Restart the system');
+        logger.info('  status          Display system status');
+        logger.info('  report          Generate system report');
+        logger.info('  emergency-stop  Emergency stop (use with caution));
+        logger.info('');
+        logger.info('Features:');
+        logger.info('  🤖 Autonomous operation with self-healing');
+        logger.info('  📈 Dynamic performance optimization');
+        logger.info('  🔔 Multi-channel notifications');
+        logger.info('  📊 Real-time monitoring and reporting');
+        logger.info('  🚨 Anomaly detection and alerting');
+        logger.info('  📋 Intelligent task scheduling');
+        logger.info('');
         
         // Start the system by default
         await system.start();
     }
     
   } catch (error) {
-    console.error('❌ System error:', error);
+    logger.error('❌ System error:', error);
     process.exit(1);
   }
 }
@@ -324,7 +350,7 @@ async function main() {
 // Start the system if this file is executed directly
 if (require.main === module) {
   main().catch(error => {
-    console.error('❌ Fatal error:', error);
+    logger.error('❌ Fatal error:', error);
     process.exit(1);
   });
 }

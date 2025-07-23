@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../continuous-improvement/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -20,7 +43,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async run() {
-    console.log('⚡ Starting performance optimization...');
+    logger.info('⚡ Starting performance optimization...');
     
     try {
       // Establish baseline if not exists
@@ -82,7 +105,7 @@ class PerformanceOptimizer extends AutomationTask {
       return results;
       
     } catch (error) {
-      console.error('❌ Performance optimization failed:', error);
+      logger.error('❌ Performance optimization failed:', error);
       this.lastStatus = failed';
       this.lastError = error.message;
       this.lastRun = new Date();
@@ -92,7 +115,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async establishBaseline() {
-    console.log('📊 Establishing performance baseline...');
+    logger.info('📊 Establishing performance baseline...');
     
     try {
       const baseline = {
@@ -104,17 +127,17 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
       this.performanceBaseline = baseline;
-      console.log('✅ Performance baseline established');
+      logger.info('✅ Performance baseline established');
       
       return baseline;
     } catch (error) {
-      console.error('❌ Failed to establish baseline:', error);
+      logger.error('❌ Failed to establish baseline:', error);
       throw error;
     }
   }
 
   async optimizeBundle() {
-    console.log('📦 Optimizing bundle...');
+    logger.info('📦 Optimizing bundle...');
     
     try {
       const beforeSize = await this.measureBundleSize();
@@ -146,7 +169,7 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Bundle optimization failed:', error);
+      logger.error('❌ Bundle optimization failed:', error);
       return { error: error.message };
     }
   }
@@ -167,7 +190,7 @@ class PerformanceOptimizer extends AutomationTask {
         timestamp: new Date().toISOString()
       };
     } catch (error) {
-      console.warn('⚠️ Could not measure bundle size:', error.message);
+      logger.warn('⚠️ Could not measure bundle size:', error.message);
       return { total: 0, static: 0, chunks: 0 };
     }
   }
@@ -209,12 +232,15 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async optimizeTreeShaking() {
-    console.log('🌳 Optimizing tree shaking...');
+    logger.info('🌳 Optimizing tree shaking...');
     
     try {
       // This would involve analyzing and optimizing imports
       // For now, we'll simulate the optimization
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
       
       return {
         type: tree_shaking',
@@ -227,11 +253,14 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async optimizeCodeSplitting() {
-    console.log('✂️ Optimizing code splitting...');
+    logger.info('✂️ Optimizing code splitting...');
     
     try {
       // This would involve analyzing and optimizing code splitting
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
       
       return {
         type: code_splitting',
@@ -244,11 +273,14 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async optimizeCompression() {
-    console.log('🗜️ Optimizing compression...');
+    logger.info('🗜️ Optimizing compression...');
     
     try {
       // This would involve optimizing compression settings
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
       
       return {
         type: compression',
@@ -261,14 +293,14 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async runLighthouseAudit() {
-    console.log('🏗️ Running Lighthouse audit...');
+    logger.info('🏗️ Running Lighthouse audit...');
     
     try {
       // Check if Lighthouse is available
       try {
         execSync('lighthouse --version', { stdio: pipe' });
       } catch {
-        console.warn('⚠️ Lighthouse not available, skipping audit');
+        logger.warn('⚠️ Lighthouse not available, skipping audit');
         return { error: Lighthouse not installed' };
       }
       
@@ -291,13 +323,13 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
     } catch (error) {
-      console.warn('⚠️ Lighthouse audit failed:', error.message);
+      logger.warn('⚠️ Lighthouse audit failed:', error.message);
       return { error: error.message };
     }
   }
 
   async optimizeWebpack() {
-    console.log('⚙️ Optimizing Webpack configuration...');
+    logger.info('⚙️ Optimizing Webpack configuration...');
     
     try {
       const optimizations = [];
@@ -317,7 +349,7 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Webpack optimization failed:', error);
+      logger.error('❌ Webpack optimization failed:', error);
       return { error: error.message };
     }
   }
@@ -354,7 +386,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async optimizeImages() {
-    console.log('🖼️ Optimizing images...');
+    logger.info('🖼️ Optimizing images...');
     
     try {
       const publicDir = path.join(process.cwd(), public');
@@ -377,7 +409,7 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Image optimization failed:', error);
+      logger.error('❌ Image optimization failed:', error);
       return { error: error.message };
     }
   }
@@ -435,7 +467,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async optimizeDependencies() {
-    console.log('📦 Optimizing dependencies...');
+    logger.info('📦 Optimizing dependencies...');
     
     try {
       const analysis = await this.analyzeDependencies();
@@ -474,7 +506,7 @@ class PerformanceOptimizer extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Dependency optimization failed:', error);
+      logger.error('❌ Dependency optimization failed:', error);
       return { error: error.message };
     }
   }
@@ -582,7 +614,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async updateBaseline(results) {
-    console.log('📊 Updating performance baseline...');
+    logger.info('📊 Updating performance baseline...');
     
     this.performanceBaseline = {
       timestamp: new Date().toISOString(),
@@ -594,7 +626,7 @@ class PerformanceOptimizer extends AutomationTask {
   }
 
   async applyOptimizations(results) {
-    console.log('🔧 Applying optimizations...');
+    logger.info('🔧 Applying optimizations...');
     
     const applied = [];
     
@@ -604,12 +636,12 @@ class PerformanceOptimizer extends AutomationTask {
           await this.applyToolOptimization(tool, result);
           applied.push(tool);
         } catch (error) {
-          console.error(`❌ Failed to apply ${tool} optimization:`, error);
+          logger.error(`❌ Failed to apply ${tool} optimization:`, error);
         }
       }
     }
     
-    console.log(`✅ Applied ${applied.length} optimizations: ${applied.join(', )}`);
+    logger.info(`✅ Applied ${applied.length} optimizations: ${applied.join(', )}`);
     return applied;
   }
 
@@ -635,30 +667,30 @@ class PerformanceOptimizer extends AutomationTask {
 
   async applyWebpackOptimizations(result) {
     // This would involve updating webpack configuration
-    console.log('⚙️ Applying webpack optimizations...');
+    logger.info('⚙️ Applying webpack optimizations...');
   }
 
   async applyImageOptimizations(result) {
     // This would involve actually optimizing images
-    console.log('🖼️ Applying image optimizations...');
+    logger.info('🖼️ Applying image optimizations...');
   }
 
   async applyDependencyOptimizations(result) {
     // This would involve updating dependencies
-    console.log('📦 Applying dependency optimizations...');
+    logger.info('📦 Applying dependency optimizations...');
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for PerformanceOptimizer...');
+    logger.info('🔧 Attempting self-healing for PerformanceOptimizer...');
     
     if (error.message.includes('build')) {
-      console.log('🔨 Build issue detected, attempting to fix...');
+      logger.info('🔨 Build issue detected, attempting to fix...');
       await this.fixBuildIssues();
       return;
     }
     
     if (error.message.includes('lighthouse')) {
-      console.log('🏗️ Lighthouse issue detected, skipping audit...');
+      logger.info('🏗️ Lighthouse issue detected, skipping audit...');
       return;
     }
   }
@@ -667,14 +699,14 @@ class PerformanceOptimizer extends AutomationTask {
     try {
       // Clear build cache
       execSync('rm -rf .next', { stdio: pipe' });
-      console.log('🧹 Cleared build cache');
+      logger.info('🧹 Cleared build cache');
       
       // Reinstall dependencies
       execSync('npm install', { stdio: pipe' });
-      console.log('📦 Reinstalled dependencies');
+      logger.info('📦 Reinstalled dependencies');
       
     } catch (error) {
-      console.error('❌ Failed to fix build issues:', error);
+      logger.error('❌ Failed to fix build issues:', error);
     }
   }
 

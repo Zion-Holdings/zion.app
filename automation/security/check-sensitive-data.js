@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -96,7 +119,7 @@ class SecurityChecker {
     }
 
     log(message) {
-        console.log(`[Security Check] ${message}`);
+        logger.info(`[Security Check] ${message}`);
     }
 
     shouldExcludeFile(filePath) {
@@ -340,33 +363,33 @@ async function main() {
         const results = await checker.scanForSensitiveData();
         
         // Log summary
-        console.log('\n🔒 Security Scan Summary:');
-        console.log(`Files Scanned: ${results.filesScanned}`);
-        console.log(`Issues Found: ${results.issuesFound}`);
-        console.log(`Critical Issues: ${results.summary.criticalIssues}`);
-        console.log(`High Issues: ${results.summary.highIssues}`);
-        console.log(`Medium Issues: ${results.summary.mediumIssues}`);
-        console.log(`Low Issues: ${results.summary.lowIssues}`);
+        logger.info('\n🔒 Security Scan Summary:');
+        logger.info(`Files Scanned: ${results.filesScanned}`);
+        logger.info(`Issues Found: ${results.issuesFound}`);
+        logger.info(`Critical Issues: ${results.summary.criticalIssues}`);
+        logger.info(`High Issues: ${results.summary.highIssues}`);
+        logger.info(`Medium Issues: ${results.summary.mediumIssues}`);
+        logger.info(`Low Issues: ${results.summary.lowIssues}`);
         
         if (results.vulnerabilities.length > 0) {
-            console.log('\n🚨 Vulnerabilities Found:');
+            logger.info('\n🚨 Vulnerabilities Found:');
             results.vulnerabilities.forEach(vuln => {
-                console.log(`- ${vuln.file}: ${vuln.category} (${vuln.severity})`);
-                console.log(`  Recommendation: ${vuln.recommendation}`);
+                logger.info(`- ${vuln.file}: ${vuln.category} (${vuln.severity})`);
+                logger.info(`  Recommendation: ${vuln.recommendation}`);
             });
             
             // Exit with error if critical or high issues found
             if (results.summary.criticalIssues > 0 || results.summary.highIssues > 0) {
-                console.log('\n❌ Critical or high severity issues found. Please fix before proceeding.');
+                logger.info('\n❌ Critical or high severity issues found. Please fix before proceeding.');
                 process.exit(1);
             }
         } else {
-            console.log('\n✅ No sensitive data issues found.');
+            logger.info('\n✅ No sensitive data issues found.');
         }
         
         process.exit(0);
     } catch (error) {
-        console.error('❌ Security check failed:', error.message);
+        logger.error('❌ Security check failed:', error.message);
         process.exit(1);
     }
 }
@@ -376,3 +399,17 @@ if (require.main === module) {
 }
 
 module.exports = SecurityChecker; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

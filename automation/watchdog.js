@@ -1,3 +1,36 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const { execSync, spawn } = require('child_process')
@@ -24,7 +57,7 @@ function isPortInUse(port) {
 function killPort(port) {
   try {
     execSync(`lsof -ti :${port} | xargs kill -9 || true`);
-    console.log(`[Watchdog] Killed processes on port ${port}`);
+    logger.info(`[Watchdog] Killed processes on port ${port}`);
   } catch (e) {
     // Ignore
   }
@@ -42,7 +75,7 @@ function isProcessRunning(cmd) {
 }
 
 function startProcess(cmd, cwd = process.cwd(), onExit) {
-  console.log(`[Watchdog] Starting: ${cmd}`)
+  logger.info(`[Watchdog] Starting: ${cmd}`)
 const proc = spawn(cmd, {
     shell: true,
     cwd,
@@ -62,14 +95,17 @@ function startCursorChat() {
     CURSOR_CHAT_CMD,
     path.join(__dirname, ..'),
     () => {
-      console.log(
+      logger.info(
         [Watchdog] Cursor chat process exited. Starting new session...',
       );
       cursorChatActive = false;
-      setTimeout(startCursorChat, 1000); // Start new chat after 1s
+      
+const timeoutId = setTimeout(startCursorChat,  1000);
+// Store timeoutId for cleanup if needed
+; // Start new chat after 1s
     },
   );
-  console.log('[Watchdog] Cursor chat session started.');
+  logger.info('[Watchdog] Cursor chat session started.');
 }
 
 function killAllCursorChats() {
@@ -77,7 +113,7 @@ function killAllCursorChats() {
     execSync(
       `ps aux | grep cursor-multi-computer-communication.cjs chat' | grep -v grep | awk {print $2} | xargs kill -9 || true`,
     );
-    console.log('[Watchdog] Killed all completed Cursor chat processes.');
+    logger.info('[Watchdog] Killed all completed Cursor chat processes.');
   } catch (e) {
     // Ignore
   }
@@ -110,7 +146,29 @@ function watchdogLoop() {
   }, CHECK_INTERVAL);
 }
 
-console.log(
+logger.info(
   [Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...',
 );
 watchdogLoop();
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

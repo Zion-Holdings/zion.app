@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -55,7 +78,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async start() {
-    console.log('🎯 Starting Total Control Improvement System...');
+    logger.info('🎯 Starting Total Control Improvement System...');
     this.isRunning = true;
     this.stats.startTime = new Date();
     
@@ -73,7 +96,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async setup() {
-    console.log('⚙️ Setting up total control environment...');
+    logger.info('⚙️ Setting up total control environment...');
     
     // Create necessary directories
     const dirs = ['backups', logs', reports', improvements'];
@@ -88,7 +111,7 @@ class TotalControlImprovementSystem extends EventEmitter {
     try {
       execSync('git status', { stdio: pipe' });
     } catch (error) {
-      console.log('📦 Initializing git repository...');
+      logger.info('📦 Initializing git repository...');
       execSync('git init');
       execSync('git add .');
       execSync('git commit -m "Initial commit before total control improvement system"');
@@ -98,7 +121,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   async runInfiniteLoop() {
     while (this.isRunning) {
       try {
-        console.log(`\n🔄 Total Control Cycle ${++this.cycleCount} - ${new Date().toISOString()}`);
+        logger.info(`\n🔄 Total Control Cycle ${++this.cycleCount} - ${new Date().toISOString()}`);
         
         // Comprehensive analysis
         const analysis = await this.comprehensiveAnalysis();
@@ -121,7 +144,7 @@ class TotalControlImprovementSystem extends EventEmitter {
         await this.sleep(this.config.cycleInterval);
         
       } catch (error) {
-        console.error(`❌ Error in cycle ${this.cycleCount}:`, error.message);
+        logger.error(`❌ Error in cycle ${this.cycleCount}:`, error.message);
         this.errors.push({
           cycle: this.cycleCount,
           error: error.message,
@@ -136,7 +159,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async comprehensiveAnalysis() {
-    console.log('🔍 Running comprehensive analysis...');
+    logger.info('🔍 Running comprehensive analysis...');
     
     const analysis = {
       timestamp: new Date().toISOString(),
@@ -453,7 +476,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async generateImprovements(analysis) {
-    console.log('💡 Generating improvement suggestions...');
+    logger.info('💡 Generating improvement suggestions...');
     
     const improvements = [];
     
@@ -546,11 +569,11 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async applyImprovements(improvements) {
-    console.log(`🔧 Applying ${improvements.length} improvements...`);
+    logger.info(`🔧 Applying ${improvements.length} improvements...`);
     
     for (const improvement of improvements) {
       try {
-        console.log(`  📝 Applying: ${improvement.description}`);
+        logger.info(`  📝 Applying: ${improvement.description}`);
         
         switch (improvement.action) {
           case fix-security':
@@ -597,7 +620,7 @@ class TotalControlImprovementSystem extends EventEmitter {
         }
         
       } catch (error) {
-        console.error(`  ❌ Failed to apply improvement: ${error.message}`);
+        logger.error(`  ❌ Failed to apply improvement: ${error.message}`);
         this.errors.push({
           improvement,
           error: error.message,
@@ -608,7 +631,7 @@ class TotalControlImprovementSystem extends EventEmitter {
   }
 
   async fixSecurityIssues() {
-    console.log('    🔒 Fixing security issues...');
+    logger.info('    🔒 Fixing security issues...');
     
     try {
       execSync('npm audit fix', { stdio: pipe' });
@@ -628,16 +651,16 @@ class TotalControlImprovementSystem extends EventEmitter {
           );
           fs.writeFileSync(file, content);
         } catch (error) {
-          console.error(`    ❌ Failed to fix security issue in ${file}: ${error.message}`);
+          logger.error(`    ❌ Failed to fix security issue in ${file}: ${error.message}`);
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to fix security issues: ${error.message}`);
+      logger.error(`    ❌ Failed to fix security issues: ${error.message}`);
     }
   }
 
   async fixBuildErrors() {
-    console.log('    🔧 Fixing build errors...');
+    logger.info('    🔧 Fixing build errors...');
     
     try {
       // Run syntax fixer
@@ -646,12 +669,12 @@ class TotalControlImprovementSystem extends EventEmitter {
       // Try to build again
       execSync('npm run build', { stdio: pipe' });
     } catch (error) {
-      console.error(`    ❌ Failed to fix build errors: ${error.message}`);
+      logger.error(`    ❌ Failed to fix build errors: ${error.message}`);
     }
   }
 
   async optimizeBuild() {
-    console.log('    ⚡ Optimizing build performance...');
+    logger.info('    ⚡ Optimizing build performance...');
     
     try {
       const webpackConfig = path.join(this.projectRoot, webpack.config.js');
@@ -678,12 +701,12 @@ module.exports.optimization = {
         fs.writeFileSync(webpackConfig, content);
       }
     } catch (error) {
-      console.error(`    ❌ Failed to optimize build: ${error.message}`);
+      logger.error(`    ❌ Failed to optimize build: ${error.message}`);
     }
   }
 
   async fixAccessibilityIssues() {
-    console.log('    ♿ Fixing accessibility issues...');
+    logger.info('    ♿ Fixing accessibility issues...');
     
     try {
       const files = await this.findFilesWithPatterns([
@@ -708,16 +731,16 @@ module.exports.optimization = {
           
           fs.writeFileSync(file, content);
         } catch (error) {
-          console.error(`    ❌ Failed to fix accessibility in ${file}: ${error.message}`);
+          logger.error(`    ❌ Failed to fix accessibility in ${file}: ${error.message}`);
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to fix accessibility issues: ${error.message}`);
+      logger.error(`    ❌ Failed to fix accessibility issues: ${error.message}`);
     }
   }
 
   async fixTodos() {
-    console.log('    🔧 Fixing TODO/FIXME comments...');
+    logger.info('    🔧 Fixing TODO/FIXME comments...');
     
     try {
       const files = await this.findFilesWithPatterns([/TODO|FIXME|HACK|BUG/]);
@@ -736,16 +759,16 @@ module.exports.optimization = {
           
           fs.writeFileSync(file, content);
         } catch (error) {
-          console.error(`    ❌ Failed to fix TODOs in ${file}: ${error.message}`);
+          logger.error(`    ❌ Failed to fix TODOs in ${file}: ${error.message}`);
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to fix TODOs: ${error.message}`);
+      logger.error(`    ❌ Failed to fix TODOs: ${error.message}`);
     }
   }
 
   async fixTests() {
-    console.log('    🧪 Fixing failing tests...');
+    logger.info('    🧪 Fixing failing tests...');
     
     try {
       const testResult = execSync('npm test 2>&1', { stdio: pipe' }).toString();
@@ -760,12 +783,12 @@ module.exports.optimization = {
       
       execSync('npm test', { stdio: pipe' });
     } catch (error) {
-      console.error(`    ❌ Failed to fix tests: ${error.message}`);
+      logger.error(`    ❌ Failed to fix tests: ${error.message}`);
     }
   }
 
   async updateDependencies() {
-    console.log('    📦 Updating dependencies...');
+    logger.info('    📦 Updating dependencies...');
     
     try {
       execSync('npm update', { stdio: pipe' });
@@ -778,17 +801,17 @@ module.exports.optimization = {
           try {
             execSync(`npm install ${pkg}@latest`, { stdio: pipe' });
           } catch (error) {
-            console.log(`    ⚠️ Could not update ${pkg} to latest: ${error.message}`);
+            logger.info(`    ⚠️ Could not update ${pkg} to latest: ${error.message}`);
           }
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to update dependencies: ${error.message}`);
+      logger.error(`    ❌ Failed to update dependencies: ${error.message}`);
     }
   }
 
   async fixSEOIssues() {
-    console.log('    🔍 Fixing SEO issues...');
+    logger.info('    🔍 Fixing SEO issues...');
     
     try {
       const files = await this.findFilesWithPatterns([
@@ -812,16 +835,16 @@ module.exports.optimization = {
           
           fs.writeFileSync(file, content);
         } catch (error) {
-          console.error(`    ❌ Failed to fix SEO in ${file}: ${error.message}`);
+          logger.error(`    ❌ Failed to fix SEO in ${file}: ${error.message}`);
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to fix SEO issues: ${error.message}`);
+      logger.error(`    ❌ Failed to fix SEO issues: ${error.message}`);
     }
   }
 
   async fixTypeSafetyIssues() {
-    console.log('    🔒 Fixing type safety issues...');
+    logger.info('    🔒 Fixing type safety issues...');
     
     try {
       const files = await this.findFilesWithPatterns([
@@ -845,11 +868,11 @@ module.exports.optimization = {
           
           fs.writeFileSync(file, content);
         } catch (error) {
-          console.error(`    ❌ Failed to fix type safety in ${file}: ${error.message}`);
+          logger.error(`    ❌ Failed to fix type safety in ${file}: ${error.message}`);
         }
       }
     } catch (error) {
-      console.error(`    ❌ Failed to fix type safety issues: ${error.message}`);
+      logger.error(`    ❌ Failed to fix type safety issues: ${error.message}`);
     }
   }
 
@@ -862,9 +885,9 @@ module.exports.optimization = {
         execSync('git push', { stdio: pipe' });
       }
       
-      console.log(`    ✅ Committed: ${message}`);
+      logger.info(`    ✅ Committed: ${message}`);
     } catch (error) {
-      console.error(`    ❌ Failed to commit changes: ${error.message}`);
+      logger.error(`    ❌ Failed to commit changes: ${error.message}`);
     }
   }
 
@@ -950,7 +973,10 @@ module.exports.optimization = {
     
     <script>
         // Auto-refresh every 5 seconds
-        setTimeout(() => location.reload(), 5000);
+        
+const timeoutId = setTimeout(() => location.reload(),  5000);
+// Store timeoutId for cleanup if needed
+;
     </script>
 </body>
 </html>`;
@@ -959,19 +985,19 @@ module.exports.optimization = {
     });
     
     server.listen(this.dashboardPort, () => {
-      console.log(`📊 Total Control Dashboard running on http://localhost:${this.dashboardPort}`);
+      logger.info(`📊 Total Control Dashboard running on http://localhost:${this.dashboardPort}`);
     });
   }
 
   startMonitoring() {
     setInterval(() => {
       const usage = process.memoryUsage();
-      console.log(`📊 Memory usage: ${Math.round(usage.heapUsed / 1024 / 1024)}MB`);
+      logger.info(`📊 Memory usage: ${Math.round(usage.heapUsed / 1024 / 1024)}MB`);
     }, 60000);
   }
 
   async stop() {
-    console.log('🛑 Stopping Total Control Improvement System...');
+    logger.info('🛑 Stopping Total Control Improvement System...');
     this.isRunning = false;
     
     await this.generateFinalReport();
@@ -997,8 +1023,8 @@ module.exports.optimization = {
     const reportPath = path.join(this.projectRoot, total-control-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Total Control report saved to: ${reportPath}`);
-    console.log(`📈 Summary: ${report.summary.totalCycles} cycles, ${report.summary.totalImprovements} improvements, ${report.summary.totalErrors} errors`);
+    logger.info(`📊 Total Control report saved to: ${reportPath}`);
+    logger.info(`📈 Summary: ${report.summary.totalCycles} cycles, ${report.summary.totalImprovements} improvements, ${report.summary.totalErrors} errors`);
   }
 
   generateRecommendations() {
@@ -1020,7 +1046,10 @@ module.exports.optimization = {
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 
   getStatus() {
@@ -1039,20 +1068,20 @@ if (require.main === module) {
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, stopping gracefully...');
+    logger.info('\n🛑 Received SIGINT, stopping gracefully...');
     await system.stop();
     process.exit(0);
   });
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, stopping gracefully...');
+    logger.info('\n🛑 Received SIGTERM, stopping gracefully...');
     await system.stop();
     process.exit(0);
   });
   
   // Start the system
   system.start().catch(error => {
-    console.error('❌ Failed to start total control system:', error);
+    logger.error('❌ Failed to start total control system:', error);
     process.exit(1);
   });
 }

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../continuous-improvement/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -20,7 +43,7 @@ class AIEnhancer extends AutomationTask {
   }
 
   async run() {
-    console.log('🤖 Starting AI enhancement process...');
+    logger.info('🤖 Starting AI enhancement process...');
     
     try {
       const results = {
@@ -67,7 +90,7 @@ class AIEnhancer extends AutomationTask {
       return results;
       
     } catch (error) {
-      console.error('❌ AI enhancement failed:', error);
+      logger.error('❌ AI enhancement failed:', error);
       this.lastStatus = failed';
       this.lastError = error.message;
       this.lastRun = new Date();
@@ -97,7 +120,7 @@ class AIEnhancer extends AutomationTask {
   }
 
   async enhanceCode() {
-    console.log('💻 Enhancing code with AI...');
+    logger.info('💻 Enhancing code with AI...');
     
     try {
       const codeFiles = await this.findCodeFiles();
@@ -117,7 +140,7 @@ class AIEnhancer extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Code enhancement failed:', error);
+      logger.error('❌ Code enhancement failed:', error);
       return { error: error.message };
     }
   }
@@ -130,14 +153,14 @@ class AIEnhancer extends AutomationTask {
       const srcDir = path.join(process.cwd(), src');
       await this.scanDirectory(srcDir, extensions, codeFiles);
     } catch (error) {
-      console.warn('⚠️ Could not scan src directory:', error.message);
+      logger.warn('⚠️ Could not scan src directory:', error.message);
     }
     
     try {
       const pagesDir = path.join(process.cwd(), pages');
       await this.scanDirectory(pagesDir, extensions, codeFiles);
     } catch (error) {
-      console.warn('⚠️ Could not scan pages directory:', error.message);
+      logger.warn('⚠️ Could not scan pages directory:', error.message);
     }
     
     return codeFiles;
@@ -186,7 +209,7 @@ class AIEnhancer extends AutomationTask {
       return null;
       
     } catch (error) {
-      console.warn(`⚠️ Could not enhance ${file.path}:`, error.message);
+      logger.warn(`⚠️ Could not enhance ${file.path}:`, error.message);
       return null;
     }
   }
@@ -201,7 +224,7 @@ class AIEnhancer extends AutomationTask {
           const result = await this.callAIProvider(provider, prompt);
           return this.parseAIResponse(result);
         } catch (error) {
-          console.warn(`⚠️ ${provider} AI provider failed:`, error.message);
+          logger.warn(`⚠️ ${provider} AI provider failed:`, error.message);
           continue;
         }
       }
@@ -256,7 +279,7 @@ Format the response as JSON with the following structure:
   async callOpenAI(prompt) {
     // This would use the OpenAI API
     // For now, we'll simulate the response
-    console.log('🤖 Using OpenAI for code analysis...');
+    logger.info('🤖 Using OpenAI for code analysis...');
     
     return {
       suggestions: [
@@ -278,7 +301,7 @@ Format the response as JSON with the following structure:
 
   async callClaude(prompt) {
     // This would use the Claude API
-    console.log('🤖 Using Claude for code analysis...');
+    logger.info('🤖 Using Claude for code analysis...');
     
     return {
       suggestions: [
@@ -300,7 +323,7 @@ Format the response as JSON with the following structure:
 
   async callLocalAI(prompt) {
     // This would use a local AI model
-    console.log('🤖 Using local AI for code analysis...');
+    logger.info('🤖 Using local AI for code analysis...');
     
     return {
       suggestions: [
@@ -327,7 +350,7 @@ Format the response as JSON with the following structure:
       }
       return response;
     } catch (error) {
-      console.warn('⚠️ Failed to parse AI response:', error);
+      logger.warn('⚠️ Failed to parse AI response:', error);
       return this.localCodeAnalysis('', );
     }
   }
@@ -367,7 +390,7 @@ Format the response as JSON with the following structure:
   }
 
   async enhanceDocumentation() {
-    console.log('📚 Enhancing documentation with AI...');
+    logger.info('📚 Enhancing documentation with AI...');
     
     try {
       const docFiles = await this.findDocumentationFiles();
@@ -387,7 +410,7 @@ Format the response as JSON with the following structure:
       };
       
     } catch (error) {
-      console.error('❌ Documentation enhancement failed:', error);
+      logger.error('❌ Documentation enhancement failed:', error);
       return { error: error.message };
     }
   }
@@ -400,7 +423,7 @@ Format the response as JSON with the following structure:
       const docsDir = path.join(process.cwd(), docs');
       await this.scanDirectory(docsDir, extensions, docFiles);
     } catch (error) {
-      console.warn('⚠️ Could not scan docs directory:', error.message);
+      logger.warn('⚠️ Could not scan docs directory:', error.message);
     }
     
     try {
@@ -437,7 +460,7 @@ Format the response as JSON with the following structure:
       return null;
       
     } catch (error) {
-      console.warn(`⚠️ Could not enhance documentation ${file.path}:`, error.message);
+      logger.warn(`⚠️ Could not enhance documentation ${file.path}:`, error.message);
       return null;
     }
   }
@@ -478,7 +501,7 @@ Format the response as JSON with the following structure:
           const result = await this.callAIProvider(provider, prompt);
           return this.parseAIResponse(result);
         } catch (error) {
-          console.warn(`⚠️ ${provider} AI provider failed for documentation:`, error.message);
+          logger.warn(`⚠️ ${provider} AI provider failed for documentation:`, error.message);
           continue;
         }
       }
@@ -488,7 +511,7 @@ Format the response as JSON with the following structure:
   }
 
   async enhanceTests() {
-    console.log('🧪 Enhancing tests with AI...');
+    logger.info('🧪 Enhancing tests with AI...');
     
     try {
       const testFiles = await this.findTestFiles();
@@ -508,7 +531,7 @@ Format the response as JSON with the following structure:
       };
       
     } catch (error) {
-      console.error('❌ Test enhancement failed:', error);
+      logger.error('❌ Test enhancement failed:', error);
       return { error: error.message };
     }
   }
@@ -522,14 +545,14 @@ Format the response as JSON with the following structure:
       const testDir = path.join(process.cwd(), __tests__');
       await this.scanDirectory(testDir, extensions, testFiles);
     } catch (error) {
-      console.warn('⚠️ Could not scan __tests__ directory:', error.message);
+      logger.warn('⚠️ Could not scan __tests__ directory:', error.message);
     }
     
     try {
       const srcDir = path.join(process.cwd(), src');
       await this.scanDirectory(srcDir, extensions, testFiles, patterns);
     } catch (error) {
-      console.warn('⚠️ Could not scan src for test files:', error.message);
+      logger.warn('⚠️ Could not scan src for test files:', error.message);
     }
     
     return testFiles;
@@ -583,7 +606,7 @@ Format the response as JSON with the following structure:
       return null;
       
     } catch (error) {
-      console.warn(`⚠️ Could not enhance test ${file.path}:`, error.message);
+      logger.warn(`⚠️ Could not enhance test ${file.path}:`, error.message);
       return null;
     }
   }
@@ -624,7 +647,7 @@ Format the response as JSON with the following structure:
           const result = await this.callAIProvider(provider, prompt);
           return this.parseAIResponse(result);
         } catch (error) {
-          console.warn(`⚠️ ${provider} AI provider failed for tests:`, error.message);
+          logger.warn(`⚠️ ${provider} AI provider failed for tests:`, error.message);
           continue;
         }
       }
@@ -634,7 +657,7 @@ Format the response as JSON with the following structure:
   }
 
   async enhancePerformance() {
-    console.log('⚡ Enhancing performance with AI...');
+    logger.info('⚡ Enhancing performance with AI...');
     
     try {
       // Analyze performance bottlenecks
@@ -647,7 +670,7 @@ Format the response as JSON with the following structure:
       };
       
     } catch (error) {
-      console.error('❌ Performance enhancement failed:', error);
+      logger.error('❌ Performance enhancement failed:', error);
       return { error: error.message };
     }
   }
@@ -689,7 +712,7 @@ Format the response as JSON with the following structure:
           const result = await this.callAIProvider(provider, prompt);
           return this.parseAIResponse(result);
         } catch (error) {
-          console.warn(`⚠️ ${provider} AI provider failed for performance:`, error.message);
+          logger.warn(`⚠️ ${provider} AI provider failed for performance:`, error.message);
           continue;
         }
       }
@@ -795,7 +818,7 @@ Format the response as JSON with the following structure:
   }
 
   async applyEnhancements(results) {
-    console.log('🔧 Applying AI enhancements...');
+    logger.info('🔧 Applying AI enhancements...');
     
     const applied = [];
     
@@ -804,34 +827,37 @@ Format the response as JSON with the following structure:
         await this.applySuggestion(suggestion);
         applied.push(suggestion);
       } catch (error) {
-        console.error(`❌ Failed to apply suggestion:`, error);
+        logger.error(`❌ Failed to apply suggestion:`, error);
       }
     }
     
-    console.log(`✅ Applied ${applied.length} enhancements`);
+    logger.info(`✅ Applied ${applied.length} enhancements`);
     return applied;
   }
 
   async applySuggestion(suggestion) {
     // This would apply the actual suggestion
-    console.log(`🔧 Applying ${suggestion.type} enhancement: ${suggestion.description}`);
+    logger.info(`🔧 Applying ${suggestion.type} enhancement: ${suggestion.description}`);
     
     // For now, we'll just log the suggestion
     // In a real implementation, this would modify files
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for AIEnhancer...');
+    logger.info('🔧 Attempting self-healing for AIEnhancer...');
     
     if (error.message.includes('API')) {
-      console.log('🔑 API issue detected, checking configuration...');
+      logger.info('🔑 API issue detected, checking configuration...');
       await this.checkAIConfiguration();
       return;
     }
     
     if (error.message.includes('rate limit')) {
-      console.log('⏳ Rate limit detected, waiting before retry...');
-      await new Promise(resolve => setTimeout(resolve, 60000)); // Wait 1 minute
+      logger.info('⏳ Rate limit detected, waiting before retry...');
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  60000);
+// Store timeoutId for cleanup if needed
+); // Wait 1 minute
       return;
     }
   }
@@ -839,7 +865,7 @@ Format the response as JSON with the following structure:
   async checkAIConfiguration() {
     for (const [provider, config] of Object.entries(this.aiConfig)) {
       if (config.enabled && !config.apiKey) {
-        console.warn(`⚠️ ${provider} is enabled but no API key configured`);
+        logger.warn(`⚠️ ${provider} is enabled but no API key configured`);
       }
     }
   }
