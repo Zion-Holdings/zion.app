@@ -299,3 +299,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 // Export for use in other parts of the application``````
 export { io, activeConnections };```````
 ````````
+}
