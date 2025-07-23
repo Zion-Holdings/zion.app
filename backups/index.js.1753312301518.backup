@@ -1,15 +1,4 @@
-
-class  {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting ...');
-    
-    try {
-      const fs = require('fs')
+const fs = require('fs')
 const _path = require('path')
 const glob = require('glob')
 const MarkdownIt = require('markdown-it')
@@ -181,7 +170,7 @@ async function checkLink(link, projectRoot) {
 async function main(projectRoot = .') {'  // console.warn(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`))
 const absoluteProjectRoot = path.resolve(projectRoot)
 const filePatterns = [
-    path.join(absoluteProjectRoot, src/config/variables/default.json'),    path.join(absoluteProjectRoot, pages*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/pages*.md')  ];
+    path.join(absoluteProjectRoot, src/config/variables/default.json'),    path.join(absoluteProjectRoot, pages/**/*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/components/**/*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/pages/**/*.{jsx,tsx}),    path.join(absoluteProjectRoot, content/**/*.md')  ];
 
   let _files = [];
   filePatterns.forEach(pattern => {
@@ -266,39 +255,3 @@ main('.').catch(error => {'  console.error(chalk.red.bold(`\nAn unexpected error
   console.error(error.stack);
   process.exitCode = 1;
 });
-
-
-// Graceful shutdown handling
-process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-    } catch (error) {
-      console.error('Error in :', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping ...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new ();
-  script.start().catch(error => {
-    console.error('Failed to start :', error);
-    process.exit(1);
-  });
-}
-
-module.exports = ;

@@ -1,15 +1,4 @@
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting Script...');
-    
-    try {
-      #!/bin/bash
+#!/bin/bash
 
 # Installation script for Persistent AI Communication System
 # This script sets up automatic startup and monitoring
@@ -104,26 +93,4 @@ log ""
 log "🌐 Local server will be available at: http://localhost:3002"
 log "📝 Logs will be written to: $PROJECT_ROOT/logs/ai-communication.log"
 log ""
-log "🔄 The system will now maintain continuous communication with the AI assistant"
-    } catch (error) {
-      console.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    console.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;
+log "🔄 The system will now maintain continuous communication with the AI assistant" 

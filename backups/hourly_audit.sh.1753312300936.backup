@@ -1,15 +1,4 @@
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting Script...');
-    
-    try {
-      #!/bin/bash
+#!/bin/bash
 # Hourly audit script with npm audit and optional fix for critical vulnerabilities.
 
 LOG_DIR="logs/security"
@@ -251,25 +240,3 @@ fi
 
 log_message "Hourly audit finished."
 exit 0 # Script itself finished, regardless of audit outcome or webhook success. Errors are logged.
-    } catch (error) {
-      console.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    console.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;

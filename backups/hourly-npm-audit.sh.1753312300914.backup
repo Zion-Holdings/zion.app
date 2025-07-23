@@ -1,15 +1,4 @@
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting Script...');
-    
-    try {
-      #!/bin/bash
+#!/bin/bash
 # Runs npm outdated, npm update, npm audit and fixes critical vulnerabilities.
 # Logs actions, commits changes to a new branch, and optionally sends a webhook notification.
 
@@ -192,25 +181,3 @@ echo "[$(date)] Hourly dependency check and audit finished." >> "$LOG_FILE"
 echo "=============================================" >> "$LOG_FILE"
 
 exit 0
-    } catch (error) {
-      console.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    console.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;

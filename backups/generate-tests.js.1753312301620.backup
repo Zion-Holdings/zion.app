@@ -1,15 +1,4 @@
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting Script...');
-    
-    try {
-      #!/usr/bin/env node
+#!/usr/bin/env node
 // Generate skeleton tests for files lacking coverage.
 // This script runs Jest to produce a coverage summary and
 // creates placeholder test files under __tests__/auto.
@@ -34,39 +23,3 @@ const content =
     `import { describe, it, expect } from vitest';\n\n` +'    `// Placeholder tests for ${relative}\n` +
     `describe('${relative}, () => {\n  it('needs tests', () => {\n    expect(true).toBe(true);\n  });\n});\n`;  fs.writeFileSync(testPath, content);
   // console.warn('Created placeholder test:', testPath);}
-
-
-// Graceful shutdown handling
-process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-    } catch (error) {
-      console.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    console.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;
