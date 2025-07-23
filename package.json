@@ -144,6 +144,7 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "styled-jsx": "^5.1.7",
+    "winston": "^3.17.0",
     "ws": "^8.18.3",
     "zod": "^4.0.5"
   },
