@@ -8,14 +8,14 @@ const crypto = require('crypto');
 class EnhancedAutomationSystem {
     constructor() {
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, 'logs', 'enhanced-automation.log');
+        this.logFile = path.join(__dirname, logs', enhanced-automation.log');
         this.ensureLogDirectory();
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, 'config.json');
+        const configPath = path.join(__dirname, config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            return JSON.parse(fs.readFileSync(configPath, utf8'));
         }
         return {
             enableLogging: true,
@@ -31,7 +31,7 @@ class EnhancedAutomationSystem {
         }
     }
 
-    log(message, level = 'info') {
+    log(message, level = info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
@@ -43,9 +43,9 @@ class EnhancedAutomationSystem {
             console.error('Failed to write to log file:', error.message);
         }
         
-        if (level === 'error') {
+        if (level === error') {
             console.error(message);
-        } else if (level === 'warn') {
+        } else if (level === warn') {
             console.warn(message);
         } else {
             console.log(message);

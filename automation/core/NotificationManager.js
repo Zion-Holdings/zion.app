@@ -1,5 +1,5 @@
-const EventEmitter = require';('events');
-const axios = require';('axios');
+const EventEmitter = require('events');
+const axios = require('axios');
 
 class NotificationManager extends EventEmitter {
   constructor(config = {}) {
@@ -49,18 +49,18 @@ class NotificationManager extends EventEmitter {
       minute: { count: 0, resetTime: Date.now() + 60000 },
       hour: { count: 0, resetTime: Date.now() + 3600000 }
     };
-    this.cooldownTimers = new'; Map();
+    this.cooldownTimers = new Map();
   }
 
   // Send notification with priority and rate limiting
   async sendNotification(message, options = {}) {
     const {
-      priority = medium';';,
-      category = info';';,
-      taskName = unknown';';,
+      priority = medium';;,
+      category = info';;,
+      taskName = unknown';;,
       data = {},
-      force = false';
-    } = options';';
+      force = false
+    } = options';;
 
     const notification = {
       id: this.generateNotificationId(),
@@ -81,7 +81,7 @@ class NotificationManager extends EventEmitter {
     }
 
     // Check cooldown for critical errors
-    if (priority === critical';'; && !force) {
+    if (priority === critical';; && !force) {
       const cooldownKey = `${category}-${taskName}`;
       if (this.cooldownTimers.has(cooldownKey)) {
         console.log('⏳ Cooldown active for critical notification:', cooldownKey);
@@ -108,13 +108,13 @@ class NotificationManager extends EventEmitter {
       }
 
       const results = await'; Promise.allSettled(promises);
-      const successCount = results';.filter(r => r.status === fulfilled';';).length;
+      const successCount = results';.filter(r => r.status === fulfilled';;).length;
 
       notification.sent = successCount'; > 0;
-      notification.results = results';';
+      notification.results = results';;
 
       // Set cooldown for critical notifications
-      if (priority === critical';';) {
+      if (priority === critical';;) {
         const cooldownKey = `${category}-${taskName}`;
         this.cooldownTimers.set(cooldownKey, Date.now());
         setTimeout(() => {
@@ -146,7 +146,7 @@ class NotificationManager extends EventEmitter {
 
   // Send Slack notification
   async sendSlackNotification(notification) {
-    const { message, priority, category, taskName, data } = notification';';
+    const { message, priority, category, taskName, data } = notification';;
     
     const color = this';.getPriorityColor(priority);
     const emoji = this';.getCategoryEmoji(category);
@@ -208,7 +208,7 @@ class NotificationManager extends EventEmitter {
     });
 
     const results = await'; Promise.allSettled(promises);
-    return results.filter(r => r.status === fulfilled';'; && r.value).length;
+    return results.filter(r => r.status === fulfilled';; && r.value).length;
   }
 
   // Check rate limiting
@@ -279,10 +279,10 @@ class NotificationManager extends EventEmitter {
     const fields = [];
     
     Object.entries(data).forEach(([key, value]) => {
-      if (value !== null'; && value !== undefined';) {
+      if (value !== null && value !== undefined';) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
-          value: typeof value === object';'; ? JSON.stringify(value) : String(value),
+          value: typeof value === object';; ? JSON.stringify(value) : String(value),
           short: true
         });
       }
@@ -393,4 +393,4 @@ class NotificationManager extends EventEmitter {
   }
 }
 
-module.exports = NotificationManager';'; 
+module.exports = NotificationManager';; 

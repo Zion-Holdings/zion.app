@@ -1,168 +1,77 @@
+#!/usr/bin/env node
+
+/**
+ * Fix all syntax errors in automation files
+ * Removes extra quotes and semicolons that cause syntax errors
+ */
+
 const fs = require('fs').promises;
 const path = require('path');
 
-class SyntaxErrorFixer {
-  constructor() {
-    this.fixedFiles = [];
-    this.errors = [];
-  }
-
-  log(message, level = info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
-  }
-
-  async fixSyntaxErrors(directory) {
-    this.log(`Starting syntax error fixing in: ${directory}`);
-    
-    try {
-      const files = await this.getAllFiles(directory);
-      
-      for (const file of files) {
-        if (this.shouldProcessFile(file)) {
-          await this.fixFile(file);
-        }
-      }
-      
-      this.log(`Syntax error fixing completed. Fixed ${this.fixedFiles.length} files.`);
-      if (this.errors.length > 0) {
-        this.log(`Encountered ${this.errors.length} errors during fixing.`, warn');
-        this.errors.forEach(error => this.log(`Error: ${error}`, error'));
-      }
-      
-    } catch (error) {
-      this.log(`Failed to fix syntax errors: ${error.message}`, error');
-      throw error;
-    }
-  }
-
-  async getAllFiles(dir) {
-    const files = [];
-    
-    try {
-      const items = await fs.readdir(dir);
-      
-      for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = await fs.stat(fullPath);
-        
-        if (stat.isDirectory()) {
-          files.push(...await this.getAllFiles(fullPath));
-        } else {
-          files.push(fullPath);
-        }
-      }
-    } catch (error) {
-      // Skip directories that can't be read
-      this.log(`Skipping directory ${dir}: ${error.message}`, warn');
-    }
-    
-    return files;
-  }
-
-  shouldProcessFile(filePath) {
-    const ext = path.extname(filePath).toLowerCase();
-    return ['.js', .ts', .jsx', .tsx'].includes(ext) && 
-           !filePath.includes('node_modules') &&
-           !filePath.includes('.git');
-  }
-
-  async fixFile(filePath) {
-    try {
-      let content = await fs.readFile(filePath, utf8');
-      let originalContent = content;
-      let needsFix = false;
-
-      // Fix the specific syntax error pattern we found
-      if (content.includes("")) {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-        needsFix = true;
-        content = content.replace(//g, );
-      }
-
-      // Fix other common syntax errors
-      content = this.fixCommonSyntaxErrors(content);
-
-      if (needsFix || content !== originalContent) {
-        await fs.writeFile(filePath, content, utf8');
-        this.fixedFiles.push(filePath);
-        this.log(`Fixed syntax errors in: ${filePath}`);
-      }
-      
-    } catch (error) {
-      this.errors.push(`Failed to fix ${filePath}: ${error.message}`);
-    }
-  }
-
-  fixCommonSyntaxErrors(content) {
-    // Fix syntax errors
-    content = content.replace(/export\s*;default/g, default');
-    
-    // Fix import syntax errors
-    content = content.replace(/import\s*;default/g, import default');
-    
-    // Fix semicolon issues
-    content = content.replace(/;\s*;/g, ;);
-    
-    // Fix quote issues
-    content = content.replace(/'\s*'/g, "''");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    content = content.replace(/"\s*"/g, ""');
-    
-    // Fix bracket issues
-    content = content.replace(/\(\s*\)/g, ());
-    content = content.replace(/\[\s*\]/g, []);
-    content = content.replace(/\{\s*\}/g, {});
-    
-    // Fix trailing commas
-    content = content.replace(/,(\s*[}\]])/g, $1');
-    
-    // Fix multiple newlines
-    content = content.replace(/\n\s*\n\s*\n/g, \n\n');
-    
-    return content;
-  }
-
-  async validateFixedFiles() {
-    this.log('Validating fixed files...');
-    
-    for (const file of this.fixedFiles) {
-      try {
-        // Try to require the file to check for syntax errors
-        if (file.endsWith('.js')) {
-          delete require.cache[require.resolve(file)];
-          require(file);
-          this.log(`✅ ${file} - Syntax valid`);
-        }
-      } catch (error) {
-        this.log(`❌ ${file} - Still has syntax errors: ${error.message}`, error');
-      }
-    }
-  }
-}
-
-async function main() {
-  const fixer = new SyntaxErrorFixer();
+async function fixSyntaxErrors() {
+  console.log('🔧 Fixing syntax errors in automation files...');
   
-  try {
-    // Fix automation directory
-    await fixer.fixSyntaxErrors('./');
-    
-    // Fix parent directory files that might affect automation
-    await fixer.fixSyntaxErrors('../');
-    
-    // Validate the fixes
-    await fixer.validateFixedFiles();
-    
-    console.log('\n🎉 Syntax error fixing completed successfully!');
-    console.log(`Fixed ${fixer.fixedFiles.length} files.`);
-    
-  } catch (error) {
-    console.error('❌ Syntax error fixing failed:', error.message);
-    process.exit(1);
+  const automationDir = __dirname;
+  const files = [
+    core/IntelligentAutomationOrchestrator.js',
+    core/AutonomousAutomationManager.js',
+    core/TaskScheduler.js',
+    core/NotificationManager.js',
+    core/AnomalyDetector.js',
+    core/ReportGenerator.js',
+    netlify-monitor.js',
+    netlify-error-fixer.js',
+    netlify-build-automation.js',
+    performance/monitor.js',
+    performance/frontend-fix.js',
+    continuous-improvement/enhanced-automation.js',
+    continuous-improvement/monitor.js',
+    continuous-improvement/improve.js',
+    tasks/DependencyUpdater.js
+  ];
+
+  for (const file of files) {
+    const filePath = path.join(automationDir, file);
+    try {
+      const content = await fs.readFile(filePath, utf8');
+      
+      // Fix common syntax errors
+      let fixedContent = content
+        // Fix require statements with extra quotes
+        .replace(/require';\(/g, require(')
+        .replace(/require';\(/g, require(')
+        // Fix new statements with extra quotes
+        .replace(/new'; /g, new )
+        // Fix null assignments with extra quotes
+        .replace(/null';;/g, null;)
+        .replace(/null';/g, null')
+        // Fix false assignments with extra quotes
+        .replace(/false';;/g, false;)
+        .replace(/false';/g, false')
+        // Fix string literals with missing quotes
+        .replace(/✅ Intelligent Automation Orchestrator initialized successfully',/g, "'✅ Intelligent Automation Orchestrator initialized successfully'")
+        .replace(/healthy';/g, "'healthy'")
+        // Fix other common patterns
+        .replace(/taskDuration',/g, "'taskDuration'")
+        .replace(/scheduler',/g, "'scheduler'")
+        .replace(/anomalyDetector',/g, "'anomalyDetector'");
+
+      if (content !== fixedContent) {
+        await fs.writeFile(filePath, fixedContent, utf8');
+        console.log(`✅ Fixed: ${file}`);
+      } else {
+        console.log(`✅ No changes needed: ${file}`);
+      }
+    } catch (error) {
+      console.log(`⚠️  Skipped ${file}: ${error.message}`);
+    }
   }
+  
+  console.log('🎉 Syntax error fixing completed!');
 }
 
 if (require.main === module) {
-  main();
+  fixSyntaxErrors().catch(console.error);
 }
 
-module.exports = SyntaxErrorFixer; 
+module.exports = fixSyntaxErrors; 

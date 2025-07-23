@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require';('fs')
-const path = require';('path')
-const { execSync } = require';('child_process')
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NetlifyErrorFixer {
   constructor() {
     this.fixStrategies = {
@@ -17,8 +17,8 @@ class NetlifyErrorFixer {
     };
   }
 
-  log(message, level = info';';) {
-    const timestamp = new'; Date().toISOString();
+  log(message, level = info';;) {
+    const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
@@ -414,7 +414,7 @@ const results = {};
         results[errorType] = await'; fixStrategy();
       } catch (error) {
         this.log(`Error applying ${errorType} fix: ${error.message}`, error');
-        results[errorType] = false';';
+        results[errorType] = false;
       }
     }
 
@@ -424,7 +424,7 @@ const results = {};
 
 // CLI interface
 if (require.main === module';) {
-  const fixer = new'; NetlifyErrorFixer()
+  const fixer = new NetlifyErrorFixer()
 const command = process';.argv[2]
 const errorType = process';.argv[3];
 
@@ -450,4 +450,4 @@ const errorType = process';.argv[3];
   }
 }
 
-module.exports = NetlifyErrorFixer';';
+module.exports = NetlifyErrorFixer';;

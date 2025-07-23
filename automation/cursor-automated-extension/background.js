@@ -44,27 +44,27 @@ class CursorExtensionBackground {
   async handleMessage(message, sender, sendResponse) {
     try {
       switch (message.type) {
-        case 'ANALYZE_CODE':
+        case ANALYZE_CODE':
           const analysis = await this.analyzeCode(message.data);
           sendResponse({ success: true, analysis });
           break;
           
-        case 'SUGGEST_IMPROVEMENT':
+        case SUGGEST_IMPROVEMENT':
           const suggestion = await this.suggestImprovement(message.data);
           sendResponse({ success: true, suggestion });
           break;
           
-        case 'APPLY_IMPROVEMENT':
+        case APPLY_IMPROVEMENT':
           const result = await this.applyImprovement(message.data);
           sendResponse({ success: true, result });
           break;
           
-        case 'GET_STATUS':
+        case GET_STATUS':
           sendResponse({ success: true, status: this.getStatus() });
           break;
           
         default:
-          sendResponse({ success: false, error: 'Unknown message type' });
+          sendResponse({ success: false, error: Unknown message type' });
       }
     } catch (error) {
       sendResponse({ success: false, error: error.message });
@@ -94,30 +94,30 @@ class CursorExtensionBackground {
     // Check for console.log in production code
     if (content.includes('console.log(')) {
       issues.push({
-        type: 'debug_code',
-        message: 'Console.log statement found',
-        severity: 'low',
-        line: this.findLineNumber(content, 'console.log(')
+        type: debug_code',
+        message: Console.log statement found',
+        severity: low',
+        line: this.findLineNumber(content, console.log(')
       });
     }
 
     // Check for TODO/FIXME comments
     if (content.includes('TODO') || content.includes('FIXME')) {
       issues.push({
-        type: 'todo_items',
-        message: 'TODO/FIXME comment found',
-        severity: 'medium',
-        line: this.findLineNumber(content, 'TODO')
+        type: todo_items',
+        message: TODO/FIXME comment found',
+        severity: medium',
+        line: this.findLineNumber(content, TODO')
       });
     }
 
     // Check for var usage
-    if (content.includes('var ') && !content.includes('var _')) {
+    if (content.includes('var ) && !content.includes('var _')) {
       issues.push({
-        type: 'var_usage',
-        message: 'var keyword used instead of const/let',
-        severity: 'medium',
-        line: this.findLineNumber(content, 'var ')
+        type: var_usage',
+        message: var keyword used instead of const/let',
+        severity: medium',
+        line: this.findLineNumber(content, var )
       });
     }
 
@@ -145,7 +145,7 @@ class CursorExtensionBackground {
     
     let match;
     while ((match = importRegex.exec(content)) !== null) {
-      const importNames = match[1].split(',').map(name => name.trim());
+      const importNames = match[1].split(',).map(name => name.trim());
       const modulePath = match[2];
       
       importNames.forEach(name => {
@@ -155,14 +155,14 @@ class CursorExtensionBackground {
 
     // Check if imports are used (simplified check)
     imports.forEach(importItem => {
-      const usageRegex = new RegExp(`\\b${importItem.name}\\b`, 'g');
+      const usageRegex = new RegExp(`\\b${importItem.name}\\b`, g');
       const matches = content.match(usageRegex);
       
       if (!matches || matches.length <= 1) { // Only the import statement
         issues.push({
-          type: 'unused_import',
+          type: unused_import',
           message: `Unused import: ${importItem.name}`,
-          severity: 'low',
+          severity: low',
           importName: importItem.name,
           modulePath: importItem.modulePath
         });
@@ -177,36 +177,36 @@ class CursorExtensionBackground {
 
     issues.forEach(issue => {
       switch (issue.type) {
-        case 'debug_code':
+        case debug_code':
           suggestions.push({
-            type: 'remove_debug',
-            message: 'Remove console.log statement',
-            code: '// Remove or replace with proper logging',
+            type: remove_debug',
+            message: Remove console.log statement',
+            code: // Remove or replace with proper logging',
             severity: issue.severity
           });
           break;
 
-        case 'todo_items':
+        case todo_items':
           suggestions.push({
-            type: 'address_todo',
-            message: 'Address TODO/FIXME comment',
-            code: '// Implement the TODO item',
+            type: address_todo',
+            message: Address TODO/FIXME comment',
+            code: // Implement the TODO item',
             severity: issue.severity
           });
           break;
 
-        case 'var_usage':
+        case var_usage':
           suggestions.push({
-            type: 'replace_var',
-            message: 'Replace var with const or let',
-            code: 'const variableName = value; // or let if reassignment needed',
+            type: replace_var',
+            message: Replace var with const or let',
+            code: const variableName = value; // or let if reassignment needed',
             severity: issue.severity
           });
           break;
 
-        case 'unused_import':
+        case unused_import':
           suggestions.push({
-            type: 'remove_import',
+            type: remove_import',
             message: `Remove unused import: ${issue.importName}`,
             code: `// Remove: ${issue.importName} from ${issue.modulePath}`,
             severity: issue.severity
@@ -225,7 +225,7 @@ class CursorExtensionBackground {
       type: data.type,
       description: data.description,
       code: data.code,
-      severity: data.severity || 'medium'
+      severity: data.severity || medium
     };
 
     // Store in history
@@ -282,7 +282,7 @@ class CursorExtensionBackground {
         
         // Send analysis results back to content script
         chrome.tabs.sendMessage(item.tabId, {
-          type: 'ANALYSIS_RESULT',
+          type: ANALYSIS_RESULT',
           analysis
         });
       } catch (error) {
@@ -328,6 +328,6 @@ chrome.runtime.onStartup.addListener(() => {
 });
 
 // Export for testing
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== undefined' && module.exports) {
   module.exports = CursorExtensionBackground;
 } 

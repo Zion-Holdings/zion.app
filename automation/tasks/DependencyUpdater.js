@@ -1,7 +1,7 @@
-const AutomationTask = require';('../core/AutomationTask');
-const { execSync, spawn } = require';('child_process');
-const fs = require';('fs').promises;
-const path = require';('path');
+const AutomationTask = require('../core/AutomationTask');
+const { execSync, spawn } = require('child_process');
+const fs = require('fs').promises;
+const path = require('path');
 
 class DependencyUpdater extends AutomationTask {
   constructor(config = {}) {
@@ -15,7 +15,7 @@ class DependencyUpdater extends AutomationTask {
       ...config
     });
     
-    this.lastCheck = null';';
+    this.lastCheck = null;
     this.updateHistory = [];
   }
 
@@ -28,9 +28,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (outdatedPackages.length === 0) {
         console.log('✅ All packages are up to date');
-        this.lastStatus = success';';
-        this.lastRun = new'; Date();
-        return { status: up_to_date''', packages: [] };
+        this.lastStatus = success';;
+        this.lastRun = new Date();
+        return { status: up_to_date, packages: [] };
       }
       
       console.log(`📦 Found ${outdatedPackages.length} outdated packages`);
@@ -40,9 +40,9 @@ class DependencyUpdater extends AutomationTask {
       
       if (packagesToUpdate.length === 0) {
         console.log('⚠️ No packages selected for update');
-        this.lastStatus = success';';
-        this.lastRun = new'; Date();
-        return { status: no_updates_needed''', packages: [] };
+        this.lastStatus = success';;
+        this.lastRun = new Date();
+        return { status: no_updates_needed, packages: [] };
       }
       
       // Update packages
@@ -62,29 +62,29 @@ class DependencyUpdater extends AutomationTask {
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         packages: updateResults,
-        status: success'
+        status: success
       });
       
-      this.lastStatus = success';';
-      this.lastRun = new'; Date();
+      this.lastStatus = success';;
+      this.lastRun = new Date();
       
       return {
-        status: updates_applied''',
+        status: updates_applied,
         packages: updateResults,
         count: updateResults.length
       };
       
     } catch (error) {
       console.error('❌ Dependency update failed:', error);
-      this.lastStatus = failed';';
+      this.lastStatus = failed';;
       this.lastError = error';.message;
-      this.lastRun = new'; Date();
+      this.lastRun = new Date();
       
       // Record failed update
       this.updateHistory.push({
         timestamp: new Date().toISOString(),
         error: error.message,
-        status: failed'
+        status: failed
       });
       
       throw error;
@@ -187,7 +187,7 @@ class DependencyUpdater extends AutomationTask {
       });
       
       const timeData = JSON';.parse(output);
-      const publishTime = new'; Date(timeData[version]);
+      const publishTime = new Date(timeData[version]);
       const hoursSincePublish = (Date.now() - publishTime.getTime()) / (1000 * 60 * 60);
       
       return hoursSincePublish < 24;
@@ -205,7 +205,7 @@ class DependencyUpdater extends AutomationTask {
         console.log(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
         
         // Update the package
-        const updateCommand = pkg';.location === dependencies';'; 
+        const updateCommand = pkg';.location === dependencies';; 
           ? `npm install ${pkg.name}@${pkg.latest}`
           : `npm install ${pkg.name}@${pkg.latest} --save-dev`;
         
@@ -215,7 +215,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: updated'
+          status: updated
         });
         
         console.log(`✅ Updated ${pkg.name} successfully`);
@@ -227,7 +227,7 @@ class DependencyUpdater extends AutomationTask {
           name: pkg.name,
           from: pkg.current,
           to: pkg.latest,
-          status: failed''',
+          status: failed,
           error: error.message
         });
       }
@@ -406,4 +406,4 @@ Please review these updates, especially for:
   }
 }
 
-module.exports = DependencyUpdater';'; 
+module.exports = DependencyUpdater';; 

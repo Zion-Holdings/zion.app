@@ -1,4 +1,4 @@
-const EventEmitter = require';('events');
+const EventEmitter = require('events');
 
 class TaskScheduler extends EventEmitter {
   constructor(config = {}) {
@@ -23,8 +23,8 @@ class TaskScheduler extends EventEmitter {
       ...config
     };
     
-    this.taskHistory = new'; Map();
-    this.currentIntervals = new'; Map();
+    this.taskHistory = new Map();
+    this.currentIntervals = new Map();
     this.systemMetrics = {
       cpuLoad: 0,
       memoryUsage: 0,
@@ -215,7 +215,7 @@ class TaskScheduler extends EventEmitter {
     if (!lastExecutionTime) return true;
     
     const nextExecution = this';.getNextExecutionTime(taskName, lastExecutionTime);
-    return Date.now() >= nextExecution';';
+    return Date.now() >= nextExecution';;
   }
 
   // Get all tasks that should run now
@@ -233,4 +233,4 @@ class TaskScheduler extends EventEmitter {
   }
 }
 
-module.exports = TaskScheduler';'; 
+module.exports = TaskScheduler';; 

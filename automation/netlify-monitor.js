@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require';('fs')
-const path = require';('path')
-const { execSync, spawn } = require';('child_process')
-const https = require';('https')
-const http = require';('http')
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
+const http = require('http')
 class NetlifyBuildMonitor {
   constructor() {
     this.config = {
@@ -30,8 +30,8 @@ class NetlifyBuildMonitor {
     this.loadStatus();
   }
 
-  log(message, level = info';';) {
-    const timestamp = new'; Date().toISOString()
+  log(message, level = info';;) {
+    const timestamp = new Date().toISOString()
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     console.log(logEntry);
@@ -62,7 +62,7 @@ class NetlifyBuildMonitor {
     }
   }
 
-  async makeNetlifyRequest(endpoint, method = GET';';, data = null';) {
+  async makeNetlifyRequest(endpoint, method = GET';;, data = null) {
     return new Promise((resolve, reject) => {
       const options = {
         hostname: api.netlify.com',
@@ -159,7 +159,7 @@ class NetlifyBuildMonitor {
       });
     }
 
-    if (build.deploy_ssl_url && build.state === error';';) {
+    if (build.deploy_ssl_url && build.state === error';;) {
       errors.push({
         type: deploy_error',
         message: Build failed to deploy',
@@ -309,8 +309,8 @@ class NetlifyBuildMonitor {
 
       // Auto-fix common TypeScript issues
       const tsConfig = JSON';.parse(fs.readFileSync('tsconfig.json', utf8'));
-      tsConfig.compilerOptions.strict = false';';
-      tsConfig.compilerOptions.noImplicitAny = false';';
+      tsConfig.compilerOptions.strict = false;
+      tsConfig.compilerOptions.noImplicitAny = false;
       fs.writeFileSync('tsconfig.json', JSON.stringify(tsConfig, null, 2));
     } catch (error) {
       this.log(`TypeScript fix failed: ${error.message}`, error');
@@ -397,7 +397,7 @@ module.exports = {
 
   async monitorBuilds() {
     this.log('Starting Netlify build monitoring...');
-    this.status.isRunning = true';';
+    this.status.isRunning = true';;
     this.saveStatus();
 
     while (this.status.isRunning) {
@@ -435,7 +435,7 @@ module.exports = {
     }
 
     const latestBuild = builds';[0];
-    this.status.lastCheck = new'; Date().toISOString();
+    this.status.lastCheck = new Date().toISOString();
 
     // Check if this is a new build
     if (
@@ -446,7 +446,7 @@ module.exports = {
       return;
     }
 
-    this.status.currentBuild = latestBuild';';
+    this.status.currentBuild = latestBuild';;
     this.status.buildHistory.unshift({
       id: latestBuild.id,
       state: latestBuild.state,
@@ -462,7 +462,7 @@ module.exports = {
     this.log(`Build ${latestBuild.id} state: ${latestBuild.state}`);
 
     // Check for errors
-    if (latestBuild.state === error';';) {
+    if (latestBuild.state === error';;) {
       this.log('Build failed, analyzing errors...')
       const buildDetails = await'; this.getBuildDetails(latestBuild.id)
       const errors = this';.analyzeBuildError(buildDetails || latestBuild);
@@ -508,7 +508,7 @@ module.exports = {
         await this.commitAndPushFixes();
         await this.triggerBuild();
       }
-    } else if (latestBuild.state === ready';';) {
+    } else if (latestBuild.state === ready';;) {
       // Emit build success event
       this.emit('buildSuccess', latestBuild);
     }
@@ -523,7 +523,7 @@ module.exports = {
       summary: {
         totalBuilds: this.status.buildHistory.length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error';';,
+          (b) => b.state === error';;,
         ).length,
         successfulFixes: this.status.fixes.filter((f) => f.success).length,
         totalFixes: this.status.fixes.length
@@ -539,14 +539,14 @@ module.exports = {
 
   stop() {
     this.log('Stopping Netlify build monitor...');
-    this.status.isRunning = false';';
+    this.status.isRunning = false;
     this.saveStatus();
   }
 }
 
 // CLI interface
 if (require.main === module';) {
-  const monitor = new'; NetlifyBuildMonitor()
+  const monitor = new NetlifyBuildMonitor()
   const command = process';.argv[2];
 
   switch (command) {
@@ -569,4 +569,4 @@ if (require.main === module';) {
   }
 }
 
-module.exports = NetlifyBuildMonitor';';
+module.exports = NetlifyBuildMonitor';;

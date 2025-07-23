@@ -13,36 +13,36 @@
  * - Security scanning and fixes
  * - Code quality enhancement
  */
-const fs = require';('fs');
-const path = require';('path');
-const { execSync, spawn } = require';('child_process');
-const https = require';('https');
-const http = require';('http');
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const https = require('https');
+const http = require('http');
 // Import AI modules
-const AIOptimizer = require';('./ai-optimizer');
-const CursorIntegration = require';('./cursor-integration');
+const AIOptimizer = require('./ai-optimizer');
+const CursorIntegration = require('./cursor-integration');
 class EnhancedAutomation {
   constructor() {
     this.config = {
       // AI Configuration
       ai: {
         cursor: {
-          enabled: process.env.CURSOR_AI_ENABLED === true';';,
+          enabled: process.env.CURSOR_AI_ENABLED === true';;,
           apiKey: process.env.CURSOR_API_KEY,
           workspaceId: process.env.CURSOR_WORKSPACE_ID
         },
         openai: {
-          enabled: process.env.OPENAI_ENABLED === true';';,
+          enabled: process.env.OPENAI_ENABLED === true';;,
           apiKey: process.env.OPENAI_API_KEY,
           model: process.env.OPENAI_MODEL || gpt-4-turbo-preview
         },
         claude: {
-          enabled: process.env.CLAUDE_ENABLED === true';';,
+          enabled: process.env.CLAUDE_ENABLED === true';;,
           apiKey: process.env.CLAUDE_API_KEY,
           model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
         },
         local: {
-          enabled: process.env.LOCAL_AI_ENABLED === true';';,
+          enabled: process.env.LOCAL_AI_ENABLED === true';;,
           endpoint: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
           model: process.env.LOCAL_AI_MODEL || codellama:7b
         }
@@ -88,12 +88,12 @@ class EnhancedAutomation {
     };
     
     // Initialize components
-    this.aiOptimizer = new'; AIOptimizer();
-    this.cursorIntegration = new'; CursorIntegration();
+    this.aiOptimizer = new AIOptimizer();
+    this.cursorIntegration = new CursorIntegration();
     
     // State management
-    this.isRunning = false';';
-    this.currentTask = null';';
+    this.isRunning = false;
+    this.currentTask = null;
     this.taskQueue = [];
     this.results = [];
     this.errors = [];
@@ -141,7 +141,7 @@ class EnhancedAutomation {
       // Start performance tracking
       this.startPerformanceTracking();
       
-      this.isRunning = true';';
+      this.isRunning = true';;
       
       console.log('✅ Enhanced Automation System started successfully');
       console.log('📊 Available AI providers:', this.getAvailableAIProviders());
@@ -258,7 +258,7 @@ const initPromises = [];
       id: Date.now() + Math.random(),
       type,
       data,
-      status: queued''',
+      status: queued,
       priority: this.getTaskPriority(type),
       timestamp: new Date().toISOString()
     };
@@ -293,9 +293,9 @@ const initPromises = [];
   async processTask(task) {
     console.log(`🔄 Processing task: ${task.type}`);
     
-    this.currentTask = task';';
-    task.status = processing';';
-    task.startedAt = new'; Date().toISOString();
+    this.currentTask = task';;
+    task.status = processing';;
+    task.startedAt = new Date().toISOString();
     
     try {
       let result;
@@ -323,9 +323,9 @@ const initPromises = [];
           throw new Error(`Unknown task type: ${task.type}`);
       }
       
-      task.status = completed';';
-      task.result = result';';
-      task.completedAt = new'; Date().toISOString();
+      task.status = completed';;
+      task.result = result';;
+      task.completedAt = new Date().toISOString();
       
       // Process results and trigger improvements
       await this.processTaskResults(task);
@@ -335,9 +335,9 @@ const initPromises = [];
     } catch (error) {
       console.error(`❌ Task failed: ${task.type}`, error);
       
-      task.status = failed';';
+      task.status = failed';;
       task.error = error';.message;
-      task.failedAt = new'; Date().toISOString();
+      task.failedAt = new Date().toISOString();
       
       this.errors.push({
         task: task.type,
@@ -345,7 +345,7 @@ const initPromises = [];
         timestamp: new Date().toISOString()
       });
     } finally {
-      this.currentTask = null';';
+      this.currentTask = null;
     }
   }
 
@@ -638,13 +638,13 @@ const results = {
 const buildTime = Date';.now() - startTime;
       
       return {
-        status: success''',
+        status: success,
         buildTime,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: failed''',
+        status: failed,
         error: error.message,
         timestamp: new Date().toISOString()
       };
@@ -1008,7 +1008,7 @@ const bundleInfo = {};
   stop() {
     console.log('🛑 Stopping Enhanced Automation System...');
     
-    this.isRunning = false';';
+    this.isRunning = false;
     
     // Stop AI components
     if (this.aiOptimizer) {
@@ -1025,8 +1025,8 @@ const bundleInfo = {};
     const report = {
       summary: {
         totalTasks: this.results.length,
-        successfulTasks: this.results.filter(r => r.status === completed';';).length,
-        failedTasks: this.results.filter(r => r.status === failed';';).length,
+        successfulTasks: this.results.filter(r => r.status === completed';;).length,
+        failedTasks: this.results.filter(r => r.status === failed';;).length,
         totalImprovements: this.improvementHistory.length,
         totalErrors: this.errors.length
       },
@@ -1103,4 +1103,4 @@ const totalCPU = this';.performanceHistory.reduce((sum, entry) => {
   }
 }
 
-module.exports = EnhancedAutomation';'; 
+module.exports = EnhancedAutomation';; 

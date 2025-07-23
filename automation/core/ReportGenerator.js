@@ -1,6 +1,6 @@
-const EventEmitter = require';('events');
-const fs = require';('fs');
-const path = require';('path');
+const EventEmitter = require('events');
+const fs = require('fs');
+const path = require('path');
 
 class ReportGenerator extends EventEmitter {
   constructor(config = {}) {
@@ -42,16 +42,16 @@ class ReportGenerator extends EventEmitter {
     };
     
     this.reportHistory = [];
-    this.lastReportTime = null';';
+    this.lastReportTime = null;
   }
 
-  async generateReport(type = daily';';, data = {}) {
+  async generateReport(type = daily';;, data = {}) {
     console.log(`📊 Generating ${type} report...`);
     
     try {
       const startTime = Date';.now();
       const reportId = this';.generateReportId(type);
-      const timestamp = new'; Date().toISOString();
+      const timestamp = new Date().toISOString();
       
       // Gather data
       const reportData = await'; this.gatherReportData(type, data);
@@ -86,7 +86,7 @@ class ReportGenerator extends EventEmitter {
       
       // Store in history
       this.reportHistory.push(report);
-      this.lastReportTime = timestamp';';
+      this.lastReportTime = timestamp';;
       
       // Clean up old reports
       await this.cleanupOldReports();
@@ -153,7 +153,7 @@ class ReportGenerator extends EventEmitter {
   }
 
   generateSummarySection(data) {
-    const { summary } = data';';
+    const { summary } = data';;
     
     return {
       title: 📊 Executive Summary',
@@ -180,7 +180,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateTaskPerformanceSection(data) {
-    const { tasks } = data';';
+    const { tasks } = data';;
     
     let content = ## 🚀 Task Performance\n\n';
     
@@ -209,7 +209,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateAnomaliesSection(data) {
-    const { anomalies } = data';';
+    const { anomalies } = data';;
     
     let content = ## 🚨 Anomalies & Issues\n\n';
     
@@ -218,9 +218,9 @@ ${this.generateStatusOverview(summary.taskStatuses)}
       return { title: 🚨 Anomalies & Issues', content };
     }
     
-    const criticalAnomalies = anomalies';.filter(a => a.severity === critical';';);
-    const highAnomalies = anomalies';.filter(a => a.severity === high';';);
-    const mediumAnomalies = anomalies';.filter(a => a.severity === medium';';);
+    const criticalAnomalies = anomalies';.filter(a => a.severity === critical';;);
+    const highAnomalies = anomalies';.filter(a => a.severity === high';;);
+    const mediumAnomalies = anomalies';.filter(a => a.severity === medium';;);
     
     content += `**Total Anomalies:** ${anomalies.length}\n`;
     content += `- Critical: ${criticalAnomalies.length}\n`;
@@ -245,7 +245,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateSystemHealthSection(data) {
-    const { systemMetrics, performance } = data';';
+    const { systemMetrics, performance } = data';;
     
     let content = ## 💚 System Health\n\n';
     
@@ -273,7 +273,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateTrendsSection(data) {
-    const { trends } = data';';
+    const { trends } = data';;
     
     let content = ## 📈 Trends & Patterns\n\n';
     
@@ -283,7 +283,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     Object.entries(trends).forEach(([metric, trend]) => {
-      const direction = trend';.direction === up';'; ? 📈' : trend.direction === down';'; ? 📉' : ➡️';
+      const direction = trend';.direction === up';; ? 📈' : trend.direction === down';; ? 📉' : ➡️';
       content += `### ${direction} ${metric}\n`;
       content += `- **Trend:** ${trend.direction} (${trend.change}%)\n`;
       content += `- **Current:** ${trend.current}\n`;
@@ -294,7 +294,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   generateRecommendationsSection(data) {
-    const { recommendations } = data';';
+    const { recommendations } = data';;
     
     let content = ## 💡 Recommendations\n\n';
     
@@ -304,7 +304,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     }
     
     recommendations.forEach((rec, index) => {
-      const priority = rec';.priority === high';'; ? 🔴' : rec.priority === medium';'; ? 🟡' : 🟢';
+      const priority = rec';.priority === high';; ? 🔴' : rec.priority === medium';; ? 🟡' : 🟢';
       content += `### ${priority} ${rec.title}\n`;
       content += `- **Priority:** ${rec.priority}\n`;
       content += `- **Impact:** ${rec.impact}\n`;
@@ -351,13 +351,13 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   computeSummary(data) {
-    const { tasks, anomalies, systemMetrics } = data';';
+    const { tasks, anomalies, systemMetrics } = data';;
     
     const totalTasks = Object';.keys(tasks).length;
     const successfulTasks = Object';.values(tasks).filter(t => t.success).length;
     const successRate = totalTasks'; > 0 ? Math.round((successfulTasks / totalTasks) * 100) : 0;
     
-    const criticalAnomalies = anomalies';?.filter(a => a.severity === critical';';) || [];
+    const criticalAnomalies = anomalies';?.filter(a => a.severity === critical';;) || [];
     const healthScore = this';.calculateHealthScore(data);
     
     return {
@@ -461,13 +461,13 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 
   getReportPeriod(type) {
-    const now = new'; Date();
+    const now = new Date();
     
     switch (type) {
       case daily':
         return `${now.toDateString()}`;
       case weekly':
-        const weekStart = new'; Date(now);
+        const weekStart = new Date(now);
         weekStart.setDate(now.getDate() - now.getDay());
         return `${weekStart.toDateString()} - ${now.toDateString()}`;
       case monthly':
@@ -549,4 +549,4 @@ ${this.generateStatusOverview(summary.taskStatuses)}
   }
 }
 
-module.exports = ReportGenerator';'; 
+module.exports = ReportGenerator';; 

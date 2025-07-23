@@ -17,7 +17,7 @@ const axios = require('axios');
 class CursorAutomatedCommunication {
   constructor(config = {}) {
     this.config = {
-      apiEndpoint: config.apiEndpoint || 'https://api.cursor.sh',
+      apiEndpoint: config.apiEndpoint || https://api.cursor.sh',
       apiKey: config.apiKey || process.env.CURSOR_API_KEY,
       projectPath: config.projectPath || process.cwd(),
       autoCommit: config.autoCommit !== false,
@@ -54,7 +54,7 @@ class CursorAutomatedCommunication {
     if (this.config.apiKey) {
       try {
         const response = await axios.get(`${this.config.apiEndpoint}/health`, {
-          headers: { 'Authorization': `Bearer ${this.config.apiKey}` }
+          headers: { Authorization': `Bearer ${this.config.apiKey}` }
         });
         console.log('✅ Cursor API connection established');
       } catch (error) {
@@ -112,14 +112,14 @@ class CursorAutomatedCommunication {
       const files = await this.getSourceFiles();
       
       for (const file of files) {
-        const content = await fs.readFile(file, 'utf8');
+        const content = await fs.readFile(file, utf8');
         const issues = this.analyzeFile(content, file);
         
         if (issues.length > 0) {
           improvements.push({
             file,
             issues,
-            type: 'code_quality'
+            type: code_quality
           });
         }
       }
@@ -131,7 +131,7 @@ class CursorAutomatedCommunication {
   }
 
   async getSourceFiles() {
-    const sourceDirs = ['src', 'pages', 'components', 'utils', 'lib'];
+    const sourceDirs = ['src', pages', components', utils', lib'];
     const files = [];
     
     for (const dir of sourceDirs) {
@@ -181,25 +181,25 @@ class CursorAutomatedCommunication {
     // Check for common issues
     if (content.includes('console.log(') && !filePath.includes('test')) {
       issues.push({
-        type: 'debug_code',
-        message: 'Console.log statements found in production code',
-        severity: 'low'
+        type: debug_code',
+        message: Console.log statements found in production code',
+        severity: low
       });
     }
     
     if (content.includes('TODO') || content.includes('FIXME')) {
       issues.push({
-        type: 'todo_items',
-        message: 'TODO/FIXME comments found',
-        severity: 'medium'
+        type: todo_items',
+        message: TODO/FIXME comments found',
+        severity: medium
       });
     }
     
-    if (content.includes('var ') && !content.includes('var _')) {
+    if (content.includes('var ) && !content.includes('var _')) {
       issues.push({
-        type: 'var_usage',
-        message: 'var keyword used instead of const/let',
-        severity: 'medium'
+        type: var_usage',
+        message: var keyword used instead of const/let',
+        severity: medium
       });
     }
     
@@ -233,14 +233,14 @@ class CursorAutomatedCommunication {
 
   generateSuggestion(improvement) {
     const suggestions = {
-      debug_code: 'Consider removing console.log statements for production',
-      todo_items: 'Address TODO/FIXME comments to improve code quality',
-      var_usage: 'Replace var with const or let for better scoping'
+      debug_code: Consider removing console.log statements for production',
+      todo_items: Address TODO/FIXME comments to improve code quality',
+      var_usage: Replace var with const or let for better scoping
     };
     
     return improvement.issues.map(issue => 
       suggestions[issue.type] || `Fix ${issue.type}: ${issue.message}`
-    ).join('; ');
+    ).join('; );
   }
 
   async applyImprovement(improvement) {
@@ -302,7 +302,7 @@ class CursorAutomatedCommunication {
       analysis.metrics.filesAnalyzed = files.length;
       
       for (const file of files) {
-        const content = await fs.readFile(file, 'utf8');
+        const content = await fs.readFile(file, utf8');
         const issues = this.analyzeFile(content, file);
         
         if (issues.length > 0) {
@@ -310,7 +310,7 @@ class CursorAutomatedCommunication {
           analysis.improvements.push({
             file,
             issues,
-            type: 'comprehensive'
+            type: comprehensive
           });
         }
       }

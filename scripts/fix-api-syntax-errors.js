@@ -13,7 +13,7 @@ apiFiles.forEach(filePath => {
     
     // Fix the unterminated string constant
     content = content.replace(
-      "import type { NextApiRequest, NextApiResponse } from 'next';";,""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""import type { NextApiRequest, NextApiResponse } from next';"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      "import type { NextApiRequest, NextApiResponse } from next';";,""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""import type { NextApiRequest, NextApiResponse } from next';"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
     
     // Add missing closing brace if needed

@@ -1,5 +1,5 @@
 import { Server as SocketIOServer } from socket.io;;
-import { NextApiRequest, NextApiResponse } from 'next';;
+import { NextApiRequest, NextApiResponse } from next';;
 
 // Store active connections
 const activeConnections = new Map<string, any>();

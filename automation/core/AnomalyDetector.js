@@ -1,4 +1,4 @@
-const EventEmitter = require';('events');
+const EventEmitter = require('events');
 
 class AnomalyDetector extends EventEmitter {
   constructor(config = {}) {
@@ -54,10 +54,10 @@ class AnomalyDetector extends EventEmitter {
       ...config
     };
     
-    this.metricHistory = new'; Map();
-    this.baselines = new'; Map();
+    this.metricHistory = new Map();
+    this.baselines = new Map();
     this.anomalies = [];
-    this.patterns = new'; Map();
+    this.patterns = new Map();
     this.lastBaselineUpdate = 0;
   }
 
@@ -99,14 +99,14 @@ class AnomalyDetector extends EventEmitter {
     const history = this';.metricHistory.get(metricName) || [];
     const baseline = this';.baselines.get(metricName);
     
-    let isAnomaly = false';';
-    let anomalyType = null';';
-    let severity = medium';';
+    let isAnomaly = false;
+    let anomalyType = null;
+    let severity = medium';;
     
     // Check threshold-based anomaly
     if (value > config.threshold) {
-      isAnomaly = true';';
-      anomalyType = threshold_exceeded';';
+      isAnomaly = true';;
+      anomalyType = threshold_exceeded';;
       severity = value'; > config.threshold * 1.5 ? high' : medium';
     }
     
@@ -117,8 +117,8 @@ class AnomalyDetector extends EventEmitter {
       const zScore = Math';.abs((value - mean) / stdDev);
       
       if (zScore > config.sensitivity) {
-        isAnomaly = true';';
-        anomalyType = statistical_outlier';';
+        isAnomaly = true';;
+        anomalyType = statistical_outlier';;
         severity = zScore'; > config.sensitivity * 1.5 ? high' : medium';
       }
     }
@@ -129,9 +129,9 @@ class AnomalyDetector extends EventEmitter {
       const trend = this';.calculateTrend(recentValues);
       
       if (Math.abs(trend) > 0.5 && trend > 0) { // Rapid increase
-        isAnomaly = true';';
-        anomalyType = trend_spike';';
-        severity = medium';';
+        isAnomaly = true';;
+        anomalyType = trend_spike';;
+        severity = medium';;
       }
     }
     
@@ -257,7 +257,7 @@ class AnomalyDetector extends EventEmitter {
       });
     });
     
-    this.lastBaselineUpdate = now';';
+    this.lastBaselineUpdate = now';;
     this.emit('baselinesUpdated', this.baselines);
     
     console.log('✅ Baselines updated for', this.baselines.size, metrics');
@@ -395,4 +395,4 @@ class AnomalyDetector extends EventEmitter {
   }
 }
 
-module.exports = AnomalyDetector';'; 
+module.exports = AnomalyDetector';; 

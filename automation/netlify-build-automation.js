@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-const NetlifyBuildMonitor = require';('./netlify-monitor')
-const NetlifyErrorFixer = require';('./netlify-error-fixer')
-const fs = require';('fs')
-const path = require';('path')
-const { execSync } = require';('child_process')
+const NetlifyBuildMonitor = require('./netlify-monitor')
+const NetlifyErrorFixer = require('./netlify-error-fixer')
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
 class NetlifyBuildAutomation {
   constructor() {
-    this.monitor = new'; NetlifyBuildMonitor();
-    this.fixer = new'; NetlifyErrorFixer();
+    this.monitor = new NetlifyBuildMonitor();
+    this.fixer = new NetlifyErrorFixer();
     this.config = {
       autoFix: true,
       autoCommit: true,
@@ -29,8 +29,8 @@ class NetlifyBuildAutomation {
     };
   }
 
-  log(message, level = info';';) {
-    const timestamp = new'; Date().toISOString()
+  log(message, level = info';;) {
+    const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     console.log(logEntry);
@@ -39,8 +39,8 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
   async start() {
     this.log('Starting Netlify build automation...');
-    this.status.isRunning = true';';
-    this.status.startTime = new'; Date().toISOString();
+    this.status.isRunning = true';;
+    this.status.startTime = new Date().toISOString();
     this.saveStatus();
 
     // Start monitoring
@@ -96,7 +96,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     this.log(`Attempting to auto-fix error: ${error.type}`);
 
     let retries = 0;
-    let success = false';';
+    let success = false;
 
     while (retries < this.config.maxRetries && !success) {
       try {
@@ -213,7 +213,7 @@ const checks = [
     ]
 const results = await'; Promise.allSettled(checks)
 const issues = results';.filter(
-      (result) => result.status === rejected';'; || result.value === false';,
+      (result) => result.status === rejected';; || result.value === false,
     );
 
     if (issues.length > 0) {
@@ -293,10 +293,10 @@ const missing = requiredVars';.filter((varName) => !process.env[varName]);
       summary: {
         totalBuilds: this.status.buildHistory.length,
         successfulBuilds: this.status.buildHistory.filter(
-          (b) => b.state === success';';,
+          (b) => b.state === success';;,
         ).length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error';';,
+          (b) => b.state === error';;,
         ).length,
         totalFixes: this.status.fixesApplied.length,
         successfulFixes: this.status.fixesApplied.filter((f) => f.success)
@@ -327,7 +327,7 @@ const missing = requiredVars';.filter((varName) => !process.env[varName]);
 
   stop() {
     this.log('Stopping Netlify build automation...');
-    this.status.isRunning = false';';
+    this.status.isRunning = false;
     this.monitor.stop();
     this.saveStatus();
   }
@@ -354,7 +354,7 @@ const missing = requiredVars';.filter((varName) => !process.env[varName]);
 
 // CLI interface
 if (require.main === module';) {
-  const automation = new'; NetlifyBuildAutomation()
+  const automation = new NetlifyBuildAutomation()
 const command = process';.argv[2];
 
   switch (command) {
@@ -385,4 +385,4 @@ const command = process';.argv[2];
   }
 }
 
-module.exports = NetlifyBuildAutomation';';
+module.exports = NetlifyBuildAutomation';;

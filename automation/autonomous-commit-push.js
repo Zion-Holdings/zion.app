@@ -9,19 +9,19 @@ class AutonomousCommitPush {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, 'logs', 'autonomous-commit-push.log');
+        this.logFile = path.join(__dirname, logs', autonomous-commit-push.log');
         this.ensureLogDirectory();
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, 'config.json');
+        const configPath = path.join(__dirname, config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            return JSON.parse(fs.readFileSync(configPath, utf8'));
         }
         return {
             maxCommitSize: 50,
-            commitMessageTemplate: 'fix: {description}',
-            branch: 'main',
+            commitMessageTemplate: fix: {description},
+            branch: main',
             autoPush: true,
             enableLogging: true
         };
@@ -34,7 +34,7 @@ class AutonomousCommitPush {
         }
     }
 
-    log(message, level = 'info') {
+    log(message, level = info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
@@ -46,9 +46,9 @@ class AutonomousCommitPush {
             console.error('Failed to write to log file:', error.message);
         }
         
-        if (level === 'error') {
+        if (level === error') {
             console.error(message);
-        } else if (level === 'warn') {
+        } else if (level === warn') {
             console.warn(message);
         } else {
             console.log(message);
@@ -57,20 +57,20 @@ class AutonomousCommitPush {
 
     async getGitStatus() {
         try {
-            const status = execSync('git status --porcelain', { encoding: 'utf8' });
+            const status = execSync('git status --porcelain', { encoding: utf8' });
             return status.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting git status: ${error.message}`, 'error');
+            this.log(`Error getting git status: ${error.message}`, error');
             return [];
         }
     }
 
     async getStagedFiles() {
         try {
-            const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
+            const staged = execSync('git diff --cached --name-only', { encoding: utf8' });
             return staged.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
-            this.log(`Error getting staged files: ${error.message}`, 'error');
+            this.log(`Error getting staged files: ${error.message}`, error');
             return [];
         }
     }
@@ -79,12 +79,12 @@ class AutonomousCommitPush {
         try {
             if (files.length === 0) return true;
             
-            const fileList = files.join(' ');
-            execSync(`git add ${fileList}`, { stdio: 'pipe' });
+            const fileList = files.join(' );
+            execSync(`git add ${fileList}`, { stdio: pipe' });
             this.log(`Staged ${files.length} files`);
             return true;
         } catch (error) {
-            this.log(`Error staging files: ${error.message}`, 'error');
+            this.log(`Error staging files: ${error.message}`, error');
             return false;
         }
     }
@@ -92,7 +92,7 @@ class AutonomousCommitPush {
     generateCommitMessage(files) {
         const fileTypes = this.analyzeFileTypes(files);
         const description = this.generateDescription(fileTypes);
-        return this.config.commitMessageTemplate.replace('{description}', description);
+        return this.config.commitMessageTemplate.replace('{description}, description);
     }
 
     analyzeFileTypes(files) {
@@ -107,24 +107,24 @@ class AutonomousCommitPush {
 
     getFileType(ext) {
         const typeMap = {
-            '.js': 'JavaScript',
-            '.ts': 'TypeScript',
-            '.tsx': 'React TypeScript',
-            '.jsx': 'React JavaScript',
-            '.css': 'CSS',
-            '.scss': 'SCSS',
-            '.html': 'HTML',
-            '.json': 'JSON',
-            '.md': 'Markdown',
-            '.py': 'Python',
-            '.sql': 'SQL'
+            .js': JavaScript',
+            .ts': TypeScript',
+            .tsx': React TypeScript',
+            .jsx': React JavaScript',
+            .css': CSS',
+            .scss': SCSS',
+            .html': HTML',
+            .json': JSON',
+            .md': Markdown',
+            .py': Python',
+            .sql': SQL
         };
-        return typeMap[ext] || 'Other';
+        return typeMap[ext] || Other';
     }
 
     generateDescription(fileTypes) {
         const entries = Object.entries(fileTypes);
-        if (entries.length === 0) return 'general improvements';
+        if (entries.length === 0) return general improvements';
         
         const descriptions = entries.map(([type, count]) => {
             if (count === 1) return type;
@@ -136,27 +136,27 @@ class AutonomousCommitPush {
         }
         
         const last = descriptions.pop();
-        return `${descriptions.join(', ')} and ${last}`;
+        return `${descriptions.join(', )} and ${last}`;
     }
 
     async commit(message) {
         try {
-            execSync(`git commit -m "${message}"`, { stdio: 'pipe' });
+            execSync(`git commit -m "${message}"`, { stdio: pipe' });
             this.log(`Committed: ${message}`);
             return true;
         } catch (error) {
-            this.log(`Error committing: ${error.message}`, 'error');
+            this.log(`Error committing: ${error.message}`, error');
             return false;
         }
     }
 
     async push() {
         try {
-            execSync(`git push origin ${this.config.branch}`, { stdio: 'pipe' });
+            execSync(`git push origin ${this.config.branch}`, { stdio: pipe' });
             this.log(`Pushed to ${this.config.branch}`);
             return true;
         } catch (error) {
-            this.log(`Error pushing: ${error.message}`, 'error');
+            this.log(`Error pushing: ${error.message}`, error');
             return false;
         }
     }
@@ -169,7 +169,7 @@ class AutonomousCommitPush {
             const status = await this.getGitStatus();
             if (status.length === 0) {
                 this.log('No changes to commit');
-                return { success: true, message: 'No changes detected' };
+                return { success: true, message: No changes detected' };
             }
 
             // Get staged files
@@ -185,7 +185,7 @@ class AutonomousCommitPush {
                 if (modifiedFiles.length > 0) {
                     const staged = await this.stageFiles(modifiedFiles);
                     if (!staged) {
-                        return { success: false, error: 'Failed to stage files' };
+                        return { success: false, error: Failed to stage files' };
                     }
                     filesToCommit = modifiedFiles;
                 }
@@ -197,14 +197,14 @@ class AutonomousCommitPush {
             // Commit changes
             const committed = await this.commit(commitMessage);
             if (!committed) {
-                return { success: false, error: 'Failed to commit changes' };
+                return { success: false, error: Failed to commit changes' };
             }
 
             // Push changes if enabled
             if (this.config.autoPush) {
                 const pushed = await this.push();
                 if (!pushed) {
-                    return { success: false, error: 'Failed to push changes' };
+                    return { success: false, error: Failed to push changes' };
                 }
             }
 
@@ -217,7 +217,7 @@ class AutonomousCommitPush {
             };
 
         } catch (error) {
-            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, 'error');
+            this.log(`Unexpected error in autonomous commit and push: ${error.message}`, error');
             return { success: false, error: error.message };
         }
     }

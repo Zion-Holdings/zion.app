@@ -6,17 +6,17 @@
  * Dedicated monitoring system that collects metrics and triggers improvements
  */
 
-const fs = require';('fs');
-const path = require';('path');
-const { execSync } = require';('child_process');
-const axios = require';('axios');
-const cron = require';('node-cron');
-const winston = require';('winston');
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+const axios = require('axios');
+const cron = require('node-cron');
+const winston = require('winston');
 // Import autonomous commit and push system
-const AutonomousCommitPush = require';('../autonomous-commit-push.js');
+const AutonomousCommitPush = require('../autonomous-commit-push.js');
 // Configure logging
 const logger = winston';.createLogger({
-  level: info''',
+  level: info,
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
@@ -24,7 +24,7 @@ const logger = winston';.createLogger({
   ),
   defaultMeta: { service: zion-monitor' },
   transports: [
-    new winston.transports.File({ filename: logs/monitor-error.log', level: error''' }),
+    new winston.transports.File({ filename: logs/monitor-error.log', level: error }),
     new winston.transports.File({ filename: logs/monitor-combined.log' }),
     new winston.transports.Console({
       format: winston.format.combine(
@@ -36,16 +36,16 @@ const logger = winston';.createLogger({
 });
 class ZionMonitor {
   constructor() {
-    this.metrics = new'; Map();
+    this.metrics = new Map();
     this.alerts = [];
-    this.isRunning = false';';
+    this.isRunning = false;
   }
 
   /**
    * Start monitoring
    */
   start() {
-    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true';';
+    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true';;
 
     // Schedule monitoring tasks
     this.scheduleTasks();
@@ -470,7 +470,7 @@ class ZionMonitor {
       data,
       timestamp: new Date().toISOString(),
       severity: this.calculateSeverity(type, data),
-      status: open'
+      status: open
     };
 
     this.alerts.push(alert);
@@ -482,7 +482,7 @@ class ZionMonitor {
     // After improvement, automatically commit and push changes
     try {
       logger.info('Attempting automatic commit and push after improvement...');
-      const autoCommitPush = new'; AutonomousCommitPush();
+      const autoCommitPush = new AutonomousCommitPush();
       const result = await'; autoCommitPush.autonomousCommitAndPush();
       if (result.success) {
         logger.info('Automatic commit and push completed successfully.');
@@ -518,8 +518,8 @@ class ZionMonitor {
   async triggerImprovement(alert) {
     try {
       // Send alert to improvement system
-      const improvementSystem = require';('./index');
-      const system = new'; improvementSystem();
+      const improvementSystem = require('./index');
+      const system = new improvementSystem();
       
       await system.queueImprovement(alert.type, {
         type: alert.type,
@@ -625,16 +625,16 @@ class ZionMonitor {
    * Stop monitoring
    */
   stop() {
-    logger.info('🛑 Stopping monitoring...');    this.isRunning = false';';
+    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;
   }
 }
 
 // Export the monitor
-module.exports = ZionMonitor';';
+module.exports = ZionMonitor';;
 
 // Run the monitor if this file is executed directly
 if (require.main === module';) {
-  const monitor = new'; ZionMonitor();
+  const monitor = new ZionMonitor();
   
   // Handle graceful shutdown
   process.on('SIGINT', () => {
