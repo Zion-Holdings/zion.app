@@ -16,7 +16,7 @@ class AutonomousCommitPush {
     loadConfig() {
         const configPath = path.join(__dirname, 'config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, utf8'));
+            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
         }
         return {
             maxCommitSize: 50,
@@ -57,7 +57,7 @@ class AutonomousCommitPush {
 
     async getGitStatus() {
         try {
-            const status = execSync('git status --porcelain', { encoding: utf8' });
+            const status = execSync('git status --porcelain', { encoding: 'utf8' });
             return status.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
             this.log(`Error getting git status: ${error.message}`, error');
@@ -67,7 +67,7 @@ class AutonomousCommitPush {
 
     async getStagedFiles() {
         try {
-            const staged = execSync('git diff --cached --name-only', { encoding: utf8' });
+            const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
             return staged.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
             this.log(`Error getting staged files: ${error.message}`, error');
