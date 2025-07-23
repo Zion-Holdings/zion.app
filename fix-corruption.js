@@ -25,11 +25,10 @@ function findFiles(dir, extensions = ['.ts', .tsx', .js', .jsx']) {
       }
     }
   });
-  
   return results;
 }
 
-// Function to fix a single file
+// Function to fix a single file by removing extraneous single quotes
 function fixFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, utf8');
@@ -75,16 +74,14 @@ function fixFile(filePath) {
       console.log(`✅ Fixed: ${filePath}`);
       return true;
     }
-    
     return false;
   } catch (error) {
-    console.error(`❌ Error fixing ${filePath}:`, error.message);
+    console.error(`❌ Error fixing ${filePath}: ${error.message}`);
     return false;
   }
 }
 
-// Main execution
-console.log('🔧 Starting corruption fix...');
+console.log('🚀 Starting corruption fix script...');
 
 // Find all TypeScript and JavaScript files
 const files = findFiles('.', ['.ts', .tsx', .js', .jsx']);
@@ -92,24 +89,20 @@ const files = findFiles('.', ['.ts', .tsx', .js', .jsx']);
 console.log(`📁 Found ${files.length} files to check`);
 
 let fixedCount = 0;
-
-// Fix each file
 files.forEach(file => {
   if (fixFile(file)) {
     fixedCount++;
   }
 });
 
-console.log(`\n🎉 Corruption fix complete!`);
-console.log(`📊 Fixed ${fixedCount} files out of ${files.length} total files`);
+console.log(`\n✨ Fixed ${fixedCount} files.`);
 
-// Run a quick syntax check
 console.log('\n🔍 Running syntax check...');
 try {
   execSync('npx tsc --noEmit --skipLibCheck', { stdio: inherit' });
   console.log('✅ TypeScript syntax check passed');
 } catch (error) {
-  console.log('⚠️ TypeScript syntax check failed - some files may still need manual fixing');
+  console.error('⚠️ TypeScript syntax check failed - some files may still need manual fixing');
 }
 
 console.log('\n🚀 Ready to commit and push changes!'); 

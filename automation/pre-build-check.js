@@ -40,22 +40,22 @@ class PreBuildChecker {
     
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, utf8');
         
         // Check for common syntax errors
         const syntaxErrors = [
-          { pattern: /from\s+next';/, description: 'Missing quotes in import statement' },
-          { pattern: /req\.method\s*!==\s*([A-Z]+)'/, description: 'Missing quotes in method check' },
-          { pattern: /message:\s*([A-Za-z\s]+)'/, description: 'Missing quotes in string literal' },
-          { pattern: /typeof\s+global\s*!==\s*undefined'/, description: 'Missing quotes in typeof check' },
-          { pattern: /typeof\s*\([^)]+\)\.self\s*===\s*undefined/, description: 'Missing quotes in typeof check' }
+          { pattern: /from\s+next';/, description: Missing quotes in import statement' },
+          { pattern: /req\.method\s*!==\s*([A-Z]+)/, description: Missing quotes in method check' },
+          { pattern: /message:\s*([A-Za-z\s]+)/, description: Missing quotes in string literal' },
+          { pattern: /typeof\s+global\s*!==\s*undefined'/, description: Missing quotes in typeof check' },
+          { pattern: /typeof\s*\([^)]+\)\.self\s*===\s*undefined/, description: Missing quotes in typeof check' }
         ];
         
         for (const error of syntaxErrors) {
           if (error.pattern.test(content)) {
             this.issues.push({
               file,
-              type: 'syntax',
+              type: syntax',
               description: error.description,
               line: this.findLineNumber(content, error.pattern)
             });
@@ -65,7 +65,7 @@ class PreBuildChecker {
       } catch (error) {
         this.issues.push({
           file,
-          type: 'file_read_error',
+          type: file_read_error',
           description: `Could not read file: ${error.message}`
         });
         errorCount++;
@@ -81,8 +81,8 @@ class PreBuildChecker {
     
     try {
       const result = execSync('npx tsc --noEmit --pretty false', { 
-        encoding: 'utf8', 
-        stdio: ['pipe', 'pipe', 'pipe'] 
+        encoding: utf8', 
+        stdio: ['pipe', pipe', pipe'] 
       });
       
       const lines = result.split('\n');
@@ -94,7 +94,7 @@ class PreBuildChecker {
           if (match) {
             this.issues.push({
               file: match[1].trim(),
-              type: 'typescript',
+              type: typescript',
               description: match[4],
               line: parseInt(match[2]),
               column: parseInt(match[3])
@@ -119,20 +119,20 @@ class PreBuildChecker {
       // Check if package.json exists
       if (!fs.existsSync('package.json')) {
         this.issues.push({
-          type: 'dependency',
-          description: 'package.json not found'
+          type: dependency',
+          description: package.json not found
         });
         return;
       }
       
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
       
       // Check for required dependencies
-      const requiredDeps = ['next', 'react', 'react-dom'];
+      const requiredDeps = ['next', react', react-dom'];
       for (const dep of requiredDeps) {
         if (!packageJson.dependencies?.[dep] && !packageJson.devDependencies?.[dep]) {
           this.issues.push({
-            type: 'dependency',
+            type: dependency',
             description: `Missing required dependency: ${dep}`
           });
         }
@@ -141,15 +141,15 @@ class PreBuildChecker {
       // Check if node_modules exists
       if (!fs.existsSync('node_modules')) {
         this.issues.push({
-          type: 'dependency',
-          description: 'node_modules not found, run npm install'
+          type: dependency',
+          description: node_modules not found, run npm install
         });
       }
       
       console.log('Dependencies check completed');
     } catch (error) {
       this.issues.push({
-        type: 'dependency',
+        type: dependency',
         description: `Error checking dependencies: ${error.message}`
       });
     }
@@ -160,14 +160,14 @@ class PreBuildChecker {
     console.log('🔍 Checking environment variables...');
     
     const requiredEnvVars = [
-      'NEXT_PUBLIC_SUPABASE_URL',
-      'NEXT_PUBLIC_SUPABASE_ANON_KEY'
+      NEXT_PUBLIC_SUPABASE_URL',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY
     ];
     
     for (const envVar of requiredEnvVars) {
       if (!process.env[envVar]) {
         this.issues.push({
-          type: 'environment',
+          type: environment',
           description: `Missing environment variable: ${envVar}`
         });
       }
@@ -183,16 +183,16 @@ class PreBuildChecker {
     // Check if netlify.toml exists
     if (!fs.existsSync('netlify.toml')) {
       this.issues.push({
-        type: 'configuration',
-        description: 'netlify.toml not found'
+        type: configuration',
+        description: netlify.toml not found
       });
     }
     
     // Check if next.config.js exists
     if (!fs.existsSync('next.config.js') && !fs.existsSync('next.config.ts')) {
       this.issues.push({
-        type: 'configuration',
-        description: 'next.config.js or next.config.ts not found'
+        type: configuration',
+        description: next.config.js or next.config.ts not found
       });
     }
     
@@ -208,7 +208,7 @@ class PreBuildChecker {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
         
-        if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== '.next') {
+        if (stat.isDirectory() && !item.startsWith('.') && item !== node_modules' && item !== .next') {
           this.findTsFiles(fullPath, files);
         } else if (item.endsWith('.ts') || item.endsWith('.tsx')) {
           files.push(fullPath);
@@ -239,11 +239,11 @@ class PreBuildChecker {
       issues: this.issues,
       summary: {
         totalIssues: this.issues.length,
-        syntaxErrors: this.issues.filter(i => i.type === 'syntax').length,
-        typescriptErrors: this.issues.filter(i => i.type === 'typescript').length,
-        dependencyIssues: this.issues.filter(i => i.type === 'dependency').length,
-        environmentIssues: this.issues.filter(i => i.type === 'environment').length,
-        configurationIssues: this.issues.filter(i => i.type === 'configuration').length
+        syntaxErrors: this.issues.filter(i => i.type === syntax').length,
+        typescriptErrors: this.issues.filter(i => i.type === typescript').length,
+        dependencyIssues: this.issues.filter(i => i.type === dependency').length,
+        environmentIssues: this.issues.filter(i => i.type === environment').length,
+        configurationIssues: this.issues.filter(i => i.type === configuration').length
       }
     };
     
