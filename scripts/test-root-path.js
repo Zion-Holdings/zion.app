@@ -1,9 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * Test script to verify root path routing is working correctly
- * This can be run to test for the 404 issues that were fixed
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const http = require('http');const https = require('https')
 const TEST_URLS = [
@@ -33,7 +41,10 @@ function makeRequest(url) {
       });
     });
     
-    req.setTimeout(5000, () => {
+    req.
+const timeoutId = setTimeout(5000,  ();
+// Store timeoutId for cleanup if needed
+ => {
       req.destroy();
       resolve({
         url,
@@ -75,4 +86,26 @@ if (require.main === module) {
   testRootPathRouting().catch(console.error);
 }
 
-module.exports = { testRootPathRouting }; 
+module.exports = { testRootPathRouting };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

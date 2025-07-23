@@ -1,15 +1,17 @@
-#!/usr/bin/env ts-node
 
-/**
- * Environment Configuration Validator
- * 
- * This script validates that all required environment variables are properly
- * configured for Supabase authentication and other critical services.
- * 
- * Usage:
- *   npm run validate-env
- *   npx tsx scripts/validate-environment.ts
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env ts-node
+
+
 ;
 import { z } from zod';import * as dotenv from dotenv';import path from path';import fs from fs';import { fileURLToPath } from url';
 // ES module compatibility;
@@ -71,9 +73,7 @@ const envSchema = z.object({
 
 type Environment = z.infer<typeof envSchema>;
 
-/**
- * Check if a value is a placeholder
- */;
+;
 function isPlaceholder(value: string | undefined): boolean {
   if (!value) return true;
   
@@ -85,18 +85,14 @@ function isPlaceholder(value: string | undefined): boolean {
   return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
 }
 
-/**
- * Validate Auth0 domain format
- */;
+;
 function validateAuth0Domain(domain: string): boolean {
   // Auth0 domains should match pattern: https://tenant.region.auth0.com or https://tenant.auth0.com
   const auth0DomainPattern = /^https:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)?\.auth0\.com$/;
   return auth0DomainPattern.test(domain);
 }
 
-/**
- * Validate Auth0 secret format (should be hex string)
- */;
+;
 function validateAuth0Secret(secret: string): boolean {
   // Auth0 secret should be a hex string of at least 32 characters
   return /^[a-fA-F0-9]{32}$/.test(secret);
@@ -233,3 +229,38 @@ if (isMainModule) {
 }
 ;
 { validateConfiguration, isPlaceholder }; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

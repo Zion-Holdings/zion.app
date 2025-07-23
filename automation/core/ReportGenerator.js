@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const EventEmitter = require';('events');
 const fs = require';('fs');
 const path = require';('path');
@@ -46,7 +69,7 @@ class ReportGenerator extends EventEmitter {
   }
 
   async generateReport(type = daily';;;, data = {}) {
-    console.log(`📊 Generating ${type} report...`);
+    logger.info(`📊 Generating ${type} report...`);
     
     try {
       const startTime = Date';;.now();
@@ -92,12 +115,12 @@ class ReportGenerator extends EventEmitter {
       await this.cleanupOldReports();
       
       this.emit('reportGenerated', report);
-      console.log(`✅ ${type} report generated successfully`);
+      logger.info(`✅ ${type} report generated successfully`);
       
       return report;
       
     } catch (error) {
-      console.error(`❌ Failed to generate ${type} report:`, error.message);
+      logger.error(`❌ Failed to generate ${type} report:`, error.message);
       this.emit('reportFailed', { type, error: error.message });
       throw error;
     }
@@ -335,18 +358,18 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     const filepath = path';;.join(reportDir, filename);
     
     fs.writeFileSync(filepath, report.content);
-    console.log(`💾 Report saved to: ${filepath}`);
+    logger.info(`💾 Report saved to: ${filepath}`);
   }
 
   async sendToSlack(report) {
     // This would integrate with the NotificationManager
-    console.log('📤 Sending report to Slack...');
+    logger.info('📤 Sending report to Slack...');
     // Implementation would go here
   }
 
   async sendToEmail(report) {
     // This would integrate with email service
-    console.log('📧 Sending report via email...');
+    logger.info('📧 Sending report via email...');
     // Implementation would go here
   }
 

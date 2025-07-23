@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App Continuous Development - Final Startup Script
 # This script provides a reliable way to start the continuous development system
@@ -224,4 +235,26 @@ if start_dev_server; then
 else
     print_error "Failed to start development server"
     cleanup
-fi 
+fi
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

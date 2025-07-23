@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Setup Cron Automation Script (Fixed Version)
 # This script sets up cron jobs to run automations every 30 minutes with proper paths
@@ -345,4 +356,26 @@ echo "   1. Check status: ./scripts/automation-status.sh"
 echo "   2. View logs: tail -f logs/cron-*.log"
 echo "   3. Remove jobs: ./scripts/remove-cron-automation.sh"
 echo ""
-echo "⏰ First automation cycle will start at the next 30-minute interval" 
+echo "⏰ First automation cycle will start at the next 30-minute interval"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

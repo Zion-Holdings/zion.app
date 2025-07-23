@@ -534,7 +534,10 @@
                     
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Started system: ${name}` });
-                        setTimeout(() => this.requestStatus(), 2000);
+                        
+const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+// Store timeoutId for cleanup if needed
+;
                     } else {
                         throw new Error('Failed to start system');
                     }
@@ -551,7 +554,10 @@
                     
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Stopped system: ${name}` });
-                        setTimeout(() => this.requestStatus(), 2000);
+                        
+const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+// Store timeoutId for cleanup if needed
+;
                     } else {
                         throw new Error('Failed to stop system');
                     }
@@ -568,7 +574,10 @@
                     
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Restarted system: ${name}` });
-                        setTimeout(() => this.requestStatus(), 2000);
+                        
+const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+// Store timeoutId for cleanup if needed
+;
                     } else {
                         throw new Error('Failed to restart system');
                     }
@@ -616,9 +625,12 @@
                 const container = document.getElementById('errorContainer');
                 container.innerHTML = `<div class="error-message">❌ ${message}</div>`;
                 
-                setTimeout(() => {
+                
+const timeoutId = setTimeout(() => {
                     container.innerHTML = '';
-                }, 5000);
+                },  5000);
+// Store timeoutId for cleanup if needed
+;
             }
         }
 

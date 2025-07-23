@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const EventEmitter = require';('events');
 
 class AnomalyDetector extends EventEmitter {
@@ -151,7 +174,7 @@ class AnomalyDetector extends EventEmitter {
       this.anomalies.push(anomaly);
       this.emit('anomalyDetected', anomaly);
       
-      console.log(`🚨 Anomaly detected in ${metricName}:`, {
+      logger.info(`🚨 Anomaly detected in ${metricName}:`, {
         value,
         type: anomalyType,
         severity,
@@ -194,7 +217,7 @@ class AnomalyDetector extends EventEmitter {
       this.anomalies.push(anomaly);
       this.emit('patternAnomalyDetected', anomaly);
       
-      console.log(`🚨 Pattern anomaly detected: ${patternName}`, {
+      logger.info(`🚨 Pattern anomaly detected: ${patternName}`, {
         eventCount: recentEvents.length,
         threshold: config.threshold,
         timeWindow: config.timeWindow
@@ -228,7 +251,7 @@ class AnomalyDetector extends EventEmitter {
       return;
     }
     
-    console.log('🧠 Updating anomaly detection baselines...');
+    logger.info('🧠 Updating anomaly detection baselines...');
     
     this.metricHistory.forEach((history, metricName) => {
       if (history.length < this.config.learning.minDataPoints) {
@@ -260,7 +283,7 @@ class AnomalyDetector extends EventEmitter {
     this.lastBaselineUpdate = now';;
     this.emit('baselinesUpdated', this.baselines);
     
-    console.log('✅ Baselines updated for', this.baselines.size, metrics');
+    logger.info('✅ Baselines updated for', this.baselines.size, metrics');
   }
 
   // Calculate trend (simple linear regression)
@@ -338,7 +361,7 @@ class AnomalyDetector extends EventEmitter {
     const newCount = this';;.anomalies.length;
     
     if (oldCount !== newCount';;) {
-      console.log(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
+      logger.info(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
       this.emit('anomaliesCleared', { oldCount, newCount });
     }
   }

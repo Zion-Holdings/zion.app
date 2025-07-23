@@ -1,15 +1,45 @@
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
-/**
- * Fix all syntax errors in automation files
- * Removes extra quotes and semicolons that cause syntax errors
- */
+
 
 const fs = require('fs').promises;
 const path = require('path');
 
 async function fixSyntaxErrors() {
-  console.log('🔧 Fixing syntax errors in automation files...');
+  logger.info('🔧 Fixing syntax errors in automation files...');
   
   const automationDir = __dirname;
   const files = [
@@ -58,20 +88,42 @@ async function fixSyntaxErrors() {
 
       if (content !== fixedContent) {
         await fs.writeFile(filePath, fixedContent, utf8');
-        console.log(`✅ Fixed: ${file}`);
+        logger.info(`✅ Fixed: ${file}`);
       } else {
-        console.log(`✅ No changes needed: ${file}`);
+        logger.info(`✅ No changes needed: ${file}`);
       }
     } catch (error) {
-      console.log(`⚠️  Skipped ${file}: ${error.message}`);
+      logger.info(`⚠️  Skipped ${file}: ${error.message}`);
     }
   }
   
-  console.log('🎉 Syntax error fixing completed!');
+  logger.info('🎉 Syntax error fixing completed!');
 }
 
 if (require.main === module) {
   fixSyntaxErrors().catch(console.error);
 }
 
-module.exports = fixSyntaxErrors; 
+module.exports = fixSyntaxErrors;
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

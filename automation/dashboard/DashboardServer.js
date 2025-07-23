@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const express = require('express');
 const path = require('path');
 const EventEmitter = require('events');
@@ -66,7 +89,7 @@ class DashboardServer extends EventEmitter {
 
     // Logging
     this.app.use((req, res, next) => {
-      console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+      logger.info(`${new Date().toISOString()} - ${req.method} ${req.path}`);
       next();
     });
   }
@@ -235,7 +258,7 @@ class DashboardServer extends EventEmitter {
     this.wss = new WebSocket.Server({ noServer: true });
 
     this.wss.on('connection', (ws) => {
-      console.log('🔌 WebSocket client connected');
+      logger.info('🔌 WebSocket client connected');
       this.clients.add(ws);
 
       // Send initial status
@@ -249,12 +272,12 @@ class DashboardServer extends EventEmitter {
           const data = JSON.parse(message);
           this.handleWebSocketMessage(ws, data);
         } catch (error) {
-          console.error('WebSocket message error:', error);
+          logger.error('WebSocket message error:', error);
         }
       });
 
       ws.on('close', () => {
-        console.log('🔌 WebSocket client disconnected');
+        logger.info('🔌 WebSocket client disconnected');
         this.clients.delete(ws);
       });
     });
@@ -270,7 +293,7 @@ class DashboardServer extends EventEmitter {
         this.handleCommand(data.command, data.params);
         break;
       default:
-        console.log('Unknown WebSocket message type:', data.type);
+        logger.info('Unknown WebSocket message type:', data.type);
     }
   }
 
@@ -409,12 +432,12 @@ class DashboardServer extends EventEmitter {
 
   restartSystem() {
     this.emit('restart');
-    console.log('🔄 System restart initiated');
+    logger.info('🔄 System restart initiated');
   }
 
   shutdownSystem() {
     this.emit('shutdown');
-    console.log('🛑 System shutdown initiated');
+    logger.info('🛑 System shutdown initiated');
   }
 
   getConfiguration() {
@@ -430,7 +453,7 @@ class DashboardServer extends EventEmitter {
 
   updateConfiguration(newConfig) {
     // This would update the configuration and restart affected components
-    console.log('⚙️ Configuration update requested:', newConfig);
+    logger.info('⚙️ Configuration update requested:', newConfig);
     return { message: Configuration update initiated' };
   }
 
@@ -490,7 +513,7 @@ class DashboardServer extends EventEmitter {
     return new Promise((resolve, reject) => {
       try {
         this.server = this.app.listen(this.config.port, this.config.host, () => {
-          console.log(`🌐 Dashboard server running at http://${this.config.host}:${this.config.port}`);
+          logger.info(`🌐 Dashboard server running at http://${this.config.host}:${this.config.port}`);
           resolve();
         });
 
@@ -513,7 +536,7 @@ class DashboardServer extends EventEmitter {
     return new Promise((resolve) => {
       if (this.server) {
         this.server.close(() => {
-          console.log('🛑 Dashboard server stopped');
+          logger.info('🛑 Dashboard server stopped');
           resolve();
         });
       } else {

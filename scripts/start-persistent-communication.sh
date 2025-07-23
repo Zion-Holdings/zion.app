@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Persistent AI Communication Startup Script
 # This script ensures continuous communication with the AI assistant
@@ -177,4 +188,26 @@ case "${1:-start}" in
         echo "  monitor - Monitor and auto-restart the system"
         exit 1
         ;;
-esac 
+esac
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

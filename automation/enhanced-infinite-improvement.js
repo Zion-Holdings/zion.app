@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -126,7 +149,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
    * Initialize AI providers
    */
   async initializeAIProviders() {
-    console.log('🤖 Initializing AI providers...');
+    logger.info('🤖 Initializing AI providers...');
 
     // Initialize Cursor AI
     if (AI_CONFIG.CURSOR.API_KEY) {
@@ -164,7 +187,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       });
     }
 
-    console.log(`✅ Initialized ${this.aiProviders.size} AI providers`);
+    logger.info(`✅ Initialized ${this.aiProviders.size} AI providers`);
   }
 
   /**
@@ -235,7 +258,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     });
 
     this.io.on('connection', (socket) => {
-      console.log('🔌 Client connected to improvement loop');
+      logger.info('🔌 Client connected to improvement loop');
       
       socket.emit('status', {
         isRunning: this.isRunning,
@@ -244,7 +267,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       });
 
       socket.on('disconnect', () => {
-        console.log('🔌 Client disconnected from improvement loop');
+        logger.info('🔌 Client disconnected from improvement loop');
       });
     });
   }
@@ -253,7 +276,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
    * Start the enhanced infinite improvement loop
    */
   async start() {
-    console.log('🚀 Starting Enhanced Infinite Improvement Loop...');
+    logger.info('🚀 Starting Enhanced Infinite Improvement Loop...');
     
     try {
       // Initialize AI providers
@@ -268,7 +291,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
 
       // Start server
       this.server = this.app.listen(this.port, () => {
-        console.log(`🌐 Enhanced Improvement Loop running on port ${this.port}`);
+        logger.info(`🌐 Enhanced Improvement Loop running on port ${this.port}`);
       });
 
       // Setup WebSocket
@@ -282,12 +305,12 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       // Start scheduled tasks
       this.startScheduledTasks();
 
-      console.log('✅ Enhanced Infinite Improvement Loop started successfully');
-      console.log(`📊 Dashboard: http://localhost:${this.port}`);
-      console.log(`🔗 API: http://localhost:${this.port}/status`);
+      logger.info('✅ Enhanced Infinite Improvement Loop started successfully');
+      logger.info(`📊 Dashboard: http://localhost:${this.port}`);
+      logger.info(`🔗 API: http://localhost:${this.port}/status`);
 
     } catch (error) {
-      console.error('❌ Failed to start Enhanced Infinite Improvement Loop:', error);
+      logger.error('❌ Failed to start Enhanced Infinite Improvement Loop:', error);
       throw error;
     }
   }
@@ -296,7 +319,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
    * Stop the improvement loop
    */
   async stop() {
-    console.log('🛑 Stopping Enhanced Infinite Improvement Loop...');
+    logger.info('🛑 Stopping Enhanced Infinite Improvement Loop...');
     
     this.isRunning = false;
     
@@ -308,22 +331,22 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       this.io.close();
     }
     
-    console.log('✅ Enhanced Infinite Improvement Loop stopped');
+    logger.info('✅ Enhanced Infinite Improvement Loop stopped');
   }
 
   /**
    * Start the main improvement loop
    */
   async startImprovementLoop() {
-    console.log('🔄 Starting enhanced improvement loop...');
+    logger.info('🔄 Starting enhanced improvement loop...');
     
     while (this.isRunning) {
       try {
         this.improvementCycle++;
-        console.log(`🔄 Improvement Cycle ${this.improvementCycle}`);
+        logger.info(`🔄 Improvement Cycle ${this.improvementCycle}`);
         
         // Analyze codebase
-        console.log('🔍 Analyzing codebase...');
+        logger.info('🔍 Analyzing codebase...');
         const analysis = await this.analyzeCodebase();
         
         // Identify improvements
@@ -355,7 +378,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
         await this.sleep(AI_CONFIG.INTERVALS.DEEP_ANALYSIS);
         
       } catch (error) {
-        console.error('❌ Error in improvement loop:', error);
+        logger.error('❌ Error in improvement loop:', error);
         
         // Self-healing: try to recover
         if (this.selfHealingEnabled) {
@@ -400,7 +423,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       }
     });
 
-    console.log('⏰ Scheduled tasks started');
+    logger.info('⏰ Scheduled tasks started');
   }
 
   /**
@@ -426,7 +449,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
           const aiAnalysis = await provider.analyze(analysis);
           analysis[`${name}Insights`] = aiAnalysis;
         } catch (error) {
-          console.warn(`⚠️ Error with ${name} analysis:`, error.message);
+          logger.warn(`⚠️ Error with ${name} analysis:`, error.message);
         }
       }
     }
@@ -511,7 +534,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     };
 
     this.improvementQueue.push(improvement);
-    console.log(`📋 Queued improvement: ${type} (${priority})`);
+    logger.info(`📋 Queued improvement: ${type} (${priority})`);
 
     // Emit WebSocket update
     if (this.io) {
@@ -536,7 +559,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       improvement.status = processing';
 
       try {
-        console.log(`🔄 Processing improvement: ${improvement.type}`);
+        logger.info(`🔄 Processing improvement: ${improvement.type}`);
         
         // Implement improvement
         await this.implementImprovement(improvement);
@@ -546,7 +569,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
         this.successfulImprovements++;
         this.totalImprovements++;
         
-        console.log(`✅ Improvement completed: ${improvement.type}`);
+        logger.info(`✅ Improvement completed: ${improvement.type}`);
         
         // Add to learning data
         this.learningData.improvementHistory.push({
@@ -556,7 +579,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
         });
 
       } catch (error) {
-        console.error(`❌ Improvement failed: ${improvement.type}`, error);
+        logger.error(`❌ Improvement failed: ${improvement.type}`, error);
         
         improvement.status = failed';
         improvement.error = error.message;
@@ -622,7 +645,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       loadTime: newAnalysis.loadTime
     };
 
-    console.log('📊 Updated health metrics:', this.healthMetrics);
+    logger.info('📊 Updated health metrics:', this.healthMetrics);
   }
 
   /**
@@ -643,7 +666,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     this.learningData.successfulPatterns = successfulPatterns;
     this.learningData.failedPatterns = failedPatterns;
 
-    console.log(`🧠 Learned from ${successful.length} successful and ${failed.length} failed improvements`);
+    logger.info(`🧠 Learned from ${successful.length} successful and ${failed.length} failed improvements`);
   }
 
   /**
@@ -681,10 +704,10 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       ? (this.successfulImprovements / this.totalImprovements) * 100 
       : 0;
 
-    console.log(`📈 Success rate: ${successRate.toFixed(2)}%`);
-    console.log(`📊 Total improvements: ${this.totalImprovements}`);
-    console.log(`✅ Successful: ${this.successfulImprovements}`);
-    console.log(`❌ Failed: ${this.failedImprovements}`);
+    logger.info(`📈 Success rate: ${successRate.toFixed(2)}%`);
+    logger.info(`📊 Total improvements: ${this.totalImprovements}`);
+    logger.info(`✅ Successful: ${this.successfulImprovements}`);
+    logger.info(`❌ Failed: ${this.failedImprovements}`);
   }
 
   /**
@@ -708,7 +731,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
    * Attempt self-healing
    */
   async attemptSelfHealing(error) {
-    console.log('🔧 Attempting self-healing...');
+    logger.info('🔧 Attempting self-healing...');
     
     try {
       // Try to restart failed services
@@ -719,13 +742,13 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       
       // Reset queue if it's too large
       if (this.improvementQueue.length > 100) {
-        console.log('🧹 Clearing large improvement queue');
+        logger.info('🧹 Clearing large improvement queue');
         this.improvementQueue = [];
       }
       
-      console.log('✅ Self-healing completed');
+      logger.info('✅ Self-healing completed');
     } catch (healingError) {
-      console.error('❌ Self-healing failed:', healingError);
+      logger.error('❌ Self-healing failed:', healingError);
     }
   }
 
@@ -734,7 +757,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
    */
   async restartFailedServices() {
     // Implementation for restarting failed services
-    console.log('🔄 Restarting failed services...');
+    logger.info('🔄 Restarting failed services...');
   }
 
   // AI Analysis Methods
@@ -771,59 +794,62 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
 
   // Implementation Methods
   async implementPerformanceImprovement(data) {
-    console.log('⚡ Implementing performance improvement...');
+    logger.info('⚡ Implementing performance improvement...');
     // Implementation logic
   }
 
   async implementSecurityImprovement(data) {
-    console.log('🔒 Implementing security improvement...');
+    logger.info('🔒 Implementing security improvement...');
     // Implementation logic
   }
 
   async implementCodeQualityImprovement(data) {
-    console.log('🎯 Implementing code quality improvement...');
+    logger.info('🎯 Implementing code quality improvement...');
     // Implementation logic
   }
 
   async implementAccessibilityImprovement(data) {
-    console.log('♿ Implementing accessibility improvement...');
+    logger.info('♿ Implementing accessibility improvement...');
     // Implementation logic
   }
 
   async implementSEOImprovement(data) {
-    console.log('🔍 Implementing SEO improvement...');
+    logger.info('🔍 Implementing SEO improvement...');
     // Implementation logic
   }
 
   async implementTestCoverageImprovement(data) {
-    console.log('🧪 Implementing test coverage improvement...');
+    logger.info('🧪 Implementing test coverage improvement...');
     // Implementation logic
   }
 
   // Scheduled Task Methods
   async performQuickScan() {
-    console.log('🔍 Performing quick scan...');
+    logger.info('🔍 Performing quick scan...');
     // Quick scan implementation
   }
 
   async performPerformanceCheck() {
-    console.log('⚡ Performing performance check...');
+    logger.info('⚡ Performing performance check...');
     // Performance check implementation
   }
 
   async performSecurityScan() {
-    console.log('🔒 Performing security scan...');
+    logger.info('🔒 Performing security scan...');
     // Security scan implementation
   }
 
   async performFullAudit() {
-    console.log('📋 Performing full audit...');
+    logger.info('📋 Performing full audit...');
     // Full audit implementation
   }
 
   // Utility Methods
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 }
 
@@ -857,19 +883,19 @@ if (require.main === module) {
   const improvementLoop = new EnhancedInfiniteImprovementLoop();
   
   improvementLoop.start().catch(error => {
-    console.error('❌ Failed to start Enhanced Infinite Improvement Loop:', error);
+    logger.error('❌ Failed to start Enhanced Infinite Improvement Loop:', error);
     process.exit(1);
   });
 
   // Graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await improvementLoop.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await improvementLoop.stop();
     process.exit(0);
   });

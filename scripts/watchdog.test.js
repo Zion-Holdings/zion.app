@@ -1,5 +1,15 @@
- 
-// Linter workaround: define unused variables to satisfy no-undef errors
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
 const _PERF_ERROR_REGEX = undefined
 const _perfErrorStreak = undefined; // Unused undefined
@@ -237,3 +247,25 @@ const os = require('os-utils'); // Get the mock from __mocks__'    os.memUsage.m
 // expect(mockLogError).toHaveBeenCalledWith -> expect(mockLogErrorImpl).toHaveBeenCalledWith
 // This change is separate from the primary diff for triggerSelfHeal but related.
 // I'll do this in a subsequent step if tests still fail on these specific lines.'// For now, focusing on the triggerSelfHeal suite's beforeEach.
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -86,16 +109,16 @@ class AllAutomationStarter {
    * Start all automation systems
    */
   async start() {
-    console.log('🚀 Starting ALL Zion App Automation Systems...');
-    console.log('='.repeat(80));
-    console.log(
+    logger.info('🚀 Starting ALL Zion App Automation Systems...');
+    logger.info('='.repeat(80));
+    logger.info(
       '🤖 This will start maximum automation for continuous app improvement',
     );
-    console.log(
+    logger.info(
       '📊 All systems will run simultaneously and coordinate with each other',
     );
-    console.log('🔄 Auto-restart enabled for all critical systems');
-    console.log('='.repeat(80));
+    logger.info('🔄 Auto-restart enabled for all critical systems');
+    logger.info('='.repeat(80));
 
     this.isRunning = true;
 
@@ -112,12 +135,12 @@ class AllAutomationStarter {
       // Display status
       this.displayStatus();
 
-      console.log('✅ ALL automation systems started successfully!');
-      console.log('🎯 Maximum automation coverage achieved');
-      console.log('📈 Your app will now continuously improve automatically');
-      console.log('='.repeat(80));
+      logger.info('✅ ALL automation systems started successfully!');
+      logger.info('🎯 Maximum automation coverage achieved');
+      logger.info('📈 Your app will now continuously improve automatically');
+      logger.info('='.repeat(80));
     } catch (error) {
-      console.error('❌ Failed to start all automation systems:', error);
+      logger.error('❌ Failed to start all automation systems:', error);
       throw error;
     }
   }
@@ -129,7 +152,7 @@ class AllAutomationStarter {
     const logsDir = path.join(this.projectRoot, 'logs');
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
-      console.log('📁 Created logs directory');
+      logger.info('📁 Created logs directory');
     }
   }
 
@@ -137,7 +160,7 @@ class AllAutomationStarter {
    * Start all automation systems
    */
   async startAllSystems() {
-    console.log('🔧 Starting all automation systems...');
+    logger.info('🔧 Starting all automation systems...');
 
     // Start systems in priority order
     const sortedSystems = this.automationSystems.sort((a, b) => {
@@ -148,7 +171,10 @@ class AllAutomationStarter {
     for (const system of sortedSystems) {
       await this.startSystem(system);
       // Small delay between starts to avoid overwhelming the system
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
     }
   }
 
@@ -157,11 +183,11 @@ class AllAutomationStarter {
    */
   async startSystem(system) {
     try {
-      console.log(`🚀 Starting ${system.name}...`);
+      logger.info(`🚀 Starting ${system.name}...`);
 
       // Check if script exists
       if (!fs.existsSync(system.script)) {
-        console.warn(`⚠️ Script not found: ${system.script}`);
+        logger.warn(`⚠️ Script not found: ${system.script}`);
         return;
       }
 
@@ -182,19 +208,19 @@ class AllAutomationStarter {
 
       childProcess.stdout.on('data', (data) => {
         const message = `[${system.name}] ${data.toString().trim()}`;
-        console.log(message);
+        logger.info(message);
         fs.appendFileSync(logFile, `${new Date().toISOString()} ${message}\n`);
       });
 
       childProcess.stderr.on('data', (data) => {
         const message = `[${system.name}] ERROR: ${data.toString().trim()}`;
-        console.error(message);
+        logger.error(message);
         fs.appendFileSync(logFile, `${new Date().toISOString()} ${message}\n`);
       });
 
       childProcess.on('close', (code) => {
         const message = `[${system.name}] Process exited with code ${code}`;
-        console.log(message);
+        logger.info(message);
         fs.appendFileSync(logFile, `${new Date().toISOString()} ${message}\n`);
 
         // Auto-restart if enabled
@@ -202,12 +228,15 @@ class AllAutomationStarter {
           const restartCount =
             this.processes.get(system.name)?.restartCount || 0;
           if (restartCount < system.maxRestarts) {
-            console.log(
+            logger.info(
               `🔄 Restarting ${system.name} (attempt ${restartCount + 1}/${system.maxRestarts})`,
             );
-            setTimeout(() => this.restartSystem(system), 5000);
+            
+const timeoutId = setTimeout(() => this.restartSystem(system),  5000);
+// Store timeoutId for cleanup if needed
+;
           } else {
-            console.error(
+            logger.error(
               `❌ ${system.name} failed to start after ${system.maxRestarts} attempts`,
             );
           }
@@ -223,9 +252,9 @@ class AllAutomationStarter {
         status: 'running',
       });
 
-      console.log(`✅ ${system.name} started successfully`);
+      logger.info(`✅ ${system.name} started successfully`);
     } catch (error) {
-      console.error(`❌ Failed to start ${system.name}:`, error);
+      logger.error(`❌ Failed to start ${system.name}:`, error);
     }
   }
 
@@ -261,7 +290,10 @@ class AllAutomationStarter {
       // Update status
       this.updateStatus();
 
-      setTimeout(monitoringLoop, 30 * 1000); // Check every 30 seconds
+      
+const timeoutId = setTimeout(monitoringLoop,  30 * 1000);
+// Store timeoutId for cleanup if needed
+; // Check every 30 seconds
     };
 
     monitoringLoop();
@@ -273,14 +305,17 @@ class AllAutomationStarter {
   checkProcessHealth() {
     for (const [name, processInfo] of this.processes) {
       if (processInfo.process.killed && processInfo.status === 'running') {
-        console.warn(`⚠️ Process ${name} has died unexpectedly`);
+        logger.warn(`⚠️ Process ${name} has died unexpectedly`);
         processInfo.status = 'dead';
 
         // Auto-restart if enabled
         if (processInfo.system.autoRestart && this.isRunning) {
           if (processInfo.restartCount < processInfo.system.maxRestarts) {
-            console.log(`🔄 Auto-restarting ${name}...`);
-            setTimeout(() => this.restartSystem(processInfo.system), 5000);
+            logger.info(`🔄 Auto-restarting ${name}...`);
+            
+const timeoutId = setTimeout(() => this.restartSystem(processInfo.system),  5000);
+// Store timeoutId for cleanup if needed
+;
           }
         }
       }
@@ -302,9 +337,9 @@ class AllAutomationStarter {
 
     // Log status periodically
     if (runningCount === totalCount) {
-      console.log(`✅ All ${totalCount} automation systems running normally`);
+      logger.info(`✅ All ${totalCount} automation systems running normally`);
     } else {
-      console.log(
+      logger.info(
         `⚠️ ${runningCount}/${totalCount} automation systems running`,
       );
     }
@@ -314,8 +349,8 @@ class AllAutomationStarter {
    * Display status
    */
   displayStatus() {
-    console.log('\n📊 Automation Systems Status:');
-    console.log('─'.repeat(80));
+    logger.info('\n📊 Automation Systems Status:');
+    logger.info('─'.repeat(80));
 
     for (const [name, processInfo] of this.processes) {
       const statusIcon =
@@ -327,13 +362,13 @@ class AllAutomationStarter {
 const uptime = this.formatUptime(new Date() - processInfo.startTime)
 const restarts = processInfo.restartCount;
 
-      console.log(
+      logger.info(
         `${statusIcon} ${name.padEnd(30)} ${processInfo.status.padEnd(12)} ${uptime.padEnd(10)} ${restarts} restarts`,
       );
     }
 
-    console.log('─'.repeat(80));
-    console.log('');
+    logger.info('─'.repeat(80));
+    logger.info('');
   }
 
   /**
@@ -357,17 +392,17 @@ const hours = Math.floor(minutes / 60);
    * Stop all automation systems
    */
   stop() {
-    console.log('🛑 Stopping all automation systems...');
+    logger.info('🛑 Stopping all automation systems...');
     this.isRunning = false;
 
     for (const [name, processInfo] of this.processes) {
-      console.log(`🛑 Stopping ${name}...`);
+      logger.info(`🛑 Stopping ${name}...`);
       if (!processInfo.process.killed) {
         processInfo.process.kill();
       }
     }
 
-    console.log('✅ All automation systems stopped');
+    logger.info('✅ All automation systems stopped');
   }
 
   /**
@@ -408,7 +443,7 @@ if (require.main === module) {
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log(
+    logger.info(
       '\n🛑 Received SIGINT, shutting down all automation systems...',
     );
     starter.stop();
@@ -416,7 +451,7 @@ if (require.main === module) {
   });
 
   process.on('SIGTERM', async () => {
-    console.log(
+    logger.info(
       '\n🛑 Received SIGTERM, shutting down all automation systems...',
     );
     starter.stop();
@@ -425,7 +460,7 @@ if (require.main === module) {
 
   // Start all automation systems
   starter.start().catch((error) => {
-    console.error('❌ Failed to start all automation systems:', error);
+    logger.error('❌ Failed to start all automation systems:', error);
     process.exit(1);
   });
 }

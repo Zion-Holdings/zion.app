@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -21,10 +44,10 @@ class BundleOptimizer {
   }
 
   analyze() {
-    // console.warn('📊 Analyzing current bundle...\n');
+    // logger.warn('📊 Analyzing current bundle...\n');
 
     if (!fs.existsSync(this.buildDir)) {
-      // console.error('❌ Build directory not found. Run npm run build first.');
+      // logger.error('❌ Build directory not found. Run npm run build first.');
       process.exit(1);
     }
 
@@ -35,7 +58,7 @@ class BundleOptimizer {
   }
 
   scanChunks() {
-    // console.warn('🔍 Scanning build artifacts...');
+    // logger.warn('🔍 Scanning build artifacts...');
 
     try {
       const chunksDir = path.join(this.staticDir, 'chunks');
@@ -77,7 +100,7 @@ const stats = fs.statSync(filePath);
         });
       }
     } catch (_error) {
-      // console.error('Error scanning chunks:', error.message);
+      // logger.error('Error scanning chunks:', error.message);
     }
   }
 
@@ -91,7 +114,7 @@ const stats = fs.statSync(filePath);
   }
 
   analyzeChunks() {
-    // console.warn('📈 Analyzing chunk sizes...');
+    // logger.warn('📈 Analyzing chunk sizes...');
 
     // Sort by size
     this.chunks.sort((a, b) => b.size - a.size);
@@ -106,7 +129,7 @@ const stats = fs.statSync(filePath);
   }
 
   generateRecommendations() {
-    // console.warn('💡 Generating optimization recommendations...');
+    // logger.warn('💡 Generating optimization recommendations...');
 
     // Bundle size recommendations
     if (this.totalSize > MAX_BUNDLE_SIZE) {
@@ -180,51 +203,51 @@ const cssSize = cssChunks.reduce((sum, chunk) => sum + chunk.size, 0);
   }
 
   printReport() {
-    // console.warn('\n📋 BUNDLE OPTIMIZATION REPORT');
-    // console.warn('====================================\n');
+    // logger.warn('\n📋 BUNDLE OPTIMIZATION REPORT');
+    // logger.warn('====================================\n');
 
     // Summary
-    // console.warn('📊 SUMMARY');
-    // console.warn(`Total Bundle Size: ${this.formatSize(this.totalSize)}`);
-    // console.warn(`Target Size: ${this.formatSize(MAX_BUNDLE_SIZE)}`);
-    // console.warn(`Status: ${this.totalSize <= MAX_BUNDLE_SIZE ? '✅ OPTIMAL' : '❌ NEEDS OPTIMIZATION'}`);
-    // console.warn(`Chunks Analyzed: ${this.chunks.length}`);
-    // console.warn('');
+    // logger.warn('📊 SUMMARY');
+    // logger.warn(`Total Bundle Size: ${this.formatSize(this.totalSize)}`);
+    // logger.warn(`Target Size: ${this.formatSize(MAX_BUNDLE_SIZE)}`);
+    // logger.warn(`Status: ${this.totalSize <= MAX_BUNDLE_SIZE ? '✅ OPTIMAL' : '❌ NEEDS OPTIMIZATION'}`);
+    // logger.warn(`Chunks Analyzed: ${this.chunks.length}`);
+    // logger.warn('');
 
     // Top chunks
-    // console.warn('🏆 LARGEST CHUNKS');
-    // console.warn('─'.repeat(50));
+    // logger.warn('🏆 LARGEST CHUNKS');
+    // logger.warn('─'.repeat(50));
     // this.chunks.slice(0, 10).forEach((chunk, index) => {
     //   const status = chunk.size > LARGE_CHUNK_THRESHOLD ? '🔴' : '🟢';
-    //   console.warn(`${index + 1}. ${status} ${chunk.name} - ${this.formatSize(chunk.size)} (${chunk.type})`);
+    //   logger.warn(`${index + 1}. ${status} ${chunk.name} - ${this.formatSize(chunk.size)} (${chunk.type})`);
     // });
-    // console.warn('');
+    // logger.warn('');
 
     // Recommendations
     // if (this.recommendations.length > 0) {
-    //   console.warn('💡 OPTIMIZATION RECOMMENDATIONS');
-    //   console.warn('─'.repeat(50));
+    //   logger.warn('💡 OPTIMIZATION RECOMMENDATIONS');
+    //   logger.warn('─'.repeat(50));
 
     //   this.recommendations.forEach((rec, index) => {
     //     const priorityIcon = rec.priority === 'HIGH' ? '🔥' : rec.priority === 'MEDIUM' ? '⚠️' : '💡';
-    //     console.warn(`${index + 1}. ${priorityIcon} [${rec.priority}] ${rec.category}`);
-    //     console.warn(`   Issue: ${rec.issue}`);
-    //     console.warn(`   Solution: ${rec.solution}`);
-    //     console.warn(`   Actions:`);
-    //     rec.actions.forEach(action => console.warn(`   • ${action}`));
-    //     console.warn('');
+    //     logger.warn(`${index + 1}. ${priorityIcon} [${rec.priority}] ${rec.category}`);
+    //     logger.warn(`   Issue: ${rec.issue}`);
+    //     logger.warn(`   Solution: ${rec.solution}`);
+    //     logger.warn(`   Actions:`);
+    //     rec.actions.forEach(action => logger.warn(`   • ${action}`));
+    //     logger.warn('');
     //   });
     // }
 
     // Next steps
-    // console.warn('🎯 NEXT STEPS');
-    // console.warn('─'.repeat(50));
-    // console.warn('1. Run: npm run optimize');
-    // console.warn('2. Implement dynamic imports for large components');
-    // console.warn('3. Use React.lazy() for non-critical features');
-    // console.warn('4. Run: npm run build:analyze for detailed analysis');
-    // console.warn('5. Monitor bundle size in CI/CD');
-    // console.warn('');
+    // logger.warn('🎯 NEXT STEPS');
+    // logger.warn('─'.repeat(50));
+    // logger.warn('1. Run: npm run optimize');
+    // logger.warn('2. Implement dynamic imports for large components');
+    // logger.warn('3. Use React.lazy() for non-critical features');
+    // logger.warn('4. Run: npm run build:analyze for detailed analysis');
+    // logger.warn('5. Monitor bundle size in CI/CD');
+    // logger.warn('');
 
     // Write JSON report
     const report = {
@@ -241,7 +264,7 @@ const cssSize = cssChunks.reduce((sum, chunk) => sum + chunk.size, 0);
       'bundle-optimization-report.json',
       JSON.stringify(report, null, 2),
     );
-    // console.warn('📁 Detailed report saved to: bundle-optimization-report.json');
+    // logger.warn('📁 Detailed report saved to: bundle-optimization-report.json');
   }
 
   formatSize(bytes) {
@@ -260,3 +283,18 @@ if (require.main === module) {
 }
 
 module.exports = BundleOptimizer;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

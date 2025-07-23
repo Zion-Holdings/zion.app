@@ -1,4 +1,15 @@
-# Sentry Error Monitoring (Optional)
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      # Sentry Error Monitoring (Optional)
 # NEXT_PUBLIC_SENTRY_DSN=https://your-sentry-dsn@sentry.io/project-id
 
 # Reown Wallet Integration (Optional) 
@@ -168,3 +179,25 @@ module.exports = {
   validateAuth0Domain,
   isPlaceholderValue
 };
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

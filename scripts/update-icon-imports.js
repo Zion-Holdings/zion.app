@@ -1,13 +1,15 @@
 
-/**
- * Helper script to update icon imports across the codebase
- * 
- * Usage:
- * 1. Run: node scripts/update-icon-imports.js
- * 2. This will find and replace lucide-react icon imports with imports from our custom icons package
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
 
-const fs = require('fs')
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const fs = require('fs')
 const glob = require('glob');
 // Helper to replace imports in a file
 function updateIconImportsInFile(filePath) {
@@ -29,9 +31,31 @@ function updateIconImportsInFile(filePath) {
 }
 
 // Find all TypeScript/JavaScript/JSX/TSX files
-const files = glob.sync('src/**/*.{js,jsx,ts,tsx});let _updatedFiles = 0;
+const files = glob.sync('src*.{js,jsx,ts,tsx});let _updatedFiles = 0;
 
 files.forEach(file => {
   const updated = updateIconImportsInFile(file);
   if (updated) _updatedFiles++;
 });
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

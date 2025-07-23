@@ -420,14 +420,17 @@ const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
       `🔄 Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts}`,
     );
 
-    setTimeout(async () => {
+    
+const timeoutId = setTimeout(async () => {
       try {
         await this.initializeConnection();
       } catch (error) {
         this.logger.error(`Reconnection failed: ${error.message}`);
         this.reconnect();
       }
-    }, this.reconnectDelay);
+    },  this.reconnectDelay);
+// Store timeoutId for cleanup if needed
+;
   }
 
   cleanup() {

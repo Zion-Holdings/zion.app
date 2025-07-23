@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App Self-Healing System Status Script
 # Shows the status of all monitoring and healing systems
@@ -110,4 +121,26 @@ elif [ "$HEALTH_RUNNING" = true ] || [ "$BUILD_RUNNING" = true ] || [ "$HEALING_
 else
     echo "❌ All systems are down"
     exit 1
-fi 
+fi
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

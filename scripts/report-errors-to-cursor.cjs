@@ -1,8 +1,16 @@
-#!/usr/bin/env node
-/*
- * Summarise latest Jest JSON report and send to Cursor API for automated fixing.
- * Requires env vars: CURSOR_API_KEY, CURSOR_PROJECT_ID
- */
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
 const fs = require('fs')
 const path = require('path')
 const _fetch = require('node-fetch')
@@ -76,3 +84,39 @@ const apiKey = process.env.CURSOR_API_KEY;
 }
 
 main();
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

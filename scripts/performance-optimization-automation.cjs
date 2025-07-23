@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -76,11 +99,11 @@ class PerformanceOptimizationAgent extends EventEmitter {
 
   async start() {
     if (this.state.isRunning) {
-      console.log('⚠️ Performance agent is already running');
+      logger.info('⚠️ Performance agent is already running');
       return;
     }
     
-    console.log('🚀 Starting Performance Optimization Agent...');
+    logger.info('🚀 Starting Performance Optimization Agent...');
     this.state.isRunning = true;
     
     // Start monitoring
@@ -89,24 +112,24 @@ class PerformanceOptimizationAgent extends EventEmitter {
     // Initial performance analysis
     await this.performInitialAnalysis();
     
-    console.log('✅ Performance Optimization Agent started');
+    logger.info('✅ Performance Optimization Agent started');
     this.emit('started');
   }
 
   async stop() {
     if (!this.state.isRunning) {
-      console.log('⚠️ Performance agent is not running');
+      logger.info('⚠️ Performance agent is not running');
       return;
     }
     
-    console.log('🛑 Stopping Performance Optimization Agent...');
+    logger.info('🛑 Stopping Performance Optimization Agent...');
     this.state.isRunning = false;
     
     if (this.monitoringInterval) {
       clearInterval(this.monitoringInterval);
     }
     
-    console.log('✅ Performance Optimization Agent stopped');
+    logger.info('✅ Performance Optimization Agent stopped');
     this.emit('stopped');
   }
 
@@ -120,7 +143,7 @@ class PerformanceOptimizationAgent extends EventEmitter {
   }
 
   async performInitialAnalysis() {
-    console.log('🔍 Performing initial performance analysis...');
+    logger.info('🔍 Performing initial performance analysis...');
     
     try {
       // Collect baseline metrics
@@ -137,15 +160,15 @@ class PerformanceOptimizationAgent extends EventEmitter {
         await this.applyOptimizations(plan.optimizations);
       }
       
-      console.log('✅ Initial analysis completed');
+      logger.info('✅ Initial analysis completed');
       
     } catch (error) {
-      console.error('❌ Initial analysis failed:', error.message);
+      logger.error('❌ Initial analysis failed:', error.message);
     }
   }
 
   async collectMetrics() {
-    console.log('📊 Collecting performance metrics...');
+    logger.info('📊 Collecting performance metrics...');
     
     const metrics = {
       timestamp: Date.now(),
@@ -179,10 +202,10 @@ class PerformanceOptimizationAgent extends EventEmitter {
         this.state.historicalMetrics = this.state.historicalMetrics.slice(-100);
       }
       
-      console.log('✅ Metrics collected successfully');
+      logger.info('✅ Metrics collected successfully');
       
     } catch (error) {
-      console.error('❌ Failed to collect metrics:', error.message);
+      logger.error('❌ Failed to collect metrics:', error.message);
     }
   }
 
@@ -210,7 +233,10 @@ class PerformanceOptimizationAgent extends EventEmitter {
         });
       });
       
-      req.setTimeout(10000, () => {
+      req.
+const timeoutId = setTimeout(10000,  ();
+// Store timeoutId for cleanup if needed
+ => {
         req.destroy();
         resolve({
           responseTime: -1,
@@ -295,7 +321,7 @@ class PerformanceOptimizationAgent extends EventEmitter {
   }
 
   async analyzePerformance() {
-    console.log('🔍 Analyzing performance metrics...');
+    logger.info('🔍 Analyzing performance metrics...');
     
     const issues = [];
     const optimizations = [];
@@ -373,15 +399,15 @@ class PerformanceOptimizationAgent extends EventEmitter {
         await this.applyOptimizations(optimizations);
       }
       
-      console.log(`✅ Performance analysis completed: ${issues.length} issues, ${optimizations.length} optimizations`);
+      logger.info(`✅ Performance analysis completed: ${issues.length} issues, ${optimizations.length} optimizations`);
       
     } catch (error) {
-      console.error('❌ Performance analysis failed:', error.message);
+      logger.error('❌ Performance analysis failed:', error.message);
     }
   }
 
   async runPerformanceAudit() {
-    console.log('🔍 Running comprehensive performance audit...');
+    logger.info('🔍 Running comprehensive performance audit...');
     
     const audit = {
       timestamp: Date.now(),
@@ -406,10 +432,10 @@ class PerformanceOptimizationAgent extends EventEmitter {
       audit.issues.push(...dependencyAnalysis.issues);
       audit.recommendations.push(...dependencyAnalysis.recommendations);
       
-      console.log(`✅ Performance audit completed: ${audit.issues.length} issues, ${audit.recommendations.length} recommendations`);
+      logger.info(`✅ Performance audit completed: ${audit.issues.length} issues, ${audit.recommendations.length} recommendations`);
       
     } catch (error) {
-      console.error('❌ Performance audit failed:', error.message);
+      logger.error('❌ Performance audit failed:', error.message);
     }
     
     return audit;
@@ -454,7 +480,7 @@ class PerformanceOptimizationAgent extends EventEmitter {
       }
       
     } catch (error) {
-      console.warn('⚠️ Bundle analysis failed:', error.message);
+      logger.warn('⚠️ Bundle analysis failed:', error.message);
     }
     
     return analysis;
@@ -488,7 +514,7 @@ class PerformanceOptimizationAgent extends EventEmitter {
       }
       
     } catch (error) {
-      console.warn('⚠️ Code performance analysis failed:', error.message);
+      logger.warn('⚠️ Code performance analysis failed:', error.message);
     }
     
     return analysis;
@@ -598,14 +624,14 @@ class PerformanceOptimizationAgent extends EventEmitter {
       }
       
     } catch (error) {
-      console.warn('⚠️ Dependency analysis failed:', error.message);
+      logger.warn('⚠️ Dependency analysis failed:', error.message);
     }
     
     return analysis;
   }
 
   async generateOptimizationPlan(audit) {
-    console.log('📋 Generating optimization plan...');
+    logger.info('📋 Generating optimization plan...');
     
     const plan = {
       timestamp: Date.now(),
@@ -625,10 +651,10 @@ class PerformanceOptimizationAgent extends EventEmitter {
       // Limit optimizations per run
       plan.optimizations = plan.optimizations.slice(0, this.config.optimization.maxOptimizationsPerRun);
       
-      console.log(`✅ Optimization plan generated: ${plan.optimizations.length} optimizations`);
+      logger.info(`✅ Optimization plan generated: ${plan.optimizations.length} optimizations`);
       
     } catch (error) {
-      console.error('❌ Failed to generate optimization plan:', error.message);
+      logger.error('❌ Failed to generate optimization plan:', error.message);
     }
     
     return plan;
@@ -650,7 +676,7 @@ class PerformanceOptimizationAgent extends EventEmitter {
       };
       
     } catch (error) {
-      console.warn('⚠️ Failed to create optimization:', error.message);
+      logger.warn('⚠️ Failed to create optimization:', error.message);
       return null;
     }
   }
@@ -675,7 +701,10 @@ Provide a specific code change or configuration update to implement this optimiz
       `;
       
       // Simulate AI response
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
       
       return {
         code: '// AI-generated optimization code would go here',
@@ -684,7 +713,7 @@ Provide a specific code change or configuration update to implement this optimiz
       };
       
     } catch (error) {
-      console.warn('⚠️ AI optimization generation failed:', error.message);
+      logger.warn('⚠️ AI optimization generation failed:', error.message);
       return null;
     }
   }
@@ -713,7 +742,7 @@ Provide a specific code change or configuration update to implement this optimiz
       return optimization;
       
     } catch (error) {
-      console.warn('⚠️ Failed to generate optimization:', error.message);
+      logger.warn('⚠️ Failed to generate optimization:', error.message);
       return null;
     }
   }
@@ -721,13 +750,13 @@ Provide a specific code change or configuration update to implement this optimiz
   async applyOptimizations(optimizations) {
     if (!this.config.optimization.autoApply) return;
     
-    console.log(`🔧 Applying ${optimizations.length} optimizations...`);
+    logger.info(`🔧 Applying ${optimizations.length} optimizations...`);
     
     for (const optimization of optimizations) {
       try {
         await this.applyOptimization(optimization);
       } catch (error) {
-        console.warn(`⚠️ Failed to apply optimization ${optimization.id}:`, error.message);
+        logger.warn(`⚠️ Failed to apply optimization ${optimization.id}:`, error.message);
         
         // Rollback if enabled
         if (this.config.optimization.rollbackOnFailure) {
@@ -738,7 +767,7 @@ Provide a specific code change or configuration update to implement this optimiz
   }
 
   async applyOptimization(optimization) {
-    console.log(`🔧 Applying optimization: ${optimization.description}`);
+    logger.info(`🔧 Applying optimization: ${optimization.description}`);
     
     // Create backup if enabled
     if (this.config.optimization.backupChanges) {
@@ -757,18 +786,18 @@ Provide a specific code change or configuration update to implement this optimiz
         await this.optimizeCode(optimization);
         break;
       default:
-        console.log(`⚠️ Unknown optimization type: ${optimization.type}`);
+        logger.info(`⚠️ Unknown optimization type: ${optimization.type}`);
     }
     
     // Update state
     this.state.optimizationsApplied++;
     
-    console.log(`✅ Optimization applied: ${optimization.description}`);
+    logger.info(`✅ Optimization applied: ${optimization.description}`);
   }
 
   async optimizeBundleSize(optimization) {
     // Implement bundle size optimization
-    console.log('📦 Optimizing bundle size...');
+    logger.info('📦 Optimizing bundle size...');
     
     // This would include:
     // - Code splitting
@@ -779,7 +808,7 @@ Provide a specific code change or configuration update to implement this optimiz
 
   async optimizeEndpointPerformance(optimization) {
     // Implement endpoint performance optimization
-    console.log('⚡ Optimizing endpoint performance...');
+    logger.info('⚡ Optimizing endpoint performance...');
     
     // This would include:
     // - Caching strategies
@@ -790,7 +819,7 @@ Provide a specific code change or configuration update to implement this optimiz
 
   async optimizeCode(optimization) {
     // Implement code optimization
-    console.log('🔧 Optimizing code...');
+    logger.info('🔧 Optimizing code...');
     
     // This would include:
     // - Algorithm improvements
@@ -801,12 +830,12 @@ Provide a specific code change or configuration update to implement this optimiz
 
   async createBackup(optimization) {
     // Create backup of affected files
-    console.log('💾 Creating backup...');
+    logger.info('💾 Creating backup...');
   }
 
   async rollbackOptimization(optimization) {
     // Rollback optimization if it fails
-    console.log('🔄 Rolling back optimization...');
+    logger.info('🔄 Rolling back optimization...');
   }
 
   getStatus() {
@@ -838,13 +867,13 @@ if (require.main === module) {
       agent.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(agent.getStatus(), null, 2));
+      logger.info(JSON.stringify(agent.getStatus(), null, 2));
       break;
     case 'analyze':
       agent.analyzePerformance();
       break;
     default:
-      console.log('Usage: node performance-optimization-automation.cjs [start|stop|status|analyze]');
+      logger.info('Usage: node performance-optimization-automation.cjs [start|stop|status|analyze]');
       break;
   }
 } 

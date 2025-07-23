@@ -1,4 +1,15 @@
-#!/bin/bash
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      #!/bin/bash
 
 # Zion App Self-Healing System Stop Script
 # Stops all monitoring and healing systems
@@ -52,4 +63,26 @@ echo ""
 echo "📊 Final Status:"
 echo "Health Monitor: $(pgrep -f "health-monitor.cjs" >/dev/null && echo "❌ Still running" || echo "✅ Stopped")"
 echo "Build Monitor: $(pgrep -f "build-monitor.cjs" >/dev/null && echo "❌ Still running" || echo "✅ Stopped")"
-echo "Self-Healing: $(pgrep -f "self-healing.cjs" >/dev/null && echo "❌ Still running" || echo "✅ Stopped")" 
+echo "Self-Healing: $(pgrep -f "self-healing.cjs" >/dev/null && echo "❌ Still running" || echo "✅ Stopped")"
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

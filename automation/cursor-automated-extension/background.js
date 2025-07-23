@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 /**
  * Cursor Automated Extension Background Script
  * 
@@ -15,7 +38,7 @@ class CursorExtensionBackground {
   }
 
   async initialize() {
-    console.log('🚀 Initializing Cursor Extension Background...');
+    logger.info('🚀 Initializing Cursor Extension Background...');
     
     try {
       // Set up message listeners
@@ -25,10 +48,10 @@ class CursorExtensionBackground {
       this.startBackgroundProcessing();
       
       this.isActive = true;
-      console.log('✅ Cursor Extension Background initialized');
+      logger.info('✅ Cursor Extension Background initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize extension background:', error);
+      logger.error('❌ Failed to initialize extension background:', error);
       throw error;
     }
   }
@@ -92,12 +115,12 @@ class CursorExtensionBackground {
     const issues = [];
 
     // Check for console.log in production code
-    if (content.includes('console.log(')) {
+    if (content.includes('logger.info(')) {
       issues.push({
         type: debug_code',
         message: Console.log statement found',
         severity: low',
-        line: this.findLineNumber(content, console.log(')
+        line: this.findLineNumber(content, logger.info(')
       });
     }
 
@@ -251,10 +274,10 @@ class CursorExtensionBackground {
         applied: true
       });
 
-      console.log(`✅ Applied improvement to ${data.file}`);
+      logger.info(`✅ Applied improvement to ${data.file}`);
     } catch (error) {
       result.error = error.message;
-      console.error(`❌ Failed to apply improvement: ${error.message}`);
+      logger.error(`❌ Failed to apply improvement: ${error.message}`);
     }
 
     return result;
@@ -272,7 +295,7 @@ class CursorExtensionBackground {
   async processAnalysisQueue() {
     if (this.analysisQueue.length === 0) return;
 
-    console.log(`🔄 Processing ${this.analysisQueue.length} items in analysis queue`);
+    logger.info(`🔄 Processing ${this.analysisQueue.length} items in analysis queue`);
 
     while (this.analysisQueue.length > 0) {
       const item = this.analysisQueue.shift();
@@ -286,7 +309,7 @@ class CursorExtensionBackground {
           analysis
         });
       } catch (error) {
-        console.error('Error processing analysis item:', error);
+        logger.error('Error processing analysis item:', error);
       }
     }
   }
@@ -307,7 +330,7 @@ class CursorExtensionBackground {
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Extension Background...');
+    logger.info('🛑 Stopping Cursor Extension Background...');
     this.isActive = false;
   }
 }
@@ -315,16 +338,16 @@ class CursorExtensionBackground {
 // Initialize the background script
 const background = new CursorExtensionBackground();
 background.initialize().catch(error => {
-  console.error('Failed to initialize background script:', error);
+  logger.error('Failed to initialize background script:', error);
 });
 
 // Handle extension lifecycle
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('Cursor Automated Extension installed');
+  logger.info('Cursor Automated Extension installed');
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  console.log('Cursor Automated Extension started');
+  logger.info('Cursor Automated Extension started');
 });
 
 // Export for testing

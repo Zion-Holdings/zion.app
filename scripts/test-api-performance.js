@@ -1,15 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * API Performance Test Script
- * 
- * Tests the problematic API endpoints mentioned in issue #16:
- * - /api/categories
- * - /api/blog
- * - /api/jobs
- * 
- * Measures response times and validates caching behavior
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const https = require('http');const { performance: _performance } = require('perf_hooks')
 const _BASE_URL = http://localhost:3000';const TIMEOUT_THRESHOLD = 5000; // 5 seconds (much less than 30s mentioned in issue)
@@ -39,9 +41,7 @@ const TEST_ENDPOINTS = [
     method: GET'  }
 ];
 
-/**
- * Make HTTP request with timeout
- */
+
 function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
   return new Promise((resolve, reject) => {
     const startTime = _performance.now()
@@ -102,9 +102,7 @@ const responseTime = endTime - startTime;
   });
 }
 
-/**
- * Test a single endpoint
- */
+
 async function testEndpoint(endpoint) {
   // console.warn(`\n🧪 Testing: ${endpoint.name}`);
   // console.warn(`   URL: ${endpoint.path}`)
@@ -140,7 +138,10 @@ const coldTest = {
     }
     
     // Test 2: Warm request (should be cached)
-    // console.warn('   🔄 Warm request (should be cached)...');    await new Promise(resolve => setTimeout(resolve, 100)); // Small delay
+    // console.warn('   🔄 Warm request (should be cached)...');    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  100);
+// Store timeoutId for cleanup if needed
+); // Small delay
     
     const warmResult = await makeRequest(endpoint)
 const warmTest = {
@@ -172,9 +173,7 @@ const warmTest = {
   return results;
 }
 
-/**
- * Run all performance tests
- */
+
 async function runPerformanceTests() {
   // console.warn('🚀 API Performance Test Suite');  // console.warn('================================');  // console.warn(`Testing against: ${BASE_URL}`);
   // console.warn(`Timeout threshold: ${TIMEOUT_THRESHOLD}ms`);
@@ -186,7 +185,10 @@ const allResults = [];
     allResults.push(result);
     
     // Small delay between tests
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  200);
+// Store timeoutId for cleanup if needed
+);
   }
   
   // Summary
@@ -248,9 +250,7 @@ const allResults = [];
   };
 }
 
-/**
- * Check if server is running
- */
+
 async function checkServer() {
   try {
     await makeRequest({ path: /api/health', method: GET' }, 2000);    return true;
@@ -286,3 +286,38 @@ module.exports = {
   testEndpoint,
   makeRequest
 }; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

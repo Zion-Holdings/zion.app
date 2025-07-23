@@ -1,9 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * Search Functionality Test Script
- * Tests the search API and basic functionality after bug fixes
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const { _spawn } = require('child_process');
 
@@ -141,3 +149,25 @@ async function runTests() {
 
 // Run the tests
 runTests().catch(console.error);
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

@@ -1,4 +1,15 @@
-@echo off
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      @echo off
 setlocal enabledelayedexpansion
 
 REM Automated Chat Reconnection System Startup Script
@@ -304,4 +315,26 @@ echo   %0 install
 exit /b 1
 
 :end
-endlocal 
+endlocal
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

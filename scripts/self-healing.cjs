@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -106,7 +129,7 @@ class SelfHealingSystem {
 const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
 
     // Console output
-    console.log(logEntry.trim());
+    logger.info(logEntry.trim());
 
     // File logging
     const logPath =
@@ -694,7 +717,10 @@ const oneHourAgo = Date.now() - 60 * 60 * 1000;
   }
 
   sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 
   stop() {
@@ -729,7 +755,7 @@ if (require.main === module) {
 
   // Start the system
   healingSystem.start().catch((error) => {
-    console.error('Failed to start self-healing system:', error);
+    logger.error('Failed to start self-healing system:', error);
     process.exit(1);
   });
 }

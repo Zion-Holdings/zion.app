@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -26,7 +49,7 @@ const colors = {
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
+    logger.info(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
   }
 
   async startProcess(name, command, args = []) {
@@ -53,8 +76,11 @@ const colors = {
 
         // Auto-restart critical processes
         if (this.isRunning && this.autoRestartEnabled) {
-          setTimeout(() => {
-            this.log(`🔄 Auto-restarting ${name}...`, 'warning');
+          
+const timeoutId = setTimeout(() => {
+            this.log(`🔄 Auto-restarting ${name}...`,  'warning');
+// Store timeoutId for cleanup if needed
+;
             this.startProcess(name, command, args);
           }, 5000);
         }
@@ -121,7 +147,10 @@ const colors = {
 
     for (const proc of processes) {
       await this.startProcess(proc.name, proc.command, proc.args);
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Stagger starts
+      await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+); // Stagger starts
     }
 
     this.log(

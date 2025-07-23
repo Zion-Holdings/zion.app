@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -36,7 +59,7 @@ class AutomationManager {
     const args = process.argv.slice(2);
     const command = args[0];
 
-    console.log('🤖 Zion App - Unified Automation Manager\n');
+    logger.info('🤖 Zion App - Unified Automation Manager\n');
 
     switch (command) {
       case start':
@@ -79,12 +102,12 @@ class AutomationManager {
    * Start the automation system
    */
   async startSystem() {
-    console.log('🚀 Starting Zion App Automation System...\n');
+    logger.info('🚀 Starting Zion App Automation System...\n');
 
     try {
       // Check if system is already running
       if (await this.isSystemRunning()) {
-        console.log('⚠️  Automation system is already running');
+        logger.info('⚠️  Automation system is already running');
         return;
       }
 
@@ -99,27 +122,27 @@ class AutomationManager {
       this.processes.set('automation', automationProcess);
 
       automationProcess.stdout.on('data', (data) => {
-        console.log(`[AUTOMATION] ${data.toString().trim()}`);
+        logger.info(`[AUTOMATION] ${data.toString().trim()}`);
       });
 
       automationProcess.stderr.on('data', (data) => {
-        console.error(`[AUTOMATION ERROR] ${data.toString().trim()}`);
+        logger.error(`[AUTOMATION ERROR] ${data.toString().trim()}`);
       });
 
       automationProcess.on('close', (code) => {
-        console.log(`[AUTOMATION] Process exited with code ${code}`);
+        logger.info(`[AUTOMATION] Process exited with code ${code}`);
         this.processes.delete('automation');
       });
 
       // Wait for system to start
       await this.waitForSystemStart();
 
-      console.log('✅ Automation system started successfully');
-      console.log(`📊 Dashboard available at: http://localhost:${this.config.port}`);
-      console.log(`🔗 API available at: http://localhost:${this.config.port}/api`);
+      logger.info('✅ Automation system started successfully');
+      logger.info(`📊 Dashboard available at: http://localhost:${this.config.port}`);
+      logger.info(`🔗 API available at: http://localhost:${this.config.port}/api`);
 
     } catch (error) {
-      console.error('❌ Failed to start automation system:', error.message);
+      logger.error('❌ Failed to start automation system:', error.message);
       process.exit(1);
     }
   }
@@ -128,7 +151,7 @@ class AutomationManager {
    * Stop the automation system
    */
   async stopSystem() {
-    console.log('🛑 Stopping Zion App Automation System...\n');
+    logger.info('🛑 Stopping Zion App Automation System...\n');
 
     try {
       // Stop automation process
@@ -141,10 +164,10 @@ class AutomationManager {
       // Kill any remaining processes
       await this.killRemainingProcesses();
 
-      console.log('✅ Automation system stopped successfully');
+      logger.info('✅ Automation system stopped successfully');
 
     } catch (error) {
-      console.error('❌ Failed to stop automation system:', error.message);
+      logger.error('❌ Failed to stop automation system:', error.message);
     }
   }
 
@@ -152,10 +175,13 @@ class AutomationManager {
    * Restart the automation system
    */
   async restartSystem() {
-    console.log('🔄 Restarting Zion App Automation System...\n');
+    logger.info('🔄 Restarting Zion App Automation System...\n');
     
     await this.stopSystem();
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  2000);
+// Store timeoutId for cleanup if needed
+); // Wait 2 seconds
     await this.startSystem();
   }
 
@@ -163,41 +189,41 @@ class AutomationManager {
    * Show system status
    */
   async showStatus() {
-    console.log('📊 Zion App Automation System Status\n');
+    logger.info('📊 Zion App Automation System Status\n');
 
     try {
       // Check if system is running
       const isRunning = await this.isSystemRunning();
-      console.log(`System Status: ${isRunning ? 🟢 Running' : 🔴 Stopped'}`);
+      logger.info(`System Status: ${isRunning ? 🟢 Running' : 🔴 Stopped'}`);
 
       if (isRunning) {
         // Get system status from API
         const response = await fetch(`http://localhost:${this.config.port}/api/status`)
         const data = await response.json();
 
-        console.log('\n📈 System Metrics:');
-        console.log(`  Total Tasks: ${data.system.totalTasks}`);
-        console.log(`  Successful Tasks: ${data.system.successfulTasks}`);
-        console.log(`  Failed Tasks: ${data.system.failedTasks}`);
-        console.log(`  Queue Length: ${data.queueLength}`);
-        console.log(`  Active Tasks: ${data.currentTasks.length}`);
+        logger.info('\n📈 System Metrics:');
+        logger.info(`  Total Tasks: ${data.system.totalTasks}`);
+        logger.info(`  Successful Tasks: ${data.system.successfulTasks}`);
+        logger.info(`  Failed Tasks: ${data.system.failedTasks}`);
+        logger.info(`  Queue Length: ${data.queueLength}`);
+        logger.info(`  Active Tasks: ${data.currentTasks.length}`);
 
         if (data.system.uptime) {
           const hours = Math.floor(data.system.uptime / 3600000)
           const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
-          console.log(`  Uptime: ${hours}h ${minutes}m`);
+          logger.info(`  Uptime: ${hours}h ${minutes}m`);
         }
 
-        console.log('\n🔄 Current Tasks:');
+        logger.info('\n🔄 Current Tasks:');
         if (data.currentTasks.length === 0) {
-          console.log('  No active tasks');
+          logger.info('  No active tasks');
         } else {
           data.currentTasks.forEach(task => {
-            console.log(`  • ${task.type} (${task.priority} priority)`);
+            logger.info(`  • ${task.type} (${task.priority} priority)`);
           });
         }
 
-        console.log('\n📋 Recent Activity:')
+        logger.info('\n📋 Recent Activity:')
         const recentTasks = [...data.completedTasks, ...data.failedTasks]
           .sort((a, b) => b.completedAt - a.completedAt)
           .slice(0, 5);
@@ -205,15 +231,15 @@ class AutomationManager {
         recentTasks.forEach(task => {
           const status = task.status === completed' ? ✅' : ❌';
           const time = new Date(task.completedAt).toLocaleTimeString();
-          console.log(`  ${status} ${task.type} - ${time}`);
+          logger.info(`  ${status} ${task.type} - ${time}`);
         });
 
       } else {
-        console.log('\n💡 To start the system, run: npm run automation:start');
+        logger.info('\n💡 To start the system, run: npm run automation:start');
       }
 
     } catch (error) {
-      console.error('❌ Failed to get system status:', error.message);
+      logger.error('❌ Failed to get system status:', error.message);
     }
   }
 
@@ -221,7 +247,7 @@ class AutomationManager {
    * Show system logs
    */
   async showLogs() {
-    console.log('📝 Zion App Automation System Logs\n');
+    logger.info('📝 Zion App Automation System Logs\n');
 
     try {
       const logFile = path.join(this.config.logsDir, automation.log');
@@ -234,17 +260,17 @@ class AutomationManager {
         const recentLogs = lines.slice(-50);
         
         recentLogs.forEach(line => {
-          console.log(line);
+          logger.info(line);
         });
         
-        console.log(`\n📄 Showing last ${recentLogs.length} log entries`);
-        console.log(`📁 Full log file: ${logFile}`);
+        logger.info(`\n📄 Showing last ${recentLogs.length} log entries`);
+        logger.info(`📁 Full log file: ${logFile}`);
       } else {
-        console.log('📄 No log file found');
+        logger.info('📄 No log file found');
       }
 
     } catch (error) {
-      console.error('❌ Failed to read logs:', error.message);
+      logger.error('❌ Failed to read logs:', error.message);
     }
   }
 
@@ -252,15 +278,18 @@ class AutomationManager {
    * Open the dashboard
    */
   async openDashboard() {
-    console.log('🌐 Opening Automation Dashboard...\n')
+    logger.info('🌐 Opening Automation Dashboard...\n')
     const dashboardUrl = `http://localhost:${this.config.port}`;
     
     try {
       // Check if system is running
       if (!(await this.isSystemRunning())) {
-        console.log('⚠️  Automation system is not running. Starting...');
+        logger.info('⚠️  Automation system is not running. Starting...');
         await this.startSystem();
-        await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for startup
+        await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  3000);
+// Store timeoutId for cleanup if needed
+); // Wait for startup
       }
 
       // Open dashboard in default browser
@@ -279,11 +308,11 @@ class AutomationManager {
       }
 
       execSync(`${command} ${dashboardUrl}`);
-      console.log(`✅ Dashboard opened: ${dashboardUrl}`);
+      logger.info(`✅ Dashboard opened: ${dashboardUrl}`);
 
     } catch (error) {
-      console.error('❌ Failed to open dashboard:', error.message);
-      console.log(`📊 Manual access: ${dashboardUrl}`);
+      logger.error('❌ Failed to open dashboard:', error.message);
+      logger.info(`📊 Manual access: ${dashboardUrl}`);
     }
   }
 
@@ -291,7 +320,7 @@ class AutomationManager {
    * Run automation tests
    */
   async runTests() {
-    console.log('🧪 Running Automation System Tests...\n');
+    logger.info('🧪 Running Automation System Tests...\n');
 
     try {
       // Run test suite
@@ -302,15 +331,15 @@ class AutomationManager {
 
       testProcess.on('close', (code) => {
         if (code === 0) {
-          console.log('\n✅ All tests passed');
+          logger.info('\n✅ All tests passed');
         } else {
-          console.log('\n❌ Some tests failed');
+          logger.info('\n❌ Some tests failed');
           process.exit(code);
         }
       });
 
     } catch (error) {
-      console.error('❌ Failed to run tests:', error.message);
+      logger.error('❌ Failed to run tests:', error.message);
     }
   }
 
@@ -318,7 +347,7 @@ class AutomationManager {
    * Setup the automation system
    */
   async setupSystem() {
-    console.log('🔧 Setting up Zion App Automation System...\n');
+    logger.info('🔧 Setting up Zion App Automation System...\n');
 
     try {
       // Create required directories
@@ -332,11 +361,11 @@ class AutomationManager {
 
       for (const dir of dirs) {
         await fs.mkdir(dir, { recursive: true });
-        console.log(`✅ Created directory: ${dir}`);
+        logger.info(`✅ Created directory: ${dir}`);
       }
 
       // Install dependencies
-      console.log('\n📦 Installing dependencies...');
+      logger.info('\n📦 Installing dependencies...');
       execSync('npm install', { 
         stdio: inherit', 
         cwd: this.config.automationDir 
@@ -377,17 +406,17 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
 `;
 
         await fs.writeFile(envFile, envTemplate);
-        console.log('✅ Created environment file');
+        logger.info('✅ Created environment file');
       }
 
-      console.log('\n🎉 Setup completed successfully!');
-      console.log('\n📝 Next steps:');
-      console.log('  1. Edit the environment file with your API keys');
-      console.log('  2. Run: npm run automation:start');
-      console.log('  3. Open dashboard: npm run automation:dashboard');
+      logger.info('\n🎉 Setup completed successfully!');
+      logger.info('\n📝 Next steps:');
+      logger.info('  1. Edit the environment file with your API keys');
+      logger.info('  2. Run: npm run automation:start');
+      logger.info('  3. Open dashboard: npm run automation:dashboard');
 
     } catch (error) {
-      console.error('❌ Setup failed:', error.message);
+      logger.error('❌ Setup failed:', error.message);
     }
   }
 
@@ -395,7 +424,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
    * Cleanup system
    */
   async cleanup() {
-    console.log('🧹 Cleaning up Zion App Automation System...\n');
+    logger.info('🧹 Cleaning up Zion App Automation System...\n');
 
     try {
       // Stop all processes
@@ -406,7 +435,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
       for (const file of logFiles) {
         if (file.endsWith('.log')) {
           await fs.unlink(path.join(this.config.logsDir, file));
-          console.log(`🗑️  Deleted log file: ${file}`);
+          logger.info(`🗑️  Deleted log file: ${file}`);
         }
       }
 
@@ -416,14 +445,14 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
         const tempFiles = await fs.readdir(tempDir);
         for (const file of tempFiles) {
           await fs.unlink(path.join(tempDir, file));
-          console.log(`🗑️  Deleted temp file: ${file}`);
+          logger.info(`🗑️  Deleted temp file: ${file}`);
         }
       }
 
-      console.log('✅ Cleanup completed successfully');
+      logger.info('✅ Cleanup completed successfully');
 
     } catch (error) {
-      console.error('❌ Cleanup failed:', error.message);
+      logger.error('❌ Cleanup failed:', error.message);
     }
   }
 
@@ -431,25 +460,25 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
    * Show help information
    */
   showHelp() {
-    console.log('🤖 Zion App - Unified Automation Manager\n');
-    console.log('Usage: npm run automation <command>\n');
-    console.log('Commands:');
-    console.log('  start      Start the automation system');
-    console.log('  stop       Stop the automation system');
-    console.log('  restart    Restart the automation system');
-    console.log('  status     Show system status and metrics');
-    console.log('  logs       Show system logs');
-    console.log('  dashboard  Open the web dashboard');
-    console.log('  test       Run automation tests');
-    console.log('  setup      Setup the automation system');
-    console.log('  clean      Cleanup logs and temporary files');
-    console.log('  help       Show this help message\n');
-    console.log('Examples:');
-    console.log('  npm run automation:start');
-    console.log('  npm run automation:status');
-    console.log('  npm run automation:dashboard\n');
-    console.log('📊 Dashboard: http://localhost:3001');
-    console.log('📚 Documentation: See automation/README.md');
+    logger.info('🤖 Zion App - Unified Automation Manager\n');
+    logger.info('Usage: npm run automation <command>\n');
+    logger.info('Commands:');
+    logger.info('  start      Start the automation system');
+    logger.info('  stop       Stop the automation system');
+    logger.info('  restart    Restart the automation system');
+    logger.info('  status     Show system status and metrics');
+    logger.info('  logs       Show system logs');
+    logger.info('  dashboard  Open the web dashboard');
+    logger.info('  test       Run automation tests');
+    logger.info('  setup      Setup the automation system');
+    logger.info('  clean      Cleanup logs and temporary files');
+    logger.info('  help       Show this help message\n');
+    logger.info('Examples:');
+    logger.info('  npm run automation:start');
+    logger.info('  npm run automation:status');
+    logger.info('  npm run automation:dashboard\n');
+    logger.info('📊 Dashboard: http://localhost:3001');
+    logger.info('📚 Documentation: See automation/README.md');
   }
 
   /**
@@ -488,7 +517,10 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
         return true;
       }
       
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
       attempts++;
     }
 
@@ -524,7 +556,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
 if (require.main === module) {
   const manager = new AutomationManager();
   manager.run().catch(error => {
-    console.error('❌ Automation manager failed:', error.message);
+    logger.error('❌ Automation manager failed:', error.message);
     process.exit(1);
   });
 }

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -19,7 +42,7 @@ class CursorAutoSave {
   }
 
   start() {
-    console.log('🚀 Starting Cursor Auto-Save Automation...');
+    logger.info('🚀 Starting Cursor Auto-Save Automation...');
     this.isRunning = true;
     
     // Watch for file changes in the project
@@ -30,7 +53,7 @@ class CursorAutoSave {
       this.triggerAutoSave();
     }, 30000); // Every 30 seconds
     
-    console.log('✅ Cursor Auto-Save Automation is running');
+    logger.info('✅ Cursor Auto-Save Automation is running');
   }
 
   watchProjectFiles() {
@@ -76,9 +99,9 @@ class CursorAutoSave {
           this.onFileChange(fullPath, eventType);
         }
       });
-      console.log(`👀 Watching directory: ${dirPath}`);
+      logger.info(`👀 Watching directory: ${dirPath}`);
     } catch (error) {
-      console.log(`⚠️  Could not watch directory ${dirPath}: ${error.message}`);
+      logger.info(`⚠️  Could not watch directory ${dirPath}: ${error.message}`);
     }
   }
 
@@ -87,9 +110,9 @@ class CursorAutoSave {
       fs.watch(filePath, (eventType, filename) => {
         this.onFileChange(filePath, eventType);
       });
-      console.log(`👀 Watching file: ${filePath}`);
+      logger.info(`👀 Watching file: ${filePath}`);
     } catch (error) {
-      console.log(`⚠️  Could not watch file ${filePath}: ${error.message}`);
+      logger.info(`⚠️  Could not watch file ${filePath}: ${error.message}`);
     }
   }
 
@@ -100,7 +123,7 @@ class CursorAutoSave {
 
   onFileChange(filePath, eventType) {
     if (eventType === change') {
-      console.log(`📝 File changed: ${filePath}`);
+      logger.info(`📝 File changed: ${filePath}`);
       
       // Debounce the auto-save
       if (this.debounceTimers.has(filePath)) {
@@ -116,20 +139,20 @@ class CursorAutoSave {
   triggerAutoSave() {
     if (!this.isRunning) return;
     
-    console.log('💾 Triggering auto-save...');
+    logger.info('💾 Triggering auto-save...');
     
     // Check git status
     exec('git status --porcelain', (error, stdout, stderr) => {
       if (error) {
-        console.log(`❌ Git status error: ${error.message}`);
+        logger.info(`❌ Git status error: ${error.message}`);
         return;
       }
       
       if (stdout.trim()) {
-        console.log('📦 Changes detected, auto-saving...');
+        logger.info('📦 Changes detected, auto-saving...');
         this.autoSaveChanges();
       } else {
-        console.log('✅ No changes to save');
+        logger.info('✅ No changes to save');
       }
     });
   }
@@ -138,11 +161,11 @@ class CursorAutoSave {
     // Add all changes
     exec('git add .', (error, stdout, stderr) => {
       if (error) {
-        console.log(`❌ Git add error: ${error.message}`);
+        logger.info(`❌ Git add error: ${error.message}`);
         return;
       }
       
-      console.log('📝 Changes staged');
+      logger.info('📝 Changes staged');
       
       // Commit with auto-save message
       const timestamp = new Date().toISOString();
@@ -150,34 +173,34 @@ class CursorAutoSave {
       
       exec(`git commit --no-verify -m "${commitMessage}"`, (error, stdout, stderr) => {
         if (error) {
-          console.log(`❌ Git commit error: ${error.message}`);
+          logger.info(`❌ Git commit error: ${error.message}`);
           return;
         }
         
-        console.log('✅ Changes auto-saved');
+        logger.info('✅ Changes auto-saved');
         
         // Push changes
         exec('git push', (error, stdout, stderr) => {
           if (error) {
-            console.log(`❌ Git push error: ${error.message}`);
+            logger.info(`❌ Git push error: ${error.message}`);
             return;
           }
           
-          console.log('🚀 Changes pushed to remote');
+          logger.info('🚀 Changes pushed to remote');
         });
       });
     });
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Auto-Save Automation...');
+    logger.info('🛑 Stopping Cursor Auto-Save Automation...');
     this.isRunning = false;
     
     // Clear all debounce timers
     this.debounceTimers.forEach(timer => clearTimeout(timer));
     this.debounceTimers.clear();
     
-    console.log('✅ Cursor Auto-Save Automation stopped');
+    logger.info('✅ Cursor Auto-Save Automation stopped');
   }
 }
 

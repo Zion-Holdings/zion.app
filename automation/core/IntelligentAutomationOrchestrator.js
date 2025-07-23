@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const EventEmitter = require('events');
 const path = require('path');
 const fs = require('fs').promises;
@@ -36,7 +59,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   async initialize() {
-    console.log('🔧 Initializing Intelligent Automation Orchestrator...');
+    logger.info('🔧 Initializing Intelligent Automation Orchestrator...');
     
     try {
       // Create necessary directories
@@ -58,10 +81,10 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       }
       
       this.emit('initialized');
-      console.log('✅ Intelligent Automation Orchestrator initialized');
+      logger.info('✅ Intelligent Automation Orchestrator initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize orchestrator:', error);
+      logger.error('❌ Failed to initialize orchestrator:', error);
       this.emit('error', error);
       throw error;
     }
@@ -81,7 +104,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   async loadTasks() {
-    console.log('📦 Loading automation tasks...');
+    logger.info('📦 Loading automation tasks...');
     
     // Load built-in tasks
     const builtInTasks = [
@@ -119,17 +142,17 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     };
     
     this.tasks.set(taskName, task);
-    console.log(`📋 Registered task: ${taskName}`);
+    logger.info(`📋 Registered task: ${taskName}`);
   }
 
   async start() {
     if (this.isRunning) {
-      console.warn('⚠️ Orchestrator is already running');
+      logger.warn('⚠️ Orchestrator is already running');
       return;
     }
     
     try {
-      console.log('🚀 Starting Intelligent Automation Orchestrator...');
+      logger.info('🚀 Starting Intelligent Automation Orchestrator...');
       
       this.startTime = Date.now();
       this.isRunning = true;
@@ -147,10 +170,10 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       }
       
       this.emit('started');
-      console.log('✅ Intelligent Automation Orchestrator started');
+      logger.info('✅ Intelligent Automation Orchestrator started');
       
     } catch (error) {
-      console.error('❌ Failed to start orchestrator:', error);
+      logger.error('❌ Failed to start orchestrator:', error);
       this.emit('error', error);
       throw error;
     }
@@ -172,7 +195,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         task.status = running';
         task.lastRun = Date.now();
         
-        console.log(`🔄 Running task: ${task.name}`);
+        logger.info(`🔄 Running task: ${task.name}`);
         
         // Simulate task execution
         await this.executeTask(task);
@@ -181,24 +204,30 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         task.successCount++;
         task.errorCount = 0;
         
-        console.log(`✅ Task completed: ${task.name}`);
+        logger.info(`✅ Task completed: ${task.name}`);
         
       } catch (error) {
         task.status = failed';
         task.errorCount++;
         
-        console.error(`❌ Task failed: ${task.name}`, error.message);
+        logger.error(`❌ Task failed: ${task.name}`, error.message);
         
         // Retry logic
         if (task.errorCount < task.retryAttempts) {
-          console.log(`🔄 Retrying task: ${task.name} (${task.errorCount}/${task.retryAttempts})`);
-          setTimeout(() => runTask(), 5000);
+          logger.info(`🔄 Retrying task: ${task.name} (${task.errorCount}/${task.retryAttempts})`);
+          
+const timeoutId = setTimeout(() => runTask(),  5000);
+// Store timeoutId for cleanup if needed
+;
         }
       }
     };
     
     // Schedule initial run
-    setTimeout(runTask, 1000);
+    
+const timeoutId = setTimeout(runTask,  1000);
+// Store timeoutId for cleanup if needed
+;
     
     // Schedule recurring runs
     setInterval(runTask, task.interval);
@@ -225,28 +254,43 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   async simulateDependencyUpdate() {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log('📦 Dependencies updated successfully');
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  2000);
+// Store timeoutId for cleanup if needed
+);
+    logger.info('📦 Dependencies updated successfully');
   }
 
   async simulateSecurityScan() {
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    console.log('🔒 Security scan completed - no vulnerabilities found');
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  3000);
+// Store timeoutId for cleanup if needed
+);
+    logger.info('🔒 Security scan completed - no vulnerabilities found');
   }
 
   async simulateCodeQualityCheck() {
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log('📊 Code quality check passed');
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1500);
+// Store timeoutId for cleanup if needed
+);
+    logger.info('📊 Code quality check passed');
   }
 
   async simulateStaleCleanup() {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('🧹 Stale files cleaned up');
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
+    logger.info('🧹 Stale files cleaned up');
   }
 
   async simulateGenericTask() {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('⚙️ Generic task completed');
+    await new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  1000);
+// Store timeoutId for cleanup if needed
+);
+    logger.info('⚙️ Generic task completed');
   }
 
   startHealthMonitoring() {
@@ -294,31 +338,31 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   initializePerformanceTracking() {
-    console.log('📈 Performance tracking initialized');
+    logger.info('📈 Performance tracking initialized');
   }
 
   initializeAnomalyDetection() {
-    console.log('🔍 Anomaly detection initialized');
+    logger.info('🔍 Anomaly detection initialized');
   }
 
   async startDashboard() {
-    console.log('📊 Starting automation dashboard...');
+    logger.info('📊 Starting automation dashboard...');
     // Dashboard implementation would go here
   }
 
   async stop() {
     if (!this.isRunning) {
-      console.warn('⚠️ Orchestrator is not running');
+      logger.warn('⚠️ Orchestrator is not running');
       return;
     }
     
-    console.log('🛑 Stopping Intelligent Automation Orchestrator...');
+    logger.info('🛑 Stopping Intelligent Automation Orchestrator...');
     
     this.isRunning = false;
     this.healthStatus = stopped';
     
     this.emit('stopped');
-    console.log('✅ Intelligent Automation Orchestrator stopped');
+    logger.info('✅ Intelligent Automation Orchestrator stopped');
   }
 
   getStatus() {

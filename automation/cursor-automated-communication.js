@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -29,7 +52,7 @@ class CursorAutomatedCommunication {
   }
 
   async start() {
-    console.log('🤖 Starting Cursor Automated Communication...');
+    logger.info('🤖 Starting Cursor Automated Communication...');
     this.isRunning = true;
     
     try {
@@ -42,9 +65,9 @@ class CursorAutomatedCommunication {
       // Start periodic improvements
       this.startPeriodicImprovements();
       
-      console.log('✅ Cursor Automated Communication started successfully');
+      logger.info('✅ Cursor Automated Communication started successfully');
     } catch (error) {
-      console.error('❌ Failed to start Cursor communication:', error);
+      logger.error('❌ Failed to start Cursor communication:', error);
       throw error;
     }
   }
@@ -56,16 +79,16 @@ class CursorAutomatedCommunication {
         const response = await axios.get(`${this.config.apiEndpoint}/health`, {
           headers: { Authorization': `Bearer ${this.config.apiKey}` }
         });
-        console.log('✅ Cursor API connection established');
+        logger.info('✅ Cursor API connection established');
       } catch (error) {
-        console.warn('⚠️ Cursor API connection failed, running in local mode');
+        logger.warn('⚠️ Cursor API connection failed, running in local mode');
       }
     }
   }
 
   startCodeMonitoring() {
     // Monitor for code changes and suggest improvements
-    console.log('👀 Starting code monitoring...');
+    logger.info('👀 Starting code monitoring...');
     
     // This would integrate with file system watchers
     // For now, we'll use a simple interval
@@ -78,7 +101,7 @@ class CursorAutomatedCommunication {
 
   startPeriodicImprovements() {
     // Run periodic code improvements
-    console.log('🔄 Starting periodic improvements...');
+    logger.info('🔄 Starting periodic improvements...');
     
     setInterval(async () => {
       if (this.isRunning) {
@@ -93,14 +116,14 @@ class CursorAutomatedCommunication {
       const improvements = await this.analyzeCodebase();
       
       if (improvements.length > 0) {
-        console.log(`🔍 Found ${improvements.length} potential improvements`);
+        logger.info(`🔍 Found ${improvements.length} potential improvements`);
         
         for (const improvement of improvements) {
           await this.suggestImprovement(improvement);
         }
       }
     } catch (error) {
-      console.error('Error checking for improvements:', error);
+      logger.error('Error checking for improvements:', error);
     }
   }
 
@@ -124,7 +147,7 @@ class CursorAutomatedCommunication {
         }
       }
     } catch (error) {
-      console.error('Error analyzing codebase:', error);
+      logger.error('Error analyzing codebase:', error);
     }
     
     return improvements;
@@ -179,7 +202,7 @@ class CursorAutomatedCommunication {
     const issues = [];
     
     // Check for common issues
-    if (content.includes('console.log(') && !filePath.includes('test')) {
+    if (content.includes('logger.info(') && !filePath.includes('test')) {
       issues.push({
         type: debug_code',
         message: Console.log statements found in production code',
@@ -218,8 +241,8 @@ class CursorAutomatedCommunication {
       
       this.communicationHistory.push(suggestion);
       
-      console.log(`💡 Suggestion for ${improvement.file}:`);
-      console.log(`   ${suggestion.suggestion}`);
+      logger.info(`💡 Suggestion for ${improvement.file}:`);
+      logger.info(`   ${suggestion.suggestion}`);
       
       // If auto-commit is enabled, apply the improvement
       if (this.config.autoCommit) {
@@ -227,7 +250,7 @@ class CursorAutomatedCommunication {
       }
       
     } catch (error) {
-      console.error('Error suggesting improvement:', error);
+      logger.error('Error suggesting improvement:', error);
     }
   }
 
@@ -245,7 +268,7 @@ class CursorAutomatedCommunication {
 
   async applyImprovement(improvement) {
     try {
-      console.log(`🔧 Applying improvement to ${improvement.file}...`);
+      logger.info(`🔧 Applying improvement to ${improvement.file}...`);
       
       // This would integrate with Cursor API to apply changes
       // For now, we'll just log the improvement
@@ -257,24 +280,24 @@ class CursorAutomatedCommunication {
         timestamp: new Date().toISOString()
       };
       
-      console.log(`✅ Improvement applied: ${result.changes} changes`);
+      logger.info(`✅ Improvement applied: ${result.changes} changes`);
       return result;
       
     } catch (error) {
-      console.error('Error applying improvement:', error);
+      logger.error('Error applying improvement:', error);
       return { success: false, error: error.message };
     }
   }
 
   async runPeriodicImprovements() {
-    console.log('🔄 Running periodic improvements...');
+    logger.info('🔄 Running periodic improvements...');
     
     try {
       // Run comprehensive code analysis
       const analysis = await this.runComprehensiveAnalysis();
       
       if (analysis.improvements.length > 0) {
-        console.log(`📈 Found ${analysis.improvements.length} improvements to apply`);
+        logger.info(`📈 Found ${analysis.improvements.length} improvements to apply`);
         
         for (const improvement of analysis.improvements) {
           await this.applyImprovement(improvement);
@@ -282,7 +305,7 @@ class CursorAutomatedCommunication {
       }
       
     } catch (error) {
-      console.error('Error running periodic improvements:', error);
+      logger.error('Error running periodic improvements:', error);
     }
   }
 
@@ -318,14 +341,14 @@ class CursorAutomatedCommunication {
       analysis.metrics.suggestionsGenerated = analysis.improvements.length;
       
     } catch (error) {
-      console.error('Error in comprehensive analysis:', error);
+      logger.error('Error in comprehensive analysis:', error);
     }
     
     return analysis;
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Automated Communication...');
+    logger.info('🛑 Stopping Cursor Automated Communication...');
     this.isRunning = false;
   }
 
@@ -348,13 +371,13 @@ if (require.main === module) {
   const communication = new CursorAutomatedCommunication();
   
   communication.start().catch(error => {
-    console.error('Failed to start Cursor communication:', error);
+    logger.error('Failed to start Cursor communication:', error);
     process.exit(1);
   });
   
   // Handle graceful shutdown
   process.on('SIGINT', () => {
-    console.log('\n🛑 Shutting down Cursor communication...');
+    logger.info('\n🛑 Shutting down Cursor communication...');
     communication.stop();
     process.exit(0);
   });

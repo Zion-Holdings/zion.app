@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -19,7 +42,7 @@ class PostBuildLintHealing {
 
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level}] ${message}`);
+    logger.info(`[${timestamp}] [${level}] ${message}`);
   }
 
   async run() {
@@ -271,7 +294,10 @@ const updatedLine = lineContent.replace(
   }
 
   sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 }
 
@@ -283,7 +309,22 @@ if (require.main === module) {
   const postBuildHealing = new PostBuildLintHealing();
 
   postBuildHealing.run().catch((error) => {
-    console.error('Post-build healing failed:', error.message);
+    logger.error('Post-build healing failed:', error.message);
     process.exit(1);
   });
 }
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

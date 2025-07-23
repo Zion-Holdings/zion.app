@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -39,14 +62,14 @@ class AutonomousOrchestrator {
   }
 
   async start() {
-    console.log('🚀 [Orchestrator] Entering start());
+    logger.info('🚀 [Orchestrator] Entering start());
     this.isRunning = true;
     await this.setup();
     fs.writeFileSync(this.pidFile, process.pid.toString());
     await this.startAllScripts();
     this.startMonitoring();
     this.setupGracefulShutdown();
-    console.log('✅ [Orchestrator] All automation scripts launched');
+    logger.info('✅ [Orchestrator] All automation scripts launched');
     setInterval(() => this.checkProcessHealth(), 30000);
   }
 
@@ -62,16 +85,16 @@ class AutonomousOrchestrator {
 
   async startAllScripts() {
     for (const script of this.scripts) {
-      console.log(`[Orchestrator] Launching script: ${script.name}`);
+      logger.info(`[Orchestrator] Launching script: ${script.name}`);
       await this.startScript(script);
-      console.log(`[Orchestrator] Launched script: ${script.name}`);
+      logger.info(`[Orchestrator] Launched script: ${script.name}`);
     }
   }
 
   async startScript(script) {
     try {
       if (!fs.existsSync(script.path)) {
-        console.log(`⚠️ Script ${script.path} not found.`);
+        logger.info(`⚠️ Script ${script.path} not found.`);
         return;
       }
       const proc = spawn('node', [script.path, ...script.args], {
@@ -83,11 +106,11 @@ class AutonomousOrchestrator {
         }
       });
       proc.on('exit', (code, signal) => {
-        console.log(`❌ ${script.name} exited with code ${code}, signal ${signal}`);
+        logger.info(`❌ ${script.name} exited with code ${code}, signal ${signal}`);
         this.handleProcessExit(script);
       });
       proc.on('error', (error) => {
-        console.error(`❌ ${script.name} error:`, error.message);
+        logger.error(`❌ ${script.name} error:`, error.message);
         this.handleProcessExit(script);
       });
       this.processes.set(script.name, {
@@ -95,9 +118,9 @@ class AutonomousOrchestrator {
         script,
         restartCount: 0
       });
-      console.log(`✅ ${script.name} started (PID: ${proc.pid})`);
+      logger.info(`✅ ${script.name} started (PID: ${proc.pid})`);
     } catch (error) {
-      console.error(`❌ Failed to start ${script.name}:`, error.message);
+      logger.error(`❌ Failed to start ${script.name}:`, error.message);
     }
   }
 
@@ -106,7 +129,10 @@ class AutonomousOrchestrator {
     if (!procInfo) return;
     if (script.autoRestart && procInfo.restartCount < this.maxRestartAttempts) {
       procInfo.restartCount++;
-      setTimeout(() => this.startScript(script), this.restartDelay);
+      
+const timeoutId = setTimeout(() => this.startScript(script),  this.restartDelay);
+// Store timeoutId for cleanup if needed
+;
     } else {
       this.processes.delete(script.name);
     }
@@ -145,7 +171,7 @@ class AutonomousOrchestrator {
     if (fs.existsSync(this.pidFile)) {
       fs.unlinkSync(this.pidFile);
     }
-    console.log('✅ Orchestrator stopped');
+    logger.info('✅ Orchestrator stopped');
   }
 
   getStatus() {
@@ -171,21 +197,21 @@ if (require.main === module) {
   const command = args[0];
   if (command === start') {
     orchestrator.start().catch(error => {
-      console.error('❌ Failed to start orchestrator:', error);
+      logger.error('❌ Failed to start orchestrator:', error);
       process.exit(1);
     });
   } else if (command === stop') {
     orchestrator.stop().catch(error => {
-      console.error('❌ Failed to stop orchestrator:', error);
+      logger.error('❌ Failed to stop orchestrator:', error);
       process.exit(1);
     });
   } else if (command === status') {
     const status = orchestrator.getStatus();
-    console.log('📊 Orchestrator Status:', JSON.stringify(status, null, 2));
+    logger.info('📊 Orchestrator Status:', JSON.stringify(status, null, 2));
   } else {
-    console.log('Usage:');
-    console.log('  node automation/autonomous-orchestrator.js start   - Start all automation scripts');
-    console.log('  node automation/autonomous-orchestrator.js stop    - Stop all automation scripts');
-    console.log('  node automation/autonomous-orchestrator.js status  - Show status of all scripts');
+    logger.info('Usage:');
+    logger.info('  node automation/autonomous-orchestrator.js start   - Start all automation scripts');
+    logger.info('  node automation/autonomous-orchestrator.js stop    - Stop all automation scripts');
+    logger.info('  node automation/autonomous-orchestrator.js status  - Show status of all scripts');
   }
 } 

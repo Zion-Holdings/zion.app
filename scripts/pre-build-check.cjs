@@ -1,3 +1,36 @@
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 // Load environment variables from .env files if the dotenv package is available
@@ -8,16 +41,12 @@ try {
   require('dotenv').config({ path: '.env' }); // for any base defaults
 } catch (_err) {
   _dotenvAvailable = false;
-  console.warn(
+  logger.warn(
     '⚠️  Optional dependency "dotenv" not found. Skipping env file loading.',
   );
 }
 
-/**
- * Pre-build Check Script
- * This script runs before the build process to ensure all required environment variables
- * are properly configured in Netlify. It provides clear instructions for fixing issues.
- */
+
 
 const { validateEnvironment } = require('./validate-environment.cjs');
 
@@ -44,8 +73,8 @@ const missing = required.filter((dep) => {
   });
 
   if (missing.length > 0) {
-    console.error(`❌ Missing dependencies: ${missing.join(', ')}`);
-    console.error('Please run "./setup.sh npm" to install required packages.');
+    logger.error(`❌ Missing dependencies: ${missing.join(', ')}`);
+    logger.error('Please run "./setup.sh npm" to install required packages.');
     process.exit(1);
   }
 }
@@ -56,7 +85,7 @@ checkDependencies();
 if (process.env.NETLIFY === 'true') {
   // Check if this is a production deploy
   if (process.env.CONTEXT === 'production') {
-    // console.warn('🔥 PRODUCTION DEPLOYMENT - Extra validation required\n');
+    // logger.warn('🔥 PRODUCTION DEPLOYMENT - Extra validation required\n');
   }
 }
 
@@ -66,39 +95,75 @@ const result = validateEnvironment();
 // Patch: Never fail local builds due to missing/placeholder env vars
 const isNetlify = process.env.NETLIFY === 'true';
 if (!result.isValid) {
-  // console.warn('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
-  // console.warn('==============================\n');
+  // logger.warn('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
+  // logger.warn('==============================\n');
 
-  // console.warn('1. 🌐 Go to your Netlify dashboard:');
-  // console.warn('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
+  // logger.warn('1. 🌐 Go to your Netlify dashboard:');
+  // logger.warn('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
 
-  // console.warn('2. 📝 Click "Edit variables" and add these required variables:\n');
+  // logger.warn('2. 📝 Click "Edit variables" and add these required variables:\n');
 
   result.errors.forEach((_error) => {
-    // console.warn(`   ✏️  ${error.variable}`);
-    // console.warn(`       Description: ${error.description}`);
-    // console.warn(`       Current: ${error.current}\n`);
+    // logger.warn(`   ✏️  ${error.variable}`);
+    // logger.warn(`       Description: ${error.description}`);
+    // logger.warn(`       Current: ${error.current}\n`);
   });
 
-  // console.warn('3. 🔧 Get your Supabase credentials:');
-  // console.warn('   - Go to https://supabase.com/dashboard');
-  // console.warn('   - Select your project');
-  // console.warn('   - Go to Settings > API');
-  // console.warn('   - Copy the Project URL and anon/public key\n');
+  // logger.warn('3. 🔧 Get your Supabase credentials:');
+  // logger.warn('   - Go to https://supabase.com/dashboard');
+  // logger.warn('   - Select your project');
+  // logger.warn('   - Go to Settings > API');
+  // logger.warn('   - Copy the Project URL and anon/public key\n');
 
-  // console.warn('4. 💾 Click "Save" and then "Deploy site"\n');
+  // logger.warn('4. 💾 Click "Save" and then "Deploy site"\n');
 
-  // console.warn('5. 🔍 Verify the setup by visiting:');
-  // console.warn('   https://your-site.netlify.app/api/health/environment\n');
+  // logger.warn('5. 🔍 Verify the setup by visiting:');
+  // logger.warn('   https://your-site.netlify.app/api/health/environment\n');
 
   if (isNetlify) {
-    // console.warn('⚠️  Continuing build on Netlify despite missing configuration.');
-    // console.warn('   Environment variables should be set in Netlify dashboard for production.\n');
+    // logger.warn('⚠️  Continuing build on Netlify despite missing configuration.');
+    // logger.warn('   Environment variables should be set in Netlify dashboard for production.\n');
   } else {
-    // console.warn('⚠️  Local build: Skipping environment variable enforcement for local development.');
-    // console.warn('   You may see runtime errors if your app requires these variables.\n');
+    // logger.warn('⚠️  Local build: Skipping environment variable enforcement for local development.');
+    // logger.warn('   You may see runtime errors if your app requires these variables.\n');
     // Do NOT exit(1) for local builds
   }
 } else {
-  // console.warn('✅ Pre-build check passed! Proceeding with build...\n');
+  // logger.warn('✅ Pre-build check passed! Proceeding with build...\n');
 }
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

@@ -65,9 +65,31 @@ const allPassed = this.checks.every((check) => check.status === 'pass');
 }
 
 if (require.main === module) {
+  try {
+    
   const validator = new BuildValidator()
 const isValid = validator.run();
   process.exit(isValid ? 0 : 1);
+
+  } catch (error) {
+    console.error('Script execution failed:', error);
+    process.exit(1);
+  }
 }
 
 module.exports = BuildValidator;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

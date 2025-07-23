@@ -1,4 +1,15 @@
-const cron = require('node-cron')
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const cron = require('node-cron')
 const fs = require('fs')
 const _path = require('path');const { _exec } = require('child_process')
 const BASE_URL = process.env.BACKEND_BASE_URL || http://localhost:3001';const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
@@ -83,3 +94,25 @@ const slow = results.find((r) => r.avg > 500);
 cron.schedule('0 * * * *', monitor);
 // Run immediately when script starts
 monitor().catch((err) => console.error('Monitor error:', err));
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -39,7 +62,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Initialize the orchestrator
    */
   async initialize() {
-    console.log('🎼 Initializing Intelligent Automation Orchestrator...');
+    logger.info('🎼 Initializing Intelligent Automation Orchestrator...');
     
     try {
       // Setup Express server
@@ -66,10 +89,10 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       // Setup learning engine
       await this.learningEngine.initialize();
       
-      console.log('✅ Intelligent Automation Orchestrator initialized successfully');
+      logger.info('✅ Intelligent Automation Orchestrator initialized successfully');
       
     } catch (error) {
-      console.error('❌ Failed to initialize orchestrator:', error);
+      logger.error('❌ Failed to initialize orchestrator:', error);
       throw error;
     }
   }
@@ -131,7 +154,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Initialize automation systems
    */
   async initializeAutomationSystems() {
-    console.log('🤖 Initializing automation systems...');
+    logger.info('🤖 Initializing automation systems...');
 
     // Autonomous System
     this.automationSystems.set('autonomous', {
@@ -189,14 +212,14 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       restart: () => this.restartSystem('continuous-improvement')
     });
 
-    console.log(`✅ Initialized ${this.automationSystems.size} automation systems`);
+    logger.info(`✅ Initialized ${this.automationSystems.size} automation systems`);
   }
 
   /**
    * Start the orchestrator
    */
   async start() {
-    console.log('🚀 Starting Intelligent Automation Orchestrator...');
+    logger.info('🚀 Starting Intelligent Automation Orchestrator...');
     
     try {
       // Initialize orchestrator
@@ -204,7 +227,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       
       // Start server
       this.server = this.app.listen(this.port, () => {
-        console.log(`🌐 Orchestrator running on port ${this.port}`);
+        logger.info(`🌐 Orchestrator running on port ${this.port}`);
       });
 
       // Setup WebSocket
@@ -214,12 +237,12 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       this.isRunning = true;
       await this.startOrchestration();
       
-      console.log('✅ Intelligent Automation Orchestrator started successfully');
-      console.log(`📊 Dashboard: http://localhost:${this.port}`);
-      console.log(`🔗 API: http://localhost:${this.port}/health`);
+      logger.info('✅ Intelligent Automation Orchestrator started successfully');
+      logger.info(`📊 Dashboard: http://localhost:${this.port}`);
+      logger.info(`🔗 API: http://localhost:${this.port}/health`);
       
     } catch (error) {
-      console.error('❌ Failed to start orchestrator:', error);
+      logger.error('❌ Failed to start orchestrator:', error);
       throw error;
     }
   }
@@ -236,7 +259,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     });
 
     this.io.on('connection', (socket) => {
-      console.log('🔌 Client connected to orchestrator');
+      logger.info('🔌 Client connected to orchestrator');
       
       socket.emit('orchestratorStatus', {
         isRunning: this.isRunning,
@@ -245,7 +268,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       });
 
       socket.on('disconnect', () => {
-        console.log('🔌 Client disconnected from orchestrator');
+        logger.info('🔌 Client disconnected from orchestrator');
       });
     });
   }
@@ -254,7 +277,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Start orchestration loop
    */
   async startOrchestration() {
-    console.log('🎼 Starting orchestration loop...');
+    logger.info('🎼 Starting orchestration loop...');
     
     // Start all systems
     await this.startAllSystems();
@@ -273,14 +296,14 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Start all automation systems
    */
   async startAllSystems() {
-    console.log('🚀 Starting all automation systems...');
+    logger.info('🚀 Starting all automation systems...');
     
     for (const [name, system] of this.automationSystems) {
       try {
         await this.startSystem(name);
         await this.sleep(2000); // Wait between starts
       } catch (error) {
-        console.error(`❌ Failed to start ${name}:`, error);
+        logger.error(`❌ Failed to start ${name}:`, error);
       }
     }
   }
@@ -295,11 +318,11 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     }
 
     if (system.status === running') {
-      console.log(`⚠️ System ${systemName} is already running`);
+      logger.info(`⚠️ System ${systemName} is already running`);
       return;
     }
 
-    console.log(`🚀 Starting ${systemName}...`);
+    logger.info(`🚀 Starting ${systemName}...`);
     
     try {
       // Check if port is available
@@ -321,23 +344,26 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
       // Monitor process
       system.process.stdout.on('data', (data) => {
-        console.log(`[${systemName}] ${data.toString().trim()}`);
+        logger.info(`[${systemName}] ${data.toString().trim()}`);
         system.lastActivity = Date.now();
       });
 
       system.process.stderr.on('data', (data) => {
-        console.error(`[${systemName} ERROR] ${data.toString().trim()}`);
+        logger.error(`[${systemName} ERROR] ${data.toString().trim()}`);
         system.lastActivity = Date.now();
       });
 
       system.process.on('close', (code) => {
-        console.log(`[${systemName}] Process exited with code ${code}`);
+        logger.info(`[${systemName}] Process exited with code ${code}`);
         system.status = stopped';
         system.process = null;
         
         // Attempt restart if it was running
         if (this.isRunning) {
-          setTimeout(() => this.restartSystem(systemName), 5000);
+          
+const timeoutId = setTimeout(() => this.restartSystem(systemName),  5000);
+// Store timeoutId for cleanup if needed
+;
         }
       });
 
@@ -345,14 +371,14 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       await this.waitForSystemStart(systemName);
       
       system.status = running';
-      console.log(`✅ ${systemName} started successfully`);
+      logger.info(`✅ ${systemName} started successfully`);
       
       // Emit WebSocket update
       this.emitSystemUpdate(systemName);
       
     } catch (error) {
       system.status = failed';
-      console.error(`❌ Failed to start ${systemName}:`, error);
+      logger.error(`❌ Failed to start ${systemName}:`, error);
       throw error;
     }
   }
@@ -367,11 +393,11 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     }
 
     if (system.status === stopped') {
-      console.log(`⚠️ System ${systemName} is already stopped`);
+      logger.info(`⚠️ System ${systemName} is already stopped`);
       return;
     }
 
-    console.log(`🛑 Stopping ${systemName}...`);
+    logger.info(`🛑 Stopping ${systemName}...`);
     
     try {
       if (system.process) {
@@ -385,13 +411,13 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       
       system.status = stopped';
       system.process = null;
-      console.log(`✅ ${systemName} stopped successfully`);
+      logger.info(`✅ ${systemName} stopped successfully`);
       
       // Emit WebSocket update
       this.emitSystemUpdate(systemName);
       
     } catch (error) {
-      console.error(`❌ Failed to stop ${systemName}:`, error);
+      logger.error(`❌ Failed to stop ${systemName}:`, error);
       throw error;
     }
   }
@@ -400,16 +426,16 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Restart a specific system
    */
   async restartSystem(systemName) {
-    console.log(`🔄 Restarting ${systemName}...`);
+    logger.info(`🔄 Restarting ${systemName}...`);
     
     try {
       await this.stopSystem(systemName);
       await this.sleep(2000);
       await this.startSystem(systemName);
       
-      console.log(`✅ ${systemName} restarted successfully`);
+      logger.info(`✅ ${systemName} restarted successfully`);
     } catch (error) {
-      console.error(`❌ Failed to restart ${systemName}:`, error);
+      logger.error(`❌ Failed to restart ${systemName}:`, error);
       throw error;
     }
   }
@@ -451,7 +477,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         await this.checkConflicts();
         await this.updateHealthMetrics();
       } catch (error) {
-        console.error('❌ Error in monitoring loop:', error);
+        logger.error('❌ Error in monitoring loop:', error);
       }
     }, 30000); // Every 30 seconds
   }
@@ -468,7 +494,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         await this.optimizeResources();
         await this.handleConflicts();
       } catch (error) {
-        console.error('❌ Error in decision loop:', error);
+        logger.error('❌ Error in decision loop:', error);
       }
     }, 60000); // Every minute
   }
@@ -485,7 +511,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         await this.updateRecommendations();
         await this.optimizeOrchestration();
       } catch (error) {
-        console.error('❌ Error in learning loop:', error);
+        logger.error('❌ Error in learning loop:', error);
       }
     }, 300000); // Every 5 minutes
   }
@@ -504,7 +530,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
           system.lastActivity = Date.now();
         }
       } catch (error) {
-        console.error(`❌ Error monitoring ${name}:`, error);
+        logger.error(`❌ Error monitoring ${name}:`, error);
         system.health = 0;
         system.performance = 0;
       }
@@ -543,9 +569,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const conflicts = await this.conflictResolver.detectConflicts(this.automationSystems);
     
     if (conflicts.length > 0) {
-      console.log(`⚠️ Detected ${conflicts.length} conflicts`);
+      logger.info(`⚠️ Detected ${conflicts.length} conflicts`);
       for (const conflict of conflicts) {
-        console.log(`  - ${conflict.type}: ${conflict.description}`);
+        logger.info(`  - ${conflict.type}: ${conflict.description}`);
       }
     }
   }
@@ -578,12 +604,12 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const decisions = await this.decisionEngine.makeDecisions(this.automationSystems);
     
     for (const decision of decisions) {
-      console.log(`🎯 Decision: ${decision.action} for ${decision.target}`);
+      logger.info(`🎯 Decision: ${decision.action} for ${decision.target}`);
       
       try {
         await this.executeDecision(decision);
       } catch (error) {
-        console.error(`❌ Failed to execute decision:`, error);
+        logger.error(`❌ Failed to execute decision:`, error);
       }
     }
   }
@@ -617,9 +643,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const optimization = await this.resourceManager.optimize();
     
     if (optimization.recommendations.length > 0) {
-      console.log('🔧 Resource optimization recommendations:');
+      logger.info('🔧 Resource optimization recommendations:');
       for (const rec of optimization.recommendations) {
-        console.log(`  - ${rec.description}`);
+        logger.info(`  - ${rec.description}`);
       }
     }
   }
@@ -634,7 +660,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       const resolution = await this.conflictResolver.resolveConflict(conflict);
       
       if (resolution) {
-        console.log(`✅ Resolved conflict: ${conflict.type}`);
+        logger.info(`✅ Resolved conflict: ${conflict.type}`);
         await this.executeDecision(resolution);
       }
     }
@@ -660,9 +686,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const recommendations = await this.learningEngine.getRecommendations();
     
     if (recommendations.length > 0) {
-      console.log('💡 Learning recommendations:');
+      logger.info('💡 Learning recommendations:');
       for (const rec of recommendations) {
-        console.log(`  - ${rec.description} (confidence: ${rec.confidence}%)`);
+        logger.info(`  - ${rec.description} (confidence: ${rec.confidence}%)`);
       }
     }
   }
@@ -674,9 +700,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     const optimization = await this.learningEngine.optimizeOrchestration();
     
     if (optimization.changes.length > 0) {
-      console.log('🎼 Orchestration optimization:');
+      logger.info('🎼 Orchestration optimization:');
       for (const change of optimization.changes) {
-        console.log(`  - ${change.description}`);
+        logger.info(`  - ${change.description}`);
       }
     }
   }
@@ -685,7 +711,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Orchestrate an action
    */
   async orchestrateAction(action, target, data) {
-    console.log(`🎼 Orchestrating action: ${action} on ${target}`);
+    logger.info(`🎼 Orchestrating action: ${action} on ${target}`);
     
     const decision = await this.decisionEngine.makeDecision(action, target, data);
     
@@ -736,7 +762,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Stop the orchestrator
    */
   async stop() {
-    console.log('🛑 Stopping Intelligent Automation Orchestrator...');
+    logger.info('🛑 Stopping Intelligent Automation Orchestrator...');
     
     this.isRunning = false;
     
@@ -745,7 +771,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       try {
         await this.stopSystem(name);
       } catch (error) {
-        console.error(`❌ Error stopping ${name}:`, error);
+        logger.error(`❌ Error stopping ${name}:`, error);
       }
     }
     
@@ -758,16 +784,19 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       this.io.close();
     }
     
-    console.log('✅ Intelligent Automation Orchestrator stopped');
+    logger.info('✅ Intelligent Automation Orchestrator stopped');
   }
 
   // Utility Methods
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 
   optimizeSystem(systemName) {
-    console.log(`🔧 Optimizing ${systemName}...`);
+    logger.info(`🔧 Optimizing ${systemName}...`);
     // Implementation for system optimization
   }
 }
@@ -926,19 +955,19 @@ if (require.main === module) {
   const orchestrator = new IntelligentAutomationOrchestrator();
   
   orchestrator.start().catch(error => {
-    console.error('❌ Failed to start Intelligent Automation Orchestrator:', error);
+    logger.error('❌ Failed to start Intelligent Automation Orchestrator:', error);
     process.exit(1);
   });
 
   // Graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await orchestrator.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await orchestrator.stop();
     process.exit(0);
   });

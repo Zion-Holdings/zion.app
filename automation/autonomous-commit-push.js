@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -43,15 +66,15 @@ class AutonomousCommitPush {
         try {
             fs.appendFileSync(this.logFile, logEntry);
         } catch (error) {
-            console.error('Failed to write to log file:', error.message);
+            logger.error('Failed to write to log file:', error.message);
         }
         
         if (level === error') {
-            console.error(message);
+            logger.error(message);
         } else if (level === warn') {
-            console.warn(message);
+            logger.warn(message);
         } else {
-            console.log(message);
+            logger.info(message);
         }
     }
 
@@ -236,15 +259,29 @@ if (require.main === module) {
     autoCommitPush.run()
         .then(result => {
             if (result.success) {
-                console.log('✅ Success:', result.message);
+                logger.info('✅ Success:', result.message);
                 process.exit(0);
             } else {
-                console.error('❌ Error:', result.error);
+                logger.error('❌ Error:', result.error);
                 process.exit(1);
             }
         })
         .catch(error => {
-            console.error('❌ Unexpected error:', error);
+            logger.error('❌ Unexpected error:', error);
             process.exit(1);
         });
 } 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

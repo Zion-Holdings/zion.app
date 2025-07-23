@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -63,11 +86,11 @@ class EnhancedAutomation {
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️ Enhanced Automation is already running');
+      logger.info('⚠️ Enhanced Automation is already running');
       return;
     }
 
-    console.log('🚀 Starting Enhanced Automation System...');
+    logger.info('🚀 Starting Enhanced Automation System...');
     
     try {
       await this.initialize();
@@ -76,9 +99,9 @@ class EnhancedAutomation {
       
       this.isRunning = true;
       
-      console.log('✅ Enhanced Automation System started successfully');
+      logger.info('✅ Enhanced Automation System started successfully');
     } catch (error) {
-      console.error('❌ Failed to start Enhanced Automation:', error);
+      logger.error('❌ Failed to start Enhanced Automation:', error);
       throw error;
     }
   }
@@ -96,13 +119,13 @@ class EnhancedAutomation {
 
   async stop() {
     if (!this.isRunning) {
-      console.log('⚠️ Enhanced Automation is not running');
+      logger.info('⚠️ Enhanced Automation is not running');
       return;
     }
 
-    console.log('🛑 Stopping Enhanced Automation System...');
+    logger.info('🛑 Stopping Enhanced Automation System...');
     this.isRunning = false;
-    console.log('✅ Enhanced Automation System stopped');
+    logger.info('✅ Enhanced Automation System stopped');
   }
 
   addTask(type, data = {}) {
@@ -116,7 +139,7 @@ class EnhancedAutomation {
     };
 
     this.taskQueue.push(task);
-    console.log(`📋 Added task: ${type}`);
+    logger.info(`📋 Added task: ${type}`);
   }
 
   getTaskPriority(type) {
@@ -140,14 +163,17 @@ class EnhancedAutomation {
         await this.processTask(task);
       }
       
-      setTimeout(processLoop, 1000);
+      
+const timeoutId = setTimeout(processLoop,  1000);
+// Store timeoutId for cleanup if needed
+;
     };
     
     processLoop();
   }
 
   async processTask(task) {
-    console.log(`🔄 Processing task: ${task.type}`);
+    logger.info(`🔄 Processing task: ${task.type}`);
     
     this.currentTask = task;
     task.status = processing';
@@ -188,10 +214,10 @@ class EnhancedAutomation {
       // Apply improvements if needed
       await this.applyImprovements(task);
       
-      console.log(`✅ Task completed: ${task.type}`);
+      logger.info(`✅ Task completed: ${task.type}`);
       
     } catch (error) {
-      console.error(`❌ Task failed: ${task.type}`, error);
+      logger.error(`❌ Task failed: ${task.type}`, error);
       
       task.status = failed';
       task.error = error.message;
@@ -209,7 +235,7 @@ class EnhancedAutomation {
   }
 
   async performQuickScan() {
-    console.log('🔍 Performing quick scan...');
+    logger.info('🔍 Performing quick scan...');
     
     const results = {
       buildStatus: await this.checkBuildStatus(),
@@ -229,7 +255,7 @@ class EnhancedAutomation {
   }
 
   async performDeepAnalysis() {
-    console.log('🔍 Performing deep analysis...');
+    logger.info('🔍 Performing deep analysis...');
     
     const results = {
       performance: await this.analyzePerformance(),
@@ -249,7 +275,7 @@ class EnhancedAutomation {
   }
 
   async performFullAudit() {
-    console.log('🔍 Performing full audit...');
+    logger.info('🔍 Performing full audit...');
     
     const results = {
       quickScan: await this.performQuickScan(),
@@ -271,7 +297,7 @@ class EnhancedAutomation {
   }
 
   async performPerformanceCheck() {
-    console.log('⚡ Performing performance check...');
+    logger.info('⚡ Performing performance check...');
     
     const results = {
       buildTime: await this.measureBuildTime(),
@@ -291,7 +317,7 @@ class EnhancedAutomation {
   }
 
   async performSecurityScan() {
-    console.log('🔒 Performing security scan...');
+    logger.info('🔒 Performing security scan...');
     
     const results = {
       vulnerabilities: await this.checkVulnerabilities(),
@@ -310,7 +336,7 @@ class EnhancedAutomation {
   }
 
   async performDependencyCheck() {
-    console.log('📦 Performing dependency check...');
+    logger.info('📦 Performing dependency check...');
     
     const results = {
       outdated: await this.checkOutdatedPackages(),
@@ -347,11 +373,11 @@ class EnhancedAutomation {
       try {
         analysis.aiOptimizer = await this.aiOptimizer.analyzeWithAI(data);
       } catch (error) {
-        console.warn('AI Optimizer analysis failed:', error.message);
+        logger.warn('AI Optimizer analysis failed:', error.message);
       }
       
     } catch (error) {
-      console.warn('AI analysis failed:', error.message);
+      logger.warn('AI analysis failed:', error.message);
     }
     
     return analysis;
@@ -388,7 +414,7 @@ class EnhancedAutomation {
         );
         suggestions.push(...cursorSuggestions);
       } catch (error) {
-        console.warn('Cursor AI suggestions failed:', error.message);
+        logger.warn('Cursor AI suggestions failed:', error.message);
       }
     }
     
@@ -401,7 +427,7 @@ class EnhancedAutomation {
         });
         suggestions.push(...aiSuggestions);
       } catch (error) {
-        console.warn('AI Optimizer suggestions failed:', error.message);
+        logger.warn('AI Optimizer suggestions failed:', error.message);
       }
     }
     

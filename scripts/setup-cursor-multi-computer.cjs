@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -23,7 +46,7 @@ class CursorMultiComputerSetup {
   }
 
   async setup() {
-    console.log('🚀 Setting up Cursor Multi-Computer Communication...');
+    logger.info('🚀 Setting up Cursor Multi-Computer Communication...');
 
     try {
       // 1. Create necessary directories
@@ -41,27 +64,27 @@ class CursorMultiComputerSetup {
       // 5. Test the setup
       await this.testSetup();
 
-      console.log(
+      logger.info(
         '✅ Cursor Multi-Computer Communication setup completed successfully!',
       );
-      console.log('\n📋 Next steps:');
-      console.log('1. Run: npm run cursor:start');
-      console.log('2. On other computers, run: npm run cursor:start');
-      console.log(
+      logger.info('\n📋 Next steps:');
+      logger.info('1. Run: npm run cursor:start');
+      logger.info('2. On other computers, run: npm run cursor:start');
+      logger.info(
         '3. The computers will automatically connect and communicate',
       );
-      console.log(
+      logger.info(
         '4. Use: npm run cursor:chat <category> <prompt> to trigger chats',
       );
-      console.log('5. Use: npm run cursor:fix <type> to apply fixes');
+      logger.info('5. Use: npm run cursor:fix <type> to apply fixes');
     } catch (error) {
-      console.error(`❌ Setup failed: ${error.message}`);
+      logger.error(`❌ Setup failed: ${error.message}`);
       throw error;
     }
   }
 
   async createDirectories() {
-    console.log('📁 Creating necessary directories...')
+    logger.info('📁 Creating necessary directories...')
 const directories = [
       this.config.logsDir,
       path.join(this.config.cursorConfigDir, 'rules'),
@@ -74,13 +97,13 @@ const directories = [
     for (const dir of directories) {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
-        console.log(`✅ Created directory: ${dir}`);
+        logger.info(`✅ Created directory: ${dir}`);
       }
     }
   }
 
   async configureEnvironment() {
-    console.log('⚙️ Configuring environment variables...')
+    logger.info('⚙️ Configuring environment variables...')
 const envPath = this.config.envFile;
     let envContent = '';
 
@@ -116,14 +139,14 @@ const envPath = this.config.envFile;
     if (existingVars.length > 0) {
       envContent += existingVars.join('\n');
       fs.writeFileSync(envPath, envContent);
-      console.log(`✅ Updated environment file: ${envPath}`);
+      logger.info(`✅ Updated environment file: ${envPath}`);
     } else {
-      console.log(`✅ Environment file already configured: ${envPath}`);
+      logger.info(`✅ Environment file already configured: ${envPath}`);
     }
   }
 
   async setupCursorConfig() {
-    console.log('🔧 Setting up Cursor configuration...')
+    logger.info('🔧 Setting up Cursor configuration...')
 const cursorRulesDir = path.join(
       this.config.cursorConfigDir,
       'rules',
@@ -149,7 +172,7 @@ const cursorRulesDir = path.join(
     for (const rule of automationRules) {
       const rulePath = path.join(cursorRulesDir, rule.name);
       fs.writeFileSync(rulePath, rule.content);
-      console.log(`✅ Created Cursor rule: ${rule.name}`);
+      logger.info(`✅ Created Cursor rule: ${rule.name}`);
     }
   }
 
@@ -284,7 +307,7 @@ This rule set enables automated communication and collaboration between multiple
   }
 
   async createStartupScripts() {
-    console.log('📜 Creating startup scripts...')
+    logger.info('📜 Creating startup scripts...')
 const scripts = [
       {
         name: 'start-cursor-communication.sh',
@@ -309,7 +332,7 @@ const scripts = [
         }
       }
 
-      console.log(`✅ Created startup script: ${script.name}`);
+      logger.info(`✅ Created startup script: ${script.name}`);
     }
   }
 
@@ -397,7 +420,7 @@ pause
   }
 
   async testSetup() {
-    console.log('🧪 Testing setup...');
+    logger.info('🧪 Testing setup...');
 
     try {
       // Test if the communication script exists
@@ -419,9 +442,9 @@ pause
         throw new Error('Cursor config directory not found');
       }
 
-      console.log('✅ Setup test passed');
+      logger.info('✅ Setup test passed');
     } catch (error) {
-      console.error(`❌ Setup test failed: ${error.message}`);
+      logger.error(`❌ Setup test failed: ${error.message}`);
       throw error;
     }
   }
@@ -602,7 +625,7 @@ Add custom automation rules to \`.cursor/rules/automation/\`:
 `
 const instructionsPath = 'CURSOR_MULTI_COMPUTER_SETUP.md';
     fs.writeFileSync(instructionsPath, instructions);
-    console.log(`✅ Created setup instructions: ${instructionsPath}`);
+    logger.info(`✅ Created setup instructions: ${instructionsPath}`);
   }
 }
 
@@ -617,13 +640,13 @@ const command = process.argv[2];
         .setup()
         .then(() => setup.generateInstructions())
         .then(() => {
-          console.log('\n🎉 Setup completed successfully!');
-          console.log(
+          logger.info('\n🎉 Setup completed successfully!');
+          logger.info(
             '📖 See CURSOR_MULTI_COMPUTER_SETUP.md for detailed instructions.',
           );
         })
         .catch((error) => {
-          console.error(`❌ Setup failed: ${error.message}`);
+          logger.error(`❌ Setup failed: ${error.message}`);
           process.exit(1);
         });
       break;
@@ -632,16 +655,16 @@ const command = process.argv[2];
       setup
         .generateInstructions()
         .then(() => {
-          console.log('✅ Instructions generated successfully!');
+          logger.info('✅ Instructions generated successfully!');
         })
         .catch((error) => {
-          console.error(`❌ Failed to generate instructions: ${error.message}`);
+          logger.error(`❌ Failed to generate instructions: ${error.message}`);
           process.exit(1);
         });
       break;
 
     default:
-      console.log(`
+      logger.info(`
 Usage: node setup-cursor-multi-computer.cjs <command>
 
 Commands:
@@ -655,3 +678,18 @@ Example:
 }
 
 module.exports = CursorMultiComputerSetup;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

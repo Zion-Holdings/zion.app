@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const { EventEmitter } = require('events');
@@ -49,7 +72,7 @@ class AutonomousAutomationSystem extends EventEmitter {
   }
 
   async setupModules() {
-    console.log('🔧 Setting up autonomous automation modules...');
+    logger.info('🔧 Setting up autonomous automation modules...');
     
     // Initialize all automation modules
     this.modules.codeAnalysis = new CodeAnalysisModule(this);
@@ -88,7 +111,7 @@ class AutonomousAutomationSystem extends EventEmitter {
   }
 
   async start() {
-    console.log('🚀 Starting Autonomous Automation System...');
+    logger.info('🚀 Starting Autonomous Automation System...');
     this.isRunning = true;
     this.stats.startTime = Date.now();
 
@@ -107,7 +130,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     // Start health monitoring
     this.startHealthMonitoring();
 
-    console.log('✅ Autonomous Automation System started successfully');
+    logger.info('✅ Autonomous Automation System started successfully');
     this.log('System started');
   }
 
@@ -115,9 +138,9 @@ class AutonomousAutomationSystem extends EventEmitter {
     const modulePromises = Object.entries(this.modules).map(async ([name, module]) => {
       try {
         await module.start();
-        console.log(`✅ ${name} module started`);
+        logger.info(`✅ ${name} module started`);
       } catch (error) {
-        console.error(`❌ Failed to start ${name} module:`, error.message);
+        logger.error(`❌ Failed to start ${name} module:`, error.message);
       }
     });
 
@@ -210,9 +233,12 @@ class AutonomousAutomationSystem extends EventEmitter {
 
       if (task.attempts < task.maxAttempts) {
         // Re-queue with exponential backoff
-        setTimeout(() => {
+        
+const timeoutId = setTimeout(() => {
           this.taskQueue.push(task);
-        }, Math.pow(2, task.attempts) * 1000);
+        },  Math.pow(2, task.attempts);
+// Store timeoutId for cleanup if needed
+ * 1000);
       }
 
       this.log(`Task failed: ${task.type} (${task.id}) - ${error.message}`);
@@ -326,7 +352,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     try {
       await fs.appendFile(path.join(this.config.logDir, system.log'), logEntry);
     } catch (error) {
-      console.error('Failed to write to log file:', error.message);
+      logger.error('Failed to write to log file:', error.message);
     }
   }
 
@@ -337,7 +363,7 @@ class AutonomousAutomationSystem extends EventEmitter {
         JSON.stringify(this.stats, null, 2)
       );
     } catch (error) {
-      console.error('Failed to save stats:', error.message);
+      logger.error('Failed to save stats:', error.message);
     }
   }
 
@@ -348,26 +374,26 @@ class AutonomousAutomationSystem extends EventEmitter {
         JSON.stringify(health, null, 2)
       );
     } catch (error) {
-      console.error('Failed to save health report:', error.message);
+      logger.error('Failed to save health report:', error.message);
     }
   }
 
   async stop() {
-    console.log('🛑 Stopping Autonomous Automation System...');
+    logger.info('🛑 Stopping Autonomous Automation System...');
     this.isRunning = false;
 
     // Stop all modules
     for (const [name, module] of Object.entries(this.modules)) {
       try {
         await module.stop();
-        console.log(`✅ ${name} module stopped`);
+        logger.info(`✅ ${name} module stopped`);
       } catch (error) {
-        console.error(`❌ Failed to stop ${name} module:`, error.message);
+        logger.error(`❌ Failed to stop ${name} module:`, error.message);
       }
     }
 
     this.log('System stopped');
-    console.log('✅ Autonomous Automation System stopped');
+    logger.info('✅ Autonomous Automation System stopped');
   }
 
   getStatus() {
@@ -596,7 +622,7 @@ if (require.main === module) {
   });
 
   system.start().catch(error => {
-    console.error('Failed to start autonomous automation system:', error);
+    logger.error('Failed to start autonomous automation system:', error);
     process.exit(1);
   });
 } 

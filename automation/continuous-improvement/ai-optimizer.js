@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -119,7 +142,7 @@ class AIOptimizer {
    * Start the AI optimization system
    */
   async start() {
-    console.log('🤖 Starting AI-Powered Optimization System...');
+    logger.info('🤖 Starting AI-Powered Optimization System...');
     this.isRunning = true;
     
     // Start continuous analysis
@@ -128,8 +151,8 @@ class AIOptimizer {
     // Start improvement processing
     this.startImprovementProcessing();
     
-    console.log('✅ AI Optimization System started successfully');
-    console.log(`📊 Available AI providers: ${Array.from(this.aiProviders.keys()).join(', )}`);
+    logger.info('✅ AI Optimization System started successfully');
+    logger.info(`📊 Available AI providers: ${Array.from(this.aiProviders.keys()).join(', )}`);
   }
 
   /**
@@ -144,10 +167,16 @@ class AIOptimizer {
         await this.performQuickScan();
         
         // Schedule next analysis
-        setTimeout(analysisLoop, AI_CONFIG.INTERVALS.QUICK_SCAN);
+        
+const timeoutId = setTimeout(analysisLoop,  AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
       } catch (error) {
-        console.error('❌ Error in analysis loop:', error);
-        setTimeout(analysisLoop, AI_CONFIG.INTERVALS.QUICK_SCAN);
+        logger.error('❌ Error in analysis loop:', error);
+        
+const timeoutId = setTimeout(analysisLoop,  AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
       }
     };
     
@@ -166,10 +195,16 @@ class AIOptimizer {
         await this.processImprovementQueue();
         
         // Schedule next processing
-        setTimeout(processLoop, 10000); // 10 seconds
+        
+const timeoutId = setTimeout(processLoop,  10000);
+// Store timeoutId for cleanup if needed
+; // 10 seconds
       } catch (error) {
-        console.error('❌ Error in improvement processing:', error);
-        setTimeout(processLoop, 10000);
+        logger.error('❌ Error in improvement processing:', error);
+        
+const timeoutId = setTimeout(processLoop,  10000);
+// Store timeoutId for cleanup if needed
+;
       }
     };
     
@@ -180,7 +215,7 @@ class AIOptimizer {
    * Perform quick scan
    */
   async performQuickScan() {
-    console.log('🔍 Performing quick scan...');
+    logger.info('🔍 Performing quick scan...');
     
     const scanData = await this.collectQuickScanData();
     
@@ -643,7 +678,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
    * Generate comprehensive suggestions
    */
   async generateComprehensiveSuggestions(results) {
-    console.log('📝 Generating comprehensive suggestions...');
+    logger.info('📝 Generating comprehensive suggestions...');
     
     const allSuggestions = [];
     const allIssues = [];
@@ -662,7 +697,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
     const uniqueIssues = [...new Set(allIssues)];
     const uniqueImprovements = [...new Set(allImprovements)];
     
-    console.log(`📊 Found ${uniqueSuggestions.length} suggestions, ${uniqueIssues.length} issues, ${uniqueImprovements.length} improvements`);
+    logger.info(`📊 Found ${uniqueSuggestions.length} suggestions, ${uniqueIssues.length} issues, ${uniqueImprovements.length} improvements`);
     
     // Store for later processing
     this.improvementHistory.push({
@@ -680,12 +715,12 @@ Focus on practical, implementable improvements that will have the most impact.`,
     if (this.analysisQueue.length === 0) return;
     
     const task = this.analysisQueue.shift();
-    console.log(`🔄 Processing improvement task: ${task.type}`);
+    logger.info(`🔄 Processing improvement task: ${task.type}`);
     
     try {
       await this.executeImprovementTask(task);
     } catch (error) {
-      console.error(`❌ Error processing improvement task: ${error.message}`);
+      logger.error(`❌ Error processing improvement task: ${error.message}`);
     }
   }
 
@@ -694,7 +729,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
    */
   async executeImprovementTask(task) {
     // Implementation would depend on the specific task type
-    console.log(`✅ Executed improvement task: ${task.type}`);
+    logger.info(`✅ Executed improvement task: ${task.type}`);
   }
 
   /**
@@ -817,9 +852,9 @@ Focus on practical, implementable improvements that will have the most impact.`,
    * Stop the AI optimization system
    */
   async stop() {
-    console.log('🛑 Stopping AI Optimization System...');
+    logger.info('🛑 Stopping AI Optimization System...');
     this.isRunning = false;
-    console.log('✅ AI Optimization System stopped');
+    logger.info('✅ AI Optimization System stopped');
   }
 
   /**

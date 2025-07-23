@@ -1,12 +1,39 @@
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
-/**
- * Intelligent Automation System - Main Entry Point
- *
- * This is the main entry point for the autonomous automation system.
- * It initializes and starts the IntelligentAutomationOrchestrator which
- * coordinates all automation components.
- */
+
 
 const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator');
 const path = require('path');
@@ -21,7 +48,7 @@ function loadConfiguration() {
       const configData = fs.readFileSync(configPath, utf8');
       return JSON.parse(configData);
     } catch (error) {
-      console.warn(
+      logger.warn(
         ⚠️ Failed to load config.json, using defaults:',
         error.message,
       );
@@ -84,42 +111,42 @@ function loadConfiguration() {
 
 // Main function
 async function main() {
-  console.log('🚀 Starting Intelligent Automation System...');
-  console.log('='.repeat(60));
+  logger.info('🚀 Starting Intelligent Automation System...');
+  logger.info('='.repeat(60));
 
   try {
     // Load configuration
     const config = loadConfiguration();
-    console.log('📋 Configuration loaded');
+    logger.info('📋 Configuration loaded');
 
     // Create orchestrator
     const orchestrator = new IntelligentAutomationOrchestrator(config);
 
     // Setup event listeners
     orchestrator.on('initialized', () => {
-      console.log('✅ System initialized successfully');
+      logger.info('✅ System initialized successfully');
     });
 
     orchestrator.on('started', () => {
-      console.log('🎉 Intelligent Automation System is now running!');
-      console.log('='.repeat(60));
-      console.log('📊 Dashboard: http://localhost:' + config.dashboard.port);
-      console.log('🔧 Press Ctrl+C to stop the system');
-      console.log('='.repeat(60));
+      logger.info('🎉 Intelligent Automation System is now running!');
+      logger.info('='.repeat(60));
+      logger.info('📊 Dashboard: http://localhost:' + config.dashboard.port);
+      logger.info('🔧 Press Ctrl+C to stop the system');
+      logger.info('='.repeat(60));
     });
 
     orchestrator.on('stopped', () => {
-      console.log('🛑 System stopped gracefully');
+      logger.info('🛑 System stopped gracefully');
     });
 
     orchestrator.on('error', (error) => {
-      console.error('❌ System error:', error);
+      logger.error('❌ System error:', error);
     });
 
     // Start the orchestrator
     await orchestrator.start();
   } catch (error) {
-    console.error('❌ Failed to start automation system:', error);
+    logger.error('❌ Failed to start automation system:', error);
     process.exit(1);
   }
 }
@@ -166,7 +193,7 @@ function parseArguments() {
         break;
 
       default:
-        console.warn('⚠️ Unknown argument:', arg);
+        logger.warn('⚠️ Unknown argument:', arg);
         break;
     }
   }
@@ -175,7 +202,7 @@ function parseArguments() {
 }
 
 function showHelp() {
-  console.log(`
+  logger.info(`
 Intelligent Automation System
 
 Usage: node automation/index.js [options]
@@ -209,12 +236,12 @@ function showVersion() {
   if (fs.existsSync(packagePath)) {
     try {
       const packageData = JSON.parse(fs.readFileSync(packagePath, utf8'));
-      console.log(`Intelligent Automation System v${packageData.version}`);
+      logger.info(`Intelligent Automation System v${packageData.version}`);
     } catch (error) {
-      console.log('Intelligent Automation System v1.0.0');
+      logger.info('Intelligent Automation System v1.0.0');
     }
   } else {
-    console.log('Intelligent Automation System v1.0.0');
+    logger.info('Intelligent Automation System v1.0.0');
   }
 }
 
@@ -238,7 +265,7 @@ if (require.main === module) {
 
   // Start the system
   main().catch((error) => {
-    console.error('❌ Fatal error:', error);
+    logger.error('❌ Fatal error:', error);
     process.exit(1);
   });
 }
@@ -248,3 +275,25 @@ module.exports = {
   main,
   loadConfiguration
 };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

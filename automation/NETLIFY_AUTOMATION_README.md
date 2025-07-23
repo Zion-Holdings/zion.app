@@ -1,4 +1,15 @@
-# Netlify Build Automation System
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      # Netlify Build Automation System
 
 A comprehensive automation system that monitors Netlify builds, detects errors, and automatically fixes them to ensure continuous deployment success.
 
@@ -421,3 +432,25 @@ For support or questions:
 - Create an issue in the repository
 - Check the troubleshooting section
 - Review the logs and reports
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

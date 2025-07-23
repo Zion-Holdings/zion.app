@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -37,7 +60,7 @@ class ChatReconnectionTester {
   }
 
   async runAllTests() {
-    console.log('🧪 Starting Chat Reconnection System Tests...\n');
+    logger.info('🧪 Starting Chat Reconnection System Tests...\n');
 
     try {
       await this.testHttpEndpoints();
@@ -47,12 +70,12 @@ class ChatReconnectionTester {
 
       this.printTestResults();
     } catch (error) {
-      console.error('❌ Test failed:', error.message);
+      logger.error('❌ Test failed:', error.message);
     }
   }
 
   async testHttpEndpoints() {
-    console.log('📡 Testing HTTP Endpoints...');
+    logger.info('📡 Testing HTTP Endpoints...');
 
     // Test status endpoint
     try {
@@ -62,14 +85,14 @@ class ChatReconnectionTester {
         success: true,
         data: status
       });
-      console.log('✅ Status endpoint working');
+      logger.info('✅ Status endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
         test: Status Endpoint',
         success: false,
         error: error.message
       });
-      console.log('❌ Status endpoint failed:', error.message);
+      logger.info('❌ Status endpoint failed:', error.message);
     }
 
     // Test computers endpoint
@@ -80,14 +103,14 @@ class ChatReconnectionTester {
         success: true,
         data: computers
       });
-      console.log('✅ Computers endpoint working');
+      logger.info('✅ Computers endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
         test: Computers Endpoint',
         success: false,
         error: error.message
       });
-      console.log('❌ Computers endpoint failed:', error.message);
+      logger.info('❌ Computers endpoint failed:', error.message);
     }
 
     // Test chat endpoint
@@ -101,19 +124,19 @@ class ChatReconnectionTester {
         success: true,
         data: chatResponse
       });
-      console.log('✅ Chat endpoint working');
+      logger.info('✅ Chat endpoint working');
     } catch (error) {
       this.testResults.httpTests.push({
         test: Chat Endpoint',
         success: false,
         error: error.message
       });
-      console.log('❌ Chat endpoint failed:', error.message);
+      logger.info('❌ Chat endpoint failed:', error.message);
     }
   }
 
   async testWebSocketConnections() {
-    console.log('\n🔌 Testing WebSocket Connections...');
+    logger.info('\n🔌 Testing WebSocket Connections...');
 
     // Test single connection
     try {
@@ -122,7 +145,7 @@ class ChatReconnectionTester {
         test: Single WebSocket Connection',
         success: true
       });
-      console.log('✅ Single WebSocket connection working');
+      logger.info('✅ Single WebSocket connection working');
 
       // Send test message
       ws.send(
@@ -133,16 +156,19 @@ class ChatReconnectionTester {
         }),
       );
 
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         ws.close();
-      }, 1000);
+      },  1000);
+// Store timeoutId for cleanup if needed
+;
     } catch (error) {
       this.testResults.websocketTests.push({
         test: Single WebSocket Connection',
         success: false,
         error: error.message
       });
-      console.log('❌ Single WebSocket connection failed:', error.message);
+      logger.info('❌ Single WebSocket connection failed:', error.message);
     }
 
     // Test multiple connections
@@ -160,7 +186,7 @@ class ChatReconnectionTester {
         success: true,
         count: connections.length
       });
-      console.log(
+      logger.info(
         `✅ Multiple WebSocket connections working (${connections.length} connections)`,
       );
 
@@ -175,51 +201,60 @@ class ChatReconnectionTester {
         );
       });
 
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         connections.forEach((ws) => ws.close());
-      }, 2000);
+      },  2000);
+// Store timeoutId for cleanup if needed
+;
     } catch (error) {
       this.testResults.websocketTests.push({
         test: Multiple WebSocket Connections',
         success: false,
         error: error.message
       });
-      console.log('❌ Multiple WebSocket connections failed:', error.message);
+      logger.info('❌ Multiple WebSocket connections failed:', error.message);
     }
   }
 
   async testReconnectionScenarios() {
-    console.log('\n🔄 Testing Reconnection Scenarios...');
+    logger.info('\n🔄 Testing Reconnection Scenarios...');
 
     try {
       // Create connection
       const ws = await this.createWebSocketConnection('reconnection-test');
 
       // Simulate connection loss
-      console.log('🔌 Simulating connection loss...');
+      logger.info('🔌 Simulating connection loss...');
       ws.close();
 
       // Wait and try to reconnect
-      setTimeout(async () => {
+      
+const timeoutId = setTimeout(async () => {
         try {
           const newWs =
             await this.createWebSocketConnection('reconnection-test');
           this.testResults.reconnectionTests.push({
-            test: Reconnection After Loss',
+            test: Reconnection After Loss', 
             success: true
           });
-          console.log('✅ Reconnection after loss working');
+// Store timeoutId for cleanup if needed
+;
+          logger.info('✅ Reconnection after loss working');
 
-          setTimeout(() => {
+          
+const timeoutId = setTimeout(() => {
             newWs.close();
-          }, 1000);
+          },  1000);
+// Store timeoutId for cleanup if needed
+;
         } catch (error) {
           this.testResults.reconnectionTests.push({
             test: Reconnection After Loss',
             success: false,
             error: error.message
           });
-          console.log('❌ Reconnection after loss failed:', error.message);
+          logger.info('❌ Reconnection after loss failed:', error.message);
         }
       }, 2000);
     } catch (error) {
@@ -228,12 +263,12 @@ class ChatReconnectionTester {
         success: false,
         error: error.message
       });
-      console.log('❌ Reconnection test failed:', error.message);
+      logger.info('❌ Reconnection test failed:', error.message);
     }
   }
 
   async testMultiComputerSimulation() {
-    console.log('\n🖥️ Testing Multi-Computer Simulation...')
+    logger.info('\n🖥️ Testing Multi-Computer Simulation...')
 const computers = []
 const computerCount = 5;
 
@@ -269,39 +304,45 @@ const computerCount = 5;
         success: true,
         computerCount: computers.length
       });
-      console.log(
+      logger.info(
         `✅ Multi-computer simulation working (${computers.length} computers)`,
       );
 
       // Send messages from all computers
       computers.forEach((computer, index) => {
-        setTimeout(() => {
+        
+const timeoutId = setTimeout(() => {
           computer.connection.send(
             JSON.stringify({
-              type: chat',
+              type: chat', 
               message: `Hello from ${computer.name}!`,
               room: general
-            }),
+            });
+// Store timeoutId for cleanup if needed
+,
           );
         }, index * 500);
       });
 
       // Clean up after 5 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         computers.forEach((computer) => {
           if (computer.connection.readyState === WebSocket.OPEN) {
             computer.connection.close();
           }
         });
-        console.log('🧹 Cleaned up simulated computers');
-      }, 5000);
+        logger.info('🧹 Cleaned up simulated computers');
+      },  5000);
+// Store timeoutId for cleanup if needed
+;
     } catch (error) {
       this.testResults.websocketTests.push({
         test: Multi-Computer Simulation',
         success: false,
         error: error.message
       });
-      console.log('❌ Multi-computer simulation failed:', error.message);
+      logger.info('❌ Multi-computer simulation failed:', error.message);
     }
   }
 
@@ -351,29 +392,32 @@ const req = http.request(options, (res) => {
           const message = JSON.parse(data);
           this.handleWebSocketMessage(message, computerId);
         } catch (error) {
-          console.error('Failed to parse WebSocket message:', error);
+          logger.error('Failed to parse WebSocket message:', error);
         }
       });
 
       ws.on('error', reject);
 
       // Timeout after 5 seconds
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         reject(new Error('WebSocket connection timeout'));
-      }, 5000);
+      },  5000);
+// Store timeoutId for cleanup if needed
+;
     });
   }
 
   handleWebSocketMessage(message, computerId) {
     this.messageCount++;
-    console.log(
+    logger.info(
       `📨 [${computerId}] Received: ${message.type} - ${message.message || No message'}`,
     );
   }
 
   printTestResults() {
-    console.log('\n📊 Test Results Summary');
-    console.log('========================')
+    logger.info('\n📊 Test Results Summary');
+    logger.info('========================')
 const allTests = [
       ...this.testResults.httpTests,
       ...this.testResults.websocketTests,
@@ -382,21 +426,21 @@ const allTests = [
 const passed = allTests.filter((test) => test.success).length
 const total = allTests.length;
 
-    console.log(`✅ Passed: ${passed}/${total}`);
-    console.log(`❌ Failed: ${total - passed}/${total}`);
-    console.log(`📈 Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
+    logger.info(`✅ Passed: ${passed}/${total}`);
+    logger.info(`❌ Failed: ${total - passed}/${total}`);
+    logger.info(`📈 Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
 
-    console.log('\n📋 Detailed Results:');
+    logger.info('\n📋 Detailed Results:');
     allTests.forEach((test) => {
       const status = test.success ? ✅' : ❌';
-      console.log(`${status} ${test.test}`);
+      logger.info(`${status} ${test.test}`);
       if (!test.success && test.error) {
-        console.log(`   Error: ${test.error}`);
+        logger.info(`   Error: ${test.error}`);
       }
     });
 
-    console.log(`\n💬 Total Messages Received: ${this.messageCount}`);
-    console.log('🎉 Test completed!');
+    logger.info(`\n💬 Total Messages Received: ${this.messageCount}`);
+    logger.info('🎉 Test completed!');
   }
 }
 

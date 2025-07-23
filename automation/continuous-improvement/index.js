@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -61,7 +84,7 @@ class ContinuousImprovementSystem {
    * Initialize the continuous improvement system
    */
   async initialize() {
-    console.log('🚀 Initializing Zion App Continuous Improvement System...');
+    logger.info('🚀 Initializing Zion App Continuous Improvement System...');
     
     // Validate configuration
     this.validateConfig();
@@ -72,7 +95,7 @@ class ContinuousImprovementSystem {
     // Start the improvement loop
     this.startImprovementLoop();
     
-    console.log('✅ Continuous Improvement System initialized successfully');
+    logger.info('✅ Continuous Improvement System initialized successfully');
   }
 
   /**
@@ -87,8 +110,8 @@ class ContinuousImprovementSystem {
     const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     
     if (missing.length > 0) {
-      console.warn(`⚠️  Missing environment variables: ${missing.join(', )}`);
-      console.warn('Some features may be limited without proper configuration');
+      logger.warn(`⚠️  Missing environment variables: ${missing.join(', )}`);
+      logger.warn('Some features may be limited without proper configuration');
     }
   }
 
@@ -136,7 +159,7 @@ class ContinuousImprovementSystem {
    * Start the main improvement loop
    */
   startImprovementLoop() {
-    console.log('🔄 Starting continuous improvement loop...');
+    logger.info('🔄 Starting continuous improvement loop...');
     this.isRunning = true;
 
     const loop = () => {
@@ -147,9 +170,9 @@ class ContinuousImprovementSystem {
       // Run monitors that are due
       for (const [name, monitor] of this.monitors) {
         if (now - monitor.lastRun >= monitor.interval) {
-          console.log(`🔍 Running ${name} monitor...`);
+          logger.info(`🔍 Running ${name} monitor...`);
           monitor.handler().catch(error => {
-            console.error(`❌ Error in ${name} monitor:`, error);
+            logger.error(`❌ Error in ${name} monitor:`, error);
           });
           monitor.lastRun = now;
         }
@@ -157,11 +180,14 @@ class ContinuousImprovementSystem {
 
       // Process improvement queue
       this.processImprovementQueue().catch(error => {
-        console.error('❌ Error processing improvement queue:', error);
+        logger.error('❌ Error processing improvement queue:', error);
       });
 
       // Schedule next iteration
-      setTimeout(loop, 60000); // Check every minute
+      
+const timeoutId = setTimeout(loop,  60000);
+// Store timeoutId for cleanup if needed
+; // Check every minute
     };
 
     loop();
@@ -172,7 +198,7 @@ class ContinuousImprovementSystem {
    */
   async monitorCodeQuality() {
     try {
-      console.log('🔍 Monitoring code quality...');
+      logger.info('🔍 Monitoring code quality...');
       
       // Run linting
       const lintResults = await this.runLinting();
@@ -195,9 +221,9 @@ class ContinuousImprovementSystem {
         });
       }
       
-      console.log('✅ Code quality monitoring completed');
+      logger.info('✅ Code quality monitoring completed');
     } catch (error) {
-      console.error('❌ Code quality monitoring failed:', error);
+      logger.error('❌ Code quality monitoring failed:', error);
     }
   }
 
@@ -206,7 +232,7 @@ class ContinuousImprovementSystem {
    */
   async monitorPerformance() {
     try {
-      console.log('⚡ Monitoring performance...');
+      logger.info('⚡ Monitoring performance...');
       
       // Run Lighthouse audit
       const lighthouseResults = await this.runLighthouseAudit();
@@ -233,9 +259,9 @@ class ContinuousImprovementSystem {
         });
       }
       
-      console.log('✅ Performance monitoring completed');
+      logger.info('✅ Performance monitoring completed');
     } catch (error) {
-      console.error('❌ Performance monitoring failed:', error);
+      logger.error('❌ Performance monitoring failed:', error);
     }
   }
 
@@ -244,7 +270,7 @@ class ContinuousImprovementSystem {
    */
   async monitorSecurity() {
     try {
-      console.log('🔒 Monitoring security...');
+      logger.info('🔒 Monitoring security...');
       
       // Run security audit
       const securityAudit = await this.runSecurityAudit();
@@ -267,9 +293,9 @@ class ContinuousImprovementSystem {
         });
       }
       
-      console.log('✅ Security monitoring completed');
+      logger.info('✅ Security monitoring completed');
     } catch (error) {
-      console.error('❌ Security monitoring failed:', error);
+      logger.error('❌ Security monitoring failed:', error);
     }
   }
 
@@ -278,7 +304,7 @@ class ContinuousImprovementSystem {
    */
   async monitorUserExperience() {
     try {
-      console.log('👥 Monitoring user experience...');
+      logger.info('👥 Monitoring user experience...');
       
       // Check accessibility
       const accessibility = await this.checkAccessibility();
@@ -305,9 +331,9 @@ class ContinuousImprovementSystem {
         });
       }
       
-      console.log('✅ User experience monitoring completed');
+      logger.info('✅ User experience monitoring completed');
     } catch (error) {
-      console.error('❌ User experience monitoring failed:', error);
+      logger.error('❌ User experience monitoring failed:', error);
     }
   }
 
@@ -316,7 +342,7 @@ class ContinuousImprovementSystem {
    */
   async monitorDependencies() {
     try {
-      console.log('📦 Monitoring dependencies...');
+      logger.info('📦 Monitoring dependencies...');
       
       // Check for outdated packages
       const outdated = await this.checkOutdatedPackages();
@@ -338,9 +364,9 @@ class ContinuousImprovementSystem {
         });
       }
       
-      console.log('✅ Dependencies monitoring completed');
+      logger.info('✅ Dependencies monitoring completed');
     } catch (error) {
-      console.error('❌ Dependencies monitoring failed:', error);
+      logger.error('❌ Dependencies monitoring failed:', error);
     }
   }
 
@@ -353,7 +379,7 @@ class ContinuousImprovementSystem {
     improvement.status = queued';
     
     this.improvementQueue.push(improvement);
-    console.log(`📋 Queued improvement: ${type} (${improvement.severity})`);
+    logger.info(`📋 Queued improvement: ${type} (${improvement.severity})`);
   }
 
   /**
@@ -363,7 +389,7 @@ class ContinuousImprovementSystem {
     if (this.improvementQueue.length === 0) return;
 
     const improvement = this.improvementQueue.shift();
-    console.log(`🔄 Processing improvement: ${improvement.type}`);
+    logger.info(`🔄 Processing improvement: ${improvement.type}`);
 
     try {
       improvement.status = processing';
@@ -386,18 +412,18 @@ class ContinuousImprovementSystem {
           await this.implementDependenciesImprovement(improvement);
           break;
         default:
-          console.warn(`⚠️  Unknown improvement type: ${improvement.type}`);
+          logger.warn(`⚠️  Unknown improvement type: ${improvement.type}`);
       }
       
       improvement.status = completed';
       improvement.completedAt = new Date().toISOString();
       
-      console.log(`✅ Improvement completed: ${improvement.type}`);
+      logger.info(`✅ Improvement completed: ${improvement.type}`);
       
     } catch (error) {
       improvement.status = failed';
       improvement.error = error.message;
-      console.error(`❌ Improvement failed: ${improvement.type}`, error);
+      logger.error(`❌ Improvement failed: ${improvement.type}`, error);
     }
     
     // Store improvement history
@@ -406,27 +432,27 @@ class ContinuousImprovementSystem {
 
   // Implementation methods (stubs for now)
   async implementCodeQualityImprovement(improvement) {
-    console.log('🧹 Implementing code quality improvement...');
+    logger.info('🧹 Implementing code quality improvement...');
     // TODO: Implement actual code quality improvements
   }
 
   async implementPerformanceImprovement(improvement) {
-    console.log('⚡ Implementing performance improvement...');
+    logger.info('⚡ Implementing performance improvement...');
     // TODO: Implement actual performance improvements
   }
 
   async implementSecurityImprovement(improvement) {
-    console.log('🔒 Implementing security improvement...');
+    logger.info('🔒 Implementing security improvement...');
     // TODO: Implement actual security improvements
   }
 
   async implementUserExperienceImprovement(improvement) {
-    console.log('👥 Implementing user experience improvement...');
+    logger.info('👥 Implementing user experience improvement...');
     // TODO: Implement actual UX improvements
   }
 
   async implementDependenciesImprovement(improvement) {
-    console.log('📦 Implementing dependencies improvement...');
+    logger.info('📦 Implementing dependencies improvement...');
     // TODO: Implement actual dependency updates
   }
 
@@ -485,9 +511,23 @@ if (require.main === module) {
   const system = new ContinuousImprovementSystem();
   
   system.initialize().catch(error => {
-    console.error('❌ Failed to initialize Continuous Improvement System:', error);
+    logger.error('❌ Failed to initialize Continuous Improvement System:', error);
     process.exit(1);
   });
 }
 
 module.exports = ContinuousImprovementSystem; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

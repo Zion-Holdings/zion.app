@@ -1,14 +1,15 @@
-/**
- * @file scripts/watchdog.js
- * @description Monitors specified log files for recurring error patterns or critical update messages.
- * If a predefined number of consecutive issues are detected (e.g., 3 performance errors or 3 security patches),
- * it automatically triggers a self-healing process.
- * This script is intended to be run continuously, ideally with a process manager like PM2.
- *
- * To run: node scripts/watchdog.js
- * For production, run this script using a process manager like PM2 (e.g., pm2 start scripts/watchdog.js --name my-watchdog)
- */
-;
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      ;
 import { Tail } from tail';import path from path';import { exec } from child_process';import fs from fs';import os from os-utils';import axios from axios';import { pathToFileURL, fileURLToPath } from url';
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
@@ -28,12 +29,7 @@ const _dirname = path.dirname(fileURLToPath(import.meta.url));
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 // --- Global Error Logging Function ---
-/**
- * Logs an error message to the console with a timestamp and a standard prefix.
- * Optionally includes details from an error object.
- * @param {string} message - The primary error message.
- * @param {Error|null} [errorObject=null] - Optional error object to log its message and stack.
- */
+
 function logErrorToProduction(message, errorObject = null) {
   const timestamp = new Date().toISOString();
   console.error(`[${timestamp}] WATCHDOG ERROR: ${message}`);
@@ -46,10 +42,7 @@ function logErrorToProduction(message, errorObject = null) {
 }
 
 // --- Discord Alert Function ---
-/**
- * Sends an alert message to a configured Discord webhook.
- * @param {string} alertMessage - The message to send to Discord.
- */
+
 async function sendDiscordAlert(alertMessage) {
   if (!DISCORD_WEBHOOK_URL) {
     const logMsg = Discord Webhook URL not configured (DISCORD_WEBHOOK_URL environment variable is not set). Skipping alert.';    console.warn(logMsg);
@@ -78,27 +71,15 @@ async function sendDiscordAlert(alertMessage) {
 }
 
 // --- Global Unhandled Error Handlers ---
-/**
- * Handles unhandled promise rejections.
- * Logs the error details using the logError function.
- */
+
 process.on('unhandledRejection', (reason, promise) => {'  logErrorToProduction('Unhandled Rejection. Promise:  + promise +  Reason:  + (reason instanceof Error ? reason.message : reason), reason instanceof Error ? reason : null);});
 
-/**
- * Handles uncaught exceptions.
- * Logs the error details using the logError function.
- * Note: After an uncaught exception, the application might be in an unstable state.
- * Depending on the severity, a process manager (like PM2) might be configured to restart it.
- */
+
 process.on('uncaughtException', (error) => {'  logErrorToProduction('Uncaught Exception.', error);  // process.exit(1); // Optionally exit. For a watchdog, continuous monitoring is often preferred if possible.
 });
 
 // --- Configuration: File Paths ---
-/**
- * Base path for all watchdog logs. Defaults to a `logs` directory within the
- * current working directory. This avoids issues where `__dirname` resolves to
- * a read-only path such as `/app` in some deploy environments.
- */
+
 // Determine the base path for logs. If WATCHDOG_LOG_PATH is provided but
 // cannot be created/written (e.g., due to permissions or non-existent mount),
 // fall back to a `logs` directory within the current working directory.
@@ -142,9 +123,9 @@ function determineBaseLogPath() {
 }
 
 const BASE_LOG_PATH = determineBaseLogPath();
-/** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
-const PERF_LOG_FILE = path.join(BASE_LOG_PATH, perf', hourly.log');/** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
-const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, security', hourly-fix.log');/** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
+
+const PERF_LOG_FILE = path.join(BASE_LOG_PATH, perf', hourly.log');
+const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, security', hourly-fix.log');
 const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, self-heal.log');
 // Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
@@ -208,9 +189,9 @@ const _ERROR_PATTERNS_CONFIG = [
 const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || http://localhost:3006/api/codex/suggest-fix';
 // --- State Variables ---;
 let _errorStreaks = undefined; // Unused {}; // Stores streaks for each error pattern config name
-/** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */;
+;
 let isHealing = false;
-/** @type {number} highCpuUsageCount - Counter for consecutive high CPU usage detections. */;
+;
 let highCpuUsageCount = 0;
 
 // --- System Monitoring Configuration ---
@@ -227,9 +208,7 @@ let lastSelfHealTime = 0;
 const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, watchdog.pid');
 // --- Helper Functions ---
 
-/**
- * Ensures only one instance of watchdog runs at a time
- */
+
 function ensureSingleInstance() {
   try {
     if (fs.existsSync(WATCHDOG_PID_FILE)) {
@@ -265,11 +244,7 @@ function ensureSingleInstance() {
     logErrorToProduction('Failed to ensure single instance', Error occurred');  }
 }
 
-/**
- * Safely appends a message to the self-heal log file (SELF_HEAL_LOG_FILE).
- * Includes error handling in case the file write fails, logging the error to console.
- * @param {string} message - The message to append.
- */
+
 function appendToSelfHealLog(message) {
   // Do not write to physical log file during test runs to avoid polluting it.
   // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === test') {    return;
@@ -301,17 +276,7 @@ const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
 
 // console.warn('Watchdog script started. Monitoring log files...');appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
-/**
- * Triggers the self-healing process.
- * - Checks the cooldown (`isHealing`) to prevent concurrent executions.
- * - Checks rate limiting to prevent too frequent self-heal attempts.
- * - Logs the trigger reason and action to console and SELF_HEAL_LOG_FILE.
- * - Executes the HEAL_COMMAND.
- * - Logs the output (stdout/stderr) of the HEAL_COMMAND.
- * - Resets both perfErrorStreak and securityPatchStreak.
- * - Releases the cooldown by setting `isHealing` back to false.
- * @param {string} reason - The reason why the self-heal action is being triggered.
- */
+
 function triggerSelfHeal(reason) {
   const currentTime = Date.now();
   
@@ -393,10 +358,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
 }
 
 // --- System Resource Monitoring Function ---
-/**
- * Monitors system memory and CPU usage.
- * Triggers self-healing if thresholds are breached consistently.
- */
+
 function monitorSystemResources() {
   if (isHealing) {
     // Don't check resources if a healing process is already underway'    return;
@@ -532,7 +494,10 @@ function startMonitoring() {
   setInterval(monitorSystemResources, SYSTEM_CHECK_INTERVAL);
   
   // Perform initial resource check after 5 seconds
-  setTimeout(monitorSystemResources, 5000);
+  
+const timeoutId = setTimeout(monitorSystemResources,  5000);
+// Store timeoutId for cleanup if needed
+;
 }
 
 // This part runs when the script is executed directly
@@ -579,3 +544,25 @@ const _getConstantsForTests = undefined; // Unused () => ({
   DISCORD_WEBHOOK_URL,
   CODEX_TRIGGER_URL
 });
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

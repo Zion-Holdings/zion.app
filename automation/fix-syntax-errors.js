@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
@@ -10,7 +33,7 @@ class SyntaxErrorFixer {
   }
 
   async fixAllFiles() {
-    console.log('🔧 Fixing syntax errors in automation files...');
+    logger.info('🔧 Fixing syntax errors in automation files...');
     
     const filesToFix = [
       test-all-automations.js',
@@ -56,9 +79,9 @@ class SyntaxErrorFixer {
       if (fixedContent !== content) {
         await fs.writeFile(filePath, fixedContent, utf8');
         this.fixedFiles.push(filePath);
-        console.log(`✅ Fixed: ${filePath}`);
+        logger.info(`✅ Fixed: ${filePath}`);
       } else {
-        console.log(`✅ No issues: ${filePath}`);
+        logger.info(`✅ No issues: ${filePath}`);
       }
     } catch (error) {
       throw new Error(`Failed to fix ${filePath}: ${error.message}`);
@@ -91,19 +114,19 @@ class SyntaxErrorFixer {
   }
 
   printReport() {
-    console.log('\n📊 Syntax Fix Report');
-    console.log('='.repeat(50));
-    console.log(`Files fixed: ${this.fixedFiles.length}`);
-    console.log(`Errors: ${this.errors.length}`);
+    logger.info('\n📊 Syntax Fix Report');
+    logger.info('='.repeat(50));
+    logger.info(`Files fixed: ${this.fixedFiles.length}`);
+    logger.info(`Errors: ${this.errors.length}`);
     
     if (this.fixedFiles.length > 0) {
-      console.log('\n✅ Fixed files:');
-      this.fixedFiles.forEach(file => console.log(`  - ${file}`));
+      logger.info('\n✅ Fixed files:');
+      this.fixedFiles.forEach(file => logger.info(`  - ${file}`));
     }
     
     if (this.errors.length > 0) {
-      console.log('\n❌ Errors:');
-      this.errors.forEach(({ file, error }) => console.log(`  - ${file}: ${error}`));
+      logger.info('\n❌ Errors:');
+      this.errors.forEach(({ file, error }) => logger.info(`  - ${file}: ${error}`));
     }
   }
 }
@@ -112,9 +135,23 @@ class SyntaxErrorFixer {
 if (require.main === module) {
   const fixer = new SyntaxErrorFixer();
   fixer.fixAllFiles().catch(error => {
-    console.error('Fixer failed:', error);
+    logger.error('Fixer failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = SyntaxErrorFixer; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

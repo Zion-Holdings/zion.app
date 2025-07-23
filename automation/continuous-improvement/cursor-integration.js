@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -35,7 +58,7 @@ class CursorIntegration {
    * Initialize Cursor integration
    */
   async initialize() {
-    console.log('🔗 Initializing Cursor AI Integration...');    
+    logger.info('🔗 Initializing Cursor AI Integration...');    
     if (!this.config.apiKey) {
       throw new Error('CURSOR_API_KEY environment variable is required');    }
     
@@ -46,7 +69,7 @@ class CursorIntegration {
     await this.testConnection();
     
     this.isConnected = true;
-    console.log('✅ Cursor AI Integration initialized successfully');  }
+    logger.info('✅ Cursor AI Integration initialized successfully');  }
 
   /**
    * Test connection to Cursor API
@@ -57,7 +80,7 @@ class CursorIntegration {
         action: ping',        workspaceId: this.config.workspaceId
       });
       
-      console.log('🔗 Cursor API connection successful');      return true;
+      logger.info('🔗 Cursor API connection successful');      return true;
     } catch (error) {
       throw new Error(`Failed to connect to Cursor API: ${error.message}`);
     }
@@ -67,7 +90,7 @@ class CursorIntegration {
    * Analyze code quality
    */
   async analyzeCodeQuality(files = null) {
-    console.log('🔍 Analyzing code quality with Cursor AI...');
+    logger.info('🔍 Analyzing code quality with Cursor AI...');
 const targetFiles = files || await this.getTargetFiles()
 const analysisData = await this.collectCodeQualityData(targetFiles)
 const prompt = this.buildCodeQualityPrompt(analysisData)
@@ -89,7 +112,7 @@ const analysis = this.parseCodeQualityResponse(response);
    * Analyze performance
    */
   async analyzePerformance() {
-    console.log('⚡ Analyzing performance with Cursor AI...');
+    logger.info('⚡ Analyzing performance with Cursor AI...');
 const performanceData = await this.collectPerformanceData();
 const prompt = this.buildPerformancePrompt(performanceData);
 const response = await this.callCursorAPI(prompt);
@@ -110,7 +133,7 @@ const analysis = this.parsePerformanceResponse(response);
    * Analyze security
    */
   async analyzeSecurity() {
-    console.log('🔒 Analyzing security with Cursor AI...');
+    logger.info('🔒 Analyzing security with Cursor AI...');
 const securityData = await this.collectSecurityData();
 const prompt = this.buildSecurityPrompt(securityData);
 const response = await this.callCursorAPI(prompt);
@@ -131,7 +154,7 @@ const analysis = this.parseSecurityResponse(response);
    * Get improvement suggestions
    */
   async getImprovementSuggestions(analysis) {
-    console.log('💡 Getting improvement suggestions from Cursor AI...');
+    logger.info('💡 Getting improvement suggestions from Cursor AI...');
     const prompt = this.buildImprovementPrompt(analysis);
     const response = await this.callCursorAPI(prompt);
     
@@ -142,7 +165,7 @@ const analysis = this.parseSecurityResponse(response);
    * Apply code improvements
    */
   async applyCodeImprovements(suggestions) {
-    console.log('🔧 Applying code improvements with Cursor AI...');
+    logger.info('🔧 Applying code improvements with Cursor AI...');
     const results = [];
     
     for (const suggestion of suggestions) {
@@ -214,7 +237,7 @@ const stats = fs.statSync(file);
           lastModified: stats.mtime.toISOString()
         });
       } catch (error) {
-        console.warn(`Warning: Could not read file ${file}: ${error.message}`);
+        logger.warn(`Warning: Could not read file ${file}: ${error.message}`);
       }
     }
     

@@ -1,8 +1,15 @@
-/**
- * @file scripts/watchdog.config.js
- * @description Configuration file for the watchdog monitoring system
- */
-;
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      ;
 const WATCHDOG_CONFIG = {
   // Resource monitoring thresholds
   MEMORY_THRESHOLD: parseFloat(process.env.WATCHDOG_MEMORY_THRESHOLD) || 0.95,
@@ -31,4 +38,26 @@ if (WATCHDOG_CONFIG.DEVELOPMENT_MODE) {
   WATCHDOG_CONFIG.CPU_THRESHOLD = 0.98;
   WATCHDOG_CONFIG.CPU_SUSTAINED_CHECKS = 5; // Require more checks in dev
   WATCHDOG_CONFIG.SYSTEM_CHECK_INTERVAL = 60000; // Check less frequently in dev
-} 
+}
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

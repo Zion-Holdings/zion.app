@@ -1,4 +1,15 @@
-# Cursor Auto-Save Automation System
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      # Cursor Auto-Save Automation System
 
 ## Overview
 Successfully implemented an automated system to ensure changes are automatically saved, committed, and pushed in Cursor IDE.
@@ -82,4 +93,26 @@ The system provides real-time logging:
 - Selective file watching
 - Custom commit message templates
 - Integration with Cursor API (when available)
-- Performance metrics tracking 
+- Performance metrics tracking
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

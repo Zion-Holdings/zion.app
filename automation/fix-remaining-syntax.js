@@ -1,10 +1,33 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
 const path = require('path');
 
 async function fixRemainingSyntax() {
-  console.log('🔧 Fixing remaining syntax errors...');
+  logger.info('🔧 Fixing remaining syntax errors...');
   
   const filePath = path.join(__dirname, core/IntelligentAutomationOrchestrator.js');
   const content = await fs.readFile(filePath, utf8');
@@ -19,7 +42,7 @@ async function fixRemainingSyntax() {
     .replace(/,\s*\n\s*}/g, \n    });
   
   await fs.writeFile(filePath, fixedContent, utf8');
-  console.log('✅ Fixed remaining syntax errors');
+  logger.info('✅ Fixed remaining syntax errors');
 }
 
 fixRemainingSyntax().catch(console.error); 

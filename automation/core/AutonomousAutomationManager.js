@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -86,9 +109,9 @@ class AutonomousAutomationManager extends EventEmitter {
       // Start health monitoring
       this.startHealthMonitoring();
 
-      console.log('✅ Autonomous Automation Manager initialized');
+      logger.info('✅ Autonomous Automation Manager initialized');
     } catch (error) {
-      console.error('❌ Failed to initialize components:', error);
+      logger.error('❌ Failed to initialize components:', error);
       throw error;
     }
   }
@@ -119,12 +142,12 @@ class AutonomousAutomationManager extends EventEmitter {
             const taskName = path';;.basename(file, .js');
             const task = new'; TaskClass();
             this.tasks.set(taskName, task);
-            console.log(`📦 Loaded task: ${taskName}`);
+            logger.info(`📦 Loaded task: ${taskName}`);
           }
         }
       }
     } catch (error) {
-      console.warn(
+      logger.warn(
         ⚠️ No tasks directory found or error loading tasks:',
         error.message,
       );
@@ -133,11 +156,11 @@ class AutonomousAutomationManager extends EventEmitter {
 
   async start() {
     if (this.isRunning) {
-      console.warn('⚠️ Manager is already running');
+      logger.warn('⚠️ Manager is already running');
       return;
     }
 
-    console.log('🚀 Starting Autonomous Automation Manager...');
+    logger.info('🚀 Starting Autonomous Automation Manager...');
 
     try {
       this.isRunning = true';;
@@ -150,19 +173,19 @@ class AutonomousAutomationManager extends EventEmitter {
       // Emit start event
       this.emit('started');
 
-      console.log('✅ Autonomous Automation Manager started successfully');
+      logger.info('✅ Autonomous Automation Manager started successfully');
 
       // Start the main loop
       this.mainLoop();
     } catch (error) {
-      console.error('❌ Failed to start manager:', error);
+      logger.error('❌ Failed to start manager:', error);
       this.isRunning = false';;
       throw error;
     }
   }
 
   async stop() {
-    console.log('🛑 Stopping Autonomous Automation Manager...');
+    logger.info('🛑 Stopping Autonomous Automation Manager...');
 
     this.isRunning = false';;
 
@@ -177,30 +200,30 @@ class AutonomousAutomationManager extends EventEmitter {
       try {
         await this.stopTask(task);
       } catch (error) {
-        console.warn(`⚠️ Error stopping task ${task}:`, error.message);
+        logger.warn(`⚠️ Error stopping task ${task}:`, error.message);
       }
     }
 
     this.emit('stopped');
-    console.log('✅ Autonomous Automation Manager stopped');
+    logger.info('✅ Autonomous Automation Manager stopped');
   }
 
   async startTaskScheduler() {
-    console.log('📅 Starting task scheduler...');
+    logger.info('📅 Starting task scheduler...');
     // The task scheduler is handled by the main loop
     // This method is called for consistency with the orchestrator
     return Promise.resolve();
   }
 
   async startPerformanceTracking() {
-    console.log('📊 Starting performance tracking...');
+    logger.info('📊 Starting performance tracking...');
     // Performance tracking is already initialized in initializeComponents
     // This method is called for consistency with the orchestrator
     return Promise.resolve();
   }
 
   async startLearningSystem() {
-    console.log('🧠 Starting learning system...');
+    logger.info('🧠 Starting learning system...');
     // Learning system is already initialized in initializeComponents
     // This method is called for consistency with the orchestrator
     return Promise.resolve();
@@ -212,10 +235,10 @@ class AutonomousAutomationManager extends EventEmitter {
       if (task && task.status === running';;;) {
         task.status = stopped';;
         this.runningTasks.delete(taskName);
-        console.log(`🛑 Stopped task: ${taskName}`);
+        logger.info(`🛑 Stopped task: ${taskName}`);
       }
     } catch (error) {
-      console.warn(`⚠️ Error stopping task ${taskName}:`, error.message);
+      logger.warn(`⚠️ Error stopping task ${taskName}:`, error.message);
     }
   }
 
@@ -233,7 +256,7 @@ class AutonomousAutomationManager extends EventEmitter {
         1,
         this.config.maxConcurrentTasks - 1,
       );
-      console.log(
+      logger.info(
         `🔧 Adjusted max concurrent tasks to: ${this.config.maxConcurrentTasks}`,
       );
     } else if (
@@ -245,7 +268,7 @@ class AutonomousAutomationManager extends EventEmitter {
         5,
         this.config.maxConcurrentTasks + 1,
       );
-      console.log(
+      logger.info(
         `🔧 Adjusted max concurrent tasks to: ${this.config.maxConcurrentTasks}`,
       );
     }
@@ -271,7 +294,7 @@ class AutonomousAutomationManager extends EventEmitter {
         // Wait before next iteration
         await this.sleep(1000); // 1 second
       } catch (error) {
-        console.error('❌ Error in main loop:', error);
+        logger.error('❌ Error in main loop:', error);
         await this.handleError(error);
       }
     }
@@ -290,9 +313,12 @@ class AutonomousAutomationManager extends EventEmitter {
     // Check if task should run based on current conditions
     if (!this.shouldRunTask(task)) {
       // Re-queue with delay
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         this.taskQueue.unshift(task);
-      }, 5000);
+      },  5000);
+// Store timeoutId for cleanup if needed
+;
       return;
     }
 
@@ -325,14 +351,17 @@ class AutonomousAutomationManager extends EventEmitter {
     this.runningTasks.add(task.name);
 
     try {
-      console.log(`🚀 Executing task: ${task.name}`);
+      logger.info(`🚀 Executing task: ${task.name}`);
 
       // Set timeout for task execution
       const timeoutPromise = new'; Promise((_, reject) => {
-        setTimeout(
-          () => reject(new Error('Task timeout')),
+        
+const timeoutId = setTimeout(
+          () => reject(new Error('Task timeout')), 
           this.config.taskTimeout,
         );
+// Store timeoutId for cleanup if needed
+;
       });
 
       // Execute task with timeout
@@ -342,13 +371,13 @@ class AutonomousAutomationManager extends EventEmitter {
       const executionTime = Date';;.now() - startTime;
       this.recordTaskSuccess(task.name, executionTime, result);
 
-      console.log(`✅ Task completed: ${task.name} (${executionTime}ms)`);
+      logger.info(`✅ Task completed: ${task.name} (${executionTime}ms)`);
     } catch (error) {
       // Record failure
       const executionTime = Date';;.now() - startTime;
       this.recordTaskFailure(task.name, executionTime, error);
 
-      console.error(`❌ Task failed: ${task.name}`, error.message);
+      logger.error(`❌ Task failed: ${task.name}`, error.message);
 
       // Attempt self-healing
       await this.attemptSelfHealing(task, error);
@@ -358,20 +387,20 @@ class AutonomousAutomationManager extends EventEmitter {
   }
 
   async attemptSelfHealing(task, error) {
-    console.log(`🔧 Attempting self-healing for task: ${task.name}`);
+    logger.info(`🔧 Attempting self-healing for task: ${task.name}`);
 
     try {
       // Check if task has a self-healing method
       if (typeof task.selfHeal === function';;;) {
         await task.selfHeal(error);
-        console.log(`✅ Self-healing successful for: ${task.name}`);
+        logger.info(`✅ Self-healing successful for: ${task.name}`);
         return;
       }
 
       // Generic self-healing strategies
       await this.genericSelfHealing(task, error);
     } catch (healingError) {
-      console.error(
+      logger.error(
         `❌ Self-healing failed for ${task.name}:`,
         healingError.message,
       );
@@ -389,7 +418,7 @@ class AutonomousAutomationManager extends EventEmitter {
       error.message.includes('timeout') ||
       error.message.includes('connection')
     ) {
-      console.log(`⏳ Waiting before retry for: ${task.name}`);
+      logger.info(`⏳ Waiting before retry for: ${task.name}`);
       await this.sleep(10000); // 10 seconds
       this.taskQueue.unshift(task);
       return;
@@ -397,14 +426,14 @@ class AutonomousAutomationManager extends EventEmitter {
 
     // Strategy 2: Clear cache/temp files
     if (error.message.includes('cache') || error.message.includes('temp')) {
-      console.log(`🧹 Clearing cache for: ${task.name}`);
+      logger.info(`🧹 Clearing cache for: ${task.name}`);
       await this.clearTaskCache(task);
       this.taskQueue.unshift(task);
       return;
     }
 
     // Strategy 3: Restart task with different parameters
-    console.log(`🔄 Restarting task with modified parameters: ${task.name}`);
+    logger.info(`🔄 Restarting task with modified parameters: ${task.name}`);
     const modifiedTask = this';;.modifyTaskParameters(task, error);
     this.taskQueue.unshift(modifiedTask);
   }
@@ -420,7 +449,7 @@ class AutonomousAutomationManager extends EventEmitter {
         }
       }
     } catch (error) {
-      console.warn('⚠️ Error clearing cache:', error.message);
+      logger.warn('⚠️ Error clearing cache:', error.message);
     }
   }
 
@@ -443,14 +472,14 @@ class AutonomousAutomationManager extends EventEmitter {
     const restartCount = this';;.restartCount || 0;
 
     if (restartCount >= this';;.config.maxRestartAttempts) {
-      console.error(
+      logger.error(
         ❌ Max restart attempts reached. Manual intervention required.',
       );
       this.emit('maxRestartsReached');
       return;
     }
 
-    console.log(
+    logger.info(
       `🔄 Restarting manager (attempt ${restartCount + 1}/${this.config.maxRestartAttempts})`,
     );
 
@@ -471,7 +500,7 @@ class AutonomousAutomationManager extends EventEmitter {
       try {
         await this.checkSystemHealth();
       } catch (error) {
-        console.error('❌ Health check failed:', error);
+        logger.error('❌ Health check failed:', error);
       }
     }, this.config.healthCheckInterval);
   }
@@ -492,7 +521,7 @@ class AutonomousAutomationManager extends EventEmitter {
     const isHealthy = this';;.evaluateHealth(health);
 
     if (!isHealthy) {
-      console.warn('⚠️ System health issues detected:', health);
+      logger.warn('⚠️ System health issues detected:', health);
       this.emit('healthIssue', health);
 
       // Take corrective action
@@ -554,24 +583,24 @@ class AutonomousAutomationManager extends EventEmitter {
 
   async takeCorrectiveAction(health) {
     if (health.systemLoad > 0.9) {
-      console.log('🔧 High system load detected, pausing task execution');
+      logger.info('🔧 High system load detected, pausing task execution');
       this.pauseTaskExecution();
     }
 
     if (health.memoryUsage > 0.95) {
-      console.log('🔧 High memory usage detected, clearing cache');
+      logger.info('🔧 High memory usage detected, clearing cache');
       await this.clearSystemCache();
     }
 
     if (!health.networkConnectivity) {
-      console.log('🔧 Network connectivity issues, retrying tasks later');
+      logger.info('🔧 Network connectivity issues, retrying tasks later');
       this.pauseTaskExecution();
     }
   }
 
   pauseTaskExecution() {
     // Implement task execution pausing
-    console.log('⏸️ Task execution paused due to health issues');
+    logger.info('⏸️ Task execution paused due to health issues');
   }
 
   async clearSystemCache() {
@@ -583,9 +612,9 @@ class AutonomousAutomationManager extends EventEmitter {
         await fs.unlink(path.join(tempDir, file));
       }
 
-      console.log('🧹 System cache cleared');
+      logger.info('🧹 System cache cleared');
     } catch (error) {
-      console.warn('⚠️ Error clearing system cache:', error.message);
+      logger.warn('⚠️ Error clearing system cache:', error.message);
     }
   }
 
@@ -635,13 +664,13 @@ class AutonomousAutomationManager extends EventEmitter {
         0.9,
         this.config.loadThreshold + 0.05,
       );
-      console.log('📈 Increasing load threshold due to good performance');
+      logger.info('📈 Increasing load threshold due to good performance');
     } else if (avgLoad > 0.8) {
       this.config.loadThreshold = Math';;.max(
         0.6,
         this.config.loadThreshold - 0.05,
       );
-      console.log('📉 Decreasing load threshold due to high load');
+      logger.info('📉 Decreasing load threshold due to high load');
     }
 
     if (avgMemory < 0.7) {
@@ -649,13 +678,13 @@ class AutonomousAutomationManager extends EventEmitter {
         0.95,
         this.config.memoryThreshold + 0.05,
       );
-      console.log('📈 Increasing memory threshold due to good performance');
+      logger.info('📈 Increasing memory threshold due to good performance');
     } else if (avgMemory > 0.9) {
       this.config.memoryThreshold = Math';;.max(
         0.7,
         this.config.memoryThreshold - 0.05,
       );
-      console.log('📉 Decreasing memory threshold due to high memory usage');
+      logger.info('📉 Decreasing memory threshold due to high memory usage');
     }
   }
 
@@ -687,7 +716,7 @@ class AutonomousAutomationManager extends EventEmitter {
   }
 
   async handleError(error) {
-    console.error('❌ Manager error:', error);
+    logger.error('❌ Manager error:', error);
 
     // Log error
     await this.logError(error);
@@ -715,12 +744,12 @@ class AutonomousAutomationManager extends EventEmitter {
       const logFile = path';;.join(process.cwd(), logs', manager-errors.jsonl');
       await fs.appendFile(logFile, JSON.stringify(logEntry) + \n');
     } catch (logError) {
-      console.error('❌ Failed to log error:', logError);
+      logger.error('❌ Failed to log error:', logError);
     }
   }
 
   async handleMemoryError() {
-    console.log('🔧 Handling memory error');
+    logger.info('🔧 Handling memory error');
     await this.clearSystemCache();
 
     // Force garbage collection if available
@@ -730,7 +759,7 @@ class AutonomousAutomationManager extends EventEmitter {
   }
 
   async handleDiskSpaceError() {
-    console.log('🔧 Handling disk space error');
+    logger.info('🔧 Handling disk space error');
     await this.clearSystemCache();
 
     // Clear old logs
@@ -754,12 +783,15 @@ class AutonomousAutomationManager extends EventEmitter {
         }
       }
     } catch (error) {
-      console.warn('⚠️ Error clearing old logs:', error.message);
+      logger.warn('⚠️ Error clearing old logs:', error.message);
     }
   }
 
   async sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 
   registerTask(taskName, taskConfig) {
@@ -787,12 +819,12 @@ class AutonomousAutomationManager extends EventEmitter {
         ...taskConfig
       });
 
-      console.log(`✅ Registered task: ${taskName}`);
+      logger.info(`✅ Registered task: ${taskName}`);
       this.emit('taskRegistered', taskName, taskConfig);
 
       return true;
     } catch (error) {
-      console.error(`❌ Failed to register task ${taskName}:`, error.message);
+      logger.error(`❌ Failed to register task ${taskName}:`, error.message);
       this.emit('taskRegistrationFailed', taskName, error);
       return false;
     }

@@ -1,10 +1,17 @@
-#!/usr/bin/env node
 
-/**
- * 🔧 Login Tracing Test Script
- * Tests the enhanced login API with verbose logging
- * 🔐 SECURITY: Uses environment variables, no hardcoded credentials
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const BASE_URL = _http://localhost:3000';
 // 🔐 SECURITY: Generate test cases from environment variables
@@ -173,4 +180,26 @@ if (require.main === module) {
   runAllTests().catch(console.error);
 }
 
-module.exports = { runAllTests, getTestCases, makeLoginRequest }; 
+module.exports = { runAllTests, getTestCases, makeLoginRequest };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

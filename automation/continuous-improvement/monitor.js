@@ -439,9 +439,12 @@ class ZionMonitor {
   onFileChange(eventType, filename) {
     // Trigger immediate code quality check for changed files
     if (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js')) {
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         this.monitorCodeQuality();
-      }, 5000); // Wait 5 seconds for file to be saved
+      },  5000);
+// Store timeoutId for cleanup if needed
+; // Wait 5 seconds for file to be saved
     }
   }
 

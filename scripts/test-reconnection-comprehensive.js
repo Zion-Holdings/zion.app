@@ -1,8 +1,31 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const io = require('socket.io-client');
 
-console.log('🧪 Testing Comprehensive Automatic Reconnection System...\n');
+logger.info('🧪 Testing Comprehensive Automatic Reconnection System...\n');
 
 // Test configuration
 const TEST_CONFIG = {
@@ -35,9 +58,9 @@ const TEST_SCENARIOS = [
 ];
 
 async function testReconnectionScenario(scenario) {
-  console.log(`\n📋 Testing: ${scenario.name}`);
-  console.log(`📍 Room: ${scenario.roomId}`);
-  console.log(`🔗 Socket URL: ${scenario.socketUrl}`);
+  logger.info(`\n📋 Testing: ${scenario.name}`);
+  logger.info(`📍 Room: ${scenario.roomId}`);
+  logger.info(`🔗 Socket URL: ${scenario.socketUrl}`);
 
   return new Promise((resolve) => {
     let connectionAttempts = 0;
@@ -152,14 +175,14 @@ const index = listeners.indexOf(callback);
     // Track connection events
     socket.on('connect', () => {
       connectionAttempts++;
-      console.log(
+      logger.info(
         `✅ Connected to ${scenario.name} (attempt ${connectionAttempts})`,
       );
 
       // Join room
       socket.emit('join-room', scenario.roomId, (response) => {
         if (response && response.success) {
-          console.log(`🎯 Joined room: ${scenario.roomId}`);
+          logger.info(`🎯 Joined room: ${scenario.roomId}`);
 
           // Send test message
           socket.emit(
@@ -172,7 +195,7 @@ const index = listeners.indexOf(callback);
             },
             (response) => {
               if (response && response.success) {
-                console.log(`💬 Test message sent successfully`);
+                logger.info(`💬 Test message sent successfully`);
               }
             },
           );
@@ -181,13 +204,13 @@ const index = listeners.indexOf(callback);
     });
 
     socket.on('disconnect', (reason) => {
-      console.log(`🔌 Disconnected from ${scenario.name}: ${reason}`);
+      logger.info(`🔌 Disconnected from ${scenario.name}: ${reason}`);
     });
 
     socket.on('reconnect', (attemptNumber) => {
       reconnectionAttempts++;
       successfulReconnections++;
-      console.log(
+      logger.info(
         `🔄 Reconnected to ${scenario.name} after ${attemptNumber} attempts`,
       );
       reconnectionManager.handleReconnectionSuccess();
@@ -195,7 +218,7 @@ const index = listeners.indexOf(callback);
       // Rejoin room after reconnection
       socket.emit('join-room', scenario.roomId, (response) => {
         if (response && response.success) {
-          console.log(`🎯 Rejoined room: ${scenario.roomId}`);
+          logger.info(`🎯 Rejoined room: ${scenario.roomId}`);
 
           // Send reconnection test message
           socket.emit(
@@ -208,7 +231,7 @@ const index = listeners.indexOf(callback);
             },
             (response) => {
               if (response && response.success) {
-                console.log(`💬 Reconnection test message sent successfully`);
+                logger.info(`💬 Reconnection test message sent successfully`);
               }
             },
           );
@@ -218,70 +241,76 @@ const index = listeners.indexOf(callback);
 
     socket.on('reconnect_attempt', (attemptNumber) => {
       reconnectionAttempts++;
-      console.log(
+      logger.info(
         `🔄 Reconnection attempt ${attemptNumber} for ${scenario.name}`,
       );
       reconnectionManager.handleReconnectionAttempt();
     });
 
     socket.on('reconnect_error', (error) => {
-      console.log(
+      logger.info(
         `❌ Reconnection error for ${scenario.name}: ${error.message}`,
       );
       reconnectionManager.handleReconnectionFailure(error.message);
     });
 
     socket.on('reconnect_failed', () => {
-      console.log(`❌ Reconnection failed for ${scenario.name}`);
+      logger.info(`❌ Reconnection failed for ${scenario.name}`);
       reconnectionManager.handleReconnectionFailure('Max attempts reached');
     });
 
     // Listen to reconnection manager events
     reconnectionManager.on('reconnection_attempt', (event) => {
-      console.log(
+      logger.info(
         `📊 Reconnection manager: Attempt ${event.attempt} for ${scenario.name}`,
       );
     });
 
     reconnectionManager.on('reconnection_success', (event) => {
-      console.log(
+      logger.info(
         `✅ Reconnection manager: Success for ${scenario.name} after ${event.attempt} attempts`,
       );
     });
 
     reconnectionManager.on('reconnection_failure', (event) => {
-      console.log(
+      logger.info(
         `❌ Reconnection manager: Failure for ${scenario.name} - ${event.error}`,
       );
     });
 
     reconnectionManager.on('health_check', (event) => {
-      console.log(
+      logger.info(
         `💓 Health check for ${scenario.name}: ${event.health.connectionQuality} (${event.health.latency}ms)`,
       );
     });
 
     // Simulate network interruption after 3 seconds
-    setTimeout(() => {
-      console.log(
-        `\n🌐 Simulating network interruption for ${scenario.name}...`,
+    
+const timeoutId = setTimeout(() => {
+      logger.info(
+        `\n🌐 Simulating network interruption for ${scenario.name}...`, 
       );
+// Store timeoutId for cleanup if needed
+;
       socket.disconnect();
 
       // Wait for reconnection attempts
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         if (!testCompleted) {
           testCompleted = true;
-          console.log(`\n📊 Test Results for ${scenario.name}:`);
-          console.log(`   Connection attempts: ${connectionAttempts}`);
-          console.log(`   Reconnection attempts: ${reconnectionAttempts}`);
-          console.log(
-            `   Successful reconnections: ${successfulReconnections}`,
+          logger.info(`\n📊 Test Results for ${scenario.name}:`);
+          logger.info(`   Connection attempts: ${connectionAttempts}`);
+          logger.info(`   Reconnection attempts: ${reconnectionAttempts}`);
+          logger.info(
+            `   Successful reconnections: ${successfulReconnections}`, 
           );
-          console.log(
+// Store timeoutId for cleanup if needed
+;
+          logger.info(
             `   Connection quality: ${reconnectionManager.getConnectionHealth().connectionQuality}`,
           );
-          console.log(
+          logger.info(
             `   Average latency: ${reconnectionManager.getAverageLatency()}ms`,
           );
 
@@ -303,7 +332,7 @@ const index = listeners.indexOf(callback);
 }
 
 async function runAllTests() {
-  console.log('🚀 Starting comprehensive reconnection tests...\n')
+  logger.info('🚀 Starting comprehensive reconnection tests...\n')
 const results = [];
 
   for (const scenario of TEST_SCENARIOS) {
@@ -311,7 +340,7 @@ const results = [];
       const result = await testReconnectionScenario(scenario);
       results.push(result);
     } catch (error) {
-      console.error(`❌ Test failed for ${scenario.name}:`, error.message);
+      logger.error(`❌ Test failed for ${scenario.name}:`, error.message);
       results.push({
         name: scenario.name,
         error: error.message
@@ -319,40 +348,43 @@ const results = [];
     }
 
     // Wait between tests
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => 
+const timeoutId = setTimeout(resolve,  3000);
+// Store timeoutId for cleanup if needed
+);
   }
 
   // Print summary
-  console.log('\n📋 Test Summary:');
-  console.log('================');
+  logger.info('\n📋 Test Summary:');
+  logger.info('================');
 
   results.forEach((result) => {
     if (result.error) {
-      console.log(`❌ ${result.name}: FAILED - ${result.error}`);
+      logger.info(`❌ ${result.name}: FAILED - ${result.error}`);
     } else {
-      console.log(`✅ ${result.name}:`);
-      console.log(`   Connections: ${result.connectionAttempts}`);
-      console.log(`   Reconnections: ${result.reconnectionAttempts}`);
-      console.log(
+      logger.info(`✅ ${result.name}:`);
+      logger.info(`   Connections: ${result.connectionAttempts}`);
+      logger.info(`   Reconnections: ${result.reconnectionAttempts}`);
+      logger.info(
         `   Success Rate: ${result.successfulReconnections}/${result.reconnectionAttempts}`,
       );
-      console.log(`   Quality: ${result.connectionQuality}`);
-      console.log(`   Latency: ${result.averageLatency}ms`);
+      logger.info(`   Quality: ${result.connectionQuality}`);
+      logger.info(`   Latency: ${result.averageLatency}ms`);
     }
   })
 const successfulTests = results.filter((r) => !r.error).length
 const totalTests = results.length;
 
-  console.log(
+  logger.info(
     `\n🎯 Overall Results: ${successfulTests}/${totalTests} tests passed`,
   );
 
   if (successfulTests === totalTests) {
-    console.log(
+    logger.info(
       🎉 All reconnection tests passed! The automatic reconnection system is working correctly.',
     );
   } else {
-    console.log('⚠️  Some tests failed. Please check the implementation.');
+    logger.info('⚠️  Some tests failed. Please check the implementation.');
   }
 
   process.exit(successfulTests === totalTests ? 0 : 1);
@@ -360,17 +392,17 @@ const totalTests = results.length;
 
 // Handle graceful shutdown
 process.on('SIGINT', () => {
-  console.log('\n🛑 Test interrupted by user');
+  logger.info('\n🛑 Test interrupted by user');
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Test terminated');
+  logger.info('\n🛑 Test terminated');
   process.exit(0);
 });
 
 // Run tests
 runAllTests().catch((error) => {
-  console.error('❌ Test suite failed:', error);
+  logger.error('❌ Test suite failed:', error);
   process.exit(1);
 });

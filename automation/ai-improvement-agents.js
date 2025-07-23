@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -51,10 +74,10 @@ class AIImprovementAgents {
     
     for (const [type, agent] of this.agents) {
       try {
-        console.log(`🤖 Running ${type} agent...`);
+        logger.info(`🤖 Running ${type} agent...`);
         results[type] = await agent.analyze(codebaseData);
       } catch (error) {
-        console.error(`❌ Error running ${type} agent:`, error);
+        logger.error(`❌ Error running ${type} agent:`, error);
         results[type] = { error: error.message };
       }
     }
@@ -85,7 +108,7 @@ class PerformanceAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('⚡ Performance Agent analyzing...');
+    logger.info('⚡ Performance Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -191,7 +214,7 @@ class SecurityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🔒 Security Agent analyzing...');
+    logger.info('🔒 Security Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -311,7 +334,7 @@ class CodeQualityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('📝 Code Quality Agent analyzing...');
+    logger.info('📝 Code Quality Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -439,7 +462,7 @@ class AccessibilityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('♿ Accessibility Agent analyzing...');
+    logger.info('♿ Accessibility Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -564,7 +587,7 @@ class SEOAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🔍 SEO Agent analyzing...');
+    logger.info('🔍 SEO Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -695,7 +718,7 @@ class TestCoverageAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🧪 Test Coverage Agent analyzing...');
+    logger.info('🧪 Test Coverage Agent analyzing...');
     
     const analysis = {
       agent: this.name,
