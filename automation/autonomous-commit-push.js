@@ -46,7 +46,7 @@ class AutonomousCommitPush {
             console.error('Failed to write to log file:', error.message);
         }
         
-        if (level === error') {
+        if (level === 'error') {
             console.error(message);
         } else if (level === warn') {
             console.warn(message);
