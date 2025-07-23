@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs')
@@ -31,11 +54,11 @@ class AppImprovementOrchestrator {
 
   async start() {
     if (this.isRunning) {
-      console.log('Orchestrator is already running');
+      logger.info('Orchestrator is already running');
       return;
     }
 
-    console.log('🎼 Starting App Improvement Orchestrator...');
+    logger.info('🎼 Starting App Improvement Orchestrator...');
     this.isRunning = true;
 
     // Start all automation systems
@@ -47,26 +70,26 @@ class AppImprovementOrchestrator {
     // Start monitoring
     this.startMonitoring();
 
-    console.log('✅ App Improvement Orchestrator started successfully!');
-    console.log(
+    logger.info('✅ App Improvement Orchestrator started successfully!');
+    logger.info(
       `📊 Continuous mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`,
     );
   }
 
   stop() {
-    console.log('🛑 Stopping App Improvement Orchestrator...');
+    logger.info('🛑 Stopping App Improvement Orchestrator...');
     this.isRunning = false;
   }
 
   async startAutomationSystems() {
-    console.log('🚀 Starting automation systems...');
+    logger.info('🚀 Starting automation systems...');
 
     for (const system of this.automationSystems) {
       try {
         await this.startSystem(system);
-        console.log(`✅ ${system.name} automation started`);
+        logger.info(`✅ ${system.name} automation started`);
       } catch (error) {
-        console.error(`❌ Failed to start ${system.name} automation:`, error);
+        logger.error(`❌ Failed to start ${system.name} automation:`, error);
       }
     }
   }
@@ -83,21 +106,24 @@ class AppImprovementOrchestrator {
       );
 
       process.stdout.on('data', (data) => {
-        console.log(`[${system.name}] ${data.toString().trim()}`);
+        logger.info(`[${system.name}] ${data.toString().trim()}`);
       });
 
       process.stderr.on('data', (data) => {
-        console.error(`[${system.name} Error] ${data.toString().trim()}`);
+        logger.error(`[${system.name} Error] ${data.toString().trim()}`);
       });
 
       process.on('close', (code) => {
-        console.log(`[${system.name}] Process exited with code ${code}`);
+        logger.info(`[${system.name}] Process exited with code ${code}`);
       });
 
       // Wait for system to start
-      setTimeout(() => {
+      
+const timeoutId = setTimeout(() => {
         resolve();
-      }, 3000);
+      },  3000);
+// Store timeoutId for cleanup if needed
+;
     });
   }
 
@@ -116,7 +142,7 @@ class AppImprovementOrchestrator {
         try {
           await this.runImprovementCycle();
         } catch (error) {
-          console.error('Improvement cycle failed:', error);
+          logger.error('Improvement cycle failed:', error);
           this.errorCount++;
         }
       },
@@ -129,7 +155,7 @@ class AppImprovementOrchestrator {
     this.currentTask = `Improvement Cycle ${this.improvementCycle}`;
     this.lastImprovementTime = new Date();
 
-    console.log(`🔄 Starting Improvement Cycle ${this.improvementCycle}...`);
+    logger.info(`🔄 Starting Improvement Cycle ${this.improvementCycle}...`);
 
     try {
       // 1. Check system health
@@ -151,11 +177,11 @@ class AppImprovementOrchestrator {
       await this.commitAndPushChanges();
 
       this.successCount++;
-      console.log(
+      logger.info(
         `✅ Improvement Cycle ${this.improvementCycle} completed successfully`,
       );
     } catch (error) {
-      console.error(
+      logger.error(
         `❌ Improvement Cycle ${this.improvementCycle} failed:`,
         error,
       );
@@ -166,7 +192,7 @@ class AppImprovementOrchestrator {
   }
 
   async checkSystemHealth() {
-    console.log('🏥 Checking system health...');
+    logger.info('🏥 Checking system health...');
 
     for (const system of this.automationSystems) {
       try {
@@ -174,18 +200,18 @@ class AppImprovementOrchestrator {
 const health = await response.json();
 
         if (health.status === 'healthy') {
-          console.log(`✅ ${system.name} is healthy`);
+          logger.info(`✅ ${system.name} is healthy`);
         } else {
-          console.log(`⚠️ ${system.name} health check failed`);
+          logger.info(`⚠️ ${system.name} health check failed`);
         }
       } catch (error) {
-        console.log(`❌ ${system.name} is not responding`);
+        logger.info(`❌ ${system.name} is not responding`);
       }
     }
   }
 
   async runComprehensiveImprovements() {
-    console.log('🔧 Running comprehensive improvements...');
+    logger.info('🔧 Running comprehensive improvements...');
 
     try {
       // Trigger comprehensive automation
@@ -196,17 +222,17 @@ const health = await response.json();
       });
 
       if (response.ok) {
-        console.log('✅ Comprehensive improvements triggered');
+        logger.info('✅ Comprehensive improvements triggered');
       } else {
-        console.log('⚠️ Comprehensive improvements failed');
+        logger.info('⚠️ Comprehensive improvements failed');
       }
     } catch (error) {
-      console.error('❌ Comprehensive improvements error:', error);
+      logger.error('❌ Comprehensive improvements error:', error);
     }
   }
 
   async runAIImprovements() {
-    console.log('🤖 Running AI improvements...');
+    logger.info('🤖 Running AI improvements...');
 
     try {
       // Trigger AI improvements
@@ -217,17 +243,17 @@ const health = await response.json();
       });
 
       if (response.ok) {
-        console.log('✅ AI improvements triggered');
+        logger.info('✅ AI improvements triggered');
       } else {
-        console.log('⚠️ AI improvements failed');
+        logger.info('⚠️ AI improvements failed');
       }
     } catch (error) {
-      console.error('❌ AI improvements error:', error);
+      logger.error('❌ AI improvements error:', error);
     }
   }
 
   async runCursorDelegations() {
-    console.log('📝 Running Cursor delegations...');
+    logger.info('📝 Running Cursor delegations...');
 
     try {
       // Submit tasks to Cursor delegator
@@ -246,18 +272,18 @@ const health = await response.json();
         });
 
         if (response.ok) {
-          console.log(`✅ Task submitted: ${task}`);
+          logger.info(`✅ Task submitted: ${task}`);
         } else {
-          console.log(`⚠️ Task submission failed: ${task}`);
+          logger.info(`⚠️ Task submission failed: ${task}`);
         }
       }
     } catch (error) {
-      console.error('❌ Cursor delegations error:', error);
+      logger.error('❌ Cursor delegations error:', error);
     }
   }
 
   async distributeWorkload() {
-    console.log('🌐 Distributing workload...');
+    logger.info('🌐 Distributing workload...');
 
     try {
       // Distribute tasks across multiple computers
@@ -271,17 +297,17 @@ const health = await response.json();
       });
 
       if (response.ok) {
-        console.log('✅ Workload distributed');
+        logger.info('✅ Workload distributed');
       } else {
-        console.log('⚠️ Workload distribution failed');
+        logger.info('⚠️ Workload distribution failed');
       }
     } catch (error) {
-      console.error('❌ Workload distribution error:', error);
+      logger.error('❌ Workload distribution error:', error);
     }
   }
 
   async commitAndPushChanges() {
-    console.log('💾 Committing and pushing changes...');
+    logger.info('💾 Committing and pushing changes...');
 
     try {
       // Check if there are changes to commit
@@ -293,12 +319,12 @@ const health = await response.json();
           stdio: 'inherit',
         });
         execSync('git push', { stdio: 'inherit' });
-        console.log('✅ Changes committed and pushed');
+        logger.info('✅ Changes committed and pushed');
       } else {
-        console.log('📝 No changes to commit');
+        logger.info('📝 No changes to commit');
       }
     } catch (error) {
-      console.error('❌ Failed to commit and push changes:', error);
+      logger.error('❌ Failed to commit and push changes:', error);
     }
   }
 
@@ -308,15 +334,15 @@ const health = await response.json();
       () => {
         if (!this.isRunning) return;
 
-        console.log(`📊 Orchestrator Status:`);
-        console.log(`   - Improvement Cycles: ${this.improvementCycle}`);
-        console.log(`   - Success Count: ${this.successCount}`);
-        console.log(`   - Error Count: ${this.errorCount}`);
-        console.log(
+        logger.info(`📊 Orchestrator Status:`);
+        logger.info(`   - Improvement Cycles: ${this.improvementCycle}`);
+        logger.info(`   - Success Count: ${this.successCount}`);
+        logger.info(`   - Error Count: ${this.errorCount}`);
+        logger.info(
           `   - Last Improvement: ${this.lastImprovementTime ? this.lastImprovementTime.toISOString() : 'Never'}`,
         );
-        console.log(`   - Current Task: ${this.currentTask || 'None'}`);
-        console.log(
+        logger.info(`   - Current Task: ${this.currentTask || 'None'}`);
+        logger.info(
           `   - Continuous Mode: ${this.continuousMode ? 'Enabled' : 'Disabled'}`,
         );
       },
@@ -337,7 +363,7 @@ const health = await response.json();
   }
 
   async runQuickImprovement() {
-    console.log('⚡ Running quick improvement...');
+    logger.info('⚡ Running quick improvement...');
 
     try {
       // Run linting fixes
@@ -349,9 +375,9 @@ const health = await response.json();
       // Run build check
       execSync('npm run build', { stdio: 'inherit' });
 
-      console.log('✅ Quick improvement completed');
+      logger.info('✅ Quick improvement completed');
     } catch (error) {
-      console.error('❌ Quick improvement failed:', error);
+      logger.error('❌ Quick improvement failed:', error);
     }
   }
 }
@@ -367,13 +393,13 @@ const command = process.argv[2];
 
       // Handle graceful shutdown
       process.on('SIGINT', async () => {
-        console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+        logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
         orchestrator.stop();
         process.exit(0);
       });
 
       process.on('SIGTERM', async () => {
-        console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+        logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
         orchestrator.stop();
         process.exit(0);
       });
@@ -385,8 +411,8 @@ const command = process.argv[2];
 
     case 'status':
       const status = orchestrator.getStatus();
-      console.log('Orchestrator Status:');
-      console.log(JSON.stringify(status, null, 2));
+      logger.info('Orchestrator Status:');
+      logger.info(JSON.stringify(status, null, 2));
       break;
 
     case 'quick':
@@ -394,7 +420,7 @@ const command = process.argv[2];
       break;
 
     default:
-      console.log(
+      logger.info(
         'Usage: node app-improvement-orchestrator.cjs [start|stop|status|quick] [--continuous]',
       );
   }

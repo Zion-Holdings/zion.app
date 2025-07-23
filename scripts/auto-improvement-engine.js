@@ -1,8 +1,38 @@
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
-/**
- * Automatic Intermittent Improvement Engine
- * Orchestrates scheduled, randomized, or triggered improvements for the chat reconnection system.
- */
+
 const Scheduler = require('./auto-improvement-scheduler')
 const Analyzer = require('./auto-improvement-analyzer')
 const Actions = require('./auto-improvement-actions')
@@ -56,19 +86,48 @@ app.post('/api/auto-improvement/trigger', async (req, res) => {
 });
 
 app.listen(3011, () => {
-  console.log(
+  logger.info(
     🛠️  Auto-Improvement Engine API running on http://localhost:3011',
   );
 });
 
 // CLI
 if (require.main === module) {
+  try {
+    
   const arg = process.argv[2];
   if (arg === trigger') {
     runImprovementCycle('manual').then(console.log);
-  } else if (arg === history') {
-    console.log(improvementHistory.slice(-20));
+  
+  } catch (error) {
+    console.error('Script execution failed:', error);
+    process.exit(1);
+  }
+} else if (arg === history') {
+    logger.info(improvementHistory.slice(-20));
   } else {
-    console.log('Usage: node auto-improvement-engine.js [trigger|history]);
+    logger.info('Usage: node auto-improvement-engine.js [trigger|history]);
   }
 }
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

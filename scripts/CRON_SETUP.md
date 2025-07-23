@@ -1,4 +1,15 @@
-# Setting up Cron Job for Automated ESLint Fixes
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      # Setting up Cron Job for Automated ESLint Fixes
 
 This document provides instructions on how to set up a cron job to run the `auto-lint-fix.js` script periodically. This script will automatically lint your project, fix issues, and commit them to the `auto/fix-hourly` branch.
 
@@ -65,3 +76,25 @@ To run the script hourly (at the beginning of every hour), add the following lin
 ```
 
 ```
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

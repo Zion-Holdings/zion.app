@@ -1,4 +1,15 @@
-// scripts/__mocks__/tail.js
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      // scripts/__mocks__/tail.js
 const Tail = jest.fn().mockImplementation(function(filePath) {
   this.filePath = filePath;
   this.on = jest.fn((event, callback) => {
@@ -27,3 +38,25 @@ const Tail = jest.fn().mockImplementation(function(filePath) {
   return this;
 })
 module.exports = { Tail };
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

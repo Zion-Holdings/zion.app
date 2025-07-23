@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -1287,7 +1310,7 @@ Return the enhancement as JSON.`;
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [COMPUTER-ENHANCEMENT] ${message}`;
     
-    console.log(logMessage);
+    logger.info(logMessage);
     
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'computer-enhancement.log');
@@ -1320,7 +1343,7 @@ async function main() {
       await enhancement.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(enhancement.getStatus(), null, 2));
+      logger.info(JSON.stringify(enhancement.getStatus(), null, 2));
       break;
     case 'enhance':
       await enhancement.performEnhancementCycle();
@@ -1332,14 +1355,14 @@ async function main() {
       await enhancement.improveSelf();
       break;
     default:
-      console.log('Usage: node ai-powered-computer-enhancement.cjs [start|stop|status|enhance|discover|improve]');
+      logger.info('Usage: node ai-powered-computer-enhancement.cjs [start|stop|status|enhance|discover|improve]');
       break;
   }
 }
 
 if (require.main === module) {
   main().catch(error => {
-    console.error('AI-Powered Computer Enhancement failed:', error.message);
+    logger.error('AI-Powered Computer Enhancement failed:', error.message);
     process.exit(1);
   });
 }

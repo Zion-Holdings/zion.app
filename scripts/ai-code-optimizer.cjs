@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -36,8 +59,8 @@ class AICodeOptimizer {
    * Start the AI code optimizer
    */
   async start() {
-    console.log('🤖 Starting AI Code Optimizer...');
-    console.log('='.repeat(50));
+    logger.info('🤖 Starting AI Code Optimizer...');
+    logger.info('='.repeat(50));
 
     this.isRunning = true;
 
@@ -48,11 +71,11 @@ class AICodeOptimizer {
       // Start continuous optimization
       this.startContinuousOptimization();
 
-      console.log('✅ AI Code Optimizer started successfully!');
-      console.log('🧠 Continuously analyzing and optimizing code...');
-      console.log('='.repeat(50));
+      logger.info('✅ AI Code Optimizer started successfully!');
+      logger.info('🧠 Continuously analyzing and optimizing code...');
+      logger.info('='.repeat(50));
     } catch (error) {
-      console.error('❌ Failed to start AI Code Optimizer:', error);
+      logger.error('❌ Failed to start AI Code Optimizer:', error);
       throw error;
     }
   }
@@ -61,7 +84,7 @@ class AICodeOptimizer {
    * Perform initial code analysis
    */
   async performInitialAnalysis() {
-    console.log('🔍 Performing initial code analysis...')
+    logger.info('🔍 Performing initial code analysis...')
 const analysis = [
       this.analyzeCodeQuality(),
       this.analyzePerformance(),
@@ -77,7 +100,7 @@ const results = await Promise.allSettled(analysis);
       }
     }
 
-    console.log(
+    logger.info(
       `✅ Initial analysis completed: ${this.optimizations.length} optimizations identified`,
     );
   }
@@ -86,7 +109,7 @@ const results = await Promise.allSettled(analysis);
    * Analyze code quality
    */
   async analyzeCodeQuality() {
-    console.log('🎯 Analyzing code quality...');
+    logger.info('🎯 Analyzing code quality...');
 
     try {
       // Run ESLint analysis
@@ -120,7 +143,7 @@ const lintResults = JSON.parse(lintOutput);
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Code quality analysis failed:', error.message);
+      logger.warn('⚠️ Code quality analysis failed:', error.message);
       return {
         type: 'code_quality_analysis',
         action: 'error',
@@ -134,7 +157,7 @@ const lintResults = JSON.parse(lintOutput);
    * Analyze performance
    */
   async analyzePerformance() {
-    console.log('⚡ Analyzing performance...');
+    logger.info('⚡ Analyzing performance...');
 
     try {
       // Analyze bundle size
@@ -157,7 +180,7 @@ const lintResults = JSON.parse(lintOutput);
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Performance analysis failed:', error.message);
+      logger.warn('⚠️ Performance analysis failed:', error.message);
       return {
         type: 'performance_analysis',
         action: 'error',
@@ -171,7 +194,7 @@ const lintResults = JSON.parse(lintOutput);
    * Analyze security
    */
   async analyzeSecurity() {
-    console.log('🔒 Analyzing security...');
+    logger.info('🔒 Analyzing security...');
 
     try {
       // Run security audit
@@ -197,7 +220,7 @@ const auditResults = JSON.parse(auditOutput);
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Security analysis failed:', error.message);
+      logger.warn('⚠️ Security analysis failed:', error.message);
       return {
         type: 'security_analysis',
         action: 'error',
@@ -211,7 +234,7 @@ const auditResults = JSON.parse(auditOutput);
    * Analyze documentation
    */
   async analyzeDocumentation() {
-    console.log('📚 Analyzing documentation...');
+    logger.info('📚 Analyzing documentation...');
 
     try {
       // Check documentation coverage
@@ -234,7 +257,7 @@ const auditResults = JSON.parse(auditOutput);
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Documentation analysis failed:', error.message);
+      logger.warn('⚠️ Documentation analysis failed:', error.message);
       return {
         type: 'documentation_analysis',
         action: 'error',
@@ -248,7 +271,7 @@ const auditResults = JSON.parse(auditOutput);
    * Analyze best practices
    */
   async analyzeBestPractices() {
-    console.log('📋 Analyzing best practices...');
+    logger.info('📋 Analyzing best practices...');
 
     try {
       // Check for best practices violations
@@ -265,7 +288,7 @@ const auditResults = JSON.parse(auditOutput);
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Best practices analysis failed:', error.message);
+      logger.warn('⚠️ Best practices analysis failed:', error.message);
       return {
         type: 'best_practices_analysis',
         action: 'error',
@@ -283,7 +306,7 @@ const auditResults = JSON.parse(auditOutput);
       if (!this.isRunning) return;
 
       try {
-        console.log('🔄 Running AI optimization cycle...');
+        logger.info('🔄 Running AI optimization cycle...');
 
         // Run optimizations
         await this.runOptimizations();
@@ -293,10 +316,13 @@ const auditResults = JSON.parse(auditOutput);
           await this.applyOptimizations();
         }
       } catch (error) {
-        console.error('❌ Error in optimization cycle:', error);
+        logger.error('❌ Error in optimization cycle:', error);
       }
 
-      setTimeout(optimizationLoop, this.config.optimizationInterval);
+      
+const timeoutId = setTimeout(optimizationLoop,  this.config.optimizationInterval);
+// Store timeoutId for cleanup if needed
+;
     };
 
     optimizationLoop();
@@ -325,7 +351,7 @@ const results = await Promise.allSettled(optimizations);
    * Apply optimizations
    */
   async applyOptimizations() {
-    console.log('🔧 Applying optimizations...');
+    logger.info('🔧 Applying optimizations...');
 
     for (const optimization of this.optimizations) {
       if (optimization.type === 'code_quality_optimization') {
@@ -644,26 +670,26 @@ const results = await Promise.allSettled(optimizations);
 
   async applyCodeQualityOptimization(optimization) {
     // Apply code quality optimizations
-    console.log(
+    logger.info(
       `🔧 Applying code quality optimization: ${optimization.details}`,
     );
   }
 
   async applyPerformanceOptimization(optimization) {
     // Apply performance optimizations
-    console.log(
+    logger.info(
       `⚡ Applying performance optimization: ${optimization.details}`,
     );
   }
 
   async applySecurityOptimization(optimization) {
     // Apply security optimizations
-    console.log(`🔒 Applying security optimization: ${optimization.details}`);
+    logger.info(`🔒 Applying security optimization: ${optimization.details}`);
   }
 
   async applyDocumentationOptimization(optimization) {
     // Apply documentation optimizations
-    console.log(
+    logger.info(
       `📚 Applying documentation optimization: ${optimization.details}`,
     );
   }
@@ -710,9 +736,9 @@ const results = await Promise.allSettled(optimizations);
    * Stop the optimizer
    */
   stop() {
-    console.log('🛑 Stopping AI Code Optimizer...');
+    logger.info('🛑 Stopping AI Code Optimizer...');
     this.isRunning = false;
-    console.log('✅ AI Code Optimizer stopped');
+    logger.info('✅ AI Code Optimizer stopped');
   }
 
   /**
@@ -737,20 +763,20 @@ if (require.main === module) {
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     optimizer.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     optimizer.stop();
     process.exit(0);
   });
 
   // Start the optimizer
   optimizer.start().catch((error) => {
-    console.error('❌ Failed to start optimizer:', error);
+    logger.error('❌ Failed to start optimizer:', error);
     process.exit(1);
   });
 }

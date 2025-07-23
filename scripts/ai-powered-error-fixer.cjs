@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -44,8 +67,8 @@ class AIPoweredErrorFixer {
    * Start the AI-powered error fixer
    */
   async start() {
-    console.log('🤖 Starting AI-Powered Error Fixer...');
-    console.log('='.repeat(60));
+    logger.info('🤖 Starting AI-Powered Error Fixer...');
+    logger.info('='.repeat(60));
 
     this.isRunning = true;
 
@@ -56,11 +79,11 @@ class AIPoweredErrorFixer {
       // Start continuous error monitoring and fixing
       this.startContinuousErrorFixing();
 
-      console.log('✅ AI-Powered Error Fixer started successfully!');
-      console.log('🔍 Continuously monitoring and fixing errors...');
-      console.log('='.repeat(60));
+      logger.info('✅ AI-Powered Error Fixer started successfully!');
+      logger.info('🔍 Continuously monitoring and fixing errors...');
+      logger.info('='.repeat(60));
     } catch (error) {
-      console.error('❌ Failed to start error fixer:', error);
+      logger.error('❌ Failed to start error fixer:', error);
       throw error;
     }
   }
@@ -69,7 +92,7 @@ class AIPoweredErrorFixer {
    * Perform initial error scan
    */
   async performInitialErrorScan() {
-    console.log('🔍 Performing initial error scan...')
+    logger.info('🔍 Performing initial error scan...')
 const errorScans = [
       this.scanTypeScriptErrors(),
       this.scanESLintErrors(),
@@ -88,7 +111,7 @@ const results = await Promise.allSettled(errorScans);
       }
     }
 
-    console.log(
+    logger.info(
       `✅ Initial error scan completed: ${this.errors.length} errors found`,
     );
 
@@ -106,7 +129,7 @@ const results = await Promise.allSettled(errorScans);
       if (!this.isRunning) return;
 
       try {
-        console.log('🔄 Running error fixing cycle...');
+        logger.info('🔄 Running error fixing cycle...');
 
         // Scan for new errors
         await this.scanForNewErrors();
@@ -116,10 +139,13 @@ const results = await Promise.allSettled(errorScans);
           await this.fixAllErrors();
         }
       } catch (error) {
-        console.error('❌ Error in fixing cycle:', error);
+        logger.error('❌ Error in fixing cycle:', error);
       }
 
-      setTimeout(errorFixingLoop, this.config.checkInterval);
+      
+const timeoutId = setTimeout(errorFixingLoop,  this.config.checkInterval);
+// Store timeoutId for cleanup if needed
+;
     };
 
     errorFixingLoop();
@@ -152,7 +178,7 @@ const results = await Promise.allSettled(errorScans);
     this.errors.push(...newErrors);
 
     if (newErrors.length > 0) {
-      console.log(`🔍 Found ${newErrors.length} new errors`);
+      logger.info(`🔍 Found ${newErrors.length} new errors`);
     }
   }
 
@@ -160,7 +186,7 @@ const results = await Promise.allSettled(errorScans);
    * Fix all errors
    */
   async fixAllErrors() {
-    console.log(`🔧 Fixing ${this.errors.length} errors...`)
+    logger.info(`🔧 Fixing ${this.errors.length} errors...`)
 const fixes = [
       this.fixTypeScriptErrors(),
       this.fixESLintErrors(),
@@ -179,7 +205,7 @@ const results = await Promise.allSettled(fixes);
       }
     }
 
-    console.log(`✅ Fixed ${this.fixes.length} errors`);
+    logger.info(`✅ Fixed ${this.fixes.length} errors`);
   }
 
   /**
@@ -680,21 +706,21 @@ const stat = fs.statSync(fullPath);
     try {
       require('./next.config.js');
     } catch (error) {
-      console.warn('⚠️ Next.js config validation failed:', error.message);
+      logger.warn('⚠️ Next.js config validation failed:', error.message);
     }
 
     // Validate TypeScript config
     try {
       JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));
     } catch (error) {
-      console.warn('⚠️ TypeScript config validation failed:', error.message);
+      logger.warn('⚠️ TypeScript config validation failed:', error.message);
     }
 
     // Validate package.json
     try {
       JSON.parse(fs.readFileSync('package.json', 'utf8'));
     } catch (error) {
-      console.warn('⚠️ Package.json validation failed:', error.message);
+      logger.warn('⚠️ Package.json validation failed:', error.message);
     }
   }
 
@@ -702,9 +728,9 @@ const stat = fs.statSync(fullPath);
    * Stop the error fixer
    */
   stop() {
-    console.log('🛑 Stopping AI-Powered Error Fixer...');
+    logger.info('🛑 Stopping AI-Powered Error Fixer...');
     this.isRunning = false;
-    console.log('✅ AI-Powered Error Fixer stopped');
+    logger.info('✅ AI-Powered Error Fixer stopped');
   }
 
   /**
@@ -730,20 +756,20 @@ if (require.main === module) {
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     errorFixer.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     errorFixer.stop();
     process.exit(0);
   });
 
   // Start the error fixer
   errorFixer.start().catch((error) => {
-    console.error('❌ Failed to start error fixer:', error);
+    logger.error('❌ Failed to start error fixer:', error);
     process.exit(1);
   });
 }

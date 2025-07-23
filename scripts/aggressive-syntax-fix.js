@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -12,7 +35,7 @@ class AggressiveSyntaxFixer {
     }
 
     log(message) {
-        console.log(`[Aggressive Syntax Fixer] ${message}`);
+        logger.info(`[Aggressive Syntax Fixer] ${message}`);
     }
 
     async fixAllSyntaxErrors() {
@@ -152,24 +175,24 @@ async function main() {
         const result = await fixer.fixAllSyntaxErrors();
         const report = await fixer.generateReport();
         
-        console.log('\n📊 Aggressive Syntax Fix Report:');
-        console.log(`Files Fixed: ${report.summary.totalFixed}`);
-        console.log(`Errors: ${report.summary.totalErrors}`);
-        console.log(`Success Rate: ${report.summary.successRate.toFixed(1)}%`);
+        logger.info('\n📊 Aggressive Syntax Fix Report:');
+        logger.info(`Files Fixed: ${report.summary.totalFixed}`);
+        logger.info(`Errors: ${report.summary.totalErrors}`);
+        logger.info(`Success Rate: ${report.summary.successRate.toFixed(1)}%`);
         
         if (result.fixedFiles.length > 0) {
-            console.log('\n✅ Fixed Files:');
-            result.fixedFiles.forEach(file => console.log(`  - ${file}`));
+            logger.info('\n✅ Fixed Files:');
+            result.fixedFiles.forEach(file => logger.info(`  - ${file}`));
         }
         
         if (result.errors.length > 0) {
-            console.log('\n❌ Files with Errors:');
-            result.errors.forEach(({ file, error }) => console.log(`  - ${file}: ${error}`));
+            logger.info('\n❌ Files with Errors:');
+            result.errors.forEach(({ file, error }) => logger.info(`  - ${file}: ${error}`));
         }
         
         process.exit(0);
     } catch (error) {
-        console.error('❌ Aggressive syntax fixing failed:', error.message);
+        logger.error('❌ Aggressive syntax fixing failed:', error.message);
         process.exit(1);
     }
 }
@@ -179,3 +202,17 @@ if (require.main === module) {
 }
 
 module.exports = AggressiveSyntaxFixer; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

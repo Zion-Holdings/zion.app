@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 #!/usr/bin/env node
 
 /**
@@ -910,7 +933,7 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [AI-DISCOVERY] ${message}`;
     
-    console.log(logMessage);
+    logger.info(logMessage);
     
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'ai-discovery.log');
@@ -942,7 +965,7 @@ async function main() {
       await automation.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(automation.getStatus(), null, 2));
+      logger.info(JSON.stringify(automation.getStatus(), null, 2));
       break;
     case 'discover':
       await automation.performQuickDiscovery();
@@ -951,16 +974,30 @@ async function main() {
       await automation.performDeepDiscovery();
       break;
     default:
-      console.log('Usage: node ai-discovery-automation.cjs [start|stop|status|discover|deep]');
+      logger.info('Usage: node ai-discovery-automation.cjs [start|stop|status|discover|deep]');
       break;
   }
 }
 
 if (require.main === module) {
   main().catch(error => {
-    console.error('AI Discovery Automation failed:', error.message);
+    logger.error('AI Discovery Automation failed:', error.message);
     process.exit(1);
   });
 }
 
 module.exports = AIDiscoveryAutomation; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

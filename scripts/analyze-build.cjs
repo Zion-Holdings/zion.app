@@ -1,4 +1,15 @@
-#!/usr/bin/env node
+
+class Js {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Js...');
+    
+    try {
+      #!/usr/bin/env node
 
 const fs = require('fs')
 const path = require('path')
@@ -173,3 +184,25 @@ const recommendations = [
 
 // Run analysis
 analyzeBuildOutput();
+    } catch (error) {
+      console.error('Error in Js:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Js...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Js();
+  script.start().catch(error => {
+    console.error('Failed to start Js:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Js;
