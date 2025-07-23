@@ -1,5 +1,5 @@
-const EventEmitter = require('events');
-const axios = require('axios');
+const EventEmitter = require('events');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const axios = require('axios');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 class NotificationManager extends EventEmitter {
   constructor(config = {}) {
@@ -7,9 +7,9 @@ class NotificationManager extends EventEmitter {
     this.config = {
       slack: {
         webhookUrl: process.env.SLACK_WEBHOOK_URL,
-        channel: process.env.SLACK_CHANNEL || '#automation',
-        username: 'Automation Bot',
-        iconEmoji: ':robot_face:',
+        channel: process.env.SLACK_CHANNEL || '#automation','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        username: 'Automation Bot','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        iconEmoji: ':robot_face:','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         enabled: true
       },
       email: {
@@ -24,11 +24,11 @@ class NotificationManager extends EventEmitter {
           }
         },
         from: process.env.EMAIL_FROM,
-        to: process.env.EMAIL_TO?.split(',') || []
+        to: process.env.EMAIL_TO?.split(',') || []'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       },
       webhooks: {
         enabled: false,
-        urls: process.env.WEBHOOK_URLS?.split(',') || []
+        urls: process.env.WEBHOOK_URLS?.split(',') || []'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       },
       rateLimiting: {
         maxNotificationsPerMinute: 10,
@@ -36,10 +36,10 @@ class NotificationManager extends EventEmitter {
         cooldownPeriod: 5 * 60 * 1000 // 5 minutes for critical errors
       },
       priorities: {
-        critical: ['error', 'security', 'system_down'],
-        high: ['warning', 'performance', 'dependency'],
-        medium: ['info', 'success', 'update'],
-        low: ['debug', 'trace']
+        critical: ['error', 'security', 'system_down'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        high: ['warning', 'performance', 'dependency'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        medium: ['info', 'success', 'update'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        low: ['debug', 'trace']'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       },
       ...config
     };
@@ -55,9 +55,9 @@ class NotificationManager extends EventEmitter {
   // Send notification with priority and rate limiting
   async sendNotification(message, options = {}) {
     const {
-      priority = 'medium',
-      category = 'info',
-      taskName = 'unknown',
+      priority = 'medium','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category = 'info','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      taskName = 'unknown','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       data = {},
       force = false
     } = options;
@@ -75,16 +75,16 @@ class NotificationManager extends EventEmitter {
 
     // Check rate limiting
     if (!force && !this.checkRateLimit()) {
-      console.log('⚠️ Rate limit exceeded, notification queued:', notification.id);
-      this.emit('rateLimited', notification);
+      console.log('⚠️ Rate limit exceeded, notification queued:', notification.id);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.emit('rateLimited', notification);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return false;
     }
 
     // Check cooldown for critical errors
-    if (priority === 'critical' && !force) {
+    if (priority === 'critical' && !force) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       const cooldownKey = `${category}-${taskName}`;
       if (this.cooldownTimers.has(cooldownKey)) {
-        console.log('⏳ Cooldown active for critical notification:', cooldownKey);
+        console.log('⏳ Cooldown active for critical notification:', cooldownKey);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         return false;
       }
     }
@@ -108,13 +108,13 @@ class NotificationManager extends EventEmitter {
       }
 
       const results = await Promise.allSettled(promises);
-      const successCount = results.filter(r => r.status === 'fulfilled').length;
+      const successCount = results.filter(r => r.status === 'fulfilled').length;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
       notification.sent = successCount > 0;
       notification.results = results;
 
       // Set cooldown for critical notifications
-      if (priority === 'critical') {
+      if (priority === 'critical') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         const cooldownKey = `${category}-${taskName}`;
         this.cooldownTimers.set(cooldownKey, Date.now());
         setTimeout(() => {
@@ -131,15 +131,15 @@ class NotificationManager extends EventEmitter {
         this.notificationHistory = this.notificationHistory.slice(-1000);
       }
 
-      this.emit('notificationSent', notification);
+      this.emit('notificationSent', notification);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       console.log(`📢 Notification sent (${priority}): ${message.substring(0, 100)}...`);
 
       return notification.sent;
 
     } catch (error) {
-      console.error('❌ Failed to send notification:', error);
+      console.error('❌ Failed to send notification:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       notification.error = error.message;
-      this.emit('notificationFailed', { notification, error });
+      this.emit('notificationFailed', { notification, error });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return false;
     }
   }
@@ -167,7 +167,7 @@ class NotificationManager extends EventEmitter {
 
     const response = await axios.post(this.config.slack.webhookUrl, payload, {
       timeout: 10000,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
 
     return response.status === 200;
@@ -176,8 +176,8 @@ class NotificationManager extends EventEmitter {
   // Send email notification
   async sendEmailNotification(notification) {
     // This would integrate with a proper email service like nodemailer
-    // For now, we'll just log the email notification
-    console.log('📧 Email notification would be sent:', {
+    // For now, we'll just log the email notification'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('📧 Email notification would be sent:', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       to: this.config.email.to,
       subject: `[${notification.priority.toUpperCase()}] ${notification.category}: ${notification.taskName}`,
       body: notification.message
@@ -197,7 +197,7 @@ class NotificationManager extends EventEmitter {
 
         const response = await axios.post(url, payload, {
           timeout: 10000,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         });
 
         return response.status >= 200 && response.status < 300;
@@ -208,7 +208,7 @@ class NotificationManager extends EventEmitter {
     });
 
     const results = await Promise.allSettled(promises);
-    return results.filter(r => r.status === 'fulfilled' && r.value).length;
+    return results.filter(r => r.status === 'fulfilled' && r.value).length;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Check rate limiting
@@ -248,10 +248,10 @@ class NotificationManager extends EventEmitter {
   // Get priority color for Slack
   getPriorityColor(priority) {
     const colors = {
-      critical: '#ff0000', // Red
-      high: '#ffa500',     // Orange
-      medium: '#ffff00',   // Yellow
-      low: '#00ff00'       // Green
+      critical: '#ff0000', // Red'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      high: '#ffa500',     // Orange'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      medium: '#ffff00',   // Yellow'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      low: '#00ff00'       // Green'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     };
     return colors[priority] || colors.medium;
   }
@@ -259,19 +259,19 @@ class NotificationManager extends EventEmitter {
   // Get category emoji
   getCategoryEmoji(category) {
     const emojis = {
-      error: '❌',
-      warning: '⚠️',
-      success: '✅',
-      info: 'ℹ️',
-      security: '🔒',
-      performance: '⚡',
-      dependency: '📦',
-      system_down: '🚨',
-      update: '🔄',
-      debug: '🐛',
-      trace: '🔍'
+      error: '❌','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      warning: '⚠️','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      success: '✅','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      info: 'ℹ️','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      security: '🔒','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      performance: '⚡','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      dependency: '📦','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      system_down: '🚨','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      update: '🔄','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      debug: '🐛','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      trace: '🔍''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     };
-    return emojis[category] || '📢';
+    return emojis[category] || '📢';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Format Slack fields
@@ -282,7 +282,7 @@ class NotificationManager extends EventEmitter {
       if (value !== null && value !== undefined) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
-          value: typeof value === 'object' ? JSON.stringify(value) : String(value),
+          value: typeof value === 'object' ? JSON.stringify(value) : String(value),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           short: true
         });
       }
@@ -294,8 +294,8 @@ class NotificationManager extends EventEmitter {
   // Convenience methods for common notification types
   async notifyError(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: 'critical',
-      category: 'error',
+      priority: 'critical','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category: 'error','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       data
     });
@@ -303,8 +303,8 @@ class NotificationManager extends EventEmitter {
 
   async notifyWarning(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: 'high',
-      category: 'warning',
+      priority: 'high','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category: 'warning','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       data
     });
@@ -312,8 +312,8 @@ class NotificationManager extends EventEmitter {
 
   async notifySuccess(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: 'medium',
-      category: 'success',
+      priority: 'medium','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category: 'success','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       data
     });
@@ -321,8 +321,8 @@ class NotificationManager extends EventEmitter {
 
   async notifyInfo(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: 'medium',
-      category: 'info',
+      priority: 'medium','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category: 'info','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       data
     });
@@ -330,8 +330,8 @@ class NotificationManager extends EventEmitter {
 
   async notifySecurity(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: 'critical',
-      category: 'security',
+      priority: 'critical','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      category: 'security','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       data
     });
@@ -362,7 +362,7 @@ class NotificationManager extends EventEmitter {
     // Calculate success rate
     if (this.notificationHistory.length > 0) {
       const successCount = this.notificationHistory.filter(n => n.sent).length;
-      stats.successRate = (successCount / this.notificationHistory.length * 100).toFixed(1) + '%';
+      stats.successRate = (successCount / this.notificationHistory.length * 100).toFixed(1) + '%';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     // Count by priority and category
@@ -377,8 +377,8 @@ class NotificationManager extends EventEmitter {
   // Clear notification history
   clearHistory() {
     this.notificationHistory = [];
-    console.log('🗑️ Notification history cleared');
-    this.emit('historyCleared');
+    console.log('🗑️ Notification history cleared');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.emit('historyCleared');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Get recent notifications

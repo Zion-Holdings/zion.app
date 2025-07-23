@@ -1,4 +1,4 @@
 // icons module placeholder
-export const icons = {
+export ;const icons = {
   // TODO: Implement icons functionality
 };

@@ -1,4 +1,4 @@
 // advancedLogCollector module placeholder
-export const advancedLogCollector = {
+export ;const advancedLogCollector = {
   // TODO: Implement advancedLogCollector functionality
 };

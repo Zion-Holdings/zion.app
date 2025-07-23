@@ -7,14 +7,14 @@
  * by performing various maintenance tasks and optimizations.
  */
 
-const fs = require('fs')
-const path = require('path')
-const http = require('http');
+const fs = require('fs')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const http = require('http');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // Configuration
 const CONFIG = {
-  CHAT_SERVER: 'http://localhost:3009',
-  LOG_DIR: 'logs',
+  CHAT_SERVER: 'http://localhost:3009','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  LOG_DIR: 'logs','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   MAX_LOG_SIZE: 50 * 1024 * 1024, // 50MB
   MAX_LOG_AGE: 7 * 24 * 60 * 60 * 1000, // 7 days
   OPTIMIZATION_INTERVAL: 300000, // 5 minutes
@@ -27,18 +27,18 @@ class ChatReconnectionOptimizer {
   }
 
   async start() {
-    console.log('⚡ Starting Chat Reconnection System Optimizer...');
+    console.log('⚡ Starting Chat Reconnection System Optimizer...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(
-      '🔧 Optimization interval:',
+      '🔧 Optimization interval:','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       CONFIG.OPTIMIZATION_INTERVAL / 1000,
-      'seconds',
+      'seconds','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
     console.log(
-      '🧹 Cleanup interval:',
+      '🧹 Cleanup interval:','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       CONFIG.CLEANUP_INTERVAL / 1000,
-      'seconds',
+      'seconds','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
-    console.log('');
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     this.isRunning = true;
 
@@ -55,14 +55,14 @@ class ChatReconnectionOptimizer {
       await this.performCleanup();
     }, CONFIG.CLEANUP_INTERVAL);
 
-    console.log('✅ Optimizer started successfully');
-    console.log('🔧 Continuous optimization active');
-    console.log('🧹 Automatic cleanup enabled');
-    console.log('');
+    console.log('✅ Optimizer started successfully');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🔧 Continuous optimization active');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🧹 Automatic cleanup enabled');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async stop() {
-    console.log('🛑 Stopping Chat Reconnection System Optimizer...');
+    console.log('🛑 Stopping Chat Reconnection System Optimizer...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     this.isRunning = false;
 
@@ -74,11 +74,11 @@ class ChatReconnectionOptimizer {
       clearInterval(this.cleanupInterval);
     }
 
-    console.log('✅ Optimizer stopped');
+    console.log('✅ Optimizer stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async performOptimization() {
-    console.log('🔧 Performing system optimization...')
+    console.log('🔧 Performing system optimization...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const optimizations = [
       this.optimizeLogFiles,
       this.optimizeMemoryUsage,
@@ -98,16 +98,16 @@ const optimizations = [
       }
     }
 
-    console.log('✅ Optimization cycle completed');
-    console.log('');
+    console.log('✅ Optimization cycle completed');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async optimizeLogFiles() {
-    console.log('📋 Optimizing log files...')
+    console.log('📋 Optimizing log files...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const logFiles = [
-      'logs/chat-reconnection.log',
-      'logs/chat-reconnection.err',
-      'logs/chat-reconnection.out',
+      'logs/chat-reconnection.log','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'logs/chat-reconnection.err','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'logs/chat-reconnection.out','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ];
 
     for (const logFile of logFiles) {
@@ -132,15 +132,15 @@ const age = Date.now() - stats.mtime.getTime();
   }
 
   async rotateLogFile(logFile) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const backupFile = `${logFile}.${timestamp}`;
 
     // Read current log
-    const content = fs.readFileSync(logFile, 'utf8');
+    const content = fs.readFileSync(logFile, 'utf8');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Keep only last 1000 lines
-    const lines = content.split('\n')
-const recentLines = lines.slice(-1000).join('\n');
+    const lines = content.split('\n')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const recentLines = lines.slice(-1000).join('\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Write backup
     fs.writeFileSync(backupFile, content);
@@ -150,12 +150,12 @@ const recentLines = lines.slice(-1000).join('\n');
   }
 
   async optimizeMemoryUsage() {
-    console.log('🧠 Optimizing memory usage...');
+    console.log('🧠 Optimizing memory usage...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Force garbage collection if available
     if (global.gc) {
       global.gc();
-      console.log('♻️ Forced garbage collection');
+      console.log('♻️ Forced garbage collection');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     // Check memory usage
@@ -165,7 +165,7 @@ const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
     if (heapUsedMB > 100) {
       console.log(`⚠️ High memory usage: ${heapUsedMB}MB`);
       this.optimizations.push({
-        type: 'MEMORY_HIGH',
+        type: 'MEMORY_HIGH','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         timestamp: Date.now(),
         value: heapUsedMB,
       });
@@ -175,55 +175,55 @@ const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
   }
 
   async optimizeNetworkConnections() {
-    console.log('🌐 Optimizing network connections...');
+    console.log('🌐 Optimizing network connections...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     try {
       // Check system status
       const status = await this.getSystemStatus();
 
       if (status.isMaster && status.discoveredComputers === 0) {
-        console.log('🔍 No worker computers discovered, checking network...');
+        console.log('🔍 No worker computers discovered, checking network...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
         // Try to discover computers
         await this.discoverComputers();
       }
 
       if (status.activeConnections === 0) {
-        console.log('🔌 No active connections, attempting reconnection...');
+        console.log('🔌 No active connections, attempting reconnection...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
         // Trigger reconnection
         await this.triggerReconnection();
       }
     } catch (error) {
-      console.error('❌ Network optimization failed:', error.message);
+      console.error('❌ Network optimization failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async optimizeFileWatching() {
-    console.log('👁️ Optimizing file watching...');
+    console.log('👁️ Optimizing file watching...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Check if file watcher is active
     try {
-      const response = await this.makeRequest('/status');
-      console.log('✅ File watching system active');
+      const response = await this.makeRequest('/status');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ File watching system active');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } catch (error) {
-      console.log('⚠️ File watching may need attention');
+      console.log('⚠️ File watching may need attention');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async optimizePerformance() {
-    console.log('⚡ Optimizing performance...');
+    console.log('⚡ Optimizing performance...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Check response times
     const startTime = Date.now();
     try {
-      await this.makeRequest('/status')
+      await this.makeRequest('/status')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const responseTime = Date.now() - startTime;
 
       if (responseTime > 1000) {
         console.log(`⚠️ Slow response time: ${responseTime}ms`);
         this.optimizations.push({
-          type: 'SLOW_RESPONSE',
+          type: 'SLOW_RESPONSE','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           timestamp: Date.now(),
           value: responseTime,
         });
@@ -231,12 +231,12 @@ const responseTime = Date.now() - startTime;
         console.log(`✅ Response time good: ${responseTime}ms`);
       }
     } catch (error) {
-      console.error('❌ Performance check failed:', error.message);
+      console.error('❌ Performance check failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async performCleanup() {
-    console.log('🧹 Performing system cleanup...')
+    console.log('🧹 Performing system cleanup...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const cleanupTasks = [
       this.cleanupOldLogs,
       this.cleanupTempFiles,
@@ -252,12 +252,12 @@ const cleanupTasks = [
       }
     }
 
-    console.log('✅ Cleanup completed');
-    console.log('');
+    console.log('✅ Cleanup completed');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async cleanupOldLogs() {
-    console.log('🗑️ Cleaning up old logs...')
+    console.log('🗑️ Cleaning up old logs...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const logDir = CONFIG.LOG_DIR;
     if (!fs.existsSync(logDir)) {
       return;
@@ -280,33 +280,33 @@ const age = now - stats.mtime.getTime();
   }
 
   async cleanupTempFiles() {
-    console.log('🗑️ Cleaning up temp files...')
-const tempFiles = ['temp/', 'tmp/', '*.tmp', '*.temp'];
+    console.log('🗑️ Cleaning up temp files...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const tempFiles = ['temp/', 'tmp/', '*.tmp', '*.temp'];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     for (const pattern of tempFiles) {
-      // This is a simplified cleanup - in production you'd use glob patterns
+      // This is a simplified cleanup - in production you'd use glob patterns'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       console.log(`🔍 Checking for temp files: ${pattern}`);
     }
   }
 
   async cleanupOptimizationHistory() {
-    console.log('🗑️ Cleaning up optimization history...');
+    console.log('🗑️ Cleaning up optimization history...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Keep only last 100 optimizations
     if (this.optimizations.length > 100) {
       this.optimizations = this.optimizations.slice(-100);
-      console.log('📊 Trimmed optimization history');
+      console.log('📊 Trimmed optimization history');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async cleanupPidFiles() {
-    console.log('🗑️ Cleaning up PID files...')
-const pidFiles = ['logs/chat-reconnection.pid', 'logs/*.pid'];
+    console.log('🗑️ Cleaning up PID files...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const pidFiles = ['logs/chat-reconnection.pid', 'logs/*.pid'];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     for (const pidFile of pidFiles) {
       if (fs.existsSync(pidFile)) {
         try {
-          const pid = parseInt(fs.readFileSync(pidFile, 'utf8'));
+          const pid = parseInt(fs.readFileSync(pidFile, 'utf8'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
           // Check if process is still running
           process.kill(pid, 0);
@@ -321,33 +321,33 @@ const pidFiles = ['logs/chat-reconnection.pid', 'logs/*.pid'];
   }
 
   async discoverComputers() {
-    console.log('🔍 Attempting to discover computers...');
+    console.log('🔍 Attempting to discover computers...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Send discovery broadcast
     try {
-      await this.makeRequest('/discover', 'POST');
-      console.log('📡 Discovery broadcast sent');
+      await this.makeRequest('/discover', 'POST');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('📡 Discovery broadcast sent');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } catch (error) {
-      console.error('❌ Discovery failed:', error.message);
+      console.error('❌ Discovery failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async triggerReconnection() {
-    console.log('🔌 Triggering reconnection...');
+    console.log('🔌 Triggering reconnection...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     try {
-      await this.makeRequest('/reconnect', 'POST');
-      console.log('🔄 Reconnection triggered');
+      await this.makeRequest('/reconnect', 'POST');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('🔄 Reconnection triggered');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } catch (error) {
-      console.error('❌ Reconnection failed:', error.message);
+      console.error('❌ Reconnection failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async getSystemStatus() {
-    return await this.makeRequest('/status');
+    return await this.makeRequest('/status');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
-  async makeRequest(path, method = 'GET', body = null) {
+  async makeRequest(path, method = 'GET', body = null) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     return new Promise((resolve, reject) => {
       const url = new URL(path, CONFIG.CHAT_SERVER)
 const options = {
@@ -356,13 +356,13 @@ const options = {
         path: url.pathname,
         method: method,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         },
       }
 const req = http.request(options, (res) => {
-        let data = '';
-        res.on('data', (chunk) => (data += chunk));
-        res.on('end', () => {
+        let data = '';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        res.on('data', (chunk) => (data += chunk));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        res.on('end', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           try {
             resolve(JSON.parse(data));
           } catch (error) {
@@ -371,8 +371,8 @@ const req = http.request(options, (res) => {
         });
       });
 
-      req.on('error', reject);
-      req.setTimeout(5000, () => reject(new Error('Request timeout')));
+      req.on('error', reject);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      req.setTimeout(5000, () => reject(new Error('Request timeout')));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
       if (body) {
         req.write(JSON.stringify(body));
@@ -386,16 +386,16 @@ const req = http.request(options, (res) => {
       timestamp: Date.now(),
       optimizations: this.optimizations.length,
       recentOptimizations: this.optimizations.slice(-10),
-      systemHealth: 'good',
+      systemHealth: 'good','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     };
 
     // Check for issues
     const issues = this.optimizations.filter(
-      (opt) => opt.type === 'MEMORY_HIGH' || opt.type === 'SLOW_RESPONSE',
+      (opt) => opt.type === 'MEMORY_HIGH' || opt.type === 'SLOW_RESPONSE','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
 
     if (issues.length > 0) {
-      report.systemHealth = 'needs_attention';
+      report.systemHealth = 'needs_attention';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       report.issues = issues;
     }
 
@@ -405,9 +405,9 @@ const req = http.request(options, (res) => {
   displayReport() {
     const report = this.generateReport();
 
-    console.log('');
-    console.log('📊 Chat Reconnection System Optimizer Report');
-    console.log('============================================');
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('📊 Chat Reconnection System Optimizer Report');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('============================================');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(`⏰ Timestamp: ${new Date(report.timestamp).toLocaleString()}`);
     console.log(`🔧 Total Optimizations: ${report.optimizations}`);
     console.log(`🏥 System Health: ${report.systemHealth.toUpperCase()}`);
@@ -421,7 +421,7 @@ const req = http.request(options, (res) => {
       });
     }
 
-    console.log('');
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 }
 
@@ -434,26 +434,26 @@ async function main() {
 const command = args[0];
 
   switch (command) {
-    case 'start':
+    case 'start':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       await optimizer.start();
 
       // Handle graceful shutdown
-      process.on('SIGINT', async () => {
-        console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+      process.on('SIGINT', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('\n🛑 Received SIGINT, shutting down gracefully...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         await optimizer.stop();
         optimizer.displayReport();
         process.exit(0);
       });
 
-      process.on('SIGTERM', async () => {
-        console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+      process.on('SIGTERM', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('\n🛑 Received SIGTERM, shutting down gracefully...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         await optimizer.stop();
         optimizer.displayReport();
         process.exit(0);
       });
       break;
 
-    case 'optimize':
+    case 'optimize':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       await optimizer.start();
       setTimeout(async () => {
         await optimizer.performOptimization();
@@ -463,7 +463,7 @@ const command = args[0];
       }, 10000);
       break;
 
-    case 'cleanup':
+    case 'cleanup':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       await optimizer.start();
       setTimeout(async () => {
         await optimizer.performCleanup();
@@ -474,17 +474,17 @@ const command = args[0];
       break;
 
     default:
-      console.log('Usage: node chat-reconnection-optimizer.js [command]');
-      console.log('');
-      console.log('Commands:');
-      console.log('  start     Start continuous optimization');
-      console.log('  optimize  Run one optimization cycle');
-      console.log('  cleanup   Run one cleanup cycle');
-      console.log('');
-      console.log('Examples:');
-      console.log('  node chat-reconnection-optimizer.js start');
-      console.log('  node chat-reconnection-optimizer.js optimize');
-      console.log('  node chat-reconnection-optimizer.js cleanup');
+      console.log('Usage: node chat-reconnection-optimizer.js [command]');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('Commands:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  start     Start continuous optimization');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  optimize  Run one optimization cycle');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  cleanup   Run one cleanup cycle');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('Examples:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  node chat-reconnection-optimizer.js start');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  node chat-reconnection-optimizer.js optimize');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('  node chat-reconnection-optimizer.js cleanup');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       break;
   }
 }
@@ -492,7 +492,7 @@ const command = args[0];
 // Run if this script is executed directly
 if (require.main === module) {
   main().catch((error) => {
-    console.error('❌ Optimizer failed:', error);
+    console.error('❌ Optimizer failed:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     process.exit(1);
   });
 }

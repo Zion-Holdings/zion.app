@@ -1,9 +1,9 @@
-import React from 'react'
-export default function CartContext() {
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;default function CartContext() {
   return (
     <div>
       <h1>CartContext</h1>
       <p>Component placeholder</p>
     </div>
-  )'
-}';
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

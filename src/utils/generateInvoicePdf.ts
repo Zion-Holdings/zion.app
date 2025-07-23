@@ -1,4 +1,4 @@
 // generateInvoicePdf module placeholder
-export const generateInvoicePdf = {
+export ;const generateInvoicePdf = {
   // TODO: Implement generateInvoicePdf functionality
 };

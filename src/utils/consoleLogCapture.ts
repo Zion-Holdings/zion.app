@@ -1,4 +1,4 @@
 // consoleLogCapture module placeholder
-export const consoleLogCapture = {
+export ;const consoleLogCapture = {
   // TODO: Implement consoleLogCapture functionality
 };

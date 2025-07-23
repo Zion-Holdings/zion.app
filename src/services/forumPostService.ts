@@ -1,4 +1,4 @@
 // forumPostService module placeholder
-export const forumPostService = {
+export ;const forumPostService = {
   // TODO: Implement forumPostService functionality
 };

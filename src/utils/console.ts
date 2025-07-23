@@ -1,4 +1,4 @@
 // console module placeholder
-export const console = {
+export ;const console = {
   // TODO: Implement console functionality
 };

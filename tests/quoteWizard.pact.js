@@ -1,28 +1,28 @@
  ;
-import path from 'path';'import { Pact, Matchers } from '@pact-foundation/pact';'// Use global fetch to avoid requiring the `node-fetch` package during tests.;
+import path from 'path';'import { Pact, Matchers } from '@pact-foundation/pact';'// Use global fetch to avoid requiring the `node-fetch` package during tests.;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const fetch = global.fetch;
 ;
 const provider = new Pact({
-  consumer: 'QuoteWizard','  provider: 'ItemsService','  port: 1234,
-  log: path.resolve(process.cwd(), 'pact/logs', 'pact.log'),'  dir: path.resolve(process.cwd(), 'pact'),'});
+  consumer: 'QuoteWizard','  provider: 'ItemsService','  port: 1234,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  log: path.resolve(process.cwd(), 'pact/logs', 'pact.log'),'  dir: path.resolve(process.cwd(), 'pact'),'});'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-describe('QuoteWizard ItemsService contract', () => {'  beforeAll(() => provider.setup());
+describe('QuoteWizard ItemsService contract', () => {'  beforeAll(() => provider.setup());'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   afterAll(() => provider.finalize());
   afterEach(() => provider.verify());
 
-  describe('GET /api/items?category=services', () => {'    beforeAll(() => {
+  describe('GET /api/items?category=services', () => {'    beforeAll(() => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return provider.addInteraction({
-        state: 'services exist','        uponReceiving: 'a request for service items','        withRequest: {
-          method: 'GET','          path: '/api/items','          query: { category: 'services' },'        },
+        state: 'services exist','        uponReceiving: 'a request for service items','        withRequest: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          method: 'GET','          path: '/api/items','          query: { category: 'services' },'        },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         willRespondWith: {
           status: 200,
-          headers: { 'Content-Type': 'application/json; charset=utf-8' },'          body: Matchers.eachLike({
-            id: Matchers.like('1'),'            title: Matchers.like('Service A'),'          }),
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },'          body: Matchers.eachLike({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            id: Matchers.like('1'),'            title: Matchers.like('Service A'),'          }),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         },
       });
     });
 
-    it('returns a list of services', async () => {'      const res = await fetch(
+    it('returns a list of services', async () => {'      const res = await fetch('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         `${provider.mockService.baseUrl}/api/items?category=services`
       );
       const body = await res.json();

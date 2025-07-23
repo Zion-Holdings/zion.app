@@ -1,4 +1,4 @@
 // useMessagingOperations module placeholder
-export const useMessagingOperations = {
+export ;const useMessagingOperations = {
   // TODO: Implement useMessagingOperations functionality
 };

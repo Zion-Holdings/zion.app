@@ -1,4 +1,4 @@
 // useEmailAuth module placeholder
-export const useEmailAuth = {
+export ;const useEmailAuth = {
   // TODO: Implement useEmailAuth functionality
 };

@@ -1,4 +1,4 @@
 // careersJobs module placeholder
-export const careersJobs = {
+export ;const careersJobs = {
   // TODO: Implement careersJobs functionality
 };

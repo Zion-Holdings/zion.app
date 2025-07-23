@@ -1,18 +1,18 @@
-import React from 'react;
-import Head from 'next/head;
+import React from 'react;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import Head from 'next/head;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-export default function admin() {
+export ;default function admin() {
   return (
     <>
       <Head>
         <title>enterprise/admin - Zion App</title>
-        <meta name="description" content="enterprise/admin page" />
+        <meta name="description" content="enterprise/admin page" />"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">enterprise/admin</h1>
-        <p className="text-lg mb-4">This page is under construction.</p>
-        <div className="mt-4">
-          <a href="/" className="text-blue-600 hover:underline">
+      <div className="container mx-auto px-4 py-8">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <h1 className="text-3xl font-bold mb-6">enterprise/admin</h1>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <p className="text-lg mb-4">This page is under construction.</p>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <div className="mt-4">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          <a href="/" className="text-blue-600 hover:underline">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             ← Back to Home
           </a>
         </div>

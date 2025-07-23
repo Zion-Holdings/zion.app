@@ -1,4 +1,4 @@
 // useMarketplaceSearch module placeholder
-export const useMarketplaceSearch = {
+export ;const useMarketplaceSearch = {
   // TODO: Implement useMarketplaceSearch functionality
 };

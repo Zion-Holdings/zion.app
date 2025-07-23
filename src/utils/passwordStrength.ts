@@ -1,4 +1,4 @@
 // passwordStrength module placeholder
-export const passwordStrength = {
+export ;const passwordStrength = {
   // TODO: Implement passwordStrength functionality
 };

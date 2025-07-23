@@ -1,4 +1,4 @@
 // TeamsService module placeholder
-export const TeamsService = {
+export ;const TeamsService = {
   // TODO: Implement TeamsService functionality
 };

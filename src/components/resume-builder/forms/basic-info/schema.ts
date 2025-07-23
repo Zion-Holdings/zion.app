@@ -1,4 +1,4 @@
 // schema module placeholder
-export const schema = {
+export ;const schema = {
   // TODO: Implement schema functionality
 };

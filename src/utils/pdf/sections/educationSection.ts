@@ -1,4 +1,4 @@
 // educationSection module placeholder
-export const educationSection = {
+export ;const educationSection = {
   // TODO: Implement educationSection functionality
 };

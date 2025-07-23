@@ -1,4 +1,4 @@
 // useAIContentEnhancer module placeholder
-export const useAIContentEnhancer = {
+export ;const useAIContentEnhancer = {
   // TODO: Implement useAIContentEnhancer functionality
 };

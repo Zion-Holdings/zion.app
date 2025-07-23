@@ -1,4 +1,4 @@
 // usePoints module placeholder
-export const usePoints = {
+export ;const usePoints = {
   // TODO: Implement usePoints functionality
 };

@@ -1,4 +1,4 @@
 // accessibility module placeholder
-export const accessibility = {
+export ;const accessibility = {
   // TODO: Implement accessibility functionality
 };

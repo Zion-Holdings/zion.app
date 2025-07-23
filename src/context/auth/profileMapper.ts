@@ -1,4 +1,4 @@
 // profileMapper module placeholder
-export const profileMapper = {
+export ;const profileMapper = {
   // TODO: Implement profileMapper functionality
 };

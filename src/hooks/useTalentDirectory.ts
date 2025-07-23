@@ -1,4 +1,4 @@
 // useTalentDirectory module placeholder
-export const useTalentDirectory = {
+export ;const useTalentDirectory = {
   // TODO: Implement useTalentDirectory functionality
 };

@@ -1,18 +1,18 @@
-import React from 'react;
-import Head from 'next/head;
+import React from 'react;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import Head from 'next/head;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-export default function careers() {
+export ;default function careers() {
   return (
     <>
       <Head>
         <title>careers - Zion App</title>
-        <meta name="description" content="careers page" />
+        <meta name="description" content="careers page" />"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">careers</h1>
-        <p className="text-lg mb-4">This page is under construction.</p>
-        <div className="mt-4">
-          <a href="/" className="text-blue-600 hover:underline">
+      <div className="container mx-auto px-4 py-8">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <h1 className="text-3xl font-bold mb-6">careers</h1>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <p className="text-lg mb-4">This page is under construction.</p>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <div className="mt-4">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          <a href="/" className="text-blue-600 hover:underline">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             ← Back to Home
           </a>
         </div>

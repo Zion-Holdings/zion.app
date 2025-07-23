@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const io = require('socket.io-client');
+const io = require('socket.io-client');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-console.log('🎬 Live Demonstration: Automatic Reconnection System\n');
+console.log('🎬 Live Demonstration: Automatic Reconnection System\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 console.log(
-  'This demonstration will show how the automatic reconnection system',
+  'This demonstration will show how the automatic reconnection system','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 );
-console.log('handles network interruptions for all chat sessions.\n');
+console.log('handles network interruptions for all chat sessions.\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // Demo configuration
 const DEMO_CONFIG = {
@@ -20,22 +20,22 @@ const DEMO_CONFIG = {
 // Chat sessions to demonstrate
 const CHAT_SESSIONS = [
   {
-    name: 'General Chat Widget',
-    roomId: 'general-chat',
-    color: '🔵',
-    socketUrl: 'http://localhost:3006',
+    name: 'General Chat Widget','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    roomId: 'general-chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    color: '🔵','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   },
   {
-    name: 'AI Assistant Chat',
-    roomId: 'ai-assistant',
-    color: '🟣',
-    socketUrl: 'http://localhost:3006',
+    name: 'AI Assistant Chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    roomId: 'ai-assistant','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    color: '🟣','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   },
   {
-    name: 'Support Chatbot',
-    roomId: 'support-chat',
-    color: '🟢',
-    socketUrl: 'http://localhost:3006',
+    name: 'Support Chatbot','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    roomId: 'support-chat','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    color: '🟢','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socketUrl: 'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   },
 ]
 class LiveReconnectionDemo {
@@ -46,7 +46,7 @@ class LiveReconnectionDemo {
   }
 
   async start() {
-    console.log('🚀 Starting live reconnection demonstration...\n');
+    console.log('🚀 Starting live reconnection demonstration...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     this.isRunning = true;
 
     // Step 1: Establish initial connections
@@ -69,18 +69,18 @@ class LiveReconnectionDemo {
   }
 
   async step1_EstablishConnections() {
-    console.log('📡 Step 1: Establishing initial connections...\n');
+    console.log('📡 Step 1: Establishing initial connections...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     for (const session of CHAT_SESSIONS) {
       await this.createSession(session);
       await this.delay(1000);
     }
 
-    console.log('✅ All chat sessions connected successfully!\n');
+    console.log('✅ All chat sessions connected successfully!\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async step2_SendMessages() {
-    console.log('💬 Step 2: Sending messages to all sessions...\n');
+    console.log('💬 Step 2: Sending messages to all sessions...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     for (const [sessionName, session] of this.sessions) {
       const message = `Hello from ${sessionName} - ${new Date().toLocaleTimeString()}`;
@@ -88,13 +88,13 @@ class LiveReconnectionDemo {
       await this.delay(800);
     }
 
-    console.log('✅ Messages sent to all sessions!\n');
+    console.log('✅ Messages sent to all sessions!\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async step3_SimulateInterruption() {
-    console.log('🌐 Step 3: Simulating network interruption...\n');
+    console.log('🌐 Step 3: Simulating network interruption...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(
-      '⚠️  Network interruption detected! All connections will be lost.\n',
+      '⚠️  Network interruption detected! All connections will be lost.\n','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
 
     // Disconnect all sessions
@@ -105,33 +105,33 @@ class LiveReconnectionDemo {
     }
 
     console.log(
-      '🔌 All connections lost. Automatic reconnection will begin...\n',
+      '🔌 All connections lost. Automatic reconnection will begin...\n','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
   }
 
   async step4_ShowReconnection() {
-    console.log('🔄 Step 4: Automatic reconnection attempts...\n');
+    console.log('🔄 Step 4: Automatic reconnection attempts...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Wait for reconnection attempts
     await this.delay(3000);
 
-    console.log('📊 Reconnection Status:');
+    console.log('📊 Reconnection Status:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
-        ? '✅ Connected'
-        : '🔄 Reconnecting...';
+        ? '✅ Connected''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        : '🔄 Reconnecting...';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       console.log(`${session.color} ${sessionName}: ${status}`);
     }
-    console.log('');
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async step5_SuccessfulReconnection() {
-    console.log('✅ Step 5: Successful reconnection demonstration...\n');
+    console.log('✅ Step 5: Successful reconnection demonstration...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Wait for reconnections to complete
     await this.delay(5000);
 
-    console.log('🎉 Reconnection Results:');
+    console.log('🎉 Reconnection Results:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     for (const [sessionName, session] of this.sessions) {
       if (session.socket.connected) {
         console.log(
@@ -145,28 +145,28 @@ class LiveReconnectionDemo {
         console.log(`${session.color} ${sessionName}: ❌ Reconnection failed`);
       }
     }
-    console.log('');
+    console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async step6_FinalStatus() {
-    console.log('📋 Step 6: Final system status...\n');
+    console.log('📋 Step 6: Final system status...\n');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    console.log('🎯 Demonstration Summary:');
-    console.log('========================');
+    console.log('🎯 Demonstration Summary:');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('========================');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     let connectedCount = 0;
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
-        ? '✅ Connected'
-        : '❌ Disconnected'
+        ? '✅ Connected''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        : '❌ Disconnected''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const attempts = session.reconnectionAttempts || 0
-const quality = session.connectionQuality || 'unknown';
+const quality = session.connectionQuality || 'unknown';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
       console.log(`${session.color} ${sessionName}:`);
       console.log(`   Status: ${status}`);
       console.log(`   Reconnection attempts: ${attempts}`);
       console.log(`   Connection quality: ${quality}`);
-      console.log('');
+      console.log('');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
       if (session.socket.connected) connectedCount++;
     }
@@ -176,21 +176,21 @@ const quality = session.connectionQuality || 'unknown';
     );
 
     if (connectedCount === this.sessions.size) {
-      console.log('🎉 SUCCESS: All chat sessions automatically reconnected!');
+      console.log('🎉 SUCCESS: All chat sessions automatically reconnected!');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } else {
-      console.log('⚠️  Some sessions failed to reconnect automatically.');
+      console.log('⚠️  Some sessions failed to reconnect automatically.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
-    console.log('\n🔧 The automatic reconnection system is working correctly!');
+    console.log('\n🔧 The automatic reconnection system is working correctly!');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(
-      '💡 This ensures seamless chat experience even during network interruptions.\n',
+      '💡 This ensures seamless chat experience even during network interruptions.\n','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
   }
 
   async createSession(sessionConfig) {
     return new Promise((resolve) => {
       const socket = io(sessionConfig.socketUrl, {
-        transports: ['websocket', 'polling'],
+        transports: ['websocket', 'polling'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         timeout: 5000,
         reconnection: true,
         reconnectionAttempts: 5,
@@ -203,16 +203,16 @@ const session = {
         color: sessionConfig.color,
         socket: socket,
         reconnectionAttempts: 0,
-        connectionQuality: 'unknown',
+        connectionQuality: 'unknown','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       };
 
-      socket.on('connect', () => {
+      socket.on('connect', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.log(
           `${sessionConfig.color} ✅ ${sessionConfig.name} connected`,
         );
 
         // Join room
-        socket.emit('join-room', sessionConfig.roomId, (response) => {
+        socket.emit('join-room', sessionConfig.roomId, (response) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           if (response && response.success) {
             console.log(
               `${sessionConfig.color} 🎯 ${sessionConfig.name} joined room: ${sessionConfig.roomId}`,
@@ -223,14 +223,14 @@ const session = {
         resolve(session);
       });
 
-      socket.on('reconnect', (attemptNumber) => {
+      socket.on('reconnect', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         session.reconnectionAttempts = attemptNumber;
         console.log(
           `${sessionConfig.color} 🔄 ${sessionConfig.name} reconnected after ${attemptNumber} attempts`,
         );
 
         // Rejoin room
-        socket.emit('join-room', sessionConfig.roomId, (response) => {
+        socket.emit('join-room', sessionConfig.roomId, (response) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           if (response && response.success) {
             console.log(
               `${sessionConfig.color} 🎯 ${sessionConfig.name} rejoined room: ${sessionConfig.roomId}`,
@@ -239,14 +239,14 @@ const session = {
         });
       });
 
-      socket.on('reconnect_attempt', (attemptNumber) => {
+      socket.on('reconnect_attempt', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         session.reconnectionAttempts = attemptNumber;
         console.log(
           `${sessionConfig.color} 🔄 ${sessionConfig.name} reconnection attempt ${attemptNumber}`,
         );
       });
 
-      socket.on('disconnect', (reason) => {
+      socket.on('disconnect', (reason) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.log(
           `${sessionConfig.color} 🔌 ${sessionConfig.name} disconnected: ${reason}`,
         );
@@ -259,12 +259,12 @@ const session = {
   async sendMessage(session, message) {
     return new Promise((resolve) => {
       session.socket.emit(
-        'send-message',
+        'send-message','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         {
           roomId: session.roomId,
           message: message,
-          sender: 'demo-user',
-          type: 'text',
+          sender: 'demo-user','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          type: 'text','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         },
         (response) => {
           if (response && response.success) {
@@ -283,26 +283,26 @@ const session = {
   }
 
   stop() {
-    console.log('\n🛑 Stopping demonstration...');
+    console.log('\n🛑 Stopping demonstration...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     this.isRunning = false;
 
     for (const [sessionName, session] of this.sessions) {
       session.socket.disconnect();
     }
 
-    console.log('✅ Demonstration stopped. All connections closed.');
+    console.log('✅ Demonstration stopped. All connections closed.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 }
 
 // Handle graceful shutdown
-process.on('SIGINT', () => {
-  console.log('\n🛑 Demonstration interrupted by user');
+process.on('SIGINT', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('\n🛑 Demonstration interrupted by user');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   if (demo) demo.stop();
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Demonstration terminated');
+process.on('SIGTERM', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('\n🛑 Demonstration terminated');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   if (demo) demo.stop();
   process.exit(0);
 });
@@ -310,6 +310,6 @@ process.on('SIGTERM', () => {
 // Start the demonstration
 const demo = new LiveReconnectionDemo();
 demo.start().catch((error) => {
-  console.error('❌ Demonstration failed:', error);
+  console.error('❌ Demonstration failed:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   process.exit(1);
 });

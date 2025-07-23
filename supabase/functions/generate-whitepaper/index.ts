@@ -1,6 +1,6 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";"import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';'import "https://deno.land/x/xhr@0.1.0/mod.ts";";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";"import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';'import "https://deno.land/x/xhr@0.1.0/mod.ts";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*","  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type","};
+  "Access-Control-Allow-Origin": "*","  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type","};"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 interface WhitepaperParams {
   _tokenName: string;
@@ -15,7 +15,7 @@ interface WhitepaperParams {
 
 serve(async (req) => {
   // Handle CORS preflight requests
-  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });
+  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
 
   try {
@@ -33,17 +33,17 @@ serve(async (req) => {
     // Basic validation for core fields still applies
     if (!tokenName || !tokenSupply || !useCases || !rewardsLogic || !governanceLogic || !legalDisclaimers) {
       return new Response(
-        JSON.stringify({ error: "Missing required core parameters" }),"        {
+        JSON.stringify({ error: "Missing required core parameters" }),"        {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
           status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },"        }
+          headers: { ...corsHeaders, "Content-Type": "application/json" },"        }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       );
     }
     // Specific validation: if distributionData is not provided, distributionBreakdown (textarea) must be.
     if (!distributionData && !distributionBreakdown) {
         return new Response(
-          JSON.stringify({ error: "Missing distribution information: provide either distributionData or distributionBreakdown text." }),"          {
+          JSON.stringify({ error: "Missing distribution information: provide either distributionData or distributionBreakdown text." }),"          {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             status: 400,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },"          }
+            headers: { ...corsHeaders, "Content-Type": "application/json" },"          }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         );
     }
 
@@ -52,7 +52,7 @@ serve(async (req) => {
     if (distributionData && distributionData.length > 0) {
       const formattedDistribution = distributionData
         .map(item => `${item.name}: ${item.percentage}%`)
-        .join(', ');'      distributionText = `The token distribution is as follows: ${formattedDistribution}. This will be visually represented by a chart in the final whitepaper. ${distributionBreakdown ? `Additional details: ${distributionBreakdown}` : ''}`;'    } else {
+        .join(', ');'      distributionText = `The token distribution is as follows: ${formattedDistribution}. This will be visually represented by a chart in the final whitepaper. ${distributionBreakdown ? `Additional details: ${distributionBreakdown}` : ''}`;'    } else {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       // If distributionData is not provided or empty, ensure the original text still mentions a chart.
       distributionText = `${distributionBreakdown}. Include a placeholder or note that a distribution chart will represent this allocation.`;
     }
@@ -70,33 +70,33 @@ serve(async (req) => {
     // Create a Supabase client with the Auth context of the logged in user.
     const supabaseClient = createClient(
       // Supabase API URL - env var exported by default when deployed.
-      Deno.env.get('SUPABASE_URL') ?? '','      // Supabase API ANON KEY - env var exported by default when deployed.
-      Deno.env.get('SUPABASE_ANON_KEY') ?? '','      // Create client with Auth context of the user that called the function.
+      Deno.env.get('SUPABASE_URL') ?? '','      // Supabase API ANON KEY - env var exported by default when deployed.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '','      // Create client with Auth context of the user that called the function.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       // This way your row-level-security (RLS) policies are applied.
-      { global: { headers: { Authorization: req.headers.get('Authorization')! } } }'    );
+      { global: { headers: { Authorization: req.headers.get('Authorization')! } } }'    );'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    const { data: gptData, error: gptError } = await supabaseClient.functions.invoke("zion-gpt", {"      body: { prompt: prompt, maxTokens: 2000, temperature: 0.7 }, // Increased maxTokens for a whitepaper
+    const { data: gptData, error: gptError } = await supabaseClient.functions.invoke("zion-gpt", {"      body: { prompt: prompt, maxTokens: 2000, temperature: 0.7 }, // Increased maxTokens for a whitepaper"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     });
 
     if (gptError) {
-      console.error("Error invoking zion-gpt:", gptError);"      throw new Error(`Failed to generate whitepaper draft: ${gptError.message}`);
+      console.error("Error invoking zion-gpt:", gptError);"      throw new Error(`Failed to generate whitepaper draft: ${gptError.message}`);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     }
 
     if (!gptData || !gptData.completion) {
-      console.error("Invalid response from zion-gpt:", gptData);"      throw new Error("Failed to get completion from zion-gpt function.");"    }
+      console.error("Invalid response from zion-gpt:", gptData);"      throw new Error("Failed to get completion from zion-gpt function.");"    }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
     return new Response(
       JSON.stringify({ whitepaperDraft: gptData.completion }),
       {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },"      }
+        headers: { ...corsHeaders, "Content-Type": "application/json" },"      }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
 
   } catch {
-    console.("Error in generate-whitepaper function:", );"    return new Response(
+    console.("Error in generate-whitepaper function:", );"    return new Response("""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       JSON.stringify({ : .message }),
       {
         status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },"      }
+        headers: { ...corsHeaders, "Content-Type": "application/json" },"      }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
   }
 });

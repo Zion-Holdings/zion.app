@@ -1,4 +1,4 @@
 // org module placeholder
-export const org = {
+export ;const org = {
   // TODO: Implement org functionality
 };

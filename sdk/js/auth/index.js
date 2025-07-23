@@ -6,44 +6,44 @@
  */
 
 // Helper to get CSRF token - simplistic version for now
-// In a real app, next-auth/react's getCsrfToken() is preferred.'async function getCsrfToken() {
+// In a real app, next-auth/react's getCsrfToken() is preferred.'async function getCsrfToken() {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   try {
-    const response = await fetch('/api/auth/csrf');'    if (!response.ok) return null;
+    const response = await fetch('/api/auth/csrf');'    if (!response.ok) return null;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const data = await response.json();
     return data.csrfToken;
   } catch {
-    console.('Error fetching CSRF token:', );'    return null;
+    console.('Error fetching CSRF token:', );'    return null;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 }
 
 /**
  * Logs in a user with email and password.
- * @param {string} email - The user's email.' * @param {string} password - The user's password.' * @returns {Promise<object|null>} A promise that resolves with the user object upon successful login, or null otherwise.
+ * @param {string} email - The user's email.' * @param {string} password - The user's password.' * @returns {Promise<object|null>} A promise that resolves with the user object upon successful login, or null otherwise.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
  * @throws {Error} If login fails due to network issues or invalid credentials.
  */
 async function loginWithEmail(email, password) {
   // Note: For direct API calls to NextAuth.js POST endpoints,
   // CSRF token handling is crucial. This function fetches and includes it.
-  // Using next-auth/react client's signIn() is generally preferred as it handles this automatically.'
+  // Using next-auth/react client's signIn() is generally preferred as it handles this automatically.''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   // The body for credentials provider should be x-www-form-urlencoded
   const csrfToken = await getCsrfToken(); // Simplistic CSRF fetch
   if (!csrfToken) {
     // In a real scenario, might not proceed or use a previously stored token
-    console.warn('CSRF token not found, proceeding without it for demo purposes.');'  }
+    console.warn('CSRF token not found, proceeding without it for demo purposes.');'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   const body = new URLSearchParams();
-  body.append('csrfToken', csrfToken || ''); // Ensure csrfToken is not undefined'  body.append('email', email);'  body.append('password', password);'  body.append('callbackUrl', window.location.href);'  body.append('redirect', 'false');'  body.append('json', 'true');'
-  const response = await fetch('/api/auth/signin/credentials', {'    method: 'POST','    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded','    },
+  body.append('csrfToken', csrfToken || ''); // Ensure csrfToken is not undefined'  body.append('email', email);'  body.append('password', password);'  body.append('callbackUrl', window.location.href);'  body.append('redirect', 'false');'  body.append('json', 'true');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const response = await fetch('/api/auth/signin/credentials', {'    method: 'POST','    headers: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'Content-Type': 'application/x-www-form-urlencoded','    },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     body: body,
   });
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Login failed with status: ' + response.status }));'    // if (response.url.includes('error=CredentialsSignin')) {'    //   throw new Error('Invalid credentials.');'    // }
+    const errorData = await response.json().catch(() => ({ message: 'Login failed with status: ' + response.status }));'    // if (response.url.includes('error=CredentialsSignin')) {'    //   throw new Error('Invalid credentials.');'    // }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     throw new Error(errorData.message || `Login failed. Status: ${response.status}`);
   }
 
-  // Successful login via next-auth's credentials provider usually results in a redirect'  // or, if { redirect: false, json: true } is used, specific JSON response.
+  // Successful login via next-auth's credentials provider usually results in a redirect'  // or, if { redirect: false, json: true } is used, specific JSON response.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   // The actual user session is then available via /api/auth/session.
   // We fetch the session to get user data.
   const session = await getUser();
@@ -51,24 +51,24 @@ async function loginWithEmail(email, password) {
     return session.user;
   } else {
     // This path might be taken if the response.ok but session is not yet established
-    // or if the login response doesn't directly contain the user.'    // Depending on NextAuth config, a successful response to signin/credentials
-    // might be a redirect or a simple { url: "redirect_url" }."    // If redirect:false, it should return { ok: true, url: "..."}"    const loginResponseData = await response.json().catch(() => null);
+    // or if the login response doesn't directly contain the user.'    // Depending on NextAuth config, a successful response to signin/credentials'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    // might be a redirect or a simple { url: "redirect_url" }."    // If redirect:false, it should return { ok: true, url: "..."}"    const loginResponseData = await response.json().catch(() => null);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     if (loginResponseData && loginResponseData.ok && loginResponseData.url) {
         // Login was accepted by NextAuth, session should be available
         const updatedSession = await getUser();
         if (updatedSession && updatedSession.user) return updatedSession.user;
     }
-    throw new Error('Login succeeded but session data could not be retrieved.');'  }
+    throw new Error('Login succeeded but session data could not be retrieved.');'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }
 
 /**
  * Signs up a new user with email and password.
- * @param {string} email - The new user's email.' * @param {string} password - The new user's password.' * @param {object} [otherDetails] - Additional details for signup, e.g., { name: 'Test User' }.' * @returns {Promise<object>} A promise that resolves with the new user object (or a success message).
+ * @param {string} email - The new user's email.' * @param {string} password - The new user's password.' * @param {object} [otherDetails] - Additional details for signup, e.g., { name: 'Test User' }.' * @returns {Promise<object>} A promise that resolves with the new user object (or a success message).'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
  * @throws {Error} If signup fails.
  */
 async function signupWithEmail(email, password, otherDetails = {}) {
-  const response = await fetch('/api/auth/register', {'    method: 'POST','    headers: {
-      'Content-Type': 'application/json','    },
+  const response = await fetch('/api/auth/register', {'    method: 'POST','    headers: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'Content-Type': 'application/json','    },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     body: JSON.stringify({ email, password, name: otherDetails.name }),
   });
 
@@ -93,12 +93,12 @@ async function signupWithEmail(email, password, otherDetails = {}) {
  */
 async function loginWithWallet(walletProvider) {
 
-  if (!walletProvider || typeof walletProvider.request !== 'function') {'    throw new Error('Invalid wallet provider provided.');'  }
+  if (!walletProvider || typeof walletProvider.request !== 'function') {'    throw new Error('Invalid wallet provider provided.');'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   try {
     // 1. Request accounts
-    const accounts = await walletProvider.request({ method: 'eth_requestAccounts' });'    if (!accounts || accounts.length === 0) {
-      throw new Error('No accounts found. Please connect your wallet.');'    }
+    const accounts = await walletProvider.request({ method: 'eth_requestAccounts' });'    if (!accounts || accounts.length === 0) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      throw new Error('No accounts found. Please connect your wallet.');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const address = accounts[0];
 
     // 2. Define a message to sign
@@ -109,25 +109,25 @@ async function loginWithWallet(walletProvider) {
 
     // 3. Request signature
     const signature = await walletProvider.request({
-      method: 'personal_sign','      params: [message, address], // Metamask expects (message, address) for personal_sign
+      method: 'personal_sign','      params: [message, address], // Metamask expects (message, address) for personal_sign'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
 
     // 4. Authenticate with the backend via NextAuth
     const csrfToken = await getCsrfToken();
     if (!csrfToken) {
       // This is a simplified CSRF handling for demo.
-      console.warn('CSRF token not found for wallet login, proceeding without it. This is NOT secure for production.');'    }
+      console.warn('CSRF token not found for wallet login, proceeding without it. This is NOT secure for production.');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // NextAuth Credentials provider expects form data or specific JSON structure.
     const bodyParams = new URLSearchParams();
-    bodyParams.append('csrfToken', csrfToken || '');'    bodyParams.append('address', address);'    bodyParams.append('signature', signature);'    bodyParams.append('message', message);'    bodyParams.append('callbackUrl', window.location.href);'    bodyParams.append('redirect', 'false');'    bodyParams.append('json', 'true');'
-    const response = await fetch('/api/auth/signin/walletconnect', {'      method: 'POST','      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded','      },
+    bodyParams.append('csrfToken', csrfToken || '');'    bodyParams.append('address', address);'    bodyParams.append('signature', signature);'    bodyParams.append('message', message);'    bodyParams.append('callbackUrl', window.location.href);'    bodyParams.append('redirect', 'false');'    bodyParams.append('json', 'true');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const response = await fetch('/api/auth/signin/walletconnect', {'      method: 'POST','      headers: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'Content-Type': 'application/x-www-form-urlencoded','      },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       body: bodyParams,
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({ message: 'Wallet login failed with status: ' + response.status }));'      throw new Error(errorData.message || `Wallet login failed. Status: ${response.status}`);
+      const errorData = await response.json().catch(() => ({ message: 'Wallet login failed with status: ' + response.status }));'      throw new Error(errorData.message || `Wallet login failed. Status: ${response.status}`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     // Similar to email login, successful NextAuth sign-in should update the session.
@@ -152,12 +152,12 @@ async function loginWithWallet(walletProvider) {
             return updatedSession.user;
           }
       }
-      throw new Error('Wallet login succeeded but session data could not be retrieved.');'    }
+      throw new Error('Wallet login succeeded but session data could not be retrieved.');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   } catch {
-    console.('loginWithWallet :', );'    // More specific  handling can be added here
+    console.('loginWithWallet :', );'    // More specific  handling can be added here'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     if (.code === 4001) { // Standard EIP-1193 user rejected request 
-      throw new Error('Wallet connection or signature request rejected by user.');'    }
+      throw new Error('Wallet connection or signature request rejected by user.');'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     throw error; // Re-throw other errors
   }
 }
@@ -170,16 +170,16 @@ async function loginWithWallet(walletProvider) {
 async function logout() {
   // Note: For direct API calls to NextAuth.js POST endpoints (like signout),
   // CSRF token handling is crucial. This function fetches and includes it.
-  // Using next-auth/react client's signOut() is generally preferred as it handles this automatically.'  const csrfToken = await getCsrfToken();
+  // Using next-auth/react client's signOut() is generally preferred as it handles this automatically.'  const csrfToken = await getCsrfToken();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   if (!csrfToken) {
     // This might occur if /api/auth/csrf fails or returns no token.
     // Depending on server config, proceeding might fail.
-    console.warn('CSRF token not found for logout. Proceeding, but this may fail if CSRF is strictly enforced.');'  }
+    console.warn('CSRF token not found for logout. Proceeding, but this may fail if CSRF is strictly enforced.');'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   const body = new URLSearchParams();
-  body.append('csrfToken', csrfToken || '');'  body.append('json', 'true'); // Ask for JSON response to know outcome'
-  const response = await fetch('/api/auth/signout', {'    method: 'POST', // Needs to be POST'    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded','    },
+  body.append('csrfToken', csrfToken || '');'  body.append('json', 'true'); // Ask for JSON response to know outcome''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const response = await fetch('/api/auth/signout', {'    method: 'POST', // Needs to be POST'    headers: {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'Content-Type': 'application/x-www-form-urlencoded','    },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     body: body,
   });
 
@@ -197,11 +197,11 @@ async function logout() {
 }
 
 /**
- * Retrieves the current authenticated user's details from the session.' * @returns {Promise<object|null>} A promise that resolves with the session object (which contains user) or null.
+ * Retrieves the current authenticated user's details from the session.' * @returns {Promise<object|null>} A promise that resolves with the session object (which contains user) or null.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
  */
 async function getUser() {
   try {
-    const response = await fetch('/api/auth/session');'    if (!response.ok) {
+    const response = await fetch('/api/auth/session');'    if (!response.ok) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       // Not an error if no session, just means user is not logged in
       if (response.status === 401) return null;
       throw new Error(`Failed to fetch session. Status: ${response.status}`);
@@ -211,8 +211,8 @@ async function getUser() {
     if (Object.keys(session).length === 0) {
         return null;
     }
-    return session; // session object contains { user: { name, email, image }, expires: "..." }"  } catch {
-    console.('Error fetching user session:', );'    throw ; // Re-throw for consumer to handle
+    return session; // session object contains { user: { name, email, image }, expires: "..." }"  } catch {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    console.('Error fetching user session:', );'    throw ; // Re-throw for consumer to handle'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 }
 ;
@@ -229,7 +229,7 @@ function onAuthStateChanged(callback) {
   authListeners.push(callback);
 
   // Immediately call with current (potentially null) state
-  // Fetch initial state if not already fetched or if polling isn't active'  if (!pollingInterval && authListeners.length === 1) {
+  // Fetch initial state if not already fetched or if polling isn't active'  if (!pollingInterval && authListeners.length === 1) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     getUser().then(session => {
       currentUserState = session ? session.user : null;
       callback(currentUserState);
@@ -250,12 +250,12 @@ function onAuthStateChanged(callback) {
           authListeners.forEach(listener => listener(currentUserState));
         }
       } catch {
-        // If fetching session fails (e.g. network 'Error occurred'), notify listeners with null'        // or maintain last known state, depending on desired behavior.
-        // For now, assume 'Error occurred' means user is logged out or session is inaccessible.'        if (currentUserState !== null) {
+        // If fetching session fails (e.g. network 'Error occurred'), notify listeners with null'        // or maintain last known state, depending on desired behavior.'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        // For now, assume 'Error occurred' means user is logged out or session is inaccessible.'        if (currentUserState !== null) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             currentUserState = null;
             authListeners.forEach(listener => listener(null));
         }
-        console.error("Error polling auth state:", error);"      }
+        console.error("Error polling auth state:", error);"      }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     }, 5000); // Poll every 5 seconds
   }
 
@@ -268,7 +268,7 @@ function onAuthStateChanged(callback) {
   };
 }
 ;
-export {
+export ;{
   loginWithEmail,
   loginWithWallet,
   signupWithEmail,

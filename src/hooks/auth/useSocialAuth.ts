@@ -1,4 +1,4 @@
 // useSocialAuth module placeholder
-export const useSocialAuth = {
+export ;const useSocialAuth = {
   // TODO: Implement useSocialAuth functionality
 };

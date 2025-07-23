@@ -1,4 +1,4 @@
 // developmentLogger module placeholder
-export const developmentLogger = {
+export ;const developmentLogger = {
   // TODO: Implement developmentLogger functionality
 };

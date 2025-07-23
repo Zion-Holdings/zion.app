@@ -1,4 +1,4 @@
 // resume module placeholder
-export const resume = {
+export ;const resume = {
   // TODO: Implement resume functionality
 };

@@ -5,7 +5,7 @@ module.exports = {
     return {
       action,
       details,
-      status: 'applied',
+      status: 'applied','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       timestamp: new Date().toISOString(),
     };
   },

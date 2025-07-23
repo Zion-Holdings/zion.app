@@ -1,4 +1,4 @@
 // useOrder module placeholder
-export const useOrder = {
+export ;const useOrder = {
   // TODO: Implement useOrder functionality
 };

@@ -1,4 +1,4 @@
 // useConversationState module placeholder
-export const useConversationState = {
+export ;const useConversationState = {
   // TODO: Implement useConversationState functionality
 };

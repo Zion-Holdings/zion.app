@@ -1,11 +1,11 @@
-import React from 'react';'import { render, screen } from '@testing-library/react';'import IndexPage, { getServerSideProps, fetchHomeData } from '../../pages/index';'import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';'import { useRouter } from 'next/router';'
-jest.mock('@sentry/nextjs', () => ({'  captureException: jest.fn(),
+import React from 'react';'import { render, screen } from '@testing-library/react';'import IndexPage, { getServerSideProps, fetchHomeData } from '../../pages/index';'import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';'import { useRouter } from 'next/router';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+jest.mock('@sentry/nextjs', () => ({'  captureException: jest.fn(),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }));
 
-jest.mock('next/router', () => ({'  useRouter: jest.fn(),
+jest.mock('next/router', () => ({'  useRouter: jest.fn(),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }));
 
-jest.mock('../../pages/index', () => {'  const originalModule = jest.requireActual('../../pages/index');'  return {
+jest.mock('../../pages/index', () => {'  const originalModule = jest.requireActual('../../pages/index');'  return {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     __esModule: true,
     ...originalModule,
     fetchHomeData: jest.fn(),
@@ -14,9 +14,9 @@ jest.mock('../../pages/index', () => {'  const originalModule = jest.requireActu
 ;
 const mockedFetchHomeData = fetchHomeData as jest.Mock;
 
-describe('Home page server side error handling', () => {'  it('renders error boundary fallback when getServerSideProps throws', async () => {'    mockedFetchHomeData.mockRejectedValueOnce(new Error('fail'));'    (useRouter as jest.Mock).mockReturnValue({ query: {} });
+describe('Home page server side error handling', () => {'  it('renders error boundary fallback when getServerSideProps throws', async () => {'    mockedFetchHomeData.mockRejectedValueOnce(new Error('fail'));'    (useRouter as jest.Mock).mockReturnValue({ query: {} });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    const ctx: any = { req: {}, res: { statusCode: 200 } };
+    const ctx: unknown = { req: {}, res: { statusCode: 200 } };
     const result = await getServerSideProps(ctx as any);
 
     expect(ctx.res.statusCode).toBe(500);
@@ -28,13 +28,13 @@ describe('Home page server side error handling', () => {'  it('renders error bou
       </GlobalErrorBoundary>
     );
 
-    expect(screen.getByText('Oops! Something went wrong.')).toBeInTheDocument();'  });
+    expect(screen.getByText('Oops! Something went wrong.')).toBeInTheDocument();'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 });
 
-describe('Home page data fetch success', () => {'  it('returns props when data fetch succeeds', async () => {'    mockedFetchHomeData.mockResolvedValueOnce(null);
-    const ctx: any = { req: {}, res: { statusCode: 200 } };
+describe('Home page data fetch success', () => {'  it('returns props when data fetch succeeds', async () => {'    mockedFetchHomeData.mockResolvedValueOnce(null);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const ctx: unknown = { req: {}, res: { statusCode: 200 } };
     const result = await getServerSideProps(ctx as any);
     expect(result).toEqual({ props: {} });
-    (useRouter as jest.Mock).mockReturnValue({ query: { debug: 'true' } });'    render(<IndexPage {...(result as any).props} />);
-    expect(screen.getByText('Throw Test Error')).toBeInTheDocument();'  });
+    (useRouter as jest.Mock).mockReturnValue({ query: { debug: 'true' } });'    render(<IndexPage {...(result as any).props} />);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    expect(screen.getByText('Throw Test Error')).toBeInTheDocument();'  });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 });

@@ -1,4 +1,4 @@
 // useJobMatches module placeholder
-export const useJobMatches = {
+export ;const useJobMatches = {
   // TODO: Implement useJobMatches functionality
 };

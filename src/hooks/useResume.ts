@@ -1,4 +1,4 @@
 // useResume module placeholder
-export const useResume = {
+export ;const useResume = {
   // TODO: Implement useResume functionality
 };

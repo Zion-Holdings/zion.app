@@ -1,4 +1,4 @@
 // referrals module placeholder
-export const referrals = {
+export ;const referrals = {
   // TODO: Implement referrals functionality
 };

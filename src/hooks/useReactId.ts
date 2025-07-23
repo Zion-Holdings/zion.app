@@ -1,4 +1,4 @@
 // useReactId module placeholder
-export const useReactId = {
+export ;const useReactId = {
   // TODO: Implement useReactId functionality
 };

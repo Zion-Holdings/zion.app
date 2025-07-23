@@ -1,4 +1,4 @@
 // blog module placeholder
-export const blog = {
+export ;const blog = {
   // TODO: Implement blog functionality
 };

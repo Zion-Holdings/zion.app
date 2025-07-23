@@ -1,4 +1,4 @@
 // signupCheck module placeholder
-export const signupCheck = {
+export ;const signupCheck = {
   // TODO: Implement signupCheck functionality
 };

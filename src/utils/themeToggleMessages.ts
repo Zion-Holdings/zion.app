@@ -1,4 +1,4 @@
 // themeToggleMessages module placeholder
-export const themeToggleMessages = {
+export ;const themeToggleMessages = {
   // TODO: Implement themeToggleMessages functionality
 };

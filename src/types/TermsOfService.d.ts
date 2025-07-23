@@ -1,4 +1,4 @@
 // TermsOfService.d module placeholder
-export const TermsOfService.d = {
+export ;const TermsOfService.d = {
   // TODO: Implement TermsOfService.d functionality
 };

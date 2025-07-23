@@ -1,4 +1,4 @@
 // delayDao module placeholder
-export const delayDao = {
+export ;const delayDao = {
   // TODO: Implement delayDao functionality
 };

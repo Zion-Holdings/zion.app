@@ -1,4 +1,4 @@
 // email module placeholder
-export const email = {
+export ;const email = {
   // TODO: Implement email functionality
 };

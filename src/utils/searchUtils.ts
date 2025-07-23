@@ -1,4 +1,4 @@
 // searchUtils module placeholder
-export const searchUtils = {
+export ;const searchUtils = {
   // TODO: Implement searchUtils functionality
 };

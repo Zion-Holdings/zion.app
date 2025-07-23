@@ -1,18 +1,18 @@
-import React from 'react;
-import Head from 'next/head;
+import React from 'react;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import Head from 'next/head;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-export default function docs() {
+export ;default function docs() {
   return (
     <>
       <Head>
         <title>resources/docs - Zion App</title>
-        <meta name="description" content="resources/docs page" />
+        <meta name="description" content="resources/docs page" />"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">resources/docs</h1>
-        <p className="text-lg mb-4">This page is under construction.</p>
-        <div className="mt-4">
-          <a href="/" className="text-blue-600 hover:underline">
+      <div className="container mx-auto px-4 py-8">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <h1 className="text-3xl font-bold mb-6">resources/docs</h1>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <p className="text-lg mb-4">This page is under construction.</p>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <div className="mt-4">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          <a href="/" className="text-blue-600 hover:underline">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             ← Back to Home
           </a>
         </div>

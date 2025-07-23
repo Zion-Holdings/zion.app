@@ -1,4 +1,4 @@
 // messages module placeholder
-export const messages = {
+export ;const messages = {
   // TODO: Implement messages functionality
 };

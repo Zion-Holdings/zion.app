@@ -1,24 +1,24 @@
 // Global webpack runtime polyfill for Node.js environment
 // This must run before any webpack chunks are loaded
 
-console.warn('🔧 Applying webpack runtime polyfills...');
+console.warn('🔧 Applying webpack runtime polyfills...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 // Ensure self is defined globally in Node.js
-if (typeof global !== 'undefined') {  if (typeof global.self === 'undefined') {    global.self = global;
-    console.warn('  ✅ self -> global');  }
+if (typeof global !== 'undefined') {  if (typeof global.self === 'undefined') {    global.self = global;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.warn('  ✅ self -> global');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   // Ensure webpackChunk array exists and is properly initialized
   if (!global.webpackChunk_N_E) {
     global.webpackChunk_N_E = [];
-    console.warn('  ✅ webpackChunk_N_E -> []');  }
+    console.warn('  ✅ webpackChunk_N_E -> []');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   // Ensure the webpack chunk array has push method
-  if (global.webpackChunk_N_E && typeof global.webpackChunk_N_E.push !== 'function') {    global.webpackChunk_N_E.push = function (...args) {
+  if (global.webpackChunk_N_E && typeof global.webpackChunk_N_E.push !== 'function') {    global.webpackChunk_N_E.push = function (...args) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return Array.prototype.push.apply(this, args);
     };
-    console.warn('  ✅ webpackChunk_N_E.push -> function');  }
+    console.warn('  ✅ webpackChunk_N_E.push -> function');  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }
 
-if (typeof globalThis !== 'undefined') {  if (typeof globalThis.self === 'undefined') {    globalThis.self = globalThis;
+if (typeof globalThis !== 'undefined') {  if (typeof globalThis.self === 'undefined') {    globalThis.self = globalThis;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   if (!globalThis.webpackChunk_N_E) {
@@ -26,4 +26,4 @@ if (typeof globalThis !== 'undefined') {  if (typeof globalThis.self === 'undefi
   }
 }
 
-console.warn('🔧 Webpack runtime polyfills applied successfully');
+console.warn('🔧 Webpack runtime polyfills applied successfully');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

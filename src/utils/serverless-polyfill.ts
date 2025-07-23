@@ -1,4 +1,4 @@
 // serverless-polyfill module placeholder
-export const serverless-polyfill = {
+export ;const serverless-polyfill = {
   // TODO: Implement serverless-polyfill functionality
 };

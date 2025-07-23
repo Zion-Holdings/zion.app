@@ -4,7 +4,7 @@ class CursorAutomatedBackground {
   constructor() {
     this.isEnabled = false;
     this.computerId = this.generateComputerId();
-    this.connectionStatus = 'disconnected';
+    this.connectionStatus = 'disconnected';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     this.lastSync = null;
     this.improvements = [];
     this.activeTabs = new Set();
@@ -12,7 +12,7 @@ class CursorAutomatedBackground {
     this.performanceMetrics = {};
 
     this.config = {
-      serverUrl: 'https://api.cursor.sh',
+      serverUrl: 'https://api.cursor.sh','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       localPort: 3008,
       coordinationPort: 3010,
       syncInterval: 30000, // 30 seconds
@@ -32,7 +32,7 @@ class CursorAutomatedBackground {
   }
 
   async init() {
-    console.log('🚀 Initializing Cursor Automated Communication Background');
+    console.log('🚀 Initializing Cursor Automated Communication Background');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Load saved state
     await this.loadState();
@@ -46,30 +46,30 @@ class CursorAutomatedBackground {
     // Connect to local communication system
     this.connectToLocalSystem();
 
-    console.log('✅ Background service initialized');
+    console.log('✅ Background service initialized');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async loadState() {
     try {
       const result = await chrome.storage.local.get([
-        'isEnabled',
-        'computerId',
-        'connectionStatus',
-        'lastSync',
-        'improvements',
-        'fileChanges',
-        'performanceMetrics',
+        'isEnabled','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'computerId','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'connectionStatus','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'lastSync','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'improvements','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'fileChanges','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'performanceMetrics','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       ]);
 
       this.isEnabled = result.isEnabled || false;
       this.computerId = result.computerId || this.computerId;
-      this.connectionStatus = result.connectionStatus || 'disconnected';
+      this.connectionStatus = result.connectionStatus || 'disconnected';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       this.lastSync = result.lastSync || null;
       this.improvements = result.improvements || [];
       this.fileChanges = result.fileChanges || [];
       this.performanceMetrics = result.performanceMetrics || {};
     } catch (error) {
-      console.error('Failed to load state:', error);
+      console.error('Failed to load state:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -85,14 +85,14 @@ class CursorAutomatedBackground {
         performanceMetrics: this.performanceMetrics,
       });
     } catch (error) {
-      console.error('Failed to save state:', error);
+      console.error('Failed to save state:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   setupEventListeners() {
     // Listen for tab updates
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-      if (changeInfo.status === 'complete' && tab.url) {
+      if (changeInfo.status === 'complete' && tab.url) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.handleTabUpdate(tabId, tab);
       }
     });
@@ -150,7 +150,7 @@ class CursorAutomatedBackground {
       this.monitorPerformance();
     }, 60000); // Every minute
 
-    console.log('👁️ Monitoring started');
+    console.log('👁️ Monitoring started');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   async connectToLocalSystem() {
@@ -160,16 +160,16 @@ class CursorAutomatedBackground {
       );
       if (response.ok) {
         const data = await response.json();
-        this.connectionStatus = 'connected';
+        this.connectionStatus = 'connected';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.computerId = data.computerId || this.computerId;
-        console.log('✅ Connected to local communication system');
+        console.log('✅ Connected to local communication system');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       } else {
-        this.connectionStatus = 'disconnected';
-        console.log('❌ Local communication system not available');
+        this.connectionStatus = 'disconnected';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('❌ Local communication system not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }
     } catch (error) {
-      this.connectionStatus = 'disconnected';
-      console.log('❌ Failed to connect to local system:', error.message);
+      this.connectionStatus = 'disconnected';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('❌ Failed to connect to local system:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     await this.saveState();
@@ -205,10 +205,10 @@ class CursorAutomatedBackground {
   }
 
   async handleMessage(message, sender, sendResponse) {
-    console.log('📨 Received message:', message);
+    console.log('📨 Received message:', message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     switch (message.type) {
-      case 'GET_STATUS':
+      case 'GET_STATUS':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         sendResponse({
           isEnabled: this.isEnabled,
           connectionStatus: this.connectionStatus,
@@ -219,61 +219,61 @@ class CursorAutomatedBackground {
         });
         break;
 
-      case 'TOGGLE_AUTOMATION':
+      case 'TOGGLE_AUTOMATION':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.isEnabled = !this.isEnabled;
         await this.saveState();
         sendResponse({ isEnabled: this.isEnabled });
         break;
 
-      case 'SEND_IMPROVEMENT':
+      case 'SEND_IMPROVEMENT':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         await this.sendImprovement(message.improvement);
-        sendResponse({ status: 'sent' });
+        sendResponse({ status: 'sent' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         break;
 
-      case 'SYNC_COMPUTERS':
+      case 'SYNC_COMPUTERS':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         await this.syncWithOtherComputers();
-        sendResponse({ status: 'synced' });
+        sendResponse({ status: 'synced' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         break;
 
-      case 'GET_IMPROVEMENTS':
+      case 'GET_IMPROVEMENTS':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         sendResponse({ improvements: this.improvements });
         break;
 
-      case 'CLEAR_IMPROVEMENTS':
+      case 'CLEAR_IMPROVEMENTS':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.improvements = [];
         await this.saveState();
-        sendResponse({ status: 'cleared' });
+        sendResponse({ status: 'cleared' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         break;
 
-      case 'GET_PERFORMANCE':
+      case 'GET_PERFORMANCE':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         sendResponse({ performance: this.performanceMetrics });
         break;
 
       default:
-        sendResponse({ error: 'Unknown message type' });
+        sendResponse({ error: 'Unknown message type' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   handleCommand(command) {
-    console.log('⌨️ Command received:', command);
+    console.log('⌨️ Command received:', command);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     switch (command) {
-      case 'toggle-automation':
+      case 'toggle-automation':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.toggleAutomation();
         break;
 
-      case 'send-improvement':
+      case 'send-improvement':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.sendQuickImprovement();
         break;
 
-      case 'sync-computers':
+      case 'sync-computers':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.syncWithOtherComputers();
         break;
     }
   }
 
   handleStorageChange(changes, namespace) {
-    console.log('💾 Storage changed:', changes);
+    console.log('💾 Storage changed:', changes);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Update local state based on storage changes
     if (changes.isEnabled) {
@@ -283,18 +283,18 @@ class CursorAutomatedBackground {
 
   isDevelopmentTab(url) {
     const developmentPatterns = [
-      'localhost',
-      '127.0.0.1',
-      'github.com',
-      'gitlab.com',
-      'bitbucket.org',
-      'stackoverflow.com',
-      'developer.mozilla.org',
-      'docs.',
-      'api.',
-      'dev.',
-      'staging.',
-      'test.',
+      'localhost','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      '127.0.0.1','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'github.com','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'gitlab.com','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'bitbucket.org','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'stackoverflow.com','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'developer.mozilla.org','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'docs.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'api.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'dev.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'staging.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'test.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ];
 
     return developmentPatterns.some((pattern) => url.includes(pattern));
@@ -302,7 +302,7 @@ class CursorAutomatedBackground {
 
   trackDevelopmentActivity(tabId, tab) {
     const activity = {
-      type: 'development_activity',
+      type: 'development_activity','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       tabId,
       url: tab.url,
       title: tab.title,
@@ -315,7 +315,7 @@ class CursorAutomatedBackground {
 
   trackActiveSession(tabId) {
     const session = {
-      type: 'active_session',
+      type: 'active_session','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       tabId,
       timestamp: Date.now(),
       computerId: this.computerId,
@@ -326,7 +326,7 @@ class CursorAutomatedBackground {
 
   trackNavigation(details) {
     const navigation = {
-      type: 'navigation',
+      type: 'navigation','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       url: details.url,
       tabId: details.tabId,
       timestamp: Date.now(),
@@ -351,8 +351,8 @@ class CursorAutomatedBackground {
 
       // Send to local system
       await fetch(`http://localhost:${this.config.localPort}/heartbeat`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'POST','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        headers: { 'Content-Type': 'application/json' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         body: JSON.stringify(heartbeat),
       });
 
@@ -360,13 +360,13 @@ class CursorAutomatedBackground {
       await fetch(
         `http://localhost:${this.config.coordinationPort}/heartbeat`,
         {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method: 'POST','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          headers: { 'Content-Type': 'application/json' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           body: JSON.stringify(heartbeat),
         },
       );
     } catch (error) {
-      console.error('Heartbeat failed:', error);
+      console.error('Heartbeat failed:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -387,8 +387,8 @@ class CursorAutomatedBackground {
       const response = await fetch(
         `http://localhost:${this.config.coordinationPort}/sync`,
         {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method: 'POST','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          headers: { 'Content-Type': 'application/json' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           body: JSON.stringify(syncData),
         },
       );
@@ -398,10 +398,10 @@ class CursorAutomatedBackground {
         this.mergeSyncData(data);
         this.lastSync = Date.now();
         await this.saveState();
-        console.log('🔄 Synced with other computers');
+        console.log('🔄 Synced with other computers');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }
     } catch (error) {
-      console.error('Sync failed:', error);
+      console.error('Sync failed:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -433,12 +433,12 @@ class CursorAutomatedBackground {
     if (!this.isEnabled) return;
 
     // This would typically monitor file system changes
-    // For now, we'll simulate file change detection
+    // For now, we'll simulate file change detection'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const simulatedChanges = [
-      'src/components/Button.tsx',
-      'pages/index.tsx',
-      'utils/helpers.js',
-      'styles/globals.css',
+      'src/components/Button.tsx','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'pages/index.tsx','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'utils/helpers.js','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'styles/globals.css','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ];
 
     if (Math.random() > 0.8) {
@@ -451,7 +451,7 @@ class CursorAutomatedBackground {
 
   trackFileChange(filename) {
     const fileChange = {
-      type: 'file_change',
+      type: 'file_change','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       filename,
       timestamp: Date.now(),
       computerId: this.computerId,
@@ -505,20 +505,20 @@ class CursorAutomatedBackground {
     const issues = [];
 
     if (this.performanceMetrics.memory.percentage > 80) {
-      issues.push('High memory usage detected');
+      issues.push('High memory usage detected');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     if (this.performanceMetrics.cpu.total > 70) {
-      issues.push('High CPU usage detected');
+      issues.push('High CPU usage detected');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     if (this.activeTabs.size > 20) {
-      issues.push('Too many active tabs');
+      issues.push('Too many active tabs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     if (issues.length > 0) {
       const performanceIssue = {
-        type: 'performance_issue',
+        type: 'performance_issue','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         issues,
         metrics: this.performanceMetrics,
         timestamp: Date.now(),
@@ -538,14 +538,14 @@ class CursorAutomatedBackground {
     try {
       // Send to local system
       await fetch(`http://localhost:${this.config.localPort}/improvement`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'POST','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        headers: { 'Content-Type': 'application/json' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         body: JSON.stringify(improvement),
       });
 
-      console.log('✅ Improvement sent:', improvement.type);
+      console.log('✅ Improvement sent:', improvement.type);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } catch (error) {
-      console.error('Failed to send improvement:', error);
+      console.error('Failed to send improvement:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -565,18 +565,18 @@ class CursorAutomatedBackground {
     this.isEnabled = !this.isEnabled;
     this.saveState();
 
-    console.log(`Automation ${this.isEnabled ? 'enabled' : 'disabled'}`);
+    console.log(`Automation ${this.isEnabled ? 'enabled' : 'disabled'}`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Notify all tabs
     chrome.tabs.query({}, (tabs) => {
       tabs.forEach((tab) => {
         chrome.tabs
           .sendMessage(tab.id, {
-            type: 'AUTOMATION_TOGGLED',
+            type: 'AUTOMATION_TOGGLED','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             isEnabled: this.isEnabled,
           })
           .catch(() => {
-            // Ignore errors for tabs that don't have content scripts
+            // Ignore errors for tabs that don't have content scripts'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           });
       });
     });
@@ -584,8 +584,8 @@ class CursorAutomatedBackground {
 
   sendQuickImprovement() {
     const quickImprovement = {
-      type: 'quick_improvement',
-      message: 'User requested quick improvement',
+      type: 'quick_improvement','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      message: 'User requested quick improvement','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       timestamp: Date.now(),
       computerId: this.computerId,
     };
@@ -599,24 +599,24 @@ const background = new CursorAutomatedBackground();
 
 // Handle extension installation
 chrome.runtime.onInstalled.addListener((details) => {
-  console.log('Extension installed:', details.reason);
+  console.log('Extension installed:', details.reason);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-  if (details.reason === 'install') {
+  if (details.reason === 'install') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     // First time installation
     background.isEnabled = true;
     background.saveState();
-    console.log('✅ Extension enabled by default');
+    console.log('✅ Extension enabled by default');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 });
 
 // Handle extension startup
 chrome.runtime.onStartup.addListener(() => {
-  console.log('Extension started');
+  console.log('Extension started');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   background.connectToLocalSystem();
 });
 
 // Handle extension update
 chrome.runtime.onUpdateAvailable.addListener(() => {
-  console.log('Extension update available');
+  console.log('Extension update available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   chrome.runtime.reload();
 });

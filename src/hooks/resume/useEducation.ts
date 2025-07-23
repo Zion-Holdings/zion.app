@@ -1,4 +1,4 @@
 // useEducation module placeholder
-export const useEducation = {
+export ;const useEducation = {
   // TODO: Implement useEducation functionality
 };

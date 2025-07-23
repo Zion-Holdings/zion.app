@@ -1,18 +1,18 @@
-const express = require('express');
-const path = require('path');
-const EventEmitter = require('events');
-const fs = require('fs'); // Added missing import for fs
+const express = require('express');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const EventEmitter = require('events');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs'); // Added missing import for fs'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 class DashboardServer extends EventEmitter {
   constructor(config = {}) {
     super();
     this.config = {
       port: process.env.DASHBOARD_PORT || 3001,
-      host: process.env.DASHBOARD_HOST || 'localhost',
+      host: process.env.DASHBOARD_HOST || 'localhost','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       enableCORS: true,
       enableWebSocket: true,
-      staticPath: path.join(__dirname, 'public'),
-      apiPrefix: '/api',
+      staticPath: path.join(__dirname, 'public'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      apiPrefix: '/api','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       auth: {
         enabled: false,
         username: process.env.DASHBOARD_USERNAME,
@@ -39,10 +39,10 @@ class DashboardServer extends EventEmitter {
     // CORS
     if (this.config.enableCORS) {
       this.app.use((req, res, next) => {
-        res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Origin', '*');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        if (req.method === 'OPTIONS') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           res.sendStatus(200);
         } else {
           next();
@@ -77,7 +77,7 @@ class DashboardServer extends EventEmitter {
     // Health check
     this.app.get(`${api}/health`, (req, res) => {
       res.json({
-        status: 'healthy',
+        status: 'healthy','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         timestamp: new Date().toISOString(),
         uptime: process.uptime()
       });
@@ -163,7 +163,7 @@ class DashboardServer extends EventEmitter {
 
     this.app.post(`${api}/reports/generate`, async (req, res) => {
       try {
-        const { type = 'daily' } = req.body;
+        const { type = 'daily' } = req.body;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         const result = await this.generateReport(type);
         res.json(result);
       } catch (error) {
@@ -175,7 +175,7 @@ class DashboardServer extends EventEmitter {
     this.app.post(`${api}/system/restart`, (req, res) => {
       try {
         this.restartSystem();
-        res.json({ message: 'System restart initiated' });
+        res.json({ message: 'System restart initiated' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
@@ -184,7 +184,7 @@ class DashboardServer extends EventEmitter {
     this.app.post(`${api}/system/shutdown`, (req, res) => {
       try {
         this.shutdownSystem();
-        res.json({ message: 'System shutdown initiated' });
+        res.json({ message: 'System shutdown initiated' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
@@ -218,43 +218,43 @@ class DashboardServer extends EventEmitter {
     // WebSocket endpoint
     if (this.config.enableWebSocket) {
       this.app.get(`${api}/ws`, (req, res) => {
-        res.json({ message: 'WebSocket endpoint available at /ws' });
+        res.json({ message: 'WebSocket endpoint available at /ws' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       });
     }
 
     // Catch-all for SPA
-    this.app.get('*', (req, res) => {
-      res.sendFile(path.join(this.config.staticPath, 'index.html'));
+    this.app.get('*', (req, res) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      res.sendFile(path.join(this.config.staticPath, 'index.html'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
   }
 
   setupWebSocket() {
     if (!this.config.enableWebSocket) return;
 
-    const WebSocket = require('ws');
+    const WebSocket = require('ws');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     this.wss = new WebSocket.Server({ noServer: true });
 
-    this.wss.on('connection', (ws) => {
-      console.log('🔌 WebSocket client connected');
+    this.wss.on('connection', (ws) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('🔌 WebSocket client connected');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       this.clients.add(ws);
 
       // Send initial status
       ws.send(JSON.stringify({
-        type: 'status',
+        type: 'status','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         data: this.getSystemStatus()
       }));
 
-      ws.on('message', (message) => {
+      ws.on('message', (message) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         try {
           const data = JSON.parse(message);
           this.handleWebSocketMessage(ws, data);
         } catch (error) {
-          console.error('WebSocket message error:', error);
+          console.error('WebSocket message error:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         }
       });
 
-      ws.on('close', () => {
-        console.log('🔌 WebSocket client disconnected');
+      ws.on('close', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        console.log('🔌 WebSocket client disconnected');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         this.clients.delete(ws);
       });
     });
@@ -262,15 +262,15 @@ class DashboardServer extends EventEmitter {
 
   handleWebSocketMessage(ws, data) {
     switch (data.type) {
-      case 'subscribe':
+      case 'subscribe':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         // Handle subscription to specific events
         break;
-      case 'command':
+      case 'command':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         // Handle commands
         this.handleCommand(data.command, data.params);
         break;
       default:
-        console.log('Unknown WebSocket message type:', data.type);
+        console.log('Unknown WebSocket message type:', data.type);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -288,11 +288,11 @@ class DashboardServer extends EventEmitter {
   // API Methods
   getSystemStatus() {
     return {
-      status: 'running',
+      status: 'running','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       uptime: process.uptime(),
       timestamp: new Date().toISOString(),
-      version: process.env.npm_package_version || '1.0.0',
-      environment: process.env.NODE_ENV || 'development',
+      version: process.env.npm_package_version || '1.0.0','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      environment: process.env.NODE_ENV || 'development','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       components: {
         automationManager: !!this.automationManager,
         taskScheduler: !!this.taskScheduler,
@@ -305,7 +305,7 @@ class DashboardServer extends EventEmitter {
 
   getTasksStatus() {
     if (!this.automationManager) {
-      return { error: 'Automation manager not available' };
+      return { error: 'Automation manager not available' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return {
@@ -316,7 +316,7 @@ class DashboardServer extends EventEmitter {
 
   async runTask(taskName) {
     if (!this.automationManager) {
-      throw new Error('Automation manager not available');
+      throw new Error('Automation manager not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return await this.automationManager.runTask(taskName);
@@ -324,7 +324,7 @@ class DashboardServer extends EventEmitter {
 
   pauseTask(taskName) {
     if (!this.automationManager) {
-      throw new Error('Automation manager not available');
+      throw new Error('Automation manager not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return this.automationManager.pauseTask(taskName);
@@ -332,7 +332,7 @@ class DashboardServer extends EventEmitter {
 
   resumeTask(taskName) {
     if (!this.automationManager) {
-      throw new Error('Automation manager not available');
+      throw new Error('Automation manager not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return this.automationManager.resumeTask(taskName);
@@ -340,7 +340,7 @@ class DashboardServer extends EventEmitter {
 
   getSchedulingStatus() {
     if (!this.taskScheduler) {
-      return { error: 'Task scheduler not available' };
+      return { error: 'Task scheduler not available' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return this.taskScheduler.getSchedulingStats();
@@ -348,7 +348,7 @@ class DashboardServer extends EventEmitter {
 
   recalculateScheduling() {
     if (!this.taskScheduler) {
-      throw new Error('Task scheduler not available');
+      throw new Error('Task scheduler not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return this.taskScheduler.recalculateAllIntervals();
@@ -356,7 +356,7 @@ class DashboardServer extends EventEmitter {
 
   getAnomaliesStatus() {
     if (!this.anomalyDetector) {
-      return { error: 'Anomaly detector not available' };
+      return { error: 'Anomaly detector not available' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return {
@@ -368,7 +368,7 @@ class DashboardServer extends EventEmitter {
 
   getNotificationsStatus() {
     if (!this.notificationManager) {
-      return { error: 'Notification manager not available' };
+      return { error: 'Notification manager not available' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return {
@@ -379,18 +379,18 @@ class DashboardServer extends EventEmitter {
 
   async sendTestNotification() {
     if (!this.notificationManager) {
-      throw new Error('Notification manager not available');
+      throw new Error('Notification manager not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return await this.notificationManager.sendNotification(
-      'Test notification from dashboard',
-      { priority: 'medium', category: 'info', taskName: 'dashboard' }
+      'Test notification from dashboard','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      { priority: 'medium', category: 'info', taskName: 'dashboard' }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
   }
 
   getReportsStatus() {
     if (!this.reportGenerator) {
-      return { error: 'Report generator not available' };
+      return { error: 'Report generator not available' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return {
@@ -401,20 +401,20 @@ class DashboardServer extends EventEmitter {
 
   async generateReport(type) {
     if (!this.reportGenerator) {
-      throw new Error('Report generator not available');
+      throw new Error('Report generator not available');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     return await this.reportGenerator.generateReport(type);
   }
 
   restartSystem() {
-    this.emit('restart');
-    console.log('🔄 System restart initiated');
+    this.emit('restart');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🔄 System restart initiated');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   shutdownSystem() {
-    this.emit('shutdown');
-    console.log('🛑 System shutdown initiated');
+    this.emit('shutdown');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    console.log('🛑 System shutdown initiated');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   getConfiguration() {
@@ -430,8 +430,8 @@ class DashboardServer extends EventEmitter {
 
   updateConfiguration(newConfig) {
     // This would update the configuration and restart affected components
-    console.log('⚙️ Configuration update requested:', newConfig);
-    return { message: 'Configuration update initiated' };
+    console.log('⚙️ Configuration update requested:', newConfig);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    return { message: 'Configuration update initiated' };'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   getLogs(limit = 100, level) {
@@ -439,7 +439,7 @@ class DashboardServer extends EventEmitter {
     return {
       logs: [],
       total: 0,
-      level: level || 'all'
+      level: level || 'all''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     };
   }
 
@@ -462,18 +462,18 @@ class DashboardServer extends EventEmitter {
     const auth = req.headers.authorization;
     
     if (!auth) {
-      res.setHeader('WWW-Authenticate', 'Basic');
-      return res.status(401).send('Authentication required');
+      res.setHeader('WWW-Authenticate', 'Basic');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      return res.status(401).send('Authentication required');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
-    const credentials = Buffer.from(auth.split(' ')[1], 'base64').toString();
-    const [username, password] = credentials.split(':');
+    const credentials = Buffer.from(auth.split(' ')[1], 'base64').toString();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    const [username, password] = credentials.split(':');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     if (username === this.config.auth.username && password === this.config.auth.password) {
       next();
     } else {
-      res.setHeader('WWW-Authenticate', 'Basic');
-      res.status(401).send('Invalid credentials');
+      res.setHeader('WWW-Authenticate', 'Basic');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      res.status(401).send('Invalid credentials');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -496,9 +496,9 @@ class DashboardServer extends EventEmitter {
 
         // Setup WebSocket server
         if (this.config.enableWebSocket && this.server) {
-          this.server.on('upgrade', (request, socket, head) => {
+          this.server.on('upgrade', (request, socket, head) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             this.wss.handleUpgrade(request, socket, head, (ws) => {
-              this.wss.emit('connection', ws, request);
+              this.wss.emit('connection', ws, request);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             });
           });
         }
@@ -513,7 +513,7 @@ class DashboardServer extends EventEmitter {
     return new Promise((resolve) => {
       if (this.server) {
         this.server.close(() => {
-          console.log('🛑 Dashboard server stopped');
+          console.log('🛑 Dashboard server stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           resolve();
         });
       } else {

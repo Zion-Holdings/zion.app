@@ -1,5 +1,5 @@
-import { withErrorLogging } from '@/utils/withErrorLogging';'import { users, type MockUser } from './data';';
-let mockUser = users['1'];'
+import { withErrorLogging } from '@/utils/withErrorLogging';'import { users, type MockUser } from './data';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let mockUser = users['1'];''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 // Generic request/response types so this file works in Node or Next.js
 interface Req {
   method?: string;
@@ -14,16 +14,16 @@ interface JsonRes {
 }
 ;
 function handler(req: Req, res: JsonRes) {
-  if (req.method === 'GET') {'    res.status(200).json(mockUser);
+  if (req.method === 'GET') {'    res.status(200).json(mockUser);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     return;
   }
 
-  if (req.method === 'PUT') {'    mockUser = { ...mockUser, ...req['body'] };'    users[mockUser.id] = mockUser;
+  if (req.method === 'PUT') {'    mockUser = { ...mockUser, ...req['body'] };'    users[mockUser.id] = mockUser;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     res.status(200).json(mockUser);
     return;
   }
 
-  if (req.method === 'DELETE') {'    mockUser.softDeleted = true;
+  if (req.method === 'DELETE') {'    mockUser.softDeleted = true;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     users[mockUser.id] = mockUser;
     res.status(200).json({ success: true });
     return;
@@ -32,4 +32,4 @@ function handler(req: Req, res: JsonRes) {
   res.status(405).end();
 }
 ;
-export default withErrorLogging(handler);
+export ;default withErrorLogging(handler);

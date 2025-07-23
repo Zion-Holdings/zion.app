@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const { execSync, spawn } = require('child_process')
-const path = require('path')
+const { execSync, spawn } = require('child_process')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const PORT = 3002
-const DEV_CMD = 'npm run dev'
-const AUTOMATION_CMD = 'npm run netlify:start'
-const CURSOR_CHAT_CMD = 'npm run cursor:chat'
+const DEV_CMD = 'npm run dev''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const AUTOMATION_CMD = 'npm run netlify:start''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const CURSOR_CHAT_CMD = 'npm run cursor:chat''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const CHECK_INTERVAL = 10000; // 10 seconds
 
 let cursorChatProcess = null;
@@ -33,7 +33,7 @@ function killPort(port) {
 function isProcessRunning(cmd) {
   try {
     const output = execSync(
-      `ps aux | grep '${cmd}' | grep -v grep || true`,
+      `ps aux | grep '${cmd}' | grep -v grep || true`,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ).toString();
     return output.trim().length > 0;
   } catch {
@@ -46,11 +46,11 @@ function startProcess(cmd, cwd = process.cwd(), onExit) {
 const proc = spawn(cmd, {
     shell: true,
     cwd,
-    stdio: 'ignore',
+    stdio: 'ignore','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     detached: true,
   });
   if (onExit) {
-    proc.on('exit', onExit);
+    proc.on('exit', onExit);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
   return proc;
 }
@@ -60,24 +60,24 @@ function startCursorChat() {
   cursorChatActive = true;
   cursorChatProcess = startProcess(
     CURSOR_CHAT_CMD,
-    path.join(__dirname, '..'),
+    path.join(__dirname, '..'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     () => {
       console.log(
-        '[Watchdog] Cursor chat process exited. Starting new session...',
+        '[Watchdog] Cursor chat process exited. Starting new session...','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       );
       cursorChatActive = false;
       setTimeout(startCursorChat, 1000); // Start new chat after 1s
     },
   );
-  console.log('[Watchdog] Cursor chat session started.');
+  console.log('[Watchdog] Cursor chat session started.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }
 
 function killAllCursorChats() {
   try {
     execSync(
-      `ps aux | grep 'cursor-multi-computer-communication.cjs chat' | grep -v grep | awk '{print $2}' | xargs kill -9 || true`,
+      `ps aux | grep 'cursor-multi-computer-communication.cjs chat' | grep -v grep | awk '{print $2}' | xargs kill -9 || true`,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     );
-    console.log('[Watchdog] Killed all completed Cursor chat processes.');
+    console.log('[Watchdog] Killed all completed Cursor chat processes.');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   } catch (e) {
     // Ignore
   }
@@ -91,13 +91,13 @@ function watchdogLoop() {
     }
 
     // Ensure dev server is running
-    if (!isProcessRunning('next dev')) {
-      startProcess(DEV_CMD, path.join(__dirname, '..'));
+    if (!isProcessRunning('next dev')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      startProcess(DEV_CMD, path.join(__dirname, '..'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     // Ensure automation is running
-    if (!isProcessRunning('netlify-build-automation.js')) {
-      startProcess(AUTOMATION_CMD, path.join(__dirname, '..'));
+    if (!isProcessRunning('netlify-build-automation.js')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      startProcess(AUTOMATION_CMD, path.join(__dirname, '..'));'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
 
     // Kill any completed Cursor chat processes
@@ -111,6 +111,6 @@ function watchdogLoop() {
 }
 
 console.log(
-  '[Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...',
+  '[Watchdog] Starting watchdog for dev server, automation, and Cursor chat lifecycle...','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 );
 watchdogLoop();

@@ -1,9 +1,9 @@
-import React from 'react'
-export default function ProductCard() {
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;default function ProductCard() {
   return (
     <div>
       <h1>ProductCard</h1>
       <p>Component placeholder</p>
     </div>
-  )'
-}';
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

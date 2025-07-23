@@ -1,4 +1,4 @@
 // authSocial module placeholder
-export const authSocial = {
+export ;const authSocial = {
   // TODO: Implement authSocial functionality
 };

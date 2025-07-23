@@ -1,4 +1,4 @@
 // useHireRequestForm module placeholder
-export const useHireRequestForm = {
+export ;const useHireRequestForm = {
   // TODO: Implement useHireRequestForm functionality
 };

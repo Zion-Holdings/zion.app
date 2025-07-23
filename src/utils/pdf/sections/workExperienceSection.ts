@@ -1,4 +1,4 @@
 // workExperienceSection module placeholder
-export const workExperienceSection = {
+export ;const workExperienceSection = {
   // TODO: Implement workExperienceSection functionality
 };

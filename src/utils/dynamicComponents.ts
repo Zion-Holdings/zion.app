@@ -1,4 +1,4 @@
 // dynamicComponents module placeholder
-export const dynamicComponents = {
+export ;const dynamicComponents = {
   // TODO: Implement dynamicComponents functionality
 };

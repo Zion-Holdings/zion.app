@@ -1,4 +1,4 @@
 // useTalentProfileEnhancer module placeholder
-export const useTalentProfileEnhancer = {
+export ;const useTalentProfileEnhancer = {
   // TODO: Implement useTalentProfileEnhancer functionality
 };

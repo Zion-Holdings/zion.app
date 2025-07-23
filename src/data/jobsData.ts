@@ -1,4 +1,4 @@
 // jobsData module placeholder
-export const jobsData = {
+export ;const jobsData = {
   // TODO: Implement jobsData functionality
 };

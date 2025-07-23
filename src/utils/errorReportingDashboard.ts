@@ -1,4 +1,4 @@
 // errorReportingDashboard module placeholder
-export const errorReportingDashboard = {
+export ;const errorReportingDashboard = {
   // TODO: Implement errorReportingDashboard functionality
 };

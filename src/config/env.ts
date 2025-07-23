@@ -1,4 +1,4 @@
 // env module placeholder
-export const env = {
+export ;const env = {
   // TODO: Implement env functionality
 };

@@ -1,4 +1,4 @@
 // useFavorites module placeholder
-export const useFavorites = {
+export ;const useFavorites = {
   // TODO: Implement useFavorites functionality
 };

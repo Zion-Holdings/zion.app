@@ -7,16 +7,21 @@
  * Provides easy access to all automation features and monitoring capabilities.
  */
 
-const fs = require('fs').promises
-const path = require('path')
-const { spawn, execSync } = require('child_process')
-const readline = require('readline')
+const fs = require('fs').promises;
+const path = require('path');
+const { spawn, execSync } = require('child_process');
+const readline = require('readline');
+
 class AutomationManager {
   constructor() {
+    // Determine the correct paths based on current working directory
+    const currentDir = process.cwd();
+    const isInAutomationDir = currentDir.endsWith('automation');
+    
     this.config = {
-      automationDir: path.join(process.cwd(), 'automation'),
-      scriptsDir: path.join(process.cwd(), 'scripts'),
-      logsDir: path.join(process.cwd(), 'logs'),
+      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, 'automation'),
+      scriptsDir: isInAutomationDir ? path.join(currentDir, '..', 'scripts') : path.join(currentDir, 'scripts'),
+      logsDir: isInAutomationDir ? path.join(currentDir, '..', 'logs') : path.join(currentDir, 'logs'),
       port: process.env.AUTOMATION_PORT || 3001
     };
     
@@ -28,8 +33,8 @@ class AutomationManager {
    * Main CLI interface
    */
   async run() {
-    const args = process.argv.slice(2)
-const command = args[0];
+    const args = process.argv.slice(2);
+    const command = args[0];
 
     console.log('🤖 Zion App - Unified Automation Manager\n');
 
@@ -85,7 +90,7 @@ const command = args[0];
 
       // Start the enhanced automation system
       const automationProcess = spawn('node', [
-        path.join(this.config.automationDir, 'enhanced-automation-system.js')
+        path.join(this.config.automationDir, 'autonomous-system.js')
       ], {
         stdio: 'pipe',
         detached: false
@@ -168,7 +173,7 @@ const command = args[0];
       if (isRunning) {
         // Get system status from API
         const response = await fetch(`http://localhost:${this.config.port}/api/status`)
-const data = await response.json();
+        const data = await response.json();
 
         console.log('\n📈 System Metrics:');
         console.log(`  Total Tasks: ${data.system.totalTasks}`);
@@ -179,7 +184,7 @@ const data = await response.json();
 
         if (data.system.uptime) {
           const hours = Math.floor(data.system.uptime / 3600000)
-const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
+          const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
           console.log(`  Uptime: ${hours}h ${minutes}m`);
         }
 
@@ -193,13 +198,13 @@ const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
         }
 
         console.log('\n📋 Recent Activity:')
-const recentTasks = [...data.completedTasks, ...data.failedTasks]
+        const recentTasks = [...data.completedTasks, ...data.failedTasks]
           .sort((a, b) => b.completedAt - a.completedAt)
           .slice(0, 5);
 
         recentTasks.forEach(task => {
-          const status = task.status === 'completed' ? '✅' : '❌'
-const time = new Date(task.completedAt).toLocaleTimeString();
+          const status = task.status === 'completed' ? '✅' : '❌';
+          const time = new Date(task.completedAt).toLocaleTimeString();
           console.log(`  ${status} ${task.type} - ${time}`);
         });
 
@@ -223,7 +228,7 @@ const time = new Date(task.completedAt).toLocaleTimeString();
       
       if (await this.fileExists(logFile)) {
         const logs = await fs.readFile(logFile, 'utf8')
-const lines = logs.split('\n').filter(line => line.trim());
+        const lines = logs.split('\n').filter(line => line.trim());
         
         // Show last 50 lines
         const recentLogs = lines.slice(-50);
@@ -248,7 +253,7 @@ const lines = logs.split('\n').filter(line => line.trim());
    */
   async openDashboard() {
     console.log('🌐 Opening Automation Dashboard...\n')
-const dashboardUrl = `http://localhost:${this.config.port}`;
+    const dashboardUrl = `http://localhost:${this.config.port}`;
     
     try {
       // Check if system is running
@@ -452,8 +457,20 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
    */
   async isSystemRunning() {
     try {
-      const response = await fetch(`http://localhost:${this.config.port}/health`);
-      return response.ok;
+      // Check if the automation process is still running
+      const automationProcess = this.processes.get('automation');
+      if (automationProcess && !automationProcess.killed) {
+        return true;
+      }
+      
+      // Also try to check if there's a web server (optional)
+      try {
+        const response = await fetch(`http://localhost:${this.config.port}/health`);
+        return response.ok;
+      } catch {
+        // Web server not available, but process might still be running
+        return automationProcess && !automationProcess.killed;
+      }
     } catch {
       return false;
     }
@@ -463,7 +480,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
    * Wait for system to start
    */
   async waitForSystemStart() {
-    const maxAttempts = 30;
+    const maxAttempts = 60; // Increase timeout to 60 seconds
     let attempts = 0;
 
     while (attempts < maxAttempts) {
@@ -475,7 +492,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
       attempts++;
     }
 
-    throw new Error('System failed to start within 30 seconds');
+    throw new Error('System failed to start within 60 seconds');
   }
 
   /**

@@ -1,4 +1,4 @@
 // useDebounce module placeholder
-export const useDebounce = {
+export ;const useDebounce = {
   // TODO: Implement useDebounce functionality
 };

@@ -1,4 +1,4 @@
 // generateStorybookEpub module placeholder
-export const generateStorybookEpub = {
+export ;const generateStorybookEpub = {
   // TODO: Implement generateStorybookEpub functionality
 };

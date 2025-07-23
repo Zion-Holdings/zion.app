@@ -1,4 +1,4 @@
 // useCreateMilestone module placeholder
-export const useCreateMilestone = {
+export ;const useCreateMilestone = {
   // TODO: Implement useCreateMilestone functionality
 };

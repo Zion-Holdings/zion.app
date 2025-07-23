@@ -1,4 +1,4 @@
-export function useRouter(): {
+export ;function useRouter(): {
   pathname: string;
   push: (url: string) => void;
 };

@@ -1,9 +1,9 @@
-import React from 'react'
-export default function SidebarMenuButton() {
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;default function SidebarMenuButton() {
   return (
     <div>
       <h1>SidebarMenuButton</h1>
       <p>Component placeholder</p>
     </div>
-  )'
-}';
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

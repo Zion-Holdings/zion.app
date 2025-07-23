@@ -1,4 +1,4 @@
 // useUIState module placeholder
-export const useUIState = {
+export ;const useUIState = {
   // TODO: Implement useUIState functionality
 };

@@ -1,17 +1,17 @@
-import { PrismaClient } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import { withErrorLogging } from '@/utils/withErrorLogging';';
+import { PrismaClient } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import { withErrorLogging } from '@/utils/withErrorLogging';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const prisma = new PrismaClient();
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).end(`Method ${req.method} Not Allowed`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   const { _slug } = req.query as { slug: string | string[] };
-  if (!slug || typeof slug !== 'string') {'    return res.status(400).json({ error: 'Invalid slug' });'  }
+  if (!slug || typeof slug !== 'string') {'    return res.status(400).json({ error: 'Invalid slug' });'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   try {
     const category = await prisma.category.findUnique({ where: { slug } });
     if (!category) {
-      return res.status(404).json({ error: 'Category not found' });'    }
+      return res.status(404).json({ error: 'Category not found' });'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     const items = await prisma.product.findMany({
       where: { category: category.name },
@@ -29,9 +29,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json({ category, items });
   } catch {
-    console.'Error occurred'(`Error fetching items for ${slug}:`, error);'    return res.status(500).json({ error: 'Internal server error' });'  } finally {
+    console.'Error occurred'(`Error fetching items for ${slug}:`, error);'    return res.status(500).json({ error: 'Internal server error' });'  } finally {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     await prisma.$disconnect();
   }
 }
 ;
-export default withErrorLogging(handler);
+export ;default withErrorLogging(handler);

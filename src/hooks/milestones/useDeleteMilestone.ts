@@ -1,4 +1,4 @@
 // useDeleteMilestone module placeholder
-export const useDeleteMilestone = {
+export ;const useDeleteMilestone = {
   // TODO: Implement useDeleteMilestone functionality
 };

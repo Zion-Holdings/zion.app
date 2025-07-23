@@ -1,4 +1,4 @@
 // config module placeholder
-export const config = {
+export ;const config = {
   // TODO: Implement config functionality
 };

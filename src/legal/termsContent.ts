@@ -1,4 +1,4 @@
 // termsContent module placeholder
-export const termsContent = {
+export ;const termsContent = {
   // TODO: Implement termsContent functionality
 };

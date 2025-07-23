@@ -1,4 +1,4 @@
 // authService module placeholder
-export const authService = {
+export ;const authService = {
   // TODO: Implement authService functionality
 };

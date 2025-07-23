@@ -1,4 +1,4 @@
 // checkDuplicateClassNames module placeholder
-export const checkDuplicateClassNames = {
+export ;const checkDuplicateClassNames = {
   // TODO: Implement checkDuplicateClassNames functionality
 };

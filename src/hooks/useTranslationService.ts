@@ -1,4 +1,4 @@
 // useTranslationService module placeholder
-export const useTranslationService = {
+export ;const useTranslationService = {
   // TODO: Implement useTranslationService functionality
 };

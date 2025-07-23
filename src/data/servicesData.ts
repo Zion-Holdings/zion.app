@@ -1,4 +1,4 @@
 // servicesData module placeholder
-export const servicesData = {
+export ;const servicesData = {
   // TODO: Implement servicesData functionality
 };

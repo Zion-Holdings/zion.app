@@ -1,4 +1,4 @@
 // signupApi module placeholder
-export const signupApi = {
+export ;const signupApi = {
   // TODO: Implement signupApi functionality
 };

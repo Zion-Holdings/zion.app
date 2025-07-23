@@ -1,4 +1,4 @@
 // moderation module placeholder
-export const moderation = {
+export ;const moderation = {
   // TODO: Implement moderation functionality
 };

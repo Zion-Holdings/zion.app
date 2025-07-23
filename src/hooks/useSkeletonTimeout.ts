@@ -1,4 +1,4 @@
 // useSkeletonTimeout module placeholder
-export const useSkeletonTimeout = {
+export ;const useSkeletonTimeout = {
   // TODO: Implement useSkeletonTimeout functionality
 };

@@ -1,4 +1,4 @@
 // apiErrorHandler module placeholder
-export const apiErrorHandler = {
+export ;const apiErrorHandler = {
   // TODO: Implement apiErrorHandler functionality
 };

@@ -1,4 +1,4 @@
-import { serve } from "_https://deno.land/std@0.190.0/http/server.ts";"import { TwitterApi } from "npm:twitter-api-v2@1.2.0";"import { corsHeaders } from "../_shared/cors.ts";"
+import { serve } from "_https://deno.land/std@0.190.0/http/server.ts";"import { TwitterApi } from "npm:twitter-api-v2@1.2.0";"import { corsHeaders } from "../_shared/cors.ts";""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 interface ShareBlogPostRequest {
   title: string;
   url: string;
@@ -6,24 +6,24 @@ interface ShareBlogPostRequest {
 }
 
 serve(async (req) => {
-  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });
+  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
 
   try {
     const { title, url, summary } = await req.json() as ShareBlogPostRequest;
 
     const client = new TwitterApi({
-      appKey: Deno.env.get("TWITTER_API_KEY")!,"      appSecret: Deno.env.get("TWITTER_API_SECRET")!,"      accessToken: Deno.env.get("TWITTER_ACCESS_TOKEN")!,"      accessSecret: Deno.env.get("TWITTER_ACCESS_SECRET")!,"    });
+      appKey: Deno.env.get("TWITTER_API_KEY")!,"      appSecret: Deno.env.get("TWITTER_API_SECRET")!,"      accessToken: Deno.env.get("TWITTER_ACCESS_TOKEN")!,"      accessSecret: Deno.env.get("TWITTER_ACCESS_SECRET")!,"    });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
     const text = `${summary || title} ${url}`.trim();
     const { _data } = await client.v2.tweet(text);
 
     return new Response(JSON.stringify(data), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 200,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 200,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     });
   } catch {
-    console.("Error in share-blog-post function:", );"    return new Response(JSON.stringify({ : .message }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 500,
+    console.("Error in share-blog-post function:", );"    return new Response(JSON.stringify({ : .message }), {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 500,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     });
   }
 });

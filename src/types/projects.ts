@@ -1,4 +1,4 @@
 // projects module placeholder
-export const projects = {
+export ;const projects = {
   // TODO: Implement projects functionality
 };

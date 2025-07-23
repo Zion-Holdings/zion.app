@@ -1,4 +1,4 @@
 // interests module placeholder
-export const interests = {
+export ;const interests = {
   // TODO: Implement interests functionality
 };

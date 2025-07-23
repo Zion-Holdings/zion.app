@@ -1,4 +1,4 @@
 // equipmentData module placeholder
-export const equipmentData = {
+export ;const equipmentData = {
   // TODO: Implement equipmentData functionality
 };

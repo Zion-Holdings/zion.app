@@ -1,4 +1,4 @@
 // MailchimpService module placeholder
-export const MailchimpService = {
+export ;const MailchimpService = {
   // TODO: Implement MailchimpService functionality
 };

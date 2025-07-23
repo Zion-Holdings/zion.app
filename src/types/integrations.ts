@@ -1,4 +1,4 @@
 // integrations module placeholder
-export const integrations = {
+export ;const integrations = {
   // TODO: Implement integrations functionality
 };

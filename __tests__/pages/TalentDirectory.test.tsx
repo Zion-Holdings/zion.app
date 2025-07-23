@@ -1,19 +1,19 @@
-import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import TalentDirectory from '@/src/pages/TalentDirectory';
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { render, screen, waitFor } from '@testing-library/react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import TalentDirectory from '@/src/pages/TalentDirectory';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // Mock child components and hooks
-jest.mock('@/components/talent/FilterSidebar', () => ({
-  FilterSidebar: (_props: any) => (
-    <div data-testid="filter-sidebar">Filter Sidebar</div>
+jest.mock('@/components/talent/FilterSidebar', () => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  FilterSidebar: (_props: unknown) => (
+    <div data-testid="filter-sidebar">Filter Sidebar</div>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   ),
 }));
-jest.mock('@/components/talent/TalentResults', () => ({
-  TalentResults: (props: any) => (
-    <div data-testid="talent-results">
-      {props.talents.map((talent: any) => (
-        <div key={talent.id} data-testid="talent-profile-card">
+jest.mock('@/components/talent/TalentResults', () => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  TalentResults: (props: unknown) => (
+    <div data-testid="talent-results">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      {props.talents.map((talent: unknown) => (
+        <div key={talent.id} data-testid="talent-profile-card">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
           {talent.name}
         </div>
       ))}
@@ -23,25 +23,25 @@ jest.mock('@/components/talent/TalentResults', () => ({
     </div>
   ),
 }));
-jest.mock('@/components/talent/TalentSkeleton', () => ({
-  TalentSkeleton: () => <div data-testid="talent-skeleton">Loading...</div>,
+jest.mock('@/components/talent/TalentSkeleton', () => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  TalentSkeleton: () => <div data-testid="talent-skeleton">Loading...</div>,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 }));
-jest.mock('@/components/talent/ErrorBanner', () => ({
-  ErrorBanner: (props: any) => (
-    <div data-testid="error-banner">{props.msg}</div>
+jest.mock('@/components/talent/ErrorBanner', () => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  ErrorBanner: (props: unknown) => (
+    <div data-testid="error-banner">{props.msg}</div>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   ),
 }));
-jest.mock('@/components/GlobalErrorBoundary', () => {
+jest.mock('@/components/GlobalErrorBoundary', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   const MockGlobalErrorBoundary = ({
     children,
   }: {
     children: React.ReactNode;
   }) => <>{children}</>;
-  MockGlobalErrorBoundary.displayName = 'MockGlobalErrorBoundary';
+  MockGlobalErrorBoundary.displayName = 'MockGlobalErrorBoundary';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   return { GlobalErrorBoundary: MockGlobalErrorBoundary };
 });
-jest.mock('@/hooks/useAuth', () => ({
-  useAuth: () => ({ user: { id: 'test-user' }, isAuthenticated: true }),
+jest.mock('@/hooks/useAuth', () => ({'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  useAuth: () => ({ user: { id: 'test-user' }, isAuthenticated: true }),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }));
 
 // Mock fetch API (used by useTalentData via useTalentDirectory)
@@ -52,7 +52,7 @@ global.fetch = jest.fn(() =>
   }),
 ) as jest.Mock;
 
-describe('TalentDirectory Page', () => {
+describe('TalentDirectory Page', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   beforeEach(() => {
     (global.fetch as jest.Mock).mockClear();
     jest.clearAllMocks();
@@ -64,7 +64,7 @@ describe('TalentDirectory Page', () => {
     );
   });
 
-  it('renders without throwing errors and displays a heading', async () => {
+  it('renders without throwing errors and displays a heading', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     render(
       <MemoryRouterProvider>
         <TalentDirectory />
@@ -76,15 +76,15 @@ describe('TalentDirectory Page', () => {
       ).toBeInTheDocument();
     });
     expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('/api/talent'),
+      expect.stringContaining('/api/talent'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       expect.any(Object),
     );
   });
 
-  it('displays talent profiles when API returns data', async () => {
+  it('displays talent profiles when API returns data', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const mockTalents = [
-      { id: '1', name: 'John Doe', title: 'AI Developer' },
-      { id: '2', name: 'Jane Smith', title: 'Data Scientist' },
+      { id: '1', name: 'John Doe', title: 'AI Developer' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      { id: '2', name: 'Jane Smith', title: 'Data Scientist' },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ];
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
@@ -102,11 +102,11 @@ describe('TalentDirectory Page', () => {
     await waitFor(() => {
       expect(screen.getByText(/John Doe/i)).toBeInTheDocument();
       expect(screen.getByText(/Jane Smith/i)).toBeInTheDocument();
-      expect(screen.getAllByTestId('talent-profile-card')).toHaveLength(2);
+      expect(screen.getAllByTestId('talent-profile-card')).toHaveLength(2);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
   });
 
-  it('renders empty state when API returns no talent profiles', async () => {
+  it('renders empty state when API returns no talent profiles', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
         ok: true,
@@ -126,12 +126,12 @@ describe('TalentDirectory Page', () => {
     });
   });
 
-  it('handles API error when fetching talent profiles', async () => {
+  it('handles API error when fetching talent profiles', async () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
         ok: false,
-        statusText: 'Server Error',
-        json: () => Promise.resolve({ message: 'Failed to fetch talent' }),
+        statusText: 'Server Error','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        json: () => Promise.resolve({ message: 'Failed to fetch talent' }),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }),
     );
 
@@ -142,8 +142,8 @@ describe('TalentDirectory Page', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByTestId('error-banner')).toHaveTextContent(
-        'Unable to load talent profiles.',
+      expect(screen.getByTestId('error-banner')).toHaveTextContent('''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        'Unable to load talent profiles.','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       );
     });
   });

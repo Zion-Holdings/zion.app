@@ -1,4 +1,4 @@
-import { PrismaClient, type Product as ProductModel } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import { withErrorLogging } from '@/utils/withErrorLogging';';
+import { PrismaClient, type Product as ProductModel } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import { withErrorLogging } from '@/utils/withErrorLogging';';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const prisma = new PrismaClient();
 
 // Ensure this type is consistent with the one in products.ts
@@ -13,26 +13,26 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats | { error: string }>
 ) {
-  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).end(`Method ${req.method} Not Allowed`);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   const { _productId } = req.query as { productId: string | string[] };
 
-  if (!productId || typeof productId !== 'string') {'    return res.status(400).json({ error: 'Product ID is required and must be a string.' });'  }
+  if (!productId || typeof productId !== 'string') {'    return res.status(400).json({ error: 'Product ID is required and must be a string.' });'  }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-  res.setHeader('Access-Control-Allow-Origin', '*'); // CORS header'
+  res.setHeader('Access-Control-Allow-Origin', '*'); // CORS header''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   try {
     const product = await prisma.product.findUnique({
       where: { id: productId },
     });
 
     if (!product) {
-      return res.status(404).json({ error: 'Product not found.' });'    }
+      return res.status(404).json({ error: 'Product not found.' });'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     // Fetch review stats for this single product
     const reviewStats = await prisma.productReview.aggregate({
       _avg: { rating: true },
-      _count: { id: true }, // Count based on 'id' of reviews, or any non-null field'      where: { productId: productId },
+      _count: { id: true }, // Count based on 'id' of reviews, or any non-null field'      where: { productId: productId },'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
 
     const result: ProductWithStats = {
@@ -46,9 +46,9 @@ async function handler(
   } catch {
     console.error(`Error fetching product ${productId}:`, e);
     // More specific error checking can be done here (e.g., Prisma known errors)
-    return res.status(500).json({ error: 'Internal server error while fetching product details.' });'  } finally {
+    return res.status(500).json({ error: 'Internal server error while fetching product details.' });'  } finally {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     await prisma.$disconnect();
   }
 }
 ;
-export default withErrorLogging(handler);
+export ;default withErrorLogging(handler);

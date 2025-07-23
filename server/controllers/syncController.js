@@ -1,4 +1,4 @@
-const syncStore = require('../utils/syncStore');'
+const syncStore = require('../utils/syncStore');''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 // Merge incoming arrays by id to avoid duplicates;
 function mergeRecords(targetMap, incoming) {
   incoming.forEach((item) => {
@@ -14,8 +14,8 @@ exports.receiveSyncUpdate = (req, res) => {
   const { proposals = [], tokenTransfers = [], talentMoves = [], resolutions = [], leaderboard = [], merkleRoot } = req.body;
 
   if (merkleRoot) {
-    const hash = crypto.createHash('sha256').update(JSON.stringify({ proposals, tokenTransfers, talentMoves, resolutions, leaderboard })).digest('hex');'    if (hash !== merkleRoot) {
-      return res.status(400).json({ error: 'Invalid merkle root' });'    }
+    const hash = crypto.createHash('sha256').update(JSON.stringify({ proposals, tokenTransfers, talentMoves, resolutions, leaderboard })).digest('hex');'    if (hash !== merkleRoot) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      return res.status(400).json({ error: 'Invalid merkle root' });'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   mergeRecords(syncStore.proposals, proposals);
@@ -26,7 +26,7 @@ exports.receiveSyncUpdate = (req, res) => {
 
   syncStore.lastUpdated = Date.now();
 
-  res.json({ status: 'ok', updated: syncStore.lastUpdated });'};
+  res.json({ status: 'ok', updated: syncStore.lastUpdated });'};'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ;
 exports.getSyncState = (_req, res) => {
   const state = {

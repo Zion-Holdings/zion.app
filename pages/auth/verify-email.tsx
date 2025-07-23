@@ -1,18 +1,18 @@
-import React from 'react;
-import Head from 'next/head;
+import React from 'react;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import Head from 'next/head;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-export default function verifyemail() {
+export ;default function verifyemail() {
   return (
     <>
       <Head>
         <title>auth/verify-email - Zion App</title>
-        <meta name="description" content="auth/verify-email page" />
+        <meta name="description" content="auth/verify-email page" />"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">auth/verify-email</h1>
-        <p className="text-lg mb-4">This page is under construction.</p>
-        <div className="mt-4">
-          <a href="/" className="text-blue-600 hover:underline">
+      <div className="container mx-auto px-4 py-8">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <h1 className="text-3xl font-bold mb-6">auth/verify-email</h1>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <p className="text-lg mb-4">This page is under construction.</p>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        <div className="mt-4">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          <a href="/" className="text-blue-600 hover:underline">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
             ← Back to Home
           </a>
         </div>

@@ -1,4 +1,4 @@
 // useReviews module placeholder
-export const useReviews = {
+export ;const useReviews = {
   // TODO: Implement useReviews functionality
 };

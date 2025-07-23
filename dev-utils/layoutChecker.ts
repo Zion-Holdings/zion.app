@@ -11,8 +11,8 @@ function logIssue(title: string, issues: LayoutIssue[]) {
   });
 }
 
-window.addEventListener('load', () => {'  const broken: LayoutIssue[] = [];
-  document.querySelectorAll<HTMLElement>('body *').forEach(el => {'    if (el.offsetHeight === 0 || el.scrollWidth > window.innerWidth) {
+window.addEventListener('load', () => {'  const broken: LayoutIssue[] = [];'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  document.querySelectorAll<HTMLElement>('body *').forEach(el => {'    if (el.offsetHeight === 0 || el.scrollWidth > window.innerWidth) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       broken.push({
         tag: el.tagName,
         class: el.className,
@@ -20,6 +20,6 @@ window.addEventListener('load', () => {'  const broken: LayoutIssue[] = [];
       });
     }
   });
-  if (broken.length) logIssue('Layout issues detected', broken);'});
+  if (broken.length) logIssue('Layout issues detected', broken);'});'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ;
-export {};
+export ;{};

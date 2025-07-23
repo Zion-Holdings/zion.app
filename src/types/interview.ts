@@ -1,4 +1,4 @@
 // interview module placeholder
-export const interview = {
+export ;const interview = {
   // TODO: Implement interview functionality
 };

@@ -1,4 +1,4 @@
 // filters module placeholder
-export const filters = {
+export ;const filters = {
   // TODO: Implement filters functionality
 };

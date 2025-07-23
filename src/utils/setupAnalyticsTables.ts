@@ -1,4 +1,4 @@
 // setupAnalyticsTables module placeholder
-export const setupAnalyticsTables = {
+export ;const setupAnalyticsTables = {
   // TODO: Implement setupAnalyticsTables functionality
 };

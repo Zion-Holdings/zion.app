@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const EventEmitter = require('events');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 class TaskScheduler extends EventEmitter {
   constructor(config = {}) {
@@ -16,8 +16,8 @@ class TaskScheduler extends EventEmitter {
         errorRateThreshold: 0.3,    // 30% error rate triggers frequency reduction
         loadThreshold: 0.8,         // 80% system load triggers frequency reduction
         successRateThreshold: 0.9,  // 90% success rate allows frequency increase
-        minIntervalMultiplier: 0.5, // Don't run more than 2x faster
-        maxIntervalMultiplier: 3.0, // Don't run slower than 3x
+        minIntervalMultiplier: 0.5, // Don't run more than 2x faster'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        maxIntervalMultiplier: 3.0, // Don't run slower than 3x'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       },
       learningWindow: 24 * 60 * 60 * 1000, // 24 hours for learning
       ...config
@@ -57,13 +57,13 @@ class TaskScheduler extends EventEmitter {
     const cutoff = timestamp - this.config.learningWindow;
     this.taskHistory.set(taskName, history.filter(entry => entry.timestamp > cutoff));
     
-    this.emit('taskRecorded', { taskName, success, duration, timestamp });
+    this.emit('taskRecorded', { taskName, success, duration, timestamp });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Update system metrics
   updateSystemMetrics(metrics) {
     this.systemMetrics = { ...this.systemMetrics, ...metrics };
-    this.emit('metricsUpdated', this.systemMetrics);
+    this.emit('metricsUpdated', this.systemMetrics);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Calculate adaptive interval for a task
@@ -131,11 +131,11 @@ class TaskScheduler extends EventEmitter {
     const oldInterval = this.currentIntervals.get(taskName);
     this.currentIntervals.set(taskName, newInterval);
     
-    this.emit('intervalUpdated', {
+    this.emit('intervalUpdated', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       oldInterval,
       newInterval,
-      change: oldInterval ? ((newInterval - oldInterval) / oldInterval * 100).toFixed(1) + '%' : 'N/A'
+      change: oldInterval ? ((newInterval - oldInterval) / oldInterval * 100).toFixed(1) + '%' : 'N/A''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
     
     return newInterval;
@@ -159,7 +159,7 @@ class TaskScheduler extends EventEmitter {
     });
     
     if (Object.keys(updates).length > 0) {
-      console.log('🔄 Updated task intervals:', updates);
+      console.log('🔄 Updated task intervals:', updates);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
     
     return updates;
@@ -180,10 +180,10 @@ class TaskScheduler extends EventEmitter {
         intervalMultiplier: currentInterval / baseInterval,
         executionCount: history.length,
         successRate: history.length > 0 ? 
-          (history.filter(h => h.success).length / history.length * 100).toFixed(1) + '%' : 'N/A',
+          (history.filter(h => h.success).length / history.length * 100).toFixed(1) + '%' : 'N/A','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         avgDuration: history.length > 0 ? 
-          (history.reduce((sum, h) => sum + h.duration, 0) / history.length).toFixed(0) + 'ms' : 'N/A',
-        lastExecution: history.length > 0 ? new Date(history[history.length - 1].timestamp).toISOString() : 'Never'
+          (history.reduce((sum, h) => sum + h.duration, 0) / history.length).toFixed(0) + 'ms' : 'N/A','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        lastExecution: history.length > 0 ? new Date(history[history.length - 1].timestamp).toISOString() : 'Never''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       };
     });
     
@@ -200,8 +200,8 @@ class TaskScheduler extends EventEmitter {
       this.updateInterval(taskName, this.config.baseIntervals[taskName]);
     });
     
-    console.log('🔄 Reset all task intervals to base values');
-    this.emit('intervalsReset');
+    console.log('🔄 Reset all task intervals to base values');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    this.emit('intervalsReset');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Get next execution time for a task

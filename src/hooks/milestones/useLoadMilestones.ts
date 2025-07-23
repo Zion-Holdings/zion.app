@@ -1,4 +1,4 @@
 // useLoadMilestones module placeholder
-export const useLoadMilestones = {
+export ;const useLoadMilestones = {
   // TODO: Implement useLoadMilestones functionality
 };

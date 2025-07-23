@@ -1,4 +1,4 @@
 // notifications module placeholder
-export const notifications = {
+export ;const notifications = {
   // TODO: Implement notifications functionality
 };

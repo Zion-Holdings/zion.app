@@ -1,4 +1,4 @@
 // caseStudy module placeholder
-export const caseStudy = {
+export ;const caseStudy = {
   // TODO: Implement caseStudy functionality
 };

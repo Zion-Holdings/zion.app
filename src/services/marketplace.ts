@@ -1,4 +1,4 @@
 // marketplace module placeholder
-export const marketplace = {
+export ;const marketplace = {
   // TODO: Implement marketplace functionality
 };

@@ -1,5 +1,5 @@
-const EventEmitter = require('events')
-const cron = require('node-cron')
+const EventEmitter = require('events')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const cron = require('node-cron')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Scheduler extends EventEmitter {
   constructor() {
     super();
@@ -7,14 +7,14 @@ class Scheduler extends EventEmitter {
   }
   start() {
     // Cron-based (every 10 minutes)
-    cron.schedule('*/10 * * * *', () => {
-      this.emit('trigger', 'cron');
+    cron.schedule('*/10 * * * *', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.emit('trigger', 'cron');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
     // Randomized interval (5-15 minutes)
     setInterval(
       () => {
         if (Math.random() > 0.5) {
-          this.emit('trigger', 'random');
+          this.emit('trigger', 'random');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         }
       },
       1000 * 60 * (5 + Math.random() * 10),

@@ -1,4 +1,4 @@
 // useScrollToTop module placeholder
-export const useScrollToTop = {
+export ;const useScrollToTop = {
   // TODO: Implement useScrollToTop functionality
 };

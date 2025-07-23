@@ -1,4 +1,4 @@
 // environmentConfig module placeholder
-export const environmentConfig = {
+export ;const environmentConfig = {
   // TODO: Implement environmentConfig functionality
 };

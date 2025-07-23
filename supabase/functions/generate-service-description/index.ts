@@ -1,10 +1,10 @@
 
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";"import { Configuration, OpenAIApi } from "npm:openai@4.28.0";";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";"import { Configuration, OpenAIApi } from "npm:openai@4.28.0";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*","  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type","};
+  "Access-Control-Allow-Origin": "*","  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type","};"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 serve(async (req) => {
-  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });
+  if (req.method === "OPTIONS") {"    return new Response(null, { headers: corsHeaders });"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
 
   try {
@@ -13,21 +13,21 @@ serve(async (req) => {
     if (!title) {
       return new Response(
         JSON.stringify({ 
-          error: "Missing required field: title" "        }),
+          error: "Missing required field: title" "        }),"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         { 
           status: 400, 
-          headers: { ...corsHeaders, "Content-Type": "application/json" } "        }
+          headers: { ...corsHeaders, "Content-Type": "application/json" } "        }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       );
     }
 
     const configuration = new Configuration({
-      apiKey: Deno.env.get('OPENAI_API_KEY'),'    });
+      apiKey: Deno.env.get('OPENAI_API_KEY'),'    });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const openai = new OpenAIApi(configuration);
 
     const prompt = `Create a professional and detailed service description for the following service:
     
 Title: ${title}
-Key Features: ${keyFeatures || "Not specified"}"Target Audience: ${targetAudience || "General users"}"
+Key Features: ${keyFeatures || "Not specified"}"Target Audience: ${targetAudience || "General users"}""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The description should:
 1. Be approximately 200-300 words
 2. Highlight the key benefits and unique selling points
@@ -36,7 +36,7 @@ The description should:
 5. Include a compelling opening and closing statement`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o","      messages: [{ role: "user", content: prompt }],"      temperature: 0.7,
+      model: "gpt-4o","      messages: [{ role: "user", content: prompt }],"      temperature: 0.7,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     });
 
     const generatedDescription = completion.choices[0].message.content;
@@ -44,17 +44,17 @@ The description should:
     return new Response(
       JSON.stringify({ description: generatedDescription }),
       { 
-        headers: { ...corsHeaders, "Content-Type": "application/json" } "      }
+        headers: { ...corsHeaders, "Content-Type": "application/json" } "      }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
   } catch {
-    console.("Error in generate-service-description:", );"    
+    console.("Error in generate-service-description:", );"    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     return new Response(
       JSON.stringify({ 
-        : "Failed to generate service description","        details: .message 
+        : "Failed to generate service description","        details: .message """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }),
       { 
         status: 500, 
-        headers: { ...corsHeaders, "Content-Type": "application/json" } "      }
+        headers: { ...corsHeaders, "Content-Type": "application/json" } "      }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
   }
 });

@@ -1,5 +1,5 @@
-import { Server as SocketIOServer } from 'socket.io;
-import { NextApiRequest, NextApiResponse } from 'next;
+import { Server as SocketIOServer } from 'socket.io;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+import { NextApiRequest, NextApiResponse } from 'next;';''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // Store active connections
 const activeConnections = new Map<string, any>();
@@ -22,24 +22,24 @@ const RECONNECTION_CONFIG = {
   timeout: 20000,
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET' && req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+export ;default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'GET' && req.method !== 'POST') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    return res.status(405).json({ error: 'Method not allowed' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
   // Initialize Socket.IO server if not already done
   if (!io) {
     io = new SocketIOServer(res.socket.server, {
-      path: '/api/socket',
+      path: '/api/socket','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       addTrailingSlash: false,
       cors: {
         origin:
-          process.env.NODE_ENV === 'production'
-            ? ['https://zion-app.netlify.app', 'https://app.ziontechgroup.com']
-            : ['http://localhost:3001', 'http://localhost:3000'],
-        methods: ['GET', 'POST'],
+          process.env.NODE_ENV === 'production''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            ? ['https://zion-app.netlify.app', 'https://app.ziontechgroup.com']'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            : ['http://localhost:3001', 'http://localhost:3000'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        methods: ['GET', 'POST'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         credentials: true,
       },
-      transports: ['websocket', 'polling'],
+      transports: ['websocket', 'polling'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       allowEIO3: true,
       pingTimeout: 60000,
       pingInterval: 25000,
@@ -52,7 +52,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     // Handle Socket.IO connections
-    io.on('connection', (socket) => {
+    io.on('connection', (socket) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       console.log(`🔗 Client connected: ${socket.id}`);
 
       // Store connection
@@ -65,7 +65,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });
 
       // Handle room joining
-      socket.on('join-room', (roomId: string, callback) => {
+      socket.on('join-room', (roomId: string, callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         try {`
           socket.join(roomId);``
           const connection = activeConnections.get(socket.id);```
@@ -77,20 +77,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           console.log(`👥 Client ${socket.id} joined room: ${roomId}`);
 
           // Notify others in the room
-          socket.to(roomId).emit('user-joined', {
+          socket.to(roomId).emit('user-joined', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             userId: socket.id,
             timestamp: new Date().toISOString(),
           });
 
           if (callback) callback({ success: true, roomId });
         } catch (error) {
-          console.error('Error joining room:', error);
+          console.error('Error joining room:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           if (callback) callback({ success: false, error: error.message });
 
       });
 
       // Handle room leaving
-      socket.on('leave-room', (roomId: string, callback) => {
+      socket.on('leave-room', (roomId: string, callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         try {`
           socket.leave(roomId);``
           const connection = activeConnections.get(socket.id);```
@@ -102,33 +102,33 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           console.log(`👋 Client ${socket.id} left room: ${roomId}`);
 
           // Notify others in the room
-          socket.to(roomId).emit('user-left', {
+          socket.to(roomId).emit('user-left', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             userId: socket.id,
             timestamp: new Date().toISOString(),
           });
 
           if (callback) callback({ success: true, roomId });
         } catch (error) {
-          console.error('Error leaving room:', error);
+          console.error('Error leaving room:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           if (callback) callback({ success: false, error: error.message });
 
       });
 
       // Handle chat messages
       socket.on(
-        'send-message',
+        'send-message','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         (
           data: {
             roomId: string;
             message: string;
             sender: string;
-            type?: 'text' | 'image' | 'file;
+            type?: 'text' | 'image' | 'file;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             metadata?: any;
           },
           callback,
         ) => {
           try {
-            const { roomId, message, sender, type = 'text', metadata } = data;`
+            const { roomId, message, sender, type = 'text', metadata } = data;`'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ``
             // Update last activity```
             const connection = activeConnections.get(socket.id);````
@@ -147,7 +147,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             };
 
             // Broadcast to room`
-            socket.to(roomId).emit('new-message', messageData);``
+            socket.to(roomId).emit('new-message', messageData);``'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ```
             // Send delivery confirmation````
             if (callback)`````
@@ -157,15 +157,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
               `💬 Message sent in room ${roomId}: ${message.substring(0, 50)}...`,
             );
           } catch (error) {
-            console.error('Error sending message:', error);
+            console.error('Error sending message:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             if (callback) callback({ success: false, error: error.message });
 
         },
       );
 
       // Handle typing indicators
-      socket.on('typing-start', (roomId: string) => {
-        socket.to(roomId).emit('user-typing', {
+      socket.on('typing-start', (roomId: string) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        socket.to(roomId).emit('user-typing', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           userId: socket.id,
           roomId,
           isTyping: true,
@@ -173,8 +173,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         });
       });
 
-      socket.on('typing-stop', (roomId: string) => {
-        socket.to(roomId).emit('user-typing', {
+      socket.on('typing-stop', (roomId: string) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        socket.to(roomId).emit('user-typing', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           userId: socket.id,
           roomId,
           isTyping: false,
@@ -184,9 +184,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
       // Handle read receipts
       socket.on(
-        'mark-read',
+        'mark-read','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         (data: { roomId: string; messageIds: string[] }) => {
-          socket.to(data.roomId).emit('messages-read', {
+          socket.to(data.roomId).emit('messages-read', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             userId: socket.id,
             roomId: data.roomId,
             messageIds: data.messageIds,
@@ -196,7 +196,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       );
 
       // Handle connection health check
-      socket.on('ping', (callback) => {
+      socket.on('ping', (callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         const connection = activeConnections.get(socket.id);
         if (connection) {`
           connection.lastActivity = Date.now();``
@@ -205,14 +205,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });`````
 ``````
       // Handle disconnection```````
-      socket.on('disconnect', (reason) => {````````
+      socket.on('disconnect', (reason) => {````````'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.log(`🔌 Client disconnected: ${socket.id}, reason: ${reason}`);
 
         const connection = activeConnections.get(socket.id);
         if (connection) {
           // Notify all rooms that user left
           connection.rooms.forEach((roomId: string) => {
-            socket.to(roomId).emit('user-left', {
+            socket.to(roomId).emit('user-left', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
               userId: socket.id,
               timestamp: new Date().toISOString(),
               reason,
@@ -225,7 +225,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });````
 `````
       // Handle reconnection``````
-      socket.on('reconnect', (attemptNumber: number) => {```````
+      socket.on('reconnect', (attemptNumber: number) => {```````'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.log(````````
           `🔄 Client reconnected: ${socket.id}, attempt: ${attemptNumber}`,
         );
@@ -238,7 +238,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });````
 `````
       // Handle reconnection attempts``````
-      socket.on('reconnect_attempt', (attemptNumber: number) => {```````
+      socket.on('reconnect_attempt', (attemptNumber: number) => {```````'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.log(````````
           `🔄 Reconnection attempt ${attemptNumber} for client: ${socket.id}`,
         );
@@ -250,19 +250,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       });`````
 ``````
       // Handle reconnection errors```````
-      socket.on('reconnect_error', (error: any) => {````````
+      socket.on('reconnect_error', (error: unknown) => {````````'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.error(`❌ Reconnection error for client ${socket.id}:`, error);````
       });`````
 ``````
       // Handle reconnection failures```````
-      socket.on('reconnect_failed', () => {````````
+      socket.on('reconnect_failed', () => {````````'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         console.error(`❌ Reconnection failed for client: ${socket.id}`);
 
         const connection = activeConnections.get(socket.id);
         if (connection) {
           // Notify all rooms that user is offline
           connection.rooms.forEach((roomId: string) => {
-            socket.to(roomId).emit('user-offline', {
+            socket.to(roomId).emit('user-offline', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
               userId: socket.id,
               timestamp: new Date().toISOString(),
             });
@@ -290,13 +290,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   // Return connection info
   res.status(200).json({
-    status: 'ok',
-    message: 'Socket.IO server is running',`
+    status: 'ok','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    message: 'Socket.IO server is running',`'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     activeConnections: activeConnections.size,``
     timestamp: new Date().toISOString(),```
   });````
 `````
 // Export for use in other parts of the application``````
-export { io, activeConnections };```````
+export ;{ io, activeConnections };```````
 ````````
 }

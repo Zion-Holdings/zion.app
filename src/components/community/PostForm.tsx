@@ -1,9 +1,9 @@
-import React from 'react'
-export default function PostForm() {
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;default function PostForm() {
   return (
     <div>
       <h1>PostForm</h1>
       <p>Component placeholder</p>
     </div>
-  )'
-}';
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

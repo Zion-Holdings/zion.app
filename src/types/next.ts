@@ -1,4 +1,4 @@
 // next module placeholder
-export const next = {
+export ;const next = {
   // TODO: Implement next functionality
 };

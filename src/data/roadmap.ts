@@ -1,4 +1,4 @@
 // roadmap module placeholder
-export const roadmap = {
+export ;const roadmap = {
   // TODO: Implement roadmap functionality
 };

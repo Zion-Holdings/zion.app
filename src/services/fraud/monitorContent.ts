@@ -1,4 +1,4 @@
 // monitorContent module placeholder
-export const monitorContent = {
+export ;const monitorContent = {
   // TODO: Implement monitorContent functionality
 };

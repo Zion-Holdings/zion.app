@@ -1,4 +1,4 @@
 // skillsSection module placeholder
-export const skillsSection = {
+export ;const skillsSection = {
   // TODO: Implement skillsSection functionality
 };

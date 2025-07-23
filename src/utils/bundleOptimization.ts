@@ -1,4 +1,4 @@
 // bundleOptimization module placeholder
-export const bundleOptimization = {
+export ;const bundleOptimization = {
   // TODO: Implement bundleOptimization functionality
 };

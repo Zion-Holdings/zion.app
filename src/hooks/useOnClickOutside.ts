@@ -1,4 +1,4 @@
 // useOnClickOutside module placeholder
-export const useOnClickOutside = {
+export ;const useOnClickOutside = {
   // TODO: Implement useOnClickOutside functionality
 };

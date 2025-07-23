@@ -1,4 +1,4 @@
 // safeStorage module placeholder
-export const safeStorage = {
+export ;const safeStorage = {
   // TODO: Implement safeStorage functionality
 };

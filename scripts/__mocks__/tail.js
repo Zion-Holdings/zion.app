@@ -16,11 +16,11 @@ const Tail = jest.fn().mockImplementation(function(filePath) {
 
   // Helper for tests to simulate line events
   this._simulateLine = (data) => {
-    if (this.eventCallbacks && this.eventCallbacks['line']) {      this.eventCallbacks['line'].forEach(cb => cb(data));'    }
+    if (this.eventCallbacks && this.eventCallbacks['line']) {      this.eventCallbacks['line'].forEach(cb => cb(data));'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   };
   // Helper for tests to simulate error events
   this._simulateError = (error) => {
-    if (this.eventCallbacks && this.eventCallbacks['error']) {      this.eventCallbacks['error'].forEach(cb => cb(error));'    }
+    if (this.eventCallbacks && this.eventCallbacks['error']) {      this.eventCallbacks['error'].forEach(cb => cb(error));'    }'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   };
 
   // console.warn(`Mock Tail: constructor called for ${filePath}`);

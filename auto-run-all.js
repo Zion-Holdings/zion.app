@@ -1,29 +1,29 @@
 // auto-run-all.js
 // Expanded watcher script for multiple directories and file types
-const chokidar = require('chokidar');
-const pm2 = require('pm2');
-const path = require('path');
-const fs = require('fs');
-const glob = require('glob');
+const chokidar = require('chokidar');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const pm2 = require('pm2');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const glob = require('glob');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // === CONFIGURATION ===
 // Directories to watch
 const WATCH_DIRS = [
-  path.join(__dirname, 'components'),
-  path.join(__dirname, 'automation'),
-  path.join(__dirname, 'backend'),
-  path.join(__dirname, 'scripts'),
+  path.join(__dirname, 'components'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  path.join(__dirname, 'automation'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  path.join(__dirname, 'backend'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  path.join(__dirname, 'scripts'),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ];
 // File types and their interpreters
 const FILE_TYPES = {
-  '.ts': 'ts-node',
-  '.tsx': 'ts-node',
-  '.js': 'node',
-  '.sh': 'bash',
-  '.py': 'python3',
+  '.ts': 'ts-node','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  '.tsx': 'ts-node','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  '.js': 'node','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  '.sh': 'bash','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  '.py': 'python3','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 };
 // Glob pattern for all supported file types
-const FILE_GLOB = '**/*.{ts,tsx,js,sh,py}';
+const FILE_GLOB = '**/*.{ts,tsx,js,sh,py}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 // Helper to get file extension
 function getFileExt(filePath) {
@@ -33,7 +33,7 @@ function getFileExt(filePath) {
 // Helper to create a unique PM2 process name for each file
 function getProcessName(filePath) {
   // Replace slashes with dashes for PM2 process name
-  return 'auto-' + filePath.replace(/\//g, '-').replace(/\\/g, '-');
+  return 'auto-' + filePath.replace(/\//g, '-').replace(/\\/g, '-');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 }
 
 // Start or restart a file with PM2 using the correct interpreter
@@ -48,7 +48,7 @@ function startOrRestartFile(filePath) {
     return;
   }
   // For .sh files, ensure executable
-  if (ext === '.sh') {
+  if (ext === '.sh') {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     try {
       fs.chmodSync(absPath, 0o755);
     } catch (e) {
@@ -86,7 +86,7 @@ function startOrRestartFile(filePath) {
   );
 }
 
-// Stop a file's process in PM2
+// Stop a file's process in PM2'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 function stopFile(filePath) {
   const absPath = path.resolve(filePath);
   const relPath = path.relative(__dirname, absPath);
@@ -94,7 +94,7 @@ function stopFile(filePath) {
   pm2.delete(procName, (err) => {
     if (
       err &&
-      !String(err.message).includes('process or namespace not found')
+      !String(err.message).includes('process or namespace not found')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ) {
       console.error(`[auto-run-all] Failed to stop ${filePath}:`, err.message);
     } else {
@@ -106,7 +106,7 @@ function stopFile(filePath) {
 // Main logic
 pm2.connect((err) => {
   if (err) {
-    console.error('[auto-run-all] PM2 connect error:', err);
+    console.error('[auto-run-all] PM2 connect error:', err);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     process.exit(2);
   }
 
@@ -131,11 +131,11 @@ pm2.connect((err) => {
   );
 
   watcher
-    .on('add', startOrRestartFile)
-    .on('change', startOrRestartFile)
-    .on('unlink', stopFile)
-    .on('error', (error) => {
-      console.error('[auto-run-all] Watcher error:', error);
+    .on('add', startOrRestartFile)'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    .on('change', startOrRestartFile)'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    .on('unlink', stopFile)'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    .on('error', (error) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.error('[auto-run-all] Watcher error:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     });
 
   console.log(

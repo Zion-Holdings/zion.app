@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const EventEmitter = require('events');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 class AnomalyDetector extends EventEmitter {
   constructor(config = {}) {
@@ -101,13 +101,13 @@ class AnomalyDetector extends EventEmitter {
     
     let isAnomaly = false;
     let anomalyType = null;
-    let severity = 'medium';
+    let severity = 'medium';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
     // Check threshold-based anomaly
     if (value > config.threshold) {
       isAnomaly = true;
-      anomalyType = 'threshold_exceeded';
-      severity = value > config.threshold * 1.5 ? 'high' : 'medium';
+      anomalyType = 'threshold_exceeded';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      severity = value > config.threshold * 1.5 ? 'high' : 'medium';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
     
     // Check statistical anomaly (if we have enough data)
@@ -118,8 +118,8 @@ class AnomalyDetector extends EventEmitter {
       
       if (zScore > config.sensitivity) {
         isAnomaly = true;
-        anomalyType = 'statistical_outlier';
-        severity = zScore > config.sensitivity * 1.5 ? 'high' : 'medium';
+        anomalyType = 'statistical_outlier';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        severity = zScore > config.sensitivity * 1.5 ? 'high' : 'medium';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }
     }
     
@@ -130,8 +130,8 @@ class AnomalyDetector extends EventEmitter {
       
       if (Math.abs(trend) > 0.5 && trend > 0) { // Rapid increase
         isAnomaly = true;
-        anomalyType = 'trend_spike';
-        severity = 'medium';
+        anomalyType = 'trend_spike';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        severity = 'medium';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }
     }
     
@@ -149,7 +149,7 @@ class AnomalyDetector extends EventEmitter {
       };
       
       this.anomalies.push(anomaly);
-      this.emit('anomalyDetected', anomaly);
+      this.emit('anomalyDetected', anomaly);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
       console.log(`🚨 Anomaly detected in ${metricName}:`, {
         value,
@@ -187,12 +187,12 @@ class AnomalyDetector extends EventEmitter {
         threshold: config.threshold,
         timeWindow: config.timeWindow,
         events: recentEvents,
-        severity: 'high',
+        severity: 'high','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         detectedAt: Date.now()
       };
       
       this.anomalies.push(anomaly);
-      this.emit('patternAnomalyDetected', anomaly);
+      this.emit('patternAnomalyDetected', anomaly);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
       console.log(`🚨 Pattern anomaly detected: ${patternName}`, {
         eventCount: recentEvents.length,
@@ -204,16 +204,16 @@ class AnomalyDetector extends EventEmitter {
 
   // Record consecutive failures
   recordFailure(taskName, error, timestamp = Date.now()) {
-    this.checkPatternAnomaly('consecutiveFailures', {
+    this.checkPatternAnomaly('consecutiveFailures', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       taskName,
       error: error.message,
-      type: 'failure'
+      type: 'failure''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }, timestamp);
   }
 
   // Record unusual activity
   recordActivity(activityType, details, timestamp = Date.now()) {
-    this.checkPatternAnomaly('unusualActivity', {
+    this.checkPatternAnomaly('unusualActivity', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       type: activityType,
       details
     }, timestamp);
@@ -228,7 +228,7 @@ class AnomalyDetector extends EventEmitter {
       return;
     }
     
-    console.log('🧠 Updating anomaly detection baselines...');
+    console.log('🧠 Updating anomaly detection baselines...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
     this.metricHistory.forEach((history, metricName) => {
       if (history.length < this.config.learning.minDataPoints) {
@@ -258,9 +258,9 @@ class AnomalyDetector extends EventEmitter {
     });
     
     this.lastBaselineUpdate = now;
-    this.emit('baselinesUpdated', this.baselines);
+    this.emit('baselinesUpdated', this.baselines);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
-    console.log('✅ Baselines updated for', this.baselines.size, 'metrics');
+    console.log('✅ Baselines updated for', this.baselines.size, 'metrics');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }
 
   // Calculate trend (simple linear regression)
@@ -339,7 +339,7 @@ class AnomalyDetector extends EventEmitter {
     
     if (oldCount !== newCount) {
       console.log(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
-      this.emit('anomaliesCleared', { oldCount, newCount });
+      this.emit('anomaliesCleared', { oldCount, newCount });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
@@ -376,16 +376,16 @@ class AnomalyDetector extends EventEmitter {
     
     recentAnomalies.forEach(anomaly => {
       switch (anomaly.severity) {
-        case 'critical':
+        case 'critical':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           score -= 20;
           break;
-        case 'high':
+        case 'high':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           score -= 10;
           break;
-        case 'medium':
+        case 'medium':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           score -= 5;
           break;
-        case 'low':
+        case 'low':'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           score -= 2;
           break;
       }

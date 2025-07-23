@@ -23,11 +23,12 @@
   "author": "Automation Team",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "axios": "^1.6.0",
+    "axios": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
     "node-cron": "^3.0.3",
-    "ws": "^8.14.2",
-    "dotenv": "^16.3.1"
+    "socket.io": "^4.8.1",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

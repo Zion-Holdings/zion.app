@@ -1,4 +1,4 @@
 // newsletterService module placeholder
-export const newsletterService = {
+export ;const newsletterService = {
   // TODO: Implement newsletterService functionality
 };

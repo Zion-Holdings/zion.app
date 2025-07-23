@@ -1,34 +1,34 @@
 #!/usr/bin/env node
 
-const express = require('express')
-const { createServer } = require('http')
-const { Server } = require('socket.io')
-const cors = require('cors');
+const express = require('express')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { createServer } = require('http')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { Server } = require('socket.io')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const cors = require('cors');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-console.log('🚀 Starting Test Socket Server...')
+console.log('🚀 Starting Test Socket Server...')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const app = express()
 const server = createServer(app)
 const io = new Server(server, {
   cors: {
     origin: [
-      'http://localhost:3000',
-      'http://localhost:3006',
-      'http://localhost:3007',
+      'http://localhost:3000','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'http://localhost:3006','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      'http://localhost:3007','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ],
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     credentials: true,
   },
-  transports: ['websocket', 'polling'],
+  transports: ['websocket', 'polling'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 });
 
 // Store active connections
 const activeConnections = new Map();
 
 // Socket.IO connection handling
-io.on('connection', (socket) => {
+io.on('connection', (socket) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   console.log(`✅ Client connected: ${socket.id}`);
 
-  socket.on('error', (err) => {
+  socket.on('error', (err) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.error(`❌ Socket error for ${socket.id}:`, err);
   });
 
@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
   });
 
   // Handle room joining
-  socket.on('join-room', (roomId, callback) => {
+  socket.on('join-room', (roomId, callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     try {
       socket.join(roomId)
 const connection = activeConnections.get(socket.id);
@@ -52,7 +52,7 @@ const connection = activeConnections.get(socket.id);
       }
 
       // Notify others in room
-      socket.to(roomId).emit('user-joined', {
+      socket.to(roomId).emit('user-joined', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         userId: socket.id,
         timestamp: new Date().toISOString(),
       });
@@ -60,13 +60,13 @@ const connection = activeConnections.get(socket.id);
       if (callback) callback({ success: true, roomId });
       console.log(`🎯 User ${socket.id} joined room: ${roomId}`);
     } catch (error) {
-      console.error('Error joining room:', error);
+      console.error('Error joining room:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       if (callback) callback({ success: false, error: error.message });
     }
   });
 
   // Handle room leaving
-  socket.on('leave-room', (roomId, callback) => {
+  socket.on('leave-room', (roomId, callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     try {
       socket.leave(roomId)
 const connection = activeConnections.get(socket.id);
@@ -76,7 +76,7 @@ const connection = activeConnections.get(socket.id);
       }
 
       // Notify others in room
-      socket.to(roomId).emit('user-left', {
+      socket.to(roomId).emit('user-left', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         userId: socket.id,
         timestamp: new Date().toISOString(),
       });
@@ -84,15 +84,15 @@ const connection = activeConnections.get(socket.id);
       if (callback) callback({ success: true, roomId });
       console.log(`👋 User ${socket.id} left room: ${roomId}`);
     } catch (error) {
-      console.error('Error leaving room:', error);
+      console.error('Error leaving room:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       if (callback) callback({ success: false, error: error.message });
     }
   });
 
   // Handle chat messages
-  socket.on('send-message', (data, callback) => {
+  socket.on('send-message', (data, callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     try {
-      const { roomId, message, sender, type = 'text', metadata } = data
+      const { roomId, message, sender, type = 'text', metadata } = data'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 const messageData = {
         id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         roomId,
@@ -105,7 +105,7 @@ const messageData = {
       };
 
       // Broadcast to room
-      socket.to(roomId).emit('new-message', messageData);
+      socket.to(roomId).emit('new-message', messageData);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
       // Update connection activity
       const connection = activeConnections.get(socket.id);
@@ -119,14 +119,14 @@ const messageData = {
         `💬 Message sent in room ${roomId}: ${message.substring(0, 50)}...`,
       );
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error sending message:', error);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       if (callback) callback({ success: false, error: error.message });
     }
   });
 
   // Handle typing indicators
-  socket.on('start-typing', (data) => {
-    socket.to(data.roomId).emit('user-typing', {
+  socket.on('start-typing', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.to(data.roomId).emit('user-typing', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       userId: socket.id,
       roomId: data.roomId,
       isTyping: true,
@@ -134,8 +134,8 @@ const messageData = {
     });
   });
 
-  socket.on('stop-typing', (data) => {
-    socket.to(data.roomId).emit('user-typing', {
+  socket.on('stop-typing', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.to(data.roomId).emit('user-typing', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       userId: socket.id,
       roomId: data.roomId,
       isTyping: false,
@@ -144,8 +144,8 @@ const messageData = {
   });
 
   // Handle read receipts
-  socket.on('mark-read', (data) => {
-    socket.to(data.roomId).emit('messages-read', {
+  socket.on('mark-read', (data) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    socket.to(data.roomId).emit('messages-read', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       userId: socket.id,
       roomId: data.roomId,
       messageIds: data.messageIds,
@@ -154,7 +154,7 @@ const messageData = {
   });
 
   // Handle connection health check
-  socket.on('ping', (callback) => {
+  socket.on('ping', (callback) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     const connection = activeConnections.get(socket.id);
     if (connection) {
       connection.lastActivity = Date.now();
@@ -163,7 +163,7 @@ const messageData = {
   });
 
   // Handle reconnection
-  socket.on('reconnect', (attemptNumber) => {
+  socket.on('reconnect', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(
       `🔄 Client reconnected: ${socket.id}, attempt: ${attemptNumber}`,
     )
@@ -175,7 +175,7 @@ const connection = activeConnections.get(socket.id);
   });
 
   // Handle reconnection attempts
-  socket.on('reconnect_attempt', (attemptNumber) => {
+  socket.on('reconnect_attempt', (attemptNumber) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(
       `🔄 Reconnection attempt ${attemptNumber} for client: ${socket.id}`,
     )
@@ -186,13 +186,13 @@ const connection = activeConnections.get(socket.id);
   });
 
   // Handle disconnection
-  socket.on('disconnect', (reason) => {
+  socket.on('disconnect', (reason) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     console.log(`🔌 Client disconnected: ${socket.id}, reason: ${reason}`)
 const connection = activeConnections.get(socket.id);
     if (connection) {
       // Notify all rooms that user is offline
       connection.rooms.forEach((roomId) => {
-        socket.to(roomId).emit('user-offline', {
+        socket.to(roomId).emit('user-offline', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           userId: socket.id,
           timestamp: new Date().toISOString(),
         });
@@ -204,20 +204,20 @@ const connection = activeConnections.get(socket.id);
 });
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (req, res) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   res.json({
-    status: 'healthy',
-    message: 'Socket.IO server is running',
+    status: 'healthy','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    message: 'Socket.IO server is running','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString(),
   });
 });
 
 // Socket status endpoint
-app.get('/api/socket', (req, res) => {
+app.get('/api/socket', (req, res) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   res.json({
-    status: 'running',
-    message: 'Socket.IO server is running',
+    status: 'running','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    message: 'Socket.IO server is running','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString(),
   });
@@ -232,18 +232,18 @@ server.listen(PORT, () => {
 });
 
 // Graceful shutdown
-process.on('SIGINT', () => {
-  console.log('\n🛑 Shutting down test socket server...');
+process.on('SIGINT', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('\n🛑 Shutting down test socket server...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   server.close(() => {
-    console.log('✅ Test socket server stopped');
+    console.log('✅ Test socket server stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     process.exit(0);
   });
 });
 
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Terminating test socket server...');
+process.on('SIGTERM', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  console.log('\n🛑 Terminating test socket server...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   server.close(() => {
-    console.log('✅ Test socket server stopped');
+    console.log('✅ Test socket server stopped');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     process.exit(0);
   });
 });

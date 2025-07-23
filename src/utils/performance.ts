@@ -1,4 +1,4 @@
 // performance module placeholder
-export const performance = {
+export ;const performance = {
   // TODO: Implement performance functionality
 };

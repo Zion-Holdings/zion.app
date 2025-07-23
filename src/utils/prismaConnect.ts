@@ -1,4 +1,4 @@
 // prismaConnect module placeholder
-export const prismaConnect = {
+export ;const prismaConnect = {
   // TODO: Implement prismaConnect functionality
 };

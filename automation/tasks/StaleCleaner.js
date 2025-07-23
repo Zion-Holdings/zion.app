@@ -1,14 +1,14 @@
-const AutomationTask = require('../core/AutomationTask');
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const AutomationTask = require('../core/AutomationTask');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { execSync } = require('child_process');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const fs = require('fs');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 class StaleCleaner extends AutomationTask {
   constructor(config = {}) {
     super({
       staleBranchDays: 30,
       stalePRDays: 14,
-      protectedBranches: ['main', 'master', 'develop', 'staging'],
+      protectedBranches: ['main', 'master', 'develop', 'staging'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       dryRun: false,
       autoDelete: false,
       notifyOnCleanup: true,
@@ -19,14 +19,14 @@ class StaleCleaner extends AutomationTask {
   }
 
   async run() {
-    console.log('🧹 Starting stale branch and PR cleanup...');
+    console.log('🧹 Starting stale branch and PR cleanup...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
     try {
       const startTime = Date.now();
       
-      // Check if we're in a git repository
+      // Check if we're in a git repository'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       if (!this.isGitRepository()) {
-        throw new Error('Not in a git repository');
+        throw new Error('Not in a git repository');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       }
 
       // Fetch latest from remote
@@ -50,7 +50,7 @@ class StaleCleaner extends AutomationTask {
       
       // Update status
       this.lastRun = new Date().toISOString();
-      this.lastStatus = 'success';
+      this.lastStatus = 'success';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
       const summary = {
         branches: {
@@ -67,7 +67,7 @@ class StaleCleaner extends AutomationTask {
         dryRun: this.config.dryRun
       };
       
-      console.log('✅ Stale cleanup completed:', summary);
+      console.log('✅ Stale cleanup completed:', summary);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
       return {
         success: true,
@@ -79,8 +79,8 @@ class StaleCleaner extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Stale cleanup failed:', error.message);
-      this.lastStatus = 'error';
+      console.error('❌ Stale cleanup failed:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      this.lastStatus = 'error';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       this.lastError = error.message;
       
       // Attempt self-healing
@@ -96,17 +96,17 @@ class StaleCleaner extends AutomationTask {
   async getStaleBranches() {
     try {
       // Get all remote branches
-      const branchesOutput = execSync('git branch -r --format="%(refname:short) %(committerdate:iso8601)"', {
-        encoding: 'utf8',
+      const branchesOutput = execSync('git branch -r --format="%(refname:short) %(committerdate:iso8601)"', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        encoding: 'utf8','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         cwd: process.cwd()
       });
       
       const branches = branchesOutput
         .trim()
-        .split('\n')
+        .split('\n')'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         .filter(line => line.trim())
         .map(line => {
-          const [branch, date] = line.split(' ');
+          const [branch, date] = line.split(' ');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           return {
             name: branch,
             lastCommit: new Date(date),
@@ -126,7 +126,7 @@ class StaleCleaner extends AutomationTask {
       return branches;
       
     } catch (error) {
-      console.error('Error getting stale branches:', error.message);
+      console.error('Error getting stale branches:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return [];
     }
   }
@@ -135,7 +135,7 @@ class StaleCleaner extends AutomationTask {
     try {
       // Use GitHub CLI to get stale PRs
       const prsOutput = execSync(`gh pr list --state open --limit 100 --json number,title,createdAt,updatedAt,author`, {
-        encoding: 'utf8',
+        encoding: 'utf8','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         cwd: process.cwd()
       });
       
@@ -155,7 +155,7 @@ class StaleCleaner extends AutomationTask {
       return prs;
       
     } catch (error) {
-      console.error('Error getting stale PRs:', error.message);
+      console.error('Error getting stale PRs:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return [];
     }
   }
@@ -180,16 +180,16 @@ class StaleCleaner extends AutomationTask {
         
         if (hasUnmergedCommits && !this.config.autoDelete) {
           console.log(`⚠️ Skipping ${branch.name} - has unmerged commits`);
-          results.skipped.push({ ...branch, reason: 'unmerged_commits' });
+          results.skipped.push({ ...branch, reason: 'unmerged_commits' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           continue;
         }
         
         // Delete the branch
-        if (branch.name.startsWith('origin/')) {
-          const branchName = branch.name.replace('origin/', '');
+        if (branch.name.startsWith('origin/')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+          const branchName = branch.name.replace('origin/', '');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           execSync(`git push origin --delete ${branchName}`, {
             cwd: process.cwd(),
-            stdio: 'pipe'
+            stdio: 'pipe''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
           });
         }
         
@@ -223,7 +223,7 @@ class StaleCleaner extends AutomationTask {
         // Close the PR
         execSync(`gh pr close ${pr.number} --delete-branch`, {
           cwd: process.cwd(),
-          stdio: 'pipe'
+          stdio: 'pipe''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         });
         
         console.log(`🗑️ Closed stale PR: #${pr.number} - ${pr.title} (${pr.daysOld} days old)`);
@@ -240,14 +240,14 @@ class StaleCleaner extends AutomationTask {
 
   async hasUnmergedCommits(branchName) {
     try {
-      const branchNameClean = branchName.replace('origin/', '');
+      const branchNameClean = branchName.replace('origin/', '');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       const output = execSync(`git log --oneline origin/main..origin/${branchNameClean}`, {
-        encoding: 'utf8',
+        encoding: 'utf8','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         cwd: process.cwd(),
-        stdio: 'pipe'
+        stdio: 'pipe''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       });
       
-      return output.trim().split('\n').filter(line => line.trim()).length > 0;
+      return output.trim().split('\n').filter(line => line.trim()).length > 0;'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
     } catch (error) {
       // If command fails, assume there are unmerged commits
@@ -257,20 +257,20 @@ class StaleCleaner extends AutomationTask {
 
   async fetchLatest() {
     try {
-      execSync('git fetch --prune', {
+      execSync('git fetch --prune', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         cwd: process.cwd(),
-        stdio: 'pipe'
+        stdio: 'pipe''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       });
     } catch (error) {
-      console.warn('⚠️ Failed to fetch latest from remote:', error.message);
+      console.warn('⚠️ Failed to fetch latest from remote:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   isGitRepository() {
     try {
-      execSync('git rev-parse --git-dir', {
+      execSync('git rev-parse --git-dir', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         cwd: process.cwd(),
-        stdio: 'pipe'
+        stdio: 'pipe''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       });
       return true;
     } catch (error) {
@@ -279,21 +279,21 @@ class StaleCleaner extends AutomationTask {
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for StaleCleaner...');
+    console.log('🔧 Attempting self-healing for StaleCleaner...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
-    if (error.message.includes('permission') || error.message.includes('access')) {
-      console.log('🔐 Permission issue detected, checking git configuration...');
+    if (error.message.includes('permission') || error.message.includes('access')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('🔐 Permission issue detected, checking git configuration...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       await this.checkGitConfiguration();
       return;
     }
     
-    if (error.message.includes('network') || error.message.includes('connection')) {
-      console.log('⏳ Network issue detected, will retry later...');
+    if (error.message.includes('network') || error.message.includes('connection')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('⏳ Network issue detected, will retry later...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       return;
     }
     
-    if (error.message.includes('gh') || error.message.includes('GitHub CLI')) {
-      console.log('🔧 GitHub CLI issue detected, checking installation...');
+    if (error.message.includes('gh') || error.message.includes('GitHub CLI')) {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('🔧 GitHub CLI issue detected, checking installation...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       await this.checkGitHubCLI();
       return;
     }
@@ -302,27 +302,27 @@ class StaleCleaner extends AutomationTask {
   async checkGitConfiguration() {
     try {
       // Check git user configuration
-      const userName = execSync('git config user.name', { encoding: 'utf8', stdio: 'pipe' }).trim();
-      const userEmail = execSync('git config user.email', { encoding: 'utf8', stdio: 'pipe' }).trim();
+      const userName = execSync('git config user.name', { encoding: 'utf8', stdio: 'pipe' }).trim();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      const userEmail = execSync('git config user.email', { encoding: 'utf8', stdio: 'pipe' }).trim();'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
-      console.log('✅ Git configuration:', { userName, userEmail });
+      console.log('✅ Git configuration:', { userName, userEmail });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
     } catch (error) {
-      console.error('❌ Git configuration issue:', error.message);
+      console.error('❌ Git configuration issue:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 
   async checkGitHubCLI() {
     try {
-      const version = execSync('gh --version', { encoding: 'utf8', stdio: 'pipe' });
-      console.log('✅ GitHub CLI version:', version.trim());
+      const version = execSync('gh --version', { encoding: 'utf8', stdio: 'pipe' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ GitHub CLI version:', version.trim());'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
       // Check authentication
-      const authStatus = execSync('gh auth status', { encoding: 'utf8', stdio: 'pipe' });
-      console.log('✅ GitHub CLI auth status:', authStatus.trim());
+      const authStatus = execSync('gh auth status', { encoding: 'utf8', stdio: 'pipe' });'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      console.log('✅ GitHub CLI auth status:', authStatus.trim());'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       
     } catch (error) {
-      console.error('❌ GitHub CLI issue:', error.message);
+      console.error('❌ GitHub CLI issue:', error.message);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     }
   }
 

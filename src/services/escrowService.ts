@@ -1,4 +1,4 @@
 // escrowService module placeholder
-export const escrowService = {
+export ;const escrowService = {
   // TODO: Implement escrowService functionality
 };

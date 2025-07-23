@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
-export function useWebSocket(options: any) {
-  const [isConnected, setIsConnected] = useState(false)'
-  const [error, setError] = useState<string | null>(null)'
-  const wsRef = useRef<WebSocket | null>(null)'
-  const reconnectAttemptsRef = useRef(0)'
-  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null)'
+import { useState, useEffect, useRef, useCallback } from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;function useWebSocket(options: unknown) {
+  const [isConnected, setIsConnected] = useState(false)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const [error, setError] = useState<string | null>(null)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const wsRef = useRef<WebSocket | null>(null)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const reconnectAttemptsRef = useRef(0)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   const connect = useCallback(() => {
     try {
-      const ws = new WebSocket(options.url)'
-      wsRef.current = ws'
+      const ws = new WebSocket(options.url)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      wsRef.current = ws''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
       ws.onopen = () => {
         setIsConnected(true);
         setError(null);
@@ -41,43 +41,43 @@ export function useWebSocket(options: any) {
       };
 
       ws.onerror = (event) => {
-        setError('WebSocket error occurred')'
-        options.onError?.(event)'
-      }'
+        setError('WebSocket error occurred')''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        options.onError?.(event)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      }''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     } catch (err) {
-      setError('Failed to create WebSocket connection')'
+      setError('Failed to create WebSocket connection')''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-  }, [options])'
+  }, [options])''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   const disconnect = useCallback(() => {
     if (reconnectTimeoutRef.current) {
-      clearTimeout(reconnectTimeoutRef.current)'
-      reconnectTimeoutRef.current = null'
+      clearTimeout(reconnectTimeoutRef.current)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      reconnectTimeoutRef.current = null''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     if (wsRef.current) {
-      wsRef.current.close()'
-      wsRef.current = null'
-    setIsConnected(false)'
-    reconnectAttemptsRef.current = options.maxReconnectAttempts || 5'
+      wsRef.current.close()''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+      wsRef.current = null''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    setIsConnected(false)''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    reconnectAttemptsRef.current = options.maxReconnectAttempts || 5''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   }, [options.maxReconnectAttempts]);
 
   const sendMessage = useCallback(
-    (data: any) => {
+    (data: unknown) => {
       if (wsRef.current && isConnected) {
         wsRef.current.send(
-          typeof data === 'string' ? data : JSON.stringify(data),
-        )'
+          typeof data === 'string' ? data : JSON.stringify(data),'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     },
     [isConnected],
-  )'
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   useEffect(() => {
-    connect()'
+    connect()''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     return () => {
-      disconnect()'
-    }'
-  }, [connect, disconnect])'
+      disconnect()''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    }''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  }, [connect, disconnect])''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   return {
     isConnected,
     error,
     sendMessage,
     disconnect,
-    connect,}';
+    connect,}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

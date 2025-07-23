@@ -1,6 +1,6 @@
-const chokidar = require('chokidar');
-const { exec } = require('child_process');
-const path = require('path');
+const chokidar = require('chokidar');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const { exec } = require('child_process');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+const path = require('path');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 const runCommand = (cmd) => {
   return new Promise((resolve) => {
@@ -11,32 +11,32 @@ const runCommand = (cmd) => {
 };
 
 const log = (...args) => {
-  console.log('[auto-fix-watcher]', ...args);
+  console.log('[auto-fix-watcher]', ...args);'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 };
 
 const runBuildAndTest = async () => {
-  log('Running build...');
-  const build = await runCommand('npm run build');
+  log('Running build...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const build = await runCommand('npm run build');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   if (build.error) {
-    log('Build error detected. Attempting ESLint/Prettier fixes...');
-    await runCommand('npx eslint . --fix');
-    await runCommand('npx prettier --write .');
-    log('Re-running build after fixes...');
+    log('Build error detected. Attempting ESLint/Prettier fixes...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    await runCommand('npx eslint . --fix');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    await runCommand('npx prettier --write .');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    log('Re-running build after fixes...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     return runBuildAndTest();
   }
-  log('Build successful. Running tests...');
-  const test = await runCommand('npm test');
+  log('Build successful. Running tests...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  const test = await runCommand('npm test');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   if (test.error) {
-    log('Test failures detected. Attempting ESLint/Prettier fixes...');
-    await runCommand('npx eslint . --fix');
-    await runCommand('npx prettier --write .');
-    log('Re-running tests after fixes...');
+    log('Test failures detected. Attempting ESLint/Prettier fixes...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    await runCommand('npx eslint . --fix');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    await runCommand('npx prettier --write .');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    log('Re-running tests after fixes...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     return runBuildAndTest();
   }
-  log('Build and tests passed!');
+  log('Build and tests passed!');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 };
 
-const watcher = chokidar.watch('.', {
+const watcher = chokidar.watch('.', {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   ignored:
     /node_modules|\.git|coverage|dist|build|\.next|out|logs|\.DS_Store|\.log$/,
   persistent: true,
@@ -59,12 +59,12 @@ const trigger = async () => {
   }
 };
 
-watcher.on('ready', () => {
-  log('Watching for file changes...');
+watcher.on('ready', () => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  log('Watching for file changes...');'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   trigger();
 });
 
-watcher.on('all', (event, filePath) => {
+watcher.on('all', (event, filePath) => {'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
   log(`Detected ${event} on ${filePath}`);
   trigger();
 });

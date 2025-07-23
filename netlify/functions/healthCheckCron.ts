@@ -1,10 +1,10 @@
-import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";";"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const handler: Handler = async (_event: HandlerEvent, _context: HandlerContext) => {
   const siteUrl = process.env.URL;
   if (!siteUrl) {
-    console.error("Base URL (process.env.URL) is not set. Cannot perform health check.");"    return {
+    console.error("Base URL (process.env.URL) is not set. Cannot perform health check.");"    return {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       statusCode: 500, // Internal server error for the function itself
-      body: "Base URL not configured.","    };
+      body: "Base URL not configured.","    };"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
 
   const healthEndpoint = `${siteUrl}/api/health`;
@@ -41,4 +41,4 @@ const handler: Handler = async (_event: HandlerEvent, _context: HandlerContext) 
   };
 };
 ;
-export { handler };
+export ;{ handler };

@@ -1,4 +1,4 @@
 // projectsData module placeholder
-export const projectsData = {
+export ;const projectsData = {
   // TODO: Implement projectsData functionality
 };

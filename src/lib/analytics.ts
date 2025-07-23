@@ -1,4 +1,4 @@
 // analytics module placeholder
-export const analytics = {
+export ;const analytics = {
   // TODO: Implement analytics functionality
 };

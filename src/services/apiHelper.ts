@@ -1,4 +1,4 @@
 // apiHelper module placeholder
-export const apiHelper = {
+export ;const apiHelper = {
   // TODO: Implement apiHelper functionality
 };

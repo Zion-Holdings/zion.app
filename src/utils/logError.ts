@@ -1,4 +1,4 @@
 // logError module placeholder
-export const logError = {
+export ;const logError = {
   // TODO: Implement logError functionality
 };

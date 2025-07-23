@@ -1,9 +1,9 @@
-import React from 'react'
-export default function QuickAccess() {
+import React from 'react';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+export ;default function QuickAccess() {
   return (
     <div>
       <h1>QuickAccess</h1>
       <p>Component placeholder</p>
     </div>
-  )'
-}';
+  )''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+}';'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

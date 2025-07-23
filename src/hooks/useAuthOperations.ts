@@ -1,4 +1,4 @@
 // useAuthOperations module placeholder
-export const useAuthOperations = {
+export ;const useAuthOperations = {
   // TODO: Implement useAuthOperations functionality
 };

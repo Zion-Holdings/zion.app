@@ -1,4 +1,4 @@
 // performanceOptimizer module placeholder
-export const performanceOptimizer = {
+export ;const performanceOptimizer = {
   // TODO: Implement performanceOptimizer functionality
 };

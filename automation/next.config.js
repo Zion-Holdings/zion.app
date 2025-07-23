@@ -25,13 +25,13 @@ module.exports = {
     // Handle polyfills
     config.resolve.alias = {
       ...config.resolve.alias,
-      'react-native$': 'react-native-web',
+      'react-native$': 'react-native-web','''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     };
 
     return config;
   },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost'],'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     unoptimized: true,
   },
   typescript: {

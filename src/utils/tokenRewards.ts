@@ -1,4 +1,4 @@
 // tokenRewards module placeholder
-export const tokenRewards = {
+export ;const tokenRewards = {
   // TODO: Implement tokenRewards functionality
 };

@@ -1,4 +1,4 @@
 // talentData module placeholder
-export const talentData = {
+export ;const talentData = {
   // TODO: Implement talentData functionality
 };
