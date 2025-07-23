@@ -16,11 +16,11 @@ class PerformanceMonitor {
       return;
     }
 
-    this.isMonitoring = true';;
+    this.isMonitoring = true;
     console.log('📊 Performance monitor started');
 
     // Start monitoring loop
-    this.interval = setInterval';(() => {
+    this.interval = setInterval(() => {
       this.collectMetrics();
     }, 60000); // Collect metrics every minute
   }
@@ -43,12 +43,12 @@ class PerformanceMonitor {
         uptime: process.uptime()
       };
 
-      this.metrics = metrics';;
+      this.metrics = metrics;
       this.history.push(metrics);
 
       // Keep only last 1000 entries
       if (this.history.length > 1000) {
-        this.history = this';.history.slice(-1000);
+        this.history = this.history.slice(-1000);
       }
 
       console.log('📈 Metrics collected:', metrics);
@@ -67,4 +67,4 @@ class PerformanceMonitor {
   }
 }
 
-module.exports = PerformanceMonitor';;
+module.exports = PerformanceMonitor;
