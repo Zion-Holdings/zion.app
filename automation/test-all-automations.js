@@ -127,12 +127,12 @@ class ComprehensiveAutomationTester {
   }
 
   async testContinuousImprovement() {
-    this.log('Testing Continuous Improvement System...', info');
+    this.log('Testing Continuous Improvement System...', 'info');
     
     const ciFiles = [
-      continuous-improvement/enhanced-automation.js',
-      continuous-improvement/monitor.js',
-      continuous-improvement/improve.js
+      'continuous-improvement/enhanced-automation.js',
+      'continuous-improvement/monitor.js',
+      'continuous-improvement/improve.js'
     ];
 
     for (const file of ciFiles) {
@@ -140,24 +140,24 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `CI File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
 
     try {
       const ciSystem = require('./continuous-improvement/enhanced-automation.js');
-      this.addTestResult('CI System Import', true, CI system imported successfully');
+      this.addTestResult('CI System Import', true, 'CI system imported successfully');
     } catch (error) {
       this.addTestResult('CI System Import', false, `Import failed: ${error.message}`);
     }
   }
 
   async testTaskAutomation() {
-    this.log('Testing Task Automation...', info');
+    this.log('Testing Task Automation...', 'info');
     
     const taskFiles = [
-      tasks/DependencyUpdater.js
+      'tasks/DependencyUpdater.js'
     ];
 
     for (const file of taskFiles) {
@@ -165,25 +165,25 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `Task File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
 
     try {
       const taskSystem = require('./tasks/DependencyUpdater.js');
-      this.addTestResult('Task System Import', true, Task system imported successfully');
+      this.addTestResult('Task System Import', true, 'Task system imported successfully');
     } catch (error) {
       this.addTestResult('Task System Import', false, `Import failed: ${error.message}`);
     }
   }
 
   async testCursorAutomation() {
-    this.log('Testing Cursor Automation...', info');
+    this.log('Testing Cursor Automation...', 'info');
     
     const cursorFiles = [
-      cursor-automated-communication.js',
-      cursor-automated-extension/background.js
+      'cursor-automated-communication.js',
+      'cursor-automated-extension/background.js'
     ];
 
     for (const file of cursorFiles) {
@@ -191,7 +191,7 @@ class ComprehensiveAutomationTester {
       this.addTestResult(
         `Cursor File: ${file}`,
         exists,
-        exists ? File exists' : File missing',
+        exists ? 'File exists' : 'File missing',
         { file }
       );
     }
@@ -247,8 +247,8 @@ class ComprehensiveAutomationTester {
     };
     
     fs.writeFile('test-report.json', JSON.stringify(report, null, 2))
-      .then(() => this.log('Detailed report saved to test-report.json', info'))
-      .catch(err => this.log(`Failed to save report: ${err.message}`, error'));
+      .then(() => this.log('Detailed report saved to test-report.json', 'info'))
+      .catch(err => this.log(`Failed to save report: ${err.message}`, 'error'));
   }
 }
 
